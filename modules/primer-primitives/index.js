@@ -8,3 +8,5 @@ const theme = {
   fontSizes: fontSizes,
   lineHeights: lineHeights
 }
+
+module.exports = theme
