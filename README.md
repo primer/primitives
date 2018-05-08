@@ -17,6 +17,7 @@ This repository is distributed with [npm][npm]. After [installing npm][install-n
 
 ```sh
 $ npm install --save primer-primitives
+```
 
 ## License
 
