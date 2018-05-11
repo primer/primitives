@@ -1,6 +1,6 @@
 {
   "name": "primer-primitives",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Typography, spacing, and color primitives for Primer design system",
   "main": "index.js",
   "repository": "https://github.com/primer/primer-primitives/tree/master/modules/primer-primitives",
@@ -17,5 +17,10 @@
   "bugs": {
     "url": "https://github.com/primer/primer-primitives/issues"
   },
-  "homepage": "https://github.com/primer/primer-primitives#readme"
+  "homepage": "https://github.com/primer/primer-primitives#readme",
+  "dependencies": {
+    "primer-colors": "^1.0.1",
+    "primer-spacing": "^1.0.1",
+    "primer-typography": "^1.0.1"
+  }
 }
