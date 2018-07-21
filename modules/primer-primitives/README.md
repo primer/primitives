@@ -20,24 +20,23 @@ JSON is a highly interoperable format that can be used in many types of projects
 
 This shows an example for a React.js project. You can import Primer Primitives to provide theme values to a `ThemeProvider`. This is a great way of sharing system styles and can be achieved with popular CSS-in-JS libraries such as [styled-components](https://www.styled-components.com/) and [emotion](https://emotion.sh/).
 
+Here's an example using `styled-components`.
 
 ```js
-import primitives from 'primer-primitives'
-
-export default theme
-```
-
-This makes the Primer Primitives values for color, typography, and spacing available for styling components. Here's an example using `styled-components`.
-
-```js
-import styled from 'styled-components'
+import React from 'react'
+import styled, { ThemeProvider } from 'styled-components'
+import theme from 'primer-primitives'
 
 const Alert = styled.div`
   color: ${props => props.theme.colors.green[9]};
   background-color: ${props => props.theme.colors.green[2]};
 `
 
-export default Alert
+const App = props => (
+  <ThemeProvider theme={theme}>
+    <Alert />
+  </ThemeProvider>
+)
 
 ```
 
