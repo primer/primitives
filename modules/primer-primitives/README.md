@@ -24,12 +24,6 @@ This shows an example for a React.js project. You can import Primer Primitives t
 ```js
 import primitives from 'primer-primitives'
 
-const theme = {
-  colors: primitives.colors,
-  fontSizes: primitives.fontSizes,
-  space: primitives.space
-}
-
 export default theme
 ```
 
@@ -47,26 +41,24 @@ export default Alert
 
 ```
 
-When used with libraries like [styled-system](https://jxnblk.com/styled-system/), you can make Primer Primitives available to style functions. In this example, we've imported the color function to the component's styles argument. The color values are from our the color JSON object in our Primer Primitives.
+When used with libraries like [styled-system](https://jxnblk.com/styled-system/), you can make Primer Primitives available to style functions. In this example, we've imported the color function to the component's styles argument. The color values are from the color JSON object in Primer Primitives.
 
 ```js
-import styled from 'styled-components'
+import React from 'react'
+import styled, { ThemeProvider } from 'styled-components'
+import theme from 'primer-primitives'
 import { color } from 'styled-system'
 
 const Alert = styled.div`
   ${color}
 `
 
-export default Alert
-```
+const App = props => (
+  <ThemeProvider theme={theme}>
+    <Alert color='green.0' bg='green.2' />
+  </ThemeProvider>
+)
 
-
-Now, this component will have two style props available: color to set foreground color, and bg to set background color.
-
-```html
-<Alert color='green.9' bg='green.2'>
-  Tomato
-</Alert>
 ```
 
 ## License
