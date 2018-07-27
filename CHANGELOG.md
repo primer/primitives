@@ -1,3 +1,11 @@
+# 1.0.2 (2018-07-20)
+
+#### :bug: Bug Fix
+* [#3](https://github.com/primer/primer-primitives/pull/6) Fix spacing to be an array instead of an object. ([@broccolini](https://github.com/broccolini))
+
+#### :memo: Documentation
+* [#3](https://github.com/primer/primer-primitives/pull/6) Add usage example to README. ([@broccolini](https://github.com/broccolini))
+
 # 1.0.1 (2018-05-10)
 
 #### :bug: Bug Fix
