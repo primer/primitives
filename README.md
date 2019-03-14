@@ -1,38 +1,49 @@
 # Primer Primitives
 
-This is a monorepo for color, spacing, and typography primitives for use with [Primer][primer], GitHub's design system.
-
-## Packages
-
-The Primer Primitives repo is a monorepo composed of multiple npm packages:
-
-- [primer-primitives][primer-primitives]
-- [primer-colors][primer-colors]
-- [primer-spacing][primer-spacing]
-- [primer-typography][primer-typography]
+This package contains the [color](#colors), [spacing](#spacing), and [typography](#typography) primitives (AKA constants or "tokens") that form the foundation of [Primer], GitHub's design system.
 
 ## Install
 
-This repository is distributed with [npm][npm]. After [installing npm][install-npm], you can install `primer-primitives` with this command.
+This repository is distributed with [npm]. You can install it with:
 
 ```sh
-$ npm install --save primer-primitives
+$ npm install --save @primer/primitives
 ```
 
 ## Usage
 
-JSON is a highly interoperable format that can be used in many types of projects. You could write scripts to generate CSS, use with plugins for design tools, or import into a theme file for use with CSS-in-JS projects.
+The package's default JavaScript export is an object with the following keys:
 
-### Example
+* `colors` is the [colors](#colors) object
+* `space` is the [spacing](#spacing) object
+* `fontSizes` is from [typography](#typography)
+* `lineHeights` is from [typography](#typography)
 
-This shows an example for a React.js project. You can import Primer Primitives to provide theme values to a `ThemeProvider`. This is a great way of sharing system styles and can be achieved with popular CSS-in-JS libraries such as [styled-components](https://www.styled-components.com/) and [emotion](https://emotion.sh/).
+There are separate exports for `colors`, `space`, and `typography`. For instance, to enumerate the colors:
 
-Here's an example using `styled-components`.
+```js
+// all of the following are equivalent:
+let {colors} = require('@primer/primitives')
+colors = require('@primer/primitives/colors')
+colors = require('@primer/primitives/colors.json')
+
+for (const [name, value] of Object.entries(colors)) {
+  console.log(`colors.${name} = ${JSON.stringify(value)}`)
+}
+```
+
+## Theme
+
+This default export object is suitable for use as a theme source in CSS-in-JS libraries such as [styled-components] and [emotion], and is specifically tailored for use with [styled-system]'s style functions.
+
+### Examples
+
+Here's an example using [styled-components]:
 
 ```js
 import React from 'react'
-import styled, { ThemeProvider } from 'styled-components'
-import theme from 'primer-primitives'
+import styled, {ThemeProvider} from 'styled-components'
+import theme from '@primer/primitives'
 
 const Alert = styled.div`
   color: ${props => props.theme.colors.green[9]};
@@ -44,16 +55,15 @@ const App = props => (
     <Alert />
   </ThemeProvider>
 )
-
 ```
 
-When used with libraries like [styled-system](https://jxnblk.com/styled-system/), you can make Primer Primitives available to style functions. In this example, we've imported the color function to the component's styles argument. The color values are from the color JSON object in Primer Primitives.
+And [styled-system]:
 
 ```js
 import React from 'react'
-import styled, { ThemeProvider } from 'styled-components'
-import theme from 'primer-primitives'
-import { color } from 'styled-system'
+import styled, {ThemeProvider} from 'styled-components'
+import {color} from 'styled-system'
+import theme from '@primer/primitives'
 
 const Alert = styled.div`
   ${color}
@@ -61,20 +71,54 @@ const Alert = styled.div`
 
 const App = props => (
   <ThemeProvider theme={theme}>
-    <Alert color='green.0' bg='green.2' />
+    <Alert color='green.0' bg='green.2' {...props} />
   </ThemeProvider>
 )
-
 ```
+
+Refer to the [styled-system table](https://styled-system.com/table) for more information.
+
+## Colors
+
+The colors object represents Primer's [color system]. The following keys represent single RGB hex colors:
+
+* `black` is not "pure" black, but is darker than the darkest gray
+* `white` is pure white (`#fff`)
+
+The rest of the keys are arrays representing gradients of a certain hue, from lightest to darkest:
+
+* `gray`
+* `blue`
+* `green`
+* `yellow`
+* `orange`
+* `red`
+* `purple`
+
+## Spacing
+
+The `space` object is an array of numeric pixel values that represent Primer's [spacing scale].
+
+## Typography
+
+These primitives are the foundation of Primer's [typography styles]. These keys are merged into the [theme object](#theme):
+
+* `fontSizes` represents Primer's font size scale in pixels, from smallest to largest.
+* `lineHeights` is an object with keys for each of Primer's named line heights: `default`, `condensed`, and `condensedUltra`.
+
+The typography primitives are also available in JavaScript via the `@primer/primitives/typography` export, with or without the `.json` filename extension.
+
 
 ## License
 
 [MIT](./LICENSE) &copy; [GitHub](https://github.com/)
 
-[primer]: https://github.com/primer/primer
-[primer-primitives]: https://github.com/primer/primer-primitives/tree/master/modules/primer-primitives
-[primer-colors]: https://github.com/primer/primer-primitives/tree/master/modules/primer-colors
-[primer-spacing]: https://github.com/primer/primer-primitives/tree/master/modules/primer-spacing
-[primer-typography]: https://github.com/primer/primer-primitives/tree/master/modules/primer-typography
-[npm]: https://www.npmjs.com/
+[color system]: https://primer.style/css/support/color-system
+[spacing scale]: https://primer.style/css/support/spacing
+[typography styles]: https://primer.style/css/support/spacing
 [install-npm]: https://docs.npmjs.com/getting-started/installing-node
+[npm]: https://www.npmjs.com/
+[primer]: https://primer.style
+[styled-system]: https://styled-system.com/
+[styled-components]: https://www.styled-components.com/
+[emotion]: https://emotion.sh/
