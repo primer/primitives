@@ -1,12 +1,10 @@
-const colors = require('primer-colors')
-const space = require('primer-spacing')
-const { fontSizes, lineHeights } = require('primer-typography')
+const colors = require('./colors')
+const space = require('./spacing')
+const {fontSizes, lineHeights} = require('./typography')
 
-const theme = {
+module.exports = {
   colors,
   space,
   fontSizes,
   lineHeights
 }
-
-module.exports = theme
