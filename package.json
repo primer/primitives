@@ -17,5 +17,11 @@
   "bugs": {
     "url": "https://github.com/primer/primitives/issues"
   },
-  "homepage": "https://github.com/primer/primitives#readme"
+  "homepage": "https://github.com/primer/primitives#readme",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^24.5.0"
+  }
 }
