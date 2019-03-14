@@ -91,7 +91,7 @@ Object {
 }
 `;
 
-exports[`space export matches the snapshot 1`] = `
+exports[`spacing export matches the snapshot 1`] = `
 Array [
   0,
   4,
@@ -106,12 +106,6 @@ Array [
 
 exports[`theme (default export) matches the snapshot 1`] = `
 Object {
-  "breakpoints": Array [
-    "1012px",
-    "1280px",
-    "544px",
-    "768px",
-  ],
   "colors": Object {
     "black": "#1b1f23",
     "blue": Array [
@@ -214,12 +208,6 @@ Object {
     "condensed": 1.25,
     "condensedUltra": 1,
     "default": 1.5,
-  },
-  "maxWidths": Object {
-    "large": "1012px",
-    "medium": "768px",
-    "small": "544px",
-    "xlarge": "1280px",
   },
   "space": Array [
     0,
