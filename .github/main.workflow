@@ -4,13 +4,13 @@ workflow "test and publish on push" {
 }
 
 action "install" {
-  uses = "actions/npm@2.0.0"
+  uses = "actions/npm@v2.0.0"
   args = ["install"]
 }
 
 action "test" {
   needs = "install"
-  uses = "actions/npm@2.0.0"
+  uses = "actions/npm@v2.0.0"
   args = ["test"]
 }
 
