@@ -71,9 +71,5 @@ import typography from '@primer/primitives/typography'
 [MIT](./LICENSE) &copy; [GitHub](https://github.com/)
 
 [primer]: https://github.com/primer/primer
-[primer-primitives]: https://github.com/primer/primer-primitives/tree/master/modules/primer-primitives
-[primer-colors]: https://github.com/primer/primer-primitives/tree/master/modules/primer-colors
-[primer-spacing]: https://github.com/primer/primer-primitives/tree/master/modules/primer-spacing
-[primer-typography]: https://github.com/primer/primer-primitives/tree/master/modules/primer-typography
 [npm]: https://www.npmjs.com/
 [install-npm]: https://docs.npmjs.com/getting-started/installing-node
