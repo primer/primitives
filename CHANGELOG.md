@@ -1,7 +1,6 @@
 # 2.0.0 (2019-10-21)
 
 #### :rotating_light: Breaking Changes
-
 * [#14](https://github.com/primer/primitives/pull/14) Rename npm package to `@primer/primitives` and deprecate old `primer-*` packages ([@BinaryMuse](https://github.com/BinaryMuse))
 
 # 1.0.2 (2018-07-20)
