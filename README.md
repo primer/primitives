@@ -1,22 +1,13 @@
 # Primer Primitives
 
-This is a monorepo for color, spacing, and typography primitives for use with [Primer][primer], GitHub's design system.
-
-## Packages
-
-The Primer Primitives repo is a monorepo composed of multiple npm packages:
-
-- [primer-primitives][primer-primitives]
-- [primer-colors][primer-colors]
-- [primer-spacing][primer-spacing]
-- [primer-typography][primer-typography]
+This repo contains values for color, spacing, and typography primitives for use with [Primer][primer], GitHub's design system.
 
 ## Install
 
-This repository is distributed with [npm][npm]. After [installing npm][install-npm], you can install `primer-primitives` with this command.
+This repository is distributed with [npm][npm]. After [installing npm][install-npm], you can install `@primer/primitives` with this command.
 
 ```sh
-$ npm install --save primer-primitives
+$ npm install --save @primer/primitives
 ```
 
 ## Usage
@@ -32,7 +23,7 @@ Here's an example using `styled-components`.
 ```js
 import React from 'react'
 import styled, { ThemeProvider } from 'styled-components'
-import theme from 'primer-primitives'
+import theme from '@primer/primitives'
 
 const Alert = styled.div`
   color: ${props => props.theme.colors.green[9]};
@@ -52,7 +43,7 @@ When used with libraries like [styled-system](https://jxnblk.com/styled-system/)
 ```js
 import React from 'react'
 import styled, { ThemeProvider } from 'styled-components'
-import theme from 'primer-primitives'
+import theme from '@primer/primitives'
 import { color } from 'styled-system'
 
 const Alert = styled.div`
@@ -65,6 +56,14 @@ const App = props => (
   </ThemeProvider>
 )
 
+```
+
+You can also import the `colors`, `typography`, and `spacing` primitives individually if you so desire:
+
+```js
+import colors from '@primer/primitives/colors'
+import spacing from '@primer/primitives/spacing'
+import typography from '@primer/primitives/typography'
 ```
 
 ## License
