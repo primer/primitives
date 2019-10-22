@@ -1,6 +1,6 @@
-const colors = require('./colors')
-const spacing = require('./spacing')
-const typography = require('./typography')
+const colors = require('./primitives/colors')
+const spacing = require('./primitives/spacing')
+const typography = require('./primitives/typography')
 const theme = require('./theme')
 
 module.exports = {
