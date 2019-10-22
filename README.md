@@ -16,13 +16,10 @@ JSON is a highly interoperable format that can be used in many types of projects
 
 ### Example
 
-The Primer Primitives are exported as keys on the top-level export, or can be imported individually.
+The Primer Primitives are exported as keys on the top-level export. `colors`, `spacing`, and `typography` are available:
 
 ```js
-import { colors, typography } from '@primer/primitives'
-// or
-import colors from '@priler/primitives/colors'
-import typography from '@priler/primitives/typography'
+import { colors, spacing, typography } from '@primer/primitives'
 ```
 
 In addition, Primer Primitives exports a `theme`, which is a great way of sharing system styles and works with popular CSS-in-JS libraries such as  [styled-components](https://www.styled-components.com/) and [emotion](https://emotion.sh/).
@@ -65,14 +62,6 @@ const App = props => (
   </ThemeProvider>
 )
 
-```
-
-You can also import the `colors`, `typography`, and `spacing` primitives individually if you so desire:
-
-```js
-import colors from '@primer/primitives/colors'
-import spacing from '@primer/primitives/spacing'
-import typography from '@primer/primitives/typography'
 ```
 
 ## License
