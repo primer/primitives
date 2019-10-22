@@ -1,12 +1,12 @@
 const colors = require('./colors')
-const space = require('./spacing')
-const { fontSizes, lineHeights } = require('./typography')
+const spacing = require('./spacing')
+const typography = require('./typography')
+const theme = require('./theme')
 
-const theme = {
+module.exports = {
+  theme,
+
   colors,
-  space,
-  fontSizes,
-  lineHeights
+  spacing,
+  typography
 }
-
-module.exports = theme
