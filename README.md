@@ -1,22 +1,13 @@
 # Primer Primitives
 
-This is a monorepo for color, spacing, and typography primitives for use with [Primer][primer], GitHub's design system.
-
-## Packages
-
-The Primer Primitives repo is a monorepo composed of multiple npm packages:
-
-- [primer-primitives][primer-primitives]
-- [primer-colors][primer-colors]
-- [primer-spacing][primer-spacing]
-- [primer-typography][primer-typography]
+This repo contains values for color, spacing, and typography primitives for use with [Primer][primer], GitHub's design system.
 
 ## Install
 
-This repository is distributed with [npm][npm]. After [installing npm][install-npm], you can install `primer-primitives` with this command.
+This repository is distributed with [npm][npm]. After [installing npm][install-npm], you can install `@primer/primitives` with this command.
 
 ```sh
-$ npm install --save primer-primitives
+$ npm install --save @primer/primitives
 ```
 
 ## Usage
@@ -25,14 +16,20 @@ JSON is a highly interoperable format that can be used in many types of projects
 
 ### Example
 
-This shows an example for a React.js project. You can import Primer Primitives to provide theme values to a `ThemeProvider`. This is a great way of sharing system styles and can be achieved with popular CSS-in-JS libraries such as [styled-components](https://www.styled-components.com/) and [emotion](https://emotion.sh/).
+The Primer Primitives are exported as keys on the top-level export. `colors`, `spacing`, and `typography` are available:
+
+```js
+import { colors, spacing, typography } from '@primer/primitives'
+```
+
+In addition, Primer Primitives exports a `theme`, which is a great way of sharing system styles and works with popular CSS-in-JS libraries such as  [styled-components](https://www.styled-components.com/) and [emotion](https://emotion.sh/).
 
 Here's an example using `styled-components`.
 
 ```js
 import React from 'react'
 import styled, { ThemeProvider } from 'styled-components'
-import theme from 'primer-primitives'
+import { theme } from '@primer/primitives'
 
 const Alert = styled.div`
   color: ${props => props.theme.colors.green[9]};
@@ -52,7 +49,7 @@ When used with libraries like [styled-system](https://jxnblk.com/styled-system/)
 ```js
 import React from 'react'
 import styled, { ThemeProvider } from 'styled-components'
-import theme from 'primer-primitives'
+import { theme } from '@primer/primitives'
 import { color } from 'styled-system'
 
 const Alert = styled.div`
@@ -72,9 +69,5 @@ const App = props => (
 [MIT](./LICENSE) &copy; [GitHub](https://github.com/)
 
 [primer]: https://github.com/primer/primer
-[primer-primitives]: https://github.com/primer/primer-primitives/tree/master/modules/primer-primitives
-[primer-colors]: https://github.com/primer/primer-primitives/tree/master/modules/primer-colors
-[primer-spacing]: https://github.com/primer/primer-primitives/tree/master/modules/primer-spacing
-[primer-typography]: https://github.com/primer/primer-primitives/tree/master/modules/primer-typography
 [npm]: https://www.npmjs.com/
 [install-npm]: https://docs.npmjs.com/getting-started/installing-node
