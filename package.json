@@ -2,7 +2,16 @@
   "name": "@primer/primitives",
   "version": "2.0.0",
   "description": "Typography, spacing, and color primitives for Primer design system",
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "primitives/*.json",
+    "primitives/*.d.ts",
+    "theme/*.js",
+    "theme/*.d.ts"
+  ],
   "main": "index.js",
+  "types": "index.d.ts",
   "repository": "https://github.com/primer/primitives",
   "keywords": [
     "primitives",
@@ -17,5 +26,12 @@
   "bugs": {
     "url": "https://github.com/primer/primitives/issues"
   },
-  "homepage": "https://github.com/primer/primitives#readme"
+  "homepage": "https://github.com/primer/primitives#readme",
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^3.7.2"
+  }
 }
