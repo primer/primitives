@@ -1,4 +1,4 @@
-[
+export const spacing = [
   0,
   4,
   8,

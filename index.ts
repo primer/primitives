@@ -1,6 +1,6 @@
-import colors from "./primitives/colors.json";
-import spacing from "./primitives/spacing.json";
-import typography from "./primitives/typography.json";
+import { colors } from "./primitives/colors";
+import { spacing } from "./primitives/spacing";
+import { typography } from "./primitives/typography";
 import { theme } from "./theme";
 
 export { theme, colors, spacing, typography };

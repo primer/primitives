@@ -1,10 +1,10 @@
-import colors from "../primitives/colors.json";
-import space from "../primitives/spacing.json";
-import { fontSizes, lineHeights } from "../primitives/typography.json";
+import {colors} from "../primitives/colors";
+import { spacing } from "../primitives/spacing";
+import { typography } from "../primitives/typography";
 
 export const theme = {
   colors,
-  space,
-  fontSizes,
-  lineHeights
+  space: spacing,
+  fontSizes: typography.fontSizes,
+  lineHeights: typography.lineHeights
 };

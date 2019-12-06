@@ -1,4 +1,4 @@
-{
+export const typography = {
   "fontSizes": [
     12,
     14,
