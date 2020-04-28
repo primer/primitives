@@ -28,7 +28,8 @@
   },
   "homepage": "https://github.com/primer/primitives#readme",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "prepack": "yarn build"
   },
   "dependencies": {},
   "devDependencies": {
