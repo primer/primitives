@@ -1,6 +1,6 @@
 import {colors} from "../primitives/colors";
-import { spacing } from "../primitives/spacing";
-import { typography } from "../primitives/typography";
+import {spacing} from "../primitives/spacing";
+import {typography} from "../primitives/typography";
 
 export const theme = {
   colors,
