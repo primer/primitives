@@ -1,3 +1,7 @@
+# 3.0.1 (2020-04-28)
+#### :rotating_light: Breaking Changes
+* [#14](https://github.com/primer/primitives/pull/16) Convert the package from JSON to TypeScript ([@smockle](https://github.com/smockle))
+
 # 2.0.0 (2019-10-21)
 
 #### :rotating_light: Breaking Changes
