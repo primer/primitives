@@ -24,7 +24,7 @@
   "homepage": "https://github.com/primer/primitives#readme",
   "scripts": {
     "prebuild": "rm -rf dist",
-    "build": "tsc",
+    "build": "tsc && ts-node ./script/build-color-modes.ts",
     "prepack": "yarn build"
   },
   "dependencies": {},
