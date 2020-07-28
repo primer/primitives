@@ -32,19 +32,21 @@ type SassItem = SassColor | SassMap
 
 
 async function buildModes(): Promise<void> {
-  const outDir = path.join(__dirname, "..", "dist", "modes")
-  mkdirp(outDir)
+  const cssOutDir = path.join(__dirname, "..", "dist", "scss", "modes")
+  const jsOutDir = path.join(__dirname, "..", "primitives", "modes")
+  mkdirp(cssOutDir)
+  mkdirp(jsOutDir)
 
   const modes = fs.readdirSync(path.join(__dirname, "..", "data", "modes"))
     .map(file => path.basename(file, ".scss"))
 
   for (const mode of modes) {
     const data = await parseMode(mode)
-    const jsonData = JSON.stringify(data, null, "  ")
+    const jsonData = JSON.stringify(camelize(data), null, "  ")
     const scssData = makeScssOutput(mode, data)
 
-    fs.writeFileSync(path.join(outDir, `${mode}.json`), jsonData)
-    fs.writeFileSync(path.join(outDir, `_${mode}.scss`), scssData)
+    fs.writeFileSync(path.join(jsOutDir, `${mode}.ts`), `export default ${jsonData}`)
+    fs.writeFileSync(path.join(cssOutDir, `_${mode}.scss`), scssData)
   }
 }
 
@@ -125,6 +127,22 @@ function makeScssOutput(modeName: string, data: Mode): string {
   }
 
   return `[data-color-mode="${modeName}"] {\n${output}}\n`
+}
+
+function camelize(data: Mode): Mode {
+  const result: Mode = { scale: {}, functional: {} }
+  for (const key of Object.keys(data.scale)) {
+    result.scale[camelCase(key)] = data.scale[key]
+  }
+  for (const key of Object.keys(data.functional)) {
+    result.functional[camelCase(key)] = data.functional[key]
+  }
+
+  return result
+}
+
+function camelCase(str: string): string {
+  return str.replace(/-([a-z])/g, (m, w) => w.toUpperCase())
 }
 
 if (require.main === module) {
