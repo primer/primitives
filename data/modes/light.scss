@@ -1,0 +1,253 @@
+// Black based on same hue as $gray-900
+$black: #1b1f23;
+$white: #fff;
+
+//
+//
+// -------- Grays --------
+$gray-000:        #fafbfc;
+$gray-100:        #f6f8fa;
+$gray-200:        #e1e4e8;
+$gray-300:        #d1d5da;
+$gray-400:        #959da5;
+$gray-500:        #6a737d;
+$gray-600:        #586069;
+$gray-700:        #444d56;
+$gray-800:        #2f363d;
+$gray-900:        #24292e; // body font color
+
+// -------- Blue --------
+$blue-000:        #f1f8ff;
+$blue-100:        #dbedff;
+$blue-200:        #c8e1ff;
+$blue-300:        #79b8ff;
+$blue-400:        #2188ff;
+$blue-500:        #0366d6; // Default: Passes AA with #fff
+$blue-600:        #005cc5;
+$blue-700:        #044289;
+$blue-800:        #032f62;
+$blue-900:        #05264c; // Passes with 1/2/300 blues
+
+// -------- Green --------
+$green-000:       #f0fff4;
+$green-100:       #dcffe4;
+$green-200:       #bef5cb;
+$green-300:       #85e89d;
+$green-400:       #34d058;
+$green-500:       #28a745; // Default. passes AA Large
+$green-600:       #22863a; // Text green, passes AA on #fff
+$green-700:       #176f2c;
+$green-800:       #165c26;
+$green-900:       #144620;
+
+// -------- Yellow --------
+$yellow-000:      #fffdef;
+$yellow-100:      #fffbdd;
+$yellow-200:      #fff5b1;
+$yellow-300:      #ffea7f;
+$yellow-400:      #ffdf5d;
+$yellow-500:      #ffd33d;
+$yellow-600:      #f9c513;
+$yellow-700:      #dbab09;
+$yellow-800:      #b08800;
+$yellow-900:      #735c0f;
+
+// -------- Orange --------
+$orange-000:      #fff8f2;
+$orange-100:      #ffebda;
+$orange-200:      #ffd1ac;
+$orange-300:      #ffab70;
+$orange-400:      #fb8532;
+$orange-500:      #f66a0a; // Default. passes AA Large with #fff
+$orange-600:      #e36209;
+$orange-700:      #d15704;
+$orange-800:      #c24e00;
+$orange-900:      #a04100;
+
+// -------- Red --------
+$red-000:         #ffeef0;
+$red-100:         #ffdce0;
+$red-200:         #fdaeb7;
+$red-300:         #f97583;
+$red-400:         #ea4a5a;
+$red-500:         #d73a49; // Default. passes AA
+$red-600:         #cb2431;
+$red-700:         #b31d28;
+$red-800:         #9e1c23;
+$red-900:         #86181d;
+
+// -------- Purple --------
+$purple-000:      #f5f0ff;
+$purple-100:      #e6dcfd;
+$purple-200:      #d1bcf9;
+$purple-300:      #b392f0;
+$purple-400:      #8a63d2;
+$purple-500:      #6f42c1; // passes AA with #fff
+$purple-600:      #5a32a3;
+$purple-700:      #4c2889;
+$purple-800:      #3a1d6e;
+$purple-900:      #29134e;
+
+// -------- Pink --------
+$pink-000:      #ffeef8;
+$pink-100:      #fedbf0;
+$pink-200:      #f9b3dd;
+$pink-300:      #f692ce;
+$pink-400:      #ec6cb9;
+$pink-500:      #ea4aaa;
+$pink-600:      #d03592;
+$pink-700:      #b93a86;
+$pink-800:      #99306f;
+$pink-900:      #6d224f;
+
+// -------- Fades --------
+$black-fade-15:      rgba($black, 0.15);
+$black-fade-30:      rgba($black, 0.3);
+$black-fade-50:      rgba($black, 0.5);
+$black-fade-70:      rgba($black, 0.7);
+$black-fade-85:      rgba($black, 0.85);
+
+$white-fade-15:      rgba($white, 0.15);
+$white-fade-30:      rgba($white, 0.3);
+$white-fade-50:      rgba($white, 0.5);
+$white-fade-70:      rgba($white, 0.7);
+$white-fade-85:      rgba($white, 0.85);
+
+// -------- Color defaults --------
+$red:         $red-500;
+$purple:      $purple-500;
+$blue:        $blue-500;
+$green:       $green-500;
+$yellow:      $yellow-500;
+$orange:      $orange-500;
+$pink:        $pink-500;
+$gray-dark:   $gray-900;
+$gray-light:  $gray-400;
+$gray:        $gray-500;
+
+// -------- Color gradient maps --------
+
+$scale: (
+  black: $black,
+  white: $white,
+
+  gray: (
+    0: $gray-000,
+    1: $gray-100,
+    2: $gray-200,
+    3: $gray-300,
+    4: $gray-400,
+    5: $gray-500,
+    6: $gray-600,
+    7: $gray-700,
+    8: $gray-800,
+    9: $gray-900,
+  ),
+
+  blue: (
+    0: $blue-000,
+    1: $blue-100,
+    2: $blue-200,
+    3: $blue-300,
+    4: $blue-400,
+    5: $blue-500,
+    6: $blue-600,
+    7: $blue-700,
+    8: $blue-800,
+    9: $blue-900,
+  ),
+
+  green: (
+    0: $green-000,
+    1: $green-100,
+    2: $green-200,
+    3: $green-300,
+    4: $green-400,
+    5: $green-500,
+    6: $green-600,
+    7: $green-700,
+    8: $green-800,
+    9: $green-900,
+  ),
+
+  yellow: (
+    0: $yellow-000,
+    1: $yellow-100,
+    2: $yellow-200,
+    3: $yellow-300,
+    4: $yellow-400,
+    5: $yellow-500,
+    6: $yellow-600,
+    7: $yellow-700,
+    8: $yellow-800,
+    9: $yellow-900,
+  ),
+
+  orange: (
+    0: $orange-000,
+    1: $orange-100,
+    2: $orange-200,
+    3: $orange-300,
+    4: $orange-400,
+    5: $orange-500,
+    6: $orange-600,
+    7: $orange-700,
+    8: $orange-800,
+    9: $orange-900,
+  ),
+
+  red: (
+    0: $red-000,
+    1: $red-100,
+    2: $red-200,
+    3: $red-300,
+    4: $red-400,
+    5: $red-500,
+    6: $red-600,
+    7: $red-700,
+    8: $red-800,
+    9: $red-900,
+  ),
+
+  purple: (
+    0: $purple-000,
+    1: $purple-100,
+    2: $purple-200,
+    3: $purple-300,
+    4: $purple-400,
+    5: $purple-500,
+    6: $purple-600,
+    7: $purple-700,
+    8: $purple-800,
+    9: $purple-900,
+  ),
+
+  pink: (
+    0: $pink-000,
+    1: $pink-100,
+    2: $pink-200,
+    3: $pink-300,
+    4: $pink-400,
+    5: $pink-500,
+    6: $pink-600,
+    7: $pink-700,
+    8: $pink-800,
+    9: $pink-900,
+  )
+);
+
+// -------- Functional colors ----------
+$functional: (
+  text-primary: $gray-900,
+  text-secondary: $gray-600,
+  text-tertiary: $gray-500,
+  text-link: $blue-500,
+  text-placeholder: $gray-400,
+
+  hover-primary-bg: $gray-100,
+  hover-primary-border: $gray-100,
+
+  bg-primary: $white,
+  bg-secondary: $gray-100,
+  bg-tertiary: $gray-200,
+);
