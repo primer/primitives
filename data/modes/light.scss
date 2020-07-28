@@ -241,13 +241,46 @@ $functional: (
   text-primary: $gray-900,
   text-secondary: $gray-600,
   text-tertiary: $gray-500,
-  text-link: $blue-500,
-  text-placeholder: $gray-400,
+  text-alpha: $gray-600,
+  text-link-primary: $blue-500,
+  text-link-secondary: $gray-900,
+  text-link-tertiary: $gray-600,
 
-  hover-primary-bg: $gray-100,
-  hover-primary-border: $gray-100,
+  border-solid-bold: $gray-400,
+  border-solid-primary: $gray-200,
+  border-solid-secondary: $gray-200,
+  border-alpha: $black-fade-15,
+  border-accent: $blue-500,
+  border-accent-light: $blue-200, // todo
+  border-danger: $red-500,
+  border-success: $green-400,
 
+  ic-primary: $gray-500,
+  ic-secondary: $gray-400,
+  ic-accent: $blue-500,
+  ic-bold: $gray-900,
+  ic-danger: $red-600,
+  ic-success: $green-600,
+  ic-unknown: $gray-700, // todo
+
+  bg-canvas: $white,
+  bg-canvas-reverse: $gray-900,
   bg-primary: $white,
-  bg-secondary: $gray-100,
-  bg-tertiary: $gray-200,
+  bg-secondary: $gray-000,
+  bg-tertiary: $gray-100,
+  bg-alpha: $black,
+  bg-danger: $red-100,
+  bg-danger-bold: $red-500,
+  bg-success: $green-100,
+  bg-success-bold: $green-500,
+
+  hl-accent-primary: #2ea44f, // todo: custom green from google sheet
+  hl-accent-secondary: $blue-500,
+  hl-accent-coral: #f9826c, // todo: custom coral from sheet
+  hl-hover-primary: $blue-500,
+  hl-hover-secondary: $gray-100,
+  hl-hover-destructive: $red-500,
+
+  hl-selected-primary: $blue-500,
+  hl-selected-nav: #f9826c, // todo: custom coral from sheet
 );
