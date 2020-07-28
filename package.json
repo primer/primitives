@@ -3,15 +3,10 @@
   "version": "3.0.0",
   "description": "Typography, spacing, and color primitives for Primer design system",
   "files": [
-    "index.js",
-    "index.d.ts",
-    "primitives/*.js",
-    "primitives/*.d.ts",
-    "theme/*.js",
-    "theme/*.d.ts"
+    "dist"
   ],
-  "main": "index.js",
-  "types": "index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "repository": "https://github.com/primer/primitives",
   "keywords": [
     "primitives",
@@ -28,6 +23,7 @@
   },
   "homepage": "https://github.com/primer/primitives#readme",
   "scripts": {
+    "prebuild": "rm -rf dist",
     "build": "tsc",
     "prepack": "yarn build"
   },

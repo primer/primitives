@@ -6,9 +6,14 @@
     "esModuleInterop": true,
     "strict": true,
     "rootDir": ".",
-    "outDir": ".",
+    "outDir": "./dist",
     "declaration": true
   },
-  "include": ["*.ts"],
-  "exclude": ["node_modules"]
+  "include": [
+    "./index.ts",
+    "./primitives/*.ts",
+    "./theme/*.ts",
+    "./src/**/*.d.ts"
+  ],
+  // "exclude": ["node_modules"]
 }
