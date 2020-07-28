@@ -42,10 +42,10 @@ async function buildModes(): Promise<void> {
 
   for (const mode of modes) {
     const data = await parseMode(mode)
-    const jsonData = JSON.stringify(camelize(data), null, "  ")
+    const tsData = makeTsOutput(mode, data)
     const scssData = makeScssOutput(mode, data)
 
-    fs.writeFileSync(path.join(jsOutDir, `${mode}.ts`), `export default ${jsonData}`)
+    fs.writeFileSync(path.join(jsOutDir, `${mode}.ts`), tsData)
     fs.writeFileSync(path.join(cssOutDir, `_${mode}.scss`), scssData)
   }
 }
@@ -103,6 +103,20 @@ function mapToArray(map: Record<string, SassColor>) {
   return values.map(v => getColorString(v.value))
 }
 
+function makeTsOutput(modeName: string, data: Mode): string {
+  const result: Mode = { scale: {}, functional: {} }
+
+  for (const key of Object.keys(data.scale)) {
+    result.scale[camelCase(key)] = data.scale[key]
+  }
+  for (const key of Object.keys(data.functional)) {
+    result.functional[camelCase(key)] = data.functional[key]
+  }
+
+  const output = JSON.stringify(result, null, "  ")
+  return `export default ${output}`
+}
+
 function makeScssOutput(modeName: string, data: Mode): string {
   let output = ""
 
@@ -127,18 +141,6 @@ function makeScssOutput(modeName: string, data: Mode): string {
   }
 
   return `[data-color-mode="${modeName}"] {\n${output}}\n`
-}
-
-function camelize(data: Mode): Mode {
-  const result: Mode = { scale: {}, functional: {} }
-  for (const key of Object.keys(data.scale)) {
-    result.scale[camelCase(key)] = data.scale[key]
-  }
-  for (const key of Object.keys(data.functional)) {
-    result.functional[camelCase(key)] = data.functional[key]
-  }
-
-  return result
 }
 
 function camelCase(str: string): string {
