@@ -11,6 +11,9 @@ jobs:
       - name: Install dependencies
         run: yarn
 
+      - name: Rebuild node-sass
+        run: npm rebuild node-sass
+
       - name: Publish to the npm registry
         uses: "primer/publish@v2.0.0"
         with:
