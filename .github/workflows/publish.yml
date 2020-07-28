@@ -4,15 +4,15 @@ on: [push]
 jobs:
   publish:
     name: Publish
-    runs-on: node:10-slim
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
 
       - name: Install dependencies
         run: yarn
-
+      
       - name: Publish to the npm registry
-        uses: "primer/publish@v2.0.0"
+        uses: "primer/publish@node-12"
         with:
           args: "-- --unsafe-perm --allow-same-version"
         env:
