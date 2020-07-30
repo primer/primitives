@@ -2,6 +2,8 @@
 $black: #1b1f23;
 $white: #fff;
 
+$tbd: $black;
+
 //
 //
 // -------- Grays --------
@@ -238,49 +240,114 @@ $scale: (
 
 // -------- Functional colors ----------
 $functional: (
+  // Pure functional
+
   text-primary: $gray-900,
   text-secondary: $gray-600,
   text-tertiary: $gray-500,
-  text-alpha: $gray-600,
+  text-placeholder: $gray-300,
   text-link-primary: $blue-500,
   text-link-secondary: $gray-900,
-  text-link-tertiary: $gray-600,
-
-  border-solid-bold: $gray-400,
-  border-solid-primary: $gray-200,
-  border-solid-secondary: $gray-200,
-  border-alpha: $black-fade-15,
-  border-accent: $blue-500,
-  border-accent-light: $blue-200, // todo
-  border-danger: $red-500,
-  border-success: $green-400,
+  text-link-accent: $blue-500,
+  text-warning: $tbd,
+  text-danger: $tbd,
+  text-success: $tbd,
 
   ic-primary: $gray-500,
   ic-secondary: $gray-400,
-  ic-accent: $blue-500,
-  ic-bold: $gray-900,
+  ic-tertiary: $orange-600,
+  ic-warning: $tbd,
   ic-danger: $red-600,
   ic-success: $green-600,
-  ic-unknown: $gray-700, // todo
+
+  hl-hover-primary-bg: $gray-100,
+  hl-hover-primary-border: $gray-100,
+  hl-selected-primary-bg: #f9826c,
+  hl-selected-primary-border: #f9826c,
+  hl-hover-accent-bg: $gray-100,
+  hl-hover-accent-border: $gray-100,
+  hl-selected-accent-bg: #f9826c,
+  hl-selected-accent-border: #f9826c,
+  hl-focus-accent-bg: $tbd,
+  hl-focus-accent-border: $tbd,
+
+  border-solid-primary: $gray-200,
+  border-solid-secondary: $gray-300,
+  border-alpha: $black-fade-15,
+  border-danger: $tbd,
+  border-success: $tbd,
+  border-warning: $tbd,
 
   bg-canvas: $white,
   bg-canvas-reverse: $gray-900,
   bg-primary: $white,
   bg-secondary: $gray-000,
   bg-tertiary: $gray-100,
-  bg-alpha: $black,
-  bg-danger: $red-100,
-  bg-danger-bold: $red-500,
-  bg-success: $green-100,
-  bg-success-bold: $green-500,
+  bg-danger: $tbd,
+  bg-success: $tbd,
+  bg-warning: $tbd,
+  bg-danger-strong: $tbd,
+  bg-success-strong: $tbd,
+  bg-warning-strong: $tbd,
 
-  hl-accent-primary: #2ea44f, // todo: custom green from google sheet
-  hl-accent-secondary: $blue-500,
-  hl-accent-coral: #f9826c, // todo: custom coral from sheet
-  hl-hover-primary: $blue-500,
-  hl-hover-secondary: $gray-100,
-  hl-hover-destructive: $red-500,
+  // Components
 
-  hl-selected-primary: $blue-500,
-  hl-selected-nav: #f9826c, // todo: custom coral from sheet
+  btn-bg: $gray-000,
+  btn-border: $black,
+  btn-text: $gray-900,
+  btn-ic: $gray-500,
+
+  btn-primary-bg: #2ea44f,
+  btn-primary-border: $black,
+  btn-primary-text: $white,
+  btn-primary-ic: $white,
+
+  global-nav-logo: $white,
+  global-nav-bg: $gray-900,
+  global-nav-text: $white,
+  global-nav-input-bg: $gray-000,
+  global-nav-input-border: $gray-000,
+  global-nav-input-ic: $tbd,
+
+  cg-bg: $white,
+  cg-border: $white,
+  cg-day-bg: #EBEDF0,
+  cg-day-L1-bg: #9BE9A8,
+  cg-day-L2-bg: #40C463,
+  cg-day-L3-bg: #30A14E,
+  cg-day-L4-bg: #216E39,
+  cg-day-L4-border: rgba(27, 31, 35, 0.06),
+  cg-day-L3-border: rgba(27, 31, 35, 0.06),
+  cg-day-L2-border: rgba(27, 31, 35, 0.06),
+  cg-day-L1-border: rgba(27, 31, 35, 0.06),
+  cg-day-border: rgba(27, 31, 35, 0.06),
+
+  counter-bg: rgba(209, 213, 218, 0.5),
+  counter-border: rgba(209, 213, 218, 0.5),
+  counter-text: $gray-900,
+
+  topic-tag-bg: $blue-000,
+  topic-tag-border: $blue-000,
+  topic-tag-text: $blue-500,
+
+  input-bg: $white,
+  input-contrast-bg: $gray-000,
+
+  avatar-border: $black,
+
+  // App level
+
+  ic-folder: $blue-300,
+  hl-author-bg: $blue-000,
+  hl-author-border: $blue-200,
+  logo-subdued: $gray-300,
+
+  diff-bg-deletion: $tbd,
+  diff-border-deletion: $tbd,
+  diff-bg-addition: $tbd,
+  diff-border-addition: $tbd,
+  diff-bg-deletion-strong: $tbd,
+  diff-border-deletion-strong: $tbd,
+  diff-bg-addition-strong: $tbd,
+  diff-border-addition-strong: $tbd,
 );
