@@ -3,11 +3,10 @@ import path from 'path'
 import mkdirp from 'mkdirp'
 import { areObjectsSameShape } from 'deep-shape-equals'
 import camelcaseKeys from 'camelcase-keys'
-import { parseFile, collectVars, flattenVars } from './lib/scss'
+import { parseScssFile, collectVars, flattenVars } from './lib/scss'
 
 interface ModeData {
   type: string
-  file: string
   name: string
   vars: Record<string, any>
 }
@@ -19,19 +18,11 @@ const scssDir = path.join(outDir, "scss")
 const tsDir = path.join(outDir, "ts")
 const jsonDir = path.join(outDir, "json")
 
-async function build(): Promise<void> {
-  for (const dir of [scssDir, tsDir, jsonDir]) {
-    await mkdirp(dir)
-  }
-
-  await buildModes()
-}
-
-async function buildModes() {
+async function build() {
   const modeTypes = fs.readdirSync(dataDir)
 
   for (const type of modeTypes) {
-    const modes = await getData(type)
+    const modes = await getModesForType(type)
     if (!verifyModes(modes)) {
       throw new Error(`Invalid modes for type ${type}. Ensure all implementations export the same set of variables.`)
     }
@@ -39,18 +30,18 @@ async function buildModes() {
     await writeModeOutput(type, modes)
   }
 
-  await writeMainIndex(modeTypes)
+  await writeMainTsIndex(modeTypes)
 }
 
-async function getData(type: string): Promise<ReadonlyArray<ModeData>> {
+async function getModesForType(type: string): Promise<ReadonlyArray<ModeData>> {
   const filenames = fs.readdirSync(path.join(dataDir, type))
     .map(file => path.join(dataDir, type, file))
 
   return Promise.all(filenames.map(async (file) => {
     const name = path.basename(file, ".scss")
-    const rendered = await parseFile(file)
+    const rendered = await parseScssFile(file)
     const vars = collectVars(rendered.vars.global.$export)
-    return { type, file, name, vars }
+    return { type, name, vars }
   }))
 }
 
@@ -67,46 +58,47 @@ function verifyModes(modes: ReadonlyArray<ModeData>): boolean {
 
 async function writeModeOutput(type: string, modes: ReadonlyArray<ModeData>): Promise<void> {
   for (const mode of modes) {
-    writeScssOutput(type, mode)
-    writeTsOutput(type, mode)
-    writeJsonOutput(type, mode)
+    writeScssOutput(mode)
+    writeTsOutput(mode)
+    writeJsonOutput(mode)
   }
 
-  writeTypeIndex(type, modes.map(m => m.name))
+  writeTsTypeIndex(type, modes.map(m => m.name))
 }
 
-async function writeScssOutput(type: string, mode: ModeData): Promise<void> {
+async function writeScssOutput(mode: ModeData): Promise<void> {
   const vars = flattenVars(mode.vars)
 
   let output = "* {\n"
   for (const variable of Object.keys(vars)) {
     const value = vars[variable]
-    const name = variable.replace(/\./g, '-')
-    output += `  --${name}: ${value};\n`
+    output += `  --${variable}: ${value};\n`
   }
   output += '}\n'
 
-  const dir = path.join(scssDir, type)
+  const dir = path.join(scssDir, mode.type)
   await mkdirp(dir)
   fs.writeFileSync(path.join(dir, `_${mode.name}.scss`), output)
 }
 
-async function writeTsOutput(type: string, mode: ModeData): Promise<void> {
+async function writeTsOutput(mode: ModeData): Promise<void> {
   let output = JSON.stringify(camelcaseKeys(mode.vars, {deep: true}), null, '  ')
   output = `export default ${output}`
-  const dir = path.join(tsDir, type)
+
+  const dir = path.join(tsDir, mode.type)
   await mkdirp(dir)
   fs.writeFileSync(path.join(dir, `${mode.name}.ts`), output)
 }
 
-async function writeJsonOutput(type: string, mode: ModeData): Promise<void> {
+async function writeJsonOutput(mode: ModeData): Promise<void> {
   let output = JSON.stringify(camelcaseKeys(mode.vars, {deep: true}), null, '  ')
-  const dir = path.join(jsonDir, type)
+
+  const dir = path.join(jsonDir, mode.type)
   await mkdirp(dir)
   fs.writeFileSync(path.join(dir, `${mode.name}.json`), output)
 }
 
-async function writeTypeIndex(type: string, modules: string[]) {
+async function writeTsTypeIndex(type: string, modules: string[]) {
   let output = ''
   for (const mod of modules) {
     output += `import ${mod} from './${mod}'\n`
@@ -118,7 +110,7 @@ async function writeTypeIndex(type: string, modules: string[]) {
   fs.writeFileSync(path.join(dir, `index.ts`), output)
 }
 
-async function writeMainIndex(types: string[]) {
+async function writeMainTsIndex(types: string[]) {
   let output = ''
   for (const type of types) {
     output += `import ${type} from './${type}'\n`

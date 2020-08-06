@@ -36,9 +36,8 @@ export interface SassMapValue {
   [key: string]: SassValue
 }
 
-export async function parseFile(file: string): Promise<Document> {
+export async function parseScssFile(file: string): Promise<Document> {
   const { vars } = await renderSass({ file })
-
   return { vars }
 }
 
@@ -47,8 +46,6 @@ export function collectVars(data: SassMap): Record<string, any> {
 
   for (const key of Object.keys(data.value)) {
     const val = data.value[key]
-    // const varName = [...prefix, key].join('.')
-    // TODO: needs to be totally flat or totally structured
     if (val.type === 'SassColor' || val.type === 'SassNumber') {
       output[key] = stringifySassPrimitive(val)
     } else if (val.type === 'SassList') {
@@ -67,10 +64,10 @@ export function flattenVars(data: Record<string, any>, prefix: string[] = []): R
 
   for (const key of Object.keys(data)) {
     const val = data[key]
-    const varName = [...prefix, key].join('.')
+    const varName = [...prefix, key].join('-')
     if (Array.isArray(val)) {
       for (const i in val) {
-        const arrayVarName = `${varName}.${i}`
+        const arrayVarName = `${varName}-${i}`
         output[arrayVarName] = val[i]
       }
     } else if (typeof val === 'object') {
@@ -86,12 +83,12 @@ export function flattenVars(data: Record<string, any>, prefix: string[] = []): R
 
 function stringifySassPrimitive(val: SassValue): string {
   switch (val.type) {
-    case 'SassColor': return getColorString(val.value)
+    case 'SassColor': return sassColorToString(val.value)
     case 'SassNumber': return `${val.value}${val.unit}`
     default: throw new Error(`Cannot stringify Sass value type: ${val.type}`)
   }
 }
 
-function getColorString({r, g, b, a, hex}: SassColorValue) {
+function sassColorToString({r, g, b, a, hex}: SassColorValue): string {
   return a === 1 ? hex : `rgba(${r},${g},${b},${a})`
 }
