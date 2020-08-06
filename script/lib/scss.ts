@@ -1,7 +1,7 @@
 import {render as renderSass, Document} from 'sass-extract'
 import { stringify } from 'querystring'
 
-export type SassValue = SassMap | SassList | SassColor | SassNumber
+export type SassValue = SassMap | SassList | SassColor | SassNumber | SassString
 
 export interface SassColor {
   type: 'SassColor'
@@ -22,6 +22,11 @@ export interface SassNumber {
   type: 'SassNumber'
   value: number
   unit: string
+}
+
+export interface SassString {
+  type: 'SassString'
+  value: string
 }
 
 export interface SassColorValue {
@@ -65,11 +70,13 @@ export function flattenVars(data: Record<string, any>, prefix: string[] = []): R
   for (const key of Object.keys(data)) {
     const val = data[key]
     const varName = [...prefix, key].join('-')
-    if (Array.isArray(val)) {
+    if (Array.isArray(val) && !key.includes("shadow")) {
       for (const i in val) {
         const arrayVarName = `${varName}-${i}`
         output[arrayVarName] = val[i]
       }
+    } else if (Array.isArray(val)) {
+      output[varName] = val.join(" ")
     } else if (typeof val === 'object') {
       const obj = flattenVars(val, [...prefix, key])
       output = {...output, ...obj}
@@ -85,6 +92,7 @@ function stringifySassPrimitive(val: SassValue): string {
   switch (val.type) {
     case 'SassColor': return sassColorToString(val.value)
     case 'SassNumber': return `${val.value}${val.unit}`
+    case 'SassString': return val.value
     default: throw new Error(`Cannot stringify Sass value type: ${val.type}`)
   }
 }
