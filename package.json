@@ -5,8 +5,8 @@
   "files": [
     "dist"
   ],
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/js/index.js",
+  "types": "dist/ts/index.d.ts",
   "repository": "https://github.com/primer/primitives",
   "keywords": [
     "primitives",
@@ -24,13 +24,15 @@
   "homepage": "https://github.com/primer/primitives#readme",
   "scripts": {
     "prebuild": "rm -rf dist",
-    "build": "ts-node ./script/build-color-modes.ts && tsc",
+    "build": "ts-node ./script/build.ts && tsc",
     "prepack": "yarn build"
   },
   "dependencies": {},
   "devDependencies": {
     "@types/mkdirp": "^1.0.1",
     "@types/node": "^14.0.26",
+    "camelcase-keys": "^6.2.2",
+    "deep-shape-equals": "^0.1.2",
     "mkdirp": "^1.0.4",
     "node-sass": "^4.14.1",
     "sass-extract": "^2.1.0",

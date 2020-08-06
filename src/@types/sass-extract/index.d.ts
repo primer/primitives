@@ -6,12 +6,10 @@ declare module 'sass-extract' {
   export interface Document {
     vars: {
       global: {
-        $scale: {
+        $export: {
+          type: 'SassMap'
           value: Record<string, any>
         },
-        $functional: {
-          value: Record<string, any>
-        }
       }
     }
   }

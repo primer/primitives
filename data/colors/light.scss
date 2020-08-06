@@ -1,0 +1,381 @@
+// Black based on same hue as $gray-900
+$black: #1b1f23;
+$white: #fff;
+
+$tbd: $black;
+
+//
+//
+// -------- Grays --------
+$gray-000:        #fafbfc;
+$gray-100:        #f6f8fa;
+$gray-200:        #e1e4e8;
+$gray-300:        #d1d5da;
+$gray-400:        #959da5;
+$gray-500:        #6a737d;
+$gray-600:        #586069;
+$gray-700:        #444d56;
+$gray-800:        #2f363d;
+$gray-900:        #24292e; // body font color
+
+// -------- Blue --------
+$blue-000:        #f1f8ff;
+$blue-100:        #dbedff;
+$blue-200:        #c8e1ff;
+$blue-300:        #79b8ff;
+$blue-400:        #2188ff;
+$blue-500:        #0366d6; // Default: Passes AA with #fff
+$blue-600:        #005cc5;
+$blue-700:        #044289;
+$blue-800:        #032f62;
+$blue-900:        #05264c; // Passes with 1/2/300 blues
+
+// -------- Green --------
+$green-000:       #f0fff4;
+$green-100:       #dcffe4;
+$green-200:       #bef5cb;
+$green-300:       #85e89d;
+$green-400:       #34d058;
+$green-500:       #28a745; // Default. passes AA Large
+$green-600:       #22863a; // Text green, passes AA on #fff
+$green-700:       #176f2c;
+$green-800:       #165c26;
+$green-900:       #144620;
+
+// -------- Yellow --------
+$yellow-000:      #fffdef;
+$yellow-100:      #fffbdd;
+$yellow-200:      #fff5b1;
+$yellow-300:      #ffea7f;
+$yellow-400:      #ffdf5d;
+$yellow-500:      #ffd33d;
+$yellow-600:      #f9c513;
+$yellow-700:      #dbab09;
+$yellow-800:      #b08800;
+$yellow-900:      #735c0f;
+
+// -------- Orange --------
+$orange-000:      #fff8f2;
+$orange-100:      #ffebda;
+$orange-200:      #ffd1ac;
+$orange-300:      #ffab70;
+$orange-400:      #fb8532;
+$orange-500:      #f66a0a; // Default. passes AA Large with #fff
+$orange-600:      #e36209;
+$orange-700:      #d15704;
+$orange-800:      #c24e00;
+$orange-900:      #a04100;
+
+// -------- Red --------
+$red-000:         #ffeef0;
+$red-100:         #ffdce0;
+$red-200:         #fdaeb7;
+$red-300:         #f97583;
+$red-400:         #ea4a5a;
+$red-500:         #d73a49; // Default. passes AA
+$red-600:         #cb2431;
+$red-700:         #b31d28;
+$red-800:         #9e1c23;
+$red-900:         #86181d;
+
+// -------- Purple --------
+$purple-000:      #f5f0ff;
+$purple-100:      #e6dcfd;
+$purple-200:      #d1bcf9;
+$purple-300:      #b392f0;
+$purple-400:      #8a63d2;
+$purple-500:      #6f42c1; // passes AA with #fff
+$purple-600:      #5a32a3;
+$purple-700:      #4c2889;
+$purple-800:      #3a1d6e;
+$purple-900:      #29134e;
+
+// -------- Pink --------
+$pink-000:      #ffeef8;
+$pink-100:      #fedbf0;
+$pink-200:      #f9b3dd;
+$pink-300:      #f692ce;
+$pink-400:      #ec6cb9;
+$pink-500:      #ea4aaa;
+$pink-600:      #d03592;
+$pink-700:      #b93a86;
+$pink-800:      #99306f;
+$pink-900:      #6d224f;
+
+// -------- Fades --------
+$black-fade-15:      rgba($black, 0.15);
+$black-fade-30:      rgba($black, 0.3);
+$black-fade-50:      rgba($black, 0.5);
+$black-fade-70:      rgba($black, 0.7);
+$black-fade-85:      rgba($black, 0.85);
+
+$white-fade-15:      rgba($white, 0.15);
+$white-fade-30:      rgba($white, 0.3);
+$white-fade-50:      rgba($white, 0.5);
+$white-fade-70:      rgba($white, 0.7);
+$white-fade-85:      rgba($white, 0.85);
+
+// -------- Color defaults --------
+$red:         $red-500;
+$purple:      $purple-500;
+$blue:        $blue-500;
+$green:       $green-500;
+$yellow:      $yellow-500;
+$orange:      $orange-500;
+$pink:        $pink-500;
+$gray-dark:   $gray-900;
+$gray-light:  $gray-400;
+$gray:        $gray-500;
+
+// -------- Color gradient maps --------
+
+$scale: (
+  black: $black,
+  white: $white,
+
+  gray: (
+    $gray-000,
+    $gray-100,
+    $gray-200,
+    $gray-300,
+    $gray-400,
+    $gray-500,
+    $gray-600,
+    $gray-700,
+    $gray-800,
+    $gray-900,
+  ),
+
+  blue: (
+    $blue-000,
+    $blue-100,
+    $blue-200,
+    $blue-300,
+    $blue-400,
+    $blue-500,
+    $blue-600,
+    $blue-700,
+    $blue-800,
+    $blue-900,
+  ),
+
+  green: (
+    $green-000,
+    $green-100,
+    $green-200,
+    $green-300,
+    $green-400,
+    $green-500,
+    $green-600,
+    $green-700,
+    $green-800,
+    $green-900,
+  ),
+
+  yellow: (
+    $yellow-000,
+    $yellow-100,
+    $yellow-200,
+    $yellow-300,
+    $yellow-400,
+    $yellow-500,
+    $yellow-600,
+    $yellow-700,
+    $yellow-800,
+    $yellow-900,
+  ),
+
+  orange: (
+    $orange-000,
+    $orange-100,
+    $orange-200,
+    $orange-300,
+    $orange-400,
+    $orange-500,
+    $orange-600,
+    $orange-700,
+    $orange-800,
+    $orange-900,
+  ),
+
+  red: (
+    $red-000,
+    $red-100,
+    $red-200,
+    $red-300,
+    $red-400,
+    $red-500,
+    $red-600,
+    $red-700,
+    $red-800,
+    $red-900,
+  ),
+
+  purple: (
+    $purple-000,
+    $purple-100,
+    $purple-200,
+    $purple-300,
+    $purple-400,
+    $purple-500,
+    $purple-600,
+    $purple-700,
+    $purple-800,
+    $purple-900,
+  ),
+
+  pink: (
+    $pink-000,
+    $pink-100,
+    $pink-200,
+    $pink-300,
+    $pink-400,
+    $pink-500,
+    $pink-600,
+    $pink-700,
+    $pink-800,
+    $pink-900,
+  )
+);
+
+// -------- Functional colors ----------
+$export: (
+  scale: $scale,
+
+  // Pure functional
+
+  text: (
+    primary: $gray-900,
+    secondary: $gray-600,
+    tertiary: $gray-500,
+    placeholder: $gray-300,
+    link-primary: $blue-500,
+    link-secondary: $gray-900,
+    link-accent: $blue-500,
+    warning: $tbd,
+    danger: $tbd,
+    success: $tbd,
+  ),
+
+  ic: (
+    primary: $gray-500,
+    secondary: $gray-400,
+    tertiary: $orange-600,
+    warning: $tbd,
+    danger: $red-600,
+    success: $green-600,
+  ),
+
+  hl: (
+    hover-primary-bg: $gray-100,
+    hover-primary-border: $gray-100,
+    selected-primary-bg: #f9826c,
+    selected-primary-border: #f9826c,
+    hover-accent-bg: $gray-100,
+    hover-accent-border: $gray-100,
+    selected-accent-bg: #f9826c,
+    selected-accent-border: #f9826c,
+    focus-accent-bg: $tbd,
+    focus-accent-border: $tbd,
+  ),
+
+  border: (
+    solid-primary: $gray-200,
+    solid-secondary: $gray-300,
+    alpha: $black-fade-15,
+    danger: $tbd,
+    success: $tbd,
+    warning: $tbd,
+  ),
+
+  bg: (
+    canvas: $white,
+    canvas-reverse: $gray-900,
+    primary: $white,
+    secondary: $gray-000,
+    tertiary: $gray-100,
+    danger: $tbd,
+    success: $tbd,
+    warning: $tbd,
+    danger-strong: $tbd,
+    success-strong: $tbd,
+    warning-strong: $tbd,
+  ),
+
+  // Components
+
+  btn: (
+    bg: $gray-000,
+    border: $black,
+    text: $gray-900,
+    ic: $gray-500,
+
+    primary-bg: #2ea44f,
+    primary-border: $black,
+    primary-text: $white,
+    primary-ic: $white,
+  ),
+
+  global: (
+    nav-logo: $white,
+    nav-bg: $gray-900,
+    nav-text: $white,
+    nav-input-bg: $gray-000,
+    nav-input-border: $gray-000,
+    nav-input-ic: $tbd,
+  ),
+
+  cg: (
+    bg: $white,
+    border: $white,
+    day-bg: #EBEDF0,
+    day-L1-bg: #9BE9A8,
+    day-L2-bg: #40C463,
+    day-L3-bg: #30A14E,
+    day-L4-bg: #216E39,
+    day-L4-border: rgba(27, 31, 35, 0.06),
+    day-L3-border: rgba(27, 31, 35, 0.06),
+    day-L2-border: rgba(27, 31, 35, 0.06),
+    day-L1-border: rgba(27, 31, 35, 0.06),
+    day-border: rgba(27, 31, 35, 0.06),
+  ),
+
+  counter: (
+    bg: rgba(209, 213, 218, 0.5),
+    border: rgba(209, 213, 218, 0.5),
+    text: $gray-900,
+  ),
+
+  topic: (
+    topic-tag-bg: $blue-000,
+    topic-tag-border: $blue-000,
+    topic-tag-text: $blue-500,
+  ),
+
+  input: (
+    bg: $white,
+    contrast-bg: $gray-000,
+  ),
+
+  avatar: (
+    border: $black,
+  ),
+
+  // App level
+
+  ic-folder: $blue-300,
+  hl-author-bg: $blue-000,
+  hl-author-border: $blue-200,
+  logo-subdued: $gray-300,
+
+  diff: (
+    bg-deletion: $tbd,
+    border-deletion: $tbd,
+    bg-addition: $tbd,
+    border-addition: $tbd,
+    bg-deletion-strong: $tbd,
+    border-deletion-strong: $tbd,
+    bg-addition-strong: $tbd,
+    border-addition-strong: $tbd,
+  ),
+);

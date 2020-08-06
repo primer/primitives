@@ -11,15 +11,16 @@
       "./src/@types",
       "./node_modules/@types"
     ],
-    "rootDir": ".",
-    "outDir": "./dist",
+    "rootDir": "./dist/ts",
+    "outDir": "./dist/js",
     "declaration": true
   },
   "include": [
-    "./index.ts",
-    "./primitives",
-    "./theme",
-    "./src"
+    "./dist/ts/"
+    // "./index.ts",
+    // "./primitives",
+    // "./theme",
+    // "./src"
   ],
   "exclude": [
     "./src/@types"

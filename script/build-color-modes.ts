@@ -140,7 +140,7 @@ function makeScssOutput(modeName: string, data: Mode): string {
     output += `  --${colorName}: ${value};\n`
   }
 
-  return `[data-color-mode="${modeName}"] {\n${output}}\n`
+  return `* {\n${output}}\n`
 }
 
 function camelCase(str: string): string {
