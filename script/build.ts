@@ -24,7 +24,7 @@ async function build() {
   for (const type of modeTypes) {
     const modes = await getModesForType(type)
     if (!verifyModes(modes)) {
-      throw new Error(`Invalid modes for type ${type}. Ensure all implementations export the same set of variables.`)
+      throw new Error(`Invalid modes for type '${type}'. Ensure all implementations export the same set of variables.`)
     }
 
     await writeModeOutput(type, modes)
@@ -50,7 +50,7 @@ function verifyModes(modes: ReadonlyArray<ModeData>): boolean {
     return true
   }
 
-  const vars = modes.map(m => Object.keys(m.vars))
+  const vars = modes.map(m => m.vars)
   const [first, ...rest] = vars
 
   return rest.every(v => areObjectsSameShape([first, v]))
