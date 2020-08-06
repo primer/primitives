@@ -69,12 +69,13 @@ async function writeModeOutput(type: string, modes: ReadonlyArray<ModeData>): Pr
 async function writeScssOutput(mode: ModeData): Promise<void> {
   const vars = flattenVars(mode.vars)
 
-  let output = "* {\n"
+  let output = `@mixin primer-${mode.type}-${mode.name}($sel) {\n`
+  output += "  #{$sel} {\n"
   for (const variable of Object.keys(vars)) {
     const value = vars[variable]
-    output += `  --${variable}: ${value};\n`
+    output += `    --${variable}: ${value};\n`
   }
-  output += '}\n'
+  output += '  }\n}\n'
 
   const dir = path.join(scssDir, mode.type)
   await mkdirp(dir)
