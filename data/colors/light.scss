@@ -103,6 +103,7 @@ $pink-800:      #99306f;
 $pink-900:      #6d224f;
 
 // -------- Fades --------
+$black-fade-10:      rgba($black, 0.10);
 $black-fade-15:      rgba($black, 0.15);
 $black-fade-30:      rgba($black, 0.3);
 $black-fade-50:      rgba($black, 0.5);
@@ -249,95 +250,76 @@ $export: (
     secondary: $gray-600,
     tertiary: $gray-500,
     placeholder: $gray-300,
+    disabled: $gray-300,
     link-primary: $blue-500,
     link-secondary: $gray-900,
-    link-accent: $blue-500,
-    warning: $tbd,
-    danger: $tbd,
-    success: $tbd,
+    link-tertiary: $gray-600, 
+    danger: $red-500,
+    success: $green-600,
+    warning: $yellow-800,
   ),
 
   ic: (
-    primary: $gray-500,
-    secondary: $gray-400,
-    tertiary: $orange-600,
-    warning: $tbd,
-    danger: $red-600,
+    primary:$gray-900,
+    secondary: $gray-600,
+    tertiary: $gray-400,
+    info: $blue-500,
+    danger: $red-500,
     success: $green-600,
+    warning: $yellow-800,
   ),
 
   hl: (
-    hover-primary-bg: $gray-100,
-    hover-primary-border: $gray-100,
-    selected-primary-bg: #f9826c,
-    selected-primary-border: #f9826c,
-    hover-accent-bg: $gray-100,
-    hover-accent-border: $gray-100,
-    selected-accent-bg: #f9826c,
-    selected-accent-border: #f9826c,
-    focus-accent-bg: $tbd,
-    focus-accent-border: $tbd,
+    hover-primary-bg: $blue-500,
+    hover-primary-border: $blue-500,
+    hover-secondary-bg: $gray-100,
+    hover-secondary-border: $gray-100,
+    selected-primary-bg: $blue-500,
+    selected-primary-border: $blue-500,
+ 
   ),
 
   border: (
-    solid-primary: $gray-200,
-    solid-secondary: $gray-300,
-    alpha: $black-fade-15,
-    danger: $tbd,
-    success: $tbd,
-    warning: $tbd,
+    primary: $gray-200,
+    secondary: $gray-300,
+    danger: $red-500,
+    success: $green-500,
+    warning: $yellow-700,
   ),
 
   bg: (
     canvas: $white,
-    canvas-reverse: $gray-900,
+    canvas-inverse: $gray-900,
     primary: $white,
-    secondary: $gray-000,
-    tertiary: $gray-100,
-    danger: $tbd,
-    success: $tbd,
-    warning: $tbd,
-    danger-strong: $tbd,
-    success-strong: $tbd,
-    warning-strong: $tbd,
+    secondary: $gray-100,
+    tertiary: $gray-000,
+    overlay: $tbd, 
+    info:$blue-100,
+    danger: $red-100,
+    success: $green-100,
+    warning: $yellow-200,
+    info-inverse: $blue-500,
+    danger-inverse: $red-500,
+    success-inverse: $green-500,
+    warning-inverse: $yellow-700,
   ),
 
   // Components
 
   btn: (
     bg: $gray-000,
-    border: $black,
+    border: $black-fade-15,
     text: $gray-900,
     ic: $gray-500,
+    /* box and inset shadow ?? */
+    /* states */
 
-    primary-bg: #2ea44f,
-    primary-border: $black,
+    primary-bg: $custom-green,
+    primary-border: $black-fade-15,
     primary-text: $white,
     primary-ic: $white,
-  ),
-
-  global: (
-    nav-logo: $white,
-    nav-bg: $gray-900,
-    nav-text: $white,
-    nav-input-bg: $gray-000,
-    nav-input-border: $gray-000,
-    nav-input-ic: $tbd,
-  ),
-
-  cg: (
-    bg: $white,
-    border: $white,
-    day-bg: #EBEDF0,
-    day-L1-bg: #9BE9A8,
-    day-L2-bg: #40C463,
-    day-L3-bg: #30A14E,
-    day-L4-bg: #216E39,
-    day-L4-border: rgba(27, 31, 35, 0.06),
-    day-L3-border: rgba(27, 31, 35, 0.06),
-    day-L2-border: rgba(27, 31, 35, 0.06),
-    day-L1-border: rgba(27, 31, 35, 0.06),
-    day-border: rgba(27, 31, 35, 0.06),
+    /* box and inset shadow ?? */
+    /* states */
   ),
 
   counter: (
@@ -358,7 +340,7 @@ $export: (
   ),
 
   avatar: (
-    border: $black,
+    border: $black-fade-10,
   ),
 
   // App level
@@ -378,4 +360,32 @@ $export: (
     bg-addition-strong: $tbd,
     border-addition-strong: $tbd,
   ),
+  
+  global-nav: (
+    logo: $white,
+    bg: $gray-900,
+    text: $white,
+    input-bg: $gray-000,
+    input-border: $gray-000,
+    input-ic: $tbd,
+    input-placeholder: $tbd,
+  ),
+
+  calendar-graph: (
+    /*bg: $white,
+    border: $white,*/
+    day-bg: #EBEDF0,
+    day-border: rgba(27, 31, 35, 0.06),
+    day-L1-bg: #9BE9A8,
+    day-L2-bg: #40C463,
+    day-L3-bg: #30A14E,
+    day-L4-bg: #216E39,
+    day-L4-border: rgba(27, 31, 35, 0.06),
+    day-L3-border: rgba(27, 31, 35, 0.06),
+    day-L2-border: rgba(27, 31, 35, 0.06),
+    day-L1-border: rgba(27, 31, 35, 0.06),
+   
+  ),
+  
+   
 );
