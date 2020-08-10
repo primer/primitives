@@ -239,6 +239,11 @@ $scale: (
   )
 );
 
+$custom-green: #2ea44f;
+$custom-green-alt-1: #2c974b; // bnt primary hover
+$custom-green-alt-2: darken($custom-green-alt-1, 2%); // btn primary active
+$custom-green-alt-3: #94d3a2; // btn primary disabled
+
 // -------- Functional colors ----------
 $export: (
   scale: $scale,
