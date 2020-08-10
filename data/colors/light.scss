@@ -294,6 +294,7 @@ $export: (
     primary: $gray-200,
     primary-light: lighten($gray-200, 3%),
     secondary: $gray-300,
+    tertiary: $gray-000,
     inverse: $white,
     danger: $red-500,
     success: $green-500,
@@ -342,6 +343,10 @@ $export: (
       border: rgba($green-700, 0.2),
       icon: rgba($green-700, 0.8),
     )
+  ),
+
+  blankslate: (
+    icon: lighten($gray-400, 5%),
   ),
 
   btn: (
