@@ -328,13 +328,13 @@ $export: (
     ),
 
     error: (
-      bg: #ffe3e6, // raw color in Primer CSS ??
+      bg: #ffe3e6, // custom color from PCSS
       border: rgba($red-800, 0.2),
       icon: rgba($red-800, 0.6),
     ),
 
     success: (
-      bg: $bg-green-light, // TODO what is this
+      bg: $bg-green-light, // TODO: extract?
       border: rgba($green-700, 0.2),
       icon: rgba($green-700, 0.8),
     )
