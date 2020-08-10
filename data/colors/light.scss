@@ -262,6 +262,7 @@ $export: (
     tertiary: $gray-500,
     placeholder: $gray-300,
     disabled: $gray-300,
+    inverse: $white,
     link-primary: $blue-500,
     link-secondary: $gray-900,
     link-tertiary: $gray-600,
@@ -291,7 +292,9 @@ $export: (
 
   border: (
     primary: $gray-200,
+    primary-light: lighten($gray-200, 3%),
     secondary: $gray-300,
+    inverse: $white,
     danger: $red-500,
     success: $green-500,
     warning: $yellow-700,
@@ -304,6 +307,7 @@ $export: (
     secondary: $gray-100,
     tertiary: $gray-000,
     overlay: $tbd,
+    selected: $blue-500, // `$bg-blue` in Primer CSS
     info:$blue-100,
     danger: $red-100,
     success: $green-100,
@@ -393,6 +397,8 @@ $export: (
 
   avatar: (
     border: $black-fade-10,
+    stack-fade: $gray-300,
+    stack-fade-more: $gray-200,
   ),
 
   // App level
