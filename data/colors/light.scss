@@ -239,10 +239,16 @@ $scale: (
   )
 );
 
+// Colors from Primer CSS, either with
+// specific names, or adding new names to existing
+// custom colors with no name
+
 $custom-green: #2ea44f;
 $custom-green-alt-1: #2c974b; // bnt primary hover
 $custom-green-alt-2: darken($custom-green-alt-1, 2%); // btn primary active
 $custom-green-alt-3: #94d3a2; // btn primary disabled
+
+$bg-green-light: $green-100;
 
 // -------- Functional colors ----------
 $export: (
@@ -309,6 +315,30 @@ $export: (
   ),
 
   // Components
+
+  alert: (
+    bg: $blue-100,
+    border: rgba($blue-700, 0.2),
+    icon: rgba($blue-700, 0.6),
+
+    warn: (
+      bg: $yellow-100,
+      border: rgba($yellow-800, 0.2),
+      icon: $yellow-800,
+    ),
+
+    error: (
+      bg: #ffe3e6, // raw color in Primer CSS ??
+      border: rgba($red-800, 0.2),
+      icon: rgba($red-800, 0.6),
+    ),
+
+    success: (
+      bg: $bg-green-light, // TODO what is this
+      border: rgba($green-700, 0.2),
+      icon: rgba($green-700, 0.8),
+    )
+  ),
 
   btn: (
     bg: $gray-000,
