@@ -315,15 +315,33 @@ $export: (
     border: $black-fade-15,
     text: $gray-900,
     ic: $gray-500,
+
+    bg-hover: #f3f4f6,
+    bg-active: darken(#f3f4f6, 2%),
+
+    box-shadow: 0 1px 0 rgba($black, 0.04),
+    box-shadow-highlight: inset 0 1px 0 rgba($white, 0.25),
+    box-shadow-inset: inset 0 1px 0 rgba($gray-000, 0.2),
+    box-shadow-focus: 0 0 0 3px rgba($blue-500, 0.3),
     /* box and inset shadow ?? */
     /* states */
 
-    primary-bg: $custom-green,
-    primary-border: $black-fade-15,
-    primary-text: $white,
-    primary-ic: $white,
-    /* box and inset shadow ?? */
-    /* states */
+    primary: (
+      bg: $custom-green,
+      border: $black-fade-15,
+      text: $white,
+      ic: $white,
+
+      bg-hover: $tbd,
+      bg-active: $tbd,
+
+      box-shadow: $tbd,
+      box-shadow-highlight: $tbd,
+      box-shadow-inset: $tbd,
+      box-shadow-focus: $tbd,
+      /* box and inset shadow ?? */
+      /* states */
+    ),
   ),
 
   counter: (
