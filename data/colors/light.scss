@@ -258,7 +258,7 @@ $export: (
     disabled: $gray-300,
     link-primary: $blue-500,
     link-secondary: $gray-900,
-    link-tertiary: $gray-600, 
+    link-tertiary: $gray-600,
     danger: $red-500,
     success: $green-600,
     warning: $yellow-800,
@@ -281,7 +281,6 @@ $export: (
     hover-secondary-border: $gray-100,
     selected-primary-bg: $blue-500,
     selected-primary-border: $blue-500,
- 
   ),
 
   border: (
@@ -298,7 +297,7 @@ $export: (
     primary: $white,
     secondary: $gray-100,
     tertiary: $gray-000,
-    overlay: $tbd, 
+    overlay: $tbd,
     info:$blue-100,
     danger: $red-100,
     success: $green-100,
@@ -365,7 +364,7 @@ $export: (
     bg-addition-strong: $tbd,
     border-addition-strong: $tbd,
   ),
-  
+
   global-nav: (
     logo: $white,
     bg: $gray-900,
@@ -389,8 +388,5 @@ $export: (
     day-L3-border: rgba(27, 31, 35, 0.06),
     day-L2-border: rgba(27, 31, 35, 0.06),
     day-L1-border: rgba(27, 31, 35, 0.06),
-   
   ),
-  
-   
 );
