@@ -6,6 +6,8 @@ import camelcaseKeys from 'camelcase-keys'
 import chalk from 'chalk'
 import { parseScssFile, collectVars, flattenVars } from './lib/scss'
 
+let SKIP: string[] = (process.env['PRIMER_SKIP'] || "").split(',')
+
 interface ModeData {
   type: string
   name: string
@@ -23,7 +25,9 @@ async function build() {
   const modeTypes = fs.readdirSync(dataDir)
 
   for (const type of modeTypes) {
-    const modes = await getModesForType(type)
+    let modes = await getModesForType(type)
+    modes = modes.filter(mode => !SKIP.includes(`${mode.type}/${mode.name}`))
+
     if (!verifyModes(modes)) {
       console.log(`Invalid modes for type '${type}'. The following variables are missing in one or more modes:`)
       printVarList(modes)
@@ -39,6 +43,7 @@ async function build() {
 async function getModesForType(type: string): Promise<ReadonlyArray<ModeData>> {
   const filenames = fs.readdirSync(path.join(dataDir, type))
     .map(file => path.join(dataDir, type, file))
+    .filter(file => file.endsWith('.scss'))
 
   return Promise.all(filenames.map(async (file) => {
     const name = path.basename(file, ".scss")
