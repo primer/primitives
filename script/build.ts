@@ -12,6 +12,7 @@ interface ModeData {
   type: string
   name: string
   vars: Record<string, any>
+  prefix: string
 }
 
 const dataDir = path.join(__dirname, "..", "data")
@@ -49,7 +50,12 @@ async function getModesForType(type: string): Promise<ReadonlyArray<ModeData>> {
     const name = path.basename(file, ".scss")
     const rendered = await parseScssFile(file)
     const vars = collectVars(rendered.vars.global.$export)
-    return { type, name, vars }
+    let prefix = `${type}`
+    const prefixFile = path.join(dataDir, type, "prefix")
+    if (fs.existsSync(prefixFile)) {
+      prefix = fs.readFileSync(prefixFile, "utf8").trim()
+    }
+    return { type, name, vars, prefix }
   }))
 }
 
@@ -103,7 +109,7 @@ async function writeScssOutput(mode: ModeData): Promise<void> {
   output += "  #{$sel} {\n"
   for (const variable of Object.keys(vars)) {
     const value = vars[variable]
-    output += `    --${variable}: ${value};\n`
+    output += `    --${mode.prefix}-${variable}: ${value};\n`
   }
   output += '  }\n}\n'
 
