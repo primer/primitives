@@ -3,6 +3,7 @@ import path from 'path'
 import mkdirp from 'mkdirp'
 import { areObjectsSameShape } from 'deep-shape-equals'
 import camelcaseKeys from 'camelcase-keys'
+import chalk from 'chalk'
 import { parseScssFile, collectVars, flattenVars } from './lib/scss'
 
 interface ModeData {
@@ -24,7 +25,9 @@ async function build() {
   for (const type of modeTypes) {
     const modes = await getModesForType(type)
     if (!verifyModes(modes)) {
-      throw new Error(`Invalid modes for type '${type}'. Ensure all implementations export the same set of variables.`)
+      console.log(`Invalid modes for type '${type}'. The following variables are missing in one or more modes:`)
+      printVarList(modes)
+      process.exit(1)
     }
 
     await writeModeOutput(type, modes)
@@ -54,6 +57,28 @@ function verifyModes(modes: ReadonlyArray<ModeData>): boolean {
   const [first, ...rest] = vars
 
   return rest.every(v => areObjectsSameShape([first, v]))
+}
+
+function printVarList(modes: ReadonlyArray<ModeData>): void {
+  const allVarsPerMode = modes.reduce((acc, mode) => {
+    const allVars = flattenVars(mode.vars)
+    acc[mode.name] = allVars
+    return acc
+  }, {} as Record<string, Record<string, string>>)
+
+  const allVarNames = modes.flatMap(mode => {
+    return Object.keys(flattenVars(mode.vars))
+  })
+  const uniqueVarNames = [...new Set(allVarNames)].sort()
+
+  for (const v of uniqueVarNames.values()) {
+    const missingModes = modes.filter(mode => !(allVarsPerMode[mode.name][v])).map(mode => mode.name)
+    if (missingModes.length > 0) {
+      console.log(
+        chalk`Variable {bold ${v}} is missing in modes: ${missingModes.map(str => chalk.bold(str)).join(', ')}`
+      )
+    }
+  }
 }
 
 async function writeModeOutput(type: string, modes: ReadonlyArray<ModeData>): Promise<void> {
