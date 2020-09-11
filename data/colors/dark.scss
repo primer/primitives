@@ -1,0 +1,453 @@
+// TODO: switch order of the scale.
+// This is just a shortcut so that the functional variables can be kept the same
+
+$black: #fff;
+$white: #050505;
+
+$tbd: $black;
+
+//
+//
+// -------- Grays --------
+$gray-000:        #050505; // Background
+$gray-100:        #17181C;
+$gray-200:        #2E2F37;
+$gray-300:        #41434E;
+$gray-400:        #525560;
+$gray-500:        #6C6F7E;
+$gray-600:        #9194A1;
+$gray-700:        #BFC1C9;
+$gray-800:        #E3E4E8;
+$gray-900:        #F7F7F9; // Foreground
+
+// -------- Blue --------
+$blue-000:        #082A52;
+$blue-100:        #063366;
+$blue-200:        #0B498F;
+$blue-300:        #0C65C9;
+$blue-400:        #0D6EDB;
+$blue-500:        #2E8FFF;
+$blue-600:        #85BEFF;
+$blue-700:        #D1E6FF;
+$blue-800:        #E6F2FF;
+$blue-900:        #F5FAFF;
+
+// -------- Green --------
+$green-000:       #184D25;
+$green-100:       #1B612B;
+$green-200:       #1E7533;
+$green-300:       #2B8F43;
+$green-400:       #32B34F;
+$green-500:       #40D663;
+$green-600:       #95F0AB;
+$green-700:       #CBF7D5;
+$green-800:       #E6FFEB;
+$green-900:       #F5FFF8;
+
+// -------- Yellow --------
+$yellow-000:      #755F13;
+$yellow-100:      #B89007;
+$yellow-200:      #E0B112;
+$yellow-300:      #FFCB1A;
+$yellow-400:      #FFD74D;
+$yellow-500:      #FFE166;
+$yellow-600:      #FFEC8A;
+$yellow-700:      #FFF6B8;
+$yellow-800:      #FFFCE6;
+$yellow-900:      #FFFEF5;
+
+// -------- Orange --------
+$orange-000:      #A84603;
+$orange-100:      #C75204;
+$orange-200:      #D65C09;
+$orange-300:      #EB680E;
+$orange-400:      #FA6F0F;
+$orange-500:      #FF8A38;
+$orange-600:      #FFAE75;
+$orange-700:      #FFD5B3;
+$orange-800:      #FFEEE0;
+$orange-900:      #FFFAF5;
+
+// -------- Red --------
+$red-000:         #8F1D22;
+$red-100:         #A82229;
+$red-200:         #BD222D;
+$red-300:         #D62B38;
+$red-400:         #E04352;
+$red-500:         #F55363;
+$red-600:         #FF808D;
+$red-700:         #FFB3BB;
+$red-800:         #FFE0E4;
+$red-900:         #FFF0F2;
+
+// -------- Purple --------
+$purple-000:       #2E1757;
+$purple-100:       #3F2175;
+$purple-200:       #522E8F;
+$purple-300:       #6139A8;
+$purple-400:       #7548C7;
+$purple-500:       #916BD6;
+$purple-600:       #B899F0;
+$purple-700:       #DAC7FF;
+$purple-800:       #EAE0FF;
+$purple-900:       #F7F2FF;
+
+// -------- Pink --------
+$pink-000:       #702653;
+$pink-100:       #9E3674;
+$pink-200:       #C2428E;
+$pink-300:       #D63C99;
+$pink-400:       #F051B0;
+$pink-500:       #F576C2;
+$pink-600:       #FA9BD4;
+$pink-700:       #FFBDE4;
+$pink-800:       #FEE0F2;
+$pink-900:       #FFF0F9;
+
+// -------- Fades --------
+$black-fade-10:      rgba($white, 0.10);
+$black-fade-15:      rgba($white, 0.15);
+$black-fade-30:      rgba($white, 0.3);
+$black-fade-50:      rgba($white, 0.5);
+$black-fade-70:      rgba($white, 0.7);
+$black-fade-85:      rgba($white, 0.85);
+
+$white-fade-15:      rgba($black, 0.15);
+$white-fade-30:      rgba($black, 0.3);
+$white-fade-50:      rgba($black, 0.5);
+$white-fade-70:      rgba($black, 0.7);
+$white-fade-85:      rgba($black, 0.85);
+
+// -------- Color defaults --------
+$red:         $red-500;
+$purple:      $purple-500;
+$blue:        $blue-500;
+$green:       $green-500;
+$yellow:      $yellow-500;
+$orange:      $orange-500;
+$pink:        $pink-500;
+$gray-dark:   $gray-900;
+$gray-light:  $gray-400;
+$gray:        $gray-500;
+
+// -------- Color gradient maps --------
+
+$scale: (
+  black: $black,
+  white: $white,
+
+  gray: (
+    $gray-000,
+    $gray-100,
+    $gray-200,
+    $gray-300,
+    $gray-400,
+    $gray-500,
+    $gray-600,
+    $gray-700,
+    $gray-800,
+    $gray-900,
+  ),
+
+  blue: (
+    $blue-000,
+    $blue-100,
+    $blue-200,
+    $blue-300,
+    $blue-400,
+    $blue-500,
+    $blue-600,
+    $blue-700,
+    $blue-800,
+    $blue-900,
+  ),
+
+  green: (
+    $green-000,
+    $green-100,
+    $green-200,
+    $green-300,
+    $green-400,
+    $green-500,
+    $green-600,
+    $green-700,
+    $green-800,
+    $green-900,
+  ),
+
+  yellow: (
+    $yellow-000,
+    $yellow-100,
+    $yellow-200,
+    $yellow-300,
+    $yellow-400,
+    $yellow-500,
+    $yellow-600,
+    $yellow-700,
+    $yellow-800,
+    $yellow-900,
+  ),
+
+  orange: (
+    $orange-000,
+    $orange-100,
+    $orange-200,
+    $orange-300,
+    $orange-400,
+    $orange-500,
+    $orange-600,
+    $orange-700,
+    $orange-800,
+    $orange-900,
+  ),
+
+  red: (
+    $red-000,
+    $red-100,
+    $red-200,
+    $red-300,
+    $red-400,
+    $red-500,
+    $red-600,
+    $red-700,
+    $red-800,
+    $red-900,
+  ),
+
+  purple: (
+    $purple-000,
+    $purple-100,
+    $purple-200,
+    $purple-300,
+    $purple-400,
+    $purple-500,
+    $purple-600,
+    $purple-700,
+    $purple-800,
+    $purple-900,
+  ),
+
+  pink: (
+    $pink-000,
+    $pink-100,
+    $pink-200,
+    $pink-300,
+    $pink-400,
+    $pink-500,
+    $pink-600,
+    $pink-700,
+    $pink-800,
+    $pink-900,
+  )
+);
+
+// Colors from Primer CSS, either with
+// specific names, or adding new names to existing
+// custom colors with no name
+
+$custom-green: #2ea44f;
+$custom-green-alt-1: #2c974b; // bnt primary hover
+$custom-green-alt-2: darken($custom-green-alt-1, 2%); // btn primary active
+$custom-green-alt-3: #94d3a2; // btn primary disabled
+
+$bg-green-light: $green-100;
+
+// -------- Functional colors ----------
+$export: (
+  scale: $scale,
+
+  // Pure functional
+
+  text: (
+    primary: $gray-900,
+    secondary: $gray-600,
+    tertiary: $gray-500,
+    placeholder: $gray-300,
+    disabled: $gray-300,
+    inverse: $white,
+    link-primary: $blue-500,
+    link-secondary: $gray-900,
+    link-tertiary: $gray-600,
+    danger: $red-500,
+    success: $green-600,
+    warning: $yellow-800,
+  ),
+
+  ic: (
+    primary:$gray-900,
+    secondary: $gray-600,
+    tertiary: $gray-400,
+    info: $blue-500,
+    danger: $red-500,
+    success: $green-600,
+    warning: $yellow-800,
+  ),
+
+  hl: (
+    hover-primary-bg: $blue-500,
+    hover-primary-border: $blue-500,
+    hover-secondary-bg: $gray-100,
+    hover-secondary-border: $gray-100,
+    selected-primary-bg: $blue-500,
+    selected-primary-border: $blue-500,
+  ),
+
+  border: (
+    primary: $gray-200,
+    primary-light: lighten($gray-200, 3%),
+    secondary: $gray-300,
+    tertiary: $gray-000,
+    inverse: $white,
+    danger: $red-500,
+    success: $green-500,
+    warning: $yellow-700,
+  ),
+
+  bg: (
+    canvas: $white,
+    canvas-inverse: $gray-900,
+    primary: $white,
+    secondary: $gray-100,
+    tertiary: $gray-000,
+    overlay: $tbd,
+    selected: $blue-500, // `$bg-blue` in Primer CSS
+    info:$blue-100,
+    danger: $red-100,
+    success: $green-100,
+    warning: $yellow-200,
+    info-inverse: $blue-500,
+    danger-inverse: $red-500,
+    success-inverse: $green-500,
+    warning-inverse: $yellow-700,
+  ),
+
+  // Components
+
+  alert: (
+    bg: $blue-100,
+    border: rgba($blue-700, 0.2),
+    icon: rgba($blue-700, 0.6),
+
+    warn: (
+      bg: $yellow-100,
+      border: rgba($yellow-800, 0.2),
+      icon: $yellow-800,
+    ),
+
+    error: (
+      bg: #ffe3e6, // custom color from PCSS
+      border: rgba($red-800, 0.2),
+      icon: rgba($red-800, 0.6),
+    ),
+
+    success: (
+      bg: $bg-green-light, // TODO: extract?
+      border: rgba($green-700, 0.2),
+      icon: rgba($green-700, 0.8),
+    )
+  ),
+
+  blankslate: (
+    icon: lighten($gray-400, 5%),
+  ),
+
+  btn: (
+    bg: $gray-000,
+    border: $black-fade-15,
+    text: $gray-900,
+    ic: $gray-500,
+
+    bg-hover: #f3f4f6,
+    bg-active: darken(#f3f4f6, 2%),
+
+    box-shadow: 0 1px 0 rgba($black, 0.04),
+    box-shadow-highlight: inset 0 1px 0 rgba($white, 0.25),
+    box-shadow-inset: inset 0 1px 0 rgba($gray-000, 0.2),
+    box-shadow-focus: 0 0 0 3px rgba($blue-500, 0.3),
+    /* box and inset shadow ?? */
+    /* states */
+
+    primary: (
+      bg: $custom-green,
+      border: $black-fade-15,
+      text: $white,
+      ic: $white,
+
+      bg-hover: $tbd,
+      bg-active: $tbd,
+
+      box-shadow: $tbd,
+      box-shadow-highlight: $tbd,
+      box-shadow-inset: $tbd,
+      box-shadow-focus: $tbd,
+      /* box and inset shadow ?? */
+      /* states */
+    ),
+  ),
+
+  counter: (
+    bg: rgba(209, 213, 218, 0.5),
+    border: rgba(209, 213, 218, 0.5),
+    text: $gray-900,
+  ),
+
+  topic: (
+    tag-bg: $blue-000,
+    tag-border: $blue-000,
+    tag-text: $blue-500,
+  ),
+
+  input: (
+    bg: $white,
+    contrast-bg: $gray-000,
+  ),
+
+  avatar: (
+    border: $black-fade-10,
+    stack-fade: $gray-300,
+    stack-fade-more: $gray-200,
+  ),
+
+  // App level
+
+  ic-folder: $blue-300,
+  hl-author-bg: $blue-000,
+  hl-author-border: $blue-200,
+  logo-subdued: $gray-300,
+
+  diff: (
+    bg-deletion: $tbd,
+    border-deletion: $tbd,
+    bg-addition: $tbd,
+    border-addition: $tbd,
+    bg-deletion-strong: $tbd,
+    border-deletion-strong: $tbd,
+    bg-addition-strong: $tbd,
+    border-addition-strong: $tbd,
+  ),
+
+  global-nav: (
+    logo: $white,
+    bg: $gray-900,
+    text: $white,
+    input-bg: $gray-000,
+    input-border: $gray-000,
+    input-ic: $tbd,
+    input-placeholder: $tbd,
+  ),
+
+  calendar-graph: (
+    /*bg: $white,
+    border: $white,*/
+    day-bg: #EBEDF0,
+    day-border: rgba(27, 31, 35, 0.06),
+    day-L1-bg: #9BE9A8,
+    day-L2-bg: #40C463,
+    day-L3-bg: #30A14E,
+    day-L4-bg: #216E39,
+    day-L4-border: rgba(27, 31, 35, 0.06),
+    day-L3-border: rgba(27, 31, 35, 0.06),
+    day-L2-border: rgba(27, 31, 35, 0.06),
+    day-L1-border: rgba(27, 31, 35, 0.06),
+  ),
+);
