@@ -70,7 +70,7 @@ export function flattenVars(data: Record<string, any>, prefix: string[] = []): R
   for (const key of Object.keys(data)) {
     const val = data[key]
     const varName = [...prefix, key].join('-')
-    if (Array.isArray(val) && !key.includes("shadow")) {
+    if (Array.isArray(val) && !varName.includes("shadow")) {
       for (const i in val) {
         const arrayVarName = `${varName}-${i}`
         output[arrayVarName] = val[i]
