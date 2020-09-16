@@ -296,6 +296,7 @@ $export: (
     secondary: $gray-300,
     tertiary: $gray-000,
     inverse: $white,
+    info: $blue-500,
     danger: $red-500,
     success: $green-500,
     warning: $yellow-700,
@@ -309,7 +310,7 @@ $export: (
     tertiary: $gray-000,
     overlay: $white,
     selected: $blue-500, // `$bg-blue` in Primer CSS
-    info:$blue-100,
+    info: $blue-100,
     danger: $red-100,
     success: $green-100,
     warning: $yellow-200,
@@ -428,6 +429,18 @@ $export: (
   select-menu: (
     backdrop-bg: $black-fade-50,
     shadow: rgba($black, 0.4),
+  ),
+
+  box: (
+    blue-border: $blue-200,
+  ),
+
+  dropdown: (
+    border: $black-fade-15,
+  ),
+
+  popover: (
+    border: $black-fade-15,
   ),
 
   // App level
