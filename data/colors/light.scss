@@ -293,7 +293,7 @@ $export: (
 
   border: (
     primary: $gray-200,
-    primary-light: lighten($gray-200, 3%),
+    primary-light: lighten($gray-200, 3%), // TODO: replace?
     secondary: $gray-300,
     tertiary: $gray-000,
     inverse: $white,
@@ -312,12 +312,12 @@ $export: (
     overlay: $white,
     selected: $blue-500, // `$bg-blue` in Primer CSS
     info: $blue-100,
-    danger: $red-100,
-    success: $green-100,
-    warning: $yellow-200,
     info-inverse: $blue-500,
+    danger: $red-100,
     danger-inverse: $red-500,
+    success: $green-100,
     success-inverse: $green-500,
+    warning: $yellow-200,
     warning-inverse: $yellow-700,
   ),
 
@@ -404,9 +404,9 @@ $export: (
   ),
 
   counter: (
-    bg: rgba(209, 213, 218, 0.5),
-    border: rgba(209, 213, 218, 0.5),
     text: $gray-900,
+    bg: rgba($gray-300, 0.5),
+    border: rgba(209, 213, 218, 0.5),
   ),
 
   topic: (
@@ -443,6 +443,7 @@ $export: (
   select-menu: (
     backdrop-bg: $black-fade-50,
     shadow: 0 0 18px rgba($black, 0.4),
+    tap-highlight: rgba($gray-300, 0.5),
   ),
 
   box: (
@@ -463,11 +464,38 @@ $export: (
 
   markdown-body: (
     code-bg: rgba($black, 0.05),
+    frame-border: lighten($gray-300, 5%),
+    blockquote-border: lighten($gray-300, 5%),
+    table-border: lighten($gray-300, 5%),
+    table-tr-border: darken($gray-300, 4%),
   ),
 
   header: (
     text: $white-fade-70,
   ),
+
+  filter-item: (
+    bar-bg: darken($gray-100, 2%),
+  ),
+
+  hidden-text-expander: (
+    bg: lighten($gray-300, 5%),
+    bg-hover: darken($gray-300, 4%),
+  ),
+
+  drag-and-drop: (
+    border: darken($gray-300, 5%),
+  ),
+
+  upload-enabled: (
+    border: lighten($gray-300, 5%),
+  ),
+
+  previewable-comment-form: (
+    border: darken($gray-300, 5%),
+  ),
+
+
 
   // App level
 
