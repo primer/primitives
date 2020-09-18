@@ -105,13 +105,14 @@ $pink-800:      #FFB8DD;
 $pink-900:      #FFDAED;
 
 // -------- Fades --------
-$black-fade-10:      rgba($white, 0.10);
+$black-fade-10:      rgba($white, 0.1);
 $black-fade-15:      rgba($white, 0.15);
 $black-fade-30:      rgba($white, 0.3);
 $black-fade-50:      rgba($white, 0.5);
 $black-fade-70:      rgba($white, 0.7);
 $black-fade-85:      rgba($white, 0.85);
 
+$white-fade-10:      rgba($black, 0.1);
 $white-fade-15:      rgba($black, 0.15);
 $white-fade-30:      rgba($black, 0.3);
 $white-fade-50:      rgba($black, 0.5);
@@ -377,19 +378,31 @@ $export: (
     primary: (
       bg: $custom-green,
       border: $black-fade-15,
+      border-disabled: $black-fade-10,
       text: $white,
-      ic: $white,
+      ic: rgba($white, 0.8),
+      shadow: 0 1px 0 $black-fade-10,
+      shadow-inset: inset 0 1px 0 rgba($white, 0.03),
+
+      disabled-text: rgba($white, 0.8),
+      counter-bg: rgba($white, 0.2),
 
       bg-hover: $tbd,
       bg-active: $tbd,
-
-      box-shadow: $tbd,
       box-shadow-highlight: $tbd,
-      box-shadow-inset: $tbd,
       box-shadow-focus: $tbd,
       /* box and inset shadow ?? */
       /* states */
     ),
+
+    inverse-on-hover: (
+      border: $black-fade-15,
+      shadow: 0 1px 0 $black-fade-10,
+      shadow-inset: inset 0 1px 0 rgba($white, 0.03),
+      counter-bg: rgba($white, 0.2),
+    ),
+
+    counter-bg: rgba($black, 0.08), // Darken for just a tad more contrast against the button background
   ),
 
   counter: (
@@ -415,6 +428,7 @@ $export: (
     border: $black-fade-10,
     stack-fade: $gray-300,
     stack-fade-more: $gray-200,
+    child-shadow: -2px -2px 0 rgba($white, 0.8),
   ),
 
   toast: (
@@ -430,7 +444,7 @@ $export: (
 
   select-menu: (
     backdrop-bg: $black-fade-50,
-    shadow: rgba($black, 0.4),
+    shadow: 0 0 18px rgba($black, 0.4),
   ),
 
   box: (
@@ -443,6 +457,18 @@ $export: (
 
   popover: (
     border: $black-fade-15,
+  ),
+
+  branch-name: (
+    text: rgba($black, 0.6),
+  ),
+
+  markdown-body: (
+    code-bg: rgba($black, 0.05),
+  ),
+
+  header: (
+    text: $white-fade-70,
   ),
 
   // App level
