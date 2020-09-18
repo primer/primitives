@@ -244,10 +244,12 @@ $scale: (
 // specific names, or adding new names to existing
 // custom colors with no name
 
-$custom-green: #2ea44f;
-$custom-green-alt-1: #2c974b; // bnt primary hover
-$custom-green-alt-2: darken($custom-green-alt-1, 2%); // btn primary active
-$custom-green-alt-3: #94d3a2; // btn primary disabled
+$custom-btn-primary-bg: #2ea44f; // btn primary
+$custom-btn-primary-bg-hover: #2c974b; // btn primary hover
+$custom-btn-primary-bg-active: darken(#2c974b, 2%); // btn primary active
+$custom-btn-primary-bg-disabled: #94d3a2; // btn primary disabled
+
+$custom-btn-bg-hover: #f3f4f6; // btn hover bg
 
 $bg-green-light: $green-100;
 
@@ -368,13 +370,13 @@ $export: (
     text: $gray-900,
     ic: $gray-500,
 
-    bg-hover: #f3f4f6,
-    bg-active: darken(#f3f4f6, 2%),
+    bg-hover: $custom-btn-bg-hover,
+    bg-active: darken($custom-btn-bg-hover, 2%),
 
     /* states */
 
     primary: (
-      bg: $custom-green,
+      bg: $custom-btn-primary-bg,
       border: $black-fade-15,
       border-disabled: $black-fade-10,
       text: $white,
@@ -383,15 +385,14 @@ $export: (
       shadow-highlight: inset 0 1px 0 rgba($white, 0.03),
       shadow-selected: inset 0 1px 0 rgba($green-900, 0.2),
 
-      disabled-text: rgba($white, 0.8),
-      counter-bg: rgba($white, 0.2),
+      bg-hover: $custom-btn-primary-bg-hover,
+      bg-active: $custom-btn-primary-bg-active,
+      bg-disabled: $custom-btn-primary-bg-disabled,
 
-      bg-hover: $tbd,
-      bg-active: $tbd,
-      box-shadow-highlight: $tbd,
-      box-shadow-focus: $tbd,
-      /* box and inset shadow ?? */
-      /* states */
+      disabled-text: rgba($white, 0.8),
+      disabled-shadow: 0 0 0 3px rgba($custom-btn-primary-bg, 0.4),
+
+      counter-bg: rgba($white, 0.2),
     ),
 
     inverse-on-hover: (
@@ -403,16 +404,24 @@ $export: (
 
     danger: (
       text: $red-500,
+      text-disabled: rgba($red-500, 0.5),
       bg-hover: $red-600,
       bg-active: darken($red-600, 3%),
-      shadow: $red-900,
+      shadow: inset 0 1px 0 rgba($red-900, 0.2),
+      shadow-focus: 0 0 0 3px rgba($red-600, 0.4),
+      counter-bg: rgba($red-500, 0.1),
+      counter-bg-disabled: rgba($red-500, 0.05),
     ),
 
     outline: (
       text: $blue-500,
+      text-disabled: rgba($blue-500, 0.5),
       bg-hover: $blue-500,
       bg-active: darken($blue-500, 3%),
-      shadow: $blue-900,
+      shadow: inset 0 1px 0 rgba($blue-900, 0.2),
+      shadow-focus: 0 0 0 3px rgba($blue-600, 0.4),
+      counter-bg: rgba($blue-500, 0.1),
+      counter-bg-disabled: rgba($blue-500, 0.05),
     ),
 
     counter-bg: rgba($black, 0.08), // Darken for just a tad more contrast against the button background
