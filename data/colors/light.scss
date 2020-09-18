@@ -380,7 +380,8 @@ $export: (
       text: $white,
       ic: rgba($white, 0.8),
       shadow: 0 1px 0 $black-fade-10,
-      shadow-inset: inset 0 1px 0 rgba($white, 0.03),
+      shadow-highlight: inset 0 1px 0 rgba($white, 0.03),
+      shadow-selected: inset 0 1px 0 rgba($green-900, 0.2),
 
       disabled-text: rgba($white, 0.8),
       counter-bg: rgba($white, 0.2),
@@ -398,6 +399,20 @@ $export: (
       shadow: 0 1px 0 $black-fade-10,
       shadow-inset: inset 0 1px 0 rgba($white, 0.03),
       counter-bg: rgba($white, 0.2),
+    ),
+
+    danger: (
+      text: $red-500,
+      bg-hover: $red-600,
+      bg-active: darken($red-600, 3%),
+      shadow: $red-900,
+    ),
+
+    outline: (
+      text: $blue-500,
+      bg-hover: $blue-500,
+      bg-active: darken($blue-500, 3%),
+      shadow: $blue-900,
     ),
 
     counter-bg: rgba($black, 0.08), // Darken for just a tad more contrast against the button background
@@ -444,6 +459,7 @@ $export: (
     backdrop-bg: $black-fade-50,
     shadow: 0 0 18px rgba($black, 0.4),
     tap-highlight: rgba($gray-300, 0.5),
+    tap-focus-bg: $blue-100,
   ),
 
   box: (
@@ -460,6 +476,8 @@ $export: (
 
   branch-name: (
     text: rgba($black, 0.6),
+    bg: lighten($blue-100, 3%),
+    icon: desaturate($blue-300, 70%),
   ),
 
   markdown: (
@@ -489,6 +507,7 @@ $export: (
 
   upload-enabled: (
     border: lighten($gray-300, 5%),
+    border-focused: lighten($blue-400, 8%),
   ),
 
   previewable-comment-form: (
