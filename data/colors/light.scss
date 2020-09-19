@@ -334,6 +334,26 @@ $export: (
     focus: 0 0 0 3px rgba($blue-500, 0.3), // blue focus ring
   ),
 
+  fade: (
+    black: (
+      10: $black-fade-10,
+      15: $black-fade-15,
+      30: $black-fade-30,
+      50: $black-fade-50,
+      70: $black-fade-70,
+      85: $black-fade-85,
+    ),
+
+    white: (
+      10: $white-fade-10,
+      15: $white-fade-15,
+      30: $white-fade-30,
+      50: $white-fade-50,
+      70: $white-fade-70,
+      85: $white-fade-85,
+    ),
+  ),
+
   // Components
 
   alert: (
@@ -372,6 +392,9 @@ $export: (
 
     bg-hover: $custom-btn-bg-hover,
     bg-active: darken($custom-btn-bg-hover, 2%),
+
+    shadow-active: inset 0 0.15em 0.3em $black-fade-15, // TODO: Deprecate? Not used in Primer CSS
+    shadow-input-focus: 0 0 0 0.2em rgba($blue, 0.3), // TODO: Deprecate?
 
     /* states */
 
