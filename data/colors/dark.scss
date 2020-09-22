@@ -262,18 +262,18 @@ $export: (
   // Pure functional
 
   text: (
-    primary: $gray-900,
-    secondary: $gray-600,
-    tertiary: $gray-500,
-    placeholder: $gray-300,
-    disabled: $gray-300,
-    inverse: $white,
-    link-primary: $blue-500,
-    link-secondary: $gray-900,
-    link-tertiary: $gray-600,
-    danger: $red-500,
-    success: $green-600,
-    warning: $yellow-800,
+    primary: $gray-00,
+    secondary: $gray-300,
+    tertiary: $gray-300,
+    placeholder: $gray-500,
+    disabled: $gray-500,
+    inverse: $gray-900,
+    link-primary: $blue-200,
+    link-secondary: $gray-00,
+    link-tertiary: $gray-300,
+    danger: $red-400,
+    success: $green-200,
+    warning: $yellow-200,
   ),
 
   icon: (
@@ -281,9 +281,9 @@ $export: (
     secondary: $gray-600,
     tertiary: $gray-400,
     info: $blue-500,
-    danger: $red-500,
-    success: $green-600,
-    warning: $yellow-800,
+    danger: $red-400,
+    success: $green-200,
+    warning: $yellow-200,
   ),
 
   hl: (
@@ -296,7 +296,7 @@ $export: (
   ),
 
   border: (
-    primary: $gray-200,
+    primary: $gray-600,
     primary-light: lighten($gray-200, 3%), // TODO: replace?
     secondary: $gray-300,
     tertiary: $gray-000,
@@ -308,8 +308,8 @@ $export: (
   ),
 
   bg: (
-    canvas: $white,
-    canvas-inverse: $gray-900,
+    canvas: $gray-900,
+    canvas-inverse: $gray-00,
     primary: $white,
     secondary: $gray-100,
     tertiary: $gray-000,
