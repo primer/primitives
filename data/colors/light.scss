@@ -1,4 +1,5 @@
-// Black based on same hue as $gray-900
+// Light mode
+
 $black: #1b1f23;
 $white: #fff;
 
@@ -130,6 +131,7 @@ $gray-light:  $gray-400;
 $gray:        $gray-500;
 
 // -------- Color gradient maps --------
+// Note: The order of the scale is flipped in dark.scss
 
 $scale: (
   black: $black,

@@ -1,108 +1,107 @@
-// TODO: switch order of the scale.
-// This is just a shortcut so that the functional variables can be kept the same
+// Dark mode
 
-$black: #fff;
-$white: #0D1117;
+$black: #0D1117;
+$white: #fff;
 
-$tbd: $black;
+$tbd: $white;
 
 //
 //
 // -------- Grays --------
-$gray-000:        #0D1117; // Background
-$gray-100:        #161B22;
-$gray-200:        #21262D;
-$gray-300:        #30363D;
-$gray-400:        #484F58;
-$gray-500:        #6E7681;
-$gray-600:        #8B949E;
-$gray-700:        #B1BAC4;
-$gray-800:        #D5DDE5;
-$gray-900:        #F0F6FC; // Foreground
+$gray-000:        #F0F6FC;
+$gray-100:        #D5DDE5;
+$gray-200:        #B1BAC4;
+$gray-300:        #8B949E;
+$gray-400:        #6E7681;
+$gray-500:        #484F58;
+$gray-600:        #30363D;
+$gray-700:        #21262D;
+$gray-800:        #161B22;
+$gray-900:        #0D1117;
 
 // -------- Blue --------
-$blue-000:        #061E46;
-$blue-100:        #0B2E63;
-$blue-200:        #0D4189;
-$blue-300:        #2456AA;
-$blue-400:        #316ECD;
-$blue-500:        #3F87E9;
-$blue-600:        #54A2FB;
-$blue-700:        #75BBFF;
-$blue-800:        #A1D3FF;
-$blue-900:        #CAE8FF;
+$blue-000:        #CAE8FF;
+$blue-100:        #A1D3FF;
+$blue-200:        #75BBFF;
+$blue-300:        #54A2FB;
+$blue-400:        #3F87E9;
+$blue-500:        #316ECD;
+$blue-600:        #2456AA;
+$blue-700:        #0D4189;
+$blue-800:        #0B2E63;
+$blue-900:        #061E46;
 
 // -------- Green --------
-$green-000:       #04260F;
-$green-100:       #0A3818;
-$green-200:       #144D23;
-$green-300:       #1B662D;
-$green-400:       #248035;
-$green-500:       #2F9A42;
-$green-600:       #3AB550;
-$green-700:       #58CE65;
-$green-800:       #81E38A;
-$green-900:       #B2F4B6;
+$green-000:       #B2F4B6;
+$green-100:       #81E38A;
+$green-200:       #58CE65;
+$green-300:       #3AB550;
+$green-400:       #2F9A42;
+$green-500:       #248035;
+$green-600:       #1B662D;
+$green-700:       #144D23;
+$green-800:       #0A3818;
+$green-900:       #04260F;
 
 // -------- Yellow --------
-$yellow-000:      #7F4E00;
-$yellow-100:      #9B6400;
-$yellow-200:      #B67B00;
-$yellow-300:      #C88D00;
-$yellow-400:      #D79E00;
-$yellow-500:      #E2B20D;
-$yellow-600:      #EEC41A;
-$yellow-700:      #F7D232;
-$yellow-800:      #FDE15F;
-$yellow-900:      #FEF3AE;
+$yellow-000:      #FEF3AE;
+$yellow-100:      #FDE15F;
+$yellow-200:      #F7D232;
+$yellow-300:      #EEC41A;
+$yellow-400:      #E2B20D;
+$yellow-500:      #D79E00;
+$yellow-600:      #C88D00;
+$yellow-700:      #B67B00;
+$yellow-800:      #9B6400;
+$yellow-900:      #7F4E00;
 
 // -------- Orange --------
-$orange-000:      #3D1200;
-$orange-100:      #591C00;
-$orange-200:      #782B00;
-$orange-300:      #993D06;
-$orange-400:      #BA5010;
-$orange-500:      #D7661D;
-$orange-600:      #ED802D;
-$orange-700:      #FF9F4C;
-$orange-800:      #FFC17E;
-$orange-900:      #FFE0BD;
+$orange-000:      #FFE0BD;
+$orange-100:      #FFC17E;
+$orange-200:      #FF9F4C;
+$orange-300:      #ED802D;
+$orange-400:      #D7661D;
+$orange-500:      #BA5010;
+$orange-600:      #993D06;
+$orange-700:      #782B00;
+$orange-800:      #591C00;
+$orange-900:      #3D1200;
 
 // -------- Red --------
-$red-000:         #49000C;
-$red-100:         #660614;
-$red-200:         #88131F;
-$red-300:         #AC212B;
-$red-400:         #D13339;
-$red-500:         #ED4E50;
-$red-600:         #FF7170;
-$red-700:         #FF9A96;
-$red-800:         #FFBDBA;
-$red-900:         #FFDCD9;
+$red-000:         #FFDCD9;
+$red-100:         #FFBDBA;
+$red-200:         #FF9A96;
+$red-300:         #FF7170;
+$red-400:         #ED4E50;
+$red-500:         #D13339;
+$red-600:         #AC212B;
+$red-700:         #88131F;
+$red-800:         #660614;
+$red-900:         #49000C;
 
 // -------- Purple --------
-$purple-000:       #29154B;
-$purple-100:       #3D2071;
-$purple-200:       #512C94;
-$purple-300:       #673AB8;
-$purple-400:       #804EDA;
-$purple-500:       #9867F0;
-$purple-600:       #AE81FA;
-$purple-700:       #C2A0FD;
-$purple-800:       #D8BEFF;
-$purple-900:       #EADFFF;
+$purple-000:       #EADFFF;
+$purple-100:       #D8BEFF;
+$purple-200:       #C2A0FD;
+$purple-300:       #AE81FA;
+$purple-400:       #9867F0;
+$purple-500:       #804EDA;
+$purple-600:       #673AB8;
+$purple-700:       #512C94;
+$purple-800:       #3D2071;
+$purple-900:       #29154B;
 
 // -------- Pink --------
-$pink-000:      #40092D;
-$pink-100:      #55183E;
-$pink-200:      #762556;
-$pink-300:      #98316C;
-$pink-400:      #BC4186;
-$pink-500:      #DB579F;
-$pink-600:      #F56FB7;
-$pink-700:      #FF93CC;
-$pink-800:      #FFB8DD;
-$pink-900:      #FFDAED;
+$pink-000:      #FFDAED;
+$pink-100:      #FFB8DD;
+$pink-200:      #FF93CC;
+$pink-300:      #F56FB7;
+$pink-400:      #DB579F;
+$pink-500:      #BC4186;
+$pink-600:      #98316C;
+$pink-700:      #762556;
+$pink-800:      #55183E;
+$pink-900:      #40092D;
 
 // -------- Fades --------
 $black-fade-10:      rgba($black, 0.1);
@@ -132,113 +131,114 @@ $gray-light:  $gray-400;
 $gray:        $gray-500;
 
 // -------- Color gradient maps --------
+// Note: The order of the scale is flipped in dark.scss
 
 $scale: (
-  black: $black,
-  white: $white,
+  black: $white,
+  white: $black,
 
   gray: (
-    $gray-000,
-    $gray-100,
-    $gray-200,
-    $gray-300,
-    $gray-400,
-    $gray-500,
-    $gray-600,
-    $gray-700,
-    $gray-800,
     $gray-900,
+    $gray-800,
+    $gray-700,
+    $gray-600,
+    $gray-500,
+    $gray-400,
+    $gray-300,
+    $gray-200,
+    $gray-100,
+    $gray-000,
   ),
 
   blue: (
-    $blue-000,
-    $blue-100,
-    $blue-200,
-    $blue-300,
-    $blue-400,
-    $blue-500,
-    $blue-600,
-    $blue-700,
-    $blue-800,
     $blue-900,
+    $blue-800,
+    $blue-700,
+    $blue-600,
+    $blue-500,
+    $blue-400,
+    $blue-300,
+    $blue-200,
+    $blue-100,
+    $blue-000,
   ),
 
   green: (
-    $green-000,
-    $green-100,
-    $green-200,
-    $green-300,
-    $green-400,
-    $green-500,
-    $green-600,
-    $green-700,
-    $green-800,
     $green-900,
+    $green-800,
+    $green-700,
+    $green-600,
+    $green-500,
+    $green-400,
+    $green-300,
+    $green-200,
+    $green-100,
+    $green-000,
   ),
 
   yellow: (
-    $yellow-000,
-    $yellow-100,
-    $yellow-200,
-    $yellow-300,
-    $yellow-400,
-    $yellow-500,
-    $yellow-600,
-    $yellow-700,
-    $yellow-800,
     $yellow-900,
+    $yellow-800,
+    $yellow-700,
+    $yellow-600,
+    $yellow-500,
+    $yellow-400,
+    $yellow-300,
+    $yellow-200,
+    $yellow-100,
+    $yellow-000,
   ),
 
   orange: (
-    $orange-000,
-    $orange-100,
-    $orange-200,
-    $orange-300,
-    $orange-400,
-    $orange-500,
-    $orange-600,
-    $orange-700,
-    $orange-800,
     $orange-900,
+    $orange-800,
+    $orange-700,
+    $orange-600,
+    $orange-500,
+    $orange-400,
+    $orange-300,
+    $orange-200,
+    $orange-100,
+    $orange-000,
   ),
 
   red: (
-    $red-000,
-    $red-100,
-    $red-200,
-    $red-300,
-    $red-400,
-    $red-500,
-    $red-600,
-    $red-700,
-    $red-800,
     $red-900,
+    $red-800,
+    $red-700,
+    $red-600,
+    $red-500,
+    $red-400,
+    $red-300,
+    $red-200,
+    $red-100,
+    $red-000,
   ),
 
   purple: (
-    $purple-000,
-    $purple-100,
-    $purple-200,
-    $purple-300,
-    $purple-400,
-    $purple-500,
-    $purple-600,
-    $purple-700,
-    $purple-800,
     $purple-900,
+    $purple-800,
+    $purple-700,
+    $purple-600,
+    $purple-500,
+    $purple-400,
+    $purple-300,
+    $purple-200,
+    $purple-100,
+    $purple-000,
   ),
 
   pink: (
-    $pink-000,
-    $pink-100,
-    $pink-200,
-    $pink-300,
-    $pink-400,
-    $pink-500,
-    $pink-600,
-    $pink-700,
-    $pink-800,
     $pink-900,
+    $pink-800,
+    $pink-700,
+    $pink-600,
+    $pink-500,
+    $pink-400,
+    $pink-300,
+    $pink-200,
+    $pink-100,
+    $pink-000,
   )
 );
 
