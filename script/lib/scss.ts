@@ -49,7 +49,13 @@ export async function parseScssFile(file: string): Promise<Document> {
 export function collectVars(data: SassMap): Record<string, any> {
   let output: Record<string, any> = {}
 
-  for (const key of Object.keys(data.value)) {
+  for (let key of Object.keys(data.value)) {
+    if (key === 'grey') {
+      // [MKT} SCSS seems to automatically change `gray` to `grey` during parsing ???
+      data.value['gray'] = data.value['grey']
+      delete data.value['grey']
+      key = 'gray'
+    }
     const val = data.value[key]
     if (val.type === 'SassColor' || val.type === 'SassNumber') {
       output[key] = stringifySassPrimitive(val)
