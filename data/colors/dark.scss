@@ -277,63 +277,63 @@ $export: (
   ),
 
   icon: (
-    primary:$gray-900,
-    secondary: $gray-600,
-    tertiary: $gray-400,
-    info: $blue-500,
+    primary:$gray-000,
+    secondary: $gray-300,
+    tertiary: $gray-300,
+    info: $blue-200,
     danger: $red-400,
     success: $green-200,
     warning: $yellow-200,
   ),
 
   hl: (
-    hover-primary-bg: $blue-500,
-    hover-primary-border: $blue-500,
-    hover-secondary-bg: $gray-100,
-    hover-secondary-border: $gray-100,
-    selected-primary-bg: $blue-500,
-    selected-primary-border: $blue-500,
+    hover-primary-bg: $blue-400,
+    hover-primary-border: $blue-400,
+    hover-secondary-bg: $gray-800,
+    hover-secondary-border: $gray-800,
+    selected-primary-bg: $blue-400,
+    selected-primary-border: $blue-400,
   ),
 
   border: (
     primary: $gray-600,
-    primary-light: lighten($gray-200, 3%), // TODO: replace?
-    secondary: $gray-300,
-    tertiary: $gray-000,
+    primary-light: darken($gray-600, 3%), // TODO: replace?
+    secondary: $gray-600,
+    tertiary: $gray-900,
     inverse: $white,
-    info: $blue-500,
-    danger: $red-500,
-    success: $green-500,
-    warning: $yellow-700,
+    info: $blue-400,
+    danger: $red-400,
+    success: $green-400,
+    warning: $yellow-200,
   ),
 
   bg: (
     canvas: $gray-900,
     canvas-inverse: $gray-000,
-    primary: $white,
-    secondary: $gray-100,
-    tertiary: $gray-000,
-    overlay: $white,
-    selected: $blue-500, // `$bg-blue` in Primer CSS
-    info: $blue-100,
-    info-inverse: $blue-500,
-    danger: $red-100,
-    danger-inverse: $red-500,
-    success: $green-100,
-    success-inverse: $green-500,
-    warning: $yellow-200,
-    warning-inverse: $yellow-700,
+    primary: $gray-900,
+    secondary: $gray-800,
+    tertiary: $black,
+    overlay: $gray-900,
+    selected: $blue-400, // `$bg-blue` in Primer CSS
+    info: $blue-800,
+    info-inverse: $blue-400,
+    danger: $red-800,
+    danger-inverse: $red-400,
+    success: $green-800,
+    success-inverse: $green-400,
+    warning: $yellow-700,
+    warning-inverse: $yellow-200,
   ),
 
   shadow: (
-    small: 0 1px 0 rgba($black, 0.04),
-    medium: 0 3px 6px rgba($gray-400, 0.15),
-    large: 0 8px 24px rgba($gray-400, 0.2),
-    extra-large: 0 12px 48px rgba($gray-400, 0.3),
+    small: 0 1px 0 rgba($gray-500, 0.04),
+    medium: 0 3px 6px rgba($gray-500, 0.15),
+    large: 0 8px 24px rgba($gray-500, 0.2),
+    extra-large: 0 12px 48px rgba($gray-500, 0.3),
 
-    highlight: inset 0 1px 0 rgba($white, 0.25), // top highlight
-    inset: inset 0 1px 0 rgba($gray-200, 0.2), // top inner shadow
-    focus: 0 0 0 3px rgba($blue-500, 0.3), // blue focus ring
+    highlight: inset 0 1px 0 rgba($white, 0.1), // top highlight
+    inset: inset 0 1px 0 rgba($gray-700, 0.2), // top inner shadow
+    focus: 0 0 0 3px rgba($blue-400, 0.3), // blue focus ring
   ),
 
   fade: (
@@ -359,41 +359,41 @@ $export: (
   // Components
 
   alert: (
-    bg: $blue-100,
-    border: rgba($blue-700, 0.2),
-    icon: rgba($blue-700, 0.6),
+    bg: $blue-800,
+    border: rgba($blue-200, 0.2),
+    icon: rgba($blue-200, 0.6),
 
     warn: (
-      bg: $yellow-100,
-      border: rgba($yellow-800, 0.2),
-      icon: $yellow-800,
+      bg: $yellow-800,
+      border: rgba($yellow-100, 0.2),
+      icon: $yellow-100,
     ),
 
     error: (
-      bg: #ffe3e6, // custom color from PCSS
-      border: rgba($red-800, 0.2),
-      icon: rgba($red-800, 0.6),
+      bg: #ffe3e6, // TODO: replace custom color
+      border: rgba($red-100, 0.2),
+      icon: rgba($red-100, 0.6),
     ),
 
     success: (
       bg: $bg-green-light, // TODO: extract?
-      border: rgba($green-700, 0.2),
-      icon: rgba($green-700, 0.8),
+      border: rgba($green-200, 0.2),
+      icon: rgba($green-200, 0.8),
     )
   ),
 
   blankslate: (
-    icon: lighten($gray-400, 5%),
+    icon: lighten($gray-500, 5%),
   ),
 
   btn: (
-    bg: $gray-000,
-    border: $black-fade-15,
-    text: $gray-900,
-    ic: $gray-500,
+    bg: $gray-900,
+    border: $white-fade-15,
+    text: $gray-000,
+    ic: $gray-400,
 
     bg-hover: $custom-btn-bg-hover,
-    bg-active: darken($custom-btn-bg-hover, 2%),
+    bg-active: lighten($custom-btn-bg-hover, 2%),
 
     shadow-active: inset 0 0.15em 0.3em $black-fade-15, // TODO: Deprecate? Not used in Primer CSS
     shadow-input-focus: 0 0 0 0.2em rgba($blue, 0.3), // TODO: Deprecate?
@@ -421,17 +421,17 @@ $export: (
     ),
 
     inverse-on-hover: (
-      border: $black-fade-15,
+      border: $white-fade-15,
       shadow: 0 1px 0 $black-fade-10,
       shadow-inset: inset 0 1px 0 rgba($white, 0.03),
       counter-bg: rgba($white, 0.2),
     ),
 
     danger: (
-      text: $red-500,
-      text-disabled: rgba($red-500, 0.5),
-      bg-hover: $red-600,
-      bg-active: darken($red-600, 3%),
+      text: $red-400,
+      text-disabled: rgba($red-400, 0.5),
+      bg-hover: $red-300,
+      bg-active: darken($red-300, 3%),
       shadow: inset 0 1px 0 rgba($red-900, 0.2),
       shadow-focus: 0 0 0 3px rgba($red-600, 0.4),
       counter-bg: rgba($red-500, 0.1),
@@ -439,10 +439,10 @@ $export: (
     ),
 
     outline: (
-      text: $blue-500,
-      text-disabled: rgba($blue-500, 0.5),
-      bg-hover: $blue-500,
-      bg-active: darken($blue-500, 3%),
+      text: $blue-400,
+      text-disabled: rgba($blue-400, 0.5),
+      bg-hover: $blue-300,
+      bg-active: darken($blue-300, 3%),
       shadow: inset 0 1px 0 rgba($blue-900, 0.2),
       shadow-focus: 0 0 0 3px rgba($blue-600, 0.4),
       counter-bg: rgba($blue-500, 0.1),
@@ -453,51 +453,51 @@ $export: (
   ),
 
   counter: (
-    text: $gray-900,
-    bg: rgba($gray-300, 0.5),
-    border: rgba(209, 213, 218, 0.5),
+    text: $gray-000,
+    bg: rgba($gray-600, 0.5),
+    border: rgba(209, 213, 218, 0.5), // TODO: Replace custom color
   ),
 
   topic: (
-    tag-bg: $blue-000,
-    tag-border: $blue-000,
-    tag-text: $blue-500,
+    tag-bg: $blue-900,
+    tag-border: $blue-900,
+    tag-text: $blue-400,
   ),
 
   input: (
-    bg: $white,
-    contrast-bg: $gray-000,
-    shadow: inset 0 1px 2px rgba($black, 0.075),
+    bg: $black,
+    contrast-bg: $gray-900,
+    shadow: inset 0 1px 2px rgba($white, 0.075),
     shadow-focus: 0 0 0 0.2em rgba($blue, 0.3),
   ),
 
   avatar: (
-    border: $black-fade-10,
-    stack-fade: $gray-300,
-    stack-fade-more: $gray-200,
+    border: $white-fade-10,
+    stack-fade: $gray-600,
+    stack-fade-more: $gray-700,
     child-shadow: -2px -2px 0 rgba($white, 0.8),
   ),
 
   toast: (
-    ic-bg-loading: $gray-600,
+    ic-bg-loading: $gray-300,
   ),
 
   timeline: (
-    text: $gray-700,
-    badge-bg: $gray-200,
-    target-badge-border: $blue-400,
-    target-badge-shadow: $blue-200,
+    text: $gray-200,
+    badge-bg: $gray-700,
+    target-badge-border: $blue-500,
+    target-badge-shadow: $blue-700,
   ),
 
   select-menu: (
     backdrop-bg: $black-fade-50,
     shadow: 0 0 18px rgba($black, 0.4),
-    tap-highlight: rgba($gray-300, 0.5),
-    tap-focus-bg: $blue-100,
+    tap-highlight: rgba($gray-600, 0.5),
+    tap-focus-bg: $blue-800,
   ),
 
   box: (
-    blue-border: $blue-200,
+    blue-border: $blue-700,
   ),
 
   dropdown: (
@@ -509,17 +509,17 @@ $export: (
   ),
 
   branch-name: (
-    text: rgba($black, 0.6),
-    bg: lighten($blue-100, 3%),
-    icon: desaturate($blue-300, 70%),
+    text: rgba($white, 0.6),
+    bg: lighten($blue-800, 3%),
+    icon: desaturate($blue-600, 70%),
   ),
 
   markdown: (
-    code-bg: rgba($black, 0.05),
-    frame-border: lighten($gray-300, 5%),
-    blockquote-border: lighten($gray-300, 5%),
-    table-border: lighten($gray-300, 5%),
-    table-tr-border: darken($gray-300, 4%),
+    code-bg: rgba($white, 0.05),
+    frame-border: lighten($gray-600, 5%),
+    blockquote-border: lighten($gray-600, 5%),
+    table-border: lighten($gray-600, 5%),
+    table-tr-border: darken($gray-600, 4%),
   ),
 
   header: (
@@ -527,55 +527,55 @@ $export: (
   ),
 
   filter-item: (
-    bar-bg: darken($gray-100, 2%),
+    bar-bg: darken($gray-800, 2%),
   ),
 
   hidden-text-expander: (
-    bg: lighten($gray-300, 5%),
-    bg-hover: darken($gray-300, 4%),
+    bg: lighten($gray-600, 5%),
+    bg-hover: darken($gray-600, 4%),
   ),
 
   drag-and-drop: (
-    border: darken($gray-300, 5%),
+    border: darken($gray-600, 5%),
   ),
 
   upload-enabled: (
-    border: lighten($gray-300, 5%),
-    border-focused: lighten($blue-400, 8%),
+    border: lighten($gray-600, 5%),
+    border-focused: lighten($blue-500, 8%),
   ),
 
   previewable-comment-form: (
-    border: darken($gray-300, 5%),
+    border: darken($gray-600, 5%),
   ),
 
 
 
   // App level
 
-  ic-folder: $blue-300,
-  hl-author-bg: $blue-000,
-  hl-author-border: $blue-200,
-  logo-subdued: $gray-300,
-  discussion-border: desaturate($green-300, 40%),
+  ic-folder: $blue-600,
+  hl-author-bg: $blue-900,
+  hl-author-border: $blue-700,
+  logo-subdued: $gray-600,
+  discussion-border: desaturate($green-600, 40%),
 
   diff: (
-    neutral-bg: $gray-300,
-    deletion-bg: $red-600,
+    neutral-bg: $gray-600,
+    deletion-bg: $red-300,
     deletion-bg-strong: $tbd,
     deletion-border: $tbd,
     deletion-border-strong: $tbd,
-    addition-bg: darken($green-400, 5%),
+    addition-bg: darken($green-500, 5%),
     addition-bg-strong: $tbd,
     addition-border: $tbd,
     addition-border-strong: $tbd,
   ),
 
   global-nav: (
-    logo: $white,
-    bg: $gray-900,
-    text: $white,
-    input-bg: $gray-000,
-    input-border: $gray-000,
+    logo: $black,
+    bg: $gray-000,
+    text: $black,
+    input-bg: $gray-900,
+    input-border: $gray-900,
     input-ic: $tbd,
     input-placeholder: $tbd,
   ),
