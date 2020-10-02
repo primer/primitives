@@ -286,20 +286,20 @@ $export: (
     warning: $yellow-800,
   ),
 
-  hl: (
-    hover-primary-bg: $blue-500,
+  state: (
+    hover-primary-bg: $blue-500,// `$bg-blue` in Primer CSS
     hover-primary-border: $blue-500,
     hover-secondary-bg: $gray-100,
     hover-secondary-border: $gray-100,
-    selected-primary-bg: $blue-500,
+    selected-primary-bg: $blue-500,// `$bg-blue` in Primer CSS
     selected-primary-border: $blue-500,
   ),
 
   border: (
     primary: $gray-200,
-    primary-light: lighten($gray-200, 3%), // TODO: replace?
-    secondary: $gray-300,
-    tertiary: $gray-000,
+    primary-light: lighten($gray-200, 3%), // TODO: replace? 
+    secondary: $gray-200,
+    tertiary: $gray-300,
     inverse: $white,
     info: $blue-500,
     danger: $red-500,
@@ -314,7 +314,6 @@ $export: (
     secondary: $gray-100,
     tertiary: $gray-000,
     overlay: $white,
-    selected: $blue-500, // `$bg-blue` in Primer CSS
     info: $blue-000,
     info-inverse: $blue-500,
     danger: $red-000,
