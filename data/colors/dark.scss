@@ -286,7 +286,7 @@ $export: (
     warning: $yellow-200,
   ),
 
-  hl: (
+  state: (
     hover-primary-bg: $blue-400,
     hover-primary-border: $blue-400,
     hover-secondary-bg: $gray-800,
@@ -314,7 +314,6 @@ $export: (
     secondary: $gray-800,
     tertiary: $black,
     overlay: $gray-900,
-    selected: $blue-400, // `$bg-blue` in Primer CSS
     info: $blue-800,
     info-inverse: $blue-400,
     danger: $red-800,
