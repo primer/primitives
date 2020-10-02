@@ -8,6 +8,21 @@ import { parseScssFile, collectVars, flattenVars } from './lib/scss'
 
 let SKIP: string[] = (process.env['PRIMER_SKIP'] || "").split(',')
 
+function flatMap<T, R>(array: T[], iter: (value: T, index: number, arr: T[]) => R[]): R[] {
+  var results: R[] = []
+
+  array.forEach((value, index, list) => {
+    var res = iter.call(null, value, index, list)
+    if (Array.isArray(res)) {
+      results.push.apply(results, res)
+    } else if (res != null) {
+      results.push(res)
+    }
+  })
+
+  return results;
+}
+
 interface ModeData {
   type: string
   name: string
@@ -77,7 +92,7 @@ function printVarList(modes: ReadonlyArray<ModeData>): void {
     return acc
   }, {} as Record<string, Record<string, string>>)
 
-  const allVarNames = modes.flatMap(mode => {
+  const allVarNames = flatMap((modes as Array<ModeData>), mode => {
     return Object.keys(flattenVars(mode.vars))
   })
   const uniqueVarNames = [...new Set(allVarNames)].sort()
