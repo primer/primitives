@@ -297,9 +297,8 @@ $export: (
 
   border: (
     primary: $gray-600,
-    primary-light: darken($gray-600, 3%), // TODO: replace?
-    secondary: $gray-600,
-    tertiary: $gray-900,
+    secondary: darken($gray-600, 3%),
+    tertiary: $gray-400,
     inverse: $white,
     info: $blue-400,
     danger: $red-400,
