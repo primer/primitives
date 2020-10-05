@@ -1,5 +1,5 @@
 import React from 'react'
-import primitives from '../../..'
+import primitives from '../../../dist/js'
 
 export default function Home() {
   return (
