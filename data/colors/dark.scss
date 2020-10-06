@@ -398,7 +398,7 @@ $export: (
     warning: $yellow-200,
   ),
 
-  hl: (
+  state: (
     hover-primary-bg: $blue-400,
     hover-primary-border: $blue-400,
     hover-secondary-bg: $gray-800,
@@ -409,9 +409,8 @@ $export: (
 
   border: (
     primary: $gray-600,
-    primary-light: darken($gray-600, 3%), // TODO: replace?
-    secondary: $gray-600,
-    tertiary: $gray-900,
+    secondary: darken($gray-600, 3%),
+    tertiary: $gray-400,
     inverse: $white,
     info: $blue-400,
     danger: $red-400,
@@ -426,7 +425,6 @@ $export: (
     secondary: $gray-800,
     tertiary: $black,
     overlay: $gray-900,
-    selected: $blue-400, // `$bg-blue` in Primer CSS
     info: $blue-800,
     info-inverse: $blue-400,
     danger: $red-800,
