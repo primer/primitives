@@ -130,10 +130,121 @@ $gray-dark:   $gray-900;
 $gray-light:  $gray-400;
 $gray:        $gray-500;
 
-// -------- Color gradient maps --------
-// Note: The order of the scale is flipped in dark.scss
+// -------- Color scale --------
 
 $scale: (
+  black: $black,
+  white: $white,
+
+  gray: (
+    $gray-000,
+    $gray-100,
+    $gray-200,
+    $gray-300,
+    $gray-400,
+    $gray-500,
+    $gray-600,
+    $gray-700,
+    $gray-800,
+    $gray-900,
+  ),
+
+  blue: (
+    $blue-000,
+    $blue-100,
+    $blue-200,
+    $blue-300,
+    $blue-400,
+    $blue-500,
+    $blue-600,
+    $blue-700,
+    $blue-800,
+    $blue-900,
+  ),
+
+  green: (
+    $green-000,
+    $green-100,
+    $green-200,
+    $green-300,
+    $green-400,
+    $green-500,
+    $green-600,
+    $green-700,
+    $green-800,
+    $green-900,
+  ),
+
+  yellow: (
+    $yellow-000,
+    $yellow-100,
+    $yellow-200,
+    $yellow-300,
+    $yellow-400,
+    $yellow-500,
+    $yellow-600,
+    $yellow-700,
+    $yellow-800,
+    $yellow-900,
+  ),
+
+  orange: (
+    $orange-000,
+    $orange-100,
+    $orange-200,
+    $orange-300,
+    $orange-400,
+    $orange-500,
+    $orange-600,
+    $orange-700,
+    $orange-800,
+    $orange-900,
+  ),
+
+  red: (
+    $red-000,
+    $red-100,
+    $red-200,
+    $red-300,
+    $red-400,
+    $red-500,
+    $red-600,
+    $red-700,
+    $red-800,
+    $red-900,
+  ),
+
+  purple: (
+    $purple-000,
+    $purple-100,
+    $purple-200,
+    $purple-300,
+    $purple-400,
+    $purple-500,
+    $purple-600,
+    $purple-700,
+    $purple-800,
+    $purple-900,
+  ),
+
+  pink: (
+    $pink-000,
+    $pink-100,
+    $pink-200,
+    $pink-300,
+    $pink-400,
+    $pink-500,
+    $pink-600,
+    $pink-700,
+    $pink-800,
+    $pink-900,
+  )
+);
+
+// -------- Auto scale --------
+// Note: The order of the auto scale is flipped in dark.scss
+
+$auto: (
   black: $white,
   white: $black,
 
@@ -258,6 +369,7 @@ $bg-green-light: $green-100;
 // -------- Functional colors ----------
 $export: (
   scale: $scale,
+  auto: $auto,
 
   // Pure functional
 
