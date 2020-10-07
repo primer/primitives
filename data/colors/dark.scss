@@ -662,7 +662,7 @@ $export: (
 
   // App level
 
-  ic-folder: $blue-600,
+  icon-folder: $gray-400,
   hl-author-bg: $blue-900,
   hl-author-border: $blue-700,
   logo-subdued: $gray-600,
@@ -681,13 +681,14 @@ $export: (
   ),
 
   global-nav: (
-    logo: $black,
-    bg: $gray-000,
-    text: $black,
+    logo: $gray-000,
+    bg: $gray-800,
+    text: $gray-000,
+    icon: $gray-000,
     input-bg: $gray-900,
-    input-border: $gray-900,
-    input-ic: $tbd,
-    input-placeholder: $tbd,
+    input-border: $gray-700,
+    input-icon: $gray-700,
+    input-placeholder: $gray-500,
   ),
 
   calendar-graph: (
