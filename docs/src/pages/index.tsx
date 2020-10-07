@@ -4,6 +4,7 @@ import groupBy from 'lodash.groupby'
 import kebabCase from 'lodash.kebabcase'
 import merge from 'lodash.merge'
 import React from 'react'
+import {Helmet} from 'react-helmet'
 import {sentenceCase} from 'sentence-case'
 import primitives from '../../../dist/js'
 
@@ -18,6 +19,9 @@ const colors = getColorArray(primitives.colors)
 export default function Home() {
   return (
     <BaseStyles>
+      <Helmet>
+        <title>Primer Primitives</title>
+      </Helmet>
       <div>
         <table
           style={{
