@@ -364,8 +364,6 @@ $custom-btn-primary-bg-disabled: #94d3a2; // btn primary disabled
 
 $custom-btn-bg-hover: #f3f4f6; // btn hover bg
 
-$bg-green-light: $green-100;
-
 // -------- Functional colors ----------
 $export: (
   scale: $scale,
@@ -469,26 +467,30 @@ $export: (
   // Components
 
   alert: (
+    text: $gray-900,
+    icon: rgba($blue-700, 0.6),
     bg: $blue-100,
     border: rgba($blue-700, 0.2),
-    icon: rgba($blue-700, 0.6),
 
     warn: (
+      text: $gray-900,
+      icon: $yellow-800,
       bg: $yellow-100,
       border: rgba($yellow-800, 0.2),
-      icon: $yellow-800,
     ),
 
     error: (
-      bg: #ffe3e6, // custom color from PCSS
-      border: rgba($red-800, 0.2),
+      text: $gray-900,
       icon: rgba($red-800, 0.6),
+      bg: #ffe3e6,
+      border: rgba($red-800, 0.2),
     ),
 
     success: (
-      bg: $bg-green-light, // TODO: extract?
-      border: rgba($green-700, 0.2),
+      text: $gray-900,
       icon: rgba($green-700, 0.8),
+      bg: $green-100,
+      border: rgba($green-700, 0.2),
     )
   ),
 

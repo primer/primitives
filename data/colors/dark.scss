@@ -364,8 +364,6 @@ $custom-btn-primary-bg-disabled: #94d3a2; // btn primary disabled
 
 $custom-btn-bg-hover: #f3f4f6; // btn hover bg
 
-$bg-green-light: $green-100;
-
 // -------- Functional colors ----------
 $export: (
   scale: $scale,
@@ -469,27 +467,31 @@ $export: (
   // Components
 
   alert: (
-    bg: $blue-800,
-    border: rgba($blue-200, 0.2),
-    icon: rgba($blue-200, 0.6),
+    text: $blue-200,
+    icon: $blue-200,
+    bg: rgba($blue-200, 0.1),
+    border: rgba($blue-200, 0.4),
 
     warn: (
-      bg: $yellow-800,
-      border: rgba($yellow-100, 0.2),
-      icon: $yellow-100,
+      text: #F2D35B,
+      icon: #F2D35B,
+      bg: rgba(#EBC440, 0.1),
+      border: rgba(#EBC440, 0.4),
     ),
 
     error: (
-      bg: #ffe3e6, // TODO: replace custom color
-      border: rgba($red-100, 0.2),
-      icon: rgba($red-100, 0.6),
+      text: #FF7168,
+      icon: #FF7168,
+      bg: rgba($red-300, 0.1),
+      border: rgba($red-300, 0.4),
     ),
 
     success: (
-      bg: $bg-green-light, // TODO: extract?
-      border: rgba($green-200, 0.2),
-      icon: rgba($green-200, 0.8),
-    )
+      text: $green-200,
+      icon: $green-200,
+      bg: rgba($green-200, 0.1),
+      border: rgba($green-200, 0.4),
+    ),
   ),
 
   blankslate: (
