@@ -8,10 +8,17 @@ import {Helmet} from 'react-helmet'
 import {sentenceCase} from 'sentence-case'
 import primitives from '../../../dist/js'
 
-const DataCell = props => <Box as="td" p={3} {...props} />
+const DataCell = props => (
+  <Box as="td" p={3} sx={{borderBottom: '1px solid', borderColor: primitives.colors.light.border.primary}} {...props} />
+)
 
 const HeaderCell = props => (
-  <DataCell as="th" bg="gray.1" sx={{textAlign: 'left', position: 'sticky', top: 0}} {...props} />
+  <DataCell
+    as="th"
+    bg={primitives.colors.light.bg.secondary}
+    sx={{textAlign: 'left', position: 'sticky', top: 0}}
+    {...props}
+  />
 )
 
 const colors = getColorArray(primitives.colors)
@@ -37,13 +44,19 @@ export default function Home() {
               {Object.keys(colors[0].modes)
                 .reverse()
                 .map(mode => (
-                  <HeaderCell key={mode}>{sentenceCase(mode)} mode</HeaderCell>
+                  <HeaderCell
+                    key={mode}
+                    bg={primitives.colors[mode].bg.secondary}
+                    color={primitives.colors[mode].text.primary}
+                  >
+                    {sentenceCase(mode)} mode
+                  </HeaderCell>
                 ))}
             </tr>
           </thead>
           <tbody>
             {colors.map(color => (
-              <Box as="tr" key={color.key} sx={{borderBottom: '1px solid', borderColor: 'border.gray'}}>
+              <Box as="tr" key={color.key}>
                 <DataCell>
                   <Text fontFamily="mono">{color.key}</Text>
                 </DataCell>
@@ -53,7 +66,12 @@ export default function Home() {
                 {Object.entries(color.modes)
                   .reverse()
                   .map(([mode, value]) => (
-                    <DataCell key={`${color.key} ${mode}`}>
+                    <DataCell
+                      key={`${color.key} ${mode}`}
+                      color={primitives.colors[mode].text.primary}
+                      bg={primitives.colors[mode].bg.canvas}
+                      sx={{borderBottom: '1px solid', borderColor: primitives.colors[mode].border.primary}}
+                    >
                       <Box
                         as="span"
                         display="inline-block"
