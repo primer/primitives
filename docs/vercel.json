@@ -6,5 +6,5 @@
       "destination": "/primitives"
     }
   ],
-  "rewrites": [{"source": "/primitives(/.*)?", "destination": "$1"}]
+  "rewrites": [{"source": "/primitives(/.*)?", "destination": "/$1"}]
 }
