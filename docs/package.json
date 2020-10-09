@@ -5,7 +5,7 @@
   "scripts": {
     "setup": "cd ..; yarn; yarn build",
     "prebuild": "yarn setup",
-    "build": "gatsby build",
+    "build": "gatsby build --prefix-paths",
     "predevelop": "yarn setup",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
