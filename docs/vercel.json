@@ -1,10 +1,9 @@
 {
   "version": 2,
-  "routes": [
+  "redirects": [
     {
-      "src": "/",
-      "status": 301,
-      "headers": {"Location": "/primitives"}
+      "source": "/",
+      "destination": "/primitives"
     }
   ]
 }
