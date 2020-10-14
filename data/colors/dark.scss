@@ -378,7 +378,7 @@ $export: (
     placeholder: $gray-5,
     disabled: $gray-5,
     inverse: $gray-9,
-    link-primary: $blue-2,
+    link-primary: $blue-3,
     link-secondary: $gray-0,
     link-tertiary: $gray-3,
     danger: $red-4,
@@ -388,7 +388,7 @@ $export: (
 
   icon: (
     primary:$gray-0,
-    secondary: $gray-3,
+    secondary: $gray-4,
     tertiary: $gray-5,
     info: $blue-2,
     danger: $red-4,
@@ -399,15 +399,21 @@ $export: (
   state: (
     hover-primary-bg: $blue-4,
     hover-primary-border: $blue-4,
+    hover-primary-text: $gray-0,
+    hover-primary-icon: $gray-0,
     hover-secondary-bg: $gray-8,
     hover-secondary-border: $gray-8,
     selected-primary-bg: $blue-4,
     selected-primary-border: $blue-4,
+    selected-primary-text: $gray-0,
+    selected-primary-icon: $gray-0,
+    
+    /* Added text and icons to the states becaus inverse doesn't work. They are light in both dark and light mode */
   ),
 
   border: (
     primary: $gray-6,
-    secondary: darken($gray-6, 3%),
+    secondary: $gray-7,
     tertiary: $gray-4,
     inverse: $white,
     info: $blue-4,
@@ -418,18 +424,19 @@ $export: (
 
   bg: (
     canvas: $gray-9,
+    canvas-mobile: $black,
     canvas-inverse: $gray-0,
     primary: $gray-9,
-    secondary: $gray-8,
-    tertiary: $black,
-    overlay: $gray-9,
-    info: $blue-8,
+    secondary: $gray-9,
+    tertiary: $gray-8,
+    overlay: $gray-9, // Will need to be a fade
+    info: $blue-8, // Will need to be a fade
     info-inverse: $blue-4,
-    danger: $red-8,
+    danger: $red-8, // Will need to be a fade
     danger-inverse: $red-4,
-    success: $green-8,
+    success: $green-8, // Will need to be a fade
     success-inverse: $green-4,
-    warning: $yellow-7,
+    warning: $yellow-7, // Will need to be a fade
     warning-inverse: $yellow-2,
   ),
 
