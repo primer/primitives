@@ -25,7 +25,8 @@
   "scripts": {
     "prebuild": "rm -rf dist",
     "build": "ts-node ./script/build.ts && tsc",
-    "prepack": "yarn build"
+    "prepack": "yarn build",
+    "watch": "ls data/**/*.scss script/**/*.ts | entr -s 'yarn build'"
   },
   "dependencies": {},
   "devDependencies": {
