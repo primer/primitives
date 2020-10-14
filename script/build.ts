@@ -44,9 +44,11 @@ async function build() {
     let modes = await getModesForType(type)
     modes = modes.filter(mode => !SKIP.includes(`${mode.type}/${mode.name}`))
 
-    if (!verifyModes(modes)) {
-      console.log(`Invalid modes for type '${type}'. The following variables are missing in one or more modes:`)
-      printVarList(modes)
+    const missingVars = getMissingVars(modes)
+    if (missingVars.length > 0) {
+      console.log(`\nInvalid modes for type '${type}'. The following variables are missing in one or more modes:\n`)
+      missingVars.forEach(v => console.log(v))
+      console.log("")
       process.exit(1)
     }
 
@@ -74,18 +76,13 @@ async function getModesForType(type: string): Promise<ReadonlyArray<ModeData>> {
   }))
 }
 
-function verifyModes(modes: ReadonlyArray<ModeData>): boolean {
+function getMissingVars(modes: ReadonlyArray<ModeData>): Array<string> {
   if (modes.length === 1) {
-    return true
+    return []
   }
 
-  const vars = modes.map(m => m.vars)
-  const [first, ...rest] = vars
+  const missingVars = []
 
-  return rest.every(v => areObjectsSameShape([first, v]))
-}
-
-function printVarList(modes: ReadonlyArray<ModeData>): void {
   const allVarsPerMode = modes.reduce((acc, mode) => {
     const allVars = flattenVars(mode.vars)
     acc[mode.name] = allVars
@@ -100,11 +97,12 @@ function printVarList(modes: ReadonlyArray<ModeData>): void {
   for (const v of uniqueVarNames.values()) {
     const missingModes = modes.filter(mode => !(allVarsPerMode[mode.name][v])).map(mode => mode.name)
     if (missingModes.length > 0) {
-      console.log(
-        chalk`Variable {bold ${v}} is missing in modes: ${missingModes.map(str => chalk.bold(str)).join(', ')}`
-      )
+      const msg = chalk`Variable {bold ${v}} is missing in modes: ${missingModes.map(str => chalk.bold(str)).join(', ')}`
+      missingVars.push(msg)
     }
   }
+
+  return missingVars
 }
 
 async function writeModeOutput(type: string, modes: ReadonlyArray<ModeData>): Promise<void> {
