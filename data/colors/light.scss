@@ -399,10 +399,15 @@ $export: (
   state: (
     hover-primary-bg: $blue-5,// `$bg-blue` in Primer CSS
     hover-primary-border: $blue-5,
+    hover-primary-text: $white,
+    hover-primary-icon: $white,
+
     hover-secondary-bg: $gray-1,
     hover-secondary-border: $gray-1,
     selected-primary-bg: $blue-5,// `$bg-blue` in Primer CSS
     selected-primary-border: $blue-5,
+    selected-primary-text: $white,
+    selected-primary-icon: $white,
   ),
 
   border: (
@@ -418,6 +423,7 @@ $export: (
 
   bg: (
     canvas: $white,
+    canvas-mobile: $white,
     canvas-inverse: $gray-9,
     primary: $white,
     secondary: $gray-1,
