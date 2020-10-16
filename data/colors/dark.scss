@@ -428,10 +428,10 @@ $export: (
   ),
 
   shadow: (
-    small: 0 1px 0 rgba($gray-9, 0.04),
-    medium: 0 3px 6px rgba($gray-9, 0.15),
-    large: 0 8px 24px rgba($gray-9, 0.2),
-    extra-large: 0 12px 48px rgba($gray-9, 0.3),
+    small: 0 1px 0 $gray-9,
+    medium: 0 3px 6px $gray-9,
+    large: 0 8px 24px $gray-9,
+    extra-large: 0 12px 48px $gray-9,
 
     highlight: inset 0 1px 0 rgba($white, 0.1), // top highlight
     inset: inset 0 1px 0 rgba($gray-7, 0.2), // top inner shadow
