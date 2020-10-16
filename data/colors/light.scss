@@ -544,6 +544,7 @@ $export: (
 
     danger: (
       text: $red-5,
+      text-hover: $gray-0,
       text-disabled: rgba($red-5, 0.5),
       bg-hover: $red-6,
       bg-active: darken($red-6, 3%),
@@ -555,6 +556,7 @@ $export: (
 
     outline: (
       text: $blue-5,
+      text-hover: $gray-0,
       text-disabled: rgba($blue-5, 0.5),
       bg-hover: $blue-5,
       bg-active: darken($blue-5, 3%),
