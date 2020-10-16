@@ -397,18 +397,16 @@ $export: (
   ),
 
   state: (
-    hover-primary-bg: $blue-4,
+    hover-primary-bg: $blue-5,
     hover-primary-border: $blue-4,
     hover-primary-text: $gray-0,
     hover-primary-icon: $gray-0,
     hover-secondary-bg: $gray-8,
     hover-secondary-border: $gray-8,
-    selected-primary-bg: $blue-4,
+    selected-primary-bg: $blue-5,
     selected-primary-border: $blue-4,
     selected-primary-text: $gray-0,
     selected-primary-icon: $gray-0,
-    
-    /* Added text and icons to the states becaus inverse doesn't work. They are light in both dark and light mode */
   ),
 
   border: (
@@ -499,6 +497,12 @@ $export: (
       bg: rgba($green-2, 0.1),
       border: rgba($green-2, 0.4),
     ),
+  ),
+
+  autocomplete: (
+    bg: $gray-7,
+    border: $gray-5,
+    row-border: $gray-6,
   ),
 
   blankslate: (

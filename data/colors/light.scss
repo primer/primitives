@@ -401,7 +401,6 @@ $export: (
     hover-primary-border: $blue-5,
     hover-primary-text: $white,
     hover-primary-icon: $white,
-
     hover-secondary-bg: $gray-1,
     hover-secondary-border: $gray-1,
     selected-primary-bg: $blue-5,// `$bg-blue` in Primer CSS
@@ -498,6 +497,12 @@ $export: (
       bg: $green-1,
       border: rgba($green-7, 0.2),
     )
+  ),
+
+  autocomplete: (
+    bg: $white,
+    border: $gray-2,
+    row-border: lighten($gray-2, 3%),
   ),
 
   blankslate: (
