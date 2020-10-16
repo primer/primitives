@@ -353,17 +353,6 @@ $auto: (
   )
 );
 
-// Colors from Primer CSS, either with
-// specific names, or adding new names to existing
-// custom colors with no name
-
-$custom-btn-primary-bg: #2ea44f; // btn primary
-$custom-btn-primary-bg-hover: #2c974b; // btn primary hover
-$custom-btn-primary-bg-active: darken(#2c974b, 2%); // btn primary active
-$custom-btn-primary-bg-disabled: #94d3a2; // btn primary disabled
-
-$custom-btn-bg-hover: #f3f4f6; // btn hover bg
-
 // -------- Functional colors ----------
 $export: (
   scale: $scale,
@@ -515,8 +504,11 @@ $export: (
     text: $gray-9,
     ic: $gray-5,
 
-    bg-hover: $custom-btn-bg-hover,
-    bg-active: darken($custom-btn-bg-hover, 2%),
+    shadow: 0 1px 0 rgba($black, 0.04),
+    shadow-highlight: inset 0 1px 0 rgba($white, 0.25), // top highlight
+
+    bg-hover: #f3f4f6,
+    bg-active: darken(#f3f4f6, 2%),
 
     shadow-active: inset 0 0.15em 0.3em $black-fade-15, // TODO: Deprecate? Not used in Primer CSS
     shadow-input-focus: 0 0 0 0.2em rgba($blue, 0.3), // TODO: Deprecate?
@@ -524,7 +516,7 @@ $export: (
     /* states */
 
     primary: (
-      bg: $custom-btn-primary-bg,
+      bg: #2ea44f,
       border: $black-fade-15,
       border-disabled: $black-fade-10,
       text: $white,
@@ -533,12 +525,12 @@ $export: (
       shadow-highlight: inset 0 1px 0 rgba($white, 0.03),
       shadow-selected: inset 0 1px 0 rgba($green-9, 0.2),
 
-      bg-hover: $custom-btn-primary-bg-hover,
-      bg-active: $custom-btn-primary-bg-active,
-      bg-disabled: $custom-btn-primary-bg-disabled,
+      bg-hover: #2c974b,
+      bg-active: darken(#2c974b, 2%),
+      bg-disabled: #94d3a2,
 
       disabled-text: rgba($white, 0.8),
-      disabled-shadow: 0 0 0 3px rgba($custom-btn-primary-bg, 0.4),
+      disabled-shadow: 0 0 0 3px rgba(#2ea44f, 0.4),
 
       counter-bg: rgba($white, 0.2),
     ),

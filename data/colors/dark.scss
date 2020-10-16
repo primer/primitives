@@ -353,17 +353,6 @@ $auto: (
   )
 );
 
-// Colors from Primer CSS, either with
-// specific names, or adding new names to existing
-// custom colors with no name
-
-$custom-btn-primary-bg: #2ea44f; // btn primary
-$custom-btn-primary-bg-hover: #2c974b; // btn primary hover
-$custom-btn-primary-bg-active: darken(#2c974b, 2%); // btn primary active
-$custom-btn-primary-bg-disabled: #94d3a2; // btn primary disabled
-
-$custom-btn-bg-hover: #161B22; // btn hover bg
-
 // -------- Functional colors ----------
 $export: (
   scale: $scale,
@@ -510,13 +499,16 @@ $export: (
   ),
 
   btn: (
-    bg: $gray-7,
-    border: $white-fade-15,
+    bg: $white-fade-10,
+    border: $white-fade-10,
     text: $gray-0,
     ic: $gray-4,
 
-    bg-hover: $custom-btn-bg-hover,
-    bg-active: lighten($custom-btn-bg-hover, 2%),
+    shadow: transparent,
+    shadow-highlight: transparent, // top highlight
+
+    bg-hover: #161B22,
+    bg-active: lighten(#161B22, 2%),
 
     shadow-active: inset 0 0.15em 0.3em $black-fade-15, // TODO: Deprecate? Not used in Primer CSS
     shadow-input-focus: 0 0 0 0.2em rgba($blue, 0.3), // TODO: Deprecate?
@@ -524,21 +516,21 @@ $export: (
     /* states */
 
     primary: (
-      bg: $custom-btn-primary-bg,
-      border: $black-fade-15,
-      border-disabled: $black-fade-10,
-      text: $white,
-      ic: rgba($white, 0.8),
-      shadow: 0 1px 0 $black-fade-10,
-      shadow-highlight: inset 0 1px 0 rgba($white, 0.03),
-      shadow-selected: inset 0 1px 0 rgba($green-9, 0.2),
+      bg: $green-4,
+      border: $green-3,
+      border-disabled: $green-7,
+      text: $gray-0,
+      ic: $gray-0,
+      shadow: transparent,
+      shadow-highlight: transparent,
+      shadow-selected: transparent,
 
-      bg-hover: $custom-btn-primary-bg-hover,
-      bg-active: $custom-btn-primary-bg-active,
-      bg-disabled: $custom-btn-primary-bg-disabled,
+      bg-hover: lighten($green-4, 2%),
+      bg-active: darken($green-4, 2%),
+      bg-disabled: $green-8,
 
-      disabled-text: rgba($white, 0.8),
-      disabled-shadow: 0 0 0 3px rgba($custom-btn-primary-bg, 0.4),
+      disabled-text: rgba($white, 0.5),
+      disabled-shadow: transparent,
 
       counter-bg: rgba($white, 0.2),
     ),
@@ -562,7 +554,7 @@ $export: (
     ),
 
     outline: (
-      text: $blue-4,
+      text: $blue-3,
       text-disabled: rgba($blue-4, 0.5),
       bg-hover: $blue-3,
       bg-active: darken($blue-3, 3%),
