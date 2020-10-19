@@ -573,6 +573,40 @@ $export: (
     border: rgba(209, 213, 218, 0.5),
   ),
 
+  label: (
+    border: $gray-2,
+
+    primary: (
+      text: $gray-9,
+      border: $gray-5,
+    ),
+
+    secondary: (
+      text: $gray-6,
+      border: $gray-2,
+    ),
+
+    info: (
+      text: $blue-5,
+      border: $blue-5,
+    ),
+
+    success: (
+      text: $green-6,
+      border: $green-5,
+    ),
+
+    warning: (
+      text: $yellow-9,
+      border: $yellow-8,
+    ),
+
+    danger: (
+      text: $red-5,
+      border: $red-6,
+    ),
+  ),
+
   topic: (
     tag-bg: $blue-0,
     tag-border: $blue-0,

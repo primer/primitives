@@ -573,6 +573,40 @@ $export: (
     border: rgba(209, 213, 218, 0.5), // TODO: Replace custom color
   ),
 
+  label: (
+    border: $gray-6,
+
+    primary: (
+      text: $gray-2,
+      border: $gray-4,
+    ),
+
+    secondary: (
+      text: $gray-3,
+      border: $gray-6,
+    ),
+
+    info: (
+      text: $blue-4,
+      border: rgba($blue-4, 0.4),
+    ),
+
+    success: (
+      text: $green-3,
+      border: rgba($green-4, 0.4),
+    ),
+
+    warning: (
+      text: $yellow-2,
+      border: rgba(#F2D35B, 0.4),
+    ),
+
+    danger: (
+      text: $red-4,
+      border: rgba($red-4, 0.4),
+    ),
+  ),
+
   topic: (
     tag-bg: $blue-9,
     tag-border: $blue-9,
