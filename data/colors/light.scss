@@ -461,10 +461,12 @@ $export: (
   // Components
 
   alert: (
-    text: $gray-9,
-    icon: rgba($blue-7, 0.6),
-    bg: $blue-1,
-    border: rgba($blue-7, 0.2),
+    info: (
+      text: $gray-9,
+      icon: rgba($blue-7, 0.6),
+      bg: $blue-1,
+      border: rgba($blue-7, 0.2),
+    ),
 
     warn: (
       text: $gray-9,
@@ -711,9 +713,16 @@ $export: (
     border: darken($gray-3, 5%),
   ),
 
-  underline-nav: (
+  underlinenav: (
+    border: rgba($gray-3, 0),
+    border-hover: $gray-3,
+    border-active: #f9826c,
+    text: $gray-9,   
+    text-hover: $gray-9,
     text-active: $gray-9,
-    text: $gray-9,
+    icon: $gray-4,
+    icon-hover: $gray-4,
+    icon-active: $gray-9,
   ),
 
   social-count: (

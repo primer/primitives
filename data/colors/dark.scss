@@ -461,30 +461,32 @@ $export: (
   // Components
 
   alert: (
-    text: $blue-2,
-    icon: $blue-2,
-    bg: rgba($blue-2, 0.1),
-    border: rgba($blue-2, 0.4),
+    info: (
+      text: $blue-2,
+      icon: $blue-2,
+      bg: rgba($blue-4, 0.1),
+      border: rgba($blue-4, 0.4),
+    ),
 
     warn: (
-      text: #F2D35B,
-      icon: #F2D35B,
-      bg: rgba(#EBC440, 0.1),
-      border: rgba(#EBC440, 0.4),
+      text: $yellow-2,
+      icon: $yellow-2,
+      bg: rgba($yellow-4, 0.1),
+      border: rgba($yellow-4, 0.4),
     ),
 
     error: (
-      text: #FF7168,
-      icon: #FF7168,
-      bg: rgba($red-3, 0.1),
-      border: rgba($red-3, 0.4),
+      text: $red-3,
+      icon: $red-3,
+      bg: rgba($red-4, 0.1),
+      border: rgba($red-4, 0.4),
     ),
 
     success: (
       text: $green-2,
       icon: $green-2,
-      bg: rgba($green-2, 0.1),
-      border: rgba($green-2, 0.4),
+      bg: rgba($green-4, 0.1),
+      border: rgba($green-4, 0.4),
     ),
   ),
 
@@ -711,9 +713,16 @@ $export: (
     border: darken($gray-6, 5%),
   ),
 
-  underline-nav: (
-    text-active: $white,
+  underlinenav: (
+    border: rgba($gray-6, 0),
+    border-hover: $gray-6,
+    border-active: #F78166,
     text: $gray-3,
+    text-hover: $gray-0,
+    text-active: $gray-0,
+    icon: $gray-4,
+    icon-hover: $gray-0,
+    icon-active: $gray-0,
   ),
 
   social-count: (
