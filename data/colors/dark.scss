@@ -568,9 +568,17 @@ $export: (
   ),
 
   counter: (
-    text: $gray-3,
+    text: $gray-0,
     bg: $gray-6,
-    border: rgba(209, 213, 218, 0.5), // TODO: Replace custom color
+
+    primary: (
+      text: $gray-0,
+      bg: $gray-4,
+    ),
+
+    secondary: (
+      text: $gray-3,
+    ),
   ),
 
   label: (

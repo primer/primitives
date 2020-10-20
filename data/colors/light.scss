@@ -570,7 +570,15 @@ $export: (
   counter: (
     text: $gray-9,
     bg: rgba($gray-3, 0.5),
-    border: rgba(209, 213, 218, 0.5),
+
+    primary: (
+      text: $white,
+      bg: $gray-5,
+    ),
+
+    secondary: (
+      text: $gray-5,
+    ),
   ),
 
   label: (
