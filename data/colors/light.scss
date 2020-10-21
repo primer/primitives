@@ -698,6 +698,20 @@ $export: (
     table-tr-border: darken($gray-3, 4%),
   ),
 
+  menu: (
+    heading-text: $gray-9,
+    border-active: #f9826c, // coral
+  ),
+
+  sidenav: (
+    selected-bg: $white,
+    border-active: #f9826c, // coral
+  ),
+
+  tabnav: (
+    selected-bg: $white,
+  ),
+
   header: (
     text: $white-fade-70,
     bg: $gray-9,
