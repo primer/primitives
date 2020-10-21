@@ -656,8 +656,12 @@ $export: (
   ),
 
   select-menu: (
-    backdrop-bg: $black-fade-50,
+    bg: $white,
+    border: $gray-2,
+    border-secondary: lighten($gray-2, 3%),
     shadow: 0 0 18px rgba($black, 0.4),
+    backdrop-bg: $black-fade-50,
+    backdrop-border: transparent,
     tap-highlight: rgba($gray-3, 0.5),
     tap-focus-bg: $blue-1,
   ),
