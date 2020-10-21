@@ -680,8 +680,14 @@ $export: (
 
   branch-name: (
     text: rgba($black, 0.6),
-    bg: lighten($blue-1, 3%),
     icon: desaturate($blue-3, 70%),
+    bg: lighten($blue-1, 3%),
+
+    link: (
+      text: $blue-5,
+      icon: desaturate($blue-3, 70%),
+      bg: lighten($blue-1, 3%),
+    ),
   ),
 
   markdown: (
