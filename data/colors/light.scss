@@ -584,6 +584,12 @@ $export: (
     ),
   ),
 
+  dropdown: (
+    bg: $white,
+    border: $gray-2,
+    shadow: 0 8px 24px rgba($gray-4, 0.2),
+  ),
+
   label: (
     border: $gray-2,
 
@@ -662,10 +668,6 @@ $export: (
     row-blue-bg: $blue-0,
     header-blue-bg: $blue-0,
     header-blue-border: $blue-2,
-  ),
-
-  dropdown: (
-    border: $white,
   ),
 
   popover: (
