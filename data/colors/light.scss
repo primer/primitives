@@ -493,6 +493,7 @@ $export: (
   autocomplete: (
     bg: $white,
     border: $gray-2,
+    shadow: 0 3px 6px rgba($gray-4, 0.15),
     row-border: lighten($gray-2, 3%),
   ),
 
@@ -717,7 +718,7 @@ $export: (
     border: rgba($gray-3, 0),
     border-hover: $gray-3,
     border-active: #f9826c,
-    text: $gray-9,   
+    text: $gray-9,
     text-hover: $gray-9,
     text-active: $gray-9,
     icon: $gray-4,
