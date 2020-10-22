@@ -118,8 +118,8 @@ async function writeModeOutput(type: string, modes: ReadonlyArray<ModeData>): Pr
 async function writeScssOutput(mode: ModeData): Promise<void> {
   const vars = flattenVars(mode.vars)
 
-  let output = `@mixin primer-${mode.type}-${mode.name}($sel) {\n`
-  output += "  #{$sel} {\n"
+  let output = `@mixin primer-${mode.type}-${mode.name} {\n`
+  output += "  & {\n"
   for (const variable of Object.keys(vars)) {
     const value = vars[variable]
     output += `    --${mode.prefix}-${variable}: ${value};\n`
