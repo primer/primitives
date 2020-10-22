@@ -843,6 +843,11 @@ $export: (
     day-L1-border: rgba(27, 31, 35, 0.06),
   ),
 
+  footer-invertocat: (
+    octicon: $gray-6,
+    octicon-hover: $gray-4,
+  ),
+
   pr-state: (
     draft: (
       text: $gray-3,
@@ -867,10 +872,5 @@ $export: (
       bg: rgba($red-5, 0.1),
       border: rgba($red-5, 0.4),
     ),
-  ),
-
-  footer-invertocat: (
-    octicon: $gray-6,
-    octicon-hover: $gray-4,
   ),
 );
