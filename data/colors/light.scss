@@ -807,13 +807,13 @@ $export: (
 
   diff: (
     neutral-bg: $gray-3,
-    deletion-bg: $red-6,
+    deletion-bg: $red-5,
     deletion-bg-strong: $tbd,
-    deletion-border: $tbd,
+    deletion-border: $red-4,
     deletion-border-strong: $tbd,
-    addition-bg: darken($green-4, 5%),
+    addition-bg: $green-5,
     addition-bg-strong: $tbd,
-    addition-border: $tbd,
+    addition-border: $green-4,
     addition-border-strong: $tbd,
   ),
 
