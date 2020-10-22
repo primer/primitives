@@ -644,7 +644,32 @@ $export: (
     contrast-bg: rgba(#010409, 0.3),
     border: $white-fade-10,
     shadow: transparent,
-    shadow-focus: 0 0 0 0.2em rgba($blue, 0.3),
+
+    disabled-bg: $gray-8,
+    disabled-border: $gray-6,
+
+    warning-border: $yellow-3,
+    error-border: $red-4,
+
+    tooltip: (
+      success: (
+        text: $green-2,
+        bg: rgba($green-4, 0.1),
+        border: rgba($green-4, 0.4),
+      ),
+
+      warning: (
+        text: $yellow-2,
+        bg: rgba($yellow-4, 0.1),
+        border: rgba($yellow-4, 0.4),
+      ),
+
+      error: (
+        text: $red-3,
+        bg: rgba($red-4, 0.1),
+        border: rgba($red-4, 0.4),
+      ),
+    ),
   ),
 
   avatar: (
