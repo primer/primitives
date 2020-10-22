@@ -385,19 +385,6 @@ $export: (
     warning: $yellow-2,
   ),
 
-  state: (
-    hover-primary-bg: $blue-5,
-    hover-primary-border: $blue-4,
-    hover-primary-text: $gray-0,
-    hover-primary-icon: $gray-0,
-    hover-secondary-bg: $gray-8,
-    hover-secondary-border: $gray-8,
-    selected-primary-bg: $blue-5,
-    selected-primary-border: $blue-4,
-    selected-primary-text: $gray-0,
-    selected-primary-icon: $gray-0,
-  ),
-
   border: (
     primary: $gray-6,
     secondary: $gray-7,
@@ -434,8 +421,30 @@ $export: (
     extra-large: 0 12px 48px $gray-9,
 
     highlight: inset 0 1px 0 rgba($white, 0.1), // top highlight
-    inset: inset 0 1px 0 rgba($gray-7, 0.2), // top inner shadow
-    focus: 0 0 0 3px rgba($blue-4, 0.3), // blue focus ring
+    inset: transparent, // top inner shadow
+  ),
+
+  state: (
+    hover: (
+      primary-bg: $blue-5,
+      primary-border: $blue-4,
+      primary-text: $gray-0,
+      primary-icon: $gray-0,
+      secondary-bg: $gray-8,
+      secondary-border: $gray-8,
+    ),
+
+    selected: (
+      primary-bg: $blue-5,
+      primary-border: $blue-4,
+      primary-text: $gray-0,
+      primary-icon: $gray-0,
+    ),
+
+    focus: (
+      border: $blue-4, // blue focus border
+      shadow: 0 0 0 3px $blue-8, // blue focus ring
+    ),
   ),
 
   fade: (
@@ -631,9 +640,10 @@ $export: (
   ),
 
   input: (
-    bg: $black,
-    contrast-bg: $gray-9,
-    shadow: inset 0 1px 2px rgba($white, 0.075),
+    bg: $gray-9,
+    contrast-bg: rgba(#010409, 0.3),
+    border: $white-fade-10,
+    shadow: transparent,
     shadow-focus: 0 0 0 0.2em rgba($blue, 0.3),
   ),
 

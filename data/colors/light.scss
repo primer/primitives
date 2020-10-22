@@ -385,19 +385,6 @@ $export: (
     warning: $yellow-8,
   ),
 
-  state: (
-    hover-primary-bg: $blue-5,// `$bg-blue` in Primer CSS
-    hover-primary-border: $blue-5,
-    hover-primary-text: $white,
-    hover-primary-icon: $white,
-    hover-secondary-bg: $gray-1,
-    hover-secondary-border: $gray-1,
-    selected-primary-bg: $blue-5,// `$bg-blue` in Primer CSS
-    selected-primary-border: $blue-5,
-    selected-primary-text: $white,
-    selected-primary-icon: $white,
-  ),
-
   border: (
     primary: $gray-2,
     secondary: lighten($gray-2, 3%),
@@ -435,7 +422,29 @@ $export: (
 
     highlight: inset 0 1px 0 rgba($white, 0.25), // top highlight
     inset: inset 0 1px 0 rgba($gray-2, 0.2), // top inner shadow
-    focus: 0 0 0 3px rgba($blue-5, 0.3), // blue focus ring
+  ),
+
+  state: (
+    hover: (
+      primary-bg: $blue-5,// `$bg-blue` in Primer CSS
+      primary-border: $blue-5,
+      primary-text: $white,
+      primary-icon: $white,
+      secondary-bg: $gray-1,
+      secondary-border: $gray-1,
+    ),
+
+    selected: (
+      primary-bg: $blue-5,// `$bg-blue` in Primer CSS
+      primary-border: $blue-5,
+      primary-text: $white,
+      primary-icon: $white,
+    ),
+
+    focus: (
+      border: $blue-5, // blue focus border
+      shadow: 0 0 0 3px rgba($blue-5, 0.3), // blue focus ring
+    ),
   ),
 
   fade: (
@@ -633,6 +642,7 @@ $export: (
   input: (
     bg: $white,
     contrast-bg: $gray-0,
+    border: $gray-2,
     shadow: inset 0 1px 2px rgba($black, 0.075),
     shadow-focus: 0 0 0 0.2em rgba($blue, 0.3),
   ),
