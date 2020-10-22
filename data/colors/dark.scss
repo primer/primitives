@@ -1,7 +1,7 @@
 // Dark mode
 
-$black: #0D1117;
-$white: #fff;
+$black: #010409;
+$white: #F0F6FC;
 
 $tbd: $white;
 
@@ -388,10 +388,10 @@ $export: (
     secondary: $gray-7,
     tertiary: $gray-4,
     inverse: $white,
-    info: $blue-4,
-    danger: $red-4,
-    success: $green-4,
-    warning: $yellow-2,
+    info: rgba($blue-4 0.4),
+    danger: rgba($red-4 0.4),
+    success: rgba($green-3 0.4),
+    warning: rgba($yellow-4, 0.4),
   ),
 
   bg: (
@@ -402,23 +402,23 @@ $export: (
     secondary: $gray-9,
     tertiary: $gray-8,
     overlay: $gray-9, // Will need to be a fade
-    info: $blue-8, // Will need to be a fade
+    info: rgba($blue-4 0.1),
     info-inverse: $blue-4,
-    danger: $red-8, // Will need to be a fade
-    danger-inverse: $red-4,
-    success: $green-8, // Will need to be a fade
+    danger: rgba($red-4 0.1),
+    danger-inverse: $red-5,
+    success: rgba($green-4 0.1),
     success-inverse: $green-4,
-    warning: $yellow-7, // Will need to be a fade
-    warning-inverse: $yellow-2,
+    warning: rgba($yellow-4, 0.1),
+    warning-inverse: $yellow-4,
   ),
 
   shadow: (
-    small: 0 1px 0 $gray-9,
-    medium: 0 3px 6px $gray-9,
-    large: 0 8px 24px $gray-9,
-    extra-large: 0 12px 48px $gray-9,
+    small: 0 1px 0 transparent,
+    medium: 0 3px 6px $black,
+    large: 0 8px 24px $black,
+    extra-large: 0 12px 48px $black,
 
-    highlight: inset 0 1px 0 rgba($white, 0.1), // top highlight
+    highlight: transparent, // top highlight
     inset: transparent, // top inner shadow
   ),
 
@@ -509,16 +509,16 @@ $export: (
   ),
 
   btn: (
-    bg: $white-fade-10,
+    bg: $gray-7,
     border: $white-fade-10,
     text: $gray-0,
     ic: $gray-4,
 
-    shadow: transparent,
-    shadow-highlight: transparent, // top highlight
+    shadow: transparent, // not used in dark mode
+    shadow-highlight: transparent, // not used in dark mode
 
-    bg-hover: #161B22,
-    bg-active: lighten(#161B22, 2%),
+    bg-hover: $gray-6,
+    bg-active: $gray-7,
 
     shadow-active: inset 0 0.15em 0.3em $black-fade-15, // TODO: Deprecate? Not used in Primer CSS
     shadow-input-focus: 0 0 0 0.2em rgba($blue, 0.3), // TODO: Deprecate?
@@ -526,18 +526,18 @@ $export: (
     /* states */
 
     primary: (
-      bg: $green-4,
-      border: $green-3,
-      border-disabled: $green-7,
-      text: $gray-0,
-      ic: $gray-0,
+      bg: $green-5,
+      border: $green-4,
+      border-disabled: $green-5,
+      text: $white,
+      ic: $white,
       shadow: transparent,
       shadow-highlight: transparent,
       shadow-selected: transparent,
 
-      bg-hover: lighten($green-4, 2%),
-      bg-active: darken($green-4, 2%),
-      bg-disabled: $green-8,
+      bg-hover: $green-4,
+      bg-active: $green-5,
+      bg-disabled: $green-5,
 
       disabled-text: rgba($white, 0.5),
       disabled-shadow: transparent,
@@ -557,24 +557,24 @@ $export: (
       text-disabled: rgba($red-4, 0.5),
       bg-hover: $red-3,
       bg-active: darken($red-3, 3%),
-      shadow: inset 0 1px 0 rgba($red-9, 0.2),
+      shadow: transparent,
       shadow-focus: 0 0 0 3px rgba($red-6, 0.4),
-      counter-bg: rgba($red-5, 0.1),
-      counter-bg-disabled: rgba($red-5, 0.05),
+      counter-bg: rgba($red-4, 0.1),
+      counter-bg-disabled: rgba($red-3, 0.05),
     ),
 
     outline: (
       text: $blue-3,
-      text-disabled: rgba($blue-4, 0.5),
-      bg-hover: $blue-3,
-      bg-active: darken($blue-3, 3%),
-      shadow: inset 0 1px 0 rgba($blue-9, 0.2),
-      shadow-focus: 0 0 0 3px rgba($blue-6, 0.4),
-      counter-bg: rgba($blue-5, 0.1),
-      counter-bg-disabled: rgba($blue-5, 0.05),
+      text-disabled: rgba($blue-3, 0.4),
+      bg-hover: $gray-6,
+      bg-active: $gray-7,
+      shadow: transparent,
+      shadow-focus: 0 0 0 3px rgba($blue-4, 0.4),
+      counter-bg: rgba($blue-4, 0.1),
+      counter-bg-disabled: rgba($blue-3, 0.05),
     ),
 
-    counter-bg: rgba($black, 0.08), // Darken for just a tad more contrast against the button background
+    counter-bg: rgba($white, 0.08), // Darken for just a tad more contrast against the button background
   ),
 
   counter: (
