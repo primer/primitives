@@ -591,7 +591,7 @@ $export: (
       counter-bg: rgba($red-5, 0.1),
     ),
 
-    counter-bg: rgba($white, 0.08), // Darken for just a tad more contrast against the button background
+    counter-bg: $gray-6,
   ),
 
   counter: (
@@ -802,6 +802,12 @@ $export: (
     icon-hover: $gray-0,
     icon-active: $gray-0,
     counter-text: $gray-3,
+  ),
+
+  verified-badge: (
+    text: $green-3,
+    bg: rgba($green-3, 0.1),
+    border: rgba($green-3, 0.4),
   ),
 
   social-count: (
