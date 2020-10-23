@@ -545,33 +545,50 @@ $export: (
       counter-bg: rgba($white, 0.2),
     ),
 
-    inverse-on-hover: (
-      border: $white-fade-15,
-      shadow: 0 1px 0 $black-fade-10,
-      shadow-inset: inset 0 1px 0 rgba($white, 0.03),
-      counter-bg: rgba($white, 0.2),
+    outline: (
+      text: $blue-3,
+
+      hover-text: $blue-3,
+      hover-bg: $gray-6,
+      hover-border: $blue-3,
+      hover-shadow: 0 1px 0 $black-fade-10,
+      hover-inset-shadow: inset 0 1px 0 rgba($white, 0.03),
+      hover-counter-bg: rgba($white, 0.2),
+
+      selected-text: $white,
+      selected-bg: darken($blue-5, 3%),
+      selected-border: $black-fade-15,
+      selected-shadow: inset 0 1px 0 rgba($blue-9, 0.2),
+
+      disabled-text: $blue-3,
+      disabled-counter-bg: rgba($blue-5, 0.05),
+
+      focus-shadow: 0 0 0 3px rgba($blue-6, 0.4),
+
+      counter-bg: rgba($blue-5, 0.1),
     ),
 
     danger: (
       text: $red-4,
-      text-disabled: rgba($red-4, 0.5),
-      bg-hover: $red-3,
-      bg-active: darken($red-3, 3%),
-      shadow: transparent,
-      shadow-focus: 0 0 0 3px rgba($red-6, 0.4),
-      counter-bg: rgba($red-4, 0.1),
-      counter-bg-disabled: rgba($red-3, 0.05),
-    ),
 
-    outline: (
-      text: $blue-3,
-      text-disabled: rgba($blue-3, 0.4),
-      bg-hover: $gray-6,
-      bg-active: $gray-7,
-      shadow: transparent,
-      shadow-focus: 0 0 0 3px rgba($blue-4, 0.4),
-      counter-bg: rgba($blue-4, 0.1),
-      counter-bg-disabled: rgba($blue-3, 0.05),
+      hover-text: $white,
+      hover-bg: $red-5,
+      hover-border: $red-4,
+      hover-shadow: transparent,
+      hover-inset-shadow: transparent,
+      hover-counter-bg: rgba($white, 0.2),
+
+      selected-text: $white,
+      selected-bg: darken($red-5, 3%),
+      selected-border: $black-fade-15,
+      selected-shadow: inset 0 1px 0 rgba($red-9, 0.2),
+
+      disabled-text: $red-4,
+      disabled-counter-bg: rgba($red-5, 0.05),
+
+      focus-shadow: 0 0 0 3px rgba($red-6, 0.4),
+
+      counter-bg: rgba($red-5, 0.1),
     ),
 
     counter-bg: rgba($white, 0.08), // Darken for just a tad more contrast against the button background
