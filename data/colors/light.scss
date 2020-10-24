@@ -509,16 +509,20 @@ $export: (
   ),
 
   btn: (
+    text: $gray-9,
     bg: $gray-0,
     border: $black-fade-15,
-    text: $gray-9,
-    ic: $gray-5,
-
     shadow: 0 1px 0 rgba($black, 0.04),
-    shadow-highlight: inset 0 1px 0 rgba($white, 0.25), // top highlight
+    inset-shadow: inset 0 1px 0 rgba($white, 0.25), // top highlight
 
-    bg-hover: #f3f4f6,
-    bg-active: darken(#f3f4f6, 2%),
+    hover-bg: #f3f4f6,
+    hover-border: $black-fade-15,
+
+    selected-bg: darken(#f3f4f6, 2%),
+
+    focus-bg: $gray-0,
+    focus-border: $black-fade-15,
+    focus-shadow: 0 0 0 3px rgba($blue-5, 0.3),
 
     shadow-active: inset 0 0.15em 0.3em $black-fade-15, // TODO: Deprecate? Not used in Primer CSS
     shadow-input-focus: 0 0 0 0.2em rgba($blue, 0.3), // TODO: Deprecate?

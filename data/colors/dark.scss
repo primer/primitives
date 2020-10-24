@@ -509,16 +509,20 @@ $export: (
   ),
 
   btn: (
+    text: $gray-0,
     bg: $gray-7,
     border: $white-fade-10,
-    text: $gray-0,
-    ic: $gray-4,
+    shadow: transparent,
+    inset-shadow: transparent,
 
-    shadow: transparent, // not used in dark mode
-    shadow-highlight: transparent, // not used in dark mode
+    hover-bg: $gray-6,
+    hover-border: $gray-3,
 
-    bg-hover: $gray-6,
-    bg-active: $gray-7,
+    selected-bg: $gray-8,
+
+    focus-bg: $gray-7,
+    focus-border: $gray-3,
+    focus-shadow: 0 0 0 3px rgba($gray-3, 0.3),
 
     shadow-active: inset 0 0.15em 0.3em $black-fade-15, // TODO: Deprecate? Not used in Primer CSS
     shadow-input-focus: 0 0 0 0.2em rgba($blue, 0.3), // TODO: Deprecate?
@@ -556,9 +560,9 @@ $export: (
       hover-counter-bg: rgba($white, 0.2),
 
       selected-text: $white,
-      selected-bg: darken($blue-5, 3%),
-      selected-border: $black-fade-15,
-      selected-shadow: inset 0 1px 0 rgba($blue-9, 0.2),
+      selected-bg: $blue-7,
+      selected-border: $white-fade-10,
+      selected-shadow: transparent,
 
       disabled-text: $blue-3,
       disabled-bg: $gray-9,
@@ -581,9 +585,9 @@ $export: (
       hover-counter-bg: rgba($white, 0.2),
 
       selected-text: $white,
-      selected-bg: darken($red-5, 3%),
-      selected-border: $black-fade-15,
-      selected-shadow: inset 0 1px 0 rgba($red-9, 0.2),
+      selected-bg: $red-6,
+      selected-border: $white-fade-10,
+      selected-shadow: transparent,
 
       disabled-text: $red-4,
       disabled-bg: $gray-9,
