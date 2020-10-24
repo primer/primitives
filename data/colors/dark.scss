@@ -530,22 +530,27 @@ $export: (
     /* states */
 
     primary: (
+      text: $white,
       bg: $green-5,
       border: $green-4,
-      border-disabled: $green-5,
-      text: $white,
-      ic: $white,
       shadow: transparent,
-      shadow-highlight: transparent,
-      shadow-selected: transparent,
+      inset-shadow: transparent,
 
-      bg-hover: $green-4,
-      bg-active: $green-5,
-      bg-disabled: $green-5,
+      hover-bg: $green-4,
+      hover-border: $green-3,
+
+      selected-bg: $green-5,
+      selected-shadow: transparent,
 
       disabled-text: rgba($white, 0.5),
-      disabled-shadow: transparent,
+      disabled-bg: $green-5,
+      disabled-border: $green-5,
 
+      focus-bg: $green-5,
+      focus-border: $green-3,
+      focus-shadow: 0 0 0 3px rgba(#2ea44f, 0.4),
+
+      icon: $white,
       counter-bg: rgba($white, 0.2),
     ),
 
