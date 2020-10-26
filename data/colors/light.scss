@@ -910,4 +910,9 @@ $export: (
       border: transparent,
     ),
   ),
+
+  topic-tag: (
+    hover-bg: darken($blue-0, 4%),
+    active-bg: darken($blue-0, 2%),
+  ),
 );
