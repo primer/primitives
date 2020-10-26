@@ -836,17 +836,52 @@ $export: (
   logo-subdued: $gray-3,
   discussion-border: desaturate($green-3, 40%),
 
-  diff: (
-    neutral-bg: $gray-3,
-    neutral-border: $gray-3,
-    deletion-bg: $red-5,
-    deletion-bg-strong: $tbd,
-    deletion-border: $red-5,
-    deletion-border-strong: $tbd,
-    addition-bg: $green-5,
-    addition-bg-strong: $tbd,
-    addition-border: $green-5,
-    addition-border-strong: $tbd,
+  diff-blob: (
+
+    // empty
+    
+    empty-block-bg: var(--color-bg-secondary), 
+    
+    // deletion 
+    
+        num-deletion-bg: $red-0, 
+        num-deletion-border: transparent,
+        
+        code-deletion-bg: $red-1,
+        code-deletion-border: transparent,
+        
+        marker-deletion-bg: #fdb8c0,
+        marker-deletion-border: transparent,    
+    
+    // addition 
+    
+        num-addition-bg: #cdffd8,
+        num-addition-border: transparent,
+        
+        code-addition-bg: #e6ffed,
+        code-addition-border: transparent,
+        
+        marker-addition-bg: #acf2bd,
+        marker-addition-border: transparent,
+    
+    // hunk
+    
+        num-hunk-bg: $blue-1,
+        num-hunk-border: var(--color-border-secondary), // border-bottom
+        num-hunk-icon: var(--color-text-secondary),
+        
+        num-hunk-hover-bg: $blue-5,
+        num-hunk-hover-border: transparent,
+        num-hunk-hover-icon: $white,
+        
+        code-hunk-bg: $blue-0,
+        code-hunk-text: var(--color-fade-black-70),
+    
+        selected-line-highlight-bg: rgba($static-color-yellow-400, 0.2),
+        selected-line-highlight-border: $yellow-5,
+    
+    // Pending documentation is the little blue selector.
+
   ),
 
   global-nav: (
