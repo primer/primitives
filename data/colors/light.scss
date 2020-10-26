@@ -911,4 +911,22 @@ $export: (
     hover-bg: darken($blue-0, 4%),
     active-bg: darken($blue-0, 2%),
   ),
+
+  merge-box: (
+    success-icon-bg: $green-5,
+    success-icon-text: $white,
+    success-icon-border: transparent,
+    merged-icon-bg: $purple-5,
+    merged-icon-text: $white,
+    merged-icon-border: transparent,
+    neutral-icon-bg: $gray-5,
+    neutral-icon-text: $white,
+    neutral-icon-border: transparent,
+    warning-icon-bg: $yellow-5,
+    warning-icon-text: $white,
+    warning-icon-border: transparent,
+    error-icon-bg: $red-5,
+    error-icon-text: $white,
+    error-icon-border: transparent,
+  ),
 );
