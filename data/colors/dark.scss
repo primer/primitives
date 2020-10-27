@@ -828,6 +828,14 @@ $export: (
     border: $gray-7,
   ),
 
+  diffstat: (
+    neutral-bg: $gray-6,
+    neutral-border: $white-fade-10,
+    deletion-bg: $red-5,
+    deletion-border: $red-4,
+    addition-bg: $green-5,
+    addition-border: $green-4,
+  ),
 
   // App level
 
