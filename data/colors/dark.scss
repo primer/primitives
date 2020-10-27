@@ -862,18 +862,18 @@ $export: (
     ),
 
     hunk: (
-      text: $gray-1,
+      text: $gray-3,
       num-bg: rgba($blue-3, 0.15),
       line-bg: rgba($blue-3, 0.10),
     ),
 
     empty-block-bg: $gray-8, // for split diffs
 
-    selected-line-highlight-bg: rgba($yellow-4, 0.10),
+    selected-line-highlight-bg: rgba($yellow-4, 0.1),
     selected-line-highlight-border: $yellow-4,
 
     expander: (
-      icon: $gray-1,
+      icon: $gray-3,
       hover-icon: $gray-0,
       hover-bg: $blue-5,
     ),
