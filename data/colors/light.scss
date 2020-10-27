@@ -839,7 +839,7 @@ $export: (
 
   diff-blob: (
     // empty
-    empty-block-bg: var(--color-bg-secondary),
+    empty-block-bg: $gray-0,
 
     // deletion
     num-deletion-bg: $red-0,
@@ -863,15 +863,15 @@ $export: (
 
     // hunk
     num-hunk-bg: $blue-1,
-    num-hunk-border: var(--color-border-secondary), // border-bottom
-    num-hunk-icon: var(--color-text-secondary),
+    num-hunk-border: lighten($gray-2, 3%), // border-bottom
+    num-hunk-icon: $gray-6,
 
     num-hunk-hover-bg: $blue-5,
     num-hunk-hover-border: transparent,
     num-hunk-hover-icon: $white,
 
     code-hunk-bg: $blue-0,
-    code-hunk-text: var(--color-fade-black-70),
+    code-hunk-text: $black-fade-70,
 
     selected-line-highlight-bg: rgba($yellow-4, 0.2),
     selected-line-highlight-border: $yellow-5,

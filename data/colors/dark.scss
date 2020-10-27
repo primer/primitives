@@ -839,7 +839,7 @@ $export: (
 
 diff-blob: (
   // empty
-  empty-block-bg: var(--color-bg-secondary),
+  empty-block-bg: $gray-9,
 
   // deletion
   num-deletion-bg: rgba($red-5, 0.3),
