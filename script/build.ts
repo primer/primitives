@@ -1,10 +1,9 @@
 import fs from 'fs'
 import path from 'path'
 import mkdirp from 'mkdirp'
-import { areObjectsSameShape } from 'deep-shape-equals'
 import camelcaseKeys from 'camelcase-keys'
 import chalk from 'chalk'
-import { parseScssFile, collectVars, flattenVars } from './lib/scss'
+import { parseScssFile, collectVars, VariableCollection, ModeVariable } from './lib/scss'
 
 let SKIP: string[] = (process.env['PRIMER_SKIP'] || "").split(',')
 
@@ -26,7 +25,7 @@ function flatMap<T, R>(array: T[], iter: (value: T, index: number, arr: T[]) => 
 interface ModeData {
   type: string
   name: string
-  vars: Record<string, any>
+  vars: VariableCollection
   prefix: string
 }
 
@@ -52,6 +51,16 @@ async function build() {
       process.exit(1)
     }
 
+    for (const mode of modes) {
+      const cssVarValues = mode.vars.flattened().filter(v => typeof v.value === 'string' && v.value.startsWith('var(--'))
+      if (cssVarValues.length > 0) {
+        const missingCssRefs = cssVarValues.map(v => ` - ${v.name} -> ${v.value}`).join('\n')
+        console.log(`\nMode ${type}.${mode.name} has unresolved CSS variable references:\n${missingCssRefs}`)
+        console.log('Check to make sure your CSS variable references do not form an infinite loop')
+        process.exit(1)
+      }
+    }
+
     await writeModeOutput(type, modes)
   }
 
@@ -66,12 +75,12 @@ async function getModesForType(type: string): Promise<ReadonlyArray<ModeData>> {
   return Promise.all(filenames.map(async (file) => {
     const name = path.basename(file, ".scss")
     const rendered = await parseScssFile(file)
-    const vars = collectVars(rendered.vars.global.$export)
     let prefix = `${type}`
     const prefixFile = path.join(dataDir, type, "prefix")
     if (fs.existsSync(prefixFile)) {
       prefix = fs.readFileSync(prefixFile, "utf8").trim()
     }
+    const vars = collectVars(prefix, rendered.vars.global.$export)
     return { type, name, vars, prefix }
   }))
 }
@@ -84,18 +93,18 @@ function getMissingVars(modes: ReadonlyArray<ModeData>): Array<string> {
   const missingVars = []
 
   const allVarsPerMode = modes.reduce((acc, mode) => {
-    const allVars = flattenVars(mode.vars)
+    const allVars = mode.vars.flattened()
     acc[mode.name] = allVars
     return acc
-  }, {} as Record<string, Record<string, string>>)
+  }, {} as Record<string, ReadonlyArray<ModeVariable>>)
 
   const allVarNames = flatMap((modes as Array<ModeData>), mode => {
-    return Object.keys(flattenVars(mode.vars))
+    return mode.vars.flattened().map(v => v.name)
   })
   const uniqueVarNames = [...new Set(allVarNames)].sort()
 
   for (const v of uniqueVarNames.values()) {
-    const missingModes = modes.filter(mode => !(allVarsPerMode[mode.name][v])).map(mode => mode.name)
+    const missingModes = modes.filter(mode => !(allVarsPerMode[mode.name].find(item => item.name === v))).map(mode => mode.name)
     if (missingModes.length > 0) {
       const msg = chalk`Variable {bold ${v}} is missing in modes: ${missingModes.map(str => chalk.bold(str)).join(', ')}`
       missingVars.push(msg)
@@ -116,13 +125,10 @@ async function writeModeOutput(type: string, modes: ReadonlyArray<ModeData>): Pr
 }
 
 async function writeScssOutput(mode: ModeData): Promise<void> {
-  const vars = flattenVars(mode.vars)
-
   let output = `@mixin primer-${mode.type}-${mode.name} {\n`
   output += "  & {\n"
-  for (const variable of Object.keys(vars)) {
-    const value = vars[variable]
-    output += `    --${mode.prefix}-${variable}: ${value};\n`
+  for (const variable of mode.vars) {
+    output += `    --${variable.name}: ${variable.value};\n`
   }
   output += '  }\n}\n'
 
@@ -132,7 +138,7 @@ async function writeScssOutput(mode: ModeData): Promise<void> {
 }
 
 async function writeTsOutput(mode: ModeData): Promise<void> {
-  let output = JSON.stringify(camelcaseKeys(mode.vars, {deep: true}), null, '  ')
+  let output = JSON.stringify(camelcaseKeys(mode.vars.tree(), {deep: true}), null, '  ')
   output = `export default ${output}`
 
   const dir = path.join(tsDir, mode.type)
@@ -141,7 +147,7 @@ async function writeTsOutput(mode: ModeData): Promise<void> {
 }
 
 async function writeJsonOutput(mode: ModeData): Promise<void> {
-  let output = JSON.stringify(camelcaseKeys(mode.vars, {deep: true}), null, '  ')
+  let output = JSON.stringify(camelcaseKeys(mode.vars.tree(), {deep: true}), null, '  ')
 
   const dir = path.join(jsonDir, mode.type)
   await mkdirp(dir)
