@@ -961,6 +961,8 @@ $export: (
     neutral-icon-bg: rgba($gray-1, 0.1),
     neutral-icon-text: $gray-3,
     neutral-icon-border: rgba($gray-1, 0.4),
+    neutral-indicator-bg: $gray-5,
+    neutral-indicator-border: $gray-4,
     warning-icon-bg: rgba($yellow-4, 0.1),
     warning-icon-text: $yellow-2,
     warning-icon-border: rgba($yellow-4, 0.4),
@@ -968,5 +970,7 @@ $export: (
     error-icon-bg: rgba($red-4, 0.1),
     error-icon-text: $red-4,
     error-icon-border: rgba($red-4, 0.4),
+    error-indicator-bg: $red-5,
+    error-indicator-border: $red-4,
   ),
 );
