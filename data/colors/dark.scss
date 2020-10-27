@@ -845,50 +845,50 @@ $export: (
   logo-subdued: $gray-6,
   discussion-border: desaturate($green-6, 40%),
 
-diff-blob: (
-  // empty
-  empty-block-bg: $gray-9,
+  diff-blob: (
+    // empty
+    empty-block-bg: $gray-9,
 
-  // deletion
-  num-deletion-bg: rgba($red-5, 0.3),
-  num-deletion-border: transparent,
+    // deletion
+    num-deletion-bg: rgba($red-5, 0.3),
+    num-deletion-border: transparent,
 
-  code-deletion-bg: rgba($red-5, 0.15),
-  code-deletion-border: transparent,
+    code-deletion-bg: rgba($red-5, 0.15),
+    code-deletion-border: transparent,
 
-  marker-deletion-bg: rgba($red-5, 0.3),
-  marker-deletion-border: transparent,
+    marker-deletion-bg: rgba($red-5, 0.3),
+    marker-deletion-border: transparent,
 
-  // addition
-  num-addition-bg: rgba($green-5, 0.3),
-  num-addition-border: transparent,
+    // addition
+    num-addition-bg: rgba($green-5, 0.3),
+    num-addition-border: transparent,
 
-  code-addition-bg: rgba($green-5, 0.15),
-  code-addition-border: transparent,
+    code-addition-bg: rgba($green-5, 0.15),
+    code-addition-border: transparent,
 
-  marker-addition-bg: rgba($green-5, 0.3),
-  marker-addition-border: transparent,
+    marker-addition-bg: rgba($green-5, 0.3),
+    marker-addition-border: transparent,
 
-  // hunk
-  num-hunk-bg: rgba($blue-3, 0.15),
-  num-hunk-border: $white-fade-10, // border-bottom
-  num-hunk-icon: $gray-1,
+    // hunk
+    num-hunk-bg: rgba($blue-3, 0.15),
+    num-hunk-border: $white-fade-10, // border-bottom
+    num-hunk-icon: $gray-1,
 
-  num-hunk-hover-bg: $blue-5,
-  num-hunk-hover-border: transparent,
-  num-hunk-hover-icon: $gray-0,
+    num-hunk-hover-bg: $blue-5,
+    num-hunk-hover-border: transparent,
+    num-hunk-hover-icon: $gray-0,
 
-  code-hunk-bg: rgba($blue-3, 0.10),
-  code-hunk-text: $gray-1,
+    code-hunk-bg: rgba($blue-3, 0.10),
+    code-hunk-text: $gray-1,
 
-  selected-line-highlight-bg: rgba($yellow-4, 0.10),
-  selected-line-highlight-border: $yellow-4,
+    selected-line-highlight-bg: rgba($yellow-4, 0.10),
+    selected-line-highlight-border: $yellow-4,
 
-  // add line comment button -> blue [+]
-  comment-button-icon: $white,
-  comment-button-bg: $blue-5,
-  comment-button-gradient-bg: lighten($blue-5, 5%), // gradient top
-),
+    // add line comment button -> blue [+]
+    comment-button-icon: $white,
+    comment-button-bg: $blue-5,
+    comment-button-gradient-bg: lighten($blue-5, 5%), // gradient top
+  ),
 
   global-nav: (
     logo: $gray-0,
