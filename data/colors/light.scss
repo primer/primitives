@@ -399,6 +399,7 @@ $export: (
     canvas: $white,
     canvas-mobile: $white,
     canvas-inverse: $gray-9,
+    canvas-inset: $gray-1,
     primary: $white,
     secondary: $gray-0,
     tertiary: $gray-1,
@@ -827,6 +828,14 @@ $export: (
     border: $gray-7,
   ),
 
+  diffstat: (
+    neutral-bg: $gray-3,
+    neutral-border: $gray-3,
+    deletion-bg: $red-5,
+    deletion-border: $red-5,
+    addition-bg: $green-5,
+    addition-border: $green-5,
+  ),
 
   // App level
 
@@ -836,17 +845,49 @@ $export: (
   logo-subdued: $gray-3,
   discussion-border: desaturate($green-3, 40%),
 
-  diff: (
-    neutral-bg: $gray-3,
-    neutral-border: $gray-3,
-    deletion-bg: $red-5,
-    deletion-bg-strong: $tbd,
-    deletion-border: $red-5,
-    deletion-border-strong: $tbd,
-    addition-bg: $green-5,
-    addition-bg-strong: $tbd,
-    addition-border: $green-5,
-    addition-border-strong: $tbd,
+  diff-blob: (
+    // empty
+    empty-block-bg: $gray-0,
+
+    // deletion
+    num-deletion-bg: $red-0,
+    num-deletion-border: transparent,
+
+    code-deletion-bg: $red-1,
+    code-deletion-border: transparent,
+
+    marker-deletion-bg: #fdb8c0,
+    marker-deletion-border: transparent,
+
+    // addition
+    num-addition-bg: #cdffd8,
+    num-addition-border: transparent,
+
+    code-addition-bg: #e6ffed,
+    code-addition-border: transparent,
+
+    marker-addition-bg: #acf2bd,
+    marker-addition-border: transparent,
+
+    // hunk
+    num-hunk-bg: $blue-1,
+    num-hunk-border: lighten($gray-2, 3%), // border-bottom
+    num-hunk-icon: $gray-6,
+
+    num-hunk-hover-bg: $blue-5,
+    num-hunk-hover-border: transparent,
+    num-hunk-hover-icon: $white,
+
+    code-hunk-bg: $blue-0,
+    code-hunk-text: $black-fade-70,
+
+    selected-line-highlight-bg: rgba($yellow-4, 0.2),
+    selected-line-highlight-border: $yellow-5,
+
+    // add line comment button -> blue [+]
+    comment-button-icon: $white,
+    comment-button-bg: $blue-5,
+    comment-button-gradient-bg: lighten($blue-5, 5%), // gradient top
   ),
 
   global-nav: (
