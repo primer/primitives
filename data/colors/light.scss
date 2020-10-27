@@ -846,48 +846,44 @@ $export: (
   discussion-border: desaturate($green-3, 40%),
 
   diff-blob: (
-    // empty
-    empty-block-bg: $gray-0,
+    num-text: $black-fade-30,
+    num-hover-text: rgba($black, 0.6),
 
-    // deletion
-    num-deletion-bg: $red-0,
-    num-deletion-border: transparent,
+    addition: (
+      num-bg: darken($green-1, 3%),
+      line-bg: darken($green-0, 2%),
+      word-bg: darken($green-2, 4%),
+    ),
 
-    code-deletion-bg: $red-1,
-    code-deletion-border: transparent,
+    deletion: (
+      num-bg: $red-1,
+      line-bg: $red-0,
+      word-bg: lighten($red-2, 2%),
+    ),
 
-    marker-deletion-bg: #fdb8c0,
-    marker-deletion-border: transparent,
+    hunk: (
+      text: $black-fade-70,
+      num-bg: $blue-1,
+      line-bg: $blue-0,
+    ),
 
-    // addition
-    num-addition-bg: #cdffd8,
-    num-addition-border: transparent,
-
-    code-addition-bg: #e6ffed,
-    code-addition-border: transparent,
-
-    marker-addition-bg: #acf2bd,
-    marker-addition-border: transparent,
-
-    // hunk
-    num-hunk-bg: $blue-1,
-    num-hunk-border: lighten($gray-2, 3%), // border-bottom
-    num-hunk-icon: $gray-6,
-
-    num-hunk-hover-bg: $blue-5,
-    num-hunk-hover-border: transparent,
-    num-hunk-hover-icon: $white,
-
-    code-hunk-bg: $blue-0,
-    code-hunk-text: $black-fade-70,
+    empty-block-bg: $gray-0, // for split diffs
 
     selected-line-highlight-bg: rgba($yellow-4, 0.2),
     selected-line-highlight-border: $yellow-5,
 
+    expander: (
+      icon: $gray-6,
+      hover-icon: $white,
+      hover-bg: $blue-5,
+    ),
+
     // add line comment button -> blue [+]
-    comment-button-icon: $white,
-    comment-button-bg: $blue-5,
-    comment-button-gradient-bg: lighten($blue-5, 5%), // gradient top
+    comment-button: (
+      icon: $white,
+      bg: $blue-5,
+      gradient-bg: lighten($blue-5, 5%), // gradient top
+    ),
   ),
 
   global-nav: (
