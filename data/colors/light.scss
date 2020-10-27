@@ -883,6 +883,11 @@ $export: (
 
     selected-line-highlight-bg: rgba($yellow-4, 0.2),
     selected-line-highlight-border: $yellow-5,
+
+    // add line comment button -> blue [+]
+    comment-button-icon: $white,
+    comment-button-bg: $blue-5,
+    comment-button-gradient-bg: lighten($blue-5, 5%), // gradient top
   ),
 
   global-nav: (
