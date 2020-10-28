@@ -448,23 +448,19 @@ $export: (
   ),
 
   fade: (
-    black: (
-      10: $black-fade-10,
-      15: $black-fade-15,
-      30: $black-fade-30,
-      50: $black-fade-50,
-      70: $black-fade-70,
-      85: $black-fade-85,
-    ),
+    black-10: $black-fade-10,
+    black-15: $black-fade-15,
+    black-30: $black-fade-30,
+    black-50: $black-fade-50,
+    black-70: $black-fade-70,
+    black-85: $black-fade-85,
 
-    white: (
-      10: $white-fade-10,
-      15: $white-fade-15,
-      30: $white-fade-30,
-      50: $white-fade-50,
-      70: $white-fade-70,
-      85: $white-fade-85,
-    ),
+    white-10: $white-fade-10,
+    white-15: $white-fade-15,
+    white-30: $white-fade-30,
+    white-50: $white-fade-50,
+    white-70: $white-fade-70,
+    white-85: $white-fade-85,
   ),
 
   // Components
