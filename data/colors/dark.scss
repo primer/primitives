@@ -528,7 +528,7 @@ $export: (
     /* states */
 
     primary: (
-      text: $white,
+      text: #fff,
       bg: $green-5,
       border: $green-4,
       shadow: 0 0 transparent,
@@ -580,14 +580,14 @@ $export: (
     danger: (
       text: $red-4,
 
-      hover-text: $white,
+      hover-text: #fff,
       hover-bg: $red-5,
       hover-border: $red-4,
       hover-shadow: 0 0 transparent,
       hover-inset-shadow: 0 0 transparent,
-      hover-counter-bg: rgba($white, 0.2),
+      hover-counter-bg: rgba(#fff, 0.2),
 
-      selected-text: $white,
+      selected-text: #fff,
       selected-bg: $red-6,
       selected-border: $white-fade-10,
       selected-shadow: 0 0 transparent,
