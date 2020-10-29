@@ -22,3 +22,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+      
+      - uses: actions/download-artifact@master
+        with:
+          name: primitives
+          path: ./dist
