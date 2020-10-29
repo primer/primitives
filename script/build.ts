@@ -25,6 +25,7 @@ const outDir = path.join(__dirname, "..", "dist")
 const scssDir = path.join(outDir, "scss")
 const tsDir = path.join(outDir, "ts")
 const jsonDir = path.join(outDir, "json")
+const csvDir = path.join(outDir, "csv")
 
 async function build() {
   const modeTypes = fs.readdirSync(dataDir)
@@ -86,6 +87,7 @@ async function writeModeOutput(collection: ModeCollection): Promise<void> {
   writeScssOutput(collection)
   writeTsOutput(collection)
   writeJsonOutput(collection)
+  writeCsvOutput(collection)
 
   writeTsTypeIndex(collection)
 }
@@ -149,6 +151,21 @@ async function writeMainTsIndex(types: string[]) {
   const dir = path.join(tsDir)
   await mkdirp(dir)
   fs.writeFileSync(path.join(dir, `index.ts`), output)
+}
+
+async function writeCsvOutput(collection: ModeCollection): Promise<void> {
+  const data: any = {}
+  for (const [_name, vars] of collection) {
+    console.log(_name)
+    vars.flattened().forEach((value) => {
+      const key = value.path.join('/')
+      data[key] = data[key] ? {...data[key], [_name]: value.value} : {key, [_name]: value.value}
+    })
+  }
+  let output: any = Object.keys(Object.values(data)[0] as object).join('\t') + '\n'
+  output += Object.values(data).map((value: any) => Object.values(value).join('\t')).join('\n')
+  await mkdirp(csvDir)
+  fs.writeFileSync(path.join(csvDir, `${collection.type}.csv`), output)
 }
 
 if (require.main === module) {
