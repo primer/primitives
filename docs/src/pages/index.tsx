@@ -79,6 +79,7 @@ export default function Home() {
                         height={16}
                         bg={value}
                         style={{
+                          boxShadow: value,
                           borderRadius: 999,
                           verticalAlign: 'text-top'
                         }}
