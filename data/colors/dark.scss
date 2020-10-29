@@ -415,13 +415,13 @@ $export: (
   ),
 
   shadow: (
-    small: 0 1px 0 transparent,
+    small: 0 0 transparent,
     medium: 0 3px 6px $black,
     large: 0 8px 24px $black,
     extra-large: 0 12px 48px $black,
 
-    highlight: transparent, // top highlight
-    inset: transparent, // top inner shadow
+    highlight: 0 0 transparent, // top highlight
+    inset: 0 0 transparent, // top inner shadow
   ),
 
   state: (
@@ -510,8 +510,8 @@ $export: (
     text: $gray-0,
     bg: $gray-7,
     border: $white-fade-10,
-    shadow: transparent,
-    inset-shadow: transparent,
+    shadow: 0 0 transparent,
+    inset-shadow: 0 0 transparent,
 
     hover-bg: $gray-6,
     hover-border: $gray-3,
@@ -531,14 +531,14 @@ $export: (
       text: $white,
       bg: $green-5,
       border: $green-4,
-      shadow: transparent,
-      inset-shadow: transparent,
+      shadow: 0 0 transparent,
+      inset-shadow: 0 0 transparent,
 
       hover-bg: $green-4,
       hover-border: $green-3,
 
       selected-bg: $green-5,
-      selected-shadow: transparent,
+      selected-shadow: 0 0 transparent,
 
       disabled-text: rgba($white, 0.5),
       disabled-bg: $green-5,
@@ -565,7 +565,7 @@ $export: (
       selected-text: $white,
       selected-bg: $blue-7,
       selected-border: $white-fade-10,
-      selected-shadow: transparent,
+      selected-shadow: 0 0 transparent,
 
       disabled-text: $blue-3,
       disabled-bg: $gray-9,
@@ -583,14 +583,14 @@ $export: (
       hover-text: $white,
       hover-bg: $red-5,
       hover-border: $red-4,
-      hover-shadow: transparent,
-      hover-inset-shadow: transparent,
+      hover-shadow: 0 0 transparent,
+      hover-inset-shadow: 0 0 transparent,
       hover-counter-bg: rgba($white, 0.2),
 
       selected-text: $white,
       selected-bg: $red-6,
       selected-border: $white-fade-10,
-      selected-shadow: transparent,
+      selected-shadow: 0 0 transparent,
 
       disabled-text: $red-4,
       disabled-bg: $gray-9,
@@ -663,7 +663,7 @@ $export: (
     bg: $gray-9,
     contrast-bg: rgba(#010409, 0.3),
     border: $white-fade-10,
-    shadow: transparent,
+    shadow: 0 0 transparent,
 
     disabled-bg: $gray-8,
     disabled-border: $gray-6,
