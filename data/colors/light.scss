@@ -498,8 +498,6 @@ $export: (
   ),
 
   autocomplete: (
-    bg: $white,
-    border: $gray-2,
     shadow: 0 3px 6px rgba($gray-4, 0.15),
     row-border: lighten($gray-2, 3%),
   ),
@@ -622,8 +620,6 @@ $export: (
   ),
 
   dropdown: (
-    bg: $white,
-    border: $gray-2,
     shadow: 0 8px 24px rgba($gray-4, 0.2),
   ),
 
@@ -713,8 +709,6 @@ $export: (
   ),
 
   select-menu: (
-    bg: $white,
-    border: $gray-2,
     border-secondary: lighten($gray-2, 3%),
     shadow: 0 0 18px rgba($black, 0.4),
     backdrop-bg: $black-fade-50,
@@ -733,10 +727,6 @@ $export: (
     bg-info: $blue-0,
     border-warning: rgba($yellow-5, 0.4),
     bg-warning: $yellow-0,
-  ),
-
-  popover: (
-    border: $black-fade-15,
   ),
 
   branch-name: (
