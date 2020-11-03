@@ -33,8 +33,8 @@ jobs:
 
       - name: Find version
         run: |
-          name=$(jq .version package.json)
-          version=$(jq .version package.json)
+          name=$(jq -r .name package.json)
+          version=$(jq -r .version package.json)
           npx action-status --context="$name" --state=success --description=$version --url "http://npmjs.com/package/@primer/primitives"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
