@@ -30,3 +30,10 @@ jobs:
           yarn changeset publish --tag canary
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Find version
+        run: |
+          version=$(jq .version package.json)
+          npx action-status --context=$version --state=success
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
