@@ -10,7 +10,7 @@ jobs:
 
       - uses: actions/setup-node@v1
         with:
-          node-version: '12'
+          node-version: '10'
 
       - name: Install dependencies
         run: yarn
