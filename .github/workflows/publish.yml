@@ -16,10 +16,9 @@ jobs:
         run: yarn
 
       - name: Publish to the npm registry
-        uses: "primer/publish@v3.0.0"
+        uses: "primer/publish@v2.0.0"
         with:
-          npm_args: "-- --unsafe-perm --allow-same-version"
-          default_branch: "master"
+          args: "-- --unsafe-perm --allow-same-version"
         env:
           NPM_REGISTRY_URL: "http://registry.npmjs.org"
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
