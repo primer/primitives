@@ -1,6 +1,6 @@
 {
   "name": "@primer/primitives",
-  "version": "4.0.0",
+  "version": "3.0.0",
   "description": "Typography, spacing, and color primitives for Primer design system",
   "files": [
     "dist"
@@ -26,10 +26,12 @@
     "prebuild": "rm -rf dist",
     "build": "ts-node ./script/build.ts && tsc",
     "prepack": "yarn build",
-    "watch": "ls data/**/*.scss script/**/*.ts | entr -s 'yarn build'"
+    "watch": "ls data/**/*.scss script/**/*.ts | entr -s 'yarn build'",
+    "release": "yarn build && changeset publish"
   },
   "dependencies": {},
   "devDependencies": {
+    "@changesets/cli": "^2.11.2",
     "@types/chalk": "^2.2.0",
     "@types/lodash": "^4.14.163",
     "@types/mkdirp": "^1.0.1",

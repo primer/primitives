@@ -837,6 +837,7 @@ $export: (
   hl-author-border: $blue-7,
   logo-subdued: $gray-6,
   discussion-border: desaturate($green-6, 40%),
+  discussion-bg-success: rgba($green-4, 0.1),
 
   diff-blob: (
     num-text: $white-fade-30,
@@ -968,5 +969,13 @@ $export: (
     error-icon-border: rgba($red-4, 0.4),
     error-indicator-bg: $red-5,
     error-indicator-border: $red-4,
+  ),
+
+  project: (
+    card-bg: $gray-8,
+    header-bg: $gray-9,
+    sidebar-bg: $gray-8,
+    gradient-in: $gray-8,
+    gradient-out: rgba($gray-8, 0),
   ),
 );
