@@ -672,20 +672,20 @@ $export: (
     tooltip: (
       success: (
         text: $green-2,
-        bg: rgba($green-4, 0.1),
-        border: rgba($green-4, 0.4),
+        bg: mix($green-4, $gray-9, 10%), // rgba($green-4, 0.1)
+        border: mix($green-4, $gray-9, 46%), // rgba($green-4, 0.4) + 6% to adjust for the background
       ),
 
       warning: (
         text: $yellow-2,
-        bg: rgba($yellow-4, 0.1),
-        border: rgba($yellow-4, 0.4),
+        bg: mix($yellow-4, $gray-9, 10%), // rgba($yellow-4, 0.1)
+        border: mix($yellow-4, $gray-9, 46%), // rgba($yellow-4, 0.4) + 6% to adjust for the background
       ),
 
       error: (
         text: $red-3,
-        bg: rgba($red-4, 0.1),
-        border: rgba($red-4, 0.4),
+        bg: mix($red-4, $gray-9, 10%), // rgba($red-4, 0.1)
+        border: mix($red-4, $gray-9, 46%), // rgba($red-4, 0.4) + 6% to adjust for the background
       ),
     ),
   ),
