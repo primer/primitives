@@ -698,7 +698,45 @@ $export: (
   ),
 
   toast: (
-    ic-bg-loading: $gray-3,
+    text: $blue-2,
+    bg: $black,
+    border: #214981,
+    shadow: var(--color-shadow-large),
+    icon: $blue-2,
+    icon-bg: #121D2E,
+    icon-border: #214981,
+
+    success: (
+      text: $green-2,
+      border: #1C532C,
+      icon: $green-2,
+      icon-bg: #111F1C,
+      icon-border: #1C532C,
+    ),
+
+    warning: (
+      text: $yellow-2,
+      border: #5E4411,
+      icon: $yellow-2,
+      icon-bg: #1F1C16,
+      icon-border: #5E4411,
+    ),
+
+    danger: (
+      text: $red-3,
+      border: #792E2E,
+      icon: $red-3,
+      icon-bg: #25171C,
+      icon-border: #792E2E,
+    ),
+
+    loading: (
+      text: var(--color-text-primary),
+      border: var(--color-border-primary),
+      icon: $white,
+      icon-bg: $gray-6,
+      icon-border: var(--color-border-primary),
+    ),
   ),
 
   timeline: (
