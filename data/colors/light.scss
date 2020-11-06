@@ -877,6 +877,26 @@ $export: (
   discussion-border: desaturate($green-3, 40%),
   discussion-bg-success: $green-5,
 
+  diff: (
+    addition: (
+      text: $green-6,
+      bg: var(--color-diff-blob-addition-line-bg),
+      border: $green-4,
+    ),
+
+    deletion: (
+      text: $red-6,
+      bg: var(--color-diff-blob-deletion-line-bg),
+      border: $red-5,
+    ),
+
+    change: (
+      text: $yellow-8,
+      bg: $yellow-2,
+      border: $yellow-6,
+    ),
+  ),
+
   diff-blob: (
     num-text: $black-fade-30,
     num-hover-text: rgba($black, 0.6),
