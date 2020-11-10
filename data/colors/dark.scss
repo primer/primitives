@@ -592,7 +592,7 @@ $export: (
       selected-border: $white-fade-10,
       selected-shadow: 0 0 transparent,
 
-      disabled-text: $red-4,
+      disabled-text: rgba($red-4, 0.05),
       disabled-bg: $gray-9,
       disabled-counter-bg: rgba($red-5, 0.05),
 
