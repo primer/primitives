@@ -870,12 +870,13 @@ $export: (
 
   // App level
 
-  icon-folder: $blue-3,
+  files-explorer-icon: $blue-3,
   hl-author-bg: $blue-0,
   hl-author-border: $blue-2,
   logo-subdued: $gray-3,
   discussion-border: desaturate($green-3, 40%),
   discussion-bg-success: $green-5,
+  actions-workflow-table-sticky-bg: rgba($white, 0.95),
 
   diff: (
     addition: (
@@ -923,6 +924,7 @@ $export: (
 
     selected-line-highlight-bg: rgba($yellow-4, 0.2),
     selected-line-highlight-border: $yellow-5,
+    selected-line-highlight-mix-blend-mode: multiply,
 
     expander: (
       icon: $gray-6,
