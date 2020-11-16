@@ -1045,6 +1045,43 @@ $export: (
     secondary: $blue-3,
   ),
 
+  // Syntax highlighting
+
+  prettylights: (
+    syntax: (
+      comment: $gray-5,
+      constant: $blue-6,
+      entity: $purple-5,
+      storage-modifier-import: $gray-9,
+      entity-tag: $green-6,
+      keyword: $red-5,
+      string: $blue-8,
+      variable: $orange-6,
+      brackethighlighter-unmatched: $red-7,
+      invalid-illegal-text: $gray-0,
+      invalid-illegal-bg: $red-7,
+      carriage-return-text: $gray-0,
+      carriage-return-bg: $red-5,
+      string-regexp: $green-6,
+      markup-list: $yellow-9,
+      markup-heading: $blue-6,
+      markup-italic: $gray-9,
+      markup-bold: $gray-9,
+      markup-deleted-text: $red-7,
+      markup-deleted-bg: $red-0,
+      markup-inserted-text: $green-6,
+      markup-inserted-bg: $green-0,
+      markup-changed-text: $orange-6,
+      markup-changed-bg: $orange-1,
+      markup-ignored-text: $gray-1,
+      markup-ignored-bg: $blue-6,
+      meta-diff-range: $purple-5,
+      brackethighlighter-angle: $gray-6,
+      sublimelinter-gutter-mark: $gray-4,
+      constant-other-reference-link: $blue-8,
+    ),
+  ),
+
   codemirror: (
     text: var(--color-text-primary),
     bg: var(--color-bg-canvas),
