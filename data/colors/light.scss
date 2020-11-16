@@ -1044,4 +1044,30 @@ $export: (
     primary: $blue-4,
     secondary: $blue-3,
   ),
+
+  codemirror: (
+    text: var(--color-text-primary),
+    bg: var(--color-bg-canvas),
+
+    gutters-bg: var(--color-bg-canvas),
+    guttermarker-text: $white,
+    guttermarker-subtle-text: $gray-3,
+    linenumber-text: $gray-4,
+    cursor: $gray-9,
+    selection-bg: #d7d4f0, // custom, codemirror default
+    activeline-bg: $gray-0,
+    matchingbracket-text: $gray-9,
+    lines-bg: var(--color-bg-canvas),
+
+    syntax: (
+      comment: $gray-5,
+      constant: $blue-6,
+      entity: $purple-5,
+      keyword: $red-5,
+      storage: $red-5,
+      string: $blue-8,
+      support: $blue-6,
+      variable: $orange-6,
+    ),
+  ),
 );
