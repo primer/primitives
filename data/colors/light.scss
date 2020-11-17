@@ -1047,6 +1047,7 @@ $export: (
 
   // Syntax highlighting
 
+  // when reading code
   prettylights: (
     syntax: (
       comment: $gray-5,
@@ -1082,6 +1083,7 @@ $export: (
     ),
   ),
 
+  // when editing code
   codemirror: (
     text: var(--color-text-primary),
     bg: var(--color-bg-canvas),
@@ -1106,5 +1108,26 @@ $export: (
       support: $blue-6,
       variable: $orange-6,
     ),
+  ),
+
+  // used in the Actions logs
+  ansi: (
+    black: $gray-9,
+    black-bright: $gray-8,
+    white: $gray-2,
+    white-bright: $gray-2,
+    grey: $gray-4,
+    red: $red-3,
+    red-bright: $red-2,
+    green: $green-3,
+    green-bright: $green-2,
+    yellow: $yellow-3,
+    yellow-bright: $yellow-2,
+    blue: $blue-3,
+    blue-bright: $blue-2,
+    magenta: $purple-3,
+    magenta-bright: $purple-2,
+    cyan: #76e3ea, // custom
+    cyan-bright: #b3f0ff, // custom
   ),
 );
