@@ -813,6 +813,10 @@ $export: (
     bg-hover: $gray-6,
   ),
 
+  drag-and-drop: (
+    border: darken($gray-6, 5%),
+  ),
+
   upload-enabled: (
     border: lighten($gray-6, 5%),
     border-focused: lighten($blue-5, 8%),
