@@ -809,8 +809,8 @@ $export: (
   ),
 
   hidden-text-expander: (
-    bg: lighten($gray-6, 5%),
-    bg-hover: darken($gray-6, 4%),
+    bg: $gray-7,
+    bg-hover: $gray-6,
   ),
 
   upload-enabled: (
