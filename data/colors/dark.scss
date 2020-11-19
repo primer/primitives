@@ -541,8 +541,8 @@ $export: (
       selected-shadow: 0 0 transparent,
 
       disabled-text: rgba($white, 0.5),
-      disabled-bg: $green-5,
-      disabled-border: $green-5,
+      disabled-bg: rgba($green-5, 0.6),
+      disabled-border: transparent,
 
       focus-bg: $green-5,
       focus-border: $green-3,
