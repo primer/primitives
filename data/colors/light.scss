@@ -885,6 +885,10 @@ $export: (
   actions-workflow-table-sticky-bg: rgba($white, 0.95),
   repo-language-color-border: rgba($black, 0.1),
 
+  blob: (
+    line-highlight-bg: $yellow-1,
+  ),
+
   diff: (
     addition: (
       text: $green-6,
