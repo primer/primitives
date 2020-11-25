@@ -375,7 +375,7 @@ $export: (
   ),
 
   icon: (
-    primary:$gray-0,
+    primary:$gray-1,
     secondary: $gray-4,
     tertiary: $gray-5,
     info: $blue-2,
@@ -507,7 +507,7 @@ $export: (
   ),
 
   btn: (
-    text: $gray-0,
+    text: $gray-1,
     bg: $gray-7,
     border: $gray-6,
     shadow: 0 0 transparent,
@@ -606,11 +606,11 @@ $export: (
   ),
 
   counter: (
-    text: $gray-0,
+    text: $gray-1,
     bg: $gray-6,
 
     primary: (
-      text: $gray-0,
+      text: $gray-1,
       bg: $gray-4,
     ),
 
@@ -774,7 +774,7 @@ $export: (
   ),
 
   branch-name: (
-    text: $gray-0,
+    text: $gray-1,
     icon: $gray-2,
     bg: rgba($blue-3, 0.1),
 
@@ -837,11 +837,11 @@ $export: (
     border-hover: $gray-6,
     border-active: #F78166,
     text: $gray-3,
-    text-hover: $gray-0,
-    text-active: $gray-0,
+    text-hover: $gray-1,
+    text-active: $gray-1,
     icon: $gray-4,
-    icon-hover: $gray-0,
-    icon-active: $gray-0,
+    icon-hover: $gray-1,
+    icon-active: $gray-1,
     counter-text: $gray-3,
   ),
 
@@ -954,8 +954,8 @@ $export: (
   global-nav: (
     logo: $gray-0,
     bg: $gray-8,
-    text: $gray-0,
-    icon: $gray-0,
+    text: $gray-1,
+    icon: $gray-1,
     input-bg: $gray-9,
     input-border: $gray-7,
     input-icon: $gray-7,
@@ -1063,7 +1063,7 @@ $export: (
       comment: $gray-3,
       constant: $blue-2,
       entity: $purple-2,
-      storage-modifier-import: $gray-0,
+      storage-modifier-import: $gray-1,
       entity-tag: $green-1,
       keyword: $red-3,
       string: $blue-1,
@@ -1076,8 +1076,8 @@ $export: (
       string-regexp: $green-1,
       markup-list: $yellow-1,
       markup-heading: $blue-5,
-      markup-italic: $gray-0,
-      markup-bold: $gray-0,
+      markup-italic: $gray-1,
+      markup-bold: $gray-1,
       markup-deleted-text: $red-0,
       markup-deleted-bg: $red-8,
       markup-inserted-text: $green-0,
@@ -1105,7 +1105,7 @@ $export: (
     cursor: $gray-0,
     selection-bg: #aaaad4, // custom
     activeline-bg: $gray-8,
-    matchingbracket-text: $gray-0,
+    matchingbracket-text: $gray-1,
     lines-bg: var(--color-bg-canvas),
 
     syntax: (
