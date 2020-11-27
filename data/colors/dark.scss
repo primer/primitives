@@ -886,7 +886,8 @@ $export: (
   repo-language-color-border: rgba($white, 0.2),
 
   blob: (
-    line-highlight-bg: $yellow-9,
+    line-highlight-bg: rgba($yellow-4, 0.1),
+    line-highlight-border: $yellow-4,
   ),
 
   diff: (
