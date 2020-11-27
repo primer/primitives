@@ -915,12 +915,16 @@ $export: (
     num-hover-text: rgba($black, 0.6),
 
     addition: (
+      num-text: $black-fade-30,
+      num-hover-text: rgba($black, 0.6),
       num-bg: darken($green-1, 3%),
       line-bg: darken($green-0, 2%),
       word-bg: darken($green-2, 4%),
     ),
 
     deletion: (
+      num-text: $black-fade-30,
+      num-hover-text: rgba($black, 0.6),
       num-bg: $red-1,
       line-bg: $red-0,
       word-bg: lighten($red-2, 2%),
