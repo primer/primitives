@@ -892,6 +892,7 @@ $export: (
   discussion-bg-success: $green-5,
   actions-workflow-table-sticky-bg: rgba($white, 0.95),
   repo-language-color-border: rgba($black, 0.1),
+  code-selection-bg: $blue-2,
 
   blob: (
     line-highlight-bg: $yellow-1,
@@ -1116,7 +1117,7 @@ $export: (
     guttermarker-subtle-text: $gray-3,
     linenumber-text: $gray-4,
     cursor: $gray-9,
-    selection-bg: #d7d4f0, // custom, codemirror default
+    selection-bg: var(--color-code-selection-bg),
     activeline-bg: $gray-0,
     matchingbracket-text: $gray-9,
     lines-bg: var(--color-bg-canvas),
