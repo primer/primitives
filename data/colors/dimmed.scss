@@ -361,17 +361,10 @@ $export: (
 
   // Pure functional
 
-  text: (
-    primary: $gray-1,
-    secondary: $gray-3,
-    tertiary: $gray-3,
-    placeholder: $gray-5,
-    disabled: $gray-5,
-    inverse: $gray-9,
-    link: $blue-3,
-    danger: $red-4,
-    success: $green-2,
-    warning: $yellow-2,
-    white: $white,
+  bg: (
+    canvas: $gray-6,
+    primary: $gray-6,
+    secondary: $gray-6,
+    tertiary: $gray-5,
   ),
 );
