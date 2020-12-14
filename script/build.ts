@@ -79,6 +79,7 @@ async function getModeCollectionForType(type: string, toSkip: string[]): Promise
     collection.addFromSassExports(name, rendered.vars.global.$export)
   }
 
+  collection.finalize()
   return collection
 }
 

@@ -18,11 +18,13 @@ const CSS_VAR_REGEX = /var\(--(.*)\)/
 export default class VariableCollection {
   public readonly name: string
   public readonly prefix: string
+  public readonly parent: string | null
   private data: Map<string, ModeVariable> = new Map()
 
-  constructor(name: string, prefix: string) {
+  constructor(name: string, prefix: string, parent: string | null) {
     this.name = name
     this.prefix = prefix
+    this.parent = parent
   }
 
   public addFromSassExports(data: SassMap) {
@@ -89,6 +91,14 @@ export default class VariableCollection {
     }
 
     this.data.set(fullName, variable)
+  }
+
+  public merge(other: VariableCollection) {
+    for (const modeVar of other.flattened()) {
+      if (!this.data.has(modeVar.name)) {
+        this.add(modeVar.path, modeVar.value)
+      }
+    }
   }
 
   public flattened(): ReadonlyArray<ModeVariable> {

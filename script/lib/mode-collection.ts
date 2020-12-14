@@ -14,7 +14,12 @@ export default class ModeCollection {
   }
 
   public addFromSassExports(name: string, data: SassMap) {
-    const vars = new VariableCollection(name, this.prefix)
+    let parent: string | null = null
+    if (data.value.__parent) {
+      parent = data.value.__parent.value as string
+      delete data.value.__parent
+    }
+    const vars = new VariableCollection(name, this.prefix, parent)
     vars.addFromSassExports(data)
     this.add(name, vars)
   }
@@ -53,6 +58,16 @@ export default class ModeCollection {
 
   public [Symbol.iterator]() {
     return this.modes[Symbol.iterator]()
+  }
+
+  public finalize() {
+    for (const key of this.modes.keys()) {
+      const mode = this.modes.get(key)!
+      if (mode.parent) {
+        const parentMode = this.modes.get(mode.parent)!
+        mode.merge(parentMode)
+      }
+    }
   }
 
   private getMissingVarsPerMode(): {modes: VariableCollection[], variableName: string}[] {
