@@ -1,0 +1,377 @@
+// Dark mode
+
+$black: #010409;
+$white: #F0F6FC;
+
+$tbd: $white;
+
+//
+//
+// -------- Grays --------
+$gray-0:        #F0F6FC;
+$gray-1:        #C9D1D9;
+$gray-2:        #B1BAC4;
+$gray-3:        #8B949E;
+$gray-4:        #6E7681;
+$gray-5:        #484F58;
+$gray-6:        #30363D;
+$gray-7:        #21262D;
+$gray-8:        #161B22;
+$gray-9:        #0D1117;
+
+// -------- Blue --------
+$blue-0:        #CAE8FF;
+$blue-1:        #A5D6FF;
+$blue-2:        #79C0FF;
+$blue-3:        #58A6FF;
+$blue-4:        #388BFD;
+$blue-5:        #1F6FEB;
+$blue-6:        #1158C7;
+$blue-7:        #0D419D;
+$blue-8:        #0C2D6B;
+$blue-9:        #051D4D;
+
+// -------- Green --------
+$green-0:       #AFF5B4;
+$green-1:       #7EE787;
+$green-2:       #56D364;
+$green-3:       #3FB950;
+$green-4:       #2EA043;
+$green-5:       #238636;
+$green-6:       #196C2E;
+$green-7:       #0F5323;
+$green-8:       #033A16;
+$green-9:       #04260F;
+
+// -------- Yellow --------
+$yellow-0:      #F8E3A1;
+$yellow-1:      #F2CC60;
+$yellow-2:      #E3B341;
+$yellow-3:      #D29922;
+$yellow-4:      #BB8009;
+$yellow-5:      #9E6A03;
+$yellow-6:      #845306;
+$yellow-7:      #693E00;
+$yellow-8:      #4B2900;
+$yellow-9:      #341A00;
+
+// -------- Orange --------
+$orange-0:      #FFDFB6;
+$orange-1:      #FFC680;
+$orange-2:      #FFA657;
+$orange-3:      #F0883E;
+$orange-4:      #DB6D28;
+$orange-5:      #BD561D;
+$orange-6:      #9B4215;
+$orange-7:      #762D0A;
+$orange-8:      #5A1E02;
+$orange-9:      #3D1300;
+
+// -------- Red --------
+$red-0:         #FFDCD7;
+$red-1:         #FFC1BA;
+$red-2:         #FFA198;
+$red-3:         #FF7B72;
+$red-4:         #F85149;
+$red-5:         #DA3633;
+$red-6:         #B62324;
+$red-7:         #8E1519;
+$red-8:         #67060C;
+$red-9:         #490202;
+
+// -------- Purple --------
+$purple-0:       #EDDEFF;
+$purple-1:       #E2C5FF;
+$purple-2:       #D2A8FF;
+$purple-3:       #BC8CFF;
+$purple-4:       #A371F7;
+$purple-5:       #8957E5;
+$purple-6:       #6E40C9;
+$purple-7:       #553098;
+$purple-8:       #3C1E70;
+$purple-9:       #271052;
+
+// -------- Pink --------
+$pink-0:      #FFDAEC;
+$pink-1:      #FFBEDD;
+$pink-2:      #FF9BCE;
+$pink-3:      #F778BA;
+$pink-4:      #DB61A2;
+$pink-5:      #BF4B8A;
+$pink-6:      #9E3670;
+$pink-7:      #7D2457;
+$pink-8:      #5E103E;
+$pink-9:      #42062A;
+
+// -------- Fades --------
+$black-fade-10:      rgba($black, 0.1);
+$black-fade-15:      rgba($black, 0.15);
+$black-fade-30:      rgba($black, 0.3);
+$black-fade-50:      rgba($black, 0.5);
+$black-fade-70:      rgba($black, 0.7);
+$black-fade-85:      rgba($black, 0.85);
+
+$white-fade-10:      rgba($white, 0.1);
+$white-fade-15:      rgba($white, 0.15);
+$white-fade-30:      rgba($white, 0.3);
+$white-fade-50:      rgba($white, 0.5);
+$white-fade-70:      rgba($white, 0.7);
+$white-fade-85:      rgba($white, 0.85);
+
+// -------- Color defaults --------
+$red:         $red-5;
+$purple:      $purple-5;
+$blue:        $blue-5;
+$green:       $green-5;
+$yellow:      $yellow-5;
+$orange:      $orange-5;
+$pink:        $pink-5;
+$gray-dark:   $gray-9;
+$gray-light:  $gray-4;
+$gray:        $gray-5;
+
+// -------- Color scale --------
+
+$scale: (
+  black: $black,
+  white: $white,
+
+  gray: (
+    $gray-0,
+    $gray-1,
+    $gray-2,
+    $gray-3,
+    $gray-4,
+    $gray-5,
+    $gray-6,
+    $gray-7,
+    $gray-8,
+    $gray-9,
+  ),
+
+  blue: (
+    $blue-0,
+    $blue-1,
+    $blue-2,
+    $blue-3,
+    $blue-4,
+    $blue-5,
+    $blue-6,
+    $blue-7,
+    $blue-8,
+    $blue-9,
+  ),
+
+  green: (
+    $green-0,
+    $green-1,
+    $green-2,
+    $green-3,
+    $green-4,
+    $green-5,
+    $green-6,
+    $green-7,
+    $green-8,
+    $green-9,
+  ),
+
+  yellow: (
+    $yellow-0,
+    $yellow-1,
+    $yellow-2,
+    $yellow-3,
+    $yellow-4,
+    $yellow-5,
+    $yellow-6,
+    $yellow-7,
+    $yellow-8,
+    $yellow-9,
+  ),
+
+  orange: (
+    $orange-0,
+    $orange-1,
+    $orange-2,
+    $orange-3,
+    $orange-4,
+    $orange-5,
+    $orange-6,
+    $orange-7,
+    $orange-8,
+    $orange-9,
+  ),
+
+  red: (
+    $red-0,
+    $red-1,
+    $red-2,
+    $red-3,
+    $red-4,
+    $red-5,
+    $red-6,
+    $red-7,
+    $red-8,
+    $red-9,
+  ),
+
+  purple: (
+    $purple-0,
+    $purple-1,
+    $purple-2,
+    $purple-3,
+    $purple-4,
+    $purple-5,
+    $purple-6,
+    $purple-7,
+    $purple-8,
+    $purple-9,
+  ),
+
+  pink: (
+    $pink-0,
+    $pink-1,
+    $pink-2,
+    $pink-3,
+    $pink-4,
+    $pink-5,
+    $pink-6,
+    $pink-7,
+    $pink-8,
+    $pink-9,
+  )
+);
+
+// -------- Auto scale --------
+// Note: The order of the auto scale is flipped in dark.scss
+
+$auto: (
+  black: $white,
+  white: $black,
+
+  gray: (
+    $gray-9,
+    $gray-8,
+    $gray-7,
+    $gray-6,
+    $gray-5,
+    $gray-4,
+    $gray-3,
+    $gray-2,
+    $gray-1,
+    $gray-0,
+  ),
+
+  blue: (
+    $blue-9,
+    $blue-8,
+    $blue-7,
+    $blue-6,
+    $blue-5,
+    $blue-4,
+    $blue-3,
+    $blue-2,
+    $blue-1,
+    $blue-0,
+  ),
+
+  green: (
+    $green-9,
+    $green-8,
+    $green-7,
+    $green-6,
+    $green-5,
+    $green-4,
+    $green-3,
+    $green-2,
+    $green-1,
+    $green-0,
+  ),
+
+  yellow: (
+    $yellow-9,
+    $yellow-8,
+    $yellow-7,
+    $yellow-6,
+    $yellow-5,
+    $yellow-4,
+    $yellow-3,
+    $yellow-2,
+    $yellow-1,
+    $yellow-0,
+  ),
+
+  orange: (
+    $orange-9,
+    $orange-8,
+    $orange-7,
+    $orange-6,
+    $orange-5,
+    $orange-4,
+    $orange-3,
+    $orange-2,
+    $orange-1,
+    $orange-0,
+  ),
+
+  red: (
+    $red-9,
+    $red-8,
+    $red-7,
+    $red-6,
+    $red-5,
+    $red-4,
+    $red-3,
+    $red-2,
+    $red-1,
+    $red-0,
+  ),
+
+  purple: (
+    $purple-9,
+    $purple-8,
+    $purple-7,
+    $purple-6,
+    $purple-5,
+    $purple-4,
+    $purple-3,
+    $purple-2,
+    $purple-1,
+    $purple-0,
+  ),
+
+  pink: (
+    $pink-9,
+    $pink-8,
+    $pink-7,
+    $pink-6,
+    $pink-5,
+    $pink-4,
+    $pink-3,
+    $pink-2,
+    $pink-1,
+    $pink-0,
+  )
+);
+
+// -------- Functional colors ----------
+$export: (
+  __parent: "dark",
+  scale: $scale,
+  auto: $auto,
+
+  // Pure functional
+
+  text: (
+    primary: $gray-1,
+    secondary: $gray-3,
+    tertiary: $gray-3,
+    placeholder: $gray-5,
+    disabled: $gray-5,
+    inverse: $gray-9,
+    link: $blue-3,
+    danger: $red-4,
+    success: $green-2,
+    warning: $yellow-2,
+    white: $white,
+  ),
+);
