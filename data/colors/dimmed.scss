@@ -353,18 +353,4 @@ $auto: (
   )
 );
 
-// -------- Functional colors ----------
-$export: (
-  __parent: "dark",
-  scale: $scale,
-  auto: $auto,
-
-  // Pure functional
-
-  bg: (
-    canvas: $gray-6,
-    primary: $gray-6,
-    secondary: $gray-6,
-    tertiary: $gray-5,
-  ),
-);
+@import "./mixins/dark_mode.scss";
