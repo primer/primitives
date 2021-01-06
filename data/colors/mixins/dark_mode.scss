@@ -547,8 +547,8 @@ $export: (
   code-selection-bg: rgba($blue-2, 0.3), // needs to be semi transparent in dark mode
 
   blob: (
-    line-highlight-bg: rgba($yellow-4, 0.1),
-    line-highlight-border: $yellow-4,
+    line-highlight-bg: rgba($yellow-3, 0.15),
+    line-highlight-border: $yellow-2,
   ),
 
   diff: (
@@ -578,17 +578,17 @@ $export: (
     addition: (
       num-text: $green-3,
       num-hover-text: $green-1,
-      num-bg: rgba($green-5, 0.05),
-      line-bg: rgba($green-5, 0.15),
-      word-bg: rgba($green-5, 0.3),
+      num-bg: rgba($green-4, 0.10),
+      line-bg: rgba($green-4, 0.20),
+      word-bg: rgba($green-4, 0.55),
     ),
 
     deletion: (
       num-text: $red-4,
       num-hover-text: $red-2,
-      num-bg: rgba($red-5, 0.05),
-      line-bg: rgba($red-5, 0.15),
-      word-bg: rgba($red-5, 0.3),
+      num-bg: rgba($red-5, 0.10),
+      line-bg: rgba($red-5, 0.20),
+      word-bg: rgba($red-5, 0.50),
     ),
 
     hunk: (
