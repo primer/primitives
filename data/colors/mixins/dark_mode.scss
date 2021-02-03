@@ -716,6 +716,13 @@ $export: (
     gradient-out: rgba($gray-8, 0),
   ),
 
+  intro-shelf: (
+    gradient-left: rgba($blue-4, 0.1),
+    gradient-right: rgba($green-4, 0.1),
+    gradient-in: $gray-9,
+    gradient-out: rgba($gray-9, 0),
+  ),
+
   marketing-icon: (
     primary: $blue-2,
     secondary: $blue-5,
