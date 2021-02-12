@@ -892,6 +892,14 @@ $export: (
   // Marketing
 
   mktg: (
+    success: mix($green-5, $green-4, 50%),
+    info: mix($blue-4, $blue-5, 42%),
+
+    bg-shade-gradient: (
+      top: rgba($black, 0.065),
+      bottom: rgba($black, 0),
+    ),
+
     btn: (
       bg: #3076DF,
       border: #3076DF,
