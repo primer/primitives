@@ -889,6 +889,90 @@ $export: (
     addition-border: $green-5,
   ),
 
+  // Marketing
+
+  mktg: (
+    btn: (
+      bg: #3076DF,
+      border: #3076DF,
+      text: $white,
+      icon: $white,
+
+      hover: (
+        bg: $blue-5,
+        border: $blue-5,
+      ),
+
+      disabled: (
+        bg: rgba(48, 118, 223, 0.5),
+        border: transparent,
+        text: $white,
+        icon: $white,
+      ),
+
+      primary: (
+        bg: #5EB85C,
+        border: #5EB85C,
+        text: $white,
+        icon: $white,
+
+        hover: (
+          bg: $green-5,
+          border: $green-5,
+        ),
+
+        disabled: (
+          bg: rgba(94, 184, 92, 0.5),
+          border: transparent,
+          text: $white,
+          icon: $white,
+        ),
+      ),
+
+      outline: (
+        bg: transparent,
+        border: rgba(42, 103, 195, 0.5),
+        text: #3076DF,
+        icon: #3076DF,
+
+        hover: (
+          bg: transparent,
+          border: $blue-5,
+          text: $blue-5,
+          icon: $blue-5,
+        ),
+
+        disabled: (
+          bg: transparent,
+          border: rgba(42, 103, 195, 0.2),
+          text: rgba(48, 118, 223, 0.5),
+          icon: rgba(48, 118, 223, 0.5),
+        ),
+      ),
+
+      dark: (
+        bg: transparent,
+        border: rgba($white, 0.5),
+        text: $white,
+        icon: $white,
+
+        hover: (
+          bg: $white,
+          border: $white,
+          text: $gray-7,
+          icon: $gray-7,
+        ),
+
+        disabled: (
+          bg: transparent,
+          border: rgba($white, 0.2),
+          text: rgba($white, 0.5),
+          icon: rgba($white, 0.5),
+        ),
+      ),
+    ),
+  ),
+
   // App level
 
   files-explorer-icon: $blue-3,

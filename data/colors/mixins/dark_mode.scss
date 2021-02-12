@@ -534,6 +534,90 @@ $export: (
     addition-border: $green-4,
   ),
 
+    // Marketing
+
+  mktg: (
+    btn: (
+      bg: $blue-5,
+      border: $blue-5,
+      text: $gray-0,
+      icon: $gray-0,
+
+      hover: (
+        bg: $blue-4,
+        border: $blue-4,
+      ),
+
+      disabled: (
+        bg: rgba($blue-4, 0.5),
+        border: transparent,
+        text: rgba($gray-0, 0.5),
+        icon: rgba($gray-0, 0.5),
+      ),
+
+      primary: (
+        bg: $green-5,
+        border: $green-5,
+        text: $gray-0,
+        icon: $gray-0,
+
+        hover: (
+          bg: $green-4,
+          border: $green-4,
+        ),
+
+        disabled: (
+          bg: rgba($green-4, 0.5),
+          border: transparent,
+          text: rgba($white, 0.5),
+          icon: rgba($white, 0.5),
+        ),
+      ),
+
+      outline: (
+        bg: transparent,
+        border: rgba($blue-4, 0.5),
+        text: $blue-4,
+        icon: $blue-4,
+
+        hover: (
+          bg: transparent,
+          border: $blue-4,
+          text: $blue-3,
+          icon: $blue-3,
+        ),
+
+        disabled: (
+          bg: transparent,
+          border: rgba($blue-4, 0.2),
+          text: rgba($blue-4, 0.5),
+          icon: rgba($blue-4, 0.5),
+        ),
+      ),
+
+      dark: (
+        bg: transparent,
+        border: rgba($gray-1, 0.5),
+        text: $gray-1,
+        icon: $gray-1,
+
+        hover: (
+          bg: rgba($gray-1, 0.5),
+          border: rgba($gray-1, 0.5),
+          text: $gray-9,
+          icon: $gray-9,
+        ),
+
+        disabled: (
+          bg: transparent,
+          border: rgba($gray-1, 0.2),
+          text: rgba($gray-1, 0.5),
+          icon: rgba($gray-1, 0.5),
+        ),
+      ),
+    ),
+  ),
+
   // App level
 
   files-explorer-icon: $gray-4,
