@@ -543,6 +543,8 @@ $export: (
       text: $gray-0,
       icon: $gray-0,
 
+      focus-shadow: 0 0 0 3px rgba($blue-5, 0.3),
+
       hover: (
         bg: $blue-4,
         border: $blue-4,
@@ -560,6 +562,8 @@ $export: (
         border: $green-5,
         text: $gray-0,
         icon: $gray-0,
+
+        focus-shadow: 0 0 0 3px rgba($green-5, 0.3),
 
         hover: (
           bg: $green-4,
@@ -579,6 +583,8 @@ $export: (
         border: rgba($blue-4, 0.5),
         text: $blue-4,
         icon: $blue-4,
+
+        focus-shadow: 0 0 0 3px rgba($blue-4, 0.3),
 
         hover: (
           bg: transparent,
@@ -600,6 +606,8 @@ $export: (
         border: rgba($gray-1, 0.5),
         text: $gray-1,
         icon: $gray-1,
+
+        focus-shadow: 0 0 0 3px rgba($gray-1, 0.3),
 
         hover: (
           bg: rgba($gray-1, 0.5),
