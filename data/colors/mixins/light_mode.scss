@@ -816,6 +816,68 @@ $export: (
     gradient-out: rgba($white, 0),
   ),
 
+  checks: (
+    bg: $gray-9,
+
+    run-border-width: 0px,
+    container-border-width: 0px,
+
+    text-primary: $gray-0,
+    text-secondary: $gray-4,
+    text-link: $blue-3,
+
+    btn-icon: $gray-3,
+    btn-hover-icon: $gray-0,
+    btn-hover-bg: rgba(255, 255, 255, 0.125),
+
+    input-text: $gray-1,
+    input-placeholder-text: $gray-4,
+    input-focus-text: $gray-4,
+    input-bg: $gray-8,
+    input-shadow: none,
+
+    dropdown-bg: $gray-8,
+    dropdown-border: $gray-7,
+    dropdown-hover-text: $gray-0,
+    dropdown-hover-bg: $gray-7,
+
+    scrollbar: $gray-1 $black,
+    scrollbar-thumb-bg: $gray-6,
+
+    header-label-text: $gray-2,
+    header-label-open-text: $gray-0,
+    header-border: $gray-8,
+
+    line-text: $gray-2,
+    line-num-text: rgba($gray-4, 0.75),
+    line-timestamp-text: $gray-4,
+    line-hover-bg: $gray-8,
+    line-selected-bg: rgba($blue-4, 0.15),
+    line-selected-num-text: $blue-3,
+    line-dt-fm-text: $gray-9,
+    line-dt-fm-bg: $yellow-5,
+
+    gate-bg: rgba($yellow-6, 0.15),
+    gate-text: $gray-2,
+    gate-waiting-text: $gray-3,
+
+    step-header-open-bg: $gray-8,
+    step-error-text: $red-3,
+    step-warning-text: $yellow-3,
+
+    logline-text: $gray-4,
+    logline-num-text: rgba($gray-4, 0.75),
+    logline-debug-text: $purple-3,
+    logline-error-text: $gray-2,
+    logline-error-num-text: $red-3,
+    logline-error-bg: rgba($red-6, 0.15),
+    logline-warning-text: $gray-2,
+    logline-warning-num-text: $yellow-3,
+    logline-warning-bg: rgba($yellow-6, 0.15),
+    logline-command-text: $blue-3,
+    logline-section-text: $green-3,
+  ),
+
   intro-shelf: (
     gradient-left: $blue-0,
     gradient-right: $green-1,
