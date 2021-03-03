@@ -836,16 +836,20 @@ $export: (
     input-bg: var(--color-input-bg),
     input-shadow: 0 0 0 1px $gray-7, // var(--color-input-border)
 
+    dropdown-text: var(--color-text-primary),
     dropdown-bg: var(--color-bg-overlay),
     dropdown-border: var(--color-border-overlay),
     dropdown-hover-text: var(--color-state-hover-primary-text),
     dropdown-hover-bg: var(--color-state-hover-primary-bg),
+    dropdown-btn-hover-text: var(--color-state-hover-primary-text),
+    dropdown-btn-hover-bg: var(--color-state-hover-secondary-bg),
 
     scrollbar-thumb-bg: $gray-6,
 
     header-label-text: var(--color-text-secondary),
     header-label-open-text: var(--color-text-primary),
     header-border: var(--color-border-secondary),
+    header-icon: var(--color-icon-secondary),
 
     line-text: var(--color-text-secondary),
     line-num-text: var(--color-text-tertiary),
