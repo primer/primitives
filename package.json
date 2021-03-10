@@ -3,15 +3,10 @@
   "version": "3.0.0",
   "description": "Typography, spacing, and color primitives for Primer design system",
   "files": [
-    "index.js",
-    "index.d.ts",
-    "primitives/*.js",
-    "primitives/*.d.ts",
-    "theme/*.js",
-    "theme/*.d.ts"
+    "dist"
   ],
-  "main": "index.js",
-  "types": "index.d.ts",
+  "main": "dist/js/index.js",
+  "types": "dist/js/index.d.ts",
   "repository": "https://github.com/primer/primitives",
   "keywords": [
     "primitives",
@@ -28,11 +23,27 @@
   },
   "homepage": "https://github.com/primer/primitives#readme",
   "scripts": {
-    "build": "tsc",
-    "prepack": "yarn build"
+    "prebuild": "rm -rf dist",
+    "build": "ts-node ./script/build.ts && tsc",
+    "prepack": "yarn build",
+    "watch": "ls data/**/*.scss script/**/*.ts | entr -s 'yarn build'",
+    "release": "yarn build && changeset publish"
   },
   "dependencies": {},
   "devDependencies": {
+    "@changesets/cli": "^2.11.2",
+    "@types/chalk": "^2.2.0",
+    "@types/lodash": "^4.14.163",
+    "@types/mkdirp": "^1.0.1",
+    "@types/node": "^14.0.26",
+    "camelcase-keys": "^6.2.2",
+    "chalk": "^4.1.0",
+    "deep-shape-equals": "^0.1.2",
+    "lodash": "^4.17.20",
+    "mkdirp": "^1.0.4",
+    "node-sass": "^4.14.1",
+    "sass-extract": "^2.1.0",
+    "ts-node": "^8.10.2",
     "typescript": "^3.7.2"
   }
 }
