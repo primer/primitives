@@ -1,5 +1,13 @@
 # 4.0.0
 
+#### :rotating_light: Breaking Changes
+
+- [#18](https://github.com/primer/primitives/pull/18) Add support for multiple color modes (`light`, `dark`, `dark_dimmed`) ([@auareyou](https://github.com/auareyou), [@BinaryMuse](https://github.com/BinaryMuse), [@colinkeany](https://github.com/colinkeany), [@edokoa](https://github.com/edokoa), [@jonrohan](https://github.com/jonrohan), [@simurai](https://github.com/simurai))
+
+### :memo: Documentation
+
+- [#18](https://github.com/primer/primitives/pull/18) Add color modes documentation ([@colebemis](https://github.com/colebemis))
+
 # 3.0.1 (2020-04-28)
 
 #### :rotating_light: Breaking Changes
