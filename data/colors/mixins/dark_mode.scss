@@ -45,7 +45,7 @@ $export: (
     canvas: $gray-9,
     canvas-mobile: $black,
     canvas-inverse: $gray-0,
-    canvas-inset: #06090F,
+    canvas-inset: darken($gray-9, 2%),
     primary: $gray-9,
     secondary: $gray-9,
     tertiary: $gray-8,
@@ -320,7 +320,7 @@ $export: (
 
   input: (
     bg: $gray-9,
-    contrast-bg: rgba(#010409, 0.3),
+    contrast-bg: rgba($black, 0.5),
     border: $gray-7,
     shadow: 0 0 transparent,
 
