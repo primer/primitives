@@ -646,6 +646,11 @@ $export: (
   repo-language-color-border: rgba($white, 0.2),
   code-selection-bg: rgba($blue-2, 0.3), // needs to be semi transparent in dark mode
 
+  highlight: (
+    text: #ffd467,
+    bg: rgba(204, 143, 44, 0.38),
+  ),
+
   blob: (
     line-highlight-bg: rgba($yellow-3, 0.15),
     line-highlight-border: $yellow-2,
