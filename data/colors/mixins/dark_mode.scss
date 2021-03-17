@@ -633,4 +633,30 @@ $export: (
       ),
     ),
   ),
+
+  pr-state: (
+    draft: (
+      text: $gray-3,
+      bg: rgba($gray-3, 0.1),
+      border: rgba($gray-3, 0.4),
+    ),
+
+    open: (
+      text: $green-3,
+      bg: rgba($green-3, 0.1),
+      border: rgba($green-3, 0.4),
+    ),
+
+    merged: (
+      text: $purple-4,
+      bg: rgba($purple-3, 0.1),
+      border: rgba($purple-3, 0.4),
+    ),
+
+    closed: (
+      text: $red-4,
+      bg: rgba($red-5, 0.1),
+      border: rgba($red-5, 0.4),
+    ),
+  ),
 );
