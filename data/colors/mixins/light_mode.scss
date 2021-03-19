@@ -404,7 +404,6 @@ $export: (
   timeline: (
     text: $gray-7,
     badge-bg: $gray-2,
-    badge-success-border: transparent,
     target-badge-border: $blue-4,
     target-badge-shadow: $blue-2,
   ),
@@ -637,6 +636,10 @@ $export: (
 
   // App level
 
+  files-explorer-icon: $blue-3,
+  hl-author-bg: $blue-0,
+  hl-author-border: $blue-2,
+  logo-subdued: $gray-3,
   discussion-border: desaturate($green-3, 40%),
   discussion-bg-success: $green-5,
   actions-workflow-table-sticky-bg: rgba($white, 0.95),
@@ -651,6 +654,26 @@ $export: (
   blob: (
     line-highlight-bg: $yellow-1,
     line-highlight-border: transparent,
+  ),
+
+  diff: (
+    addition: (
+      text: $green-6,
+      bg: var(--color-diff-blob-addition-line-bg),
+      border: $green-4,
+    ),
+
+    deletion: (
+      text: $red-6,
+      bg: var(--color-diff-blob-deletion-line-bg),
+      border: $red-5,
+    ),
+
+    change: (
+      text: $yellow-8,
+      bg: $yellow-2,
+      border: $yellow-6,
+    ),
   ),
 
   diff-blob: (
@@ -697,6 +720,37 @@ $export: (
       bg: $blue-5,
       gradient-bg: lighten($blue-5, 5%), // gradient top
     ),
+  ),
+
+  global-nav: (
+    logo: $white,
+    bg: $gray-9,
+    text: $white,
+    icon: $white,
+    input-bg: $gray-0,
+    input-border: $gray-0,
+    input-icon: $gray-3,
+    input-placeholder: $gray-4,
+  ),
+
+  calendar-graph: (
+    /*bg: $white,
+    border: $white,*/
+    day-bg: #EBEDF0,
+    day-border: rgba(27, 31, 35, 0.06),
+    day-L1-bg: #9BE9A8,
+    day-L2-bg: #40C463,
+    day-L3-bg: #30A14E,
+    day-L4-bg: #216E39,
+    day-L4-border: rgba(27, 31, 35, 0.06),
+    day-L3-border: rgba(27, 31, 35, 0.06),
+    day-L2-border: rgba(27, 31, 35, 0.06),
+    day-L1-border: rgba(27, 31, 35, 0.06),
+  ),
+
+  footer-invertocat: (
+    octicon: $gray-3,
+    octicon-hover: $gray-5,
   ),
 
   pr-state: (
@@ -837,5 +891,96 @@ $export: (
     gradient-right: $green-1,
     gradient-in: $white,
     gradient-out: rgba($white, 0),
+  ),
+
+  marketing-icon: (
+    primary: $blue-4,
+    secondary: $blue-3,
+  ),
+
+  // Syntax highlighting
+
+  // when reading code
+  prettylights: (
+    syntax: (
+      comment: $gray-5,
+      constant: $blue-6,
+      entity: $purple-5,
+      storage-modifier-import: $gray-9,
+      entity-tag: $green-6,
+      keyword: $red-5,
+      string: $blue-8,
+      variable: $orange-6,
+      brackethighlighter-unmatched: $red-7,
+      invalid-illegal-text: $gray-0,
+      invalid-illegal-bg: $red-7,
+      carriage-return-text: $gray-0,
+      carriage-return-bg: $red-5,
+      string-regexp: $green-6,
+      markup-list: $yellow-9,
+      markup-heading: $blue-6,
+      markup-italic: $gray-9,
+      markup-bold: $gray-9,
+      markup-deleted-text: $red-7,
+      markup-deleted-bg: $red-0,
+      markup-inserted-text: $green-6,
+      markup-inserted-bg: $green-0,
+      markup-changed-text: $orange-6,
+      markup-changed-bg: $orange-1,
+      markup-ignored-text: $gray-1,
+      markup-ignored-bg: $blue-6,
+      meta-diff-range: $purple-5,
+      brackethighlighter-angle: $gray-6,
+      sublimelinter-gutter-mark: $gray-4,
+      constant-other-reference-link: $blue-8,
+    ),
+  ),
+
+  // when editing code
+  codemirror: (
+    text: var(--color-text-primary),
+    bg: var(--color-bg-canvas),
+
+    gutters-bg: var(--color-bg-canvas),
+    guttermarker-text: $white,
+    guttermarker-subtle-text: $gray-3,
+    linenumber-text: $gray-4,
+    cursor: $gray-9,
+    selection-bg: var(--color-code-selection-bg),
+    activeline-bg: $gray-0,
+    matchingbracket-text: $gray-9,
+    lines-bg: var(--color-bg-canvas),
+
+    syntax: (
+      comment: $gray-5,
+      constant: $blue-6,
+      entity: $purple-5,
+      keyword: $red-5,
+      storage: $red-5,
+      string: $blue-8,
+      support: $blue-6,
+      variable: $orange-6,
+    ),
+  ),
+
+  // used in the Actions logs
+  ansi: (
+    black: $gray-9,
+    black-bright: $gray-8,
+    white: $gray-2,
+    white-bright: $gray-2,
+    gray: $gray-4,
+    red: $red-3,
+    red-bright: $red-2,
+    green: $green-3,
+    green-bright: $green-2,
+    yellow: $yellow-3,
+    yellow-bright: $yellow-2,
+    blue: $blue-3,
+    blue-bright: $blue-2,
+    magenta: $purple-3,
+    magenta-bright: $purple-2,
+    cyan: #76e3ea, // custom
+    cyan-bright: #b3f0ff, // custom
   ),
 );
