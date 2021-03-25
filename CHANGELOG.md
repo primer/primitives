@@ -1,5 +1,19 @@
 #### :rotating_light: Breaking Changes
 
+## 4.0.0
+
+### Major Changes
+
+- [#58](https://github.com/primer/primitives/pull/58) [`0dc2d26`](https://github.com/primer/primitives/commit/0dc2d26526f1f21b380fc6946081a70fcd93ddf9) Thanks [@jonrohan](https://github.com/jonrohan)! - Add support for color modes
+
+### Patch Changes
+
+- [#58](https://github.com/primer/primitives/pull/58) [`0dc2d26`](https://github.com/primer/primitives/commit/0dc2d26526f1f21b380fc6946081a70fcd93ddf9) Thanks [@jonrohan](https://github.com/jonrohan)! - Updating the workflow to release for changesets
+
+* [#51](https://github.com/primer/primitives/pull/51) [`5eaca5e`](https://github.com/primer/primitives/commit/5eaca5eb5ddc1421b963c414daf10e6e7f0d23e7) Thanks [@simurai](https://github.com/simurai)! - Adding variable for Underlinenav-counter-bg
+
+- [#58](https://github.com/primer/primitives/pull/58) [`4f12b06`](https://github.com/primer/primitives/commit/4f12b06b76ac60cfea4afa989c192ee4534f63f7) Thanks [@jonrohan](https://github.com/jonrohan)! - Updating the ci.yml and release.yml scripts to more closely match @primer/components
+
 - [#18](https://github.com/primer/primitives/pull/18) Add support for multiple color modes (`light`, `dark`, `dark_dimmed`) ([@auareyou](https://github.com/auareyou), [@BinaryMuse](https://github.com/BinaryMuse), [@colinkeany](https://github.com/colinkeany), [@edokoa](https://github.com/edokoa), [@jonrohan](https://github.com/jonrohan), [@simurai](https://github.com/simurai))
 
 ### :memo: Documentation
