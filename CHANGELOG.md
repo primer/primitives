@@ -1,5 +1,15 @@
 # 4.0.0
 
+## 4.0.0
+
+### Major Changes
+
+- [#18](https://github.com/primer/primitives/pull/18) [`cc9de9b`](https://github.com/primer/primitives/commit/cc9de9b240cd03677808aa3b36ad655ea35eba63) Thanks [@BinaryMuse](https://github.com/BinaryMuse)! - Add support for color modes
+
+### Patch Changes
+
+- [#56](https://github.com/primer/primitives/pull/56) [`d112729`](https://github.com/primer/primitives/commit/d112729243e837b8c3ed9bf84e60507979c0d413) Thanks [@jonrohan](https://github.com/jonrohan)! - Updating the workflow to release for changesets
+
 #### :rotating_light: Breaking Changes
 
 - [#18](https://github.com/primer/primitives/pull/18) Add support for multiple color modes (`light`, `dark`, `dark_dimmed`) ([@auareyou](https://github.com/auareyou), [@BinaryMuse](https://github.com/BinaryMuse), [@colinkeany](https://github.com/colinkeany), [@edokoa](https://github.com/edokoa), [@jonrohan](https://github.com/jonrohan), [@simurai](https://github.com/simurai))
