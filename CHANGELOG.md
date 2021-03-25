@@ -1,31 +1,49 @@
-# 3.0.1 (2020-04-28)
+# 4.0.0
+
 #### :rotating_light: Breaking Changes
-* [#14](https://github.com/primer/primitives/pull/16) Convert the package from JSON to TypeScript ([@smockle](https://github.com/smockle))
+
+- [#18](https://github.com/primer/primitives/pull/18) Add support for multiple color modes (`light`, `dark`, `dark_dimmed`) ([@auareyou](https://github.com/auareyou), [@BinaryMuse](https://github.com/BinaryMuse), [@colinkeany](https://github.com/colinkeany), [@edokoa](https://github.com/edokoa), [@jonrohan](https://github.com/jonrohan), [@simurai](https://github.com/simurai))
+
+### :memo: Documentation
+
+- [#18](https://github.com/primer/primitives/pull/18) Add color modes documentation ([@colebemis](https://github.com/colebemis))
+
+# 3.0.1 (2020-04-28)
+
+#### :rotating_light: Breaking Changes
+
+- [#14](https://github.com/primer/primitives/pull/16) Convert the package from JSON to TypeScript ([@smockle](https://github.com/smockle))
 
 # 2.0.0 (2019-10-21)
 
 #### :rotating_light: Breaking Changes
-* [#14](https://github.com/primer/primitives/pull/14) Rename npm package to `@primer/primitives` and deprecate old `primer-*` packages ([@BinaryMuse](https://github.com/BinaryMuse))
+
+- [#14](https://github.com/primer/primitives/pull/14) Rename npm package to `@primer/primitives` and deprecate old `primer-*` packages ([@BinaryMuse](https://github.com/BinaryMuse))
 
 # 1.0.2 (2018-07-20)
 
 #### :bug: Bug Fix
-* [#6](https://github.com/primer/primer-primitives/pull/6) Fix spacing to be an array instead of an object. ([@broccolini](https://github.com/broccolini))
+
+- [#6](https://github.com/primer/primer-primitives/pull/6) Fix spacing to be an array instead of an object. ([@broccolini](https://github.com/broccolini))
 
 #### :memo: Documentation
-* [#6](https://github.com/primer/primer-primitives/pull/6) Add usage example to README. ([@broccolini](https://github.com/broccolini))
+
+- [#6](https://github.com/primer/primer-primitives/pull/6) Add usage example to README. ([@broccolini](https://github.com/broccolini))
 
 # 1.0.1 (2018-05-10)
 
 #### :bug: Bug Fix
-* [#3](https://github.com/primer/primer-primitives/pull/3) Add dependencies to primer-primitives package. ([@broccolini](https://github.com/broccolini))
-* [#3](https://github.com/primer/primer-primitives/pull/3) Point main at correct files. ([@broccolini](https://github.com/broccolini))
+
+- [#3](https://github.com/primer/primer-primitives/pull/3) Add dependencies to primer-primitives package. ([@broccolini](https://github.com/broccolini))
+- [#3](https://github.com/primer/primer-primitives/pull/3) Point main at correct files. ([@broccolini](https://github.com/broccolini))
 
 #### :house: Internal
-* [#3](https://github.com/primer/primer-primitives/pull/3) Fix broken links in Readme's. ([@broccolini](https://github.com/broccolini))
+
+- [#3](https://github.com/primer/primer-primitives/pull/3) Fix broken links in Readme's. ([@broccolini](https://github.com/broccolini))
 
 # 1.0.0 (2018-04-29)
 
 #### :rocket: Enhancement
-* [#1](https://github.com/primer/primer-primitives/pull/1) Add color, typography, and spacing packages. ([@broccolini](https://github.com/broccolini))
-* [#1](https://github.com/primer/primer-primitives/pull/1) Add primer-primitives package that imports all primitives. ([@broccolini](https://github.com/broccolini))
+
+- [#1](https://github.com/primer/primer-primitives/pull/1) Add color, typography, and spacing packages. ([@broccolini](https://github.com/broccolini))
+- [#1](https://github.com/primer/primer-primitives/pull/1) Add primer-primitives package that imports all primitives. ([@broccolini](https://github.com/broccolini))

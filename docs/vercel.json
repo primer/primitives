@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/primitives"
+    }
+  ],
+  "rewrites": [{"source": "/primitives(/.*)?", "destination": "/$1"}]
+}
