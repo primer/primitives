@@ -1,10 +1,12 @@
-## 4.0.1
+# @primer/primitives
 
 ## 4.0.2
 
 ### Patch Changes
 
 - [#60](https://github.com/primer/primitives/pull/60) [`d119266`](https://github.com/primer/primitives/commit/d1192667888685947bfbb0335e273e348d6908ba) Thanks [@simurai](https://github.com/simurai)! - Revert "Update bg-overlay"
+
+## 4.0.1
 
 ### Major Changes
 
