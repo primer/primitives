@@ -1,5 +1,11 @@
 ## 4.0.1
 
+## 4.0.2
+
+### Patch Changes
+
+- [#60](https://github.com/primer/primitives/pull/60) [`d119266`](https://github.com/primer/primitives/commit/d1192667888685947bfbb0335e273e348d6908ba) Thanks [@simurai](https://github.com/simurai)! - Revert "Update bg-overlay"
+
 ### Major Changes
 
 - [#58](https://github.com/primer/primitives/pull/58) [`0dc2d26`](https://github.com/primer/primitives/commit/0dc2d26526f1f21b380fc6946081a70fcd93ddf9) Thanks [@jonrohan](https://github.com/jonrohan)! - Add support for color modes
