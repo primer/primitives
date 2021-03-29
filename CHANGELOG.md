@@ -1,5 +1,11 @@
 # @primer/primitives
 
+## 4.1.0
+
+### Minor Changes
+
+- [#62](https://github.com/primer/primitives/pull/62) [`151d5de`](https://github.com/primer/primitives/commit/151d5de85fdcf19eba46c23bf32e1ffefea10f88) Thanks [@simurai](https://github.com/simurai)! - Add `counter-secondary-bg`
+
 ## 4.0.2
 
 ### Patch Changes
