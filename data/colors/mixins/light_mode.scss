@@ -168,6 +168,9 @@ $export: (
     hover-bg: #f3f4f6,
     hover-border: $black-fade-15,
 
+    active-bg: darken(#f3f4f6, 3%),
+    active-border: $black-fade-10,
+    
     selected-bg: darken(#f3f4f6, 2%),
 
     focus-bg: $gray-0,
