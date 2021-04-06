@@ -1,5 +1,15 @@
 # @primer/primitives
 
+## 4.2.0
+
+### Minor Changes
+
+- [#68](https://github.com/primer/primitives/pull/68) [`3d4f86d`](https://github.com/primer/primitives/commit/3d4f86d4bddeba9bb28e2aa4b2ea4f980a0757fd) Thanks [@simurai](https://github.com/simurai)! - Add btn-active
+
+### Patch Changes
+
+- [#67](https://github.com/primer/primitives/pull/67) [`6dc6e19`](https://github.com/primer/primitives/commit/6dc6e19e50809a476e14fcc880e82e5b347e8d92) Thanks [@simurai](https://github.com/simurai)! - Update bg-overlay (mix)
+
 ## 4.1.0
 
 ### Minor Changes
