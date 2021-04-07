@@ -13,7 +13,7 @@ import '../styles.css'
 
 const TokenType = {
   Scale: 'Scale',
-  General: 'General',
+  Global: 'Global',
   Component: 'Component'
 }
 
@@ -37,7 +37,7 @@ function getType(key) {
   }
 
   if (['auto', 'text', 'border', 'icon', 'shadow', 'bg', 'state', 'fade'].includes(prefix)) {
-    return TokenType.General
+    return TokenType.Global
   }
 
   return TokenType.Component
