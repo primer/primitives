@@ -742,12 +742,12 @@ $export: (
   calendar-graph: (
     /*bg: $white,
     border: $white,*/
-    day-bg: $gray-8,
+    day-bg: rgba($gray-1, 0.1),
     day-border: rgba(27, 31, 35, 0.06),
-    day-L1-bg: #003820,
-    day-L2-bg: #00602D,
-    day-L3-bg: #10983D,
-    day-L4-bg: #27D545,
+    day-L1-bg: rgba($green-2, 0.33),
+    day-L2-bg: rgba($green-2, 0.55),
+    day-L3-bg: rgba($green-2, 0.77),
+    day-L4-bg: $green-2,
     day-L4-border: rgba(255, 255, 255, 0.05),
     day-L3-border: rgba(255, 255, 255, 0.05),
     day-L2-border: rgba(255, 255, 255, 0.05),
