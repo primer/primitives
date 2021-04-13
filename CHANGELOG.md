@@ -1,5 +1,11 @@
 # @primer/primitives
 
+## 4.2.1
+
+### Patch Changes
+
+- [#70](https://github.com/primer/primitives/pull/70) [`91d44f1`](https://github.com/primer/primitives/commit/91d44f18e136882d64d7288b587b8f1d0dcb8563) Thanks [@simurai](https://github.com/simurai)! - Update dark calendar-graph colors
+
 ## 4.2.0
 
 ### Minor Changes
