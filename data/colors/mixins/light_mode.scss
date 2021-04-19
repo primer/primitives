@@ -890,6 +890,27 @@ $export: (
     logline-warning-bg: rgba($yellow-6, 0.15),
     logline-command-text: $blue-3,
     logline-section-text: $green-3,
+
+    // used in the Actions logs
+    ansi: (
+      black: $gray-9,
+      black-bright: $gray-8,
+      white: $gray-2,
+      white-bright: $gray-2,
+      gray: $gray-4,
+      red: $red-3,
+      red-bright: $red-2,
+      green: $green-3,
+      green-bright: $green-2,
+      yellow: $yellow-3,
+      yellow-bright: $yellow-2,
+      blue: $blue-3,
+      blue-bright: $blue-2,
+      magenta: $purple-3,
+      magenta-bright: $purple-2,
+      cyan: #76e3ea, // custom
+      cyan-bright: #b3f0ff, // custom
+    ),
   ),
 
   intro-shelf: (
@@ -969,24 +990,24 @@ $export: (
     ),
   ),
 
-  // used in the Actions logs
+  // used for terminal-like enviroments
   ansi: (
     black: $gray-9,
-    black-bright: $gray-8,
-    white: $gray-2,
-    white-bright: $gray-2,
-    gray: $gray-4,
-    red: $red-3,
-    red-bright: $red-2,
-    green: $green-3,
-    green-bright: $green-2,
-    yellow: $yellow-3,
-    yellow-bright: $yellow-2,
-    blue: $blue-3,
-    blue-bright: $blue-2,
-    magenta: $purple-3,
-    magenta-bright: $purple-2,
-    cyan: #76e3ea, // custom
-    cyan-bright: #b3f0ff, // custom
+    black-bright: $gray-7,
+    white: $gray-0,
+    white-bright: $white,
+    gray: $gray-5,
+    red: $red-5,
+    red-bright: $red-6,
+    green: $green-6,
+    green-bright: $green-5,
+    yellow: $yellow-8,
+    yellow-bright: $yellow-7,
+    blue: $blue-5,
+    blue-bright: $blue-7,
+    magenta: $purple-5,
+    magenta-bright: $purple-4,
+    cyan: #1b7c83, // custom
+    cyan-bright: #3192aa, // custom
   ),
 );
