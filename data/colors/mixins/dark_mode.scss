@@ -890,6 +890,27 @@ $export: (
     logline-warning-bg: var(--color-bg-warning),
     logline-command-text: $blue-3,
     logline-section-text: var(--color-text-success),
+
+    // used in the Actions logs
+    ansi: (
+      black: $gray-9,
+      black-bright: $gray-8,
+      white: $gray-2,
+      white-bright: $gray-2,
+      gray: $gray-4,
+      red: $red-3,
+      red-bright: $red-2,
+      green: $green-3,
+      green-bright: $green-2,
+      yellow: $yellow-3,
+      yellow-bright: $yellow-2,
+      blue: $blue-3,
+      blue-bright: $blue-2,
+      magenta: $purple-3,
+      magenta-bright: $purple-2,
+      cyan: #76e3ea, // custom
+      cyan-bright: #b3f0ff, // custom
+    ),
   ),
 
   intro-shelf: (
@@ -969,7 +990,7 @@ $export: (
     ),
   ),
 
-  // used in the Actions logs
+  // used for terminal-like enviroments
   ansi: (
     black: $gray-9,
     black-bright: $gray-8,
