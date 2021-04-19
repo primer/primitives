@@ -1,5 +1,11 @@
 # @primer/primitives
 
+## 4.2.2
+
+### Patch Changes
+
+- [#73](https://github.com/primer/primitives/pull/73) [`4c7021d`](https://github.com/primer/primitives/commit/4c7021d4857eededf503e66fe50ea5e1b8f86573) Thanks [@simurai](https://github.com/simurai)! - Split ANSI colors
+
 ## 4.2.1
 
 ### Patch Changes
