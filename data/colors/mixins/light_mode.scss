@@ -574,21 +574,45 @@ $export: (
         text: $white,
       ),
 
+      enterprise: (
+        bg: (
+          top: lighten($primary-purple-mktg, 5%),
+          bottom: $primary-purple-mktg,
+        ),
+        bg-overlay: (
+          top: lighten($secondary-purple-mktg, 5%),
+          bottom: $secondary-purple-mktg,
+        ),
+        text: $white,
+      ),
+
       outline: (
         text: $primary-blue-mktg,
-        border: $primary-blue-mktg,
+        border: rgba($primary-blue-mktg, 0.3),
 
         hover: (
           text: $secondary-blue-mktg,
+          border: rgba($primary-blue-mktg, 0.5),
+        ),
+
+        focus: (
+          border: rgba($primary-blue-mktg, 1),
+          border-inset: rgba($primary-blue-mktg, 0.5),
         ),
       ),
 
       dark: (
         text: $white,
-        border: $white,
+        border: rgba($white, 0.3),
 
         hover: (
           text: $white,
+          border: rgba($white, 0.5),
+        ),
+
+        focus: (
+          border: rgba($white, 1),
+          border-inset: rgba($white, 0.5),
         ),
       ),
     ),
