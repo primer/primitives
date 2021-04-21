@@ -553,80 +553,42 @@ $export: (
 
     btn: (
       bg: (
-        top: lighten(#4969ed, 5%),
-        bottom: #4969ed,
+        top: lighten($primary-blue-mktg, 5%),
+        bottom: $primary-blue-mktg,
       ),
       bg-overlay: (
-        top: lighten(#3355e0, 5%),
-        bottom: #3355e0,
+        top: lighten($secondary-blue-mktg, 5%),
+        bottom: $secondary-blue-mktg,
       ),
       text: $white,
-      icon: $white,
 
       primary: (
-        bg: #5EB85C,
-        border: #5EB85C,
+        bg: (
+          top: lighten($primary-green-mktg, 5%),
+          bottom: $primary-green-mktg,
+        ),
+        bg-overlay: (
+          top: lighten($secondary-green-mktg, 5%),
+          bottom: $secondary-green-mktg,
+        ),
         text: $white,
-        icon: $white,
-
-        focus-shadow: 0 0 0 3px rgba(#5EB85C, 0.3),
-
-        hover: (
-          bg: $green-5,
-          border: $green-5,
-        ),
-
-        disabled: (
-          bg: rgba(94, 184, 92, 0.5),
-          border: transparent,
-          text: $white,
-          icon: $white,
-        ),
       ),
 
       outline: (
-        bg: transparent,
-        border: rgba(42, 103, 195, 0.5),
-        text: #3076DF,
-        icon: #3076DF,
-
-        focus-shadow: 0 0 0 3px rgba(42, 103, 195, 0.3),
+        text: $primary-blue-mktg,
+        border: $primary-blue-mktg,
 
         hover: (
-          bg: transparent,
-          border: $blue-5,
-          text: $blue-5,
-          icon: $blue-5,
-        ),
-
-        disabled: (
-          bg: transparent,
-          border: rgba(42, 103, 195, 0.2),
-          text: rgba(48, 118, 223, 0.5),
-          icon: rgba(48, 118, 223, 0.5),
+          text: $secondary-blue-mktg,
         ),
       ),
 
       dark: (
-        bg: transparent,
-        border: rgba($white, 0.5),
         text: $white,
-        icon: $white,
-
-        focus-shadow: 0 0 0 3px rgba($white, 0.3),
+        border: $white,
 
         hover: (
-          bg: $white,
-          border: $white,
-          text: $gray-7,
-          icon: $gray-7,
-        ),
-
-        disabled: (
-          bg: transparent,
-          border: rgba($white, 0.2),
-          text: rgba($white, 0.5),
-          icon: rgba($white, 0.5),
+          text: $white,
         ),
       ),
     ),
