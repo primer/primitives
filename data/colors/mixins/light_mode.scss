@@ -552,24 +552,16 @@ $export: (
     ),
 
     btn: (
-      bg: #3076DF,
-      border: #3076DF,
+      bg: (
+        top: lighten(#4969ed, 5%),
+        bottom: #4969ed,
+      ),
+      bg-overlay: (
+        top: lighten(#3355e0, 5%),
+        bottom: #3355e0,
+      ),
       text: $white,
       icon: $white,
-
-      focus-shadow: 0 0 0 3px rgba(#3076DF, 0.3),
-
-      hover: (
-        bg: $blue-5,
-        border: $blue-5,
-      ),
-
-      disabled: (
-        bg: rgba(48, 118, 223, 0.5),
-        border: transparent,
-        text: $white,
-        icon: $white,
-      ),
 
       primary: (
         bg: #5EB85C,
