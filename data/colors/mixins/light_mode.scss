@@ -553,51 +553,51 @@ $export: (
 
     btn: (
       bg: (
-        top: lighten($primary-blue-mktg, 5%),
-        bottom: $primary-blue-mktg,
+        top: lighten($mktg-blue-primary, 5%),
+        bottom: $mktg-blue-primary,
       ),
       bg-overlay: (
-        top: lighten($secondary-blue-mktg, 5%),
-        bottom: $secondary-blue-mktg,
+        top: lighten($mktg-blue-secondary, 5%),
+        bottom: $mktg-blue-secondary,
       ),
       text: $white,
 
       primary: (
         bg: (
-          top: lighten($primary-green-mktg, 5%),
-          bottom: $primary-green-mktg,
+          top: lighten($mktg-green-primary, 5%),
+          bottom: $mktg-green-primary,
         ),
         bg-overlay: (
-          top: lighten($secondary-green-mktg, 5%),
-          bottom: $secondary-green-mktg,
+          top: lighten($mktg-green-secondary, 5%),
+          bottom: $mktg-green-secondary,
         ),
         text: $white,
       ),
 
       enterprise: (
         bg: (
-          top: lighten($primary-purple-mktg, 5%),
-          bottom: $primary-purple-mktg,
+          top: lighten($mktg-purple-primary, 5%),
+          bottom: $mktg-purple-primary,
         ),
         bg-overlay: (
-          top: lighten($secondary-purple-mktg, 5%),
-          bottom: $secondary-purple-mktg,
+          top: lighten($mktg-purple-secondary, 5%),
+          bottom: $mktg-purple-secondary,
         ),
         text: $white,
       ),
 
       outline: (
-        text: $primary-blue-mktg,
-        border: rgba($primary-blue-mktg, 0.3),
+        text: $mktg-blue-primary,
+        border: rgba($mktg-blue-primary, 0.3),
 
         hover: (
-          text: $secondary-blue-mktg,
-          border: rgba($primary-blue-mktg, 0.5),
+          text: $mktg-blue-secondary,
+          border: rgba($mktg-blue-primary, 0.5),
         ),
 
         focus: (
-          border: rgba($primary-blue-mktg, 1),
-          border-inset: rgba($primary-blue-mktg, 0.5),
+          border: rgba($mktg-blue-primary, 1),
+          border-inset: rgba($mktg-blue-primary, 0.5),
         ),
       ),
 
