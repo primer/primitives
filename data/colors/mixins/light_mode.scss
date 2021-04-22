@@ -552,89 +552,67 @@ $export: (
     ),
 
     btn: (
-      bg: #3076DF,
-      border: #3076DF,
+      bg: (
+        top: lighten($mktg-blue-primary, 5%),
+        bottom: $mktg-blue-primary,
+      ),
+      bg-overlay: (
+        top: lighten($mktg-blue-secondary, 5%),
+        bottom: $mktg-blue-secondary,
+      ),
       text: $white,
-      icon: $white,
-
-      focus-shadow: 0 0 0 3px rgba(#3076DF, 0.3),
-
-      hover: (
-        bg: $blue-5,
-        border: $blue-5,
-      ),
-
-      disabled: (
-        bg: rgba(48, 118, 223, 0.5),
-        border: transparent,
-        text: $white,
-        icon: $white,
-      ),
 
       primary: (
-        bg: #5EB85C,
-        border: #5EB85C,
+        bg: (
+          top: lighten($mktg-green-primary, 5%),
+          bottom: $mktg-green-primary,
+        ),
+        bg-overlay: (
+          top: lighten($mktg-green-secondary, 5%),
+          bottom: $mktg-green-secondary,
+        ),
         text: $white,
-        icon: $white,
+      ),
 
-        focus-shadow: 0 0 0 3px rgba(#5EB85C, 0.3),
-
-        hover: (
-          bg: $green-5,
-          border: $green-5,
+      enterprise: (
+        bg: (
+          top: lighten($mktg-purple-primary, 5%),
+          bottom: $mktg-purple-primary,
         ),
-
-        disabled: (
-          bg: rgba(94, 184, 92, 0.5),
-          border: transparent,
-          text: $white,
-          icon: $white,
+        bg-overlay: (
+          top: lighten($mktg-purple-secondary, 5%),
+          bottom: $mktg-purple-secondary,
         ),
+        text: $white,
       ),
 
       outline: (
-        bg: transparent,
-        border: rgba(42, 103, 195, 0.5),
-        text: #3076DF,
-        icon: #3076DF,
-
-        focus-shadow: 0 0 0 3px rgba(42, 103, 195, 0.3),
+        text: $mktg-blue-primary,
+        border: rgba($mktg-blue-primary, 0.3),
 
         hover: (
-          bg: transparent,
-          border: $blue-5,
-          text: $blue-5,
-          icon: $blue-5,
+          text: $mktg-blue-secondary,
+          border: rgba($mktg-blue-primary, 0.5),
         ),
 
-        disabled: (
-          bg: transparent,
-          border: rgba(42, 103, 195, 0.2),
-          text: rgba(48, 118, 223, 0.5),
-          icon: rgba(48, 118, 223, 0.5),
+        focus: (
+          border: rgba($mktg-blue-primary, 1),
+          border-inset: rgba($mktg-blue-primary, 0.5),
         ),
       ),
 
       dark: (
-        bg: transparent,
-        border: rgba($white, 0.5),
         text: $white,
-        icon: $white,
-
-        focus-shadow: 0 0 0 3px rgba($white, 0.3),
+        border: rgba($white, 0.3),
 
         hover: (
-          bg: $white,
-          border: $white,
-          text: $gray-7,
-          icon: $gray-7,
+          text: $white,
+          border: rgba($white, 0.5),
         ),
 
-        disabled: (
-          bg: transparent,
-          border: rgba($white, 0.2),
-          text: rgba($white, 0.5),
-          icon: rgba($white, 0.5),
+        focus: (
+          border: rgba($white, 1),
+          border-inset: rgba($white, 0.5),
         ),
       ),
     ),
