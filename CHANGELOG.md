@@ -1,5 +1,15 @@
 # @primer/primitives
 
+## 4.3.0
+
+### Minor Changes
+
+- [#76](https://github.com/primer/primitives/pull/76) [`8d5addc`](https://github.com/primer/primitives/commit/8d5addcc2fe7e979c54150fab589fadf060ba083) Thanks [@tobiasahlin](https://github.com/tobiasahlin)! - Update marketing buttons
+
+### Patch Changes
+
+- [#78](https://github.com/primer/primitives/pull/78) [`69196c6`](https://github.com/primer/primitives/commit/69196c6316a219944837d4c1619cff202ee2224e) Thanks [@simurai](https://github.com/simurai)! - Improve ANSI colors
+
 ## 4.2.2
 
 ### Patch Changes
