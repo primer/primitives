@@ -170,7 +170,7 @@ $export: (
 
     active-bg: darken(#f3f4f6, 3%),
     active-border: $black-fade-10,
-    
+
     selected-bg: darken(#f3f4f6, 2%),
 
     focus-bg: $gray-0,
@@ -971,9 +971,9 @@ $export: (
   // used for terminal-like enviroments
   ansi: (
     black: $gray-9,
-    black-bright: $gray-7,
-    white: $gray-0,
-    white-bright: $white,
+    black-bright: $gray-6,
+    white: $gray-5,
+    white-bright: $gray-4,
     gray: $gray-5,
     red: $red-5,
     red-bright: $red-6,
@@ -982,7 +982,7 @@ $export: (
     yellow: $yellow-8,
     yellow-bright: $yellow-7,
     blue: $blue-5,
-    blue-bright: $blue-7,
+    blue-bright: $blue-4,
     magenta: $purple-5,
     magenta-bright: $purple-4,
     cyan: #1b7c83, // custom

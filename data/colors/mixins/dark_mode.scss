@@ -970,10 +970,10 @@ $export: (
 
   // used for terminal-like enviroments
   ansi: (
-    black: $gray-9,
-    black-bright: $gray-8,
+    black: $gray-5,
+    black-bright: $gray-4,
     white: $gray-2,
-    white-bright: $gray-2,
+    white-bright: $gray-0,
     gray: $gray-4,
     red: $red-3,
     red-bright: $red-2,
@@ -985,7 +985,7 @@ $export: (
     blue-bright: $blue-2,
     magenta: $purple-3,
     magenta-bright: $purple-2,
-    cyan: #76e3ea, // custom
-    cyan-bright: #b3f0ff, // custom
+    cyan: #39c5cf, // custom
+    cyan-bright: #56d4dd, // custom
   ),
 );
