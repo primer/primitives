@@ -33,7 +33,7 @@ $export: (
     primary: $gray-2,
     secondary: lighten($gray-2, 3%),
     tertiary: $gray-3,
-    overlay: $gray-2,
+    overlay: var(--color-border-primary),
     inverse: $white,
     info: $blue-5,
     danger: $red-5,
