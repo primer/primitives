@@ -5,29 +5,22 @@ $export: (
 
   // Pure functional
 
-  text: (
-    primary: $gray-1,
-    secondary: $gray-3,
-    tertiary: $gray-3,
-    placeholder: $gray-5,
+  fg: (
+    normal: $gray-1,
+    muted: $gray-3,
     disabled: $gray-5,
-    inverse: $gray-9,
-    link: $blue-3,
-    danger: $red-4,
+    on-highlight: $white,
+    action: $blue-2,
+    info: $blue-2,
     success: $green-2,
     warning: $yellow-2,
-    white: $white,
+    critical: $orange-5,
+    danger: $red-3,
+    done: $purple-4,
+    sponsors: $pink-5,
   ),
 
-  icon: (
-    primary:$gray-1,
-    secondary: $gray-4,
-    tertiary: $gray-5,
-    info: $blue-3,
-    danger: $red-4,
-    success: $green-2,
-    warning: $yellow-2,
-  ),
+  // ----------------------------------
 
   border: (
     primary: $gray-6,
