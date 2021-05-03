@@ -26,7 +26,31 @@ $export: (
     inset: $black,
   ),
 
-  // ----------------------------------
+  // v1 ----------------------------------
+
+  text: (
+    primary: $gray-1,
+    secondary: $gray-3,
+    tertiary: $gray-3,
+    placeholder: $gray-5,
+    disabled: $gray-5,
+    inverse: $gray-9,
+    link: $blue-3,
+    danger: $red-4,
+    success: $green-2,
+    warning: $yellow-2,
+    white: $white,
+  ),
+
+  icon: (
+    primary:$gray-1,
+    secondary: $gray-4,
+    tertiary: $gray-5,
+    info: $blue-3,
+    danger: $red-4,
+    success: $green-2,
+    warning: $yellow-2,
+  ),
 
   border: (
     primary: $gray-6,
@@ -38,6 +62,26 @@ $export: (
     danger: rgba($red-4, 0.4),
     success: rgba($green-3, 0.4),
     warning: rgba($yellow-4, 0.4),
+  ),
+
+  bg: (
+    canvas: $gray-9,
+    canvas-mobile: $black,
+    canvas-inverse: $gray-0,
+    canvas-inset: darken($gray-9, 2%),
+    primary: $gray-9,
+    secondary: $gray-9,
+    tertiary: $gray-8,
+    overlay: mix($gray-7, $gray-8),
+    backdrop: rgba($black, 0.8),
+    info: rgba($blue-4, 0.1),
+    info-inverse: $blue-4,
+    danger: rgba($red-4, 0.1),
+    danger-inverse: $red-5,
+    success: rgba($green-4, 0.1),
+    success-inverse: $green-4,
+    warning: rgba($yellow-4, 0.1),
+    warning-inverse: $yellow-4,
   ),
 
   shadow: (
