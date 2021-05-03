@@ -20,6 +20,12 @@ $export: (
     sponsors: $pink-5,
   ),
 
+  surface: (
+    normal: $gray-9,
+    overlay: $gray-8,
+    inset: $black,
+  ),
+
   // ----------------------------------
 
   border: (
@@ -32,26 +38,6 @@ $export: (
     danger: rgba($red-4, 0.4),
     success: rgba($green-3, 0.4),
     warning: rgba($yellow-4, 0.4),
-  ),
-
-  bg: (
-    canvas: $gray-9,
-    canvas-mobile: $black,
-    canvas-inverse: $gray-0,
-    canvas-inset: darken($gray-9, 2%),
-    primary: $gray-9,
-    secondary: $gray-9,
-    tertiary: $gray-8,
-    overlay: mix($gray-7, $gray-8),
-    backdrop: rgba($black, 0.8),
-    info: rgba($blue-4, 0.1),
-    info-inverse: $blue-4,
-    danger: rgba($red-4, 0.1),
-    danger-inverse: $red-5,
-    success: rgba($green-4, 0.1),
-    success-inverse: $green-4,
-    warning: rgba($yellow-4, 0.1),
-    warning-inverse: $yellow-4,
   ),
 
   shadow: (
