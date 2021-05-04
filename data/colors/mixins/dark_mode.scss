@@ -48,16 +48,6 @@ $export: (
     white: $white,
   ),
 
-  icon: (
-    primary:$gray-1,
-    secondary: $gray-4,
-    tertiary: $gray-5,
-    info: $blue-3,
-    danger: $red-4,
-    success: $green-2,
-    warning: $yellow-2,
-  ),
-
   bg: (
     canvas: $gray-9,
     canvas-mobile: $black,
@@ -832,7 +822,7 @@ $export: (
     text-secondary: var(--color-text-secondary),
     text-link: var(--color-text-link),
 
-    btn-icon: var(--color-icon-secondary),
+    btn-icon: var(--color-fg-muted),
     btn-hover-icon: var(--color-text-primary),
     btn-hover-bg: var(--color-btn-hover-bg),
 
@@ -855,7 +845,7 @@ $export: (
     header-label-text: var(--color-text-secondary),
     header-label-open-text: var(--color-text-primary),
     header-border: var(--color-border-divider),
-    header-icon: var(--color-icon-secondary),
+    header-icon: var(--color-fg-muted),
 
     line-text: var(--color-text-secondary),
     line-num-text: var(--color-text-tertiary),
