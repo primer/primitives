@@ -34,20 +34,6 @@ $export: (
 
   // v1 ----------------------------------
 
-  text: (
-    primary: $gray-1,
-    secondary: $gray-3,
-    tertiary: $gray-3,
-    placeholder: $gray-5,
-    disabled: $gray-5,
-    inverse: $gray-9,
-    link: $blue-3,
-    danger: $red-4,
-    success: $green-2,
-    warning: $yellow-2,
-    white: $white,
-  ),
-
   bg: (
     canvas: $gray-9,
     canvas-mobile: $black,
@@ -371,7 +357,7 @@ $export: (
   ),
 
   toast: (
-    text: var(--color-text-primary),
+    text: var(--color-fg-normal),
     bg: $gray-6,
     border: $gray-4,
     shadow: var(--color-shadow-large),
@@ -380,7 +366,7 @@ $export: (
     icon-border: $blue-4,
 
     success: (
-      text: var(--color-text-primary),
+      text: var(--color-fg-normal),
       border: $gray-4,
       icon: $white,
       icon-bg: $green-4,
@@ -388,7 +374,7 @@ $export: (
     ),
 
     warning: (
-      text: var(--color-text-primary),
+      text: var(--color-fg-normal),
       border: $gray-4,
       icon: $white,
       icon-bg: $yellow-4,
@@ -396,7 +382,7 @@ $export: (
     ),
 
     danger: (
-      text: var(--color-text-primary),
+      text: var(--color-fg-normal),
       border: $gray-4,
       icon: $white,
       icon-bg: $red-5,
@@ -404,7 +390,7 @@ $export: (
     ),
 
     loading: (
-      text: var(--color-text-primary),
+      text: var(--color-fg-normal),
       border: $gray-4,
       icon: $white,
       icon-bg: $gray-4,
@@ -818,21 +804,21 @@ $export: (
     run-border-width: 1px,
     container-border-width: 1px,
 
-    text-primary: var(--color-text-primary),
-    text-secondary: var(--color-text-secondary),
-    text-link: var(--color-text-link),
+    text-primary: var(--color-fg-normal),
+    text-secondary: var(--color-fg-muted),
+    text-link: var(--color-fg-info),
 
     btn-icon: var(--color-fg-muted),
-    btn-hover-icon: var(--color-text-primary),
+    btn-hover-icon: var(--color-fg-normal),
     btn-hover-bg: var(--color-btn-hover-bg),
 
-    input-text: var(--color-text-secondary),
-    input-placeholder-text: var(--color-text-placeholder),
-    input-focus-text: var(--color-text-primary),
+    input-text: var(--color-fg-muted),
+    input-placeholder-text: var(--color-fg-disabled),
+    input-focus-text: var(--color-fg-normal),
     input-bg: var(--color-input-bg),
     input-shadow: 0 0 0 1px $gray-7, // var(--color-input-border)
 
-    dropdown-text: var(--color-text-primary),
+    dropdown-text: var(--color-fg-normal),
     dropdown-bg: var(--color-bg-overlay),
     dropdown-border: var(--color-border-normal),
     dropdown-hover-text: var(--color-state-hover-primary-text),
@@ -842,39 +828,39 @@ $export: (
 
     scrollbar-thumb-bg: $gray-6,
 
-    header-label-text: var(--color-text-secondary),
-    header-label-open-text: var(--color-text-primary),
+    header-label-text: var(--color-fg-muted),
+    header-label-open-text: var(--color-fg-normal),
     header-border: var(--color-border-divider),
     header-icon: var(--color-fg-muted),
 
-    line-text: var(--color-text-secondary),
-    line-num-text: var(--color-text-tertiary),
-    line-timestamp-text: var(--color-text-tertiary),
+    line-text: var(--color-fg-muted),
+    line-num-text: var(--color-fg-disabled),
+    line-timestamp-text: var(--color-fg-disabled),
     line-hover-bg: var(--color-state-hover-secondary-bg),
     line-selected-bg: var(--color-bg-info),
-    line-selected-num-text: var(--color-text-link),
-    line-dt-fm-text: var(--color-text-inverse),
+    line-selected-num-text: var(--color-fg-info),
+    line-dt-fm-text: var(--color-fg-on-highlight),
     line-dt-fm-bg: $yellow-3,
 
     gate-bg: rgba($yellow-6, 0.15),
-    gate-text: var(--color-text-secondary),
-    gate-waiting-text: var(--color-text-warning),
+    gate-text: var(--color-fg-muted),
+    gate-waiting-text: var(--color-fg-warning),
 
     step-header-open-bg: var(--color-state-hover-secondary-bg),
-    step-error-text: var(--color-text-danger),
-    step-warning-text: var(--color-text-warning),
+    step-error-text: var(--color-fg-danger),
+    step-warning-text: var(--color-fg-warning),
 
     logline-text: $gray-4,
-    logline-num-text: var(--color-text-tertiary),
+    logline-num-text: var(--color-fg-disabled),
     logline-debug-text: $purple-3,
-    logline-error-text: var(--color-text-secondary),
-    logline-error-num-text: var(--color-text-tertiary),
+    logline-error-text: var(--color-fg-muted),
+    logline-error-num-text: var(--color-fg-disabled),
     logline-error-bg: var(--color-bg-danger),
-    logline-warning-text: var(--color-text-secondary),
-    logline-warning-num-text: var(--color-text-warning),
+    logline-warning-text: var(--color-fg-muted),
+    logline-warning-num-text: var(--color-fg-warning),
     logline-warning-bg: var(--color-bg-warning),
     logline-command-text: $blue-3,
-    logline-section-text: var(--color-text-success),
+    logline-section-text: var(--color-fg-success),
 
     // used in the Actions logs
     ansi: (

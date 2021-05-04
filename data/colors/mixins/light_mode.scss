@@ -34,20 +34,6 @@ $export: (
 
   // v1 ----------------------------------
 
-  text: (
-    primary: $gray-9,
-    secondary: $gray-6,
-    tertiary: $gray-5,
-    placeholder: $gray-5,
-    disabled: $gray-4,
-    inverse: $white,
-    link: $blue-5,
-    danger: $red-6,
-    success: $green-6,
-    warning: $yellow-8,
-    white: $white,
-  ),
-
   bg: (
     canvas: $white,
     canvas-mobile: $white,
@@ -371,7 +357,7 @@ $export: (
   ),
 
   toast: (
-    text: var(--color-text-primary),
+    text: var(--color-fg-normal),
     bg: var(--color-bg-canvas),
     border: var(--color-border-normal),
     shadow: var(--color-shadow-large),
@@ -380,7 +366,7 @@ $export: (
     icon-border: transparent,
 
     success: (
-      text: var(--color-text-primary),
+      text: var(--color-fg-normal),
       border: var(--color-border-normal),
       icon: $white,
       icon-bg: var(--color-bg-success-inverse),
@@ -388,15 +374,15 @@ $export: (
     ),
 
     warning: (
-      text: var(--color-text-primary),
+      text: var(--color-fg-normal),
       border: var(--color-border-normal),
-      icon: var(--color-text-primary),
+      icon: var(--color-fg-normal),
       icon-bg: var(--color-bg-warning-inverse),
       icon-border: transparent,
     ),
 
     danger: (
-      text: var(--color-text-primary),
+      text: var(--color-fg-normal),
       border: var(--color-border-normal),
       icon: $white,
       icon-bg: var(--color-bg-danger-inverse),
@@ -404,7 +390,7 @@ $export: (
     ),
 
     loading: (
-      text: var(--color-text-primary),
+      text: var(--color-fg-normal),
       border: var(--color-border-normal),
       icon: $white,
       icon-bg: $gray-6,
@@ -950,7 +936,7 @@ $export: (
 
   // when editing code
   codemirror: (
-    text: var(--color-text-primary),
+    text: var(--color-fg-normal),
     bg: var(--color-bg-canvas),
 
     gutters-bg: var(--color-bg-canvas),
