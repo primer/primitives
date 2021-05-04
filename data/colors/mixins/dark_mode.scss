@@ -32,27 +32,69 @@ $export: (
     blend: $white-fade-10,
   ),
 
-  // v1 ----------------------------------
+  // Highlights
 
-  bg: (
-    canvas: $gray-9,
-    canvas-mobile: $black,
-    canvas-inverse: $gray-0,
-    canvas-inset: darken($gray-9, 2%),
-    primary: $gray-9,
-    secondary: $gray-9,
-    tertiary: $gray-8,
-    overlay: mix($gray-7, $gray-8),
-    backdrop: rgba($black, 0.8),
-    info: rgba($blue-4, 0.1),
-    info-inverse: $blue-4,
-    danger: rgba($red-4, 0.1),
-    danger-inverse: $red-5,
-    success: rgba($green-4, 0.1),
-    success-inverse: $green-4,
-    warning: rgba($yellow-4, 0.1),
-    warning-inverse: $yellow-4,
+  neutral: (
+    high: $gray-5,
+    mid: rgba($gray-4, 0.33),
+    low: rgba($gray-4, 0.1),
   ),
+
+  action: (
+    high: $blue-5,
+    mid: rgba($blue-4, 0.33),
+    low: rgba($blue-4, 0.1),
+  ),
+
+  info: (
+    high: $blue-5,
+    mid: rgba($blue-4, 0.33),
+    low: rgba($blue-4, 0.1),
+  ),
+
+  success: (
+    high: $green-5,
+    mid: rgba($green-4, 0.33),
+    low: rgba($green-4, 0.1),
+  ),
+
+  warning: (
+    high: $yellow-5,
+    mid: rgba($yellow-4, 0.33),
+    low: rgba($yellow-4, 0.1),
+  ),
+
+  critical: (
+    high: $orange-5,
+    mid: rgba($orange-4, 0.33),
+    low: rgba($orange-4, 0.1),
+  ),
+
+  danger: (
+    high: $red-5,
+    mid: rgba($red-4, 0.33),
+    low: rgba($red-4, 0.1),
+  ),
+
+  done: (
+    high: $purple-5,
+    mid: rgba($purple-4, 0.33),
+    low: rgba($purple-4, 0.1),
+  ),
+
+  sponsors: (
+    high: $pink-5,
+    mid: rgba($pink-4, 0.33),
+    low: rgba($pink-4, 0.1),
+  ),
+
+  marker: (
+    high: $yellow-5,
+    mid: rgba($yellow-4, 0.33),
+    low: rgba($yellow-4, 0.1),
+  ),
+
+  // v1 ----------------------------------
 
   shadow: (
     small: 0 0 transparent,
@@ -799,7 +841,7 @@ $export: (
   ),
 
   checks: (
-    bg: var(--color-bg-canvas-inset),
+    bg: var(--color-surface-inset),
 
     run-border-width: 1px,
     container-border-width: 1px,
@@ -819,7 +861,7 @@ $export: (
     input-shadow: 0 0 0 1px $gray-7, // var(--color-input-border)
 
     dropdown-text: var(--color-fg-normal),
-    dropdown-bg: var(--color-bg-overlay),
+    dropdown-bg: var(--color-surface-normal),
     dropdown-border: var(--color-border-normal),
     dropdown-hover-text: var(--color-state-hover-primary-text),
     dropdown-hover-bg: var(--color-state-hover-primary-bg),
@@ -837,7 +879,7 @@ $export: (
     line-num-text: var(--color-fg-disabled),
     line-timestamp-text: var(--color-fg-disabled),
     line-hover-bg: var(--color-state-hover-secondary-bg),
-    line-selected-bg: var(--color-bg-info),
+    line-selected-bg: var(--color-info-low),
     line-selected-num-text: var(--color-fg-info),
     line-dt-fm-text: var(--color-fg-on-highlight),
     line-dt-fm-bg: $yellow-3,
@@ -855,10 +897,10 @@ $export: (
     logline-debug-text: $purple-3,
     logline-error-text: var(--color-fg-muted),
     logline-error-num-text: var(--color-fg-disabled),
-    logline-error-bg: var(--color-bg-danger),
+    logline-error-bg: var(--color-danger-low),
     logline-warning-text: var(--color-fg-muted),
     logline-warning-num-text: var(--color-fg-warning),
-    logline-warning-bg: var(--color-bg-warning),
+    logline-warning-bg: var(--color-warning-low),
     logline-command-text: $blue-3,
     logline-section-text: var(--color-fg-success),
 
@@ -937,9 +979,9 @@ $export: (
   // when editing code
   codemirror: (
     text: $gray-1,
-    bg: var(--color-bg-canvas),
+    bg: var(--color-surface-normal),
 
-    gutters-bg: var(--color-bg-canvas),
+    gutters-bg: var(--color-surface-normal),
     guttermarker-text: $gray-9,
     guttermarker-subtle-text: $gray-4,
     linenumber-text: $gray-3,
@@ -947,7 +989,7 @@ $export: (
     selection-bg: var(--color-code-selection-bg),
     activeline-bg: $gray-8,
     matchingbracket-text: $gray-1,
-    lines-bg: var(--color-bg-canvas),
+    lines-bg: var(--color-surface-normal),
 
     syntax: (
       comment: $gray-3,

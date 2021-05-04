@@ -32,27 +32,69 @@ $export: (
     blend: $black-fade-10,
   ),
 
-  // v1 ----------------------------------
+  // Highlights
 
-  bg: (
-    canvas: $white,
-    canvas-mobile: $white,
-    canvas-inverse: $gray-9,
-    canvas-inset: $gray-1,
-    primary: $white,
-    secondary: $gray-0,
-    tertiary: $gray-1,
-    overlay: $white,
-    backdrop: $black-fade-50,
-    info: $blue-0,
-    info-inverse: $blue-5,
-    danger: $red-0,
-    danger-inverse: $red-5,
-    success: $green-1,
-    success-inverse: $green-5,
-    warning: $yellow-2,
-    warning-inverse: $yellow-5,
+  neutral: (
+    high: $gray-5,
+    mid: $gray-3,
+    low: $gray-1,
   ),
+
+  action: (
+    high: $blue-5,
+    mid: $blue-2,
+    low: $blue-0,
+  ),
+
+  info: (
+    high: $blue-5,
+    mid: $blue-2,
+    low: $blue-0,
+  ),
+
+  success: (
+    high: $green-5,
+    mid: $green-3,
+    low: $green-1,
+  ),
+
+  warning: (
+    high: $yellow-5,
+    mid: $yellow-3,
+    low: $yellow-2,
+  ),
+
+  critical: (
+    high: $orange-5,
+    mid: $orange-3,
+    low: $orange-1,
+  ),
+
+  danger: (
+    high: $red-5,
+    mid: $red-2,
+    low: $red-0,
+  ),
+
+  done: (
+    high: $purple-5,
+    mid: $purple-2,
+    low: $purple-0,
+  ),
+
+  sponsors: (
+    high: $pink-5,
+    mid: $pink-2,
+    low: $pink-0,
+  ),
+
+  marker: (
+    high: $yellow-5,
+    mid: $yellow-3,
+    low: $yellow-2,
+  ),
+
+  // v1 ----------------------------------
 
   shadow: (
     small: 0 1px 0 rgba($black, 0.04),
@@ -358,18 +400,18 @@ $export: (
 
   toast: (
     text: var(--color-fg-normal),
-    bg: var(--color-bg-canvas),
+    bg: var(--color-surface-normal),
     border: var(--color-border-normal),
     shadow: var(--color-shadow-large),
     icon: $white,
-    icon-bg: var(--color-bg-info-inverse),
+    icon-bg: var(--color-info-high),
     icon-border: transparent,
 
     success: (
       text: var(--color-fg-normal),
       border: var(--color-border-normal),
       icon: $white,
-      icon-bg: var(--color-bg-success-inverse),
+      icon-bg: var(--color-success-high),
       icon-border: transparent,
     ),
 
@@ -377,7 +419,7 @@ $export: (
       text: var(--color-fg-normal),
       border: var(--color-border-normal),
       icon: var(--color-fg-normal),
-      icon-bg: var(--color-bg-warning-inverse),
+      icon-bg: var(--color-warning-high),
       icon-border: transparent,
     ),
 
@@ -385,7 +427,7 @@ $export: (
       text: var(--color-fg-normal),
       border: var(--color-border-normal),
       icon: $white,
-      icon-bg: var(--color-bg-danger-inverse),
+      icon-bg: var(--color-danger-high),
       icon-border: transparent,
     ),
 
@@ -937,9 +979,9 @@ $export: (
   // when editing code
   codemirror: (
     text: var(--color-fg-normal),
-    bg: var(--color-bg-canvas),
+    bg: var(--color-surface-normal),
 
-    gutters-bg: var(--color-bg-canvas),
+    gutters-bg: var(--color-surface-normal),
     guttermarker-text: $white,
     guttermarker-subtle-text: $gray-3,
     linenumber-text: $gray-4,
@@ -947,7 +989,7 @@ $export: (
     selection-bg: var(--color-code-selection-bg),
     activeline-bg: $gray-0,
     matchingbracket-text: $gray-9,
-    lines-bg: var(--color-bg-canvas),
+    lines-bg: var(--color-surface-normal),
 
     syntax: (
       comment: $gray-5,
