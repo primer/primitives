@@ -26,6 +26,12 @@ $export: (
     inset: $gray-1,
   ),
 
+  border: (
+    normal: $gray-2,
+    divider: lighten($gray-2, 3%),
+    blend: $black-fade-10,
+  ),
+
   // v1 ----------------------------------
 
   text: (
@@ -50,18 +56,6 @@ $export: (
     danger: $red-5,
     success: $green-6,
     warning: $yellow-8,
-  ),
-
-  border: (
-    primary: $gray-2,
-    secondary: lighten($gray-2, 3%),
-    tertiary: $gray-3,
-    overlay: $gray-2,
-    inverse: $white,
-    info: $blue-5,
-    danger: $red-5,
-    success: $green-4,
-    warning: $yellow-6,
   ),
 
   bg: (
@@ -389,7 +383,7 @@ $export: (
   toast: (
     text: var(--color-text-primary),
     bg: var(--color-bg-canvas),
-    border: var(--color-border-primary),
+    border: var(--color-border-normal),
     shadow: var(--color-shadow-large),
     icon: $white,
     icon-bg: var(--color-bg-info-inverse),
@@ -397,7 +391,7 @@ $export: (
 
     success: (
       text: var(--color-text-primary),
-      border: var(--color-border-primary),
+      border: var(--color-border-normal),
       icon: $white,
       icon-bg: var(--color-bg-success-inverse),
       icon-border: transparent,
@@ -405,7 +399,7 @@ $export: (
 
     warning: (
       text: var(--color-text-primary),
-      border: var(--color-border-primary),
+      border: var(--color-border-normal),
       icon: var(--color-text-primary),
       icon-bg: var(--color-bg-warning-inverse),
       icon-border: transparent,
@@ -413,7 +407,7 @@ $export: (
 
     danger: (
       text: var(--color-text-primary),
-      border: var(--color-border-primary),
+      border: var(--color-border-normal),
       icon: $white,
       icon-bg: var(--color-bg-danger-inverse),
       icon-border: transparent,
@@ -421,7 +415,7 @@ $export: (
 
     loading: (
       text: var(--color-text-primary),
-      border: var(--color-border-primary),
+      border: var(--color-border-normal),
       icon: $white,
       icon-bg: $gray-6,
       icon-border: transparent,
