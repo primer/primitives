@@ -106,29 +106,6 @@ $export: (
     inset: 0 0 transparent, // top inner shadow
   ),
 
-  state: (
-    hover: (
-      primary-bg: $blue-5,
-      primary-border: $blue-4,
-      primary-text: $gray-0,
-      primary-icon: $gray-0,
-      secondary-bg: $gray-8,
-      secondary-border: $gray-8,
-    ),
-
-    selected: (
-      primary-bg: $blue-5,
-      primary-border: $blue-4,
-      primary-text: $gray-0,
-      primary-icon: $gray-0,
-    ),
-
-    focus: (
-      border: $blue-4, // blue focus border
-      shadow: 0 0 0 3px $blue-8, // blue focus ring
-    ),
-  ),
-
   fade: (
     fg-10: $white-fade-10,
     fg-15: $white-fade-15,
@@ -863,10 +840,10 @@ $export: (
     dropdown-text: var(--color-fg-normal),
     dropdown-bg: var(--color-surface-normal),
     dropdown-border: var(--color-border-normal),
-    dropdown-hover-text: var(--color-state-hover-primary-text),
-    dropdown-hover-bg: var(--color-state-hover-primary-bg),
-    dropdown-btn-hover-text: var(--color-state-hover-primary-text),
-    dropdown-btn-hover-bg: var(--color-state-hover-secondary-bg),
+    dropdown-hover-text: var(--color-fg-on-highlight),
+    dropdown-hover-bg: $blue-5,
+    dropdown-btn-hover-text: var(--color-fg-on-highlight),
+    dropdown-btn-hover-bg: $gray-8,
 
     scrollbar-thumb-bg: $gray-6,
 
@@ -878,7 +855,7 @@ $export: (
     line-text: var(--color-fg-muted),
     line-num-text: var(--color-fg-disabled),
     line-timestamp-text: var(--color-fg-disabled),
-    line-hover-bg: var(--color-state-hover-secondary-bg),
+    line-hover-bg: $gray-8,
     line-selected-bg: var(--color-info-low),
     line-selected-num-text: var(--color-fg-info),
     line-dt-fm-text: var(--color-fg-on-highlight),
@@ -888,7 +865,7 @@ $export: (
     gate-text: var(--color-fg-muted),
     gate-waiting-text: var(--color-fg-warning),
 
-    step-header-open-bg: var(--color-state-hover-secondary-bg),
+    step-header-open-bg: $gray-8,
     step-error-text: var(--color-fg-danger),
     step-warning-text: var(--color-fg-warning),
 

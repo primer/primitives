@@ -106,29 +106,6 @@ $export: (
     inset: inset 0 1px 0 rgba($gray-2, 0.2), // top inner shadow
   ),
 
-  state: (
-    hover: (
-      primary-bg: $blue-5,// `$bg-blue` in Primer CSS
-      primary-border: $blue-5,
-      primary-text: $white,
-      primary-icon: $white,
-      secondary-bg: $gray-1,
-      secondary-border: $gray-1,
-    ),
-
-    selected: (
-      primary-bg: $blue-5,// `$bg-blue` in Primer CSS
-      primary-border: $blue-5,
-      primary-text: $white,
-      primary-icon: $white,
-    ),
-
-    focus: (
-      border: $blue-5, // blue focus border
-      shadow: 0 0 0 3px rgba($blue-5, 0.3), // blue focus ring
-    ),
-  ),
-
   fade: (
     fg-10: $black-fade-10,
     fg-15: $black-fade-15,
