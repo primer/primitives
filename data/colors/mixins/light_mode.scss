@@ -6,7 +6,7 @@ $export: (
   // Pure functional
 
   fg: (
-    normal: $gray-9,
+    default: $gray-9,
     muted: $gray-6,
     disabled: $gray-5,
     on-highlight: $white,
@@ -21,13 +21,13 @@ $export: (
   ),
 
   surface: (
-    normal: $white,
+    default: $white,
     overlay: $white,
     inset: $gray-1,
   ),
 
   border: (
-    normal: $gray-2,
+    default: $gray-2,
     divider: lighten($gray-2, 3%),
     blend: $black-fade-10,
   ),
@@ -376,41 +376,41 @@ $export: (
   ),
 
   toast: (
-    text: var(--color-fg-normal),
-    bg: var(--color-surface-normal),
-    border: var(--color-border-normal),
+    text: var(--color-fg-default),
+    bg: var(--color-surface-default),
+    border: var(--color-border-default),
     shadow: var(--color-shadow-large),
     icon: $white,
     icon-bg: var(--color-info-high),
     icon-border: transparent,
 
     success: (
-      text: var(--color-fg-normal),
-      border: var(--color-border-normal),
+      text: var(--color-fg-default),
+      border: var(--color-border-default),
       icon: $white,
       icon-bg: var(--color-success-high),
       icon-border: transparent,
     ),
 
     warning: (
-      text: var(--color-fg-normal),
-      border: var(--color-border-normal),
-      icon: var(--color-fg-normal),
+      text: var(--color-fg-default),
+      border: var(--color-border-default),
+      icon: var(--color-fg-default),
       icon-bg: var(--color-warning-high),
       icon-border: transparent,
     ),
 
     danger: (
-      text: var(--color-fg-normal),
-      border: var(--color-border-normal),
+      text: var(--color-fg-default),
+      border: var(--color-border-default),
       icon: $white,
       icon-bg: var(--color-danger-high),
       icon-border: transparent,
     ),
 
     loading: (
-      text: var(--color-fg-normal),
-      border: var(--color-border-normal),
+      text: var(--color-fg-default),
+      border: var(--color-border-default),
       icon: $white,
       icon-bg: $gray-6,
       icon-border: transparent,
@@ -955,10 +955,10 @@ $export: (
 
   // when editing code
   codemirror: (
-    text: var(--color-fg-normal),
-    bg: var(--color-surface-normal),
+    text: var(--color-fg-default),
+    bg: var(--color-surface-default),
 
-    gutters-bg: var(--color-surface-normal),
+    gutters-bg: var(--color-surface-default),
     guttermarker-text: $white,
     guttermarker-subtle-text: $gray-3,
     linenumber-text: $gray-4,
@@ -966,7 +966,7 @@ $export: (
     selection-bg: var(--color-code-selection-bg),
     activeline-bg: $gray-0,
     matchingbracket-text: $gray-9,
-    lines-bg: var(--color-surface-normal),
+    lines-bg: var(--color-surface-default),
 
     syntax: (
       comment: $gray-5,

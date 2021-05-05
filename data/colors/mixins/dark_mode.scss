@@ -6,7 +6,7 @@ $export: (
   // Pure functional
 
   fg: (
-    normal: $gray-1,
+    default: $gray-1,
     muted: $gray-3,
     disabled: $gray-5,
     on-highlight: $white,
@@ -21,13 +21,13 @@ $export: (
   ),
 
   surface: (
-    normal: $gray-9,
+    default: $gray-9,
     overlay: $gray-8,
     inset: $black,
   ),
 
   border: (
-    normal: $gray-6,
+    default: $gray-6,
     divider: $gray-4,
     blend: $white-fade-10,
   ),
@@ -376,7 +376,7 @@ $export: (
   ),
 
   toast: (
-    text: var(--color-fg-normal),
+    text: var(--color-fg-default),
     bg: $gray-6,
     border: $gray-4,
     shadow: var(--color-shadow-large),
@@ -385,7 +385,7 @@ $export: (
     icon-border: $blue-4,
 
     success: (
-      text: var(--color-fg-normal),
+      text: var(--color-fg-default),
       border: $gray-4,
       icon: $white,
       icon-bg: $green-4,
@@ -393,7 +393,7 @@ $export: (
     ),
 
     warning: (
-      text: var(--color-fg-normal),
+      text: var(--color-fg-default),
       border: $gray-4,
       icon: $white,
       icon-bg: $yellow-4,
@@ -401,7 +401,7 @@ $export: (
     ),
 
     danger: (
-      text: var(--color-fg-normal),
+      text: var(--color-fg-default),
       border: $gray-4,
       icon: $white,
       icon-bg: $red-5,
@@ -409,7 +409,7 @@ $export: (
     ),
 
     loading: (
-      text: var(--color-fg-normal),
+      text: var(--color-fg-default),
       border: $gray-4,
       icon: $white,
       icon-bg: $gray-4,
@@ -823,23 +823,23 @@ $export: (
     run-border-width: 1px,
     container-border-width: 1px,
 
-    text-primary: var(--color-fg-normal),
+    text-primary: var(--color-fg-default),
     text-secondary: var(--color-fg-muted),
     text-link: var(--color-fg-info),
 
     btn-icon: var(--color-fg-muted),
-    btn-hover-icon: var(--color-fg-normal),
+    btn-hover-icon: var(--color-fg-default),
     btn-hover-bg: var(--color-btn-hover-bg),
 
     input-text: var(--color-fg-muted),
     input-placeholder-text: var(--color-fg-disabled),
-    input-focus-text: var(--color-fg-normal),
+    input-focus-text: var(--color-fg-default),
     input-bg: var(--color-input-bg),
     input-shadow: 0 0 0 1px $gray-7, // var(--color-input-border)
 
-    dropdown-text: var(--color-fg-normal),
-    dropdown-bg: var(--color-surface-normal),
-    dropdown-border: var(--color-border-normal),
+    dropdown-text: var(--color-fg-default),
+    dropdown-bg: var(--color-surface-default),
+    dropdown-border: var(--color-border-default),
     dropdown-hover-text: var(--color-fg-on-highlight),
     dropdown-hover-bg: $blue-5,
     dropdown-btn-hover-text: var(--color-fg-on-highlight),
@@ -848,7 +848,7 @@ $export: (
     scrollbar-thumb-bg: $gray-6,
 
     header-label-text: var(--color-fg-muted),
-    header-label-open-text: var(--color-fg-normal),
+    header-label-open-text: var(--color-fg-default),
     header-border: var(--color-border-divider),
     header-icon: var(--color-fg-muted),
 
@@ -956,9 +956,9 @@ $export: (
   // when editing code
   codemirror: (
     text: $gray-1,
-    bg: var(--color-surface-normal),
+    bg: var(--color-surface-default),
 
-    gutters-bg: var(--color-surface-normal),
+    gutters-bg: var(--color-surface-default),
     guttermarker-text: $gray-9,
     guttermarker-subtle-text: $gray-4,
     linenumber-text: $gray-3,
@@ -966,7 +966,7 @@ $export: (
     selection-bg: var(--color-code-selection-bg),
     activeline-bg: $gray-8,
     matchingbracket-text: $gray-1,
-    lines-bg: var(--color-surface-normal),
+    lines-bg: var(--color-surface-default),
 
     syntax: (
       comment: $gray-3,
