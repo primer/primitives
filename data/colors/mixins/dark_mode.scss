@@ -834,14 +834,14 @@ $export: (
 
     text-primary: var(--color-fg-default),
     text-secondary: var(--color-fg-muted),
-    text-link: var(--color-fg-info),
+    text-link: var(--color-info-fg),
 
     btn-icon: var(--color-fg-muted),
     btn-hover-icon: var(--color-fg-default),
     btn-hover-bg: var(--color-btn-hover-bg),
 
     input-text: var(--color-fg-muted),
-    input-placeholder-text: var(--color-fg-disabled),
+    input-placeholder-text: var(--color-fg-inactive),
     input-focus-text: var(--color-fg-default),
     input-bg: var(--color-input-bg),
     input-shadow: 0 0 0 1px $gray-7, // var(--color-input-border)
@@ -849,9 +849,9 @@ $export: (
     dropdown-text: var(--color-fg-default),
     dropdown-bg: var(--color-canvas-default),
     dropdown-border: var(--color-border-default),
-    dropdown-hover-text: var(--color-fg-on-highlight),
+    dropdown-hover-text: var(--color-fg-on-emphasis),
     dropdown-hover-bg: $blue-5,
-    dropdown-btn-hover-text: var(--color-fg-on-highlight),
+    dropdown-btn-hover-text: var(--color-fg-on-emphasis),
     dropdown-btn-hover-bg: $gray-8,
 
     scrollbar-thumb-bg: $gray-6,
@@ -862,33 +862,33 @@ $export: (
     header-icon: var(--color-fg-muted),
 
     line-text: var(--color-fg-muted),
-    line-num-text: var(--color-fg-disabled),
-    line-timestamp-text: var(--color-fg-disabled),
+    line-num-text: var(--color-fg-inactive),
+    line-timestamp-text: var(--color-fg-inactive),
     line-hover-bg: $gray-8,
-    line-selected-bg: var(--color-info-low),
-    line-selected-num-text: var(--color-fg-info),
-    line-dt-fm-text: var(--color-fg-on-highlight),
+    line-selected-bg: var(--color-info-muted),
+    line-selected-num-text: var(--color-info-fg),
+    line-dt-fm-text: var(--color-fg-on-emphasis),
     line-dt-fm-bg: $yellow-3,
 
     gate-bg: rgba($yellow-6, 0.15),
     gate-text: var(--color-fg-muted),
-    gate-waiting-text: var(--color-fg-warning),
+    gate-waiting-text: var(--color-warning-fg),
 
     step-header-open-bg: $gray-8,
-    step-error-text: var(--color-fg-danger),
-    step-warning-text: var(--color-fg-warning),
+    step-error-text: var(--color-danger-fg),
+    step-warning-text: var(--color-warning-fg),
 
     logline-text: $gray-4,
-    logline-num-text: var(--color-fg-disabled),
+    logline-num-text: var(--color-fg-inactive),
     logline-debug-text: $purple-3,
     logline-error-text: var(--color-fg-muted),
-    logline-error-num-text: var(--color-fg-disabled),
-    logline-error-bg: var(--color-danger-low),
+    logline-error-num-text: var(--color-fg-inactive),
+    logline-error-bg: var(--color-danger-muted),
     logline-warning-text: var(--color-fg-muted),
-    logline-warning-num-text: var(--color-fg-warning),
-    logline-warning-bg: var(--color-warning-low),
+    logline-warning-num-text: var(--color-warning-fg),
+    logline-warning-bg: var(--color-warning-muted),
     logline-command-text: $blue-3,
-    logline-section-text: var(--color-fg-success),
+    logline-section-text: var(--color-success-fg),
 
     // used in the Actions logs
     ansi: (

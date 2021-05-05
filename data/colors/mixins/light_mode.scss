@@ -390,14 +390,14 @@ $export: (
     border: var(--color-border-default),
     shadow: var(--color-shadow-large),
     icon: $white,
-    icon-bg: var(--color-info-high),
+    icon-bg: var(--color-info-emphasis),
     icon-border: transparent,
 
     success: (
       text: var(--color-fg-default),
       border: var(--color-border-default),
       icon: $white,
-      icon-bg: var(--color-success-high),
+      icon-bg: var(--color-success-emphasis),
       icon-border: transparent,
     ),
 
@@ -405,7 +405,7 @@ $export: (
       text: var(--color-fg-default),
       border: var(--color-border-default),
       icon: var(--color-fg-default),
-      icon-bg: var(--color-warning-high),
+      icon-bg: var(--color-warning-emphasis),
       icon-border: transparent,
     ),
 
@@ -413,7 +413,7 @@ $export: (
       text: var(--color-fg-default),
       border: var(--color-border-default),
       icon: $white,
-      icon-bg: var(--color-danger-high),
+      icon-bg: var(--color-danger-emphasis),
       icon-border: transparent,
     ),
 
