@@ -8,16 +8,9 @@ $export: (
   fg: (
     default: $gray-1,
     muted: $gray-3,
-    disabled: $gray-5,
-    on-highlight: $white,
-    action: $blue-2,
-    info: $blue-2,
-    success: $green-2,
-    warning: $yellow-2,
-    critical: $orange-5,
-    danger: $red-3,
-    done: $purple-4,
-    sponsors: $pink-5,
+    inactive: $gray-5,
+    on-emphasis: $white,
+    on-emphasis-muted: $white-fade-50,
   ),
 
   canvas: (
@@ -37,60 +30,70 @@ $export: (
   // Highlights
 
   neutral: (
+    fg: $gray-5,
     high: $gray-5,
     mid: rgba($gray-4, 0.33),
     low: rgba($gray-4, 0.1),
   ),
 
   action: (
+    fg: $blue-5,
     high: $blue-5,
     mid: rgba($blue-4, 0.33),
     low: rgba($blue-4, 0.1),
   ),
 
   info: (
+    fg: $blue-5,
     high: $blue-5,
     mid: rgba($blue-4, 0.33),
     low: rgba($blue-4, 0.1),
   ),
 
   success: (
+    fg: $green-5,
     high: $green-5,
     mid: rgba($green-4, 0.33),
     low: rgba($green-4, 0.1),
   ),
 
   warning: (
+    fg: $yellow-5,
     high: $yellow-5,
     mid: rgba($yellow-4, 0.33),
     low: rgba($yellow-4, 0.1),
   ),
 
   critical: (
+    fg: $orange-5,
     high: $orange-5,
     mid: rgba($orange-4, 0.33),
     low: rgba($orange-4, 0.1),
   ),
 
   danger: (
+    fg: $red-5,
     high: $red-5,
     mid: rgba($red-4, 0.33),
     low: rgba($red-4, 0.1),
   ),
 
   done: (
+    fg: $purple-5,
     high: $purple-5,
     mid: rgba($purple-4, 0.33),
     low: rgba($purple-4, 0.1),
   ),
 
   sponsors: (
+    fg: $pink-5,
     high: $pink-5,
     mid: rgba($pink-4, 0.33),
     low: rgba($pink-4, 0.1),
   ),
 
   marker: (
+    fg: $yellow-5,
     high: $yellow-5,
     mid: rgba($yellow-4, 0.33),
     low: rgba($yellow-4, 0.1),
