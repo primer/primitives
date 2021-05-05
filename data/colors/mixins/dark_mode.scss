@@ -27,76 +27,80 @@ $export: (
     blend: $white-fade-10,
   ),
 
-  // Highlights
+  // foundational
 
   neutral: (
     fg: $gray-5,
-    high: $gray-5,
-    mid: rgba($gray-4, 0.33),
-    low: rgba($gray-4, 0.1),
+    emphasis: $gray-5,
+    highlighter: rgba($gray-4, 0.33),
+    muted: rgba($gray-4, 0.1),
   ),
 
   action: (
     fg: $blue-5,
-    high: $blue-5,
-    mid: rgba($blue-4, 0.33),
-    low: rgba($blue-4, 0.1),
+    emphasis: $blue-5,
+    highlighter: rgba($blue-4, 0.33),
+    muted: rgba($blue-4, 0.1),
   ),
+
+  // feedback
 
   info: (
     fg: $blue-5,
-    high: $blue-5,
-    mid: rgba($blue-4, 0.33),
-    low: rgba($blue-4, 0.1),
+    emphasis: $blue-5,
+    highlighter: rgba($blue-4, 0.33),
+    muted: rgba($blue-4, 0.1),
   ),
 
   success: (
     fg: $green-5,
-    high: $green-5,
-    mid: rgba($green-4, 0.33),
-    low: rgba($green-4, 0.1),
+    emphasis: $green-5,
+    highlighter: rgba($green-4, 0.33),
+    muted: rgba($green-4, 0.1),
   ),
 
   warning: (
     fg: $yellow-5,
-    high: $yellow-5,
-    mid: rgba($yellow-4, 0.33),
-    low: rgba($yellow-4, 0.1),
+    emphasis: $yellow-5,
+    highlighter: rgba($yellow-4, 0.33),
+    muted: rgba($yellow-4, 0.1),
   ),
 
   critical: (
     fg: $orange-5,
-    high: $orange-5,
-    mid: rgba($orange-4, 0.33),
-    low: rgba($orange-4, 0.1),
+    emphasis: $orange-5,
+    highlighter: rgba($orange-4, 0.33),
+    muted: rgba($orange-4, 0.1),
   ),
 
   danger: (
     fg: $red-5,
-    high: $red-5,
-    mid: rgba($red-4, 0.33),
-    low: rgba($red-4, 0.1),
+    emphasis: $red-5,
+    highlighter: rgba($red-4, 0.33),
+    muted: rgba($red-4, 0.1),
   ),
+
+  // secondary
 
   done: (
     fg: $purple-5,
-    high: $purple-5,
-    mid: rgba($purple-4, 0.33),
-    low: rgba($purple-4, 0.1),
+    emphasis: $purple-5,
+    highlighter: rgba($purple-4, 0.33),
+    muted: rgba($purple-4, 0.1),
   ),
 
   sponsors: (
     fg: $pink-5,
-    high: $pink-5,
-    mid: rgba($pink-4, 0.33),
-    low: rgba($pink-4, 0.1),
+    emphasis: $pink-5,
+    highlighter: rgba($pink-4, 0.33),
+    muted: rgba($pink-4, 0.1),
   ),
 
   marker: (
     fg: $yellow-5,
-    high: $yellow-5,
-    mid: rgba($yellow-4, 0.33),
-    low: rgba($yellow-4, 0.1),
+    emphasis: $yellow-5,
+    highlighter: rgba($yellow-4, 0.33),
+    muted: rgba($yellow-4, 0.1),
   ),
 
   // v1 ----------------------------------
