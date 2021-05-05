@@ -24,6 +24,8 @@ $export: (
     default: $gray-9,
     overlay: $gray-8,
     inset: $black,
+    backdrop: rgba($black, 0.8),
+    mobile: $black,
   ),
 
   border: (
