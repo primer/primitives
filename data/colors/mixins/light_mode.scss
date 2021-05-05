@@ -20,7 +20,7 @@ $export: (
     sponsors: $pink-5,
   ),
 
-  surface: (
+  canvas: (
     default: $white,
     overlay: $white,
     inset: $gray-1,
@@ -377,7 +377,7 @@ $export: (
 
   toast: (
     text: var(--color-fg-default),
-    bg: var(--color-surface-default),
+    bg: var(--color-canvas-default),
     border: var(--color-border-default),
     shadow: var(--color-shadow-large),
     icon: $white,
@@ -956,9 +956,9 @@ $export: (
   // when editing code
   codemirror: (
     text: var(--color-fg-default),
-    bg: var(--color-surface-default),
+    bg: var(--color-canvas-default),
 
-    gutters-bg: var(--color-surface-default),
+    gutters-bg: var(--color-canvas-default),
     guttermarker-text: $white,
     guttermarker-subtle-text: $gray-3,
     linenumber-text: $gray-4,
@@ -966,7 +966,7 @@ $export: (
     selection-bg: var(--color-code-selection-bg),
     activeline-bg: $gray-0,
     matchingbracket-text: $gray-9,
-    lines-bg: var(--color-surface-default),
+    lines-bg: var(--color-canvas-default),
 
     syntax: (
       comment: $gray-5,

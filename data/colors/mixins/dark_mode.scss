@@ -20,7 +20,7 @@ $export: (
     sponsors: $pink-5,
   ),
 
-  surface: (
+  canvas: (
     default: $gray-9,
     overlay: $gray-8,
     inset: $black,
@@ -818,7 +818,7 @@ $export: (
   ),
 
   checks: (
-    bg: var(--color-surface-inset),
+    bg: var(--color-canvas-inset),
 
     run-border-width: 1px,
     container-border-width: 1px,
@@ -838,7 +838,7 @@ $export: (
     input-shadow: 0 0 0 1px $gray-7, // var(--color-input-border)
 
     dropdown-text: var(--color-fg-default),
-    dropdown-bg: var(--color-surface-default),
+    dropdown-bg: var(--color-canvas-default),
     dropdown-border: var(--color-border-default),
     dropdown-hover-text: var(--color-fg-on-highlight),
     dropdown-hover-bg: $blue-5,
@@ -956,9 +956,9 @@ $export: (
   // when editing code
   codemirror: (
     text: $gray-1,
-    bg: var(--color-surface-default),
+    bg: var(--color-canvas-default),
 
-    gutters-bg: var(--color-surface-default),
+    gutters-bg: var(--color-canvas-default),
     guttermarker-text: $gray-9,
     guttermarker-subtle-text: $gray-4,
     linenumber-text: $gray-3,
@@ -966,7 +966,7 @@ $export: (
     selection-bg: var(--color-code-selection-bg),
     activeline-bg: $gray-8,
     matchingbracket-text: $gray-1,
-    lines-bg: var(--color-surface-default),
+    lines-bg: var(--color-canvas-default),
 
     syntax: (
       comment: $gray-3,
