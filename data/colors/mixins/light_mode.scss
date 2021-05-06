@@ -3,7 +3,7 @@ $export: (
   scale: $scale,
   auto: $auto,
 
-  // Pure functional
+  // Foundations
 
   fg: (
     default: $gray-9,
@@ -26,6 +26,8 @@ $export: (
     divider: lighten($gray-2, 3%),
     blend: $black-fade-10,
   ),
+
+  // Roles
 
   // foundational
 
