@@ -829,7 +829,7 @@ $export: (
 
     text-primary: var(--color-fg-default),
     text-secondary: var(--color-fg-muted),
-    text-link: var(--color-info-fg),
+    text-link: var(--color-accent-fg),
 
     btn-icon: var(--color-fg-muted),
     btn-hover-icon: var(--color-fg-default),
@@ -860,8 +860,8 @@ $export: (
     line-num-text: var(--color-fg-inactive),
     line-timestamp-text: var(--color-fg-inactive),
     line-hover-bg: $gray-8,
-    line-selected-bg: var(--color-info-muted),
-    line-selected-num-text: var(--color-info-fg),
+    line-selected-bg: var(--color-accent-muted),
+    line-selected-num-text: var(--color-accent-fg),
     line-dt-fm-text: var(--color-fg-on-emphasis),
     line-dt-fm-bg: $yellow-3,
 
