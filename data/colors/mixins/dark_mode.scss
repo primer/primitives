@@ -23,7 +23,7 @@ $export: (
 
   border: (
     default: $gray-6,
-    divider: $gray-4,
+    divider: $gray-7,
     blend: $white-fade-10,
   ),
 
@@ -34,44 +34,44 @@ $export: (
   neutral: (
     fg: $gray-5,
     emphasis: $gray-5,
-    highlighter: rgba($gray-4, 0.33),
+    highlighter: rgba($gray-4, 0.4),
     muted: rgba($gray-4, 0.1),
   ),
 
   accent: (
-    fg: $blue-5,
-    emphasis: $blue-5,
-    highlighter: rgba($blue-4, 0.33),
+    fg: $blue-3,
+    emphasis: $blue-4,
+    highlighter: rgba($blue-4, 0.4),
     muted: rgba($blue-4, 0.1),
   ),
 
   // feedback
 
   success: (
-    fg: $green-5,
-    emphasis: $green-5,
-    highlighter: rgba($green-4, 0.33),
+    fg: $green-2,
+    emphasis: $green-4,
+    highlighter: rgba($green-4, 0.4),
     muted: rgba($green-4, 0.1),
   ),
 
   warning: (
-    fg: $yellow-5,
-    emphasis: $yellow-5,
-    highlighter: rgba($yellow-4, 0.33),
+    fg: $yellow-2,
+    emphasis: $yellow-4,
+    highlighter: rgba($yellow-4, 0.4),
     muted: rgba($yellow-4, 0.1),
   ),
 
   critical: (
     fg: $orange-5,
     emphasis: $orange-5,
-    highlighter: rgba($orange-4, 0.33),
+    highlighter: rgba($orange-4, 0.4),
     muted: rgba($orange-4, 0.1),
   ),
 
   danger: (
-    fg: $red-5,
+    fg: $red-4,
     emphasis: $red-5,
-    highlighter: rgba($red-4, 0.33),
+    highlighter: rgba($red-4, 0.4),
     muted: rgba($red-4, 0.1),
   ),
 
@@ -80,21 +80,21 @@ $export: (
   done: (
     fg: $purple-5,
     emphasis: $purple-5,
-    highlighter: rgba($purple-4, 0.33),
+    highlighter: rgba($purple-4, 0.4),
     muted: rgba($purple-4, 0.1),
   ),
 
   sponsors: (
     fg: $pink-5,
     emphasis: $pink-5,
-    highlighter: rgba($pink-4, 0.33),
+    highlighter: rgba($pink-4, 0.4),
     muted: rgba($pink-4, 0.1),
   ),
 
   severe: (
     fg: $yellow-5,
     emphasis: $yellow-5,
-    highlighter: rgba($yellow-4, 0.33),
+    highlighter: rgba($yellow-4, 0.4),
     muted: rgba($yellow-4, 0.1),
   ),
 

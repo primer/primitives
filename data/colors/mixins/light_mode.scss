@@ -48,14 +48,14 @@ $export: (
   // feedback
 
   success: (
-    fg: $green-5,
+    fg: $green-6,
     emphasis: $green-5,
     highlighter: $green-3,
     muted: $green-1,
   ),
 
   warning: (
-    fg: $yellow-5,
+    fg: $yellow-8,
     emphasis: $yellow-5,
     highlighter: $yellow-3,
     muted: $yellow-2,
@@ -69,7 +69,7 @@ $export: (
   ),
 
   danger: (
-    fg: $red-5,
+    fg: $red-6,
     emphasis: $red-5,
     highlighter: $red-2,
     muted: $red-0,
