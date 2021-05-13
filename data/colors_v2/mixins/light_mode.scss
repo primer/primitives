@@ -1,7 +1,13 @@
 // EXPERIMENTAL. DO NOT USE.
 
+@use "sass:map";
+@import "./migration.scss";
+
 $export: (
+  // Scales
   scale: $scale,
+
+  // Foundations
   fg: (
     default: $gray-9,
     muted: $gray-6,
@@ -18,7 +24,20 @@ $export: (
   border: (
     default: $gray-2,
     divider: lighten($gray-2, 3%),
+
+    // Mapping of v1 variables to v2 variables
+    primary: var(--color-border-default),
+    secondary: var(--color-border-divider),
+    // tertiary
+    overlay: var(--color-border-default),
+    // inverse
+    info: var(--color-accent-emphasis),
+    danger: var(--color-danger-emphasis),
+    success: var(--color-success-emphasis),
+    warning: var(--color-warning-emphasis),
   ),
+
+  // Roles
   neutral: (
     fg: $gray-5,
     emphasis: $gray-5,
@@ -67,4 +86,9 @@ $export: (
     highlighter: $pink-2,
     muted: $pink-0,
   ),
+  
+  // Mapping of v1 variables to v2 variables
+  text: $text,
+  icon: $icon,
+  bg: $bg
 );
