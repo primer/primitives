@@ -1,5 +1,13 @@
 # @primer/primitives
 
+## 4.3.1
+
+### Patch Changes
+
+- [#83](https://github.com/primer/primitives/pull/83) [`beeaeb7`](https://github.com/primer/primitives/commit/beeaeb73920da8b848671e5909dee31b7d2a4d90) Thanks [@simurai](https://github.com/simurai)! - Change icon-info to blue-3 in dark mode
+
+* [#85](https://github.com/primer/primitives/pull/85) [`d5b4305`](https://github.com/primer/primitives/commit/d5b4305cbac3805aff1dff14c5eb92b108faf642) Thanks [@simurai](https://github.com/simurai)! - Add experimental color variables to `colors_v2` directory. **Warning: Do not use these color variables**
+
 ## 4.3.0
 
 ### Minor Changes
