@@ -1,94 +1,73 @@
-// -------- Functional colors ----------
+// EXPERIMENTAL. DO NOT USE.
+
 $export: (
   scale: $scale,
-
-  // Foundations
-
   fg: (
     default: $gray-9,
     muted: $gray-6,
     inactive: $gray-5,
     on-emphasis: $white,
-    on-emphasis-muted: $white-fade-50,
+    on-emphasis-muted: rgba($white, 0.5),
   ),
-
   canvas: (
     default: $white,
     overlay: $white,
     inset: $gray-1,
-    backdrop: $black-fade-50,
+    backdrop: rgba($black, 0.5),
     mobile: $white,
   ),
-
   border: (
     default: $gray-2,
     divider: lighten($gray-2, 3%),
   ),
-
-  // Roles
-
-  // foundational
-
   neutral: (
     fg: $gray-5,
     emphasis: $gray-5,
     highlighter: $gray-3,
     muted: $gray-1,
   ),
-
   accent: (
     fg: $blue-5,
     emphasis: $blue-5,
     highlighter: $blue-2,
     muted: $blue-0,
   ),
-
-  // feedback
-
   success: (
     fg: $green-6,
     emphasis: $green-5,
     highlighter: $green-3,
     muted: $green-1,
   ),
-
   warning: (
     fg: $yellow-8,
     emphasis: $yellow-5,
     highlighter: $yellow-3,
     muted: $yellow-2,
   ),
-
   critical: (
     fg: $orange-5,
     emphasis: $orange-5,
     highlighter: $orange-3,
     muted: $orange-1,
   ),
-
   danger: (
     fg: $red-6,
     emphasis: $red-5,
     highlighter: $red-2,
     muted: $red-0,
   ),
-
-  // secondary
-
   done: (
     fg: $purple-5,
     emphasis: $purple-5,
     highlighter: $purple-2,
     muted: $purple-0,
   ),
-
   sponsors: (
     fg: $pink-5,
     emphasis: $pink-5,
     highlighter: $pink-2,
     muted: $pink-0,
   ),
-
   severe: (
     fg: $yellow-5,
     emphasis: $yellow-5,
