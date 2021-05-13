@@ -3,102 +3,63 @@ $export: (
   scale: $scale,
   auto: $auto,
 
-  // Foundations
+  // Pure functional
 
-  fg: (
-    default: $gray-9,
-    muted: $gray-6,
-    inactive: $gray-5,
-    on-emphasis: $white,
-    on-emphasis-muted: $white-fade-50,
+  text: (
+    primary: $gray-9,
+    secondary: $gray-6,
+    tertiary: $gray-5,
+    placeholder: $gray-5,
+    disabled: $gray-4,
+    inverse: $white,
+    link: $blue-5,
+    danger: $red-6,
+    success: $green-6,
+    warning: $yellow-8,
+    white: $white,
   ),
 
-  surface: (
-    default: $white,
-    overlay: $white,
-    inset: $gray-1,
-    backdrop: $black-fade-50,
-    mobile: $white,
+  icon: (
+    primary:$gray-9,
+    secondary: $gray-6,
+    tertiary: $gray-4,
+    info: $blue-5,
+    danger: $red-5,
+    success: $green-6,
+    warning: $yellow-8,
   ),
 
   border: (
-    default: $gray-2,
-    divider: lighten($gray-2, 3%),
-    blend: $black-fade-10,
+    primary: $gray-2,
+    secondary: lighten($gray-2, 3%),
+    tertiary: $gray-3,
+    overlay: $gray-2,
+    inverse: $white,
+    info: $blue-5,
+    danger: $red-5,
+    success: $green-4,
+    warning: $yellow-6,
   ),
 
-  // Roles
-
-  // foundational
-
-  neutral: (
-    fg: $gray-5,
-    emphasis: $gray-5,
-    highlighter: $gray-3,
-    muted: $gray-1,
+  bg: (
+    canvas: $white,
+    canvas-mobile: $white,
+    canvas-inverse: $gray-9,
+    canvas-inset: $gray-1,
+    primary: $white,
+    secondary: $gray-0,
+    tertiary: $gray-1,
+    overlay: $white,
+    backdrop: $black-fade-50,
+    info: $blue-0,
+    info-inverse: $blue-5,
+    danger: $red-0,
+    danger-inverse: $red-5,
+    success: $green-1,
+    success-inverse: $green-5,
+    warning: $yellow-2,
+    warning-inverse: $yellow-5,
   ),
-
-  accent: (
-    fg: $blue-5,
-    emphasis: $blue-5,
-    highlighter: $blue-2,
-    muted: $blue-0,
-  ),
-
-  // feedback
-
-  success: (
-    fg: $green-6,
-    emphasis: $green-5,
-    highlighter: $green-3,
-    muted: $green-1,
-  ),
-
-  warning: (
-    fg: $yellow-8,
-    emphasis: $yellow-5,
-    highlighter: $yellow-3,
-    muted: $yellow-2,
-  ),
-
-  critical: (
-    fg: $orange-5,
-    emphasis: $orange-5,
-    highlighter: $orange-3,
-    muted: $orange-1,
-  ),
-
-  danger: (
-    fg: $red-6,
-    emphasis: $red-5,
-    highlighter: $red-2,
-    muted: $red-0,
-  ),
-
-  // secondary
-
-  done: (
-    fg: $purple-5,
-    emphasis: $purple-5,
-    highlighter: $purple-2,
-    muted: $purple-0,
-  ),
-
-  sponsors: (
-    fg: $pink-5,
-    emphasis: $pink-5,
-    highlighter: $pink-2,
-    muted: $pink-0,
-  ),
-
-  severe: (
-    fg: $yellow-5,
-    emphasis: $yellow-5,
-    highlighter: $yellow-3,
-    muted: $yellow-2,
-  ),
-
-  // v1 ----------------------------------
 
   shadow: (
     small: 0 1px 0 rgba($black, 0.04),
@@ -108,6 +69,29 @@ $export: (
 
     highlight: inset 0 1px 0 rgba($white, 0.25), // top highlight
     inset: inset 0 1px 0 rgba($gray-2, 0.2), // top inner shadow
+  ),
+
+  state: (
+    hover: (
+      primary-bg: $blue-5,// `$bg-blue` in Primer CSS
+      primary-border: $blue-5,
+      primary-text: $white,
+      primary-icon: $white,
+      secondary-bg: $gray-1,
+      secondary-border: $gray-1,
+    ),
+
+    selected: (
+      primary-bg: $blue-5,// `$bg-blue` in Primer CSS
+      primary-border: $blue-5,
+      primary-text: $white,
+      primary-icon: $white,
+    ),
+
+    focus: (
+      border: $blue-5, // blue focus border
+      shadow: 0 0 0 3px rgba($blue-5, 0.3), // blue focus ring
+    ),
   ),
 
   fade: (
@@ -380,41 +364,41 @@ $export: (
   ),
 
   toast: (
-    text: var(--color-fg-default),
-    bg: var(--color-surface-default),
-    border: var(--color-border-default),
+    text: var(--color-text-primary),
+    bg: var(--color-bg-canvas),
+    border: var(--color-border-primary),
     shadow: var(--color-shadow-large),
     icon: $white,
-    icon-bg: var(--color-accent-emphasis),
+    icon-bg: var(--color-bg-info-inverse),
     icon-border: transparent,
 
     success: (
-      text: var(--color-fg-default),
-      border: var(--color-border-default),
+      text: var(--color-text-primary),
+      border: var(--color-border-primary),
       icon: $white,
-      icon-bg: var(--color-success-emphasis),
+      icon-bg: var(--color-bg-success-inverse),
       icon-border: transparent,
     ),
 
     warning: (
-      text: var(--color-fg-default),
-      border: var(--color-border-default),
-      icon: var(--color-fg-default),
-      icon-bg: var(--color-warning-emphasis),
+      text: var(--color-text-primary),
+      border: var(--color-border-primary),
+      icon: var(--color-text-primary),
+      icon-bg: var(--color-bg-warning-inverse),
       icon-border: transparent,
     ),
 
     danger: (
-      text: var(--color-fg-default),
-      border: var(--color-border-default),
+      text: var(--color-text-primary),
+      border: var(--color-border-primary),
       icon: $white,
-      icon-bg: var(--color-danger-emphasis),
+      icon-bg: var(--color-bg-danger-inverse),
       icon-border: transparent,
     ),
 
     loading: (
-      text: var(--color-fg-default),
-      border: var(--color-border-default),
+      text: var(--color-text-primary),
+      border: var(--color-border-primary),
       icon: $white,
       icon-bg: $gray-6,
       icon-border: transparent,
@@ -959,10 +943,10 @@ $export: (
 
   // when editing code
   codemirror: (
-    text: var(--color-fg-default),
-    bg: var(--color-surface-default),
+    text: var(--color-text-primary),
+    bg: var(--color-bg-canvas),
 
-    gutters-bg: var(--color-surface-default),
+    gutters-bg: var(--color-bg-canvas),
     guttermarker-text: $white,
     guttermarker-subtle-text: $gray-3,
     linenumber-text: $gray-4,
@@ -970,7 +954,7 @@ $export: (
     selection-bg: var(--color-code-selection-bg),
     activeline-bg: $gray-0,
     matchingbracket-text: $gray-9,
-    lines-bg: var(--color-surface-default),
+    lines-bg: var(--color-bg-canvas),
 
     syntax: (
       comment: $gray-5,

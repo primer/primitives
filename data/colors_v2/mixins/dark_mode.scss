@@ -3,63 +3,102 @@ $export: (
   scale: $scale,
   auto: $auto,
 
-  // Pure functional
+  // Foundations
 
-  text: (
-    primary: $gray-1,
-    secondary: $gray-3,
-    tertiary: $gray-3,
-    placeholder: $gray-5,
-    disabled: $gray-5,
-    inverse: $gray-9,
-    link: $blue-3,
-    danger: $red-4,
-    success: $green-2,
-    warning: $yellow-2,
-    white: $white,
+  fg: (
+    default: $gray-1,
+    muted: $gray-3,
+    inactive: $gray-5,
+    on-emphasis: $white,
+    on-emphasis-muted: $white-fade-50,
   ),
 
-  icon: (
-    primary:$gray-1,
-    secondary: $gray-4,
-    tertiary: $gray-5,
-    info: $blue-3,
-    danger: $red-4,
-    success: $green-2,
-    warning: $yellow-2,
+  surface: (
+    default: $gray-9,
+    overlay: $gray-8,
+    inset: $black,
+    backdrop: rgba($black, 0.8),
+    mobile: $black,
   ),
 
   border: (
-    primary: $gray-6,
-    secondary: $gray-7,
-    tertiary: $gray-4,
-    overlay: $gray-6,
-    inverse: $white,
-    info: rgba($blue-4, 0.4),
-    danger: rgba($red-4, 0.4),
-    success: rgba($green-3, 0.4),
-    warning: rgba($yellow-4, 0.4),
+    default: $gray-6,
+    divider: $gray-7,
+    blend: $white-fade-10,
   ),
 
-  bg: (
-    canvas: $gray-9,
-    canvas-mobile: $black,
-    canvas-inverse: $gray-0,
-    canvas-inset: darken($gray-9, 2%),
-    primary: $gray-9,
-    secondary: $gray-9,
-    tertiary: $gray-8,
-    overlay: mix($gray-7, $gray-8),
-    backdrop: rgba($black, 0.8),
-    info: rgba($blue-4, 0.1),
-    info-inverse: $blue-4,
-    danger: rgba($red-4, 0.1),
-    danger-inverse: $red-5,
-    success: rgba($green-4, 0.1),
-    success-inverse: $green-4,
-    warning: rgba($yellow-4, 0.1),
-    warning-inverse: $yellow-4,
+  // Roles
+
+  // foundational
+
+  neutral: (
+    fg: $gray-5,
+    emphasis: $gray-5,
+    highlighter: rgba($gray-4, 0.4),
+    muted: rgba($gray-4, 0.1),
   ),
+
+  accent: (
+    fg: $blue-3,
+    emphasis: $blue-4,
+    highlighter: rgba($blue-4, 0.4),
+    muted: rgba($blue-4, 0.1),
+  ),
+
+  // feedback
+
+  success: (
+    fg: $green-2,
+    emphasis: $green-4,
+    highlighter: rgba($green-4, 0.4),
+    muted: rgba($green-4, 0.1),
+  ),
+
+  warning: (
+    fg: $yellow-2,
+    emphasis: $yellow-4,
+    highlighter: rgba($yellow-4, 0.4),
+    muted: rgba($yellow-4, 0.1),
+  ),
+
+  critical: (
+    fg: $orange-5,
+    emphasis: $orange-5,
+    highlighter: rgba($orange-4, 0.4),
+    muted: rgba($orange-4, 0.1),
+  ),
+
+  danger: (
+    fg: $red-4,
+    emphasis: $red-5,
+    highlighter: rgba($red-4, 0.4),
+    muted: rgba($red-4, 0.1),
+  ),
+
+  // secondary
+
+  done: (
+    fg: $purple-5,
+    emphasis: $purple-5,
+    highlighter: rgba($purple-4, 0.4),
+    muted: rgba($purple-4, 0.1),
+  ),
+
+  sponsors: (
+    fg: $pink-5,
+    emphasis: $pink-5,
+    highlighter: rgba($pink-4, 0.4),
+    muted: rgba($pink-4, 0.1),
+  ),
+
+  severe: (
+    fg: $yellow-5,
+    emphasis: $yellow-5,
+    highlighter: rgba($yellow-4, 0.4),
+    muted: rgba($yellow-4, 0.1),
+  ),
+
+  // v1 ----------------------------------
 
   shadow: (
     small: 0 0 transparent,
@@ -69,29 +108,6 @@ $export: (
 
     highlight: 0 0 transparent, // top highlight
     inset: 0 0 transparent, // top inner shadow
-  ),
-
-  state: (
-    hover: (
-      primary-bg: $blue-5,
-      primary-border: $blue-4,
-      primary-text: $gray-0,
-      primary-icon: $gray-0,
-      secondary-bg: $gray-8,
-      secondary-border: $gray-8,
-    ),
-
-    selected: (
-      primary-bg: $blue-5,
-      primary-border: $blue-4,
-      primary-text: $gray-0,
-      primary-icon: $gray-0,
-    ),
-
-    focus: (
-      border: $blue-4, // blue focus border
-      shadow: 0 0 0 3px $blue-8, // blue focus ring
-    ),
   ),
 
   fade: (
@@ -364,7 +380,7 @@ $export: (
   ),
 
   toast: (
-    text: var(--color-text-primary),
+    text: var(--color-fg-default),
     bg: $gray-6,
     border: $gray-4,
     shadow: var(--color-shadow-large),
@@ -373,7 +389,7 @@ $export: (
     icon-border: $blue-4,
 
     success: (
-      text: var(--color-text-primary),
+      text: var(--color-fg-default),
       border: $gray-4,
       icon: $white,
       icon-bg: $green-4,
@@ -381,7 +397,7 @@ $export: (
     ),
 
     warning: (
-      text: var(--color-text-primary),
+      text: var(--color-fg-default),
       border: $gray-4,
       icon: $white,
       icon-bg: $yellow-4,
@@ -389,7 +405,7 @@ $export: (
     ),
 
     danger: (
-      text: var(--color-text-primary),
+      text: var(--color-fg-default),
       border: $gray-4,
       icon: $white,
       icon-bg: $red-5,
@@ -397,7 +413,7 @@ $export: (
     ),
 
     loading: (
-      text: var(--color-text-primary),
+      text: var(--color-fg-default),
       border: $gray-4,
       icon: $white,
       icon-bg: $gray-4,
@@ -806,68 +822,68 @@ $export: (
   ),
 
   checks: (
-    bg: var(--color-bg-canvas-inset),
+    bg: var(--color-surface-inset),
 
     run-border-width: 1px,
     container-border-width: 1px,
 
-    text-primary: var(--color-text-primary),
-    text-secondary: var(--color-text-secondary),
-    text-link: var(--color-text-link),
+    text-primary: var(--color-fg-default),
+    text-secondary: var(--color-fg-muted),
+    text-link: var(--color-accent-fg),
 
-    btn-icon: var(--color-icon-secondary),
-    btn-hover-icon: var(--color-text-primary),
+    btn-icon: var(--color-fg-muted),
+    btn-hover-icon: var(--color-fg-default),
     btn-hover-bg: var(--color-btn-hover-bg),
 
-    input-text: var(--color-text-secondary),
-    input-placeholder-text: var(--color-text-placeholder),
-    input-focus-text: var(--color-text-primary),
+    input-text: var(--color-fg-muted),
+    input-placeholder-text: var(--color-fg-inactive),
+    input-focus-text: var(--color-fg-default),
     input-bg: var(--color-input-bg),
     input-shadow: 0 0 0 1px $gray-7, // var(--color-input-border)
 
-    dropdown-text: var(--color-text-primary),
-    dropdown-bg: var(--color-bg-overlay),
-    dropdown-border: var(--color-border-overlay),
-    dropdown-hover-text: var(--color-state-hover-primary-text),
-    dropdown-hover-bg: var(--color-state-hover-primary-bg),
-    dropdown-btn-hover-text: var(--color-state-hover-primary-text),
-    dropdown-btn-hover-bg: var(--color-state-hover-secondary-bg),
+    dropdown-text: var(--color-fg-default),
+    dropdown-bg: var(--color-surface-default),
+    dropdown-border: var(--color-border-default),
+    dropdown-hover-text: var(--color-fg-on-emphasis),
+    dropdown-hover-bg: $blue-5,
+    dropdown-btn-hover-text: var(--color-fg-on-emphasis),
+    dropdown-btn-hover-bg: $gray-8,
 
     scrollbar-thumb-bg: $gray-6,
 
-    header-label-text: var(--color-text-secondary),
-    header-label-open-text: var(--color-text-primary),
-    header-border: var(--color-border-secondary),
-    header-icon: var(--color-icon-secondary),
+    header-label-text: var(--color-fg-muted),
+    header-label-open-text: var(--color-fg-default),
+    header-border: var(--color-border-divider),
+    header-icon: var(--color-fg-muted),
 
-    line-text: var(--color-text-secondary),
-    line-num-text: var(--color-text-tertiary),
-    line-timestamp-text: var(--color-text-tertiary),
-    line-hover-bg: var(--color-state-hover-secondary-bg),
-    line-selected-bg: var(--color-bg-info),
-    line-selected-num-text: var(--color-text-link),
-    line-dt-fm-text: var(--color-text-inverse),
+    line-text: var(--color-fg-muted),
+    line-num-text: var(--color-fg-inactive),
+    line-timestamp-text: var(--color-fg-inactive),
+    line-hover-bg: $gray-8,
+    line-selected-bg: var(--color-accent-muted),
+    line-selected-num-text: var(--color-accent-fg),
+    line-dt-fm-text: var(--color-fg-on-emphasis),
     line-dt-fm-bg: $yellow-3,
 
     gate-bg: rgba($yellow-6, 0.15),
-    gate-text: var(--color-text-secondary),
-    gate-waiting-text: var(--color-text-warning),
+    gate-text: var(--color-fg-muted),
+    gate-waiting-text: var(--color-warning-fg),
 
-    step-header-open-bg: var(--color-state-hover-secondary-bg),
-    step-error-text: var(--color-text-danger),
-    step-warning-text: var(--color-text-warning),
+    step-header-open-bg: $gray-8,
+    step-error-text: var(--color-danger-fg),
+    step-warning-text: var(--color-warning-fg),
 
     logline-text: $gray-4,
-    logline-num-text: var(--color-text-tertiary),
+    logline-num-text: var(--color-fg-inactive),
     logline-debug-text: $purple-3,
-    logline-error-text: var(--color-text-secondary),
-    logline-error-num-text: var(--color-text-tertiary),
-    logline-error-bg: var(--color-bg-danger),
-    logline-warning-text: var(--color-text-secondary),
-    logline-warning-num-text: var(--color-text-warning),
-    logline-warning-bg: var(--color-bg-warning),
+    logline-error-text: var(--color-fg-muted),
+    logline-error-num-text: var(--color-fg-inactive),
+    logline-error-bg: var(--color-danger-muted),
+    logline-warning-text: var(--color-fg-muted),
+    logline-warning-num-text: var(--color-warning-fg),
+    logline-warning-bg: var(--color-warning-muted),
     logline-command-text: $blue-3,
-    logline-section-text: var(--color-text-success),
+    logline-section-text: var(--color-success-fg),
 
     // used in the Actions logs
     ansi: (
@@ -944,9 +960,9 @@ $export: (
   // when editing code
   codemirror: (
     text: $gray-1,
-    bg: var(--color-bg-canvas),
+    bg: var(--color-surface-default),
 
-    gutters-bg: var(--color-bg-canvas),
+    gutters-bg: var(--color-surface-default),
     guttermarker-text: $gray-9,
     guttermarker-subtle-text: $gray-4,
     linenumber-text: $gray-3,
@@ -954,7 +970,7 @@ $export: (
     selection-bg: var(--color-code-selection-bg),
     activeline-bg: $gray-8,
     matchingbracket-text: $gray-1,
-    lines-bg: var(--color-bg-canvas),
+    lines-bg: var(--color-surface-default),
 
     syntax: (
       comment: $gray-3,
