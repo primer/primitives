@@ -1,0 +1,59 @@
+// EXPERIMENTAL. DO NOT USE.
+
+// Mapping of v1 variables to v2 variables
+
+$text: (
+  primary: var(--color-fg-default),
+  secondary: var(--color-fg-muted),
+  tertiary: var(--color-fg-inactive),
+  placeholder: var(--color-fg-inactive),
+  disabled: var(--color-fg-inactive),
+  inverse: var(--color-fg-on-emphasis),
+  link: var(--color-accent-fg),
+  danger: var(--color-danger-fg), 
+  success: var(--color-success-fg),
+  warning: var(--color-warning-fg),
+  white: var(--color-fg-on-emphasis),
+);
+
+$icon: (
+  primary: var(--color-fg-default),
+  secondary: var(--color-fg-muted),
+  tertiary: var(--color-fg-inactive),
+  info: var(--color-accent-fg),
+  danger: var(--color-danger-fg),
+  success: var(--color-success-fg),
+  warning: var(--color-warning-fg),
+);
+
+$border: (
+  primary: var(--color-border-default),
+  secondary: var(--color-border-divider),
+  // tertiary
+  overlay: var(--color-border-default),
+  // inverse
+  info: var(--color-accent-emphasis),
+  danger: var(--color-danger-emphasis),
+  success: var(--color-success-emphasis),
+  warning: var(--color-warning-emphasis),
+);
+
+$bg: (
+  canvas: var(--color-canvas-default),
+  canvas-mobile: var(--color-canvas-mobile),
+  canvas-inverse: var(--color-neutral-emphasis),
+  canvas-inset: var(--color-canvas-inset),
+  primary: var(--color-canvas-default),
+  // secondary
+  // tertiary
+  overlay: var(--color-canvas-overlay),
+  backdrop: var(--color-canvas-backdrop),
+  info: var(--color-accent-muted),
+  info-inverse: var(--color-accent-emphasis),
+  danger: var(--color-danger-muted),
+  danger-inverse: var(--color-danger-emphasis),
+  success: var(--color-success-muted),
+  success-inverse: var(--color-success-emphasis),
+  warning: var(--color-warning-muted),
+  warning-inverse: var(--color-warning-emphasis),
+);
