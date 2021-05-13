@@ -1,0 +1,76 @@
+// EXPERIMENTAL. DO NOT USE.
+
+$export: (
+  scale: $scale,
+  fg: (
+    default: $gray-1,
+    muted: $gray-3,
+    inactive: $gray-5,
+    on-emphasis: $white,
+  ),
+  canvas: (
+    default: $gray-9,
+    overlay: $gray-8,
+    inset: $black,
+    backdrop: rgba($black, 0.8),
+    mobile: $black,
+  ),
+  border: (
+    default: $gray-6,
+    divider: $gray-7,
+  ),
+  neutral: (
+    fg: $gray-5,
+    emphasis: $gray-5,
+    highlighter: rgba($gray-4, 0.4),
+    muted: rgba($gray-4, 0.1),
+  ),
+  accent: (
+    fg: $blue-3,
+    emphasis: $blue-4,
+    highlighter: rgba($blue-4, 0.4),
+    muted: rgba($blue-4, 0.1),
+  ),
+  success: (
+    fg: $green-2,
+    emphasis: $green-4,
+    highlighter: rgba($green-4, 0.4),
+    muted: rgba($green-4, 0.1),
+  ),
+  warning: (
+    fg: $yellow-2,
+    emphasis: $yellow-4,
+    highlighter: rgba($yellow-4, 0.4),
+    muted: rgba($yellow-4, 0.1),
+  ),
+  critical: (
+    fg: $orange-5,
+    emphasis: $orange-5,
+    highlighter: rgba($orange-4, 0.4),
+    muted: rgba($orange-4, 0.1),
+  ),
+  danger: (
+    fg: $red-4,
+    emphasis: $red-5,
+    highlighter: rgba($red-4, 0.4),
+    muted: rgba($red-4, 0.1),
+  ),
+  done: (
+    fg: $purple-5,
+    emphasis: $purple-5,
+    highlighter: rgba($purple-4, 0.4),
+    muted: rgba($purple-4, 0.1),
+  ),
+  sponsors: (
+    fg: $pink-5,
+    emphasis: $pink-5,
+    highlighter: rgba($pink-4, 0.4),
+    muted: rgba($pink-4, 0.1),
+  ),
+  severe: (
+    fg: $yellow-5,
+    emphasis: $yellow-5,
+    highlighter: rgba($yellow-4, 0.4),
+    muted: rgba($yellow-4, 0.1),
+  ),
+);

@@ -1,0 +1,206 @@
+// EXPERIMENTAL. DO NOT USE.
+
+// Dark dimmed theme
+
+$black: #1c2128;
+$white: #cdd9e5;
+
+// Gray
+$gray-0: #cdd9e5;
+$gray-1: #adbac7;
+$gray-2: #909dab;
+$gray-3: #768390;
+$gray-4: #636e7b;
+$gray-5: #545d68;
+$gray-6: #444c56;
+$gray-7: #373e47;
+$gray-8: #2d333b;
+$gray-9: #22272e;
+
+// Blue
+$blue-0: #c6e6ff;
+$blue-1: #96d0ff;
+$blue-2: #6cb6ff;
+$blue-3: #539bf5;
+$blue-4: #4184e4;
+$blue-5: #316dca;
+$blue-6: #255ab2;
+$blue-7: #1b4b91;
+$blue-8: #143d79;
+$blue-9: #0f2d5c;
+
+// Green
+$green-0: #b4f1b4;
+$green-1: #8ddb8c;
+$green-2: #6bc46d;
+$green-3: #57ab5a;
+$green-4: #46954a;
+$green-5: #347d39;
+$green-6: #2b6a30;
+$green-7: #245829;
+$green-8: #1b4721;
+$green-9: #113417;
+
+// Yellow
+$yellow-0: #fbe090;
+$yellow-1: #eac55f;
+$yellow-2: #daaa3f;
+$yellow-3: #c69026;
+$yellow-4: #ae7c14;
+$yellow-5: #966600;
+$yellow-6: #805400;
+$yellow-7: #6c4400;
+$yellow-8: #593600;
+$yellow-9: #452700;
+
+// Orange
+$orange-0: #ffddb0;
+$orange-1: #ffbc6f;
+$orange-2: #f69d50;
+$orange-3: #e0823d;
+$orange-4: #cc6b2c;
+$orange-5: #ae5622;
+$orange-6: #94471b;
+$orange-7: #7f3913;
+$orange-8: #682d0f;
+$orange-9: #4d210c;
+
+// Red
+$red-0: #ffd8d3;
+$red-1: #ffb8b0;
+$red-2: #ff938a;
+$red-3: #f47067;
+$red-4: #e5534b;
+$red-5: #c93c37;
+$red-6: #ad2e2c;
+$red-7: #922323;
+$red-8: #78191b;
+$red-9: #78191b;
+
+// Purple
+$purple-0: #eedcff;
+$purple-1: #dcbdfb;
+$purple-2: #dcbdfb;
+$purple-3: #b083f0;
+$purple-4: #986ee2;
+$purple-5: #8256d0;
+$purple-6: #6b44bc;
+$purple-7: #5936a2;
+$purple-8: #472c82;
+$purple-9: #352160;
+
+// Pink
+$pink-0: #ffd7eb;
+$pink-1: #ffb3d8;
+$pink-2: #fc8dc7;
+$pink-3: #e275ad;
+$pink-4: #c96198;
+$pink-5: #ae4c82;
+$pink-6: #983b6e;
+$pink-7: #7e325a;
+$pink-8: #69264a;
+$pink-9: #551639;
+
+// Scale
+$scale: (
+  black: $black,
+  white: $white,
+  gray: (
+    $gray-0,
+    $gray-1,
+    $gray-2,
+    $gray-3,
+    $gray-4,
+    $gray-5,
+    $gray-6,
+    $gray-7,
+    $gray-8,
+    $gray-9,
+  ),
+  blue: (
+    $blue-0,
+    $blue-1,
+    $blue-2,
+    $blue-3,
+    $blue-4,
+    $blue-5,
+    $blue-6,
+    $blue-7,
+    $blue-8,
+    $blue-9,
+  ),
+  green: (
+    $green-0,
+    $green-1,
+    $green-2,
+    $green-3,
+    $green-4,
+    $green-5,
+    $green-6,
+    $green-7,
+    $green-8,
+    $green-9,
+  ),
+  yellow: (
+    $yellow-0,
+    $yellow-1,
+    $yellow-2,
+    $yellow-3,
+    $yellow-4,
+    $yellow-5,
+    $yellow-6,
+    $yellow-7,
+    $yellow-8,
+    $yellow-9,
+  ),
+  orange: (
+    $orange-0,
+    $orange-1,
+    $orange-2,
+    $orange-3,
+    $orange-4,
+    $orange-5,
+    $orange-6,
+    $orange-7,
+    $orange-8,
+    $orange-9,
+  ),
+  red: (
+    $red-0,
+    $red-1,
+    $red-2,
+    $red-3,
+    $red-4,
+    $red-5,
+    $red-6,
+    $red-7,
+    $red-8,
+    $red-9,
+  ),
+  purple: (
+    $purple-0,
+    $purple-1,
+    $purple-2,
+    $purple-3,
+    $purple-4,
+    $purple-5,
+    $purple-6,
+    $purple-7,
+    $purple-8,
+    $purple-9,
+  ),
+  pink: (
+    $pink-0,
+    $pink-1,
+    $pink-2,
+    $pink-3,
+    $pink-4,
+    $pink-5,
+    $pink-6,
+    $pink-7,
+    $pink-8,
+    $pink-9,
+  ),
+);
+
+@import "./mixins/dark_mode.scss";
