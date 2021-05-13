@@ -43,7 +43,7 @@ $export: (
     highlighter: rgba($yellow-4, 0.4),
     muted: rgba($yellow-4, 0.1),
   ),
-  critical: (
+  severe: (
     fg: $orange-5,
     emphasis: $orange-5,
     highlighter: rgba($orange-4, 0.4),
@@ -66,11 +66,5 @@ $export: (
     emphasis: $pink-5,
     highlighter: rgba($pink-4, 0.4),
     muted: rgba($pink-4, 0.1),
-  ),
-  severe: (
-    fg: $yellow-5,
-    emphasis: $yellow-5,
-    highlighter: rgba($yellow-4, 0.4),
-    muted: rgba($yellow-4, 0.1),
   ),
 );

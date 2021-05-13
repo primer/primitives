@@ -43,7 +43,7 @@ $export: (
     highlighter: $yellow-3,
     muted: $yellow-2,
   ),
-  critical: (
+  severe: (
     fg: $orange-5,
     emphasis: $orange-5,
     highlighter: $orange-3,
@@ -66,11 +66,5 @@ $export: (
     emphasis: $pink-5,
     highlighter: $pink-2,
     muted: $pink-0,
-  ),
-  severe: (
-    fg: $yellow-5,
-    emphasis: $yellow-5,
-    highlighter: $yellow-3,
-    muted: $yellow-2,
   ),
 );
