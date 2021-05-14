@@ -80,3 +80,58 @@ $state: (
     // shadow
   ),
 );
+
+$blankslate: (
+  icon: var(--color-fg-muted),
+);
+
+$label: (
+  border: var(--color-border-default),
+  primary: (
+    text: var(--color-fg-default),
+    border: var(--color-neutral-highlighter),
+  ),
+  secondary: (
+    text: var(--color-fg-muted),
+    border: var(--color-border-default),
+  ),
+  info: (
+    text: var(--color-accent-fg),
+    border: var(--color-accent-highlighter),
+  ),
+  success: (
+    text: var(--color-success-fg),
+    border: var(--color-success-highlighter),
+  ),
+  warning: (
+    text: var(--color-warning-fg),
+    border: var(--color-warning-highlighter),
+  ),
+  danger: (
+    text: var(--color-danger-fg),
+    border: var(--color-danger-highlighter),
+  ),
+  orange: (
+    text: var(--color-severe-fg),
+    border: var(--color-severe-highlighter),
+  ),
+);
+
+$branch-name: (
+  text: var(--color-fg-muted),
+  icon: var(--color-fg-muted),
+  bg: var(--color-neutral-muted),
+
+  link: (
+    text: var(--color-accent-fg),
+    icon: var(--color-accent-fg),
+    bg: var(--color-accent-muted),
+  ),
+);
+
+$topic-tag: (
+  text: var(--color-accent-fg),
+  bg: var(--color-accent-muted),
+  hover-bg: var(--color-accent-highlighter),
+  active-bg: var(--color-accent-muted),
+);
