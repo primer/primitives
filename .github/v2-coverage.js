@@ -25,6 +25,7 @@ async function run() {
     ((variablesV1.length - diff.length) / variablesV1.length) * 100;
 
   console.log(process.env.GITHUB_REPOSITORY);
+  console.log(process.env.GITHUB_SHA);
 
   // if (octokit) {
   //   await octokit.repos.createStatus({
