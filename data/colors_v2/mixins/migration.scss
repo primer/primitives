@@ -57,3 +57,26 @@ $bg: (
   warning: var(--color-warning-muted),
   warning-inverse: var(--color-warning-emphasis),
 );
+
+$state: (
+  hover: (
+    primary-bg: var(--color-accent-emphasis),
+    primary-border: var(--color-accent-emphasis),
+    primary-text: var(--color-fg-on-emphasis),
+    primary-icon: var(--color-fg-on-emphasis),
+    secondary-bg: var(--color-neutral-muted),
+    secondary-border: var(--color-neutral-muted),
+  ),
+
+  selected: (
+    primary-bg: var(--color-accent-emphasis),
+    primary-border: var(--color-accent-emphasis),
+    primary-text:  var(--color-fg-on-emphasis),
+    primary-icon:  var(--color-fg-on-emphasis),
+  ),
+
+  focus: (
+    border: var(--color-accent-emphasis),
+    // shadow
+  ),
+);
