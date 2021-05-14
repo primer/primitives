@@ -1,3 +1,6 @@
+# This is a temporary workflow for tracking the coverage of the v2 functional color system.
+# Delete this file when the v2 system is fully implemented.
+
 name: v2 coverage
 on: [push]
 jobs:
@@ -20,4 +23,4 @@ jobs:
 
       - run: node .github/v2-coverage.js
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
