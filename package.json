@@ -30,6 +30,8 @@
     "release": "yarn build && changeset publish"
   },
   "devDependencies": {
+    "@actions/core": "^1.2.7",
+    "@actions/github": "^4.0.0",
     "@changesets/changelog-github": "^0.3.0",
     "@changesets/cli": "^2.11.2",
     "@types/chalk": "^2.2.0",

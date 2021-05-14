@@ -2,7 +2,6 @@ name: v2 coverage
 on: [push]
 jobs:
   coverage:
-    name: v2 coverage
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository

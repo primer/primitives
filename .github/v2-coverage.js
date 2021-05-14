@@ -1,26 +1,41 @@
 const { default: colors } = require("../dist/js/colors");
 const { default: colorsV2 } = require("../dist/js/colors_v2");
 const flatten = require("flat");
+const github = require("@actions/github");
 
-const variablesV1 = Object.keys(flatten(colors.light));
-const variablesV2 = Object.keys(flatten(colorsV2.light));
+const [repoOwner, repoName] = process.env.GITHUB_REPOSITORY.split("/");
+const octokit = new github.GitHub(process.env.GITHUB_TOKEN);
 
-// V1 - V2
-const diff = variablesV1.filter(v => variablesV2.indexOf(v) === -1);
+async function run() {
+  const variablesV1 = Object.keys(flatten(colors.light));
+  const variablesV2 = Object.keys(flatten(colorsV2.light));
 
-console.log(
-  "The following v1 variables do not have a corresponding v2 variable:"
-);
+  // V1 - V2
+  const diff = variablesV1.filter(v => variablesV2.indexOf(v) === -1);
 
-for (const variable of diff) {
-  console.log(variable);
+  console.log(
+    "The following v1 variables do not have a corresponding v2 variable:"
+  );
+
+  for (const variable of diff) {
+    console.log(variable);
+  }
+
+  const coverage =
+    ((variablesV1.length - diff.length) / variablesV1.length) * 100;
+
+  if (octokit) {
+    await octokit.repos.createStatus({
+      owner: repoOwner,
+      repo: repoName,
+      sha: process.env.GITHUB_SHA,
+      context: "v2 coverage",
+      state: "success",
+      description: `${variablesV1.length - diff.length}/${
+        variablesV1.length
+      } (${coverage.toFixed(2)}%)`,
+    });
+  }
 }
 
-const coverage =
-  ((variablesV1.length - diff.length) / variablesV1.length) * 100;
-
-console.log(
-  `v2 coverage: ${variablesV1.length - diff.length}/${
-    variablesV1.length
-  } (${coverage.toFixed(2)}%)`
-);
+run();
