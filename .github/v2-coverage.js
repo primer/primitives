@@ -3,8 +3,8 @@ const { default: colorsV2 } = require("../dist/js/colors_v2");
 const flatten = require("flat");
 const github = require("@actions/github");
 
-const [repoOwner, repoName] = process.env.GITHUB_REPOSITORY.split("/");
-const octokit = new github.GitHub(process.env.GITHUB_TOKEN);
+// const [repoOwner, repoName] = process.env.GITHUB_REPOSITORY.split("/");
+// const octokit = new github.GitHub(process.env.GITHUB_TOKEN);
 
 async function run() {
   const variablesV1 = Object.keys(flatten(colors.light));
@@ -24,18 +24,20 @@ async function run() {
   const coverage =
     ((variablesV1.length - diff.length) / variablesV1.length) * 100;
 
-  if (octokit) {
-    await octokit.repos.createStatus({
-      owner: repoOwner,
-      repo: repoName,
-      sha: process.env.GITHUB_SHA,
-      context: "v2 coverage",
-      state: "success",
-      description: `${variablesV1.length - diff.length}/${
-        variablesV1.length
-      } (${coverage.toFixed(2)}%)`,
-    });
-  }
+  console.log(process.env.GITHUB_REPOSITORY);
+
+  // if (octokit) {
+  //   await octokit.repos.createStatus({
+  //     owner: repoOwner,
+  //     repo: repoName,
+  //     sha: process.env.GITHUB_SHA,
+  //     context: "v2 coverage",
+  //     state: "success",
+  //     description: `${variablesV1.length - diff.length}/${
+  //       variablesV1.length
+  //     } (${coverage.toFixed(2)}%)`,
+  //   });
+  // }
 }
 
 run();
