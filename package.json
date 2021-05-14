@@ -2,7 +2,9 @@
   "name": "@primer/primitives",
   "version": "4.3.2",
   "description": "Typography, spacing, and color primitives for Primer design system",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "main": "dist/js/index.js",
   "types": "dist/js/index.d.ts",
   "repository": "https://github.com/primer/primitives",
@@ -37,6 +39,7 @@
     "camelcase-keys": "^6.2.2",
     "chalk": "^4.1.0",
     "deep-shape-equals": "^0.1.2",
+    "flat": "^5.0.2",
     "lodash": "^4.17.20",
     "mkdirp": "^1.0.4",
     "node-sass": "^4.14.1",

@@ -1,0 +1,22 @@
+name: v2 coverage
+on: [push]
+jobs:
+  coverage:
+    name: v2 coverage
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@master
+
+      - name: Set up Node.js
+        uses: actions/setup-node@master
+        with:
+          node-version: 12
+
+      - name: Install dependencies
+        run: yarn
+
+      - name: Build
+        run: yarn build
+
+      - run: node .github/v2-coverage.js
