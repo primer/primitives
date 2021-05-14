@@ -89,7 +89,7 @@ $label: (
   border: var(--color-border-default),
   primary: (
     text: var(--color-fg-default),
-    border: var(--color-neutral-highlighter),
+    border: var(--color-neutral-emphasis),
   ),
   secondary: (
     text: var(--color-fg-muted),
@@ -97,23 +97,23 @@ $label: (
   ),
   info: (
     text: var(--color-accent-fg),
-    border: var(--color-accent-highlighter),
+    border: var(--color-accent-emphasis),
   ),
   success: (
     text: var(--color-success-fg),
-    border: var(--color-success-highlighter),
+    border: var(--color-success-emphasis),
   ),
   warning: (
     text: var(--color-warning-fg),
-    border: var(--color-warning-highlighter),
+    border: var(--color-warning-emphasis),
   ),
   danger: (
     text: var(--color-danger-fg),
-    border: var(--color-danger-highlighter),
+    border: var(--color-danger-emphasis),
   ),
   orange: (
     text: var(--color-severe-fg),
-    border: var(--color-severe-highlighter),
+    border: var(--color-severe-emphasis),
   ),
 );
 
