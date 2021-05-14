@@ -19,3 +19,5 @@ jobs:
         run: yarn build
 
       - run: node .github/v2-coverage.js
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }

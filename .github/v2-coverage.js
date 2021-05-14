@@ -1,10 +1,13 @@
 const { default: colors } = require("../dist/js/colors");
 const { default: colorsV2 } = require("../dist/js/colors_v2");
 const flatten = require("flat");
-const github = require("@actions/github");
+const { Octokit } = require("@octokit/rest");
 
-// const [repoOwner, repoName] = process.env.GITHUB_REPOSITORY.split("/");
-// const octokit = new github.GitHub(process.env.GITHUB_TOKEN);
+// This is a temporary script for tracking the coverage of the v2 functional color system.
+// Delete this file when the v2 system is fully implemented.
+
+const [repoOwner, repoName] = process.env.GITHUB_REPOSITORY.split("/");
+const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN });
 
 async function run() {
   const variablesV1 = Object.keys(flatten(colors.light));
@@ -24,21 +27,18 @@ async function run() {
   const coverage =
     ((variablesV1.length - diff.length) / variablesV1.length) * 100;
 
-  console.log(process.env.GITHUB_REPOSITORY);
-  console.log(process.env.GITHUB_SHA);
-
-  // if (octokit) {
-  //   await octokit.repos.createStatus({
-  //     owner: repoOwner,
-  //     repo: repoName,
-  //     sha: process.env.GITHUB_SHA,
-  //     context: "v2 coverage",
-  //     state: "success",
-  //     description: `${variablesV1.length - diff.length}/${
-  //       variablesV1.length
-  //     } (${coverage.toFixed(2)}%)`,
-  //   });
-  // }
+  if (octokit) {
+    await octokit.repos.createCommitStatus({
+      owner: repoOwner,
+      repo: repoName,
+      sha: process.env.GITHUB_SHA,
+      context: "v2 coverage",
+      state: "success",
+      description: `${variablesV1.length - diff.length}/${
+        variablesV1.length
+      } (${coverage.toFixed(2)}%)`,
+    });
+  }
 }
 
 run();
