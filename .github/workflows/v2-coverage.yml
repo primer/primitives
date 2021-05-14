@@ -21,6 +21,7 @@ jobs:
       - name: Build
         run: yarn build
 
-      - run: node .github/v2-coverage.js
+      - name: Compute coverage
+        run: node .github/v2-coverage.js
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
