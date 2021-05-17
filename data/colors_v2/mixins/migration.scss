@@ -373,6 +373,18 @@ $select-menu: (
   // tap-focus-bg: $blue-1,
 );
 
+$box: (
+  blue-border: var(--color-accent-highlighter),
+  row-yellow-bg: var(--color-warning-muted),
+  row-blue-bg: var(--color-accent-muted),
+  header-blue-bg: var(--color-accent-muted),
+  header-blue-border: var(--color-accent-highlighter),
+  border-info: var(--color-accent-highlighter),
+  bg-info: var(--color-accent-muted),
+  border-warning: var(--color-warning-highlighter),
+  bg-warning: var(--color-warning-muted),
+);
+
 $branch-name: (
   text: var(--color-fg-muted),
   icon: var(--color-fg-muted),
