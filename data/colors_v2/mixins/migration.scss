@@ -416,6 +416,34 @@ $sidenav: (
   // border-active: #f9826c, // coral
 );
 
+// $header: (
+//   text: $white-fade-70,
+//   bg: $gray-9,
+//   logo: $white,
+// );
+
+$filter-item: (
+  bar-bg: var(--color-neutral-muted),
+);
+
+$hidden-text-expander: (
+  bg: var(--color-neutral-highlighter),
+  // bg-hover: darken($gray-3, 4%),
+);
+
+$drag-and-drop: (
+  border: var(--color-border-default),
+);
+
+$upload-enabled: (
+  border: var(--color-border-default),
+  // border-focused: lighten($blue-4, 8%),
+);
+
+$previewable-comment-form: (
+  border: var(--color-border-default),
+);
+
 $topic-tag: (
   text: var(--color-accent-fg),
   bg: var(--color-accent-muted),
