@@ -458,6 +458,41 @@ $underlinenav: (
   counter-bg: var(--color-neutral-muted),
 );
 
+$verified-badge: (
+  text: var(--color-success-fg),
+  bg: var(--color-canvas-default),
+  border: var(--color-border-default),
+);
+
+$social-count: (
+  bg: var(--color-canvas-default),
+);
+
+$tooltip: (
+  text: var(--color-fg-on-emphasis),
+  bg: var(--color-neutral-emphasis),
+);
+
+// $header-search: (
+//   bg: $gray-9,
+//   border: $gray-7,
+// );
+
+$search-keyword: (
+  hl: var(--color-warning-muted),
+);
+
+$diffstat: (
+  neutral-bg: var(--color-neutral-highlighter),
+  neutral-border: var(--color-neutral-highlighter),
+  deletion-bg: var(--color-danger-emphasis),
+  deletion-border: var(--color-danger-emphasis),
+  addition-bg: var(--color-success-emphasis),
+  addition-border: var(--color-success-emphasis),
+);
+
+// App level
+
 $topic-tag: (
   text: var(--color-accent-fg),
   bg: var(--color-accent-muted),
