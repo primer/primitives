@@ -306,6 +306,14 @@ $input: (
   ),
 );
 
+$avatar: (
+  bg: var(--color-canvas-default),
+  // border: transparent,
+  stack-fade: var(--color-neutral-highlighter),
+  stack-fade-more: var(--color-neutral-muted),
+  // child-shadow: -2px -2px 0 rgba($white, 0.8),
+);
+
 $branch-name: (
   text: var(--color-fg-muted),
   icon: var(--color-fg-muted),
