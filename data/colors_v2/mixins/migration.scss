@@ -222,6 +222,21 @@ $btn: (
   // counter-bg: rgba($black, 0.08), // Darken for just a tad more contrast against the button background
 );
 
+$counter: (
+  text: var(--color-fg-default),
+  bg: var(--color-neutral-muted),
+
+  primary: (
+    text: var(--color-fg-on-emphasis),
+    bg: var(--color-neutral-emphasis),
+  ),
+
+  secondary: (
+    text: var(--color-fg-muted),
+    bg: var(--color-neutral-muted),
+  ),
+);
+
 $label: (
   border: var(--color-border-default),
   primary: (
