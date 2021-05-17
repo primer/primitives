@@ -23,6 +23,17 @@ $export: (
   border: (
     default: $gray-2,
     divider: lighten($gray-2, 3%),
+
+    // Mapping of v1 variables to v2 variables
+    primary: var(--color-border-default),
+    secondary: var(--color-border-divider),
+    // tertiary
+    overlay: var(--color-border-default),
+    // inverse
+    info: var(--color-accent-emphasis),
+    danger: var(--color-danger-emphasis),
+    success: var(--color-success-emphasis),
+    warning: var(--color-warning-emphasis),
   ),
 
   // Roles
@@ -78,15 +89,6 @@ $export: (
   // Mapping of v1 variables to v2 variables
   text: $text,
   icon: $icon,
-  border-primary: var(--color-border-default),
-  border-secondary: var(--color-border-divider),
-  // border-tertiary
-  border-overlay: var(--color-border-default),
-  // border-inverse
-  border-info: var(--color-accent-emphasis),
-  border-danger: var(--color-danger-emphasis),
-  border-success: var(--color-success-emphasis),
-  border-warning: var(--color-warning-emphasis),
   bg: $bg,
   state: $state,
 
