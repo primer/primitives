@@ -444,6 +444,20 @@ $previewable-comment-form: (
   border: var(--color-border-default),
 );
 
+$underlinenav: (
+  // border: transparent,
+  border-hover: var(--color-neutral-highlighter),
+  // border-active: #f9826c, // coral
+  text: var(--color-fg-default),
+  text-hover: var(--color-fg-default),
+  text-active: var(--color-fg-default),
+  icon: var(--color-fg-inactive),
+  icon-hover: var(--color-fg-inactive),
+  icon-active: var(--color-fg-default),
+  counter-text: var(--color-fg-default),
+  counter-bg: var(--color-neutral-muted),
+);
+
 $topic-tag: (
   text: var(--color-accent-fg),
   bg: var(--color-accent-muted),
