@@ -80,6 +80,7 @@ $export: (
   icon: $icon,
   bg: $bg,
   state: $state,
+
   alert: $alert,
   blankslate: $blankslate,
   btn: $btn,
@@ -109,5 +110,16 @@ $export: (
   // header-search: $header-search,
   search-keyword: $search-keyword,
   diffstat: $diffstat,
+
+  files-explorer-icon: var(--color-accent-fg),
+  hl-author-bg: var(--color-accent-muted),
+  hl-author-border: var(--color-accent-highlighter),
+  logo-subdued: var(--color-neutral-highlighter),
+  discussion-border: var(--color-success-highlighter),
+  discussion-bg-success: var(--color-success-emphasis),
+  // actions-workflow-table-sticky-bg: rgba($white, 0.95),
+  // repo-language-color-border: rgba($black, 0.1),
+  code-selection-bg: var(--color-accent-highlighter),
+
   topic-tag: $topic-tag,
 );
