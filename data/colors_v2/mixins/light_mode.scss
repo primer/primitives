@@ -23,17 +23,6 @@ $export: (
   border: (
     default: $gray-2,
     divider: lighten($gray-2, 3%),
-
-    // Mapping of v1 variables to v2 variables
-    primary: var(--color-border-default),
-    secondary: var(--color-border-divider),
-    // tertiary
-    overlay: var(--color-border-default),
-    // inverse
-    info: var(--color-accent-emphasis),
-    danger: var(--color-danger-emphasis),
-    success: var(--color-success-emphasis),
-    warning: var(--color-warning-emphasis),
   ),
 
   // Roles
