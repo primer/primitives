@@ -10,7 +10,7 @@ $text: (
   disabled: var(--color-fg-inactive),
   inverse: var(--color-fg-on-emphasis),
   link: var(--color-accent-fg),
-  danger: var(--color-danger-fg), 
+  danger: var(--color-danger-fg),
   success: var(--color-success-fg),
   warning: var(--color-warning-fg),
   white: var(--color-fg-on-emphasis),
@@ -79,6 +79,38 @@ $state: (
     border: var(--color-accent-emphasis),
     // shadow
   ),
+);
+
+// Components
+
+$alert: (
+  info: (
+    text: var(--color-fg-default),
+    icon: var(--color-accent-fg),
+    bg: var(--color-accent-muted),
+    border: var(--color-accent-highlighter),
+  ),
+
+  warn: (
+    text: var(--color-fg-default),
+    icon: var(--color-warning-fg),
+    bg: var(--color-warning-muted),
+    border: var(--color-warning-highlighter),
+  ),
+
+  error: (
+    text: var(--color-fg-default),
+    icon: var(--color-danger-fg),
+    bg: var(--color-danger-muted),
+    border: var(--color-danger-highlighter),
+  ),
+
+  success: (
+    text: var(--color-fg-default),
+    icon: var(--color-success-fg),
+    bg: var(--color-success-muted),
+    border: var(--color-success-highlighter),
+  )
 );
 
 $blankslate: (
