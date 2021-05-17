@@ -356,6 +356,14 @@ $toast: (
   ),
 );
 
+$timeline: (
+  text: var(--color-fg-muted),
+  badge-bg: var(--color-neutral-muted),
+  // badge-success-border: transparent,
+  target-badge-border: var(--color-accent-emphasis),
+  target-badge-shadow: var(--color-accent-highlighter),
+);
+
 $branch-name: (
   text: var(--color-fg-muted),
   icon: var(--color-fg-muted),
