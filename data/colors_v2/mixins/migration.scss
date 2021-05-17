@@ -314,6 +314,48 @@ $avatar: (
   // child-shadow: -2px -2px 0 rgba($white, 0.8),
 );
 
+$toast: (
+  text: var(--color-fg-default),
+  bg: var(--color-canvas-default),
+  border: var(--color-border-default),
+  // shadow: var(--color-shadow-large),
+  icon: var(--color-fg-on-emphasis),
+  icon-bg: var(--color-accent-emphasis),
+  // icon-border: transparent,
+
+  success: (
+    text: var(--color-fg-default),
+    border: var(--color-border-default),
+    icon: var(--color-fg-on-emphasis),
+    icon-bg: var(--color-success-emphasis),
+    // icon-border: transparent,
+  ),
+
+  warning: (
+    text: var(--color-fg-default),
+    border: var(--color-border-default),
+    icon: var(--color-fg-default),
+    icon-bg: var(--color-warning-emphasis),
+    // icon-border: transparent,
+  ),
+
+  danger: (
+    text: var(--color-fg-default),
+    border: var(--color-border-default),
+    icon: var(--color-fg-on-emphasis),
+    icon-bg: var(--color-danger-emphasis),
+    // icon-border: transparent,
+  ),
+
+  loading: (
+    text: var(--color-fg-default),
+    border: var(--color-border-default),
+    icon: var(--color-fg-on-emphasis),
+    icon-bg: var(--color-neutral-emphasis),
+    // icon-border: transparent,
+  ),
+);
+
 $branch-name: (
   text: var(--color-fg-muted),
   icon: var(--color-fg-muted),
