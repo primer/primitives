@@ -397,6 +397,25 @@ $branch-name: (
   ),
 );
 
+$markdown: (
+  code-bg: var(--color-neutral-muted),
+  frame-border: var(--color-border-default),
+  blockquote-border: var(--color-border-default),
+  table-border: var(--color-border-default),
+  table-tr-border: var(--color-border-divider),
+);
+
+$menu: (
+  heading-text: var(--color-fg-default),
+  // border-active: #f9826c, // coral
+  // bg-active: transparent,
+);
+
+$sidenav: (
+  selected-bg: $white,
+  // border-active: #f9826c, // coral
+);
+
 $topic-tag: (
   text: var(--color-accent-fg),
   bg: var(--color-accent-muted),
