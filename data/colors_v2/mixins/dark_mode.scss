@@ -38,31 +38,31 @@ $export: (
 
   // Roles
   neutral: (
-    fg: $gray-5,
+    fg: $gray-4,
     emphasis: $gray-5,
     highlighter: rgba($gray-4, 0.4),
     muted: rgba($gray-4, 0.1),
   ),
   accent: (
-    fg: $blue-3,
-    emphasis: $blue-4,
+    fg: $blue-4,
+    emphasis: $blue-5,
     highlighter: rgba($blue-4, 0.4),
     muted: rgba($blue-4, 0.1),
   ),
   success: (
-    fg: $green-2,
-    emphasis: $green-4,
+    fg: $green-4,
+    emphasis: $green-5,
     highlighter: rgba($green-4, 0.4),
     muted: rgba($green-4, 0.1),
   ),
   warning: (
-    fg: $yellow-2,
-    emphasis: $yellow-4,
+    fg: $yellow-4,
+    emphasis: $yellow-5,
     highlighter: rgba($yellow-4, 0.4),
     muted: rgba($yellow-4, 0.1),
   ),
   severe: (
-    fg: $orange-5,
+    fg: $orange-4,
     emphasis: $orange-5,
     highlighter: rgba($orange-4, 0.4),
     muted: rgba($orange-4, 0.1),
@@ -74,13 +74,13 @@ $export: (
     muted: rgba($red-4, 0.1),
   ),
   done: (
-    fg: $purple-5,
+    fg: $purple-4,
     emphasis: $purple-5,
     highlighter: rgba($purple-4, 0.4),
     muted: rgba($purple-4, 0.1),
   ),
   sponsors: (
-    fg: $pink-5,
+    fg: $pink-4,
     emphasis: $pink-5,
     highlighter: rgba($pink-4, 0.4),
     muted: rgba($pink-4, 0.1),
