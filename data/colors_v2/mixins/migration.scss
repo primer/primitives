@@ -589,81 +589,81 @@ $diffstat: (
 
 // App level
 
-// $highlight: (
-//   text: #442c12,
-//   bg: #fff0bb,
-// );
+$highlight: (
+  text: var(--color-fg-default),
+  bg: var(--color-warning-muted),
+);
 
-// $blob: (
-//   line-highlight-bg: $yellow-1,
-//   line-highlight-border: transparent,
-// );
+$blob: (
+  line-highlight-bg: var(--color-warning-muted),
+  line-highlight-border: var(--color-warning-highlighter),
+);
 
-// $diff: (
-//   addition: (
-//     text: $green-6,
-//     bg: var(--color-diff-blob-addition-line-bg),
-//     border: $green-4,
-//   ),
+$diff: (
+  addition: (
+    text: var(--color-success-fg),
+    bg: var(--color-success-muted),
+    border: var(--color-success-highlighter),
+  ),
 
-//   deletion: (
-//     text: $red-6,
-//     bg: var(--color-diff-blob-deletion-line-bg),
-//     border: $red-5,
-//   ),
+  deletion: (
+    text: var(--color-danger-fg),
+    bg: var(--color-danger-muted),
+    border: var(--color-danger-highlighter),
+  ),
 
-//   change: (
-//     text: $yellow-8,
-//     bg: $yellow-2,
-//     border: $yellow-6,
-//   ),
-// );
+  change: (
+    text: var(--color-warning-fg),
+    bg: var(--color-warning-muted),
+    border: var(--color-warning-highlighter),
+  ),
+);
 
-// $diff-blob: (
-//   num-text: $black-fade-30,
-//   num-hover-text: rgba($black, 0.6),
+$diff-blob: (
+  num-text: var(--color-neutral-fg),
+  // num-hover-text: rgba($black, 0.6),
 
-//   addition: (
-//     num-text: $black-fade-30,
-//     num-hover-text: rgba($black, 0.6),
-//     num-bg: darken($green-1, 3%),
-//     line-bg: darken($green-0, 2%),
-//     word-bg: darken($green-2, 4%),
-//   ),
+  addition: (
+    num-text: var(--color-success-fg),
+    // num-hover-text: rgba($black, 0.6),
+    num-bg: var(--color-success-highlighter),
+    line-bg: var(--color-success-muted),
+    word-bg: var(--color-success-highlighter),
+  ),
 
-//   deletion: (
-//     num-text: $black-fade-30,
-//     num-hover-text: rgba($black, 0.6),
-//     num-bg: $red-1,
-//     line-bg: $red-0,
-//     word-bg: lighten($red-2, 2%),
-//   ),
+  deletion: (
+    num-text: var(--color-danger-fg),
+    // num-hover-text: rgba($black, 0.6),
+    num-bg: var(--color-danger-highlighter),
+    line-bg: var(--color-danger-muted),
+    word-bg: var(--color-danger-highlighter),
+  ),
 
-//   hunk: (
-//     text: $black-fade-70,
-//     num-bg: $blue-1,
-//     line-bg: $blue-0,
-//   ),
+  hunk: (
+    text: var(--color-fg-muted),
+    num-bg: var(--color-accent-highlighter),
+    line-bg: var(--color-accent-muted),
+  ),
 
-//   empty-block-bg: $gray-0, // for split diffs
+  empty-block-bg: var(--color-neutral-muted), // for split diffs
 
-//   selected-line-highlight-bg: rgba($yellow-4, 0.2),
-//   selected-line-highlight-border: $yellow-5,
-//   selected-line-highlight-mix-blend-mode: multiply,
+  // selected-line-highlight-bg: rgba($yellow-4, 0.2),
+  // selected-line-highlight-border: $yellow-5,
+  // selected-line-highlight-mix-blend-mode: multiply,
 
-//   expander: (
-//     icon: $gray-6,
-//     hover-icon: $white,
-//     hover-bg: $blue-5,
-//   ),
+  expander: (
+    icon: var(--color-fg-muted),
+    hover-icon: var(--color-fg-on-emphasis),
+    hover-bg: var(--color-accent-emphasis),
+  ),
 
-//   // add line comment button -> blue [+]
-//   comment-button: (
-//     icon: $white,
-//     bg: $blue-5,
-//     gradient-bg: lighten($blue-5, 5%), // gradient top
-//   ),
-// );
+  // add line comment button -> blue [+]
+  comment-button: (
+    icon: var(--color-fg-on-emphasis),
+    bg: var(--color-accent-emphasis),
+    // gradient-bg: lighten($blue-5, 5%), // gradient top
+  ),
+);
 
 // $global-nav: (
 //   logo: $white,

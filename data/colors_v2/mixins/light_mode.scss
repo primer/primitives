@@ -134,6 +134,10 @@ $export: (
   // actions-workflow-table-sticky-bg: rgba($white, 0.95),
   // repo-language-color-border: rgba($black, 0.1),
   code-selection-bg: var(--color-accent-highlighter),
+  highlight: $highlight,
+  blob: $blob,
+  diff: $diff,
+  diff-blob: $diff-blob,
 
   topic-tag: $topic-tag,
 );
