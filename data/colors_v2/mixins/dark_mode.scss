@@ -193,6 +193,98 @@ $export: (
     counter-bg: $gray-6,
   ),
 
+  // App
+
+  // TODO: Move to dotcom?
+  // marketing-icon: (
+  //   primary: $blue-2,
+  //   secondary: $blue-5,
+  // ),
+
+  prettylights: (
+    // TODO: Move to dotcom?
+    syntax: (
+      comment: $gray-3,
+      constant: $blue-2,
+      entity: $purple-2,
+      storage-modifier-import: $gray-1,
+      entity-tag: $green-1,
+      keyword: $red-3,
+      string: $blue-1,
+      variable: $orange-2,
+      brackethighlighter-unmatched: $red-4,
+      invalid-illegal-text: $gray-0,
+      invalid-illegal-bg: $red-7,
+      carriage-return-text: $gray-0,
+      carriage-return-bg: $red-6,
+      string-regexp: $green-1,
+      markup-list: $yellow-1,
+      markup-heading: $blue-5,
+      markup-italic: $gray-1,
+      markup-bold: $gray-1,
+      markup-deleted-text: $red-0,
+      markup-deleted-bg: $red-8,
+      markup-inserted-text: $green-0,
+      markup-inserted-bg: $green-8,
+      markup-changed-text: $orange-0,
+      markup-changed-bg: $orange-8,
+      markup-ignored-text: $gray-1,
+      markup-ignored-bg: $blue-6,
+      meta-diff-range: $purple-2,
+      brackethighlighter-angle: $gray-3,
+      sublimelinter-gutter-mark: $gray-5,
+      constant-other-reference-link: $blue-1,
+    ),
+  ),
+
+  codemirror: (
+    // TODO: Move to dotcom?
+    syntax: (
+      comment: $gray-3,
+      constant: $blue-2,
+      entity: $purple-2,
+      keyword: $red-3,
+      storage: $red-3,
+      string: $blue-1,
+      support: $blue-2,
+      variable: $orange-2,
+    ),
+
+    // Mapping of v1 variables to v2 variables
+    text: var(--color-fg-default),
+    bg: var(--color-canvas-default),
+    gutters-bg: var(--color-canvas-default),
+    guttermarker-text: var(--color-canvas-default),
+    guttermarker-subtle-text: var(--color-fg-inactive),
+    linenumber-text: var(--color-fg-muted),
+    cursor: var(--color-fg-default),
+    selection-bg: var(--color-accent-muted),
+    activeline-bg: var(--color-neutral-muted),
+    matchingbracket-text: var(--color-fg-default),
+    lines-bg: var(--color-canvas-default),
+  ),
+
+  // TODO: Move to VS Code theme?
+  ansi: (
+    black: $gray-5,
+    black-bright: $gray-4,
+    white: $gray-2,
+    white-bright: $gray-0,
+    gray: $gray-4,
+    red: $red-3,
+    red-bright: $red-2,
+    green: $green-3,
+    green-bright: $green-2,
+    yellow: $yellow-3,
+    yellow-bright: $yellow-2,
+    blue: $blue-3,
+    blue-bright: $blue-2,
+    magenta: $purple-3,
+    magenta-bright: $purple-2,
+    cyan: #39c5cf, // custom
+    cyan-bright: #56d4dd, // custom
+  ),
+
   // Mapping of v1 variables to v2 variables
   text: $text,
   icon: $icon,
@@ -253,8 +345,4 @@ $export: (
   // project: $project,
   // checks: $checks,
   intro-shelf: $intro-shelf,
-  // marketing-icon: $marketing-icon,
-  // prettylights: $prettylights,
-  codemirror: $codemirror,
-  // ansi: $ansi,
 );
