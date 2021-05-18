@@ -46,6 +46,15 @@ $bg: (
   warning-inverse: var(--color-warning-emphasis),
 );
 
+// $shadow: (
+//   small: 0 1px 0 rgba($black, 0.04),
+//   medium: 0 3px 6px rgba($gray-4, 0.15),
+//   large: 0 8px 24px rgba($gray-4, 0.2),
+//   extra-large: 0 12px 48px rgba($gray-4, 0.3),
+//   highlight: inset 0 1px 0 rgba($white, 0.25), // top highlight
+//   inset: inset 0 1px 0 rgba($gray-2, 0.2), // top inner shadow
+// );
+
 $state: (
   hover: (
     primary-bg: var(--color-accent-emphasis),
@@ -68,6 +77,29 @@ $state: (
     // shadow
   ),
 );
+
+// $fade: (
+//   fg-10: $black-fade-10,
+//   fg-15: $black-fade-15,
+//   fg-30: $black-fade-30,
+//   fg-50: $black-fade-50,
+//   fg-70: $black-fade-70,
+//   fg-85: $black-fade-85,
+
+//   black-10: $black-fade-10,
+//   black-15: $black-fade-15,
+//   black-30: $black-fade-30,
+//   black-50: $black-fade-50,
+//   black-70: $black-fade-70,
+//   black-85: $black-fade-85,
+
+//   white-10: $white-fade-10,
+//   white-15: $white-fade-15,
+//   white-30: $white-fade-30,
+//   white-50: $white-fade-50,
+//   white-70: $white-fade-70,
+//   white-85: $white-fade-85,
+// );
 
 // Components
 
