@@ -195,6 +195,134 @@ $export: (
 
   // App
 
+  diff-blob: (
+    // TODO: Move to dotcom?
+    num-hover-text: rgba($black, 0.6),
+
+    // Mapping of v1 variables to v2 variables
+    num-text: var(--color-neutral-fg),
+
+    addition: (
+      // TODO: Move to dotcom?
+      num-hover-text: rgba($black, 0.6),
+
+      // Mapping of v1 variables to v2 variables
+      num-text: var(--color-success-fg),
+      num-bg: var(--color-success-highlighter),
+      line-bg: var(--color-success-muted),
+      word-bg: var(--color-success-highlighter),
+    ),
+
+    deletion: (
+      // TODO: Move to dotcom?
+      num-hover-text: rgba($black, 0.6),
+
+      // Mapping of v1 variables to v2 variables
+      num-text: var(--color-danger-fg),
+      num-bg: var(--color-danger-highlighter),
+      line-bg: var(--color-danger-muted),
+      word-bg: var(--color-danger-highlighter),
+    ),
+
+    hunk: (
+      // Mapping of v1 variables to v2 variables
+      text: var(--color-fg-muted),
+      num-bg: var(--color-accent-highlighter),
+      line-bg: var(--color-accent-muted),
+    ),
+
+    // Mapping of v1 variables to v2 variables
+    empty-block-bg: var(--color-neutral-muted), // for split diffs
+
+    // TODO: Move to dotcom?
+    selected-line-highlight-bg: rgba($yellow-4, 0.2),
+    selected-line-highlight-border: $yellow-5,
+    selected-line-highlight-mix-blend-mode: multiply,
+
+    expander: (
+      // Mapping of v1 variables to v2 variables
+      icon: var(--color-fg-muted),
+      hover-icon: var(--color-fg-on-emphasis),
+      hover-bg: var(--color-accent-emphasis),
+    ),
+
+    // add line comment button -> blue [+]
+    comment-button: (
+      // TODO: Move to dotcom?
+      gradient-bg: lighten($blue-5, 5%), // gradient top
+
+      // Mapping of v1 variables to v2 variables
+      icon: var(--color-fg-on-emphasis),
+      bg: var(--color-accent-emphasis),
+    ),
+  ),
+
+  global-nav: (
+    // TODO: Move to dotcom
+    logo: $white,
+    bg: $gray-9,
+    text: $white,
+    icon: $white,
+    input-bg: $gray-0,
+    input-border: $gray-0,
+    input-icon: $gray-3,
+    input-placeholder: $gray-4,
+  ),
+
+  calendar-graph: (
+    // TODO: Move to dotcom?
+    /*bg: $white,
+    border: $white,*/
+    day-bg: #EBEDF0,
+    day-border: rgba(27, 31, 35, 0.06),
+    day-L1-bg: #9BE9A8,
+    day-L2-bg: #40C463,
+    day-L3-bg: #30A14E,
+    day-L4-bg: #216E39,
+    day-L4-border: rgba(27, 31, 35, 0.06),
+    day-L3-border: rgba(27, 31, 35, 0.06),
+    day-L2-border: rgba(27, 31, 35, 0.06),
+    day-L1-border: rgba(27, 31, 35, 0.06),
+  ),
+
+  pr-state: (
+    draft: (
+      // TODO: Move to dotcom?
+      border: transparent,
+
+      // Mapping of v1 variables to v2 variables
+      text: var(--color-fg-on-emphasis),
+      bg: var(--color-neutral-emphasis),
+    ),
+
+    open: (
+      // TODO: Move to dotcom?
+      border: transparent,
+
+      // Mapping of v1 variables to v2 variables
+      text: var(--color-fg-on-emphasis),
+      bg: var(--color-success-emphasis),
+    ),
+
+    merged: (
+      // TODO: Move to dotcom?
+      border: transparent,
+
+      // Mapping of v1 variables to v2 variables
+      text: var(--color-fg-on-emphasis),
+      bg: var(--color-done-emphasis),
+    ),
+
+    closed: (
+      // TODO: Move to dotcom?
+      border: transparent,
+
+      // Mapping of v1 variables to v2 variables
+      text: var(--color-fg-on-emphasis),
+      bg: var(--color-danger-emphasis),
+    ),
+  ),
+
   merge-box: (
     // TODO: Move to dotcom?
     success-icon-border: transparent,
@@ -470,10 +598,6 @@ $export: (
   highlight: $highlight,
   blob: $blob,
   diff: $diff,
-  diff-blob: $diff-blob,
-  // global-nav: $global-nav,
-  // calendar-graph: $calendar-graph,
   footer-invertocat: $footer-invertocat,
-  pr-state: $pr-state,
   topic-tag: $topic-tag,
 );

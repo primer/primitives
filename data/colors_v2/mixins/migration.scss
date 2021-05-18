@@ -593,32 +593,6 @@ $footer-invertocat: (
   octicon-hover: var(--color-fg-muted),
 );
 
-$pr-state: (
-  draft: (
-    text: var(--color-fg-on-emphasis),
-    bg: var(--color-neutral-emphasis),
-    // border: transparent,
-  ),
-
-  open: (
-    text: var(--color-fg-on-emphasis),
-    bg: var(--color-success-emphasis),
-    // border: transparent,
-  ),
-
-  merged: (
-    text: var(--color-fg-on-emphasis),
-    bg: var(--color-done-emphasis),
-    // border: transparent,
-  ),
-
-  closed: (
-    text: var(--color-fg-on-emphasis),
-    bg: var(--color-danger-emphasis),
-    // border: transparent,
-  ),
-);
-
 $topic-tag: (
   text: var(--color-accent-fg),
   bg: var(--color-accent-muted),
