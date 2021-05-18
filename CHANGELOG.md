@@ -1,5 +1,13 @@
 # @primer/primitives
 
+## 4.3.3
+
+### Patch Changes
+
+- [#98](https://github.com/primer/primitives/pull/98) [`4d5bd48`](https://github.com/primer/primitives/commit/4d5bd48894edd310934e083dd94b93732f187679) Thanks [@colebemis](https://github.com/colebemis)! - Add experimental dark high contrast theme
+
+* [#96](https://github.com/primer/primitives/pull/96) [`5d5d265`](https://github.com/primer/primitives/commit/5d5d265711df77f6f523c0c248162033e8e77d0c) Thanks [@colebemis](https://github.com/colebemis)! - Update experimental dark mode mapping
+
 ## 4.3.2
 
 ### Patch Changes
