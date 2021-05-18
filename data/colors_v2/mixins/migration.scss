@@ -691,36 +691,36 @@ $diff-blob: (
 //   day-L1-border: rgba(27, 31, 35, 0.06),
 // );
 
-// $footer-invertocat: (
-//   octicon: $gray-3,
-//   octicon-hover: $gray-5,
-// );
+$footer-invertocat: (
+  octicon: var(--color-fg-inactive),
+  octicon-hover: var(--color-fg-muted),
+);
 
-// $pr-state: (
-//   draft: (
-//     text: $white,
-//     bg: $gray-5,
-//     border: transparent,
-//   ),
+$pr-state: (
+  draft: (
+    text: var(--color-fg-on-emphasis),
+    bg: var(--color-danger-emphasis),
+    // border: transparent,
+  ),
 
-//   open: (
-//     text: $white,
-//     bg: $green-5,
-//     border: transparent,
-//   ),
+  open: (
+    text: var(--color-fg-on-emphasis),
+    bg: var(--color-danger-emphasis),
+    // border: transparent,
+  ),
 
-//   merged: (
-//     text: $white,
-//     bg: $purple-5,
-//     border: transparent,
-//   ),
+  merged: (
+    text: var(--color-fg-on-emphasis),
+    bg: var(--color-danger-emphasis),
+    // border: transparent,
+  ),
 
-//   closed: (
-//     text: $white,
-//     bg: $red-5,
-//     border: transparent,
-//   ),
-// );
+  closed: (
+    text: var(--color-fg-on-emphasis),
+    bg: var(--color-danger-emphasis),
+    // border: transparent,
+  ),
+);
 
 $topic-tag: (
   text: var(--color-accent-fg),
