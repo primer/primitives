@@ -86,6 +86,113 @@ $export: (
     muted: rgba($pink-4, 0.1),
   ),
 
+  // Components
+
+  btn: (
+    text: $gray-1,
+    bg: $gray-7,
+    border: $gray-6,
+    shadow: 0 0 transparent,
+    inset-shadow: 0 0 transparent,
+
+    hover-bg: $gray-6,
+    hover-border: $gray-3,
+
+    active-bg: darken($gray-6, 3%),
+    active-border: $gray-4,
+
+    selected-bg: $gray-8,
+
+    focus-bg: $gray-7,
+    focus-border: $gray-3,
+    focus-shadow: 0 0 0 3px rgba($gray-3, 0.3),
+
+    shadow-active: inset 0 0.15em 0.3em rgba($black, 0.15), // TODO: Deprecate? Not used in Primer CSS
+    shadow-input-focus: 0 0 0 0.2em rgba($blue-5, 0.3), // TODO: Deprecate?
+
+    /* states */
+
+    primary: (
+      text: #fff,
+      bg: $green-5,
+      border: $green-4,
+      shadow: 0 0 transparent,
+      inset-shadow: 0 0 transparent,
+
+      hover-bg: $green-4,
+      hover-border: $green-3,
+
+      selected-bg: $green-5,
+      selected-shadow: 0 0 transparent,
+
+      disabled-text: rgba($white, 0.5),
+      disabled-bg: rgba($green-5, 0.6),
+      disabled-border: transparent,
+
+      focus-bg: $green-5,
+      focus-border: $green-3,
+      focus-shadow: 0 0 0 3px rgba(#2ea44f, 0.4),
+
+      icon: $white,
+      counter-bg: rgba($white, 0.2),
+    ),
+
+    outline: (
+      text: $blue-3,
+
+      hover-text: $blue-3,
+      hover-bg: $gray-6,
+      hover-border: $blue-3,
+      hover-shadow: 0 1px 0 rgba($black, 0.1),
+      hover-inset-shadow: inset 0 1px 0 rgba($white, 0.03),
+      hover-counter-bg: rgba($white, 0.2),
+
+      selected-text: $white,
+      selected-bg: $blue-7,
+      selected-border: rgba($white, 0.1),
+      selected-shadow: 0 0 transparent,
+
+      disabled-text: rgba($blue-3, 0.5),
+      disabled-bg: $gray-9,
+      disabled-counter-bg: rgba($blue-5, 0.05),
+
+      focus-border: $blue-3,
+      focus-shadow: 0 0 0 3px rgba($blue-6, 0.4),
+
+      counter-bg: rgba($blue-5, 0.1),
+    ),
+
+    danger: (
+      text: $red-4,
+
+      hover-text: #fff,
+      hover-bg: $red-5,
+      hover-border: $red-4,
+      hover-shadow: 0 0 transparent,
+      hover-inset-shadow: 0 0 transparent,
+      hover-counter-bg: rgba(#fff, 0.2),
+
+      selected-text: #fff,
+      selected-bg: $red-6,
+      selected-border: rgba($white, 0.1),
+      selected-shadow: 0 0 transparent,
+
+      disabled-text: rgba($red-4, 0.5),
+      disabled-bg: $gray-9,
+      disabled-counter-bg: rgba($red-5, 0.05),
+
+      focus-border: $red-4,
+      focus-shadow: 0 0 0 3px rgba($red-6, 0.4),
+
+      counter-bg: rgba($red-5, 0.1),
+
+      icon: $red-4,
+      hover-icon: $white,
+    ),
+
+    counter-bg: $gray-6,
+  ),
+
   // Mapping of v1 variables to v2 variables
   text: $text,
   icon: $icon,
@@ -96,7 +203,6 @@ $export: (
 
   alert: $alert,
   blankslate: $blankslate,
-  btn: $btn,
   counter: $counter,
   // dropdown: $dropdown,
   label: $label,
