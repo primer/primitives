@@ -699,19 +699,19 @@ $footer-invertocat: (
 $pr-state: (
   draft: (
     text: var(--color-fg-on-emphasis),
-    bg: var(--color-danger-emphasis),
+    bg: var(--color-neutral-emphasis),
     // border: transparent,
   ),
 
   open: (
     text: var(--color-fg-on-emphasis),
-    bg: var(--color-danger-emphasis),
+    bg: var(--color-success-emphasis),
     // border: transparent,
   ),
 
   merged: (
     text: var(--color-fg-on-emphasis),
-    bg: var(--color-danger-emphasis),
+    bg: var(--color-done-emphasis),
     // border: transparent,
   ),
 
@@ -729,32 +729,32 @@ $topic-tag: (
   active-bg: var(--color-accent-muted),
 );
 
-// $merge-box: (
-//   success-icon-bg: $green-5,
-//   success-icon-text: $white,
-//   success-icon-border: transparent,
-//   success-indicator-bg: $green-5,
-//   success-indicator-border: transparent,
-//   merged-icon-bg: $purple-5,
-//   merged-icon-text: $white,
-//   merged-icon-border: transparent,
-//   merged-box-border: $purple-5,
-//   neutral-icon-bg: $gray-5,
-//   neutral-icon-text: $white,
-//   neutral-icon-border: transparent,
-//   neutral-indicator-bg: $gray-5,
-//   neutral-indicator-border: transparent,
-//   warning-icon-bg: $yellow-7,
-//   warning-icon-text: $white,
-//   warning-icon-border: transparent,
-//   warning-box-border: $yellow-5,
-//   warning-merge-highlight: transparent,
-//   error-icon-bg: $red-5,
-//   error-icon-text: $white,
-//   error-icon-border: transparent,
-//   error-indicator-bg: $red-5,
-//   error-indicator-border: transparent,
-// );
+$merge-box: (
+  success-icon-bg: var(--color-success-emphasis),
+  success-icon-text: var(--color-fg-on-emphasis),
+  // success-icon-border: transparent,
+  success-indicator-bg: var(--color-success-emphasis),
+  // success-indicator-border: transparent,
+  merged-icon-bg: var(--color-done-emphasis),
+  merged-icon-text: var(--color-fg-on-emphasis),
+  // merged-icon-border: transparent,
+  merged-box-border: var(--color-done-emphasis),
+  neutral-icon-bg: var(--color-neutral-emphasis),
+  neutral-icon-text: var(--color-fg-on-emphasis),
+  // neutral-icon-border: transparent,
+  neutral-indicator-bg: var(--color-neutral-emphasis),
+  // neutral-indicator-border: transparent,
+  warning-icon-bg: var(--color-warning-emphasis),
+  warning-icon-text: var(--color-fg-on-emphasis),
+  // warning-icon-border: transparent,
+  warning-box-border: var(--color-warning-emphasis),
+  // warning-merge-highlight: transparent,
+  error-icon-bg: var(--color-danger-emphasis),
+  error-icon-text: var(--color-fg-on-emphasis),
+  // error-icon-border: transparent,
+  error-indicator-bg: var(--color-danger-emphasis),
+  // error-indicator-border: transparent,
+);
 
 // $project: (
 //   card-bg: $white,
@@ -850,12 +850,12 @@ $topic-tag: (
 //   ),
 // );
 
-// $intro-shelf: (
-//   gradient-left: $blue-0,
-//   gradient-right: $green-1,
-//   gradient-in: $white,
-//   gradient-out: rgba($white, 0),
-// );
+$intro-shelf: (
+  gradient-left: var(--color-accent-muted),
+  gradient-right: var(--color-success-muted),
+  gradient-in: var(--color-canvas-default),
+  // gradient-out: rgba($white, 0),
+);
 
 // $marketing-icon: (
 //   primary: $blue-4,
@@ -901,31 +901,30 @@ $topic-tag: (
 // );
 
 // when editing code
-// $codemirror: (
-//   text: var(--color-text-primary),
-//   bg: var(--color-bg-canvas),
+$codemirror: (
+  text: var(--color-fg-default),
+  bg: var(--color-canvas-default),
+  gutters-bg: var(--color-canvas-default),
+  guttermarker-text: var(--color-canvas-default),
+  guttermarker-subtle-text: var(--color-fg-inactive),
+  linenumber-text: var(--color-fg-muted),
+  cursor: var(--color-fg-default),
+  selection-bg: var(--color-accent-muted),
+  activeline-bg: var(--color-neutral-muted),
+  matchingbracket-text: var(--color-fg-default),
+  lines-bg: var(--color-canvas-default),
 
-//   gutters-bg: var(--color-bg-canvas),
-//   guttermarker-text: $white,
-//   guttermarker-subtle-text: $gray-3,
-//   linenumber-text: $gray-4,
-//   cursor: $gray-9,
-//   selection-bg: var(--color-code-selection-bg),
-//   activeline-bg: $gray-0,
-//   matchingbracket-text: $gray-9,
-//   lines-bg: var(--color-bg-canvas),
-
-//   syntax: (
-//     comment: $gray-5,
-//     constant: $blue-6,
-//     entity: $purple-5,
-//     keyword: $red-5,
-//     storage: $red-5,
-//     string: $blue-8,
-//     support: $blue-6,
-//     variable: $orange-6,
-//   ),
-// );
+  // syntax: (
+  //   comment: $gray-5,
+  //   constant: $blue-6,
+  //   entity: $purple-5,
+  //   keyword: $red-5,
+  //   storage: $red-5,
+  //   string: $blue-8,
+  //   support: $blue-6,
+  //   variable: $orange-6,
+  // ),
+);
 
 // used for terminal-like enviroments
 // $ansi: (
