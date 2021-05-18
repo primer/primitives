@@ -195,6 +195,19 @@ $export: (
 
   // App
 
+  // TODO: Move to dotcom?
+  actions-workflow-table-sticky-bg: rgba($gray-9, 0.95),
+  repo-language-color-border: rgba($white, 0.2),
+
+  // Mapping of v1 variables to v2 variables
+  files-explorer-icon: var(--color-accent-fg),
+  hl-author-bg: var(--color-accent-muted),
+  hl-author-border: var(--color-accent-highlighter),
+  logo-subdued: var(--color-neutral-highlighter),
+  discussion-border: var(--color-success-highlighter),
+  discussion-bg-success: var(--color-success-emphasis),
+  code-selection-bg: var(--color-accent-highlighter),
+
   diff-blob: (
     // TODO: Move to dotcom?
     num-hover-text: rgba($white, 0.6),
@@ -586,15 +599,6 @@ $export: (
   diffstat: $diffstat,
   // mktg: $mktg,
 
-  files-explorer-icon: var(--color-accent-fg),
-  hl-author-bg: var(--color-accent-muted),
-  hl-author-border: var(--color-accent-highlighter),
-  logo-subdued: var(--color-neutral-highlighter),
-  discussion-border: var(--color-success-highlighter),
-  discussion-bg-success: var(--color-success-emphasis),
-  // actions-workflow-table-sticky-bg: rgba($white, 0.95),
-  // repo-language-color-border: rgba($black, 0.1),
-  code-selection-bg: var(--color-accent-highlighter),
   highlight: $highlight,
   blob: $blob,
   diff: $diff,
