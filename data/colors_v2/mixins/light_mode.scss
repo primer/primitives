@@ -195,6 +195,132 @@ $export: (
 
   // App
 
+  merge-box: (
+    // TODO: Move to dotcom?
+    success-icon-border: transparent,
+    success-indicator-border: transparent,
+    merged-icon-border: transparent,
+    neutral-icon-border: transparent,
+    neutral-indicator-border: transparent,
+    warning-icon-border: transparent,
+    warning-merge-highlight: transparent,
+    error-icon-border: transparent,
+    error-indicator-border: transparent,
+
+    // Mapping of v1 variables to v2 variables
+    success-icon-bg: var(--color-success-emphasis),
+    success-icon-text: var(--color-fg-on-emphasis),
+    success-indicator-bg: var(--color-success-emphasis),
+    merged-icon-bg: var(--color-done-emphasis),
+    merged-icon-text: var(--color-fg-on-emphasis),
+    merged-box-border: var(--color-done-emphasis),
+    neutral-icon-bg: var(--color-neutral-emphasis),
+    neutral-icon-text: var(--color-fg-on-emphasis),
+    neutral-indicator-bg: var(--color-neutral-emphasis),
+    warning-icon-bg: var(--color-warning-emphasis),
+    warning-icon-text: var(--color-fg-on-emphasis),
+    warning-box-border: var(--color-warning-emphasis),
+    error-icon-bg: var(--color-danger-emphasis),
+    error-icon-text: var(--color-fg-on-emphasis),
+    error-indicator-bg: var(--color-danger-emphasis),
+  ),
+
+  project: (
+    // TODO: Move to dotcom?
+    card-bg: $white,
+    header-bg: $gray-9,
+    sidebar-bg: $white,
+    gradient-in: $white,
+    gradient-out: rgba($white, 0),
+  ),
+
+  checks: (
+    // TODO: Move to dotcom?
+    bg: $gray-9,
+
+    run-border-width: 0px,
+    container-border-width: 0px,
+
+    text-primary: $gray-0,
+    text-secondary: $gray-4,
+    text-link: $blue-3,
+
+    btn-icon: $gray-3,
+    btn-hover-icon: $gray-0,
+    btn-hover-bg: rgba(255, 255, 255, 0.125),
+
+    input-text: $gray-1,
+    input-placeholder-text: $gray-4,
+    input-focus-text: $gray-4,
+    input-bg: $gray-8,
+    input-shadow: none,
+
+    dropdown-text: $gray-3,
+    dropdown-bg: $gray-8,
+    dropdown-border: $gray-7,
+    dropdown-hover-text: $gray-0,
+    dropdown-hover-bg: $gray-7,
+    dropdown-btn-hover-text: $gray-0,
+    dropdown-btn-hover-bg: $gray-8,
+
+    scrollbar-thumb-bg: $gray-6,
+
+    header-label-text: $gray-2,
+    header-label-open-text: $gray-0,
+    header-border: $gray-8,
+    header-icon: $gray-4,
+
+    line-text: $gray-2,
+    line-num-text: rgba($gray-4, 0.75),
+    line-timestamp-text: $gray-4,
+    line-hover-bg: $gray-8,
+    line-selected-bg: rgba($blue-4, 0.15),
+    line-selected-num-text: $blue-3,
+    line-dt-fm-text: $gray-9,
+    line-dt-fm-bg: $yellow-5,
+
+    gate-bg: rgba($yellow-6, 0.15),
+    gate-text: $gray-2,
+    gate-waiting-text: $gray-3,
+
+    step-header-open-bg: $gray-8,
+    step-error-text: $red-3,
+    step-warning-text: $yellow-3,
+
+    logline-text: $gray-4,
+    logline-num-text: rgba($gray-4, 0.75),
+    logline-debug-text: $purple-3,
+    logline-error-text: $gray-2,
+    logline-error-num-text: $red-3,
+    logline-error-bg: rgba($red-6, 0.15),
+    logline-warning-text: $gray-2,
+    logline-warning-num-text: $yellow-3,
+    logline-warning-bg: rgba($yellow-6, 0.15),
+    logline-command-text: $blue-3,
+    logline-section-text: $green-3,
+
+    // used in the Actions logs
+    ansi: (
+      black: $gray-9,
+      black-bright: $gray-8,
+      white: $gray-2,
+      white-bright: $gray-2,
+      gray: $gray-4,
+      red: $red-3,
+      red-bright: $red-2,
+      green: $green-3,
+      green-bright: $green-2,
+      yellow: $yellow-3,
+      yellow-bright: $yellow-2,
+      blue: $blue-3,
+      blue-bright: $blue-2,
+      magenta: $purple-3,
+      magenta-bright: $purple-2,
+      cyan: #76e3ea, // custom
+      cyan-bright: #b3f0ff, // custom
+    ),
+  ),
+
   intro-shelf: (
     gradient-out: rgba($white, 0),
 
@@ -350,7 +476,4 @@ $export: (
   footer-invertocat: $footer-invertocat,
   pr-state: $pr-state,
   topic-tag: $topic-tag,
-  merge-box: $merge-box,
-  // project: $project,
-  // checks: $checks,
 );
