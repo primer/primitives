@@ -195,11 +195,20 @@ $export: (
 
   // App
 
-  // TODO: Move to dotcom?
-  // marketing-icon: (
-  //   primary: $blue-4,
-  //   secondary: $blue-3,
-  // ),
+  intro-shelf: (
+    gradient-out: rgba($white, 0),
+
+    // Mapping of v1 variables to v2 variables
+    gradient-left: var(--color-accent-muted),
+    gradient-right: var(--color-success-muted),
+    gradient-in: var(--color-canvas-default),
+  ),
+
+  // TODO: Move to dotcom
+  marketing-icon: (
+    primary: $blue-4,
+    secondary: $blue-3,
+  ),
 
   prettylights: (
     // TODO: Move to dotcom?
@@ -344,5 +353,4 @@ $export: (
   merge-box: $merge-box,
   // project: $project,
   // checks: $checks,
-  intro-shelf: $intro-shelf,
 );
