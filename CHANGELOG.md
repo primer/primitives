@@ -1,5 +1,11 @@
 # @primer/primitives
 
+## 4.3.4
+
+### Patch Changes
+
+- [#94](https://github.com/primer/primitives/pull/94) [`eed97d8`](https://github.com/primer/primitives/commit/eed97d8c4f4b5c0858b8ff30d8f4179b54141de4) Thanks [@colebemis](https://github.com/colebemis)! - Update experimental color variables
+
 ## 4.3.3
 
 ### Patch Changes
