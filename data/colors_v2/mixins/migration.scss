@@ -320,57 +320,16 @@ $markdown: (
   table-tr-border: var(--color-border-divider),
 );
 
-$menu: (
-  heading-text: var(--color-fg-default),
-  // border-active: #f9826c, // coral
-  // bg-active: transparent,
-);
-
-// $sidenav: (
-  // selected-bg: $white,
-  // border-active: #f9826c, // coral
-// );
-
-// $header: (
-//   text: $white-fade-70,
-//   bg: $gray-9,
-//   logo: $white,
-// );
-
 $filter-item: (
   bar-bg: var(--color-neutral-muted),
-);
-
-$hidden-text-expander: (
-  bg: var(--color-neutral-highlighter),
-  // bg-hover: darken($gray-3, 4%),
 );
 
 $drag-and-drop: (
   border: var(--color-border-default),
 );
 
-$upload-enabled: (
-  border: var(--color-border-default),
-  // border-focused: lighten($blue-4, 8%),
-);
-
 $previewable-comment-form: (
   border: var(--color-border-default),
-);
-
-$underlinenav: (
-  // border: transparent,
-  border-hover: var(--color-neutral-highlighter),
-  // border-active: #f9826c, // coral
-  text: var(--color-fg-default),
-  text-hover: var(--color-fg-default),
-  text-active: var(--color-fg-default),
-  icon: var(--color-fg-inactive),
-  icon-hover: var(--color-fg-inactive),
-  icon-active: var(--color-fg-default),
-  counter-text: var(--color-fg-default),
-  counter-bg: var(--color-neutral-muted),
 );
 
 $verified-badge: (
@@ -387,12 +346,6 @@ $tooltip: (
   text: var(--color-fg-on-emphasis),
   bg: var(--color-neutral-emphasis),
 );
-
-// TODO: Move to dotcom?
-// $header-search: (
-//   bg: $gray-9,
-//   border: $gray-7,
-// );
 
 $search-keyword: (
   hl: var(--color-warning-muted),

@@ -193,85 +193,257 @@ $export: (
     counter-bg: $gray-6,
   ),
 
+  // dropdown: (
+  //   shadow: 0 16px 32px rgba($black, 0.85),
+  // ),
+
+  input: (
+    // contrast-bg: rgba($black, 0.5),
+    // shadow: 0 0 transparent,
+
+    // Mapping of v1 variables to v2 variables
+    bg: var(--color-canvas-default),
+    border: var(--color-border-default),
+    disabled-bg: var(--color-neutral-muted),
+    disabled-border: var(--color-border-default),
+    warning-border: var(--color-warning-emphasis),
+    error-border: var(--color-danger-emphasis),
+
+    tooltip: (
+      success: (
+        text: var(--color-fg-default),
+        bg: var(--color-success-muted),
+        border: var(--color-success-highlighter),
+      ),
+
+      warning: (
+        text: var(--color-fg-default),
+        bg: var(--color-warning-muted),
+        border: var(--color-warning-highlighter),
+      ),
+
+      error: (
+        text: var(--color-fg-default),
+        bg: var(--color-danger-muted),
+        border: var(--color-danger-highlighter),
+      ),
+    ),
+  ),
+
+  avatar: (
+    bg: rgba($white, 0.1),
+    border: rgba($white, 0.1),
+    stack-fade: $gray-6,
+    stack-fade-more: $gray-7,
+    child-shadow: -2px -2px 0 $gray-9,
+  ),
+
+  toast: (
+    // icon-border: $blue-4,
+    // shadow: var(--color-shadow-large),
+
+    // Mapping of v1 variables to v2 variables
+    text: var(--color-fg-default),
+    bg: var(--color-canvas-default),
+    border: var(--color-border-default),
+    icon: var(--color-fg-on-emphasis),
+    icon-bg: var(--color-accent-emphasis),
+
+    success: (
+      // icon-border: $green-3,
+
+      // Mapping of v1 variables to v2 variables
+      text: var(--color-fg-default),
+      border: var(--color-border-default),
+      icon: var(--color-fg-on-emphasis),
+      icon-bg: var(--color-success-emphasis),
+    ),
+
+    warning: (
+      // icon-border: $yellow-3,
+
+      // Mapping of v1 variables to v2 variables
+      text: var(--color-fg-default),
+      border: var(--color-border-default),
+      icon: var(--color-fg-default),
+      icon-bg: var(--color-warning-emphasis),
+    ),
+
+    danger: (
+      // icon-border: $red-4,
+
+      // Mapping of v1 variables to v2 variables
+      text: var(--color-fg-default),
+      border: var(--color-border-default),
+      icon: var(--color-fg-on-emphasis),
+      icon-bg: var(--color-danger-emphasis),
+    ),
+
+    loading: (
+      // icon-border: $gray-3,
+
+      // Mapping of v1 variables to v2 variables
+      text: var(--color-fg-default),
+      border: var(--color-border-default),
+      icon: var(--color-fg-on-emphasis),
+      icon-bg: var(--color-neutral-emphasis),
+    ),
+  ),
+
+  timeline: (
+    // badge-success-border: $green-4,
+
+    // Mapping of v1 variables to v2 variables
+    text: var(--color-fg-muted),
+    badge-bg: var(--color-neutral-muted),
+    target-badge-border: var(--color-accent-emphasis),
+    target-badge-shadow: var(--color-accent-highlighter),
+  ),
+
+  select-menu: (
+    // shadow: 0 0 18px rgba($black, 0.4),
+    // backdrop-border: $gray-5,
+    // tap-highlight: rgba($gray-6, 0.5),
+    // tap-focus-bg: $blue-8,
+
+    // Mapping of v1 variables to v2 variables
+    border-secondary: var(--color-border-divider),
+    backdrop-bg: var(--color-canvas-backdrop),
+  ),
+
+  menu: (
+    // border-active: #F78166, // coral
+    // bg-active: $gray-8,
+
+    // Mapping of v1 variables to v2 variables
+    heading-text: var(--color-fg-default),
+  ),
+
+  // sidenav: (
+    // selected-bg: $gray-7,
+    // border-active: #F78166, // coral
+  // ),
+
+  header: (
+    text: rgba($white, 0.7),
+    bg: $gray-8,
+    logo: $gray-0,
+  ),
+
+  hidden-text-expander: (
+    // bg-hover: $gray-6,
+
+    // Mapping of v1 variables to v2 variables
+    bg: var(--color-neutral-highlighter),
+  ),
+
+  upload-enabled: (
+    // border-focused: lighten($blue-5, 8%),
+
+    // Mapping of v1 variables to v2 variables
+    border: var(--color-border-default),
+  ),
+
+  underlinenav: (
+    border: rgba($gray-6, 0),
+    border-active: #F78166, // coral
+
+    // Mapping of v1 variables to v2 variables
+    border-hover: var(--color-neutral-highlighter),
+    text: var(--color-fg-default),
+    text-hover: var(--color-fg-default),
+    text-active: var(--color-fg-default),
+    icon: var(--color-fg-inactive),
+    icon-hover: var(--color-fg-inactive),
+    icon-active: var(--color-fg-default),
+    counter-text: var(--color-fg-default),
+    counter-bg: var(--color-neutral-muted),
+  ),
+
+  header-search: (
+    bg: $gray-9,
+    border: $gray-7,
+  ),
+
   // Marketing
 
   // TODO: Move to Primer CSS?
   // Doesn't get used for color modes (yet)
-  mktg: (
-    success: mix($green-5, $green-4, 50%),
-    info: mix($blue-4, $blue-5, 42%),
+  // mktg: (
+  //   success: mix($green-5, $green-4, 50%),
+  //   info: mix($blue-4, $blue-5, 42%),
 
-    bg-shade-gradient: (
-      top: rgba($black, 0.065),
-      bottom: rgba($black, 0),
-    ),
+  //   bg-shade-gradient: (
+  //     top: rgba($black, 0.065),
+  //     bottom: rgba($black, 0),
+  //   ),
 
-    btn: (
-      bg: (
-        top: lighten($mktg-blue-primary, 5%),
-        bottom: $mktg-blue-primary,
-      ),
-      bg-overlay: (
-        top: lighten($mktg-blue-secondary, 5%),
-        bottom: $mktg-blue-secondary,
-      ),
-      text: $white,
+  //   btn: (
+  //     bg: (
+  //       top: lighten($mktg-blue-primary, 5%),
+  //       bottom: $mktg-blue-primary,
+  //     ),
+  //     bg-overlay: (
+  //       top: lighten($mktg-blue-secondary, 5%),
+  //       bottom: $mktg-blue-secondary,
+  //     ),
+  //     text: $white,
 
-      primary: (
-        bg: (
-          top: lighten($mktg-green-primary, 5%),
-          bottom: $mktg-green-primary,
-        ),
-        bg-overlay: (
-          top: lighten($mktg-green-secondary, 5%),
-          bottom: $mktg-green-secondary,
-        ),
-        text: $white,
-      ),
+  //     primary: (
+  //       bg: (
+  //         top: lighten($mktg-green-primary, 5%),
+  //         bottom: $mktg-green-primary,
+  //       ),
+  //       bg-overlay: (
+  //         top: lighten($mktg-green-secondary, 5%),
+  //         bottom: $mktg-green-secondary,
+  //       ),
+  //       text: $white,
+  //     ),
 
-      enterprise: (
-        bg: (
-          top: lighten($mktg-purple-primary, 5%),
-          bottom: $mktg-purple-primary,
-        ),
-        bg-overlay: (
-          top: lighten($mktg-purple-secondary, 5%),
-          bottom: $mktg-purple-secondary,
-        ),
-        text: $white,
-      ),
+  //     enterprise: (
+  //       bg: (
+  //         top: lighten($mktg-purple-primary, 5%),
+  //         bottom: $mktg-purple-primary,
+  //       ),
+  //       bg-overlay: (
+  //         top: lighten($mktg-purple-secondary, 5%),
+  //         bottom: $mktg-purple-secondary,
+  //       ),
+  //       text: $white,
+  //     ),
 
-      outline: (
-        text: $white,
-        border: rgba($white, 0.3),
+  //     outline: (
+  //       text: $white,
+  //       border: rgba($white, 0.3),
 
-        hover: (
-          text: $white,
-          border: rgba($white, 0.5),
-        ),
+  //       hover: (
+  //         text: $white,
+  //         border: rgba($white, 0.5),
+  //       ),
 
-        focus: (
-          border: rgba($white, 1),
-          border-inset: rgba($white, 0.5),
-        ),
-      ),
+  //       focus: (
+  //         border: rgba($white, 1),
+  //         border-inset: rgba($white, 0.5),
+  //       ),
+  //     ),
 
-      dark: (
-        text: $white,
-        border: rgba($white, 0.3),
+  //     dark: (
+  //       text: $white,
+  //       border: rgba($white, 0.3),
 
-        hover: (
-          text: $white,
-          border: rgba($white, 0.5),
-        ),
+  //       hover: (
+  //         text: $white,
+  //         border: rgba($white, 0.5),
+  //       ),
 
-        focus: (
-          border: rgba($white, 1),
-          border-inset: rgba($white, 0.5),
-        ),
-      ),
-    ),
-  ),
+  //       focus: (
+  //         border: rgba($white, 1),
+  //         border-inset: rgba($white, 0.5),
+  //       ),
+  //     ),
+  //   ),
+  // ),
 
   // App
 
@@ -652,32 +824,18 @@ $export: (
   alert: $alert,
   blankslate: $blankslate,
   counter: $counter,
-  // dropdown: $dropdown,
   label: $label,
-  input: $input,
-  avatar: $avatar,
-  toast: $toast,
-  timeline: $timeline,
-  select-menu: $select-menu,
   box: $box,
   branch-name: $branch-name,
   markdown: $markdown,
-  menu: $menu,
-  // sidenav: $sidenav,
-  // header: $header,
   filter-item: $filter-item,
-  hidden-text-expander: $hidden-text-expander,
   drag-and-drop: $drag-and-drop,
-  upload-enabled: $upload-enabled,
   previewable-comment-form: $previewable-comment-form,
-  underlinenav: $underlinenav,
   verified-badge: $verified-badge,
   social-count: $social-count,
   tooltip: $tooltip,
-  // header-search: $header-search,
   search-keyword: $search-keyword,
   diffstat: $diffstat,
-  // mktg: $mktg,
 
   highlight: $highlight,
   blob: $blob,
