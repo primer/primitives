@@ -13,6 +13,7 @@ $export: (
     inactive: $gray-5,
     on-emphasis: $white,
   ),
+
   canvas: (
     default: $white,
     overlay: $white,
@@ -20,6 +21,7 @@ $export: (
     backdrop: rgba($black, 0.5),
     mobile: $white,
   ),
+
   border: (
     default: $gray-2,
     divider: lighten($gray-2, 3%),
@@ -27,9 +29,9 @@ $export: (
     // Mapping of v1 variables to v2 variables
     primary: var(--color-border-default),
     secondary: var(--color-border-divider),
-    // tertiary
+    // tertiary: $gray-3, // TODO
     overlay: var(--color-border-default),
-    // inverse
+    // inverse: $white, // TODO
     info: var(--color-accent-emphasis),
     danger: var(--color-danger-emphasis),
     success: var(--color-success-emphasis),
@@ -43,48 +45,60 @@ $export: (
     highlighter: $gray-3,
     muted: $gray-1,
   ),
+
   accent: (
     fg: $blue-5,
     emphasis: $blue-5,
     highlighter: $blue-2,
     muted: $blue-0,
   ),
+
   success: (
     fg: $green-6,
     emphasis: $green-5,
     highlighter: $green-3,
     muted: $green-1,
   ),
+
   warning: (
     fg: $yellow-8,
     emphasis: $yellow-5,
     highlighter: $yellow-3,
     muted: $yellow-2,
   ),
+
   severe: (
     fg: $orange-5,
     emphasis: $orange-5,
     highlighter: $orange-3,
     muted: $orange-1,
   ),
+
   danger: (
     fg: $red-6,
     emphasis: $red-5,
     highlighter: $red-2,
     muted: $red-0,
   ),
+
   done: (
     fg: $purple-5,
     emphasis: $purple-5,
     highlighter: $purple-2,
     muted: $purple-0,
   ),
+
   sponsors: (
     fg: $pink-5,
     emphasis: $pink-5,
     highlighter: $pink-2,
     muted: $pink-0,
   ),
+
+  // Mapping of v1 variables to v2 variables
+
+  text: $text,
+  icon: $icon,
 
   bg: (
     canvas: var(--color-canvas-default),
@@ -163,6 +177,45 @@ $export: (
   // ),
 
   // Components
+
+  alert: (
+    info: (
+      text: var(--color-fg-default),
+      icon: var(--color-accent-fg),
+      bg: var(--color-accent-muted),
+      border: var(--color-accent-highlighter),
+    ),
+
+    warn: (
+      text: var(--color-fg-default),
+      icon: var(--color-warning-fg),
+      bg: var(--color-warning-muted),
+      border: var(--color-warning-highlighter),
+    ),
+
+    error: (
+      text: var(--color-fg-default),
+      icon: var(--color-danger-fg),
+      bg: var(--color-danger-muted),
+      border: var(--color-danger-highlighter),
+    ),
+
+    success: (
+      text: var(--color-fg-default),
+      icon: var(--color-success-fg),
+      bg: var(--color-success-muted),
+      border: var(--color-success-highlighter),
+    )
+  ),
+
+  autocomplete: (
+    // shadow: 0 3px 6px rgba($gray-4, 0.15),
+    row-border: var(--color-border-divider),
+  ),
+
+  blankslate: (
+    icon: var(--color-fg-muted),
+  ),
 
   btn: (
     text: $gray-9,
@@ -269,19 +322,66 @@ $export: (
     counter-bg: rgba($black, 0.08), // Darken for just a tad more contrast against the button background
   ),
 
+  counter: (
+    text: var(--color-fg-default),
+    bg: var(--color-neutral-muted),
+
+    primary: (
+      text: var(--color-fg-on-emphasis),
+      bg: var(--color-neutral-emphasis),
+    ),
+
+    secondary: (
+      text: var(--color-fg-muted),
+      bg: var(--color-neutral-muted),
+    ),
+  ),
+
   // dropdown: (
   //   shadow: 0 8px 24px rgba($gray-4, 0.2),
   // ),
 
+  label: (
+    border: var(--color-border-default),
+    primary: (
+      text: var(--color-fg-default),
+      border: var(--color-neutral-emphasis),
+    ),
+    secondary: (
+      text: var(--color-fg-muted),
+      border: var(--color-border-default),
+    ),
+    info: (
+      text: var(--color-accent-fg),
+      border: var(--color-accent-emphasis),
+    ),
+    success: (
+      text: var(--color-success-fg),
+      border: var(--color-success-emphasis),
+    ),
+    warning: (
+      text: var(--color-warning-fg),
+      border: var(--color-warning-emphasis),
+    ),
+    danger: (
+      text: var(--color-danger-fg),
+      border: var(--color-danger-emphasis),
+    ),
+    orange: (
+      text: var(--color-severe-fg),
+      border: var(--color-severe-emphasis),
+    ),
+  ),
+
   input: (
+    bg: var(--color-canvas-default),
     // contrast-bg: $gray-0,
+    border: var(--color-border-default),
     // shadow: inset 0 1px 2px rgba($black, 0.075),
 
-    // Mapping of v1 variables to v2 variables
-    bg: var(--color-canvas-default),
-    border: var(--color-border-default),
     disabled-bg: var(--color-neutral-muted),
     disabled-border: var(--color-border-default),
+
     warning-border: var(--color-warning-emphasis),
     error-border: var(--color-danger-emphasis),
 
@@ -315,84 +415,100 @@ $export: (
   ),
 
   toast: (
-    // icon-border: transparent,
-    // shadow: var(--color-shadow-large),
-
-    // Mapping of v1 variables to v2 variables
     text: var(--color-fg-default),
     bg: var(--color-canvas-default),
     border: var(--color-border-default),
+    // shadow: var(--color-shadow-large),
     icon: var(--color-fg-on-emphasis),
     icon-bg: var(--color-accent-emphasis),
+    // icon-border: transparent,
 
     success: (
-      // icon-border: transparent,
-
-      // Mapping of v1 variables to v2 variables
       text: var(--color-fg-default),
       border: var(--color-border-default),
       icon: var(--color-fg-on-emphasis),
       icon-bg: var(--color-success-emphasis),
+      // icon-border: transparent,
     ),
 
     warning: (
-      // icon-border: transparent,
-
-      // Mapping of v1 variables to v2 variables
       text: var(--color-fg-default),
       border: var(--color-border-default),
       icon: var(--color-fg-default),
       icon-bg: var(--color-warning-emphasis),
+      // icon-border: transparent,
     ),
 
     danger: (
-      // icon-border: transparent,
-
-      // Mapping of v1 variables to v2 variables
       text: var(--color-fg-default),
       border: var(--color-border-default),
       icon: var(--color-fg-on-emphasis),
       icon-bg: var(--color-danger-emphasis),
+      // icon-border: transparent,
     ),
 
     loading: (
-      // icon-border: transparent,
-
-      // Mapping of v1 variables to v2 variables
       text: var(--color-fg-default),
       border: var(--color-border-default),
       icon: var(--color-fg-on-emphasis),
       icon-bg: var(--color-neutral-emphasis),
+      // icon-border: transparent,
     ),
   ),
 
   timeline: (
-    // badge-success-border: transparent,
-
-    // Mapping of v1 variables to v2 variables
     text: var(--color-fg-muted),
     badge-bg: var(--color-neutral-muted),
+    // badge-success-border: transparent,
     target-badge-border: var(--color-accent-emphasis),
     target-badge-shadow: var(--color-accent-highlighter),
   ),
 
   select-menu: (
+    border-secondary: var(--color-border-divider),
     // shadow: 0 0 18px rgba($black, 0.4),
+    backdrop-bg: var(--color-canvas-backdrop),
     // backdrop-border: transparent,
     // tap-highlight: rgba($gray-3, 0.5),
     // tap-focus-bg: $blue-1,
+  ),
 
-    // Mapping of v1 variables to v2 variables
-    border-secondary: var(--color-border-divider),
-    backdrop-bg: var(--color-canvas-backdrop),
+  box: (
+    blue-border: var(--color-accent-highlighter),
+    row-yellow-bg: var(--color-warning-muted),
+    row-blue-bg: var(--color-accent-muted),
+    header-blue-bg: var(--color-accent-muted),
+    header-blue-border: var(--color-accent-highlighter),
+    border-info: var(--color-accent-highlighter),
+    bg-info: var(--color-accent-muted),
+    border-warning: var(--color-warning-highlighter),
+    bg-warning: var(--color-warning-muted),
+  ),
+
+  branch-name: (
+    text: var(--color-fg-muted),
+    icon: var(--color-fg-muted),
+    bg: var(--color-neutral-muted),
+
+    link: (
+      text: var(--color-accent-fg),
+      icon: var(--color-accent-fg),
+      bg: var(--color-accent-muted),
+    ),
+  ),
+
+  markdown: (
+    code-bg: var(--color-neutral-muted),
+    frame-border: var(--color-border-default),
+    blockquote-border: var(--color-border-default),
+    table-border: var(--color-border-default),
+    table-tr-border: var(--color-border-divider),
   ),
 
   menu: (
+    heading-text: var(--color-fg-default),
     // border-active: #f9826c, // coral
     // bg-active: transparent,
-
-    // Mapping of v1 variables to v2 variables
-    heading-text: var(--color-fg-default),
   ),
 
   // sidenav: (
@@ -406,26 +522,32 @@ $export: (
     logo: $white,
   ),
 
-  hidden-text-expander: (
-    // bg-hover: darken($gray-3, 4%),
+  filter-item: (
+    bar-bg: var(--color-neutral-muted),
+  ),
 
-    // Mapping of v1 variables to v2 variables
+  hidden-text-expander: (
     bg: var(--color-neutral-highlighter),
+    // bg-hover: darken($gray-3, 4%),
+  ),
+
+  drag-and-drop: (
+    border: var(--color-border-default),
   ),
 
   upload-enabled: (
+    border: var(--color-border-default),
     // border-focused: lighten($blue-4, 8%),
+  ),
 
-    // Mapping of v1 variables to v2 variables
+  previewable-comment-form: (
     border: var(--color-border-default),
   ),
 
   underlinenav: (
-    border: transparent,
-    border-active: #f9826c, // coral
-
-    // Mapping of v1 variables to v2 variables
+    // border: transparent,
     border-hover: var(--color-neutral-highlighter),
+    // border-active: #f9826c, // coral
     text: var(--color-fg-default),
     text-hover: var(--color-fg-default),
     text-active: var(--color-fg-default),
@@ -436,9 +558,37 @@ $export: (
     counter-bg: var(--color-neutral-muted),
   ),
 
+  verified-badge: (
+    text: var(--color-success-fg),
+    bg: var(--color-canvas-default),
+    border: var(--color-border-default),
+  ),
+
+  social-count: (
+    bg: var(--color-canvas-default),
+  ),
+
+  tooltip: (
+    text: var(--color-fg-on-emphasis),
+    bg: var(--color-neutral-emphasis),
+  ),
+
   header-search: (
     bg: $gray-9,
     border: $gray-7,
+  ),
+
+  search-keyword: (
+    hl: var(--color-warning-muted),
+  ),
+
+  diffstat: (
+    neutral-bg: var(--color-neutral-highlighter),
+    neutral-border: var(--color-neutral-highlighter),
+    deletion-bg: var(--color-danger-emphasis),
+    deletion-border: var(--color-danger-emphasis),
+    addition-bg: var(--color-success-emphasis),
+    addition-border: var(--color-success-emphasis),
   ),
 
   // Marketing
@@ -523,65 +673,79 @@ $export: (
 
   // App
 
-  // TODO: Move to dotcom?
-  actions-workflow-table-sticky-bg: rgba($white, 0.95),
-  repo-language-color-border: rgba($black, 0.1),
-
-  // Mapping of v1 variables to v2 variables
   files-explorer-icon: var(--color-accent-fg),
   hl-author-bg: var(--color-accent-muted),
   hl-author-border: var(--color-accent-highlighter),
   logo-subdued: var(--color-neutral-highlighter),
   discussion-border: var(--color-success-highlighter),
   discussion-bg-success: var(--color-success-emphasis),
+  // actions-workflow-table-sticky-bg: rgba($white, 0.95),
+  // repo-language-color-border: rgba($black, 0.1),
   code-selection-bg: var(--color-accent-highlighter),
 
-  diff-blob: (
-    // TODO: Move to dotcom?
-    num-hover-text: rgba($black, 0.6),
+  highlight: (
+    text: var(--color-fg-default),
+    bg: var(--color-warning-muted),
+  ),
 
-    // Mapping of v1 variables to v2 variables
+  blob: (
+    line-highlight-bg: var(--color-warning-muted),
+    line-highlight-border: var(--color-warning-highlighter),
+  ),
+
+  diff: (
+    addition: (
+      text: var(--color-success-fg),
+      bg: var(--color-success-muted),
+      border: var(--color-success-highlighter),
+    ),
+
+    deletion: (
+      text: var(--color-danger-fg),
+      bg: var(--color-danger-muted),
+      border: var(--color-danger-highlighter),
+    ),
+
+    change: (
+      text: var(--color-warning-fg),
+      bg: var(--color-warning-muted),
+      border: var(--color-warning-highlighter),
+    ),
+  ),
+
+  diff-blob: (
     num-text: var(--color-neutral-fg),
+    // num-hover-text: rgba($black, 0.6),
 
     addition: (
-      // TODO: Move to dotcom?
-      num-hover-text: rgba($black, 0.6),
-
-      // Mapping of v1 variables to v2 variables
       num-text: var(--color-success-fg),
+      // num-hover-text: rgba($black, 0.6),
       num-bg: var(--color-success-highlighter),
       line-bg: var(--color-success-muted),
       word-bg: var(--color-success-highlighter),
     ),
 
     deletion: (
-      // TODO: Move to dotcom?
-      num-hover-text: rgba($black, 0.6),
-
-      // Mapping of v1 variables to v2 variables
       num-text: var(--color-danger-fg),
+      // num-hover-text: rgba($black, 0.6),
       num-bg: var(--color-danger-highlighter),
       line-bg: var(--color-danger-muted),
       word-bg: var(--color-danger-highlighter),
     ),
 
     hunk: (
-      // Mapping of v1 variables to v2 variables
       text: var(--color-fg-muted),
       num-bg: var(--color-accent-highlighter),
       line-bg: var(--color-accent-muted),
     ),
 
-    // Mapping of v1 variables to v2 variables
     empty-block-bg: var(--color-neutral-muted), // for split diffs
 
-    // TODO: Move to dotcom?
-    selected-line-highlight-bg: rgba($yellow-4, 0.2),
-    selected-line-highlight-border: $yellow-5,
-    selected-line-highlight-mix-blend-mode: multiply,
+    // selected-line-highlight-bg: rgba($yellow-4, 0.2),
+    // selected-line-highlight-border: $yellow-5,
+    // selected-line-highlight-mix-blend-mode: multiply,
 
     expander: (
-      // Mapping of v1 variables to v2 variables
       icon: var(--color-fg-muted),
       hover-icon: var(--color-fg-on-emphasis),
       hover-bg: var(--color-accent-emphasis),
@@ -589,17 +753,13 @@ $export: (
 
     // add line comment button -> blue [+]
     comment-button: (
-      // TODO: Move to dotcom?
-      gradient-bg: lighten($blue-5, 5%), // gradient top
-
-      // Mapping of v1 variables to v2 variables
       icon: var(--color-fg-on-emphasis),
       bg: var(--color-accent-emphasis),
+      // gradient-bg: lighten($blue-5, 5%), // gradient top
     ),
   ),
 
   global-nav: (
-    // TODO: Move to dotcom
     logo: $white,
     bg: $gray-9,
     text: $white,
@@ -610,203 +770,195 @@ $export: (
     input-placeholder: $gray-4,
   ),
 
-  calendar-graph: (
-    // TODO: Move to dotcom?
-    /*bg: $white,
-    border: $white,*/
-    day-bg: #EBEDF0,
-    day-border: rgba(27, 31, 35, 0.06),
-    day-L1-bg: #9BE9A8,
-    day-L2-bg: #40C463,
-    day-L3-bg: #30A14E,
-    day-L4-bg: #216E39,
-    day-L4-border: rgba(27, 31, 35, 0.06),
-    day-L3-border: rgba(27, 31, 35, 0.06),
-    day-L2-border: rgba(27, 31, 35, 0.06),
-    day-L1-border: rgba(27, 31, 35, 0.06),
+  // calendar-graph: (
+  //   /*bg: $white,
+  //   border: $white,*/
+  //   day-bg: #EBEDF0,
+  //   day-border: rgba(27, 31, 35, 0.06),
+  //   day-L1-bg: #9BE9A8,
+  //   day-L2-bg: #40C463,
+  //   day-L3-bg: #30A14E,
+  //   day-L4-bg: #216E39,
+  //   day-L4-border: rgba(27, 31, 35, 0.06),
+  //   day-L3-border: rgba(27, 31, 35, 0.06),
+  //   day-L2-border: rgba(27, 31, 35, 0.06),
+  //   day-L1-border: rgba(27, 31, 35, 0.06),
+  // ),
+
+  footer-invertocat: (
+    octicon: var(--color-fg-inactive),
+    octicon-hover: var(--color-fg-muted),
   ),
 
   pr-state: (
     draft: (
-      // TODO: Move to dotcom?
-      border: transparent,
-
-      // Mapping of v1 variables to v2 variables
       text: var(--color-fg-on-emphasis),
       bg: var(--color-neutral-emphasis),
+      // border: transparent,
     ),
 
     open: (
-      // TODO: Move to dotcom?
-      border: transparent,
-
-      // Mapping of v1 variables to v2 variables
       text: var(--color-fg-on-emphasis),
       bg: var(--color-success-emphasis),
+      // border: transparent,
     ),
 
     merged: (
-      // TODO: Move to dotcom?
-      border: transparent,
-
-      // Mapping of v1 variables to v2 variables
       text: var(--color-fg-on-emphasis),
       bg: var(--color-done-emphasis),
+      // border: transparent,
     ),
 
     closed: (
-      // TODO: Move to dotcom?
-      border: transparent,
-
-      // Mapping of v1 variables to v2 variables
       text: var(--color-fg-on-emphasis),
       bg: var(--color-danger-emphasis),
+      // border: transparent,
     ),
   ),
 
-  merge-box: (
-    // TODO: Move to dotcom?
-    success-icon-border: transparent,
-    success-indicator-border: transparent,
-    merged-icon-border: transparent,
-    neutral-icon-border: transparent,
-    neutral-indicator-border: transparent,
-    warning-icon-border: transparent,
-    warning-merge-highlight: transparent,
-    error-icon-border: transparent,
-    error-indicator-border: transparent,
+  topic-tag: (
+    text: var(--color-accent-fg),
+    bg: var(--color-accent-muted),
+    hover-bg: var(--color-accent-highlighter),
+    active-bg: var(--color-accent-muted),
+  ),
 
-    // Mapping of v1 variables to v2 variables
+  merge-box: (
     success-icon-bg: var(--color-success-emphasis),
     success-icon-text: var(--color-fg-on-emphasis),
+    // success-icon-border: transparent,
     success-indicator-bg: var(--color-success-emphasis),
+    // success-indicator-border: transparent,
     merged-icon-bg: var(--color-done-emphasis),
     merged-icon-text: var(--color-fg-on-emphasis),
+    // merged-icon-border: transparent,
     merged-box-border: var(--color-done-emphasis),
     neutral-icon-bg: var(--color-neutral-emphasis),
     neutral-icon-text: var(--color-fg-on-emphasis),
+    // neutral-icon-border: transparent,
     neutral-indicator-bg: var(--color-neutral-emphasis),
+    // neutral-indicator-border: transparent,
     warning-icon-bg: var(--color-warning-emphasis),
     warning-icon-text: var(--color-fg-on-emphasis),
+    // warning-icon-border: transparent,
     warning-box-border: var(--color-warning-emphasis),
+    // warning-merge-highlight: transparent,
     error-icon-bg: var(--color-danger-emphasis),
     error-icon-text: var(--color-fg-on-emphasis),
+    // error-icon-border: transparent,
     error-indicator-bg: var(--color-danger-emphasis),
+    // error-indicator-border: transparent,
   ),
 
   project: (
-    // TODO: Move to dotcom?
     card-bg: $white,
     header-bg: $gray-9,
     sidebar-bg: $white,
     gradient-in: $white,
-    gradient-out: rgba($white, 0),
+    // gradient-out: rgba($white, 0),
   ),
 
-  checks: (
-    // TODO: Move to dotcom?
-    bg: $gray-9,
+  // checks: (
+  //   // TODO: Move to dotcom?
+  //   bg: $gray-9,
 
-    run-border-width: 0px,
-    container-border-width: 0px,
+  //   run-border-width: 0px,
+  //   container-border-width: 0px,
 
-    text-primary: $gray-0,
-    text-secondary: $gray-4,
-    text-link: $blue-3,
+  //   text-primary: $gray-0,
+  //   text-secondary: $gray-4,
+  //   text-link: $blue-3,
 
-    btn-icon: $gray-3,
-    btn-hover-icon: $gray-0,
-    btn-hover-bg: rgba(255, 255, 255, 0.125),
+  //   btn-icon: $gray-3,
+  //   btn-hover-icon: $gray-0,
+  //   btn-hover-bg: rgba(255, 255, 255, 0.125),
 
-    input-text: $gray-1,
-    input-placeholder-text: $gray-4,
-    input-focus-text: $gray-4,
-    input-bg: $gray-8,
-    input-shadow: none,
+  //   input-text: $gray-1,
+  //   input-placeholder-text: $gray-4,
+  //   input-focus-text: $gray-4,
+  //   input-bg: $gray-8,
+  //   input-shadow: none,
 
-    dropdown-text: $gray-3,
-    dropdown-bg: $gray-8,
-    dropdown-border: $gray-7,
-    dropdown-hover-text: $gray-0,
-    dropdown-hover-bg: $gray-7,
-    dropdown-btn-hover-text: $gray-0,
-    dropdown-btn-hover-bg: $gray-8,
+  //   dropdown-text: $gray-3,
+  //   dropdown-bg: $gray-8,
+  //   dropdown-border: $gray-7,
+  //   dropdown-hover-text: $gray-0,
+  //   dropdown-hover-bg: $gray-7,
+  //   dropdown-btn-hover-text: $gray-0,
+  //   dropdown-btn-hover-bg: $gray-8,
 
-    scrollbar-thumb-bg: $gray-6,
+  //   scrollbar-thumb-bg: $gray-6,
 
-    header-label-text: $gray-2,
-    header-label-open-text: $gray-0,
-    header-border: $gray-8,
-    header-icon: $gray-4,
+  //   header-label-text: $gray-2,
+  //   header-label-open-text: $gray-0,
+  //   header-border: $gray-8,
+  //   header-icon: $gray-4,
 
-    line-text: $gray-2,
-    line-num-text: rgba($gray-4, 0.75),
-    line-timestamp-text: $gray-4,
-    line-hover-bg: $gray-8,
-    line-selected-bg: rgba($blue-4, 0.15),
-    line-selected-num-text: $blue-3,
-    line-dt-fm-text: $gray-9,
-    line-dt-fm-bg: $yellow-5,
+  //   line-text: $gray-2,
+  //   line-num-text: rgba($gray-4, 0.75),
+  //   line-timestamp-text: $gray-4,
+  //   line-hover-bg: $gray-8,
+  //   line-selected-bg: rgba($blue-4, 0.15),
+  //   line-selected-num-text: $blue-3,
+  //   line-dt-fm-text: $gray-9,
+  //   line-dt-fm-bg: $yellow-5,
 
-    gate-bg: rgba($yellow-6, 0.15),
-    gate-text: $gray-2,
-    gate-waiting-text: $gray-3,
+  //   gate-bg: rgba($yellow-6, 0.15),
+  //   gate-text: $gray-2,
+  //   gate-waiting-text: $gray-3,
 
-    step-header-open-bg: $gray-8,
-    step-error-text: $red-3,
-    step-warning-text: $yellow-3,
+  //   step-header-open-bg: $gray-8,
+  //   step-error-text: $red-3,
+  //   step-warning-text: $yellow-3,
 
-    logline-text: $gray-4,
-    logline-num-text: rgba($gray-4, 0.75),
-    logline-debug-text: $purple-3,
-    logline-error-text: $gray-2,
-    logline-error-num-text: $red-3,
-    logline-error-bg: rgba($red-6, 0.15),
-    logline-warning-text: $gray-2,
-    logline-warning-num-text: $yellow-3,
-    logline-warning-bg: rgba($yellow-6, 0.15),
-    logline-command-text: $blue-3,
-    logline-section-text: $green-3,
+  //   logline-text: $gray-4,
+  //   logline-num-text: rgba($gray-4, 0.75),
+  //   logline-debug-text: $purple-3,
+  //   logline-error-text: $gray-2,
+  //   logline-error-num-text: $red-3,
+  //   logline-error-bg: rgba($red-6, 0.15),
+  //   logline-warning-text: $gray-2,
+  //   logline-warning-num-text: $yellow-3,
+  //   logline-warning-bg: rgba($yellow-6, 0.15),
+  //   logline-command-text: $blue-3,
+  //   logline-section-text: $green-3,
 
-    // used in the Actions logs
-    ansi: (
-      black: $gray-9,
-      black-bright: $gray-8,
-      white: $gray-2,
-      white-bright: $gray-2,
-      gray: $gray-4,
-      red: $red-3,
-      red-bright: $red-2,
-      green: $green-3,
-      green-bright: $green-2,
-      yellow: $yellow-3,
-      yellow-bright: $yellow-2,
-      blue: $blue-3,
-      blue-bright: $blue-2,
-      magenta: $purple-3,
-      magenta-bright: $purple-2,
-      cyan: #76e3ea, // custom
-      cyan-bright: #b3f0ff, // custom
-    ),
-  ),
+  //   // used in the Actions logs
+  //   ansi: (
+  //     black: $gray-9,
+  //     black-bright: $gray-8,
+  //     white: $gray-2,
+  //     white-bright: $gray-2,
+  //     gray: $gray-4,
+  //     red: $red-3,
+  //     red-bright: $red-2,
+  //     green: $green-3,
+  //     green-bright: $green-2,
+  //     yellow: $yellow-3,
+  //     yellow-bright: $yellow-2,
+  //     blue: $blue-3,
+  //     blue-bright: $blue-2,
+  //     magenta: $purple-3,
+  //     magenta-bright: $purple-2,
+  //     cyan: #76e3ea, // custom
+  //     cyan-bright: #b3f0ff, // custom
+  //   ),
+  // ),
 
   intro-shelf: (
-    gradient-out: rgba($white, 0),
-
-    // Mapping of v1 variables to v2 variables
     gradient-left: var(--color-accent-muted),
     gradient-right: var(--color-success-muted),
     gradient-in: var(--color-canvas-default),
+    // gradient-out: rgba($white, 0),
   ),
 
-  // TODO: Move to dotcom
   marketing-icon: (
     primary: $blue-4,
     secondary: $blue-3,
   ),
 
+  // TODO: Move to dotcom?
   prettylights: (
-    // TODO: Move to dotcom?
     syntax: (
       comment: $gray-5,
       constant: $blue-6,
@@ -841,20 +993,8 @@ $export: (
     ),
   ),
 
+  // TODO: Move to dotcom?
   codemirror: (
-    // TODO: Move to dotcom?
-    syntax: (
-      comment: $gray-5,
-      constant: $blue-6,
-      entity: $purple-5,
-      keyword: $red-5,
-      storage: $red-5,
-      string: $blue-8,
-      support: $blue-6,
-      variable: $orange-6,
-    ),
-
-    // Mapping of v1 variables to v2 variables
     text: var(--color-fg-default),
     bg: var(--color-canvas-default),
     gutters-bg: var(--color-canvas-default),
@@ -866,6 +1006,17 @@ $export: (
     activeline-bg: var(--color-neutral-muted),
     matchingbracket-text: var(--color-fg-default),
     lines-bg: var(--color-canvas-default),
+
+    syntax: (
+      comment: $gray-5,
+      constant: $blue-6,
+      entity: $purple-5,
+      keyword: $red-5,
+      storage: $red-5,
+      string: $blue-8,
+      support: $blue-6,
+      variable: $orange-6,
+    ),
   ),
 
   // TODO: Move to VS Code theme?
@@ -888,30 +1039,4 @@ $export: (
     cyan: #1b7c83, // custom
     cyan-bright: #3192aa, // custom
   ),
-
-  // Mapping of v1 variables to v2 variables
-  text: $text,
-  icon: $icon,
-
-  alert: $alert,
-  blankslate: $blankslate,
-  counter: $counter,
-  label: $label,
-  box: $box,
-  branch-name: $branch-name,
-  markdown: $markdown,
-  filter-item: $filter-item,
-  drag-and-drop: $drag-and-drop,
-  previewable-comment-form: $previewable-comment-form,
-  verified-badge: $verified-badge,
-  social-count: $social-count,
-  tooltip: $tooltip,
-  search-keyword: $search-keyword,
-  diffstat: $diffstat,
-
-  highlight: $highlight,
-  blob: $blob,
-  diff: $diff,
-  footer-invertocat: $footer-invertocat,
-  topic-tag: $topic-tag,
 );
