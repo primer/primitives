@@ -78,29 +78,6 @@ $state: (
   ),
 );
 
-// $fade: (
-//   fg-10: $black-fade-10,
-//   fg-15: $black-fade-15,
-//   fg-30: $black-fade-30,
-//   fg-50: $black-fade-50,
-//   fg-70: $black-fade-70,
-//   fg-85: $black-fade-85,
-
-//   black-10: $black-fade-10,
-//   black-15: $black-fade-15,
-//   black-30: $black-fade-30,
-//   black-50: $black-fade-50,
-//   black-70: $black-fade-70,
-//   black-85: $black-fade-85,
-
-//   white-10: $white-fade-10,
-//   white-15: $white-fade-15,
-//   white-30: $white-fade-30,
-//   white-50: $white-fade-50,
-//   white-70: $white-fade-70,
-//   white-85: $white-fade-85,
-// );
-
 // Components
 
 $alert: (
@@ -152,10 +129,6 @@ $counter: (
   ),
 );
 
-// $dropdown: (
-  // shadow: 0 8px 24px rgba($gray-4, 0.2),
-// );
-
 $label: (
   border: var(--color-border-default),
   primary: (
@@ -186,106 +159,6 @@ $label: (
     text: var(--color-severe-fg),
     border: var(--color-severe-emphasis),
   ),
-);
-
-$input: (
-  bg: var(--color-canvas-default),
-  // contrast-bg: $gray-0,
-  border: var(--color-border-default),
-  // shadow: inset 0 1px 2px rgba($black, 0.075),
-
-  disabled-bg: var(--color-neutral-muted),
-  disabled-border: var(--color-border-default),
-
-  warning-border: var(--color-warning-emphasis),
-  error-border: var(--color-danger-emphasis),
-
-  tooltip: (
-    success: (
-      text: var(--color-fg-default),
-      bg: var(--color-success-muted),
-      border: var(--color-success-highlighter),
-    ),
-
-    warning: (
-      text: var(--color-fg-default),
-      bg: var(--color-warning-muted),
-      border: var(--color-warning-highlighter),
-    ),
-
-    error: (
-      text: var(--color-fg-default),
-      bg: var(--color-danger-muted),
-      border: var(--color-danger-highlighter),
-    ),
-  ),
-);
-
-$avatar: (
-  bg: var(--color-canvas-default),
-  // border: transparent,
-  stack-fade: var(--color-neutral-highlighter),
-  stack-fade-more: var(--color-neutral-muted),
-  // child-shadow: -2px -2px 0 rgba($white, 0.8),
-);
-
-$toast: (
-  text: var(--color-fg-default),
-  bg: var(--color-canvas-default),
-  border: var(--color-border-default),
-  // shadow: var(--color-shadow-large),
-  icon: var(--color-fg-on-emphasis),
-  icon-bg: var(--color-accent-emphasis),
-  // icon-border: transparent,
-
-  success: (
-    text: var(--color-fg-default),
-    border: var(--color-border-default),
-    icon: var(--color-fg-on-emphasis),
-    icon-bg: var(--color-success-emphasis),
-    // icon-border: transparent,
-  ),
-
-  warning: (
-    text: var(--color-fg-default),
-    border: var(--color-border-default),
-    icon: var(--color-fg-default),
-    icon-bg: var(--color-warning-emphasis),
-    // icon-border: transparent,
-  ),
-
-  danger: (
-    text: var(--color-fg-default),
-    border: var(--color-border-default),
-    icon: var(--color-fg-on-emphasis),
-    icon-bg: var(--color-danger-emphasis),
-    // icon-border: transparent,
-  ),
-
-  loading: (
-    text: var(--color-fg-default),
-    border: var(--color-border-default),
-    icon: var(--color-fg-on-emphasis),
-    icon-bg: var(--color-neutral-emphasis),
-    // icon-border: transparent,
-  ),
-);
-
-$timeline: (
-  text: var(--color-fg-muted),
-  badge-bg: var(--color-neutral-muted),
-  // badge-success-border: transparent,
-  target-badge-border: var(--color-accent-emphasis),
-  target-badge-shadow: var(--color-accent-highlighter),
-);
-
-$select-menu: (
-  border-secondary: var(--color-border-divider),
-  // shadow: 0 0 18px rgba($black, 0.4),
-  backdrop-bg: var(--color-canvas-backdrop),
-  // backdrop-border: transparent,
-  // tap-highlight: rgba($gray-3, 0.5),
-  // tap-focus-bg: $blue-1,
 );
 
 $box: (

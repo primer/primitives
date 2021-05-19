@@ -86,6 +86,83 @@ $export: (
     muted: rgba($pink-4, 0.1),
   ),
 
+  bg: (
+    canvas: var(--color-canvas-default),
+    canvas-mobile: var(--color-canvas-mobile),
+    canvas-inverse: var(--color-neutral-emphasis),
+    canvas-inset: var(--color-canvas-inset),
+    primary: var(--color-canvas-default),
+    // secondary: $gray-9, // TODO
+    // tertiary: $gray-8, // TODO
+    overlay: var(--color-canvas-overlay),
+    backdrop: var(--color-canvas-backdrop),
+    info: var(--color-accent-muted),
+    info-inverse: var(--color-accent-emphasis),
+    danger: var(--color-danger-muted),
+    danger-inverse: var(--color-danger-emphasis),
+    success: var(--color-success-muted),
+    success-inverse: var(--color-success-emphasis),
+    warning: var(--color-warning-muted),
+    warning-inverse: var(--color-warning-emphasis),
+  ),
+
+  // shadow: (
+  //   small: 0 0 transparent,
+  //   medium: 0 3px 6px $black,
+  //   large: 0 8px 24px $black,
+  //   extra-large: 0 12px 48px $black,
+
+  //   highlight: 0 0 transparent, // top highlight
+  //   inset: 0 0 transparent, // top inner shadow
+  // ),
+
+  state: (
+    hover: (
+      primary-bg: var(--color-accent-emphasis),
+      primary-border: var(--color-accent-emphasis),
+      primary-text: var(--color-fg-on-emphasis),
+      primary-icon: var(--color-fg-on-emphasis),
+      secondary-bg: var(--color-neutral-muted),
+      secondary-border: var(--color-neutral-muted),
+    ),
+
+    selected: (
+      primary-bg: var(--color-accent-emphasis),
+      primary-border: var(--color-accent-emphasis),
+      primary-text:  var(--color-fg-on-emphasis),
+      primary-icon:  var(--color-fg-on-emphasis),
+    ),
+
+    focus: (
+      border: var(--color-accent-emphasis),
+      // shadow: 0 0 0 3px $blue-8, // TODO: blue focus ring
+    ),
+  ),
+
+  // fade: (
+  //   fg-10: $white-fade-10,
+  //   fg-15: $white-fade-15,
+  //   fg-30: $white-fade-30,
+  //   fg-50: $white-fade-50,
+  //   fg-70: $white-fade-70,
+  //   fg-85: $white-fade-85,
+
+  //   black-10: $black-fade-10,
+  //   black-15: $black-fade-15,
+  //   black-30: $black-fade-30,
+  //   black-50: $black-fade-50,
+  //   black-70: $black-fade-70,
+  //   black-85: $black-fade-85,
+
+  //   white-10: $white-fade-10,
+  //   white-15: $white-fade-15,
+  //   white-30: $white-fade-30,
+  //   white-50: $white-fade-50,
+  //   white-70: $white-fade-70,
+  //   white-85: $white-fade-85,
+  // ),
+
+
   // Components
 
   btn: (
@@ -816,10 +893,6 @@ $export: (
   // Mapping of v1 variables to v2 variables
   text: $text,
   icon: $icon,
-  bg: $bg,
-  // shadow: $shadow,
-  state: $state,
-  // fade: $fade,
 
   alert: $alert,
   blankslate: $blankslate,
