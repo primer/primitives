@@ -29,9 +29,9 @@ $export: (
     // Mapping of v1 variables to v2 variables
     primary: var(--color-border-default),
     secondary: var(--color-border-divider),
-    // tertiary: $gray-3, // TODO
+    tertiary: var(--color-neutral-highlighter),
     overlay: var(--color-border-default),
-    // inverse: $white, // TODO
+    inverse: var(--color-fg-on-emphasis), // or move to marketing
     info: var(--color-accent-emphasis),
     danger: var(--color-danger-emphasis),
     success: var(--color-success-emphasis),
@@ -99,26 +99,7 @@ $export: (
 
   text: $text,
   icon: $icon,
-
-  bg: (
-    canvas: var(--color-canvas-default),
-    canvas-mobile: var(--color-canvas-mobile),
-    canvas-inverse: var(--color-neutral-emphasis),
-    canvas-inset: var(--color-canvas-inset),
-    primary: var(--color-canvas-default),
-    // secondary: $gray-0, // TODO
-    // tertiary: $gray-1, // TODO
-    overlay: var(--color-canvas-overlay),
-    backdrop: var(--color-canvas-backdrop),
-    info: var(--color-accent-muted),
-    info-inverse: var(--color-accent-emphasis),
-    danger: var(--color-danger-muted),
-    danger-inverse: var(--color-danger-emphasis),
-    success: var(--color-success-muted),
-    success-inverse: var(--color-success-emphasis),
-    warning: var(--color-warning-muted),
-    warning-inverse: var(--color-warning-emphasis),
-  ),
+  bg: $bg,
 
   // shadow: (
   //   small: 0 1px 0 rgba($black, 0.04),
