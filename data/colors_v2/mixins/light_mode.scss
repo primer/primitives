@@ -38,6 +38,17 @@ $export: (
     warning: var(--color-warning-emphasis),
   ),
 
+  shadow: (
+    small: 0 1px 0 rgba($black, 0.04),
+    medium: 0 3px 6px rgba($gray-4, 0.15),
+    large: 0 8px 24px rgba($gray-4, 0.2),
+    extra-large: 0 12px 48px rgba($gray-4, 0.3),
+
+    // Mapping of v1 variables to v2 variables
+    highlight: var(--color-primer-shadow-highlight), // top highlight
+    inset: var(--color-primer-shadow-inset), // top inner shadow
+  ),
+
   // Roles
   neutral: (
     fg: $gray-5,
@@ -95,21 +106,22 @@ $export: (
     muted: $pink-0,
   ),
 
+  // Primer
+  // This is only meant for Primer components
+
+  primer: (
+    shadow: (
+      highlight: inset 0 1px 0 rgba($white, 0.25), // top highlight
+      inset: inset 0 1px 0 rgba($gray-2, 0.2), // top inner shadow
+      focus: 0 0 0 3px rgba($blue-5, 0.3), // blue focus ring
+    ),
+  ),
+
   // Mapping of v1 variables to v2 variables
 
   text: $text,
   icon: $icon,
   bg: $bg,
-
-  // shadow: (
-  //   small: 0 1px 0 rgba($black, 0.04),
-  //   medium: 0 3px 6px rgba($gray-4, 0.15),
-  //   large: 0 8px 24px rgba($gray-4, 0.2),
-  //   extra-large: 0 12px 48px rgba($gray-4, 0.3),
-
-  //   highlight: inset 0 1px 0 rgba($white, 0.25), // top highlight
-  //   inset: inset 0 1px 0 rgba($gray-2, 0.2), // top inner shadow
-  // ),
 
   state: (
     hover: (
@@ -130,7 +142,7 @@ $export: (
 
     focus: (
       border: var(--color-accent-emphasis),
-      // shadow: 0 0 0 3px rgba($blue-5, 0.3), // TODO: blue focus ring
+      shadow: var(--color-primer-shadow-focus), // blue focus ring
     ),
   ),
 
