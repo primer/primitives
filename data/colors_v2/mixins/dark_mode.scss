@@ -721,11 +721,11 @@ $export: (
 
   diff-blob: (
     num-text: var(--color-neutral-fg),
-    // num-hover-text: rgba($white, 0.6),
+    num-hover-text: var(--color-fg-default),
 
     addition: (
       num-text: var(--color-success-fg),
-      // num-hover-text: $green-1,
+      num-hover-text:  var(--color-fg-default),
       num-bg: var(--color-success-highlighter),
       line-bg: var(--color-success-muted),
       word-bg: var(--color-success-highlighter),
@@ -733,7 +733,7 @@ $export: (
 
     deletion: (
       num-text: var(--color-danger-fg),
-      // num-hover-text: $red-2,
+      num-hover-text:  var(--color-fg-default),
       num-bg: var(--color-danger-highlighter),
       line-bg: var(--color-danger-muted),
       word-bg: var(--color-danger-highlighter),
@@ -747,9 +747,9 @@ $export: (
 
     empty-block-bg: var(--color-neutral-muted), // for split diffs
 
-    // selected-line-highlight-bg: rgba($yellow-4, 0.1),
-    // selected-line-highlight-border: $yellow-4,
-    // selected-line-highlight-mix-blend-mode: normal,
+    selected-line-highlight-bg: var(--color-warning-muted),
+    selected-line-highlight-border: var(--color-warning-highlighter),
+    selected-line-highlight-mix-blend-mode: screen,
 
     expander: (
       icon: var(--color-fg-muted),
@@ -761,12 +761,11 @@ $export: (
     comment-button: (
       icon: var(--color-fg-on-emphasis),
       bg: var(--color-accent-emphasis),
-      // gradient-bg: lighten($blue-5, 5%), // gradient top
+      gradient-bg: var(--color-deprecated), // TODO: remove
     ),
   ),
 
   global-nav: (
-    // TODO: Move to dotcom
     logo: $gray-0,
     bg: $gray-8,
     text: $gray-1,
@@ -777,20 +776,20 @@ $export: (
     input-placeholder: $gray-5,
   ),
 
-  // calendar-graph: (
-  //   /*bg: $white,
-  //   border: $white,*/
-  //   day-bg: $gray-8,
-  //   day-border: rgba(27, 31, 35, 0.06),
-  //   day-L1-bg: #0E4429,
-  //   day-L2-bg: #006D32,
-  //   day-L3-bg: #26A641,
-  //   day-L4-bg: #39D353,
-  //   day-L4-border: rgba(255, 255, 255, 0.05),
-  //   day-L3-border: rgba(255, 255, 255, 0.05),
-  //   day-L2-border: rgba(255, 255, 255, 0.05),
-  //   day-L1-border: rgba(255, 255, 255, 0.05),
-  // ),
+  calendar-graph: (
+    /*bg: $white,
+    border: $white,*/
+    day-bg: $gray-8,
+    day-border: rgba(27, 31, 35, 0.06),
+    day-L1-bg: #0E4429,
+    day-L2-bg: #006D32,
+    day-L3-bg: #26A641,
+    day-L4-bg: #39D353,
+    day-L4-border: rgba(255, 255, 255, 0.05),
+    day-L3-border: rgba(255, 255, 255, 0.05),
+    day-L2-border: rgba(255, 255, 255, 0.05),
+    day-L1-border: rgba(255, 255, 255, 0.05),
+  ),
 
   footer-invertocat: (
     octicon: var(--color-fg-inactive),
@@ -801,25 +800,25 @@ $export: (
     draft: (
       text: var(--color-fg-on-emphasis),
       bg: var(--color-neutral-emphasis),
-      // border: rgba($gray-3, 0.4),
+      border: var(--color-deprecated),
     ),
 
     open: (
       text: var(--color-fg-on-emphasis),
       bg: var(--color-success-emphasis),
-      // border: rgba($green-3, 0.4),
+      border: var(--color-deprecated),
     ),
 
     merged: (
       text: var(--color-fg-on-emphasis),
       bg: var(--color-done-emphasis),
-      // border: rgba($purple-3, 0.4),
+      border: var(--color-deprecated),
     ),
 
     closed: (
       text: var(--color-fg-on-emphasis),
       bg: var(--color-danger-emphasis),
-      // border: rgba($red-5, 0.4),
+      border: var(--color-deprecated),
     ),
   ),
 
@@ -833,28 +832,28 @@ $export: (
   merge-box: (
     success-icon-bg: var(--color-success-emphasis),
     success-icon-text: var(--color-fg-on-emphasis),
-    // success-icon-border: rgba($green-4, 0.4),
+    success-icon-border: var(--color-deprecated),
     success-indicator-bg: var(--color-success-emphasis),
-    // success-indicator-border: $green-4,
+    success-indicator-border: var(--color-deprecated),
     merged-icon-bg: var(--color-done-emphasis),
     merged-icon-text: var(--color-fg-on-emphasis),
-    // merged-icon-border: rgba($purple-3, 0.4),
+    merged-icon-border: var(--color-deprecated),
     merged-box-border: var(--color-done-emphasis),
     neutral-icon-bg: var(--color-neutral-emphasis),
     neutral-icon-text: var(--color-fg-on-emphasis),
-    // neutral-icon-border: rgba($gray-1, 0.4),
+    neutral-icon-border: var(--color-deprecated),
     neutral-indicator-bg: var(--color-neutral-emphasis),
-    // neutral-indicator-border: $gray-4,
+    neutral-indicator-border: var(--color-deprecated),
     warning-icon-bg: var(--color-warning-emphasis),
     warning-icon-text: var(--color-fg-on-emphasis),
-    // warning-icon-border: rgba($yellow-4, 0.4),
+    warning-icon-border: var(--color-deprecated),
     warning-box-border: var(--color-warning-emphasis),
-    // warning-merge-highlight: rgba($yellow-4, 0.1),
+    warning-merge-highlight: var(--color-deprecated),
     error-icon-bg: var(--color-danger-emphasis),
     error-icon-text: var(--color-fg-on-emphasis),
-    // error-icon-border: rgba($red-4, 0.4),
+    error-icon-border: var(--color-deprecated),
     error-indicator-bg: var(--color-danger-emphasis),
-    // error-indicator-border: $red-4,
+    error-indicator-border: var(--color-deprecated),
   ),
 
   project: (
@@ -862,7 +861,7 @@ $export: (
     header-bg: $gray-9,
     sidebar-bg: $gray-8,
     gradient-in: $gray-8,
-    // gradient-out: rgba($gray-8, 0),
+    gradient-out: rgba($gray-8, 0),
   ),
 
   // checks: (
@@ -956,7 +955,7 @@ $export: (
     gradient-left: var(--color-accent-muted),
     gradient-right: var(--color-success-muted),
     gradient-in: var(--color-canvas-default),
-    // gradient-out: rgba($gray-9, 0),
+    gradient-out: transparent,
   ),
 
   marketing-icon: (

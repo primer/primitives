@@ -721,11 +721,11 @@ $export: (
 
   diff-blob: (
     num-text: var(--color-neutral-fg),
-    // num-hover-text: rgba($black, 0.6),
+    num-hover-text: var(--color-fg-default),
 
     addition: (
       num-text: var(--color-success-fg),
-      // num-hover-text: rgba($black, 0.6),
+      num-hover-text:  var(--color-fg-default),
       num-bg: var(--color-success-highlighter),
       line-bg: var(--color-success-muted),
       word-bg: var(--color-success-highlighter),
@@ -733,7 +733,7 @@ $export: (
 
     deletion: (
       num-text: var(--color-danger-fg),
-      // num-hover-text: rgba($black, 0.6),
+      num-hover-text:  var(--color-fg-default),
       num-bg: var(--color-danger-highlighter),
       line-bg: var(--color-danger-muted),
       word-bg: var(--color-danger-highlighter),
@@ -747,9 +747,9 @@ $export: (
 
     empty-block-bg: var(--color-neutral-muted), // for split diffs
 
-    // selected-line-highlight-bg: rgba($yellow-4, 0.2),
-    // selected-line-highlight-border: $yellow-5,
-    // selected-line-highlight-mix-blend-mode: multiply,
+    selected-line-highlight-bg: var(--color-warning-muted),
+    selected-line-highlight-border: var(--color-warning-highlighter),
+    selected-line-highlight-mix-blend-mode: multiply,
 
     expander: (
       icon: var(--color-fg-muted),
@@ -761,7 +761,7 @@ $export: (
     comment-button: (
       icon: var(--color-fg-on-emphasis),
       bg: var(--color-accent-emphasis),
-      // gradient-bg: lighten($blue-5, 5%), // gradient top
+      gradient-bg: var(--color-deprecated), // TODO: remove
     ),
   ),
 
@@ -776,20 +776,20 @@ $export: (
     input-placeholder: $gray-4,
   ),
 
-  // calendar-graph: (
-  //   /*bg: $white,
-  //   border: $white,*/
-  //   day-bg: #EBEDF0,
-  //   day-border: rgba(27, 31, 35, 0.06),
-  //   day-L1-bg: #9BE9A8,
-  //   day-L2-bg: #40C463,
-  //   day-L3-bg: #30A14E,
-  //   day-L4-bg: #216E39,
-  //   day-L4-border: rgba(27, 31, 35, 0.06),
-  //   day-L3-border: rgba(27, 31, 35, 0.06),
-  //   day-L2-border: rgba(27, 31, 35, 0.06),
-  //   day-L1-border: rgba(27, 31, 35, 0.06),
-  // ),
+  calendar-graph: (
+    /*bg: $white,
+    border: $white,*/
+    day-bg: #EBEDF0,
+    day-border: rgba(27, 31, 35, 0.06),
+    day-L1-bg: #9BE9A8,
+    day-L2-bg: #40C463,
+    day-L3-bg: #30A14E,
+    day-L4-bg: #216E39,
+    day-L4-border: rgba(27, 31, 35, 0.06),
+    day-L3-border: rgba(27, 31, 35, 0.06),
+    day-L2-border: rgba(27, 31, 35, 0.06),
+    day-L1-border: rgba(27, 31, 35, 0.06),
+  ),
 
   footer-invertocat: (
     octicon: var(--color-fg-inactive),
@@ -800,25 +800,25 @@ $export: (
     draft: (
       text: var(--color-fg-on-emphasis),
       bg: var(--color-neutral-emphasis),
-      // border: transparent,
+      border: var(--color-deprecated),
     ),
 
     open: (
       text: var(--color-fg-on-emphasis),
       bg: var(--color-success-emphasis),
-      // border: transparent,
+      border: var(--color-deprecated),
     ),
 
     merged: (
       text: var(--color-fg-on-emphasis),
       bg: var(--color-done-emphasis),
-      // border: transparent,
+      border: var(--color-deprecated),
     ),
 
     closed: (
       text: var(--color-fg-on-emphasis),
       bg: var(--color-danger-emphasis),
-      // border: transparent,
+      border: var(--color-deprecated),
     ),
   ),
 
@@ -832,28 +832,28 @@ $export: (
   merge-box: (
     success-icon-bg: var(--color-success-emphasis),
     success-icon-text: var(--color-fg-on-emphasis),
-    // success-icon-border: transparent,
+    success-icon-border: var(--color-deprecated),
     success-indicator-bg: var(--color-success-emphasis),
-    // success-indicator-border: transparent,
+    success-indicator-border: var(--color-deprecated),
     merged-icon-bg: var(--color-done-emphasis),
     merged-icon-text: var(--color-fg-on-emphasis),
-    // merged-icon-border: transparent,
+    merged-icon-border: var(--color-deprecated),
     merged-box-border: var(--color-done-emphasis),
     neutral-icon-bg: var(--color-neutral-emphasis),
     neutral-icon-text: var(--color-fg-on-emphasis),
-    // neutral-icon-border: transparent,
+    neutral-icon-border: var(--color-deprecated),
     neutral-indicator-bg: var(--color-neutral-emphasis),
-    // neutral-indicator-border: transparent,
+    neutral-indicator-border: var(--color-deprecated),
     warning-icon-bg: var(--color-warning-emphasis),
     warning-icon-text: var(--color-fg-on-emphasis),
-    // warning-icon-border: transparent,
+    warning-icon-border: var(--color-deprecated),
     warning-box-border: var(--color-warning-emphasis),
-    // warning-merge-highlight: transparent,
+    warning-merge-highlight: var(--color-deprecated),
     error-icon-bg: var(--color-danger-emphasis),
     error-icon-text: var(--color-fg-on-emphasis),
-    // error-icon-border: transparent,
+    error-icon-border: var(--color-deprecated),
     error-indicator-bg: var(--color-danger-emphasis),
-    // error-indicator-border: transparent,
+    error-indicator-border: var(--color-deprecated),
   ),
 
   project: (
@@ -861,7 +861,7 @@ $export: (
     header-bg: $gray-9,
     sidebar-bg: $white,
     gradient-in: $white,
-    // gradient-out: rgba($white, 0),
+    gradient-out: rgba($white, 0),
   ),
 
   // checks: (
@@ -955,7 +955,7 @@ $export: (
     gradient-left: var(--color-accent-muted),
     gradient-right: var(--color-success-muted),
     gradient-in: var(--color-canvas-default),
-    // gradient-out: rgba($white, 0),
+    gradient-out: transparent,
   ),
 
   marketing-icon: (
