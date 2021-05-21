@@ -1,6 +1,7 @@
 import set from 'lodash/set'
 import chalk from 'chalk'
-import { SassMap, stringifySassPrimitive, renderSassList } from "./scss"
+import flatten from 'flat'
+import kebabCase from 'lodash/kebabCase'
 
 function exhaustiveCheck(anything: never) {}
 
@@ -33,7 +34,15 @@ export default class VariableCollection {
     })
   }
 
-  private iterateVarsFromSassExports(data: SassMap, callback: (path: PathItem[], value: any) => void, path: string[] = []) {
+  public addFromObject(data: Record<string, unknown>) {
+    const flattened: Record<string, unknown> = flatten(data)
+
+    for (const [key, value] of Object.entries(flattened)) {
+      const path = key.split('.').map(kebabCase)
+      this.add(path, value)
+    }
+  }
+
     for (let key of Object.keys(data.value)) {
       // [MKT] Numeric keys for Sass maps are not supported due to
       // lookup semantics in non-CSS projects (like Primer React)
