@@ -1,5 +1,5 @@
 import merge from 'deepmerge'
-import deprecatedVars from './deprecated_vars'
+import deprecatedVars from './utils/deprecated_vars'
 
 const vars = {
   fg: {
