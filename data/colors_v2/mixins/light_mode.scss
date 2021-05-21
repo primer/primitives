@@ -2,6 +2,15 @@
 
 @import "./migration.scss";
 
+// Marketing
+// TODO: Replace with scale colors
+$mktg-blue-primary:     #4969ed;
+$mktg-blue-secondary:   #3355e0;
+$mktg-green-primary:    #2ea44f;
+$mktg-green-secondary:  #22863a;
+$mktg-purple-primary:   #6f57ff;
+$mktg-purple-secondary: #614eda;
+
 $export: (
   // Scales
   scale: $scale,
@@ -591,84 +600,82 @@ $export: (
   ),
 
   // Marketing
+  // TODO: Migrate once new marketing colors (lemon, lime, indigo) are added
+  mktg: (
+    success: mix($green-5, $green-4, 50%),
+    info: mix($blue-4, $blue-5, 42%),
 
-  // TODO: Move to Primer CSS?
-  // Doesn't get used for color modes (yet)
-  // mktg: (
-  //   success: mix($green-5, $green-4, 50%),
-  //   info: mix($blue-4, $blue-5, 42%),
+    bg-shade-gradient: (
+      top: rgba($black, 0.065),
+      bottom: rgba($black, 0),
+    ),
 
-  //   bg-shade-gradient: (
-  //     top: rgba($black, 0.065),
-  //     bottom: rgba($black, 0),
-  //   ),
+    btn: (
+      bg: (
+        top: lighten($mktg-blue-primary, 5%),
+        bottom: $mktg-blue-primary,
+      ),
+      bg-overlay: (
+        top: lighten($mktg-blue-secondary, 5%),
+        bottom: $mktg-blue-secondary,
+      ),
+      text: $white,
 
-  //   btn: (
-  //     bg: (
-  //       top: lighten($mktg-blue-primary, 5%),
-  //       bottom: $mktg-blue-primary,
-  //     ),
-  //     bg-overlay: (
-  //       top: lighten($mktg-blue-secondary, 5%),
-  //       bottom: $mktg-blue-secondary,
-  //     ),
-  //     text: $white,
+      primary: (
+        bg: (
+          top: lighten($mktg-green-primary, 5%),
+          bottom: $mktg-green-primary,
+        ),
+        bg-overlay: (
+          top: lighten($mktg-green-secondary, 5%),
+          bottom: $mktg-green-secondary,
+        ),
+        text: $white,
+      ),
 
-  //     primary: (
-  //       bg: (
-  //         top: lighten($mktg-green-primary, 5%),
-  //         bottom: $mktg-green-primary,
-  //       ),
-  //       bg-overlay: (
-  //         top: lighten($mktg-green-secondary, 5%),
-  //         bottom: $mktg-green-secondary,
-  //       ),
-  //       text: $white,
-  //     ),
+      enterprise: (
+        bg: (
+          top: lighten($mktg-purple-primary, 5%),
+          bottom: $mktg-purple-primary,
+        ),
+        bg-overlay: (
+          top: lighten($mktg-purple-secondary, 5%),
+          bottom: $mktg-purple-secondary,
+        ),
+        text: $white,
+      ),
 
-  //     enterprise: (
-  //       bg: (
-  //         top: lighten($mktg-purple-primary, 5%),
-  //         bottom: $mktg-purple-primary,
-  //       ),
-  //       bg-overlay: (
-  //         top: lighten($mktg-purple-secondary, 5%),
-  //         bottom: $mktg-purple-secondary,
-  //       ),
-  //       text: $white,
-  //     ),
+      outline: (
+        text: $mktg-blue-primary,
+        border: rgba($mktg-blue-primary, 0.3),
 
-  //     outline: (
-  //       text: $mktg-blue-primary,
-  //       border: rgba($mktg-blue-primary, 0.3),
+        hover: (
+          text: $mktg-blue-secondary,
+          border: rgba($mktg-blue-primary, 0.5),
+        ),
 
-  //       hover: (
-  //         text: $mktg-blue-secondary,
-  //         border: rgba($mktg-blue-primary, 0.5),
-  //       ),
+        focus: (
+          border: rgba($mktg-blue-primary, 1),
+          border-inset: rgba($mktg-blue-primary, 0.5),
+        ),
+      ),
 
-  //       focus: (
-  //         border: rgba($mktg-blue-primary, 1),
-  //         border-inset: rgba($mktg-blue-primary, 0.5),
-  //       ),
-  //     ),
+      dark: (
+        text: $white,
+        border: rgba($white, 0.3),
 
-  //     dark: (
-  //       text: $white,
-  //       border: rgba($white, 0.3),
+        hover: (
+          text: $white,
+          border: rgba($white, 0.5),
+        ),
 
-  //       hover: (
-  //         text: $white,
-  //         border: rgba($white, 0.5),
-  //       ),
-
-  //       focus: (
-  //         border: rgba($white, 1),
-  //         border-inset: rgba($white, 0.5),
-  //       ),
-  //     ),
-  //   ),
-  // ),
+        focus: (
+          border: rgba($white, 1),
+          border-inset: rgba($white, 0.5),
+        ),
+      ),
+    ),
+  ),
 
   // App
 
