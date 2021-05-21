@@ -1,10 +1,8 @@
-import fs from 'fs'
-import path from 'path'
-import mkdirp from 'mkdirp'
 import camelcaseKeys from 'camelcase-keys'
-import { Document } from 'sass-extract'
 import chalk from 'chalk'
-import { parseScssFile  } from './lib/scss'
+import fs from 'fs'
+import mkdirp from 'mkdirp'
+import path from 'path'
 import ModeCollection from './lib/mode-collection'
 import VariableCollection from './lib/variable-collection'
 
@@ -13,19 +11,17 @@ interface Skip {
   name: string
 }
 
-let SKIP: Skip[] = (process.env['PRIMER_SKIP'] || "")
-  .split(',')
-  .map(skip => {
-    const [type, name] = skip.split('/')
-    return {type, name}
-  })
+let SKIP: Skip[] = (process.env['PRIMER_SKIP'] || '').split(',').map(skip => {
+  const [type, name] = skip.split('/')
+  return {type, name}
+})
 
-const dataDir = path.join(__dirname, "..", "data")
-const outDir = path.join(__dirname, "..", "dist")
+const dataDir = path.join(__dirname, '..', 'data')
+const outDir = path.join(__dirname, '..', 'dist')
 
-const scssDir = path.join(outDir, "scss")
-const tsDir = path.join(outDir, "ts")
-const jsonDir = path.join(outDir, "json")
+const scssDir = path.join(outDir, 'scss')
+const tsDir = path.join(outDir, 'ts')
+const jsonDir = path.join(outDir, 'json')
 
 async function build() {
   const modeTypes = fs.readdirSync(dataDir)
@@ -42,7 +38,7 @@ async function build() {
         console.log(err)
       }
       console.log(chalk.red`===============================================`)
-      console.log("")
+      console.log('')
       process.exit(1)
     }
 
@@ -66,7 +62,7 @@ async function getModeCollectionForType(type: string, toSkip: string[]): Promise
   // TODO: log error if file doesn't exist
   if (fs.existsSync(indexFile)) {
     // TODO: check that modes is an object
-    const { default: modes } = require(indexFile)
+    const {default: modes} = require(indexFile)
 
     for (const mode in modes) {
       if (toSkip.includes(mode)) {
@@ -94,7 +90,7 @@ async function writeModeOutput(collection: ModeCollection): Promise<void> {
 async function writeScssOutput(collection: ModeCollection): Promise<void> {
   for (const [_name, vars] of collection) {
     let output = `@mixin primer-${collection.type}-${vars.name} {\n`
-    output += "  & {\n"
+    output += '  & {\n'
     for (const variable of vars) {
       output += `    --${variable.name}: ${variable.value};\n`
     }
@@ -154,6 +150,6 @@ async function writeMainTsIndex(types: string[]) {
 
 if (require.main === module) {
   build()
-    .then(() => console.log("✨ Built mode data 🎉"))
+    .then(() => console.log('✨ Built mode data 🎉'))
     .catch(err => console.error(err))
 }

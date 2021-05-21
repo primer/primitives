@@ -41,16 +41,20 @@ export interface SassMapValue {
 }
 
 export async function parseScssFile(file: string): Promise<Document> {
-  const { vars } = await renderSass({ file })
-  return { vars }
+  const {vars} = await renderSass({file})
+  return {vars}
 }
 
 export function stringifySassPrimitive(val: SassValue): string {
   switch (val.type) {
-    case 'SassColor': return sassColorToString(val.value)
-    case 'SassNumber': return `${val.value}${val.unit}`
-    case 'SassString': return val.value
-    default: throw new Error(`Cannot stringify Sass value type: ${val.type}`)
+    case 'SassColor':
+      return sassColorToString(val.value)
+    case 'SassNumber':
+      return `${val.value}${val.unit}`
+    case 'SassString':
+      return val.value
+    default:
+      throw new Error(`Cannot stringify Sass value type: ${val.type}`)
   }
 }
 
@@ -66,7 +70,7 @@ export function renderSassList(val: SassList): string | string[] {
   if (isSassListHomogeneous(val)) {
     return val.value.map(stringifySassPrimitive)
   } else {
-    return val.value.map(stringifySassPrimitive).join(" ")
+    return val.value.map(stringifySassPrimitive).join(' ')
   }
 }
 

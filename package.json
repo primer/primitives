@@ -29,6 +29,7 @@
     "watch": "ls data/**/*.scss script/**/*.ts | entr -s 'yarn build'",
     "release": "yarn build && changeset publish"
   },
+  "prettier": "@github/prettier-config",
   "devDependencies": {
     "@actions/core": "^1.2.7",
     "@actions/github": "^4.0.0",
@@ -50,5 +51,8 @@
     "sass-extract": "^2.1.0",
     "ts-node": "^8.10.2",
     "typescript": "^3.7.2"
+  },
+  "dependencies": {
+    "@github/prettier-config": "^0.0.4"
   }
 }

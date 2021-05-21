@@ -1,7 +1,7 @@
-import flatMap from "lodash/flatMap";
-import chalk from "chalk";
-import VariableCollection from "./variable-collection";
-import { SassMap } from "./scss";
+import flatMap from 'lodash/flatMap'
+import chalk from 'chalk'
+import VariableCollection from './variable-collection'
+import {SassMap} from './scss'
 
 export default class ModeCollection {
   public readonly type: string
@@ -28,7 +28,7 @@ export default class ModeCollection {
     this.modes.set(modeName, vars)
   }
 
-  public validate(): {isValid: boolean, errors: string[]} {
+  public validate(): {isValid: boolean; errors: string[]} {
     const errors = []
 
     // Ensure that every mode in this collection has the same variables defined
@@ -36,7 +36,9 @@ export default class ModeCollection {
     if (missingVarsPerMode.length > 0) {
       errors.push(`\n> The following variables are missing in one or more modes:\n`)
       for (const {modes, variableName} of missingVarsPerMode) {
-        const msg = chalk`* Variable {bold.red ${variableName}} is missing in modes: ${modes.map(mode => chalk.bold.bgBlack.white(mode.name)).join(', ')}`
+        const msg = chalk`* Variable {bold.red ${variableName}} is missing in modes: ${modes
+          .map(mode => chalk.bold.bgBlack.white(mode.name))
+          .join(', ')}`
         errors.push(msg)
       }
     }
@@ -45,7 +47,9 @@ export default class ModeCollection {
     // other CSS variables defined inside the same file can be resolved
     const unresolvableBindings = this.getUnresolvableLateBindings()
     if (unresolvableBindings.length > 0) {
-      errors.push(`\n> The following CSS variables were referenced as values but could not be resolved at build-time:\n`)
+      errors.push(
+        `\n> The following CSS variables were referenced as values but could not be resolved at build-time:\n`
+      )
       for (const {ref, from, mode} of unresolvableBindings) {
         const msg = chalk`* Variable {bold.red var(--${ref})} referenced by {bold.bgBlack.white ${from}} in mode {bold.bgBlack.white ${mode.name}}`
         errors.push(msg)
@@ -70,12 +74,12 @@ export default class ModeCollection {
     }
   }
 
-  private getMissingVarsPerMode(): {modes: VariableCollection[], variableName: string}[] {
+  private getMissingVarsPerMode(): {modes: VariableCollection[]; variableName: string}[] {
     if (this.modes.size === 1) {
       return []
     }
 
-    const result: {modes: VariableCollection[], variableName: string}[] = []
+    const result: {modes: VariableCollection[]; variableName: string}[] = []
     const modes = [...this.modes.values()]
 
     const allVarNames = flatMap(modes, mode => {
@@ -93,8 +97,8 @@ export default class ModeCollection {
     return result
   }
 
-  private getUnresolvableLateBindings(): {mode: VariableCollection, from: string, ref: string}[] {
-    const result: {mode: VariableCollection, from: string, ref: string}[] = []
+  private getUnresolvableLateBindings(): {mode: VariableCollection; from: string; ref: string}[] {
+    const result: {mode: VariableCollection; from: string; ref: string}[] = []
 
     for (const [_name, mode] of this.modes) {
       const lateBindings = mode.flattened().filter(v => !!v.ref)

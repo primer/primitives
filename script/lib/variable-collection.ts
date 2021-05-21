@@ -1,5 +1,6 @@
 import set from 'lodash/set'
 import chalk from 'chalk'
+import {SassMap, stringifySassPrimitive, renderSassList} from './scss'
 import flatten from 'flat'
 import kebabCase from 'lodash/kebabCase'
 
@@ -43,11 +44,20 @@ export default class VariableCollection {
     }
   }
 
+  private iterateVarsFromSassExports(
+    data: SassMap,
+    callback: (path: PathItem[], value: any) => void,
+    path: string[] = []
+  ) {
     for (let key of Object.keys(data.value)) {
       // [MKT] Numeric keys for Sass maps are not supported due to
       // lookup semantics in non-CSS projects (like Primer React)
       if (!isNaN(Number(key))) {
-        console.log(chalk`{bold.red [FATAL]} Map keys cannot be numeric; found numeric key {bold.red ${key}} in ${path.join('-')}-${key} in mode ${this.name}`)
+        console.log(
+          chalk`{bold.red [FATAL]} Map keys cannot be numeric; found numeric key {bold.red ${key}} in ${path.join(
+            '-'
+          )}-${key} in mode ${this.name}`
+        )
         process.exit(1)
       }
 
@@ -111,7 +121,7 @@ export default class VariableCollection {
   }
 
   public flattened(): ReadonlyArray<ModeVariable> {
-    return [...this.data.values()].map((variable) => {
+    return [...this.data.values()].map(variable => {
       return {
         ...variable,
         value: variable.ref ? this.resolveRef(variable.ref) : variable.value
