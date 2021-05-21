@@ -115,6 +115,8 @@ $export: (
       inset: 0 0 transparent, // top inner shadow
       focus: 0 0 0 3px $blue-8, // blue focus ring
     ),
+
+    border-active: #F78166, // coral
   ),
 
   // Deprecated
@@ -463,11 +465,11 @@ $export: (
 
   select-menu: (
     border-secondary: var(--color-border-divider),
-    // shadow: 0 0 18px rgba($black, 0.4),
+    shadow: var(--color-shadow-large),
     backdrop-bg: var(--color-canvas-backdrop),
-    // backdrop-border: $gray-5,
-    // tap-highlight: rgba($gray-6, 0.5),
-    // tap-focus-bg: $blue-8,
+    backdrop-border: $gray-5,
+    tap-highlight: rgba($gray-6, 0.5),
+    tap-focus-bg: $blue-8,
   ),
 
   box: (
@@ -504,14 +506,14 @@ $export: (
 
   menu: (
     heading-text: var(--color-fg-default),
-    // border-active: #F78166, // coral
-    // bg-active: $gray-8,
+    border-active: var(--color-primer-border-active),
+    bg-active: $gray-8,
   ),
 
-  // sidenav: (
-    // selected-bg: $gray-7,
-    // border-active: #F78166, // coral
-  // ),
+  sidenav: (
+    selected-bg: $gray-7,
+    border-active: var(--color-primer-border-active),
+  ),
 
   header: (
     text: rgba($white, 0.7),
@@ -525,7 +527,7 @@ $export: (
 
   hidden-text-expander: (
     bg: var(--color-neutral-highlighter),
-    // bg-hover: $gray-6,
+    bg-hover: var(--color-accent-highlighter),
   ),
 
   drag-and-drop: (
@@ -534,7 +536,7 @@ $export: (
 
   upload-enabled: (
     border: var(--color-border-default),
-    // border-focused: lighten($blue-5, 8%),
+    border-focused: var(--color-accent-emphasis),
   ),
 
   previewable-comment-form: (
@@ -542,9 +544,9 @@ $export: (
   ),
 
   underlinenav: (
-    // border: rgba($gray-6, 0),
+    border: transparent,
     border-hover: var(--color-neutral-highlighter),
-    // border-active: #F78166, // coral
+    border-active: var(--color-primer-border-active),
     text: var(--color-fg-default),
     text-hover: var(--color-fg-default),
     text-active: var(--color-fg-default),
