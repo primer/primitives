@@ -1,8 +1,9 @@
-import set from 'lodash/set'
 import chalk from 'chalk'
-import {SassMap, stringifySassPrimitive, renderSassList} from './scss'
 import flatten from 'flat'
+import isFunction from 'lodash/isFunction'
 import kebabCase from 'lodash/kebabCase'
+import set from 'lodash/set'
+import {renderSassList, SassMap, stringifySassPrimitive} from './scss'
 
 function exhaustiveCheck(anything: never) {}
 
@@ -12,7 +13,6 @@ export interface ModeVariable {
   name: string
   path: PathItem[]
   value: any
-  ref: string | null
 }
 
 const CSS_VAR_REGEX = /var\(--(.*)\)/
@@ -100,14 +100,7 @@ export default class VariableCollection {
     }
 
     const fullName = [this.prefix, ...path].join('-')
-    const variable: ModeVariable = {name: fullName, path, value, ref: null}
-
-    // If the value is a CSS variable, we need to set a ref
-    // so that it gets lazy-evaluated during validation and compilation.
-    if (typeof value === 'string' && value.match(CSS_VAR_REGEX)) {
-      const [_, needle] = value.match(CSS_VAR_REGEX)!
-      variable.ref = needle!
-    }
+    const variable: ModeVariable = {name: fullName, path, value}
 
     this.data.set(fullName, variable)
   }
@@ -121,10 +114,11 @@ export default class VariableCollection {
   }
 
   public flattened(): ReadonlyArray<ModeVariable> {
+    const tree = this.unresolvedTree()
     return [...this.data.values()].map(variable => {
       return {
         ...variable,
-        value: variable.ref ? this.resolveRef(variable.ref) : variable.value
+        value: isFunction(variable.value) ? variable.value(tree) : variable.value
       }
     })
   }
@@ -133,31 +127,12 @@ export default class VariableCollection {
     return this.data.get(fullName)
   }
 
-  public resolveRef(fullName: string, checked = new Set<string>()): any {
-    // Prevent blowing the stack from reference loops
-    if (checked.has(fullName)) {
-      return undefined
-    }
-    checked.add(fullName)
-
-    const mappedVariable = this.data.get(fullName)
-
-    if (!mappedVariable) {
-      return undefined
-    }
-
-    if (mappedVariable.ref) {
-      return this.resolveRef(mappedVariable.ref, checked)
-    } else {
-      return mappedVariable.value
-    }
-  }
-
   public tree(): Readonly<Record<string, any>> {
     let output = {} as Record<string, any>
 
+    const tree = this.unresolvedTree()
     for (const variable of this.data.values()) {
-      const value = variable.ref ? this.resolveRef(variable.ref) : variable.value
+      const value = isFunction(variable.value) ? variable.value(tree) : variable.value
       set(output, variable.path, value)
     }
 
@@ -166,5 +141,15 @@ export default class VariableCollection {
 
   public [Symbol.iterator]() {
     return this.flattened()[Symbol.iterator]()
+  }
+
+  private unresolvedTree(): Readonly<Record<string, any>> {
+    let output = {} as Record<string, any>
+
+    for (const variable of this.data.values()) {
+      set(output, variable.path, variable.value)
+    }
+
+    return output
   }
 }

@@ -43,18 +43,17 @@ export default class ModeCollection {
       }
     }
 
-    // Ensure that any variables with late-binding to
-    // other CSS variables defined inside the same file can be resolved
-    const unresolvableBindings = this.getUnresolvableLateBindings()
-    if (unresolvableBindings.length > 0) {
-      errors.push(
-        `\n> The following CSS variables were referenced as values but could not be resolved at build-time:\n`
-      )
-      for (const {ref, from, mode} of unresolvableBindings) {
-        const msg = chalk`* Variable {bold.red var(--${ref})} referenced by {bold.bgBlack.white ${from}} in mode {bold.bgBlack.white ${mode.name}}`
+    // Ensure that all variables variables are defined
+    const undefinedVars = this.getUndefinedVars()
+    if (undefinedVars.length > 0) {
+      errors.push(`\n> The following variables are undefined:\n`)
+
+      for (const {from, mode} of undefinedVars) {
+        const msg = chalk`* Variable {bold.bgBlack.white ${from}} in mode {bold.bgBlack.white ${mode.name}} is {bold.red undefined}`
         errors.push(msg)
       }
-      errors.push(`Check to make sure CSS variable references do not create an infinite loop.`)
+
+      errors.push(`Check to make sure variable references do not create an infinite loop.`)
     }
 
     return {isValid: errors.length === 0, errors}
@@ -97,15 +96,13 @@ export default class ModeCollection {
     return result
   }
 
-  private getUnresolvableLateBindings(): {mode: VariableCollection; from: string; ref: string}[] {
-    const result: {mode: VariableCollection; from: string; ref: string}[] = []
+  private getUndefinedVars(): {mode: VariableCollection; from: string}[] {
+    const result: {mode: VariableCollection; from: string}[] = []
 
     for (const [_name, mode] of this.modes) {
-      const lateBindings = mode.flattened().filter(v => !!v.ref)
-      for (const v of lateBindings) {
-        if (!mode.resolveRef(v.ref!)) {
-          result.push({mode, from: v.name, ref: v.ref!})
-        }
+      const undefinedVars = mode.flattened().filter(v => !v.value)
+      for (const v of undefinedVars) {
+        result.push({mode, from: v.name})
       }
     }
 

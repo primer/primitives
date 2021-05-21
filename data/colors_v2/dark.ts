@@ -1,6 +1,11 @@
-export default {
+import merge from 'deepmerge'
+import deprecatedVars from './deprecated_vars'
+
+const vars = {
   fg: {
-    default: "#fff",
-  },
-  red: ["red", "blue"],
-};
+    default: '#fff',
+    muted: '#ccc'
+  }
+}
+
+export default merge(deprecatedVars, vars)
