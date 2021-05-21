@@ -202,7 +202,7 @@ $export: (
   ),
 
   autocomplete: (
-    // shadow: 0 16px 32px $black-fade-85,
+    shadow: var(--color-shadow-medium),
     row-border: var(--color-border-divider),
   ),
 
@@ -330,9 +330,9 @@ $export: (
     ),
   ),
 
-  // dropdown: (
-  //   shadow: 0 16px 32px rgba($black, 0.85),
-  // ),
+  dropdown: (
+    shadow: var(--color-shadow-large),
+  ),
 
   label: (
     border: var(--color-border-default),
@@ -368,9 +368,9 @@ $export: (
 
   input: (
     bg: var(--color-canvas-default),
-    // contrast-bg: rgba($black, 0.5),
+    contrast-bg: var(--color-canvas-inset),
     border: var(--color-border-default),
-    // shadow: 0 0 transparent,
+    shadow: var(--color-primer-shadow-inset),
 
     disabled-bg: var(--color-neutral-muted),
     disabled-border: var(--color-border-default),
