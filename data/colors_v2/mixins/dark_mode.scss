@@ -117,6 +117,10 @@ $export: (
     ),
   ),
 
+  // Deprecated
+  // For temporary use when there is no replacement and the variable should be removed
+  deprecated: transparent,
+
   // Mapping of v1 variables to v2 variables
 
   text: $text,
@@ -411,17 +415,17 @@ $export: (
     text: var(--color-fg-default),
     bg: var(--color-canvas-default),
     border: var(--color-border-default),
-    // shadow: var(--color-shadow-large),
+    shadow: var(--color-shadow-large),
     icon: var(--color-fg-on-emphasis),
     icon-bg: var(--color-accent-emphasis),
-    // icon-border: $blue-4,
+    icon-border: var(--color-deprecated),
 
     success: (
       text: var(--color-fg-default),
       border: var(--color-border-default),
       icon: var(--color-fg-on-emphasis),
       icon-bg: var(--color-success-emphasis),
-      // icon-border: $green-3,
+      icon-border: var(--color-deprecated),
     ),
 
     warning: (
@@ -429,7 +433,7 @@ $export: (
       border: var(--color-border-default),
       icon: var(--color-fg-default),
       icon-bg: var(--color-warning-emphasis),
-      // icon-border: $yellow-3,
+      icon-border: var(--color-deprecated),
     ),
 
     danger: (
@@ -437,7 +441,7 @@ $export: (
       border: var(--color-border-default),
       icon: var(--color-fg-on-emphasis),
       icon-bg: var(--color-danger-emphasis),
-      // icon-border: $red-4,
+      icon-border: var(--color-deprecated),
       ),
 
     loading: (
@@ -445,14 +449,14 @@ $export: (
       border: var(--color-border-default),
       icon: var(--color-fg-on-emphasis),
       icon-bg: var(--color-neutral-emphasis),
-      // icon-border: $gray-3,
+      icon-border: var(--color-deprecated),
     ),
   ),
 
   timeline: (
     text: var(--color-fg-muted),
     badge-bg: var(--color-neutral-muted),
-    // badge-success-border: $green-4,
+    badge-success-border: var(--color-deprecated),
     target-badge-border: var(--color-accent-emphasis),
     target-badge-shadow: var(--color-accent-highlighter),
   ),
