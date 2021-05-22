@@ -1,6 +1,10 @@
 import {get} from '../../../src/utils'
 
-// Variables to be removed in the next major release (must map to system variables)
+// Variables to be removed in the next major release
+
+// Every variable in this file must map to a functional variable (e.g. get('fg.default')).
+// No hex codes (e.g. '#ff0000') or scale variables (e.g. get('scale.gray.5')) allowed.
+
 export default {
   text: {
     primary: get('fg.default'),
