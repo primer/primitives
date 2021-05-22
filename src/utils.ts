@@ -13,3 +13,11 @@ export function get(path: string) {
 export function alpha(value: string | ((obj: any) => string), amount: number) {
   return (obj: any) => color2k.transparentize(resolve(value, obj), 1 - amount)
 }
+
+export function lighten(value: string | ((obj: any) => string), amount: number) {
+  return (obj: any) => color2k.lighten(resolve(value, obj), amount)
+}
+
+export function darken(value: string | ((obj: any) => string), amount: number) {
+  return (obj: any) => color2k.darken(resolve(value, obj), amount)
+}
