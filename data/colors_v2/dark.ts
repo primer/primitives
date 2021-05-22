@@ -1,5 +1,4 @@
-import merge from 'deepmerge'
-import {alpha, get} from '../../src/utils'
+import {alpha, get, merge} from '../../src/utils'
 import deprecatedVars from './utils/deprecated_vars'
 
 const vars = {
