@@ -51,13 +51,11 @@ export default class ModeCollection {
       errors.push(`\n> The following variables are invalid:\n`)
 
       for (const {variable, mode} of invalidVars) {
-        const msg = chalk`* {bold.red ${variable.value.toString()}} cannot be assigned to {bold.bgBlack.white ${
-          variable.name
-        }} in mode {bold.bgBlack.white ${mode.name}} `
+        const msg = chalk`* {bold.red ${variable.value}} cannot be assigned to {bold.bgBlack.white ${variable.name}} in mode {bold.bgBlack.white ${mode.name}} `
         errors.push(msg)
       }
 
-      errors.push(`Check to make sure variable references do not create an infinite loop.`)
+      errors.push(`\nCheck to make sure variable references do not create an infinite loop.`)
     }
 
     return {isValid: errors.length === 0, errors}
