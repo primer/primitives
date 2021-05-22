@@ -116,7 +116,6 @@ export default class VariableCollection {
 
   public flattened(): ReadonlyArray<ModeVariable> {
     const tree = this.unresolvedTree()
-    console.log(tree)
     return [...this.data.values()].map(variable => {
       return {
         ...variable,
