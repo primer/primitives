@@ -1,10 +1,154 @@
 import merge from 'deepmerge'
+import {alpha, get, lighten} from '../../src/utils'
 import deprecatedVars from './utils/deprecated_vars'
 
 const vars = {
+  scale: {
+    black: '#1b1f23',
+    white: '#ffffff',
+    gray: [
+      '#fafbfc',
+      '#f6f8fa',
+      '#e1e4e8',
+      '#d1d5da',
+      '#959da5',
+      '#6a737d',
+      '#586069',
+      '#444d56',
+      '#2f363d',
+      '#24292e'
+    ],
+    blue: [
+      '#f1f8ff',
+      '#dbedff',
+      '#c8e1ff',
+      '#79b8ff',
+      '#2188ff',
+      '#0366d6',
+      '#005cc5',
+      '#044289',
+      '#032f62',
+      '#05264c'
+    ],
+    green: [
+      '#f0fff4',
+      '#dcffe4',
+      '#bef5cb',
+      '#85e89d',
+      '#34d058',
+      '#28a745',
+      '#22863a',
+      '#176f2c',
+      '#165c26',
+      '#144620'
+    ],
+    yellow: [
+      '#fffdef',
+      '#fffbdd',
+      '#fff5b1',
+      '#ffea7f',
+      '#ffdf5d',
+      '#ffd33d',
+      '#f9c513',
+      '#dbab09',
+      '#b08800',
+      '#735c0f'
+    ],
+    orange: [
+      '#fff8f2',
+      '#ffebda',
+      '#ffd1ac',
+      '#ffab70',
+      '#fb8532',
+      '#f66a0a',
+      '#e36209',
+      '#d15704',
+      '#c24e00',
+      '#a04100'
+    ],
+    red: ['#ffeef0', '#ffdce0', '#fdaeb7', '#f97583', '#ea4a5a', '#d73a49', '#cb2431', '#b31d28', '#9e1c23', '#86181d'],
+    purple: [
+      '#f5f0ff',
+      '#e6dcfd',
+      '#d1bcf9',
+      '#b392f0',
+      '#8a63d2',
+      '#6f42c1',
+      '#5a32a3',
+      '#4c2889',
+      '#3a1d6e',
+      '#29134e'
+    ],
+    pink: ['#ffeef8', '#fedbf0', '#f9b3dd', '#f692ce', '#ec6cb9', '#ea4aaa', '#d03592', '#b93a86', '#99306f', '#6d224f']
+  },
+
+  // Foundations
   fg: {
-    default: '#000',
-    muted: '#333'
+    default: get('scale.gray.9'),
+    muted: get('scale.gray.6'),
+    inactive: get('scale.gray.5'),
+    onEmphasis: get('scale.white')
+  },
+  canvas: {
+    default: get('scale.white'),
+    overlay: get('scale.white'),
+    inset: get('scale.gray.1'),
+    backdrop: alpha(get('scale.black'), 0.8),
+    mobile: get('scale.white')
+  },
+  border: {
+    default: get('scale.gray.2'),
+    divider: lighten(get('scale.gray.2'), 0.03)
+  },
+
+  // Roles
+  neutral: {
+    fg: get('scale.gray.5'),
+    emphasis: get('scale.gray.5'),
+    highlighter: get('scale.gray.3'),
+    muted: get('scale.gray.1')
+  },
+  accent: {
+    fg: get('scale.blue.5'),
+    emphasis: get('scale.blue.5'),
+    highlighter: get('scale.blue.2'),
+    muted: get('scale.blue.0')
+  },
+  success: {
+    fg: get('scale.green.6'),
+    emphasis: get('scale.green.5'),
+    highlighter: get('scale.green.3'),
+    muted: get('scale.green.1')
+  },
+  warning: {
+    fg: get('scale.yellow.8'),
+    emphasis: get('scale.yellow.5'),
+    highlighter: get('scale.yellow.3'),
+    muted: get('scale.yellow.2')
+  },
+  severe: {
+    fg: get('scale.orange.5'),
+    emphasis: get('scale.orange.5'),
+    highlighter: get('scale.orange.3'),
+    muted: get('scale.orange.1')
+  },
+  danger: {
+    fg: get('scale.red.6'),
+    emphasis: get('scale.red.5'),
+    highlighter: get('scale.red.2'),
+    muted: get('scale.red.0')
+  },
+  done: {
+    fg: get('scale.purple.5'),
+    emphasis: get('scale.purple.5'),
+    highlighter: get('scale.purple.2'),
+    muted: get('scale.purple.0')
+  },
+  sponsors: {
+    fg: get('scale.pink.5'),
+    emphasis: get('scale.pink.5'),
+    highlighter: get('scale.pink.2'),
+    muted: get('scale.pink.0')
   }
 }
 
