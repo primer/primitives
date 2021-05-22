@@ -1,9 +1,9 @@
-import _get from 'lodash/get'
 import * as color2k from 'color2k'
+import _get from 'lodash/get'
 import isFunction from 'lodash/isFunction'
 
-function resolve(value: string | ((obj: any) => string), obj: any) {
-  return isFunction(value) ? value(obj) : value
+export function resolveValue(value: string | ((obj: any) => string), obj: any): string {
+  return isFunction(value) ? resolveValue(value(obj), obj) : value
 }
 
 export function get(path: string) {
@@ -11,13 +11,13 @@ export function get(path: string) {
 }
 
 export function alpha(value: string | ((obj: any) => string), amount: number) {
-  return (obj: any) => color2k.transparentize(resolve(value, obj), 1 - amount)
+  return (obj: any) => color2k.transparentize(resolveValue(value, obj), 1 - amount)
 }
 
 export function lighten(value: string | ((obj: any) => string), amount: number) {
-  return (obj: any) => color2k.lighten(resolve(value, obj), amount)
+  return (obj: any) => color2k.lighten(resolveValue(value, obj), amount)
 }
 
 export function darken(value: string | ((obj: any) => string), amount: number) {
-  return (obj: any) => color2k.darken(resolve(value, obj), amount)
+  return (obj: any) => color2k.darken(resolveValue(value, obj), amount)
 }

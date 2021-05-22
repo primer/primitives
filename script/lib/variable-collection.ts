@@ -1,8 +1,8 @@
 import chalk from 'chalk'
 import flatten from 'flat'
-import isFunction from 'lodash/isFunction'
 import kebabCase from 'lodash/kebabCase'
 import set from 'lodash/set'
+import {resolveValue} from '../../src/utils'
 import {renderSassList, SassMap, stringifySassPrimitive} from './scss'
 
 function exhaustiveCheck(anything: never) {}
@@ -118,7 +118,7 @@ export default class VariableCollection {
     return [...this.data.values()].map(variable => {
       return {
         ...variable,
-        value: isFunction(variable.value) ? variable.value(tree) : variable.value
+        value: resolveValue(variable.value, tree)
       }
     })
   }
@@ -132,7 +132,7 @@ export default class VariableCollection {
 
     const tree = this.unresolvedTree()
     for (const variable of this.data.values()) {
-      const value = isFunction(variable.value) ? variable.value(tree) : variable.value
+      const value = resolveValue(variable.value, tree)
       set(output, variable.path, value)
     }
 
