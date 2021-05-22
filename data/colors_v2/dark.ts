@@ -1,5 +1,6 @@
 import {alpha, get, merge} from '../../src/utils'
 import deprecatedVars from './utils/deprecated_vars'
+import darkGithubVars from './utils/dark_github_vars'
 
 const vars = {
   // Scales
@@ -152,4 +153,4 @@ const vars = {
   }
 }
 
-export default merge(deprecatedVars, vars)
+export default merge(deprecatedVars, darkGithubVars, vars)
