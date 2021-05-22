@@ -864,6 +864,7 @@ $export: (
     gradient-out: rgba($gray-8, 0),
   ),
 
+  // TODO: Add support of nested themes so we don't need this special case
   checks: (
     bg: var(--color-canvas-inset),
 
