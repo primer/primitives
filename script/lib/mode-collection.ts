@@ -1,7 +1,9 @@
 import flatMap from 'lodash/flatMap'
 import chalk from 'chalk'
-import VariableCollection from './variable-collection'
+import VariableCollection, {ModeVariable} from './variable-collection'
 import {SassMap} from './scss'
+import isNumber from 'lodash/isNumber'
+import isString from 'lodash/isString'
 
 export default class ModeCollection {
   public readonly type: string
@@ -44,12 +46,14 @@ export default class ModeCollection {
     }
 
     // Ensure that all variables variables are defined
-    const undefinedVars = this.getUndefinedVars()
-    if (undefinedVars.length > 0) {
-      errors.push(`\n> The following variables are undefined:\n`)
+    const invalidVars = this.getInvalidVars()
+    if (invalidVars.length > 0) {
+      errors.push(`\n> The following variables are invalid:\n`)
 
-      for (const {from, mode} of undefinedVars) {
-        const msg = chalk`* Variable {bold.bgBlack.white ${from}} in mode {bold.bgBlack.white ${mode.name}} is {bold.red undefined}`
+      for (const {variable, mode} of invalidVars) {
+        const msg = chalk`* {bold.red ${variable.value.toString()}} cannot be assigned to {bold.bgBlack.white ${
+          variable.name
+        }} in mode {bold.bgBlack.white ${mode.name}} `
         errors.push(msg)
       }
 
@@ -96,13 +100,13 @@ export default class ModeCollection {
     return result
   }
 
-  private getUndefinedVars(): {mode: VariableCollection; from: string}[] {
-    const result: {mode: VariableCollection; from: string}[] = []
+  private getInvalidVars(): {mode: VariableCollection; variable: ModeVariable}[] {
+    const result: {mode: VariableCollection; variable: ModeVariable}[] = []
 
     for (const [_name, mode] of this.modes) {
-      const undefinedVars = mode.flattened().filter(v => !v.value)
-      for (const v of undefinedVars) {
-        result.push({mode, from: v.name})
+      const invalidVars = mode.flattened().filter(v => !(isNumber(v.value) || isString(v.value)))
+      for (const v of invalidVars) {
+        result.push({mode, variable: v})
       }
     }
 
