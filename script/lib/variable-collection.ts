@@ -1,6 +1,7 @@
 import chalk from 'chalk'
 import flatten from 'flat'
 import kebabCase from 'lodash/kebabCase'
+import isString from 'lodash/isString'
 import set from 'lodash/set'
 import {resolveValue} from '../../src/utils'
 import {renderSassList, SassMap, stringifySassPrimitive} from './scss'
@@ -39,7 +40,7 @@ export default class VariableCollection {
     const flattened: Record<string, unknown> = flatten(data)
 
     for (const [key, value] of Object.entries(flattened)) {
-      const path = key.split('.').map(kebabCase)
+      const path = key.split('.')
       this.add(path, value)
     }
   }
@@ -99,7 +100,7 @@ export default class VariableCollection {
       return
     }
 
-    const fullName = [this.prefix, ...path].join('-')
+    const fullName = [this.prefix, ...path].map(value => (isString(value) ? kebabCase(value) : value)).join('-')
     const variable: ModeVariable = {name: fullName, path, value}
 
     this.data.set(fullName, variable)
@@ -115,6 +116,7 @@ export default class VariableCollection {
 
   public flattened(): ReadonlyArray<ModeVariable> {
     const tree = this.unresolvedTree()
+    console.log(tree)
     return [...this.data.values()].map(variable => {
       return {
         ...variable,
