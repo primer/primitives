@@ -1,9 +1,8 @@
-import flatMap from 'lodash/flatMap'
 import chalk from 'chalk'
-import VariableCollection, {ModeVariable} from './variable-collection'
-import {SassMap} from './scss'
+import flatMap from 'lodash/flatMap'
 import isNumber from 'lodash/isNumber'
 import isString from 'lodash/isString'
+import VariableCollection, {ModeVariable} from './variable-collection'
 
 export default class ModeCollection {
   public readonly type: string
@@ -13,17 +12,6 @@ export default class ModeCollection {
   constructor(type: string, prefix: string) {
     this.type = type
     this.prefix = prefix
-  }
-
-  public addFromSassExports(name: string, data: SassMap) {
-    let parent: string | null = null
-    if (data.value.__parent) {
-      parent = data.value.__parent.value as string
-      delete data.value.__parent
-    }
-    const vars = new VariableCollection(name, this.prefix, parent)
-    vars.addFromSassExports(data)
-    this.add(name, vars)
   }
 
   public add(modeName: string, vars: VariableCollection) {
