@@ -126,5 +126,65 @@ export default {
       text: get('fg.muted'),
       bg: get('neutral.muted')
     }
+  },
+  box: {
+    blueBorder: get('accent.highlighter'),
+    rowYellowBg: get('warning.muted'),
+    rowBlueBg: get('accent.muted'),
+    headerBlueBg: get('accent.muted'),
+    headerBlueBorder: get('accent.highlighter'),
+    borderInfo: get('accent.highlighter'),
+    bgInfo: get('accent.muted'),
+    borderWarning: get('warning.highlighter'),
+    bgWarning: get('warning.muted')
+  },
+  branchName: {
+    text: get('fg.muted'),
+    icon: get('fg.muted'),
+    bg: get('neutral.muted'),
+    link: {
+      text: get('accent.fg'),
+      icon: get('accent.fg'),
+      bg: get('accent.muted')
+    }
+  },
+  markdown: {
+    codeBg: get('neutral.muted'),
+    frameBorder: get('border.default'),
+    blockquoteBorder: get('border.default'),
+    tableBorder: get('border.default'),
+    tableTrBorder: get('border.divider')
+  },
+  filterItem: {
+    barBg: get('neutral.muted')
+  },
+  hiddenTextExpander: {
+    bg: get('neutral.highlighter'),
+    bgHover: get('accent.highlighter')
+  },
+  dragAndDrop: {
+    border: get('border.default')
+  },
+  uploadEnabled: {
+    border: get('border.default'),
+    borderFocused: get('accent.emphasis')
+  },
+  previewableCommentForm: {
+    border: get('border.default')
+  },
+  verifiedBadge: {
+    text: get('success.fg'),
+    bg: get('canvas.default'),
+    border: get('border.default')
+  },
+  socialCount: {
+    bg: get('canvas.default')
+  },
+  tooltip: {
+    text: get('fg.onEmphasis'),
+    bg: get('neutral.emphasis')
+  },
+  searchLeyword: {
+    hl: get('warning.muted')
   }
 }
