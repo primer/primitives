@@ -961,7 +961,7 @@ $export: (
     gradient-left: var(--color-accent-muted),
     gradient-right: var(--color-success-muted),
     gradient-in: var(--color-canvas-default),
-    gradient-out: transparent,
+    gradient-out: rgba($white, 0),
   ),
 
   marketing-icon: (
