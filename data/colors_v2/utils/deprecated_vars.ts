@@ -184,7 +184,24 @@ export default {
     text: get('fg.onEmphasis'),
     bg: get('neutral.emphasis')
   },
-  searchLeyword: {
+  searchKeyword: {
     hl: get('warning.muted')
+  },
+  filesExplorerIcon: get('accent.fg'),
+  hlAuthorBg: get('accent.muted'),
+  hlAuthorBorder: get('accent.highlighter'),
+  logoSubdued: get('neutral.highlighter'),
+  discussionBorder: get('success.highlighter'),
+  discussionBgSuccess: get('success.emphasis'),
+  actionsWorkflowTableStickyBg: get('primer.canvas.sticky'),
+  repoLanguageColorBorder: get('primer.border.contrast'),
+  codeSelectionBg: get('accent.highlighter'),
+  highlight: {
+    text: get('fg.default'),
+    bg: get('warning.muted')
+  },
+  blob: {
+    lineHighlightBg: get('warning.muted'),
+    lineHighlightBorder: get('warning.highlighter')
   }
 }
