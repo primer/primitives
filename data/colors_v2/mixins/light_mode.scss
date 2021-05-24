@@ -134,6 +134,9 @@ $export: (
     ),
   ),
 
+  // Deprecated
+  deprecated: $red-5,
+
   // Unset
   // For temporary use when there is no replacement and the variable is not needed anymore and can be removed
   unset: transparent,
@@ -167,28 +170,28 @@ $export: (
     ),
   ),
 
-  // fade: (
-  //   fg-10: $black-fade-10,
-  //   fg-15: $black-fade-15,
-  //   fg-30: $black-fade-30,
-  //   fg-50: $black-fade-50,
-  //   fg-70: $black-fade-70,
-  //   fg-85: $black-fade-85,
+  fade: (
+    fg-10: var(--color-deprecated),
+    fg-15: var(--color-deprecated),
+    fg-30: var(--color-deprecated),
+    fg-50: var(--color-deprecated),
+    fg-70: var(--color-deprecated),
+    fg-85: var(--color-deprecated),
 
-  //   black-10: $black-fade-10,
-  //   black-15: $black-fade-15,
-  //   black-30: $black-fade-30,
-  //   black-50: $black-fade-50,
-  //   black-70: $black-fade-70,
-  //   black-85: $black-fade-85,
+    // black-10: $black-fade-10,
+    // black-15: $black-fade-15,
+    // black-30: $black-fade-30,
+    // black-50: $black-fade-50,
+    // black-70: $black-fade-70,
+    // black-85: $black-fade-85,
 
-  //   white-10: $white-fade-10,
-  //   white-15: $white-fade-15,
-  //   white-30: $white-fade-30,
-  //   white-50: $white-fade-50,
-  //   white-70: $white-fade-70,
-  //   white-85: $white-fade-85,
-  // ),
+    // white-10: $white-fade-10,
+    // white-15: $white-fade-15,
+    // white-30: $white-fade-30,
+    // white-50: $white-fade-50,
+    // white-70: $white-fade-70,
+    // white-85: $white-fade-85,
+  ),
 
   // Components
 
