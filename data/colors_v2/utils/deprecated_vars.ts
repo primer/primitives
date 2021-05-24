@@ -31,9 +31,9 @@ export default {
   border: {
     primary: get('border.default'),
     secondary: get('border.divider'),
-    // tertiary
+    tertiary: get('neutral.highlighter'),
     overlay: get('border.default'),
-    // inverse
+    inverse: get('fg.onEmphasis'), // or move to marketing
     info: get('accent.emphasis'),
     danger: get('danger.emphasis'),
     success: get('success.emphasis'),
@@ -45,8 +45,8 @@ export default {
     canvasInverse: get('neutral.emphasis'),
     canvasInset: get('canvas.inset'),
     primary: get('canvas.default'),
-    // secondary
-    // teritary
+    secondary: get('neutral.muted'),
+    teritiary: get('neutral.muted'),
     overlay: get('canvas.overlay'),
     backdrop: get('canvas.backdrop'),
     info: get('accent.muted'),
@@ -57,5 +57,74 @@ export default {
     successInverse: get('success.emphasis'),
     warning: get('warning.muted'),
     warningInverse: get('warning.emphasis')
+  },
+  state: {
+    state: {
+      hover: {
+        primaryBg: get('accent.emphasis'),
+        primaryBorder: get('accent.emphasis'),
+        primaryText: get('fg.onEmphasis'),
+        primaryIcon: get('fg.onEmphasis'),
+        secondaryBg: get('neutral.muted'),
+        secondaryBorder: get('neutral.muted')
+      },
+
+      selected: {
+        primaryBg: get('accent.emphasis'),
+        primaryBorder: get('accent.emphasis'),
+        primaryText: get('fg.onEmphasis'),
+        primaryIcon: get('fg.onEmphasis')
+      },
+
+      focus: {
+        border: get('accent.emphasis'),
+        shadow: get('primer.shadow.focus') // blue focus ring
+      }
+    }
+  },
+  alert: {
+    info: {
+      text: get('fg.default'),
+      icon: get('accent.fg'),
+      bg: get('accent.muted'),
+      border: get('accent.highlighter')
+    },
+    warn: {
+      text: get('fg.default'),
+      icon: get('warning.fg'),
+      bg: get('warning.muted'),
+      border: get('warning.highlighter')
+    },
+    error: {
+      text: get('fg.default'),
+      icon: get('danger.fg'),
+      bg: get('danger.muted'),
+      border: get('danger.highlighter')
+    },
+    success: {
+      text: get('fg.default'),
+      icon: get('success.fg'),
+      bg: get('success.muted'),
+      border: get('success.highlighter')
+    }
+  },
+  autocomplete: {
+    shadow: get('shadow.medium'),
+    rowBorder: get('border.divider')
+  },
+  blankslate: {
+    icon: get('fg.muted')
+  },
+  counter: {
+    text: get('fg.default'),
+    bg: get('neutral.muted'),
+    primary: {
+      text: get('fg.onEmphasis'),
+      bg: get('neutral.emphasis')
+    },
+    secondary: {
+      text: get('fg.muted'),
+      bg: get('neutral.muted')
+    }
   }
 }

@@ -100,6 +100,12 @@ const vars = {
     default: get('scale.gray.2'),
     divider: lighten(get('scale.gray.2'), 0.03)
   },
+  shadow: {
+    small: (theme: any) => `0 1px 0 ${alpha(get('scale.black'), 0.04)(theme)}`,
+    medium: (theme: any) => `0 3px 6px ${alpha(get('scale.gray.4'), 0.15)(theme)}`,
+    large: (theme: any) => `0 8px 24px ${alpha(get('scale.gray.4'), 0.2)(theme)}`,
+    extraLarge: (theme: any) => `0 12px 28px ${alpha(get('scale.gray.4'), 0.3)(theme)}`
+  },
 
   // Roles
   neutral: {
@@ -149,6 +155,23 @@ const vars = {
     emphasis: get('scale.pink.5'),
     highlighter: get('scale.pink.2'),
     muted: get('scale.pink.0')
+  },
+
+  // Only meant for Primer components
+  primer: {
+    canvas: {
+      background: alpha(get('scale.black'), 0.5), // use for modal/dialogs
+      sticky: alpha(get('scale.white'), 0.95) // use for sticky headers
+    },
+    border: {
+      active: '#f9826c', // coral
+      contrast: alpha(get('scale.black'), 0.1) // use to increase contrast
+    },
+    shadow: {
+      highlight: (theme: any) => `inset 0 1px 0 ${alpha(get('scale.white'), 0.25)(theme)}`, // top highlight
+      inset: (theme: any) => `inset 0 1px 0 ${alpha(get('scale.gray.2'), 0.2)(theme)}`, // top inner shadow
+      focus: (theme: any) => `0 0 0 3px ${alpha(get('scale.blue.5'), 0.3)(theme)}` // blue focus ring
+    }
   }
 }
 
