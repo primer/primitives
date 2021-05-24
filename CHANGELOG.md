@@ -1,5 +1,13 @@
 # @primer/primitives
 
+## 4.3.5
+
+### Patch Changes
+
+- [#101](https://github.com/primer/primitives/pull/101) [`4a4b793`](https://github.com/primer/primitives/commit/4a4b793017bc410149b0c302f74fc64cca2038e2) Thanks [@simurai](https://github.com/simurai)! - Map v1 to v2 variables (part 3)
+
+* [#102](https://github.com/primer/primitives/pull/102) [`cfc2789`](https://github.com/primer/primitives/commit/cfc2789779239ad9e54c1aaebf75f3c8e9c6fd31) Thanks [@simurai](https://github.com/simurai)! - Update light theme
+
 ## 4.3.4
 
 ### Patch Changes
