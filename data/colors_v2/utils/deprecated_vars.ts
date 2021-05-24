@@ -203,5 +203,15 @@ export default {
   blob: {
     lineHighlightBg: get('warning.muted'),
     lineHighlightBorder: get('warning.highlighter')
+  },
+  topicTag: {
+    text: get('accent.fg'),
+    bg: get('accent.muted'),
+    hoverBg: get('accent.highlighter'),
+    activeBg: get('accent.muted')
+  },
+  footerInvertocat: {
+    octicon: get('fg.inactive'),
+    octiconHover: get('fg.muted')
   }
 }
