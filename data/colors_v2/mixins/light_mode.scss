@@ -117,10 +117,9 @@ $export: (
   // This is only meant for Primer components
 
   primer: (
-    shadow: (
-      highlight: inset 0 1px 0 rgba($white, 0.25), // top highlight
-      inset: inset 0 1px 0 rgba($gray-2, 0.2), // top inner shadow
-      focus: 0 0 0 3px rgba($blue-5, 0.3), // blue focus ring
+    canvas: (
+      backdrop: rgba($black, 0.5), // use for modal/dialogs
+      sticky: rgba($white, 0.95), // use for sticky headers
     ),
 
     border: (
@@ -128,9 +127,10 @@ $export: (
       contrast: rgba($black, 0.1), // use to increase contrast
     ),
 
-    canvas: (
-      backdrop: rgba($black, 0.5), // use for modal/dialogs
-      sticky: rgba($white, 0.95), // use for sticky headers
+    shadow: (
+      highlight: inset 0 1px 0 rgba($white, 0.25), // top highlight
+      inset: inset 0 1px 0 rgba($gray-2, 0.2), // top inner shadow
+      focus: 0 0 0 3px rgba($blue-5, 0.3), // blue focus ring
     ),
   ),
 
