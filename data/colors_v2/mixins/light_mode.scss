@@ -134,9 +134,9 @@ $export: (
     ),
   ),
 
-  // Deprecated
-  // For temporary use when there is no replacement and the variable should be removed
-  deprecated: transparent,
+  // Unset
+  // For temporary use when there is no replacement and the variable is not needed anymore and can be removed
+  unset: transparent,
 
   // Mapping of v1 variables to v2 variables
 
@@ -435,14 +435,14 @@ $export: (
     shadow: var(--color-shadow-large),
     icon: var(--color-fg-on-emphasis),
     icon-bg: var(--color-accent-emphasis),
-    icon-border: var(--color-deprecated),
+    icon-border: var(--color-unset),
 
     success: (
       text: var(--color-fg-default),
       border: var(--color-border-default),
       icon: var(--color-fg-on-emphasis),
       icon-bg: var(--color-success-emphasis),
-      icon-border: var(--color-deprecated),
+      icon-border: var(--color-unset),
     ),
 
     warning: (
@@ -450,7 +450,7 @@ $export: (
       border: var(--color-border-default),
       icon: var(--color-fg-default),
       icon-bg: var(--color-warning-emphasis),
-      icon-border: var(--color-deprecated),
+      icon-border: var(--color-unset),
     ),
 
     danger: (
@@ -458,7 +458,7 @@ $export: (
       border: var(--color-border-default),
       icon: var(--color-fg-on-emphasis),
       icon-bg: var(--color-danger-emphasis),
-      icon-border: var(--color-deprecated),
+      icon-border: var(--color-unset),
     ),
 
     loading: (
@@ -466,14 +466,14 @@ $export: (
       border: var(--color-border-default),
       icon: var(--color-fg-on-emphasis),
       icon-bg: var(--color-neutral-emphasis),
-      icon-border: var(--color-deprecated),
+      icon-border: var(--color-unset),
     ),
   ),
 
   timeline: (
     text: var(--color-fg-muted),
     badge-bg: var(--color-neutral-muted),
-    badge-success-border: var(--color-deprecated),
+    badge-success-border: var(--color-unset),
     target-badge-border: var(--color-accent-emphasis),
     target-badge-shadow: var(--color-accent-highlighter),
   ),
@@ -767,7 +767,7 @@ $export: (
     comment-button: (
       icon: var(--color-fg-on-emphasis),
       bg: var(--color-accent-emphasis),
-      gradient-bg: var(--color-deprecated), // TODO: remove
+      gradient-bg: var(--color-unset), // TODO: remove
     ),
   ),
 
@@ -806,25 +806,25 @@ $export: (
     draft: (
       text: var(--color-fg-on-emphasis),
       bg: var(--color-neutral-emphasis),
-      border: var(--color-deprecated),
+      border: var(--color-unset),
     ),
 
     open: (
       text: var(--color-fg-on-emphasis),
       bg: var(--color-success-emphasis),
-      border: var(--color-deprecated),
+      border: var(--color-unset),
     ),
 
     merged: (
       text: var(--color-fg-on-emphasis),
       bg: var(--color-done-emphasis),
-      border: var(--color-deprecated),
+      border: var(--color-unset),
     ),
 
     closed: (
       text: var(--color-fg-on-emphasis),
       bg: var(--color-danger-emphasis),
-      border: var(--color-deprecated),
+      border: var(--color-unset),
     ),
   ),
 
@@ -838,28 +838,28 @@ $export: (
   merge-box: (
     success-icon-bg: var(--color-success-emphasis),
     success-icon-text: var(--color-fg-on-emphasis),
-    success-icon-border: var(--color-deprecated),
+    success-icon-border: var(--color-unset),
     success-indicator-bg: var(--color-success-emphasis),
-    success-indicator-border: var(--color-deprecated),
+    success-indicator-border: var(--color-unset),
     merged-icon-bg: var(--color-done-emphasis),
     merged-icon-text: var(--color-fg-on-emphasis),
-    merged-icon-border: var(--color-deprecated),
+    merged-icon-border: var(--color-unset),
     merged-box-border: var(--color-done-emphasis),
     neutral-icon-bg: var(--color-neutral-emphasis),
     neutral-icon-text: var(--color-fg-on-emphasis),
-    neutral-icon-border: var(--color-deprecated),
+    neutral-icon-border: var(--color-unset),
     neutral-indicator-bg: var(--color-neutral-emphasis),
-    neutral-indicator-border: var(--color-deprecated),
+    neutral-indicator-border: var(--color-unset),
     warning-icon-bg: var(--color-warning-emphasis),
     warning-icon-text: var(--color-fg-on-emphasis),
-    warning-icon-border: var(--color-deprecated),
+    warning-icon-border: var(--color-unset),
     warning-box-border: var(--color-warning-emphasis),
-    warning-merge-highlight: var(--color-deprecated),
+    warning-merge-highlight: var(--color-unset),
     error-icon-bg: var(--color-danger-emphasis),
     error-icon-text: var(--color-fg-on-emphasis),
-    error-icon-border: var(--color-deprecated),
+    error-icon-border: var(--color-unset),
     error-indicator-bg: var(--color-danger-emphasis),
-    error-indicator-border: var(--color-deprecated),
+    error-indicator-border: var(--color-unset),
   ),
 
   project: (
