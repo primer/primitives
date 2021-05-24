@@ -27,8 +27,6 @@ $export: (
     default: $white,
     overlay: $white,
     inset: $gray-1,
-    backdrop: rgba($black, 0.5),
-    mobile: $white,
   ),
 
   border: (
@@ -125,7 +123,15 @@ $export: (
       focus: 0 0 0 3px rgba($blue-5, 0.3), // blue focus ring
     ),
 
-    border-active: #f9826c, // coral
+    border: (
+      active: #f9826c, // coral
+      contrast: rgba($black, 0.1), // use to increase contrast
+    ),
+
+    canvas: (
+      backdrop: rgba($black, 0.5), // use for modal/dialogs
+      sticky: rgba($white, 0.95), // use for sticky headers
+    ),
   ),
 
   // Deprecated
@@ -475,7 +481,7 @@ $export: (
   select-menu: (
     border-secondary: var(--color-border-divider),
     shadow: var(--color-shadow-large),
-    backdrop-bg: var(--color-canvas-backdrop),
+    backdrop-bg: var(--color-primer-canvas-backdrop),
     backdrop-border: transparent,
     tap-highlight: rgba($gray-3, 0.5),
     tap-focus-bg: $blue-1,
@@ -685,8 +691,8 @@ $export: (
   logo-subdued: var(--color-neutral-highlighter),
   discussion-border: var(--color-success-highlighter),
   discussion-bg-success: var(--color-success-emphasis),
-  // actions-workflow-table-sticky-bg: rgba($white, 0.95),
-  // repo-language-color-border: rgba($black, 0.1),
+  actions-workflow-table-sticky-bg: var(--color-primer-canvas-sticky),
+  repo-language-color-border: var(--color-primer-border-contrast),
   code-selection-bg: var(--color-accent-highlighter),
 
   highlight: (
