@@ -2,6 +2,15 @@
 
 @import "./migration.scss";
 
+// Marketing
+// TODO: Replace with scale colors
+$mktg-blue-primary:     #4969ed;
+$mktg-blue-secondary:   #3355e0;
+$mktg-green-primary:    #2ea44f;
+$mktg-green-secondary:  #22863a;
+$mktg-purple-primary:   #6f57ff;
+$mktg-purple-secondary: #614eda;
+
 $export: (
   // Scales
   scale: $scale,
@@ -18,8 +27,6 @@ $export: (
     default: $gray-9,
     overlay: $gray-8,
     inset: $black,
-    backdrop: rgba($black, 0.8),
-    mobile: $black,
   ),
 
   border:(
@@ -29,13 +36,24 @@ $export: (
     // Mapping of v1 variables to v2 variables
     primary: var(--color-border-default),
     secondary: var(--color-border-divider),
-    // tertiary: $gray-4, // TODO
+    tertiary: var(--color-neutral-highlighter),
     overlay: var(--color-border-default),
-    // inverse: $white, // TODO
+    inverse: var(--color-fg-on-emphasis), // or move to marketing
     info: var(--color-accent-emphasis),
     danger: var(--color-danger-emphasis),
     success: var(--color-success-emphasis),
     warning: var(--color-warning-emphasis),
+  ),
+
+  shadow: (
+    small: 0 0 transparent,
+    medium: 0 3px 6px $black,
+    large: 0 8px 24px $black,
+    extra-large: 0 12px 48px $black,
+
+    // Mapping of v1 variables to v2 variables
+    highlight: var(--color-primer-shadow-highlight), // top highlight
+    inset: var(--color-primer-shadow-inset), // top inner shadow
   ),
 
   // Roles
@@ -95,40 +113,39 @@ $export: (
     muted: rgba($pink-4, 0.1),
   ),
 
+  // Primer
+  // This is only meant for Primer components
+
+  primer: (
+    canvas: (
+      backdrop: rgba($black, 0.8), // use for modal/dialogs
+      sticky: rgba($gray-9, 0.95), // use for sticky headers
+    ),
+
+    border: (
+      active: #F78166, // coral
+      contrast: rgba($white, 0.2), // use to increase contrast
+    ),
+
+    shadow: (
+      highlight: 0 0 transparent, // top highlight
+      inset: 0 0 transparent, // top inner shadow
+      focus: 0 0 0 3px $blue-8, // blue focus ring
+    ),
+  ),
+
+  // Deprecated
+  deprecated: $red-5,
+
+  // Unset
+  // For temporary use when there is no replacement and the variable is not needed anymore and can be removed
+  unset: transparent,
+
   // Mapping of v1 variables to v2 variables
 
   text: $text,
   icon: $icon,
-
-  bg: (
-    canvas: var(--color-canvas-default),
-    canvas-mobile: var(--color-canvas-mobile),
-    canvas-inverse: var(--color-neutral-emphasis),
-    canvas-inset: var(--color-canvas-inset),
-    primary: var(--color-canvas-default),
-    // secondary: $gray-9, // TODO
-    // tertiary: $gray-8, // TODO
-    overlay: var(--color-canvas-overlay),
-    backdrop: var(--color-canvas-backdrop),
-    info: var(--color-accent-muted),
-    info-inverse: var(--color-accent-emphasis),
-    danger: var(--color-danger-muted),
-    danger-inverse: var(--color-danger-emphasis),
-    success: var(--color-success-muted),
-    success-inverse: var(--color-success-emphasis),
-    warning: var(--color-warning-muted),
-    warning-inverse: var(--color-warning-emphasis),
-  ),
-
-  // shadow: (
-  //   small: 0 0 transparent,
-  //   medium: 0 3px 6px $black,
-  //   large: 0 8px 24px $black,
-  //   extra-large: 0 12px 48px $black,
-
-  //   highlight: 0 0 transparent, // top highlight
-  //   inset: 0 0 transparent, // top inner shadow
-  // ),
+  bg: $bg,
 
   state: (
     hover: (
@@ -149,32 +166,32 @@ $export: (
 
     focus: (
       border: var(--color-accent-emphasis),
-      // shadow: 0 0 0 3px $blue-8, // TODO: blue focus ring
+      shadow: var(--color-primer-shadow-focus), // blue focus ring
     ),
   ),
 
-  // fade: (
-  //   fg-10: $white-fade-10,
-  //   fg-15: $white-fade-15,
-  //   fg-30: $white-fade-30,
-  //   fg-50: $white-fade-50,
-  //   fg-70: $white-fade-70,
-  //   fg-85: $white-fade-85,
+  fade: (
+    fg-10: var(--color-deprecated),
+    fg-15: var(--color-deprecated),
+    fg-30: var(--color-deprecated),
+    fg-50: var(--color-deprecated),
+    fg-70: var(--color-deprecated),
+    fg-85: var(--color-deprecated),
 
-  //   black-10: $black-fade-10,
-  //   black-15: $black-fade-15,
-  //   black-30: $black-fade-30,
-  //   black-50: $black-fade-50,
-  //   black-70: $black-fade-70,
-  //   black-85: $black-fade-85,
+    // black-10: $black-fade-10,
+    // black-15: $black-fade-15,
+    // black-30: $black-fade-30,
+    // black-50: $black-fade-50,
+    // black-70: $black-fade-70,
+    // black-85: $black-fade-85,
 
-  //   white-10: $white-fade-10,
-  //   white-15: $white-fade-15,
-  //   white-30: $white-fade-30,
-  //   white-50: $white-fade-50,
-  //   white-70: $white-fade-70,
-  //   white-85: $white-fade-85,
-  // ),
+    // white-10: $white-fade-10,
+    // white-15: $white-fade-15,
+    // white-30: $white-fade-30,
+    // white-50: $white-fade-50,
+    // white-70: $white-fade-70,
+    // white-85: $white-fade-85,
+  ),
 
   // Components
 
@@ -209,7 +226,7 @@ $export: (
   ),
 
   autocomplete: (
-    // shadow: 0 16px 32px $black-fade-85,
+    shadow: var(--color-shadow-medium),
     row-border: var(--color-border-divider),
   ),
 
@@ -337,9 +354,9 @@ $export: (
     ),
   ),
 
-  // dropdown: (
-  //   shadow: 0 16px 32px rgba($black, 0.85),
-  // ),
+  dropdown: (
+    shadow: var(--color-shadow-large),
+  ),
 
   label: (
     border: var(--color-border-default),
@@ -375,9 +392,9 @@ $export: (
 
   input: (
     bg: var(--color-canvas-default),
-    // contrast-bg: rgba($black, 0.5),
+    contrast-bg: var(--color-canvas-inset),
     border: var(--color-border-default),
-    // shadow: 0 0 transparent,
+    shadow: var(--color-primer-shadow-inset),
 
     disabled-bg: var(--color-neutral-muted),
     disabled-border: var(--color-border-default),
@@ -418,17 +435,17 @@ $export: (
     text: var(--color-fg-default),
     bg: var(--color-canvas-default),
     border: var(--color-border-default),
-    // shadow: var(--color-shadow-large),
+    shadow: var(--color-shadow-large),
     icon: var(--color-fg-on-emphasis),
     icon-bg: var(--color-accent-emphasis),
-    // icon-border: $blue-4,
+    icon-border: var(--color-unset),
 
     success: (
       text: var(--color-fg-default),
       border: var(--color-border-default),
       icon: var(--color-fg-on-emphasis),
       icon-bg: var(--color-success-emphasis),
-      // icon-border: $green-3,
+      icon-border: var(--color-unset),
     ),
 
     warning: (
@@ -436,7 +453,7 @@ $export: (
       border: var(--color-border-default),
       icon: var(--color-fg-default),
       icon-bg: var(--color-warning-emphasis),
-      // icon-border: $yellow-3,
+      icon-border: var(--color-unset),
     ),
 
     danger: (
@@ -444,33 +461,33 @@ $export: (
       border: var(--color-border-default),
       icon: var(--color-fg-on-emphasis),
       icon-bg: var(--color-danger-emphasis),
-      // icon-border: $red-4,
-      ),
+      icon-border: var(--color-unset),
+    ),
 
     loading: (
       text: var(--color-fg-default),
       border: var(--color-border-default),
       icon: var(--color-fg-on-emphasis),
       icon-bg: var(--color-neutral-emphasis),
-      // icon-border: $gray-3,
+      icon-border: var(--color-unset),
     ),
   ),
 
   timeline: (
     text: var(--color-fg-muted),
     badge-bg: var(--color-neutral-muted),
-    // badge-success-border: $green-4,
+    badge-success-border: var(--color-unset),
     target-badge-border: var(--color-accent-emphasis),
     target-badge-shadow: var(--color-accent-highlighter),
   ),
 
   select-menu: (
     border-secondary: var(--color-border-divider),
-    // shadow: 0 0 18px rgba($black, 0.4),
-    backdrop-bg: var(--color-canvas-backdrop),
-    // backdrop-border: $gray-5,
-    // tap-highlight: rgba($gray-6, 0.5),
-    // tap-focus-bg: $blue-8,
+    shadow: var(--color-shadow-large),
+    backdrop-bg: var(--color-primer-canvas-backdrop),
+    backdrop-border: $gray-5,
+    tap-highlight: rgba($gray-6, 0.5),
+    tap-focus-bg: $blue-8,
   ),
 
   box: (
@@ -507,14 +524,14 @@ $export: (
 
   menu: (
     heading-text: var(--color-fg-default),
-    // border-active: #F78166, // coral
-    // bg-active: $gray-8,
+    border-active: var(--color-primer-border-active),
+    bg-active: $gray-8,
   ),
 
-  // sidenav: (
-    // selected-bg: $gray-7,
-    // border-active: #F78166, // coral
-  // ),
+  sidenav: (
+    selected-bg: $gray-7,
+    border-active: var(--color-primer-border-active),
+  ),
 
   header: (
     text: rgba($white, 0.7),
@@ -528,7 +545,7 @@ $export: (
 
   hidden-text-expander: (
     bg: var(--color-neutral-highlighter),
-    // bg-hover: $gray-6,
+    bg-hover: var(--color-accent-highlighter),
   ),
 
   drag-and-drop: (
@@ -537,7 +554,7 @@ $export: (
 
   upload-enabled: (
     border: var(--color-border-default),
-    // border-focused: lighten($blue-5, 8%),
+    border-focused: var(--color-accent-emphasis),
   ),
 
   previewable-comment-form: (
@@ -545,9 +562,9 @@ $export: (
   ),
 
   underlinenav: (
-    // border: rgba($gray-6, 0),
+    border: transparent,
     border-hover: var(--color-neutral-highlighter),
-    // border-active: #F78166, // coral
+    border-active: var(--color-primer-border-active),
     text: var(--color-fg-default),
     text-hover: var(--color-fg-default),
     text-active: var(--color-fg-default),
@@ -592,84 +609,82 @@ $export: (
   ),
 
   // Marketing
+  // TODO: Migrate once new marketing colors (lemon, lime, indigo) are added
+  mktg: (
+    success: mix($green-5, $green-4, 50%),
+    info: mix($blue-4, $blue-5, 42%),
 
-  // TODO: Move to Primer CSS?
-  // Doesn't get used for color modes (yet)
-  // mktg: (
-  //   success: mix($green-5, $green-4, 50%),
-  //   info: mix($blue-4, $blue-5, 42%),
+    bg-shade-gradient: (
+      top: rgba($black, 0.065),
+      bottom: rgba($black, 0),
+    ),
 
-  //   bg-shade-gradient: (
-  //     top: rgba($black, 0.065),
-  //     bottom: rgba($black, 0),
-  //   ),
+    btn: (
+      bg: (
+        top: lighten($mktg-blue-primary, 5%),
+        bottom: $mktg-blue-primary,
+      ),
+      bg-overlay: (
+        top: lighten($mktg-blue-secondary, 5%),
+        bottom: $mktg-blue-secondary,
+      ),
+      text: $white,
 
-  //   btn: (
-  //     bg: (
-  //       top: lighten($mktg-blue-primary, 5%),
-  //       bottom: $mktg-blue-primary,
-  //     ),
-  //     bg-overlay: (
-  //       top: lighten($mktg-blue-secondary, 5%),
-  //       bottom: $mktg-blue-secondary,
-  //     ),
-  //     text: $white,
+      primary: (
+        bg: (
+          top: lighten($mktg-green-primary, 5%),
+          bottom: $mktg-green-primary,
+        ),
+        bg-overlay: (
+          top: lighten($mktg-green-secondary, 5%),
+          bottom: $mktg-green-secondary,
+        ),
+        text: $white,
+      ),
 
-  //     primary: (
-  //       bg: (
-  //         top: lighten($mktg-green-primary, 5%),
-  //         bottom: $mktg-green-primary,
-  //       ),
-  //       bg-overlay: (
-  //         top: lighten($mktg-green-secondary, 5%),
-  //         bottom: $mktg-green-secondary,
-  //       ),
-  //       text: $white,
-  //     ),
+      enterprise: (
+        bg: (
+          top: lighten($mktg-purple-primary, 5%),
+          bottom: $mktg-purple-primary,
+        ),
+        bg-overlay: (
+          top: lighten($mktg-purple-secondary, 5%),
+          bottom: $mktg-purple-secondary,
+        ),
+        text: $white,
+      ),
 
-  //     enterprise: (
-  //       bg: (
-  //         top: lighten($mktg-purple-primary, 5%),
-  //         bottom: $mktg-purple-primary,
-  //       ),
-  //       bg-overlay: (
-  //         top: lighten($mktg-purple-secondary, 5%),
-  //         bottom: $mktg-purple-secondary,
-  //       ),
-  //       text: $white,
-  //     ),
+      outline: (
+        text: $white,
+        border: rgba($white, 0.3),
 
-  //     outline: (
-  //       text: $white,
-  //       border: rgba($white, 0.3),
+        hover: (
+          text: $white,
+          border: rgba($white, 0.5),
+        ),
 
-  //       hover: (
-  //         text: $white,
-  //         border: rgba($white, 0.5),
-  //       ),
+        focus: (
+          border: rgba($white, 1),
+          border-inset: rgba($white, 0.5),
+        ),
+      ),
 
-  //       focus: (
-  //         border: rgba($white, 1),
-  //         border-inset: rgba($white, 0.5),
-  //       ),
-  //     ),
+      dark: (
+        text: $white,
+        border: rgba($white, 0.3),
 
-  //     dark: (
-  //       text: $white,
-  //       border: rgba($white, 0.3),
+        hover: (
+          text: $white,
+          border: rgba($white, 0.5),
+        ),
 
-  //       hover: (
-  //         text: $white,
-  //         border: rgba($white, 0.5),
-  //       ),
-
-  //       focus: (
-  //         border: rgba($white, 1),
-  //         border-inset: rgba($white, 0.5),
-  //       ),
-  //     ),
-  //   ),
-  // ),
+        focus: (
+          border: rgba($white, 1),
+          border-inset: rgba($white, 0.5),
+        ),
+      ),
+    ),
+  ),
 
   // App
 
@@ -679,8 +694,8 @@ $export: (
   logo-subdued: var(--color-neutral-highlighter),
   discussion-border: var(--color-success-highlighter),
   discussion-bg-success: var(--color-success-emphasis),
-  // actions-workflow-table-sticky-bg: rgba($gray-9, 0.95),
-  // repo-language-color-border: rgba($white, 0.2),
+  actions-workflow-table-sticky-bg: var(--color-primer-canvas-sticky),
+  repo-language-color-border: var(--color-primer-border-contrast),
   code-selection-bg: var(--color-accent-highlighter),
 
   highlight: (
@@ -715,11 +730,11 @@ $export: (
 
   diff-blob: (
     num-text: var(--color-neutral-fg),
-    // num-hover-text: rgba($white, 0.6),
+    num-hover-text: var(--color-fg-default),
 
     addition: (
       num-text: var(--color-success-fg),
-      // num-hover-text: $green-1,
+      num-hover-text:  var(--color-fg-default),
       num-bg: var(--color-success-highlighter),
       line-bg: var(--color-success-muted),
       word-bg: var(--color-success-highlighter),
@@ -727,7 +742,7 @@ $export: (
 
     deletion: (
       num-text: var(--color-danger-fg),
-      // num-hover-text: $red-2,
+      num-hover-text:  var(--color-fg-default),
       num-bg: var(--color-danger-highlighter),
       line-bg: var(--color-danger-muted),
       word-bg: var(--color-danger-highlighter),
@@ -741,9 +756,9 @@ $export: (
 
     empty-block-bg: var(--color-neutral-muted), // for split diffs
 
-    // selected-line-highlight-bg: rgba($yellow-4, 0.1),
-    // selected-line-highlight-border: $yellow-4,
-    // selected-line-highlight-mix-blend-mode: normal,
+    selected-line-highlight-bg: var(--color-warning-muted),
+    selected-line-highlight-border: var(--color-warning-highlighter),
+    selected-line-highlight-mix-blend-mode: screen,
 
     expander: (
       icon: var(--color-fg-muted),
@@ -755,12 +770,11 @@ $export: (
     comment-button: (
       icon: var(--color-fg-on-emphasis),
       bg: var(--color-accent-emphasis),
-      // gradient-bg: lighten($blue-5, 5%), // gradient top
+      gradient-bg: var(--color-unset), // TODO: remove
     ),
   ),
 
   global-nav: (
-    // TODO: Move to dotcom
     logo: $gray-0,
     bg: $gray-8,
     text: $gray-1,
@@ -771,20 +785,20 @@ $export: (
     input-placeholder: $gray-5,
   ),
 
-  // calendar-graph: (
-  //   /*bg: $white,
-  //   border: $white,*/
-  //   day-bg: $gray-8,
-  //   day-border: rgba(27, 31, 35, 0.06),
-  //   day-L1-bg: #0E4429,
-  //   day-L2-bg: #006D32,
-  //   day-L3-bg: #26A641,
-  //   day-L4-bg: #39D353,
-  //   day-L4-border: rgba(255, 255, 255, 0.05),
-  //   day-L3-border: rgba(255, 255, 255, 0.05),
-  //   day-L2-border: rgba(255, 255, 255, 0.05),
-  //   day-L1-border: rgba(255, 255, 255, 0.05),
-  // ),
+  calendar-graph: (
+    /*bg: $white,
+    border: $white,*/
+    day-bg: $gray-8,
+    day-border: rgba(27, 31, 35, 0.06),
+    day-L1-bg: #0E4429,
+    day-L2-bg: #006D32,
+    day-L3-bg: #26A641,
+    day-L4-bg: #39D353,
+    day-L4-border: rgba(255, 255, 255, 0.05),
+    day-L3-border: rgba(255, 255, 255, 0.05),
+    day-L2-border: rgba(255, 255, 255, 0.05),
+    day-L1-border: rgba(255, 255, 255, 0.05),
+  ),
 
   footer-invertocat: (
     octicon: var(--color-fg-inactive),
@@ -795,25 +809,25 @@ $export: (
     draft: (
       text: var(--color-fg-on-emphasis),
       bg: var(--color-neutral-emphasis),
-      // border: rgba($gray-3, 0.4),
+      border: var(--color-unset),
     ),
 
     open: (
       text: var(--color-fg-on-emphasis),
       bg: var(--color-success-emphasis),
-      // border: rgba($green-3, 0.4),
+      border: var(--color-unset),
     ),
 
     merged: (
       text: var(--color-fg-on-emphasis),
       bg: var(--color-done-emphasis),
-      // border: rgba($purple-3, 0.4),
+      border: var(--color-unset),
     ),
 
     closed: (
       text: var(--color-fg-on-emphasis),
       bg: var(--color-danger-emphasis),
-      // border: rgba($red-5, 0.4),
+      border: var(--color-unset),
     ),
   ),
 
@@ -827,28 +841,28 @@ $export: (
   merge-box: (
     success-icon-bg: var(--color-success-emphasis),
     success-icon-text: var(--color-fg-on-emphasis),
-    // success-icon-border: rgba($green-4, 0.4),
+    success-icon-border: var(--color-unset),
     success-indicator-bg: var(--color-success-emphasis),
-    // success-indicator-border: $green-4,
+    success-indicator-border: var(--color-unset),
     merged-icon-bg: var(--color-done-emphasis),
     merged-icon-text: var(--color-fg-on-emphasis),
-    // merged-icon-border: rgba($purple-3, 0.4),
+    merged-icon-border: var(--color-unset),
     merged-box-border: var(--color-done-emphasis),
     neutral-icon-bg: var(--color-neutral-emphasis),
     neutral-icon-text: var(--color-fg-on-emphasis),
-    // neutral-icon-border: rgba($gray-1, 0.4),
+    neutral-icon-border: var(--color-unset),
     neutral-indicator-bg: var(--color-neutral-emphasis),
-    // neutral-indicator-border: $gray-4,
+    neutral-indicator-border: var(--color-unset),
     warning-icon-bg: var(--color-warning-emphasis),
     warning-icon-text: var(--color-fg-on-emphasis),
-    // warning-icon-border: rgba($yellow-4, 0.4),
+    warning-icon-border: var(--color-unset),
     warning-box-border: var(--color-warning-emphasis),
-    // warning-merge-highlight: rgba($yellow-4, 0.1),
+    warning-merge-highlight: var(--color-unset),
     error-icon-bg: var(--color-danger-emphasis),
     error-icon-text: var(--color-fg-on-emphasis),
-    // error-icon-border: rgba($red-4, 0.4),
+    error-icon-border: var(--color-unset),
     error-indicator-bg: var(--color-danger-emphasis),
-    // error-indicator-border: $red-4,
+    error-indicator-border: var(--color-unset),
   ),
 
   project: (
@@ -856,101 +870,101 @@ $export: (
     header-bg: $gray-9,
     sidebar-bg: $gray-8,
     gradient-in: $gray-8,
-    // gradient-out: rgba($gray-8, 0),
+    gradient-out: rgba($gray-8, 0),
   ),
 
-  // checks: (
-  //   // TODO: Move to dotcom?
-  //   bg: var(--color-bg-canvas-inset),
+  // TODO: Add support of nested themes so we don't need this special case
+  checks: (
+    bg: var(--color-canvas-inset),
 
-  //   run-border-width: 1px,
-  //   container-border-width: 1px,
+    run-border-width: 1px,
+    container-border-width: 1px,
 
-  //   text-primary: var(--color-text-primary),
-  //   text-secondary: var(--color-text-secondary),
-  //   text-link: var(--color-text-link),
+    text-primary: var(--color-fg-default),
+    text-secondary: var(--color-fg-muted),
+    text-link: var(--color-accent-fg),
 
-  //   btn-icon: var(--color-icon-secondary),
-  //   btn-hover-icon: var(--color-text-primary),
-  //   btn-hover-bg: var(--color-btn-hover-bg),
+    btn-icon: var(--color-fg-muted),
+    btn-hover-icon: var(--color-fg-default),
+    btn-hover-bg: var(--color-neutral-muted),
 
-  //   input-text: var(--color-text-secondary),
-  //   input-placeholder-text: var(--color-text-placeholder),
-  //   input-focus-text: var(--color-text-primary),
-  //   input-bg: var(--color-input-bg),
-  //   input-shadow: 0 0 0 1px $gray-7, // var(--color-input-border)
+    input-text: var(--color-fg-muted),
+    input-placeholder-text: var(--color-fg-inactive),
+    input-focus-text: var(--color-fg-default),
+    input-bg: var(--color-canvas-default),
+    input-shadow: 0 0 0 1px var(--color-border-default),
 
-  //   dropdown-text: var(--color-text-primary),
-  //   dropdown-bg: var(--color-bg-overlay),
-  //   dropdown-border: var(--color-border-overlay),
-  //   dropdown-hover-text: var(--color-state-hover-primary-text),
-  //   dropdown-hover-bg: var(--color-state-hover-primary-bg),
-  //   dropdown-btn-hover-text: var(--color-state-hover-primary-text),
-  //   dropdown-btn-hover-bg: var(--color-state-hover-secondary-bg),
+    dropdown-text: var(--color-fg-default),
+    dropdown-bg: var(--color-canvas-overlay),
+    dropdown-border: var(--color-border-default),
+    dropdown-hover-text: var(--color-fg-default),
+    dropdown-hover-bg: var(--color-neutral-muted),
+    dropdown-btn-hover-text: var(--color-fg-default),
+    dropdown-btn-hover-bg: var(--color-neutral-muted),
 
-  //   scrollbar-thumb-bg: $gray-6,
+    scrollbar-thumb-bg: var(--color-neutral-highlighter),
 
-  //   header-label-text: var(--color-text-secondary),
-  //   header-label-open-text: var(--color-text-primary),
-  //   header-border: var(--color-border-secondary),
-  //   header-icon: var(--color-icon-secondary),
+    header-label-text: var(--color-fg-muted),
+    header-label-open-text: var(--color-fg-default),
+    header-border: var(--color-border-divider),
+    header-icon: var(--color-fg-muted),
 
-  //   line-text: var(--color-text-secondary),
-  //   line-num-text: var(--color-text-tertiary),
-  //   line-timestamp-text: var(--color-text-tertiary),
-  //   line-hover-bg: var(--color-state-hover-secondary-bg),
-  //   line-selected-bg: var(--color-bg-info),
-  //   line-selected-num-text: var(--color-text-link),
-  //   line-dt-fm-text: var(--color-text-inverse),
-  //   line-dt-fm-bg: $yellow-3,
+    line-text: var(--color-fg-muted),
+    line-num-text: var(--color-fg-inactive),
+    line-timestamp-text: var(--color-fg-inactive),
+    line-hover-bg: var(--color-neutral-muted),
+    line-selected-bg: var(--color-accent-muted),
+    line-selected-num-text: var(--color-accent-fg),
+    line-dt-fm-text: var(--color-fg-on-emphasis),
+    line-dt-fm-bg: var(--color-warning-emphasis),
 
-  //   gate-bg: rgba($yellow-6, 0.15),
-  //   gate-text: var(--color-text-secondary),
-  //   gate-waiting-text: var(--color-text-warning),
+    gate-bg: var(--color-warning-muted),
+    gate-text: var(--color-fg-muted),
+    gate-waiting-text: var(--color-warning-fg),
 
-  //   step-header-open-bg: var(--color-state-hover-secondary-bg),
-  //   step-error-text: var(--color-text-danger),
-  //   step-warning-text: var(--color-text-warning),
+    step-header-open-bg: var(--color-neutral-muted),
+    step-error-text: var(--color-danger-fg),
+    step-warning-text: var(--color-warning-fg),
 
-  //   logline-text: $gray-4,
-  //   logline-num-text: var(--color-text-tertiary),
-  //   logline-debug-text: $purple-3,
-  //   logline-error-text: var(--color-text-secondary),
-  //   logline-error-num-text: var(--color-text-tertiary),
-  //   logline-error-bg: var(--color-bg-danger),
-  //   logline-warning-text: var(--color-text-secondary),
-  //   logline-warning-num-text: var(--color-text-warning),
-  //   logline-warning-bg: var(--color-bg-warning),
-  //   logline-command-text: $blue-3,
-  //   logline-section-text: var(--color-text-success),
+    logline-text: var(--color-fg-muted),
+    logline-num-text: var(--color-fg-inactive),
+    logline-debug-text: var(--color-done-fg),
+    logline-error-text: var(--color-fg-muted),
+    logline-error-num-text: var(--color-fg-inactive),
+    logline-error-bg: var(--color-danger-muted),
+    logline-warning-text: var(--color-fg-muted),
+    logline-warning-num-text: var(--color-warning-fg),
+    logline-warning-bg: var(--color-warning-muted),
+    logline-command-text: var(--color-accent-fg),
+    logline-section-text: var(--color-success-fg),
 
-  //   // used in the Actions logs
-  //   ansi: (
-  //     black: $gray-9,
-  //     black-bright: $gray-8,
-  //     white: $gray-2,
-  //     white-bright: $gray-2,
-  //     gray: $gray-4,
-  //     red: $red-3,
-  //     red-bright: $red-2,
-  //     green: $green-3,
-  //     green-bright: $green-2,
-  //     yellow: $yellow-3,
-  //     yellow-bright: $yellow-2,
-  //     blue: $blue-3,
-  //     blue-bright: $blue-2,
-  //     magenta: $purple-3,
-  //     magenta-bright: $purple-2,
-  //     cyan: #76e3ea, // custom
-  //     cyan-bright: #b3f0ff, // custom
-  //   ),
-  // ),
+    // used in the Actions logs
+    ansi: (
+      black: $gray-9,
+      black-bright: $gray-8,
+      white: $gray-2,
+      white-bright: $gray-2,
+      gray: $gray-4,
+      red: $red-3,
+      red-bright: $red-2,
+      green: $green-3,
+      green-bright: $green-2,
+      yellow: $yellow-3,
+      yellow-bright: $yellow-2,
+      blue: $blue-3,
+      blue-bright: $blue-2,
+      magenta: $purple-3,
+      magenta-bright: $purple-2,
+      cyan: #76e3ea, // custom
+      cyan-bright: #b3f0ff, // custom
+    ),
+  ),
 
   intro-shelf: (
     gradient-left: var(--color-accent-muted),
     gradient-right: var(--color-success-muted),
     gradient-in: var(--color-canvas-default),
-    // gradient-out: rgba($gray-9, 0),
+    gradient-out: transparent,
   ),
 
   marketing-icon: (
