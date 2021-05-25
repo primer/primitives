@@ -1,4 +1,19 @@
-import {alpha, get, lighten, darken} from '../../src/utils'
+import {alpha, darken, desaturate, get, lighten, mix} from '../../src/utils'
+
+const mktg = {
+  blue: {
+    primary: '#4969ed',
+    secondary: '#3355e0'
+  },
+  green: {
+    primary: '#2ea44f',
+    secondary: '#22863a'
+  },
+  purple: {
+    primary: '#6f57ff',
+    secondary: '#614eda'
+  }
+}
 
 export default {
   scale: {
@@ -354,7 +369,7 @@ export default {
       hoverBg: get('scale.blue.5'),
       hoverBorder: alpha(get('scale.black'), 0.15),
       hoverShadow: (theme: any) => `0 1px 0 ${alpha(get('scale.black'), 0.1)(theme)}`,
-      hoverInsetShadow: (theme: any) => `inset 0 1px 0 ${alpha(get('scale.white'), 0.3)(theme)}`,
+      hoverInsetShadow: (theme: any) => `inset 0 1px 0 ${alpha(get('scale.white'), 0.03)(theme)}`,
       hoverCounterBg: alpha(get('scale.white'), 0.2),
       selectedText: get('scale.white'),
       selectedBg: darken(get('scale.blue.5'), 0.03),
@@ -373,7 +388,7 @@ export default {
       hoverBg: get('scale.red.6'),
       hoverBorder: alpha(get('scale.black'), 0.15),
       hoverShadow: (theme: any) => `0 1px 0 ${alpha(get('scale.black'), 0.1)(theme)}`,
-      hoverInsetShadow: (theme: any) => `inset 0 1px 0 ${alpha(get('scale.white'), 0.3)(theme)}`,
+      hoverInsetShadow: (theme: any) => `inset 0 1px 0 ${alpha(get('scale.white'), 0.03)(theme)}`,
       hoverCounterBg: alpha(get('scale.white'), 0.2),
       selectedText: get('scale.white'),
       selectedBg: darken(get('scale.red.5'), 0.03),
@@ -391,18 +406,18 @@ export default {
   },
   counter: {
     text: get('scale.gray.9'),
-    bg: 'rgba(209,213,218,0.5)',
+    bg: alpha(get('scale.gray.3'), 0.5),
     primary: {
       text: get('scale.white'),
       bg: get('scale.gray.5')
     },
     secondary: {
       text: get('scale.gray.5'),
-      bg: 'rgba(209,213,218,0.5)'
+      bg: alpha(get('scale.gray.3'), 0.5)
     }
   },
   dropdown: {
-    shadow: '0 8px 24px rgba(149,157,165,0.2)'
+    shadow: (theme: any) => `0 8px 24px ${alpha(get('scale.gray.4'), 0.2)(theme)}`
   },
   label: {
     border: get('scale.gray.2'),
@@ -439,7 +454,7 @@ export default {
     bg: get('scale.white'),
     contrastBg: get('scale.gray.0'),
     border: get('scale.gray.2'),
-    shadow: 'inset 0 1px 2px rgba(27,31,35,0.075)',
+    shadow: (theme: any) => `inset 0 1px 2px ${alpha(get('scale.black'), 0.075)(theme)}`,
     disabledBg: get('scale.gray.1'),
     disabledBorder: get('scale.gray.2'),
     warningBorder: get('scale.yellow.6'),
@@ -514,11 +529,11 @@ export default {
     targetBadgeShadow: get('scale.blue.2')
   },
   selectMenu: {
-    borderSecondary: '#eaecef',
-    shadow: '0 0 18px rgba(27,31,35,0.4)',
-    backdropBg: 'rgba(27,31,35,0.5)',
+    borderSecondary: lighten(get('scale.gray.2'), 0.03),
+    shadow: (theme: any) => `0 0 18px ${alpha(get('scale.black'), 0.4)(theme)}`,
+    backdropBg: get('fade.black50'),
     backdropBorder: 'transparent',
-    tapHighlight: 'rgba(209,213,218,0.5)',
+    tapHighlight: alpha(get('scale.gray.3'), 0.5),
     tapFocusBg: get('scale.blue.1')
   },
   box: {
@@ -527,27 +542,27 @@ export default {
     rowBlueBg: get('scale.blue.0'),
     headerBlueBg: get('scale.blue.0'),
     headerBlueBorder: get('scale.blue.2'),
-    borderInfo: 'rgba(3,102,214,0.2)',
+    borderInfo: alpha(get('scale.blue.5'), 0.2),
     bgInfo: get('scale.blue.0'),
-    borderWarning: 'rgba(255,211,61,0.4)',
+    borderWarning: alpha(get('scale.yellow.5'), 0.4),
     bgWarning: get('scale.yellow.0')
   },
   branchName: {
     text: get('scale.gray.6'),
-    icon: '#a8bbd0',
-    bg: '#eaf5ff',
+    icon: desaturate(get('scale.blue.3'), 0.7),
+    bg: lighten(get('scale.blue.1'), 0.03),
     link: {
       text: get('scale.blue.5'),
-      icon: '#a8bbd0',
-      bg: '#eaf5ff'
+      icon: desaturate(get('scale.blue.3'), 0.7),
+      bg: lighten(get('scale.blue.1'), 0.03)
     }
   },
   markdown: {
-    codeBg: 'rgba(27,31,35,0.05)',
-    frameBorder: '#dfe2e5',
-    blockquoteBorder: '#dfe2e5',
-    tableBorder: '#dfe2e5',
-    tableTrBorder: '#c6cbd1'
+    codeBg: alpha(get('scale.black'), 0.05),
+    frameBorder: lighten(get('scale.gray.3'), 0.05),
+    blockquoteBorder: lighten(get('scale.gray.3'), 0.05),
+    tableBorder: lighten(get('scale.gray.3'), 0.05),
+    tableTrBorder: darken(get('scale.gray.3'), 0.04)
   },
   menu: {
     headingText: get('scale.gray.9'),
@@ -559,29 +574,29 @@ export default {
     borderActive: '#f9826c'
   },
   header: {
-    text: 'rgba(255,255,255,0.7)',
+    text: get('fade.white70'),
     bg: get('scale.gray.9'),
     logo: get('scale.white')
   },
   filterItem: {
-    barBg: '#eff3f6'
+    barBg: darken(get('scale.gray.1'), 0.02)
   },
   hiddenTextExpander: {
-    bg: '#dfe2e5',
-    bgHover: '#c6cbd1'
+    bg: lighten(get('scale.gray.3'), 0.05),
+    bgHover: darken(get('scale.gray.3'), 0.04)
   },
   dragAndDrop: {
-    border: '#c3c8cf'
+    border: darken(get('scale.gray.3'), 0.05)
   },
   uploadEnabled: {
-    border: '#dfe2e5',
-    borderFocused: '#4a9eff'
+    border: lighten(get('scale.gray.3'), 0.05),
+    borderFocused: lighten(get('scale.blue.4'), 0.08)
   },
   previewableCommentForm: {
-    border: '#c3c8cf'
+    border: darken(get('scale.gray.3'), 0.05)
   },
   underlinenav: {
-    border: 'rgba(209,213,218,0)',
+    border: alpha(get('scale.gray.3'), 0),
     borderHover: get('scale.gray.3'),
     borderActive: '#f9826c',
     text: get('scale.gray.9'),
@@ -621,66 +636,66 @@ export default {
     additionBorder: get('scale.green.5')
   },
   mktg: {
-    success: '#2ebc4f',
-    info: '#1074e7',
+    success: mix(get('scale.green.5'), get('scale.green.4')),
+    info: mix(get('scale.blue.5'), get('scale.blue.4'), 0.42),
     bgShadeGradient: {
-      top: 'rgba(27,31,35,0.065)',
-      bottom: 'rgba(27,31,35,0)'
+      top: alpha(get('scale.black'), 0.065),
+      bottom: alpha(get('scale.black'), 0)
     },
     btn: {
       bg: {
-        top: '#607cef',
-        bottom: '#4969ed'
+        top: lighten(mktg.blue.primary, 0.05),
+        bottom: mktg.blue.primary
       },
       bgOverlay: {
-        top: '#4967e3',
-        bottom: '#3355e0'
+        top: lighten(mktg.blue.secondary, 0.05),
+        bottom: mktg.blue.secondary
       },
       text: get('scale.white'),
       primary: {
         bg: {
-          top: '#34b859',
-          bottom: '#2ea44f'
+          top: lighten(mktg.green.primary, 0.05),
+          bottom: mktg.green.primary
         },
         bgOverlay: {
-          top: '#279a43',
-          bottom: get('scale.green.6')
+          top: lighten(mktg.green.secondary, 0.05),
+          bottom: mktg.green.secondary
         },
         text: get('scale.white')
       },
       enterprise: {
         bg: {
-          top: '#8571ff',
-          bottom: '#6f57ff'
+          top: lighten(mktg.purple.primary, 0.05),
+          bottom: mktg.purple.primary
         },
         bgOverlay: {
-          top: '#7463de',
-          bottom: '#614eda'
+          top: lighten(mktg.purple.secondary, 0.05),
+          bottom: mktg.purple.secondary
         },
         text: get('scale.white')
       },
       outline: {
-        text: '#4969ed',
-        border: 'rgba(73,105,237,0.3)',
+        text: mktg.blue.primary,
+        border: alpha(mktg.blue.primary, 0.3),
         hover: {
-          text: '#3355e0',
-          border: 'rgba(73,105,237,0.5)'
+          text: mktg.blue.secondary,
+          border: alpha(mktg.blue.secondary, 0.5)
         },
         focus: {
-          border: '#4969ed',
-          borderInset: 'rgba(73,105,237,0.5)'
+          border: mktg.blue.primary,
+          borderInset: alpha(mktg.blue.primary, 0.5)
         }
       },
       dark: {
         text: get('scale.white'),
-        border: 'rgba(255,255,255,0.3)',
+        border: alpha(get('scale.white'), 0.3),
         hover: {
           text: get('scale.white'),
-          border: 'rgba(255,255,255,0.5)'
+          border: alpha(get('scale.white'), 0.5)
         },
         focus: {
           border: get('scale.white'),
-          borderInset: 'rgba(255,255,255,0.5)'
+          borderInset: alpha(get('scale.white'), 0.5)
         }
       }
     }
@@ -689,10 +704,10 @@ export default {
   hlAuthorBg: get('scale.blue.0'),
   hlAuthorBorder: get('scale.blue.2'),
   logoSubdued: get('scale.gray.3'),
-  discussionBorder: '#a2cbac',
+  discussionBorder: desaturate(get('scale.green.3'), 0.4),
   discussionBgSuccess: get('scale.green.5'),
-  actionsWorkflowTableStickyBg: 'rgba(255,255,255,0.95)',
-  repoLanguageColorBorder: 'rgba(27,31,35,0.1)',
+  actionsWorkflowTableStickyBg: alpha(get('scale.white'), 0.95),
+  repoLanguageColorBorder: alpha(get('scale.black'), 0.1),
   codeSelectionBg: get('scale.blue.2'),
   highlight: {
     text: '#442c12',
@@ -720,29 +735,29 @@ export default {
     }
   },
   diffBlob: {
-    numText: 'rgba(27,31,35,0.3)',
-    numHoverText: 'rgba(27,31,35,0.6)',
+    numText: get('fade.black30'),
+    numHoverText: alpha(get('scale.black'), 0.6),
     addition: {
-      numText: 'rgba(27,31,35,0.3)',
-      numHoverText: 'rgba(27,31,35,0.6)',
-      numBg: '#cdffd8',
-      lineBg: '#e6ffed',
-      wordBg: '#acf2bd'
+      numText: get('fade.black30'),
+      numHoverText: alpha(get('scale.black'), 0.6),
+      numBg: darken(get('scale.green.1'), 0.03),
+      lineBg: darken(get('scale.green.0'), 0.02),
+      wordBg: darken(get('scale.green.2'), 0.04)
     },
     deletion: {
-      numText: 'rgba(27,31,35,0.3)',
-      numHoverText: 'rgba(27,31,35,0.6)',
+      numText: get('fade.black30'),
+      numHoverText: alpha(get('scale.black'), 0.6),
       numBg: get('scale.red.1'),
       lineBg: get('scale.red.0'),
-      wordBg: '#fdb8c0'
+      wordBg: lighten(get('scale.red.2'), 0.02)
     },
     hunk: {
-      text: 'rgba(27,31,35,0.7)',
+      text: get('fade.black70'),
       numBg: get('scale.blue.1'),
       lineBg: get('scale.blue.0')
     },
     emptyBlockBg: get('scale.gray.0'),
-    selectedLineHighlightBg: 'rgba(255,223,93,0.2)',
+    selectedLineHighlightBg: alpha(get('scale.yellow.4'), 0.2),
     selectedLineHighlightBorder: get('scale.yellow.5'),
     selectedLineHighlightMixBlendMode: 'multiply',
     expander: {
@@ -753,7 +768,7 @@ export default {
     commentButton: {
       icon: get('scale.white'),
       bg: get('scale.blue.5'),
-      gradientBg: '#0372ef'
+      gradientBg: lighten(get('scale.blue.5'), 0.05)
     }
   },
   globalNav: {
@@ -807,8 +822,8 @@ export default {
   topicTag: {
     text: get('scale.blue.5'),
     bg: get('scale.blue.0'),
-    hoverBg: '#ddeeff',
-    activeBg: '#e7f3ff'
+    hoverBg: darken(get('scale.blue.0'), 0.04),
+    activeBg: darken(get('scale.blue.0'), 0.02)
   },
   mergeBox: {
     successIconBg: get('scale.green.5'),
@@ -841,7 +856,7 @@ export default {
     headerBg: get('scale.gray.9'),
     sidebarBg: get('scale.white'),
     gradientIn: get('scale.white'),
-    gradientOut: 'rgba(255,255,255,0)'
+    gradientOut: alpha(get('scale.white'), 0)
   },
   checks: {
     bg: get('scale.gray.9'),
@@ -871,28 +886,28 @@ export default {
     headerBorder: get('scale.gray.8'),
     headerIcon: get('scale.gray.4'),
     lineText: get('scale.gray.2'),
-    lineNumText: 'rgba(149,157,165,0.75)',
+    lineNumText: alpha(get('scale.gray.4'), 0.75),
     lineTimestampText: get('scale.gray.4'),
     lineHoverBg: get('scale.gray.8'),
-    lineSelectedBg: 'rgba(33,136,255,0.15)',
+    lineSelectedBg: alpha(get('scale.blue.4'), 0.15),
     lineSelectedNumText: get('scale.blue.3'),
     lineDtFmText: get('scale.gray.9'),
     lineDtFmBg: get('scale.yellow.5'),
-    gateBg: 'rgba(249,197,19,0.15)',
+    gateBg: alpha(get('scale.yellow.6'), 0.15),
     gateText: get('scale.gray.2'),
     gateWaitingText: get('scale.gray.3'),
     stepHeaderOpenBg: get('scale.gray.8'),
     stepErrorText: get('scale.red.3'),
     stepWarningText: get('scale.yellow.3'),
     loglineText: get('scale.gray.4'),
-    loglineNumText: 'rgba(149,157,165,0.75)',
+    loglineNumText: alpha(get('scale.gray.4'), 0.75),
     loglineDebugText: get('scale.purple.3'),
     loglineErrorText: get('scale.gray.2'),
     loglineErrorNumText: get('scale.red.3'),
-    loglineErrorBg: 'rgba(203,36,49,0.15)',
+    loglineErrorBg: alpha(get('scale.red.6'), 0.15),
     loglineWarningText: get('scale.gray.2'),
     loglineWarningNumText: get('scale.yellow.3'),
-    loglineWarningBg: 'rgba(249,197,19,0.15)',
+    loglineWarningBg: alpha(get('scale.yellow.6'), 0.15),
     loglineCommandText: get('scale.blue.3'),
     loglineSectionText: get('scale.green.3'),
     ansi: {
@@ -919,7 +934,7 @@ export default {
     gradientLeft: get('scale.blue.0'),
     gradientRight: get('scale.green.1'),
     gradientIn: get('scale.white'),
-    gradientOut: 'rgba(255,255,255,0)'
+    gradientOut: alpha(get('scale.white'), 0)
   },
   marketingIcon: {
     primary: get('scale.blue.4'),
