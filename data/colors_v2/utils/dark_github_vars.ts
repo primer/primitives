@@ -1,4 +1,4 @@
-import {get} from '../../../src/utils'
+import {get, alpha} from '../../../src/utils'
 
 // Variables to be moved to github/github
 
@@ -160,5 +160,15 @@ export default {
       cyan: '#76e3ea',
       cyanBright: '#b3f0ff'
     }
+  },
+  project: {
+    headerBg: get('scale.gray.9'),
+    sidebarBg: get('scale.gray.8'),
+    gradientIn: get('scale.gray.8'),
+    gradientOut: alpha(get('scale.gray.8'), 0)
+  },
+  headerSearch: {
+    bg: get('scale.gray.9'),
+    border: get('scale.gray.7')
   }
 }

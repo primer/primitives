@@ -1,6 +1,7 @@
 import {alpha, get, lighten, merge} from '../../src/utils'
 import deprecatedVars from './utils/deprecated_vars'
 import lightGithubVars from './utils/light_github_vars'
+import marketingVars from './utils/marketing_vars'
 
 const vars = {
   scale: {
@@ -170,22 +171,35 @@ const vars = {
       inset: (theme: any) => `inset 0 1px 0 ${alpha(get('scale.gray.2'), 0.2)(theme)}`, // top inner shadow
       focus: (theme: any) => `0 0 0 3px ${alpha(get('scale.blue.5'), 0.3)(theme)}` // blue focus ring
     }
-  }
+  },
 
   // Components
-  // avatar: {},
+  avatar: {
+    bg: get('scale.white'),
+    border: 'transparent',
+    stackFade: get('scale.gray.3'),
+    stackFadeMore: get('scale.gray.2'),
+    childShadow: (theme: any) => `-2px -2px 0 ${alpha(get('scale.white'), 0.8)(theme)}`
+  },
+  selectMenu: {
+    backdropBorder: 'transparent',
+    tapHighlight: alpha(get('scale.gray.3'), 0.5),
+    tapFocusBg: get('scale.blue.1')
+  },
+  header: {
+    text: alpha(get('scale.white'), 0.7),
+    bg: get('scale.gray.9'),
+    logo: get('scale.white')
+  },
+  sidenav: {
+    selectedBg: get('scale.white')
+  },
+  menu: {
+    bgActive: 'transparent'
+  }
   // btn: {},
-  // prState: {},
-  // selectMenu: {},
-  // sidenav: {}, // ?
-  // menu: {}, // ?
-  // header: {}, // ?
-  // headerSearch: {} // ?
-  // project; used in memex?
-
-  // Marketing
 
   // ansi
 }
 
-export default merge(deprecatedVars, lightGithubVars, vars)
+export default merge(deprecatedVars, lightGithubVars, marketingVars, vars)

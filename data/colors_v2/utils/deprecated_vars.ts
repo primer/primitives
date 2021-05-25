@@ -49,7 +49,7 @@ export default {
     canvasInset: get('canvas.inset'),
     primary: get('canvas.default'),
     secondary: get('neutral.muted'),
-    teritiary: get('neutral.muted'),
+    tertiary: get('neutral.muted'),
     overlay: get('canvas.overlay'),
     backdrop: get('primer.canvas.backdrop'),
     info: get('accent.muted'),
@@ -61,28 +61,30 @@ export default {
     warning: get('warning.muted'),
     warningInverse: get('warning.emphasis')
   },
+  shadow: {
+    highlight: get('primer.shadow.highlight'),
+    inset: get('primer.shadow.inset')
+  },
   state: {
-    state: {
-      hover: {
-        primaryBg: get('accent.emphasis'),
-        primaryBorder: get('accent.emphasis'),
-        primaryText: get('fg.onEmphasis'),
-        primaryIcon: get('fg.onEmphasis'),
-        secondaryBg: get('neutral.muted'),
-        secondaryBorder: get('neutral.muted')
-      },
+    hover: {
+      primaryBg: get('accent.emphasis'),
+      primaryBorder: get('accent.emphasis'),
+      primaryText: get('fg.onEmphasis'),
+      primaryIcon: get('fg.onEmphasis'),
+      secondaryBg: get('neutral.muted'),
+      secondaryBorder: get('neutral.muted')
+    },
 
-      selected: {
-        primaryBg: get('accent.emphasis'),
-        primaryBorder: get('accent.emphasis'),
-        primaryText: get('fg.onEmphasis'),
-        primaryIcon: get('fg.onEmphasis')
-      },
+    selected: {
+      primaryBg: get('accent.emphasis'),
+      primaryBorder: get('accent.emphasis'),
+      primaryText: get('fg.onEmphasis'),
+      primaryIcon: get('fg.onEmphasis')
+    },
 
-      focus: {
-        border: get('accent.emphasis'),
-        shadow: get('primer.shadow.focus') // blue focus ring
-      }
+    focus: {
+      border: get('accent.emphasis'),
+      shadow: get('primer.shadow.focus') // blue focus ring
     }
   },
   alert: {
@@ -393,5 +395,42 @@ export default {
     iconActive: get('fg.default'),
     counterText: get('fg.default'),
     counterBg: get('neutral.muted')
+  },
+  selectMenu: {
+    borderSecondary: get('border.divider'),
+    shadow: get('shadow.large'),
+    backdropBg: get('primer.canvas.backdrop')
+  },
+  sidenav: {
+    borderActive: get('primer.border.active')
+  },
+  menu: {
+    headingText: get('fg.default'),
+    borderActive: get('primer.border.active')
+  },
+  project: {
+    cardBg: get('canvas.overlay')
+  },
+  prState: {
+    draft: {
+      text: get('fg.onEmphasis'),
+      bg: get('neutral.emphasis'),
+      border: unset
+    },
+    open: {
+      text: get('fg.onEmphasis'),
+      bg: get('success.emphasis'),
+      border: unset
+    },
+    merged: {
+      text: get('fg.onEmphasis'),
+      bg: get('done.emphasis'),
+      border: unset
+    },
+    closed: {
+      text: get('fg.onEmphasis'),
+      bg: get('danger.emphasis'),
+      border: unset
+    }
   }
 }

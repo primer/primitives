@@ -1,4 +1,4 @@
-import {alpha, get, lighten, merge} from '../../src/utils'
+import {alpha, get, lighten} from '../../src/utils'
 
 export default {
   scale: {

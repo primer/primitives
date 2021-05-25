@@ -1,6 +1,7 @@
 import {alpha, get, merge} from '../../src/utils'
-import deprecatedVars from './utils/deprecated_vars'
 import darkGithubVars from './utils/dark_github_vars'
+import deprecatedVars from './utils/deprecated_vars'
+import marketingVars from './utils/marketing_vars'
 
 const vars = {
   // Scales
@@ -171,7 +172,32 @@ const vars = {
       inset: '0 0 transparent', // top inner shadow
       focus: (theme: any) => `0 0 0 3px ${get('scale.blue.8')(theme)}` // blue focus ring
     }
+  },
+
+  // Components
+  avatar: {
+    bg: alpha(get('scale.white'), 0.1),
+    border: alpha(get('scale.white'), 0.1),
+    stackFade: get('scale.gray.6'),
+    stackFadeMore: get('scale.gray.7'),
+    childShadow: (theme: any) => `-2px -2px 0 ${get('scale.gray.9')(theme)}`
+  },
+  selectMenu: {
+    backdropBorder: get('scale.gray.5'),
+    tapHighlight: alpha(get('scale.gray.6'), 0.5),
+    tapFocusBg: get('scale.blue.8')
+  },
+  header: {
+    text: alpha(get('scale.white'), 0.7),
+    bg: get('scale.gray.9'),
+    logo: get('scale.gray.0')
+  },
+  sidenav: {
+    selectedBg: get('scale.gray.7')
+  },
+  menu: {
+    bgActive: get('scale.gray.8')
   }
 }
 
-export default merge(deprecatedVars, darkGithubVars, vars)
+export default merge(deprecatedVars, darkGithubVars, marketingVars, vars)

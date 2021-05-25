@@ -160,5 +160,15 @@ export default {
       cyan: '#76e3ea',
       cyanBright: '#b3f0ff'
     }
+  },
+  project: {
+    headerBg: get('scale.gray.9'),
+    sidebarBg: get('scale.white'),
+    gradientIn: get('scale.white'),
+    gradientOut: alpha(get('scale.white'), 0)
+  },
+  headerSearch: {
+    bg: get('scale.gray.9'),
+    border: get('scale.gray.7')
   }
 }
