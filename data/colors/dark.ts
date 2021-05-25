@@ -374,7 +374,7 @@ export default {
       selectedBg: get('scale.blue.7'),
       selectedBorder: get('fade.white10'),
       selectedShadow: '0 0 transparent',
-      disabledText: alpha(get('scale.blue.5'), 0.5),
+      disabledText: alpha(get('scale.blue.3'), 0.5),
       disabledBg: get('scale.gray.9'),
       disabledCounterBg: alpha(get('scale.blue.5'), 0.05),
       focusBorder: get('scale.blue.3'),

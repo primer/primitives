@@ -1,4 +1,4 @@
-import {get} from '../../../src/utils'
+import {alpha, get} from '../../../src/utils'
 
 // Variables to be removed in the next major release
 
@@ -468,5 +468,11 @@ export default {
       bg: get('accent.emphasis'),
       gradientBg: unset
     }
+  },
+  introShelf: {
+    gradientLeft: get('accent.muted'),
+    gradientRight: get('success.muted'),
+    gradientIn: get('canvas.default'),
+    gradientOut: alpha(get('scale.white'), 0)
   }
 }
