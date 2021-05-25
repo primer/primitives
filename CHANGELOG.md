@@ -1,5 +1,27 @@
 # @primer/primitives
 
+## 4.3.5
+
+### Patch Changes
+
+- [#101](https://github.com/primer/primitives/pull/101) [`4a4b793`](https://github.com/primer/primitives/commit/4a4b793017bc410149b0c302f74fc64cca2038e2) Thanks [@simurai](https://github.com/simurai)! - Map v1 to v2 variables (part 3)
+
+* [#102](https://github.com/primer/primitives/pull/102) [`cfc2789`](https://github.com/primer/primitives/commit/cfc2789779239ad9e54c1aaebf75f3c8e9c6fd31) Thanks [@simurai](https://github.com/simurai)! - Update light theme
+
+## 4.3.4
+
+### Patch Changes
+
+- [#94](https://github.com/primer/primitives/pull/94) [`eed97d8`](https://github.com/primer/primitives/commit/eed97d8c4f4b5c0858b8ff30d8f4179b54141de4) Thanks [@colebemis](https://github.com/colebemis)! - Update experimental color variables
+
+## 4.3.3
+
+### Patch Changes
+
+- [#98](https://github.com/primer/primitives/pull/98) [`4d5bd48`](https://github.com/primer/primitives/commit/4d5bd48894edd310934e083dd94b93732f187679) Thanks [@colebemis](https://github.com/colebemis)! - Add experimental dark high contrast theme
+
+* [#96](https://github.com/primer/primitives/pull/96) [`5d5d265`](https://github.com/primer/primitives/commit/5d5d265711df77f6f523c0c248162033e8e77d0c) Thanks [@colebemis](https://github.com/colebemis)! - Update experimental dark mode mapping
+
 ## 4.3.2
 
 ### Patch Changes
