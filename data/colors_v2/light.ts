@@ -92,9 +92,7 @@ const vars = {
   canvas: {
     default: get('scale.white'),
     overlay: get('scale.white'),
-    inset: get('scale.gray.1'),
-    backdrop: alpha(get('scale.black'), 0.8),
-    mobile: get('scale.white')
+    inset: get('scale.gray.1')
   },
   border: {
     default: get('scale.gray.2'),
@@ -157,10 +155,10 @@ const vars = {
     muted: get('scale.pink.0')
   },
 
-  // Only meant for Primer components
+  // Only meant to be used by Primer components
   primer: {
     canvas: {
-      background: alpha(get('scale.black'), 0.5), // use for modal/dialogs
+      backdrop: alpha(get('scale.black'), 0.5), // use for modal/dialogs
       sticky: alpha(get('scale.white'), 0.95) // use for sticky headers
     },
     border: {
@@ -173,6 +171,21 @@ const vars = {
       focus: (theme: any) => `0 0 0 3px ${alpha(get('scale.blue.5'), 0.3)(theme)}` // blue focus ring
     }
   }
+
+  // Components
+  // avatar: {},
+  // btn: {},
+  // prState: {},
+  // selectMenu: {},
+  // sidenav: {}, // ?
+  // menu: {}, // ?
+  // header: {}, // ?
+  // headerSearch: {} // ?
+  // project; used in memex?
+
+  // Marketing
+
+  // ansi
 }
 
 export default merge(deprecatedVars, lightGithubVars, vars)

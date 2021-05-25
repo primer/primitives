@@ -93,9 +93,7 @@ const vars = {
   canvas: {
     default: get('scale.gray.9'),
     overlay: get('scale.gray.8'),
-    inset: get('scale.black'),
-    backdrop: alpha(get('scale.black'), 0.8),
-    mobile: get('scale.black')
+    inset: get('scale.black')
   },
   border: {
     default: get('scale.gray.6'),
@@ -161,7 +159,7 @@ const vars = {
   // Only meant for Primer components
   primer: {
     canvas: {
-      background: alpha(get('scale.black'), 0.8), // use for modal/dialogs
+      backdrop: alpha(get('scale.black'), 0.8), // use for modal/dialogs
       sticky: alpha(get('scale.gray.9'), 0.95) // use for sticky headers
     },
     border: {

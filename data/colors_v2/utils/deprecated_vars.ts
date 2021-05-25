@@ -3,7 +3,10 @@ import {get} from '../../../src/utils'
 // Variables to be removed in the next major release
 
 // Every variable in this file must map to a functional variable (e.g. get('fg.default')).
-// Don't use hex codes (e.g. '#ff0000') or scale variables (e.g. get('scale.gray.5')).
+// Don't use hex codes (e.g. '#fff') or scale variables (e.g. get('scale.gray.5')).
+
+const deprecated = '#ff0000'
+const unset = 'transparent'
 
 export default {
   text: {
@@ -41,14 +44,14 @@ export default {
   },
   bg: {
     canvas: get('canvas.default'),
-    canvasMobile: get('canvas.mobile'),
+    canvasMobile: unset,
     canvasInverse: get('neutral.emphasis'),
     canvasInset: get('canvas.inset'),
     primary: get('canvas.default'),
     secondary: get('neutral.muted'),
     teritiary: get('neutral.muted'),
     overlay: get('canvas.overlay'),
-    backdrop: get('canvas.backdrop'),
+    backdrop: get('primer.canvas.backdrop'),
     info: get('accent.muted'),
     infoInverse: get('accent.emphasis'),
     danger: get('danger.muted'),
@@ -247,5 +250,148 @@ export default {
       text: get('severe.fg'),
       border: get('severe.emphasis')
     }
+  },
+  input: {
+    bg: get('canvas.default'),
+    contrastBg: get('canvas.inset'),
+    border: get('border.default'),
+    shadow: get('primer.shadow.inset'),
+    disabledBg: get('neutral.muted'),
+    disabledBorder: get('border.default'),
+    warningBorder: get('warning.emphasis'),
+    errorBorder: get('danger.emphasis'),
+    tooltip: {
+      success: {
+        text: get('fg.default'),
+        bg: get('success.muted'),
+        border: get('success.highlighter')
+      },
+      warning: {
+        text: get('fg.default'),
+        bg: get('warning.muted'),
+        border: get('warning.highlighter')
+      },
+      error: {
+        text: get('fg.default'),
+        bg: get('danger.muted'),
+        border: get('danger.highlighter')
+      }
+    }
+  },
+  toast: {
+    text: get('fg.default'),
+    bg: get('canvas.default'),
+    border: get('border.default'),
+    shadow: get('shadow.large'),
+    icon: get('fg.onEmphasis'),
+    iconBg: get('accent.emphasis'),
+    iconBorder: unset,
+    success: {
+      text: get('fg.default'),
+      border: get('border.default'),
+      icon: get('fg.onEmphasis'),
+      iconBg: get('success.emphasis'),
+      iconBorder: unset
+    },
+    warning: {
+      text: get('fg.default'),
+      border: get('border.default'),
+      icon: get('fg.default'),
+      iconBg: get('warning.emphasis'),
+      iconBorder: unset
+    },
+    danger: {
+      text: get('fg.default'),
+      border: get('border.default'),
+      icon: get('fg.onEmphasis'),
+      iconBg: get('danger.emphasis'),
+      iconBorder: unset
+    },
+    loading: {
+      text: get('fg.default'),
+      border: get('border.default'),
+      icon: get('fg.onEmphasis'),
+      iconBg: get('neutral.emphasis'),
+      iconBorder: unset
+    }
+  },
+  timeline: {
+    text: get('fg.muted'),
+    badgeBg: get('neutral.muted'),
+    badgeSuccessBorder: unset,
+    targetBadgeBorder: get('accent.emphasis'),
+    targetBadgeShadow: get('accent.highlighter')
+  },
+  diffstat: {
+    neutralBg: get('neutral.highlighter'),
+    neutralBorder: get('neutral.highlighter'),
+    deletionBg: get('danger.emphasis'),
+    deletionBorder: get('danger.emphasis'),
+    additionBg: get('success.emphasis'),
+    additionBorder: get('success.emphasis')
+  },
+  diff: {
+    addition: {
+      text: get('success.fg'),
+      bg: get('success.muted'),
+      border: get('success.highlighter')
+    },
+    deletion: {
+      text: get('danger.fg'),
+      bg: get('danger.muted'),
+      border: get('danger.highlighter')
+    },
+    change: {
+      text: get('warning.fg'),
+      bg: get('warning.muted'),
+      border: get('warning.highlighter')
+    }
+  },
+  mergeBox: {
+    successIconBg: get('success.emphasis'),
+    successIconText: get('fg.onEmphasis'),
+    successIconBorder: unset,
+    successIndicatorBg: get('success.emphasis'),
+    successIndicatorBorder: unset,
+    mergedIconBg: get('done.emphasis'),
+    mergedIconText: get('fg.onEmphasis'),
+    mergedIconBorder: unset,
+    mergedBoxBorder: get('done.emphasis'),
+    neutralIconBg: get('neutral.emphasis'),
+    neutralIconText: get('fg.onEmphasis'),
+    neutralIconBorder: unset,
+    neutralIndicatorBg: get('neutral.emphasis'),
+    neutralIndicatorBorder: unset,
+    warningIconBg: get('warning.emphasis'),
+    warningIconText: get('fg.onEmphasis'),
+    warningIconBorder: unset,
+    warningBoxBorder: get('warning.emphasis'),
+    warningMergeHighlight: unset,
+    errorIconBg: get('danger.emphasis'),
+    errorIconText: get('fg.onEmphasis'),
+    errorIconBorder: unset,
+    errorIndicatorBg: get('danger.emphasis'),
+    errorIndicatorBorder: unset
+  },
+  fade: {
+    fg10: deprecated,
+    fg15: deprecated,
+    fg30: deprecated,
+    fg50: deprecated,
+    fg70: deprecated,
+    fg85: deprecated
+  },
+  underlinenav: {
+    border: unset,
+    borderHover: get('neutral.highlighter'),
+    borderActive: get('primer.border.active'),
+    text: get('fg.default'),
+    textHover: get('fg.default'),
+    textActive: get('fg.default'),
+    icon: get('fg.inactive'),
+    iconHover: get('fg.inactive'),
+    iconActive: get('fg.default'),
+    counterText: get('fg.default'),
+    counterBg: get('neutral.muted')
   }
 }
