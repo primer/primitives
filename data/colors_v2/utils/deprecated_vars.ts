@@ -213,5 +213,39 @@ export default {
   footerInvertocat: {
     octicon: get('fg.inactive'),
     octiconHover: get('fg.muted')
+  },
+  dropdown: {
+    shadow: get('shadow.large')
+  },
+  label: {
+    border: get('border.default'),
+    primary: {
+      text: get('fg.default'),
+      border: get('neutral.emphasis')
+    },
+    secondary: {
+      text: get('fg.muted'),
+      border: get('border.default')
+    },
+    info: {
+      text: get('accent.fg'),
+      border: get('accent.emphasis')
+    },
+    success: {
+      text: get('success.fg'),
+      border: get('success.emphasis')
+    },
+    warning: {
+      text: get('warning.fg'),
+      border: get('warning.emphasis')
+    },
+    danger: {
+      text: get('danger.fg'),
+      border: get('danger.emphasis')
+    },
+    orange: {
+      text: get('severe.fg'),
+      border: get('severe.emphasis')
+    }
   }
 }
