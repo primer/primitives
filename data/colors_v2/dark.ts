@@ -197,6 +197,25 @@ const vars = {
   },
   menu: {
     bgActive: get('scale.gray.8')
+  },
+  ansi: {
+    black: get('scale.gray.5'),
+    blackBright: get('scale.gray.4'),
+    white: get('scale.gray.2'),
+    whiteBright: get('scale.white'),
+    gray: get('scale.gray.4'),
+    red: get('scale.red.3'),
+    redBright: get('scale.red.2'),
+    green: get('scale.green.3'),
+    greenBright: get('scale.green.2'),
+    yellow: get('scale.yellow.3'),
+    yellowBright: get('scale.yellow.2'),
+    blue: get('scale.blue.3'),
+    blueBright: get('scale.blue.2'),
+    magenta: get('scale.purple.3'),
+    magentaBright: get('scale.purple.2'),
+    cyan: '#39c5cf',
+    cyanBright: '#56d4dd'
   }
 }
 

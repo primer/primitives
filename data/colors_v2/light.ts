@@ -196,8 +196,27 @@ const vars = {
   },
   menu: {
     bgActive: 'transparent'
-  }
+  },
   // btn: {},
+  ansi: {
+    black: get('scale.gray.9'),
+    blackBright: get('scale.gray.6'),
+    white: get('scale.gray.5'),
+    whiteBright: get('scale.gray.4'),
+    gray: get('scale.gray.5'),
+    red: get('scale.red.5'),
+    redBright: get('scale.red.6'),
+    green: get('scale.green.6'),
+    greenBright: get('scale.green.5'),
+    yellow: get('scale.yellow.8'),
+    yellowBright: get('scale.yellow.7'),
+    blue: get('scale.blue.5'),
+    blueBright: get('scale.blue.4'),
+    magenta: get('scale.purple.5'),
+    magentaBright: get('scale.purple.4'),
+    cyan: '#1b7c83',
+    cyanBright: '#3192aa'
+  }
 
   // ansi
 }

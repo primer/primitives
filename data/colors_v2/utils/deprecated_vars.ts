@@ -432,5 +432,41 @@ export default {
       bg: get('danger.emphasis'),
       border: unset
     }
+  },
+  diffBlob: {
+    numText: get('neutral.fg'),
+    numHoverText: get('fg.default'),
+    addition: {
+      numText: get('success.fg'),
+      numHoverText: get('fg.default'),
+      numBg: get('success.highlighter'),
+      lineBg: get('success.muted'),
+      wordBg: get('success.highlighter')
+    },
+    deletion: {
+      numText: get('danger.fg'),
+      numHoverText: get('fg.default'),
+      numBg: get('danger.highlighter'),
+      lineBg: get('danger.muted'),
+      wordBg: get('danger.highlighter')
+    },
+    hunk: {
+      text: get('fg.muted'),
+      numBg: get('accent.highlighter'),
+      lineBg: get('accent.muted')
+    },
+    emptyBlockBg: get('neutral.muted'),
+    selectedLineHighlightBg: get('warning.muted'),
+    selectedLineHighlightBorder: get('warning.highlighter'),
+    expander: {
+      icon: get('fg.muted'),
+      hoverIcon: get('fg.onEmphasis'),
+      hoverBg: get('accent.emphasis')
+    },
+    commentButton: {
+      icon: get('fg.onEmphasis'),
+      bg: get('accent.emphasis'),
+      gradientBg: unset
+    }
   }
 }
