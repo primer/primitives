@@ -1,7 +1,7 @@
 import {alpha, darken, get, lighten, merge} from '../../src/utils'
 import deprecatedVars from './utils/deprecated_vars'
-import lightGithubVars from './utils/light_github_vars'
-import marketingVars from './utils/marketing_vars'
+import lightGithubVars from './utils/light_product_vars'
+import lightMarketingVars from './utils/light_marketing_vars'
 
 const vars = {
   scale: {
@@ -300,4 +300,4 @@ const vars = {
   }
 }
 
-export default merge(deprecatedVars, lightGithubVars, marketingVars, vars)
+export default merge(deprecatedVars, lightGithubVars, lightMarketingVars, vars)

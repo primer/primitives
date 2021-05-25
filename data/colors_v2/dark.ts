@@ -1,7 +1,7 @@
 import {alpha, get, merge, darken} from '../../src/utils'
-import darkGithubVars from './utils/dark_github_vars'
+import darkProductVars from './utils/dark_product_vars'
+import darkMarketingVars from './utils/dark_marketing_vars'
 import deprecatedVars from './utils/deprecated_vars'
-import marketingVars from './utils/marketing_vars'
 
 const vars = {
   // Scales
@@ -299,4 +299,4 @@ const vars = {
   }
 }
 
-export default merge(deprecatedVars, darkGithubVars, marketingVars, vars)
+export default merge(deprecatedVars, darkProductVars, darkMarketingVars, vars)
