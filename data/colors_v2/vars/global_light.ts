@@ -25,51 +25,51 @@ export default {
 
   // Roles
   neutral: {
-    fg: get('scale.gray.5'),
+    emphasisPlus: get('scale.gray.9'),
     emphasis: get('scale.gray.5'),
-    highlighter: get('scale.gray.3'),
-    muted: get('scale.gray.1')
+    highlighter: alpha(get('scale.gray.3'), 0.4),
+    muted: alpha(get('scale.gray.1'), 0.5)
   },
   accent: {
     fg: get('scale.blue.5'),
     emphasis: get('scale.blue.5'),
-    highlighter: get('scale.blue.2'),
+    highlighter: alpha(get('scale.blue.3'), 0.4),
     muted: get('scale.blue.0')
   },
   success: {
-    fg: get('scale.green.6'),
+    fg: get('scale.green.5'),
     emphasis: get('scale.green.5'),
-    highlighter: get('scale.green.3'),
-    muted: get('scale.green.1')
+    highlighter: alpha(get('scale.green.3'), 0.4),
+    muted: get('scale.green.0')
   },
   warning: {
-    fg: get('scale.yellow.8'),
+    fg: get('scale.yellow.5'),
     emphasis: get('scale.yellow.5'),
-    highlighter: get('scale.yellow.3'),
-    muted: get('scale.yellow.2')
+    highlighter: alpha(get('scale.yellow.3'), 0.4),
+    muted: get('scale.yellow.0')
   },
   severe: {
     fg: get('scale.orange.5'),
     emphasis: get('scale.orange.5'),
-    highlighter: get('scale.orange.3'),
-    muted: get('scale.orange.1')
+    highlighter: alpha(get('scale.orange.3'), 0.4),
+    muted: get('scale.orange.0')
   },
   danger: {
-    fg: get('scale.red.6'),
+    fg: get('scale.red.5'),
     emphasis: get('scale.red.5'),
-    highlighter: get('scale.red.2'),
+    highlighter: alpha(get('scale.red.3'), 0.4),
     muted: get('scale.red.0')
   },
   done: {
     fg: get('scale.purple.5'),
     emphasis: get('scale.purple.5'),
-    highlighter: get('scale.purple.2'),
+    highlighter: alpha(get('scale.purple.3'), 0.4),
     muted: get('scale.purple.0')
   },
   sponsors: {
     fg: get('scale.pink.5'),
     emphasis: get('scale.pink.5'),
-    highlighter: get('scale.pink.2'),
+    highlighter: alpha(get('scale.pink.3'), 0.4),
     muted: get('scale.pink.0')
   },
 
