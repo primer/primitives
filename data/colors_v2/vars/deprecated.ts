@@ -34,7 +34,7 @@ export default {
   border: {
     primary: get('border.default'),
     secondary: get('border.divider'),
-    tertiary: get('neutral.highlighter'),
+    tertiary: get('neutral.muted'),
     overlay: get('border.default'),
     inverse: get('fg.onEmphasis'), // or move to marketing
     info: get('accent.emphasis'),
@@ -48,17 +48,17 @@ export default {
     canvasInverse: get('neutral.emphasis'),
     canvasInset: get('canvas.inset'),
     primary: get('canvas.default'),
-    secondary: get('neutral.muted'),
-    tertiary: get('neutral.muted'),
+    secondary: get('neutral.subtle'),
+    tertiary: get('neutral.subtle'),
     overlay: get('canvas.overlay'),
     backdrop: get('primer.canvas.backdrop'),
-    info: get('accent.muted'),
+    info: get('accent.subtle'),
     infoInverse: get('accent.emphasis'),
-    danger: get('danger.muted'),
+    danger: get('danger.subtle'),
     dangerInverse: get('danger.emphasis'),
-    success: get('success.muted'),
+    success: get('success.subtle'),
     successInverse: get('success.emphasis'),
-    warning: get('warning.muted'),
+    warning: get('warning.subtle'),
     warningInverse: get('warning.emphasis')
   },
   shadow: {
@@ -71,8 +71,8 @@ export default {
       primaryBorder: get('accent.emphasis'),
       primaryText: get('fg.onEmphasis'),
       primaryIcon: get('fg.onEmphasis'),
-      secondaryBg: get('neutral.muted'),
-      secondaryBorder: get('neutral.muted')
+      secondaryBg: get('neutral.subtle'),
+      secondaryBorder: get('neutral.subtle')
     },
 
     selected: {
@@ -91,26 +91,26 @@ export default {
     info: {
       text: get('fg.default'),
       icon: get('accent.fg'),
-      bg: get('accent.muted'),
-      border: get('accent.highlighter')
+      bg: get('accent.subtle'),
+      border: get('accent.muted')
     },
     warn: {
       text: get('fg.default'),
       icon: get('warning.fg'),
-      bg: get('warning.muted'),
-      border: get('warning.highlighter')
+      bg: get('warning.subtle'),
+      border: get('warning.muted')
     },
     error: {
       text: get('fg.default'),
       icon: get('danger.fg'),
-      bg: get('danger.muted'),
-      border: get('danger.highlighter')
+      bg: get('danger.subtle'),
+      border: get('danger.muted')
     },
     success: {
       text: get('fg.default'),
       icon: get('success.fg'),
-      bg: get('success.muted'),
-      border: get('success.highlighter')
+      bg: get('success.subtle'),
+      border: get('success.muted')
     }
   },
   autocomplete: {
@@ -122,50 +122,50 @@ export default {
   },
   counter: {
     text: get('fg.default'),
-    bg: get('neutral.muted'),
+    bg: get('neutral.subtle'),
     primary: {
       text: get('fg.onEmphasis'),
       bg: get('neutral.emphasis')
     },
     secondary: {
       text: get('fg.muted'),
-      bg: get('neutral.muted')
+      bg: get('neutral.subtle')
     }
   },
   box: {
-    blueBorder: get('accent.highlighter'),
-    rowYellowBg: get('warning.muted'),
-    rowBlueBg: get('accent.muted'),
-    headerBlueBg: get('accent.muted'),
-    headerBlueBorder: get('accent.highlighter'),
-    borderInfo: get('accent.highlighter'),
-    bgInfo: get('accent.muted'),
-    borderWarning: get('warning.highlighter'),
-    bgWarning: get('warning.muted')
+    blueBorder: get('accent.muted'),
+    rowYellowBg: get('warning.subtle'),
+    rowBlueBg: get('accent.subtle'),
+    headerBlueBg: get('accent.subtle'),
+    headerBlueBorder: get('accent.muted'),
+    borderInfo: get('accent.muted'),
+    bgInfo: get('accent.subtle'),
+    borderWarning: get('warning.muted'),
+    bgWarning: get('warning.subtle')
   },
   branchName: {
     text: get('fg.muted'),
     icon: get('fg.muted'),
-    bg: get('neutral.muted'),
+    bg: get('neutral.subtle'),
     link: {
       text: get('accent.fg'),
       icon: get('accent.fg'),
-      bg: get('accent.muted')
+      bg: get('accent.subtle')
     }
   },
   markdown: {
-    codeBg: get('neutral.muted'),
+    codeBg: get('neutral.subtle'),
     frameBorder: get('border.default'),
     blockquoteBorder: get('border.default'),
     tableBorder: get('border.default'),
     tableTrBorder: get('border.divider')
   },
   filterItem: {
-    barBg: get('neutral.muted')
+    barBg: get('neutral.subtle')
   },
   hiddenTextExpander: {
-    bg: get('neutral.highlighter'),
-    bgHover: get('accent.highlighter')
+    bg: get('neutral.muted'),
+    bgHover: get('accent.muted')
   },
   dragAndDrop: {
     border: get('border.default')
@@ -190,30 +190,30 @@ export default {
     bg: get('neutral.emphasis')
   },
   searchKeyword: {
-    hl: get('warning.muted')
+    hl: get('warning.subtle')
   },
   filesExplorerIcon: get('accent.fg'),
-  hlAuthorBg: get('accent.muted'),
-  hlAuthorBorder: get('accent.highlighter'),
-  logoSubdued: get('neutral.highlighter'),
-  discussionBorder: get('success.highlighter'),
+  hlAuthorBg: get('accent.subtle'),
+  hlAuthorBorder: get('accent.muted'),
+  logoSubdued: get('neutral.muted'),
+  discussionBorder: get('success.muted'),
   discussionBgSuccess: get('success.emphasis'),
   actionsWorkflowTableStickyBg: get('primer.canvas.sticky'),
   repoLanguageColorBorder: get('primer.border.contrast'),
-  codeSelectionBg: get('accent.highlighter'),
+  codeSelectionBg: get('accent.muted'),
   highlight: {
     text: get('fg.default'),
-    bg: get('warning.muted')
+    bg: get('warning.subtle')
   },
   blob: {
-    lineHighlightBg: get('warning.muted'),
-    lineHighlightBorder: get('warning.highlighter')
+    lineHighlightBg: get('warning.subtle'),
+    lineHighlightBorder: get('warning.muted')
   },
   topicTag: {
     text: get('accent.fg'),
-    bg: get('accent.muted'),
-    hoverBg: get('accent.highlighter'),
-    activeBg: get('accent.muted')
+    bg: get('accent.subtle'),
+    hoverBg: get('accent.muted'),
+    activeBg: get('accent.subtle')
   },
   footerInvertocat: {
     octicon: get('fg.inactive'),
@@ -258,25 +258,25 @@ export default {
     contrastBg: get('canvas.inset'),
     border: get('border.default'),
     shadow: get('primer.shadow.inset'),
-    disabledBg: get('neutral.muted'),
+    disabledBg: get('neutral.subtle'),
     disabledBorder: get('border.default'),
     warningBorder: get('warning.emphasis'),
     errorBorder: get('danger.emphasis'),
     tooltip: {
       success: {
         text: get('fg.default'),
-        bg: get('success.muted'),
-        border: get('success.highlighter')
+        bg: get('success.subtle'),
+        border: get('success.muted')
       },
       warning: {
         text: get('fg.default'),
-        bg: get('warning.muted'),
-        border: get('warning.highlighter')
+        bg: get('warning.subtle'),
+        border: get('warning.muted')
       },
       error: {
         text: get('fg.default'),
-        bg: get('danger.muted'),
-        border: get('danger.highlighter')
+        bg: get('danger.subtle'),
+        border: get('danger.muted')
       }
     }
   },
@@ -319,14 +319,14 @@ export default {
   },
   timeline: {
     text: get('fg.muted'),
-    badgeBg: get('neutral.muted'),
+    badgeBg: get('neutral.subtle'),
     badgeSuccessBorder: unset,
     targetBadgeBorder: get('accent.emphasis'),
-    targetBadgeShadow: get('accent.highlighter')
+    targetBadgeShadow: get('accent.muted')
   },
   diffstat: {
-    neutralBg: get('neutral.highlighter'),
-    neutralBorder: get('neutral.highlighter'),
+    neutralBg: get('neutral.muted'),
+    neutralBorder: get('neutral.muted'),
     deletionBg: get('danger.emphasis'),
     deletionBorder: get('danger.emphasis'),
     additionBg: get('success.emphasis'),
@@ -335,18 +335,18 @@ export default {
   diff: {
     addition: {
       text: get('success.fg'),
-      bg: get('success.muted'),
-      border: get('success.highlighter')
+      bg: get('success.subtle'),
+      border: get('success.muted')
     },
     deletion: {
       text: get('danger.fg'),
-      bg: get('danger.muted'),
-      border: get('danger.highlighter')
+      bg: get('danger.subtle'),
+      border: get('danger.muted')
     },
     change: {
       text: get('warning.fg'),
-      bg: get('warning.muted'),
-      border: get('warning.highlighter')
+      bg: get('warning.subtle'),
+      border: get('warning.muted')
     }
   },
   mergeBox: {
@@ -385,7 +385,7 @@ export default {
   },
   underlinenav: {
     border: unset,
-    borderHover: get('neutral.highlighter'),
+    borderHover: get('neutral.muted'),
     borderActive: get('primer.border.active'),
     text: get('fg.default'),
     textHover: get('fg.default'),
@@ -394,7 +394,7 @@ export default {
     iconHover: get('fg.inactive'),
     iconActive: get('fg.default'),
     counterText: get('fg.default'),
-    counterBg: get('neutral.muted')
+    counterBg: get('neutral.subtle')
   },
   selectMenu: {
     borderSecondary: get('border.divider'),
@@ -439,25 +439,25 @@ export default {
     addition: {
       numText: get('success.fg'),
       numHoverText: get('fg.default'),
-      numBg: get('success.highlighter'),
-      lineBg: get('success.muted'),
-      wordBg: get('success.highlighter')
+      numBg: get('success.muted'),
+      lineBg: get('success.subtle'),
+      wordBg: get('success.muted')
     },
     deletion: {
       numText: get('danger.fg'),
       numHoverText: get('fg.default'),
-      numBg: get('danger.highlighter'),
-      lineBg: get('danger.muted'),
-      wordBg: get('danger.highlighter')
+      numBg: get('danger.muted'),
+      lineBg: get('danger.subtle'),
+      wordBg: get('danger.muted')
     },
     hunk: {
       text: get('fg.muted'),
-      numBg: get('accent.highlighter'),
-      lineBg: get('accent.muted')
+      numBg: get('accent.muted'),
+      lineBg: get('accent.subtle')
     },
-    emptyBlockBg: get('neutral.muted'),
-    selectedLineHighlightBg: get('warning.muted'),
-    selectedLineHighlightBorder: get('warning.highlighter'),
+    emptyBlockBg: get('neutral.subtle'),
+    selectedLineHighlightBg: get('warning.subtle'),
+    selectedLineHighlightBorder: get('warning.muted'),
     expander: {
       icon: get('fg.muted'),
       hoverIcon: get('fg.onEmphasis'),
@@ -470,8 +470,8 @@ export default {
     }
   },
   introShelf: {
-    gradientLeft: get('accent.muted'),
-    gradientRight: get('success.muted'),
+    gradientLeft: get('accent.subtle'),
+    gradientRight: get('success.subtle'),
     gradientIn: get('canvas.default'),
     gradientOut: alpha(get('scale.white'), 0)
   }
