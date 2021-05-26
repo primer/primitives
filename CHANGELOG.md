@@ -1,5 +1,15 @@
 # @primer/primitives
 
+## 4.3.6
+
+### Patch Changes
+
+- [#107](https://github.com/primer/primitives/pull/107) [`c935be7`](https://github.com/primer/primitives/commit/c935be730aec942a9324d3dec5cb1319f5e9830b) Thanks [@colebemis](https://github.com/colebemis)! - Rename role variables
+
+* [#103](https://github.com/primer/primitives/pull/103) [`ec66b32`](https://github.com/primer/primitives/commit/ec66b320010899ce1144811cadad39105593efe3) Thanks [@colebemis](https://github.com/colebemis)! - Internal reorganization of variables. No consumer-facing changes.
+
+- [#108](https://github.com/primer/primitives/pull/108) [`907b74c`](https://github.com/primer/primitives/commit/907b74c65e62ef278947de1da8d942ef6d99ccea) Thanks [@colebemis](https://github.com/colebemis)! - Remap v2 variables
+
 ## 4.3.5
 
 ### Patch Changes
