@@ -1,7 +1,8 @@
-import flatMap from "lodash/flatMap";
-import chalk from "chalk";
-import VariableCollection from "./variable-collection";
-import { SassMap } from "./scss";
+import chalk from 'chalk'
+import flatMap from 'lodash/flatMap'
+import isNumber from 'lodash/isNumber'
+import isString from 'lodash/isString'
+import VariableCollection, {ModeVariable} from './variable-collection'
 
 export default class ModeCollection {
   public readonly type: string
@@ -13,22 +14,11 @@ export default class ModeCollection {
     this.prefix = prefix
   }
 
-  public addFromSassExports(name: string, data: SassMap) {
-    let parent: string | null = null
-    if (data.value.__parent) {
-      parent = data.value.__parent.value as string
-      delete data.value.__parent
-    }
-    const vars = new VariableCollection(name, this.prefix, parent)
-    vars.addFromSassExports(data)
-    this.add(name, vars)
-  }
-
   public add(modeName: string, vars: VariableCollection) {
     this.modes.set(modeName, vars)
   }
 
-  public validate(): {isValid: boolean, errors: string[]} {
+  public validate(): {isValid: boolean; errors: string[]} {
     const errors = []
 
     // Ensure that every mode in this collection has the same variables defined
@@ -36,21 +26,24 @@ export default class ModeCollection {
     if (missingVarsPerMode.length > 0) {
       errors.push(`\n> The following variables are missing in one or more modes:\n`)
       for (const {modes, variableName} of missingVarsPerMode) {
-        const msg = chalk`* Variable {bold.red ${variableName}} is missing in modes: ${modes.map(mode => chalk.bold.bgBlack.white(mode.name)).join(', ')}`
+        const msg = chalk`* Variable {bold.red ${variableName}} is missing in modes: ${modes
+          .map(mode => chalk.bold.bgBlack.white(mode.name))
+          .join(', ')}`
         errors.push(msg)
       }
     }
 
-    // Ensure that any variables with late-binding to
-    // other CSS variables defined inside the same file can be resolved
-    const unresolvableBindings = this.getUnresolvableLateBindings()
-    if (unresolvableBindings.length > 0) {
-      errors.push(`\n> The following CSS variables were referenced as values but could not be resolved at build-time:\n`)
-      for (const {ref, from, mode} of unresolvableBindings) {
-        const msg = chalk`* Variable {bold.red var(--${ref})} referenced by {bold.bgBlack.white ${from}} in mode {bold.bgBlack.white ${mode.name}}`
+    // Ensure that all variables variables are defined
+    const invalidVars = this.getInvalidVars()
+    if (invalidVars.length > 0) {
+      errors.push(`\n> The following variables are invalid:\n`)
+
+      for (const {variable, mode} of invalidVars) {
+        const msg = chalk`* {bold.red ${variable.value}} cannot be assigned to {bold.bgBlack.white ${variable.name}} in mode {bold.bgBlack.white ${mode.name}} `
         errors.push(msg)
       }
-      errors.push(`Check to make sure CSS variable references do not create an infinite loop.`)
+
+      errors.push(`\nCheck to make sure variable references do not create an infinite loop.`)
     }
 
     return {isValid: errors.length === 0, errors}
@@ -70,12 +63,12 @@ export default class ModeCollection {
     }
   }
 
-  private getMissingVarsPerMode(): {modes: VariableCollection[], variableName: string}[] {
+  private getMissingVarsPerMode(): {modes: VariableCollection[]; variableName: string}[] {
     if (this.modes.size === 1) {
       return []
     }
 
-    const result: {modes: VariableCollection[], variableName: string}[] = []
+    const result: {modes: VariableCollection[]; variableName: string}[] = []
     const modes = [...this.modes.values()]
 
     const allVarNames = flatMap(modes, mode => {
@@ -93,15 +86,13 @@ export default class ModeCollection {
     return result
   }
 
-  private getUnresolvableLateBindings(): {mode: VariableCollection, from: string, ref: string}[] {
-    const result: {mode: VariableCollection, from: string, ref: string}[] = []
+  private getInvalidVars(): {mode: VariableCollection; variable: ModeVariable}[] {
+    const result: {mode: VariableCollection; variable: ModeVariable}[] = []
 
     for (const [_name, mode] of this.modes) {
-      const lateBindings = mode.flattened().filter(v => !!v.ref)
-      for (const v of lateBindings) {
-        if (!mode.resolveRef(v.ref!)) {
-          result.push({mode, from: v.name, ref: v.ref!})
-        }
+      const invalidVars = mode.flattened().filter(v => !(isNumber(v.value) || isString(v.value)))
+      for (const v of invalidVars) {
+        result.push({mode, variable: v})
       }
     }
 
