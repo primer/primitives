@@ -1,10 +1,10 @@
 # This is a temporary workflow for tracking the coverage of the v2 functional color system.
 # Delete this file when the v2 system is fully implemented.
 
-name: v2 coverage
+name: v2 stats
 on: [push]
 jobs:
-  coverage:
+  stats:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -23,5 +23,10 @@ jobs:
 
       - name: Compute coverage
         run: node .github/v2-coverage.js
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Compute variable count
+        run: npx ts-node .github/v2-var-count.ts
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
