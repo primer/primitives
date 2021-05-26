@@ -1,5 +1,6 @@
 import {merge} from '../../../src/utils'
 import deprecatedVars from '../vars/deprecated'
+import lightGlobalVars from '../vars/global_light'
 import lightMarketingVars from '../vars/marketing_light'
 import lightProductVars from '../vars/product_light'
 
@@ -49,4 +50,4 @@ const scale = {
   pink: ['#ffeff7', '#ffd3eb', '#ffadda', '#ff80c8', '#e85aad', '#bf3989', '#99286e', '#772057', '#611347', '#4d0336']
 }
 
-export default merge(deprecatedVars, lightProductVars, lightMarketingVars, {scale})
+export default merge(deprecatedVars, lightProductVars, lightMarketingVars, lightGlobalVars, {scale})
