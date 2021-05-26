@@ -74,8 +74,8 @@ export default {
     guttermarkerSubtleText: get('fg.inactive'),
     linenumberText: get('fg.muted'),
     cursor: get('fg.default'),
-    selectionBg: get('accent.muted'),
-    activelineBg: get('neutral.muted'),
+    selectionBg: get('accent.subtle'),
+    activelineBg: get('neutral.subtle'),
     matchingbracketText: get('fg.default'),
     linesBg: get('canvas.default'),
     syntax: {
