@@ -2,7 +2,9 @@
   "name": "@primer/primitives",
   "version": "4.3.5",
   "description": "Typography, spacing, and color primitives for Primer design system",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "main": "dist/js/index.js",
   "types": "dist/js/index.d.ts",
   "repository": "https://github.com/primer/primitives",
@@ -33,6 +35,7 @@
     "@actions/github": "^4.0.0",
     "@changesets/changelog-github": "^0.3.0",
     "@changesets/cli": "^2.11.2",
+    "@github/prettier-config": "^0.0.4",
     "@octokit/rest": "^18.5.3",
     "@types/chalk": "^2.2.0",
     "@types/flat": "^5.0.1",
@@ -51,8 +54,5 @@
     "sass-extract": "^2.1.0",
     "ts-node": "^8.10.2",
     "typescript": "^3.7.2"
-  },
-  "dependencies": {
-    "@github/prettier-config": "^0.0.4"
   }
 }
