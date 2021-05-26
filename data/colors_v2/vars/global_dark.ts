@@ -31,19 +31,19 @@ export default {
     muted: alpha(get('scale.gray.4'), 0.1)
   },
   accent: {
-    fg: get('scale.blue.4'),
+    fg: get('scale.blue.3'),
     emphasis: get('scale.blue.5'),
     highlighter: alpha(get('scale.blue.4'), 0.4),
     muted: alpha(get('scale.blue.4'), 0.1)
   },
   success: {
-    fg: get('scale.green.4'),
+    fg: get('scale.green.3'),
     emphasis: get('scale.green.5'),
     highlighter: alpha(get('scale.green.4'), 0.4),
     muted: alpha(get('scale.green.4'), 0.1)
   },
   warning: {
-    fg: get('scale.yellow.4'),
+    fg: get('scale.yellow.3'),
     emphasis: get('scale.yellow.5'),
     highlighter: alpha(get('scale.yellow.4'), 0.4),
     muted: alpha(get('scale.yellow.4'), 0.1)
