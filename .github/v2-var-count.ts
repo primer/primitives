@@ -1,18 +1,20 @@
 const {default: colors} = require('../dist/js/colors')
 const {default: colorsV2} = require('../dist/js/colors_v2')
-const {default: deprecatedVars} = require('../data/colors_v2/utils/deprecated_vars')
-const {default: githubVars} = require('../data/colors_v2/utils/light_product_vars')
-const {default: mktgVars} = require('../data/colors_v2/utils/light_marketing_vars')
+const {default: deprecatedVars} = require('../data/colors_v2/vars/deprecated')
+const {default: githubVars} = require('../data/colors_v2/vars/product_light')
 const flatten = require('flat')
 const {Octokit} = require('@octokit/rest')
 
 // This is a temporary script for tracking the variable count of the v2 functional color system.
 // Delete this file when the v2 system is fully implemented.
 
-const [repoOwner, repoName] = process.env.GITHUB_REPOSITORY.split('/')
-const octokit = new Octokit({auth: process.env.GITHUB_TOKEN})
-
 async function run() {
+  if (!process.env.GITHUB_REPOSITORY) {
+    return
+  }
+
+  const [repoOwner, repoName] = process.env.GITHUB_REPOSITORY.split('/')
+  const octokit = new Octokit({auth: process.env.GITHUB_TOKEN})
   const v1Count = Object.keys(flatten(colors.light)).length
 
   const deprecatedVarsCount = Object.keys(flatten(deprecatedVars)).length
