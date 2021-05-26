@@ -27,50 +27,50 @@ export default {
   neutral: {
     fg: get('scale.gray.5'),
     emphasis: get('scale.gray.5'),
-    highlighter: get('scale.gray.3'),
-    muted: get('scale.gray.1')
+    muted: get('scale.gray.3'),
+    subtle: get('scale.gray.1')
   },
   accent: {
     fg: get('scale.blue.5'),
     emphasis: get('scale.blue.5'),
-    highlighter: get('scale.blue.2'),
-    muted: get('scale.blue.0')
+    muted: get('scale.blue.2'),
+    subtle: get('scale.blue.0')
   },
   success: {
     fg: get('scale.green.6'),
     emphasis: get('scale.green.5'),
-    highlighter: get('scale.green.3'),
-    muted: get('scale.green.1')
+    muted: get('scale.green.3'),
+    subtle: get('scale.green.1')
   },
   warning: {
     fg: get('scale.yellow.8'),
     emphasis: get('scale.yellow.5'),
-    highlighter: get('scale.yellow.3'),
-    muted: get('scale.yellow.2')
+    muted: get('scale.yellow.3'),
+    subtle: get('scale.yellow.2')
   },
   severe: {
     fg: get('scale.orange.5'),
     emphasis: get('scale.orange.5'),
-    highlighter: get('scale.orange.3'),
-    muted: get('scale.orange.1')
+    muted: get('scale.orange.3'),
+    subtle: get('scale.orange.1')
   },
   danger: {
     fg: get('scale.red.6'),
     emphasis: get('scale.red.5'),
-    highlighter: get('scale.red.2'),
-    muted: get('scale.red.0')
+    muted: get('scale.red.2'),
+    subtle: get('scale.red.0')
   },
   done: {
     fg: get('scale.purple.5'),
     emphasis: get('scale.purple.5'),
-    highlighter: get('scale.purple.2'),
-    muted: get('scale.purple.0')
+    muted: get('scale.purple.2'),
+    subtle: get('scale.purple.0')
   },
   sponsors: {
     fg: get('scale.pink.5'),
     emphasis: get('scale.pink.5'),
-    highlighter: get('scale.pink.2'),
-    muted: get('scale.pink.0')
+    muted: get('scale.pink.2'),
+    subtle: get('scale.pink.0')
   },
 
   // Only meant to be used by Primer components
