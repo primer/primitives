@@ -25,25 +25,25 @@ export default {
 
   // Roles
   neutral: {
-    fg: get('scale.gray.4'),
+    emphasisPlus: get('scale.gray.4'),
     emphasis: get('scale.gray.5'),
     muted: alpha(get('scale.gray.4'), 0.4),
     subtle: alpha(get('scale.gray.4'), 0.1)
   },
   accent: {
-    fg: get('scale.blue.4'),
+    fg: get('scale.blue.3'),
     emphasis: get('scale.blue.5'),
     muted: alpha(get('scale.blue.4'), 0.4),
     subtle: alpha(get('scale.blue.4'), 0.1)
   },
   success: {
-    fg: get('scale.green.4'),
+    fg: get('scale.green.3'),
     emphasis: get('scale.green.5'),
     muted: alpha(get('scale.green.4'), 0.4),
     subtle: alpha(get('scale.green.4'), 0.1)
   },
   warning: {
-    fg: get('scale.yellow.4'),
+    fg: get('scale.yellow.3'),
     emphasis: get('scale.yellow.5'),
     muted: alpha(get('scale.yellow.4'), 0.4),
     subtle: alpha(get('scale.yellow.4'), 0.1)

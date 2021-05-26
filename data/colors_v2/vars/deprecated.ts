@@ -434,7 +434,7 @@ export default {
     }
   },
   diffBlob: {
-    numText: get('neutral.fg'),
+    numText: get('fg.muted'),
     numHoverText: get('fg.default'),
     addition: {
       numText: get('success.fg'),
