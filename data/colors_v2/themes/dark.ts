@@ -1,4 +1,5 @@
 import {merge} from '../../../src/utils'
+import darkComponentVars from '../vars/component_dark'
 import deprecatedVars from '../vars/deprecated'
 import darkGlobalVars from '../vars/global_dark'
 import darkMarketingVars from '../vars/marketing_dark'
@@ -50,4 +51,4 @@ const scale = {
   pink: ['#ffdaec', '#ffbedd', '#ff9bce', '#f778ba', '#db61a2', '#bf4b8a', '#9e3670', '#7d2457', '#5e103e', '#42062a']
 }
 
-export default merge(deprecatedVars, darkProductVars, darkMarketingVars, darkGlobalVars, {scale})
+export default merge(deprecatedVars, darkProductVars, darkMarketingVars, darkComponentVars, darkGlobalVars, {scale})
