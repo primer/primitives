@@ -72,21 +72,4 @@ export default {
     muted: alpha(get('scale.pink.3'), 0.4),
     subtle: get('scale.pink.0')
   },
-
-  // Only meant to be used by Primer components
-  primer: {
-    canvas: {
-      backdrop: alpha(get('scale.black'), 0.5), // use for modal/dialogs
-      sticky: alpha(get('scale.white'), 0.95) // use for sticky headers
-    },
-    border: {
-      active: '#f9826c', // coral
-      contrast: alpha(get('scale.black'), 0.1) // use to increase contrast
-    },
-    shadow: {
-      highlight: (theme: any) => `inset 0 1px 0 ${alpha(get('scale.white'), 0.25)(theme)}`, // top highlight
-      inset: (theme: any) => `inset 0 1px 0 ${alpha(get('scale.gray.2'), 0.2)(theme)}`, // top inner shadow
-      focus: (theme: any) => `0 0 0 3px ${alpha(get('scale.blue.5'), 0.3)(theme)}` // blue focus ring
-    }
-  }
 }

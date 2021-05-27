@@ -1,6 +1,22 @@
 import {alpha, darken, get} from '../../../src/utils'
 
 export default {
+  primer: {
+    // These variables are shared across multiple components
+    canvas: {
+      backdrop: alpha(get('scale.black'), 0.8), // use for modal/dialogs
+      sticky: alpha(get('scale.gray.9'), 0.95) // use for sticky headers
+    },
+    border: {
+      active: '#F78166', // coral
+      contrast: alpha(get('scale.white'), 0.2) // use to increase contrast
+    },
+    shadow: {
+      highlight: '0 0 transparent', // top highlight
+      inset: '0 0 transparent', // top inner shadow
+      focus: (theme: any) => `0 0 0 3px ${get('scale.blue.8')(theme)}` // blue focus ring
+    }
+  },
   avatar: {
     bg: alpha(get('scale.white'), 0.1),
     border: alpha(get('scale.white'), 0.1),
