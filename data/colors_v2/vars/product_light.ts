@@ -6,14 +6,14 @@ export default {
   calendarGraph: {
     dayBg: '#EBEDF0',
     dayBorder: 'rgba(27, 31, 35, 0.06)',
-    dayL1Bg: '#9BE9A8',
-    dayL2Bg: '#40C463',
-    dayL3Bg: '#30A14E',
-    dayL4Bg: '#216E39',
-    dayL4Border: 'rgba(27, 31, 35, 0.06)',
-    dayL3Border: 'rgba(27, 31, 35, 0.06)',
-    dayL2Border: 'rgba(27, 31, 35, 0.06)',
-    dayL1Border: 'rgba(27, 31, 35, 0.06)'
+    day1Bg: '#9BE9A8',
+    day2Bg: '#40C463',
+    day3Bg: '#30A14E',
+    day4Bg: '#216E39',
+    day4Border: 'rgba(27, 31, 35, 0.06)',
+    day3Border: 'rgba(27, 31, 35, 0.06)',
+    day2Border: 'rgba(27, 31, 35, 0.06)',
+    day1Border: 'rgba(27, 31, 35, 0.06)'
   },
   marketingIcon: {
     primary: get('scale.blue.4'),
