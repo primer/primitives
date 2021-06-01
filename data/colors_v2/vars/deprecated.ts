@@ -326,11 +326,11 @@ export default {
   },
   diffstat: {
     neutralBg: get('neutral.muted'),
-    neutralBorder: get('neutral.muted'),
+    neutralBorder: get(’border.blend’),
     deletionBg: get('danger.emphasis'),
-    deletionBorder: get('danger.emphasis'),
+    deletionBorder: get(’border.blend’),
     additionBg: get('success.emphasis'),
-    additionBorder: get('success.emphasis')
+    additionBorder: get(’border.blend’),
   },
   diff: {
     addition: {
