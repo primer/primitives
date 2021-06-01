@@ -1,5 +1,13 @@
 # @primer/primitives
 
+## 4.3.7
+
+### Patch Changes
+
+- [#113](https://github.com/primer/primitives/pull/113) [`e399d4d`](https://github.com/primer/primitives/commit/e399d4d5834cf05348b3623225d913ebd0bdc0fc) Thanks [@colebemis](https://github.com/colebemis)! - Fix `--color-upload-enabled-border-focused`
+
+* [#116](https://github.com/primer/primitives/pull/116) [`055194d`](https://github.com/primer/primitives/commit/055194dda64e621570b37fa74e0a4f728ec478c8) Thanks [@auareyou](https://github.com/auareyou)! - Added `border.subtle` to the global variables
+
 ## 4.3.6
 
 ### Patch Changes
