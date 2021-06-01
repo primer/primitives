@@ -114,7 +114,7 @@ export default {
     scrollbarThumbBg: get('neutral.muted'),
     headerLabelText: get('fg.muted'),
     headerLabelOpenText: get('fg.default'),
-    headerBorder: get('border.divider'),
+    headerBorder: get('border.muted'),
     headerIcon: get('fg.muted'),
     lineText: get('fg.muted'),
     lineNumText: get('fg.inactive'),
