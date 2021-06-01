@@ -590,7 +590,7 @@ export default {
   },
   uploadEnabled: {
     border: lighten(get('scale.gray.6'), 0.05),
-    borderFocused: lighten(get('scale.blue.5'), 0.8)
+    borderFocused: lighten(get('scale.blue.5'), 0.08)
   },
   previewableCommentForm: {
     border: darken(get('scale.gray.6'), 0.05)
