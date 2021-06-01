@@ -14,7 +14,7 @@ export default {
   },
   border: {
     default: get('scale.gray.6'),
-    divider: get('scale.gray.7')
+    divider: get('scale.gray.7'),
     subtle: alpha(get('scale.gray.0'), 0.1)
   },
   shadow: {
