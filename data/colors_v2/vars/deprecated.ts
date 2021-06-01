@@ -19,7 +19,7 @@ export default {
     link: get('accent.fg'),
     danger: get('danger.fg'),
     success: get('success.fg'),
-    warning: get('warning.fg'),
+    warning: get('attention.fg'),
     white: get('fg.onEmphasis')
   },
   icon: {
@@ -29,18 +29,18 @@ export default {
     info: get('accent.fg'),
     danger: get('danger.fg'),
     success: get('success.fg'),
-    warning: get('warning.fg')
+    warning: get('attention.fg')
   },
   border: {
     primary: get('border.default'),
-    secondary: get('border.subtle'),
+    secondary: get('border.muted'),
     tertiary: get('neutral.muted'),
     overlay: get('border.default'),
     inverse: get('fg.onEmphasis'), // or move to marketing
     info: get('accent.emphasis'),
     danger: get('danger.emphasis'),
     success: get('success.emphasis'),
-    warning: get('warning.emphasis')
+    warning: get('attention.emphasis')
   },
   bg: {
     canvas: get('canvas.default'),
@@ -58,8 +58,8 @@ export default {
     dangerInverse: get('danger.emphasis'),
     success: get('success.subtle'),
     successInverse: get('success.emphasis'),
-    warning: get('warning.subtle'),
-    warningInverse: get('warning.emphasis')
+    warning: get('attention.subtle'),
+    warningInverse: get('attention.emphasis')
   },
   shadow: {
     highlight: get('primer.shadow.highlight'),
@@ -96,9 +96,9 @@ export default {
     },
     warn: {
       text: get('fg.default'),
-      icon: get('warning.fg'),
-      bg: get('warning.subtle'),
-      border: get('warning.muted')
+      icon: get('attention.fg'),
+      bg: get('attention.subtle'),
+      border: get('attention.muted')
     },
     error: {
       text: get('fg.default'),
@@ -115,7 +115,7 @@ export default {
   },
   autocomplete: {
     shadow: get('shadow.medium'),
-    rowBorder: get('border.divider')
+    rowBorder: get('border.muted')
   },
   blankslate: {
     icon: get('fg.muted')
@@ -134,14 +134,14 @@ export default {
   },
   box: {
     blueBorder: get('accent.muted'),
-    rowYellowBg: get('warning.subtle'),
+    rowYellowBg: get('attention.subtle'),
     rowBlueBg: get('accent.subtle'),
     headerBlueBg: get('accent.subtle'),
     headerBlueBorder: get('accent.muted'),
     borderInfo: get('accent.muted'),
     bgInfo: get('accent.subtle'),
-    borderWarning: get('warning.muted'),
-    bgWarning: get('warning.subtle')
+    borderWarning: get('attention.muted'),
+    bgWarning: get('attention.subtle')
   },
   branchName: {
     text: get('fg.muted'),
@@ -158,7 +158,7 @@ export default {
     frameBorder: get('border.default'),
     blockquoteBorder: get('border.default'),
     tableBorder: get('border.default'),
-    tableTrBorder: get('border.divider')
+    tableTrBorder: get('border.muted')
   },
   filterItem: {
     barBg: get('neutral.subtle')
@@ -190,7 +190,7 @@ export default {
     bg: get('neutral.emphasis')
   },
   searchKeyword: {
-    hl: get('warning.subtle')
+    hl: get('attention.subtle')
   },
   filesExplorerIcon: get('accent.fg'),
   hlAuthorBg: get('accent.subtle'),
@@ -203,11 +203,11 @@ export default {
   codeSelectionBg: get('accent.muted'),
   highlight: {
     text: get('fg.default'),
-    bg: get('warning.subtle')
+    bg: get('attention.subtle')
   },
   blob: {
-    lineHighlightBg: get('warning.subtle'),
-    lineHighlightBorder: get('warning.muted')
+    lineHighlightBg: get('attention.subtle'),
+    lineHighlightBorder: get('attention.muted')
   },
   topicTag: {
     text: get('accent.fg'),
@@ -241,8 +241,8 @@ export default {
       border: get('success.emphasis')
     },
     warning: {
-      text: get('warning.fg'),
-      border: get('warning.emphasis')
+      text: get('attention.fg'),
+      border: get('attention.emphasis')
     },
     danger: {
       text: get('danger.fg'),
@@ -260,7 +260,7 @@ export default {
     shadow: get('primer.shadow.inset'),
     disabledBg: get('neutral.subtle'),
     disabledBorder: get('border.default'),
-    warningBorder: get('warning.emphasis'),
+    warningBorder: get('attention.emphasis'),
     errorBorder: get('danger.emphasis'),
     tooltip: {
       success: {
@@ -270,8 +270,8 @@ export default {
       },
       warning: {
         text: get('fg.default'),
-        bg: get('warning.subtle'),
-        border: get('warning.muted')
+        bg: get('attention.subtle'),
+        border: get('attention.muted')
       },
       error: {
         text: get('fg.default'),
@@ -299,7 +299,7 @@ export default {
       text: get('fg.default'),
       border: get('border.default'),
       icon: get('fg.default'),
-      iconBg: get('warning.emphasis'),
+      iconBg: get('attention.emphasis'),
       iconBorder: unset
     },
     danger: {
@@ -344,9 +344,9 @@ export default {
       border: get('danger.muted')
     },
     change: {
-      text: get('warning.fg'),
-      bg: get('warning.subtle'),
-      border: get('warning.muted')
+      text: get('attention.fg'),
+      bg: get('attention.subtle'),
+      border: get('attention.muted')
     }
   },
   mergeBox: {
@@ -364,10 +364,10 @@ export default {
     neutralIconBorder: unset,
     neutralIndicatorBg: get('neutral.emphasis'),
     neutralIndicatorBorder: unset,
-    warningIconBg: get('warning.emphasis'),
+    warningIconBg: get('attention.emphasis'),
     warningIconText: get('fg.onEmphasis'),
     warningIconBorder: unset,
-    warningBoxBorder: get('warning.emphasis'),
+    warningBoxBorder: get('attention.emphasis'),
     warningMergeHighlight: unset,
     errorIconBg: get('danger.emphasis'),
     errorIconText: get('fg.onEmphasis'),
@@ -397,7 +397,7 @@ export default {
     counterBg: get('neutral.subtle')
   },
   selectMenu: {
-    borderSecondary: get('border.divider'),
+    borderSecondary: get('border.muted'),
     shadow: get('shadow.large'),
     backdropBg: get('primer.canvas.backdrop')
   },
@@ -456,8 +456,8 @@ export default {
       lineBg: get('accent.subtle')
     },
     emptyBlockBg: get('neutral.subtle'),
-    selectedLineHighlightBg: get('warning.subtle'),
-    selectedLineHighlightBorder: get('warning.muted'),
+    selectedLineHighlightBg: get('attention.subtle'),
+    selectedLineHighlightBorder: get('attention.muted'),
     expander: {
       icon: get('fg.muted'),
       hoverIcon: get('fg.onEmphasis'),
