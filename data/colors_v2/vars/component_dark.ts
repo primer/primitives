@@ -96,7 +96,7 @@ export default {
       disabledText: alpha(get('scale.blue.3'), 0.5),
       disabledBg: get('scale.gray.9'),
       disabledCounterBg: alpha(get('scale.blue.5'), 0.05),
-      focusBorder: get(’border.subtle’),
+      focusBorder: get('border.subtle'),
       focusShadow: (theme: any) => `0 0 0 3px ${alpha(get('scale.blue.6'), 0.4)(theme)}`,
       counterBg: alpha(get('scale.blue.5'), 0.1)
     },
