@@ -96,8 +96,8 @@ export default {
     },
     warn: {
       text: get('fg.default'),
-      icon: get('warning.fg'),
-      bg: get('warning.subtle'),
+      icon: get('attention.fg'),
+      bg: get('attention.subtle'),
       border: get('attention.muted')
     },
     error: {
@@ -240,7 +240,7 @@ export default {
       text: get('success.fg'),
       border: get('success.emphasis')
     },
-    attention: {
+    warning: {
       text: get('attention.fg'),
       border: get('attention.emphasis')
     },
@@ -268,7 +268,7 @@ export default {
         bg: get('success.subtle'),
         border: get('success.muted')
       },
-      attention: {
+      warning: {
         text: get('fg.default'),
         bg: get('attention.subtle'),
         border: get('attention.muted')
