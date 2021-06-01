@@ -129,7 +129,7 @@ export default {
     gateWaitingText: get('attention.fg'),
     stepHeaderOpenBg: get('neutral.subtle'),
     stepErrorText: get('danger.fg'),
-    stepWarningText: get('warning.fg'),
+    stepWarningText: get('step.fg'),
     loglineText: get('fg.muted'),
     loglineNumText: get('fg.inactive'),
     loglineDebugText: get('done.fg'),
