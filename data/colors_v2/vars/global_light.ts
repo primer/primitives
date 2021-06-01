@@ -15,7 +15,7 @@ export default {
   border: {
     default: get('scale.gray.2'),
     divider: lighten(get('scale.gray.2'), 0.03)
-    blend: alpha(get('scale.black'), 0.15)
+    subtle: alpha(get('scale.black'), 0.15)
   },
   shadow: {
     small: (theme: any) => `0 1px 0 ${alpha(get('scale.black'), 0.04)(theme)}`,
