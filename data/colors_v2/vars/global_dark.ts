@@ -14,7 +14,8 @@ export default {
   },
   border: {
     default: get('scale.gray.6'),
-    muted: get('scale.gray.7')
+    muted: get('scale.gray.7'),
+    subtle: alpha(get('scale.gray.0'), 0.1)
   },
   shadow: {
     small: '0 0 transparent',
