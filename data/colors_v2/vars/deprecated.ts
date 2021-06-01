@@ -260,7 +260,7 @@ export default {
     shadow: get('primer.shadow.inset'),
     disabledBg: get('neutral.subtle'),
     disabledBorder: get('border.default'),
-    warningBorder: get('warning.emphasis'),
+    warningBorder: get('attention.emphasis'),
     errorBorder: get('danger.emphasis'),
     tooltip: {
       success: {
