@@ -42,7 +42,7 @@ export default {
     muted: alpha(get('scale.green.3'), 0.4),
     subtle: get('scale.green.0')
   },
-  warning: {
+  attention: {
     fg: get('scale.yellow.5'),
     emphasis: get('scale.yellow.5'),
     muted: alpha(get('scale.yellow.3'), 0.4),
