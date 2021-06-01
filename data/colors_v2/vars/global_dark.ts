@@ -14,7 +14,7 @@ export default {
   },
   border: {
     default: get('scale.gray.6'),
-    divider: get('scale.gray.7')
+    muted: get('scale.gray.7')
   },
   shadow: {
     small: '0 0 transparent',
