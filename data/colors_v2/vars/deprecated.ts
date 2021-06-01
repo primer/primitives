@@ -33,7 +33,7 @@ export default {
   },
   border: {
     primary: get('border.default'),
-    secondary: get('border.divider'),
+    secondary: get('border.subtle'),
     tertiary: get('neutral.muted'),
     overlay: get('border.default'),
     inverse: get('fg.onEmphasis'), // or move to marketing
