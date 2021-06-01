@@ -46,7 +46,7 @@ export default {
   btn: {
     text: get('scale.gray.1'),
     bg: get('scale.gray.7'),
-    border: get('border.subtle'),,
+    border: get('border.subtle'),
     shadow: '0 0 transparent',
     insetShadow: '0 0 transparent',
     hoverBg: get('scale.gray.6'),
