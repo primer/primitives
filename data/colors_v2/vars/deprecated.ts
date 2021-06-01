@@ -33,7 +33,7 @@ export default {
   },
   border: {
     primary: get('border.default'),
-    secondary: get('border.divider'),
+    secondary: get('border.muted'),
     tertiary: get('neutral.muted'),
     overlay: get('border.default'),
     inverse: get('fg.onEmphasis'), // or move to marketing
@@ -115,7 +115,7 @@ export default {
   },
   autocomplete: {
     shadow: get('shadow.medium'),
-    rowBorder: get('border.divider')
+    rowBorder: get('border.muted')
   },
   blankslate: {
     icon: get('fg.muted')
@@ -158,7 +158,7 @@ export default {
     frameBorder: get('border.default'),
     blockquoteBorder: get('border.default'),
     tableBorder: get('border.default'),
-    tableTrBorder: get('border.divider')
+    tableTrBorder: get('border.muted')
   },
   filterItem: {
     barBg: get('neutral.subtle')
@@ -397,7 +397,7 @@ export default {
     counterBg: get('neutral.subtle')
   },
   selectMenu: {
-    borderSecondary: get('border.divider'),
+    borderSecondary: get('border.muted'),
     shadow: get('shadow.large'),
     backdropBg: get('primer.canvas.backdrop')
   },
