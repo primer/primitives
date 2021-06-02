@@ -122,7 +122,7 @@ export default {
   },
   counter: {
     text: get('fg.default'),
-    bg: get('neutral.subtle'),
+    bg: get('neutral.muted'),
     primary: {
       text: get('fg.onEmphasis'),
       bg: get('neutral.emphasis')
@@ -258,7 +258,7 @@ export default {
     contrastBg: get('canvas.inset'),
     border: get('border.default'),
     shadow: get('primer.shadow.inset'),
-    disabledBg: get('neutral.subtle'),
+    disabledBg: get('neutral.muted'),
     disabledBorder: get('border.default'),
     warningBorder: get('attention.emphasis'),
     errorBorder: get('danger.emphasis'),
@@ -394,7 +394,7 @@ export default {
     iconHover: get('fg.inactive'),
     iconActive: get('fg.default'),
     counterText: get('fg.default'),
-    counterBg: get('neutral.subtle')
+    counterBg: get('neutral.muted')
   },
   selectMenu: {
     borderSecondary: get('border.muted'),
