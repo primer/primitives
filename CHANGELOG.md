@@ -1,5 +1,11 @@
 # @primer/primitives
 
+## 4.3.8
+
+### Patch Changes
+
+- [#117](https://github.com/primer/primitives/pull/117) [`98d30d9`](https://github.com/primer/primitives/commit/98d30d9a64a341c7f24f50d053b72c46a2855f06) Thanks [@auareyou](https://github.com/auareyou)! - Updated counters
+
 ## 4.3.7
 
 ### Patch Changes
