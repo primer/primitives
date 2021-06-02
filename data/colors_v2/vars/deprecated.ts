@@ -255,7 +255,7 @@ export default {
   },
   input: {
     bg: get('canvas.default'),
-    contrastBg: get('neutral.subtle'),
+    contrastBg: get('canvas.inset'),
     border: get('border.default'),
     shadow: get('primer.shadow.inset'),
     disabledBg: get('neutral.muted'),
