@@ -107,6 +107,7 @@ export default {
     dropdownText: get('fg.default'),
     dropdownBg: get('canvas.overlay'),
     dropdownBorder: get('border.default'),
+    dropdownShadow: alpha(get('scale.black'), 0.3),
     dropdownHoverText: get('fg.default'),
     dropdownHoverBg: get('neutral.subtle'),
     dropdownBtnHoverText: get('fg.default'),

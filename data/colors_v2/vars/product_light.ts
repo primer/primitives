@@ -107,6 +107,7 @@ export default {
     dropdownText: get('scale.gray.3'),
     dropdownBg: get('scale.gray.8'),
     dropdownBorder: get('scale.gray.7'),
+    dropdownShadow: alpha(get('scale.black'), 0.3),
     dropdownHoverText: get('scale.gray.0'),
     dropdownHoverBg: get('scale.gray.7'),
     dropdownBtnHoverText: get('scale.gray.0'),
