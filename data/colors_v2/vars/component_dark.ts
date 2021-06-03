@@ -15,7 +15,7 @@ export default {
   },
   header: {
     text: alpha(get('scale.white'), 0.7),
-    bg: get('scale.gray.9'),
+    bg: get('scale.gray.8'),
     logo: get('scale.gray.0')
   },
   sidenav: {

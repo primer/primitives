@@ -12,7 +12,7 @@ export default {
   text: {
     primary: get('fg.default'),
     secondary: get('fg.muted'),
-    tertiary: get('fg.inactive'),
+    tertiary: get('fg.muted'),
     placeholder: get('fg.inactive'),
     disabled: get('fg.inactive'),
     inverse: get('fg.onEmphasis'),
@@ -25,7 +25,7 @@ export default {
   icon: {
     primary: get('fg.default'),
     secondary: get('fg.muted'),
-    tertiary: get('fg.inactive'),
+    tertiary: get('fg.muted'),
     info: get('accent.fg'),
     danger: get('danger.fg'),
     success: get('success.fg'),
