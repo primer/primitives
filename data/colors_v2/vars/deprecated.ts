@@ -25,7 +25,7 @@ export default {
   icon: {
     primary: get('fg.default'),
     secondary: get('fg.muted'),
-    tertiary: get('fg.inactive'),
+    tertiary: get('fg.muted'),
     info: get('accent.fg'),
     danger: get('danger.fg'),
     success: get('success.fg'),
