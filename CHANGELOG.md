@@ -1,5 +1,11 @@
 # @primer/primitives
 
+## 4.3.9
+
+### Patch Changes
+
+- [#123](https://github.com/primer/primitives/pull/123) [`b3a32b6`](https://github.com/primer/primitives/commit/b3a32b60ad70c9a5f4d553385c69d0e710a63fae) Thanks [@colebemis](https://github.com/colebemis)! - Add dark high contrast mapping exceptions
+
 ## 4.3.8
 
 ### Patch Changes
