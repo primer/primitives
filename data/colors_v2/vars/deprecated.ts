@@ -9,6 +9,106 @@ const deprecated = '#ff0000'
 const unset = 'transparent'
 
 export default {
+  auto: {
+    black: deprecated,
+    white: deprecated,
+    gray: [
+      deprecated,
+      deprecated,
+      deprecated,
+      deprecated,
+      deprecated,
+      deprecated,
+      deprecated,
+      deprecated,
+      deprecated,
+      deprecated
+    ],
+    blue: [
+      deprecated,
+      deprecated,
+      deprecated,
+      deprecated,
+      deprecated,
+      deprecated,
+      deprecated,
+      deprecated,
+      deprecated,
+      deprecated
+    ],
+    green: [
+      deprecated,
+      deprecated,
+      deprecated,
+      deprecated,
+      deprecated,
+      deprecated,
+      deprecated,
+      deprecated,
+      deprecated,
+      deprecated
+    ],
+    yellow: [
+      deprecated,
+      deprecated,
+      deprecated,
+      deprecated,
+      deprecated,
+      deprecated,
+      deprecated,
+      deprecated,
+      deprecated,
+      deprecated
+    ],
+    orange: [
+      deprecated,
+      deprecated,
+      deprecated,
+      deprecated,
+      deprecated,
+      deprecated,
+      deprecated,
+      deprecated,
+      deprecated,
+      deprecated
+    ],
+    red: [
+      deprecated,
+      deprecated,
+      deprecated,
+      deprecated,
+      deprecated,
+      deprecated,
+      deprecated,
+      deprecated,
+      deprecated,
+      deprecated
+    ],
+    purple: [
+      deprecated,
+      deprecated,
+      deprecated,
+      deprecated,
+      deprecated,
+      deprecated,
+      deprecated,
+      deprecated,
+      deprecated,
+      deprecated
+    ],
+    pink: [
+      deprecated,
+      deprecated,
+      deprecated,
+      deprecated,
+      deprecated,
+      deprecated,
+      deprecated,
+      deprecated,
+      deprecated,
+      deprecated
+    ]
+  },
   text: {
     primary: get('fg.default'),
     secondary: get('fg.muted'),
