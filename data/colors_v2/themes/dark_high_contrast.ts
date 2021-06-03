@@ -1,4 +1,4 @@
-import {merge} from '../../../src/utils'
+import {get, merge} from '../../../src/utils'
 import dark from './dark'
 
 const scale = {
@@ -47,4 +47,17 @@ const scale = {
   pink: ['#ffdbeb', '#ffc6e1', '#ffadd5', '#ee97c5', '#dd7cae', '#933869', '#752652', '#5c183f', '#4b0b31', '#390524']
 }
 
-export default merge(dark, {scale})
+const exceptions = {
+  fg: {
+    muted: get('scale.gray.1')
+  },
+  border: {
+    default: get('scale.gray.5'),
+    muted: get('scale.gray.5')
+  },
+  neutral: {
+    emphasis: get('scale.gray.6')
+  }
+}
+
+export default merge(dark, exceptions, {scale})
