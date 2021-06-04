@@ -10,7 +10,8 @@ export default {
   canvas: {
     default: get('scale.gray.9'),
     overlay: get('scale.gray.8'),
-    inset: get('scale.black')
+    inset: get('scale.black'),
+    subtle: get('scale.gray.8'),
   },
   border: {
     default: get('scale.gray.6'),
