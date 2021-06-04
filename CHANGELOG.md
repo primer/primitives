@@ -1,5 +1,15 @@
 # @primer/primitives
 
+## 4.3.10
+
+### Patch Changes
+
+- [#122](https://github.com/primer/primitives/pull/122) [`a710331`](https://github.com/primer/primitives/commit/a71033193dd5a7c38c2688878324fead2a2c042d) Thanks [@simurai](https://github.com/simurai)! - Add checks-dropdown-shadow
+
+* [#125](https://github.com/primer/primitives/pull/125) [`287b56a`](https://github.com/primer/primitives/commit/287b56a2be5691f80b0621a2e4c1f39162a4f101) Thanks [@colebemis](https://github.com/colebemis)! - Update experimental variables
+
+- [#121](https://github.com/primer/primitives/pull/121) [`61a4d39`](https://github.com/primer/primitives/commit/61a4d397c2978fc6e1ebd1e429600ec7ec604159) Thanks [@simurai](https://github.com/simurai)! - Deprecate auto variables
+
 ## 4.3.9
 
 ### Patch Changes
