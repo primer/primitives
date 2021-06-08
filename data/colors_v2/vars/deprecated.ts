@@ -495,14 +495,6 @@ export default {
     errorIndicatorBg: get('danger.emphasis'),
     errorIndicatorBorder: unset
   },
-  fade: {
-    fg10: deprecated,
-    fg15: deprecated,
-    fg30: deprecated,
-    fg50: deprecated,
-    fg70: deprecated,
-    fg85: deprecated
-  },
   underlinenav: {
     border: unset,
     borderHover: get('neutral.muted'),
