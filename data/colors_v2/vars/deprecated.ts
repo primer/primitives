@@ -187,6 +187,26 @@ export default {
       shadow: get('primer.shadow.focus') // blue focus ring
     }
   },
+  fade: {
+    fg10: deprecated,
+    fg15: deprecated,
+    fg30: deprecated,
+    fg50: deprecated,
+    fg70: deprecated,
+    fg85: deprecated,
+    black10: deprecated,
+    black15: deprecated,
+    black30: deprecated,
+    black50: deprecated,
+    black70: deprecated,
+    black85: deprecated,
+    white10: deprecated,
+    white15: deprecated,
+    white30: deprecated,
+    white50: deprecated,
+    white70: deprecated,
+    white85: deprecated
+  },
   alert: {
     info: {
       text: get('fg.default'),
@@ -474,14 +494,6 @@ export default {
     errorIconBorder: unset,
     errorIndicatorBg: get('danger.emphasis'),
     errorIndicatorBorder: unset
-  },
-  fade: {
-    fg10: deprecated,
-    fg15: deprecated,
-    fg30: deprecated,
-    fg50: deprecated,
-    fg70: deprecated,
-    fg85: deprecated
   },
   underlinenav: {
     border: unset,
