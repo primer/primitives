@@ -148,8 +148,8 @@ export default {
     canvasInverse: get('neutral.emphasis'),
     canvasInset: get('canvas.inset'),
     primary: get('canvas.default'),
-    secondary: get('neutral.subtle'),
-    tertiary: get('neutral.subtle'),
+    secondary: get('canvas.subtle'),
+    tertiary: get('canvas.subtle'),
     overlay: get('canvas.overlay'),
     backdrop: get('primer.canvas.backdrop'),
     info: get('accent.subtle'),
@@ -439,7 +439,7 @@ export default {
   },
   timeline: {
     text: get('fg.muted'),
-    badgeBg: get('neutral.subtle'),
+    badgeBg: get('canvas.subtle'),
     badgeSuccessBorder: unset,
     targetBadgeBorder: get('accent.emphasis'),
     targetBadgeShadow: get('accent.muted')
