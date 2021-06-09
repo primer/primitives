@@ -3,18 +3,6 @@ import {get, alpha} from '../../../src/utils'
 // Variables to be moved to github/github
 
 export default {
-  calendarGraph: {
-    dayBg: get('scale.gray.8'),
-    dayBorder: 'rgba(27, 31, 35, 0.06)',
-    dayL1Bg: '#0E4429',
-    dayL2Bg: '#006D32',
-    dayL3Bg: '#26A641',
-    dayL4Bg: '#39D353',
-    dayL4Border: 'rgba(255, 255, 255, 0.05)',
-    dayL3Border: 'rgba(255, 255, 255, 0.05)',
-    dayL2Border: 'rgba(255, 255, 255, 0.05)',
-    dayL1Border: 'rgba(255, 255, 255, 0.05)'
-  },
   marketingIcon: {
     primary: get('scale.blue.2'),
     secondary: get('scale.blue.5')

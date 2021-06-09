@@ -781,18 +781,6 @@ export default {
     inputIcon: get('scale.gray.7'),
     inputPlaceholder: get('scale.gray.5')
   },
-  calendarGraph: {
-    dayBg: get('scale.gray.8'),
-    dayBorder: 'rgba(27,31,35,0.06)',
-    dayL1Bg: '#0e4429',
-    dayL2Bg: '#006d32',
-    dayL3Bg: '#26a641',
-    dayL4Bg: '#39d353',
-    dayL4Border: 'rgba(255,255,255,0.05)',
-    dayL3Border: 'rgba(255,255,255,0.05)',
-    dayL2Border: 'rgba(255,255,255,0.05)',
-    dayL1Border: 'rgba(255,255,255,0.05)'
-  },
   footerInvertocat: {
     octicon: get('scale.gray.6'),
     octiconHover: get('scale.gray.4')
