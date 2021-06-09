@@ -1,5 +1,15 @@
 # @primer/primitives
 
+## 4.3.11
+
+### Patch Changes
+
+- [#128](https://github.com/primer/primitives/pull/128) [`d10bc5d`](https://github.com/primer/primitives/commit/d10bc5d7ff994d0664a60ff3dca6075b026c4936) Thanks [@auareyou](https://github.com/auareyou)! - Added canvas subtle
+
+* [#129](https://github.com/primer/primitives/pull/129) [`5e79a37`](https://github.com/primer/primitives/commit/5e79a37546a7405f5c05f9643cf36e230d2b8414) Thanks [@simurai](https://github.com/simurai)! - Deprecate fade variables
+
+- [#130](https://github.com/primer/primitives/pull/130) [`3785534`](https://github.com/primer/primitives/commit/3785534443bbb48b14c07b1eb79fede529afbde5) Thanks [@simurai](https://github.com/simurai)! - Remove calendarGraph
+
 ## 4.3.10
 
 ### Patch Changes
