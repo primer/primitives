@@ -113,8 +113,8 @@ export default {
     primary: get('fg.default'),
     secondary: get('fg.muted'),
     tertiary: get('fg.muted'),
-    placeholder: get('fg.inactive'),
-    disabled: get('fg.inactive'),
+    placeholder: get('fg.subtle'),
+    disabled: get('fg.subtle'),
     inverse: get('fg.onEmphasis'),
     link: get('accent.fg'),
     danger: get('danger.fg'),
@@ -252,6 +252,9 @@ export default {
       bg: get('neutral.subtle')
     }
   },
+  avatar: {
+    border: get('border.subtle'),
+  },
   box: {
     blueBorder: get('accent.muted'),
     rowYellowBg: get('attention.subtle'),
@@ -336,7 +339,7 @@ export default {
     activeBg: get('accent.subtle')
   },
   footerInvertocat: {
-    octicon: get('fg.inactive'),
+    octicon: get('fg.subtle'),
     octiconHover: get('fg.muted')
   },
   dropdown: {
@@ -502,8 +505,8 @@ export default {
     text: get('fg.default'),
     textHover: get('fg.default'),
     textActive: get('fg.default'),
-    icon: get('fg.inactive'),
-    iconHover: get('fg.inactive'),
+    icon: get('fg.subtle'),
+    iconHover: get('fg.subtle'),
     iconActive: get('fg.default'),
     counterText: get('fg.default'),
     counterBg: get('neutral.muted')
