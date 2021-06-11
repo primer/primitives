@@ -54,7 +54,12 @@ const scale = {
 const exceptions = {
   fg: {
     fileIcon: get('fg.muted')
-  }
+  },
+  canvas: {
+    repoHeader: get('canvas.default')
+  },
+
+  
 }
 
 export default merge(deprecatedVars, darkProductVars, darkMarketingVars, darkComponentVars, darkGlobalVars, {scale})

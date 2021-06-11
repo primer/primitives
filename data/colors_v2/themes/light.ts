@@ -54,6 +54,10 @@ const scale = {
 const exceptions = {
   fg: {
     fileIcon: get('scale.blue.3')
+  },
+
+  canvas: {
+    repoHeader: get('canvas.subtle')
   }
 }
 
