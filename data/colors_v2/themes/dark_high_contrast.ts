@@ -104,7 +104,7 @@ const scale = {
 const exceptions = {
   fg: {
     muted: get('scale.gray.1'),
-    onEmphasis:get('scale.gray.9')
+    onEmphasis: get('scale.gray.9')
   },
   border: {
     default: get('scale.gray.5'),
@@ -113,8 +113,10 @@ const exceptions = {
   neutral: {
     emphasis: get('scale.gray.6')
   },
-  btn.primary: {
-    border: get('scale.green.1'),
+  btn: {
+    primary: {
+      border: get('scale.green.1')
+    }
     hoverBorder: get('scale.green.1')
   }
 }
