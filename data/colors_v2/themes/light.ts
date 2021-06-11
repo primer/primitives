@@ -1,4 +1,4 @@
-import {merge} from '../../../src/utils'
+import {get, merge} from '../../../src/utils'
 import lightComponentVars from '../vars/component_light'
 import deprecatedVars from '../vars/deprecated'
 import lightGlobalVars from '../vars/global_light'
@@ -49,6 +49,12 @@ const scale = {
     '#2e1461'
   ],
   pink: ['#ffeff7', '#ffd3eb', '#ffadda', '#ff80c8', '#e85aad', '#bf3989', '#99286e', '#772057', '#611347', '#4d0336']
+}
+
+const exceptions = {
+  fg: {
+    fileIcon: get('scale.blue.3')
+  }
 }
 
 export default merge(deprecatedVars, lightProductVars, lightMarketingVars, lightComponentVars, lightGlobalVars, {scale})
