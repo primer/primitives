@@ -419,6 +419,9 @@ export default {
   dropdown: {
     shadow: (theme: any) => `0 8px 24px ${alpha(get('scale.gray.4'), 0.2)(theme)}`
   },
+  overlay: {
+    shadow: (theme: any) => `0 1px 3px ${alpha(get('scale.black'), 0.12)(theme)}, 0 8px 24px ${alpha(get('scale.gray.4'), 0.2)(theme)}`,
+  },
   label: {
     border: get('scale.gray.2'),
     primary: {
