@@ -59,7 +59,7 @@ export default {
     bg: get('canvas.default'),
     guttersBg: get('canvas.default'),
     guttermarkerText: get('canvas.default'),
-    guttermarkerSubtleText: get('fg.inactive'),
+    guttermarkerSubtleText: get('fg.subtle'),
     linenumberText: get('fg.muted'),
     cursor: get('fg.default'),
     selectionBg: get('accent.subtle'),

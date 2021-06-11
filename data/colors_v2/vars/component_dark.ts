@@ -3,7 +3,6 @@ import {alpha, darken, get} from '../../../src/utils'
 export default {
   avatar: {
     bg: alpha(get('scale.white'), 0.1),
-    border: get('border.subtle'),
     stackFade: get('scale.gray.6'),
     stackFadeMore: get('scale.gray.7'),
     childShadow: (theme: any) => `-2px -2px 0 ${get('scale.gray.9')(theme)}`
