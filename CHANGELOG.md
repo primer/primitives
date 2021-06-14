@@ -1,5 +1,25 @@
 # @primer/primitives
 
+## 4.4.0
+
+### Minor Changes
+
+- [#135](https://github.com/primer/primitives/pull/135) [`0ebb80c`](https://github.com/primer/primitives/commit/0ebb80cf5ad86b73aeec25f9d044983931079440) Thanks [@simurai](https://github.com/simurai)! - Add overlay-shadow
+
+### Patch Changes
+
+- [#142](https://github.com/primer/primitives/pull/142) [`a581980`](https://github.com/primer/primitives/commit/a5819806efa98281301347433ba6538b783adb78) Thanks [@colebemis](https://github.com/colebemis)! - Change "transparent" colors to "rgba(0,0,0,0)"
+
+* [#137](https://github.com/primer/primitives/pull/137) [`4779983`](https://github.com/primer/primitives/commit/4779983fd0c95924cbc2b5b9ac98dac19ec0f205) Thanks [@Juliusschaeper](https://github.com/Juliusschaeper)! - HC palette update + exceptions for emphasis
+
+- [#134](https://github.com/primer/primitives/pull/134) [`8b8cba7`](https://github.com/primer/primitives/commit/8b8cba7a61756c85d2f751392162abbaadcbfcec) Thanks [@auareyou](https://github.com/auareyou)! - Remapping updates
+
+  - Updated alerts to use roles instead of `fg-default`
+  - Rename `fg.inactive` to `fg.subtle`
+  - Deprecate `avatar-border`
+
+* [#140](https://github.com/primer/primitives/pull/140) [`9308676`](https://github.com/primer/primitives/commit/930867696e05be3fbd35590b417241ad0a66e6c7) Thanks [@Juliusschaeper](https://github.com/Juliusschaeper)! - btn.primary state tweaks for high contrast
+
 ## 4.3.11
 
 ### Patch Changes
