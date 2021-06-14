@@ -116,7 +116,12 @@ const exceptions = {
   btn: {
     primary: {
       border: get('scale.green.1'),
-      hoverBorder: get('scale.green.1')
+      hoverBorder: get('scale.green.1'),
+      disabledText: alpha(get('scale.gray.9'), 0.5),
+      disabledBg: alpha(get('scale.green.5'), 0.6),
+      disabledBorder: get('border.subtle'),
+      icon: get('scale.gray.9'),
+      counterBg: alpha(get('scale.black'), 0.15)
     }
   }
 }
