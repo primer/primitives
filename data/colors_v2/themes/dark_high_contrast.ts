@@ -108,7 +108,8 @@ const exceptions = {
   },
   border: {
     default: get('scale.gray.5'),
-    muted: get('scale.gray.5')
+    muted: get('scale.gray.5'),
+    subtle: get('scale.gray.5')
   },
   neutral: {
     emphasis: get('scale.gray.6')
