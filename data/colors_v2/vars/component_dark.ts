@@ -14,7 +14,7 @@ export default {
     tapFocusBg: get('scale.blue.8')
   },
   overlay: {
-    shadow: (theme: any) => `0 1px 3px ${alpha(get('scale.black'), 0.12)(theme)}, 0 16px 32px ${alpha(get('scale.black'), 0.85)(theme)}`,
+    shadow: (theme: any) => `0 0 0 1px ${get('scale.gray.6')(theme)}, 0 1px 3px ${alpha(get('scale.black'), 0.12)(theme)}, 0 16px 32px ${alpha(get('scale.black'), 0.85)(theme)}`,
   },
   header: {
     text: alpha(get('scale.white'), 0.7),
