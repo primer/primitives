@@ -1,31 +1,31 @@
-import {get, merge} from '../../../src/utils'
+import {alpha, get, merge} from '../../../src/utils'
 import dark from './dark'
 
 const scale = {
   black: '#010409',
   white: '#ffffff',
   gray: [
-    '#ffffff', 
-    '#f0f3f6', 
-    '#d9dee3', 
-    '#bdc4cc', 
-    '#9ea7b3', 
-    '#7a828e', 
-    '#525964', 
-    '#272b33', 
-    '#272b33', 
+    '#ffffff',
+    '#f0f3f6',
+    '#d9dee3',
+    '#bdc4cc',
+    '#9ea7b3',
+    '#7a828e',
+    '#525964',
+    '#272b33',
+    '#272b33',
     '#0a0c10'
   ],
   blue: [
-    '#caeaff', 
-    '#addcff', 
-    '#91cbff', 
-    '#71b7ff', 
-    '#409eff', 
-    '#409eff', 
-    '#318bf8', 
-    '#2672f3', 
-    '#1e60d5', 
+    '#caeaff',
+    '#addcff',
+    '#91cbff',
+    '#71b7ff',
+    '#409eff',
+    '#409eff',
+    '#318bf8',
+    '#2672f3',
+    '#1e60d5',
     '#194fb1'
   ],
   green: [
@@ -89,15 +89,15 @@ const scale = {
     '#6921d7'
   ],
   pink: [
-    '#ffdceb', 
-    '#ffc7e1', 
-    '#ffadd4', 
-    '#ff8dc7', 
-    '#ef6eb1', 
-    '#ef6eb1', 
-    '#e456a3', 
-    '#d23d91', 
-    '#b72c7d', 
+    '#ffdceb',
+    '#ffc7e1',
+    '#ffadd4',
+    '#ff8dc7',
+    '#ef6eb1',
+    '#ef6eb1',
+    '#e456a3',
+    '#d23d91',
+    '#b72c7d',
     '#9c1d6a']
 }
 
