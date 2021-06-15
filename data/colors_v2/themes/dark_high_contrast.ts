@@ -125,8 +125,13 @@ const exceptions = {
       disabledBorder: alpha(get('scale.green.1'), 0.4),
       icon: get('scale.gray.9'),
       counterBg: alpha(get('scale.black'), 0.15)
+    },
+  },
+  globalNav: {
+      inputBorder: get('scale.gray.5'),
+      inputIcon: get('scale.gray.5'),
+      inputPlaceholder: get('scale.gray.5')
     }
-  }
 }
 
 export default merge(dark, exceptions, {scale})
