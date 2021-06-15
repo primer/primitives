@@ -1,5 +1,13 @@
 # @primer/primitives
 
+## 4.4.1
+
+### Patch Changes
+
+- [#143](https://github.com/primer/primitives/pull/143) [`5337f4c`](https://github.com/primer/primitives/commit/5337f4ce6f53759ff259694cbe60400d67aba386) Thanks [@simurai](https://github.com/simurai)! - Remove 2nd shadow from overlay-shadow
+
+* [#141](https://github.com/primer/primitives/pull/141) [`8b52b57`](https://github.com/primer/primitives/commit/8b52b57a8b380b0b2d0da9f75c0bbe8bb4e6e8f0) Thanks [@Juliusschaeper](https://github.com/Juliusschaeper)! - Change HC border subtle → gray.5
+
 ## 4.4.0
 
 ### Minor Changes
