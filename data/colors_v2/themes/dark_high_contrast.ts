@@ -33,12 +33,12 @@ const scale = {
     '#72f07e',
     '#4ae15e',
     '#26cd41',
-    '#00b427',
-    '#00b427',
-    '#01a227',
-    '#068c25',
-    '#0c7725',
-    '#0d6221'
+    '#09b432',
+    '#09b432',
+    '#02a229',
+    '#008c25',
+    '#007723',
+    '#046320'
   ],
   yellow: [
     '#fbe59e',
@@ -117,12 +117,12 @@ const exceptions = {
   btn: {
     primary: {
       text: get('scale.gray.9'),
-      border: get('scale.green.1'),
+      border: get('scale.green.2'),
       hoverBg: get('scale.green.3'),
-      hoverBorder: get('scale.green.1'),
+      hoverBorder: get('scale.green.2'),
       disabledText: alpha(get('scale.gray.9'), 0.5),
       disabledBg: alpha(get('scale.green.5'), 0.6),
-      disabledBorder: alpha(get('scale.green.1'), 0.4),
+      disabledBorder: alpha(get('scale.green.2'), 0.4),
       icon: get('scale.gray.9'),
       counterBg: alpha(get('scale.black'), 0.15)
     }
