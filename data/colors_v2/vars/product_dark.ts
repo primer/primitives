@@ -16,9 +16,9 @@ export default {
     text: get('scale.gray.1'),
     icon: get('scale.gray.1'),
     inputBg: get('scale.gray.9'),
-    inputBorder: get('scale.gray.7'),
-    inputIcon: get('scale.gray.7'),
-    inputPlaceholder: get('scale.gray.5')
+    inputBorder: get('border.default'),
+    inputIcon: get('fg.subtle'),
+    inputPlaceholder: get('fg.subtle')
   },
   prettylights: {
     syntax: {
