@@ -105,24 +105,24 @@ export default {
 
     danger: {
       text: get('scale.red.4'),
-      hoverText: '#ffffff',
+      hoverText: 'scale.gray.9',
       hoverBg: get('scale.red.5'),
-      hoverBorder: get('border.subtle'),
+      hoverBorder: get('scale.red.2'),
       hoverShadow: '0 0 transparent',
       hoverInsetShadow: '0 0 transparent',
+      hoverIcon: get('scale.gray.9'),
       hoverCounterBg: alpha('#fff', 0.2),
       selectedText: '#ffffff',
       selectedBg: get('scale.red.6'),
-      selectedBorder: get('border.subtle'),
+      selectedBorder: get('scale.red.3'),
       selectedShadow: '0 0 transparent',
       disabledText: alpha(get('scale.red.4'), 0.5),
       disabledBg: get('scale.gray.9'),
       disabledCounterBg: alpha(get('scale.red.5'), 0.05),
-      focusBorder: get('border.subtle'),
-      focusShadow: (theme: any) => `0 0 0 3px ${alpha(get('scale.red.6'), 0.4)(theme)}`,
+      focusBorder: get('scale.red.4'),
+      focusShadow: (theme: any) => `0 0 0 3px ${alpha(get('scale.red.4'), 0.4)(theme)}`,
       counterBg: alpha(get('scale.red.5'), 0.1),
-      icon: get('scale.red.4'),
-      hoverIcon: get('scale.white')
+      icon: get('scale.red.4')
     }
   }
 }
