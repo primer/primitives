@@ -98,7 +98,20 @@ const scale = {
     '#e456a3',
     '#d23d91',
     '#b72c7d',
-    '#9c1d6a']
+    '#9c1d6a'
+  ],
+  coral: [
+    '#FFDED4',
+    '#FFCBB9',
+    '#FFB39B',
+    '#FF967D',
+    '#FC704F',
+    '#FC704F',
+    '#F75133',
+    '#E03B21',
+    '#C62612',
+    '#A91500'
+    ]
 }
 
 const exceptions = {

@@ -48,7 +48,19 @@ const scale = {
     '#3e1f79',
     '#2e1461'
   ],
-  pink: ['#ffeff7', '#ffd3eb', '#ffadda', '#ff80c8', '#e85aad', '#bf3989', '#99286e', '#772057', '#611347', '#4d0336']
+  pink: ['#ffeff7', '#ffd3eb', '#ffadda', '#ff80c8', '#e85aad', '#bf3989', '#99286e', '#772057', '#611347', '#4d0336'],
+  coral: [
+    '#510901',
+    '#691105',
+    '#801F0F',
+    '#9E2F1C',
+    '#C4432B',
+    '#EC6547',
+    '#FD8C73',
+    '#FFB4A1',
+    '#FFD6CC',
+    '#FFF0EB'
+    ]
 }
 
 export default merge(deprecatedVars, lightProductVars, lightMarketingVars, lightComponentVars, lightGlobalVars, {scale})
