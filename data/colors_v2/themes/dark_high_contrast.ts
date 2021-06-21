@@ -111,9 +111,6 @@ const exceptions = {
     muted: get('scale.gray.5'),
     subtle: get('scale.gray.5')
   },
-  neutral: {
-    emphasis: get('scale.gray.6')
-  },
   btn: {
     primary: {
       text: get('scale.gray.9'),
