@@ -28,7 +28,7 @@ export default {
   // Roles
   neutral: {
     emphasisPlus: get('scale.gray.4'),
-    emphasis: get('scale.gray.4'),
+    emphasis: get('scale.gray.5'),
     muted: alpha(get('scale.gray.4'), 0.4),
     subtle: alpha(get('scale.gray.4'), 0.1)
   },
