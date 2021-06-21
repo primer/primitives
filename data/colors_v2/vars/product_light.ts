@@ -158,6 +158,6 @@ export default {
   },
   headerSearch: {
     bg: get('scale.gray.9'),
-    border: get('scale.gray.7')
+    border: get('scale.gray.6')
   }
 }
