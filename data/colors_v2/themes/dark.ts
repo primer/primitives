@@ -60,7 +60,7 @@ const scale = {
     '#872012',
     '#640D04',
     '#460701'
-    ]
+  ]
 }
 
 export default merge(deprecatedVars, darkProductVars, darkMarketingVars, darkComponentVars, darkGlobalVars, {scale})
