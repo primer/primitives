@@ -10,16 +10,6 @@ export default {
   diffBlob: {
     selectedLineHighlightMixBlendMode: 'multiply'
   },
-  globalNav: {
-    logo: get('scale.white'),
-    bg: get('scale.gray.9'),
-    text: get('scale.white'),
-    icon: get('scale.white'),
-    inputBg: get('scale.gray.0'),
-    inputBorder: get('scale.gray.0'),
-    inputIcon: get('scale.gray.3'),
-    inputPlaceholder: get('scale.gray.4')
-  },
   prettylights: {
     syntax: {
       comment: get('scale.gray.5'),
@@ -158,6 +148,6 @@ export default {
   },
   headerSearch: {
     bg: get('scale.gray.9'),
-    border: get('scale.gray.7')
+    border: get('scale.gray.6')
   }
 }
