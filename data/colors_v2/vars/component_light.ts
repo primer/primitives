@@ -83,7 +83,7 @@ export default {
       disabledText: alpha(get('scale.white'), 0.8),
       disabledBg: '#94d3a2',
       disabledBorder: get('border.subtle'),
-      focusBg: get('scale.green.4')',
+      focusBg: get('scale.green.4'),
       focusBorder: get('border.subtle'),
       focusShadow: (theme: any) => `0 0 0 3px ${alpha(get('btn.primary.focusBg'), 0.4)(theme)}`,
       icon: alpha(get('scale.white'), 0.8),
