@@ -252,9 +252,6 @@ export default {
       bg: get('neutral.subtle')
     }
   },
-  avatar: {
-    border: get('border.subtle'),
-  },
   box: {
     blueBorder: get('accent.muted'),
     rowYellowBg: get('attention.subtle'),
