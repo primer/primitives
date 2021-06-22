@@ -8,6 +8,10 @@ export default {
     stackFadeMore: get('scale.gray.7'),
     childShadow: (theme: any) => `-2px -2px 0 ${get('scale.gray.9')(theme)}`
   },
+  diffstat: {
+    deletionBorder: get('border.subtle'),
+    additionBorder: get('border.subtle'),
+  },
   selectMenu: {
     backdropBorder: get('scale.gray.5'),
     tapHighlight: alpha(get('scale.gray.6'), 0.5),
