@@ -56,7 +56,7 @@ const scale = {
     '#F79981',
     '#FFB9A5',
     '#FFDACF'
-    ]
+  ]
 }
 
 export default merge(dark, {scale})
