@@ -8,6 +8,18 @@ export default {
     secondary: get('scale.blue.3')
   },
   diffBlob: {
+    addition: {
+      numText: get('success.fg'),
+    },
+    deletion: {
+      numText: get('danger.fg'),
+    },
+    hunk: {
+      text: get('fg.muted'),
+    },
+    expander: {
+      icon: get('fg.muted'),
+    },
     selectedLineHighlightMixBlendMode: 'multiply'
   },
   globalNav: {

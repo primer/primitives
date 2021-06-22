@@ -160,11 +160,7 @@ const exceptions = {
     },
     expander: {
       icon: get('fg.onEmphasis'),
-      hoverIcon: get('fg.onEmphasis')
     },
-    commentButton: {
-      icon: get('fg.onEmphasis')
-    }
   }
 }
 
