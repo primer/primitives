@@ -40,7 +40,7 @@ export default {
   },
   success: {
     fg: get('scale.green.5'),
-    emphasis: get('scale.green.5'),
+    emphasis: get('scale.green.4'),
     muted: alpha(get('scale.green.3'), 0.4),
     subtle: get('scale.green.0')
   },
