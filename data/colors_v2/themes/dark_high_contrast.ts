@@ -124,6 +124,16 @@ const exceptions = {
     muted: get('scale.gray.5'),
     subtle: get('scale.gray.5')
   },
+  avatar: {
+    border: alpha(get('scale.white'), 0.9),
+  },
+  diffstat: {
+    deletionBorder: get('scale.red.2'),
+    additionBorder: get('scale.green.2')
+  },
+  neutral: {
+    emphasis: get('scale.gray.6')
+  },
   btn: {
     primary: {
       text: get('scale.gray.9'),

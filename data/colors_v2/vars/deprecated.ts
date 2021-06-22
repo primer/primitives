@@ -252,9 +252,6 @@ export default {
       bg: get('neutral.subtle')
     }
   },
-  avatar: {
-    border: get('border.subtle'),
-  },
   box: {
     blueBorder: get('accent.muted'),
     rowYellowBg: get('attention.subtle'),
@@ -451,9 +448,7 @@ export default {
     neutralBg: get('neutral.muted'),
     neutralBorder: get('border.subtle'),
     deletionBg: get('danger.emphasis'),
-    deletionBorder: get('border.subtle'),
     additionBg: get('success.emphasis'),
-    additionBorder: get('border.subtle'),
   },
   diff: {
     addition: {
