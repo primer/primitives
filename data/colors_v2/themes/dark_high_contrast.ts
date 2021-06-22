@@ -155,9 +155,6 @@ const exceptions = {
     deletion: {
       numText: get('fg.onEmphasis')
     },
-    hunk: {
-      text: get('fg.onEmphasis')
-    },
     expander: {
       icon: get('fg.onEmphasis'),
     },

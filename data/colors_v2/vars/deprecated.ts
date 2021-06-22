@@ -564,6 +564,7 @@ export default {
       wordBg: get('danger.muted')
     },
     hunk: {
+      text: get('fg.muted'),
       numBg: get('accent.muted'),
       lineBg: get('accent.subtle')
     },
