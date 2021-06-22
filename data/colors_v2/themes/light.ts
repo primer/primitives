@@ -60,7 +60,7 @@ const scale = {
     '#FFB4A1',
     '#FFD6CC',
     '#FFF0EB'
-    ]
+  ]
 }
 
 export default merge(deprecatedVars, lightProductVars, lightMarketingVars, lightComponentVars, lightGlobalVars, {scale})
