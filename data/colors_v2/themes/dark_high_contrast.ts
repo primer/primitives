@@ -112,7 +112,7 @@ const exceptions = {
     subtle: get('scale.gray.5')
   },
   avatar: {
-    border: alpha(get('white'), 0.9),
+    border: alpha(get('scale.white'), 0.9),
   },
   diffstat: {
     deletionBorder: get('scale.red.2'),
