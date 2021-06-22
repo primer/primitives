@@ -111,7 +111,7 @@ const scale = {
     '#E03B21',
     '#C62612',
     '#A91500'
-    ]
+  ]
 }
 
 const exceptions = {
