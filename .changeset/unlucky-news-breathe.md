@@ -2,4 +2,4 @@
 "@primer/primitives": patch
 ---
 
-Update neutral emphasis
+header-input border fix

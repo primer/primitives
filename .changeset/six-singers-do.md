@@ -2,4 +2,4 @@
 "@primer/primitives": patch
 ---
 
-Fixed states for btn.danger in HC
+neutral.emphasis fix in HC

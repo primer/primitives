@@ -579,6 +579,16 @@ export default {
       gradientBg: unset
     }
   },
+  globalNav: {
+    logo: deprecated,
+    bg: deprecated,
+    text: deprecated,
+    icon: deprecated,
+    inputBg: deprecated,
+    inputBorder: deprecated,
+    inputIcon: deprecated,
+    inputPlaceholder: deprecated,
+  },
   introShelf: {
     gradientLeft: get('accent.subtle'),
     gradientRight: get('success.subtle'),
