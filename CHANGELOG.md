@@ -1,5 +1,19 @@
 # @primer/primitives
 
+## 4.4.3
+
+### Patch Changes
+
+- [#159](https://github.com/primer/primitives/pull/159) [`9e3875c`](https://github.com/primer/primitives/commit/9e3875cf6041a603f293e983925ae30795362dc1) Thanks [@Juliusschaeper](https://github.com/Juliusschaeper)! - Updated green for primary button and success.emphasis
+
+* [#154](https://github.com/primer/primitives/pull/154) [`6298c1e`](https://github.com/primer/primitives/commit/6298c1e3c5aab15298bac45faacdd4d78dd31887) Thanks [@Juliusschaeper](https://github.com/Juliusschaeper)! - Update hc avatar and diffstat borders
+
+- [#155](https://github.com/primer/primitives/pull/155) [`e4c4e92`](https://github.com/primer/primitives/commit/e4c4e921a83e7ff43e8b55cbc7f314fb216abd8d) Thanks [@simurai](https://github.com/simurai)! - Deprecate globalNav
+
+* [#158](https://github.com/primer/primitives/pull/158) [`cd0c90e`](https://github.com/primer/primitives/commit/cd0c90e23963da73f41a2ecd69357e4d176e592a) Thanks [@Juliusschaeper](https://github.com/Juliusschaeper)! - neutral.emphasis fix in HC
+
+- [#156](https://github.com/primer/primitives/pull/156) [`0aba5fa`](https://github.com/primer/primitives/commit/0aba5fade817ee963bf7c19a717c6991a201f5ce) Thanks [@Juliusschaeper](https://github.com/Juliusschaeper)! - header-input border fix
+
 ## 4.4.2
 
 ### Patch Changes
