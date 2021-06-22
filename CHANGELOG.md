@@ -1,5 +1,17 @@
 # @primer/primitives
 
+## 4.4.2
+
+### Patch Changes
+
+- [#151](https://github.com/primer/primitives/pull/151) [`73a53a0`](https://github.com/primer/primitives/commit/73a53a0094074791eb8c6cebb1320db017f8719b) Thanks [@Juliusschaeper](https://github.com/Juliusschaeper)! - Fixed states for btn.danger in HC
+
+* [#149](https://github.com/primer/primitives/pull/149) [`9539f54`](https://github.com/primer/primitives/commit/9539f54666dfb4e45b5d00a3ebd4d633f578f1de) Thanks [@Juliusschaeper](https://github.com/Juliusschaeper)! - Global Nav → input fixes
+
+- [#145](https://github.com/primer/primitives/pull/145) [`c6fd869`](https://github.com/primer/primitives/commit/c6fd86990b97abae9821ee5eb858ab83ae783163) Thanks [@Juliusschaeper](https://github.com/Juliusschaeper)! - Primary button fixes
+
+* [#152](https://github.com/primer/primitives/pull/152) [`281a7fb`](https://github.com/primer/primitives/commit/281a7fbba59d3afecac3f6761346093ca6470830) Thanks [@Juliusschaeper](https://github.com/Juliusschaeper)! - Update neutral emphasis
+
 ## 4.4.1
 
 ### Patch Changes

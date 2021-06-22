@@ -19,16 +19,6 @@ export default {
     },
     selectedLineHighlightMixBlendMode: 'multiply'
   },
-  globalNav: {
-    logo: get('scale.gray.0'),
-    bg: get('scale.gray.8'),
-    text: get('scale.gray.1'),
-    icon: get('scale.gray.1'),
-    inputBg: get('scale.gray.9'),
-    inputBorder: get('border.default'),
-    inputIcon: get('fg.subtle'),
-    inputPlaceholder: get('fg.subtle')
-  },
   prettylights: {
     syntax: {
       comment: get('scale.gray.3'),
@@ -167,6 +157,6 @@ export default {
   },
   headerSearch: {
     bg: get('scale.gray.9'),
-    border: get('scale.gray.7')
+    border: get('scale.gray.6')
   }
 }

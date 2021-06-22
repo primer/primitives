@@ -2,4 +2,4 @@
 "@primer/primitives": patch
 ---
 
-Primary button fixes
+neutral.emphasis fix in HC
