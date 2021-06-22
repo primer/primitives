@@ -82,7 +82,7 @@ export default {
       sticky: alpha(get('scale.white'), 0.95) // use for sticky headers
     },
     border: {
-      active: '#f9826c', // coral
+      active: get('scale.coral.3'),
       contrast: alpha(get('scale.black'), 0.1) // use to increase contrast
     },
     shadow: {
