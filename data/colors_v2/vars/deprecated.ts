@@ -303,7 +303,7 @@ export default {
     border: get('border.default')
   },
   socialCount: {
-    bg: get('canvas.subtle')
+    bg: get('canvas.default')
   },
   tooltip: {
     text: get('fg.onEmphasis'),
