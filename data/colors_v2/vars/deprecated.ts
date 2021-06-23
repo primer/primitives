@@ -256,8 +256,6 @@ export default {
     blueBorder: get('accent.muted'),
     rowYellowBg: get('attention.subtle'),
     rowBlueBg: get('accent.subtle'),
-    headerBlueBg: get('accent.subtle'),
-    headerBlueBorder: get('accent.muted'),
     borderInfo: get('accent.muted'),
     bgInfo: get('accent.subtle'),
     borderWarning: get('attention.muted'),
