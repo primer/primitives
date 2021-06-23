@@ -8,6 +8,15 @@ export default {
     secondary: get('scale.blue.5')
   },
   diffBlob: {
+    addition: {
+      numText: get('success.fg'),
+    },
+    deletion: {
+      numText: get('danger.fg'),
+    },
+    expander: {
+      icon: get('fg.muted'),
+    },
     selectedLineHighlightMixBlendMode: 'multiply'
   },
   prettylights: {

@@ -547,14 +547,12 @@ export default {
     numText: get('fg.muted'),
     numHoverText: get('fg.default'),
     addition: {
-      numText: get('success.fg'),
       numHoverText: get('fg.default'),
       numBg: get('success.muted'),
       lineBg: get('success.subtle'),
       wordBg: get('success.muted')
     },
     deletion: {
-      numText: get('danger.fg'),
       numHoverText: get('fg.default'),
       numBg: get('danger.muted'),
       lineBg: get('danger.subtle'),
@@ -569,7 +567,6 @@ export default {
     selectedLineHighlightBg: get('attention.subtle'),
     selectedLineHighlightBorder: get('attention.muted'),
     expander: {
-      icon: get('fg.muted'),
       hoverIcon: get('fg.onEmphasis'),
       hoverBg: get('accent.emphasis')
     },

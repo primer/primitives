@@ -124,6 +124,30 @@ const exceptions = {
     muted: get('scale.gray.5'),
     subtle: get('scale.gray.5')
   },
+  neutral: {
+    emphasis: get('scale.gray.6')
+  },
+  accent: {
+    muted: get('scale.blue.4'),
+  },
+  success: {
+    muted: get('scale.green.4'),
+  },
+  attention: {
+    muted: get('scale.yellow.4'),
+  },
+  severe: {
+    muted: get('scale.orange.4'),
+  },
+  danger: {
+    muted: get('scale.red.4'),
+  },
+  done: {
+    muted: get('scale.purple.4'),
+  },
+  sponsors: {
+    muted: get('scale.pink.4'),
+  },
   avatar: {
     border: alpha(get('scale.white'), 0.9),
   },
@@ -131,21 +155,29 @@ const exceptions = {
     deletionBorder: get('scale.red.2'),
     additionBorder: get('scale.green.2')
   },
-  neutral: {
-    emphasis: get('scale.gray.6')
-  },
   btn: {
     primary: {
-      text: get('scale.gray.9'),
+      text: get('fg.onEmphasis'),
       border: get('scale.green.2'),
       hoverBg: get('scale.green.3'),
       hoverBorder: get('scale.green.2'),
-      disabledText: alpha(get('scale.gray.9'), 0.5),
+      disabledText: alpha(get('fg.onEmphasis'), 0.5),
       disabledBg: alpha(get('scale.green.5'), 0.6),
       disabledBorder: alpha(get('scale.green.2'), 0.4),
-      icon: get('scale.gray.9'),
+      icon: get('fg.onEmphasis'),
       counterBg: alpha(get('scale.black'), 0.15)
     }
+  },
+  diffBlob: {
+    addition: {
+      numText: get('fg.onEmphasis')
+    },
+    deletion: {
+      numText: get('fg.onEmphasis')
+    },
+    expander: {
+      icon: get('fg.onEmphasis'),
+    },
   }
 }
 
