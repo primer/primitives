@@ -115,7 +115,7 @@ export default {
     gateBg: get('attention.subtle'),
     gateText: get('fg.muted'),
     gateWaitingText: get('attention.fg'),
-    stepHeaderOpenBg: get('neutral.subtle'),
+    stepHeaderOpenBg: get('canvas.subtle'),
     stepErrorText: get('danger.fg'),
     stepWarningText: get('attention.fg'),
     loglineText: get('fg.muted'),
