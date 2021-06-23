@@ -46,7 +46,7 @@ export default {
   },
   attention: {
     fg: get('scale.yellow.5'),
-    emphasis: get('scale.yellow.5'),
+    emphasis: get('scale.yellow.4'),
     muted: alpha(get('scale.yellow.3'), 0.4),
     subtle: get('scale.yellow.0')
   },
