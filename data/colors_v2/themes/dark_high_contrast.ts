@@ -155,9 +155,6 @@ const exceptions = {
     deletionBorder: get('scale.red.2'),
     additionBorder: get('scale.green.2')
   },
-  neutral: {
-    emphasis: get('scale.gray.6')
-  },
   btn: {
     primary: {
       text: get('fg.onEmphasis'),
