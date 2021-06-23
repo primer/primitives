@@ -48,7 +48,19 @@ const scale = {
     '#3c1e70',
     '#271052'
   ],
-  pink: ['#ffdaec', '#ffbedd', '#ff9bce', '#f778ba', '#db61a2', '#bf4b8a', '#9e3670', '#7d2457', '#5e103e', '#42062a']
+  pink: ['#ffdaec', '#ffbedd', '#ff9bce', '#f778ba', '#db61a2', '#bf4b8a', '#9e3670', '#7d2457', '#5e103e', '#42062a'],
+  coral: [
+    '#FFDDD2',
+    '#FFC2B2',
+    '#FFA28B',
+    '#F78166',
+    '#EA6045',
+    '#CF462D',
+    '#AC3220',
+    '#872012',
+    '#640D04',
+    '#460701'
+  ]
 }
 
 export default merge(deprecatedVars, darkProductVars, darkMarketingVars, darkComponentVars, darkGlobalVars, {scale})

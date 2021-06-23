@@ -98,7 +98,20 @@ const scale = {
     '#e456a3',
     '#d23d91',
     '#b72c7d',
-    '#9c1d6a']
+    '#9c1d6a'
+  ],
+  coral: [
+    '#FFDED4',
+    '#FFCBB9',
+    '#FFB39B',
+    '#FF967D',
+    '#FC704F',
+    '#FC704F',
+    '#F75133',
+    '#E03B21',
+    '#C62612',
+    '#A91500'
+  ]
 }
 
 const exceptions = {
@@ -134,6 +147,16 @@ const exceptions = {
   },
   sponsors: {
     muted: get('scale.pink.4'),
+  },
+  avatar: {
+    border: alpha(get('scale.white'), 0.9),
+  },
+  diffstat: {
+    deletionBorder: get('scale.red.2'),
+    additionBorder: get('scale.green.2')
+  },
+  neutral: {
+    emphasis: get('scale.gray.6')
   },
   btn: {
     primary: {

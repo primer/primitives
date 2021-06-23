@@ -3,9 +3,14 @@ import {alpha, darken, get} from '../../../src/utils'
 export default {
   avatar: {
     bg: get('scale.white'),
+    border: get('border.subtle'),
     stackFade: get('scale.gray.3'),
     stackFadeMore: get('scale.gray.2'),
     childShadow: (theme: any) => `-2px -2px 0 ${alpha(get('scale.white'), 0.8)(theme)}`
+  },
+  diffstat: {
+    deletionBorder: get('border.subtle'),
+    additionBorder: get('border.subtle'),
   },
   selectMenu: {
     backdropBorder: 'transparent',
@@ -67,7 +72,7 @@ export default {
 
     primary: {
       text: get('scale.white'),
-      bg: '#2ea44f',
+      bg: get('scale.green.4'),
       border: get('border.subtle'),
       shadow: (theme: any) => `0 1px 0 ${alpha(get('scale.black'), 0.1)(theme)}`,
       insetShadow: (theme: any) => `inset 0 1px 0 ${alpha(get('scale.white'), 0.03)(theme)}`,
@@ -78,7 +83,7 @@ export default {
       disabledText: alpha(get('scale.white'), 0.8),
       disabledBg: '#94d3a2',
       disabledBorder: get('border.subtle'),
-      focusBg: '#2ea44f',
+      focusBg: get('scale.green.4'),
       focusBorder: get('border.subtle'),
       focusShadow: (theme: any) => `0 0 0 3px ${alpha(get('btn.primary.focusBg'), 0.4)(theme)}`,
       icon: alpha(get('scale.white'), 0.8),
