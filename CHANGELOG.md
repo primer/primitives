@@ -1,5 +1,17 @@
 # @primer/primitives
 
+## 4.4.4
+
+### Patch Changes
+
+- [#161](https://github.com/primer/primitives/pull/161) [`6ed4ac6`](https://github.com/primer/primitives/commit/6ed4ac64ce5cf86c9fe59fd25d19adfc06fec5c2) Thanks [@Juliusschaeper](https://github.com/Juliusschaeper)! - Fixed wrong order of light coral scale
+
+* [#165](https://github.com/primer/primitives/pull/165) [`1ca0384`](https://github.com/primer/primitives/commit/1ca03848924d1ab7b704e0786cdd387d7ca852f1) Thanks [@simurai](https://github.com/simurai)! - Use `canvas.default` for socialCount background
+
+- [#163](https://github.com/primer/primitives/pull/163) [`ddb2e39`](https://github.com/primer/primitives/commit/ddb2e396e3a4e04008a136916c3f48a27bd708f4) Thanks [@simurai](https://github.com/simurai)! - Fix checks header
+
+* [#153](https://github.com/primer/primitives/pull/153) [`7fcce19`](https://github.com/primer/primitives/commit/7fcce19571255f516c3fa837a66771f19c78f0fc) Thanks [@Juliusschaeper](https://github.com/Juliusschaeper)! - removed opacity from roles.muted + replaced foregrounds in diff blob
+
 ## 4.4.3
 
 ### Patch Changes
