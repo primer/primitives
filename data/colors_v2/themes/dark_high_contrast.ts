@@ -170,7 +170,7 @@ const exceptions = {
     danger: {
       hoverText: 'fg.onEmphasis',
       hoverIcon: 'fg.onEmphasis',
-      hoverCounterBG: 'alpha(get('scale.black'), 0.15)',
+      hoverCounterBG: alpha(get('scale.black'), 0.15),
       counterBg: alpha(get('scale.black'), 0.15)
     }
   },
