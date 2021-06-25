@@ -77,9 +77,6 @@ export default {
 
   // Only meant for Primer components
   primer: {
-    fg: {
-      white: get('scale.white'),
-    },
     canvas: {
       backdrop: alpha(get('scale.black'), 0.8), // use for modal/dialogs
       sticky: alpha(get('scale.gray.9'), 0.95) // use for sticky headers
