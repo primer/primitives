@@ -1,5 +1,25 @@
 # @primer/primitives
 
+## 4.5.0
+
+### Minor Changes
+
+- [#172](https://github.com/primer/primitives/pull/172) [`2271374`](https://github.com/primer/primitives/commit/2271374c7489a7b4cb32715cd3e6d958ca3c3c42) Thanks [@simurai](https://github.com/simurai)! - Add `primer.fg.white`
+
+* [#168](https://github.com/primer/primitives/pull/168) [`cd89a9c`](https://github.com/primer/primitives/commit/cd89a9c9baebf6e35a92d2ce4d1bd7e3b9222159) Thanks [@simurai](https://github.com/simurai)! - Add checks-donut variables
+
+- [#171](https://github.com/primer/primitives/pull/171) [`9e7b1bb`](https://github.com/primer/primitives/commit/9e7b1bbdf1154ced03dbd3e7399b7d60006fc79a) Thanks [@Juliusschaeper](https://github.com/Juliusschaeper)! - Added new variable for diff foreground
+
+* [#173](https://github.com/primer/primitives/pull/173) [`86d4ffd`](https://github.com/primer/primitives/commit/86d4ffd1aadbcaddad238d5ae3b0b4081e0c6886) Thanks [@simurai](https://github.com/simurai)! - Deprecate text-white
+
+### Patch Changes
+
+- [#170](https://github.com/primer/primitives/pull/170) [`e055b14`](https://github.com/primer/primitives/commit/e055b147209b790ac2f59a3245753a372712cbfd) Thanks [@Juliusschaeper](https://github.com/Juliusschaeper)! - Remapped neutral.emphasis to gray.4 instead of gray.6
+
+* [#166](https://github.com/primer/primitives/pull/166) [`2f55806`](https://github.com/primer/primitives/commit/2f55806f00a8d380ed67198faa0146902b5e7c18) Thanks [@Juliusschaeper](https://github.com/Juliusschaeper)! - Changed attention.emphasis from 5 → 4
+
+- [#169](https://github.com/primer/primitives/pull/169) [`dc4e70a`](https://github.com/primer/primitives/commit/dc4e70ab140fccc3603b46fdc15dced3b1b27c4a) Thanks [@Juliusschaeper](https://github.com/Juliusschaeper)! - Fixed danger button hover state
+
 ## 4.4.4
 
 ### Patch Changes
