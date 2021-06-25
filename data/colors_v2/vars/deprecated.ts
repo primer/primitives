@@ -120,7 +120,7 @@ export default {
     danger: get('danger.fg'),
     success: get('success.fg'),
     warning: get('attention.fg'),
-    white: get('fg.onEmphasis')
+    white: get('primer.fg.white')
   },
   icon: {
     primary: get('fg.default'),
