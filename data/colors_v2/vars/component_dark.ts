@@ -110,7 +110,7 @@ export default {
 
     danger: {
       text: get('scale.red.4'),
-      hoverText: 'scale.gray.9',
+      hoverText: get('scale.gray.9'),
       hoverBg: get('scale.red.5'),
       hoverBorder: get('scale.red.2'),
       hoverShadow: '0 0 transparent',
