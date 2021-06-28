@@ -19,7 +19,7 @@ export default {
     expander: {
       icon: get('fg.muted'),
     },
-    selectedLineHighlightMixBlendMode: 'multiply'
+    selectedLineHighlightMixBlendMode: 'screen'
   },
   prettylights: {
     syntax: {
