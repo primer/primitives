@@ -1,5 +1,17 @@
 # @primer/primitives
 
+## 4.5.1
+
+### Patch Changes
+
+- [#176](https://github.com/primer/primitives/pull/176) [`40d0661`](https://github.com/primer/primitives/commit/40d0661b48c8fd0df75000bf87dbe5a674a9cee0) Thanks [@Juliusschaeper](https://github.com/Juliusschaeper)! - Added btn.selected hc exception
+
+* [#178](https://github.com/primer/primitives/pull/178) [`0461344`](https://github.com/primer/primitives/commit/04613440d60133a2a9fec39b2f687323be720f1a) Thanks [@simurai](https://github.com/simurai)! - Update `codemirror.selectionBg`
+
+- [#174](https://github.com/primer/primitives/pull/174) [`0071ef5`](https://github.com/primer/primitives/commit/0071ef571c2e8a84df753a3d291d3a9d69b1d409) Thanks [@Juliusschaeper](https://github.com/Juliusschaeper)! - Fixed syntax for hover text + icon
+
+* [#177](https://github.com/primer/primitives/pull/177) [`4d14328`](https://github.com/primer/primitives/commit/4d14328e062d16c295f342f5c9fe96a660285b18) Thanks [@simurai](https://github.com/simurai)! - Update `diffBlob.selectedLineHighlightMixBlendMode` in dark mode
+
 ## 4.5.0
 
 ### Minor Changes
