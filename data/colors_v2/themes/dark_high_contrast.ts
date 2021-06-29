@@ -175,6 +175,9 @@ const exceptions = {
       counterBg: alpha(get('scale.black'), 0.15)
     }
   },
+  codemirror: {
+    selectionBg: alpha(get('scale.blue.4'), 0.4),
+  },
   diffBlob: {
     addition: {
       numText: get('fg.onEmphasis'),
