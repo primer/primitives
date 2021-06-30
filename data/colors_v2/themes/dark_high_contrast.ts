@@ -156,12 +156,12 @@ const exceptions = {
     additionBorder: get('scale.green.2')
   },
   btn: {
+    selectedBg: alpha(get('scale.gray.6'), 0.9),
     primary: {
       text: get('fg.onEmphasis'),
       border: get('scale.green.2'),
       hoverBg: get('scale.green.3'),
       hoverBorder: get('scale.green.2'),
-      selectedBg: alpha(get('scale.gray.6'), 0.9),
       disabledText: alpha(get('fg.onEmphasis'), 0.5),
       disabledBg: alpha(get('scale.green.5'), 0.6),
       disabledBorder: alpha(get('scale.green.2'), 0.4),
