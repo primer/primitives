@@ -160,9 +160,5 @@ export default {
     sidebarBg: get('scale.gray.8'),
     gradientIn: get('scale.gray.8'),
     gradientOut: alpha(get('scale.gray.8'), 0)
-  },
-  headerSearch: {
-    bg: get('scale.gray.9'),
-    border: get('scale.gray.6')
   }
 }
