@@ -190,6 +190,9 @@ const exceptions = {
     expander: {
       icon: get('fg.onEmphasis'),
     },
+  },
+  tooltip: {
+    bg: get('scale.gray.1')
   }
 }
 
