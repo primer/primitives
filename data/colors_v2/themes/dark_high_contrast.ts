@@ -125,7 +125,8 @@ const exceptions = {
     subtle: get('scale.gray.5')
   },
   neutral: {
-    emphasis: get('scale.gray.4')
+    emphasis: get('scale.gray.4'),
+    emphasisPlus: get('scale.gray.0')
   },
   accent: {
     muted: get('scale.blue.4'),
@@ -190,9 +191,6 @@ const exceptions = {
     expander: {
       icon: get('fg.onEmphasis'),
     },
-  },
-  tooltip: {
-    bg: get('scale.gray.0')
   }
 }
 

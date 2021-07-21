@@ -135,9 +135,5 @@ export default {
       icon: get('scale.red.5'),
       hoverIcon: get('scale.white')
     }
-  },
-  tooltip: {
-    text: get('fg.onEmphasis'),
-    bg: get('neutral.emphasisPlus')
   }
 }
