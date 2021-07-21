@@ -209,25 +209,25 @@ export default {
   },
   alert: {
     info: {
-      text: get('accent.fg'),
+      text: get('fg.default'),
       icon: get('accent.fg'),
       bg: get('accent.subtle'),
       border: get('accent.muted')
     },
     warn: {
-      text: get('attention.fg'),
+      text: get('fg.default'),
       icon: get('attention.fg'),
       bg: get('attention.subtle'),
       border: get('attention.muted')
     },
     error: {
-      text: get('danger.fg'),
+      text: get('fg.default'),
       icon: get('danger.fg'),
       bg: get('danger.subtle'),
       border: get('danger.muted')
     },
     success: {
-      text: get('success.fg'),
+      text: get('fg.default'),
       icon: get('success.fg'),
       bg: get('success.subtle'),
       border: get('success.muted')
