@@ -192,7 +192,7 @@ const exceptions = {
     },
   },
   tooltip: {
-    bg: get('scale.gray.1')
+    bg: get('scale.gray.0')
   }
 }
 

@@ -133,5 +133,9 @@ export default {
       counterBg: alpha(get('scale.red.5'), 0.1),
       icon: get('scale.red.4')
     }
+  },
+  tooltip: {
+    text: get('fg.onEmphasis'),
+    bg: get('neutral.emphasisPlus')
   }
 }

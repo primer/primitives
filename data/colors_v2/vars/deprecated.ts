@@ -305,10 +305,6 @@ export default {
   socialCount: {
     bg: get('canvas.default')
   },
-  tooltip: {
-    text: get('fg.onEmphasis'),
-    bg: get('neutral.emphasisPlus')
-  },
   searchKeyword: {
     hl: get('attention.subtle')
   },
