@@ -307,7 +307,7 @@ export default {
   },
   tooltip: {
     text: get('fg.onEmphasis'),
-    bg: get('neutral.emphasis')
+    bg: get('neutral.emphasisPlus')
   },
   searchKeyword: {
     hl: get('attention.subtle')
