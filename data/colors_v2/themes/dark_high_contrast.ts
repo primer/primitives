@@ -156,6 +156,10 @@ const exceptions = {
     deletionBorder: get('scale.red.2'),
     additionBorder: get('scale.green.2')
   },
+  underlinenav : {
+    icon: get('scale.gray.1'),
+    borderHover: get('scale.gray.3'),
+  },
   btn: {
     selectedBg: alpha(get('scale.gray.6'), 0.9),
     primary: {
