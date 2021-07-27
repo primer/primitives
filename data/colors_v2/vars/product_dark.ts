@@ -91,7 +91,7 @@ export default {
     inputText: get('fg.muted'),
     inputPlaceholderText: get('fg.subtle'),
     inputFocusText: get('fg.default'),
-    inputBg: get('canvas.default'),
+    inputBg: get('scale.gray.8'),
     inputShadow: (theme: any) => `0 0 0 1px ${get('border.default')(theme)}`,
     donutError: get('scale.red.4'),
     donutPending: get('scale.yellow.3'),
