@@ -274,7 +274,7 @@ export default {
     }
   },
   markdown: {
-    codeBg: get('neutral.subtle'),
+    codeBg: get('neutral.muted'),
     frameBorder: get('border.default'),
     blockquoteBorder: get('border.default'),
     tableBorder: get('border.default'),
