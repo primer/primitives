@@ -601,7 +601,7 @@ export default {
   underlinenav: {
     border: alpha(get('scale.gray.6'), 0),
     borderHover: get('scale.gray.6'),
-    borderActive: '#f78166',
+    borderActive: get('scale.coral.3'),
     text: get('scale.gray.3'),
     textHover: get('scale.gray.1'),
     textActive: get('scale.gray.1'),
