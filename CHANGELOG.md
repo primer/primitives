@@ -1,5 +1,23 @@
 # @primer/primitives
 
+## 4.5.2
+
+### Patch Changes
+
+- [#179](https://github.com/primer/primitives/pull/179) [`f64ae47`](https://github.com/primer/primitives/commit/f64ae471d6ef3e6db73dfe1be11c7cbe53cf1bf8) Thanks [@simurai](https://github.com/simurai)! - Move `btn.selectedBg`
+
+* [#182](https://github.com/primer/primitives/pull/182) [`3bfc800`](https://github.com/primer/primitives/commit/3bfc800be3b7481217bb05e66b79a8ae72a6cf78) Thanks [@Juliusschaeper](https://github.com/Juliusschaeper)! - Update tooltip background
+
+- [#181](https://github.com/primer/primitives/pull/181) [`fc9e9f8`](https://github.com/primer/primitives/commit/fc9e9f85a0b430ebdaf867bb90f5d4e0e66bc363) Thanks [@simurai](https://github.com/simurai)! - Move header-search from product to component
+
+* [#186](https://github.com/primer/primitives/pull/186) [`5198cfa`](https://github.com/primer/primitives/commit/5198cfa8f7a8e688f48dff2ac604792023db5a26) Thanks [@Juliusschaeper](https://github.com/Juliusschaeper)! - Underline nav contrast improvements
+
+- [#185](https://github.com/primer/primitives/pull/185) [`6750323`](https://github.com/primer/primitives/commit/6750323e7daff2980763e394de5e11259edb932a) Thanks [@simurai](https://github.com/simurai)! - Increase `<code>` contrast
+
+* [#183](https://github.com/primer/primitives/pull/183) [`d27b310`](https://github.com/primer/primitives/commit/d27b31034487b46932fc4438ee0ce6ac891eb6ad) Thanks [@auareyou](https://github.com/auareyou)! - Changed alert foregrounds to use `fg.default`
+
+- [#184](https://github.com/primer/primitives/pull/184) [`420c257`](https://github.com/primer/primitives/commit/420c2579d5f2b29da2214342a33b3cec4376e2d8) Thanks [@simurai](https://github.com/simurai)! - Increase dark checks.inputBg contrast
+
 ## 4.5.1
 
 ### Patch Changes
