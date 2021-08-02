@@ -8,17 +8,18 @@ export default {
     secondary: get('scale.blue.5')
   },
   diffBlob: {
-    selectedLineHighlightMixBlendMode: 'multiply'
-  },
-  globalNav: {
-    logo: get('scale.gray.0'),
-    bg: get('scale.gray.8'),
-    text: get('scale.gray.1'),
-    icon: get('scale.gray.1'),
-    inputBg: get('scale.gray.9'),
-    inputBorder: get('scale.gray.7'),
-    inputIcon: get('scale.gray.7'),
-    inputPlaceholder: get('scale.gray.5')
+    addition: {
+      numText: get('success.fg'),
+      fg: get('fg.default')
+    },
+    deletion: {
+      numText: get('danger.fg'),
+      fg: get('fg.default')
+    },
+    expander: {
+      icon: get('fg.muted'),
+    },
+    selectedLineHighlightMixBlendMode: 'screen'
   },
   prettylights: {
     syntax: {
@@ -62,7 +63,7 @@ export default {
     guttermarkerSubtleText: get('fg.subtle'),
     linenumberText: get('fg.muted'),
     cursor: get('fg.default'),
-    selectionBg: get('accent.subtle'),
+    selectionBg: get('accent.muted'),
     activelineBg: get('neutral.subtle'),
     matchingbracketText: get('fg.default'),
     linesBg: get('canvas.default'),
@@ -90,8 +91,12 @@ export default {
     inputText: get('fg.muted'),
     inputPlaceholderText: get('fg.subtle'),
     inputFocusText: get('fg.default'),
-    inputBg: get('canvas.default'),
+    inputBg: get('scale.gray.8'),
     inputShadow: (theme: any) => `0 0 0 1px ${get('border.default')(theme)}`,
+    donutError: get('scale.red.4'),
+    donutPending: get('scale.yellow.3'),
+    donutSuccess: get('scale.green.4'),
+    donutNeutral: get('scale.gray.3'),
     dropdownText: get('fg.default'),
     dropdownBg: get('canvas.overlay'),
     dropdownBorder: get('border.default'),
@@ -116,7 +121,7 @@ export default {
     gateBg: get('attention.subtle'),
     gateText: get('fg.muted'),
     gateWaitingText: get('attention.fg'),
-    stepHeaderOpenBg: get('neutral.subtle'),
+    stepHeaderOpenBg: get('canvas.subtle'),
     stepErrorText: get('danger.fg'),
     stepWarningText: get('attention.fg'),
     loglineText: get('fg.muted'),
@@ -155,9 +160,5 @@ export default {
     sidebarBg: get('scale.gray.8'),
     gradientIn: get('scale.gray.8'),
     gradientOut: alpha(get('scale.gray.8'), 0)
-  },
-  headerSearch: {
-    bg: get('scale.gray.9'),
-    border: get('scale.gray.7')
   }
 }

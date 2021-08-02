@@ -419,6 +419,9 @@ export default {
   dropdown: {
     shadow: (theme: any) => `0 16px 32px ${alpha(get('scale.black'), 0.85)(theme)}`
   },
+  overlay: {
+    shadow: (theme: any) => `0 0 0 1px ${get('scale.gray.6')(theme)}, 0 16px 32px ${alpha(get('scale.black'), 0.85)(theme)}`,
+  },
   label: {
     border: get('scale.gray.6'),
     primary: {
@@ -861,6 +864,10 @@ export default {
     inputFocusText: get('text.primary'),
     inputBg: get('input.bg'),
     inputShadow: (theme: any) => `0 0 0 1px ${get('scale.gray.7')(theme)}`,
+    donutError: get('scale.red.4'),
+    donutPending: get('scale.yellow.3'),
+    donutSuccess: get('scale.green.4'),
+    donutNeutral: get('scale.gray.3'),
     dropdownText: get('text.primary'),
     dropdownBg: get('bg.overlay'),
     dropdownBorder: get('border.overlay'),

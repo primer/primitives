@@ -4,7 +4,7 @@ export default {
   fg: {
     default: get('scale.gray.9'),
     muted: get('scale.gray.6'),
-    inactive: get('scale.gray.5'),
+    subtle: get('scale.gray.5'),
     onEmphasis: get('scale.white')
   },
   canvas: {
@@ -40,13 +40,13 @@ export default {
   },
   success: {
     fg: get('scale.green.5'),
-    emphasis: get('scale.green.5'),
+    emphasis: get('scale.green.4'),
     muted: alpha(get('scale.green.3'), 0.4),
     subtle: get('scale.green.0')
   },
   attention: {
     fg: get('scale.yellow.5'),
-    emphasis: get('scale.yellow.5'),
+    emphasis: get('scale.yellow.4'),
     muted: alpha(get('scale.yellow.3'), 0.4),
     subtle: get('scale.yellow.0')
   },
@@ -82,7 +82,7 @@ export default {
       sticky: alpha(get('scale.white'), 0.95) // use for sticky headers
     },
     border: {
-      active: '#f9826c', // coral
+      active: get('scale.coral.3'),
       contrast: alpha(get('scale.black'), 0.1) // use to increase contrast
     },
     shadow: {

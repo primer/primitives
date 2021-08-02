@@ -44,7 +44,19 @@ const scale = {
     '#472c82',
     '#352160'
   ],
-  pink: ['#ffd7eb', '#ffb3d8', '#fc8dc7', '#e275ad', '#c96198', '#ae4c82', '#983b6e', '#7e325a', '#69264a', '#551639']
+  pink: ['#ffd7eb', '#ffb3d8', '#fc8dc7', '#e275ad', '#c96198', '#ae4c82', '#983b6e', '#7e325a', '#69264a', '#551639'],
+  coral: [
+    '#FFDACF',
+    '#FFB9A5',
+    '#F79981',
+    '#EC775C',
+    '#DE5B41',
+    '#C2442D',
+    '#A93524',
+    '#8D291B',
+    '#771D13',
+    '#5D1008'
+  ]
 }
 
 export default merge(dark, {scale})
