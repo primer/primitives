@@ -21,7 +21,7 @@ export default {
   shadow: {
     small: (theme: any) => `0 1px 0 ${alpha(get('scale.black'), 0.04)(theme)}`,
     medium: (theme: any) => `0 3px 6px ${alpha(get('scale.gray.4'), 0.15)(theme)}`,
-    large: (theme: any) => `0 8px 24px ${alpha(get('scale.gray.4'), 0.2)(theme)}`,
+    large: (theme: any) => `0px 1px 3px ${alpha(get('scale.black'), 0.12)(theme)}, 0 8px 24px ${alpha(get('scale.gray.4'), 0.2)(theme)}`,
     extraLarge: (theme: any) => `0 12px 28px ${alpha(get('scale.gray.4'), 0.3)(theme)}`
   },
 
