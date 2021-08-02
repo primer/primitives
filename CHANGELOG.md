@@ -1,5 +1,121 @@
 # @primer/primitives
 
+## 4.5.2
+
+### Patch Changes
+
+- [#179](https://github.com/primer/primitives/pull/179) [`f64ae47`](https://github.com/primer/primitives/commit/f64ae471d6ef3e6db73dfe1be11c7cbe53cf1bf8) Thanks [@simurai](https://github.com/simurai)! - Move `btn.selectedBg`
+
+* [#182](https://github.com/primer/primitives/pull/182) [`3bfc800`](https://github.com/primer/primitives/commit/3bfc800be3b7481217bb05e66b79a8ae72a6cf78) Thanks [@Juliusschaeper](https://github.com/Juliusschaeper)! - Update tooltip background
+
+- [#181](https://github.com/primer/primitives/pull/181) [`fc9e9f8`](https://github.com/primer/primitives/commit/fc9e9f85a0b430ebdaf867bb90f5d4e0e66bc363) Thanks [@simurai](https://github.com/simurai)! - Move header-search from product to component
+
+* [#186](https://github.com/primer/primitives/pull/186) [`5198cfa`](https://github.com/primer/primitives/commit/5198cfa8f7a8e688f48dff2ac604792023db5a26) Thanks [@Juliusschaeper](https://github.com/Juliusschaeper)! - Underline nav contrast improvements
+
+- [#185](https://github.com/primer/primitives/pull/185) [`6750323`](https://github.com/primer/primitives/commit/6750323e7daff2980763e394de5e11259edb932a) Thanks [@simurai](https://github.com/simurai)! - Increase `<code>` contrast
+
+* [#183](https://github.com/primer/primitives/pull/183) [`d27b310`](https://github.com/primer/primitives/commit/d27b31034487b46932fc4438ee0ce6ac891eb6ad) Thanks [@auareyou](https://github.com/auareyou)! - Changed alert foregrounds to use `fg.default`
+
+- [#184](https://github.com/primer/primitives/pull/184) [`420c257`](https://github.com/primer/primitives/commit/420c2579d5f2b29da2214342a33b3cec4376e2d8) Thanks [@simurai](https://github.com/simurai)! - Increase dark checks.inputBg contrast
+
+## 4.5.1
+
+### Patch Changes
+
+- [#176](https://github.com/primer/primitives/pull/176) [`40d0661`](https://github.com/primer/primitives/commit/40d0661b48c8fd0df75000bf87dbe5a674a9cee0) Thanks [@Juliusschaeper](https://github.com/Juliusschaeper)! - Added btn.selected hc exception
+
+* [#178](https://github.com/primer/primitives/pull/178) [`0461344`](https://github.com/primer/primitives/commit/04613440d60133a2a9fec39b2f687323be720f1a) Thanks [@simurai](https://github.com/simurai)! - Update `codemirror.selectionBg`
+
+- [#174](https://github.com/primer/primitives/pull/174) [`0071ef5`](https://github.com/primer/primitives/commit/0071ef571c2e8a84df753a3d291d3a9d69b1d409) Thanks [@Juliusschaeper](https://github.com/Juliusschaeper)! - Fixed syntax for hover text + icon
+
+* [#177](https://github.com/primer/primitives/pull/177) [`4d14328`](https://github.com/primer/primitives/commit/4d14328e062d16c295f342f5c9fe96a660285b18) Thanks [@simurai](https://github.com/simurai)! - Update `diffBlob.selectedLineHighlightMixBlendMode` in dark mode
+
+## 4.5.0
+
+### Minor Changes
+
+- [#172](https://github.com/primer/primitives/pull/172) [`2271374`](https://github.com/primer/primitives/commit/2271374c7489a7b4cb32715cd3e6d958ca3c3c42) Thanks [@simurai](https://github.com/simurai)! - Add `primer.fg.white`
+
+* [#168](https://github.com/primer/primitives/pull/168) [`cd89a9c`](https://github.com/primer/primitives/commit/cd89a9c9baebf6e35a92d2ce4d1bd7e3b9222159) Thanks [@simurai](https://github.com/simurai)! - Add checks-donut variables
+
+- [#171](https://github.com/primer/primitives/pull/171) [`9e7b1bb`](https://github.com/primer/primitives/commit/9e7b1bbdf1154ced03dbd3e7399b7d60006fc79a) Thanks [@Juliusschaeper](https://github.com/Juliusschaeper)! - Added new variable for diff foreground
+
+* [#173](https://github.com/primer/primitives/pull/173) [`86d4ffd`](https://github.com/primer/primitives/commit/86d4ffd1aadbcaddad238d5ae3b0b4081e0c6886) Thanks [@simurai](https://github.com/simurai)! - Deprecate text-white
+
+### Patch Changes
+
+- [#170](https://github.com/primer/primitives/pull/170) [`e055b14`](https://github.com/primer/primitives/commit/e055b147209b790ac2f59a3245753a372712cbfd) Thanks [@Juliusschaeper](https://github.com/Juliusschaeper)! - Remapped neutral.emphasis to gray.4 instead of gray.6
+
+* [#166](https://github.com/primer/primitives/pull/166) [`2f55806`](https://github.com/primer/primitives/commit/2f55806f00a8d380ed67198faa0146902b5e7c18) Thanks [@Juliusschaeper](https://github.com/Juliusschaeper)! - Changed attention.emphasis from 5 → 4
+
+- [#169](https://github.com/primer/primitives/pull/169) [`dc4e70a`](https://github.com/primer/primitives/commit/dc4e70ab140fccc3603b46fdc15dced3b1b27c4a) Thanks [@Juliusschaeper](https://github.com/Juliusschaeper)! - Fixed danger button hover state
+
+## 4.4.4
+
+### Patch Changes
+
+- [#161](https://github.com/primer/primitives/pull/161) [`6ed4ac6`](https://github.com/primer/primitives/commit/6ed4ac64ce5cf86c9fe59fd25d19adfc06fec5c2) Thanks [@Juliusschaeper](https://github.com/Juliusschaeper)! - Fixed wrong order of light coral scale
+
+* [#165](https://github.com/primer/primitives/pull/165) [`1ca0384`](https://github.com/primer/primitives/commit/1ca03848924d1ab7b704e0786cdd387d7ca852f1) Thanks [@simurai](https://github.com/simurai)! - Use `canvas.default` for socialCount background
+
+- [#163](https://github.com/primer/primitives/pull/163) [`ddb2e39`](https://github.com/primer/primitives/commit/ddb2e396e3a4e04008a136916c3f48a27bd708f4) Thanks [@simurai](https://github.com/simurai)! - Fix checks header
+
+* [#153](https://github.com/primer/primitives/pull/153) [`7fcce19`](https://github.com/primer/primitives/commit/7fcce19571255f516c3fa837a66771f19c78f0fc) Thanks [@Juliusschaeper](https://github.com/Juliusschaeper)! - removed opacity from roles.muted + replaced foregrounds in diff blob
+
+## 4.4.3
+
+### Patch Changes
+
+- [#159](https://github.com/primer/primitives/pull/159) [`9e3875c`](https://github.com/primer/primitives/commit/9e3875cf6041a603f293e983925ae30795362dc1) Thanks [@Juliusschaeper](https://github.com/Juliusschaeper)! - Updated green for primary button and success.emphasis
+
+* [#154](https://github.com/primer/primitives/pull/154) [`6298c1e`](https://github.com/primer/primitives/commit/6298c1e3c5aab15298bac45faacdd4d78dd31887) Thanks [@Juliusschaeper](https://github.com/Juliusschaeper)! - Update hc avatar and diffstat borders
+
+- [#155](https://github.com/primer/primitives/pull/155) [`e4c4e92`](https://github.com/primer/primitives/commit/e4c4e921a83e7ff43e8b55cbc7f314fb216abd8d) Thanks [@simurai](https://github.com/simurai)! - Deprecate globalNav
+
+* [#158](https://github.com/primer/primitives/pull/158) [`cd0c90e`](https://github.com/primer/primitives/commit/cd0c90e23963da73f41a2ecd69357e4d176e592a) Thanks [@Juliusschaeper](https://github.com/Juliusschaeper)! - neutral.emphasis fix in HC
+
+- [#156](https://github.com/primer/primitives/pull/156) [`0aba5fa`](https://github.com/primer/primitives/commit/0aba5fade817ee963bf7c19a717c6991a201f5ce) Thanks [@Juliusschaeper](https://github.com/Juliusschaeper)! - header-input border fix
+
+## 4.4.2
+
+### Patch Changes
+
+- [#151](https://github.com/primer/primitives/pull/151) [`73a53a0`](https://github.com/primer/primitives/commit/73a53a0094074791eb8c6cebb1320db017f8719b) Thanks [@Juliusschaeper](https://github.com/Juliusschaeper)! - Fixed states for btn.danger in HC
+
+* [#149](https://github.com/primer/primitives/pull/149) [`9539f54`](https://github.com/primer/primitives/commit/9539f54666dfb4e45b5d00a3ebd4d633f578f1de) Thanks [@Juliusschaeper](https://github.com/Juliusschaeper)! - Global Nav → input fixes
+
+- [#145](https://github.com/primer/primitives/pull/145) [`c6fd869`](https://github.com/primer/primitives/commit/c6fd86990b97abae9821ee5eb858ab83ae783163) Thanks [@Juliusschaeper](https://github.com/Juliusschaeper)! - Primary button fixes
+
+* [#152](https://github.com/primer/primitives/pull/152) [`281a7fb`](https://github.com/primer/primitives/commit/281a7fbba59d3afecac3f6761346093ca6470830) Thanks [@Juliusschaeper](https://github.com/Juliusschaeper)! - Update neutral emphasis
+
+## 4.4.1
+
+### Patch Changes
+
+- [#143](https://github.com/primer/primitives/pull/143) [`5337f4c`](https://github.com/primer/primitives/commit/5337f4ce6f53759ff259694cbe60400d67aba386) Thanks [@simurai](https://github.com/simurai)! - Remove 2nd shadow from overlay-shadow
+
+* [#141](https://github.com/primer/primitives/pull/141) [`8b52b57`](https://github.com/primer/primitives/commit/8b52b57a8b380b0b2d0da9f75c0bbe8bb4e6e8f0) Thanks [@Juliusschaeper](https://github.com/Juliusschaeper)! - Change HC border subtle → gray.5
+
+## 4.4.0
+
+### Minor Changes
+
+- [#135](https://github.com/primer/primitives/pull/135) [`0ebb80c`](https://github.com/primer/primitives/commit/0ebb80cf5ad86b73aeec25f9d044983931079440) Thanks [@simurai](https://github.com/simurai)! - Add overlay-shadow
+
+### Patch Changes
+
+- [#142](https://github.com/primer/primitives/pull/142) [`a581980`](https://github.com/primer/primitives/commit/a5819806efa98281301347433ba6538b783adb78) Thanks [@colebemis](https://github.com/colebemis)! - Change "transparent" colors to "rgba(0,0,0,0)"
+
+* [#137](https://github.com/primer/primitives/pull/137) [`4779983`](https://github.com/primer/primitives/commit/4779983fd0c95924cbc2b5b9ac98dac19ec0f205) Thanks [@Juliusschaeper](https://github.com/Juliusschaeper)! - HC palette update + exceptions for emphasis
+
+- [#134](https://github.com/primer/primitives/pull/134) [`8b8cba7`](https://github.com/primer/primitives/commit/8b8cba7a61756c85d2f751392162abbaadcbfcec) Thanks [@auareyou](https://github.com/auareyou)! - Remapping updates
+
+  - Updated alerts to use roles instead of `fg-default`
+  - Rename `fg.inactive` to `fg.subtle`
+  - Deprecate `avatar-border`
+
+* [#140](https://github.com/primer/primitives/pull/140) [`9308676`](https://github.com/primer/primitives/commit/930867696e05be3fbd35590b417241ad0a66e6c7) Thanks [@Juliusschaeper](https://github.com/Juliusschaeper)! - btn.primary state tweaks for high contrast
+
 ## 4.3.11
 
 ### Patch Changes

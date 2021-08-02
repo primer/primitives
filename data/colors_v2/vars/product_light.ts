@@ -8,17 +8,18 @@ export default {
     secondary: get('scale.blue.3')
   },
   diffBlob: {
+    addition: {
+      numText: get('success.fg'),
+      fg: get('fg.default')
+    },
+    deletion: {
+      numText: get('danger.fg'),
+      fg: get('fg.default')
+    },
+    expander: {
+      icon: get('fg.muted'),
+    },
     selectedLineHighlightMixBlendMode: 'multiply'
-  },
-  globalNav: {
-    logo: get('scale.white'),
-    bg: get('scale.gray.9'),
-    text: get('scale.white'),
-    icon: get('scale.white'),
-    inputBg: get('scale.gray.0'),
-    inputBorder: get('scale.gray.0'),
-    inputIcon: get('scale.gray.3'),
-    inputPlaceholder: get('scale.gray.4')
   },
   prettylights: {
     syntax: {
@@ -62,7 +63,7 @@ export default {
     guttermarkerSubtleText: get('fg.subtle'),
     linenumberText: get('fg.muted'),
     cursor: get('fg.default'),
-    selectionBg: get('accent.subtle'),
+    selectionBg: get('accent.muted'),
     activelineBg: get('neutral.subtle'),
     matchingbracketText: get('fg.default'),
     linesBg: get('canvas.default'),
@@ -92,6 +93,10 @@ export default {
     inputFocusText: get('scale.gray.4'),
     inputBg: get('scale.gray.8'),
     inputShadow: 'none',
+    donutError: get('scale.red.4'),
+    donutPending: get('scale.yellow.4'),
+    donutSuccess: get('scale.green.4'),
+    donutNeutral: get('scale.gray.3'),
     dropdownText: get('scale.gray.3'),
     dropdownBg: get('scale.gray.8'),
     dropdownBorder: get('scale.gray.7'),
@@ -155,9 +160,5 @@ export default {
     sidebarBg: get('scale.white'),
     gradientIn: get('scale.white'),
     gradientOut: alpha(get('scale.white'), 0)
-  },
-  headerSearch: {
-    bg: get('scale.gray.9'),
-    border: get('scale.gray.7')
   }
 }

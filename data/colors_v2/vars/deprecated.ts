@@ -120,7 +120,7 @@ export default {
     danger: get('danger.fg'),
     success: get('success.fg'),
     warning: get('attention.fg'),
-    white: get('fg.onEmphasis')
+    white: deprecated,
   },
   icon: {
     primary: get('fg.default'),
@@ -209,25 +209,25 @@ export default {
   },
   alert: {
     info: {
-      text: get('accent.fg'),
+      text: get('fg.default'),
       icon: get('accent.fg'),
       bg: get('accent.subtle'),
       border: get('accent.muted')
     },
     warn: {
-      text: get('attention.fg'),
+      text: get('fg.default'),
       icon: get('attention.fg'),
       bg: get('attention.subtle'),
       border: get('attention.muted')
     },
     error: {
-      text: get('danger.fg'),
+      text: get('fg.default'),
       icon: get('danger.fg'),
       bg: get('danger.subtle'),
       border: get('danger.muted')
     },
     success: {
-      text: get('success.fg'),
+      text: get('fg.default'),
       icon: get('success.fg'),
       bg: get('success.subtle'),
       border: get('success.muted')
@@ -252,9 +252,6 @@ export default {
       bg: get('neutral.subtle')
     }
   },
-  avatar: {
-    border: get('border.subtle'),
-  },
   box: {
     blueBorder: get('accent.muted'),
     rowYellowBg: get('attention.subtle'),
@@ -277,7 +274,7 @@ export default {
     }
   },
   markdown: {
-    codeBg: get('neutral.subtle'),
+    codeBg: get('neutral.muted'),
     frameBorder: get('border.default'),
     blockquoteBorder: get('border.default'),
     tableBorder: get('border.default'),
@@ -306,11 +303,11 @@ export default {
     border: get('border.default')
   },
   socialCount: {
-    bg: get('canvas.subtle')
+    bg: get('canvas.default')
   },
   tooltip: {
     text: get('fg.onEmphasis'),
-    bg: get('neutral.emphasis')
+    bg: get('neutral.emphasisPlus')
   },
   searchKeyword: {
     hl: get('attention.subtle')
@@ -451,9 +448,7 @@ export default {
     neutralBg: get('neutral.muted'),
     neutralBorder: get('border.subtle'),
     deletionBg: get('danger.emphasis'),
-    deletionBorder: get('border.subtle'),
     additionBg: get('success.emphasis'),
-    additionBorder: get('border.subtle'),
   },
   diff: {
     addition: {
@@ -552,14 +547,12 @@ export default {
     numText: get('fg.muted'),
     numHoverText: get('fg.default'),
     addition: {
-      numText: get('success.fg'),
       numHoverText: get('fg.default'),
       numBg: get('success.muted'),
       lineBg: get('success.subtle'),
       wordBg: get('success.muted')
     },
     deletion: {
-      numText: get('danger.fg'),
       numHoverText: get('fg.default'),
       numBg: get('danger.muted'),
       lineBg: get('danger.subtle'),
@@ -574,7 +567,6 @@ export default {
     selectedLineHighlightBg: get('attention.subtle'),
     selectedLineHighlightBorder: get('attention.muted'),
     expander: {
-      icon: get('fg.muted'),
       hoverIcon: get('fg.onEmphasis'),
       hoverBg: get('accent.emphasis')
     },
@@ -583,6 +575,16 @@ export default {
       bg: get('accent.emphasis'),
       gradientBg: unset
     }
+  },
+  globalNav: {
+    logo: deprecated,
+    bg: deprecated,
+    text: deprecated,
+    icon: deprecated,
+    inputBg: deprecated,
+    inputBorder: deprecated,
+    inputIcon: deprecated,
+    inputPlaceholder: deprecated,
   },
   introShelf: {
     gradientLeft: get('accent.subtle'),

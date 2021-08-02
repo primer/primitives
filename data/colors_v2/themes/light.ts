@@ -48,7 +48,19 @@ const scale = {
     '#3e1f79',
     '#2e1461'
   ],
-  pink: ['#ffeff7', '#ffd3eb', '#ffadda', '#ff80c8', '#e85aad', '#bf3989', '#99286e', '#772057', '#611347', '#4d0336']
+  pink: ['#ffeff7', '#ffd3eb', '#ffadda', '#ff80c8', '#e85aad', '#bf3989', '#99286e', '#772057', '#611347', '#4d0336'],
+  coral: [
+    '#FFF0EB',
+    '#FFD6CC',
+    '#FFB4A1',
+    '#FD8C73',
+    '#EC6547',
+    '#C4432B',
+    '#9E2F1C',
+    '#801F0F',
+    '#691105',
+    '#510901'
+  ]
 }
 
 const exceptions = {

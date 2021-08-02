@@ -44,6 +44,11 @@ export default class VariableCollection {
     }
 
     const fullName = [this.prefix, ...path].map(value => (isString(value) ? kebabCase(value) : value)).join('-')
+
+    if (value === 'transparent') {
+      value = 'rgba(0,0,0,0)'
+    }
+
     const variable: ModeVariable = {name: fullName, path, value}
 
     this.data.set(fullName, variable)
