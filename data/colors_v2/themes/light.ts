@@ -8,9 +8,42 @@ import lightProductVars from '../vars/product_light'
 const scale = {
   black: '#1b1f24',
   white: '#ffffff',
-  gray: ['#f6f8fa', '#eaeef2', '#d0d7de', '#afb8c1', '#8c959f', '#6e7781', '#57606a', '#424a53', '#32383f', '#24292f'],
-  blue: ['#ddf4ff', '#b6e3ff', '#80ccff', '#54aeff', '#218bff', '#0969da', '#0550ae', '#033d8b', '#0a3069', '#002155'],
-  green: ['#dafbe1', '#aceebb', '#6fdd8b', '#4ac26b', '#2da44e', '#1a7f37', '#116329', '#044f1e', '#003d16', '#002d11'],
+  gray: [
+    '#f6f8fa', 
+    '#eaeef2', 
+    '#d0d7de', 
+    '#afb8c1', 
+    '#8c959f', 
+    '#6e7781', 
+    '#57606a', 
+    '#424a53', 
+    '#32383f', 
+    '#24292f'
+  ],
+  blue: [
+    '#ddf4ff', 
+    '#b6e3ff', 
+    '#80ccff', 
+    '#54aeff', 
+    '#218bff', 
+    '#0969da', 
+    '#0550ae', 
+    '#033d8b', 
+    '#0a3069', 
+    '#002155'
+  ],
+  green: [
+    '#ddf4ff', 
+    '#b6e3ff', 
+    '#80ccff', 
+    '#54aeff', 
+    '#218bff', 
+    '#0969da', 
+    '#0550ae', 
+    '#033d8b', 
+    '#0a3069', 
+    '#002155'
+  ],
   yellow: [
     '#fff8c5',
     '#fae17d',
@@ -35,7 +68,18 @@ const scale = {
     '#5c2200',
     '#471700'
   ],
-  red: ['#ffe7e5', '#ffcecb', '#ffaba8', '#ff8182', '#fa4549', '#cf222e', '#a40e26', '#82071e', '#660018', '#4c0014'],
+  red: [
+    '#fff1e5',
+    '#ffd8b5',
+    '#ffb77c',
+    '#fb8f44',
+    '#e16f24',
+    '#bc4c00',
+    '#953800',
+    '#762c00',
+    '#5c2200',
+    '#471700'
+],
   purple: [
     '#fbefff',
     '#ecd8ff',
@@ -48,7 +92,18 @@ const scale = {
     '#3e1f79',
     '#2e1461'
   ],
-  pink: ['#ffeff7', '#ffd3eb', '#ffadda', '#ff80c8', '#e85aad', '#bf3989', '#99286e', '#772057', '#611347', '#4d0336'],
+  pink: [
+    '#ffeff7', 
+    '#ffd3eb', 
+    '#ffadda', 
+    '#ff80c8', 
+    '#e85aad', 
+    '#bf3989', 
+    '#99286e', 
+    '#772057', 
+    '#611347', 
+    '#4d0336'
+  ],
   coral: [
     '#FFF0EB',
     '#FFD6CC',
