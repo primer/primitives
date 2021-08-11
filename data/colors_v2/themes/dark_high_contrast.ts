@@ -190,7 +190,7 @@ const exceptions = {
     },
     deletion: {
       numText: get('fg.onEmphasis'),
-      fg: get('fg.onEmphasis')
+      fg: get('fg.onEmphasis'),
     },
     expander: {
       icon: get('fg.onEmphasis'),

@@ -452,12 +452,12 @@ export default {
   },
   diff: {
     addition: {
-      text: get('success.fg'),
+      text: get('fg.default'),
       bg: get('success.subtle'),
       border: get('success.muted')
     },
     deletion: {
-      text: get('danger.fg'),
+      text: get('fg.default'),
       bg: get('danger.subtle'),
       border: get('danger.muted')
     },
@@ -548,13 +548,11 @@ export default {
     numHoverText: get('fg.default'),
     addition: {
       numHoverText: get('fg.default'),
-      numBg: get('success.muted'),
       lineBg: get('success.subtle'),
       wordBg: get('success.muted')
     },
     deletion: {
       numHoverText: get('fg.default'),
-      numBg: get('danger.muted'),
       lineBg: get('danger.subtle'),
       wordBg: get('danger.muted')
     },
