@@ -79,7 +79,7 @@ export default {
       '#c24e00',
       '#a04100'
     ],
-    red: ['#FFEBE9', '#ffdce0', '#fdaeb7', '#f97583', '#ea4a5a', '#d73a49', '#cb2431', '#b31d28', '#9e1c23', '#86181d'],
+    red: ['#ffeef0', '#ffdce0', '#fdaeb7', '#f97583', '#ea4a5a', '#d73a49', '#cb2431', '#b31d28', '#9e1c23', '#86181d'],
     purple: [
       '#f5f0ff',
       '#e6dcfd',
