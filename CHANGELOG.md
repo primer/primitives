@@ -1,5 +1,13 @@
 # @primer/primitives
 
+## 4.5.3
+
+### Patch Changes
+
+- [#195](https://github.com/primer/primitives/pull/195) [`d7a8ae1`](https://github.com/primer/primitives/commit/d7a8ae18eed3e5419161715c5e91f981db9f5460) Thanks [@Juliusschaeper](https://github.com/Juliusschaeper)! - Slightly lighter Red-0 for improved diff highlight.
+
+* [#188](https://github.com/primer/primitives/pull/188) [`a8fe22e`](https://github.com/primer/primitives/commit/a8fe22e4d631f143aa9c33fd7a749756bf1f71a1) Thanks [@Juliusschaeper](https://github.com/Juliusschaeper)! - Update green scale to be slightly less yellow
+
 ## 4.5.2
 
 ### Patch Changes
