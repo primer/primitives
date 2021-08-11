@@ -10,11 +10,13 @@ export default {
   diffBlob: {
     addition: {
       numText: get('success.fg'),
-      fg: get('fg.default')
+      fg: get('fg.default'),
+      numBg: '#BFF0CA',
     },
     deletion: {
       numText: get('danger.fg'),
-      fg: get('fg.default')
+      fg: get('fg.default'),
+      numBg: '#FFD7D5',
     },
     expander: {
       icon: get('fg.muted'),
