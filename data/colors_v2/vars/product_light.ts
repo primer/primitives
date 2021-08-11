@@ -21,6 +21,7 @@ export default {
     },
     selectedLineHighlightMixBlendMode: 'multiply'
   },
+  searchKeywordHl: get('scale.yellow.0'),
   prettylights: {
     syntax: {
       comment: get('scale.gray.5'),
