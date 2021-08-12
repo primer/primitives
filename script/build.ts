@@ -4,7 +4,7 @@ import fs from 'fs'
 import mkdirp from 'mkdirp'
 import path from 'path'
 import ModeCollection from './lib/mode-collection'
-import VariableCollection from './lib/variable-collection'
+import VariableCollection, {getFullName} from './lib/variable-collection'
 
 interface Skip {
   type: string
@@ -22,6 +22,9 @@ const outDir = path.join(__dirname, '..', 'dist')
 const scssDir = path.join(outDir, 'scss')
 const tsDir = path.join(outDir, 'ts')
 const jsonDir = path.join(outDir, 'json')
+const deprecationsDir = path.join(outDir, 'deprecations')
+
+const deprecationsFilename = 'deprecations.json'
 
 async function build() {
   const modeTypes = fs.readdirSync(dataDir)
@@ -32,13 +35,7 @@ async function build() {
 
     const {isValid, errors} = collection.validate()
     if (!isValid) {
-      console.log(chalk.red`\n===============================================`)
-      console.log(chalk`{red [FATAL]} The build failed due to the following errors:`)
-      for (const err of errors) {
-        console.log(err)
-      }
-      console.log(chalk.red`===============================================`)
-      console.log('')
+      logError(errors.join('\n'))
       process.exit(1)
     }
 
@@ -85,6 +82,8 @@ async function writeModeOutput(collection: ModeCollection): Promise<void> {
   writeJsonOutput(collection)
 
   writeTsTypeIndex(collection)
+
+  writeDeprecations(collection)
 }
 
 async function writeScssOutput(collection: ModeCollection): Promise<void> {
@@ -152,4 +151,88 @@ if (require.main === module) {
   build()
     .then(() => console.log('✨ Built mode data 🎉'))
     .catch(err => console.error(err))
+}
+
+async function writeDeprecations(collection: ModeCollection) {
+  const deprecationsFile = path.join(dataDir, collection.type, deprecationsFilename)
+
+  // Do nothing if deprecations file doesn't exist
+  if (!fs.existsSync(deprecationsFile)) {
+    return
+  }
+
+  try {
+    // Parse deprecations file
+    const deprecations = JSON.parse(fs.readFileSync(deprecationsFile, 'utf8'))
+
+    // Validate deprecations
+    const errors = []
+    for (const [deprecatedVar, replacement] of Object.entries(deprecations)) {
+      // Assert that deprecated variable exists
+      if (!existsInCollection(collection, deprecatedVar)) {
+        errors.push(
+          chalk`Cannot deprecate undefined variable {bold.red "${deprecatedVar}"} in {bold ${deprecationsFile}}`
+        )
+      }
+
+      // Assert that replacement exists
+      if (!validateReplacement(replacement, name => existsInCollection(collection, name))) {
+        errors.push(
+          chalk`Cannot replace {bold "${deprecatedVar}"} with undefined variable {bold.red "${replacement}"} in {bold ${deprecationsFile}}`
+        )
+      }
+
+      // Assert that replacement is not deprecated
+      if (!validateReplacement(replacement, name => !Object.keys(deprecations).includes(name))) {
+        errors.push(
+          chalk`Cannot replace {bold "${deprecatedVar}"} with deprecated variable {bold.red "${replacement}"} in {bold ${deprecationsFile}}`
+        )
+      }
+    }
+
+    if (errors.length === 0) {
+      // Write deprecations
+      await mkdirp(deprecationsDir)
+      fs.writeFileSync(path.join(deprecationsDir, `${collection.type}.json`), JSON.stringify(deprecations, null, '  '))
+    } else {
+      throw new Error(errors.join('\n'))
+    }
+  } catch (error) {
+    logError(error.message)
+    process.exit(1)
+  }
+}
+
+/** Checks if a variable exists in a collection. Assumes variable name uses dot notation (e.g. `text.primary`) */
+function existsInCollection(collection: ModeCollection, name: string) {
+  const varName = getFullName(collection.prefix, name.split('.'))
+  return Array.from(collection.modes.values()).some(mode => Boolean(mode.getByName(varName)))
+}
+
+function validateReplacement(replacement: any, validateVar: (name: string) => boolean) {
+  if (replacement === null) {
+    return true
+  }
+
+  if (typeof replacement === 'string') {
+    return validateVar(replacement)
+  }
+
+  if (Array.isArray(replacement)) {
+    for (const item of replacement) {
+      if (!validateVar(item)) {
+        return false
+      }
+    }
+    return true
+  }
+
+  return false
+}
+
+function logError(error: string) {
+  console.error(chalk.red`\n===============================================`)
+  console.error(chalk`{red [FATAL]} The build failed due to the following errors:`)
+  console.error(error)
+  console.error(chalk.red`===============================================\n`)
 }
