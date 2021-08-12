@@ -309,9 +309,6 @@ export default {
     text: get('fg.onEmphasis'),
     bg: get('neutral.emphasisPlus')
   },
-  searchKeyword: {
-    hl: get('attention.subtle')
-  },
   filesExplorerIcon: get('accent.fg'),
   hlAuthorBg: get('accent.subtle'),
   hlAuthorBorder: get('accent.muted'),
