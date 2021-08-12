@@ -266,7 +266,7 @@ export default {
   branchName: {
     text: get('fg.muted'),
     icon: get('fg.muted'),
-    bg: get('neutral.subtle'),
+    bg: get('accent.subtle'),
     link: {
       text: get('accent.fg'),
       icon: get('accent.fg'),
