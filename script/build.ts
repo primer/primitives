@@ -175,19 +175,38 @@ async function writeDeprecations(collection: ModeCollection) {
         )
       }
 
-      // Assert that replacement exists
-      if (!validateReplacement(replacement, name => existsInCollection(collection, name))) {
-        errors.push(
-          chalk`Cannot replace {bold "${deprecatedVar}"} with undefined variable {bold.red "${replacement}"} in {bold ${deprecationsFile}}`
-        )
-      }
+      // We expect `replacement` to be a variable name, an array of variable names, or null
+      forEachReplacementVar(replacement, replacementVar => {
+        // Assert that replacement variable is a string
+        if (typeof replacementVar !== 'string') {
+          errors.push(
+            chalk`Cannot replace {bold "${deprecatedVar}"} with invalid variable {bold.red ${JSON.stringify(
+              replacementVar
+            )}} in {bold ${deprecationsFile}}`
+          )
+          return
+        }
 
-      // Assert that replacement is not deprecated
-      if (!validateReplacement(replacement, name => !Object.keys(deprecations).includes(name))) {
-        errors.push(
-          chalk`Cannot replace {bold "${deprecatedVar}"} with deprecated variable {bold.red "${replacement}"} in {bold ${deprecationsFile}}`
-        )
-      }
+        // Assert that replacement variable exists
+        if (!existsInCollection(collection, replacementVar)) {
+          errors.push(
+            chalk`Cannot replace {bold "${deprecatedVar}"} with undefined variable {bold.red ${JSON.stringify(
+              replacementVar
+            )}} in {bold ${deprecationsFile}}`
+          )
+          return
+        }
+
+        // Assert that replacement variable is not deprecated
+        if (Object.keys(deprecations).includes(replacementVar)) {
+          errors.push(
+            chalk`Cannot replace {bold "${deprecatedVar}"} with deprecated variable {bold.red ${JSON.stringify(
+              replacementVar
+            )}} in {bold ${deprecationsFile}}`
+          )
+          return
+        }
+      })
     }
 
     if (errors.length === 0) {
@@ -209,25 +228,18 @@ function existsInCollection(collection: ModeCollection, name: string) {
   return Array.from(collection.modes.values()).some(mode => Boolean(mode.getByName(varName)))
 }
 
-function validateReplacement(replacement: any, validateVar: (name: string) => boolean) {
+function forEachReplacementVar(replacement: any, fn: (replacementVar: any) => void) {
   if (replacement === null) {
-    return true
-  }
-
-  if (typeof replacement === 'string') {
-    return validateVar(replacement)
+    return
   }
 
   if (Array.isArray(replacement)) {
-    for (const item of replacement) {
-      if (!validateVar(item)) {
-        return false
-      }
+    for (const replacementVar of replacement) {
+      fn(replacementVar)
     }
-    return true
+  } else {
+    fn(replacement)
   }
-
-  return false
 }
 
 function logError(error: string) {
