@@ -329,7 +329,7 @@ export default {
   topicTag: {
     text: get('accent.fg'),
     bg: get('accent.subtle'),
-    hoverBg: get('accent.muted'),
+    hoverBg: alpha(get('accent.muted'), 0.5),
     activeBg: get('accent.subtle')
   },
   footerInvertocat: {
