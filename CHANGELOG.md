@@ -1,5 +1,13 @@
 # @primer/primitives
 
+## 4.5.4
+
+### Patch Changes
+
+- [#194](https://github.com/primer/primitives/pull/194) [`5280f5c`](https://github.com/primer/primitives/commit/5280f5c5d36f7b6e98d22c9c5a0146588360d226) Thanks [@simurai](https://github.com/simurai)! - Un-deprecate `search-keyword-hl`
+
+* [#196](https://github.com/primer/primitives/pull/196) [`06202b9`](https://github.com/primer/primitives/commit/06202b996e9c2e9a27d5e15a3130f463f6687708) Thanks [@auareyou](https://github.com/auareyou)! - Changes to the diff
+
 ## 4.5.3
 
 ### Patch Changes
