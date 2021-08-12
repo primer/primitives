@@ -35,6 +35,11 @@ export default {
   menu: {
     bgActive: get('scale.gray.8')
   },
+
+  input: {
+    disabledBg: alpha(get('neutral.muted'), 0.5),
+      },
+     
   ansi: {
     black: get('scale.gray.5'),
     blackBright: get('scale.gray.4'),

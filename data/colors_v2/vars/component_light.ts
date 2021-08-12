@@ -35,6 +35,11 @@ export default {
   menu: {
     bgActive: 'transparent'
   },
+
+  input: {
+    disabledBg: get('neutral.muted'),
+      },
+      
   // TODO: Move to VSCode theme?
   ansi: {
     black: get('scale.gray.9'),

@@ -375,7 +375,6 @@ export default {
     contrastBg: get('canvas.inset'),
     border: get('border.default'),
     shadow: get('primer.shadow.inset'),
-    disabledBg: get('neutral.muted'),
     disabledBorder: get('border.default'),
     warningBorder: get('attention.emphasis'),
     errorBorder: get('danger.emphasis'),
