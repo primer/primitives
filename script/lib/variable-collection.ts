@@ -12,6 +12,10 @@ export interface ModeVariable {
   value: any
 }
 
+export function getFullName(prefix: string, path: PathItem[]) {
+  return [prefix, ...path].map(value => (isString(value) ? kebabCase(value) : value)).join('-')
+}
+
 export default class VariableCollection {
   public readonly name: string
   public readonly prefix: string
@@ -43,7 +47,7 @@ export default class VariableCollection {
       return
     }
 
-    const fullName = [this.prefix, ...path].map(value => (isString(value) ? kebabCase(value) : value)).join('-')
+    const fullName = getFullName(this.prefix, path)
 
     if (value === 'transparent') {
       value = 'rgba(0,0,0,0)'
