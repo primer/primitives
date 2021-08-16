@@ -29,7 +29,7 @@ export default {
   neutral: {
     emphasisPlus: get('scale.gray.9'),
     emphasis: get('scale.gray.5'),
-    muted: alpha(get('scale.gray.3'), 0.4),
+    muted: alpha(get('scale.gray.3'), 0.2),
     subtle: alpha(get('scale.gray.1'), 0.5)
   },
   accent: {
