@@ -1,5 +1,11 @@
 # @primer/primitives
 
+## 4.6.1
+
+### Patch Changes
+
+- [#201](https://github.com/primer/primitives/pull/201) [`19131a4`](https://github.com/primer/primitives/commit/19131a428f803fce36f80cf3288777ec46bd1c60) Thanks [@auareyou](https://github.com/auareyou)! - Various v2 improvements
+
 ## 4.6.0
 
 ### Minor Changes
