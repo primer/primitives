@@ -1,5 +1,11 @@
 # @primer/primitives
 
+## 4.6.2
+
+### Patch Changes
+
+- [#206](https://github.com/primer/primitives/pull/206) [`a18f427`](https://github.com/primer/primitives/commit/a18f427ceec355702272c3001e25fe5a9effe34f) Thanks [@colebemis](https://github.com/colebemis)! - Add color deprecations file
+
 ## 4.6.1
 
 ### Patch Changes
