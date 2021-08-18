@@ -1,5 +1,11 @@
 # @primer/primitives
 
+## 4.6.3
+
+### Patch Changes
+
+- [#208](https://github.com/primer/primitives/pull/208) [`248eb81`](https://github.com/primer/primitives/commit/248eb81d61fede2af948557bcf2ca9c924a9866f) Thanks [@auareyou](https://github.com/auareyou)! - Fixed numText variables for the diff
+
 ## 4.6.2
 
 ### Patch Changes
