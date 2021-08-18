@@ -9,12 +9,12 @@ export default {
   },
   diffBlob: {
     addition: {
-      numText: get('success.fg'),
+      numText: get('fg.default'),
       fg: get('fg.default'),
       numBg: '#BFF0CA',
     },
     deletion: {
-      numText: get('danger.fg'),
+      numText: get('fg.default'),
       fg: get('fg.default'),
       numBg: '#FFD7D5',
     },
