@@ -185,17 +185,15 @@ const exceptions = {
   },
   diffBlob: {
     addition: {
-      numText: get('fg.onEmphasis'),
       fg: get('fg.onEmphasis')
     },
     deletion: {
-      numText: get('fg.onEmphasis'),
       fg: get('fg.onEmphasis'),
     },
     expander: {
       icon: get('fg.onEmphasis'),
     },
-  }
+  },
 }
 
 export default merge(dark, exceptions, {scale})
