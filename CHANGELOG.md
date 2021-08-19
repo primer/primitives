@@ -1,5 +1,11 @@
 # @primer/primitives
 
+## 4.6.4
+
+### Patch Changes
+
+- [#210](https://github.com/primer/primitives/pull/210) [`94868fd`](https://github.com/primer/primitives/commit/94868fdea242f848b79d82baac0ff7a1285c5b56) Thanks [@auareyou](https://github.com/auareyou)! - Fix small bugs in dark mode
+
 ## 4.6.3
 
 ### Patch Changes
