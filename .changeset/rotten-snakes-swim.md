@@ -2,4 +2,4 @@
 "@primer/primitives": patch
 ---
 
-Small bugs
+Fix small bugs in dark mode
