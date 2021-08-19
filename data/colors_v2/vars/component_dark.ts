@@ -117,12 +117,12 @@ export default {
 
     danger: {
       text: get('scale.red.4'),
-      hoverText: get('scale.gray.9'),
+      hoverText: get('fg.onEmphasis'),
       hoverBg: get('scale.red.5'),
-      hoverBorder: get('scale.red.2'),
+      hoverBorder: get('scale.red.4'),
       hoverShadow: '0 0 transparent',
       hoverInsetShadow: '0 0 transparent',
-      hoverIcon: get('scale.gray.9'),
+      hoverIcon: get('fg.onEmphasis'),
       hoverCounterBg: alpha('#fff', 0.2),
       selectedText: '#ffffff',
       selectedBg: get('scale.red.6'),
