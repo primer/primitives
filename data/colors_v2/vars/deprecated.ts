@@ -333,7 +333,7 @@ export default {
     activeBg: get('accent.subtle')
   },
   footerInvertocat: {
-    octicon: get('fg.subtle'),
+    octicon: get('neutral.muted'),
     octiconHover: get('fg.muted')
   },
   dropdown: {
