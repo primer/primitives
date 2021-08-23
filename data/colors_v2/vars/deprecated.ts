@@ -333,7 +333,7 @@ export default {
     activeBg: get('accent.subtle')
   },
   footerInvertocat: {
-    octicon: get('fg.subtle'),
+    octicon: get('neutral.muted'),
     octiconHover: get('fg.muted')
   },
   dropdown: {
@@ -540,7 +540,7 @@ export default {
     }
   },
   diffBlob: {
-    numText: get('fg.muted'),
+    numText: get('fg.subtle'),
     numHoverText: get('fg.default'),
     addition: {
       numHoverText: get('fg.default'),
