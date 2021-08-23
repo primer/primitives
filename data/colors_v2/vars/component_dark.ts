@@ -12,11 +12,9 @@ export default {
     deletionBorder: get('border.subtle'),
     additionBorder: get('border.subtle'),
   },
-
   topicTag: {
     border: 'transparent'
   },
-  
   selectMenu: {
     backdropBorder: get('scale.gray.5'),
     tapHighlight: alpha(get('scale.gray.6'), 0.5),
