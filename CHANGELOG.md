@@ -1,5 +1,15 @@
 # @primer/primitives
 
+## 4.6.5
+
+### Patch Changes
+
+- [#212](https://github.com/primer/primitives/pull/212) [`e148aa1`](https://github.com/primer/primitives/commit/e148aa1d6495f9e083eb8b6b0566151b156d759a) Thanks [@auareyou](https://github.com/auareyou)! - Add `topicTag.border`
+
+* [#212](https://github.com/primer/primitives/pull/212) [`1eaadb1`](https://github.com/primer/primitives/commit/1eaadb145bcdbc814020fc8b4747ffbeb1ccfaf6) Thanks [@auareyou](https://github.com/auareyou)! - Small fixes
+
+- [#213](https://github.com/primer/primitives/pull/213) [`85aecab`](https://github.com/primer/primitives/commit/85aecabb6340347e2aba999deceee1111214266b) Thanks [@auareyou](https://github.com/auareyou)! - Small fixes
+
 ## 4.6.4
 
 ### Patch Changes
