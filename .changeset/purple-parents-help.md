@@ -2,4 +2,4 @@
 "@primer/primitives": patch
 ---
 
-Small fixes 4
+Small fixes
