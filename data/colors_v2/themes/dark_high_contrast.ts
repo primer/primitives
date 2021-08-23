@@ -161,7 +161,7 @@ const exceptions = {
     borderHover: get('scale.gray.3'),
   },
 
-  topictag: {
+  topicTag: {
     border: get('accent.emphasis')
   },
   
