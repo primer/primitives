@@ -13,7 +13,7 @@ export default {
     additionBorder: get('border.subtle'),
   },
 
-  topictag: {
+  topicTag: {
     border: 'transparent'
   },
   
