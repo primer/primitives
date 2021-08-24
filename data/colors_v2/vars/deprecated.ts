@@ -329,11 +329,11 @@ export default {
   topicTag: {
     text: get('accent.fg'),
     bg: get('accent.subtle'),
-    hoverBg: get('accent.muted'),
+    hoverBg: get('accent.emphasis'),
     activeBg: get('accent.subtle')
   },
   footerInvertocat: {
-    octicon: get('neutral.muted'),
+    octicon: get('fg.subtle'),
     octiconHover: get('fg.muted')
   },
   dropdown: {
