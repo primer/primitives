@@ -194,6 +194,9 @@ const exceptions = {
     expander: {
       icon: get('fg.onEmphasis'),
     },
+    hunk: {
+      numBg: alpha(get('accent.muted'), 0.4),
+    },
   },
 }
 
