@@ -233,6 +233,7 @@ export default {
       border: get('success.muted')
     }
   },
+
   autocomplete: {
     shadow: get('shadow.medium'),
     rowBorder: get('border.muted')
@@ -273,6 +274,7 @@ export default {
       bg: get('accent.subtle')
     }
   },
+  
   markdown: {
     codeBg: get('neutral.muted'),
     frameBorder: get('border.default'),
@@ -443,6 +445,8 @@ export default {
   diffstat: {
     neutralBg: get('neutral.muted'),
     neutralBorder: get('border.subtle'),
+    deletionBorder: get('border.subtle'),
+    additionBorder: get('border.subtle'),
     deletionBg: get('danger.emphasis'),
     additionBg: get('success.emphasis'),
   },
