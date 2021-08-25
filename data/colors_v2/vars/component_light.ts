@@ -8,10 +8,7 @@ export default {
     stackFadeMore: get('scale.gray.2'),
     childShadow: (theme: any) => `-2px -2px 0 ${alpha(get('scale.white'), 0.8)(theme)}`
   },
-  diffstat: {
-    deletionBorder: get('border.subtle'),
-    additionBorder: get('border.subtle'),
-  },
+  
   topicTag: {
     border: 'transparent'
   },
