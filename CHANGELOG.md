@@ -1,5 +1,11 @@
 # @primer/primitives
 
+## 4.6.7
+
+### Patch Changes
+
+- [#217](https://github.com/primer/primitives/pull/217) [`aaa62f0`](https://github.com/primer/primitives/commit/aaa62f0d71ee022f53b673f51bb162fae950eb6f) Thanks [@simurai](https://github.com/simurai)! - Update timeline-badge-bg
+
 ## 4.6.6
 
 ### Patch Changes
