@@ -437,7 +437,7 @@ export default {
   },
   timeline: {
     text: get('fg.muted'),
-    badgeBg: get('canvas.subtle'),
+    badgeBg: get('neutral.muted'),
     badgeSuccessBorder: unset,
     targetBadgeBorder: get('accent.emphasis'),
     targetBadgeShadow: get('accent.muted')
