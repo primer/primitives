@@ -364,22 +364,14 @@ export default {
       counterBg: alpha(get('scale.white'), 0.2)
     },
     outline: {
-      text: get('scale.blue.5'),
-      hoverText: get('scale.white'),
-      hoverBg: get('scale.blue.5'),
+      text: get('scale.gray.9'),
+      bg: 'transparent',
+      border: alpha(get('scale.black'), 0.15),
+      hoverBg: '#f3f4f6',
       hoverBorder: alpha(get('scale.black'), 0.15),
-      hoverShadow: (theme: any) => `0 1px 0 ${alpha(get('scale.black'), 0.1)(theme)}`,
-      hoverInsetShadow: (theme: any) => `inset 0 1px 0 ${alpha(get('scale.white'), 0.03)(theme)}`,
       hoverCounterBg: alpha(get('scale.white'), 0.2),
-      selectedText: get('scale.white'),
-      selectedBg: darken(get('scale.blue.5'), 0.03),
-      selectedBorder: alpha(get('scale.black'), 0.15),
-      selectedShadow: (theme: any) => `inset 0 1px 0 ${alpha(get('scale.blue.9'), 0.2)(theme)}`,
-      disabledText: alpha(get('scale.blue.5'), 0.5),
-      disabledBg: get('scale.gray.0'),
-      disabledCounterBg: alpha(get('scale.blue.5'), 0.05),
+      selectedBg: darken(get('btn.hoverBg'), 0.02),
       focusBorder: alpha(get('scale.black'), 0.15),
-      focusShadow: (theme: any) => `0 0 0 3px ${alpha(get('scale.blue.6'), 0.4)(theme)}`,
       counterBg: alpha(get('scale.blue.5'), 0.1)
     },
     danger: {
