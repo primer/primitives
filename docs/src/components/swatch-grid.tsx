@@ -3,7 +3,7 @@ import {Box} from '@primer/components'
 import colors from '../../../dist/js/colors_v2'
 import get from 'lodash.get'
 
-export function SwatchGrid({names}) {
+export function SwatchGrid({names}: {names: string[]}) {
   return (
     <Box
       sx={{
@@ -19,7 +19,7 @@ export function SwatchGrid({names}) {
   )
 }
 
-function Swatch({name}) {
+function Swatch({name}: {name: string}) {
   const value = React.useMemo(() => get(colors.light, name), [name])
   const variant = React.useMemo(() => chooseVariant(name), [name])
 
@@ -35,7 +35,7 @@ function Swatch({name}) {
   )
 }
 
-function chooseVariant(name) {
+function chooseVariant(name: string): 'fg' | 'border' | 'shadow' | 'default' {
   if (name.split('.').includes('fg')) {
     return 'fg'
   }
@@ -51,7 +51,7 @@ function chooseVariant(name) {
   return 'default'
 }
 
-function FgPreview({name, value}) {
+function FgPreview({name, value}: {name: string; value: string}) {
   return (
     <Box
       sx={{
@@ -73,7 +73,7 @@ function FgPreview({name, value}) {
   )
 }
 
-function BorderPreview({name, value}) {
+function BorderPreview({name, value}: {name: string; value: string}) {
   return (
     <Box
       sx={{
@@ -95,7 +95,7 @@ function BorderPreview({name, value}) {
   )
 }
 
-function ShadowPreview({name, value}) {
+function ShadowPreview({name, value}: {name: string; value: string}) {
   return (
     <Box
       sx={{
@@ -117,7 +117,7 @@ function ShadowPreview({name, value}) {
   )
 }
 
-function DefaultPreview({name, value}) {
+function DefaultPreview({name, value}: {name: string; value: string}) {
   return (
     <Box
       sx={{
