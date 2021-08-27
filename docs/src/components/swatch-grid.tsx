@@ -2,6 +2,7 @@ import React from 'react'
 import {Box} from '@primer/components'
 import colors from '../../../dist/js/colors_v2'
 import get from 'lodash.get'
+import {useColorTheme} from './color-theme-context'
 
 export function SwatchGrid({names}: {names: string[]}) {
   return (
@@ -20,7 +21,8 @@ export function SwatchGrid({names}: {names: string[]}) {
 }
 
 function Swatch({name}: {name: string}) {
-  const value = React.useMemo(() => get(colors.light, name), [name])
+  const colorTheme = useColorTheme()
+  const value = React.useMemo(() => get(colors[colorTheme], name), [name])
   const variant = React.useMemo(() => chooseVariant(name), [name])
 
   return (
@@ -52,6 +54,7 @@ function chooseVariant(name: string): 'fg' | 'border' | 'shadow' | 'default' {
 }
 
 function FgPreview({name, value}: {name: string; value: string}) {
+  const colorTheme = useColorTheme()
   return (
     <Box
       sx={{
@@ -62,9 +65,9 @@ function FgPreview({name, value}: {name: string; value: string}) {
         fontWeight: 'bold',
         display: 'grid',
         placeItems: 'center',
-        bg: name === 'fg.onEmphasis' ? colors.light.neutral.emphasisPlus : colors.light.canvas.default,
+        bg: name === 'fg.onEmphasis' ? colors[colorTheme].neutral.emphasisPlus : colors[colorTheme].canvas.default,
         border: '1px solid',
-        borderColor: colors.light.border.default,
+        borderColor: colors[colorTheme].border.default,
         borderRadius: 2
       }}
     >
@@ -74,6 +77,7 @@ function FgPreview({name, value}: {name: string; value: string}) {
 }
 
 function BorderPreview({name, value}: {name: string; value: string}) {
+  const colorTheme = useColorTheme()
   return (
     <Box
       sx={{
@@ -84,7 +88,7 @@ function BorderPreview({name, value}: {name: string; value: string}) {
         fontWeight: 'bold',
         display: 'grid',
         placeItems: 'center',
-        bg: colors.light.canvas.default,
+        bg: colors[colorTheme].canvas.default,
         border: '1px solid',
         borderColor: colors.light.border.default,
         borderRadius: 2
@@ -96,6 +100,7 @@ function BorderPreview({name, value}: {name: string; value: string}) {
 }
 
 function ShadowPreview({name, value}: {name: string; value: string}) {
+  const colorTheme = useColorTheme()
   return (
     <Box
       sx={{
@@ -106,18 +111,19 @@ function ShadowPreview({name, value}: {name: string; value: string}) {
         fontWeight: 'bold',
         display: 'grid',
         placeItems: 'center',
-        bg: colors.light.canvas.default,
+        bg: colors[colorTheme].canvas.default,
         border: '1px solid',
-        borderColor: colors.light.border.default,
+        borderColor: colors[colorTheme].border.default,
         borderRadius: 2
       }}
     >
-      <Box sx={{width: 48, height: 48, boxShadow: value, borderRadius: 2, bg: colors.light.canvas.overlay}}></Box>
+      <Box sx={{width: 48, height: 48, boxShadow: value, borderRadius: 2, bg: colors[colorTheme].canvas.overlay}}></Box>
     </Box>
   )
 }
 
 function DefaultPreview({name, value}: {name: string; value: string}) {
+  const colorTheme = useColorTheme()
   return (
     <Box
       sx={{
@@ -128,9 +134,9 @@ function DefaultPreview({name, value}: {name: string; value: string}) {
         fontWeight: 'bold',
         display: 'grid',
         placeItems: 'center',
-        bg: colors.light.canvas.default,
+        bg: colors[colorTheme].canvas.default,
         border: '1px solid',
-        borderColor: colors.light.border.default,
+        borderColor: colors[colorTheme].border.default,
         borderRadius: 2
       }}
     >
