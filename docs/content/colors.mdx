@@ -1,0 +1,86 @@
+---
+title: Colors
+---
+
+import colors from '../../dist/js/colors_v2'
+import deprecatedColors from '../../dist/deprecations/colors_v2.json'
+import filterObj from 'filter-obj'
+import flatten from 'flat'
+import {Box} from '@primer/components'
+import {SwatchGrid} from '../src/components/swatch-grid'
+
+## Functional variables
+
+### Foreground
+
+<SwatchGrid names={Object.keys(flatten(colors.light)).filter(key => key.split('.')[0] === 'fg')} />
+
+### Canvas
+
+<SwatchGrid names={Object.keys(flatten(colors.light)).filter(key => key.split('.')[0] === 'canvas')} />
+
+### Border
+
+<SwatchGrid
+  names={Object.keys(flatten(colors.light)).filter(
+    key => key.split('.')[0] === 'border' && !Object.keys(deprecatedColors).includes(key)
+  )}
+/>
+
+### Shadow
+
+<SwatchGrid
+  names={Object.keys(flatten(colors.light)).filter(
+    key => key.split('.')[0] === 'shadow' && !Object.keys(deprecatedColors).includes(key)
+  )}
+/>
+
+### Neutral
+
+<SwatchGrid names={Object.keys(flatten(colors.light)).filter(key => key.split('.')[0] === 'neutral')} />
+
+### Accent
+
+<SwatchGrid names={Object.keys(flatten(colors.light)).filter(key => key.split('.')[0] === 'accent')} />
+
+### Success
+
+<SwatchGrid names={Object.keys(flatten(colors.light)).filter(key => key.split('.')[0] === 'success')} />
+
+### Attention
+
+<SwatchGrid names={Object.keys(flatten(colors.light)).filter(key => key.split('.')[0] === 'attention')} />
+
+### Severe
+
+<SwatchGrid names={Object.keys(flatten(colors.light)).filter(key => key.split('.')[0] === 'severe')} />
+
+### Danger
+
+<SwatchGrid names={Object.keys(flatten(colors.light)).filter(key => key.split('.')[0] === 'danger')} />
+
+### Done
+
+<SwatchGrid names={Object.keys(flatten(colors.light)).filter(key => key.split('.')[0] === 'done')} />
+
+### Sponsors
+
+<SwatchGrid names={Object.keys(flatten(colors.light)).filter(key => key.split('.')[0] === 'sponsors')} />
+
+## Scale variables
+
+<ul>
+  {Object.keys(flatten(colors.light.scale)).map(key => (
+    <li>{key}</li>
+  ))}
+</ul>
+
+## Deprecated variables
+
+<ul>
+  {Object.entries(deprecatedColors).map(([key, value]) => (
+    <li>
+      {key} → {value}
+    </li>
+  ))}
+</ul>
