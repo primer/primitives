@@ -37,33 +37,49 @@ import {SwatchGrid} from '../src/components/swatch-grid'
 
 ### Neutral
 
+Use to highlight content without any added meaning.
+
 <SwatchGrid names={Object.keys(flatten(colors.light)).filter(key => key.split('.')[0] === 'neutral')} />
 
 ### Accent
+
+Use to draw attention to interactive elements.
 
 <SwatchGrid names={Object.keys(flatten(colors.light)).filter(key => key.split('.')[0] === 'accent')} />
 
 ### Success
 
+Use to expresses the completion or positive outcome of a task.
+
 <SwatchGrid names={Object.keys(flatten(colors.light)).filter(key => key.split('.')[0] === 'success')} />
 
 ### Attention
+
+Use to warn of pending tasks or highlight active content.
 
 <SwatchGrid names={Object.keys(flatten(colors.light)).filter(key => key.split('.')[0] === 'attention')} />
 
 ### Severe
 
+Use when there are more than 3 levels of states, for example in heatmaps.
+
 <SwatchGrid names={Object.keys(flatten(colors.light)).filter(key => key.split('.')[0] === 'severe')} />
 
 ### Danger
+
+Use to inform of error or another negative message.
 
 <SwatchGrid names={Object.keys(flatten(colors.light)).filter(key => key.split('.')[0] === 'danger')} />
 
 ### Done
 
+Completion color for productivity and code review workflows.
+
 <SwatchGrid names={Object.keys(flatten(colors.light)).filter(key => key.split('.')[0] === 'done')} />
 
 ### Sponsors
+
+Use for Sponsors-related interfaces.
 
 <SwatchGrid names={Object.keys(flatten(colors.light)).filter(key => key.split('.')[0] === 'sponsors')} />
 
