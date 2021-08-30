@@ -23,7 +23,9 @@ export default {
     },
     selectedLineHighlightMixBlendMode: 'screen'
   },
-  searchKeywordHl: alpha(get('scale.yellow.3'), 0.4),
+  searchKeyword: {
+    hl: alpha(get('scale.yellow.3'), 0.4),
+  },
   prettylights: {
     syntax: {
       comment: get('scale.gray.3'),
