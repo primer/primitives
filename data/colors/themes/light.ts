@@ -1,6 +1,6 @@
 import {merge} from '../../../src/utils'
 import lightComponentVars from '../vars/component_light'
-import deprecatedVars from '../vars/deprecated'
+import lightDeprecatedVars from '../vars/deprecated_light'
 import lightGlobalVars from '../vars/global_light'
 import lightMarketingVars from '../vars/marketing_light'
 import lightProductVars from '../vars/product_light'
@@ -63,4 +63,4 @@ const scale = {
   ]
 }
 
-export default merge(deprecatedVars, lightProductVars, lightMarketingVars, lightComponentVars, lightGlobalVars, {scale})
+export default merge(lightDeprecatedVars, lightProductVars, lightMarketingVars, lightComponentVars, lightGlobalVars, {scale})

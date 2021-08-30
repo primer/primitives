@@ -1,0 +1,583 @@
+import {alpha, get, lighten, darken, desaturate} from '../../../src/utils'
+
+// Variables to be removed in the next major release
+
+export default {
+  auto: {
+    black: get('scale.black'),
+    white: get('scale.white'),
+    gray: [
+      get('scale.gray.0'),
+      get('scale.gray.1'),
+      get('scale.gray.2'),
+      get('scale.gray.3'),
+      get('scale.gray.4'),
+      get('scale.gray.5'),
+      get('scale.gray.6'),
+      get('scale.gray.7'),
+      get('scale.gray.8'),
+      get('scale.gray.9')
+    ],
+    blue: [
+      get('scale.blue.0'),
+      get('scale.blue.1'),
+      get('scale.blue.2'),
+      get('scale.blue.3'),
+      get('scale.blue.4'),
+      get('scale.blue.5'),
+      get('scale.blue.6'),
+      get('scale.blue.7'),
+      get('scale.blue.8'),
+      get('scale.blue.9')
+    ],
+    green: [
+      get('scale.green.0'),
+      get('scale.green.1'),
+      get('scale.green.2'),
+      get('scale.green.3'),
+      get('scale.green.4'),
+      get('scale.green.5'),
+      get('scale.green.6'),
+      get('scale.green.7'),
+      get('scale.green.8'),
+      get('scale.green.9')
+    ],
+    yellow: [
+      get('scale.yellow.0'),
+      get('scale.yellow.1'),
+      get('scale.yellow.2'),
+      get('scale.yellow.3'),
+      get('scale.yellow.4'),
+      get('scale.yellow.5'),
+      get('scale.yellow.6'),
+      get('scale.yellow.7'),
+      get('scale.yellow.8'),
+      get('scale.yellow.9')
+    ],
+    orange: [
+      get('scale.orange.0'),
+      get('scale.orange.1'),
+      get('scale.orange.2'),
+      get('scale.orange.3'),
+      get('scale.orange.4'),
+      get('scale.orange.5'),
+      get('scale.orange.6'),
+      get('scale.orange.7'),
+      get('scale.orange.8'),
+      get('scale.orange.9')
+    ],
+    red: [
+      get('scale.red.0'),
+      get('scale.red.1'),
+      get('scale.red.2'),
+      get('scale.red.3'),
+      get('scale.red.4'),
+      get('scale.red.5'),
+      get('scale.red.6'),
+      get('scale.red.7'),
+      get('scale.red.8'),
+      get('scale.red.9')
+    ],
+    purple: [
+      get('scale.purple.0'),
+      get('scale.purple.1'),
+      get('scale.purple.2'),
+      get('scale.purple.3'),
+      get('scale.purple.4'),
+      get('scale.purple.5'),
+      get('scale.purple.6'),
+      get('scale.purple.7'),
+      get('scale.purple.8'),
+      get('scale.purple.9')
+    ],
+    pink: [
+      get('scale.pink.0'),
+      get('scale.pink.1'),
+      get('scale.pink.2'),
+      get('scale.pink.3'),
+      get('scale.pink.4'),
+      get('scale.pink.5'),
+      get('scale.pink.6'),
+      get('scale.pink.7'),
+      get('scale.pink.8'),
+      get('scale.pink.9')
+    ]
+  },
+  text: {
+    primary: get('scale.gray.9'),
+    secondary: get('scale.gray.6'),
+    tertiary: get('scale.gray.5'),
+    placeholder: get('scale.gray.5'),
+    disabled: get('scale.gray.4'),
+    inverse: get('scale.white'),
+    link: get('scale.blue.5'),
+    danger: get('scale.red.6'),
+    success: get('scale.green.6'),
+    warning: get('scale.yellow.8'),
+    white: get('scale.white')
+  },
+  icon: {
+    primary: get('scale.gray.9'),
+    secondary: get('scale.gray.6'),
+    tertiary: get('scale.gray.4'),
+    info: get('scale.blue.5'),
+    danger: get('scale.red.5'),
+    success: get('scale.green.6'),
+    warning: get('scale.yellow.8')
+  },
+  border: {
+    primary: get('scale.gray.2'),
+    secondary: lighten(get('scale.gray.2'), 0.03),
+    tertiary: get('scale.gray.3'),
+    overlay: get('scale.gray.2'),
+    inverse: get('scale.white'),
+    info: get('scale.blue.5'),
+    danger: get('scale.red.5'),
+    success: get('scale.green.4'),
+    warning: get('scale.yellow.6')
+  },
+  bg: {
+    canvas: get('scale.white'),
+    canvasMobile: get('scale.white'),
+    canvasInverse: get('scale.gray.9'),
+    canvasInset: get('scale.gray.1'),
+    primary: get('scale.white'),
+    secondary: get('scale.gray.0'),
+    tertiary: get('scale.gray.1'),
+    overlay: get('scale.white'),
+    backdrop: get('fade.black50'),
+    info: get('scale.blue.0'),
+    infoInverse: get('scale.blue.5'),
+    danger: get('scale.red.0'),
+    dangerInverse: get('scale.red.5'),
+    success: get('scale.green.1'),
+    successInverse: get('scale.green.5'),
+    warning: get('scale.yellow.2'),
+    warningInverse: get('scale.yellow.5')
+  },
+  shadow: {
+    highlight: (theme: any) => `inset 0 1px 0 ${alpha(get('scale.white'), 0.25)(theme)}`,
+    inset: (theme: any) => `inset 0 1px 0 ${alpha(get('scale.gray.2'), 0.2)(theme)}`
+  },
+  state: {
+    hover: {
+      primaryBg: get('scale.blue.5'),
+      primaryBorder: get('scale.blue.5'),
+      primaryText: get('scale.white'),
+      primaryIcon: get('scale.white'),
+      secondaryBg: get('scale.gray.1'),
+      secondaryBorder: get('scale.gray.1')
+    },
+    selected: {
+      primaryBg: get('scale.blue.5'),
+      primaryBorder: get('scale.blue.5'),
+      primaryText: get('scale.white'),
+      primaryIcon: get('scale.white')
+    },
+    focus: {
+      border: get('scale.blue.5'),
+      shadow: (theme: any) => `0 0 0 3px ${alpha(get('scale.blue.5'), 0.3)(theme)}`
+    }
+  },
+  fade: {
+    fg10: get('fade.black10'),
+    fg15: get('fade.black15'),
+    fg30: get('fade.black30'),
+    fg50: get('fade.black50'),
+    fg70: get('fade.black70'),
+    fg85: get('fade.black85'),
+    black10: alpha(get('scale.black'), 0.1),
+    black15: alpha(get('scale.black'), 0.15),
+    black30: alpha(get('scale.black'), 0.3),
+    black50: alpha(get('scale.black'), 0.5),
+    black70: alpha(get('scale.black'), 0.7),
+    black85: alpha(get('scale.black'), 0.85),
+    white10: alpha(get('scale.white'), 0.1),
+    white15: alpha(get('scale.white'), 0.15),
+    white30: alpha(get('scale.white'), 0.3),
+    white50: alpha(get('scale.white'), 0.5),
+    white70: alpha(get('scale.white'), 0.7),
+    white85: alpha(get('scale.white'), 0.85)
+  },
+  alert: {
+    info: {
+      text: get('scale.gray.9'),
+      icon: alpha(get('scale.blue.7'), 0.6),
+      bg: get('scale.blue.1'),
+      border: alpha(get('scale.blue.7'), 0.2)
+    },
+    warn: {
+      text: get('scale.gray.9'),
+      icon: get('scale.yellow.8'),
+      bg: get('scale.yellow.1'),
+      border: alpha(get('scale.yellow.8'), 0.2)
+    },
+    error: {
+      text: get('scale.gray.9'),
+      icon: alpha(get('scale.red.8'), 0.6),
+      bg: '#ffe3e6',
+      border: alpha(get('scale.red.8'), 0.2)
+    },
+    success: {
+      text: get('scale.gray.9'),
+      icon: alpha(get('scale.green.7'), 0.8),
+      bg: get('scale.green.1'),
+      border: alpha(get('scale.green.7'), 0.2)
+    }
+  },
+  autocomplete: {
+    shadow: (theme: any) => `0 3px 6px ${alpha(get('scale.gray.4'), 0.15)(theme)}`,
+    rowBorder: lighten(get('scale.gray.2'), 0.03)
+  },
+  blankslate: {
+    icon: lighten(get('scale.gray.5'), 0.05)
+  },
+  counter: {
+    text: get('scale.gray.9'),
+    bg: alpha(get('scale.gray.3'), 0.5),
+    primary: {
+      text: get('scale.white'),
+      bg: get('scale.gray.5')
+    },
+    secondary: {
+      text: get('scale.gray.5'),
+      bg: alpha(get('scale.gray.3'), 0.5)
+    }
+  },
+  box: {
+    blueBorder: get('scale.blue.2'),
+    rowYellowBg: get('scale.yellow.1'),
+    rowBlueBg: get('scale.blue.0'),
+    headerBlueBg: get('scale.blue.0'),
+    headerBlueBorder: get('scale.blue.2'),
+    borderInfo: alpha(get('scale.blue.5'), 0.2),
+    bgInfo: get('scale.blue.0'),
+    borderWarning: alpha(get('scale.yellow.5'), 0.4),
+    bgWarning: get('scale.yellow.0')
+  },
+  branchName: {
+    text: get('scale.gray.6'),
+    icon: desaturate(get('scale.blue.3'), 0.7),
+    bg: lighten(get('scale.blue.1'), 0.03),
+    link: {
+      text: get('scale.blue.5'),
+      icon: desaturate(get('scale.blue.3'), 0.7),
+      bg: lighten(get('scale.blue.1'), 0.03)
+    }
+  },
+  markdown: {
+    codeBg: alpha(get('scale.black'), 0.05),
+    frameBorder: lighten(get('scale.gray.3'), 0.05),
+    blockquoteBorder: lighten(get('scale.gray.3'), 0.05),
+    tableBorder: lighten(get('scale.gray.3'), 0.05),
+    tableTrBorder: darken(get('scale.gray.3'), 0.04)
+  },
+  filterItem: {
+    barBg: darken(get('scale.gray.1'), 0.02)
+  },
+  hiddenTextExpander: {
+    bg: lighten(get('scale.gray.3'), 0.05),
+    bgHover: darken(get('scale.gray.3'), 0.04)
+  },
+  dragAndDrop: {
+    border: darken(get('scale.gray.3'), 0.05)
+  },
+  uploadEnabled: {
+    border: lighten(get('scale.gray.3'), 0.05),
+    borderFocused: lighten(get('scale.blue.4'), 0.08)
+  },
+  previewableCommentForm: {
+    border: darken(get('scale.gray.3'), 0.05)
+  },
+  verifiedBadge: {
+    text: get('scale.green.6'),
+    bg: get('scale.white'),
+    border: get('scale.gray.2')
+  },
+  socialCount: {
+    bg: get('scale.white')
+  },
+  tooltip: {
+    text: get('scale.white'),
+    bg: get('scale.gray.9')
+  },
+  filesExplorerIcon: get('scale.blue.3'),
+  hlAuthorBg: get('scale.blue.0'),
+  hlAuthorBorder: get('scale.blue.2'),
+  logoSubdued: get('scale.gray.3'),
+  discussionBorder: desaturate(get('scale.green.3'), 0.4),
+  discussionBgSuccess: get('scale.green.5'),
+  actionsWorkflowTableStickyBg: alpha(get('scale.white'), 0.95),
+  repoLanguageColorBorder: alpha(get('scale.black'), 0.1),
+  codeSelectionBg: get('scale.blue.2'),
+  highlight: {
+    text: '#442c12',
+    bg: '#fff0bb'
+  },
+  blob: {
+    lineHighlightBg: get('scale.yellow.1'),
+    lineHighlightBorder: 'transparent'
+  },
+  topicTag: {
+    text: get('scale.blue.5'),
+    bg: get('scale.blue.0'),
+    hoverBg: darken(get('scale.blue.0'), 0.04),
+    activeBg: darken(get('scale.blue.0'), 0.02)
+  },
+  footerInvertocat: {
+    octicon: get('scale.gray.3'),
+    octiconHover: get('scale.gray.5')
+  },
+  dropdown: {
+    shadow: (theme: any) => `0 8px 24px ${alpha(get('scale.gray.4'), 0.2)(theme)}`
+  },
+  label: {
+    border: get('scale.gray.2'),
+    primary: {
+      text: get('scale.gray.9'),
+      border: get('scale.gray.5')
+    },
+    secondary: {
+      text: get('scale.gray.6'),
+      border: get('scale.gray.2')
+    },
+    info: {
+      text: get('scale.blue.5'),
+      border: get('scale.blue.5')
+    },
+    success: {
+      text: get('scale.green.6'),
+      border: get('scale.green.5')
+    },
+    warning: {
+      text: get('scale.yellow.9'),
+      border: get('scale.yellow.8')
+    },
+    danger: {
+      text: get('scale.red.5'),
+      border: get('scale.red.6')
+    },
+    orange: {
+      text: get('scale.orange.8'),
+      border: get('scale.orange.5')
+    }
+  },
+  input: {
+    bg: get('scale.white'),
+    contrastBg: get('scale.gray.0'),
+    border: get('scale.gray.2'),
+    shadow: (theme: any) => `inset 0 1px 2px ${alpha(get('scale.black'), 0.075)(theme)}`,
+    disabledBorder: get('scale.gray.2'),
+    warningBorder: get('scale.yellow.6'),
+    errorBorder: get('scale.red.6'),
+    tooltip: {
+      success: {
+        text: get('scale.green.9'),
+        bg: get('scale.green.1'),
+        border: get('scale.green.4')
+      },
+      warning: {
+        text: get('scale.yellow.9'),
+        bg: get('scale.yellow.2'),
+        border: get('scale.yellow.6')
+      },
+      error: {
+        text: get('scale.red.9'),
+        bg: get('scale.red.0'),
+        border: get('scale.red.3')
+      }
+    }
+  },
+  toast: {
+    text: get('text.primary'),
+    bg: get('bg.canvas'),
+    border: get('border.primary'),
+    shadow: get('shadow.large'),
+    icon: get('scale.white'),
+    iconBg: get('bg.infoInverse'),
+    iconBorder: 'transparent',
+    success: {
+      text: get('text.primary'),
+      border: get('border.primary'),
+      icon: get('scale.white'),
+      iconBg: get('bg.successInverse'),
+      iconBorder: 'transparent'
+    },
+    warning: {
+      text: get('text.primary'),
+      border: get('border.primary'),
+      icon: get('text.primary'),
+      iconBg: get('bg.warningInverse'),
+      iconBorder: 'transparent'
+    },
+    danger: {
+      text: get('text.primary'),
+      border: get('border.primary'),
+      icon: get('scale.white'),
+      iconBg: get('bg.dangerInverse'),
+      iconBorder: 'transparent'
+    },
+    loading: {
+      text: get('text.primary'),
+      border: get('border.primary'),
+      icon: get('scale.white'),
+      iconBg: get('scale.gray.6'),
+      iconBorder: 'transparent'
+    }
+  },
+  timeline: {
+    text: get('scale.gray.7'),
+    badgeBg: get('scale.gray.2'),
+    badgeSuccessBorder: 'transparent',
+    targetBadgeBorder: get('scale.blue.4'),
+    targetBadgeShadow: get('scale.blue.2')
+  },
+  diffstat: {
+    neutralBg: get('scale.gray.3'),
+    neutralBorder: get('scale.gray.3'),
+    deletionBg: get('scale.red.5'),
+    deletionBorder: get('scale.red.5'),
+    additionBg: get('scale.green.5'),
+    additionBorder: get('scale.green.5')
+  },
+  diff: {
+    addition: {
+      text: get('scale.green.6'),
+      bg: get('diffBlob.addition.lineBg'),
+      border: get('scale.green.4')
+    },
+    deletion: {
+      text: get('scale.red.6'),
+      bg: get('diffBlob.deletion.lineBg'),
+      border: get('scale.red.5')
+    },
+    change: {
+      text: get('scale.yellow.8'),
+      bg: get('scale.yellow.2'),
+      border: get('scale.yellow.6')
+    }
+  },
+  mergeBox: {
+    successIconBg: get('scale.green.5'),
+    successIconText: get('scale.white'),
+    successIconBorder: 'transparent',
+    successIndicatorBg: get('scale.green.5'),
+    successIndicatorBorder: 'transparent',
+    mergedIconBg: get('scale.purple.5'),
+    mergedIconText: get('scale.white'),
+    mergedIconBorder: 'transparent',
+    mergedBoxBorder: get('scale.purple.5'),
+    neutralIconBg: get('scale.gray.5'),
+    neutralIconText: get('scale.white'),
+    neutralIconBorder: 'transparent',
+    neutralIndicatorBg: get('scale.gray.5'),
+    neutralIndicatorBorder: 'transparent',
+    warningIconBg: get('scale.yellow.7'),
+    warningIconText: get('scale.white'),
+    warningIconBorder: 'transparent',
+    warningBoxBorder: get('scale.yellow.5'),
+    warningMergeHighlight: 'transparent',
+    errorIconBg: get('scale.red.5'),
+    errorIconText: get('scale.white'),
+    errorIconBorder: 'transparent',
+    errorIndicatorBg: get('scale.red.5'),
+    errorIndicatorBorder: 'transparent'
+  },
+  underlinenav: {
+    border: alpha(get('scale.gray.3'), 0),
+    borderHover: get('scale.gray.3'),
+    borderActive: '#f9826c',
+    text: get('scale.gray.9'),
+    textHover: get('scale.gray.9'),
+    textActive: get('scale.gray.9'),
+    icon: get('scale.gray.4'),
+    iconHover: get('scale.gray.4'),
+    iconActive: get('scale.gray.9'),
+    counterText: get('scale.gray.9'),
+    counterBg: get('counter.bg')
+  },
+  selectMenu: {
+    borderSecondary: lighten(get('scale.gray.2'), 0.03),
+    shadow: (theme: any) => `0 0 18px ${alpha(get('scale.black'), 0.4)(theme)}`,
+    backdropBg: get('fade.black50')
+  },
+  sidenav: {
+    borderActive: '#f9826c'
+  },
+  menu: {
+    headingText: get('scale.gray.9'),
+    borderActive: '#f9826c'
+  },
+  project: {
+    cardBg: get('scale.white')
+  },
+  prState: {
+    draft: {
+      text: get('scale.white'),
+      bg: get('scale.gray.5'),
+      border: 'transparent'
+    },
+    open: {
+      text: get('scale.white'),
+      bg: get('scale.green.5'),
+      border: 'transparent'
+    },
+    merged: {
+      text: get('scale.white'),
+      bg: get('scale.purple.5'),
+      border: 'transparent'
+    },
+    closed: {
+      text: get('scale.white'),
+      bg: get('scale.red.5'),
+      border: 'transparent'
+    }
+  },
+  diffBlob: {
+    numText: get('fade.black30'),
+    numHoverText: alpha(get('scale.black'), 0.6),
+    addition: {
+      numHoverText: alpha(get('scale.black'), 0.6),
+      lineBg: darken(get('scale.green.0'), 0.02),
+      wordBg: darken(get('scale.green.2'), 0.04)
+    },
+    deletion: {
+      numHoverText: alpha(get('scale.black'), 0.6),
+      lineBg: get('scale.red.0'),
+      wordBg: lighten(get('scale.red.2'), 0.02)
+    },
+    hunk: {
+      text: get('fade.black70'),
+      numBg: get('scale.blue.1'),
+      lineBg: get('scale.blue.0')
+    },
+    emptyBlockBg: get('scale.gray.0'),
+    selectedLineHighlightBg: alpha(get('scale.yellow.4'), 0.2),
+    selectedLineHighlightBorder: get('scale.yellow.5'),
+    expander: {
+      hoverIcon: get('scale.white'),
+      hoverBg: get('scale.blue.5')
+    },
+    commentButton: {
+      icon: get('scale.white'),
+      bg: get('scale.blue.5'),
+      gradientBg: lighten(get('scale.blue.5'), 0.05)
+    }
+  },
+  globalNav: {
+    logo: get('scale.white'),
+    bg: get('scale.gray.9'),
+    text: get('scale.white'),
+    icon: get('scale.white'),
+    inputBg: get('scale.gray.0'),
+    inputBorder: get('scale.gray.0'),
+    inputIcon: get('scale.gray.3'),
+    inputPlaceholder: get('scale.gray.4')
+  },
+  introShelf: {
+    gradientLeft: get('scale.blue.0'),
+    gradientRight: get('scale.green.1'),
+    gradientIn: get('scale.white'),
+    gradientOut: alpha(get('scale.white'), 0)
+  }
+}
