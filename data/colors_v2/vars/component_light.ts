@@ -24,10 +24,10 @@ export default {
     text: alpha(get('scale.white'), 0.7),
     bg: get('scale.gray.9'),
     logo: get('scale.white'),
-    search: {
+  },
+  headerSearch: {
       bg: get('scale.gray.9'),
       border: get('scale.gray.6')
-    }
   },
   sidenav: {
     selectedBg: get('scale.white')
