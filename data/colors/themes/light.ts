@@ -3,7 +3,7 @@ import lightComponentVars from '../vars/component_light'
 import lightDeprecatedVars from '../vars/deprecated_light'
 import lightGlobalVars from '../vars/global_light'
 import lightMarketingVars from '../vars/marketing_light'
-import lightProductVars from '../vars/product_light'
+import lightAppVars from '../vars/app_light'
 
 const scale = {
   black: '#1b1f24',
@@ -63,4 +63,4 @@ const scale = {
   ]
 }
 
-export default merge(lightDeprecatedVars, lightProductVars, lightMarketingVars, lightComponentVars, lightGlobalVars, {scale})
+export default merge(lightDeprecatedVars, lightAppVars, lightMarketingVars, lightComponentVars, lightGlobalVars, {scale})

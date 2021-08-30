@@ -3,7 +3,7 @@ import darkComponentVars from '../vars/component_dark'
 import deprecatedVars from '../vars/deprecated'
 import darkGlobalVars from '../vars/global_dark'
 import darkMarketingVars from '../vars/marketing_dark'
-import darkProductVars from '../vars/product_dark'
+import darkAppVars from '../vars/app_dark'
 
 const scale = {
   black: '#010409',
@@ -63,4 +63,4 @@ const scale = {
   ]
 }
 
-export default merge(deprecatedVars, darkProductVars, darkMarketingVars, darkComponentVars, darkGlobalVars, {scale})
+export default merge(deprecatedVars, darkAppVars, darkMarketingVars, darkComponentVars, darkGlobalVars, {scale})
