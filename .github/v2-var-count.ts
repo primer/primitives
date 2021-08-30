@@ -1,7 +1,7 @@
 const {default: colors} = require('../dist/js/colors')
 const {default: colorsV2} = require('../dist/js/colors_v2')
 const {default: deprecatedVars} = require('../data/colors_v2/vars/deprecated')
-const {default: githubVars} = require('../data/colors_v2/vars/product_light')
+const {default: githubVars} = require('../data/colors_v2/vars/app_light')
 const flatten = require('flat')
 const {Octokit} = require('@octokit/rest')
 
