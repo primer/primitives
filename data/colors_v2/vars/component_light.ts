@@ -38,6 +38,10 @@ export default {
   input: {
     disabledBg: get('neutral.muted')
   },
+  diffstat: {
+    additionBg: get('scale.green.4')
+  },
+
   // TODO: Move to VSCode theme?
   ansi: {
     black: get('scale.gray.9'),

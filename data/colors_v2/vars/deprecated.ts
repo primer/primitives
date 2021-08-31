@@ -447,8 +447,7 @@ export default {
     neutralBorder: get('border.subtle'),
     deletionBorder: get('border.subtle'),
     additionBorder: get('border.subtle'),
-    deletionBg: get('danger.emphasis'),
-    additionBg: get('success.emphasis'),
+    deletionBg: get('danger.emphasis')
   },
   diff: {
     addition: {
@@ -548,18 +547,16 @@ export default {
     numHoverText: get('fg.default'),
     addition: {
       numHoverText: get('fg.default'),
-      lineBg: get('success.subtle'),
-      wordBg: get('success.muted')
     },
     deletion: {
       numHoverText: get('fg.default'),
       lineBg: get('danger.subtle'),
-      wordBg: get('danger.muted')
+      wordBg: get('danger.muted'),
     },
     hunk: {
       text: get('fg.muted'),
       numBg: get('accent.muted'),
-      lineBg: get('accent.subtle')
+      lineBg: get('accent.subtle'),
     },
     emptyBlockBg: get('neutral.subtle'),
     selectedLineHighlightBg: get('attention.subtle'),
