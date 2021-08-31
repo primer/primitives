@@ -1,19 +1,68 @@
+import {Box} from '@primer/components'
 import React from 'react'
+import {sentenceCase} from 'sentence-case'
 import colors from '../../../dist/js/colors_v2'
 import {useColorTheme} from './color-theme-context'
 
 export function ColorThemePicker() {
   const [colorTheme, setColorTheme] = useColorTheme()
   return (
-    <select
-      name="color-theme"
-      id="color-theme"
-      value={colorTheme}
-      onChange={event => setColorTheme(event.target.value as keyof typeof colors)}
-    >
+    <Box sx={{display: 'grid', gridGap: 3, gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))'}}>
       {Object.keys(colors).map(key => (
-        <option value={key}>{key}</option>
+        <Box
+          as="label"
+          key={key}
+          sx={{
+            border: '1px solid',
+            borderColor: key === colorTheme ? 'blue.5' : 'border.gray',
+            borderRadius: 2,
+            overflow: 'hidden'
+          }}
+        >
+          <ColorThemePreview colorTheme={key} />
+          <Box sx={{p: 2}}>
+            <input
+              type="radio"
+              id={key}
+              name="drone"
+              value={key}
+              checked={colorTheme === key}
+              onChange={event => setColorTheme(event.target.value as keyof typeof colors)}
+            />
+            <Box as="span" sx={{ml: 1}}>
+              {sentenceCase(key)}
+            </Box>
+          </Box>
+        </Box>
       ))}
-    </select>
+    </Box>
+  )
+}
+
+function ColorThemePreview({colorTheme}) {
+  return (
+    <Box
+      sx={{
+        color: colors[colorTheme].fg.default,
+        bg: colors[colorTheme].canvas.default,
+        display: 'flex',
+        p: 3,
+        borderBottom: '1px solid',
+        borderColor: 'border.gray',
+        justifyContent: 'center'
+      }}
+    >
+      {['neutral', 'accent', 'success', 'attention', 'severe', 'danger', 'done', 'sponsors'].map(role => (
+        <Box
+          sx={{
+            width: 20,
+            height: 20,
+            bg: colors[colorTheme][role].emphasis,
+            margin: '2px',
+            borderRadius: 999
+          }}
+        />
+      ))}
+    </Box>
   )
 }

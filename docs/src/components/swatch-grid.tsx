@@ -1,8 +1,8 @@
-import React from 'react'
 import {Box} from '@primer/components'
-import {getFullName} from '../../../script/lib/variable-collection'
-import colors from '../../../dist/js/colors_v2'
 import get from 'lodash.get'
+import React from 'react'
+import colors from '../../../dist/js/colors_v2'
+import {getFullName} from '../../../script/lib/variable-collection'
 import {useColorTheme} from './color-theme-context'
 
 export function SwatchGrid({names}: {names: string[]}) {
@@ -11,7 +11,7 @@ export function SwatchGrid({names}: {names: string[]}) {
       sx={{
         display: 'grid',
         gridGap: 3,
-        gridTemplateColumns: 'repeat(4, 1fr)'
+        gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))'
       }}
     >
       {names.map(name => (
@@ -70,7 +70,7 @@ function FgPreview({name, value}: {name: string; value: string}) {
         fontWeight: 'bold',
         display: 'grid',
         placeItems: 'center',
-        bg: name === 'fg.onEmphasis' ? colors[colorTheme].neutral.emphasisPlus : colors[colorTheme].canvas.default,
+        bg: name === 'fg.onEmphasis' ? colors[colorTheme].neutral.emphasis : colors[colorTheme].canvas.default,
         border: '1px solid',
         borderColor: colors[colorTheme].border.default,
         borderRadius: 2
