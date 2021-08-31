@@ -11,7 +11,7 @@ export default {
     addition: {
       numText: get('fg.default'),
       fg: get('fg.default'),
-      numBg: '#CCFFD8A',
+      numBg: '#CCFFD8',
       lineBg: '#E6FFEC',
       wordBg: '#ABF2BC',
     },
