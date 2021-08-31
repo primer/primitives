@@ -38,6 +38,9 @@ export default {
   input: {
     disabledBg: alpha(get('neutral.muted'), 0.5)
   }, 
+  diffstat: {
+    additionBg: get('scale.green.3')
+  },
   ansi: {
     black: get('scale.gray.5'),
     blackBright: get('scale.gray.4'),

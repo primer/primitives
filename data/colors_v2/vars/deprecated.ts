@@ -546,17 +546,17 @@ export default {
     numText: get('fg.subtle'),
     numHoverText: get('fg.default'),
     addition: {
-      numHoverText: get('fg.default')
+      numHoverText: get('fg.default'),
     },
     deletion: {
       numHoverText: get('fg.default'),
       lineBg: get('danger.subtle'),
-      wordBg: get('danger.muted')
+      wordBg: get('danger.muted'),
     },
     hunk: {
       text: get('fg.muted'),
       numBg: get('accent.muted'),
-      lineBg: get('accent.subtle')
+      lineBg: get('accent.subtle'),
     },
     emptyBlockBg: get('neutral.subtle'),
     selectedLineHighlightBg: get('attention.subtle'),
