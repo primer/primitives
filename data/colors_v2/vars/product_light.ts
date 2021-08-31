@@ -101,7 +101,7 @@ export default {
     inputBg: get('scale.gray.8'),
     inputShadow: 'none',
     donutError: get('scale.red.4'),
-    donutPending: get('scale.yellow.3'),
+    donutPending: get('scale.yellow.4'),
     donutSuccess: get('scale.green.4'),
     donutNeutral: get('scale.gray.3'),
     dropdownText: get('scale.gray.3'),
