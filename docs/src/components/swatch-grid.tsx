@@ -1,5 +1,6 @@
 import React from 'react'
 import {Box} from '@primer/components'
+import {getFullName} from '../../../script/lib/variable-collection'
 import colors from '../../../dist/js/colors_v2'
 import get from 'lodash.get'
 import {useColorTheme} from './color-theme-context'
@@ -21,8 +22,8 @@ export function SwatchGrid({names}: {names: string[]}) {
 }
 
 function Swatch({name}: {name: string}) {
-  const colorTheme = useColorTheme()
-  const value = React.useMemo(() => get(colors[colorTheme], name), [name])
+  const [colorTheme] = useColorTheme()
+  const value = React.useMemo(() => get(colors[colorTheme], name), [name, colorTheme])
   const variant = React.useMemo(() => chooseVariant(name), [name])
 
   return (
@@ -32,6 +33,10 @@ function Swatch({name}: {name: string}) {
       {variant === 'shadow' && <ShadowPreview name={name} value={value} />}
       {variant === 'default' && <DefaultPreview name={name} value={value} />}
       <Box sx={{fontFamily: 'mono', mt: 2}}>{name}</Box>
+      <Box sx={{fontFamily: 'mono', fontSize: 0, color: 'text.gray'}}>{`--${getFullName(
+        'color',
+        name.split('.')
+      )}`}</Box>
       <Box sx={{fontFamily: 'mono', fontSize: 0, color: 'text.gray'}}>{value}</Box>
     </Box>
   )
@@ -54,7 +59,7 @@ function chooseVariant(name: string): 'fg' | 'border' | 'shadow' | 'default' {
 }
 
 function FgPreview({name, value}: {name: string; value: string}) {
-  const colorTheme = useColorTheme()
+  const [colorTheme] = useColorTheme()
   return (
     <Box
       sx={{
@@ -77,7 +82,7 @@ function FgPreview({name, value}: {name: string; value: string}) {
 }
 
 function BorderPreview({name, value}: {name: string; value: string}) {
-  const colorTheme = useColorTheme()
+  const [colorTheme] = useColorTheme()
   return (
     <Box
       sx={{
@@ -100,7 +105,7 @@ function BorderPreview({name, value}: {name: string; value: string}) {
 }
 
 function ShadowPreview({name, value}: {name: string; value: string}) {
-  const colorTheme = useColorTheme()
+  const [colorTheme] = useColorTheme()
   return (
     <Box
       sx={{
@@ -123,7 +128,7 @@ function ShadowPreview({name, value}: {name: string; value: string}) {
 }
 
 function DefaultPreview({name, value}: {name: string; value: string}) {
-  const colorTheme = useColorTheme()
+  const [colorTheme] = useColorTheme()
   return (
     <Box
       sx={{

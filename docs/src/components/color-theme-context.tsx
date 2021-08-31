@@ -1,10 +1,13 @@
 import React from 'react'
 import colors from '../../../dist/js/colors_v2'
 
-const ColorThemeContext = React.createContext<keyof typeof colors>('light')
+const ColorThemeContext = React.createContext<
+  [keyof typeof colors, React.Dispatch<React.SetStateAction<keyof typeof colors>>]
+>(['light', () => {}])
 
 export function ColorThemeProvider({children}) {
-  return <ColorThemeContext.Provider value="dark_dimmed">{children}</ColorThemeContext.Provider>
+  const [colorTheme, setColorTheme] = React.useState<keyof typeof colors>('light')
+  return <ColorThemeContext.Provider value={[colorTheme, setColorTheme]}>{children}</ColorThemeContext.Provider>
 }
 
 export function useColorTheme() {
