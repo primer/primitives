@@ -6,11 +6,14 @@ import {Identifier, StringLiteral} from '@babel/types'
 // Temporary script to generate deprecations for the new functional color system.
 // Delete this file when the new system is published.
 
+// To generate `deprecations.json`, run:
+//   yarn ts-node script/generate-deprecations.ts
+
 const code = fs.readFileSync('./data/colors_v2/vars/deprecated.ts', 'utf8')
 
 const ast = parse(code, {sourceType: 'module'})
 
-const propertyStack: Array<string> = []
+const keyStack: Array<string> = []
 const result: Record<string, string | null> = {}
 
 traverse(ast, {
@@ -18,43 +21,36 @@ traverse(ast, {
     enter(path) {
       switch (path.node.value.type) {
         case 'ObjectExpression':
-          propertyStack.push((path.node.key as Identifier).name)
+          keyStack.push((path.node.key as Identifier).name)
           break
 
         case 'CallExpression':
           if ((path.node.value.callee as Identifier).name === 'get') {
-            result[[...propertyStack, (path.node.key as Identifier).name].join('.')] = (path.node.value
+            result[[...keyStack, (path.node.key as Identifier).name].join('.')] = (path.node.value
               .arguments[0] as StringLiteral).value
           } else {
-            result[[...propertyStack, (path.node.key as Identifier).name].join('.')] = null
+            result[[...keyStack, (path.node.key as Identifier).name].join('.')] = null
           }
           break
 
         case 'ArrayExpression':
-          propertyStack.push((path.node.key as Identifier).name)
+          keyStack.push((path.node.key as Identifier).name)
 
           for (const index in path.node.value.elements) {
-            result[[...propertyStack, index].join('.')] = null
+            result[[...keyStack, index].join('.')] = null
           }
 
-          propertyStack.pop()
+          keyStack.pop()
           break
 
         default:
-          result[[...propertyStack, (path.node.key as Identifier).name].join('.')] = null
+          result[[...keyStack, (path.node.key as Identifier).name].join('.')] = null
           break
       }
-      // if (path.node.value.type === 'CallExpression' && (path.node.value.callee as Identifier).name === 'get') {
-
-      // } else if (path.node.value.type === 'ObjectExpression') {
-      //   propertyStack.push((path.node.key as Identifier).name)
-      // } else {
-
-      // }
     },
     exit(path) {
       if (path.node.value.type === 'ObjectExpression') {
-        propertyStack.pop()
+        keyStack.pop()
       }
     }
   }
