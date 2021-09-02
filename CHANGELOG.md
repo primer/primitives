@@ -1,5 +1,11 @@
 # @primer/primitives
 
+## 4.6.9
+
+### Patch Changes
+
+- [#229](https://github.com/primer/primitives/pull/229) [`6d4dbb0`](https://github.com/primer/primitives/commit/6d4dbb02307d0d3efb95bd9450a5e6aa677250e7) Thanks [@simurai](https://github.com/simurai)! - Undeprecate `timeline.badgeBg`
+
 ## 4.6.8
 
 ### Patch Changes
