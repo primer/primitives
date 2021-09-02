@@ -274,7 +274,7 @@ export default {
       bg: get('accent.subtle')
     }
   },
-  
+
   markdown: {
     codeBg: get('neutral.muted'),
     frameBorder: get('border.default'),
@@ -437,7 +437,6 @@ export default {
   },
   timeline: {
     text: get('fg.muted'),
-    badgeBg: get('neutral.muted'),
     badgeSuccessBorder: unset,
     targetBadgeBorder: get('accent.emphasis'),
     targetBadgeShadow: get('accent.muted')
