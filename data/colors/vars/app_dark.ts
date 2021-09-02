@@ -11,12 +11,14 @@ export default {
     addition: {
       numText: get('fg.default'),
       fg: get('fg.default'),
-      numBg: alpha(get('scale.green.3'), 0.2),
+      numBg: alpha(get('scale.green.3'), 0.3),
+      lineBg: get('success.subtle'),
+      wordBg: get('success.muted'),
     },
     deletion: {
       numText: get('fg.default'),
       fg: get('fg.default'),
-      numBg: alpha(get('scale.red.4'), 0.2), 
+      numBg: alpha(get('scale.red.4'), 0.3), 
     },
     expander: {
       icon: get('fg.muted'),
