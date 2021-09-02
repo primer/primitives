@@ -13,20 +13,20 @@ export default {
       fg: get('fg.default'),
       numBg: alpha(get('scale.green.3'), 0.3),
       lineBg: get('success.subtle'),
-      wordBg: get('success.muted'),
+      wordBg: get('success.muted')
     },
     deletion: {
       numText: get('fg.default'),
       fg: get('fg.default'),
-      numBg: alpha(get('scale.red.4'), 0.3), 
+      numBg: alpha(get('scale.red.4'), 0.3)
     },
     expander: {
-      icon: get('fg.muted'),
+      icon: get('fg.muted')
     },
     selectedLineHighlightMixBlendMode: 'screen'
   },
   searchKeyword: {
-    hl: alpha(get('scale.yellow.3'), 0.4),
+    hl: alpha(get('scale.yellow.3'), 0.4)
   },
   prettylights: {
     syntax: {

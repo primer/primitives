@@ -8,7 +8,6 @@ export default {
     stackFadeMore: get('scale.gray.7'),
     childShadow: (theme: any) => `-2px -2px 0 ${get('scale.gray.9')(theme)}`
   },
-  
   topicTag: {
     border: 'transparent'
   },
@@ -37,7 +36,13 @@ export default {
   },
   input: {
     disabledBg: alpha(get('neutral.muted'), 0.5)
-  }, 
+  },
+  diffstat: {
+    additionBg: get('scale.green.3')
+  },
+  timeline: {
+    badgeBg: get('scale.gray.7') // needs to be opaque
+  },
   ansi: {
     black: get('scale.gray.5'),
     blackBright: get('scale.gray.4'),
