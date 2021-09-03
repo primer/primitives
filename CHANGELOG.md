@@ -1,5 +1,17 @@
 # @primer/primitives
 
+## 4.7.0
+
+### Minor Changes
+
+- [#224](https://github.com/primer/primitives/pull/224) [`eaf6bb5`](https://github.com/primer/primitives/commit/eaf6bb5b70b01b633c0212b358db96cc44cef6a9) Thanks [@colebemis](https://github.com/colebemis)! - Add new functional color variables. See [primer.style/primitives/colors](https://primer.style/primitives/colors) for details about the new color system.
+
+* [#224](https://github.com/primer/primitives/pull/224) [`eaf6bb5`](https://github.com/primer/primitives/commit/eaf6bb5b70b01b633c0212b358db96cc44cef6a9) Thanks [@colebemis](https://github.com/colebemis)! - Introduce a Dark High Contrast theme.
+
+  **Note:** The Dark High Contrast theme will only work with the new [functional color variables](https://primer.style/primitives/colors#functional-variables)
+
+- [#224](https://github.com/primer/primitives/pull/224) [`eaf6bb5`](https://github.com/primer/primitives/commit/eaf6bb5b70b01b633c0212b358db96cc44cef6a9) Thanks [@colebemis](https://github.com/colebemis)! - Deprecate variables from the old color system. See [primer.style/primitives/colors#deprecated-variables](https://primer.style/primitives/colors#deprecated-variables) for the complete list of deprecated variables.
+
 ## 4.6.9
 
 ### Patch Changes
