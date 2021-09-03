@@ -341,7 +341,7 @@ export default {
     focusBg: get('scale.gray.0'),
     focusBorder: alpha(get('scale.black'), 0.15),
     focusShadow: (theme: any) => `0 0 0 3px ${alpha(get('scale.blue.5'), 0.3)(theme)}`,
-    shadowActive: (theme: any) => `inset 0 0.15em 0.3em ${alpha(get('scale.black'), 0.15)(theme)}`, // TODO: Deprecate? Not used in Primer CSS
+    shadowActive: (theme: any) => `inset 0 0.15em 0.3em ${alpha(get('scale.black'), 0.15)(theme)}`,
     shadowInputFocus: (theme: any) => `0 0 0 0.2em ${alpha(get('scale.blue.5'), 0.3)(theme)}`, // TODO: Deprecate?
     counterBg: alpha(get('scale.black'), 0.08),
     primary: {
@@ -353,7 +353,7 @@ export default {
       hoverBg: '#2c974b',
       hoverBorder: alpha(get('scale.black'), 0.15),
       selectedBg: darken(get('btn.primary.hoverBg'), 0.02),
-      selectedShadow: (theme: any) => `inset 0 1px 0 ${alpha(get('scale.green.9'), 0.2)(theme)}`,
+      selectedShadow: (theme: any) => `inset 0px 0.2em 0.3em ${alpha(get('scale.black'), 0.3)(theme)}`,
       disabledText: alpha(get('scale.white'), 0.8),
       disabledBg: '#94d3a2',
       disabledBorder: alpha(get('scale.black'), 0.1),
@@ -393,7 +393,7 @@ export default {
       selectedText: get('scale.white'),
       selectedBg: darken(get('scale.red.5'), 0.03),
       selectedBorder: alpha(get('scale.black'), 0.15),
-      selectedShadow: (theme: any) => `inset 0 1px 0 ${alpha(get('scale.red.9'), 0.2)(theme)}`,
+      selectedShadow: (theme: any) => `inset 0 0.15em 0.3em ${alpha(get('scale.black'), 0.25)(theme)}`,
       disabledText: alpha(get('scale.red.5'), 0.5),
       disabledBg: get('scale.gray.0'),
       disabledCounterBg: alpha(get('scale.red.5'), 0.05),
@@ -401,7 +401,7 @@ export default {
       focusShadow: (theme: any) => `0 0 0 3px ${alpha(get('scale.red.6'), 0.4)(theme)}`,
       counterBg: alpha(get('scale.red.5'), 0.1),
       icon: get('scale.red.5'),
-      hoverIcon: get('scale.white')
+      hoverIcon: get('scale.white'),
     }
   },
   counter: {
