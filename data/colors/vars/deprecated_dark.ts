@@ -1,4 +1,4 @@
-import {alpha, get, lighten, darken, desaturate, mix} from '../../../src/utils'
+import {alpha, get} from '../../../src/utils'
 
 // Variables to be removed in the next major release
 
@@ -104,79 +104,81 @@ export default {
     ]
   },
   text: {
-    primary: get('scale.gray.1'),
-    secondary: get('scale.gray.3'),
-    tertiary: get('scale.gray.3'),
-    placeholder: get('scale.gray.5'),
-    disabled: get('scale.gray.5'),
-    inverse: get('scale.gray.9'),
-    link: get('scale.blue.3'),
-    danger: get('scale.red.4'),
-    success: get('scale.green.2'),
-    warning: get('scale.yellow.2'),
+    primary: get('fg.default'),
+    secondary: get('fg.muted'),
+    tertiary: get('fg.muted'),
+    placeholder: get('fg.subtle'),
+    disabled: get('fg.muted'),
+    inverse: get('fg.onEmphasis'),
+    link: get('accent.fg'),
+    danger: get('danger.fg'),
+    success: get('success.fg'),
+    warning: get('attention.fg'),
     white: get('scale.white')
   },
   icon: {
-    primary: get('scale.gray.1'),
-    secondary: get('scale.gray.4'),
-    tertiary: get('scale.gray.5'),
-    info: get('scale.blue.3'),
-    danger: get('scale.red.4'),
-    success: get('scale.green.2'),
-    warning: get('scale.yellow.2')
+    primary: get('fg.default'),
+    secondary: get('fg.muted'),
+    tertiary: get('fg.muted'),
+    info: get('accent.fg'),
+    danger: get('danger.fg'),
+    success: get('success.fg'),
+    warning: get('attention.fg')
   },
   border: {
-    primary: get('scale.gray.6'),
-    secondary: get('scale.gray.7'),
-    tertiary: get('scale.gray.4'),
-    overlay: get('scale.gray.6'),
-    inverse: get('scale.white'),
-    info: alpha(get('scale.blue.4'), 0.4),
-    danger: alpha(get('scale.red.4'), 0.4),
-    success: alpha(get('scale.green.3'), 0.4),
-    warning: alpha(get('scale.yellow.4'), 0.4)
+    primary: get('border.default'),
+    secondary: get('border.muted'),
+    tertiary: get('neutral.muted'),
+    overlay: get('border.default'),
+    inverse: get('fg.onEmphasis'), // or move to marketing
+    info: get('accent.emphasis'),
+    danger: get('danger.emphasis'),
+    success: get('success.emphasis'),
+    warning: get('attention.emphasis')
   },
   bg: {
-    canvas: get('scale.gray.9'),
-    canvasMobile: get('scale.black'),
-    canvasInverse: get('scale.white'),
-    canvasInset: darken(get('scale.gray.9'), 0.02),
-    primary: get('scale.gray.9'),
-    secondary: get('scale.gray.9'),
-    tertiary: get('scale.gray.8'),
-    overlay: mix(get('scale.gray.7'), get('scale.gray.8')),
-    backdrop: alpha(get('scale.black'), 0.8),
-    info: alpha(get('scale.blue.4'), 0.1),
-    infoInverse: get('scale.blue.4'),
-    danger: alpha(get('scale.red.4'), 0.1),
-    dangerInverse: get('scale.red.5'),
-    success: alpha(get('scale.green.4'), 0.1),
-    successInverse: get('scale.green.4'),
-    warning: alpha(get('scale.yellow.4'), 0.1),
-    warningInverse: get('scale.yellow.4')
+    canvas: get('canvas.default'),
+    canvasMobile: 'transparent',
+    canvasInverse: get('neutral.emphasis'),
+    canvasInset: get('canvas.inset'),
+    primary: get('canvas.default'),
+    secondary: get('canvas.subtle'),
+    tertiary: get('canvas.subtle'),
+    overlay: get('canvas.overlay'),
+    backdrop: get('primer.canvas.backdrop'),
+    info: get('accent.subtle'),
+    infoInverse: get('accent.emphasis'),
+    danger: get('danger.subtle'),
+    dangerInverse: get('danger.emphasis'),
+    success: get('success.subtle'),
+    successInverse: get('success.emphasis'),
+    warning: get('attention.subtle'),
+    warningInverse: get('attention.emphasis')
   },
   shadow: {
-    highlight: '0 0 transparent',
-    inset: '0 0 transparent'
+    highlight: get('primer.shadow.highlight'),
+    inset: get('primer.shadow.inset')
   },
   state: {
     hover: {
-      primaryBg: get('scale.blue.5'),
-      primaryBorder: get('scale.blue.4'),
-      primaryText: get('scale.white'),
-      primaryIcon: get('scale.white'),
-      secondaryBg: get('scale.gray.8'),
-      secondaryBorder: get('scale.gray.8')
+      primaryBg: get('accent.emphasis'),
+      primaryBorder: get('accent.emphasis'),
+      primaryText: get('fg.onEmphasis'),
+      primaryIcon: get('fg.onEmphasis'),
+      secondaryBg: get('neutral.subtle'),
+      secondaryBorder: get('neutral.subtle')
     },
+
     selected: {
-      primaryBg: get('scale.blue.5'),
-      primaryBorder: get('scale.blue.4'),
-      primaryText: get('scale.white'),
-      primaryIcon: get('scale.white')
+      primaryBg: get('accent.emphasis'),
+      primaryBorder: get('accent.emphasis'),
+      primaryText: get('fg.onEmphasis'),
+      primaryIcon: get('fg.onEmphasis')
     },
+
     focus: {
-      border: get('scale.blue.4'),
-      shadow: (theme: any) => `0 0 0 3px ${get('scale.blue.8')(theme)}`
+      border: get('accent.emphasis'),
+      shadow: get('primer.shadow.focus') // blue focus ring
     }
   },
   fade: {
@@ -201,367 +203,365 @@ export default {
   },
   alert: {
     info: {
-      text: get('scale.blue.2'),
-      icon: get('scale.blue.2'),
-      bg: alpha(get('scale.blue.4'), 0.1),
-      border: alpha(get('scale.blue.4'), 0.4)
+      text: get('fg.default'),
+      icon: get('accent.fg'),
+      bg: get('accent.subtle'),
+      border: get('accent.muted')
     },
     warn: {
-      text: get('scale.yellow.2'),
-      icon: get('scale.yellow.2'),
-      bg: alpha(get('scale.yellow.4'), 0.1),
-      border: alpha(get('scale.yellow.4'), 0.4)
+      text: get('fg.default'),
+      icon: get('attention.fg'),
+      bg: get('attention.subtle'),
+      border: get('attention.muted')
     },
     error: {
-      text: get('scale.red.3'),
-      icon: get('scale.red.3'),
-      bg: alpha(get('scale.red.4'), 0.1),
-      border: alpha(get('scale.red.4'), 0.4)
+      text: get('fg.default'),
+      icon: get('danger.fg'),
+      bg: get('danger.subtle'),
+      border: get('danger.muted')
     },
     success: {
-      text: get('scale.green.2'),
-      icon: get('scale.green.2'),
-      bg: alpha(get('scale.green.4'), 0.1),
-      border: alpha(get('scale.green.4'), 0.4)
+      text: get('fg.default'),
+      icon: get('success.fg'),
+      bg: get('success.subtle'),
+      border: get('success.muted')
     }
   },
+
   autocomplete: {
-    shadow: (theme: any) => `0 16px 32px ${alpha(get('scale.black'), 0.85)(theme)}`,
-    rowBorder: get('scale.gray.6')
+    shadow: get('shadow.medium'),
+    rowBorder: get('border.muted')
   },
   blankslate: {
-    icon: lighten(get('scale.gray.5'), 0.05)
+    icon: get('fg.muted')
   },
   counter: {
-    text: get('scale.gray.1'),
-    bg: get('scale.gray.6'),
+    text: get('fg.default'),
+    bg: get('neutral.muted'),
     primary: {
-      text: get('scale.gray.1'),
-      bg: get('scale.gray.4')
+      text: get('fg.onEmphasis'),
+      bg: get('neutral.emphasis')
     },
     secondary: {
-      text: get('scale.gray.3'),
-      bg: alpha(get('scale.gray.3'), 0.2)
+      text: get('fg.muted'),
+      bg: get('neutral.subtle')
     }
   },
   box: {
-    blueBorder: get('scale.blue.7'),
-    rowYellowBg: alpha('#EBC440', 0.1),
-    rowBlueBg: alpha(get('scale.blue.2'), 0.1),
-    headerBlueBg: get('scale.gray.9'),
-    headerBlueBorder: get('scale.gray.6'),
-    borderInfo: alpha(get('scale.blue.4'), 0.4),
-    bgInfo: alpha(get('scale.blue.4'), 0.1),
-    borderWarning: alpha(get('scale.yellow.4'), 0.4),
-    bgWarning: alpha(get('scale.yellow.4'), 0.1)
+    blueBorder: get('accent.muted'),
+    rowYellowBg: get('attention.subtle'),
+    rowBlueBg: get('accent.subtle'),
+    headerBlueBg: get('accent.subtle'),
+    headerBlueBorder: get('accent.muted'),
+    borderInfo: get('accent.muted'),
+    bgInfo: get('accent.subtle'),
+    borderWarning: get('attention.muted'),
+    bgWarning: get('attention.subtle')
   },
   branchName: {
-    text: get('scale.gray.1'),
-    icon: get('scale.gray.2'),
-    bg: alpha(get('scale.blue.3'), 0.1),
+    text: get('fg.muted'),
+    icon: get('fg.muted'),
+    bg: get('accent.subtle'),
     link: {
-      text: get('scale.blue.3'),
-      icon: get('scale.blue.3'),
-      bg: alpha(get('scale.blue.3'), 0.1)
+      text: get('accent.fg'),
+      icon: get('accent.fg'),
+      bg: get('accent.subtle')
     }
   },
+
   markdown: {
-    codeBg: alpha(get('scale.gray.0'), 0.15),
-    frameBorder: lighten(get('scale.gray.6'), 0.05),
-    blockquoteBorder: lighten(get('scale.gray.6'), 0.05),
-    tableBorder: lighten(get('scale.gray.6'), 0.05),
-    tableTrBorder: darken(get('scale.gray.6'), 0.04)
+    codeBg: get('neutral.muted'),
+    frameBorder: get('border.default'),
+    blockquoteBorder: get('border.default'),
+    tableBorder: get('border.default'),
+    tableTrBorder: get('border.muted')
   },
   filterItem: {
-    barBg: darken(get('scale.gray.8'), 0.02)
+    barBg: get('neutral.subtle')
   },
   hiddenTextExpander: {
-    bg: get('scale.gray.7'),
-    bgHover: get('scale.gray.6')
+    bg: get('neutral.muted'),
+    bgHover: get('accent.muted')
   },
   dragAndDrop: {
-    border: darken(get('scale.gray.6'), 0.05)
+    border: get('border.default')
   },
   uploadEnabled: {
-    border: lighten(get('scale.gray.6'), 0.05),
-    borderFocused: lighten(get('scale.blue.5'), 0.08)
+    border: get('border.default'),
+    borderFocused: get('accent.emphasis')
   },
   previewableCommentForm: {
-    border: darken(get('scale.gray.6'), 0.05)
+    border: get('border.default')
   },
   verifiedBadge: {
-    text: get('scale.green.3'),
-    bg: alpha(get('scale.green.3'), 0.1),
-    border: alpha(get('scale.green.3'), 0.4)
+    text: get('success.fg'),
+    bg: get('canvas.default'),
+    border: get('border.default')
   },
   socialCount: {
-    bg: get('scale.gray.7')
+    bg: get('canvas.default')
   },
   tooltip: {
-    text: get('scale.white'),
-    bg: get('scale.gray.4')
+    text: get('fg.onEmphasis'),
+    bg: get('neutral.emphasisPlus')
   },
-  filesExplorerIcon: get('scale.gray.4'),
-  hlAuthorBg: get('scale.blue.9'),
-  hlAuthorBorder: get('scale.blue.7'),
-  logoSubdued: get('scale.gray.6'),
-  discussionBorder: desaturate(get('scale.green.6'), 0.4),
-  discussionBgSuccess: alpha(get('scale.green.4'), 0.1),
-  actionsWorkflowTableStickyBg: alpha(get('scale.gray.9'), 0.95),
-  repoLanguageColorBorder: alpha(get('scale.white'), 0.2),
-  codeSelectionBg: alpha(get('scale.blue.2'), 0.3),
+  filesExplorerIcon: get('accent.fg'),
+  hlAuthorBg: get('accent.subtle'),
+  hlAuthorBorder: get('accent.muted'),
+  logoSubdued: get('neutral.muted'),
+  discussionBorder: get('success.muted'),
+  discussionBgSuccess: get('success.emphasis'),
+  actionsWorkflowTableStickyBg: get('primer.canvas.sticky'),
+  repoLanguageColorBorder: get('primer.border.contrast'),
+  codeSelectionBg: get('accent.muted'),
   highlight: {
-    text: '#ffd467',
-    bg: 'rgba(204,143,44,0.38)'
+    text: get('fg.default'),
+    bg: get('attention.subtle')
   },
   blob: {
-    lineHighlightBg: alpha(get('scale.yellow.3'), 0.15),
-    lineHighlightBorder: get('scale.yellow.2')
+    lineHighlightBg: get('attention.subtle'),
+    lineHighlightBorder: get('attention.muted')
   },
   topicTag: {
-    text: get('scale.blue.3'),
-    bg: alpha(get('scale.blue.4'), 0.1),
-    hoverBg: alpha(get('scale.blue.4'), 0.2),
-    activeBg: alpha(get('scale.blue.4'), 0.15)
+    text: get('accent.fg'),
+    bg: get('accent.subtle'),
+    hoverBg: get('accent.emphasis'),
+    activeBg: get('accent.subtle')
   },
   footerInvertocat: {
-    octicon: get('scale.gray.6'),
-    octiconHover: get('scale.gray.4')
+    octicon: get('fg.subtle'),
+    octiconHover: get('fg.muted')
   },
   dropdown: {
-    shadow: (theme: any) => `0 16px 32px ${alpha(get('scale.black'), 0.85)(theme)}`
+    shadow: get('shadow.large')
   },
   label: {
-    border: get('scale.gray.6'),
+    border: get('border.default'),
     primary: {
-      text: get('scale.gray.2'),
-      border: get('scale.gray.4')
+      text: get('fg.default'),
+      border: get('neutral.emphasis')
     },
     secondary: {
-      text: get('scale.gray.3'),
-      border: get('scale.gray.6')
+      text: get('fg.muted'),
+      border: get('border.default')
     },
     info: {
-      text: get('scale.blue.4'),
-      border: alpha(get('scale.blue.4'), 0.4)
+      text: get('accent.fg'),
+      border: get('accent.emphasis')
     },
     success: {
-      text: get('scale.green.3'),
-      border: alpha(get('scale.green.4'), 0.4)
+      text: get('success.fg'),
+      border: get('success.emphasis')
     },
     warning: {
-      text: get('scale.yellow.2'),
-      border: alpha('#F2D35B', 0.4)
+      text: get('attention.fg'),
+      border: get('attention.emphasis')
     },
     danger: {
-      text: get('scale.red.4'),
-      border: alpha(get('scale.red.4'), 0.4)
+      text: get('danger.fg'),
+      border: get('danger.emphasis')
     },
     orange: {
-      text: get('scale.orange.4'),
-      border: alpha(get('scale.orange.4'), 0.4)
+      text: get('severe.fg'),
+      border: get('severe.emphasis')
     }
   },
   input: {
-    bg: get('scale.gray.9'),
-    contrastBg: alpha(get('scale.black'), 0.5),
-    border: get('scale.gray.7'),
-    shadow: '0 0 transparent',
-    disabledBorder: get('scale.gray.6'),
-    warningBorder: get('scale.yellow.3'),
-    errorBorder: get('scale.red.4'),
+    bg: get('canvas.default'),
+    contrastBg: get('canvas.inset'),
+    border: get('border.default'),
+    shadow: get('primer.shadow.inset'),
+    disabledBorder: get('border.default'),
+    warningBorder: get('attention.emphasis'),
+    errorBorder: get('danger.emphasis'),
     tooltip: {
       success: {
-        text: get('scale.green.2'),
-        bg: mix(get('scale.gray.9'), get('scale.green.4'), 0.1),
-        border: mix(get('scale.gray.9'), get('scale.green.4'), 0.46)
+        text: get('fg.default'),
+        bg: get('success.subtle'),
+        border: get('success.muted')
       },
       warning: {
-        text: get('scale.yellow.2'),
-        bg: mix(get('scale.gray.9'), get('scale.yellow.4'), 0.1),
-        border: mix(get('scale.gray.9'), get('scale.yellow.4'), 0.46)
+        text: get('fg.default'),
+        bg: get('attention.subtle'),
+        border: get('attention.muted')
       },
       error: {
-        text: get('scale.red.3'),
-        bg: mix(get('scale.gray.9'), get('scale.red.4'), 0.1),
-        border: mix(get('scale.gray.9'), get('scale.red.4'), 0.46)
+        text: get('fg.default'),
+        bg: get('danger.subtle'),
+        border: get('danger.muted')
       }
     }
   },
   toast: {
-    text: get('text.primary'),
-    bg: get('scale.gray.6'),
-    border: get('scale.gray.4'),
+    text: get('fg.default'),
+    bg: get('canvas.default'),
+    border: get('border.default'),
     shadow: get('shadow.large'),
-    icon: get('scale.white'),
-    iconBg: get('scale.blue.5'),
-    iconBorder: get('scale.blue.4'),
+    icon: get('fg.onEmphasis'),
+    iconBg: get('accent.emphasis'),
+    iconBorder: 'transparent',
     success: {
-      text: get('text.primary'),
-      border: get('scale.gray.4'),
-      icon: get('scale.white'),
-      iconBg: get('scale.green.4'),
-      iconBorder: get('scale.green.3')
+      text: get('fg.default'),
+      border: get('border.default'),
+      icon: get('fg.onEmphasis'),
+      iconBg: get('success.emphasis'),
+      iconBorder: 'transparent'
     },
     warning: {
-      text: get('text.primary'),
-      border: get('scale.gray.4'),
-      icon: get('scale.white'),
-      iconBg: get('scale.yellow.4'),
-      iconBorder: get('scale.yellow.3')
+      text: get('fg.default'),
+      border: get('border.default'),
+      icon: get('fg.default'),
+      iconBg: get('attention.emphasis'),
+      iconBorder: 'transparent'
     },
     danger: {
-      text: get('text.primary'),
-      border: get('scale.gray.4'),
-      icon: get('scale.white'),
-      iconBg: get('scale.red.5'),
-      iconBorder: get('scale.red.4')
+      text: get('fg.default'),
+      border: get('border.default'),
+      icon: get('fg.onEmphasis'),
+      iconBg: get('danger.emphasis'),
+      iconBorder: 'transparent'
     },
     loading: {
-      text: get('text.primary'),
-      border: get('scale.gray.4'),
-      icon: get('scale.white'),
-      iconBg: get('scale.gray.4'),
-      iconBorder: get('scale.gray.3')
+      text: get('fg.default'),
+      border: get('border.default'),
+      icon: get('fg.onEmphasis'),
+      iconBg: get('neutral.emphasis'),
+      iconBorder: 'transparent'
     }
   },
   timeline: {
-    text: get('scale.gray.2'),
-    badgeBg: get('scale.gray.9'),
-    badgeSuccessBorder: get('scale.green.4'),
-    targetBadgeBorder: get('scale.blue.5'),
-    targetBadgeShadow: get('scale.blue.7')
+    text: get('fg.muted'),
+    badgeSuccessBorder: 'transparent',
+    targetBadgeBorder: get('accent.emphasis'),
+    targetBadgeShadow: get('accent.muted')
   },
   diffstat: {
-    neutralBg: get('scale.gray.6'),
-    neutralBorder: get('fade.white10'),
-    deletionBg: get('scale.red.5'),
-    deletionBorder: get('scale.red.4'),
-    additionBg: get('scale.green.5'),
-    additionBorder: get('scale.green.4')
+    neutralBg: get('neutral.muted'),
+    neutralBorder: get('border.subtle'),
+    deletionBorder: get('border.subtle'),
+    additionBorder: get('border.subtle'),
+    deletionBg: get('danger.emphasis')
   },
   diff: {
     addition: {
-      text: get('scale.green.2'),
-      bg: get('diffBlob.addition.lineBg'),
-      border: get('scale.green.6')
+      text: get('fg.default'),
+      bg: get('success.subtle'),
+      border: get('success.muted')
     },
     deletion: {
-      text: get('scale.red.4'),
-      bg: get('diffBlob.deletion.lineBg'),
-      border: get('scale.red.6')
+      text: get('fg.default'),
+      bg: get('danger.subtle'),
+      border: get('danger.muted')
     },
     change: {
-      text: get('scale.yellow.2'),
-      bg: get('scale.yellow.9'),
-      border: get('scale.yellow.5')
+      text: get('attention.fg'),
+      bg: get('attention.subtle'),
+      border: get('attention.muted')
     }
   },
   mergeBox: {
-    successIconBg: alpha(get('scale.green.4'), 0.1),
-    successIconText: get('scale.green.3'),
-    successIconBorder: alpha(get('scale.green.4'), 0.4),
-    successIndicatorBg: get('scale.green.5'),
-    successIndicatorBorder: get('scale.green.4'),
-    mergedIconBg: alpha(get('scale.purple.3'), 0.1),
-    mergedIconText: get('scale.purple.4'),
-    mergedIconBorder: alpha(get('scale.purple.3'), 0.4),
-    mergedBoxBorder: alpha(get('scale.purple.3'), 0.4),
-    neutralIconBg: alpha(get('scale.gray.1'), 0.1),
-    neutralIconText: get('scale.gray.3'),
-    neutralIconBorder: alpha(get('scale.gray.1'), 0.4),
-    neutralIndicatorBg: get('scale.gray.5'),
-    neutralIndicatorBorder: get('scale.gray.4'),
-    warningIconBg: alpha(get('scale.yellow.4'), 0.1),
-    warningIconText: get('scale.yellow.2'),
-    warningIconBorder: alpha(get('scale.yellow.4'), 0.4),
-    warningBoxBorder: alpha(get('scale.yellow.4'), 0.4),
-    warningMergeHighlight: alpha(get('scale.yellow.4'), 0.1),
-    errorIconBg: alpha(get('scale.red.4'), 0.1),
-    errorIconText: get('scale.red.4'),
-    errorIconBorder: alpha(get('scale.red.4'), 0.4),
-    errorIndicatorBg: get('scale.red.5'),
-    errorIndicatorBorder: get('scale.red.4')
+    successIconBg: get('success.emphasis'),
+    successIconText: get('fg.onEmphasis'),
+    successIconBorder: 'transparent',
+    successIndicatorBg: get('success.emphasis'),
+    successIndicatorBorder: 'transparent',
+    mergedIconBg: get('done.emphasis'),
+    mergedIconText: get('fg.onEmphasis'),
+    mergedIconBorder: 'transparent',
+    mergedBoxBorder: get('done.emphasis'),
+    neutralIconBg: get('neutral.emphasis'),
+    neutralIconText: get('fg.onEmphasis'),
+    neutralIconBorder: 'transparent',
+    neutralIndicatorBg: get('neutral.emphasis'),
+    neutralIndicatorBorder: 'transparent',
+    warningIconBg: get('attention.emphasis'),
+    warningIconText: get('fg.onEmphasis'),
+    warningIconBorder: 'transparent',
+    warningBoxBorder: get('attention.emphasis'),
+    warningMergeHighlight: 'transparent',
+    errorIconBg: get('danger.emphasis'),
+    errorIconText: get('fg.onEmphasis'),
+    errorIconBorder: 'transparent',
+    errorIndicatorBg: get('danger.emphasis'),
+    errorIndicatorBorder: 'transparent'
   },
   underlinenav: {
-    border: alpha(get('scale.gray.6'), 0),
-    borderHover: get('scale.gray.6'),
-    borderActive: '#f78166',
-    text: get('scale.gray.3'),
-    textHover: get('scale.gray.1'),
-    textActive: get('scale.gray.1'),
-    icon: get('scale.gray.4'),
-    iconHover: get('scale.gray.1'),
-    iconActive: get('scale.gray.1'),
-    counterText: get('scale.gray.3'),
-    counterBg: alpha(get('scale.gray.3'), 0.2)
+    border: 'transparent',
+    borderHover: get('neutral.muted'),
+    borderActive: get('primer.border.active'),
+    text: get('fg.default'),
+    textHover: get('fg.default'),
+    textActive: get('fg.default'),
+    icon: get('fg.subtle'),
+    iconHover: get('fg.subtle'),
+    iconActive: get('fg.default'),
+    counterText: get('fg.default'),
+    counterBg: get('neutral.muted')
   },
   selectMenu: {
-    borderSecondary: get('scale.gray.6'),
-    shadow: (theme: any) => `0 0 18px ${alpha(get('scale.black'), 0.4)(theme)}`,
-    backdropBg: get('fade.black50')
+    borderSecondary: get('border.muted'),
+    shadow: get('shadow.large'),
+    backdropBg: get('primer.canvas.backdrop')
   },
   sidenav: {
-    borderActive: '#f78166'
+    borderActive: get('primer.border.active')
   },
   menu: {
-    headingText: get('scale.gray.3'),
-    borderActive: '#f78166'
+    headingText: get('fg.default'),
+    borderActive: get('primer.border.active')
   },
   project: {
-    cardBg: get('scale.gray.8')
+    cardBg: get('canvas.overlay')
   },
   prState: {
     draft: {
-      text: get('scale.gray.3'),
-      bg: alpha(get('scale.gray.3'), 0.1),
-      border: alpha(get('scale.gray.3'), 0.4)
+      text: get('fg.onEmphasis'),
+      bg: get('neutral.emphasis'),
+      border: 'transparent'
     },
     open: {
-      text: get('scale.green.3'),
-      bg: alpha(get('scale.green.3'), 0.1),
-      border: alpha(get('scale.green.3'), 0.4)
+      text: get('fg.onEmphasis'),
+      bg: get('success.emphasis'),
+      border: 'transparent'
     },
     merged: {
-      text: get('scale.purple.4'),
-      bg: alpha(get('scale.purple.3'), 0.1),
-      border: alpha(get('scale.purple.3'), 0.4)
+      text: get('fg.onEmphasis'),
+      bg: get('done.emphasis'),
+      border: 'transparent'
     },
     closed: {
-      text: get('scale.red.4'),
-      bg: alpha(get('scale.red.5'), 0.1),
-      border: alpha(get('scale.red.5'), 0.4)
+      text: get('fg.onEmphasis'),
+      bg: get('danger.emphasis'),
+      border: 'transparent'
     }
   },
   diffBlob: {
-    numText: get('fade.white30'),
-    numHoverText: alpha(get('scale.white'), 0.6),
+    numText: get('fg.subtle'),
+    numHoverText: get('fg.default'),
     addition: {
-      numHoverText: get('scale.green.1'),
-      lineBg: alpha(get('scale.green.4'), 0.2),
-      wordBg: alpha(get('scale.green.4'), 0.55)
+      numHoverText: get('fg.default')
     },
     deletion: {
-      numHoverText: get('scale.red.2'),
-      lineBg: alpha(get('scale.red.5'), 0.2),
-      wordBg: alpha(get('scale.red.5'), 0.5)
+      numHoverText: get('fg.default'),
+      lineBg: get('danger.subtle'),
+      wordBg: get('danger.muted')
     },
     hunk: {
-      text: get('scale.gray.3'),
-      numBg: alpha(get('scale.blue.3'), 0.15),
-      lineBg: alpha(get('scale.blue.3'), 0.1)
+      text: get('fg.muted'),
+      numBg: get('accent.muted'),
+      lineBg: get('accent.subtle')
     },
-    emptyBlockBg: get('scale.gray.8'),
-    selectedLineHighlightBg: alpha(get('scale.yellow.4'), 0.1),
-    selectedLineHighlightBorder: get('scale.yellow.4'),
+    emptyBlockBg: get('neutral.subtle'),
+    selectedLineHighlightBg: get('attention.subtle'),
+    selectedLineHighlightBorder: get('attention.muted'),
     expander: {
-      hoverIcon: get('scale.white'),
-      hoverBg: get('scale.blue.5')
+      hoverIcon: get('fg.onEmphasis'),
+      hoverBg: get('accent.emphasis')
     },
     commentButton: {
-      icon: get('scale.white'),
-      bg: get('scale.blue.5'),
-      gradientBg: lighten(get('scale.blue.5'), 0.05)
+      icon: get('fg.onEmphasis'),
+      bg: get('accent.emphasis'),
+      gradientBg: 'transparent'
     }
   },
   globalNav: {
@@ -575,9 +575,9 @@ export default {
     inputPlaceholder: get('scale.gray.5')
   },
   introShelf: {
-    gradientLeft: alpha(get('scale.blue.4'), 0.1),
-    gradientRight: alpha(get('scale.green.4'), 0.1),
-    gradientIn: get('scale.gray.9'),
-    gradientOut: alpha(get('scale.gray.9'), 0)
+    gradientLeft: get('accent.subtle'),
+    gradientRight: get('success.subtle'),
+    gradientIn: get('canvas.default'),
+    gradientOut: alpha(get('scale.white'), 0)
   }
 }
