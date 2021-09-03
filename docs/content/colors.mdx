@@ -9,6 +9,7 @@ import flatten from 'flat'
 import {Box} from '@primer/components'
 import {SwatchGrid} from '../src/components/swatch-grid'
 import {ColorThemePicker} from '../src/components/color-theme-picker'
+import {ColorScales} from '../src/components/color-scales'
 
 ## Themes
 
@@ -90,20 +91,31 @@ Use for Sponsors-related interfaces.
 
 <SwatchGrid names={Object.keys(flatten(colors.light)).filter(key => key.split('.')[0] === 'sponsors')} />
 
-## Scale variables
+## Scale variable
 
-<ul>
-  {Object.keys(flatten(colors.light.scale)).map(key => (
-    <li>{key}</li>
-  ))}
-</ul>
+<Note variant="warning">
+  Avoid referencing scale variables directly when building UI that needs to adapt to different color themes. Instead,
+  use the functional variables listed above. In rare cases, you may need to use scale variables to define custom
+  functional variables in your application.
+</Note>
+
+<ColorScales />
 
 ## Deprecated variables
 
-<ul>
-  {Object.entries(deprecatedColors).map(([key, value]) => (
-    <li>
-      {key} → {value}
-    </li>
-  ))}
-</ul>
+<table>
+  <thead>
+    <tr>
+      <th>Deprecated variable</th>
+      <th>Replacement variable(s)</th>
+    </tr>
+  </thead>
+  <tbody>
+    {Object.entries(deprecatedColors).map(([key, value]) => (
+      <tr>
+        <td>{key}</td>
+        <td>{value}</td>
+      </tr>
+    ))}
+  </tbody>
+</table>
