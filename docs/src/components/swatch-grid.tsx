@@ -32,7 +32,7 @@ function Swatch({name}: {name: string}) {
       {variant === 'border' && <BorderPreview name={name} value={value} />}
       {variant === 'shadow' && <ShadowPreview name={name} value={value} />}
       {variant === 'default' && <DefaultPreview name={name} value={value} />}
-      <Box sx={{fontFamily: 'mono', mt: 2}}>{name}</Box>
+      <Box sx={{fontFamily: 'mono', fontSize: 1, mt: 2}}>{name}</Box>
       <Box sx={{fontFamily: 'mono', fontSize: 0, color: 'text.gray'}}>{`--${getFullName(
         'color',
         name.split('.')
@@ -71,8 +71,7 @@ function FgPreview({name, value}: {name: string; value: string}) {
         display: 'grid',
         placeItems: 'center',
         bg: name === 'fg.onEmphasis' ? colors[colorTheme].neutral.emphasis : colors[colorTheme].canvas.default,
-        border: '1px solid',
-        borderColor: colors[colorTheme].border.default,
+        boxShadow: 'inset 0 0 0 1px rgba(0,0,0,0.1)',
         borderRadius: 2
       }}
     >
@@ -94,8 +93,7 @@ function BorderPreview({name, value}: {name: string; value: string}) {
         display: 'grid',
         placeItems: 'center',
         bg: colors[colorTheme].canvas.default,
-        border: '1px solid',
-        borderColor: colors.light.border.default,
+        boxShadow: 'inset 0 0 0 1px rgba(0,0,0,0.1)',
         borderRadius: 2
       }}
     >
@@ -117,8 +115,7 @@ function ShadowPreview({name, value}: {name: string; value: string}) {
         display: 'grid',
         placeItems: 'center',
         bg: colors[colorTheme].canvas.default,
-        border: '1px solid',
-        borderColor: colors[colorTheme].border.default,
+        boxShadow: 'inset 0 0 0 1px rgba(0,0,0,0.1)',
         borderRadius: 2
       }}
     >
@@ -140,8 +137,7 @@ function DefaultPreview({name, value}: {name: string; value: string}) {
         display: 'grid',
         placeItems: 'center',
         bg: colors[colorTheme].canvas.default,
-        border: '1px solid',
-        borderColor: colors[colorTheme].border.default,
+        boxShadow: 'inset 0 0 0 1px rgba(0,0,0,0.1)',
         borderRadius: 2
       }}
     >
