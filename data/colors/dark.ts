@@ -363,14 +363,22 @@ export default {
       counterBg: alpha(get('scale.white'), 0.2)
     },
     outline: {
-      text: get('scale.gray.1'),
+      text: get('scale.blue.3'),
+      hoverText: get('scale.blue.3'),
       bg: 'transparent',
-      border: get('scale.gray.6'),
       hoverBg: get('scale.gray.6'),
-      hoverBorder: get('scale.gray.6'),
+      hoverBorder: get('scale.blue.3'),
+      hoverShadow: (theme: any) => `0 1px 0 ${alpha(get('scale.black'), 0.1)(theme)}`,
+      hoverInsetShadow: (theme: any) => `inset 0 1px 0 ${alpha(get('scale.white'), 0.03)(theme)}`,
       hoverCounterBg: alpha(get('scale.white'), 0.2),
-      selectedBg: get('scale.gray.8'),
-      focusBorder: get('scale.gray.6'),
+      selectedText: get('scale.white'),
+      selectedBg: get('scale.blue.7'),
+      selectedBorder: get('fade.white10'),
+      selectedShadow: '0 0 transparent',
+      disabledText: alpha(get('scale.blue.3'), 0.5),
+      disabledBg: get('scale.gray.9'),
+      disabledCounterBg: alpha(get('scale.blue.5'), 0.05),
+      focusBorder: get('scale.blue.3'),
       counterBg: alpha(get('scale.blue.5'), 0.1)
     },
     danger: {
