@@ -25,8 +25,3 @@ jobs:
         run: node .github/v2-coverage.js
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Compute variable count
-        run: npx ts-node .github/v2-var-count.ts
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
