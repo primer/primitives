@@ -1,5 +1,27 @@
 # @primer/primitives
 
+## 4.6.9
+
+### Patch Changes
+
+- [#229](https://github.com/primer/primitives/pull/229) [`6d4dbb0`](https://github.com/primer/primitives/commit/6d4dbb02307d0d3efb95bd9450a5e6aa677250e7) Thanks [@simurai](https://github.com/simurai)! - Undeprecate `timeline.badgeBg`
+
+## 4.6.8
+
+### Patch Changes
+
+- [#220](https://github.com/primer/primitives/pull/220) [`a811195`](https://github.com/primer/primitives/commit/a8111958a2e108f063a013fd073e9ba1fe24889d) Thanks [@colebemis](https://github.com/colebemis)! - Fix `searchKeyword.hl` in `colors_v2`
+
+* [#223](https://github.com/primer/primitives/pull/223) [`a474221`](https://github.com/primer/primitives/commit/a474221d2667ae335974c5113871b478898ebe8d) Thanks [@colebemis](https://github.com/colebemis)! - Fix `headerSearch.*` variables in colors_v2
+
+- [#226](https://github.com/primer/primitives/pull/226) [`2486b61`](https://github.com/primer/primitives/commit/2486b618c812e8ffac46940b9e9dafc87edee08e) Thanks [@auareyou](https://github.com/auareyou)! - Color adjustments to diff
+
+## 4.6.7
+
+### Patch Changes
+
+- [#217](https://github.com/primer/primitives/pull/217) [`aaa62f0`](https://github.com/primer/primitives/commit/aaa62f0d71ee022f53b673f51bb162fae950eb6f) Thanks [@simurai](https://github.com/simurai)! - Update timeline-badge-bg
+
 ## 4.6.6
 
 ### Patch Changes

@@ -8,7 +8,7 @@ export default {
     stackFadeMore: get('scale.gray.2'),
     childShadow: (theme: any) => `-2px -2px 0 ${alpha(get('scale.white'), 0.8)(theme)}`
   },
-  
+
   topicTag: {
     border: 'transparent'
   },
@@ -24,10 +24,10 @@ export default {
     text: alpha(get('scale.white'), 0.7),
     bg: get('scale.gray.9'),
     logo: get('scale.white'),
-    search: {
+  },
+  headerSearch: {
       bg: get('scale.gray.9'),
       border: get('scale.gray.6')
-    }
   },
   sidenav: {
     selectedBg: get('scale.white')
@@ -38,7 +38,12 @@ export default {
   input: {
     disabledBg: get('neutral.muted')
   },
-  // TODO: Move to VSCode theme?
+  diffstat: {
+    additionBg: get('scale.green.4')
+  },
+  timeline: {
+    badgeBg: get('scale.gray.1') // needs to be opaque
+  },
   ansi: {
     black: get('scale.gray.9'),
     blackBright: get('scale.gray.6'),

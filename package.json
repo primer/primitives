@@ -1,6 +1,6 @@
 {
   "name": "@primer/primitives",
-  "version": "4.6.6",
+  "version": "4.6.9",
   "description": "Typography, spacing, and color primitives for Primer design system",
   "files": [
     "dist"
@@ -33,10 +33,14 @@
   "devDependencies": {
     "@actions/core": "^1.2.7",
     "@actions/github": "^4.0.0",
+    "@babel/parser": "^7.15.3",
+    "@babel/traverse": "^7.15.0",
+    "@babel/types": "^7.15.0",
     "@changesets/changelog-github": "^0.3.0",
     "@changesets/cli": "^2.11.2",
     "@github/prettier-config": "^0.0.4",
     "@octokit/rest": "^18.5.3",
+    "@types/babel__traverse": "^7.14.2",
     "@types/chalk": "^2.2.0",
     "@types/flat": "^5.0.1",
     "@types/lodash": "^4.14.163",

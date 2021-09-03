@@ -8,7 +8,7 @@ export default {
     stackFadeMore: get('scale.gray.7'),
     childShadow: (theme: any) => `-2px -2px 0 ${get('scale.gray.9')(theme)}`
   },
-  
+
   topicTag: {
     border: 'transparent'
   },
@@ -24,10 +24,10 @@ export default {
     text: alpha(get('scale.white'), 0.7),
     bg: get('scale.gray.8'),
     logo: get('scale.gray.0'),
-    search: {
-      bg: get('scale.gray.9'),
-      border: get('scale.gray.6')
-    }
+  },
+  headerSearch: {
+    bg: get('scale.gray.9'),
+    border: get('scale.gray.6')
   },
   sidenav: {
     selectedBg: get('scale.gray.7')
@@ -37,7 +37,13 @@ export default {
   },
   input: {
     disabledBg: alpha(get('neutral.muted'), 0.5)
-  }, 
+  },
+  diffstat: {
+    additionBg: get('scale.green.3')
+  },
+  timeline: {
+    badgeBg: get('scale.gray.7') // needs to be opaque
+  },
   ansi: {
     black: get('scale.gray.5'),
     blackBright: get('scale.gray.4'),
