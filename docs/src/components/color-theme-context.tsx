@@ -1,5 +1,5 @@
 import React from 'react'
-import colors from '../../../dist/js/colors_v2'
+import colors from '../../../dist/js/colors'
 
 const ColorThemeContext = React.createContext<
   [keyof typeof colors, React.Dispatch<React.SetStateAction<keyof typeof colors>>]

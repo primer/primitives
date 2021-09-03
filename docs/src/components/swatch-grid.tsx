@@ -1,7 +1,7 @@
 import {Box} from '@primer/components'
 import get from 'lodash.get'
 import React from 'react'
-import colors from '../../../dist/js/colors_v2'
+import colors from '../../../dist/js/colors'
 import {getFullName} from '../../../script/lib/variable-collection'
 import {useColorTheme} from './color-theme-context'
 

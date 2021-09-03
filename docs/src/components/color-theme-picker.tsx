@@ -1,7 +1,7 @@
 import {Box} from '@primer/components'
 import React from 'react'
 import {sentenceCase} from 'sentence-case'
-import colors from '../../../dist/js/colors_v2'
+import colors from '../../../dist/js/colors'
 import {useColorTheme} from './color-theme-context'
 
 export function ColorThemePicker() {

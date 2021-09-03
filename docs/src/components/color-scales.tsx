@@ -1,4 +1,4 @@
-import colors from '../../../dist/js/colors_v2'
+import colors from '../../../dist/js/colors'
 import React from 'react'
 import {useColorTheme} from './color-theme-context'
 import {Box, Text} from '@primer/components'
