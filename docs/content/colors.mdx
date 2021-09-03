@@ -1,0 +1,121 @@
+---
+title: Colors
+---
+
+import colors from '../../dist/js/colors'
+import deprecatedColors from '../../dist/deprecations/colors.json'
+import filterObj from 'filter-obj'
+import flatten from 'flat'
+import {Box} from '@primer/components'
+import {SwatchGrid} from '../src/components/swatch-grid'
+import {ColorThemePicker} from '../src/components/color-theme-picker'
+import {ColorScales} from '../src/components/color-scales'
+
+## Themes
+
+Preview color variables in any of the available themes:
+
+<ColorThemePicker />
+
+## Functional variables
+
+### Foreground
+
+<SwatchGrid names={Object.keys(flatten(colors.light)).filter(key => key.split('.')[0] === 'fg')} />
+
+### Canvas
+
+<SwatchGrid names={Object.keys(flatten(colors.light)).filter(key => key.split('.')[0] === 'canvas')} />
+
+### Border
+
+<SwatchGrid
+  names={Object.keys(flatten(colors.light)).filter(
+    key => key.split('.')[0] === 'border' && !Object.keys(deprecatedColors).includes(key)
+  )}
+/>
+
+### Shadow
+
+<SwatchGrid
+  names={Object.keys(flatten(colors.light)).filter(
+    key => key.split('.')[0] === 'shadow' && !Object.keys(deprecatedColors).includes(key)
+  )}
+/>
+
+### Neutral
+
+Use to highlight content without any added meaning.
+
+<SwatchGrid names={Object.keys(flatten(colors.light)).filter(key => key.split('.')[0] === 'neutral')} />
+
+### Accent
+
+Use to draw attention to interactive elements.
+
+<SwatchGrid names={Object.keys(flatten(colors.light)).filter(key => key.split('.')[0] === 'accent')} />
+
+### Success
+
+Use to expresses the completion or positive outcome of a task.
+
+<SwatchGrid names={Object.keys(flatten(colors.light)).filter(key => key.split('.')[0] === 'success')} />
+
+### Attention
+
+Use to warn of pending tasks or highlight active content.
+
+<SwatchGrid names={Object.keys(flatten(colors.light)).filter(key => key.split('.')[0] === 'attention')} />
+
+### Severe
+
+Use when there are more than 3 levels of states, for example in heatmaps.
+
+<SwatchGrid names={Object.keys(flatten(colors.light)).filter(key => key.split('.')[0] === 'severe')} />
+
+### Danger
+
+Use to inform of error or another negative message.
+
+<SwatchGrid names={Object.keys(flatten(colors.light)).filter(key => key.split('.')[0] === 'danger')} />
+
+### Done
+
+Completion color for productivity and code review workflows.
+
+<SwatchGrid names={Object.keys(flatten(colors.light)).filter(key => key.split('.')[0] === 'done')} />
+
+### Sponsors
+
+Use for Sponsors-related interfaces.
+
+<SwatchGrid names={Object.keys(flatten(colors.light)).filter(key => key.split('.')[0] === 'sponsors')} />
+
+## Scale variables
+
+<Note variant="warning">
+  Avoid referencing scale variables directly when building UI that needs to adapt to different color themes. Instead,
+  use the functional variables listed above. In rare cases, you may need to use scale variables to define custom
+  functional variables in your application.
+</Note>
+
+<ColorScales />
+
+## Deprecated variables
+
+<table>
+  <thead>
+    <tr>
+      <th>Deprecated variable</th>
+      <th>Replacement variable(s)</th>
+    </tr>
+  </thead>
+  <tbody>
+    {Object.entries(deprecatedColors).map(([key, value]) => (
+      <tr>
+        <td>{key}</td>
+        <td>{value}</td>
+      </tr>
+    ))}
+  </tbody>
+</table>

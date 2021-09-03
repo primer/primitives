@@ -1,12 +1,17 @@
 module.exports = {
+  siteMetadata: {
+    title: 'Primer Primitives',
+    shortName: 'Primitives',
+    description: 'Color, spacing, and typography primitives for the Primer Design System',
+    imageUrl: 'https://user-images.githubusercontent.com/10384315/53922681-2f6d3100-402a-11e9-9719-5d1811c8110a.png'
+  },
   pathPrefix: '/primitives',
   plugins: [
-    'gatsby-plugin-styled-components',
-    'gatsby-plugin-react-helmet',
     {
-      resolve: 'gatsby-plugin-manifest',
+      resolve: '@primer/gatsby-theme-doctocat',
       options: {
-        icon: require.resolve('./src/images/favicon.png')
+        defaultBranch: 'main',
+        repoRootPath: '..'
       }
     }
   ]
