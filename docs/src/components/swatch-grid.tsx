@@ -33,10 +33,10 @@ function Swatch({name}: {name: string}) {
       {variant === 'shadow' && <ShadowPreview name={name} value={value} />}
       {variant === 'default' && <DefaultPreview name={name} value={value} />}
       <Box sx={{fontFamily: 'mono', fontSize: 1, mt: 2}}>{name}</Box>
-      <Box sx={{fontFamily: 'mono', fontSize: 0, color: 'text.gray'}}>{`--${getFullName(
+      <Box sx={{fontFamily: 'mono', fontSize: 0, color: 'text.gray'}}>{`var(--${getFullName(
         'color',
         name.split('.')
-      )}`}</Box>
+      )})`}</Box>
       <Box sx={{fontFamily: 'mono', fontSize: 0, color: 'text.gray'}}>{value}</Box>
     </Box>
   )
