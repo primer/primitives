@@ -2,111 +2,105 @@ import {alpha, get} from '../../../src/utils'
 
 // Variables to be removed in the next major release
 
-// Every variable in this file must map to a functional variable (e.g. get('fg.default')).
-// Don't use hex codes (e.g. '#fff') or scale variables (e.g. get('scale.gray.5')).
-
-const deprecated = '#ff0000'
-const unset = 'transparent'
-
 export default {
   auto: {
-    black: deprecated,
-    white: deprecated,
+    black: get('scale.black'),
+    white: get('scale.white'),
     gray: [
-      deprecated,
-      deprecated,
-      deprecated,
-      deprecated,
-      deprecated,
-      deprecated,
-      deprecated,
-      deprecated,
-      deprecated,
-      deprecated
+      get('scale.gray.0'),
+      get('scale.gray.1'),
+      get('scale.gray.2'),
+      get('scale.gray.3'),
+      get('scale.gray.4'),
+      get('scale.gray.5'),
+      get('scale.gray.6'),
+      get('scale.gray.7'),
+      get('scale.gray.8'),
+      get('scale.gray.9')
     ],
     blue: [
-      deprecated,
-      deprecated,
-      deprecated,
-      deprecated,
-      deprecated,
-      deprecated,
-      deprecated,
-      deprecated,
-      deprecated,
-      deprecated
+      get('scale.blue.0'),
+      get('scale.blue.1'),
+      get('scale.blue.2'),
+      get('scale.blue.3'),
+      get('scale.blue.4'),
+      get('scale.blue.5'),
+      get('scale.blue.6'),
+      get('scale.blue.7'),
+      get('scale.blue.8'),
+      get('scale.blue.9')
     ],
     green: [
-      deprecated,
-      deprecated,
-      deprecated,
-      deprecated,
-      deprecated,
-      deprecated,
-      deprecated,
-      deprecated,
-      deprecated,
-      deprecated
+      get('scale.green.0'),
+      get('scale.green.1'),
+      get('scale.green.2'),
+      get('scale.green.3'),
+      get('scale.green.4'),
+      get('scale.green.5'),
+      get('scale.green.6'),
+      get('scale.green.7'),
+      get('scale.green.8'),
+      get('scale.green.9')
     ],
     yellow: [
-      deprecated,
-      deprecated,
-      deprecated,
-      deprecated,
-      deprecated,
-      deprecated,
-      deprecated,
-      deprecated,
-      deprecated,
-      deprecated
+      get('scale.yellow.0'),
+      get('scale.yellow.1'),
+      get('scale.yellow.2'),
+      get('scale.yellow.3'),
+      get('scale.yellow.4'),
+      get('scale.yellow.5'),
+      get('scale.yellow.6'),
+      get('scale.yellow.7'),
+      get('scale.yellow.8'),
+      get('scale.yellow.9')
     ],
     orange: [
-      deprecated,
-      deprecated,
-      deprecated,
-      deprecated,
-      deprecated,
-      deprecated,
-      deprecated,
-      deprecated,
-      deprecated,
-      deprecated
+      get('scale.orange.0'),
+      get('scale.orange.1'),
+      get('scale.orange.2'),
+      get('scale.orange.3'),
+      get('scale.orange.4'),
+      get('scale.orange.5'),
+      get('scale.orange.6'),
+      get('scale.orange.7'),
+      get('scale.orange.8'),
+      get('scale.orange.9')
     ],
     red: [
-      deprecated,
-      deprecated,
-      deprecated,
-      deprecated,
-      deprecated,
-      deprecated,
-      deprecated,
-      deprecated,
-      deprecated,
-      deprecated
+      get('scale.red.0'),
+      get('scale.red.1'),
+      get('scale.red.2'),
+      get('scale.red.3'),
+      get('scale.red.4'),
+      get('scale.red.5'),
+      get('scale.red.6'),
+      get('scale.red.7'),
+      get('scale.red.8'),
+      get('scale.red.9')
     ],
     purple: [
-      deprecated,
-      deprecated,
-      deprecated,
-      deprecated,
-      deprecated,
-      deprecated,
-      deprecated,
-      deprecated,
-      deprecated,
-      deprecated
+      get('scale.purple.0'),
+      get('scale.purple.1'),
+      get('scale.purple.2'),
+      get('scale.purple.3'),
+      get('scale.purple.4'),
+      get('scale.purple.5'),
+      get('scale.purple.6'),
+      get('scale.purple.7'),
+      get('scale.purple.8'),
+      get('scale.purple.9')
     ],
     pink: [
-      deprecated,
-      deprecated,
-      deprecated,
-      deprecated,
-      deprecated,
-      deprecated,
-      deprecated,
-      deprecated,
-      deprecated,
-      deprecated
+      get('scale.pink.0'),
+      get('scale.pink.1'),
+      get('scale.pink.2'),
+      get('scale.pink.3'),
+      get('scale.pink.4'),
+      get('scale.pink.5'),
+      get('scale.pink.6'),
+      get('scale.pink.7'),
+      get('scale.pink.8'),
+      get('scale.pink.9')
     ]
   },
   text: {
@@ -120,7 +114,7 @@ export default {
     danger: get('danger.fg'),
     success: get('success.fg'),
     warning: get('attention.fg'),
-    white: deprecated,
+    white: get('scale.white')
   },
   icon: {
     primary: get('fg.default'),
@@ -144,7 +138,7 @@ export default {
   },
   bg: {
     canvas: get('canvas.default'),
-    canvasMobile: unset,
+    canvasMobile: 'transparent',
     canvasInverse: get('neutral.emphasis'),
     canvasInset: get('canvas.inset'),
     primary: get('canvas.default'),
@@ -188,24 +182,24 @@ export default {
     }
   },
   fade: {
-    fg10: deprecated,
-    fg15: deprecated,
-    fg30: deprecated,
-    fg50: deprecated,
-    fg70: deprecated,
-    fg85: deprecated,
-    black10: deprecated,
-    black15: deprecated,
-    black30: deprecated,
-    black50: deprecated,
-    black70: deprecated,
-    black85: deprecated,
-    white10: deprecated,
-    white15: deprecated,
-    white30: deprecated,
-    white50: deprecated,
-    white70: deprecated,
-    white85: deprecated
+    fg10: get('fade.black10'),
+    fg15: get('fade.black15'),
+    fg30: get('fade.black30'),
+    fg50: get('fade.black50'),
+    fg70: get('fade.black70'),
+    fg85: get('fade.black85'),
+    black10: alpha(get('scale.black'), 0.1),
+    black15: alpha(get('scale.black'), 0.15),
+    black30: alpha(get('scale.black'), 0.3),
+    black50: alpha(get('scale.black'), 0.5),
+    black70: alpha(get('scale.black'), 0.7),
+    black85: alpha(get('scale.black'), 0.85),
+    white10: alpha(get('scale.white'), 0.1),
+    white15: alpha(get('scale.white'), 0.15),
+    white30: alpha(get('scale.white'), 0.3),
+    white50: alpha(get('scale.white'), 0.5),
+    white70: alpha(get('scale.white'), 0.7),
+    white85: alpha(get('scale.white'), 0.85)
   },
   alert: {
     info: {
@@ -405,39 +399,39 @@ export default {
     shadow: get('shadow.large'),
     icon: get('fg.onEmphasis'),
     iconBg: get('accent.emphasis'),
-    iconBorder: unset,
+    iconBorder: 'transparent',
     success: {
       text: get('fg.default'),
       border: get('border.default'),
       icon: get('fg.onEmphasis'),
       iconBg: get('success.emphasis'),
-      iconBorder: unset
+      iconBorder: 'transparent'
     },
     warning: {
       text: get('fg.default'),
       border: get('border.default'),
       icon: get('fg.default'),
       iconBg: get('attention.emphasis'),
-      iconBorder: unset
+      iconBorder: 'transparent'
     },
     danger: {
       text: get('fg.default'),
       border: get('border.default'),
       icon: get('fg.onEmphasis'),
       iconBg: get('danger.emphasis'),
-      iconBorder: unset
+      iconBorder: 'transparent'
     },
     loading: {
       text: get('fg.default'),
       border: get('border.default'),
       icon: get('fg.onEmphasis'),
       iconBg: get('neutral.emphasis'),
-      iconBorder: unset
+      iconBorder: 'transparent'
     }
   },
   timeline: {
     text: get('fg.muted'),
-    badgeSuccessBorder: unset,
+    badgeSuccessBorder: 'transparent',
     targetBadgeBorder: get('accent.emphasis'),
     targetBadgeShadow: get('accent.muted')
   },
@@ -468,31 +462,31 @@ export default {
   mergeBox: {
     successIconBg: get('success.emphasis'),
     successIconText: get('fg.onEmphasis'),
-    successIconBorder: unset,
+    successIconBorder: 'transparent',
     successIndicatorBg: get('success.emphasis'),
-    successIndicatorBorder: unset,
+    successIndicatorBorder: 'transparent',
     mergedIconBg: get('done.emphasis'),
     mergedIconText: get('fg.onEmphasis'),
-    mergedIconBorder: unset,
+    mergedIconBorder: 'transparent',
     mergedBoxBorder: get('done.emphasis'),
     neutralIconBg: get('neutral.emphasis'),
     neutralIconText: get('fg.onEmphasis'),
-    neutralIconBorder: unset,
+    neutralIconBorder: 'transparent',
     neutralIndicatorBg: get('neutral.emphasis'),
-    neutralIndicatorBorder: unset,
+    neutralIndicatorBorder: 'transparent',
     warningIconBg: get('attention.emphasis'),
     warningIconText: get('fg.onEmphasis'),
-    warningIconBorder: unset,
+    warningIconBorder: 'transparent',
     warningBoxBorder: get('attention.emphasis'),
-    warningMergeHighlight: unset,
+    warningMergeHighlight: 'transparent',
     errorIconBg: get('danger.emphasis'),
     errorIconText: get('fg.onEmphasis'),
-    errorIconBorder: unset,
+    errorIconBorder: 'transparent',
     errorIndicatorBg: get('danger.emphasis'),
-    errorIndicatorBorder: unset
+    errorIndicatorBorder: 'transparent'
   },
   underlinenav: {
-    border: unset,
+    border: 'transparent',
     borderHover: get('neutral.muted'),
     borderActive: get('primer.border.active'),
     text: get('fg.default'),
@@ -523,39 +517,39 @@ export default {
     draft: {
       text: get('fg.onEmphasis'),
       bg: get('neutral.emphasis'),
-      border: unset
+      border: 'transparent'
     },
     open: {
       text: get('fg.onEmphasis'),
       bg: get('success.emphasis'),
-      border: unset
+      border: 'transparent'
     },
     merged: {
       text: get('fg.onEmphasis'),
       bg: get('done.emphasis'),
-      border: unset
+      border: 'transparent'
     },
     closed: {
       text: get('fg.onEmphasis'),
       bg: get('danger.emphasis'),
-      border: unset
+      border: 'transparent'
     }
   },
   diffBlob: {
     numText: get('fg.subtle'),
     numHoverText: get('fg.default'),
     addition: {
-      numHoverText: get('fg.default'),
+      numHoverText: get('fg.default')
     },
     deletion: {
       numHoverText: get('fg.default'),
       lineBg: get('danger.subtle'),
-      wordBg: get('danger.muted'),
+      wordBg: get('danger.muted')
     },
     hunk: {
       text: get('fg.muted'),
       numBg: get('accent.muted'),
-      lineBg: get('accent.subtle'),
+      lineBg: get('accent.subtle')
     },
     emptyBlockBg: get('neutral.subtle'),
     selectedLineHighlightBg: get('attention.subtle'),
@@ -567,18 +561,18 @@ export default {
     commentButton: {
       icon: get('fg.onEmphasis'),
       bg: get('accent.emphasis'),
-      gradientBg: unset
+      gradientBg: 'transparent'
     }
   },
   globalNav: {
-    logo: deprecated,
-    bg: deprecated,
-    text: deprecated,
-    icon: deprecated,
-    inputBg: deprecated,
-    inputBorder: deprecated,
-    inputIcon: deprecated,
-    inputPlaceholder: deprecated,
+    logo: get('scale.white'),
+    bg: get('scale.gray.9'),
+    text: get('scale.white'),
+    icon: get('scale.white'),
+    inputBg: get('scale.gray.0'),
+    inputBorder: get('scale.gray.0'),
+    inputIcon: get('scale.gray.3'),
+    inputPlaceholder: get('scale.gray.4')
   },
   introShelf: {
     gradientLeft: get('accent.subtle'),

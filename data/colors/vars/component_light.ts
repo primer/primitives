@@ -8,7 +8,6 @@ export default {
     stackFadeMore: get('scale.gray.2'),
     childShadow: (theme: any) => `-2px -2px 0 ${alpha(get('scale.white'), 0.8)(theme)}`
   },
-
   topicTag: {
     border: 'transparent'
   },
@@ -91,7 +90,7 @@ export default {
       hoverBg: '#2c974b',
       hoverBorder: get('border.subtle'),
       selectedBg: darken(get('btn.primary.hoverBg'), 0.02),
-      selectedShadow: (theme: any) => `inset 0px 0.2em 0.3em ${alpha(get('scale.black'), 0.3)(theme)}`,
+      selectedShadow: (theme: any) => `inset 0 1px 0 ${alpha(get('scale.green.9'), 0.2)(theme)}`,
       disabledText: alpha(get('scale.white'), 0.8),
       disabledBg: '#94d3a2',
       disabledBorder: get('border.subtle'),
@@ -104,12 +103,11 @@ export default {
 
     outline: {
       text: get('scale.blue.5'),
-      bg: 'transparent',
       hoverText: get('scale.white'),
       hoverBg: get('scale.blue.5'),
+      hoverBorder: get('border.subtle'),
       hoverShadow: (theme: any) => `0 1px 0 ${alpha(get('scale.black'), 0.1)(theme)}`,
       hoverInsetShadow: (theme: any) => `inset 0 1px 0 ${alpha(get('scale.white'), 0.03)(theme)}`,
-      hoverBorder: get('border.subtle'),
       hoverCounterBg: alpha(get('scale.white'), 0.2),
       selectedText: get('scale.white'),
       selectedBg: darken(get('scale.blue.5'), 0.03),
@@ -119,6 +117,7 @@ export default {
       disabledBg: get('scale.gray.0'),
       disabledCounterBg: alpha(get('scale.blue.5'), 0.05),
       focusBorder: get('border.subtle'),
+      focusShadow: (theme: any) => `0 0 0 3px ${alpha(get('scale.blue.6'), 0.4)(theme)}`,
       counterBg: alpha(get('scale.blue.5'), 0.1)
     },
 
@@ -133,7 +132,7 @@ export default {
       selectedText: get('scale.white'),
       selectedBg: darken(get('scale.red.5'), 0.03),
       selectedBorder: get('border.subtle'),
-      selectedShadow: (theme: any) => `inset 0 0.15em 0.3em ${alpha(get('scale.black'), 0.25)(theme)}`,
+      selectedShadow: (theme: any) => `inset 0 1px 0 ${alpha(get('scale.red.9'), 0.2)(theme)}`,
       disabledText: alpha(get('scale.red.5'), 0.5),
       disabledBg: get('scale.gray.0'),
       disabledCounterBg: alpha(get('scale.red.5'), 0.05),

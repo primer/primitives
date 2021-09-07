@@ -8,7 +8,6 @@ export default {
     stackFadeMore: get('scale.gray.7'),
     childShadow: (theme: any) => `-2px -2px 0 ${get('scale.gray.9')(theme)}`
   },
-
   topicTag: {
     border: 'transparent'
   },
@@ -104,7 +103,6 @@ export default {
     outline: {
       text: get('scale.blue.3'),
       hoverText: get('scale.blue.3'),
-      bg: 'transparent',
       hoverBg: get('scale.gray.6'),
       hoverBorder: get('border.subtle'),
       hoverShadow: (theme: any) => `0 1px 0 ${alpha(get('scale.black'), 0.1)(theme)}`,
@@ -118,6 +116,7 @@ export default {
       disabledBg: get('scale.gray.9'),
       disabledCounterBg: alpha(get('scale.blue.5'), 0.05),
       focusBorder: get('border.subtle'),
+      focusShadow: (theme: any) => `0 0 0 3px ${alpha(get('scale.blue.6'), 0.4)(theme)}`,
       counterBg: alpha(get('scale.blue.5'), 0.1)
     },
 

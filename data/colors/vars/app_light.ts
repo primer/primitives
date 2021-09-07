@@ -11,7 +11,9 @@ export default {
     addition: {
       numText: get('fg.default'),
       fg: get('fg.default'),
-      numBg: '#BFF0CA',
+      numBg: '#CCFFD8',
+      lineBg: '#E6FFEC',
+      wordBg: '#ABF2BC',
     },
     deletion: {
       numText: get('fg.default'),
@@ -23,7 +25,9 @@ export default {
     },
     selectedLineHighlightMixBlendMode: 'multiply'
   },
-  searchKeywordHl: get('scale.yellow.0'),
+  searchKeyword: {
+    hl: get('scale.yellow.0'),
+  },
   prettylights: {
     syntax: {
       comment: get('scale.gray.5'),
