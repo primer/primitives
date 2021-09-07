@@ -1,5 +1,11 @@
 # @primer/primitives
 
+## 4.7.1
+
+### Patch Changes
+
+- [#233](https://github.com/primer/primitives/pull/233) [`647cf69`](https://github.com/primer/primitives/commit/647cf69215f6293f924df03417134babab1739a1) Thanks [@colebemis](https://github.com/colebemis)! - Delete experimental `data/colors_v2` directory
+
 ## 4.7.0
 
 ### Minor Changes
