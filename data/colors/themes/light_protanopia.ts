@@ -1,25 +1,12 @@
-import {alpha, get, merge} from '../../../src/utils'
+import {merge} from '../../../src/utils'
 import light from './light'
-
-
 
 const scale = {
   black: '#1b1f24',
   white: '#ffffff',
   gray: ['#f6f8fa', '#eaeef2', '#d0d7de', '#afb8c1', '#8c959f', '#6e7781', '#57606a', '#424a53', '#32383f', '#24292f'],
   blue: ['#ddf4ff', '#b6e3ff', '#80ccff', '#54aeff', '#218bff', '#0969da', '#0550ae', '#033d8b', '#0a3069', '#002155'],
-  green: [
-  '#c0f6ff',
-  '#96e5ff',
-  '#65ccff',
-  '#35adff',
-  '#0088ff',
-  '#0566d5',
-  '#054da9',
-  '#033a86',
-  '#002d68',
-  '#001f50'
-],
+  green: ['#c0f6ff', '#96e5ff', '#65ccff', '#35adff', '#0088ff', '#0566d5', '#054da9', '#033a86', '#002d68', '#001f50'],
   yellow: [
     '#fff8c5',
     '#fae17d',
@@ -44,18 +31,7 @@ const scale = {
     '#5c2200',
     '#471700'
   ],
-  red: [
-  '#fefe48',
-  '#fee325',
-  '#f8c200',
-  '#e7a100',
-  '#d08002',
-  '#ac5e00',
-  '#8b4600',
-  '#6c3900',
-  '#4c3100',
-  '#2f2900'
-],
+  red: ['#fefe48', '#fee325', '#f8c200', '#e7a100', '#d08002', '#ac5e00', '#8b4600', '#6c3900', '#4c3100', '#2f2900'],
   purple: [
     '#fbefff',
     '#ecd8ff',
@@ -69,18 +45,7 @@ const scale = {
     '#2e1461'
   ],
   pink: ['#ffeff7', '#ffd3eb', '#ffadda', '#ff80c8', '#e85aad', '#bf3989', '#99286e', '#772057', '#611347', '#4d0336'],
-  coral: [
-    '#FFF0EB',
-    '#FFD6CC',
-    '#FFB4A1',
-    '#FD8C73',
-    '#EC6547',
-    '#C4432B',
-    '#9E2F1C',
-    '#801F0F',
-    '#691105',
-    '#510901'
-  ]
+  coral: ['#FFF0EB', '#FFD6CC', '#FFB4A1', '#FD8C73', '#EC6547', '#C4432B', '#9E2F1C', '#801F0F', '#691105', '#510901']
 }
 
 export default merge(light, {scale})
