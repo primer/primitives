@@ -1,6 +1,8 @@
 ---
-"@primer/primitives": patch
+"@primer/primitives": minor
 ---
 
-Added new colorblind optimized themes: Light Protanopia, Dark Protanopia
+Add new color blind themes: 
+- `light_protanopia`
+- `dark_protanopia`
 
