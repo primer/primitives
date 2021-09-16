@@ -2,4 +2,4 @@
 "@primer/primitives": patch
 ---
 
-Add `canvasDefaultTransparent`
+Add `canvasDefaultTransparent` app color variable
