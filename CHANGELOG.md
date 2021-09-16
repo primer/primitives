@@ -1,5 +1,17 @@
 # @primer/primitives
 
+## 4.8.0
+
+### Minor Changes
+
+- [#236](https://github.com/primer/primitives/pull/236) [`ec5eb62`](https://github.com/primer/primitives/commit/ec5eb62cbddd711cc027b8edcffb961b92643c4f) Thanks [@Juliusschaeper](https://github.com/Juliusschaeper)! - Add new color blind themes:
+  - `light_protanopia`
+  - `dark_protanopia`
+
+### Patch Changes
+
+- [#235](https://github.com/primer/primitives/pull/235) [`ac4edb8`](https://github.com/primer/primitives/commit/ac4edb8be96d885babfc09f8fae23d5e4458fd94) Thanks [@simurai](https://github.com/simurai)! - Add `canvasDefaultTransparent` app color variable
+
 ## 4.7.1
 
 ### Patch Changes
