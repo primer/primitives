@@ -152,14 +152,6 @@ const exceptions = {
   avatar: {
     border: alpha(get('scale.white'), 0.9),
   },
-  diffstat: {
-    deletionBorder: get('scale.red.2'),
-    additionBorder: get('scale.green.2')
-  },
-  underlinenav : {
-    icon: get('scale.gray.1'),
-    borderHover: get('scale.gray.3'),
-  },
   topicTag: {
     border: get('accent.emphasis')
   },
@@ -193,9 +185,6 @@ const exceptions = {
     },
     expander: {
       icon: get('fg.onEmphasis'),
-    },
-    hunk: {
-      numBg: alpha(get('accent.muted'), 0.4),
     },
   },
 }
