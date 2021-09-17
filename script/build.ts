@@ -83,7 +83,7 @@ async function writeModeOutput(collection: ModeCollection): Promise<void> {
 
   writeTsTypeIndex(collection)
 
-  writeDeprecations(collection)
+  // writeDeprecations(collection)
 }
 
 async function writeScssOutput(collection: ModeCollection): Promise<void> {
