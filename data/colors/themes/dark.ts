@@ -1,6 +1,5 @@
 import {merge} from '../../../src/utils'
 import darkComponentVars from '../vars/component_dark'
-import darkDeprecatedVars from '../vars/deprecated_dark'
 import darkGlobalVars from '../vars/global_dark'
 import darkMarketingVars from '../vars/marketing_dark'
 import darkAppVars from '../vars/app_dark'
@@ -63,4 +62,4 @@ const scale = {
   ]
 }
 
-export default merge(darkDeprecatedVars, darkAppVars, darkMarketingVars, darkComponentVars, darkGlobalVars, {scale})
+export default merge(darkAppVars, darkMarketingVars, darkComponentVars, darkGlobalVars, {scale})
