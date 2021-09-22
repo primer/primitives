@@ -48,4 +48,23 @@ const scale = {
   coral: ['#FFF0EB', '#FFD6CC', '#FFB4A1', '#FD8C73', '#EC6547', '#C4432B', '#9E2F1C', '#801F0F', '#691105', '#510901']
 }
 
+const exceptions = {
+  diffBlob: {
+    addition: {
+      numBg: get('success.muted'),
+      lineBg: alpha(get('scale.danger.0'), 0.5),
+      wordBg: get('scale.danger.0')
+    },
+    deletion: {
+      numBg: get('danger.muted')
+    },
+  },
+  btn: {
+    primary: {
+      hoverBg: get('scale.green.5'),
+      disabledBg: get('scale.green.2')
+    }
+  }
+}
+
 export default merge(light, {scale})
