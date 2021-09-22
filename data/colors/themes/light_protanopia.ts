@@ -52,11 +52,13 @@ const exceptions = {
   diffBlob: {
     addition: {
       numBg: get('success.muted'),
-      lineBg: alpha(get('scale.danger.0'), 0.5),
-      wordBg: get('scale.danger.0')
+      lineBg: alpha(get('scale.success.0'), 0.5),
+      wordBg: get('success.muted')
     },
     deletion: {
-      numBg: get('danger.muted')
+      numBg: get('danger.muted'),
+      lineBg: alpha(get('scale.danger.0'), 0.5), 
+      wordBg: alpha(get('scale.danger.2'), 0.5)
     },
   },
   btn: {
