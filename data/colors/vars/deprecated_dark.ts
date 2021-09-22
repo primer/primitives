@@ -128,7 +128,7 @@ export default {
   border: {
     primary: get('border.default'),
     secondary: get('border.muted'),
-    tertiary: get('neutral.muted'),
+    tertiary: get('border.default'),
     overlay: get('border.default'),
     inverse: get('fg.onEmphasis'), // or move to marketing
     info: get('accent.emphasis'),
