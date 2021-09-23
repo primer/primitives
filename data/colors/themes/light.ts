@@ -63,4 +63,13 @@ const scale = {
   ]
 }
 
+const exceptions = {
+  btn: {
+    primary: {
+      hoverBg: '#2c974b',
+      disabledBg: '#94d3a2'
+    }
+  }
+}
+
 export default merge(lightDeprecatedVars, lightAppVars, lightMarketingVars, lightComponentVars, lightGlobalVars, {scale})

@@ -542,7 +542,7 @@ export default {
       numHoverText: get('fg.default')
     },
     deletion: {
-      numHoverText: get('fg.default')
+      numHoverText: get('fg.default'),
     },
     hunk: {
       text: get('fg.muted'),
