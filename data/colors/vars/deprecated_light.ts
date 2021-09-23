@@ -542,9 +542,7 @@ export default {
       numHoverText: get('fg.default')
     },
     deletion: {
-      numHoverText: get('fg.default'),
-      lineBg: get('danger.subtle'),
-      wordBg: get('danger.muted')
+      numHoverText: get('fg.default')
     },
     hunk: {
       text: get('fg.muted'),

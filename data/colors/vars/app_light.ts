@@ -20,6 +20,8 @@ export default {
       numText: get('fg.default'),
       fg: get('fg.default'),
       numBg: '#FFD7D5',
+      lineBg: get('danger.subtle'),
+      wordBg: get('danger.muted')
     },
     expander: {
       icon: get('fg.muted'),
