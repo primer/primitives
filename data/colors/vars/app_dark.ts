@@ -19,7 +19,7 @@ export default {
     deletion: {
       numText: get('fg.default'),
       fg: get('fg.default'),
-      numBg: alpha(get('scale.red.4'), 0.3)
+      numBg: alpha(get('scale.red.4'), 0.3),
       lineBg: get('danger.subtle'),
       wordBg: get('danger.muted')
     },
