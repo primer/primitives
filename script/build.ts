@@ -232,7 +232,7 @@ async function writeReplacements(
         }
 
         // Assert that replacement variable is not deprecated
-        if (Object.keys(original).includes(replacementVar)) {
+        if (Object.keys(replacementMap).includes(replacementVar)) {
           errors.push(
             chalk`Cannot replace {bold "${original}"} with deprecated variable {bold.red ${JSON.stringify(
               replacementVar
