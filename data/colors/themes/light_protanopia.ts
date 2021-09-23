@@ -1,4 +1,4 @@
-import {merge} from '../../../src/utils'
+import {alpha, get, merge} from '../../../src/utils'
 import light from './light'
 
 const scale = {
@@ -57,7 +57,7 @@ const exceptions = {
     },
     deletion: {
       numBg: get('danger.muted'),
-      lineBg: alpha(get('scale.danger.0'), 0.5), 
+      lineBg: alpha(get('scale.danger.0'), 0.5),
       wordBg: alpha(get('scale.danger.2'), 0.5)
     },
   },
