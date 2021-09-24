@@ -28,4 +28,4 @@ jobs:
         run: pushd main; yarn build; popd
 
       - name: Compare
-        run: diff -U 1 main/dist/colors/scss/_light.scss dist/colors/scss/_light.scss
+        run: diff -U 1 main/dist/scss/colors/_light.scss dist/scss/colors/_light.scss
