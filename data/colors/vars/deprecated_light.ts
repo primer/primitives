@@ -108,7 +108,7 @@ export default {
     secondary: get('fg.muted'),
     tertiary: get('fg.muted'),
     placeholder: get('fg.subtle'),
-    disabled: get('fg.muted'),
+    disabled: get('fg.subtle'),
     inverse: get('fg.onEmphasis'),
     link: get('accent.fg'),
     danger: get('danger.fg'),
