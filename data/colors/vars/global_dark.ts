@@ -3,7 +3,7 @@ import {alpha, get} from '../../../src/utils'
 export default {
   fg: {
     default: get('scale.gray.1'),
-    muted: get('scale.gray.2'),
+    muted: get('scale.gray.3'),
     subtle: get('scale.gray.5'),
     onEmphasis: get('scale.white')
   },
