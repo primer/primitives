@@ -32,5 +32,7 @@ jobs:
         run: |
           for file in dist/scss/**/*.scss
           do
-            diff -U 1 base/$file $file
+            # using `2> /dev/null || true` here to suppress errors because,
+            # in this case, differences are not errors
+            diff -U 1 base/$file $file 2> /dev/null || true
           done
