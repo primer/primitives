@@ -2,7 +2,22 @@ name: Diff
 on:
   pull_request:
 jobs:
+  setup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v5
+        with:
+          script: |
+            const fs = require('fs')
+            const body = fs.readFileSync('.github/diff_comment_template.md', 'utf8')
+            await github.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body
+            })
   diff:
+    needs: setup
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -27,18 +42,6 @@ jobs:
 
       - name: Build (base)
         run: pushd base; yarn build; popd
-
-      - uses: actions/github-script@v5
-        with:
-          script: |
-            const fs = require('fs')
-            const body = fs.readFileSync('.github/diff_comment_template.md', 'utf8')
-            await github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body
-            })
 
       # - name: Diff
       #   run: |
