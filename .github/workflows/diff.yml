@@ -2,6 +2,8 @@
 name: Diff
 on:
   pull_request:
+    branches-ignore:
+      - 'changeset-release/**'
 jobs:
   comment:
     runs-on: ubuntu-latest
