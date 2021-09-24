@@ -40,28 +40,31 @@ jobs:
               body
             })
 
-      - name: Diff
-        run: |
-          diff=$(for file in dist/scss/**/*.scss
-            do
-              # using `2> /dev/null || true` here to suppress errors because,
-              # in this case, differences are not errors
-              diff -U 1 base/$file $file 2> /dev/null || true
-            done)
-          echo "$diff"
       # - name: Diff
-      #   uses: primer/comment-token-update@main
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #     GITHUB_USER: github-actions[bot]
-      #   with:
-      #     comment-token: 'diff'
-      #     script: |
-      #       # using `2> /dev/null || true` here to suppress errors because,
-      #       # in this case, differences are not errors
-      #       diff=$(for file in dist/scss/**/*.scss; do; diff -U 1 base/$file $file 2> /dev/null || true; done)
-      #       if [[ $diff ]]; then
-      #         echo "\`\`\`diff"
-      #         echo "$diff"
-      #         echo "\`\`\`"
-      #       fi
+      #   run: |
+      #     diff=$(for file in dist/scss/**/*.scss
+      #       do
+      #         # using `2> /dev/null || true` here to suppress errors because,
+      #         # in this case, differences are not errors
+      #         diff -U 1 base/$file $file 2> /dev/null || true
+      #       done)
+      #     echo "$diff"
+      - name: Diff
+        uses: primer/comment-token-update@main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_USER: github-actions[bot]
+        with:
+          comment-token: 'diff'
+          script: |
+            diff=$(for file in dist/scss/**/*.scss
+              do
+                # using `2> /dev/null || true` here to suppress errors because,
+                # in this case, differences are not errors
+                diff -U 1 base/$file $file 2> /dev/null || true
+              done)
+            if [[ $diff ]]; then
+              echo "\`\`\`diff"
+              echo "$diff"
+              echo "\`\`\`"
+            fi
