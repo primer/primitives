@@ -21,11 +21,11 @@ jobs:
       - name: Build
         run: yarn build
 
-      - name: Intall dependencies (main)
+      - name: Install dependencies (main)
         run: pushd main; yarn; popd
 
       - name: Build (main)
         run: pushd main; yarn build; popd
 
       - name: Compare
-        run: diff -U 1 main/colors/scss/_light.scss dist/colors/scss/_light.scss 
+        run: diff -U 1 main/dist/colors/scss/_light.scss dist/colors/scss/_light.scss
