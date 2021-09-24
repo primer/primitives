@@ -20,7 +20,7 @@ Primitive data is served in several formats from the `dist/` folder:
 
 ## Deprecating variables
 
-To deprecate a variable, define a mapping from the deprecated variable to its replacement(s) in a file called `deprecated.json` located in the approriate subdirectory of `data`:
+To deprecate a variable, define a mapping from the deprecated variable to its replacement(s) in a file called `deprecated.json` in the approriate subdirectory of `data`:
 
 ```diff
   data/
