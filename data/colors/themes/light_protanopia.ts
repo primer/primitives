@@ -1,4 +1,4 @@
-import {merge} from '../../../src/utils'
+import {alpha, get, merge} from '../../../src/utils'
 import light from './light'
 
 const scale = {
@@ -48,4 +48,25 @@ const scale = {
   coral: ['#FFF0EB', '#FFD6CC', '#FFB4A1', '#FD8C73', '#EC6547', '#C4432B', '#9E2F1C', '#801F0F', '#691105', '#510901']
 }
 
-export default merge(light, {scale})
+const exceptions = {
+  diffBlob: {
+    addition: {
+      numBg: get('success.muted'),
+      lineBg: alpha(get('scale.green.0'), 0.5),
+      wordBg: get('success.muted')
+    },
+    deletion: {
+      numBg: get('danger.muted'),
+      lineBg: alpha(get('scale.red.0'), 0.5),
+      wordBg: alpha(get('scale.red.2'), 0.5)
+    }
+  },
+  btn: {
+    primary: {
+      hoverBg: get('scale.green.5'),
+      disabledBg: get('scale.green.2')
+    }
+  }
+}
+
+export default merge(light, exceptions, {scale})

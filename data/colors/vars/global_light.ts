@@ -11,7 +11,7 @@ export default {
     default: get('scale.white'),
     overlay: get('scale.white'),
     inset: get('scale.gray.0'),
-    subtle: get('scale.gray.0'),
+    subtle: get('scale.gray.0')
   },
   border: {
     default: get('scale.gray.2'),

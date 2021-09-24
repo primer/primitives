@@ -63,4 +63,9 @@ const scale = {
   ]
 }
 
+// const exceptions = {
+//   Please avoid adding exceptions to this base theme.
+//   Otherwise the exceptions will also propagate to all other extended themes.
+// }
+
 export default merge(darkDeprecatedVars, darkAppVars, darkMarketingVars, darkComponentVars, darkGlobalVars, {scale})

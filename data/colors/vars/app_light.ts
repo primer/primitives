@@ -19,7 +19,9 @@ export default {
     deletion: {
       numText: get('fg.default'),
       fg: get('fg.default'),
-      numBg: '#FFD7D5'
+      numBg: '#FFD7D5',
+      lineBg: get('danger.subtle'),
+      wordBg: get('danger.muted')
     },
     hunk: {
       numBg: get('accent.muted')
