@@ -63,4 +63,4 @@ const exceptions = {
   }
 }
 
-export default merge(light, {scale})
+export default merge(light, exceptions, {scale})

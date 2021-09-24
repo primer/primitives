@@ -72,4 +72,4 @@ const exceptions = {
   }
 }
 
-export default merge(lightDeprecatedVars, lightAppVars, lightMarketingVars, lightComponentVars, lightGlobalVars, {scale})
+export default merge(lightDeprecatedVars, lightAppVars, lightMarketingVars, lightComponentVars, lightGlobalVars, exceptions, {scale})
