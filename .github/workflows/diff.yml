@@ -9,8 +9,8 @@ jobs:
 
       - uses: actions/checkout@v2
         with:
-          ref: main
-          path: main
+          ref: ${{ github.base_ref }}
+          path: base
 
       - uses: actions/setup-node@v2
         with:
@@ -22,11 +22,11 @@ jobs:
       - name: Build
         run: yarn build
 
-      - name: Install dependencies (main)
-        run: pushd main; yarn; popd
+      - name: Install dependencies (base)
+        run: pushd base; yarn; popd
 
-      - name: Build (main)
-        run: pushd main; yarn build; popd
+      - name: Build (base)
+        run: pushd base; yarn build; popd
 
-      - name: Compare
-        run: diff -U 1 main/dist/scss/colors/_light.scss dist/scss/colors/_light.scss
+      - name: Diff
+        run: diff -U 1 base/dist/scss/colors/_light.scss dist/scss/colors/_light.scss
