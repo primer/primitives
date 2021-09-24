@@ -1,0 +1,31 @@
+name: Diff
+on:
+  pull_request:
+jobs:
+  diff:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/checkout@v2
+        with:
+          path: main
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 14
+
+      - name: Install dependencies
+        run: yarn
+
+      - name: Build
+        run yarn build
+
+      - name: Intall dependencies (main)
+        run: pushd main; yarn; popd
+
+      - name: Build (main)
+        run: pushd main; yarn build; popd
+
+      - name: Compare
+        run: diff -U 1 main/colors/scss/_light.scss dist/colors/scss/_light.scss 
