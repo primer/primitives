@@ -4,14 +4,14 @@ export default {
   fg: {
     default: get('scale.gray.9'),
     muted: get('scale.gray.6'),
-    subtle: get('scale.gray.5'),
+    subtle: get('scale.gray.4'),
     onEmphasis: get('scale.white')
   },
   canvas: {
     default: get('scale.white'),
     overlay: get('scale.white'),
     inset: get('scale.gray.0'),
-    subtle: get('scale.gray.0'),
+    subtle: get('scale.gray.0')
   },
   border: {
     default: get('scale.gray.2'),
