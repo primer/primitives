@@ -60,6 +60,12 @@ const exceptions = {
       lineBg: alpha(get('scale.red.0'), 0.5),
       wordBg: alpha(get('scale.red.2'), 0.5)
     }
+  },
+  btn: {
+    primary: {
+      hoverBg: get('scale.green.5'),
+      disabledBg: get('scale.green.2')
+    }
   }
 }
 
