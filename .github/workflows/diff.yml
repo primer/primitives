@@ -1,6 +1,6 @@
 name: Diff
 on:
-  push:
+  pull_request:
 jobs:
   diff:
     runs-on: ubuntu-latest
@@ -19,7 +19,7 @@ jobs:
         run: yarn
 
       - name: Build
-        run yarn build
+        run: yarn build
 
       - name: Intall dependencies (main)
         run: pushd main; yarn; popd
