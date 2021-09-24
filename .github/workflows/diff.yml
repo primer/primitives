@@ -2,36 +2,54 @@ name: Diff
 on:
   pull_request:
 jobs:
-  setup:
+  comment:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up node
+        uses: actions/setup-node@v2
         with:
           node-version: 14
-      - uses: actions/github-script@v5
+
+      - name: Create comment (if necessary)
+        uses: actions/github-script@v5
         with:
           script: |
             const fs = require('fs')
             const body = fs.readFileSync('.github/diff_comment_template.md', 'utf8')
-            await github.rest.issues.createComment({
+            const result = await github.rest.issues.listComments({
               issue_number: context.issue.number,
               owner: context.repo.owner,
-              repo: context.repo.repo,
-              body
-            })
+              repo: context.repo.repo
+            });
+            console.log(result.data)
+            const botComments = result.data.filter(c => c.user.login === 'github-actions[bot]')
+            if (!botComments.length) {
+              await github.rest.issues.createComment({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body
+              })
+            }
+
   diff:
-    needs: setup
+    needs: comment
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-      - uses: actions/checkout@v2
+      - name: Checkout base branch
+        uses: actions/checkout@v2
         with:
           ref: ${{ github.base_ref }}
           path: base
 
-      - uses: actions/setup-node@v2
+      - name: Set up Node
+        uses: actions/setup-node@v2
         with:
           node-version: 14
 
@@ -47,15 +65,6 @@ jobs:
       - name: Build (base)
         run: pushd base; yarn build; popd
 
-      # - name: Diff
-      #   run: |
-      #     diff=$(for file in dist/scss/**/*.scss
-      #       do
-      #         # using `2> /dev/null || true` here to suppress errors because,
-      #         # in this case, differences are not errors
-      #         diff -U 1 base/$file $file 2> /dev/null || true
-      #       done)
-      #     echo "$diff"
       - name: Diff
         uses: primer/comment-token-update@main
         env:
