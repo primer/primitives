@@ -29,4 +29,8 @@ jobs:
         run: pushd base; yarn build; popd
 
       - name: Diff
-        run: diff -U 1 base/dist/scss/colors/_light.scss dist/scss/colors/_light.scss
+        run: |
+          for file in dist/scss/**/*.scss
+          do
+            diff -U 1 base/$file $file
+          done
