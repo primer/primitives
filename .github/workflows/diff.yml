@@ -79,8 +79,14 @@ jobs:
                 # in this case, differences are not errors
                 diff -U 1 base/$file $file 2> /dev/null || true
               done)
-            if [[ $diff ]]; then
-              echo "\`\`\`diff"
+
+            echo "\`\`\`diff"
+
+            if [[ $diff ]]
+            then
               echo "$diff"
-              echo "\`\`\`"
+            else
+              echo "No variables changed"
             fi
+
+            echo "\`\`\`"
