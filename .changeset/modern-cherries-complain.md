@@ -2,4 +2,4 @@
 "@primer/primitives": patch
 ---
 
-Output light theme exceptions
+Fix exceptions for light themes
