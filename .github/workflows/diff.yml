@@ -29,13 +29,15 @@ jobs:
         run: pushd base; yarn build; popd
 
       - name: Diff
+        id: diff
         run: |
-          for file in dist/scss/**/*.scss
+          diff=$(for file in dist/scss/**/*.scss
           do
             # using `2> /dev/null || true` here to suppress errors because,
             # in this case, differences are not errors
             diff -U 1 base/$file $file 2> /dev/null || true
-          done
+          done)
+          echo "::set-output name=diff::$diff"
 
       - uses: actions/github-script@v5
         with:
@@ -44,5 +46,5 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: 'Hello'
+              body: '${{ steps.diff.outputs.diff }}'
             })
