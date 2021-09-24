@@ -25,13 +25,13 @@ To deprecate a variable, define a mapping from the deprecated variable to its re
 ```diff
   data/
     colors/
-+     deprecations.json
++     deprecated.json
     spacing/
     ...
 ```
 
 ```js
-// data/colors/deprecations.json
+// data/colors/deprecated.json
 {
 {
   "text.primary": "fg.default", // this means: `text.primary` is deprecated. Use `fg.default` instead
