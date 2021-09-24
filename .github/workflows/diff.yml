@@ -36,3 +36,13 @@ jobs:
             # in this case, differences are not errors
             diff -U 1 base/$file $file 2> /dev/null || true
           done
+
+      - uses: actions/github-script@v5
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: 'Hello'
+            })
