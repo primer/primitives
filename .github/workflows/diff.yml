@@ -1,6 +1,6 @@
 name: Diff
 on:
-  pull_request:
+  push:
 jobs:
   diff:
     runs-on: ubuntu-latest
