@@ -42,9 +42,12 @@ jobs:
 
       - name: Diff
         run: |
-          # using `2> /dev/null || true` here to suppress errors because,
-          # in this case, differences are not errors
-          diff=$(for file in dist/scss/**/*.scss; do; diff -U 1 base/$file $file 2> /dev/null || true; done)
+          diff=$(for file in dist/scss/**/*.scss
+            do
+              # using `2> /dev/null || true` here to suppress errors because,
+              # in this case, differences are not errors
+              diff -U 1 base/$file $file 2> /dev/null || true
+            done)
           echo "$diff"
       # - name: Diff
       #   uses: primer/comment-token-update@main
