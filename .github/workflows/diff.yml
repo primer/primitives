@@ -32,8 +32,8 @@ jobs:
         with:
           script: |
             const fs = require('fs')
-            const body = await fs.readFileSync('.github/diff_comment_template.md', 'utf8')
-            github.rest.issues.createComment({
+            const body = fs.readFileSync('.github/diff_comment_template.md', 'utf8')
+            await github.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
