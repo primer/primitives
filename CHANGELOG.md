@@ -1,5 +1,15 @@
 # @primer/primitives
 
+## 4.8.1
+
+### Patch Changes
+
+- [#246](https://github.com/primer/primitives/pull/246) [`22e1524`](https://github.com/primer/primitives/commit/22e15240b18b7b18ab3193a759576fda8f611012) Thanks [@simurai](https://github.com/simurai)! - Fix exceptions for light themes
+
+* [#242](https://github.com/primer/primitives/pull/242) [`c57b590`](https://github.com/primer/primitives/commit/c57b5901007313c6d451933bc0402ef280907265) Thanks [@simurai](https://github.com/simurai)! - Map `border.tertiary` to `border.default`
+
+- [#243](https://github.com/primer/primitives/pull/243) [`c8adddc`](https://github.com/primer/primitives/commit/c8adddcb85e7476a6864326160131622a6e21910) Thanks [@Juliusschaeper](https://github.com/Juliusschaeper)! - Fix diff highlights + Btn primary state fixes
+
 ## 4.8.0
 
 ### Minor Changes
