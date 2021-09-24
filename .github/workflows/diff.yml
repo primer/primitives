@@ -37,7 +37,7 @@ jobs:
             # in this case, differences are not errors
             diff -U 1 base/$file $file 2> /dev/null || true
           done)
-          echo "::set-output name=diff::$diff"
+          echo '::set-output name=diff::"$diff"'
 
       - uses: actions/github-script@v5
         with:
