@@ -63,13 +63,9 @@ const scale = {
   ]
 }
 
-const exceptions = {
-  btn: {
-    primary: {
-      hoverBg: '#2c974b',
-      disabledBg: '#94d3a2'
-    }
-  }
-}
+// const exceptions = {
+//   Please avoid adding exceptions to this base theme.
+//   Otherwise the exceptions will also propagate to all other extended themes.
+// }
 
 export default merge(lightDeprecatedVars, lightAppVars, lightMarketingVars, lightComponentVars, lightGlobalVars, {scale})
