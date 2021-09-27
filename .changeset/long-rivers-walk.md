@@ -1,5 +1,5 @@
 ---
-"@primer/primitives": patch
+"@primer/primitives": major
 ---
 
 The `deprecations` directory in the `dist` directory has been renamed to `deprecated`:
