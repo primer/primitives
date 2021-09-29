@@ -17,12 +17,13 @@ export default {
     tapFocusBg: get('scale.blue.8')
   },
   overlay: {
-    shadow: (theme: any) => `0 0 0 1px ${get('scale.gray.6')(theme)}, 0 16px 32px ${alpha(get('scale.black'), 0.85)(theme)}`,
+    shadow: (theme: any) =>
+      `0 0 0 1px ${get('scale.gray.6')(theme)}, 0 16px 32px ${alpha(get('scale.black'), 0.85)(theme)}`
   },
   header: {
     text: alpha(get('scale.white'), 0.7),
     bg: get('scale.gray.8'),
-    logo: get('scale.gray.0'),
+    logo: get('scale.gray.0')
   },
   headerSearch: {
     bg: get('scale.gray.9'),
@@ -141,5 +142,9 @@ export default {
       counterBg: alpha(get('scale.red.5'), 0.1),
       icon: get('scale.red.4')
     }
+  },
+  underlinenav: {
+    icon: get('fg.subtle'),
+    borderHover: get('neutral.muted')
   }
 }

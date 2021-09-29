@@ -23,10 +23,17 @@ export default {
       lineBg: get('danger.subtle'),
       wordBg: get('danger.muted')
     },
+    hunk: {
+      numBg: get('accent.muted')
+    },
     expander: {
       icon: get('fg.muted')
     },
     selectedLineHighlightMixBlendMode: 'screen'
+  },
+  diffstat: {
+    deletionBorder: get('border.subtle'),
+    additionBorder: get('border.subtle')
   },
   searchKeyword: {
     hl: alpha(get('scale.yellow.3'), 0.4)

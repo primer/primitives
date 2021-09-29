@@ -17,16 +17,17 @@ export default {
     tapFocusBg: get('scale.blue.1')
   },
   overlay: {
-    shadow: (theme: any) => `0 1px 3px ${alpha(get('scale.black'), 0.12)(theme)}, 0 8px 24px ${alpha(get('scale.gray.7'), 0.12)(theme)}`,
+    shadow: (theme: any) =>
+      `0 1px 3px ${alpha(get('scale.black'), 0.12)(theme)}, 0 8px 24px ${alpha(get('scale.gray.7'), 0.12)(theme)}`
   },
   header: {
     text: alpha(get('scale.white'), 0.7),
     bg: get('scale.gray.9'),
-    logo: get('scale.white'),
+    logo: get('scale.white')
   },
   headerSearch: {
-      bg: get('scale.gray.9'),
-      border: get('scale.gray.6')
+    bg: get('scale.gray.9'),
+    border: get('scale.gray.6')
   },
   sidenav: {
     selectedBg: get('scale.white')
@@ -142,5 +143,9 @@ export default {
       icon: get('scale.red.5'),
       hoverIcon: get('scale.white')
     }
+  },
+  underlinenav: {
+    icon: get('fg.subtle'),
+    borderHover: get('neutral.muted')
   }
 }

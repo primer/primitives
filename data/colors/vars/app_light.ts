@@ -14,7 +14,7 @@ export default {
       fg: get('fg.default'),
       numBg: '#CCFFD8',
       lineBg: '#E6FFEC',
-      wordBg: '#ABF2BC',
+      wordBg: '#ABF2BC'
     },
     deletion: {
       numText: get('fg.default'),
@@ -23,13 +23,20 @@ export default {
       lineBg: get('danger.subtle'),
       wordBg: get('danger.muted')
     },
+    hunk: {
+      numBg: get('accent.muted')
+    },
     expander: {
-      icon: get('fg.muted'),
+      icon: get('fg.muted')
     },
     selectedLineHighlightMixBlendMode: 'multiply'
   },
+  diffstat: {
+    deletionBorder: get('border.subtle'),
+    additionBorder: get('border.subtle')
+  },
   searchKeyword: {
-    hl: get('scale.yellow.0'),
+    hl: get('scale.yellow.0')
   },
   prettylights: {
     syntax: {

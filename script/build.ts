@@ -22,9 +22,8 @@ const outDir = path.join(__dirname, '..', 'dist')
 const scssDir = path.join(outDir, 'scss')
 const tsDir = path.join(outDir, 'ts')
 const jsonDir = path.join(outDir, 'json')
-const deprecationsDir = path.join(outDir, 'deprecations')
-
-const deprecationsFilename = 'deprecations.json'
+const deprecatedDir = path.join(outDir, 'deprecated')
+const removedDir = path.join(outDir, 'removed')
 
 async function build() {
   const modeTypes = fs.readdirSync(dataDir)
@@ -83,7 +82,8 @@ async function writeModeOutput(collection: ModeCollection): Promise<void> {
 
   writeTsTypeIndex(collection)
 
-  writeDeprecations(collection)
+  writeReplacements('deprecated.json', deprecatedDir, collection, validateDeprecatedVar)
+  writeReplacements('removed.json', removedDir, collection, validateRemovedVar)
 }
 
 async function writeScssOutput(collection: ModeCollection): Promise<void> {
@@ -153,36 +153,70 @@ if (require.main === module) {
     .catch(err => console.error(err))
 }
 
-async function writeDeprecations(collection: ModeCollection) {
-  const deprecationsFile = path.join(dataDir, collection.type, deprecationsFilename)
+/**
+ * Validates a deprecated variable.
+ * @returns Array of error messages. If the returned array is empty, the variable is valid.
+ */
+function validateDeprecatedVar(variable: string, collection: ModeCollection, inputFile: string) {
+  const errors = []
 
-  // Do nothing if deprecations file doesn't exist
-  if (!fs.existsSync(deprecationsFile)) {
+  // Assert that deprecated variable exists
+  if (!existsInCollection(collection, variable)) {
+    errors.push(chalk`Cannot deprecate undefined variable {bold.red "${variable}"} in {bold ${inputFile}}`)
+  }
+
+  return errors
+}
+
+/**
+ * Validates a removed variable.
+ * @returns Array of error messages. If the returned array is empty, the variable is valid.
+ */
+function validateRemovedVar(variable: string, collection: ModeCollection, inputFile: string) {
+  const errors = []
+
+  // Assert that removed variable doesn't exist
+  if (existsInCollection(collection, variable)) {
+    errors.push(
+      chalk`Variable {bold.red "${variable}"} is marked as removed in {bold ${inputFile}} but is still defined`
+    )
+  }
+
+  return errors
+}
+
+async function writeReplacements(
+  inputFilename: string,
+  outputDir: string,
+  collection: ModeCollection,
+  // Function to validate a variable (e.g. deprecated variable or removed variable).
+  // Returns an array of error messages. If the returned array is empty, the variable is valid.
+  validateVar: (variable: string, collection: ModeCollection, inputFile: string) => any[]
+) {
+  const inputFile = path.join(dataDir, collection.type, inputFilename)
+
+  // Do nothing if deprecated file doesn't exist
+  if (!fs.existsSync(inputFile)) {
     return
   }
 
   try {
-    // Parse deprecations file
-    const deprecations = JSON.parse(fs.readFileSync(deprecationsFile, 'utf8'))
+    // Parse input file
+    const replacementMap = JSON.parse(fs.readFileSync(inputFile, 'utf8'))
 
-    // Validate deprecations
+    // Validations
     const errors = []
-    for (const [deprecatedVar, replacement] of Object.entries(deprecations)) {
-      // Assert that deprecated variable exists
-      if (!existsInCollection(collection, deprecatedVar)) {
-        errors.push(
-          chalk`Cannot deprecate undefined variable {bold.red "${deprecatedVar}"} in {bold ${deprecationsFile}}`
-        )
-      }
+    for (const [original, replacement] of Object.entries(replacementMap)) {
+      errors.push(...validateVar(original, collection, inputFile))
 
       // We expect `replacement` to be a variable name, an array of variable names, or null
       forEachReplacementVar(replacement, replacementVar => {
         // Assert that replacement variable is a string
         if (typeof replacementVar !== 'string') {
           errors.push(
-            chalk`Cannot replace {bold "${deprecatedVar}"} with invalid variable {bold.red ${JSON.stringify(
+            chalk`Cannot replace {bold "${original}"} with invalid variable {bold.red ${JSON.stringify(
               replacementVar
-            )}} in {bold ${deprecationsFile}}`
+            )}} in {bold ${inputFile}}`
           )
           return
         }
@@ -190,19 +224,19 @@ async function writeDeprecations(collection: ModeCollection) {
         // Assert that replacement variable exists
         if (!existsInCollection(collection, replacementVar)) {
           errors.push(
-            chalk`Cannot replace {bold "${deprecatedVar}"} with undefined variable {bold.red ${JSON.stringify(
+            chalk`Cannot replace {bold "${original}"} with undefined variable {bold.red ${JSON.stringify(
               replacementVar
-            )}} in {bold ${deprecationsFile}}`
+            )}} in {bold ${inputFile}}`
           )
           return
         }
 
         // Assert that replacement variable is not deprecated
-        if (Object.keys(deprecations).includes(replacementVar)) {
+        if (Object.keys(replacementMap).includes(replacementVar)) {
           errors.push(
-            chalk`Cannot replace {bold "${deprecatedVar}"} with deprecated variable {bold.red ${JSON.stringify(
+            chalk`Cannot replace {bold "${original}"} with deprecated variable {bold.red ${JSON.stringify(
               replacementVar
-            )}} in {bold ${deprecationsFile}}`
+            )}} in {bold ${inputFile}}`
           )
           return
         }
@@ -210,9 +244,9 @@ async function writeDeprecations(collection: ModeCollection) {
     }
 
     if (errors.length === 0) {
-      // Write deprecations
-      await mkdirp(deprecationsDir)
-      fs.writeFileSync(path.join(deprecationsDir, `${collection.type}.json`), JSON.stringify(deprecations, null, '  '))
+      // Write replacements
+      await mkdirp(outputDir)
+      fs.writeFileSync(path.join(outputDir, `${collection.type}.json`), JSON.stringify(replacementMap, null, '  '))
     } else {
       throw new Error(errors.join('\n'))
     }
