@@ -1,5 +1,58 @@
 # @primer/primitives
 
+## 5.0.0
+
+### Major Changes
+
+- [#245](https://github.com/primer/primitives/pull/245) [`65ad2df`](https://github.com/primer/primitives/commit/65ad2df4d19f1eac86778879266bab6648ebe0e4) Thanks [@colebemis](https://github.com/colebemis)! - All deprecated color variables have been removed. See [removed variables](https://primer.style/primitives/colors#removed-variables) for the complete list of removed variables.
+
+* [#245](https://github.com/primer/primitives/pull/245) [`65ad2df`](https://github.com/primer/primitives/commit/65ad2df4d19f1eac86778879266bab6648ebe0e4) Thanks [@colebemis](https://github.com/colebemis)! - The `deprecations` directory in the `dist` directory has been renamed to `deprecated`:
+
+  ```diff
+  dist/
+  - deprecations/
+  + deprecated/
+  ```
+
+  You'll need to update your imports accordingly:
+
+  ```diff
+  - import deprecatedColors from '@primer/primitives/dist/deprecations/colors.json'
+  + import deprecatedColors from '@primer/primitives/dist/deprecated/colors.json'
+  ```
+
+### Minor Changes
+
+- [#245](https://github.com/primer/primitives/pull/245) [`65ad2df`](https://github.com/primer/primitives/commit/65ad2df4d19f1eac86778879266bab6648ebe0e4) Thanks [@colebemis](https://github.com/colebemis)! - The [`dist`](https://unpkg.com/browse/@primer/primitives/dist/) directory now contains a `removed` directory with data about removed variables organized by category:
+
+  ```diff
+    dist/
+      js/
+      ts/
+      json/
+      scss/
+      deprecated/
+  +   removed/
+  +     colors.json
+  ```
+
+  Each JSON file in the `removed` directory contains a mapping of removed variables to replacement variables. Example:
+
+  ```js
+  // dist/removed/colors.json
+  {
+    "text.primary": "fg.default", // this means: `text.primary` is deprecated. Use `fg.default` instead
+    "auto.blue.4": ["accent.fg, accent.emphasis"], // this means: `auto.blue.4` is deprecated. Use `accent.fg` or `accent.emphasis` instead
+    "text.white": null // this means: `text.white` is deprecated. We don't have a replacement for it
+  }
+  ```
+
+  This data will allow you to write linters to prevent usage of removed variables.
+
+### Patch Changes
+
+- [#250](https://github.com/primer/primitives/pull/250) [`9948e13`](https://github.com/primer/primitives/commit/9948e139bcdd360bccb939aab27992ac06b3a3bf) Thanks [@Juliusschaeper](https://github.com/Juliusschaeper)! - Fix duplicate hex value (red 9)
+
 ## 4.8.1
 
 ### Patch Changes
