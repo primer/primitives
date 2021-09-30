@@ -2,6 +2,9 @@
 
 This repo contains values for color, spacing, and typography primitives for use with [Primer][primer], GitHub's design system.
 
+![primer primitives diagram](https://user-images.githubusercontent.com/4608155/135384588-192c279f-020f-4544-a61f-559be6629f18.png)
+
+
 ## Install
 
 This repository is distributed on [npm][npm]. After [installing npm][install-npm], you can install `@primer/primitives` with this command.
