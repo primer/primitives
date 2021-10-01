@@ -1,5 +1,11 @@
 # @primer/primitives
 
+## 5.1.0
+
+### Minor Changes
+
+- [#252](https://github.com/primer/primitives/pull/252) [`48149b1`](https://github.com/primer/primitives/commit/48149b116a4708ad87712e6b13cfa1489f66cc0c) Thanks [@simurai](https://github.com/simurai)! - Add `primer.fg.disabled`
+
 ## 5.0.0
 
 ### Major Changes
