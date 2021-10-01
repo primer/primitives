@@ -1,5 +1,7 @@
 # Primer Primitives
 
+[![npm package](https://img.shields.io/npm/v/@primer/primitives.svg?style=flat)](https://www.npmjs.com/package/@primer/primitives)
+
 This repo contains values for color, spacing, and typography primitives for use with [Primer][primer], GitHub's design system.
 
 ![primer primitives diagram](https://user-images.githubusercontent.com/4608155/135384588-192c279f-020f-4544-a61f-559be6629f18.png)
