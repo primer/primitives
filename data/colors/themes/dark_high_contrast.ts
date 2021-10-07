@@ -201,13 +201,13 @@ const exceptions = {
   
   actionListState: {
     default: {
-      hover: get('rgba(201, 206, 212, 0.12)'),
-      focus: get('rgba(201, 206, 212, 0.24)')
+      hoverBg: get('rgba(201, 206, 212, 0.12)'),
+      focusBg: get('rgba(201, 206, 212, 0.24)')
     },
     danger: {
-      hover: get('danger.muted'),
+      hoverBg: get('danger.muted'),
       hoverText: get('fg.onEmphasis'),
-      focus: get('rgba(248, 81, 73, 0.16)')
+      focusBg: get('rgba(248, 81, 73, 0.16)')
     }
   }
 }
