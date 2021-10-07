@@ -148,6 +148,7 @@ export default {
     icon: get('fg.subtle'),
     borderHover: get('neutral.muted')
   },
+
   actionListState: {
     default: {
       hover: get('rgba(46, 77, 108, 0.06)'),
@@ -155,6 +156,7 @@ export default {
     },
     danger: {
       hover: get('rgba(234, 74, 90, 0.08)'),
+      hoverText: get('danger.fg'),
       focus: get('rgba(234, 74, 90, 0.14)')
     }
   }
