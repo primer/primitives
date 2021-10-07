@@ -1,5 +1,5 @@
 ---
-"@primer/primitives": patch
+"@primer/primitives": minor
 ---
 
-Added ```actionListState``` variables
+Add `actionListState` variables
