@@ -151,13 +151,13 @@ export default {
 
   actionListState: {
     default: {
-      hoverBg: get('rgba(46, 77, 108, 0.06)'),
-      focusBg: get('rgba(54, 77, 100, 0.16)')
+      hoverBg: 'rgba(46, 77, 108, 0.06)',
+      focusBg: 'rgba(54, 77, 100, 0.16)'
     },
     danger: {
-      hoverBg: get('rgba(234, 74, 90, 0.08)'),
+      hoverBg: 'rgba(234, 74, 90, 0.08)',
       hoverText: get('danger.fg'),
-      focusBg: get('rgba(234, 74, 90, 0.14)')
+      focusBg: 'rgba(234, 74, 90, 0.14)'
     }
   }
 }
