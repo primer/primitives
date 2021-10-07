@@ -155,6 +155,7 @@ export default {
     },
     danger: {
       hover: get('rgba(248, 81, 73, 0.16)'),
+      hoverText: get('danger.fg'),
       focus: get('rgba(248, 81, 73, 0.16)')
     }
   }
