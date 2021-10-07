@@ -147,5 +147,15 @@ export default {
   underlinenav: {
     icon: get('fg.subtle'),
     borderHover: get('neutral.muted')
+  },
+  actionListState: {
+    default: {
+      hover: get('rgba(46, 77, 108, 0.06)'),
+      focus: get('rgba(54, 77, 100, 0.16)')
+    },
+    danger: {
+      hover: get('rgba(234, 74, 90, 0.08)'),
+      focus: get('rgba(234, 74, 90, 0.14)')
+    }
   }
 }
