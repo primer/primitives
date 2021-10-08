@@ -2,4 +2,4 @@
 "@primer/primitives": minor
 ---
 
-Add `actionListState` variables
+Add `actionListItem` variables
