@@ -149,7 +149,7 @@ export default {
     borderHover: get('neutral.muted')
   },
 
-  actionListState: {
+  actionListItem: {
     default: {
       hoverBg: 'rgba(46, 77, 108, 0.06)',
       focusBg: 'rgba(54, 77, 100, 0.16)'

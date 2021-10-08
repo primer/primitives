@@ -199,7 +199,7 @@ const exceptions = {
     },
   },
   
-  actionListState: {
+  actionListItem: {
     default: {
       hoverBg: 'rgba(201, 206, 212, 0.12)',
       focusBg: 'rgba(201, 206, 212, 0.24)'
