@@ -149,14 +149,17 @@ export default {
   },
 
   actionListItem: {
+    inlineDivider: alpha(get('border.default'), 0.48),
+  
     default: {
-      hoverBg: 'rgba(201, 206, 212, 0.12)',
-      focusBg: 'rgba(201, 206, 212, 0.24)'
+      hoverBg: alpha(get('scale.gray.2'), 0.12),
+      activeBg: alpha(get('scale.gray.2'), 0.2),
+      selectedBg: alpha(get('scale.gray.2'), 0.08),
     },
     danger: {
-      hoverBg: 'rgba(248, 81, 73, 0.16)',
-      hoverText: get('danger.fg'),
-      focusBg: 'rgba(248, 81, 73, 0.16)'
+      hoverBg: alpha(get('scale.red.4'), 0.16),
+      activeBg: alpha(get('scale.red.4'), 0.24),
+      hoverText: get('scale.red.3')
     }
   }
 }
