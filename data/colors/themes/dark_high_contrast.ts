@@ -202,7 +202,6 @@ const exceptions = {
   actionListItem: {
     default: {
       hoverBg: 'rgba(201, 206, 212, 0.12)'
-   
     },
     danger: {
       hoverBg: get('danger.muted'),
