@@ -14,7 +14,7 @@ export function ColorThemePicker() {
           key={key}
           sx={{
             border: '1px solid',
-            borderColor: key === colorTheme ? 'blue.5' : 'border.gray',
+            borderColor: key === colorTheme ? 'accent.fg' : 'border.default',
             borderRadius: 2,
             overflow: 'hidden'
           }}
@@ -48,7 +48,7 @@ function ColorThemePreview({colorTheme}) {
         display: 'flex',
         p: 3,
         borderBottom: '1px solid',
-        borderColor: 'border.gray',
+        borderColor: 'border.default',
         justifyContent: 'center'
       }}
     >
