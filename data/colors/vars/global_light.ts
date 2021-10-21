@@ -18,6 +18,11 @@ export default {
     muted: lighten(get('scale.gray.2'), 0.03),
     subtle: alpha(get('scale.black'), 0.15)
   },
+  shade: {
+    default: alpha(get('scale.gray.2'), 0.48),
+    muted: alpha(get('scale.gray.2'), 0.32),
+    subtle: alpha(get('scale.gray.2'), 0.24),
+  },
   shadow: {
     small: (theme: any) => `0 1px 0 ${alpha(get('scale.black'), 0.04)(theme)}`,
     medium: (theme: any) => `0 3px 6px ${alpha(get('scale.gray.4'), 0.15)(theme)}`,
