@@ -1,5 +1,11 @@
 # @primer/primitives
 
+## 6.0.0
+
+### Major Changes
+
+- [#260](https://github.com/primer/primitives/pull/260) [`a11b8a7`](https://github.com/primer/primitives/commit/a11b8a7aaeb86b838501ded7a2c8a2eff0e68aba) Thanks [@jonrohan](https://github.com/jonrohan)! - Rename color blind themes
+
 ## 5.1.0
 
 ### Minor Changes
