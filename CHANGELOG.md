@@ -1,5 +1,15 @@
 # @primer/primitives
 
+## 6.0.0
+
+### Major Changes
+
+- [#254](https://github.com/primer/primitives/pull/254) [`71bd715`](https://github.com/primer/primitives/commit/71bd715b7bf7ebf65c6c75e123e9a59e379661f5) Thanks [@jonrohan](https://github.com/jonrohan)! - Rename color blind themes
+
+### Minor Changes
+
+- [#252](https://github.com/primer/primitives/pull/252) [`48149b1`](https://github.com/primer/primitives/commit/48149b116a4708ad87712e6b13cfa1489f66cc0c) Thanks [@simurai](https://github.com/simurai)! - Add `primer.fg.disabled`
+
 ## 5.0.0
 
 ### Major Changes
