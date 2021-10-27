@@ -147,5 +147,20 @@ export default {
   underlinenav: {
     icon: get('fg.subtle'),
     borderHover: get('neutral.muted')
+  },
+
+  actionListItem: {
+    inlineDivider: alpha(get('border.default'), 0.48),
+    
+    default: {
+      hoverBg: alpha(get('scale.gray.2'), 0.32),
+      activeBg: alpha(get('scale.gray.2'), 0.48),
+      selectedBg: alpha(get('scale.gray.2'), 0.24)
+    },
+    danger: {
+      hoverBg: alpha(get('danger.subtle'), 0.64),
+      activeBg: get('danger.subtle'),
+      hoverText: get('danger.fg')
+    }
   }
 }
