@@ -1,5 +1,11 @@
 # @primer/primitives
 
+## 6.1.0
+
+### Minor Changes
+
+- [#256](https://github.com/primer/primitives/pull/256) [`893d873`](https://github.com/primer/primitives/commit/893d873c57240df02a23a82c178d9a3a0ca6a983) Thanks [@auareyou](https://github.com/auareyou)! - Add `actionListItem` variables
+
 ## 6.0.0
 
 ### Major Changes
