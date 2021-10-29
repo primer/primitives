@@ -15,7 +15,6 @@ const mktg = {
   }
 }
 
-// TODO: Migrate once new marketing colors (lemon, lime, indigo) are added
 export default {
   mktg: {
     success: mix(get('scale.green.5'), get('scale.green.4')),
@@ -45,17 +44,6 @@ export default {
         },
         text: get('scale.white')
       },
-      enterprise: {
-        bg: {
-          top: lighten(mktg.purple.primary, 0.05),
-          bottom: mktg.purple.primary
-        },
-        bgOverlay: {
-          top: lighten(mktg.purple.secondary, 0.05),
-          bottom: mktg.purple.secondary
-        },
-        text: get('scale.white')
-      },
       outline: {
         text: get('scale.white'),
         border: alpha(get('scale.white'), 0.3),
@@ -68,18 +56,6 @@ export default {
           borderInset: alpha(get('scale.white'), 0.5)
         }
       },
-      dark: {
-        text: get('scale.white'),
-        border: alpha(get('scale.white'), 0.3),
-        hover: {
-          text: get('scale.white'),
-          border: alpha(get('scale.white'), 0.5)
-        },
-        focus: {
-          border: get('scale.white'),
-          borderInset: alpha(get('scale.white'), 0.5)
-        }
-      }
     }
   }
 }
