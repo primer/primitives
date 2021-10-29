@@ -17,12 +17,6 @@ const mktg = {
 
 export default {
   mktg: {
-    success: mix(get('scale.green.5'), get('scale.green.4')),
-    info: mix(get('scale.blue.5'), get('scale.blue.4'), 0.42),
-    bgShadeGradient: {
-      top: alpha(get('scale.black'), 0.065),
-      bottom: alpha(get('scale.black'), 0)
-    },
     btn: {
       bg: {
         top: lighten(mktg.blue.primary, 0.05),
