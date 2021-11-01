@@ -18,37 +18,12 @@ const mktg = {
 export default {
   mktg: {
     btn: {
-      bg: {
-        top: lighten(mktg.blue.primary, 0.05),
-        bottom: mktg.blue.primary
-      },
-      bgOverlay: {
-        top: lighten(mktg.blue.secondary, 0.05),
-        bottom: mktg.blue.secondary
-      },
-      text: get('scale.white'),
-      primary: {
-        bg: {
-          top: lighten(mktg.green.primary, 0.05),
-          bottom: mktg.green.primary
-        },
-        bgOverlay: {
-          top: lighten(mktg.green.secondary, 0.05),
-          bottom: mktg.green.secondary
-        },
-        text: get('scale.white')
-      },
-      outline: {
-        text: get('scale.white'),
-        border: alpha(get('scale.white'), 0.3),
-        hover: {
-          text: get('scale.white'),
-          border: alpha(get('scale.white'), 0.5)
-        },
-        focus: {
-          border: get('scale.white'),
-          borderInset: alpha(get('scale.white'), 0.5)
-        }
+      bg: '#f6f8fa',
+      shadow: {
+        outline: 'rgb(255 255 255 / 25%) 0 0 0 1px inset',
+        focus: 'rgb(255 255 255 / 25%) 0 0 0 4px',
+        hover: '0 4px 7px rgba(0, 0, 0, 0.15), 0 100px 80px rgba(255, 255, 255, 0.02), 0 42px 33px rgba(255, 255, 255, 0.024), 0 22px 18px rgba(255, 255, 255, 0.028), 0 12px 10px rgba(255, 255, 255, 0.034), 0 7px 5px rgba(255, 255, 255, 0.04), 0 3px 2px rgba(255, 255, 255, 0.07)',
+        hoverMuted: 'rgb(255 255 255) 0 0 0 2px inset'
       },
     }
   }
