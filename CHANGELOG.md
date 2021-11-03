@@ -1,5 +1,23 @@
 # @primer/primitives
 
+## 6.1.0
+
+### Minor Changes
+
+- [#256](https://github.com/primer/primitives/pull/256) [`893d873`](https://github.com/primer/primitives/commit/893d873c57240df02a23a82c178d9a3a0ca6a983) Thanks [@auareyou](https://github.com/auareyou)! - Add `actionListItem` variables
+
+## 6.0.0
+
+### Major Changes
+
+- [#260](https://github.com/primer/primitives/pull/260) [`a11b8a7`](https://github.com/primer/primitives/commit/a11b8a7aaeb86b838501ded7a2c8a2eff0e68aba) Thanks [@jonrohan](https://github.com/jonrohan)! - Rename color blind themes
+
+## 5.1.0
+
+### Minor Changes
+
+- [#252](https://github.com/primer/primitives/pull/252) [`48149b1`](https://github.com/primer/primitives/commit/48149b116a4708ad87712e6b13cfa1489f66cc0c) Thanks [@simurai](https://github.com/simurai)! - Add `primer.fg.disabled`
+
 ## 5.0.0
 
 ### Major Changes
