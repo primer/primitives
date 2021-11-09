@@ -1,5 +1,11 @@
 # @primer/primitives
 
+## 7.0.1
+
+### Patch Changes
+
+- [#269](https://github.com/primer/primitives/pull/269) [`f16073c`](https://github.com/primer/primitives/commit/f16073c694209b0ef631a78fabaf304e2487b7c9) Thanks [@simurai](https://github.com/simurai)! - Mark mktg primitives as removed
+
 ## 7.0.0
 
 ### Major Changes
