@@ -1,5 +1,11 @@
 # @primer/primitives
 
+## 7.0.0
+
+### Major Changes
+
+- [#267](https://github.com/primer/primitives/pull/267) [`39a664e`](https://github.com/primer/primitives/commit/39a664ebda5d971cb65acc60dc861ea448f64deb) Thanks [@simurai](https://github.com/simurai)! - Prepare for new gloss buttons with color mode support
+
 ## 6.1.0
 
 ### Minor Changes
