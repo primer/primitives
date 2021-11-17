@@ -1,4 +1,5 @@
 import light from './themes/light'
+import light_high_contrast from './themes/light_high_contrast'
 import light_colorblind from './themes/light_colorblind'
 import dark from './themes/dark'
 import dark_dimmed from './themes/dark_dimmed'
@@ -7,6 +8,7 @@ import dark_colorblind from './themes/dark_colorblind'
 
 export default {
   light,
+  light_high_contrast,
   light_colorblind,
   dark,
   dark_dimmed,
