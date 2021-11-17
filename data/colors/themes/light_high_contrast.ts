@@ -5,15 +5,15 @@ const scale = {
 black: '#010409',
 white: '#ffffff',
 gray: [
-  '#FFFFFF'
-  '#E7ECF0'
-  '#CED5DC'
-  '#ACB6C0'
-  '#88929D'
-  '#67707A'
-  '#4F5760'
-  '#3D454E'
-  '#30363D'
+  '#FFFFFF',
+  '#E7ECF0',
+  '#CED5DC',
+  '#ACB6C0',
+  '#88929D',
+  '#67707A',
+  '#4F5760',
+  '#3D454E',
+  '#30363D',
   '#24292F'
 ],
 blue: [
