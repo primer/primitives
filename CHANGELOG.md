@@ -1,5 +1,11 @@
 # @primer/primitives
 
+## 7.1.0
+
+### Minor Changes
+
+- [#271](https://github.com/primer/primitives/pull/271) [`f6e25d7`](https://github.com/primer/primitives/commit/f6e25d7a4a262bb7d0b08ae22beca6c9aaae63bf) Thanks [@Juliusschaeper](https://github.com/Juliusschaeper)! - Add light high contrast theme
+
 ## 7.0.1
 
 ### Patch Changes
