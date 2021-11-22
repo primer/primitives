@@ -11,20 +11,20 @@ export default {
   diffBlob: {
     addition: {
       numText: get('fg.default'),
-      fg: get('fg.onEmphasis'),
+      fg: get('fg.default'),
       numBg: '#CCFFD8',
       lineBg: '#E6FFEC',
-      wordBg: get('success.emphasis')
+      wordBg: '#ABF2BC'
     },
     deletion: {
       numText: get('fg.default'),
-      fg: get('fg.onEmphasis'),
+      fg: get('fg.default'),
       numBg: '#FFD7D5',
       lineBg: get('danger.subtle'),
-      wordBg: get('danger.emphasis')
+      wordBg: get('danger.muted')
     },
     hunk: {
-      numBg: get('scale.blue.1')
+      numBg: get('accent.muted')
     },
     expander: {
       icon: get('fg.muted')

@@ -135,6 +135,19 @@ const exceptions = {
     },
     attention: {
         emphasis: get('scale.yellow.5')
+    },
+    diffBlob: {
+      addition: {
+        fg: get('fg.onEmphasis'),
+        wordBg: get('success.emphasis')
+      },
+      deletion: {
+        fg: get('fg.onEmphasis'),
+        wordBg: get('danger.emphasis')
+      },
+      hunk: {
+        numBg: get('scale.blue.1')
+      }
     }
 }
 
