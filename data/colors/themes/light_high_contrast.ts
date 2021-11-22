@@ -123,9 +123,9 @@ const exceptions = {
       subtle: get('scale.gray.1')
     },
     border: {
-      default: get('scale.gray.9'),
+      default: get('scale.gray.8'),
       muted: get('scale.gray.4'),
-      subtle: alpha(get('scale.black'), 0.9)
+      subtle: alpha(get('scale.black'), 0.8)
     },
     neutral: {
         subtle: get('scale.gray.1')
@@ -152,6 +152,44 @@ const exceptions = {
     },
     sponsors: {
       muted: get('scale.pink.3')
+    },
+    btn: {
+      bg: get('scale.gray.1'),
+      border: get('border.subtle'),
+      HoverBg: get('scale.gray.2'),
+      activeBg: get('scale.gray.3'),
+      selectedBg: get('scale.gray.3'),
+      focusBg: get('scale.gray.2'),
+      primary: {
+        bg: get('success.emphasis'),
+        border: get('scale.green.7'),
+        hoverBg: get('scale.green.6'),
+        hoverBorder: get('scale.green.7'),
+        focusBg: get('scale.green.7'),
+        focusBorder: get('scale.green.7')
+      },
+      outline: {
+        text: get('scale.blue.6'),
+        hoverBg: get('accent.emphasis'),
+        hoverBorder: get('scale.blue.7'),
+        selectedBg: get('scale.blue.7'),
+        selectedBorder: get('scale.blue.7'),
+        focusBG: get('scale.blue.7'),
+        focusBorder: get('scale.blue.7'),
+        disabledText: alpha(get('scale.blue.5'), 0.5),
+        disabledBg: get('scale.gray.1')
+      },
+      danger: {
+        text: get('scale.red.6'),
+        hoverBg: get('danger.emphasis'),
+        hoverBorder: get('scale.red.7'),
+        selectedBg: get('scale.red.7'),
+        selectedBorder: get('scale.red.7'),
+        focusBg: get('scale.red.7'),
+        focusBorder: get('scale.red.7'),
+        disabledBg: get('scale.gray.1'),
+        icon: get('scale.red.6'),
+      }
     }
 }
 
