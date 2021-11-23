@@ -123,9 +123,9 @@ const exceptions = {
     subtle: get('scale.gray.1')
   },
   border: {
-    default: get('scale.gray.9'),
+    default: get('scale.gray.8'),
     muted: get('scale.gray.4'),
-    subtle: alpha(get('scale.black'), 0.9)
+    subtle: alpha(get('scale.black'), 0.8)
   },
   neutral: {
       subtle: get('scale.gray.1')
