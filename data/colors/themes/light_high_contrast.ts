@@ -174,7 +174,6 @@ const exceptions = {
       hoverBorder: get('scale.blue.7'),
       selectedBg: get('scale.blue.7'),
       selectedBorder: get('scale.blue.7'),
-      focusBG: get('scale.blue.7'),
       focusBorder: get('scale.blue.7'),
       disabledText: alpha(get('scale.blue.5'), 0.5),
       disabledBg: get('scale.gray.1')
@@ -185,7 +184,6 @@ const exceptions = {
       hoverBorder: get('scale.red.7'),
       selectedBg: get('scale.red.7'),
       selectedBorder: get('scale.red.7'),
-      focusBg: get('scale.red.7'),
       focusBorder: get('scale.red.7'),
       disabledBg: get('scale.gray.1'),
       icon: get('scale.red.6')
