@@ -1,5 +1,15 @@
 # @primer/primitives
 
+## 7.1.1
+
+### Patch Changes
+
+- [#273](https://github.com/primer/primitives/pull/273) [`5c8d9a9`](https://github.com/primer/primitives/commit/5c8d9a99fca308bc23ba03e29a2a8ef2eef947fa) Thanks [@Juliusschaeper](https://github.com/Juliusschaeper)! - Border improvements
+
+* [#276](https://github.com/primer/primitives/pull/276) [`f2d41ec`](https://github.com/primer/primitives/commit/f2d41ec00c70a5e794dc76567098ebcb11fbed8a) Thanks [@Juliusschaeper](https://github.com/Juliusschaeper)! - Improved button states for light HC
+
+- [#274](https://github.com/primer/primitives/pull/274) [`f071312`](https://github.com/primer/primitives/commit/f0713123fd89552fab1b38e6f2be88747d9d8f1a) Thanks [@Juliusschaeper](https://github.com/Juliusschaeper)! - Improved contrast for change highlights in diff
+
 ## 7.1.0
 
 ### Minor Changes
