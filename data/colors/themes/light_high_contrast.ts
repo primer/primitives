@@ -153,6 +153,12 @@ const exceptions = {
   sponsors: {
     muted: get('scale.pink.3')
   },
+  topicTag: {
+    border: get('accent.emphasis')
+  },
+  counter: {
+    border: get('border.default')
+  },
   btn: {
     bg: get('scale.gray.1'),
     border: get('border.subtle'),

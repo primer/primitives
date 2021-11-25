@@ -11,6 +11,9 @@ export default {
   topicTag: {
     border: 'transparent'
   },
+  counter: {
+    border: 'transparent'
+  },
   selectMenu: {
     backdropBorder: get('scale.gray.5'),
     tapHighlight: alpha(get('scale.gray.6'), 0.5),
