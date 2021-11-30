@@ -59,4 +59,12 @@ const scale = {
   ]
 }
 
+const exceptions = {
+  diffBlob: {
+    expander: {
+      icon: get('fg.default'),
+    }
+  }
+}
+
 export default merge(dark, {scale})
