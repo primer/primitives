@@ -204,6 +204,9 @@ const exceptions = {
       fg: get('fg.onEmphasis'),
       wordBg: get('danger.emphasis')
     },
+    expander: {
+      icon: get('fg.onEmphasis'),
+    },
     hunk: {
       numBg: get('scale.blue.1')
     }

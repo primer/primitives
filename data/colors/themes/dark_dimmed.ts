@@ -1,4 +1,4 @@
-import {merge} from '../../../src/utils'
+import {get, merge} from '../../../src/utils'
 import dark from './dark'
 
 const scale = {
@@ -57,6 +57,14 @@ const scale = {
     '#771D13',
     '#5D1008'
   ]
+}
+
+const exceptions = {
+  diffBlob: {
+    expander: {
+      icon: get('fg.default'),
+    }
+  }
 }
 
 export default merge(dark, {scale})
