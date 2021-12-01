@@ -210,6 +210,9 @@ const exceptions = {
     hunk: {
       numBg: get('scale.blue.1')
     }
+  },
+  header: {
+    divider: get('scale.gray.3')
   }
 }
 
