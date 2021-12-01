@@ -26,6 +26,7 @@ export default {
   header: {
     text: alpha(get('scale.white'), 0.7),
     bg: get('scale.gray.9'),
+    divider: get('scale.gray.6'),
     logo: get('scale.white')
   },
   headerSearch: {
@@ -154,7 +155,7 @@ export default {
 
   actionListItem: {
     inlineDivider: alpha(get('border.default'), 0.48),
-    
+
     default: {
       hoverBg: alpha(get('scale.gray.2'), 0.32),
       activeBg: alpha(get('scale.gray.2'), 0.48),
