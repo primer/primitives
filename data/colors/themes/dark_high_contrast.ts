@@ -192,7 +192,7 @@ const exceptions = {
       fg: get('fg.onEmphasis'),
     },
     expander: {
-      icon: get('fg.onEmphasis'),
+      icon: get('fg.default'),
     },
     hunk: {
       numBg: alpha(get('accent.muted'), 0.4),
