@@ -1,5 +1,23 @@
 # @primer/primitives
 
+## 7.2.0
+
+### Minor Changes
+
+- [#282](https://github.com/primer/primitives/pull/282) [`71f5486`](https://github.com/primer/primitives/commit/71f548663a247c3ff347657ebaaceae7d1c458f5) Thanks [@simurai](https://github.com/simurai)! - Add `header.divider`
+
+* [#279](https://github.com/primer/primitives/pull/279) [`3729355`](https://github.com/primer/primitives/commit/3729355a30bd361f2be5da379cc85357f474d9a1) Thanks [@Juliusschaeper](https://github.com/Juliusschaeper)! - Add border to topic-tag and counters
+
+### Patch Changes
+
+- [#277](https://github.com/primer/primitives/pull/277) [`3fda2d3`](https://github.com/primer/primitives/commit/3fda2d3eb43662331c1b93876267592bf7b9fcc3) Thanks [@Juliusschaeper](https://github.com/Juliusschaeper)! - Increased contrast in Light HC shades
+
+* [#281](https://github.com/primer/primitives/pull/281) [`8da4db2`](https://github.com/primer/primitives/commit/8da4db27af11bb011c2efcbe2e5eb736a09cbc55) Thanks [@simurai](https://github.com/simurai)! - Improve diff-blob-expander-icon (follow-up)
+
+- [#281](https://github.com/primer/primitives/pull/281) [`8da4db2`](https://github.com/primer/primitives/commit/8da4db27af11bb011c2efcbe2e5eb736a09cbc55) Thanks [@simurai](https://github.com/simurai)! - Improve diff-blob-expander
+
+* [#280](https://github.com/primer/primitives/pull/280) [`46d2c1e`](https://github.com/primer/primitives/commit/46d2c1eb5727ad6d68ba1ef8fc4c8f5241c2d857) Thanks [@simurai](https://github.com/simurai)! - Improve diff-blob-expander-icon
+
 ## 7.1.1
 
 ### Patch Changes
