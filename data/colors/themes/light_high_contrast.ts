@@ -210,6 +210,19 @@ const exceptions = {
   },
   header: {
     divider: get('scale.gray.3')
+  },
+  actionListItem: {
+    inlineDivider: (get('border.muted'),
+    default: {
+      hoverBg: get('scale.gray.1'),
+      activeBg: get('scale.gray.2'),
+      selectedBg: get('scale.gray.2')
+    },
+    danger: {
+      hoverBg: get('anger.emphasis'),
+      activeBg: get('scale.red.7'),
+      hoverText: get('fg.onEmphasis')
+    }
   }
 }
 
