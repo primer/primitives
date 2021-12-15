@@ -212,7 +212,7 @@ const exceptions = {
     divider: get('scale.gray.3')
   },
   actionListItem: {
-    inlineDivider: (get('border.muted'),
+    inlineDivider: get('border.muted'),
     default: {
       hoverBg: get('scale.gray.1'),
       activeBg: get('scale.gray.2'),
