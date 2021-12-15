@@ -219,7 +219,7 @@ const exceptions = {
       selectedBg: get('scale.gray.2')
     },
     danger: {
-      hoverBg: get('anger.emphasis'),
+      hoverBg: get('danger.emphasis'),
       activeBg: get('scale.red.7'),
       hoverText: get('fg.onEmphasis')
     }
