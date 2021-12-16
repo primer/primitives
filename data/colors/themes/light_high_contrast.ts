@@ -210,7 +210,8 @@ const exceptions = {
   },
   header: {
     divider: get('scale.gray.3')
-  }
+  },
+  pageHeaderBg: get('canvas.default')
 }
 
 export default merge(light, exceptions, {scale})
