@@ -215,8 +215,10 @@ const exceptions = {
     inlineDivider: get('border.muted'),
     default: {
       hoverBg: get('scale.gray.1'),
+      hoverBorder: get('border.muted'),
       activeBg: get('scale.gray.2'),
-      selectedBg: get('scale.gray.2')
+      selectedBg: get('scale.gray.2'),
+      selectedBorder: get('border.default')
     },
     danger: {
       hoverBg: get('danger.emphasis'),
