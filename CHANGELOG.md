@@ -1,5 +1,11 @@
 # @primer/primitives
 
+## 7.3.0
+
+### Minor Changes
+
+- [#284](https://github.com/primer/primitives/pull/284) [`fc76170`](https://github.com/primer/primitives/commit/fc76170cc8e6ee59011d70857698867093f94d81) Thanks [@simurai](https://github.com/simurai)! - Add `pageHeaderBg` primitive
+
 ## 7.2.0
 
 ### Minor Changes
