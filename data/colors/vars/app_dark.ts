@@ -4,6 +4,7 @@ import {get, alpha} from '../../../src/utils'
 
 export default {
   canvasDefaultTransparent: alpha(get('canvas.default'), 0),
+  pageHeaderBg: get('canvas.default'),
   marketingIcon: {
     primary: get('scale.blue.2'),
     secondary: get('scale.blue.5')
