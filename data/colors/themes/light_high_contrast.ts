@@ -225,7 +225,8 @@ const exceptions = {
       activeBg: get('scale.red.7'),
       hoverText: get('fg.onEmphasis')
     }
-  }
+  },
+  pageHeaderBg: get('canvas.default')
 }
 
 export default merge(light, exceptions, {scale})
