@@ -198,14 +198,16 @@ const exceptions = {
       numBg: alpha(get('accent.muted'), 0.4),
     },
   },
-  
+
   actionListItem: {
-    inlineDivider: get('border.default'),
-    
+    inlineDivider: get('border.muted'),
+
     default: {
-      hoverBg: alpha(get('scale.gray.2'), 0.12),
-      activeBg: alpha(get('scale.gray.2'), 0.24),
-      selectedBg: alpha(get('scale.gray.2'), 0.08),
+      hoverBg: get('scale.gray.8'),
+      hoverBorder: get('border.default'),
+      activeBg: get('scale.gray.6'),
+      activeBorder: get('scale.gray.4'),
+      selectedBg: get('scale.gray.6')
     },
     danger: {
       hoverBg: get('danger.emphasis'),
