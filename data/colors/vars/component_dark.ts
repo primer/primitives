@@ -159,8 +159,8 @@ export default {
       hoverBg: alpha(get('scale.gray.2'), 0.12),
       hoverBorder: 'transparent',
       activeBg: alpha(get('scale.gray.2'), 0.2),
-      selectedBg: alpha(get('scale.gray.2'), 0.08),
-      selectedBorder: 'transparent'
+      activeBorder: 'transparent',
+      selectedBg: alpha(get('scale.gray.2'), 0.08)
     },
     danger: {
       hoverBg: alpha(get('scale.red.4'), 0.16),

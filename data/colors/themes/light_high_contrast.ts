@@ -217,8 +217,8 @@ const exceptions = {
       hoverBg: get('scale.gray.1'),
       hoverBorder: get('border.muted'),
       activeBg: get('scale.gray.2'),
-      selectedBg: get('scale.gray.2'),
-      selectedBorder: get('border.default')
+      activeBorder: get('border.default'),
+      selectedBg: get('scale.gray.2')
     },
     danger: {
       hoverBg: get('danger.emphasis'),
