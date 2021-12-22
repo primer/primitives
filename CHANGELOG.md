@@ -1,5 +1,11 @@
 # @primer/primitives
 
+## 7.4.0
+
+### Minor Changes
+
+- [#283](https://github.com/primer/primitives/pull/283) [`1bcb44f`](https://github.com/primer/primitives/commit/1bcb44f51bbf612302e9204cf4e1dc187ec6be94) Thanks [@Juliusschaeper](https://github.com/Juliusschaeper)! - Background adjustments for High Contrast theme.
+
 ## 7.3.0
 
 ### Minor Changes
