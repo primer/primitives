@@ -1,5 +1,11 @@
 # @primer/primitives
 
+## 7.4.1
+
+### Patch Changes
+
+- [#289](https://github.com/primer/primitives/pull/289) [`0253f6e`](https://github.com/primer/primitives/commit/0253f6eda2868c128761a30a41b236b734c3cd34) Thanks [@simurai](https://github.com/simurai)! - Add utility mapping
+
 ## 7.4.0
 
 ### Minor Changes
