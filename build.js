@@ -1,34 +1,68 @@
-//
+// const StyleDictionaryPackage = require('style-dictionary');
 
-// const StyleDictionary = require("style-dictionary");
-// const tokens = require("./tokens");
+// // HAVE THE STYLE DICTIONARY CONFIG DYNAMICALLY GENERATED
 
-// module.exports = {
-//   source: ["tokens/**/*.json"],
-//   platforms: {
-//     // Web output in scss partialformat
-//     "scss/category": {
-//       transformGroup: "scss",
-//         buildPath: `build/scss/`,
-//       transforms: ["attribute/cti", "name/cti/kebab", "size/pxToRem"],
-//       files: tokens.map((tokenCategory) => ({
-//         destination: `_${tokenCategory}.scss`,
-//         format: "scss/variables",
-//         filter: {
-//           attributes: {
-//             category: tokenCategory,
-//           },
-//         },
-//       })),
-//     },
-//   },
-// };
+// function getStyleDictionaryConfig(typ) {
+//   return {
+//     "source": [
+//           "tokens/base/**/*.json",
+//         `tokens/alias/functional/${type}/*.json`,
+//     //   "tokens/**/*.json",
+//     //   `tokens/functionals/${functional}/*.json`
+//     ],
+//     "platforms": {
+//       "web": {
+//         "transformGroup": "web",
+//         "buildPath": `build/${type}/`,
+//         "files": [{
+//           "destination": "tokens.scss",
+//           "format": "css/variables"
+//         }]
+//       },
+//     //   "android": {
+//     //     "transformGroup": "android",
+//     //     "buildPath": `build/android/${base}/`,
+//     //     "files": [{
+//     //       "destination": "tokens.colors.xml",
+//     //       "format": "android/colors"
+//     //     },{
+//     //       "destination": "tokens.dimens.xml",
+//     //       "format": "android/dimens"
+//     //     },{
+//     //       "destination": "tokens.font_dimens.xml",
+//     //       "format": "android/fontDimens"
+//     //     }]
+//     //   },
+//     //   "ios": {
+//     //     "transformGroup": "ios",
+//     //     "buildPath": `build/ios/${base}/`,
+//     //     "files": [{
+//     //       "destination": "tokens.h",
+//     //       "format": "ios/macros"
+//     //     }]
+//     //   }
+//     }
+//   };
+// }
 
-// StyleDictionary.registerFormat({
-//   name: "custom/cjsmodule",
-//   formatter: function({ dictionary }) {
-//     return `module.exports = {${dictionary.allTokens.map(
-//       (token) => `\n\t${token.name}: "${token.value}"`
-//     )}\n};`;
-//   },
-// });
+// console.log('Build started...');
+
+// // PROCESS THE DESIGN TOKENS FOR THE DIFFEREN BRANDS AND FUNCTIONALS
+
+// ['functional'].map(function (alias) {
+//   ['web'].map(function (platform) {
+
+//     console.log('\n==============================================');
+//     console.log(`\nProcessing: [${platform}] [${alias}]`);
+
+//     const StyleDictionary = StyleDictionaryPackage.extend(getStyleDictionaryConfig(alias, platform));
+
+//     StyleDictionary.buildPlatform(platform);
+
+//     console.log('\nEnd processing');
+
+//   })
+// })
+
+// console.log('\n==============================================');
+// console.log('\nBuild completed!');

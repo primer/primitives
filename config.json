@@ -1,16 +1,16 @@
-{
-  "source": ["tokens/**/*.json"],
-  "platforms": {
-    "css": {
-      "transforms": ["attribute/cti", "name/cti/kebab", "size/pxToRem"],
-      "buildPath": "build/css/",
-      "files": [
-        {
-          "destination": "_tokens.css",
-          "format": "css/variables",
-          "filter": "(token) => token.filePath.includes(`tokens/size/base`)"
-        }
-      ]
-    }
-  }
-}
+// {
+//   "source": ["tokens/**/*.json"],
+//   "platforms": {
+//     "css": {
+//       "transforms": ["attribute/cti", "name/cti/kebab", "size/pxToRem"],
+//       "buildPath": "build/css/",
+//       "files": [
+//         {
+//           "destination": "_tokens.css",
+//           "format": "css/variables",
+//           "filter": "(token) => token.filePath.includes(`tokens/size/base`)"
+//         }
+//       ]
+//     }
+//   }
+// }

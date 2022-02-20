@@ -28,7 +28,7 @@
     "prepack": "yarn build",
     "watch": "ls data/**/*.scss script/**/*.ts | entr -s 'yarn build'",
     "release": "yarn build && changeset publish",
-    "build-sd": "style-dictionary build"
+    "build-sd": "style-dictionary build --config ./config.js"
   },
   "prettier": "@github/prettier-config",
   "devDependencies": {
