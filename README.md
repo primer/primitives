@@ -1,125 +1,181 @@
-# Primer Primitives
+# Basic Style Dictionary
 
-[![npm package](https://img.shields.io/npm/v/@primer/primitives.svg?style=flat)](https://www.npmjs.com/package/@primer/primitives)
-
-This repo contains values for color, spacing, and typography primitives for use with [Primer][primer], GitHub's design system.
-
-![primer primitives diagram](https://user-images.githubusercontent.com/4608155/135384588-192c279f-020f-4544-a61f-559be6629f18.png)
-
-
-## Install
-
-This repository is distributed on [npm][npm]. After [installing npm][install-npm], you can install `@primer/primitives` with this command.
-
-```sh
-$ npm install --save @primer/primitives
+This example code is bare-bones to show you what this framework can do. If you have the style-dictionary module installed globally, you can `cd` into this directory and run:
+```bash
+style-dictionary build
 ```
 
-## Usage
+You should see something like this output:
+```
+Copying starter files...
 
-Primitive data is served in several formats from the `dist/` folder:
+Source style dictionary starter files created!
 
-- `dist/scss` contains [SCSS][scss] files that define CSS variables to be imported into other SCSS files
-- `dist/json` contains JSON files for each set of primitives
-- `dist/js` contains CommonJS-style JavaScript modules for each set of primitives, as well as an index file that loads all of the primitives for all primitive types; you can access this via `require('@primer/primitives')`. The JavaScript modules also include TypeScript typings files for use in TypeScript projects.
+Running `style-dictionary build` for the first time to generate build artifacts.
 
-## Deprecating variables
 
-To deprecate a variable, define a mapping from the deprecated variable to its replacement(s) in a file called `deprecated.json` in the approriate subdirectory of `data`:
+scss
+✔︎  build/scss/_variables.scss
 
-```diff
-  data/
-    colors/
-+     deprecated.json
-    spacing/
-    ...
+android
+✔︎  build/android/font_dimens.xml
+✔︎  build/android/colors.xml
+
+compose
+✔︎ build/compose/StyleDictionaryColor.kt
+✔︎ build/compose/StyleDictionarySize.kt
+
+ios
+✔︎  build/ios/StyleDictionaryColor.h
+✔︎  build/ios/StyleDictionaryColor.m
+✔︎  build/ios/StyleDictionarySize.h
+✔︎  build/ios/StyleDictionarySize.m
+
+ios-swift
+✔︎  build/ios-swift/StyleDictionary.swift
+
+ios-swift-separate-enums
+✔︎  build/ios-swift/StyleDictionaryColor.swift
+✔︎  build/ios-swift/StyleDictionarySize.swift
 ```
 
-```js
-// data/colors/deprecated.json
-{
-{
-  "text.primary": "fg.default", // this means: `text.primary` is deprecated. Use `fg.default` instead
-  "auto.blue.4": ["accent.fg, accent.emphasis"], // this means: `auto.blue.4` is deprecated. Use `accent.fg` or `accent.emphasis` instead
-  "text.white": null // this means: `text.white` is deprecated. We don't have a replacement for it
+Good for you! You have now built your first style dictionary! Moving on, take a look at what we have built. This should have created a build directory and it should look like this:
+```
+├── README.md
+├── config.json
+├── tokens/
+│   ├── color/
+│       ├── base.json
+│       ├── font.json
+│   ├── size/
+│       ├── font.json
+├── build/
+│   ├── android/
+│      ├── font_dimens.xml
+│      ├── colors.xml
+│   ├── compose/
+│      ├── StyleDictionaryColor.kt
+│      ├── StyleDictionarySize.kt
+│   ├── scss/
+│      ├── _variables.scss
+│   ├── ios/
+│      ├── StyleDictionaryColor.h
+│      ├── StyleDictionaryColor.m
+│      ├── StyleDictionarySize.h
+│      ├── StyleDictionarySize.m
+│   ├── ios-swift/
+│      ├── StyleDictionary.swift
+│      ├── StyleDictionaryColor.swift
+│      ├── StyleDictionarySize.swift
+```
+
+If you open `config.json` you will see there are 5 platforms defined: scss, android, compose, ios, and ios-swift. Each platform has a transformGroup, buildPath, and files. The buildPath and files of the platform should match up to the files what were built. The files built should look like these:
+
+**Android**
+```xml
+<!-- font_dimens.xml -->
+<resources>
+  <dimen name="size_font_small">12.00sp</dimen>
+  <dimen name="size_font_medium">16.00sp</dimen>
+  <dimen name="size_font_large">32.00sp</dimen>
+  <dimen name="size_font_base">16.00sp</dimen>
+</resources>
+
+<!-- colors.xml -->
+<resources>
+  <color name="color_base_gray_light">#ffcccccc</color>
+  <color name="color_base_gray_medium">#ff999999</color>
+  <color name="color_base_gray_dark">#ff111111</color>
+  <color name="color_base_red">#ffff0000</color>
+  <color name="color_base_green">#ff00ff00</color>
+  <color name="color_font_base">#ffff0000</color>
+  <color name="color_font_secondary">#ff00ff00</color>
+  <color name="color_font_tertiary">#ffcccccc</color>
+</resources>
+```
+
+**Compose**
+```kotlin
+object StyleDictionaryColor {
+  val colorBaseGrayDark = Color(0xff111111)
+  val colorBaseGrayLight = Color(0xffcccccc)
+  val colorBaseGrayMedium = Color(0xff999999)
+  val colorBaseGreen = Color(0xff00ff00)
+  val colorBaseRed = Color(0xffff0000)
+  val colorFontBase = Color(0xffff0000)
+  val colorFontSecondary = Color(0xff00ff00)
+  val colorFontTertiary = Color(0xffcccccc)
 }
+
+object StyleDictionarySize {
+  /** the base size of the font */
+  val sizeFontBase = 16.00.sp
+  /** the large size of the font */
+  val sizeFontLarge = 32.00.sp
+  /** the medium size of the font */
+  val sizeFontMedium = 16.00.sp
+  /** the small size of the font */
+  val sizeFontSmall = 12.00.sp
 }
 ```
 
-During the build process, the `deprecated.json` files will be added to a `dist/deprected` directory organized by variable category:
-
-```diff
-  dist/
-    js/
-    ts/
-    json/
-    scss/
-+   deprecated/
-+     colors.json
+**SCSS**
+```scss
+// variables.scss
+$color-base-gray-light: #cccccc;
+$color-base-gray-medium: #999999;
+$color-base-gray-dark: #111111;
+$color-base-red: #ff0000;
+$color-base-green: #00ff00;
+$color-font-base: #ff0000;
+$color-font-secondary: #00ff00;
+$color-font-tertiary: #cccccc;
+$size-font-small: 0.75rem;
+$size-font-medium: 1rem;
+$size-font-large: 2rem;
+$size-font-base: 1rem;
 ```
 
-## Removing variables
+**iOS**
+```objc
+#import "StyleDictionaryColor.h"
 
-When you're ready to remove a variable, first remove it's definitions:
+@implementation StyleDictionaryColor
 
-```diff
-// data/colors/vars/global_light.ts
-import {get} from '../../../src/utils'
-
-export default {
-  text: {
--   primary: get('scale.gray.9'),
-    secondary: get('scale.gray.6')
-  }
++ (UIColor *)color:(StyleDictionaryColorName)colorEnum{
+  return [[self values] objectAtIndex:colorEnum];
 }
-```
 
-```diff
-// data/colors/vars/global_dark.ts
-import {get} from '../../../src/utils'
++ (NSArray *)values {
+  static NSArray* colorArray;
+  static dispatch_once_t onceToken;
 
-export default {
-  text: {
--   primary: get('scale.gray.1'),
-    secondary: get('scale.gray.3')
-  }
+  dispatch_once(&onceToken, ^{
+    colorArray = @[
+[UIColor colorWithRed:0.800f green:0.800f blue:0.800f alpha:1.000f],
+[UIColor colorWithRed:0.600f green:0.600f blue:0.600f alpha:1.000f],
+[UIColor colorWithRed:0.067f green:0.067f blue:0.067f alpha:1.000f],
+[UIColor colorWithRed:1.000f green:0.000f blue:0.000f alpha:1.000f],
+[UIColor colorWithRed:0.000f green:1.000f blue:0.000f alpha:1.000f],
+[UIColor colorWithRed:1.000f green:0.000f blue:0.000f alpha:1.000f],
+[UIColor colorWithRed:0.000f green:1.000f blue:0.000f alpha:1.000f],
+[UIColor colorWithRed:0.800f green:0.800f blue:0.800f alpha:1.000f]
+    ];
+  });
+
+  return colorArray;
 }
+
+@end
 ```
 
-Then remove it from `deprecated.json` and add it to `removed.json`:
+Pretty nifty! This shows a few things happening:
+1. The build system does a deep merge of all the token JSON files defined in the `source` attribute of `config.json`. This allows you to split up the token JSON files however you want. There are 2 JSON files with `color` as the top level key, but they get merged properly.
+1. The build system resolves references to other design tokens. `{size.font.medium.value}` gets resolved properly.
+1. The build system handles references to token values in other files as well as you can see in `tokens/color/font.json`.
 
-```diff
-// data/colors/deprecated.json
-{
-- "text.primary": "fg.default"
-}
-```
+Now let's make a change and see how that affects things. Open up `tokens/color/base.json` and change `"#111111"` to `"#000000"`. After you make that change, save the file and re-run the build command `style-dictionary build`. Open up the build files and take a look.
 
-```diff
-// data/colors/removed.json
-{
-+ "text.primary": "fg.default"
-}
-```
+**Huzzah!**
 
-During the build process, the `removed.json` files will be added to a `dist/removed` directory organized by variable category:
-
-```diff
-  dist/
-    js/
-    ts/
-    json/
-    scss/
-    deprecated/
-+   removed/
-+     colors.json
-```
-
-## License
-
-[MIT](./LICENSE) &copy; [GitHub](https://github.com/)
-
-[primer]: https://github.com/primer/primer
-[npm]: https://www.npmjs.com/
-[install-npm]: https://docs.npmjs.com/getting-started/installing-node
-[scss]: https://sass-lang.com/
+Now go forth and create! Take a look at all the built-in [transforms](https://amzn.github.io/style-dictionary/#/transforms?id=pre-defined-transforms) and [formats](https://amzn.github.io/style-dictionary/#/formats?id=pre-defined-formats).
