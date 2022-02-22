@@ -40,7 +40,7 @@ StyleDictionary.registerTransform({
     return token.filePath.includes(`tokens/functional`)
   },
   transformer: function (token) {
-    return `primer-${token.name}`
+    return `gh-${token.name}`
   }
 })
 
@@ -51,7 +51,7 @@ StyleDictionary.registerTransform({
 
 StyleDictionary.registerTransformGroup({
   name: 'css',
-  transforms: ['attribute/cti', 'name/cti/kebab', 'size/pxToRem', 'functional/prefix', 'px/suffix']
+  transforms: ['attribute/cti', 'name/cti/kebab', 'size/pxToRem', 'functional/prefix']
 })
 
 // REGISTER A CUSTOM FORMAT (to be used for this specific example)

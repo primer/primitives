@@ -1,8 +1,75 @@
 {
   "control": {
+    "padding": {
+      "inline": {
+        "normal": {
+          "value": "{size.12}"
+        },
+        "compact": {
+          "value": "{size.8}"
+        },
+        "relaxed": {
+          "value": "{size.16}"
+        }
+      }
+    },
+    "gap": {
+      "normal": {
+        "value": "{size.8}"
+      },
+      "compact": {
+        "value": "{size.4}"
+      },
+      "relaxed": {
+        "value": "{size.16}"
+      }
+    },
     "small": {
       "block": {
         "size": {"value": "{size.32}"}
+      },
+      "line": {
+        "box": {"value": "{size.20}"}
+      },
+      "padding": {
+        "block": {
+          "value": "calc({size.32} - {size.20} / 2)"
+        },
+        "inline": {
+          "normal": {
+            "value": "{size.12}"
+          },
+          "condensed": {
+            "value": "{size.8}"
+          },
+          "spacious": {
+            "value": "{size.16}"
+          }
+        }
+      }
+    }
+  },
+  "section": {
+    "padding": {
+      "normal": {
+        "value": "{size.16}"
+      },
+      "condensed": {
+        "value": "{size.8}"
+      },
+      "spacious": {
+        "value": "{size.24}"
+      }
+    },
+    "gap": {
+      "normal": {
+        "value": "{size.16}"
+      },
+      "condensed": {
+        "value": "{size.8}"
+      },
+      "spacious": {
+        "value": "{size.24}"
       }
     }
   }

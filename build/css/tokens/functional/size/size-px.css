@@ -1,8 +1,25 @@
 /**
  * Do not edit directly
- * Generated on Tue, 22 Feb 2022 03:54:59 GMT
+ * Generated on Tue, 22 Feb 2022 22:04:04 GMT
  */
 
 :root {
-  --primer-control-small-block-size: 32px;
+  --gh-control-padding-inline-normal: 12px;
+  --gh-control-padding-inline-compact: 8px;
+  --gh-control-padding-inline-relaxed: 16px;
+  --gh-control-gap-normal: 8px;
+  --gh-control-gap-compact: 4px;
+  --gh-control-gap-relaxed: 16px;
+  --gh-control-small-block-size: 32px;
+  --gh-control-small-line-box: 20px;
+  --gh-control-small-padding-block: calc(32px - 20px / 2);
+  --gh-control-small-padding-inline-normal: 12px;
+  --gh-control-small-padding-inline-condensed: 8px;
+  --gh-control-small-padding-inline-spacious: 16px;
+  --gh-section-padding-normal: 16px;
+  --gh-section-padding-condensed: 8px;
+  --gh-section-padding-spacious: 24px;
+  --gh-section-gap-normal: 16px;
+  --gh-section-gap-condensed: 8px;
+  --gh-section-gap-spacious: 24px;
 }
