@@ -20,52 +20,29 @@ StyleDictionary.registerTransform({
   }
 })
 
-// StyleDictionary.registerTransform({
-//   name: 'ratio/%',
-//   type: 'value',
-//   matcher: function (token) {
-//     // here we are using a custom attribute, declared in the token, to match the values where apply the transform
-//     return token.group === 'ratio'
-//   },
-//   transformer: function (token) {
-//     return `${Math.floor(100 * token.value)}%`
-//   }
-// })
+StyleDictionary.registerTransform({
+  name: 'px/suffix',
+  type: 'name',
+  //   transitive: true,
+  matcher: function (token) {
+    return token.attributes.category === 'size'
+  },
+  transformer: function (token) {
+    return `${token.name}-px`
+  }
+})
 
-// StyleDictionary.registerTransform({
-//   name: 'hexRGB/hexARGB',
-//   type: 'value',
-//   matcher: function (token) {
-//     return token.group === 'color'
-//   },
-//   transformer: function (token) {
-//     // for sake of simplicity, in this example we assume colors are always in the format #xxxxxx
-//     return token.value.replace(/^#/, '#FF')
-//   }
-// })
-
-// StyleDictionary.registerTransform({
-//   name: 'unitless/dp-sp',
-//   type: 'value',
-//   matcher: function (token) {
-//     return token.group === 'typography' || token.group === 'spacing'
-//   },
-//   transformer: function (token) {
-//     // in Android font sizes are expressed in "sp" units
-//     let unit = token.group === 'typography' ? 'sp' : 'dp'
-//     return `${token.value}${unit}`
-//   }
-// })
-
-// StyleDictionary.registerTransform({
-//   // this is a silly example, to show how you can apply transform to names
-//   name: 'name/squiggle',
-//   type: 'name',
-//   // notice: if you don't specify a matcher, the transformation will be applied to all the tokens
-//   transformer: function (token) {
-//     return token.path.join('~')
-//   }
-// })
+StyleDictionary.registerTransform({
+  name: 'functional/prefix',
+  type: 'name',
+  //   transitive: true,
+  matcher: function (token) {
+    return token.filePath.includes(`tokens/functional`)
+  },
+  transformer: function (token) {
+    return `primer-${token.name}`
+  }
+})
 
 // REGISTER THE CUSTOM TRANFORM GROUPS
 
@@ -74,34 +51,26 @@ StyleDictionary.registerTransform({
 
 StyleDictionary.registerTransformGroup({
   name: 'css',
-  // notice: here the "size/px" transform is not the pre-defined one, but the custom one we have declared above
-  transforms: ['attribute/cti', 'name/cti/kebab', 'size/pxToRem', 'size/px']
+  transforms: ['attribute/cti', 'name/cti/kebab', 'size/pxToRem', 'functional/prefix', 'px/suffix']
 })
-
-// StyleDictionary.registerTransformGroup({
-//   name: 'custom/scss',
-//   // this is to show one possibility for adding a few transforms to a pre-defined group
-//   // (however, we suggest to use the previous approach, which is more explicit and clear)
-//   transforms: StyleDictionary.transformGroup['scss'].concat(['size/px', 'ratio/%'])
-// })
-
-// StyleDictionary.registerTransformGroup({
-//   name: 'custom/android',
-//   // as you can see, here we are completely ignoring the "attribute/cti" transform (it's totally possible),
-//   // because we are relying on custom attributes for the matchers and the custom format for the output
-//   transforms: ['name/squiggle', 'hexRGB/hexARGB', 'unitless/dp-sp']
-// })
 
 // REGISTER A CUSTOM FORMAT (to be used for this specific example)
 
 // StyleDictionary.registerFormat({
-//   name: 'custom/android/xml',
-//   formatter: function ({dictionary}) {
-//     return dictionary.allTokens
-//       .map(function (token) {
-//         return `<item name="${token.name}">${token.value}</item>`
-//       })
-//       .join('\n')
+//   name: 'myCustomFormat',
+//   //   matcher: function (token) {
+//   //     return token => token.filePath.includes(`tokens/functional`)
+//   //   },
+//   formatter: function ({dictionary, options}) {
+//     const {outputReferences} = options
+//     const formatProperty = createPropertyFormatter({
+//       outputReferences,
+//       dictionary,
+//       formatting: {
+//         prefix: 'primer'
+//       }
+//     })
+//     return dictionary.allTokens.map(formatProperty).join('\n')
 //   }
 // })
 

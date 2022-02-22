@@ -18,10 +18,14 @@ module.exports = {
         }
       })
     },
-    css2: {
-      transformGroup: `css`,
+    csspx: {
+      //   transformGroup: `css`,
+      transforms: ['attribute/cti', 'name/cti/kebab', 'size/px', 'functional/prefix', 'px/suffix'],
       buildPath: 'build/css/',
-      prefix: 'px',
+      //   options: {
+      //     // Look here 👇
+      //     outputReferences: true
+      //   },
       // map the array of token file paths to style dictionary output files
       files: tokenFiles.map(filePath => {
         // console.log(filePath)
