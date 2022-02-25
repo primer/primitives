@@ -8,7 +8,7 @@ module.exports = {
   platforms: {
     css: {
       transformGroup: `css`,
-      buildPath: 'build/css/',
+      buildPath: 'dist/css/',
       //   options: {
       //     outputReferences: true
       //   },
