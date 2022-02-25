@@ -9,6 +9,9 @@ module.exports = {
     css: {
       transformGroup: `css`,
       buildPath: 'build/css/',
+      //   options: {
+      //     outputReferences: true
+      //   },
       // map the array of token file paths to style dictionary output files
       files: tokenFiles.map(filePath => {
         return {
@@ -17,25 +20,24 @@ module.exports = {
           filter: token => token.filePath === filePath
         }
       })
-    },
-    csspx: {
-      //   transformGroup: `css`,
-      transforms: ['attribute/cti', 'name/cti/kebab', 'size/px', 'functional/prefix', 'px/suffix'],
-      buildPath: 'build/css/',
-      //   options: {
-      //     // Look here 👇
-      //     outputReferences: true
-      //   },
-      // map the array of token file paths to style dictionary output files
-      files: tokenFiles.map(filePath => {
-        // console.log(filePath)
-        return {
-          format: `css/variables`,
-          destination: filePath.replace(`.json`, `-px.css`),
-          filter: token => token.filePath === filePath
-        }
-      })
     }
+    // csspx: {
+    //   //   transformGroup: `css`,
+    //   transforms: ['attribute/cti', 'name/cti/kebab', 'size/px', 'px/suffix'],
+    //   buildPath: 'build/css/',
+    //   //   options: {
+    //   //     outputReferences: true
+    //   //   },
+    //   // map the array of token file paths to style dictionary output files
+    //   files: tokenFiles.map(filePath => {
+    //     // console.log(filePath)
+    //     return {
+    //       format: `css/variables`,
+    //       destination: filePath.replace(`.json`, `-px.css`),
+    //       filter: token => token.filePath === filePath
+    //     }
+    //   })
+    // }
   }
 }
 

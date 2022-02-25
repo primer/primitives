@@ -1,7 +1,9 @@
 {
-  "size": {
-    "border": {
-      "thin": {"value": "inset 0 0 0 {size.border.01}"}
+  "gh": {
+    "size": {
+      "border": {
+        "thin": {"value": "inset 0 0 0 {base.size.border.01}", "group": "size"}
+      }
     }
   }
 }

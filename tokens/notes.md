@@ -105,3 +105,13 @@
 ## Meeting notes
 - Base (constants)
   - 
+could memex use a different version of primitives
+are primitives immutible
+
+component
+size options
+xsmall (24px)
+small (28px)
+medium (32px)
+large (40px)
+xlarge (48px)

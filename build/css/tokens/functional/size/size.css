@@ -1,21 +1,36 @@
 /**
  * Do not edit directly
- * Generated on Tue, 22 Feb 2022 22:04:04 GMT
+ * Generated on Fri, 25 Feb 2022 03:47:37 GMT
  */
 
 :root {
-  --gh-control-padding-inline-normal: 0.75rem;
-  --gh-control-padding-inline-compact: 0.5rem;
-  --gh-control-padding-inline-relaxed: 1rem;
+  --gh-control-paddingInline-condensed: 0.5rem;
+  --gh-control-paddingInline-normal: 0.75rem;
+  --gh-control-paddingInline-spacious: 1rem;
+  --gh-control-gap-condensed: 0.25rem;
   --gh-control-gap-normal: 0.5rem;
-  --gh-control-gap-compact: 0.25rem;
-  --gh-control-gap-relaxed: 1rem;
-  --gh-control-small-block-size: 2rem;
-  --gh-control-small-line-box: 1.25rem;
-  --gh-control-small-padding-block: calc(2rem - 1.25rem / 2);
-  --gh-control-small-padding-inline-normal: 0.75rem;
-  --gh-control-small-padding-inline-condensed: 0.5rem;
-  --gh-control-small-padding-inline-spacious: 1rem;
+  --gh-control-gap-spacious: 1rem;
+  --gh-control-xsmall-size: 1.75rem;
+  --gh-control-xsmall-lineBox: 1.25rem; /* fix with type token */
+  --gh-control-xsmall-paddingBlock: calc(1.75rem - 1.25rem / 2);
+  --gh-control-xsmall-paddingInline-condensed: 0.5rem;
+  --gh-control-xsmall-paddingInline-normal: 0.75rem;
+  --gh-control-small-size: 2rem;
+  --gh-control-small-lineBox: 1.25rem; /* fix with type token */
+  --gh-control-small-paddingBlock: calc(2rem - 1.25rem / 2);
+  --gh-control-small-paddingInline-condensed: 0.5rem;
+  --gh-control-small-paddingInline-normal: 0.75rem;
+  --gh-control-small-paddingInline-spacious: 1rem;
+  --gh-control-medium-size: 2.5rem;
+  --gh-control-medium-lineBox: 1.25rem; /* fix with type token */
+  --gh-control-medium-paddingBlock: calc(2.5rem - 1.25rem / 2);
+  --gh-control-medium-paddingInline-normal: 0.75rem;
+  --gh-control-medium-paddingInline-spacious: 1rem;
+  --gh-control-large-size: 3rem;
+  --gh-control-large-lineBox: 1.25rem; /* fix with type token */
+  --gh-control-large-paddingBlock: calc(3rem - 1.25rem / 2);
+  --gh-control-large-paddingInline-normal: 0.75rem;
+  --gh-control-large-paddingInline-spacious: 1rem;
   --gh-section-padding-normal: 1rem;
   --gh-section-padding-condensed: 0.5rem;
   --gh-section-padding-spacious: 1.5rem;
