@@ -1,8 +1,57 @@
 {
   "gh": {
-    "size": {
-      "border": {
-        "thin": {"value": "inset 0 0 0 {base.size.border.01}", "group": "size"}
+    "boxShadow": {
+      "thin": {
+        "value": "inset 0 0 0 {base.borderWidth.1}",
+        "attributes": {
+          "category": "size"
+        }
+      },
+      "thick": {
+        "value": "inset 0 0 0 {base.borderWidth.2}",
+        "attributes": {
+          "category": "size"
+        }
+      }
+    },
+    "border": {
+      "thin": {
+        "value": "{base.borderWidth.1}",
+        "attributes": {
+          "category": "size"
+        }
+      },
+      "thick": {
+        "value": "{base.borderWidth.2}",
+        "attributes": {
+          "category": "size"
+        }
+      }
+    },
+    "borderRadius": {
+      "small": {
+        "value": "{base.borderRadius.3}",
+        "attributes": {
+          "category": "size"
+        }
+      },
+      "medium": {
+        "value": "{base.borderRadius.6}",
+        "attributes": {
+          "category": "size"
+        }
+      },
+      "large": {
+        "value": "{base.borderRadius.12}",
+        "attributes": {
+          "category": "size"
+        }
+      },
+      "full": {
+        "value": "{base.borderRadius.9999}",
+        "attributes": {
+          "category": "size"
+        }
       }
     }
   }
