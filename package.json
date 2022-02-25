@@ -24,7 +24,7 @@
   "homepage": "https://github.com/primer/primitives#readme",
   "scripts": {
     "prebuild": "rm -rf dist",
-    "build": "ts-node ./script/build.ts && tsc",
+    "build": "ts-node ./script/build.ts && node ./build.js && tsc",
     "prepack": "yarn build",
     "watch": "ls data/**/*.scss script/**/*.ts | entr -s 'yarn build'",
     "release": "yarn build && build-sd && changeset publish",
