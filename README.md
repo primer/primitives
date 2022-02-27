@@ -46,7 +46,7 @@ To deprecate a variable, define a mapping from the deprecated variable to its re
 }
 ```
 
-During the build process, the `deprecated.json` files will be added to a `dist/deprected` directory organized by variable category:
+During the build process, the `deprecated.json` files will be added to a `dist/deprecated` directory organized by variable category:
 
 ```diff
   dist/
