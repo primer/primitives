@@ -1,4 +1,4 @@
-import {merge} from '../../../src/utils'
+import {alpha, get, merge} from '../../../src/utils'
 import dark from './dark'
 
 const scale = {
@@ -48,4 +48,19 @@ const scale = {
   coral: ['#FFDDD2', '#FFC2B2', '#FFA28B', '#F78166', '#EA6045', '#CF462D', '#AC3220', '#872012', '#640D04', '#460701']
 }
 
-export default merge(dark, {scale})
+const exceptions = {
+  open: {
+    fg: get('scale.orange.3'),
+    emphasis: get('scale.orange.5'),
+    muted: alpha(get('scale.orange.4'), 0.4),
+    subtle: alpha(get('scale.orange.4'), 0.15)
+  },
+  closed: {
+    fg: get('scale.gray.4'),
+    emphasis: get('scale.gray.5'),
+    muted: alpha(get('scale.gray.4'), 0.4),
+    subtle: alpha(get('scale.gray.4'), 0.15)
+  }
+}
+
+export default merge(dark, exceptions, {scale})
