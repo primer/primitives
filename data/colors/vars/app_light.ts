@@ -138,7 +138,7 @@ export default {
     lineDtFmBg: get('scale.yellow.5'),
     gateBg: alpha(get('scale.yellow.6'), 0.15),
     gateText: get('scale.gray.2'),
-    gateWaitingText: get('scale.gray.3'),
+    gateWaitingText: get('scale.yellow.3'),
     stepHeaderOpenBg: get('scale.gray.8'),
     stepErrorText: get('scale.red.3'),
     stepWarningText: get('scale.yellow.3'),
