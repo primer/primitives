@@ -56,10 +56,10 @@ const exceptions = {
     subtle: alpha(get('scale.orange.4'), 0.15)
   },
   closed: {
-    fg: get('scale.gray.4'),
-    emphasis: get('scale.gray.5'),
+    fg: get('scale.gray.3'),
+    emphasis: get('scale.gray.4'),
     muted: alpha(get('scale.gray.4'), 0.4),
-    subtle: alpha(get('scale.gray.4'), 0.15)
+    subtle: alpha(get('scale.gray.4'), 0.1)
   }
 }
 
