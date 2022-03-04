@@ -3,7 +3,7 @@ import dark from './dark'
 
 const scale = {
   black: '#010409',
-  white: '#f0f6fc',
+  white: '#ffffff',
   gray: ['#f0f6fc', '#c9d1d9', '#b1bac4', '#8b949e', '#6e7681', '#484f58', '#30363d', '#21262d', '#161b22', '#0d1117'],
   blue: ['#cae8ff', '#a5d6ff', '#79c0ff', '#58a6ff', '#388bfd', '#1f6feb', '#1158c7', '#0d419d', '#0c2d6b', '#051d4d'],
   green: ['#a0e8ff', '#83d4ff', '#66baff', '#42a0ff', '#1585fd', '#1d69e0', '#0f53bc', '#0b3c92', '#0a2861', '#041843'],
