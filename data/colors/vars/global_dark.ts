@@ -62,6 +62,18 @@ export default {
     muted: alpha(get('scale.red.4'), 0.4),
     subtle: alpha(get('scale.red.4'), 0.15)
   },
+  open: {
+    fg: get('scale.green.3'),
+    emphasis: get('scale.green.5'),
+    muted: alpha(get('scale.green.4'), 0.4),
+    subtle: alpha(get('scale.green.4'), 0.15)
+  },
+  closed: {
+    fg: get('scale.red.4'),
+    emphasis: get('scale.red.5'),
+    muted: alpha(get('scale.red.4'), 0.4),
+    subtle: alpha(get('scale.red.4'), 0.15)
+  },
   done: {
     fg: get('scale.purple.4'),
     emphasis: get('scale.purple.5'),

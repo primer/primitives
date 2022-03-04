@@ -49,6 +49,18 @@ const scale = {
 }
 
 const exceptions = {
+  open: {
+    fg: get('scale.orange.5'),
+    emphasis: get('scale.orange.4'),
+    muted: alpha(get('scale.orange.3'), 0.4),
+    subtle: get('scale.orange.0')
+  },
+  closed: {
+    fg: get('scale.gray.5'),
+    emphasis: get('scale.gray.5'),
+    muted: alpha(get('scale.gray.3'), 0.4),
+    subtle: get('scale.gray.0')
+  },
   diffBlob: {
     addition: {
       numBg: get('success.muted'),
