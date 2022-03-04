@@ -1,5 +1,15 @@
 # @primer/primitives
 
+## 7.5.0
+
+### Minor Changes
+
+- [#296](https://github.com/primer/primitives/pull/296) [`389b08b`](https://github.com/primer/primitives/commit/389b08bd09d965b117516ea5c72da64bc4cb03d9) Thanks [@simurai](https://github.com/simurai)! - Add `open` and `closed` roles
+
+### Patch Changes
+
+- [#301](https://github.com/primer/primitives/pull/301) [`2f18306`](https://github.com/primer/primitives/commit/2f1830606a025239a9153d4ebeec46ef0fa894e6) Thanks [@konradpabjan](https://github.com/konradpabjan)! - [Actions] Update light theme color for gateWaitingText
+
 ## 7.4.1
 
 ### Patch Changes
