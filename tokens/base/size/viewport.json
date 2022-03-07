@@ -2,25 +2,25 @@
   "base": {
     "viewport": {
       "narrow": {
-        "value": "320",
+        "value": "{base.breakpoint.xsmall}",
         "attributes": {
           "category": "viewport"
         }
       },
       "narrowLandscape": {
-        "value": "320",
+        "value": "{base.breakpoint.xsmall}",
         "attributes": {
           "category": "viewport"
         }
       },
       "regular": {
-        "value": "544",
+        "value": "{base.breakpoint.small}",
         "attributes": {
           "category": "viewport"
         }
       },
       "wide": {
-        "value": "768",
+        "value": "{base.breakpoint.medium}",
         "attributes": {
           "category": "viewport"
         }

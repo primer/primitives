@@ -1,98 +1,123 @@
-// px value with suffix
-// prefix functional layer
-
+/**
+ * platforms: CSS, js, ts, json
+ * transforms:
+ * - px to rem
+ * - custom media queries (postcss)
+ * - base/functional prefix
+ * - camel-kebab
+ * - responsive tokens (same token, different value)
+ */
+const glob = require('glob')
 const StyleDictionary = require('style-dictionary')
-const transformer = StyleDictionary.transform['attribute/cti'].transformer
-
-const propertiesToCTI = {
-  width: {category: 'size', type: 'dimension'},
-  'min-width': {category: 'size', type: 'dimension'},
-  'max-width': {category: 'size', type: 'dimension'},
-  height: {category: 'size', type: 'dimension'},
-  'min-height': {category: 'size', type: 'dimension'},
-  'max-height': {category: 'size', type: 'dimension'},
-  'border-width': {category: 'size', type: 'border', item: 'width'},
-  'border-radius': {category: 'size', type: 'border', item: 'width'},
-  'border-color': {category: 'color', type: 'border'},
-  'background-color': {category: 'color', type: 'background'},
-  color: {category: 'color', type: 'font'},
-  'text-color': {category: 'color', type: 'font'},
-  padding: {category: 'size', type: 'padding'},
-  'padding-inline': {category: 'size', type: 'padding'},
-  'padding-block': {category: 'size', type: 'padding'},
-  inline: {category: 'size', type: 'padding'},
-  normal: {category: 'size', type: 'padding'},
-  condensed: {category: 'size', type: 'padding'},
-  spacious: {category: 'size', type: 'padding'},
-  icon: {category: 'content', type: 'icon'},
-  'font-size': {category: 'size', type: 'font'},
-  'line-height': {category: 'size', type: 'line-height'},
-  size: {category: 'size', type: 'size'}
-}
-
-const CTITransform = {
-  type: `attribute`,
-  transformer: prop => {
-    // Only do this custom functionality in the 'component' top-level namespace.
-    if (prop.path[0] === 'gh' || 'base') {
-      // When defining component tokens, the key of the token is the relevant CSS property
-      // The key of the token is the last element in the path array
-      return propertiesToCTI[prop.path[prop.path.length - 1]]
-    } else {
-      // Fallback to the original 'attribute/cti' transformer
-      return transformer(prop)
-    }
-  }
-}
+const {fileHeader, formattedVariables} = StyleDictionary.formatHelpers
+const tokenFiles = glob.sync(`tokens/**/*.json`)
+const transforms = require('style-dictionary/lib/common/transforms')
+const _ = require('lodash')
 
 console.log('Build started...')
 console.log('\n==============================================')
 
 // REGISTER THE CUSTOM TRANFORMS
 
-StyleDictionary.registerTransform({
-  name: 'attribute/cti',
-  type: 'attribute',
-  transformer: CTITransform.transformer
-})
-
-StyleDictionary.registerFormat({
-  name: 'custom/format/custom-media',
-  formatter(dictionary) {
-    return dictionary.allProperties
-      .map(prop => {
-        const {attributes, value} = prop
-        const size = attributes.type.replace(/_/g, '-') // 1
-        return `@custom-media --${size}-viewport (${value});`
-      })
-      .join('\n')
-  }
-})
-
 // allow camelCase in name + kebab path
+// StyleDictionary.registerTransform({
+//   name: 'name/camel/kebab',
+//   type: 'name',
+//   transformer: function(token, options) {
+//     // const tokenPath = token.path
+//     // const format = tokenPath.replace(/,/g, '-')
+//     const {attributes, path} = token
+//     console.log('token', token)
+//     // this should probably check for 'category' and remove it from the path
+//     return token.path.slice(1).join('-')
+//   }
+// })
+
+/**
+ * transform: css variable names
+ * example: `--namespace-item-variant-property-modifier`
+ */
 StyleDictionary.registerTransform({
-  name: 'name/camel/kebab',
+  name: 'name/css',
   type: 'name',
-  //   transformer(dictionary) {
-  //     return dictionary.allProperties
-  //       .map(prop => {
-  //         const {attributes, value} = prop
-  //         const name = attributes.type.replace(/_/g, '-') // 1
-  //         return `${name}`
-  //       })
-  //       .join('\n')
-  //   }
-  //   matcher: function (token) {
-  //     return token.attributes.type === 'size'
-  //   },
-  transformer: function (token, options) {
-    // const tokenPath = token.path
-    // const format = tokenPath.replace(/,/g, '-')
+  transformer: (token, options) => {
     return token.path.join('-')
   }
 })
-//mystring = mystring.split(',').join(newchar);
-//return _.camelCase( [options.prefix].concat(token.path).join(' ') );
+
+/**
+ * transform: js variable names
+ * example: `namespace.item.variant.property.modifier`
+ */
+StyleDictionary.registerTransform({
+  name: 'name/js',
+  type: 'name',
+  transformer: (token, options) => {
+    return token.path.join('.')
+  }
+})
+
+// find values with px unit
+function isPx(value) {
+  return /[\d\.]+px$/.test(value)
+}
+
+// transform: px to rem
+StyleDictionary.registerTransform({
+  name: 'pxToRem',
+  type: 'value',
+  transformer: (token, options) => {
+    if (isPx(token.value)) {
+      const baseFontSize = 16
+      const floatValue = parseFloat(token.value.replace('px', ''))
+
+      if (isNaN(floatValue)) {
+        return token.value
+      }
+
+      if (floatValue === 0) {
+        return '0'
+      }
+
+      return `${floatValue / baseFontSize}rem`
+    }
+    return token.value
+  }
+})
+
+//-----
+
+// ts output
+StyleDictionary.registerTransform({
+  name: 'attribute/typescript',
+  type: 'attribute',
+  transformer: (token, options) => {
+    return {
+      typescript: {
+        // these transforms will need to match the ones you use for typescript
+        // or you can "chain" the transforms and use token.name and token.value
+        // like scss and less transforms do.
+        name: token.path.slice(1).join('.'),
+        value: token.value
+      }
+    }
+  }
+})
+
+// css output
+StyleDictionary.registerTransform({
+  name: 'attribute/css',
+  type: 'attribute',
+  transformer: token => {
+    const tokenName = token.path.slice(1).join('-')
+    return {
+      css: {
+        name: `--${tokenName}`,
+        value: token.value
+      }
+    }
+  }
+})
 
 // StyleDictionary.registerTransform({
 //   name: 'size/px',
@@ -117,17 +142,31 @@ StyleDictionary.registerTransform({
 //   }
 // })
 
-// StyleDictionary.registerTransform({
-//   name: 'functional/prefix',
-//   type: 'name',
-//   //   transitive: true,
-//   matcher: function (token) {
-//     return token.filePath.includes(`tokens/functional`)
-//   },
-//   transformer: function (token) {
-//     return `gh-${token.name}`
-//   }
-// })
+// prefix base tokens with base-
+StyleDictionary.registerTransform({
+  name: 'base/prefix',
+  type: 'name',
+  //   transitive: true,
+  matcher: function(token) {
+    return token.filePath.includes(`tokens/base`)
+  },
+  transformer: function(token) {
+    return `base-${token.name}`
+  }
+})
+
+// prefix functional tokens with gh-
+StyleDictionary.registerTransform({
+  name: 'functional/prefix',
+  type: 'name',
+  //   transitive: true,
+  matcher: function(token) {
+    return token.filePath.includes(`tokens/functional`)
+  },
+  transformer: function(token) {
+    return `gh-${token.name}`
+  }
+})
 
 // REGISTER THE CUSTOM TRANFORM GROUPS
 
@@ -135,39 +174,244 @@ StyleDictionary.registerTransform({
 // console.log(StyleDictionary.transformGroup['group_name']);
 
 StyleDictionary.registerTransformGroup({
-  name: 'css',
-  transforms: ['attribute/cti', 'size/pxToRem', 'name/camel/kebab']
+  name: 'tokens',
+  transforms: [
+    'attribute/cti',
+    'size/pxToRem',
+    'functional/prefix',
+    'base/prefix',
+    'attribute/typescript',
+    'attribute/css'
+  ]
 })
 
-//'name/cti/kebab'
+StyleDictionary.registerTransformGroup({
+  name: 'docs',
+  transforms: [
+    'attribute/cti',
+    'size/pxToRem',
+    'functional/prefix',
+    'base/prefix',
+    'attribute/typescript',
+    'attribute/css'
+  ]
+})
 
 // REGISTER A CUSTOM FORMAT (to be used for this specific example)
 
-// StyleDictionary.registerFormat({
-//   name: 'myCustomFormat',
-//   //   matcher: function (token) {
-//   //     return token => token.filePath.includes(`tokens/functional`)
-//   //   },
-//   formatter: function ({dictionary, options}) {
-//     const {outputReferences} = options
-//     const formatProperty = createPropertyFormatter({
-//       outputReferences,
-//       dictionary,
-//       formatting: {
-//         prefix: 'primer'
-//       }
-//     })
-//     return dictionary.allTokens.map(formatProperty).join('\n')
-//   }
-// })
+// wrap mobile tokens in media query
+StyleDictionary.registerFormat({
+  name: 'css/touch-target-mobile',
+  formatter: function({dictionary, file, options}) {
+    const {outputReferences} = options
+    return (
+      fileHeader({file}) +
+      `@media (pointer: coarse) { :root {\n` +
+      formattedVariables({format: 'css', dictionary, outputReferences}) +
+      '\n}}\n'
+    )
+  }
+})
+
+// wrap desktop tokens in media query
+StyleDictionary.registerFormat({
+  name: 'css/touch-target-desktop',
+  formatter: function({dictionary, file, options}) {
+    const {outputReferences} = options
+    return (
+      fileHeader({file}) +
+      `@media (pointer: fine) { :root {\n` +
+      formattedVariables({format: 'css', dictionary, outputReferences}) +
+      '\n}}\n'
+    )
+  }
+})
+
+StyleDictionary.registerFormat({
+  name: 'custom/format/custom-media',
+  formatter(dictionary) {
+    return dictionary.allProperties
+      .map(prop => {
+        const {attributes, value} = prop
+        const size = attributes.type.replace(/_/g, '-') // 1
+        return `@custom-media --${size}-viewport (${value});`
+      })
+      .join('\n')
+  }
+})
+
+// format docs
+StyleDictionary.registerFormat({
+  name: 'json/docs',
+  formatter: function(dictionary, config) {
+    // const obj = dictionary.allProperties.reduce((obj, token) => {
+    //   const {comment, name, filePath} = token
+    //   // const {css, typescript, category} = token.attributes
+    //   console.log('name', filePath)
+    //   // obj[name] = {
+    //   //   formats: {
+    //   //     // css,
+    //   //     // typescript
+    //   //   },
+    //   //   comment
+    //   //   // category
+    //   // }
+    //   obj[name] = {...token}
+    //   return obj
+    // }, {})
+
+    const groupedTokens = _.groupBy(dictionary.allProperties, 'filePath')
+
+    return JSON.stringify(groupedTokens, null, 2)
+  }
+})
 
 // APPLY THE CONFIGURATION
 // IMPORTANT: the registration of custom transforms
 // needs to be done _before_ applying the configuration
-const StyleDictionaryExtended = StyleDictionary.extend(__dirname + '/config.js')
+// const StyleDictionaryExtended = StyleDictionary.extend(__dirname + '/config.js')
 
 // FINALLY, BUILD ALL THE PLATFORMS
-StyleDictionaryExtended.buildAllPlatforms()
+// StyleDictionaryExtended.buildAllPlatforms()
+// const arr = location.split('/')
+// const filename = arr[arr.length - 1]
+// const [filenameSansExtension] = filename.split('.')
+
+// build all tokens
+StyleDictionary.extend({
+  source: [`tokens/**/*.json`],
+  platforms: {
+    css: {
+      // transformGroup: `tokens`,
+      buildPath: 'dist/css/',
+      transforms: ['name/css', 'pxToRem'],
+      // map the array of token file paths to style dictionary output files
+      //   files: [{format: 'css/variables', destination: 'test.css'}]
+      files: tokenFiles.map(filePath => {
+        return {
+          format: `css/variables`,
+          destination: filePath.replace(`.json`, `.css`),
+          filter: token => token.filePath === filePath
+        }
+      })
+    },
+    js: {
+      // transformGroup: `tokens`,
+      buildPath: 'dist/js/',
+      transforms: ['name/js', 'pxToRem'],
+      // map the array of token file paths to style dictionary output files
+      files: tokenFiles.map(filePath => {
+        return {
+          format: `typescript/module-declarations`,
+          destination: filePath.replace(`.json`, `.d.ts`),
+          filter: token => token.filePath === filePath
+        }
+      })
+    },
+    // ts: {
+    //   buildPath: 'dist/js/',
+    //   transforms: ['name/js', 'pxToRem'],
+    //   files: [
+    //     {
+    //       format: 'javascript/es6',
+    //       destination: `js/${filenameSansExtension}.js`
+    //     },
+    //     {
+    //       format: 'typescript/es6-declarations',
+    //       destination: `js/${filenameSansExtension}.d.ts`
+    //     },
+    //     {
+    //       format: 'javascript/module',
+    //       destination: `js/${filenameSansExtension}.module.js`
+    //     },
+    //     {
+    //       format: 'typescript/module-declarations',
+    //       destination: `js/${filenameSansExtension}.module.d.ts`
+    //     }
+    //   ]
+    // },
+    docs: {
+      // transformGroup: `tokens`,
+      buildPath: 'dist/docs/',
+      transforms: ['name/css', 'pxToRem'],
+      files: [{format: 'json/docs', destination: 'docValues.json'}]
+    }
+    // json: {
+    //   transformGroup: `tokens`,
+    //   buildPath: 'tokens/new/',
+    //   files: [
+    //     {
+    //       format: `javascript/module`,
+    //       destination: `tokens/tokensBase.js`,
+    //       filter: token => token.filePath.includes('base')
+    //     },
+    //     {
+    //       format: `javascript/module`,
+    //       destination: `tokens/tokensGH.js`,
+    //       filter: token => token.filePath.includes('functional')
+    //     }
+    //   ]
+  }
+  // documentation: {
+  //   transformGroup: `docs`,
+  //   buildPath: 'tokens/new/docs/',
+  //   files: [
+  //     {
+  //       destination: `new/tokensBase.json`,
+  //       format: `json/docs`,
+  //       filter: token => token.filePath.includes('base')
+  //     },
+  //     {
+  //       destination: `new/tokensGH.json`,
+  //       format: `json/docs`,
+  //       filter: token => token.filePath.includes('functional')
+  //     }
+  //   ]
+  // }
+  //   }
+}).buildAllPlatforms()
+
+// build desktop tokens
+// StyleDictionary.extend({
+//   source: [`tokens/base/size/size.json`, `tokens/functional/size/size-fine.json`],
+//   platforms: {
+//     css: {
+//       buildPath: 'tokens/new/',
+//       transformGroup: `tokens`,
+//       files: [
+//         {
+//           destination: `tokens/functional/size/size-fine.css`,
+//           format: `css/touch-target-desktop`,
+//           filter: token => token.filePath.includes('fine'),
+//           options: {
+//             outputReferences: true
+//           }
+//         }
+//       ]
+//     }
+//   }
+// }).buildAllPlatforms()
+
+// build mobile tokens
+// StyleDictionary.extend({
+//   source: [`tokens/base/size/size.json`, `tokens/functional/size/size-course.json`],
+//   platforms: {
+//     css: {
+//       buildPath: 'tokens/new/',
+//       transformGroup: `tokens`,
+//       files: [
+//         {
+//           destination: `tokens/functional/size/size-course.css`,
+//           format: `css/touch-target-mobile`,
+//           filter: token => token.filePath.includes('course'),
+//           options: {
+//             outputReferences: true
+//           }
+//         }
+//       ]
+//     }
+//   }
+// }).buildAllPlatforms()
 
 console.log('\n==============================================')
 console.log('\nBuild completed!')

@@ -28,7 +28,7 @@
     "prepack": "yarn build",
     "watch": "ls data/**/*.scss script/**/*.ts | entr -s 'yarn build'",
     "release": "yarn build && build-sd && changeset publish",
-    "build-sd": "node ./build.js"
+    "build-sd": "yarn prebuild && node ./build.js"
   },
   "prettier": "@github/prettier-config",
   "devDependencies": {
@@ -56,6 +56,7 @@
     "lodash": "^4.17.20",
     "mkdirp": "^1.0.4",
     "node-sass": "^4.14.1",
+    "postcss-custom-media": "^8.0.0",
     "sass-extract": "^2.1.0",
     "style-dictionary": "^3.1.1",
     "token-transformer": "0.0.17",

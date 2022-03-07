@@ -115,3 +115,43 @@ small (28px)
 medium (32px)
 large (40px)
 xlarge (48px)
+
+{/* {mapped} */}
+            {/* {Object.keys(tokens.weight[id]).map((colorKey) => (
+                <div key={`${id}`}>
+                    <p>{tokens.weight[id].path}</p>
+                </div>
+            ))} */}
+            {/* {objectArray.forEach((key, value) => {
+                console.log('key', key.name); // 'one'
+                // console.log('value', value.value); // 1
+                return (
+                    <div>
+                        <p>key.name</p>
+                    </div>
+                )
+            })} */}
+            {/* {Object.keys(tokens.weight.text).map(([name, value]) => (
+                <div key={`${id}`}>
+                    <p>{name}, {value}</p>
+                </div>
+            ))} */}
+            {/* {Object.entries(tokens).map(([name, value]) => {
+                return (
+                    <div>
+                        {Array.isArray(tokens) ? (
+                            tokens.map((name, value) => {
+                                return (
+                                    <p>name.{name}, {value}</p>
+                                )
+                            })
+                        ) : (<p>no</p>)
+                        }
+                    </div>
+                )
+            } */}
+
+                {/* // <div key={`${id}`}>
+                //     <p>`${name}, ${value}`</p>
+                // </div> */}
+            {/* )} */}
