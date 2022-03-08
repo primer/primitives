@@ -53,7 +53,31 @@ StyleDictionary.registerTransform({
   name: 'name/js',
   type: 'name',
   transformer: (token, options) => {
-    return token.path.join('.')
+    const tokenPath = token.path.join(' ')
+    const tokenPathItems = tokenPath.split(' ')
+    for (var i = 0; i < tokenPathItems.length; i++) {
+      tokenPathItems[i] = tokenPathItems[i].charAt(0).toUpperCase() + tokenPathItems[i].slice(1)
+    }
+    const tokenName = tokenPathItems.join('')
+    return tokenName
+  }
+})
+
+/**
+ * transform: js es6 variable names
+ * example: `NamespaceItemVariantPropertyModifier`
+ */
+StyleDictionary.registerTransform({
+  name: 'name/js/es6',
+  type: 'name',
+  transformer: (token, options) => {
+    const tokenPath = token.path.join(' ')
+    const tokenPathItems = tokenPath.split(' ')
+    for (var i = 0; i < tokenPathItems.length; i++) {
+      tokenPathItems[i] = tokenPathItems[i].charAt(0).toUpperCase() + tokenPathItems[i].slice(1)
+    }
+    const tokenName = tokenPathItems.join('')
+    return tokenName
   }
 })
 
@@ -291,23 +315,27 @@ StyleDictionary.extend({
         return {
           format: `css/variables`,
           destination: filePath.replace(`.json`, `.css`),
-          filter: token => token.filePath === filePath
+          filter: token => token.filePath === filePath,
+          options: {
+            outputReferences: true
+          }
         }
       })
     },
     js: {
       // transformGroup: `tokens`,
       buildPath: 'dist/js/',
-      transforms: ['name/js', 'pxToRem'],
+      transforms: ['name/js/es6', 'pxToRem'],
       // map the array of token file paths to style dictionary output files
       files: tokenFiles.map(filePath => {
         return {
-          format: `typescript/module-declarations`,
-          destination: filePath.replace(`.json`, `.d.ts`),
+          format: `javascript/es6`,
+          destination: filePath.replace(`.json`, `.js`),
           filter: token => token.filePath === filePath
         }
       })
     },
+
     // ts: {
     //   buildPath: 'dist/js/',
     //   transforms: ['name/js', 'pxToRem'],
@@ -334,7 +362,12 @@ StyleDictionary.extend({
       // transformGroup: `tokens`,
       buildPath: 'dist/docs/',
       transforms: ['name/css', 'pxToRem'],
-      files: [{format: 'json/docs', destination: 'docValues.json'}]
+      files: [
+        {
+          format: 'json/docs',
+          destination: 'docValues.json'
+        }
+      ]
     }
     // json: {
     //   transformGroup: `tokens`,
