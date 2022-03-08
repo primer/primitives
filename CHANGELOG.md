@@ -1,5 +1,15 @@
 # @primer/primitives
 
+## 7.5.1
+
+### Patch Changes
+
+- [#306](https://github.com/primer/primitives/pull/306) [`8e9779c`](https://github.com/primer/primitives/commit/8e9779cd917554874bbc60cda0fd3baaf69118ca) Thanks [@Juliusschaeper](https://github.com/Juliusschaeper)! - Color scale improvements for Blue and Orange
+
+* [#303](https://github.com/primer/primitives/pull/303) [`07e01ad`](https://github.com/primer/primitives/commit/07e01add2f4d48ca32ffed6e4c61304fd93d0a16) Thanks [@simurai](https://github.com/simurai)! - Update `closed` role for `dark_colorblind`
+
+- [#304](https://github.com/primer/primitives/pull/304) [`94ae707`](https://github.com/primer/primitives/commit/94ae70763ac93e17c78bd5c2444d5ebb93fa0a7e) Thanks [@edokoa](https://github.com/edokoa)! - Change `scale.white` in dark mode to `#ffffff`
+
 ## 7.5.0
 
 ### Minor Changes
