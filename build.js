@@ -53,13 +53,7 @@ StyleDictionary.registerTransform({
   name: 'name/js',
   type: 'name',
   transformer: (token, options) => {
-    const tokenPath = token.path.join(' ')
-    const tokenPathItems = tokenPath.split(' ')
-    for (var i = 0; i < tokenPathItems.length; i++) {
-      tokenPathItems[i] = tokenPathItems[i].charAt(0).toUpperCase() + tokenPathItems[i].slice(1)
-    }
-    const tokenName = tokenPathItems.join('')
-    return tokenName
+    return token.path.join('.')
   }
 })
 
@@ -143,85 +137,21 @@ StyleDictionary.registerTransform({
   }
 })
 
-// StyleDictionary.registerTransform({
-//   name: 'size/px',
-//   type: 'value',
-//   matcher: function (token) {
-//     return token.attributes.type === 'size'
-//   },
-//   transformer: function (token) {
-//     return `${token.value}px`
-//   }
-// })
-
-// StyleDictionary.registerTransform({
-//   name: 'px/suffix',
-//   type: 'name',
-//   //   transitive: true,
-//   matcher: function (token) {
-//     return token.attributes.type === 'size' && token.filePath.includes(`tokens/base`)
-//   },
-//   transformer: function (token) {
-//     return `${token.name}-px`
-//   }
-// })
-
-// prefix base tokens with base-
-StyleDictionary.registerTransform({
-  name: 'base/prefix',
-  type: 'name',
-  //   transitive: true,
-  matcher: function(token) {
-    return token.filePath.includes(`tokens/base`)
-  },
-  transformer: function(token) {
-    return `base-${token.name}`
-  }
-})
-
-// prefix functional tokens with gh-
-StyleDictionary.registerTransform({
-  name: 'functional/prefix',
-  type: 'name',
-  //   transitive: true,
-  matcher: function(token) {
-    return token.filePath.includes(`tokens/functional`)
-  },
-  transformer: function(token) {
-    return `gh-${token.name}`
-  }
-})
-
 // REGISTER THE CUSTOM TRANFORM GROUPS
 
-// if you want to see what a pre-defined group contains, uncomment the next line:
-// console.log(StyleDictionary.transformGroup['group_name']);
+// StyleDictionary.registerTransformGroup({
+//   name: 'tokens',
+//   transforms: [
+//     'attribute/cti',
+//     'size/pxToRem',
+//     'functional/prefix',
+//     'base/prefix',
+//     'attribute/typescript',
+//     'attribute/css'
+//   ]
+// })
 
-StyleDictionary.registerTransformGroup({
-  name: 'tokens',
-  transforms: [
-    'attribute/cti',
-    'size/pxToRem',
-    'functional/prefix',
-    'base/prefix',
-    'attribute/typescript',
-    'attribute/css'
-  ]
-})
-
-StyleDictionary.registerTransformGroup({
-  name: 'docs',
-  transforms: [
-    'attribute/cti',
-    'size/pxToRem',
-    'functional/prefix',
-    'base/prefix',
-    'attribute/typescript',
-    'attribute/css'
-  ]
-})
-
-// REGISTER A CUSTOM FORMAT (to be used for this specific example)
+// REGISTER A CUSTOM FORMAT
 
 // wrap mobile tokens in media query
 StyleDictionary.registerFormat({
@@ -296,21 +226,15 @@ StyleDictionary.registerFormat({
 // const StyleDictionaryExtended = StyleDictionary.extend(__dirname + '/config.js')
 
 // FINALLY, BUILD ALL THE PLATFORMS
-// StyleDictionaryExtended.buildAllPlatforms()
-// const arr = location.split('/')
-// const filename = arr[arr.length - 1]
-// const [filenameSansExtension] = filename.split('.')
 
 // build all tokens
 StyleDictionary.extend({
   source: [`tokens/**/*.json`],
   platforms: {
     css: {
-      // transformGroup: `tokens`,
       buildPath: 'dist/css/',
       transforms: ['name/css', 'pxToRem'],
       // map the array of token file paths to style dictionary output files
-      //   files: [{format: 'css/variables', destination: 'test.css'}]
       files: tokenFiles.map(filePath => {
         return {
           format: `css/variables`,
@@ -323,7 +247,6 @@ StyleDictionary.extend({
       })
     },
     js: {
-      // transformGroup: `tokens`,
       buildPath: 'dist/js/',
       transforms: ['name/js/es6', 'pxToRem'],
       // map the array of token file paths to style dictionary output files
@@ -335,31 +258,43 @@ StyleDictionary.extend({
         }
       })
     },
-
-    // ts: {
-    //   buildPath: 'dist/js/',
-    //   transforms: ['name/js', 'pxToRem'],
-    //   files: [
-    //     {
-    //       format: 'javascript/es6',
-    //       destination: `js/${filenameSansExtension}.js`
-    //     },
-    //     {
-    //       format: 'typescript/es6-declarations',
-    //       destination: `js/${filenameSansExtension}.d.ts`
-    //     },
-    //     {
-    //       format: 'javascript/module',
-    //       destination: `js/${filenameSansExtension}.module.js`
-    //     },
-    //     {
-    //       format: 'typescript/module-declarations',
-    //       destination: `js/${filenameSansExtension}.module.d.ts`
-    //     }
-    //   ]
-    // },
+    jsModule: {
+      buildPath: 'dist/js/module/',
+      transforms: ['pxToRem'],
+      // map the array of token file paths to style dictionary output files
+      files: tokenFiles.map(filePath => {
+        return {
+          format: `javascript/module`,
+          destination: filePath.replace(`.json`, `.js`),
+          filter: token => token.filePath === filePath
+        }
+      })
+    },
+    tsTypes: {
+      buildPath: 'dist/ts/',
+      transforms: ['pxToRem'],
+      // map the array of token file paths to style dictionary output files
+      files: tokenFiles.map(filePath => {
+        return {
+          format: `typescript/module-declarations`,
+          destination: filePath.replace(`.json`, `.d.ts`),
+          filter: token => token.filePath === filePath
+        }
+      })
+    },
+    ts: {
+      buildPath: 'dist/ts/',
+      transforms: ['pxToRem'],
+      // map the array of token file paths to style dictionary output files
+      files: tokenFiles.map(filePath => {
+        return {
+          format: `javascript/module`,
+          destination: filePath.replace(`.json`, `.js`),
+          filter: token => token.filePath === filePath
+        }
+      })
+    },
     docs: {
-      // transformGroup: `tokens`,
       buildPath: 'dist/docs/',
       transforms: ['name/css', 'pxToRem'],
       files: [
@@ -369,39 +304,7 @@ StyleDictionary.extend({
         }
       ]
     }
-    // json: {
-    //   transformGroup: `tokens`,
-    //   buildPath: 'tokens/new/',
-    //   files: [
-    //     {
-    //       format: `javascript/module`,
-    //       destination: `tokens/tokensBase.js`,
-    //       filter: token => token.filePath.includes('base')
-    //     },
-    //     {
-    //       format: `javascript/module`,
-    //       destination: `tokens/tokensGH.js`,
-    //       filter: token => token.filePath.includes('functional')
-    //     }
-    //   ]
   }
-  // documentation: {
-  //   transformGroup: `docs`,
-  //   buildPath: 'tokens/new/docs/',
-  //   files: [
-  //     {
-  //       destination: `new/tokensBase.json`,
-  //       format: `json/docs`,
-  //       filter: token => token.filePath.includes('base')
-  //     },
-  //     {
-  //       destination: `new/tokensGH.json`,
-  //       format: `json/docs`,
-  //       filter: token => token.filePath.includes('functional')
-  //     }
-  //   ]
-  // }
-  //   }
 }).buildAllPlatforms()
 
 // build desktop tokens
