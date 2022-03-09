@@ -1,41 +1,23 @@
 {
   "base": {
-    "viewport": {
+    "viewportRange": {
       "narrow": {
-        "value": "{base.breakpoint.xsmall}",
-        "attributes": {
-          "category": "viewport"
-        }
+        "value": "{base.breakpoint.xsmall}"
       },
       "narrowLandscape": {
-        "value": "{base.breakpoint.xsmall}",
-        "attributes": {
-          "category": "viewport"
-        }
+        "value": "{base.breakpoint.xsmall}"
       },
       "regular": {
-        "value": "{base.breakpoint.small}",
-        "attributes": {
-          "category": "viewport"
-        }
+        "value": "{base.breakpoint.small}"
       },
       "wide": {
-        "value": "{base.breakpoint.medium}",
-        "attributes": {
-          "category": "viewport"
-        }
+        "value": "{base.breakpoint.medium}"
       },
       "portrait": {
-        "value": "orientation: portrait",
-        "attributes": {
-          "category": "viewport"
-        }
+        "value": "orientation: portrait"
       },
       "landscape": {
-        "value": "orientation: landscape",
-        "attributes": {
-          "category": "viewport"
-        }
+        "value": "orientation: landscape"
       }
     }
   }

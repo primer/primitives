@@ -139,17 +139,10 @@ StyleDictionary.registerTransform({
 
 // REGISTER THE CUSTOM TRANFORM GROUPS
 
-// StyleDictionary.registerTransformGroup({
-//   name: 'tokens',
-//   transforms: [
-//     'attribute/cti',
-//     'size/pxToRem',
-//     'functional/prefix',
-//     'base/prefix',
-//     'attribute/typescript',
-//     'attribute/css'
-//   ]
-// })
+StyleDictionary.registerTransformGroup({
+  name: 'css',
+  transforms: ['name/css', 'pxToRem']
+})
 
 // REGISTER A CUSTOM FORMAT
 
@@ -186,9 +179,10 @@ StyleDictionary.registerFormat({
   formatter(dictionary) {
     return dictionary.allProperties
       .map(prop => {
-        const {attributes, value} = prop
-        const size = attributes.type.replace(/_/g, '-') // 1
-        return `@custom-media --${size}-viewport (${value});`
+        const {value, path, name} = prop
+        // const tokenPath = path
+        // const tokenProperty = path[path.length - 1]
+        return `@custom-media --${name}-viewport (${value});`
       })
       .join('\n')
   }
@@ -198,22 +192,6 @@ StyleDictionary.registerFormat({
 StyleDictionary.registerFormat({
   name: 'json/docs',
   formatter: function(dictionary, config) {
-    // const obj = dictionary.allProperties.reduce((obj, token) => {
-    //   const {comment, name, filePath} = token
-    //   // const {css, typescript, category} = token.attributes
-    //   console.log('name', filePath)
-    //   // obj[name] = {
-    //   //   formats: {
-    //   //     // css,
-    //   //     // typescript
-    //   //   },
-    //   //   comment
-    //   //   // category
-    //   // }
-    //   obj[name] = {...token}
-    //   return obj
-    // }, {})
-
     const groupedTokens = _.groupBy(dictionary.allProperties, 'filePath')
 
     return JSON.stringify(groupedTokens, null, 2)
@@ -233,7 +211,7 @@ StyleDictionary.extend({
   platforms: {
     css: {
       buildPath: 'dist/css/',
-      transforms: ['name/css', 'pxToRem'],
+      transformGroup: 'css',
       // map the array of token file paths to style dictionary output files
       files: tokenFiles.map(filePath => {
         return {
@@ -245,6 +223,17 @@ StyleDictionary.extend({
           }
         }
       })
+    },
+    cssViewport: {
+      buildPath: 'dist/css/tokens/base/size/',
+      transformGroup: 'css',
+      files: [
+        {
+          filter: token => token.filePath.includes('viewport'),
+          format: 'custom/format/custom-media',
+          destination: 'viewport.css'
+        }
+      ]
     },
     js: {
       buildPath: 'dist/js/',
@@ -296,7 +285,7 @@ StyleDictionary.extend({
     },
     docs: {
       buildPath: 'dist/docs/',
-      transforms: ['name/css', 'pxToRem'],
+      transformGroup: 'css',
       files: [
         {
           format: 'json/docs',
@@ -308,46 +297,47 @@ StyleDictionary.extend({
 }).buildAllPlatforms()
 
 // build desktop tokens
-// StyleDictionary.extend({
-//   source: [`tokens/base/size/size.json`, `tokens/functional/size/size-fine.json`],
-//   platforms: {
-//     css: {
-//       buildPath: 'tokens/new/',
-//       transformGroup: `tokens`,
-//       files: [
-//         {
-//           destination: `tokens/functional/size/size-fine.css`,
-//           format: `css/touch-target-desktop`,
-//           filter: token => token.filePath.includes('fine'),
-//           options: {
-//             outputReferences: true
-//           }
-//         }
-//       ]
-//     }
-//   }
-// }).buildAllPlatforms()
+StyleDictionary.extend({
+  source: [`tokens/base/size/size.json`, `tokens/functional/size/size-fine.json`],
+  platforms: {
+    css: {
+      buildPath: 'dist/css/',
+      transformGroup: 'css',
+      files: [
+        {
+          destination: `tokens/functional/size/size-fine.css`,
+          format: `css/touch-target-desktop`,
+          filter: token => token.filePath.includes('fine')
+          // this doesn't work
+          //   options: {
+          //     outputReferences: true
+          //   }
+        }
+      ]
+    }
+  }
+}).buildAllPlatforms()
 
 // build mobile tokens
-// StyleDictionary.extend({
-//   source: [`tokens/base/size/size.json`, `tokens/functional/size/size-course.json`],
-//   platforms: {
-//     css: {
-//       buildPath: 'tokens/new/',
-//       transformGroup: `tokens`,
-//       files: [
-//         {
-//           destination: `tokens/functional/size/size-course.css`,
-//           format: `css/touch-target-mobile`,
-//           filter: token => token.filePath.includes('course'),
-//           options: {
-//             outputReferences: true
-//           }
-//         }
-//       ]
-//     }
-//   }
-// }).buildAllPlatforms()
+StyleDictionary.extend({
+  source: [`tokens/base/size/size.json`, `tokens/functional/size/size-course.json`],
+  platforms: {
+    css: {
+      buildPath: 'dist/css/',
+      transformGroup: 'css',
+      files: [
+        {
+          destination: `tokens/functional/size/size-course.css`,
+          format: `css/touch-target-mobile`,
+          filter: token => token.filePath.includes('course')
+          //   options: {
+          //     outputReferences: true
+          //   }
+        }
+      ]
+    }
+  }
+}).buildAllPlatforms()
 
 console.log('\n==============================================')
 console.log('\nBuild completed!')
