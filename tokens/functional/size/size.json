@@ -1,66 +1,45 @@
 {
   "gh": {
     "control": {
-      "paddingInline": {
-        "condensed": {
-          "value": "{base.size.8}"
-        },
-        "normal": {
-          "value": "{base.size.12}"
-        },
-        "spacious": {
-          "value": "{base.size.16}"
-        }
-      },
-      "gap": {
-        "condensed": {
-          "value": "{base.size.4}"
-        },
-        "normal": {
-          "value": "{base.size.8}"
-        },
-        "spacious": {
-          "value": "{base.size.16}"
-        }
-      },
       "minTarget": {
         "fine": {
           "value": "{base.size.16}"
         },
-        "course": {
+        "coarse": {
           "value": "{base.size.44}"
         }
       },
       "xsmall": {
         "size": {
-          "value": "{base.size.28}"
+          "value": "{base.size.24}"
         },
-        "lineBox": {
-          "value": "{base.size.20}",
-          "comment": "fix with type token"
+        "lineBoxHeight": {
+          "value": "{base.size.20}"
         },
         "paddingBlock": {
-          "value": "calc(({base.size.28} - {base.size.20}) / 2)"
+          "value": "calc(({gh.control.xsmall.size} - {gh.control.xsmall.lineBoxHeight}) / 2)"
         },
         "paddingInline": {
           "condensed": {
-            "value": "{base.size.8}"
+            "value": "{base.size.4}"
           },
           "normal": {
+            "value": "{base.size.8}"
+          },
+          "spacious": {
             "value": "{base.size.12}"
           }
         }
       },
       "small": {
         "size": {
-          "value": "{base.size.32}"
+          "value": "{base.size.28}"
         },
-        "lineBox": {
-          "value": "{base.size.20}",
-          "comment": "fix with type token"
+        "lineBoxHeight": {
+          "value": "{base.size.20}"
         },
         "paddingBlock": {
-          "value": "calc(({base.size.32} - {base.size.20}) / 2)"
+          "value": "calc(({gh.control.small.size} - {gh.control.small.lineBoxHeight}) / 2)"
         },
         "paddingInline": {
           "condensed": {
@@ -68,24 +47,23 @@
           },
           "normal": {
             "value": "{base.size.12}"
-          },
-          "spacious": {
-            "value": "{base.size.16}"
           }
         }
       },
       "medium": {
         "size": {
-          "value": "{base.size.40}"
+          "value": "{base.size.32}"
         },
-        "lineBox": {
-          "value": "{base.size.20}",
-          "comment": "fix with type token"
+        "lineBoxHeight": {
+          "value": "{base.size.20}"
         },
         "paddingBlock": {
-          "value": "calc(({base.size.40} - {base.size.20}) / 2)"
+          "value": "calc(({gh.control.medium.size} - {gh.control.medium.lineBoxHeight}) / 2)"
         },
         "paddingInline": {
+          "condensed": {
+            "value": "{base.size.8}"
+          },
           "normal": {
             "value": "{base.size.12}"
           },
@@ -96,14 +74,32 @@
       },
       "large": {
         "size": {
-          "value": "{base.size.48}"
+          "value": "{base.size.40}"
         },
-        "lineBox": {
-          "value": "{base.size.20}",
-          "comment": "fix with type token"
+        "lineBoxHeight": {
+          "value": "{base.size.20}"
         },
         "paddingBlock": {
-          "value": "calc(({base.size.48} - {base.size.20}) / 2)"
+          "value": "calc(({gh.control.large.size} - {gh.control.large.lineBoxHeight}) / 2)"
+        },
+        "paddingInline": {
+          "normal": {
+            "value": "{base.size.12}"
+          },
+          "spacious": {
+            "value": "{base.size.16}"
+          }
+        }
+      },
+      "xlarge": {
+        "size": {
+          "value": "{base.size.48}"
+        },
+        "lineBoxHeight": {
+          "value": "{base.size.20}"
+        },
+        "paddingBlock": {
+          "value": "calc(({gh.control.xlarge.size} - {gh.control.xlarge.lineBoxHeight}) / 2)"
         },
         "paddingInline": {
           "normal": {
@@ -136,6 +132,41 @@
         },
         "spacious": {
           "value": "{base.size.24}"
+        }
+      }
+    },
+    "controlStack": {
+      "small": {
+        "gap": {
+          "condensed": {
+            "value": "{base.size.8}"
+          },
+          "spacious": {
+            "value": "{base.size.16}"
+          }
+        }
+      },
+      "medium": {
+        "gap": {
+          "condensed": {
+            "value": "{base.size.8}"
+          },
+          "spacious": {
+            "value": "{base.size.12}"
+          }
+        }
+      },
+      "large": {
+        "gap": {
+          "auto": {
+            "value": "{base.size.8}"
+          },
+          "condensed": {
+            "value": "{base.size.8}"
+          },
+          "spacious": {
+            "value": "{base.size.12}"
+          }
         }
       }
     }

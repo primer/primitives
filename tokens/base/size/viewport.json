@@ -2,22 +2,22 @@
   "base": {
     "viewportRange": {
       "narrow": {
-        "value": "{base.breakpoint.xsmall}"
+        "value": "(max-width: calc({base.breakpoint.medium} - 0.02px))"
       },
       "narrowLandscape": {
-        "value": "{base.breakpoint.xsmall}"
+        "value": "(max-width: calc({base.breakpoint.large} - 0.02px) and (max-height: calc({base.breakpoint.small} - 0.02px)) and (orientation: landscape))"
       },
       "regular": {
-        "value": "{base.breakpoint.small}"
+        "value": "(min-width: {base.breakpoint.medium})"
       },
       "wide": {
-        "value": "{base.breakpoint.medium}"
+        "value": "(min-width: {base.breakpoint.xxlarge})"
       },
       "portrait": {
-        "value": "orientation: portrait"
+        "value": "(orientation: portrait)"
       },
       "landscape": {
-        "value": "orientation: landscape"
+        "value": "(orientation: landscape)"
       }
     }
   }

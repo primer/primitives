@@ -182,7 +182,7 @@ StyleDictionary.registerFormat({
         const {value, path, name} = prop
         // const tokenPath = path
         // const tokenProperty = path[path.length - 1]
-        return `@custom-media --${name}-viewport (${value});`
+        return `@custom-media --${name}-viewport ${value};`
       })
       .join('\n')
   }

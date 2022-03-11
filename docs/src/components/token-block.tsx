@@ -15,63 +15,69 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
+// export function TokenBlockVisual({filePath}) {
+//   return tokens[filePath].map(token => {
+//     console.log(token.name.includes('gap'))
+//     const gapProp = token.name.includes('gap') ? token.value : null
+//     const paddingLeft = token.name.includes('paddingInline') ? token.value : null
+//     const paddingRight = token.name.includes('paddingInline') ? token.value : null
+//     const paddingTop = token.name.includes('paddingBlock') ? token.value : null
+//     const paddingBottom = token.name.includes('paddingBlock') ? token.value : null
+//       const blockSize = token.name.includes('size') ? token.value : null
+//   )
+//     return (
+//       <ControlVisual
+//         gap={gapProp}
+//         paddingLeft={paddingLeft}
+//         paddingRight={paddingRight}
+//         paddingTop={paddingTop}
+//         paddingBottom={paddingBottom}
+//         blockSize={blockSize}
+//       />
+//     )
+//   })
+// }
+
 export function TokenBlock({filePath}) {
   // return <pre>{JSON.stringify(tokens[filePath], null, 2)}</pre>
+  //   console.log(tokens)
   return (
     <Table>
       <GlobalStyle />
-      {tokens[filePath].map(token => {
-        console.log(token.name.includes('gap'))
-        const gapProp = token.name.includes('gap') ? token.value : null
-        const paddingLeft = token.name.includes('paddingInline') ? token.value : null
-        const paddingRight = token.name.includes('paddingInline') ? token.value : null
-        const paddingTop = token.name.includes('paddingBlock') ? token.value : null
-        const paddingBottom = token.name.includes('paddingBlock') ? token.value : null
-        const blockSize = token.name.includes('size') ? token.value : null
-        return (
-          <Fragment>
-            {token.name.includes('-xsmall-') && (
-              <Fragment>
-                <thead>
-                  <th>
-                    <Box>
-                      {' '}
-                      <ControlVisual
-                        gap={gapProp}
-                        paddingLeft={paddingLeft}
-                        paddingRight={paddingRight}
-                        paddingTop={paddingTop}
-                        paddingBottom={paddingBottom}
-                        blockSize={blockSize}
-                      />
-                    </Box>
-                  </th>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th>CSS variable</th>
-                    <td>
-                      <code>--{token.name}</code>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th>JS variable</th>
-                    <td>
-                      <code>{token.path.join('.')}</code>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th>Value</th>
-                    <td>
-                      <code>{token.value}</code>
-                    </td>
-                  </tr>
-                </tbody>
-              </Fragment>
-            )}
-          </Fragment>
-        )
-      })}
+      <Fragment>
+        <thead>
+          <tr>
+            <Box as="th" textAlign="left">
+              CSS
+            </Box>
+            <Box as="th" textAlign="left">
+              JS
+            </Box>
+            <Box as="th" textAlign="left">
+              Value
+            </Box>
+          </tr>
+        </thead>
+        <tbody>
+          {tokens[filePath].map(token => {
+            return (
+              token.name.includes('-small-') && (
+                <tr>
+                  <td>
+                    <code>--{token.name}</code>
+                  </td>
+                  <td>
+                    <code>{token.path.join('.')}</code>
+                  </td>
+                  <td>
+                    <code>{token.value}</code>
+                  </td>
+                </tr>
+              )
+            )
+          })}
+        </tbody>
+      </Fragment>
     </Table>
   )
 }

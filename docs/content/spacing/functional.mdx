@@ -1,14 +1,27 @@
 import {NewTable, TokenTable} from '../../src/components/token-table.tsx'
+import {Box, Text} from '@primer/components'
 import {createGlobalStyle} from 'styled-components'
 import '../../../dist/css/tokens/base/size/size.css'
 import '../../../dist/css/tokens/base/size/border.css'
 import '../../../dist/css/tokens/functional/size/size.css'
 import '../../../dist/css/tokens/functional/size/border.css'
 import ControlVisual from '../../src/components/control.tsx'
-import {TokenBlock} from '../../src/components/token-block.tsx'
+import {TokenBlock, TokenBlockVisual} from '../../src/components/token-block.tsx'
 
 # Functional
 
 ## Size
+
+<div style={{marginBottom: '1rem'}}>
+  <ControlVisual
+    blockSize="var(--gh-control-small-size)"
+    paddingLeft="var(--gh-control-small-paddingInline-normal)"
+    paddingRight="var(--gh-control-small-paddingInline-normal)"
+    paddingTop="var(--gh-control-small-paddingBlock)"
+    paddingBottom="var(--gh-control-small-paddingBlock)"
+    lineBox="var(--gh-control-small-lineBox)"
+    gap="var(--gh-control-gap-condensed)"
+  />
+</div>
 
 <TokenBlock filePath="tokens/functional/size/size.json" />

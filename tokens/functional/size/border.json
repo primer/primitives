@@ -2,32 +2,35 @@
   "gh": {
     "boxShadow": {
       "thin": {
-        "value": "inset 0 0 0 {base.borderWidth.1}"
+        "value": "inset 0 0 0 {gh.borderWidth.thin}"
       },
       "thick": {
-        "value": "inset 0 0 0 {base.borderWidth.2}"
+        "value": "inset 0 0 0 {gh.borderWidth.thick}"
       }
     },
-    "border": {
+    "borderWidth": {
       "thin": {
-        "value": "{base.borderWidth.1}"
+        "value": "max(1px, 0.0625rem)"
+      },
+      "normal": {
+        "value": "max(2px, 0.125rem)"
       },
       "thick": {
-        "value": "{base.borderWidth.2}"
+        "value": "max(4px, 0.25rem)"
       }
     },
     "borderRadius": {
       "small": {
-        "value": "{base.borderRadius.3}"
+        "value": "3px"
       },
       "medium": {
-        "value": "{base.borderRadius.6}"
+        "value": "6px"
       },
       "large": {
-        "value": "{base.borderRadius.12}"
+        "value": "12px"
       },
       "full": {
-        "value": "{base.borderRadius.100}"
+        "value": "100vh"
       }
     }
   }

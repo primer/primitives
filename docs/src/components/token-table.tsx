@@ -1,4 +1,4 @@
-import React, {Fragment} from 'react'
+import React, {Fragment, useState} from 'react'
 import styled, {createGlobalStyle} from 'styled-components'
 import {Box, Text} from '@primer/components'
 import Table from '@primer/gatsby-theme-doctocat/src/components/table.js'
@@ -6,7 +6,8 @@ import Table from '@primer/gatsby-theme-doctocat/src/components/table.js'
 // import ghTokens from '../../../dist/new/tokens/tokensGH.js'
 import tokens from '../../../dist/docs/docValues.json'
 import Swatch from './swatch'
-import ControlVisual from './control'
+import {CopyToClipboard} from 'react-copy-to-clipboard'
+
 // console.log(Object.entries(ghTokens.size.control))
 
 const GlobalStyle = createGlobalStyle`
@@ -17,23 +18,26 @@ const GlobalStyle = createGlobalStyle`
 
 export function NewTable({filePath}) {
   // return <pre>{JSON.stringify(tokens[filePath], null, 2)}</pre>
+  //   const [value, setValue] = useState('My copy text')
+  const [copied, setCopied] = useState(false)
+
   return (
     <Table>
       <GlobalStyle />
       <thead>
         <tr>
           <Box as="th" textAlign="left">
-            CSS variable
+            CSS
           </Box>
           <Box as="th" textAlign="left">
-            JS variable
+            JS
           </Box>
-          {/* <Box as="th" textAlign="left">
+          <Box as="th" textAlign="left">
             Value
-          </Box> */}
-          {/* <Box as="th" textAlign="left">
+          </Box>
+          <Box as="th" textAlign="left">
             Pixel equivalant
-          </Box> */}
+          </Box>
           <Box as="th" textAlign="left">
             Visual
           </Box>
@@ -42,36 +46,24 @@ export function NewTable({filePath}) {
       <tbody>
         {tokens[filePath].map(token => {
           console.log(token.name.includes('gap'))
-          const gapProp = token.name.includes('gap') ? token.value : null
-          const paddingLeft = token.name.includes('paddingInline') ? token.value : null
-          const paddingRight = token.name.includes('paddingInline') ? token.value : null
-          const paddingTop = token.name.includes('paddingBlock') ? token.value : null
-          const paddingBottom = token.name.includes('paddingBlock') ? token.value : null
-          const blockSize = token.name.includes('size') ? token.value : null
           return (
             <tr>
               <td>
-                <code>--{token.name}</code>
+                <CopyToClipboard text={token.name} onCopy={() => setCopied(true)}>
+                  <code>--{token.name}</code>
+                </CopyToClipboard>
               </td>
               <td>
                 <code>{token.path.join('.')}</code>
               </td>
-              {/* <td>
-                <code>{token.value}</code>
-              </td> */}
-              {/* <td>
-                <code>{token.original.value}</code>
-              </td> */}
               <td>
-                {/* <Swatch color="var(--scale-purple-3)" height={token.value} width={token.value} /> */}
-                <ControlVisual
-                  gap={gapProp}
-                  paddingLeft={paddingLeft}
-                  paddingRight={paddingRight}
-                  paddingTop={paddingTop}
-                  paddingBottom={paddingBottom}
-                  blockSize={blockSize}
-                />
+                <code>{token.value}</code>
+              </td>
+              <td>
+                <code>{token.original.value}</code>
+              </td>
+              <td>
+                <Swatch color="var(--scale-purple-3)" height={token.value} width={token.value} />
               </td>
             </tr>
           )
