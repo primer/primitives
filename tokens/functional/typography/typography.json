@@ -7,14 +7,14 @@
       "heading": {
         "value": "{base.fontStack.system}"
       },
-      "monospace": {
+      "code": {
         "value": "{base.fontStack.monospace}"
       }
     },
     "text": {
       "display": {
         "shorthand": {
-          "value": "{base.text.weight.semibold} 40px/56px sans-serif"
+          "value": "{base.text.weight.semibold} {gh.text.display.size}/{gh.text.display.lineHeight} {gh.fontStack.heading}"
         },
         "lineBoxHeight": {
           "value": "56px"
@@ -32,10 +32,10 @@
       "title": {
         "shorthand": {
           "large": {
-            "value": "{base.text.weight.bold} 40px/56px sans-serif"
+            "value": "{base.text.weight.bold} {gh.text.title.size.large}/{gh.text.title.lineHeight.large} {gh.fontStack.heading}"
           },
           "medium": {
-            "value": "{base.text.weight.bold} 40px/56px sans-serif"
+            "value": "{base.text.weight.bold} {gh.text.title.size.medium}/{gh.text.title.lineHeight.medium} {gh.fontStack.heading}"
           }
         },
         "size": {
@@ -60,13 +60,13 @@
       },
       "subtitle": {
         "shorthand": {
-          "value": "{base.text.weight.semibold} 40px/56px sans-serif"
+          "value": "{base.text.weight.semibold} {gh.text.subtitle.size}/{gh.text.subtitle.lineHeight} {gh.fontStack.heading}"
         },
         "size": {
-          "value": "{base.text.size.20}"
+          "value": "20px"
         },
         "lineHeight": {
-          "value": "{base.text.size.32}"
+          "value": "32px"
         },
         "weight": {
           "value": "{base.text.weight.normal}"
@@ -75,13 +75,13 @@
       "body": {
         "shorthand": {
           "large": {
-            "value": "{base.text.weight.bold} 40px/56px sans-serif"
+            "value": "{base.text.weight.bold} {gh.text.body.size.large}/{gh.text.body.lineHeight.large} {gh.fontStack.body}"
           },
           "medium": {
-            "value": "{base.text.weight.bold} 40px/56px sans-serif"
+            "value": "{base.text.weight.bold} {gh.text.body.size.medium}/{gh.text.body.lineHeight.medium} {gh.fontStack.body}"
           },
           "small": {
-            "value": "{base.text.weight.bold} 40px/56px sans-serif"
+            "value": "{base.text.weight.bold} {gh.text.body.size.small}/{gh.text.body.lineHeight.small} {gh.fontStack.body}"
           }
         },
         "size": {
@@ -112,7 +112,7 @@
       },
       "caption": {
         "shorthand": {
-          "value": "{base.text.weight.semibold} 40px/56px sans-serif"
+          "value": "{base.text.weight.semibold} {gh.text.caption.size}/{gh.text.caption.lineHeight} {gh.fontStack.body}"
         },
         "size": {
           "value": "12"
@@ -126,7 +126,7 @@
       },
       "codeBlock": {
         "shorthand": {
-          "value": "{base.text.weight.semibold} 40px/56px sans-serif"
+          "value": "{base.text.weight.semibold} {gh.text.codeBlock.size}/{gh.text.codeBlock.lineHeight} {gh.fontStack.code}"
         },
         "size": {
           "value": "13px"
@@ -140,7 +140,7 @@
       },
       "codeInline": {
         "shorthand": {
-          "value": "{base.text.weight.semibold} 40px/56px sans-serif"
+          "value": "{base.text.weight.semibold} {gh.text.codeInline.size} {gh.fontStack.code}"
         },
         "size": {
           "value": "0.9285em"
