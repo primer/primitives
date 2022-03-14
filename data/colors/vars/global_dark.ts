@@ -4,7 +4,7 @@ export default {
   fg: {
     default: get('scale.gray.1'),
     muted: get('scale.gray.3'),
-    subtle: get('scale.gray.5'),
+    subtle: get('scale.gray.4'),
     onEmphasis: get('scale.white')
   },
   canvas: {
