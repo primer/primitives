@@ -1,38 +1,57 @@
 {
   "gh": {
+    "fontStack": {
+      "body": {
+        "value": "{base.fontStack.system}"
+      },
+      "heading": {
+        "value": "{base.fontStack.system}"
+      },
+      "monospace": {
+        "value": "{base.fontStack.monospace}"
+      }
+    },
     "text": {
       "display": {
-        "font": {
+        "shorthand": {
           "value": "{base.text.weight.semibold} 40px/56px sans-serif"
         },
         "lineBoxHeight": {
           "value": "56px"
         },
         "size": {
-          "value": "{base.text.size.40}"
+          "value": "40px"
         },
         "lineHeight": {
-          "value": "{base.text.size.56}"
+          "value": "56px"
         },
         "weight": {
           "value": "{base.text.weight.semibold}"
         }
       },
       "title": {
-        "size": {
+        "shorthand": {
           "large": {
-            "value": "{base.text.size.32}"
+            "value": "{base.text.weight.bold} 40px/56px sans-serif"
           },
           "medium": {
-            "value": "{base.text.size.20}"
+            "value": "{base.text.weight.bold} 40px/56px sans-serif"
+          }
+        },
+        "size": {
+          "large": {
+            "value": "32px"
+          },
+          "medium": {
+            "value": "20px"
           }
         },
         "lineHeight": {
           "large": {
-            "value": "{base.text.size.48}"
+            "value": "48px"
           },
           "medium": {
-            "value": "{base.text.size.32}"
+            "value": "32px"
           }
         },
         "weight": {
@@ -40,6 +59,9 @@
         }
       },
       "subtitle": {
+        "shorthand": {
+          "value": "{base.text.weight.semibold} 40px/56px sans-serif"
+        },
         "size": {
           "value": "{base.text.size.20}"
         },
@@ -51,26 +73,37 @@
         }
       },
       "body": {
-        "size": {
+        "shorthand": {
           "large": {
-            "value": "{base.text.size.16}"
+            "value": "{base.text.weight.bold} 40px/56px sans-serif"
           },
           "medium": {
-            "value": "{base.text.size.14}"
+            "value": "{base.text.weight.bold} 40px/56px sans-serif"
           },
           "small": {
-            "value": "{base.text.size.12}"
+            "value": "{base.text.weight.bold} 40px/56px sans-serif"
+          }
+        },
+        "size": {
+          "large": {
+            "value": "16px"
+          },
+          "medium": {
+            "value": "14px"
+          },
+          "small": {
+            "value": "12px"
           }
         },
         "lineHeight": {
           "large": {
-            "value": "{base.text.size.24}"
+            "value": "24px"
           },
           "medium": {
-            "value": "{base.text.size.20}"
+            "value": "20px"
           },
           "small": {
-            "value": "{base.text.size.20}"
+            "value": "20px"
           }
         },
         "weight": {
@@ -78,28 +111,37 @@
         }
       },
       "caption": {
+        "shorthand": {
+          "value": "{base.text.weight.semibold} 40px/56px sans-serif"
+        },
         "size": {
-          "value": "{base.text.size.12}"
+          "value": "12"
         },
         "lineHeight": {
-          "value": "{base.text.size.16}"
+          "value": "16"
         },
         "weight": {
           "value": "{base.text.weight.normal}"
         }
       },
       "codeBlock": {
+        "shorthand": {
+          "value": "{base.text.weight.semibold} 40px/56px sans-serif"
+        },
         "size": {
           "value": "13px"
         },
         "lineHeight": {
-          "value": "{base.text.size.20}"
+          "value": "20px"
         },
         "weight": {
           "value": "{base.text.weight.normal}"
         }
       },
       "codeInline": {
+        "shorthand": {
+          "value": "{base.text.weight.semibold} 40px/56px sans-serif"
+        },
         "size": {
           "value": "0.9285em"
         },
