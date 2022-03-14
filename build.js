@@ -19,20 +19,6 @@ console.log('\n==============================================')
 
 // REGISTER THE CUSTOM TRANFORMS
 
-// allow camelCase in name + kebab path
-// StyleDictionary.registerTransform({
-//   name: 'name/camel/kebab',
-//   type: 'name',
-//   transformer: function(token, options) {
-//     // const tokenPath = token.path
-//     // const format = tokenPath.replace(/,/g, '-')
-//     const {attributes, path} = token
-//     console.log('token', token)
-//     // this should probably check for 'category' and remove it from the path
-//     return token.path.slice(1).join('-')
-//   }
-// })
-
 /**
  * transform: css variable names
  * example: `--namespace-item-variant-property-modifier`
@@ -137,11 +123,23 @@ StyleDictionary.registerTransform({
   }
 })
 
+// transform: composite typography to shorthands
+StyleDictionary.registerTransform({
+  name: 'typography/shorthand',
+  type: 'value',
+  transitive: true,
+  matcher: token => token.type === 'typography',
+  transformer: token => {
+    const {value} = token
+    return `${value.fontWeight} ${value.fontSize}/${value.lineHeight} ${value.fontFamily}`
+  }
+})
+
 // REGISTER THE CUSTOM TRANFORM GROUPS
 
 StyleDictionary.registerTransformGroup({
   name: 'css',
-  transforms: ['name/css', 'pxToRem']
+  transforms: ['name/css', 'pxToRem', 'typography/shorthand']
 })
 
 // REGISTER A CUSTOM FORMAT
