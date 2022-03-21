@@ -171,7 +171,7 @@ export default {
 
   switchTrack: {
     bg: get('scale.black'),
-    border: get('scale.gray.3'),
+    border: get('scale.gray.4'),
 
     checked: {
       bg: alpha(get('scale.blue.5'), 0.35),
