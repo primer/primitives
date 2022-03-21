@@ -214,7 +214,15 @@ const exceptions = {
       activeBg: get('scale.red.6'),
       hoverText: get('fg.onEmphasis')
     }
-  }
+  },
+
+  switchTrack: {
+    border: get('border.default'),
+
+    checked: {
+      border: get('scale.blue.5'),
+    }
+  },
 }
 
 export default merge(dark, exceptions, {scale})

@@ -167,5 +167,15 @@ export default {
       activeBg: alpha(get('scale.red.4'), 0.24),
       hoverText: get('scale.red.3')
     }
-  }
+  },
+
+  switchTrack: {
+    bg: get('scale.black'),
+
+    checked: {
+      bg: alpha(get('scale.blue.5'), 0.35),
+      hoverBg: alpha(get('scale.blue.5'), 0.5),
+      activeBg: alpha(get('scale.blue.5'), 0.65),
+    }
+  },
 }
