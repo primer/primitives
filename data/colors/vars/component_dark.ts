@@ -171,11 +171,20 @@ export default {
 
   switchTrack: {
     bg: get('scale.black'),
+    border: get('scale.gray.3'),
 
     checked: {
       bg: alpha(get('scale.blue.5'), 0.35),
       hoverBg: alpha(get('scale.blue.5'), 0.5),
       activeBg: alpha(get('scale.blue.5'), 0.65),
+      border: get('scale.blue.3'),
     }
   },
+
+  switchKnob: {
+    checked: {
+      bg: get('scale.blue.5'),
+      disabledBg: get('scale.gray.5'),
+    }
+  }
 }
