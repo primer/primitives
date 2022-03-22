@@ -1,5 +1,15 @@
 # @primer/primitives
 
+## 7.6.0
+
+### Minor Changes
+
+- [#309](https://github.com/primer/primitives/pull/309) [`4588342`](https://github.com/primer/primitives/commit/45883423f029e7dee067fe4dd9636bebb11adbbe) Thanks [@mperrotti](https://github.com/mperrotti)! - adds primitives for toggle switch component
+
+### Patch Changes
+
+- [#307](https://github.com/primer/primitives/pull/307) [`da4ffd3`](https://github.com/primer/primitives/commit/da4ffd338a41bb1f653e096c8b886db4834b3715) Thanks [@simurai](https://github.com/simurai)! - Increase contrast for dark `fg.subtle`
+
 ## 7.5.1
 
 ### Patch Changes
