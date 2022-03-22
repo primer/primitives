@@ -4,6 +4,7 @@ import {createGlobalStyle} from 'styled-components'
 import '../../../dist/css/tokens/base/size/size.css'
 import '../../../dist/css/tokens/functional/size/size.css'
 import '../../../dist/css/tokens/functional/size/border.css'
+import '../../../dist/css/tokens/functional/typography/typography.css'
 import ControlVisual from '../../src/components/control.tsx'
 import {TokenBlock, TokenBlockVisual} from '../../src/components/token-block.tsx'
 
@@ -11,16 +12,8 @@ import {TokenBlock, TokenBlockVisual} from '../../src/components/token-block.tsx
 
 ## Size
 
-<div style={{marginBottom: '1rem'}}>
-  <ControlVisual
-    blockSize="var(--gh-control-small-size)"
-    paddingLeft="var(--gh-control-small-paddingInline-normal)"
-    paddingRight="var(--gh-control-small-paddingInline-normal)"
-    paddingTop="var(--gh-control-small-paddingBlock)"
-    paddingBottom="var(--gh-control-small-paddingBlock)"
-    lineBox="var(--gh-control-small-lineBox)"
-    gap="var(--gh-control-gap-condensed)"
-  />
-</div>
+<TokenBlock filePath="tokens/functional/size/size.json" tokenVariant="-small-" />
 
-<TokenBlock filePath="tokens/functional/size/size.json" />
+<h2>Medium</h2>
+
+<TokenBlock filePath="tokens/functional/size/size.json" tokenVariant="-medium-" />
