@@ -226,7 +226,15 @@ const exceptions = {
       hoverText: get('fg.onEmphasis')
     }
   },
-  pageHeaderBg: get('canvas.default')
+  pageHeaderBg: get('canvas.default'),
+  switchTrack: {
+    bg: get('scale.white'),
+    border: get('border.default'),
+
+    checked: {
+      border: get('scale.blue.5'),
+    }
+  },
 }
 
 export default merge(light, exceptions, {scale})
