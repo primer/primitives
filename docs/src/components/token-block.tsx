@@ -1,4 +1,5 @@
 import React, {Fragment} from 'react'
+import CopyClipboard from '@primer/gatsby-theme-doctocat/src/components/clipboard-copy'
 import styled, {createGlobalStyle} from 'styled-components'
 import {Box, Text} from '@primer/components'
 import Table from '@primer/gatsby-theme-doctocat/src/components/table.js'
@@ -89,6 +90,7 @@ export function TokenBlock({filePath, tokenVariant}) {
                     <Box
                       as="table"
                       sx={{
+                        width: '100%',
                         '& tr': {
                           border: 'none !important',
                           display: 'grid',
@@ -97,7 +99,14 @@ export function TokenBlock({filePath, tokenVariant}) {
                           justifyItems: 'start',
                           gap: '16px'
                         },
-                        '& td': {border: 'none !important', padding: '0 !important', display: 'flex'},
+                        '& td': {
+                          border: 'none !important',
+                          padding: '0 !important',
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: '16px',
+                          width: '100%'
+                        },
                         '& th': {
                           border: 'none !important',
                           color: 'var(--color-fg-subtle)',
@@ -110,6 +119,17 @@ export function TokenBlock({filePath, tokenVariant}) {
                           flexDirection: 'column',
                           padding: '8px 16px',
                           gap: '8px'
+                        },
+                        '& button': {
+                          height: '23.5px',
+                          width: '23.5px',
+                          padding: '0',
+                          display: 'grid'
+                        },
+                        '& button > svg': {
+                          height: '12px',
+                          width: '12px',
+                          placeSelf: 'center'
                         }
                       }}
                     >
@@ -118,12 +138,14 @@ export function TokenBlock({filePath, tokenVariant}) {
                           <th>CSS</th>
                           <td>
                             <code>--{token.name}</code>
+                            <CopyClipboard value={`--${token.name}`} />
                           </td>
                         </tr>
                         <tr>
                           <th>JS</th>
                           <td>
                             <code>{token.path.join('.')}</code>
+                            <CopyClipboard value={`${token.path.join('.')}`} />
                           </td>
                         </tr>
                       </tbody>
