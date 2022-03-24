@@ -8,6 +8,7 @@ import Table from '@primer/gatsby-theme-doctocat/src/components/table.js'
 import tokens from '../../../dist/docs/docValues.json'
 import Swatch from './swatch'
 import ControlVisual from './control'
+import TypographyBlock from './typography-block'
 // console.log(Object.entries(ghTokens.size.control))
 
 const GlobalStyle = createGlobalStyle`
@@ -27,12 +28,50 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-export function TokenBlock({filePath, tokenVariant}) {
+export function TypographyTable({filePath}) {
   return (
     <Table>
       <GlobalStyle />
       <Fragment>
+        <Box
+          as="dt"
+          sx={{
+            display: 'grid',
+            gridTemplateAreas: `'exampleTitle . .' 'example example example' 'tokenLabel valueLabel usageLabel' 'token value usage'`,
+            gridTemplateRows: 'min-content min-content min-content min-content',
+            gridTemplateColumns: '1fr 1fr 1fr',
+            border: 'solid 1px deeppink'
+          }}
+        >
+          <Box as="dt" sx={{gridArea: 'exampleTitle'}}>
+            Example
+          </Box>
+          <Box as="dd" sx={{gridArea: 'example'}}>
+            blah
+          </Box>
+          <Box as="dt" sx={{gridArea: 'tokenLabel'}}>
+            Token
+          </Box>
+          <Box as="dd" sx={{gridArea: 'token'}}>
+            code
+          </Box>
+          <Box as="dt" sx={{gridArea: 'valueLabel'}}>
+            Value
+          </Box>
+          <Box as="dd" sx={{gridArea: 'value'}}>
+            value
+          </Box>
+          <Box as="dt" sx={{gridArea: 'usageLabel'}}>
+            Usage
+          </Box>
+          <Box as="dd" sx={{gridArea: 'usage'}}>
+            Headings
+          </Box>
+        </Box>
         <thead>
+          <tr>
+            <th>Hello</th>
+          </tr>
           <tr>
             <Box as="th" textAlign="left">
               Example
@@ -44,7 +83,7 @@ export function TokenBlock({filePath, tokenVariant}) {
               Value
             </Box>
             <Box as="th" textAlign="left">
-              px
+              Usage
             </Box>
           </tr>
         </thead>
@@ -57,34 +96,35 @@ export function TokenBlock({filePath, tokenVariant}) {
             const paddingBottom = token.name.includes('paddingBlock') ? true : false
             const lineBlockHeightProp = token.name.includes('lineBoxHeight') ? true : false
             const blockSize = token.name.includes('size') ? true : false
-            const condensed = token.name.includes('condensed') ? true : false
-            const normal = token.name.includes('normal') ? true : false
-            const spacious = token.name.includes('spacious') ? true : false
+            const small = token.name.includes('small') ? true : false
+            const medium = token.name.includes('medium') ? true : false
+            const large = token.name.includes('large') ? true : false
+            const tokenVariant = token.name.includes('codeInline')
+              ? 'codeInline'
+              : token.name.includes('codeBlock')
+              ? 'codeBlock'
+              : token.name.includes('caption')
+              ? 'caption'
+              : token.name.includes('body')
+              ? 'body'
+              : token.name.includes('subtitle')
+              ? 'subtitle'
+              : token.name.includes('title')
+              ? 'title'
+              : token.name.includes('display')
+              ? 'display'
+              : 'test'
             const tokenVariantString = tokenVariant.replace(/-/g, '')
+            console.log(tokenVariant)
             return (
-              token.name.includes('-control-') &&
-              token.name.match(tokenVariant) && (
+              token.name.includes('-shorthand') && (
                 <tr>
-                  <td>
-                    <ControlVisual
-                      gap={tokenVariantString}
-                      paddingLeft={tokenVariantString}
-                      paddingRight={tokenVariantString}
-                      paddingTop={tokenVariantString}
-                      paddingBottom={tokenVariantString}
-                      blockSize={tokenVariantString}
-                      lineBox={tokenVariantString}
-                      modifier={condensed ? '-condensed' : normal ? '-normal' : spacious ? '-spacious' : undefined}
-                      highlightPaddingBottom={paddingBottom}
-                      highlightPaddingTop={paddingTop}
-                      highlightPaddingRight={paddingRight}
-                      highlightPaddingLeft={paddingLeft}
-                      highlightGap={gapProp}
-                      highlightHeight={blockSize}
-                      highlightLineBoxHeight={lineBlockHeightProp}
+                  <Box as="td" sx={{padding: '0 !important'}}>
+                    <TypographyBlock
+                      variant={tokenVariantString}
+                      modifier={small ? '-small' : medium ? '-medium' : large ? '-large' : undefined}
                     />
-                  </td>
-
+                  </Box>
                   <Box as="td" sx={{padding: '0 !important'}}>
                     <Box
                       as="table"
@@ -149,12 +189,28 @@ export function TokenBlock({filePath, tokenVariant}) {
                         </tr>
                       </tbody>
                     </Box>
+                    <Box as="table">
+                      <thead>
+                        <tr>
+                          <th>Value</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th>CSS</th>
+                          <td>
+                            <code>--{token.name}</code>
+                            <CopyClipboard value={`--${token.name}`} />
+                          </td>
+                        </tr>
+                      </tbody>
+                    </Box>
                   </Box>
-                  <td>
+                  {/* <td>
                     <code>{token.value}</code>
-                  </td>
+                  </td> */}
                   <td>
-                    <code>{token.original.value}</code>
+                    <p>{token.value}</p>
                   </td>
                 </tr>
               )
