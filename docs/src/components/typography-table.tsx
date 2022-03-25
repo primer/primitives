@@ -18,18 +18,11 @@ const GlobalStyle = createGlobalStyle`
 const TableBox = styled.div`
   border: 1px solid ${themeGet('colors.border.muted')};
   border-bottom: none;
-  padding: ${themeGet('space.2')} ${themeGet('space.3')};
+  padding: 2rem;
   background-color: ${themeGet('colors.white')};
 `
 
-export function TypographyTable({
-  filePath,
-  tokenVariant,
-  children,
-  showOriginalValue = true,
-  showProperty = true,
-  example
-}) {
+export function TypographyTable({filePath, tokenVariant, children, showOriginalValue = true, showProperty = true}) {
   return (
     <Box
       sx={{
@@ -111,7 +104,7 @@ export function TypographyTable({
                       }}
                     >
                       <InlineCode>
-                        {token.value} {showOriginalValue && `\ ${token.original.value}`}
+                        {token.value} {showOriginalValue && `/ ${token.original.value}`}
                       </InlineCode>
                     </Box>
                   </tr>

@@ -3,6 +3,8 @@ import CopyClipboard from '@primer/gatsby-theme-doctocat/src/components/clipboar
 import styled, {createGlobalStyle} from 'styled-components'
 import {Box, Text} from '@primer/components'
 import Table from '@primer/gatsby-theme-doctocat/src/components/table.js'
+import InlineCode from '@primer/gatsby-theme-doctocat/src/components/inline-code.js'
+import FrameworkVariableTable from './framework-variables-table'
 // import baseTokens from '../../../dist/new/tokens/tokensBase.js'
 // import ghTokens from '../../../dist/new/tokens/tokensGH.js'
 import tokens from '../../../dist/docs/docValues.json'
@@ -61,6 +63,10 @@ export function TokenBlock({filePath, tokenVariant}) {
             const normal = token.name.includes('normal') ? true : false
             const spacious = token.name.includes('spacious') ? true : false
             const tokenVariantString = tokenVariant.replace(/-/g, '')
+            const FrameworkVars = [
+              {id: 'CSS', token: `--${token.name}`},
+              {id: 'JS', token: `${token.path.join('.')}`}
+            ]
             return (
               token.name.includes('-control-') &&
               token.name.match(tokenVariant) && (
@@ -84,77 +90,12 @@ export function TokenBlock({filePath, tokenVariant}) {
                       highlightLineBoxHeight={lineBlockHeightProp}
                     />
                   </td>
-
-                  <Box as="td" sx={{padding: '0 !important'}}>
-                    <Box
-                      as="table"
-                      sx={{
-                        width: '100%',
-                        '& tr': {
-                          border: 'none !important',
-                          display: 'grid',
-                          gridTemplateColumns: '3ch 2fr',
-                          alignItems: 'center',
-                          justifyItems: 'start',
-                          gap: '16px'
-                        },
-                        '& td': {
-                          border: 'none !important',
-                          padding: '0 !important',
-                          display: 'flex',
-                          alignItems: 'center',
-                          gap: '16px',
-                          width: '100%'
-                        },
-                        '& th': {
-                          border: 'none !important',
-                          color: 'var(--color-fg-subtle)',
-                          fontSize: '14px',
-                          padding: '0 !important'
-                        },
-                        '& tr:nth-child(2n)': {background: 'transparent !important'},
-                        '& tbody': {
-                          display: 'flex',
-                          flexDirection: 'column',
-                          padding: '8px 16px',
-                          gap: '8px'
-                        },
-                        '& button': {
-                          height: '23.5px',
-                          width: '23.5px',
-                          padding: '0',
-                          display: 'grid'
-                        },
-                        '& button > svg': {
-                          height: '12px',
-                          width: '12px',
-                          placeSelf: 'center'
-                        }
-                      }}
-                    >
-                      <tbody>
-                        <tr>
-                          <th>CSS</th>
-                          <td>
-                            <code>--{token.name}</code>
-                            <CopyClipboard value={`--${token.name}`} />
-                          </td>
-                        </tr>
-                        <tr>
-                          <th>JS</th>
-                          <td>
-                            <code>{token.path.join('.')}</code>
-                            <CopyClipboard value={`${token.path.join('.')}`} />
-                          </td>
-                        </tr>
-                      </tbody>
-                    </Box>
-                  </Box>
+                  <FrameworkVariableTable frameworks={FrameworkVars} />
                   <td>
-                    <code>{token.value}</code>
+                    <InlineCode>{token.value}</InlineCode>
                   </td>
                   <td>
-                    <code>{token.original.value}</code>
+                    <InlineCode>{token.original.value}</InlineCode>
                   </td>
                 </tr>
               )
