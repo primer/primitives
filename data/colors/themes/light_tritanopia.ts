@@ -1,5 +1,5 @@
 import {merge} from '../../../src/utils'
-import light_colorblind from './light_high_contrast'
+import light_colorblind from './light_colorblind'
 
 const scale = {
   black: '#1b1f24',
