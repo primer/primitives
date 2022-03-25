@@ -3,23 +3,12 @@ import CopyClipboard from '@primer/gatsby-theme-doctocat/src/components/clipboar
 import styled, {createGlobalStyle} from 'styled-components'
 import {Box, Text} from '@primer/components'
 import Table from '@primer/gatsby-theme-doctocat/src/components/table.js'
-import InlineCode from '@primer/gatsby-theme-doctocat/src/components/inline-code.js'
+import TokenInlineCode from './TokenInlineCode'
 import FrameworkVariableTable from './framework-variables-table'
-// import baseTokens from '../../../dist/new/tokens/tokensBase.js'
-// import ghTokens from '../../../dist/new/tokens/tokensGH.js'
 import tokens from '../../../dist/docs/docValues.json'
-import Swatch from './swatch'
 import ControlVisual from './control'
-// console.log(Object.entries(ghTokens.size.control))
 
 const GlobalStyle = createGlobalStyle`
-  code {
-      white-space: nowrap;
-        background: var(--scale-purple-1);
-        border-radius: 6px;
-        padding: 2px 6px;
-        flex: 0 1 auto;
-  }
   :root {
       --scale-purple-1: #ecd8ff;
     --scale-purple-3: #c297ff;
@@ -92,10 +81,10 @@ export function TokenBlock({filePath, tokenVariant}) {
                   </td>
                   <FrameworkVariableTable frameworks={FrameworkVars} />
                   <td>
-                    <InlineCode>{token.value}</InlineCode>
+                    <TokenInlineCode>{token.value}</TokenInlineCode>
                   </td>
                   <td>
-                    <InlineCode>{token.original.value}</InlineCode>
+                    <TokenInlineCode>{token.original.value}</TokenInlineCode>
                   </td>
                 </tr>
               )

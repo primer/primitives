@@ -2,7 +2,7 @@ import React, {Fragment} from 'react'
 import CopyClipboard from '@primer/gatsby-theme-doctocat/src/components/clipboard-copy'
 import styled, {createGlobalStyle} from 'styled-components'
 import {Box, Text} from '@primer/components'
-import InlineCode from '@primer/gatsby-theme-doctocat/src/components/inline-code.js'
+import TokenInlineCode from './TokenInlineCode'
 import Table from '@primer/gatsby-theme-doctocat/src/components/table.js'
 // import baseTokens from '../../../dist/new/tokens/tokensBase.js'
 // import ghTokens from '../../../dist/new/tokens/tokensGH.js'
@@ -88,7 +88,7 @@ export function TypographyShorthandTable({filePath}) {
                         >
                           Size:
                         </Box>
-                        <InlineCode>{token.original.value.fontSize}</InlineCode>
+                        <TokenInlineCode>{token.original.value.fontSize}</TokenInlineCode>
                       </Box>
                       <Box
                         sx={{
@@ -111,7 +111,7 @@ export function TypographyShorthandTable({filePath}) {
                         >
                           Line height:
                         </Box>
-                        <InlineCode>{token.original.value.lineHeight}</InlineCode>
+                        <TokenInlineCode>{token.original.value.lineHeight}</TokenInlineCode>
                       </Box>
                       <Box
                         sx={{
@@ -134,7 +134,7 @@ export function TypographyShorthandTable({filePath}) {
                         >
                           Weight:
                         </Box>
-                        <InlineCode>{token.original.value.fontWeight}</InlineCode>
+                        <TokenInlineCode>{token.original.value.fontWeight}</TokenInlineCode>
                       </Box>
                     </Box>
                   </td>

@@ -1,12 +1,7 @@
 import React, {Fragment, FC} from 'react'
 import {Box} from '@primer/components'
-import InlineCode from '@primer/gatsby-theme-doctocat/src/components/inline-code.js'
+import TokenInlineCode from './TokenInlineCode'
 import CopyClipboard from '@primer/gatsby-theme-doctocat/src/components/clipboard-copy'
-
-interface FrameworkVariableTableProps {
-  framework?: string
-  token?: any
-}
 
 function FrameworkVariableTable(props) {
   const tableRow = (
@@ -15,7 +10,7 @@ function FrameworkVariableTable(props) {
         <tr key={framework.id}>
           <th>{framework.id}</th>
           <td>
-            <InlineCode>{framework.token}</InlineCode>
+            <TokenInlineCode>{framework.token}</TokenInlineCode>
             <CopyClipboard value={`${framework.token}`} />
           </td>
         </tr>

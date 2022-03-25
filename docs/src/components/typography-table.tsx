@@ -3,17 +3,12 @@ import themeGet from '@styled-system/theme-get'
 import CopyClipboard from '@primer/gatsby-theme-doctocat/src/components/clipboard-copy'
 import styled, {createGlobalStyle} from 'styled-components'
 import {Box, Text} from '@primer/components'
+import TokenInlineCode from './TokenInlineCode'
 import InlineCode from '@primer/gatsby-theme-doctocat/src/components/inline-code.js'
 import Table from '@primer/gatsby-theme-doctocat/src/components/table.js'
 import tokens from '../../../dist/docs/docValues.json'
 import TypographyBlock from './typography-block'
 import FrameworkVariableTable from './framework-variables-table'
-
-const GlobalStyle = createGlobalStyle`
-  code {
-      white-space: nowrap;
-  }
-`
 
 const TableBox = styled.div`
   border: 1px solid ${themeGet('colors.border.muted')};
@@ -37,7 +32,6 @@ export function TypographyTable({filePath, tokenVariant, children, showOriginalV
     >
       {children && <TableBox>{children}</TableBox>}
       <Table>
-        <GlobalStyle />
         <Fragment>
           <thead>
             <tr>
@@ -71,7 +65,7 @@ export function TypographyTable({filePath, tokenVariant, children, showOriginalV
                   <tr>
                     <Box as="td">
                       {showProperty ? (
-                        <InlineCode>
+                        <TokenInlineCode>
                           {weight
                             ? 'weight'
                             : size
@@ -83,7 +77,7 @@ export function TypographyTable({filePath, tokenVariant, children, showOriginalV
                             : fontFamily
                             ? 'font-family'
                             : undefined}
-                        </InlineCode>
+                        </TokenInlineCode>
                       ) : (
                         <TypographyBlock
                           fontFamily="var(--gh-fontStack-heading)"
@@ -95,14 +89,7 @@ export function TypographyTable({filePath, tokenVariant, children, showOriginalV
                       )}
                     </Box>
                     <FrameworkVariableTable frameworks={FrameworkVars} />
-                    <Box
-                      as="td"
-                      sx={{
-                        '> code': {
-                          whiteSpace: 'normal'
-                        }
-                      }}
-                    >
+                    <Box as="td">
                       <InlineCode>
                         {token.value} {showOriginalValue && `/ ${token.original.value}`}
                       </InlineCode>

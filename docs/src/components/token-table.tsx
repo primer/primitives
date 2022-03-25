@@ -1,16 +1,11 @@
 import React, {Fragment, useState} from 'react'
 import styled, {createGlobalStyle} from 'styled-components'
-import {Box, Text} from '@primer/components'
+import {Box} from '@primer/components'
 import Table from '@primer/gatsby-theme-doctocat/src/components/table.js'
 import FrameworkVariableTable from './framework-variables-table'
-import InlineCode from '@primer/gatsby-theme-doctocat/src/components/inline-code.js'
-// import baseTokens from '../../../dist/new/tokens/tokensBase.js'
-// import ghTokens from '../../../dist/new/tokens/tokensGH.js'
+import TokenInlineCode from './TokenInlineCode'
 import tokens from '../../../dist/docs/docValues.json'
 import Swatch from './swatch'
-import {CopyToClipboard} from 'react-copy-to-clipboard'
-
-// console.log(Object.entries(ghTokens.size.control))
 
 const GlobalStyle = createGlobalStyle`
   code {
@@ -19,10 +14,6 @@ const GlobalStyle = createGlobalStyle`
 `
 
 export function NewTable({filePath}) {
-  // return <pre>{JSON.stringify(tokens[filePath], null, 2)}</pre>
-  //   const [value, setValue] = useState('My copy text')
-  const [copied, setCopied] = useState(false)
-
   return (
     <Table>
       <GlobalStyle />
@@ -55,10 +46,10 @@ export function NewTable({filePath}) {
               </td>
               <FrameworkVariableTable frameworks={FrameworkVars} />
               <td>
-                <InlineCode>{token.value}</InlineCode>
+                <TokenInlineCode>{token.value}</TokenInlineCode>
               </td>
               <td>
-                <InlineCode>{token.original.value}</InlineCode>
+                <TokenInlineCode>{token.original.value}</TokenInlineCode>
               </td>
             </tr>
           )
