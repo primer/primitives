@@ -13,13 +13,6 @@ import TypographyBlock from './typography-block'
 // console.log(Object.entries(ghTokens.size.control))
 
 const GlobalStyle = createGlobalStyle`
-  code {
-      white-space: nowrap;
-        background: var(--scale-purple-1);
-        border-radius: 6px;
-        padding: 2px 6px;
-        flex: 0 1 auto;
-  }
   :root {
       --scale-purple-1: #ecd8ff;
     --scale-purple-3: #c297ff;

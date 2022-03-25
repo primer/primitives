@@ -1,26 +1,17 @@
-import {NewTable, TokenTable} from '../../src/components/token-table.tsx'
-import {Box, Text} from '@primer/components'
-import Blockquote from '@primer/gatsby-theme-doctocat/src/components/blockquote.js'
-import Caption from '@primer/gatsby-theme-doctocat/src/components/caption.js'
-import DescriptionList from '@primer/gatsby-theme-doctocat/src/components/description-list.js'
-import InlineCode from '@primer/gatsby-theme-doctocat/src/components/inline-code.js'
-import List from '@primer/gatsby-theme-doctocat/src/components/list.js'
 import Note from '@primer/gatsby-theme-doctocat/src/components/note.js'
-import DoDont from '@primer/gatsby-theme-doctocat/src/components/do-dont.js'
 import {createGlobalStyle} from 'styled-components'
 import '../../../dist/css/tokens/base/size/size.css'
 import '../../../dist/css/tokens/functional/size/size.css'
 import '../../../dist/css/tokens/functional/size/border.css'
 import '../../../dist/css/tokens/base/typography/typography.css'
 import '../../../dist/css/tokens/functional/typography/typography.css'
-import ControlVisual from '../../src/components/control.tsx'
 import {TypographyShorthandTable} from '../../src/components/typography-shorthand-table.tsx'
 import {TypographyTable} from '../../src/components/typography-table.tsx'
 import TypographyBlock from '../../src/components/typography-block'
 
 <Note variant="warning">Spacing, sizing and typography primitives are in experimental status</Note>
 
-# Typography
+# Functional typography tokens
 
 ## Stacks
 
@@ -43,7 +34,7 @@ Individual style tokens that when combined create typeography stacks.
   tokenVariant="-display-"
   children={
     <TypographyBlock
-      variant="display"
+      fontFamily="var(--gh-fontStack-heading)"
       fontSize="var(--gh-text-display-size)"
       fontWeight="var(--gh-text-display-weight)"
       lineHeight="var(--gh-text-display-lineHeight)"
@@ -58,14 +49,14 @@ Individual style tokens that when combined create typeography stacks.
   children={
     <Fragment>
       <TypographyBlock
-        variant="title"
+        fontFamily="var(--gh-fontStack-heading)"
         fontSize="var(--gh-text-title-size-medium)"
         fontWeight="var(--gh-text-title-weight)"
         lineHeight="var(--gh-text-title-lineHeight-medium)"
         children="Medium title text"
       />
       <TypographyBlock
-        variant="title"
+        fontFamily="var(--gh-fontStack-heading)"
         fontSize="var(--gh-text-title-size-large)"
         fontWeight="var(--gh-text-title-weight)"
         lineHeight="var(--gh-text-title-lineHeight-large)"
@@ -80,7 +71,7 @@ Individual style tokens that when combined create typeography stacks.
   tokenVariant="-subtitle-"
   children={
     <TypographyBlock
-      variant="subtitle"
+      fontFamily="var(--gh-fontStack-body)"
       fontSize="var(--gh-text-subtitle-size)"
       fontWeight="var(--gh-text-subtitle-weight)"
       lineHeight="var(--gh-text-subtitle-lineHeight)"
@@ -95,21 +86,21 @@ Individual style tokens that when combined create typeography stacks.
   children={
     <Fragment>
       <TypographyBlock
-        variant="body"
+        fontFamily="var(--gh-fontStack-body)"
         fontSize="var(--gh-text-body-size-small)"
         fontWeight="var(--gh-text-body-weight)"
         lineHeight="var(--gh-text-body-lineHeight-small)"
         children="Small body text"
       />
       <TypographyBlock
-        variant="body"
+        fontFamily="var(--gh-fontStack-body)"
         fontSize="var(--gh-text-body-size-medium)"
         fontWeight="var(--gh-text-body-weight)"
         lineHeight="var(--gh-text-body-lineHeight-medium)"
         children="Medium body text"
       />
       <TypographyBlock
-        variant="body"
+        fontFamily="var(--gh-fontStack-body)"
         fontSize="var(--gh-text-body-size-large)"
         fontWeight="var(--gh-text-body-weight)"
         lineHeight="var(--gh-text-body-lineHeight-large)"
@@ -124,7 +115,7 @@ Individual style tokens that when combined create typeography stacks.
   tokenVariant="-caption-"
   children={
     <TypographyBlock
-      variant="caption"
+      fontFamily="var(--gh-fontStack-body)"
       fontSize="var(--gh-text-caption-size)"
       fontWeight="var(--gh-text-caption-weight)"
       lineHeight="var(--gh-text-caption-lineHeight)"
@@ -138,7 +129,7 @@ Individual style tokens that when combined create typeography stacks.
   tokenVariant="-codeBlock-"
   children={
     <TypographyBlock
-      variant="codeBlock"
+      fontFamily="var(--gh-fontStack-code)"
       fontSize="var(--gh-text-codeBlock-size)"
       fontWeight="var(--gh-text-codeBlock-weight)"
       lineHeight="var(--gh-text-codeBlock-lineHeight)"
@@ -152,17 +143,43 @@ Individual style tokens that when combined create typeography stacks.
   tokenVariant="-codeInline-"
   children={
     <TypographyBlock
-      variant="codeInline"
       fontSize="var(--gh-text-codeInline-size)"
       fontWeight="var(--gh-text-codeInline-weight)"
       lineHeight="var(--gh-text-codeInline-lineHeight)"
+      fontFamily="var(--gh-fontStack-code)"
       children="Inline code block"
     />
   }
 />
 
+## Family
+
 <TypographyTable
   filePath="tokens/functional/typography/typography.json"
   tokenVariant="-fontStack-"
-  children={<TypographyBlock variant="fontStack" fontFamily="var(--gh-fontStack-body)" children="Body font family" />}
+  children={
+    <Fragment>
+      <TypographyBlock
+        fontSize="var(--gh-text-body-size-medium)"
+        fontWeight="var(--gh-text-body-weight)"
+        lineHeight="var(--gh-text-body-lineHeight-medium)"
+        fontFamily="var(--gh-fontStack-body)"
+        children="Body font family"
+      />
+      <TypographyBlock
+        fontSize="var(--gh-text-title-size-medium)"
+        fontWeight="var(--gh-text-title-weight)"
+        lineHeight="var(--gh-text-title-lineHeight-medium)"
+        fontFamily="var(--gh-fontStack-heading)"
+        children="Title font family"
+      />
+      <TypographyBlock
+        fontSize="var(--gh-text-codeBlock-size)"
+        fontWeight="var(--gh-text-codeBlock-weight)"
+        lineHeight="var(--gh-text-codeBlock-lineHeight)"
+        fontFamily="var(--gh-fontStack-code)"
+        children="Code font family"
+      />
+    </Fragment>
+  }
 />

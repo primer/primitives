@@ -26,7 +26,14 @@ const TableBox = styled.div`
   background-color: ${themeGet('colors.white')};
 `
 
-export function TypographyTable({filePath, tokenVariant, children}) {
+export function TypographyTable({
+  filePath,
+  tokenVariant,
+  children,
+  showOriginalValue = true,
+  showProperty = true,
+  example
+}) {
   return (
     <Box
       sx={{
@@ -39,14 +46,14 @@ export function TypographyTable({filePath, tokenVariant, children}) {
         }
       }}
     >
-      <TableBox>{children}</TableBox>
+      {children && <TableBox>{children}</TableBox>}
       <Table>
         <GlobalStyle />
         <Fragment>
           <thead>
             <tr>
               <Box as="th" textAlign="left">
-                Property
+                {showProperty ? 'Property' : 'Example'}
               </Box>
               <Box as="th" textAlign="left">
                 Token
@@ -63,24 +70,36 @@ export function TypographyTable({filePath, tokenVariant, children}) {
               const lineHeight = token.name.includes('lineHeight') ? true : false
               const lineBoxHeight = token.name.includes('lineBoxHeight') ? true : false
               const fontFamily = token.name.includes('fontStack') ? true : false
+              const weightVariant = token.path.at(3)
+              console.log(weightVariant)
               return (
                 !token.name.includes('-shorthand') &&
                 token.name.match(tokenVariant) && (
                   <tr>
                     <Box as="td">
-                      <InlineCode>
-                        {weight
-                          ? 'weight'
-                          : size
-                          ? 'font-size'
-                          : lineHeight
-                          ? 'line-height'
-                          : lineBoxHeight
-                          ? 'height'
-                          : fontFamily
-                          ? 'font-family'
-                          : undefined}
-                      </InlineCode>
+                      {showProperty ? (
+                        <InlineCode>
+                          {weight
+                            ? 'weight'
+                            : size
+                            ? 'font-size'
+                            : lineHeight
+                            ? 'line-height'
+                            : lineBoxHeight
+                            ? 'height'
+                            : fontFamily
+                            ? 'font-family'
+                            : undefined}
+                        </InlineCode>
+                      ) : (
+                        <TypographyBlock
+                          fontFamily="var(--gh-fontStack-heading)"
+                          fontSize="var(--gh-text-title-size-medium)"
+                          fontWeight={weight && `var(--${token.name})`}
+                          lineHeight="var(--gh-text-title-lineHeight-medium)"
+                          children={`Text ${weightVariant}`}
+                        />
+                      )}
                     </Box>
                     <Box as="td" sx={{padding: '0 !important'}}>
                       <Box
@@ -147,11 +166,18 @@ export function TypographyTable({filePath, tokenVariant, children}) {
                         </tbody>
                       </Box>
                     </Box>
-                    <td>
+                    <Box
+                      as="td"
+                      sx={{
+                        '> code': {
+                          whiteSpace: 'normal'
+                        }
+                      }}
+                    >
                       <InlineCode>
-                        {token.value} / {token.original.value}
+                        {token.value} {showOriginalValue && `\ ${token.original.value}`}
                       </InlineCode>
-                    </td>
+                    </Box>
                   </tr>
                 )
               )

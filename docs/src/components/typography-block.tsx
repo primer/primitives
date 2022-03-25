@@ -15,11 +15,11 @@ interface TypographyBlockProps {
 const TypographyBlock: FC<TypographyBlockProps> = ({
   variant,
   modifier = '',
-  fontSize = undefined,
-  fontWeight = undefined,
-  lineHeight = undefined,
-  lineBoxHeight = undefined,
-  fontFamily = undefined,
+  fontSize,
+  fontWeight,
+  lineHeight,
+  lineBoxHeight,
+  fontFamily,
   children
 }) => {
   return (
@@ -28,12 +28,12 @@ const TypographyBlock: FC<TypographyBlockProps> = ({
         as="p"
         sx={{
           margin: '0',
-          font: `var(--gh-text-${variant}-shorthand${modifier})`,
-          fontSize: `${fontSize}`,
-          fontWeight: `${fontWeight}`,
-          lineHeight: `${lineHeight}`,
-          height: `${lineBoxHeight}`,
-          fontFamily: `${fontFamily}`
+          font: variant || modifier ? `var(--gh-text-${variant}-shorthand${modifier})` : undefined,
+          fontSize: fontSize ? `${fontSize}` : undefined,
+          fontWeight: fontWeight ? `${fontWeight}` : undefined,
+          lineHeight: lineHeight ? `${lineHeight}` : undefined,
+          height: lineBoxHeight ? `${lineBoxHeight}` : undefined,
+          fontFamily: fontFamily ? `${fontFamily}` : undefined
         }}
       >
         {children ? children : variant}
