@@ -1,4 +1,3 @@
-import {NewTable, TokenTable} from '../../src/components/token-table.tsx'
 import {Box, Text} from '@primer/components'
 import Blockquote from '@primer/gatsby-theme-doctocat/src/components/blockquote.js'
 import Caption from '@primer/gatsby-theme-doctocat/src/components/caption.js'
@@ -13,7 +12,9 @@ import '../../../dist/css/tokens/functional/size/size.css'
 import '../../../dist/css/tokens/functional/size/border.css'
 import '../../../dist/css/tokens/functional/typography/typography.css'
 import ControlVisual from '../../src/components/control.tsx'
-import {TokenBlock, TokenBlockVisual} from '../../src/components/token-block.tsx'
+import {TokenBlock, TokenBlockVisual} from '../../src/components/tables/UIExampleTable.tsx'
+import UIControlTable from '../../src/components/tables/UIControlTable.tsx'
+import UISectionTable from '../../src/components/tables/UISectionTable.tsx'
 
 <Note variant="warning">Spacing, sizing and typography primitives are in experimental status</Note>
 
@@ -59,26 +60,20 @@ UI controls are available in different sizes, and always include a size variant,
 
 ### Extra small
 
-<TokenBlock filePath="tokens/functional/size/size.json" tokenVariant="-xsmall-" />
+<UIControlTable filePath="tokens/functional/size/size.json" tokenVariant="-xsmall-" />
 
 ### Small
 
-<TokenBlock filePath="tokens/functional/size/size.json" tokenVariant="-small-" />
+<UIControlTable filePath="tokens/functional/size/size.json" tokenVariant="-small-" />
 
 ### Medium
 
-<TokenBlock filePath="tokens/functional/size/size.json" tokenVariant="-medium-" />
+<UIControlTable filePath="tokens/functional/size/size.json" tokenVariant="-medium-" />
 
 ### Large
 
-<TokenBlock filePath="tokens/functional/size/size.json" tokenVariant="-large-" />
+<UIControlTable filePath="tokens/functional/size/size.json" tokenVariant="-large-" />
 
 ### Extra large
 
-<TokenBlock filePath="tokens/functional/size/size.json" tokenVariant="-xlarge-" />
-
-<Caption>hey hey</Caption>
-
-<Note variant="info">hey hey</Note>
-
-<InlineCode>--boop</InlineCode>
+<UIControlTable filePath="tokens/functional/size/size.json" tokenVariant="-xlarge-" />

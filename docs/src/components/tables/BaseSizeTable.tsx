@@ -2,21 +2,14 @@ import React, {Fragment, useState} from 'react'
 import styled, {createGlobalStyle} from 'styled-components'
 import {Box} from '@primer/components'
 import Table from '@primer/gatsby-theme-doctocat/src/components/table.js'
-import FrameworkVariableTable from './framework-variables-table'
-import TokenInlineCode from './TokenInlineCode'
-import tokens from '../../../dist/docs/docValues.json'
-import Swatch from './swatch'
+import FrameworkVariableTable from './FrameworkVariableTable'
+import TokenInlineCode from '../TokenInlineCode'
+import tokens from '../../../../dist/docs/docValues.json'
+import Swatch from '../Swatch'
 
-const GlobalStyle = createGlobalStyle`
-  code {
-      white-space: nowrap;
-  }
-`
-
-export function NewTable({filePath}) {
+export function BaseSizeTable({filePath}) {
   return (
     <Table>
-      <GlobalStyle />
       <thead>
         <tr>
           <Box as="th" textAlign="left">

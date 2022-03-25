@@ -1,17 +1,10 @@
 import React, {Fragment} from 'react'
-import CopyClipboard from '@primer/gatsby-theme-doctocat/src/components/clipboard-copy'
-import styled, {createGlobalStyle} from 'styled-components'
 import {Box, Text} from '@primer/components'
-import TokenInlineCode from './TokenInlineCode'
+import TokenInlineCode from '../TokenInlineCode'
 import Table from '@primer/gatsby-theme-doctocat/src/components/table.js'
-// import baseTokens from '../../../dist/new/tokens/tokensBase.js'
-// import ghTokens from '../../../dist/new/tokens/tokensGH.js'
-import tokens from '../../../dist/docs/docValues.json'
-import Swatch from './swatch'
-import ControlVisual from './control'
-import TypographyBlock from './typography-block'
-import FrameworkVariableTable from './framework-variables-table'
-// console.log(Object.entries(ghTokens.size.control))
+import tokens from '../../../../dist/docs/docValues.json'
+import TypographyBlock from '../typography-block'
+import FrameworkVariableTable from './FrameworkVariableTable'
 
 export function TypographyShorthandTable({filePath}) {
   return (

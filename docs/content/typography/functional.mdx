@@ -5,8 +5,8 @@ import '../../../dist/css/tokens/functional/size/size.css'
 import '../../../dist/css/tokens/functional/size/border.css'
 import '../../../dist/css/tokens/base/typography/typography.css'
 import '../../../dist/css/tokens/functional/typography/typography.css'
-import {TypographyShorthandTable} from '../../src/components/typography-shorthand-table.tsx'
-import {TypographyTable} from '../../src/components/typography-table.tsx'
+import {TypographyShorthandTable} from '../../src/components/tables/TypographyShorthandTable.tsx'
+import {DisplayBoxTable} from '../../src/components/tables/DisplayBoxTable.tsx'
 import TypographyBlock from '../../src/components/typography-block'
 
 <Note variant="warning">Spacing, sizing and typography primitives are in experimental status</Note>
@@ -29,7 +29,7 @@ h1 {
 
 Individual style tokens that when combined create typeography stacks.
 
-<TypographyTable
+<DisplayBoxTable
   filePath="tokens/functional/typography/typography.json"
   tokenVariant="-display-"
   children={
@@ -43,7 +43,7 @@ Individual style tokens that when combined create typeography stacks.
   }
 />
 
-<TypographyTable
+<DisplayBoxTable
   filePath="tokens/functional/typography/typography.json"
   tokenVariant="-title-"
   children={
@@ -66,7 +66,7 @@ Individual style tokens that when combined create typeography stacks.
   }
 />
 
-<TypographyTable
+<DisplayBoxTable
   filePath="tokens/functional/typography/typography.json"
   tokenVariant="-subtitle-"
   children={
@@ -80,7 +80,7 @@ Individual style tokens that when combined create typeography stacks.
   }
 />
 
-<TypographyTable
+<DisplayBoxTable
   filePath="tokens/functional/typography/typography.json"
   tokenVariant="-body-"
   children={
@@ -110,7 +110,7 @@ Individual style tokens that when combined create typeography stacks.
   }
 />
 
-<TypographyTable
+<DisplayBoxTable
   filePath="tokens/functional/typography/typography.json"
   tokenVariant="-caption-"
   children={
@@ -124,7 +124,7 @@ Individual style tokens that when combined create typeography stacks.
   }
 />
 
-<TypographyTable
+<DisplayBoxTable
   filePath="tokens/functional/typography/typography.json"
   tokenVariant="-codeBlock-"
   children={
@@ -138,7 +138,7 @@ Individual style tokens that when combined create typeography stacks.
   }
 />
 
-<TypographyTable
+<DisplayBoxTable
   filePath="tokens/functional/typography/typography.json"
   tokenVariant="-codeInline-"
   children={
@@ -154,7 +154,7 @@ Individual style tokens that when combined create typeography stacks.
 
 ## Family
 
-<TypographyTable
+<DisplayBoxTable
   filePath="tokens/functional/typography/typography.json"
   tokenVariant="-fontStack-"
   children={

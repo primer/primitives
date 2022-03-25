@@ -1,6 +1,6 @@
 import React, {Fragment, FC} from 'react'
 import {Box} from '@primer/components'
-import TokenInlineCode from './TokenInlineCode'
+import TokenInlineCode from '../TokenInlineCode'
 import CopyClipboard from '@primer/gatsby-theme-doctocat/src/components/clipboard-copy'
 
 function FrameworkVariableTable(props) {

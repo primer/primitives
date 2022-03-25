@@ -5,8 +5,8 @@ import '../../../dist/css/tokens/functional/size/size.css'
 import '../../../dist/css/tokens/functional/size/border.css'
 import '../../../dist/css/tokens/base/typography/typography.css'
 import '../../../dist/css/tokens/functional/typography/typography.css'
-import {TypographyShorthandTable} from '../../src/components/typography-shorthand-table.tsx'
-import {TypographyTable} from '../../src/components/typography-table.tsx'
+import {TypographyShorthandTable} from '../../src/components/tables/TypographyShorthandTable.tsx'
+import {DisplayBoxTable} from '../../src/components/tables/DisplayBoxTable.tsx'
 import TypographyBlock from '../../src/components/typography-block'
 
 <Note variant="warning">Spacing, sizing and typography primitives are in experimental status</Note>
@@ -15,7 +15,7 @@ import TypographyBlock from '../../src/components/typography-block'
 
 ## Weight
 
-<TypographyTable
+<DisplayBoxTable
   filePath="tokens/base/typography/typography.json"
   tokenVariant="-weight-"
   showOriginalValue={false}
@@ -24,7 +24,7 @@ import TypographyBlock from '../../src/components/typography-block'
 
 ## Family
 
-<TypographyTable
+<DisplayBoxTable
   filePath="tokens/base/typography/typography.json"
   tokenVariant="-fontStack-"
   showOriginalValue={false}

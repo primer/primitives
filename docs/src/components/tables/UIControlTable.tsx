@@ -1,27 +1,19 @@
-import React, {Fragment} from 'react'
-import CopyClipboard from '@primer/gatsby-theme-doctocat/src/components/clipboard-copy'
-import styled, {createGlobalStyle} from 'styled-components'
-import {Box, Text} from '@primer/components'
+import React, {Fragment, FC} from 'react'
+import {Box} from '@primer/components'
 import Table from '@primer/gatsby-theme-doctocat/src/components/table.js'
-import TokenInlineCode from './TokenInlineCode'
-import FrameworkVariableTable from './framework-variables-table'
-import tokens from '../../../dist/docs/docValues.json'
-import ControlVisual from './control'
+import TokenInlineCode from '../TokenInlineCode'
+import FrameworkVariableTable from './FrameworkVariableTable'
+import tokens from '../../../../dist/docs/docValues.json'
+import ControlVisual from '../control'
 
-const GlobalStyle = createGlobalStyle`
-  :root {
-      --scale-purple-1: #ecd8ff;
-    --scale-purple-3: #c297ff;
-    --scale-pink-3: #8250df;
-    --scale-yellow-1: #6639ba;
-    --color-fg-subtle: #6e7781;
-  }
-`
+interface UIControlTableProps {
+  filePath?: string
+  tokenVariant?: string
+}
 
-export function TokenBlock({filePath, tokenVariant}) {
+const UIControlTable: FC<UIControlTableProps> = ({filePath, tokenVariant}) => {
   return (
     <Table>
-      <GlobalStyle />
       <Fragment>
         <thead>
           <tr>
@@ -95,3 +87,5 @@ export function TokenBlock({filePath, tokenVariant}) {
     </Table>
   )
 }
+
+export default UIControlTable

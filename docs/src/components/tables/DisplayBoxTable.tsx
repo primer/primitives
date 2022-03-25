@@ -3,12 +3,12 @@ import themeGet from '@styled-system/theme-get'
 import CopyClipboard from '@primer/gatsby-theme-doctocat/src/components/clipboard-copy'
 import styled, {createGlobalStyle} from 'styled-components'
 import {Box, Text} from '@primer/components'
-import TokenInlineCode from './TokenInlineCode'
+import TokenInlineCode from '../TokenInlineCode'
 import InlineCode from '@primer/gatsby-theme-doctocat/src/components/inline-code.js'
 import Table from '@primer/gatsby-theme-doctocat/src/components/table.js'
-import tokens from '../../../dist/docs/docValues.json'
-import TypographyBlock from './typography-block'
-import FrameworkVariableTable from './framework-variables-table'
+import tokens from '../../../../dist/docs/docValues.json'
+import TypographyBlock from '../typography-block'
+import FrameworkVariableTable from './FrameworkVariableTable'
 
 const TableBox = styled.div`
   border: 1px solid ${themeGet('colors.border.muted')};
@@ -17,7 +17,7 @@ const TableBox = styled.div`
   background-color: ${themeGet('colors.white')};
 `
 
-export function TypographyTable({filePath, tokenVariant, children, showOriginalValue = true, showProperty = true}) {
+export function DisplayBoxTable({filePath, tokenVariant, children, showOriginalValue = true, showProperty = true}) {
   return (
     <Box
       sx={{
