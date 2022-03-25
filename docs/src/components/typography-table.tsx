@@ -5,13 +5,9 @@ import styled, {createGlobalStyle} from 'styled-components'
 import {Box, Text} from '@primer/components'
 import InlineCode from '@primer/gatsby-theme-doctocat/src/components/inline-code.js'
 import Table from '@primer/gatsby-theme-doctocat/src/components/table.js'
-// import baseTokens from '../../../dist/new/tokens/tokensBase.js'
-// import ghTokens from '../../../dist/new/tokens/tokensGH.js'
 import tokens from '../../../dist/docs/docValues.json'
-import Swatch from './swatch'
-import ControlVisual from './control'
 import TypographyBlock from './typography-block'
-// console.log(Object.entries(ghTokens.size.control))
+import FrameworkVariableTable from './framework-variables-table'
 
 const GlobalStyle = createGlobalStyle`
   code {
@@ -71,6 +67,10 @@ export function TypographyTable({
               const lineBoxHeight = token.name.includes('lineBoxHeight') ? true : false
               const fontFamily = token.name.includes('fontStack') ? true : false
               const weightVariant = token.path.at(3)
+              const FrameworkVars = [
+                {id: 'CSS', token: `--${token.name}`},
+                {id: 'JS', token: `${token.path.join('.')}`}
+              ]
               console.log(weightVariant)
               return (
                 !token.name.includes('-shorthand') &&
@@ -101,71 +101,7 @@ export function TypographyTable({
                         />
                       )}
                     </Box>
-                    <Box as="td" sx={{padding: '0 !important'}}>
-                      <Box
-                        as="table"
-                        sx={{
-                          width: '100%',
-                          '& tr': {
-                            border: 'none !important',
-                            display: 'grid',
-                            gridTemplateColumns: '3ch 2fr',
-                            alignItems: 'center',
-                            justifyItems: 'start',
-                            gap: '16px'
-                          },
-                          '& td': {
-                            border: 'none !important',
-                            padding: '0 !important',
-                            display: 'flex',
-                            alignItems: 'center',
-                            gap: '16px',
-                            width: '100%'
-                          },
-                          '& th': {
-                            border: 'none !important',
-                            color: 'var(--color-fg-subtle)',
-                            fontSize: '14px',
-                            padding: '0 !important'
-                          },
-                          '& tr:nth-child(2n)': {background: 'transparent !important'},
-                          '& tbody': {
-                            display: 'flex',
-                            flexDirection: 'column',
-                            padding: '8px 16px',
-                            gap: '8px'
-                          },
-                          '& button': {
-                            height: '23.5px',
-                            width: '23.5px',
-                            padding: '0',
-                            display: 'grid'
-                          },
-                          '& button > svg': {
-                            height: '12px',
-                            width: '12px',
-                            placeSelf: 'center'
-                          }
-                        }}
-                      >
-                        <tbody>
-                          <tr>
-                            <th>CSS</th>
-                            <td>
-                              <InlineCode>--{token.name}</InlineCode>
-                              <CopyClipboard value={`--${token.name}`} />
-                            </td>
-                          </tr>
-                          <tr>
-                            <th>JS</th>
-                            <td>
-                              <InlineCode>{token.path.join('.')}</InlineCode>
-                              <CopyClipboard value={`${token.path.join('.')}`} />
-                            </td>
-                          </tr>
-                        </tbody>
-                      </Box>
-                    </Box>
+                    <FrameworkVariableTable frameworks={FrameworkVars} />
                     <Box
                       as="td"
                       sx={{
