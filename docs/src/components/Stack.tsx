@@ -1,12 +1,12 @@
 import React, {Fragment, FC} from 'react'
 import {Box} from '@primer/components'
 
-interface ControlVisualProps {
+interface StackVisualProps {
   paddingLeft?: string
   paddingRight?: string
   paddingTop?: string
   paddingBottom?: string
-  gap?: string
+  gap?: boolean
   blockSize?: string
   lineBox?: string
   modifier?: string
@@ -19,7 +19,7 @@ interface ControlVisualProps {
   highlightHeight?: boolean
 }
 
-const ControlVisual: FC<ControlVisualProps> = ({
+const StackVisual: FC<StackVisualProps> = ({
   paddingLeft,
   paddingRight,
   paddingTop,
@@ -27,7 +27,7 @@ const ControlVisual: FC<ControlVisualProps> = ({
   gap,
   blockSize,
   lineBox,
-  modifier = '-condensed',
+  modifier,
   highlightPaddingBottom,
   highlightPaddingTop,
   highlightPaddingRight,
@@ -38,6 +38,68 @@ const ControlVisual: FC<ControlVisualProps> = ({
 }) => {
   return (
     <Fragment>
+      {gap ? (
+        <Box
+          as="div"
+          sx={{
+            display: 'grid',
+            gridTemplateRows: 'repeat(3, 2rem)',
+            gridTemplateColumns: '6rem',
+            borderRadius: 2,
+            border: 'solid 1px #c297ff',
+            overflow: 'hidden',
+            backgroundImage:
+              'linear-gradient(45deg,#a475f980 12.50%,#d8b9ff7a 12.50%,#d8b9ff7a 50%,#a475f980 50%,#a475f980 62.50%,#d8b9ff7a 62.50%,#d8b9ff7a 100%)',
+            backgroundSize: '5.66px 5.66px',
+            gap: `var(--gh-stack-gap-${modifier})`
+          }}
+        >
+          <Box
+            as="span"
+            sx={{
+              backgroundColor: 'white'
+            }}
+          />
+          <Box
+            as="span"
+            sx={{
+              backgroundColor: 'white'
+            }}
+          />
+          <Box
+            as="span"
+            sx={{
+              backgroundColor: 'white'
+            }}
+          />
+        </Box>
+      ) : (
+        <Box
+          as="div"
+          sx={{
+            display: 'grid',
+            gridTemplateRows: '3rem',
+            gridTemplateColumns: 'min-content',
+            borderRadius: 2,
+            border: 'solid 1px #c297ff',
+            overflow: 'hidden',
+            backgroundImage:
+              'linear-gradient(45deg,#a475f980 12.50%,#d8b9ff7a 12.50%,#d8b9ff7a 50%,#a475f980 50%,#a475f980 62.50%,#d8b9ff7a 62.50%,#d8b9ff7a 100%)',
+            backgroundSize: '5.66px 5.66px',
+            padding: `var(--gh-stack-padding-${modifier})`,
+            justifyContent: 'center'
+          }}
+        >
+          <Box
+            as="span"
+            sx={{
+              backgroundColor: 'white',
+              minWidth: '4rem',
+              borderRadius: 2
+            }}
+          />
+        </Box>
+      )}
       <Box
         as="div"
         sx={{
@@ -45,7 +107,7 @@ const ControlVisual: FC<ControlVisualProps> = ({
           gridTemplateAreas: `'pTop pTop pTop pTop pTop' 'pLeft icon gap label pRight' 'pBottom pBottom pBottom pBottom pBottom'`,
           gridTemplateRows: 'min-content minmax(0, 1fr) min-content',
           gridTemplateColumns: 'repeat(5, min-content)',
-          borderRadius: '2',
+          borderRadius: 'var(--gh-borderRadius-medium)',
           border: 'solid 1px #c297ff',
           height: `var(--gh-control-${blockSize}-size)`,
           backgroundImage:
@@ -154,4 +216,4 @@ const ControlVisual: FC<ControlVisualProps> = ({
   )
 }
 
-export default ControlVisual
+export default StackVisual

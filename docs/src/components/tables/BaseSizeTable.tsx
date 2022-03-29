@@ -35,7 +35,7 @@ export function BaseSizeTable({filePath}) {
           return (
             <tr>
               <td>
-                <Swatch color="var(--scale-purple-3)" height={token.value} width={token.value} />
+                <Swatch color="done.emphasis" height={token.value} width={token.value} />
               </td>
               <FrameworkVariableTable frameworks={FrameworkVars} />
               <td>
