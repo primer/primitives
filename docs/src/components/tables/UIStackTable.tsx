@@ -34,16 +34,10 @@ const UIStackTable: FC<UIStackTableProps> = ({filePath, tokenVariant}) => {
         <tbody>
           {tokens[filePath].map(token => {
             const gapProp = token.name.includes('gap') ? true : false
-            const paddingLeft = token.name.includes('paddingInline') ? true : false
-            const paddingRight = token.name.includes('paddingInline') ? true : false
-            const paddingTop = token.name.includes('paddingBlock') ? true : false
-            const paddingBottom = token.name.includes('paddingBlock') ? true : false
-            const lineBlockHeightProp = token.name.includes('lineBoxHeight') ? true : false
-            const blockSize = token.name.includes('size') ? true : false
+            const paddingProp = token.name.includes('padding') ? true : false
             const condensed = token.name.includes('condensed') ? true : false
             const normal = token.name.includes('normal') ? true : false
             const spacious = token.name.includes('spacious') ? true : false
-            const tokenVariantString = tokenVariant.replace(/-/g, '')
             const FrameworkVars = [
               {id: 'CSS', token: `--${token.name}`},
               {id: 'JS', token: `${token.path.join('.')}`}
@@ -55,6 +49,8 @@ const UIStackTable: FC<UIStackTableProps> = ({filePath, tokenVariant}) => {
                   <td>
                     <StackVisual
                       modifier={condensed ? 'condensed' : normal ? 'normal' : spacious ? 'spacious' : undefined}
+                      gap={gapProp}
+                      padding={paddingProp}
                     />
                   </td>
                   <FrameworkVariableTable frameworks={FrameworkVars} />
