@@ -8,17 +8,16 @@ import Note from '@primer/gatsby-theme-doctocat/src/components/note.js'
 import DoDont from '@primer/gatsby-theme-doctocat/src/components/do-dont.js'
 import {createGlobalStyle} from 'styled-components'
 import '../../../dist/css/tokens/base/size/size.css'
+import '../../../dist/css/tokens/base/size/breakpoints.css'
+import '../../../dist/css/tokens/base/size/viewport.css'
 import '../../../dist/css/tokens/functional/size/size.css'
+import '../../../dist/css/tokens/functional/size/size-fine.css'
 import '../../../dist/css/tokens/functional/size/border.css'
 import '../../../dist/css/tokens/functional/typography/typography.css'
 import ControlVisual from '../../src/components/control.tsx'
-import {TokenBlock, TokenBlockVisual} from '../../src/components/tables/UIExampleTable.tsx'
 import UIControlTable from '../../src/components/tables/UIControlTable.tsx'
 import UIStackTable from '../../src/components/tables/UIStackTable.tsx'
-
-## UI Stack
-
-<UIStackTable filePath="tokens/functional/size/size.json" tokenVariant="" />
+import UIControlStackTable from '../../src/components/tables/UIControlStackTable.tsx'
 
 <Note variant="warning">Spacing, sizing and typography primitives are in experimental status</Note>
 
@@ -28,39 +27,11 @@ Functional spacing variables have semantic meaning and opinionated spacing value
 
 We use terminology from [CSS logical properties](https://css-tricks.com/css-logical-properties/) to reference dimensions, where the horizontal axis is represented as inline, and the vertical as block.
 
-## UI Control
+## UI stack
 
-UI controls specify common dimensions found in interactive components.
+<UIStackTable filePath="tokens/functional/size/size.json" />
 
-These values are shared by buttons, input fields, tabs, segment controls, toggles, action list items, and more.
-
-UI controls are available in different sizes, and always include a size variant, represented as control-medium, control-large, etc. The size variant represents the expected computed height, when the interactive component has a single line of text.
-
-<Blockquote>
-<p><strong>size</strong>: The height of a control, defined in rem. If your component can grow vertically (e.g. have multiple lines), you may set the correct spacing dimensions with <strong>paddingBlock</strong> instead.</p>
-
-
-<p>
-  <strong>paddingBlock</strong>: Sets the vertical padding. Can be used to support interactive components that have
-  multiline.
-</p>
-
-<p>
-  <strong>paddingInline</strong>: The horizontal padding of a control. Available in up to 3 independent sizes:
-  `condensed` | `normal` | `spacious`
-</p>
-
-<p>
-  <strong>lineBoxHeight</strong>: Value in rem with the computed size of the line height, used for component composition
-  calculation.
-</p>
-
-<p>
-  <strong>gap</strong>: The spacing between elements inside a control.
-</p>
-
-</Blockquote>
-
+## UI control
 
 ### Extra small
 
@@ -81,3 +52,11 @@ UI controls are available in different sizes, and always include a size variant,
 ### Extra large
 
 <UIControlTable filePath="tokens/functional/size/size.json" tokenVariant="-xlarge-" />
+
+## UI Control stack
+
+<UIControlStackTable filePath="tokens/functional/size/size.json" />
+
+Use `auto` tokens to scale for mobile/desktop devices automatically
+
+<UIControlStackTable filePath="tokens/functional/size/size-fine.json" />

@@ -58,7 +58,6 @@ export function DisplayBoxTable({filePath, tokenVariant, children, showOriginalV
                 {id: 'CSS', token: `--${token.name}`},
                 {id: 'JS', token: `${token.path.join('.')}`}
               ]
-              console.log(weightVariant)
               return (
                 !token.name.includes('-shorthand') &&
                 token.name.match(tokenVariant) && (
