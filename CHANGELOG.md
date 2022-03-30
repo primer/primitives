@@ -1,5 +1,11 @@
 # @primer/primitives
 
+## 7.7.0
+
+### Minor Changes
+
+- [#310](https://github.com/primer/primitives/pull/310) [`3a72849`](https://github.com/primer/primitives/commit/3a728498f352f737b8d257d1f70bd7d40e39d8db) Thanks [@simurai](https://github.com/simurai)! - Add Tritanopia theme
+
 ## 7.6.0
 
 ### Minor Changes
