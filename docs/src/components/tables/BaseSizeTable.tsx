@@ -1,4 +1,4 @@
-import React, {Fragment, useState} from 'react'
+import React, {Fragment, FC} from 'react'
 import styled, {createGlobalStyle} from 'styled-components'
 import {Box} from '@primer/components'
 import Table from '@primer/gatsby-theme-doctocat/src/components/table.js'
@@ -7,14 +7,21 @@ import TokenInlineCode from '../TokenInlineCode'
 import tokens from '../../../../dist/docs/docValues.json'
 import Swatch from '../Swatch'
 
-export function BaseSizeTable({filePath}) {
+interface BaseSizeTableProps {
+  filePath?: string
+  showExample?: boolean
+}
+
+const BaseSizeTable: FC<BaseSizeTableProps> = ({filePath, showExample}) => {
   return (
     <Table>
       <thead>
         <tr>
-          <Box as="th" textAlign="left">
-            Example
-          </Box>
+          {showExample && (
+            <Box as="th" textAlign="left">
+              Example
+            </Box>
+          )}
           <Box as="th" textAlign="left">
             Token
           </Box>
@@ -34,9 +41,11 @@ export function BaseSizeTable({filePath}) {
           ]
           return (
             <tr>
-              <td>
-                <Swatch color="done.emphasis" height={token.value} width={token.value} />
-              </td>
+              {showExample && (
+                <td>
+                  <Swatch color="done.emphasis" height={token.value} width={token.value} />
+                </td>
+              )}
               <FrameworkVariableTable frameworks={FrameworkVars} />
               <td>
                 <TokenInlineCode>{token.value}</TokenInlineCode>
@@ -51,3 +60,5 @@ export function BaseSizeTable({filePath}) {
     </Table>
   )
 }
+
+export default BaseSizeTable

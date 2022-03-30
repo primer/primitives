@@ -1,4 +1,4 @@
-import {BaseSizeTable} from '../../src/components/tables/BaseSizeTable.tsx'
+import BaseSizeTable from '../../src/components/tables/BaseSizeTable.tsx'
 import {createGlobalStyle} from 'styled-components'
 import '../../../dist/css/tokens/base/size/size.css'
 import '../../../dist/css/tokens/functional/size/size.css'
@@ -10,4 +10,12 @@ import '../../../dist/css/tokens/functional/size/border.css'
 
 All our sizing values are set in rem. The base size scale uses the same numbering as their computed result on a typical browser, following 4 step increments for small dimensions, and 16 step increments for larger dimensions.
 
-<BaseSizeTable filePath="tokens/base/size/size.json" />
+<BaseSizeTable filePath="tokens/base/size/size.json" showExample />
+
+## Breakpoints
+
+<BaseSizeTable filePath="tokens/base/size/breakpoints.json" />
+
+## Viewport ranges
+
+<BaseSizeTable filePath="tokens/base/size/viewport.json" />
