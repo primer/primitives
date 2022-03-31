@@ -1,12 +1,15 @@
 import Note from '@primer/gatsby-theme-doctocat/src/components/note.js'
+import Status from '@primer/gatsby-theme-doctocat/src/components/status-label.js'
 import {createGlobalStyle} from 'styled-components'
 import {TypographyShorthandTable} from '../src/components/tables/TypographyShorthandTable.tsx'
 import {DisplayBoxTable} from '../src/components/tables/DisplayBoxTable.tsx'
 import TypographyBlock from '../src/components/typography-block'
 
-<Note variant="warning">Spacing, sizing and typography primitives are in experimental status</Note>
+<Status status="alpha">Hey</Status>
 
-# Base
+# Typography
+
+<Note variant="danger">Note: feature preview only, not yet distributed for general use</Note>
 
 ## Weight
 
@@ -17,7 +20,37 @@ import TypographyBlock from '../src/components/typography-block'
   showProperty={false}
 />
 
-# Functional
+## Family
+
+<DisplayBoxTable
+  filePath="tokens/functional/typography/typography.json"
+  tokenVariant="-fontStack-"
+  children={
+    <Fragment>
+      <TypographyBlock
+        fontSize="var(--gh-text-body-size-medium)"
+        fontWeight="var(--gh-text-body-weight)"
+        lineHeight="var(--gh-text-body-lineHeight-medium)"
+        fontFamily="var(--gh-fontStack-body)"
+        children="Body font family"
+      />
+      <TypographyBlock
+        fontSize="var(--gh-text-title-size-medium)"
+        fontWeight="var(--gh-text-title-weight)"
+        lineHeight="var(--gh-text-title-lineHeight-medium)"
+        fontFamily="var(--gh-fontStack-heading)"
+        children="Title font family"
+      />
+      <TypographyBlock
+        fontSize="var(--gh-text-codeBlock-size)"
+        fontWeight="var(--gh-text-codeBlock-weight)"
+        lineHeight="var(--gh-text-codeBlock-lineHeight)"
+        fontFamily="var(--gh-fontStack-code)"
+        children="Code font family"
+      />
+    </Fragment>
+  }
+/>
 
 ## Stacks
 
@@ -155,37 +188,5 @@ Individual style tokens that when combined create typeography stacks.
       fontFamily="var(--gh-fontStack-code)"
       children="Inline code block"
     />
-  }
-/>
-
-## Family
-
-<DisplayBoxTable
-  filePath="tokens/functional/typography/typography.json"
-  tokenVariant="-fontStack-"
-  children={
-    <Fragment>
-      <TypographyBlock
-        fontSize="var(--gh-text-body-size-medium)"
-        fontWeight="var(--gh-text-body-weight)"
-        lineHeight="var(--gh-text-body-lineHeight-medium)"
-        fontFamily="var(--gh-fontStack-body)"
-        children="Body font family"
-      />
-      <TypographyBlock
-        fontSize="var(--gh-text-title-size-medium)"
-        fontWeight="var(--gh-text-title-weight)"
-        lineHeight="var(--gh-text-title-lineHeight-medium)"
-        fontFamily="var(--gh-fontStack-heading)"
-        children="Title font family"
-      />
-      <TypographyBlock
-        fontSize="var(--gh-text-codeBlock-size)"
-        fontWeight="var(--gh-text-codeBlock-weight)"
-        lineHeight="var(--gh-text-codeBlock-lineHeight)"
-        fontFamily="var(--gh-fontStack-code)"
-        children="Code font family"
-      />
-    </Fragment>
   }
 />

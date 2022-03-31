@@ -41,6 +41,8 @@ const BorderTable: FC<BorderTableProps> = ({filePath, borderWidth}) => {
               const medium = token.name.includes('medium') ? true : false
               const large = token.name.includes('large') ? true : false
               const full = token.name.includes('full') ? true : false
+              const boxShadow = token.name.includes('borderInset') ? true : false
+              const border = token.name.includes('borderWidth') ? true : false
               const tokenVariant = thin
                 ? 'thin'
                 : normal
@@ -62,7 +64,7 @@ const BorderTable: FC<BorderTableProps> = ({filePath, borderWidth}) => {
               ]
               if (borderWidth) {
                 return (
-                  (token.name.includes('-borderWidth-') || token.name.includes('-borderBoxShadow-')) &&
+                  (token.name.includes('-borderWidth-') || token.name.includes('-borderInset-')) &&
                   token.name.match(tokenVariant) && (
                     <tr id={token.name} key={token.name}>
                       <td>
@@ -70,13 +72,11 @@ const BorderTable: FC<BorderTableProps> = ({filePath, borderWidth}) => {
                           as="div"
                           sx={{
                             backgroundColor: 'white',
-                            borderStyle: 'solid',
-                            borderWidth: `var(--gh-borderWidth-${tokenVariant})`,
-                            borderColor: '#c297ff',
+                            border: border && `solid var(--gh-borderWidth-${tokenVariant}) #c297ff`,
                             height: '3rem',
                             width: '3rem',
                             borderRadius: 2,
-                            boxShadow: `var(--gh-borderWidth-${tokenVariant})`
+                            boxShadow: boxShadow && `var(--gh-borderInset-${tokenVariant}) #c297ff`
                           }}
                         />
                       </td>
