@@ -3,7 +3,6 @@
  * transforms:
  * - px to rem
  * - custom media queries (postcss)
- * - base/functional prefix
  * - camel-kebab
  * - responsive tokens (same token, different value)
  */
