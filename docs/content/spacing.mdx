@@ -16,11 +16,15 @@ import BaseSizeTable from '../src/components/tables/BaseSizeTable.tsx'
 
 <Note variant="warning">Spacing, sizing and typography primitives are in experimental status</Note>
 
+# Base
+
 ## Size
 
 All our sizing values are set in rem. The base size scale uses the same numbering as their computed result on a typical browser, following 4 step increments for small dimensions, and 16 step increments for larger dimensions.
 
 <BaseSizeTable filePath="tokens/base/size/size.json" showExample />
+
+# Functional
 
 ## Breakpoints
 
@@ -29,12 +33,6 @@ All our sizing values are set in rem. The base size scale uses the same numberin
 ## Viewport ranges
 
 <BaseSizeTable filePath="tokens/functional/size/viewport.json" />
-
-# Functional
-
-Functional spacing variables have semantic meaning and opinionated spacing values. They are meant to cover the most common UI patterns.
-
-We use terminology from [CSS logical properties](https://css-tricks.com/css-logical-properties/) to reference dimensions, where the horizontal axis is represented as inline, and the vertical as block.
 
 ## UI stack
 
@@ -62,7 +60,7 @@ We use terminology from [CSS logical properties](https://css-tricks.com/css-logi
 
 <UIControlTable filePath="tokens/functional/size/size.json" tokenVariant="-xlarge-" />
 
-## UI Control stack
+## UI control stack
 
 <UIControlStackTable filePath="tokens/functional/size/size.json" />
 

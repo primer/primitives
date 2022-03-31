@@ -54,7 +54,7 @@ export function DisplayBoxTable({filePath, tokenVariant, children, showOriginalV
               const lineHeight = token.name.includes('lineHeight') ? true : false
               const lineBoxHeight = token.name.includes('lineBoxHeight') ? true : false
               const fontFamily = token.name.includes('fontStack') ? true : false
-              const weightVariant = token.path.at(3)
+              const weightVariant = token.path[3]
               const FrameworkVars = [
                 {id: 'CSS', token: `--${token.name}`},
                 {id: 'JS', token: `${token.path.join('.')}`}
