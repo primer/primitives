@@ -186,31 +186,6 @@ StyleDictionary.registerFormat({
   }
 })
 
-// StyleDictionary.registerFormat({
-//   name: `myCustomFormat`,
-//   formatter: function({dictionary}) {
-//     return dictionary.allTokens
-//       .map(token => {
-//         let value = JSON.stringify(token.value)
-//         // the `dictionary` object now has `usesReference()` and
-//         // `getReferences()` methods. `usesReference()` will return true if
-//         // the value has a reference in it. `getReferences()` will return
-//         // an array of references to the whole tokens so that you can access
-//         // their names or any other attributes.
-//         if (dictionary.usesReference(token.original.value)) {
-//           const refs = dictionary.getReferences(token.original.value)
-//           refs.forEach(ref => {
-//             value = value.replace(ref.value, function() {
-//               return `${ref.name}`
-//             })
-//           })
-//         }
-//         return `export const ${token.name} = ${value};`
-//       })
-//       .join(`\n`)
-//   }
-// })
-
 // format docs
 StyleDictionary.registerFormat({
   name: 'json/docs',
@@ -233,7 +208,7 @@ StyleDictionary.extend({
   source: [`tokens/**/*.json`],
   platforms: {
     css: {
-      buildPath: 'dist/css/',
+      buildPath: 'tokens-v2-private/css/',
       transformGroup: 'css',
       // map the array of token file paths to style dictionary output files
       files: tokenFiles.map(filePath => {
@@ -248,7 +223,7 @@ StyleDictionary.extend({
       })
     },
     cssViewport: {
-      buildPath: 'dist/css/tokens/functional/size/',
+      buildPath: 'tokens-v2-private/css/tokens/functional/size/',
       transformGroup: 'css',
       files: [
         {
@@ -259,7 +234,7 @@ StyleDictionary.extend({
       ]
     },
     js: {
-      buildPath: 'dist/js/',
+      buildPath: 'tokens-v2-private/js/',
       transforms: ['name/js/es6', 'pxToRem'],
       // map the array of token file paths to style dictionary output files
       files: tokenFiles.map(filePath => {
@@ -271,7 +246,7 @@ StyleDictionary.extend({
       })
     },
     jsModule: {
-      buildPath: 'dist/js/module/',
+      buildPath: 'tokens-v2-private/js/module/',
       transforms: ['pxToRem'],
       // map the array of token file paths to style dictionary output files
       files: tokenFiles.map(filePath => {
@@ -283,7 +258,7 @@ StyleDictionary.extend({
       })
     },
     tsTypes: {
-      buildPath: 'dist/ts/',
+      buildPath: 'tokens-v2-private/ts/',
       transforms: ['pxToRem'],
       // map the array of token file paths to style dictionary output files
       files: tokenFiles.map(filePath => {
@@ -295,7 +270,7 @@ StyleDictionary.extend({
       })
     },
     ts: {
-      buildPath: 'dist/ts/',
+      buildPath: 'tokens-v2-private/ts/',
       transforms: ['pxToRem'],
       // map the array of token file paths to style dictionary output files
       files: tokenFiles.map(filePath => {
@@ -307,7 +282,7 @@ StyleDictionary.extend({
       })
     },
     docs: {
-      buildPath: 'dist/docs/',
+      buildPath: 'tokens-v2-private/docs/',
       transformGroup: 'css',
       files: [
         {
@@ -327,7 +302,7 @@ StyleDictionary.extend({
   source: [`tokens/base/size/size.json`, `tokens/functional/size/size-fine.json`],
   platforms: {
     css: {
-      buildPath: 'dist/css/',
+      buildPath: 'tokens-v2-private/css/',
       transformGroup: 'css',
       files: [
         {
@@ -349,7 +324,7 @@ StyleDictionary.extend({
   source: [`tokens/base/size/size.json`, `tokens/functional/size/size-course.json`],
   platforms: {
     css: {
-      buildPath: 'dist/css/',
+      buildPath: 'tokens-v2-private/css/',
       transformGroup: 'css',
       files: [
         {

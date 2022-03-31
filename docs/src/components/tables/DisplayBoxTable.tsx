@@ -7,7 +7,7 @@ import TokenInlineCode from '../TokenInlineCode'
 import InlineCode from '@primer/gatsby-theme-doctocat/src/components/inline-code.js'
 import Table from '@primer/gatsby-theme-doctocat/src/components/table.js'
 import TokenTable from '../TokenTable'
-import tokens from '../../../../dist/docs/docValues.json'
+import tokens from '../../../../tokens-v2-private/docs/docValues.json'
 import TypographyBlock from '../typography-block'
 import FrameworkVariableTable from './FrameworkVariableTable'
 
@@ -43,7 +43,10 @@ export function DisplayBoxTable({filePath, tokenVariant, children, showOriginalV
                 Token
               </Box>
               <Box as="th" textAlign="left">
-                Value
+                Output value
+              </Box>
+              <Box as="th" textAlign="left">
+                Source value
               </Box>
             </tr>
           </thead>
@@ -62,7 +65,7 @@ export function DisplayBoxTable({filePath, tokenVariant, children, showOriginalV
               return (
                 !token.name.includes('-shorthand') &&
                 token.name.match(tokenVariant) && (
-                  <tr>
+                  <tr id={token.name} key={token.name}>
                     <Box as="td">
                       {showProperty ? (
                         <TokenInlineCode>
@@ -90,8 +93,17 @@ export function DisplayBoxTable({filePath, tokenVariant, children, showOriginalV
                     </Box>
                     <FrameworkVariableTable frameworks={FrameworkVars} />
                     <Box as="td">
+                      <InlineCode>{token.value}</InlineCode>
+                    </Box>
+                    <Box as="td">
                       <InlineCode>
-                        {token.value} {showOriginalValue && `/ ${token.original.value}`}
+                        {token.original.value.includes('{') ? (
+                          <a href={`#${token.original.value.replace(/[{}]/g, '').replace(/\./g, '-')}`}>
+                            {token.original.value.replace(/[{}]/g, '')}
+                          </a>
+                        ) : (
+                          token.original.value
+                        )}
                       </InlineCode>
                     </Box>
                   </tr>

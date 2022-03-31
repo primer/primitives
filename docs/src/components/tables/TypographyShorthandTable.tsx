@@ -3,7 +3,7 @@ import {Box, Text} from '@primer/components'
 import TokenInlineCode from '../TokenInlineCode'
 import Table from '@primer/gatsby-theme-doctocat/src/components/table.js'
 import TokenTable from '../TokenTable'
-import tokens from '../../../../dist/docs/docValues.json'
+import tokens from '../../../../tokens-v2-private/docs/docValues.json'
 import TypographyBlock from '../typography-block'
 import FrameworkVariableTable from './FrameworkVariableTable'
 
@@ -21,7 +21,7 @@ export function TypographyShorthandTable({filePath}) {
                 Token
               </Box>
               <Box as="th" textAlign="left">
-                Value
+                Source value
               </Box>
             </tr>
           </thead>
@@ -52,7 +52,7 @@ export function TypographyShorthandTable({filePath}) {
               ]
               return (
                 token.name.includes('-shorthand') && (
-                  <tr>
+                  <tr id={token.name} key={token.name}>
                     <Box as="td">
                       <TypographyBlock
                         variant={tokenVariantString}
@@ -83,7 +83,15 @@ export function TypographyShorthandTable({filePath}) {
                           >
                             Size:
                           </Box>
-                          <TokenInlineCode>{token.original.value.fontSize}</TokenInlineCode>
+                          <TokenInlineCode>
+                            {token.original.value.fontSize.includes('{') ? (
+                              <a href={`#${token.original.value.fontSize.replace(/[{}]/g, '').replace(/\./g, '-')}`}>
+                                {token.original.value.fontSize.replace(/[{}]/g, '')}
+                              </a>
+                            ) : (
+                              token.original.value.fontSize
+                            )}
+                          </TokenInlineCode>
                         </Box>
                         <Box
                           sx={{
@@ -106,7 +114,15 @@ export function TypographyShorthandTable({filePath}) {
                           >
                             Line height:
                           </Box>
-                          <TokenInlineCode>{token.original.value.lineHeight}</TokenInlineCode>
+                          <TokenInlineCode>
+                            {token.original.value.lineHeight.includes('{') ? (
+                              <a href={`#${token.original.value.lineHeight.replace(/[{}]/g, '').replace(/\./g, '-')}`}>
+                                {token.original.value.lineHeight.replace(/[{}]/g, '')}
+                              </a>
+                            ) : (
+                              token.original.value.lineHeight
+                            )}
+                          </TokenInlineCode>
                         </Box>
                         <Box
                           sx={{
@@ -129,7 +145,15 @@ export function TypographyShorthandTable({filePath}) {
                           >
                             Weight:
                           </Box>
-                          <TokenInlineCode>{token.original.value.fontWeight}</TokenInlineCode>
+                          <TokenInlineCode>
+                            {token.original.value.fontWeight.includes('{') ? (
+                              <a href={`#${token.original.value.fontWeight.replace(/[{}]/g, '').replace(/\./g, '-')}`}>
+                                {token.original.value.fontWeight.replace(/[{}]/g, '')}
+                              </a>
+                            ) : (
+                              token.original.value.fontWeight
+                            )}
+                          </TokenInlineCode>
                         </Box>
                       </Box>
                     </td>

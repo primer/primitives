@@ -4,7 +4,7 @@ import Table from '@primer/gatsby-theme-doctocat/src/components/table.js'
 import TokenTable from '../TokenTable'
 import TokenInlineCode from '../TokenInlineCode'
 import FrameworkVariableTable from './FrameworkVariableTable'
-import tokens from '../../../../dist/docs/docValues.json'
+import tokens from '../../../../tokens-v2-private/docs/docValues.json'
 import ControlVisual from '../control'
 
 interface UIControlTableProps {
@@ -26,10 +26,10 @@ const UIControlTable: FC<UIControlTableProps> = ({filePath, tokenVariant}) => {
                 Token
               </Box>
               <Box as="th" textAlign="left">
-                Value
+                Source value
               </Box>
               <Box as="th" textAlign="left">
-                px
+                Output value
               </Box>
             </tr>
           </thead>
@@ -54,7 +54,7 @@ const UIControlTable: FC<UIControlTableProps> = ({filePath, tokenVariant}) => {
               return (
                 token.name.includes('-control-') &&
                 token.name.match(tokenVariant) && (
-                  <tr>
+                  <tr id={token.name} key={token.name}>
                     <td>
                       <ControlVisual
                         gap={tokenVariantString}
@@ -79,7 +79,15 @@ const UIControlTable: FC<UIControlTableProps> = ({filePath, tokenVariant}) => {
                       <TokenInlineCode>{token.value}</TokenInlineCode>
                     </td>
                     <td>
-                      <TokenInlineCode>{token.original.value}</TokenInlineCode>
+                      <TokenInlineCode>
+                        {token.original.value.includes('{') && !token.original.value.includes('calc') ? (
+                          <a href={`#${token.original.value.replace(/[{}]/g, '').replace(/\./g, '-')}`}>
+                            {token.original.value.replace(/[{}]/g, '')}
+                          </a>
+                        ) : (
+                          token.original.value
+                        )}
+                      </TokenInlineCode>
                     </td>
                   </tr>
                 )

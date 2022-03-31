@@ -5,7 +5,7 @@ import Table from '@primer/gatsby-theme-doctocat/src/components/table.js'
 import FrameworkVariableTable from './FrameworkVariableTable'
 import TokenInlineCode from '../TokenInlineCode'
 import TokenTable from '../TokenTable'
-import tokens from '../../../../dist/docs/docValues.json'
+import tokens from '../../../../tokens-v2-private/docs/docValues.json'
 import Swatch from '../Swatch'
 
 interface BaseSizeTableProps {
@@ -28,10 +28,10 @@ const BaseSizeTable: FC<BaseSizeTableProps> = ({filePath, showExample}) => {
               Token
             </Box>
             <Box as="th" textAlign="left">
-              Value
+              Output value
             </Box>
             <Box as="th" textAlign="left">
-              Pixel
+              Source value
             </Box>
           </tr>
         </thead>
@@ -42,7 +42,7 @@ const BaseSizeTable: FC<BaseSizeTableProps> = ({filePath, showExample}) => {
               {id: 'JS', token: `${token.path.join('.')}`}
             ]
             return (
-              <tr>
+              <tr id={token.name} key={token.name}>
                 {showExample && (
                   <td>
                     <Swatch color="done.emphasis" height={token.value} width={token.value} />
@@ -53,7 +53,15 @@ const BaseSizeTable: FC<BaseSizeTableProps> = ({filePath, showExample}) => {
                   <TokenInlineCode>{token.value}</TokenInlineCode>
                 </td>
                 <td>
-                  <TokenInlineCode>{token.original.value}</TokenInlineCode>
+                  <TokenInlineCode>
+                    {token.original.value.includes('{') && !token.original.value.includes('calc') ? (
+                      <a href={`#${token.original.value.replace(/[{}]/g, '').replace(/\./g, '-')}`}>
+                        {token.original.value.replace(/[{}]/g, '')}
+                      </a>
+                    ) : (
+                      token.original.value
+                    )}
+                  </TokenInlineCode>
                 </td>
               </tr>
             )
