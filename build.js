@@ -248,7 +248,7 @@ StyleDictionary.extend({
       })
     },
     cssViewport: {
-      buildPath: 'dist/css/tokens/base/size/',
+      buildPath: 'dist/css/tokens/functional/size/',
       transformGroup: 'css',
       files: [
         {

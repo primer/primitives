@@ -27,7 +27,7 @@ const ControlVisual: FC<ControlVisualProps> = ({
   gap,
   blockSize,
   lineBox,
-  modifier = '-condensed',
+  modifier,
   highlightPaddingBottom,
   highlightPaddingTop,
   highlightPaddingRight,
@@ -83,23 +83,13 @@ const ControlVisual: FC<ControlVisualProps> = ({
           sx={{
             gridArea: 'icon',
             display: 'flex',
-            alignItems: 'center'
+            alignItems: 'center',
+            backgroundColor: 'fg.subtle',
+            width: '1rem',
+            height: '1rem',
+            borderRadius: 1
           }}
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 16 16"
-            width="16"
-            height="16"
-            aria-hidden="true"
-            focusable="false"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M5.75 4A1.75 1.75 0 004 5.75v4.5c0 .966.784 1.75 1.75 1.75h4.5A1.75 1.75 0 0012 10.25v-4.5A1.75 1.75 0 0010.25 4h-4.5z"
-            ></path>
-          </svg>
-        </Box>
+        />
         <Box
           as="span"
           sx={{

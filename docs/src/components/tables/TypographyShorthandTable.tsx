@@ -2,141 +2,144 @@ import React, {Fragment} from 'react'
 import {Box, Text} from '@primer/components'
 import TokenInlineCode from '../TokenInlineCode'
 import Table from '@primer/gatsby-theme-doctocat/src/components/table.js'
+import TokenTable from '../TokenTable'
 import tokens from '../../../../dist/docs/docValues.json'
 import TypographyBlock from '../typography-block'
 import FrameworkVariableTable from './FrameworkVariableTable'
 
 export function TypographyShorthandTable({filePath}) {
   return (
-    <Table>
-      <Fragment>
-        <thead>
-          <tr>
-            <Box as="th" textAlign="left">
-              Example
-            </Box>
-            <Box as="th" textAlign="left">
-              Token
-            </Box>
-            <Box as="th" textAlign="left">
-              Value
-            </Box>
-          </tr>
-        </thead>
-        <tbody>
-          {tokens[filePath].map(token => {
-            const small = token.name.includes('small') ? true : false
-            const medium = token.name.includes('medium') ? true : false
-            const large = token.name.includes('large') ? true : false
-            const tokenVariant = token.name.includes('codeInline')
-              ? 'codeInline'
-              : token.name.includes('codeBlock')
-              ? 'codeBlock'
-              : token.name.includes('caption')
-              ? 'caption'
-              : token.name.includes('body')
-              ? 'body'
-              : token.name.includes('subtitle')
-              ? 'subtitle'
-              : token.name.includes('title')
-              ? 'title'
-              : token.name.includes('display')
-              ? 'display'
-              : 'test'
-            const tokenVariantString = tokenVariant.replace(/-/g, '')
-            const FrameworkVars = [
-              {id: 'CSS', token: `--${token.name}`},
-              {id: 'JS', token: `${token.path.join('.')}`}
-            ]
-            return (
-              token.name.includes('-shorthand') && (
-                <tr>
-                  <Box as="td">
-                    <TypographyBlock
-                      variant={tokenVariantString}
-                      modifier={small ? '-small' : medium ? '-medium' : large ? '-large' : undefined}
-                    />
-                  </Box>
-                  <FrameworkVariableTable frameworks={FrameworkVars} />
-                  <td>
-                    <Box sx={{display: 'flex', flexDirection: 'column', padding: '8px 16px', gap: '8px'}}>
-                      <Box
-                        sx={{
-                          display: 'grid',
-                          gridTemplateColumns: '8ch auto',
-                          alignItems: 'center',
-                          justifyItems: 'start',
-                          gap: '16px'
-                        }}
-                      >
-                        <Box
-                          as="p"
-                          sx={{
-                            color: 'fg.subtle',
-                            fontSize: '14px',
-                            whiteSpace: 'nowrap',
-                            margin: '0',
-                            fontWeight: '600'
-                          }}
-                        >
-                          Size:
-                        </Box>
-                        <TokenInlineCode>{token.original.value.fontSize}</TokenInlineCode>
-                      </Box>
-                      <Box
-                        sx={{
-                          display: 'grid',
-                          gridTemplateColumns: '8ch auto',
-                          alignItems: 'center',
-                          justifyItems: 'start',
-                          gap: '16px'
-                        }}
-                      >
-                        <Box
-                          as="p"
-                          sx={{
-                            color: 'fg.subtle',
-                            fontSize: '14px',
-                            whiteSpace: 'nowrap',
-                            margin: '0',
-                            fontWeight: '600'
-                          }}
-                        >
-                          Line height:
-                        </Box>
-                        <TokenInlineCode>{token.original.value.lineHeight}</TokenInlineCode>
-                      </Box>
-                      <Box
-                        sx={{
-                          display: 'grid',
-                          gridTemplateColumns: '8ch auto',
-                          alignItems: 'center',
-                          justifyItems: 'start',
-                          gap: '16px'
-                        }}
-                      >
-                        <Box
-                          as="p"
-                          sx={{
-                            color: 'fg.subtle',
-                            fontSize: '14px',
-                            whiteSpace: 'nowrap',
-                            margin: '0',
-                            fontWeight: '600'
-                          }}
-                        >
-                          Weight:
-                        </Box>
-                        <TokenInlineCode>{token.original.value.fontWeight}</TokenInlineCode>
-                      </Box>
+    <Box as="div" sx={{overflow: 'auto'}}>
+      <TokenTable>
+        <Fragment>
+          <thead>
+            <tr>
+              <Box as="th" textAlign="left">
+                Example
+              </Box>
+              <Box as="th" textAlign="left">
+                Token
+              </Box>
+              <Box as="th" textAlign="left">
+                Value
+              </Box>
+            </tr>
+          </thead>
+          <tbody>
+            {tokens[filePath].map(token => {
+              const small = token.name.includes('small') ? true : false
+              const medium = token.name.includes('medium') ? true : false
+              const large = token.name.includes('large') ? true : false
+              const tokenVariant = token.name.includes('codeInline')
+                ? 'codeInline'
+                : token.name.includes('codeBlock')
+                ? 'codeBlock'
+                : token.name.includes('caption')
+                ? 'caption'
+                : token.name.includes('body')
+                ? 'body'
+                : token.name.includes('subtitle')
+                ? 'subtitle'
+                : token.name.includes('title')
+                ? 'title'
+                : token.name.includes('display')
+                ? 'display'
+                : 'test'
+              const tokenVariantString = tokenVariant.replace(/-/g, '')
+              const FrameworkVars = [
+                {id: 'CSS', token: `--${token.name}`},
+                {id: 'JS', token: `${token.path.join('.')}`}
+              ]
+              return (
+                token.name.includes('-shorthand') && (
+                  <tr>
+                    <Box as="td">
+                      <TypographyBlock
+                        variant={tokenVariantString}
+                        modifier={small ? '-small' : medium ? '-medium' : large ? '-large' : undefined}
+                      />
                     </Box>
-                  </td>
-                </tr>
+                    <FrameworkVariableTable frameworks={FrameworkVars} />
+                    <td>
+                      <Box sx={{display: 'flex', flexDirection: 'column', padding: '8px 16px', gap: '8px'}}>
+                        <Box
+                          sx={{
+                            display: 'grid',
+                            gridTemplateColumns: '8ch auto',
+                            alignItems: 'center',
+                            justifyItems: 'start',
+                            gap: '16px'
+                          }}
+                        >
+                          <Box
+                            as="p"
+                            sx={{
+                              color: 'fg.subtle',
+                              fontSize: '14px',
+                              whiteSpace: 'nowrap',
+                              margin: '0',
+                              fontWeight: '600'
+                            }}
+                          >
+                            Size:
+                          </Box>
+                          <TokenInlineCode>{token.original.value.fontSize}</TokenInlineCode>
+                        </Box>
+                        <Box
+                          sx={{
+                            display: 'grid',
+                            gridTemplateColumns: '8ch auto',
+                            alignItems: 'center',
+                            justifyItems: 'start',
+                            gap: '16px'
+                          }}
+                        >
+                          <Box
+                            as="p"
+                            sx={{
+                              color: 'fg.subtle',
+                              fontSize: '14px',
+                              whiteSpace: 'nowrap',
+                              margin: '0',
+                              fontWeight: '600'
+                            }}
+                          >
+                            Line height:
+                          </Box>
+                          <TokenInlineCode>{token.original.value.lineHeight}</TokenInlineCode>
+                        </Box>
+                        <Box
+                          sx={{
+                            display: 'grid',
+                            gridTemplateColumns: '8ch auto',
+                            alignItems: 'center',
+                            justifyItems: 'start',
+                            gap: '16px'
+                          }}
+                        >
+                          <Box
+                            as="p"
+                            sx={{
+                              color: 'fg.subtle',
+                              fontSize: '14px',
+                              whiteSpace: 'nowrap',
+                              margin: '0',
+                              fontWeight: '600'
+                            }}
+                          >
+                            Weight:
+                          </Box>
+                          <TokenInlineCode>{token.original.value.fontWeight}</TokenInlineCode>
+                        </Box>
+                      </Box>
+                    </td>
+                  </tr>
+                )
               )
-            )
-          })}
-        </tbody>
-      </Fragment>
-    </Table>
+            })}
+          </tbody>
+        </Fragment>
+      </TokenTable>
+    </Box>
   )
 }

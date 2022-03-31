@@ -6,6 +6,7 @@ import {Box, Text} from '@primer/components'
 import TokenInlineCode from '../TokenInlineCode'
 import InlineCode from '@primer/gatsby-theme-doctocat/src/components/inline-code.js'
 import Table from '@primer/gatsby-theme-doctocat/src/components/table.js'
+import TokenTable from '../TokenTable'
 import tokens from '../../../../dist/docs/docValues.json'
 import TypographyBlock from '../typography-block'
 import FrameworkVariableTable from './FrameworkVariableTable'
@@ -31,7 +32,7 @@ export function DisplayBoxTable({filePath, tokenVariant, children, showOriginalV
       }}
     >
       {children && <TableBox>{children}</TableBox>}
-      <Table>
+      <TokenTable>
         <Fragment>
           <thead>
             <tr>
@@ -99,7 +100,7 @@ export function DisplayBoxTable({filePath, tokenVariant, children, showOriginalV
             })}
           </tbody>
         </Fragment>
-      </Table>
+      </TokenTable>
     </Box>
   )
 }
