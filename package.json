@@ -27,8 +27,8 @@
     "build": "ts-node ./script/build.ts && node ./build.js && tsc",
     "prepack": "yarn build",
     "watch": "ls data/**/*.scss script/**/*.ts | entr -s 'yarn build'",
-    "release": "yarn build && build-sd && changeset publish",
-    "build-sd": "yarn prebuild && node ./build.js"
+    "build-sd": "yarn prebuild && node ./build.js",
+    "release": "yarn build && changeset publish"
   },
   "prettier": "@github/prettier-config",
   "devDependencies": {

@@ -1,14 +1,14 @@
 {
   "gh": {
     "fontStack": {
-      "body": {
-        "value": "{base.fontStack.system}"
+      "system": {
+        "value": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji'"
       },
-      "heading": {
-        "value": "{base.fontStack.system}"
+      "sansSerif": {
+        "value": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji'"
       },
-      "code": {
-        "value": "{base.fontStack.monospace}"
+      "monospace": {
+        "value": "ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace"
       }
     },
     "text": {
@@ -30,7 +30,7 @@
             "fontWeight": "{gh.text.display.weight}",
             "fontSize": "{gh.text.display.size}",
             "lineHeight": "{gh.text.display.lineHeight}",
-            "fontFamily": "{gh.fontStack.heading}"
+            "fontFamily": "{gh.fontStack.sansSerif}"
           },
           "type": "typography"
         }
@@ -61,7 +61,7 @@
               "fontWeight": "{gh.text.title.weight}",
               "fontSize": "{gh.text.title.size.large}",
               "lineHeight": "{gh.text.title.lineHeight.large}",
-              "fontFamily": "{gh.fontStack.heading}"
+              "fontFamily": "{gh.fontStack.sansSerif}"
             },
             "type": "typography"
           },
@@ -70,7 +70,7 @@
               "fontWeight": "{gh.text.title.weight}",
               "fontSize": "{gh.text.title.size.medium}",
               "lineHeight": "{gh.text.title.lineHeight.medium}",
-              "fontFamily": "{gh.fontStack.heading}"
+              "fontFamily": "{gh.fontStack.sansSerif}"
             },
             "type": "typography"
           }
@@ -91,7 +91,7 @@
             "fontWeight": "{gh.text.subtitle.weight}",
             "fontSize": "{gh.text.subtitle.size}",
             "lineHeight": "{gh.text.subtitle.lineHeight}",
-            "fontFamily": "{gh.fontStack.heading}"
+            "fontFamily": "{gh.fontStack.sansSerif}"
           },
           "type": "typography"
         }
@@ -128,7 +128,7 @@
               "fontWeight": "{gh.text.body.weight}",
               "fontSize": "{gh.text.body.size.large}",
               "lineHeight": "{gh.text.body.lineHeight.large}",
-              "fontFamily": "{gh.fontStack.body}"
+              "fontFamily": "{gh.fontStack.sansSerif}"
             },
             "type": "typography"
           },
@@ -137,7 +137,7 @@
               "fontWeight": "{gh.text.body.weight}",
               "fontSize": "{gh.text.body.size.medium}",
               "lineHeight": "{gh.text.body.lineHeight.medium}",
-              "fontFamily": "{gh.fontStack.body}"
+              "fontFamily": "{gh.fontStack.sansSerif}"
             },
             "type": "typography"
           },
@@ -146,7 +146,7 @@
               "fontWeight": "{gh.text.body.weight}",
               "fontSize": "{gh.text.body.size.small}",
               "lineHeight": "{gh.text.body.lineHeight.small}",
-              "fontFamily": "{gh.fontStack.body}"
+              "fontFamily": "{gh.fontStack.sansSerif}"
             },
             "type": "typography"
           }
@@ -167,7 +167,7 @@
             "fontWeight": "{gh.text.caption.weight}",
             "fontSize": "{gh.text.caption.size}",
             "lineHeight": "{gh.text.caption.lineHeight}",
-            "fontFamily": "{gh.fontStack.body}"
+            "fontFamily": "{gh.fontStack.sansSerif}"
           },
           "type": "typography"
         }
@@ -187,7 +187,7 @@
             "fontWeight": "{gh.text.codeBlock.weight}",
             "fontSize": "{gh.text.codeBlock.size}",
             "lineHeight": "{gh.text.codeBlock.lineHeight}",
-            "fontFamily": "{gh.fontStack.code}"
+            "fontFamily": "{gh.fontStack.monospace}"
           },
           "type": "typography"
         }
@@ -204,7 +204,7 @@
             "fontWeight": "{gh.text.codeInline.weight}",
             "fontSize": "{gh.text.codeInline.size}",
             "lineHeight": "inherit",
-            "fontFamily": "{gh.fontStack.code}"
+            "fontFamily": "{gh.fontStack.monospace}"
           },
           "type": "typography"
         }

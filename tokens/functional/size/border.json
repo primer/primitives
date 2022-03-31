@@ -1,8 +1,11 @@
 {
   "gh": {
-    "borderBoxShadow": {
+    "borderInset": {
       "thin": {
         "value": "inset 0 0 0 {gh.borderWidth.thin}"
+      },
+      "normal": {
+        "value": "inset 0 0 0 {gh.borderWidth.normal}"
       },
       "thick": {
         "value": "inset 0 0 0 {gh.borderWidth.thick}"

@@ -1,0 +1,24 @@
+{
+  "gh": {
+    "viewportRange": {
+      "narrow": {
+        "value": "(max-width: calc({gh.breakpoint.medium} - 0.02px))"
+      },
+      "narrowLandscape": {
+        "value": "(max-width: calc({gh.breakpoint.large} - 0.02px) and (max-height: calc({gh.breakpoint.small} - 0.02px)) and (orientation: landscape))"
+      },
+      "regular": {
+        "value": "(min-width: {gh.breakpoint.medium})"
+      },
+      "wide": {
+        "value": "(min-width: {gh.breakpoint.xxlarge})"
+      },
+      "portrait": {
+        "value": "(orientation: portrait)"
+      },
+      "landscape": {
+        "value": "(orientation: landscape)"
+      }
+    }
+  }
+}

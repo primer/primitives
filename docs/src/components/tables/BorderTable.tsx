@@ -71,9 +71,10 @@ const BorderTable: FC<BorderTableProps> = ({filePath, borderWidth}) => {
                           borderStyle: 'solid',
                           borderWidth: `var(--gh-borderWidth-${tokenVariant})`,
                           borderColor: '#c297ff',
-                          height: '2rem',
+                          height: '3rem',
                           width: '3rem',
-                          borderRadius: 2
+                          borderRadius: 2,
+                          boxShadow: `var(--gh-borderWidth-${tokenVariant})`
                         }}
                       />
                     </td>
@@ -100,7 +101,7 @@ const BorderTable: FC<BorderTableProps> = ({filePath, borderWidth}) => {
                         borderStyle: 'solid',
                         borderWidth: 2,
                         borderColor: '#c297ff',
-                        height: '2rem',
+                        height: '3rem',
                         width: '3rem',
                         borderRadius: `var(--gh-borderRadius-${tokenVariant})`
                       }}
