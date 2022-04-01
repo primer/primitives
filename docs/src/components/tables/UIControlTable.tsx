@@ -50,7 +50,6 @@ const UIControlTable: FC<UIControlTableProps> = ({filePath, tokenVariant}) => {
                 {id: 'CSS', token: `--${token.name}`},
                 {id: 'JS', token: `${token.path.join('.')}`}
               ]
-              console.log(tokenVariantString, paddingLeft)
               return (
                 token.name.includes('-control-') &&
                 token.name.match(tokenVariant) && (
