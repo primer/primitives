@@ -3,7 +3,8 @@
   "version": "7.4.1",
   "description": "Typography, spacing, and color primitives for Primer design system",
   "files": [
-    "dist"
+    "dist",
+    "tokens-v2-private"
   ],
   "main": "dist/js/index.js",
   "types": "dist/js/index.d.ts",
@@ -23,7 +24,7 @@
   },
   "homepage": "https://github.com/primer/primitives#readme",
   "scripts": {
-    "prebuild": "rm -rf dist",
+    "prebuild": "rm -rf dist && rm -rf tokens-v2-private",
     "build": "ts-node ./script/build.ts && node ./build.js && tsc",
     "prepack": "yarn build",
     "watch": "ls data/**/*.scss script/**/*.ts | entr -s 'yarn build'",

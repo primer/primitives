@@ -6,7 +6,7 @@ import FrameworkVariableTable from './FrameworkVariableTable'
 import TokenInlineCode from '../TokenInlineCode'
 import TokenTable from '../TokenTable'
 import tokens from '../../../../tokens-v2-private/docs/docValues.json'
-import Swatch from '../Swatch'
+import Swatch from './Swatch'
 
 interface BaseSizeTableProps {
   filePath?: string
