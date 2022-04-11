@@ -24,12 +24,12 @@
   },
   "homepage": "https://github.com/primer/primitives#readme",
   "scripts": {
+    "build": "ts-node ./script/build.ts && tsc",
+    "build:tokens": "node ./build.js",
     "prebuild": "rm -rf dist && rm -rf tokens-v2-private",
-    "build": "ts-node ./script/build.ts && node ./build.js && tsc",
-    "prepack": "yarn build",
-    "watch": "ls data/**/*.scss script/**/*.ts | entr -s 'yarn build'",
-    "build-sd": "yarn prebuild && node ./build.js",
-    "release": "yarn build && changeset publish"
+    "prepack": "yarn build && yarn build:tokens",
+    "release": "changeset publish",
+    "watch": "ls data/**/*.scss script/**/*.ts | entr -s 'yarn build'"
   },
   "prettier": "@github/prettier-config",
   "devDependencies": {

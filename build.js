@@ -195,6 +195,94 @@ StyleDictionary.registerFormat({
   }
 })
 
+/**
+ * Replacement format for javascript/module
+ */
+StyleDictionary.registerFormat({
+  name: 'javascript/module-v2',
+  formatter: function({dictionary, file}) {
+    const recursiveleyFlattenDictionary = obj => {
+      const tree = {}
+      if (typeof obj !== 'object' || Array.isArray(obj)) {
+        return obj
+      }
+
+      if (obj.hasOwnProperty('value')) {
+        return obj.value
+      } else {
+        for (const name in obj) {
+          if (obj.hasOwnProperty(name)) {
+            tree[name] = recursiveleyFlattenDictionary(obj[name])
+          }
+        }
+      }
+      return tree
+    }
+
+    return (
+      fileHeader({file}) +
+      'module.exports = ' +
+      JSON.stringify(recursiveleyFlattenDictionary(dictionary.tokens), null, 2)
+    )
+  }
+})
+
+/**
+ * Replacement format for typescript/module-declarations
+ * Type schema corresponds to javascript/module-v2 format
+ */
+StyleDictionary.registerFormat({
+  name: 'typescript/module-declarations-v2',
+  formatter: function({dictionary, options, file}) {
+    const {moduleName = `tokens`} = options
+
+    const getType = value => {
+      switch (typeof value) {
+        case 'string':
+          return 'string'
+        case 'number':
+          return 'number'
+        default:
+          return 'any'
+      }
+    }
+
+    const recursiveTypeGeneration = obj => {
+      const tree = {}
+      const shortHandSizes = ['large', 'medium', 'small']
+      if (typeof obj !== 'object' || Array.isArray(obj)) {
+        return obj
+      }
+
+      if (obj.hasOwnProperty('value') && typeof obj.value === 'string') {
+        return getType(obj.value)
+      } else {
+        for (const name in obj) {
+          if ((obj.hasOwnProperty(name) && obj.name === 'shorthand') || shortHandSizes.includes(obj.name)) {
+            for (const shorthandKey in obj.value) {
+              tree[shorthandKey] = getType(obj.value[shorthandKey])
+            }
+            return tree
+          } else if (obj.hasOwnProperty(name)) {
+            tree[name] = recursiveTypeGeneration(obj[name])
+          }
+        }
+      }
+      return tree
+    }
+
+    const output =
+      fileHeader({file}) +
+      `declare const ${moduleName}: ${JSON.stringify(recursiveTypeGeneration(dictionary.tokens), null, 2)}
+export default ${moduleName};`
+
+    return output
+      .replace(/"any"/g, 'any')
+      .replace(/"string"/g, 'string')
+      .replace(/"number"/g, 'number')
+  }
+})
+
 // APPLY THE CONFIGURATION
 // IMPORTANT: the registration of custom transforms
 // needs to be done _before_ applying the configuration
@@ -262,7 +350,7 @@ StyleDictionary.extend({
       // map the array of token file paths to style dictionary output files
       files: tokenFiles.map(filePath => {
         return {
-          format: `typescript/module-declarations`,
+          format: `typescript/module-declarations-v2`,
           destination: filePath.replace(`.json`, `.d.ts`),
           filter: token => token.filePath === filePath
         }
@@ -274,7 +362,7 @@ StyleDictionary.extend({
       // map the array of token file paths to style dictionary output files
       files: tokenFiles.map(filePath => {
         return {
-          format: `javascript/module`,
+          format: `javascript/module-v2`,
           destination: filePath.replace(`.json`, `.js`),
           filter: token => token.filePath === filePath
         }
