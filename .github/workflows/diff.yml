@@ -59,8 +59,11 @@ jobs:
       - name: Install dependencies
         run: yarn
 
-      - name: Build
+      - name: Build tokens
         run: yarn build
+
+      - name: Build experimental tokens
+        run: yarn build:tokens
 
       - name: Install dependencies (base)
         run: pushd base; yarn; popd

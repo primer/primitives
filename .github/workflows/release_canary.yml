@@ -27,6 +27,12 @@ jobs:
       - name: Install dependencies
         run: yarn
 
+      - name: Build tokens
+        run: yarn build
+
+      - name: Build experimental tokens
+        run: yarn build:tokens
+
       - name: Create .npmrc
         run: |
           cat << EOF > "$HOME/.npmrc"
