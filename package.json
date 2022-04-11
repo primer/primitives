@@ -27,7 +27,7 @@
     "build": "ts-node ./script/build.ts && tsc",
     "build:tokens": "node ./build.js",
     "prebuild": "rm -rf dist && rm -rf tokens-v2-private",
-    "prepack": "yarn build",
+    "prepack": "yarn build && yarn build:tokens",
     "release": "changeset publish",
     "watch": "ls data/**/*.scss script/**/*.ts | entr -s 'yarn build'"
   },
