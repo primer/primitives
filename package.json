@@ -2,7 +2,10 @@
   "name": "@primer/primitives",
   "version": "7.7.0",
   "description": "Typography, spacing, and color primitives for Primer design system",
-  "files": ["dist"],
+  "files": [
+    "dist",
+    "tokens-v2-private"
+  ],
   "main": "dist/js/index.js",
   "types": "dist/js/index.d.ts",
   "repository": "https://github.com/primer/primitives",
@@ -21,11 +24,12 @@
   },
   "homepage": "https://github.com/primer/primitives#readme",
   "scripts": {
-    "prebuild": "rm -rf dist",
     "build": "ts-node ./script/build.ts && tsc",
-    "prepack": "yarn build",
-    "watch": "ls data/**/*.scss script/**/*.ts | entr -s 'yarn build'",
-    "release": "yarn build && changeset publish"
+    "build:tokens": "node ./build.js",
+    "prebuild": "rm -rf dist && rm -rf tokens-v2-private",
+    "prepack": "yarn build && yarn build:tokens",
+    "release": "changeset publish",
+    "watch": "ls data/**/*.scss script/**/*.ts | entr -s 'yarn build'"
   },
   "prettier": "@github/prettier-config",
   "devDependencies": {
@@ -35,8 +39,8 @@
     "@babel/traverse": "^7.15.0",
     "@babel/types": "^7.15.0",
     "@changesets/changelog-github": "^0.3.0",
-    "@changesets/cli": "^2.11.2",
-    "@github/prettier-config": "^0.0.4",
+    "@changesets/cli": "^2.22.0",
+    "@github/prettier-config": "0.0.4",
     "@octokit/rest": "^18.5.3",
     "@types/babel__traverse": "^7.14.2",
     "@types/chalk": "^2.2.0",
@@ -54,6 +58,7 @@
     "mkdirp": "^1.0.4",
     "node-sass": "^7.0.0",
     "sass-extract": "^2.1.0",
+    "style-dictionary": "^3.1.1",
     "ts-node": "^8.10.2",
     "typescript": "^3.7.2"
   }

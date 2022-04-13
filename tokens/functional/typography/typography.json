@@ -1,0 +1,214 @@
+{
+  "primer": {
+    "fontStack": {
+      "system": {
+        "value": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji'"
+      },
+      "sansSerif": {
+        "value": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji'"
+      },
+      "monospace": {
+        "value": "ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace"
+      }
+    },
+    "text": {
+      "display": {
+        "lineBoxHeight": {
+          "value": "56px"
+        },
+        "size": {
+          "value": "40px"
+        },
+        "lineHeight": {
+          "value": "56px"
+        },
+        "weight": {
+          "value": "{base.text.weight.medium}"
+        },
+        "shorthand": {
+          "value": {
+            "fontWeight": "{primer.text.display.weight}",
+            "fontSize": "{primer.text.display.size}",
+            "lineHeight": "{primer.text.display.lineHeight}",
+            "fontFamily": "{primer.fontStack.sansSerif}"
+          },
+          "type": "typography"
+        }
+      },
+      "title": {
+        "size": {
+          "large": {
+            "value": "32px"
+          },
+          "medium": {
+            "value": "20px"
+          }
+        },
+        "lineHeight": {
+          "large": {
+            "value": "48px"
+          },
+          "medium": {
+            "value": "32px"
+          }
+        },
+        "weight": {
+          "value": "{base.text.weight.semibold}"
+        },
+        "shorthand": {
+          "large": {
+            "value": {
+              "fontWeight": "{primer.text.title.weight}",
+              "fontSize": "{primer.text.title.size.large}",
+              "lineHeight": "{primer.text.title.lineHeight.large}",
+              "fontFamily": "{primer.fontStack.sansSerif}"
+            },
+            "type": "typography"
+          },
+          "medium": {
+            "value": {
+              "fontWeight": "{primer.text.title.weight}",
+              "fontSize": "{primer.text.title.size.medium}",
+              "lineHeight": "{primer.text.title.lineHeight.medium}",
+              "fontFamily": "{primer.fontStack.sansSerif}"
+            },
+            "type": "typography"
+          }
+        }
+      },
+      "subtitle": {
+        "size": {
+          "value": "20px"
+        },
+        "lineHeight": {
+          "value": "32px"
+        },
+        "weight": {
+          "value": "{base.text.weight.normal}"
+        },
+        "shorthand": {
+          "value": {
+            "fontWeight": "{primer.text.subtitle.weight}",
+            "fontSize": "{primer.text.subtitle.size}",
+            "lineHeight": "{primer.text.subtitle.lineHeight}",
+            "fontFamily": "{primer.fontStack.sansSerif}"
+          },
+          "type": "typography"
+        }
+      },
+      "body": {
+        "size": {
+          "large": {
+            "value": "16px"
+          },
+          "medium": {
+            "value": "14px"
+          },
+          "small": {
+            "value": "12px"
+          }
+        },
+        "lineHeight": {
+          "large": {
+            "value": "24px"
+          },
+          "medium": {
+            "value": "20px"
+          },
+          "small": {
+            "value": "20px"
+          }
+        },
+        "weight": {
+          "value": "{base.text.weight.normal}"
+        },
+        "shorthand": {
+          "large": {
+            "value": {
+              "fontWeight": "{primer.text.body.weight}",
+              "fontSize": "{primer.text.body.size.large}",
+              "lineHeight": "{primer.text.body.lineHeight.large}",
+              "fontFamily": "{primer.fontStack.sansSerif}"
+            },
+            "type": "typography"
+          },
+          "medium": {
+            "value": {
+              "fontWeight": "{primer.text.body.weight}",
+              "fontSize": "{primer.text.body.size.medium}",
+              "lineHeight": "{primer.text.body.lineHeight.medium}",
+              "fontFamily": "{primer.fontStack.sansSerif}"
+            },
+            "type": "typography"
+          },
+          "small": {
+            "value": {
+              "fontWeight": "{primer.text.body.weight}",
+              "fontSize": "{primer.text.body.size.small}",
+              "lineHeight": "{primer.text.body.lineHeight.small}",
+              "fontFamily": "{primer.fontStack.sansSerif}"
+            },
+            "type": "typography"
+          }
+        }
+      },
+      "caption": {
+        "size": {
+          "value": "12px"
+        },
+        "lineHeight": {
+          "value": "16px"
+        },
+        "weight": {
+          "value": "{base.text.weight.normal}"
+        },
+        "shorthand": {
+          "value": {
+            "fontWeight": "{primer.text.caption.weight}",
+            "fontSize": "{primer.text.caption.size}",
+            "lineHeight": "{primer.text.caption.lineHeight}",
+            "fontFamily": "{primer.fontStack.sansSerif}"
+          },
+          "type": "typography"
+        }
+      },
+      "codeBlock": {
+        "size": {
+          "value": "13px"
+        },
+        "lineHeight": {
+          "value": "20px"
+        },
+        "weight": {
+          "value": "{base.text.weight.normal}"
+        },
+        "shorthand": {
+          "value": {
+            "fontWeight": "{primer.text.codeBlock.weight}",
+            "fontSize": "{primer.text.codeBlock.size}",
+            "lineHeight": "{primer.text.codeBlock.lineHeight}",
+            "fontFamily": "{primer.fontStack.monospace}"
+          },
+          "type": "typography"
+        }
+      },
+      "codeInline": {
+        "size": {
+          "value": "0.9285em"
+        },
+        "weight": {
+          "value": "{base.text.weight.normal}"
+        },
+        "shorthand": {
+          "value": {
+            "fontWeight": "{primer.text.codeInline.weight}",
+            "fontSize": "{primer.text.codeInline.size}",
+            "lineHeight": "inherit",
+            "fontFamily": "{primer.fontStack.monospace}"
+          },
+          "type": "typography"
+        }
+      }
+    }
+  }
+}

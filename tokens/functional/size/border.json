@@ -1,0 +1,40 @@
+{
+  "primer": {
+    "borderInset": {
+      "thin": {
+        "value": "inset 0 0 0 {primer.borderWidth.thin}"
+      },
+      "normal": {
+        "value": "inset 0 0 0 {primer.borderWidth.normal}"
+      },
+      "thick": {
+        "value": "inset 0 0 0 {primer.borderWidth.thick}"
+      }
+    },
+    "borderWidth": {
+      "thin": {
+        "value": "max(1px, 0.0625rem)"
+      },
+      "normal": {
+        "value": "max(2px, 0.125rem)"
+      },
+      "thick": {
+        "value": "max(4px, 0.25rem)"
+      }
+    },
+    "borderRadius": {
+      "small": {
+        "value": "3px"
+      },
+      "medium": {
+        "value": "6px"
+      },
+      "large": {
+        "value": "12px"
+      },
+      "full": {
+        "value": "100vh"
+      }
+    }
+  }
+}

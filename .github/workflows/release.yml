@@ -26,6 +26,12 @@ jobs:
       - name: Install dependencies
         run: yarn
 
+      - name: Build tokens
+        run: yarn build
+
+      - name: Build experimental tokens
+        run: yarn build:tokens
+
       - name: Create release pull request or publish to npm
         id: changesets
         uses: changesets/action@master
