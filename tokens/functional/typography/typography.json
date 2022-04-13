@@ -27,10 +27,10 @@
         },
         "shorthand": {
           "value": {
-            "fontWeight": "{gh.text.display.weight}",
-            "fontSize": "{gh.text.display.size}",
-            "lineHeight": "{gh.text.display.lineHeight}",
-            "fontFamily": "{gh.fontStack.sansSerif}"
+            "fontWeight": "{primer.text.display.weight}",
+            "fontSize": "{primer.text.display.size}",
+            "lineHeight": "{primer.text.display.lineHeight}",
+            "fontFamily": "{primer.fontStack.sansSerif}"
           },
           "type": "typography"
         }
@@ -58,19 +58,19 @@
         "shorthand": {
           "large": {
             "value": {
-              "fontWeight": "{gh.text.title.weight}",
-              "fontSize": "{gh.text.title.size.large}",
-              "lineHeight": "{gh.text.title.lineHeight.large}",
-              "fontFamily": "{gh.fontStack.sansSerif}"
+              "fontWeight": "{primer.text.title.weight}",
+              "fontSize": "{primer.text.title.size.large}",
+              "lineHeight": "{primer.text.title.lineHeight.large}",
+              "fontFamily": "{primer.fontStack.sansSerif}"
             },
             "type": "typography"
           },
           "medium": {
             "value": {
-              "fontWeight": "{gh.text.title.weight}",
-              "fontSize": "{gh.text.title.size.medium}",
-              "lineHeight": "{gh.text.title.lineHeight.medium}",
-              "fontFamily": "{gh.fontStack.sansSerif}"
+              "fontWeight": "{primer.text.title.weight}",
+              "fontSize": "{primer.text.title.size.medium}",
+              "lineHeight": "{primer.text.title.lineHeight.medium}",
+              "fontFamily": "{primer.fontStack.sansSerif}"
             },
             "type": "typography"
           }
@@ -88,10 +88,10 @@
         },
         "shorthand": {
           "value": {
-            "fontWeight": "{gh.text.subtitle.weight}",
-            "fontSize": "{gh.text.subtitle.size}",
-            "lineHeight": "{gh.text.subtitle.lineHeight}",
-            "fontFamily": "{gh.fontStack.sansSerif}"
+            "fontWeight": "{primer.text.subtitle.weight}",
+            "fontSize": "{primer.text.subtitle.size}",
+            "lineHeight": "{primer.text.subtitle.lineHeight}",
+            "fontFamily": "{primer.fontStack.sansSerif}"
           },
           "type": "typography"
         }
@@ -125,28 +125,28 @@
         "shorthand": {
           "large": {
             "value": {
-              "fontWeight": "{gh.text.body.weight}",
-              "fontSize": "{gh.text.body.size.large}",
-              "lineHeight": "{gh.text.body.lineHeight.large}",
-              "fontFamily": "{gh.fontStack.sansSerif}"
+              "fontWeight": "{primer.text.body.weight}",
+              "fontSize": "{primer.text.body.size.large}",
+              "lineHeight": "{primer.text.body.lineHeight.large}",
+              "fontFamily": "{primer.fontStack.sansSerif}"
             },
             "type": "typography"
           },
           "medium": {
             "value": {
-              "fontWeight": "{gh.text.body.weight}",
-              "fontSize": "{gh.text.body.size.medium}",
-              "lineHeight": "{gh.text.body.lineHeight.medium}",
-              "fontFamily": "{gh.fontStack.sansSerif}"
+              "fontWeight": "{primer.text.body.weight}",
+              "fontSize": "{primer.text.body.size.medium}",
+              "lineHeight": "{primer.text.body.lineHeight.medium}",
+              "fontFamily": "{primer.fontStack.sansSerif}"
             },
             "type": "typography"
           },
           "small": {
             "value": {
-              "fontWeight": "{gh.text.body.weight}",
-              "fontSize": "{gh.text.body.size.small}",
-              "lineHeight": "{gh.text.body.lineHeight.small}",
-              "fontFamily": "{gh.fontStack.sansSerif}"
+              "fontWeight": "{primer.text.body.weight}",
+              "fontSize": "{primer.text.body.size.small}",
+              "lineHeight": "{primer.text.body.lineHeight.small}",
+              "fontFamily": "{primer.fontStack.sansSerif}"
             },
             "type": "typography"
           }
@@ -164,10 +164,10 @@
         },
         "shorthand": {
           "value": {
-            "fontWeight": "{gh.text.caption.weight}",
-            "fontSize": "{gh.text.caption.size}",
-            "lineHeight": "{gh.text.caption.lineHeight}",
-            "fontFamily": "{gh.fontStack.sansSerif}"
+            "fontWeight": "{primer.text.caption.weight}",
+            "fontSize": "{primer.text.caption.size}",
+            "lineHeight": "{primer.text.caption.lineHeight}",
+            "fontFamily": "{primer.fontStack.sansSerif}"
           },
           "type": "typography"
         }
@@ -184,10 +184,10 @@
         },
         "shorthand": {
           "value": {
-            "fontWeight": "{gh.text.codeBlock.weight}",
-            "fontSize": "{gh.text.codeBlock.size}",
-            "lineHeight": "{gh.text.codeBlock.lineHeight}",
-            "fontFamily": "{gh.fontStack.monospace}"
+            "fontWeight": "{primer.text.codeBlock.weight}",
+            "fontSize": "{primer.text.codeBlock.size}",
+            "lineHeight": "{primer.text.codeBlock.lineHeight}",
+            "fontFamily": "{primer.fontStack.monospace}"
           },
           "type": "typography"
         }
@@ -201,10 +201,10 @@
         },
         "shorthand": {
           "value": {
-            "fontWeight": "{gh.text.codeInline.weight}",
-            "fontSize": "{gh.text.codeInline.size}",
+            "fontWeight": "{primer.text.codeInline.weight}",
+            "fontSize": "{primer.text.codeInline.size}",
             "lineHeight": "inherit",
-            "fontFamily": "{gh.fontStack.monospace}"
+            "fontFamily": "{primer.fontStack.monospace}"
           },
           "type": "typography"
         }
