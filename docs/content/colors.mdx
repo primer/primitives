@@ -12,6 +12,12 @@ import {SwatchGrid} from '../src/components/swatch-grid'
 import {ColorThemePicker} from '../src/components/color-theme-picker'
 import {ColorScales} from '../src/components/color-scales'
 
+<Note variant="warning">
+
+The following color variables are **intended for use at the component-level** and are used by the maintainers of Primer. For more information about how to apply color, read the [interface guidelines for color](https://primer.style/design/foundations/color).
+
+</Note>
+
 ## Themes
 
 Preview color variables in any of the available themes:
@@ -79,6 +85,18 @@ Use when there are more than 3 levels of states, for example in heatmaps.
 Use to inform of error or another negative message.
 
 <SwatchGrid names={Object.keys(flatten(colors.light)).filter(key => key.split('.')[0] === 'danger')} />
+
+### Open
+
+Use when refering to open tasks or workflows.
+
+<SwatchGrid names={Object.keys(flatten(colors.light)).filter(key => key.split('.')[0] === 'open')} />
+
+### Closed
+
+Use when refering to closed tasks or workflows.
+
+<SwatchGrid names={Object.keys(flatten(colors.light)).filter(key => key.split('.')[0] === 'closed')} />
 
 ### Done
 

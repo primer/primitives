@@ -6,7 +6,7 @@ const scale = {
   white: '#ffffff',
   gray: ['#f6f8fa', '#eaeef2', '#d0d7de', '#afb8c1', '#8c959f', '#6e7781', '#57606a', '#424a53', '#32383f', '#24292f'],
   blue: ['#ddf4ff', '#b6e3ff', '#80ccff', '#54aeff', '#218bff', '#0969da', '#0550ae', '#033d8b', '#0a3069', '#002155'],
-  green: ['#c0f6ff', '#96e5ff', '#65ccff', '#35adff', '#0088ff', '#0566d5', '#054da9', '#033a86', '#002d68', '#001f50'],
+  green: ['#ddf4ff', '#b6e3ff', '#80ccff', '#54aeff', '#218bff', '#0969da', '#0550ae', '#033d8b', '#0a3069', '#002155'],
   yellow: [
     '#fff8c5',
     '#fae17d',
@@ -20,18 +20,29 @@ const scale = {
     '#3b2300'
   ],
   orange: [
-    '#fff1e5',
-    '#ffd8b5',
-    '#ffb77c',
-    '#fb8f44',
-    '#e16f24',
-    '#bc4c00',
-    '#953800',
-    '#762c00',
-    '#5c2200',
-    '#471700'
+    '#fff5e8',
+    '#ffddb0',
+    '#ffbc6d',
+    '#f79939',
+    '#dd7815',
+    '#b35900',
+    '#8a4600',
+    '#6f3800',
+    '#572c00',
+    '#412000'
   ],
-  red: ['#fefe48', '#fee325', '#f8c200', '#e7a100', '#d08002', '#ac5e00', '#8b4600', '#6c3900', '#4c3100', '#2f2900'],
+  red: [
+    '#fff5e8',
+    '#ffddb0',
+    '#ffbc6d',
+    '#f79939',
+    '#dd7815',
+    '#b35900',
+    '#8a4600',
+    '#6f3800',
+    '#572c00',
+    '#412000'
+  ],
   purple: [
     '#fbefff',
     '#ecd8ff',
@@ -49,6 +60,18 @@ const scale = {
 }
 
 const exceptions = {
+  open: {
+    fg: get('scale.orange.5'),
+    emphasis: get('scale.orange.4'),
+    muted: alpha(get('scale.orange.3'), 0.4),
+    subtle: get('scale.orange.0')
+  },
+  closed: {
+    fg: get('scale.gray.5'),
+    emphasis: get('scale.gray.5'),
+    muted: alpha(get('scale.gray.3'), 0.4),
+    subtle: get('scale.gray.0')
+  },
   diffBlob: {
     addition: {
       numBg: get('success.muted'),

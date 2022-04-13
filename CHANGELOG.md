@@ -1,5 +1,41 @@
 # @primer/primitives
 
+## 7.7.0
+
+### Minor Changes
+
+- [#310](https://github.com/primer/primitives/pull/310) [`3a72849`](https://github.com/primer/primitives/commit/3a728498f352f737b8d257d1f70bd7d40e39d8db) Thanks [@simurai](https://github.com/simurai)! - Add Tritanopia theme
+
+## 7.6.0
+
+### Minor Changes
+
+- [#309](https://github.com/primer/primitives/pull/309) [`4588342`](https://github.com/primer/primitives/commit/45883423f029e7dee067fe4dd9636bebb11adbbe) Thanks [@mperrotti](https://github.com/mperrotti)! - adds primitives for toggle switch component
+
+### Patch Changes
+
+- [#307](https://github.com/primer/primitives/pull/307) [`da4ffd3`](https://github.com/primer/primitives/commit/da4ffd338a41bb1f653e096c8b886db4834b3715) Thanks [@simurai](https://github.com/simurai)! - Increase contrast for dark `fg.subtle`
+
+## 7.5.1
+
+### Patch Changes
+
+- [#306](https://github.com/primer/primitives/pull/306) [`8e9779c`](https://github.com/primer/primitives/commit/8e9779cd917554874bbc60cda0fd3baaf69118ca) Thanks [@Juliusschaeper](https://github.com/Juliusschaeper)! - Color scale improvements for Blue and Orange
+
+* [#303](https://github.com/primer/primitives/pull/303) [`07e01ad`](https://github.com/primer/primitives/commit/07e01add2f4d48ca32ffed6e4c61304fd93d0a16) Thanks [@simurai](https://github.com/simurai)! - Update `closed` role for `dark_colorblind`
+
+- [#304](https://github.com/primer/primitives/pull/304) [`94ae707`](https://github.com/primer/primitives/commit/94ae70763ac93e17c78bd5c2444d5ebb93fa0a7e) Thanks [@edokoa](https://github.com/edokoa)! - Change `scale.white` in dark mode to `#ffffff`
+
+## 7.5.0
+
+### Minor Changes
+
+- [#296](https://github.com/primer/primitives/pull/296) [`389b08b`](https://github.com/primer/primitives/commit/389b08bd09d965b117516ea5c72da64bc4cb03d9) Thanks [@simurai](https://github.com/simurai)! - Add `open` and `closed` roles
+
+### Patch Changes
+
+- [#301](https://github.com/primer/primitives/pull/301) [`2f18306`](https://github.com/primer/primitives/commit/2f1830606a025239a9153d4ebeec46ef0fa894e6) Thanks [@konradpabjan](https://github.com/konradpabjan)! - [Actions] Update light theme color for gateWaitingText
+
 ## 7.4.1
 
 ### Patch Changes

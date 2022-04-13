@@ -168,5 +168,24 @@ export default {
       activeBg: get('danger.subtle'),
       hoverText: get('danger.fg')
     }
+  },
+
+  switchTrack: {
+    bg: get('scale.gray.1'),
+    border: get('scale.gray.3'),
+
+    checked: {
+      bg: get('scale.blue.0'),
+      hoverBg: get('scale.blue.1'),
+      activeBg: get('scale.blue.2'),
+      border: get('scale.blue.3'),
+    }
+  },
+
+  switchKnob: {
+    checked: {
+      bg: get('scale.blue.5'),
+      disabledBg: get('scale.gray.5'),
+    }
   }
 }

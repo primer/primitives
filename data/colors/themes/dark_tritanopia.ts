@@ -1,5 +1,5 @@
-import {alpha, get, merge} from '../../../src/utils'
-import dark from './dark'
+import {merge} from '../../../src/utils'
+import dark_colorblind from './dark_colorblind'
 
 const scale = {
   black: '#010409',
@@ -20,28 +20,28 @@ const scale = {
     '#341a00'
   ],
   orange: [
-    '#ffe2bb',
-    '#ffc981',
-    '#fdac54',
-    '#ec8e2c',
-    '#d47616',
-    '#b76100',
-    '#914d04',
-    '#6c3906',
-    '#4e2906',
-    '#331c04'
+    '#ffdcd7',
+    '#ffc1ba',
+    '#ffa198',
+    '#ff7b72',
+    '#f85149',
+    '#da3633',
+    '#b62324',
+    '#8e1519',
+    '#67060c',
+    '#490202'
   ],
   red: [
-    '#ffe2bb',
-    '#ffc981',
-    '#fdac54',
-    '#ec8e2c',
-    '#d47616',
-    '#b76100',
-    '#914d04',
-    '#6c3906',
-    '#4e2906',
-    '#331c04'
+    '#ffdcd7',
+    '#ffc1ba',
+    '#ffa198',
+    '#ff7b72',
+    '#f85149',
+    '#da3633',
+    '#b62324',
+    '#8e1519',
+    '#67060c',
+    '#490202'
   ],
   purple: [
     '#eddeff',
@@ -59,19 +59,4 @@ const scale = {
   coral: ['#FFDDD2', '#FFC2B2', '#FFA28B', '#F78166', '#EA6045', '#CF462D', '#AC3220', '#872012', '#640D04', '#460701']
 }
 
-const exceptions = {
-  open: {
-    fg: get('scale.orange.3'),
-    emphasis: get('scale.orange.5'),
-    muted: alpha(get('scale.orange.4'), 0.4),
-    subtle: alpha(get('scale.orange.4'), 0.15)
-  },
-  closed: {
-    fg: get('scale.gray.3'),
-    emphasis: get('scale.gray.4'),
-    muted: alpha(get('scale.gray.4'), 0.4),
-    subtle: alpha(get('scale.gray.4'), 0.1)
-  }
-}
-
-export default merge(dark, exceptions, {scale})
+export default merge(dark_colorblind, {scale})

@@ -4,7 +4,7 @@ export default {
   fg: {
     default: get('scale.gray.1'),
     muted: get('scale.gray.3'),
-    subtle: get('scale.gray.5'),
+    subtle: get('scale.gray.4'),
     onEmphasis: get('scale.white')
   },
   canvas: {
@@ -57,6 +57,18 @@ export default {
     subtle: alpha(get('scale.orange.4'), 0.15)
   },
   danger: {
+    fg: get('scale.red.4'),
+    emphasis: get('scale.red.5'),
+    muted: alpha(get('scale.red.4'), 0.4),
+    subtle: alpha(get('scale.red.4'), 0.15)
+  },
+  open: {
+    fg: get('scale.green.3'),
+    emphasis: get('scale.green.5'),
+    muted: alpha(get('scale.green.4'), 0.4),
+    subtle: alpha(get('scale.green.4'), 0.15)
+  },
+  closed: {
     fg: get('scale.red.4'),
     emphasis: get('scale.red.5'),
     muted: alpha(get('scale.red.4'), 0.4),
