@@ -292,7 +292,7 @@
   Each JSON file in the `deprecations` directory contains a mapping of deprecated variables to replacement variables. Example:
 
   ```js
-  // dist/decprecations/colors.json
+  // dist/deprecations/colors.json
   {
     "text.primary": "fg.default", // this means: `text.primary` is deprecated. Use `fg.default` instead
     "auto.blue.4": ["accent.fg, accent.emphasis"], // this means: `auto.blue.4` is deprecated. Use `accent.fg` or `accent.emphasis` instead
