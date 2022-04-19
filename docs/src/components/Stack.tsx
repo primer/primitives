@@ -22,7 +22,7 @@ const StackVisual: FC<StackVisualProps> = ({gap, padding, modifier}) => {
             backgroundImage:
               'linear-gradient(45deg,#a475f980 12.50%,#d8b9ff7a 12.50%,#d8b9ff7a 50%,#a475f980 50%,#a475f980 62.50%,#d8b9ff7a 62.50%,#d8b9ff7a 100%)',
             backgroundSize: '5.66px 5.66px',
-            gap: `var(--gh-stack-gap-${modifier})`
+            gap: `var(--primer-stack-gap-${modifier})`
           }}
         >
           <Box
@@ -58,7 +58,7 @@ const StackVisual: FC<StackVisualProps> = ({gap, padding, modifier}) => {
             backgroundImage:
               'linear-gradient(45deg,#a475f980 12.50%,#d8b9ff7a 12.50%,#d8b9ff7a 50%,#a475f980 50%,#a475f980 62.50%,#d8b9ff7a 62.50%,#d8b9ff7a 100%)',
             backgroundSize: '5.66px 5.66px',
-            padding: `var(--gh-stack-padding-${modifier})`,
+            padding: `var(--primer-stack-padding-${modifier})`,
             justifyContent: 'center',
             aspectRatio: '16 / 9',
             width: '12rem'

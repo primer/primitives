@@ -72,11 +72,11 @@ const BorderTable: FC<BorderTableProps> = ({filePath, borderWidth}) => {
                           as="div"
                           sx={{
                             backgroundColor: 'white',
-                            border: border && `solid var(--gh-borderWidth-${tokenVariant}) #c297ff`,
+                            border: border && `solid var(--primer-borderWidth-${tokenVariant}) #c297ff`,
                             height: '3rem',
                             width: '3rem',
                             borderRadius: 2,
-                            boxShadow: boxShadow && `var(--gh-borderInset-${tokenVariant}) #c297ff`
+                            boxShadow: boxShadow && `var(--primer-borderInset-${tokenVariant}) #c297ff`
                           }}
                         />
                       </td>
@@ -105,7 +105,7 @@ const BorderTable: FC<BorderTableProps> = ({filePath, borderWidth}) => {
                           borderColor: '#c297ff',
                           height: '3rem',
                           width: '3rem',
-                          borderRadius: `var(--gh-borderRadius-${tokenVariant})`
+                          borderRadius: `var(--primer-borderRadius-${tokenVariant})`
                         }}
                       />
                     </td>
