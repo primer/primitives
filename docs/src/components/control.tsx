@@ -47,7 +47,7 @@ const ControlVisual: FC<ControlVisualProps> = ({
           gridTemplateColumns: 'repeat(5, min-content)',
           borderRadius: '2',
           border: 'solid 1px #c297ff',
-          height: `var(--gh-control-${blockSize}-size)`,
+          height: `var(--primer-control-${blockSize}-size)`,
           backgroundImage:
             highlightHeight &&
             'linear-gradient(45deg,#a475f980 12.50%,#d8b9ff7a 12.50%,#d8b9ff7a 50%,#a475f980 50%,#a475f980 62.50%,#d8b9ff7a 62.50%,#d8b9ff7a 100%)',
@@ -59,7 +59,7 @@ const ControlVisual: FC<ControlVisualProps> = ({
           as="span"
           sx={{
             gridArea: 'pTop',
-            height: `var(--gh-control-${paddingTop}-paddingBlock)`,
+            height: `var(--primer-control-${paddingTop}-paddingBlock)`,
             backgroundImage:
               highlightPaddingTop &&
               'linear-gradient(45deg,#a475f980 12.50%,#d8b9ff7a 12.50%,#d8b9ff7a 50%,#a475f980 50%,#a475f980 62.50%,#d8b9ff7a 62.50%,#d8b9ff7a 100%)',
@@ -70,7 +70,7 @@ const ControlVisual: FC<ControlVisualProps> = ({
           as="span"
           sx={{
             gridArea: 'pLeft',
-            width: `var(--gh-control-${paddingLeft}-paddingInline${modifier})`,
+            width: `var(--primer-control-${paddingLeft}-paddingInline${modifier})`,
             backgroundImage:
               highlightPaddingLeft &&
               'linear-gradient(45deg,#a475f980 12.50%,#d8b9ff7a 12.50%,#d8b9ff7a 50%,#a475f980 50%,#a475f980 62.50%,#d8b9ff7a 62.50%,#d8b9ff7a 100%)',
@@ -94,7 +94,7 @@ const ControlVisual: FC<ControlVisualProps> = ({
           as="span"
           sx={{
             gridArea: 'gap',
-            width: `var(--gh-control-${gap}-gap)`,
+            width: `var(--primer-control-${gap}-gap)`,
             backgroundImage:
               highlightGap &&
               'linear-gradient(45deg,#a475f980 12.50%,#d8b9ff7a 12.50%,#d8b9ff7a 50%,#a475f980 50%,#a475f980 62.50%,#d8b9ff7a 62.50%,#d8b9ff7a 100%)',
@@ -106,12 +106,12 @@ const ControlVisual: FC<ControlVisualProps> = ({
           as="span"
           sx={{
             gridArea: 'label',
-            lineHeight: `var(--gh-control-${lineBox}-lineBoxHeight)`,
+            lineHeight: `var(--primer-control-${lineBox}-lineBoxHeight)`,
             backgroundImage:
               highlightLineBoxHeight &&
               'linear-gradient(45deg,#a475f980 12.50%,#d8b9ff7a 12.50%,#d8b9ff7a 50%,#a475f980 50%,#a475f980 62.50%,#d8b9ff7a 62.50%,#d8b9ff7a 100%)',
             backgroundSize: '5.66px 5.66px',
-            fontSize: 'var(--gh-text-body-size-medium)'
+            fontSize: 'var(--primer-text-body-size-medium)'
           }}
         >
           label
@@ -120,7 +120,7 @@ const ControlVisual: FC<ControlVisualProps> = ({
           as="span"
           sx={{
             gridArea: 'pRight',
-            width: `var(--gh-control-${paddingRight}-paddingInline${modifier})`,
+            width: `var(--primer-control-${paddingRight}-paddingInline${modifier})`,
             backgroundImage:
               highlightPaddingRight &&
               'linear-gradient(45deg,#a475f980 12.50%,#d8b9ff7a 12.50%,#d8b9ff7a 50%,#a475f980 50%,#a475f980 62.50%,#d8b9ff7a 62.50%,#d8b9ff7a 100%)',
@@ -132,7 +132,7 @@ const ControlVisual: FC<ControlVisualProps> = ({
           as="span"
           sx={{
             gridArea: 'pBottom',
-            height: `var(--gh-control-${paddingBottom}-paddingBlock)`,
+            height: `var(--primer-control-${paddingBottom}-paddingBlock)`,
             backgroundImage:
               highlightPaddingBottom &&
               'linear-gradient(45deg,#a475f980 12.50%,#d8b9ff7a 12.50%,#d8b9ff7a 50%,#a475f980 50%,#a475f980 62.50%,#d8b9ff7a 62.50%,#d8b9ff7a 100%)',

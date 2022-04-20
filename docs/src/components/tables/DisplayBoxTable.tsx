@@ -83,10 +83,10 @@ export function DisplayBoxTable({filePath, tokenVariant, children, showOriginalV
                         </TokenInlineCode>
                       ) : (
                         <TypographyBlock
-                          fontFamily="var(--gh-fontStack-heading)"
-                          fontSize="var(--gh-text-title-size-medium)"
+                          fontFamily="var(--primer-fontStack-heading)"
+                          fontSize="var(--primer-text-title-size-medium)"
                           fontWeight={weight && `var(--${token.name})`}
-                          lineHeight="var(--gh-text-title-lineHeight-medium)"
+                          lineHeight="var(--primer-text-title-lineHeight-medium)"
                           children={`Text ${weightVariant}`}
                         />
                       )}

@@ -28,7 +28,7 @@ const TypographyBlock: FC<TypographyBlockProps> = ({
         as="p"
         sx={{
           margin: '0',
-          font: variant || modifier ? `var(--gh-text-${variant}-shorthand${modifier})` : undefined,
+          font: variant || modifier ? `var(--primer-text-${variant}-shorthand${modifier})` : undefined,
           fontSize: fontSize ? `${fontSize}` : undefined,
           fontWeight: fontWeight ? `${fontWeight}` : undefined,
           lineHeight: lineHeight ? `${lineHeight}` : undefined,
