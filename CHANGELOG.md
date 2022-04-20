@@ -1,5 +1,11 @@
 # @primer/primitives
 
+## 7.8.1
+
+### Patch Changes
+
+- [#321](https://github.com/primer/primitives/pull/321) [`97b4ba2`](https://github.com/primer/primitives/commit/97b4ba2bc4a86262489e11501563b6e76a7d12c2) Thanks [@rezrah](https://github.com/rezrah)! - Fixes post installation command
+
 ## 7.8.0
 
 ### Minor Changes
