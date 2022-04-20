@@ -1,5 +1,13 @@
 # @primer/primitives
 
+## 7.8.0
+
+### Minor Changes
+
+- [#317](https://github.com/primer/primitives/pull/317) [`45359ea`](https://github.com/primer/primitives/commit/45359eab4613edacfad331858128f187a01ce49c) Thanks [@langermank](https://github.com/langermank)! - - Initial design tokens release for interal Primer team use only
+  - Private docs that can be accessed at /typography and /size
+  - Separate dist for testing purposes only
+
 ## 7.7.0
 
 ### Minor Changes
