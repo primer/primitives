@@ -26,7 +26,6 @@
   "scripts": {
     "build": "ts-node ./script/build.ts && tsc",
     "build:tokens": "node ./build.js",
-    "postinstall": "cd docs && yarn",
     "prebuild": "rm -rf dist && rm -rf tokens-v2-private",
     "prepack": "yarn build && yarn build:tokens",
     "release": "changeset publish",
