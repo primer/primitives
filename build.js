@@ -414,19 +414,6 @@ function build({source, outputPath = 'tokens-v2-private', include, platforms, na
             filter: token => token.filePath === filePath
           }
         })
-      },
-      docs: {
-        buildPath: `${outputPath}/docs/`,
-        transformGroup: 'css',
-        files: [
-          {
-            format: 'json/docs',
-            destination: 'docValues.json',
-            options: {
-              outputReferences: false
-            }
-          }
-        ]
       }
     }
 
@@ -506,6 +493,27 @@ function _init() {
             filter: token => token.filePath.includes('coarse'),
             options: {
               outputReferences: true
+            }
+          }
+        ]
+      }
+    }
+  })
+
+  //build docs data
+  build({
+    source: [`tokens/**/*.json`],
+    outputPath,
+    platforms: {
+      docs: {
+        buildPath: `${outputPath}/docs/`,
+        transformGroup: 'css',
+        files: [
+          {
+            format: 'json/docs',
+            destination: 'docValues.json',
+            options: {
+              outputReferences: false
             }
           }
         ]
