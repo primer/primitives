@@ -190,6 +190,6 @@ export default {
   },
 
   control: {
-    border: get('scale.gray.3') // maintains min 3:1 contrast ratio
+    border: get('scale.gray.4') // maintains min 3:1 contrast ratio
   }
 }
