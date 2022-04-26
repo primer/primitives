@@ -186,5 +186,9 @@ export default {
       bg: get('scale.blue.5'),
       disabledBg: get('scale.gray.5'),
     }
+  },
+
+  control: {
+    border: get('scale.gray.4') // maintains min 3:1 contrast ratio
   }
 }

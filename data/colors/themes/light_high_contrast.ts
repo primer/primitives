@@ -235,6 +235,9 @@ const exceptions = {
       border: get('scale.blue.5'),
     }
   },
+  control: {
+    border: get('border.default') // maintains min 3:1 contrast ratio
+  }
 }
 
 export default merge(light, exceptions, {scale})
