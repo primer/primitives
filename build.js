@@ -305,14 +305,14 @@ function groupBy(collection, iteratee = x => x) {
  * @param {string} options.namespace a custom namespace to use for the output files
  * @param {Platform} options.platforms add custom platform configurations to style-dictionary
  * @example
- *  build({
+ *  buildPrimitives({
  *   source: [`src/colors.json`],
  *   outputPath: 'dist',
  *   namespace: 'primer',
  *   platforms: {...}
  *  })
  */
-function build({source, outputPath = 'tokens-v2-private', include, platforms, namespace = 'primer'}) {
+function buildPrimitives({source, outputPath = 'tokens-v2-private', include, platforms, namespace = 'primer'}) {
   console.log('Build started...')
   console.log('\n==============================================')
 
@@ -442,24 +442,24 @@ function build({source, outputPath = 'tokens-v2-private', include, platforms, na
 function _init() {
   const outputPath = 'tokens-v2-private'
   //build all tokens
-  build({
+  buildPrimitives({
     source: [`tokens/**/*.json`, `!tokens/**/size-*.json`],
     outputPath
   })
 
   //build size fine
-  build({
+  buildPrimitives({
     source: [`tokens/functional/size/size-fine.json`, `tokens/base/size/size.json`],
     outputPath
   })
 
   //build size coarse
-  build({
+  buildPrimitives({
     source: [`tokens/functional/size/size-coarse.json`, `tokens/base/size/size.json`],
     outputPath
   })
 
-  build({
+  buildPrimitives({
     source: [`tokens/base/size/size.json`, `tokens/functional/size/size-fine.json`],
     outputPath,
     platforms: {
@@ -480,7 +480,7 @@ function _init() {
     }
   })
 
-  build({
+  buildPrimitives({
     source: [`tokens/base/size/size.json`, `tokens/functional/size/size-coarse.json`],
     platforms: {
       css: {
@@ -501,7 +501,7 @@ function _init() {
   })
 
   //build docs data
-  build({
+  buildPrimitives({
     source: [`tokens/**/*.json`],
     outputPath,
     platforms: {
@@ -523,6 +523,6 @@ function _init() {
 }
 
 module.exports = {
-  build,
+  buildPrimitives,
   _init
 }
