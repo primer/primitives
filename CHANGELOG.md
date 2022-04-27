@@ -1,5 +1,11 @@
 # @primer/primitives
 
+## 7.8.2
+
+### Patch Changes
+
+- [#323](https://github.com/primer/primitives/pull/323) [`40f15d5`](https://github.com/primer/primitives/commit/40f15d530a130390debb794dbc4080f58b42d49e) Thanks [@rezrah](https://github.com/rezrah)! - add self serve tooling for v2 primitives
+
 ## 7.8.1
 
 ### Patch Changes
