@@ -1,17 +1,17 @@
 {
-  "primer": {
+  "<namespace>": {
     "viewportRange": {
       "narrow": {
-        "value": "(max-width: calc({primer.breakpoint.medium} - 0.02px))"
+        "value": "(max-width: calc({<namespace>.breakpoint.medium} - 0.02px))"
       },
       "narrowLandscape": {
-        "value": "(max-width: calc({primer.breakpoint.large} - 0.02px) and (max-height: calc({primer.breakpoint.small} - 0.02px)) and (orientation: landscape))"
+        "value": "(max-width: calc({<namespace>.breakpoint.large} - 0.02px) and (max-height: calc({<namespace>.breakpoint.small} - 0.02px)) and (orientation: landscape))"
       },
       "regular": {
-        "value": "(min-width: {primer.breakpoint.medium})"
+        "value": "(min-width: {<namespace>.breakpoint.medium})"
       },
       "wide": {
-        "value": "(min-width: {primer.breakpoint.xxlarge})"
+        "value": "(min-width: {<namespace>.breakpoint.xxlarge})"
       },
       "portrait": {
         "value": "(orientation: portrait)"

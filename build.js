@@ -1,20 +1,7 @@
-/**
- * platforms: CSS, js, ts, json
- * transforms:
- * - px to rem
- * - custom media queries (postcss)
- * - camel-kebab
- * - responsive tokens (same token, different value)
- */
-const glob = require('glob')
+const glob = require('fast-glob')
 const StyleDictionary = require('style-dictionary')
-const {fileHeader, formattedVariables} = StyleDictionary.formatHelpers
-const tokenFiles = glob.sync(`tokens/**/*.json`)
-const transforms = require('style-dictionary/lib/common/transforms')
-const _ = require('lodash')
 
-console.log('Build started...')
-console.log('\n==============================================')
+const {fileHeader, formattedVariables} = StyleDictionary.formatHelpers
 
 // REGISTER THE CUSTOM TRANFORMS
 
@@ -94,7 +81,7 @@ StyleDictionary.registerTransform({
 StyleDictionary.registerTransform({
   name: 'attribute/typescript',
   type: 'attribute',
-  transformer: (token, options) => {
+  transformer: token => {
     return {
       typescript: {
         // these transforms will need to match the ones you use for typescript
@@ -173,7 +160,7 @@ StyleDictionary.registerFormat({
 
 StyleDictionary.registerFormat({
   name: 'custom/format/custom-media',
-  formatter(dictionary) {
+  formatter({dictionary}) {
     return dictionary.allProperties
       .map(prop => {
         const {value, path, name} = prop
@@ -188,8 +175,8 @@ StyleDictionary.registerFormat({
 // format docs
 StyleDictionary.registerFormat({
   name: 'json/docs',
-  formatter: function(dictionary) {
-    const groupedTokens = _.groupBy(dictionary.allProperties, 'filePath')
+  formatter: function({dictionary}) {
+    const groupedTokens = groupBy(dictionary.allProperties, 'filePath')
 
     return JSON.stringify(groupedTokens, null, 2)
   }
@@ -274,7 +261,7 @@ StyleDictionary.registerFormat({
     const output =
       fileHeader({file}) +
       `declare const ${moduleName}: ${JSON.stringify(recursiveTypeGeneration(dictionary.tokens), null, 2)}
-export default ${moduleName};`
+ export default ${moduleName};`
 
     return output
       .replace(/"any"/g, 'any')
@@ -283,149 +270,259 @@ export default ${moduleName};`
   }
 })
 
-// APPLY THE CONFIGURATION
-// IMPORTANT: the registration of custom transforms
-// needs to be done _before_ applying the configuration
-// const StyleDictionaryExtended = StyleDictionary.extend(__dirname + '/config.js')
+/**
+ * @name groupBy
+ * @description Equivalent to lodash _.groupBy, to avoid creating another package dependency for users
+ * @param {Array|Object} The collection to iterate over.
+ * @param {Function} The iteratee to transform keys.
+ * @returns {Object} Returns the composed aggregate object.
+ */
+function groupBy(collection, iteratee = x => x) {
+  const current = typeof iteratee === 'function' ? iteratee : ({[iteratee]: prop}) => prop
 
-// FINALLY, BUILD ALL THE PLATFORMS
+  const array = Array.isArray(collection) ? collection : Object.values(collection)
 
-// build all tokens
-StyleDictionary.extend({
-  source: [`tokens/**/*.json`],
-  platforms: {
-    css: {
-      buildPath: 'tokens-v2-private/css/',
-      transformGroup: 'css',
-      // map the array of token file paths to style dictionary output files
-      files: tokenFiles.map(filePath => {
-        return {
-          format: `css/variables`,
-          destination: filePath.replace(`.json`, `.css`),
-          filter: token => token.filePath === filePath,
-          options: {
-            outputReferences: true
+  return array.reduce((acc, item) => {
+    const value = current(item)
+
+    acc[value] = acc[value] || []
+
+    acc[value].push(item)
+
+    return acc
+  }, {})
+}
+
+/**
+ * @name build
+ * @description
+ *   Used to generate design tokens programmatically using StyleDictionary
+ *   Called internally to build primitives and exported for self-serve use
+ *
+ * @param {Object} options
+ * @param {string} options.source glob or file path to a JSON object of tokens
+ * @param {string} options.outputPath location to write the output files
+ * @param {string} options.namespace a custom namespace to use for the output files
+ * @param {Platform} options.platforms add custom platform configurations to style-dictionary
+ * @example
+ *  buildPrimitives({
+ *   source: [`src/colors.json`],
+ *   outputPath: 'dist',
+ *   namespace: 'primer',
+ *   platforms: {...}
+ *  })
+ */
+function buildPrimitives({source, outputPath = 'tokens-v2-private', include, platforms, namespace = 'primer'}) {
+  console.log('Build started...')
+  console.log('\n==============================================')
+
+  const customParseConfig = {
+    parsers: [
+      {
+        pattern: /\.json$/,
+        parse: ({contents, filePath}) => {
+          try {
+            let mutableContent = JSON.stringify(contents)
+
+            if (filePath.includes('/functional/')) {
+              mutableContent = mutableContent.replace(/<namespace>/g, namespace)
+            }
+
+            const parsed = JSON.parse(mutableContent)
+
+            return JSON.parse(parsed)
+          } catch (error) {
+            console.log(error)
           }
         }
-      })
-    },
-    cssViewport: {
-      buildPath: 'tokens-v2-private/css/tokens/functional/size/',
-      transformGroup: 'css',
-      files: [
-        {
-          filter: token => token.filePath.includes('viewport'),
-          format: 'custom/format/custom-media',
-          destination: 'viewport.css'
-        }
-      ]
-    },
-    js: {
-      buildPath: 'tokens-v2-private/js/',
-      transforms: ['name/js/es6', 'pxToRem'],
-      // map the array of token file paths to style dictionary output files
-      files: tokenFiles.map(filePath => {
-        return {
-          format: `javascript/es6`,
-          destination: filePath.replace(`.json`, `.js`),
-          filter: token => token.filePath === filePath
-        }
-      })
-    },
-    jsModule: {
-      buildPath: 'tokens-v2-private/js/module/',
-      transforms: ['pxToRem'],
-      // map the array of token file paths to style dictionary output files
-      files: tokenFiles.map(filePath => {
-        return {
-          format: `javascript/module`,
-          destination: filePath.replace(`.json`, `.js`),
-          filter: token => token.filePath === filePath
-        }
-      })
-    },
-    tsTypes: {
-      buildPath: 'tokens-v2-private/ts/',
-      transforms: ['pxToRem'],
-      // map the array of token file paths to style dictionary output files
-      files: tokenFiles.map(filePath => {
-        return {
-          format: `typescript/module-declarations-v2`,
-          destination: filePath.replace(`.json`, `.d.ts`),
-          filter: token => token.filePath === filePath
-        }
-      })
-    },
-    ts: {
-      buildPath: 'tokens-v2-private/ts/',
-      transforms: ['pxToRem'],
-      // map the array of token file paths to style dictionary output files
-      files: tokenFiles.map(filePath => {
-        return {
-          format: `javascript/module-v2`,
-          destination: filePath.replace(`.json`, `.js`),
-          filter: token => token.filePath === filePath
-        }
-      })
-    },
-    docs: {
-      buildPath: 'tokens-v2-private/docs/',
-      transformGroup: 'css',
-      files: [
-        {
-          format: 'json/docs',
-          destination: 'docValues.json',
-          options: {
-            outputReferences: false
+      }
+    ]
+  }
+
+  const getConfig = files => {
+    const defaultPlatformConfig = {
+      css: {
+        buildPath: `${outputPath}/css/`,
+        transformGroup: 'css',
+        // map the array of token file paths to style dictionary output files
+        files: files.map(filePath => {
+          return {
+            format: `css/variables`,
+            destination: filePath.replace(`.json`, `.css`),
+            filter: token => token.filePath === filePath,
+            options: {
+              outputReferences: true
+            }
           }
-        }
-      ]
+        })
+      },
+      cssViewport: {
+        buildPath: `${outputPath}/css/tokens/functional/size/`,
+        transformGroup: 'css',
+        files: [
+          {
+            filter: token => token.filePath.includes('viewport'),
+            format: 'custom/format/custom-media',
+            destination: 'viewport.css'
+          }
+        ]
+      },
+      js: {
+        buildPath: `${outputPath}/js/`,
+        transforms: ['name/js/es6', 'pxToRem'],
+        // map the array of token file paths to style dictionary output files
+        files: files.map(filePath => {
+          return {
+            format: `javascript/es6`,
+            destination: filePath.replace(`.json`, `.js`),
+            filter: token => token.filePath === filePath
+          }
+        })
+      },
+      jsModule: {
+        buildPath: `${outputPath}/js/module/`,
+        transforms: ['pxToRem'],
+        // map the array of token file paths to style dictionary output files
+        files: files.map(filePath => {
+          return {
+            format: `javascript/module`,
+            destination: filePath.replace(`.json`, `.js`),
+            filter: token => token.filePath === filePath
+          }
+        })
+      },
+      tsTypes: {
+        buildPath: `${outputPath}/ts/`,
+        transforms: ['pxToRem'],
+        // map the array of token file paths to style dictionary output files
+        files: files.map(filePath => {
+          return {
+            format: `typescript/module-declarations-v2`,
+            destination: filePath.replace(`.json`, `.d.ts`),
+            filter: token => token.filePath === filePath
+          }
+        })
+      },
+      ts: {
+        buildPath: `${outputPath}/ts/`,
+        transforms: ['pxToRem'],
+        // map the array of token file paths to style dictionary output files
+        files: files.map(filePath => {
+          return {
+            format: `javascript/module-v2`,
+            destination: filePath.replace(`.json`, `.js`),
+            filter: token => token.filePath === filePath
+          }
+        })
+      }
     }
-  }
-}).buildAllPlatforms()
 
-// build desktop tokens
-StyleDictionary.extend({
-  source: [`tokens/base/size/size.json`, `tokens/functional/size/size-fine.json`],
-  platforms: {
-    css: {
-      buildPath: 'tokens-v2-private/css/',
-      transformGroup: 'css',
-      files: [
-        {
-          destination: `tokens/functional/size/size-fine.css`,
-          format: `css/touch-target-desktop`,
-          filter: token => token.filePath.includes('fine')
-          // this doesn't work
-          //   options: {
-          //     outputReferences: true
-          //   }
-        }
-      ]
+    const config = {
+      ...{include: include ? [include] : undefined},
+      source: files,
+      ...customParseConfig,
+      platforms: platforms ? platforms : defaultPlatformConfig
     }
+    return config
   }
-}).buildAllPlatforms()
 
-// build mobile tokens
-StyleDictionary.extend({
-  source: [`tokens/base/size/size.json`, `tokens/functional/size/size-course.json`],
-  platforms: {
-    css: {
-      buildPath: 'tokens-v2-private/css/',
-      transformGroup: 'css',
-      files: [
-        {
-          destination: `tokens/functional/size/size-course.css`,
-          format: `css/touch-target-mobile`,
-          filter: token => token.filePath.includes('course')
-          //   options: {
-          //     outputReferences: true
-          //   }
-        }
-      ]
+  //build all tokens
+  StyleDictionary.extend({
+    ...getConfig(glob.sync([...source]))
+  }).buildAllPlatforms()
+}
+
+/**
+ * @name init
+ * @description
+ *   Triggers the build for @primer/primitive default tokens
+ *   from an npm script. Internal use only. Use `build` for self-serve.
+ * @private
+ */
+function _init() {
+  const outputPath = 'tokens-v2-private'
+  //build all tokens
+  buildPrimitives({
+    source: [`tokens/**/*.json`, `!tokens/**/size-*.json`],
+    outputPath
+  })
+
+  //build size fine
+  buildPrimitives({
+    source: [`tokens/functional/size/size-fine.json`, `tokens/base/size/size.json`],
+    outputPath
+  })
+
+  //build size coarse
+  buildPrimitives({
+    source: [`tokens/functional/size/size-coarse.json`, `tokens/base/size/size.json`],
+    outputPath
+  })
+
+  buildPrimitives({
+    source: [`tokens/base/size/size.json`, `tokens/functional/size/size-fine.json`],
+    outputPath,
+    platforms: {
+      css: {
+        buildPath: `${outputPath}/css/`,
+        transformGroup: 'css',
+        files: [
+          {
+            destination: `tokens/functional/size/size-fine.css`,
+            format: `css/touch-target-desktop`,
+            filter: token => token.filePath.includes('fine'),
+            options: {
+              outputReferences: true
+            }
+          }
+        ]
+      }
     }
-  }
-}).buildAllPlatforms()
+  })
 
-console.log('\n==============================================')
-console.log('\nBuild completed!')
+  buildPrimitives({
+    source: [`tokens/base/size/size.json`, `tokens/functional/size/size-coarse.json`],
+    platforms: {
+      css: {
+        buildPath: `${outputPath}/css/`,
+        transformGroup: 'css',
+        files: [
+          {
+            destination: `tokens/functional/size/size-coarse.css`,
+            format: `css/touch-target-mobile`,
+            filter: token => token.filePath.includes('coarse'),
+            options: {
+              outputReferences: true
+            }
+          }
+        ]
+      }
+    }
+  })
+
+  //build docs data
+  buildPrimitives({
+    source: [`tokens/**/*.json`],
+    outputPath,
+    platforms: {
+      docs: {
+        buildPath: `${outputPath}/docs/`,
+        transformGroup: 'css',
+        files: [
+          {
+            format: 'json/docs',
+            destination: 'docValues.json',
+            options: {
+              outputReferences: false
+            }
+          }
+        ]
+      }
+    }
+  })
+}
+
+module.exports = {
+  buildPrimitives,
+  _init
+}
