@@ -312,7 +312,10 @@ function groupBy(collection, iteratee = x => x) {
  *   platforms: {...}
  *  })
  */
-function buildPrimitives({source, outputPath = 'tokens-v2-private', include, platforms, namespace = 'primer'}) {
+function buildPrimitives(
+  {source, outputPath = 'tokens-v2-private', include, platforms, namespace = 'primer'},
+  _StyleDictionary = StyleDictionary
+) {
   console.log('Build started...')
   console.log('\n==============================================')
 
@@ -427,9 +430,11 @@ function buildPrimitives({source, outputPath = 'tokens-v2-private', include, pla
   }
 
   //build all tokens
-  StyleDictionary.extend({
-    ...getConfig(glob.sync([...source]))
-  }).buildAllPlatforms()
+  _StyleDictionary
+    .extend({
+      ...getConfig(glob.sync([...source]))
+    })
+    .buildAllPlatforms()
 }
 
 /**
@@ -524,5 +529,6 @@ function _init() {
 
 module.exports = {
   buildPrimitives,
-  _init
+  _init,
+  StyleDictionary
 }
