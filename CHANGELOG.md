@@ -1,5 +1,11 @@
 # @primer/primitives
 
+## 7.8.3
+
+### Patch Changes
+
+- [#326](https://github.com/primer/primitives/pull/326) [`bc75b88`](https://github.com/primer/primitives/commit/bc75b88c06bd9dc2aacd0dcdc0f52927bc527b06) Thanks [@rezrah](https://github.com/rezrah)! - export StyleDictionary for app-level extending
+
 ## 7.8.2
 
 ### Patch Changes
