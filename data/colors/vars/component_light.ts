@@ -191,16 +191,20 @@ export default {
 
   segmentedControl: {
     bg: get('scale.gray.1'),
-    hoverBg: get('neutral.muted'),
 
-    active: {
-      bg: alpha(get('scale.gray.3'), 0.4),
-      border: get('scale.gray.3'),
-    },
+    button: {
+      hover: {
+        bg: alpha(get('scale.gray.3'), 0.2),
+      },
 
-    pressed: {
-      bg: get('canvas.subtle'),
-      border: get('scale.gray.4'),
+      active: {
+        bg: alpha(get('scale.gray.3'), 0.4),
+        border: get('scale.gray.3'),
+      },
+
+      selected: {
+        border: get('scale.gray.4'),
+      },
     },
   },
 }

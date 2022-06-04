@@ -190,16 +190,20 @@ export default {
 
   segmentedControl: {
     bg: get('scale.gray.8'),
-    hoverBg: get('scale.gray.6'),
 
-    active: {
-      bg: get('scale.gray.7'),
-      border: get('scale.gray.6'),
-    },
+    button: {
+      hover: {
+        bg: get('scale.gray.6'),
+      },
 
-    pressed: {
-      bg: get('scale.gray.6'),
-      border: get('scale.gray.4'),
+      active: {
+        bg: get('scale.gray.7'),
+        border: get('scale.gray.6'),
+      },
+
+      selected: {
+        border: get('scale.gray.4'),
+      },
     },
   },
 }
