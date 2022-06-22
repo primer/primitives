@@ -69,6 +69,10 @@ StyleDictionary.registerTransform({
         return '0'
       }
 
+      if (token.name.includes('lineHeight')) {
+        return `${floatValue / baseFontSize}`
+      }
+
       return `${floatValue / baseFontSize}rem`
     }
     return token.value
