@@ -4,21 +4,21 @@
       "thin": {
         "value": "inset 0 0 0 {<namespace>.borderWidth.thin}"
       },
-      "normal": {
-        "value": "inset 0 0 0 {<namespace>.borderWidth.normal}"
-      },
       "thick": {
         "value": "inset 0 0 0 {<namespace>.borderWidth.thick}"
+      },
+      "thicker": {
+        "value": "inset 0 0 0 {<namespace>.borderWidth.thicker}"
       }
     },
     "borderWidth": {
       "thin": {
         "value": "max(1px, 0.0625rem)"
       },
-      "normal": {
+      "thick": {
         "value": "max(2px, 0.125rem)"
       },
-      "thick": {
+      "thicker": {
         "value": "max(4px, 0.25rem)"
       }
     },

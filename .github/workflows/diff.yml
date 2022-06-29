@@ -71,6 +71,9 @@ jobs:
       - name: Build (base)
         run: pushd base; yarn build; popd
 
+      - name: Build (base experimental)
+        run: pushd base; yarn build:tokens; popd
+
       - name: Diff
         uses: primer/comment-token-update@main
         env:

@@ -20,7 +20,7 @@
           "value": "40px"
         },
         "lineHeight": {
-          "value": "56px"
+          "value": "calc(56/40)"
         },
         "weight": {
           "value": "{base.text.weight.medium}"
@@ -46,10 +46,10 @@
         },
         "lineHeight": {
           "large": {
-            "value": "48px"
+            "value": "calc(48/32)"
           },
           "medium": {
-            "value": "32px"
+            "value": "calc(32/20)"
           }
         },
         "weight": {
@@ -81,7 +81,7 @@
           "value": "20px"
         },
         "lineHeight": {
-          "value": "32px"
+          "value": "calc(32/20)"
         },
         "weight": {
           "value": "{base.text.weight.normal}"
@@ -110,13 +110,13 @@
         },
         "lineHeight": {
           "large": {
-            "value": "24px"
+            "value": "calc(24/16)"
           },
           "medium": {
-            "value": "20px"
+            "value": "calc(20/14)"
           },
           "small": {
-            "value": "20px"
+            "value": "calc(20/12)"
           }
         },
         "weight": {
@@ -157,7 +157,7 @@
           "value": "12px"
         },
         "lineHeight": {
-          "value": "16px"
+          "value": "calc(16/12)"
         },
         "weight": {
           "value": "{base.text.weight.normal}"
@@ -177,7 +177,7 @@
           "value": "13px"
         },
         "lineHeight": {
-          "value": "20px"
+          "value": "calc(20/13)"
         },
         "weight": {
           "value": "{base.text.weight.normal}"
@@ -203,7 +203,6 @@
           "value": {
             "fontWeight": "{<namespace>.text.codeInline.weight}",
             "fontSize": "{<namespace>.text.codeInline.size}",
-            "lineHeight": "inherit",
             "fontFamily": "{<namespace>.fontStack.monospace}"
           },
           "type": "typography"

@@ -69,6 +69,10 @@ StyleDictionary.registerTransform({
         return '0'
       }
 
+      if (token.name.includes('lineHeight')) {
+        return `${floatValue / baseFontSize}`
+      }
+
       return `${floatValue / baseFontSize}rem`
     }
     return token.value
@@ -117,7 +121,13 @@ StyleDictionary.registerTransform({
   matcher: token => token.type === 'typography',
   transformer: token => {
     const {value} = token
-    return `${value.fontWeight} ${value.fontSize}/${value.lineHeight} ${value.fontFamily}`
+
+    // if lineHeight has value, include in shorthand
+    if (value.lineHeight) {
+      return `${value.fontWeight} ${value.fontSize}/${value.lineHeight} ${value.fontFamily}`
+    }
+
+    return `${value.fontWeight} ${value.fontSize} ${value.fontFamily}`
   }
 })
 
