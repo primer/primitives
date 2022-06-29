@@ -1,5 +1,11 @@
 # @primer/primitives
 
+## 7.8.4
+
+### Patch Changes
+
+- [#334](https://github.com/primer/primitives/pull/334) [`ff5fea6`](https://github.com/primer/primitives/commit/ff5fea6dfb229c430fec66277cf24520dd70d7b5) Thanks [@langermank](https://github.com/langermank)! - Typography bug fixes + border thickness naming
+
 ## 7.8.3
 
 ### Patch Changes
