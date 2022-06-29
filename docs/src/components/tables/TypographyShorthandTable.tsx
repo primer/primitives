@@ -115,7 +115,7 @@ export function TypographyShorthandTable({filePath}) {
                             Line height:
                           </Box>
                           <TokenInlineCode>
-                            {token.original.value.lineHeight.includes('{') ? (
+                            {token.original.value.lineHeight && token.original.value.lineHeight.includes('{') ? (
                               <a href={`#${token.original.value.lineHeight.replace(/[{}]/g, '').replace(/\./g, '-')}`}>
                                 {token.original.value.lineHeight.replace(/[{}]/g, '')}
                               </a>
