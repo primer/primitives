@@ -20,7 +20,7 @@ const scale = {
     '#3b2300'
   ],
   orange: [
-    '#FFEBE9',
+    '#ffebe9',
     '#ffcecb',
     '#ffaba8',
     '#ff8182',
@@ -32,7 +32,7 @@ const scale = {
     '#4c0014'
   ],
   red: [
-    '#FFEBE9',
+    '#ffebe9',
     '#ffcecb',
     '#ffaba8',
     '#ff8182',
@@ -56,7 +56,7 @@ const scale = {
     '#2e1461'
   ],
   pink: ['#ffeff7', '#ffd3eb', '#ffadda', '#ff80c8', '#e85aad', '#bf3989', '#99286e', '#772057', '#611347', '#4d0336'],
-  coral: ['#FFF0EB', '#FFD6CC', '#FFB4A1', '#FD8C73', '#EC6547', '#C4432B', '#9E2F1C', '#801F0F', '#691105', '#510901']
+  coral: ['#fff0eb', '#ffd6cc', '#ffb4a1', '#fd8c73', '#ec6547', '#c4432b', '#9e2f1c', '#801f0f', '#691105', '#510901']
 }
 
 export default merge(light_colorblind, {scale})

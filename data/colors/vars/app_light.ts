@@ -13,14 +13,14 @@ export default {
     addition: {
       numText: get('fg.default'),
       fg: get('fg.default'),
-      numBg: '#CCFFD8',
-      lineBg: '#E6FFEC',
-      wordBg: '#ABF2BC'
+      numBg: '#ccffd8',
+      lineBg: '#e6ffec',
+      wordBg: '#abf2bc'
     },
     deletion: {
       numText: get('fg.default'),
       fg: get('fg.default'),
-      numBg: '#FFD7D5',
+      numBg: '#ffd7d5',
       lineBg: get('danger.subtle'),
       wordBg: get('danger.muted')
     },
