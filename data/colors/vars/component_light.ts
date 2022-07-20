@@ -202,7 +202,7 @@ export default {
       },
 
       selected: {
-        border: get('scale.gray.4'),
+        border: get('scale.gray.5'),
       },
     },
   },
