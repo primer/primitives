@@ -186,5 +186,23 @@ export default {
       bg: get('scale.blue.5'),
       disabledBg: get('scale.gray.5'),
     }
-  }
+  },
+
+  segmentedControl: {
+    bg: get('scale.gray.8'),
+
+    button: {
+      hover: {
+        bg: get('scale.gray.6'),
+      },
+
+      active: {
+        bg: get('scale.gray.7'),
+      },
+
+      selected: {
+        border: get('scale.gray.4'),
+      },
+    },
+  },
 }
