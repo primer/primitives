@@ -198,7 +198,6 @@ export default {
 
       active: {
         bg: get('scale.gray.7'),
-        border: get('scale.gray.6'),
       },
 
       selected: {

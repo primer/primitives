@@ -199,7 +199,6 @@ export default {
 
       active: {
         bg: alpha(get('scale.gray.3'), 0.4),
-        border: get('scale.gray.3'),
       },
 
       selected: {
