@@ -1,5 +1,15 @@
 # @primer/primitives
 
+## 7.9.0
+
+### Minor Changes
+
+- [#329](https://github.com/primer/primitives/pull/329) [`607cc75`](https://github.com/primer/primitives/commit/607cc753b305285faf399fdc47bb752cb6c71713) Thanks [@simurai](https://github.com/simurai)! - Add SegmentedControl colors
+
+### Patch Changes
+
+- [#338](https://github.com/primer/primitives/pull/338) [`4dc8e2e`](https://github.com/primer/primitives/commit/4dc8e2ea3725c32fcf3b5a7cfc0cf29d943e2169) Thanks [@adrian5](https://github.com/adrian5)! - Normalize color data to lowercase hex
+
 ## 7.8.4
 
 ### Patch Changes
