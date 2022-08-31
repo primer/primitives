@@ -32,7 +32,8 @@
     "prebuild:tokens": "rm -rf tokens-v2-private",
     "prepack": "yarn build && yarn build:tokens",
     "release": "changeset publish",
-    "watch": "ls data/**/*.scss script/**/*.ts | entr -s 'yarn build'"
+    "watch": "ls data/**/*.scss script/**/*.ts | entr -s 'yarn build'",
+    "test": "jest"
   },
   "prettier": "@github/prettier-config",
   "devDependencies": {
