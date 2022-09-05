@@ -32,10 +32,10 @@ jobs:
             ${{ runner.os }}-node-
 
       - name: Install dependencies
-        run: npm install
+        run: npm install --legacy-peer-deps
 
       - name: Install dependencies (reference)
-        run: pushd temp-main; npm install; popd
+        run: pushd temp-main; npm install --legacy-peer-deps; popd
 
       - name: Build
         run: npm run build
