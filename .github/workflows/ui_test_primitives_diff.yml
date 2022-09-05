@@ -1,12 +1,12 @@
-name: UI test
+name: Diff
 
 on:
   pull_request:
 
 jobs:
   test:
-    if: ${{ github.repository == 'primer/brand' }}
-    name: Primitives diff
+    if: ${{ github.repository == 'primer/primitives' }}
+    name: Primitives v2
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
