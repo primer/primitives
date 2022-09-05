@@ -32,10 +32,10 @@ jobs:
             ${{ runner.os }}-node-
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
       - name: Install dependencies (reference)
-        run: pushd temp-main; npm ci; popd
+        run: pushd temp-main; npm install; popd
 
       - name: Build
         run: npm run build
