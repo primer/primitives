@@ -38,10 +38,10 @@ jobs:
         run: pushd temp-main; npm install --legacy-peer-deps; popd
 
       - name: Build
-        run: npm run build
+        run: npm run build:tokens
 
       - name: Build (reference)
-        run: pushd temp-main; npm run build; popd
+        run: pushd temp-main; npm run build:tokens; popd
 
       - name: Export diff
         run: |
