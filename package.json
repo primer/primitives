@@ -33,7 +33,7 @@
     "prepack": "yarn build && yarn build:tokens",
     "release": "changeset publish",
     "watch": "ls data/**/*.scss script/**/*.ts | entr -s 'yarn build'",
-    "test": "jest"
+    "test": "jest --verbose --coverage"
   },
   "prettier": "@github/prettier-config",
   "devDependencies": {
