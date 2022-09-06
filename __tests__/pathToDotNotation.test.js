@@ -1,14 +1,15 @@
 const pathToDotNotation = require('../build.js').pathToDotNotation
 
-describe('Token formatters: PascalCase', () => {
-  it('returns a valid token name in PascalCase', () => {
-  expect(pathToDotNotation({path: ['red']})).toBe('red')
-  expect(pathToDotNotation({path: ['color', 'red']})).toBe('color.red')
-  expect(pathToDotNotation({path: ['color', 'functional', 'danger']})).toBe('color.functional.danger')
-})
+describe('Token formatters: dot.notation', () => {
+  it('returns a valid token name in dot.notation', () => {
+    expect(pathToDotNotation({path: ['red']})).toBe('red')
+    expect(pathToDotNotation({path: ['color', 'red']})).toBe('color.red')
+    expect(pathToDotNotation({path: ['color', 'functional', 'danger']})).toBe('color.functional.danger')
+  })
 
-test('empty token path', () => {
-  expect(pathToDotNotation({path: []})).toBe('')
-  expect(() => pathToDotNotation({path: null})).toThrowError()
-  expect(() => pathToDotNotation([])).toThrowError()
+  it('works as expected with empty token path', () => {
+    expect(pathToDotNotation({path: []})).toBe('')
+    expect(() => pathToDotNotation({path: null})).toThrowError()
+    expect(() => pathToDotNotation([])).toThrowError()
+  })
 })
