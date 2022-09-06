@@ -1,6 +1,6 @@
 const pathToKebabCase = require('../build.js').pathToKebabCase
 
-test('valid token', () => {
+it('returns a valid token name in kebab-case', () => {
   expect(pathToKebabCase({path: ['red']})).toBe('red')
   expect(pathToKebabCase({path: ['color', 'red']})).toBe('color-red')
   expect(pathToKebabCase({path: ['color', 'functional', 'danger']})).toBe('color-functional-danger')
