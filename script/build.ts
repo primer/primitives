@@ -251,7 +251,10 @@ async function writeReplacements(
       throw new Error(errors.join('\n'))
     }
   } catch (error) {
-    logError(error.message)
+    if (error instanceof TypeError) {
+      logError(error.message)
+    }
+
     process.exit(1)
   }
 }
