@@ -12,6 +12,7 @@ const pathToKebabCase = token => token.path.join('-')
 const pathToDotNotation = token => token.path.join('.')
 
 const capitalize = string => string[0].toUpperCase() + string.slice(1)
+
 const pathToPascalCase = token => token.path.map(tokenPathItems => capitalize(tokenPathItems)).join('')
 
 // REGISTER THE CUSTOM TRANFORMS
