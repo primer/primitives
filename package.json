@@ -27,12 +27,14 @@
   "homepage": "https://github.com/primer/primitives#readme",
   "scripts": {
     "build": "ts-node ./script/build.ts && tsc",
-    "build:tokens": "node -e \"require('./build')._init()\"",
+    "build:tokens": "ts-node -e \"require('./build')._init()\"",
+    "build:buildJs": "tsc --project newToken.tsconfig.json",
     "prebuild": "rm -rf dist",
     "prebuild:tokens": "rm -rf tokens-v2-private",
     "prepack": "yarn build && yarn build:tokens",
     "release": "changeset publish",
     "test": "jest --verbose --coverage",
+    "prebuild:test": "npm run build:buildJs",
     "watch": "ls data/**/*.scss script/**/*.ts | entr -s 'yarn build'"
   },
   "prettier": "@github/prettier-config",

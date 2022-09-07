@@ -1,19 +1,11 @@
+// TODO: fix typescript errors
+// @ts-nocheck 
+import { pathToDotNotation, pathToKebabCase, pathToPascalCase } from './config/nameTransformer'
+
 const glob = require('fast-glob')
 const StyleDictionary = require('style-dictionary')
 
 const {fileHeader, formattedVariables} = StyleDictionary.formatHelpers
-
-//-----
-// functions to be extracted
-// TODO: extract to a separate files
-
-const pathToKebabCase = token => token.path.join('-')
-
-const pathToDotNotation = token => token.path.join('.')
-
-const capitalize = string => string[0].toUpperCase() + string.slice(1)
-
-const pathToPascalCase = token => token.path.map(tokenPathItems => capitalize(tokenPathItems)).join('')
 
 // REGISTER THE CUSTOM TRANFORMS
 
@@ -543,6 +535,5 @@ module.exports = {
   StyleDictionary,
   pathToKebabCase,
   pathToDotNotation,
-  capitalize,
   pathToPascalCase
 }
