@@ -1,0 +1,73 @@
+name: Diff
+
+on:
+  pull_request:
+
+jobs:
+  test:
+    if: ${{ github.repository == 'primer/primitives' }}
+    name: Primitives v2
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Checkout reference branch
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.base_ref }}
+          path: temp-main
+
+      - name: Set up Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install dependencies
+        run: npm install --legacy-peer-deps
+
+      - name: Install dependencies (reference)
+        run: pushd temp-main; npm install --legacy-peer-deps; popd
+
+      - name: Build
+        run: npm run build:tokens
+
+      - name: Build (reference)
+        run: pushd temp-main; npm run build:tokens; popd
+
+      - name: Export diff
+        run: |
+          diff -r -y --width=150 -B -I '*' -I 'Generated' --suppress-common-lines temp-main/tokens-v2-private/css tokens-v2-private/css  | tail -n +2 > diff.txt
+          npx ts-node ./script/ci-check-diff.ts
+
+      - name: Read raw diff
+        if: hashFiles('diff.md') != ''
+        id: diff
+        uses: juliangruber/read-file-action@v1
+        with:
+          path: ./diff.md
+
+      - name: Post diff
+        if: hashFiles('diff.md') != ''
+        uses: phulsechinmay/rewritable-pr-comment@v0.2.1
+        with:
+          message: ${{ steps.diff.outputs.content }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          COMMENT_IDENTIFIER: 'primitives-diff'
+
+      - name: Comment on the PR about no results
+        if: hashFiles('diff.md') == ''
+        uses: phulsechinmay/rewritable-pr-comment@v0.2.1
+        with:
+          message: |
+            ### 🟢 No design token changes found
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          COMMENT_IDENTIFIER: 'primitives-diff'
