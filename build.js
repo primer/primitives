@@ -3,6 +3,18 @@ const StyleDictionary = require('style-dictionary')
 
 const {fileHeader, formattedVariables} = StyleDictionary.formatHelpers
 
+//-----
+// functions to be extracted
+// TODO: extract to a separate files
+
+const pathToKebabCase = token => token.path.join('-')
+
+const pathToDotNotation = token => token.path.join('.')
+
+const capitalize = string => string[0].toUpperCase() + string.slice(1)
+
+const pathToPascalCase = token => token.path.map(tokenPathItems => capitalize(tokenPathItems)).join('')
+
 // REGISTER THE CUSTOM TRANFORMS
 
 /**
@@ -12,9 +24,7 @@ const {fileHeader, formattedVariables} = StyleDictionary.formatHelpers
 StyleDictionary.registerTransform({
   name: 'name/css',
   type: 'name',
-  transformer: (token, options) => {
-    return token.path.join('-')
-  }
+  transformer: pathToKebabCase
 })
 
 /**
@@ -24,9 +34,7 @@ StyleDictionary.registerTransform({
 StyleDictionary.registerTransform({
   name: 'name/js',
   type: 'name',
-  transformer: (token, options) => {
-    return token.path.join('.')
-  }
+  transformer: pathToDotNotation
 })
 
 /**
@@ -36,19 +44,11 @@ StyleDictionary.registerTransform({
 StyleDictionary.registerTransform({
   name: 'name/js/es6',
   type: 'name',
-  transformer: (token, options) => {
-    const tokenPath = token.path.join(' ')
-    const tokenPathItems = tokenPath.split(' ')
-    for (var i = 0; i < tokenPathItems.length; i++) {
-      tokenPathItems[i] = tokenPathItems[i].charAt(0).toUpperCase() + tokenPathItems[i].slice(1)
-    }
-    const tokenName = tokenPathItems.join('')
-    return tokenName
-  }
+  transformer: pathToPascalCase
 })
 
 // find values with px unit
-function isPx(value) {
+function isPx (value) {
   return /[\d\.]+px$/.test(value)
 }
 
@@ -143,7 +143,7 @@ StyleDictionary.registerTransformGroup({
 // wrap mobile tokens in media query
 StyleDictionary.registerFormat({
   name: 'css/touch-target-mobile',
-  formatter: function({dictionary, file, options}) {
+  formatter: function ({dictionary, file, options}) {
     const {outputReferences} = options
     return (
       fileHeader({file}) +
@@ -157,7 +157,7 @@ StyleDictionary.registerFormat({
 // wrap desktop tokens in media query
 StyleDictionary.registerFormat({
   name: 'css/touch-target-desktop',
-  formatter: function({dictionary, file, options}) {
+  formatter: function ({dictionary, file, options}) {
     const {outputReferences} = options
     return (
       fileHeader({file}) +
@@ -170,7 +170,7 @@ StyleDictionary.registerFormat({
 
 StyleDictionary.registerFormat({
   name: 'custom/format/custom-media',
-  formatter({dictionary}) {
+  formatter ({dictionary}) {
     return dictionary.allProperties
       .map(prop => {
         const {value, path, name} = prop
@@ -185,7 +185,7 @@ StyleDictionary.registerFormat({
 // format docs
 StyleDictionary.registerFormat({
   name: 'json/docs',
-  formatter: function({dictionary}) {
+  formatter: function ({dictionary}) {
     const groupedTokens = groupBy(dictionary.allProperties, 'filePath')
 
     return JSON.stringify(groupedTokens, null, 2)
@@ -197,7 +197,7 @@ StyleDictionary.registerFormat({
  */
 StyleDictionary.registerFormat({
   name: 'javascript/module-v2',
-  formatter: function({dictionary, file}) {
+  formatter: function ({dictionary, file}) {
     const recursiveleyFlattenDictionary = obj => {
       const tree = {}
       if (typeof obj !== 'object' || Array.isArray(obj)) {
@@ -230,7 +230,7 @@ StyleDictionary.registerFormat({
  */
 StyleDictionary.registerFormat({
   name: 'typescript/module-declarations-v2',
-  formatter: function({dictionary, options, file}) {
+  formatter: function ({dictionary, options, file}) {
     const {moduleName = `tokens`} = options
 
     const getType = value => {
@@ -287,7 +287,7 @@ StyleDictionary.registerFormat({
  * @param {Function} The iteratee to transform keys.
  * @returns {Object} Returns the composed aggregate object.
  */
-function groupBy(collection, iteratee = x => x) {
+function groupBy (collection, iteratee = x => x) {
   const current = typeof iteratee === 'function' ? iteratee : ({[iteratee]: prop}) => prop
 
   const array = Array.isArray(collection) ? collection : Object.values(collection)
@@ -322,7 +322,7 @@ function groupBy(collection, iteratee = x => x) {
  *   platforms: {...}
  *  })
  */
-function buildPrimitives(
+function buildPrimitives (
   {source, outputPath = 'tokens-v2-private', include, platforms, namespace = 'primer'},
   _StyleDictionary = StyleDictionary
 ) {
@@ -454,7 +454,7 @@ function buildPrimitives(
  *   from an npm script. Internal use only. Use `build` for self-serve.
  * @private
  */
-function _init() {
+function _init () {
   const outputPath = 'tokens-v2-private'
   //build all tokens
   buildPrimitives({
@@ -540,5 +540,9 @@ function _init() {
 module.exports = {
   buildPrimitives,
   _init,
-  StyleDictionary
+  StyleDictionary,
+  pathToKebabCase,
+  pathToDotNotation,
+  capitalize,
+  pathToPascalCase
 }
