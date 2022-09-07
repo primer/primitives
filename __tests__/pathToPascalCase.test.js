@@ -1,4 +1,4 @@
-const pathToPascalCase = require('../dist/build.js').pathToPascalCase
+const pathToPascalCase = require('../dist/build.js').buildTokens.pathToPascalCase
 
 describe('Token formatters: PascalCase', () => {
   test('returns a valid token name in PascalCase', () => {

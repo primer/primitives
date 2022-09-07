@@ -1,4 +1,4 @@
-const pathToDotNotation = require('../dist/build.js').pathToDotNotation
+const pathToDotNotation = require('../dist/build.js').buildTokens.pathToDotNotation
 
 describe('Token formatters: dot.notation', () => {
   it('returns a valid token name in dot.notation', () => {

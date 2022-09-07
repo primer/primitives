@@ -1,4 +1,4 @@
-const pathToKebabCase = require('../dist/build.js').pathToKebabCase
+const pathToKebabCase = require('../dist/build.js').buildTokens.pathToKebabCase
 
 describe('Token formatters: kebab-case', () => {
   it('returns a valid token name in kebab-case', () => {

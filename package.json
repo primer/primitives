@@ -28,7 +28,7 @@
   "scripts": {
     "build": "ts-node ./script/build.ts && tsc",
     "build:tokens": "ts-node -e \"require('./build')._init()\"",
-    "build:buildJs": "tsc --project newToken.tsconfig.json",
+    "build:buildJs": "webpack",
     "prebuild": "rm -rf dist",
     "prebuild:tokens": "rm -rf tokens-v2-private",
     "prepack": "yarn build && yarn build:tokens",
@@ -66,7 +66,11 @@
     "node-sass": "^7.0.0",
     "sass-extract": "^2.1.0",
     "style-dictionary": "^3.1.1",
+    "ts-loader": "^9.3.1",
     "ts-node": "^8.10.2",
-    "typescript": "^4.2.0"
+    "typescript": "^4.2.0",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-node-externals": "^3.0.0"
   }
 }
