@@ -11,7 +11,7 @@ module.exports = {
         use: [{
           loader:'ts-loader',
           options: {
-            configFile: "new.tsconfig.json"
+            configFile: "v2-tokens.tsconfig.json"
           }
         }],
         exclude: /node_modules/,
