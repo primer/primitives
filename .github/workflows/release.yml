@@ -26,6 +26,9 @@ jobs:
       - name: Install dependencies
         run: yarn
 
+      - name: Build self-serve tooling
+        run: yarn build:self-serve
+
       - name: Build tokens
         run: yarn build
 
