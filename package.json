@@ -28,13 +28,13 @@
   "scripts": {
     "build": "ts-node ./script/build.ts && tsc",
     "build:tokens": "ts-node -e \"require('./build')._init()\"",
-    "build:buildJs": "webpack",
+    "build:self-serve": "webpack",
     "prebuild": "rm -rf dist",
     "prebuild:tokens": "rm -rf tokens-v2-private",
     "prepack": "yarn build && yarn build:tokens",
     "release": "changeset publish",
     "test": "jest --verbose --coverage",
-    "prebuild:test": "npm run build:buildJs",
+    "prebuild:test": "npm run build:self-serve",
     "watch": "ls data/**/*.scss script/**/*.ts | entr -s 'yarn build'"
   },
   "prettier": "@github/prettier-config",
