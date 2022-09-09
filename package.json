@@ -3,8 +3,8 @@
   "version": "7.9.0",
   "description": "Typography, spacing, and color primitives for Primer design system",
   "files": [
-    "dist",
-    "tokens-v2-private",
+    "dist/",
+    "tokens-v2-private/",
     "build.js",
     "tokens/"
   ],
@@ -31,7 +31,7 @@
     "build:self-serve": "webpack",
     "prebuild": "rm -rf dist",
     "prebuild:tokens": "rm -rf tokens-v2-private",
-    "prepack": "yarn build && yarn build:tokens",
+    "prepack": "yarn build && yarn build:tokens && yarn build:self-serve",
     "release": "changeset publish",
     "test": "jest --verbose --coverage",
     "prebuild:test": "npm run build:self-serve",
