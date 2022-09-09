@@ -1,6 +1,8 @@
 // @ts-ignore
 import getContrastRatio from 'get-contrast-ratio';
+import { contrastRequirements } from './color-contrast.config'
 import colors from "../dist/ts"
+import * as fs from 'fs';
 
 const flattenObject = (obj: any, prefix: string = "") =>
   // @ts-ignore
@@ -12,7 +14,6 @@ const flattenObject = (obj: any, prefix: string = "") =>
     return acc;
   }, {})
 
-// const runContrastTest = ([required, ...pair]: (number | string)[], colors: any) => {
 const runContrastTest = (colorPairs: (number | string)[][], colors: any) =>
   Object.fromEntries(
     colorPairs.map(([required, ...pair]: (number | string)[]) => {
@@ -42,12 +43,22 @@ const testContrast = (required: number, colorA: string, colorB: string): [pass: 
   ]
 }
 
-const colorPairs = [
-  [4.5, 'fg.default', 'canvas.default'],
-  [4.5, 'fg.muted', 'canvas.default'],
-  [4.5, 'fg.default', 'canvas.subtle'],
-  [4.5, 'fg.muted', 'canvas.subtle']
-]
+// run tests, output results to console and store them for json
+const results = Object.entries(contrastRequirements).map(([theme, colorPairs]: [theme: string, colorPairs: (number | string)[][]]) => {
+  // @ts-ignore
+  const flattenColors = flattenObject(colors.colors[theme])
+  const result = runContrastTest(colorPairs, flattenColors)
+  console.table(`Contrast checks for: ${theme}`)
+  console.table(result)
 
-const flattenColors = flattenObject(colors.colors.light)
-console.table(runContrastTest(colorPairs, flattenColors))
+  return {
+    theme,
+    result
+  }
+})
+
+// write json file for workflow
+fs.writeFile('color-contrast-check.json', JSON.stringify(results), (err) => {
+  if (err) throw err;
+  console.log('The file has been saved!');
+})
