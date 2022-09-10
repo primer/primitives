@@ -36,7 +36,12 @@ const runContrastTest = (colorPairs: (number | string)[][], colors: any) =>
 
 const testContrast = (required: number, colorA: string, colorB: string): [pass: string, contrast: string] => {
   // get contrast
-  const contrast = getContrastRatio(colorA, colorB)
+  let contrast = 0
+  try {
+    contrast = getContrastRatio(colorA, colorB)
+  } catch (err) {
+    console.error(`${colorA} vs. ${colorB}: ${err}`)
+  }
   return [
     contrast >= required ? '✅' : '❌',
     `${contrast}:1`
