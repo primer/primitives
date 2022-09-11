@@ -10,7 +10,7 @@ const baseRequirements = [
   [4.5, 'fg.muted', 'canvas.inset'],
   // default text on role bg
   // TODO: contrast does not work with semi-transparent colors
-  [4.5, 'fg.default', 'accent.subtle'],
+  [4.5, 'fg.default', 'accent.subtle', { bgs: ['canvas.default', 'canvas.subtle'] }],
   [4.5, 'fg.default', 'success.subtle'],
   [4.5, 'fg.default', 'open.subtle'],
   [4.5, 'fg.default', 'danger.subtle'],
@@ -199,16 +199,16 @@ const highContrast = [
     [7, 'fg.onEmphasis', 'sponsors.emphasis'],
   ]
 ]
-export let contrastRequirements: { [key: string]: (number | string)[][] } = {
+export let contrastRequirements: { [key: string]: (number | string | Object)[][] } = {
   // default light mode
   light: baseRequirements,
-  light_high_contrast: highContrast,
-  light_colorblind: baseRequirements,
-  light_tritanopia: baseRequirements,
+  // light_high_contrast: highContrast,
+  // light_colorblind: baseRequirements,
+  // light_tritanopia: baseRequirements,
   // default dark mode
   dark: baseRequirements,
-  dark_dimmed: baseRequirements,
-  dark_high_contrast: highContrast,
-  dark_colorblind: baseRequirements,
-  dark_tritanopia: baseRequirements,
+  // dark_dimmed: baseRequirements,
+  // dark_high_contrast: highContrast,
+  // dark_colorblind: baseRequirements,
+  // dark_tritanopia: baseRequirements,
 }
