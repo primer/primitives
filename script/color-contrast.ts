@@ -1,5 +1,5 @@
 // @ts-ignore
-import { contrastRequirements } from './color-contrast.config'
+import { ContrastRequirement, contrastRequirements, cavnasColors } from './color-contrast.config'
 import { flattenObject } from './lib/flattenObject'
 import colors from "../dist/ts"
 import * as fs from 'fs';
@@ -19,37 +19,39 @@ const getOpaqueColor = (color: string, background: string): string => {
   return rgba(mixed.r, mixed.g, mixed.b, mixed.a)
 }
 
-const runContrastTest = (colorPairs: (number | string | Object)[][], colors: any) =>
+const runContrastTest = (colorPairs: ContrastRequirement[], colors: any) =>
   Object.fromEntries(
-    colorPairs.flatMap(([required, colorA, colorB, options]: (number | string | Object)[]) => {
+    colorPairs.flatMap(([required, colorA, colorB, options]) => {
       // concat name
       const contrastPair = `${colorA} vs. ${colorB}`
       // build required string
       const requiredContrast = `${required}:1`;
-      // @ts-ignore
-      if (options?.bgs.length > 0) {
-        // @ts-ignore
-        return options.bgs.map(bg => [
-          [`${contrastPair} on ${bg}`],
-          {
-            // @ts-ignore
-            ...testContrast(required, colors[colorA], colors[colorB], colors[bg]),
+      // colorB is fully opaque
+      if (parseToRgba(colors[colorB])[3] === 1) {
+        return [[
+          [contrastPair], {
+            ...testContrast(required, colors[colorA], colors[colorB], undefined, contrastPair),
             requiredContrast
           }
-        ])
+        ]]
       }
-      // 
-      return [[
-        [contrastPair], {
-          // @ts-ignore
-          ...testContrast(required, colors[colorA], colors[colorB]),
+      // if colorB is semi-transparent 
+      // get the correct canvas colors to test agains
+      let canvasColorArrays = cavnasColors
+      // overwrite background if custom canvas array is set
+      if (options?.canvas) canvasColorArrays = options.canvas
+      // test transparent colorB with default bgs `cavnasColors`
+      return canvasColorArrays.map(bg => [
+        [`${contrastPair} on ${bg}`],
+        {
+          ...testContrast(required, colors[colorA], colors[colorB], colors[bg], contrastPair),
           requiredContrast
         }
-      ]]
+      ])
     })
   )
 
-const testContrast = (required: number, colorA: string, colorB: string, bg: string = '#ffffff'): { pass: string, contrast: string } => {
+const testContrast = (required: number, colorA: string, colorB: string, bg: string = '#ffffff', contrastPair?: string): { pass: string, contrast: string } => {
   // get contrast
   let contrast = 0
   try {
@@ -58,7 +60,7 @@ const testContrast = (required: number, colorA: string, colorB: string, bg: stri
     // get contrast rounded down with 2 decimals
     contrast = Math.floor(getContrast(colorA, colorB) * 100) / 100
   } catch (err) {
-    console.error(`${colorA} vs.${colorB}: ${err}`)
+    console.error(`${contrastPair || ""} as ${colorA} vs.${colorB}: ${err}`)
   }
   return {
     pass: contrast >= required ? '✅' : '❌',
@@ -69,7 +71,7 @@ const testContrast = (required: number, colorA: string, colorB: string, bg: stri
  * run tests, output results to console and store them for json
  */
 const results = Object.entries(contrastRequirements)
-  .map(([theme, colorPairs]: [theme: string, colorPairs: (number | string | Object)[][]]) => {
+  .map(([theme, colorPairs]: [theme: string, colorPairs: ContrastRequirement[]]) => {
     // turn deeply nested colors object into one level object like 'fg.default': '#000'
     // @ts-ignore
     const flattenColors = flattenObject(colors.colors[theme])

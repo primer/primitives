@@ -1,5 +1,13 @@
+type ContrastRequirement = [
+  contrastRequirement: number,
+  foregroundColor: string,
+  backgroundColor: string,
+  options?: {
+    canvas: string[]
+  }
+]
 // basically for all non high contrast modes
-const baseRequirements = [
+const baseRequirements: ContrastRequirement[] = [
   // neutral text colors
   [4.5, 'fg.default', 'canvas.default'],
   [4.5, 'fg.muted', 'canvas.default'],
@@ -10,7 +18,7 @@ const baseRequirements = [
   [4.5, 'fg.muted', 'canvas.inset'],
   // default text on role bg
   // TODO: contrast does not work with semi-transparent colors
-  [4.5, 'fg.default', 'accent.subtle', { bgs: ['canvas.default', 'canvas.subtle'] }],
+  [4.5, 'fg.default', 'accent.subtle'],
   [4.5, 'fg.default', 'success.subtle'],
   [4.5, 'fg.default', 'open.subtle'],
   [4.5, 'fg.default', 'danger.subtle'],
@@ -63,7 +71,7 @@ const baseRequirements = [
   [4.5, 'open.fg', 'open.subtle'],
   [4.5, 'danger.fg', 'danger.subtle'],
   [4.5, 'closed.fg', 'closed.subtle'],
-  [4.5, 'addtenion.fg', 'attention.subtle'],
+  [4.5, 'attention.fg', 'attention.subtle'],
   [4.5, 'severe.fg', 'severe.subtle'],
   [4.5, 'done.fg', 'done.subtle'],
   [4.5, 'sponsors.fg', 'sponsors.subtle'],
@@ -73,7 +81,7 @@ const baseRequirements = [
   [4.5, 'open.fg', 'open.muted'],
   [4.5, 'danger.fg', 'danger.muted'],
   [4.5, 'closed.fg', 'closed.muted'],
-  [4.5, 'addtenion.fg', 'attention.muted'],
+  [4.5, 'attention.fg', 'attention.muted'],
   [4.5, 'severe.fg', 'severe.muted'],
   [4.5, 'done.fg', 'done.muted'],
   [4.5, 'sponsors.fg', 'sponsors.muted'],
@@ -105,7 +113,7 @@ const baseRequirements = [
   // TODO: there are no specific border colors for roles
 ]
 
-const highContrast = [
+const highContrast: ContrastRequirement[] = [
   ...baseRequirements,
   ...[
     // neutral text colors
@@ -171,7 +179,7 @@ const highContrast = [
     [7, 'open.fg', 'open.subtle'],
     [7, 'danger.fg', 'danger.subtle'],
     [7, 'closed.fg', 'closed.subtle'],
-    [7, 'addtenion.fg', 'attention.subtle'],
+    [7, 'attention.fg', 'attention.subtle'],
     [7, 'severe.fg', 'severe.subtle'],
     [7, 'done.fg', 'done.subtle'],
     [7, 'sponsors.fg', 'sponsors.subtle'],
@@ -181,7 +189,7 @@ const highContrast = [
     [7, 'open.fg', 'open.muted'],
     [7, 'danger.fg', 'danger.muted'],
     [7, 'closed.fg', 'closed.muted'],
-    [7, 'addtenion.fg', 'attention.muted'],
+    [7, 'attention.fg', 'attention.muted'],
     [7, 'severe.fg', 'severe.muted'],
     [7, 'done.fg', 'done.muted'],
     [7, 'sponsors.fg', 'sponsors.muted'],
@@ -197,18 +205,21 @@ const highContrast = [
     [7, 'fg.onEmphasis', 'severe.emphasis'],
     [7, 'fg.onEmphasis', 'done.emphasis'],
     [7, 'fg.onEmphasis', 'sponsors.emphasis'],
-  ]
+  ] as ContrastRequirement[]
 ]
-export let contrastRequirements: { [key: string]: (number | string | Object)[][] } = {
+
+export const cavnasColors: string[] = ['canvas.default', 'canvas.subtle']
+
+export const contrastRequirements: { [key: string]: ContrastRequirement[] } = {
   // default light mode
   light: baseRequirements,
-  // light_high_contrast: highContrast,
-  // light_colorblind: baseRequirements,
-  // light_tritanopia: baseRequirements,
+  light_high_contrast: highContrast,
+  light_colorblind: baseRequirements,
+  light_tritanopia: baseRequirements,
   // default dark mode
   dark: baseRequirements,
-  // dark_dimmed: baseRequirements,
-  // dark_high_contrast: highContrast,
-  // dark_colorblind: baseRequirements,
-  // dark_tritanopia: baseRequirements,
+  dark_dimmed: baseRequirements,
+  dark_high_contrast: highContrast,
+  dark_colorblind: baseRequirements,
+  dark_tritanopia: baseRequirements,
 }
