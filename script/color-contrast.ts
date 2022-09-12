@@ -21,7 +21,7 @@ const getOpaqueColor = (color: string, background: string): string => {
 
 const runContrastTest = (colorPairs: ContrastRequirement[], colors: any) =>
   Object.fromEntries(
-    colorPairs.flatMap(([required, colorA, colorB, options]) => {
+    colorPairs.flatMap(([required, colorA, colorB, options]: ContrastRequirement) => {
       // concat name
       const contrastPair = `${colorA} vs. ${colorB}`
       // build required string
