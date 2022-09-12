@@ -21,17 +21,17 @@ const getOpaqueColor = (color: string, background: string): string => {
 
 const runContrastTest = (colorPairs: ContrastRequirement[], colors: any) =>
   Object.fromEntries(
-    colorPairs.flatMap(([required, colorA, colorB, options]: ContrastRequirement) => {
+    colorPairs.flatMap(([minimumContrast, colorA, colorB, options]: ContrastRequirement) => {
       // concat name
       const contrastPair = `${colorA} vs. ${colorB}`
       // build required string
-      const requiredContrast = `${required}:1`;
+      const minimumContrastRatio = `${minimumContrast}:1`;
       // colorB is fully opaque
       if (parseToRgba(colors[colorB])[3] === 1) {
         return [[
           [contrastPair], {
-            ...testContrast(required, colors[colorA], colors[colorB], undefined, contrastPair),
-            requiredContrast
+            ...testContrast(minimumContrast, colors[colorA], colors[colorB], undefined, contrastPair),
+            minimumContrastRatio
           }
         ]]
       }
@@ -44,8 +44,8 @@ const runContrastTest = (colorPairs: ContrastRequirement[], colors: any) =>
       return canvasColorArrays.map(bg => [
         [`${contrastPair} on ${bg}`],
         {
-          ...testContrast(required, colors[colorA], colors[colorB], colors[bg], contrastPair),
-          requiredContrast
+          ...testContrast(minimumContrast, colors[colorA], colors[colorB], colors[bg], contrastPair),
+          minimumContrastRatio
         }
       ])
     })

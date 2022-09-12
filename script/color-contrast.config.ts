@@ -1,5 +1,5 @@
 type ContrastRequirement = [
-  contrastRequirement: number,
+  minimumContrast: number,
   foregroundColor: string,
   backgroundColor: string,
   options?: {
