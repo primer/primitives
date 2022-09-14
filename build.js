@@ -18,6 +18,16 @@ const pathToPascalCase = token => token.path.map(tokenPathItems => capitalize(to
 // REGISTER THE CUSTOM TRANFORMS
 
 /**
+ * transform: scss variable names
+ * example: `$namespace-item-variant-property-modifier`
+ */
+StyleDictionary.registerTransform({
+  name: 'name/scss',
+  type: 'name',
+  transformer: pathToKebabCase
+})
+
+/**
  * transform: css variable names
  * example: `--namespace-item-variant-property-modifier`
  */
@@ -48,7 +58,7 @@ StyleDictionary.registerTransform({
 })
 
 // find values with px unit
-function isPx (value) {
+function isPx(value) {
   return /[\d\.]+px$/.test(value)
 }
 
@@ -138,12 +148,17 @@ StyleDictionary.registerTransformGroup({
   transforms: ['name/css', 'pxToRem', 'typography/shorthand']
 })
 
+StyleDictionary.registerTransformGroup({
+  name: 'scss',
+  transforms: ['name/scss', 'pxToRem', 'typography/shorthand']
+})
+
 // REGISTER A CUSTOM FORMAT
 
 // wrap mobile tokens in media query
 StyleDictionary.registerFormat({
   name: 'css/touch-target-mobile',
-  formatter: function ({dictionary, file, options}) {
+  formatter: function({dictionary, file, options}) {
     const {outputReferences} = options
     return (
       fileHeader({file}) +
@@ -157,7 +172,7 @@ StyleDictionary.registerFormat({
 // wrap desktop tokens in media query
 StyleDictionary.registerFormat({
   name: 'css/touch-target-desktop',
-  formatter: function ({dictionary, file, options}) {
+  formatter: function({dictionary, file, options}) {
     const {outputReferences} = options
     return (
       fileHeader({file}) +
@@ -170,7 +185,7 @@ StyleDictionary.registerFormat({
 
 StyleDictionary.registerFormat({
   name: 'custom/format/custom-media',
-  formatter ({dictionary}) {
+  formatter({dictionary}) {
     return dictionary.allProperties
       .map(prop => {
         const {value, path, name} = prop
@@ -185,7 +200,7 @@ StyleDictionary.registerFormat({
 // format docs
 StyleDictionary.registerFormat({
   name: 'json/docs',
-  formatter: function ({dictionary}) {
+  formatter: function({dictionary}) {
     const groupedTokens = groupBy(dictionary.allProperties, 'filePath')
 
     return JSON.stringify(groupedTokens, null, 2)
@@ -197,7 +212,7 @@ StyleDictionary.registerFormat({
  */
 StyleDictionary.registerFormat({
   name: 'javascript/module-v2',
-  formatter: function ({dictionary, file}) {
+  formatter: function({dictionary, file}) {
     const recursiveleyFlattenDictionary = obj => {
       const tree = {}
       if (typeof obj !== 'object' || Array.isArray(obj)) {
@@ -230,7 +245,7 @@ StyleDictionary.registerFormat({
  */
 StyleDictionary.registerFormat({
   name: 'typescript/module-declarations-v2',
-  formatter: function ({dictionary, options, file}) {
+  formatter: function({dictionary, options, file}) {
     const {moduleName = `tokens`} = options
 
     const getType = value => {
@@ -287,7 +302,7 @@ StyleDictionary.registerFormat({
  * @param {Function} The iteratee to transform keys.
  * @returns {Object} Returns the composed aggregate object.
  */
-function groupBy (collection, iteratee = x => x) {
+function groupBy(collection, iteratee = x => x) {
   const current = typeof iteratee === 'function' ? iteratee : ({[iteratee]: prop}) => prop
 
   const array = Array.isArray(collection) ? collection : Object.values(collection)
@@ -322,7 +337,7 @@ function groupBy (collection, iteratee = x => x) {
  *   platforms: {...}
  *  })
  */
-function buildPrimitives (
+function buildPrimitives(
   {source, outputPath = 'tokens-v2-private', include, platforms, namespace = 'primer'},
   _StyleDictionary = StyleDictionary
 ) {
@@ -379,6 +394,21 @@ function buildPrimitives (
             destination: 'viewport.css'
           }
         ]
+      },
+      scss: {
+        buildPath: `${outputPath}/scss/`,
+        transformGroup: 'scss',
+        // map the array of token file paths to style dictionary output files
+        files: files.map(filePath => {
+          return {
+            format: `scss/variables`,
+            destination: filePath.replace(`.json`, `.scss`),
+            filter: token => token.filePath === filePath,
+            options: {
+              outputReferences: true
+            }
+          }
+        })
       },
       js: {
         buildPath: `${outputPath}/js/`,
@@ -454,7 +484,7 @@ function buildPrimitives (
  *   from an npm script. Internal use only. Use `build` for self-serve.
  * @private
  */
-function _init () {
+function _init() {
   const outputPath = 'tokens-v2-private'
   //build all tokens
   buildPrimitives({
