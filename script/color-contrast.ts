@@ -1,10 +1,18 @@
 // @ts-ignore
 import { ContrastRequirement, contrastRequirements, cavnasColors } from './color-contrast.config'
+import { Table } from "console-table-printer"
 import { flattenObject } from './lib/flattenObject'
 import colors from "../dist/ts"
 import * as fs from 'fs';
 import { normal } from 'color-blend'
 import { getContrast, parseToRgba, rgba } from 'color2k'
+
+type contrastTestResult = {
+  contrastPair: string;
+  pass: string;
+  contrastRatio: string;
+  minimumContrastRatio: string;
+}
 
 const getOpaqueColor = (color: string, background: string): string => {
   const [colorR, colorG, colorB, colorAlpha] = parseToRgba(color)
@@ -19,39 +27,38 @@ const getOpaqueColor = (color: string, background: string): string => {
   return rgba(mixed.r, mixed.g, mixed.b, mixed.a)
 }
 
-const runContrastTest = (colorPairs: ContrastRequirement[], colors: any) =>
-  Object.fromEntries(
-    colorPairs.flatMap(([minimumContrast, colorA, colorB, options]: ContrastRequirement) => {
-      // concat name
-      const contrastPair = `${colorA} vs. ${colorB}`
-      // build required string
-      const minimumContrastRatio = `${minimumContrast}:1`;
-      // colorB is fully opaque
-      if (parseToRgba(colors[colorB])[3] === 1) {
-        return [[
-          [contrastPair], {
-            ...testContrast(minimumContrast, colors[colorA], colors[colorB], undefined, contrastPair),
-            minimumContrastRatio
-          }
-        ]]
+const runContrastTest = (colorPairs: ContrastRequirement[], colors: any): contrastTestResult[] =>
+  // Object.fromEntries(
+  colorPairs.flatMap(([minimumContrast, colorA, colorB, options]: ContrastRequirement) => {
+    // concat name
+    const contrastPair = `${colorA} vs. ${colorB}`
+    // build required string
+    const minimumContrastRatio = `${minimumContrast}:1`;
+    // colorB is fully opaque
+    if (parseToRgba(colors[colorB])[3] === 1) {
+      return {
+        contrastPair,
+        ...testContrast(minimumContrast, colors[colorA], colors[colorB], undefined, contrastPair),
+        minimumContrastRatio
       }
-      // if colorB is semi-transparent 
-      // get the correct canvas colors to test agains
-      let canvasColorArrays = cavnasColors
-      // overwrite background if custom canvas array is set
-      if (options?.canvas) canvasColorArrays = options.canvas
-      // test transparent colorB with default bgs `cavnasColors`
-      return canvasColorArrays.map(bg => [
-        [`${contrastPair} on ${bg}`],
-        {
-          ...testContrast(minimumContrast, colors[colorA], colors[colorB], colors[bg], contrastPair),
-          minimumContrastRatio
-        }
-      ])
-    })
-  )
 
-const testContrast = (required: number, colorA: string, colorB: string, bg: string = '#ffffff', contrastPair?: string): { pass: string, contrast: string } => {
+    }
+    // if colorB is semi-transparent 
+    // get the correct canvas colors to test agains
+    let canvasColorArrays = cavnasColors
+    // overwrite background if custom canvas array is set
+    if (options?.canvas) canvasColorArrays = options.canvas
+    // test transparent colorB with default bgs `cavnasColors`
+    return canvasColorArrays.map(bg => ({
+      contrastPair: `${contrastPair} on ${bg}`,
+      ...testContrast(minimumContrast, colors[colorA], colors[colorB], colors[bg], contrastPair),
+      minimumContrastRatio
+    })
+    )
+  })
+// )
+
+const testContrast = (required: number, colorA: string, colorB: string, bg: string = '#ffffff', contrastPair?: string): { pass: string, contrastRatio: string } => {
   // get contrast
   let contrast = 0
   try {
@@ -64,8 +71,53 @@ const testContrast = (required: number, colorA: string, colorB: string, bg: stri
   }
   return {
     pass: contrast >= required ? '✅' : '❌',
-    contrast: `${contrast}: 1`
+    contrastRatio: `${contrast}: 1`
   }
+}
+
+const renderConsoleTable = (theme: string, results: contrastTestResult[]): void => {
+  // config table
+  const contrastTable = new Table({
+    title: `Contrast checks for: ${theme}`,
+    charLength: { "❌": 2, "✅": 2 },
+    colorMap: {
+      grey: '\x1b[0;30m', // define customized color
+    },
+    columns: [
+      {
+        name: "contrastPair",
+        alignment: "left",
+        title: "Color pair",
+      },
+      {
+        name: "pass",
+        alignment: "center",
+        title: "Pass",
+      },
+      {
+        name: "contrastRatio",
+        alignment: "left",
+        title: "Contrast ratio"
+      },
+      {
+        name: "minimumContrastRatio",
+        alignment: "left",
+        title: "Min. ratio"
+      }]
+  })
+  // add rows and color
+  for (const [index, row] of results.entries()) {
+    let color = "white"
+    // turn odd index rows grey (index starts at 0)
+    if (index % 2 !== 0) {
+      color = "grey"
+    }
+    contrastTable.addRow(row, {
+      color: color
+    })
+  }
+  // print table to console
+  console.log(contrastTable.render())
 }
 /**
  * run tests, output results to console and store them for json
@@ -76,14 +128,13 @@ const results = Object.entries(contrastRequirements)
     // @ts-ignore
     const flattenColors = flattenObject(colors.colors[theme])
     // run tests on all color pairs
-    const result = runContrastTest(colorPairs, flattenColors)
+    const results = runContrastTest(colorPairs, flattenColors)
     // print results to console
-    console.table(`Contrast checks for: ${theme} `)
-    console.table(result)
+    renderConsoleTable(theme, results)
     // return results for json file creation
     return {
       theme,
-      result
+      results
     }
   })
 
