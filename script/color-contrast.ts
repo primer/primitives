@@ -6,14 +6,22 @@ import colors from "../dist/ts"
 import * as fs from 'fs';
 import { normal } from 'color-blend'
 import { getContrast, parseToRgba, rgba } from 'color2k'
-
+/**
+ * Type definitions
+ */
 type contrastTestResult = {
   contrastPair: string;
   pass: string;
   contrastRatio: string;
   minimumContrastRatio: string;
 }
-
+/**
+ * getOpaqueColor
+ * @description calculates the rgb string without opacity from a color with opacity and the background it is palced on
+ * @param color 
+ * @param background 
+ * @returns rgb string
+ */
 const getOpaqueColor = (color: string, background: string): string => {
   const [colorR, colorG, colorB, colorAlpha] = parseToRgba(color)
   // color is not transparent
@@ -26,7 +34,13 @@ const getOpaqueColor = (color: string, background: string): string => {
   const mixed = normal({ r: bgR, g: bgG, b: bgB, a: bgAlpha }, { r: colorR, g: colorG, b: colorB, a: colorAlpha })
   return rgba(mixed.r, mixed.g, mixed.b, mixed.a)
 }
-
+/**
+ * runContrastTest
+ * @description runs through all color pairs of a theme and checks the contrasts
+ * @param colorPairs 
+ * @param colors 
+ * @returns contrastTestResult
+ */
 const runContrastTest = (colorPairs: ContrastRequirement[], colors: any): contrastTestResult[] =>
   // Object.fromEntries(
   colorPairs.flatMap(([minimumContrast, colorA, colorB, options]: ContrastRequirement) => {
@@ -41,7 +55,6 @@ const runContrastTest = (colorPairs: ContrastRequirement[], colors: any): contra
         ...testContrast(minimumContrast, colors[colorA], colors[colorB], undefined, contrastPair),
         minimumContrastRatio
       }
-
     }
     // if colorB is semi-transparent 
     // get the correct canvas colors to test agains
@@ -57,8 +70,17 @@ const runContrastTest = (colorPairs: ContrastRequirement[], colors: any): contra
     )
   })
 // )
-
-const testContrast = (required: number, colorA: string, colorB: string, bg: string = '#ffffff', contrastPair?: string): { pass: string, contrastRatio: string } => {
+/**
+ * testContrast
+ * @description test the contrast of two colors against each other
+ * @param minimumContrast 
+ * @param colorA 
+ * @param colorB 
+ * @param bg used to calculate an opaque color if colorB is semi transparent
+ * @param contrastPair use for better error messages
+ * @returns 
+ */
+const testContrast = (minimumContrast: number, colorA: string, colorB: string, bg: string = '#ffffff', contrastPair?: string): { pass: string, contrastRatio: string } => {
   // get contrast
   let contrast = 0
   try {
@@ -70,11 +92,16 @@ const testContrast = (required: number, colorA: string, colorB: string, bg: stri
     console.error(`${contrastPair || ""} as ${colorA} vs.${colorB}: ${err}`)
   }
   return {
-    pass: contrast >= required ? '✅' : '❌',
+    pass: contrast >= minimumContrast ? '✅' : '❌',
     contrastRatio: `${contrast}: 1`
   }
 }
-
+/**
+ * renderConsoleTable
+ * @description takes the test results per theme and prints a nicely formatted table of the results to the console 
+ * @param theme 
+ * @param results 
+ */
 const renderConsoleTable = (theme: string, results: contrastTestResult[]): void => {
   // config table
   const contrastTable = new Table({
