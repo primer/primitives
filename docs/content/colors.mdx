@@ -26,7 +26,7 @@ Preview color variables in any of the available themes:
 
 ### Color vision deficiency themes
 Primer primitives include `Protanopia & Deuteranopia` and `Tritanopia` themes for dark and light mode.  
-In those themes green, red and orange are changed to different colors. This allows us to provide color contrast in parts of the UI like the _diffing view_ for people with color vision deficiency (cvd).
+In these themes, green, red and orange are changed to different colors. This allows us to provide color contrast in parts of the UI like the _diffing view_ for people with color vision deficiency (cvd).
 
 To make this easy to maintain, scales are adjusted instead of changing the references of functional tokens. This results in a mismatch of color scale names and the value they hold. For example `scale.green` is actually blue in cvd modes. This is not a bug but desired for easier maintenance. We discourage designing with any of the cvd modes, so this should not create any confusion for our users.
 
