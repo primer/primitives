@@ -24,6 +24,12 @@ Preview color variables in any of the available themes:
 
 <ColorThemePicker />
 
+### Color vision deficiency themes
+Primer primitives include `Protanopia & Deuteranopia` and `Tritanopia` themes for dark and light mode.  
+In these themes, green, red and orange are changed to different colors. This allows us to provide the right color contrast in the UI for people with [Color Vision Deficiency](https://www.w3.org/WAI/GL/low-vision-a11y-tf/wiki/CVD) - (CVD). For example, when comparing branches in pull requests.
+
+When changing themes, we adjust the scales instead of changing the functional token references. This results in a mismatch of color scale names and the value they hold. For example, the green scale uses blue in CVD modes. This is not a bug but is desired for easier maintenance. Color scales should not be used directly, so this mismatch is not visible to our users.
+
 ## Functional variables
 
 ### Foreground
