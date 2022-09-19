@@ -9,6 +9,7 @@ import { colorToHexAlpha } from './config/tranformers/color-to-hex-alpha';
 import { colorToRgbAlpha } from "./config/tranformers/color-to-rgb-alpha";
 import { colorToHex6 } from "./config/tranformers/color-to-hex6";
 import { scssWithCssVariables } from './config/formats/scss-with-css-variables';
+import { platformTs } from './config/platforms/typescript';
 
 const BUILD_PATH = 'tempNewTokens'
 const PREFIX = 'primer'
@@ -39,11 +40,13 @@ const getStyleDictionaryConfig = (theme, source, include): StyleDictionary.Confi
     'primer/css': ['name/cti/kebab', 'color/hex6', 'color/rgbAlpha'],
     'primer/json': ['color/hex6', 'color/hexAlpha'],
     'primer/scss': ['name/cti/kebab', 'color/hex6', 'color/rgbAlpha'],
+    'primer/ts': ['name/cti/pascal', 'color/hex6', 'color/hexAlpha'],
   },
   platforms: {
     css: platformCss(`${theme}.css`, PREFIX, BUILD_PATH),
     docJson: platformDocJson(`${theme}.json`, PREFIX, BUILD_PATH),
     scss: platformScss(`${theme}.scss`, PREFIX, BUILD_PATH),
+    ts: platformTs(`${theme}.ts`, PREFIX, BUILD_PATH),
   }
 })
 
