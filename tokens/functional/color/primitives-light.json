@@ -1,0 +1,41 @@
+{
+  "color": {
+    "fg": {
+      "default": {
+        "$value": "{base.color.scale.gray.9}",
+        "$type": "color"
+      },
+      "muted": {
+        "$value": "{base.color.scale.gray.6}",
+        "$type": "color"
+      },
+      "subtle": {
+        "$value": "{base.color.scale.gray.5}",
+        "$type": "color"
+      },
+      "onEmphasis": {
+        "$value": "{base.color.scale.white}",
+        "$type": "color"
+      }
+    },
+    "success": {
+      "fg": {
+        "$value": "{base.color.scale.green.5}",
+        "$type": "color"
+      },
+      "emphasis": {
+        "$value": "{base.color.scale.green.4}",
+        "$type": "color"
+      },
+      "muted": {
+        "$value": "{base.color.scale.green.3}",
+        "alpha": 0.4,
+        "$type": "color"
+      },
+      "subtle": {
+        "$value": "{base.color.scale.green.0}",
+        "$type": "color"
+      }
+    }
+  }
+}
