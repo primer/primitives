@@ -1,11 +1,10 @@
 import StyleDictionary from 'style-dictionary'
 
-export const colorHexAlpha = {
+export const colorToRgbAlpha: StyleDictionary.Transform = {
   type: `value`,
   transitive: true,
-  name: `color/hexAlpha`,
-  matcher: (token: StyleDictionary.DesignToken) => token.$type === 'color' && token.alpha,
-  transformer: (token: StyleDictionary.DesignToken) => toRgba(token.value, token.alpha)
+  matcher: (token: StyleDictionary.TransformedToken) => token.$type === 'color' && token.alpha,
+  transformer: (token: StyleDictionary.TransformedToken) => toRgba(token.value, token.alpha)
 }
 
 /**
@@ -15,6 +14,9 @@ export const colorHexAlpha = {
  * @return rgba string
  */
 const toRgba = (hex: string, alpha: number) => {
+  if (alpha > 1) {
+    alpha = alpha / 100
+  }
   const [red, green, blue] = hexToRgb(hex)
   //
   return `rgba(${red}, ${green}, ${blue}, ${alpha})`
@@ -22,7 +24,7 @@ const toRgba = (hex: string, alpha: number) => {
 
 /**
  * hexToRgb
- * @sourcen https://stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb
+ * @source https://stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb
  * @param hex (3 or 6 charcaters)
  * @returns [R, G, B]
  */
@@ -37,14 +39,5 @@ const hexToRgb = (hex: string): [string, string, string] => {
     .map(x => parseInt(x, 16))
 }
 
-// const hexFromPercent = (percent: number): string => {
-//   if (percent <= 1) {
-//     percent = percent * 10
-//   }
-//   var decimalValue = Math.round(percent * 255 / 100);
 
-//   if (percent < 7) {
-//     return "0" + decimalValue.toString(16).toUpperCase();
-//   }
-//   return decimalValue.toString(16).toUpperCase();
-// }
+

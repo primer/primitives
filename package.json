@@ -32,6 +32,7 @@
     "prebuild:tokens": "rm -rf tokens-v2-private",
     "prepack": "yarn build && yarn build:tokens",
     "release": "changeset publish",
+    "tempColorTokens": "ts-node tempColorTokenBuild.ts",
     "test": "jest --verbose --coverage",
     "watch": "ls data/**/*.scss script/**/*.ts | entr -s 'yarn build'"
   },
@@ -58,6 +59,7 @@
     "deep-shape-equals": "^0.1.2",
     "deepmerge": "^4.2.2",
     "flat": "^5.0.2",
+    "fs-extra": "^10.1.0",
     "jest": "^29.0.1",
     "lodash": "^4.17.20",
     "mkdirp": "^1.0.4",

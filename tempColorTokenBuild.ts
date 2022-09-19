@@ -1,8 +1,11 @@
 // @ts-nocheck
 const StyleDictionary = require('style-dictionary')
-
+import fse = require('fs-extra');
 import { w3cJsonParser } from './config/parsers/w3c-json-parser'
-import { colorHexAlpha } from "./config/tranformers/color-hex-alpha";
+import { platformCss } from './config/platforms/css';
+import { platformDocJson } from './config/platforms/docJson';
+import { colorToHexAlpha } from './config/tranformers/color-to-hex-alpha';
+import { colorToRgbAlpha } from "./config/tranformers/color-to-rgb-alpha";
 
 const BUILD_PATH = 'tempNewTokens'
 const PREFIX = 'primer'
@@ -12,6 +15,9 @@ const themes = [
   ['dark', [`tokens/functional/color/primitives-dark.json`], [`tokens/base/color/dark.json`]],
   ['dark-dimmed', [`tokens/functional/color/primitives-dark.json`], [`tokens/base/color/dark.json`, `tokens/base/color/dark-dimmed.json`]]
 ]
+const copyFilesAndFolders: [filesOrFolders: string[], source: string, destination: string][] = [
+  [[`deprecated`, `removed`], `tokens`, `${BUILD_PATH}`]
+]
 
 const getStyleDictionaryConfig = (theme, source, include) => ({
   source: source, // build the special formats
@@ -19,38 +25,39 @@ const getStyleDictionaryConfig = (theme, source, include) => ({
   parsers: [w3cJsonParser],
   // register custom transformers
   transform: {
-    'color/hexAlpha': colorHexAlpha
+    'color/rgbAlpha': colorToRgbAlpha,
+    'color/hexAlpha': colorToHexAlpha
   },
   transformGroup: {
-    // create custom transform group that includes default css transforms
-    'primer/css':
-      ['color/hexAlpha']
-        // add default css transforms
-        .concat(StyleDictionary.transformGroup.css)
+    'primer/css': ['name/cti/kebab', 'color/rgbAlpha'],
+    'primer/json': ['color/hexAlpha']
   },
   platforms: {
-    css: {
-      prefix: PREFIX,
-      buildPath: `${BUILD_PATH}/css/`,
-      transformGroup: 'primer/css',
-      files: [
-        {
-          destination: `${theme}.css`,
-          format: `css/variables`,
-          options: {
-            outputReferences: true,
-          }
-        }
-      ]
-    }
+    css: platformCss(`${theme}.css`, PREFIX, BUILD_PATH),
+    docJson: platformDocJson(`${theme}.json`, PREFIX, BUILD_PATH)
+  },
+  action: {
+
   }
 })
 
-for (const [theme, source, include] of themes) {
+/**
+ * Copies file from copyFilesAndFolders array
+ * this is used to copy deprecated and removed values
+ */
+Promise.all(copyFilesAndFolders.map(([filesAndFolders, source, dest]) => {
+  return filesAndFolders.map(
+    fileOrFolder => fse.copy(`${source}/${fileOrFolder}`, `${dest}/${fileOrFolder}`,
+      err => {
+        if (err) return console.error(err)
+      }
+    )
+  )
+}))
 
+
+for (const [theme, source, include] of themes) {
   StyleDictionary
     .extend(getStyleDictionaryConfig(theme, source, include))
     .buildAllPlatforms()
 }
-
-
