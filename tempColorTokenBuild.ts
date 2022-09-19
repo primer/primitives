@@ -6,6 +6,7 @@ import { platformCss } from './config/platforms/css';
 import { platformDocJson } from './config/platforms/docJson';
 import { colorToHexAlpha } from './config/tranformers/color-to-hex-alpha';
 import { colorToRgbAlpha } from "./config/tranformers/color-to-rgb-alpha";
+import { colorToHex6 } from "./config/tranformers/color-to-hex6";
 
 const BUILD_PATH = 'tempNewTokens'
 const PREFIX = 'primer'
@@ -26,11 +27,12 @@ const getStyleDictionaryConfig = (theme, source, include) => ({
   // register custom transformers
   transform: {
     'color/rgbAlpha': colorToRgbAlpha,
-    'color/hexAlpha': colorToHexAlpha
+    'color/hexAlpha': colorToHexAlpha,
+    'color/hex6': colorToHex6
   },
   transformGroup: {
-    'primer/css': ['name/cti/kebab', 'color/rgbAlpha'],
-    'primer/json': ['color/hexAlpha']
+    'primer/css': ['name/cti/kebab', 'color/hex6', 'color/rgbAlpha'],
+    'primer/json': ['color/hex6', 'color/hexAlpha']
   },
   platforms: {
     css: platformCss(`${theme}.css`, PREFIX, BUILD_PATH),
@@ -40,7 +42,7 @@ const getStyleDictionaryConfig = (theme, source, include) => ({
 
   }
 })
-
+console.log(StyleDictionary)
 /**
  * Copies file from copyFilesAndFolders array
  * this is used to copy deprecated and removed values

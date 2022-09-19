@@ -1,3 +1,4 @@
+import { toHex } from 'color2k'
 import StyleDictionary from 'style-dictionary'
 
 export const colorToHexAlpha: StyleDictionary.Transform = {
@@ -9,11 +10,11 @@ export const colorToHexAlpha: StyleDictionary.Transform = {
 
 /**
  * toHex8
- * @param hex (3 or 6 charcaters)
+ * @param color (3 or 6 charcaters)
  * @alpha number
  * @return hex8 string
  */
-const toHex8 = (hex: string, alpha: number) => `${hex}${hexFromPercent(alpha)}`
+const toHex8 = (color: string, alpha: number) => `${toHex(color)}${hexFromPercent(alpha)}`
 
 /**
  * hexFromPercent
