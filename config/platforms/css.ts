@@ -8,8 +8,9 @@ export const platformCss = (outputFile: string, prefix: string, buildPath: strin
     {
       destination: outputFile,
       format: `css/variables`,
+      filter: 'isSource',
       options: {
-        outputReferences: true,
+        outputReferences: false,
       }
     }
   ]

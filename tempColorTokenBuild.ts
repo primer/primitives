@@ -12,6 +12,7 @@ import { scssMixinCssVariables } from './config/formats/scss-mixin-css-variables
 import { scssMixinScssVariables } from './config/formats/scss-mixin-scss-variables';
 import { platformTs } from './config/platforms/typescript';
 import { javascriptExport } from './config/formats/javascript-export';
+import { isSource } from './config/filters/isSource';
 
 const BUILD_PATH = 'tempNewTokens'
 const PREFIX = 'primer'
@@ -29,6 +30,9 @@ const getStyleDictionaryConfig = (theme, source, include): StyleDictionary.Confi
   source: source, // build the special formats
   include: include,
   parsers: [w3cJsonParser],
+  filter: {
+    'isSource': isSource
+  },
   format: {
     'scss/mixin-css-variables': scssMixinCssVariables,
     'scss/mixin-scss-variables': scssMixinScssVariables,
