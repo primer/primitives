@@ -15,7 +15,7 @@ import { javascriptExport } from './config/formats/javascript-export';
 import { isSource } from './config/filters/isSource';
 import { typescriptExportDefinition } from './config/formats/typescript-export-defition';
 
-const BUILD_PATH = 'tempNewTokens'
+const BUILD_PATH = 'tokens-v2-private/tempNewTokens'
 const PREFIX = 'primer'
 const themes = [
   ['light', [`tokens/functional/color/primitives-light.json`], [`tokens/base/color/light.json`]],

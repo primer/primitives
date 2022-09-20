@@ -12,7 +12,7 @@ export const platformTs = (outputFile: string, prefix: string, buildPath: string
     },
     {
       format: "typescript/export-definition",
-      destination: `@types/${outputFile.replace('.ts', '.d.ts')}`,
+      destination: `typescript/${outputFile.replace('.ts', '.d.ts')}`,
       filter: 'isSource',
       options: {
         moduleName: 'DesignTokens',

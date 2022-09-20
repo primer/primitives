@@ -30,7 +30,7 @@
     "build:tokens": "node -e \"require('./build')._init()\"",
     "prebuild": "rm -rf dist",
     "prebuild:tokens": "rm -rf tokens-v2-private",
-    "prepack": "yarn build && yarn build:tokens",
+    "prepack": "yarn build && yarn build:tokens && yarn tempColorTokens",
     "release": "changeset publish",
     "tempColorTokens": "ts-node tempColorTokenBuild.ts",
     "test": "jest --verbose --coverage",
