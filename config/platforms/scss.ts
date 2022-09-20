@@ -7,9 +7,16 @@ export const platformScss = (outputFile: string, prefix: string, buildPath: stri
   files: [
     {
       destination: outputFile,
-      format: `scss/css-variables`,
+      format: `scss/mixin-scss-variables`,
       options: {
-        outputReferences: true,
+        outputReferences: false,
+      }
+    },
+    {
+      destination: outputFile.replace('.scss', '.css.scss'),
+      format: `scss/mixin-css-variables`,
+      options: {
+        outputReferences: false,
       }
     }
   ]

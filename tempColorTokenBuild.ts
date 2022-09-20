@@ -8,8 +8,10 @@ import { platformScss } from './config/platforms/scss';
 import { colorToHexAlpha } from './config/tranformers/color-to-hex-alpha';
 import { colorToRgbAlpha } from "./config/tranformers/color-to-rgb-alpha";
 import { colorToHex6 } from "./config/tranformers/color-to-hex6";
-import { scssWithCssVariables } from './config/formats/scss-with-css-variables';
+import { scssMixinCssVariables } from './config/formats/scss-mixin-css-variables';
+import { scssMixinScssVariables } from './config/formats/scss-mixin-scss-variables';
 import { platformTs } from './config/platforms/typescript';
+import { javascriptExport } from './config/formats/javascript-export';
 
 const BUILD_PATH = 'tempNewTokens'
 const PREFIX = 'primer'
@@ -28,7 +30,9 @@ const getStyleDictionaryConfig = (theme, source, include): StyleDictionary.Confi
   include: include,
   parsers: [w3cJsonParser],
   format: {
-    'scss/css-variables': scssWithCssVariables
+    'scss/mixin-css-variables': scssMixinCssVariables,
+    'scss/mixin-scss-variables': scssMixinScssVariables,
+    'javascript/export': javascriptExport,
   },
   // register custom transformers
   transform: {
@@ -40,7 +44,7 @@ const getStyleDictionaryConfig = (theme, source, include): StyleDictionary.Confi
     'primer/css': ['name/cti/kebab', 'color/hex6', 'color/rgbAlpha'],
     'primer/json': ['color/hex6', 'color/hexAlpha'],
     'primer/scss': ['name/cti/kebab', 'color/hex6', 'color/rgbAlpha'],
-    'primer/ts': ['name/cti/pascal', 'color/hex6', 'color/hexAlpha'],
+    'primer/ts': ['color/hex6', 'color/hexAlpha'],
   },
   platforms: {
     css: platformCss(`${theme}.css`, PREFIX, BUILD_PATH),

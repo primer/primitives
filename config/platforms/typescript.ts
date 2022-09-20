@@ -6,11 +6,8 @@ export const platformTs = (outputFile: string, prefix: string, buildPath: string
   transformGroup: 'primer/ts',
   files: [
     {
-      format: "javascript/es6",
+      format: "javascript/export",
       destination: outputFile,
-      options: {
-        outputReferences: true,
-      }
     },
     {
       format: "typescript/es6-declarations",
