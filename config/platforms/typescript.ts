@@ -2,16 +2,22 @@ import StyleDictionary from 'style-dictionary'
 
 export const platformTs = (outputFile: string, prefix: string, buildPath: string): StyleDictionary.Platform => ({
   prefix: prefix,
-  buildPath: `${buildPath}/typescript/`,
+  buildPath: `${buildPath}/`,
   transformGroup: 'primer/ts',
   files: [
     {
       format: "javascript/export",
-      destination: outputFile,
+      destination: "typescript/" + outputFile,
+      filter: 'isSource'
     },
     {
-      format: "typescript/es6-declarations",
-      destination: `${outputFile.replace('.ts', '.d.ts')}`
+      format: "typescript/export-definition",
+      destination: `@types/${outputFile.replace('.ts', '.d.ts')}`,
+      filter: 'isSource',
+      options: {
+        moduleName: 'DesignTokens',
+        tokenTypesPath: './config/types/DesignTokenTypes.d.ts'
+      }
     },
   ]
 })

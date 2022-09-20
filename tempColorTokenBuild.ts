@@ -13,6 +13,7 @@ import { scssMixinScssVariables } from './config/formats/scss-mixin-scss-variabl
 import { platformTs } from './config/platforms/typescript';
 import { javascriptExport } from './config/formats/javascript-export';
 import { isSource } from './config/filters/isSource';
+import { typescriptExportDefinition } from './config/formats/typescript-export-defition';
 
 const BUILD_PATH = 'tempNewTokens'
 const PREFIX = 'primer'
@@ -37,6 +38,7 @@ const getStyleDictionaryConfig = (theme, source, include): StyleDictionary.Confi
     'scss/mixin-css-variables': scssMixinCssVariables,
     'scss/mixin-scss-variables': scssMixinScssVariables,
     'javascript/export': javascriptExport,
+    'typescript/export-definition': typescriptExportDefinition
   },
   // register custom transformers
   transform: {
@@ -45,16 +47,16 @@ const getStyleDictionaryConfig = (theme, source, include): StyleDictionary.Confi
     'color/hex6': colorToHex6
   },
   transformGroup: {
-    'primer/css': ['name/cti/kebab', 'color/hex6', 'color/rgbAlpha'],
+    'primer/css': ['name/cti/kebab', 'color/hex', 'color/hexAlpha'],
     'primer/json': ['color/hex6', 'color/hexAlpha'],
-    'primer/scss': ['name/cti/kebab', 'color/hex6', 'color/rgbAlpha'],
+    'primer/scss': ['name/cti/kebab', 'color/hex6', 'color/hexAlpha'],
     'primer/ts': ['color/hex6', 'color/hexAlpha'],
   },
   platforms: {
     css: platformCss(`${theme}.css`, PREFIX, BUILD_PATH),
     docJson: platformDocJson(`${theme}.json`, PREFIX, BUILD_PATH),
     scss: platformScss(`${theme}.scss`, PREFIX, BUILD_PATH),
-    ts: platformTs(`${theme}.ts`, PREFIX, BUILD_PATH),
+    ts: platformTs(`${theme}.ts`, undefined, BUILD_PATH),
   }
 })
 
