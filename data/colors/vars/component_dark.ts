@@ -205,4 +205,10 @@ export default {
       },
     },
   },
+
+  treeViewNode: {
+    chevron: {
+      hoverBg: alpha(get('scale.gray.2'), 0.12),
+    }
+  },
 }
