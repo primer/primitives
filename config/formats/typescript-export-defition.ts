@@ -85,9 +85,8 @@ const getTypeDefinition = (tokens: StyleDictionary.DesignTokens, moduleName: str
   // get token type declaration from file
   const designTokenTypes = getTokenTypes(tokenTypesPath)
   // build output
-  const output = `export default ${moduleName};\n` +
-    `${designTokenTypes}\n` +
-    `declare const ${moduleName}: ${JSON.stringify(toType(tokens), null, 2)}`
+  const output = `${designTokenTypes}\n` +
+    `export type ${moduleName} = ${JSON.stringify(toType(tokens), null, 2)}`
 
   // JSON stringify will quote strings, because this is a type we need it unquoted.
   return unquoteTypes(output, designTokenTypes)

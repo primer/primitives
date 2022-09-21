@@ -5,15 +5,18 @@ import { w3cJsonParser } from './config/parsers/w3c-json-parser'
 import { platformCss } from './config/platforms/css';
 import { platformDocJson } from './config/platforms/docJson';
 import { platformScss } from './config/platforms/scss';
+import { platformJs } from './config/platforms/javascript';
+import { platformTs } from './config/platforms/typescript';
 import { colorToHexAlpha } from './config/tranformers/color-to-hex-alpha';
 import { colorToRgbAlpha } from "./config/tranformers/color-to-rgb-alpha";
 import { colorToHex6 } from "./config/tranformers/color-to-hex6";
 import { scssMixinCssVariables } from './config/formats/scss-mixin-css-variables';
 import { scssMixinScssVariables } from './config/formats/scss-mixin-scss-variables';
-import { platformTs } from './config/platforms/typescript';
+import { javascriptCommonJs } from './config/formats/javascript-commonJs';
 import { javascriptExport } from './config/formats/javascript-export';
-import { isSource } from './config/filters/isSource';
 import { typescriptExportDefinition } from './config/formats/typescript-export-defition';
+import { isSource } from './config/filters/isSource';
+
 
 const BUILD_PATH = 'tokens-v2-private/tempNewTokens'
 const PREFIX = 'primer'
@@ -38,6 +41,7 @@ const getStyleDictionaryConfig = (theme, source, include): StyleDictionary.Confi
     'scss/mixin-css-variables': scssMixinCssVariables,
     'scss/mixin-scss-variables': scssMixinScssVariables,
     'javascript/export': javascriptExport,
+    'javascript/commonJs': javascriptCommonJs,
     'typescript/export-definition': typescriptExportDefinition
   },
   // register custom transformers
@@ -50,13 +54,16 @@ const getStyleDictionaryConfig = (theme, source, include): StyleDictionary.Confi
     'primer/css': ['name/cti/kebab', 'color/hex', 'color/hexAlpha'],
     'primer/json': ['color/hex6', 'color/hexAlpha'],
     'primer/scss': ['name/cti/kebab', 'color/hex6', 'color/hexAlpha'],
-    'primer/ts': ['color/hex6', 'color/hexAlpha'],
+    'primer/ts': ['name/cti/camel', 'color/hex6', 'color/hexAlpha'],
+    'primer/js': ['name/cti/camel', 'color/hex6', 'color/hexAlpha'],
+
   },
   platforms: {
     css: platformCss(`${theme}.css`, PREFIX, BUILD_PATH),
     docJson: platformDocJson(`${theme}.json`, PREFIX, BUILD_PATH),
     scss: platformScss(`${theme}.scss`, PREFIX, BUILD_PATH),
     ts: platformTs(`${theme}.ts`, undefined, BUILD_PATH),
+    js: platformJs(`${theme}.js`, undefined, BUILD_PATH),
   }
 })
 
