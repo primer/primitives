@@ -206,7 +206,7 @@ export default {
     },
   },
 
-  treeViewNode: {
+  treeViewItem: {
     chevron: {
       hoverBg: alpha(get('scale.gray.2'), 0.12),
     }
