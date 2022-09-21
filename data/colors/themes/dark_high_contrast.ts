@@ -226,7 +226,7 @@ const exceptions = {
 
   treeViewNode: {
     chevron: {
-      hoverBg: get('scale.gray.7'),
+      hoverBg: get('scale.gray.6'),
     }
   },
 }
