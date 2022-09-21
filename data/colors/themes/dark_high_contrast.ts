@@ -223,6 +223,12 @@ const exceptions = {
       border: get('scale.blue.5'),
     }
   },
+
+  treeViewItem: {
+    chevron: {
+      hoverBg: get('scale.gray.6'),
+    }
+  },
 }
 
 export default merge(dark, exceptions, {scale})
