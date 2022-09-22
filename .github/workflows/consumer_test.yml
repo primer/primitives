@@ -1,0 +1,60 @@
+name: Consumer test
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+env:
+  TEST_FOLDER: primer-brand
+
+jobs:
+  test:
+    if: ${{ github.repository == 'primer/brand' }}
+    name: Primer Brand
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout current repo
+        uses: actions/checkout@v3
+
+      - name: Checkout Primer Brand repo
+        uses: actions/checkout@v3
+        with:
+          repository: primer/brand
+          path: ${{env.TEST_FOLDER}}
+
+      - name: Set up Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+
+      - name: Caching dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install local dependencies
+        run: npm install --legacy-peer-deps
+
+      - name: Install consumer dependencies (reference)
+        run: pushd ${{env.TEST_FOLDER}}; npm install --legacy-peer-deps; popd
+
+      - name: Build and pack
+        run: npm pack
+
+      - name: Retrieving package version
+        id: package-version
+        uses: martinbeentjes/npm-get-version-action@main
+
+      - name: Installing local build
+        run: |
+          cd ${{env.TEST_FOLDER}} 
+          cp ../primer-primitives-${{ steps.package-version.outputs.current-version}}.tgz ./
+          npm install primer-primitives-${{ steps.package-version.outputs.current-version}}.tgz
+
+      - name: Build consumer tokens
+        run: pushd ${{env.TEST_FOLDER}}; npm run build:tokens; popd
