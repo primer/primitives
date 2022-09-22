@@ -11,7 +11,7 @@ env:
 
 jobs:
   test:
-    if: ${{ github.repository == 'primer/brand' }}
+    if: ${{ github.repository == 'primer/primitives' }}
     name: Primer Brand
     runs-on: ubuntu-latest
     steps:
