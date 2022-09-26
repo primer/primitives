@@ -1,8 +1,9 @@
 import StyleDictionary from 'style-dictionary'
+import { BuildPaths } from '../../@types/buildPaths'
 
-export const platformScss = (outputFile: string, prefix: string, buildPath: string): StyleDictionary.Platform => ({
+export const platformScss = (outputFile: string, prefix: string, buildPath: BuildPaths): StyleDictionary.Platform => ({
   prefix: prefix,
-  buildPath: `${buildPath}/scss/`,
+  buildPath: `${buildPath.dist}/scss/`,
   transformGroup: 'primer/scss',
   files: [
     {
