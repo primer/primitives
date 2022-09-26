@@ -1,25 +1,33 @@
 import StyleDictionary from 'style-dictionary'
-import { BuildPaths } from '../../@types/buildPaths'
+import { PlatformInitializer } from '../../@types/PlatformInitializer'
 
-export const platformCss = (outputFile: string, prefix: string, buildPath: BuildPaths): StyleDictionary.Platform => ({
+export const platformCss: PlatformInitializer = (outputFile, prefix, buildPath): StyleDictionary.Platform => ({
   prefix: prefix,
-  buildPath: `${buildPath.dist}/css/`,
+  buildPath: `${buildPath}/css/`,
   transformGroup: 'primer/css',
   files: [
+    // {
+    //   destination: `${buildPath.dirs.color}/${outputFile}`,
+    //   format: `css/variables`,
+    //   filter: 'isColor',
+    //   options: {
+    //     outputReferences: false,
+    //   }
+    // },
+    // {
+    //   destination: `${buildPath.dirs.size}/${outputFile}`,
+    //   format: `css/variables`,
+    //   filter: 'isDimension',
+    //   options: {
+    //     outputReferences: true,
+    //   }
+    // },
     {
-      destination: `${buildPath.dirs.color}/${outputFile}`,
+      destination: `${outputFile}`,
       format: `css/variables`,
-      filter: 'isColor',
+      filter: 'isSource',
       options: {
         outputReferences: false,
-      }
-    },
-    {
-      destination: `${buildPath.dirs.size}/${outputFile}`,
-      format: `css/variables`,
-      filter: 'isSize',
-      options: {
-        outputReferences: true,
       }
     }
   ]

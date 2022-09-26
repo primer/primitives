@@ -1,9 +1,9 @@
 import StyleDictionary from 'style-dictionary'
-import { BuildPaths } from '../../@types/buildPaths'
+import { PlatformInitializer } from '../../@types/PlatformInitializer'
 
-export const platformDocJson = (outputFile: string, prefix: string, buildPath: BuildPaths): StyleDictionary.Platform => ({
+export const platformDocJson: PlatformInitializer = (outputFile, prefix, buildPath): StyleDictionary.Platform => ({
   prefix: prefix,
-  buildPath: `${buildPath.dist}/docs/`,
+  buildPath: `${buildPath}/docs/`,
   transformGroup: 'primer/json',
   files: [
     {
