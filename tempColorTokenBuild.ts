@@ -17,17 +17,25 @@ import { javascriptExport } from './config/formats/javascript-export';
 import { typescriptExportDefinition } from './config/formats/typescript-export-defition';
 import { isSource } from './config/filters/isSource';
 
+const buildPaths: BuildPaths = {
+  dist: 'tokens-v2-private',
+  dirs: {
+    color: 'color',
+    size: 'size',
+    typography: 'typography',
+  }
+}
+const prefix = 'primer'
 
-const BUILD_PATH = 'tokens-v2-private/tempNewTokens'
-const PREFIX = 'primer'
 const themes = [
   ['light', [`tokens/functional/color/primitives-light.json`], [`tokens/base/color/light.json`]],
   ['light-colorblind', [`tokens/functional/color/primitives-light.json`], [`tokens/base/color/light.json`, `tokens/base/color/light-colorblind_extends-light.json`]],
   ['dark', [`tokens/functional/color/primitives-dark.json`], [`tokens/base/color/dark.json`]],
   ['dark-dimmed', [`tokens/functional/color/primitives-dark.json`], [`tokens/base/color/dark.json`, `tokens/base/color/dark-dimmed.json`]]
 ]
+
 const copyFilesAndFolders: [filesOrFolders: string[], source: string, destination: string][] = [
-  [[`deprecated`, `removed`], `tokens`, `${BUILD_PATH}`]
+  [[`deprecated`, `removed`], `tokens`, buildPaths.dist]
 ]
 
 const getStyleDictionaryConfig = (theme, source, include): StyleDictionary.Config => ({
@@ -59,11 +67,11 @@ const getStyleDictionaryConfig = (theme, source, include): StyleDictionary.Confi
 
   },
   platforms: {
-    css: platformCss(`${theme}.css`, PREFIX, BUILD_PATH),
-    docJson: platformDocJson(`${theme}.json`, PREFIX, BUILD_PATH),
-    scss: platformScss(`${theme}.scss`, PREFIX, BUILD_PATH),
-    ts: platformTs(`${theme}.ts`, undefined, BUILD_PATH),
-    js: platformJs(`${theme}.js`, undefined, BUILD_PATH),
+    css: platformCss(`${theme}.css`, prefix, buildPaths),
+    docJson: platformDocJson(`${theme}.json`, prefix, buildPaths),
+    scss: platformScss(`${theme}.scss`, prefix, buildPaths),
+    ts: platformTs(`${theme}.ts`, undefined, buildPaths),
+    js: platformJs(`${theme}.js`, undefined, buildPaths),
   }
 })
 

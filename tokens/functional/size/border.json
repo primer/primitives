@@ -2,38 +2,48 @@
   "<namespace>": {
     "borderInset": {
       "thin": {
-        "value": "inset 0 0 0 {<namespace>.borderWidth.thin}"
+        "value": "inset 0 0 0 {<namespace>.borderWidth.thin}",
+        "$type": "size"
       },
       "thick": {
-        "value": "inset 0 0 0 {<namespace>.borderWidth.thick}"
+        "value": "inset 0 0 0 {<namespace>.borderWidth.thick}",
+        "$type": "size"
       },
       "thicker": {
-        "value": "inset 0 0 0 {<namespace>.borderWidth.thicker}"
+        "value": "inset 0 0 0 {<namespace>.borderWidth.thicker}",
+        "$type": "size"
       }
     },
     "borderWidth": {
       "thin": {
-        "value": "max(1px, 0.0625rem)"
+        "value": "max(1px, 0.0625rem)",
+        "$type": "size"
       },
       "thick": {
-        "value": "max(2px, 0.125rem)"
+        "value": "max(2px, 0.125rem)",
+        "$type": "size"
       },
       "thicker": {
-        "value": "max(4px, 0.25rem)"
+        "value": "max(4px, 0.25rem)",
+        "$type": "size"
       }
     },
     "borderRadius": {
       "small": {
-        "value": "3px"
+        "value": "3px",
+        "$type": "size"
       },
       "medium": {
-        "value": "6px"
+        "value": "6px",
+        "$type": "size"
       },
       "large": {
-        "value": "12px"
+        "value": "12px",
+        "$type": "size"
       },
       "full": {
-        "value": "100vh"
+        "value": "100vh",
+        "$type": "size"
       }
     }
   }
