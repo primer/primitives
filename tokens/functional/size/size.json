@@ -2,190 +2,190 @@
   "control": {
     "minTarget": {
       "fine": {
-        "value": "{base.size.16}",
-        "$type": "size"
+        "$value": "{base.size.16}",
+        "$type": "dimension"
       },
       "coarse": {
-        "value": "{base.size.44}",
-        "$type": "size"
+        "$value": "{base.size.44}",
+        "$type": "dimension"
       }
     },
     "xsmall": {
       "size": {
-        "value": "{base.size.24}",
-        "$type": "size"
+        "$value": "{base.size.24}",
+        "$type": "dimension"
       },
       "lineBoxHeight": {
-        "value": "{base.size.20}",
-        "$type": "size"
+        "$value": "{base.size.20}",
+        "$type": "dimension"
       },
       "paddingBlock": {
-        "value": "calc(({control.xsmall.size} - {control.xsmall.lineBoxHeight}) / 2)",
-        "$type": "size"
+        "$value": "calc(({control.xsmall.size} - {control.xsmall.lineBoxHeight}) / 2)",
+        "$type": "dimension"
       },
       "paddingInline": {
         "condensed": {
-          "value": "{base.size.4}",
-          "$type": "size"
+          "$value": "{base.size.4}",
+          "$type": "dimension"
         },
         "normal": {
-          "value": "{base.size.8}",
-          "$type": "size"
+          "$value": "{base.size.8}",
+          "$type": "dimension"
         },
         "spacious": {
-          "value": "{base.size.12}",
-          "$type": "size"
+          "$value": "{base.size.12}",
+          "$type": "dimension"
         }
       },
       "gap": {
-        "value": "{base.size.4}",
-        "$type": "size"
+        "$value": "{base.size.4}",
+        "$type": "dimension"
       }
     },
     "small": {
       "size": {
-        "value": "{base.size.28}",
-        "$type": "size"
+        "$value": "{base.size.28}",
+        "$type": "dimension"
       },
       "lineBoxHeight": {
-        "value": "{base.size.20}",
-        "$type": "size"
+        "$value": "{base.size.20}",
+        "$type": "dimension"
       },
       "paddingBlock": {
-        "value": "calc(({control.small.size} - {control.small.lineBoxHeight}) / 2)",
-        "$type": "size"
+        "$value": "calc(({control.small.size} - {control.small.lineBoxHeight}) / 2)",
+        "$type": "dimension"
       },
       "paddingInline": {
         "condensed": {
-          "value": "{base.size.8}",
-          "$type": "size"
+          "$value": "{base.size.8}",
+          "$type": "dimension"
         },
         "normal": {
-          "value": "{base.size.12}",
-          "$type": "size"
+          "$value": "{base.size.12}",
+          "$type": "dimension"
         }
       },
       "gap": {
-        "value": "{base.size.4}",
-        "$type": "size"
+        "$value": "{base.size.4}",
+        "$type": "dimension"
       }
     },
     "medium": {
       "size": {
-        "value": "{base.size.32}",
-        "$type": "size"
+        "$value": "{base.size.32}",
+        "$type": "dimension"
       },
       "lineBoxHeight": {
-        "value": "{base.size.20}",
-        "$type": "size"
+        "$value": "{base.size.20}",
+        "$type": "dimension"
       },
       "paddingBlock": {
-        "value": "calc(({control.medium.size} - {control.medium.lineBoxHeight}) / 2)",
-        "$type": "size"
+        "$value": "calc(({control.medium.size} - {control.medium.lineBoxHeight}) / 2)",
+        "$type": "dimension"
       },
       "paddingInline": {
         "condensed": {
-          "value": "{base.size.8}",
-          "$type": "size"
+          "$value": "{base.size.8}",
+          "$type": "dimension"
         },
         "normal": {
-          "value": "{base.size.12}",
-          "$type": "size"
+          "$value": "{base.size.12}",
+          "$type": "dimension"
         },
         "spacious": {
-          "value": "{base.size.16}",
-          "$type": "size"
+          "$value": "{base.size.16}",
+          "$type": "dimension"
         }
       },
       "gap": {
-        "value": "{base.size.8}",
-        "$type": "size"
+        "$value": "{base.size.8}",
+        "$type": "dimension"
       }
     },
     "large": {
       "size": {
-        "value": "{base.size.40}",
-        "$type": "size"
+        "$value": "{base.size.40}",
+        "$type": "dimension"
       },
       "lineBoxHeight": {
-        "value": "{base.size.20}",
-        "$type": "size"
+        "$value": "{base.size.20}",
+        "$type": "dimension"
       },
       "paddingBlock": {
-        "value": "calc(({control.large.size} - {control.large.lineBoxHeight}) / 2)",
-        "$type": "size"
+        "$value": "calc(({control.large.size} - {control.large.lineBoxHeight}) / 2)",
+        "$type": "dimension"
       },
       "paddingInline": {
         "normal": {
-          "value": "{base.size.12}",
-          "$type": "size"
+          "$value": "{base.size.12}",
+          "$type": "dimension"
         },
         "spacious": {
-          "value": "{base.size.16}",
-          "$type": "size"
+          "$value": "{base.size.16}",
+          "$type": "dimension"
         }
       },
       "gap": {
-        "value": "{base.size.8}",
-        "$type": "size"
+        "$value": "{base.size.8}",
+        "$type": "dimension"
       }
     },
     "xlarge": {
       "size": {
-        "value": "{base.size.48}",
-        "$type": "size"
+        "$value": "{base.size.48}",
+        "$type": "dimension"
       },
       "lineBoxHeight": {
-        "value": "{base.size.20}",
-        "$type": "size"
+        "$value": "{base.size.20}",
+        "$type": "dimension"
       },
       "paddingBlock": {
-        "value": "calc(({control.xlarge.size} - {control.xlarge.lineBoxHeight}) / 2)",
-        "$type": "size"
+        "$value": "calc(({control.xlarge.size} - {control.xlarge.lineBoxHeight}) / 2)",
+        "$type": "dimension"
       },
       "paddingInline": {
         "normal": {
-          "value": "{base.size.12}",
-          "$type": "size"
+          "$value": "{base.size.12}",
+          "$type": "dimension"
         },
         "spacious": {
-          "value": "{base.size.16}",
-          "$type": "size"
+          "$value": "{base.size.16}",
+          "$type": "dimension"
         }
       },
       "gap": {
-        "value": "{base.size.8}",
-        "$type": "size"
+        "$value": "{base.size.8}",
+        "$type": "dimension"
       }
     }
   },
   "stack": {
     "padding": {
       "condensed": {
-        "value": "{base.size.8}",
-        "$type": "size"
+        "$value": "{base.size.8}",
+        "$type": "dimension"
       },
       "normal": {
-        "value": "{base.size.16}",
-        "$type": "size"
+        "$value": "{base.size.16}",
+        "$type": "dimension"
       },
       "spacious": {
-        "value": "{base.size.24}",
-        "$type": "size"
+        "$value": "{base.size.24}",
+        "$type": "dimension"
       }
     },
     "gap": {
       "condensed": {
-        "value": "{base.size.8}",
-        "$type": "size"
+        "$value": "{base.size.8}",
+        "$type": "dimension"
       },
       "normal": {
-        "value": "{base.size.16}",
-        "$type": "size"
+        "$value": "{base.size.16}",
+        "$type": "dimension"
       },
       "spacious": {
-        "value": "{base.size.24}",
-        "$type": "size"
+        "$value": "{base.size.24}",
+        "$type": "dimension"
       }
     }
   },
@@ -193,40 +193,40 @@
     "small": {
       "gap": {
         "condensed": {
-          "value": "{base.size.8}",
-          "$type": "size"
+          "$value": "{base.size.8}",
+          "$type": "dimension"
         },
         "spacious": {
-          "value": "{base.size.16}",
-          "$type": "size"
+          "$value": "{base.size.16}",
+          "$type": "dimension"
         }
       }
     },
     "medium": {
       "gap": {
         "condensed": {
-          "value": "{base.size.8}",
-          "$type": "size"
+          "$value": "{base.size.8}",
+          "$type": "dimension"
         },
         "spacious": {
-          "value": "{base.size.12}",
-          "$type": "size"
+          "$value": "{base.size.12}",
+          "$type": "dimension"
         }
       }
     },
     "large": {
       "gap": {
         "auto": {
-          "value": "{base.size.8}",
-          "$type": "size"
+          "$value": "{base.size.8}",
+          "$type": "dimension"
         },
         "condensed": {
-          "value": "{base.size.8}",
-          "$type": "size"
+          "$value": "{base.size.8}",
+          "$type": "dimension"
         },
         "spacious": {
-          "value": "{base.size.12}",
-          "$type": "size"
+          "$value": "{base.size.12}",
+          "$type": "dimension"
         }
       }
     }
