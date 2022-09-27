@@ -16,33 +16,40 @@
   "borderWidth": {
     "thin": {
       "$value": "max(1px, 0.0625rem)",
-      "$type": "dimension"
+      "$type": "dimension",
+      "figmaType": "borderWidth"
     },
     "thick": {
       "$value": "max(2px, 0.125rem)",
-      "$type": "dimension"
+      "$type": "dimension",
+      "figmaType": "borderWidth"
     },
     "thicker": {
       "$value": "max(4px, 0.25rem)",
-      "$type": "dimension"
+      "$type": "dimension",
+      "figmaType": "borderWidth"
     }
   },
   "borderRadius": {
     "small": {
       "$value": "3px",
-      "$type": "dimension"
+      "$type": "dimension",
+      "figmaType": "borderRadius"
     },
     "medium": {
       "$value": "6px",
-      "$type": "dimension"
+      "$type": "dimension",
+      "figmaType": "borderRadius"
     },
     "large": {
       "$value": "12px",
-      "$type": "dimension"
+      "$type": "dimension",
+      "figmaType": "borderRadius"
     },
     "full": {
       "$value": "100vh",
-      "$type": "dimension"
+      "$type": "dimension",
+      "figmaType": "borderRadius"
     }
   }
 }

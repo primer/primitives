@@ -10,16 +10,18 @@ import { platformTs } from './config/platforms/typescript';
 import { colorToHexAlpha } from './config/tranformers/color-to-hex-alpha';
 import { colorToRgbAlpha } from "./config/tranformers/color-to-rgb-alpha";
 import { colorToHex6 } from "./config/tranformers/color-to-hex6";
+import { jsonDeprecated } from './config/tranformers/json-deprecated';
 import { scssMixinCssVariables } from './config/formats/scss-mixin-css-variables';
 import { scssMixinScssVariables } from './config/formats/scss-mixin-scss-variables';
 import { javascriptCommonJs } from './config/formats/javascript-commonJs';
 import { javascriptExport } from './config/formats/javascript-export';
 import { typescriptExportDefinition } from './config/formats/typescript-export-defition';
+import { jsonFigma } from './config/formats/json-figma';
 import { getInputFiles } from './config/utilities/getInputFiles';
 import { typopgraphyCssFontFamily } from './config/tranformers/typopgraphy-css-font-family';
 import { typopgraphyCssShorthand } from './config/tranformers/typopgraphy-css-shorthand';
 import { platformDeprecatedJson } from './config/platforms/deprecatedJson';
-import { jsonDeprecated } from './config/tranformers/json-deprecated';
+import { platformFigmaJson } from './config/platforms/figmaJson';
 
 const buildPath = 'tokens-v2-private'
 const inputPath = 'tokens'
@@ -54,7 +56,7 @@ const getStyleDictionaryConfig = (outputName, source, include): StyleDictionary.
     'color/hexAlpha': colorToHexAlpha,
     'color/hex6': colorToHex6,
     'css/fontFamily': typopgraphyCssFontFamily,
-    'css/fontShorthand': typopgraphyCssShorthand
+    'css/fontShorthand': typopgraphyCssShorthand,
   },
   platforms: {
     css: platformCss(`${outputName}.css`, prefix, buildPath),
@@ -119,3 +121,35 @@ const deprecatedConfig = {
 StyleDictionary
   .extend(deprecatedConfig)
   .buildAllPlatforms()
+
+/**
+ * build figma.json
+ */
+// get config
+const figmaConfig = (outputName, source, include, buildPath) => ({
+  source,
+  include,
+  parsers: [w3cJsonParser],
+  transform: {
+    'color/hexAlpha': colorToHexAlpha,
+    'color/hex6': colorToHex6,
+  },
+  format: {
+    'json/figma': jsonFigma 
+  },
+  platforms: { 
+    figma: platformFigmaJson(`${outputName}.json`, undefined, buildPath),
+  }
+})
+
+const figmaBuilds = [
+  ...themes,
+  ['size', [`${inputPath}/${functionalDir}/size/*.json`], [`${inputPath}/${baseDir}/size/*.json`]],
+  ['typography', [`${inputPath}/${functionalDir}/typography/*.json`], [`${inputPath}/${baseDir}/typography/*.json`]],
+]
+for (const [name, source, include] of figmaBuilds) {
+  //
+  StyleDictionary
+  .extend(figmaConfig(name, source, include, buildPath))
+  .buildAllPlatforms()
+}
