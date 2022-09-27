@@ -21,8 +21,10 @@ import { isColor } from './config/filters/isColor';
 import { getInputFiles } from './config/utilities/getInputFiles';
 import { typopgraphyCssFontFamily } from './config/tranformers/typopgraphy-css-font-family';
 import { typopgraphyCssShorthand } from './config/tranformers/typopgraphy-css-shorthand';
+import { platformDeprecatedJson } from './config/platforms/deprecatedJson';
+import { jsonDeprecated } from './config/tranformers/json-deprecated';
 
-const buildPaths = 'tokens-v2-private'
+const buildPath = 'tokens-v2-private'
 const inputPath = 'tokens'
 const prefix = 'primer'
 
@@ -34,7 +36,7 @@ const themes = [
 ]
 
 const filesAndFoldersToCopy: [filesOrFolders: string[], source: string, destination: string][] = [
-  [[`deprecated`, `removed`], `tokens`, buildPaths]
+  [[`removed`], `tokens`, buildPath]
 ]
 
 const getStyleDictionaryConfig = (outputName, source, include): StyleDictionary.Config => ({
@@ -53,13 +55,12 @@ const getStyleDictionaryConfig = (outputName, source, include): StyleDictionary.
     'javascript/commonJs': javascriptCommonJs,
     'typescript/export-definition': typescriptExportDefinition
   },
-  // register custom transformers
   transform: {
     'color/rgbAlpha': colorToRgbAlpha,
     'color/hexAlpha': colorToHexAlpha,
     'color/hex6': colorToHex6,
     'css/fontFamily': typopgraphyCssFontFamily,
-    'css/fontShorthand': typopgraphyCssShorthand 
+    'css/fontShorthand': typopgraphyCssShorthand
   },
   transformGroup: {
     'primer/css': ['name/cti/kebab', 'color/hex', 'color/rgbAlpha', 'css/fontFamily', 'css/fontShorthand'],
@@ -70,11 +71,11 @@ const getStyleDictionaryConfig = (outputName, source, include): StyleDictionary.
 
   },
   platforms: {
-    css: platformCss(`${outputName}.css`, prefix, buildPaths),
-    docJson: platformDocJson(`${outputName}.json`, prefix, buildPaths),
-    scss: platformScss(`${outputName}.scss`, prefix, buildPaths),
-    ts: platformTs(`${outputName}.ts`, undefined, buildPaths),
-    js: platformJs(`${outputName}.js`, undefined, buildPaths),
+    css: platformCss(`${outputName}.css`, prefix, buildPath),
+    docJson: platformDocJson(`${outputName}.json`, prefix, buildPath),
+    scss: platformScss(`${outputName}.scss`, prefix, buildPath),
+    ts: platformTs(`${outputName}.ts`, undefined, buildPath),
+    js: platformJs(`${outputName}.js`, undefined, buildPath),
   }
 })
 
@@ -91,10 +92,13 @@ for (const [theme, source, include] of themes) {
     .extend(getStyleDictionaryConfig(`color/${theme}`, source, include))
     .buildAllPlatforms()
 }
-
+/**
+ * convert typography and size
+ */
 const ignoreDirs = ['color', 'removed', 'deprecated']
 const baseDir = 'base'
 const functionalDir = 'functional'
+
 getInputFiles(inputPath, ignoreDirs, {baseDir, functionalDir}).then(inputFiles => {
   for (const {basename, dir, path} of inputFiles[functionalDir]) {
     StyleDictionary
@@ -102,4 +106,26 @@ getInputFiles(inputPath, ignoreDirs, {baseDir, functionalDir}).then(inputFiles =
       .buildAllPlatforms()
   }
 })
-
+/**
+ * build deprecated.json
+ */
+getInputFiles(inputPath, ignoreDirs, {baseDir, functionalDir}).then(inputFiles => {
+  inputFiles[functionalDir].push({path: `tokens/functional/color/primitives-light.json`})
+  inputFiles[baseDir].push({path: `tokens/base/color/light.json`})
+  // get config
+  const config = {
+    source: inputFiles[functionalDir].map(item => item.path),
+    include: inputFiles[baseDir].map(item => item.path),
+    parsers: [w3cJsonParser],
+    transform: {
+      'json/deprecated': jsonDeprecated
+    },
+    platforms: { 
+      deprecated: platformDeprecatedJson('deprecated.json', prefix, buildPath)
+    }
+  }
+  //
+    StyleDictionary
+      .extend(config)
+      .buildAllPlatforms()
+})
