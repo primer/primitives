@@ -4,7 +4,7 @@ import { PlatformInitializer } from '../../@types/PlatformInitializer'
 export const platformDocJson: PlatformInitializer = (outputFile, prefix, buildPath): StyleDictionary.Platform => ({
   prefix: prefix,
   buildPath: `${buildPath}/docs/`,
-  transformGroup: 'primer/json',
+  transforms: ['color/hex6', 'color/hexAlpha'],
   files: [
     {
       destination: outputFile,

@@ -15,9 +15,6 @@ import { scssMixinScssVariables } from './config/formats/scss-mixin-scss-variabl
 import { javascriptCommonJs } from './config/formats/javascript-commonJs';
 import { javascriptExport } from './config/formats/javascript-export';
 import { typescriptExportDefinition } from './config/formats/typescript-export-defition';
-import { isSource } from './config/filters/isSource';
-import { isDimension } from './config/filters/isDimension';
-import { isColor } from './config/filters/isColor';
 import { getInputFiles } from './config/utilities/getInputFiles';
 import { typopgraphyCssFontFamily } from './config/tranformers/typopgraphy-css-font-family';
 import { typopgraphyCssShorthand } from './config/tranformers/typopgraphy-css-shorthand';
@@ -43,11 +40,7 @@ const getStyleDictionaryConfig = (outputName, source, include): StyleDictionary.
   source: source, // build the special formats
   include: include,
   parsers: [w3cJsonParser],
-  filter: {
-    'isSource': isSource,
-    'isDimension': isDimension,
-    'isColor': isColor
-  },
+  // formats need to be defined here but are used in platforms
   format: {
     'scss/mixin-css-variables': scssMixinCssVariables,
     'scss/mixin-scss-variables': scssMixinScssVariables,
@@ -55,20 +48,13 @@ const getStyleDictionaryConfig = (outputName, source, include): StyleDictionary.
     'javascript/commonJs': javascriptCommonJs,
     'typescript/export-definition': typescriptExportDefinition
   },
+  // transforms need to be defined here but are used in platforms
   transform: {
     'color/rgbAlpha': colorToRgbAlpha,
     'color/hexAlpha': colorToHexAlpha,
     'color/hex6': colorToHex6,
     'css/fontFamily': typopgraphyCssFontFamily,
     'css/fontShorthand': typopgraphyCssShorthand
-  },
-  transformGroup: {
-    'primer/css': ['name/cti/kebab', 'color/hex', 'color/rgbAlpha', 'css/fontFamily', 'css/fontShorthand'],
-    'primer/json': ['color/hex6', 'color/hexAlpha'],
-    'primer/scss': ['name/cti/kebab', 'color/hex6', 'color/rgbAlpha', 'css/fontFamily', 'css/fontShorthand'],
-    'primer/ts': ['name/cti/camel', 'color/hex6', 'color/rgbAlpha', 'css/fontFamily', 'css/fontShorthand'],
-    'primer/js': ['name/cti/camel', 'color/hex6', 'color/rgbAlpha', 'css/fontFamily', 'css/fontShorthand'],
-
   },
   platforms: {
     css: platformCss(`${outputName}.css`, prefix, buildPath),
@@ -109,23 +95,27 @@ getInputFiles(inputPath, ignoreDirs, {baseDir, functionalDir}).then(inputFiles =
 /**
  * build deprecated.json
  */
-getInputFiles(inputPath, ignoreDirs, {baseDir, functionalDir}).then(inputFiles => {
-  inputFiles[functionalDir].push({path: `tokens/functional/color/primitives-light.json`})
-  inputFiles[baseDir].push({path: `tokens/base/color/light.json`})
-  // get config
-  const config = {
-    source: inputFiles[functionalDir].map(item => item.path),
-    include: inputFiles[baseDir].map(item => item.path),
-    parsers: [w3cJsonParser],
-    transform: {
-      'json/deprecated': jsonDeprecated
-    },
-    platforms: { 
-      deprecated: platformDeprecatedJson('deprecated.json', prefix, buildPath)
-    }
+// get config
+const deprecatedConfig = {
+  source: [
+    `${inputPath}/${functionalDir}/typography/*.json`, 
+    `${inputPath}/${functionalDir}/size/*.json`, 
+    `${inputPath}/${functionalDir}/color/primitives-light.json`
+  ],
+  include: [
+    `${inputPath}/${baseDir}/typography/*.json`, 
+    `${inputPath}/${baseDir}/size/*.json`, 
+    `${inputPath}/${baseDir}/color/light.json`
+  ],
+  parsers: [w3cJsonParser],
+  transform: {
+    'json/deprecated': jsonDeprecated
+  },
+  platforms: { 
+    deprecated: platformDeprecatedJson('deprecated.json', prefix, buildPath)
   }
-  //
-    StyleDictionary
-      .extend(config)
-      .buildAllPlatforms()
-})
+}
+//
+StyleDictionary
+  .extend(deprecatedConfig)
+  .buildAllPlatforms()

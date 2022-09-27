@@ -1,10 +1,11 @@
 import StyleDictionary from 'style-dictionary'
 import { PlatformInitializer } from '../../@types/PlatformInitializer'
+import { isSource } from '../filters/isSource'
 
 export const platformCss: PlatformInitializer = (outputFile, prefix, buildPath): StyleDictionary.Platform => ({
   prefix: prefix,
   buildPath: `${buildPath}/css/`,
-  transformGroup: 'primer/css',
+  transforms: ['name/cti/kebab', 'color/hex', 'color/rgbAlpha', 'css/fontFamily', 'css/fontShorthand'],
   files: [
     // {
     //   destination: `${buildPath.dirs.color}/${outputFile}`,
@@ -25,7 +26,7 @@ export const platformCss: PlatformInitializer = (outputFile, prefix, buildPath):
     {
       destination: `${outputFile}`,
       format: `css/variables`,
-      filter: 'isSource',
+      filter: isSource,
       options: {
         outputReferences: false,
       }

@@ -1,20 +1,21 @@
 import StyleDictionary from 'style-dictionary'
 import { PlatformInitializer } from '../../@types/PlatformInitializer'
+import { isSource } from '../filters/isSource'
 
 export const platformTs: PlatformInitializer = (outputFile, prefix, buildPath): StyleDictionary.Platform => ({
   prefix: prefix,
   buildPath: `${buildPath}/ts/`,
-  transformGroup: 'primer/ts',
+  transforms: ['name/cti/camel', 'color/hex6', 'color/rgbAlpha', 'css/fontFamily', 'css/fontShorthand'],
   files: [
     {
       format: "javascript/export",
       destination: outputFile,
-      filter: 'isSource'
+      filter: isSource
     },
     {
       format: "typescript/export-definition",
       destination: `${outputFile.replace('.ts', '.d.ts')}`,
-      filter: 'isSource',
+      filter: isSource,
       options: {
         moduleName: 'DesignTokens',
         tokenTypesPath: './config/types/DesignTokenTypes.d.ts'

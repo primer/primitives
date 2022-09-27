@@ -1,15 +1,16 @@
 import StyleDictionary from 'style-dictionary'
 import { PlatformInitializer } from '../../@types/PlatformInitializer'
+import { isSource } from '../filters/isSource'
 
 export const platformJs: PlatformInitializer = (outputFile, prefix, buildPath): StyleDictionary.Platform => ({
   prefix: prefix,
   buildPath: `${buildPath}/js/`,
-  transformGroup: 'primer/js',
+  transforms: ['name/cti/camel', 'color/hex6', 'color/rgbAlpha', 'css/fontFamily', 'css/fontShorthand'],
   files: [
     {
       format: "javascript/commonJs",
       destination: outputFile,
-      filter: 'isSource'
+      filter: isSource
     },
   ]
 })
