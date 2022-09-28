@@ -7,6 +7,8 @@ import { platformDocJson } from './config/platforms/docJson';
 import { platformScss } from './config/platforms/scss';
 import { platformJs } from './config/platforms/javascript';
 import { platformTs } from './config/platforms/typescript';
+import { platformDeprecatedJson } from './config/platforms/deprecatedJson';
+import { platformFigmaJson } from './config/platforms/figmaJson';
 import { colorToHexAlpha } from './config/tranformers/color-to-hex-alpha';
 import { colorToRgbAlpha } from "./config/tranformers/color-to-rgb-alpha";
 import { colorToHex6 } from "./config/tranformers/color-to-hex6";
@@ -20,8 +22,7 @@ import { jsonFigma } from './config/formats/json-figma';
 import { getInputFiles } from './config/utilities/getInputFiles';
 import { typopgraphyCssFontFamily } from './config/tranformers/typopgraphy-css-font-family';
 import { typopgraphyCssShorthand } from './config/tranformers/typopgraphy-css-shorthand';
-import { platformDeprecatedJson } from './config/platforms/deprecatedJson';
-import { platformFigmaJson } from './config/platforms/figmaJson';
+import { platformJson } from './config/platforms/json';
 
 const buildPath = 'tokens-v2-private'
 const inputPath = 'tokens'
@@ -64,6 +65,7 @@ const getStyleDictionaryConfig = (outputName, source, include): StyleDictionary.
     scss: platformScss(`${outputName}.scss`, prefix, buildPath),
     ts: platformTs(`${outputName}.ts`, undefined, buildPath),
     js: platformJs(`${outputName}.js`, undefined, buildPath),
+    json: platformJson(`${outputName}.json`, undefined, buildPath),
   }
 })
 
