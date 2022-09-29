@@ -24,6 +24,7 @@ import { typopgraphyCssFontFamily } from './config/tranformers/typopgraphy-css-f
 import { typopgraphyCssShorthand } from './config/tranformers/typopgraphy-css-shorthand';
 import { platformJson } from './config/platforms/json';
 import { typographyFontWeightToNumber } from './config/tranformers/typopgraphy-fontWeightToNumber';
+import { dimensionPixelToRem } from './config/tranformers/dimension-pixel-to-rem';
 
 const buildPath = 'tokens-v2-private'
 const inputPath = 'tokens'
@@ -60,14 +61,15 @@ const getStyleDictionaryConfig = (outputName, source, include): StyleDictionary.
     'css/fontFamily': typopgraphyCssFontFamily,
     'css/fontShorthand': typopgraphyCssShorthand,
     'fontWeight/toNumber': typographyFontWeightToNumber,
+    'dimension/pixelToRem': dimensionPixelToRem
   },
   platforms: {
     css: platformCss(`${outputName}.css`, prefix, buildPath),
-    docJson: platformDocJson(`${outputName}.json`, prefix, buildPath),
-    scss: platformScss(`${outputName}.scss`, prefix, buildPath),
-    ts: platformTs(`${outputName}.ts`, undefined, buildPath),
-    js: platformJs(`${outputName}.js`, undefined, buildPath),
-    json: platformJson(`${outputName}.json`, undefined, buildPath),
+    // docJson: platformDocJson(`${outputName}.json`, prefix, buildPath),
+    // scss: platformScss(`${outputName}.scss`, prefix, buildPath),
+    // ts: platformTs(`${outputName}.ts`, undefined, buildPath),
+    // js: platformJs(`${outputName}.js`, undefined, buildPath),
+    // json: platformJson(`${outputName}.json`, undefined, buildPath),
   }
 })
 

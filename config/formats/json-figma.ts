@@ -8,7 +8,6 @@ const getFigmaType = (value: {
   $type: string,
   figmaType?: string
 }): string => {
-  console.log(value)
   if (value.figmaType) return value.figmaType
   return value.$type
 }
