@@ -209,6 +209,9 @@ export default {
   treeViewItem: {
     chevron: {
       hoverBg: alpha(get('scale.gray.2'), 0.12),
+    },
+    folder: {
+      fill: '#4579CA'
     }
   },
 }
