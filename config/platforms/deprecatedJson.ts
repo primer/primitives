@@ -5,7 +5,7 @@ import { isDeprecated } from '../filters/isDeprecated'
 export const platformDeprecatedJson: PlatformInitializer = (outputFile, prefix, buildPath): StyleDictionary.Platform => ({
   prefix: prefix,
   buildPath: `${buildPath}/deprecated/`,
-  transforms: ['json/deprecated'],
+  transforms: ['name/pathToDotNotation','json/deprecated'],
   files: [
     {
       destination: outputFile,

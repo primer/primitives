@@ -25,6 +25,7 @@ import { typopgraphyCssShorthand } from './config/tranformers/typopgraphy-css-sh
 import { platformJson } from './config/platforms/json';
 import { typographyFontWeightToNumber } from './config/tranformers/typopgraphy-fontWeightToNumber';
 import { dimensionPixelToRem } from './config/tranformers/dimension-pixel-to-rem';
+import { namePathToDotNotation } from './config/tranformers/name-path-to-dot-notation';
 
 const buildPath = 'tokens-v2-private'
 const inputPath = 'tokens'
@@ -35,10 +36,6 @@ const themes = [
   ['light-colorblind', [`tokens/functional/color/primitives-light.json`], [`tokens/base/color/light.json`, `tokens/base/color/light-colorblind_extends-light.json`]],
   ['dark', [`tokens/functional/color/primitives-dark.json`], [`tokens/base/color/dark.json`]],
   ['dark-dimmed', [`tokens/functional/color/primitives-dark.json`], [`tokens/base/color/dark.json`, `tokens/base/color/dark-dimmed.json`]]
-]
-
-const filesAndFoldersToCopy: [filesOrFolders: string[], source: string, destination: string][] = [
-  [[`removed`], `tokens`, buildPath]
 ]
 
 const getStyleDictionaryConfig = (outputName, source, include): StyleDictionary.Config => ({
@@ -65,18 +62,18 @@ const getStyleDictionaryConfig = (outputName, source, include): StyleDictionary.
   },
   platforms: {
     css: platformCss(`${outputName}.css`, prefix, buildPath),
-    // docJson: platformDocJson(`${outputName}.json`, prefix, buildPath),
-    // scss: platformScss(`${outputName}.scss`, prefix, buildPath),
-    // ts: platformTs(`${outputName}.ts`, undefined, buildPath),
-    // js: platformJs(`${outputName}.js`, undefined, buildPath),
-    // json: platformJson(`${outputName}.json`, undefined, buildPath),
+    docJson: platformDocJson(`${outputName}.json`, prefix, buildPath),
+    scss: platformScss(`${outputName}.scss`, prefix, buildPath),
+    ts: platformTs(`${outputName}.ts`, undefined, buildPath),
+    js: platformJs(`${outputName}.js`, undefined, buildPath),
+    json: platformJson(`${outputName}.json`, undefined, buildPath),
   }
 })
 
 /**
- * Copy removed & deprecated files
+ * Copy `removed` files
  */
-copyFilesAndFolders(filesAndFoldersToCopy)
+copyFilesAndFolders([[`removed`], `tokens`, buildPath])
 
 /**
  * convert colors
@@ -103,30 +100,31 @@ getInputFiles(inputPath, ignoreDirs, {baseDir, functionalDir}).then(inputFiles =
 /**
  * build deprecated.json
  */
+ const deprecatedBuilds = [
+  themes[0], // light mode
+  ['size', [`${inputPath}/${functionalDir}/size/*.json`], [`${inputPath}/${baseDir}/size/*.json`]],
+  ['typography', [`${inputPath}/${functionalDir}/typography/*.json`], [`${inputPath}/${baseDir}/typography/*.json`]],
+]
 // get config
-const deprecatedConfig = {
-  source: [
-    `${inputPath}/${functionalDir}/typography/*.json`, 
-    `${inputPath}/${functionalDir}/size/*.json`, 
-    `${inputPath}/${functionalDir}/color/primitives-light.json`
-  ],
-  include: [
-    `${inputPath}/${baseDir}/typography/*.json`, 
-    `${inputPath}/${baseDir}/size/*.json`, 
-    `${inputPath}/${baseDir}/color/light.json`
-  ],
+const deprecatedConfig = (outputName, source, include, buildPath) => ({
+  source,
+  include,
   parsers: [w3cJsonParser],
   transform: {
-    'json/deprecated': jsonDeprecated
+    'json/deprecated': jsonDeprecated,
+    'name/pathToDotNotation': namePathToDotNotation
   },
   platforms: { 
-    deprecated: platformDeprecatedJson('deprecated.json', prefix, buildPath)
+    deprecated: platformDeprecatedJson(`${outputName}.json`, prefix, buildPath)
   }
-}
+})
 //
-StyleDictionary
-  .extend(deprecatedConfig)
+for (const [name, source, include] of deprecatedBuilds) {
+  //
+  StyleDictionary
+  .extend(deprecatedConfig(name, source, include, buildPath))
   .buildAllPlatforms()
+}
 
 /**
  * build figma.json
