@@ -33,7 +33,9 @@ const prefix = 'primer'
 
 const themes = [
   ['light', [`tokens/functional/color/primitives-light.json`], [`tokens/base/color/light.json`]],
-  ['light-colorblind', [`tokens/functional/color/primitives-light.json`], [`tokens/base/color/light.json`, `tokens/base/color/light-colorblind_extends-light.json`]],
+  ['light-tritanopia', [`tokens/functional/color/primitives-light.json`], [`tokens/base/color/light.json`, `tokens/base/color/light-tritanopia.json`]],
+  ['light-colorblind', [`tokens/functional/color/primitives-light.json`], [`tokens/base/color/light.json`, `tokens/base/color/light-colorblind.json`]],
+  ['light-high-contrast', [`tokens/functional/color/primitives-light.json`, `tokens/functional/color/primitives-light-high-contrast.json`], [`tokens/base/color/light.json`, `tokens/base/color/light-high-contrast.json`]],
   ['dark', [`tokens/functional/color/primitives-dark.json`], [`tokens/base/color/dark.json`]],
   ['dark-dimmed', [`tokens/functional/color/primitives-dark.json`], [`tokens/base/color/dark.json`, `tokens/base/color/dark-dimmed.json`]]
 ]
