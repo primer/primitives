@@ -5,7 +5,7 @@ import { isSource } from '../filters/isSource'
 export const platformJs: PlatformInitializer = (outputFile, prefix, buildPath): StyleDictionary.Platform => ({
   prefix: prefix,
   buildPath: `${buildPath}/js/`,
-  transforms: ['name/cti/camel', 'color/hex6', 'color/rgbAlpha', 'css/fontFamily', 'css/fontShorthand'],
+  transforms: ['name/cti/camel', 'color/hex6', 'color/rgbAlpha', 'css/fontFamily', 'css/fontShorthand', 'fontWeight/toNumber'],
   files: [
     {
       format: "javascript/commonJs",

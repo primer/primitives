@@ -23,6 +23,7 @@ import { getInputFiles } from './config/utilities/getInputFiles';
 import { typopgraphyCssFontFamily } from './config/tranformers/typopgraphy-css-font-family';
 import { typopgraphyCssShorthand } from './config/tranformers/typopgraphy-css-shorthand';
 import { platformJson } from './config/platforms/json';
+import { typographyFontWeightToNumber } from './config/tranformers/typopgraphy-fontWeightToNumber';
 
 const buildPath = 'tokens-v2-private'
 const inputPath = 'tokens'
@@ -58,6 +59,7 @@ const getStyleDictionaryConfig = (outputName, source, include): StyleDictionary.
     'color/hex6': colorToHex6,
     'css/fontFamily': typopgraphyCssFontFamily,
     'css/fontShorthand': typopgraphyCssShorthand,
+    'fontWeight/toNumber': typographyFontWeightToNumber,
   },
   platforms: {
     css: platformCss(`${outputName}.css`, prefix, buildPath),

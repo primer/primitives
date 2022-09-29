@@ -5,7 +5,7 @@ import { isSource } from '../filters/isSource'
 export const platformCss: PlatformInitializer = (outputFile, prefix, buildPath): StyleDictionary.Platform => ({
   prefix: prefix,
   buildPath: `${buildPath}/css/`,
-  transforms: ['name/cti/kebab', 'color/hex', 'color/rgbAlpha', 'css/fontFamily', 'css/fontShorthand'],
+  transforms: ['name/cti/kebab', 'color/hex', 'color/rgbAlpha', 'css/fontFamily', 'css/fontShorthand', 'fontWeight/toNumber'],
   files: [
     // {
     //   destination: `${buildPath.dirs.color}/${outputFile}`,
