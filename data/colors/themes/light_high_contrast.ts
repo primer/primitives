@@ -239,9 +239,6 @@ const exceptions = {
   treeViewItem: {
     chevron: {
       hoverBg: get('scale.gray.2'),
-    },
-    folder: {
-      fill: get('accent.muted')
     }
   },
 }

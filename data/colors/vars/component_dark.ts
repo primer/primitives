@@ -211,7 +211,7 @@ export default {
       hoverBg: alpha(get('scale.gray.2'), 0.12),
     },
     folder: {
-      fill: '#4579CA'
+      fill: get('fg.muted')
     }
   },
 }

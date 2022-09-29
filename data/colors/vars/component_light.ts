@@ -212,7 +212,7 @@ export default {
       hoverBg: alpha(get('scale.gray.2'), 0.32),
     },
     folder: {
-      fill: '#79B8FF'
+      fill: get('scale.blue.3')
     }
   },
 }
