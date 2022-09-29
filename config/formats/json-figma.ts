@@ -13,9 +13,11 @@ const getFigmaType = (value: {
   return value.$type
 }
 
+const hasProp = (object: any, key: string) => Object.prototype.hasOwnProperty.call(object, key)
+
 const replacer = (key: string, value: any): any => {
   // if not token
-  if (typeof value !== 'object' || !value.hasOwnProperty('value')) return value
+  if (typeof value !== 'object' || !hasProp(value, 'value')) return value
   //
   const output: FigmaToken = {
     value: value.value,
