@@ -1,19 +1,47 @@
 {
-  "fg": {
-    "default": {
-      "$value": "{base.color.scale.gray.1}",
-      "$type": "color"
+  "color": {
+    "fg": {
+      "default": {
+        "$value": "{base.color.scale.gray.1}",
+        "$type": "color"
+      },
+      "muted": {
+        "$value": "{base.color.scale.gray.3}",
+        "$type": "color"
+      },
+      "subtle": {
+        "$value": "{base.color.scale.gray.4}",
+        "$type": "color"
+      },
+      "onEmphasis": {
+        "$value": "{base.color.scale.white}",
+        "$type": "color"
+      }
     },
-    "muted": {
-      "$value": "{base.color.scale.gray.3}",
-      "$type": "color"
+    "shadow": {
+      "small": {
+        "$value": "{base.color.scale.black}",
+        "alpha": 0.96,
+        "$type": "color"
+      },
+      "medium": {
+        "$value": "{base.color.scale.gray.4}",
+        "alpha": 0.85,
+        "$type": "color"
+      },
+      "large": {
+        "$value": "{base.color.scale.gray.4}",
+        "alpha": 0.8,
+        "$type": "color"
+      },
+      "extraLarge": {
+        "$value": "{base.color.scale.gray.4}",
+        "alpha": 0.7,
+        "$type": "color"
+      }
     },
-    "subtle": {
-      "$value": "{base.color.scale.gray.4}",
-      "$type": "color"
-    },
-    "onEmphasis": {
-      "$value": "{base.color.scale.white}",
+    "focus": {
+      "$value": "{base.color.scale.blue.5}",
       "$type": "color"
     }
   }

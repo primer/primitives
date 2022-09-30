@@ -26,6 +26,7 @@ import { platformJson } from './config/platforms/json';
 import { typographyFontWeightToNumber } from './config/tranformers/typopgraphy-fontWeightToNumber';
 import { dimensionPixelToRem } from './config/tranformers/dimension-pixel-to-rem';
 import { namePathToDotNotation } from './config/tranformers/name-path-to-dot-notation';
+import { shadowCss } from './config/tranformers/shadow-css';
 
 const buildPath = 'tokens-v2-private'
 const inputPath = 'tokens'
@@ -36,11 +37,11 @@ const themes = [
   ['light-tritanopia', [`tokens/functional/color/primitives-light.json`], [`tokens/base/color/light.json`, `tokens/base/color/light-tritanopia.json`]],
   ['light-colorblind', [`tokens/functional/color/primitives-light.json`], [`tokens/base/color/light.json`, `tokens/base/color/light-colorblind.json`]],
   ['light-high-contrast', [`tokens/functional/color/primitives-light.json`, `tokens/functional/color/primitives-light-high-contrast.json`], [`tokens/base/color/light.json`, `tokens/base/color/light-high-contrast.json`]],
-  ['dark', [`tokens/functional/color/primitives-dark.json`], [`tokens/base/color/dark.json`]],
-  ['dark-dimmed', [`tokens/functional/color/primitives-dark.json`], [`tokens/base/color/dark.json`, `tokens/base/color/dark-dimmed.json`]]
+  // ['dark', [`tokens/functional/color/primitives-dark.json`], [`tokens/base/color/dark.json`]],
+  // ['dark-dimmed', [`tokens/functional/color/primitives-dark.json`], [`tokens/base/color/dark.json`, `tokens/base/color/dark-dimmed.json`]]
 ]
 
-const getStyleDictionaryConfig = (outputName, source, include): StyleDictionary.Config => ({
+const getStyleDictionaryConfig = (outputName, source, include, options?: any = {}): StyleDictionary.Config => ({
   source: source, // build the special formats
   include: include,
   parsers: [w3cJsonParser],
@@ -57,13 +58,14 @@ const getStyleDictionaryConfig = (outputName, source, include): StyleDictionary.
     'color/rgbAlpha': colorToRgbAlpha,
     'color/hexAlpha': colorToHexAlpha,
     'color/hex6': colorToHex6,
-    'css/fontFamily': typopgraphyCssFontFamily,
-    'css/fontShorthand': typopgraphyCssShorthand,
+    'css/fontFamily': typopgraphyCssFontFamily,// invert names to fontFamily/css
+    'css/fontShorthand': typopgraphyCssShorthand, // invert
     'fontWeight/toNumber': typographyFontWeightToNumber,
-    'dimension/pixelToRem': dimensionPixelToRem
+    'dimension/pixelToRem': dimensionPixelToRem,
+    'shadow/css': shadowCss
   },
   platforms: {
-    css: platformCss(`${outputName}.css`, prefix, buildPath),
+    css: platformCss(`${outputName}.css`, prefix, buildPath, options),
     docJson: platformDocJson(`${outputName}.json`, prefix, buildPath),
     scss: platformScss(`${outputName}.scss`, prefix, buildPath),
     ts: platformTs(`${outputName}.ts`, undefined, buildPath),
@@ -75,7 +77,7 @@ const getStyleDictionaryConfig = (outputName, source, include): StyleDictionary.
 /**
  * Copy `removed` files
  */
-copyFilesAndFolders([[`removed`], `tokens`, buildPath])
+copyFilesAndFolders([`removed`], `tokens`, buildPath)
 
 /**
  * convert colors
@@ -88,7 +90,7 @@ for (const [theme, source, include] of themes) {
 /**
  * convert typography and size
  */
-const ignoreDirs = ['color', 'removed', 'deprecated']
+const ignoreDirs = ['color', 'shadow', 'removed', 'deprecated']
 const baseDir = 'base'
 const functionalDir = 'functional'
 
@@ -99,6 +101,12 @@ getInputFiles(inputPath, ignoreDirs, {baseDir, functionalDir}).then(inputFiles =
       .buildAllPlatforms()
   }
 })
+//  convert shadows
+console.log("⚠️ Shadows are not implemented in tokens correctly")
+StyleDictionary
+.extend(getStyleDictionaryConfig(`shadow/shadow`, [`${inputPath}/${baseDir}/shadow/shadow.json`, `${inputPath}/${functionalDir}/shadow/shadow.json`], [`${inputPath}/${baseDir}/shadow/shadow.json`, `${inputPath}/${baseDir}/color/light.json`, `${inputPath}/${functionalDir}/color/primitives-light.json`], {outputReferences: true}))
+.buildAllPlatforms()
+
 /**
  * build deprecated.json
  */

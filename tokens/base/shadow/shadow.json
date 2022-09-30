@@ -1,0 +1,46 @@
+{
+  "base": {
+    "shadow": {
+      "smallColor": {
+        "$value": "{color.shadow.small}",
+        "$type": "color"
+      },
+      "small": {
+        "$value": {
+          "color": "{color.shadow.small}",
+          "x": "0px",
+          "y": "1px",
+          "blur": "0px"
+        },
+        "$type": "shadow"
+      },
+      "medium": {
+        "$value": {
+          "color": "{color.shadow.medium}",
+          "x": "0px",
+          "y": "3px",
+          "blur": "6px"
+        },
+        "$type": "shadow"
+      },
+      "large": {
+        "$value": {
+          "color": "{color.shadow.large}",
+          "x": "0px",
+          "y": "8px",
+          "blur": "24px"
+        },
+        "$type": "shadow"
+      },
+      "extraLarge": {
+        "$value": {
+          "color": "{color.shadow.extraLarge}",
+          "x": "0px",
+          "y": "12px",
+          "blur": "28px"
+        },
+        "$type": "shadow"
+      }
+    }
+  }
+}

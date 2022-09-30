@@ -1,0 +1,26 @@
+{
+  "shadow": {
+    "small": {
+      "$value": "{base.shadow.small}"
+    },
+    "medium": {
+      "$value": "{base.shadow.medium}"
+    },
+    "large": {
+      "$value": "{base.shadow.large}"
+    },
+    "extraLarge": {
+      "$value": "{base.shadow.extraLarge}"
+    },
+    "focus": {
+      "$value": {
+        "color": "{color.focus}",
+        "x": "0px",
+        "y": "0px",
+        "blur": "0px",
+        "spread": "3px"
+      },
+      "$type": "shadow"
+    }
+  }
+}

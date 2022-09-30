@@ -2,10 +2,10 @@ import StyleDictionary from 'style-dictionary'
 import { PlatformInitializer } from '../../@types/PlatformInitializer'
 import { isSource } from '../filters/isSource'
 
-export const platformCss: PlatformInitializer = (outputFile, prefix, buildPath): StyleDictionary.Platform => ({
+export const platformCss: PlatformInitializer = (outputFile, prefix, buildPath, options): StyleDictionary.Platform => ({
   prefix: prefix,
   buildPath: `${buildPath}/css/`,
-  transforms: ['name/cti/kebab', 'color/hex', 'color/rgbAlpha', 'css/fontFamily', 'css/fontShorthand', 'fontWeight/toNumber', 'dimension/pixelToRem'],
+  transforms: ['name/cti/kebab', 'color/hex', 'color/rgbAlpha', 'css/fontFamily', 'css/fontShorthand', 'fontWeight/toNumber', 'dimension/pixelToRem', 'shadow/css'],
   options: {
     basePxFontSize: 16,
   },
@@ -31,7 +31,7 @@ export const platformCss: PlatformInitializer = (outputFile, prefix, buildPath):
       format: `css/variables`,
       filter: isSource,
       options: {
-        outputReferences: false,
+        outputReferences: options.outputReferences || false,
       }
     }
   ]
