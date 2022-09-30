@@ -4,4 +4,5 @@ export type TokenShadow = {
   y: string
   blur: string
   spread: string
+  inset?: boolean
 }
