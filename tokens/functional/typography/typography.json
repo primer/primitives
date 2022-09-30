@@ -1,35 +1,8 @@
 {
   "fontStack": {
-    "system": {
-      "$value": [
-        "-apple-system",
-        "BlinkMacSystemFont",
-        "Segoe UI",
-        "Helvetica",
-        "Arial",
-        "sans-serif",
-        "Apple Color Emoji",
-        "Segoe UI Emoji"
-      ],
-      "$type": "fontFamily"
-    },
-    "sansSerif": {
-      "$value": [
-        "-apple-system",
-        "BlinkMacSystemFont",
-        "Segoe UI",
-        "Helvetica",
-        "Arial",
-        "sans-serif",
-        "Apple Color Emoji",
-        "Segoe UI Emoji"
-      ],
-      "$type": "fontFamily"
-    },
-    "monospace": {
-      "$value": ["ui-monospace", "SFMono-Regular", "SF Mono", "Menlo", "Consolas", "Liberation Mono", "monospace"],
-      "$type": "fontFamily"
-    }
+    "ui": {"$value": "{base.text.fontFamily.system}"},
+    "code": {"$value": "{base.text.fontFamily.monospace}"},
+    "content": {"$value": "{base.text.fontFamily.sansSerif}"}
   },
   "text": {
     "display": {
@@ -53,7 +26,7 @@
           "fontWeight": "{text.display.weight}",
           "fontSize": "{text.display.size}",
           "lineHeight": "{text.display.lineHeight}",
-          "fontFamily": "{fontStack.sansSerif}"
+          "fontFamily": "{fontStack.content}"
         },
         "$type": "typography"
       }
@@ -87,7 +60,7 @@
             "fontWeight": "{text.title.weight}",
             "fontSize": "{text.title.size.large}",
             "lineHeight": "{text.title.lineHeight.large}",
-            "fontFamily": "{fontStack.sansSerif}"
+            "fontFamily": "{fontStack.content}"
           },
           "$type": "typography"
         },
@@ -96,7 +69,7 @@
             "fontWeight": "{text.title.weight}",
             "fontSize": "{text.title.size.medium}",
             "lineHeight": "{text.title.lineHeight.medium}",
-            "fontFamily": "{fontStack.sansSerif}"
+            "fontFamily": "{fontStack.content}"
           },
           "$type": "typography"
         }
@@ -119,7 +92,7 @@
           "fontWeight": "{text.subtitle.weight}",
           "fontSize": "{text.subtitle.size}",
           "lineHeight": "{text.subtitle.lineHeight}",
-          "fontFamily": "{fontStack.sansSerif}"
+          "fontFamily": "{fontStack.content}"
         },
         "$type": "typography"
       }
@@ -160,7 +133,7 @@
             "fontWeight": "{text.body.weight}",
             "fontSize": "{text.body.size.large}",
             "lineHeight": "{text.body.lineHeight.large}",
-            "fontFamily": "{fontStack.sansSerif}"
+            "fontFamily": "{fontStack.content}"
           },
           "$type": "typography"
         },
@@ -169,7 +142,7 @@
             "fontWeight": "{text.body.weight}",
             "fontSize": "{text.body.size.medium}",
             "lineHeight": "{text.body.lineHeight.medium}",
-            "fontFamily": "{fontStack.sansSerif}"
+            "fontFamily": "{fontStack.content}"
           },
           "$type": "typography"
         },
@@ -178,7 +151,7 @@
             "fontWeight": "{text.body.weight}",
             "fontSize": "{text.body.size.small}",
             "lineHeight": "{text.body.lineHeight.small}",
-            "fontFamily": "{fontStack.sansSerif}"
+            "fontFamily": "{fontStack.content}"
           },
           "$type": "typography"
         }
@@ -201,7 +174,7 @@
           "fontWeight": "{text.caption.weight}",
           "fontSize": "{text.caption.size}",
           "lineHeight": "{text.caption.lineHeight}",
-          "fontFamily": "{fontStack.sansSerif}"
+          "fontFamily": "{fontStack.content}"
         },
         "$type": "typography"
       }
@@ -223,7 +196,7 @@
           "fontWeight": "{text.codeBlock.weight}",
           "fontSize": "{text.codeBlock.size}",
           "lineHeight": "{text.codeBlock.lineHeight}",
-          "fontFamily": "{fontStack.monospace}"
+          "fontFamily": "{fontStack.code}"
         },
         "$type": "typography"
       }
@@ -241,7 +214,7 @@
         "$value": {
           "fontWeight": "{text.codeInline.weight}",
           "fontSize": "{text.codeInline.size}",
-          "fontFamily": "{fontStack.monospace}"
+          "fontFamily": "{fontStack.code}"
         },
         "$type": "typography"
       }
