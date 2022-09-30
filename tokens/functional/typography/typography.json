@@ -1,7 +1,7 @@
 {
   "fontStack": {
     "system": {
-      "value": [
+      "$value": [
         "-apple-system",
         "BlinkMacSystemFont",
         "Segoe UI",
@@ -14,7 +14,7 @@
       "$type": "fontFamily"
     },
     "sansSerif": {
-      "value": [
+      "$value": [
         "-apple-system",
         "BlinkMacSystemFont",
         "Segoe UI",
@@ -27,29 +27,29 @@
       "$type": "fontFamily"
     },
     "monospace": {
-      "value": ["ui-monospace", "SFMono-Regular", "SF Mono", "Menlo", "Consolas", "Liberation Mono", "monospace"],
+      "$value": ["ui-monospace", "SFMono-Regular", "SF Mono", "Menlo", "Consolas", "Liberation Mono", "monospace"],
       "$type": "fontFamily"
     }
   },
   "text": {
     "display": {
       "lineBoxHeight": {
-        "value": "56px",
+        "$value": "56px",
         "$type": "dimension"
       },
       "size": {
-        "value": "40px",
+        "$value": "40px",
         "$type": "dimension"
       },
       "lineHeight": {
-        "value": "calc(56/40)"
+        "$value": "calc(56/40)"
       },
       "weight": {
-        "value": "{base.text.weight.medium}",
+        "$value": "{base.text.weight.medium}",
         "$type": "fontWeight"
       },
       "shorthand": {
-        "value": {
+        "$value": {
           "fontWeight": "{text.display.weight}",
           "fontSize": "{text.display.size}",
           "lineHeight": "{text.display.lineHeight}",
@@ -61,29 +61,29 @@
     "title": {
       "size": {
         "large": {
-          "value": "32px",
+          "$value": "32px",
           "$type": "dimension"
         },
         "medium": {
-          "value": "20px",
+          "$value": "20px",
           "$type": "dimension"
         }
       },
       "lineHeight": {
         "large": {
-          "value": "calc(48/32)"
+          "$value": "calc(48/32)"
         },
         "medium": {
-          "value": "calc(32/20)"
+          "$value": "calc(32/20)"
         }
       },
       "weight": {
-        "value": "{base.text.weight.semibold}",
+        "$value": "{base.text.weight.semibold}",
         "$type": "fontWeight"
       },
       "shorthand": {
         "large": {
-          "value": {
+          "$value": {
             "fontWeight": "{text.title.weight}",
             "fontSize": "{text.title.size.large}",
             "lineHeight": "{text.title.lineHeight.large}",
@@ -92,7 +92,7 @@
           "$type": "typography"
         },
         "medium": {
-          "value": {
+          "$value": {
             "fontWeight": "{text.title.weight}",
             "fontSize": "{text.title.size.medium}",
             "lineHeight": "{text.title.lineHeight.medium}",
@@ -104,18 +104,18 @@
     },
     "subtitle": {
       "size": {
-        "value": "20px",
+        "$value": "20px",
         "$type": "dimension"
       },
       "lineHeight": {
-        "value": "calc(32/20)"
+        "$value": "calc(32/20)"
       },
       "weight": {
-        "value": "{base.text.weight.normal}",
+        "$value": "{base.text.weight.normal}",
         "$type": "fontWeight"
       },
       "shorthand": {
-        "value": {
+        "$value": {
           "fontWeight": "{text.subtitle.weight}",
           "fontSize": "{text.subtitle.size}",
           "lineHeight": "{text.subtitle.lineHeight}",
@@ -127,36 +127,36 @@
     "body": {
       "size": {
         "large": {
-          "value": "16px",
+          "$value": "16px",
           "$type": "dimension"
         },
         "medium": {
-          "value": "14px",
+          "$value": "14px",
           "$type": "dimension"
         },
         "small": {
-          "value": "12px",
+          "$value": "12px",
           "$type": "dimension"
         }
       },
       "lineHeight": {
         "large": {
-          "value": "calc(24/16)"
+          "$value": "calc(24/16)"
         },
         "medium": {
-          "value": "calc(20/14)"
+          "$value": "calc(20/14)"
         },
         "small": {
-          "value": "calc(20/12)"
+          "$value": "calc(20/12)"
         }
       },
       "weight": {
-        "value": "{base.text.weight.normal}",
+        "$value": "{base.text.weight.normal}",
         "$type": "fontWeight"
       },
       "shorthand": {
         "large": {
-          "value": {
+          "$value": {
             "fontWeight": "{text.body.weight}",
             "fontSize": "{text.body.size.large}",
             "lineHeight": "{text.body.lineHeight.large}",
@@ -165,7 +165,7 @@
           "$type": "typography"
         },
         "medium": {
-          "value": {
+          "$value": {
             "fontWeight": "{text.body.weight}",
             "fontSize": "{text.body.size.medium}",
             "lineHeight": "{text.body.lineHeight.medium}",
@@ -174,7 +174,7 @@
           "$type": "typography"
         },
         "small": {
-          "value": {
+          "$value": {
             "fontWeight": "{text.body.weight}",
             "fontSize": "{text.body.size.small}",
             "lineHeight": "{text.body.lineHeight.small}",
@@ -186,18 +186,18 @@
     },
     "caption": {
       "size": {
-        "value": "12px",
+        "$value": "12px",
         "$type": "dimension"
       },
       "lineHeight": {
-        "value": "calc(16/12)"
+        "$value": "calc(16/12)"
       },
       "weight": {
-        "value": "{base.text.weight.normal}",
+        "$value": "{base.text.weight.normal}",
         "$type": "fontWeight"
       },
       "shorthand": {
-        "value": {
+        "$value": {
           "fontWeight": "{text.caption.weight}",
           "fontSize": "{text.caption.size}",
           "lineHeight": "{text.caption.lineHeight}",
@@ -208,18 +208,18 @@
     },
     "codeBlock": {
       "size": {
-        "value": "13px",
+        "$value": "13px",
         "$type": "dimension"
       },
       "lineHeight": {
-        "value": "calc(20/13)"
+        "$value": "calc(20/13)"
       },
       "weight": {
-        "value": "{base.text.weight.normal}",
+        "$value": "{base.text.weight.normal}",
         "$type": "fontWeight"
       },
       "shorthand": {
-        "value": {
+        "$value": {
           "fontWeight": "{text.codeBlock.weight}",
           "fontSize": "{text.codeBlock.size}",
           "lineHeight": "{text.codeBlock.lineHeight}",
@@ -230,15 +230,15 @@
     },
     "codeInline": {
       "size": {
-        "value": "0.9285em",
+        "$value": "0.9285em",
         "$type": "dimension"
       },
       "weight": {
-        "value": "{base.text.weight.normal}",
+        "$value": "{base.text.weight.normal}",
         "$type": "fontWeight"
       },
       "shorthand": {
-        "value": {
+        "$value": {
           "fontWeight": "{text.codeInline.weight}",
           "fontSize": "{text.codeInline.size}",
           "fontFamily": "{fontStack.monospace}"
