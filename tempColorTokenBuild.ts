@@ -37,8 +37,11 @@ const themes = [
   ['light-tritanopia', [`tokens/functional/color/primitives-light.json`], [`tokens/base/color/light.json`, `tokens/base/color/light-tritanopia.json`]],
   ['light-colorblind', [`tokens/functional/color/primitives-light.json`], [`tokens/base/color/light.json`, `tokens/base/color/light-colorblind.json`]],
   ['light-high-contrast', [`tokens/functional/color/primitives-light.json`, `tokens/functional/color/primitives-light-high-contrast.json`], [`tokens/base/color/light.json`, `tokens/base/color/light-high-contrast.json`]],
-  // ['dark', [`tokens/functional/color/primitives-dark.json`], [`tokens/base/color/dark.json`]],
-  // ['dark-dimmed', [`tokens/functional/color/primitives-dark.json`], [`tokens/base/color/dark.json`, `tokens/base/color/dark-dimmed.json`]]
+  ['dark', [`tokens/functional/color/primitives-dark.json`], [`tokens/base/color/dark.json`]],
+  ['dark-dimmed', [`tokens/functional/color/primitives-dark.json`], [`tokens/base/color/dark.json`, `tokens/base/color/dark-dimmed.json`]],
+  ['dark-tritanopia', [`tokens/functional/color/primitives-dark.json`], [`tokens/base/color/dark.json`, `tokens/base/color/dark-tritanopia.json`]],
+  ['dark-colorblind', [`tokens/functional/color/primitives-dark.json`], [`tokens/base/color/dark.json`, `tokens/base/color/dark-colorblind.json`]],
+  ['dark-high-contrast', [`tokens/functional/color/primitives-dark.json`], [`tokens/base/color/dark.json`, `tokens/base/color/dark-high-contrast.json`]],
 ]
 
 const getStyleDictionaryConfig = (outputName, source, include, options?: any = {}): StyleDictionary.Config => ({
