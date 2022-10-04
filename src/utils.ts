@@ -18,15 +18,21 @@ export function get(path: string) {
 }
 
 export function alpha(value: Value, amount: number) {
-  return (obj: any) => color2k.transparentize(resolveValue(value, obj), 1 - amount).replace(/ /g, '')
+  // TODO: revert before merge
+  // return (obj: any) => color2k.transparentize(resolveValue(value, obj), 1 - amount).replace(/ /g, '')
+  return (obj: any) => color2k.toHex(color2k.transparentize(resolveValue(value, obj), 1 - amount).replace(/ /g, ''))
 }
 
 export function lighten(value: Value, amount: number) {
-  return (obj: any) => color2k.lighten(resolveValue(value, obj), amount).replace(/ /g, '')
+  // TODO: revert before merge
+  // return (obj: any) => color2k.lighten(resolveValue(value, obj), amount).replace(/ /g, '')
+  return (obj: any) => color2k.toHex(color2k.lighten(resolveValue(value, obj), amount).replace(/ /g, ''))
 }
 
 export function darken(value: Value, amount: number) {
-  return (obj: any) => color2k.darken(resolveValue(value, obj), amount).replace(/ /g, '')
+  // TODO: revert before merge
+  // return (obj: any) => color2k.darken(resolveValue(value, obj), amount).replace(/ /g, '')
+  return (obj: any) => color2k.toHex(color2k.darken(resolveValue(value, obj), amount).replace(/ /g, ''))
 }
 
 export function mix(color1: Value, color2: Value, weight: number = 0.5) {

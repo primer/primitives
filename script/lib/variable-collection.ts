@@ -50,7 +50,9 @@ export default class VariableCollection {
     const fullName = getFullName(this.prefix, path)
 
     if (value === 'transparent') {
-      value = 'rgba(0,0,0,0)'
+      // TODO: revert before merge
+      // value = 'rgba(0,0,0,0)'
+      value = '#ffffff00'
     }
 
     const variable: ModeVariable = {name: fullName, path, value}

@@ -32,11 +32,24 @@ const buildPath = 'tokens-v2-private'
 const inputPath = 'tokens'
 const prefix = 'primer'
 
+const functionalColorFiles = {
+  light: [
+    `tokens/functional/color/primitives-light.json`,
+    `tokens/functional/color/marketing-light.json`,
+    `tokens/functional/color/misc-light.json`,
+    `tokens/functional/color/syntax-light.json`,
+    `tokens/functional/color/diff-light.json`,
+    `tokens/functional/color/checks-light.json`,
+    `tokens/functional/color/components-light.json`,
+    `tokens/functional/color/ansi-light.json`,
+  ]
+}
+
 const themes = [
-  ['light', [`tokens/functional/color/primitives-light.json`], [`tokens/base/color/light.json`]],
-  ['light-tritanopia', [`tokens/functional/color/primitives-light.json`], [`tokens/base/color/light.json`, `tokens/base/color/light-tritanopia.json`]],
-  ['light-colorblind', [`tokens/functional/color/primitives-light.json`], [`tokens/base/color/light.json`, `tokens/base/color/light-colorblind.json`]],
-  ['light-high-contrast', [`tokens/functional/color/primitives-light.json`, `tokens/functional/color/primitives-light-high-contrast.json`], [`tokens/base/color/light.json`, `tokens/base/color/light-high-contrast.json`]],
+  ['light', functionalColorFiles.light, [`tokens/base/color/light.json`]],
+  ['light-tritanopia', [...functionalColorFiles.light], [`tokens/base/color/light.json`, `tokens/base/color/light-tritanopia.json`]],
+  ['light-colorblind', [...functionalColorFiles.light], [`tokens/base/color/light.json`, `tokens/base/color/light-colorblind.json`]],
+  ['light-high-contrast', [...functionalColorFiles.light, `tokens/functional/color/primitives-light-high-contrast.json`], [`tokens/base/color/light.json`, `tokens/base/color/light-high-contrast.json`]],
   ['dark', [`tokens/functional/color/primitives-dark.json`], [`tokens/base/color/dark.json`]],
   ['dark-dimmed', [`tokens/functional/color/primitives-dark.json`], [`tokens/base/color/dark.json`, `tokens/base/color/dark-dimmed.json`]],
   ['dark-tritanopia', [`tokens/functional/color/primitives-dark.json`], [`tokens/base/color/dark.json`, `tokens/base/color/dark-tritanopia.json`]],
