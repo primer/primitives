@@ -70,7 +70,7 @@ const getStyleDictionaryConfig = (outputName, source, include, options?: any = {
   platforms: {
     css: platformCss(`${outputName}.css`, prefix, buildPath, options),
     docJson: platformDocJson(`${outputName}.json`, prefix, buildPath),
-    scss: platformScss(`${outputName}.scss`, prefix, buildPath),
+    scss: platformScss(`${outputName}.scss`, undefined, buildPath),
     ts: platformTs(`${outputName}.ts`, undefined, buildPath),
     js: platformJs(`${outputName}.js`, undefined, buildPath),
     json: platformJson(`${outputName}.json`, undefined, buildPath),

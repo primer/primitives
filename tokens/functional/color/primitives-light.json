@@ -23,6 +23,11 @@
         "$value": "{base.color.scale.white}",
         "$type": "color"
       },
+      "default-transparent": {
+        "$value": "{color.canvas.default}",
+        "alpha": 0,
+        "$type": "color"
+      },
       "overlay": {
         "$value": "{base.color.scale.white}",
         "$type": "color"
@@ -44,7 +49,7 @@
       "muted": {
         "$value": "{base.color.scale.gray.2}",
         "$type": "color",
-        "alpha": 0.85
+        "alpha": 0.15
       },
       "subtle": {
         "$value": "{base.color.scale.black}",
@@ -278,6 +283,37 @@
     "focus": {
       "$value": "{base.color.scale.blue.5}",
       "$type": "color"
+    },
+    "primer": {
+      "fg": {
+        "disabled": {
+          "$value": "{base.color.scale.gray.4}",
+          "$type": "color"
+        }
+      },
+      "canvas": {
+        "backdrop": {
+          "$value": "{base.color.scale.black}",
+          "alpha": 0.5,
+          "$type": "color"
+        },
+        "sticky": {
+          "$value": "{base.color.scale.white}",
+          "alpha": 0.95,
+          "$type": "color"
+        }
+      },
+      "border": {
+        "active": {
+          "$value": "{base.color.scale.coral.3}",
+          "$type": "color"
+        },
+        "contrast": {
+          "$value": "{base.color.scale.black}",
+          "alpha": 0.1,
+          "$type": "color"
+        }
+      }
     }
   }
 }
