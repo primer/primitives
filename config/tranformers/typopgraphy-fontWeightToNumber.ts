@@ -1,7 +1,5 @@
 
 import StyleDictionary from 'style-dictionary'
-import { tokenToString } from 'typescript'
-import { TokenTypography } from '../../@types/TokenTypography'
 
 const fontWeights: {[key: string]: number} = {
   thin: 100,
@@ -36,5 +34,14 @@ export const typographyFontWeightToNumber: StyleDictionary.Transform = {
   type: `value`,
   transitive: true,
   matcher: (token: StyleDictionary.TransformedToken) => token.$type === 'fontWeight' && typeof token.value === 'string',
-  transformer: ({ value }: { value: string }) => fontWeights[value.toLowerCase()] ?? value
+  transformer: (token: StyleDictionary.TransformedToken) => {
+    // check if value exists in matrix
+    const fromMatrix = fontWeights[token.value.toLowerCase()]
+    if (fromMatrix !== undefined) return fromMatrix
+    // test if value is quoted int
+    const valueAsInt = parseInt(token.value.toLowerCase())
+    if (Number.isInteger(valueAsInt)) return valueAsInt
+    //
+    return token.value
+  }
 }
