@@ -26,7 +26,8 @@
   },
   "homepage": "https://github.com/primer/primitives#readme",
   "scripts": {
-    "build": "ts-node ./script/build.ts && tsc",
+    "build": "npm run tempColorTokens && npm run buildV1 & wait",
+    "buildV1": "ts-node ./script/build.ts && tsc",
     "build:tokens": "node -e \"require('./build')._init()\"",
     "prebuild": "rm -rf dist",
     "prebuild:tokens": "rm -rf tokens-v2-private",
@@ -61,6 +62,7 @@
     "flat": "^5.0.2",
     "fs-extra": "^10.1.0",
     "jest": "^29.0.1",
+    "json5": "^2.2.1",
     "lodash": "^4.17.20",
     "mkdirp": "^1.0.4",
     "node-sass": "^7.0.0",
