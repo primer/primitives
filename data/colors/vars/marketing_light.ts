@@ -1,20 +1,3 @@
-import {alpha, get, lighten, mix} from '../../../src/utils'
-
-const mktg = {
-  blue: {
-    primary: '#4969ed',
-    secondary: '#3355e0'
-  },
-  green: {
-    primary: '#2ea44f',
-    secondary: '#22863a'
-  },
-  purple: {
-    primary: '#6f57ff',
-    secondary: '#614eda'
-  }
-}
-
 export default {
   mktg: {
     btn: {
