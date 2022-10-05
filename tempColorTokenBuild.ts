@@ -46,6 +46,9 @@ const functionalColorFiles = {
   ],
   dark: [
     `tokens/functional/color/primitives-dark.json`,
+    `tokens/functional/color/components-dark.json`,
+    `tokens/functional/color/checks-dark.json`,
+    `tokens/functional/color/ansi-dark.json`,
     `tokens/functional/color/scales.json`,
   ]
 }
