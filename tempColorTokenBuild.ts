@@ -43,19 +43,23 @@ const functionalColorFiles = {
     `tokens/functional/color/components-light.json`,
     `tokens/functional/color/ansi-light.json`,
     `tokens/functional/color/scales.json`,
+  ],
+  dark: [
+    `tokens/functional/color/primitives-dark.json`,
+    `tokens/functional/color/scales.json`,
   ]
 }
 
 const themes = [
-  ['light', functionalColorFiles.light, [`tokens/base/color/light.json`]],
-  ['light-tritanopia', [...functionalColorFiles.light], [`tokens/base/color/light.json`, `tokens/base/color/light-tritanopia.json`]],
-  ['light-colorblind', [...functionalColorFiles.light], [`tokens/base/color/light.json`, `tokens/base/color/light-colorblind.json`]],
-  ['light-high-contrast', [...functionalColorFiles.light, `tokens/functional/color/primitives-light-high-contrast.json`], [`tokens/base/color/light.json`, `tokens/base/color/light-high-contrast.json`]],
-  ['dark', [`tokens/functional/color/primitives-dark.json`], [`tokens/base/color/dark.json`]],
-  ['dark-dimmed', [`tokens/functional/color/primitives-dark.json`], [`tokens/base/color/dark.json`, `tokens/base/color/dark-dimmed.json`]],
-  ['dark-tritanopia', [`tokens/functional/color/primitives-dark.json`], [`tokens/base/color/dark.json`, `tokens/base/color/dark-tritanopia.json`]],
-  ['dark-colorblind', [`tokens/functional/color/primitives-dark.json`], [`tokens/base/color/dark.json`, `tokens/base/color/dark-colorblind.json`]],
-  ['dark-high-contrast', [`tokens/functional/color/primitives-dark.json`], [`tokens/base/color/dark.json`, `tokens/base/color/dark-high-contrast.json`]],
+  ['light', [...functionalColorFiles.light], [`tokens/base/color/light.json`]],
+  ['light-tritanopia', [...functionalColorFiles.light, `tokens/functional/color/exceptions-light-tritanopia.json`], [`tokens/base/color/light.json`, `tokens/base/color/light-tritanopia.json`]],
+  ['light-colorblind', [...functionalColorFiles.light, `tokens/functional/color/exceptions-light-colorblind.json`], [`tokens/base/color/light.json`, `tokens/base/color/light-colorblind.json`]],
+  ['light-high-contrast', [...functionalColorFiles.light, `tokens/functional/color/exceptions-light-high-contrast.json`], [`tokens/base/color/light.json`, `tokens/base/color/light-high-contrast.json`]],
+  ['dark', [...functionalColorFiles.dark], [`tokens/base/color/dark.json`]],
+  ['dark-dimmed', [...functionalColorFiles.dark, `tokens/functional/color/exceptions-dark-dimmed.json`], [`tokens/base/color/dark.json`, `tokens/base/color/dark-dimmed.json`]],
+  ['dark-tritanopia', [...functionalColorFiles.dark, `tokens/functional/color/exceptions-dark-tritanopia.json`], [`tokens/base/color/dark.json`, `tokens/base/color/dark-tritanopia.json`]],
+  ['dark-colorblind', [...functionalColorFiles.dark, `tokens/functional/color/exceptions-dark-colorblind.json`], [`tokens/base/color/dark.json`, `tokens/base/color/dark-colorblind.json`]],
+  ['dark-high-contrast', [...functionalColorFiles.dark, `tokens/functional/color/exceptions-dark-high-contrast.json`], [`tokens/base/color/dark.json`, `tokens/base/color/dark-high-contrast.json`]],
 ]
 
 const getStyleDictionaryConfig = (outputName, source, include, options?: any = {}): StyleDictionary.Config => ({
