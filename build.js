@@ -149,6 +149,11 @@ StyleDictionary.registerTransformGroup({
 })
 
 StyleDictionary.registerTransformGroup({
+  name: 'json',
+  transforms: ['name/css', 'pxToRem', 'typography/shorthand']
+})
+
+StyleDictionary.registerTransformGroup({
   name: 'scss',
   transforms: ['name/scss', 'pxToRem', 'typography/shorthand']
 })
@@ -204,6 +209,22 @@ StyleDictionary.registerFormat({
     const groupedTokens = groupBy(dictionary.allProperties, 'filePath')
 
     return JSON.stringify(groupedTokens, null, 2)
+  }
+})
+
+StyleDictionary.registerFormat({
+  name: 'json/custom-properties',
+  formatter: function({dictionary}) {
+    const tokens = {
+      customProperties: {}
+    }
+
+    for (const token of dictionary.allProperties) {
+      const {value, name} = token
+      tokens.customProperties[`--${name}`] = value
+    }
+
+    return JSON.stringify(tokens, null, 2)
   }
 })
 
@@ -377,6 +398,21 @@ function buildPrimitives(
           return {
             format: `css/variables`,
             destination: filePath.replace(`.json`, `.css`),
+            filter: token => token.filePath === filePath,
+            options: {
+              outputReferences: true
+            }
+          }
+        })
+      },
+      json: {
+        buildPath: `${outputPath}/json/`,
+        transformGroup: 'json',
+        // map the array of token file paths to style dictionary output files
+        files: files.map(filePath => {
+          return {
+            format: `json/custom-properties`,
+            destination: filePath,
             filter: token => token.filePath === filePath,
             options: {
               outputReferences: true
