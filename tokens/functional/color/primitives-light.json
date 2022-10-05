@@ -47,9 +47,8 @@
         "$type": "color"
       },
       "muted": {
-        "$value": "{base.color.scale.gray.2}",
-        "$type": "color",
-        "alpha": 0.15
+        "$value": "#d8dee4",
+        "$type": "color"
       },
       "subtle": {
         "$value": "{base.color.scale.black}",
@@ -284,6 +283,7 @@
       "$value": "{base.color.scale.blue.5}",
       "$type": "color"
     },
+    // TODO: Some of those colors should be move to the normal primitives
     "primer": {
       "fg": {
         "disabled": {

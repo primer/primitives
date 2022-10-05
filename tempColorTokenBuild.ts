@@ -42,6 +42,7 @@ const functionalColorFiles = {
     `tokens/functional/color/checks-light.json`,
     `tokens/functional/color/components-light.json`,
     `tokens/functional/color/ansi-light.json`,
+    `tokens/functional/color/scales.json`,
   ]
 }
 
@@ -127,7 +128,7 @@ StyleDictionary
  * build deprecated.json
  */
  const deprecatedBuilds = [
-  themes[0], // light mode
+   ['color', themes[0][1], themes[0][2]], // light mode
   ['size', [`${inputPath}/${functionalDir}/size/*.json`], [`${inputPath}/${baseDir}/size/*.json`]],
   ['typography', [`${inputPath}/${functionalDir}/typography/*.json`], [`${inputPath}/${baseDir}/typography/*.json`]],
 ]
