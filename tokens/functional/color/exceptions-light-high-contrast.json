@@ -108,9 +108,11 @@
         "$value": "{color.border.subtle}",
         "$type": "color"
       },
-      "HoverBg": {
-        "$value": "{base.color.scale.gray.2}",
-        "$type": "color"
+      "hover": {
+        "bg": {
+          "$value": "{base.color.scale.gray.2}",
+          "$type": "color"
+        }
       },
       "activeBg": {
         "$value": "{base.color.scale.gray.3}",
@@ -296,9 +298,13 @@
         }
       }
     },
-    "pageHeaderBg": {
-      "$value": "{color.canvas.default}",
-      "$type": "color"
+    "page": {
+      "header": {
+        "bg": {
+          "$value": "{color.canvas.default}",
+          "$type": "color"
+        }
+      }
     },
     "switchTrack": {
       "bg": {

@@ -13,6 +13,10 @@
       "stackFade": {
         "$value": "{base.color.scale.gray.6}",
         "$type": "color"
+      },
+      "stackFadeMore": {
+        "$value": "{base.color.scale.gray.7}",
+        "$type": "color"
       }
     },
     "topicTag": {
@@ -212,7 +216,6 @@
         "$value": "{base.color.scale.gray.6}",
         "$type": "color"
       },
-
       "primary": {
         "text": {
           "$value": "#ffffff",
@@ -228,9 +231,11 @@
         },
         "shadow": "0 0 transparent",
         "insetShadow": "0 0 transparent",
-        "hoverBg": {
-          "$value": "{base.color.scale.green.4}",
-          "$type": "color"
+        "hover": {
+          "bg": {
+            "$value": "{base.color.scale.green.4}",
+            "$type": "color"
+          }
         },
         "hoverBorder": {
           "$value": "{color.border.subtle}",
@@ -336,7 +341,6 @@
           "alpha": 0.1
         }
       },
-
       "danger": {
         "text": {
           "$value": "{base.color.scale.red.4}",
@@ -360,10 +364,14 @@
           "$value": "{color.fg.onEmphasis}",
           "$type": "color"
         },
-        "hoverCounterBg": {
-          "$value": "#ffffff",
-          "$type": "color",
-          "alpha": 0.2
+        "hover": {
+          "counter": {
+            "bg": {
+              "$value": "#ffffff",
+              "$type": "color",
+              "alpha": 0.2
+            }
+          }
         },
         "selectedText": {
           "$value": "#ffffff",
@@ -536,7 +544,6 @@
             "$type": "color"
           }
         },
-
         "selected": {
           "border": {
             "$value": "{base.color.scale.gray.4}",

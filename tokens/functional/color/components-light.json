@@ -119,9 +119,11 @@
       },
       // shadow: (theme: any) => `0 1px 0 ${alpha(get('scale.black'), 0.04)(theme)}`,
       // insetShadow: (theme: any) => `inset 0 1px 0 ${alpha(get('scale.white'), 0.25)(theme)}`,
-      "hoverBg": {
-        "$value": "#f3f4f6",
-        "$type": "color"
+      "hover": {
+        "bg": {
+          "$value": "#f3f4f6",
+          "$type": "color"
+        }
       },
       "hoverBorder": {
         "$value": "{color.border.subtle}",
