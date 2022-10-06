@@ -11,15 +11,16 @@
           "$type": "color"
         },
         "numBg": {
-          "$value": "#ccffd8",
-          "$type": "color"
+          "$value": "{base.color.scale.green.3}",
+          "$type": "color",
+          "alpha": 0.3
         },
         "lineBg": {
-          "$value": "#e6ffec",
+          "$value": "{color.success.subtle}",
           "$type": "color"
         },
         "wordBg": {
-          "$value": "#abf2bc",
+          "$value": "{color.success.muted}",
           "$type": "color"
         }
       },
@@ -33,8 +34,9 @@
           "$type": "color"
         },
         "numBg": {
-          "$value": "#ffd7d5",
-          "$type": "color"
+          "$value": "{base.color.scale.red.4}",
+          "$type": "color",
+          "alpha": 0.3
         },
         "lineBg": {
           "$value": "{color.danger.subtle}",
@@ -57,20 +59,18 @@
           "$type": "color"
         }
       }
-      // @TODO: What happens with this? Move to component as logic?
-      // selectedLineHighlightMixBlendMode: 'multiply'
     },
     "diffstat": {
+      "additionBg": {
+        "$value": "{base.color.scale.green.3}",
+        "$type": "color"
+      },
       "deletionBorder": {
         "$value": "{color.border.subtle}",
         "$type": "color"
       },
       "additionBorder": {
         "$value": "{color.border.subtle}",
-        "$type": "color"
-      },
-      "additionBg": {
-        "$value": "{base.color.scale.green.4}",
         "$type": "color"
       }
     }

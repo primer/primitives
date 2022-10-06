@@ -35,18 +35,22 @@ const prefix = 'primer'
 const functionalColorFiles = {
   light: [
     `tokens/functional/color/primitives-light.json`,
+    `tokens/functional/color/components-light.json`,
     `tokens/functional/color/marketing-light.json`,
     `tokens/functional/color/misc-light.json`,
     `tokens/functional/color/syntax-light.json`,
     `tokens/functional/color/diff-light.json`,
     `tokens/functional/color/checks-light.json`,
-    `tokens/functional/color/components-light.json`,
     `tokens/functional/color/ansi-light.json`,
     `tokens/functional/color/scales.json`,
   ],
   dark: [
     `tokens/functional/color/primitives-dark.json`,
     `tokens/functional/color/components-dark.json`,
+    `tokens/functional/color/marketing-dark.json`,
+    `tokens/functional/color/misc-dark.json`,
+    `tokens/functional/color/syntax-dark.json`,
+    `tokens/functional/color/diff-dark.json`,
     `tokens/functional/color/checks-dark.json`,
     `tokens/functional/color/ansi-dark.json`,
     `tokens/functional/color/scales.json`,

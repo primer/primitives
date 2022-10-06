@@ -3,21 +3,17 @@
     "avatar": {
       "bg": {
         "$value": "{base.color.scale.white}",
-        "$type": "color"
+        "$type": "color",
+        "alpha": 0.1
       },
       "border": {
         "$value": "{color.border.subtle}",
         "$type": "color"
       },
       "stackFade": {
-        "$value": "{base.color.scale.gray.3}",
-        "$type": "color"
-      },
-      "stackFadeMore": {
-        "$value": "{base.color.scale.gray.2}",
+        "$value": "{base.color.scale.gray.6}",
         "$type": "color"
       }
-      // childShadow: (theme: any) => `-2px -2px 0 ${alpha(get('scale.white'), 0.8)(theme)}`
     },
     "topicTag": {
       "border": {
@@ -33,22 +29,18 @@
     },
     "selectMenu": {
       "backdropBorder": {
-        "$value": "{base.color.scale.transparent}",
+        "$value": "{base.color.scale.gray.5}",
         "$type": "color"
       },
       "tapHighlight": {
-        "$value": "{base.color.scale.gray.3}",
+        "$value": "{base.color.scale.gray.6}",
         "$type": "color",
         "alpha": 0.5
       },
       "tapFocusBg": {
-        "$value": "{base.color.scale.blue.1}",
+        "$value": "{base.color.scale.blue.8}",
         "$type": "color"
       }
-    },
-    "overlay": {
-      // shadow: (theme: any) =>
-      //   `0 1px 3px ${alpha(get('scale.black'), 0.12)(theme)}, 0 8px 24px ${alpha(get('scale.gray.7'), 0.12)(theme)}`
     },
     "header": {
       "text": {
@@ -57,15 +49,15 @@
         "alpha": 0.7
       },
       "bg": {
-        "$value": "{base.color.scale.gray.9}",
+        "$value": "{base.color.scale.gray.8}",
         "$type": "color"
       },
       "divider": {
-        "$value": "{base.color.scale.gray.6}",
+        "$value": "{base.color.scale.gray.3}",
         "$type": "color"
       },
       "logo": {
-        "$value": "{base.color.scale.white}",
+        "$value": "{base.color.scale.gray.0}",
         "$type": "color"
       }
     },
@@ -81,98 +73,163 @@
     },
     "sidenav": {
       "selectedBg": {
-        "$value": "{base.color.scale.white}",
+        "$value": "{base.color.scale.gray.7}",
         "$type": "color"
       }
     },
     "menu": {
       "bgActive": {
-        "$value": "{base.color.scale.transparent}",
+        "$value": "{base.color.scale.gray.8}",
         "$type": "color"
       }
     },
     "input": {
       "disabledBg": {
         "$value": "{color.neutral.muted}",
-        "$type": "color"
+        "$type": "color",
+        "alpha": 0.5
       }
     },
     "timeline": {
       "badgeBg": {
-        "$value": "{base.color.scale.gray.1}",
+        "$value": "{base.color.scale.gray.7}",
         "$type": "color"
-      } // needs to be opaque
+      }
     },
-    // Do we need all these btn variables?
+    "ansi": {
+      "black": {
+        "$value": "{base.color.scale.gray.5}",
+        "$type": "color"
+      },
+      "blackBright": {
+        "$value": "{base.color.scale.gray.4}",
+        "$type": "color"
+      },
+      "white": {
+        "$value": "{base.color.scale.gray.2}",
+        "$type": "color"
+      },
+      "whiteBright": {
+        "$value": "{base.color.scale.white}",
+        "$type": "color"
+      },
+      "gray": {
+        "$value": "{base.color.scale.gray.4}",
+        "$type": "color"
+      },
+      "red": {
+        "$value": "{base.color.scale.red.3}",
+        "$type": "color"
+      },
+      "redBright": {
+        "$value": "{base.color.scale.red.2}",
+        "$type": "color"
+      },
+      "green": {
+        "$value": "{base.color.scale.green.3}",
+        "$type": "color"
+      },
+      "greenBright": {
+        "$value": "{base.color.scale.green.2}",
+        "$type": "color"
+      },
+      "yellow": {
+        "$value": "{base.color.scale.yellow.3}",
+        "$type": "color"
+      },
+      "yellowBright": {
+        "$value": "{base.color.scale.yellow.2}",
+        "$type": "color"
+      },
+      "blue": {
+        "$value": "{base.color.scale.blue.3}",
+        "$type": "color"
+      },
+      "blueBright": {
+        "$value": "{base.color.scale.blue.2}",
+        "$type": "color"
+      },
+      "magenta": {
+        "$value": "{base.color.scale.purple.3}",
+        "$type": "color"
+      },
+      "magentaBright": {
+        "$value": "{base.color.scale.purple.2}",
+        "$type": "color"
+      },
+      "cyan": {
+        "$value": "#39c5cf",
+        "$type": "color"
+      },
+      "cyanBright": {
+        "$value": "#56d4dd",
+        "$type": "color"
+      }
+    },
     "btn": {
       "text": {
-        "$value": "{base.color.scale.gray.9}",
+        "$value": "{base.color.scale.gray.1}",
         "$type": "color"
       },
       "bg": {
-        "$value": "{base.color.scale.gray.0}",
+        "$value": "{base.color.scale.gray.7}",
         "$type": "color"
       },
       "border": {
         "$value": "{color.border.subtle}",
         "$type": "color"
       },
-      // shadow: (theme: any) => `0 1px 0 ${alpha(get('scale.black'), 0.04)(theme)}`,
-      // insetShadow: (theme: any) => `inset 0 1px 0 ${alpha(get('scale.white'), 0.25)(theme)}`,
       "hoverBg": {
-        "$value": "#f3f4f6",
+        "$value": "{base.color.scale.gray.6}",
         "$type": "color"
       },
       "hoverBorder": {
-        "$value": "{color.border.subtle}",
+        "$value": "{base.color.scale.gray.3}",
         "$type": "color"
       },
       "activeBg": {
-        "$value": "#ebecf0",
+        "$value": "#282e33",
         "$type": "color"
       },
       "activeBorder": {
-        "$value": "{color.border.subtle}",
+        "$value": "{base.color.scale.gray.4}",
         "$type": "color"
       },
       "selectedBg": {
-        "$value": "#eeeff2",
+        "$value": "{base.color.scale.gray.8}",
         "$type": "color"
       },
       "focusBg": {
-        "$value": "{base.color.scale.gray.0}",
+        "$value": "{base.color.scale.gray.7}",
         "$type": "color"
       },
       "focusBorder": {
-        "$value": "{color.border.subtle}",
+        "$value": "{base.color.scale.gray.3}",
         "$type": "color"
       },
-      // focusShadow: (theme: any) => `0 0 0 3px ${alpha(get('scale.blue.5'), 0.3)(theme)}`,
-      // shadowActive: (theme: any) => `inset 0 0.15em 0.3em ${alpha(get('scale.black'), 0.15)(theme)}`, // TODO: Deprecate? Not used in Primer CSS
-      // shadowInputFocus: (theme: any) => `0 0 0 0.2em ${alpha(get('scale.blue.5'), 0.3)(theme)}`, // TODO: Deprecate?
+
       "counterBg": {
-        "$value": "{base.color.scale.black}",
-        "$type": "color",
-        "alpha": 0.08
+        "$value": "{base.color.scale.gray.6}",
+        "$type": "color"
       },
 
       "primary": {
         "text": {
-          "$value": "{base.color.scale.white}",
+          "$value": "#ffffff",
           "$type": "color"
         },
         "bg": {
-          "$value": "{base.color.scale.green.4}",
+          "$value": "{base.color.scale.green.5}",
           "$type": "color"
         },
         "border": {
           "$value": "{color.border.subtle}",
           "$type": "color"
         },
-        // shadow: (theme: any) => `0 1px 0 ${alpha(get('scale.black'), 0.1)(theme)}`,
-        // insetShadow: (theme: any) => `inset 0 1px 0 ${alpha(get('scale.white'), 0.03)(theme)}`,
+        "shadow": "0 0 transparent",
+        "insetShadow": "0 0 transparent",
         "hoverBg": {
-          "$value": "#2c974b",
+          "$value": "{base.color.scale.green.4}",
           "$type": "color"
         },
         "hoverBorder": {
@@ -180,36 +237,36 @@
           "$type": "color"
         },
         "selectedBg": {
-          "$value": "#298e46",
+          "$value": "{base.color.scale.green.5}",
           "$type": "color"
         },
-        // selectedShadow: (theme: any) => `inset 0 1px 0 ${alpha(get('scale.green.9'), 0.2)(theme)}`,
+        "selectedShadow": "0 0 transparent",
         "disabledText": {
           "$value": "{base.color.scale.white}",
           "$type": "color",
-          "alpha": 0.8
+          "alpha": 0.5
         },
         "disabledBg": {
-          "$value": "#94d3a2",
-          "$type": "color"
+          "$value": "{base.color.scale.green.5}",
+          "$type": "color",
+          "alpha": 0.6
         },
         "disabledBorder": {
           "$value": "{color.border.subtle}",
           "$type": "color"
         },
         "focusBg": {
-          "$value": "{base.color.scale.green.4}",
+          "$value": "{base.color.scale.green.5}",
           "$type": "color"
         },
         "focusBorder": {
           "$value": "{color.border.subtle}",
           "$type": "color"
         },
-        // focusShadow: (theme: any) => `0 0 0 3px ${alpha(get('btn.primary.focusBg'), 0.4)(theme)}`,
+
         "icon": {
           "$value": "{base.color.scale.white}",
-          "$type": "color",
-          "alpha": 0.8
+          "$type": "color"
         },
         "counterBg": {
           "$value": "{base.color.scale.white}",
@@ -220,23 +277,22 @@
 
       "outline": {
         "text": {
-          "$value": "{base.color.scale.blue.5}",
+          "$value": "{base.color.scale.blue.3}",
           "$type": "color"
         },
         "hoverText": {
-          "$value": "{base.color.scale.white}",
+          "$value": "{base.color.scale.blue.3}",
           "$type": "color"
         },
         "hoverBg": {
-          "$value": "{base.color.scale.blue.5}",
+          "$value": "{base.color.scale.gray.6}",
           "$type": "color"
         },
         "hoverBorder": {
           "$value": "{color.border.subtle}",
           "$type": "color"
         },
-        // hoverShadow: (theme: any) => `0 1px 0 ${alpha(get('scale.black'), 0.1)(theme)}`,
-        // hoverInsetShadow: (theme: any) => `inset 0 1px 0 ${alpha(get('scale.white'), 0.03)(theme)}`,
+
         "hoverCounterBg": {
           "$value": "{base.color.scale.white}",
           "$type": "color",
@@ -247,21 +303,21 @@
           "$type": "color"
         },
         "selectedBg": {
-          "$value": "#0965ce",
+          "$value": "{base.color.scale.blue.7}",
           "$type": "color"
         },
         "selectedBorder": {
           "$value": "{color.border.subtle}",
           "$type": "color"
         },
-        // selectedShadow: (theme: any) => `inset 0 1px 0 ${alpha(get('scale.blue.9'), 0.2)(theme)}`,
+        "selectedShadow": "0 0 transparent",
         "disabledText": {
-          "$value": "{base.color.scale.blue.5}",
+          "$value": "{base.color.scale.blue.3}",
           "$type": "color",
           "alpha": 0.5
         },
         "disabledBg": {
-          "$value": "{base.color.scale.gray.0}",
+          "$value": "{base.color.scale.gray.9}",
           "$type": "color"
         },
         "disabledCounterBg": {
@@ -273,7 +329,7 @@
           "$value": "{color.border.subtle}",
           "$type": "color"
         },
-        // focusShadow: (theme: any) => `0 0 0 3px ${alpha(get('scale.blue.6'), 0.4)(theme)}`,
+
         "counterBg": {
           "$value": "{base.color.scale.blue.5}",
           "$type": "color",
@@ -283,48 +339,52 @@
 
       "danger": {
         "text": {
-          "$value": "{base.color.scale.red.5}",
+          "$value": "{base.color.scale.red.4}",
           "$type": "color"
         },
         "hoverText": {
-          "$value": "{base.color.scale.white}",
+          "$value": "{color.fg.onEmphasis}",
           "$type": "color"
         },
         "hoverBg": {
-          "$value": "{base.color.scale.red.6}",
+          "$value": "{base.color.scale.red.5}",
           "$type": "color"
         },
         "hoverBorder": {
-          "$value": "{color.border.subtle}",
+          "$value": "{base.color.scale.red.4}",
           "$type": "color"
         },
-        // hoverShadow: (theme: any) => `0 1px 0 ${alpha(get('scale.black'), 0.1)(theme)}`,
-        // hoverInsetShadow: (theme: any) => `inset 0 1px 0 ${alpha(get('scale.white'), 0.03)(theme)}`,
+        "hoverShadow": "0 0 transparent",
+        "hoverInsetShadow": "0 0 transparent",
+        "hoverIcon": {
+          "$value": "{color.fg.onEmphasis}",
+          "$type": "color"
+        },
         "hoverCounterBg": {
-          "$value": "{base.color.scale.white}",
+          "$value": "#ffffff",
           "$type": "color",
           "alpha": 0.2
         },
         "selectedText": {
-          "$value": "{base.color.scale.white}",
+          "$value": "#ffffff",
           "$type": "color"
         },
         "selectedBg": {
-          "$value": "#c11f2a",
+          "$value": "{base.color.scale.red.6}",
           "$type": "color"
         },
         "selectedBorder": {
-          "$value": "{color.border.subtle}",
+          "$value": "{base.color.scale.red.3}",
           "$type": "color"
         },
-        // selectedShadow: (theme: any) => `inset 0 1px 0 ${alpha(get('scale.red.9'), 0.2)(theme)}`,
+        "selectedShadow": "0 0 transparent",
         "disabledText": {
-          "$value": "{base.color.scale.red.5}",
+          "$value": "{base.color.scale.red.4}",
           "$type": "color",
           "alpha": 0.5
         },
         "disabledBg": {
-          "$value": "{base.color.scale.gray.0}",
+          "$value": "{base.color.scale.gray.9}",
           "$type": "color"
         },
         "disabledCounterBg": {
@@ -333,21 +393,17 @@
           "alpha": 0.05
         },
         "focusBorder": {
-          "$value": "{color.border.subtle}",
+          "$value": "{base.color.scale.red.4}",
           "$type": "color"
         },
-        // focusShadow: (theme: any) => `0 0 0 3px ${alpha(get('scale.red.6'), 0.4)(theme)}`,
+
         "counterBg": {
           "$value": "{base.color.scale.red.5}",
           "$type": "color",
           "alpha": 0.1
         },
         "icon": {
-          "$value": "{base.color.scale.red.5}",
-          "$type": "color"
-        },
-        "hoverIcon": {
-          "$value": "{base.color.scale.white}",
+          "$value": "{base.color.scale.red.4}",
           "$type": "color"
         }
       }
@@ -374,16 +430,17 @@
         "hoverBg": {
           "$value": "{base.color.scale.gray.2}",
           "$type": "color",
-          "alpha": 0.32
+          "alpha": 0.12
         },
         "hoverBorder": {
           "$value": "{base.color.scale.transparent}",
           "$type": "color"
         },
+
         "activeBg": {
           "$value": "{base.color.scale.gray.2}",
           "$type": "color",
-          "alpha": 0.48
+          "alpha": 0.2
         },
         "activeBorder": {
           "$value": "{base.color.scale.transparent}",
@@ -392,21 +449,22 @@
         "selectedBg": {
           "$value": "{base.color.scale.gray.2}",
           "$type": "color",
-          "alpha": 0.24
+          "alpha": 0.08
         }
       },
       "danger": {
         "hoverBg": {
-          "$value": "{color.danger.subtle}",
+          "$value": "{base.color.scale.red.4}",
           "$type": "color",
-          "alpha": 0.64
+          "alpha": 0.16
         },
         "activeBg": {
-          "$value": "{color.danger.subtle}",
-          "$type": "color"
+          "$value": "{base.color.scale.red.4}",
+          "$type": "color",
+          "alpha": 0.24
         },
         "hoverText": {
-          "$value": "{color.danger.fg}",
+          "$value": "{base.color.scale.red.3}",
           "$type": "color"
         }
       }
@@ -414,26 +472,29 @@
 
     "switchTrack": {
       "bg": {
-        "$value": "{base.color.scale.gray.1}",
+        "$value": "{base.color.scale.black}",
         "$type": "color"
       },
       "border": {
-        "$value": "{base.color.scale.gray.3}",
+        "$value": "{base.color.scale.gray.4}",
         "$type": "color"
       },
 
       "checked": {
         "bg": {
-          "$value": "{base.color.scale.blue.0}",
-          "$type": "color"
+          "$value": "{base.color.scale.blue.5}",
+          "$type": "color",
+          "alpha": 0.35
         },
         "hoverBg": {
-          "$value": "{base.color.scale.blue.1}",
-          "$type": "color"
+          "$value": "{base.color.scale.blue.5}",
+          "$type": "color",
+          "alpha": 0.5
         },
         "activeBg": {
-          "$value": "{base.color.scale.blue.2}",
-          "$type": "color"
+          "$value": "{base.color.scale.blue.5}",
+          "$type": "color",
+          "alpha": 0.65
         },
         "border": {
           "$value": "{base.color.scale.blue.3}",
@@ -457,30 +518,28 @@
 
     "segmentedControl": {
       "bg": {
-        "$value": "{base.color.scale.gray.1}",
+        "$value": "{base.color.scale.gray.8}",
         "$type": "color"
       },
 
       "button": {
         "hover": {
           "bg": {
-            "$value": "{base.color.scale.gray.3}",
-            "$type": "color",
-            "alpha": 0.2
+            "$value": "{base.color.scale.gray.6}",
+            "$type": "color"
           }
         },
 
         "active": {
           "bg": {
-            "$value": "{base.color.scale.gray.3}",
-            "$type": "color",
-            "alpha": 0.4
+            "$value": "{base.color.scale.gray.7}",
+            "$type": "color"
           }
         },
 
         "selected": {
           "border": {
-            "$value": "{base.color.scale.gray.5}",
+            "$value": "{base.color.scale.gray.4}",
             "$type": "color"
           }
         }
