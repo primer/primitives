@@ -1,7 +1,6 @@
-// @ts-ignore
 import { ContrastRequirement, contrastRequirements, cavnasColors } from './color-contrast.config'
 import { Table } from "console-table-printer"
-import { flattenObject } from './lib/flattenObject'
+import { flattenObject } from './utilities/flattenObject'
 import colors from "../dist/ts"
 import * as fs from 'fs';
 import { normal } from 'color-blend'
@@ -166,7 +165,7 @@ const results = Object.entries(contrastRequirements)
   })
 
 // write json file for workflow
-fs.writeFile('color-contrast-check.json', JSON.stringify(results), (err) => {
+fs.writeFile('dist/color-contrast-check.json', JSON.stringify(results), (err) => {
   if (err) throw err;
   console.log('The file has been saved!');
 })

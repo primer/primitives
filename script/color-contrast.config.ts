@@ -1,4 +1,4 @@
-type ContrastRequirement = [
+export type ContrastRequirement = [
   minimumContrast: number,
   foregroundColor: string,
   backgroundColor: string,
