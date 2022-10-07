@@ -13,28 +13,28 @@ const { fileHeader } = StyleDictionary.formatHelpers;
  * @param designTokenTypes 
  * @returns string with unquoted types
  */
-const unquoteTypes = (output: string, designTokenTypes: string): string => {
+const unquoteTypes = (output: string, designTokenTypes: string[]): string => {
   // regex to match types like `type Color`
-  const findTypesRegex = `type ([A-Za-z]+)`
-  // extract types from designToken
-  const types = [...designTokenTypes.matchAll(new RegExp(findTypesRegex, "g"))].map(match => match[1])
+  // const findTypesRegex = `type ([A-Za-z]+)`
+  // // extract types from designToken
+  // const types = [...designTokenTypes.matchAll(new RegExp(findTypesRegex, "g"))].map(match => match[1])
   // join types for replacement
-  const regex = `"(${types.join('|')})"`
+  const regex = `"(${designTokenTypes.join('|')})"`
   // remove strings
   return output.replace(new RegExp(regex, "g"), '$1')
 }
 
 /**
- * getTokenTypes
+ * getTokenType
  * @description extract content from token files
- * @param path 
+ * @param path string
  */
-const getTokenTypes = (tokenTypesPath: string): string => {
-  const designTokenTypes = fs.readFileSync(
+const getTokenType = (tokenTypesPath: string): string => {
+  const designTokenType = fs.readFileSync(
     path.resolve(tokenTypesPath), { encoding: 'UTF-8' }
   );
   //
-  return designTokenTypes
+  return designTokenType
 }
 
 /**
@@ -43,12 +43,19 @@ const getTokenTypes = (tokenTypesPath: string): string => {
  * @param type 
  * @returns 
  */
-const convertPropToType = (type: string): string => {
+const convertPropToType = (value: any, type: string): string => {
   switch (type) {
     case 'color':
-      return 'Color';
-    case 'size':
-      return 'Size';
+      if (value[0] === '#') {
+        return 'ColorHex';
+      }
+    case 'dimension':
+      if (value.substring(value.length - 3) === 'rem') {
+        return 'SizeRem';
+      }
+      return 'Size'
+    case 'shadow':
+      return 'Shadow';
     default:
       return 'string';
   }
@@ -56,20 +63,23 @@ const convertPropToType = (type: string): string => {
 
 /**
  * toType
- * @description converts 
+ * @description converts tokens to type and returns array with used type
  * @param token StyleDictionary.DesignToken in object structure to their types using the $type attribute
  * @returns 
  */
-const toType = (token: StyleDictionary.DesignToken | {}): object | string => {
+const toType = (token: StyleDictionary.DesignToken | {}, usedTypes: Set<string>): object | string => {
   // is design token
-  if ('value' in token) return convertPropToType(token.$type)
+  if ('value' in token) {
+    usedTypes.add(convertPropToType(token.value, token.$type))
+    return convertPropToType(token.value, token.$type)
+  }
   // is non-object value
   if (typeof token !== 'object') return token
   // is obj
   const nextObj = {}
   for (const [prop, value] of Object.entries(token)) {
     // @ts-ignore
-    nextObj[prop] = toType(value)
+    nextObj[prop] = toType(value, usedTypes)
   }
   return nextObj
 }
@@ -82,14 +92,26 @@ const toType = (token: StyleDictionary.DesignToken | {}): object | string => {
  * @returns string
  */
 const getTypeDefinition = (tokens: StyleDictionary.DesignTokens, moduleName: string, tokenTypesPath: string): string => {
+  const usedTypes = new Set<string>()
+  const tokenWithTypes = toType(tokens, usedTypes)
+  // clean up types
+  usedTypes.forEach((type) => {
+    if (!['ColorHex', 'Shadow', 'Size', 'SizeRem'].includes(type)) {
+      usedTypes.delete(type)
+    }
+  })
   // get token type declaration from file
-  const designTokenTypes = getTokenTypes(tokenTypesPath)
+  let designTokenTypes = []
+  for (const type of usedTypes) {
+    designTokenTypes.push(getTokenType(`${tokenTypesPath}/${type}.d.ts`))
+  }
+
   // build output
-  const output = `${designTokenTypes}\n` +
-    `export type ${moduleName} = ${JSON.stringify(toType(tokens), null, 2)}`
+  const output = `${designTokenTypes.join("\n")}\n` +
+    `export type ${moduleName} = ${JSON.stringify(tokenWithTypes, null, 2)}`
 
   // JSON stringify will quote strings, because this is a type we need it unquoted.
-  return unquoteTypes(output, designTokenTypes)
+  return unquoteTypes(output, [...usedTypes])
 }
 /**
  * typescriptExportDefinition
@@ -101,11 +123,20 @@ export const typescriptExportDefinition: StyleDictionary.Formatter = ({ dictiona
   // extract options
   const {
     moduleName = `tokens`,
-    tokenTypesPath = `./config/types/DesignTokenTypes.d.ts`
+    tokenTypesPath = `./config/types/`,
+    unwrapFirstLevel = false
   } = options
-  // add prefix if set
   const { prefix } = platform
-  let tokens = prefix ? { [prefix]: dictionary.tokens } : dictionary.tokens
+
+  let tokens = dictionary.tokens
+  // unwrap first level e.g. color.fg.default -> fg.default
+  if (unwrapFirstLevel) {
+    tokens = tokens[Object.keys(tokens)[0]]
+  }
+  // add prefix if defined
+  if (prefix) {
+    tokens = { [prefix]: tokens }
+  }
   // compose output
   const output = fileHeader({ file }) +
     `\n${getTypeDefinition(tokens, moduleName, tokenTypesPath)}\n`

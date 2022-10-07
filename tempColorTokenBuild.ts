@@ -7,6 +7,7 @@ import { platformDocJson } from './config/platforms/docJson';
 import { platformScss } from './config/platforms/scss';
 import { platformJs } from './config/platforms/javascript';
 import { platformTs } from './config/platforms/typescript';
+import { platformTypeDefinitions } from './config/platforms/typesDefinitions';
 import { platformDeprecatedJson } from './config/platforms/deprecatedJson';
 import { platformFigmaJson } from './config/platforms/figmaJson';
 import { colorToHexAlpha } from './config/tranformers/color-to-hex-alpha';
@@ -31,6 +32,8 @@ import { shadowCss } from './config/tranformers/shadow-css';
 const buildPath = 'tokens-v2-private'
 const inputPath = 'tokens'
 const prefix = 'primer'
+const baseDir = 'base'
+const functionalDir = 'functional'
 
 const functionalColorFiles = {
   light: [
@@ -118,12 +121,10 @@ for (const [theme, source, include] of themes) {
 /**
  * convert typography and size
  */
-const ignoreDirs = ['color', 'shadow', 'removed', 'deprecated']
-const baseDir = 'base'
-const functionalDir = 'functional'
+const ignoreDirs = ['color', 'shadow', 'removed']
 
-getInputFiles(inputPath, ignoreDirs, {baseDir, functionalDir}).then(inputFiles => {
-  for (const {basename, dir, path} of inputFiles[functionalDir]) {
+getInputFiles(inputPath, ignoreDirs, { baseDir, functionalDir }).then(inputFiles => {
+  for (const { basename, dir, path } of inputFiles[functionalDir]) {
     StyleDictionary
       .extend(getStyleDictionaryConfig(`${dir}/${basename}`, [path], [`${inputPath}/${baseDir}/${dir}/*.json`, `${inputPath}/${functionalDir}/${dir}/*.json`]))
       .buildAllPlatforms()
@@ -132,28 +133,40 @@ getInputFiles(inputPath, ignoreDirs, {baseDir, functionalDir}).then(inputFiles =
 //  convert shadows
 console.log("⚠️ Shadows are not implemented in tokens correctly")
 StyleDictionary
-.extend(getStyleDictionaryConfig(`shadow/shadow`, [`${inputPath}/${baseDir}/shadow/shadow.json`, `${inputPath}/${functionalDir}/shadow/shadow.json`], [`${inputPath}/${baseDir}/shadow/shadow.json`, `${inputPath}/${baseDir}/color/light.json`, `${inputPath}/${functionalDir}/color/primitives-light.json`], {outputReferences: true}))
-.buildAllPlatforms()
+  .extend(getStyleDictionaryConfig(`shadow/shadow`, [`${inputPath}/${baseDir}/shadow/shadow.json`, `${inputPath}/${functionalDir}/shadow/shadow.json`], [`${inputPath}/${baseDir}/shadow/shadow.json`, `${inputPath}/${baseDir}/color/light.json`, `${inputPath}/${functionalDir}/color/primitives-light.json`], { outputReferences: true }))
+  .buildAllPlatforms()
 
 /**
  * build deprecated.json
  */
- const deprecatedBuilds = [
-   ['color', themes[0][1], themes[0][2]], // light mode
+const deprecatedBuilds = [
+  ['color', themes[0][1], themes[0][2]], // light mode
   ['size', [`${inputPath}/${functionalDir}/size/*.json`], [`${inputPath}/${baseDir}/size/*.json`]],
   ['typography', [`${inputPath}/${functionalDir}/typography/*.json`], [`${inputPath}/${baseDir}/typography/*.json`]],
+  ['shadow', [`${inputPath}/${functionalDir}/shadow/*.json`], [`${inputPath}/${baseDir}/shadow/*.json`, ...themes[0][1], ...themes[0][2]]],
 ]
 // get config
 const deprecatedConfig = (outputName, source, include, buildPath) => ({
   source,
   include,
   parsers: [w3cJsonParser],
+  format: {
+    'typescript/export-definition': typescriptExportDefinition
+  },
   transform: {
+    'color/hexAlpha': colorToHexAlpha,
+    'color/hex6': colorToHex6,
+    'css/fontFamily': typopgraphyCssFontFamily,// invert names to fontFamily/css
+    'css/fontShorthand': typopgraphyCssShorthand, // invert
+    'fontWeight/toNumber': typographyFontWeightToNumber,
+    'dimension/pixelToRem': dimensionPixelToRem,
+    'shadow/css': shadowCss,
     'json/deprecated': jsonDeprecated,
     'name/pathToDotNotation': namePathToDotNotation
   },
   platforms: { 
-    deprecated: platformDeprecatedJson(`${outputName}.json`, prefix, buildPath)
+    deprecated: platformDeprecatedJson(`${outputName}.json`, prefix, buildPath),
+    types: platformTypeDefinitions(`${outputName}`, undefined, buildPath),
   }
 })
 //
@@ -177,9 +190,9 @@ const figmaConfig = (outputName, source, include, buildPath) => ({
     'color/hex6': colorToHex6,
   },
   format: {
-    'json/figma': jsonFigma 
+    'json/figma': jsonFigma
   },
-  platforms: { 
+  platforms: {
     figma: platformFigmaJson(`${outputName}.json`, undefined, buildPath),
   }
 })
@@ -188,10 +201,11 @@ const figmaBuilds = [
   ...themes,
   ['size', [`${inputPath}/${functionalDir}/size/*.json`], [`${inputPath}/${baseDir}/size/*.json`]],
   ['typography', [`${inputPath}/${functionalDir}/typography/*.json`], [`${inputPath}/${baseDir}/typography/*.json`]],
+  ['shadow', [`${inputPath}/${functionalDir}/shadow/*.json`], [`${inputPath}/${baseDir}/shadow/*.json`, ...themes[0][1], ...themes[0][2]]],
 ]
 for (const [name, source, include] of figmaBuilds) {
   //
   StyleDictionary
-  .extend(figmaConfig(name, source, include, buildPath))
-  .buildAllPlatforms()
+    .extend(figmaConfig(name, source, include, buildPath))
+    .buildAllPlatforms()
 }

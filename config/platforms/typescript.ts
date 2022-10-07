@@ -17,15 +17,6 @@ export const platformTs: PlatformInitializer = (outputFile, prefix, buildPath): 
       options: {
         unwrapFirstLevel: true
       }
-    },
-    {
-      format: "typescript/export-definition",
-      destination: `${outputFile.replace('.ts', '.d.ts')}`,
-      filter: isSource,
-      options: {
-        moduleName: 'DesignTokens',
-        tokenTypesPath: './config/types/DesignTokenTypes.d.ts'
-      }
-    },
+    }
   ]
 })
