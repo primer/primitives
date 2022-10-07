@@ -1,5 +1,6 @@
 import StyleDictionary from 'style-dictionary';
+import { isSource } from './isSource';
 
 export const isDeprecated = (token: StyleDictionary.TransformedToken) => {
-  return token?.deprecated !== undefined;
+  return isSource(token) && (token?.deprecated !== undefined);
 }
