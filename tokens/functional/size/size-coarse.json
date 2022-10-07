@@ -1,26 +1,28 @@
 {
-  "control": {
-    "minTarget": {
-      "auto": {
-        "$value": "{base.size.44}",
-        "$type": "dimension"
-      }
-    }
-  },
-  "controlStack": {
-    "small": {
-      "gap": {
+  "size": {
+    "control": {
+      "minTarget": {
         "auto": {
-          "$value": "{base.size.16}",
+          "$value": "{base.size.44}",
           "$type": "dimension"
         }
       }
     },
-    "medium": {
-      "gap": {
-        "auto": {
-          "$value": "{base.size.12}",
-          "$type": "dimension"
+    "controlStack": {
+      "small": {
+        "gap": {
+          "auto": {
+            "$value": "{base.size.16}",
+            "$type": "dimension"
+          }
+        }
+      },
+      "medium": {
+        "gap": {
+          "auto": {
+            "$value": "{base.size.12}",
+            "$type": "dimension"
+          }
         }
       }
     }

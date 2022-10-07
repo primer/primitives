@@ -1,55 +1,57 @@
 {
-  "borderInset": {
-    "thin": {
-      "$value": "inset 0 0 0 {borderWidth.thin}",
-      "$type": "dimension"
+  "size": {
+    "borderInset": {
+      "thin": {
+        "$value": "inset 0 0 0 {size.borderWidth.thin}",
+        "$type": "dimension"
+      },
+      "thick": {
+        "$value": "inset 0 0 0 {size.borderWidth.thick}",
+        "$type": "dimension"
+      },
+      "thicker": {
+        "$value": "inset 0 0 0 {size.borderWidth.thicker}",
+        "$type": "dimension"
+      }
     },
-    "thick": {
-      "$value": "inset 0 0 0 {borderWidth.thick}",
-      "$type": "dimension"
+    "borderWidth": {
+      "thin": {
+        "$value": "max(1px, 0.0625rem)",
+        "$type": "dimension",
+        "figmaType": "borderWidth"
+      },
+      "thick": {
+        "$value": "max(2px, 0.125rem)",
+        "$type": "dimension",
+        "figmaType": "borderWidth"
+      },
+      "thicker": {
+        "$value": "max(4px, 0.25rem)",
+        "$type": "dimension",
+        "figmaType": "borderWidth"
+      }
     },
-    "thicker": {
-      "$value": "inset 0 0 0 {borderWidth.thicker}",
-      "$type": "dimension"
-    }
-  },
-  "borderWidth": {
-    "thin": {
-      "$value": "max(1px, 0.0625rem)",
-      "$type": "dimension",
-      "figmaType": "borderWidth"
-    },
-    "thick": {
-      "$value": "max(2px, 0.125rem)",
-      "$type": "dimension",
-      "figmaType": "borderWidth"
-    },
-    "thicker": {
-      "$value": "max(4px, 0.25rem)",
-      "$type": "dimension",
-      "figmaType": "borderWidth"
-    }
-  },
-  "borderRadius": {
-    "small": {
-      "$value": "3px",
-      "$type": "dimension",
-      "figmaType": "borderRadius"
-    },
-    "medium": {
-      "$value": "6px",
-      "$type": "dimension",
-      "figmaType": "borderRadius"
-    },
-    "large": {
-      "$value": "12px",
-      "$type": "dimension",
-      "figmaType": "borderRadius"
-    },
-    "full": {
-      "$value": "100vh",
-      "$type": "dimension",
-      "figmaType": "borderRadius"
+    "borderRadius": {
+      "small": {
+        "$value": "3px",
+        "$type": "dimension",
+        "figmaType": "borderRadius"
+      },
+      "medium": {
+        "$value": "6px",
+        "$type": "dimension",
+        "figmaType": "borderRadius"
+      },
+      "large": {
+        "$value": "12px",
+        "$type": "dimension",
+        "figmaType": "borderRadius"
+      },
+      "full": {
+        "$value": "100vh",
+        "$type": "dimension",
+        "figmaType": "borderRadius"
+      }
     }
   }
 }

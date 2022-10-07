@@ -1,28 +1,30 @@
 {
-  "viewportRange": {
-    "narrow": {
-      "$value": "(max-width: calc({breakpoint.medium} - 0.02px))",
-      "$type": "dimension"
-    },
-    "narrowLandscape": {
-      "$value": "(max-width: calc({breakpoint.large} - 0.02px) and (max-height: calc({breakpoint.small} - 0.02px)) and (orientation: landscape))",
-      "$type": "dimension"
-    },
-    "regular": {
-      "$value": "(min-width: {breakpoint.medium})",
-      "$type": "dimension"
-    },
-    "wide": {
-      "$value": "(min-width: {breakpoint.xxlarge})",
-      "$type": "dimension"
-    },
-    "portrait": {
-      "$value": "(orientation: portrait)",
-      "$type": "dimension"
-    },
-    "landscape": {
-      "$value": "(orientation: landscape)",
-      "$type": "dimension"
+  "size": {
+    "viewportRange": {
+      "narrow": {
+        "$value": "(max-width: calc({size.breakpoint.medium} - 0.02px))",
+        "$type": "dimension"
+      },
+      "narrowLandscape": {
+        "$value": "(max-width: calc({size.breakpoint.large} - 0.02px) and (max-height: calc({size.breakpoint.small} - 0.02px)) and (orientation: landscape))",
+        "$type": "dimension"
+      },
+      "regular": {
+        "$value": "(min-width: {size.breakpoint.medium})",
+        "$type": "dimension"
+      },
+      "wide": {
+        "$value": "(min-width: {size.breakpoint.xxlarge})",
+        "$type": "dimension"
+      },
+      "portrait": {
+        "$value": "(orientation: portrait)",
+        "$type": "dimension"
+      },
+      "landscape": {
+        "$value": "(orientation: landscape)",
+        "$type": "dimension"
+      }
     }
   }
 }
