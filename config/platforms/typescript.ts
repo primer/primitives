@@ -5,7 +5,7 @@ import { isSource } from '../filters/isSource'
 export const platformTs: PlatformInitializer = (outputFile, prefix, buildPath): StyleDictionary.Platform => ({
   prefix: prefix,
   buildPath: `${buildPath}/ts/`,
-  transforms: ['name/cti/camel', 'color/hex6', 'color/rgbAlpha', 'css/fontFamily', 'css/fontShorthand', 'fontWeight/toNumber', 'dimension/pixelToRem', 'shadow/css'],
+  transforms: ['name/cti/camel', 'color/hex6', 'color/hexAlpha', 'css/fontFamily', 'css/fontShorthand', 'fontWeight/toNumber', 'dimension/pixelToRem', 'shadow/css'],
   options: {
     basePxFontSize: 16,
   },
