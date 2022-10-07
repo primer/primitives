@@ -13,7 +13,10 @@ export const platformTs: PlatformInitializer = (outputFile, prefix, buildPath): 
     {
       format: "javascript/export",
       destination: outputFile,
-      filter: isSource
+      filter: isSource,
+      options: {
+        unwrapFirstLevel: true
+      }
     },
     {
       format: "typescript/export-definition",

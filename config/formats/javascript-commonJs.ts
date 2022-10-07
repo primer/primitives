@@ -7,10 +7,18 @@ const { fileHeader } = StyleDictionary.formatHelpers;
 
 export const javascriptCommonJs: StyleDictionary.Formatter = ({ dictionary, file, options, platform }) => {
   const { prefix } = platform
-  let tokens = prefix ? { [prefix]: dictionary.tokens } : dictionary.tokens
+  let tokens = dictionary.tokens
+  // unwrap first level e.g. color.fg.default -> fg.default
+  if (options.unwrapFirstLevel) {
+    tokens = tokens[Object.keys(tokens)[0]]
+  }
+  // add prefix if defined
+  if (prefix) {
+    tokens = { [prefix]: tokens }
+  }
   //
   const output = fileHeader({ file }) +
-    `module.exports = ${JSON.stringify(jsonToNestedValue(tokens), null, 2)}\n`
+    `exports.default = ${JSON.stringify(jsonToNestedValue(tokens), null, 2)}\n`
   // return prettified
   return format(output, { parser: "typescript", printWidth: 500 })
 }

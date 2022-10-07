@@ -13,7 +13,10 @@ export const platformJs: PlatformInitializer = (outputFile, prefix, buildPath): 
     {
       format: "javascript/commonJs",
       destination: outputFile,
-      filter: isSource
+      filter: isSource,
+      options: {
+        unwrapFirstLevel: true
+      }
     },
   ]
 })

@@ -93,12 +93,12 @@ const getStyleDictionaryConfig = (outputName, source, include, options?: any = {
     'shadow/css': shadowCss
   },
   platforms: {
-    css: platformCss(`${outputName}.css`, prefix, buildPath, options),
-    docJson: platformDocJson(`${outputName}.json`, prefix, buildPath),
+    css: platformCss(`${outputName}.css`, undefined, buildPath, options),
     scss: platformScss(`${outputName}.scss`, undefined, buildPath),
-    ts: platformTs(`${outputName}.ts`, undefined, buildPath),
     js: platformJs(`${outputName}.js`, undefined, buildPath),
+    ts: platformTs(`${outputName}.ts`, undefined, buildPath),
     json: platformJson(`${outputName}.json`, undefined, buildPath),
+    docJson: platformDocJson(`${outputName}.json`, prefix, buildPath),
   }
 })
 

@@ -23,17 +23,8 @@ export const platformScss: PlatformInitializer = (outputFile, prefix, buildPath)
       basePxFontSize: 16,
     },
     files: [
-      // {
-      //   destination: outputFile,
-      //   format: `scss/mixin-scss-variables`,
-      //   filter: isSource,
-      //   options: {
-      //     mixinName: mixinName,
-      //     outputReferences: false,
-      //   }
-      // },
       {
-        destination: outputFile,//.replace('.scss', '.css.scss'),
+        destination: outputFile,
         filter: isSource,
         format: `scss/mixin-css-variables`,
         options: {
