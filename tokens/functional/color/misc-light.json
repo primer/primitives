@@ -1,0 +1,37 @@
+{
+  "color": {
+    "page": {
+      "header": {
+        "bg": {
+          "$value": "{color.canvas.subtle}",
+          "$type": "color"
+        }
+      }
+    },
+    "searchKeyword": {
+      "hl": {
+        "$value": "{base.color.scale.yellow.0}",
+        "$type": "color"
+      }
+    },
+    "project": {
+      "headerBg": {
+        "$value": "{base.color.scale.gray.9}",
+        "$type": "color"
+      },
+      "sidebarBg": {
+        "$value": "{base.color.scale.white}",
+        "$type": "color"
+      },
+      "gradientIn": {
+        "$value": "{base.color.scale.white}",
+        "$type": "color"
+      },
+      "gradientOut": {
+        "$value": "{base.color.scale.white}",
+        "$type": "color",
+        "alpha": 0
+      }
+    }
+  }
+}

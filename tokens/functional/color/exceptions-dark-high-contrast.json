@@ -1,0 +1,271 @@
+{
+  "color": {
+    "fg": {
+      "muted": {
+        "$value": "{base.color.scale.gray.1}",
+        "$type": "color"
+      },
+      "onEmphasis": {
+        "$value": "{base.color.scale.gray.9}",
+        "$type": "color"
+      }
+    },
+    "border": {
+      "default": {
+        "$value": "{base.color.scale.gray.5}",
+        "$type": "color"
+      },
+      "muted": {
+        "$value": "{base.color.scale.gray.5}",
+        "$type": "color"
+      },
+      "subtle": {
+        "$value": "{base.color.scale.gray.5}",
+        "$type": "color"
+      }
+    },
+    "neutral": {
+      "emphasis": {
+        "$value": "{base.color.scale.gray.4}",
+        "$type": "color"
+      },
+      "emphasisPlus": {
+        "$value": "{base.color.scale.gray.0}",
+        "$type": "color"
+      }
+    },
+    "accent": {
+      "muted": {
+        "$value": "{base.color.scale.blue.4}",
+        "$type": "color"
+      }
+    },
+    "success": {
+      "muted": {
+        "$value": "{base.color.scale.green.4}",
+        "$type": "color"
+      }
+    },
+    "attention": {
+      "muted": {
+        "$value": "{base.color.scale.yellow.4}",
+        "$type": "color"
+      }
+    },
+    "severe": {
+      "muted": {
+        "$value": "{base.color.scale.orange.4}",
+        "$type": "color"
+      }
+    },
+    "danger": {
+      "muted": {
+        "$value": "{base.color.scale.red.4}",
+        "$type": "color"
+      }
+    },
+    "done": {
+      "muted": {
+        "$value": "{base.color.scale.purple.4}",
+        "$type": "color"
+      }
+    },
+    "sponsors": {
+      "muted": {
+        "$value": "{base.color.scale.pink.4}",
+        "$type": "color"
+      }
+    },
+    "avatar": {
+      "border": {
+        "$value": "{base.color.scale.white}",
+        "$type": "color",
+        "alpha": 0.9
+      }
+    },
+    "diffstat": {
+      "deletionBorder": {
+        "$value": "{base.color.scale.red.2}",
+        "$type": "color"
+      },
+      "additionBorder": {
+        "$value": "{base.color.scale.green.2}",
+        "$type": "color"
+      }
+    },
+    "underlinenav": {
+      "icon": {
+        "$value": "{base.color.scale.gray.1}",
+        "$type": "color"
+      },
+      "borderHover": {
+        "$value": "{base.color.scale.gray.3}",
+        "$type": "color"
+      }
+    },
+    "topicTag": {
+      "border": {
+        "$value": "{color.accent.emphasis}",
+        "$type": "color"
+      }
+    },
+    "btn": {
+      "selectedBg": {
+        "$value": "{base.color.scale.gray.6}",
+        "$type": "color",
+        "alpha": 0.9
+      },
+      "primary": {
+        "text": {
+          "$value": "{color.fg.onEmphasis}",
+          "$type": "color"
+        },
+        "border": {
+          "$value": "{base.color.scale.green.2}",
+          "$type": "color"
+        },
+        "hover": {
+          "bg": {
+            "$value": "{base.color.scale.green.3}",
+            "$type": "color"
+          }
+        },
+        "hoverBorder": {
+          "$value": "{base.color.scale.green.2}",
+          "$type": "color"
+        },
+        "disabledText": {
+          "$value": "{color.fg.onEmphasis}",
+          "$type": "color",
+          "alpha": 0.5
+        },
+        "disabledBg": {
+          "$value": "{base.color.scale.green.5}",
+          "$type": "color",
+          "alpha": 0.6
+        },
+        "disabledBorder": {
+          "$value": "{base.color.scale.green.2}",
+          "$type": "color",
+          "alpha": 0.4
+        },
+        "icon": {
+          "$value": "{color.fg.onEmphasis}",
+          "$type": "color"
+        },
+        "counterBg": {
+          "$value": "{base.color.scale.black}",
+          "$type": "color",
+          "alpha": 0.15
+        }
+      },
+      "danger": {
+        "hover": {
+          "counter": {
+            "bg": {
+              "$value": "{base.color.scale.black}",
+              "$type": "color",
+              "alpha": 0.15
+            }
+          }
+        },
+        "counterBg": {
+          "$value": "{base.color.scale.black}",
+          "$type": "color",
+          "alpha": 0.15
+        }
+      }
+    },
+    "codemirror": {
+      "selectionBg": {
+        "$value": "{base.color.scale.blue.4}",
+        "$type": "color",
+        "alpha": 0.4
+      }
+    },
+    "diffBlob": {
+      "addition": {
+        "fg": {
+          "$value": "{color.fg.onEmphasis}",
+          "$type": "color"
+        }
+      },
+      "deletion": {
+        "fg": {
+          "$value": "{color.fg.onEmphasis}",
+          "$type": "color"
+        }
+      },
+      "expander": {
+        "icon": {
+          "$value": "{color.fg.default}",
+          "$type": "color"
+        }
+      },
+      "hunk": {
+        "numBg": {
+          "$value": "{color.accent.muted}",
+          "$type": "color",
+          "alpha": 0.4
+        }
+      }
+    },
+
+    "actionListItem": {
+      "inlineDivider": {
+        "$value": "{color.border.muted}",
+        "$type": "color"
+      },
+
+      "default": {
+        "hoverBg": {
+          "$value": "{base.color.scale.gray.8}",
+          "$type": "color"
+        },
+        "hoverBorder": {
+          "$value": "{color.border.default}",
+          "$type": "color"
+        },
+        "activeBg": {
+          "$value": "{base.color.scale.gray.6}",
+          "$type": "color"
+        },
+        "activeBorder": {
+          "$value": "{base.color.scale.gray.4}",
+          "$type": "color"
+        },
+        "selectedBg": {
+          "$value": "{base.color.scale.gray.6}",
+          "$type": "color"
+        }
+      },
+      "danger": {
+        "hoverBg": {
+          "$value": "{color.danger.emphasis}",
+          "$type": "color"
+        },
+        "activeBg": {
+          "$value": "{base.color.scale.red.6}",
+          "$type": "color"
+        },
+        "hoverText": {
+          "$value": "{color.fg.onEmphasis}",
+          "$type": "color"
+        }
+      }
+    },
+
+    "switchTrack": {
+      "border": {
+        "$value": "{color.border.default}",
+        "$type": "color"
+      },
+      "checked": {
+        "border": {
+          "$value": "{base.color.scale.blue.5}",
+          "$type": "color"
+        }
+      }
+    }
+  }
+}

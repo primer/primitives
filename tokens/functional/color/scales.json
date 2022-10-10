@@ -1,0 +1,582 @@
+{
+  "color": {
+    "scale": {
+      "black": {
+        "$value": "{base.color.scale.black}",
+        "$type": "color",
+        "deprecated": null,
+        "description": "Avoid using scales, use other functional tokens instead"
+      },
+      "transparent": {
+        "$value": "{base.color.scale.transparent}",
+        "$type": "color",
+        "deprecated": null,
+        "description": "Avoid using scales, use other functional tokens instead"
+      },
+      "white": {
+        "$value": "{base.color.scale.white}",
+        "$type": "color",
+        "deprecated": null,
+        "description": "Avoid using scales, use other functional tokens instead"
+      },
+      "gray": {
+        "0": {
+          "$value": "{base.color.scale.gray.0}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "1": {
+          "$value": "{base.color.scale.gray.1}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "2": {
+          "$value": "{base.color.scale.gray.2}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "3": {
+          "$value": "{base.color.scale.gray.3}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "4": {
+          "$value": "{base.color.scale.gray.4}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "5": {
+          "$value": "{base.color.scale.gray.5}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "6": {
+          "$value": "{base.color.scale.gray.6}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "7": {
+          "$value": "{base.color.scale.gray.7}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "8": {
+          "$value": "{base.color.scale.gray.8}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "9": {
+          "$value": "{base.color.scale.gray.9}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        }
+      },
+      "blue": {
+        "0": {
+          "$value": "{base.color.scale.blue.0}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "1": {
+          "$value": "{base.color.scale.blue.1}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "2": {
+          "$value": "{base.color.scale.blue.2}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "3": {
+          "$value": "{base.color.scale.blue.3}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "4": {
+          "$value": "{base.color.scale.blue.4}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "5": {
+          "$value": "{base.color.scale.blue.5}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "6": {
+          "$value": "{base.color.scale.blue.6}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "7": {
+          "$value": "{base.color.scale.blue.7}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "8": {
+          "$value": "{base.color.scale.blue.8}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "9": {
+          "$value": "{base.color.scale.blue.9}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        }
+      },
+      "green": {
+        "0": {
+          "$value": "{base.color.scale.green.0}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "1": {
+          "$value": "{base.color.scale.green.1}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "2": {
+          "$value": "{base.color.scale.green.2}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "3": {
+          "$value": "{base.color.scale.green.3}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "4": {
+          "$value": "{base.color.scale.green.4}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "5": {
+          "$value": "{base.color.scale.green.5}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "6": {
+          "$value": "{base.color.scale.green.6}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "7": {
+          "$value": "{base.color.scale.green.7}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "8": {
+          "$value": "{base.color.scale.green.8}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "9": {
+          "$value": "{base.color.scale.green.9}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        }
+      },
+      "yellow": {
+        "0": {
+          "$value": "{base.color.scale.yellow.0}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "1": {
+          "$value": "{base.color.scale.yellow.1}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "2": {
+          "$value": "{base.color.scale.yellow.2}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "3": {
+          "$value": "{base.color.scale.yellow.3}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "4": {
+          "$value": "{base.color.scale.yellow.4}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "5": {
+          "$value": "{base.color.scale.yellow.5}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "6": {
+          "$value": "{base.color.scale.yellow.6}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "7": {
+          "$value": "{base.color.scale.yellow.7}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "8": {
+          "$value": "{base.color.scale.yellow.8}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "9": {
+          "$value": "{base.color.scale.yellow.9}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        }
+      },
+      "orange": {
+        "0": {
+          "$value": "{base.color.scale.orange.0}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "1": {
+          "$value": "{base.color.scale.orange.1}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "2": {
+          "$value": "{base.color.scale.orange.2}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "3": {
+          "$value": "{base.color.scale.orange.3}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "4": {
+          "$value": "{base.color.scale.orange.4}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "5": {
+          "$value": "{base.color.scale.orange.5}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "6": {
+          "$value": "{base.color.scale.orange.6}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "7": {
+          "$value": "{base.color.scale.orange.7}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "8": {
+          "$value": "{base.color.scale.orange.8}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "9": {
+          "$value": "{base.color.scale.orange.9}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        }
+      },
+      "red": {
+        "0": {
+          "$value": "{base.color.scale.red.0}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "1": {
+          "$value": "{base.color.scale.red.1}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "2": {
+          "$value": "{base.color.scale.red.2}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "3": {
+          "$value": "{base.color.scale.red.3}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "4": {
+          "$value": "{base.color.scale.red.4}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "5": {
+          "$value": "{base.color.scale.red.5}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "6": {
+          "$value": "{base.color.scale.red.6}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "7": {
+          "$value": "{base.color.scale.red.7}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "8": {
+          "$value": "{base.color.scale.red.8}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "9": {
+          "$value": "{base.color.scale.red.9}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        }
+      },
+      "purple": {
+        "0": {
+          "$value": "{base.color.scale.purple.0}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "1": {
+          "$value": "{base.color.scale.purple.1}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "2": {
+          "$value": "{base.color.scale.purple.2}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "3": {
+          "$value": "{base.color.scale.purple.3}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "4": {
+          "$value": "{base.color.scale.purple.4}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "5": {
+          "$value": "{base.color.scale.purple.5}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "6": {
+          "$value": "{base.color.scale.purple.6}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "7": {
+          "$value": "{base.color.scale.purple.7}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "8": {
+          "$value": "{base.color.scale.purple.8}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "9": {
+          "$value": "{base.color.scale.purple.9}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        }
+      },
+      "pink": {
+        "0": {
+          "$value": "{base.color.scale.pink.0}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "1": {
+          "$value": "{base.color.scale.pink.1}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "2": {
+          "$value": "{base.color.scale.pink.2}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "3": {
+          "$value": "{base.color.scale.pink.3}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "4": {
+          "$value": "{base.color.scale.pink.4}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "5": {
+          "$value": "{base.color.scale.pink.5}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "6": {
+          "$value": "{base.color.scale.pink.6}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "7": {
+          "$value": "{base.color.scale.pink.7}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "8": {
+          "$value": "{base.color.scale.pink.8}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "9": {
+          "$value": "{base.color.scale.pink.9}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        }
+      },
+      "coral": {
+        "0": {
+          "$value": "{base.color.scale.coral.0}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "1": {
+          "$value": "{base.color.scale.coral.1}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "2": {
+          "$value": "{base.color.scale.coral.2}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "3": {
+          "$value": "{base.color.scale.coral.3}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "4": {
+          "$value": "{base.color.scale.coral.4}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "5": {
+          "$value": "{base.color.scale.coral.5}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "6": {
+          "$value": "{base.color.scale.coral.6}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "7": {
+          "$value": "{base.color.scale.coral.7}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "8": {
+          "$value": "{base.color.scale.coral.8}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        },
+        "9": {
+          "$value": "{base.color.scale.coral.9}",
+          "$type": "color",
+          "deprecated": null,
+          "description": "Avoid using scales, use other functional tokens instead"
+        }
+      }
+    }
+  }
+}
