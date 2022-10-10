@@ -15,7 +15,7 @@ export function SwatchGrid({names}: {names: string[]}) {
       }}
     >
       {names.map(name => (
-        <Swatch name={name} />
+        <Swatch name={name} key={name} />
       ))}
     </Box>
   )
@@ -80,7 +80,7 @@ function FgPreview({name, value}: {name: string; value: string}) {
   )
 }
 
-function BorderPreview({name, value}: {name: string; value: string}) {
+function BorderPreview({value}: {name: string; value: string}) {
   const [colorTheme] = useColorTheme()
   return (
     <Box
@@ -102,7 +102,7 @@ function BorderPreview({name, value}: {name: string; value: string}) {
   )
 }
 
-function ShadowPreview({name, value}: {name: string; value: string}) {
+function ShadowPreview({value}: {name: string; value: string}) {
   const [colorTheme] = useColorTheme()
   return (
     <Box
@@ -124,7 +124,7 @@ function ShadowPreview({name, value}: {name: string; value: string}) {
   )
 }
 
-function DefaultPreview({name, value}: {name: string; value: string}) {
+function DefaultPreview({value}: {name: string; value: string}) {
   const [colorTheme] = useColorTheme()
   return (
     <Box

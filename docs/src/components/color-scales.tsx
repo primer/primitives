@@ -20,11 +20,12 @@ export function ColorScales() {
     >
       {Object.entries(colors[colorTheme].scale).map(([scaleName, scale]) => {
         return (
-          <Box sx={{overflow: 'hidden', borderRadius: 1}}>
+          <Box sx={{overflow: 'hidden', borderRadius: 1}} key={scale}>
             {Array.isArray(scale) ? (
               scale.map((color, index) => {
                 return (
                   <Box
+                    key={color}
                     sx={{
                       color: readableColor(color),
                       bg: color,

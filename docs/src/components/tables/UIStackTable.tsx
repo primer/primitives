@@ -1,10 +1,9 @@
 import React, {Fragment, FC} from 'react'
 import {Box} from '@primer/components'
-import Table from '@primer/gatsby-theme-doctocat/src/components/table.js'
 import TokenTable from '../TokenTable'
 import TokenInlineCode from '../TokenInlineCode'
 import FrameworkVariableTable from './FrameworkVariableTable'
-import tokens from '../../../../tokens-v2-private/docs/docValues.json'
+import tokens from '../../../../tokens-v2-private/docs/docValues'
 import StackVisual from '../Stack'
 
 interface UIStackTableProps {

@@ -1,9 +1,10 @@
-import React, {Fragment, FC} from 'react'
+import React, {Fragment} from 'react'
 import {Box} from '@primer/components'
 import TokenInlineCode from '../TokenInlineCode'
 import CopyClipboard from '@primer/gatsby-theme-doctocat/src/components/clipboard-copy'
 
-function FrameworkVariableTable(props) {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function FrameworkVariableTable(props: {frameworks: any[]}) {
   const tableRow = (
     <Fragment>
       {props.frameworks.map(framework => (

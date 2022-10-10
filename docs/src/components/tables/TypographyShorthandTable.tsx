@@ -1,9 +1,8 @@
 import React, {Fragment} from 'react'
-import {Box, Text} from '@primer/components'
+import {Box} from '@primer/components'
 import TokenInlineCode from '../TokenInlineCode'
-import Table from '@primer/gatsby-theme-doctocat/src/components/table.js'
 import TokenTable from '../TokenTable'
-import tokens from '../../../../tokens-v2-private/docs/docValues.json'
+import tokens from '../../../../tokens-v2-private/docs/docValues'
 import TypographyBlock from '../typography-block'
 import FrameworkVariableTable from './FrameworkVariableTable'
 

@@ -1,5 +1,4 @@
-import React, {Fragment} from 'react'
-import Table from '@primer/gatsby-theme-doctocat/src/components/table.js'
+import Table from '@primer/gatsby-theme-doctocat/src/components/table'
 import styled from 'styled-components'
 
 const TokenTable = styled(Table)`

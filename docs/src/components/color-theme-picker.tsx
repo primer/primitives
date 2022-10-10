@@ -54,6 +54,7 @@ function ColorThemePreview({colorTheme}) {
     >
       {['neutral', 'accent', 'success', 'attention', 'severe', 'danger', 'done', 'sponsors'].map(role => (
         <Box
+          key={role}
           sx={{
             width: 20,
             height: 20,

@@ -1,13 +1,11 @@
 import React, {Fragment} from 'react'
 import themeGet from '@styled-system/theme-get'
-import CopyClipboard from '@primer/gatsby-theme-doctocat/src/components/clipboard-copy'
-import styled, {createGlobalStyle} from 'styled-components'
-import {Box, Text} from '@primer/components'
+import styled from 'styled-components'
+import {Box} from '@primer/components'
 import TokenInlineCode from '../TokenInlineCode'
-import InlineCode from '@primer/gatsby-theme-doctocat/src/components/inline-code.js'
-import Table from '@primer/gatsby-theme-doctocat/src/components/table.js'
+import InlineCode from '@primer/gatsby-theme-doctocat/src/components/inline-code'
 import TokenTable from '../TokenTable'
-import tokens from '../../../../tokens-v2-private/docs/docValues.json'
+import tokens from '../../../../tokens-v2-private/docs/docValues'
 import TypographyBlock from '../typography-block'
 import FrameworkVariableTable from './FrameworkVariableTable'
 
@@ -18,7 +16,7 @@ const TableBox = styled.div`
   background-color: ${themeGet('colors.white')};
 `
 
-export function DisplayBoxTable({filePath, tokenVariant, children, showOriginalValue = true, showProperty = true}) {
+export function DisplayBoxTable({filePath, tokenVariant, children, showProperty = true}) {
   return (
     <Box
       sx={{
@@ -51,6 +49,7 @@ export function DisplayBoxTable({filePath, tokenVariant, children, showOriginalV
             </tr>
           </thead>
           <tbody>
+            {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
             {tokens[filePath].map(token => {
               const weight = token.name.includes('weight') ? true : false
               const size = token.name.includes('size') ? true : false
@@ -87,8 +86,7 @@ export function DisplayBoxTable({filePath, tokenVariant, children, showOriginalV
                           fontSize="var(--primer-text-title-size-medium)"
                           fontWeight={weight && `var(--${token.name})`}
                           lineHeight="var(--primer-text-title-lineHeight-medium)"
-                          children={`Text ${weightVariant}`}
-                        />
+                        >{`Text ${weightVariant}`}</TypographyBlock>
                       )}
                     </Box>
                     <FrameworkVariableTable frameworks={FrameworkVars} />

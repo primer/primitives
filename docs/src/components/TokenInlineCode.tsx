@@ -1,5 +1,4 @@
-import React, {Fragment} from 'react'
-import InlineCode from '@primer/gatsby-theme-doctocat/src/components/inline-code.js'
+import InlineCode from '@primer/gatsby-theme-doctocat/src/components/inline-code'
 import styled from 'styled-components'
 
 const TokenInlineCode = styled(InlineCode)`
