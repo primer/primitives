@@ -33,8 +33,9 @@
     "postbuild": "ts-node ./script/color-contrast.ts",
     "prebuild": "rm -rf dist",
     "prebuild:tokens": "rm -rf tokens-v2-private",
-    "prepack": "yarn build && yarn build:tokens",
+    "prepack": "yarn build && yarn build:tokens && yarn tempColorTokens",
     "release": "changeset publish",
+    "tempColorTokens": "ts-node tempColorTokenBuild.ts",
     "test": "jest --verbose --coverage",
     "watch": "ls data/**/*.scss script/**/*.ts | entr -s 'yarn build'"
   },
@@ -75,14 +76,16 @@
     "eslint-plugin-react-hooks": "^4.4.0",
     "eslint-plugin-storybook": "^0.5.12",
     "flat": "^5.0.2",
+    "fs-extra": "^10.1.0",
     "jest": "^29.0.1",
+    "json5": "^2.2.1",
     "lodash": "^4.17.20",
     "mkdirp": "^1.0.4",
     "node-sass": "^7.0.0",
     "prettier": "^2.7.1",
     "react": "^17.0.2",
     "sass-extract": "^2.1.0",
-    "style-dictionary": "^3.1.1",
+    "style-dictionary": "3.7.1",
     "ts-node": "^8.10.2",
     "typescript": "^4.2.0"
   }

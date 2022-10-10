@@ -488,7 +488,7 @@ function _init() {
   const outputPath = 'tokens-v2-private'
   //build all tokens
   buildPrimitives({
-    source: [`tokens/**/*.json`, `!tokens/**/size-*.json`],
+    source: [`tokens/**/*.json`, `!tokens/**/size-*.json`, `!tokens/**/color/*.json`],
     outputPath
   })
 
@@ -547,7 +547,7 @@ function _init() {
 
   //build docs data
   buildPrimitives({
-    source: [`tokens/**/*.json`],
+    source: [`tokens/**/*.json`, `!tokens/**/color/*.json`],
     outputPath,
     platforms: {
       docs: {

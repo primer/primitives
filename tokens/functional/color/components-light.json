@@ -17,7 +17,6 @@
         "$value": "{base.color.scale.gray.2}",
         "$type": "color"
       }
-      // childShadow: (theme: any) => `-2px -2px 0 ${alpha(get('scale.white'), 0.8)(theme)}`
     },
     "topicTag": {
       "border": {
@@ -45,10 +44,6 @@
         "$value": "{base.color.scale.blue.1}",
         "$type": "color"
       }
-    },
-    "overlay": {
-      // shadow: (theme: any) =>
-      //   `0 1px 3px ${alpha(get('scale.black'), 0.12)(theme)}, 0 8px 24px ${alpha(get('scale.gray.7'), 0.12)(theme)}`
     },
     "header": {
       "text": {
@@ -101,9 +96,8 @@
       "badgeBg": {
         "$value": "{base.color.scale.gray.1}",
         "$type": "color"
-      } // needs to be opaque
+      }
     },
-    // Do we need all these btn variables?
     "btn": {
       "text": {
         "$value": "{base.color.scale.gray.9}",
@@ -117,8 +111,6 @@
         "$value": "{color.border.subtle}",
         "$type": "color"
       },
-      // shadow: (theme: any) => `0 1px 0 ${alpha(get('scale.black'), 0.04)(theme)}`,
-      // insetShadow: (theme: any) => `inset 0 1px 0 ${alpha(get('scale.white'), 0.25)(theme)}`,
       "hover": {
         "bg": {
           "$value": "#f3f4f6",
@@ -149,9 +141,6 @@
         "$value": "{color.border.subtle}",
         "$type": "color"
       },
-      // focusShadow: (theme: any) => `0 0 0 3px ${alpha(get('scale.blue.5'), 0.3)(theme)}`,
-      // shadowActive: (theme: any) => `inset 0 0.15em 0.3em ${alpha(get('scale.black'), 0.15)(theme)}`, // TODO: Deprecate? Not used in Primer CSS
-      // shadowInputFocus: (theme: any) => `0 0 0 0.2em ${alpha(get('scale.blue.5'), 0.3)(theme)}`, // TODO: Deprecate?
       "counterBg": {
         "$value": "{base.color.scale.black}",
         "$type": "color",
@@ -171,8 +160,6 @@
           "$value": "{color.border.subtle}",
           "$type": "color"
         },
-        // shadow: (theme: any) => `0 1px 0 ${alpha(get('scale.black'), 0.1)(theme)}`,
-        // insetShadow: (theme: any) => `inset 0 1px 0 ${alpha(get('scale.white'), 0.03)(theme)}`,
         "hoverBg": {
           "$value": "#2c974b",
           "$type": "color"
@@ -185,7 +172,6 @@
           "$value": "#298e46",
           "$type": "color"
         },
-        // selectedShadow: (theme: any) => `inset 0 1px 0 ${alpha(get('scale.green.9'), 0.2)(theme)}`,
         "disabledText": {
           "$value": "{base.color.scale.white}",
           "$type": "color",
@@ -207,7 +193,6 @@
           "$value": "{color.border.subtle}",
           "$type": "color"
         },
-        // focusShadow: (theme: any) => `0 0 0 3px ${alpha(get('btn.primary.focusBg'), 0.4)(theme)}`,
         "icon": {
           "$value": "{base.color.scale.white}",
           "$type": "color",
@@ -237,8 +222,6 @@
           "$value": "{color.border.subtle}",
           "$type": "color"
         },
-        // hoverShadow: (theme: any) => `0 1px 0 ${alpha(get('scale.black'), 0.1)(theme)}`,
-        // hoverInsetShadow: (theme: any) => `inset 0 1px 0 ${alpha(get('scale.white'), 0.03)(theme)}`,
         "hoverCounterBg": {
           "$value": "{base.color.scale.white}",
           "$type": "color",
@@ -256,7 +239,6 @@
           "$value": "{color.border.subtle}",
           "$type": "color"
         },
-        // selectedShadow: (theme: any) => `inset 0 1px 0 ${alpha(get('scale.blue.9'), 0.2)(theme)}`,
         "disabledText": {
           "$value": "{base.color.scale.blue.5}",
           "$type": "color",
@@ -275,7 +257,6 @@
           "$value": "{color.border.subtle}",
           "$type": "color"
         },
-        // focusShadow: (theme: any) => `0 0 0 3px ${alpha(get('scale.blue.6'), 0.4)(theme)}`,
         "counterBg": {
           "$value": "{base.color.scale.blue.5}",
           "$type": "color",
@@ -300,8 +281,6 @@
           "$value": "{color.border.subtle}",
           "$type": "color"
         },
-        // hoverShadow: (theme: any) => `0 1px 0 ${alpha(get('scale.black'), 0.1)(theme)}`,
-        // hoverInsetShadow: (theme: any) => `inset 0 1px 0 ${alpha(get('scale.white'), 0.03)(theme)}`,
         "hoverCounterBg": {
           "$value": "{base.color.scale.white}",
           "$type": "color",
@@ -319,7 +298,6 @@
           "$value": "{color.border.subtle}",
           "$type": "color"
         },
-        // selectedShadow: (theme: any) => `inset 0 1px 0 ${alpha(get('scale.red.9'), 0.2)(theme)}`,
         "disabledText": {
           "$value": "{base.color.scale.red.5}",
           "$type": "color",
@@ -338,7 +316,6 @@
           "$value": "{color.border.subtle}",
           "$type": "color"
         },
-        // focusShadow: (theme: any) => `0 0 0 3px ${alpha(get('scale.red.6'), 0.4)(theme)}`,
         "counterBg": {
           "$value": "{base.color.scale.red.5}",
           "$type": "color",
