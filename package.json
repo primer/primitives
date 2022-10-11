@@ -28,7 +28,7 @@
   "scripts": {
     "build": "ts-node ./script/build.ts && tsc --project tsconfig.build.json",
     "build:tokens": "node -e \"require('./build')._init()\"",
-    "format": "prettier --check '**/*.{js,jsx,ts,tsx,md,mdx,css,json}'",
+    "format": "prettier --check '**/*.{js,jsx,ts,tsx,md,mdx,css}'",
     "lint": "eslint '**/*.{js,ts,tsx,md,mdx}' --max-warnings=0 --config .eslintrc.js",
     "postbuild": "ts-node ./script/color-contrast.ts",
     "prebuild": "rm -rf dist",
