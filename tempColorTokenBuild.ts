@@ -45,6 +45,7 @@ const functionalColorFiles = {
     `tokens/functional/color/diff-light.json`,
     `tokens/functional/color/checks-light.json`,
     `tokens/functional/color/ansi-light.json`,
+    `tokens/functional/color/shadow.json`,
     `tokens/functional/color/scales.json`,
   ],
   dark: [
@@ -56,6 +57,7 @@ const functionalColorFiles = {
     `tokens/functional/color/diff-dark.json`,
     `tokens/functional/color/checks-dark.json`,
     `tokens/functional/color/ansi-dark.json`,
+    `tokens/functional/color/shadow.json`,
     `tokens/functional/color/scales.json`,
   ]
 }
@@ -133,7 +135,8 @@ getInputFiles(inputPath, ignoreDirs, { baseDir, functionalDir }).then(inputFiles
 //  convert shadows
 console.log("⚠️ Shadows are not implemented in tokens correctly")
 StyleDictionary
-  .extend(getStyleDictionaryConfig(`shadow/shadow`, [`${inputPath}/${baseDir}/shadow/shadow.json`, `${inputPath}/${functionalDir}/shadow/shadow.json`], [`${inputPath}/${baseDir}/shadow/shadow.json`, `${inputPath}/${baseDir}/color/light.json`, `${inputPath}/${functionalDir}/color/primitives-light.json`], { outputReferences: true }))
+  // .extend(getStyleDictionaryConfig(`shadow/shadow`, [`${inputPath}/${baseDir}/shadow/shadow.json`, `${inputPath}/${functionalDir}/shadow/shadow.json`], [`${inputPath}/${baseDir}/shadow/shadow.json`, `${inputPath}/${baseDir}/color/light.json`, `${inputPath}/${functionalDir}/color/shadow.json`], { outputReferences: true }))
+  .extend(getStyleDictionaryConfig(`shadow/shadow`, [`${inputPath}/${functionalDir}/shadow/shadow.json`], [`${inputPath}/${baseDir}/shadow/shadow.json`], { outputReferences: false }))
   .buildAllPlatforms()
 
 /**
@@ -143,7 +146,7 @@ const deprecatedBuilds = [
   ['color', themes[0][1], themes[0][2]], // light mode
   ['size', [`${inputPath}/${functionalDir}/size/*.json`], [`${inputPath}/${baseDir}/size/*.json`]],
   ['typography', [`${inputPath}/${functionalDir}/typography/*.json`], [`${inputPath}/${baseDir}/typography/*.json`]],
-  ['shadow', [`${inputPath}/${functionalDir}/shadow/*.json`], [`${inputPath}/${baseDir}/shadow/*.json`, ...themes[0][1], ...themes[0][2]]],
+  ['shadow', [`${inputPath}/${functionalDir}/shadow/*.json`], [`${inputPath}/${baseDir}/shadow/*.json`, `${inputPath}/${functionalDir}/color/shadow.json`, ...themes[0][1], ...themes[0][2]]],
 ]
 // get config
 const deprecatedConfig = (outputName, source, include, buildPath) => ({
@@ -201,7 +204,7 @@ const figmaBuilds = [
   ...themes,
   ['size', [`${inputPath}/${functionalDir}/size/*.json`], [`${inputPath}/${baseDir}/size/*.json`]],
   ['typography', [`${inputPath}/${functionalDir}/typography/*.json`], [`${inputPath}/${baseDir}/typography/*.json`]],
-  ['shadow', [`${inputPath}/${functionalDir}/shadow/*.json`], [`${inputPath}/${baseDir}/shadow/*.json`, ...themes[0][1], ...themes[0][2]]],
+  ['shadow', [`${inputPath}/${functionalDir}/shadow/*.json`], [`${inputPath}/${baseDir}/shadow/*.json`, `${inputPath}/${functionalDir}/color/shadow.json`, ...themes[0][1], ...themes[0][2]]],
 ]
 for (const [name, source, include] of figmaBuilds) {
   //

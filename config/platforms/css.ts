@@ -15,7 +15,7 @@ export const platformCss: PlatformInitializer = (outputFile, prefix, buildPath, 
       format: `css/variables`,
       filter: isSource,
       options: {
-        outputReferences: false,
+        outputReferences: options.outputReferences || false,
       }
     }
   ]
