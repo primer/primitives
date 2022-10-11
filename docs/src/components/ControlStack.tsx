@@ -1,6 +1,5 @@
 import React, {Fragment, FC} from 'react'
 import {Box} from '@primer/components'
-import styled from 'styled-components'
 
 interface ControlStackVisualProps {
   gap?: boolean
@@ -9,7 +8,7 @@ interface ControlStackVisualProps {
   variant?: string
 }
 
-const ControlStackVisual: FC<ControlStackVisualProps> = ({gap, padding, modifier, variant}) => {
+const ControlStackVisual: FC<ControlStackVisualProps> = ({modifier, variant}) => {
   return (
     <Fragment>
       <Box

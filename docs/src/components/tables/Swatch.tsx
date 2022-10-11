@@ -1,6 +1,8 @@
 import React, {FC} from 'react'
 import {Box} from '@primer/components'
+
 interface SwatchProps {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   height?: any
   width?: string
   color?: string

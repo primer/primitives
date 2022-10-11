@@ -1,5 +1,6 @@
-const pathToPascalCase = require('../build.js').pathToPascalCase
+const pathToPascalCase = require('../build').pathToPascalCase
 
+// eslint-disable-next-line i18n-text/no-en
 describe('Token formatters: PascalCase', () => {
   test('returns a valid token name in PascalCase', () => {
     expect(pathToPascalCase({path: ['red']})).toBe('Red')

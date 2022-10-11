@@ -9,7 +9,7 @@ declare module 'sass-extract' {
         $export: {
           type: 'SassMap'
           value: Record<string, any>
-        },
+        }
       }
     }
   }

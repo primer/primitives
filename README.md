@@ -6,7 +6,6 @@ This repo contains values for color, spacing, and typography primitives for use 
 
 ![primer primitives diagram](https://user-images.githubusercontent.com/4608155/135384588-192c279f-020f-4544-a61f-559be6629f18.png)
 
-
 ## Install
 
 This repository is distributed on [npm][npm]. After [installing npm][install-npm], you can install `@primer/primitives` with this command.
@@ -35,15 +34,15 @@ To deprecate a variable, define a mapping from the deprecated variable to its re
     ...
 ```
 
-```js
+```
 // data/colors/deprecated.json
-{
+
 {
   "text.primary": "fg.default", // this means: `text.primary` is deprecated. Use `fg.default` instead
   "auto.blue.4": ["accent.fg, accent.emphasis"], // this means: `auto.blue.4` is deprecated. Use `accent.fg` or `accent.emphasis` instead
   "text.white": null // this means: `text.white` is deprecated. We don't have a replacement for it
 }
-}
+
 ```
 
 During the build process, the `deprecated.json` files will be added to a `dist/deprecated` directory organized by variable category:

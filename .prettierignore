@@ -1,0 +1,12 @@
+tokens-v2-private/
+.cache/
+docs/public/
+# next line needed for <Note> reference
+docs/content/colors.mdx 
+.changeset/*.md
+coverage/
+
+# Ignore all files relating to v1 tokens
+# TODO: Remove after v1 tokens have been removed
+data/
+dist/

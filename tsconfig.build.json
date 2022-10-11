@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "jsx": "react",
     "target": "ES2016",
     "module": "commonjs",
     "lib": ["ES2019.Array", "ES2019.Object"],
@@ -9,10 +8,17 @@
     "strict": true,
     "noImplicitAny": true,
     "typeRoots": ["./src/@types", "./node_modules/@types"],
-    "rootDir": "./",
+    "rootDir": "./dist/ts",
+    "outDir": "./dist/js",
     "declaration": true,
     "resolveJsonModule": true
   },
-  "include": ["src/", "script/", "docs/"],
+  "include": [
+    "./dist/ts/"
+    // "./index.ts",
+    // "./primitives",
+    // "./theme",
+    // "./src"
+  ],
   "exclude": ["./src/@types"]
 }

@@ -59,14 +59,14 @@ StyleDictionary.registerTransform({
 
 // find values with px unit
 function isPx(value) {
-  return /[\d\.]+px$/.test(value)
+  return /[\d.]+px$/.test(value)
 }
 
 // transform: px to rem
 StyleDictionary.registerTransform({
   name: 'pxToRem',
   type: 'value',
-  transformer: (token, options) => {
+  transformer: token => {
     if (isPx(token.value)) {
       const baseFontSize = 16
       const floatValue = parseFloat(token.value.replace('px', ''))
@@ -158,28 +158,28 @@ StyleDictionary.registerTransformGroup({
 // wrap mobile tokens in media query
 StyleDictionary.registerFormat({
   name: 'css/touch-target-mobile',
-  formatter: function({dictionary, file, options}) {
+  formatter({dictionary, file, options}) {
     const {outputReferences} = options
-    return (
-      fileHeader({file}) +
-      `@media (pointer: coarse) { :root {\n` +
-      formattedVariables({format: 'css', dictionary, outputReferences}) +
-      '\n}}\n'
-    )
+    return `${fileHeader({file})}
+    @media (pointer: coarse) { :root {\n${formattedVariables({
+      format: 'css',
+      dictionary,
+      outputReferences
+    })}\n}}\n`
   }
 })
 
 // wrap desktop tokens in media query
 StyleDictionary.registerFormat({
   name: 'css/touch-target-desktop',
-  formatter: function({dictionary, file, options}) {
+  formatter({dictionary, file, options}) {
     const {outputReferences} = options
-    return (
-      fileHeader({file}) +
-      `@media (pointer: fine) { :root {\n` +
-      formattedVariables({format: 'css', dictionary, outputReferences}) +
-      '\n}}\n'
-    )
+    return `${fileHeader({file})}
+    @media (pointer: fine) { :root {\n${formattedVariables({
+      format: 'css',
+      dictionary,
+      outputReferences
+    })}\n}}\n`
   }
 })
 
@@ -188,9 +188,8 @@ StyleDictionary.registerFormat({
   formatter({dictionary}) {
     return dictionary.allProperties
       .map(prop => {
-        const {value, path, name} = prop
-        // const tokenPath = path
-        // const tokenProperty = path[path.length - 1]
+        const {value, name} = prop
+
         return `@custom-media --${name}-viewport ${value};`
       })
       .join('\n')
@@ -200,7 +199,7 @@ StyleDictionary.registerFormat({
 // format docs
 StyleDictionary.registerFormat({
   name: 'json/docs',
-  formatter: function({dictionary}) {
+  formatter({dictionary}) {
     const groupedTokens = groupBy(dictionary.allProperties, 'filePath')
 
     return JSON.stringify(groupedTokens, null, 2)
@@ -212,7 +211,7 @@ StyleDictionary.registerFormat({
  */
 StyleDictionary.registerFormat({
   name: 'javascript/module-v2',
-  formatter: function({dictionary, file}) {
+  formatter({dictionary, file}) {
     const recursiveleyFlattenDictionary = obj => {
       const tree = {}
       if (typeof obj !== 'object' || Array.isArray(obj)) {
@@ -231,11 +230,9 @@ StyleDictionary.registerFormat({
       return tree
     }
 
-    return (
-      fileHeader({file}) +
-      'module.exports = ' +
-      JSON.stringify(recursiveleyFlattenDictionary(dictionary.tokens), null, 2)
-    )
+    return `${fileHeader({file})}
+    
+module.exports = ${JSON.stringify(recursiveleyFlattenDictionary(dictionary.tokens), null, 2)}`
   }
 })
 
@@ -245,7 +242,7 @@ StyleDictionary.registerFormat({
  */
 StyleDictionary.registerFormat({
   name: 'typescript/module-declarations-v2',
-  formatter: function({dictionary, options, file}) {
+  formatter({dictionary, options, file}) {
     const {moduleName = `tokens`} = options
 
     const getType = value => {
@@ -283,10 +280,10 @@ StyleDictionary.registerFormat({
       return tree
     }
 
-    const output =
-      fileHeader({file}) +
-      `declare const ${moduleName}: ${JSON.stringify(recursiveTypeGeneration(dictionary.tokens), null, 2)}
- export default ${moduleName};`
+    const output = `${fileHeader({file})}
+    
+declare const ${moduleName}: ${JSON.stringify(recursiveTypeGeneration(dictionary.tokens), null, 2)}
+export default ${moduleName};`
 
     return output
       .replace(/"any"/g, 'any')
@@ -341,7 +338,9 @@ function buildPrimitives(
   {source, outputPath = 'tokens-v2-private', include, platforms, namespace = 'primer'},
   _StyleDictionary = StyleDictionary
 ) {
+  // eslint-disable-next-line no-console
   console.log('Build started...')
+  // eslint-disable-next-line no-console
   console.log('\n==============================================')
 
   const customParseConfig = {
@@ -360,6 +359,7 @@ function buildPrimitives(
 
             return JSON.parse(parsed)
           } catch (error) {
+            // eslint-disable-next-line no-console
             console.log(error)
           }
         }

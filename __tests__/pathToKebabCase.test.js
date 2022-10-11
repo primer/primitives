@@ -1,5 +1,6 @@
-const pathToKebabCase = require('../build.js').pathToKebabCase
+const pathToKebabCase = require('../build').pathToKebabCase
 
+// eslint-disable-next-line i18n-text/no-en
 describe('Token formatters: kebab-case', () => {
   it('returns a valid token name in kebab-case', () => {
     expect(pathToKebabCase({path: ['red']})).toBe('red')

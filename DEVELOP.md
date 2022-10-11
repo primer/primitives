@@ -15,8 +15,8 @@
             "xsmall": { <------------------------------------ Variant
                 "paddingInline": { <------------------------- Property
                     "condensed": { <------------------------- Modifier
-                        "value": "8px" 
-                    }, 
+                        "value": "8px"
+                    },
                 }
             }
         }
@@ -40,7 +40,7 @@ Tokens are transforms and built with [style-dictionary](https://amzn.github.io/s
 
 ## Formats
 
--`css/touch-target-mobile`: wraps mobile scoped tokens in a media query `(pointer: coarse)`.
--`css/touch-target-desktop`: wraps desktop scoped tokens in a media query `(pointer: fine)`.
+-`css/touch-target-mobile`: wraps mobile scoped tokens in a media query `(pointer: coarse)`. -`css/touch-target-desktop`: wraps desktop scoped tokens in a media query `(pointer: fine)`.
+
 - `custom/format/custom-media`: injects viewport tokens into a `@custom-media` query (requires PostCSS).
 - `json/docs`: builds a JSON file of all token data to be consumed by documentation.
