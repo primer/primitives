@@ -1,5 +1,5 @@
-import StyleDictionary from 'style-dictionary';
+import StyleDictionary from 'style-dictionary'
 
 export const isSource = (token: StyleDictionary.TransformedToken) => {
-  return token?.isSource === true;
+  return token.isSource === true
 }

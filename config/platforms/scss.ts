@@ -1,6 +1,6 @@
 import StyleDictionary from 'style-dictionary'
-import { PlatformInitializer } from '../../@types/PlatformInitializer'
-import { isSource } from '../filters/isSource'
+import {PlatformInitializer} from '../../@types/PlatformInitializer'
+import {isSource} from '../filters/isSource'
 
 const getFilenameFromPath = (path: string): string => {
   // remove extensions
@@ -16,11 +16,11 @@ export const platformScss: PlatformInitializer = (outputFile, prefix, buildPath)
   const mixinName = `primer-colors-${getFilenameFromPath(outputFile)}`
   //
   return {
-    prefix: prefix,
+    prefix,
     buildPath: `${buildPath}/scss/`,
     transforms: ['name/cti/kebab', 'color/hex6', 'color/hexAlpha'],
     options: {
-      basePxFontSize: 16,
+      basePxFontSize: 16
     },
     files: [
       {
@@ -28,8 +28,8 @@ export const platformScss: PlatformInitializer = (outputFile, prefix, buildPath)
         filter: isSource,
         format: `scss/mixin-css-variables`,
         options: {
-          mixinName: mixinName,
-          outputReferences: false,
+          mixinName,
+          outputReferences: false
         }
       }
     ]

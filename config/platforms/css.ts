@@ -1,13 +1,18 @@
 import StyleDictionary from 'style-dictionary'
-import { PlatformInitializer } from '../../@types/PlatformInitializer'
-import { isSource } from '../filters/isSource'
+import {PlatformInitializer} from '../../@types/PlatformInitializer'
+import {isSource} from '../filters/isSource'
 
-export const platformCss: PlatformInitializer = (outputFile, prefix, buildPath, options): StyleDictionary.Platform => ({
-  prefix: prefix,
+export const platformCss: PlatformInitializer = (
+  outputFile,
+  prefix,
+  buildPath,
+  _options
+): StyleDictionary.Platform => ({
+  prefix,
   buildPath: `${buildPath}/css/`,
   transforms: ['name/cti/kebab', 'color/hex', 'color/hexAlpha'],
   options: {
-    basePxFontSize: 16,
+    basePxFontSize: 16
   },
   files: [
     {
@@ -15,7 +20,7 @@ export const platformCss: PlatformInitializer = (outputFile, prefix, buildPath, 
       format: `css/variables`,
       filter: isSource,
       options: {
-        outputReferences: false,
+        outputReferences: false
       }
     }
   ]

@@ -1,4 +1,4 @@
-import { toHex } from 'color2k'
+import {toHex} from 'color2k'
 
 import StyleDictionary from 'style-dictionary'
 
