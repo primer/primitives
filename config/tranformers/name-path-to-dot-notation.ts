@@ -1,20 +1,26 @@
 import StyleDictionary from 'style-dictionary'
 
 /**
- * capitalize
- * @description capitalizes bur keeps the rest of the word as is
- * @todo: replace with _.capitalize once we don't use camelCase in token names anymore
- * @param param0
- * @returns
+ * upperCaseFirstCharacter
+ * @scope custom implementation should only be used within `name path to dot notation` transformer
+ * @description changes first letter to uppercase but keeps the rest of the word as is
+ * @param string
+ * @returns string
  */
-const capitalize = ([firstLetter, ...restOfWord]: string): string => {
+const upperCaseFirstCharacter = ([firstLetter, ...restOfWord]: string): string => {
   return firstLetter.toUpperCase() + restOfWord.join('')
 }
-
+/**
+ * camelCase
+ * @scope custom camelCase implementation should only be used within `name path to dot notation` transformer
+ * @description replaces space ` `, dash `-`, underscore `_` and plus `+` by camelCasing e.g. `camel-case` -> `camelCase`
+ * @param string
+ * @returns string
+ */
 const camelCase = (string: string): string => {
   return string
     .split(/[\s-_+]+/g)
-    .map((stringPart: string, index: number) => (index === 0 ? stringPart : capitalize(stringPart)))
+    .map((stringPart: string, index: number) => (index === 0 ? stringPart : upperCaseFirstCharacter(stringPart)))
     .join('')
 }
 
