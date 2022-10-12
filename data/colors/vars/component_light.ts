@@ -211,7 +211,7 @@ export default {
     chevron: {
       hoverBg: alpha(get('scale.gray.2'), 0.32),
     },
-    folder: {
+    directory: {
       fill: get('scale.blue.3')
     }
   },
