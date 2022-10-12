@@ -33,9 +33,9 @@
     "postbuild": "ts-node ./script/color-contrast.ts",
     "prebuild": "rm -rf dist",
     "prebuild:tokens": "rm -rf tokens-v2-private",
-    "prepack": "yarn build && yarn build:tokens && yarn tempColorTokens",
+    "prepack": "yarn build && yarn build:tokens && yarn build:color-tokens",
     "release": "changeset publish",
-    "build:color-tokens": "ts-node tempColorTokenBuild.ts",
+    "build:color-tokens": "ts-node ./script/tempColorTokenBuild.ts",
     "test": "jest --verbose --coverage",
     "watch": "ls data/**/*.scss script/**/*.ts | entr -s 'yarn build'"
   },
