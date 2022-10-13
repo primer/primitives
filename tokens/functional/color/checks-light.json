@@ -1,0 +1,296 @@
+{
+  "color": {
+    "checks": {
+      "bg": {
+        "$value": "{base.color.scale.gray.9}",
+        "$type": "color"
+      },
+      "textPrimary": {
+        "$value": "{base.color.scale.gray.0}",
+        "$type": "color"
+      },
+      "textSecondary": {
+        "$value": "{base.color.scale.gray.4}",
+        "$type": "color"
+      },
+      "textLink": {
+        "$value": "{base.color.scale.blue.3}",
+        "$type": "color"
+      },
+      "btnIcon": {
+        "$value": "{base.color.scale.gray.3}",
+        "$type": "color"
+      },
+      "btnHoverIcon": {
+        "$value": "{base.color.scale.gray.0}",
+        "$type": "color"
+      },
+      "btnHoverBg": {
+        "$value": "{base.color.scale.white}",
+        "alpha": 0.125,
+        "$type": "color"
+      },
+      "inputText": {
+        "$value": "{base.color.scale.gray.1}",
+        "$type": "color"
+      },
+      "inputPlaceholderText": {
+        "$value": "{base.color.scale.gray.4}",
+        "$type": "color"
+      },
+      "inputFocusText": {
+        "$value": "{base.color.scale.gray.4}",
+        "$type": "color"
+      },
+      "inputBg": {
+        "$value": "{base.color.scale.gray.8}",
+        "$type": "color"
+      },
+      "donutError": {
+        "$value": "{base.color.scale.red.4}",
+        "$type": "color"
+      },
+      "donutPending": {
+        "$value": "{base.color.scale.yellow.4}",
+        "$type": "color"
+      },
+      "donutSuccess": {
+        "$value": "{base.color.scale.green.4}",
+        "$type": "color"
+      },
+      "donutNeutral": {
+        "$value": "{base.color.scale.gray.3}",
+        "$type": "color"
+      },
+      "dropdownText": {
+        "$value": "{base.color.scale.gray.3}",
+        "$type": "color"
+      },
+      "dropdownBg": {
+        "$value": "{base.color.scale.gray.8}",
+        "$type": "color"
+      },
+      "dropdownBorder": {
+        "$value": "{base.color.scale.gray.7}",
+        "$type": "color"
+      },
+      "dropdownShadow": {
+        "$value": "{base.color.scale.black}",
+        "alpha": 0.3,
+        "$type": "color"
+      },
+      "dropdownHoverText": {
+        "$value": "{base.color.scale.gray.0}",
+        "$type": "color"
+      },
+      "dropdownHoverBg": {
+        "$value": "{base.color.scale.gray.7}",
+        "$type": "color"
+      },
+      "dropdownBtnHoverText": {
+        "$value": "{base.color.scale.gray.0}",
+        "$type": "color"
+      },
+      "dropdownBtnHoverBg": {
+        "$value": "{base.color.scale.gray.8}",
+        "$type": "color"
+      },
+      "scrollbarThumbBg": {
+        "$value": "{base.color.scale.gray.6}",
+        "$type": "color"
+      },
+      "headerLabelText": {
+        "$value": "{base.color.scale.gray.2}",
+        "$type": "color"
+      },
+      "headerLabelOpenText": {
+        "$value": "{base.color.scale.gray.0}",
+        "$type": "color"
+      },
+      "headerBorder": {
+        "$value": "{base.color.scale.gray.8}",
+        "$type": "color"
+      },
+      "headerIcon": {
+        "$value": "{base.color.scale.gray.4}",
+        "$type": "color"
+      },
+      "lineText": {
+        "$value": "{base.color.scale.gray.2}",
+        "$type": "color"
+      },
+      "lineNumText": {
+        "$value": "{base.color.scale.gray.4}",
+        "alpha": 0.75,
+        "$type": "color"
+      },
+      "lineTimestampText": {
+        "$value": "{base.color.scale.gray.4}",
+        "$type": "color"
+      },
+      "lineHoverBg": {
+        "$value": "{base.color.scale.gray.8}",
+        "$type": "color"
+      },
+      "lineSelectedBg": {
+        "$value": "{base.color.scale.blue.4}",
+        "alpha": 0.15,
+        "$type": "color"
+      },
+      "lineSelectedNumText": {
+        "$value": "{base.color.scale.blue.3}",
+        "$type": "color"
+      },
+      "lineDtFmText": {
+        "$value": "{base.color.scale.gray.9}",
+        "$type": "color"
+      },
+      "lineDtFmBg": {
+        "$value": "{base.color.scale.yellow.5}",
+        "$type": "color"
+      },
+      "gateBg": {
+        "$value": "{base.color.scale.yellow.6}",
+        "alpha": 0.15,
+        "$type": "color"
+      },
+      "gateText": {
+        "$value": "{base.color.scale.gray.2}",
+        "$type": "color"
+      },
+      "gateWaitingText": {
+        "$value": "{base.color.scale.yellow.3}",
+        "$type": "color"
+      },
+      "stepHeaderOpenBg": {
+        "$value": "{base.color.scale.gray.8}",
+        "$type": "color"
+      },
+      "stepErrorText": {
+        "$value": "{base.color.scale.red.3}",
+        "$type": "color"
+      },
+      "stepWarningText": {
+        "$value": "{base.color.scale.yellow.3}",
+        "$type": "color"
+      },
+      "loglineText": {
+        "$value": "{base.color.scale.gray.4}",
+        "$type": "color"
+      },
+      "loglineNumText": {
+        "$value": "{base.color.scale.gray.4}",
+        "alpha": 0.75,
+        "$type": "color"
+      },
+      "loglineDebugText": {
+        "$value": "{base.color.scale.purple.3}",
+        "$type": "color"
+      },
+      "loglineErrorText": {
+        "$value": "{base.color.scale.gray.2}",
+        "$type": "color"
+      },
+      "loglineErrorNumText": {
+        "$value": "{base.color.scale.red.3}",
+        "$type": "color"
+      },
+      "loglineErrorBg": {
+        "$value": "{base.color.scale.red.6}",
+        "alpha": 0.15,
+        "$type": "color"
+      },
+      "loglineWarningText": {
+        "$value": "{base.color.scale.gray.2}",
+        "$type": "color"
+      },
+      "loglineWarningNumText": {
+        "$value": "{base.color.scale.yellow.3}",
+        "$type": "color"
+      },
+      "loglineWarningBg": {
+        "$value": "{base.color.scale.yellow.6}",
+        "alpha": 0.15,
+        "$type": "color"
+      },
+      "loglineCommandText": {
+        "$value": "{base.color.scale.blue.3}",
+        "$type": "color"
+      },
+      "loglineSectionText": {
+        "$value": "{base.color.scale.green.3}",
+        "$type": "color"
+      },
+      "ansi": {
+        "black": {
+          "$value": "{base.color.scale.gray.9}",
+          "$type": "color"
+        },
+        "blackBright": {
+          "$value": "{base.color.scale.gray.8}",
+          "$type": "color"
+        },
+        "white": {
+          "$value": "{base.color.scale.gray.2}",
+          "$type": "color"
+        },
+        "whiteBright": {
+          "$value": "{base.color.scale.gray.2}",
+          "$type": "color"
+        },
+        "gray": {
+          "$value": "{base.color.scale.gray.4}",
+          "$type": "color"
+        },
+        "red": {
+          "$value": "{base.color.scale.red.3}",
+          "$type": "color"
+        },
+        "redBright": {
+          "$value": "{base.color.scale.red.2}",
+          "$type": "color"
+        },
+        "green": {
+          "$value": "{base.color.scale.green.3}",
+          "$type": "color"
+        },
+        "greenBright": {
+          "$value": "{base.color.scale.green.2}",
+          "$type": "color"
+        },
+        "yellow": {
+          "$value": "{base.color.scale.yellow.3}",
+          "$type": "color"
+        },
+        "yellowBright": {
+          "$value": "{base.color.scale.yellow.2}",
+          "$type": "color"
+        },
+        "blue": {
+          "$value": "{base.color.scale.blue.3}",
+          "$type": "color"
+        },
+        "blueBright": {
+          "$value": "{base.color.scale.blue.2}",
+          "$type": "color"
+        },
+        "magenta": {
+          "$value": "{base.color.scale.purple.3}",
+          "$type": "color"
+        },
+        "magentaBright": {
+          "$value": "{base.color.scale.purple.2}",
+          "$type": "color"
+        },
+        "cyan": {
+          "$value": "#76e3ea",
+          "$type": "color"
+        },
+        "cyanBright": {
+          "$value": "#b3f0ff",
+          "$type": "color"
+        }
+      }
+    }
+  }
+}

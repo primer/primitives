@@ -1,0 +1,76 @@
+{
+  "color": {
+    "diffBlob": {
+      "addition": {
+        "numText": {
+          "$value": "{color.fg.default}",
+          "$type": "color"
+        },
+        "fg": {
+          "$value": "{color.fg.default}",
+          "$type": "color"
+        },
+        "numBg": {
+          "$value": "#ccffd8",
+          "$type": "color"
+        },
+        "lineBg": {
+          "$value": "#e6ffec",
+          "$type": "color"
+        },
+        "wordBg": {
+          "$value": "#abf2bc",
+          "$type": "color"
+        }
+      },
+      "deletion": {
+        "numText": {
+          "$value": "{color.fg.default}",
+          "$type": "color"
+        },
+        "fg": {
+          "$value": "{color.fg.default}",
+          "$type": "color"
+        },
+        "numBg": {
+          "$value": "#ffd7d5",
+          "$type": "color"
+        },
+        "lineBg": {
+          "$value": "{color.danger.subtle}",
+          "$type": "color"
+        },
+        "wordBg": {
+          "$value": "{color.danger.muted}",
+          "$type": "color"
+        }
+      },
+      "hunk": {
+        "numBg": {
+          "$value": "{color.accent.muted}",
+          "$type": "color"
+        }
+      },
+      "expander": {
+        "icon": {
+          "$value": "{color.fg.muted}",
+          "$type": "color"
+        }
+      }
+    },
+    "diffstat": {
+      "deletionBorder": {
+        "$value": "{color.border.subtle}",
+        "$type": "color"
+      },
+      "additionBorder": {
+        "$value": "{color.border.subtle}",
+        "$type": "color"
+      },
+      "additionBg": {
+        "$value": "{base.color.scale.green.4}",
+        "$type": "color"
+      }
+    }
+  }
+}
