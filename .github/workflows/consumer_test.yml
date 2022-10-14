@@ -52,9 +52,9 @@ jobs:
 
       - name: Installing local build
         run: |
-          cd ${{env.TEST_FOLDER}} 
-          cp ../primer-primitives-${{ steps.package-version.outputs.current-version}}.tgz ./
+          cd ${{env.TEST_FOLDER}}/packages/design-tokens
+          cp ../../../primer-primitives-${{ steps.package-version.outputs.current-version}}.tgz ./
           npm install primer-primitives-${{ steps.package-version.outputs.current-version}}.tgz
 
       - name: Build consumer tokens
-        run: pushd ${{env.TEST_FOLDER}}; npm run build:tokens; popd
+        run: pushd ${{env.TEST_FOLDER}}; npm run build --workspace=packages/design-tokens; popd
