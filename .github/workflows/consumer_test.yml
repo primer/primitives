@@ -54,7 +54,8 @@ jobs:
         run: |
           cd ${{env.TEST_FOLDER}}
           cp ../primer-primitives-${{ steps.package-version.outputs.current-version}}.tgz ./
-          npm install -w packages/design-tokens primer-primitives-${{ steps.package-version.outputs.current-version}}.tgz
+          cp ../primer-primitives-${{ steps.package-version.outputs.current-version}}.tgz ./packages/design-tokens
+          npm install ${{steps.package-version.outputs.current-version}}.tgz --workspace packages/design-tokens
 
       - name: Build consumer tokens
         run: pushd ${{env.TEST_FOLDER}}; npm run build --workspace=packages/design-tokens; popd
