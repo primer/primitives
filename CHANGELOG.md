@@ -1,5 +1,17 @@
 # @primer/primitives
 
+## 7.10.0
+
+### Minor Changes
+
+- [#358](https://github.com/primer/primitives/pull/358) [`a188c78`](https://github.com/primer/primitives/commit/a188c788c88dbf8f79bb3252d24416bd195fbc14) Thanks [@mperrotti](https://github.com/mperrotti)! - Adds a color token for the treeview icon fill.
+
+* [#354](https://github.com/primer/primitives/pull/354) [`3b28659`](https://github.com/primer/primitives/commit/3b286594aed3d4de97866d354f050f7e59945e95) Thanks [@mperrotti](https://github.com/mperrotti)! - Introduces TreeView.Item component color primitives
+
+### Patch Changes
+
+- [#351](https://github.com/primer/primitives/pull/351) [`d8d2480`](https://github.com/primer/primitives/commit/d8d2480c1ec971dca7dd9b1026cf445663f1ae03) Thanks [@langermank](https://github.com/langermank)! - Add SCSS vars for PCSS utilities & dotcom
+
 ## 7.9.0
 
 ### Minor Changes
