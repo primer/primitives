@@ -104,8 +104,13 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
    * convert colors
    */
   for (const [theme, source, include] of themes) {
+    // build functional scales
     PrimerStyleDictionary.extend(
-      getStyleDictionaryConfig(`color/${theme}`, source, include, buildOptions)
+      getStyleDictionaryConfig(`functional/color/${theme}`, source, include, buildOptions)
+    ).buildAllPlatforms()
+    // build base scales
+    PrimerStyleDictionary.extend(
+      getStyleDictionaryConfig(`base/color/${theme}`, include, [], buildOptions)
     ).buildAllPlatforms()
   }
   // TODO: Remove once shadows that used to be in colors are implemented
