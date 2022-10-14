@@ -1,23 +1,14 @@
 import StyleDictionary from 'style-dictionary'
+import {PrimerStyleDictionary} from '../config/primer-style-dictionary'
 import {copyFilesAndFolders} from '../config/utilities/copyFilesAndFolders'
-import {w3cJsonParser} from '../config/parsers/w3c-json-parser'
+import {platformTypeDefinitions} from '../config/platforms/typesDefinitions'
+import {platformDeprecatedJson} from '../config/platforms/deprecatedJson'
 import {platformCss} from '../config/platforms/css'
 import {platformDocJson} from '../config/platforms/docJson'
 import {platformScss} from '../config/platforms/scss'
 import {platformJs} from '../config/platforms/javascript'
 import {platformTs} from '../config/platforms/typescript'
-import {platformTypeDefinitions} from '../config/platforms/typesDefinitions'
-import {platformDeprecatedJson} from '../config/platforms/deprecatedJson'
-import {colorToHexAlpha} from '../config/tranformers/color-to-hex-alpha'
-import {colorToRgbAlpha} from '../config/tranformers/color-to-rgb-alpha'
-import {colorToHex6} from '../config/tranformers/color-to-hex6'
-import {jsonDeprecated} from '../config/tranformers/json-deprecated'
-import {scssMixinCssVariables} from '../config/formats/scss-mixin-css-variables'
-import {javascriptCommonJs} from '../config/formats/javascript-commonJs'
-import {javascriptEsm} from '../config/formats/javascript-esm'
-import {typescriptExportDefinition} from '../config/formats/typescript-export-defition'
 import {platformJson} from '../config/platforms/json'
-import {namePathToDotNotation} from '../config/tranformers/name-path-to-dot-notation'
 import {ConfigGeneratorOptions, StyleDictionaryConfigGenerator} from '../@types/StyleDictionaryConfigGenerator'
 
 export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void => {
@@ -94,20 +85,6 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
   ): StyleDictionary.Config => ({
     source, // build the special formats
     include,
-    parsers: [w3cJsonParser],
-    // formats need to be defined here but are used in platforms
-    format: {
-      'scss/mixin-css-variables': scssMixinCssVariables,
-      'javascript/esm': javascriptEsm,
-      'javascript/commonJs': javascriptCommonJs,
-      'typescript/export-definition': typescriptExportDefinition
-    },
-    // transforms need to be defined here but are used in platforms
-    transform: {
-      'color/rgbAlpha': colorToRgbAlpha,
-      'color/hexAlpha': colorToHexAlpha,
-      'color/hex6': colorToHex6
-    },
     platforms: {
       css: platformCss(`${outputName}.css`, options.prefix, options.buildPath),
       scss: platformScss(`${outputName}.scss`, options.prefix, options.buildPath),
@@ -127,7 +104,9 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
    * convert colors
    */
   for (const [theme, source, include] of themes) {
-    StyleDictionary.extend(
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    PrimerStyleDictionary.extend(
       getStyleDictionaryConfig(`color/${theme}`, source, include, buildOptions)
     ).buildAllPlatforms()
   }
@@ -144,16 +123,6 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
   const deprecatedConfig: StyleDictionaryConfigGenerator = (outputName, source, include, options) => ({
     source,
     include,
-    parsers: [w3cJsonParser],
-    format: {
-      'typescript/export-definition': typescriptExportDefinition
-    },
-    transform: {
-      'color/hexAlpha': colorToHexAlpha,
-      'color/hex6': colorToHex6,
-      'json/deprecated': jsonDeprecated,
-      'name/pathToDotNotation': namePathToDotNotation
-    },
     platforms: {
       deprecated: platformDeprecatedJson(`${outputName}.json`, options.prefix, options.buildPath),
       types: platformTypeDefinitions(`${outputName}`, options.prefix, options.buildPath)
@@ -162,7 +131,7 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
   //
   for (const [name, source, include] of deprecatedBuilds) {
     //
-    StyleDictionary.extend(deprecatedConfig(name, source, include, buildOptions)).buildAllPlatforms()
+    PrimerStyleDictionary.extend(deprecatedConfig(name, source, include, buildOptions)).buildAllPlatforms()
   }
 }
 

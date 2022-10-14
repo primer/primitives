@@ -1,0 +1,79 @@
+import StyleDictionary from 'style-dictionary'
+import {w3cJsonParser} from './parsers/w3c-json-parser'
+import {colorToHexAlpha} from './tranformers/color-to-hex-alpha'
+import {colorToRgbAlpha} from './tranformers/color-to-rgb-alpha'
+import {colorToHex6} from './tranformers/color-to-hex6'
+import {jsonDeprecated} from './tranformers/json-deprecated'
+import {namePathToDotNotation} from './tranformers/name-path-to-dot-notation'
+import {scssMixinCssVariables} from './formats/scss-mixin-css-variables'
+import {javascriptCommonJs} from './formats/javascript-commonJs'
+import {javascriptEsm} from './formats/javascript-esm'
+import {typescriptExportDefinition} from './formats/typescript-export-defition'
+
+/**
+ * Parsers
+ *
+ */
+StyleDictionary.registerParser(w3cJsonParser)
+
+/**
+ * Formats
+ *
+ */
+StyleDictionary.registerFormat({
+  name: 'scss/mixin-css-variables',
+  formatter: scssMixinCssVariables
+})
+
+StyleDictionary.registerFormat({
+  name: 'javascript/esm',
+  formatter: javascriptEsm
+})
+
+StyleDictionary.registerFormat({
+  name: 'javascript/commonJs',
+  formatter: javascriptCommonJs
+})
+
+StyleDictionary.registerFormat({
+  name: 'typescript/export-definition',
+  formatter: typescriptExportDefinition
+})
+
+/**
+ * Transformers
+ *
+ */
+StyleDictionary.registerTransform({
+  name: 'color/rgbAlpha',
+  ...colorToRgbAlpha
+})
+
+StyleDictionary.registerTransform({
+  name: 'color/hexAlpha',
+  ...colorToHexAlpha
+})
+
+StyleDictionary.registerTransform({
+  name: 'color/hex6',
+  ...colorToHex6
+})
+
+StyleDictionary.registerTransform({
+  name: 'json/deprecated',
+  ...jsonDeprecated
+})
+
+StyleDictionary.registerTransform({
+  name: 'name/pathToDotNotation',
+  ...namePathToDotNotation
+})
+
+/**
+ * @name {@link PrimerStyleDictionary}
+ * @description Returns style dictionary object with primer preset that includes parsers, formats and transformers
+ * @parsers [w3cJsonParser](./parsers/w3c-json-parser.ts)
+ * @formats [scss/mixin-css-variables](./formats/scss-mixin-css-variables.ts), [javascript/esm](./formats/javascript-esm.ts), [javascript/commonJs](./formats/javascript-commonJs.ts), [typescript/export-definition](./formats/typescript-export-defition.ts)
+ * @transformers [color/rgbAlpha](./tranformers/color-to-rgb-alpha.ts), [color/hexAlpha](./tranformers/color-to-hex-alpha.ts), [color/hex6](./tranformers/color-to-hex6.ts), [json/deprecated](./tranformers/json-deprecated.ts), [name/pathToDotNotation](./tranformers/name-path-to-dot-notation.ts)
+ */
+export const PrimerStyleDictionary: StyleDictionary.Core = StyleDictionary
