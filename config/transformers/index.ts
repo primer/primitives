@@ -1,3 +1,4 @@
+export {shadowToCss} from './shadow-to-css'
 export {colorToHex} from './colorToHex'
 export {colorToHexAlpha} from './colorToHexAlpha'
 export {colorToRgbAlpha} from './colorToRgbAlpha'

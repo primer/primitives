@@ -108,9 +108,18 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
       })
     ).buildAllPlatforms()
   }
-  // TODO: Remove once shadows that used to be in colors are implemented
-  // eslint-disable-next-line no-console
-  console.log('⚠️ Shadows are not implemented in tokens correctly')
+
+  /**
+   * build shadow tokens
+   */
+  PrimerStyleDictionary.extend(
+    getStyleDictionaryConfig(
+      `shadow/shadow`,
+      [`./tokens/functional/shadow/shadow.json5`, `./tokens/base/shadow/shadow.json5`],
+      [`./tokens/base/color/light/light.json5`, `./tokens/functional/color/shadow.json5`],
+      buildOptions
+    )
+  ).buildAllPlatforms()
 
   /**
    * build deprecated.json
@@ -121,6 +130,16 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
       filename: 'color',
       source: [...themes[0].source, ...themes[0].include],
       include: themes[0].include
+    },
+    {
+      // light mode
+      filename: 'shadow',
+      source: [`./tokens/functional/shadow/shadow.json`],
+      include: [
+        `./tokens/base/shadow/shadow.json`,
+        `./tokens/base/color/light.json`,
+        `./tokens/functional/color/shadow.json`
+      ]
     }
   ]
   //

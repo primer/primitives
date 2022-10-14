@@ -18,7 +18,7 @@ export const scss: PlatformInitializer = (outputFile, prefix, buildPath): StyleD
   return {
     prefix,
     buildPath,
-    transforms: ['name/cti/kebab', 'color/hex', 'color/hexAlpha'],
+    transforms: ['name/cti/kebab', 'color/hex', 'color/hexAlpha', 'shadow/css'],
     options: {
       basePxFontSize: 16
     },
