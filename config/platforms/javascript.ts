@@ -5,7 +5,7 @@ import {isSource} from '../filters/isSource'
 export const platformJs: PlatformInitializer = (outputFile, prefix, buildPath): StyleDictionary.Platform => ({
   prefix,
   buildPath,
-  transforms: ['name/cti/camel', 'color/hex6', 'color/rgbAlpha'],
+  transforms: ['name/cti/camel', 'color/hex', 'color/rgbAlpha'],
   options: {
     basePxFontSize: 16
   },
@@ -13,11 +13,7 @@ export const platformJs: PlatformInitializer = (outputFile, prefix, buildPath): 
     {
       format: 'javascript/commonJs',
       destination: outputFile,
-      filter: isSource,
-      options: {
-        // TODO: can the unwrapFirstLevel option be completly removed?
-        unwrapFirstLevel: false
-      }
+      filter: isSource
     }
   ]
 })

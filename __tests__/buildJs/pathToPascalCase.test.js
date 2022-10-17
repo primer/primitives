@@ -1,4 +1,4 @@
-const pathToPascalCase = require('../build').pathToPascalCase
+const {pathToPascalCase} = require('../../build')
 
 // eslint-disable-next-line i18n-text/no-en
 describe('Token formatters: PascalCase', () => {

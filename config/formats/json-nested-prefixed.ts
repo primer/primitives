@@ -1,6 +1,7 @@
 import StyleDictionary from 'style-dictionary'
 import {format} from 'prettier'
 import {jsonToNestedValue} from '../utilities/jsonToNestedValue'
+import {prefixTokens} from '../utilities/prefixTokens'
 
 /**
  * @description Takes a style dictionary token dictionary and converts it to a nested json string.
@@ -11,17 +12,12 @@ import {jsonToNestedValue} from '../utilities/jsonToNestedValue'
 export const jsonNestedPrefixed: StyleDictionary.Formatter = ({
   dictionary,
   file: _file,
-  options: _option,
+  options: _options,
   platform
 }) => {
-  const {prefix} = platform
-  let tokens = dictionary.tokens
-
   // add prefix if defined
-  if (prefix) {
-    tokens = {[prefix]: tokens}
-  }
-
+  const tokens = prefixTokens(dictionary.tokens, platform)
+  // add file header and convert output
   const output = JSON.stringify(jsonToNestedValue(tokens), null, 2)
   // return prettified
   return format(output, {parser: 'json', printWidth: 500})

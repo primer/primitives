@@ -1,3 +1,5 @@
+/* istanbul ignore file */
+/** we may refactor and it only copies files, thats why there is no tests */
 import fse = require('fs-extra')
 
 const errorHandler = (err: Error): void => {

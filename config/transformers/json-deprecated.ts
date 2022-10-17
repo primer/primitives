@@ -1,4 +1,5 @@
 import StyleDictionary from 'style-dictionary'
+import {isDeprecated} from '../filters/isDeprecated'
 /**
  * @description replaces tokens value with content of tokens `deprecated` property
  * @type value transformer — [StyleDictionary.ValueTransform](https://github.com/amzn/style-dictionary/blob/main/types/Transform.d.ts)
@@ -8,7 +9,7 @@ import StyleDictionary from 'style-dictionary'
 export const jsonDeprecated: StyleDictionary.Transform = {
   type: `value`,
   transitive: true,
-  matcher: (token: StyleDictionary.TransformedToken) => token.deprecated !== undefined,
+  matcher: isDeprecated,
   transformer: (token: StyleDictionary.TransformedToken) =>
     typeof token.deprecated === 'string' ? token.deprecated.replace(/[{}]/g, '') : null
 }

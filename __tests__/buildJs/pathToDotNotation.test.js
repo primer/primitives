@@ -1,4 +1,4 @@
-const pathToDotNotation = require('../build').pathToDotNotation
+const {pathToDotNotation} = require('../../build')
 
 // eslint-disable-next-line i18n-text/no-en
 describe('Token formatters: dot.notation', () => {

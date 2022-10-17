@@ -13,6 +13,6 @@
     "declaration": true,
     "resolveJsonModule": true
   },
-  "include": ["src/", "script/", "docs/", "config/types/"],
+  "include": ["src/", "script/", "docs/", "config/types/", "config/**/*.test.ts", "test-utilities/"],
   "exclude": ["./src/@types"]
 }
