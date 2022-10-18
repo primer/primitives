@@ -104,8 +104,6 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
    * convert colors
    */
   for (const [theme, source, include] of themes) {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
     PrimerStyleDictionary.extend(
       getStyleDictionaryConfig(`color/${theme}`, source, include, buildOptions)
     ).buildAllPlatforms()
@@ -130,7 +128,6 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
   })
   //
   for (const [name, source, include] of deprecatedBuilds) {
-    //
     PrimerStyleDictionary.extend(deprecatedConfig(name, source, include, buildOptions)).buildAllPlatforms()
   }
 }
