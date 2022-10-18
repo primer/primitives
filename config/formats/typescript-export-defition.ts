@@ -119,10 +119,9 @@ const getTypeDefinition = (
   return unquoteTypes(output, [...usedTypes])
 }
 /**
- * typescriptExportDefinition
- * @description Formatter that returns a typescript definition of a dictionary
- * @param arguments FormatterArguments
- * @returns formatted string
+ * @description Converts `StyleDictionary.dictionary.tokens` to typescript definition
+ * @param arguments [FormatterArguments](https://github.com/amzn/style-dictionary/blob/main/types/Format.d.ts)
+ * @returns formatted `string`
  */
 export const typescriptExportDefinition: StyleDictionary.Formatter = ({
   dictionary,

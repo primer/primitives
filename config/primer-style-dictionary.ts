@@ -72,8 +72,8 @@ StyleDictionary.registerTransform({
 /**
  * @name {@link PrimerStyleDictionary}
  * @description Returns style dictionary object with primer preset that includes parsers, formats and transformers
- * @parsers [w3cJsonParser](./parsers/w3c-json-parser.ts)
- * @formats [scss/mixin-css-variables](./formats/scss-mixin-css-variables.ts), [javascript/esm](./formats/javascript-esm.ts), [javascript/commonJs](./formats/javascript-commonJs.ts), [typescript/export-definition](./formats/typescript-export-defition.ts)
- * @transformers [color/rgbAlpha](./tranformers/color-to-rgb-alpha.ts), [color/hexAlpha](./tranformers/color-to-hex-alpha.ts), [color/hex6](./tranformers/color-to-hex6.ts), [json/deprecated](./tranformers/json-deprecated.ts), [name/pathToDotNotation](./tranformers/name-path-to-dot-notation.ts)
+ * @parsers [w3cJsonParser](https://github.com/primer/primitives/blob/main/config//parsers/w3c-json-parser.ts)
+ * @formats [scss/mixin-css-variables](https://github.com/primer/primitives/blob/main/config/formats/scss-mixin-css-variables.ts), [javascript/esm](https://github.com/primer/primitives/blob/main/config/formats/javascript-esm.ts), [javascript/commonJs](https://github.com/primer/primitives/blob/main/config/formats/javascript-commonJs.ts), [typescript/export-definition](https://github.com/primer/primitives/blob/main/config/formats/typescript-export-defition.ts)
+ * @transformers [color/rgbAlpha](https://github.com/primer/primitives/blob/main/config/tranformers/color-to-rgb-alpha.ts), [color/hexAlpha](https://github.com/primer/primitives/blob/main/config/tranformers/color-to-hex-alpha.ts), [color/hex6](https://github.com/primer/primitives/blob/main/config/tranformers/color-to-hex6.ts), [json/deprecated](https://github.com/primer/primitives/blob/main/config/tranformers/json-deprecated.ts), [name/pathToDotNotation](https://github.com/primer/primitives/blob/main/config/tranformers/name-path-to-dot-notation.ts)
  */
 export const PrimerStyleDictionary: StyleDictionary.Core = StyleDictionary
