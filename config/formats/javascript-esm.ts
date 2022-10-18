@@ -4,6 +4,11 @@ import {jsonToNestedValue} from '../utilities/jsonToNestedValue'
 
 const {fileHeader} = StyleDictionary.formatHelpers
 
+/**
+ * @description Converts `StyleDictionary.dictionary.tokens` to javascript esm (javascript export statement)
+ * @param arguments [FormatterArguments](https://github.com/amzn/style-dictionary/blob/main/types/Format.d.ts)
+ * @returns formatted `string`
+ */
 export const javascriptEsm: StyleDictionary.Formatter = ({dictionary, file, options, platform}) => {
   const {prefix} = platform
   let tokens = dictionary.tokens
