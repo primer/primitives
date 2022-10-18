@@ -123,7 +123,7 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
    * build deprecated.json
    */
   const deprecatedBuilds: [string, string[], string[]][] = [
-    ['color', themes[0][1], themes[0][2]] // light mode
+    ['color', [...themes[0][1], ...themes[0][2]], themes[0][2]] // light mode
     // TODO: missing type definition and deprecated for base colors
   ]
   // get config
