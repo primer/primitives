@@ -17,7 +17,8 @@ export const platformTypeDefinitions: PlatformInitializer = (
       destination: `${capitalize(outputFile)}DesignTokens.d.ts`,
       filter: isSource,
       options: {
-        unwrapFirstLevel: true,
+        // TODO: can the unwrapFirstLevel option be completly removed?
+        unwrapFirstLevel: false,
         tokenTypesPath: './config/types/',
         moduleName: `${capitalize(outputFile)}DesignTokens`
       }

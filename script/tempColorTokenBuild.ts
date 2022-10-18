@@ -110,7 +110,10 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
     ).buildAllPlatforms()
     // build base scales
     PrimerStyleDictionary.extend(
-      getStyleDictionaryConfig(`base/color/${theme}`, include, [], buildOptions)
+      getStyleDictionaryConfig(`base/color/${theme}`, include, [], {
+        buildPath: buildOptions.buildPath,
+        prefix: undefined
+      })
     ).buildAllPlatforms()
   }
   // TODO: Remove once shadows that used to be in colors are implemented
@@ -121,6 +124,7 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
    */
   const deprecatedBuilds: [string, string[], string[]][] = [
     ['color', themes[0][1], themes[0][2]] // light mode
+    // TODO: missing type definition and deprecated for base colors
   ]
   // get config
   const deprecatedConfig: StyleDictionaryConfigGenerator = (outputName, source, include, options) => ({
@@ -139,5 +143,5 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
 
 buildDesignTokens({
   buildPath: 'tokens-v2-private',
-  prefix: undefined
+  prefix: 'product'
 })

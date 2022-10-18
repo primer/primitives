@@ -9,6 +9,7 @@ import {scssMixinCssVariables} from './formats/scss-mixin-css-variables'
 import {javascriptCommonJs} from './formats/javascript-commonJs'
 import {javascriptEsm} from './formats/javascript-esm'
 import {typescriptExportDefinition} from './formats/typescript-export-defition'
+import {jsonNestedPrefixed} from './formats/json-nested-prefixed'
 
 /**
  * Parsers
@@ -38,6 +39,11 @@ StyleDictionary.registerFormat({
 StyleDictionary.registerFormat({
   name: 'typescript/export-definition',
   formatter: typescriptExportDefinition
+})
+
+StyleDictionary.registerFormat({
+  name: 'json/nested-prefixed',
+  formatter: jsonNestedPrefixed
 })
 
 /**

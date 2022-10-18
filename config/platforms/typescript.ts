@@ -15,7 +15,8 @@ export const platformTs: PlatformInitializer = (outputFile, prefix, buildPath): 
       destination: outputFile,
       filter: isSource,
       options: {
-        unwrapFirstLevel: true
+        // TODO: can the unwrapFirstLevel option be completly removed?
+        unwrapFirstLevel: false
       }
     }
   ]
