@@ -1,0 +1,48 @@
+name: '🐛 Bug'
+description: Report a bug to help us improve Primer Primitives.
+title: '🐛 [BUG] - <title>'
+labels: ['bug']
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: 'Describe the bug'
+      description: A clear and concise description of what the bug is.
+    validations:
+      required: true
+  - type: textarea
+    id: reprod
+    attributes:
+      label: 'Reproduction steps'
+      description: Please provide clear and accurate steps to reproduce the bug.
+      value: |
+        1. Go to '...'
+        2. Click on '....'
+        3. Scroll down to '....'
+        4. See error
+      render: bash
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 'Expected behavior'
+      description: Please enter a clear and concise description of what you expected to happen.
+      value: |
+        1. Go to '...'
+        2. Click on '....'
+        3. Scroll down to '....'
+        4. See error
+      render: bash
+    validations:
+      required: true
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: 'Screenshots'
+      description: If applicable, add screenshots to help illustrate your problem.
+      value: |
+        ![DESCRIPTION](LINK.png)
+      render: bash
+    validations:
+      required: false
