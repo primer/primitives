@@ -1,4 +1,4 @@
-import StyleDictionary from 'style-dictionary'
+import type StyleDictionary from 'style-dictionary'
 import {PrimerStyleDictionary} from '../config/primer-style-dictionary'
 import {copyFilesAndFolders} from '../config/utilities/copyFilesAndFolders'
 import {platformTypeDefinitions} from '../config/platforms/typesDefinitions'
@@ -104,35 +104,60 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
    * convert colors
    */
   for (const [theme, source, include] of themes) {
+    // build functional scales
     PrimerStyleDictionary.extend(
-      getStyleDictionaryConfig(`color/${theme}`, source, include, buildOptions)
+      getStyleDictionaryConfig(`functional/color/${theme}`, source, include, buildOptions)
+    ).buildAllPlatforms()
+    // build base scales
+    PrimerStyleDictionary.extend(
+      getStyleDictionaryConfig(`base/color/${theme}`, include, [], {
+        buildPath: buildOptions.buildPath,
+        prefix: undefined
+      })
     ).buildAllPlatforms()
   }
   // TODO: Remove once shadows that used to be in colors are implemented
   // eslint-disable-next-line no-console
   console.log('⚠️ Shadows are not implemented in tokens correctly')
+
   /**
    * build deprecated.json
    */
   const deprecatedBuilds: [string, string[], string[]][] = [
-    ['color', themes[0][1], themes[0][2]] // light mode
+    ['color', [...themes[0][1], ...themes[0][2]], themes[0][2]] // light mode
+    // TODO: missing type definition and deprecated for base colors
   ]
-  // get config
-  const deprecatedConfig: StyleDictionaryConfigGenerator = (outputName, source, include, options) => ({
-    source,
-    include,
-    platforms: {
-      deprecated: platformDeprecatedJson(`${outputName}.json`, options.prefix, options.buildPath),
-      types: platformTypeDefinitions(`${outputName}`, options.prefix, options.buildPath)
-    }
-  })
   //
   for (const [name, source, include] of deprecatedBuilds) {
-    PrimerStyleDictionary.extend(deprecatedConfig(name, source, include, buildOptions)).buildAllPlatforms()
+    PrimerStyleDictionary.extend({
+      source,
+      include,
+      platforms: {
+        deprecated: platformDeprecatedJson(`${name}.json`, buildOptions.prefix, buildOptions.buildPath)
+      }
+    }).buildAllPlatforms()
+  }
+  /**
+   * build type definitions
+   */
+  // TODO: The tuple structure gets to complex this should be refactored to be easier to read
+  const typeBuilds: [string, string[], string[], string?][] = [
+    ['color', themes[0][1], themes[0][2], buildOptions.prefix], // light mode
+    ['baseColor', [...themes[0][2]], []]
+  ]
+  //
+  for (const [name, source, include, prefix] of typeBuilds) {
+    PrimerStyleDictionary.extend({
+      source,
+      include,
+      platforms: {
+        types: platformTypeDefinitions(`${name}`, prefix, buildOptions.buildPath)
+      }
+    }).buildAllPlatforms()
   }
 }
 
 buildDesignTokens({
   buildPath: 'tokens-v2-private',
-  prefix: undefined
+  prefix: 'product'
 })

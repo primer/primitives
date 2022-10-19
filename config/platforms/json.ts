@@ -13,7 +13,7 @@ export const platformJson: PlatformInitializer = (outputFile, prefix, buildPath)
     {
       destination: outputFile,
       filter: isSource,
-      format: `json/nested`,
+      format: `json/nested-prefixed`,
       options: {
         outputReferences: false
       }

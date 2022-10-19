@@ -1,5 +1,6 @@
 import StyleDictionary from 'style-dictionary'
 import {PlatformInitializer} from '../../@types/PlatformInitializer'
+import {isSource} from '../filters/isSource'
 
 export const platformDocJson: PlatformInitializer = (outputFile, prefix, buildPath): StyleDictionary.Platform => ({
   prefix,
@@ -11,7 +12,8 @@ export const platformDocJson: PlatformInitializer = (outputFile, prefix, buildPa
   files: [
     {
       destination: outputFile,
-      format: `json/nested`,
+      format: `json/nested-prefixed`,
+      filter: isSource,
       options: {
         outputReferences: false
       }

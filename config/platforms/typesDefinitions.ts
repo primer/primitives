@@ -1,7 +1,7 @@
 import StyleDictionary from 'style-dictionary'
 import {PlatformInitializer} from '../../@types/PlatformInitializer'
 import {isSource} from '../filters/isSource'
-import {capitalize} from 'lodash'
+import {upperCaseFirstCharacter} from '../utilities/upperCaseFirstCharacter'
 
 export const platformTypeDefinitions: PlatformInitializer = (
   outputFile,
@@ -14,12 +14,13 @@ export const platformTypeDefinitions: PlatformInitializer = (
   files: [
     {
       format: 'typescript/export-definition',
-      destination: `${capitalize(outputFile)}DesignTokens.d.ts`,
+      destination: `${upperCaseFirstCharacter(outputFile)}DesignTokens.d.ts`,
       filter: isSource,
       options: {
-        unwrapFirstLevel: true,
+        // TODO: can the unwrapFirstLevel option be completly removed?
+        unwrapFirstLevel: false,
         tokenTypesPath: './config/types/',
-        moduleName: `${capitalize(outputFile)}DesignTokens`
+        moduleName: `${upperCaseFirstCharacter(outputFile)}DesignTokens`
       }
     }
   ]
