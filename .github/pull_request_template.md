@@ -50,3 +50,4 @@ Help reviewers test the feature by providing steps to reproduce the behavior.
 - [ ] Check that pull request and proposed changes adhere to our [contribution guidelines](../../CONTRIBUTING.md) and [code of conduct](../../CODE_OF_CONDUCT.md)
 - [ ] Check that tests prove the feature works and covers both happy and unhappy paths
 - [ ] Check that there aren't other open Pull Requests for the same update/change
+- [ ] Verify the design tokens changed in this PR are expected using the diffing results in this PR
