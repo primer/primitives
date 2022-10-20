@@ -9,9 +9,9 @@ A few sentences describing the changes being proposed in this pull request.
 <!--
 E.g.
 
-- **added** # for # component because #
-- **removed** props for # component because #
-- **updated** documentation for # component because #
+- **added** new design token for # because #
+- **deprecated**  design token for # because #
+- **updated** documentation for # because #
 -->
 
 -
