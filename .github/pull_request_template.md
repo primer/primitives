@@ -25,12 +25,9 @@ E.g.
 <!--
 Help reviewers test the feature by providing steps to reproduce the behavior.
 
-E.g.
-
-1. Open the # component in CI-deployed preview environment
-2. Go to # story in Storybook
-3. Verify that # behaves as described in the following issue.
--->
+1. Open the preview documentation that has been deployed in this pull request
+2. Go to # page
+3. Verify that # behaves as described in the pull request description
 
 1.
 1.
