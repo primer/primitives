@@ -99,7 +99,7 @@ const testContrast = (
   }
   return {
     pass: contrast >= minimumContrast ? '✅' : '❌',
-    contrastRatio: `${contrast}: 1`
+    contrastRatio: `${contrast}:1`
   }
 }
 /**
