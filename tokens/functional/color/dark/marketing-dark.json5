@@ -1,4 +1,5 @@
 {
+  "sys": {
   "color": {
     "mktg": {
       "btn": {
@@ -11,14 +12,14 @@
     "marketing": {
       "icon": {
         "primary": {
-          "$value": "{base.color.scale.blue.2}",
+          "$value": "{ref.color.scale.blue.2}",
           "$type": "color"
         },
         "secondary": {
-          "$value": "{base.color.scale.blue.5}",
+          "$value": "{ref.color.scale.blue.5}",
           "$type": "color"
         }
       }
     }
   }
-}
+}}

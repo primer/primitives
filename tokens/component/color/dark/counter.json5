@@ -1,0 +1,12 @@
+{
+  comp: {
+    colors: {
+      counter: {
+        border: {
+          $value: '{ref.color.scale.transparent}',
+          $type: 'color'
+        }
+      }
+    }
+  }
+}

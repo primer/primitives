@@ -1,0 +1,88 @@
+{
+  "sys": {
+  "color": {
+    "open": {
+      "fg": {
+        "$value": "{ref.color.scale.orange.5}",
+        "$type": "color"
+      },
+      "emphasis": {
+        "$value": "{ref.color.scale.orange.4}",
+        "$type": "color"
+      },
+      "muted": {
+        "$value": "{ref.color.scale.orange.3}",
+        "$type": "color",
+        "alpha": 0.4
+      },
+      "subtle": {
+        "$value": "{ref.color.scale.orange.0}",
+        "$type": "color"
+      }
+    },
+    "closed": {
+      "fg": {
+        "$value": "{ref.color.scale.gray.5}",
+        "$type": "color"
+      },
+      "emphasis": {
+        "$value": "{ref.color.scale.gray.5}",
+        "$type": "color"
+      },
+      "muted": {
+        "$value": "{ref.color.scale.gray.3}",
+        "$type": "color",
+        "alpha": 0.4
+      },
+      "subtle": {
+        "$value": "{ref.color.scale.gray.0}",
+        "$type": "color"
+      }
+    },
+    "diffBlob": {
+      "addition": {
+        "numBg": {
+          "$value": "{sys.color.success.muted}",
+          "$type": "color"
+        },
+        "lineBg": {
+          "$value": "{ref.color.scale.green.0}",
+          "$type": "color",
+          "alpha": 0.5
+        },
+        "wordBg": {
+          "$value": "{sys.color.success.muted}",
+          "$type": "color"
+        }
+      },
+      "deletion": {
+        "numBg": {
+          "$value": "{sys.color.danger.muted}",
+          "$type": "color"
+        },
+        "lineBg": {
+          "$value": "{ref.color.scale.red.0}",
+          "$type": "color",
+          "alpha": 0.5
+        },
+        "wordBg": {
+          "$value": "{ref.color.scale.red.2}",
+          "$type": "color",
+          "alpha": 0.5
+        }
+      }
+    },
+    "btn": {
+      "primary": {
+        "hoverBg": {
+          "$value": "{ref.color.scale.green.5}",
+          "$type": "color"
+        },
+        "disabledBg": {
+          "$value": "{ref.color.scale.green.2}",
+          "$type": "color"
+        }
+      }
+    }
+  }
+}}

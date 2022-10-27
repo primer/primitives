@@ -109,10 +109,7 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
     ).buildAllPlatforms()
     // build base scales
     PrimerStyleDictionary.extend(
-      getStyleDictionaryConfig(`base/color/${filename}`, include, [], {
-        buildPath: buildOptions.buildPath,
-        prefix: undefined
-      })
+      getStyleDictionaryConfig(`base/color/${filename}`, include, [], buildOptions)
     ).buildAllPlatforms()
   }
   // TODO: Remove once shadows that used to be in colors are implemented
@@ -174,5 +171,5 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
 
 buildDesignTokens({
   buildPath: 'tokens-v2-private/',
-  prefix: 'product'
+  prefix: 'primer'
 })

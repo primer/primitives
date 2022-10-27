@@ -1,0 +1,512 @@
+{
+  comp: {
+    color: {
+      selectMenu: {
+        backdropBorder: {
+          $value: '{ref.color.scale.gray.5}',
+          $type: 'color'
+        },
+        tapHighlight: {
+          $value: '{ref.color.scale.gray.6}',
+          $type: 'color',
+          alpha: 0.5
+        },
+        tapFocusBg: {
+          $value: '{ref.color.scale.blue.8}',
+          $type: 'color'
+        }
+      },
+      header: {
+        text: {
+          $value: '{ref.color.scale.white}',
+          $type: 'color',
+          alpha: 0.7
+        },
+        bg: {
+          $value: '{ref.color.scale.gray.8}',
+          $type: 'color'
+        },
+        divider: {
+          $value: '{ref.color.scale.gray.3}',
+          $type: 'color'
+        },
+        logo: {
+          $value: '{ref.color.scale.gray.0}',
+          $type: 'color'
+        }
+      },
+      headerSearch: {
+        bg: {
+          $value: '{ref.color.scale.gray.9}',
+          $type: 'color'
+        },
+        border: {
+          $value: '{ref.color.scale.gray.6}',
+          $type: 'color'
+        }
+      },
+      sidenav: {
+        selectedBg: {
+          $value: '{ref.color.scale.gray.7}',
+          $type: 'color'
+        }
+      },
+      menu: {
+        bgActive: {
+          $value: '{ref.color.scale.gray.8}',
+          $type: 'color'
+        }
+      },
+      input: {
+        disabledBg: {
+          $value: '{sys.color.neutral.muted}',
+          $type: 'color',
+          alpha: 0.5
+        }
+      },
+      timeline: {
+        badgeBg: {
+          $value: '{ref.color.scale.gray.7}',
+          $type: 'color'
+        }
+      },
+      ansi: {
+        black: {
+          $value: '{ref.color.scale.gray.5}',
+          $type: 'color'
+        },
+        blackBright: {
+          $value: '{ref.color.scale.gray.4}',
+          $type: 'color'
+        },
+        white: {
+          $value: '{ref.color.scale.gray.2}',
+          $type: 'color'
+        },
+        whiteBright: {
+          $value: '{ref.color.scale.white}',
+          $type: 'color'
+        },
+        gray: {
+          $value: '{ref.color.scale.gray.4}',
+          $type: 'color'
+        },
+        red: {
+          $value: '{ref.color.scale.red.3}',
+          $type: 'color'
+        },
+        redBright: {
+          $value: '{ref.color.scale.red.2}',
+          $type: 'color'
+        },
+        green: {
+          $value: '{ref.color.scale.green.3}',
+          $type: 'color'
+        },
+        greenBright: {
+          $value: '{ref.color.scale.green.2}',
+          $type: 'color'
+        },
+        yellow: {
+          $value: '{ref.color.scale.yellow.3}',
+          $type: 'color'
+        },
+        yellowBright: {
+          $value: '{ref.color.scale.yellow.2}',
+          $type: 'color'
+        },
+        blue: {
+          $value: '{ref.color.scale.blue.3}',
+          $type: 'color'
+        },
+        blueBright: {
+          $value: '{ref.color.scale.blue.2}',
+          $type: 'color'
+        },
+        magenta: {
+          $value: '{ref.color.scale.purple.3}',
+          $type: 'color'
+        },
+        magentaBright: {
+          $value: '{ref.color.scale.purple.2}',
+          $type: 'color'
+        },
+        cyan: {
+          $value: '#39c5cf',
+          $type: 'color'
+        },
+        cyanBright: {
+          $value: '#56d4dd',
+          $type: 'color'
+        }
+      },
+      btn: {
+        text: {
+          $value: '{ref.color.scale.gray.1}',
+          $type: 'color'
+        },
+        bg: {
+          $value: '{ref.color.scale.gray.7}',
+          $type: 'color'
+        },
+        border: {
+          $value: '{sys.color.border.subtle}',
+          $type: 'color'
+        },
+        hoverBg: {
+          $value: '{ref.color.scale.gray.6}',
+          $type: 'color'
+        },
+        hoverBorder: {
+          $value: '{ref.color.scale.gray.3}',
+          $type: 'color'
+        },
+        activeBg: {
+          $value: '#282e33',
+          $type: 'color'
+        },
+        activeBorder: {
+          $value: '{ref.color.scale.gray.4}',
+          $type: 'color'
+        },
+        selectedBg: {
+          $value: '{ref.color.scale.gray.8}',
+          $type: 'color'
+        },
+        focusBg: {
+          $value: '{ref.color.scale.gray.7}',
+          $type: 'color'
+        },
+        focusBorder: {
+          $value: '{ref.color.scale.gray.3}',
+          $type: 'color'
+        },
+        counterBg: {
+          $value: '{ref.color.scale.gray.6}',
+          $type: 'color'
+        },
+        primary: {
+          text: {
+            $value: '#ffffff',
+            $type: 'color'
+          },
+          bg: {
+            $value: '{ref.color.scale.green.5}',
+            $type: 'color'
+          },
+          border: {
+            $value: '{sys.color.border.subtle}',
+            $type: 'color'
+          },
+          shadow: '0 0 transparent',
+          insetShadow: '0 0 transparent',
+          hover: {
+            bg: {
+              $value: '{ref.color.scale.green.4}',
+              $type: 'color'
+            }
+          },
+          hoverBorder: {
+            $value: '{sys.color.border.subtle}',
+            $type: 'color'
+          },
+          selectedBg: {
+            $value: '{ref.color.scale.green.5}',
+            $type: 'color'
+          },
+          selectedShadow: '0 0 transparent',
+          disabledText: {
+            $value: '{ref.color.scale.white}',
+            $type: 'color',
+            alpha: 0.5
+          },
+          disabledBg: {
+            $value: '{ref.color.scale.green.5}',
+            $type: 'color',
+            alpha: 0.6
+          },
+          disabledBorder: {
+            $value: '{sys.color.border.subtle}',
+            $type: 'color'
+          },
+          focusBg: {
+            $value: '{ref.color.scale.green.5}',
+            $type: 'color'
+          },
+          focusBorder: {
+            $value: '{sys.color.border.subtle}',
+            $type: 'color'
+          },
+          icon: {
+            $value: '{ref.color.scale.white}',
+            $type: 'color'
+          },
+          counterBg: {
+            $value: '{ref.color.scale.white}',
+            $type: 'color',
+            alpha: 0.2
+          }
+        },
+        outline: {
+          text: {
+            $value: '{ref.color.scale.blue.3}',
+            $type: 'color'
+          },
+          hoverText: {
+            $value: '{ref.color.scale.blue.3}',
+            $type: 'color'
+          },
+          hoverBg: {
+            $value: '{ref.color.scale.gray.6}',
+            $type: 'color'
+          },
+          hoverBorder: {
+            $value: '{sys.color.border.subtle}',
+            $type: 'color'
+          },
+          hoverCounterBg: {
+            $value: '{ref.color.scale.white}',
+            $type: 'color',
+            alpha: 0.2
+          },
+          selectedText: {
+            $value: '{ref.color.scale.white}',
+            $type: 'color'
+          },
+          selectedBg: {
+            $value: '{ref.color.scale.blue.7}',
+            $type: 'color'
+          },
+          selectedBorder: {
+            $value: '{sys.color.border.subtle}',
+            $type: 'color'
+          },
+          selectedShadow: '0 0 transparent',
+          disabledText: {
+            $value: '{ref.color.scale.blue.3}',
+            $type: 'color',
+            alpha: 0.5
+          },
+          disabledBg: {
+            $value: '{ref.color.scale.gray.9}',
+            $type: 'color'
+          },
+          disabledCounterBg: {
+            $value: '{ref.color.scale.blue.5}',
+            $type: 'color',
+            alpha: 0.05
+          },
+          focusBorder: {
+            $value: '{sys.color.border.subtle}',
+            $type: 'color'
+          },
+          counterBg: {
+            $value: '{ref.color.scale.blue.5}',
+            $type: 'color',
+            alpha: 0.1
+          }
+        },
+        danger: {
+          text: {
+            $value: '{ref.color.scale.red.4}',
+            $type: 'color'
+          },
+          hoverText: {
+            $value: '{sys.color.fg.onEmphasis}',
+            $type: 'color'
+          },
+          hoverBg: {
+            $value: '{ref.color.scale.red.5}',
+            $type: 'color'
+          },
+          hoverBorder: {
+            $value: '{ref.color.scale.red.4}',
+            $type: 'color'
+          },
+          hoverShadow: '0 0 transparent',
+          hoverInsetShadow: '0 0 transparent',
+          hoverIcon: {
+            $value: '{sys.color.fg.onEmphasis}',
+            $type: 'color'
+          },
+          hover: {
+            counter: {
+              bg: {
+                $value: '#ffffff',
+                $type: 'color',
+                alpha: 0.2
+              }
+            }
+          },
+          selectedText: {
+            $value: '#ffffff',
+            $type: 'color'
+          },
+          selectedBg: {
+            $value: '{ref.color.scale.red.6}',
+            $type: 'color'
+          },
+          selectedBorder: {
+            $value: '{ref.color.scale.red.3}',
+            $type: 'color'
+          },
+          selectedShadow: '0 0 transparent',
+          disabledText: {
+            $value: '{ref.color.scale.red.4}',
+            $type: 'color',
+            alpha: 0.5
+          },
+          disabledBg: {
+            $value: '{ref.color.scale.gray.9}',
+            $type: 'color'
+          },
+          disabledCounterBg: {
+            $value: '{ref.color.scale.red.5}',
+            $type: 'color',
+            alpha: 0.05
+          },
+          focusBorder: {
+            $value: '{ref.color.scale.red.4}',
+            $type: 'color'
+          },
+          counterBg: {
+            $value: '{ref.color.scale.red.5}',
+            $type: 'color',
+            alpha: 0.1
+          },
+          icon: {
+            $value: '{ref.color.scale.red.4}',
+            $type: 'color'
+          }
+        }
+      },
+      underlinenav: {
+        icon: {
+          $value: '{sys.color.fg.subtle}',
+          $type: 'color'
+        },
+        borderHover: {
+          $value: '{sys.color.neutral.muted}',
+          $type: 'color'
+        }
+      },
+      actionListItem: {
+        inlineDivider: {
+          $value: '{sys.color.border.default}',
+          $type: 'color',
+          alpha: 0.48
+        },
+        default: {
+          hoverBg: {
+            $value: '{ref.color.scale.gray.2}',
+            $type: 'color',
+            alpha: 0.12
+          },
+          hoverBorder: {
+            $value: '{ref.color.scale.transparent}',
+            $type: 'color'
+          },
+          activeBg: {
+            $value: '{ref.color.scale.gray.2}',
+            $type: 'color',
+            alpha: 0.2
+          },
+          activeBorder: {
+            $value: '{ref.color.scale.transparent}',
+            $type: 'color'
+          },
+          selectedBg: {
+            $value: '{ref.color.scale.gray.2}',
+            $type: 'color',
+            alpha: 0.08
+          }
+        },
+        danger: {
+          hoverBg: {
+            $value: '{ref.color.scale.red.4}',
+            $type: 'color',
+            alpha: 0.16
+          },
+          activeBg: {
+            $value: '{ref.color.scale.red.4}',
+            $type: 'color',
+            alpha: 0.24
+          },
+          hoverText: {
+            $value: '{ref.color.scale.red.3}',
+            $type: 'color'
+          }
+        }
+      },
+      switchTrack: {
+        bg: {
+          $value: '{ref.color.scale.black}',
+          $type: 'color'
+        },
+        border: {
+          $value: '{ref.color.scale.gray.4}',
+          $type: 'color'
+        },
+        checked: {
+          bg: {
+            $value: '{ref.color.scale.blue.5}',
+            $type: 'color',
+            alpha: 0.35
+          },
+          hoverBg: {
+            $value: '{ref.color.scale.blue.5}',
+            $type: 'color',
+            alpha: 0.5
+          },
+          activeBg: {
+            $value: '{ref.color.scale.blue.5}',
+            $type: 'color',
+            alpha: 0.65
+          },
+          border: {
+            $value: '{ref.color.scale.blue.3}',
+            $type: 'color'
+          }
+        }
+      },
+      switchKnob: {
+        checked: {
+          bg: {
+            $value: '{ref.color.scale.blue.5}',
+            $type: 'color'
+          },
+          disabledBg: {
+            $value: '{ref.color.scale.gray.5}',
+            $type: 'color'
+          }
+        }
+      },
+      segmentedControl: {
+        bg: {
+          $value: '{ref.color.scale.gray.8}',
+          $type: 'color'
+        },
+        button: {
+          hover: {
+            bg: {
+              $value: '{ref.color.scale.gray.6}',
+              $type: 'color'
+            }
+          },
+          active: {
+            bg: {
+              $value: '{ref.color.scale.gray.7}',
+              $type: 'color'
+            }
+          },
+          selected: {
+            border: {
+              $value: '{ref.color.scale.gray.4}',
+              $type: 'color'
+            }
+          }
+        }
+      }
+    }
+  }
+}

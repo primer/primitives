@@ -1,0 +1,12 @@
+{
+  comp: {
+    colors: {
+      topicTag: {
+        border: {
+          $value: '{ref.color.scale.transparent}',
+          $type: 'color'
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  comp: {
+    colors: {
+      avatar: {
+        bg: {
+          $value: '{ref.color.scale.white}',
+          $type: 'color',
+          alpha: 0.1
+        },
+        border: {
+          $value: '{sys.color.border.subtle}',
+          $type: 'color'
+        },
+        stackFade: {
+          $value: '{ref.color.scale.gray.6}',
+          $type: 'color'
+        },
+        stackFadeMore: {
+          $value: '{ref.color.scale.gray.7}',
+          $type: 'color'
+        }
+      }
+    }
+  }
+}
