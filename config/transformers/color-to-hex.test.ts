@@ -1,4 +1,4 @@
-import {getMockToken} from '../../test-utilities/getMockToken'
+import {getMockToken} from '../../src/test-utilities/getMockToken'
 import {colorToHex} from './color-to-hex'
 
 describe('Transformer: colorToHex', () => {

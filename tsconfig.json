@@ -8,11 +8,11 @@
     "esModuleInterop": true,
     "strict": true,
     "noImplicitAny": true,
-    "typeRoots": ["./src/@types", "./node_modules/@types"],
+    "typeRoots": ["./src/@types", "./node_modules/@types", "types", "config/types/"],
     "rootDir": "./",
     "declaration": true,
     "resolveJsonModule": true
   },
-  "include": ["src/", "script/", "docs/", "config/types/", "config/**/*.test.ts", "test-utilities/"],
+  "include": ["src/", "script/", "docs/", "config/**/*.test.ts"],
   "exclude": ["./src/@types"]
 }

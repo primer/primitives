@@ -1,8 +1,8 @@
 import {typescriptExportDefinition} from './typescript-export-definition'
-import {getMockFormatterArguments} from '../../test-utilities/getMockFormatterArguments'
+import {getMockFormatterArguments} from '../../src/test-utilities/getMockFormatterArguments'
 import {format} from 'prettier'
-import {getMockDictionary} from '../../test-utilities/getMockDictionary'
-import {getMockToken} from '../../test-utilities/getMockToken'
+import {getMockDictionary} from '../../src/test-utilities/getMockDictionary'
+import {getMockToken} from '../../src/test-utilities/getMockToken'
 
 describe('Format: TypeScript definitions', () => {
   const dictionary = getMockDictionary({
@@ -16,10 +16,10 @@ describe('Format: TypeScript definitions', () => {
         yellow: getMockToken({
           value: '#FF0000'
         }),
-        default: getMockToken({
-          value: 16,
-          $type: 'dimension'
-        }),
+        // default: getMockToken({
+        //   value: 16,
+        //   $type: 'dimension'
+        // }),
         complex: {
           top: 16,
           bottom: () => 16
@@ -47,7 +47,6 @@ describe('Format: TypeScript definitions', () => {
             subgroup: {
               red: ColorHex;
               yellow: string;
-              default: number;
               complex: {
                 top: number;
                 bottom: any;
@@ -75,7 +74,6 @@ describe('Format: TypeScript definitions', () => {
           subgroup: {
             red: ColorHex;
             yellow: string;
-            default: number;
             complex: {
               top: number;
               bottom: any;

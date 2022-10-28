@@ -43,18 +43,17 @@ const getTokenType = (tokenTypesPath: string): string => {
  * @param type
  * @returns
  */
-const convertPropToType = (value: string, type?: string): string => {
+const convertPropToType = (value: unknown, type?: string): string => {
   switch (type) {
     case 'color':
-      if (value[0] === '#') {
+      if (typeof value === 'string' && value[0] === '#') {
         return 'ColorHex'
       }
       return 'string'
     case 'dimension':
-      if (typeof value === 'number') return 'number'
-      if (value.substring(value.length - 3) === 'rem') return 'SizeRem'
-      if (value.substring(value.length - 2) === 'px') return 'SizePx'
-      return 'Size'
+      if (typeof value === 'string' && value.substring(value.length - 3) === 'rem') return 'SizeRem'
+      if (typeof value === 'string' && value.substring(value.length - 2) === 'px') return 'SizePx'
+      return 'string'
     case 'shadow':
       return 'Shadow'
     default:

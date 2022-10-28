@@ -25,7 +25,7 @@ describe('Utilities: jsonToNestedValue', () => {
   }
 
   it('it returns only value property as value of object', () => {
-   expect(jsonToNestedValue(obj.parent.subparent.child1)).toBe('#111')
+    expect(jsonToNestedValue(obj.parent.subparent.child1)).toBe('#111')
     expect(jsonToNestedValue(obj['parent']['subparent'])).toStrictEqual({child1: '#111', child2: '#222'})
   })
 

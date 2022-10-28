@@ -1,4 +1,4 @@
-import {getMockToken} from '../../test-utilities/getMockToken'
+import {getMockToken} from '../../src/test-utilities/getMockToken'
 import {isDeprecated} from './isDeprecated'
 
 describe('Filter: isDeprecated', () => {
