@@ -22,7 +22,7 @@ describe('Format: Scss with sss variables', () => {
     expect(scssMixinCssVariables(input)).toStrictEqual(expectedOutput)
   })
 
-  it('Formats throws error if options.mixinName is missing', () => {
+  it('throws an error if options.mixinName is missing', () => {
     expect(() => {
       scssMixinCssVariables(getMockFormatterArguments())
     }).toThrow('Missing argument for scssMixinCssVariables formatter: "options.mixinName"')
