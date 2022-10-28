@@ -9,7 +9,7 @@ export const platformCss: PlatformInitializer = (
   _options
 ): StyleDictionary.Platform => ({
   prefix,
-  buildPath: `${buildPath}/css/`,
+  buildPath,
   transforms: ['name/cti/kebab', 'color/hex', 'color/hexAlpha'],
   options: {
     basePxFontSize: 16

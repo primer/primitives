@@ -8,7 +8,7 @@ export const platformDeprecatedJson: PlatformInitializer = (
   buildPath
 ): StyleDictionary.Platform => ({
   prefix,
-  buildPath: `${buildPath}/deprecated/`,
+  buildPath,
   transforms: ['name/pathToDotNotation', 'json/deprecated'],
   files: [
     {

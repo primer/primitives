@@ -9,7 +9,7 @@ export const platformTypeDefinitions: PlatformInitializer = (
   buildPath
 ): StyleDictionary.Platform => ({
   prefix,
-  buildPath: `${buildPath}/ts/types/`,
+  buildPath,
   transforms: ['name/cti/camel', 'color/hex6', 'color/hexAlpha'],
   files: [
     {
