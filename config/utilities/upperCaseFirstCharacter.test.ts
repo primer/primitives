@@ -9,7 +9,7 @@ describe('Utilities: upperCaseFirstCharacter', () => {
     expect(upperCaseFirstCharacter('primer design token')).toStrictEqual('Primer design token')
   })
 
-  it('it transforms all uppercase word', () => {
+  it('it preserves casing for words that are already all uppercased', () => {
     expect(upperCaseFirstCharacter('PRIMER')).toStrictEqual('PRIMER')
   })
 
