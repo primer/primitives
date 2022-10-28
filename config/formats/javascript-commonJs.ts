@@ -1,6 +1,8 @@
 import StyleDictionary from 'style-dictionary'
+import {FormatterArguments} from 'style-dictionary/types/Format'
 import {format} from 'prettier'
 import {jsonToNestedValue} from '../utilities/jsonToNestedValue'
+import {prefixTokens} from '../utilities/prefixTokens'
 
 const {fileHeader} = StyleDictionary.formatHelpers
 
@@ -9,18 +11,10 @@ const {fileHeader} = StyleDictionary.formatHelpers
  * @param arguments [FormatterArguments](https://github.com/amzn/style-dictionary/blob/main/types/Format.d.ts)
  * @returns formatted `string`
  */
-export const javascriptCommonJs: StyleDictionary.Formatter = ({dictionary, file, options, platform}) => {
-  const {prefix} = platform
-  let tokens = dictionary.tokens
-  // unwrap first level e.g. color.fg.default -> fg.default
-  if (options.unwrapFirstLevel) {
-    tokens = tokens[Object.keys(tokens)[0]]
-  }
+export const javascriptCommonJs: StyleDictionary.Formatter = ({dictionary, file, platform}: FormatterArguments) => {
   // add prefix if defined
-  if (prefix) {
-    tokens = {[prefix]: tokens}
-  }
-
+  const tokens = prefixTokens(dictionary.tokens, platform)
+  // add file header and convert output
   const output = `${fileHeader({file})}exports.default = ${JSON.stringify(jsonToNestedValue(tokens), null, 2)}\n`
   // return prettified
   return format(output, {parser: 'typescript', printWidth: 500})

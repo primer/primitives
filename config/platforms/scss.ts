@@ -18,7 +18,7 @@ export const platformScss: PlatformInitializer = (outputFile, prefix, buildPath)
   return {
     prefix,
     buildPath,
-    transforms: ['name/cti/kebab', 'color/hex6', 'color/hexAlpha'],
+    transforms: ['name/cti/kebab', 'color/hex', 'color/hexAlpha'],
     options: {
       basePxFontSize: 16
     },

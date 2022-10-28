@@ -10,15 +10,13 @@ export const platformTypeDefinitions: PlatformInitializer = (
 ): StyleDictionary.Platform => ({
   prefix,
   buildPath,
-  transforms: ['name/cti/camel', 'color/hex6', 'color/hexAlpha'],
+  transforms: ['name/cti/camel', 'color/hex', 'color/hexAlpha'],
   files: [
     {
       format: 'typescript/export-definition',
       destination: `${upperCaseFirstCharacter(outputFile)}DesignTokens.d.ts`,
       filter: isSource,
       options: {
-        // TODO: can the unwrapFirstLevel option be completly removed?
-        unwrapFirstLevel: false,
         tokenTypesPath: './config/types/',
         moduleName: `${upperCaseFirstCharacter(outputFile)}DesignTokens`
       }

@@ -2,6 +2,8 @@ import StyleDictionary from 'style-dictionary'
 import {format} from 'prettier'
 import fs = require('fs')
 import path = require('path')
+import {prefixTokens} from '../utilities/prefixTokens'
+import {FormatterArguments} from 'style-dictionary/types/Format'
 
 const {fileHeader} = StyleDictionary.formatHelpers
 
@@ -14,7 +16,7 @@ const {fileHeader} = StyleDictionary.formatHelpers
  */
 const unquoteTypes = (output: string, designTokenTypes: string[]): string => {
   // join types for replacement
-  const regex = `"(${designTokenTypes.join('|')})"`
+  const regex = `"(${['number', 'string', 'any', ...designTokenTypes].join('|')})"`
   // remove strings
   return output.replace(new RegExp(regex, 'g'), '$1')
 }
@@ -25,9 +27,14 @@ const unquoteTypes = (output: string, designTokenTypes: string[]): string => {
  * @param path string
  */
 const getTokenType = (tokenTypesPath: string): string => {
-  const designTokenType = fs.readFileSync(path.resolve(tokenTypesPath), {encoding: 'utf-8'})
-  //
-  return designTokenType
+  try {
+    const designTokenType = fs.readFileSync(path.resolve(tokenTypesPath), {encoding: 'utf-8'})
+    return designTokenType
+  } catch (e) {
+    // eslint-disable-next-line no-console
+    console.error(`Error trying to load design token type from file "${tokenTypesPath}".`)
+  }
+  return ''
 }
 
 /**
@@ -36,22 +43,23 @@ const getTokenType = (tokenTypesPath: string): string => {
  * @param type
  * @returns
  */
-const convertPropToType = (value: string, type: string): string => {
+const convertPropToType = (value: unknown, type?: string): string => {
   switch (type) {
     case 'color':
-      if (value[0] === '#') {
+      if (typeof value === 'string' && value[0] === '#') {
         return 'ColorHex'
       }
       return 'string'
     case 'dimension':
-      if (value.substring(value.length - 3) === 'rem') {
-        return 'SizeRem'
-      }
-      return 'Size'
+      if (typeof value === 'string' && value.substring(value.length - 3) === 'rem') return 'SizeRem'
+      if (typeof value === 'string' && value.substring(value.length - 2) === 'px') return 'SizePx'
+      return 'string'
     case 'shadow':
       return 'Shadow'
     default:
-      return 'string'
+      if (typeof value === 'number') return 'number'
+      if (typeof value === 'string') return 'string'
+      return 'any'
   }
 }
 
@@ -65,13 +73,13 @@ const toType = (
   token: StyleDictionary.DesignToken | Record<string, unknown>,
   usedTypes: Set<string>
 ): object | string => {
+  // is non-object value
+  if (typeof token !== 'object') return convertPropToType(token)
   // is design token
   if ('value' in token) {
     usedTypes.add(convertPropToType(token.value, token.$type))
     return convertPropToType(token.value, token.$type)
   }
-  // is non-object value
-  if (typeof token !== 'object') return token
   // is obj
   const nextObj = {}
   for (const [prop, value] of Object.entries(token) as [
@@ -126,23 +134,14 @@ const getTypeDefinition = (
 export const typescriptExportDefinition: StyleDictionary.Formatter = ({
   dictionary,
   file,
-  options,
+  options = {},
   platform
-}): string => {
+}: FormatterArguments): string => {
   // extract options
-  const {moduleName = `tokens`, tokenTypesPath = `./config/types/`, unwrapFirstLevel = false} = options
-  const {prefix} = platform
-
-  let tokens = dictionary.tokens
-  // unwrap first level e.g. color.fg.default -> fg.default
-  if (unwrapFirstLevel) {
-    tokens = tokens[Object.keys(tokens)[0]]
-  }
+  const {moduleName = `tokens`, tokenTypesPath = `./config/types/`} = options
   // add prefix if defined
-  if (prefix) {
-    tokens = {[prefix]: tokens}
-  }
-  // compose output
+  const tokens = prefixTokens(dictionary.tokens, platform)
+  // add file header and convert output
   const output = `${fileHeader({file})}\n${getTypeDefinition(tokens, moduleName, tokenTypesPath)}\n`
   // return prettified
   return format(output, {parser: 'typescript', printWidth: 500})

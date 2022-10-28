@@ -1,5 +1,6 @@
 import StyleDictionary from 'style-dictionary'
 import {format} from 'prettier'
+import {FormatterArguments} from 'style-dictionary/types/Format'
 
 const {fileHeader, formattedVariables} = StyleDictionary.formatHelpers
 
@@ -8,7 +9,9 @@ const {fileHeader, formattedVariables} = StyleDictionary.formatHelpers
  * @param arguments [FormatterArguments](https://github.com/amzn/style-dictionary/blob/main/types/Format.d.ts)
  * @returns formatted `string`
  */
-export const scssMixinCssVariables: StyleDictionary.Formatter = ({dictionary, file, options}) => {
+export const scssMixinCssVariables: StyleDictionary.Formatter = ({dictionary, options, file}: FormatterArguments) => {
+  if (!options.mixinName) throw new Error('Missing argument for scssMixinCssVariables formatter: "options.mixinName"')
+
   const {outputReferences, mixinName} = options
 
   const output = `${fileHeader({file})}@mixin ${mixinName} {\n  & {\n${formattedVariables({
@@ -16,6 +19,7 @@ export const scssMixinCssVariables: StyleDictionary.Formatter = ({dictionary, fi
     dictionary,
     outputReferences
   })}\n  }\n}\n`
+
   // return prettified
   return format(output, {parser: 'scss', printWidth: 500})
 }
