@@ -4,7 +4,7 @@ import {format} from 'prettier'
 import {getMockDictionary} from '../../test-utilities/getMockDictionary'
 import {getMockToken} from '../../test-utilities/getMockToken'
 
-describe('Format: Tyepscript definitions', () => {
+describe('Format: TypeScript definitions', () => {
   const dictionary = getMockDictionary({
     // @ts-expect-error: Because complex is invalid
     tokens: {
