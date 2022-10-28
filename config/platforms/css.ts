@@ -1,5 +1,5 @@
 import StyleDictionary from 'style-dictionary'
-import {PlatformInitializer} from '../../@types/PlatformInitializer'
+import {PlatformInitializer} from '../../types/PlatformInitializer'
 import {isSource} from '../filters/isSource'
 
 export const platformCss: PlatformInitializer = (
@@ -9,7 +9,7 @@ export const platformCss: PlatformInitializer = (
   _options
 ): StyleDictionary.Platform => ({
   prefix,
-  buildPath: `${buildPath}/css/`,
+  buildPath,
   transforms: ['name/cti/kebab', 'color/hex', 'color/hexAlpha'],
   options: {
     basePxFontSize: 16

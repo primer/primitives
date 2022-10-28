@@ -1,5 +1,5 @@
 import StyleDictionary from 'style-dictionary'
-import {PlatformInitializer} from '../../@types/PlatformInitializer'
+import {PlatformInitializer} from '../../types/PlatformInitializer'
 import {isSource} from '../filters/isSource'
 
 const getFilenameFromPath = (path: string): string => {
@@ -17,7 +17,7 @@ export const platformScss: PlatformInitializer = (outputFile, prefix, buildPath)
   //
   return {
     prefix,
-    buildPath: `${buildPath}/scss/`,
+    buildPath,
     transforms: ['name/cti/kebab', 'color/hex6', 'color/hexAlpha'],
     options: {
       basePxFontSize: 16

@@ -1,5 +1,5 @@
 import StyleDictionary from 'style-dictionary'
-import {PlatformInitializer} from '../../@types/PlatformInitializer'
+import {PlatformInitializer} from '../../types/PlatformInitializer'
 import {isSource} from '../filters/isSource'
 import {upperCaseFirstCharacter} from '../utilities/upperCaseFirstCharacter'
 
@@ -9,7 +9,7 @@ export const platformTypeDefinitions: PlatformInitializer = (
   buildPath
 ): StyleDictionary.Platform => ({
   prefix,
-  buildPath: `${buildPath}/ts/@types/`,
+  buildPath,
   transforms: ['name/cti/camel', 'color/hex6', 'color/hexAlpha'],
   files: [
     {

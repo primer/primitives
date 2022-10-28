@@ -9,76 +9,75 @@ import {platformScss} from '../config/platforms/scss'
 import {platformJs} from '../config/platforms/javascript'
 import {platformTs} from '../config/platforms/typescript'
 import {platformJson} from '../config/platforms/json'
-import {ConfigGeneratorOptions, StyleDictionaryConfigGenerator} from '../@types/StyleDictionaryConfigGenerator'
+import {ConfigGeneratorOptions, StyleDictionaryConfigGenerator} from '../types/StyleDictionaryConfigGenerator'
+import {TokenBuildInput} from '../types/TokenBuildInput'
 
 export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void => {
-  const functionalColorFiles = {
-    light: [
-      `tokens/functional/color/primitives-light.json`,
-      `tokens/functional/color/components-light.json`,
-      `tokens/functional/color/marketing-light.json`,
-      `tokens/functional/color/misc-light.json`,
-      `tokens/functional/color/syntax-light.json`,
-      `tokens/functional/color/diff-light.json`,
-      `tokens/functional/color/checks-light.json`,
-      `tokens/functional/color/ansi-light.json`,
-      `tokens/functional/color/scales.json`
-    ],
-    dark: [
-      `tokens/functional/color/primitives-dark.json`,
-      `tokens/functional/color/components-dark.json`,
-      `tokens/functional/color/marketing-dark.json`,
-      `tokens/functional/color/misc-dark.json`,
-      `tokens/functional/color/syntax-dark.json`,
-      `tokens/functional/color/diff-dark.json`,
-      `tokens/functional/color/checks-dark.json`,
-      `tokens/functional/color/ansi-dark.json`,
-      `tokens/functional/color/scales.json`
-    ]
-  }
-
-  const themes: [string, string[], string[]][] = [
-    ['light', [...functionalColorFiles.light], [`tokens/base/color/light.json`]],
-    [
-      'light-tritanopia',
-      [...functionalColorFiles.light, `tokens/functional/color/exceptions-light-tritanopia.json`],
-      [`tokens/base/color/light.json`, `tokens/base/color/light-tritanopia.json`]
-    ],
-    [
-      'light-colorblind',
-      [...functionalColorFiles.light, `tokens/functional/color/exceptions-light-colorblind.json`],
-      [`tokens/base/color/light.json`, `tokens/base/color/light-colorblind.json`]
-    ],
-    [
-      'light-high-contrast',
-      [...functionalColorFiles.light, `tokens/functional/color/exceptions-light-high-contrast.json`],
-      [`tokens/base/color/light.json`, `tokens/base/color/light-high-contrast.json`]
-    ],
-    ['dark', [...functionalColorFiles.dark], [`tokens/base/color/dark.json`]],
-    [
-      'dark-dimmed',
-      [...functionalColorFiles.dark, `tokens/functional/color/exceptions-dark-dimmed.json`],
-      [`tokens/base/color/dark.json`, `tokens/base/color/dark-dimmed.json`]
-    ],
-    [
-      'dark-tritanopia',
-      [...functionalColorFiles.dark, `tokens/functional/color/exceptions-dark-tritanopia.json`],
-      [`tokens/base/color/dark.json`, `tokens/base/color/dark-tritanopia.json`]
-    ],
-    [
-      'dark-colorblind',
-      [...functionalColorFiles.dark, `tokens/functional/color/exceptions-dark-colorblind.json`],
-      [`tokens/base/color/dark.json`, `tokens/base/color/dark-colorblind.json`]
-    ],
-    [
-      'dark-high-contrast',
-      [...functionalColorFiles.dark, `tokens/functional/color/exceptions-dark-high-contrast.json`],
-      [`tokens/base/color/dark.json`, `tokens/base/color/dark-high-contrast.json`]
-    ]
+  const themes: TokenBuildInput[] = [
+    {
+      filename: 'light',
+      source: [`tokens/functional/color/light/*.json5`],
+      include: [`tokens/base/color/light/light.json5`]
+    },
+    {
+      filename: 'light-tritanopia',
+      source: [
+        `tokens/functional/color/light/*.json5`,
+        `tokens/functional/color/light/overrides/light.tritanopia.json5`
+      ],
+      include: [`tokens/base/color/light/light.json5`, `tokens/base/color/light/light.tritanopia.json5`]
+    },
+    {
+      filename: 'light-colorblind',
+      source: [
+        `tokens/functional/color/light/*.json5`,
+        `tokens/functional/color/light/overrides/light.protanopia-deuteranopia.json5`
+      ],
+      include: [`tokens/base/color/light/light.json5`, `tokens/base/color/light/light.protanopia-deuteranopia.json5`]
+    },
+    {
+      filename: 'light-high-contrast',
+      source: [
+        `tokens/functional/color/light/*.json5`,
+        `tokens/functional/color/light/overrides/light.high-contrast.json5`
+      ],
+      include: [`tokens/base/color/light/light.json5`, `tokens/base/color/light/light.high-contrast.json5`]
+    },
+    {
+      filename: 'dark',
+      source: [`tokens/functional/color/dark/*.json5`],
+      include: [`tokens/base/color/dark/dark.json5`]
+    },
+    {
+      filename: 'dark-dimmed',
+      source: [`tokens/functional/color/dark/*.json5`, `tokens/functional/color/dark/overrides/dark.dimmed.json5`],
+      include: [`tokens/base/color/dark/dark.json5`, `tokens/base/color/dark/dark.dimmed.json5`]
+    },
+    {
+      filename: 'dark-tritanopia',
+      source: [`tokens/functional/color/dark/*.json5`, `tokens/functional/color/dark/overrides/dark.tritanopia.json5`],
+      include: [`tokens/base/color/dark/dark.json5`, `tokens/base/color/dark/dark.tritanopia.json5`]
+    },
+    {
+      filename: 'dark-colorblind',
+      source: [
+        `tokens/functional/color/dark/*.json5`,
+        `tokens/functional/color/dark/overrides/dark.protanopia-deuteranopia.json5`
+      ],
+      include: [`tokens/base/color/dark/dark.json5`, `tokens/base/color/dark/dark.protanopia-deuteranopia.json5`]
+    },
+    {
+      filename: 'dark-high-contrast',
+      source: [
+        `tokens/functional/color/dark/*.json5`,
+        `tokens/functional/color/dark/overrides/dark.high-contrast.json5`
+      ],
+      include: [`tokens/base/color/dark/dark.json5`, `tokens/base/color/dark/dark.high-contrast.json5`]
+    }
   ]
 
   const getStyleDictionaryConfig: StyleDictionaryConfigGenerator = (
-    outputName,
+    filename,
     source,
     include,
     options
@@ -86,12 +85,12 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
     source, // build the special formats
     include,
     platforms: {
-      css: platformCss(`${outputName}.css`, options.prefix, options.buildPath),
-      scss: platformScss(`${outputName}.scss`, options.prefix, options.buildPath),
-      js: platformJs(`${outputName}.js`, options.prefix, options.buildPath),
-      ts: platformTs(`${outputName}.ts`, options.prefix, options.buildPath),
-      json: platformJson(`${outputName}.json`, options.prefix, options.buildPath),
-      docJson: platformDocJson(`${outputName}.json`, options.prefix, options.buildPath)
+      css: platformCss(`css/${filename}.css`, options.prefix, options.buildPath),
+      scss: platformScss(`scss/${filename}.scss`, options.prefix, options.buildPath),
+      js: platformJs(`js/${filename}.js`, options.prefix, options.buildPath),
+      ts: platformTs(`ts/${filename}.ts`, options.prefix, options.buildPath),
+      json: platformJson(`json/${filename}.json`, options.prefix, options.buildPath),
+      docJson: platformDocJson(`docs/${filename}.json`, options.prefix, options.buildPath)
     }
   })
 
@@ -103,14 +102,14 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
   /**
    * convert colors
    */
-  for (const [theme, source, include] of themes) {
+  for (const {filename, source, include} of themes) {
     // build functional scales
     PrimerStyleDictionary.extend(
-      getStyleDictionaryConfig(`functional/color/${theme}`, source, include, buildOptions)
+      getStyleDictionaryConfig(`functional/color/${filename}`, source, include, buildOptions)
     ).buildAllPlatforms()
     // build base scales
     PrimerStyleDictionary.extend(
-      getStyleDictionaryConfig(`base/color/${theme}`, include, [], {
+      getStyleDictionaryConfig(`base/color/${filename}`, include, [], {
         buildPath: buildOptions.buildPath,
         prefix: undefined
       })
@@ -123,17 +122,21 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
   /**
    * build deprecated.json
    */
-  const deprecatedBuilds: [string, string[], string[]][] = [
-    ['color', [...themes[0][1], ...themes[0][2]], themes[0][2]] // light mode
-    // TODO: missing type definition and deprecated for base colors
+  const deprecatedBuilds: TokenBuildInput[] = [
+    {
+      // light mode
+      filename: 'color',
+      source: [...themes[0].source, ...themes[0].include],
+      include: themes[0].include
+    }
   ]
   //
-  for (const [name, source, include] of deprecatedBuilds) {
+  for (const {filename, source, include} of deprecatedBuilds) {
     PrimerStyleDictionary.extend({
       source,
       include,
       platforms: {
-        deprecated: platformDeprecatedJson(`${name}.json`, buildOptions.prefix, buildOptions.buildPath)
+        deprecated: platformDeprecatedJson(`deprecated/${filename}.json`, buildOptions.prefix, buildOptions.buildPath)
       }
     }).buildAllPlatforms()
   }
@@ -141,23 +144,35 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
    * build type definitions
    */
   // TODO: The tuple structure gets to complex this should be refactored to be easier to read
-  const typeBuilds: [string, string[], string[], string?][] = [
-    ['color', themes[0][1], themes[0][2], buildOptions.prefix], // light mode
-    ['baseColor', [...themes[0][2]], []]
+  const typeBuilds: TokenBuildInput[] = [
+    {
+      // light mode
+      filename: 'color',
+      source: themes[0].source,
+      include: themes[0].include
+    }
   ]
   //
-  for (const [name, source, include, prefix] of typeBuilds) {
+  for (const {filename, source, include} of typeBuilds) {
     PrimerStyleDictionary.extend({
       source,
       include,
       platforms: {
-        types: platformTypeDefinitions(`${name}`, prefix, buildOptions.buildPath)
+        types: platformTypeDefinitions(filename, buildOptions.prefix, `${buildOptions.buildPath}/ts/types/`)
       }
     }).buildAllPlatforms()
   }
+
+  // build types for base scale
+  PrimerStyleDictionary.extend({
+    source: themes[0].include,
+    platforms: {
+      types: platformTypeDefinitions(`baseColor`, undefined, `${buildOptions.buildPath}/ts/types/`)
+    }
+  }).buildAllPlatforms()
 }
 
 buildDesignTokens({
-  buildPath: 'tokens-v2-private',
+  buildPath: 'tokens-v2-private/',
   prefix: 'product'
 })
