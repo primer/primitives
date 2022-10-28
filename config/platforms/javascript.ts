@@ -1,5 +1,5 @@
 import StyleDictionary from 'style-dictionary'
-import {PlatformInitializer} from '../../@types/PlatformInitializer'
+import {PlatformInitializer} from '../../types/PlatformInitializer'
 import {isSource} from '../filters/isSource'
 
 export const platformJs: PlatformInitializer = (outputFile, prefix, buildPath): StyleDictionary.Platform => ({

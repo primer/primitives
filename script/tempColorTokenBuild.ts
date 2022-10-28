@@ -9,8 +9,8 @@ import {platformScss} from '../config/platforms/scss'
 import {platformJs} from '../config/platforms/javascript'
 import {platformTs} from '../config/platforms/typescript'
 import {platformJson} from '../config/platforms/json'
-import {ConfigGeneratorOptions, StyleDictionaryConfigGenerator} from '../@types/StyleDictionaryConfigGenerator'
-import {TokenBuildInputArray} from '../@types/TokenBuildInputArray'
+import {ConfigGeneratorOptions, StyleDictionaryConfigGenerator} from '../types/StyleDictionaryConfigGenerator'
+import {TokenBuildInputArray} from '../types/TokenBuildInputArray'
 
 export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void => {
   const themes: TokenBuildInputArray = [
