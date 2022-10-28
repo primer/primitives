@@ -23,28 +23,25 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
       filename: 'light-tritanopia',
       source: [
         `tokens/functional/color/light/*.json5`,
-        `tokens/functional/color/light/exceptions/exceptions.tritanopia.json5`
+        `tokens/functional/color/light/overrides/light.tritanopia.json5`
       ],
-      include: [`tokens/base/color/light/light.json5`, `tokens/base/color/light/extension.tritanopia.json5`]
+      include: [`tokens/base/color/light/light.json5`, `tokens/base/color/light/light.tritanopia.json5`]
     },
     {
       filename: 'light-colorblind',
       source: [
         `tokens/functional/color/light/*.json5`,
-        `tokens/functional/color/light/exceptions/exceptions.protanopia-deuteranopia.json5`
+        `tokens/functional/color/light/overrides/light.protanopia-deuteranopia.json5`
       ],
-      include: [
-        `tokens/base/color/light/light.json5`,
-        `tokens/base/color/light/extension.protanopia-deuteranopia.json5`
-      ]
+      include: [`tokens/base/color/light/light.json5`, `tokens/base/color/light/light.protanopia-deuteranopia.json5`]
     },
     {
       filename: 'light-high-contrast',
       source: [
         `tokens/functional/color/light/*.json5`,
-        `tokens/functional/color/light/exceptions/exceptions.high-contrast.json5`
+        `tokens/functional/color/light/overrides/light.high-contrast.json5`
       ],
-      include: [`tokens/base/color/light/light.json5`, `tokens/base/color/light/extension.high-contrast.json5`]
+      include: [`tokens/base/color/light/light.json5`, `tokens/base/color/light/light.high-contrast.json5`]
     },
     {
       filename: 'dark',
@@ -53,35 +50,29 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
     },
     {
       filename: 'dark-dimmed',
-      source: [
-        `tokens/functional/color/dark/*.json5`,
-        `tokens/functional/color/dark/exceptions/exceptions.dimmed.json5`
-      ],
-      include: [`tokens/base/color/dark/dark.json5`, `tokens/base/color/dark/extension.dimmed.json5`]
+      source: [`tokens/functional/color/dark/*.json5`, `tokens/functional/color/dark/overrides/dark.dimmed.json5`],
+      include: [`tokens/base/color/dark/dark.json5`, `tokens/base/color/dark/dark.dimmed.json5`]
     },
     {
       filename: 'dark-tritanopia',
-      source: [
-        `tokens/functional/color/dark/*.json5`,
-        `tokens/functional/color/dark/exceptions/exceptions.tritanopia.json5`
-      ],
-      include: [`tokens/base/color/dark/dark.json5`, `tokens/base/color/dark/extension.tritanopia.json5`]
+      source: [`tokens/functional/color/dark/*.json5`, `tokens/functional/color/dark/overrides/dark.tritanopia.json5`],
+      include: [`tokens/base/color/dark/dark.json5`, `tokens/base/color/dark/dark.tritanopia.json5`]
     },
     {
       filename: 'dark-colorblind',
       source: [
         `tokens/functional/color/dark/*.json5`,
-        `tokens/functional/color/dark/exceptions/exceptions.protanopia-deuteranopia.json5`
+        `tokens/functional/color/dark/overrides/dark.protanopia-deuteranopia.json5`
       ],
-      include: [`tokens/base/color/dark/dark.json5`, `tokens/base/color/dark/extension.protanopia-deuteranopia.json5`]
+      include: [`tokens/base/color/dark/dark.json5`, `tokens/base/color/dark/dark.protanopia-deuteranopia.json5`]
     },
     {
       filename: 'dark-high-contrast',
       source: [
         `tokens/functional/color/dark/*.json5`,
-        `tokens/functional/color/dark/exceptions/exceptions.high-contrast.json5`
+        `tokens/functional/color/dark/overrides/dark.high-contrast.json5`
       ],
-      include: [`tokens/base/color/dark/dark.json5`, `tokens/base/color/dark/extension.high-contrast.json5`]
+      include: [`tokens/base/color/dark/dark.json5`, `tokens/base/color/dark/dark.high-contrast.json5`]
     }
   ]
 
