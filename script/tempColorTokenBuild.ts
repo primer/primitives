@@ -9,8 +9,8 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
   const themes: TokenBuildInput[] = [
     {
       filename: 'light',
-      source: [`tokens/functional/color/light/*.json5`],
-      include: [`tokens/base/color/light/light.json5`]
+      source: [`tokens/functional/color/light/*.json5`, `./tokens/functional/shadow/shadow-light.json5`],
+      include: [`tokens/base/color/light/light.json5`, `./tokens/base/shadow/shadow.json5`]
     },
     {
       filename: 'light-tritanopia',
@@ -98,13 +98,14 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
   for (const {filename, source, include} of themes) {
     // build functional scales
     PrimerStyleDictionary.extend(
-      getStyleDictionaryConfig(`functional/color/${filename}`, source, include, buildOptions)
+      getStyleDictionaryConfig(`functional/themes/${filename}`, source, include, buildOptions)
     ).buildAllPlatforms()
     // build base scales
     PrimerStyleDictionary.extend(
-      getStyleDictionaryConfig(`base/color/${filename}`, include, [], {
+      // using includes as source
+      getStyleDictionaryConfig(`base/color/${filename}`, [`tokens/functional/color/scales.json5`], include, {
         buildPath: buildOptions.buildPath,
-        prefix: undefined
+        prefix: 'base'
       })
     ).buildAllPlatforms()
   }
