@@ -1,5 +1,5 @@
 import StyleDictionary from 'style-dictionary'
-import {getMockToken} from '../../src/test-utilities/getMockToken'
+import {getMockToken} from '~test-utilities/getMockToken'
 
 import {isSource} from './isSource'
 
