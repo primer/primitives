@@ -9,14 +9,15 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
   const themes: TokenBuildInput[] = [
     {
       filename: 'light',
-      source: [`tokens/functional/color/light/*.json5`, `./tokens/functional/shadow/shadow-light.json5`],
-      include: [`tokens/base/color/light/light.json5`, `./tokens/base/shadow/shadow.json5`]
+      source: [`tokens/functional/color/light/*.json5`, `tokens/functional/shadow/light.json5`],
+      include: [`tokens/base/color/light/light.json5`]
     },
     {
       filename: 'light-tritanopia',
       source: [
         `tokens/functional/color/light/*.json5`,
-        `tokens/functional/color/light/overrides/light.tritanopia.json5`
+        `tokens/functional/color/light/overrides/light.tritanopia.json5`,
+        `tokens/functional/shadow/light.json5`
       ],
       include: [`tokens/base/color/light/light.json5`, `tokens/base/color/light/light.tritanopia.json5`]
     },
@@ -24,7 +25,8 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
       filename: 'light-colorblind',
       source: [
         `tokens/functional/color/light/*.json5`,
-        `tokens/functional/color/light/overrides/light.protanopia-deuteranopia.json5`
+        `tokens/functional/color/light/overrides/light.protanopia-deuteranopia.json5`,
+        `tokens/functional/shadow/light.json5`
       ],
       include: [`tokens/base/color/light/light.json5`, `tokens/base/color/light/light.protanopia-deuteranopia.json5`]
     },
@@ -32,30 +34,40 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
       filename: 'light-high-contrast',
       source: [
         `tokens/functional/color/light/*.json5`,
-        `tokens/functional/color/light/overrides/light.high-contrast.json5`
+        `tokens/functional/color/light/overrides/light.high-contrast.json5`,
+        `tokens/functional/shadow/light.json5`
       ],
       include: [`tokens/base/color/light/light.json5`, `tokens/base/color/light/light.high-contrast.json5`]
     },
     {
       filename: 'dark',
-      source: [`tokens/functional/color/dark/*.json5`],
+      source: [`tokens/functional/color/dark/*.json5`, `tokens/functional/shadow/dark.json5`],
       include: [`tokens/base/color/dark/dark.json5`]
     },
     {
       filename: 'dark-dimmed',
-      source: [`tokens/functional/color/dark/*.json5`, `tokens/functional/color/dark/overrides/dark.dimmed.json5`],
+      source: [
+        `tokens/functional/color/dark/*.json5`,
+        `tokens/functional/color/dark/overrides/dark.dimmed.json5`,
+        `tokens/functional/shadow/dark.json5`
+      ],
       include: [`tokens/base/color/dark/dark.json5`, `tokens/base/color/dark/dark.dimmed.json5`]
     },
     {
       filename: 'dark-tritanopia',
-      source: [`tokens/functional/color/dark/*.json5`, `tokens/functional/color/dark/overrides/dark.tritanopia.json5`],
+      source: [
+        `tokens/functional/color/dark/*.json5`,
+        `tokens/functional/color/dark/overrides/dark.tritanopia.json5`,
+        `tokens/functional/shadow/dark.json5`
+      ],
       include: [`tokens/base/color/dark/dark.json5`, `tokens/base/color/dark/dark.tritanopia.json5`]
     },
     {
       filename: 'dark-colorblind',
       source: [
         `tokens/functional/color/dark/*.json5`,
-        `tokens/functional/color/dark/overrides/dark.protanopia-deuteranopia.json5`
+        `tokens/functional/color/dark/overrides/dark.protanopia-deuteranopia.json5`,
+        `tokens/functional/shadow/dark.json5`
       ],
       include: [`tokens/base/color/dark/dark.json5`, `tokens/base/color/dark/dark.protanopia-deuteranopia.json5`]
     },
@@ -63,7 +75,8 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
       filename: 'dark-high-contrast',
       source: [
         `tokens/functional/color/dark/*.json5`,
-        `tokens/functional/color/dark/overrides/dark.high-contrast.json5`
+        `tokens/functional/color/dark/overrides/dark.high-contrast.json5`,
+        `tokens/functional/shadow/dark.json5`
       ],
       include: [`tokens/base/color/dark/dark.json5`, `tokens/base/color/dark/dark.high-contrast.json5`]
     }
@@ -111,36 +124,14 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
   }
 
   /**
-   * build shadow tokens
-   */
-  PrimerStyleDictionary.extend(
-    getStyleDictionaryConfig(
-      `shadow/shadow`,
-      [`./tokens/functional/shadow/shadow.json5`, `./tokens/base/shadow/shadow.json5`],
-      [`./tokens/base/color/light/light.json5`, `./tokens/functional/color/shadow.json5`],
-      buildOptions
-    )
-  ).buildAllPlatforms()
-
-  /**
    * build deprecated.json
    */
   const deprecatedBuilds: TokenBuildInput[] = [
     {
       // light mode
-      filename: 'color',
+      filename: 'theme',
       source: [...themes[0].source, ...themes[0].include],
       include: themes[0].include
-    },
-    {
-      // light mode
-      filename: 'shadow',
-      source: [`./tokens/functional/shadow/shadow.json`],
-      include: [
-        `./tokens/base/shadow/shadow.json`,
-        `./tokens/base/color/light.json`,
-        `./tokens/functional/color/shadow.json`
-      ]
     }
   ]
   //
@@ -160,7 +151,7 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
   const typeBuilds: TokenBuildInput[] = [
     {
       // light mode
-      filename: 'color',
+      filename: 'theme',
       source: themes[0].source,
       include: themes[0].include
     }
@@ -178,7 +169,8 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
 
   // build types for base scale
   PrimerStyleDictionary.extend({
-    source: themes[0].include,
+    source: [`tokens/functional/color/scales.json5`],
+    include: themes[0].include,
     platforms: {
       types: typeDefinitions(`baseColor`, undefined, `${buildOptions.buildPath}/ts/types/`)
     }
