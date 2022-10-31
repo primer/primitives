@@ -1,0 +1,26 @@
+{
+  sys: {
+    color: {
+      mktg: {
+        btn: {
+          bg: {
+            $value: '#1b1f23',
+            $type: 'color'
+          }
+        }
+      },
+      marketing: {
+        icon: {
+          primary: {
+            $value: '{ref.color.scale.blue.4}',
+            $type: 'color'
+          },
+          secondary: {
+            $value: '{ref.color.scale.blue.3}',
+            $type: 'color'
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  sys: {
+    color: {
+      ansi: {
+        black: {
+          $value: '{ref.color.scale.gray.5}',
+          $type: 'color'
+        },
+        blackBright: {
+          $value: '{ref.color.scale.gray.4}',
+          $type: 'color'
+        },
+        white: {
+          $value: '{ref.color.scale.gray.2}',
+          $type: 'color'
+        },
+        whiteBright: {
+          $value: '{ref.color.scale.white}',
+          $type: 'color'
+        },
+        gray: {
+          $value: '{ref.color.scale.gray.4}',
+          $type: 'color'
+        },
+        red: {
+          $value: '{ref.color.scale.red.3}',
+          $type: 'color'
+        },
+        redBright: {
+          $value: '{ref.color.scale.red.2}',
+          $type: 'color'
+        },
+        green: {
+          $value: '{ref.color.scale.green.3}',
+          $type: 'color'
+        },
+        greenBright: {
+          $value: '{ref.color.scale.green.2}',
+          $type: 'color'
+        },
+        yellow: {
+          $value: '{ref.color.scale.yellow.3}',
+          $type: 'color'
+        },
+        yellowBright: {
+          $value: '{ref.color.scale.yellow.2}',
+          $type: 'color'
+        },
+        blue: {
+          $value: '{ref.color.scale.blue.3}',
+          $type: 'color'
+        },
+        blueBright: {
+          $value: '{ref.color.scale.blue.2}',
+          $type: 'color'
+        },
+        magenta: {
+          $value: '{ref.color.scale.purple.3}',
+          $type: 'color'
+        },
+        magentaBright: {
+          $value: '{ref.color.scale.purple.2}',
+          $type: 'color'
+        },
+        cyan: {
+          $value: '#39c5cf',
+          $type: 'color'
+        },
+        cyanBright: {
+          $value: '#56d4dd',
+          $type: 'color'
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,298 @@
+{
+  sys: {
+    color: {
+      checks: {
+        bg: {
+          $value: '{ref.color.scale.gray.9}',
+          $type: 'color'
+        },
+        textPrimary: {
+          $value: '{ref.color.scale.gray.0}',
+          $type: 'color'
+        },
+        textSecondary: {
+          $value: '{ref.color.scale.gray.4}',
+          $type: 'color'
+        },
+        textLink: {
+          $value: '{ref.color.scale.blue.3}',
+          $type: 'color'
+        },
+        btnIcon: {
+          $value: '{ref.color.scale.gray.3}',
+          $type: 'color'
+        },
+        btnHoverIcon: {
+          $value: '{ref.color.scale.gray.0}',
+          $type: 'color'
+        },
+        btnHoverBg: {
+          $value: '{ref.color.scale.white}',
+          alpha: 0.125,
+          $type: 'color'
+        },
+        inputText: {
+          $value: '{ref.color.scale.gray.1}',
+          $type: 'color'
+        },
+        inputPlaceholderText: {
+          $value: '{ref.color.scale.gray.4}',
+          $type: 'color'
+        },
+        inputFocusText: {
+          $value: '{ref.color.scale.gray.4}',
+          $type: 'color'
+        },
+        inputBg: {
+          $value: '{ref.color.scale.gray.8}',
+          $type: 'color'
+        },
+        donutError: {
+          $value: '{ref.color.scale.red.4}',
+          $type: 'color'
+        },
+        donutPending: {
+          $value: '{ref.color.scale.yellow.4}',
+          $type: 'color'
+        },
+        donutSuccess: {
+          $value: '{ref.color.scale.green.4}',
+          $type: 'color'
+        },
+        donutNeutral: {
+          $value: '{ref.color.scale.gray.3}',
+          $type: 'color'
+        },
+        dropdownText: {
+          $value: '{ref.color.scale.gray.3}',
+          $type: 'color'
+        },
+        dropdownBg: {
+          $value: '{ref.color.scale.gray.8}',
+          $type: 'color'
+        },
+        dropdownBorder: {
+          $value: '{ref.color.scale.gray.7}',
+          $type: 'color'
+        },
+        dropdownShadow: {
+          $value: '{ref.color.scale.black}',
+          alpha: 0.3,
+          $type: 'color'
+        },
+        dropdownHoverText: {
+          $value: '{ref.color.scale.gray.0}',
+          $type: 'color'
+        },
+        dropdownHoverBg: {
+          $value: '{ref.color.scale.gray.7}',
+          $type: 'color'
+        },
+        dropdownBtnHoverText: {
+          $value: '{ref.color.scale.gray.0}',
+          $type: 'color'
+        },
+        dropdownBtnHoverBg: {
+          $value: '{ref.color.scale.gray.8}',
+          $type: 'color'
+        },
+        scrollbarThumbBg: {
+          $value: '{ref.color.scale.gray.6}',
+          $type: 'color'
+        },
+        headerLabelText: {
+          $value: '{ref.color.scale.gray.2}',
+          $type: 'color'
+        },
+        headerLabelOpenText: {
+          $value: '{ref.color.scale.gray.0}',
+          $type: 'color'
+        },
+        headerBorder: {
+          $value: '{ref.color.scale.gray.8}',
+          $type: 'color'
+        },
+        headerIcon: {
+          $value: '{ref.color.scale.gray.4}',
+          $type: 'color'
+        },
+        lineText: {
+          $value: '{ref.color.scale.gray.2}',
+          $type: 'color'
+        },
+        lineNumText: {
+          $value: '{ref.color.scale.gray.4}',
+          alpha: 0.75,
+          $type: 'color'
+        },
+        lineTimestampText: {
+          $value: '{ref.color.scale.gray.4}',
+          $type: 'color'
+        },
+        lineHoverBg: {
+          $value: '{ref.color.scale.gray.8}',
+          $type: 'color'
+        },
+        lineSelectedBg: {
+          $value: '{ref.color.scale.blue.4}',
+          alpha: 0.15,
+          $type: 'color'
+        },
+        lineSelectedNumText: {
+          $value: '{ref.color.scale.blue.3}',
+          $type: 'color'
+        },
+        lineDtFmText: {
+          $value: '{ref.color.scale.gray.9}',
+          $type: 'color'
+        },
+        lineDtFmBg: {
+          $value: '{ref.color.scale.yellow.5}',
+          $type: 'color'
+        },
+        gateBg: {
+          $value: '{ref.color.scale.yellow.6}',
+          alpha: 0.15,
+          $type: 'color'
+        },
+        gateText: {
+          $value: '{ref.color.scale.gray.2}',
+          $type: 'color'
+        },
+        gateWaitingText: {
+          $value: '{ref.color.scale.yellow.3}',
+          $type: 'color'
+        },
+        stepHeaderOpenBg: {
+          $value: '{ref.color.scale.gray.8}',
+          $type: 'color'
+        },
+        stepErrorText: {
+          $value: '{ref.color.scale.red.3}',
+          $type: 'color'
+        },
+        stepWarningText: {
+          $value: '{ref.color.scale.yellow.3}',
+          $type: 'color'
+        },
+        loglineText: {
+          $value: '{ref.color.scale.gray.4}',
+          $type: 'color'
+        },
+        loglineNumText: {
+          $value: '{ref.color.scale.gray.4}',
+          alpha: 0.75,
+          $type: 'color'
+        },
+        loglineDebugText: {
+          $value: '{ref.color.scale.purple.3}',
+          $type: 'color'
+        },
+        loglineErrorText: {
+          $value: '{ref.color.scale.gray.2}',
+          $type: 'color'
+        },
+        loglineErrorNumText: {
+          $value: '{ref.color.scale.red.3}',
+          $type: 'color'
+        },
+        loglineErrorBg: {
+          $value: '{ref.color.scale.red.6}',
+          alpha: 0.15,
+          $type: 'color'
+        },
+        loglineWarningText: {
+          $value: '{ref.color.scale.gray.2}',
+          $type: 'color'
+        },
+        loglineWarningNumText: {
+          $value: '{ref.color.scale.yellow.3}',
+          $type: 'color'
+        },
+        loglineWarningBg: {
+          $value: '{ref.color.scale.yellow.6}',
+          alpha: 0.15,
+          $type: 'color'
+        },
+        loglineCommandText: {
+          $value: '{ref.color.scale.blue.3}',
+          $type: 'color'
+        },
+        loglineSectionText: {
+          $value: '{ref.color.scale.green.3}',
+          $type: 'color'
+        },
+        ansi: {
+          black: {
+            $value: '{ref.color.scale.gray.9}',
+            $type: 'color'
+          },
+          blackBright: {
+            $value: '{ref.color.scale.gray.8}',
+            $type: 'color'
+          },
+          white: {
+            $value: '{ref.color.scale.gray.2}',
+            $type: 'color'
+          },
+          whiteBright: {
+            $value: '{ref.color.scale.gray.2}',
+            $type: 'color'
+          },
+          gray: {
+            $value: '{ref.color.scale.gray.4}',
+            $type: 'color'
+          },
+          red: {
+            $value: '{ref.color.scale.red.3}',
+            $type: 'color'
+          },
+          redBright: {
+            $value: '{ref.color.scale.red.2}',
+            $type: 'color'
+          },
+          green: {
+            $value: '{ref.color.scale.green.3}',
+            $type: 'color'
+          },
+          greenBright: {
+            $value: '{ref.color.scale.green.2}',
+            $type: 'color'
+          },
+          yellow: {
+            $value: '{ref.color.scale.yellow.3}',
+            $type: 'color'
+          },
+          yellowBright: {
+            $value: '{ref.color.scale.yellow.2}',
+            $type: 'color'
+          },
+          blue: {
+            $value: '{ref.color.scale.blue.3}',
+            $type: 'color'
+          },
+          blueBright: {
+            $value: '{ref.color.scale.blue.2}',
+            $type: 'color'
+          },
+          magenta: {
+            $value: '{ref.color.scale.purple.3}',
+            $type: 'color'
+          },
+          magentaBright: {
+            $value: '{ref.color.scale.purple.2}',
+            $type: 'color'
+          },
+          cyan: {
+            $value: '#76e3ea',
+            $type: 'color'
+          },
+          cyanBright: {
+            $value: '#b3f0ff',
+            $type: 'color'
+          }
+        }
+      }
+    }
+  }
+}
