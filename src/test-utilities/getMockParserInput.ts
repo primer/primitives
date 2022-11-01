@@ -1,4 +1,4 @@
-export const output = {
+export const parserOutput = {
   color: {
     value: 'red',
     comment: 'a red color',
@@ -8,7 +8,7 @@ export const output = {
   }
 }
 
-export const input: {[Property in jsonFormats]: string} = {
+const parserInput: {[Property in jsonFormats]: string} = {
   'json.w3c': `{
     "color": {
       "$value": 'red',
@@ -62,7 +62,7 @@ export const getMockParserInput = (
 ): {filePath: string; contents: string} => {
   // use predefined if no override
   if (['json5.default', 'json5.w3c', 'json.default', 'json.w3c'].includes(contents)) {
-    contents = input[contents as jsonFormats]
+    contents = parserInput[contents as jsonFormats]
   }
 
   return {

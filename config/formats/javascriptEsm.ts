@@ -1,7 +1,6 @@
 import StyleDictionary from 'style-dictionary'
 import {format} from 'prettier'
-import {jsonToNestedValue} from '../utilities/jsonToNestedValue'
-import {prefixTokens} from '../utilities/prefixTokens'
+import {jsonToNestedValue, prefixTokens} from '~/config/utilities'
 import {FormatterArguments} from 'style-dictionary/types/Format'
 
 const {fileHeader} = StyleDictionary.formatHelpers

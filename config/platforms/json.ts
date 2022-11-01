@@ -1,8 +1,8 @@
 import StyleDictionary from 'style-dictionary'
 import {PlatformInitializer} from '~/types/PlatformInitializer'
-import {isSource} from '../filters/isSource'
+import {isSource} from '~/config/filters'
 
-export const platformJson: PlatformInitializer = (outputFile, prefix, buildPath): StyleDictionary.Platform => ({
+export const json: PlatformInitializer = (outputFile, prefix, buildPath): StyleDictionary.Platform => ({
   prefix,
   buildPath,
   transforms: ['color/hex', 'color/hexAlpha'],
