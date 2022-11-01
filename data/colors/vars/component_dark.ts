@@ -78,11 +78,6 @@ export default {
     activeBg: darken(get('scale.gray.6'), 0.03),
     activeBorder: get('scale.gray.4'),
     selectedBg: get('scale.gray.8'),
-    focusBg: get('scale.gray.7'),
-    focusBorder: get('scale.gray.3'),
-    focusShadow: (theme: any) => `0 0 0 3px ${alpha(get('scale.gray.3'), 0.3)(theme)}`,
-    shadowActive: (theme: any) => `inset 0 0.15em 0.3em ${alpha(get('scale.black'), 0.15)(theme)}`,
-    shadowInputFocus: (theme: any) => `0 0 0 0.2em ${alpha(get('scale.blue.5'), 0.3)(theme)}`,
     counterBg: get('scale.gray.6'),
 
     primary: {
@@ -98,9 +93,6 @@ export default {
       disabledText: alpha(get('scale.white'), 0.5),
       disabledBg: alpha(get('scale.green.5'), 0.6),
       disabledBorder: get('border.subtle'),
-      focusBg: get('scale.green.5'),
-      focusBorder: get('border.subtle'),
-      focusShadow: (theme: any) => `0 0 0 3px ${alpha('#2ea44f', 0.4)(theme)}`,
       icon: get('scale.white'),
       counterBg: alpha(get('scale.white'), 0.2)
     },
@@ -120,8 +112,6 @@ export default {
       disabledText: alpha(get('scale.blue.3'), 0.5),
       disabledBg: get('scale.gray.9'),
       disabledCounterBg: alpha(get('scale.blue.5'), 0.05),
-      focusBorder: get('border.subtle'),
-      focusShadow: (theme: any) => `0 0 0 3px ${alpha(get('scale.blue.6'), 0.4)(theme)}`,
       counterBg: alpha(get('scale.blue.5'), 0.1)
     },
 
@@ -141,8 +131,6 @@ export default {
       disabledText: alpha(get('scale.red.4'), 0.5),
       disabledBg: get('scale.gray.9'),
       disabledCounterBg: alpha(get('scale.red.5'), 0.05),
-      focusBorder: get('scale.red.4'),
-      focusShadow: (theme: any) => `0 0 0 3px ${alpha(get('scale.red.4'), 0.4)(theme)}`,
       counterBg: alpha(get('scale.red.5'), 0.1),
       icon: get('scale.red.4')
     }
