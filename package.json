@@ -39,7 +39,7 @@
     "prepack": "yarn build && yarn build:tokens",
     "prepare": "husky install",
     "release": "changeset publish",
-    "build:color-tokens": "ts-node ./script/tempColorTokenBuild.ts",
+    "build:color-tokens": "ts-node -r tsconfig-paths/register ./script/tempColorTokenBuild.ts",
     "test": "jest --verbose --coverage",
     "watch": "ls data/**/*.scss script/**/*.ts | entr -s 'yarn build'"
   },
@@ -95,6 +95,7 @@
     "style-dictionary": "3.7.1",
     "ts-jest": "^29.0.3",
     "ts-node": "^8.10.2",
+    "tsconfig-paths": "^4.1.0",
     "typescript": "^4.2.0"
   }
 }

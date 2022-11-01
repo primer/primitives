@@ -1,8 +1,6 @@
-import {typescriptExportDefinition} from './typescript-export-definition'
-import {getMockFormatterArguments} from '../../src/test-utilities/getMockFormatterArguments'
+import {typescriptExportDefinition} from './typescriptExportDefinition'
+import {getMockFormatterArguments, getMockDictionary, getMockToken} from '~/src/test-utilities'
 import {format} from 'prettier'
-import {getMockDictionary} from '../../src/test-utilities/getMockDictionary'
-import {getMockToken} from '../../src/test-utilities/getMockToken'
 
 describe('Format: TypeScript definitions', () => {
   const dictionary = getMockDictionary({

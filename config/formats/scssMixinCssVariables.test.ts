@@ -1,5 +1,5 @@
-import {scssMixinCssVariables} from './scss-mixin-css-variables'
-import {getMockFormatterArguments} from '../../src/test-utilities/getMockFormatterArguments'
+import {scssMixinCssVariables} from './scssMixinCssVariables'
+import {getMockFormatterArguments} from '~/src/test-utilities'
 import {format} from 'prettier'
 
 describe('Format: Scss with sss variables', () => {

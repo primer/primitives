@@ -1,14 +1,7 @@
 import type StyleDictionary from 'style-dictionary'
-import {PrimerStyleDictionary} from '../config/primer-style-dictionary'
+import {PrimerStyleDictionary} from '../config/PrimerStyleDictionary'
 import {copyFilesAndFolders} from '../config/utilities/copyFilesAndFolders'
-import {platformTypeDefinitions} from '../config/platforms/typesDefinitions'
-import {platformDeprecatedJson} from '../config/platforms/deprecatedJson'
-import {platformCss} from '../config/platforms/css'
-import {platformDocJson} from '../config/platforms/docJson'
-import {platformScss} from '../config/platforms/scss'
-import {platformJs} from '../config/platforms/javascript'
-import {platformTs} from '../config/platforms/typescript'
-import {platformJson} from '../config/platforms/json'
+import {typeDefinitions, deprecatedJson, css, docJson, scss, javascript, typescript, json} from '../config/platforms'
 import {ConfigGeneratorOptions, StyleDictionaryConfigGenerator} from '../types/StyleDictionaryConfigGenerator'
 import {TokenBuildInput} from '../types/TokenBuildInput'
 
@@ -85,12 +78,12 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
     source, // build the special formats
     include,
     platforms: {
-      css: platformCss(`css/${filename}.css`, options.prefix, options.buildPath),
-      scss: platformScss(`scss/${filename}.scss`, options.prefix, options.buildPath),
-      js: platformJs(`js/${filename}.js`, options.prefix, options.buildPath),
-      ts: platformTs(`ts/${filename}.ts`, options.prefix, options.buildPath),
-      json: platformJson(`json/${filename}.json`, options.prefix, options.buildPath),
-      docJson: platformDocJson(`docs/${filename}.json`, options.prefix, options.buildPath)
+      css: css(`css/${filename}.css`, options.prefix, options.buildPath),
+      scss: scss(`scss/${filename}.scss`, options.prefix, options.buildPath),
+      js: javascript(`js/${filename}.js`, options.prefix, options.buildPath),
+      ts: typescript(`ts/${filename}.ts`, options.prefix, options.buildPath),
+      json: json(`json/${filename}.json`, options.prefix, options.buildPath),
+      docJson: docJson(`docs/${filename}.json`, options.prefix, options.buildPath)
     }
   })
 
@@ -136,7 +129,7 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
       source,
       include,
       platforms: {
-        deprecated: platformDeprecatedJson(`deprecated/${filename}.json`, buildOptions.prefix, buildOptions.buildPath)
+        deprecated: deprecatedJson(`deprecated/${filename}.json`, buildOptions.prefix, buildOptions.buildPath)
       }
     }).buildAllPlatforms()
   }
@@ -158,7 +151,7 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
       source,
       include,
       platforms: {
-        types: platformTypeDefinitions(filename, buildOptions.prefix, `${buildOptions.buildPath}/ts/types/`)
+        types: typeDefinitions(filename, buildOptions.prefix, `${buildOptions.buildPath}/ts/types/`)
       }
     }).buildAllPlatforms()
   }
@@ -167,7 +160,7 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
   PrimerStyleDictionary.extend({
     source: themes[0].include,
     platforms: {
-      types: platformTypeDefinitions(`baseColor`, undefined, `${buildOptions.buildPath}/ts/types/`)
+      types: typeDefinitions(`baseColor`, undefined, `${buildOptions.buildPath}/ts/types/`)
     }
   }).buildAllPlatforms()
 }

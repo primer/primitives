@@ -1,5 +1,5 @@
-import {getMockToken} from '../../src/test-utilities/getMockToken'
-import {namePathToDotNotation} from './name-path-to-dot-notation'
+import {getMockToken} from '~/src/test-utilities'
+import {namePathToDotNotation} from './namePathToDotNotation'
 
 describe('Transformer: namePathToDotNotation', () => {
   it('converts path elements to dot.notation and ignores name proprty', () => {

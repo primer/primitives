@@ -1,0 +1,5 @@
+export {colorToHex} from './colorToHex'
+export {colorToHexAlpha} from './colorToHexAlpha'
+export {colorToRgbAlpha} from './colorToRgbAlpha'
+export {jsonDeprecated} from './jsonDeprecated'
+export {namePathToDotNotation} from './namePathToDotNotation'

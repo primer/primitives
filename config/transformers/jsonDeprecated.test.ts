@@ -1,5 +1,5 @@
-import {getMockToken} from '../../src/test-utilities/getMockToken'
-import {jsonDeprecated} from './json-deprecated'
+import {getMockToken} from '~/src/test-utilities'
+import {jsonDeprecated} from './jsonDeprecated'
 
 describe('Transformer: jsonDeprecated', () => {
   it('Replaces token value with `null` if deprecated is set to `true`', () => {

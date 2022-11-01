@@ -1,5 +1,5 @@
-import {getMockToken} from '../../src/test-utilities/getMockToken'
-import {colorToHexAlpha} from './color-to-hex-alpha'
+import {getMockToken} from '~/src/test-utilities'
+import {colorToHexAlpha} from './colorToHexAlpha'
 
 describe('Transformer: colorToHexAlpha', () => {
   it('transforms hex3, hex6 `color` tokens with alpha value', () => {

@@ -1,4 +1,4 @@
-import {getMockToken} from '../../src/test-utilities/getMockToken'
+import {getMockToken} from '~/src/test-utilities'
 import {isColorWithAlpha} from './isColorWithAlpha'
 
 describe('Filter: isColorWithAlpha', () => {
