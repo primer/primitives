@@ -1,4 +1,4 @@
-import {getMockToken} from '~test-utilities/getMockToken'
+import {getMockToken} from '~/src/test-utilities/getMockToken'
 import {namePathToDotNotation} from './name-path-to-dot-notation'
 
 describe('Transformer: namePathToDotNotation', () => {

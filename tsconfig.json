@@ -14,9 +14,7 @@
     "resolveJsonModule": true,
     "baseUrl": ".",
     "paths": {
-      "~types/*": ["types/*"],
-      "~build-config/*": ["config/*"],
-      "~test-utilities/*": ["src/test-utilities/*"]
+      "~/*": ["*"]
     }
   },
   "include": ["src/", "script/", "docs/", "config/**/*.test.ts"],
