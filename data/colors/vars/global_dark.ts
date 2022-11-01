@@ -103,7 +103,6 @@ export default {
     shadow: {
       highlight: '0 0 transparent', // top highlight
       inset: '0 0 transparent', // top inner shadow
-      focus: (theme: any) => `0 0 0 3px ${get('scale.blue.8')(theme)}` // blue focus ring
     }
   }
 }
