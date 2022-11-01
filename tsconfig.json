@@ -11,8 +11,15 @@
     "typeRoots": ["./src/@types", "./node_modules/@types", "types", "config/types/"],
     "rootDir": "./",
     "declaration": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["*"]
+    }
   },
   "include": ["src/", "script/", "docs/", "config/**/*.test.ts"],
-  "exclude": ["./src/@types"]
+  "exclude": ["./src/@types"],
+  "ts-node": {
+    "require": ["tsconfig-paths/register"]
+  }
 }

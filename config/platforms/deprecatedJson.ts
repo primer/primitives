@@ -1,5 +1,5 @@
 import StyleDictionary from 'style-dictionary'
-import {PlatformInitializer} from '../../types/PlatformInitializer'
+import {PlatformInitializer} from '~/types/PlatformInitializer'
 import {isDeprecated} from '../filters/isDeprecated'
 
 export const platformDeprecatedJson: PlatformInitializer = (

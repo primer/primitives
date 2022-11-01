@@ -1,5 +1,5 @@
 import {javascriptEsm} from './javascript-esm'
-import {getMockFormatterArguments} from '../../src/test-utilities/getMockFormatterArguments'
+import {getMockFormatterArguments} from '~/src/test-utilities/getMockFormatterArguments'
 import {format} from 'prettier'
 
 describe('Format: ESM', () => {

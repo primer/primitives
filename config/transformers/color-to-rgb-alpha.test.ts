@@ -1,4 +1,4 @@
-import {getMockToken} from '../../src/test-utilities/getMockToken'
+import {getMockToken} from '~/src/test-utilities/getMockToken'
 import {colorToRgbAlpha} from './color-to-rgb-alpha'
 
 describe('Transformer: colorToRgbAlpha', () => {
