@@ -1,15 +1,13 @@
 import StyleDictionary from 'style-dictionary'
-import {w3cJsonParser} from './parsers/w3c-json-parser'
-import {colorToHexAlpha} from './transformers/color-to-hex-alpha'
-import {colorToRgbAlpha} from './transformers/color-to-rgb-alpha'
-import {colorToHex} from './transformers/color-to-hex'
-import {jsonDeprecated} from './transformers/json-deprecated'
-import {namePathToDotNotation} from './transformers/name-path-to-dot-notation'
-import {scssMixinCssVariables} from './formats/scss-mixin-css-variables'
-import {javascriptCommonJs} from './formats/javascript-commonJs'
-import {javascriptEsm} from './formats/javascript-esm'
-import {typescriptExportDefinition} from './formats/typescript-export-definition'
-import {jsonNestedPrefixed} from './formats/json-nested-prefixed'
+import {w3cJsonParser} from './parsers'
+import {colorToHexAlpha, colorToRgbAlpha, colorToHex, jsonDeprecated, namePathToDotNotation} from './transformers'
+import {
+  scssMixinCssVariables,
+  javascriptCommonJs,
+  javascriptEsm,
+  typescriptExportDefinition,
+  jsonNestedPrefixed
+} from './formats'
 
 /**
  * Parsers

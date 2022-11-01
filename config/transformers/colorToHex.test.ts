@@ -1,5 +1,5 @@
-import {getMockToken} from '~/src/test-utilities/getMockToken'
-import {colorToHex} from './color-to-hex'
+import {getMockToken} from '~/src/test-utilities'
+import {colorToHex} from './colorToHex'
 
 describe('Transformer: colorToHex', () => {
   it('transforms `hex3`, `hex6`, and `hex8` tokens to hex value', () => {

@@ -1,6 +1,6 @@
 import StyleDictionary from 'style-dictionary'
 import {PlatformInitializer} from '~/types/PlatformInitializer'
-import {isSource} from '../filters/isSource'
+import {isSource} from '~/config/filters'
 
 const getFilenameFromPath = (path: string): string => {
   // remove extensions
@@ -11,7 +11,7 @@ const getFilenameFromPath = (path: string): string => {
   return parts[parts.length - 1]
 }
 
-export const platformScss: PlatformInitializer = (outputFile, prefix, buildPath): StyleDictionary.Platform => {
+export const scss: PlatformInitializer = (outputFile, prefix, buildPath): StyleDictionary.Platform => {
   // set mixing name
   const mixinName = `primer-colors-${getFilenameFromPath(outputFile)}`
   //
