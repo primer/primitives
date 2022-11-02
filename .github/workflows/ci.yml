@@ -7,41 +7,93 @@ on:
   pull_request:
 
 jobs:
-  ci:
+  build:
     if: ${{ github.repository == 'primer/primitives' }}
-    name: Install and run tests
+    name: Build verification
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
-      - name: Set up Node
-        uses: actions/setup-node@v2
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
         with:
-          node-version: '16'
-
-      - name: Cache dependencies
-        uses: actions/cache@v2
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
+          node-version: 16
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile && cd docs && yarn install --frozen-lockfile
 
-      - name: Build
+      - name: Build v1 tokens
         run: npm run build
 
       - name: Build v2 tokens
         run: npm run build:tokens
 
-      - name: Run linters
+  lint:
+    if: ${{ github.repository == 'primer/primitives' }}
+    name: Code linting check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile && cd docs && yarn install --frozen-lockfile
+
+      - name: Build v1 tokens
+        run: npm run build
+
+      - name: Build v2 tokens
+        run: npm run build:tokens
+
+      - name: Lint
         run: npm run lint
 
-      - name: Check formatting
-        run: npm run format
+  formatting:
+    if: ${{ github.repository == 'primer/primitives' }}
+    name: Code formatting check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile && cd docs && yarn install --frozen-lockfile
+
+      - name: Lint
+        run: npm run format:check
+
+  test:
+    if: ${{ github.repository == 'primer/primitives' }}
+    name: Unit tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile && cd docs && yarn install --frozen-lockfile
+
+      - name: Build v1 tokens
+        run: npm run build
+
+      - name: Build v2 tokens
+        run: npm run build:tokens
 
       - name: Run unit tests
-        run: npm run test
+        run: npm test
