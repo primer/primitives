@@ -1,0 +1,6 @@
+@import '../../color-modes.scss';
+@import '../../../../../dist/scss/colors/_dark_high_contrast.scss';
+
+@include color-mode-theme(dark_high_contrast) {
+  @include primer-colors-dark_high_contrast;
+}

@@ -1,0 +1,22 @@
+// color-scheme
+// Enables color modes for native elements
+
+@include color-mode(light) { color-scheme: light; }
+
+@include color-mode(dark) { color-scheme: dark; }
+
+[data-color-mode] {
+  color: var(--color-fg-default);
+  background-color: var(--color-canvas-default);
+}
+
+// Windows High Contrast mode
+
+// Improves focus state for various components when Windows High Contrast mode is enabled
+// stylelint-disable selector-max-type
+@media (forced-colors: active) {
+  body {
+    --color-accent-emphasis: Highlight;
+    --color-fg-on-emphasis: LinkText;
+  }
+}
