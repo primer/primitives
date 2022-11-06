@@ -4,26 +4,30 @@
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
-    "@storybook/addon-essentials": "^7.0.0-alpha.46",
-    "@storybook/addon-interactions": "^7.0.0-alpha.46",
-    "@storybook/addon-links": "^7.0.0-alpha.46",
-    "@storybook/react": "^7.0.0-alpha.46",
-    "@storybook/react-webpack5": "^7.0.0-alpha.46",
-    "@storybook/testing-library": "^0.0.14-next.0",
+    "@babel/core": "^7.20.2",
+    "@storybook/addon-actions": "^6.5.13",
+    "@storybook/addon-essentials": "^6.5.13",
+    "@storybook/addon-interactions": "^6.5.13",
+    "@storybook/addon-links": "^6.5.13",
+    "@storybook/builder-webpack5": "^6.5.6",
+    "@storybook/manager-webpack5": "^6.5.6",
+    "@storybook/preset-scss": "^1.0.3",
+    "@storybook/react": "^6.5.13",
+    "@storybook/testing-library": "^0.0.13",
+    "babel-loader": "^8.3.0",
     "react": "^17.0.0 || ^18.0.0",
     "react-dom": "^17.0.0 || ^18.0.0",
-    "storybook": "^7.0.0-alpha.46",
+    "sass": "^1.56.0",
     "styled-components": "4.x || 5.x"
   },
   "dependencies": {
     "@primer/react": "^35.14.0",
-    "@storybook/preset-scss": "^1.0.3",
-    "css-loader": "^6.7.1",
     "sass-loader": "^13.1.0",
     "style-loader": "^3.3.1"
   },
   "scripts": {
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "clean-nm": "rm -rf node_modules"
   }
 }

@@ -1,4 +1,3 @@
-const path = require('path')
 module.exports = {
   stories: ['../stories/**/*.stories.mdx', '../stories/**/*.stories.@(js|jsx|ts|tsx)'],
   addons: [
@@ -7,8 +6,8 @@ module.exports = {
     '@storybook/addon-interactions',
     '@storybook/preset-scss'
   ],
-  framework: {
-    name: '@storybook/react-webpack5',
-    options: {}
+  framework: '@storybook/react',
+  core: {
+    builder: 'webpack5'
   }
 }
