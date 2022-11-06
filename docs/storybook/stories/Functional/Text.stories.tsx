@@ -23,7 +23,7 @@ export const TextColors: ComponentStory<typeof ColorPreview> = () => {
   return (
     <>
       {fgColors.map(color => (
-        <ColorPreview color={color} textColor />
+        <ColorPreview color={color} textColor key={color} />
       ))}
     </>
   )
