@@ -167,5 +167,5 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
 
 buildDesignTokens({
   buildPath: 'tokens-v2-private/',
-  prefix: 'product'
+  prefix: 'primer'
 })

@@ -7,8 +7,24 @@ export default {
   component: ColorPreview
 } as ComponentMeta<typeof ColorPreview>
 
-// export const TextColors = <ColorPreview color="--product-color-fg-default" textColor />
+const fgColors = [
+  'primer-color-text-default',
+  'primer-color-text-subtle',
+  'primer-color-text-onDefault',
+  'primer-color-text-disabled ',
+  'primer-color-text-accent',
+  'primer-color-text-success',
+  'primer-color-text-attention',
+  'primer-color-text-severe',
+  'primer-color-text-danger'
+]
 
-export const TextColors: ComponentStory<typeof ColorPreview> = () => (
-  <ColorPreview color="product-color-fg-default" textColor />
-)
+export const TextColors: ComponentStory<typeof ColorPreview> = () => {
+  return (
+    <>
+      {fgColors.map(color => (
+        <ColorPreview color={color} textColor />
+      ))}
+    </>
+  )
+}
