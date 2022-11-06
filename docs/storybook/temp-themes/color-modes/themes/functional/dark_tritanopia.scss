@@ -1,0 +1,6 @@
+@import '../../../color-modes.scss';
+@import '../../../../../../tokens-v2-private/scss/functional/color/dark-tritanopia.scss';
+
+@include color-mode-theme(dark-tritanopia) {
+  @include primer-colors-dark-tritanopia;
+}

@@ -1,0 +1,6 @@
+@import '../../../color-modes.scss';
+@import '../../../../../../tokens-v2-private/scss/base/color/dark-high-contrast.scss';
+
+@include color-mode-theme(dark-high-contrast) {
+  @include primer-colors-dark-high-contrast;
+}

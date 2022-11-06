@@ -1,6 +1,0 @@
-@import '../../color-modes.scss';
-@import '../../../../../dist/scss/colors/_dark_dimmed.scss';
-
-@include color-mode-theme(dark_dimmed) {
-  @include primer-colors-dark_dimmed;
-}

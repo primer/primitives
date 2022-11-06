@@ -1,14 +1,23 @@
 // All themes
 
-@import './themes/light.scss';
-@import './themes/light_colorblind.scss';
-@import './themes/light_high_contrast.scss';
-@import './themes/light_tritanopia.scss';
-@import './themes/dark.scss';
-@import './themes/dark_dimmed.scss';
-@import './themes/dark_high_contrast.scss';
-@import './themes/dark_colorblind.scss';
-@import './themes/dark_tritanopia.scss';
+@import './themes/base/light.scss';
+@import './themes/base/light_colorblind.scss';
+@import './themes/base/light_high_contrast.scss';
+@import './themes/base/light_tritanopia.scss';
+@import './themes/base/dark.scss';
+@import './themes/base/dark_dimmed.scss';
+@import './themes/base/dark_high_contrast.scss';
+@import './themes/base/dark_colorblind.scss';
+@import './themes/base/dark_tritanopia.scss';
+@import './themes/functional/light.scss';
+@import './themes/functional/light_colorblind.scss';
+@import './themes/functional/light_high_contrast.scss';
+@import './themes/functional/light_tritanopia.scss';
+@import './themes/functional/dark.scss';
+@import './themes/functional/dark_dimmed.scss';
+@import './themes/functional/dark_high_contrast.scss';
+@import './themes/functional/dark_colorblind.scss';
+@import './themes/functional/dark_tritanopia.scss';
 @import './native.scss';
 
 body {

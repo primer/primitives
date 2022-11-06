@@ -1,6 +1,0 @@
-@import '../../color-modes.scss';
-@import '../../../../../dist/scss/colors/_light_colorblind.scss';
-
-@include color-mode-theme(light_colorblind) {
-  @include primer-colors-light_colorblind;
-}

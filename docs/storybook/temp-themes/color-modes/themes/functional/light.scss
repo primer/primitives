@@ -1,0 +1,6 @@
+@import '../../../color-modes.scss';
+@import '../../../../../../tokens-v2-private/scss/functional/color/light.scss';
+
+@include color-mode-theme(light, true) {
+  @include primer-colors-light;
+}

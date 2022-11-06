@@ -1,0 +1,6 @@
+@import '../../../color-modes.scss';
+@import '../../../../../../tokens-v2-private/scss/base/color/dark-colorblind.scss';
+
+@include color-mode-theme(dark-colorblind) {
+  @include primer-colors-dark-colorblind;
+}
