@@ -30,80 +30,71 @@
         $value: '{base.color.scale.gray.2}',
         alpha: 0,
         $type: 'color'
+      },
+      semiBlack: {
+        "12": {
+        $value: '{base.color.scale.black}',
+        alpha: 0.12,
+        $type: 'color'
+        }
       }
     },
     small: {
       $value: {
         color: '{shadow.color.small}',
-        x: '0px',
-        y: '1px',
-        blur: '0px'
+        offsetX: '0px',
+        offsetY: '1px',
+        blur: '0px',
+        spread: "0px"
       },
       $type: 'shadow'
     },
     medium: {
       $value: {
         color: '{shadow.color.medium}',
-        x: '0px',
-        y: '3px',
-        blur: '6px'
+        offsetX: '0px',
+        offsetY: '3px',
+        blur: '6px',
+        spread: "0px"
       },
       $type: 'shadow'
     },
     large: {
       $value: {
         color: '{shadow.color.large}',
-        x: '0px',
-        y: '8px',
-        blur: '24px'
+        offsetX: '0px',
+        offsetY: '8px',
+        blur: '24px',
+        spread: "0px"
       },
       $type: 'shadow'
     },
     extraLarge: {
       $value: {
         color: '{shadow.color.extraLarge}',
-        x: '0px',
-        y: '12px',
-        blur: '28px'
+        offsetX: '0px',
+        offsetY: '12px',
+        blur: '28px',
+        spread: "0px"
       },
       $type: 'shadow'
+    },
+    // components
+    overlay: {
+      $value: [{
+        color: '{shadow.color.semiBlack.12}',
+        offsetX: '0px',
+        offsetY: '1px',
+        blur: '3px',
+        spread: "0px"
+      },{
+        color: '{shadow.color.semiBlack}',
+        offsetX: '0px',
+        offsetY: '8px',
+        blur: '24px',
+        spread: "0px"
+      }],
+      $type: 'shadow'
     }
-    // "focus": {
-    //   "$value": {
-    //     "color": "{color.focus}",
-    //     "x": "0px",
-    //     "y": "0px",
-    //     "blur": "0px",
-    //     "spread": "3px"
-    //   },
-    //   "$type": "shadow"
-    // },
-    // "primer": {
-    //   "shadow": {
-    //     "highlight": {
-    //       "$value": {
-    //         "color": "{color.shadow.highlight}",
-    //         "x": "0px",
-    //         "y": "1px",
-    //         "blur": "0px",
-    //         "spread": "3px",
-    //         "inset": true
-    //       },
-    //       "$type": "shadow"
-    //     },
-    //     "inset": {
-    //       "$value": {
-    //         "color": "{color.shadow.inset}",
-    //         "x": "0px",
-    //         "y": "1px",
-    //         "blur": "0px",
-    //         "spread": "3px",
-    //         "inset": true
-    //       },
-    //       "$type": "shadow"
-    //     },
-    //     "focus": {"$value": "{shadow.focus}"}
-    //   }
-    // }
   }
 }
