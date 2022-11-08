@@ -13,7 +13,7 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
       include: [`tokens/base/color/light/light.json5`]
     },
     {
-      filename: 'light-tritanopia',
+      filename: 'light_tritanopia',
       source: [
         `tokens/functional/color/light/*.json5`,
         `tokens/functional/color/light/overrides/light.tritanopia.json5`
@@ -21,7 +21,7 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
       include: [`tokens/base/color/light/light.json5`, `tokens/base/color/light/light.tritanopia.json5`]
     },
     {
-      filename: 'light-colorblind',
+      filename: 'light_colorblind',
       source: [
         `tokens/functional/color/light/*.json5`,
         `tokens/functional/color/light/overrides/light.protanopia-deuteranopia.json5`
@@ -29,7 +29,7 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
       include: [`tokens/base/color/light/light.json5`, `tokens/base/color/light/light.protanopia-deuteranopia.json5`]
     },
     {
-      filename: 'light-high-contrast',
+      filename: 'light_high_contrast',
       source: [
         `tokens/functional/color/light/*.json5`,
         `tokens/functional/color/light/overrides/light.high-contrast.json5`
@@ -42,17 +42,17 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
       include: [`tokens/base/color/dark/dark.json5`]
     },
     {
-      filename: 'dark-dimmed',
+      filename: 'dark_dimmed',
       source: [`tokens/functional/color/dark/*.json5`, `tokens/functional/color/dark/overrides/dark.dimmed.json5`],
       include: [`tokens/base/color/dark/dark.json5`, `tokens/base/color/dark/dark.dimmed.json5`]
     },
     {
-      filename: 'dark-tritanopia',
+      filename: 'dark_tritanopia',
       source: [`tokens/functional/color/dark/*.json5`, `tokens/functional/color/dark/overrides/dark.tritanopia.json5`],
       include: [`tokens/base/color/dark/dark.json5`, `tokens/base/color/dark/dark.tritanopia.json5`]
     },
     {
-      filename: 'dark-colorblind',
+      filename: 'dark_colorblind',
       source: [
         `tokens/functional/color/dark/*.json5`,
         `tokens/functional/color/dark/overrides/dark.protanopia-deuteranopia.json5`
@@ -60,7 +60,7 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
       include: [`tokens/base/color/dark/dark.json5`, `tokens/base/color/dark/dark.protanopia-deuteranopia.json5`]
     },
     {
-      filename: 'dark-high-contrast',
+      filename: 'dark_high_contrast',
       source: [
         `tokens/functional/color/dark/*.json5`,
         `tokens/functional/color/dark/overrides/dark.high-contrast.json5`
