@@ -151,7 +151,7 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
       source,
       include,
       platforms: {
-        types: typeDefinitions(filename, buildOptions.prefix, `${buildOptions.buildPath}/ts/types/`)
+        types: typeDefinitions(filename, buildOptions.prefix, `${buildOptions.buildPath}ts/types/`)
       }
     }).buildAllPlatforms()
   }
@@ -160,7 +160,7 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
   PrimerStyleDictionary.extend({
     source: themes[0].include,
     platforms: {
-      types: typeDefinitions(`baseColor`, undefined, `${buildOptions.buildPath}/ts/types/`)
+      types: typeDefinitions(`baseColor`, undefined, `${buildOptions.buildPath}ts/types/`)
     }
   }).buildAllPlatforms()
 }
