@@ -347,7 +347,7 @@
           "$type": "color"
         },
         "hoverText": {
-          "$value": "{color.fg.onEmphasis}",
+          "$value": "{color.text.onDefault}",
           "$type": "color"
         },
         "hoverBg": {
@@ -361,7 +361,7 @@
         "hoverShadow": "0 0 transparent",
         "hoverInsetShadow": "0 0 transparent",
         "hoverIcon": {
-          "$value": "{color.fg.onEmphasis}",
+          "$value": "{color.text.onDefault}",
           "$type": "color"
         },
         "hover": {
@@ -418,7 +418,7 @@
     },
     "underlinenav": {
       "icon": {
-        "$value": "{color.fg.subtle}",
+        "$value": "{color.text.subtle}",
         "$type": "color"
       },
       "borderHover": {

@@ -122,7 +122,7 @@
       },
       "primary": {
         "text": {
-          "$value": "{color.fg.onEmphasis}",
+          "$value": "{color.text.onDefault}",
           "$type": "color"
         },
         "border": {
@@ -140,7 +140,7 @@
           "$type": "color"
         },
         "disabledText": {
-          "$value": "{color.fg.onEmphasis}",
+          "$value": "{color.text.onDefault}",
           "$type": "color",
           "alpha": 0.5
         },
@@ -155,7 +155,7 @@
           "alpha": 0.4
         },
         "icon": {
-          "$value": "{color.fg.onEmphasis}",
+          "$value": "{color.text.onDefault}",
           "$type": "color"
         },
         "counterBg": {
@@ -191,19 +191,19 @@
     "diffBlob": {
       "addition": {
         "fg": {
-          "$value": "{color.fg.onEmphasis}",
+          "$value": "{color.text.onDefault}",
           "$type": "color"
         }
       },
       "deletion": {
         "fg": {
-          "$value": "{color.fg.onEmphasis}",
+          "$value": "{color.text.onDefault}",
           "$type": "color"
         }
       },
       "expander": {
         "icon": {
-          "$value": "{color.fg.default}",
+          "$value": "{color.text.default}",
           "$type": "color"
         }
       },
@@ -254,7 +254,7 @@
           "$type": "color"
         },
         "hoverText": {
-          "$value": "{color.fg.onEmphasis}",
+          "$value": "{color.text.onDefault}",
           "$type": "color"
         }
       }

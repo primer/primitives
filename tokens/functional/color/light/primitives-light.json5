@@ -1,20 +1,24 @@
 {
   "color": {
-    "fg": {
+    "text": {
       "default": {
         "$value": "{base.color.scale.gray.9}",
-        "$type": "color"
-      },
-      "muted": {
-        "$value": "{base.color.scale.gray.6}",
         "$type": "color"
       },
       "subtle": {
         "$value": "{base.color.scale.gray.5}",
         "$type": "color"
       },
-      "onEmphasis": {
+      "onDefault": {
         "$value": "{base.color.scale.white}",
+        "$type": "color"
+      },
+      "disabled": {
+        "$value": "{base.color.scale.gray.4}",
+        "$type": "color"
+      },
+      "accent": {
+        "$value": "{base.color.scale.blue.5}",
         "$type": "color"
       }
     },
@@ -72,10 +76,6 @@
       }
     },
     "accent": {
-      "fg": {
-        "$value": "{base.color.scale.blue.5}",
-        "$type": "color"
-      },
       "emphasis": {
         "$value": "{base.color.scale.blue.5}",
         "$type": "color"
@@ -279,12 +279,6 @@
       "$type": "color"
     },
     "primer": {
-      "fg": {
-        "disabled": {
-          "$value": "{base.color.scale.gray.4}",
-          "$type": "color"
-        }
-      },
       "canvas": {
         "backdrop": {
           "$value": "{base.color.scale.black}",

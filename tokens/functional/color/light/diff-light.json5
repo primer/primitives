@@ -3,11 +3,11 @@
     "diffBlob": {
       "addition": {
         "numText": {
-          "$value": "{color.fg.default}",
+          "$value": "{color.text.default}",
           "$type": "color"
         },
         "fg": {
-          "$value": "{color.fg.default}",
+          "$value": "{color.text.default}",
           "$type": "color"
         },
         "numBg": {
@@ -25,11 +25,11 @@
       },
       "deletion": {
         "numText": {
-          "$value": "{color.fg.default}",
+          "$value": "{color.text.default}",
           "$type": "color"
         },
         "fg": {
-          "$value": "{color.fg.default}",
+          "$value": "{color.text.default}",
           "$type": "color"
         },
         "numBg": {
@@ -53,7 +53,7 @@
       },
       "expander": {
         "icon": {
-          "$value": "{color.fg.muted}",
+          "$value": "{color.text.subtle}",
           "$type": "color"
         }
       }

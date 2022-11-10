@@ -6,23 +6,23 @@
         "$type": "color"
       },
       "textPrimary": {
-        "$value": "{color.fg.default}",
+        "$value": "{color.text.default}",
         "$type": "color"
       },
       "textSecondary": {
-        "$value": "{color.fg.muted}",
+        "$value": "{color.text.subtle}",
         "$type": "color"
       },
       "textLink": {
-        "$value": "{color.accent.fg}",
+        "$value": "{color.text.accent}",
         "$type": "color"
       },
       "btnIcon": {
-        "$value": "{color.fg.muted}",
+        "$value": "{color.text.subtle}",
         "$type": "color"
       },
       "btnHoverIcon": {
-        "$value": "{color.fg.default}",
+        "$value": "{color.text.default}",
         "$type": "color"
       },
       "btnHoverBg": {
@@ -30,15 +30,15 @@
         "$type": "color"
       },
       "inputText": {
-        "$value": "{color.fg.muted}",
+        "$value": "{color.text.subtle}",
         "$type": "color"
       },
       "inputPlaceholderText": {
-        "$value": "{color.fg.subtle}",
+        "$value": "{color.text.subtle}",
         "$type": "color"
       },
       "inputFocusText": {
-        "$value": "{color.fg.default}",
+        "$value": "{color.text.default}",
         "$type": "color"
       },
       "inputBg": {
@@ -62,7 +62,7 @@
         "$type": "color"
       },
       "dropdownText": {
-        "$value": "{color.fg.default}",
+        "$value": "{color.text.default}",
         "$type": "color"
       },
       "dropdownBg": {
@@ -79,7 +79,7 @@
         "alpha": 0.3
       },
       "dropdownHoverText": {
-        "$value": "{color.fg.default}",
+        "$value": "{color.text.default}",
         "$type": "color"
       },
       "dropdownHoverBg": {
@@ -87,7 +87,7 @@
         "$type": "color"
       },
       "dropdownBtnHoverText": {
-        "$value": "{color.fg.default}",
+        "$value": "{color.text.default}",
         "$type": "color"
       },
       "dropdownBtnHoverBg": {
@@ -99,11 +99,11 @@
         "$type": "color"
       },
       "headerLabelText": {
-        "$value": "{color.fg.muted}",
+        "$value": "{color.text.subtle}",
         "$type": "color"
       },
       "headerLabelOpenText": {
-        "$value": "{color.fg.default}",
+        "$value": "{color.text.default}",
         "$type": "color"
       },
       "headerBorder": {
@@ -111,19 +111,19 @@
         "$type": "color"
       },
       "headerIcon": {
-        "$value": "{color.fg.muted}",
+        "$value": "{color.text.subtle}",
         "$type": "color"
       },
       "lineText": {
-        "$value": "{color.fg.muted}",
+        "$value": "{color.text.subtle}",
         "$type": "color"
       },
       "lineNumText": {
-        "$value": "{color.fg.subtle}",
+        "$value": "{color.text.subtle}",
         "$type": "color"
       },
       "lineTimestampText": {
-        "$value": "{color.fg.subtle}",
+        "$value": "{color.text.subtle}",
         "$type": "color"
       },
       "lineHoverBg": {
@@ -135,11 +135,11 @@
         "$type": "color"
       },
       "lineSelectedNumText": {
-        "$value": "{color.accent.fg}",
+        "$value": "{color.text.accent}",
         "$type": "color"
       },
       "lineDtFmText": {
-        "$value": "{color.fg.onEmphasis}",
+        "$value": "{color.text.onDefault}",
         "$type": "color"
       },
       "lineDtFmBg": {
@@ -151,7 +151,7 @@
         "$type": "color"
       },
       "gateText": {
-        "$value": "{color.fg.muted}",
+        "$value": "{color.text.subtle}",
         "$type": "color"
       },
       "gateWaitingText": {
@@ -171,11 +171,11 @@
         "$type": "color"
       },
       "loglineText": {
-        "$value": "{color.fg.muted}",
+        "$value": "{color.text.subtle}",
         "$type": "color"
       },
       "loglineNumText": {
-        "$value": "{color.fg.subtle}",
+        "$value": "{color.text.subtle}",
         "$type": "color"
       },
       "loglineDebugText": {
@@ -183,11 +183,11 @@
         "$type": "color"
       },
       "loglineErrorText": {
-        "$value": "{color.fg.muted}",
+        "$value": "{color.text.subtle}",
         "$type": "color"
       },
       "loglineErrorNumText": {
-        "$value": "{color.fg.subtle}",
+        "$value": "{color.text.subtle}",
         "$type": "color"
       },
       "loglineErrorBg": {
@@ -195,7 +195,7 @@
         "$type": "color"
       },
       "loglineWarningText": {
-        "$value": "{color.fg.muted}",
+        "$value": "{color.text.subtle}",
         "$type": "color"
       },
       "loglineWarningNumText": {
@@ -207,7 +207,7 @@
         "$type": "color"
       },
       "loglineCommandText": {
-        "$value": "{color.accent.fg}",
+        "$value": "{color.text.accent}",
         "$type": "color"
       },
       "loglineSectionText": {
