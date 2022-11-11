@@ -5,6 +5,9 @@ import JSON5 from 'json5'
 
 import type {ColorDesignTokenDefinition} from '../../types/DesignToken'
 
+const validPrefixes = ['base', 'color'] as const
+type ValidPrefixes = typeof validPrefixes[number]
+
 type Token = ColorDesignTokenDefinition
 
 interface GenericShape {
@@ -30,7 +33,10 @@ export interface ColorProperties {
  *  validateSchema(tokens, 'base')
  */
 export function validateSchema(data: object) {
-  const [prefix] = Object.keys(data)
+  const [prefix] = Object.keys(data) as ValidPrefixes[]
+  if (!validPrefixes.includes(prefix)) {
+    throw new Error('Invalid prefix')
+  }
   const ajv = new Ajv()
 
   const schema: JSONSchemaType<ColorProperties> = {

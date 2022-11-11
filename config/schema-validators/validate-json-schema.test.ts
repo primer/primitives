@@ -1,35 +1,36 @@
 import {validateSchema} from './validate-json-schema'
 import type {ColorProperties} from './validate-json-schema'
+import type {ColorDesignTokenDefinition} from '../../types/DesignToken'
 
 describe('JSON schema validation', () => {
   describe('color', () => {
-    it('should validate successfully with the correct input', async () => {
+    it('should validate successfully with the correct shape of input', async () => {
+      const expectedTokenShape: ColorDesignTokenDefinition = {
+        $value: 'value',
+        $type: 'color'
+      }
       const data: ColorProperties = {
         color: {
           a: {
-            $value: 'value',
-            $type: 'color'
+            ...expectedTokenShape
           },
           b: {
-            c: {
-              $value: 'value',
-              $type: 'color'
+            one: {
+              ...expectedTokenShape
             }
           },
-          d: {
-            e: {
-              f: {
-                $value: 'value',
-                $type: 'color'
+          c: {
+            one: {
+              two: {
+                ...expectedTokenShape
               }
             }
           },
-          g: {
-            h: {
-              i: {
-                j: {
-                  $value: 'value',
-                  $type: 'color'
+          d: {
+            one: {
+              two: {
+                three: {
+                  ...expectedTokenShape
                 }
               }
             }
@@ -37,6 +38,33 @@ describe('JSON schema validation', () => {
         }
       }
 
+      expect(validateSchema(data)).toBe(true)
+    })
+
+    it('validates to n depth', () => {
+      const n = 50 // arbitrary number
+      const token: ColorDesignTokenDefinition = {
+        $value: 'value',
+        $type: 'color'
+      }
+
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const buildObj = (obj: {[x: string]: any}, keyPath: string | any[], value: ColorDesignTokenDefinition) => {
+        const lastKeyIndex = keyPath.length - 1
+        for (let i = 0; i < lastKeyIndex; ++i) {
+          const key = keyPath[i]
+          if (!(key in obj)) {
+            obj[key] = {}
+          }
+          obj = obj[key]
+        }
+        obj[keyPath[lastKeyIndex]] = value
+      }
+
+      const data = {}
+      const arr = Array.from(Array(n), (x, i) => (i === 0 ? 'color' : i.toString()))
+
+      buildObj(data, arr, token)
       expect(validateSchema(data)).toBe(true)
     })
 
