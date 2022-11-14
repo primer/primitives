@@ -37,7 +37,7 @@ describe('Transformer: shadowToCss', () => {
           offsetY: '2px',
           blur: '1px',
           spread: '0px',
-          inset: true
+          inset: false
         }
       })
     ]
@@ -143,29 +143,28 @@ describe('Transformer: shadowToCss', () => {
   })
 
   it('transforms multi-layer `shadow` token to css shadow string', () => {
-    const input = [
-      getMockToken({
-        value: [
-          {
-            color: '#000000',
-            offsetX: '0px',
-            offsetY: '2px',
-            blur: '1px',
-            spread: '0',
-            alpha: 0.5
-          },
-          {
-            color: '#22222266',
-            offsetX: '0px',
-            offsetY: '8px',
-            blur: '16px',
-            spread: '0',
-            alpha: 0.2
-          }
-        ]
-      })
-    ]
-    const expectedOutput = ['0px 2px 1px 0 #00000080, 0px 8px 16px 0 #22222233']
-    expect(input.map(item => shadowToCss.transformer(item))).toStrictEqual(expectedOutput)
+    const input = getMockToken({
+      value: [
+        {
+          color: '#000000',
+          offsetX: '0px',
+          offsetY: '2px',
+          blur: '1px',
+          spread: '0',
+          alpha: 0.5
+        },
+        {
+          color: '#22222266',
+          offsetX: '0px',
+          offsetY: '8px',
+          blur: '16px',
+          spread: '0',
+          alpha: 0.2
+        }
+      ]
+    })
+
+    const expectedOutput = '0px 2px 1px 0 #00000080, 0px 8px 16px 0 #22222233'
+    expect(shadowToCss.transformer(input)).toStrictEqual(expectedOutput)
   })
 })
