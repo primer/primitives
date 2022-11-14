@@ -12,7 +12,9 @@ import {alpha} from '../utilities'
 const checkForShadowTokenProperties = (shadow: ShadowTokenValue) => {
   const requiredShadowProperties = ['color', 'offsetX', 'offsetY', 'blur', 'spread']
   for (const prop of requiredShadowProperties) {
-    if (prop in shadow === false) throw new Error(`Missing propery: ${prop} on shadow token ${JSON.stringify(shadow)}`)
+    if (prop in shadow === false) {
+      throw new Error(`Missing propery: ${prop} on shadow token ${JSON.stringify(shadow)}`)
+    }
   }
 }
 /**
