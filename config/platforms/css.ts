@@ -5,7 +5,7 @@ import {isSource} from '~/config/filters'
 export const css: PlatformInitializer = (outputFile, prefix, buildPath, _options): StyleDictionary.Platform => ({
   prefix,
   buildPath,
-  transforms: ['name/cti/kebab', 'color/hex', 'color/hexAlpha'],
+  transforms: ['name/cti/kebab', 'color/hex', 'color/hexAlpha', 'shadow/css'],
   options: {
     basePxFontSize: 16
   },

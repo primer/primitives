@@ -1,0 +1,100 @@
+{
+  shadow: {
+    color: {
+      small: {
+        $value: '{base.color.scale.black}',
+        alpha: 0.96,
+        $type: 'color'
+      },
+      medium: {
+        $value: '{base.color.scale.gray.4}',
+        alpha: 0.85,
+        $type: 'color'
+      },
+      large: {
+        $value: '{base.color.scale.gray.4}',
+        alpha: 0.8,
+        $type: 'color'
+      },
+      extraLarge: {
+        $value: '{base.color.scale.gray.4}',
+        alpha: 0.7,
+        $type: 'color'
+      },
+      highlight: {
+        $value: '{base.color.scale.white}',
+        alpha: 0.25,
+        $type: 'color'
+      },
+      inset: {
+        $value: '{base.color.scale.gray.2}',
+        alpha: 0,
+        $type: 'color'
+      },
+      semiBlack: {
+        "12": {
+        $value: '{base.color.scale.black}',
+        alpha: 0.12,
+        $type: 'color'
+        }
+      }
+    },
+    small: {
+      $value: {
+        color: '{shadow.color.small}',
+        offsetX: '0px',
+        offsetY: '1px',
+        blur: '0px',
+        spread: "0px"
+      },
+      $type: 'shadow'
+    },
+    medium: {
+      $value: {
+        color: '{shadow.color.medium}',
+        offsetX: '0px',
+        offsetY: '3px',
+        blur: '6px',
+        spread: "0px"
+      },
+      $type: 'shadow'
+    },
+    large: {
+      $value: {
+        color: '{shadow.color.large}',
+        offsetX: '0px',
+        offsetY: '8px',
+        blur: '24px',
+        spread: "0px"
+      },
+      $type: 'shadow'
+    },
+    extraLarge: {
+      $value: {
+        color: '{shadow.color.extraLarge}',
+        offsetX: '0px',
+        offsetY: '12px',
+        blur: '28px',
+        spread: "0px"
+      },
+      $type: 'shadow'
+    },
+    // components
+    overlay: {
+      $value: [{
+        color: '{shadow.color.semiBlack.12}',
+        offsetX: '0px',
+        offsetY: '1px',
+        blur: '3px',
+        spread: "0px"
+      },{
+        color: '{shadow.color.semiBlack}',
+        offsetX: '0px',
+        offsetY: '8px',
+        blur: '24px',
+        spread: "0px"
+      }],
+      $type: 'shadow'
+    }
+  }
+}
