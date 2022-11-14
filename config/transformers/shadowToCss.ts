@@ -29,7 +29,7 @@ export const shadowToCss: StyleDictionary.Transform = {
   matcher: isShadow,
   transformer: ({value}: {value: ShadowTokenValue | ShadowTokenValue[]}) => {
     // turn value into array
-    if (!Array.isArray(value)) value = [value]
+    const shadowValues = !Array.isArray(value) ? [value] : value;
     return value
       .map((shadow: ShadowTokenValue) => {
         // if value === string it was probably already transformed
