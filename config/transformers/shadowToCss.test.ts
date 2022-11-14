@@ -37,7 +37,7 @@ describe('Transformer: shadowToCss', () => {
           offsetY: '2px',
           blur: '1px',
           spread: '0px',
-          false: true
+          inset: true
         }
       })
     ]
