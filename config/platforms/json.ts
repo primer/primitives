@@ -5,7 +5,7 @@ import {isSource} from '~/config/filters'
 export const json: PlatformInitializer = (outputFile, prefix, buildPath): StyleDictionary.Platform => ({
   prefix,
   buildPath,
-  transforms: ['color/hex', 'color/hexAlpha'],
+  transforms: ['color/hex', 'color/hexAlpha', 'shadow/css'],
   options: {
     basePxFontSize: 16
   },
