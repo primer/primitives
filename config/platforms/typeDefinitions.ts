@@ -6,7 +6,7 @@ import {upperCaseFirstCharacter} from '~/config/utilities'
 export const typeDefinitions: PlatformInitializer = (outputFile, prefix, buildPath): StyleDictionary.Platform => ({
   prefix,
   buildPath,
-  transforms: ['name/cti/camel', 'color/hex', 'color/hexAlpha', 'shadow/css'],
+  transforms: ['name/cti/camel', 'color/hex', 'color/hexAlpha', 'shadow/css', 'border/css'],
   files: [
     {
       format: 'typescript/export-definition',

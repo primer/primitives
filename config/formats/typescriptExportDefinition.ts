@@ -56,6 +56,8 @@ const convertPropToType = (value: unknown, type?: string): string => {
       return 'string'
     case 'shadow':
       return 'Shadow'
+    case 'border':
+      return 'Border'
     default:
       if (typeof value === 'number') return 'number'
       if (typeof value === 'string') return 'string'
@@ -110,7 +112,7 @@ const getTypeDefinition = (
   const tokenWithTypes = toType(tokens, usedTypes)
   // clean up types
   for (const type of usedTypes) {
-    if (!['ColorHex', 'Shadow', 'Size', 'SizeRem'].includes(type)) {
+    if (!['ColorHex', 'Shadow', 'Border', 'Size', 'SizeRem'].includes(type)) {
       usedTypes.delete(type)
     }
   }

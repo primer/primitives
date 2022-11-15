@@ -21,7 +21,7 @@ export const css: PlatformInitializer = (outputFile, prefix, buildPath, _options
   return {
     prefix,
     buildPath,
-    transforms: ['name/cti/kebab', 'color/hex', 'color/hexAlpha', 'shadow/css'],
+    transforms: ['name/cti/kebab', 'color/hex', 'color/hexAlpha', 'shadow/css', 'border/css'],
     options: {
       basePxFontSize: 16
     },

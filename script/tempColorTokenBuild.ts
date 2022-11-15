@@ -9,7 +9,11 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
   const themes: TokenBuildInput[] = [
     {
       filename: 'light',
-      source: [`tokens/functional/color/light/*.json5`, `tokens/functional/shadow/light.json5`],
+      source: [
+        `tokens/functional/color/light/*.json5`,
+        `tokens/functional/shadow/light.json5`,
+        `tokens/functional/border/light.json5`
+      ],
       include: [`tokens/base/color/light/light.json5`]
     },
     {
@@ -17,7 +21,8 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
       source: [
         `tokens/functional/color/light/*.json5`,
         `tokens/functional/color/light/overrides/light.tritanopia.json5`,
-        `tokens/functional/shadow/light.json5`
+        `tokens/functional/shadow/light.json5`,
+        `tokens/functional/border/light.json5`
       ],
       include: [`tokens/base/color/light/light.json5`, `tokens/base/color/light/light.tritanopia.json5`]
     },
@@ -26,7 +31,8 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
       source: [
         `tokens/functional/color/light/*.json5`,
         `tokens/functional/color/light/overrides/light.protanopia-deuteranopia.json5`,
-        `tokens/functional/shadow/light.json5`
+        `tokens/functional/shadow/light.json5`,
+        `tokens/functional/border/light.json5`
       ],
       include: [`tokens/base/color/light/light.json5`, `tokens/base/color/light/light.protanopia-deuteranopia.json5`]
     },
@@ -35,13 +41,18 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
       source: [
         `tokens/functional/color/light/*.json5`,
         `tokens/functional/color/light/overrides/light.high-contrast.json5`,
-        `tokens/functional/shadow/light.json5`
+        `tokens/functional/shadow/light.json5`,
+        `tokens/functional/border/light.json5`
       ],
       include: [`tokens/base/color/light/light.json5`, `tokens/base/color/light/light.high-contrast.json5`]
     },
     {
       filename: 'dark',
-      source: [`tokens/functional/color/dark/*.json5`, `tokens/functional/shadow/dark.json5`],
+      source: [
+        `tokens/functional/color/dark/*.json5`,
+        `tokens/functional/shadow/dark.json5`,
+        `tokens/functional/border/dark.json5`
+      ],
       include: [`tokens/base/color/dark/dark.json5`]
     },
     {
@@ -49,7 +60,8 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
       source: [
         `tokens/functional/color/dark/*.json5`,
         `tokens/functional/color/dark/overrides/dark.dimmed.json5`,
-        `tokens/functional/shadow/dark.json5`
+        `tokens/functional/shadow/dark.json5`,
+        `tokens/functional/border/dark.json5`
       ],
       include: [`tokens/base/color/dark/dark.json5`, `tokens/base/color/dark/dark.dimmed.json5`]
     },
@@ -58,7 +70,8 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
       source: [
         `tokens/functional/color/dark/*.json5`,
         `tokens/functional/color/dark/overrides/dark.tritanopia.json5`,
-        `tokens/functional/shadow/dark.json5`
+        `tokens/functional/shadow/dark.json5`,
+        `tokens/functional/border/dark.json5`
       ],
       include: [`tokens/base/color/dark/dark.json5`, `tokens/base/color/dark/dark.tritanopia.json5`]
     },
@@ -67,7 +80,8 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
       source: [
         `tokens/functional/color/dark/*.json5`,
         `tokens/functional/color/dark/overrides/dark.protanopia-deuteranopia.json5`,
-        `tokens/functional/shadow/dark.json5`
+        `tokens/functional/shadow/dark.json5`,
+        `tokens/functional/border/dark.json5`
       ],
       include: [`tokens/base/color/dark/dark.json5`, `tokens/base/color/dark/dark.protanopia-deuteranopia.json5`]
     },
@@ -76,7 +90,8 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
       source: [
         `tokens/functional/color/dark/*.json5`,
         `tokens/functional/color/dark/overrides/dark.high-contrast.json5`,
-        `tokens/functional/shadow/dark.json5`
+        `tokens/functional/shadow/dark.json5`,
+        `tokens/functional/border/dark.json5`
       ],
       include: [`tokens/base/color/dark/dark.json5`, `tokens/base/color/dark/dark.high-contrast.json5`]
     }

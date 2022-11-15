@@ -1,0 +1,38 @@
+import StyleDictionary from 'style-dictionary'
+import {BorderTokenValue} from '../../types/BorderTokenValue'
+import {isBorder} from '../filters/isBorder'
+
+/**
+ * checks if all required properties exist on shadow token
+ * @param object - ShadowTokenValue
+ * @returns void or throws error
+ */
+const checkForBorderTokenProperties = (border: BorderTokenValue) => {
+  const requiredProperties = ['color', 'width', 'style']
+  for (const prop of requiredProperties) {
+    if (prop in border === false) {
+      throw new Error(`Missing propery: ${prop} on shadow token ${JSON.stringify(border)}`)
+    }
+  }
+}
+/**
+ * @description converts w3c border tokens in css border string
+ * @type value transformer — [StyleDictionary.ValueTransform](https://github.com/amzn/style-dictionary/blob/main/types/Transform.d.ts)
+ * @matcher matches all tokens of $type `border`
+ * @transformer returns css border `string`
+ */
+export const borderToCss: StyleDictionary.Transform = {
+  type: `value`,
+  transitive: true,
+  matcher: isBorder,
+  transformer: ({value}: {value: BorderTokenValue}) => {
+    //
+    checkForBorderTokenProperties(value)
+    // if value === string it was probably already transformed
+    if (typeof value === 'string') {
+      return value
+    }
+    /* color | style | width */
+    return `${value.color} ${value.style} ${value.width}`
+  }
+}
