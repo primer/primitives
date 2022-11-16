@@ -13,7 +13,8 @@ import {
   javascriptCommonJs,
   javascriptEsm,
   typescriptExportDefinition,
-  jsonNestedPrefixed
+  jsonNestedPrefixed,
+  cssThemed
 } from './formats'
 
 /**
@@ -26,6 +27,11 @@ StyleDictionary.registerParser(w3cJsonParser)
  * Formats
  *
  */
+StyleDictionary.registerFormat({
+  name: 'css/themed',
+  formatter: cssThemed
+})
+
 StyleDictionary.registerFormat({
   name: 'scss/mixin-css-variables',
   formatter: scssMixinCssVariables
