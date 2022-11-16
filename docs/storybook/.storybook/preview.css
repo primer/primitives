@@ -10,7 +10,7 @@
 @import '../../../tokens-v2-private/css/tokens/functional/typography/typography.css';
 
 /* color */
-
+/* scales */
 @import '../../../tokens-v2-private/css/base/color/light.css';
 @import '../../../tokens-v2-private/css/base/color/light-tritanopia.css';
 @import '../../../tokens-v2-private/css/base/color/light-high-contrast.css';
@@ -20,3 +20,13 @@
 @import '../../../tokens-v2-private/css/base/color/dark-dimmed.css';
 @import '../../../tokens-v2-private/css/base/color/dark-high-contrast.css';
 @import '../../../tokens-v2-private/css/base/color/dark-tritanopia.css';
+/* functional */
+@import '../../../tokens-v2-private/css/functional/themes/light.css';
+@import '../../../tokens-v2-private/css/functional/themes/light-tritanopia.css';
+@import '../../../tokens-v2-private/css/functional/themes/light-high-contrast.css';
+@import '../../../tokens-v2-private/css/functional/themes/light-colorblind.css';
+@import '../../../tokens-v2-private/css/functional/themes/dark.css';
+@import '../../../tokens-v2-private/css/functional/themes/dark-colorblind.css';
+@import '../../../tokens-v2-private/css/functional/themes/dark-dimmed.css';
+@import '../../../tokens-v2-private/css/functional/themes/dark-high-contrast.css';
+@import '../../../tokens-v2-private/css/functional/themes/dark-tritanopia.css';
