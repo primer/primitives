@@ -1,4 +1,4 @@
-// import '../temp-themes/color-modes/index.scss'
+import './preview.css'
 
 export const parameters = {
   actions: {argTypesRegex: '^on[A-Z].*'},

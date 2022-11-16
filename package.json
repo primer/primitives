@@ -41,7 +41,9 @@
     "release": "changeset publish",
     "build:color-tokens": "ts-node -r tsconfig-paths/register ./script/tempColorTokenBuild.ts",
     "test": "jest --verbose --coverage",
-    "watch": "ls data/**/*.scss script/**/*.ts | entr -s 'yarn build'"
+    "watch": "ls data/**/*.scss script/**/*.ts | entr -s 'yarn build'",
+    "start:storybook": "npm run build:color-tokens && cd docs/storybook && npm run storybook",
+    "build:new-tokens": "npm run build:tokens && npm run build:color-tokens"
   },
   "prettier": "@github/prettier-config",
   "devDependencies": {
