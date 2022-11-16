@@ -6,7 +6,7 @@ const getCssSelectors = (outputFile: string): {selector: string; selectorLight: 
   // check for dark in the beginning of the output filename
   const lastSlash = outputFile.lastIndexOf('/')
   const outputBasename = outputFile.substring(lastSlash + 1, outputFile.indexOf('.'))
-  const themeName = outputBasename.replace('-', '_')
+  const themeName = outputBasename.replace(/-/g, '_')
   const mode = outputBasename.substring(0, 4) === 'dark' ? 'dark' : 'light'
 
   return {
