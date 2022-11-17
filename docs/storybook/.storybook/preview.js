@@ -48,6 +48,7 @@ export const decorators = [
                 data-dark-theme={theme.startsWith('dark') ? theme : undefined}
               >
                 <Story {...context} />
+                <p className="theme-name">{theme}</p>
               </div>
             )
           }
