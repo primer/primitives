@@ -1,12 +1,20 @@
 import StyleDictionary from 'style-dictionary'
 import {w3cJsonParser} from './parsers'
-import {colorToHexAlpha, colorToRgbAlpha, colorToHex, jsonDeprecated, namePathToDotNotation} from './transformers'
+import {
+  colorToHexAlpha,
+  colorToRgbAlpha,
+  colorToHex,
+  jsonDeprecated,
+  shadowToCss,
+  namePathToDotNotation
+} from './transformers'
 import {
   scssMixinCssVariables,
   javascriptCommonJs,
   javascriptEsm,
   typescriptExportDefinition,
-  jsonNestedPrefixed
+  jsonNestedPrefixed,
+  cssThemed
 } from './formats'
 
 /**
@@ -19,6 +27,11 @@ StyleDictionary.registerParser(w3cJsonParser)
  * Formats
  *
  */
+StyleDictionary.registerFormat({
+  name: 'css/themed',
+  formatter: cssThemed
+})
+
 StyleDictionary.registerFormat({
   name: 'scss/mixin-css-variables',
   formatter: scssMixinCssVariables
@@ -71,6 +84,11 @@ StyleDictionary.registerTransform({
 StyleDictionary.registerTransform({
   name: 'name/pathToDotNotation',
   ...namePathToDotNotation
+})
+
+StyleDictionary.registerTransform({
+  name: 'shadow/css',
+  ...shadowToCss
 })
 
 /**
