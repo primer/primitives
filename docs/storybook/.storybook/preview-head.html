@@ -1,0 +1,74 @@
+<style>
+  .story-wrap {
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+      Helvetica Neue, sans-serif;
+    color: var(--ui-color-text-default);
+    background-color: var(--ui-color-bg-default);
+    height: 100vh;
+  }
+
+  .theme-wrap {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+    height: 100vh;
+  }
+
+  .theme-wrap .story-wrap {
+    padding: 1rem;
+    height: unset;
+  }
+
+  .sb-main-padded .theme-wrap {
+    margin: -1rem;
+  }
+
+  .sb-main-fullscreen .theme-wrap .story-wrap {
+    padding: 0;
+  }
+
+  .sb-main-padded div:not(.theme-wrap) > [data-dark-theme] {
+    margin: -1rem;
+    padding: 1rem;
+  }
+
+  .theme-wrap {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(var(--primer-breakpoint-xsmall), auto));
+    grid-gap: 1px;
+  }
+
+  .theme-wrap .story-wrap {
+    /* Lookbook border color */
+    outline: 1px solid #d4d4d8;
+    padding-bottom: 40px;
+    position: relative;
+  }
+
+  @media (max-width: calc(20rem * 4)) {
+    .theme-wrap {
+      grid-template-columns: repeat(3, minmax(var(--primer-breakpoint-xsmall), auto));
+    }
+  }
+
+  @media (max-width: calc(20rem * 3)) {
+    .theme-wrap {
+      grid-template-columns: repeat(2, minmax(var(--primer-breakpoint-xsmall), auto));
+    }
+  }
+
+  @media (max-width: calc(20rem * 2)) {
+    .theme-wrap {
+      display: block;
+    }
+  }
+
+  .theme-name {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: var(--color-canvas-subtle);
+    padding: var(--base-size-4) var(--base-size-8);
+    font: var(--primer-text-caption-shorthand);
+    margin: 0;
+  }
+</style>
