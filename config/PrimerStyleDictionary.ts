@@ -17,6 +17,7 @@ import {
   cssThemed
 } from './formats'
 import {borderToCss} from './transformers/borderToCss'
+import {namePathToKebabCase} from './transformers/namePathToKebabCase'
 
 /**
  * Parsers
@@ -85,6 +86,11 @@ StyleDictionary.registerTransform({
 StyleDictionary.registerTransform({
   name: 'name/pathToDotNotation',
   ...namePathToDotNotation
+})
+
+StyleDictionary.registerTransform({
+  name: 'name/pathToKebabCase',
+  ...namePathToKebabCase
 })
 
 StyleDictionary.registerTransform({
