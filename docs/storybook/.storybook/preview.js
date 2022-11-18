@@ -38,11 +38,23 @@ export const decorators = [
     return (
       <div class="theme-wrap">
         {themes.map(theme => {
-          if (context.globals.theme === theme || context.globals.theme === 'all') {
+          if (context.globals.theme === theme) {
             return (
               <div
                 id="story"
                 className="story-wrap"
+                data-color-mode={theme.startsWith('dark') ? 'dark' : 'light'}
+                data-light-theme={theme.startsWith('light') ? theme : undefined}
+                data-dark-theme={theme.startsWith('dark') ? theme : undefined}
+              >
+                <Story {...context} />
+              </div>
+            )
+          } else if (context.globals.theme === 'all') {
+            return (
+              <div
+                id="story"
+                className="story-wrap all-themes"
                 data-color-mode={theme.startsWith('dark') ? 'dark' : 'light'}
                 data-light-theme={theme.startsWith('light') ? theme : undefined}
                 data-dark-theme={theme.startsWith('dark') ? theme : undefined}
