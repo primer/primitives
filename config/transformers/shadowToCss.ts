@@ -10,8 +10,8 @@ import {alpha} from '../utilities'
  * @returns void or throws error
  */
 const checkForShadowTokenProperties = (shadow: ShadowTokenValue) => {
-  const requiredShadowProperties = ['color', 'offsetX', 'offsetY', 'blur', 'spread']
-  for (const prop of requiredShadowProperties) {
+  const requiredProperties = ['color', 'offsetX', 'offsetY', 'blur', 'spread']
+  for (const prop of requiredProperties) {
     if (prop in shadow === false) {
       throw new Error(`Missing propery: ${prop} on shadow token ${JSON.stringify(shadow)}`)
     }
@@ -30,11 +30,11 @@ export const shadowToCss: StyleDictionary.Transform = {
   transformer: ({value}: {value: ShadowTokenValue | ShadowTokenValue[]}) => {
     // turn value into array
     const shadowValues = !Array.isArray(value) ? [value] : value
+
     return shadowValues
       .map((shadow: ShadowTokenValue) => {
         // if value === string it was probably already transformed
         if (typeof shadow === 'string') return shadow
-
         checkForShadowTokenProperties(shadow)
         /*css box shadow:  inset? | offset-x | offset-y | blur-radius | spread-radius | color */
         return `${shadow.inset === true ? 'inset ' : ''}${shadow.offsetX} ${shadow.offsetY} ${shadow.blur} ${

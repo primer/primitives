@@ -16,6 +16,7 @@ import {
   jsonNestedPrefixed,
   cssThemed
 } from './formats'
+import {borderToCss} from './transformers/borderToCss'
 
 /**
  * Parsers
@@ -89,6 +90,11 @@ StyleDictionary.registerTransform({
 StyleDictionary.registerTransform({
   name: 'shadow/css',
   ...shadowToCss
+})
+
+StyleDictionary.registerTransform({
+  name: 'border/css',
+  ...borderToCss
 })
 
 /**

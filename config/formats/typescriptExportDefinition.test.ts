@@ -14,6 +14,14 @@ describe('Format: TypeScript definitions', () => {
         yellow: getMockToken({
           value: '#FF0000'
         }),
+        border: getMockToken({
+          $type: 'border',
+          value: {
+            color: '#FF0000',
+            style: 'solid',
+            width: '1px'
+          }
+        }),
         // default: getMockToken({
         //   value: 16,
         //   $type: 'dimension'
@@ -39,12 +47,19 @@ describe('Format: TypeScript definitions', () => {
        */
       type ColorHex = string;
 
+      /**
+       * @description a css border string
+       * @format color | style | width
+       */
+      type Border = \`\${ColorHex} \${string} \${string}\`;
+
       export type tokens = {
         test: {
           tokens: {
             subgroup: {
               red: ColorHex;
               yellow: string;
+              border: Border;
               complex: {
                 top: number;
                 bottom: any;
@@ -67,11 +82,18 @@ describe('Format: TypeScript definitions', () => {
       */
       type ColorHex = string;
 
+      /**
+       * @description a css border string
+       * @format color | style | width
+       */
+      type Border = \`\${ColorHex} \${string} \${string}\`;
+
       export type tokens = {
         tokens: {
           subgroup: {
             red: ColorHex;
             yellow: string;
+            border: Border;
             complex: {
               top: number;
               bottom: any;
