@@ -38,7 +38,7 @@ export const globalTypes = {
 export const decorators = [
   (Story, context) => {
     return (
-      <div className={context.globals.theme === 'all' ? 'theme-wrap-grid' : 'theme-wrap'}>
+      <div className={context.globals.theme === 'all' && 'theme-wrap-grid'}>
         {themes.map(theme => {
           if (context.globals.theme === theme || context.globals.theme === 'all') {
             return (
