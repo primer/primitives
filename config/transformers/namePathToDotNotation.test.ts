@@ -44,4 +44,16 @@ describe('Transformer: namePathToDotNotation', () => {
     const expectedOutput = ['start.pathToToken', 'start.PATHTOToken', 'start.pathToToken']
     expect(input.map(item => namePathToDotNotation.transformer(item))).toStrictEqual(expectedOutput)
   })
+
+  it('adds prefix to token name', () => {
+    const platform = {
+      prefix: 'PRIMER'
+    }
+    const input = getMockToken({
+      name: 'tokenName',
+      path: ['start', 'pathTo', 'token']
+    })
+    const expectedOutput = 'PRIMER.start.pathTo.token'
+    expect(namePathToDotNotation.transformer(input, platform)).toStrictEqual(expectedOutput)
+  })
 })
