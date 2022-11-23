@@ -4,59 +4,35 @@
       Helvetica Neue, sans-serif;
     color: var(--ui-color-text-default);
     background-color: var(--ui-color-bg-default);
-    height: 100vh;
   }
 
-  .theme-wrap {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
-    height: 100vh;
-  }
-
-  .theme-wrap .story-wrap {
-    padding: 1rem;
-    height: unset;
-  }
-
-  .sb-main-padded .theme-wrap {
-    margin: -1rem;
-  }
-
-  .sb-main-fullscreen .theme-wrap .story-wrap {
-    padding: 0;
-  }
-
-  .sb-main-padded div:not(.theme-wrap) > [data-dark-theme] {
-    margin: -1rem;
-    padding: 1rem;
-  }
-
-  .theme-wrap {
+  .theme-wrap-grid {
     display: grid;
     grid-template-columns: repeat(4, minmax(var(--primer-breakpoint-xsmall), auto));
     grid-gap: 1px;
+    height: 100vh;
   }
 
-  .theme-wrap .all-themes {
+  .story-wrap-grid {
     outline: 1px solid #d4d4d8;
     padding-bottom: 40px;
     position: relative;
   }
 
   @media (max-width: calc(20rem * 4)) {
-    .theme-wrap {
+    .theme-wrap-grid {
       grid-template-columns: repeat(3, minmax(var(--primer-breakpoint-xsmall), auto));
     }
   }
 
   @media (max-width: calc(20rem * 3)) {
-    .theme-wrap {
+    .theme-wrap-grid {
       grid-template-columns: repeat(2, minmax(var(--primer-breakpoint-xsmall), auto));
     }
   }
 
   @media (max-width: calc(20rem * 2)) {
-    .theme-wrap {
+    .theme-wrap-grid {
       display: block;
     }
   }
