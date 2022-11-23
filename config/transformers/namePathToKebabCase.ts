@@ -8,5 +8,12 @@ import StyleDictionary from 'style-dictionary'
  */
 export const namePathToKebabCase: StyleDictionary.Transform = {
   type: `name`,
-  transformer: (token: StyleDictionary.TransformedToken) => token.path.join('-')
+  transformer: (token: StyleDictionary.TransformedToken, options?: StyleDictionary.Platform): string => {
+    return (
+      [options?.prefix, ...token.path]
+        // remove undefined if exists
+        .filter((part: unknown): part is string => typeof part === 'string')
+        .join('-')
+    )
+  }
 }
