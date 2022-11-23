@@ -44,4 +44,16 @@ describe('Transformer: namePathToKebabCase', () => {
     const expectedOutput = ['start-path to token', 'start-PATH_tO-Token', 'start-path+toToken']
     expect(input.map(item => namePathToKebabCase.transformer(item))).toStrictEqual(expectedOutput)
   })
+
+  it('adds prefix to token name', () => {
+    const platform = {
+      prefix: 'PRIMER'
+    }
+    const input = getMockToken({
+      name: 'tokenName',
+      path: ['start', 'pathTo', 'token']
+    })
+    const expectedOutput = 'PRIMER-start-pathTo-token'
+    expect(namePathToKebabCase.transformer(input, platform)).toStrictEqual(expectedOutput)
+  })
 })
