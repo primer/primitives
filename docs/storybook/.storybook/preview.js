@@ -1,7 +1,9 @@
 import './preview.css'
+import clsx from 'clsx'
 
 export const parameters = {
   actions: {argTypesRegex: '^on[A-Z].*'},
+  layout: 'fullscreen',
   controls: {
     matchers: {
       color: /(background|color)$/i,
@@ -36,31 +38,19 @@ export const globalTypes = {
 export const decorators = [
   (Story, context) => {
     return (
-      <div class="theme-wrap">
+      <div className={context.globals.theme === 'all' ? 'theme-wrap-grid' : 'theme-wrap'}>
         {themes.map(theme => {
-          if (context.globals.theme === theme) {
+          if (context.globals.theme === theme || context.globals.theme === 'all') {
             return (
               <div
                 id="story"
-                className="story-wrap"
+                className={clsx(context.globals.theme === 'all' && 'story-wrap-grid', 'story-wrap')}
                 data-color-mode={theme.startsWith('dark') ? 'dark' : 'light'}
                 data-light-theme={theme.startsWith('light') ? theme : undefined}
                 data-dark-theme={theme.startsWith('dark') ? theme : undefined}
               >
                 <Story {...context} />
-              </div>
-            )
-          } else if (context.globals.theme === 'all') {
-            return (
-              <div
-                id="story"
-                className="story-wrap all-themes"
-                data-color-mode={theme.startsWith('dark') ? 'dark' : 'light'}
-                data-light-theme={theme.startsWith('light') ? theme : undefined}
-                data-dark-theme={theme.startsWith('dark') ? theme : undefined}
-              >
-                <Story {...context} />
-                <p className="theme-name">{theme}</p>
+                {context.globals.theme === 'all' && <p className="theme-name">{theme}</p>}
               </div>
             )
           }
