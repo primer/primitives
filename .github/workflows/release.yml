@@ -24,7 +24,7 @@ jobs:
           node-version: 14.x
 
       - name: Install dependencies
-        run: yarn
+        run: yarn && pushd docs; yarn; popd
 
       - name: Build tokens
         run: yarn build
