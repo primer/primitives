@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
-
+npm run build
 if npm run lint ; then
     echo "Lint check passed"
 else
@@ -14,4 +14,3 @@ else
     echo "[info] Attempt an auto-fix with 'npm run format'"
     exit 1
 fi
-
