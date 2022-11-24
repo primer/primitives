@@ -1,4 +1,5 @@
 export {alpha} from './alpha'
+export {checkRequiredTokenProperties} from './checkRequiredTokenProperties'
 export {copyFilesAndFolders} from './copyFilesAndFolders'
 export {jsonToNestedValue} from './jsonToNestedValue'
 export {prefixTokens} from './prefixTokens'
