@@ -1,4 +1,4 @@
-import {Box} from '@primer/components'
+import {Box} from '@primer/react'
 import get from 'lodash.get'
 import React from 'react'
 import colors from '../../../dist/js/colors'

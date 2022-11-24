@@ -1,7 +1,7 @@
 import colors from '../../../dist/js/colors'
 import React from 'react'
 import {useColorTheme} from './color-theme-context'
-import {Box, Text} from '@primer/components'
+import {Box, Text} from '@primer/react'
 import {readableColor} from 'color2k'
 
 export function ColorScales() {

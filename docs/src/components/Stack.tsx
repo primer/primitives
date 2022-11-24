@@ -1,5 +1,5 @@
 import React, {Fragment, FC} from 'react'
-import {Box} from '@primer/components'
+import {Box} from '@primer/react'
 
 interface StackVisualProps {
   gap?: boolean

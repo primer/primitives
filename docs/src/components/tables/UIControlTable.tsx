@@ -1,5 +1,5 @@
 import React, {Fragment, FC} from 'react'
-import {Box} from '@primer/components'
+import {Box} from '@primer/react'
 import TokenTable from '../TokenTable'
 import TokenInlineCode from '../TokenInlineCode'
 import FrameworkVariableTable from './FrameworkVariableTable'
