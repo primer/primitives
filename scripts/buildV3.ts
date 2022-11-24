@@ -167,6 +167,23 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
       prefix: undefined,
     }),
   ).buildAllPlatforms()
+
+  /**
+   * build typography
+   */
+  PrimerStyleDictionary.extend(
+    getStyleDictionaryConfig(
+      `functional/typography/typography`,
+      [`src/tokens/functional/typography/*.json`],
+      [`src/tokens/base/typography/*.json`],
+      buildOptions,
+    ),
+  ).buildAllPlatforms()
+
+  PrimerStyleDictionary.extend(
+    getStyleDictionaryConfig(`base/typography/typography`, [`src/tokens/base/typography/*.json`], [], buildOptions),
+  ).buildAllPlatforms()
+
   /**
    * build deprecated.json
    */
@@ -176,6 +193,11 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
       filename: 'theme',
       source: [...themes[0].source, ...themes[0].include],
       include: themes[0].include,
+    },
+    {
+      filename: 'typography',
+      source: [`src/tokens/functional/typography/*.json`],
+      include: [`src/tokens/base/typography/*.json`],
     },
   ]
   //
@@ -198,6 +220,11 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
       filename: 'theme',
       source: themes[0].source,
       include: themes[0].include,
+    },
+    {
+      filename: 'typography',
+      source: [`src/tokens/functional/typography/*.json`],
+      include: [`src/tokens/base/typography/*.json`],
     },
   ]
   //

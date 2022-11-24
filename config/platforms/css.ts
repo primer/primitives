@@ -1,6 +1,6 @@
+import {isColor, isSource, isShadow} from '~/config/filters'
 import type StyleDictionary from 'style-dictionary'
 import type {PlatformInitializer} from '~/types/PlatformInitializer'
-import {isColor, isShadow, isSource} from '~/config/filters'
 
 const getCssSelectors = (outputFile: string): {selector: string; selectorLight: string; selectorDark: string} => {
   // check for dark in the beginning of the output filename
@@ -21,7 +21,16 @@ export const css: PlatformInitializer = (outputFile, prefix, buildPath, _options
   return {
     prefix,
     buildPath,
-    transforms: ['name/pathToKebabCase', 'color/hex', 'color/hexAlpha', 'shadow/css', 'border/css'],
+    transforms: [
+      'name/pathToKebabCase',
+      'color/hex',
+      'color/hexAlpha',
+      'shadow/css',
+      'border/css',
+      'typography/css',
+      'fontFamily/css',
+      'fontWeight/number',
+    ],
     options: {
       basePxFontSize: 16,
     },
@@ -39,11 +48,10 @@ export const css: PlatformInitializer = (outputFile, prefix, buildPath, _options
       },
       {
         destination: `${outputFile}`,
-        format: `css/themed`,
+        format: `css/variables`,
         filter: token => isSource(token) && !isColor(token) && !isShadow(token),
         options: {
           outputReferences: false,
-          selector: ':root',
         },
       },
     ],
