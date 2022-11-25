@@ -1,4 +1,5 @@
-import React, {Fragment, FC} from 'react'
+import type React from 'react'
+import {Fragment} from 'react'
 import {Box} from '@primer/components'
 import TokenTable from '../TokenTable'
 import TokenInlineCode from '../TokenInlineCode'
@@ -10,7 +11,7 @@ interface BorderTableProps {
   borderWidth?: boolean
 }
 
-const BorderTable: FC<BorderTableProps> = ({filePath, borderWidth}) => {
+const BorderTable: React.FC<BorderTableProps> = ({filePath, borderWidth}) => {
   return (
     <Box as="div" sx={{overflow: 'auto'}}>
       <TokenTable>

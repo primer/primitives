@@ -1,4 +1,5 @@
-import React, {Fragment, FC} from 'react'
+import type React from 'react'
+import {Fragment} from 'react'
 import {Box} from '@primer/components'
 
 interface ControlStackVisualProps {
@@ -8,7 +9,7 @@ interface ControlStackVisualProps {
   variant?: string
 }
 
-const ControlStackVisual: FC<ControlStackVisualProps> = ({modifier, variant}) => {
+const ControlStackVisual: React.FC<ControlStackVisualProps> = ({modifier, variant}) => {
   return (
     <Fragment>
       <Box

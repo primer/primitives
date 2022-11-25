@@ -1,5 +1,5 @@
-import StyleDictionary from 'style-dictionary'
 import {isDeprecated} from '~/config/filters'
+import type StyleDictionary from 'style-dictionary'
 /**
  * @description replaces tokens value with content of tokens `deprecated` property
  * @type value transformer — [StyleDictionary.ValueTransform](https://github.com/amzn/style-dictionary/blob/main/types/Transform.d.ts)

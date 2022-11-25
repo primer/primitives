@@ -1,6 +1,6 @@
-import StyleDictionary from 'style-dictionary'
 import {isColorWithAlpha} from '~/config/filters'
 import {alpha} from '~/config/utilities'
+import type StyleDictionary from 'style-dictionary'
 /**
  * @description replaces tokens value with `rgba` color using the tokens `alpha` property to specify the value used for alpha
  * @type value transformer — [StyleDictionary.ValueTransform](https://github.com/amzn/style-dictionary/blob/main/types/Transform.d.ts)
