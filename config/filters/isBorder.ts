@@ -1,4 +1,4 @@
-import StyleDictionary from 'style-dictionary'
+import type StyleDictionary from 'style-dictionary'
 
 /**
  * @description Checks if token is of $type `border`

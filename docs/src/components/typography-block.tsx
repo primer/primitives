@@ -1,4 +1,5 @@
-import React, {Fragment, FC} from 'react'
+// eslint-disable-next-line @typescript-eslint/consistent-type-imports
+import React, {Fragment} from 'react'
 import {Box} from '@primer/components'
 
 interface TypographyBlockProps {
@@ -12,7 +13,7 @@ interface TypographyBlockProps {
   children?: string
 }
 
-const TypographyBlock: FC<TypographyBlockProps> = ({
+const TypographyBlock: React.FC<TypographyBlockProps> = ({
   variant,
   modifier = '',
   fontSize,

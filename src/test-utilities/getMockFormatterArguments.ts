@@ -1,4 +1,4 @@
-import {FormatterArguments} from 'style-dictionary/types/Format'
+import type {FormatterArguments} from 'style-dictionary/types/Format'
 import {getMockDictionary} from './'
 
 const defaultFormatterArguments: FormatterArguments = {

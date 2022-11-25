@@ -1,4 +1,5 @@
-import React, {Fragment, FC} from 'react'
+// eslint-disable-next-line @typescript-eslint/consistent-type-imports
+import React, {Fragment} from 'react'
 import {Box} from '@primer/components'
 
 interface ControlStackVisualProps {
@@ -8,7 +9,7 @@ interface ControlStackVisualProps {
   variant?: string
 }
 
-const ControlStackVisual: FC<ControlStackVisualProps> = ({modifier, variant}) => {
+const ControlStackVisual: React.FC<ControlStackVisualProps> = ({modifier, variant}) => {
   return (
     <Fragment>
       <Box

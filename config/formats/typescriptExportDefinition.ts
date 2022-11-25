@@ -3,7 +3,7 @@ import {format} from 'prettier'
 import fs = require('fs')
 import path = require('path')
 import {prefixTokens} from '~/config/utilities'
-import {FormatterArguments} from 'style-dictionary/types/Format'
+import type {FormatterArguments} from 'style-dictionary/types/Format'
 
 const {fileHeader} = StyleDictionary.formatHelpers
 

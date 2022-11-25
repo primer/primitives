@@ -1,6 +1,6 @@
-import StyleDictionary from 'style-dictionary'
 import {toHex} from 'color2k'
 import {isColor} from '~/config/filters'
+import type StyleDictionary from 'style-dictionary'
 /**
  * @description converts color tokens value to `hex6` or `hex8`
  * @type value transformer — [StyleDictionary.ValueTransform](https://github.com/amzn/style-dictionary/blob/main/types/Transform.d.ts)

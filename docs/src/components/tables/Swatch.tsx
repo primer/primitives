@@ -1,4 +1,5 @@
-import React, {FC} from 'react'
+// eslint-disable-next-line @typescript-eslint/consistent-type-imports
+import React from 'react'
 import {Box} from '@primer/components'
 
 interface SwatchProps {
@@ -8,7 +9,7 @@ interface SwatchProps {
   color?: string
 }
 
-const Swatch: FC<SwatchProps> = ({height, width, color}) => {
+const Swatch: React.FC<SwatchProps> = ({height, width, color}) => {
   return <Box borderRadius={2} height={height} width={width} backgroundColor={color}></Box>
 }
 

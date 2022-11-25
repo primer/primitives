@@ -1,4 +1,4 @@
-import StyleDictionary from 'style-dictionary'
+import type StyleDictionary from 'style-dictionary'
 import {getMockToken} from './getMockToken'
 
 const mockDictionaryDefault = {

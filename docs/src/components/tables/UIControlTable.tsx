@@ -1,4 +1,5 @@
-import React, {Fragment, FC} from 'react'
+// eslint-disable-next-line @typescript-eslint/consistent-type-imports
+import React, {Fragment} from 'react'
 import {Box} from '@primer/components'
 import TokenTable from '../TokenTable'
 import TokenInlineCode from '../TokenInlineCode'
@@ -11,7 +12,7 @@ interface UIControlTableProps {
   tokenVariant?: string
 }
 
-const UIControlTable: FC<UIControlTableProps> = ({filePath, tokenVariant}) => {
+const UIControlTable: React.FC<UIControlTableProps> = ({filePath, tokenVariant}) => {
   return (
     <Box as="div" sx={{overflow: 'auto'}}>
       <TokenTable>

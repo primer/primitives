@@ -1,4 +1,5 @@
-import React, {FC} from 'react'
+// eslint-disable-next-line @typescript-eslint/consistent-type-imports
+import React from 'react'
 import {Box} from '@primer/components'
 import FrameworkVariableTable from './FrameworkVariableTable'
 import TokenInlineCode from '../TokenInlineCode'
@@ -11,7 +12,7 @@ interface BaseSizeTableProps {
   showExample?: boolean
 }
 
-const BaseSizeTable: FC<BaseSizeTableProps> = ({filePath, showExample}) => {
+const BaseSizeTable: React.FC<BaseSizeTableProps> = ({filePath, showExample}) => {
   return (
     <Box as="div" sx={{overflow: 'auto'}}>
       <TokenTable>

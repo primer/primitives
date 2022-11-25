@@ -1,5 +1,5 @@
 import {parse as json5Parse} from 'json5'
-import StyleDictionary from 'style-dictionary'
+import type StyleDictionary from 'style-dictionary'
 
 /**
  * @description Parses a valid [json5](https://json5.org) file and replaces `$value` with `value` and `$description` with `comment` to make a w3c standard file compatible with style dictionary
