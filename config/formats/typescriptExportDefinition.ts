@@ -52,28 +52,28 @@ const invalidTokenValueError = (token: w3cTransformedToken) => {
  * @param type
  * @returns
  */
-const convertPropToType = (token: w3cTransformedToken): string => {
-  if (!Object.prototype.hasOwnProperty.call(token, 'value')) {
-    throw new Error(`Invalid token: ${token}`)
+const convertPropToType = (tree: w3cTransformedToken): string => {
+  if (!Object.prototype.hasOwnProperty.call(tree, 'value')) {
+    throw new Error(`Invalid token: ${tree}`)
   }
-  switch (token.$type) {
+  switch (tree.$type) {
     case 'color':
-      if (typeof token.value === 'string' && token.value[0] === '#') {
+      if (typeof tree.value === 'string' && tree.value[0] === '#') {
         return 'ColorHex'
       }
-      return invalidTokenValueError(token)
+      return invalidTokenValueError(tree)
     case 'dimension':
-      if (typeof token.value === 'string' && token.value.substring(token.value.length - 3) === 'rem') return 'SizeRem'
-      if (typeof token.value === 'string' && token.value.substring(token.value.length - 2) === 'px') return 'SizePx'
-      return invalidTokenValueError(token)
+      if (typeof tree.value === 'string' && tree.value.substring(tree.value.length - 3) === 'rem') return 'SizeRem'
+      if (typeof tree.value === 'string' && tree.value.substring(tree.value.length - 2) === 'px') return 'SizePx'
+      return invalidTokenValueError(tree)
     case 'shadow':
       return 'Shadow'
     case 'border':
       return 'Border'
     default:
-      if (typeof token.value === 'number') return 'number'
-      if (typeof token.value === 'string') return 'string'
-      if (typeof token.value === 'boolean') return 'boolean'
+      if (typeof tree.value === 'number') return 'number'
+      if (typeof tree.value === 'string') return 'string'
+      if (typeof tree.value === 'boolean') return 'boolean'
       return 'any'
   }
 }
@@ -82,8 +82,8 @@ const convertPropToType = (token: w3cTransformedToken): string => {
  * @param item object
  * @returns boolean
  */
-const validTokenNode = (item: Record<string, unknown>): boolean => {
-  return typeof item === 'object' && 'value' in item
+const validTokenNode = (item: w3cTransformedToken | unknown): item is w3cTransformedToken => {
+  return typeof item === 'object' && item !== null && 'value' in item
 }
 /**
  * returns a set with every used token type
@@ -95,7 +95,7 @@ const getUsedTokenTypes = (tokens: StyleDictionary.DesignTokens, validTypes: str
   // using a set to assure every value only exists once
   const usedTypes = new Set<string>()
   // adds type to set
-  const callback = (item: Record<string, unknown>) => usedTypes.add(convertPropToType(item as w3cTransformedToken))
+  const callback = (tree: unknown) => usedTypes.add(convertPropToType(tree as w3cTransformedToken))
   // tree walker adds to usedTypes
   treeWalker(tokens, callback, validTokenNode)
   // clean up types
@@ -112,6 +112,9 @@ const getUsedTokenTypes = (tokens: StyleDictionary.DesignTokens, validTypes: str
  * @returns object
  */
 const getTokenObjectWithTypes = (tokens: StyleDictionary.DesignTokens): Record<string, unknown> => {
+  // TODO: FIX typescript issues
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   return treeWalker(tokens, convertPropToType, validTokenNode) as Record<string, unknown>
 }
 /**

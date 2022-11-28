@@ -6,26 +6,22 @@
  * @returns object
  */
 export const treeWalker = (
-  tree: Record<string, unknown>,
-  // TODO: FIX typescript issues
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore
-  callback,
-  validItem: (item: Record<string, unknown>) => boolean
+  tree: unknown,
+  callback: <T>(argument: T) => unknown,
+  isValidItem: (argument: unknown) => boolean
 ): unknown => {
   // is a valid item -> pass through callback
-  if (validItem(tree)) {
+  if (isValidItem(tree)) {
     return callback(tree)
   }
   // is non-object value -> ignore
-  if (typeof tree !== 'object') return
+  if (typeof tree !== 'object' || tree === null) {
+    return
+  }
   // is obj -> continue
-  const nextObj = {}
+  const nextObj: Record<string, unknown> = {}
   for (const [prop, value] of Object.entries(tree) as [prop: string, value: unknown][]) {
-    // TODO: FIX typescript issues
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    nextObj[prop] = treeWalker(value, callback, validItem)
+    nextObj[prop] = treeWalker(value, callback, isValidItem)
   }
   return nextObj
 }

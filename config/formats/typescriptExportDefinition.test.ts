@@ -10,19 +10,6 @@ describe('Format: TypeScript definitions', () => {
           $type: 'color',
           value: '#FF0000'
         }),
-        // TODO: implement types
-        // small: getMockToken({
-        //   $type: 'dimension',
-        //   value: '10px'
-        // }),
-        // big: getMockToken({
-        //   $type: 'dimension',
-        //   value: '2rem'
-        // }),
-        // shadow: getMockToken({
-        //   $type: 'shadow',
-        //   value: 'shadow value'
-        // }),
         stringValue: getMockToken({
           value: '#FF0000'
         }),
@@ -34,10 +21,6 @@ describe('Format: TypeScript definitions', () => {
             width: '1px'
           }
         }),
-        // default: getMockToken({
-        //   value: 16,
-        //   $type: 'dimension'
-        // }),
         numberValue: getMockToken({
           value: 20
         }),
@@ -47,15 +30,7 @@ describe('Format: TypeScript definitions', () => {
       }
     }
   })
-  // @ ts-expect-error: Because complex is invalid
-  //   complex: {
-  //   top: 16,
-  //   bottom: () => 16
-  // }
-  // default: getMockToken({
-  //   value: 16,
-  //   $type: 'dimension'
-  // }),
+
   it('Formats tokens adding prefix', () => {
     const input = getMockFormatterArguments({
       dictionary,
@@ -123,23 +98,6 @@ describe('Format: TypeScript definitions', () => {
     )
     expect(typescriptExportDefinition(input)).toStrictEqual(expectedOutput)
   })
-
-  // it('throws an invalidToken error if a token has no value property', () => {
-  //   const input = getMockFormatterArguments({
-  //     dictionary: getMockDictionary({
-  //       // @ts-expect-error: Because of invalid token
-  //       tokens: {
-  //         subgroup: {
-  //           red: '#FF0000'
-  //         }
-  //       }
-  //     })
-  //   })
-
-  //   expect(() => {
-  //     typescriptExportDefinition(input)
-  //   }).toThrowError('Invalid token: #FF0000')
-  // })
 
   it('throws an invalidTokenValue error if a token has an invalid value for the defined type', () => {
     const input = getMockFormatterArguments({
