@@ -3,7 +3,10 @@ import {format} from 'prettier'
 import fs = require('fs')
 import path = require('path')
 import {prefixTokens} from '~/config/utilities'
+import {treeWalker} from '../utilities/treeWalker'
+
 import type {FormatterArguments} from 'style-dictionary/types/Format'
+import type {w3cTransformedToken} from '~/types/w3cTransformedToken'
 
 const {fileHeader} = StyleDictionary.formatHelpers
 
@@ -32,68 +35,87 @@ const getTokenType = (tokenTypesPath: string): string => {
     return designTokenType
   } catch (e) {
     // eslint-disable-next-line no-console
-    console.error(`Error trying to load design token type from file "${tokenTypesPath}".`)
+    throw new Error(`Error trying to load design token type from file "${tokenTypesPath}".`)
   }
-  return ''
 }
 
+/**
+ * @description throws an error stating the token name, type and invalid value
+ * @param token w3cTransformedToken
+ */
+const invalidTokenValueError = (token: w3cTransformedToken) => {
+  throw new Error(`Invalid token: "${token.name}" with type "${token.$type}" can not have a value of "${token.value}"`)
+}
 /**
  * convertPropToType
  * @description return take type attribute and return correct typescript type as string
  * @param type
  * @returns
  */
-const convertPropToType = (value: unknown, type?: string): string => {
-  switch (type) {
+const convertPropToType = (tree: w3cTransformedToken): string => {
+  if (!Object.prototype.hasOwnProperty.call(tree, 'value')) {
+    throw new Error(`Invalid token: ${tree}`)
+  }
+  switch (tree.$type) {
     case 'color':
-      if (typeof value === 'string' && value[0] === '#') {
+      if (typeof tree.value === 'string' && tree.value[0] === '#') {
         return 'ColorHex'
       }
-      return 'string'
+      return invalidTokenValueError(tree)
     case 'dimension':
-      if (typeof value === 'string' && value.substring(value.length - 3) === 'rem') return 'SizeRem'
-      if (typeof value === 'string' && value.substring(value.length - 2) === 'px') return 'SizePx'
-      return 'string'
+      if (typeof tree.value === 'string' && tree.value.substring(tree.value.length - 3) === 'rem') return 'SizeRem'
+      if (typeof tree.value === 'string' && tree.value.substring(tree.value.length - 2) === 'px') return 'SizePx'
+      return invalidTokenValueError(tree)
     case 'shadow':
       return 'Shadow'
     case 'border':
       return 'Border'
     default:
-      if (typeof value === 'number') return 'number'
-      if (typeof value === 'string') return 'string'
+      if (typeof tree.value === 'number') return 'number'
+      if (typeof tree.value === 'string') return 'string'
+      if (typeof tree.value === 'boolean') return 'boolean'
       return 'any'
   }
 }
-
 /**
- * toType
- * @description converts tokens to type and returns array with used type
- * @param token StyleDictionary.DesignToken in object structure to their types using the $type attribute
- * @returns
+ * a valid token node has a `value` property
+ * @param item object
+ * @returns boolean
  */
-const toType = (
-  token: StyleDictionary.DesignToken | Record<string, unknown>,
-  usedTypes: Set<string>
-): object | string => {
-  // is non-object value
-  if (typeof token !== 'object') return convertPropToType(token)
-  // is design token
-  if ('value' in token) {
-    usedTypes.add(convertPropToType(token.value, token.$type))
-    return convertPropToType(token.value, token.$type)
+const validTokenNode = (item: w3cTransformedToken | unknown): item is w3cTransformedToken => {
+  return typeof item === 'object' && item !== null && 'value' in item
+}
+/**
+ * returns a set with every used token type
+ * @param item object
+ * @param validTypes array, all other types will be removed
+ * @returns set of all used token types
+ */
+const getUsedTokenTypes = (tokens: StyleDictionary.DesignTokens, validTypes: string[]): Set<string> => {
+  // using a set to assure every value only exists once
+  const usedTypes = new Set<string>()
+  // adds type to set
+  const callback = (tree: unknown) => usedTypes.add(convertPropToType(tree as w3cTransformedToken))
+  // tree walker adds to usedTypes
+  treeWalker(tokens, callback, validTokenNode)
+  // clean up types
+  for (const type of usedTypes) {
+    if (!validTypes.includes(type)) {
+      usedTypes.delete(type)
+    }
   }
-  // is obj
-  const nextObj = {}
-  for (const [prop, value] of Object.entries(token) as [
-    prop: string,
-    value: StyleDictionary.DesignToken | Record<string, unknown>
-  ][]) {
-    // TODO: FIX typescript issues
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    nextObj[prop] = toType(value, usedTypes)
-  }
-  return nextObj
+  return usedTypes
+}
+/**
+ * returns the entire token object structure but instead of token values each token just has a typescript type
+ * @param item object
+ * @returns object
+ */
+const getTokenObjectWithTypes = (tokens: StyleDictionary.DesignTokens): Record<string, unknown> => {
+  // TODO: FIX typescript issues
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  return treeWalker(tokens, convertPropToType, validTokenNode) as Record<string, unknown>
 }
 /**
  * getTypeDefinition
@@ -108,22 +130,19 @@ const getTypeDefinition = (
   moduleName: string,
   tokenTypesPath: string
 ): string => {
-  const usedTypes = new Set<string>()
-  const tokenWithTypes = toType(tokens, usedTypes)
-  // clean up types
-  for (const type of usedTypes) {
-    if (!['ColorHex', 'Shadow', 'Border', 'Size', 'SizeRem'].includes(type)) {
-      usedTypes.delete(type)
-    }
-  }
+  const usedTypes = getUsedTokenTypes(tokens, ['ColorHex', 'Shadow', 'Border', 'Size', 'SizeRem'])
+  const tokenObjectWithTypes = getTokenObjectWithTypes(tokens)
   // get token type declaration from file
   const designTokenTypes: string[] = []
   for (const type of usedTypes) {
-    designTokenTypes.push(getTokenType(`${tokenTypesPath}/${type}.d.ts`))
+    // path to type files without trailing slash
+    const typePath = tokenTypesPath.replace(new RegExp(/\/$/, 'g'), '')
+
+    designTokenTypes.push(getTokenType(`${typePath}/${type}.d.ts`))
   }
   // build output
   const output = `${designTokenTypes.join('\n')} 
-    export type ${moduleName} = ${JSON.stringify(tokenWithTypes, null, 2)}`
+    export type ${moduleName} = ${JSON.stringify(tokenObjectWithTypes, null, 2)}`
 
   // JSON stringify will quote strings, because this is a type we need it unquoted.
   return unquoteTypes(output, [...usedTypes])
