@@ -1,12 +1,14 @@
 import StyleDictionary from 'style-dictionary'
 import {w3cJsonParser} from './parsers'
 import {
+  borderToCss,
   colorToHexAlpha,
   colorToRgbAlpha,
   colorToHex,
   jsonDeprecated,
   shadowToCss,
-  namePathToDotNotation
+  namePathToDotNotation,
+  namePathToKebabCase
 } from './transformers'
 import {
   scssMixinCssVariables,
@@ -16,8 +18,6 @@ import {
   jsonNestedPrefixed,
   cssThemed
 } from './formats'
-import {borderToCss} from './transformers/borderToCss'
-import {namePathToKebabCase} from './transformers/namePathToKebabCase'
 
 /**
  * Parsers
