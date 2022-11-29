@@ -1,4 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/consistent-type-imports
 import React, {Fragment} from 'react'
 import {Box} from '@primer/react'
 import TokenInlineCode from '../TokenInlineCode'

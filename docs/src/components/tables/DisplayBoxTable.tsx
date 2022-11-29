@@ -1,4 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/consistent-type-imports
 import React, {Fragment} from 'react'
 import themeGet from '@styled-system/theme-get'
 import styled from 'styled-components'
