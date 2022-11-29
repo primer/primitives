@@ -1,4 +1,5 @@
-import type React from 'react'
+// eslint-disable-next-line @typescript-eslint/consistent-type-imports
+import React from 'react'
 import {Box} from '@primer/react'
 
 interface SwatchProps {

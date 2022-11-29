@@ -1,5 +1,5 @@
-import type React from 'react'
-import {Fragment} from 'react'
+// eslint-disable-next-line @typescript-eslint/consistent-type-imports
+import React, {Fragment} from 'react'
 import {Box} from '@primer/react'
 
 interface ControlStackVisualProps {
