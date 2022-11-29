@@ -1,5 +1,5 @@
 import React, {Fragment} from 'react'
-import {Box} from '@primer/components'
+import {Box} from '@primer/react'
 import TokenInlineCode from '../TokenInlineCode'
 import CopyClipboard from '@primer/gatsby-theme-doctocat/src/components/clipboard-copy'
 

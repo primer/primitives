@@ -1,4 +1,4 @@
-import {Box} from '@primer/components'
+import {Box} from '@primer/react'
 import React from 'react'
 import {sentenceCase} from 'sentence-case'
 import colors from '../../../dist/js/colors'

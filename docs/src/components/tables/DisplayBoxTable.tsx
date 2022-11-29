@@ -1,7 +1,7 @@
 import React, {Fragment} from 'react'
 import themeGet from '@styled-system/theme-get'
 import styled from 'styled-components'
-import {Box} from '@primer/components'
+import {Box} from '@primer/react'
 import TokenInlineCode from '../TokenInlineCode'
 import InlineCode from '@primer/gatsby-theme-doctocat/src/components/inline-code'
 import TokenTable from '../TokenTable'
