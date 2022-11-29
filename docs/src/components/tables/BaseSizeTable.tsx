@@ -1,4 +1,4 @@
-import React, {FC} from 'react'
+import type React from 'react'
 import {Box} from '@primer/react'
 import FrameworkVariableTable from './FrameworkVariableTable'
 import TokenInlineCode from '../TokenInlineCode'
@@ -11,7 +11,7 @@ interface BaseSizeTableProps {
   showExample?: boolean
 }
 
-const BaseSizeTable: FC<BaseSizeTableProps> = ({filePath, showExample}) => {
+const BaseSizeTable: React.FC<BaseSizeTableProps> = ({filePath, showExample}) => {
   return (
     <Box as="div" sx={{overflow: 'auto'}}>
       <TokenTable>

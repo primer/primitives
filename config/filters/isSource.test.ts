@@ -1,4 +1,4 @@
-import StyleDictionary from 'style-dictionary'
+import type StyleDictionary from 'style-dictionary'
 import {getMockToken} from '~/src/test-utilities'
 import {isSource} from './isSource'
 

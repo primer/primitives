@@ -1,4 +1,5 @@
-import React, {Fragment, FC} from 'react'
+import type React from 'react'
+import {Fragment} from 'react'
 import {Box} from '@primer/react'
 
 interface StackVisualProps {
@@ -7,7 +8,7 @@ interface StackVisualProps {
   modifier?: string
 }
 
-const StackVisual: FC<StackVisualProps> = ({gap, padding, modifier}) => {
+const StackVisual: React.FC<StackVisualProps> = ({gap, padding, modifier}) => {
   return (
     <Fragment>
       {gap && (

@@ -4,14 +4,13 @@ import {format} from 'prettier'
 
 describe('Format: TypeScript definitions', () => {
   const dictionary = getMockDictionary({
-    // @ts-expect-error: Because complex is invalid
     tokens: {
       subgroup: {
         red: getMockToken({
           $type: 'color',
           value: '#FF0000'
         }),
-        yellow: getMockToken({
+        stringValue: getMockToken({
           value: '#FF0000'
         }),
         border: getMockToken({
@@ -22,14 +21,12 @@ describe('Format: TypeScript definitions', () => {
             width: '1px'
           }
         }),
-        // default: getMockToken({
-        //   value: 16,
-        //   $type: 'dimension'
-        // }),
-        complex: {
-          top: 16,
-          bottom: () => 16
-        }
+        numberValue: getMockToken({
+          value: 20
+        }),
+        booleanValue: getMockToken({
+          value: true
+        })
       }
     }
   })
@@ -58,12 +55,10 @@ describe('Format: TypeScript definitions', () => {
           tokens: {
             subgroup: {
               red: ColorHex;
-              yellow: string;
+              stringValue: string;
               border: Border;
-              complex: {
-                top: number;
-                bottom: any;
-              };
+              numberValue: number;
+              booleanValue: "boolean";
             };
           };
         };
@@ -92,17 +87,36 @@ describe('Format: TypeScript definitions', () => {
         tokens: {
           subgroup: {
             red: ColorHex;
-            yellow: string;
+            stringValue: string;
             border: Border;
-            complex: {
-              top: number;
-              bottom: any;
-            };
+            numberValue: number;
+            booleanValue: "boolean";
           };
         };
       };`,
       {parser: 'typescript', printWidth: 500}
     )
     expect(typescriptExportDefinition(input)).toStrictEqual(expectedOutput)
+  })
+
+  it('throws an invalidTokenValue error if a token has an invalid value for the defined type', () => {
+    const input = getMockFormatterArguments({
+      dictionary: getMockDictionary({
+        // @ts-expect-error: Because of invalid token
+        tokens: {
+          subgroup: {
+            color: {
+              name: 'color token name',
+              value: 'rgb(100,200,255)',
+              $type: 'color'
+            }
+          }
+        }
+      })
+    })
+
+    expect(() => {
+      typescriptExportDefinition(input)
+    }).toThrowError('Invalid token: "color token name" with type "color" can not have a value of "rgb(100,200,255)"')
   })
 })

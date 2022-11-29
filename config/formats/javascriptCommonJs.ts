@@ -1,5 +1,5 @@
 import StyleDictionary from 'style-dictionary'
-import {FormatterArguments} from 'style-dictionary/types/Format'
+import type {FormatterArguments} from 'style-dictionary/types/Format'
 import {format} from 'prettier'
 import {jsonToNestedValue, prefixTokens} from '~/config/utilities'
 

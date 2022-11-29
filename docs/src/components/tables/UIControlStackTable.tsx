@@ -1,4 +1,5 @@
-import React, {Fragment, FC} from 'react'
+import type React from 'react'
+import {Fragment} from 'react'
 import {Box} from '@primer/react'
 import TokenTable from '../TokenTable'
 import TokenInlineCode from '../TokenInlineCode'
@@ -11,7 +12,7 @@ interface UIControlStackTableProps {
   tokenVariant?: string
 }
 
-const UIControlStackTable: FC<UIControlStackTableProps> = ({filePath, tokenVariant}) => {
+const UIControlStackTable: React.FC<UIControlStackTableProps> = ({filePath, tokenVariant}) => {
   return (
     <Box as="div" sx={{overflow: 'auto'}}>
       <TokenTable>

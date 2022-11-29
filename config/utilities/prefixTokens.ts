@@ -1,4 +1,4 @@
-import StyleDictionary from 'style-dictionary'
+import type StyleDictionary from 'style-dictionary'
 /**
  * @description extract prefix from platform and add to tokens array if defined
  * @param tokens StyleDictionary.TransformedTokens

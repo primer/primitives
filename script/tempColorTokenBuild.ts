@@ -2,8 +2,8 @@ import type StyleDictionary from 'style-dictionary'
 import {PrimerStyleDictionary} from '../config/PrimerStyleDictionary'
 import {copyFilesAndFolders} from '../config/utilities/copyFilesAndFolders'
 import {typeDefinitions, deprecatedJson, css, docJson, scss, javascript, typescript, json} from '../config/platforms'
-import {ConfigGeneratorOptions, StyleDictionaryConfigGenerator} from '../types/StyleDictionaryConfigGenerator'
-import {TokenBuildInput} from '../types/TokenBuildInput'
+import type {ConfigGeneratorOptions, StyleDictionaryConfigGenerator} from '../types/StyleDictionaryConfigGenerator'
+import type {TokenBuildInput} from '../types/TokenBuildInput'
 
 export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void => {
   const themes: TokenBuildInput[] = [

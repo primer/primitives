@@ -1,5 +1,5 @@
-import StyleDictionary from 'style-dictionary'
 import {upperCaseFirstCharacter} from '~/config/utilities'
+import type StyleDictionary from 'style-dictionary'
 
 /**
  * camelCase

@@ -92,6 +92,7 @@ module.exports = {
         '@typescript-eslint/no-explicit-any': 2,
         '@typescript-eslint/no-unnecessary-condition': 2,
         '@typescript-eslint/explicit-module-boundary-types': 0,
+        '@typescript-eslint/consistent-type-imports': 'warn',
         '@typescript-eslint/no-unused-vars': [
           'error',
           {

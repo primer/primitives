@@ -1,5 +1,5 @@
-import StyleDictionary from 'style-dictionary'
-import {PlatformInitializer} from '~/types/PlatformInitializer'
+import type StyleDictionary from 'style-dictionary'
+import type {PlatformInitializer} from '~/types/PlatformInitializer'
 import {isSource} from '~/config/filters'
 
 export const docJson: PlatformInitializer = (outputFile, prefix, buildPath): StyleDictionary.Platform => ({

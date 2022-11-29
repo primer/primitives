@@ -1,6 +1,6 @@
 import StyleDictionary from 'style-dictionary'
 import {format} from 'prettier'
-import {FormatterArguments} from 'style-dictionary/types/Format'
+import type {FormatterArguments} from 'style-dictionary/types/Format'
 
 const {fileHeader, formattedVariables} = StyleDictionary.formatHelpers
 

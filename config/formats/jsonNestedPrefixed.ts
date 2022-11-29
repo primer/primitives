@@ -1,4 +1,4 @@
-import StyleDictionary from 'style-dictionary'
+import type StyleDictionary from 'style-dictionary'
 import {format} from 'prettier'
 import {jsonToNestedValue, prefixTokens} from '~/config/utilities'
 

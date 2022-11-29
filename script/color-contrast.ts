@@ -1,4 +1,5 @@
-import {ContrastRequirement, contrastRequirements, canvasColors} from './color-contrast.config'
+import type {ContrastRequirement} from './color-contrast.config'
+import {contrastRequirements, canvasColors} from './color-contrast.config'
 import {Table} from 'console-table-printer'
 import {flattenObject} from './utilities/flattenObject'
 import colors from '../dist/ts'

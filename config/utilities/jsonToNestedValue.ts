@@ -1,4 +1,4 @@
-import StyleDictionary from 'style-dictionary'
+import type StyleDictionary from 'style-dictionary'
 /**
  * jsonToNestedValue
  * @description creates a nested json three where every final value is the `.value` prop
