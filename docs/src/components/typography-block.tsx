@@ -1,6 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/consistent-type-imports
 import React, {Fragment} from 'react'
-import {Box} from '@primer/components'
+import {Box} from '@primer/react'
 
 interface TypographyBlockProps {
   variant?: string

@@ -1,4 +1,4 @@
-import {BaseStyles} from '@primer/components'
+import {BaseStyles} from '@primer/react'
 import SkipLink from '@primer/gatsby-theme-doctocat/src/components/skip-link'
 import React from 'react'
 import {ColorThemeProvider} from '../../../components/color-theme-context'
