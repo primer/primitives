@@ -1,21 +1,23 @@
+type NestedObject = {
+  [key: string]: string | NestedObject
+}
+
 /**
  * flattenObject
- * @description turns a nested object into a one-dimensional object and joins names with dots
- * @param obj
- * @param prefix
- * @returns flattend objects
+ * @description turns a nested object into a one-dimensional object and joins names
+ * @param obj - the object to flatten
+ * @param prefix - applied to the key name
+ * @param separator - defaults to '.'
+ * @returns flattened objects
  */
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const flattenObject = (obj: any, prefix = '') =>
-  Object.keys(obj).reduce((acc, k) => {
-    const pre = prefix.length ? `${prefix}.` : ''
+export const flattenObject = (obj: NestedObject, prefix = '', separator = '.') =>
+  Object.keys(obj).reduce<Record<string, string>>((acc, k) => {
+    const pre = prefix.length ? `${prefix}${separator}` : ''
     if (typeof obj[k] === 'object') {
-      // purposly mutating acc
-      Object.assign(acc, flattenObject(obj[k], pre + k))
-    } else {
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore: implicit any
-      acc[pre + k] = obj[k]
+      // purposely mutating acc
+      Object.assign(acc, flattenObject(obj[k] as NestedObject, pre + k, separator))
+    } else if (typeof obj[k] === 'string') {
+      acc[pre + k] = obj[k] as string
     }
     return acc
   }, {})
