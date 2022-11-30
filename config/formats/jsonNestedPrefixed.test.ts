@@ -40,4 +40,34 @@ describe('Format: Json nested with prefixes', () => {
     )
     expect(jsonNestedPrefixed(input)).toStrictEqual(expectedOutput)
   })
+
+  test('Formats tokens without verbose setting', () => {
+    const input = getMockFormatterArguments({
+      options: {
+        outputVerbose: true
+      }
+    })
+    const expectedOutput = format(
+      `{
+        "tokens": {
+          "subgroup": {
+            "red": {
+               "name": "red",
+               "path": ["tokens", "subgroup", "red"],
+               "original": {
+                 "value": "originalValue",
+                 "attributes": {}
+               },
+               "filePath": "file.json",
+               "isSource": true,
+               "value": "transformedValue",
+               "attributes": {}
+            }
+          }
+        }
+      }`,
+      {parser: 'json', printWidth: 500}
+    )
+    expect(jsonNestedPrefixed(input)).toStrictEqual(expectedOutput)
+  })
 })

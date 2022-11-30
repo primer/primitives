@@ -15,7 +15,8 @@ export const docJson: PlatformInitializer = (outputFile, prefix, buildPath): Sty
       format: `json/nested-prefixed`,
       filter: isSource,
       options: {
-        outputReferences: false
+        outputReferences: false,
+        outputVerbose: true
       }
     }
   ]
