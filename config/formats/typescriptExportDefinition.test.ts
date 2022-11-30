@@ -31,6 +31,62 @@ describe('Format: TypeScript definitions', () => {
     }
   })
 
+  it('Formats dimension tokens', () => {
+    const input = getMockFormatterArguments({
+      dictionary: getMockDictionary({
+        tokens: {
+          subgroup: {
+            size: {
+              px: getMockToken({
+                $type: 'dimension',
+                value: '100px'
+              }),
+              rem: getMockToken({
+                $type: 'dimension',
+                value: '10rem'
+              }),
+              em: getMockToken({
+                $type: 'dimension',
+                value: '10em'
+              })
+            }
+          }
+        }
+      })
+    })
+    const expectedOutput = format(
+      `/**
+        * @description size in px
+        */
+        type SizePx = \`\${number}px\`
+
+      /**
+        * @description size in rem
+        */
+        type SizeRem = \`\${number}rem\`
+
+      /**
+        * @description size in em
+        */
+        type SizeEm = \`\${number}em\`
+
+      export type tokens = {
+        tokens: {
+          subgroup: {
+            size: {
+              px: SizePx;
+              rem: SizeRem;
+              em: SizeEm;
+            };
+          };
+        };
+      };`,
+      {parser: 'typescript', printWidth: 500}
+    )
+
+    expect(typescriptExportDefinition(input)).toStrictEqual(expectedOutput)
+  })
+
   it('Formats tokens adding prefix', () => {
     const input = getMockFormatterArguments({
       dictionary,
