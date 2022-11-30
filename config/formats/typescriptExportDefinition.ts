@@ -64,6 +64,7 @@ const convertPropToType = (tree: w3cTransformedToken): string => {
       return invalidTokenValueError(tree)
     case 'dimension':
       if (typeof tree.value === 'string' && tree.value.substring(tree.value.length - 3) === 'rem') return 'SizeRem'
+      if (typeof tree.value === 'string' && tree.value.substring(tree.value.length - 2) === 'em') return 'SizeEm'
       if (typeof tree.value === 'string' && tree.value.substring(tree.value.length - 2) === 'px') return 'SizePx'
       return invalidTokenValueError(tree)
     case 'shadow':
@@ -130,7 +131,7 @@ const getTypeDefinition = (
   moduleName: string,
   tokenTypesPath: string
 ): string => {
-  const usedTypes = getUsedTokenTypes(tokens, ['ColorHex', 'Shadow', 'Border', 'Size', 'SizeRem'])
+  const usedTypes = getUsedTokenTypes(tokens, ['ColorHex', 'Shadow', 'Border', 'SizeEm', 'SizeRem', 'SizePx'])
   const tokenObjectWithTypes = getTokenObjectWithTypes(tokens)
   // get token type declaration from file
   const designTokenTypes: string[] = []
