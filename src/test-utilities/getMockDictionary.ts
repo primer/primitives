@@ -6,7 +6,7 @@ const mockDictionaryDefault = {
     subgroup: {
       red: getMockToken({
         name: 'red',
-        path: ['tokens', 'colors', 'red']
+        path: ['tokens', 'subgroup', 'red']
       })
     }
   }
