@@ -8,16 +8,15 @@ import {jsonToNestedValue, prefixTokens} from '~/config/utilities'
  * @param StyleDictionary.FormatterArguments
  * @returns formatted json `string`
  */
-export const jsonNestedPrefixed: StyleDictionary.Formatter = ({
-  dictionary,
-  file: _file,
-  options: _options,
-  platform
-}) => {
+export const jsonNestedPrefixed: StyleDictionary.Formatter = ({dictionary, file: _file, options, platform}) => {
+  const {outputVerbose} = options
   // add prefix if defined
-  const tokens = prefixTokens(dictionary.tokens, platform)
+  let tokens = prefixTokens(dictionary.tokens, platform)
+  if (!outputVerbose) {
+    tokens = jsonToNestedValue(tokens)
+  }
   // add file header and convert output
-  const output = JSON.stringify(jsonToNestedValue(tokens), null, 2)
+  const output = JSON.stringify(tokens, null, 2)
   // return prettified
   return format(output, {parser: 'json', printWidth: 500})
 }
