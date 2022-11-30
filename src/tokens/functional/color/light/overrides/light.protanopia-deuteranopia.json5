@@ -7,39 +7,39 @@
   color: {
     open: {
       fg: {
-        $value: '{base.color.scale.orange.5}',
+        $value: '{base.color.orange.5}',
         $type: 'color'
       },
       emphasis: {
-        $value: '{base.color.scale.orange.4}',
+        $value: '{base.color.orange.4}',
         $type: 'color'
       },
       muted: {
-        $value: '{base.color.scale.orange.3}',
+        $value: '{base.color.orange.3}',
         $type: 'color',
         alpha: 0.4
       },
       subtle: {
-        $value: '{base.color.scale.orange.0}',
+        $value: '{base.color.orange.0}',
         $type: 'color'
       }
     },
     closed: {
       fg: {
-        $value: '{base.color.scale.gray.5}',
+        $value: '{base.color.gray.5}',
         $type: 'color'
       },
       emphasis: {
-        $value: '{base.color.scale.gray.5}',
+        $value: '{base.color.gray.5}',
         $type: 'color'
       },
       muted: {
-        $value: '{base.color.scale.gray.3}',
+        $value: '{base.color.gray.3}',
         $type: 'color',
         alpha: 0.4
       },
       subtle: {
-        $value: '{base.color.scale.gray.0}',
+        $value: '{base.color.gray.0}',
         $type: 'color'
       }
     },
@@ -50,7 +50,7 @@
           $type: 'color'
         },
         lineBg: {
-          $value: '{base.color.scale.green.0}',
+          $value: '{base.color.green.0}',
           $type: 'color',
           alpha: 0.5
         },
@@ -65,12 +65,12 @@
           $type: 'color'
         },
         lineBg: {
-          $value: '{base.color.scale.red.0}',
+          $value: '{base.color.red.0}',
           $type: 'color',
           alpha: 0.5
         },
         wordBg: {
-          $value: '{base.color.scale.red.2}',
+          $value: '{base.color.red.2}',
           $type: 'color',
           alpha: 0.5
         }
@@ -79,11 +79,11 @@
     btn: {
       primary: {
         hoverBg: {
-          $value: '{base.color.scale.green.5}',
+          $value: '{base.color.green.5}',
           $type: 'color'
         },
         disabledBg: {
-          $value: '{base.color.scale.green.2}',
+          $value: '{base.color.green.2}',
           $type: 'color'
         }
       }
