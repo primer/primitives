@@ -8,7 +8,7 @@
     "esModuleInterop": true,
     "strict": true,
     "noImplicitAny": true,
-    "typeRoots": ["./src/@types", "./node_modules/@types", "types", "config/types/"],
+    "typeRoots": ["./@types", "./node_modules/@types", "types", "config/types/"],
     "rootDir": "./",
     "declaration": true,
     "resolveJsonModule": true,
@@ -18,7 +18,7 @@
     }
   },
   "include": ["src/", "script/", "docs/", "config/"],
-  "exclude": ["./src/@types"],
+  "exclude": ["./@types"],
   "ts-node": {
     "require": ["tsconfig-paths/register"]
   }

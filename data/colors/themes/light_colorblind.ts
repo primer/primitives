@@ -1,4 +1,4 @@
-import {alpha, get, merge} from '../../../src/utils'
+import {alpha, get, merge} from '../../../script/lib/utils'
 import light from './light'
 
 const scale = {

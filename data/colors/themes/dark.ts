@@ -1,4 +1,4 @@
-import {merge} from '../../../src/utils'
+import {merge} from '../../../script/lib/utils'
 import darkComponentVars from '../vars/component_dark'
 import darkDeprecatedVars from '../vars/deprecated_dark'
 import darkGlobalVars from '../vars/global_dark'

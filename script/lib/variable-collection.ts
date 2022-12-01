@@ -2,7 +2,7 @@ import flatten from 'flat'
 import isString from 'lodash/isString'
 import kebabCase from 'lodash/kebabCase'
 import set from 'lodash/set'
-import {resolveValue} from '../../src/utils'
+import {resolveValue} from './utils'
 
 type PathItem = string | number
 

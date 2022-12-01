@@ -1,4 +1,4 @@
-import {alpha, get} from '../../../src/utils'
+import {alpha, get} from '../../../script/lib/utils'
 
 export default {
   fg: {
