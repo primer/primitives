@@ -1,0 +1,48 @@
+{
+  "<namespace>": {
+    "borderInset": {
+      "thin": {
+        "value": "inset 0 0 0 {<namespace>.borderWidth.thin}"
+      },
+      "thick": {
+        "value": "inset 0 0 0 {<namespace>.borderWidth.thick}"
+      },
+      "thicker": {
+        "value": "inset 0 0 0 {<namespace>.borderWidth.thicker}"
+      }
+    },
+    "borderWidth": {
+      "thin": {
+        "value": "max(1px, 0.0625rem)"
+      },
+      "thick": {
+        "value": "max(2px, 0.125rem)"
+      },
+      "thicker": {
+        "value": "max(4px, 0.25rem)"
+      }
+    },
+    "borderRadius": {
+      "small": {
+        "value": "3px"
+      },
+      "medium": {
+        "value": "6px"
+      },
+      "large": {
+        "value": "12px"
+      },
+      "full": {
+        "value": "100vh"
+      }
+    }
+  },
+  "outline": {
+    "focus": {
+      "offset": {
+        "$value": "1px",
+        "$type": "dimension"
+      }
+    }
+  }
+}

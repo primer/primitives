@@ -1,0 +1,213 @@
+{
+  "<namespace>": {
+    "fontStack": {
+      "system": {
+        "value": "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji'"
+      },
+      "sansSerif": {
+        "value": "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji'"
+      },
+      "monospace": {
+        "value": "ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace"
+      }
+    },
+    "text": {
+      "display": {
+        "lineBoxHeight": {
+          "value": "56px"
+        },
+        "size": {
+          "value": "40px"
+        },
+        "lineHeight": {
+          "value": "calc(56/40)"
+        },
+        "weight": {
+          "value": "{base.text.weight.medium}"
+        },
+        "shorthand": {
+          "value": {
+            "fontWeight": "{<namespace>.text.display.weight}",
+            "fontSize": "{<namespace>.text.display.size}",
+            "lineHeight": "{<namespace>.text.display.lineHeight}",
+            "fontFamily": "{<namespace>.fontStack.sansSerif}"
+          },
+          "type": "typography"
+        }
+      },
+      "title": {
+        "size": {
+          "large": {
+            "value": "32px"
+          },
+          "medium": {
+            "value": "20px"
+          }
+        },
+        "lineHeight": {
+          "large": {
+            "value": "calc(48/32)"
+          },
+          "medium": {
+            "value": "calc(32/20)"
+          }
+        },
+        "weight": {
+          "value": "{base.text.weight.semibold}"
+        },
+        "shorthand": {
+          "large": {
+            "value": {
+              "fontWeight": "{<namespace>.text.title.weight}",
+              "fontSize": "{<namespace>.text.title.size.large}",
+              "lineHeight": "{<namespace>.text.title.lineHeight.large}",
+              "fontFamily": "{<namespace>.fontStack.sansSerif}"
+            },
+            "type": "typography"
+          },
+          "medium": {
+            "value": {
+              "fontWeight": "{<namespace>.text.title.weight}",
+              "fontSize": "{<namespace>.text.title.size.medium}",
+              "lineHeight": "{<namespace>.text.title.lineHeight.medium}",
+              "fontFamily": "{<namespace>.fontStack.sansSerif}"
+            },
+            "type": "typography"
+          }
+        }
+      },
+      "subtitle": {
+        "size": {
+          "value": "20px"
+        },
+        "lineHeight": {
+          "value": "calc(32/20)"
+        },
+        "weight": {
+          "value": "{base.text.weight.normal}"
+        },
+        "shorthand": {
+          "value": {
+            "fontWeight": "{<namespace>.text.subtitle.weight}",
+            "fontSize": "{<namespace>.text.subtitle.size}",
+            "lineHeight": "{<namespace>.text.subtitle.lineHeight}",
+            "fontFamily": "{<namespace>.fontStack.sansSerif}"
+          },
+          "type": "typography"
+        }
+      },
+      "body": {
+        "size": {
+          "large": {
+            "value": "16px"
+          },
+          "medium": {
+            "value": "14px"
+          },
+          "small": {
+            "value": "12px"
+          }
+        },
+        "lineHeight": {
+          "large": {
+            "value": "calc(24/16)"
+          },
+          "medium": {
+            "value": "calc(20/14)"
+          },
+          "small": {
+            "value": "calc(20/12)"
+          }
+        },
+        "weight": {
+          "value": "{base.text.weight.normal}"
+        },
+        "shorthand": {
+          "large": {
+            "value": {
+              "fontWeight": "{<namespace>.text.body.weight}",
+              "fontSize": "{<namespace>.text.body.size.large}",
+              "lineHeight": "{<namespace>.text.body.lineHeight.large}",
+              "fontFamily": "{<namespace>.fontStack.sansSerif}"
+            },
+            "type": "typography"
+          },
+          "medium": {
+            "value": {
+              "fontWeight": "{<namespace>.text.body.weight}",
+              "fontSize": "{<namespace>.text.body.size.medium}",
+              "lineHeight": "{<namespace>.text.body.lineHeight.medium}",
+              "fontFamily": "{<namespace>.fontStack.sansSerif}"
+            },
+            "type": "typography"
+          },
+          "small": {
+            "value": {
+              "fontWeight": "{<namespace>.text.body.weight}",
+              "fontSize": "{<namespace>.text.body.size.small}",
+              "lineHeight": "{<namespace>.text.body.lineHeight.small}",
+              "fontFamily": "{<namespace>.fontStack.sansSerif}"
+            },
+            "type": "typography"
+          }
+        }
+      },
+      "caption": {
+        "size": {
+          "value": "12px"
+        },
+        "lineHeight": {
+          "value": "calc(16/12)"
+        },
+        "weight": {
+          "value": "{base.text.weight.normal}"
+        },
+        "shorthand": {
+          "value": {
+            "fontWeight": "{<namespace>.text.caption.weight}",
+            "fontSize": "{<namespace>.text.caption.size}",
+            "lineHeight": "{<namespace>.text.caption.lineHeight}",
+            "fontFamily": "{<namespace>.fontStack.sansSerif}"
+          },
+          "type": "typography"
+        }
+      },
+      "codeBlock": {
+        "size": {
+          "value": "13px"
+        },
+        "lineHeight": {
+          "value": "calc(20/13)"
+        },
+        "weight": {
+          "value": "{base.text.weight.normal}"
+        },
+        "shorthand": {
+          "value": {
+            "fontWeight": "{<namespace>.text.codeBlock.weight}",
+            "fontSize": "{<namespace>.text.codeBlock.size}",
+            "lineHeight": "{<namespace>.text.codeBlock.lineHeight}",
+            "fontFamily": "{<namespace>.fontStack.monospace}"
+          },
+          "type": "typography"
+        }
+      },
+      "codeInline": {
+        "size": {
+          "value": "0.9285em"
+        },
+        "weight": {
+          "value": "{base.text.weight.normal}"
+        },
+        "shorthand": {
+          "value": {
+            "fontWeight": "{<namespace>.text.codeInline.weight}",
+            "fontSize": "{<namespace>.text.codeInline.size}",
+            "fontFamily": "{<namespace>.fontStack.monospace}"
+          },
+          "type": "typography"
+        }
+      }
+    }
+  }
+}
