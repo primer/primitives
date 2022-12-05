@@ -6,8 +6,8 @@ describe('Format: ESM', () => {
   it('Formats tokens adding prefix', () => {
     const input = getMockFormatterArguments({
       platform: {
-        prefix: 'test'
-      }
+        prefix: 'test',
+      },
     })
     const expectedOutput = format(
       `export default {
@@ -19,7 +19,7 @@ describe('Format: ESM', () => {
         },
       },
     };`,
-      {parser: 'typescript', printWidth: 500}
+      {parser: 'typescript', printWidth: 500},
     )
     expect(javascriptEsm(input)).toStrictEqual(expectedOutput)
   })
@@ -34,7 +34,7 @@ describe('Format: ESM', () => {
         },
       },
     };`,
-      {parser: 'typescript', printWidth: 500}
+      {parser: 'typescript', printWidth: 500},
     )
     expect(javascriptEsm(input)).toStrictEqual(expectedOutput)
   })

@@ -29,5 +29,5 @@ export const shadowToCss: StyleDictionary.Transform = {
         } ${toHex(alpha(shadow.color, shadow.alpha || 1))}`
       })
       .join(', ')
-  }
+  },
 }

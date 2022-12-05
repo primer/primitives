@@ -7,5 +7,5 @@ module.exports = {
   testEnvironment: 'node',
   // this is no html literal
   // eslint-disable-next-line github/unescaped-html-literal
-  moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, {prefix: '<rootDir>/'})
+  moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, {prefix: '<rootDir>/'}),
 }

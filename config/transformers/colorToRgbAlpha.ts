@@ -11,5 +11,5 @@ export const colorToRgbAlpha: StyleDictionary.Transform = {
   type: `value`,
   transitive: true,
   matcher: isColorWithAlpha,
-  transformer: (token: StyleDictionary.TransformedToken) => alpha(token.value, token.alpha)
+  transformer: (token: StyleDictionary.TransformedToken) => alpha(token.value, token.alpha),
 }

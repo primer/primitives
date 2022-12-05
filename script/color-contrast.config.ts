@@ -6,7 +6,7 @@ export type ContrastRequirement = [
   number, // minimumContrast
   string, // foregroundColor
   string, // backgroundColor
-  Options?
+  Options?,
 ]
 // basically for all non high contrast modes
 const baseRequirements: ContrastRequirement[] = [
@@ -114,7 +114,7 @@ const baseRequirements: ContrastRequirement[] = [
   [4.5, 'fg.onEmphasis', 'sponsors.emphasis'],
   // borders
   [3, 'border.default', 'canvas.default'],
-  [3, 'border.default', 'canvas.subtle']
+  [3, 'border.default', 'canvas.subtle'],
   // TODO: there are no specific border colors for roles
 ]
 
@@ -212,8 +212,8 @@ const highContrast: ContrastRequirement[] = [
     [7, 'fg.onEmphasis', 'attention.emphasis'],
     [7, 'fg.onEmphasis', 'severe.emphasis'],
     [7, 'fg.onEmphasis', 'done.emphasis'],
-    [7, 'fg.onEmphasis', 'sponsors.emphasis']
-  ] as ContrastRequirement[])
+    [7, 'fg.onEmphasis', 'sponsors.emphasis'],
+  ] as ContrastRequirement[]),
 ]
 
 export const canvasColors: string[] = ['canvas.default', 'canvas.subtle']
@@ -229,5 +229,5 @@ export const contrastRequirements: {[key: string]: ContrastRequirement[]} = {
   dark_dimmed: baseRequirements,
   dark_high_contrast: highContrast,
   dark_colorblind: baseRequirements,
-  dark_tritanopia: baseRequirements
+  dark_tritanopia: baseRequirements,
 }

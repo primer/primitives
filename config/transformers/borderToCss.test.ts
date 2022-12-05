@@ -7,8 +7,8 @@ describe('Transformer: borderToCss', () => {
       value: {
         color: '#000000',
         style: 'solid',
-        width: '1px'
-      }
+        width: '1px',
+      },
     })
 
     const expectedOutput = '#000000 solid 1px'
@@ -22,10 +22,10 @@ describe('Transformer: borderToCss', () => {
         getMockToken({
           value: {
             color: '#000000',
-            style: 'solid'
-          }
-        })
-      )
+            style: 'solid',
+          },
+        }),
+      ),
     ).toThrowError()
 
     // missing spread
@@ -34,10 +34,10 @@ describe('Transformer: borderToCss', () => {
         getMockToken({
           value: {
             color: '#000000',
-            width: '1px'
-          }
-        })
-      )
+            width: '1px',
+          },
+        }),
+      ),
     ).toThrowError()
 
     // missing offsets
@@ -46,10 +46,10 @@ describe('Transformer: borderToCss', () => {
         getMockToken({
           value: {
             style: 'solid',
-            width: '1px'
-          }
-        })
-      )
+            width: '1px',
+          },
+        }),
+      ),
     ).toThrowError()
   })
 })

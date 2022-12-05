@@ -4,8 +4,8 @@ export const parserOutput = {
     comment: 'a red color',
     $type: 'color',
     $extensions: {},
-    alpha: 0.5
-  }
+    alpha: 0.5,
+  },
 }
 
 const parserInput: {[Property in jsonFormats]: string} = {
@@ -46,7 +46,7 @@ const parserInput: {[Property in jsonFormats]: string} = {
       "extensions": {},
       alpha: 0.5,
     }
-  }`
+  }`,
 }
 
 type jsonFormats = 'json5.default' | 'json5.w3c' | 'json.default' | 'json.w3c'
@@ -58,7 +58,7 @@ type jsonFormats = 'json5.default' | 'json5.w3c' | 'json.default' | 'json.w3c'
  */
 export const getMockParserInput = (
   contents: jsonFormats | string,
-  filePath?: string
+  filePath?: string,
 ): {filePath: string; contents: string} => {
   // use predefined if no override
   if (['json5.default', 'json5.w3c', 'json.default', 'json.w3c'].includes(contents)) {
@@ -67,6 +67,6 @@ export const getMockParserInput = (
 
   return {
     filePath: filePath || `path/to/file/token.json`,
-    contents
+    contents,
   }
 }

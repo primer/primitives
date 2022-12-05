@@ -17,7 +17,7 @@ export const scssMixinCssVariables: StyleDictionary.Formatter = ({dictionary, op
   const output = `${fileHeader({file})}@mixin ${mixinName} {\n  & {\n${formattedVariables({
     format: 'css',
     dictionary,
-    outputReferences
+    outputReferences,
   })}\n  }\n}\n`
 
   // return prettified

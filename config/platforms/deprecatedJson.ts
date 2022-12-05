@@ -10,7 +10,7 @@ export const deprecatedJson: PlatformInitializer = (outputFile, prefix, buildPat
     {
       destination: outputFile,
       format: `json/flat`,
-      filter: isDeprecated
-    }
-  ]
+      filter: isDeprecated,
+    },
+  ],
 })

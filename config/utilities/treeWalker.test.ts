@@ -13,15 +13,15 @@ describe('Utilities: treeWalker', () => {
     const tree = {
       invalidItem: 'pumpkin',
       subItem: {
-        invalidSubitem: 'squash'
-      }
+        invalidSubitem: 'squash',
+      },
     }
 
     const expectedOutput = {
       invalidItem: undefined,
       subItem: {
-        invalidSubitem: undefined
-      }
+        invalidSubitem: undefined,
+      },
     }
 
     expect(treeWalker(tree, callback, isValidItem)).toStrictEqual(expectedOutput)
@@ -30,20 +30,20 @@ describe('Utilities: treeWalker', () => {
   it('returns callback return value if item is valid', () => {
     const tree = {
       validItem: {
-        value: 'pumpkin'
+        value: 'pumpkin',
       },
       subItem: {
         validSubitem: {
-          value: 'squash'
-        }
-      }
+          value: 'squash',
+        },
+      },
     }
 
     const expectedOutput = {
       validItem: 'validItem',
       subItem: {
-        validSubitem: 'validItem'
-      }
+        validSubitem: 'validItem',
+      },
     }
 
     expect(treeWalker(tree, callback, isValidItem)).toStrictEqual(expectedOutput)

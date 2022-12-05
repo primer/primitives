@@ -7,7 +7,7 @@ export const docJson: PlatformInitializer = (outputFile, prefix, buildPath): Sty
   buildPath,
   transforms: ['color/hex', 'color/hexAlpha', 'shadow/css', 'border/css'],
   options: {
-    basePxFontSize: 16
+    basePxFontSize: 16,
   },
   files: [
     {
@@ -16,8 +16,8 @@ export const docJson: PlatformInitializer = (outputFile, prefix, buildPath): Sty
       filter: isSource,
       options: {
         outputReferences: false,
-        outputVerbose: true
-      }
-    }
-  ]
+        outputVerbose: true,
+      },
+    },
+  ],
 })

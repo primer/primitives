@@ -12,7 +12,7 @@ const getCssSelectors = (outputFile: string): {selector: string; selectorLight: 
   return {
     selector: `[data-color-mode="${mode}"][data-${mode}-theme="${themeName}"]`,
     selectorLight: `[data-color-mode="auto"][data-light-theme="${themeName}"]`,
-    selectorDark: `[data-color-mode="auto"][data-dark-theme="${themeName}"]`
+    selectorDark: `[data-color-mode="auto"][data-dark-theme="${themeName}"]`,
   }
 }
 
@@ -23,7 +23,7 @@ export const css: PlatformInitializer = (outputFile, prefix, buildPath, _options
     buildPath,
     transforms: ['name/pathToKebabCase', 'color/hex', 'color/hexAlpha', 'shadow/css', 'border/css'],
     options: {
-      basePxFontSize: 16
+      basePxFontSize: 16,
     },
     files: [
       {
@@ -34,9 +34,9 @@ export const css: PlatformInitializer = (outputFile, prefix, buildPath, _options
           outputReferences: false,
           selector,
           selectorLight,
-          selectorDark
-        }
-      }
-    ]
+          selectorDark,
+        },
+      },
+    ],
   }
 }

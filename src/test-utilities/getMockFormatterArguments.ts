@@ -6,16 +6,16 @@ const defaultFormatterArguments: FormatterArguments = {
   file: {
     destination: 'tokens.ts',
     options: {
-      showFileHeader: false
-    }
+      showFileHeader: false,
+    },
   },
   options: {},
-  platform: {}
+  platform: {},
 }
 
 export const getMockFormatterArguments = (overrides?: Partial<FormatterArguments>): FormatterArguments => {
   return {
     ...defaultFormatterArguments,
-    ...(overrides || {})
+    ...(overrides || {}),
   }
 }

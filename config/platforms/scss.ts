@@ -20,7 +20,7 @@ export const scss: PlatformInitializer = (outputFile, prefix, buildPath): StyleD
     buildPath,
     transforms: ['name/pathToKebabCase', 'color/hex', 'color/hexAlpha', 'shadow/css', 'border/css'],
     options: {
-      basePxFontSize: 16
+      basePxFontSize: 16,
     },
     files: [
       {
@@ -29,9 +29,9 @@ export const scss: PlatformInitializer = (outputFile, prefix, buildPath): StyleD
         format: `scss/mixin-css-variables`,
         options: {
           mixinName,
-          outputReferences: false
-        }
-      }
-    ]
+          outputReferences: false,
+        },
+      },
+    ],
   }
 }

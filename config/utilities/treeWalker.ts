@@ -8,7 +8,7 @@
 export const treeWalker = (
   tree: unknown,
   callback: <T>(argument: T) => unknown,
-  isValidItem: (argument: unknown) => boolean
+  isValidItem: (argument: unknown) => boolean,
 ): unknown => {
   // is a valid item -> pass through callback
   if (isValidItem(tree)) {

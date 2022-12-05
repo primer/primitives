@@ -14,8 +14,8 @@ export const typeDefinitions: PlatformInitializer = (outputFile, prefix, buildPa
       filter: isSource,
       options: {
         tokenTypesPath: './config/types/',
-        moduleName: `${upperCaseFirstCharacter(outputFile)}DesignTokens`
-      }
-    }
-  ]
+        moduleName: `${upperCaseFirstCharacter(outputFile)}DesignTokens`,
+      },
+    },
+  ],
 })

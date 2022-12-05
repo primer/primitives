@@ -11,5 +11,5 @@ export const jsonDeprecated: StyleDictionary.Transform = {
   transitive: true,
   matcher: isDeprecated,
   transformer: (token: StyleDictionary.TransformedToken) =>
-    typeof token.deprecated === 'string' ? token.deprecated.replace(/[{}]/g, '') : null
+    typeof token.deprecated === 'string' ? token.deprecated.replace(/[{}]/g, '') : null,
 }

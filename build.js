@@ -24,7 +24,7 @@ const pathToPascalCase = token => token.path.map(tokenPathItems => capitalize(to
 StyleDictionary.registerTransform({
   name: 'name/scss',
   type: 'name',
-  transformer: pathToKebabCase
+  transformer: pathToKebabCase,
 })
 
 /**
@@ -34,7 +34,7 @@ StyleDictionary.registerTransform({
 StyleDictionary.registerTransform({
   name: 'name/css',
   type: 'name',
-  transformer: pathToKebabCase
+  transformer: pathToKebabCase,
 })
 
 /**
@@ -44,7 +44,7 @@ StyleDictionary.registerTransform({
 StyleDictionary.registerTransform({
   name: 'name/js',
   type: 'name',
-  transformer: pathToDotNotation
+  transformer: pathToDotNotation,
 })
 
 /**
@@ -54,7 +54,7 @@ StyleDictionary.registerTransform({
 StyleDictionary.registerTransform({
   name: 'name/js/es6',
   type: 'name',
-  transformer: pathToPascalCase
+  transformer: pathToPascalCase,
 })
 
 // find values with px unit
@@ -86,7 +86,7 @@ StyleDictionary.registerTransform({
       return `${floatValue / baseFontSize}rem`
     }
     return token.value
-  }
+  },
 })
 
 //-----
@@ -102,10 +102,10 @@ StyleDictionary.registerTransform({
         // or you can "chain" the transforms and use token.name and token.value
         // like scss and less transforms do.
         name: token.path.slice(1).join('.'),
-        value: token.value
-      }
+        value: token.value,
+      },
     }
-  }
+  },
 })
 
 // css output
@@ -117,10 +117,10 @@ StyleDictionary.registerTransform({
     return {
       css: {
         name: `--${tokenName}`,
-        value: token.value
-      }
+        value: token.value,
+      },
     }
-  }
+  },
 })
 
 // transform: composite typography to shorthands
@@ -138,19 +138,19 @@ StyleDictionary.registerTransform({
     }
 
     return `${value.fontWeight} ${value.fontSize} ${value.fontFamily}`
-  }
+  },
 })
 
 // REGISTER THE CUSTOM TRANFORM GROUPS
 
 StyleDictionary.registerTransformGroup({
   name: 'css',
-  transforms: ['name/css', 'pxToRem', 'typography/shorthand']
+  transforms: ['name/css', 'pxToRem', 'typography/shorthand'],
 })
 
 StyleDictionary.registerTransformGroup({
   name: 'scss',
-  transforms: ['name/scss', 'pxToRem', 'typography/shorthand']
+  transforms: ['name/scss', 'pxToRem', 'typography/shorthand'],
 })
 
 // REGISTER A CUSTOM FORMAT
@@ -164,9 +164,9 @@ StyleDictionary.registerFormat({
     @media (pointer: coarse) { :root {\n${formattedVariables({
       format: 'css',
       dictionary,
-      outputReferences
+      outputReferences,
     })}\n}}\n`
-  }
+  },
 })
 
 // wrap desktop tokens in media query
@@ -178,9 +178,9 @@ StyleDictionary.registerFormat({
     @media (pointer: fine) { :root {\n${formattedVariables({
       format: 'css',
       dictionary,
-      outputReferences
+      outputReferences,
     })}\n}}\n`
-  }
+  },
 })
 
 StyleDictionary.registerFormat({
@@ -193,7 +193,7 @@ StyleDictionary.registerFormat({
         return `@custom-media --${name}-viewport ${value};`
       })
       .join('\n')
-  }
+  },
 })
 
 // format docs
@@ -203,7 +203,7 @@ StyleDictionary.registerFormat({
     const groupedTokens = groupBy(dictionary.allProperties, 'filePath')
 
     return JSON.stringify(groupedTokens, null, 2)
-  }
+  },
 })
 
 /**
@@ -233,7 +233,7 @@ StyleDictionary.registerFormat({
     return `${fileHeader({file})}
     
 module.exports = ${JSON.stringify(recursiveleyFlattenDictionary(dictionary.tokens), null, 2)}`
-  }
+  },
 })
 
 /**
@@ -289,7 +289,7 @@ export default ${moduleName};`
       .replace(/"any"/g, 'any')
       .replace(/"string"/g, 'string')
       .replace(/"number"/g, 'number')
-  }
+  },
 })
 
 /**
@@ -336,7 +336,7 @@ function groupBy(collection, iteratee = x => x) {
  */
 function buildPrimitives(
   {source, outputPath = 'tokens-v2-private', include, platforms, namespace = 'primer'},
-  _StyleDictionary = StyleDictionary
+  _StyleDictionary = StyleDictionary,
 ) {
   // eslint-disable-next-line no-console
   console.log('Build started...')
@@ -362,9 +362,9 @@ function buildPrimitives(
             // eslint-disable-next-line no-console
             console.log(error)
           }
-        }
-      }
-    ]
+        },
+      },
+    ],
   }
 
   const getConfig = files => {
@@ -379,10 +379,10 @@ function buildPrimitives(
             destination: filePath.replace(`.json`, `.css`),
             filter: token => token.filePath === filePath,
             options: {
-              outputReferences: true
-            }
+              outputReferences: true,
+            },
           }
-        })
+        }),
       },
       cssViewport: {
         buildPath: `${outputPath}/css/tokens/functional/size/`,
@@ -391,9 +391,9 @@ function buildPrimitives(
           {
             filter: token => token.filePath.includes('viewport'),
             format: 'custom/format/custom-media',
-            destination: 'viewport.css'
-          }
-        ]
+            destination: 'viewport.css',
+          },
+        ],
       },
       scss: {
         buildPath: `${outputPath}/scss/`,
@@ -405,10 +405,10 @@ function buildPrimitives(
             destination: filePath.replace(`.json`, `.scss`),
             filter: token => token.filePath === filePath,
             options: {
-              outputReferences: true
-            }
+              outputReferences: true,
+            },
           }
-        })
+        }),
       },
       js: {
         buildPath: `${outputPath}/js/`,
@@ -418,9 +418,9 @@ function buildPrimitives(
           return {
             format: `javascript/es6`,
             destination: filePath.replace(`.json`, `.js`),
-            filter: token => token.filePath === filePath
+            filter: token => token.filePath === filePath,
           }
-        })
+        }),
       },
       jsModule: {
         buildPath: `${outputPath}/js/module/`,
@@ -430,9 +430,9 @@ function buildPrimitives(
           return {
             format: `javascript/module`,
             destination: filePath.replace(`.json`, `.js`),
-            filter: token => token.filePath === filePath
+            filter: token => token.filePath === filePath,
           }
-        })
+        }),
       },
       tsTypes: {
         buildPath: `${outputPath}/ts/`,
@@ -442,9 +442,9 @@ function buildPrimitives(
           return {
             format: `typescript/module-declarations-v2`,
             destination: filePath.replace(`.json`, `.d.ts`),
-            filter: token => token.filePath === filePath
+            filter: token => token.filePath === filePath,
           }
-        })
+        }),
       },
       ts: {
         buildPath: `${outputPath}/ts/`,
@@ -454,17 +454,17 @@ function buildPrimitives(
           return {
             format: `javascript/module-v2`,
             destination: filePath.replace(`.json`, `.js`),
-            filter: token => token.filePath === filePath
+            filter: token => token.filePath === filePath,
           }
-        })
-      }
+        }),
+      },
     }
 
     const config = {
       ...{include: include ? [include] : undefined},
       source: files,
       ...customParseConfig,
-      platforms: platforms ? platforms : defaultPlatformConfig
+      platforms: platforms ? platforms : defaultPlatformConfig,
     }
     return config
   }
@@ -472,7 +472,7 @@ function buildPrimitives(
   //build all tokens
   _StyleDictionary
     .extend({
-      ...getConfig(glob.sync([...source]))
+      ...getConfig(glob.sync([...source])),
     })
     .buildAllPlatforms()
 }
@@ -489,19 +489,19 @@ function _init() {
   //build all tokens
   buildPrimitives({
     source: [`tokens/**/*.json`, `!tokens/**/size-*.json`, `!tokens/**/color/*.json`, `!tokens/**/shadow/*.json`],
-    outputPath
+    outputPath,
   })
 
   //build size fine
   buildPrimitives({
     source: [`tokens/functional/size/size-fine.json`, `tokens/base/size/size.json`],
-    outputPath
+    outputPath,
   })
 
   //build size coarse
   buildPrimitives({
     source: [`tokens/functional/size/size-coarse.json`, `tokens/base/size/size.json`],
-    outputPath
+    outputPath,
   })
 
   buildPrimitives({
@@ -517,12 +517,12 @@ function _init() {
             format: `css/touch-target-desktop`,
             filter: token => token.filePath.includes('fine'),
             options: {
-              outputReferences: true
-            }
-          }
-        ]
-      }
-    }
+              outputReferences: true,
+            },
+          },
+        ],
+      },
+    },
   })
 
   buildPrimitives({
@@ -537,12 +537,12 @@ function _init() {
             format: `css/touch-target-mobile`,
             filter: token => token.filePath.includes('coarse'),
             options: {
-              outputReferences: true
-            }
-          }
-        ]
-      }
-    }
+              outputReferences: true,
+            },
+          },
+        ],
+      },
+    },
   })
 
   //build docs data
@@ -558,12 +558,12 @@ function _init() {
             format: 'json/docs',
             destination: 'docValues.json',
             options: {
-              outputReferences: false
-            }
-          }
-        ]
-      }
-    }
+              outputReferences: false,
+            },
+          },
+        ],
+      },
+    },
   })
 }
 
@@ -574,5 +574,5 @@ module.exports = {
   pathToKebabCase,
   pathToDotNotation,
   capitalize,
-  pathToPascalCase
+  pathToPascalCase,
 }

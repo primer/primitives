@@ -129,7 +129,7 @@ const getTokenObjectWithTypes = (tokens: StyleDictionary.DesignTokens): Record<s
 const getTypeDefinition = (
   tokens: StyleDictionary.DesignTokens,
   moduleName: string,
-  tokenTypesPath: string
+  tokenTypesPath: string,
 ): string => {
   const usedTypes = getUsedTokenTypes(tokens, ['ColorHex', 'Shadow', 'Border', 'SizeEm', 'SizeRem', 'SizePx'])
   const tokenObjectWithTypes = getTokenObjectWithTypes(tokens)
@@ -157,7 +157,7 @@ export const typescriptExportDefinition: StyleDictionary.Formatter = ({
   dictionary,
   file,
   options = {},
-  platform
+  platform,
 }: FormatterArguments): string => {
   // extract options
   const {moduleName = `tokens`, tokenTypesPath = `./config/types/`} = options

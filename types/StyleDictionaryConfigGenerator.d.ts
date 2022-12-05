@@ -9,5 +9,5 @@ export type StyleDictionaryConfigGenerator = (
   outputName: string,
   source: string[],
   include: string[],
-  options: ConfigGeneratorOptions
+  options: ConfigGeneratorOptions,
 ) => StyleDictionary.Config

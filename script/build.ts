@@ -178,7 +178,7 @@ function validateRemovedVar(variable: string, collection: ModeCollection, inputF
   // Assert that removed variable doesn't exist
   if (existsInCollection(collection, variable)) {
     errors.push(
-      chalk`Variable {bold.red "${variable}"} is marked as removed in {bold ${inputFile}} but is still defined`
+      chalk`Variable {bold.red "${variable}"} is marked as removed in {bold ${inputFile}} but is still defined`,
     )
   }
 
@@ -191,7 +191,7 @@ async function writeReplacements(
   collection: ModeCollection,
   // Function to validate a variable (e.g. deprecated variable or removed variable).
   // Returns an array of error messages. If the returned array is empty, the variable is valid.
-  validateVar: (variable: string, collection: ModeCollection, inputFile: string) => any[]
+  validateVar: (variable: string, collection: ModeCollection, inputFile: string) => any[],
 ) {
   const inputFile = path.join(dataDir, collection.type, inputFilename)
 
@@ -215,8 +215,8 @@ async function writeReplacements(
         if (typeof replacementVar !== 'string') {
           errors.push(
             chalk`Cannot replace {bold "${original}"} with invalid variable {bold.red ${JSON.stringify(
-              replacementVar
-            )}} in {bold ${inputFile}}`
+              replacementVar,
+            )}} in {bold ${inputFile}}`,
           )
           return
         }
@@ -225,8 +225,8 @@ async function writeReplacements(
         if (!existsInCollection(collection, replacementVar)) {
           errors.push(
             chalk`Cannot replace {bold "${original}"} with undefined variable {bold.red ${JSON.stringify(
-              replacementVar
-            )}} in {bold ${inputFile}}`
+              replacementVar,
+            )}} in {bold ${inputFile}}`,
           )
           return
         }
@@ -235,8 +235,8 @@ async function writeReplacements(
         if (Object.keys(replacementMap).includes(replacementVar)) {
           errors.push(
             chalk`Cannot replace {bold "${original}"} with deprecated variable {bold.red ${JSON.stringify(
-              replacementVar
-            )}} in {bold ${inputFile}}`
+              replacementVar,
+            )}} in {bold ${inputFile}}`,
           )
           return
         }

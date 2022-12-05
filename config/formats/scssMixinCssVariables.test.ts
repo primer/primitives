@@ -7,8 +7,8 @@ describe('Format: Scss with sss variables', () => {
     const mixinName = 'mixTest'
     const input = getMockFormatterArguments({
       options: {
-        mixinName
-      }
+        mixinName,
+      },
     })
 
     const expectedOutput = format(
@@ -17,7 +17,7 @@ describe('Format: Scss with sss variables', () => {
         --red: transformedValue;
       }
     }`,
-      {parser: 'scss', printWidth: 500}
+      {parser: 'scss', printWidth: 500},
     )
     expect(scssMixinCssVariables(input)).toStrictEqual(expectedOutput)
   })
