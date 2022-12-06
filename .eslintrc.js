@@ -111,12 +111,12 @@ module.exports = {
     },
     // rules which apply only to TS scripts
     {
-      files: ['script/*.ts'],
+      files: ['script/**/*.ts', 'config/**/*.ts'],
       rules: {
         'import/no-nodejs-modules': [
           'error',
           {
-            allow: ['path', 'fs']
+            allow: ['path', 'fs', 'fs/promises']
           }
         ]
       }

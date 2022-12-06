@@ -1,9 +1,9 @@
 import type StyleDictionary from 'style-dictionary'
-import {PrimerStyleDictionary} from '../config/PrimerStyleDictionary'
-import {copyFilesAndFolders} from '../config/utilities/copyFilesAndFolders'
-import {typeDefinitions, deprecatedJson, css, docJson, scss, javascript, typescript, json} from '../config/platforms'
-import type {ConfigGeneratorOptions, StyleDictionaryConfigGenerator} from '../types/StyleDictionaryConfigGenerator'
-import type {TokenBuildInput} from '../types/TokenBuildInput'
+import {PrimerStyleDictionary} from '~/config/PrimerStyleDictionary'
+import {copyFromDir} from '~/config/utilities'
+import {typeDefinitions, deprecatedJson, css, docJson, scss, javascript, typescript, json} from '~/config/platforms'
+import type {ConfigGeneratorOptions, StyleDictionaryConfigGenerator} from '~/types/StyleDictionaryConfigGenerator'
+import type {TokenBuildInput} from '~/types/TokenBuildInput'
 
 export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void => {
   const themes: TokenBuildInput[] = [
@@ -118,7 +118,7 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
   /**
    * Copy `removed` files
    */
-  copyFilesAndFolders([`removed`], `tokens`, buildOptions.buildPath)
+  copyFromDir(`tokens/removed`, `${buildOptions.buildPath}removed`)
 
   /**
    * convert colors
