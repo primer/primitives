@@ -2,23 +2,6 @@
 # yarn lockfile v1
 
 
-"@actions/github@^4.0.0":
-  "integrity" "sha512-Ej/Y2E+VV6sR9X7pWL5F3VgEWrABaT292DRqRU6R4hnQjPtC/zD3nagxVdXWiRQvYDh8kHXo7IDmG42eJ/dOMA=="
-  "resolved" "https://registry.npmjs.org/@actions/github/-/github-4.0.0.tgz"
-  "version" "4.0.0"
-  dependencies:
-    "@actions/http-client" "^1.0.8"
-    "@octokit/core" "^3.0.0"
-    "@octokit/plugin-paginate-rest" "^2.2.3"
-    "@octokit/plugin-rest-endpoint-methods" "^4.0.0"
-
-"@actions/http-client@^1.0.8":
-  "integrity" "sha512-VRYHGQV1rqnROJqdMvGUbY/Kn8vriQe/F9HR2AlYHzmKuM/p3kjNuXhmdBfcVgsvRWTz5C5XW5xvndZrVBuAYg=="
-  "resolved" "https://registry.npmjs.org/@actions/http-client/-/http-client-1.0.11.tgz"
-  "version" "1.0.11"
-  dependencies:
-    "tunnel" "0.0.6"
-
 "@ampproject/remapping@^2.1.0":
   "integrity" "sha512-qRmjj8nj9qmLTQXXmaR1cck3UXSRMPrbsLJAasZpF+t3riI71BXed5ebIOYwQntykeZuhjsdweEc9BxH5Jc26w=="
   "resolved" "https://registry.npmjs.org/@ampproject/remapping/-/remapping-2.2.0.tgz"
@@ -955,92 +938,6 @@
     "@nodelib/fs.scandir" "2.1.5"
     "fastq" "^1.6.0"
 
-"@octokit/auth-token@^2.4.4":
-  "integrity" "sha512-r5FVUJCOLl19AxiuZD2VRZ/ORjp/4IN98Of6YJoJOkY75CIBuYfmiNHGrDwXr+aLGG55igl9QrxX3hbiXlLb+g=="
-  "resolved" "https://registry.npmjs.org/@octokit/auth-token/-/auth-token-2.5.0.tgz"
-  "version" "2.5.0"
-  dependencies:
-    "@octokit/types" "^6.0.3"
-
-"@octokit/core@^3.0.0", "@octokit/core@>=2", "@octokit/core@>=3":
-  "integrity" "sha512-7RKRKuA4xTjMhY+eG3jthb3hlZCsOwg3rztWh75Xc+ShDWOfDDATWbeZpAHBNRpm4Tv9WgBMOy1zEJYXG6NJ7Q=="
-  "resolved" "https://registry.npmjs.org/@octokit/core/-/core-3.6.0.tgz"
-  "version" "3.6.0"
-  dependencies:
-    "@octokit/auth-token" "^2.4.4"
-    "@octokit/graphql" "^4.5.8"
-    "@octokit/request" "^5.6.3"
-    "@octokit/request-error" "^2.0.5"
-    "@octokit/types" "^6.0.3"
-    "before-after-hook" "^2.2.0"
-    "universal-user-agent" "^6.0.0"
-
-"@octokit/endpoint@^6.0.1":
-  "integrity" "sha512-lF3puPwkQWGfkMClXb4k/eUT/nZKQfxinRWJrdZaJO85Dqwo/G0yOC434Jr2ojwafWJMYqFGFa5ms4jJUgujdA=="
-  "resolved" "https://registry.npmjs.org/@octokit/endpoint/-/endpoint-6.0.12.tgz"
-  "version" "6.0.12"
-  dependencies:
-    "@octokit/types" "^6.0.3"
-    "is-plain-object" "^5.0.0"
-    "universal-user-agent" "^6.0.0"
-
-"@octokit/graphql@^4.5.8":
-  "integrity" "sha512-0gv+qLSBLKF0z8TKaSKTsS39scVKF9dbMxJpj3U0vC7wjNWFuIpL/z76Qe2fiuCbDRcJSavkXsVtMS6/dtQQsg=="
-  "resolved" "https://registry.npmjs.org/@octokit/graphql/-/graphql-4.8.0.tgz"
-  "version" "4.8.0"
-  dependencies:
-    "@octokit/request" "^5.6.0"
-    "@octokit/types" "^6.0.3"
-    "universal-user-agent" "^6.0.0"
-
-"@octokit/openapi-types@^12.11.0":
-  "integrity" "sha512-VsXyi8peyRq9PqIz/tpqiL2w3w80OgVMwBHltTml3LmVvXiphgeqmY9mvBw9Wu7e0QWk/fqD37ux8yP5uVekyQ=="
-  "resolved" "https://registry.npmjs.org/@octokit/openapi-types/-/openapi-types-12.11.0.tgz"
-  "version" "12.11.0"
-
-"@octokit/plugin-paginate-rest@^2.2.3":
-  "integrity" "sha512-aCZTEf0y2h3OLbrgKkrfFdjRL6eSOo8komneVQJnYecAxIej7Bafor2xhuDJOIFau4pk0i/P28/XgtbyPF0ZHw=="
-  "resolved" "https://registry.npmjs.org/@octokit/plugin-paginate-rest/-/plugin-paginate-rest-2.21.3.tgz"
-  "version" "2.21.3"
-  dependencies:
-    "@octokit/types" "^6.40.0"
-
-"@octokit/plugin-rest-endpoint-methods@^4.0.0":
-  "integrity" "sha512-4gQg4ySoW7ktKB0Mf38fHzcSffVZd6mT5deJQtpqkuPuAqzlED5AJTeW8Uk7dPRn7KaOlWcXB0MedTFJU1j4qA=="
-  "resolved" "https://registry.npmjs.org/@octokit/plugin-rest-endpoint-methods/-/plugin-rest-endpoint-methods-4.15.1.tgz"
-  "version" "4.15.1"
-  dependencies:
-    "@octokit/types" "^6.13.0"
-    "deprecation" "^2.3.1"
-
-"@octokit/request-error@^2.0.5", "@octokit/request-error@^2.1.0":
-  "integrity" "sha512-1VIvgXxs9WHSjicsRwq8PlR2LR2x6DwsJAaFgzdi0JfJoGSO8mYI/cHJQ+9FbN21aa+DrgNLnwObmyeSC8Rmpg=="
-  "resolved" "https://registry.npmjs.org/@octokit/request-error/-/request-error-2.1.0.tgz"
-  "version" "2.1.0"
-  dependencies:
-    "@octokit/types" "^6.0.3"
-    "deprecation" "^2.0.0"
-    "once" "^1.4.0"
-
-"@octokit/request@^5.6.0", "@octokit/request@^5.6.3":
-  "integrity" "sha512-bFJl0I1KVc9jYTe9tdGGpAMPy32dLBXXo1dS/YwSCTL/2nd9XeHsY616RE3HPXDVk+a+dBuzyz5YdlXwcDTr2A=="
-  "resolved" "https://registry.npmjs.org/@octokit/request/-/request-5.6.3.tgz"
-  "version" "5.6.3"
-  dependencies:
-    "@octokit/endpoint" "^6.0.1"
-    "@octokit/request-error" "^2.1.0"
-    "@octokit/types" "^6.16.1"
-    "is-plain-object" "^5.0.0"
-    "node-fetch" "^2.6.7"
-    "universal-user-agent" "^6.0.0"
-
-"@octokit/types@^6.0.3", "@octokit/types@^6.13.0", "@octokit/types@^6.16.1", "@octokit/types@^6.40.0":
-  "integrity" "sha512-eJ2jbzjdijiL3B4PrSQaSjuF2sPEQPVCPzBvTHJD9Nz+9dw2SGH4K4xeQJ77YfTq5bRQ+bD8wT11JbeDPmxmGg=="
-  "resolved" "https://registry.npmjs.org/@octokit/types/-/types-6.41.0.tgz"
-  "version" "6.41.0"
-  dependencies:
-    "@octokit/openapi-types" "^12.11.0"
-
 "@primer/primitives@>=4.6.2":
   "integrity" "sha512-DdLHq21e93R9qDHyRuRpytBLY0Up9IwNWMOUgPNW6lRSng4N4+IdUlLS3Ekbasmxfs8Z8vKS8aezeYovQ5qsxQ=="
   "resolved" "https://registry.npmjs.org/@primer/primitives/-/primitives-7.10.0.tgz"
@@ -1694,11 +1591,6 @@
   "resolved" "https://registry.npmjs.org/balanced-match/-/balanced-match-1.0.2.tgz"
   "version" "1.0.2"
 
-"before-after-hook@^2.2.0":
-  "integrity" "sha512-NzUnlZexiaH/46WDhANlyR2bXRopNg4F/zuSA3OpZnllCUgRaOF2znDioDWrmbNVsuZk6l9pMquQB38cfBZwkQ=="
-  "resolved" "https://registry.npmjs.org/before-after-hook/-/before-after-hook-2.2.3.tgz"
-  "version" "2.2.3"
-
 "better-path-resolve@1.0.0":
   "integrity" "sha512-pbnl5XzGBdrFU/wT4jqmJVPn2B6UHPBOhzMQkY/SPUPB6QtUXtmBHBIwCbXJol93mOpGMnQyP/+BB19q04xj7g=="
   "resolved" "https://registry.npmjs.org/better-path-resolve/-/better-path-resolve-1.0.0.tgz"
@@ -2150,11 +2042,6 @@
   dependencies:
     "has-property-descriptors" "^1.0.0"
     "object-keys" "^1.1.1"
-
-"deprecation@^2.0.0", "deprecation@^2.3.1":
-  "integrity" "sha512-xmHIy4F3scKVwMsQ4WnVaS8bHOx0DmVwRywosKhaILI0ywMDWPtBSku2HNxRvF7jtwDRsoEwYQSfbxj8b7RlJQ=="
-  "resolved" "https://registry.npmjs.org/deprecation/-/deprecation-2.3.1.tgz"
-  "version" "2.3.1"
 
 "detect-indent@^6.0.0":
   "integrity" "sha512-reYkTUJAZb9gUuZ2RvVCNhVHdg62RHnJ7WJl8ftMi4diZ6NWlciOzQN88pUhSELEwflJht4oQDv0F0BMlwaYtA=="
@@ -3226,11 +3113,6 @@
   "resolved" "https://registry.npmjs.org/is-plain-obj/-/is-plain-obj-2.1.0.tgz"
   "version" "2.1.0"
 
-"is-plain-object@^5.0.0":
-  "integrity" "sha512-VRSzKkbMm5jMDoKLbltAkFQ5Qr7VDiTFGXxYFXXowVj387GeGNOCsOH6Msy00SGZ3Fp84b1Naa1psqgcCIEP5Q=="
-  "resolved" "https://registry.npmjs.org/is-plain-object/-/is-plain-object-5.0.0.tgz"
-  "version" "5.0.0"
-
 "is-regex@^1.1.4":
   "integrity" "sha512-kvRdxDsxZjhzUX07ZnLydzS1TU/TJlTUHHY4YLL87e37oUA49DfkLqgy+VjFocowy29cKvcSiu+kIv728jTTVg=="
   "resolved" "https://registry.npmjs.org/is-regex/-/is-regex-1.1.4.tgz"
@@ -4107,7 +3989,7 @@
     "lower-case" "^2.0.2"
     "tslib" "^2.0.3"
 
-"node-fetch@^2.5.0", "node-fetch@^2.6.7":
+"node-fetch@^2.5.0":
   "integrity" "sha512-ZjMPFEfVx5j+y2yF35Kzx5sF7kDzxuDj6ziH4FFbOp87zKDZNx8yExJIb05OGF4Nlt9IHFIMBkRl41VdvcNdbQ=="
   "resolved" "https://registry.npmjs.org/node-fetch/-/node-fetch-2.6.7.tgz"
   "version" "2.6.7"
@@ -4206,7 +4088,7 @@
     "define-properties" "^1.1.4"
     "es-abstract" "^1.20.4"
 
-"once@^1.3.0", "once@^1.4.0":
+"once@^1.3.0":
   "integrity" "sha512-lNaJgI+2Q5URQBkccEKHTQOPaXdUxnZZElQTZY0MFUAuaEqe1E+Nyvgdz/aIyNi6Z9MzO5dv1H8n58/GELp3+w=="
   "resolved" "https://registry.npmjs.org/once/-/once-1.4.0.tgz"
   "version" "1.4.0"
@@ -5206,11 +5088,6 @@
     "wcwidth" "^1.0.1"
     "yargs" "^17.1.1"
 
-"tunnel@0.0.6":
-  "integrity" "sha512-1h/Lnq9yajKY2PEbBadPXj3VxsDDu844OnaAo52UVmIzIvwwtBPIuNvkjuzBlTWpfJyUbG3ez0KSBibQkj4ojg=="
-  "resolved" "https://registry.npmjs.org/tunnel/-/tunnel-0.0.6.tgz"
-  "version" "0.0.6"
-
 "type-check@^0.4.0", "type-check@~0.4.0":
   "integrity" "sha512-XleUoc9uwGXqjWwXaUTZAmzMcFZ5858QA2vvx1Ur5xIcixXIP+8LnFDgRplU30us6teqdlskFfu+ae4K79Ooew=="
   "resolved" "https://registry.npmjs.org/type-check/-/type-check-0.4.0.tgz"
@@ -5330,11 +5207,6 @@
     "@types/unist" "^2.0.0"
     "unist-util-is" "^4.0.0"
     "unist-util-visit-parents" "^3.0.0"
-
-"universal-user-agent@^6.0.0":
-  "integrity" "sha512-isyNax3wXoKaulPDZWHQqbmIx1k2tb9fb3GGDBRxCscfYV2Ch7WxPArBsFEG8s/safwXTT7H4QGhaIkTp9447w=="
-  "resolved" "https://registry.npmjs.org/universal-user-agent/-/universal-user-agent-6.0.0.tgz"
-  "version" "6.0.0"
 
 "universalify@^0.1.0":
   "integrity" "sha512-rBJeI5CXAlmy1pV+617WB9J63U6XcazHHF2f2dbJix4XzpUF0RS3Zbj0FGIOCAva5P/d/GBOYaACQ1w+0azUkg=="
