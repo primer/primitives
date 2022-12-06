@@ -2,7 +2,7 @@
 import {copyFile, readdir, mkdir} from 'fs/promises'
 /**
  * copyFromDir
- * @description Copies all files from source folrder to destination
+ * @description Copies all files from source folder to destination
  * @param source path
  * @param destination path
  * @returns promise
