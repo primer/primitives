@@ -153,6 +153,8 @@ const renderConsoleTable = (theme: string, results: contrastTestResult[]): void 
   }
   // print table to console
   // eslint-disable-next-line no-console
+  console.log('\n')
+  // eslint-disable-next-line no-console
   console.log(contrastTable.render())
 }
 

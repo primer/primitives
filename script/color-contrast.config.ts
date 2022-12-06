@@ -18,6 +18,9 @@ const baseRequirements: ContrastRequirement[] = [
   [4.5, 'fg.muted', 'canvas.subtle'],
   [4.5, 'fg.default', 'canvas.inset'],
   [4.5, 'fg.muted', 'canvas.inset'],
+  // default text vs link
+  [3, 'fg.default', 'accent.fg'],
+  [3, 'fg.default', 'fg.muted'],
   // default text on role bg
   // TODO: contrast does not work with semi-transparent colors
   [4.5, 'fg.default', 'accent.subtle'],
@@ -126,6 +129,9 @@ const highContrast: ContrastRequirement[] = [
     [7, 'fg.muted', 'canvas.subtle'],
     [7, 'fg.default', 'canvas.inset'],
     [7, 'fg.muted', 'canvas.inset'],
+    // default text vs link
+    [4.5, 'fg.default', 'accent.fg'],
+    [4.5, 'fg.default', 'fg.muted'],
     // default text on role bg
     // TODO: contrast does not work with semi-transparent colors
     [7, 'fg.default', 'accent.subtle'],
