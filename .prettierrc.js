@@ -1,3 +1,3 @@
 module.exports = {
-  ...require('@github/prettier-config')
+  ...require('@github/prettier-config'),
 }

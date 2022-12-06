@@ -8,7 +8,7 @@ import {
   jsonDeprecated,
   shadowToCss,
   namePathToDotNotation,
-  namePathToKebabCase
+  namePathToKebabCase,
 } from './transformers'
 import {
   scssMixinCssVariables,
@@ -16,7 +16,7 @@ import {
   javascriptEsm,
   typescriptExportDefinition,
   jsonNestedPrefixed,
-  cssThemed
+  cssThemed,
 } from './formats'
 
 /**
@@ -31,32 +31,32 @@ StyleDictionary.registerParser(w3cJsonParser)
  */
 StyleDictionary.registerFormat({
   name: 'css/themed',
-  formatter: cssThemed
+  formatter: cssThemed,
 })
 
 StyleDictionary.registerFormat({
   name: 'scss/mixin-css-variables',
-  formatter: scssMixinCssVariables
+  formatter: scssMixinCssVariables,
 })
 
 StyleDictionary.registerFormat({
   name: 'javascript/esm',
-  formatter: javascriptEsm
+  formatter: javascriptEsm,
 })
 
 StyleDictionary.registerFormat({
   name: 'javascript/commonJs',
-  formatter: javascriptCommonJs
+  formatter: javascriptCommonJs,
 })
 
 StyleDictionary.registerFormat({
   name: 'typescript/export-definition',
-  formatter: typescriptExportDefinition
+  formatter: typescriptExportDefinition,
 })
 
 StyleDictionary.registerFormat({
   name: 'json/nested-prefixed',
-  formatter: jsonNestedPrefixed
+  formatter: jsonNestedPrefixed,
 })
 
 /**
@@ -65,42 +65,42 @@ StyleDictionary.registerFormat({
  */
 StyleDictionary.registerTransform({
   name: 'color/rgbAlpha',
-  ...colorToRgbAlpha
+  ...colorToRgbAlpha,
 })
 
 StyleDictionary.registerTransform({
   name: 'color/hexAlpha',
-  ...colorToHexAlpha
+  ...colorToHexAlpha,
 })
 
 StyleDictionary.registerTransform({
   name: 'color/hex',
-  ...colorToHex
+  ...colorToHex,
 })
 
 StyleDictionary.registerTransform({
   name: 'json/deprecated',
-  ...jsonDeprecated
+  ...jsonDeprecated,
 })
 
 StyleDictionary.registerTransform({
   name: 'name/pathToDotNotation',
-  ...namePathToDotNotation
+  ...namePathToDotNotation,
 })
 
 StyleDictionary.registerTransform({
   name: 'name/pathToKebabCase',
-  ...namePathToKebabCase
+  ...namePathToKebabCase,
 })
 
 StyleDictionary.registerTransform({
   name: 'shadow/css',
-  ...shadowToCss
+  ...shadowToCss,
 })
 
 StyleDictionary.registerTransform({
   name: 'border/css',
-  ...borderToCss
+  ...borderToCss,
 })
 
 /**

@@ -71,7 +71,7 @@ export default class VariableCollection {
     return [...this.data.values()].map(variable => {
       return {
         ...variable,
-        value: resolveValue(variable.value, tree)
+        value: resolveValue(variable.value, tree),
       }
     })
   }

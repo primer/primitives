@@ -11,5 +11,5 @@ export const colorToHex: StyleDictionary.Transform = {
   type: `value`,
   transitive: true,
   matcher: isColor,
-  transformer: (token: StyleDictionary.TransformedToken) => toHex(token.value)
+  transformer: (token: StyleDictionary.TransformedToken) => toHex(token.value),
 }

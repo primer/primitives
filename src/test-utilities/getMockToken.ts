@@ -5,12 +5,12 @@ const mockTokenDefaults = {
   path: ['path'],
   original: {
     value: 'originalValue',
-    attributes: {}
+    attributes: {},
   },
   filePath: 'file.json',
   isSource: true,
   value: 'transformedValue',
-  attributes: {}
+  attributes: {},
 }
 /**
  *
@@ -21,5 +21,5 @@ export const getMockToken = (valueOverrides: {
   [key: keyof StyleDictionary.TransformedToken]: unknown
 }): StyleDictionary.TransformedToken => ({
   ...mockTokenDefaults,
-  ...valueOverrides
+  ...valueOverrides,
 })

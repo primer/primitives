@@ -2,8 +2,8 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
-      jsx: true
-    }
+      jsx: true,
+    },
   },
   extends: [
     'plugin:react/jsx-runtime',
@@ -12,26 +12,26 @@ module.exports = {
     'plugin:react-hooks/recommended',
     'plugin:prettier/recommended',
     'plugin:github/recommended',
-    'plugin:github/browser'
+    'plugin:github/browser',
   ],
   ignorePatterns: ['node_modules', '.cache', 'coverage/**/*', 'docs/public/**/*', 'dist/**/*', 'types/**/*'],
   globals: {
-    __DEV__: 'readonly'
+    __DEV__: 'readonly',
   },
   env: {
     browser: true,
     commonjs: true,
     es6: true,
     jest: true,
-    node: true
+    node: true,
   },
   settings: {
     react: {
-      version: 'detect'
+      version: 'detect',
     },
     'import/resolver': {
-      typescript: {} // this loads <rootdir>/tsconfig.json to eslint
-    }
+      typescript: {}, // this loads <rootdir>/tsconfig.json to eslint
+    },
   },
   // rules which apply to JS, TS, etc.
   rules: {
@@ -43,8 +43,8 @@ module.exports = {
     'jsx-a11y/label-has-for': [
       2,
       {
-        components: []
-      }
+        components: [],
+      },
     ],
     camelcase: [
       'error',
@@ -56,10 +56,10 @@ module.exports = {
           'dark_dimmed',
           'dark_high_contrast',
           'dark_colorblind',
-          'dark_tritanopia'
-        ]
-      }
-    ]
+          'dark_tritanopia',
+        ],
+      },
+    ],
   },
   overrides: [
     // rules which apply only to JS
@@ -74,15 +74,15 @@ module.exports = {
         'no-unused-vars': [
           'error',
           {
-            ignoreRestSiblings: true
-          }
-        ]
-      }
+            ignoreRestSiblings: true,
+          },
+        ],
+      },
     },
     // rules which apply only to TS
     {
       parserOptions: {
-        project: 'tsconfig.json'
+        project: 'tsconfig.json',
       },
       files: ['**/*.{ts,tsx}'],
       extends: ['plugin:@typescript-eslint/recommended', 'prettier'],
@@ -97,17 +97,17 @@ module.exports = {
           'error',
           {
             argsIgnorePattern: '^_',
-            ignoreRestSiblings: true
-          }
-        ]
-      }
+            ignoreRestSiblings: true,
+          },
+        ],
+      },
     },
     // rules which apply only to tests files
     {
       files: ['**/*.test.{ts,tsx,js,jsx}'],
       rules: {
-        'i18n-text/no-en': 0
-      }
+        'i18n-text/no-en': 0,
+      },
     },
     // rules which apply only to TS scripts
     {
@@ -116,27 +116,27 @@ module.exports = {
         'import/no-nodejs-modules': [
           'error',
           {
-            allow: ['path', 'fs', 'fs/promises']
-          }
-        ]
-      }
+            allow: ['path', 'fs', 'fs/promises'],
+          },
+        ],
+      },
     },
     // rules which apply only to Markdown
     {
       files: ['**/*.{md,mdx}'],
       extends: ['plugin:mdx/recommended'],
       settings: {
-        'mdx/code-blocks': true
+        'mdx/code-blocks': true,
       },
       rules: {
-        'prettier/prettier': 0
-      }
+        'prettier/prettier': 0,
+      },
     },
     // rules which apply only to Markdown code blocks
     {
       files: ['**/*.{md,mdx}/**'],
       parserOptions: {
-        project: false
+        project: false,
       },
       rules: {
         camelcase: 0,
@@ -157,8 +157,8 @@ module.exports = {
         'prettier/prettier': 0,
         '@typescript-eslint/no-unnecessary-condition': 0,
         '@typescript-eslint/no-unused-vars': 0,
-        'no-redeclare': 0
-      }
-    }
-  ]
+        'no-redeclare': 0,
+      },
+    },
+  ],
 }

@@ -7,5 +7,5 @@ export type PlatformInitializer = (
   prefix: string | undefined,
   // the build path in which the `outputFile` is placed
   buildPath: string,
-  options?: StyleDictionary.Options
+  options?: StyleDictionary.Options,
 ) => StyleDictionary.Platform

@@ -6,22 +6,22 @@ describe('Utilities: jsonToNestedValue', () => {
       subparent: {
         child1: {
           value: '#111',
-          $type: 'color'
+          $type: 'color',
         },
         child2: {
           value: '#222',
-          $type: 'color'
-        }
+          $type: 'color',
+        },
       },
       otherSubparent: {
         text: 'hello',
         number: 42,
         noValue: {
           string: 'string',
-          number: 12
-        }
-      }
-    }
+          number: 12,
+        },
+      },
+    },
   }
 
   it('it returns only value property as value of object', () => {

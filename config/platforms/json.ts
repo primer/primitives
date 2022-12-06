@@ -7,7 +7,7 @@ export const json: PlatformInitializer = (outputFile, prefix, buildPath): StyleD
   buildPath,
   transforms: ['color/hex', 'color/hexAlpha', 'shadow/css', 'border/css'],
   options: {
-    basePxFontSize: 16
+    basePxFontSize: 16,
   },
   files: [
     {
@@ -15,8 +15,8 @@ export const json: PlatformInitializer = (outputFile, prefix, buildPath): StyleD
       filter: isSource,
       format: `json/nested-prefixed`,
       options: {
-        outputReferences: false
-      }
-    }
-  ]
+        outputReferences: false,
+      },
+    },
+  ],
 })

@@ -20,8 +20,8 @@ describe('Transformer: colorToHex', () => {
         getMockToken({value: '#343434', alpha: 0.4}),
         getMockToken({value: '#34343466', alpha: 0.9}),
         getMockToken({value: 'rgb(100,200,255)', alpha: 0.4}),
-        getMockToken({value: 'rgba(100,200,255,0.8)', alpha: 0.4})
-      ].map(item => colorToHex.transformer(item))
+        getMockToken({value: 'rgba(100,200,255,0.8)', alpha: 0.4}),
+      ].map(item => colorToHex.transformer(item)),
     ).toStrictEqual(['#343434', '#34343466', '#64c8ff', '#64c8ffcc'])
   })
 })

@@ -8,27 +8,27 @@ describe('Format: TypeScript definitions', () => {
       subgroup: {
         red: getMockToken({
           $type: 'color',
-          value: '#FF0000'
+          value: '#FF0000',
         }),
         stringValue: getMockToken({
-          value: '#FF0000'
+          value: '#FF0000',
         }),
         border: getMockToken({
           $type: 'border',
           value: {
             color: '#FF0000',
             style: 'solid',
-            width: '1px'
-          }
+            width: '1px',
+          },
         }),
         numberValue: getMockToken({
-          value: 20
+          value: 20,
         }),
         booleanValue: getMockToken({
-          value: true
-        })
-      }
-    }
+          value: true,
+        }),
+      },
+    },
   })
 
   it('Formats dimension tokens', () => {
@@ -39,20 +39,20 @@ describe('Format: TypeScript definitions', () => {
             size: {
               px: getMockToken({
                 $type: 'dimension',
-                value: '100px'
+                value: '100px',
               }),
               rem: getMockToken({
                 $type: 'dimension',
-                value: '10rem'
+                value: '10rem',
               }),
               em: getMockToken({
                 $type: 'dimension',
-                value: '10em'
-              })
-            }
-          }
-        }
-      })
+                value: '10em',
+              }),
+            },
+          },
+        },
+      }),
     })
     const expectedOutput = format(
       `/**
@@ -81,7 +81,7 @@ describe('Format: TypeScript definitions', () => {
           };
         };
       };`,
-      {parser: 'typescript', printWidth: 500}
+      {parser: 'typescript', printWidth: 500},
     )
 
     expect(typescriptExportDefinition(input)).toStrictEqual(expectedOutput)
@@ -91,8 +91,8 @@ describe('Format: TypeScript definitions', () => {
     const input = getMockFormatterArguments({
       dictionary,
       platform: {
-        prefix: 'test'
-      }
+        prefix: 'test',
+      },
     })
     const expectedOutput = format(
       `/**
@@ -119,7 +119,7 @@ describe('Format: TypeScript definitions', () => {
           };
         };
       };`,
-      {parser: 'typescript', printWidth: 500}
+      {parser: 'typescript', printWidth: 500},
     )
 
     expect(typescriptExportDefinition(input)).toStrictEqual(expectedOutput)
@@ -150,7 +150,7 @@ describe('Format: TypeScript definitions', () => {
           };
         };
       };`,
-      {parser: 'typescript', printWidth: 500}
+      {parser: 'typescript', printWidth: 500},
     )
     expect(typescriptExportDefinition(input)).toStrictEqual(expectedOutput)
   })
@@ -164,11 +164,11 @@ describe('Format: TypeScript definitions', () => {
             color: {
               name: 'color token name',
               value: 'rgb(100,200,255)',
-              $type: 'color'
-            }
-          }
-        }
-      })
+              $type: 'color',
+            },
+          },
+        },
+      }),
     })
 
     expect(() => {

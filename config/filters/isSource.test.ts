@@ -26,15 +26,15 @@ describe('Filter: isSource', () => {
     const inputArray = [
       getMockToken({
         value: 'red is source',
-        isSource: true
+        isSource: true,
       }),
       getMockToken({
         value: 'blue is not source',
-        isSource: false
+        isSource: false,
       }),
       {
-        value: 'yellow is not source'
-      }
+        value: 'yellow is not source',
+      },
     ] as StyleDictionary.TransformedToken[]
 
     const expectedOutput = inputArray.filter(item => item.isSource === true)

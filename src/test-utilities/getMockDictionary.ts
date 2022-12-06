@@ -6,10 +6,10 @@ const mockDictionaryDefault = {
     subgroup: {
       red: getMockToken({
         name: 'red',
-        path: ['tokens', 'subgroup', 'red']
-      })
-    }
-  }
+        path: ['tokens', 'subgroup', 'red'],
+      }),
+    },
+  },
 }
 
 export const getMockDictionary = (tokens?: StyleDictionary.TransformedTokens): StyleDictionary.Dictionary => ({
@@ -18,5 +18,5 @@ export const getMockDictionary = (tokens?: StyleDictionary.TransformedTokens): S
   allProperties: Object.values((tokens || mockDictionaryDefault).tokens.subgroup),
   properties: tokens || mockDictionaryDefault,
   usesReference: _value => false,
-  getReferences: _value => []
+  getReferences: _value => [],
 })

@@ -7,13 +7,13 @@ export const javascript: PlatformInitializer = (outputFile, prefix, buildPath): 
   buildPath,
   transforms: ['color/hex', 'color/rgbAlpha', 'shadow/css', 'border/css'],
   options: {
-    basePxFontSize: 16
+    basePxFontSize: 16,
   },
   files: [
     {
       format: 'javascript/commonJs',
       destination: outputFile,
-      filter: isSource
-    }
-  ]
+      filter: isSource,
+    },
+  ],
 })

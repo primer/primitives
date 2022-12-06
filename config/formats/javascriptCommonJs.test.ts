@@ -6,8 +6,8 @@ describe('Format: CommonJs', () => {
   it('Formats tokens adding prefix', () => {
     const input = getMockFormatterArguments({
       platform: {
-        prefix: 'test'
-      }
+        prefix: 'test',
+      },
     })
 
     const expectedOutput = format(
@@ -20,7 +20,7 @@ describe('Format: CommonJs', () => {
         },
       },
     };`,
-      {parser: 'typescript', printWidth: 500}
+      {parser: 'typescript', printWidth: 500},
     )
 
     expect(javascriptCommonJs(input)).toBe(expectedOutput)
@@ -36,7 +36,7 @@ describe('Format: CommonJs', () => {
         },
       },
     };`,
-      {parser: 'typescript', printWidth: 500}
+      {parser: 'typescript', printWidth: 500},
     )
     expect(javascriptCommonJs(input)).toStrictEqual(expectedOutput)
   })

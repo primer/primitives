@@ -22,32 +22,32 @@ describe('Filter: isDeprecated', () => {
 
   const inputArray = [
     getMockToken({
-      deprecated: true
+      deprecated: true,
     }),
     getMockToken({
-      deprecated: '{scale.yellow}'
+      deprecated: '{scale.yellow}',
     }),
     getMockToken({
-      deprecated: null
+      deprecated: null,
     }),
     getMockToken({
-      deprecated: false
+      deprecated: false,
     }),
     getMockToken({
-      deprecated: undefined
+      deprecated: undefined,
     }),
     getMockToken({
-      value: 'pumpkin'
-    })
+      value: 'pumpkin',
+    }),
   ]
 
   const expectedOutput = [
     getMockToken({
-      deprecated: true
+      deprecated: true,
     }),
     getMockToken({
-      deprecated: '{scale.yellow}'
-    })
+      deprecated: '{scale.yellow}',
+    }),
   ]
 
   it('Usage as a filter function', () => {

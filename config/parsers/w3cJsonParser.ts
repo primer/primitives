@@ -21,5 +21,5 @@ export const w3cJsonParser: StyleDictionary.Parser = {
     } catch (e) {
       throw new Error(`Invalid json5 file "${filePath}".`)
     }
-  }
+  },
 }

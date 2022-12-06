@@ -7,7 +7,7 @@ import type StyleDictionary from 'style-dictionary'
  */
 export const prefixTokens = (
   tokens: StyleDictionary.TransformedTokens,
-  platform: StyleDictionary.Platform = {}
+  platform: StyleDictionary.Platform = {},
 ): StyleDictionary.TransformedTokens => {
   const {prefix} = platform
   if (typeof prefix === 'string') {

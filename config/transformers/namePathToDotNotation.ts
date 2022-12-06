@@ -30,5 +30,5 @@ export const namePathToDotNotation: StyleDictionary.Transform = {
         .map((part: string) => camelCase(part))
         .join('.')
     )
-  }
+  },
 }

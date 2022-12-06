@@ -6,8 +6,8 @@ describe('Format: Json nested with prefixes', () => {
   test('Formats tokens with prefix', () => {
     const input = getMockFormatterArguments({
       platform: {
-        prefix: 'test'
-      }
+        prefix: 'test',
+      },
     })
 
     const expectedOutput = format(
@@ -20,7 +20,7 @@ describe('Format: Json nested with prefixes', () => {
           }
         }
       }`,
-      {parser: 'json', printWidth: 500}
+      {parser: 'json', printWidth: 500},
     )
 
     expect(jsonNestedPrefixed(input)).toBe(expectedOutput)
@@ -36,7 +36,7 @@ describe('Format: Json nested with prefixes', () => {
           }
         }
       }`,
-      {parser: 'json', printWidth: 500}
+      {parser: 'json', printWidth: 500},
     )
     expect(jsonNestedPrefixed(input)).toStrictEqual(expectedOutput)
   })
@@ -44,8 +44,8 @@ describe('Format: Json nested with prefixes', () => {
   test('Formats tokens without verbose setting', () => {
     const input = getMockFormatterArguments({
       options: {
-        outputVerbose: true
-      }
+        outputVerbose: true,
+      },
     })
     const expectedOutput = format(
       `{
@@ -66,7 +66,7 @@ describe('Format: Json nested with prefixes', () => {
           }
         }
       }`,
-      {parser: 'json', printWidth: 500}
+      {parser: 'json', printWidth: 500},
     )
     expect(jsonNestedPrefixed(input)).toStrictEqual(expectedOutput)
   })

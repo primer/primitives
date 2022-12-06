@@ -10,9 +10,9 @@ describe('Transformer: shadowToCss', () => {
           offsetX: '0px',
           offsetY: '2px',
           blur: '1px',
-          spread: '0'
-        }
-      })
+          spread: '0',
+        },
+      }),
     ]
     const expectedOutput = ['0px 2px 1px 0 #000000']
     expect(input.map(item => shadowToCss.transformer(item))).toStrictEqual(expectedOutput)
@@ -27,8 +27,8 @@ describe('Transformer: shadowToCss', () => {
           offsetY: '2px',
           blur: '1px',
           spread: '0px',
-          inset: true
-        }
+          inset: true,
+        },
       }),
       getMockToken({
         value: {
@@ -37,9 +37,9 @@ describe('Transformer: shadowToCss', () => {
           offsetY: '2px',
           blur: '1px',
           spread: '0px',
-          inset: false
-        }
-      })
+          inset: false,
+        },
+      }),
     ]
     const expectedOutput = ['inset 0px 2px 1px 0px #000000', '0px 2px 1px 0px #000000']
     expect(input.map(item => shadowToCss.transformer(item))).toStrictEqual(expectedOutput)
@@ -54,10 +54,10 @@ describe('Transformer: shadowToCss', () => {
             color: '#000000',
             offsetX: '2px',
             offsetY: '2px',
-            blur: '1px'
-          }
-        })
-      )
+            blur: '1px',
+          },
+        }),
+      ),
     ).toThrowError()
 
     // missing spread
@@ -68,10 +68,10 @@ describe('Transformer: shadowToCss', () => {
             color: '#000000',
             offsetX: '2px',
             offsetY: '2px',
-            blur: '1px'
-          }
-        })
-      )
+            blur: '1px',
+          },
+        }),
+      ),
     ).toThrowError()
 
     // missing offsets
@@ -82,10 +82,10 @@ describe('Transformer: shadowToCss', () => {
             color: '#000000',
             offsetX: '2px',
             spread: '0px',
-            blur: '1px'
-          }
-        })
-      )
+            blur: '1px',
+          },
+        }),
+      ),
     ).toThrowError()
 
     expect(() =>
@@ -95,10 +95,10 @@ describe('Transformer: shadowToCss', () => {
             color: '#000000',
             offsetY: '2px',
             spread: '0px',
-            blur: '1px'
-          }
-        })
-      )
+            blur: '1px',
+          },
+        }),
+      ),
     ).toThrowError()
     // missing color
     expect(() =>
@@ -108,10 +108,10 @@ describe('Transformer: shadowToCss', () => {
             offsetX: '0px',
             offsetY: '2px',
             spread: '0px',
-            blur: '1px'
-          }
-        })
-      )
+            blur: '1px',
+          },
+        }),
+      ),
     ).toThrowError()
   })
 
@@ -124,8 +124,8 @@ describe('Transformer: shadowToCss', () => {
           offsetY: '2px',
           blur: '1px',
           spread: '0',
-          alpha: 0.5
-        }
+          alpha: 0.5,
+        },
       }),
       getMockToken({
         value: {
@@ -134,9 +134,9 @@ describe('Transformer: shadowToCss', () => {
           offsetY: '2px',
           blur: '1px',
           spread: '0',
-          alpha: 0.5
-        }
-      })
+          alpha: 0.5,
+        },
+      }),
     ]
     const expectedOutput = ['0px 2px 1px 0 #00000080', '0px 2px 1px 0 #22222280']
     expect(input.map(item => shadowToCss.transformer(item))).toStrictEqual(expectedOutput)
@@ -151,7 +151,7 @@ describe('Transformer: shadowToCss', () => {
           offsetY: '2px',
           blur: '1px',
           spread: '0',
-          alpha: 0.5
+          alpha: 0.5,
         },
         {
           color: '#22222266',
@@ -159,9 +159,9 @@ describe('Transformer: shadowToCss', () => {
           offsetY: '8px',
           blur: '16px',
           spread: '0',
-          alpha: 0.2
-        }
-      ]
+          alpha: 0.2,
+        },
+      ],
     })
 
     const expectedOutput = '0px 2px 1px 0 #00000080, 0px 8px 16px 0 #22222233'

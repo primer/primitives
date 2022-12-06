@@ -34,5 +34,5 @@ export const borderToCss: StyleDictionary.Transform = {
     }
     /* color | style | width */
     return `${value.color} ${value.style} ${value.width}`
-  }
+  },
 }

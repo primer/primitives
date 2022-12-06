@@ -5,16 +5,16 @@ describe('Utilities: prefixTokens', () => {
   const tokens = {
     colors: getMockToken({
       name: 'token',
-      value: 'value'
-    })
+      value: 'value',
+    }),
   }
 
   it('it adds prefix to token array', () => {
     const platform = {
-      prefix: 'pumpkin'
+      prefix: 'pumpkin',
     }
     const expectedOutput = {
-      [platform.prefix]: tokens
+      [platform.prefix]: tokens,
     }
 
     expect(prefixTokens(tokens, platform)).toStrictEqual(expectedOutput)
@@ -22,7 +22,7 @@ describe('Utilities: prefixTokens', () => {
 
   it('it returns original token array if prefix is undefined', () => {
     const platform = {
-      prefix: undefined
+      prefix: undefined,
     }
     const expectedOutput = tokens
 

@@ -15,5 +15,5 @@ export const namePathToKebabCase: StyleDictionary.Transform = {
         .filter((part: unknown): part is string => typeof part === 'string')
         .join('-')
     )
-  }
+  },
 }

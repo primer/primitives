@@ -6,10 +6,10 @@ describe('Utilities: checkRequiredTokenProperties', () => {
     expect(() =>
       checkRequiredTokenProperties(
         {
-          propA: '42px'
+          propA: '42px',
         },
-        requiredProps
-      )
+        requiredProps,
+      ),
     ).toThrowError()
   })
 
@@ -19,10 +19,10 @@ describe('Utilities: checkRequiredTokenProperties', () => {
       checkRequiredTokenProperties(
         {
           propA: '42px',
-          propB: '700'
+          propB: '700',
         },
-        requiredProps
-      )
+        requiredProps,
+      ),
     ).not.toThrowError()
   })
 })

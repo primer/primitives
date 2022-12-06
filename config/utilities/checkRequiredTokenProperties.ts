@@ -6,7 +6,7 @@
  */
 export const checkRequiredTokenProperties = (
   tokenValue: Record<string, unknown>,
-  requiredProperties: readonly string[]
+  requiredProperties: readonly string[],
 ) => {
   for (const prop of requiredProperties) {
     if (prop in tokenValue === false) {
