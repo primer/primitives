@@ -17,7 +17,7 @@
       "~/*": ["*"]
     }
   },
-  "include": ["src/", "scripts/", "docs/", "config/"],
+  "include": ["src/", "script/", "docs/", "config/"],
   "exclude": ["./src/@types"],
   "ts-node": {
     "require": ["tsconfig-paths/register"]
