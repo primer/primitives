@@ -7,88 +7,88 @@
   color: {
     fg: {
       muted: {
-        $value: '{base.color.scale.gray.9}',
+        $value: '{base.color.gray.9}',
         $type: 'color'
       }
     },
     canvas: {
       inset: {
-        $value: '{base.color.scale.white}',
+        $value: '{base.color.white}',
         $type: 'color'
       },
       subtle: {
-        $value: '{base.color.scale.gray.1}',
+        $value: '{base.color.gray.1}',
         $type: 'color'
       }
     },
     border: {
       default: {
-        $value: '{base.color.scale.gray.8}',
+        $value: '{base.color.gray.8}',
         $type: 'color'
       },
       muted: {
-        $value: '{base.color.scale.gray.4}',
+        $value: '{base.color.gray.4}',
         $type: 'color'
       },
       subtle: {
-        $value: '{base.color.scale.black}',
+        $value: '{base.color.black}',
         $type: 'color',
         alpha: 0.8
       }
     },
     neutral: {
       subtle: {
-        $value: '{base.color.scale.gray.1}',
+        $value: '{base.color.gray.1}',
         $type: 'color'
       }
     },
     accent: {
       muted: {
-        $value: '{base.color.scale.blue.3}',
+        $value: '{base.color.blue.3}',
         $type: 'color'
       }
     },
     success: {
       emphasis: {
-        $value: '{base.color.scale.green.5}',
+        $value: '{base.color.green.5}',
         $type: 'color'
       },
       muted: {
-        $value: '{base.color.scale.green.3}',
+        $value: '{base.color.green.3}',
         $type: 'color'
       }
     },
     attention: {
       emphasis: {
-        $value: '{base.color.scale.yellow.5}',
+        $value: '{base.color.yellow.5}',
         $type: 'color'
       },
       muted: {
-        $value: '{base.color.scale.yellow.3}',
+        $value: '{base.color.yellow.3}',
         $type: 'color'
       }
     },
     severe: {
       muted: {
-        $value: '{base.color.scale.orange.3}',
+        $value: '{base.color.orange.3}',
         $type: 'color'
       }
     },
     danger: {
       muted: {
-        $value: '{base.color.scale.red.3}',
+        $value: '{base.color.red.3}',
         $type: 'color'
       }
     },
     done: {
       muted: {
-        $value: '{base.color.scale.purple.3}',
+        $value: '{base.color.purple.3}',
         $type: 'color'
       }
     },
     sponsors: {
       muted: {
-        $value: '{base.color.scale.pink.3}',
+        $value: '{base.color.pink.3}',
         $type: 'color'
       }
     },
@@ -106,7 +106,7 @@
     },
     btn: {
       bg: {
-        $value: '{base.color.scale.gray.1}',
+        $value: '{base.color.gray.1}',
         $type: 'color'
       },
       border: {
@@ -115,20 +115,20 @@
       },
       hover: {
         bg: {
-          $value: '{base.color.scale.gray.2}',
+          $value: '{base.color.gray.2}',
           $type: 'color'
         }
       },
       activeBg: {
-        $value: '{base.color.scale.gray.3}',
+        $value: '{base.color.gray.3}',
         $type: 'color'
       },
       selectedBg: {
-        $value: '{base.color.scale.gray.3}',
+        $value: '{base.color.gray.3}',
         $type: 'color'
       },
       focusBg: {
-        $value: '{base.color.scale.gray.2}',
+        $value: '{base.color.gray.2}',
         $type: 'color'
       },
       primary: {
@@ -137,29 +137,29 @@
           $type: 'color'
         },
         border: {
-          $value: '{base.color.scale.green.7}',
+          $value: '{base.color.green.7}',
           $type: 'color'
         },
         hoverBg: {
-          $value: '{base.color.scale.green.6}',
+          $value: '{base.color.green.6}',
           $type: 'color'
         },
         hoverBorder: {
-          $value: '{base.color.scale.green.7}',
+          $value: '{base.color.green.7}',
           $type: 'color'
         },
         focusBg: {
-          $value: '{base.color.scale.green.7}',
+          $value: '{base.color.green.7}',
           $type: 'color'
         },
         focusBorder: {
-          $value: '{base.color.scale.green.7}',
+          $value: '{base.color.green.7}',
           $type: 'color'
         }
       },
       outline: {
         text: {
-          $value: '{base.color.scale.blue.6}',
+          $value: '{base.color.blue.6}',
           $type: 'color'
         },
         hoverBg: {
@@ -167,34 +167,34 @@
           $type: 'color'
         },
         hoverBorder: {
-          $value: '{base.color.scale.blue.7}',
+          $value: '{base.color.blue.7}',
           $type: 'color'
         },
         selectedBg: {
-          $value: '{base.color.scale.blue.7}',
+          $value: '{base.color.blue.7}',
           $type: 'color'
         },
         selectedBorder: {
-          $value: '{base.color.scale.blue.7}',
+          $value: '{base.color.blue.7}',
           $type: 'color'
         },
         focusBorder: {
-          $value: '{base.color.scale.blue.7}',
+          $value: '{base.color.blue.7}',
           $type: 'color'
         },
         disabledText: {
-          $value: '{base.color.scale.blue.5}',
+          $value: '{base.color.blue.5}',
           $type: 'color',
           alpha: 0.5
         },
         disabledBg: {
-          $value: '{base.color.scale.gray.1}',
+          $value: '{base.color.gray.1}',
           $type: 'color'
         }
       },
       danger: {
         text: {
-          $value: '{base.color.scale.red.6}',
+          $value: '{base.color.red.6}',
           $type: 'color'
         },
         hoverBg: {
@@ -202,27 +202,27 @@
           $type: 'color'
         },
         hoverBorder: {
-          $value: '{base.color.scale.red.7}',
+          $value: '{base.color.red.7}',
           $type: 'color'
         },
         selectedBg: {
-          $value: '{base.color.scale.red.7}',
+          $value: '{base.color.red.7}',
           $type: 'color'
         },
         selectedBorder: {
-          $value: '{base.color.scale.red.7}',
+          $value: '{base.color.red.7}',
           $type: 'color'
         },
         focusBorder: {
-          $value: '{base.color.scale.red.7}',
+          $value: '{base.color.red.7}',
           $type: 'color'
         },
         disabledBg: {
-          $value: '{base.color.scale.gray.1}',
+          $value: '{base.color.gray.1}',
           $type: 'color'
         },
         icon: {
-          $value: '{base.color.scale.red.6}',
+          $value: '{base.color.red.6}',
           $type: 'color'
         }
       }
@@ -250,14 +250,14 @@
       },
       hunk: {
         numBg: {
-          $value: '{base.color.scale.blue.1}',
+          $value: '{base.color.blue.1}',
           $type: 'color'
         }
       }
     },
     header: {
       divider: {
-        $value: '{base.color.scale.gray.3}',
+        $value: '{base.color.gray.3}',
         $type: 'color'
       }
     },
@@ -268,7 +268,7 @@
       },
       default: {
         hoverBg: {
-          $value: '{base.color.scale.gray.1}',
+          $value: '{base.color.gray.1}',
           $type: 'color'
         },
         hoverBorder: {
@@ -276,7 +276,7 @@
           $type: 'color'
         },
         activeBg: {
-          $value: '{base.color.scale.gray.2}',
+          $value: '{base.color.gray.2}',
           $type: 'color'
         },
         activeBorder: {
@@ -284,7 +284,7 @@
           $type: 'color'
         },
         selectedBg: {
-          $value: '{base.color.scale.gray.2}',
+          $value: '{base.color.gray.2}',
           $type: 'color'
         }
       },
@@ -294,7 +294,7 @@
           $type: 'color'
         },
         activeBg: {
-          $value: '{base.color.scale.red.7}',
+          $value: '{base.color.red.7}',
           $type: 'color'
         },
         hoverText: {
@@ -313,7 +313,7 @@
     },
     switchTrack: {
       bg: {
-        $value: '{base.color.scale.white}',
+        $value: '{base.color.white}',
         $type: 'color'
       },
       border: {
@@ -323,7 +323,7 @@
 
       checked: {
         border: {
-          $value: '{base.color.scale.blue.5}',
+          $value: '{base.color.blue.5}',
           $type: 'color'
         }
       }

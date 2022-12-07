@@ -2,32 +2,32 @@
   shadow: {
     color: {
       small: {
-        $value: '{base.color.scale.black}',
+        $value: '{base.color.black}',
         alpha: 0.96,
         $type: 'color'
       },
       medium: {
-        $value: '{base.color.scale.gray.4}',
+        $value: '{base.color.gray.4}',
         alpha: 0.85,
         $type: 'color'
       },
       large: {
-        $value: '{base.color.scale.gray.4}',
+        $value: '{base.color.gray.4}',
         alpha: 0.8,
         $type: 'color'
       },
       extraLarge: {
-        $value: '{base.color.scale.gray.4}',
+        $value: '{base.color.gray.4}',
         alpha: 0.7,
         $type: 'color'
       },
       highlight: {
-        $value: '{base.color.scale.white}',
+        $value: '{base.color.white}',
         alpha: 0.25,
         $type: 'color'
       },
       inset: {
-        $value: '{base.color.scale.gray.2}',
+        $value: '{base.color.gray.2}',
         alpha: 0,
         $type: 'color'
       }
@@ -75,7 +75,7 @@
     // components
     overlay: {
       $value: [{
-        color: '{base.color.scale.gray.6}',
+        color: '{base.color.gray.6}',
         offsetX: '0px',
         offsetY: '0px',
         blur: '0px',
