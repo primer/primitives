@@ -4,6 +4,7 @@ import {copyFromDir} from '~/config/utilities'
 import {typeDefinitions, deprecatedJson, css, docJson, scss, javascript, typescript, json} from '~/config/platforms'
 import type {ConfigGeneratorOptions, StyleDictionaryConfigGenerator} from '~/types/StyleDictionaryConfigGenerator'
 import type {TokenBuildInput} from '~/types/TokenBuildInput'
+import glob from 'fast-glob'
 
 export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void => {
   const themes: TokenBuildInput[] = [
@@ -143,7 +144,29 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
       }),
     ).buildAllPlatforms()
   }
-
+  /**
+   * build size tokens
+   */
+  const sizeFiles = glob.sync('src/tokens/functional/size/*')
+  //
+  for (const file of sizeFiles) {
+    PrimerStyleDictionary.extend(
+      getStyleDictionaryConfig(
+        `functional/size/${file.replace('src/tokens/functional/size/', '').replace('.json', '')}`,
+        [file],
+        ['src/tokens/base/size/size.json', ...sizeFiles],
+        buildOptions,
+      ),
+    ).buildAllPlatforms()
+  }
+  // build base scales
+  PrimerStyleDictionary.extend(
+    // using includes as source
+    getStyleDictionaryConfig(`base/size/size`, ['src/tokens/base/size/size.json'], [], {
+      buildPath: buildOptions.buildPath,
+      prefix: undefined,
+    }),
+  ).buildAllPlatforms()
   /**
    * build deprecated.json
    */

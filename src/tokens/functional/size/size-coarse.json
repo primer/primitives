@@ -1,25 +1,26 @@
 {
-  "<namespace>": {
-    "control": {
-      "minTarget": {
+  "control": {
+    "minTarget": {
+      "auto": {
+        "$value": "{base.size.44}",
+        "$type": "dimension"
+      }
+    }
+  },
+  "controlStack": {
+    "small": {
+      "gap": {
         "auto": {
-          "value": "{base.size.44}"
+          "$value": "{base.size.16}",
+          "$type": "dimension"
         }
       }
     },
-    "controlStack": {
-      "small": {
-        "gap": {
-          "auto": {
-            "value": "{base.size.16}"
-          }
-        }
-      },
-      "medium": {
-        "gap": {
-          "auto": {
-            "value": "{base.size.12}"
-          }
+    "medium": {
+      "gap": {
+        "auto": {
+          "$value": "{base.size.12}",
+          "$type": "dimension"
         }
       }
     }

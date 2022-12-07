@@ -1,6 +1,6 @@
 import type StyleDictionary from 'style-dictionary'
 import type {PlatformInitializer} from '~/types/PlatformInitializer'
-import {isSource} from '~/config/filters'
+import {isColor, isShadow, isSource} from '~/config/filters'
 
 const getCssSelectors = (outputFile: string): {selector: string; selectorLight: string; selectorDark: string} => {
   // check for dark in the beginning of the output filename
@@ -29,12 +29,21 @@ export const css: PlatformInitializer = (outputFile, prefix, buildPath, _options
       {
         destination: `${outputFile}`,
         format: `css/themed`,
-        filter: isSource,
+        filter: token => isSource(token) && (isColor(token) || isShadow(token)),
         options: {
           outputReferences: false,
           selector,
           selectorLight,
           selectorDark,
+        },
+      },
+      {
+        destination: `${outputFile}`,
+        format: `css/themed`,
+        filter: token => isSource(token) && !isColor(token) && !isShadow(token),
+        options: {
+          outputReferences: false,
+          selector: ':root',
         },
       },
     ],
