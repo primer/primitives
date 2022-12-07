@@ -1,0 +1,189 @@
+{
+  "<namespace>": {
+    "control": {
+      "minTarget": {
+        "fine": {
+          "value": "{base.size.16}"
+        },
+        "coarse": {
+          "value": "{base.size.44}"
+        }
+      },
+      "xsmall": {
+        "size": {
+          "value": "{base.size.24}"
+        },
+        "lineBoxHeight": {
+          "value": "{base.size.20}"
+        },
+        "paddingBlock": {
+          "value": "calc(({<namespace>.control.xsmall.size} - {<namespace>.control.xsmall.lineBoxHeight}) / 2)"
+        },
+        "paddingInline": {
+          "condensed": {
+            "value": "{base.size.4}"
+          },
+          "normal": {
+            "value": "{base.size.8}"
+          },
+          "spacious": {
+            "value": "{base.size.12}"
+          }
+        },
+        "gap": {
+          "value": "{base.size.4}"
+        }
+      },
+      "small": {
+        "size": {
+          "value": "{base.size.28}"
+        },
+        "lineBoxHeight": {
+          "value": "{base.size.20}"
+        },
+        "paddingBlock": {
+          "value": "calc(({<namespace>.control.small.size} - {<namespace>.control.small.lineBoxHeight}) / 2)"
+        },
+        "paddingInline": {
+          "condensed": {
+            "value": "{base.size.8}"
+          },
+          "normal": {
+            "value": "{base.size.12}"
+          }
+        },
+        "gap": {
+          "value": "{base.size.4}"
+        }
+      },
+      "medium": {
+        "size": {
+          "value": "{base.size.32}"
+        },
+        "lineBoxHeight": {
+          "value": "{base.size.20}"
+        },
+        "paddingBlock": {
+          "value": "calc(({<namespace>.control.medium.size} - {<namespace>.control.medium.lineBoxHeight}) / 2)"
+        },
+        "paddingInline": {
+          "condensed": {
+            "value": "{base.size.8}"
+          },
+          "normal": {
+            "value": "{base.size.12}"
+          },
+          "spacious": {
+            "value": "{base.size.16}"
+          }
+        },
+        "gap": {
+          "value": "{base.size.8}"
+        }
+      },
+      "large": {
+        "size": {
+          "value": "{base.size.40}"
+        },
+        "lineBoxHeight": {
+          "value": "{base.size.20}"
+        },
+        "paddingBlock": {
+          "value": "calc(({<namespace>.control.large.size} - {<namespace>.control.large.lineBoxHeight}) / 2)"
+        },
+        "paddingInline": {
+          "normal": {
+            "value": "{base.size.12}"
+          },
+          "spacious": {
+            "value": "{base.size.16}"
+          }
+        },
+        "gap": {
+          "value": "{base.size.8}"
+        }
+      },
+      "xlarge": {
+        "size": {
+          "value": "{base.size.48}"
+        },
+        "lineBoxHeight": {
+          "value": "{base.size.20}"
+        },
+        "paddingBlock": {
+          "value": "calc(({<namespace>.control.xlarge.size} - {<namespace>.control.xlarge.lineBoxHeight}) / 2)"
+        },
+        "paddingInline": {
+          "normal": {
+            "value": "{base.size.12}"
+          },
+          "spacious": {
+            "value": "{base.size.16}"
+          }
+        },
+        "gap": {
+          "value": "{base.size.8}"
+        }
+      }
+    },
+    "stack": {
+      "padding": {
+        "condensed": {
+          "value": "{base.size.8}"
+        },
+        "normal": {
+          "value": "{base.size.16}"
+        },
+        "spacious": {
+          "value": "{base.size.24}"
+        }
+      },
+      "gap": {
+        "condensed": {
+          "value": "{base.size.8}"
+        },
+        "normal": {
+          "value": "{base.size.16}"
+        },
+        "spacious": {
+          "value": "{base.size.24}"
+        }
+      }
+    },
+    "controlStack": {
+      "small": {
+        "gap": {
+          "condensed": {
+            "value": "{base.size.8}"
+          },
+          "spacious": {
+            "value": "{base.size.16}"
+          }
+        }
+      },
+      "medium": {
+        "gap": {
+          "condensed": {
+            "value": "{base.size.8}"
+          },
+          "spacious": {
+            "value": "{base.size.12}"
+          }
+        }
+      },
+      "large": {
+        "gap": {
+          "auto": {
+            "value": "{base.size.8}"
+          },
+          "condensed": {
+            "value": "{base.size.8}"
+          },
+          "spacious": {
+            "value": "{base.size.12}"
+          }
+        }
+      }
+    }
+  }
+}
