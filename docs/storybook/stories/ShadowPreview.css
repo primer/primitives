@@ -1,0 +1,29 @@
+.story-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 20px;
+  background-color: var(--ui-color-canvas-default);
+  color: var(--ui-color-fg-default);
+}
+.token-name {
+  grid-column: span 2;
+  margin-top: 0;
+}
+.ShadowPreview {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  padding: 16px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px inset;
+  border-radius: 6px;
+}
+
+[data-bg] {
+  width: 200px;
+  height: 64px;
+  flex-grow: 1;
+  border-radius: 6px;
+}
