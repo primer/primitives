@@ -46,7 +46,7 @@ jobs:
       - name: Export diff
         run: |
           diff -r -y --width=150 -B -I '*' -I 'Generated' --suppress-common-lines temp-main/tokens-v2-private/css tokens-v2-private/css  | tail -n +2 > diff.txt
-          npx ts-node ./script/ci-check-diff.ts
+          npx ts-node ./scripts/ci-check-diff.ts
 
       - name: Read raw diff
         if: hashFiles('diff.md') != ''
