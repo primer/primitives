@@ -1,4 +1,4 @@
-import {merge} from '../../../src/utils'
+import {merge} from '../../../src/utils-v1'
 import lightComponentVars from '../vars/component_light'
 import lightDeprecatedVars from '../vars/deprecated_light'
 import lightGlobalVars from '../vars/global_light'

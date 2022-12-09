@@ -1,4 +1,4 @@
-import {merge} from '../../../src/utils'
+import {merge} from '../../../src/utils-v1'
 import light_colorblind from './light_colorblind'
 
 const scale = {

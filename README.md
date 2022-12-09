@@ -63,7 +63,7 @@ When you're ready to remove a variable, first remove it's definitions:
 
 ```diff
 // data/colors/vars/global_light.ts
-import {get} from '../../../src/utils'
+import {get} from '../../../src/utils-v1'
 
 export default {
   text: {
@@ -75,7 +75,7 @@ export default {
 
 ```diff
 // data/colors/vars/global_dark.ts
-import {get} from '../../../src/utils'
+import {get} from '../../../src/utils-v1'
 
 export default {
   text: {
