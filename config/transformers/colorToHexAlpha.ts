@@ -1,5 +1,5 @@
 import {toHex} from 'color2k'
-import {alpha} from '~/config/utilities'
+import {alpha} from './utilities/alpha'
 import {isColorWithAlpha} from '~/config/filters'
 import type StyleDictionary from 'style-dictionary'
 /**
