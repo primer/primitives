@@ -38,11 +38,11 @@
     "postbuild": "ts-node ./scripts/color-contrast.ts",
     "prebuild": "rm -rf dist",
     "prebuild:tokens": "rm -rf tokens-v2-private",
-    "prebuild:color-tokens": "rm -rf tokens-v2-private/**/**/color",
+    "prebuild:v3": "rm -rf tokens-v3-private",
     "prepack": "yarn build && yarn build:tokens",
     "prepare": "husky install && npm run install:storybook",
     "release": "changeset publish",
-    "start:storybook": "npm run build:color-tokens && cd docs/storybook && npm run storybook",
+    "start:storybook": "npm run build:v3 && cd docs/storybook && npm run storybook",
     "test": "jest --verbose --coverage",
     "watch": "ls data/**/*.scss scripts/**/*.ts | entr -s 'yarn build'"
   },
