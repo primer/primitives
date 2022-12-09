@@ -5,7 +5,15 @@ import {isSource} from '~/config/filters'
 export const javascript: PlatformInitializer = (outputFile, prefix, buildPath): StyleDictionary.Platform => ({
   prefix,
   buildPath,
-  transforms: ['color/hex', 'color/rgbAlpha', 'shadow/css', 'border/css'],
+  transforms: [
+    'color/hex',
+    'color/rgbAlpha',
+    'shadow/css',
+    'border/css',
+    'typography/css',
+    'fontFamily/css',
+    'fontWeight/number',
+  ],
   options: {
     basePxFontSize: 16,
   },

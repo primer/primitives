@@ -5,10 +5,13 @@ import {
   colorToHexAlpha,
   colorToRgbAlpha,
   colorToHex,
+  fontFamilyToCss,
+  fontWeightToNumber,
   jsonDeprecated,
-  shadowToCss,
   namePathToDotNotation,
   namePathToKebabCase,
+  shadowToCss,
+  typographyToCss,
 } from './transformers'
 import {
   scssMixinCssVariables,
@@ -101,6 +104,21 @@ StyleDictionary.registerTransform({
 StyleDictionary.registerTransform({
   name: 'border/css',
   ...borderToCss,
+})
+
+StyleDictionary.registerTransform({
+  name: 'typography/css',
+  ...typographyToCss,
+})
+
+StyleDictionary.registerTransform({
+  name: 'fontWeight/number',
+  ...fontWeightToNumber,
+})
+
+StyleDictionary.registerTransform({
+  name: 'fontFamily/css',
+  ...fontFamilyToCss,
 })
 
 /**

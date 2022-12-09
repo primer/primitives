@@ -5,7 +5,16 @@ import {isSource} from '~/config/filters'
 export const docJson: PlatformInitializer = (outputFile, prefix, buildPath): StyleDictionary.Platform => ({
   prefix,
   buildPath,
-  transforms: ['color/hex', 'color/hexAlpha', 'shadow/css', 'border/css'],
+  transforms: [
+    'name/pathToKebabCase',
+    'color/hex',
+    'color/hexAlpha',
+    'shadow/css',
+    'border/css',
+    'typography/css',
+    'fontFamily/css',
+    'fontWeight/number',
+  ],
   options: {
     basePxFontSize: 16,
   },
