@@ -1,4 +1,4 @@
-import {alpha, darken, get} from '../../../src/utils'
+import {alpha, darken, get} from '../../../src/utils-v1'
 
 export default {
   avatar: {

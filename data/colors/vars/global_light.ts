@@ -1,4 +1,4 @@
-import {alpha, get, lighten} from '../../../src/utils'
+import {alpha, get, lighten} from '../../../src/utils-v1'
 
 export default {
   fg: {
