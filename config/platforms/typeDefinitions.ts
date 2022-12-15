@@ -1,5 +1,5 @@
 import type StyleDictionary from 'style-dictionary'
-import type {PlatformInitializer} from '~/types/PlatformInitializer'
+import type {PlatformInitializer} from '~/src/types/PlatformInitializer'
 import {isSource} from '~/config/filters'
 import {upperCaseFirstCharacter} from '~/config/utilities'
 

@@ -2,8 +2,8 @@ import type StyleDictionary from 'style-dictionary'
 import {PrimerStyleDictionary} from '~/config/PrimerStyleDictionary'
 import {copyFromDir} from '~/config/utilities'
 import {typeDefinitions, deprecatedJson, css, docJson, scss, javascript, typescript, json} from '~/config/platforms'
-import type {ConfigGeneratorOptions, StyleDictionaryConfigGenerator} from '~/types/StyleDictionaryConfigGenerator'
-import type {TokenBuildInput} from '~/types/TokenBuildInput'
+import type {ConfigGeneratorOptions, StyleDictionaryConfigGenerator} from '~/src/types/StyleDictionaryConfigGenerator'
+import type {TokenBuildInput} from '~/src/types/TokenBuildInput'
 import glob from 'fast-glob'
 
 export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void => {

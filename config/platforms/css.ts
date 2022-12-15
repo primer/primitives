@@ -1,6 +1,6 @@
 import {isColor, isSource, isShadow} from '~/config/filters'
 import type StyleDictionary from 'style-dictionary'
-import type {PlatformInitializer} from '~/types/PlatformInitializer'
+import type {PlatformInitializer} from '~/src/types/PlatformInitializer'
 
 const getCssSelectors = (outputFile: string): {selector: string; selectorLight: string; selectorDark: string} => {
   // check for dark in the beginning of the output filename
