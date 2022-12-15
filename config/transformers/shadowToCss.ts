@@ -2,7 +2,7 @@ import {toHex} from 'color2k'
 import {isShadow} from '../filters'
 import {alpha} from './utilities/alpha'
 import {checkRequiredTokenProperties} from './utilities/checkRequiredTokenProperties'
-import type {ShadowTokenValue} from '../../types/ShadowTokenValue'
+import type {ShadowTokenValue} from '~/src/types/ShadowTokenValue'
 import type StyleDictionary from 'style-dictionary'
 
 /**
