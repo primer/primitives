@@ -30,6 +30,7 @@
     "build:v3": "ts-node -r tsconfig-paths/register ./scripts/buildV3.ts",
     "build:tokens": "node -e \"require('./build')._init()\"",
     "build:new-tokens": "npm run build:tokens && npm run build:v3",
+    "contrast-check": "npx ts-node ./scripts/color-contrast.ts",
     "format": "prettier --write  '**/*.{js,jsx,ts,tsx,md,mdx,css}'",
     "format:check": "prettier --check '**/*.{js,jsx,ts,tsx,md,mdx,css}'",
     "install:storybook": "cd docs/storybook && npm install",
