@@ -19,7 +19,9 @@
     "clsx": "^1.2.1"
   },
   "scripts": {
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build:preview": "npm run clean && scripts/build-storybook preview",
+    "build:prod": "npm run clean && scripts/build-storybook",
+    "clean": "rm -rf out",
+    "storybook": "start-storybook -p 6006"
   }
 }
