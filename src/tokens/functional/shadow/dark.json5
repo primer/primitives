@@ -2,7 +2,7 @@
   shadow: {
     insetHighlight: {
       $value: {
-        color: '{base.color.scale.white}',
+        color: '{base.color.white}',
         alpha: 0.07,
         offsetX: '0px',
         offsetY: '0px',
@@ -14,7 +14,7 @@
     },
     inset: {
       $value: [{
-        color: '{base.color.scale.black}',
+        color: '{base.color.black}',
         alpha: 1,
         offsetX: '0px',
         offsetY: '1px',
@@ -22,7 +22,7 @@
         spread: '0px',
         inset: true
       },{
-        color: '{base.color.scale.white}',
+        color: '{base.color.white}',
         alpha: 0.07,
         offsetX: '0px',
         offsetY: '1px',
@@ -34,7 +34,7 @@
     },
     highlight: {
       $value: {
-        color: '{base.color.scale.white}',
+        color: '{base.color.white}',
         alpha: 0.25,
         offsetX: '0px',
         offsetY: '1px',
@@ -47,7 +47,7 @@
     resting: {
       xsmall: {
         $value: [{
-            color: '{base.color.scale.black}',
+            color: '{base.color.black}',
             alpha: 0.64,
             offsetX: '0px',
             offsetY: '1px',
@@ -62,7 +62,7 @@
       small: {
         $value: [
           {
-            color: '{base.color.scale.black}',
+            color: '{base.color.black}',
             alpha: 0.6,
             offsetX: '0px',
             offsetY: '1px',
@@ -71,7 +71,7 @@
             inset: false
           },
           {
-            color: '{base.color.scale.black}',
+            color: '{base.color.black}',
             alpha: 0.64,
             offsetX: '0px',
             offsetY: '2px',
@@ -86,7 +86,7 @@
       medium: {
         $value: [
           {
-            color: '{base.color.scale.black}',
+            color: '{base.color.black}',
             alpha: 0.4,
             offsetX: '0px',
             offsetY: '1px',
@@ -95,7 +95,7 @@
             inset: false
           },
           {
-            color: '{base.color.scale.black}',
+            color: '{base.color.black}',
             alpha: 0.48,
             offsetX: '0px',
             offsetY: '2px',
@@ -104,7 +104,7 @@
             inset: false
           },
           {
-            color: '{base.color.scale.black}',
+            color: '{base.color.black}',
             alpha: 0.56,
             offsetX: '0px',
             offsetY: '3px',
