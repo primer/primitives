@@ -1,12 +1,11 @@
 import type StyleDictionary from 'style-dictionary'
 import type {PlatformInitializer} from '~/src/types/PlatformInitializer'
-import {isSource} from '~/config/filters'
+import {isSource} from '~/src/filters'
 
-export const docJson: PlatformInitializer = (outputFile, prefix, buildPath): StyleDictionary.Platform => ({
+export const json: PlatformInitializer = (outputFile, prefix, buildPath): StyleDictionary.Platform => ({
   prefix,
   buildPath,
   transforms: [
-    'name/pathToKebabCase',
     'color/hex',
     'color/hexAlpha',
     'shadow/css',
@@ -21,11 +20,10 @@ export const docJson: PlatformInitializer = (outputFile, prefix, buildPath): Sty
   files: [
     {
       destination: outputFile,
-      format: `json/nested-prefixed`,
       filter: isSource,
+      format: `json/nested-prefixed`,
       options: {
         outputReferences: false,
-        outputVerbose: true,
       },
     },
   ],

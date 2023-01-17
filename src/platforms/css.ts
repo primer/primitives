@@ -1,4 +1,4 @@
-import {isSource} from '~/config/filters'
+import {isSource} from '~/src/filters'
 import type StyleDictionary from 'style-dictionary'
 import type {PlatformInitializer} from '~/src/types/PlatformInitializer'
 

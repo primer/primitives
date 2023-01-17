@@ -1,7 +1,7 @@
 import type StyleDictionary from 'style-dictionary'
 import type {PlatformInitializer} from '~/src/types/PlatformInitializer'
-import {isSource} from '~/config/filters'
-import {upperCaseFirstCharacter} from '~/config/utilities'
+import {isSource} from '~/src/filters'
+import {upperCaseFirstCharacter} from '~/src/utilities'
 
 export const typeDefinitions: PlatformInitializer = (outputFile, prefix, buildPath): StyleDictionary.Platform => ({
   prefix,
@@ -21,7 +21,7 @@ export const typeDefinitions: PlatformInitializer = (outputFile, prefix, buildPa
       destination: `${upperCaseFirstCharacter(outputFile)}DesignTokens.d.ts`,
       filter: isSource,
       options: {
-        tokenTypesPath: './config/types/',
+        tokenTypesPath: './src/types/',
         moduleName: `${upperCaseFirstCharacter(outputFile)}DesignTokens`,
       },
     },
