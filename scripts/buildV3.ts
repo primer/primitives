@@ -2,8 +2,8 @@ import type StyleDictionary from 'style-dictionary'
 import {PrimerStyleDictionary} from '~/config/PrimerStyleDictionary'
 import {copyFromDir} from '~/config/utilities'
 import {typeDefinitions, deprecatedJson, css, docJson, scss, javascript, typescript, json} from '~/config/platforms'
-import type {ConfigGeneratorOptions, StyleDictionaryConfigGenerator} from '~/types/StyleDictionaryConfigGenerator'
-import type {TokenBuildInput} from '~/types/TokenBuildInput'
+import type {ConfigGeneratorOptions, StyleDictionaryConfigGenerator} from '~/src/types/StyleDictionaryConfigGenerator'
+import type {TokenBuildInput} from '~/src/types/TokenBuildInput'
 import glob from 'fast-glob'
 
 export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void => {
@@ -167,6 +167,23 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
       prefix: undefined,
     }),
   ).buildAllPlatforms()
+
+  /**
+   * build typography
+   */
+  PrimerStyleDictionary.extend(
+    getStyleDictionaryConfig(
+      `functional/typography/typography`,
+      [`src/tokens/functional/typography/*.json`],
+      [`src/tokens/base/typography/*.json`],
+      buildOptions,
+    ),
+  ).buildAllPlatforms()
+
+  PrimerStyleDictionary.extend(
+    getStyleDictionaryConfig(`base/typography/typography`, [`src/tokens/base/typography/*.json`], [], buildOptions),
+  ).buildAllPlatforms()
+
   /**
    * build deprecated.json
    */
@@ -176,6 +193,11 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
       filename: 'theme',
       source: [...themes[0].source, ...themes[0].include],
       include: themes[0].include,
+    },
+    {
+      filename: 'typography',
+      source: [`src/tokens/functional/typography/*.json`],
+      include: [`src/tokens/base/typography/*.json`],
     },
   ]
   //
@@ -198,6 +220,11 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
       filename: 'theme',
       source: themes[0].source,
       include: themes[0].include,
+    },
+    {
+      filename: 'typography',
+      source: [`src/tokens/functional/typography/*.json`],
+      include: [`src/tokens/base/typography/*.json`],
     },
   ]
   //

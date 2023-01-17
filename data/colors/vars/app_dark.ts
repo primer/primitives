@@ -1,4 +1,4 @@
-import {get, alpha} from '../../../src/utils'
+import {get, alpha} from '../../../src/utils-v1'
 
 // Variables to be moved to github/github
 

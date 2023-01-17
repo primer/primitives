@@ -1,5 +1,5 @@
 import type StyleDictionary from 'style-dictionary'
-import type {PlatformInitializer} from '~/types/PlatformInitializer'
+import type {PlatformInitializer} from '~/src/types/PlatformInitializer'
 import {isSource} from '~/config/filters'
 
 const getFilenameFromPath = (path: string): string => {
@@ -18,7 +18,16 @@ export const scss: PlatformInitializer = (outputFile, prefix, buildPath): StyleD
   return {
     prefix,
     buildPath,
-    transforms: ['name/pathToKebabCase', 'color/hex', 'color/hexAlpha', 'shadow/css', 'border/css'],
+    transforms: [
+      'name/pathToKebabCase',
+      'color/hex',
+      'color/hexAlpha',
+      'shadow/css',
+      'border/css',
+      'typography/css',
+      'fontFamily/css',
+      'fontWeight/number',
+    ],
     options: {
       basePxFontSize: 16,
     },

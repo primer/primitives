@@ -1,4 +1,4 @@
-import StyleDictionary from 'style-dictionary'
+import type StyleDictionary from 'style-dictionary'
 
 export type PlatformInitializer = (
   // the filename including the extension (e.g. `.css`) and any subfolders after the buildPath (e.g. `functional`)

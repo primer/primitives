@@ -2,11 +2,11 @@ import StyleDictionary from 'style-dictionary'
 import {format} from 'prettier'
 import fs = require('fs')
 import path = require('path')
-import {prefixTokens} from '~/config/utilities'
 import {treeWalker} from '../utilities/treeWalker'
 
 import type {FormatterArguments} from 'style-dictionary/types/Format'
-import type {w3cTransformedToken} from '~/types/w3cTransformedToken'
+import type {w3cTransformedToken} from '~/src/types/w3cTransformedToken'
+import {prefixTokens} from './utilities/prefixTokens'
 
 const {fileHeader} = StyleDictionary.formatHelpers
 
