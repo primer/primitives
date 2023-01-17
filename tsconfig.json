@@ -2,7 +2,7 @@
   "compilerOptions": {
     "jsx": "react",
     "target": "ES2016",
-    "module": "commonjs",
+    "module": "ESNext",
     "lib": ["ESNext"],
     "moduleResolution": "node",
     "esModuleInterop": true,
@@ -11,6 +11,7 @@
     "typeRoots": ["./src/@types", "./node_modules/@types", "types", "config/types/"],
     "rootDir": "./",
     "declaration": true,
+    "allowJs": true,
     "resolveJsonModule": true,
     "baseUrl": ".",
     "paths": {
@@ -20,6 +21,8 @@
   "include": ["src/", "scripts/", "docs/", "config/"],
   "exclude": ["./src/@types"],
   "ts-node": {
-    "require": ["tsconfig-paths/register"]
+    "require": ["tsconfig-paths/register"],
+    "esm": true,
+    "experimentalSpecifierResolution": "node"
   }
 }

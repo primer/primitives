@@ -3,8 +3,12 @@ import chalk from 'chalk'
 import fs from 'fs'
 import mkdirp from 'mkdirp'
 import path from 'path'
+import {fileURLToPath} from 'url'
 import ModeCollection from './lib/mode-collection'
 import VariableCollection, {getFullName} from './lib/variable-collection'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 
 interface Skip {
   type: string
@@ -58,8 +62,7 @@ async function getModeCollectionForType(type: string, toSkip: string[]): Promise
   // TODO: log error if file doesn't exist
   if (fs.existsSync(indexFile)) {
     // TODO: check that modes is an object
-    const {default: modes} = require(indexFile)
-
+    const {default: modes} = await import(indexFile)
     for (const mode in modes) {
       if (toSkip.includes(mode)) {
         continue
@@ -147,11 +150,11 @@ async function writeMainTsIndex(types: string[]) {
   fs.writeFileSync(path.join(dir, `index.ts`), output)
 }
 
-if (require.main === module) {
-  build()
-    .then(() => console.log('✨ Built mode data 🎉'))
-    .catch(err => console.error(err))
-}
+// if (require.main === module) {
+build()
+  .then(() => console.log('✨ Built mode data 🎉'))
+  .catch(err => console.error(err))
+// }
 
 /**
  * Validates a deprecated variable.
