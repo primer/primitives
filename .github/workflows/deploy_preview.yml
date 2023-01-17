@@ -15,5 +15,5 @@ jobs:
     with:
       node_version: 14
       install: yarn
-      build: cd docs && yarn build:preview
+      build: yarn build:tokens && yarn build && yarn build:v3 && cd docs && yarn build:preview
       output_dir: docs/public
