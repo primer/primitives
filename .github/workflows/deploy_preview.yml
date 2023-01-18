@@ -7,6 +7,7 @@ permissions:
   contents: read
   pages: write
   id-token: write
+  deployments: write
 
 jobs:
   deploy:
@@ -17,3 +18,18 @@ jobs:
       install: yarn
       build: yarn build:tokens && yarn build && yarn build:v3 && cd docs && yarn build:preview
       output_dir: docs/public
+
+  post_storybook:
+    needs: deploy
+    name: Link storybook
+    runs-on: ubuntu-latest
+    permissions:
+      deployments: write
+    steps:
+      - uses: chrnorm/deployment-action@v2
+        name: Post deployment url
+        id: deployment
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          environment-url: ${{needs.deploy.outputs.deployment_url}}
+          environment: storybook-preview
