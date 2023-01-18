@@ -1,0 +1,19 @@
+#!/bin/bash
+set -e
+yarn install
+
+# Add base url to be able to serve static files
+if [ -n "$1" ]; then
+  echo "Building storybook for preview"
+  echo '<base href="/storybook/" />' >> .storybook/manager-head.html
+else
+  echo "Building storybook for production"
+  echo '<base href="/primitives/storybook/" />' >> .storybook/manager-head.html
+fi
+
+mkdir -p ../public/storybook
+# Build storybook inside docs
+./node_modules/.bin/build-storybook -o ../public/storybook -s ../public/static
+
+# Remove manager-head after build to not interfere with dev builds
+rm .storybook/manager-head.html
