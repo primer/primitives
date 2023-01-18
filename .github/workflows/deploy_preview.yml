@@ -41,3 +41,11 @@ jobs:
           environment-url: ${{needs.deploy.outputs.deployment_url}}/storybook
           state: 'success'
           deployment-id: ${{ steps.deployment.outputs.deployment_id }}
+      - name: Update deployment status (failure)
+        if: failure()
+        uses: chrnorm/deployment-status@v2
+        with:
+          token: '${{ secrets.GITHUB_TOKEN }}'
+          environment-url: ${{needs.deploy.outputs.deployment_url}}/storybook
+          state: 'failure'
+          deployment-id: ${{ steps.deployment.outputs.deployment_id }}
