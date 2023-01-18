@@ -31,5 +31,5 @@ jobs:
         id: deployment
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          environment-url: ${{needs.deploy.outputs.deployment_url}}
+          environment-url: ${{needs.deploy.outputs.deployment_url}}/storybook
           environment: storybook-preview
