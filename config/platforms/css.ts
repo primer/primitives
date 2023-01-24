@@ -46,14 +46,6 @@ export const css: PlatformInitializer = (outputFile, prefix, buildPath, _options
           selectorDark,
         },
       },
-      {
-        destination: `${outputFile}`,
-        format: `css/variables`,
-        filter: token => isSource(token) && !isColor(token) && !isShadow(token),
-        options: {
-          outputReferences: false,
-        },
-      },
     ],
   }
 }
