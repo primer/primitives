@@ -1,4 +1,4 @@
-import {isColor, isSource, isShadow} from '~/config/filters'
+import {isSource} from '~/config/filters'
 import type StyleDictionary from 'style-dictionary'
 import type {PlatformInitializer} from '~/src/types/PlatformInitializer'
 
@@ -16,7 +16,7 @@ const getCssSelectors = (outputFile: string): {selector: string; selectorLight: 
   }
 }
 
-export const css: PlatformInitializer = (outputFile, prefix, buildPath, _options): StyleDictionary.Platform => {
+export const css: PlatformInitializer = (outputFile, prefix, buildPath, options): StyleDictionary.Platform => {
   const {selector, selectorLight, selectorDark} = getCssSelectors(outputFile)
   return {
     prefix,
@@ -38,7 +38,7 @@ export const css: PlatformInitializer = (outputFile, prefix, buildPath, _options
       {
         destination: `${outputFile}`,
         format: `css/themed`,
-        filter: token => isSource(token) && (isColor(token) || isShadow(token)),
+        filter: token => isSource(token) && options?.themed === true,
         options: {
           outputReferences: false,
           selector,
@@ -49,7 +49,7 @@ export const css: PlatformInitializer = (outputFile, prefix, buildPath, _options
       {
         destination: `${outputFile}`,
         format: `css/variables`,
-        filter: token => isSource(token) && !isColor(token) && !isShadow(token),
+        filter: token => isSource(token) && options?.themed !== true,
         options: {
           outputReferences: false,
         },

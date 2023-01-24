@@ -113,7 +113,7 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
     source, // build the special formats
     include,
     platforms: {
-      css: css(`css/${filename}.css`, options.prefix, options.buildPath),
+      css: css(`css/${filename}.css`, options.prefix, options.buildPath, {themed: options.themed}),
       scss: scss(`scss/${filename}.scss`, options.prefix, options.buildPath),
       js: javascript(`js/${filename}.js`, options.prefix, options.buildPath),
       ts: typescript(`ts/${filename}.ts`, options.prefix, options.buildPath),
@@ -133,7 +133,7 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
   for (const {filename, source, include} of themes) {
     // build functional scales
     PrimerStyleDictionary.extend(
-      getStyleDictionaryConfig(`functional/themes/${filename}`, source, include, buildOptions),
+      getStyleDictionaryConfig(`functional/themes/${filename}`, source, include, {...buildOptions, themed: true}),
     ).buildAllPlatforms()
     // build base scales
     PrimerStyleDictionary.extend(
