@@ -1,7 +1,7 @@
 import type StyleDictionary from 'style-dictionary'
 import {PrimerStyleDictionary} from '~/src/PrimerStyleDictionary'
 import {copyFromDir} from '~/src/utilities'
-import {typeDefinitions, deprecatedJson, css, docJson, scss, javascript, typescript, json} from '~/src/platforms'
+import {typeDefinitions, deprecatedJson, css, docJson, scss, javascript, typescript, json, swift} from '~/src/platforms'
 import type {ConfigGeneratorOptions, StyleDictionaryConfigGenerator} from '~/src/types/StyleDictionaryConfigGenerator'
 import type {TokenBuildInput} from '~/src/types/TokenBuildInput'
 import glob from 'fast-glob'
@@ -28,6 +28,7 @@ const getStyleDictionaryConfig: StyleDictionaryConfigGenerator = (
     ts: typescript(`ts/${filename}.ts`, options.prefix, options.buildPath),
     json: json(`json/${filename}.json`, options.prefix, options.buildPath),
     docJson: docJson(`docs/${filename}.json`, options.prefix, options.buildPath),
+    swift: swift(`swift/${filename}.swift`, options.prefix, options.buildPath),
   },
 })
 
