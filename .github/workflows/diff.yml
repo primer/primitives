@@ -57,22 +57,22 @@ jobs:
           node-version: 16
 
       - name: Install dependencies
-        run: yarn
+        run: npm ci --no-audit --no-fund --include=dev
 
       - name: Build tokens
-        run: yarn build
+        run: npm run build
 
       - name: Build experimental tokens
-        run: yarn build:tokens
+        run: npm run build:tokens
 
       - name: Install dependencies (base)
-        run: pushd base; yarn; popd
+        run: pushd base; npm i --no-audit --no-fund; popd
 
       - name: Build (base)
-        run: pushd base; yarn build; popd
+        run: pushd base; npm run build; popd
 
       - name: Build (base experimental)
-        run: pushd base; yarn build:tokens; popd
+        run: pushd base; npm run build:tokens; popd
 
       - name: Diff
         uses: primer/comment-token-update@main

@@ -21,7 +21,7 @@ jobs:
           node-version: 16
 
       - name: Install dependencies
-        run: yarn install --frozen-lockfile && cd docs && yarn install --frozen-lockfile
+        run: npm ci --no-audit --no-fund && cd docs && npm ci --no-audit --no-fund
 
       - name: Build v1 tokens
         run: npm run build
@@ -43,7 +43,7 @@ jobs:
           node-version: 16
 
       - name: Install dependencies
-        run: yarn install --frozen-lockfile && cd docs && yarn install --frozen-lockfile
+        run: npm ci --no-audit --no-fund && cd docs && npm ci --no-audit --no-fund
 
       - name: Build v1 tokens
         run: npm run build
@@ -68,7 +68,7 @@ jobs:
           node-version: 16
 
       - name: Install dependencies
-        run: yarn install --frozen-lockfile && cd docs && yarn install --frozen-lockfile
+        run: npm ci --no-audit --no-fund && cd docs && npm ci --no-audit --no-fund
 
       - name: Lint
         run: npm run format:check
@@ -87,7 +87,7 @@ jobs:
           node-version: 16
 
       - name: Install dependencies
-        run: yarn install --frozen-lockfile && cd docs && yarn install --frozen-lockfile
+        run: npm ci --no-audit --no-fund && cd docs && npm ci --no-audit --no-fund
 
       - name: Build v1 tokens
         run: npm run build

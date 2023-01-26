@@ -26,7 +26,7 @@
 
 ## Build
 
-`yarn run build`
+`npm run build`
 
 Tokens are transforms and built with [style-dictionary](https://amzn.github.io/style-dictionary/#/). The [config](./build.js) contains custom transforms, formats, and exports to generate tokens for each platform. We currently support CSS vars, TS and JS.
 
