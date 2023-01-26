@@ -16,7 +16,7 @@ export function ColorThemePicker() {
             border: '1px solid',
             borderColor: key === colorTheme ? 'accent.fg' : 'border.default',
             borderRadius: 2,
-            overflow: 'hidden'
+            overflow: 'hidden',
           }}
         >
           <ColorThemePreview colorTheme={key} />
@@ -49,7 +49,7 @@ function ColorThemePreview({colorTheme}) {
         p: 3,
         borderBottom: '1px solid',
         borderColor: 'border.default',
-        justifyContent: 'center'
+        justifyContent: 'center',
       }}
     >
       {['neutral', 'accent', 'success', 'attention', 'severe', 'danger', 'done', 'sponsors'].map(role => (
@@ -60,7 +60,7 @@ function ColorThemePreview({colorTheme}) {
             height: 20,
             bg: colors[colorTheme][role].emphasis,
             margin: '2px',
-            borderRadius: 999
+            borderRadius: 999,
           }}
         />
       ))}

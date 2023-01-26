@@ -60,7 +60,7 @@ const BorderTable: React.FC<BorderTableProps> = ({filePath, borderWidth}) => {
                 : undefined
               const FrameworkVars = [
                 {id: 'CSS', token: `--${token.name}`},
-                {id: 'JS', token: `${token.path.join('.')}`}
+                {id: 'JS', token: `${token.path.join('.')}`},
               ]
               if (borderWidth) {
                 return (
@@ -76,7 +76,7 @@ const BorderTable: React.FC<BorderTableProps> = ({filePath, borderWidth}) => {
                             height: '3rem',
                             width: '3rem',
                             borderRadius: 2,
-                            boxShadow: boxShadow && `var(--primer-borderInset-${tokenVariant}) #c297ff`
+                            boxShadow: boxShadow && `var(--primer-borderInset-${tokenVariant}) #c297ff`,
                           }}
                         />
                       </td>
@@ -105,7 +105,7 @@ const BorderTable: React.FC<BorderTableProps> = ({filePath, borderWidth}) => {
                           borderColor: '#c297ff',
                           height: '3rem',
                           width: '3rem',
-                          borderRadius: `var(--primer-borderRadius-${tokenVariant})`
+                          borderRadius: `var(--primer-borderRadius-${tokenVariant})`,
                         }}
                       />
                     </td>
