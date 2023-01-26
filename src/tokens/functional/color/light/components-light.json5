@@ -1,4 +1,18 @@
 {
+  "overlay": {
+    "bgColor": {
+        "$value": "{base.color.white}",
+        "$type": "color"
+      }
+    }
+    "backdrop": {
+      "bgColor": {
+        "$value": "{base.color.black}",
+        "alpha": 0.5,
+        "$type": "color"
+      }
+    }
+  },
   "color": {
     "avatar": {
       "bg": {
