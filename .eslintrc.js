@@ -111,7 +111,7 @@ module.exports = {
     },
     // rules which apply only to TS scripts
     {
-      files: ['scripts/**/*.ts', 'config/**/*.ts'],
+      files: ['scripts/**/*.ts', 'src/**/*.ts'],
       rules: {
         'import/no-nodejs-modules': [
           'error',

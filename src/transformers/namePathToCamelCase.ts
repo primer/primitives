@@ -1,5 +1,5 @@
 import type StyleDictionary from 'style-dictionary'
-import {upperCaseFirstCharacter} from '~/config/utilities'
+import {upperCaseFirstCharacter} from '~/src/utilities'
 
 /**
  * @description converts the [TransformedToken's](https://github.com/amzn/style-dictionary/blob/main/types/TransformedToken.d.ts) `.path` array to a camelCase string, preserves casing of parts

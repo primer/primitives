@@ -1,5 +1,5 @@
 import {toHex} from 'color2k'
-import {isColor} from '~/config/filters'
+import {isColor} from '~/src/filters'
 import type StyleDictionary from 'style-dictionary'
 /**
  * @description converts color tokens value to `hex6` or `hex8`

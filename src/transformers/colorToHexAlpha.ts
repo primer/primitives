@@ -1,6 +1,6 @@
 import {toHex} from 'color2k'
 import {alpha} from './utilities/alpha'
-import {isColorWithAlpha} from '~/config/filters'
+import {isColorWithAlpha} from '~/src/filters'
 import type StyleDictionary from 'style-dictionary'
 /**
  * @description replaces tokens value with `hex8` color using the tokens `alpha` property to specify the value used for alpha
