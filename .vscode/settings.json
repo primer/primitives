@@ -1,10 +1,17 @@
 {
   "typescript.tsdk": "node_modules/typescript/lib",
   "editor.formatOnSave": true,
+  "prettier.configPath": ".prettierrc.js",
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json5]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "files.exclude": {

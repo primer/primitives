@@ -8,43 +8,43 @@
     open: {
       fg: {
         $value: '{base.color.orange.3}',
-        $type: 'color'
+        $type: 'color',
       },
       emphasis: {
         $value: '{base.color.orange.5}',
-        $type: 'color'
+        $type: 'color',
       },
       muted: {
         $value: '{base.color.orange.4}',
         $type: 'color',
-        alpha: 0.4
+        alpha: 0.4,
       },
       subtle: {
         $value: '{base.color.orange.4}',
         $type: 'color',
-        alpha: 0.15
-      }
+        alpha: 0.15,
+      },
     },
     closed: {
       fg: {
         $value: '{base.color.gray.3}',
-        $type: 'color'
+        $type: 'color',
       },
 
       emphasis: {
         $value: '{base.color.gray.4}',
-        $type: 'color'
+        $type: 'color',
       },
       muted: {
         $value: '{base.color.gray.4}',
         $type: 'color',
-        alpha: 0.4
+        alpha: 0.4,
       },
       subtle: {
         $value: '{base.color.gray.4}',
         $type: 'color',
-        alpha: 0.1
-      }
-    }
-  }
+        alpha: 0.1,
+      },
+    },
+  },
 }

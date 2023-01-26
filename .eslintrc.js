@@ -13,6 +13,7 @@ module.exports = {
     'plugin:prettier/recommended',
     'plugin:github/recommended',
     'plugin:github/browser',
+    'prettier',
   ],
   ignorePatterns: ['node_modules', '.cache', 'coverage/**/*', 'docs/public/**/*', 'dist/**/*', 'types/**/*'],
   globals: {

@@ -1,469 +1,469 @@
 {
-  "color": {
-    "avatar": {
-      "bg": {
-        "$value": "{base.color.white}",
-        "$type": "color"
+  color: {
+    avatar: {
+      bg: {
+        $value: '{base.color.white}',
+        $type: 'color',
       },
-      "border": {
-        "$value": "{color.border.subtle}",
-        "$type": "color"
+      border: {
+        $value: '{color.border.subtle}',
+        $type: 'color',
       },
-      "stackFade": {
-        "$value": "{base.color.gray.3}",
-        "$type": "color"
+      stackFade: {
+        $value: '{base.color.gray.3}',
+        $type: 'color',
       },
-      "stackFadeMore": {
-        "$value": "{base.color.gray.2}",
-        "$type": "color"
-      }
+      stackFadeMore: {
+        $value: '{base.color.gray.2}',
+        $type: 'color',
+      },
     },
-    "topicTag": {
-      "border": {
-        "$value": "{base.color.transparent}",
-        "$type": "color"
-      }
+    topicTag: {
+      border: {
+        $value: '{base.color.transparent}',
+        $type: 'color',
+      },
     },
-    "counter": {
-      "border": {
-        "$value": "{base.color.transparent}",
-        "$type": "color"
-      }
+    counter: {
+      border: {
+        $value: '{base.color.transparent}',
+        $type: 'color',
+      },
     },
-    "selectMenu": {
-      "backdropBorder": {
-        "$value": "{base.color.transparent}",
-        "$type": "color"
+    selectMenu: {
+      backdropBorder: {
+        $value: '{base.color.transparent}',
+        $type: 'color',
       },
-      "tapHighlight": {
-        "$value": "{base.color.gray.3}",
-        "$type": "color",
-        "alpha": 0.5
+      tapHighlight: {
+        $value: '{base.color.gray.3}',
+        $type: 'color',
+        alpha: 0.5,
       },
-      "tapFocusBg": {
-        "$value": "{base.color.blue.1}",
-        "$type": "color"
-      }
+      tapFocusBg: {
+        $value: '{base.color.blue.1}',
+        $type: 'color',
+      },
     },
-    "header": {
-      "text": {
-        "$value": "{base.color.white}",
-        "$type": "color",
-        "alpha": 0.7
+    header: {
+      text: {
+        $value: '{base.color.white}',
+        $type: 'color',
+        alpha: 0.7,
       },
-      "bg": {
-        "$value": "{base.color.gray.9}",
-        "$type": "color"
+      bg: {
+        $value: '{base.color.gray.9}',
+        $type: 'color',
       },
-      "divider": {
-        "$value": "{base.color.gray.6}",
-        "$type": "color"
+      divider: {
+        $value: '{base.color.gray.6}',
+        $type: 'color',
       },
-      "logo": {
-        "$value": "{base.color.white}",
-        "$type": "color"
-      }
+      logo: {
+        $value: '{base.color.white}',
+        $type: 'color',
+      },
     },
-    "headerSearch": {
-      "bg": {
-        "$value": "{base.color.gray.9}",
-        "$type": "color"
+    headerSearch: {
+      bg: {
+        $value: '{base.color.gray.9}',
+        $type: 'color',
       },
-      "border": {
-        "$value": "{base.color.gray.6}",
-        "$type": "color"
-      }
+      border: {
+        $value: '{base.color.gray.6}',
+        $type: 'color',
+      },
     },
-    "sidenav": {
-      "selectedBg": {
-        "$value": "{base.color.white}",
-        "$type": "color"
-      }
+    sidenav: {
+      selectedBg: {
+        $value: '{base.color.white}',
+        $type: 'color',
+      },
     },
-    "menu": {
-      "bgActive": {
-        "$value": "{base.color.transparent}",
-        "$type": "color"
-      }
+    menu: {
+      bgActive: {
+        $value: '{base.color.transparent}',
+        $type: 'color',
+      },
     },
-    "input": {
-      "disabledBg": {
-        "$value": "{color.neutral.muted}",
-        "$type": "color"
-      }
+    input: {
+      disabledBg: {
+        $value: '{color.neutral.muted}',
+        $type: 'color',
+      },
     },
-    "timeline": {
-      "badgeBg": {
-        "$value": "{base.color.gray.1}",
-        "$type": "color"
-      }
+    timeline: {
+      badgeBg: {
+        $value: '{base.color.gray.1}',
+        $type: 'color',
+      },
     },
-    "btn": {
-      "text": {
-        "$value": "{base.color.gray.9}",
-        "$type": "color"
+    btn: {
+      text: {
+        $value: '{base.color.gray.9}',
+        $type: 'color',
       },
-      "bg": {
-        "$value": "{base.color.gray.0}",
-        "$type": "color"
+      bg: {
+        $value: '{base.color.gray.0}',
+        $type: 'color',
       },
-      "border": {
-        "$value": "{color.border.subtle}",
-        "$type": "color"
+      border: {
+        $value: '{color.border.subtle}',
+        $type: 'color',
       },
-      "hover": {
-        "bg": {
-          "$value": "#f3f4f6",
-          "$type": "color"
-        }
+      hover: {
+        bg: {
+          $value: '#f3f4f6',
+          $type: 'color',
+        },
       },
-      "hoverBorder": {
-        "$value": "{color.border.subtle}",
-        "$type": "color"
+      hoverBorder: {
+        $value: '{color.border.subtle}',
+        $type: 'color',
       },
-      "activeBg": {
-        "$value": "#ebecf0",
-        "$type": "color"
+      activeBg: {
+        $value: '#ebecf0',
+        $type: 'color',
       },
-      "activeBorder": {
-        "$value": "{color.border.subtle}",
-        "$type": "color"
+      activeBorder: {
+        $value: '{color.border.subtle}',
+        $type: 'color',
       },
-      "selectedBg": {
-        "$value": "#eeeff2",
-        "$type": "color"
+      selectedBg: {
+        $value: '#eeeff2',
+        $type: 'color',
       },
-      "focusBg": {
-        "$value": "{base.color.gray.0}",
-        "$type": "color"
+      focusBg: {
+        $value: '{base.color.gray.0}',
+        $type: 'color',
       },
-      "focusBorder": {
-        "$value": "{color.border.subtle}",
-        "$type": "color"
+      focusBorder: {
+        $value: '{color.border.subtle}',
+        $type: 'color',
       },
-      "counterBg": {
-        "$value": "{base.color.black}",
-        "$type": "color",
-        "alpha": 0.08
+      counterBg: {
+        $value: '{base.color.black}',
+        $type: 'color',
+        alpha: 0.08,
       },
 
-      "primary": {
-        "text": {
-          "$value": "{base.color.white}",
-          "$type": "color"
+      primary: {
+        text: {
+          $value: '{base.color.white}',
+          $type: 'color',
         },
-        "bg": {
-          "$value": "{base.color.green.4}",
-          "$type": "color"
+        bg: {
+          $value: '{base.color.green.4}',
+          $type: 'color',
         },
-        "border": {
-          "$value": "{color.border.subtle}",
-          "$type": "color"
+        border: {
+          $value: '{color.border.subtle}',
+          $type: 'color',
         },
-        "hoverBg": {
-          "$value": "#2c974b",
-          "$type": "color"
+        hoverBg: {
+          $value: '#2c974b',
+          $type: 'color',
         },
-        "hoverBorder": {
-          "$value": "{color.border.subtle}",
-          "$type": "color"
+        hoverBorder: {
+          $value: '{color.border.subtle}',
+          $type: 'color',
         },
-        "selectedBg": {
-          "$value": "#298e46",
-          "$type": "color"
+        selectedBg: {
+          $value: '#298e46',
+          $type: 'color',
         },
-        "disabledText": {
-          "$value": "{base.color.white}",
-          "$type": "color",
-          "alpha": 0.8
+        disabledText: {
+          $value: '{base.color.white}',
+          $type: 'color',
+          alpha: 0.8,
         },
-        "disabledBg": {
-          "$value": "#94d3a2",
-          "$type": "color"
+        disabledBg: {
+          $value: '#94d3a2',
+          $type: 'color',
         },
-        "disabledBorder": {
-          "$value": "{color.border.subtle}",
-          "$type": "color"
+        disabledBorder: {
+          $value: '{color.border.subtle}',
+          $type: 'color',
         },
-        "focusBg": {
-          "$value": "{base.color.green.4}",
-          "$type": "color"
+        focusBg: {
+          $value: '{base.color.green.4}',
+          $type: 'color',
         },
-        "focusBorder": {
-          "$value": "{color.border.subtle}",
-          "$type": "color"
+        focusBorder: {
+          $value: '{color.border.subtle}',
+          $type: 'color',
         },
-        "icon": {
-          "$value": "{base.color.white}",
-          "$type": "color",
-          "alpha": 0.8
+        icon: {
+          $value: '{base.color.white}',
+          $type: 'color',
+          alpha: 0.8,
         },
-        "counterBg": {
-          "$value": "{base.color.white}",
-          "$type": "color",
-          "alpha": 0.2
-        }
+        counterBg: {
+          $value: '{base.color.white}',
+          $type: 'color',
+          alpha: 0.2,
+        },
       },
 
-      "outline": {
-        "text": {
-          "$value": "{base.color.blue.5}",
-          "$type": "color"
+      outline: {
+        text: {
+          $value: '{base.color.blue.5}',
+          $type: 'color',
         },
-        "hoverText": {
-          "$value": "{base.color.white}",
-          "$type": "color"
+        hoverText: {
+          $value: '{base.color.white}',
+          $type: 'color',
         },
-        "hoverBg": {
-          "$value": "{base.color.blue.5}",
-          "$type": "color"
+        hoverBg: {
+          $value: '{base.color.blue.5}',
+          $type: 'color',
         },
-        "hoverBorder": {
-          "$value": "{color.border.subtle}",
-          "$type": "color"
+        hoverBorder: {
+          $value: '{color.border.subtle}',
+          $type: 'color',
         },
-        "hoverCounterBg": {
-          "$value": "{base.color.white}",
-          "$type": "color",
-          "alpha": 0.2
+        hoverCounterBg: {
+          $value: '{base.color.white}',
+          $type: 'color',
+          alpha: 0.2,
         },
-        "selectedText": {
-          "$value": "{base.color.white}",
-          "$type": "color"
+        selectedText: {
+          $value: '{base.color.white}',
+          $type: 'color',
         },
-        "selectedBg": {
-          "$value": "#0965ce",
-          "$type": "color"
+        selectedBg: {
+          $value: '#0965ce',
+          $type: 'color',
         },
-        "selectedBorder": {
-          "$value": "{color.border.subtle}",
-          "$type": "color"
+        selectedBorder: {
+          $value: '{color.border.subtle}',
+          $type: 'color',
         },
-        "disabledText": {
-          "$value": "{base.color.blue.5}",
-          "$type": "color",
-          "alpha": 0.5
+        disabledText: {
+          $value: '{base.color.blue.5}',
+          $type: 'color',
+          alpha: 0.5,
         },
-        "disabledBg": {
-          "$value": "{base.color.gray.0}",
-          "$type": "color"
+        disabledBg: {
+          $value: '{base.color.gray.0}',
+          $type: 'color',
         },
-        "disabledCounterBg": {
-          "$value": "{base.color.blue.5}",
-          "$type": "color",
-          "alpha": 0.05
+        disabledCounterBg: {
+          $value: '{base.color.blue.5}',
+          $type: 'color',
+          alpha: 0.05,
         },
-        "focusBorder": {
-          "$value": "{color.border.subtle}",
-          "$type": "color"
+        focusBorder: {
+          $value: '{color.border.subtle}',
+          $type: 'color',
         },
-        "counterBg": {
-          "$value": "{base.color.blue.5}",
-          "$type": "color",
-          "alpha": 0.1
-        }
+        counterBg: {
+          $value: '{base.color.blue.5}',
+          $type: 'color',
+          alpha: 0.1,
+        },
       },
 
-      "danger": {
-        "text": {
-          "$value": "{base.color.red.5}",
-          "$type": "color"
+      danger: {
+        text: {
+          $value: '{base.color.red.5}',
+          $type: 'color',
         },
-        "hoverText": {
-          "$value": "{base.color.white}",
-          "$type": "color"
+        hoverText: {
+          $value: '{base.color.white}',
+          $type: 'color',
         },
-        "hoverBg": {
-          "$value": "{base.color.red.6}",
-          "$type": "color"
+        hoverBg: {
+          $value: '{base.color.red.6}',
+          $type: 'color',
         },
-        "hoverBorder": {
-          "$value": "{color.border.subtle}",
-          "$type": "color"
+        hoverBorder: {
+          $value: '{color.border.subtle}',
+          $type: 'color',
         },
-        "hoverCounterBg": {
-          "$value": "{base.color.white}",
-          "$type": "color",
-          "alpha": 0.2
+        hoverCounterBg: {
+          $value: '{base.color.white}',
+          $type: 'color',
+          alpha: 0.2,
         },
-        "selectedText": {
-          "$value": "{base.color.white}",
-          "$type": "color"
+        selectedText: {
+          $value: '{base.color.white}',
+          $type: 'color',
         },
-        "selectedBg": {
-          "$value": "#c11f2a",
-          "$type": "color"
+        selectedBg: {
+          $value: '#c11f2a',
+          $type: 'color',
         },
-        "selectedBorder": {
-          "$value": "{color.border.subtle}",
-          "$type": "color"
+        selectedBorder: {
+          $value: '{color.border.subtle}',
+          $type: 'color',
         },
-        "disabledText": {
-          "$value": "{base.color.red.5}",
-          "$type": "color",
-          "alpha": 0.5
+        disabledText: {
+          $value: '{base.color.red.5}',
+          $type: 'color',
+          alpha: 0.5,
         },
-        "disabledBg": {
-          "$value": "{base.color.gray.0}",
-          "$type": "color"
+        disabledBg: {
+          $value: '{base.color.gray.0}',
+          $type: 'color',
         },
-        "disabledCounterBg": {
-          "$value": "{base.color.red.5}",
-          "$type": "color",
-          "alpha": 0.05
+        disabledCounterBg: {
+          $value: '{base.color.red.5}',
+          $type: 'color',
+          alpha: 0.05,
         },
-        "focusBorder": {
-          "$value": "{color.border.subtle}",
-          "$type": "color"
+        focusBorder: {
+          $value: '{color.border.subtle}',
+          $type: 'color',
         },
-        "counterBg": {
-          "$value": "{base.color.red.5}",
-          "$type": "color",
-          "alpha": 0.1
+        counterBg: {
+          $value: '{base.color.red.5}',
+          $type: 'color',
+          alpha: 0.1,
         },
-        "icon": {
-          "$value": "{base.color.red.5}",
-          "$type": "color"
+        icon: {
+          $value: '{base.color.red.5}',
+          $type: 'color',
         },
-        "hoverIcon": {
-          "$value": "{base.color.white}",
-          "$type": "color"
-        }
-      }
+        hoverIcon: {
+          $value: '{base.color.white}',
+          $type: 'color',
+        },
+      },
     },
-    "underlinenav": {
-      "icon": {
-        "$value": "{color.fg.subtle}",
-        "$type": "color"
+    underlinenav: {
+      icon: {
+        $value: '{color.fg.subtle}',
+        $type: 'color',
       },
-      "borderHover": {
-        "$value": "{color.neutral.muted}",
-        "$type": "color"
-      }
-    },
-
-    "actionListItem": {
-      "inlineDivider": {
-        "$value": "{color.border.default}",
-        "$type": "color",
-        "alpha": 0.48
+      borderHover: {
+        $value: '{color.neutral.muted}',
+        $type: 'color',
       },
-
-      "default": {
-        "hoverBg": {
-          "$value": "{base.color.gray.2}",
-          "$type": "color",
-          "alpha": 0.32
-        },
-        "hoverBorder": {
-          "$value": "{base.color.transparent}",
-          "$type": "color"
-        },
-        "activeBg": {
-          "$value": "{base.color.gray.2}",
-          "$type": "color",
-          "alpha": 0.48
-        },
-        "activeBorder": {
-          "$value": "{base.color.transparent}",
-          "$type": "color"
-        },
-        "selectedBg": {
-          "$value": "{base.color.gray.2}",
-          "$type": "color",
-          "alpha": 0.24
-        }
-      },
-      "danger": {
-        "hoverBg": {
-          "$value": "{color.danger.subtle}",
-          "$type": "color",
-          "alpha": 0.64
-        },
-        "activeBg": {
-          "$value": "{color.danger.subtle}",
-          "$type": "color"
-        },
-        "hoverText": {
-          "$value": "{color.danger.fg}",
-          "$type": "color"
-        }
-      }
     },
 
-    "switchTrack": {
-      "bg": {
-        "$value": "{base.color.gray.1}",
-        "$type": "color"
-      },
-      "border": {
-        "$value": "{base.color.gray.3}",
-        "$type": "color"
+    actionListItem: {
+      inlineDivider: {
+        $value: '{color.border.default}',
+        $type: 'color',
+        alpha: 0.48,
       },
 
-      "checked": {
-        "bg": {
-          "$value": "{base.color.blue.0}",
-          "$type": "color"
+      default: {
+        hoverBg: {
+          $value: '{base.color.gray.2}',
+          $type: 'color',
+          alpha: 0.32,
         },
-        "hoverBg": {
-          "$value": "{base.color.blue.1}",
-          "$type": "color"
+        hoverBorder: {
+          $value: '{base.color.transparent}',
+          $type: 'color',
         },
-        "activeBg": {
-          "$value": "{base.color.blue.2}",
-          "$type": "color"
+        activeBg: {
+          $value: '{base.color.gray.2}',
+          $type: 'color',
+          alpha: 0.48,
         },
-        "border": {
-          "$value": "{base.color.blue.3}",
-          "$type": "color"
-        }
-      }
+        activeBorder: {
+          $value: '{base.color.transparent}',
+          $type: 'color',
+        },
+        selectedBg: {
+          $value: '{base.color.gray.2}',
+          $type: 'color',
+          alpha: 0.24,
+        },
+      },
+      danger: {
+        hoverBg: {
+          $value: '{color.danger.subtle}',
+          $type: 'color',
+          alpha: 0.64,
+        },
+        activeBg: {
+          $value: '{color.danger.subtle}',
+          $type: 'color',
+        },
+        hoverText: {
+          $value: '{color.danger.fg}',
+          $type: 'color',
+        },
+      },
     },
 
-    "switchKnob": {
-      "checked": {
-        "bg": {
-          "$value": "{base.color.blue.5}",
-          "$type": "color"
-        },
-        "disabledBg": {
-          "$value": "{base.color.gray.5}",
-          "$type": "color"
-        }
-      }
-    },
-
-    "segmentedControl": {
-      "bg": {
-        "$value": "{base.color.gray.1}",
-        "$type": "color"
+    switchTrack: {
+      bg: {
+        $value: '{base.color.gray.1}',
+        $type: 'color',
+      },
+      border: {
+        $value: '{base.color.gray.3}',
+        $type: 'color',
       },
 
-      "button": {
-        "hover": {
-          "bg": {
-            "$value": "{base.color.gray.3}",
-            "$type": "color",
-            "alpha": 0.2
-          }
+      checked: {
+        bg: {
+          $value: '{base.color.blue.0}',
+          $type: 'color',
+        },
+        hoverBg: {
+          $value: '{base.color.blue.1}',
+          $type: 'color',
+        },
+        activeBg: {
+          $value: '{base.color.blue.2}',
+          $type: 'color',
+        },
+        border: {
+          $value: '{base.color.blue.3}',
+          $type: 'color',
+        },
+      },
+    },
+
+    switchKnob: {
+      checked: {
+        bg: {
+          $value: '{base.color.blue.5}',
+          $type: 'color',
+        },
+        disabledBg: {
+          $value: '{base.color.gray.5}',
+          $type: 'color',
+        },
+      },
+    },
+
+    segmentedControl: {
+      bg: {
+        $value: '{base.color.gray.1}',
+        $type: 'color',
+      },
+
+      button: {
+        hover: {
+          bg: {
+            $value: '{base.color.gray.3}',
+            $type: 'color',
+            alpha: 0.2,
+          },
         },
 
-        "active": {
-          "bg": {
-            "$value": "{base.color.gray.3}",
-            "$type": "color",
-            "alpha": 0.4
-          }
+        active: {
+          bg: {
+            $value: '{base.color.gray.3}',
+            $type: 'color',
+            alpha: 0.4,
+          },
         },
 
-        "selected": {
-          "border": {
-            "$value": "{base.color.gray.5}",
-            "$type": "color"
-          }
-        }
-      }
-    }
-  }
+        selected: {
+          border: {
+            $value: '{base.color.gray.5}',
+            $type: 'color',
+          },
+        },
+      },
+    },
+  },
 }

@@ -1,322 +1,322 @@
 {
-  "color": {
-    "fg": {
-      "default": {
-        "$value": "{base.color.gray.1}",
-        "$type": "color"
+  color: {
+    fg: {
+      default: {
+        $value: '{base.color.gray.1}',
+        $type: 'color',
       },
-      "muted": {
-        "$value": "{base.color.gray.3}",
-        "$type": "color"
+      muted: {
+        $value: '{base.color.gray.3}',
+        $type: 'color',
       },
-      "subtle": {
-        "$value": "{base.color.gray.4}",
-        "$type": "color"
+      subtle: {
+        $value: '{base.color.gray.4}',
+        $type: 'color',
       },
-      "onEmphasis": {
-        "$value": "{base.color.white}",
-        "$type": "color"
-      }
+      onEmphasis: {
+        $value: '{base.color.white}',
+        $type: 'color',
+      },
     },
-    "canvas": {
-      "default": {
-        "$value": "{base.color.gray.9}",
-        "$type": "color"
+    canvas: {
+      default: {
+        $value: '{base.color.gray.9}',
+        $type: 'color',
       },
-      "overlay": {
-        "$value": "{base.color.gray.8}",
-        "$type": "color"
+      overlay: {
+        $value: '{base.color.gray.8}',
+        $type: 'color',
       },
-      "inset": {
-        "$value": "{base.color.black}",
-        "$type": "color"
+      inset: {
+        $value: '{base.color.black}',
+        $type: 'color',
       },
-      "subtle": {
-        "$value": "{base.color.gray.8}",
-        "$type": "color"
-      }
+      subtle: {
+        $value: '{base.color.gray.8}',
+        $type: 'color',
+      },
     },
-    "border": {
-      "default": {
-        "$value": "{base.color.gray.6}",
-        "$type": "color"
+    border: {
+      default: {
+        $value: '{base.color.gray.6}',
+        $type: 'color',
       },
-      "muted": {
-        "$value": "{base.color.gray.7}",
-        "$type": "color"
+      muted: {
+        $value: '{base.color.gray.7}',
+        $type: 'color',
       },
-      "subtle": {
-        "$value": "{base.color.gray.0}",
-        "$type": "color",
-        "alpha": 0.1
-      }
+      subtle: {
+        $value: '{base.color.gray.0}',
+        $type: 'color',
+        alpha: 0.1,
+      },
     },
-    "neutral": {
-      "emphasisPlus": {
-        "$value": "{base.color.gray.4}",
-        "$type": "color"
+    neutral: {
+      emphasisPlus: {
+        $value: '{base.color.gray.4}',
+        $type: 'color',
       },
-      "emphasis": {
-        "$value": "{base.color.gray.4}",
-        "$type": "color"
+      emphasis: {
+        $value: '{base.color.gray.4}',
+        $type: 'color',
       },
-      "muted": {
-        "$value": "{base.color.gray.4}",
-        "$type": "color",
-        "alpha": 0.4
+      muted: {
+        $value: '{base.color.gray.4}',
+        $type: 'color',
+        alpha: 0.4,
       },
-      "subtle": {
-        "$value": "{base.color.gray.4}",
-        "$type": "color",
-        "alpha": 0.1
-      }
+      subtle: {
+        $value: '{base.color.gray.4}',
+        $type: 'color',
+        alpha: 0.1,
+      },
     },
-    "accent": {
-      "fg": {
-        "$value": "{base.color.blue.3}",
-        "$type": "color"
+    accent: {
+      fg: {
+        $value: '{base.color.blue.3}',
+        $type: 'color',
       },
-      "emphasis": {
-        "$value": "{base.color.blue.5}",
-        "$type": "color"
+      emphasis: {
+        $value: '{base.color.blue.5}',
+        $type: 'color',
       },
-      "muted": {
-        "$value": "{base.color.blue.4}",
-        "$type": "color",
-        "alpha": 0.4
+      muted: {
+        $value: '{base.color.blue.4}',
+        $type: 'color',
+        alpha: 0.4,
       },
-      "subtle": {
-        "$value": "{base.color.blue.4}",
-        "$type": "color",
-        "alpha": 0.15
-      }
+      subtle: {
+        $value: '{base.color.blue.4}',
+        $type: 'color',
+        alpha: 0.15,
+      },
     },
-    "success": {
-      "fg": {
-        "$value": "{base.color.green.3}",
-        "$type": "color"
+    success: {
+      fg: {
+        $value: '{base.color.green.3}',
+        $type: 'color',
       },
-      "emphasis": {
-        "$value": "{base.color.green.5}",
-        "$type": "color"
+      emphasis: {
+        $value: '{base.color.green.5}',
+        $type: 'color',
       },
-      "muted": {
-        "$value": "{base.color.green.4}",
-        "$type": "color",
-        "alpha": 0.4
+      muted: {
+        $value: '{base.color.green.4}',
+        $type: 'color',
+        alpha: 0.4,
       },
-      "subtle": {
-        "$value": "{base.color.green.4}",
-        "$type": "color",
-        "alpha": 0.15
-      }
+      subtle: {
+        $value: '{base.color.green.4}',
+        $type: 'color',
+        alpha: 0.15,
+      },
     },
-    "attention": {
-      "fg": {
-        "$value": "{base.color.yellow.3}",
-        "$type": "color"
+    attention: {
+      fg: {
+        $value: '{base.color.yellow.3}',
+        $type: 'color',
       },
-      "emphasis": {
-        "$value": "{base.color.yellow.5}",
-        "$type": "color"
+      emphasis: {
+        $value: '{base.color.yellow.5}',
+        $type: 'color',
       },
-      "muted": {
-        "$value": "{base.color.yellow.4}",
-        "$type": "color",
-        "alpha": 0.4
+      muted: {
+        $value: '{base.color.yellow.4}',
+        $type: 'color',
+        alpha: 0.4,
       },
-      "subtle": {
-        "$value": "{base.color.yellow.4}",
-        "$type": "color",
-        "alpha": 0.15
-      }
+      subtle: {
+        $value: '{base.color.yellow.4}',
+        $type: 'color',
+        alpha: 0.15,
+      },
     },
-    "severe": {
-      "fg": {
-        "$value": "{base.color.orange.4}",
-        "$type": "color"
+    severe: {
+      fg: {
+        $value: '{base.color.orange.4}',
+        $type: 'color',
       },
-      "emphasis": {
-        "$value": "{base.color.orange.5}",
-        "$type": "color"
+      emphasis: {
+        $value: '{base.color.orange.5}',
+        $type: 'color',
       },
-      "muted": {
-        "$value": "{base.color.orange.4}",
-        "$type": "color",
-        "alpha": 0.4
+      muted: {
+        $value: '{base.color.orange.4}',
+        $type: 'color',
+        alpha: 0.4,
       },
-      "subtle": {
-        "$value": "{base.color.orange.4}",
-        "$type": "color",
-        "alpha": 0.15
-      }
+      subtle: {
+        $value: '{base.color.orange.4}',
+        $type: 'color',
+        alpha: 0.15,
+      },
     },
-    "danger": {
-      "fg": {
-        "$value": "{base.color.red.4}",
-        "$type": "color"
+    danger: {
+      fg: {
+        $value: '{base.color.red.4}',
+        $type: 'color',
       },
-      "emphasis": {
-        "$value": "{base.color.red.5}",
-        "$type": "color"
+      emphasis: {
+        $value: '{base.color.red.5}',
+        $type: 'color',
       },
-      "muted": {
-        "$value": "{base.color.red.4}",
-        "$type": "color",
-        "alpha": 0.4
+      muted: {
+        $value: '{base.color.red.4}',
+        $type: 'color',
+        alpha: 0.4,
       },
-      "subtle": {
-        "$value": "{base.color.red.4}",
-        "$type": "color",
-        "alpha": 0.15
-      }
+      subtle: {
+        $value: '{base.color.red.4}',
+        $type: 'color',
+        alpha: 0.15,
+      },
     },
-    "open": {
-      "fg": {
-        "$value": "{base.color.green.3}",
-        "$type": "color"
+    open: {
+      fg: {
+        $value: '{base.color.green.3}',
+        $type: 'color',
       },
-      "emphasis": {
-        "$value": "{base.color.green.5}",
-        "$type": "color"
+      emphasis: {
+        $value: '{base.color.green.5}',
+        $type: 'color',
       },
-      "muted": {
-        "$value": "{base.color.green.4}",
-        "$type": "color",
-        "alpha": 0.4
+      muted: {
+        $value: '{base.color.green.4}',
+        $type: 'color',
+        alpha: 0.4,
       },
-      "subtle": {
-        "$value": "{base.color.green.4}",
-        "$type": "color",
-        "alpha": 0.15
-      }
+      subtle: {
+        $value: '{base.color.green.4}',
+        $type: 'color',
+        alpha: 0.15,
+      },
     },
-    "closed": {
-      "fg": {
-        "$value": "{base.color.red.4}",
-        "$type": "color"
+    closed: {
+      fg: {
+        $value: '{base.color.red.4}',
+        $type: 'color',
       },
-      "emphasis": {
-        "$value": "{base.color.red.5}",
-        "$type": "color"
+      emphasis: {
+        $value: '{base.color.red.5}',
+        $type: 'color',
       },
-      "muted": {
-        "$value": "{base.color.red.4}",
-        "$type": "color",
-        "alpha": 0.4
+      muted: {
+        $value: '{base.color.red.4}',
+        $type: 'color',
+        alpha: 0.4,
       },
-      "subtle": {
-        "$value": "{base.color.red.4}",
-        "$type": "color",
-        "alpha": 0.15
-      }
+      subtle: {
+        $value: '{base.color.red.4}',
+        $type: 'color',
+        alpha: 0.15,
+      },
     },
-    "done": {
-      "fg": {
-        "$value": "{base.color.purple.4}",
-        "$type": "color"
+    done: {
+      fg: {
+        $value: '{base.color.purple.4}',
+        $type: 'color',
       },
-      "emphasis": {
-        "$value": "{base.color.purple.5}",
-        "$type": "color"
+      emphasis: {
+        $value: '{base.color.purple.5}',
+        $type: 'color',
       },
-      "muted": {
-        "$value": "{base.color.purple.4}",
-        "$type": "color",
-        "alpha": 0.4
+      muted: {
+        $value: '{base.color.purple.4}',
+        $type: 'color',
+        alpha: 0.4,
       },
-      "subtle": {
-        "$value": "{base.color.purple.4}",
-        "$type": "color",
-        "alpha": 0.15
-      }
+      subtle: {
+        $value: '{base.color.purple.4}',
+        $type: 'color',
+        alpha: 0.15,
+      },
     },
-    "sponsors": {
-      "fg": {
-        "$value": "{base.color.pink.4}",
-        "$type": "color"
+    sponsors: {
+      fg: {
+        $value: '{base.color.pink.4}',
+        $type: 'color',
       },
-      "emphasis": {
-        "$value": "{base.color.pink.5}",
-        "$type": "color"
+      emphasis: {
+        $value: '{base.color.pink.5}',
+        $type: 'color',
       },
-      "muted": {
-        "$value": "{base.color.pink.4}",
-        "$type": "color",
-        "alpha": 0.4
+      muted: {
+        $value: '{base.color.pink.4}',
+        $type: 'color',
+        alpha: 0.4,
       },
-      "subtle": {
-        "$value": "{base.color.pink.4}",
-        "$type": "color",
-        "alpha": 0.15
-      }
+      subtle: {
+        $value: '{base.color.pink.4}',
+        $type: 'color',
+        alpha: 0.15,
+      },
     },
-    "shadow": {
-      "small": {
-        "$value": "{base.color.black}",
-        "alpha": 0.96,
-        "$type": "color"
+    shadow: {
+      small: {
+        $value: '{base.color.black}',
+        alpha: 0.96,
+        $type: 'color',
       },
-      "medium": {
-        "$value": "{base.color.gray.4}",
-        "alpha": 0.85,
-        "$type": "color"
+      medium: {
+        $value: '{base.color.gray.4}',
+        alpha: 0.85,
+        $type: 'color',
       },
-      "large": {
-        "$value": "{base.color.gray.4}",
-        "alpha": 0.8,
-        "$type": "color"
+      large: {
+        $value: '{base.color.gray.4}',
+        alpha: 0.8,
+        $type: 'color',
       },
-      "extraLarge": {
-        "$value": "{base.color.gray.4}",
-        "alpha": 0.7,
-        "$type": "color"
+      extraLarge: {
+        $value: '{base.color.gray.4}',
+        alpha: 0.7,
+        $type: 'color',
       },
-      "highlight": {
-        "$value": "{base.color.white}",
-        "alpha": 0.25,
-        "$type": "color"
+      highlight: {
+        $value: '{base.color.white}',
+        alpha: 0.25,
+        $type: 'color',
       },
-      "inset": {
-        "$value": "{base.color.gray.2}",
-        "alpha": 0,
-        "$type": "color"
-      }
+      inset: {
+        $value: '{base.color.gray.2}',
+        alpha: 0,
+        $type: 'color',
+      },
     },
-    "focus": {
-      "$value": "{base.color.blue.5}",
-      "$type": "color"
+    focus: {
+      $value: '{base.color.blue.5}',
+      $type: 'color',
     },
-    "primer": {
-      "fg": {
-        "disabled": {
-          "$value": "{base.color.gray.5}",
-          "$type": "color"
-        }
-      },
-      "canvas": {
-        "backdrop": {
-          "$value": "{base.color.black}",
-          "$type": "color",
-          "alpha": 0.8
+    primer: {
+      fg: {
+        disabled: {
+          $value: '{base.color.gray.5}',
+          $type: 'color',
         },
-        "sticky": {
-          "$value": "{base.color.gray.9}",
-          "$type": "color",
-          "alpha": 0.95
-        }
       },
-      "border": {
-        "active": {
-          "$value": "{base.color.coral.3}",
-          "$type": "color"
+      canvas: {
+        backdrop: {
+          $value: '{base.color.black}',
+          $type: 'color',
+          alpha: 0.8,
         },
-        "contrast": {
-          "$value": "{base.color.white}",
-          "$type": "color",
-          "alpha": 0.2
-        }
-      }
-    }
-  }
+        sticky: {
+          $value: '{base.color.gray.9}',
+          $type: 'color',
+          alpha: 0.95,
+        },
+      },
+      border: {
+        active: {
+          $value: '{base.color.coral.3}',
+          $type: 'color',
+        },
+        contrast: {
+          $value: '{base.color.white}',
+          $type: 'color',
+          alpha: 0.2,
+        },
+      },
+    },
+  },
 }
