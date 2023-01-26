@@ -13,6 +13,7 @@ module.exports = {
 		'plugin:prettier/recommended',
 		'plugin:github/recommended',
 		'plugin:github/browser',
+		'prettier',
 	],
 	ignorePatterns: ['node_modules', '.cache', 'coverage/**/*', 'docs/public/**/*', 'dist/**/*', 'types/**/*'],
 	globals: {
@@ -35,6 +36,7 @@ module.exports = {
 	},
 	// rules which apply to JS, TS, etc.
 	rules: {
+		'prettier/prettier': 'error',
 		'filenames/match-regex': 0,
 		'eslint-comments/no-unused-disable': 0,
 		'react/prop-types': 0,
@@ -161,4 +163,5 @@ module.exports = {
 			},
 		},
 	],
+	plugins: ['prettier'],
 }
