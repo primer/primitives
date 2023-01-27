@@ -11,7 +11,7 @@ const checkForBorderTokenProperties = (border: BorderTokenValue) => {
   const requiredProperties = ['color', 'width', 'style']
   for (const prop of requiredProperties) {
     if (prop in border === false) {
-      throw new Error(`Missing propery: ${prop} on shadow token ${JSON.stringify(border)}`)
+      throw new Error(`Missing propery: ${prop} on border token ${JSON.stringify(border)}`)
     }
   }
 }
