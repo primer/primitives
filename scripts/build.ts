@@ -1,5 +1,4 @@
 import camelcaseKeys from 'camelcase-keys'
-import chalk from 'chalk'
 import fs from 'fs'
 import mkdirp from 'mkdirp'
 import path from 'path'
@@ -162,7 +161,7 @@ function validateDeprecatedVar(variable: string, collection: ModeCollection, inp
 
   // Assert that deprecated variable exists
   if (!existsInCollection(collection, variable)) {
-    errors.push(chalk`Cannot deprecate undefined variable {bold.red "${variable}"} in {bold ${inputFile}}`)
+    errors.push(`Cannot deprecate undefined variable \x1b[1;31m"${variable}"\x1b[0m in \x1b[1;37m${inputFile}\x1b[0m`)
   }
 
   return errors
@@ -178,7 +177,7 @@ function validateRemovedVar(variable: string, collection: ModeCollection, inputF
   // Assert that removed variable doesn't exist
   if (existsInCollection(collection, variable)) {
     errors.push(
-      chalk`Variable {bold.red "${variable}"} is marked as removed in {bold ${inputFile}} but is still defined`,
+      `Variable \x1b[1;31m"${variable}"\x1b[0m is marked as removed in \x1b[1;37m${inputFile}\x1b[0m but is still defined`,
     )
   }
 
@@ -214,7 +213,7 @@ async function writeReplacements(
         // Assert that replacement variable is a string
         if (typeof replacementVar !== 'string') {
           errors.push(
-            chalk`Cannot replace {bold "${original}"} with invalid variable {bold.red ${JSON.stringify(
+            `Cannot replace "${original}" with invalid variable {bold.red ${JSON.stringify(
               replacementVar,
             )}} in {bold ${inputFile}}`,
           )
@@ -224,7 +223,7 @@ async function writeReplacements(
         // Assert that replacement variable exists
         if (!existsInCollection(collection, replacementVar)) {
           errors.push(
-            chalk`Cannot replace {bold "${original}"} with undefined variable {bold.red ${JSON.stringify(
+            `Cannot replace "${original}" with undefined variable {bold.red ${JSON.stringify(
               replacementVar,
             )}} in {bold ${inputFile}}`,
           )
@@ -234,7 +233,7 @@ async function writeReplacements(
         // Assert that replacement variable is not deprecated
         if (Object.keys(replacementMap).includes(replacementVar)) {
           errors.push(
-            chalk`Cannot replace {bold "${original}"} with deprecated variable {bold.red ${JSON.stringify(
+            `Cannot replace "${original}" with deprecated variable {bold.red ${JSON.stringify(
               replacementVar,
             )}} in {bold ${inputFile}}`,
           )
@@ -280,8 +279,8 @@ function forEachReplacementVar(replacement: any, fn: (replacementVar: any) => vo
 }
 
 function logError(error: string) {
-  console.error(chalk.red`\n===============================================`)
-  console.error(chalk`{red [FATAL]} The build failed due to the following errors:`)
+  console.error(`\x1b[0;31m\n===============================================\x1b`)
+  console.error(`\x1b[0;31m[FATAL]\x1b[0m The build failed due to the following errors:`)
   console.error(error)
-  console.error(chalk.red`===============================================\n`)
+  console.error(`\x1b[0;31m===============================================\n\x1b`)
 }

@@ -4,33 +4,33 @@
       small: {
         $value: '{base.color.black}',
         alpha: 0.96,
-        $type: 'color'
+        $type: 'color',
       },
       medium: {
         $value: '{base.color.gray.4}',
         alpha: 0.85,
-        $type: 'color'
+        $type: 'color',
       },
       large: {
         $value: '{base.color.gray.4}',
         alpha: 0.8,
-        $type: 'color'
+        $type: 'color',
       },
       extraLarge: {
         $value: '{base.color.gray.4}',
         alpha: 0.7,
-        $type: 'color'
+        $type: 'color',
       },
       highlight: {
         $value: '{base.color.white}',
         alpha: 0.25,
-        $type: 'color'
+        $type: 'color',
       },
       inset: {
         $value: '{base.color.gray.2}',
         alpha: 0,
-        $type: 'color'
-      }
+        $type: 'color',
+      },
     },
     small: {
       $value: {
@@ -38,9 +38,9 @@
         offsetX: '0px',
         offsetY: '1px',
         blur: '0px',
-        spread: "0px"
+        spread: '0px',
       },
-      $type: 'shadow'
+      $type: 'shadow',
     },
     medium: {
       $value: {
@@ -48,9 +48,9 @@
         offsetX: '0px',
         offsetY: '3px',
         blur: '6px',
-        spread: "0px"
+        spread: '0px',
       },
-      $type: 'shadow'
+      $type: 'shadow',
     },
     large: {
       $value: {
@@ -58,9 +58,9 @@
         offsetX: '0px',
         offsetY: '8px',
         blur: '24px',
-        spread: "0px"
+        spread: '0px',
       },
-      $type: 'shadow'
+      $type: 'shadow',
     },
     extraLarge: {
       $value: {
@@ -68,26 +68,29 @@
         offsetX: '0px',
         offsetY: '12px',
         blur: '28px',
-        spread: "0px"
+        spread: '0px',
       },
-      $type: 'shadow'
+      $type: 'shadow',
     },
     // components
     overlay: {
-      $value: [{
-        color: '{base.color.gray.6}',
-        offsetX: '0px',
-        offsetY: '0px',
-        blur: '0px',
-        spread: "1px"
-      },{
-        color: '{shadow.color.medium}',
-        offsetX: '0px',
-        offsetY: '16px',
-        blur: '32px',
-        spread: "0px"
-      }],
-      $type: 'shadow'
-    }
-  }
+      $value: [
+        {
+          color: '{base.color.gray.6}',
+          offsetX: '0px',
+          offsetY: '0px',
+          blur: '0px',
+          spread: '1px',
+        },
+        {
+          color: '{shadow.color.medium}',
+          offsetX: '0px',
+          offsetY: '16px',
+          blur: '32px',
+          spread: '0px',
+        },
+      ],
+      $type: 'shadow',
+    },
+  },
 }

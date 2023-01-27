@@ -160,7 +160,7 @@ export const typescriptExportDefinition: StyleDictionary.Formatter = ({
   platform,
 }: FormatterArguments): string => {
   // extract options
-  const {moduleName = `tokens`, tokenTypesPath = `./config/types/`} = options
+  const {moduleName = `tokens`, tokenTypesPath = `./src/types/`} = options
   // add prefix if defined
   const tokens = prefixTokens(dictionary.tokens, platform)
   // add file header and convert output

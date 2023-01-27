@@ -1,5 +1,5 @@
 import type StyleDictionary from 'style-dictionary'
-import {isFontWeight} from '~/config/filters'
+import {isFontWeight} from '~/src/filters'
 
 const fontWeightMatrix: Record<string, string[]> = {
   '100': ['thin', 'hairline'],

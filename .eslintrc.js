@@ -13,6 +13,7 @@ module.exports = {
     'plugin:prettier/recommended',
     'plugin:github/recommended',
     'plugin:github/browser',
+    'prettier',
   ],
   ignorePatterns: ['node_modules', '.cache', 'coverage/**/*', 'docs/public/**/*', 'dist/**/*', 'types/**/*'],
   globals: {
@@ -111,7 +112,7 @@ module.exports = {
     },
     // rules which apply only to TS scripts
     {
-      files: ['scripts/**/*.ts', 'config/**/*.ts'],
+      files: ['scripts/**/*.ts', 'src/**/*.ts'],
       rules: {
         'import/no-nodejs-modules': [
           'error',

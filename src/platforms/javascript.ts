@@ -1,6 +1,6 @@
 import type StyleDictionary from 'style-dictionary'
 import type {PlatformInitializer} from '~/src/types/PlatformInitializer'
-import {isSource} from '~/config/filters'
+import {isSource} from '~/src/filters'
 
 export const javascript: PlatformInitializer = (outputFile, prefix, buildPath): StyleDictionary.Platform => ({
   prefix,

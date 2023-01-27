@@ -9,6 +9,7 @@ import {
   fontWeightToNumber,
   jsonDeprecated,
   namePathToDotNotation,
+  namePathToCamelCase,
   namePathToKebabCase,
   shadowToCss,
   typographyToCss,
@@ -89,6 +90,11 @@ StyleDictionary.registerTransform({
 StyleDictionary.registerTransform({
   name: 'name/pathToDotNotation',
   ...namePathToDotNotation,
+})
+
+StyleDictionary.registerTransform({
+  name: 'name/pathToCamelCase',
+  ...namePathToCamelCase,
 })
 
 StyleDictionary.registerTransform({

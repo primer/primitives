@@ -1,4 +1,3 @@
-import chalk from 'chalk'
 import flatMap from 'lodash/flatMap'
 import isNumber from 'lodash/isNumber'
 import isString from 'lodash/isString'
@@ -26,8 +25,8 @@ export default class ModeCollection {
     if (missingVarsPerMode.length > 0) {
       errors.push(`\n> The following variables are missing in one or more modes:\n`)
       for (const {modes, variableName} of missingVarsPerMode) {
-        const msg = chalk`* Variable {bold.red ${variableName}} is missing in modes: ${modes
-          .map(mode => chalk.bold.bgBlack.white(mode.name))
+        const msg = `* Variable \x1b[1;31m${variableName}\x1b[0m is missing in modes: ${modes
+          .map(mode => mode.name)
           .join(', ')}`
         errors.push(msg)
       }
@@ -39,7 +38,7 @@ export default class ModeCollection {
       errors.push(`\n> The following variables are invalid:\n`)
 
       for (const {variable, mode} of invalidVars) {
-        const msg = chalk`* {bold.red ${variable.value}} cannot be assigned to {bold.bgBlack.white ${variable.name}} in mode {bold.bgBlack.white ${mode.name}} `
+        const msg = `* \x1b[1;31m${variable.value}\x1b[0m cannot be assigned to \x1b[1;37m${variable.name}\x1b[0m in mode \x1b[1;30;47m${mode.name}\x1b[0m `
         errors.push(msg)
       }
 
