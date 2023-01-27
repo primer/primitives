@@ -10,21 +10,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Checkout reference branch
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           ref: ${{ github.base_ref }}
           path: temp-main
 
       - name: Set up Node
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: '16'
 
       - name: Cache dependencies
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
@@ -57,7 +57,7 @@ jobs:
 
       - name: Post diff
         if: hashFiles('diff.md') != ''
-        uses: phulsechinmay/rewritable-pr-comment@v0.2.1
+        uses: phulsechinmay/rewritable-pr-comment@v0.3.0
         with:
           message: ${{ steps.diff.outputs.content }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -65,7 +65,7 @@ jobs:
 
       - name: Comment on the PR about no results
         if: hashFiles('diff.md') == ''
-        uses: phulsechinmay/rewritable-pr-comment@v0.2.1
+        uses: phulsechinmay/rewritable-pr-comment@v0.3.0
         with:
           message: |
             ### 🟢 No design token changes found
