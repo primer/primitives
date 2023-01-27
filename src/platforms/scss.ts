@@ -1,6 +1,6 @@
 import type StyleDictionary from 'style-dictionary'
 import type {PlatformInitializer} from '~/src/types/PlatformInitializer'
-import {isSource} from '~/config/filters'
+import {isSource} from '~/src/filters'
 
 const getFilenameFromPath = (path: string): string => {
   // remove extensions

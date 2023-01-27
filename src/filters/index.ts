@@ -1,6 +1,7 @@
 export {isBorder} from './isBorder'
 export {isColor} from './isColor'
 export {isColorWithAlpha} from './isColorWithAlpha'
+export {isDimension} from './isDimension'
 export {isDeprecated} from './isDeprecated'
 export {isFontFamily} from './isFontFamily'
 export {isFontWeight} from './isFontWeight'

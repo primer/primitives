@@ -1,6 +1,7 @@
-import {isColorWithAlpha} from '~/config/filters'
+import {isColorWithAlpha} from '~/src/filters'
 import {alpha} from './utilities/alpha'
 import type StyleDictionary from 'style-dictionary'
+import {getTokenValue} from './utilities/getTokenValue'
 /**
  * @description replaces tokens value with `rgba` color using the tokens `alpha` property to specify the value used for alpha
  * @type value transformer — [StyleDictionary.ValueTransform](https://github.com/amzn/style-dictionary/blob/main/types/Transform.d.ts)
@@ -11,5 +12,5 @@ export const colorToRgbAlpha: StyleDictionary.Transform = {
   type: `value`,
   transitive: true,
   matcher: isColorWithAlpha,
-  transformer: (token: StyleDictionary.TransformedToken) => alpha(token.value, token.alpha),
+  transformer: (token: StyleDictionary.TransformedToken) => alpha(getTokenValue(token), token.alpha),
 }
