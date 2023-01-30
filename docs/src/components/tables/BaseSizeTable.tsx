@@ -38,7 +38,7 @@ const BaseSizeTable: React.FC<BaseSizeTableProps> = ({filePath, showExample}) =>
           {tokens[filePath].map(token => {
             const FrameworkVars = [
               {id: 'CSS', token: `--${token.name}`},
-              {id: 'JS', token: `${token.path.join('.')}`}
+              {id: 'JS', token: `${token.path.join('.')}`},
             ]
             return (
               <tr id={token.name} key={token.name}>

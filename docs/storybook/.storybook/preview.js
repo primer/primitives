@@ -7,9 +7,9 @@ export const parameters = {
   controls: {
     matchers: {
       color: /(background|color)$/i,
-      date: /Date$/
-    }
-  }
+      date: /Date$/,
+    },
+  },
 }
 
 const themes = [
@@ -19,7 +19,7 @@ const themes = [
   'dark',
   'dark_dimmed',
   'dark_high_contrast',
-  'dark_colorblind'
+  'dark_colorblind',
 ]
 
 export const globalTypes = {
@@ -30,9 +30,9 @@ export const globalTypes = {
     toolbar: {
       icon: 'circlehollow',
       items: [...themes, 'all'],
-      showName: true
-    }
-  }
+      showName: true,
+    },
+  },
 }
 
 export const decorators = [
@@ -57,5 +57,5 @@ export const decorators = [
         })}
       </div>
     )
-  }
+  },
 ]

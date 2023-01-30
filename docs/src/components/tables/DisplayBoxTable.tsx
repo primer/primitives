@@ -25,8 +25,8 @@ export function DisplayBoxTable({filePath, tokenVariant, children, showProperty 
         marginBottom: '2rem',
         '& table': {
           display: 'table',
-          overflow: 'unset'
-        }
+          overflow: 'unset',
+        },
       }}
     >
       {children && <TableBox>{children}</TableBox>}
@@ -59,7 +59,7 @@ export function DisplayBoxTable({filePath, tokenVariant, children, showProperty 
               const weightVariant = token.path[3]
               const FrameworkVars = [
                 {id: 'CSS', token: `--${token.name}`},
-                {id: 'JS', token: `${token.path.join('.')}`}
+                {id: 'JS', token: `${token.path.join('.')}`},
               ]
               return (
                 !token.name.includes('-shorthand') &&

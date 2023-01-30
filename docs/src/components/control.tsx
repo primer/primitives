@@ -35,7 +35,7 @@ const ControlVisual: React.FC<ControlVisualProps> = ({
   highlightPaddingLeft,
   highlightGap,
   highlightLineBoxHeight,
-  highlightHeight
+  highlightHeight,
 }) => {
   return (
     <Fragment>
@@ -53,7 +53,7 @@ const ControlVisual: React.FC<ControlVisualProps> = ({
             highlightHeight &&
             'linear-gradient(45deg,#a475f980 12.50%,#d8b9ff7a 12.50%,#d8b9ff7a 50%,#a475f980 50%,#a475f980 62.50%,#d8b9ff7a 62.50%,#d8b9ff7a 100%)',
           backgroundSize: '5.66px 5.66px',
-          alignItems: 'center'
+          alignItems: 'center',
         }}
       >
         <Box
@@ -64,7 +64,7 @@ const ControlVisual: React.FC<ControlVisualProps> = ({
             backgroundImage:
               highlightPaddingTop &&
               'linear-gradient(45deg,#a475f980 12.50%,#d8b9ff7a 12.50%,#d8b9ff7a 50%,#a475f980 50%,#a475f980 62.50%,#d8b9ff7a 62.50%,#d8b9ff7a 100%)',
-            backgroundSize: '5.66px 5.66px'
+            backgroundSize: '5.66px 5.66px',
           }}
         />
         <Box
@@ -76,7 +76,7 @@ const ControlVisual: React.FC<ControlVisualProps> = ({
               highlightPaddingLeft &&
               'linear-gradient(45deg,#a475f980 12.50%,#d8b9ff7a 12.50%,#d8b9ff7a 50%,#a475f980 50%,#a475f980 62.50%,#d8b9ff7a 62.50%,#d8b9ff7a 100%)',
             backgroundSize: '5.66px 5.66px',
-            height: '100%'
+            height: '100%',
           }}
         />
         <Box
@@ -88,7 +88,7 @@ const ControlVisual: React.FC<ControlVisualProps> = ({
             backgroundColor: 'fg.subtle',
             width: '1rem',
             height: '1rem',
-            borderRadius: 1
+            borderRadius: 1,
           }}
         />
         <Box
@@ -100,7 +100,7 @@ const ControlVisual: React.FC<ControlVisualProps> = ({
               highlightGap &&
               'linear-gradient(45deg,#a475f980 12.50%,#d8b9ff7a 12.50%,#d8b9ff7a 50%,#a475f980 50%,#a475f980 62.50%,#d8b9ff7a 62.50%,#d8b9ff7a 100%)',
             backgroundSize: '5.66px 5.66px',
-            height: '100%'
+            height: '100%',
           }}
         />
         <Box
@@ -112,7 +112,7 @@ const ControlVisual: React.FC<ControlVisualProps> = ({
               highlightLineBoxHeight &&
               'linear-gradient(45deg,#a475f980 12.50%,#d8b9ff7a 12.50%,#d8b9ff7a 50%,#a475f980 50%,#a475f980 62.50%,#d8b9ff7a 62.50%,#d8b9ff7a 100%)',
             backgroundSize: '5.66px 5.66px',
-            fontSize: 'var(--primer-text-body-size-medium)'
+            fontSize: 'var(--primer-text-body-size-medium)',
           }}
         >
           label
@@ -126,7 +126,7 @@ const ControlVisual: React.FC<ControlVisualProps> = ({
               highlightPaddingRight &&
               'linear-gradient(45deg,#a475f980 12.50%,#d8b9ff7a 12.50%,#d8b9ff7a 50%,#a475f980 50%,#a475f980 62.50%,#d8b9ff7a 62.50%,#d8b9ff7a 100%)',
             backgroundSize: '5.66px 5.66px',
-            height: '100%'
+            height: '100%',
           }}
         />
         <Box
@@ -137,7 +137,7 @@ const ControlVisual: React.FC<ControlVisualProps> = ({
             backgroundImage:
               highlightPaddingBottom &&
               'linear-gradient(45deg,#a475f980 12.50%,#d8b9ff7a 12.50%,#d8b9ff7a 50%,#a475f980 50%,#a475f980 62.50%,#d8b9ff7a 62.50%,#d8b9ff7a 100%)',
-            backgroundSize: '5.66px 5.66px'
+            backgroundSize: '5.66px 5.66px',
           }}
         />
       </Box>

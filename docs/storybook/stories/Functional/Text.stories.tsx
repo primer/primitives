@@ -5,7 +5,7 @@ import {ColorPreview} from '../ColorPreview'
 
 export default {
   title: 'Functional/Text',
-  component: ColorPreview
+  component: ColorPreview,
 } as ComponentMeta<typeof ColorPreview>
 
 const fgColors = ['product-color-done-emphasis']

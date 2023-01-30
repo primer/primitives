@@ -15,7 +15,7 @@ export function ColorScales() {
         p: 3,
         bg: colors[colorTheme].canvas.default,
         boxShadow: 'inset 0 0 0 1px rgba(0,0,0,0.1)',
-        borderRadius: 2
+        borderRadius: 2,
       }}
     >
       {Object.entries(colors[colorTheme].scale).map(([scaleName, scale]) => {
@@ -33,7 +33,7 @@ export function ColorScales() {
                       display: 'flex',
                       justifyContent: 'space-between',
                       fontFamily: 'mono',
-                      fontSize: 1
+                      fontSize: 1,
                     }}
                   >
                     <Text>
@@ -52,7 +52,7 @@ export function ColorScales() {
                   display: 'flex',
                   justifyContent: 'space-between',
                   fontFamily: 'mono',
-                  fontSize: 1
+                  fontSize: 1,
                 }}
               >
                 <Text>scale.{scaleName}</Text>
