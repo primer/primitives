@@ -5,6 +5,7 @@ import {
   colorToHexAlpha,
   colorToRgbAlpha,
   colorToHex,
+  dimensionToPoint,
   fontFamilyToCss,
   fontWeightToNumber,
   jsonDeprecated,
@@ -80,6 +81,11 @@ StyleDictionary.registerTransform({
 StyleDictionary.registerTransform({
   name: 'color/hex',
   ...colorToHex,
+})
+
+StyleDictionary.registerTransform({
+  name: 'dimension/point',
+  ...dimensionToPoint,
 })
 
 StyleDictionary.registerTransform({
