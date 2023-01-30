@@ -7,6 +7,10 @@
   border-radius: 6px;
 }
 
+.ColorPreview:has([style="color: var(--fgColor-inverse);"]) {
+  background-color: var(--bgColor-inverse) !important;
+}
+
 [data-text] {
   font-size: 32px;
   font-weight: 600;
@@ -24,4 +28,18 @@
   border-width: 2px;
   border-style: solid;
   border-radius: 6px;
+}
+
+[data-token-name] {
+  font: var(--text-codeBlock-shorthand);
+}
+
+.story-wrap {
+  container-type: inline-size;
+}
+
+@container (min-width: 48.75rem) {
+  .ColorPreview {
+    width: 12rem;
+  }
 }

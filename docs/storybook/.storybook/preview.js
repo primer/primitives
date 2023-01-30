@@ -7,9 +7,9 @@ export const parameters = {
   controls: {
     matchers: {
       color: /(background|color)$/i,
-      date: /Date$/
-    }
-  }
+      date: /Date$/,
+    },
+  },
 }
 
 const themes = [
@@ -19,7 +19,7 @@ const themes = [
   'dark',
   'dark_dimmed',
   'dark_high_contrast',
-  'dark_colorblind'
+  'dark_colorblind',
 ]
 
 export const globalTypes = {
@@ -30,13 +30,20 @@ export const globalTypes = {
     toolbar: {
       icon: 'circlehollow',
       items: [...themes, 'all'],
-      showName: true
-    }
-  }
+      showName: true,
+    },
+  },
 }
+
+// storyType is a decorator connected to a parameter which lets us configure story-specific layouts and other customization at the global level.
+// type 'swatch' is the default, and creates a simple responsive grid of swatches.
 
 export const decorators = [
   (Story, context) => {
+    const {parameters} = context
+    const defaultStoryType = 'swatch'
+    const storyType = parameters.storyType || defaultStoryType
+
     return (
       <div className={context.globals.theme === 'all' && 'theme-wrap-grid'}>
         {themes.map(theme => {
@@ -44,7 +51,11 @@ export const decorators = [
             return (
               <div
                 id="story"
-                className={clsx(context.globals.theme === 'all' && 'story-wrap-grid', 'story-wrap')}
+                className={clsx(
+                  context.globals.theme === 'all' && 'story-wrap-grid',
+                  'story-wrap',
+                  parameters.storyType === 'swatch' && 'SwatchDecorator',
+                )}
                 data-color-mode={theme.startsWith('dark') ? 'dark' : 'light'}
                 data-light-theme={theme.startsWith('light') ? theme : undefined}
                 data-dark-theme={theme.startsWith('dark') ? theme : undefined}
@@ -57,5 +68,5 @@ export const decorators = [
         })}
       </div>
     )
-  }
+  },
 ]
