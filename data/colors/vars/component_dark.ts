@@ -158,21 +158,36 @@ export default {
   },
 
   switchTrack: {
-    bg: get('scale.black'),
-    border: get('scale.gray.4'),
+    bg: get('neutral.subtle'),
+    hoverBg: get('neutral.subtle'),
+    activeBg: get('neutral.muted'),
+    disabledBg: get('scale.gray.7'),
+    fg: get('fg.muted'),
+    disabledFg: get('scale.black'),
+    border: 'transparent',
 
     checked: {
       bg: alpha(get('scale.blue.5'), 0.35),
       hoverBg: alpha(get('scale.blue.5'), 0.5),
       activeBg: alpha(get('scale.blue.5'), 0.65),
-      border: get('scale.blue.3'),
+      disabledBg: get('scale.gray.5'),
+      fg: get('fg.onEmphasis'),
+      disabledFg: get('scale.black'),
+      border: 'transparent',
     }
   },
 
   switchKnob: {
+    bg: get('canvas.default'),
+    border: get('neutral.subtle'),
+    disabledBg: get('canvas.subtle'),
+    disabledBorder: get('scale.gray.7'),
+    hoverBg: get('canvas.subtle'),
+
     checked: {
-      bg: get('scale.blue.5'),
-      disabledBg: get('scale.gray.5'),
+      border: alpha(get('scale.blue.5'), 0.35),
+      disabledBg: get('canvas.subtle'),
+      disabledBorder: get('scale.gray.5'),
     }
   },
 

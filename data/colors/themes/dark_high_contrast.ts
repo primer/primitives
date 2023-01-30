@@ -217,10 +217,19 @@ const exceptions = {
   },
 
   switchTrack: {
-    border: get('border.default'),
+    bg: get('neutral.emphasis'),
+    fg: get('fg.onEmphasis'),
 
     checked: {
-      border: get('scale.blue.5'),
+      bg: get('accent.emphasis'),
+    }
+  },
+
+  switchKnob: {
+    border: get('neutral.emphasis'),
+
+    checked: {
+      border: get('accent.emphasis'),
     }
   },
 

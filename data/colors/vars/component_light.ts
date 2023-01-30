@@ -160,20 +160,35 @@ export default {
 
   switchTrack: {
     bg: get('scale.gray.1'),
-    border: get('scale.gray.3'),
+    hoverBg: get('scale.gray.1'),
+    activeBg: get('scale.gray.2'),
+    disabledBg: get('scale.gray.4'),
+    fg: get('fg.muted'),
+    disabledFg: get('fg.onEmphasis'),
+    border: 'transparent', // TODO: remove this in next major release
 
     checked: {
-      bg: get('scale.blue.0'),
-      hoverBg: get('scale.blue.1'),
-      activeBg: get('scale.blue.2'),
-      border: get('scale.blue.3'),
+      bg: get('accent.emphasis'),
+      hoverBg: get('scale.blue.6'),
+      activeBg: get('scale.blue.7'),
+      disabledBg: get('scale.gray.5'),
+      fg: get('fg.onEmphasis'),
+      disabledFg: get('fg.onEmphasis'),
+      border: 'transparent', // TODO: remove this in next major release
     }
   },
 
   switchKnob: {
+    bg: get('canvas.default'),
+    disabledBg: get('canvas.subtle'),
+    border: get('scale.gray.4'),
+    disabledBorder: get('scale.gray.4'),
+    hoverBg: get('canvas.subtle'),
+
     checked: {
-      bg: get('scale.blue.5'),
-      disabledBg: get('scale.gray.5'),
+      border: get('accent.emphasis'),
+      disabledBg: get('canvas.subtle'),
+      disabledBorder: get('scale.gray.5'),
     }
   },
 

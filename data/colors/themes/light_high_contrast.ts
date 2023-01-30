@@ -222,12 +222,22 @@ const exceptions = {
     }
   },
   pageHeaderBg: get('canvas.default'),
+
   switchTrack: {
-    bg: get('scale.white'),
-    border: get('border.default'),
+    bg: get('neutral.emphasis'),
+    fg: get('fg.onEmphasis'),
+    disabledFg: get('fg.onEmphasis'),
 
     checked: {
-      border: get('scale.blue.5'),
+      fg: get('fg.onEmphasis'),
+    }
+  },
+
+  switchKnob: {
+    border: get('neutral.emphasis'),
+
+    checked: {
+      border: get('accent.emphasis'),
     }
   },
 
