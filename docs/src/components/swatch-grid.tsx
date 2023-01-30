@@ -11,7 +11,7 @@ export function SwatchGrid({names}: {names: string[]}) {
       sx={{
         display: 'grid',
         gridGap: 3,
-        gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))'
+        gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
       }}
     >
       {names.map(name => (
@@ -35,7 +35,7 @@ function Swatch({name}: {name: string}) {
       <Box sx={{fontFamily: 'mono', fontSize: 1, mt: 2}}>{name}</Box>
       <Box sx={{fontFamily: 'mono', fontSize: 0, color: 'text.gray'}}>{`var(--${getFullName(
         'color',
-        name.split('.')
+        name.split('.'),
       )})`}</Box>
       <Box sx={{fontFamily: 'mono', fontSize: 0, color: 'text.gray'}}>{value}</Box>
     </Box>
@@ -72,7 +72,7 @@ function FgPreview({name, value}: {name: string; value: string}) {
         placeItems: 'center',
         bg: name === 'fg.onEmphasis' ? colors[colorTheme].neutral.emphasis : colors[colorTheme].canvas.default,
         boxShadow: 'inset 0 0 0 1px rgba(0,0,0,0.1)',
-        borderRadius: 2
+        borderRadius: 2,
       }}
     >
       <span>Aa</span>
@@ -94,7 +94,7 @@ function BorderPreview({value}: {name: string; value: string}) {
         placeItems: 'center',
         bg: colors[colorTheme].canvas.default,
         boxShadow: 'inset 0 0 0 1px rgba(0,0,0,0.1)',
-        borderRadius: 2
+        borderRadius: 2,
       }}
     >
       <Box sx={{width: 48, height: 48, border: '2px solid', borderColor: value, borderRadius: 2}}></Box>
@@ -116,7 +116,7 @@ function ShadowPreview({value}: {name: string; value: string}) {
         placeItems: 'center',
         bg: colors[colorTheme].canvas.default,
         boxShadow: 'inset 0 0 0 1px rgba(0,0,0,0.1)',
-        borderRadius: 2
+        borderRadius: 2,
       }}
     >
       <Box sx={{width: 48, height: 48, boxShadow: value, borderRadius: 2, bg: colors[colorTheme].canvas.overlay}}></Box>
@@ -138,7 +138,7 @@ function DefaultPreview({value}: {name: string; value: string}) {
         placeItems: 'center',
         bg: colors[colorTheme].canvas.default,
         boxShadow: 'inset 0 0 0 1px rgba(0,0,0,0.1)',
-        borderRadius: 2
+        borderRadius: 2,
       }}
     >
       <Box sx={{width: 48, height: 48, bg: value, borderRadius: 2}}></Box>

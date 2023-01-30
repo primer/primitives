@@ -43,7 +43,7 @@ const UIControlStackTable: React.FC<UIControlStackTableProps> = ({filePath, toke
               const large = token.name.includes('large') ? true : false
               const FrameworkVars = [
                 {id: 'CSS', token: `--${token.name}`},
-                {id: 'JS', token: `${token.path.join('.')}`}
+                {id: 'JS', token: `${token.path.join('.')}`},
               ]
               return (
                 token.name.includes('-controlStack-') &&

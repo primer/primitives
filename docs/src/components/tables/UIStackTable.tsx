@@ -42,7 +42,7 @@ const UIStackTable: React.FC<UIStackTableProps> = ({filePath, tokenVariant}) => 
               const spacious = token.name.includes('spacious') ? true : false
               const FrameworkVars = [
                 {id: 'CSS', token: `--${token.name}`},
-                {id: 'JS', token: `${token.path.join('.')}`}
+                {id: 'JS', token: `${token.path.join('.')}`},
               ]
               return (
                 token.name.includes('-stack-') &&
