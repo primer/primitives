@@ -4,12 +4,12 @@
   "version": "0.1.0",
   "repository": "primer/primitives",
   "scripts": {
-    "setup": "cd ..; yarn; yarn build; yarn build:tokens",
-    "prebuild": "yarn setup",
-    "prebuild:preview": "yarn setup",
+    "setup": "cd ..; npm i; npm run build; npm run build:tokens",
+    "prebuild": "npm run setup",
+    "prebuild:preview": "npm run setup",
     "build": "gatsby build --prefix-paths",
     "build:preview": "gatsby build && cd storybook && scripts/build-storybook preview",
-    "predevelop": "yarn setup",
+    "predevelop": "npm run setup",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "npm run develop",
@@ -19,20 +19,22 @@
   },
   "prettier": "@github/prettier-config",
   "dependencies": {
-    "@github/prettier-config": "^0.0.4",
+    "@github/prettier-config": "^0.0.6",
     "@primer/gatsby-theme-doctocat": "^4.2.3",
     "color2k": "^1.2.4",
     "filter-obj": "^2.0.2",
     "flat": "^5.0.2",
-    "gatsby": "^2.24.66",
+    "gatsby": "^3.7.2",
     "lodash.get": "^4.4.2",
     "prettier": "2.1.2",
     "react": "^16.12.0",
     "react-copy-to-clipboard": "^5.0.4",
     "react-dom": "^16.12.0",
+    "path-browserify": "^1.0.1",
     "sentence-case": "^3.0.4"
   },
   "devDependencies": {
-    "@types/lodash.get": "^4.4.7"
+    "@types/lodash.get": "^4.4.7",
+    "typescript": "^4.9.4"
   }
 }

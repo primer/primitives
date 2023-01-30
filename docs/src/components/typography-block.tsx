@@ -21,7 +21,7 @@ const TypographyBlock: React.FC<TypographyBlockProps> = ({
   lineHeight,
   lineBoxHeight,
   fontFamily,
-  children
+  children,
 }) => {
   return (
     <Fragment>
@@ -34,7 +34,7 @@ const TypographyBlock: React.FC<TypographyBlockProps> = ({
           fontWeight: fontWeight ? `${fontWeight}` : undefined,
           lineHeight: lineHeight ? `${lineHeight}` : undefined,
           height: lineBoxHeight ? `${lineBoxHeight}` : undefined,
-          fontFamily: fontFamily ? `${fontFamily}` : undefined
+          fontFamily: fontFamily ? `${fontFamily}` : undefined,
         }}
       >
         {children ? children : variant}

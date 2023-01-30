@@ -30,7 +30,7 @@ function FrameworkVariableTable(props: {frameworks: any[]}) {
             gridTemplateColumns: '3ch 2fr',
             alignItems: 'center',
             justifyItems: 'start',
-            gap: '16px'
+            gap: '16px',
           },
           '& td': {
             border: 'none !important',
@@ -38,32 +38,32 @@ function FrameworkVariableTable(props: {frameworks: any[]}) {
             display: 'flex',
             alignItems: 'center',
             gap: '16px',
-            width: '100%'
+            width: '100%',
           },
           '& th': {
             border: 'none !important',
             color: 'fg.subtle',
             fontSize: '14px',
-            padding: '0 !important'
+            padding: '0 !important',
           },
           '& tr:nth-child(2n)': {background: 'transparent !important'},
           '& tbody': {
             display: 'flex',
             flexDirection: 'column',
             padding: '8px 16px',
-            gap: '8px'
+            gap: '8px',
           },
           '& button': {
             height: '23.5px',
             width: '23.5px',
             padding: '0',
-            display: 'grid'
+            display: 'grid',
           },
           '& button > svg': {
             height: '12px',
             width: '12px',
-            placeSelf: 'center'
-          }
+            placeSelf: 'center',
+          },
         }}
       >
         <tbody>{tableRow}</tbody>
