@@ -16,6 +16,12 @@
       $value: '{base.color.gray.4}',
       $type: 'color',
     },
+    link: {
+      rest: {
+        $value: '{base.color.blue.5}',
+        $type: 'color',
+      },
+    },
     accent: {
       $value: '{base.color.blue.5}',
       $type: 'color',
@@ -285,64 +291,6 @@
       emphasis: {
         $value: '{base.color.pink.5}',
         $type: 'color',
-      },
-    },
-  },
-  color: {
-    shadow: {
-      small: {
-        $value: '{base.color.black}',
-        alpha: 0.96,
-        $type: 'color',
-      },
-      medium: {
-        $value: '{base.color.gray.4}',
-        alpha: 0.85,
-        $type: 'color',
-      },
-      large: {
-        $value: '{base.color.gray.4}',
-        alpha: 0.8,
-        $type: 'color',
-      },
-      extraLarge: {
-        $value: '{base.color.gray.4}',
-        alpha: 0.7,
-        $type: 'color',
-      },
-      highlight: {
-        $value: '{base.color.white}',
-        alpha: 0.75,
-        $type: 'color',
-      },
-      inset: {
-        $value: '{base.color.gray.2}',
-        alpha: 0.8,
-        $type: 'color',
-      },
-    },
-    focus: {
-      $value: '{base.color.blue.5}',
-      $type: 'color',
-    },
-    primer: {
-      canvas: {
-        sticky: {
-          $value: '{base.color.white}',
-          alpha: 0.95,
-          $type: 'color',
-        },
-      },
-      border: {
-        active: {
-          $value: '{base.color.coral.3}',
-          $type: 'color',
-        },
-        contrast: {
-          $value: '{base.color.black}',
-          $type: 'color',
-          alpha: 0.1,
-        },
       },
     },
   },

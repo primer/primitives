@@ -1,15 +1,22 @@
 {
   overlay: {
     bgColor: {
-      $value: '{base.color.white}',
+      $value: '{base.color.gray.8}',
       $type: 'color',
     },
     backdrop: {
       bgColor: {
         $value: '{base.color.black}',
-        alpha: 0.5,
         $type: 'color',
+        alpha: 0.8,
       },
+    },
+  },
+  header: {
+    bgColor: {
+      $value: '{base.color.gray.9}',
+      $type: 'color',
+      alpha: 0.95,
     },
   },
 }

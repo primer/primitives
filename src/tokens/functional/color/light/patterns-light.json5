@@ -1,0 +1,36 @@
+{
+  overlay: {
+    bgColor: {
+      $value: '{base.color.white}',
+      $type: 'color',
+    },
+    backdrop: {
+      bgColor: {
+        $value: '{base.color.black}',
+        alpha: 0.5,
+        $type: 'color',
+      },
+    },
+  },
+  focus: {
+    outlineColor: {
+      $value: '{base.color.blue.5}',
+      $type: 'color',
+    },
+  },
+  header: {
+    bgColor: {
+      $value: '{base.color.white}',
+      alpha: 0.95,
+      $type: 'color',
+    },
+  },
+  underlineNav: {
+    borderColor: {
+      active: {
+        $value: '{base.color.coral.3}',
+        $type: 'color',
+      },
+    },
+  },
+}

@@ -4,16 +4,16 @@ import type {ComponentMeta, ComponentStory} from '@storybook/react'
 import {ColorPreview} from '../ColorPreview'
 
 export default {
-  title: 'Functional/Text',
+  title: 'Functional/Colors/Foreground',
   component: ColorPreview,
   parameters: {
     storyType: 'swatch',
   },
 } as ComponentMeta<typeof ColorPreview>
 
-const fgColors = ['fgColor-default', 'fgColor-muted', 'fgColor-inverse', 'fgColor-disabled', 'fgColor-accent', 'fgColor-success', 'fgColor-attention', 'fgColor-severe', 'fgColor-danger', 'fgColor-open', 'fgColor-closed', 'fgColor-done', 'fgColor-sponsors']
+const fgColors = ['fgColor-default', 'fgColor-muted', 'fgColor-inverse', 'fgColor-disabled', 'fgColor-link-rest','fgColor-accent', 'fgColor-success', 'fgColor-attention', 'fgColor-severe', 'fgColor-danger', 'fgColor-open', 'fgColor-closed', 'fgColor-done', 'fgColor-sponsors']
 
-export const TextColors: ComponentStory<typeof ColorPreview> = () => {
+export const Foreground: ComponentStory<typeof ColorPreview> = () => {
   return (
     <>
       {fgColors.map(color => (

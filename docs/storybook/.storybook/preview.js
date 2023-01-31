@@ -1,5 +1,6 @@
 import './preview.css'
 import clsx from 'clsx'
+import {themes} from '@storybook/theming'
 
 export const parameters = {
   actions: {argTypesRegex: '^on[A-Z].*'},
@@ -10,9 +11,15 @@ export const parameters = {
       date: /Date$/,
     },
   },
+  // darkMode: {
+  //   // Override the default dark theme
+  //   dark: {...themes.dark, appBg: 'black'},
+  //   // Override the default light theme
+  //   light: {...themes.normal, appBg: 'red'},
+  // },
 }
 
-const themes = [
+const primerThemes = [
   'light',
   'light_colorblind',
   'light_high_contrast',
@@ -29,7 +36,7 @@ export const globalTypes = {
     defaultValue: 'light',
     toolbar: {
       icon: 'circlehollow',
-      items: [...themes, 'all'],
+      items: [...primerThemes, 'all'],
       showName: true,
     },
   },
@@ -43,10 +50,10 @@ export const decorators = [
     const {parameters} = context
     const defaultStoryType = 'swatch'
     const storyType = parameters.storyType || defaultStoryType
-
+    console.log(parameters)
     return (
       <div className={context.globals.theme === 'all' && 'theme-wrap-grid'}>
-        {themes.map(theme => {
+        {primerThemes.map(theme => {
           if (context.globals.theme === theme || context.globals.theme === 'all') {
             return (
               <div
