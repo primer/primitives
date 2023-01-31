@@ -1,4 +1,3 @@
-import {isInteger} from 'lodash'
 import type StyleDictionary from 'style-dictionary'
 import type {Platform, TransformedToken} from 'style-dictionary'
 import {isDimension} from '../filters'
