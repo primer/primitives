@@ -4,6 +4,7 @@ import type {TypographyTokenValue} from '~/src/types/TypographyTokenValue'
 import {checkRequiredTokenProperties} from './utilities/checkRequiredTokenProperties'
 import {parseFontFamily} from './fontFamilyToCss'
 import {parseFontWeight} from './fontWeightToNumber'
+import {getTokenValue} from './utilities/getTokenValue'
 
 /**
  * @description converts typograhy token value to css font shorthand
@@ -17,13 +18,13 @@ export const typographyToCss: StyleDictionary.Transform = {
   matcher: isTypography,
   transformer: (token: StyleDictionary.TransformedToken) => {
     // extract value
-    const {value}: {value: TypographyTokenValue} = token
+    const value: TypographyTokenValue = getTokenValue(token)
     // validate token properties
     checkRequiredTokenProperties(value, ['fontWeight', 'fontSize', 'fontFamily'])
     // format output
-    return `${value.fontStyle || ''} ${parseFontWeight(value.fontWeight)} ${value.fontSize}${
+    return `${value.fontStyle || ''} ${parseFontWeight(getTokenValue(token, 'fontWeight'))} ${value.fontSize}${
       value.lineHeight ? `/${value.lineHeight}` : ''
-    } ${parseFontFamily(value.fontFamily)}`
+    } ${parseFontFamily(getTokenValue(token, 'fontFamily'))}`
       .trim()
       .replace(/\s\s+/g, ' ')
   },

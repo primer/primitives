@@ -1,5 +1,6 @@
 import type StyleDictionary from 'style-dictionary'
 import {isFontWeight} from '~/src/filters'
+import {getTokenValue} from './utilities/getTokenValue'
 
 const fontWeightMatrix: Record<string, string[]> = {
   '100': ['thin', 'hairline'],
@@ -48,5 +49,5 @@ export const fontWeightToNumber: StyleDictionary.Transform = {
   type: `value`,
   transitive: true,
   matcher: isFontWeight,
-  transformer: (token: StyleDictionary.TransformedToken): number => parseFontWeight(token.value),
+  transformer: (token: StyleDictionary.TransformedToken): number => parseFontWeight(getTokenValue(token)),
 }
