@@ -4,6 +4,7 @@ import {alpha} from './utilities/alpha'
 import {checkRequiredTokenProperties} from './utilities/checkRequiredTokenProperties'
 import type {ShadowTokenValue} from '~/src/types/ShadowTokenValue'
 import type StyleDictionary from 'style-dictionary'
+import {getTokenValue} from './utilities/getTokenValue'
 
 /**
  * @description converts w3c shadow tokens in css shadow string
@@ -29,7 +30,7 @@ export const shadowToCss: StyleDictionary.Transform = {
         /*css box shadow:  inset? | offset-x | offset-y | blur-radius | spread-radius | color */
         return `${shadow.inset === true ? 'inset ' : ''}${shadow.offsetX} ${shadow.offsetY} ${shadow.blur} ${
           shadow.spread
-        } ${toHex(alpha(shadow.color, shadow.alpha || 1))}`
+        } ${toHex(alpha(getTokenValue({...token, ...{value: shadow}}, 'color'), shadow.alpha || 1))}`
       })
       .join(', ')
   },
