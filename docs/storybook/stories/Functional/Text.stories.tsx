@@ -11,13 +11,28 @@ export default {
   },
 } as ComponentMeta<typeof ColorPreview>
 
-const fgColors = ['fgColor-default', 'fgColor-muted', 'fgColor-inverse', 'fgColor-disabled', 'fgColor-link-rest','fgColor-accent', 'fgColor-success', 'fgColor-attention', 'fgColor-severe', 'fgColor-danger', 'fgColor-open', 'fgColor-closed', 'fgColor-done', 'fgColor-sponsors']
+const fgColors = [
+  'fgColor-default',
+  'fgColor-muted',
+  'fgColor-inverse',
+  'fgColor-disabled',
+  'fgColor-link-rest',
+  'fgColor-accent',
+  'fgColor-success',
+  'fgColor-attention',
+  'fgColor-severe',
+  'fgColor-danger',
+  'fgColor-open',
+  'fgColor-closed',
+  'fgColor-done',
+  'fgColor-sponsors',
+]
 
 export const Foreground: ComponentStory<typeof ColorPreview> = () => {
   return (
     <>
       {fgColors.map(color => (
-        <ColorPreview color={color} textColor key={color} canvasColor="bgColor-default"/>
+        <ColorPreview color={color} textColor key={color} canvasColor="bgColor-default" />
       ))}
     </>
   )

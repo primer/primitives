@@ -19,9 +19,8 @@
 }
 
 .ToggleSwitch button:hover:not(:disabled) {
-  background-image:
-      linear-gradient(var(--controlTrack-bgColor-hover), var(--controlTrack-bgColor-hover)),
-      linear-gradient(var(--controlTrack-bgColor-rest), var(--controlTrack-bgColor-rest));
+  background-image: linear-gradient(var(--controlTrack-bgColor-hover), var(--controlTrack-bgColor-hover)),
+    linear-gradient(var(--controlTrack-bgColor-rest), var(--controlTrack-bgColor-rest));
 }
 
 /* active */
@@ -35,9 +34,8 @@
 }
 
 .ToggleSwitch button:active {
-  background-image:
-      linear-gradient(var(--controlTrack-bgColor-active), var(--controlTrack-bgColor-active)),
-      linear-gradient(var(--controlTrack-bgColor-rest), var(--controlTrack-bgColor-rest));
+  background-image: linear-gradient(var(--controlTrack-bgColor-active), var(--controlTrack-bgColor-active)),
+    linear-gradient(var(--controlTrack-bgColor-rest), var(--controlTrack-bgColor-rest));
 }
 
 /* disabled */
@@ -50,30 +48,29 @@
   background-color: var(--controlKnob-bgColor-disabled);
 }
 
-.ToggleSwitch button:disabled, .ToggleSwitch button[aria-checked="true"]:disabled {
+.ToggleSwitch button:disabled,
+.ToggleSwitch button[aria-checked='true']:disabled {
   background-color: var(--controlTrack-bgColor-disabled);
   border-color: var(--controlTrack-borderColor-disabled);
 }
 
 /* checked */
 
-.ToggleSwitch button[aria-checked="true"] {
+.ToggleSwitch button[aria-checked='true'] {
   background-color: var(--control-checked-bgColor-rest);
   border-color: var(--control-checked-borderColor-rest);
 }
 
 /* checked hover */
 
-.ToggleSwitch button[aria-checked="true"]:hover:not(:disabled) {
-  background-image:
-      linear-gradient(var(--control-checked-bgColor-hover), var(--control-checked-bgColor-hover)),
-      linear-gradient(var(--control-checked-bgColor-rest), var(--control-checked-bgColor-rest));
+.ToggleSwitch button[aria-checked='true']:hover:not(:disabled) {
+  background-image: linear-gradient(var(--control-checked-bgColor-hover), var(--control-checked-bgColor-hover)),
+    linear-gradient(var(--control-checked-bgColor-rest), var(--control-checked-bgColor-rest));
 }
 
 /* checked  active*/
 
-.ToggleSwitch button[aria-checked="true"]:active {
-  background-image:
-      linear-gradient(var(--control-checked-bgColor-active), var(--control-checked-bgColor-active)),
-      linear-gradient(var(--control-checked-bgColor-rest), var(--control-checked-bgColor-rest));
+.ToggleSwitch button[aria-checked='true']:active {
+  background-image: linear-gradient(var(--control-checked-bgColor-active), var(--control-checked-bgColor-active)),
+    linear-gradient(var(--control-checked-bgColor-rest), var(--control-checked-bgColor-rest));
 }

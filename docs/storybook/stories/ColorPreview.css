@@ -7,7 +7,7 @@
   border-radius: 6px;
 }
 
-.ColorPreview:has([style="color: var(--fgColor-inverse);"]) {
+.ColorPreview:has([style='color: var(--fgColor-inverse);']) {
   background-color: var(--bgColor-inverse) !important;
 }
 
