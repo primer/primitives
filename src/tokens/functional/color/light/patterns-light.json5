@@ -5,7 +5,7 @@
       $type: 'color',
     },
     borderColor: {
-      $value: '{color.border.subtle}',
+      $value: '{borderColor.secondary}',
       $type: 'color',
     },
   },
@@ -80,15 +80,15 @@
       disabled: {},
       checked: {},
       success: {
-        $value: '{color.success.emphasis}',
+        $value: '{borderColor.success.emphasis}',
         $type: 'color',
       },
       danger: {
-        $value: '{color.danger.emphasis}',
+        $value: '{borderColor.danger.emphasis}',
         $type: 'color',
       },
       warning: {
-        $value: '{color.attention.emphasis}',
+        $value: '{borderColor.attention.emphasis}',
         $type: 'color',
       },
     },
@@ -121,17 +121,17 @@
           $type: 'color',
         },
         hover: {
-          $value: '{scale.blue.7}',
+          $value: '{base.color.blue.7}',
           $type: 'color',
           alpha: 0.2,
         },
         active: {
-          $value: '{scale.blue.7}',
+          $value: '{base.color.blue.7}',
           $type: 'color',
           alpha: 0.4,
         },
         disabled: {
-          $value: '{scale.gray.5}',
+          $value: '{base.color.gray.5}',
           $type: 'color',
         },
       },
@@ -151,15 +151,15 @@
           $type: 'color',
         },
         hover: {
-          $value: '{scale.blue.6}',
+          $value: '{base.color.blue.6}',
           $type: 'color',
         },
         active: {
-          $value: '{scale.blue.7}',
+          $value: '{base.color.blue.7}',
           $type: 'color',
         },
         disabled: {
-          $value: '{scale.gray.5}',
+          $value: '{base.color.gray.5}',
           $type: 'color',
         },
       },
@@ -186,8 +186,44 @@
         $type: 'color',
       },
     },
+    borderColor: {
+      rest: {
+        $value: '{base.color.gray.3}',
+        $type: 'color',
+      },
+      disabled: {
+        $value: '{base.color.gray.4}',
+        $type: 'color',
+      },
+    },
   },
-  controlKnob: {},
+  controlKnob: {
+    bgColor: {
+      rest: {
+        $value: '{base.color.white}',
+        $type: 'color',
+      },
+      hover: {
+        $value: '{base.color.gray.2}',
+        $type: 'color',
+        alpha: 0.2,
+      },
+      disabled: {
+        $value: '{base.color.gray.0}',
+        $type: 'color',
+      },
+    },
+    borderColor: {
+      rest: {
+        $value: '{controlTrack.borderColor.rest}',
+        $type: 'color',
+      },
+      disabled: {
+        $value: '{base.color.gray.0}',
+        $type: 'color',
+      },
+    },
+  },
   counter: {
     borderColor: {
       $value: '{base.color.transparent}',
@@ -222,15 +258,15 @@
       },
       borderColor: {
         rest: {
-          $value: '{color.border.subtle}',
+          $value: '{borderColor.secondary}',
           $type: 'color',
         },
         hover: {
-          $value: '{color.border.subtle}',
+          $value: '{borderColor.secondary}',
           $type: 'color',
         },
         active: {
-          $value: '{color.border.subtle}',
+          $value: '{borderColor.secondary}',
           $type: 'color',
         },
       },
@@ -274,15 +310,15 @@
       },
       borderColor: {
         rest: {
-          $value: '{color.border.subtle}',
+          $value: '{borderColor.secondary}',
           $type: 'color',
         },
         hover: {
-          $value: '{color.border.subtle}',
+          $value: '{borderColor.secondary}',
           $type: 'color',
         },
         disabled: {
-          $value: '{color.border.subtle}',
+          $value: '{borderColor.secondary}',
           $type: 'color',
         },
       },
@@ -327,15 +363,15 @@
       },
       borderColor: {
         rest: {
-          $value: '{color.border.subtle}',
+          $value: '{borderColor.secondary}',
           $type: 'color',
         },
         hover: {
-          $value: '{color.border.subtle}',
+          $value: '{borderColor.secondary}',
           $type: 'color',
         },
         selected: {
-          $value: '{color.border.subtle}',
+          $value: '{borderColor.secondary}',
           $type: 'color',
         },
       },
@@ -390,15 +426,15 @@
       },
       borderColor: {
         rest: {
-          $value: '{color.border.subtle}',
+          $value: '{borderColor.secondary}',
           $type: 'color',
         },
         hover: {
-          $value: '{color.border.subtle}',
+          $value: '{borderColor.secondary}',
           $type: 'color',
         },
         selected: {
-          $value: '{color.border.subtle}',
+          $value: '{borderColor.secondary}',
           $type: 'color',
         },
       },
@@ -527,13 +563,13 @@
         $type: 'color',
       },
       hover: {
-        $value: '{color.neutral.muted}',
+        $value: '{borderColor.neutral.muted}',
         $type: 'color',
       },
     },
     iconColor: {
       rest: {
-        $value: '{color.fg.subtle}',
+        $value: '{fgColor.muted}',
         $type: 'color',
       },
     },
