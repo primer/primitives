@@ -171,7 +171,6 @@ export default {
       bg: get('accent.emphasis'),
       hoverBg: get('scale.blue.6'),
       activeBg: get('scale.blue.7'),
-      disabledBg: get('scale.gray.5'),
       fg: get('fg.onEmphasis'),
       disabledFg: get('fg.onEmphasis'),
       border: 'transparent', // TODO: remove this in next major release
@@ -182,13 +181,11 @@ export default {
     bg: get('canvas.default'),
     disabledBg: get('canvas.subtle'),
     border: get('scale.gray.4'),
-    disabledBorder: get('scale.gray.4'),
     hoverBg: get('canvas.subtle'),
 
     checked: {
       border: get('accent.emphasis'),
       disabledBg: get('canvas.subtle'),
-      disabledBorder: get('scale.gray.5'),
     }
   },
 

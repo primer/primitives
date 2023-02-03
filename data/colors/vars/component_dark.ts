@@ -170,7 +170,6 @@ export default {
       bg: alpha(get('scale.blue.5'), 0.35),
       hoverBg: alpha(get('scale.blue.5'), 0.5),
       activeBg: alpha(get('scale.blue.5'), 0.65),
-      disabledBg: get('scale.gray.5'),
       fg: get('fg.onEmphasis'),
       disabledFg: get('scale.black'),
       border: 'transparent',
@@ -181,13 +180,11 @@ export default {
     bg: get('canvas.default'),
     border: get('neutral.subtle'),
     disabledBg: get('canvas.subtle'),
-    disabledBorder: get('scale.gray.7'),
     hoverBg: get('canvas.subtle'),
 
     checked: {
       border: alpha(get('scale.blue.5'), 0.35),
       disabledBg: get('canvas.subtle'),
-      disabledBorder: get('scale.gray.5'),
     }
   },
 
