@@ -22,7 +22,7 @@ const ControlStackVisual: React.FC<ControlStackVisualProps> = ({modifier, varian
           backgroundImage:
             'linear-gradient(45deg,#a475f980 12.50%,#d8b9ff7a 12.50%,#d8b9ff7a 50%,#a475f980 50%,#a475f980 62.50%,#d8b9ff7a 62.50%,#d8b9ff7a 100%)',
           backgroundSize: '5.66px 5.66px',
-          gap: `var(--primer-controlStack${variant}-gap-${modifier})`
+          gap: `var(--primer-controlStack${variant}-gap-${modifier})`,
         }}
       >
         <Box
@@ -32,7 +32,7 @@ const ControlStackVisual: React.FC<ControlStackVisualProps> = ({modifier, varian
             border: 'solid 1px #c297ff',
             height: '32px',
             width: '32px',
-            borderRadius: 2
+            borderRadius: 2,
           }}
         />
         <Box
@@ -42,7 +42,7 @@ const ControlStackVisual: React.FC<ControlStackVisualProps> = ({modifier, varian
             border: 'solid 1px #c297ff',
             height: '32px',
             width: '32px',
-            borderRadius: 2
+            borderRadius: 2,
           }}
         />
         <Box
@@ -52,7 +52,7 @@ const ControlStackVisual: React.FC<ControlStackVisualProps> = ({modifier, varian
             border: 'solid 1px #c297ff',
             height: '32px',
             width: '32px',
-            borderRadius: 2
+            borderRadius: 2,
           }}
         />
       </Box>

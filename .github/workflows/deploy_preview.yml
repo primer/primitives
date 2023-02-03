@@ -14,9 +14,9 @@ jobs:
     name: Build and deploy
     uses: primer/.github/.github/workflows/deploy_preview.yml@main
     with:
-      node_version: 14
-      install: yarn
-      build: yarn build:tokens && yarn build && yarn build:v3 && cd docs && yarn build:preview
+      node_version: 16
+      install: npm ci --no-audit --no-fund
+      build: npm run build:tokens && npm run build && npm run build:v3 && cd docs && npm run build:preview
       output_dir: docs/public
 
   post_storybook:

@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
-yarn install
+npm ci --legacy-peer-deps --no-audit --no-fund
 
 # Add base url to be able to serve static files
 if [ -n "$1" ]; then

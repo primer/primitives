@@ -47,7 +47,7 @@ export function TypographyShorthandTable({filePath}) {
               const tokenVariantString = tokenVariant.replace(/-/g, '')
               const FrameworkVars = [
                 {id: 'CSS', token: `--${token.name}`},
-                {id: 'JS', token: `${token.path.join('.')}`}
+                {id: 'JS', token: `${token.path.join('.')}`},
               ]
               return (
                 token.name.includes('-shorthand') && (
@@ -67,7 +67,7 @@ export function TypographyShorthandTable({filePath}) {
                             gridTemplateColumns: '8ch auto',
                             alignItems: 'center',
                             justifyItems: 'start',
-                            gap: '16px'
+                            gap: '16px',
                           }}
                         >
                           <Box
@@ -77,7 +77,7 @@ export function TypographyShorthandTable({filePath}) {
                               fontSize: '14px',
                               whiteSpace: 'nowrap',
                               margin: '0',
-                              fontWeight: '600'
+                              fontWeight: '600',
                             }}
                           >
                             Size:
@@ -98,7 +98,7 @@ export function TypographyShorthandTable({filePath}) {
                             gridTemplateColumns: '8ch auto',
                             alignItems: 'center',
                             justifyItems: 'start',
-                            gap: '16px'
+                            gap: '16px',
                           }}
                         >
                           <Box
@@ -108,7 +108,7 @@ export function TypographyShorthandTable({filePath}) {
                               fontSize: '14px',
                               whiteSpace: 'nowrap',
                               margin: '0',
-                              fontWeight: '600'
+                              fontWeight: '600',
                             }}
                           >
                             Line height:
@@ -129,7 +129,7 @@ export function TypographyShorthandTable({filePath}) {
                             gridTemplateColumns: '8ch auto',
                             alignItems: 'center',
                             justifyItems: 'start',
-                            gap: '16px'
+                            gap: '16px',
                           }}
                         >
                           <Box
@@ -139,7 +139,7 @@ export function TypographyShorthandTable({filePath}) {
                               fontSize: '14px',
                               whiteSpace: 'nowrap',
                               margin: '0',
-                              fontWeight: '600'
+                              fontWeight: '600',
                             }}
                           >
                             Weight:

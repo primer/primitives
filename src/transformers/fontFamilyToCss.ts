@@ -1,5 +1,6 @@
 import type StyleDictionary from 'style-dictionary'
 import {isFontFamily} from '~/src/filters'
+import {getTokenValue} from './utilities/getTokenValue'
 
 const hasSpaceInName = (string: string) => /\s/g.test(string)
 /**
@@ -33,5 +34,5 @@ export const fontFamilyToCss: StyleDictionary.Transform = {
   type: `value`,
   transitive: true,
   matcher: isFontFamily,
-  transformer: (token: StyleDictionary.TransformedToken): string => parseFontFamily(token.value),
+  transformer: (token: StyleDictionary.TransformedToken): string => parseFontFamily(getTokenValue(token)),
 }

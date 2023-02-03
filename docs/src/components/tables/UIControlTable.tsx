@@ -48,7 +48,7 @@ const UIControlTable: React.FC<UIControlTableProps> = ({filePath, tokenVariant})
               const tokenVariantString = tokenVariant.replace(/-/g, '')
               const FrameworkVars = [
                 {id: 'CSS', token: `--${token.name}`},
-                {id: 'JS', token: `${token.path.join('.')}`}
+                {id: 'JS', token: `${token.path.join('.')}`},
               ]
               return (
                 token.name.includes('-control-') &&
