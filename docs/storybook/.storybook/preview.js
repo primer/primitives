@@ -1,5 +1,6 @@
 import './preview.css'
 import clsx from 'clsx'
+import {ThemeProvider} from '@primer/react'
 import {themes} from '@storybook/theming'
 
 export const parameters = {
@@ -52,28 +53,30 @@ export const decorators = [
     const storyType = parameters.storyType || defaultStoryType
     console.log(parameters)
     return (
-      <div className={context.globals.theme === 'all' && 'theme-wrap-grid'}>
-        {primerThemes.map(theme => {
-          if (context.globals.theme === theme || context.globals.theme === 'all') {
-            return (
-              <div
-                id="story"
-                className={clsx(
-                  context.globals.theme === 'all' && 'story-wrap-grid',
-                  'story-wrap',
-                  parameters.storyType === 'swatch' && 'SwatchDecorator',
-                )}
-                data-color-mode={theme.startsWith('dark') ? 'dark' : 'light'}
-                data-light-theme={theme.startsWith('light') ? theme : undefined}
-                data-dark-theme={theme.startsWith('dark') ? theme : undefined}
-              >
-                <Story {...context} />
-                {context.globals.theme === 'all' && <p className="theme-name">{theme}</p>}
-              </div>
-            )
-          }
-        })}
-      </div>
+      <ThemeProvider colorMode="day" dayScheme="light">
+        <div className={context.globals.theme === 'all' && 'theme-wrap-grid'}>
+          {primerThemes.map(theme => {
+            if (context.globals.theme === theme || context.globals.theme === 'all') {
+              return (
+                <div
+                  id="story"
+                  className={clsx(
+                    context.globals.theme === 'all' && 'story-wrap-grid',
+                    'story-wrap',
+                    parameters.storyType === 'swatch' && 'SwatchDecorator',
+                  )}
+                  data-color-mode={theme.startsWith('dark') ? 'dark' : 'light'}
+                  data-light-theme={theme.startsWith('light') ? theme : undefined}
+                  data-dark-theme={theme.startsWith('dark') ? theme : undefined}
+                >
+                  <Story {...context} />
+                  {context.globals.theme === 'all' && <p className="theme-name">{theme}</p>}
+                </div>
+              )
+            }
+          })}
+        </div>
+      </ThemeProvider>
     )
   },
 ]
