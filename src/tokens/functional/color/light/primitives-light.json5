@@ -8,7 +8,7 @@
       $value: '{base.color.gray.6}',
       $type: 'color',
     },
-    inverse: {
+    white: {
       $value: '{base.color.white}',
       $type: 'color',
     },
@@ -182,6 +182,11 @@
     secondary: {
       $value: '#d8dee4',
       $type: 'color',
+    },
+    decorative: {
+      $value: '{borderColor.default}',
+      $type: 'color',
+      alpha: 0.4,
     },
     neutral: {
       muted: {
