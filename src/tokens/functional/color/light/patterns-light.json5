@@ -214,8 +214,12 @@
       },
     },
     borderColor: {
+      // rest: {
+      //   $value: '{controlTrack.borderColor.rest}',
+      //   $type: 'color',
+      // },
       rest: {
-        $value: '{controlTrack.borderColor.rest}',
+        $value: '{borderColor.emphasis}',
         $type: 'color',
       },
       disabled: {

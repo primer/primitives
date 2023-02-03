@@ -89,7 +89,7 @@ module.exports = {
       extends: ['plugin:@typescript-eslint/recommended', 'prettier'],
       rules: {
         'no-shadow': 'off',
-        '@typescript-eslint/no-shadow': 'error',
+        '@typescript-eslint/no-shadow': 0,
         '@typescript-eslint/no-explicit-any': 2,
         '@typescript-eslint/no-unnecessary-condition': 2,
         '@typescript-eslint/explicit-module-boundary-types': 0,

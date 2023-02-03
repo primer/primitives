@@ -1,6 +1,7 @@
 .ToggleSwitch button {
   background-color: var(--controlTrack-bgColor-rest);
   border-color: var(--controlTrack-borderColor-rest);
+  overflow: visible;
 }
 
 .ToggleSwitch button > div:last-of-type {
@@ -73,4 +74,24 @@
 .ToggleSwitch button[aria-checked='true']:active {
   background-image: linear-gradient(var(--control-checked-bgColor-active), var(--control-checked-bgColor-active)),
     linear-gradient(var(--control-checked-bgColor-rest), var(--control-checked-bgColor-rest));
+}
+
+/* SegmentedControl */
+
+.SegmentedControl button[aria-current='true'] span.segmentedControl-content {
+  background-color: var(--controlKnob-bgColor-rest);
+  border-color: var(--controlKnob-borderColor-rest);
+}
+
+.SegmentedControl ul {
+  background-color: var(--controlTrack-bgColor-rest);
+  border-color: var(--controlTrack-borderColor-rest);
+}
+
+.SegmentedControl button[aria-current='false'] span.segmentedControl-content:hover:not(:disabled) {
+  background-color: var(--controlTrack-bgColor-hover);
+}
+
+.SegmentedControl .gGsGVS:not(:last-child)::after {
+  background-color: var(--borderColor-default);
 }
