@@ -159,7 +159,7 @@ export default {
 
   switchTrack: {
     bg: get('neutral.subtle'),
-    hoverBg: get('neutral.subtle'),
+    hoverBg: get('neutral.subtle'), // TODO: remove this in next major release
     activeBg: get('neutral.muted'),
     disabledBg: get('scale.gray.7'),
     fg: get('fg.muted'),
@@ -184,12 +184,11 @@ export default {
 
     checked: {
       border: alpha(get('scale.blue.5'), 0.35),
-      disabledBg: get('canvas.subtle'),
     }
   },
 
   segmentedControl: {
-    bg: get('scale.gray.8'),
+    bg: get('canvas.default'),
 
     button: {
       hover: {

@@ -160,7 +160,7 @@ export default {
 
   switchTrack: {
     bg: get('scale.gray.1'),
-    hoverBg: get('scale.gray.1'),
+    hoverBg: get('scale.gray.1'), // TODO: remove this in next major release
     activeBg: get('scale.gray.2'),
     disabledBg: get('scale.gray.4'),
     fg: get('fg.muted'),
@@ -169,8 +169,8 @@ export default {
 
     checked: {
       bg: get('accent.emphasis'),
-      hoverBg: get('scale.blue.6'),
-      activeBg: get('scale.blue.7'),
+      hoverBg: '#0860CA', // accent-emphasis + rgba(3, 61, 139, 0.2)
+      activeBg: '#0757BA', // accent-emphasis + rgba(3, 61, 139, 0.4)
       fg: get('fg.onEmphasis'),
       disabledFg: get('fg.onEmphasis'),
       border: 'transparent', // TODO: remove this in next major release
@@ -185,12 +185,11 @@ export default {
 
     checked: {
       border: get('accent.emphasis'),
-      disabledBg: get('canvas.subtle'),
     }
   },
 
   segmentedControl: {
-    bg: get('scale.gray.1'),
+    bg: get('canvas.default'),
 
     button: {
       hover: {
@@ -202,7 +201,7 @@ export default {
       },
 
       selected: {
-        border: get('scale.gray.5'),
+        border: get('scale.gray.4'),
       },
     },
   },
