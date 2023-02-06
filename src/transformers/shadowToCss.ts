@@ -30,7 +30,7 @@ export const shadowToCss: StyleDictionary.Transform = {
         /*css box shadow:  inset? | offset-x | offset-y | blur-radius | spread-radius | color */
         return `${shadow.inset === true ? 'inset ' : ''}${shadow.offsetX} ${shadow.offsetY} ${shadow.blur} ${
           shadow.spread
-        } ${toHex(alpha(getTokenValue({...token, ...{value: shadow}}, 'color'), shadow.alpha || 1))}`
+        } ${toHex(alpha(getTokenValue({...token, ...{value: shadow}}, 'color'), shadow.alpha || 1, token))}`
       })
       .join(', ')
   },
