@@ -160,8 +160,8 @@ export default {
 
   switchTrack: {
     bg: get('scale.gray.1'),
-    hoverBg: get('scale.gray.1'), // TODO: remove this in next major release
-    activeBg: get('scale.gray.2'),
+    hoverBg: darken(get('scale.gray.1'), 0.03),
+    activeBg: darken(get('scale.gray.1'), 0.05),
     disabledBg: get('scale.gray.4'),
     fg: get('fg.muted'),
     disabledFg: get('fg.onEmphasis'),
@@ -169,8 +169,8 @@ export default {
 
     checked: {
       bg: get('accent.emphasis'),
-      hoverBg: '#0860CA', // accent-emphasis + rgba(3, 61, 139, 0.2)
-      activeBg: '#0757BA', // accent-emphasis + rgba(3, 61, 139, 0.4)
+      hoverBg: '#0860CA', // accent-emphasis + scale-blue-7 @ 20% opacity
+      activeBg: '#0757BA', // accent-emphasis + scale-blue-7 @ 20% opacity
       fg: get('fg.onEmphasis'),
       disabledFg: get('fg.onEmphasis'),
       border: 'transparent', // TODO: remove this in next major release
@@ -180,8 +180,7 @@ export default {
   switchKnob: {
     bg: get('canvas.default'),
     disabledBg: get('canvas.subtle'),
-    border: get('scale.gray.4'),
-    hoverBg: get('canvas.subtle'),
+    border: '#858F99', // control contrast border https://github.com/primer/primitives/pull/485
 
     checked: {
       border: get('accent.emphasis'),

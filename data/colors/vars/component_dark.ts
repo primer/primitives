@@ -1,4 +1,4 @@
-import {alpha, darken, get} from '../../../src/utils-v1'
+import {alpha, darken, lighten, get} from '../../../src/utils-v1'
 
 export default {
   avatar: {
@@ -159,12 +159,12 @@ export default {
 
   switchTrack: {
     bg: get('neutral.subtle'),
-    hoverBg: get('neutral.subtle'), // TODO: remove this in next major release
+    hoverBg: lighten(get('neutral.subtle'), 0.25),
     activeBg: get('neutral.muted'),
     disabledBg: get('scale.gray.7'),
     fg: get('fg.muted'),
     disabledFg: get('scale.black'),
-    border: 'transparent',
+    border: 'transparent',  // TODO: remove this in next major release
 
     checked: {
       bg: alpha(get('scale.blue.5'), 0.35),
@@ -172,15 +172,14 @@ export default {
       activeBg: alpha(get('scale.blue.5'), 0.65),
       fg: get('fg.onEmphasis'),
       disabledFg: get('scale.black'),
-      border: 'transparent',
+      border: 'transparent',  // TODO: remove this in next major release
     }
   },
 
   switchKnob: {
     bg: get('canvas.default'),
-    border: get('neutral.subtle'),
+    border: '#606771', // control contrast border https://github.com/primer/primitives/pull/485
     disabledBg: get('canvas.subtle'),
-    hoverBg: get('canvas.subtle'),
 
     checked: {
       border: alpha(get('scale.blue.5'), 0.35),

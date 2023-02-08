@@ -1,4 +1,4 @@
-import {alpha, get, merge} from '../../../src/utils-v1'
+import {alpha, get, merge, lighten} from '../../../src/utils-v1'
 import light from './light'
 
 const scale = {
@@ -225,6 +225,8 @@ const exceptions = {
 
   switchTrack: {
     bg: get('neutral.emphasis'),
+    hoverBg: lighten(get('neutral.emphasis'), 0.03),
+    activeBg: lighten(get('neutral.emphasis'), 0.05),
     fg: get('fg.onEmphasis'),
     disabledFg: get('fg.onEmphasis'),
 
@@ -234,7 +236,7 @@ const exceptions = {
   },
 
   switchKnob: {
-    border: get('neutral.emphasis'),
+    border: get('border.default'),
 
     checked: {
       border: get('accent.emphasis'),
