@@ -1,10 +1,10 @@
 import React from 'react'
 // eslint-disable-next-line import/no-unresolved
 import type {ComponentMeta, ComponentStory} from '@storybook/react'
-import {ColorPreview} from '../ColorPreview'
+import {ColorPreview} from '../../Components/ColorPreview'
 
 export default {
-  title: 'Functional/Colors/Foreground',
+  title: 'Color/Functional/Foreground',
   component: ColorPreview,
   parameters: {
     storyType: 'swatch',
@@ -14,7 +14,7 @@ export default {
 const fgColors = [
   'fgColor-default',
   'fgColor-muted',
-  'fgColor-inverse',
+  'fgColor-white',
   'fgColor-disabled',
   'fgColor-link-rest',
   'fgColor-accent',

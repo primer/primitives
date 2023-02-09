@@ -40,7 +40,7 @@
         alpha: 0.4,
       },
       disabled: {
-        $value: '{base.color.gray.0}',
+        $value: '{bgColor.disabled}',
         $type: 'color',
       },
       selected: {
@@ -58,7 +58,7 @@
         $type: 'color',
       },
       disabled: {
-        $value: '{base.color.gray.4}',
+        $value: '{fgColor.disabled}',
         $type: 'color',
       },
     },
@@ -67,18 +67,18 @@
         $value: '{base.color.gray.2}',
         $type: 'color',
       },
-      hover: {},
-      active: {},
       emphasis: {
-        $value: '{base.color.gray.5}',
+        $value: '#858F99',
+        $type: 'color',
+      },
+      disabled: {
+        $value: '{borderColor.disabled}',
         $type: 'color',
       },
       selected: {
         $value: '{base.color.gray.0}',
         $type: 'color',
       },
-      disabled: {},
-      checked: {},
       success: {
         $value: '{borderColor.success.emphasis}',
         $type: 'color',
@@ -93,7 +93,10 @@
       },
     },
     iconColor: {
-      checked: {},
+      rest: {
+        $value: '{fgColor.muted}',
+        $type: 'color',
+      },
     },
     danger: {
       fgColor: {
@@ -131,7 +134,7 @@
           alpha: 0.4,
         },
         disabled: {
-          $value: '{base.color.gray.5}',
+          $value: '{fgColor.disabled}',
           $type: 'color',
         },
       },
@@ -151,15 +154,15 @@
           $type: 'color',
         },
         hover: {
-          $value: '{base.color.blue.6}',
+          $value: 'transparent',
           $type: 'color',
         },
         active: {
-          $value: '{base.color.blue.7}',
+          $value: 'transparent',
           $type: 'color',
         },
         disabled: {
-          $value: '{base.color.gray.5}',
+          $value: '{fgColor.disabled}',
           $type: 'color',
         },
       },
@@ -182,7 +185,7 @@
         alpha: 0.4,
       },
       disabled: {
-        $value: '{base.color.gray.4}',
+        $value: '{fgColor.disabled}',
         $type: 'color',
       },
     },
@@ -192,7 +195,7 @@
         $type: 'color',
       },
       disabled: {
-        $value: '{base.color.gray.4}',
+        $value: '{fgColor.disabled}',
         $type: 'color',
       },
     },
@@ -203,27 +206,18 @@
         $value: '{base.color.white}',
         $type: 'color',
       },
-      hover: {
-        $value: '{base.color.gray.2}',
-        $type: 'color',
-        alpha: 0.2,
-      },
       disabled: {
-        $value: '{base.color.gray.0}',
+        $value: '{bgColor.disabled}',
         $type: 'color',
       },
     },
     borderColor: {
-      // rest: {
-      //   $value: '{controlTrack.borderColor.rest}',
-      //   $type: 'color',
-      // },
       rest: {
-        $value: '{borderColor.emphasis}',
+        $value: '{control.borderColor.emphasis}',
         $type: 'color',
       },
       disabled: {
-        $value: '{base.color.gray.0}',
+        $value: '{bgColor.disabled}',
         $type: 'color',
       },
     },
@@ -238,38 +232,26 @@
     default: {
       fgColor: {
         rest: {
-          $value: '{base.color.gray.9}',
+          $value: '{control.fgColor.rest}',
           $type: 'color',
         },
       },
       bgColor: {
         rest: {
-          $value: '{base.color.gray.0}',
+          $value: '{control.bgColor.rest}',
           $type: 'color',
         },
         hover: {
-          $value: '#f3f4f6',
+          $value: '{control.bgColor.hover}',
           $type: 'color',
         },
         active: {
-          $value: '#ebecf0',
-          $type: 'color',
-        },
-        selected: {
-          $value: '#eeeff2',
+          $value: '{control.bgColor.active}',
           $type: 'color',
         },
       },
       borderColor: {
         rest: {
-          $value: '{borderColor.secondary}',
-          $type: 'color',
-        },
-        hover: {
-          $value: '{borderColor.secondary}',
-          $type: 'color',
-        },
-        active: {
           $value: '{borderColor.secondary}',
           $type: 'color',
         },
@@ -300,12 +282,14 @@
           $type: 'color',
         },
         hover: {
-          $value: '#2c974b',
+          $value: '{base.color.green.6}',
           $type: 'color',
+          alpha: 0.2,
         },
-        selected: {
-          $value: '#298e46',
+        active: {
+          $value: '{base.color.green.6}',
           $type: 'color',
+          alpha: 0.4,
         },
         disabled: {
           $value: '#94d3a2',
@@ -317,12 +301,32 @@
           $value: '{borderColor.secondary}',
           $type: 'color',
         },
-        hover: {
-          $value: '{borderColor.secondary}',
+      },
+    },
+    invisible: {
+      fgColor: {
+        rest: {
+          $value: '{fgColor.link.rest}',
           $type: 'color',
         },
-        disabled: {
-          $value: '{borderColor.secondary}',
+      },
+      bgColor: {
+        rest: {
+          $value: 'transparent',
+          $type: 'color',
+        },
+        hover: {
+          $value: '{control.bgColor.hover}',
+          $type: 'color',
+        },
+        active: {
+          $value: '{control.bgColor.active}',
+          $type: 'color',
+        },
+      },
+      borderColor: {
+        rest: {
+          $value: 'transparent',
           $type: 'color',
         },
       },
@@ -337,7 +341,7 @@
           $value: '{base.color.white}',
           $type: 'color',
         },
-        selected: {
+        active: {
           $value: '{base.color.white}',
           $type: 'color',
         },
@@ -356,7 +360,7 @@
           $value: '{base.color.blue.5}',
           $type: 'color',
         },
-        selected: {
+        active: {
           $value: '#0965ce',
           $type: 'color',
         },
@@ -370,39 +374,31 @@
           $value: '{borderColor.secondary}',
           $type: 'color',
         },
-        hover: {
-          $value: '{borderColor.secondary}',
-          $type: 'color',
-        },
-        selected: {
-          $value: '{borderColor.secondary}',
-          $type: 'color',
-        },
       },
     },
     danger: {
       fgColor: {
         rest: {
-          $value: '{base.color.red.5}',
+          $value: '{fgColor.danger}',
           $type: 'color',
         },
         hover: {
           $value: '{base.color.white}',
           $type: 'color',
         },
-        selected: {
+        active: {
           $value: '{base.color.white}',
           $type: 'color',
         },
         disabled: {
-          $value: '{base.color.red.5}',
+          $value: '{fgColor.danger}',
           $type: 'color',
           alpha: 0.5,
         },
       },
       iconColor: {
         rest: {
-          $value: '{base.color.red.5}',
+          $value: '{fgColor.danger}',
           $type: 'color',
         },
         hover: {
@@ -419,25 +415,18 @@
           $value: '{base.color.red.6}',
           $type: 'color',
         },
-        selected: {
-          $value: '#c11f2a',
+        active: {
+          $value: '{base.color.red.8}',
           $type: 'color',
+          alpha: 0.4,
         },
         disabled: {
-          $value: '{base.color.gray.0}',
+          $value: '{bgColor.disabled}',
           $type: 'color',
         },
       },
       borderColor: {
         rest: {
-          $value: '{borderColor.secondary}',
-          $type: 'color',
-        },
-        hover: {
-          $value: '{borderColor.secondary}',
-          $type: 'color',
-        },
-        selected: {
           $value: '{borderColor.secondary}',
           $type: 'color',
         },
@@ -447,9 +436,10 @@
   buttonCounter: {
     default: {
       bgColor: {
-        $value: '{base.color.black}',
-        $type: 'color',
-        alpha: 0.08,
+        rest: {
+          $value: '{bgColor.neutral.muted}',
+          $type: 'color',
+        },
       },
     },
     primary: {
@@ -464,7 +454,7 @@
     outline: {
       bgColor: {
         rest: {
-          $value: '{base.color.blue.5}',
+          $value: '{fgColor.accent}',
           $type: 'color',
           alpha: 0.1,
         },
@@ -474,7 +464,7 @@
           alpha: 0.2,
         },
         disabled: {
-          $value: '{base.color.blue.5}',
+          $value: '{fgColor.accent}',
           $type: 'color',
           alpha: 0.05,
         },
@@ -488,12 +478,12 @@
           alpha: 0.2,
         },
         disabled: {
-          $value: '{base.color.red.5}',
+          $value: '{fgColor.danger}',
           $type: 'color',
           alpha: 0.05,
         },
         rest: {
-          $value: '{base.color.red.5}',
+          $value: '{fgColor.danger}',
           $type: 'color',
           alpha: 0.1,
         },
@@ -502,15 +492,15 @@
   },
   focus: {
     outlineColor: {
-      $value: '{base.color.blue.5}',
+      $value: '{borderColor.accent.emphasis}',
       $type: 'color',
     },
   },
   header: {
     bgColor: {
       $value: '{base.color.white}',
-      alpha: 0.95,
       $type: 'color',
+      alpha: 0.95,
     },
   },
   menu: {
@@ -528,9 +518,9 @@
     },
     backdrop: {
       bgColor: {
-        $value: '{base.color.black}',
-        alpha: 0.5,
+        $value: '{base.color.gray.3}',
         $type: 'color',
+        alpha: 0.2,
       },
     },
   },

@@ -21,10 +21,6 @@
         $value: '{base.color.blue.5}',
         $type: 'color',
       },
-      emphasis: {
-        $value: '{base.color.gray.5}',
-        $type: 'color',
-      },
     },
     accent: {
       $value: '{base.color.blue.5}',
@@ -72,8 +68,8 @@
       $value: '{base.color.gray.0}',
       $type: 'color',
     },
-    inverse: {
-      $value: '{base.color.gray.9}',
+    disabled: {
+      $value: '{base.color.gray.0}',
       $type: 'color',
     },
     neutral: {
@@ -153,7 +149,7 @@
         $type: 'color',
       },
       emphasis: {
-        $value: '{base.color.yellow.4}',
+        $value: '{base.color.red.5}',
         $type: 'color',
       },
     },
@@ -194,6 +190,10 @@
     },
     emphasis: {
       $value: '{base.color.gray.5}',
+      $type: 'color',
+    },
+    disabled: {
+      $value: '{borderColor.default}',
       $type: 'color',
     },
     neutral: {

@@ -1,6 +1,7 @@
 .ToggleSwitch button {
   background-color: var(--controlTrack-bgColor-rest);
-  border-color: var(--controlTrack-borderColor-rest);
+  /* border-color: var(--controlTrack-borderColor-rest); */
+  border-color: transparent;
   overflow: visible;
 }
 
@@ -94,4 +95,85 @@
 
 .SegmentedControl .gGsGVS:not(:last-child)::after {
   background-color: var(--borderColor-default);
+}
+
+/* ActionList */
+
+.ActionList li:not(:last-child):hover {
+  background-color: var(--control-bgColor-hover) !important;
+}
+
+.ActionList li:last-child:hover {
+  background-color: var(--control-danger-bgColor-hover) !important;
+}
+
+.ActionList li:active {
+  background-color: var(--control-bgColor-active) !important;
+}
+
+.ActionList [data-component='ActionList.Divider'] {
+  background-color: var(--borderColor-decorative);
+}
+
+.Button button:first-of-type {
+  background-color: var(--control-bgColor-rest);
+  border-color: var(--control-borderColor-rest);
+}
+
+.Button button:first-of-type:hover:not(:disabled) {
+  background-image: linear-gradient(var(--control-bgColor-hover), var(--control-bgColor-hover)),
+    linear-gradient(var(--control-bgColor-rest), var(--control-bgColor-rest));
+  border-color: var(--control-borderColor-rest);
+}
+
+.Button button:disabled {
+  background-color: var(--control-bgColor-disabled);
+}
+
+.Button button:last-of-type:hover:not(:disabled) {
+  background-color: var(--button-invisible-bgColor-hover);
+}
+
+.Button button:last-of-type:active:not(:disabled) {
+  background-color: var(--button-invisible-bgColor-active);
+}
+
+.Button button:last-of-type {
+  background-color: var(--button-invisible-bgColor-rest);
+  color: var(--button-invisible-fgColor-rest);
+}
+
+/* forms */
+
+.Input .TextInput-wrapper:first-of-type {
+  border-color: var(--control-borderColor-emphasis) !important;
+}
+
+.Input .TextInput-wrapper:has(input:disabled) {
+  background-color: var(--control-bgColor-disabled) !important;
+}
+
+.Input .TextInput-wrapper:nth-of-type(3) {
+  background-color: var(--bgColor-secondary) !important;
+}
+
+.Input .TextInput-wrapper:nth-of-type(4) {
+  border-color: var(--control-borderColor-danger) !important;
+}
+
+.Input .TextInput-wrapper:nth-of-type(5) {
+  border-color: var(--control-borderColor-warning) !important;
+}
+
+.Input input[type='checkbox']:checked {
+  background-color: var(--control-checked-bgColor-rest);
+  border-color: var(--control-checked-borderColor-rest);
+}
+
+.Input input[type='checkbox']:checked::before {
+  background-color: var(--control-checked-fgColor-rest);
+}
+
+.Input input[type='radio']:checked {
+  border-color: var(--control-checked-borderColor-rest);
 }
