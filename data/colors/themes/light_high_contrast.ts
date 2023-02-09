@@ -236,6 +236,11 @@ const exceptions = {
       hoverBg: get('scale.gray.2'),
     }
   },
+  control: {
+    borderColor: {
+      emphasis: get('border.default')
+    }
+  }
 }
 
 export default merge(light, exceptions, {scale})

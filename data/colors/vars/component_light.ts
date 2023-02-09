@@ -1,6 +1,11 @@
 import {alpha, darken, get} from '../../../src/utils-v1'
 
 export default {
+  control: {
+    borderColor: {
+      emphasis: '#858F99'
+    }
+  },
   avatar: {
     bg: get('scale.white'),
     border: get('border.subtle'),
