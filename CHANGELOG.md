@@ -1,5 +1,50 @@
 # @primer/primitives
 
+## 7.11.0
+
+### Minor Changes
+
+- [#485](https://github.com/primer/primitives/pull/485) [`4e408ca`](https://github.com/primer/primitives/commit/4e408ca63a8e056f32270b543e5d3ebdeadb8f3c) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Adds control.borderColor.emphasis color token
+
+- [#449](https://github.com/primer/primitives/pull/449) [`7130392`](https://github.com/primer/primitives/commit/7130392a2e152265f14020866c71a119cc888847) Thanks [@rezrah](https://github.com/rezrah)! - Deprecated marketing design tokens for Button components
+
+  Marketing tokens will be served from `@primer/brand-primitives` in future.
+
+  ```bash
+  npm install --save @primer/brand-primitives
+  ```
+
+  ```diff
+  - ---color-mktg-btn-bg
+  + --brand-Button-background-base
+  ```
+
+  ```diff
+  - --color-mktg-btn-shadow-outline
+  + --brand-Button-shadow-default
+  ```
+
+  ```diff
+  - --color-mktg-btn-shadow-focus
+  + --brand-Button-shadow-focus
+  ```
+
+  ```diff
+  - --color-mktg-btn-shadow-hover
+  + --brand-Button-shadow-primary-hover
+  ```
+
+  ```diff
+  - --color-mktg-btn-shadow-muted
+  + --color-mktg-btn-shadow-hover-muted
+  ```
+
+  :link: [See the `0.9.0` for all other tokens.](https://unpkg.com/browse/@primer/brand-primitives@0.9.0/lib/design-tokens/css/tokens/functional/components/button/colors-with-modes.css)
+
+- [#385](https://github.com/primer/primitives/pull/385) [`e03c7fd`](https://github.com/primer/primitives/commit/e03c7fd8a6d902e8d7784fd889acb3779236ba51) Thanks [@simurai](https://github.com/simurai)! - Add `Noto Sans` to the font stack
+
+- [#384](https://github.com/primer/primitives/pull/384) [`8b76794`](https://github.com/primer/primitives/commit/8b767947e35a79db17b9d7970836f03c904c8afe) Thanks [@langermank](https://github.com/langermank)! - - Remove deprecated focus color tokens in favor of "global" styles from Primer CSS
+
 ## 7.10.0
 
 ### Minor Changes
