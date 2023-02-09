@@ -22,6 +22,7 @@ import {
   jsonNestedPrefixed,
   cssThemed,
 } from './formats'
+import {iosColorsets} from './actions'
 
 /**
  * Parsers
@@ -125,6 +126,15 @@ StyleDictionary.registerTransform({
 StyleDictionary.registerTransform({
   name: 'fontFamily/css',
   ...fontFamilyToCss,
+})
+
+/**
+ * Actions
+ *
+ */
+StyleDictionary.registerAction({
+  name: 'iOS/colorsets',
+  ...iosColorsets,
 })
 
 /**
