@@ -189,9 +189,10 @@ export default {
   },
 
   segmentedControl: {
-    bg: get('canvas.default'),
+    bg: get('neutral.subtle'),
 
     button: {
+      bg: get('canvas.default'),
       hover: {
         bg: get('scale.gray.6'),
       },
