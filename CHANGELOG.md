@@ -1,5 +1,11 @@
 # @primer/primitives
 
+## 7.11.1
+
+### Patch Changes
+
+- [#477](https://github.com/primer/primitives/pull/477) [`39940de`](https://github.com/primer/primitives/commit/39940de6a57bc4eb8264fb86a25dd1c684471c8b) Thanks [@mperrotti](https://github.com/mperrotti)! - Updates to support new ToggleSwitch visual design
+
 ## 7.11.0
 
 ### Minor Changes
