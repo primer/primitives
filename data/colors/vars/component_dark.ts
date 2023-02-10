@@ -182,6 +182,8 @@ export default {
     disabledBg: get('canvas.subtle'),
 
     checked: {
+      bg: get('canvas.default'), // TODO: remove this in next major release
+      disabledBg: get('canvas.subtle'), // TODO: remove this in next major release
       border: alpha(get('scale.blue.5'), 0.35),
     }
   },

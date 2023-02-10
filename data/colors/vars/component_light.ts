@@ -183,6 +183,8 @@ export default {
     border: '#858F99', // control contrast border https://github.com/primer/primitives/pull/485
 
     checked: {
+      bg: get('canvas.default'), // TODO: remove this in next major release
+      disabledBg: get('canvas.subtle'), // TODO: remove this in next major release
       border: get('accent.emphasis'),
     }
   },
