@@ -1,4 +1,4 @@
-import {alpha, darken, get} from '../../../src/utils-v1'
+import {alpha, darken, lighten, get} from '../../../src/utils-v1'
 
 export default {
   control: {
@@ -163,28 +163,41 @@ export default {
   },
 
   switchTrack: {
-    bg: get('scale.black'),
-    border: get('scale.gray.4'),
+    bg: get('neutral.subtle'),
+    hoverBg: lighten(get('neutral.subtle'), 0.25),
+    activeBg: get('neutral.muted'),
+    disabledBg: get('scale.gray.7'),
+    fg: get('fg.muted'),
+    disabledFg: get('scale.black'),
+    border: 'transparent',  // TODO: remove this in next major release
 
     checked: {
       bg: alpha(get('scale.blue.5'), 0.35),
       hoverBg: alpha(get('scale.blue.5'), 0.5),
       activeBg: alpha(get('scale.blue.5'), 0.65),
-      border: get('scale.blue.3'),
+      fg: get('fg.onEmphasis'),
+      disabledFg: get('scale.black'),
+      border: 'transparent',  // TODO: remove this in next major release
     }
   },
 
   switchKnob: {
+    bg: get('canvas.default'),
+    border: '#606771', // control contrast border https://github.com/primer/primitives/pull/485
+    disabledBg: get('canvas.subtle'),
+
     checked: {
-      bg: get('scale.blue.5'),
-      disabledBg: get('scale.gray.5'),
+      bg: get('canvas.default'), // TODO: remove this in next major release
+      disabledBg: get('canvas.subtle'), // TODO: remove this in next major release
+      border: alpha(get('scale.blue.5'), 0.35),
     }
   },
 
   segmentedControl: {
-    bg: get('scale.gray.8'),
+    bg: get('neutral.subtle'),
 
     button: {
+      bg: get('canvas.default'),
       hover: {
         bg: get('scale.gray.6'),
       },
