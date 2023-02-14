@@ -22,6 +22,7 @@ import {
   typescriptExportDefinition,
   jsonNestedPrefixed,
   cssThemed,
+  swiftEnumCgfloat,
 } from './formats'
 import {iosColorsets} from './actions'
 
@@ -63,6 +64,11 @@ StyleDictionary.registerFormat({
 StyleDictionary.registerFormat({
   name: 'json/nested-prefixed',
   formatter: jsonNestedPrefixed,
+})
+
+StyleDictionary.registerFormat({
+  name: 'ios-swift/enum-CGFloat.swift',
+  formatter: swiftEnumCgfloat,
 })
 
 /**

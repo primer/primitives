@@ -1,12 +1,13 @@
 import {PrimerStyleDictionary} from '~/src/PrimerStyleDictionary'
 import {swift} from '~/src/platforms'
+import glob from 'fast-glob'
 import type {ConfigGeneratorOptions} from '~/src/types/StyleDictionaryConfigGenerator'
 
 export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void => {
   /** -----------------------------------
    * Colors, shadows & borders
    * ----------------------------------- */
-  const themes = [
+  const tokens = [
     {
       colormode: 'light',
       highContrast: false,
@@ -51,7 +52,7 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
     },
   ]
 
-  for (const {colormode, highContrast, source, include} of themes) {
+  for (const {colormode, highContrast, source, include} of tokens) {
     // build functional scales
     PrimerStyleDictionary.extend({
       source, // build the special formats
@@ -65,12 +66,34 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
     }).buildAllPlatforms()
     // build base scales
   }
-}
 
+  /** -----------------------------------
+   * Size tokens
+   * ----------------------------------- */
+  // const sizeFiles = glob.sync('src/tokens/functional/size/*')
+  //
+  // for (const file of sizeFiles) {
+  //   PrimerStyleDictionary.extend(
+  //     getStyleDictionaryConfig(
+  //       `functional/size/${file.replace('src/tokens/functional/size/', '').replace('.json', '')}`,
+  //       [file],
+  //       ['src/tokens/base/size/size.json', ...sizeFiles],
+  //       buildOptions,
+  //     ),
+  //   ).buildAllPlatforms()
+  // }
+
+  PrimerStyleDictionary.extend({
+    source: ['src/tokens/base/size/size.json'], // build the special formats
+    platforms: {
+      swift: swift(`swift/size/base.swift`, buildOptions.prefix, buildOptions.buildPath),
+    },
+  }).buildAllPlatforms()
+  // close buildDesignTokens
+}
 /** -----------------------------------
  * Run build script
  * ----------------------------------- */
 buildDesignTokens({
   buildPath: 'tokens-v3-private/',
-  prefix: 'ui',
 })

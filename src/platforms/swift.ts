@@ -17,7 +17,7 @@ export const swift: PlatformInitializer = (outputFile, prefix, buildPath, option
       destination: outputFile,
       filter: token => isDimension(token) && isSource(token),
       className: 'Size',
-      format: 'ios-swift/class.swift',
+      format: 'ios-swift/enum-CGFloat.swift',
     },
   ],
   actions: ['iOS/colorsets'],
