@@ -5,7 +5,7 @@ const throwError = (token: StyleDictionary.TransformedToken) => {
   throw new Error(
     `Invalid mix property on token: ${token.name}. "mix.color": ${token.mix.color}, "mix.weight": ${
       typeof token.mix.weight === 'string' ? `"${token.mix.weight}" (string)` : token.mix.weight
-    } must be a number between 0 and 1.`,
+    } must be a number between 0 and 1. In file: "${token.filePath}".`,
   )
 }
 
