@@ -13,5 +13,5 @@ export const colorToHexMix: StyleDictionary.Transform = {
   transitive: true,
   matcher: isColorWithMix,
   transformer: (token: StyleDictionary.TransformedToken) =>
-    toHex(mix(getTokenValue(token), token.mix.color, token.mix.weight)),
+    toHex(mix(getTokenValue(token), token.mix?.color || getTokenValue(token), token.mix?.weight || 0)),
 }
