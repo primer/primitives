@@ -11,7 +11,7 @@ export default {
     border: get('border.subtle'),
     stackFade: get('scale.gray.6'),
     stackFadeMore: get('scale.gray.7'),
-    childShadow: (theme: any) => `-2px -2px 0 ${get('scale.gray.9')(theme)}`
+    childShadow: (theme: any) => `0 0 0 2px ${get('scale.gray.9')(theme)}`
   },
   topicTag: {
     border: 'transparent'
