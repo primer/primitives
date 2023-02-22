@@ -13,6 +13,7 @@ import {
   namePathToKebabCase,
   shadowToCss,
   typographyToCss,
+  colorToHexMix,
 } from './transformers'
 import {
   scssMixinCssVariables,
@@ -75,6 +76,11 @@ StyleDictionary.registerTransform({
 StyleDictionary.registerTransform({
   name: 'color/hexAlpha',
   ...colorToHexAlpha,
+})
+
+StyleDictionary.registerTransform({
+  name: 'color/hexMix',
+  ...colorToHexMix,
 })
 
 StyleDictionary.registerTransform({

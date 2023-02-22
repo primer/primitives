@@ -1,4 +1,4 @@
-import {alpha, get, merge} from '../../../src/utils-v1'
+import {alpha, get, merge, darken} from '../../../src/utils-v1'
 import dark from './dark'
 
 const scale = {
@@ -217,16 +217,32 @@ const exceptions = {
   },
 
   switchTrack: {
-    border: get('border.default'),
+    bg: get('neutral.emphasis'),
+    hoverBg: darken(get('neutral.emphasis'), 0.05),
+    activeBg: darken(get('neutral.emphasis'), 0.08),
+    fg: get('fg.onEmphasis'),
 
     checked: {
-      border: get('scale.blue.5'),
+      bg: get('accent.emphasis'),
+    }
+  },
+
+  switchKnob: {
+    border: get('scale.gray.4'),
+
+    checked: {
+      border: get('accent.emphasis'),
     }
   },
 
   treeViewItem: {
     chevron: {
       hoverBg: get('scale.gray.6'),
+    }
+  },
+  control: {
+    borderColor: {
+      emphasis: get('scale.gray.4')
     }
   },
 }

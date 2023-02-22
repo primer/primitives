@@ -95,6 +95,8 @@ const baseRequirements: ContrastRequirement[] = [
   // borders
   [3, 'border.default', 'canvas.default'],
   [3, 'border.default', 'canvas.subtle'],
+  [3, 'control.borderColor.emphasis', 'canvas.default'],
+  [3, 'control.borderColor.emphasis', 'canvas.subtle'],
   // TODO: there are no specific border colors for roles
 ]
 
@@ -174,6 +176,8 @@ const highContrast: ContrastRequirement[] = [
   // borders
   [4.5, 'border.default', 'canvas.default'],
   [4.5, 'border.default', 'canvas.subtle'],
+  [4.5, 'control.borderColor.emphasis', 'canvas.default'],
+  [4.5, 'control.borderColor.emphasis', 'canvas.subtle'],
 ] as ContrastRequirement[]
 
 export const canvasColors: string[] = ['canvas.default', 'canvas.subtle']

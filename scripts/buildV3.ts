@@ -284,5 +284,4 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
  * ----------------------------------- */
 buildDesignTokens({
   buildPath: 'tokens-v3-private/',
-  // prefix: 'ui',
 })

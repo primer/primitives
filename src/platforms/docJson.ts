@@ -8,6 +8,7 @@ export const docJson: PlatformInitializer = (outputFile, prefix, buildPath): Sty
   transforms: [
     'name/pathToKebabCase',
     'color/hex',
+    'color/hexMix',
     'color/hexAlpha',
     'shadow/css',
     'border/css',

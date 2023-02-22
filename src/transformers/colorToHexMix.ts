@@ -1,6 +1,5 @@
-import {toHex} from 'color2k'
-import {alpha} from './utilities/alpha'
-import {isColorWithAlpha} from '~/src/filters'
+import {toHex, mix} from 'color2k'
+import {isColorWithMix} from '~/src/filters'
 import type StyleDictionary from 'style-dictionary'
 import {getTokenValue} from './utilities/getTokenValue'
 /**
@@ -9,9 +8,10 @@ import {getTokenValue} from './utilities/getTokenValue'
  * @matcher matches all tokens of $type `color` with an `alpha` property
  * @transformer returns `hex8` string
  */
-export const colorToHexAlpha: StyleDictionary.Transform = {
+export const colorToHexMix: StyleDictionary.Transform = {
   type: `value`,
   transitive: true,
-  matcher: isColorWithAlpha,
-  transformer: (token: StyleDictionary.TransformedToken) => toHex(alpha(getTokenValue(token), token.alpha, token)),
+  matcher: isColorWithMix,
+  transformer: (token: StyleDictionary.TransformedToken) =>
+    toHex(mix(getTokenValue(token), token.mix?.color || getTokenValue(token), token.mix?.weight || 0)),
 }

@@ -7,6 +7,7 @@ export const typescript: PlatformInitializer = (outputFile, prefix, buildPath): 
   buildPath,
   transforms: [
     'color/hex',
+    'color/hexMix',
     'color/hexAlpha',
     'shadow/css',
     'border/css',
