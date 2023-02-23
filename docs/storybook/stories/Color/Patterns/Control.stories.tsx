@@ -65,9 +65,31 @@ export const ActionListScheme: ComponentStory<typeof ColorPreview> = () => {
 export const ButtonScheme: ComponentStory<typeof ColorPreview> = () => {
   return (
     <div className="Button" style={{display: 'flex', gap: '1rem'}}>
-      <Button>Default</Button>
-      <Button disabled>Default</Button>
-      <Button variant="invisible">Default</Button>
+      <Button id="default">Default</Button>
+      <Button disabled id="default">
+        Default
+      </Button>
+      <Button id="invisible" variant="invisible">
+        Default
+      </Button>
+      <Button variant="primary" id="primary">
+        Default
+      </Button>
+      <Button variant="primary" id="primary" disabled>
+        Default
+      </Button>
+      <Button variant="danger" id="danger">
+        Default
+      </Button>
+      <Button variant="danger" id="danger" disabled>
+        Default
+      </Button>
+      <Button variant="outline" id="outline">
+        Default
+      </Button>
+      <Button variant="outline" id="outline" disabled>
+        Default
+      </Button>
     </div>
   )
 }

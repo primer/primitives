@@ -30,14 +30,20 @@
         $type: 'color',
       },
       hover: {
-        $value: '{base.color.gray.2}',
+        $value: '{base.color.gray.0}',
         $type: 'color',
-        alpha: 0.2,
+        mix: {
+          color: '{base.color.gray.2}',
+          weight: 0.2,
+        },
       },
       active: {
-        $value: '{base.color.gray.2}',
+        $value: '{base.color.gray.0}',
         $type: 'color',
-        alpha: 0.4,
+        mix: {
+          color: '{base.color.gray.2}',
+          weight: 0.4,
+        },
       },
       disabled: {
         $value: '{bgColor.disabled}',
@@ -98,6 +104,32 @@
         $type: 'color',
       },
     },
+    transparent: {
+      bgColor: {
+        rest: {
+          $value: 'transparent',
+          $type: 'color',
+        },
+        hover: {
+          $value: '{base.color.gray.2}',
+          $type: 'color',
+          alpha: 0.2,
+        },
+        active: {
+          $value: '{base.color.gray.2}',
+          $type: 'color',
+          alpha: 0.4,
+        },
+        disabled: {
+          $value: '{bgColor.disabled}',
+          $type: 'color',
+        },
+        selected: {
+          $value: '{base.color.gray.0}',
+          $type: 'color',
+        },
+      },
+    },
     danger: {
       fgColor: {
         hover: {
@@ -109,11 +141,20 @@
         hover: {
           $value: '{bgColor.danger.muted}',
           $type: 'color',
-          alpha: 0.64,
+          alpha: 0.2,
+          mix: {
+            color: '{base.color.red.2}',
+            weight: 0.2,
+          },
         },
         active: {
           $value: '{bgColor.danger.muted}',
           $type: 'color',
+          alpha: 0.4,
+          mix: {
+            color: '{base.color.red.2}',
+            weight: 0.4,
+          },
         },
       },
     },
@@ -124,14 +165,20 @@
           $type: 'color',
         },
         hover: {
-          $value: '{base.color.blue.7}',
+          $value: '{bgColor.accent.emphasis}',
           $type: 'color',
-          alpha: 0.2,
+          mix: {
+            color: '{base.color.blue.7}',
+            weight: 0.2,
+          },
         },
         active: {
-          $value: '{base.color.blue.7}',
+          $value: '{bgColor.accent.emphasis}',
           $type: 'color',
-          alpha: 0.4,
+          mix: {
+            color: '{base.color.blue.7}',
+            weight: 0.4,
+          },
         },
         disabled: {
           $value: '{fgColor.disabled}',
@@ -175,14 +222,20 @@
         $type: 'color',
       },
       hover: {
-        $value: '{base.color.gray.3}',
+        $value: '{base.color.gray.1}',
         $type: 'color',
-        alpha: 0.2,
+        mix: {
+          color: '{base.color.gray.3}',
+          weight: 0.2,
+        },
       },
       active: {
-        $value: '{base.color.gray.3}',
+        $value: '{base.color.gray.1}',
         $type: 'color',
-        alpha: 0.4,
+        mix: {
+          color: '{base.color.gray.3}',
+          weight: 0.4,
+        },
       },
       disabled: {
         $value: '{fgColor.disabled}',
@@ -191,7 +244,7 @@
     },
     borderColor: {
       rest: {
-        $value: '{base.color.gray.3}',
+        $value: 'transparent',
         $type: 'color',
       },
       disabled: {
@@ -210,6 +263,10 @@
         $value: '{bgColor.disabled}',
         $type: 'color',
       },
+      checked: {
+        $value: '{base.color.white}',
+        $type: 'color',
+      },
     },
     borderColor: {
       rest: {
@@ -218,6 +275,10 @@
       },
       disabled: {
         $value: '{bgColor.disabled}',
+        $type: 'color',
+      },
+      checked: {
+        $value: '{control.checked.bgColor.rest}',
         $type: 'color',
       },
     },
@@ -282,18 +343,28 @@
           $type: 'color',
         },
         hover: {
-          $value: '{base.color.green.6}',
+          $value: '{base.color.green.4}',
           $type: 'color',
-          alpha: 0.2,
+          mix: {
+            color: '{base.color.green.6}',
+            weight: 0.2,
+          },
         },
         active: {
-          $value: '{base.color.green.6}',
+          $value: '{base.color.green.4}',
           $type: 'color',
-          alpha: 0.4,
+          mix: {
+            color: '{base.color.green.6}',
+            weight: 0.4,
+          },
         },
         disabled: {
-          $value: '#94d3a2',
+          $value: '{base.color.green.4}',
           $type: 'color',
+          mix: {
+            color: '{base.color.green.0}',
+            weight: 0.6,
+          },
         },
       },
       borderColor: {
@@ -306,21 +377,21 @@
     invisible: {
       fgColor: {
         rest: {
-          $value: '{fgColor.link.rest}',
+          $value: '{fgColor.accent}',
           $type: 'color',
         },
       },
       bgColor: {
         rest: {
-          $value: 'transparent',
+          $value: '{control.transparent.bgColor.rest}',
           $type: 'color',
         },
         hover: {
-          $value: '{control.bgColor.hover}',
+          $value: '{control.transparent.bgColor.hover}',
           $type: 'color',
         },
         active: {
-          $value: '{control.bgColor.active}',
+          $value: '{control.transparent.bgColor.active}',
           $type: 'color',
         },
       },
@@ -334,7 +405,7 @@
     outline: {
       fgColor: {
         rest: {
-          $value: '{base.color.blue.5}',
+          $value: '{fgColor.accent}',
           $type: 'color',
         },
         hover: {
@@ -346,7 +417,7 @@
           $type: 'color',
         },
         disabled: {
-          $value: '{base.color.blue.5}',
+          $value: '{fgColor.accent}',
           $type: 'color',
           alpha: 0.5,
         },
@@ -357,12 +428,16 @@
           $type: 'color',
         },
         hover: {
-          $value: '{base.color.blue.5}',
+          $value: '{bgColor.accent.emphasis}',
           $type: 'color',
         },
         active: {
-          $value: '#0965ce',
+          $value: '{bgColor.accent.emphasis}',
           $type: 'color',
+          mix: {
+            color: '{base.color.blue.7}',
+            weight: 0.4,
+          },
         },
         disabled: {
           $value: '{base.color.gray.0}',
@@ -416,9 +491,12 @@
           $type: 'color',
         },
         active: {
-          $value: '{base.color.red.8}',
+          $value: '{base.color.red.6}',
           $type: 'color',
-          alpha: 0.4,
+          mix: {
+            color: '{base.color.red.8}',
+            weight: 0.4,
+          },
         },
         disabled: {
           $value: '{bgColor.disabled}',
@@ -454,7 +532,7 @@
     outline: {
       bgColor: {
         rest: {
-          $value: '{fgColor.accent}',
+          $value: '{bgColor.accent.emphasis}',
           $type: 'color',
           alpha: 0.1,
         },
@@ -464,7 +542,7 @@
           alpha: 0.2,
         },
         disabled: {
-          $value: '{fgColor.accent}',
+          $value: '{bgColor.accent.emphasis}',
           $type: 'color',
           alpha: 0.05,
         },
@@ -478,12 +556,12 @@
           alpha: 0.2,
         },
         disabled: {
-          $value: '{fgColor.danger}',
+          $value: '{bgColor.danger.emphasis}',
           $type: 'color',
           alpha: 0.05,
         },
         rest: {
-          $value: '{fgColor.danger}',
+          $value: '{bgColor.danger.emphasis}',
           $type: 'color',
           alpha: 0.1,
         },
