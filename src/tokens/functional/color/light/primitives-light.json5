@@ -50,6 +50,14 @@
         $type: 'color',
         alpha: 0.15,
       },
+      control: {
+        $value: '{base.color.gray.4}',
+        $type: 'color',
+        mix: {
+          color: '{base.color.gray.5}',
+          weight: 0.2,
+        },
+      },
     },
     neutral: {
       emphasisPlus: {
