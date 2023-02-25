@@ -1,8 +1,235 @@
 {
   topicTag: {
-    border: {
+    borderColor: {
       $value: '{base.color.transparent}',
       $type: 'color',
+    },
+  },
+  highlight: {
+    neutral: {
+      bgColor: {
+        $value: '{base.color.yellow.0}',
+        $type: 'color',
+      },
+    },
+  },
+  projects: {
+    header: {
+      bgColor: {
+        $value: '{base.color.gray.9}',
+        $type: 'color',
+      },
+    },
+    sidebar: {
+      bgColor: {
+        $value: '{base.color.white}',
+        $type: 'color',
+      },
+    },
+    gradient: {
+      in: {
+        $value: '{base.color.white}',
+        $type: 'color',
+      },
+    },
+    gradient: {
+      out: {
+        $value: '{base.color.white}',
+        $type: 'color',
+        alpha: 0,
+      },
+    },
+  },
+  diffBlob: {
+    addition: {
+      // numText: {
+      //   $value: '{color.fg.default}',
+      //   $type: 'color',
+      // },
+      fgColor: {
+        $value: '{color.fg.default}',
+        $type: 'color',
+      },
+      bgColor: {
+        num: {
+          $value: '#ccffd8',
+          $type: 'color',
+        },
+        line: {
+          $value: '#e6ffec',
+          $type: 'color',
+        },
+        word: {
+          $value: '#abf2bc',
+          $type: 'color',
+        },
+      },
+    },
+    deletion: {
+      // numText: {
+      //   $value: '{color.fg.default}',
+      //   $type: 'color',
+      // },
+      fgColor: {
+        $value: '{color.fg.default}',
+        $type: 'color',
+      },
+      bgColor: {
+        num: {
+          $value: '#ffd7d5',
+          $type: 'color',
+        },
+        line: {
+          $value: '{color.danger.subtle}',
+          $type: 'color',
+        },
+        word: {
+          $value: '{color.danger.muted}',
+          $type: 'color',
+        },
+      },
+    },
+    hunk: {
+      bgColor: {
+        num: {
+          $value: '{color.accent.muted}',
+          $type: 'color',
+        },
+      },
+    },
+    expander: {
+      iconColor: {
+        $value: '{color.fg.muted}',
+        $type: 'color',
+      },
+    },
+    lineHighlight: {
+      mixBlendMode: {
+        selected: {
+          $value: 'multiply',
+          $type: 'color',
+        },
+      },
+    },
+  },
+  diffStat: {
+    deletion: {
+      borderColor: {
+        $value: '{color.border.subtle}',
+        $type: 'color',
+      },
+    },
+    addition: {
+      borderColor: {
+        $value: '{color.border.subtle}',
+        $type: 'color',
+      },
+    },
+    addition: {
+      bgColor: {
+        $value: '{base.color.green.4}',
+        $type: 'color',
+      },
+    },
+  },
+  codeMirror: {
+    fgColor: {
+      $value: '{color.fg.default}',
+      $type: 'color',
+    },
+    bgColor: {
+      $value: '{color.canvas.default}',
+      $type: 'color',
+    },
+    gutters: {
+      bgColor: {
+        $value: '{color.canvas.default}',
+        $type: 'color',
+      },
+    },
+    gutterMarker: {
+      fgColor: {
+        default: {
+          $value: '{color.canvas.default}',
+          $type: 'color',
+        },
+        secondary: {
+          $value: '{color.fg.subtle}',
+          $type: 'color',
+        },
+      },
+    },
+    lineNumber: {
+      fgColor: {
+        $value: '{color.fg.muted}',
+        $type: 'color',
+      },
+    },
+    cursor: {
+      fgColor: {
+        $value: '{color.fg.default}',
+        $type: 'color',
+      },
+    },
+    selection: {
+      bgColor: {
+        $value: '{color.accent.muted}',
+        $type: 'color',
+      },
+    },
+    activeline: {
+      bgColor: {
+        $value: '{color.neutral.subtle}',
+        $type: 'color',
+      },
+    },
+    matchingBracket: {
+      fgColor: {
+        $value: '{color.fg.default}',
+        $type: 'color',
+      },
+    },
+    lines: {
+      bgColor: {
+        $value: '{color.canvas.default}',
+        $type: 'color',
+      },
+    },
+    syntax: {
+      fgColor: {
+        comment: {
+          $value: '{base.color.gray.9}',
+          $type: 'color',
+        },
+        constant: {
+          $value: '{base.color.blue.6}',
+          $type: 'color',
+        },
+        entity: {
+          $value: '{base.color.purple.5}',
+          $type: 'color',
+        },
+        keyword: {
+          $value: '{base.color.red.5}',
+          $type: 'color',
+        },
+        storage: {
+          $value: '{base.color.red.5}',
+          $type: 'color',
+        },
+        string: {
+          $value: '{base.color.blue.8}',
+          $type: 'color',
+        },
+        support: {
+          $value: '{base.color.blue.6}',
+          $type: 'color',
+        },
+        variable: {
+          $value: '{base.color.orange.6}',
+          $type: 'color',
+        },
+      },
     },
   },
 }

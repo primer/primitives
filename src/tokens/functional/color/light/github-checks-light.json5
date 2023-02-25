@@ -1,0 +1,377 @@
+{
+  checks: {
+    bgColor: {
+      $value: '{base.color.gray.9}',
+      $type: 'color',
+    },
+    fgColor: {
+      primary: {
+        $value: '{base.color.gray.0}',
+        $type: 'color',
+      },
+      secondary: {
+        $value: '{base.color.gray.4}',
+        $type: 'color',
+      },
+      link: {
+        $value: '{base.color.blue.3}',
+        $type: 'color',
+      },
+    },
+    button: {
+      iconColor: {
+        rest: {
+          $value: '{base.color.gray.3}',
+          $type: 'color',
+        },
+        hover: {
+          $value: '{base.color.gray.0}',
+          $type: 'color',
+        },
+      },
+      bgColor: {
+        hover: {
+          $value: '{base.color.white}',
+          $type: 'color',
+          alpha: 0.125,
+        },
+      },
+    },
+    input: {
+      fgColor: {
+        rest: {
+          $value: '{base.color.gray.1}',
+          $type: 'color',
+        },
+        placeholder: {
+          $value: '{base.color.gray.4}',
+          $type: 'color',
+        },
+      },
+      bgColor: {
+        $value: '{base.color.gray.8}',
+        $type: 'color',
+      },
+    },
+    donut: {
+      fgColor: {
+        error: {
+          $value: '{base.color.red.4}',
+          $type: 'color',
+        },
+        pending: {
+          $value: '{base.color.yellow.4}',
+          $type: 'color',
+        },
+        success: {
+          $value: '{base.color.green.4}',
+          $type: 'color',
+        },
+        neutral: {
+          $value: '{base.color.gray.3}',
+          $type: 'color',
+        },
+      },
+    },
+    dropdown: {
+      fgColor: {
+        rest: {
+          $value: '{base.color.gray.3}',
+          $type: 'color',
+        },
+        hover: {
+          $value: '{base.color.gray.0}',
+          $type: 'color',
+        },
+      },
+      bgColor: {
+        rest: {
+          $value: '{base.color.gray.8}',
+          $type: 'color',
+        },
+        hover: {
+          $value: '{base.color.gray.7}',
+          $type: 'color',
+        },
+      },
+      borderColor: {
+        $value: '{base.color.gray.7}',
+        $type: 'color',
+      },
+      shadowColor: {
+        $value: '{base.color.black}',
+        alpha: 0.3,
+        $type: 'color',
+      },
+    },
+    dropdownButton: {
+      fgColor: {
+        hover: {
+          $value: '{base.color.gray.0}',
+          $type: 'color',
+        },
+      },
+      bgColor: {
+        hover: {
+          $value: '{base.color.gray.8}',
+          $type: 'color',
+        },
+      },
+    },
+    scrollbarThumb: {
+      bgColor: {
+        $value: '{base.color.gray.6}',
+        $type: 'color',
+      },
+    },
+    headerLabel: {
+      fgColor: {
+        default: {
+          $value: '{base.color.gray.2}',
+          $type: 'color',
+        },
+        open: {
+          $value: '{base.color.gray.0}',
+          $type: 'color',
+        },
+      },
+      borderColor: {
+        $value: '{base.color.gray.8}',
+        $type: 'color',
+      },
+      iconColor: {
+        $value: '{base.color.gray.4}',
+        $type: 'color',
+      },
+    },
+    line: {
+      fgColor: {
+        $value: '{base.color.gray.2}',
+        $type: 'color',
+      },
+      bgColor: {
+        hover: {
+          $value: '{base.color.gray.8}',
+          $type: 'color',
+        },
+        selected: {
+          $value: '{base.color.blue.4}',
+          alpha: 0.15,
+          $type: 'color',
+        },
+      },
+    },
+    lineNum: {
+      fgColor: {
+        rest: {
+          $value: '{base.color.gray.4}',
+          alpha: 0.75,
+          $type: 'color',
+        },
+        selected: {
+          $value: '{base.color.blue.3}',
+          $type: 'color',
+        },
+      },
+    },
+    lineTimestamp: {
+      fgColor: {
+        $value: '{base.color.gray.4}',
+        $type: 'color',
+      },
+    },
+    lineDtFm: {
+      fgColor: {
+        $value: '{base.color.gray.9}',
+        $type: 'color',
+      },
+      bgColor: {
+        $value: '{base.color.yellow.5}',
+        $type: 'color',
+      },
+    },
+    gate: {
+      bgColor: {
+        $value: '{base.color.yellow.6}',
+        alpha: 0.15,
+        $type: 'color',
+      },
+      fgColor: {
+        $value: '{base.color.gray.2}',
+        $type: 'color',
+      },
+    },
+    gateWaiting: {
+      fgColor: {
+        $value: '{base.color.yellow.3}',
+        $type: 'color',
+      },
+    },
+    stepHeaderOpen: {
+      bgColor: {
+        $value: '{base.color.gray.8}',
+        $type: 'color',
+      },
+    },
+    step: {
+      fgColor: {
+        error: {
+          $value: '{base.color.red.3}',
+          $type: 'color',
+        },
+        warning: {
+          $value: '{base.color.yellow.3}',
+          $type: 'color',
+        },
+      },
+    },
+    logline: {
+      fgColor: {
+        default: {
+          $value: '{base.color.gray.4}',
+          $type: 'color',
+        },
+        debug: {
+          $value: '{base.color.purple.3}',
+          $type: 'color',
+        },
+        error: {
+          $value: '{base.color.gray.2}',
+          $type: 'color',
+        },
+        warning: {
+          $value: '{base.color.gray.2}',
+          $type: 'color',
+        },
+      },
+      bgColor: {
+        warning: {
+          $value: '{base.color.yellow.6}',
+          alpha: 0.15,
+          $type: 'color',
+        },
+      },
+    },
+    loglineNum: {
+      fgColor: {
+        default: {
+          $value: '{base.color.gray.4}',
+          alpha: 0.75,
+          $type: 'color',
+        },
+        error: {
+          $value: '{base.color.red.3}',
+          $type: 'color',
+        },
+        warning: {
+          $value: '{base.color.yellow.3}',
+          $type: 'color',
+        },
+      },
+      bgColor: {
+        error: {
+          $value: '{base.color.red.6}',
+          alpha: 0.15,
+          $type: 'color',
+        },
+      },
+    },
+    loglineCommand: {
+      fgColor: {
+        $value: '{base.color.blue.3}',
+        $type: 'color',
+      },
+    },
+    loglineSection: {
+      fgColor: {
+        $value: '{base.color.green.3}',
+        $type: 'color',
+      },
+    },
+    ansi: {
+      fgColor: {
+        black: {
+          $value: '{base.color.gray.9}',
+          $type: 'color',
+        },
+        blackBright: {
+          $value: '{base.color.gray.8}',
+          $type: 'color',
+        },
+        white: {
+          $value: '{base.color.gray.2}',
+          $type: 'color',
+        },
+        whiteBright: {
+          $value: '{base.color.gray.2}',
+          $type: 'color',
+        },
+        gray: {
+          $value: '{base.color.gray.4}',
+          $type: 'color',
+        },
+        red: {
+          $value: '{base.color.red.3}',
+          $type: 'color',
+        },
+        redBright: {
+          $value: '{base.color.red.2}',
+          $type: 'color',
+        },
+        green: {
+          $value: '{base.color.green.3}',
+          $type: 'color',
+        },
+        greenBright: {
+          $value: '{base.color.green.2}',
+          $type: 'color',
+        },
+        yellow: {
+          $value: '{base.color.yellow.3}',
+          $type: 'color',
+        },
+        yellowBright: {
+          $value: '{base.color.yellow.2}',
+          $type: 'color',
+        },
+        blue: {
+          $value: '{base.color.blue.3}',
+          $type: 'color',
+        },
+        blueBright: {
+          $value: '{base.color.blue.2}',
+          $type: 'color',
+        },
+        magenta: {
+          $value: '{base.color.purple.3}',
+          $type: 'color',
+        },
+        magentaBright: {
+          $value: '{base.color.purple.2}',
+          $type: 'color',
+        },
+        cyan: {
+          $value: '#76e3ea',
+          $type: 'color',
+        },
+        cyanBright: {
+          $value: '#b3f0ff',
+          $type: 'color',
+        },
+      },
+    },
+    run: {
+      borderWidth: {
+          $value: '0px',
+          $type: 'size',
+        },
+      }
+    },
+    container: {
+      borderWidth: {
+        $value: '0px',
+        $type: 'size',
+      },
+    },
+  },
+}

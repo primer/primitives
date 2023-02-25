@@ -628,6 +628,16 @@
       $type: 'color',
     },
   },
+  treeViewItem: {
+    leadingVisual: {
+      bgColor: {
+        rest: {
+          $value: '{base.color.blue.3}',
+          $type: 'color',
+        },
+      },
+    },
+  },
   underlineNav: {
     borderColor: {
       active: {
