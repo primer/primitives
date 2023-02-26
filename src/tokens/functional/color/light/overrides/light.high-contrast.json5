@@ -5,176 +5,43 @@
  */
 {
   fgColor: {
-    default: {
-      $value: '{base.color.gray.9}',
-      $type: 'color',
-    },
     muted: {
       $value: '{base.color.gray.9}',
       $type: 'color',
     },
-    white: {
-      $value: '{base.color.white}',
+    danger: {
+      $value: '{base.color.red.6}',
       $type: 'color',
-    },
-    disabled: {
-      $value: '{base.color.gray.4}',
-      $type: 'color',
-    },
-    link: {
-      rest: {
-        $value: '{base.color.blue.5}',
-        $type: 'color',
-      },
     },
     accent: {
-      $value: '{base.color.blue.5}',
-      $type: 'color',
-    },
-    success: {
-      $value: '{base.color.green.5}',
-      $type: 'color',
-    },
-    attention: {
-      $value: '{base.color.yellow.5}',
-      $type: 'color',
-    },
-    severe: {
-      $value: '{base.color.orange.5}',
-      $type: 'color',
-    },
-    danger: {
-      $value: '{base.color.red.5}',
-      $type: 'color',
-    },
-    open: {
-      $value: '{base.color.green.5}',
-      $type: 'color',
-    },
-    closed: {
-      $value: '{base.color.red.5}',
-      $type: 'color',
-    },
-    done: {
-      $value: '{base.color.purple.5}',
-      $type: 'color',
-    },
-    sponsors: {
-      $value: '{base.color.pink.5}',
+      $value: '{base.color.blue.6}',
       $type: 'color',
     },
   },
   bgColor: {
-    default: {
-      $value: '{base.color.white}',
-      $type: 'color',
-    },
     secondary: {
-      $value: '{base.color.white}',
-      $type: 'color',
-    },
-    inverse: {
-      $value: '{base.color.gray.9}',
+      $value: '{base.color.gray.1}',
       $type: 'color',
     },
     neutral: {
       muted: {
         $value: '{base.color.gray.1}',
-        alpha: 0.5,
-        $type: 'color',
-      },
-      emphasis: {
-        $value: '{base.color.gray.5}',
         $type: 'color',
       },
     },
-    accent: {
-      muted: {
-        $value: '{base.color.blue.0}',
-        $type: 'color',
-      },
-      emphasis: {
-        $value: '{base.color.blue.5}',
-        $type: 'color',
-      },
+    disabled: {
+      $value: '{base.color.gray.1}',
+      $type: 'color',
     },
     success: {
-      muted: {
-        $value: '{base.color.green.0}',
-        $type: 'color',
-      },
       emphasis: {
-        $value: '{base.color.green.4}',
+        $value: '{base.color.green.5}',
         $type: 'color',
       },
     },
     attention: {
-      muted: {
-        $value: '{base.color.yellow.0}',
-        $type: 'color',
-      },
       emphasis: {
-        $value: '{base.color.yellow.4}',
-        $type: 'color',
-      },
-    },
-    severe: {
-      muted: {
-        $value: '{base.color.orange.0}',
-        $type: 'color',
-      },
-      emphasis: {
-        $value: '{base.color.orange.5}',
-        $type: 'color',
-      },
-    },
-    danger: {
-      muted: {
-        $value: '{base.color.red.0}',
-        $type: 'color',
-      },
-      emphasis: {
-        $value: '{base.color.red.5}',
-        $type: 'color',
-      },
-    },
-    open: {
-      muted: {
-        $value: '{base.color.green.0}',
-        $type: 'color',
-      },
-      emphasis: {
-        $value: '{base.color.green.4}',
-        $type: 'color',
-      },
-    },
-    closed: {
-      muted: {
-        $value: '{base.color.red.0}',
-        $type: 'co,lor',
-      },
-      emphasis: {
-        $value: '{base.color.red.5}',
-        $type: 'color',
-      },
-    },
-    done: {
-      muted: {
-        $value: '{base.color.purple.0}',
-        $type: 'color',
-      },
-      emphasis: {
-        $value: '{base.color.purple.5}',
-        $type: 'color',
-      },
-    },
-    sponsors: {
-      muted: {
-        $value: '{base.color.pink.0}',
-        $type: 'color',
-      },
-      emphasis: {
-        $value: '{base.color.pink.5}',
+        $value: '{base.color.yellow.5}',
         $type: 'color',
       },
     },
@@ -188,16 +55,9 @@
       $value: '{base.color.gray.4}',
       $type: 'color',
     },
-    neutral: {
-      muted: {
-        $value: '{base.color.gray.3}',
-        alpha: 0.2,
-        $type: 'color',
-      },
-      emphasis: {
-        $value: '{base.color.gray.5}',
-        $type: 'color',
-      },
+    decorative: {
+      $value: '{borderColor.emphasis}',
+      $type: 'color',
     },
     accent: {
       muted: {
@@ -246,6 +106,221 @@
     sponsors: {
       muted: {
         $value: '{base.color.pink.3}',
+        $type: 'color',
+      },
+    },
+  },
+  // patterns
+  topicTag: {
+    borderColor: {
+      $value: '{borderColor.accent.emphasis}',
+      $type: 'color',
+    },
+  },
+  counter: {
+    borderColor: {
+      $value: '{borderColor.default}',
+      $type: 'color',
+    },
+  },
+  control: {
+    bgColor: {
+      rest: {
+        $value: '{base.color.gray.1}',
+        $type: 'color',
+      },
+      hover: {
+        $value: '{base.color.gray.1}',
+        $type: 'color',
+        mix: {
+          color: '{base.color.gray.3}',
+          weight: 0.2,
+        },
+      },
+      active: {
+        $value: '{base.color.gray.1}',
+        $type: 'color',
+        mix: {
+          color: '{base.color.gray.3}',
+          weight: 0.4,
+        },
+      },
+      selected: {
+        $value: '{base.color.gray.3}',
+        $type: 'color',
+      },
+    },
+    borderColor: {
+      emphasis: {
+        $value: '{borderColor.default}',
+        $type: 'color',
+      },
+    },
+    transparent: {
+      bgColor: {
+        hover: {
+          $value: '{base.color.gray.1}',
+          $type: 'color',
+        },
+        active: {
+          $value: '{base.color.gray.2}',
+          $type: 'color',
+        },
+        selected: {
+          $value: '{base.color.gray.2}',
+          $type: 'color',
+        },
+      },
+      borderColor: {
+        hover: {
+          $value: '{borderColor.default}',
+          $type: 'color',
+        },
+      },
+    },
+    danger: {
+      fgColor: {
+        hover: {
+          $value: '{fgColor.white}',
+          $type: 'color',
+        },
+      },
+      bgColor: {
+        hover: {
+          $value: '{bgColor.danger.emphasis}',
+          $type: 'color',
+        },
+        active: {
+          $value: '{bgColor.danger.emphasis}',
+          $type: 'color',
+          mix: {
+            color: '{base.color.red.7}',
+            weight: 0.4,
+          },
+        },
+      },
+    },
+  },
+  controlTrack: {
+    bgColor: {
+      rest: {
+        $value: '{base.color.gray.5}',
+        $type: 'color',
+      },
+      hover: {
+        $value: '{base.color.gray.5}',
+        $type: 'color',
+        mix: {
+          color: '{base.color.gray.7}',
+          weight: 0.2,
+        },
+      },
+      active: {
+        $value: '{base.color.gray.5}',
+        $type: 'color',
+        mix: {
+          color: '{base.color.gray.7}',
+          weight: 0.4,
+        },
+      },
+      disabled: {
+        $value: '{fgColor.disabled}',
+        $type: 'color',
+      },
+    },
+    fgColor: {
+      rest: {
+        $value: '{fgColor.white}',
+        $type: 'color',
+      },
+    },
+  },
+  button: {
+    default: {
+      borderColor: {
+        rest: {
+          $value: '{borderColor.default}',
+          $type: 'color',
+        },
+      },
+    },
+    primary: {
+      bgColor: {
+        rest: {
+          $value: '{base.color.green.5}',
+          $type: 'color',
+        },
+        hover: {
+          $value: '{base.color.green.5}',
+          $type: 'color',
+          mix: {
+            color: '{base.color.green.7}',
+            weight: 0.2,
+          },
+        },
+        active: {
+          $value: '{base.color.green.5}',
+          $type: 'color',
+          mix: {
+            color: '{base.color.green.7}',
+            weight: 0.4,
+          },
+        },
+      },
+      borderColor: {
+        rest: {
+          $value: '{base.color.green.7}',
+          $type: 'color',
+        },
+        hover: {
+          $value: '{base.color.green.7}',
+          $type: 'color',
+        },
+      },
+    },
+  },
+  diffBlob: {
+    addition: {
+      fgColor: {
+        text: {
+          $value: '{fgColor.white}',
+          $type: 'color',
+        },
+      },
+      bgColor: {
+        word: {
+          $value: '{bgColor.success.emphasis}',
+          $type: 'color',
+        },
+      },
+    },
+    deletion: {
+      fgColor: {
+        text: {
+          $value: '{fgColor.white}',
+          $type: 'color',
+        },
+      },
+      bgColor: {
+        word: {
+          $value: '{bgColor.danger.emphasis}',
+          $type: 'color',
+        },
+      },
+    },
+    hunk: {
+      bgColor: {
+        num: {
+          $value: '{base.color.blue.1}',
+          $type: 'color',
+        },
+      },
+    },
+  },
+  header: {
+    divider: {
+      borderColor: {
+        $value: '{base.color.gray.3}',
         $type: 'color',
       },
     },

@@ -42,13 +42,15 @@
   },
   diffBlob: {
     addition: {
-      // numText: {
-      //   $value: '{color.fg.default}',
-      //   $type: 'color',
-      // },
       fgColor: {
-        $value: '{color.fg.default}',
-        $type: 'color',
+        text: {
+          $value: '{fgColor.default}',
+          $type: 'color',
+        },
+        num: {
+          $value: '{fgColor.default}',
+          $type: 'color',
+        },
       },
       bgColor: {
         num: {
@@ -66,13 +68,15 @@
       },
     },
     deletion: {
-      // numText: {
-      //   $value: '{color.fg.default}',
-      //   $type: 'color',
-      // },
       fgColor: {
-        $value: '{color.fg.default}',
-        $type: 'color',
+        text: {
+          $value: '{fgColor.default}',
+          $type: 'color',
+        },
+        num: {
+          $value: '{fgColor.default}',
+          $type: 'color',
+        },
       },
       bgColor: {
         num: {
@@ -80,11 +84,11 @@
           $type: 'color',
         },
         line: {
-          $value: '{color.danger.subtle}',
+          $value: '{bgColor.danger.muted}',
           $type: 'color',
         },
         word: {
-          $value: '{color.danger.muted}',
+          $value: '{borderColor.danger.muted}',
           $type: 'color',
         },
       },
@@ -92,36 +96,36 @@
     hunk: {
       bgColor: {
         num: {
-          $value: '{color.accent.muted}',
+          $value: '{borderColor.accent.muted}',
           $type: 'color',
         },
       },
     },
     expander: {
       iconColor: {
-        $value: '{color.fg.muted}',
+        $value: '{fgColor.muted}',
         $type: 'color',
       },
     },
-    lineHighlight: {
-      mixBlendMode: {
-        selected: {
-          $value: 'multiply',
-          $type: 'color',
-        },
-      },
-    },
+    // lineHighlight: {
+    //   mixBlendMode: {
+    //     selected: {
+    //       $value: 'multiply',
+    //       $type: 'color',
+    //     },
+    //   },
+    // },
   },
   diffStat: {
     deletion: {
       borderColor: {
-        $value: '{color.border.subtle}',
+        $value: '{borderColor.secondary}',
         $type: 'color',
       },
     },
     addition: {
       borderColor: {
-        $value: '{color.border.subtle}',
+        $value: '{borderColor.secondary}',
         $type: 'color',
       },
     },
@@ -134,64 +138,64 @@
   },
   codeMirror: {
     fgColor: {
-      $value: '{color.fg.default}',
+      $value: '{fgColor.default}',
       $type: 'color',
     },
     bgColor: {
-      $value: '{color.canvas.default}',
+      $value: '{bgColor.default}',
       $type: 'color',
     },
     gutters: {
       bgColor: {
-        $value: '{color.canvas.default}',
+        $value: '{bgColor.default}',
         $type: 'color',
       },
     },
     gutterMarker: {
       fgColor: {
         default: {
-          $value: '{color.canvas.default}',
+          $value: '{bgColor.default}',
           $type: 'color',
         },
         secondary: {
-          $value: '{color.fg.subtle}',
+          $value: '{fgColor.muted}',
           $type: 'color',
         },
       },
     },
     lineNumber: {
       fgColor: {
-        $value: '{color.fg.muted}',
+        $value: '{fgColor.muted}',
         $type: 'color',
       },
     },
     cursor: {
       fgColor: {
-        $value: '{color.fg.default}',
+        $value: '{fgColor.default}',
         $type: 'color',
       },
     },
     selection: {
       bgColor: {
-        $value: '{color.accent.muted}',
+        $value: '{borderColor.accent.muted}',
         $type: 'color',
       },
     },
     activeline: {
       bgColor: {
-        $value: '{color.neutral.subtle}',
+        $value: '{bgColor.neutral.muted}',
         $type: 'color',
       },
     },
     matchingBracket: {
       fgColor: {
-        $value: '{color.fg.default}',
+        $value: '{fgColor.default}',
         $type: 'color',
       },
     },
     lines: {
       bgColor: {
-        $value: '{color.canvas.default}',
+        $value: '{bgColor.default}',
         $type: 'color',
       },
     },
@@ -230,6 +234,40 @@
           $type: 'color',
         },
       },
+    },
+  },
+  header: {
+    fgColor: {
+      default: {
+        $value: '{fgColor.white}',
+        $type: 'color',
+        alpha: 0.7,
+      },
+      logo: {
+        $value: '{fgColor.white}',
+        $type: 'color',
+        alpha: 0.7,
+      },
+    },
+    bgColor: {
+      $value: '{base.color.gray.9}',
+      $type: 'color',
+    },
+    borderColor: {
+      divider: {
+        $value: '{base.color.gray.6}',
+        $type: 'color',
+      },
+    },
+  },
+  headerSearch: {
+    bgColor: {
+      $value: '{base.color.gray.9}',
+      $type: 'color',
+    },
+    borderColor: {
+      $value: '{base.color.gray.6}',
+      $type: 'color',
     },
   },
 }

@@ -70,7 +70,7 @@
     },
     borderColor: {
       rest: {
-        $value: '{base.color.gray.2}',
+        $value: '{borderColor.default}',
         $type: 'color',
       },
       emphasis: {
@@ -126,6 +126,16 @@
         },
         selected: {
           $value: '{base.color.gray.0}',
+          $type: 'color',
+        },
+      },
+      borderColor: {
+        rest: {
+          $value: 'transparent',
+          $type: 'color',
+        },
+        hover: {
+          $value: 'transparent',
           $type: 'color',
         },
       },
@@ -239,6 +249,16 @@
       },
       disabled: {
         $value: '{fgColor.disabled}',
+        $type: 'color',
+      },
+    },
+    fgColor: {
+      rest: {
+        $value: '{fgColor.muted}',
+        $type: 'color',
+      },
+      disabled: {
+        $value: '{fgColor.white}',
         $type: 'color',
       },
     },
@@ -372,6 +392,10 @@
           $value: '{borderColor.secondary}',
           $type: 'color',
         },
+        hover: {
+          $value: '{borderColor.secondary}',
+          $type: 'color',
+        },
       },
     },
     invisible: {
@@ -397,7 +421,11 @@
       },
       borderColor: {
         rest: {
-          $value: 'transparent',
+          $value: '{control.transparent.borderColor.rest}',
+          $type: 'color',
+        },
+        hover: {
+          $value: '{control.transparent.borderColor.hover}',
           $type: 'color',
         },
       },
