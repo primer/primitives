@@ -62,4 +62,41 @@
       },
     },
   },
+  diffBlob: {
+    addition: {
+      bgColor: {
+        word: {
+          $value: '{bgColor.success.muted}',
+          $type: 'color',
+        },
+        line: {
+          $value: '{scale.green.0}',
+          $type: 'color',
+          alpha: 0.5,
+        },
+        num: {
+          $value: '{bgColor.success.muted}',
+          $type: 'color',
+        },
+      },
+    },
+    deletion: {
+      bgColor: {
+        word: {
+          $value: '{scale.red.2}',
+          $type: 'color',
+          alpha: 0.5,
+        },
+        line: {
+          $value: '{scale.red.0}',
+          $type: 'color',
+          alpha: 0.5,
+        },
+        num: {
+          $value: '{bgColor.danger.muted}',
+          $type: 'color',
+        },
+      },
+    },
+  },
 }
