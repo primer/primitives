@@ -9,4 +9,18 @@
       $type: 'border',
     },
   },
+  checks: {
+    run: {
+      borderWidth: {
+        $value: '0px',
+        $type: 'size',
+      },
+    },
+    container: {
+      borderWidth: {
+        $value: '0px',
+        $type: 'size',
+      },
+    },
+  },
 }

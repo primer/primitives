@@ -180,8 +180,12 @@
       $type: 'color',
     },
     secondary: {
-      $value: '#d8dee4',
+      $value: '{base.color.gray.2}',
       $type: 'color',
+      mix: {
+        color: '{base.color.gray.0}',
+        weight: 0.2,
+      },
     },
     decorative: {
       $value: '{borderColor.default}',

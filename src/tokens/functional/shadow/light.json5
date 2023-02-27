@@ -100,4 +100,12 @@
       $type: 'shadow',
     },
   },
+  checks: {
+    input: {
+      shadow: {
+        $type: 'shadow',
+        $value: 'none',
+      },
+    },
+  },
 }

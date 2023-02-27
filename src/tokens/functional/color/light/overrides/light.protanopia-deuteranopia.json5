@@ -70,7 +70,7 @@
           $type: 'color',
         },
         line: {
-          $value: '{scale.green.0}',
+          $value: '{base.color.green.0}',
           $type: 'color',
           alpha: 0.5,
         },
@@ -83,12 +83,12 @@
     deletion: {
       bgColor: {
         word: {
-          $value: '{scale.red.2}',
+          $value: '{base.color.red.2}',
           $type: 'color',
           alpha: 0.5,
         },
         line: {
-          $value: '{scale.red.0}',
+          $value: '{base.color.red.0}',
           $type: 'color',
           alpha: 0.5,
         },

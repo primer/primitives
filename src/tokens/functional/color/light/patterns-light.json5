@@ -74,8 +74,12 @@
         $type: 'color',
       },
       emphasis: {
-        $value: '#858F99',
+        $value: '{base.color.gray.4}',
         $type: 'color',
+        mix: {
+          color: '{base.color.gray.5}',
+          weight: 0.2,
+        },
       },
       disabled: {
         $value: '{borderColor.disabled}',

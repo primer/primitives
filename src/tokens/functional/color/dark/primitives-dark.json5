@@ -18,7 +18,7 @@
     },
     link: {
       rest: {
-        $value: '{base.color.blue.3}',
+        $value: '{fgColor.accent}',
         $type: 'color',
       },
     },
@@ -66,10 +66,6 @@
     },
     secondary: {
       $value: '{base.color.black}',
-      $type: 'color',
-    },
-    inverse: {
-      $value: '{base.color.gray.9}',
       $type: 'color',
     },
     disabled: {
