@@ -5,6 +5,7 @@ import {
   colorToHexAlpha,
   colorToRgbAlpha,
   colorToHex,
+  dimensionToPoint,
   fontFamilyToCss,
   fontWeightToNumber,
   jsonDeprecated,
@@ -22,7 +23,9 @@ import {
   typescriptExportDefinition,
   jsonNestedPrefixed,
   cssThemed,
+  swiftEnumCgfloat,
 } from './formats'
+import {iosColorsets} from './actions'
 
 /**
  * Parsers
@@ -64,6 +67,11 @@ StyleDictionary.registerFormat({
   formatter: jsonNestedPrefixed,
 })
 
+StyleDictionary.registerFormat({
+  name: 'ios-swift/enum-CGFloat.swift',
+  formatter: swiftEnumCgfloat,
+})
+
 /**
  * Transformers
  *
@@ -86,6 +94,11 @@ StyleDictionary.registerTransform({
 StyleDictionary.registerTransform({
   name: 'color/hex',
   ...colorToHex,
+})
+
+StyleDictionary.registerTransform({
+  name: 'dimension/point',
+  ...dimensionToPoint,
 })
 
 StyleDictionary.registerTransform({
@@ -131,6 +144,15 @@ StyleDictionary.registerTransform({
 StyleDictionary.registerTransform({
   name: 'fontFamily/css',
   ...fontFamilyToCss,
+})
+
+/**
+ * Actions
+ *
+ */
+StyleDictionary.registerAction({
+  name: 'iOS/colorsets',
+  ...iosColorsets,
 })
 
 /**

@@ -28,6 +28,7 @@
   "scripts": {
     "build": "ts-node ./scripts/build.ts && tsc --project tsconfig.build.json",
     "build:v3": "ts-node -r tsconfig-paths/register ./scripts/buildV3.ts",
+    "build:iOS": "ts-node -r tsconfig-paths/register ./scripts/buildiOS.ts",
     "build:tokens": "node -e \"require('./build')._init()\"",
     "build:new-tokens": "npm run build:tokens && npm run build:v3",
     "contrast-check": "npx ts-node ./scripts/color-contrast.ts",
@@ -41,6 +42,7 @@
     "prebuild": "rm -rf dist",
     "prebuild:tokens": "rm -rf tokens-v2-private",
     "prebuild:v3": "rm -rf tokens-v3-private",
+    "prebuild:iOS": "rm -rf tokens-v3-private/swift",
     "prepack": "npm run build && npm run build:tokens",
     "prepare": "husky install && npm run install:docs && npm run install:storybook",
     "release": "changeset publish",
