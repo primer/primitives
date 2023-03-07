@@ -456,7 +456,7 @@
       },
       bgColor: {
         rest: {
-          $value: '{base.color.gray.0}',
+          $value: '{control.bgColor.rest}',
           $type: 'color',
         },
         hover: {
@@ -515,7 +515,7 @@
       },
       bgColor: {
         rest: {
-          $value: '{base.color.gray.0}',
+          $value: '{control.bgColor.rest}',
           $type: 'color',
         },
         hover: {
@@ -608,9 +608,33 @@
   },
   header: {
     bgColor: {
-      $value: '{base.color.white}',
+      $value: '{base.color.gray.9}',
       $type: 'color',
-      alpha: 0.95,
+    },
+    fgColor: {
+      text: {
+        $value: '{base.color.white}',
+        $type: 'color',
+        alpha: 0.7,
+      },
+      logo: {
+        $value: '{base.color.white}',
+        $type: 'color',
+      },
+      borderColor: {
+        $value: '{base.color.gray.6}',
+        $type: 'color',
+      },
+    },
+  },
+  headerSearch: {
+    bgColor: {
+      $value: '{base.color.gray.9}',
+      $type: 'color',
+    },
+    borderColor: {
+      $value: '{base.color.gray.6}',
+      $type: 'color',
     },
   },
   menu: {
