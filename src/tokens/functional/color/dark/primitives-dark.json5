@@ -192,6 +192,19 @@
       $value: '{base.color.gray.7}',
       $type: 'color',
     },
+    decorative: {
+      $value: '{borderColor.default}',
+      $type: 'color',
+      alpha: 0.4,
+    },
+    emphasis: {
+      $value: '{base.color.gray.5}',
+      $type: 'color',
+    },
+    disabled: {
+      $value: '{borderColor.default}',
+      $type: 'color',
+    },
     neutral: {
       muted: {
         $value: '{base.color.gray.4}',
