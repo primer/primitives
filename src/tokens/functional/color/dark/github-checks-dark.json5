@@ -1,16 +1,16 @@
 {
   checks: {
     bgColor: {
-      $value: '{base.color.gray.9}',
+      $value: '{bgColor.secondary}',
       $type: 'color',
     },
     fgColor: {
       primary: {
-        $value: '{base.color.gray.0}',
+        $value: '{fgColor.default}',
         $type: 'color',
       },
       secondary: {
-        $value: '{base.color.gray.4}',
+        $value: '{fgColor.muted}',
         $type: 'color',
       },
       link: {
@@ -60,7 +60,7 @@
           $type: 'color',
         },
         pending: {
-          $value: '{base.color.yellow.4}',
+          $value: '{base.color.yellow.3}',
           $type: 'color',
         },
         success: {
@@ -76,11 +76,11 @@
     dropdown: {
       fgColor: {
         rest: {
-          $value: '{base.color.gray.3}',
+          $value: '{base.color.gray.1}',
           $type: 'color',
         },
         hover: {
-          $value: '{base.color.gray.0}',
+          $value: '{fgColor.default}',
           $type: 'color',
         },
       },
@@ -99,7 +99,7 @@
         },
       },
       borderColor: {
-        $value: '{base.color.gray.7}',
+        $value: '{borderColor.default}',
         $type: 'color',
       },
       shadowColor: {
@@ -111,7 +111,7 @@
     dropdownButton: {
       fgColor: {
         hover: {
-          $value: '{base.color.gray.0}',
+          $value: '{fgColor.default}',
           $type: 'color',
         },
       },
@@ -125,38 +125,38 @@
     },
     scrollbarThumb: {
       bgColor: {
-        $value: '{base.color.gray.6}',
+        $value: '{bgColor.neutral.muted}',
         $type: 'color',
       },
     },
     headerLabel: {
       fgColor: {
         default: {
-          $value: '{base.color.gray.2}',
+          $value: '{fgColor.muted}',
           $type: 'color',
         },
         open: {
-          $value: '{base.color.gray.0}',
+          $value: '{fgColor.default}',
           $type: 'color',
         },
       },
       borderColor: {
-        $value: '{base.color.gray.8}',
+        $value: '{borderColor.secondary}',
         $type: 'color',
       },
       iconColor: {
-        $value: '{base.color.gray.4}',
+        $value: '{fgColor.muted}',
         $type: 'color',
       },
     },
     line: {
       fgColor: {
-        $value: '{base.color.gray.2}',
+        $value: '{fgColor.muted}',
         $type: 'color',
       },
       bgColor: {
         hover: {
-          $value: '{base.color.gray.8}',
+          $value: '{bgColor.neutral.muted}',
           $type: 'color',
         },
         selected: {
@@ -169,63 +169,62 @@
     lineNum: {
       fgColor: {
         rest: {
-          $value: '{base.color.gray.4}',
-          alpha: 0.75,
+          $value: '{fgColor.muted}',
           $type: 'color',
         },
         selected: {
-          $value: '{base.color.blue.3}',
+          $value: '{fgColor.accent}',
           $type: 'color',
         },
       },
     },
     lineTimestamp: {
       fgColor: {
-        $value: '{base.color.gray.4}',
+        $value: '{fgColor.muted}',
         $type: 'color',
       },
     },
     lineDtFm: {
       fgColor: {
-        $value: '{base.color.gray.9}',
+        $value: '{base.color.white}',
         $type: 'color',
       },
       bgColor: {
-        $value: '{base.color.yellow.5}',
+        $value: '{bgColor.attention.emphasis}',
         $type: 'color',
       },
     },
     gate: {
       bgColor: {
-        $value: '{base.color.yellow.6}',
+        $value: '{bgColor.attention.muted}',
         alpha: 0.15,
         $type: 'color',
       },
       fgColor: {
-        $value: '{base.color.gray.2}',
+        $value: '{fgColor.muted}',
         $type: 'color',
       },
     },
     gateWaiting: {
       fgColor: {
-        $value: '{base.color.yellow.3}',
+        $value: '{fgColor.attention}',
         $type: 'color',
       },
     },
     stepHeaderOpen: {
       bgColor: {
-        $value: '{base.color.gray.8}',
+        $value: '{bgColor.secondary}',
         $type: 'color',
       },
     },
     step: {
       fgColor: {
         error: {
-          $value: '{base.color.red.3}',
+          $value: '{fgColor.danger}',
           $type: 'color',
         },
         warning: {
-          $value: '{base.color.yellow.3}',
+          $value: '{fgColor.attention}',
           $type: 'color',
         },
       },
@@ -233,61 +232,59 @@
     logline: {
       fgColor: {
         default: {
-          $value: '{base.color.gray.4}',
+          $value: '{fgColor.muted}',
           $type: 'color',
         },
         debug: {
-          $value: '{base.color.purple.3}',
+          $value: '{fgColor.done}',
           $type: 'color',
         },
         error: {
-          $value: '{base.color.gray.2}',
+          $value: '{fgColor.muted}',
           $type: 'color',
         },
         warning: {
-          $value: '{base.color.gray.2}',
+          $value: '{fgColor.muted}',
           $type: 'color',
         },
       },
       bgColor: {
         warning: {
-          $value: '{base.color.yellow.6}',
-          alpha: 0.15,
+          $value: '{bgColor.attention.muted}',
           $type: 'color',
         },
-        error: {
-          $value: '{base.color.red.6}',
-          alpha: 0.15,
-          $type: 'color',
-        },
+      },
+      error: {
+        $value: '{bgColor.danger.muted}',
+        $type: 'color',
       },
     },
     loglineNum: {
       fgColor: {
         default: {
-          $value: '{base.color.gray.4}',
+          $value: '{fgColor.muted}',
           alpha: 0.75,
           $type: 'color',
         },
         error: {
-          $value: '{base.color.red.3}',
+          $value: '{fgColor.muted}',
           $type: 'color',
         },
         warning: {
-          $value: '{base.color.yellow.3}',
+          $value: '{fgColor.attention}',
           $type: 'color',
         },
       },
     },
     loglineCommand: {
       fgColor: {
-        $value: '{base.color.blue.3}',
+        $value: '{fgColor.accent}',
         $type: 'color',
       },
     },
     loglineSection: {
       fgColor: {
-        $value: '{base.color.green.3}',
+        $value: '{fgColor.success}',
         $type: 'color',
       },
     },
