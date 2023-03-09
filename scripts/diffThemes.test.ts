@@ -31,4 +31,9 @@ describe('diffThemes', () => {
       '  - color.text.success'
     expect(diffThemes('light', withAdditional)).toEqual(returnString)
   })
+
+  it('Outputs message if no diff', () => {
+    const returnString = '\n:::: dark vs light ::::\n\n0 tokens missing in dark:\n\n0 tokens added in dark'
+    expect(diffThemes('light', themesArray)).toEqual(returnString)
+  })
 })
