@@ -3,12 +3,18 @@
   height: 100px;
   display: grid;
   place-items: center;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 0px 1px inset;
+  box-shadow: var(--borderColor-default) 0px 0px 0px 1px inset;
   border-radius: 6px;
 }
 
-.ColorPreview:has([style='color: var(--fgColor-white);']) {
-  background-color: var(--bgColor-inverse) !important;
+/* set bg color for text that matches default bg */
+.ColorPreview:has([style='color: var(--fgColor-white);'], [style='color: var(--fgColor-onEmphasis);']) {
+  background-color: var(--bgColor-emphasis) !important;
+}
+
+/* add border to bg colors that match default bg */
+.ColorPreview:has([style='background-color: var(--bgColor-default); border: solid 1px var(--undefined);']) > div {
+  border: solid 1px var(--borderColor-default) !important;
 }
 
 [data-text] {
