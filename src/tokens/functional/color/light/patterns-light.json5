@@ -201,11 +201,11 @@
       },
       fgColor: {
         rest: {
-          $value: '{fgColor.white}',
+          $value: '{fgColor.onEmphasis}',
           $type: 'color',
         },
         disabled: {
-          $value: '{fgColor.white}',
+          $value: '{fgColor.onEmphasis}',
           $type: 'color',
         },
       },
@@ -262,7 +262,7 @@
         $type: 'color',
       },
       disabled: {
-        $value: '{fgColor.white}',
+        $value: '{fgColor.onEmphasis}',
         $type: 'color',
       },
     },
@@ -397,6 +397,10 @@
           $type: 'color',
         },
         hover: {
+          $value: '{borderColor.secondary}',
+          $type: 'color',
+        },
+        disabled: {
           $value: '{borderColor.secondary}',
           $type: 'color',
         },

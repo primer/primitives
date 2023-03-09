@@ -63,7 +63,7 @@
       },
       bgColor: {
         num: {
-          $value: '{base.scale.green.3}',
+          $value: '{base.color.green.3}',
           $type: 'color',
           alpha: 0.3,
         },
@@ -92,7 +92,7 @@
       },
       bgColor: {
         num: {
-          $value: '{base.color.scale.red.4}',
+          $value: '{base.color.red.4}',
           $type: 'color',
           alpha: 0.3,
         },
@@ -122,14 +122,6 @@
         $type: 'color',
       },
     },
-    // lineHighlight: {
-    //   mixBlendMode: {
-    //     selected: {
-    //       $value: 'screen',
-    //       $type: 'color',
-    //     },
-    //   },
-    // },
   },
   diffStat: {
     deletion: {
@@ -254,12 +246,12 @@
   header: {
     fgColor: {
       default: {
-        $value: '{fgColor.white}',
+        $value: '{fgColor.onEmphasis}',
         $type: 'color',
         alpha: 0.7,
       },
       logo: {
-        $value: '{fgColor.white}',
+        $value: '{fgColor.onEmphasis}',
         $type: 'color',
         alpha: 0.7,
       },

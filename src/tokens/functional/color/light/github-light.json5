@@ -115,14 +115,6 @@
         $type: 'color',
       },
     },
-    // lineHighlight: {
-    //   mixBlendMode: {
-    //     selected: {
-    //       $value: 'multiply',
-    //       $type: 'color',
-    //     },
-    //   },
-    // },
   },
   diffStat: {
     deletion: {
@@ -247,12 +239,12 @@
   header: {
     fgColor: {
       default: {
-        $value: '{fgColor.white}',
+        $value: '{fgColor.onEmphasis}',
         $type: 'color',
         alpha: 0.7,
       },
       logo: {
-        $value: '{fgColor.white}',
+        $value: '{fgColor.onEmphasis}',
         $type: 'color',
         alpha: 0.7,
       },

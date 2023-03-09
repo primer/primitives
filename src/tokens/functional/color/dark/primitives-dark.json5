@@ -8,6 +8,10 @@
       $value: '{base.color.gray.3}',
       $type: 'color',
     },
+    onEmphasis: {
+      $value: '{base.color.white}',
+      $type: 'color',
+    },
     white: {
       $value: '{base.color.white}',
       $type: 'color',
@@ -76,6 +80,10 @@
     },
     disabled: {
       $value: '{base.color.gray.5}',
+      $type: 'color',
+    },
+    emphasis: {
+      $value: '{base.color.gray.4}',
       $type: 'color',
     },
     neutral: {

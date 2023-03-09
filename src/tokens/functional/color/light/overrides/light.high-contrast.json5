@@ -181,7 +181,7 @@
     danger: {
       fgColor: {
         hover: {
-          $value: '{fgColor.white}',
+          $value: '{fgColor.onEmphasis}',
           $type: 'color',
         },
       },
@@ -230,7 +230,7 @@
     },
     fgColor: {
       rest: {
-        $value: '{fgColor.white}',
+        $value: '{fgColor.onEmphasis}',
         $type: 'color',
       },
     },
@@ -283,7 +283,7 @@
     addition: {
       fgColor: {
         text: {
-          $value: '{fgColor.white}',
+          $value: '{fgColor.onEmphasis}',
           $type: 'color',
         },
       },
@@ -297,7 +297,7 @@
     deletion: {
       fgColor: {
         text: {
-          $value: '{fgColor.white}',
+          $value: '{fgColor.onEmphasis}',
           $type: 'color',
         },
       },
