@@ -8,44 +8,16 @@
   highlight: {
     neutral: {
       bgColor: {
-        $value: '{base.color.yellow.3}',
+        $value: '{base.color.yellow.0}',
         $type: 'color',
-        alpha: 0.4,
       },
     },
   },
   page: {
     header: {
       bgColor: {
-        $value: '{bgColor.default}',
+        $value: '{bgColor.secondary}',
         $type: 'color',
-      },
-    },
-  },
-  projects: {
-    header: {
-      bgColor: {
-        $value: '{base.color.gray.9}',
-        $type: 'color',
-      },
-    },
-    sidebar: {
-      bgColor: {
-        $value: '{base.color.gray.8}',
-        $type: 'color',
-      },
-    },
-    gradient: {
-      in: {
-        $value: '{base.color.gray.8}',
-        $type: 'color',
-      },
-    },
-    gradient: {
-      out: {
-        $value: '{base.color.gray.8}',
-        $type: 'color',
-        alpha: 0,
       },
     },
   },
@@ -63,19 +35,16 @@
       },
       bgColor: {
         num: {
-          $value: '{base.color.green.3}',
+          $value: '#ccffd8',
           $type: 'color',
-          alpha: 0.3,
         },
         line: {
-          $value: '{bgColor.success.muted}',
+          $value: '#e6ffec',
           $type: 'color',
-          alpha: 0.4,
         },
         word: {
-          $value: '{bgColor.success.muted}',
+          $value: '#abf2bc',
           $type: 'color',
-          alpha: 0.15,
         },
       },
     },
@@ -92,19 +61,16 @@
       },
       bgColor: {
         num: {
-          $value: '{base.color.red.4}',
+          $value: '#ffd7d5',
           $type: 'color',
-          alpha: 0.3,
         },
         line: {
           $value: '{bgColor.danger.muted}',
           $type: 'color',
-          alpha: 0.4,
         },
         word: {
           $value: '{borderColor.danger.muted}',
           $type: 'color',
-          alpha: 0.15,
         },
       },
     },
@@ -209,35 +175,35 @@
     syntax: {
       fgColor: {
         comment: {
-          $value: '{base.color.gray.3}',
+          $value: '{base.color.gray.9}',
           $type: 'color',
         },
         constant: {
-          $value: '{base.color.blue.2}',
+          $value: '{base.color.blue.6}',
           $type: 'color',
         },
         entity: {
-          $value: '{base.color.purple.2}',
+          $value: '{base.color.purple.5}',
           $type: 'color',
         },
         keyword: {
-          $value: '{base.color.red.3}',
+          $value: '{base.color.red.5}',
           $type: 'color',
         },
         storage: {
-          $value: '{base.color.red.3}',
+          $value: '{base.color.red.5}',
           $type: 'color',
         },
         string: {
-          $value: '{base.color.blue.1}',
+          $value: '{base.color.blue.8}',
           $type: 'color',
         },
         support: {
-          $value: '{base.color.blue.2}',
+          $value: '{base.color.blue.6}',
           $type: 'color',
         },
         variable: {
-          $value: '{base.color.orange.2}',
+          $value: '{base.color.orange.6}',
           $type: 'color',
         },
       },
