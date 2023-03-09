@@ -4,17 +4,10 @@ import createDictionary from 'style-dictionary/lib/utils/createDictionary'
 import {themes as themesConfigArray} from './themes.config'
 import type StyleDictionary from 'style-dictionary'
 
-PrimerStyleDictionary.registerTransform({
-  type: `value`,
-  transitive: true,
-  name: `valueToNull`,
-  transformer: _token => null,
-})
-
 const tokenNameArray = ({dictionary}: {dictionary: StyleDictionary.Dictionary}) =>
   dictionary.allTokens.map(({name}: {name: string}) => name)
 
-const themes = themesConfigArray.map(({filename, source, include}) => {
+const themes = themesConfigArray.map(({filename, source, include}): [string, string[]] => {
   const sd = PrimerStyleDictionary.extend({
     source,
     include,
@@ -38,10 +31,13 @@ const themes = themesConfigArray.map(({filename, source, include}) => {
  */
 
 const diffThemes = (mainThemeName: string) => {
-  const mainIndex = themes.findIndex(([name]) => name === mainThemeName)
-  const mainTokens: string[] = themes.splice(mainIndex, 1)[0][1] as string[]
+  const [, mainTokens] = themes.find(([name]) => name === mainThemeName) || []
+  if (mainTokens === undefined) {
+    throw new Error(`Theme ${mainThemeName} not found`)
+  }
+  const otherThemes: [string, string[]][] = themes.filter(([name]) => name !== mainThemeName)
 
-  themes.map(theme => {
+  otherThemes.map(theme => {
     const [name, tokens] = <[name: string, tokens: string[]]>theme
     const difference = mainTokens.filter((token: string) => !tokens.includes(token))
     //eslint-disable-next-line no-console
