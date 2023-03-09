@@ -52,7 +52,7 @@ export const decorators = [
     const {parameters} = context
     const defaultStoryType = 'swatch'
     const storyType = parameters.storyType || defaultStoryType
-    console.log(parameters)
+
     return (
       <ThemeProvider colorMode="day" dayScheme="light">
         <div className={context.globals.theme === 'all' && 'theme-wrap-grid'}>
