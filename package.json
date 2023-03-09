@@ -46,6 +46,7 @@
     "release": "changeset publish",
     "start:storybook": "npm run build:v3 && cd docs/storybook && npm run storybook",
     "test": "jest --verbose --coverage",
+    "test:missingTokens": "ts-node scripts/diffThemes.ts",
     "watch": "ls data/**/*.scss scripts/**/*.ts | entr -s 'npm run build'"
   },
   "prettier": "@github/prettier-config",
