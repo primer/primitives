@@ -1,6 +1,7 @@
 import {Box} from '@primer/react'
 import React from 'react'
 import {sentenceCase} from 'sentence-case'
+// eslint-disable-next-line import/no-unresolved
 import colors from '../../../dist/js/colors'
 import {useColorTheme} from './color-theme-context'
 

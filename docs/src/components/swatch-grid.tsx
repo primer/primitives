@@ -1,6 +1,7 @@
 import {Box} from '@primer/react'
 import get from 'lodash.get'
 import React from 'react'
+// eslint-disable-next-line import/no-unresolved
 import colors from '../../../dist/js/colors'
 import {getFullName} from '../../../scripts/lib/variable-collection'
 import {useColorTheme} from './color-theme-context'
