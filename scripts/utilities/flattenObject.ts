@@ -1,5 +1,5 @@
-type NestedObject = {
-  [key: string]: string | NestedObject
+export type NestedObject = {
+  [key: string]: string | number | boolean | NestedObject
 }
 
 /**
@@ -11,7 +11,7 @@ type NestedObject = {
  * @returns flattened objects
  */
 export const flattenObject = (obj: NestedObject, prefix = '', separator = '.') =>
-  Object.keys(obj).reduce<Record<string, string>>((acc, k) => {
+  Object.keys(obj).reduce<Record<string, string | number | boolean>>((acc, k) => {
     const pre = prefix.length ? `${prefix}${separator}` : ''
     if (typeof obj[k] === 'object') {
       // purposely mutating acc
