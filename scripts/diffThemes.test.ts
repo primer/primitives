@@ -8,6 +8,11 @@ describe('diffThemes', () => {
 
   it('Throws error if mainTheme name does not exist', () => {
     expect(() => diffThemes('invalid', themesArray)).toThrow()
+    expect(() => diffThemes('light', [])).toThrow()
+  })
+
+  it('Returns empty string if only mainTheme in array', () => {
+    expect(diffThemes('light', [['light', []]])).toEqual('')
   })
 
   it('Outputs message for missing tokens', () => {
