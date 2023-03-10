@@ -47,6 +47,7 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
       getStyleDictionaryConfig(`base/color/${filename}`, [`src/tokens/functional/color/scales.json5`], include, {
         buildPath: buildOptions.buildPath,
         prefix: 'base',
+        themed: true,
       }),
     ).buildAllPlatforms()
   }
