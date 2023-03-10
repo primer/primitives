@@ -1,24 +1,39 @@
 import React from 'react'
-// import {readableColor} from 'color2k'
-import './ColorPreview.css'
+import {toHex, readableColor} from 'color2k'
+import './ColorScale.css'
 
 export type ColorScaleProps = {
   color?: string
 }
 
-export function ColorScale({color}: ColorScaleProps) {
+export const ColorScale = ({color}: ColorScaleProps) => {
+  const ref = React.useRef<HTMLDivElement | null>(null)
+  const [hex, setHex] = React.useState<string | null>(null)
+  const textColor = hex ? readableColor(hex) : 'currentColor'
+
+  React.useEffect(() => {
+    if (ref.current === null) {
+      return
+    }
+
+    const style = getComputedStyle(ref.current)
+    const rgb = style.getPropertyValue('background-color')
+    setHex(toHex(rgb))
+  }, [color])
+
   return (
-    <div>
-      <div style={{backgroundColor: `var(--${color})`, padding: '1rem'}} data-color-scale>
-        {/* <p data-token-name style={{backgroundColor: readableColor(`var(--${color})`)}}>
-          {color}
-        </p> */}
-        <p>hex</p>
-      </div>
+    <div
+      className="ColorScale--block"
+      style={{backgroundColor: `var(--${color})`, color: textColor}}
+      data-color-scale
+      ref={ref}
+    >
+      <p data-token-name>{color}</p>
+      {hex ? <p data-token-name>{hex}</p> : null}
     </div>
   )
 }
 
-export default ColorScale
+// export default ColorScale
 
 ColorScale.displayName = 'ColorScale'
