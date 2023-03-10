@@ -84,7 +84,7 @@
     },
     expander: {
       iconColor: {
-        $value: '{fgColor.muted}',
+        $value: '{fgColor.secondary}',
         $type: 'color',
       },
     },
@@ -131,14 +131,14 @@
           $type: 'color',
         },
         secondary: {
-          $value: '{fgColor.muted}',
+          $value: '{fgColor.secondary}',
           $type: 'color',
         },
       },
     },
     lineNumber: {
       fgColor: {
-        $value: '{fgColor.muted}',
+        $value: '{fgColor.secondary}',
         $type: 'color',
       },
     },

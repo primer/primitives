@@ -47,7 +47,7 @@
         },
       },
       disabled: {
-        $value: '{bgColor.disabled}',
+        $value: '{base.color.gray.5}',
         $type: 'color',
       },
       selected: {
@@ -105,7 +105,7 @@
     },
     iconColor: {
       rest: {
-        $value: '{fgColor.muted}',
+        $value: '{fgColor.secondary}',
         $type: 'color',
       },
     },
@@ -126,7 +126,7 @@
           alpha: 0.2,
         },
         disabled: {
-          $value: '{bgColor.disabled}',
+          $value: '{control.bgColor.disabled}',
           $type: 'color',
         },
         selected: {
@@ -260,7 +260,7 @@
     },
     fgColor: {
       rest: {
-        $value: '{fgColor.muted}',
+        $value: '{fgColor.secondary}',
         $type: 'color',
       },
       disabled: {
@@ -286,7 +286,7 @@
         $type: 'color',
       },
       disabled: {
-        $value: '{bgColor.disabled}',
+        $value: '{control.bgColor.disabled}',
         $type: 'color',
       },
       checked: {
@@ -300,7 +300,7 @@
         $type: 'color',
       },
       disabled: {
-        $value: '{bgColor.disabled}',
+        $value: '{control.bgColor.disabled}',
         $type: 'color',
       },
       checked: {
@@ -532,7 +532,7 @@
           },
         },
         disabled: {
-          $value: '{bgColor.disabled}',
+          $value: '{control.bgColor.disabled}',
           $type: 'color',
         },
       },
@@ -690,7 +690,7 @@
     leadingVisual: {
       bgColor: {
         rest: {
-          $value: '{fgColor.muted}',
+          $value: '{fgColor.secondary}',
           $type: 'color',
         },
       },
@@ -709,7 +709,7 @@
     },
     iconColor: {
       rest: {
-        $value: '{fgColor.muted}',
+        $value: '{fgColor.secondary}',
         $type: 'color',
       },
     },

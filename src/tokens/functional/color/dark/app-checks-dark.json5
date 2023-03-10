@@ -10,7 +10,7 @@
         $type: 'color',
       },
       secondary: {
-        $value: '{fgColor.muted}',
+        $value: '{fgColor.secondary}',
         $type: 'color',
       },
       link: {
@@ -132,7 +132,7 @@
     headerLabel: {
       fgColor: {
         default: {
-          $value: '{fgColor.muted}',
+          $value: '{fgColor.secondary}',
           $type: 'color',
         },
         open: {
@@ -145,13 +145,13 @@
         $type: 'color',
       },
       iconColor: {
-        $value: '{fgColor.muted}',
+        $value: '{fgColor.secondary}',
         $type: 'color',
       },
     },
     line: {
       fgColor: {
-        $value: '{fgColor.muted}',
+        $value: '{fgColor.secondary}',
         $type: 'color',
       },
       bgColor: {
@@ -169,7 +169,7 @@
     lineNum: {
       fgColor: {
         rest: {
-          $value: '{fgColor.muted}',
+          $value: '{fgColor.secondary}',
           $type: 'color',
         },
         selected: {
@@ -180,7 +180,7 @@
     },
     lineTimestamp: {
       fgColor: {
-        $value: '{fgColor.muted}',
+        $value: '{fgColor.secondary}',
         $type: 'color',
       },
     },
@@ -201,7 +201,7 @@
         $type: 'color',
       },
       fgColor: {
-        $value: '{fgColor.muted}',
+        $value: '{fgColor.secondary}',
         $type: 'color',
       },
     },
@@ -232,7 +232,7 @@
     logline: {
       fgColor: {
         default: {
-          $value: '{fgColor.muted}',
+          $value: '{fgColor.secondary}',
           $type: 'color',
         },
         debug: {
@@ -240,11 +240,11 @@
           $type: 'color',
         },
         error: {
-          $value: '{fgColor.muted}',
+          $value: '{fgColor.secondary}',
           $type: 'color',
         },
         warning: {
-          $value: '{fgColor.muted}',
+          $value: '{fgColor.secondary}',
           $type: 'color',
         },
       },
@@ -262,12 +262,12 @@
     loglineNum: {
       fgColor: {
         default: {
-          $value: '{fgColor.muted}',
+          $value: '{fgColor.secondary}',
           alpha: 0.75,
           $type: 'color',
         },
         error: {
-          $value: '{fgColor.muted}',
+          $value: '{fgColor.secondary}',
           $type: 'color',
         },
         warning: {
