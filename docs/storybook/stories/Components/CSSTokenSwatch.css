@@ -1,0 +1,25 @@
+.TokenSwatch {
+  gap: 0.5rem;
+  display: grid;
+  align-items: center;
+  grid-template: 'swatch name' min-content '. value' min-content / min-content auto;
+}
+
+.TokenSwatch [data-token-name]:first-of-type {
+  grid-area: name;
+}
+
+.TokenSwatch [data-token-name]:last-of-type {
+  grid-area: value;
+}
+
+.TokenSwatch--color {
+  height: 1rem;
+  width: 1rem;
+  border-radius: 3px;
+  grid-area: swatch;
+}
+
+p {
+  margin: 0;
+}
