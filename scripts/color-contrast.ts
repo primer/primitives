@@ -2,6 +2,7 @@ import type {ContrastRequirement} from './color-contrast.config'
 import {contrastRequirements, canvasColors} from './color-contrast.config'
 import {Table} from 'console-table-printer'
 import {flattenObject} from './utilities/flattenObject'
+// eslint-disable-next-line import/no-unresolved
 import colors from '../dist/ts'
 import {writeFile} from 'fs'
 import {normal} from 'color-blend'
