@@ -54,13 +54,13 @@ export default {
     fg: get('scale.orange.4'),
     emphasis: get('scale.orange.5'),
     muted: alpha(get('scale.orange.4'), 0.4),
-    subtle: alpha(get('scale.orange.4'), 0.15)
+    subtle: alpha(get('scale.orange.4'), 0.1)
   },
   danger: {
     fg: get('scale.red.4'),
     emphasis: get('scale.red.5'),
     muted: alpha(get('scale.red.4'), 0.4),
-    subtle: alpha(get('scale.red.4'), 0.15)
+    subtle: alpha(get('scale.red.4'), 0.1)
   },
   open: {
     fg: get('scale.green.3'),
@@ -78,13 +78,13 @@ export default {
     fg: get('scale.purple.4'),
     emphasis: get('scale.purple.5'),
     muted: alpha(get('scale.purple.4'), 0.4),
-    subtle: alpha(get('scale.purple.4'), 0.15)
+    subtle: alpha(get('scale.purple.4'), 0.1)
   },
   sponsors: {
     fg: get('scale.pink.4'),
     emphasis: get('scale.pink.5'),
     muted: alpha(get('scale.pink.4'), 0.4),
-    subtle: alpha(get('scale.pink.4'), 0.15)
+    subtle: alpha(get('scale.pink.4'), 0.1)
   },
 
   // Only meant for Primer components
