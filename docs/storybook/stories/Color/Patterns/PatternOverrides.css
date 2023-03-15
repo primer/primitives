@@ -97,6 +97,14 @@
   background-color: var(--borderColor-default);
 }
 
+.SegmentedControl li {
+  --separator-color: var(--borderColor-decorative);
+}
+
+.SegmentedControl.alt li {
+  --separator-color: var(--borderColor-secondary);
+}
+
 /* ActionList */
 
 .ActionList li:not(:last-child):hover {
@@ -117,6 +125,18 @@
 
 .ActionList [data-component='ActionList.Divider'] {
   background-color: var(--borderColor-decorative);
+}
+
+.ActionList.alt [data-component='ActionList.Divider'] {
+  background-color: var(--borderColor-secondary);
+}
+
+.ActionList li:not(:first-of-type) {
+  --divider-color: var(--borderColor-decorative);
+}
+
+.ActionList.alt li:not(:first-of-type) {
+  --divider-color: var(--borderColor-secondary);
 }
 
 .Button button[id='default'] {
