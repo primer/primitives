@@ -10,7 +10,7 @@ export default {
 
 const fgColors = [
   'fgColor-default',
-  'fgColor-muted',
+  'fgColor-secondary',
   'fgColor-onEmphasis',
   'fgColor-white',
   'fgColor-disabled',
