@@ -20,11 +20,14 @@ export const CSSTokenSwatch = ({color}: CSSTokenSwatchProps) => {
     setHex(toHex(rgb))
   }, [color])
 
+  if (color === undefined) {
+    return null
+  }
   return (
     <div className="TokenSwatch">
       <div className="TokenSwatch--color" style={{backgroundColor: `var(--${color})`}} ref={ref}></div>
-      <p data-token-name>{color}</p>
-      {hex ? <p data-token-name>{hex}</p> : null}
+      {color ? <p data-token-name>{color}</p> : null}
+      {hex ? <p data-token-name>{hex}</p> : <p>---</p>}
     </div>
   )
 }

@@ -97,14 +97,12 @@
       },
     },
     addition: {
-      borderColor: {
-        $value: '{borderColor.secondary}',
-        $type: 'color',
-      },
-    },
-    addition: {
       bgColor: {
         $value: '{base.color.green.4}',
+        $type: 'color',
+      },
+      borderColor: {
+        $value: '{borderColor.secondary}',
         $type: 'color',
       },
     },
@@ -219,7 +217,6 @@
       logo: {
         $value: '{fgColor.onEmphasis}',
         $type: 'color',
-        alpha: 0.7,
       },
     },
     bgColor: {

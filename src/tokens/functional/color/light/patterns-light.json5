@@ -334,9 +334,21 @@
           $value: '{control.bgColor.active}',
           $type: 'color',
         },
+        selected: {
+          $value: '{control.bgColor.active}',
+          $type: 'color',
+        },
       },
       borderColor: {
         rest: {
+          $value: '{borderColor.secondary}',
+          $type: 'color',
+        },
+        hover: {
+          $value: '{borderColor.secondary}',
+          $type: 'color',
+        },
+        active: {
           $value: '{borderColor.secondary}',
           $type: 'color',
         },
@@ -481,7 +493,11 @@
         },
       },
       borderColor: {
-        rest: {
+        hover: {
+          $value: '{borderColor.secondary}',
+          $type: 'color',
+        },
+        selected: {
           $value: '{borderColor.secondary}',
           $type: 'color',
         },
@@ -541,6 +557,14 @@
       },
       borderColor: {
         rest: {
+          $value: '{borderColor.secondary}',
+          $type: 'color',
+        },
+        hover: {
+          $value: '{borderColor.secondary}',
+          $type: 'color',
+        },
+        active: {
           $value: '{borderColor.secondary}',
           $type: 'color',
         },
