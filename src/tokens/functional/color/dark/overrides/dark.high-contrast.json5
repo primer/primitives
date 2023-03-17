@@ -251,12 +251,26 @@
           $type: 'color',
         },
       },
+      bgColor: {
+        word: {
+          $value: '{base.color.green.4}',
+          $type: 'color',
+          alpha: 1,
+        },
+      },
     },
     deletion: {
       fgColor: {
         text: {
           $value: '{fgColor.onEmphasis}',
           $type: 'color',
+        },
+      },
+      bgColor: {
+        word: {
+          $value: '{base.color.red.5}',
+          $type: 'color',
+          alpha: 1,
         },
       },
     },
@@ -269,7 +283,7 @@
     hunk: {
       bgColor: {
         num: {
-          $value: '{bgColor.accent.muted}',
+          $value: '{base.color.blue.4}',
           $type: 'color',
           alpha: 0.4,
         },
@@ -286,20 +300,6 @@
     iconColor: {
       rest: {
         $value: '{base.color.gray.1}',
-        $type: 'color',
-      },
-    },
-  },
-  diffStat: {
-    deletion: {
-      borderColor: {
-        $value: '{base.color.red.2}',
-        $type: 'color',
-      },
-    },
-    addition: {
-      borderColor: {
-        $value: '{base.color.green.2}',
         $type: 'color',
       },
     },

@@ -66,9 +66,10 @@
     addition: {
       bgColor: {
         num: {
-          $value: '{borderColor.success.muted}',
+          $value: '{base.color.green.3}',
           $type: 'color',
           mix: null,
+          alpha: 0.4,
         },
         line: {
           $value: '{base.color.green.0}',
@@ -76,26 +77,28 @@
           alpha: 0.5,
         },
         word: {
-          $value: '{bgColor.success.muted}',
+          $value: '{base.color.green.3}',
           $type: 'color',
+          alpha: 0.4,
         },
       },
     },
     deletion: {
       bgColor: {
-        word: {
-          $value: '{base.color.red.2}',
+        num: {
+          $value: '{base.color.red.3}',
           $type: 'color',
-          alpha: 0.5,
+          alpha: 0.4,
         },
         line: {
           $value: '{base.color.red.0}',
           $type: 'color',
           alpha: 0.5,
         },
-        num: {
-          $value: '{bgColor.danger.muted}',
+        word: {
+          $value: '{base.color.red.2}',
           $type: 'color',
+          alpha: 0.5,
         },
       },
     },

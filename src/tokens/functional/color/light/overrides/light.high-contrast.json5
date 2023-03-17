@@ -299,7 +299,7 @@
       },
       bgColor: {
         word: {
-          $value: '{bgColor.success.emphasis}',
+          $value: '{base.color.green.4}',
           $type: 'color',
         },
       },
@@ -313,8 +313,10 @@
       },
       bgColor: {
         word: {
-          $value: '{bgColor.danger.emphasis}',
+          $value: '{base.color.red.5}',
           $type: 'color',
+          mix: null,
+          alpha: 1,
         },
       },
     },
@@ -323,6 +325,7 @@
         num: {
           $value: '{base.color.blue.1}',
           $type: 'color',
+          alpha: 1,
         },
       },
     },

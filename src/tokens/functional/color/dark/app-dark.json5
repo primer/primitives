@@ -41,14 +41,15 @@
           alpha: 0.3,
         },
         line: {
-          $value: '{bgColor.success.muted}',
-          $type: 'color',
-          alpha: 0.4,
-        },
-        word: {
-          $value: '{bgColor.success.muted}',
+          $value: '{base.color.green.4}',
           $type: 'color',
           alpha: 0.15,
+          mix: null,
+        },
+        word: {
+          $value: '{base.color.green.4}',
+          $type: 'color',
+          alpha: 0.4,
         },
       },
     },
@@ -70,14 +71,15 @@
           alpha: 0.3,
         },
         line: {
-          $value: '{bgColor.danger.muted}',
-          $type: 'color',
-          alpha: 0.4,
-        },
-        word: {
-          $value: '{borderColor.danger.muted}',
+          $value: '{base.color.red.4}',
           $type: 'color',
           alpha: 0.15,
+          mix: null,
+        },
+        word: {
+          $value: '{base.color.red.4}',
+          $type: 'color',
+          alpha: 0.4,
         },
       },
     },
@@ -97,21 +99,9 @@
     },
   },
   diffStat: {
-    deletion: {
-      borderColor: {
-        $value: '{borderColor.secondary}',
-        $type: 'color',
-      },
-    },
-    addition: {
-      borderColor: {
-        $value: '{borderColor.secondary}',
-        $type: 'color',
-      },
-    },
     addition: {
       bgColor: {
-        $value: '{base.color.green.4}',
+        $value: '{base.color.green.3}',
         $type: 'color',
       },
     },

@@ -69,20 +69,22 @@
           $type: 'color',
         },
         line: {
-          $value: '{bgColor.danger.muted}',
+          $value: '{base.color.red.0}',
           $type: 'color',
         },
         word: {
-          $value: '{borderColor.danger.muted}',
+          $value: '{base.color.red.3}',
           $type: 'color',
+          alpha: 0.4,
         },
       },
     },
     hunk: {
       bgColor: {
         num: {
-          $value: '{borderColor.accent.muted}',
+          $value: '{base.color.blue.3}',
           $type: 'color',
+          alpha: 0.4,
         },
       },
     },
@@ -94,19 +96,9 @@
     },
   },
   diffStat: {
-    deletion: {
-      borderColor: {
-        $value: '{borderColor.secondary}',
-        $type: 'color',
-      },
-    },
     addition: {
       bgColor: {
         $value: '{base.color.green.4}',
-        $type: 'color',
-      },
-      borderColor: {
-        $value: '{borderColor.secondary}',
         $type: 'color',
       },
     },
