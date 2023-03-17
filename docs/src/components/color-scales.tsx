@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-unresolved
 import colors from '../../../dist/js/colors'
 import React from 'react'
 import {useColorTheme} from './color-theme-context'
