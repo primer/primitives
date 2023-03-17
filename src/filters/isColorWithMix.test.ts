@@ -14,6 +14,10 @@ describe('Filter: isColorWithMix', () => {
     expect(isColorWithMix(getMockToken({value: '#000'}))).toStrictEqual(false)
   })
 
+  it('returns false if $type property is missing', () => {
+    expect(isColorWithMix(getMockToken({value: '#000', mix: null}))).toStrictEqual(false)
+  })
+
   it('returns false if $type `color` but mix is missing', () => {
     expect(isColorWithMix(getMockToken({$type: 'color'}))).toStrictEqual(false)
   })

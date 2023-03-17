@@ -16,7 +16,7 @@ const throwError = (token: StyleDictionary.TransformedToken) => {
  */
 export const isColorWithMix = (token: StyleDictionary.TransformedToken): boolean => {
   // no color or no mix property
-  if (!isColor(token) || token.mix === undefined) {
+  if (!isColor(token) || token.mix === undefined || token.mix === null) {
     return false
   }
   // invalid mix property
