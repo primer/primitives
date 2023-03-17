@@ -1,7 +1,5 @@
 {
-  "color-canvas-default-transparent": {
-    "color": "deprecate"
-  },
+  "color-canvas-default-transparent": {},
   "color-page-header-bg": {
     "background": "page-header-bgColor"
   },
@@ -137,9 +135,7 @@
   "color-select-menu-backdrop-border": {
     "border": "selectMenu-borderColor"
   },
-  "color-select-menu-tap-highlight": {
-    "color": "deprecate"
-  },
+  "color-select-menu-tap-highlight": {},
   "color-select-menu-tap-focus-bg": {
     "background": "selectMenu-bgColor-active"
   },
@@ -276,7 +272,7 @@
     "background": "button-outline-bgColor-active"
   },
   "color-btn-outline-selected-border": {
-    "border": "button-outline-borderColor-selected"
+    "border": "button-outline-borderColor-active"
   },
   "color-btn-outline-selected-shadow": {
     "box-shadow": ""
@@ -321,16 +317,16 @@
     "background": "button-danger-bgColor-active"
   },
   "color-btn-danger-selected-border": {
-    "border": "button-outline-borderColor-selected"
+    "border": "button-danger-borderColor-active"
   },
   "color-btn-danger-selected-shadow": {
     "box-shadow": ""
   },
   "color-btn-danger-disabled-text": {
-    "color": ""
+    "color": "button-danger-fgColor-disabled"
   },
   "color-btn-danger-disabled-bg": {
-    "color": "button-danger-fgColor-disabled"
+    "color": "button-danger-bgColor-disabled"
   },
   "color-btn-danger-disabled-counter-bg": {
     "background": "buttonCounter-danger-bgColor-disabled"
@@ -360,7 +356,9 @@
   "color-action-list-item-default-active-bg": {
     "background": "control-transparent-bgColor-active"
   },
-  "color-action-list-item-default-active-border": {},
+  "color-action-list-item-default-active-border": {
+    "border": "control-transparent-borderColor-active"
+  },
   "color-action-list-item-default-selected-bg": {
     "background": "control-transparent-bgColor-selected"
   },
@@ -410,7 +408,7 @@
     "color": "control-checked-fgColor-disabled"
   },
   "color-switch-track-checked-border": {
-    "border": "control-checked-borderColor-rest"
+    "border": "transparent"
   },
   "color-switch-knob-bg": {
     "background": "controlKnob-bgColor-rest"
@@ -434,16 +432,16 @@
     "background": "controlTrack-bgColor-rest"
   },
   "color-segmented-control-button-bg": {
-    "background": "control-bgColor-rest"
+    "background": "controlKnob-bgColor-rest"
   },
   "color-segmented-control-button-hover-bg": {
-    "background": "control-bgColor-hover"
+    "background": "controlTrack-bgColor-hover"
   },
   "color-segmented-control-button-active-bg": {
-    "background": "control-bgColor-active"
+    "background": "controlTrack-bgColor-active"
   },
   "color-segmented-control-button-selected-border": {
-    "border": "control-borderColor-selected"
+    "border": "controlKnob-borderColor-rest"
   },
   "color-tree-view-item-chevron-hover-bg": {
     "background": "control-transparent-bgColor-hover"
@@ -582,7 +580,7 @@
     "border": "borderColor-open-emphasis"
   },
   "color-open-muted": {
-    "border": "borderColor-acopencent-muted"
+    "border": "borderColor-open-muted"
   },
   "color-open-subtle": {
     "background": "bgColor-open-muted"
@@ -627,16 +625,18 @@
     "background": "bgColor-sponsors-muted"
   },
   "color-primer-fg-disabled": {
-    "color": ""
+    "color": "fgColor-disabled"
   },
   "color-primer-canvas-backdrop": {
-    "background": ""
+    "background": "overlay-backdrop-bgColor"
   },
-  "color-primer-canvas-sticky": {
-    "background": ""
+  "color-primer-canvas-sticky": {},
+  "color-primer-border-active": {
+    "border": "underlineNav-borderColor-active"
   },
-  "color-primer-border-active": {},
-  "color-primer-border-contrast": {},
+  "color-primer-border-contrast": {
+    "border": "borderColor-secondary"
+  },
   "color-primer-shadow-highlight": {
     "box-shadow": ""
   },

@@ -142,6 +142,10 @@
           $value: 'transparent',
           $type: 'color',
         },
+        active: {
+          $value: 'transparent',
+          $type: 'color',
+        },
       },
     },
     danger: {
@@ -497,7 +501,7 @@
           $value: '{borderColor.secondary}',
           $type: 'color',
         },
-        selected: {
+        active: {
           $value: '{borderColor.secondary}',
           $type: 'color',
         },
