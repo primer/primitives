@@ -65,16 +65,17 @@
   diffBlob: {
     addition: {
       bgColor: {
-        word: {
-          $value: '{bgColor.success.muted}',
+        num: {
+          $value: '{borderColor.success.muted}',
           $type: 'color',
+          mix: null,
         },
         line: {
           $value: '{base.color.green.0}',
           $type: 'color',
           alpha: 0.5,
         },
-        num: {
+        word: {
           $value: '{bgColor.success.muted}',
           $type: 'color',
         },

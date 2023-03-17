@@ -35,15 +35,19 @@
       },
       bgColor: {
         num: {
-          $value: '#ccffd8',
+          $value: '{base.color.green.1}',
           $type: 'color',
+          mix: {
+            color: '{base.color.green.0}',
+            weight: 0.8,
+          },
         },
         line: {
-          $value: '#e6ffec',
+          $value: '{base.color.green.0}',
           $type: 'color',
         },
         word: {
-          $value: '#abf2bc',
+          $value: '{base.color.green.1}',
           $type: 'color',
         },
       },
@@ -61,7 +65,7 @@
       },
       bgColor: {
         num: {
-          $value: '#ffd7d5',
+          $value: '{base.color.red.1}',
           $type: 'color',
         },
         line: {
