@@ -347,15 +347,15 @@
       },
       borderColor: {
         rest: {
-          $value: '{borderColor.secondary}',
+          $value: '{borderColor.default}',
           $type: 'color',
         },
         hover: {
-          $value: '{borderColor.secondary}',
+          $value: '{borderColor.default}',
           $type: 'color',
         },
         active: {
-          $value: '{borderColor.secondary}',
+          $value: '{borderColor.default}',
           $type: 'color',
         },
       },
@@ -410,15 +410,15 @@
       },
       borderColor: {
         rest: {
-          $value: '{borderColor.secondary}',
+          $value: '{borderColor.default}',
           $type: 'color',
         },
         hover: {
-          $value: '{borderColor.secondary}',
+          $value: '{borderColor.default}',
           $type: 'color',
         },
         disabled: {
-          $value: '{borderColor.secondary}',
+          $value: '{borderColor.default}',
           $type: 'color',
         },
       },
@@ -558,15 +558,15 @@
       },
       borderColor: {
         rest: {
-          $value: '{borderColor.secondary}',
+          $value: '{borderColor.default}',
           $type: 'color',
         },
         hover: {
-          $value: '{borderColor.secondary}',
+          $value: '{base.color.red.6}',
           $type: 'color',
         },
         active: {
-          $value: '{borderColor.secondary}',
+          $value: '{button.danger.bgColor.active}',
           $type: 'color',
         },
       },
@@ -677,7 +677,7 @@
   },
   overlay: {
     bgColor: {
-      $value: '{base.color.white}',
+      $value: '{base.color.gray.8}',
       $type: 'color',
     },
     backdrop: {

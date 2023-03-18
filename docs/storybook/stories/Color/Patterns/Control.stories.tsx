@@ -3,7 +3,7 @@ import React from 'react'
 import './PatternOverrides.css'
 import type {ComponentMeta, ComponentStory} from '@storybook/react'
 import {ColorPreview} from '../../Components/ColorPreview'
-import {ToggleSwitch, SegmentedControl, ActionList, Button, TextInput, Checkbox, Radio} from '@primer/react'
+import {ToggleSwitch, SegmentedControl, ActionList, Button, TextInput, Checkbox, Radio, Box} from '@primer/react'
 
 export default {
   title: 'Color/Patterns/Controls',
@@ -50,7 +50,8 @@ export const SegmentedControlScheme: ComponentStory<typeof ColorPreview> = () =>
 
 export const ActionListScheme: ComponentStory<typeof ColorPreview> = () => {
   return (
-    <div className="ActionList" style={{display: 'flex', gap: '1rem'}}>
+    <div style={{display: 'flex', gap: '1rem'}}>
+      <Box bg="canvas.default"></Box>
       <ActionList>
         <ActionList.Item>New file</ActionList.Item>
         <ActionList.Item>Copy link</ActionList.Item>
