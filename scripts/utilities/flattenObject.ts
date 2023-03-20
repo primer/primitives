@@ -10,14 +10,19 @@ export type NestedObject = {
  * @param separator - defaults to '.'
  * @returns flattened objects
  */
-export const flattenObject = (obj: NestedObject, prefix = '', separator = '.') =>
-  Object.keys(obj).reduce<Record<string, string | number | boolean>>((acc, k) => {
+export const flattenObject = (
+  obj: NestedObject,
+  prefix = '',
+  separator = '.',
+  isLastLevel?: (object: Record<string, unknown>) => boolean,
+) =>
+  Object.keys(obj).reduce<Record<string, string | number | boolean | NestedObject>>((acc, k) => {
     const pre = prefix.length ? `${prefix}${separator}` : ''
-    if (typeof obj[k] === 'object') {
+    if (typeof obj[k] === 'object' && (isLastLevel === undefined || !isLastLevel(obj[k] as Record<string, unknown>))) {
       // purposely mutating acc
-      Object.assign(acc, flattenObject(obj[k] as NestedObject, pre + k, separator))
-    } else if (typeof obj[k] === 'string') {
-      acc[pre + k] = obj[k] as string
+      Object.assign(acc, flattenObject(obj[k] as NestedObject, pre + k, separator, isLastLevel))
+    } else {
+      acc[pre + k] = obj[k]
     }
     return acc
   }, {})
