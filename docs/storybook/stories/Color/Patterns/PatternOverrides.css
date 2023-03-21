@@ -1,128 +1,3 @@
-.ToggleSwitch button {
-  background-color: var(--controlTrack-bgColor-rest);
-  border-color: var(--controlTrack-borderColor-rest);
-  overflow: visible;
-}
-
-.ToggleSwitch button > div:last-of-type {
-  background-color: var(--controlKnob-bgColor-rest);
-  border-color: var(--controlKnob-borderColor-rest);
-}
-
-/* hover */
-
-.ToggleSwitch button > div:last-of-type:hover {
-  background-color: var(--controlKnob-bgColor-hover);
-}
-
-.ToggleSwitch button:hover > div:last-of-type {
-  background-color: var(--controlKnob-bgColor-hover);
-}
-
-.ToggleSwitch button:hover:not(:disabled) {
-  background-color: var(--controlTrack-bgColor-hover);
-}
-
-/* active */
-
-.ToggleSwitch button > div:last-of-type:active {
-  background-color: var(--controlKnob-bgColor-active);
-}
-
-.ToggleSwitch button:active > div:last-of-type {
-  background-color: var(--controlKnob-bgColor-active);
-}
-
-.ToggleSwitch button:active {
-  background-color: var(--controlTrack-bgColor-active);
-}
-
-/* disabled */
-
-.ToggleSwitch button > div:last-of-type:disabled {
-  background-color: var(--controlKnob-bgColor-disabled);
-}
-
-.ToggleSwitch button:disabled > div:last-of-type {
-  background-color: var(--controlKnob-bgColor-disabled);
-}
-
-.ToggleSwitch button:disabled,
-.ToggleSwitch button[aria-checked='true']:disabled {
-  background-color: var(--controlTrack-bgColor-disabled);
-  border-color: var(--controlTrack-borderColor-disabled);
-}
-
-/* checked */
-
-.ToggleSwitch button[aria-checked='true'] {
-  background-color: var(--control-checked-bgColor-rest);
-  border-color: var(--control-checked-borderColor-rest);
-}
-
-.ToggleSwitch button[aria-checked='true']:not(:disabled) > div:last-of-type {
-  background-color: var(--controlKnob-bgColor-checked);
-  border-color: var(--controlKnob-borderColor-checked);
-}
-
-/* checked hover */
-
-.ToggleSwitch button[aria-checked='true']:hover:not(:disabled) {
-  background-color: var(--control-checked-bgColor-hover);
-}
-
-/* checked  active*/
-
-.ToggleSwitch button[aria-checked='true']:active {
-  background-color: var(--control-checked-bgColor-active);
-}
-
-/* SegmentedControl */
-
-.SegmentedControl button[aria-current='true'] span.segmentedControl-content {
-  background-color: var(--controlKnob-bgColor-rest);
-  border-color: var(--controlKnob-borderColor-rest);
-}
-
-.SegmentedControl ul {
-  background-color: var(--controlTrack-bgColor-rest);
-  border-color: var(--controlTrack-borderColor-rest);
-}
-
-.SegmentedControl button[aria-current='false'] span.segmentedControl-content:hover:not(:disabled) {
-  background-color: var(--controlTrack-bgColor-hover);
-}
-
-.SegmentedControl .gGsGVS:not(:last-child)::after {
-  background-color: var(--borderColor-default);
-}
-
-.SegmentedControl li {
-  --separator-color: var(--borderColor-decorative);
-}
-
-.SegmentedControl.alt li {
-  --separator-color: var(--borderColor-secondary);
-}
-
-/* ActionList */
-
-.ActionList li:not(:last-child):hover {
-  background-color: var(--control-bgColor-hover) !important;
-}
-
-.ActionList li:last-child:hover {
-  background-color: var(--control-danger-bgColor-hover) !important;
-}
-
-.ActionList li:last-child:active {
-  background-color: var(--control-danger-bgColor-active) !important;
-}
-
-.ActionList li:active {
-  background-color: var(--control-bgColor-active) !important;
-}
-
 .ActionList [data-component='ActionList.Divider'] {
   background-color: var(--borderColor-decorative);
 }
@@ -139,25 +14,21 @@
   --divider-color: var(--borderColor-secondary);
 }
 
-.Button button[id='default'] {
-  background-color: var(--control-bgColor-rest);
-  border-color: var(--control-borderColor-rest);
+.SegmentedControl .jZGQTK {
+  --separator-color: var(--borderColor-decorative) !important;
 }
 
-.Button button[id='default']:hover:not(:disabled) {
-  background-color: var(--control-bgColor-hover);
-}
-
-.Button button[id='default']:active {
-  background-color: var(--control-bgColor-active);
-}
-
-.Button button:disabled {
-  background-color: var(--control-bgColor-disabled);
+.SegmentedControl.alt .jZGQTK {
+  --separator-color: var(--borderColor-secondary);
 }
 
 .Button button[id='invisible']:hover:not(:disabled) {
   background-color: var(--button-invisible-bgColor-hover);
+}
+
+.Button button[id='invisible']:disabled {
+  background-color: var(--button-invisible-bgColor-disabled);
+  color: var(--button-invisible-fgColor-disabled);
 }
 
 .Button button[id='invisible']:active:not(:disabled) {
@@ -167,98 +38,4 @@
 .Button button[id='invisible'] {
   background-color: var(--button-invisible-bgColor-rest);
   color: var(--button-invisible-fgColor-rest);
-}
-
-.Button button[id='primary'] {
-  background-color: var(--button-primary-bgColor-rest);
-  border-color: var(--button-primary-borderColor-rest);
-  color: var(--button-primary-fgColor-rest);
-}
-
-.Button button[id='primary']:hover {
-  background-color: var(--button-primary-bgColor-hover);
-  border-color: var(--button-primary-borderColor-hover);
-}
-
-.Button button[id='primary']:disabled {
-  background-color: var(--button-primary-bgColor-disabled);
-  border-color: var(--button-primary-borderColor-disabled);
-  /* background-color: #94d3a2; */
-}
-
-.Button button[id='danger'] {
-  background-color: var(--button-danger-bgColor-rest);
-  border-color: var(--button-danger-borderColor-rest);
-  color: var(--button-danger-fgColor-rest);
-}
-
-.Button button[id='danger']:not(:disabled):hover {
-  background-color: var(--button-danger-bgColor-hover);
-  border-color: var(--button-danger-borderColor-hover);
-}
-
-.Button button[id='danger']:active {
-  background-color: var(--button-danger-bgColor-active);
-  border-color: var(--button-danger-borderColor-active);
-}
-
-.Button button[id='danger']:disabled {
-  background-color: var(--button-danger-bgColor-disabled);
-  color: var(--button-danger-fgColor-disabled);
-}
-
-.Button button[id='outline'] {
-  background-color: var(--button-outline-bgColor-rest);
-  border-color: var(--button-outline-borderColor-rest);
-  color: var(--button-outline-fgColor-rest);
-}
-
-.Button button[id='outline']:not(:disabled):hover {
-  background-color: var(--button-outline-bgColor-hover);
-  border-color: var(--button-outline-borderColor-hover);
-}
-
-.Button button[id='outline']:active {
-  background-color: var(--button-outline-bgColor-active);
-  border-color: var(--button-outline-borderColor-active);
-}
-
-.Button button[id='outline']:disabled {
-  background-color: var(--button-outline-bgColor-disabled);
-  color: var(--button-outline-fgColor-disabled);
-}
-
-/* forms */
-
-.Input .TextInput-wrapper:first-of-type {
-  border-color: var(--control-borderColor-emphasis) !important;
-}
-
-.Input .TextInput-wrapper:has(input:disabled) {
-  background-color: var(--control-bgColor-disabled) !important;
-}
-
-.Input .TextInput-wrapper:nth-of-type(3) {
-  background-color: var(--bgColor-secondary) !important;
-}
-
-.Input .TextInput-wrapper:nth-of-type(4) {
-  border-color: var(--control-borderColor-danger) !important;
-}
-
-.Input .TextInput-wrapper:nth-of-type(5) {
-  border-color: var(--control-borderColor-warning) !important;
-}
-
-.Input input[type='checkbox']:checked {
-  background-color: var(--control-checked-bgColor-rest);
-  border-color: var(--control-checked-borderColor-rest);
-}
-
-.Input input[type='checkbox']:checked::before {
-  background-color: var(--control-checked-fgColor-rest);
-}
-
-.Input input[type='radio']:checked {
-  border-color: var(--control-checked-borderColor-rest);
 }

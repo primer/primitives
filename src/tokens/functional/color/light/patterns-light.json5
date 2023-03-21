@@ -428,6 +428,10 @@
           $value: '{fgColor.accent}',
           $type: 'color',
         },
+        disabled: {
+          $value: '{control.fgColor.disabled}',
+          $type: 'color',
+        },
       },
       bgColor: {
         rest: {
@@ -440,6 +444,10 @@
         },
         active: {
           $value: '{control.transparent.bgColor.active}',
+          $type: 'color',
+        },
+        disabled: {
+          $value: '{control.transparent.bgColor.disabled}',
           $type: 'color',
         },
       },

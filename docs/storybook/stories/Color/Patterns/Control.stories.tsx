@@ -3,7 +3,8 @@ import React from 'react'
 import './PatternOverrides.css'
 import type {ComponentMeta, ComponentStory} from '@storybook/react'
 import {ColorPreview} from '../../Components/ColorPreview'
-import {ToggleSwitch, SegmentedControl, ActionList, Button, TextInput, Checkbox, Radio, Box} from '@primer/react'
+import {ToggleSwitch, SegmentedControl, ActionList, Button, TextInput, Checkbox, Radio} from '@primer/react'
+import {EyeIcon, TriangleDownIcon, HeartIcon} from '@primer/octicons-react'
 
 export default {
   title: 'Color/Patterns/Controls',
@@ -12,16 +13,13 @@ export default {
 export const ToggleSwitchScheme: ComponentStory<typeof ColorPreview> = () => {
   return (
     <>
-      <div className="ToggleSwitch" style={{display: 'flex', gap: '1rem', padding: '2rem'}}>
+      <div style={{display: 'flex', gap: '1rem', padding: '2rem'}}>
         <ToggleSwitch aria-labelledby="switchLabel" />
         <ToggleSwitch disabled aria-labelledby="switchLabel" />
         <ToggleSwitch checked aria-labelledby="switchLabel" />
         <ToggleSwitch checked disabled aria-labelledby="switchLabel" />
       </div>
-      <div
-        className="ToggleSwitch"
-        style={{display: 'flex', gap: '1rem', padding: '2rem', backgroundColor: 'var(--bgColor-secondary)'}}
-      >
+      <div style={{display: 'flex', gap: '1rem', padding: '2rem', backgroundColor: 'var(--bgColor-secondary)'}}>
         <ToggleSwitch aria-labelledby="switchLabel" />
         <ToggleSwitch disabled aria-labelledby="switchLabel" />
         <ToggleSwitch checked aria-labelledby="switchLabel" />
@@ -38,7 +36,7 @@ export const SegmentedControlScheme: ComponentStory<typeof ColorPreview> = () =>
     setSelectedIndex(selectedIndex)
   }
   return (
-    <div className="SegmentedControl" style={{display: 'flex', gap: '1rem'}}>
+    <div style={{display: 'flex', gap: '1rem'}}>
       <SegmentedControl aria-label="File view" onChange={handleSegmentChange}>
         <SegmentedControl.Button selected={selectedIndex === 0}>Preview</SegmentedControl.Button>
         <SegmentedControl.Button selected={selectedIndex === 1}>Raw</SegmentedControl.Button>
@@ -51,7 +49,6 @@ export const SegmentedControlScheme: ComponentStory<typeof ColorPreview> = () =>
 export const ActionListScheme: ComponentStory<typeof ColorPreview> = () => {
   return (
     <div style={{display: 'flex', gap: '1rem'}}>
-      <Box bg="canvas.default"></Box>
       <ActionList>
         <ActionList.Item>New file</ActionList.Item>
         <ActionList.Item>Copy link</ActionList.Item>
@@ -64,32 +61,86 @@ export const ActionListScheme: ComponentStory<typeof ColorPreview> = () => {
 }
 
 export const ButtonScheme: ComponentStory<typeof ColorPreview> = () => {
+  const count = 12
   return (
-    <div className="Button" style={{display: 'flex', gap: '1rem'}}>
+    <div className="Button" style={{display: 'flex', gap: '1rem', flexWrap: 'wrap'}}>
       <Button id="default">Default</Button>
+      <Button id="default">
+        Default
+        <Button.Counter>{count}</Button.Counter>
+      </Button>
+      <Button id="default" leadingIcon={HeartIcon} trailingIcon={EyeIcon}>
+        Default
+      </Button>
       <Button disabled id="default">
         Default
       </Button>
-      <Button id="invisible" variant="invisible">
+      <Button disabled id="default" leadingIcon={HeartIcon} trailingIcon={EyeIcon}>
         Default
+      </Button>
+      <Button id="invisible" variant="invisible">
+        Invisible
+      </Button>
+      <Button id="invisible" variant="invisible">
+        Invisible
+        <Button.Counter>{count}</Button.Counter>
+      </Button>
+      <Button id="invisible" variant="invisible" leadingIcon={HeartIcon} trailingIcon={EyeIcon}>
+        Invisible
+      </Button>
+      <Button id="invisible" disabled variant="invisible">
+        Invisible
+      </Button>
+      <Button id="invisible" disabled variant="invisible" leadingIcon={HeartIcon} trailingIcon={EyeIcon}>
+        Invisible
       </Button>
       <Button variant="primary" id="primary">
-        Default
+        Primary
+      </Button>
+      <Button variant="primary" id="primary">
+        Primary
+        <Button.Counter>{count}</Button.Counter>
+      </Button>
+      <Button variant="primary" id="primary" leadingIcon={HeartIcon} trailingIcon={EyeIcon}>
+        Primary
       </Button>
       <Button variant="primary" id="primary" disabled>
-        Default
+        Primary
+      </Button>
+      <Button variant="primary" id="primary" disabled leadingIcon={HeartIcon} trailingIcon={EyeIcon}>
+        Primary
       </Button>
       <Button variant="danger" id="danger">
-        Default
+        Danger
+      </Button>
+      <Button variant="danger" id="danger">
+        Danger
+        <Button.Counter>{count}</Button.Counter>
+      </Button>
+      <Button variant="danger" id="danger" leadingIcon={HeartIcon} trailingIcon={EyeIcon}>
+        Danger
       </Button>
       <Button variant="danger" id="danger" disabled>
-        Default
+        Danger
+      </Button>
+      <Button variant="danger" id="danger" disabled leadingIcon={HeartIcon} trailingIcon={EyeIcon}>
+        Danger
       </Button>
       <Button variant="outline" id="outline">
-        Default
+        Outline
+      </Button>
+      <Button variant="outline" id="outline">
+        Outline
+        <Button.Counter>{count}</Button.Counter>
+      </Button>
+      <Button variant="outline" id="outline" leadingIcon={HeartIcon} trailingIcon={EyeIcon}>
+        Outline
       </Button>
       <Button variant="outline" id="outline" disabled>
-        Default
+        Outline
+      </Button>
+      <Button variant="outline" id="outline" disabled leadingIcon={HeartIcon} trailingIcon={EyeIcon}>
+        Outline
       </Button>
     </div>
   )
@@ -97,7 +148,7 @@ export const ButtonScheme: ComponentStory<typeof ColorPreview> = () => {
 
 export const InputScheme: ComponentStory<typeof ColorPreview> = () => {
   return (
-    <div className="Input" style={{display: 'flex', gap: '1rem'}}>
+    <div style={{display: 'flex', gap: '1rem'}}>
       <TextInput aria-label="Zipcode" name="zipcode" placeholder="Zipcode" autoComplete="postal-code" />
       <TextInput disabled aria-label="Zipcode" name="zipcode" placeholder="Zipcode" autoComplete="postal-code" />
       <TextInput contrast aria-label="Zipcode" name="zipcode" placeholder="Find user" autoComplete="postal-code" />
