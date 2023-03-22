@@ -46,7 +46,7 @@
         },
       },
       disabled: {
-        $value: '{base.color.gray.0}',
+        $value: '{bgColor.disabled}',
         $type: 'color',
       },
       selected: {
@@ -150,6 +150,10 @@
     },
     danger: {
       fgColor: {
+        rest: {
+          $value: '{fgColor.danger}',
+          $type: 'color',
+        },
         hover: {
           $value: '{fgColor.danger}',
           $type: 'color',
@@ -159,20 +163,11 @@
         hover: {
           $value: '{bgColor.danger.muted}',
           $type: 'color',
-          alpha: 0.2,
-          mix: {
-            color: '{base.color.red.2}',
-            weight: 0.2,
-          },
         },
         active: {
           $value: '{bgColor.danger.muted}',
           $type: 'color',
           alpha: 0.4,
-          mix: {
-            color: '{base.color.red.2}',
-            weight: 0.4,
-          },
         },
       },
     },

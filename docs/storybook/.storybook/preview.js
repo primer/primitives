@@ -144,23 +144,35 @@ const tempTheme = deepmerge(theme, {
         },
         switchTrack: {
           bg: 'var(--controlTrack-bgColor-rest)',
+          hoverBg: 'var(--controlTrack-bgColor-hover)',
+          activeBg: 'var(--controlTrack-bgColor-active)',
+          disabledBg: 'var(--controlTrack-bgColor-disabled)',
+          fg: 'var(--controlTrack-fgColor-rest)',
+          disabledFg: 'var(--controlTrack-fgColor-disabled)',
           border: 'var(--controlTrack-borderColor-rest)',
           checked: {
             bg: 'var(--control-checked-bgColor-rest)',
             hoverBg: 'var(--control-checked-bgColor-hover)',
             activeBg: 'var(--control-checked-bgColor-active)',
             border: 'var(--transparent)',
+            fg: 'var(--control-checked-fgColor-rest)',
+            disabledFg: 'var(--control-checked-fgColor-disabled)',
           },
         },
         switchKnob: {
+          bg: 'var(--controlKnob-bgColor-rest)',
+          disabledBg: 'var(--controlKnob-bgColor-disabled)',
+          border: 'var(--controlKnob-borderColor-rest)',
           checked: {
             bg: 'var(--controlKnob-bgColor-checked)',
             disabledBg: 'var(--controlKnob-bgColor-disabled)',
+            border: 'var(--controlKnob-borderColor-checked)',
           },
         },
         segmentedControl: {
           bg: 'var(--controlTrack-bgColor-rest)',
           button: {
+            bg: 'var(--controlKnob-bgColor-rest)',
             hover: {
               bg: 'var(--controlTrack-bgColor-hover)',
             },

@@ -4,7 +4,7 @@ import './PatternOverrides.css'
 import type {ComponentMeta, ComponentStory} from '@storybook/react'
 import {ColorPreview} from '../../Components/ColorPreview'
 import {ToggleSwitch, SegmentedControl, ActionList, Button, TextInput, Checkbox, Radio} from '@primer/react'
-import {EyeIcon, TriangleDownIcon, HeartIcon} from '@primer/octicons-react'
+import {EyeIcon, HeartIcon} from '@primer/octicons-react'
 
 export default {
   title: 'Color/Patterns/Controls',
@@ -13,7 +13,7 @@ export default {
 export const ToggleSwitchScheme: ComponentStory<typeof ColorPreview> = () => {
   return (
     <>
-      <div style={{display: 'flex', gap: '1rem', padding: '2rem'}}>
+      <div className="ToggleSwitch" style={{display: 'flex', gap: '1rem', padding: '2rem'}}>
         <ToggleSwitch aria-labelledby="switchLabel" />
         <ToggleSwitch disabled aria-labelledby="switchLabel" />
         <ToggleSwitch checked aria-labelledby="switchLabel" />

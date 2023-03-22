@@ -47,7 +47,7 @@
         },
       },
       disabled: {
-        $value: '{base.color.gray.5}',
+        $value: '{bgColor.disabled}',
         $type: 'color',
       },
       selected: {
@@ -126,7 +126,7 @@
           alpha: 0.2,
         },
         disabled: {
-          $value: '{control.bgColor.disabled}',
+          $value: 'transparent',
           $type: 'color',
         },
         selected: {
@@ -152,8 +152,12 @@
     },
     danger: {
       fgColor: {
-        hover: {
+        rest: {
           $value: '{fgColor.danger}',
+          $type: 'color',
+        },
+        hover: {
+          $value: '{base.color.red.3}',
           $type: 'color',
         },
       },
@@ -161,20 +165,11 @@
         hover: {
           $value: '{bgColor.danger.muted}',
           $type: 'color',
-          alpha: 0.2,
-          mix: {
-            color: '{base.color.red.2}',
-            weight: 0.2,
-          },
         },
         active: {
           $value: '{bgColor.danger.muted}',
           $type: 'color',
           alpha: 0.4,
-          mix: {
-            color: '{base.color.red.2}',
-            weight: 0.4,
-          },
         },
       },
     },
@@ -238,22 +233,22 @@
   controlTrack: {
     bgColor: {
       rest: {
-        $value: '{base.color.gray.4}',
+        $value: '{base.color.gray.7}',
         $type: 'color',
       },
       hover: {
-        $value: '{base.color.gray.4}',
+        $value: '{base.color.gray.7}',
         $type: 'color',
         mix: {
-          color: '{base.color.gray.2}',
+          color: '{base.color.gray.5}',
           weight: 0.2,
         },
       },
       active: {
-        $value: '{base.color.gray.4}',
+        $value: '{base.color.gray.7}',
         $type: 'color',
         mix: {
-          color: '{base.color.gray.2}',
+          color: '{base.color.gray.5}',
           weight: 0.4,
         },
       },
@@ -268,7 +263,7 @@
         $type: 'color',
       },
       disabled: {
-        $value: '{fgColor.onEmphasis}',
+        $value: '{fgColor.secondary}',
         $type: 'color',
       },
     },
@@ -544,7 +539,7 @@
       },
       bgColor: {
         rest: {
-          $value: '{base.color.gray.0}',
+          $value: '{control.bgColor.rest}',
           $type: 'color',
         },
         hover: {
@@ -560,7 +555,7 @@
           },
         },
         disabled: {
-          $value: '{control.bgColor.disabled}',
+          $value: '{control.bgColor.rest}',
           $type: 'color',
         },
       },

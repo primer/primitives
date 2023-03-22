@@ -163,10 +163,14 @@
         hover: {
           $value: '{base.color.gray.1}',
           $type: 'color',
+          alpha: null,
+          mix: null,
         },
         active: {
           $value: '{base.color.gray.2}',
           $type: 'color',
+          alpha: null,
+          mix: null,
         },
         selected: {
           $value: '{base.color.gray.2}',
@@ -191,10 +195,13 @@
         hover: {
           $value: '{bgColor.danger.emphasis}',
           $type: 'color',
+          alpha: null,
+          mix: null,
         },
         active: {
           $value: '{bgColor.danger.emphasis}',
           $type: 'color',
+          alpha: null,
           mix: {
             color: '{base.color.red.7}',
             weight: 0.4,
@@ -206,22 +213,22 @@
   controlTrack: {
     bgColor: {
       rest: {
-        $value: '{base.color.gray.5}',
+        $value: '{base.color.gray.3}',
         $type: 'color',
       },
       hover: {
-        $value: '{base.color.gray.5}',
+        $value: '{base.color.gray.3}',
         $type: 'color',
         mix: {
-          color: '{base.color.gray.7}',
+          color: '{base.color.gray.5}',
           weight: 0.2,
         },
       },
       active: {
-        $value: '{base.color.gray.5}',
+        $value: '{base.color.gray.3}',
         $type: 'color',
         mix: {
-          color: '{base.color.gray.7}',
+          color: '{base.color.gray.5}',
           weight: 0.4,
         },
       },
@@ -232,7 +239,7 @@
     },
     fgColor: {
       rest: {
-        $value: '{fgColor.onEmphasis}',
+        $value: '{fgColor.default}',
         $type: 'color',
       },
     },

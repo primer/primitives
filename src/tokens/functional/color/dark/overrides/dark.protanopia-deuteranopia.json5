@@ -62,4 +62,15 @@
       },
     },
   },
+  button: {
+    primary: {
+      bgColor: {
+        disabled: {
+          $value: '{base.color.green.6}',
+          $type: 'color',
+          mix: null,
+        },
+      },
+    },
+  },
 }
