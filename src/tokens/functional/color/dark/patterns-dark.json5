@@ -407,14 +407,17 @@
         rest: {
           $value: '{borderColor.default}',
           $type: 'color',
+          alpha: 0.8,
         },
         hover: {
           $value: '{borderColor.default}',
           $type: 'color',
+          alpha: 0.8,
         },
         disabled: {
           $value: '{borderColor.default}',
           $type: 'color',
+          alpha: 0.8,
         },
       },
     },
