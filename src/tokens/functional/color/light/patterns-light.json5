@@ -406,14 +406,17 @@
         rest: {
           $value: '{borderColor.secondary}',
           $type: 'color',
+          alpha: 0.8,
         },
         hover: {
           $value: '{borderColor.secondary}',
           $type: 'color',
+          alpha: 0.8,
         },
         disabled: {
           $value: '{borderColor.secondary}',
           $type: 'color',
+          alpha: 0.8,
         },
       },
     },
