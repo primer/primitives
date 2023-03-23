@@ -1,5 +1,6 @@
 import React from 'react'
 import {CSSTokenSwatch} from '../Components/CSSTokenSwatch'
+import {CSSTokenShadowSwatch} from '../Components/CSSTokenShadowSwatch'
 // eslint-disable-next-line import/extensions
 import cssVars from './DeprecatedTokensMap.json'
 // eslint-disable-next-line import/extensions
@@ -86,14 +87,22 @@ export const DeprecatedShadows = () => {
             field: 'id',
             rowHeader: true,
             renderCell: row => {
-              return <CSSTokenSwatch color={row.id} shadow />
+              return (
+                <CSSTokenShadowSwatch shadow={row.id} color="bgColor-secondary" borderColor="borderColor-default" />
+              )
             },
           },
           {
             header: 'New',
-            field: 'box-shadow',
+            field: 'boxShadow',
             renderCell: row => {
-              return <CSSTokenSwatch color={row.boxShadow} shadow />
+              return (
+                <CSSTokenShadowSwatch
+                  shadow={row.boxShadow}
+                  color="bgColor-secondary"
+                  borderColor="borderColor-default"
+                />
+              )
             },
           },
         ]}

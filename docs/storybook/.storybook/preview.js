@@ -1,7 +1,6 @@
 import './preview.css'
 import clsx from 'clsx'
 import {ThemeProvider, theme} from '@primer/react'
-import {themes} from '@storybook/theming'
 import deepmerge from 'deepmerge'
 
 export const parameters = {
@@ -283,6 +282,33 @@ const tempTheme = deepmerge(theme, {
           },
         },
       },
+      shadows: {
+        avatar: {
+          childShadow: '',
+        },
+        btn: {
+          shadow: 'var(--shadow-resting-small)',
+          insetShadow: 'var(--shadow-highlight)',
+          primary: {
+            shadow: 'var(--shadow-resting-small)',
+            insetShadow: 'var(--shadow-highlight)',
+            selectedShadow: 'var()',
+          },
+          outline: {
+            shadow: 'var(--shadow-resting-small)',
+            hoverInsetShadow: 'var(--shadow-highlight)',
+            selectedShadow: 'var()',
+          },
+          danger: {
+            shadow: 'var(--shadow-resting-small)',
+            hoverInsetShadow: 'var(--shadow-highlight)',
+            selectedShadow: 'var()',
+          },
+        },
+        overlay: {
+          shadow: 'var()',
+        },
+      },
     },
   },
 })
@@ -292,30 +318,40 @@ export const decorators = [
     const {parameters} = context
     const defaultStoryType = 'swatch'
     const storyType = parameters.storyType || defaultStoryType
+    document.body.setAttribute('data-color-mode', context.globals.theme.startsWith('light') ? 'light' : 'dark')
+    document.body.setAttribute(
+      'data-light-theme',
+      context.globals.theme.startsWith('light') ? context.globals.theme : undefined,
+    )
+    document.body.setAttribute(
+      'data-dark-theme',
+      context.globals.theme.startsWith('dark') ? context.globals.theme : undefined,
+    )
     return (
       <ThemeProvider theme={tempTheme}>
-        <div className={context.globals.theme === 'all' && 'theme-wrap-grid'}>
-          {primerThemes.map(theme => {
-            if (context.globals.theme === theme || context.globals.theme === 'all') {
-              return (
-                <div
-                  id="story"
-                  className={clsx(
-                    context.globals.theme === 'all' && 'story-wrap-grid',
-                    'story-wrap',
-                    parameters.storyType === 'swatch' && 'SwatchDecorator',
-                  )}
-                  data-color-mode={theme.startsWith('dark') ? 'dark' : 'light'}
-                  data-light-theme={theme.startsWith('light') ? theme : undefined}
-                  data-dark-theme={theme.startsWith('dark') ? theme : undefined}
-                >
-                  <Story {...context} />
-                  {context.globals.theme === 'all' && <p className="theme-name">{theme}</p>}
-                </div>
-              )
-            }
-          })}
-        </div>
+        {context.globals.theme === 'all' ? (
+          primerThemes.map(theme => (
+            <div
+              key={theme}
+              id="story"
+              className={clsx(
+                context.globals.theme === 'all' && 'story-wrap-grid',
+                'story-wrap',
+                parameters.storyType === 'swatch' && 'SwatchDecorator',
+              )}
+              data-color-mode={theme.startsWith('dark') ? 'dark' : 'light'}
+              data-light-theme={theme.startsWith('light') ? theme : undefined}
+              data-dark-theme={theme.startsWith('dark') ? theme : undefined}
+            >
+              <Story {...context} />
+              {context.globals.theme === 'all' && <p className="theme-name">{theme}</p>}
+            </div>
+          ))
+        ) : (
+          <div className={clsx('story-wrap', parameters.storyType === 'swatch' && 'SwatchDecorator')}>
+            <Story {...context} />
+          </div>
+        )}
       </ThemeProvider>
     )
   },
