@@ -1,12 +1,16 @@
 {
   fgColor: {
     default: {
-      $value: '{base.color.gray.9}',
+      $value: '{base.color.black}',
       $type: 'color',
     },
     secondary: {
       $value: '{base.color.gray.6}',
       $type: 'color',
+      mix: {
+        color: '{base.color.gray.5}',
+        weight: 0.5,
+      },
     },
     onEmphasis: {
       $value: '{base.color.white}',
@@ -57,7 +61,7 @@
       $type: 'color',
     },
     open: {
-      $value: '{base.color.green.5}',
+      $value: '{fgColor.success}',
       $type: 'color',
     },
     closed: {
@@ -119,6 +123,10 @@
       emphasis: {
         $value: '{base.color.green.4}',
         $type: 'color',
+        mix: {
+          color: '{base.color.green.5}',
+          weight: 0.75,
+        },
       },
     },
     attention: {
@@ -153,11 +161,11 @@
     },
     open: {
       muted: {
-        $value: '{base.color.green.0}',
+        $value: '{bgColor.success.muted}',
         $type: 'color',
       },
       emphasis: {
-        $value: '{base.color.green.4}',
+        $value: '{bgColor.success.emphasis}',
         $type: 'color',
       },
     },
@@ -286,12 +294,11 @@
     },
     open: {
       muted: {
-        $value: '{base.color.green.3}',
+        $value: '{borderColor.success.muted}',
         $type: 'color',
-        alpha: 0.4,
       },
       emphasis: {
-        $value: '{base.color.green.4}',
+        $value: '{borderColor.success.emphasis}',
         $type: 'color',
       },
     },

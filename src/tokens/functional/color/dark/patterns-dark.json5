@@ -375,11 +375,11 @@
       },
       bgColor: {
         rest: {
-          $value: '{base.color.green.5}',
+          $value: '{bgColor.success.emphasis}',
           $type: 'color',
         },
         hover: {
-          $value: '{base.color.green.5}',
+          $value: '{bgColor.success.emphasis}',
           $type: 'color',
           mix: {
             color: '{base.color.green.3}',
@@ -387,7 +387,7 @@
           },
         },
         active: {
-          $value: '{base.color.green.5}',
+          $value: '{bgColor.success.emphasis}',
           $type: 'color',
           mix: {
             color: '{base.color.green.3}',
