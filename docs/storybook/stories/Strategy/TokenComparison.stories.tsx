@@ -3,6 +3,8 @@ import {CSSTokenSwatch} from '../Components/CSSTokenSwatch'
 // eslint-disable-next-line import/extensions
 import cssVars from './DeprecatedTokensMap.json'
 // eslint-disable-next-line import/extensions
+import cssShadowVars from './DeprecatedShadowTokensMap.json'
+// eslint-disable-next-line import/extensions
 import noChangeCssVars from './NoChangeTokensMap.json'
 import {DataTable, Table} from '@primer/react/drafts'
 
@@ -54,6 +56,44 @@ export const Deprecated = () => {
             field: 'border',
             renderCell: row => {
               return <CSSTokenSwatch color={row.border} />
+            },
+          },
+        ]}
+      />
+    </Table.Container>
+  )
+}
+
+export const DeprecatedShadows = () => {
+  const data = Object.entries(cssShadowVars).map(([key, value]) => {
+    return {
+      id: key,
+      ...value,
+    }
+  })
+  return (
+    <Table.Container>
+      <Table.Title as="h2" id="repositories">
+        Deprecated token replacements
+      </Table.Title>
+      <DataTable
+        aria-labelledby="repositories"
+        aria-describedby="repositories-subtitle"
+        data={data}
+        columns={[
+          {
+            header: 'Old',
+            field: 'id',
+            rowHeader: true,
+            renderCell: row => {
+              return <CSSTokenSwatch color={row.id} shadow />
+            },
+          },
+          {
+            header: 'New',
+            field: 'box-shadow',
+            renderCell: row => {
+              return <CSSTokenSwatch color={row.boxShadow} shadow />
             },
           },
         ]}
