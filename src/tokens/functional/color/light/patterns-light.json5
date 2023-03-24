@@ -5,7 +5,7 @@
       $type: 'color',
     },
     borderColor: {
-      $value: '{borderColor.secondary}',
+      $value: '{borderColor.muted}',
       $type: 'color',
     },
   },
@@ -16,7 +16,7 @@
           $value: '{base.color.gray.3}',
           $type: 'color',
         },
-        secondary: {
+        muted: {
           $value: '{base.color.gray.2}',
           $type: 'color',
         },
@@ -104,7 +104,7 @@
     },
     iconColor: {
       rest: {
-        $value: '{fgColor.secondary}',
+        $value: '{fgColor.muted}',
         $type: 'color',
       },
     },
@@ -257,7 +257,7 @@
     },
     fgColor: {
       rest: {
-        $value: '{fgColor.secondary}',
+        $value: '{fgColor.muted}',
         $type: 'color',
       },
       disabled: {
@@ -340,15 +340,15 @@
       },
       borderColor: {
         rest: {
-          $value: '{borderColor.secondary}',
+          $value: '{borderColor.muted}',
           $type: 'color',
         },
         hover: {
-          $value: '{borderColor.secondary}',
+          $value: '{borderColor.muted}',
           $type: 'color',
         },
         active: {
-          $value: '{borderColor.secondary}',
+          $value: '{borderColor.muted}',
           $type: 'color',
         },
       },
@@ -404,17 +404,17 @@
       },
       borderColor: {
         rest: {
-          $value: '{borderColor.secondary}',
+          $value: '{borderColor.muted}',
           $type: 'color',
           alpha: 0.8,
         },
         hover: {
-          $value: '{borderColor.secondary}',
+          $value: '{borderColor.muted}',
           $type: 'color',
           alpha: 0.8,
         },
         disabled: {
-          $value: '{borderColor.secondary}',
+          $value: '{borderColor.muted}',
           $type: 'color',
           alpha: 0.8,
         },
@@ -504,11 +504,11 @@
       },
       borderColor: {
         hover: {
-          $value: '{borderColor.secondary}',
+          $value: '{borderColor.muted}',
           $type: 'color',
         },
         active: {
-          $value: '{borderColor.secondary}',
+          $value: '{borderColor.muted}',
           $type: 'color',
         },
       },
@@ -567,15 +567,15 @@
       },
       borderColor: {
         rest: {
-          $value: '{borderColor.secondary}',
+          $value: '{borderColor.muted}',
           $type: 'color',
         },
         hover: {
-          $value: '{borderColor.secondary}',
+          $value: '{borderColor.muted}',
           $type: 'color',
         },
         active: {
-          $value: '{borderColor.secondary}',
+          $value: '{borderColor.muted}',
           $type: 'color',
         },
       },
@@ -745,7 +745,7 @@
     },
     iconColor: {
       rest: {
-        $value: '{fgColor.secondary}',
+        $value: '{fgColor.muted}',
         $type: 'color',
       },
     },

@@ -1,6 +1,6 @@
 /* eslint @typescript-eslint/consistent-type-imports: 0 */
 import React from 'react'
-import '../Color/Patterns/PatternOverrides.css'
+import './PatternOverrides.css'
 import type {ComponentMeta, ComponentStory} from '@storybook/react'
 import {ColorPreview} from '../Components/ColorPreview'
 import {SegmentedControl, ActionList} from '@primer/react'

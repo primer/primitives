@@ -1,16 +1,14 @@
 /* eslint @typescript-eslint/consistent-type-imports: 0 */
 import React from 'react'
 import './PatternOverrides.css'
-import type {ComponentMeta, ComponentStory} from '@storybook/react'
-import {ColorPreview} from '../../Components/ColorPreview'
 import {ToggleSwitch, SegmentedControl, ActionList, Button, TextInput, Checkbox, Radio} from '@primer/react'
 import {EyeIcon, HeartIcon} from '@primer/octicons-react'
 
 export default {
-  title: 'Color/Patterns/Controls',
-} as ComponentMeta<typeof ColorPreview>
+  title: 'Demos/Controls',
+}
 
-export const ToggleSwitchScheme: ComponentStory<typeof ColorPreview> = () => {
+export const ToggleSwitchScheme = () => {
   return (
     <>
       <div className="ToggleSwitch" style={{display: 'flex', gap: '1rem', padding: '2rem'}}>
@@ -29,7 +27,7 @@ export const ToggleSwitchScheme: ComponentStory<typeof ColorPreview> = () => {
   )
 }
 
-export const SegmentedControlScheme: ComponentStory<typeof ColorPreview> = () => {
+export const SegmentedControlScheme = () => {
   const [selectedIndex, setSelectedIndex] = React.useState(0)
 
   const handleSegmentChange = (selectedIndex: React.SetStateAction<number>) => {
@@ -46,7 +44,7 @@ export const SegmentedControlScheme: ComponentStory<typeof ColorPreview> = () =>
   )
 }
 
-export const ActionListScheme: ComponentStory<typeof ColorPreview> = () => {
+export const ActionListScheme = () => {
   return (
     <div style={{display: 'flex', gap: '1rem'}}>
       <ActionList>
@@ -60,7 +58,7 @@ export const ActionListScheme: ComponentStory<typeof ColorPreview> = () => {
   )
 }
 
-export const ButtonScheme: ComponentStory<typeof ColorPreview> = () => {
+export const ButtonScheme = () => {
   const count = 12
   return (
     <div className="Button" style={{display: 'flex', gap: '1rem', flexWrap: 'wrap'}}>
@@ -146,7 +144,7 @@ export const ButtonScheme: ComponentStory<typeof ColorPreview> = () => {
   )
 }
 
-export const InputScheme: ComponentStory<typeof ColorPreview> = () => {
+export const InputScheme = () => {
   return (
     <div style={{display: 'flex', gap: '1rem'}}>
       <TextInput aria-label="Zipcode" name="zipcode" placeholder="Zipcode" autoComplete="postal-code" />

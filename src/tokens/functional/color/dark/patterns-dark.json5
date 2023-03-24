@@ -17,7 +17,7 @@
           $value: '{base.color.gray.6}',
           $type: 'color',
         },
-        secondary: {
+        muted: {
           $value: '{base.color.gray.7}',
           $type: 'color',
         },
@@ -105,7 +105,7 @@
     },
     iconColor: {
       rest: {
-        $value: '{fgColor.secondary}',
+        $value: '{fgColor.muted}',
         $type: 'color',
       },
     },
@@ -259,11 +259,11 @@
     },
     fgColor: {
       rest: {
-        $value: '{fgColor.secondary}',
+        $value: '{fgColor.muted}',
         $type: 'color',
       },
       disabled: {
-        $value: '{fgColor.secondary}',
+        $value: '{fgColor.muted}',
         $type: 'color',
       },
     },
@@ -501,11 +501,11 @@
       },
       borderColor: {
         hover: {
-          $value: '{borderColor.secondary}',
+          $value: '{borderColor.muted}',
           $type: 'color',
         },
         selected: {
-          $value: '{borderColor.secondary}',
+          $value: '{borderColor.muted}',
           $type: 'color',
         },
       },
@@ -724,7 +724,7 @@
     leadingVisual: {
       bgColor: {
         rest: {
-          $value: '{fgColor.secondary}',
+          $value: '{fgColor.muted}',
           $type: 'color',
         },
       },
@@ -743,7 +743,7 @@
     },
     iconColor: {
       rest: {
-        $value: '{fgColor.secondary}',
+        $value: '{fgColor.muted}',
         $type: 'color',
       },
     },

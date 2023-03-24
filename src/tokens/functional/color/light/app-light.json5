@@ -16,7 +16,7 @@
   page: {
     header: {
       bgColor: {
-        $value: '{bgColor.secondary}',
+        $value: '{bgColor.muted}',
         $type: 'color',
       },
     },
@@ -90,7 +90,7 @@
     },
     expander: {
       iconColor: {
-        $value: '{fgColor.secondary}',
+        $value: '{fgColor.muted}',
         $type: 'color',
       },
     },
@@ -124,15 +124,15 @@
           $value: '{bgColor.default}',
           $type: 'color',
         },
-        secondary: {
-          $value: '{fgColor.secondary}',
+        muted: {
+          $value: '{fgColor.muted}',
           $type: 'color',
         },
       },
     },
     lineNumber: {
       fgColor: {
-        $value: '{fgColor.secondary}',
+        $value: '{fgColor.muted}',
         $type: 'color',
       },
     },
