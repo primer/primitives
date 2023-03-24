@@ -284,29 +284,29 @@ const tempTheme = deepmerge(theme, {
       },
       shadows: {
         avatar: {
-          childShadow: '',
+          childShadow: 'var(--avatar-shadow)',
         },
         btn: {
-          shadow: 'var(--shadow-resting-small)',
-          insetShadow: 'var(--shadow-highlight)',
+          shadow: 'var(--button-default-shadow-rest)',
+          insetShadow: 'var(--button-default-shadow-inset)',
           primary: {
             shadow: 'var(--shadow-resting-small)',
             insetShadow: 'var(--shadow-highlight)',
-            selectedShadow: 'var()',
+            selectedShadow: 'var(--button-primary-shadow-selected)',
           },
           outline: {
             shadow: 'var(--shadow-resting-small)',
             hoverInsetShadow: 'var(--shadow-highlight)',
-            selectedShadow: 'var()',
+            selectedShadow: 'var(--button-outline-shadow-selected)',
           },
           danger: {
             shadow: 'var(--shadow-resting-small)',
             hoverInsetShadow: 'var(--shadow-highlight)',
-            selectedShadow: 'var()',
+            selectedShadow: 'var(--button-danger-shadow-selected)',
           },
         },
         overlay: {
-          shadow: 'var()',
+          shadow: 'var(--shadow-floating-small)',
         },
       },
     },

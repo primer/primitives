@@ -1,24 +1,103 @@
 {
-  overlay: {
+  avatar: {
     shadow: {
       $value: [
         {
-          color: '{base.color.gray.6}',
-          alpha: 0.85,
-          offsetX: '0px',
-          offsetY: '0px',
+          color: '{base.color.gray.9}',
+          alpha: 1,
+          offsetX: '-2px',
+          offsetY: '-2px',
           blur: '0px',
-          spread: '1px',
-        },
-        {
-          color: '{base.color.gray.4}',
-          offsetX: '0px',
-          offsetY: '16px',
-          blur: '32px',
           spread: '0px',
         },
       ],
       $type: 'shadow',
+    },
+  },
+  button: {
+    default: {
+      shadow: {
+        rest: {
+          $value: [
+            {
+              color: 'transparent',
+              alpha: 0,
+              offsetX: '0px',
+              offsetY: '0px',
+              blur: '0px',
+              spread: '0px',
+              inset: false,
+            },
+          ],
+          $type: 'shadow',
+        },
+        inset: {
+          $value: {
+            color: 'transparent',
+            alpha: 0,
+            offsetX: '0px',
+            offsetY: '0px',
+            blur: '0px',
+            spread: '0px',
+            inset: false,
+          },
+          $type: 'shadow',
+        },
+      },
+    },
+    primary: {
+      shadow: {
+        selected: {
+          $value: [
+            {
+              color: 'transparent',
+              alpha: 0,
+              offsetX: '0px',
+              offsetY: '0px',
+              blur: '0px',
+              spread: '0px',
+              inset: false,
+            },
+          ],
+          $type: 'shadow',
+        },
+      },
+    },
+    outline: {
+      shadow: {
+        selected: {
+          $value: [
+            {
+              color: 'transparent',
+              alpha: 0,
+              offsetX: '0px',
+              offsetY: '0px',
+              blur: '0px',
+              spread: '0px',
+              inset: false,
+            },
+          ],
+          $type: 'shadow',
+        },
+      },
+    },
+    danger: {
+      shadow: {
+        selected: {
+          $value: [
+            {
+              color: 'transparent',
+              alpha: 0,
+              offsetX: '0px',
+              offsetY: '0px',
+              blur: '0px',
+              spread: '0px',
+              inset: false,
+            },
+          ],
+          $type: 'shadow',
+        },
+      },
     },
   },
   shadow: {
