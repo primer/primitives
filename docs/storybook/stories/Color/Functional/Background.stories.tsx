@@ -8,7 +8,7 @@ export default {
   },
 }
 
-const bgColors = ['bgColor-default', 'bgColor-secondary', 'bgColor-disabled']
+const bgColors = ['bgColor-default', 'bgColor-muted', 'bgColor-disabled']
 
 export const Background = () => {
   return (

@@ -27,7 +27,7 @@ export const CSSTokenShadowSwatch = ({color, shadow, borderColor}: CSSTokenSwatc
   return (
     <div className="TokenSwatch">
       <div
-        className="TokenSwatch--color"
+        className="TokenSwatch--shadow"
         style={{
           backgroundColor: color ? `var(--${color})` : undefined,
           border: borderColor ? `solid 1px var(--${borderColor})` : undefined,

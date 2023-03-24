@@ -1,5 +1,5 @@
 /* eslint @typescript-eslint/consistent-type-imports: 0 */
-import React, {useState, useRef} from 'react'
+import React from 'react'
 import {ActionMenu, ActionList} from '@primer/react'
 
 export default {

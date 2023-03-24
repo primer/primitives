@@ -3,7 +3,7 @@
 }
 
 .ActionList.alt [data-component='ActionList.Divider'] {
-  background-color: var(--borderColor-secondary);
+  background-color: var(--borderColor-muted);
 }
 
 .ActionList li:not(:first-of-type) {
@@ -11,7 +11,7 @@
 }
 
 .ActionList.alt li:not(:first-of-type) {
-  --divider-color: var(--borderColor-secondary);
+  --divider-color: var(--borderColor-muted);
 }
 
 .SegmentedControl .jZGQTK {
@@ -19,7 +19,7 @@
 }
 
 .SegmentedControl.alt .jZGQTK {
-  --separator-color: var(--borderColor-secondary);
+  --separator-color: var(--borderColor-muted);
 }
 
 .Button button[id='invisible']:hover:not(:disabled) {

@@ -12,7 +12,7 @@ export default {
 } as ComponentMeta<typeof ColorPreview>
 
 export const Avatar: ComponentStory<typeof ColorPreview> = () => {
-  const bgColors = ['avatar-bgColor', 'avatarStack-fade-bgColor-default', 'avatarStack-fade-bgColor-secondary']
+  const bgColors = ['avatar-bgColor', 'avatarStack-fade-bgColor-default', 'avatarStack-fade-bgColor-muted']
   const borderColors = ['avatar-borderColor']
 
   return (

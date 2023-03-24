@@ -10,7 +10,7 @@ export default {
 
 const borderColors = [
   'borderColor-default',
-  'borderColor-secondary',
+  'borderColor-muted',
   'borderColor-decorative',
   'borderColor-emphasis',
   'borderColor-disabled',

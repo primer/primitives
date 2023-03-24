@@ -48,7 +48,7 @@ const tempTheme = deepmerge(theme, {
           bg: 'var(--avatar-bgColor)',
           border: 'var(--avatar-borderColor)',
           stackFade: 'var(--avatarStack-fade-bgColor-default)',
-          stackFadeMore: 'var(--avatarStack-fade-bgColor-secondary)',
+          stackFadeMore: 'var(--avatarStack-fade-bgColor-muted)',
         },
         topicTag: {
           border: 'var(--topicTag-borderColor)',
@@ -193,20 +193,20 @@ const tempTheme = deepmerge(theme, {
         },
         fg: {
           default: 'var(--fgColor-default)',
-          muted: 'var(--fgColor-secondary)',
-          subtle: 'var(--fgColor-secondary)',
+          muted: 'var(--fgColor-muted)',
+          subtle: 'var(--fgColor-muted)',
           onEmphasis: 'var(--fgColor-onEmphasis)',
         },
         canvas: {
           default: 'var(--bgColor-default)',
           overlay: 'var(--overlay-bgColor)',
-          inset: 'var(--bgColor-secondary)',
-          subtle: 'var(--bgColor-secondary)',
+          inset: 'var(--bgColor-muted)',
+          subtle: 'var(--bgColor-muted)',
         },
         border: {
           default: 'var(--borderColor-default)',
-          muted: 'var(--borderColor-secondary)',
-          subtle: 'var(--borderColor-secondary)',
+          muted: 'var(--borderColor-muted)',
+          subtle: 'var(--borderColor-muted)',
         },
         neutral: {
           emphasisPlus: 'var(--bgColor-emphasis)',
@@ -278,7 +278,7 @@ const tempTheme = deepmerge(theme, {
           },
           border: {
             active: 'var(--underlineNav-borderColor-active)',
-            contrast: 'var(--borderColor-secondary)',
+            contrast: 'var(--borderColor-muted)',
           },
         },
       },
@@ -287,7 +287,7 @@ const tempTheme = deepmerge(theme, {
           childShadow: 'var(--avatar-shadow)',
         },
         btn: {
-          shadow: 'var(--button-default-shadow-rest)',
+          shadow: 'var(--button-default-shadow-resting)',
           insetShadow: 'var(--button-default-shadow-inset)',
           primary: {
             shadow: 'var(--shadow-resting-small)',

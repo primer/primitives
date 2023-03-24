@@ -19,7 +19,7 @@ export const ToggleSwitchScheme: ComponentStory<typeof ColorPreview> = () => {
         <ToggleSwitch checked aria-labelledby="switchLabel" />
         <ToggleSwitch checked disabled aria-labelledby="switchLabel" />
       </div>
-      <div style={{display: 'flex', gap: '1rem', padding: '2rem', backgroundColor: 'var(--bgColor-secondary)'}}>
+      <div style={{display: 'flex', gap: '1rem', padding: '2rem', backgroundColor: 'var(--bgColor-muted)'}}>
         <ToggleSwitch aria-labelledby="switchLabel" />
         <ToggleSwitch disabled aria-labelledby="switchLabel" />
         <ToggleSwitch checked aria-labelledby="switchLabel" />

@@ -64,7 +64,7 @@ export const Borders: ComponentStory<typeof ColorPreview> = () => {
                 <ActionList.Item variant="danger">Danger</ActionList.Item>
               </ActionList>
             </div>
-            <CSSTokenSwatch color="borderColor-secondary" />
+            <CSSTokenSwatch color="borderColor-muted" />
           </div>
         </div>
       </div>
