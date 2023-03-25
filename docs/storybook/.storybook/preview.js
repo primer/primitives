@@ -4,6 +4,7 @@ import clsx from 'clsx'
 const preview = {
   parameters: {
     actions: {argTypesRegex: '^on[A-Z].*'},
+    backgrounds: {disable: true},
     layout: 'fullscreen',
     controls: {
       matchers: {
@@ -30,8 +31,8 @@ export const globalTypes = {
     description: 'Switch themes',
     defaultValue: 'light',
     toolbar: {
-      icon: 'circlehollow',
-      items: [...themes, 'all'],
+      icon: 'contrast',
+      items: [...primerThemes, 'all'],
       showName: true,
     },
   },
