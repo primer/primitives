@@ -52,7 +52,7 @@ export const Borders: ComponentStory<typeof ColorPreview> = () => {
                 <ActionList.Item variant="danger">Danger</ActionList.Item>
               </ActionList>
             </div>
-            <CSSTokenSwatch color="borderColor-decorative" />
+            <CSSTokenSwatch color="borderColor-muted" />
           </div>
           <div style={{display: 'flex', flexDirection: 'column', gap: '1rem'}}>
             <div className="ActionList alt" style={{display: 'flex', gap: '1rem'}}>

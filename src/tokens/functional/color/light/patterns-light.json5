@@ -5,7 +5,7 @@
       $type: 'color',
     },
     borderColor: {
-      $value: '{borderColor.muted}',
+      $value: '{borderColor.default}',
       $type: 'color',
     },
   },
@@ -340,15 +340,15 @@
       },
       borderColor: {
         rest: {
-          $value: '{borderColor.muted}',
+          $value: '{borderColor.default}',
           $type: 'color',
         },
         hover: {
-          $value: '{borderColor.muted}',
+          $value: '{borderColor.default}',
           $type: 'color',
         },
         active: {
-          $value: '{borderColor.muted}',
+          $value: '{borderColor.default}',
           $type: 'color',
         },
       },
@@ -504,11 +504,11 @@
       },
       borderColor: {
         hover: {
-          $value: '{borderColor.muted}',
+          $value: '{borderColor.default}',
           $type: 'color',
         },
         active: {
-          $value: '{borderColor.muted}',
+          $value: '{borderColor.default}',
           $type: 'color',
         },
       },
@@ -567,15 +567,15 @@
       },
       borderColor: {
         rest: {
-          $value: '{borderColor.muted}',
+          $value: '{borderColor.default}',
           $type: 'color',
         },
         hover: {
-          $value: '{borderColor.muted}',
+          $value: '{borderColor.default}',
           $type: 'color',
         },
         active: {
-          $value: '{borderColor.muted}',
+          $value: '{borderColor.default}',
           $type: 'color',
         },
       },

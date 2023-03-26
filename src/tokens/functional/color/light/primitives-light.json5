@@ -206,14 +206,6 @@
       $type: 'color',
     },
     muted: {
-      $value: '{base.color.gray.2}',
-      $type: 'color',
-      mix: {
-        color: '{base.color.gray.0}',
-        weight: 0.2,
-      },
-    },
-    decorative: {
       $value: '{borderColor.default}',
       $type: 'color',
       alpha: 0.4,

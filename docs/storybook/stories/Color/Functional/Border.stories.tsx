@@ -8,13 +8,7 @@ export default {
   },
 }
 
-const borderColors = [
-  'borderColor-default',
-  'borderColor-muted',
-  'borderColor-decorative',
-  'borderColor-emphasis',
-  'borderColor-disabled',
-]
+const borderColors = ['borderColor-default', 'borderColor-muted', 'borderColor-emphasis', 'borderColor-disabled']
 
 export const Border = () => {
   return (
