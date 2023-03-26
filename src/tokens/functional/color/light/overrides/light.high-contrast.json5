@@ -8,6 +8,7 @@
     muted: {
       $value: '{base.color.gray.9}',
       $type: 'color',
+      mix: null,
     },
     danger: {
       $value: '{base.color.red.6}',
@@ -27,6 +28,7 @@
       muted: {
         $value: '{base.color.gray.1}',
         $type: 'color',
+        alpha: 1,
       },
     },
     disabled: {
@@ -37,6 +39,7 @@
       emphasis: {
         $value: '{base.color.green.5}',
         $type: 'color',
+        mix: null,
       },
     },
     attention: {
@@ -54,17 +57,20 @@
     muted: {
       $value: '{base.color.gray.4}',
       $type: 'color',
+      alpha: 1,
     },
     accent: {
       muted: {
         $value: '{base.color.blue.3}',
         $type: 'color',
+        alpha: 1,
       },
     },
     success: {
       muted: {
         $value: '{base.color.green.3}',
         $type: 'color',
+        alpha: 1,
       },
       emphasis: {
         $value: '{base.color.green.5}',
@@ -75,6 +81,7 @@
       muted: {
         $value: '{base.color.yellow.3}',
         $type: 'color',
+        alpha: 1,
       },
       emphasis: {
         $value: '{base.color.yellow.5}',
@@ -85,24 +92,28 @@
       muted: {
         $value: '{base.color.orange.3}',
         $type: 'color',
+        alpha: 1,
       },
     },
     danger: {
       muted: {
         $value: '{base.color.red.3}',
         $type: 'color',
+        alpha: 1,
       },
     },
     done: {
       muted: {
         $value: '{base.color.purple.3}',
         $type: 'color',
+        alpha: 1,
       },
     },
     sponsors: {
       muted: {
         $value: '{base.color.pink.3}',
         $type: 'color',
+        alpha: 1,
       },
     },
   },
@@ -150,6 +161,7 @@
       emphasis: {
         $value: '{borderColor.default}',
         $type: 'color',
+        mix: null,
       },
     },
     transparent: {
@@ -282,10 +294,12 @@
         rest: {
           $value: '{base.color.green.7}',
           $type: 'color',
+          alpha: 1,
         },
         hover: {
           $value: '{base.color.green.7}',
           $type: 'color',
+          alpha: 1,
         },
       },
     },

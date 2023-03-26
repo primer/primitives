@@ -12,6 +12,8 @@
     muted: {
       $value: '{base.color.gray.1}',
       $type: 'color',
+      mix: null,
+      alpha: 1,
     },
   },
   bgColor: {
@@ -34,6 +36,7 @@
     muted: {
       $value: '{base.color.gray.5}',
       $type: 'color',
+      alpha: 1,
     },
     neutral: {
       emphasis: {
@@ -45,42 +48,49 @@
       muted: {
         $value: '{base.color.blue.4}',
         $type: 'color',
+        alpha: 1,
       },
     },
     success: {
       muted: {
         $value: '{base.color.green.4}',
         $type: 'color',
+        alpha: 1,
       },
     },
     attention: {
       muted: {
         $value: '{base.color.yellow.4}',
         $type: 'color',
+        alpha: 1,
       },
     },
     severe: {
       muted: {
         $value: '{base.color.orange.4}',
         $type: 'color',
+        alpha: 1,
       },
     },
     danger: {
       muted: {
         $value: '{base.color.red.4}',
         $type: 'color',
+        alpha: 1,
       },
     },
     done: {
       muted: {
         $value: '{base.color.purple.4}',
         $type: 'color',
+        alpha: 1,
       },
     },
     sponsors: {
       muted: {
         $value: '{base.color.pink.4}',
         $type: 'color',
+        alpha: 1,
       },
     },
   },
@@ -109,6 +119,7 @@
       emphasis: {
         $value: '{borderColor.emphasis}',
         $type: 'color',
+        mix: null,
       },
     },
     transparent: {
@@ -116,14 +127,17 @@
         hover: {
           $value: '{base.color.gray.8}',
           $type: 'color',
+          alpha: 1,
         },
         active: {
           $value: '{base.color.gray.6}',
           $type: 'color',
+          alpha: 1,
         },
         selected: {
           $value: '{base.color.gray.6}',
           $type: 'color',
+          alpha: 1,
         },
       },
       borderColor: {
@@ -152,6 +166,7 @@
         active: {
           $value: '{bgColor.danger.emphasis}',
           $type: 'color',
+          alpha: 1,
           mix: {
             color: '{base.color.red.7}',
             weight: 0.4,
@@ -180,11 +195,11 @@
           $type: 'color',
           alpha: 0.5,
         },
-        iconColor: {
-          rest: {
-            $value: '{fgColor.onEmphasis}',
-            $type: 'color',
-          },
+      },
+      iconColor: {
+        rest: {
+          $value: '{fgColor.onEmphasis}',
+          $type: 'color',
         },
       },
       bgColor: {
@@ -201,10 +216,12 @@
         rest: {
           $value: '{base.color.green.2}',
           $type: 'color',
+          alpha: 1,
         },
         hover: {
           $value: '{base.color.green.2}',
           $type: 'color',
+          alpha: 1,
         },
         disabled: {
           $value: '{base.color.green.2}',
