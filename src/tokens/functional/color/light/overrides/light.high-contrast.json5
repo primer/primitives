@@ -4,57 +4,38 @@
  * @description All overwrites for functional color tokens for light high contrast color mode are in this file
  */
 {
-  color: {
-    fg: {
-      muted: {
-        $value: '{base.color.gray.9}',
-        $type: 'color',
-      },
+  fgColor: {
+    muted: {
+      $value: '{base.color.gray.9}',
+      $type: 'color',
     },
-    canvas: {
-      inset: {
-        $value: '{base.color.white}',
-        $type: 'color',
-      },
-      subtle: {
-        $value: '{base.color.gray.1}',
-        $type: 'color',
-      },
-    },
-    border: {
-      default: {
-        $value: '{base.color.gray.8}',
-        $type: 'color',
-      },
-      muted: {
-        $value: '{base.color.gray.4}',
-        $type: 'color',
-      },
-      subtle: {
-        $value: '{base.color.black}',
-        $type: 'color',
-        alpha: 0.8,
-      },
-    },
-    neutral: {
-      subtle: {
-        $value: '{base.color.gray.1}',
-        $type: 'color',
-      },
+    danger: {
+      $value: '{base.color.red.6}',
+      $type: 'color',
     },
     accent: {
+      $value: '{base.color.blue.6}',
+      $type: 'color',
+    },
+  },
+  bgColor: {
+    muted: {
+      $value: '{base.color.gray.1}',
+      $type: 'color',
+    },
+    neutral: {
       muted: {
-        $value: '{base.color.blue.3}',
+        $value: '{base.color.gray.1}',
         $type: 'color',
       },
+    },
+    disabled: {
+      $value: '{base.color.gray.1}',
+      $type: 'color',
     },
     success: {
       emphasis: {
         $value: '{base.color.green.5}',
-        $type: 'color',
-      },
-      muted: {
-        $value: '{base.color.green.3}',
         $type: 'color',
       },
     },
@@ -63,8 +44,46 @@
         $value: '{base.color.yellow.5}',
         $type: 'color',
       },
+    },
+  },
+  borderColor: {
+    default: {
+      $value: '{base.color.gray.8}',
+      $type: 'color',
+    },
+    muted: {
+      $value: '{base.color.gray.4}',
+      $type: 'color',
+      // mix: null,
+    },
+    decorative: {
+      $value: '{base.color.gray.4}',
+      $type: 'color',
+      alpha: 1,
+    },
+    accent: {
+      muted: {
+        $value: '{base.color.blue.3}',
+        $type: 'color',
+      },
+    },
+    success: {
+      muted: {
+        $value: '{base.color.green.3}',
+        $type: 'color',
+      },
+      emphasis: {
+        $value: '{base.color.green.5}',
+        $type: 'color',
+      },
+    },
+    attention: {
       muted: {
         $value: '{base.color.yellow.3}',
+        $type: 'color',
+      },
+      emphasis: {
+        $value: '{base.color.yellow.5}',
         $type: 'color',
       },
     },
@@ -92,240 +111,237 @@
         $type: 'color',
       },
     },
-    topicTag: {
-      border: {
-        $value: '{color.accent.emphasis}',
-        $type: 'color',
-      },
+  },
+  // patterns
+  topicTag: {
+    borderColor: {
+      $value: '{borderColor.accent.emphasis}',
+      $type: 'color',
     },
-    counter: {
-      border: {
-        $value: '{color.border.default}',
-        $type: 'color',
-      },
+  },
+  counter: {
+    borderColor: {
+      $value: '{borderColor.default}',
+      $type: 'color',
     },
-    btn: {
-      bg: {
+  },
+  control: {
+    bgColor: {
+      rest: {
         $value: '{base.color.gray.1}',
         $type: 'color',
       },
-      border: {
-        $value: '{color.border.subtle}',
+      hover: {
+        $value: '{base.color.gray.1}',
+        $type: 'color',
+        mix: {
+          color: '{base.color.gray.3}',
+          weight: 0.2,
+        },
+      },
+      active: {
+        $value: '{base.color.gray.1}',
+        $type: 'color',
+        mix: {
+          color: '{base.color.gray.3}',
+          weight: 0.4,
+        },
+      },
+      selected: {
+        $value: '{base.color.gray.3}',
+        $type: 'color',
+      },
+    },
+    borderColor: {
+      emphasis: {
+        $value: '{borderColor.default}',
+        $type: 'color',
+      },
+    },
+    transparent: {
+      bgColor: {
+        hover: {
+          $value: '{base.color.gray.1}',
+          $type: 'color',
+          alpha: null,
+          mix: null,
+        },
+        active: {
+          $value: '{base.color.gray.2}',
+          $type: 'color',
+          alpha: null,
+          mix: null,
+        },
+        selected: {
+          $value: '{base.color.gray.2}',
+          $type: 'color',
+        },
+      },
+      borderColor: {
+        hover: {
+          $value: '{borderColor.default}',
+          $type: 'color',
+        },
+      },
+    },
+    danger: {
+      fgColor: {
+        hover: {
+          $value: '{fgColor.onEmphasis}',
+          $type: 'color',
+        },
+      },
+      bgColor: {
+        hover: {
+          $value: '{bgColor.danger.emphasis}',
+          $type: 'color',
+          alpha: null,
+          mix: null,
+        },
+        active: {
+          $value: '{bgColor.danger.emphasis}',
+          $type: 'color',
+          alpha: null,
+          mix: {
+            color: '{base.color.red.7}',
+            weight: 0.4,
+          },
+        },
+      },
+    },
+  },
+  controlTrack: {
+    bgColor: {
+      rest: {
+        $value: '{base.color.gray.3}',
         $type: 'color',
       },
       hover: {
-        bg: {
-          $value: '{base.color.gray.2}',
-          $type: 'color',
-        },
-      },
-      activeBg: {
         $value: '{base.color.gray.3}',
         $type: 'color',
+        mix: {
+          color: '{base.color.gray.5}',
+          weight: 0.2,
+        },
       },
-      selectedBg: {
+      active: {
         $value: '{base.color.gray.3}',
         $type: 'color',
+        mix: {
+          color: '{base.color.gray.5}',
+          weight: 0.4,
+        },
       },
-      focusBg: {
-        $value: '{base.color.gray.2}',
+      disabled: {
+        $value: '{fgColor.disabled}',
         $type: 'color',
       },
-      primary: {
-        bg: {
-          $value: '{color.success.emphasis}',
-          $type: 'color',
-        },
-        border: {
-          $value: '{base.color.green.7}',
-          $type: 'color',
-        },
-        hoverBg: {
-          $value: '{base.color.green.6}',
-          $type: 'color',
-        },
-        hoverBorder: {
-          $value: '{base.color.green.7}',
-          $type: 'color',
-        },
-        focusBg: {
-          $value: '{base.color.green.7}',
-          $type: 'color',
-        },
-        focusBorder: {
-          $value: '{base.color.green.7}',
-          $type: 'color',
-        },
+    },
+    fgColor: {
+      rest: {
+        $value: '{fgColor.default}',
+        $type: 'color',
       },
-      outline: {
-        text: {
-          $value: '{base.color.blue.6}',
+    },
+  },
+  button: {
+    default: {
+      borderColor: {
+        rest: {
+          $value: '{borderColor.default}',
           $type: 'color',
         },
-        hoverBg: {
-          $value: '{color.accent.emphasis}',
+        hover: {
+          $value: '{borderColor.default}',
           $type: 'color',
         },
-        hoverBorder: {
-          $value: '{base.color.blue.7}',
-          $type: 'color',
-        },
-        selectedBg: {
-          $value: '{base.color.blue.7}',
-          $type: 'color',
-        },
-        selectedBorder: {
-          $value: '{base.color.blue.7}',
-          $type: 'color',
-        },
-        focusBorder: {
-          $value: '{base.color.blue.7}',
-          $type: 'color',
-        },
-        disabledText: {
-          $value: '{base.color.blue.5}',
-          $type: 'color',
-          alpha: 0.5,
-        },
-        disabledBg: {
-          $value: '{base.color.gray.1}',
-          $type: 'color',
-        },
-      },
-      danger: {
-        text: {
-          $value: '{base.color.red.6}',
-          $type: 'color',
-        },
-        hoverBg: {
-          $value: '{color.danger.emphasis}',
-          $type: 'color',
-        },
-        hoverBorder: {
-          $value: '{base.color.red.7}',
-          $type: 'color',
-        },
-        selectedBg: {
-          $value: '{base.color.red.7}',
-          $type: 'color',
-        },
-        selectedBorder: {
-          $value: '{base.color.red.7}',
-          $type: 'color',
-        },
-        focusBorder: {
-          $value: '{base.color.red.7}',
-          $type: 'color',
-        },
-        disabledBg: {
-          $value: '{base.color.gray.1}',
-          $type: 'color',
-        },
-        icon: {
-          $value: '{base.color.red.6}',
+        active: {
+          $value: '{borderColor.default}',
           $type: 'color',
         },
       },
     },
-    diffBlob: {
-      addition: {
-        fg: {
-          $value: '{color.fg.onEmphasis}',
+    primary: {
+      bgColor: {
+        rest: {
+          $value: '{base.color.green.5}',
           $type: 'color',
         },
-        wordBg: {
-          $value: '{color.success.emphasis}',
+        hover: {
+          $value: '{base.color.green.5}',
+          $type: 'color',
+          mix: {
+            color: '{base.color.green.7}',
+            weight: 0.2,
+          },
+        },
+        active: {
+          $value: '{base.color.green.5}',
+          $type: 'color',
+          mix: {
+            color: '{base.color.green.7}',
+            weight: 0.4,
+          },
+        },
+      },
+      borderColor: {
+        rest: {
+          $value: '{base.color.green.7}',
+          $type: 'color',
+        },
+        hover: {
+          $value: '{base.color.green.7}',
           $type: 'color',
         },
       },
-      deletion: {
-        fg: {
-          $value: '{color.fg.onEmphasis}',
-          $type: 'color',
-        },
-        wordBg: {
-          $value: '{color.danger.emphasis}',
+    },
+  },
+  diffBlob: {
+    addition: {
+      fgColor: {
+        text: {
+          $value: '{fgColor.onEmphasis}',
           $type: 'color',
         },
       },
-      hunk: {
-        numBg: {
+      bgColor: {
+        word: {
+          $value: '{base.color.green.4}',
+          $type: 'color',
+        },
+      },
+    },
+    deletion: {
+      fgColor: {
+        text: {
+          $value: '{fgColor.onEmphasis}',
+          $type: 'color',
+        },
+      },
+      bgColor: {
+        word: {
+          $value: '{base.color.red.5}',
+          $type: 'color',
+          mix: null,
+          alpha: 1,
+        },
+      },
+    },
+    hunk: {
+      bgColor: {
+        num: {
           $value: '{base.color.blue.1}',
           $type: 'color',
+          alpha: 1,
         },
       },
     },
-    header: {
-      divider: {
+  },
+  header: {
+    divider: {
+      borderColor: {
         $value: '{base.color.gray.3}',
         $type: 'color',
-      },
-    },
-    actionListItem: {
-      inlineDivider: {
-        $value: '{color.border.muted}',
-        $type: 'color',
-      },
-      default: {
-        hoverBg: {
-          $value: '{base.color.gray.1}',
-          $type: 'color',
-        },
-        hoverBorder: {
-          $value: '{color.border.muted}',
-          $type: 'color',
-        },
-        activeBg: {
-          $value: '{base.color.gray.2}',
-          $type: 'color',
-        },
-        activeBorder: {
-          $value: '{color.border.default}',
-          $type: 'color',
-        },
-        selectedBg: {
-          $value: '{base.color.gray.2}',
-          $type: 'color',
-        },
-      },
-      danger: {
-        hoverBg: {
-          $value: '{color.danger.emphasis}',
-          $type: 'color',
-        },
-        activeBg: {
-          $value: '{base.color.red.7}',
-          $type: 'color',
-        },
-        hoverText: {
-          $value: '{color.fg.onEmphasis}',
-          $type: 'color',
-        },
-      },
-    },
-    page: {
-      header: {
-        bg: {
-          $value: '{color.canvas.default}',
-          $type: 'color',
-        },
-      },
-    },
-    switchTrack: {
-      bg: {
-        $value: '{base.color.white}',
-        $type: 'color',
-      },
-      border: {
-        $value: '{color.border.default}',
-        $type: 'color',
-      },
-
-      checked: {
-        border: {
-          $value: '{base.color.blue.5}',
-          $type: 'color',
-        },
       },
     },
   },

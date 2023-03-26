@@ -4,38 +4,44 @@
  * @description All overwrites for functional color tokens for dark high contrast color mode are in this file
  */
 {
-  color: {
-    fg: {
-      muted: {
-        $value: '{base.color.gray.1}',
-        $type: 'color',
-      },
-      onEmphasis: {
-        $value: '{base.color.gray.9}',
-        $type: 'color',
-      },
+  fgColor: {
+    onEmphasis: {
+      $value: '{base.color.gray.9}',
+      $type: 'color',
     },
-    border: {
-      default: {
-        $value: '{base.color.gray.5}',
-        $type: 'color',
-      },
-      muted: {
-        $value: '{base.color.gray.5}',
-        $type: 'color',
-      },
-      subtle: {
-        $value: '{base.color.gray.5}',
-        $type: 'color',
-      },
+    muted: {
+      $value: '{base.color.gray.1}',
+      $type: 'color',
+    },
+  },
+  bgColor: {
+    emphasis: {
+      $value: '{base.color.gray.0}',
+      $type: 'color',
     },
     neutral: {
       emphasis: {
         $value: '{base.color.gray.4}',
         $type: 'color',
       },
-      emphasisPlus: {
-        $value: '{base.color.gray.0}',
+    },
+  },
+  borderColor: {
+    default: {
+      $value: '{base.color.gray.5}',
+      $type: 'color',
+    },
+    muted: {
+      $value: '{base.color.gray.5}',
+      $type: 'color',
+    },
+    decorative: {
+      $value: '{borderColor.default}',
+      $type: 'color',
+    },
+    neutral: {
+      emphasis: {
+        $value: '{base.color.gray.4}',
         $type: 'color',
       },
     },
@@ -81,195 +87,229 @@
         $type: 'color',
       },
     },
-    avatar: {
-      border: {
-        $value: '{base.color.white}',
+  },
+  // patterns
+  avatar: {
+    borderColor: {
+      $value: '{base.color.white}',
+      $type: 'color',
+      alpha: 0.9,
+    },
+  },
+  topicTag: {
+    borderColor: {
+      $value: '{borderColor.accent.emphasis}',
+      $type: 'color',
+    },
+  },
+  control: {
+    bgColor: {
+      selected: {
+        $value: '{base.color.gray.6}',
         $type: 'color',
-        alpha: 0.9,
       },
     },
-    diffstat: {
-      deletionBorder: {
-        $value: '{base.color.red.2}',
-        $type: 'color',
-      },
-      additionBorder: {
-        $value: '{base.color.green.2}',
+    borderColor: {
+      emphasis: {
+        $value: '{borderColor.emphasis}',
         $type: 'color',
       },
     },
-    underlinenav: {
-      icon: {
-        $value: '{base.color.gray.1}',
+    transparent: {
+      bgColor: {
+        hover: {
+          $value: '{base.color.gray.8}',
+          $type: 'color',
+        },
+        active: {
+          $value: '{base.color.gray.6}',
+          $type: 'color',
+        },
+        selected: {
+          $value: '{base.color.gray.6}',
+          $type: 'color',
+        },
+      },
+      borderColor: {
+        hover: {
+          $value: '{borderColor.default}',
+          $type: 'color',
+        },
+        active: {
+          $value: '{base.color.gray.4}',
+          $type: 'color',
+        },
+      },
+    },
+    danger: {
+      fgColor: {
+        hover: {
+          $value: '{fgColor.onEmphasis}',
+          $type: 'color',
+        },
+      },
+      bgColor: {
+        hover: {
+          $value: '{bgColor.danger.emphasis}',
+          $type: 'color',
+        },
+        active: {
+          $value: '{bgColor.danger.emphasis}',
+          $type: 'color',
+          mix: {
+            color: '{base.color.red.7}',
+            weight: 0.4,
+          },
+        },
+      },
+    },
+  },
+  controlTrack: {
+    fgColor: {
+      rest: {
+        $value: '{fgColor.onEmphasis}',
         $type: 'color',
       },
-      borderHover: {
+    },
+  },
+  button: {
+    primary: {
+      fgColor: {
+        rest: {
+          $value: '{fgColor.onEmphasis}',
+          $type: 'color',
+        },
+        disabled: {
+          $value: '{fgColor.onEmphasis}',
+          $type: 'color',
+          alpha: 0.5,
+        },
+        iconColor: {
+          rest: {
+            $value: '{fgColor.onEmphasis}',
+            $type: 'color',
+          },
+        },
+      },
+      bgColor: {
+        disabled: {
+          $value: '{base.color.green.5}',
+          $type: 'color',
+          mix: {
+            color: '{base.color.green.0}',
+            weight: 0.6,
+          },
+        },
+      },
+      borderColor: {
+        rest: {
+          $value: '{base.color.green.2}',
+          $type: 'color',
+        },
+        hover: {
+          $value: '{base.color.green.2}',
+          $type: 'color',
+        },
+        disabled: {
+          $value: '{base.color.green.2}',
+          $type: 'color',
+          alpha: 0.4,
+        },
+      },
+    },
+  },
+  buttonCounter: {
+    primary: {
+      bgColor: {
+        rest: {
+          $value: '{base.color.black}',
+          $type: 'color',
+          alpha: 0.15,
+        },
+      },
+    },
+    danger: {
+      bgColor: {
+        hover: {
+          $value: '{base.color.black}',
+          $type: 'color',
+          alpha: 0.15,
+        },
+        rest: {
+          $value: '{base.color.black}',
+          $type: 'color',
+          alpha: 0.15,
+        },
+      },
+    },
+  },
+  diffBlob: {
+    addition: {
+      fgColor: {
+        text: {
+          $value: '{fgColor.onEmphasis}',
+          $type: 'color',
+        },
+      },
+      bgColor: {
+        word: {
+          $value: '{base.color.green.4}',
+          $type: 'color',
+          alpha: 1,
+        },
+      },
+    },
+    deletion: {
+      fgColor: {
+        text: {
+          $value: '{fgColor.onEmphasis}',
+          $type: 'color',
+        },
+      },
+      bgColor: {
+        word: {
+          $value: '{base.color.red.5}',
+          $type: 'color',
+          alpha: 1,
+        },
+      },
+    },
+    expander: {
+      iconColor: {
+        $value: '{fgColor.default}',
+        $type: 'color',
+      },
+    },
+    hunk: {
+      bgColor: {
+        num: {
+          $value: '{base.color.blue.4}',
+          $type: 'color',
+          alpha: 0.4,
+        },
+      },
+    },
+  },
+  underlineNav: {
+    borderColor: {
+      hover: {
         $value: '{base.color.gray.3}',
         $type: 'color',
       },
     },
-    topicTag: {
-      border: {
-        $value: '{color.accent.emphasis}',
+    iconColor: {
+      rest: {
+        $value: '{base.color.gray.1}',
         $type: 'color',
       },
     },
-    btn: {
-      selectedBg: {
-        $value: '{base.color.gray.6}',
-        $type: 'color',
-        alpha: 0.9,
-      },
-      primary: {
-        text: {
-          $value: '{color.fg.onEmphasis}',
-          $type: 'color',
-        },
-        border: {
-          $value: '{base.color.green.2}',
-          $type: 'color',
-        },
-        hover: {
-          bg: {
-            $value: '{base.color.green.3}',
-            $type: 'color',
-          },
-        },
-        hoverBorder: {
-          $value: '{base.color.green.2}',
-          $type: 'color',
-        },
-        disabledText: {
-          $value: '{color.fg.onEmphasis}',
-          $type: 'color',
-          alpha: 0.5,
-        },
-        disabledBg: {
-          $value: '{base.color.green.5}',
-          $type: 'color',
-          alpha: 0.6,
-        },
-        disabledBorder: {
-          $value: '{base.color.green.2}',
-          $type: 'color',
-          alpha: 0.4,
-        },
-        icon: {
-          $value: '{color.fg.onEmphasis}',
-          $type: 'color',
-        },
-        counterBg: {
-          $value: '{base.color.black}',
-          $type: 'color',
-          alpha: 0.15,
-        },
-      },
-      danger: {
-        hover: {
-          counter: {
-            bg: {
-              $value: '{base.color.black}',
-              $type: 'color',
-              alpha: 0.15,
-            },
-          },
-        },
-        counterBg: {
-          $value: '{base.color.black}',
-          $type: 'color',
-          alpha: 0.15,
-        },
-      },
-    },
-    codemirror: {
-      selectionBg: {
+  },
+  codeMirror: {
+    selection: {
+      bgColor: {
         $value: '{base.color.blue.4}',
         $type: 'color',
         alpha: 0.4,
-      },
-    },
-    diffBlob: {
-      addition: {
-        fg: {
-          $value: '{color.fg.onEmphasis}',
-          $type: 'color',
-        },
-      },
-      deletion: {
-        fg: {
-          $value: '{color.fg.onEmphasis}',
-          $type: 'color',
-        },
-      },
-      expander: {
-        icon: {
-          $value: '{color.fg.default}',
-          $type: 'color',
-        },
-      },
-      hunk: {
-        numBg: {
-          $value: '{color.accent.muted}',
-          $type: 'color',
-          alpha: 0.4,
-        },
-      },
-    },
-
-    actionListItem: {
-      inlineDivider: {
-        $value: '{color.border.muted}',
-        $type: 'color',
-      },
-
-      default: {
-        hoverBg: {
-          $value: '{base.color.gray.8}',
-          $type: 'color',
-        },
-        hoverBorder: {
-          $value: '{color.border.default}',
-          $type: 'color',
-        },
-        activeBg: {
-          $value: '{base.color.gray.6}',
-          $type: 'color',
-        },
-        activeBorder: {
-          $value: '{base.color.gray.4}',
-          $type: 'color',
-        },
-        selectedBg: {
-          $value: '{base.color.gray.6}',
-          $type: 'color',
-        },
-      },
-      danger: {
-        hoverBg: {
-          $value: '{color.danger.emphasis}',
-          $type: 'color',
-        },
-        activeBg: {
-          $value: '{base.color.red.6}',
-          $type: 'color',
-        },
-        hoverText: {
-          $value: '{color.fg.onEmphasis}',
-          $type: 'color',
-        },
-      },
-    },
-
-    switchTrack: {
-      border: {
-        $value: '{color.border.default}',
-        $type: 'color',
-      },
-      checked: {
-        border: {
-          $value: '{base.color.blue.5}',
-          $type: 'color',
-        },
       },
     },
   },

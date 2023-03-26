@@ -1,12 +1,26 @@
 {
-  outline: {
-    focus: {
+  focus: {
+    outline: {
       $value: {
-        color: '{color.focus}',
+        color: '{focus.outlineColor}',
         style: 'solid',
         width: '1px',
       },
       $type: 'border',
+    },
+  },
+  checks: {
+    run: {
+      borderWidth: {
+        $value: '0px',
+        $type: 'size',
+      },
+    },
+    container: {
+      borderWidth: {
+        $value: '0px',
+        $type: 'size',
+      },
     },
   },
 }
