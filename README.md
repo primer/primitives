@@ -122,7 +122,7 @@ To make working with tokens easier, we added some additional functionality on to
 
 ### Extending and Overwriting
 
-We have two main color mode: `light` and `dark`. Additionally we have specific accessibility modes based on those, light `light high contrast`.
+We have two main color modes: `light` and `dark`. Additionally we have specific accessibility modes based on those, such as `light high contrast`.
 
 We added a way to create a mode by only including the changes from the main mode. We call this `overrides`.
 `Overrides` are cerated in `src/tokens/functional/color/[light|dark]/overrides/` and have to be added to [themes.config.ts](./scripts/themes.config.ts) to work.
