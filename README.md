@@ -147,7 +147,7 @@ You can create color tokens that inherit a color but have a different alpha valu
 
 #### Mix
 
-In rare cases you need to create a color between two steps in the color scale, e.g. between `gray.4` and `gray.5`. A common example are interactive states, like `hover` where a full step on the color scale would be to much. For those cases you can use the `mix` property.
+In rare cases, you may need to create a color between two steps in the color scale, e.g. between `gray.4` and `gray.5`. A common example are interactive states, like `hover` where a full step on the color scale would be to much. For those cases you can use the `mix` property.
 
 The `mix` proeprty mixes the color it gets into the main color from the `$value` attribute. The amount added is controlled by the `weight`. A weight of `0.1` adds 10% of the color, and a weight of `0.75` adds 75%.
 
