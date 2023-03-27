@@ -1,0 +1,24 @@
+.ColorScale--block {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  gap: 1rem;
+  justify-content: space-between;
+  padding: 0.5rem;
+}
+
+.ColorScale--block:first-of-type {
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+.ColorScale--block:last-of-type {
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+.ColorScale--grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  border-radius: 6px;
+}

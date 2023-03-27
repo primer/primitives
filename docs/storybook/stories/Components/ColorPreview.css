@@ -1,0 +1,52 @@
+.ColorPreview {
+  width: 100%;
+  height: 100px;
+  display: grid;
+  place-items: center;
+  box-shadow: var(--borderColor-default) 0px 0px 0px 1px inset;
+  border-radius: 6px;
+}
+
+/* set bg color for text that matches default bg */
+.ColorPreview:has([style='color: var(--fgColor-white);'], [style='color: var(--fgColor-onEmphasis);']) {
+  background-color: var(--bgColor-emphasis) !important;
+}
+
+/* add border to bg colors that match default bg */
+.ColorPreview:has([style='background-color: var(--bgColor-default); border: solid 1px var(--undefined);']) > div {
+  border: solid 1px var(--borderColor-default) !important;
+}
+
+[data-text] {
+  font-size: 32px;
+  font-weight: 600;
+}
+
+[data-bg] {
+  width: 48px;
+  height: 48px;
+  border-radius: 6px;
+  color: var(--new-color, var(--old-color));
+}
+
+[data-border] {
+  width: 48px;
+  height: 48px;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 6px;
+}
+
+[data-token-name] {
+  font: var(--text-codeBlock-shorthand);
+}
+
+.story-wrap {
+  container-type: inline-size;
+}
+
+@container (min-width: 48.75rem) {
+  .ColorPreview {
+    width: 12rem;
+  }
+}
