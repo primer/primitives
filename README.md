@@ -116,9 +116,9 @@ During the build process, the `removed.json` files will be added to a `dist/remo
 
 ## V8 Tokens
 
-With v8 design tokens are moved to json files in the [src/tokens](./src/tokens/) directory. Those tokens are compiled with [style dictionary](https://amzn.github.io/style-dictionary/#/) in [scripts/buildTokens.ts](./scripts/buildTokens.ts).
+With `/primitives` version 8, design tokens have been moved to json files in the [src/tokens](./src/tokens/) directory. Those tokens are compiled with [style dictionary](https://amzn.github.io/style-dictionary/#/) in [scripts/buildTokens.ts](./scripts/buildTokens.ts).
 
-To make working tokens easier we added some additional functionality on top of what style dictionary comes with:
+To make working with tokens easier, we added some additional functionality on top of what style dictionary comes with:
 
 ### Extending and Overwriting
 
