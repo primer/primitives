@@ -11,7 +11,7 @@ This repo contains values for color, spacing, and typography primitives for use 
 This repository is distributed on [npm][npm]. After [installing npm][install-npm], you can install `@primer/primitives` with this command.
 
 ```sh
-$ npm install --save @primer/primitives
+npm install --save @primer/primitives
 ```
 
 ## Usage
@@ -112,6 +112,58 @@ During the build process, the `removed.json` files will be added to a `dist/remo
     deprecated/
 +   removed/
 +     colors.json
+```
+
+## V8 Tokens
+
+With `/primitives` version 8, design tokens have been moved to json files in the [src/tokens](./src/tokens/) directory. Those tokens are compiled with [style dictionary](https://amzn.github.io/style-dictionary/#/) in [scripts/buildTokens.ts](./scripts/buildTokens.ts).
+
+To make working with tokens easier, we added some additional functionality on top of what style dictionary comes with:
+
+### Extending and Overwriting
+
+We have two main color modes: `light` and `dark`. Additionally we have specific accessibility modes based on those, such as `light high contrast`.
+
+We added a way to create a mode by only including the changes from the main mode. We call this `overrides`.
+`Overrides` are cerated in `src/tokens/functional/color/[light|dark]/overrides/` and have to be added to [themes.config.ts](./scripts/themes.config.ts) to work.
+In the individual files, e.g. `light.high-contrast.json5` you can now add tokens in the same structure as in any main file, e.g. `primitives-light.json5` to replace them.
+
+### Transforming Colors with Alpha and Mix
+
+#### Alpha
+
+You can create color tokens that inherit a color but have a different alpha value by adding the `alpha` property.
+**Note:** The original alpha value will be replaced by your value. If you add `alpha: 0.4` to a color, it doesn't matter if the color you reference has no `alpha` or `alpha: 0.7`, the new token will always have newly the defined value of `alpha: 0.4`.
+
+```js
+{
+  muted: {
+    $value: '{base.color.blue.3}',
+    alpha: 0.4, // the opacity value of the color === 40% opaque
+    $type: 'color',
+  }
+}
+```
+
+#### Mix
+
+In rare cases, you may need to create a color between two steps in the color scale, e.g. between `gray.4` and `gray.5`. A common example are interactive states, like `hover` where a full step on the color scale would be to much. For those cases you can use the `mix` property.
+
+The `mix` proeprty mixes the color it gets into the main color from the `$value` attribute. The amount added is controlled by the `weight`. A weight of `0.1` adds 10% of the color, and a weight of `0.75` adds 75%.
+
+A `mix` proprty must always have a `color` and a `weight` child. `color` can be a `hex` value or a reference to a valid color. The `weight` property must receive a value between `0.0` and `1`.
+
+```js
+{
+  control: {
+  $value: '{base.color.gray.4}', // main color
+  $type: 'color',
+  mix: {
+    color: '{base.color.gray.5}', // color to mix into the main color
+    weight: 0.2, // amount of the mix color that is added === 20% of gray.5 is mix into gray.4
+  },
+}
+}
 ```
 
 ## License

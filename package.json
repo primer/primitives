@@ -27,7 +27,7 @@
   "homepage": "https://github.com/primer/primitives#readme",
   "scripts": {
     "build": "ts-node ./scripts/build.ts && tsc --project tsconfig.build.json",
-    "build:v3": "ts-node -r tsconfig-paths/register ./scripts/buildV3.ts",
+    "build:v3": "ts-node -r tsconfig-paths/register ./scripts/buildTokens.ts",
     "build:tokens": "node -e \"require('./build')._init()\"",
     "build:new-tokens": "npm run build:tokens && npm run build:v3",
     "check:tokenJson": "ts-node scripts/diffThemes.ts && ts-node scripts/diffTokenProps.ts",
