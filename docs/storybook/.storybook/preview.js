@@ -127,7 +127,7 @@ const tempTheme = deepmerge(theme, {
           borderHover: 'var(--underlineNav-borderColor-hover)',
         },
         actionListItem: {
-          inlineDivider: 'var(--borderColor-decorative)',
+          inlineDivider: 'var(--borderColor-muted)',
           default: {
             hoverBg: 'var(--control-transparent-bgColor-hover)',
             hoverBorder: 'var(--control-transparent-borderColor-hover)',

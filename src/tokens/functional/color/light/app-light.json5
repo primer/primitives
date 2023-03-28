@@ -1,0 +1,239 @@
+{
+  topicTag: {
+    borderColor: {
+      $value: '{base.color.transparent}',
+      $type: 'color',
+    },
+  },
+  highlight: {
+    neutral: {
+      bgColor: {
+        $value: '{base.color.yellow.0}',
+        $type: 'color',
+      },
+    },
+  },
+  page: {
+    header: {
+      bgColor: {
+        $value: '{bgColor.muted}',
+        $type: 'color',
+      },
+    },
+  },
+  diffBlob: {
+    addition: {
+      fgColor: {
+        text: {
+          $value: '{fgColor.default}',
+          $type: 'color',
+        },
+        num: {
+          $value: '{fgColor.default}',
+          $type: 'color',
+        },
+      },
+      bgColor: {
+        num: {
+          $value: '{base.color.green.1}',
+          $type: 'color',
+          mix: {
+            color: '{base.color.green.0}',
+            weight: 0.8,
+          },
+        },
+        line: {
+          $value: '{base.color.green.0}',
+          $type: 'color',
+        },
+        word: {
+          $value: '{base.color.green.1}',
+          $type: 'color',
+        },
+      },
+    },
+    deletion: {
+      fgColor: {
+        text: {
+          $value: '{fgColor.default}',
+          $type: 'color',
+        },
+        num: {
+          $value: '{fgColor.default}',
+          $type: 'color',
+        },
+      },
+      bgColor: {
+        num: {
+          $value: '{base.color.red.1}',
+          $type: 'color',
+        },
+        line: {
+          $value: '{base.color.red.0}',
+          $type: 'color',
+        },
+        word: {
+          $value: '{base.color.red.3}',
+          $type: 'color',
+          alpha: 0.4,
+        },
+      },
+    },
+    hunk: {
+      bgColor: {
+        num: {
+          $value: '{base.color.blue.3}',
+          $type: 'color',
+          alpha: 0.4,
+        },
+      },
+    },
+    expander: {
+      iconColor: {
+        $value: '{fgColor.muted}',
+        $type: 'color',
+      },
+    },
+  },
+  diffStat: {
+    addition: {
+      bgColor: {
+        $value: '{bgColor.success.emphasis}',
+        $type: 'color',
+      },
+    },
+  },
+  codeMirror: {
+    fgColor: {
+      $value: '{fgColor.default}',
+      $type: 'color',
+    },
+    bgColor: {
+      $value: '{bgColor.default}',
+      $type: 'color',
+    },
+    gutters: {
+      bgColor: {
+        $value: '{bgColor.default}',
+        $type: 'color',
+      },
+    },
+    gutterMarker: {
+      fgColor: {
+        default: {
+          $value: '{bgColor.default}',
+          $type: 'color',
+        },
+        muted: {
+          $value: '{fgColor.muted}',
+          $type: 'color',
+        },
+      },
+    },
+    lineNumber: {
+      fgColor: {
+        $value: '{fgColor.muted}',
+        $type: 'color',
+      },
+    },
+    cursor: {
+      fgColor: {
+        $value: '{fgColor.default}',
+        $type: 'color',
+      },
+    },
+    selection: {
+      bgColor: {
+        $value: '{borderColor.accent.muted}',
+        $type: 'color',
+      },
+    },
+    activeline: {
+      bgColor: {
+        $value: '{bgColor.neutral.muted}',
+        $type: 'color',
+      },
+    },
+    matchingBracket: {
+      fgColor: {
+        $value: '{fgColor.default}',
+        $type: 'color',
+      },
+    },
+    lines: {
+      bgColor: {
+        $value: '{bgColor.default}',
+        $type: 'color',
+      },
+    },
+    syntax: {
+      fgColor: {
+        comment: {
+          $value: '{base.color.gray.9}',
+          $type: 'color',
+        },
+        constant: {
+          $value: '{base.color.blue.6}',
+          $type: 'color',
+        },
+        entity: {
+          $value: '{base.color.purple.5}',
+          $type: 'color',
+        },
+        keyword: {
+          $value: '{base.color.red.5}',
+          $type: 'color',
+        },
+        storage: {
+          $value: '{base.color.red.5}',
+          $type: 'color',
+        },
+        string: {
+          $value: '{base.color.blue.8}',
+          $type: 'color',
+        },
+        support: {
+          $value: '{base.color.blue.6}',
+          $type: 'color',
+        },
+        variable: {
+          $value: '{base.color.orange.6}',
+          $type: 'color',
+        },
+      },
+    },
+  },
+  header: {
+    fgColor: {
+      default: {
+        $value: '{fgColor.onEmphasis}',
+        $type: 'color',
+        alpha: 0.7,
+      },
+      logo: {
+        $value: '{fgColor.onEmphasis}',
+        $type: 'color',
+      },
+    },
+    bgColor: {
+      $value: '{base.color.gray.9}',
+      $type: 'color',
+    },
+    borderColor: {
+      divider: {
+        $value: '{base.color.gray.6}',
+        $type: 'color',
+      },
+    },
+  },
+  headerSearch: {
+    bgColor: {
+      $value: '{base.color.gray.9}',
+      $type: 'color',
+    },
+    borderColor: {
+      $value: '{base.color.gray.6}',
+      $type: 'color',
+    },
+  },
+}
