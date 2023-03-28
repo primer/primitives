@@ -16,7 +16,7 @@ jobs:
     with:
       node_version: 16
       install: npm ci --no-audit --no-fund
-      build: npm run build:tokens && npm run build && npm run build:v3 && cd docs && npm run build:preview
+      build: npm run build:tokens && npm run build && npm run build:next && cd docs && npm run build:preview
       output_dir: docs/public
 
   post_storybook:
