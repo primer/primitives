@@ -7,10 +7,10 @@ const getCssSelectors = (outputFile: string): {selector: string; selectorLight: 
   const lastSlash = outputFile.lastIndexOf('/')
   const outputBasename = outputFile.substring(lastSlash + 1, outputFile.indexOf('.'))
   const themeName = outputBasename.replace(/-/g, '_')
-  // const mode = outputBasename.substring(0, 4) === 'dark' ? 'dark' : 'light'
+  const mode = outputBasename.substring(0, 4) === 'dark' ? 'dark' : 'light'
 
   return {
-    selector: `[data-color-mode="light"][data-light-theme="${themeName}"], [data-color-mode="dark"][data-dark-theme="${themeName}"]`,
+    selector: `[data-color-mode="${mode}"][data-${mode}-theme="${themeName}"]`,
     selectorLight: `[data-color-mode="auto"][data-light-theme="${themeName}"]`,
     selectorDark: `[data-color-mode="auto"][data-dark-theme="${themeName}"]`,
   }
