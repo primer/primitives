@@ -43,7 +43,7 @@
     "prebuild": "rm -rf dist",
     "prebuild:tokens": "rm -rf tokens-v2-private",
     "prebuild:next": "rm -rf tokens-next-private",
-    "prepack": "npm run build && npm run build:tokens",
+    "prepack": "npm run build && npm run build:tokens && npm run build:next",
     "prepare": "husky install && npm run install:docs && npm run install:storybook",
     "release": "changeset publish",
     "start:storybook": "npm run build:next && cd docs/storybook && npm run storybook",
