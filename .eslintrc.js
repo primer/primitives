@@ -20,6 +20,7 @@ module.exports = {
     '.cache',
     'coverage/**/*',
     'docs/public/**/*',
+    'docs',
     'dist/**/*',
     'types/**/*',
     'README.md',
