@@ -1,8 +1,7 @@
 import React from 'react'
 // eslint-disable-next-line import/extensions
 import sizeTokens from '../../../../tokens-v3-private/docs/base/size/size.json'
-import {CSSTokenSwatch} from '../Components/CSSTokenSwatch'
-import {CSSTokenShadowSwatch} from '../Components/CSSTokenShadowSwatch'
+import {SizeTokenSwatch} from '../Components/SizeTokenSwatch'
 import {DataTable, Table} from '@primer/react/drafts'
 
 export default {
@@ -17,25 +16,6 @@ export const Primitives = () => {
       ...value,
     }
   })
-  // const data = Object.entries(sizeTokens).map(
-  //   ([
-  //     key,
-  //     {
-  //       value,
-  //       original: {value: originalValue},
-  //       name,
-  //     },
-  //   ]) => {
-  //     return {
-  //       id: key,
-  //       value,
-  //       originalValue,
-  //       name,
-  //     }
-  //   },
-  // )
-
-  console.log(data)
   return (
     <Table.Container>
       <Table.Title as="h2" id="sizing">
@@ -48,10 +28,10 @@ export const Primitives = () => {
         columns={[
           {
             header: 'Sample',
-            field: 'value',
+            field: 'name',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.value}</p>
+              return <SizeTokenSwatch size={row.name} />
             },
           },
           {
