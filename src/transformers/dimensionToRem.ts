@@ -10,6 +10,20 @@ import type {Platform} from 'style-dictionary'
 const getBasePxFontSize = (options?: Platform): number => (options && options.basePxFontSize) || 16
 
 /**
+ * @description checks if token value has a specific unit
+ * @param value token value
+ * @param unit unit string like px or value
+ * @returns boolean
+ */
+const hasUnit = (value: string | number, unit: string): boolean => {
+  if (typeof value === 'number') {
+    return false
+  }
+
+  return value.indexOf(unit) > -1
+}
+
+/**
  * @description converts dimension tokens value to `rem`
  * @type value transformer — [StyleDictionary.ValueTransform](https://github.com/amzn/style-dictionary/blob/main/types/Transform.d.ts)
  * @matcher matches all tokens of $type `dimension`
@@ -28,8 +42,13 @@ export const dimensionToRem: StyleDictionary.Transform = {
         `Invalid dimension token: '${token.name}: ${token.value}' is not valid and cannot be transform to 'rem' \n`,
       )
     }
+
     if (floatVal === 0) {
       return '0'
+    }
+
+    if (hasUnit(token.value, 'rem')) {
+      return token.value
     }
 
     return `${floatVal / baseFont}rem`
