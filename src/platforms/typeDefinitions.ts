@@ -11,6 +11,7 @@ export const typeDefinitions: PlatformInitializer = (outputFile, prefix, buildPa
     'color/hexAlpha',
     'shadow/css',
     'border/css',
+    'dimension/rem',
     'typography/css',
     'fontFamily/css',
     'fontWeight/number',
