@@ -1,5 +1,13 @@
 # @primer/primitives
 
+## 7.11.3
+
+### Patch Changes
+
+- [#542](https://github.com/primer/primitives/pull/542) [`9df92a7`](https://github.com/primer/primitives/commit/9df92a71e486b1868014573ce6104a8278ceafe7) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - - accent.subtle in dark is less opaque to have a 4.5 contrast with new accent color
+  - danger and close fg slightly changed in light mode to contrast with fg.default (as we have some red links)
+  - attention.emphasis darker to have 4.5:1 contrast with fg.onEmphasis
+
 ## 7.11.2
 
 ### Patch Changes
