@@ -4,87 +4,101 @@
  * @description All overwrites for functional color tokens for light protanopia and deuteranopia color mode are in this file
  */
 {
-  color: {
+  fgColor: {
     open: {
-      fg: {
-        $value: '{base.color.orange.5}',
-        $type: 'color',
-      },
-      emphasis: {
-        $value: '{base.color.orange.4}',
-        $type: 'color',
-      },
+      $value: '{base.color.orange.5}',
+      $type: 'color',
+    },
+    closed: {
+      $value: '{base.color.gray.5}',
+      $type: 'color',
+    },
+  },
+  bgColor: {
+    open: {
       muted: {
         $value: '{base.color.orange.3}',
         $type: 'color',
         alpha: 0.4,
       },
-      subtle: {
-        $value: '{base.color.orange.0}',
+      emphasis: {
+        $value: '{base.color.orange.4}',
         $type: 'color',
       },
     },
     closed: {
-      fg: {
-        $value: '{base.color.gray.5}',
-        $type: 'color',
-      },
-      emphasis: {
-        $value: '{base.color.gray.5}',
-        $type: 'color',
-      },
       muted: {
         $value: '{base.color.gray.3}',
         $type: 'color',
         alpha: 0.4,
       },
-      subtle: {
-        $value: '{base.color.gray.0}',
+      emphasis: {
+        $value: '{base.color.gray.5}',
         $type: 'color',
       },
     },
-    diffBlob: {
-      addition: {
-        numBg: {
-          $value: '{color.success.muted}',
+  },
+  borderColor: {
+    open: {
+      muted: {
+        $value: '{base.color.orange.3}',
+        $type: 'color',
+        alpha: 0.4,
+      },
+      emphasis: {
+        $value: '{base.color.orange.4}',
+        $type: 'color',
+      },
+    },
+    closed: {
+      muted: {
+        $value: '{base.color.gray.3}',
+        $type: 'color',
+        alpha: 0.4,
+      },
+      emphasis: {
+        $value: '{base.color.gray.5}',
+        $type: 'color',
+      },
+    },
+  },
+  diffBlob: {
+    addition: {
+      bgColor: {
+        num: {
+          $value: '{base.color.green.3}',
           $type: 'color',
+          mix: null,
+          alpha: 0.4,
         },
-        lineBg: {
+        line: {
           $value: '{base.color.green.0}',
           $type: 'color',
           alpha: 0.5,
         },
-        wordBg: {
-          $value: '{color.success.muted}',
+        word: {
+          $value: '{base.color.green.3}',
           $type: 'color',
+          alpha: 0.4,
         },
       },
-      deletion: {
-        numBg: {
-          $value: '{color.danger.muted}',
+    },
+    deletion: {
+      bgColor: {
+        num: {
+          $value: '{base.color.red.3}',
           $type: 'color',
+          alpha: 0.4,
         },
-        lineBg: {
+        line: {
           $value: '{base.color.red.0}',
           $type: 'color',
           alpha: 0.5,
         },
-        wordBg: {
+        word: {
           $value: '{base.color.red.2}',
           $type: 'color',
           alpha: 0.5,
-        },
-      },
-    },
-    btn: {
-      primary: {
-        hoverBg: {
-          $value: '{base.color.green.5}',
-          $type: 'color',
-        },
-        disabledBg: {
-          $value: '{base.color.green.2}',
-          $type: 'color',
         },
       },
     },

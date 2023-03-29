@@ -1,0 +1,45 @@
+.ActionList [data-component='ActionList.Divider'] {
+  background-color: var(--borderColor-decorative);
+}
+
+.ActionList.alt [data-component='ActionList.Divider'] {
+  background-color: var(--borderColor-muted);
+}
+
+.ActionList li:not(:first-of-type) {
+  --divider-color: var(--borderColor-decorative);
+}
+
+.ActionList.alt li:not(:first-of-type) {
+  --divider-color: var(--borderColor-muted);
+}
+
+.SegmentedControl .jZGQTK {
+  --separator-color: var(--borderColor-decorative) !important;
+}
+
+.SegmentedControl.alt .jZGQTK {
+  --separator-color: var(--borderColor-muted);
+}
+
+.Button button[id='invisible']:hover:not(:disabled) {
+  background-color: var(--button-invisible-bgColor-hover);
+}
+
+.Button button[id='invisible']:disabled {
+  background-color: var(--button-invisible-bgColor-disabled);
+  color: var(--button-invisible-fgColor-disabled);
+}
+
+.Button button[id='invisible']:active:not(:disabled) {
+  background-color: var(--button-invisible-bgColor-active);
+}
+
+.Button button[id='invisible'] {
+  background-color: var(--button-invisible-bgColor-rest);
+  color: var(--button-invisible-fgColor-rest);
+}
+
+.Overlay-backdrop--center {
+  background-color: var(--overlay-backdrop-bgColor) !important;
+}

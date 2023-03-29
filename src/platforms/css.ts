@@ -26,6 +26,7 @@ export const css: PlatformInitializer = (outputFile, prefix, buildPath, options)
       'color/hex',
       'color/hexAlpha',
       'color/hexMix',
+      'dimension/rem',
       'shadow/css',
       'border/css',
       'typography/css',
