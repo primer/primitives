@@ -23,6 +23,7 @@ import {
   typescriptExportDefinition,
   jsonNestedPrefixed,
   cssThemed,
+  cssCustomMedia,
 } from './formats'
 
 /**
@@ -38,6 +39,11 @@ StyleDictionary.registerParser(w3cJsonParser)
 StyleDictionary.registerFormat({
   name: 'css/themed',
   formatter: cssThemed,
+})
+
+StyleDictionary.registerFormat({
+  name: 'css/customMedia',
+  formatter: cssCustomMedia,
 })
 
 StyleDictionary.registerFormat({

@@ -56,6 +56,11 @@ export const css: PlatformInitializer = (outputFile, prefix, buildPath, options)
           outputReferences: false,
         },
       },
+      {
+        destination: `${outputFile}`,
+        format: `css/customMedia`,
+        filter: token => isSource(token) && options?.themed !== true && token.$type === 'custom-viewportRange',
+      },
     ],
   }
 }
