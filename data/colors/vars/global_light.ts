@@ -46,7 +46,7 @@ export default {
   },
   attention: {
     fg: get('scale.yellow.5'),
-    emphasis: get('scale.yellow.4'),
+    emphasis: get('scale.yellow.5'),
     muted: alpha(get('scale.yellow.3'), 0.4),
     subtle: get('scale.yellow.0')
   },
@@ -57,7 +57,7 @@ export default {
     subtle: get('scale.orange.0')
   },
   danger: {
-    fg: get('scale.red.5'),
+    fg: '#d1242f',
     emphasis: get('scale.red.5'),
     muted: alpha(get('scale.red.3'), 0.4),
     subtle: get('scale.red.0')
@@ -69,7 +69,7 @@ export default {
     subtle: get('scale.green.0')
   },
   closed: {
-    fg: get('scale.red.5'),
+    fg: get('danger.fg'),
     emphasis: get('scale.red.5'),
     muted: alpha(get('scale.red.3'), 0.4),
     subtle: get('scale.red.0')
