@@ -33,7 +33,7 @@ export default {
     subtle: alpha(get('scale.gray.4'), 0.1)
   },
   accent: {
-    fg: get('scale.blue.3'),
+    fg: '#2f81f7',
     emphasis: get('scale.blue.5'),
     muted: alpha(get('scale.blue.4'), 0.4),
     subtle: alpha(get('scale.blue.4'), 0.15)
