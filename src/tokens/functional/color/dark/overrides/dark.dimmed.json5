@@ -4,12 +4,24 @@
  * @description All overwrites for functional color tokens for dark dimmed color mode are in this file
  */
 {
-  color: {
-    diffBlob: {
-      expander: {
-        icon: {
-          $value: '{color.fg.default}',
+  diffBlob: {
+    expander: {
+      iconColor: {
+        $value: '{fgColor.default}',
+        $type: 'color',
+      },
+    },
+  },
+  button: {
+    primary: {
+      bgColor: {
+        disabled: {
+          $value: '{base.color.green.4}',
           $type: 'color',
+          mix: {
+            color: '{base.color.green.3}',
+            weight: 0.6,
+          },
         },
       },
     },

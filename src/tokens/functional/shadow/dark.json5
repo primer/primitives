@@ -1,96 +1,261 @@
 {
-  shadow: {
-    color: {
-      small: {
-        $value: '{base.color.black}',
-        alpha: 0.96,
-        $type: 'color',
-      },
-      medium: {
-        $value: '{base.color.gray.4}',
-        alpha: 0.85,
-        $type: 'color',
-      },
-      large: {
-        $value: '{base.color.gray.4}',
-        alpha: 0.8,
-        $type: 'color',
-      },
-      extraLarge: {
-        $value: '{base.color.gray.4}',
-        alpha: 0.7,
-        $type: 'color',
-      },
-      highlight: {
-        $value: '{base.color.white}',
-        alpha: 0.25,
-        $type: 'color',
-      },
-      inset: {
-        $value: '{base.color.gray.2}',
-        alpha: 0,
-        $type: 'color',
-      },
-    },
-    small: {
-      $value: {
-        color: '{shadow.color.small}',
-        offsetX: '0px',
-        offsetY: '1px',
-        blur: '0px',
-        spread: '0px',
-      },
-      $type: 'shadow',
-    },
-    medium: {
-      $value: {
-        color: '{shadow.color.medium}',
-        offsetX: '0px',
-        offsetY: '3px',
-        blur: '6px',
-        spread: '0px',
-      },
-      $type: 'shadow',
-    },
-    large: {
-      $value: {
-        color: '{shadow.color.large}',
-        offsetX: '0px',
-        offsetY: '8px',
-        blur: '24px',
-        spread: '0px',
-      },
-      $type: 'shadow',
-    },
-    extraLarge: {
-      $value: {
-        color: '{shadow.color.extraLarge}',
-        offsetX: '0px',
-        offsetY: '12px',
-        blur: '28px',
-        spread: '0px',
-      },
-      $type: 'shadow',
-    },
-    // components
-    overlay: {
+  avatar: {
+    shadow: {
       $value: [
         {
-          color: '{base.color.gray.6}',
+          color: '{base.color.gray.9}',
+          alpha: 1,
           offsetX: '0px',
           offsetY: '0px',
           blur: '0px',
-          spread: '1px',
-        },
-        {
-          color: '{shadow.color.medium}',
-          offsetX: '0px',
-          offsetY: '16px',
-          blur: '32px',
-          spread: '0px',
+          spread: '2px',
         },
       ],
       $type: 'shadow',
+    },
+  },
+  button: {
+    default: {
+      shadow: {
+        resting: {
+          $value: [
+            {
+              color: 'transparent',
+              alpha: 0,
+              offsetX: '0px',
+              offsetY: '0px',
+              blur: '0px',
+              spread: '0px',
+              inset: false,
+            },
+          ],
+          $type: 'shadow',
+        },
+        inset: {
+          $value: {
+            color: 'transparent',
+            alpha: 0,
+            offsetX: '0px',
+            offsetY: '0px',
+            blur: '0px',
+            spread: '0px',
+            inset: false,
+          },
+          $type: 'shadow',
+        },
+      },
+    },
+    primary: {
+      shadow: {
+        selected: {
+          $value: [
+            {
+              color: 'transparent',
+              alpha: 0,
+              offsetX: '0px',
+              offsetY: '0px',
+              blur: '0px',
+              spread: '0px',
+              inset: false,
+            },
+          ],
+          $type: 'shadow',
+        },
+      },
+    },
+    outline: {
+      shadow: {
+        selected: {
+          $value: [
+            {
+              color: 'transparent',
+              alpha: 0,
+              offsetX: '0px',
+              offsetY: '0px',
+              blur: '0px',
+              spread: '0px',
+              inset: false,
+            },
+          ],
+          $type: 'shadow',
+        },
+      },
+    },
+    danger: {
+      shadow: {
+        selected: {
+          $value: [
+            {
+              color: 'transparent',
+              alpha: 0,
+              offsetX: '0px',
+              offsetY: '0px',
+              blur: '0px',
+              spread: '0px',
+              inset: false,
+            },
+          ],
+          $type: 'shadow',
+        },
+      },
+    },
+  },
+  shadow: {
+    inset: {
+      $value: [
+        {
+          color: 'transparent',
+          alpha: 0,
+          offsetX: '0px',
+          offsetY: '0px',
+          blur: '0px',
+          spread: '0px',
+          inset: false,
+        },
+      ],
+      $type: 'shadow',
+    },
+    highlight: {
+      $value: {
+        color: 'transparent',
+        alpha: 0,
+        offsetX: '0px',
+        offsetY: '0px',
+        blur: '0px',
+        spread: '0px',
+        inset: false,
+      },
+      $type: 'shadow',
+    },
+    resting: {
+      xsmall: {
+        $value: [
+          {
+            color: '{base.color.black}',
+            alpha: 0.64,
+            offsetX: '0px',
+            offsetY: '1px',
+            blur: '0px',
+            spread: '0px',
+            inset: false,
+          },
+        ],
+        $type: 'shadow',
+      },
+      small: {
+        $value: [
+          {
+            color: 'transparent',
+            alpha: 0,
+            offsetX: '0px',
+            offsetY: '0px',
+            blur: '0px',
+            spread: '0px',
+            inset: false,
+          },
+        ],
+        $type: 'shadow',
+      },
+      medium: {
+        $value: [
+          {
+            color: '{base.color.black}',
+            alpha: 1,
+            offsetX: '0px',
+            offsetY: '3px',
+            blur: '6px',
+            spread: '0px',
+            inset: false,
+          },
+        ],
+        $type: 'shadow',
+      },
+    },
+    floating: {
+      small: {
+        $value: [
+          {
+            color: '{base.color.gray.6}',
+            alpha: 1,
+            offsetX: '0px',
+            offsetY: '0px',
+            blur: '0px',
+            spread: '1px',
+          },
+          {
+            color: '{base.color.black}',
+            alpha: 0.85,
+            offsetX: '0px',
+            offsetY: '16px',
+            blur: '32px',
+            spread: '0px',
+          },
+        ],
+        $type: 'shadow',
+      },
+      medium: {
+        $value: [
+          {
+            color: '{base.color.gray.4}',
+            alpha: 0.09,
+            offsetX: '0px',
+            offsetY: '4px',
+            blur: '32px',
+            spread: '-4px',
+          },
+          {
+            color: '{base.color.gray.4}',
+            alpha: 0.09,
+            offsetX: '0px',
+            offsetY: '8px',
+            blur: '16px',
+            spread: '-4px',
+          },
+          {
+            color: '{base.color.gray.4}',
+            alpha: 0.16,
+            offsetX: '0px',
+            offsetY: '24px',
+            blur: '48px',
+            spread: '-12px',
+          },
+          {
+            color: '{base.color.gray.4}',
+            alpha: 0.24,
+            offsetX: '0px',
+            offsetY: '48px',
+            blur: '96px',
+            spread: '-24px',
+          },
+        ],
+        $type: 'shadow',
+      },
+      large: {
+        $value: [
+          {
+            color: '{base.color.black}',
+            alpha: 1,
+            offsetX: '0px',
+            offsetY: '8px',
+            blur: '24px',
+            spread: '0px',
+          },
+        ],
+        $type: 'shadow',
+      },
+      xlarge: {
+        $value: [
+          {
+            color: '{base.color.black}',
+            alpha: 1,
+            offsetX: '0px',
+            offsetY: '12px',
+            blur: '48px',
+            spread: '0px',
+          },
+        ],
+        $type: 'shadow',
+      },
     },
   },
 }

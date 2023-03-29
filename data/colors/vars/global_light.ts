@@ -2,8 +2,8 @@ import {alpha, get, lighten} from '../../../src/utils-v1'
 
 export default {
   fg: {
-    default: get('scale.gray.9'),
-    muted: get('scale.gray.6'),
+    default: get('scale.black'),
+    muted: '#656d76',
     subtle: get('scale.gray.5'),
     onEmphasis: get('scale.white')
   },
@@ -40,7 +40,7 @@ export default {
   },
   success: {
     fg: get('scale.green.5'),
-    emphasis: get('scale.green.4'),
+    emphasis: '#1f883d',
     muted: alpha(get('scale.green.3'), 0.4),
     subtle: get('scale.green.0')
   },
@@ -64,7 +64,7 @@ export default {
   },
   open: {
     fg: get('scale.green.5'),
-    emphasis: get('scale.green.4'),
+    emphasis: get('success.emphasis'),
     muted: alpha(get('scale.green.3'), 0.4),
     subtle: get('scale.green.0')
   },

@@ -21,7 +21,9 @@ export const scss: PlatformInitializer = (outputFile, prefix, buildPath): StyleD
     transforms: [
       'name/pathToKebabCase',
       'color/hex',
+      'color/hexMix',
       'color/hexAlpha',
+      'dimension/rem',
       'shadow/css',
       'border/css',
       'typography/css',

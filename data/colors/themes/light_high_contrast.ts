@@ -1,4 +1,4 @@
-import {alpha, get, merge} from '../../../src/utils-v1'
+import {alpha, get, merge, lighten} from '../../../src/utils-v1'
 import light from './light'
 
 const scale = {
@@ -222,12 +222,24 @@ const exceptions = {
     }
   },
   pageHeaderBg: get('canvas.default'),
+
   switchTrack: {
-    bg: get('scale.white'),
+    bg: get('neutral.emphasis'),
+    hoverBg: lighten(get('neutral.emphasis'), 0.03),
+    activeBg: lighten(get('neutral.emphasis'), 0.05),
+    fg: get('fg.onEmphasis'),
+    disabledFg: get('fg.onEmphasis'),
+
+    checked: {
+      fg: get('fg.onEmphasis'),
+    }
+  },
+
+  switchKnob: {
     border: get('border.default'),
 
     checked: {
-      border: get('scale.blue.5'),
+      border: get('accent.emphasis'),
     }
   },
 
@@ -236,6 +248,11 @@ const exceptions = {
       hoverBg: get('scale.gray.2'),
     }
   },
+  control: {
+    borderColor: {
+      emphasis: get('border.default')
+    }
+  }
 }
 
 export default merge(light, exceptions, {scale})

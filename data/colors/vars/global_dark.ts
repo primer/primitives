@@ -2,8 +2,8 @@ import {alpha, get} from '../../../src/utils-v1'
 
 export default {
   fg: {
-    default: get('scale.gray.1'),
-    muted: get('scale.gray.3'),
+    default: '#e6edf3',
+    muted: '#7d8590',
     subtle: get('scale.gray.4'),
     onEmphasis: get('scale.white')
   },
@@ -33,7 +33,7 @@ export default {
     subtle: alpha(get('scale.gray.4'), 0.1)
   },
   accent: {
-    fg: get('scale.blue.3'),
+    fg: '#2f81f7',
     emphasis: get('scale.blue.5'),
     muted: alpha(get('scale.blue.4'), 0.4),
     subtle: alpha(get('scale.blue.4'), 0.15)
@@ -54,13 +54,13 @@ export default {
     fg: get('scale.orange.4'),
     emphasis: get('scale.orange.5'),
     muted: alpha(get('scale.orange.4'), 0.4),
-    subtle: alpha(get('scale.orange.4'), 0.15)
+    subtle: alpha(get('scale.orange.4'), 0.1)
   },
   danger: {
     fg: get('scale.red.4'),
     emphasis: get('scale.red.5'),
     muted: alpha(get('scale.red.4'), 0.4),
-    subtle: alpha(get('scale.red.4'), 0.15)
+    subtle: alpha(get('scale.red.4'), 0.1)
   },
   open: {
     fg: get('scale.green.3'),
@@ -78,13 +78,13 @@ export default {
     fg: get('scale.purple.4'),
     emphasis: get('scale.purple.5'),
     muted: alpha(get('scale.purple.4'), 0.4),
-    subtle: alpha(get('scale.purple.4'), 0.15)
+    subtle: alpha(get('scale.purple.4'), 0.1)
   },
   sponsors: {
     fg: get('scale.pink.4'),
     emphasis: get('scale.pink.5'),
     muted: alpha(get('scale.pink.4'), 0.4),
-    subtle: alpha(get('scale.pink.4'), 0.15)
+    subtle: alpha(get('scale.pink.4'), 0.1)
   },
 
   // Only meant for Primer components
