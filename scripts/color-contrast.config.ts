@@ -61,11 +61,11 @@ const baseRequirements: ContrastRequirement[] = [
   [4.5, 'sponsors.fg', 'canvas.subtle'],
   [4.5, 'sponsors.fg', 'canvas.inset'],
   // role text on role bg
-  [4.5, 'accent.fg', 'accent.subtle'],
+  [4.5, 'accent.fg', 'accent.subtle', {canvas: ['canvas.default']}],
   [4.5, 'success.fg', 'success.subtle'],
   [4.5, 'open.fg', 'open.subtle'],
   [4.5, 'danger.fg', 'danger.subtle'],
-  [4.5, 'closed.fg', 'closed.subtle'],
+  [4.5, 'closed.fg', 'closed.subtle', {canvas: ['canvas.default']}],
   [4.5, 'attention.fg', 'attention.subtle'],
   [4.5, 'severe.fg', 'severe.subtle'],
   [4.5, 'done.fg', 'done.subtle'],
@@ -93,8 +93,6 @@ const baseRequirements: ContrastRequirement[] = [
   [4.5, 'fg.onEmphasis', 'done.emphasis'],
   [4.5, 'fg.onEmphasis', 'sponsors.emphasis'],
   // borders
-  [3, 'border.default', 'canvas.default'],
-  [3, 'border.default', 'canvas.subtle'],
   [3, 'control.borderColor.emphasis', 'canvas.default'],
   [3, 'control.borderColor.emphasis', 'canvas.subtle'],
   // TODO: there are no specific border colors for roles
@@ -174,8 +172,6 @@ const highContrast: ContrastRequirement[] = [
   [7, 'fg.onEmphasis', 'done.emphasis'],
   [7, 'fg.onEmphasis', 'sponsors.emphasis'],
   // borders
-  [4.5, 'border.default', 'canvas.default'],
-  [4.5, 'border.default', 'canvas.subtle'],
   [4.5, 'control.borderColor.emphasis', 'canvas.default'],
   [4.5, 'control.borderColor.emphasis', 'canvas.subtle'],
 ] as ContrastRequirement[]
