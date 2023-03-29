@@ -7,7 +7,7 @@
     "setup": "cd ..; npm i; npm run build; npm run build:tokens",
     "prebuild": "npm run setup",
     "prebuild:preview": "npm run setup",
-    "build": "gatsby build --prefix-paths",
+    "build": "gatsby build --prefix-paths && cd storybook && scripts/build-storybook",
     "build:preview": "gatsby build && cd storybook && scripts/build-storybook preview",
     "predevelop": "npm run setup",
     "develop": "gatsby develop",
