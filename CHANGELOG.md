@@ -1,5 +1,17 @@
 # @primer/primitives
 
+## 7.11.2
+
+### Patch Changes
+
+- [#529](https://github.com/primer/primitives/pull/529) [`05edec6`](https://github.com/primer/primitives/commit/05edec6425b470c1a4c2e10997cbe961463e3880) Thanks [@langermank](https://github.com/langermank)! - Add Primitives v8 colors (private dist for testing)
+
+- [#538](https://github.com/primer/primitives/pull/538) [`535f4b0`](https://github.com/primer/primitives/commit/535f4b06786d5464ce18de2d2f0dbd15cc683fd0) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - A11y changes to primary green, fg.default and fg.muted and some more
+
+- [#536](https://github.com/primer/primitives/pull/536) [`1771a74`](https://github.com/primer/primitives/commit/1771a74afab2afdea80f6f0eff83192b2cb41ee3) Thanks [@langermank](https://github.com/langermank)! - Fix Avatar shadow in new tokens
+
+- [#499](https://github.com/primer/primitives/pull/499) [`f731161`](https://github.com/primer/primitives/commit/f731161f0591ffed9963da17072d9980a136b4c2) Thanks [@josepmartins](https://github.com/josepmartins)! - Fix bug on AvatarPair box shadow
+
 ## 7.11.1
 
 ### Patch Changes

@@ -48,7 +48,7 @@ export default {
     disabledBg: get('neutral.muted')
   },
   diffstat: {
-    additionBg: get('scale.green.4')
+    additionBg: get('success.emphasis')
   },
   timeline: {
     badgeBg: get('scale.gray.1') // needs to be opaque
@@ -88,11 +88,11 @@ export default {
 
     primary: {
       text: get('scale.white'),
-      bg: get('scale.green.4'),
+      bg: get('success.emphasis'),
       border: get('border.subtle'),
       shadow: (theme: any) => `0 1px 0 ${alpha(get('scale.black'), 0.1)(theme)}`,
       insetShadow: (theme: any) => `inset 0 1px 0 ${alpha(get('scale.white'), 0.03)(theme)}`,
-      hoverBg: '#2c974b',
+      hoverBg: get('scale.green.5'),
       hoverBorder: get('border.subtle'),
       selectedBg: darken(get('btn.primary.hoverBg'), 0.02),
       selectedShadow: (theme: any) => `inset 0 1px 0 ${alpha(get('scale.green.9'), 0.2)(theme)}`,

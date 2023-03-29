@@ -188,5 +188,5 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
  * Run build script
  * ----------------------------------- */
 buildDesignTokens({
-  buildPath: 'tokens-v3-private/',
+  buildPath: 'tokens-next-private/',
 })

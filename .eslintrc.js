@@ -15,7 +15,16 @@ module.exports = {
     'plugin:github/browser',
     'prettier',
   ],
-  ignorePatterns: ['node_modules', '.cache', 'coverage/**/*', 'docs/public/**/*', 'dist/**/*', 'types/**/*'],
+  ignorePatterns: [
+    'node_modules',
+    '.cache',
+    'coverage/**/*',
+    'docs/public/**/*',
+    'docs',
+    'dist/**/*',
+    'types/**/*',
+    'README.md',
+  ],
   globals: {
     __DEV__: 'readonly',
   },

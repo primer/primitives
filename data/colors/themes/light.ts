@@ -6,7 +6,7 @@ import lightMarketingVars from '../vars/marketing_light'
 import lightAppVars from '../vars/app_light'
 
 const scale = {
-  black: '#1b1f24',
+  black: '#1F2328',
   white: '#ffffff',
   gray: ['#f6f8fa', '#eaeef2', '#d0d7de', '#afb8c1', '#8c959f', '#6e7781', '#57606a', '#424a53', '#32383f', '#24292f'],
   blue: ['#ddf4ff', '#b6e3ff', '#80ccff', '#54aeff', '#218bff', '#0969da', '#0550ae', '#033d8b', '#0a3069', '#002155'],
