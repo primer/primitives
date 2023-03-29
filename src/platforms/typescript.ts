@@ -9,6 +9,7 @@ export const typescript: PlatformInitializer = (outputFile, prefix, buildPath): 
     'color/hex',
     'color/hexMix',
     'color/hexAlpha',
+    'dimension/rem',
     'shadow/css',
     'border/css',
     'typography/css',

@@ -9,6 +9,7 @@ export const json: PlatformInitializer = (outputFile, prefix, buildPath): StyleD
     'color/hex',
     'color/hexMix',
     'color/hexAlpha',
+    'dimension/rem',
     'shadow/css',
     'border/css',
     'typography/css',

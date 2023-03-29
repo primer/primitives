@@ -10,6 +10,7 @@ export const docJson: PlatformInitializer = (outputFile, prefix, buildPath): Sty
     'color/hex',
     'color/hexMix',
     'color/hexAlpha',
+    'dimension/rem',
     'shadow/css',
     'border/css',
     'typography/css',
