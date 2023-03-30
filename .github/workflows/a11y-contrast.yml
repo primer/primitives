@@ -27,4 +27,4 @@ jobs:
         run: npm run build # building v1 as they are currently used for contrast check
 
       - name: Run checks
-        run: npm run check:contrast
+        run: npm run contrast:check
