@@ -6,6 +6,7 @@ export default {
   title: 'Color/Functional/Shadows',
   parameters: {
     storyType: 'swatch',
+    controls: {hideNoControlsWarning: true},
   },
 }
 

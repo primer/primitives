@@ -3,9 +3,9 @@ import {ColorScale} from '../../Components/ColorScale'
 
 export default {
   title: 'Color/Base/Scales',
-  // parameters: {
-  //   storyType: 'swatch',
-  // },
+  parameters: {
+    controls: {hideNoControlsWarning: true},
+  },
 }
 
 const bgColors = [

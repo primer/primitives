@@ -5,6 +5,7 @@ export default {
   title: 'Color/Functional/Foreground',
   parameters: {
     storyType: 'swatch',
+    controls: {hideNoControlsWarning: true},
   },
 }
 

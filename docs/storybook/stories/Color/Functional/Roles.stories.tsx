@@ -5,6 +5,7 @@ export default {
   title: 'Color/Functional/Roles',
   parameters: {
     storyType: 'swatch',
+    controls: {hideNoControlsWarning: true},
   },
 }
 
