@@ -32,7 +32,7 @@
     "build:tokens": "node -e \"require('./build')._init()\"",
     "build:new-tokens": "npm run build:tokens && npm run build:next",
     "tokenJson:check": "ts-node scripts/diffThemes.ts && ts-node scripts/diffTokenProps.ts",
-    "contrast:check": "npx ts-node ./scripts/color-contrast.ts",
+    "contrast:check": "ts-node -e \"require('./scripts/color-contrast').check()\"",
     "format": "prettier --write  '**/*.{js,jsx,ts,tsx,md,mdx,css}'",
     "format:check": "prettier --check '**/*.{js,jsx,ts,tsx,md,mdx,css}'",
     "install:docs": "cd docs && npm ci --legacy-peer-deps --no-audit --no-fund --include=dev",
@@ -52,6 +52,7 @@
   },
   "prettier": "@github/prettier-config",
   "devDependencies": {
+    "@actions/github": "^5.1.1",
     "@changesets/changelog-github": "^0.4.8",
     "@changesets/cli": "^2.22.0",
     "@github/prettier-config": "^0.0.6",

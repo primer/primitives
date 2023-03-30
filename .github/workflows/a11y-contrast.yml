@@ -26,5 +26,6 @@ jobs:
       - name: Build tokens
         run: npm run build # building v1 as they are currently used for contrast check
 
-      - name: Run checks
-        run: npm run contrast:check
+      - name: Run required checks
+        run: |
+          npx ts-node -e "require('./scripts/color-contrast').checkAndReport(['light', 'dark'])"

@@ -1,4 +1,4 @@
-import type {ContrastRequirement} from './color-contrast.config'
+import type {ContrastRequirement, Themes} from './color-contrast.config'
 import {contrastRequirements, canvasColors} from './color-contrast.config'
 import {Table} from 'console-table-printer'
 import {flattenObject} from './utilities/flattenObject'
@@ -7,6 +7,8 @@ import colors from '../dist/ts'
 import {writeFile} from 'fs'
 import {normal} from 'color-blend'
 import {getContrast, parseToRgba, rgba} from 'color2k'
+import {rest} from '@actions/github'
+
 /**
  * Type definitions
  */
@@ -43,9 +45,8 @@ const getOpaqueColor = (color: string, background: string): string => {
  * @returns contrastTestResult
  */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const runContrastTest = (colorPairs: ContrastRequirement[], scopedColors: any): contrastTestResult[] =>
-  // Object.fromEntries(
-  colorPairs.flatMap(([minimumContrast, colorA, colorB, options]: ContrastRequirement) => {
+const runContrastTest = (colorPairs: ContrastRequirement[], scopedColors: any): contrastTestResult[] => {
+  return colorPairs.flatMap(([minimumContrast, colorA, colorB, options]: ContrastRequirement) => {
     // concat name
     const contrastPair = `${colorA} vs. ${colorB}`
     // build required string
@@ -70,7 +71,7 @@ const runContrastTest = (colorPairs: ContrastRequirement[], scopedColors: any): 
       minimumContrastRatio,
     }))
   })
-// )
+}
 /**
  * testContrast
  * @description test the contrast of two colors against each other
@@ -105,12 +106,12 @@ const testContrast = (
   }
 }
 /**
- * renderConsoleTable
- * @description takes the test results per theme and prints a nicely formatted table of the results to the console
+ * getConsoleTable
+ * @description takes the test results per theme and creates a nicely formatted table of the results to the console
  * @param theme
  * @param results
  */
-const renderConsoleTable = (theme: string, results: contrastTestResult[]): void => {
+const getConsoleTable = (theme: string, results: contrastTestResult[]): string => {
   // config table
   const contrastTable = new Table({
     title: `Contrast checks for: ${theme}`,
@@ -152,43 +153,107 @@ const renderConsoleTable = (theme: string, results: contrastTestResult[]): void 
       color,
     })
   }
-  // print table to console
-  // eslint-disable-next-line no-console
-  console.log('\n')
-  // eslint-disable-next-line no-console
-  console.log(contrastTable.render())
+  return contrastTable.render()
+}
+
+const getThemesToCheck = (
+  contrastRequirementsObj: {[key in Themes]: ContrastRequirement[]},
+  themes?: Themes[],
+): [Themes, ContrastRequirement[]][] => {
+  if (themes && themes.length > 0) {
+    return Object.entries(contrastRequirementsObj).filter(([theme]) => themes.includes(theme as Themes)) as [
+      Themes,
+      ContrastRequirement[],
+    ][]
+  }
+  return Object.entries(contrastRequirementsObj) as [Themes, ContrastRequirement[]][]
+}
+
+const checkContrastForThemes = (
+  contrastRequirementsObj: {[key in Themes]: ContrastRequirement[]},
+  themes?: Themes[],
+) => {
+  const themesToCheck = getThemesToCheck(contrastRequirementsObj, themes)
+
+  return themesToCheck.map(([theme, colorPairs]: [string, ContrastRequirement[]]) => {
+    // turn deeply nested colors object into one level object like 'fg.default': '#000'
+
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const flattenColors = flattenObject((colors.colors as any)[theme])
+
+    // run tests on all color pairs
+    const scopedResults = runContrastTest(colorPairs, flattenColors)
+    // failing contrasts
+    const failingContrast = scopedResults.reduce((acc, cur) => (cur.pass === '❌' ? acc + 1 : acc), 0)
+    // return results for json file creation
+    return {
+      theme,
+      failingContrast,
+      resultTable: getConsoleTable(theme, scopedResults),
+      results: scopedResults,
+    }
+  })
 }
 
 /**
  * run tests, output results to console and store them for json
  */
-const results = Object.entries(contrastRequirements).map(([theme, colorPairs]: [string, ContrastRequirement[]]) => {
-  // turn deeply nested colors object into one level object like 'fg.default': '#000'
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const flattenColors = flattenObject((colors.colors as any)[theme])
+export const check = (themes: Themes[], output: 'log' | 'file' | 'all' | 'none' = 'all') => {
+  const results = checkContrastForThemes(contrastRequirements, themes)
 
-  // run tests on all color pairs
-  const scopedResults = runContrastTest(colorPairs, flattenColors)
-  // failing contrasts
-  const failingContrast = scopedResults.reduce((acc, cur) => (cur.pass === '❌' ? acc + 1 : acc), 0)
-  // print results to console
-  renderConsoleTable(theme, scopedResults)
-  if (failingContrast > 0) {
+  if (output === 'log' || output === 'all') {
+    for (const {resultTable, failingContrast} of results) {
+      // eslint-disable-next-line no-console
+      console.log('\n', resultTable)
+      if (failingContrast > 0) {
+        // eslint-disable-next-line no-console
+        console.error('❌ Failing contrast checks:', failingContrast, '\n')
+      }
+    }
+  }
+  // write json file for workflow
+  if (output === 'file' || output === 'all') {
+    writeFile('color-contrast-check.json', JSON.stringify(results), err => {
+      if (err) throw err
+    })
+  }
+
+  return results
+}
+
+export const checkAndReport = async (themes: Themes[]) => {
+  const results = checkContrastForThemes(contrastRequirements, themes)
+
+  const failingChecks = []
+
+  for (const {theme, resultTable, failingContrast} of results) {
     // eslint-disable-next-line no-console
-    console.error('❌ Failing contrast checks:', failingContrast, '\n')
+    console.log('\n', resultTable)
+    if (failingContrast > 0) {
+      // eslint-disable-next-line no-console
+      console.error('❌ Failing contrast checks:', failingContrast, '\n')
+      failingChecks.push(`${theme}: ${failingContrast} failing color pairs`)
+    }
   }
-  // return results for json file creation
-  return {
-    theme,
-    failingContrast,
-    results: scopedResults,
-  }
-})
 
-// write json file for workflow
-writeFile('dist/color-contrast-check.json', JSON.stringify(results), err => {
-  if (err) throw err
-  // eslint-disable-next-line no-console
-  console.log('The file has been saved!')
-})
+  if (failingChecks.length > 0) {
+    const result = await rest.issues.listComments({
+      // eslint-disable-next-line camelcase
+      issue_number: context.issue.number,
+      owner: context.repo.owner,
+      repo: context.repo.repo,
+    })
+
+    const botComments = result.data.filter(c => c.user.login === 'github-actions[bot]')
+    if (!botComments.length) {
+      await rest.issues.createComment({
+        // eslint-disable-next-line camelcase
+        issue_number: context.issue.number,
+        owner: context.repo.owner,
+        repo: context.repo.repo,
+        body: failingChecks.join('\n'),
+      })
+    }
+  }
+}
