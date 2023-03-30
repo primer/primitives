@@ -1,0 +1,30 @@
+name: A11y contrast check
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  build:
+    if: ${{ github.repository == 'primer/primitives' }}
+    name: Check design token color contrast
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Build tokens
+        run: npm run build # building v1 as they are currently used for contrast check
+
+      - name: Run checks
+        run: npm run check:contrast
