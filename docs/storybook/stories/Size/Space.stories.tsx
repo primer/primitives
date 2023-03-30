@@ -3,6 +3,8 @@ import React from 'react'
 import sizeTokens from '../../../../tokens-next-private/docs/base/size/size.json'
 import {SizeTokenSwatch} from '../Components/SizeTokenSwatch'
 import {DataTable, Table} from '@primer/react/drafts'
+import {ClipboardCopy} from '../Components/ClipboardCopy'
+import {InlineCode} from '../Components/InlineCode'
 
 export default {
   title: 'Size/Space',
@@ -11,7 +13,7 @@ export default {
   },
 }
 
-export const Primitives = () => {
+export const Base = () => {
   const sizeArray = Object.entries(sizeTokens.base.size)
   const data = sizeArray.map(([key, value]) => {
     return {
@@ -21,7 +23,7 @@ export const Primitives = () => {
   })
   return (
     <Table.Container>
-      <Table.Title as="h2" id="sizing">
+      <Table.Title as="h1" id="sizing">
         Sizing and spacing
       </Table.Title>
       <DataTable
@@ -42,7 +44,7 @@ export const Primitives = () => {
             field: 'name',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.name}</p>
+              return <InlineCode value={row.name} copyClipboard />
             },
           },
           {
