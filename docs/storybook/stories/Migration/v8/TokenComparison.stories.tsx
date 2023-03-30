@@ -1,6 +1,6 @@
 import React from 'react'
-import {CSSTokenSwatch} from '../Components/CSSTokenSwatch'
-import {CSSTokenShadowSwatch} from '../Components/CSSTokenShadowSwatch'
+import {CSSTokenSwatch} from '../../Components/CSSTokenSwatch'
+import {CSSTokenShadowSwatch} from '../../Components/CSSTokenShadowSwatch'
 // eslint-disable-next-line import/extensions
 import cssVars from './DeprecatedPrimitiveTokensMap.json'
 // eslint-disable-next-line import/extensions
@@ -14,7 +14,7 @@ import noChangeCssVars from './NoChangeTokensMap.json'
 import {DataTable, Table} from '@primer/react/drafts'
 
 export default {
-  title: 'Migration/Tables',
+  title: 'Migration/v8/Tables',
 }
 
 export const Primitives = () => {
