@@ -178,7 +178,18 @@ const highContrast: ContrastRequirement[] = [
 
 export const canvasColors: string[] = ['canvas.default', 'canvas.subtle']
 
-export const contrastRequirements: {[key: string]: ContrastRequirement[]} = {
+export type Themes =
+  | 'light'
+  | 'light_high_contrast'
+  | 'light_colorblind'
+  | 'light_tritanopia'
+  | 'dark'
+  | 'dark_dimmed'
+  | 'dark_high_contrast'
+  | 'dark_colorblind'
+  | 'dark_tritanopia'
+
+export const contrastRequirements: {[key in Themes]: ContrastRequirement[]} = {
   // default light mode
   light: baseRequirements,
   light_high_contrast: highContrast,
