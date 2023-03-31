@@ -28,4 +28,22 @@ jobs:
 
       - name: Run required checks
         run: |
-          npx ts-node -e "require('./scripts/color-contrast').check(['light', 'dark'])"
+          npx ts-node -e "require('./scripts/color-contrast').check(['light', 'dark'], 'log')"
+      
+      - name: Report check results
+        uses: actions/github-script@v5
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+            const { check } = require('./scripts/color-contrast');
+            const results = check(['light', 'dark'], 'none');
+            await github.rest.issues.createComment({
+              issue_number: github.context.issue.number,
+              owner: github.context.repo.owner,
+              repo: github.context.repo.repo,
+              body: results.map(({theme, failingContrast}) => 
+                `${theme}: ${failingContrast === 0 ? '✅ all checks passed' : `❌ ${failingContrast} checks failed`}\n`
+              ).join('\n')
+            })

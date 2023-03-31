@@ -205,7 +205,7 @@ export const check = (themes: Themes[], output: 'log' | 'file' | 'all' | 'none' 
   if (output === 'log' || output === 'all') {
     for (const {resultTable, failingContrast} of results) {
       // eslint-disable-next-line no-console
-      console.log('\n', resultTable)
+      console.log('\n', resultTable, '\n')
       if (failingContrast > 0) {
         // eslint-disable-next-line no-console
         console.error('❌ Failing contrast checks:', failingContrast, '\n')
