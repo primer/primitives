@@ -2,10 +2,35 @@ name: A11y contrast check
 
 on:
   pull_request:
+    branches:
+      - main
 
 jobs:
+  # JOB to run change detection
+  changes:
+    runs-on: ubuntu-latest
+    # Required permissions
+    permissions:
+      pull-requests: read
+    # Set job outputs to values from filter step
+    outputs:
+      tokens: ${{ steps.filter.outputs.tokens }}
+      # transformation: ${{ steps.filter.outputs.transformation }}
+    steps:
+    # For pull requests it's not necessary to checkout the code
+    - uses: dorny/paths-filter@v2
+      id: filter
+      with:
+        filters: |
+          tokens:
+            - 'src/tokens/**'
+            - 'data/**'
+    #     transformation:
+          #   - 'src/filters/**'
+          #   - 'src/transformers/**'
   build:
-    if: ${{ github.repository == 'primer/primitives' }}
+    needs: changes
+    if: ${{ needs.changes.outputs.backend == 'true' }}
     name: Check design token color contrast
     runs-on: ubuntu-latest
     steps:
