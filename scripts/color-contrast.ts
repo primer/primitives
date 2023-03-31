@@ -7,7 +7,7 @@ import colors from '../dist/ts'
 import {writeFile} from 'fs'
 import {normal} from 'color-blend'
 import {getContrast, parseToRgba, rgba} from 'color2k'
-import {rest} from '@actions/github'
+const github = require('@actions/github')
 
 /**
  * Type definitions
@@ -238,20 +238,20 @@ export const checkAndReport = async (themes: Themes[]) => {
   }
 
   if (failingChecks.length > 0) {
-    const result = await rest.issues.listComments({
+    const result = await github.rest.issues.listComments({
       // eslint-disable-next-line camelcase
-      issue_number: context.issue.number,
-      owner: context.repo.owner,
-      repo: context.repo.repo,
+      issue_number: github.context.issue.number,
+      owner: github.context.repo.owner,
+      repo: github.context.repo.repo,
     })
 
     const botComments = result.data.filter(c => c.user.login === 'github-actions[bot]')
     if (!botComments.length) {
-      await rest.issues.createComment({
+      await github.rest.issues.createComment({
         // eslint-disable-next-line camelcase
-        issue_number: context.issue.number,
-        owner: context.repo.owner,
-        repo: context.repo.repo,
+        issue_number: github.context.issue.number,
+        owner: github.context.repo.owner,
+        repo: github.context.repo.repo,
         body: failingChecks.join('\n'),
       })
     }
