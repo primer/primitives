@@ -28,4 +28,4 @@ jobs:
 
       - name: Run required checks
         run: |
-          npx ts-node -e "require('./scripts/color-contrast').checkAndReport(['light', 'dark'])"
+          npx ts-node -e "require('./scripts/color-contrast').check(['light', 'dark'])"

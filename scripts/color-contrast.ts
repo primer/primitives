@@ -7,7 +7,7 @@ import colors from '../dist/ts'
 import {writeFile} from 'fs'
 import {normal} from 'color-blend'
 import {getContrast, parseToRgba, rgba} from 'color2k'
-const github = require('@actions/github')
+// import github from '@actions/github'
 
 /**
  * Type definitions
@@ -222,38 +222,38 @@ export const check = (themes: Themes[], output: 'log' | 'file' | 'all' | 'none' 
   return results
 }
 
-export const checkAndReport = async (themes: Themes[]) => {
-  const results = checkContrastForThemes(contrastRequirements, themes)
+// export const checkAndReport = async (themes: Themes[]) => {
+//   const results = checkContrastForThemes(contrastRequirements, themes)
 
-  const failingChecks = []
+//   const failingChecks = []
 
-  for (const {theme, resultTable, failingContrast} of results) {
-    // eslint-disable-next-line no-console
-    console.log('\n', resultTable)
-    if (failingContrast > 0) {
-      // eslint-disable-next-line no-console
-      console.error('❌ Failing contrast checks:', failingContrast, '\n')
-      failingChecks.push(`${theme}: ${failingContrast} failing color pairs`)
-    }
-  }
+//   for (const {theme, resultTable, failingContrast} of results) {
+//     // eslint-disable-next-line no-console
+//     console.log('\n', resultTable)
+//     if (failingContrast > 0) {
+//       // eslint-disable-next-line no-console
+//       console.error('❌ Failing contrast checks:', failingContrast, '\n')
+//       failingChecks.push(`${theme}: ${failingContrast} failing color pairs`)
+//     }
+//   }
 
-  if (failingChecks.length > 0) {
-    const result = await github.rest.issues.listComments({
-      // eslint-disable-next-line camelcase
-      issue_number: github.context.issue.number,
-      owner: github.context.repo.owner,
-      repo: github.context.repo.repo,
-    })
+//   if (failingChecks.length > 0) {
+//     const result = await github.rest.issues.listComments({
+//       // eslint-disable-next-line camelcase
+//       issue_number: github.context.issue.number,
+//       owner: github.context.repo.owner,
+//       repo: github.context.repo.repo,
+//     })
 
-    const botComments = result.data.filter(c => c.user.login === 'github-actions[bot]')
-    if (!botComments.length) {
-      await github.rest.issues.createComment({
-        // eslint-disable-next-line camelcase
-        issue_number: github.context.issue.number,
-        owner: github.context.repo.owner,
-        repo: github.context.repo.repo,
-        body: failingChecks.join('\n'),
-      })
-    }
-  }
-}
+//     const botComments = result.data.filter(c => c.user.login === 'github-actions[bot]')
+//     if (!botComments.length) {
+//       await github.rest.issues.createComment({
+//         // eslint-disable-next-line camelcase
+//         issue_number: github.context.issue.number,
+//         owner: github.context.repo.owner,
+//         repo: github.context.repo.repo,
+//         body: failingChecks.join('\n'),
+//       })
+//     }
+//   }
+// }
