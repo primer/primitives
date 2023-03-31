@@ -7,8 +7,7 @@ import colors from '../dist/ts'
 import {writeFile} from 'fs'
 import {normal} from 'color-blend'
 import {getContrast, parseToRgba, rgba} from 'color2k'
-// import github from '@actions/github'
-
+import {getMarkdownTable as markdownTable} from 'markdown-table-ts'
 /**
  * Type definitions
  */
@@ -106,6 +105,24 @@ const testContrast = (
   }
 }
 /**
+ *
+ * @param contrastRequirementsObj
+ * @param themes
+ * @returns
+ */
+const getThemesToCheck = (
+  contrastRequirementsObj: {[key in Themes]: ContrastRequirement[]},
+  themes?: Themes[],
+): [Themes, ContrastRequirement[]][] => {
+  if (themes && themes.length > 0) {
+    return Object.entries(contrastRequirementsObj).filter(([theme]) => themes.includes(theme as Themes)) as [
+      Themes,
+      ContrastRequirement[],
+    ][]
+  }
+  return Object.entries(contrastRequirementsObj) as [Themes, ContrastRequirement[]][]
+}
+/**
  * getConsoleTable
  * @description takes the test results per theme and creates a nicely formatted table of the results to the console
  * @param theme
@@ -114,10 +131,31 @@ const testContrast = (
 const getConsoleTable = (theme: string, results: contrastTestResult[]): string => {
   // config table
   const contrastTable = new Table({
-    title: `Contrast checks for: ${theme}`,
+    // title: `Contrast checks for: ${theme}`,
     charLength: {'❌': 2, '✅': 2},
     colorMap: {
       grey: '\x1b[0;30m', // define customized color
+    },
+    style: {
+      headerTop: {
+        left: '',
+        mid: '',
+        right: '',
+        other: '',
+      },
+      headerBottom: {
+        left: '|',
+        mid: '|',
+        right: '|',
+        other: '-',
+      },
+      tableBottom: {
+        left: '',
+        mid: '',
+        right: '',
+        other: '',
+      },
+      vertical: '|',
     },
     columns: [
       {
@@ -143,64 +181,71 @@ const getConsoleTable = (theme: string, results: contrastTestResult[]): string =
     ],
   })
   // add rows and color
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   for (const [index, row] of results.entries()) {
-    let color = 'white'
+    const color = 'white'
     // turn odd index rows grey (index starts at 0)
-    if (index % 2 !== 0) {
-      color = 'grey'
-    }
+    // if (index % 2 !== 0) {
+    //   color = 'grey'
+    // }
     contrastTable.addRow(row, {
       color,
     })
   }
   return contrastTable.render()
 }
+/**
+ * getMarkdownTable
+ * @param creates a markdown table of the results
+ * @param results - contrastTestResult[]
+ * @returns string
+ */
+const getMarkdownTable = (results: contrastTestResult[]): string => {
+  const rows = results.map(row => Object.values(row))
 
-const getThemesToCheck = (
-  contrastRequirementsObj: {[key in Themes]: ContrastRequirement[]},
-  themes?: Themes[],
-): [Themes, ContrastRequirement[]][] => {
-  if (themes && themes.length > 0) {
-    return Object.entries(contrastRequirementsObj).filter(([theme]) => themes.includes(theme as Themes)) as [
-      Themes,
-      ContrastRequirement[],
-    ][]
-  }
-  return Object.entries(contrastRequirementsObj) as [Themes, ContrastRequirement[]][]
+  return markdownTable({
+    table: {
+      head: ['contrastPair', 'pass', 'contrastRatio', 'minimumContrastRatio'],
+      body: rows as string[][],
+    },
+  })
 }
 
-const checkContrastForThemes = (
+const checkContrastForThemes = async (
   contrastRequirementsObj: {[key in Themes]: ContrastRequirement[]},
   themes?: Themes[],
 ) => {
   const themesToCheck = getThemesToCheck(contrastRequirementsObj, themes)
 
-  return themesToCheck.map(([theme, colorPairs]: [string, ContrastRequirement[]]) => {
-    // turn deeply nested colors object into one level object like 'fg.default': '#000'
+  return await Promise.all(
+    themesToCheck.map(async ([theme, colorPairs]: [string, ContrastRequirement[]]) => {
+      // turn deeply nested colors object into one level object like 'fg.default': '#000'
 
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const flattenColors = flattenObject((colors.colors as any)[theme])
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const flattenColors = flattenObject((colors.colors as any)[theme])
 
-    // run tests on all color pairs
-    const scopedResults = runContrastTest(colorPairs, flattenColors)
-    // failing contrasts
-    const failingContrast = scopedResults.reduce((acc, cur) => (cur.pass === '❌' ? acc + 1 : acc), 0)
-    // return results for json file creation
-    return {
-      theme,
-      failingContrast,
-      resultTable: getConsoleTable(theme, scopedResults),
-      results: scopedResults,
-    }
-  })
+      // run tests on all color pairs
+      const scopedResults = runContrastTest(colorPairs, flattenColors)
+      // failing contrasts
+      const failingContrast = scopedResults.reduce((acc, cur) => (cur.pass === '❌' ? acc + 1 : acc), 0)
+      // return results for json file creation
+      return {
+        theme,
+        failingContrast,
+        resultTable: getConsoleTable(theme, scopedResults),
+        markdownTable: await getMarkdownTable(scopedResults),
+        results: scopedResults,
+      }
+    }),
+  )
 }
 
 /**
  * run tests, output results to console and store them for json
  */
 
-export const check = (themes: Themes[], output: 'log' | 'file' | 'all' | 'none' = 'all') => {
-  const results = checkContrastForThemes(contrastRequirements, themes)
+export const check = async (themes?: Themes[], output: 'log' | 'file' | 'all' | 'none' = 'all') => {
+  const results = await checkContrastForThemes(contrastRequirements, themes)
 
   if (output === 'log' || output === 'all') {
     for (const {resultTable, failingContrast} of results) {
@@ -221,39 +266,3 @@ export const check = (themes: Themes[], output: 'log' | 'file' | 'all' | 'none' 
 
   return results
 }
-
-// export const checkAndReport = async (themes: Themes[]) => {
-//   const results = checkContrastForThemes(contrastRequirements, themes)
-
-//   const failingChecks = []
-
-//   for (const {theme, resultTable, failingContrast} of results) {
-//     // eslint-disable-next-line no-console
-//     console.log('\n', resultTable)
-//     if (failingContrast > 0) {
-//       // eslint-disable-next-line no-console
-//       console.error('❌ Failing contrast checks:', failingContrast, '\n')
-//       failingChecks.push(`${theme}: ${failingContrast} failing color pairs`)
-//     }
-//   }
-
-//   if (failingChecks.length > 0) {
-//     const result = await github.rest.issues.listComments({
-//       // eslint-disable-next-line camelcase
-//       issue_number: github.context.issue.number,
-//       owner: github.context.repo.owner,
-//       repo: github.context.repo.repo,
-//     })
-
-//     const botComments = result.data.filter(c => c.user.login === 'github-actions[bot]')
-//     if (!botComments.length) {
-//       await github.rest.issues.createComment({
-//         // eslint-disable-next-line camelcase
-//         issue_number: github.context.issue.number,
-//         owner: github.context.repo.owner,
-//         repo: github.context.repo.repo,
-//         body: failingChecks.join('\n'),
-//       })
-//     }
-//   }
-// }
