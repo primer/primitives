@@ -1,5 +1,5 @@
 import React from 'react'
-import {ColorScale} from '../../Components/ColorScale'
+import {ColorScale} from '../../StorybookComponents/ColorScale/ColorScale'
 
 export default {
   title: 'Color/Base/Scales',

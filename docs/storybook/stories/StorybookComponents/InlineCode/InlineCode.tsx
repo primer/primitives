@@ -1,4 +1,4 @@
-import {ClipboardCopy} from '../Components/ClipboardCopy'
+import {ClipboardCopy} from '../ClipboardCopy/ClipboardCopy'
 import React from 'react'
 import './InlineCode.css'
 

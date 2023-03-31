@@ -1,5 +1,5 @@
 import React from 'react'
-import {ColorPreview} from '../../Components/ColorPreview'
+import {ColorPreview} from '../../StorybookComponents/ColorPreview/ColorPreview'
 
 export default {
   title: 'Color/Functional/Background',

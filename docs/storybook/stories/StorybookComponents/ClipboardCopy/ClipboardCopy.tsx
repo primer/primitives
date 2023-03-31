@@ -1,4 +1,4 @@
-import {IconButton, StyledOcticon} from '@primer/react'
+import {IconButton} from '@primer/react'
 import {CheckIcon, CopyIcon} from '@primer/octicons-react'
 import copy from 'copy-to-clipboard'
 import React from 'react'
