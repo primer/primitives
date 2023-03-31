@@ -1,9 +1,6 @@
 name: A11y contrast check
 
 on:
-  push:
-    branches:
-      - main
   pull_request:
 
 jobs:
@@ -33,10 +30,7 @@ jobs:
       - name: Report check results
         uses: actions/github-script@v6
         with:
-          github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
-            const fs = require('fs');
-            const path = require('path');
             const results = require('./color-contrast-check.json');
             // prepare comment body
             const body = '## Design Token Contrast Check\n\n' + 
