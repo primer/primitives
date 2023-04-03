@@ -1,11 +1,35 @@
 # Posts a comment listing all the variables that changed in a PR
-name: Detect design token changes
+name: Show diff for design token changes
 on:
   pull_request:
     branches-ignore:
       - 'changeset-release/**'
 jobs:
+    # JOB to run change detection
+  changes:
+    runs-on: ubuntu-latest
+    # Required permissions
+    permissions:
+      pull-requests: read
+    # Set job outputs to values from filter step
+    outputs:
+      tokens: ${{ steps.filter.outputs.tokens }}
+    steps:
+    # For pull requests it's not necessary to checkout the code
+    - uses: dorny/paths-filter@v2
+      id: filter
+      with:
+        filters: |
+          tokens:
+            - 'src/tokens/**'
+            - 'data/**'
+    - name: No changes to tokens detected
+      if: ${{ steps.filter.outputs.tokens == 'false' }}
+      run: echo "No changes to tokens detected, skipping further jobs checking tokens"
+
   comment:
+    needs: changes
+    if: ${{ needs.changes.outputs.tokens == 'true' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
