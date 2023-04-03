@@ -44,8 +44,10 @@ jobs:
         uses: actions/github-script@v5
         with:
           script: |
-            const fs = require('fs')
-            const body = fs.readFileSync('.github/diff_comment_template.md', 'utf8')
+            const body = '<details>\n' +
+            '<summary><strong>Variables changed</strong></summary>\n' +
+            '<!-- diff --><!-- /diff -->\n' +
+            '</details>'
             const result = await github.rest.issues.listComments({
               issue_number: context.issue.number,
               owner: context.repo.owner,
