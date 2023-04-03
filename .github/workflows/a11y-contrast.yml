@@ -28,6 +28,10 @@ jobs:
     #     transformation:
           #   - 'src/filters/**'
           #   - 'src/transformers/**'
+    - name: Notifiy if tokens did not change
+      if: ${{ steps.filter.outputs.tokens == 'false' }}
+      run: echo "No changes to tokens detected"
+
   build:
     needs: changes
     if: ${{ needs.changes.outputs.tokens == 'true' }}
