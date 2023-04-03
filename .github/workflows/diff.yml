@@ -1,5 +1,5 @@
 # Posts a comment listing all the variables that changed in a PR
-name: Diff
+name: Detect design token changes
 on:
   pull_request:
     branches-ignore:

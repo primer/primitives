@@ -30,7 +30,7 @@ jobs:
           #   - 'src/transformers/**'
   build:
     needs: changes
-    if: ${{ needs.changes.outputs.backend == 'true' }}
+    if: ${{ needs.changes.outputs.tokens == 'true' }}
     name: Check design token color contrast
     runs-on: ubuntu-latest
     steps:
