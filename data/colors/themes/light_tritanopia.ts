@@ -63,6 +63,9 @@ const exceptions = {
   success: {
     emphasis: get('scale.green.5'),
   },
+  danger: {
+    fg: get('scale.red.5'),
+  }
 }
 
 export default merge(light_colorblind, exceptions, {scale})

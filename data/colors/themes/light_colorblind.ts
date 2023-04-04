@@ -75,6 +75,9 @@ const exceptions = {
     muted: alpha(get('scale.gray.3'), 0.4),
     subtle: get('scale.gray.0')
   },
+  danger: {
+    fg: get('scale.red.5'),
+  },
   diffBlob: {
     addition: {
       numBg: get('success.muted'),
