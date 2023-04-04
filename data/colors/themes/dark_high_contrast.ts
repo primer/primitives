@@ -129,7 +129,8 @@ const exceptions = {
     emphasisPlus: get('scale.gray.0')
   },
   accent: {
-    muted: get('scale.blue.4'),
+    fg: get('scale.blue.3'),
+    muted: get('scale.blue.4')
   },
   success: {
     muted: get('scale.green.4'),
