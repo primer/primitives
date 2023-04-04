@@ -60,6 +60,9 @@ const scale = {
 }
 
 const exceptions = {
+  success: {
+    emphasis: get('scale.green.5'),
+  },
   open: {
     fg: get('scale.orange.5'),
     emphasis: get('scale.orange.4'),

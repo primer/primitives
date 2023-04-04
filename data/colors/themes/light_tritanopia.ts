@@ -1,4 +1,4 @@
-import {merge} from '../../../src/utils-v1'
+import {merge, get} from '../../../src/utils-v1'
 import light_colorblind from './light_colorblind'
 
 const scale = {
@@ -59,4 +59,10 @@ const scale = {
   coral: ['#fff0eb', '#ffd6cc', '#ffb4a1', '#fd8c73', '#ec6547', '#c4432b', '#9e2f1c', '#801f0f', '#691105', '#510901']
 }
 
-export default merge(light_colorblind, {scale})
+const exceptions = {
+  success: {
+    emphasis: get('scale.green.5'),
+  },
+}
+
+export default merge(light_colorblind, exceptions, {scale})
