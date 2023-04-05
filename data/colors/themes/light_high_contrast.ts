@@ -116,6 +116,7 @@ coral: [
 
 const exceptions = {
   fg: {
+    default: get('scale.gray.9'),
     muted: get('scale.gray.9'),
   },
   canvas: {
