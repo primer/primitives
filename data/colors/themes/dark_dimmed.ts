@@ -60,6 +60,9 @@ const scale = {
 }
 
 const exceptions = {
+  accent: {
+    fg: get('scale.blue.3'),
+  },
   diffBlob: {
     expander: {
       icon: get('fg.default'),

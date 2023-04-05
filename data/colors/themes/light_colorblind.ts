@@ -60,6 +60,9 @@ const scale = {
 }
 
 const exceptions = {
+  success: {
+    emphasis: get('scale.green.5'),
+  },
   open: {
     fg: get('scale.orange.5'),
     emphasis: get('scale.orange.4'),
@@ -71,6 +74,9 @@ const exceptions = {
     emphasis: get('scale.gray.5'),
     muted: alpha(get('scale.gray.3'), 0.4),
     subtle: get('scale.gray.0')
+  },
+  danger: {
+    fg: get('scale.red.5'),
   },
   diffBlob: {
     addition: {
