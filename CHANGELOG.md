@@ -1,5 +1,11 @@
 # @primer/primitives
 
+## 7.11.5
+
+### Patch Changes
+
+- [#557](https://github.com/primer/primitives/pull/557) [`c9101b7`](https://github.com/primer/primitives/commit/c9101b78d716e6d5189ab0bebb215e9fb2818db5) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Updated fg.default and fg.muted for most themes to reset to previous versions
+
 ## 7.11.4
 
 ### Patch Changes
