@@ -60,6 +60,9 @@ const scale = {
 }
 
 const exceptions = {
+  accent: {
+    fg: get('scale.blue.3'),
+  },
   open: {
     fg: get('scale.orange.3'),
     emphasis: get('scale.orange.5'),
