@@ -60,6 +60,10 @@ const scale = {
 }
 
 const exceptions = {
+  fg: {
+    default: get('scale.gray.9'),
+    muted: get('scale.gray.6'),
+  },
   success: {
     emphasis: get('scale.green.5'),
   },

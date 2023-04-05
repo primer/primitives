@@ -116,6 +116,7 @@ const scale = {
 
 const exceptions = {
   fg: {
+    default: get('scale.gray.1'),
     muted: get('scale.gray.1'),
     onEmphasis: get('scale.gray.9')
   },
