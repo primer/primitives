@@ -1,5 +1,11 @@
 # @primer/primitives
 
+## 7.11.4
+
+### Patch Changes
+
+- [#555](https://github.com/primer/primitives/pull/555) [`98ca36a`](https://github.com/primer/primitives/commit/98ca36a05a2633e55bb6bef8010f61aa0fd5ef26) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Fix for primary color in cvd modes
+
 ## 7.11.3
 
 ### Patch Changes
