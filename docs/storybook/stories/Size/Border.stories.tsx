@@ -39,16 +39,13 @@ export const Border = () => {
     }))
   })
 
-  console.log(data)
-
   return (
     <Table.Container>
       <Table.Title as="h1" id="sizing">
         Sizing and spacing
       </Table.Title>
       <DataTable
-        aria-labelledby="repositories"
-        aria-describedby="repositories-subtitle"
+        aria-labelledby="sizing"
         data={data}
         columns={[
           {
