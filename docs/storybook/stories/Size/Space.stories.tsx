@@ -6,7 +6,7 @@ import {DataTable, Table} from '@primer/react/drafts'
 import {InlineCode} from '../StorybookComponents/InlineCode/InlineCode'
 
 export default {
-  title: 'Size/Space',
+  title: 'Size/Base',
   parameters: {
     controls: {hideNoControlsWarning: true},
   },
@@ -35,7 +35,7 @@ export const Base = () => {
             field: 'name',
             rowHeader: true,
             renderCell: row => {
-              return <SizeTokenSwatch size={row.name} />
+              return <SizeTokenSwatch size={row.name} filled />
             },
           },
           {
