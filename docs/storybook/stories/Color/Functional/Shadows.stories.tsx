@@ -1,11 +1,12 @@
 import React from 'react'
 // eslint-disable-next-line import/no-unresolved
-import {ColorPreview} from '../../Components/ColorPreview'
+import {ColorPreview} from '../../StorybookComponents/ColorPreview/ColorPreview'
 
 export default {
   title: 'Color/Functional/Shadows',
   parameters: {
     storyType: 'swatch',
+    controls: {hideNoControlsWarning: true},
   },
 }
 

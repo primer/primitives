@@ -1,17 +1,15 @@
 import React from 'react'
-// eslint-disable-next-line import/no-unresolved
-import type {ComponentMeta, ComponentStory} from '@storybook/react'
-import {ColorPreview} from '../../Components/ColorPreview'
+import {ColorPreview} from '../../StorybookComponents/ColorPreview/ColorPreview'
 
 export default {
   title: 'Color/Patterns',
-  component: ColorPreview,
   parameters: {
     storyType: 'swatch',
+    controls: {hideNoControlsWarning: true},
   },
-} as ComponentMeta<typeof ColorPreview>
+}
 
-export const Avatar: ComponentStory<typeof ColorPreview> = () => {
+export const Avatar = () => {
   const bgColors = ['avatar-bgColor', 'avatarStack-fade-bgColor-default', 'avatarStack-fade-bgColor-muted']
   const borderColors = ['avatar-borderColor']
 
@@ -27,7 +25,7 @@ export const Avatar: ComponentStory<typeof ColorPreview> = () => {
   )
 }
 
-export const Control: ComponentStory<typeof ColorPreview> = () => {
+export const Control = () => {
   const bgColors = [
     'control-bgColor-rest',
     'control-bgColor-hover',
@@ -92,7 +90,7 @@ export const Control: ComponentStory<typeof ColorPreview> = () => {
   )
 }
 
-export const Counter: ComponentStory<typeof ColorPreview> = () => {
+export const Counter = () => {
   const borderColors = ['counter-borderColor']
 
   return (
@@ -104,7 +102,7 @@ export const Counter: ComponentStory<typeof ColorPreview> = () => {
   )
 }
 
-export const Button: ComponentStory<typeof ColorPreview> = () => {
+export const Button = () => {
   const bgColors = [
     'button-default-bgColor-rest',
     'button-default-bgColor-hover',
@@ -176,7 +174,7 @@ export const Button: ComponentStory<typeof ColorPreview> = () => {
   )
 }
 
-export const Focus: ComponentStory<typeof ColorPreview> = () => {
+export const Focus = () => {
   const borderColors = ['focus-outlineColor']
 
   return (
@@ -188,7 +186,7 @@ export const Focus: ComponentStory<typeof ColorPreview> = () => {
   )
 }
 
-export const Header: ComponentStory<typeof ColorPreview> = () => {
+export const Header = () => {
   const bgColors = ['header-bgColor']
 
   return (
@@ -200,7 +198,7 @@ export const Header: ComponentStory<typeof ColorPreview> = () => {
   )
 }
 
-export const Menu: ComponentStory<typeof ColorPreview> = () => {
+export const Menu = () => {
   const bgColors = ['menu-bgColor-active']
 
   return (
@@ -212,7 +210,7 @@ export const Menu: ComponentStory<typeof ColorPreview> = () => {
   )
 }
 
-export const Overlay: ComponentStory<typeof ColorPreview> = () => {
+export const Overlay = () => {
   const bgColors = ['overlay-bgColor', 'overlay-backdrop-bgColor']
 
   return (
@@ -224,7 +222,7 @@ export const Overlay: ComponentStory<typeof ColorPreview> = () => {
   )
 }
 
-export const SelectMenu: ComponentStory<typeof ColorPreview> = () => {
+export const SelectMenu = () => {
   const bgColors = ['selectMenu-bgColor-active']
   const borderColors = ['selectMenu-borderColor']
 
@@ -240,7 +238,7 @@ export const SelectMenu: ComponentStory<typeof ColorPreview> = () => {
   )
 }
 
-export const SideNav: ComponentStory<typeof ColorPreview> = () => {
+export const SideNav = () => {
   const bgColors = ['sideNav-bgColor-selected']
 
   return (
@@ -252,7 +250,7 @@ export const SideNav: ComponentStory<typeof ColorPreview> = () => {
   )
 }
 
-export const TimelineBadge: ComponentStory<typeof ColorPreview> = () => {
+export const TimelineBadge = () => {
   const bgColors = ['timelineBadge-bgColor']
 
   return (
@@ -264,7 +262,7 @@ export const TimelineBadge: ComponentStory<typeof ColorPreview> = () => {
   )
 }
 
-export const UnderlineNav: ComponentStory<typeof ColorPreview> = () => {
+export const UnderlineNav = () => {
   const borderColors = ['underlineNav-borderColor-active', 'underlineNav-borderColor-hover']
   const fgColors = ['underlineNav-iconColor-rest']
 

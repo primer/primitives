@@ -2,9 +2,9 @@
 import React from 'react'
 import './PatternOverrides.css'
 import type {ComponentMeta, ComponentStory} from '@storybook/react'
-import {ColorPreview} from '../Components/ColorPreview'
+import {ColorPreview} from '../StorybookComponents/ColorPreview/ColorPreview'
 import {SegmentedControl, ActionList} from '@primer/react'
-import {CSSTokenSwatch} from '../Components/CSSTokenSwatch'
+import {CSSTokenSwatch} from '../StorybookComponents/CSSTokenSwatch/CSSTokenSwatch'
 
 export default {
   title: 'Demos/Borders',

@@ -1,0 +1,54 @@
+.ControlDemo {
+  display: inline-grid;
+  grid-template-areas: 'pTop pTop pTop pTop pTop' 'pLeft icon gap label pRight' 'pBottom pBottom pBottom pBottom pBottom';
+  grid-template-rows: min-content minmax(0, 1fr) min-content;
+  grid-template-columns: repeat(5, min-content);
+  border-radius: var(--borderRadius-medium);
+  border: solid 1px var(--borderColor-done-emphasis);
+  background-size: var(--demo-highlight-background-size);
+  align-items: center;
+}
+
+.icon {
+  grid-area: icon;
+  display: flex;
+  align-items: center;
+  background-color: var(--fgColor-muted);
+  width: 1rem;
+  height: 1rem;
+  border-radius: var(--borderRadius-small);
+}
+
+.paddingTop {
+  grid-area: pTop;
+  background-size: var(--demo-highlight-background-size);
+}
+
+.paddingBottom {
+  grid-area: pBottom;
+  background-size: var(--demo-highlight-background-size);
+}
+
+.paddingLeft {
+  grid-area: pLeft;
+  background-size: var(--demo-highlight-background-size);
+  height: 100%;
+}
+
+.paddingRight {
+  grid-area: pRight;
+  background-size: var(--demo-highlight-background-size);
+  height: 100%;
+}
+
+.gap {
+  grid-area: gap;
+  background-size: var(--demo-highlight-background-size);
+  height: 100%;
+}
+
+.controlLabel {
+  grid-area: label;
+  background-size: var(--demo-highlight-background-size);
+  font-size: var(--text-body-size-medium);
+}
