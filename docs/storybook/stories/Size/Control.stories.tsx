@@ -5,6 +5,7 @@ import sizeTokensFine from '../../../../tokens-next-private/docs/functional/size
 import sizeTokensCoarse from '../../../../tokens-next-private/docs/functional/size/size-coarse.json'
 import {ControlSizeDemo} from '../StorybookComponents/ControlSizeDemo/ControlSizeDemo'
 import {ControlStackDemo} from '../StorybookComponents/ControlStackDemo/ControlStackDemo'
+import {TouchTargetDemo} from '../StorybookComponents/TouchTargetDemo/TouchTargetDemo'
 import {DataTable, Table} from '@primer/react/drafts'
 import {InlineCode} from '../StorybookComponents/InlineCode/InlineCode'
 import {getTokensByName} from '../utilities/getTokensByName'
@@ -523,6 +524,118 @@ export const ControlStackResponsive = () => {
             rowHeader: true,
             renderCell: row => {
               return <p>{row.name.includes('small') ? coarseSmallValue : coarseMediumValue}</p>
+            },
+          },
+          {
+            header: 'Pointer: fine value',
+            field: 'value',
+            rowHeader: true,
+            renderCell: row => {
+              return <p>{row.value}</p>
+            },
+          },
+        ]}
+      />
+    </Table.Container>
+  )
+}
+
+export const ControlTouchTarget = () => {
+  const data = getTokensByName(sizeTokens, 'control-minTarget').map(token => {
+    return {
+      id: token.name,
+      ...token,
+    }
+  })
+
+  return (
+    <Table.Container>
+      <Table.Title as="h1" id="sizing">
+        Touch target
+      </Table.Title>
+      <DataTable
+        aria-labelledby="sizing"
+        data={data}
+        columns={[
+          {
+            header: 'Sample',
+            field: 'name',
+            rowHeader: true,
+            renderCell: row => {
+              return <TouchTargetDemo size={row.name} />
+            },
+          },
+          {
+            header: 'Token',
+            field: 'name',
+            rowHeader: true,
+            renderCell: row => {
+              return <InlineCode value={row.name} copyClipboard />
+            },
+          },
+          {
+            header: 'Output value',
+            field: 'value',
+            rowHeader: true,
+            renderCell: row => {
+              return <p>{row.value}</p>
+            },
+          },
+          {
+            header: 'Source value',
+            field: 'original.value',
+            rowHeader: true,
+            renderCell: row => {
+              return <p>{row.original.value}</p>
+            },
+          },
+        ]}
+      />
+    </Table.Container>
+  )
+}
+
+export const ControlTouchTargetResponsive = () => {
+  const data = getTokensByName(sizeTokensFine, 'control-minTarget').map(token => {
+    return {
+      id: token.name,
+      ...token,
+    }
+  })
+
+  const coarseValue = getTokensByName(sizeTokensCoarse, 'control-minTarget-auto')[0].value
+
+  return (
+    <Table.Container>
+      <Table.Title as="h1" id="sizing">
+        Responsive touch target
+      </Table.Title>
+      <DataTable
+        aria-labelledby="sizing"
+        data={data}
+        columns={[
+          {
+            header: 'Sample',
+            field: 'name',
+            rowHeader: true,
+            renderCell: row => {
+              return <TouchTargetDemo size={row.name} />
+            },
+          },
+          {
+            header: 'Token',
+            field: 'name',
+            rowHeader: true,
+            renderCell: row => {
+              return <InlineCode value={row.name} copyClipboard />
+            },
+          },
+          {
+            header: 'Pointer: coarse value',
+            field: 'value',
+            rowHeader: true,
+            renderCell: row => {
+              return <p>{coarseValue}</p>
             },
           },
           {

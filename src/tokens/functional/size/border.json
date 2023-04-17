@@ -1,5 +1,5 @@
 {
-  "borderInset": {
+  "boxShadow": {
     "thin": {
       "value": "inset 0 0 0 {borderWidth.thin}"
     },
@@ -38,7 +38,11 @@
   "outline": {
     "focus": {
       "offset": {
-        "$value": "1px",
+        "$value": "-2px",
+        "$type": "dimension"
+      },
+      "width": {
+        "$value": "2px",
         "$type": "dimension"
       }
     }

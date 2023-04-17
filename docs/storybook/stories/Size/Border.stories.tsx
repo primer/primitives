@@ -14,7 +14,7 @@ export default {
 }
 
 export const BorderSize = () => {
-  const borderInset = getTokensByName(sizeTokens, 'borderInset').map(token => {
+  const borderInset = getTokensByName(sizeTokens, 'boxShadow').map(token => {
     return {
       id: token.name,
       ...token,
@@ -50,7 +50,7 @@ export const BorderSize = () => {
               return (
                 <SizeTokenSwatch
                   borderSize={row.name.startsWith('borderWidth') ? row.name : undefined}
-                  boxShadow={row.name.startsWith('borderInset') ? row.name : undefined}
+                  boxShadow={row.name.startsWith('boxShadow') ? row.name : undefined}
                 />
               )
             },
@@ -162,7 +162,12 @@ export const Outline = () => {
             field: 'name',
             rowHeader: true,
             renderCell: row => {
-              return <SizeTokenSwatch filled outlineOffset={row.name} />
+              return (
+                <SizeTokenSwatch
+                  outlineOffset={row.name.includes('offset') ? row.name : undefined}
+                  outlineWidth={row.name.includes('width')}
+                />
+              )
             },
           },
           {

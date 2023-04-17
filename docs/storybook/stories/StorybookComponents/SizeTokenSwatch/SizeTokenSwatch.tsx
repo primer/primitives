@@ -8,6 +8,7 @@ export type SizeTokenSwatchProps = {
   filled?: boolean
   boxShadow?: string
   outlineOffset?: string
+  outlineWidth?: boolean
 }
 
 export const SizeTokenSwatch = ({
@@ -17,6 +18,7 @@ export const SizeTokenSwatch = ({
   boxShadow,
   outlineOffset,
   filled,
+  outlineWidth,
 }: SizeTokenSwatchProps) => {
   return (
     <div
@@ -27,7 +29,8 @@ export const SizeTokenSwatch = ({
         border: `solid var(--${borderSize}) var(--base-color-purple-5)`,
         backgroundColor: filled ? 'var(--base-color-purple-5)' : 'transparent',
         boxShadow: `var(--${boxShadow}) var(--base-color-purple-5)`,
-        outline: outlineOffset ? `solid 2px var(--base-color-purple-5)` : undefined,
+        outline:
+          outlineOffset || outlineWidth ? `solid var(--outline-focus-width) var(--base-color-purple-5)` : undefined,
         outlineOffset: `var(--${outlineOffset})`,
       }}
     ></div>
