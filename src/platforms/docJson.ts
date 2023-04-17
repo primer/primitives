@@ -23,7 +23,7 @@ export const docJson: PlatformInitializer = (outputFile, prefix, buildPath): Sty
   files: [
     {
       destination: outputFile,
-      format: `json/nested-prefixed`,
+      format: `json/one-dimensional`,
       filter: isSource,
       options: {
         outputReferences: false,

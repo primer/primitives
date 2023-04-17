@@ -1,7 +1,7 @@
 import type StyleDictionary from 'style-dictionary'
 /**
  * jsonToNestedValue
- * @description creates a nested json three where every final value is the `.value` prop
+ * @description creates a nested json tree where every final value is the `.value` prop
  * @param token StyleDictionary.DesignToken
  * @returns nested json three
  */
