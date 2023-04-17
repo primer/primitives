@@ -24,6 +24,7 @@ import {
   jsonNestedPrefixed,
   cssThemed,
   cssCustomMedia,
+  jsonOneDimensional,
 } from './formats'
 
 /**
@@ -69,6 +70,11 @@ StyleDictionary.registerFormat({
 StyleDictionary.registerFormat({
   name: 'json/nested-prefixed',
   formatter: jsonNestedPrefixed,
+})
+
+StyleDictionary.registerFormat({
+  name: 'json/one-dimensional',
+  formatter: jsonOneDimensional,
 })
 
 /**
