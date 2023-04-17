@@ -39,7 +39,6 @@
     "install:storybook": "cd docs/storybook && npm ci --legacy-peer-deps --no-audit --no-fund",
     "lint": "eslint '**/*.{js,ts,tsx,md,mdx}' --max-warnings=0 --config .eslintrc.js",
     "lint:fix": "eslint '**/*.{js,ts,tsx,md,mdx}' --fix --max-warnings=0 --config .eslintrc.js",
-    "postbuild": "ts-node ./scripts/color-contrast.ts",
     "prebuild": "rm -rf dist",
     "prebuild:tokens": "rm -rf tokens-v2-private",
     "prebuild:next": "rm -rf tokens-next-private",
