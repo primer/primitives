@@ -1,6 +1,7 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
-npm run build & npm run test & npm run tokenJson:check
+npm run build & npm run test
+npm run tokenJson:check
 if npm run lint ; then
     echo "Lint check passed"
 else
