@@ -1,0 +1,19 @@
+.ControlStackDemo {
+  display: inline-grid;
+  grid-template-rows: min-content;
+  grid-template-columns: repeat(3, min-content);
+  border-radius: var(--borderRadius-medium);
+  background-size: var(--demo-highlight-background-size);
+  background-image: var(--demo-highlight);
+}
+
+.ControlStackDemo--item {
+  height: var(--base-size-32);
+  width: var(--base-size-32);
+  border-radius: var(--borderRadius-medium);
+  border: solid 1px var(--borderColor-done-emphasis);
+  background: var(--base-color-purple-0);
+  display: grid;
+  place-content: center;
+  color: var(--fgColor-muted);
+}

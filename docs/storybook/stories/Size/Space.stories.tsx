@@ -4,6 +4,7 @@ import sizeTokens from '../../../../tokens-next-private/docs/base/size/size.json
 import {SizeTokenSwatch} from '../StorybookComponents/SizeTokenSwatch/SizeTokenSwatch'
 import {DataTable, Table} from '@primer/react/drafts'
 import {InlineCode} from '../StorybookComponents/InlineCode/InlineCode'
+import {getTokensByName} from '../utilities/getTokensByName'
 
 export default {
   title: 'Size/Base',
@@ -13,21 +14,20 @@ export default {
 }
 
 export const Base = () => {
-  const sizeArray = Object.entries(sizeTokens.base.size)
-  const data = sizeArray.map(([key, value]) => {
+  const data = getTokensByName(sizeTokens, 'base').map(token => {
     return {
-      id: key,
-      ...value,
+      id: token.name,
+      ...token,
     }
   })
+
   return (
     <Table.Container>
       <Table.Title as="h1" id="sizing">
-        Sizing and spacing
+        Base size
       </Table.Title>
       <DataTable
-        aria-labelledby="repositories"
-        aria-describedby="repositories-subtitle"
+        aria-labelledby="sizing"
         data={data}
         columns={[
           {

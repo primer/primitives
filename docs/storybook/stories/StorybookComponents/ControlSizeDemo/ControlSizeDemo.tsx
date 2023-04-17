@@ -2,36 +2,26 @@ import React from 'react'
 import './ControlSizeDemo.css'
 
 export type ControlSizeDemoProps = {
-  paddingLeft?: string
-  paddingRight?: string
-  paddingTop?: string
-  paddingBottom?: string
+  paddingInline?: string
+  paddingBlock?: string
   gap?: string
   blockSize?: string
   lineBox?: string
-  modifier?: string
-  highlightPaddingBottom?: boolean
-  highlightPaddingTop?: boolean
-  highlightPaddingRight?: boolean
-  highlightPaddingLeft?: boolean
+  highlightPaddingBlock?: boolean
+  highlightPaddingInline?: boolean
   highlightGap?: boolean
   highlightLineBoxHeight?: boolean
   highlightHeight?: boolean
 }
 
 export const ControlSizeDemo = ({
-  paddingLeft,
-  paddingRight,
-  paddingTop,
-  paddingBottom,
+  paddingInline,
+  paddingBlock,
   gap,
   blockSize,
   lineBox,
-  modifier,
-  highlightPaddingBottom,
-  highlightPaddingTop,
-  highlightPaddingRight,
-  highlightPaddingLeft,
+  highlightPaddingBlock,
+  highlightPaddingInline,
   highlightGap,
   highlightLineBoxHeight,
   highlightHeight,
@@ -41,35 +31,36 @@ export const ControlSizeDemo = ({
       className="ControlDemo"
       style={{
         height: `var(--${blockSize})`,
-        backgroundImage: highlightHeight ? 'var(--demo-highlight)' : undefined,
+        background: highlightHeight ? 'var(--demo-highlight-solid)' : undefined,
       }}
     >
       <span
         className="paddingTop"
         style={{
-          height: `var(--${paddingTop})`,
-          backgroundImage: highlightPaddingTop ? 'var(--demo-highlight)' : undefined,
+          height: `var(--${paddingBlock})`,
+          backgroundImage: highlightPaddingBlock ? 'var(--demo-highlight)' : undefined,
         }}
       />
       <span
         className="paddingLeft"
         style={{
-          width: `var(--${paddingLeft}${modifier})`,
-          backgroundImage: highlightPaddingLeft ? 'var(--demo-highlight)' : undefined,
+          width: `var(--${paddingInline})`,
+          backgroundImage: highlightPaddingInline ? 'var(--demo-highlight)' : undefined,
         }}
       />
       <span className="icon" />
       <span
+        className="gap"
         style={{
           width: `var(--${gap})`,
           backgroundImage: highlightGap ? 'var(--demo-highlight)' : undefined,
         }}
       />
       <span
-        className="label"
+        className="controlLabel"
         style={{
           lineHeight: `var(--${lineBox})`,
-          backgroundImage: highlightLineBoxHeight ? 'var(--demo-highlight)' : undefined,
+          background: highlightLineBoxHeight ? 'var(--demo-highlight-solid)' : undefined,
         }}
       >
         label
@@ -77,15 +68,15 @@ export const ControlSizeDemo = ({
       <span
         className="paddingRight"
         style={{
-          width: `var(--${paddingRight}${modifier})`,
-          backgroundImage: highlightPaddingRight ? 'var(--demo-highlight)' : undefined,
+          width: `var(--${paddingInline})`,
+          backgroundImage: highlightPaddingInline ? 'var(--demo-highlight)' : undefined,
         }}
       />
       <span
         className="paddingBottom"
         style={{
-          height: `var(--${paddingBottom})`,
-          backgroundImage: highlightPaddingBottom ? 'var(--demo-highlight)' : undefined,
+          height: `var(--${paddingBlock})`,
+          backgroundImage: highlightPaddingBlock ? 'var(--demo-highlight)' : undefined,
         }}
       />
     </div>

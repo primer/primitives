@@ -1,8 +1,9 @@
 import React from 'react'
 // eslint-disable-next-line import/extensions
-import breakpointTokens from '../../../../tokens-next-private/docs/functional/size/breakpoints.json'
+import sizeTokens from '../../../../tokens-next-private/docs/functional/size/breakpoints.json'
 import {DataTable, Table} from '@primer/react/drafts'
 import {InlineCode} from '../StorybookComponents/InlineCode/InlineCode'
+import {getTokensByName} from '../utilities/getTokensByName'
 
 export default {
   title: 'Size/Functional/Breakpoints',
@@ -12,14 +13,12 @@ export default {
 }
 
 export const Breakpoints = () => {
-  const data = Object.entries(breakpointTokens).flatMap(([category, items]) =>
-    Object.values(items).map(item => ({
-      name: item.name,
-      value: item.value,
-      originalValue: item.original.value,
-      id: item.name,
-    })),
-  )
+  const data = getTokensByName(sizeTokens, 'breakpoint').map(token => {
+    return {
+      id: token.name,
+      ...token,
+    }
+  })
 
   return (
     <Table.Container>
@@ -48,10 +47,10 @@ export const Breakpoints = () => {
           },
           {
             header: 'Source value',
-            field: 'originalValue',
+            field: 'original',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.originalValue}</p>
+              return <p>{row.value}</p>
             },
           },
         ]}

@@ -1,0 +1,45 @@
+.ControlStackDemo {
+  display: inline-grid;
+  grid-template-rows: min-content;
+  grid-template-columns: repeat(3, min-content);
+  border-radius: var(--borderRadius-medium);
+  background-size: var(--demo-highlight-background-size);
+  background-image: var(--demo-highlight);
+}
+
+.StackDemo-gap {
+  display: grid;
+  grid-template-rows: repeat(3, 2rem);
+  border-radius: var(--borderRadius-small);
+  border: solid 1px var(--borderColor-done-emphasis);
+  background-size: var(--demo-highlight-background-size);
+  background-image: var(--demo-highlight);
+  overflow: hidden;
+  width: 12rem;
+}
+
+.StackDemo-padding {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(0px, 1fr));
+  border-radius: var(--borderRadius-small);
+  border: solid 1px var(--borderColor-done-emphasis);
+  background-size: var(--demo-highlight-background-size);
+  background-image: var(--demo-highlight);
+  overflow: hidden;
+  justify-content: center;
+  width: 12rem;
+  min-height: 6rem;
+}
+
+.StackDemo-solid {
+  background: var(--base-color-purple-0);
+}
+
+.StackDemo-solid--full {
+  background: var(--base-color-purple-0);
+  border-radius: var(--borderRadius-small);
+  height: 100%;
+  width: 100%;
+  place-self: center;
+}
