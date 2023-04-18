@@ -163,9 +163,10 @@ export const Display = () => {
         data={filteredData}
         columns={[
           {
-            header: 'Sample',
+            header: 'Property',
             field: 'name',
             rowHeader: true,
+            width: 'growCollapse',
             renderCell: row => {
               return (
                 <code>
@@ -196,6 +197,7 @@ export const Display = () => {
             header: 'Output value',
             field: 'value',
             rowHeader: true,
+            width: 'growCollapse',
             renderCell: row => {
               return <p>{row.value}</p>
             },
@@ -235,9 +237,10 @@ export const TitleLarge = () => {
         data={filteredData}
         columns={[
           {
-            header: 'Sample',
+            header: 'Property',
             field: 'name',
             rowHeader: true,
+            width: 'growCollapse',
             renderCell: row => {
               return (
                 <code>
@@ -268,6 +271,7 @@ export const TitleLarge = () => {
             header: 'Output value',
             field: 'value',
             rowHeader: true,
+            width: 'growCollapse',
             renderCell: row => {
               return <p>{row.value}</p>
             },
@@ -307,9 +311,10 @@ export const TitleMedium = () => {
         data={filteredData}
         columns={[
           {
-            header: 'Sample',
+            header: 'Property',
             field: 'name',
             rowHeader: true,
+            width: 'growCollapse',
             renderCell: row => {
               return (
                 <code>
@@ -340,6 +345,81 @@ export const TitleMedium = () => {
             header: 'Output value',
             field: 'value',
             rowHeader: true,
+            width: 'growCollapse',
+            renderCell: row => {
+              return <p>{row.value}</p>
+            },
+          },
+          {
+            header: 'Source value',
+            field: 'original',
+            rowHeader: true,
+            renderCell: row => {
+              return <p>{row.name.includes('shorthand') ? undefined : row.original.value}</p>
+            },
+          },
+        ]}
+      />
+    </Table.Container>
+  )
+}
+
+export const TitleSmall = () => {
+  const data = getTokensByName(sizeTokens, 'text').map(token => {
+    return {
+      id: token.name,
+      ...token,
+    }
+  })
+
+  const filteredData = data.filter(item => item.id.includes('title') && item.id.includes('small'))
+
+  return (
+    <Table.Container>
+      <TypographyDemo container id="type" fontShorthand="text-title-shorthand-small">
+        Title small
+      </TypographyDemo>
+
+      <DataTable
+        aria-labelledby="type"
+        data={filteredData}
+        columns={[
+          {
+            header: 'Property',
+            field: 'name',
+            rowHeader: true,
+            width: 'growCollapse',
+            renderCell: row => {
+              return (
+                <code>
+                  {row.name.includes('size')
+                    ? 'font-size'
+                    : row.name.includes('weight')
+                    ? 'font-weight'
+                    : row.name.includes('lineHeight')
+                    ? 'line-height'
+                    : row.name.includes('lineBoxHeight')
+                    ? 'height'
+                    : row.name.includes('shorthand')
+                    ? 'font'
+                    : undefined}
+                </code>
+              )
+            },
+          },
+          {
+            header: 'Token',
+            field: 'name',
+            rowHeader: true,
+            renderCell: row => {
+              return <InlineCode value={row.name} copyClipboard />
+            },
+          },
+          {
+            header: 'Output value',
+            field: 'value',
+            rowHeader: true,
+            width: 'growCollapse',
             renderCell: row => {
               return <p>{row.value}</p>
             },
@@ -379,9 +459,10 @@ export const Subtitle = () => {
         data={filteredData}
         columns={[
           {
-            header: 'Sample',
+            header: 'Property',
             field: 'name',
             rowHeader: true,
+            width: 'growCollapse',
             renderCell: row => {
               return (
                 <code>
@@ -412,6 +493,7 @@ export const Subtitle = () => {
             header: 'Output value',
             field: 'value',
             rowHeader: true,
+            width: 'growCollapse',
             renderCell: row => {
               return <p>{row.value}</p>
             },
@@ -451,9 +533,10 @@ export const BodyLarge = () => {
         data={filteredData}
         columns={[
           {
-            header: 'Sample',
+            header: 'Property',
             field: 'name',
             rowHeader: true,
+            width: 'growCollapse',
             renderCell: row => {
               return (
                 <code>
@@ -484,6 +567,7 @@ export const BodyLarge = () => {
             header: 'Output value',
             field: 'value',
             rowHeader: true,
+            width: 'growCollapse',
             renderCell: row => {
               return <p>{row.value}</p>
             },
@@ -523,9 +607,10 @@ export const BodyMedium = () => {
         data={filteredData}
         columns={[
           {
-            header: 'Sample',
+            header: 'Property',
             field: 'name',
             rowHeader: true,
+            width: 'growCollapse',
             renderCell: row => {
               return (
                 <code>
@@ -556,6 +641,7 @@ export const BodyMedium = () => {
             header: 'Output value',
             field: 'value',
             rowHeader: true,
+            width: 'growCollapse',
             renderCell: row => {
               return <p>{row.value}</p>
             },
@@ -595,9 +681,10 @@ export const BodySmall = () => {
         data={filteredData}
         columns={[
           {
-            header: 'Sample',
+            header: 'Property',
             field: 'name',
             rowHeader: true,
+            width: 'growCollapse',
             renderCell: row => {
               return (
                 <code>
@@ -628,6 +715,7 @@ export const BodySmall = () => {
             header: 'Output value',
             field: 'value',
             rowHeader: true,
+            width: 'growCollapse',
             renderCell: row => {
               return <p>{row.value}</p>
             },
@@ -667,9 +755,10 @@ export const Caption = () => {
         data={filteredData}
         columns={[
           {
-            header: 'Sample',
+            header: 'Property',
             field: 'name',
             rowHeader: true,
+            width: 'growCollapse',
             renderCell: row => {
               return (
                 <code>
@@ -700,6 +789,7 @@ export const Caption = () => {
             header: 'Output value',
             field: 'value',
             rowHeader: true,
+            width: 'growCollapse',
             renderCell: row => {
               return <p>{row.value}</p>
             },
@@ -739,9 +829,10 @@ export const CodeBlock = () => {
         data={filteredData}
         columns={[
           {
-            header: 'Sample',
+            header: 'Property',
             field: 'name',
             rowHeader: true,
+            width: 'growCollapse',
             renderCell: row => {
               return (
                 <code>
@@ -772,6 +863,7 @@ export const CodeBlock = () => {
             header: 'Output value',
             field: 'value',
             rowHeader: true,
+            width: 'growCollapse',
             renderCell: row => {
               return <p>{row.value}</p>
             },
@@ -811,9 +903,10 @@ export const InlineCodeBlock = () => {
         data={filteredData}
         columns={[
           {
-            header: 'Sample',
+            header: 'Property',
             field: 'name',
             rowHeader: true,
+            width: 'growCollapse',
             renderCell: row => {
               return (
                 <code>
@@ -844,6 +937,7 @@ export const InlineCodeBlock = () => {
             header: 'Output value',
             field: 'value',
             rowHeader: true,
+            width: 'growCollapse',
             renderCell: row => {
               return <p>{row.value}</p>
             },
