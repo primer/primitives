@@ -26,11 +26,13 @@ export const SizeTokenSwatch = ({
       style={{
         width: `var(--${size}, 3rem)`,
         borderRadius: `var(--${borderRadius}, var(--borderRadius-small))`,
-        border: `solid var(--${borderSize}) var(--base-color-purple-5)`,
-        backgroundColor: filled ? 'var(--base-color-purple-5)' : 'transparent',
-        boxShadow: `var(--${boxShadow}) var(--base-color-purple-5)`,
+        border: `solid var(--${borderSize}) var(--docs-demo-borderColor-emphasis)`,
+        backgroundColor: filled ? 'var(--docs-demo-bgColor-emphasis)' : 'transparent',
+        boxShadow: `var(--${boxShadow}) var(--docs-demo-borderColor-emphasis)`,
         outline:
-          outlineOffset || outlineWidth ? `solid var(--outline-focus-width) var(--base-color-purple-5)` : undefined,
+          outlineOffset || outlineWidth
+            ? `solid var(--outline-focus-width) var(--docs-demo-borderColor-emphasis)`
+            : undefined,
         outlineOffset: `var(--${outlineOffset})`,
       }}
     ></div>

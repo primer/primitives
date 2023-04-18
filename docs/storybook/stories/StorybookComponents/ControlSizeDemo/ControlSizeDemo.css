@@ -4,9 +4,10 @@
   grid-template-rows: min-content minmax(0, 1fr) min-content;
   grid-template-columns: repeat(5, min-content);
   border-radius: var(--borderRadius-medium);
-  border: solid 1px var(--borderColor-done-emphasis);
+  border: solid 1px var(--docs-demo-borderColor-emphasis);
   background-size: var(--demo-highlight-background-size);
   align-items: center;
+  overflow: hidden;
 }
 
 .icon {

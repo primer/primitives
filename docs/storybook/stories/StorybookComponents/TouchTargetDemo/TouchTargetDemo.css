@@ -2,8 +2,8 @@
   height: var(--base-size-32);
   width: var(--base-size-32);
   border-radius: var(--borderRadius-medium);
-  border: solid 1px var(--borderColor-done-emphasis);
-  background: var(--base-color-purple-0);
+  border: solid 1px var(--docs-demo-borderColor-emphasis);
+  background: var(--docs-demo-bgColor-solid);
   display: grid;
   place-content: center;
   color: var(--fgColor-muted);
@@ -13,7 +13,7 @@
 .TouchTargetDemo:after {
   position: absolute;
   border-radius: var(--borderRadius-medium);
-  background-color: var(--base-color-purple-2);
+  background-color: var(--docs-demo-bgColor-emphasis);
   top: 50%;
   left: 50%;
   width: 100%;

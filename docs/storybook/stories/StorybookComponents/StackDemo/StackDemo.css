@@ -11,7 +11,7 @@
   display: grid;
   grid-template-rows: repeat(3, 2rem);
   border-radius: var(--borderRadius-small);
-  border: solid 1px var(--borderColor-done-emphasis);
+  border: solid 1px var(--docs-demo-borderColor-emphasis);
   background-size: var(--demo-highlight-background-size);
   background-image: var(--demo-highlight);
   overflow: hidden;
@@ -23,7 +23,7 @@
   grid-template-rows: 1fr;
   grid-template-columns: repeat(auto-fit, minmax(0px, 1fr));
   border-radius: var(--borderRadius-small);
-  border: solid 1px var(--borderColor-done-emphasis);
+  border: solid 1px var(--docs-demo-borderColor-emphasis);
   background-size: var(--demo-highlight-background-size);
   background-image: var(--demo-highlight);
   overflow: hidden;
@@ -33,11 +33,11 @@
 }
 
 .StackDemo-solid {
-  background: var(--base-color-purple-0);
+  background: var(--docs-demo-bgColor-solid);
 }
 
 .StackDemo-solid--full {
-  background: var(--base-color-purple-0);
+  background: var(--docs-demo-bgColor-solid);
   border-radius: var(--borderRadius-small);
   height: 100%;
   width: 100%;
