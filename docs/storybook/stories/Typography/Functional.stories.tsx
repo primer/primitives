@@ -58,6 +58,7 @@ export const FontFamily = () => {
             header: 'Output value',
             field: 'value',
             rowHeader: true,
+            width: 'growCollapse',
             renderCell: row => {
               return <p>{row.value}</p>
             },
@@ -66,6 +67,7 @@ export const FontFamily = () => {
             header: 'Source value',
             field: 'original',
             rowHeader: true,
+            width: 'growCollapse',
             renderCell: row => {
               return <p>{row.original.value}</p>
             },
@@ -117,7 +119,7 @@ export const FontShorthand = () => {
             rowHeader: true,
             renderCell: row => {
               return (
-                <>
+                <div>
                   <p>
                     font-weight: <code>{row.original.value.fontSize}</code>
                   </p>
@@ -132,7 +134,7 @@ export const FontShorthand = () => {
                       line-height: <code>{row.original.value.lineHeight}</code>
                     </p>
                   )}
-                </>
+                </div>
               )
             },
           },
