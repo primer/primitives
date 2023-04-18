@@ -94,6 +94,7 @@ export const themes: TokenBuildInput[] = [
     filename: 'dark-high-contrast',
     source: [
       `src/tokens/functional/color/dark/*.json5`,
+      `src/tokens/functional/color/scales.json5`,
       `src/tokens/functional/color/dark/overrides/dark.high-contrast.json5`,
       `src/tokens/functional/shadow/dark.json5`,
       `src/tokens/functional/border/dark.json5`,
