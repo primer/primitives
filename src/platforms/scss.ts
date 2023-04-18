@@ -31,6 +31,7 @@ export const scss: PlatformInitializer = (outputFile, prefix, buildPath): StyleD
       'fontWeight/number',
     ],
     options: {
+      showFileHeader: false,
       basePxFontSize: 16,
     },
     files: [
