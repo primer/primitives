@@ -18,13 +18,14 @@ const preview = {
 }
 
 const primerThemes = [
-  'light',
-  'light_colorblind',
-  'light_high_contrast',
-  'dark',
-  'dark_dimmed',
-  'dark_high_contrast',
-  'dark_colorblind',
+  {value: 'light', left: '☀️', title: 'Light'},
+  {value: 'light_colorblind', left: '☀️', title: 'Light Protanopia & Deuteranopia'},
+  {value: 'light_tritanopia', left: '☀️', title: 'Light Tritanopia'},
+  {value: 'light_high_contrast', left: '☀️', title: 'Light High Contrast'},
+  {value: 'dark', left: '🌗', title: 'Dark'},
+  {value: 'dark_colorblind', left: '🌗', title: 'Dark Protanopia & Deuteranopia'},
+  {value: 'dark_tritanopia', left: '🌗', title: 'Dark Tritanopia'},
+  {value: 'dark_high_contrast', left: '🌗', title: 'Dark High Contrast'},
 ]
 
 export const globalTypes = {
@@ -34,7 +35,7 @@ export const globalTypes = {
     defaultValue: 'light',
     toolbar: {
       icon: 'contrast',
-      items: [...primerThemes, 'all'],
+      items: [...primerThemes, {value: 'all', left: '', title: 'All'}],
       showName: true,
     },
   },
@@ -318,6 +319,7 @@ const tempTheme = deepmerge(theme, {
 
 export const decorators = [
   (Story, context) => {
+    console.log('test:', context.globals.theme)
     const {parameters} = context
     const defaultStoryType = 'swatch'
     const storyType = parameters.storyType || defaultStoryType
@@ -333,7 +335,7 @@ export const decorators = [
     return (
       <ThemeProvider theme={tempTheme}>
         {context.globals.theme === 'all' ? (
-          primerThemes.map(theme => (
+          primerThemes.map(({value: theme}) => (
             <div
               key={theme}
               id="story"
