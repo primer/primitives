@@ -42,6 +42,7 @@ export const css: PlatformInitializer = (outputFile, prefix, buildPath, options)
         format: `css/themed`,
         filter: token => isSource(token) && options?.themed === true,
         options: {
+          showFileHeader: false,
           outputReferences: false,
           selector,
           selectorLight,
@@ -53,6 +54,7 @@ export const css: PlatformInitializer = (outputFile, prefix, buildPath, options)
         format: `css/variables`,
         filter: token => isSource(token) && options?.themed !== true,
         options: {
+          showFileHeader: false,
           outputReferences: false,
         },
       },
@@ -60,6 +62,9 @@ export const css: PlatformInitializer = (outputFile, prefix, buildPath, options)
         destination: `${outputFile}`,
         format: `css/customMedia`,
         filter: token => isSource(token) && options?.themed !== true && token.$type === 'custom-viewportRange',
+        options: {
+          showFileHeader: false,
+        },
       },
     ],
   }
