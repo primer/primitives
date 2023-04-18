@@ -1,0 +1,11 @@
+.TypographyDemo {
+  font: var(--fontShorthand);
+}
+
+.TypographyDemo-container {
+  padding: var(--stack-padding-normal);
+  border: solid var(--borderWidth-thin) var(--borderColor-default);
+  border-radius: var(--borderRadius-medium);
+  margin-block-end: var(--stack-gap-condensed);
+  grid-column: 1/ -1;
+}

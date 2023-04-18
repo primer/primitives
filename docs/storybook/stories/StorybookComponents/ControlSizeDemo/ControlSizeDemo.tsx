@@ -31,7 +31,7 @@ export const ControlSizeDemo = ({
       className="ControlDemo"
       style={{
         height: `var(--${blockSize})`,
-        background: highlightHeight ? 'var(--demo-highlight-solid)' : undefined,
+        background: highlightHeight ? 'var(--docs-demo-bgColor-muted)' : undefined,
       }}
     >
       <span
@@ -60,7 +60,7 @@ export const ControlSizeDemo = ({
         className="controlLabel"
         style={{
           lineHeight: `var(--${lineBox})`,
-          background: highlightLineBoxHeight ? 'var(--demo-highlight-solid)' : undefined,
+          background: highlightLineBoxHeight ? 'var(--docs-demo-bgColor-muted)' : undefined,
         }}
       >
         label

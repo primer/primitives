@@ -49,6 +49,10 @@
         "medium": {
           "$value": "20px",
           "$type": "dimension"
+        },
+        "small": {
+          "$value": "16px",
+          "$type": "dimension"
         }
       },
       "lineHeight": {
@@ -57,16 +61,29 @@
         },
         "medium": {
           "$value": "calc(32/20)"
+        },
+        "small": {
+          "$value": "calc(24/16)"
         }
       },
       "weight": {
-        "$value": "{base.text.weight.semibold}",
-        "$type": "fontWeight"
+        "large": {
+          "$value": "{base.text.weight.semibold}",
+          "$type": "fontWeight"
+        },
+        "medium": {
+          "$value": "{base.text.weight.semibold}",
+          "$type": "fontWeight"
+        },
+        "small": {
+          "$value": "{base.text.weight.semibold}",
+          "$type": "fontWeight"
+        }
       },
       "shorthand": {
         "large": {
           "$value": {
-            "fontWeight": "{text.title.weight}",
+            "fontWeight": "{text.title.weight.large}",
             "fontSize": "{text.title.size.large}",
             "lineHeight": "{text.title.lineHeight.large}",
             "fontFamily": "{fontStack.sansSerif}"
@@ -75,9 +92,18 @@
         },
         "medium": {
           "$value": {
-            "fontWeight": "{text.title.weight}",
+            "fontWeight": "{text.title.weight.medium}",
             "fontSize": "{text.title.size.medium}",
             "lineHeight": "{text.title.lineHeight.medium}",
+            "fontFamily": "{fontStack.sansSerif}"
+          },
+          "$type": "typography"
+        },
+        "small": {
+          "$value": {
+            "fontWeight": "{text.title.weight.small}",
+            "fontSize": "{text.title.size.small}",
+            "lineHeight": "{text.title.lineHeight.small}",
             "fontFamily": "{fontStack.sansSerif}"
           },
           "$type": "typography"
