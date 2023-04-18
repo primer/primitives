@@ -41,15 +41,6 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
     PrimerStyleDictionary.extend(
       getStyleDictionaryConfig(`functional/themes/${filename}`, source, include, {...buildOptions, themed: true}),
     ).buildAllPlatforms()
-    // build base scales
-    PrimerStyleDictionary.extend(
-      // using includes as source
-      getStyleDictionaryConfig(`base/color/${filename}`, [`src/tokens/functional/color/scales.json5`], include, {
-        buildPath: buildOptions.buildPath,
-        prefix: 'base',
-        themed: true,
-      }),
-    ).buildAllPlatforms()
   }
 
   /** -----------------------------------
