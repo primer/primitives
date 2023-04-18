@@ -748,4 +748,38 @@
       },
     },
   },
+  docs: {
+    demo: {
+      bgColor: {
+        solid: {
+          $value: '{base.color.purple.1}',
+          $type: 'color',
+        },
+        muted: {
+          $value: '{base.color.purple.4}',
+          $type: 'color',
+          alpha: 0.4,
+        },
+        emphasis: {
+          $value: '{base.color.purple.5}',
+          $type: 'color',
+        },
+      },
+      borderColor: {
+        muted: {
+          $value: '{base.color.purple.4}',
+          $type: 'color',
+          alpha: 0.4,
+        },
+        emphasis: {
+          $value: '{base.color.purple.5}',
+          $type: 'color',
+        },
+      },
+      fgColor: {
+        $value: '{base.color.purple.4}',
+        $type: 'color',
+      },
+    },
+  },
 }
