@@ -17,6 +17,7 @@ export const typescript: PlatformInitializer = (outputFile, prefix, buildPath): 
     'fontWeight/number',
   ],
   options: {
+    showFileHeader: false,
     basePxFontSize: 16,
   },
   files: [
