@@ -1,279 +1,655 @@
 import React from 'react'
-import {ColorPreview} from '../../StorybookComponents/ColorPreview/ColorPreview'
+// eslint-disable-next-line import/extensions
+import colorTokens from '../../../../../tokens-next-private/docs/functional/themes/light.json'
+import {ColorTokenSwatch} from '../../StorybookComponents/ColorTokenSwatch/ColorTokenSwatch'
+import {DataTable, Table} from '@primer/react/drafts'
+import {InlineCode} from '../../StorybookComponents/InlineCode/InlineCode'
+import {getTokensByName} from '../../utilities/getTokensByName'
 
 export default {
   title: 'Color/Patterns',
   parameters: {
-    storyType: 'swatch',
-    controls: {hideNoControlsWarning: true},
+    parameters: {
+      controls: {hideNoControlsWarning: true},
+      options: {
+        showPanel: false,
+      },
+    },
   },
 }
 
 export const Avatar = () => {
-  const bgColors = ['avatar-bgColor', 'avatarStack-fade-bgColor-default', 'avatarStack-fade-bgColor-muted']
-  const borderColors = ['avatar-borderColor']
-
+  const data = getTokensByName(colorTokens, 'avatar').map(token => {
+    return {
+      id: token.name,
+      ...token,
+    }
+  })
   return (
-    <>
-      {bgColors.map(color => (
-        <ColorPreview color={color} bgColor key={color} canvasColor="bgColor-default" />
-      ))}
-      {borderColors.map(color => (
-        <ColorPreview color={color} borderColor key={color} canvasColor="bgColor-default" />
-      ))}
-    </>
+    <Table.Container>
+      <Table.Title as="h1" id="pattern">
+        Avatar
+      </Table.Title>
+      <DataTable
+        aria-labelledby="pattern"
+        data={data}
+        columns={[
+          {
+            header: 'Sample',
+            field: 'name',
+            rowHeader: true,
+            renderCell: row => {
+              return (
+                <ColorTokenSwatch
+                  bgColor={row.name.includes('bgColor') ? row.name : undefined}
+                  textColor={row.name.includes('fgColor') ? row.name : undefined}
+                  shadowColor={row.name.includes('shadow') ? row.name : undefined}
+                  borderColor={row.name.includes('borderColor') ? row.name : undefined}
+                />
+              )
+            },
+          },
+          {
+            header: 'Token',
+            field: 'name',
+            rowHeader: true,
+            renderCell: row => {
+              return <InlineCode value={row.name} copyClipboard />
+            },
+          },
+          {
+            header: 'Output value',
+            field: 'value',
+            rowHeader: true,
+            renderCell: row => {
+              return <p>{row.value}</p>
+            },
+          },
+        ]}
+      />
+    </Table.Container>
   )
 }
 
 export const Control = () => {
-  const bgColors = [
-    'control-bgColor-rest',
-    'control-bgColor-hover',
-    'control-bgColor-active',
-    'control-bgColor-selected',
-    'control-bgColor-disabled',
-    'control-danger-bgColor-hover',
-    'control-danger-bgColor-active',
-    'control-checked-bgColor-rest',
-    'control-checked-bgColor-hover',
-    'control-checked-bgColor-active',
-    'control-checked-bgColor-disabled',
-    'controlTrack-bgColor-rest',
-    'controlTrack-bgColor-hover',
-    'controlTrack-bgColor-active',
-    'controlTrack-bgColor-disabled',
-    'controlKnob-bgColor-rest',
-    'controlKnob-bgColor-disabled',
-  ]
-  const fgColors = [
-    'control-fgColor-rest',
-    'control-fgColor-placeholder',
-    'control-fgColor-disabled',
-    'control-iconColor-rest',
-    'control-danger-fgColor-hover',
-    'control-checked-fgColor-rest',
-    'control-checked-bgColor-disabled',
-  ]
-  const borderColors = [
-    'control-borderColor-rest',
-    'control-borderColor-emphasis',
-    'control-borderColor-selected',
-    'control-borderColor-disabled',
-    'control-borderColor-success',
-    'control-borderColor-danger',
-    'control-borderColor-warning',
-    'control-checked-borderColor-rest',
-    'control-checked-borderColor-hover',
-    'control-checked-borderColor-active',
-    'control-checked-borderColor-disabled',
-    'controlTrack-borderColor-rest',
-    'controlTrack-borderColor-disabled',
-    'controlKnob-borderColor-rest',
-    'controlKnob-borderColor-disabled',
-  ]
-
+  const data = getTokensByName(colorTokens, 'control').map(token => {
+    return {
+      id: token.name,
+      ...token,
+    }
+  })
   return (
-    <>
-      <h1>Background</h1>
-      {bgColors.map(color => (
-        <ColorPreview color={color} bgColor key={color} canvasColor="bgColor-default" />
-      ))}
-      <h1>Border</h1>
-      {borderColors.map(color => (
-        <ColorPreview color={color} borderColor key={color} canvasColor="bgColor-default" />
-      ))}
-      <h1>Foreground</h1>
-      {fgColors.map(color => (
-        <ColorPreview color={color} textColor key={color} canvasColor="bgColor-default" />
-      ))}
-    </>
+    <Table.Container>
+      <Table.Title as="h1" id="pattern">
+        Control
+      </Table.Title>
+      <DataTable
+        aria-labelledby="pattern"
+        data={data}
+        columns={[
+          {
+            header: 'Sample',
+            field: 'name',
+            rowHeader: true,
+            renderCell: row => {
+              return (
+                <ColorTokenSwatch
+                  bgColor={row.name.includes('bgColor') ? row.name : undefined}
+                  textColor={row.name.includes('fgColor') ? row.name : undefined}
+                  shadowColor={row.name.includes('shadow') ? row.name : undefined}
+                  borderColor={row.name.includes('borderColor') ? row.name : undefined}
+                />
+              )
+            },
+          },
+          {
+            header: 'Token',
+            field: 'name',
+            rowHeader: true,
+            renderCell: row => {
+              return <InlineCode value={row.name} copyClipboard />
+            },
+          },
+          {
+            header: 'Output value',
+            field: 'value',
+            rowHeader: true,
+            renderCell: row => {
+              return <p>{row.value}</p>
+            },
+          },
+        ]}
+      />
+    </Table.Container>
   )
 }
 
 export const Counter = () => {
-  const borderColors = ['counter-borderColor']
-
+  const data = getTokensByName(colorTokens, 'counter').map(token => {
+    return {
+      id: token.name,
+      ...token,
+    }
+  })
   return (
-    <>
-      {borderColors.map(color => (
-        <ColorPreview color={color} borderColor key={color} canvasColor="bgColor-default" />
-      ))}
-    </>
+    <Table.Container>
+      <Table.Title as="h1" id="pattern">
+        Counter
+      </Table.Title>
+      <DataTable
+        aria-labelledby="pattern"
+        data={data}
+        columns={[
+          {
+            header: 'Sample',
+            field: 'name',
+            rowHeader: true,
+            renderCell: row => {
+              return (
+                <ColorTokenSwatch
+                  bgColor={row.name.includes('bgColor') ? row.name : undefined}
+                  textColor={row.name.includes('fgColor') ? row.name : undefined}
+                  shadowColor={row.name.includes('shadow') ? row.name : undefined}
+                  borderColor={row.name.includes('borderColor') ? row.name : undefined}
+                />
+              )
+            },
+          },
+          {
+            header: 'Token',
+            field: 'name',
+            rowHeader: true,
+            renderCell: row => {
+              return <InlineCode value={row.name} copyClipboard />
+            },
+          },
+          {
+            header: 'Output value',
+            field: 'value',
+            rowHeader: true,
+            renderCell: row => {
+              return <p>{row.value}</p>
+            },
+          },
+        ]}
+      />
+    </Table.Container>
   )
 }
 
 export const Button = () => {
-  const bgColors = [
-    'button-default-bgColor-rest',
-    'button-default-bgColor-hover',
-    'button-default-bgColor-active',
-    'button-primary-bgColor-rest',
-    'button-primary-bgColor-hover',
-    'button-primary-bgColor-active',
-    'button-primary-bgColor-disabled',
-    'button-danger-bgColor-rest',
-    'button-danger-bgColor-hover',
-    'button-danger-bgColor-active',
-    'button-danger-bgColor-disabled',
-    'button-invisible-bgColor-rest',
-    'button-invisible-bgColor-hover',
-    'button-invisible-bgColor-active',
-    'button-outline-bgColor-rest',
-    'button-outline-bgColor-hover',
-    'button-outline-bgColor-active',
-    'button-outline-bgColor-disabled',
-    'buttonCounter-default-bgColor-rest',
-    'buttonCounter-primary-bgColor-rest',
-    'buttonCounter-outline-bgColor-rest',
-    'buttonCounter-outline-bgColor-hover',
-    'buttonCounter-outline-bgColor-disabled',
-    'buttonCounter-danger-bgColor-rest',
-    'buttonCounter-danger-bgColor-hover',
-    'buttonCounter-danger-bgColor-disabled',
-  ]
-  const fgColors = [
-    'button-default-fgColor-rest',
-    'button-primary-fgColor-rest',
-    'button-primary-fgColor-disabled',
-    'button-primary-iconColor-rest',
-    'button-danger-fgColor-rest',
-    'button-danger-fgColor-disabled',
-    'button-danger-fgColor-hover',
-    'button-danger-fgColor-active',
-    'button-danger-iconColor-rest',
-    'button-danger-iconColor-hover',
-    'button-invisible-fgColor-rest',
-    'button-outline-fgColor-rest',
-    'button-outline-fgColor-disabled',
-    'button-outline-fgColor-hover',
-    'button-outline-fgColor-active',
-  ]
-  const borderColors = [
-    'button-default-borderColor-rest',
-    'button-primary-borderColor-rest',
-    'button-invisible-borderColor-rest',
-    'button-outline-borderColor-rest',
-    'button-danger-borderColor-rest',
-  ]
-
+  const data = getTokensByName(colorTokens, 'button').map(token => {
+    return {
+      id: token.name,
+      ...token,
+    }
+  })
   return (
-    <>
-      <h1>Background</h1>
-      {bgColors.map(color => (
-        <ColorPreview color={color} bgColor key={color} canvasColor="bgColor-default" />
-      ))}
-      <h1>Border</h1>
-      {borderColors.map(color => (
-        <ColorPreview color={color} borderColor key={color} canvasColor="bgColor-default" />
-      ))}
-      <h1>Foreground</h1>
-      {fgColors.map(color => (
-        <ColorPreview color={color} textColor key={color} canvasColor="bgColor-default" />
-      ))}
-    </>
+    <Table.Container>
+      <Table.Title as="h1" id="pattern">
+        Button
+      </Table.Title>
+      <DataTable
+        aria-labelledby="pattern"
+        data={data}
+        columns={[
+          {
+            header: 'Sample',
+            field: 'name',
+            rowHeader: true,
+            renderCell: row => {
+              return (
+                <ColorTokenSwatch
+                  bgColor={row.name.includes('bgColor') ? row.name : undefined}
+                  textColor={row.name.includes('fgColor') ? row.name : undefined}
+                  shadowColor={row.name.includes('shadow') ? row.name : undefined}
+                  borderColor={row.name.includes('borderColor') ? row.name : undefined}
+                />
+              )
+            },
+          },
+          {
+            header: 'Token',
+            field: 'name',
+            rowHeader: true,
+            renderCell: row => {
+              return <InlineCode value={row.name} copyClipboard />
+            },
+          },
+          {
+            header: 'Output value',
+            field: 'value',
+            rowHeader: true,
+            renderCell: row => {
+              return <p>{row.value}</p>
+            },
+          },
+        ]}
+      />
+    </Table.Container>
   )
 }
 
 export const Focus = () => {
-  const borderColors = ['focus-outlineColor']
-
+  const data = getTokensByName(colorTokens, 'focus').map(token => {
+    return {
+      id: token.name,
+      ...token,
+    }
+  })
   return (
-    <>
-      {borderColors.map(color => (
-        <ColorPreview color={color} borderColor key={color} canvasColor="bgColor-default" />
-      ))}
-    </>
+    <Table.Container>
+      <Table.Title as="h1" id="pattern">
+        Focus
+      </Table.Title>
+      <DataTable
+        aria-labelledby="pattern"
+        data={data}
+        columns={[
+          {
+            header: 'Sample',
+            field: 'name',
+            rowHeader: true,
+            renderCell: row => {
+              return (
+                <ColorTokenSwatch
+                  bgColor={row.name.includes('bgColor') ? row.name : undefined}
+                  textColor={row.name.includes('fgColor') ? row.name : undefined}
+                  shadowColor={row.name.includes('shadow') ? row.name : undefined}
+                  borderColor={row.name.includes('borderColor') ? row.name : undefined}
+                />
+              )
+            },
+          },
+          {
+            header: 'Token',
+            field: 'name',
+            rowHeader: true,
+            renderCell: row => {
+              return <InlineCode value={row.name} copyClipboard />
+            },
+          },
+          {
+            header: 'Output value',
+            field: 'value',
+            rowHeader: true,
+            renderCell: row => {
+              return <p>{row.value}</p>
+            },
+          },
+        ]}
+      />
+    </Table.Container>
   )
 }
 
 export const Header = () => {
-  const bgColors = ['header-bgColor']
-
+  const data = getTokensByName(colorTokens, 'header').map(token => {
+    return {
+      id: token.name,
+      ...token,
+    }
+  })
   return (
-    <>
-      {bgColors.map(color => (
-        <ColorPreview color={color} bgColor key={color} canvasColor="bgColor-default" />
-      ))}
-    </>
+    <Table.Container>
+      <Table.Title as="h1" id="pattern">
+        Header
+      </Table.Title>
+      <DataTable
+        aria-labelledby="pattern"
+        data={data}
+        columns={[
+          {
+            header: 'Sample',
+            field: 'name',
+            rowHeader: true,
+            renderCell: row => {
+              return (
+                <ColorTokenSwatch
+                  bgColor={row.name.includes('bgColor') ? row.name : undefined}
+                  textColor={row.name.includes('fgColor') ? row.name : undefined}
+                  shadowColor={row.name.includes('shadow') ? row.name : undefined}
+                  borderColor={row.name.includes('borderColor') ? row.name : undefined}
+                />
+              )
+            },
+          },
+          {
+            header: 'Token',
+            field: 'name',
+            rowHeader: true,
+            renderCell: row => {
+              return <InlineCode value={row.name} copyClipboard />
+            },
+          },
+          {
+            header: 'Output value',
+            field: 'value',
+            rowHeader: true,
+            renderCell: row => {
+              return <p>{row.value}</p>
+            },
+          },
+        ]}
+      />
+    </Table.Container>
   )
 }
 
 export const Menu = () => {
-  const bgColors = ['menu-bgColor-active']
-
+  const data = getTokensByName(colorTokens, 'menu').map(token => {
+    return {
+      id: token.name,
+      ...token,
+    }
+  })
   return (
-    <>
-      {bgColors.map(color => (
-        <ColorPreview color={color} bgColor key={color} canvasColor="bgColor-default" />
-      ))}
-    </>
+    <Table.Container>
+      <Table.Title as="h1" id="pattern">
+        Menu
+      </Table.Title>
+      <DataTable
+        aria-labelledby="pattern"
+        data={data}
+        columns={[
+          {
+            header: 'Sample',
+            field: 'name',
+            rowHeader: true,
+            renderCell: row => {
+              return (
+                <ColorTokenSwatch
+                  bgColor={row.name.includes('bgColor') ? row.name : undefined}
+                  textColor={row.name.includes('fgColor') ? row.name : undefined}
+                  shadowColor={row.name.includes('shadow') ? row.name : undefined}
+                  borderColor={row.name.includes('borderColor') ? row.name : undefined}
+                />
+              )
+            },
+          },
+          {
+            header: 'Token',
+            field: 'name',
+            rowHeader: true,
+            renderCell: row => {
+              return <InlineCode value={row.name} copyClipboard />
+            },
+          },
+          {
+            header: 'Output value',
+            field: 'value',
+            rowHeader: true,
+            renderCell: row => {
+              return <p>{row.value}</p>
+            },
+          },
+        ]}
+      />
+    </Table.Container>
   )
 }
 
 export const Overlay = () => {
-  const bgColors = ['overlay-bgColor', 'overlay-backdrop-bgColor']
-
+  const data = getTokensByName(colorTokens, 'overlay').map(token => {
+    return {
+      id: token.name,
+      ...token,
+    }
+  })
   return (
-    <>
-      {bgColors.map(color => (
-        <ColorPreview color={color} bgColor key={color} canvasColor="bgColor-default" />
-      ))}
-    </>
+    <Table.Container>
+      <Table.Title as="h1" id="pattern">
+        Overlay
+      </Table.Title>
+      <DataTable
+        aria-labelledby="pattern"
+        data={data}
+        columns={[
+          {
+            header: 'Sample',
+            field: 'name',
+            rowHeader: true,
+            renderCell: row => {
+              return (
+                <ColorTokenSwatch
+                  bgColor={row.name.includes('bgColor') ? row.name : undefined}
+                  textColor={row.name.includes('fgColor') ? row.name : undefined}
+                  shadowColor={row.name.includes('shadow') ? row.name : undefined}
+                  borderColor={row.name.includes('borderColor') ? row.name : undefined}
+                />
+              )
+            },
+          },
+          {
+            header: 'Token',
+            field: 'name',
+            rowHeader: true,
+            renderCell: row => {
+              return <InlineCode value={row.name} copyClipboard />
+            },
+          },
+          {
+            header: 'Output value',
+            field: 'value',
+            rowHeader: true,
+            renderCell: row => {
+              return <p>{row.value}</p>
+            },
+          },
+        ]}
+      />
+    </Table.Container>
   )
 }
 
 export const SelectMenu = () => {
-  const bgColors = ['selectMenu-bgColor-active']
-  const borderColors = ['selectMenu-borderColor']
-
+  const data = getTokensByName(colorTokens, 'selectMenu').map(token => {
+    return {
+      id: token.name,
+      ...token,
+    }
+  })
   return (
-    <>
-      {bgColors.map(color => (
-        <ColorPreview color={color} bgColor key={color} canvasColor="bgColor-default" />
-      ))}
-      {borderColors.map(color => (
-        <ColorPreview color={color} borderColor key={color} canvasColor="bgColor-default" />
-      ))}
-    </>
+    <Table.Container>
+      <Table.Title as="h1" id="pattern">
+        SelectMenu
+      </Table.Title>
+      <DataTable
+        aria-labelledby="pattern"
+        data={data}
+        columns={[
+          {
+            header: 'Sample',
+            field: 'name',
+            rowHeader: true,
+            renderCell: row => {
+              return (
+                <ColorTokenSwatch
+                  bgColor={row.name.includes('bgColor') ? row.name : undefined}
+                  textColor={row.name.includes('fgColor') ? row.name : undefined}
+                  shadowColor={row.name.includes('shadow') ? row.name : undefined}
+                  borderColor={row.name.includes('borderColor') ? row.name : undefined}
+                />
+              )
+            },
+          },
+          {
+            header: 'Token',
+            field: 'name',
+            rowHeader: true,
+            renderCell: row => {
+              return <InlineCode value={row.name} copyClipboard />
+            },
+          },
+          {
+            header: 'Output value',
+            field: 'value',
+            rowHeader: true,
+            renderCell: row => {
+              return <p>{row.value}</p>
+            },
+          },
+        ]}
+      />
+    </Table.Container>
   )
 }
 
 export const SideNav = () => {
-  const bgColors = ['sideNav-bgColor-selected']
-
+  const data = getTokensByName(colorTokens, 'sideNav').map(token => {
+    return {
+      id: token.name,
+      ...token,
+    }
+  })
   return (
-    <>
-      {bgColors.map(color => (
-        <ColorPreview color={color} bgColor key={color} canvasColor="bgColor-default" />
-      ))}
-    </>
+    <Table.Container>
+      <Table.Title as="h1" id="pattern">
+        SideNav
+      </Table.Title>
+      <DataTable
+        aria-labelledby="pattern"
+        data={data}
+        columns={[
+          {
+            header: 'Sample',
+            field: 'name',
+            rowHeader: true,
+            renderCell: row => {
+              return (
+                <ColorTokenSwatch
+                  bgColor={row.name.includes('bgColor') ? row.name : undefined}
+                  textColor={row.name.includes('fgColor') ? row.name : undefined}
+                  shadowColor={row.name.includes('shadow') ? row.name : undefined}
+                  borderColor={row.name.includes('borderColor') ? row.name : undefined}
+                />
+              )
+            },
+          },
+          {
+            header: 'Token',
+            field: 'name',
+            rowHeader: true,
+            renderCell: row => {
+              return <InlineCode value={row.name} copyClipboard />
+            },
+          },
+          {
+            header: 'Output value',
+            field: 'value',
+            rowHeader: true,
+            renderCell: row => {
+              return <p>{row.value}</p>
+            },
+          },
+        ]}
+      />
+    </Table.Container>
   )
 }
 
 export const TimelineBadge = () => {
-  const bgColors = ['timelineBadge-bgColor']
-
+  const data = getTokensByName(colorTokens, 'timelineBadge').map(token => {
+    return {
+      id: token.name,
+      ...token,
+    }
+  })
   return (
-    <>
-      {bgColors.map(color => (
-        <ColorPreview color={color} bgColor key={color} canvasColor="bgColor-default" />
-      ))}
-    </>
+    <Table.Container>
+      <Table.Title as="h1" id="pattern">
+        TimelineBadge
+      </Table.Title>
+      <DataTable
+        aria-labelledby="pattern"
+        data={data}
+        columns={[
+          {
+            header: 'Sample',
+            field: 'name',
+            rowHeader: true,
+            renderCell: row => {
+              return (
+                <ColorTokenSwatch
+                  bgColor={row.name.includes('bgColor') ? row.name : undefined}
+                  textColor={row.name.includes('fgColor') ? row.name : undefined}
+                  shadowColor={row.name.includes('shadow') ? row.name : undefined}
+                  borderColor={row.name.includes('borderColor') ? row.name : undefined}
+                />
+              )
+            },
+          },
+          {
+            header: 'Token',
+            field: 'name',
+            rowHeader: true,
+            renderCell: row => {
+              return <InlineCode value={row.name} copyClipboard />
+            },
+          },
+          {
+            header: 'Output value',
+            field: 'value',
+            rowHeader: true,
+            renderCell: row => {
+              return <p>{row.value}</p>
+            },
+          },
+        ]}
+      />
+    </Table.Container>
   )
 }
 
 export const UnderlineNav = () => {
-  const borderColors = ['underlineNav-borderColor-active', 'underlineNav-borderColor-hover']
-  const fgColors = ['underlineNav-iconColor-rest']
-
+  const data = getTokensByName(colorTokens, 'underlineNav').map(token => {
+    return {
+      id: token.name,
+      ...token,
+    }
+  })
   return (
-    <>
-      {borderColors.map(color => (
-        <ColorPreview color={color} borderColor key={color} canvasColor="bgColor-default" />
-      ))}
-      {fgColors.map(color => (
-        <ColorPreview color={color} textColor key={color} canvasColor="bgColor-default" />
-      ))}
-    </>
+    <Table.Container>
+      <Table.Title as="h1" id="pattern">
+        UnderlineNav
+      </Table.Title>
+      <DataTable
+        aria-labelledby="pattern"
+        data={data}
+        columns={[
+          {
+            header: 'Sample',
+            field: 'name',
+            rowHeader: true,
+            renderCell: row => {
+              return (
+                <ColorTokenSwatch
+                  bgColor={row.name.includes('bgColor') ? row.name : undefined}
+                  textColor={row.name.includes('fgColor') ? row.name : undefined}
+                  shadowColor={row.name.includes('shadow') ? row.name : undefined}
+                  borderColor={row.name.includes('borderColor') ? row.name : undefined}
+                />
+              )
+            },
+          },
+          {
+            header: 'Token',
+            field: 'name',
+            rowHeader: true,
+            renderCell: row => {
+              return <InlineCode value={row.name} copyClipboard />
+            },
+          },
+          {
+            header: 'Output value',
+            field: 'value',
+            rowHeader: true,
+            renderCell: row => {
+              return <p>{row.value}</p>
+            },
+          },
+        ]}
+      />
+    </Table.Container>
   )
 }

@@ -1,0 +1,25 @@
+.ColorTokenSwatch-text {
+  font-size: var(--base-size-20);
+  font-weight: var(--font-weight-semibold);
+}
+
+.ColorTokenSwatch-bg {
+  width: var(--base-size-20);
+  height: var(--base-size-20);
+  border-radius: var(--borderRadius-small);
+}
+
+.ColorTokenSwatch-shadow {
+  width: var(--base-size-20);
+  height: var(--base-size-20);
+  border-radius: var(--borderRadius-small);
+  background-color: var(bgColor-default);
+}
+
+.ColorTokenSwatch-border {
+  width: var(--base-size-20);
+  height: var(--base-size-20);
+  border-width: var(--borderWidth-thin);
+  border-style: solid;
+  border-radius: var(--borderRadius-small);
+}

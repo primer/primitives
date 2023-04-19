@@ -1,0 +1,128 @@
+# Primitives v8
+
+## Overview
+
+Primitives v8 introduces an entirerly new set of color, size, spacing and typography tokens. Below is a detailed explanation for each change.
+
+- [Token naming convention](#token-naming-convention)
+- [New color token names](#new-color-token-names)
+- [Token build process](#token-build-process)
+- [Theme CSS imports](#theme-css-imports)
+- [Size, space and typography tokens](#size-space-and-typography-tokens)
+
+## Token naming convention
+
+The updated naming convention aims to improve usability for designers and developers. By including a `property` in each token, its clear when and where a token is intended to be used. Additionally, by introducing `variant` and `scale` it becomes easier to add new options for a token, or add a totally new set of tokens with consistent naming.
+
+The design token naming convention is based on three categories: **base, component/pattern, functional**. Each category is a subset of the over-arching convention.
+
+`prefix-namespace-pattern-variant*-property-variant*-scale`
+
+\*variant scope changes based on the category
+
+<img
+  width="4325"
+  alt="graphic listing out namespace, pattern, variant, property, variant, and scale all color coded to match ADR docs"
+  src="https://user-images.githubusercontent.com/18661030/208748416-6d753724-617c-4df4-b502-c15d9a2e0459.png"
+/>
+
+### Base
+
+Base tokens represent global, constant values. These are the lowest level tokens and map directly to a raw value.
+
+[prefix]-[namespace*]-[property*]-[variant]-[scale]
+
+```
+brand-base-color-lime-5
+base-size-4
+base-color-green-5
+base-fontWeight-semibold
+```
+
+### Functional
+
+Functional tokens reference base tokens and represent more specific use cases.
+
+[prefix]-[property*]-[variant]-[scale]
+
+```
+bgColor-inset
+borderColor-default
+brand-borderWidth-thin
+boxShadow-inset-thick
+```
+
+### Component/pattern
+
+Component/pattern represents component and pattern specific tokens which should only be used in component CSS.
+
+[prefix]-[pattern*]-[variant]-[property*]-[scale]
+
+```
+control-danger-bgColor-hover
+button-primary-bgColor-rest
+brand-control-xsmall-paddingInline-normal
+text-codeInline-fontSize
+```
+
+## New color token names
+
+Most colors have been renamed to match the new convention. These changes have been documented in the migration tables below.
+
+- [Primitives](/story/migration-v8-tables--primitives)
+- [Patterns](/story/migration-v8-tables--pattern-tokens)
+- [Shadows](/story/migration-v8-tables--shadows)
+- [App](/story/migration-v8-tables--app-tokens)
+- [No changes (same name, new token)](/story/migration-v8-tables--no-change)
+
+## Token build process
+
+Tokens have been moved to json files in the `src/tokens](https://github.com/primer/primitives/tree/main/src/tokens) directory. Those tokens are compiled with [style dictionary](https://amzn.github.io/style-dictionary/#/) in [scripts/buildTokens.ts](https://github.com/primer/primitives/blob/main/scripts/buildTokens.ts).
+
+For implementation and contribution details, see the [Primitives README](https://github.com/primer/primitives/blob/main/README.md)
+
+## Theme CSS imports
+
+Color themes are now exported directly from `/primitives` as individual CSS files. Previously, color themes were configured in Primer CSS. This removes a dependency on Primer CSS.
+
+```
+/* size/typography */
+@import '@primer/primitives/css/base/size/size.css';
+@import '@primer/primitives/css/base/typography/typography.css';
+@import '@primer/primitives/css/functional/size/border.css';
+@import '@primer/primitives/css/functional/size/breakpoints.css';
+@import '@primer/primitives/css/functional/size/size-coarse.css';
+@import '@primer/primitives/css/functional/size/size-fine.css';
+@import '@primer/primitives/css/functional/size/size.css';
+@import '@primer/primitives/css/functional/size/viewport.css';
+@import '@primer/primitives/css/functional/typography/typography.css';
+
+/* color */
+@import '@primer/primitives/css/functional/themes/light.css';
+@import '@primer/primitives/css/functional/themes/light-tritanopia.css';
+@import '@primer/primitives/css/functional/themes/light-high-contrast.css';
+@import '@primer/primitives/css/functional/themes/light-colorblind.css';
+@import '@primer/primitives/css/functional/themes/dark.css';
+@import '@primer/primitives/css/functional/themes/dark-colorblind.css';
+@import '@primer/primitives/css/functional/themes/dark-dimmed.css';
+@import '@primer/primitives/css/functional/themes/dark-high-contrast.css';
+@import '@primer/primitives/css/functional/themes/dark-tritanopia.css';
+```
+
+## Size, space and typography tokens
+
+New sizing and typography tokens! Most of these tokens are set in `rem` units. Primer CSS utility classes related to sizing have been updated to reference these new tokens.
+
+Check out the documentation to see what's available:
+
+- [Size tokens](/story/size-base--base)
+- [Typography tokens](/story/typography-functional--font-shorthand)
+- [Breakpoints](/story/size-functional-breakpoints--breakpoints)
+- [Viewport range](/story/size-functional-viewport--viewport)
+- [Borders](/story/size-functional-border--border-size)
+
+Component specific tokens
+
+- [Control](/story/size-functional-control--medium)
+- [ControlStack](/story/size-functional-control--control-stack-regular)
+- [Stack](/story/size-functional-stack--stack)
