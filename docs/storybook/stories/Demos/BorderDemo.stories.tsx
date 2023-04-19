@@ -1,16 +1,20 @@
 /* eslint @typescript-eslint/consistent-type-imports: 0 */
 import React from 'react'
 import './PatternOverrides.css'
-import type {ComponentMeta, ComponentStory} from '@storybook/react'
-import {ColorPreview} from '../StorybookComponents/ColorPreview/ColorPreview'
 import {SegmentedControl, ActionList} from '@primer/react'
 import {CSSTokenSwatch} from '../StorybookComponents/CSSTokenSwatch/CSSTokenSwatch'
 
 export default {
   title: 'Demos/Borders',
-} as ComponentMeta<typeof ColorPreview>
+  parameters: {
+    controls: {hideNoControlsWarning: true},
+    options: {
+      showPanel: false,
+    },
+  },
+}
 
-export const Borders: ComponentStory<typeof ColorPreview> = () => {
+export const Borders = () => {
   return (
     <div style={{display: 'flex', flexDirection: 'column', gap: '2rem'}}>
       <div>
@@ -45,11 +49,13 @@ export const Borders: ComponentStory<typeof ColorPreview> = () => {
           <div style={{display: 'flex', flexDirection: 'column', gap: '1rem'}}>
             <div className="ActionList" style={{display: 'flex', gap: '1rem'}}>
               <ActionList showDividers>
-                <ActionList.Item>New file</ActionList.Item>
-                <ActionList.Item>Copy link</ActionList.Item>
-                <ActionList.Item>Edit file</ActionList.Item>
+                <ActionList.Item as="li">New file</ActionList.Item>
+                <ActionList.Item as="li">Copy link</ActionList.Item>
+                <ActionList.Item as="li">Edit file</ActionList.Item>
                 <ActionList.Divider />
-                <ActionList.Item variant="danger">Danger</ActionList.Item>
+                <ActionList.Item as="li" variant="danger">
+                  Danger
+                </ActionList.Item>
               </ActionList>
             </div>
             <CSSTokenSwatch color="borderColor-muted" />
@@ -57,11 +63,13 @@ export const Borders: ComponentStory<typeof ColorPreview> = () => {
           <div style={{display: 'flex', flexDirection: 'column', gap: '1rem'}}>
             <div className="ActionList alt" style={{display: 'flex', gap: '1rem'}}>
               <ActionList showDividers>
-                <ActionList.Item>New file</ActionList.Item>
-                <ActionList.Item>Copy link</ActionList.Item>
-                <ActionList.Item>Edit file</ActionList.Item>
+                <ActionList.Item as="li">New file</ActionList.Item>
+                <ActionList.Item as="li">Copy link</ActionList.Item>
+                <ActionList.Item as="li">Edit file</ActionList.Item>
                 <ActionList.Divider />
-                <ActionList.Item variant="danger">Danger</ActionList.Item>
+                <ActionList.Item as="li" variant="danger">
+                  Danger
+                </ActionList.Item>
               </ActionList>
             </div>
             <CSSTokenSwatch color="borderColor-muted" />

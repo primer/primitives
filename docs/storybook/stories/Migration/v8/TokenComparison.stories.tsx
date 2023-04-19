@@ -15,6 +15,11 @@ import {DataTable, Table} from '@primer/react/drafts'
 
 export default {
   title: 'Migration/v8/Tables',
+  parameters: {
+    options: {
+      showPanel: false,
+    },
+  },
 }
 
 export const Primitives = () => {

@@ -4,6 +4,12 @@ import {ActionMenu, ActionList} from '@primer/react'
 
 export default {
   title: 'Demos/Overlay',
+  parameters: {
+    controls: {hideNoControlsWarning: true},
+    options: {
+      showPanel: false,
+    },
+  },
 }
 
 export const ActionMenuDemo = () => {

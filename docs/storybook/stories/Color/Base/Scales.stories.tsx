@@ -5,6 +5,9 @@ export default {
   title: 'Color/Base/Scales',
   parameters: {
     controls: {hideNoControlsWarning: true},
+    options: {
+      showPanel: false,
+    },
   },
 }
 

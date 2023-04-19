@@ -4,6 +4,12 @@ import {SearchIcon} from '@primer/octicons-react'
 
 export default {
   title: 'Demos/Other',
+  parameters: {
+    controls: {hideNoControlsWarning: true},
+    options: {
+      showPanel: false,
+    },
+  },
 }
 
 export const FlashDemo = () => {

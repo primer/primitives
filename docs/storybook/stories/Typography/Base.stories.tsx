@@ -10,6 +10,9 @@ export default {
   title: 'Typography/Base',
   parameters: {
     controls: {hideNoControlsWarning: true},
+    options: {
+      showPanel: false,
+    },
   },
 }
 

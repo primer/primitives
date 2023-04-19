@@ -5,7 +5,12 @@ export default {
   title: 'Color/Patterns',
   parameters: {
     storyType: 'swatch',
-    controls: {hideNoControlsWarning: true},
+    parameters: {
+      controls: {hideNoControlsWarning: true},
+      options: {
+        showPanel: false,
+      },
+    },
   },
 }
 

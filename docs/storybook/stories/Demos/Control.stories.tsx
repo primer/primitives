@@ -6,6 +6,12 @@ import {EyeIcon, HeartIcon} from '@primer/octicons-react'
 
 export default {
   title: 'Demos/Controls',
+  parameters: {
+    controls: {hideNoControlsWarning: true},
+    options: {
+      showPanel: false,
+    },
+  },
 }
 
 export const ToggleSwitchScheme = () => {
