@@ -47,6 +47,7 @@ export const css: PlatformInitializer = (outputFile, prefix, buildPath, options)
           selector,
           selectorLight,
           selectorDark,
+          ...options?.options,
         },
       },
       {
@@ -55,7 +56,7 @@ export const css: PlatformInitializer = (outputFile, prefix, buildPath, options)
         filter: token => isSource(token) && options?.themed !== true,
         options: {
           showFileHeader: false,
-          outputReferences: false,
+          ...options?.options,
         },
       },
       {

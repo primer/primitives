@@ -11,4 +11,5 @@ export type StyleDictionaryConfigGenerator = (
   source: string[],
   include: string[],
   options: ConfigGeneratorOptions,
+  platforms?: Record<string, StyleDictionary.Platform>,
 ) => StyleDictionary.Config
