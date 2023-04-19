@@ -19,6 +19,7 @@ const getStyleDictionaryConfig: StyleDictionaryConfigGenerator = (
   source,
   include,
   options,
+  platforms = {},
 ): StyleDictionary.Config => ({
   source, // build the special formats
   include,
@@ -29,6 +30,7 @@ const getStyleDictionaryConfig: StyleDictionaryConfigGenerator = (
     ts: typescript(`ts/${filename}.ts`, options.prefix, options.buildPath),
     json: json(`json/${filename}.json`, options.prefix, options.buildPath),
     docJson: docJson(`docs/${filename}.json`, options.prefix, options.buildPath),
+    ...platforms,
   },
 })
 
@@ -76,6 +78,13 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
       [`src/tokens/functional/typography/*.json`],
       [`src/tokens/base/typography/*.json`],
       buildOptions,
+      {
+        css: css(`css/functional/typography/typography.css`, buildOptions.prefix, buildOptions.buildPath, {
+          options: {
+            outputReferences: true,
+          },
+        }),
+      },
     ),
   ).buildAllPlatforms()
 
