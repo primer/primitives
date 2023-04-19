@@ -6,9 +6,10 @@ export type ColorTokenSwatchProps = {
   borderColor?: string
   bgColor?: string
   shadowColor?: string
+  outlineColor?: string
 }
 
-export function ColorTokenSwatch({textColor, borderColor, bgColor, shadowColor}: ColorTokenSwatchProps) {
+export function ColorTokenSwatch({textColor, borderColor, bgColor, shadowColor, outlineColor}: ColorTokenSwatchProps) {
   return (
     <>
       {textColor && (
@@ -19,6 +20,9 @@ export function ColorTokenSwatch({textColor, borderColor, bgColor, shadowColor}:
       {borderColor && <div style={{borderColor: `var(--${borderColor})`}} className="ColorTokenSwatch-border"></div>}
       {bgColor && <div style={{backgroundColor: `var(--${bgColor})`}} className="ColorTokenSwatch-bg"></div>}
       {shadowColor && <div style={{boxShadow: `var(--${shadowColor})`}} className="ColorTokenSwatch-shadow"></div>}
+      {outlineColor && (
+        <div style={{outlineColor: `var(--${outlineColor})`}} className="ColorTokenSwatch-outline"></div>
+      )}
     </>
   )
 }

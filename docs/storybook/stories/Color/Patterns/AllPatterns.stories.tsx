@@ -231,7 +231,7 @@ export const Button = () => {
 }
 
 export const Focus = () => {
-  const data = getTokensByName(colorTokens, 'focus').map(token => {
+  const data = getTokensByName(colorTokens, 'focus-outlineColor').map(token => {
     return {
       id: token.name,
       ...token,
@@ -251,14 +251,7 @@ export const Focus = () => {
             field: 'name',
             rowHeader: true,
             renderCell: row => {
-              return (
-                <ColorTokenSwatch
-                  bgColor={row.name.includes('bgColor') ? row.name : undefined}
-                  textColor={row.name.includes('fgColor') ? row.name : undefined}
-                  shadowColor={row.name.includes('shadow') ? row.name : undefined}
-                  borderColor={row.name.includes('borderColor') ? row.name : undefined}
-                />
-              )
+              return <ColorTokenSwatch outlineColor={row.name.includes('outlineColor') ? row.name : undefined} />
             },
           },
           {
