@@ -132,5 +132,24 @@
     color: var(--fgColor-default) !important;
   }
 
+  [data-color-mode="dark"][data-dark-theme="dark"],
+  [data-color-mode="auto"][data-light-theme="dark"] {
+    --docs-demo-bgColor-solid: #e2c5ff;
+    --docs-demo-bgColor-muted: #a371f766;
+    --docs-demo-bgColor-emphasis: #8957e5;
+    --docs-demo-borderColor-muted: #a371f766;
+    --docs-demo-borderColor-emphasis: #8957e5;
+    --docs-demo-fgColor: #a371f7;
+  }
+
+  [data-color-mode="light"][data-dark-theme="light"],
+  [data-color-mode="auto"][data-light-theme="light"] {
+    --docs-demo-bgColor-solid: #fbefff;
+    --docs-demo-bgColor-muted: #fbefff;
+    --docs-demo-bgColor-emphasis: #8250df;
+    --docs-demo-borderColor-muted: #c297ff66;
+    --docs-demo-borderColor-emphasis: #8250df;
+    --docs-demo-fgColor: #8250df;
+  }
 </style>
 <link href="https://unpkg.com/@primer/css@^20.2.4/dist/primer.css" rel="stylesheet" />
