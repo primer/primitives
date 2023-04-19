@@ -1,6 +1,6 @@
 import React from 'react'
-import {CSSTokenSwatch} from '../StorybookComponents/CSSTokenSwatch/CSSTokenSwatch'
-import {CSSTokenShadowSwatch} from '../StorybookComponents/CSSTokenSwatch/CSSTokenShadowSwatch'
+import {CSSTokenSwatch} from '../../StorybookComponents/CSSTokenSwatch/CSSTokenSwatch'
+import {CSSTokenShadowSwatch} from '../../StorybookComponents/CSSTokenSwatch/CSSTokenShadowSwatch'
 // eslint-disable-next-line import/extensions
 import cssVars from './DeprecatedPrimitiveTokensMap.json'
 // eslint-disable-next-line import/extensions

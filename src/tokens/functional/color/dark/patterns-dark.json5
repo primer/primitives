@@ -648,7 +648,7 @@
       alpha: 0.95,
     },
     fgColor: {
-      text: {
+      default: {
         $value: '{base.color.white}',
         $type: 'color',
         alpha: 0.7,
@@ -657,7 +657,9 @@
         $value: '{base.color.gray.0}',
         $type: 'color',
       },
-      borderColor: {
+    },
+    borderColor: {
+      divider: {
         $value: '{base.color.gray.3}',
         $type: 'color',
       },

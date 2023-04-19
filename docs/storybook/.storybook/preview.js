@@ -1,4 +1,5 @@
 import './preview.css'
+import './storybook.css'
 import clsx from 'clsx'
 import {ThemeProvider, theme} from '@primer/react'
 import deepmerge from 'deepmerge'
