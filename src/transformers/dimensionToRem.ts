@@ -24,7 +24,7 @@ const hasUnit = (value: string | number, unit: string): boolean => {
 }
 
 /**
- * @description converts dimension tokens value to `rem`
+ * @description converts dimension tokens value to `rem`, ignores `em` as they are relative to the font size of the parent element
  * @type value transformer — [StyleDictionary.ValueTransform](https://github.com/amzn/style-dictionary/blob/main/types/Transform.d.ts)
  * @matcher matches all tokens of $type `dimension`
  * @transformer returns a `rem` string
@@ -47,7 +47,7 @@ export const dimensionToRem: StyleDictionary.Transform = {
       return '0'
     }
 
-    if (hasUnit(token.value, 'rem')) {
+    if (hasUnit(token.value, 'rem') || hasUnit(token.value, 'em')) {
       return token.value
     }
 

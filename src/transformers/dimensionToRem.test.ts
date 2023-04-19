@@ -35,6 +35,16 @@ describe('Transformer: dimensionToRem', () => {
     expect(input.map(item => dimensionToRem.transformer(item))).toStrictEqual(expectedOutput)
   })
 
+  it('does not transforms em to rem', () => {
+    const input = [
+      getMockToken({
+        value: '1em',
+      }),
+    ]
+    const expectedOutput = ['1em']
+    expect(input.map(item => dimensionToRem.transformer(item))).toStrictEqual(expectedOutput)
+  })
+
   it('transforms 0 to 0', () => {
     const input = [
       getMockToken({
