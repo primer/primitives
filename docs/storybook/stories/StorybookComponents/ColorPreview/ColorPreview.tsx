@@ -1,4 +1,5 @@
 import React from 'react'
+import {InlineCode} from '../../StorybookComponents/InlineCode/InlineCode'
 import './ColorPreview.css'
 
 export type ColorPreviewProps = {
@@ -23,7 +24,7 @@ export function ColorPreview({
   shadowBg,
 }: ColorPreviewProps) {
   return (
-    <div>
+    <div className="ColorPreview-wrap">
       <div className="ColorPreview" style={{backgroundColor: `var(--${canvasColor})`}}>
         {textColor && (
           <p style={{color: `var(--${color})`}} data-text>
@@ -36,7 +37,7 @@ export function ColorPreview({
         )}
         {shadow && <div style={{boxShadow: `var(--${color})`, backgroundColor: `var(--${shadowBg})`}} data-bg></div>}
       </div>
-      <p data-token-name>{color}</p>
+      <InlineCode value={color} copyClipboard />
     </div>
   )
 }

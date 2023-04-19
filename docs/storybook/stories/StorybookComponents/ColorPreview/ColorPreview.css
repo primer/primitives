@@ -7,6 +7,11 @@
   border-radius: 6px;
 }
 
+.ColorPreview-wrap {
+  display: grid;
+  gap: var(--stack-gap-condensed);
+}
+
 /* set bg color for text that matches default bg */
 .ColorPreview:has([style='color: var(--fgColor-white);'], [style='color: var(--fgColor-onEmphasis);']) {
   background-color: var(--bgColor-emphasis) !important;
@@ -37,11 +42,7 @@
   border-radius: 6px;
 }
 
-[data-token-name] {
-  font: var(--text-codeBlock-shorthand);
-}
-
-.story-wrap {
+/* .story-wrap {
   container-type: inline-size;
 }
 
@@ -49,4 +50,4 @@
   .ColorPreview {
     width: 12rem;
   }
-}
+} */

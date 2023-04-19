@@ -2,14 +2,19 @@
   .story-wrap {
     font-family: var(--fontStack-system);
     color: var(--fgColor-default);
-    background-color: var(--bgColor-default);
+    /* background-color: var(--bgColor-default); */
     padding: 1rem;
-    min-height: 100vh;
+  }
+
+  #storybook-preview-wrapper {
+    background-color: var(--bgColor-default) !important;
+    width: 100% !important;
+    height: 100% !important;
   }
 
   .theme-wrap-grid {
     display: grid;
-    grid-template-columns: repeat(4, minmax(var(--primer-breakpoint-xsmall, 20rem), auto));
+    grid-template-columns: repeat(4, minmax(var(--breakpoint-xsmall, 20rem), auto));
     grid-gap: 1px;
     height: 100vh;
   }
@@ -22,13 +27,13 @@
 
   @media (max-width: calc(20rem * 4)) {
     .theme-wrap-grid {
-      grid-template-columns: repeat(3, minmax(var(--primer-breakpoint-xsmall, 20rem), auto));
+      grid-template-columns: repeat(3, minmax(var(--breakpoint-xsmall, 20rem), auto));
     }
   }
 
   @media (max-width: calc(20rem * 3)) {
     .theme-wrap-grid {
-      grid-template-columns: repeat(2, minmax(var(--primer-breakpoint-xsmall, 20rem), auto));
+      grid-template-columns: repeat(2, minmax(var(--breakpoint-xsmall, 20rem), auto));
     }
   }
 
@@ -44,14 +49,15 @@
     right: 0;
     background-color: var(--bgColor-muted);
     padding: var(--base-size-4) var(--base-size-8);
-    font: var(--primer-text-caption-shorthand);
+    font: var(--text-caption-shorthand);
     margin: 0;
   }
 
   .SwatchDecorator {
     display: grid;
     gap: 1rem;
-    grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+    /* grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr)); */
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));;
     grid-template-rows: min-content;
   }
 
