@@ -1,5 +1,12 @@
 # @primer/primitives
 
+## 7.11.6
+
+### Patch Changes
+
+- [#576](https://github.com/primer/primitives/pull/576) [`98255a7`](https://github.com/primer/primitives/commit/98255a795ed15005aa1161dfedd54d62f5e2e598) Thanks [@langermank](https://github.com/langermank)! - - Add v8 migration docs
+  - Finalize v8 output for testing
+
 ## 7.11.5
 
 ### Patch Changes
