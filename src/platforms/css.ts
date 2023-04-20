@@ -1,4 +1,4 @@
-import {isFile, isSource} from '~/src/filters'
+import {isFromFile, isSource} from '~/src/filters'
 import type StyleDictionary from 'style-dictionary'
 import type {PlatformInitializer} from '~/src/types/PlatformInitializer'
 
@@ -72,7 +72,10 @@ export const css: PlatformInitializer = (outputFile, prefix, buildPath, options)
         format: `css/wrapMediaQuery`,
         filter: token =>
           isSource(token) &&
-          isFile(token, ['src/tokens/functional/size/size-coarse.json', 'src/tokens/functional/size/size-fine.json']),
+          isFromFile(token, [
+            'src/tokens/functional/size/size-coarse.json',
+            'src/tokens/functional/size/size-fine.json',
+          ]),
         options: {
           showFileHeader: false,
           mediaQuery: {
