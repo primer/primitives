@@ -7,5 +7,6 @@ import type StyleDictionary from 'style-dictionary'
  * @returns boolean
  */
 export const isFile = (token: StyleDictionary.TransformedToken, files: string[]): boolean => {
-  return files.includes(token.filePath)
+  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+  return files?.includes(token.filePath) === true
 }
