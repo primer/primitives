@@ -1,5 +1,6 @@
 export {cssThemed} from './cssThemed'
 export {cssCustomMedia} from './cssCustomMedia'
+export {cssWrapMediaQuery} from './cssWrapMediaQuery'
 export {javascriptCommonJs} from './javascriptCommonJs'
 export {javascriptEsm} from './javascriptEsm'
 export {jsonNestedPrefixed} from './jsonNestedPrefixed'

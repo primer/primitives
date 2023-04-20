@@ -67,6 +67,21 @@ export const css: PlatformInitializer = (outputFile, prefix, buildPath, options)
           showFileHeader: false,
         },
       },
+      {
+        destination: `${outputFile}`,
+        format: `css/wrapMediaQuery`,
+        filter: token =>
+          isSource(token) &&
+          (token.filePath === 'src/tokens/functional/size/size-coarse.json' ||
+            token.filePath === 'src/tokens/functional/size/size-fine.json'),
+        options: {
+          showFileHeader: false,
+          mediaQuery: {
+            'css/functional/size/size-fine.css': '(pointer: fine)',
+            'css/functional/size/size-coarse.css': '(pointer: coarse)',
+          },
+        },
+      },
     ],
   }
 }
