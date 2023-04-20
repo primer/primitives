@@ -1,5 +1,13 @@
 # @primer/primitives
 
+## 7.11.7
+
+### Patch Changes
+
+- [`ad20369`](https://github.com/primer/primitives/commit/ad203696f9591a32fb0c26d65f43ff14c27eebb1) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - ## Updated workflow for v8 tokens
+
+  - size-fine and size-coarse tokens are now wrapped in media queries
+
 ## 7.11.6
 
 ### Patch Changes
