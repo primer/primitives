@@ -25,9 +25,6 @@ jobs:
           tokens:
             - 'src/tokens/**'
             - 'data/**'
-    #     transformation:
-          #   - 'src/filters/**'
-          #   - 'src/transformers/**'
     - name: No changes to tokens detected
       if: ${{ steps.filter.outputs.tokens == 'false' }}
       run: echo "No changes to tokens detected, skipping further jobs checking tokens"

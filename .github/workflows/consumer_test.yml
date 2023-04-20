@@ -10,8 +10,29 @@ env:
   TEST_FOLDER: primer-brand
 
 jobs:
+  changes:
+    runs-on: ubuntu-latest
+    # Required permissions
+    permissions:
+      pull-requests: read
+    # Set job outputs to values from filter step
+    outputs:
+      outputEffected: ${{ steps.filter.outputs.outputEffected }}
+    steps:
+    # For pull requests it's not necessary to checkout the code
+    - uses: dorny/paths-filter@v2
+      id: filter
+      with:
+        list-files: shell
+        filters: |
+          outputEffected:
+            - '!(*.md|**/**/*.md|**/**/*.test.ts|**/**/*.test.js|docs/**|storybook/**)'
+    - name: Detecting changes that effect output
+      run: echo ${{ steps.filter.outputs.outputEffected}} ${{ steps.filter.outputs.outputEffected == 'true' && 'Committed changes may effect output' || 'Committed changes do not effect output' }}
+
   test:
-    if: ${{ github.repository == 'primer/primitives' }}
+    needs: changes
+    if: ${{ github.repository == 'primer/primitives' && needs.changes.outputs.outputEffected == 'true' }}
     name: Primer Brand
     runs-on: ubuntu-latest
     steps:
