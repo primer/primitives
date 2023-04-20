@@ -17,9 +17,8 @@ export const cssCustomMedia: StyleDictionary.Formatter = ({
   const output = [fileHeader({file})]
   // add single theme css
   dictionary.allTokens.map(({name, value}) => {
-    output.push(`@custom-media --${name}-viewport ${value};`)
+    output.push(`@custom-media --${name} ${value};`)
   })
-  // add auto dark theme css
   // return prettified
   return format(output.join('\n'), {parser: 'css', printWidth: 500})
 }
