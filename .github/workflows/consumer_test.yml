@@ -28,7 +28,7 @@ jobs:
           outputAffected:
             - '!(*.md|**/**/*.md|**/**/*.test.ts|**/**/*.test.js|docs/**|storybook/**)'
     - name: Detecting changes that effect output
-      run: echo ${{ steps.filter.outputs.outputAffected}} ${{ steps.filter.outputs.outputAffected == 'true' && 'Committed changes may affect output' || 'Committed changes do not affect output' }}
+      run: echo ${{ steps.filter.outputs.outputAffected == 'true' && 'Committed changes may affect output' || 'Committed changes do not affect output' }}
 
   test:
     needs: changes
