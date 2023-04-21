@@ -1,6 +1,6 @@
 {
-  color: {
-    ansi: {
+  ansi: {
+    fgColor: {
       black: {
         $value: '{base.color.gray.9}',
         $type: 'color',
@@ -70,7 +70,8 @@
         $type: 'color',
       },
     },
-    prettylights: {
+  },
+  prettylights: {
       syntax: {
         comment: {
           $value: '{base.color.gray.5}',
@@ -198,5 +199,4 @@
         $type: 'color',
       },
     },
-  },
 }
