@@ -17,7 +17,7 @@ jobs:
       pull-requests: read
     # Set job outputs to values from filter step
     outputs:
-      outputEffected: ${{ steps.filter.outputs.outputEffected }}
+      outputAffected: ${{ steps.filter.outputs.outputAffected }}
     steps:
     # For pull requests it's not necessary to checkout the code
     - uses: dorny/paths-filter@v2
@@ -28,11 +28,11 @@ jobs:
           outputEffected:
             - '!(*.md|**/**/*.md|**/**/*.test.ts|**/**/*.test.js|docs/**|storybook/**)'
     - name: Detecting changes that effect output
-      run: echo ${{ steps.filter.outputs.outputEffected}} ${{ steps.filter.outputs.outputEffected == 'true' && 'Committed changes may effect output' || 'Committed changes do not effect output' }}
+      run: echo ${{ steps.filter.outputs.outputAffected}} ${{ steps.filter.outputs.outputAffected == 'true' && 'Committed changes may affect output' || 'Committed changes do not affect output' }}
 
   test:
     needs: changes
-    if: ${{ github.repository == 'primer/primitives' && needs.changes.outputs.outputEffected == 'true' }}
+    if: ${{ github.repository == 'primer/primitives' && needs.changes.outputs.outputAffected == 'true' }}
     name: Primer Brand
     runs-on: ubuntu-latest
     steps:
