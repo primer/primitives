@@ -5,6 +5,7 @@ import {flattenObject} from './utilities/flattenObject'
 type DiffItem = {
   mainThemeName: string
   mainThemeDir: string
+  mainFiles: string[]
   overridesDir: string
 }
 
@@ -12,9 +13,16 @@ const isToken = (obj: Record<string, unknown>): boolean => obj.hasOwnProperty('$
 
 const diffProps = (diffArray: DiffItem[], propsToCheck = ['mix', 'alpha']) => {
   const diff = []
-
-  for (const {mainThemeName, mainThemeDir, overridesDir} of diffArray) {
+  // iterate over each theme
+  for (const {mainThemeName, mainThemeDir, mainFiles, overridesDir} of diffArray) {
+    // build main theme
     let mainTheme = {}
+    // add files from mainFiles
+    for (const filePath of mainFiles) {
+      const file = fs.readFileSync(filePath, 'utf8')
+      mainTheme = {...mainTheme, ...flattenObject(json5Parse(file), undefined, undefined, isToken)}
+    }
+    // add files from mainThemeDir
     for (const filePath of fs.readdirSync(mainThemeDir)) {
       if (!filePath.endsWith('.json5') && !filePath.endsWith('.json')) {
         continue
@@ -59,11 +67,21 @@ const diff = diffProps([
   {
     mainThemeName: 'light',
     mainThemeDir: './src/tokens/functional/color/light',
+    mainFiles: [
+      './src/tokens/functional/color/scales.json5',
+      './src/tokens/functional/shadow/light.json5',
+      './src/tokens/functional/border/light.json5',
+    ],
     overridesDir: './src/tokens/functional/color/light/overrides',
   },
   {
     mainThemeName: 'dark',
     mainThemeDir: './src/tokens/functional/color/dark',
+    mainFiles: [
+      './src/tokens/functional/color/scales.json5',
+      './src/tokens/functional/shadow/dark.json5',
+      './src/tokens/functional/border/dark.json5',
+    ],
     overridesDir: './src/tokens/functional/color/dark/overrides',
   },
 ])
