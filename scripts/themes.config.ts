@@ -27,13 +27,13 @@ export const themes: TokenBuildInput[] = [
     source: [
       `src/tokens/functional/color/light/*.json5`,
       `src/tokens/functional/color/scales.json5`,
-      `src/tokens/functional/color/light/overrides/light.protanopia-deuteranopia.json5`,
       `src/tokens/functional/shadow/light.json5`,
       `src/tokens/functional/border/light.json5`,
+      `src/tokens/functional/color/light/overrides/light.protanopia-deuteranopia.json5`,
     ],
     include: [
       `src/tokens/base/color/light/light.json5`,
-      `src/tokens/base/color/light/light.protanopia-deuteranopia.json5`,
+      // `src/tokens/base/color/light/light.protanopia-deuteranopia.json5`,
     ],
   },
   {
