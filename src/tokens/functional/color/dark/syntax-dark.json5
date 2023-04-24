@@ -70,173 +70,173 @@
         $type: 'color',
       },
     },
-  },
-  prettylights: {
-    syntax: {
-      comment: {
-        $value: '{base.color.gray.3}',
-        $type: 'color',
-      },
-      constant: {
-        $value: '{base.color.blue.2}',
-        $type: 'color',
-      },
-      entity: {
-        $value: '{base.color.purple.2}',
-        $type: 'color',
-      },
-      storage: {
-        modifier: {
-          import: {
-            $value: '{base.color.gray.1}',
-            $type: 'color',
-          },
-        },
-      },
-      'entity-tag': {
-        $value: '{base.color.green.1}',
-        $type: 'color',
-      },
-      keyword: {
-        $value: '{base.color.red.3}',
-        $type: 'color',
-      },
-      string: {
-        $value: '{base.color.blue.1}',
-        $type: 'color',
-      },
-      variable: {
-        $value: '{base.color.orange.2}',
-        $type: 'color',
-      },
-      brackethighlighter: {
-        unmatched: {
-          $value: '{base.color.red.4}',
-          $type: 'color',
-        },
-      },
-      invalid: {
-        illegal: {
-          text: {
-            $value: '{base.color.gray.0}',
-            $type: 'color',
-          },
-        },
-      },
-      invalid: {
-        illegal: {
-          bg: {
-            $value: '{base.color.red.7}',
-            $type: 'color',
-          },
-        },
-      },
-      carriage: {
-        return: {
-          text: {
-            $value: '{base.color.gray.0}',
-            $type: 'color',
-          },
-        },
-      },
-      carriage: {
-        return: {
-          bg: {
-            $value: '{base.color.red.6}',
-            $type: 'color',
-          },
-        },
-      },
-      'string-regexp': {
-        $value: '{base.color.green.1}',
-        $type: 'color',
-      },
-      markup: {
-        list: {
-          $value: '{base.color.yellow.1}',
-          $type: 'color',
-        },
-        heading: {
-          $value: '{base.color.blue.5}',
-          $type: 'color',
-        },
-        italic: {
-          $value: '{base.color.gray.1}',
-          $type: 'color',
-        },
-        bold: {
-          $value: '{base.color.gray.1}',
-          $type: 'color',
-        },
-        deleted: {
-          text: {
-            $value: '{base.color.red.0}',
-            $type: 'color',
-          },
-          bg: {
-            $value: '{base.color.red.8}',
-            $type: 'color',
-          },
-        },
-        inserted: {
-          text: {
-            $value: '{base.color.green.0}',
-            $type: 'color',
-          },
-          bg: {
-            $value: '{base.color.green.8}',
-            $type: 'color',
-          },
-        },
-        changed: {
-          text: {
-            $value: '{base.color.orange.0}',
-            $type: 'color',
-          },
-          bg: {
-            $value: '{base.color.orange.8}',
-            $type: 'color',
-          },
-        },
-        ignored: {
-          text: {
-            $value: '{base.color.gray.1}',
-            $type: 'color',
-          },
-          bg: {
-            $value: '{base.color.blue.6}',
-            $type: 'color',
-          },
-        },
-      },
-      meta: {
-        diff: {
-          range: {
-            $value: '{base.color.purple.2}',
-            $type: 'color',
-          },
-        },
-      },
-      brackethighlighter: {
-        angle: {
+    prettylights: {
+      syntax: {
+        comment: {
           $value: '{base.color.gray.3}',
           $type: 'color',
         },
-      },
-      sublimelinter: {
-        gutter: {
-          mark: {
-            $value: '{base.color.gray.5}',
+        constant: {
+          $value: '{base.color.blue.2}',
+          $type: 'color',
+        },
+        entity: {
+          $value: '{base.color.purple.2}',
+          $type: 'color',
+        },
+        storage: {
+          modifier: {
+            import: {
+              $value: '{base.color.gray.1}',
+              $type: 'color',
+            },
+          },
+        },
+        'entity-tag': {
+          $value: '{base.color.green.1}',
+          $type: 'color',
+        },
+        keyword: {
+          $value: '{base.color.red.3}',
+          $type: 'color',
+        },
+        string: {
+          $value: '{base.color.blue.1}',
+          $type: 'color',
+        },
+        variable: {
+          $value: '{base.color.orange.2}',
+          $type: 'color',
+        },
+        brackethighlighter: {
+          unmatched: {
+            $value: '{base.color.red.4}',
             $type: 'color',
           },
         },
-      },
-      constant: {
-        other: {
-          reference: {
-            link: {
-              $value: '{base.color.blue.1}',
+        invalid: {
+          illegal: {
+            text: {
+              $value: '{base.color.gray.0}',
               $type: 'color',
+            },
+          },
+        },
+        invalid: {
+          illegal: {
+            bg: {
+              $value: '{base.color.red.7}',
+              $type: 'color',
+            },
+          },
+        },
+        carriage: {
+          return: {
+            text: {
+              $value: '{base.color.gray.0}',
+              $type: 'color',
+            },
+          },
+        },
+        carriage: {
+          return: {
+            bg: {
+              $value: '{base.color.red.6}',
+              $type: 'color',
+            },
+          },
+        },
+        'string-regexp': {
+          $value: '{base.color.green.1}',
+          $type: 'color',
+        },
+        markup: {
+          list: {
+            $value: '{base.color.yellow.1}',
+            $type: 'color',
+          },
+          heading: {
+            $value: '{base.color.blue.5}',
+            $type: 'color',
+          },
+          italic: {
+            $value: '{base.color.gray.1}',
+            $type: 'color',
+          },
+          bold: {
+            $value: '{base.color.gray.1}',
+            $type: 'color',
+          },
+          deleted: {
+            text: {
+              $value: '{base.color.red.0}',
+              $type: 'color',
+            },
+            bg: {
+              $value: '{base.color.red.8}',
+              $type: 'color',
+            },
+          },
+          inserted: {
+            text: {
+              $value: '{base.color.green.0}',
+              $type: 'color',
+            },
+            bg: {
+              $value: '{base.color.green.8}',
+              $type: 'color',
+            },
+          },
+          changed: {
+            text: {
+              $value: '{base.color.orange.0}',
+              $type: 'color',
+            },
+            bg: {
+              $value: '{base.color.orange.8}',
+              $type: 'color',
+            },
+          },
+          ignored: {
+            text: {
+              $value: '{base.color.gray.1}',
+              $type: 'color',
+            },
+            bg: {
+              $value: '{base.color.blue.6}',
+              $type: 'color',
+            },
+          },
+        },
+        meta: {
+          diff: {
+            range: {
+              $value: '{base.color.purple.2}',
+              $type: 'color',
+            },
+          },
+        },
+        brackethighlighter: {
+          angle: {
+            $value: '{base.color.gray.3}',
+            $type: 'color',
+          },
+        },
+        sublimelinter: {
+          gutter: {
+            mark: {
+              $value: '{base.color.gray.5}',
+              $type: 'color',
+            },
+          },
+        },
+        constant: {
+          other: {
+            reference: {
+              link: {
+                $value: '{base.color.blue.1}',
+                $type: 'color',
+              },
             },
           },
         },
