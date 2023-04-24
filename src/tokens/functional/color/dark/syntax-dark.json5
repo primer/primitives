@@ -113,6 +113,10 @@
             $value: '{base.color.red.4}',
             $type: 'color',
           },
+          angle: {
+            $value: '{base.color.gray.3}',
+            $type: 'color',
+          },
         },
         invalid: {
           illegal: {
@@ -216,12 +220,6 @@
             },
           },
         },
-        brackethighlighter: {
-          angle: {
-            $value: '{base.color.gray.3}',
-            $type: 'color',
-          },
-        },
         sublimelinter: {
           gutter: {
             mark: {
@@ -230,15 +228,9 @@
             },
           },
         },
-        constant: {
-          other: {
-            reference: {
-              link: {
-                $value: '{base.color.blue.1}',
-                $type: 'color',
-              },
-            },
-          },
+        'constant-other-reference-link': {
+          $value: '{base.color.blue.1}',
+          $type: 'color',
         },
       },
     },
