@@ -178,12 +178,24 @@ export const Counter = () => {
 }
 
 export const Button = () => {
-  const data = getTokensByName(colorTokens, 'button').map(token => {
+  const button = getTokensByName(colorTokens, 'button').map(token => {
     return {
       id: token.name,
       ...token,
     }
   })
+
+  const buttonCounter = getTokensByName(colorTokens, 'buttonCounter').map(token => {
+    return {
+      id: token.name,
+      ...token,
+    }
+  })
+
+  const data = button.concat(buttonCounter).map((item, index) => ({
+    ...item,
+    index,
+  }))
   return (
     <Table.Container>
       <Table.Title as="h1" id="pattern">
