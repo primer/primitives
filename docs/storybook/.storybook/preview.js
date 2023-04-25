@@ -38,6 +38,7 @@ export const globalTypes = {
       icon: 'contrast',
       items: [...primerThemes, {value: 'all', left: '', title: 'All'}],
       showName: true,
+      dynamicTitle: true,
     },
   },
 }
