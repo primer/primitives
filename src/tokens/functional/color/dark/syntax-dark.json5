@@ -113,6 +113,10 @@
             $value: '{base.color.red.4}',
             $type: 'color',
           },
+          angle: {
+            $value: '{base.color.gray.3}',
+            $type: 'color',
+          },
         },
         invalid: {
           illegal: {
@@ -120,10 +124,6 @@
               $value: '{base.color.gray.0}',
               $type: 'color',
             },
-          },
-        },
-        invalid: {
-          illegal: {
             bg: {
               $value: '{base.color.red.7}',
               $type: 'color',
@@ -136,10 +136,6 @@
               $value: '{base.color.gray.0}',
               $type: 'color',
             },
-          },
-        },
-        carriage: {
-          return: {
             bg: {
               $value: '{base.color.red.6}',
               $type: 'color',
@@ -216,12 +212,6 @@
             },
           },
         },
-        brackethighlighter: {
-          angle: {
-            $value: '{base.color.gray.3}',
-            $type: 'color',
-          },
-        },
         sublimelinter: {
           gutter: {
             mark: {
@@ -230,15 +220,9 @@
             },
           },
         },
-        constant: {
-          other: {
-            reference: {
-              link: {
-                $value: '{base.color.blue.1}',
-                $type: 'color',
-              },
-            },
-          },
+        'constant-other-reference-link': {
+          $value: '{base.color.blue.1}',
+          $type: 'color',
         },
       },
     },
