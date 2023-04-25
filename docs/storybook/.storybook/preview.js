@@ -13,6 +13,12 @@ const preview = {
       matchers: {
         color: /(background|color)$/i,
         date: /Date$/,
+        hideNoControlsWarning: true,
+      },
+    },
+    options: {
+      storySort: {
+        order: ['Color', 'Typography', 'Size', 'Demos', 'Migration'],
       },
     },
   },
