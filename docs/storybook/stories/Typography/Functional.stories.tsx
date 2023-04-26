@@ -63,15 +63,6 @@ export const FontFamily = () => {
               return <p>{row.value}</p>
             },
           },
-          {
-            header: 'Source value',
-            field: 'original',
-            rowHeader: true,
-            width: 'growCollapse',
-            renderCell: row => {
-              return <p>{row.original.value}</p>
-            },
-          },
         ]}
       />
     </Table.Container>
@@ -159,7 +150,6 @@ export const Display = () => {
       <TypographyDemo container id="type" fontShorthand="text-display-shorthand">
         Display
       </TypographyDemo>
-
       <DataTable
         aria-labelledby="type"
         data={filteredData}
@@ -950,6 +940,71 @@ export const InlineCodeBlock = () => {
             rowHeader: true,
             renderCell: row => {
               return <p>{row.name.includes('shorthand') ? undefined : row.original.value}</p>
+            },
+          },
+        ]}
+      />
+    </Table.Container>
+  )
+}
+
+export const Overview = () => {
+  const data = getTokensByName(sizeTokens, 'text').map(token => {
+    return {
+      id: token.name,
+      ...token,
+    }
+  })
+
+  const filteredData = data.filter(item => item.id.includes('shorthand'))
+
+  return (
+    <Table.Container>
+      <Table.Title as="h1" id="type">
+        Overview
+      </Table.Title>
+      <DataTable
+        aria-labelledby="type"
+        data={filteredData}
+        columns={[
+          {
+            header: 'Sample',
+            field: 'name',
+            rowHeader: true,
+            width: 'auto',
+            renderCell: row => {
+              return (
+                <TypographyDemo fontShorthand={row.name}>
+                  {row.name.split('-')[1]}
+                  {row.name.includes('large')
+                    ? ' large'
+                    : row.name.includes('small')
+                    ? ' small'
+                    : row.name.includes('medium')
+                    ? ' medium'
+                    : undefined}
+                </TypographyDemo>
+              )
+            },
+          },
+          {
+            header: 'Description',
+            field: 'comment',
+            rowHeader: true,
+            width: 'growCollapse',
+            renderCell: row => {
+              return (
+                <p
+                  style={{
+                    fontSize: 'var(--text-body-size-medium)',
+                    lineHeight: 'var(--text-body-lineHeight-medium)',
+                    fontWeight: 'var(--base-text-weight-normal',
+                    marginBottom: '0',
+                  }}
+                >
+                  {row.comment}
+                </p>
+              )
             },
           },
         ]}

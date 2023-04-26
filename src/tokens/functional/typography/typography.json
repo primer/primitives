@@ -37,7 +37,8 @@
           "lineHeight": "{text.display.lineHeight}",
           "fontFamily": "{fontStack.sansSerif}"
         },
-        "$type": "typography"
+        "$type": "typography",
+        "$description": "Hero-style text for brand to product transition pages. Utilize Title (large) styles on narrow viewports."
       }
     },
     "title": {
@@ -88,7 +89,8 @@
             "lineHeight": "{text.title.lineHeight.large}",
             "fontFamily": "{fontStack.sansSerif}"
           },
-          "$type": "typography"
+          "$type": "typography",
+          "$description": "Page headings for user-created objects, such as issues or pull requests. Utilize title (medium) styles on narrow viewports."
         },
         "medium": {
           "$value": {
@@ -97,7 +99,8 @@
             "lineHeight": "{text.title.lineHeight.medium}",
             "fontFamily": "{fontStack.sansSerif}"
           },
-          "$type": "typography"
+          "$type": "typography",
+          "$description": "Default page title. The 32px-equivalent line-height matches with button and other medium control heights. Great for page header composition."
         },
         "small": {
           "$value": {
@@ -106,7 +109,8 @@
             "lineHeight": "{text.title.lineHeight.small}",
             "fontFamily": "{fontStack.sansSerif}"
           },
-          "$type": "typography"
+          "$type": "typography",
+          "$description": "Uses the same size as body (large) with a heavier weight of semibold (600)."
         }
       }
     },
@@ -129,7 +133,8 @@
           "lineHeight": "{text.subtitle.lineHeight}",
           "fontFamily": "{fontStack.sansSerif}"
         },
-        "$type": "typography"
+        "$type": "typography",
+        "$description": "Page sections/sub headings, or less important object names in page titles (automated action titles, for example). Same line-height as title (medium)."
       }
     },
     "body": {
@@ -170,7 +175,8 @@
             "lineHeight": "{text.body.lineHeight.large}",
             "fontFamily": "{fontStack.sansSerif}"
           },
-          "$type": "typography"
+          "$type": "typography",
+          "$description": "User-generated content, markdown rendering."
         },
         "medium": {
           "$value": {
@@ -179,7 +185,8 @@
             "lineHeight": "{text.body.lineHeight.medium}",
             "fontFamily": "{fontStack.sansSerif}"
           },
-          "$type": "typography"
+          "$type": "typography",
+          "$description": "Default UI font. Most commonly used for body text."
         },
         "small": {
           "$value": {
@@ -188,7 +195,8 @@
             "lineHeight": "{text.body.lineHeight.small}",
             "fontFamily": "{fontStack.sansSerif}"
           },
-          "$type": "typography"
+          "$type": "typography",
+          "$description": "Small body text for discrete UI applications, such as helper, footnote text. Should be used sparingly across pages. Line-height matches Body (medium) at 20px."
         }
       }
     },
@@ -211,7 +219,8 @@
           "lineHeight": "{text.caption.lineHeight}",
           "fontFamily": "{fontStack.sansSerif}"
         },
-        "$type": "typography"
+        "$type": "typography",
+        "$description": "Compact small font with a smaller line height of 16px. Use it for single-line scenarios, as the small sizing doesn’t pass accessibility requirements."
       }
     },
     "codeBlock": {
@@ -232,7 +241,8 @@
           "lineHeight": "{text.codeBlock.lineHeight}",
           "fontFamily": "{fontStack.monospace}"
         },
-        "$type": "typography"
+        "$type": "typography",
+        "$description": "Default style for rendering code blocks."
       }
     },
     "codeInline": {
@@ -250,7 +260,8 @@
           "fontSize": "{text.codeInline.size}",
           "fontFamily": "{fontStack.monospace}"
         },
-        "$type": "typography"
+        "$type": "typography",
+        "$description": "Inline code blocks using em units to inherit size from its parent."
       }
     }
   }
