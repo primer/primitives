@@ -80,6 +80,10 @@
           $value: '{base.color.blue.6}',
           $type: 'color',
         },
+        'constant-other-reference-link': {
+          $value: '{base.color.blue.8}',
+          $type: 'color',
+        },
         entity: {
           $value: '{base.color.purple.5}',
           $type: 'color',
@@ -219,11 +223,7 @@
               $type: 'color',
             },
           },
-        },
-        'constant-other-reference-link': {
-          $value: '{base.color.blue.8}',
-          $type: 'color',
-        },
+        }
       },
     },
   },
