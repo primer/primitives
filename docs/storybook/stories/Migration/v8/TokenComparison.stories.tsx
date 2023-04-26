@@ -46,21 +46,21 @@ export const Primitives = () => {
             header: 'Foreground',
             field: 'color',
             renderCell: row => {
-              return <CSSTokenSwatch color={row.color} />
+              return <CSSTokenSwatch color={row.color} prevColor={row.id} />
             },
           },
           {
             header: 'Background',
             field: 'background',
             renderCell: row => {
-              return <CSSTokenSwatch color={row.background} />
+              return <CSSTokenSwatch color={row.background} prevColor={row.id} />
             },
           },
           {
             header: 'Border',
             field: 'border',
             renderCell: row => {
-              return <CSSTokenSwatch color={row.border} />
+              return <CSSTokenSwatch color={row.border} prevColor={row.id} />
             },
           },
         ]}
