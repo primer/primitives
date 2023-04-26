@@ -1,7 +1,7 @@
 import React from 'react'
 import {toHex} from 'color2k'
 import './CSSTokenSwatch.css'
-import { hexToAlpha } from '../../utilities/alphaFromHex'
+import {hexToAlpha} from '../../utilities/alphaFromHex'
 
 export type CSSTokenSwatchProps = {
   color?: string
@@ -46,7 +46,13 @@ export const CSSTokenSwatch = ({color, prevColor, shadow}: CSSTokenSwatchProps) 
         ref={ref}
       ></div>
       {color ? <p data-token-name>{color}</p> : null}
-      {hex ? <p data-token-name title={`opacity: ${hexToAlpha(hex)}%`}><span className={`${hexHasChanged(hex,prevColor) ? "hasChanged" : ""}`}>{hex}</span></p> : <p>---</p>}
+      {hex ? (
+        <p data-token-name title={`opacity: ${hexToAlpha(hex)}%`}>
+          <span className={`${hexHasChanged(hex, prevColor) ? 'hasChanged' : ''}`}>{hex}</span>
+        </p>
+      ) : (
+        <p>---</p>
+      )}
     </div>
   )
 }
