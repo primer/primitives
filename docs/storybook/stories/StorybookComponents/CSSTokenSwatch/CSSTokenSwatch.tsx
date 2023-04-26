@@ -1,13 +1,26 @@
 import React from 'react'
 import {toHex} from 'color2k'
 import './CSSTokenSwatch.css'
+import {hexToAlpha} from '../../utilities/alphaFromHex'
 
 export type CSSTokenSwatchProps = {
   color?: string
+  prevColor?: string
   shadow?: boolean
 }
 
-export const CSSTokenSwatch = ({color, shadow}: CSSTokenSwatchProps) => {
+const hexHasChanged = (hex: string, prevColor?: string) => {
+  if (prevColor === undefined) {
+    return ''
+  }
+  const prevHex = toHex(
+    `${getComputedStyle(document.documentElement).getPropertyValue(`--${prevColor}`)}`.replace(/ /g, ''),
+  )
+
+  return prevHex !== hex
+}
+
+export const CSSTokenSwatch = ({color, prevColor, shadow}: CSSTokenSwatchProps) => {
   const ref = React.useRef<HTMLDivElement | null>(null)
   const [hex, setHex] = React.useState<string | null>(null)
 
@@ -35,7 +48,13 @@ export const CSSTokenSwatch = ({color, shadow}: CSSTokenSwatchProps) => {
         ref={ref}
       ></div>
       {color ? <p data-token-name>{color}</p> : null}
-      {hex ? <p data-token-name>{hex}</p> : <p>---</p>}
+      {hex ? (
+        <p data-token-name title={`opacity: ${hexToAlpha(hex)}%`}>
+          <span className={`${hexHasChanged(hex, prevColor) ? 'hasChanged' : ''}`}>{hex}</span>
+        </p>
+      ) : (
+        <p>---</p>
+      )}
     </div>
   )
 }
