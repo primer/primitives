@@ -13,7 +13,9 @@ const hexHasChanged = (hex: string, prevColor?: string) => {
   if (prevColor === undefined) {
     return ''
   }
-  const prevHex = toHex(`${getComputedStyle(document.documentElement).getPropertyValue(`--${prevColor}`)}`.replace(/ /g, ''))
+  const prevHex = toHex(
+    `${getComputedStyle(document.documentElement).getPropertyValue(`--${prevColor}`)}`.replace(/ /g, ''),
+  )
 
   return prevHex !== hex
 }
