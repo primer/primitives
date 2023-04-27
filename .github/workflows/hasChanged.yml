@@ -2,15 +2,25 @@ name: Check if files or folders have been changed
 
 on:
   workflow_call:
-    inputs:
-      filter:
-        required: true
-        type: string
     outputs:
-      hasChanged:
-        description: "Boolean value indicating if the files or folders have changed"
-        value: ${{ jobs.hasChanged.outputs.hasChanged }}
-
+      tokens:
+        description: "Boolean value indicating change in src/tokens folder"
+        value: ${{ jobs.hasChanged.outputs.tokens }}
+      oldTokens:
+        description: "Boolean value indicating change in data folder"
+        value: ${{ jobs.hasChanged.outputs.oldTokens }}
+      src:
+        description: "Boolean value indicating change in src folder"
+        value: ${{ jobs.hasChanged.outputs.src }}
+      scripts:
+        description: "Boolean value indicating change in scripts folder"
+        value: ${{ jobs.hasChanged.outputs.scripts }}
+      dependencies:
+        description: "Boolean value indicating change in dependencies"
+        value: ${{ jobs.hasChanged.outputs.dependencies }}
+      docs:
+        description: "Boolean value indicating change in docs folder"
+        value: ${{ jobs.hasChanged.outputs.docs }}
 jobs: 
   hasChanged:
     name: Checking for changes
@@ -26,7 +36,27 @@ jobs:
       with:
         list-files: shell
         filters: |
-          output:
-            - ${{ inputs.filter }}
+          tokens:
+            - 'src/tokens/**'
+          oldTokens:
+            - 'data/**'
+          src:
+            - 'src/**/**.ts'
+            - 'src/**/**.json'
+            - 'src/**/**.json5'
+          scripts:
+            - 'scripts/**'
+          dependencies:
+            - 'package.json'
+            - 'package-lock.json'
+          docs:
+            - 'docs/**'
     - name: Detecting changes that effect output
-      run: echo ${{ steps.filter.outputs.output == 'true' && 'Changes detected' || 'No changes detected' }} for 
+      run: |
+        echo Changes detected:
+        echo tokens: ${{ steps.filter.outputs.tokens }}
+        echo oldTokens: ${{ steps.filter.outputs.oldTokens }}
+        echo src: ${{ steps.filter.outputs.src }}
+        echo scripts: ${{ steps.filter.outputs.scripts }}
+        echo dependencies: ${{ steps.filter.outputs.dependencies }}
+        echo docs: ${{ steps.filter.outputs.docs }}
