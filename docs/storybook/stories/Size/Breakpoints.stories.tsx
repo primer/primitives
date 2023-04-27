@@ -22,9 +22,9 @@ export const Breakpoints = () => {
 
   return (
     <Table.Container>
-      <Table.Title as="h1" id="breakpoints">
+      <h1 className="sr-only" id="breakpoints">
         Breakpoints
-      </Table.Title>
+      </h1>
       <DataTable
         aria-labelledby="breakpoints"
         data={data}

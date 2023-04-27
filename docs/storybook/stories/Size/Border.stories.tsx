@@ -35,9 +35,9 @@ export const BorderSize = () => {
 
   return (
     <Table.Container>
-      <Table.Title as="h1" id="sizing">
+      <h1 className="sr-only" id="sizing">
         Border size
-      </Table.Title>
+      </h1>
       <DataTable
         aria-labelledby="sizing"
         data={data}
@@ -95,9 +95,9 @@ export const BorderRadius = () => {
 
   return (
     <Table.Container>
-      <Table.Title as="h1" id="sizing">
+      <h1 className="sr-only" id="sizing">
         Border radius
-      </Table.Title>
+      </h1>
       <DataTable
         aria-labelledby="sizing"
         data={data}
@@ -150,9 +150,9 @@ export const Outline = () => {
 
   return (
     <Table.Container>
-      <Table.Title as="h1" id="sizing">
+      <h1 className="sr-only" id="sizing">
         Focus outline
-      </Table.Title>
+      </h1>
       <DataTable
         aria-labelledby="sizing"
         data={data}
