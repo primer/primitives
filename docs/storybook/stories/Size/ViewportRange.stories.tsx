@@ -21,9 +21,9 @@ export const Viewport = () => {
   })
   return (
     <Table.Container>
-      <Table.Title as="h1" id="viewports">
+      <h1 className="sr-only" id="sizing">
         Viewport ranges
-      </Table.Title>
+      </h1>
       <DataTable
         aria-labelledby="viewports"
         data={data}

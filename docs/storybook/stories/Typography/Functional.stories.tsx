@@ -23,9 +23,9 @@ export const FontFamily = () => {
 
   return (
     <Table.Container>
-      <Table.Title as="h1" id="type">
+      <h1 className="sr-only" id="type">
         Font family
-      </Table.Title>
+      </h1>
       <DataTable
         aria-labelledby="type"
         data={data}
@@ -81,9 +81,9 @@ export const FontShorthand = () => {
 
   return (
     <Table.Container>
-      <Table.Title as="h1" id="type">
+      <h1 className="sr-only" id="type">
         Font shorthand
-      </Table.Title>
+      </h1>
       <DataTable
         aria-labelledby="type"
         data={filteredData}
@@ -960,9 +960,9 @@ export const Overview = () => {
 
   return (
     <Table.Container>
-      <Table.Title as="h1" id="type">
+      <h1 className="sr-only" id="type">
         Overview
-      </Table.Title>
+      </h1>
       <DataTable
         aria-labelledby="type"
         data={filteredData}

@@ -23,9 +23,9 @@ export const Base = () => {
 
   return (
     <Table.Container>
-      <Table.Title as="h1" id="sizing">
+      <h1 className="sr-only" id="sizing">
         Base size
-      </Table.Title>
+      </h1>
       <DataTable
         aria-labelledby="sizing"
         data={data}
