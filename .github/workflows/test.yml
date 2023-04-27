@@ -1,4 +1,4 @@
-name: My Starter Workflow
+name: Test workflow to run hasChanged
 
 on:
   workflow_dispatch:
@@ -8,4 +8,3 @@ jobs:
     uses: ./.github/workflows/hasChanged.yml
     with:
       filter: '!(*.md|**/**/*.md|**/**/*.test.ts|**/**/*.test.js|docs/**|storybook/**)'
-      
