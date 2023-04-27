@@ -1,0 +1,32 @@
+name: Check if files or folders have been changed
+
+on:
+  workflow_call:
+    inputs:
+      filter:
+        required: true
+        type: string
+    outputs:
+      hasChanged:
+        description: "Boolean value indicating if the files or folders have changed"
+        value: ${{ jobs.hasChanged.outputs.hasChanged }}
+
+jobs: 
+  hasChanged:
+    name: Checking for changes
+    runs-on: ubuntu-latest
+       # Required permissions
+    permissions:
+      pull-requests: read
+    outputs:
+      hasChanged: ${{ steps.filter.outputs.output }}
+    steps:
+    - uses: dorny/paths-filter@v2
+      id: filter
+      with:
+        list-files: shell
+        filters: |
+          output:
+            - ${{ inputs.filter }}
+    - name: Detecting changes that effect output
+      run: echo ${{ steps.filter.outputs.output == 'true' && 'Changes detected' || 'No changes detected' }} for "${{ inputs.filter }}"
