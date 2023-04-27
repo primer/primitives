@@ -1,0 +1,11 @@
+name: My Starter Workflow
+
+on:
+  workflow_dispatch:
+
+jobs:
+  call-reusable-workflow:
+    uses: ./.github/workflows/hasChanged.yml
+    with:
+      filter: '!(*.md|**/**/*.md|**/**/*.test.ts|**/**/*.test.js|docs/**|storybook/**)'
+      
