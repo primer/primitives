@@ -19,7 +19,7 @@ export const FlashDemo = () => {
 
 export const LabelDemo = () => {
   return (
-    <div style={{display: 'grid', gap: '1rem'}}>
+    <div style={{display: 'flex', gap: '1rem', flexDirection: 'row', flexWrap: 'wrap'}}>
       <Label variant="primary">Primary</Label>
       <Label variant="secondary">Secondary</Label>
       <Label variant="accent">Accent</Label>
@@ -35,7 +35,7 @@ export const LabelDemo = () => {
 
 export const StateLabelDemo = () => {
   return (
-    <div style={{display: 'grid', gap: '1rem'}}>
+    <div style={{display: 'flex', gap: '1rem', flexDirection: 'row', flexWrap: 'wrap'}}>
       <StateLabel status="issueOpened">Open</StateLabel>
       <StateLabel status="issueClosed">Closed</StateLabel>
       <StateLabel status="issueClosedNotPlanned">Closed</StateLabel>
