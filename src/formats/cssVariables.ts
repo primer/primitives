@@ -15,7 +15,6 @@ export const cssVariables: StyleDictionary.Formatter = ({dictionary, options = {
   const formatting: LineFormatting = {
     commentStyle: descriptions ? 'long' : 'none',
   }
-  // add file header
 
   return `${fileHeader({file})}${selector} {\n${formattedVariables({
     format: 'css',
