@@ -52,11 +52,12 @@ jobs:
           docs:
             - 'docs/**'
     - name: Detecting changes that effect output
+      if: steps.filter.outputs.tokens == 'true' || steps.filter.outputs.oldTokens == 'true' || steps.filter.outputs.src == 'true' || steps.filter.outputs.scripts == 'true' || steps.filter.outputs.dependencies == 'true' || steps.filter.outputs.docs == 'true'
       run: |
-        echo Changes detected:
-        echo tokens: ${{ steps.filter.outputs.tokens }}
-        echo oldTokens: ${{ steps.filter.outputs.oldTokens }}
-        echo src: ${{ steps.filter.outputs.src }}
-        echo scripts: ${{ steps.filter.outputs.scripts }}
-        echo dependencies: ${{ steps.filter.outputs.dependencies }}
-        echo docs: ${{ steps.filter.outputs.docs }}
+        echo Changes detected
+        echo   - tokens: ${{ steps.filter.outputs.tokens }}
+        echo   - oldTokens: ${{ steps.filter.outputs.oldTokens }}
+        echo   - src: ${{ steps.filter.outputs.src }}
+        echo   - scripts: ${{ steps.filter.outputs.scripts }}
+        echo   - dependencies: ${{ steps.filter.outputs.dependencies }}
+        echo   - docs: ${{ steps.filter.outputs.docs }}
