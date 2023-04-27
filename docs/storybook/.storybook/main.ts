@@ -7,6 +7,7 @@ const config: StorybookConfig = {
     '@storybook/addon-interactions',
     '@storybook/addon-a11y',
     'storybook-addon-rem',
+    'storybook-addon-paddings',
   ],
   framework: {
     name: '@storybook/react-webpack5',
