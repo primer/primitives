@@ -21,11 +21,11 @@ on:
       docs:
         description: "Boolean value indicating change in docs folder"
         value: ${{ jobs.hasChanged.outputs.docs }}
-jobs: 
+jobs:
   hasChanged:
     name: Checking for changes
     runs-on: ubuntu-latest
-       # Required permissions
+    # Required permissions
     permissions:
       pull-requests: read
     outputs:
