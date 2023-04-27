@@ -2,14 +2,14 @@ name: Check for changeset
 
 on:
   pull_request:
-    # types:
+    types:
       # On by default if you specify no types.
-      # - 'opened'
-      # - 'reopened'
-      # - 'synchronize'
-      # # For `skip-label` only.
-      # - 'labeled'
-      # - 'unlabeled'
+      - 'opened'
+      - 'reopened'
+      - 'synchronize'
+      # For `skip-label` only.
+      - 'labeled'
+      - 'unlabeled'
 
 jobs:
   check-for-changeset:
