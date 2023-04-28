@@ -4,8 +4,11 @@ on:
   pull_request:
 
 jobs:
+  changes:
+    uses: ./.github/workflows/hasChanged.yml
+  
   test:
-    if: ${{ github.repository == 'primer/primitives' }}
+    if: ${{ github.repository == 'primer/primitives' && needs.changes.outputs.outputAffected == 'true' }}
     name: Primitives v2
     runs-on: ubuntu-latest
     steps:
