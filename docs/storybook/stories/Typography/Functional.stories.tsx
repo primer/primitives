@@ -58,7 +58,7 @@ export const FontFamily = () => {
             header: 'Output value',
             field: 'value',
             rowHeader: true,
-
+            width: 'auto',
             renderCell: row => {
               return <p>{row.value}</p>
             },
@@ -1000,7 +1000,7 @@ export const Overview = () => {
             header: 'Description',
             field: 'comment',
             rowHeader: true,
-
+            width: 'auto',
             renderCell: row => {
               return (
                 <p
