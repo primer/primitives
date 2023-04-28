@@ -9,15 +9,9 @@ jobs:
   changes:
     uses: ./.github/workflows/hasChanged.yml
 
-  test:
-    needs: changes
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo ${{ needs.changes.outputs.oldTokens == 'true' && 'Yes' || 'No' }}
-
   build:
     needs: changes
-    if: ${{ needs.changes.outputs.oldTokens == 'true' }}
+    if: needs.changes.outputs.oldTokens == 'true'
     name: Check design token color contrast
     runs-on: ubuntu-latest
     steps:
