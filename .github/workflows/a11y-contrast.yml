@@ -11,7 +11,7 @@ jobs:
 
   build:
     needs: changes
-    if: ${{ needs.changes.outputs.oldTokens == 'true' }}
+    if: ${{ needs.changes.outputs.oldTokens == true }}
     name: Check design token color contrast
     runs-on: ubuntu-latest
     steps:
