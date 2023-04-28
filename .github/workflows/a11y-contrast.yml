@@ -13,7 +13,7 @@ jobs:
     needs: changes
     runs-on: ubuntu-latest
     steps:
-      - run: echo ${{ needs.changes.outputs.oldTokens}}
+      - run: echo ${{ needs.changes.outputs.oldTokens }}
 
   build:
     needs: changes
