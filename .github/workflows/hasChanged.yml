@@ -3,6 +3,9 @@ name: Check if files or folders have been changed
 on:
   workflow_call:
     outputs:
+      outputAffected:
+        description: "Boolean value indicating changes in any file or folder that has an effect on the output"
+        value: ${{ jobs.hasChanged.outputs.oldTokens || jobs.hasChanged.outputs.src || jobs.hasChanged.outputs.buildScripts }}
       tokens:
         description: "Boolean value indicating change in src/tokens folder"
         value: ${{ jobs.hasChanged.outputs.tokens }}
@@ -15,6 +18,9 @@ on:
       scripts:
         description: "Boolean value indicating change in scripts folder"
         value: ${{ jobs.hasChanged.outputs.scripts }}
+      buildScripts:
+        description: "Boolean value indicating change in build files in the build folder"
+        value: ${{ jobs.hasChanged.outputs.buildScripts }}
       dependencies:
         description: "Boolean value indicating change in dependencies"
         value: ${{ jobs.hasChanged.outputs.dependencies }}
@@ -46,6 +52,13 @@ jobs:
             - 'src/**/**.json5'
           scripts:
             - 'scripts/**'
+          buildScripts:
+            - 'scripts/build.ts'
+            - 'scripts/buildTokens.ts'
+            - 'scripts/themes.config.ts'
+            - 'tsconfig.json'
+            - 'tsconfig.build.json'
+            - 'package.json'
           dependencies:
             - 'package.json'
             - 'package-lock.json'
@@ -59,5 +72,6 @@ jobs:
         echo   - oldTokens: ${{ steps.filter.outputs.oldTokens }}
         echo   - src: ${{ steps.filter.outputs.src }}
         echo   - scripts: ${{ steps.filter.outputs.scripts }}
+        echo   - buildScripts: ${{ steps.filter.outputs.buildScripts }}
         echo   - dependencies: ${{ steps.filter.outputs.dependencies }}
         echo   - docs: ${{ steps.filter.outputs.docs }}

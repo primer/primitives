@@ -6,7 +6,6 @@ on:
       - main
 
 jobs:
-  # JOB to run change detection
   changes:
     uses: ./.github/workflows/hasChanged.yml
 
