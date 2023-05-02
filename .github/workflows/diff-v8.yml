@@ -8,43 +8,6 @@ jobs:
   changes:
     uses: ./.github/workflows/hasChanged.yml
 
-  # comment:
-  #   needs: changes
-  #   if: ${{ needs.changes.outputs.tokens == 'true' }}
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Checkout repository
-  #       uses: actions/checkout@v2
-
-  #     - name: Set up node
-  #       uses: actions/setup-node@v3
-  #       with:
-  #         node-version: 16
-
-      # - name: Create comment (if necessary)
-      #   uses: actions/github-script@v5
-      #   with:
-      #     script: |
-      #       const body = '<details>\n' +
-      #       '<summary><strong>Variables changed</strong></summary>\n' +
-      #       '<!-- diff --><!-- /diff -->\n' +
-      #       '</details>'
-      #       const result = await github.rest.issues.listComments({
-      #         issue_number: context.issue.number,
-      #         owner: context.repo.owner,
-      #         repo: context.repo.repo
-      #       });
-      #       console.log(result.data)
-      #       const botComments = result.data.filter(c => c.user.login === 'github-actions[bot]')
-      #       if (!botComments.length) {
-      #         await github.rest.issues.createComment({
-      #           issue_number: context.issue.number,
-      #           owner: context.repo.owner,
-      #           repo: context.repo.repo,
-      #           body
-      #         })
-      #       }
-
   diff:
     # needs: changes
     # if: ${{ needs.changes.outputs.tokens == 'true' }}
@@ -85,37 +48,56 @@ jobs:
         with:
           script: |
             const shell = require('shelljs')
-            const {glob: gl} = require('glob')
-            const files = await gl('tokens-next-private/css/**/**/*.css')
+            const {globSync} = require('glob')
+            const files = globSync('tokens-next-private/css/**/**/*.css')
+            # const files = [
+            #   'tokens-next-private/css/functional/typography/typography.css',
+            #   'tokens-next-private/css/functional/themes/light.css',
+            #   'tokens-next-private/css/functional/themes/light-tritanopia.css',
+            #   'tokens-next-private/css/functional/themes/light-high-contrast.css',
+            #   'tokens-next-private/css/functional/themes/light-colorblind.css',
+            #   'tokens-next-private/css/functional/themes/dark.css',
+            #   'tokens-next-private/css/functional/themes/dark-tritanopia.css',
+            #   'tokens-next-private/css/functional/themes/dark-high-contrast.css',
+            #   'tokens-next-private/css/functional/themes/dark-dimmed.css',
+            #   'tokens-next-private/css/functional/themes/dark-colorblind.css',
+            #   'tokens-next-private/css/functional/size/viewport.css',
+            #   'tokens-next-private/css/functional/size/size.css',
+            #   'tokens-next-private/css/functional/size/size-fine.css',
+            #   'tokens-next-private/css/functional/size/size-coarse.css',
+            #   'tokens-next-private/css/functional/size/breakpoints.css',
+            #   'tokens-next-private/css/functional/size/border.css',
+            #   'tokens-next-private/css/base/size/size.css',
+            #   'tokens-next-private/css/base/typography/typography.css'
+            # ]
+
             // create diffs
             const diffs = files.map(file => {
-              const diff = shell.exec(`git diff -U ..base ${file}`)
+              const diff = shell.exec(`diff -U 1 base/${file} ${file} 2> /dev/null || true`, {silent: true})
 
               if (diff.stderr) {
                 throw new Error(diff.stderr)
               }
               
               return {
-                file,
+                file: file.replace('tokens-next-private/css/', ''),
                 diff: diff.stdout || ''
               }
             })
             // filter files with no diffs
             .filter(item => item.diff !== '')
             
-            console.log(diffs)
             // prepare comment body
             const body = '## Design Token Diff\n\n' + 
               diffs.map(({file, diff}) => 
-                `### ${file}\n\n` +
                 '<details>' +
-                `<summary>${diff.split(/\r\n|\r|\n/).length}</summary>\n` +
+                `<summary><h3>${file}</h3></summary>\n` +
                 "  \n"+
                 "  ```diff"+
                 `  ${diff}` +
                 "  ```"+
                 '\n</details>'
-              ).join('\n\n')
+              ).join('\n')
             console.log(body)
             // get comments
             const {data: comments} = await github.rest.issues.listComments({
