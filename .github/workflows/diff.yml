@@ -64,22 +64,22 @@ jobs:
           node-version: 16.x
 
       - name: Install dependencies
-        run: npm ci --no-audit --no-fund --include=dev
+        run: npm ci --no-audit --no-fund --include=dev --ignore-scripts
 
       - name: Build tokens
-        run: npm run build --ignore-scripts
+        run: npm run build
 
       - name: Build experimental tokens
-        run: npm run build:tokens --ignore-scripts
+        run: npm run build:tokens
 
       - name: Install dependencies (base)
-        run: pushd base; npm i --no-audit --no-fund; popd
+        run: pushd base; npm i --no-audit --no-fund --ignore-scripts; popd
 
       - name: Build (base)
-        run: pushd base; npm run build --ignore-scripts; popd
+        run: pushd base; npm run build; popd
 
       - name: Build (base experimental)
-        run: pushd base; npm run build:tokens --ignore-scripts; popd
+        run: pushd base; npm run build:tokens; popd
 
       - name: Diff
         uses: primer/comment-token-update@main

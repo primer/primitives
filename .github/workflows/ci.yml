@@ -21,13 +21,13 @@ jobs:
           node-version: 16
 
       - name: Install dependencies
-        run: npm ci --legacy-peer-deps --no-audit --no-fund && cd docs && npm ci --legacy-peer-deps --no-audit --no-fund
+        run: npm ci --legacy-peer-deps --no-audit --no-fund --ignore-scripts && cd docs && npm ci --legacy-peer-deps --no-audit --no-fund --ignore-scripts
 
       - name: Build v1 tokens
-        run: npm run build --ignore-scripts
+        run: npm run build
 
       - name: Build v2 tokens
-        run: npm run build:tokens --ignore-scripts
+        run: npm run build:tokens
 
   lint:
     if: ${{ github.repository == 'primer/primitives' }}
@@ -46,10 +46,10 @@ jobs:
         run: npm ci --legacy-peer-deps --no-audit --no-fund && cd docs && npm ci --legacy-peer-deps --no-audit --no-fund
 
       - name: Build v1 tokens
-        run: npm run build --ignore-scripts
+        run: npm run build
 
       - name: Build v2 tokens
-        run: npm run build:tokens --ignore-scripts
+        run: npm run build:tokens
 
       - name: Lint
         run: npm run lint
@@ -68,7 +68,7 @@ jobs:
           node-version: 16
 
       - name: Install dependencies
-        run: npm ci --legacy-peer-deps --no-audit --no-fund && cd docs && npm ci --legacy-peer-deps --no-audit --no-fund
+        run: npm ci --legacy-peer-deps --no-audit --no-fund --ignore-scripts && cd docs && npm ci --legacy-peer-deps --no-audit --no-fund --ignore-scripts
 
       - name: Lint
         run: npm run format:check
@@ -87,13 +87,13 @@ jobs:
           node-version: 16
 
       - name: Install dependencies
-        run: npm ci --legacy-peer-deps --no-audit --no-fund && cd docs && npm ci --legacy-peer-deps --no-audit --no-fund
+        run: npm ci --legacy-peer-deps --no-audit --no-fund --ignore-scripts && cd docs && npm ci --legacy-peer-deps --no-audit --no-fund --ignore-scripts
 
       - name: Build v1 tokens
-        run: npm run build --ignore-scripts
+        run: npm run build
 
       - name: Build v2 tokens
-        run: npm run build:tokens --ignore-scripts
+        run: npm run build:tokens
 
       - name: Run unit tests
         run: npm test

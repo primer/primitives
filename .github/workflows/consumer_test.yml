@@ -42,7 +42,7 @@ jobs:
             ${{ runner.os }}-node-
 
       - name: Install local dependencies
-        run: npm install --legacy-peer-deps
+        run: npm install --legacy-peer-deps --ignore-scripts
 
       - name: Install consumer dependencies (reference)
         run: pushd ${{env.TEST_FOLDER}}; npm install --legacy-peer-deps; popd

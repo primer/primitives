@@ -35,16 +35,16 @@ jobs:
             ${{ runner.os }}-node-
 
       - name: Install dependencies
-        run: npm install --legacy-peer-deps
+        run: npm install --legacy-peer-deps --ignore-scripts
 
       - name: Install dependencies (reference)
-        run: pushd temp-main; npm install --legacy-peer-deps; popd
+        run: pushd temp-main; npm install --legacy-peer-deps --ignore-scripts; popd
 
       - name: Build
-        run: npm run build:tokens --ignore-scripts
+        run: npm run build:tokens
 
       - name: Build (reference)
-        run: pushd temp-main; npm run build:tokens --ignore-scripts; popd
+        run: pushd temp-main; npm run build:tokens; popd
 
       - name: Export diff
         run: |
