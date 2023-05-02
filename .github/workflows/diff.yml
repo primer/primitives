@@ -19,7 +19,8 @@ jobs:
       - name: Set up node
         uses: actions/setup-node@v3
         with:
-          node-version: 16.x
+          node-version: 16
+          cache: 'npm'
 
       - name: Create comment (if necessary)
         uses: actions/github-script@v5
@@ -61,7 +62,8 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v3
         with:
-          node-version: 16.x
+          node-version: 16
+          cache: 'npm'
 
       - name: Install dependencies
         run: npm ci --no-audit --no-fund --include=dev --ignore-scripts
