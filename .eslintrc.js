@@ -44,6 +44,7 @@ module.exports = {
     },
   },
   // rules which apply to JS, TS, etc.
+
   rules: {
     'filenames/match-regex': 0,
     'eslint-comments/no-unused-disable': 0,
@@ -68,6 +69,16 @@ module.exports = {
           'dark_colorblind',
           'dark_tritanopia',
         ],
+      },
+    ],
+    'import/extensions': [
+      'error',
+      'ignorePackages',
+      {
+        json: 'always',
+        tsx: 'never',
+        ts: 'never',
+        js: 'never',
       },
     ],
   },

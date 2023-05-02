@@ -1,6 +1,5 @@
 import React from 'react'
-// eslint-disable-next-line import/extensions
-import colorTokens from '../../../../../tokens-next-private/docs/functional/themes/light.json'
+import colorTokens from '../../../../tokens-next-private/docs/functional/themes/light.json'
 import {ColorTokenSwatch} from '../../StorybookComponents/ColorTokenSwatch/ColorTokenSwatch'
 import {DataTable, Table} from '@primer/react/drafts'
 import {InlineCode} from '../../StorybookComponents/InlineCode/InlineCode'

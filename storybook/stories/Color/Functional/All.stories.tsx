@@ -31,7 +31,7 @@ export const All = () => {
         {title: 'Done', component: <Done />},
         {title: 'Sponsors', component: <Sponsors />},
       ].map(({title, component}) => (
-        <div>
+        <div key={title}>
           <h2 style={{marginBlockEnd: '0.5rem'}}>{title}</h2>
           <div className="SwatchDecorator">{component}</div>
         </div>

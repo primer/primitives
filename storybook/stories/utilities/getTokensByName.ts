@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/consistent-type-imports
 import StyleDictionary from 'style-dictionary'
 
 export const getTokensByName = (

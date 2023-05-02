@@ -1,8 +1,8 @@
 import React from 'react'
-// eslint-disable-next-line import/extensions
-import sizeTokens from '../../../../tokens-next-private/docs/functional/size/size.json'
-import sizeTokensFine from '../../../../tokens-next-private/docs/functional/size/size-fine.json'
-import sizeTokensCoarse from '../../../../tokens-next-private/docs/functional/size/size-coarse.json'
+// esline-disable-entire-file import/extensions
+import sizeTokens from '../../../tokens-next-private/docs/functional/size/size.json'
+import sizeTokensFine from '../../../tokens-next-private/docs/functional/size/size-fine.json'
+import sizeTokensCoarse from '../../../tokens-next-private/docs/functional/size/size-coarse.json'
 import {ControlSizeDemo} from '../StorybookComponents/ControlSizeDemo/ControlSizeDemo'
 import {ControlStackDemo} from '../StorybookComponents/ControlStackDemo/ControlStackDemo'
 import {TouchTargetDemo} from '../StorybookComponents/TouchTargetDemo/TouchTargetDemo'
@@ -634,7 +634,7 @@ export const ControlTouchTargetResponsive = () => {
             header: 'Pointer: coarse value',
             field: 'value',
             rowHeader: true,
-            renderCell: row => {
+            renderCell: () => {
               return <p>{coarseValue}</p>
             },
           },

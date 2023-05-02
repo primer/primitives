@@ -4,10 +4,10 @@ import copy from 'copy-to-clipboard'
 import React from 'react'
 
 export type ClipboardCopyProps = {
-  value?: any
+  value?: string
 }
 
-export const ClipboardCopy = ({value}: ClipboardCopyProps) => {
+export const ClipboardCopy = ({value = ''}: ClipboardCopyProps) => {
   const [copied, setCopied] = React.useState(false)
 
   React.useEffect(() => {
