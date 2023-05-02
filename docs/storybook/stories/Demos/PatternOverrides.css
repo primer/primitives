@@ -40,6 +40,22 @@
   color: var(--button-invisible-fgColor-rest);
 }
 
+.Button button[id='danger']:not(:hover) [data-component='ButtonCounter'] {
+  color: var(--buttonCounter-danger-fgColor-rest) !important;
+}
+
+.Button button[id='danger']:hover [data-component='ButtonCounter'] {
+  color: var(--buttonCounter-danger-fgColor-hover) !important;
+}
+
+.Button button[id='outline']:not(:hover) [data-component='ButtonCounter'] {
+  color: var(--buttonCounter-outline-fgColor-rest) !important;
+}
+
+.Button button[id='outline']:hover [data-component='ButtonCounter'] {
+  color: var(--buttonCounter-outline-fgColor-hover) !important;
+}
+
 .Overlay-backdrop--center {
   background-color: var(--overlay-backdrop-bgColor) !important;
 }

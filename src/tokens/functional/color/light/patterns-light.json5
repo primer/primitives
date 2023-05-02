@@ -593,7 +593,7 @@
     primary: {
       bgColor: {
         rest: {
-          $value: '{base.color.white}',
+          $value: '{base.color.green.9}',
           $type: 'color',
           alpha: 0.2,
         },
@@ -617,6 +617,21 @@
           alpha: 0.05,
         },
       },
+      fgColor: {
+        rest: {
+          $value: '{base.color.blue.6}',
+          $type: 'color',
+        },
+        hover: {
+          $value: '{base.color.white}',
+          $type: 'color',
+        },
+        disabled: {
+          $value: '{fgColor.accent}',
+          $type: 'color',
+          alpha: 0.5,
+        },
+      },
     },
     danger: {
       bgColor: {
@@ -634,6 +649,25 @@
           $value: '{bgColor.danger.emphasis}',
           $type: 'color',
           alpha: 0.1,
+        },
+      },
+      fgColor: {
+        rest: {
+          $value: '{base.color.red.5}',
+          $type: 'color',
+          mix: {
+            color: '{base.color.red.6}',
+            weight: 0.3,
+          },
+        },
+        hover: {
+          $value: '{base.color.white}',
+          $type: 'color',
+        },
+        disabled: {
+          $value: '{fgColor.danger}',
+          $type: 'color',
+          alpha: 0.5,
         },
       },
     },
