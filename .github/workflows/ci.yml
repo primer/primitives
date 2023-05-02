@@ -24,10 +24,10 @@ jobs:
         run: npm ci --legacy-peer-deps --no-audit --no-fund && cd docs && npm ci --legacy-peer-deps --no-audit --no-fund
 
       - name: Build v1 tokens
-        run: npm run build
+        run: npm run build --ignore-scripts
 
       - name: Build v2 tokens
-        run: npm run build:tokens
+        run: npm run build:tokens --ignore-scripts
 
   lint:
     if: ${{ github.repository == 'primer/primitives' }}
@@ -46,10 +46,10 @@ jobs:
         run: npm ci --legacy-peer-deps --no-audit --no-fund && cd docs && npm ci --legacy-peer-deps --no-audit --no-fund
 
       - name: Build v1 tokens
-        run: npm run build
+        run: npm run build --ignore-scripts
 
       - name: Build v2 tokens
-        run: npm run build:tokens
+        run: npm run build:tokens --ignore-scripts
 
       - name: Lint
         run: npm run lint
@@ -90,10 +90,10 @@ jobs:
         run: npm ci --legacy-peer-deps --no-audit --no-fund && cd docs && npm ci --legacy-peer-deps --no-audit --no-fund
 
       - name: Build v1 tokens
-        run: npm run build
+        run: npm run build --ignore-scripts
 
       - name: Build v2 tokens
-        run: npm run build:tokens
+        run: npm run build:tokens --ignore-scripts
 
       - name: Run unit tests
         run: npm test

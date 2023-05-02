@@ -67,19 +67,19 @@ jobs:
         run: npm ci --no-audit --no-fund --include=dev
 
       - name: Build tokens
-        run: npm run build
+        run: npm run build --ignore-scripts
 
       - name: Build experimental tokens
-        run: npm run build:tokens
+        run: npm run build:tokens --ignore-scripts
 
       - name: Install dependencies (base)
         run: pushd base; npm i --no-audit --no-fund; popd
 
       - name: Build (base)
-        run: pushd base; npm run build; popd
+        run: pushd base; npm run build --ignore-scripts; popd
 
       - name: Build (base experimental)
-        run: pushd base; npm run build:tokens; popd
+        run: pushd base; npm run build:tokens --ignore-scripts; popd
 
       - name: Diff
         uses: primer/comment-token-update@main
