@@ -9,8 +9,8 @@ jobs:
     uses: ./.github/workflows/hasChanged.yml
 
   diff:
-    # needs: changes
-    # if: ${{ needs.changes.outputs.tokens == 'true' }}
+    needs: changes
+    if: ${{ needs.changes.outputs.tokens == 'true' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -41,35 +41,43 @@ jobs:
         run: pushd base; npm run build:next; popd
 
       - name: Install dependecies for diffing
-        run: npm install glob shelljs
+        run: npm install shelljs
 
       - name: Diff v8 tokens
         uses: actions/github-script@v6
         with:
           script: |
+            const cssFolder = 'tokens-next-private/css'
             const shell = require('shelljs')
-            const globber = await glob.create('tokens-next-private/css/**/**/*.css')
+            const globber = await glob.create(cssFolder + '/**/**/*.css')
             const files = await globber.glob()
 
             // create diffs
             const diffs = files.map(file => {
-              const diff = shell.exec(`diff -U 1 base/${file} ${file} 2> /dev/null || true`, {silent: true})
+              const diff = shell.exec(`diff -u ${file.replace(cssFolder, 'base/' + cssFolder)} ${file}`)
 
               if (diff.stderr) {
-                throw new Error(diff.stderr)
+                console.error(diff.stderr)
+                core.setFailed(diff.stderr)
               }
               
+              const regexRunnerPath = new RegExp('^[a-z\/]+\/tokens-next-private', 'g')
               return {
-                file: file.replace('tokens-next-private/css/', ''),
+                file: file.replaceAll(regexRunnerPath,''),
                 diff: diff.stdout || ''
               }
             })
             // filter files with no diffs
-            .filter(item => item.diff !== '')
-            
+            .filter(item => {
+              return item.diff !== ''
+            })
+
             // prepare comment body
-            const body = '## Design Token Diff\n\n' + 
-              diffs.map(({file, diff}) => 
+            let body = '## Design Token Diff\n\n'
+            if (diffs.length === 0) {
+              body += 'No design tokens changed'
+            } else {
+              body += diffs.map(({file, diff}) => 
                 '<details>' +
                 `<summary><h3>${file}</h3></summary>\n` +
                 "  \n"+
@@ -78,6 +86,7 @@ jobs:
                 "  ```"+
                 '\n</details>'
               ).join('\n')
+            }
             // get comments
             const {data: comments} = await github.rest.issues.listComments({
               issue_number: context.issue.number,
@@ -106,33 +115,3 @@ jobs:
                 body
               })
             }
-      # - name: Diff
-      #   uses: primer/comment-token-update@main
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #     GITHUB_USER: github-actions[bot]
-      #   with:
-          # This action will find the first comment by `github-actions[bot]` and
-          # insert the diff data if `<!-- diff --><!-- /diff -->` is present in that comment.
-          # If there are multiple comments by `github-actions[bot]`
-          # or if `<!-- diff --><!-- /diff -->` is missing,
-          # this action may not work as expected.
-          # comment-token: 'diff'
-          # script: |
-          #   diff=$(for file in tokens-next-private/css/**/**/*.css
-          #     do
-          #       # using `2> /dev/null || true` here to suppress errors because,
-          #       # in this case, differences are not errors
-          #       diff -U 1 base/$file $file 2> /dev/null || true
-          #     done)
-
-          #   echo "\`\`\`diff"
-
-          #   if [[ $diff ]]
-          #   then
-          #     echo "$diff"
-          #   else
-          #     echo "No variables changed"
-          #   fi
-
-          #   echo "\`\`\`"
