@@ -11,24 +11,7 @@ env:
 
 jobs:
   changes:
-    runs-on: ubuntu-latest
-    # Required permissions
-    permissions:
-      pull-requests: read
-    # Set job outputs to values from filter step
-    outputs:
-      outputAffected: ${{ steps.filter.outputs.outputAffected }}
-    steps:
-    # For pull requests it's not necessary to checkout the code
-    - uses: dorny/paths-filter@v2
-      id: filter
-      with:
-        list-files: shell
-        filters: |
-          outputAffected:
-            - '!(*.md|**/**/*.md|**/**/*.test.ts|**/**/*.test.js|docs/**|storybook/**)'
-    - name: Detecting changes that effect output
-      run: echo ${{ steps.filter.outputs.outputAffected == 'true' && 'Committed changes may affect output' || 'Committed changes do not affect output' }}
+    uses: ./.github/workflows/hasChanged.yml
 
   test:
     needs: changes
