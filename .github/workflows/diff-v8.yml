@@ -44,32 +44,12 @@ jobs:
         run: npm install glob shelljs
 
       - name: Diff v8 tokens
-        uses: actions/github-script@v5
+        uses: actions/github-script@v6
         with:
           script: |
             const shell = require('shelljs')
-            const {globSync} = require('glob')
-            const files = globSync('tokens-next-private/css/**/**/*.css')
-            # const files = [
-            #   'tokens-next-private/css/functional/typography/typography.css',
-            #   'tokens-next-private/css/functional/themes/light.css',
-            #   'tokens-next-private/css/functional/themes/light-tritanopia.css',
-            #   'tokens-next-private/css/functional/themes/light-high-contrast.css',
-            #   'tokens-next-private/css/functional/themes/light-colorblind.css',
-            #   'tokens-next-private/css/functional/themes/dark.css',
-            #   'tokens-next-private/css/functional/themes/dark-tritanopia.css',
-            #   'tokens-next-private/css/functional/themes/dark-high-contrast.css',
-            #   'tokens-next-private/css/functional/themes/dark-dimmed.css',
-            #   'tokens-next-private/css/functional/themes/dark-colorblind.css',
-            #   'tokens-next-private/css/functional/size/viewport.css',
-            #   'tokens-next-private/css/functional/size/size.css',
-            #   'tokens-next-private/css/functional/size/size-fine.css',
-            #   'tokens-next-private/css/functional/size/size-coarse.css',
-            #   'tokens-next-private/css/functional/size/breakpoints.css',
-            #   'tokens-next-private/css/functional/size/border.css',
-            #   'tokens-next-private/css/base/size/size.css',
-            #   'tokens-next-private/css/base/typography/typography.css'
-            # ]
+            const globber = await glob.create('tokens-next-private/css/**/**/*.css')
+            const files = await globber.glob()
 
             // create diffs
             const diffs = files.map(file => {
@@ -98,7 +78,6 @@ jobs:
                 "  ```"+
                 '\n</details>'
               ).join('\n')
-            console.log(body)
             // get comments
             const {data: comments} = await github.rest.issues.listComments({
               issue_number: context.issue.number,
@@ -111,7 +90,7 @@ jobs:
             // if token issue exists, update it
             if(existingComment.length > 0) {
               await github.rest.issues.updateComment({
-                comment_id: tokenCheckComment[0].id,
+                comment_id: existingComment[0].id,
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 body
