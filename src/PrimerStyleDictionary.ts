@@ -26,6 +26,7 @@ import {
   cssCustomMedia,
   jsonOneDimensional,
   cssWrapMediaQuery,
+  cssVariables,
 } from './formats'
 
 /**
@@ -51,6 +52,11 @@ StyleDictionary.registerFormat({
 StyleDictionary.registerFormat({
   name: 'css/wrapMediaQuery',
   formatter: cssWrapMediaQuery,
+})
+
+StyleDictionary.registerFormat({
+  name: 'css/variables',
+  formatter: cssVariables,
 })
 
 StyleDictionary.registerFormat({
