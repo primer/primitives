@@ -41,19 +41,24 @@
   color: var(--button-invisible-fgColor-rest);
 }
 
-.Button button[id='danger']:not(:hover) [data-component='ButtonCounter'] {
+.Button button[id='default']:not(:hover) [data-component='ButtonCounter'] {
+  color: var(--buttonCounter-default-fgColor-rest) !important;
+  background-color: var(--buttonCounter-default-bgColor-rest) !important;
+}
+
+.Button button[id='danger']:not(:hover):not(:disabled) [data-component='ButtonCounter'] {
   color: var(--buttonCounter-danger-fgColor-rest) !important;
 }
 
-.Button button[id='danger']:hover [data-component='ButtonCounter'] {
+.Button button[id='danger']:hover:not(:disabled) [data-component='ButtonCounter'] {
   color: var(--buttonCounter-danger-fgColor-hover) !important;
 }
 
-.Button button[id='outline']:not(:hover) [data-component='ButtonCounter'] {
+.Button button[id='outline']:not(:hover):not(:disabled) [data-component='ButtonCounter'] {
   color: var(--buttonCounter-outline-fgColor-rest) !important;
 }
 
-.Button button[id='outline']:hover [data-component='ButtonCounter'] {
+.Button button[id='outline']:hover:not(:disabled) [data-component='ButtonCounter'] {
   color: var(--buttonCounter-outline-fgColor-hover) !important;
 }
 
