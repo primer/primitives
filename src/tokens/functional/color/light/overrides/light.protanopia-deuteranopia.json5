@@ -5,6 +5,10 @@
  */
 {
   fgColor: {
+    success: {
+      $value: '{base.color.blue.5}',
+      $type: 'color',
+    },
     open: {
       $value: '{base.color.orange.5}',
       $type: 'color',
@@ -13,8 +17,30 @@
       $value: '{base.color.gray.5}',
       $type: 'color',
     },
+    danger: {
+      $value: '{base.color.orange.5}',
+      $type: 'color',
+      mix: {
+        color: '{base.color.orange.4}',
+        weight: 0.05,
+      },
+    },
   },
   bgColor: {
+    success: {
+      muted: {
+        $value: '{base.color.blue.0}',
+        $type: 'color',
+      },
+      emphasis: {
+        $value: '{base.color.blue.4}',
+        $type: 'color',
+        mix: {
+          color: '{base.color.blue.5}',
+          weight: 0.75,
+        },
+      },
+    },
     open: {
       muted: {
         $value: '{base.color.orange.3}',
@@ -23,6 +49,16 @@
       },
       emphasis: {
         $value: '{base.color.orange.4}',
+        $type: 'color',
+      },
+    },
+    danger: {
+      muted: {
+        $value: '{base.color.orange.0}',
+        $type: 'color',
+      },
+      emphasis: {
+        $value: '{base.color.orange.5}',
         $type: 'color',
       },
     },
@@ -61,23 +97,45 @@
         $type: 'color',
       },
     },
+    success: {
+      muted: {
+        $value: '{base.color.blue.3}',
+        $type: 'color',
+        alpha: 0.4,
+      },
+      emphasis: {
+        $value: '{base.color.blue.4}',
+        $type: 'color',
+      },
+    },
+    danger: {
+      muted: {
+        $value: '{base.color.orange.3}',
+        $type: 'color',
+        alpha: 0.4,
+      },
+      emphasis: {
+        $value: '{base.color.orange.5}',
+        $type: 'color',
+      },
+    },
   },
   diffBlob: {
     addition: {
       bgColor: {
         num: {
-          $value: '{base.color.green.3}',
+          $value: '{base.color.blue.3}',
           $type: 'color',
           mix: null,
           alpha: 0.4,
         },
         line: {
-          $value: '{base.color.green.0}',
+          $value: '{base.color.blue.0}',
           $type: 'color',
           alpha: 0.5,
         },
         word: {
-          $value: '{base.color.green.3}',
+          $value: '{base.color.blue.3}',
           $type: 'color',
           alpha: 0.4,
         },
@@ -86,20 +144,217 @@
     deletion: {
       bgColor: {
         num: {
-          $value: '{base.color.red.3}',
+          $value: '{base.color.orange.3}',
           $type: 'color',
           alpha: 0.4,
         },
         line: {
-          $value: '{base.color.red.0}',
+          $value: '{base.color.orange.0}',
           $type: 'color',
           alpha: 0.5,
         },
         word: {
-          $value: '{base.color.red.2}',
+          $value: '{base.color.orange.2}',
           $type: 'color',
           alpha: 0.5,
         },
+      },
+    },
+  },
+  codeMirror: {
+    syntax: {
+      fgColor: {
+        keyword: {
+          $value: '{base.color.orange.5}',
+          $type: 'color',
+        },
+        storage: {
+          $value: '{base.color.orange.5}',
+          $type: 'color',
+        },
+      },
+    },
+  },
+  button: {
+    primary: {
+      bgColor: {
+        hover: {
+          $value: '{bgColor.success.emphasis}',
+          $type: 'color',
+          mix: {
+            color: '{base.color.blue.6}',
+            weight: 0.2,
+          },
+        },
+        active: {
+          $value: '{bgColor.success.emphasis}',
+          $type: 'color',
+          mix: {
+            color: '{base.color.blue.6}',
+            weight: 0.4,
+          },
+        },
+        disabled: {
+          $value: '{base.color.blue.4}',
+          $type: 'color',
+          mix: {
+            color: '{base.color.blue.0}',
+            weight: 0.6,
+          },
+        },
+      },
+      shadow: {
+        selected: {
+          $value: [
+            {
+              color: '{base.color.blue.9}',
+              alpha: 0.3,
+              offsetX: '0px',
+              offsetY: '1px',
+              blur: '0px',
+              spread: '0px',
+              inset: true,
+            },
+          ],
+          $type: 'shadow',
+        },
+      },
+    },
+    danger: {
+      bgColor: {
+        hover: {
+          $value: '{base.color.orange.6}',
+          $type: 'color',
+        },
+        active: {
+          $value: '{base.color.orange.6}',
+          $type: 'color',
+          mix: {
+            color: '{base.color.orange.8}',
+            weight: 0.4,
+          },
+        },
+      },
+      shadow: {
+        selected: {
+          $value: [
+            {
+              color: '{base.color.orange.9}',
+              alpha: 0.2,
+              offsetX: '0px',
+              offsetY: '1px',
+              blur: '0px',
+              spread: '0px',
+              inset: true,
+            },
+          ],
+          $type: 'shadow',
+        },
+      },
+    },
+  },
+  color: {
+    ansi: {
+      green: {
+        $value: '{base.color.blue.6}',
+        $type: 'color',
+      },
+      'green-bright': {
+        $value: '{base.color.blue.5}',
+        $type: 'color',
+      },
+      red: {
+        $value: '{base.color.orange.5}',
+        $type: 'color',
+      },
+      'red-bright': {
+        $value: '{base.color.orange.6}',
+        $type: 'color',
+      },
+    },
+    prettylights: {
+      syntax: {
+        keyword: {
+          $value: '{base.color.orange.5}',
+          $type: 'color',
+        },
+        invalid: {
+          illegal: {
+            bg: {
+              $value: '{base.color.orange.7}',
+              $type: 'color',
+            },
+          },
+        },
+        carriage: {
+          return: {
+            bg: {
+              $value: '{base.color.orange.5}',
+              $type: 'color',
+            },
+          },
+        },
+        'string-regexp': {
+          $value: '{base.color.blue.6}',
+          $type: 'color',
+        },
+        brackethighlighter: {
+          unmatched: {
+            $value: '{base.color.orange.7}',
+            $type: 'color',
+          },
+        },
+        markup: {
+          deleted: {
+            text: {
+              $value: '{base.color.orange.7}',
+              $type: 'color',
+            },
+            bg: {
+              $value: '{base.color.orange.0}',
+              $type: 'color',
+            },
+          },
+          inserted: {
+            text: {
+              $value: '{base.color.blue.6}',
+              $type: 'color',
+            },
+            bg: {
+              $value: '{base.color.blue.0}',
+              $type: 'color',
+            },
+          },
+        },
+      },
+    },
+    /**
+     * @description All overwrites for color scales
+     */
+    scale: {
+      green: {
+        '0': {$value: '{base.color.blue.0}'},
+        '1': {$value: '{base.color.blue.1}'},
+        '2': {$value: '{base.color.blue.2}'},
+        '3': {$value: '{base.color.blue.3}'},
+        '4': {$value: '{base.color.blue.4}'},
+        '5': {$value: '{base.color.blue.5}'},
+        '6': {$value: '{base.color.blue.6}'},
+        '7': {$value: '{base.color.blue.7}'},
+        '8': {$value: '{base.color.blue.8}'},
+        '9': {$value: '{base.color.blue.9}'},
+      },
+      red: {
+        '0': {$value: '{base.color.orange.0}'},
+        '1': {$value: '{base.color.orange.1}'},
+        '2': {$value: '{base.color.orange.2}'},
+        '3': {$value: '{base.color.orange.3}'},
+        '4': {$value: '{base.color.orange.4}'},
+        '5': {$value: '{base.color.orange.5}'},
+        '6': {$value: '{base.color.orange.6}'},
+        '7': {$value: '{base.color.orange.7}'},
+        '8': {$value: '{base.color.orange.8}'},
+        '9': {$value: '{base.color.orange.9}'},
       },
     },
   },
