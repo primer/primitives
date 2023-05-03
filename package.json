@@ -35,7 +35,7 @@
     "contrast:check": "ts-node -e \"require('./scripts/color-contrast').check()\"",
     "format": "prettier --write  '**/*.{js,jsx,ts,tsx,md,mdx,css}'",
     "format:check": "prettier --check '**/*.{js,jsx,ts,tsx,md,mdx,css}'",
-    "install:storybook": "cd /storybook && npm ci --legacy-peer-deps --no-audit --no-fund",
+    "install:storybook": "cd /storybook && npm ci --no-audit --no-fund",
     "lint": "eslint '**/*.{js,ts,tsx,md,mdx}' --max-warnings=0 --config .eslintrc.js",
     "lint:fix": "eslint '**/*.{js,ts,tsx,md,mdx}' --fix --max-warnings=0 --config .eslintrc.js",
     "prebuild": "rm -rf dist",
