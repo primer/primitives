@@ -62,6 +62,10 @@ export const ButtonScheme = () => {
         Default
         <Button.Counter>{count}</Button.Counter>
       </Button>
+      <Button disabled id="default">
+        Default
+        <Button.Counter>{count}</Button.Counter>
+      </Button>
       <Button id="default" leadingIcon={HeartIcon} trailingIcon={EyeIcon}>
         Default
       </Button>
@@ -75,6 +79,10 @@ export const ButtonScheme = () => {
         Invisible
       </Button>
       <Button id="invisible" variant="invisible">
+        Invisible
+        <Button.Counter>{count}</Button.Counter>
+      </Button>
+      <Button disabled id="invisible" variant="invisible">
         Invisible
         <Button.Counter>{count}</Button.Counter>
       </Button>
@@ -94,6 +102,10 @@ export const ButtonScheme = () => {
         Primary
         <Button.Counter>{count}</Button.Counter>
       </Button>
+      <Button disabled variant="primary" id="primary">
+        Primary
+        <Button.Counter>{count}</Button.Counter>
+      </Button>
       <Button variant="primary" id="primary" leadingIcon={HeartIcon} trailingIcon={EyeIcon}>
         Primary
       </Button>
@@ -110,6 +122,10 @@ export const ButtonScheme = () => {
         Danger
         <Button.Counter>{count}</Button.Counter>
       </Button>
+      <Button disabled variant="danger" id="danger">
+        Danger
+        <Button.Counter>{count}</Button.Counter>
+      </Button>
       <Button variant="danger" id="danger" leadingIcon={HeartIcon} trailingIcon={EyeIcon}>
         Danger
       </Button>
@@ -123,6 +139,10 @@ export const ButtonScheme = () => {
         Outline
       </Button>
       <Button variant="outline" id="outline">
+        Outline
+        <Button.Counter>{count}</Button.Counter>
+      </Button>
+      <Button disabled variant="outline" id="outline">
         Outline
         <Button.Counter>{count}</Button.Counter>
       </Button>

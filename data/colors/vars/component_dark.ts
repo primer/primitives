@@ -99,28 +99,28 @@ export default {
       disabledBg: alpha(get('scale.green.5'), 0.6),
       disabledBorder: get('border.subtle'),
       icon: get('scale.white'),
-      counterBg: '#04260f33'
+      counterBg: alpha(get('scale.green.9'), 0.2)
     },
 
     outline: {
-      text: get('scale.blue.3'),
-      hoverText: '#58a6ff',
+      text: get('scale.blue.4'),
+      hoverText: get('scale.blue.3'),
       hoverBg: get('scale.gray.6'),
       hoverBorder: get('border.subtle'),
       hoverShadow: (theme: any) => `0 1px 0 ${alpha(get('scale.black'), 0.1)(theme)}`,
       hoverInsetShadow: (theme: any) => `inset 0 1px 0 ${alpha(get('scale.white'), 0.03)(theme)}`,
-      hoverCounterBg: '#051d4d33',
+      hoverCounterBg: alpha(get('scale.blue.9'), 0.2),
       selectedText: get('scale.white'),
       selectedBg: get('scale.blue.7'),
       selectedBorder: get('border.subtle'),
       selectedShadow: '0 0 transparent',
       disabledText: alpha(get('scale.blue.3'), 0.5),
       disabledBg: get('scale.gray.9'),
-      disabledCounterBg: '#1f6feb0d',
-      counterBg: '#051d4d33',
-      hoverCounterFg: '#58a6ff',
-      disabledCounterFg: '#2f81f780',
-      counterFg: '#388bfd'
+      disabledCounterBg: alpha(get('scale.blue.5'), 0.05),
+      counterBg: alpha(get('scale.blue.9'), 0.2),
+      hoverCounterFg: get('scale.blue.3'),
+      disabledCounterFg: alpha(get('accent.fg'), 0.5),
+      counterFg: get('scale.blue.4'),
     },
 
     danger: {
@@ -138,12 +138,12 @@ export default {
       selectedShadow: '0 0 transparent',
       disabledText: alpha(get('scale.red.4'), 0.5),
       disabledBg: get('scale.gray.9'),
-      disabledCounterBg: '#da36330d',
-      counterBg: '#49020233',
+      disabledCounterBg: alpha(get('scale.red.5'), 0.05),
+      counterBg: alpha(get('scale.red.9'), 0.2),
       icon: get('scale.red.4'),
-      counterFg: '#f85149',
-      disabledCounterFg: '#f8514980',
-      hoverCounterFg: '#ffffff'
+      counterFg: get('danger.fg'),
+      disabledCounterFg: alpha(get('danger.fg'), 0.5),
+      hoverCounterFg: get('scale.white')
     }
   },
   underlinenav: {

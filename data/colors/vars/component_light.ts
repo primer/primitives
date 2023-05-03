@@ -100,7 +100,7 @@ export default {
       disabledBg: '#94d3a2',
       disabledBorder: get('border.subtle'),
       icon: alpha(get('scale.white'), 0.8),
-      counterBg: '#002d1133'
+      counterBg: alpha(get('scale.green.9'), 0.2)
     },
 
     outline: {
@@ -119,9 +119,9 @@ export default {
       disabledBg: get('scale.gray.0'),
       disabledCounterBg: alpha(get('scale.blue.5'), 0.05),
       counterBg: '#0969da1a',
-      counterFg: '#0550ae',
+      counterFg: get('scale.blue.6'),
       hoverCounterFg: get('scale.white'),
-      disabledCounterFg: '#0969da80'
+      disabledCounterFg: alpha(get('scale.blue.5'), 0.5)
     },
 
     danger: {
@@ -143,7 +143,8 @@ export default {
       icon: get('scale.red.5'),
       hoverIcon: get('scale.white'),
       counterFg: '#c21c2c',
-      disabledCounterFg: '#d1242f80'
+      hoverCounterFg: get('scale.white'),
+      disabledCounterFg: alpha(get('scale.red.5'), 0.5)
     }
   },
   underlinenav: {
