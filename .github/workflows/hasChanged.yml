@@ -71,7 +71,7 @@ jobs:
             - 'package.json'
             - 'package-lock.json'
           docs:
-            - 'docs/**'
+            - 'storybook/**'
     - name: Detecting changes that effect output
       if: steps.filter.outputs.tokens == 'true' || steps.filter.outputs.oldTokens == 'true' || steps.filter.outputs.src == 'true' || steps.filter.outputs.scripts == 'true' || steps.filter.outputs.dependencies == 'true' || steps.filter.outputs.docs == 'true'
       run: |
