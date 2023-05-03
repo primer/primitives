@@ -421,9 +421,9 @@ export const ControlStackRegular = () => {
 
   return (
     <Table.Container>
-      <Table.Title as="h1" id="sizing">
+      <h1 className="sr-only" id="sizing">
         Control stack
-      </Table.Title>
+      </h1>
       <DataTable
         aria-labelledby="sizing"
         data={data}
@@ -490,9 +490,9 @@ export const ControlStackResponsive = () => {
 
   return (
     <Table.Container>
-      <Table.Title as="h1" id="sizing">
+      <h1 className="sr-only" id="sizing">
         Responsive control stack
-      </Table.Title>
+      </h1>
       <DataTable
         aria-labelledby="sizing"
         data={data}
@@ -550,9 +550,9 @@ export const ControlTouchTarget = () => {
 
   return (
     <Table.Container>
-      <Table.Title as="h1" id="sizing">
+      <h1 className="sr-only" id="sizing">
         Touch target
-      </Table.Title>
+      </h1>
       <DataTable
         aria-labelledby="sizing"
         data={data}
@@ -607,9 +607,9 @@ export const ControlTouchTargetResponsive = () => {
 
   return (
     <Table.Container>
-      <Table.Title as="h1" id="sizing">
+      <h1 className="sr-only" id="sizing">
         Responsive touch target
-      </Table.Title>
+      </h1>
       <DataTable
         aria-labelledby="sizing"
         data={data}

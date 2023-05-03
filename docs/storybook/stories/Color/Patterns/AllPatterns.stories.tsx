@@ -72,12 +72,31 @@ export const Avatar = () => {
 }
 
 export const Control = () => {
-  const data = getTokensByName(colorTokens, 'control').map(token => {
+  const control = getTokensByName(colorTokens, 'control').map(token => {
     return {
       id: token.name,
       ...token,
     }
   })
+
+  const controlKnob = getTokensByName(colorTokens, 'controlKnob').map(token => {
+    return {
+      id: token.name,
+      ...token,
+    }
+  })
+
+  const controlTrack = getTokensByName(colorTokens, 'controlTrack').map(token => {
+    return {
+      id: token.name,
+      ...token,
+    }
+  })
+
+  const data = control.concat(controlKnob, controlTrack).map((item, index) => ({
+    ...item,
+    index,
+  }))
   return (
     <Table.Container>
       <Table.Title as="h1" id="pattern">

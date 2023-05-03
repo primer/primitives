@@ -4,8 +4,11 @@ on:
   pull_request:
 
 jobs:
+  changes:
+    uses: ./.github/workflows/hasChanged.yml
+  
   test:
-    if: ${{ github.repository == 'primer/primitives' }}
+    if: ${{ github.repository == 'primer/primitives' && needs.changes.outputs.outputAffected == 'true' }}
     name: Primitives v2
     runs-on: ubuntu-latest
     steps:
@@ -21,7 +24,8 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: 16
+          cache: 'npm'
 
       - name: Cache dependencies
         uses: actions/cache@v3
@@ -32,10 +36,10 @@ jobs:
             ${{ runner.os }}-node-
 
       - name: Install dependencies
-        run: npm install --legacy-peer-deps
+        run: npm install --legacy-peer-deps --ignore-scripts
 
       - name: Install dependencies (reference)
-        run: pushd temp-main; npm install --legacy-peer-deps; popd
+        run: pushd temp-main; npm install --legacy-peer-deps --ignore-scripts; popd
 
       - name: Build
         run: npm run build:tokens

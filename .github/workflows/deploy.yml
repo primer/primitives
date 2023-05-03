@@ -19,3 +19,4 @@ jobs:
       install: npm ci --legacy-peer-deps --no-audit --no-fund && cd docs && npm ci --legacy-peer-deps --no-audit --no-fund && cd ..
       build: npm run build:tokens && npm run build && npm run build:next && cd docs && npm run build
       output_dir: docs/public
+

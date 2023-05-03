@@ -1,0 +1,128 @@
+# Posts a comment listing all the variables that changed in a PR
+name: Show diff for v8 design token changes
+on:
+  pull_request:
+    branches-ignore:
+      - 'changeset-release/**'
+jobs:
+  changes:
+    uses: ./.github/workflows/hasChanged.yml
+
+  diff:
+    needs: changes
+    if: ${{ needs.changes.outputs.tokens == 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Checkout base branch
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.base_ref }}
+          path: base
+
+      - name: Set up Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund --include=dev --ignore-scripts
+
+      - name: Build v8 tokens
+        run: npm run build:next
+
+      - name: Install dependencies (base)
+        run: pushd base; npm i --no-audit --no-fund --ignore-scripts; popd
+
+      - name: Build (base)
+        run: pushd base; npm run build:next; popd
+
+      - name: Install dependecies for diffing
+        run: npm install shelljs
+
+      - name: Diff v8 tokens
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const cssFolder = 'tokens-next-private/css'
+            const shell = require('shelljs')
+            const globber = await glob.create(cssFolder + '/**/**/*.css')
+            const files = await globber.glob()
+
+            // create diffs
+            const diffs = files.map(file => {
+              // run diff
+              const diff = shell.exec(`diff -u ${file.replace(cssFolder, 'base/' + cssFolder)} ${file}`)
+              // get filename
+              const regexRunnerPath = new RegExp('^[a-z\/]+\/tokens-next-private', 'g')
+              const filename = file.replaceAll(regexRunnerPath,'')
+
+              console.log('Checking diff for ' + filename + '...')
+
+              if (diff.stderr) {
+                console.error(diff.stderr)
+                core.setFailed(diff.stderr)
+              }
+              
+              if (diff.stdout === '') {
+                console.log('No diff for ' + filename + '\n')
+              } else {
+                console.log(diff.stdout + '\n')
+              }
+              
+              return {
+                file: filename,
+                diff: diff.stdout || ''
+              }
+            })
+            // filter files with no diffs
+            .filter(item => {
+              return item.diff !== ''
+            })
+
+            // prepare comment body
+            let body = '## Design Token Diff\n\n'
+            if (diffs.length === 0) {
+              body += 'No design tokens changed'
+            } else {
+              body += diffs.map(({file, diff}) => 
+                '<details>' +
+                `<summary><h3>${file}</h3></summary>\n` +
+                "  \n"+
+                "  ```diff"+
+                `  ${diff}` +
+                "  ```"+
+                '\n</details>'
+              ).join('\n')
+            }
+            // get comments
+            const {data: comments} = await github.rest.issues.listComments({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo
+            });
+
+            // get comment if exists
+            const existingComment = comments.filter(comment => comment.body.includes('## Design Token Diff'));
+            // if token issue exists, update it
+            if(existingComment.length > 0) {
+              await github.rest.issues.updateComment({
+                comment_id: existingComment[0].id,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body
+              })
+            }
+
+            // if comment does not exist, create it
+            else {
+              await github.rest.issues.createComment({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body
+              })
+            }
