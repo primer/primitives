@@ -16,7 +16,7 @@ jobs:
     with:
       node_version: 18
       install: npm ci --no-audit --no-fund --ignore-scripts && npm run install:storybook
-      build: npm run build:tokens && npm run build && npm run build:nexts
+      build: npm run build:tokens && npm run build && npm run build:next
       output_dir: docs/public
 
   post_storybook:
