@@ -24,9 +24,9 @@ on:
       dependencies:
         description: "Boolean value indicating change in dependencies"
         value: ${{ jobs.hasChanged.outputs.dependencies }}
-      docs:
-        description: "Boolean value indicating change in docs folder"
-        value: ${{ jobs.hasChanged.outputs.docs }}
+      storybook:
+        description: "Boolean value indicating change in storybook folder"
+        value: ${{ jobs.hasChanged.outputs.storybook }}
 jobs:
   hasChanged:
     name: Checking for changes
@@ -42,7 +42,7 @@ jobs:
       scripts: ${{ steps.filter.outputs.scripts }}
       buildScripts: ${{ steps.filter.outputs.buildScripts }}
       dependencies: ${{ steps.filter.outputs.dependencies }}
-      docs: ${{ steps.filter.outputs.docs }}
+      storybook: ${{ steps.filter.outputs.storybook }}
     steps:
     - uses: actions/checkout@v3
     - uses: dorny/paths-filter@v2
@@ -70,10 +70,10 @@ jobs:
           dependencies:
             - 'package.json'
             - 'package-lock.json'
-          docs:
+          storybook:
             - 'storybook/**'
     - name: Detecting changes that effect output
-      if: steps.filter.outputs.tokens == 'true' || steps.filter.outputs.oldTokens == 'true' || steps.filter.outputs.src == 'true' || steps.filter.outputs.scripts == 'true' || steps.filter.outputs.dependencies == 'true' || steps.filter.outputs.docs == 'true'
+      if: steps.filter.outputs.tokens == 'true' || steps.filter.outputs.oldTokens == 'true' || steps.filter.outputs.src == 'true' || steps.filter.outputs.scripts == 'true' || steps.filter.outputs.dependencies == 'true' || steps.filter.outputs.storybook == 'true'
       run: |
         echo Changes detected
         echo   - tokens: ${{ steps.filter.outputs.tokens }}
@@ -82,4 +82,4 @@ jobs:
         echo   - scripts: ${{ steps.filter.outputs.scripts }}
         echo   - buildScripts: ${{ steps.filter.outputs.buildScripts }}
         echo   - dependencies: ${{ steps.filter.outputs.dependencies }}
-        echo   - docs: ${{ steps.filter.outputs.docs }}
+        echo   - storybook: ${{ steps.filter.outputs.storybook }}

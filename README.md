@@ -16,7 +16,7 @@ npm install --save @primer/primitives
 
 ## Usage
 
-[Storybook](https://primer.style/primitives/storybook) | [Docs](https://primer.style/primitives/)
+[Storybook](https://primer.style/primitives)
 
 Primitive data is served in several formats from the `dist/` folder:
 
