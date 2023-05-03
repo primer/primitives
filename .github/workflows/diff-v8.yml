@@ -14,10 +14,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Checkout base branch
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           ref: ${{ github.base_ref }}
           path: base
@@ -54,16 +54,27 @@ jobs:
 
             // create diffs
             const diffs = files.map(file => {
+              // run diff
               const diff = shell.exec(`diff -u ${file.replace(cssFolder, 'base/' + cssFolder)} ${file}`)
+              // get filename
+              const regexRunnerPath = new RegExp('^[a-z\/]+\/tokens-next-private', 'g')
+              const filename = file.replaceAll(regexRunnerPath,'')
+
+              console.log('Checking diff for ' + filename + '...')
 
               if (diff.stderr) {
                 console.error(diff.stderr)
                 core.setFailed(diff.stderr)
               }
               
-              const regexRunnerPath = new RegExp('^[a-z\/]+\/tokens-next-private', 'g')
+              if (diff.stdout === '') {
+                console.log('No diff for ' + filename + '\n')
+              } else {
+                console.log(diff.stdout + '\n')
+              }
+              
               return {
-                file: file.replaceAll(regexRunnerPath,''),
+                file: filename,
                 diff: diff.stdout || ''
               }
             })
