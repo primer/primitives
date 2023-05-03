@@ -76,11 +76,14 @@ export const themes: TokenBuildInput[] = [
     source: [
       `src/tokens/functional/color/dark/*.json5`,
       `src/tokens/functional/color/scales.json5`,
-      `src/tokens/functional/color/dark/overrides/dark.tritanopia.json5`,
       `src/tokens/functional/shadow/dark.json5`,
       `src/tokens/functional/border/dark.json5`,
+      `src/tokens/functional/color/dark/overrides/dark.tritanopia.json5`,
     ],
-    include: [`src/tokens/base/color/dark/dark.json5`, `src/tokens/base/color/dark/dark.tritanopia.json5`],
+    include: [
+      `src/tokens/base/color/dark/dark.json5`,
+      // `src/tokens/base/color/dark/dark.tritanopia.json5`,
+    ],
   },
   {
     filename: 'dark-colorblind',
