@@ -23,9 +23,9 @@ export const FontFamily = () => {
 
   return (
     <Table.Container>
-      <Table.Title as="h1" id="type">
+      <h1 className="sr-only" id="type">
         Font family
-      </Table.Title>
+      </h1>
       <DataTable
         aria-labelledby="type"
         data={data}
@@ -58,7 +58,7 @@ export const FontFamily = () => {
             header: 'Output value',
             field: 'value',
             rowHeader: true,
-            width: 'growCollapse',
+            width: 'auto',
             renderCell: row => {
               return <p>{row.value}</p>
             },
@@ -81,9 +81,9 @@ export const FontShorthand = () => {
 
   return (
     <Table.Container>
-      <Table.Title as="h1" id="type">
+      <h1 className="sr-only" id="type">
         Font shorthand
-      </Table.Title>
+      </h1>
       <DataTable
         aria-labelledby="type"
         data={filteredData}
@@ -143,7 +143,7 @@ export const Display = () => {
     }
   })
 
-  const filteredData = data.filter(item => item.id.includes('display'))
+  const filteredData = data.filter(item => !item.id.includes('shorthand') && item.id.includes('display'))
 
   return (
     <Table.Container>
@@ -158,7 +158,6 @@ export const Display = () => {
             header: 'Property',
             field: 'name',
             rowHeader: true,
-            width: 'growCollapse',
             renderCell: row => {
               return (
                 <code>
@@ -189,7 +188,6 @@ export const Display = () => {
             header: 'Output value',
             field: 'value',
             rowHeader: true,
-            width: 'growCollapse',
             renderCell: row => {
               return <p>{row.value}</p>
             },
@@ -216,7 +214,9 @@ export const TitleLarge = () => {
     }
   })
 
-  const filteredData = data.filter(item => item.id.includes('title') && item.id.includes('large'))
+  const filteredData = data.filter(
+    item => !item.id.includes('shorthand') && item.id.includes('title') && item.id.includes('large'),
+  )
 
   return (
     <Table.Container>
@@ -232,7 +232,6 @@ export const TitleLarge = () => {
             header: 'Property',
             field: 'name',
             rowHeader: true,
-            width: 'growCollapse',
             renderCell: row => {
               return (
                 <code>
@@ -263,7 +262,7 @@ export const TitleLarge = () => {
             header: 'Output value',
             field: 'value',
             rowHeader: true,
-            width: 'growCollapse',
+
             renderCell: row => {
               return <p>{row.value}</p>
             },
@@ -290,7 +289,9 @@ export const TitleMedium = () => {
     }
   })
 
-  const filteredData = data.filter(item => item.id.includes('title') && item.id.includes('medium'))
+  const filteredData = data.filter(
+    item => !item.id.includes('shorthand') && item.id.includes('title') && item.id.includes('medium'),
+  )
 
   return (
     <Table.Container>
@@ -306,7 +307,7 @@ export const TitleMedium = () => {
             header: 'Property',
             field: 'name',
             rowHeader: true,
-            width: 'growCollapse',
+
             renderCell: row => {
               return (
                 <code>
@@ -337,7 +338,7 @@ export const TitleMedium = () => {
             header: 'Output value',
             field: 'value',
             rowHeader: true,
-            width: 'growCollapse',
+
             renderCell: row => {
               return <p>{row.value}</p>
             },
@@ -364,7 +365,9 @@ export const TitleSmall = () => {
     }
   })
 
-  const filteredData = data.filter(item => item.id.includes('title') && item.id.includes('small'))
+  const filteredData = data.filter(
+    item => !item.id.includes('shorthand') && item.id.includes('title') && item.id.includes('small'),
+  )
 
   return (
     <Table.Container>
@@ -380,7 +383,7 @@ export const TitleSmall = () => {
             header: 'Property',
             field: 'name',
             rowHeader: true,
-            width: 'growCollapse',
+
             renderCell: row => {
               return (
                 <code>
@@ -411,7 +414,7 @@ export const TitleSmall = () => {
             header: 'Output value',
             field: 'value',
             rowHeader: true,
-            width: 'growCollapse',
+
             renderCell: row => {
               return <p>{row.value}</p>
             },
@@ -438,7 +441,7 @@ export const Subtitle = () => {
     }
   })
 
-  const filteredData = data.filter(item => item.id.includes('subtitle'))
+  const filteredData = data.filter(item => !item.id.includes('shorthand') && item.id.includes('subtitle'))
 
   return (
     <Table.Container>
@@ -454,7 +457,7 @@ export const Subtitle = () => {
             header: 'Property',
             field: 'name',
             rowHeader: true,
-            width: 'growCollapse',
+
             renderCell: row => {
               return (
                 <code>
@@ -485,7 +488,7 @@ export const Subtitle = () => {
             header: 'Output value',
             field: 'value',
             rowHeader: true,
-            width: 'growCollapse',
+
             renderCell: row => {
               return <p>{row.value}</p>
             },
@@ -512,7 +515,9 @@ export const BodyLarge = () => {
     }
   })
 
-  const filteredData = data.filter(item => item.id.includes('body') && item.id.includes('large'))
+  const filteredData = data.filter(
+    item => !item.id.includes('shorthand') && item.id.includes('body') && item.id.includes('large'),
+  )
 
   return (
     <Table.Container>
@@ -528,7 +533,7 @@ export const BodyLarge = () => {
             header: 'Property',
             field: 'name',
             rowHeader: true,
-            width: 'growCollapse',
+
             renderCell: row => {
               return (
                 <code>
@@ -559,7 +564,7 @@ export const BodyLarge = () => {
             header: 'Output value',
             field: 'value',
             rowHeader: true,
-            width: 'growCollapse',
+
             renderCell: row => {
               return <p>{row.value}</p>
             },
@@ -586,7 +591,9 @@ export const BodyMedium = () => {
     }
   })
 
-  const filteredData = data.filter(item => item.id.includes('body') && item.id.includes('medium'))
+  const filteredData = data.filter(
+    item => !item.id.includes('shorthand') && item.id.includes('title') && item.id.includes('medium'),
+  )
 
   return (
     <Table.Container>
@@ -602,7 +609,7 @@ export const BodyMedium = () => {
             header: 'Property',
             field: 'name',
             rowHeader: true,
-            width: 'growCollapse',
+
             renderCell: row => {
               return (
                 <code>
@@ -633,7 +640,7 @@ export const BodyMedium = () => {
             header: 'Output value',
             field: 'value',
             rowHeader: true,
-            width: 'growCollapse',
+
             renderCell: row => {
               return <p>{row.value}</p>
             },
@@ -660,7 +667,9 @@ export const BodySmall = () => {
     }
   })
 
-  const filteredData = data.filter(item => item.id.includes('body') && item.id.includes('small'))
+  const filteredData = data.filter(
+    item => !item.id.includes('shorthand') && item.id.includes('title') && item.id.includes('small'),
+  )
 
   return (
     <Table.Container>
@@ -676,7 +685,7 @@ export const BodySmall = () => {
             header: 'Property',
             field: 'name',
             rowHeader: true,
-            width: 'growCollapse',
+
             renderCell: row => {
               return (
                 <code>
@@ -707,7 +716,7 @@ export const BodySmall = () => {
             header: 'Output value',
             field: 'value',
             rowHeader: true,
-            width: 'growCollapse',
+
             renderCell: row => {
               return <p>{row.value}</p>
             },
@@ -734,7 +743,7 @@ export const Caption = () => {
     }
   })
 
-  const filteredData = data.filter(item => item.id.includes('caption'))
+  const filteredData = data.filter(item => !item.id.includes('shorthand') && item.id.includes('caption'))
 
   return (
     <Table.Container>
@@ -750,7 +759,7 @@ export const Caption = () => {
             header: 'Property',
             field: 'name',
             rowHeader: true,
-            width: 'growCollapse',
+
             renderCell: row => {
               return (
                 <code>
@@ -781,7 +790,7 @@ export const Caption = () => {
             header: 'Output value',
             field: 'value',
             rowHeader: true,
-            width: 'growCollapse',
+
             renderCell: row => {
               return <p>{row.value}</p>
             },
@@ -808,7 +817,7 @@ export const CodeBlock = () => {
     }
   })
 
-  const filteredData = data.filter(item => item.id.includes('codeBlock'))
+  const filteredData = data.filter(item => !item.id.includes('shorthand') && item.id.includes('codeBlock'))
 
   return (
     <Table.Container>
@@ -824,7 +833,7 @@ export const CodeBlock = () => {
             header: 'Property',
             field: 'name',
             rowHeader: true,
-            width: 'growCollapse',
+
             renderCell: row => {
               return (
                 <code>
@@ -855,7 +864,7 @@ export const CodeBlock = () => {
             header: 'Output value',
             field: 'value',
             rowHeader: true,
-            width: 'growCollapse',
+
             renderCell: row => {
               return <p>{row.value}</p>
             },
@@ -882,7 +891,7 @@ export const InlineCodeBlock = () => {
     }
   })
 
-  const filteredData = data.filter(item => item.id.includes('codeInline'))
+  const filteredData = data.filter(item => !item.id.includes('shorthand') && item.id.includes('codeInline'))
 
   return (
     <Table.Container>
@@ -898,7 +907,7 @@ export const InlineCodeBlock = () => {
             header: 'Property',
             field: 'name',
             rowHeader: true,
-            width: 'growCollapse',
+
             renderCell: row => {
               return (
                 <code>
@@ -929,7 +938,7 @@ export const InlineCodeBlock = () => {
             header: 'Output value',
             field: 'value',
             rowHeader: true,
-            width: 'growCollapse',
+
             renderCell: row => {
               return <p>{row.value}</p>
             },
@@ -960,9 +969,9 @@ export const Overview = () => {
 
   return (
     <Table.Container>
-      <Table.Title as="h1" id="type">
+      <h1 className="sr-only" id="type">
         Overview
-      </Table.Title>
+      </h1>
       <DataTable
         aria-labelledby="type"
         data={filteredData}
@@ -991,7 +1000,7 @@ export const Overview = () => {
             header: 'Description',
             field: 'comment',
             rowHeader: true,
-            width: 'growCollapse',
+            width: 'auto',
             renderCell: row => {
               return (
                 <p

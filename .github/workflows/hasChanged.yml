@@ -1,0 +1,85 @@
+name: Check if files or folders have been changed
+
+on:
+  workflow_call:
+    outputs:
+      outputAffected:
+        description: "Boolean value indicating changes in any file or folder that has an effect on the output"
+        value: ${{ jobs.hasChanged.outputs.oldTokens || jobs.hasChanged.outputs.src || jobs.hasChanged.outputs.buildScripts }}
+      tokens:
+        description: "Boolean value indicating change in src/tokens folder"
+        value: ${{ jobs.hasChanged.outputs.tokens }}
+      oldTokens:
+        description: "Boolean value indicating change in data folder"
+        value: ${{ jobs.hasChanged.outputs.oldTokens }}
+      src:
+        description: "Boolean value indicating change in src folder"
+        value: ${{ jobs.hasChanged.outputs.src }}
+      scripts:
+        description: "Boolean value indicating change in scripts folder"
+        value: ${{ jobs.hasChanged.outputs.scripts }}
+      buildScripts:
+        description: "Boolean value indicating change in build files in the build folder"
+        value: ${{ jobs.hasChanged.outputs.buildScripts }}
+      dependencies:
+        description: "Boolean value indicating change in dependencies"
+        value: ${{ jobs.hasChanged.outputs.dependencies }}
+      docs:
+        description: "Boolean value indicating change in docs folder"
+        value: ${{ jobs.hasChanged.outputs.docs }}
+jobs:
+  hasChanged:
+    name: Checking for changes
+    runs-on: ubuntu-latest
+    # Required permissions
+    permissions:
+      pull-requests: read
+    outputs:
+      outputAffected: ${{ steps.filter.outputs.outputAffected }}
+      tokens: ${{ steps.filter.outputs.tokens }}
+      oldTokens: ${{ steps.filter.outputs.oldTokens }}
+      src: ${{ steps.filter.outputs.src }}
+      scripts: ${{ steps.filter.outputs.scripts }}
+      buildScripts: ${{ steps.filter.outputs.buildScripts }}
+      dependencies: ${{ steps.filter.outputs.dependencies }}
+      docs: ${{ steps.filter.outputs.docs }}
+    steps:
+    - uses: actions/checkout@v3
+    - uses: dorny/paths-filter@v2
+      id: filter
+      with:
+        list-files: shell
+        filters: |
+          tokens:
+            - 'src/tokens/**'
+          oldTokens:
+            - 'data/**'
+          src:
+            - 'src/**/**.ts'
+            - 'src/**/**.json'
+            - 'src/**/**.json5'
+          scripts:
+            - 'scripts/**'
+          buildScripts:
+            - 'scripts/build.ts'
+            - 'scripts/buildTokens.ts'
+            - 'scripts/themes.config.ts'
+            - 'tsconfig.json'
+            - 'tsconfig.build.json'
+            - 'package.json'
+          dependencies:
+            - 'package.json'
+            - 'package-lock.json'
+          docs:
+            - 'docs/**'
+    - name: Detecting changes that effect output
+      if: steps.filter.outputs.tokens == 'true' || steps.filter.outputs.oldTokens == 'true' || steps.filter.outputs.src == 'true' || steps.filter.outputs.scripts == 'true' || steps.filter.outputs.dependencies == 'true' || steps.filter.outputs.docs == 'true'
+      run: |
+        echo Changes detected
+        echo   - tokens: ${{ steps.filter.outputs.tokens }}
+        echo   - oldTokens: ${{ steps.filter.outputs.oldTokens }}
+        echo   - src: ${{ steps.filter.outputs.src }}
+        echo   - scripts: ${{ steps.filter.outputs.scripts }}
+        echo   - buildScripts: ${{ steps.filter.outputs.buildScripts }}
+        echo   - dependencies: ${{ steps.filter.outputs.dependencies }}
+        echo   - docs: ${{ steps.filter.outputs.docs }}

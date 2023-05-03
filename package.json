@@ -43,7 +43,7 @@
     "prebuild:tokens": "rm -rf tokens-v2-private",
     "prebuild:next": "rm -rf tokens-next-private",
     "prepack": "npm run build && npm run build:tokens && npm run build:next",
-    "prepare": "husky install && npm run install:docs && npm run install:storybook",
+    "prepare": "husky install",
     "release": "changeset publish",
     "start:storybook": "npm run build:next && cd docs/storybook && npm run storybook",
     "test": "jest --verbose --coverage",
@@ -87,9 +87,7 @@
     "ts-jest": "^29.0.3",
     "ts-node": "^10.9.1",
     "tsconfig-paths": "^4.1.0",
-    "typescript": "^4.9.3"
-  },
-  "dependencies": {
+    "typescript": "^4.9.3",
     "markdown-table-ts": "^1.0.3"
   }
 }

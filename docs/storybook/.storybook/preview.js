@@ -21,6 +21,14 @@ const preview = {
         order: ['Color', 'Typography', 'Size', 'Demos', 'Migration'],
       },
     },
+    paddings: {
+      values: [
+        {name: 'Small', value: '1rem'},
+        {name: 'Medium', value: '2rem'},
+        {name: 'None', value: '0px'},
+      ],
+      default: 'Small',
+    },
   },
 }
 
@@ -327,7 +335,6 @@ const tempTheme = deepmerge(theme, {
 
 export const decorators = [
   (Story, context) => {
-    console.log('test:', context.globals.theme)
     const {parameters} = context
     const defaultStoryType = 'swatch'
     const storyType = parameters.storyType || defaultStoryType

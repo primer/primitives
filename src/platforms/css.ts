@@ -44,6 +44,7 @@ export const css: PlatformInitializer = (outputFile, prefix, buildPath, options)
         options: {
           showFileHeader: false,
           outputReferences: false,
+          descriptions: false,
           selector,
           selectorLight,
           selectorDark,
@@ -56,6 +57,7 @@ export const css: PlatformInitializer = (outputFile, prefix, buildPath, options)
         filter: token => isSource(token) && options?.themed !== true,
         options: {
           showFileHeader: false,
+          descriptions: false,
           ...options?.options,
         },
       },
@@ -77,6 +79,7 @@ export const css: PlatformInitializer = (outputFile, prefix, buildPath, options)
             'src/tokens/functional/size/size-fine.json',
           ]),
         options: {
+          descriptions: false,
           showFileHeader: false,
           mediaQuery: {
             'css/functional/size/size-fine.css': '(pointer: fine)',

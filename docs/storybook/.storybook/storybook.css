@@ -23,8 +23,6 @@
 .story-wrap {
   font-family: var(--fontStack-system);
   color: var(--fgColor-default);
-  /* background-color: var(--bgColor-default); */
-  padding: 1rem;
 }
 
 #storybook-preview-wrapper {
@@ -152,4 +150,15 @@ code {
   border-radius: var(--borderRadius-small) !important;
   border: unset;
   color: var(--fgColor-default) !important;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  word-wrap: normal;
+  border: 0;
 }
