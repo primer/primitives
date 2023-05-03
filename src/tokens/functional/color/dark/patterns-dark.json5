@@ -427,6 +427,10 @@
           $value: '{fgColor.accent}',
           $type: 'color',
         },
+        hover: {
+          $value: '{base.color.blue.3}',
+          $type: 'color',
+        },
         disabled: {
           $value: '{control.fgColor.disabled}',
           $type: 'color',
@@ -590,7 +594,7 @@
     primary: {
       bgColor: {
         rest: {
-          $value: '{base.color.white}',
+          $value: '{base.color.green.9}',
           $type: 'color',
           alpha: 0.2,
         },
@@ -643,9 +647,24 @@
           alpha: 0.05,
         },
         rest: {
-          $value: '{bgColor.danger.emphasis}',
+          $value: '{base.color.red.9}',
           $type: 'color',
-          alpha: 0.1,
+          alpha: 0.2,
+        },
+      },
+      fgColor: {
+        rest: {
+          $value: '{fgColor.danger}',
+          $type: 'color',
+        },
+        hover: {
+          $value: '{base.color.white}',
+          $type: 'color',
+        },
+        disabled: {
+          $value: '{fgColor.danger}',
+          $type: 'color',
+          alpha: 0.5,
         },
       },
     },

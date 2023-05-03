@@ -24,6 +24,7 @@
 
 .Button button[id='invisible']:hover:not(:disabled) {
   background-color: var(--button-invisible-bgColor-hover);
+  color: var(--button-invisible-fgColor-hover);
 }
 
 .Button button[id='invisible']:disabled {
