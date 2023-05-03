@@ -1,0 +1,138 @@
+# Posts a comment listing all the variables that changed in a PR
+name: Show diff for v8 design token changes
+on:
+  pull_request:
+    branches-ignore:
+      - 'changeset-release/**'
+jobs:
+  changes:
+    uses: ./.github/workflows/hasChanged.yml
+
+  diff:
+    # needs: changes
+    # if: ${{ needs.changes.outputs.tokens == 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Checkout base branch
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.base_ref }}
+          path: base
+
+      - name: Set up Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund --include=dev --ignore-scripts
+
+      - name: Build v8 tokens
+        run: npm run build:next
+
+      - name: Install dependencies (base)
+        run: pushd base; npm i --no-audit --no-fund --ignore-scripts; popd
+
+      - name: Build (base)
+        run: pushd base; npm run build:next; popd
+
+      - name: Install dependecies for diffing
+        run: npm install glob shelljs
+
+      - name: Diff v8 tokens
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const shell = require('shelljs')
+            const globber = await glob.create('tokens-next-private/css/**/**/*.css')
+            const files = await globber.glob()
+
+            // create diffs
+            const diffs = files.map(file => {
+              const diff = shell.exec(`diff -U 1 base/${file} ${file} 2> /dev/null || true`, {silent: true})
+
+              if (diff.stderr) {
+                throw new Error(diff.stderr)
+              }
+              
+              return {
+                file: file.replace('tokens-next-private/css/', ''),
+                diff: diff.stdout || ''
+              }
+            })
+            // filter files with no diffs
+            .filter(item => item.diff !== '')
+            
+            // prepare comment body
+            const body = '## Design Token Diff\n\n' + 
+              diffs.map(({file, diff}) => 
+                '<details>' +
+                `<summary><h3>${file}</h3></summary>\n` +
+                "  \n"+
+                "  ```diff"+
+                `  ${diff}` +
+                "  ```"+
+                '\n</details>'
+              ).join('\n')
+            // get comments
+            const {data: comments} = await github.rest.issues.listComments({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo
+            });
+
+            // get comment if exists
+            const existingComment = comments.filter(comment => comment.body.includes('## Design Token Diff'));
+            // if token issue exists, update it
+            if(existingComment.length > 0) {
+              await github.rest.issues.updateComment({
+                comment_id: existingComment[0].id,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body
+              })
+            }
+
+            // if comment does not exist, create it
+            else {
+              await github.rest.issues.createComment({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body
+              })
+            }
+      # - name: Diff
+      #   uses: primer/comment-token-update@main
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #     GITHUB_USER: github-actions[bot]
+      #   with:
+          # This action will find the first comment by `github-actions[bot]` and
+          # insert the diff data if `<!-- diff --><!-- /diff -->` is present in that comment.
+          # If there are multiple comments by `github-actions[bot]`
+          # or if `<!-- diff --><!-- /diff -->` is missing,
+          # this action may not work as expected.
+          # comment-token: 'diff'
+          # script: |
+          #   diff=$(for file in tokens-next-private/css/**/**/*.css
+          #     do
+          #       # using `2> /dev/null || true` here to suppress errors because,
+          #       # in this case, differences are not errors
+          #       diff -U 1 base/$file $file 2> /dev/null || true
+          #     done)
+
+          #   echo "\`\`\`diff"
+
+          #   if [[ $diff ]]
+          #   then
+          #     echo "$diff"
+          #   else
+          #     echo "No variables changed"
+          #   fi
+
+          #   echo "\`\`\`"
