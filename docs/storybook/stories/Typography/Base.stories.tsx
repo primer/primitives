@@ -23,9 +23,9 @@ export const Base = () => {
 
   return (
     <Table.Container>
-      <Table.Title as="h1" id="weight">
+      <h1 className="sr-only" id="weight">
         Base weight
-      </Table.Title>
+      </h1>
       <DataTable
         aria-labelledby="weight"
         data={data}
