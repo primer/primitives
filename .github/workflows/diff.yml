@@ -5,12 +5,8 @@ on:
     branches-ignore:
       - 'changeset-release/**'
 jobs:
-  changes:
-    uses: ./.github/workflows/hasChanged.yml
 
   comment:
-    needs: changes
-    if: ${{ needs.changes.outputs.tokens == 'true' || needs.changes.outputs.oldTokens == 'true'  }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -27,7 +23,7 @@ jobs:
         with:
           script: |
             const body = '<details>\n' +
-            '<summary><strong>Variables changed</strong></summary>\n' +
+            '<summary><strong>Variables changed</strong></summary>\n\n' +
             '<!-- diff --><!-- /diff -->\n' +
             '</details>'
             const result = await github.rest.issues.listComments({
@@ -102,7 +98,7 @@ jobs:
                 # in this case, differences are not errors
                 diff -U 1 base/$file $file 2> /dev/null || true
               done)
-
+            echo ""
             echo "\`\`\`diff"
 
             if [[ $diff ]]
