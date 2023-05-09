@@ -38,6 +38,7 @@ const primerThemes = [
   {value: 'light_tritanopia', left: '☀️', title: 'Light Tritanopia'},
   {value: 'light_high_contrast', left: '☀️', title: 'Light High Contrast'},
   {value: 'dark', left: '🌗', title: 'Dark'},
+  {value: 'dark_dimmed', left: '🌗', title: 'Dark Dimmed'},
   {value: 'dark_colorblind', left: '🌗', title: 'Dark Protanopia & Deuteranopia'},
   {value: 'dark_tritanopia', left: '🌗', title: 'Dark Tritanopia'},
   {value: 'dark_high_contrast', left: '🌗', title: 'Dark High Contrast'},
