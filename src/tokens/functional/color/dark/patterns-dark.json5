@@ -216,12 +216,20 @@
           $type: 'color',
         },
         hover: {
-          $value: 'transparent',
+          $value: '{bgColor.accent.emphasis}',
           $type: 'color',
+          mix: {
+            color: '{base.color.blue.3}',
+            weight: 0.2,
+          },
         },
         active: {
-          $value: 'transparent',
+          $value: '{bgColor.accent.emphasis}',
           $type: 'color',
+          mix: {
+            color: '{base.color.blue.3}',
+            weight: 0.4,
+          },
         },
         disabled: {
           $value: '{fgColor.disabled}',
