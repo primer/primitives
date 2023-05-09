@@ -404,19 +404,17 @@
       },
       borderColor: {
         rest: {
-          $value: '{borderColor.muted}',
+          $value: '{base.color.black}',
           $type: 'color',
-          alpha: 0.8,
+          alpha: 0.15,
         },
         hover: {
-          $value: '{borderColor.muted}',
+          $value: '{button.primary.borderColor.rest}',
           $type: 'color',
-          alpha: 0.8,
         },
         disabled: {
-          $value: '{borderColor.muted}',
+          $value: '{button.primary.borderColor.rest}',
           $type: 'color',
-          alpha: 0.8,
         },
       },
     },

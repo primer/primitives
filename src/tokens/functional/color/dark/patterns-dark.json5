@@ -405,19 +405,17 @@
       },
       borderColor: {
         rest: {
-          $value: '{borderColor.default}',
+          $value: '{base.color.gray.0}',
           $type: 'color',
-          alpha: 0.8,
+          alpha: 0.1,
         },
         hover: {
-          $value: '{borderColor.default}',
+          $value: '{button.primary.borderColor.rest}',
           $type: 'color',
-          alpha: 0.8,
         },
         disabled: {
-          $value: '{borderColor.default}',
+          $value: '{button.primary.borderColor.rest}',
           $type: 'color',
-          alpha: 0.8,
         },
       },
     },
