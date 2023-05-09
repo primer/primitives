@@ -35,6 +35,26 @@
         $type: 'color',
       },
     },
+    open: {
+      muted: {
+        $value: '{base.color.red.4}',
+        $type: 'color',
+      },
+      emphasis: {
+        $value: '{base.color.red.5}',
+        $type: 'color',
+      },
+    },
+    closed: {
+      muted: {
+        $value: '{base.color.gray.4}',
+        $type: 'color',
+      },
+      emphasis: {
+        $value: '{base.color.gray.5}',
+        $type: 'color',
+      },
+    },
   },
   borderColor: {
     success: {
@@ -56,6 +76,28 @@
       },
       emphasis: {
         $value: '{base.color.red.5}',
+        $type: 'color',
+      },
+    },
+    open: {
+      muted: {
+        $value: '{base.color.red.4}',
+        $type: 'color',
+        alpha: 0.4,
+      },
+      emphasis: {
+        $value: '{base.color.red.5}',
+        $type: 'color',
+      },
+    },
+    closed: {
+      muted: {
+        $value: '{base.color.gray.4}',
+        $type: 'color',
+        alpha: 0.4,
+      },
+      emphasis: {
+        $value: '{base.color.gray.5}',
         $type: 'color',
       },
     },
