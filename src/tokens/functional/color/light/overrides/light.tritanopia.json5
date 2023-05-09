@@ -29,6 +29,16 @@
         },
       },
     },
+    open: {
+      muted: {
+        $value: '{base.color.red.0}',
+        $type: 'color',
+      },
+      emphasis: {
+        $value: '{base.color.red.5}',
+        $type: 'color',
+      },
+    },
     severe: {
       muted: {
         $value: '{base.color.red.0}',
@@ -36,6 +46,16 @@
       },
       emphasis: {
         $value: '{base.color.red.5}',
+        $type: 'color',
+      },
+    },
+    gray: {
+      muted: {
+        $value: '{base.color.gray.0}',
+        $type: 'color',
+      },
+      emphasis: {
+        $value: '{base.color.gray.5}',
         $type: 'color',
       },
     },
@@ -60,6 +80,28 @@
       },
       emphasis: {
         $value: '{base.color.red.5}',
+        $type: 'color',
+      },
+    },
+    open: {
+      muted: {
+        $value: '{base.color.red.3}',
+        $type: 'color',
+        alpha: 0.4,
+      },
+      emphasis: {
+        $value: '{base.color.red.5}',
+        $type: 'color',
+      },
+    },
+    closed: {
+      muted: {
+        $value: '{base.color.gray.3}',
+        $type: 'color',
+        alpha: 0.4,
+      },
+      emphasis: {
+        $value: '{base.color.gray.5}',
         $type: 'color',
       },
     },
