@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/extensions
 import colorFallbacks from '../src/tokens/fallback/color-fallbacks.json'
 import fs from 'fs'
 
