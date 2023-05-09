@@ -413,19 +413,17 @@
       },
       borderColor: {
         rest: {
-          $value: '{borderColor.default}',
+          $value: '{base.color.gray.0}',
           $type: 'color',
-          alpha: 0.8,
+          alpha: 0.1,
         },
         hover: {
-          $value: '{borderColor.default}',
+          $value: '{button.primary.borderColor.rest}',
           $type: 'color',
-          alpha: 0.8,
         },
         disabled: {
-          $value: '{borderColor.default}',
+          $value: '{button.primary.borderColor.rest}',
           $type: 'color',
-          alpha: 0.8,
         },
       },
     },
@@ -433,6 +431,10 @@
       fgColor: {
         rest: {
           $value: '{fgColor.accent}',
+          $type: 'color',
+        },
+        hover: {
+          $value: '{base.color.blue.3}',
           $type: 'color',
         },
         disabled: {
@@ -472,11 +474,11 @@
     outline: {
       fgColor: {
         rest: {
-          $value: '{fgColor.accent}',
+          $value: '{base.color.blue.4}',
           $type: 'color',
         },
         hover: {
-          $value: '{fgColor.accent}',
+          $value: '{base.color.blue.3}',
           $type: 'color',
         },
         active: {
@@ -598,7 +600,7 @@
     primary: {
       bgColor: {
         rest: {
-          $value: '{base.color.white}',
+          $value: '{base.color.green.9}',
           $type: 'color',
           alpha: 0.2,
         },
@@ -607,12 +609,12 @@
     outline: {
       bgColor: {
         rest: {
-          $value: '{bgColor.accent.emphasis}',
+          $value: '{base.color.blue.9}',
           $type: 'color',
-          alpha: 0.1,
+          alpha: 0.2,
         },
         hover: {
-          $value: '{base.color.white}',
+          $value: '{base.color.blue.9}',
           $type: 'color',
           alpha: 0.2,
         },
@@ -620,6 +622,21 @@
           $value: '{bgColor.accent.emphasis}',
           $type: 'color',
           alpha: 0.05,
+        },
+      },
+      fgColor: {
+        rest: {
+          $value: '{base.color.blue.4}',
+          $type: 'color',
+        },
+        hover: {
+          $value: '{base.color.blue.3}',
+          $type: 'color',
+        },
+        disabled: {
+          $value: '{fgColor.accent}',
+          $type: 'color',
+          alpha: 0.5,
         },
       },
     },
@@ -636,9 +653,24 @@
           alpha: 0.05,
         },
         rest: {
-          $value: '{bgColor.danger.emphasis}',
+          $value: '{base.color.red.9}',
           $type: 'color',
-          alpha: 0.1,
+          alpha: 0.2,
+        },
+      },
+      fgColor: {
+        rest: {
+          $value: '{fgColor.danger}',
+          $type: 'color',
+        },
+        hover: {
+          $value: '{base.color.white}',
+          $type: 'color',
+        },
+        disabled: {
+          $value: '{fgColor.danger}',
+          $type: 'color',
+          alpha: 0.5,
         },
       },
     },

@@ -24,6 +24,7 @@
 
 .Button button[id='invisible']:hover:not(:disabled) {
   background-color: var(--button-invisible-bgColor-hover);
+  color: var(--button-invisible-fgColor-hover);
 }
 
 .Button button[id='invisible']:disabled {
@@ -38,6 +39,27 @@
 .Button button[id='invisible'] {
   background-color: var(--button-invisible-bgColor-rest);
   color: var(--button-invisible-fgColor-rest);
+}
+
+.Button button[id='default']:not(:hover) [data-component='ButtonCounter'] {
+  color: var(--buttonCounter-default-fgColor-rest) !important;
+  background-color: var(--buttonCounter-default-bgColor-rest) !important;
+}
+
+.Button button[id='danger']:not(:hover):not(:disabled) [data-component='ButtonCounter'] {
+  color: var(--buttonCounter-danger-fgColor-rest) !important;
+}
+
+.Button button[id='danger']:hover:not(:disabled) [data-component='ButtonCounter'] {
+  color: var(--buttonCounter-danger-fgColor-hover) !important;
+}
+
+.Button button[id='outline']:not(:hover):not(:disabled) [data-component='ButtonCounter'] {
+  color: var(--buttonCounter-outline-fgColor-rest) !important;
+}
+
+.Button button[id='outline']:hover:not(:disabled) [data-component='ButtonCounter'] {
+  color: var(--buttonCounter-outline-fgColor-hover) !important;
 }
 
 .Overlay-backdrop--center {
