@@ -1,5 +1,11 @@
 # @primer/primitives
 
+## 7.11.10
+
+### Patch Changes
+
+- [#651](https://github.com/primer/primitives/pull/651) [`26ed1fc`](https://github.com/primer/primitives/commit/26ed1fc7e0f5ee1aa0a570b9c7bfdd356d663a62) Thanks [@langermank](https://github.com/langermank)! - Format fallback CSS vars with `var()`
+
 ## 7.11.9
 
 ### Patch Changes
