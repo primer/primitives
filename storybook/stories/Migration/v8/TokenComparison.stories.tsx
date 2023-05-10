@@ -254,8 +254,8 @@ export const NoChange = () => {
 export const Fallbacks = () => {
   const data = Object.entries(fallbackVars).map(([key, value]) => {
     return {
-      id: key,
-      color: value,
+      id: key.replace(/^--/, ''),
+      color: value.replace(/^--/, ''),
     }
   })
   return (
