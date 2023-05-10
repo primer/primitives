@@ -142,7 +142,7 @@ export default {
       counterBg: alpha(get('scale.red.5'), 0.1),
       icon: get('scale.red.5'),
       hoverIcon: get('scale.white'),
-      counterFg: '#c21c2c',
+      counterFg: get('scale.red.6'),
       hoverCounterFg: get('scale.white'),
       disabledCounterFg: alpha(get('scale.red.5'), 0.5)
     }
