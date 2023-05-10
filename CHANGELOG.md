@@ -1,5 +1,13 @@
 # @primer/primitives
 
+## 7.11.9
+
+### Patch Changes
+
+- [#648](https://github.com/primer/primitives/pull/648) [`f559ad6`](https://github.com/primer/primitives/commit/f559ad6d638cd55dffd39a22eb861409b8273dce) Thanks [@langermank](https://github.com/langermank)! - Bug fix: `danger` counter fg
+
+- [#649](https://github.com/primer/primitives/pull/649) [`4e231ba`](https://github.com/primer/primitives/commit/4e231bad1f94027c36fea82dab8460eac85eebed) Thanks [@langermank](https://github.com/langermank)! - Fix fallback dist JSON
+
 ## 7.11.8
 
 ### Patch Changes
