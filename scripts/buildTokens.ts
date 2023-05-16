@@ -52,7 +52,14 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
   for (const {filename, source, include} of themes) {
     // build functional scales
     PrimerStyleDictionary.extend(
-      getStyleDictionaryConfig(`functional/themes/${filename}`, source, include, {...buildOptions, themed: true}),
+      getStyleDictionaryConfig(
+        `functional/themes/${filename}`,
+        source,
+        include,
+        {...buildOptions, themed: true},
+        // disable fallbacks for themes
+        {fallbacks: undefined},
+      ),
     ).buildAllPlatforms()
   }
 
