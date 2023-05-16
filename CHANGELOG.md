@@ -1,5 +1,11 @@
 # @primer/primitives
 
+## 7.11.11
+
+### Patch Changes
+
+- [#654](https://github.com/primer/primitives/pull/654) [`67bf5c0`](https://github.com/primer/primitives/commit/67bf5c077a445e8ec37ae1ee0f0b2cc7a51e7d54) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Add fallback json
+
 ## 7.11.10
 
 ### Patch Changes
