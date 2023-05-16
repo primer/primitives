@@ -25,6 +25,7 @@ import {
   cssThemed,
   cssCustomMedia,
   jsonOneDimensional,
+  jsonPostCssFallback,
   cssWrapMediaQuery,
   cssVariables,
 } from './formats'
@@ -87,6 +88,11 @@ StyleDictionary.registerFormat({
 StyleDictionary.registerFormat({
   name: 'json/one-dimensional',
   formatter: jsonOneDimensional,
+})
+
+StyleDictionary.registerFormat({
+  name: 'json/postCss-fallback',
+  formatter: jsonPostCssFallback,
 })
 
 /**
