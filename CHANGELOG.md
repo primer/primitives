@@ -1,5 +1,11 @@
 # @primer/primitives
 
+## 7.11.12
+
+### Patch Changes
+
+- [#659](https://github.com/primer/primitives/pull/659) [`77e0e07`](https://github.com/primer/primitives/commit/77e0e071d411f75ca70a9815b40260f3610c706a) Thanks [@langermank](https://github.com/langermank)! - Add functional transparent tokens
+
 ## 7.11.11
 
 ### Patch Changes
