@@ -84,6 +84,10 @@
       $value: '{base.color.gray.0}',
       $type: 'color',
     },
+    transparent: {
+      $value: '{base.color.transparent}',
+      $type: 'color',
+    },
     neutral: {
       muted: {
         $value: '{base.color.gray.1}',
@@ -206,6 +210,10 @@
     },
     disabled: {
       $value: '{borderColor.default}',
+      $type: 'color',
+    },
+    transparent: {
+      $value: '{base.color.transparent}',
       $type: 'color',
     },
     neutral: {
