@@ -52,7 +52,7 @@ export const globalTypes = {
     toolbar: {
       icon: 'contrast',
       items: [...primerThemes, {value: 'all', left: '', title: 'All'}],
-      showName: true,
+      title: true,
       dynamicTitle: true,
     },
   },
