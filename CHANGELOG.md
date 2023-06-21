@@ -1,5 +1,11 @@
 # @primer/primitives
 
+## 7.11.13
+
+### Patch Changes
+
+- [#662](https://github.com/primer/primitives/pull/662) [`e3a6b0f`](https://github.com/primer/primitives/commit/e3a6b0f9bb4c59e2083cd802c345f2711fd2ae34) Thanks [@langermank](https://github.com/langermank)! - Add shadows to color fallback dist
+
 ## 7.11.12
 
 ### Patch Changes
