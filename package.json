@@ -28,7 +28,7 @@
   "homepage": "https://github.com/primer/primitives#readme",
   "scripts": {
     "build": "ts-node ./scripts/build.ts && tsc --project tsconfig.build.json",
-    "build:next": "ts-node -r tsconfig-paths/register ./scripts/buildTokens.ts && ts-node ./scripts/buildFallbacks.ts",
+    "build:next": "ts-node -r tsconfig-paths/register ./scripts/buildTokens.ts && ts-node ./scripts/buildFallbacks.ts && npm run build:intellisense",
     "build:tokens": "node -e \"require('./build')._init()\"",
     "build:new-tokens": "npm run build:tokens && npm run build:next",
     "build:intellisense": "ts-node ./scripts/createPropertyVariableMap.ts",
