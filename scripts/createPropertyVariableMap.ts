@@ -6,7 +6,8 @@ import path from 'path'
 import glob from 'glob'
 import postcss from 'postcss'
 import type {Properties} from 'csstype'
-import {flatten, uniqBy} from 'lodash'
+import {flatten as flattenArray, uniqBy, kebabCase} from 'lodash'
+import {flatten as flattenObject} from 'flat'
 import {getTokensByName} from '~/docs/storybook/stories/utilities/getTokensByName'
 import type StyleDictionary from 'style-dictionary'
 
@@ -181,7 +182,7 @@ propertyMap['breakpoint'] = variables.filter(({file}) => file.name === 'breakpoi
       // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       return propertyMap[matchingProperty]!
     })
-    propertyMap[property] = uniqBy(flatten(matchingVariablesArray), 'name')
+    propertyMap[property] = uniqBy(flattenArray(matchingVariablesArray), 'name')
   }
 })
 
@@ -289,28 +290,40 @@ const aliases: Aliases = {
   caretColor: 'color',
 }
 
-const getTokenName = (token: Record<string, StyleDictionary.TransformedToken> | Variable) => {
-  return token.name
+const getTokenName = (token: StyleDictionary.TransformedToken | Variable) => {
+  return token.name.startsWith('--') ? token.name : `--${token.name}`
 }
 
+interface StoryWithVariables {
+  [key: string]: Variable['name'][] | StoryWithVariables
+}
 // painfully manually copied from stories
-const stories = {
+// a good way to test these would be run them against https://primer.style/primitives/storybook/index.json
+const stories: StoryWithVariables = {
   Color: {
     Base: {
       Scales: {
-        AllScales: variables.filter(({file, name}) => file.name === 'light' && name.includes('color-scale')),
+        AllScales: variables
+          .filter(({file, name}) => file.name === 'light' && name.includes('color-scale'))
+          .map(getTokenName),
       },
     },
     Functional: {
-      Background: [
-        'borderColor-default',
-        'borderColor-muted',
-        'borderColor-emphasis',
-        'borderColor-disabled',
-        'borderColor-transparent',
-      ],
-      Border: ['bgColor-default', 'bgColor-muted', 'bgColor-disabled', 'bgColor-emphasis', 'bgColor-transparent'],
-      Foreground: ['fgColor-default', 'fgColor-muted', 'fgColor-onEmphasis', 'fgColor-disabled', 'fgColor-link-rest'],
+      Background: {
+        Background: [
+          'borderColor-default',
+          'borderColor-muted',
+          'borderColor-emphasis',
+          'borderColor-disabled',
+          'borderColor-transparent',
+        ],
+      },
+      Border: {
+        Border: ['bgColor-default', 'bgColor-muted', 'bgColor-disabled', 'bgColor-emphasis', 'bgColor-transparent'],
+      },
+      Foreground: {
+        Foreground: ['fgColor-default', 'fgColor-muted', 'fgColor-onEmphasis', 'fgColor-disabled', 'fgColor-link-rest'],
+      },
       Roles: {
         Neutral: [
           'fgColor-neutral',
@@ -383,16 +396,18 @@ const stories = {
           'borderColor-sponsors-emphasis',
         ],
       },
-      Shadows: [
-        'shadow-resting-xsmall',
-        'shadow-resting-small',
-        'shadow-resting-medium',
-        'shadow-floating-small',
-        'shadow-floating-medium',
-        'shadow-floating-large',
-        'shadow-highlight',
-        'shadow-inset',
-      ],
+      Shadows: {
+        Shadows: [
+          'shadow-resting-xsmall',
+          'shadow-resting-small',
+          'shadow-resting-medium',
+          'shadow-floating-small',
+          'shadow-floating-medium',
+          'shadow-floating-large',
+          'shadow-highlight',
+          'shadow-inset',
+        ],
+      },
     },
     Patterns: {
       Avatar: getTokensByName(functionalColorTokens, 'avatar').map(getTokenName),
@@ -436,41 +451,63 @@ const stories = {
     },
   },
   Size: {
-    Border: {
-      BorderSize: [
-        ...getTokensByName(functionalBorderTokens, 'boxShadow'),
-        ...getTokensByName(functionalBorderTokens, 'borderWidth'),
-      ].map(getTokenName),
-      BorderRadius: getTokensByName(functionalBorderTokens, 'borderRadius').map(getTokenName),
-      Outline: getTokensByName(functionalBorderTokens, 'outline').map(getTokenName),
+    Base: getTokensByName(baseSizeTokens, 'base').map(getTokenName),
+    Functional: {
+      Border: {
+        BorderSize: [
+          ...getTokensByName(functionalBorderTokens, 'boxShadow'),
+          ...getTokensByName(functionalBorderTokens, 'borderWidth'),
+        ].map(getTokenName),
+        BorderRadius: getTokensByName(functionalBorderTokens, 'borderRadius').map(getTokenName),
+        Outline: getTokensByName(functionalBorderTokens, 'outline').map(getTokenName),
+      },
+      BreakPoints: [],
+      Control: {
+        XSmall: getTokensByName(functionalSizeTokens, 'control-xsmall').map(getTokenName),
+        Small: getTokensByName(functionalSizeTokens, 'control-small').map(getTokenName),
+        Medium: getTokensByName(functionalSizeTokens, 'control-medium').map(getTokenName),
+        Large: getTokensByName(functionalSizeTokens, 'control-large').map(getTokenName),
+        XLarge: getTokensByName(functionalSizeTokens, 'control-xlarge').map(getTokenName),
+        ControlStackRegular: getTokensByName(functionalSizeTokens, 'controlStack').map(getTokenName),
+        ControlStackResponsive: getTokensByName(functionalSizeFineTokens, 'controlStack').map(getTokenName),
+        ControlTouchTarget: getTokensByName(functionalSizeTokens, 'control-minTarget').map(getTokenName),
+        ControlTouchTargetResponsive: getTokensByName(functionalSizeFineTokens, 'control-minTarget').map(getTokenName),
+      },
+      Stack: {
+        Stack: getTokensByName(functionalSizeTokens, 'stack').map(getTokenName),
+      },
+      ViewPort: [],
     },
-    BreakPoints: {},
-    Control: {
-      XSmall: getTokensByName(functionalSizeTokens, 'control-xsmall').map(getTokenName),
-      Small: getTokensByName(functionalSizeTokens, 'control-small').map(getTokenName),
-      Medium: getTokensByName(functionalSizeTokens, 'control-medium').map(getTokenName),
-      Large: getTokensByName(functionalSizeTokens, 'control-large').map(getTokenName),
-      XLarge: getTokensByName(functionalSizeTokens, 'control-xlarge').map(getTokenName),
-      ControlStackRegular: getTokensByName(functionalSizeTokens, 'controlStack').map(getTokenName),
-      ControlStackResponsive: getTokensByName(functionalSizeFineTokens, 'controlStack').map(getTokenName),
-      ControlTouchTarget: getTokensByName(functionalSizeTokens, 'control-minTarget').map(getTokenName),
-      ControlTouchTargetResponsive: getTokensByName(functionalSizeFineTokens, 'control-minTarget').map(getTokenName),
-    },
-    Space: {
-      Base: getTokensByName(baseSizeTokens, 'base').map(getTokenName),
-    },
-    Stack: {
-      Stack: getTokensByName(functionalSizeTokens, 'stack').map(getTokenName),
-    },
-    ViewPort: {},
   },
+}
+
+const flatStories: Record<string, string[]> = flattenObject(stories, {safe: true, delimiter: '-'})
+
+const VariableToStoryMap: Record<string, string> = {}
+
+for (const key of Object.keys(flatStories)) {
+  // example: Size-Functional-Control-ControlStackRegular
+
+  const variablesList = flatStories[key]
+
+  // Last word is storyname and needs to be seperated by -- instead of -
+  // after that, camelcase needs to be snakecased
+
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+  const storyParts = key.split('-')
+  const storyName = storyParts.pop() // mutates storyParts
+  const storyPath = `${storyParts.map(kebabCase).join('-')}--${kebabCase(storyName)}`
+
+  for (const variable of variablesList) {
+    VariableToStoryMap[variable] = storyPath
+  }
 }
 
 const contents = `
   module.exports = {
     properties: ${JSON.stringify(propertyMap, null, 2)},
     aliases: ${JSON.stringify(aliases, null, 2)},
-    stories: ${JSON.stringify(stories, null, 2)}
+    stories: ${JSON.stringify(VariableToStoryMap, null, 2)}
   }
 `
 fs.writeFileSync(path.join(tokensDirectory, 'js/intellisense.js'), contents)
