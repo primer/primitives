@@ -171,7 +171,7 @@
   "--focus-outline": "var(--color-accent-fg solid 2px)",
   "--menu-bgColor-active": "var(--color-menu-bg-active)",
   "--overlay-bgColor": "var(--color-canvas-overlay)",
-  "--overlay-backdrop-bgColor": "var(--color-primer-canvas-backdrop)",
+  "--overlay-backdrop-bgColor": "var(--color-overlay-backdrop)",
   "--selectMenu-borderColor": "var(--color-select-menu-backdrop-border)",
   "--selectMenu-bgColor-active": "var(--color-select-menu-tap-focus-bg)",
   "--sideNav-bgColor-selected": "var(--color-sidenav-selected-bg)",
@@ -250,5 +250,7 @@
   "--shadow-floating-large": "var(--color-shadow-large)",
   "--shadow-floating-xlarge": "var(--color-shadow-extra-large)",
   "--shadow-highlight": "var(--color-primer-shadow-highlight)",
-  "--shadow-inset": "var(--color-primer-shadow-inset)"
+  "--shadow-inset": "var(--color-primer-shadow-inset)",
+  "--borderColor-transparent": "transparent",
+  "--bgColor-transparent": "transparent"
 }
