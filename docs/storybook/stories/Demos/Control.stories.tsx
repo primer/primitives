@@ -1,7 +1,7 @@
 /* eslint @typescript-eslint/consistent-type-imports: 0 */
 import React from 'react'
 import './PatternOverrides.css'
-import {ToggleSwitch, SegmentedControl, ActionList, Button, TextInput, Checkbox, Radio} from '@primer/react'
+import {ToggleSwitch, SegmentedControl, ActionList, Button, TextInput, Checkbox, Radio, Select} from '@primer/react'
 import {EyeIcon, HeartIcon} from '@primer/octicons-react'
 
 export default {
@@ -181,6 +181,21 @@ export const InputScheme = () => {
       />
       <Checkbox aria-label="Checkbox" checked />
       <Radio aria-label="Radio" checked value="2" />
+    </div>
+  )
+}
+
+export const SelectScheme = () => {
+  return (
+    <div style={{display: 'flex', gap: '1rem'}}>
+      <Select>
+        <Select.Option value="one">Choice one</Select.Option>
+        <Select.Option value="two">Choice two</Select.Option>
+      </Select>
+      <Select disabled>
+        <Select.Option value="one">Choice one</Select.Option>
+        <Select.Option value="two">Choice two</Select.Option>
+      </Select>
     </div>
   )
 }
