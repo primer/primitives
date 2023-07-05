@@ -8,7 +8,16 @@ export default defineConfig({
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? 1 : undefined,
-  reporter: 'html',
+  reporter: [
+    ['line'],
+    ['html', {open: 'never', outputFolder: path.join(__dirname, '.playwright/report')}],
+    [
+      'json',
+      {
+        outputFile: path.join(__dirname, '.playwright', 'results.json'),
+      },
+    ],
+  ],
 
   // https://playwright.dev/docs/api/class-testconfig#test-config-timeout
   timeout: 1000 * 15,

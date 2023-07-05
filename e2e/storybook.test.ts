@@ -29,7 +29,6 @@ test.describe('storybook', () => {
               theme,
             },
           })
-          await page.waitForSelector('body.sb-show-main:not(.sb-show-preparing-story)')
           expect(await page.screenshot({fullPage: true})).toMatchSnapshot()
         })
       }
