@@ -29,20 +29,6 @@
         $value: '{fgColor.accent}',
         $type: 'color',
       },
-      inverse: {
-        rest: {
-          $value: '{base.color.blue.5}',
-          $type: 'color',
-        },
-      },
-      control: {
-        $value: '{base.color.gray.5}',
-        $type: 'color',
-        mix: {
-          color: '{base.color.gray.4}',
-          weight: 0.7,
-        },
-      },
     },
     accent: {
       $value: '{base.color.blue.4}',
@@ -100,6 +86,10 @@
     },
     disabled: {
       $value: '{base.color.gray.5}',
+      $type: 'color',
+    },
+    transparent: {
+      $value: '{base.color.transparent}',
       $type: 'color',
     },
     neutral: {
@@ -229,6 +219,10 @@
     },
     disabled: {
       $value: '{borderColor.default}',
+      $type: 'color',
+    },
+    transparent: {
+      $value: '{base.color.transparent}',
       $type: 'color',
     },
     neutral: {

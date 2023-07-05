@@ -26,7 +26,8 @@ export default {
   },
   overlay: {
     shadow: (theme: any) =>
-      `0 1px 3px ${alpha(get('scale.black'), 0.12)(theme)}, 0 8px 24px ${alpha(get('scale.gray.7'), 0.12)(theme)}`
+      `0 1px 3px ${alpha(get('scale.black'), 0.12)(theme)}, 0 8px 24px ${alpha(get('scale.gray.7'), 0.12)(theme)}`,
+    backdrop: alpha(get('scale.gray.4'), 0.2)
   },
   header: {
     text: alpha(get('scale.white'), 0.7),
@@ -100,7 +101,7 @@ export default {
       disabledBg: '#94d3a2',
       disabledBorder: get('border.subtle'),
       icon: alpha(get('scale.white'), 0.8),
-      counterBg: alpha(get('scale.white'), 0.2)
+      counterBg: alpha(get('scale.green.9'), 0.2)
     },
 
     outline: {
@@ -118,7 +119,10 @@ export default {
       disabledText: alpha(get('scale.blue.5'), 0.5),
       disabledBg: get('scale.gray.0'),
       disabledCounterBg: alpha(get('scale.blue.5'), 0.05),
-      counterBg: alpha(get('scale.blue.5'), 0.1)
+      counterBg: '#0969da1a',
+      counterFg: get('scale.blue.6'),
+      hoverCounterFg: get('scale.white'),
+      disabledCounterFg: alpha(get('scale.blue.5'), 0.5)
     },
 
     danger: {
@@ -138,7 +142,10 @@ export default {
       disabledCounterBg: alpha(get('scale.red.5'), 0.05),
       counterBg: alpha(get('scale.red.5'), 0.1),
       icon: get('scale.red.5'),
-      hoverIcon: get('scale.white')
+      hoverIcon: get('scale.white'),
+      counterFg: get('scale.red.6'),
+      hoverCounterFg: get('scale.white'),
+      disabledCounterFg: alpha(get('scale.red.5'), 0.5)
     }
   },
   underlinenav: {

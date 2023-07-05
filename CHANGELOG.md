@@ -1,5 +1,73 @@
 # @primer/primitives
 
+## 7.11.13
+
+### Patch Changes
+
+- [#662](https://github.com/primer/primitives/pull/662) [`e3a6b0f`](https://github.com/primer/primitives/commit/e3a6b0f9bb4c59e2083cd802c345f2711fd2ae34) Thanks [@langermank](https://github.com/langermank)! - Add shadows to color fallback dist
+
+## 7.11.12
+
+### Patch Changes
+
+- [#659](https://github.com/primer/primitives/pull/659) [`77e0e07`](https://github.com/primer/primitives/commit/77e0e071d411f75ca70a9815b40260f3610c706a) Thanks [@langermank](https://github.com/langermank)! - Add functional transparent tokens
+
+## 7.11.11
+
+### Patch Changes
+
+- [#654](https://github.com/primer/primitives/pull/654) [`67bf5c0`](https://github.com/primer/primitives/commit/67bf5c077a445e8ec37ae1ee0f0b2cc7a51e7d54) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Add fallback json
+
+## 7.11.10
+
+### Patch Changes
+
+- [#651](https://github.com/primer/primitives/pull/651) [`26ed1fc`](https://github.com/primer/primitives/commit/26ed1fc7e0f5ee1aa0a570b9c7bfdd356d663a62) Thanks [@langermank](https://github.com/langermank)! - Format fallback CSS vars with `var()`
+
+## 7.11.9
+
+### Patch Changes
+
+- [#648](https://github.com/primer/primitives/pull/648) [`f559ad6`](https://github.com/primer/primitives/commit/f559ad6d638cd55dffd39a22eb861409b8273dce) Thanks [@langermank](https://github.com/langermank)! - Bug fix: `danger` counter fg
+
+- [#649](https://github.com/primer/primitives/pull/649) [`4e231ba`](https://github.com/primer/primitives/commit/4e231bad1f94027c36fea82dab8460eac85eebed) Thanks [@langermank](https://github.com/langermank)! - Fix fallback dist JSON
+
+## 7.11.8
+
+### Patch Changes
+
+- [#644](https://github.com/primer/primitives/pull/644) [`f388f1d`](https://github.com/primer/primitives/commit/f388f1dcccfaa25559b920455093a08e6d2fada7) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - add missing color overrides for light tritanopia in v8 tokens
+
+- [#643](https://github.com/primer/primitives/pull/643) [`6f1f6b6`](https://github.com/primer/primitives/commit/6f1f6b68ff42fdcd401b370397c2f1f2fc5e4eb2) Thanks [@langermank](https://github.com/langermank)! - Adds new color fallback docs and JSON to be used with PostCSS
+
+- [#600](https://github.com/primer/primitives/pull/600) [`76f3122`](https://github.com/primer/primitives/commit/76f31227b6b1b1c7adc5bc8c549cdb3db87aaecc) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - - fix syntax tokens dark mode by moving prettylights tokens into the color parent
+
+  - invalid-illegal-text and carriage-return-bg were droped due to a json bug
+
+- [#599](https://github.com/primer/primitives/pull/599) [`f67de6a`](https://github.com/primer/primitives/commit/f67de6afc7896270aac12813ddf2e75ce36fd291) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Replace light-colorblind scale with overrides
+
+- [#608](https://github.com/primer/primitives/pull/608) [`b8bc786`](https://github.com/primer/primitives/commit/b8bc786a5da55d55a5ccdcf61664be47810e92fb) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Replace dark-colorblind scale with overrides
+
+- [#645](https://github.com/primer/primitives/pull/645) [`40880ce`](https://github.com/primer/primitives/commit/40880ce3cfe4cd27bd749c54beb2c17806e2a2b3) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - add missing color overrides for dark tritanopia in v8 tokens
+
+- [#618](https://github.com/primer/primitives/pull/618) [`f80a5fd`](https://github.com/primer/primitives/commit/f80a5fd3111ed23839d055b4bae3909dfc7c5b69) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - add option to remove descriptions from css output
+
+- [#593](https://github.com/primer/primitives/pull/593) [`2fc6e68`](https://github.com/primer/primitives/commit/2fc6e68dffb8709a7fc44ba0f2895e73b78f70c4) Thanks [@langermank](https://github.com/langermank)! - Fix v8 dark syntax
+
+- [#639](https://github.com/primer/primitives/pull/639) [`cbee891`](https://github.com/primer/primitives/commit/cbee89194be81febeab5cec077cd7c5215701d71) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Remove unused color scales
+
+- [#606](https://github.com/primer/primitives/pull/606) [`356bb54`](https://github.com/primer/primitives/commit/356bb5445019ae037b8a6fd4f213a6902beefec1) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Replaced hex code overrides in colorblind mode scales with references to base scales
+
+- [#562](https://github.com/primer/primitives/pull/562) [`d88095e`](https://github.com/primer/primitives/commit/d88095e652c0e8d3200760c68752ebd4f97278ca) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Replaces light Tritanopia scale with overrides
+
+- [#634](https://github.com/primer/primitives/pull/634) [`3e331b6`](https://github.com/primer/primitives/commit/3e331b6e81cce5d6db7ae0c66e724a125bf7a1e8) Thanks [@langermank](https://github.com/langermank)! - Minor docs fixes
+
+- [#601](https://github.com/primer/primitives/pull/601) [`633aae8`](https://github.com/primer/primitives/commit/633aae88f4933d14859ba763035e516296c1048a) Thanks [@langermank](https://github.com/langermank)! - Fix missing prettylights tokens
+
+- [#597](https://github.com/primer/primitives/pull/597) [`f004737`](https://github.com/primer/primitives/commit/f00473766bc934c3ac8f04fe9721d2a6c248828f) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Replacing dark tritanopia scale with overrides
+
+- [#641](https://github.com/primer/primitives/pull/641) [`8c77bbb`](https://github.com/primer/primitives/commit/8c77bbbc148c9c7b9ebee04042defbe1bdda956c) Thanks [@langermank](https://github.com/langermank)! - Improve contrast for Buttons with counters
+
 ## 7.11.7
 
 ### Patch Changes

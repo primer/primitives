@@ -11,6 +11,8 @@ import patternVars from './DeprecatedPatternTokensMap.json'
 import cssShadowVars from './DeprecatedShadowTokensMap.json'
 // eslint-disable-next-line import/extensions
 import noChangeCssVars from './NoChangeTokensMap.json'
+// eslint-disable-next-line import/extensions
+import fallbackVars from '../../../../../tokens-next-private/fallbacks/color-fallbacks.json'
 import {DataTable, Table} from '@primer/react/drafts'
 
 export default {
@@ -241,6 +243,44 @@ export const NoChange = () => {
             field: 'color',
             renderCell: row => {
               return <CSSTokenSwatch color={row.color} prevColor={row.id} />
+            },
+          },
+        ]}
+      />
+    </Table.Container>
+  )
+}
+
+export const Fallbacks = () => {
+  const data = Object.entries(fallbackVars).map(([key, value]) => {
+    return {
+      id: key.replace(/^--/, ''),
+      color: value.replace(/^var\(--|\)/g, '').replace(/^--/, ''),
+    }
+  })
+  return (
+    <Table.Container>
+      <Table.Title as="h2" id="repositories">
+        New tokens with fallbacks
+      </Table.Title>
+      <DataTable
+        aria-labelledby="repositories"
+        aria-describedby="repositories-subtitle"
+        data={data}
+        columns={[
+          {
+            header: 'New',
+            field: 'id',
+            rowHeader: true,
+            renderCell: row => {
+              return <CSSTokenSwatch color={row.id} />
+            },
+          },
+          {
+            header: 'Fallback',
+            field: 'color',
+            renderCell: row => {
+              return <CSSTokenSwatch color={row.color} />
             },
           },
         ]}

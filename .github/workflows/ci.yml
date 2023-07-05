@@ -19,132 +19,22 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16
+          cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci --legacy-peer-deps --no-audit --no-fund && cd docs && npm ci --legacy-peer-deps --no-audit --no-fund
+        run: npm ci --no-audit --no-fund --ignore-scripts
 
       - name: Build v1 tokens
         run: npm run build
 
-      - name: Build v2 tokens
-        run: npm run build:tokens
+      - name: Build v8 tokens
+        run: npm run build:next
 
-  lint:
-    if: ${{ github.repository == 'primer/primitives' }}
-    name: Code linting check
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16
-
-      - name: Install dependencies
-        run: npm ci --legacy-peer-deps --no-audit --no-fund && cd docs && npm ci --legacy-peer-deps --no-audit --no-fund
-
-      - name: Build v1 tokens
-        run: npm run build
-
-      - name: Build v2 tokens
-        run: npm run build:tokens
-
-      - name: Lint
+      - name: Code linting check
         run: npm run lint
 
-  formatting:
-    if: ${{ github.repository == 'primer/primitives' }}
-    name: Code formatting check
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16
-
-      - name: Install dependencies
-        run: npm ci --legacy-peer-deps --no-audit --no-fund && cd docs && npm ci --legacy-peer-deps --no-audit --no-fund
-
-      - name: Lint
+      - name: Code formatting check
         run: npm run format:check
-
-  test:
-    if: ${{ github.repository == 'primer/primitives' }}
-    name: Unit tests
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16
-
-      - name: Install dependencies
-        run: npm ci --legacy-peer-deps --no-audit --no-fund && cd docs && npm ci --legacy-peer-deps --no-audit --no-fund
-
-      - name: Build v1 tokens
-        run: npm run build
-
-      - name: Build v2 tokens
-        run: npm run build:tokens
 
       - name: Run unit tests
         run: npm test
-
-  vrt-runner:
-    runs-on: ubuntu-latest-8-cores
-    strategy:
-      fail-fast: false
-      matrix:
-        shard: [1, 2]
-    steps:
-      - uses: actions/checkout@v3
-      - name: Use Node.js 16.x
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-          cache: 'npm'
-      - name: Install dependencies
-        run: npm ci
-      - name: Build storybook
-        run: |
-          npm run build:new-tokens
-          cd docs/storybook
-          npm run build-storybook
-        working-directory: docs/storybook
-      - name: Install browsers
-        run: npx playwright install --with-deps
-      - name: Run storybook
-        id: storybook
-        run: |
-          npx serve -l 6006 storybook-static &
-          pid=$!
-          echo "pid=$pid" >> $GITHUB_OUTPUT
-          sleep 5
-        working-directory: docs/storybook
-      - name: Run VRT
-        run: npx playwright test --grep @vrt --shard="${{ matrix.shard }}/${{ strategy.job-total }}"
-      - name: Stop storybook
-        run: kill ${{ steps.storybook.outputs.pid }}
-      - name: Upload report
-        if: ${{ always() }}
-        uses: actions/upload-artifact@v3
-        with:
-          name: vrt-${{ matrix.shard }}
-          path: .playwright/report
-
-  vrt:
-    if: ${{ always() }}
-    runs-on: ubuntu-latest
-    needs: vrt-runner
-    steps:
-      - name: Check vrt-runner job status
-        if: ${{ needs.vrt-runner.result == 'failure' }}
-        run: exit 1

@@ -5,12 +5,8 @@ on:
     branches-ignore:
       - 'changeset-release/**'
 jobs:
-  changes:
-    uses: ./.github/workflows/hasChanged.yml
 
   comment:
-    needs: changes
-    if: ${{ needs.changes.outputs.tokens == 'true' || needs.changes.outputs.oldTokens == 'true'  }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -19,14 +15,15 @@ jobs:
       - name: Set up node
         uses: actions/setup-node@v3
         with:
-          node-version: 16.x
+          node-version: 16
+          cache: 'npm'
 
       - name: Create comment (if necessary)
         uses: actions/github-script@v5
         with:
           script: |
             const body = '<details>\n' +
-            '<summary><strong>Variables changed</strong></summary>\n' +
+            '<summary><strong>Variables changed</strong></summary>\n\n' +
             '<!-- diff --><!-- /diff -->\n' +
             '</details>'
             const result = await github.rest.issues.listComments({
@@ -61,10 +58,11 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v3
         with:
-          node-version: 16.x
+          node-version: 16
+          cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci --no-audit --no-fund --include=dev
+        run: npm ci --no-audit --no-fund --include=dev --ignore-scripts
 
       - name: Build tokens
         run: npm run build
@@ -73,7 +71,7 @@ jobs:
         run: npm run build:tokens
 
       - name: Install dependencies (base)
-        run: pushd base; npm i --no-audit --no-fund; popd
+        run: pushd base; npm i --no-audit --no-fund --ignore-scripts; popd
 
       - name: Build (base)
         run: pushd base; npm run build; popd
@@ -100,7 +98,7 @@ jobs:
                 # in this case, differences are not errors
                 diff -U 1 base/$file $file 2> /dev/null || true
               done)
-
+            echo ""
             echo "\`\`\`diff"
 
             if [[ $diff ]]

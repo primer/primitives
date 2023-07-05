@@ -1,7 +1,17 @@
 import type StyleDictionary from 'style-dictionary'
 import {PrimerStyleDictionary} from '~/src/PrimerStyleDictionary'
 import {copyFromDir} from '~/src/utilities'
-import {typeDefinitions, deprecatedJson, css, docJson, scss, javascript, typescript, json} from '~/src/platforms'
+import {
+  typeDefinitions,
+  deprecatedJson,
+  css,
+  docJson,
+  scss,
+  javascript,
+  typescript,
+  json,
+  fallbacks,
+} from '~/src/platforms'
 import type {ConfigGeneratorOptions, StyleDictionaryConfigGenerator} from '~/src/types/StyleDictionaryConfigGenerator'
 import type {TokenBuildInput} from '~/src/types/TokenBuildInput'
 import glob from 'fast-glob'
@@ -30,6 +40,7 @@ const getStyleDictionaryConfig: StyleDictionaryConfigGenerator = (
     ts: typescript(`ts/${filename}.ts`, options.prefix, options.buildPath),
     json: json(`json/${filename}.json`, options.prefix, options.buildPath),
     docJson: docJson(`docs/${filename}.json`, options.prefix, options.buildPath),
+    fallbacks: fallbacks(`fallbacks/${filename}.json`, options.prefix, options.buildPath),
     ...platforms,
   },
 })
@@ -41,7 +52,14 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
   for (const {filename, source, include} of themes) {
     // build functional scales
     PrimerStyleDictionary.extend(
-      getStyleDictionaryConfig(`functional/themes/${filename}`, source, include, {...buildOptions, themed: true}),
+      getStyleDictionaryConfig(
+        `functional/themes/${filename}`,
+        source,
+        include,
+        {...buildOptions, themed: true},
+        // disable fallbacks for themes
+        {fallbacks: undefined},
+      ),
     ).buildAllPlatforms()
   }
 

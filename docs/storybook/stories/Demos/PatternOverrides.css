@@ -22,22 +22,51 @@
   --separator-color: var(--borderColor-muted);
 }
 
+/* .eSsmRS {
+  background: var(--bgColor-neutral-muted) !important;
+} */
+
 .Button button[id='invisible']:hover:not(:disabled) {
-  background-color: var(--button-invisible-bgColor-hover);
+  background-color: var(--button-invisible-bgColor-hover) !important;
+  color: var(--button-invisible-fgColor-hover) !important;
 }
 
 .Button button[id='invisible']:disabled {
-  background-color: var(--button-invisible-bgColor-disabled);
-  color: var(--button-invisible-fgColor-disabled);
+  background-color: var(--button-invisible-bgColor-disabled) !important;
+  color: var(--button-invisible-fgColor-disabled) !important;
 }
 
 .Button button[id='invisible']:active:not(:disabled) {
-  background-color: var(--button-invisible-bgColor-active);
+  background-color: var(--button-invisible-bgColor-active) !important;
 }
 
 .Button button[id='invisible'] {
-  background-color: var(--button-invisible-bgColor-rest);
-  color: var(--button-invisible-fgColor-rest);
+  background-color: var(--button-invisible-bgColor-rest) !important;
+  color: var(--button-invisible-fgColor-rest) !important;
+}
+
+.Button button[id='default']:not(:hover) [data-component='ButtonCounter'] {
+  background-color: var(--buttonCounter-default-bgColor-rest) !important;
+}
+
+.Button button[id='danger']:not(:hover):not(:disabled) [data-component='ButtonCounter'] {
+  color: var(--buttonCounter-danger-fgColor-rest) !important;
+}
+
+.Button button[id='danger']:hover:not(:disabled) [data-component='ButtonCounter'] {
+  color: var(--buttonCounter-danger-fgColor-hover) !important;
+}
+
+.Button button[id='outline']:not(:hover):not(:disabled) [data-component='ButtonCounter'] {
+  color: var(--buttonCounter-outline-fgColor-rest) !important;
+}
+
+.Button button[id='outline']:hover:not(:disabled) [data-component='ButtonCounter'] {
+  color: var(--buttonCounter-outline-fgColor-hover) !important;
+}
+
+.Button button[id='invisible']:not(:hover) [data-component='ButtonCounter'] {
+  background-color: var(--buttonCounter-default-bgColor-rest) !important;
 }
 
 .Overlay-backdrop--center {

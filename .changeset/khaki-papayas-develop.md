@@ -2,4 +2,4 @@
 "@primer/primitives": patch
 ---
 
-Fix missing prettylights tokens
+Add transparent fallbacks

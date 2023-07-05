@@ -111,7 +111,7 @@
     transparent: {
       bgColor: {
         rest: {
-          $value: 'transparent',
+          $value: '{base.color.transparent}',
           $type: 'color',
         },
         hover: {
@@ -135,15 +135,15 @@
       },
       borderColor: {
         rest: {
-          $value: 'transparent',
+          $value: '{base.color.transparent}',
           $type: 'color',
         },
         hover: {
-          $value: 'transparent',
+          $value: '{base.color.transparent}',
           $type: 'color',
         },
         active: {
-          $value: 'transparent',
+          $value: '{base.color.transparent}',
           $type: 'color',
         },
       },
@@ -214,12 +214,20 @@
           $type: 'color',
         },
         hover: {
-          $value: 'transparent',
+          $value: '{bgColor.accent.emphasis}',
           $type: 'color',
+          mix: {
+            color: '{base.color.blue.7}',
+            weight: 0.2,
+          },
         },
         active: {
-          $value: 'transparent',
+          $value: '{bgColor.accent.emphasis}',
           $type: 'color',
+          mix: {
+            color: '{base.color.blue.7}',
+            weight: 0.4,
+          },
         },
         disabled: {
           $value: '{fgColor.disabled}',
@@ -267,7 +275,7 @@
     },
     borderColor: {
       rest: {
-        $value: 'transparent',
+        $value: '{base.color.transparent}',
         $type: 'color',
       },
       disabled: {
@@ -404,25 +412,27 @@
       },
       borderColor: {
         rest: {
-          $value: '{borderColor.muted}',
+          $value: '{base.color.black}',
           $type: 'color',
-          alpha: 0.8,
+          alpha: 0.15,
         },
         hover: {
-          $value: '{borderColor.muted}',
+          $value: '{button.primary.borderColor.rest}',
           $type: 'color',
-          alpha: 0.8,
         },
         disabled: {
-          $value: '{borderColor.muted}',
+          $value: '{button.primary.borderColor.rest}',
           $type: 'color',
-          alpha: 0.8,
         },
       },
     },
     invisible: {
       fgColor: {
         rest: {
+          $value: '{fgColor.accent}',
+          $type: 'color',
+        },
+        hover: {
           $value: '{fgColor.accent}',
           $type: 'color',
         },
@@ -587,13 +597,23 @@
         rest: {
           $value: '{bgColor.neutral.muted}',
           $type: 'color',
+          alpha: 1,
+        },
+      },
+    },
+    invisible: {
+      bgColor: {
+        rest: {
+          $value: '{bgColor.neutral.muted}',
+          $type: 'color',
+          alpha: 1,
         },
       },
     },
     primary: {
       bgColor: {
         rest: {
-          $value: '{base.color.white}',
+          $value: '{base.color.green.9}',
           $type: 'color',
           alpha: 0.2,
         },
@@ -617,6 +637,21 @@
           alpha: 0.05,
         },
       },
+      fgColor: {
+        rest: {
+          $value: '{base.color.blue.6}',
+          $type: 'color',
+        },
+        hover: {
+          $value: '{base.color.white}',
+          $type: 'color',
+        },
+        disabled: {
+          $value: '{fgColor.accent}',
+          $type: 'color',
+          alpha: 0.5,
+        },
+      },
     },
     danger: {
       bgColor: {
@@ -634,6 +669,25 @@
           $value: '{bgColor.danger.emphasis}',
           $type: 'color',
           alpha: 0.1,
+        },
+      },
+      fgColor: {
+        rest: {
+          $value: '{base.color.red.5}',
+          $type: 'color',
+          mix: {
+            color: '{base.color.red.6}',
+            weight: 0.3,
+          },
+        },
+        hover: {
+          $value: '{base.color.white}',
+          $type: 'color',
+        },
+        disabled: {
+          $value: '{fgColor.danger}',
+          $type: 'color',
+          alpha: 0.5,
         },
       },
     },

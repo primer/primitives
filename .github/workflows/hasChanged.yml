@@ -35,7 +35,14 @@ jobs:
     permissions:
       pull-requests: read
     outputs:
-      hasChanged: ${{ steps.filter.outputs.output }}
+      outputAffected: ${{ steps.filter.outputs.outputAffected }}
+      tokens: ${{ steps.filter.outputs.tokens }}
+      oldTokens: ${{ steps.filter.outputs.oldTokens }}
+      src: ${{ steps.filter.outputs.src }}
+      scripts: ${{ steps.filter.outputs.scripts }}
+      buildScripts: ${{ steps.filter.outputs.buildScripts }}
+      dependencies: ${{ steps.filter.outputs.dependencies }}
+      docs: ${{ steps.filter.outputs.docs }}
     steps:
     - uses: actions/checkout@v3
     - uses: dorny/paths-filter@v2

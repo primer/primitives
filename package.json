@@ -1,6 +1,6 @@
 {
   "name": "@primer/primitives",
-  "version": "7.11.7",
+  "version": "7.11.13",
   "description": "Typography, spacing, and color primitives for Primer design system",
   "files": [
     "dist",
@@ -28,14 +28,13 @@
   "homepage": "https://github.com/primer/primitives#readme",
   "scripts": {
     "build": "ts-node ./scripts/build.ts && tsc --project tsconfig.build.json",
-    "build:next": "ts-node -r tsconfig-paths/register ./scripts/buildTokens.ts",
+    "build:next": "ts-node -r tsconfig-paths/register ./scripts/buildTokens.ts && ts-node ./scripts/buildFallbacks.ts",
     "build:tokens": "node -e \"require('./build')._init()\"",
     "build:new-tokens": "npm run build:tokens && npm run build:next",
     "tokenJson:check": "ts-node scripts/diffThemes.ts && ts-node scripts/diffTokenProps.ts",
     "contrast:check": "ts-node -e \"require('./scripts/color-contrast').check()\"",
     "format": "prettier --write  '**/*.{js,jsx,ts,tsx,md,mdx,css}'",
     "format:check": "prettier --check '**/*.{js,jsx,ts,tsx,md,mdx,css}'",
-    "install:docs": "cd docs && npm ci --legacy-peer-deps --no-audit --no-fund --include=dev",
     "install:storybook": "cd docs/storybook && npm ci --legacy-peer-deps --no-audit --no-fund",
     "lint": "eslint '**/*.{js,ts,tsx,md,mdx}' --max-warnings=0 --config .eslintrc.js",
     "lint:fix": "eslint '**/*.{js,ts,tsx,md,mdx}' --fix --max-warnings=0 --config .eslintrc.js",
@@ -43,7 +42,7 @@
     "prebuild:tokens": "rm -rf tokens-v2-private",
     "prebuild:next": "rm -rf tokens-next-private",
     "prepack": "npm run build && npm run build:tokens && npm run build:next",
-    "prepare": "husky install && npm run install:docs && npm run install:storybook",
+    "prepare": "husky install",
     "release": "changeset publish",
     "start:storybook": "npm run build:next && cd docs/storybook && npm run storybook",
     "test": "jest --verbose --coverage",
