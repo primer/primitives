@@ -6,7 +6,7 @@ import {
   deprecatedJson,
   css,
   docJson,
-  // scss,
+  scss,
   // javascript,
   // typescript,
   // json,
@@ -35,7 +35,7 @@ const getStyleDictionaryConfig: StyleDictionaryConfigGenerator = (
   include,
   platforms: {
     css: css(`css/${filename}.css`, options.prefix, options.buildPath, {themed: options.themed}),
-    // scss: scss(`scss/${filename}.scss`, options.prefix, options.buildPath),
+    scss: scss(`scss/${filename}.scss`, options.prefix, options.buildPath),
     // js: javascript(`js/${filename}.js`, options.prefix, options.buildPath),
     // ts: typescript(`ts/${filename}.ts`, options.prefix, options.buildPath),
     // json: json(`json/${filename}.json`, options.prefix, options.buildPath),
