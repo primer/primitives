@@ -15,7 +15,7 @@ describe('Transformer: shadowToCss', () => {
       }),
     ]
     const expectedOutput = ['0px 2px 1px 0 #000000']
-    expect(input.map(item => shadowToCss.transformer(item))).toStrictEqual(expectedOutput)
+    expect(input.map(item => shadowToCss.transformer(item, {}))).toStrictEqual(expectedOutput)
   })
 
   it('transforms inset `shadow` token to css shadow string', () => {
@@ -42,7 +42,7 @@ describe('Transformer: shadowToCss', () => {
       }),
     ]
     const expectedOutput = ['inset 0px 2px 1px 0px #000000', '0px 2px 1px 0px #000000']
-    expect(input.map(item => shadowToCss.transformer(item))).toStrictEqual(expectedOutput)
+    expect(input.map(item => shadowToCss.transformer(item, {}))).toStrictEqual(expectedOutput)
   })
 
   it('throws an error when required values are missing', () => {
@@ -57,6 +57,7 @@ describe('Transformer: shadowToCss', () => {
             blur: '1px',
           },
         }),
+        {},
       ),
     ).toThrowError()
 
@@ -71,6 +72,7 @@ describe('Transformer: shadowToCss', () => {
             blur: '1px',
           },
         }),
+        {},
       ),
     ).toThrowError()
 
@@ -85,6 +87,7 @@ describe('Transformer: shadowToCss', () => {
             blur: '1px',
           },
         }),
+        {},
       ),
     ).toThrowError()
 
@@ -98,6 +101,7 @@ describe('Transformer: shadowToCss', () => {
             blur: '1px',
           },
         }),
+        {},
       ),
     ).toThrowError()
     // missing color
@@ -111,6 +115,7 @@ describe('Transformer: shadowToCss', () => {
             blur: '1px',
           },
         }),
+        {},
       ),
     ).toThrowError()
   })
@@ -139,11 +144,11 @@ describe('Transformer: shadowToCss', () => {
       }),
     ]
     const expectedOutput = ['0px 2px 1px 0 #00000080', '0px 2px 1px 0 #22222280']
-    expect(input.map(item => shadowToCss.transformer(item))).toStrictEqual(expectedOutput)
+    expect(input.map(item => shadowToCss.transformer(item, {}))).toStrictEqual(expectedOutput)
   })
 
   it('transforms multi-layer `shadow` token to css shadow string', () => {
-    const input = getMockToken({
+    const item = getMockToken({
       value: [
         {
           color: '#000000',
@@ -165,6 +170,6 @@ describe('Transformer: shadowToCss', () => {
     })
 
     const expectedOutput = '0px 2px 1px 0 #00000080, 0px 8px 16px 0 #22222233'
-    expect(shadowToCss.transformer(input)).toStrictEqual(expectedOutput)
+    expect(shadowToCss.transformer(item, {})).toStrictEqual(expectedOutput)
   })
 })

@@ -3,29 +3,29 @@ import {jsonDeprecated} from './jsonDeprecated'
 
 describe('Transformer: jsonDeprecated', () => {
   it('Replaces token value with `null` if deprecated is set to `true`', () => {
-    const input = getMockToken({
+    const item = getMockToken({
       value: 'tokenName',
       deprecated: true,
     })
     const expectedOutput = null
-    expect(jsonDeprecated.transformer(input)).toStrictEqual(expectedOutput)
+    expect(jsonDeprecated.transformer(item, {})).toStrictEqual(expectedOutput)
   })
 
   it('Replaces token value with deprecated value if deprecated is a `string`', () => {
-    const input = getMockToken({
+    const item = getMockToken({
       value: 'tokenName',
       deprecated: `token.pumpkin`,
     })
     const expectedOutput = 'token.pumpkin'
-    expect(jsonDeprecated.transformer(input)).toStrictEqual(expectedOutput)
+    expect(jsonDeprecated.transformer(item, {})).toStrictEqual(expectedOutput)
   })
 
   it('Replaces token value with deprecated value if deprecated is a `string` and removes {}', () => {
-    const input = getMockToken({
+    const item = getMockToken({
       value: 'tokenName',
       deprecated: `{token.pumpkin}`,
     })
     const expectedOutput = 'token.pumpkin'
-    expect(jsonDeprecated.transformer(input)).toStrictEqual(expectedOutput)
+    expect(jsonDeprecated.transformer(item, {})).toStrictEqual(expectedOutput)
   })
 })

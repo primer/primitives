@@ -112,7 +112,7 @@
     transparent: {
       bgColor: {
         rest: {
-          $value: 'transparent',
+          $value: '{base.color.transparent}',
           $type: 'color',
         },
         hover: {
@@ -126,7 +126,7 @@
           alpha: 0.2,
         },
         disabled: {
-          $value: 'transparent',
+          $value: '{base.color.transparent}',
           $type: 'color',
         },
         selected: {
@@ -137,15 +137,15 @@
       },
       borderColor: {
         rest: {
-          $value: 'transparent',
+          $value: '{base.color.transparent}',
           $type: 'color',
         },
         hover: {
-          $value: 'transparent',
+          $value: '{base.color.transparent}',
           $type: 'color',
         },
         active: {
-          $value: 'transparent',
+          $value: '{base.color.transparent}',
           $type: 'color',
         },
       },
@@ -277,7 +277,7 @@
     },
     borderColor: {
       rest: {
-        $value: 'transparent',
+        $value: '{base.color.transparent}',
         $type: 'color',
       },
       disabled: {
