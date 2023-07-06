@@ -12,7 +12,7 @@ describe('Transformer: borderToCss', () => {
     })
 
     const expectedOutput = '#000000 solid 1px'
-    expect(borderToCss.transformer(input)).toStrictEqual(expectedOutput)
+    expect(borderToCss.transformer(input, {})).toStrictEqual(expectedOutput)
   })
 
   it('throws an error when required values are missing', () => {
@@ -25,6 +25,7 @@ describe('Transformer: borderToCss', () => {
             style: 'solid',
           },
         }),
+        {},
       ),
     ).toThrowError()
 
@@ -37,6 +38,7 @@ describe('Transformer: borderToCss', () => {
             width: '1px',
           },
         }),
+        {},
       ),
     ).toThrowError()
 
@@ -49,6 +51,7 @@ describe('Transformer: borderToCss', () => {
             width: '1px',
           },
         }),
+        {},
       ),
     ).toThrowError()
   })
