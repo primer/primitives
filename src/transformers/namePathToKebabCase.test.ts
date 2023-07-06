@@ -23,7 +23,7 @@ describe('Transformer: namePathToKebabCase', () => {
     ]
     const expectedOutput = ['path-to-token', 'PATH-tO-Token', 'path-toToken', 'pathtoToken']
 
-    expect(input.map(item => namePathToKebabCase.transformer(item))).toStrictEqual(expectedOutput)
+    expect(input.map(item => namePathToKebabCase.transformer(item, {}))).toStrictEqual(expectedOutput)
   })
 
   it('replaces spaces, `-`, `_` and `+` within path elements and joins with camelCase, but does not change the rest of the word', () => {
@@ -42,7 +42,7 @@ describe('Transformer: namePathToKebabCase', () => {
       }),
     ]
     const expectedOutput = ['start-path to token', 'start-PATH_tO-Token', 'start-path+toToken']
-    expect(input.map(item => namePathToKebabCase.transformer(item))).toStrictEqual(expectedOutput)
+    expect(input.map(item => namePathToKebabCase.transformer(item, {}))).toStrictEqual(expectedOutput)
   })
 
   it('adds prefix to token name', () => {
