@@ -1,5 +1,5 @@
 import {type Page, test, expect} from '@playwright/test'
-// eslint-disable-next-line import/extensions
+// eslint-disable-next-line import/extensions, import/no-unresolved
 import data from '../docs/storybook/storybook-static/stories.json'
 
 const stories = Object.values(data.stories).map(story => {
