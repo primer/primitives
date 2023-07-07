@@ -9,6 +9,12 @@
       $value: '{base.color.blue.5}',
       $type: 'color',
     },
+    success: {
+      inverse: {
+        $value: '{base.color.blue.5}',
+        $type: 'color',
+      },
+    },
     open: {
       $value: '{base.color.orange.5}',
       $type: 'color',
@@ -23,6 +29,12 @@
       mix: {
         color: '{base.color.orange.4}',
         weight: 0.05,
+      },
+    },
+    danger: {
+      inverse: {
+        $value: '{base.color.orange.4}',
+        $type: 'color',
       },
     },
   },

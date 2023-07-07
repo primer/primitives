@@ -29,6 +29,10 @@
         $value: '{fgColor.accent}',
         $type: 'color',
       },
+      inverse: {
+        $value: '{fgColor.accent.inverse}',
+        $type: 'color',
+      },
     },
     accent: {
       $value: '{base.color.blue.4}',
@@ -38,13 +42,31 @@
         weight: 0.35,
       },
     },
+    accent: {
+      inverse: {
+        $value: '{base.color.blue.5}',
+        $type: 'color',
+      },
+    },
     success: {
       $value: '{base.color.green.3}',
       $type: 'color',
     },
+    success: {
+      inverse: {
+        $value: '{base.color.green.5}',
+        $type: 'color',
+      },
+    },
     attention: {
       $value: '{base.color.yellow.3}',
       $type: 'color',
+    },
+    attention: {
+      inverse: {
+        $value: '{base.color.yellow.5}',
+        $type: 'color',
+      },
     },
     severe: {
       $value: '{base.color.orange.4}',
@@ -53,6 +75,16 @@
     danger: {
       $value: '{base.color.red.4}',
       $type: 'color',
+    },
+    danger: {
+      inverse: {
+        $value: '{base.color.red.5}',
+        $type: 'color',
+        mix: {
+          color: '{base.color.red.4}',
+          weight: 0.05,
+        },
+      },
     },
     open: {
       $value: '{fgColor.success}',

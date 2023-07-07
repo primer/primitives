@@ -19,6 +19,40 @@
       $value: '{base.color.gray.3}',
       $type: 'color',
     },
+    link: {
+      inverse: {
+        $value: '{fgColor.accent.inverse}',
+        $type: 'color',
+      },
+    },
+    accent: {
+      inverse: {
+        $value: '{base.color.blue.9}',
+        $type: 'color',
+      },
+    },
+    success: {
+      inverse: {
+        $value: '{base.color.green.9}',
+        $type: 'color',
+      },
+    },
+    attention: {
+      inverse: {
+        $value: '{base.color.yellow.9}',
+        $type: 'color',
+      },
+    },
+    danger: {
+      inverse: {
+        $value: '{base.color.red.9}',
+        $type: 'color',
+        // mix: {
+        //   color: '{base.color.red.4}',
+        //   weight: 0.05,
+        // },
+      },
+    },
   },
   bgColor: {
     emphasis: {

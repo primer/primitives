@@ -763,6 +763,16 @@
         alpha: 0.2,
       },
     },
+    inverse: {
+      bgColor: {
+        $value: '{base.color.gray.9}',
+        $type: 'color',
+      },
+      fgColor: {
+        $value: '{base.color.gray.0}',
+        $type: 'color',
+      },
+    },
   },
   selectMenu: {
     borderColor: {
