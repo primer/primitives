@@ -1,6 +1,6 @@
 import camelcaseKeys from 'camelcase-keys'
 import fs from 'fs'
-import mkdirp from 'mkdirp'
+import {mkdirp} from 'mkdirp'
 import path from 'path'
 import ModeCollection from './lib/mode-collection'
 import VariableCollection, {getFullName} from './lib/variable-collection'
