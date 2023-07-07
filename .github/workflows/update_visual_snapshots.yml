@@ -12,7 +12,7 @@ jobs:
   update:
     name: 'Update'
     if: ${{ github.event.label.name == 'update snapshots' }}
-    name: Update snapshots
+    name: 'Update snapshots'
     runs-on:
       labels: ubuntu-latest-16-cores
     steps:
