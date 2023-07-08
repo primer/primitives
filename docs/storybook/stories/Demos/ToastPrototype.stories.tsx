@@ -19,33 +19,36 @@ export const ToastPrototype = () => {
           borderRadius: 'var(--borderRadius-medium)',
           boxShadow: 'shadow.large',
           overflow: 'hidden',
-          backgroundColor: 'var(--overlay-inverse-bgColor)',
-          color: 'var(--overlay-inverse-fgColor)',
+          backgroundColor: 'var(--bgColor-default)',
+          color: 'var(--fgColor-default)',
           padding: 'var(--stack-padding-normal)',
           paddingInlineEnd: 'var(--stack-padding-condensed)',
           '& p': {
             margin: 0,
           },
         }}
+        data-color-mode="dark"
+        data-dark-theme="dark"
+        data-light-theme="dark"
       >
         <Box
           sx={{
             display: 'grid',
             placeSelf: 'center',
             '&[data-variant="info"]': {
-              color: 'var(--fgColor-accent-inverse)',
+              color: 'var(--fgColor-accent)',
             },
             '&[data-variant="success"]': {
-              color: 'var(--fgColor-success-inverse)',
+              color: 'var(--fgColor-success)',
             },
             '&[data-variant="attention"]': {
-              color: 'var(--fgColor-attention-inverse)',
+              color: 'var(--fgColor-attention)',
             },
             '&[data-variant="danger"]': {
-              color: 'var(--fgColor-danger-inverse)',
+              color: 'var(--fgColor-danger)',
             },
             '&[data-variant="loading"]': {
-              color: 'var(--fgColor-default-inverse)',
+              color: 'var(--fgColor-default)',
             },
           }}
           data-variant="info"
@@ -70,7 +73,7 @@ export const ToastPrototype = () => {
             icon={XIcon}
             variant="invisible"
             sx={{
-              color: 'var(--overlay-inverse-fgColor)',
+              color: 'var(--fgColor-onEmphasis)',
               '&:hover': {
                 backgroundColor: 'var(--button-invisible-bgColor-hover)',
               },
@@ -89,8 +92,8 @@ export const ToastPrototype = () => {
           borderRadius: 'var(--borderRadius-medium)',
           boxShadow: 'shadow.large',
           overflow: 'hidden',
-          backgroundColor: 'var(--overlay-inverse-bgColor)',
-          color: 'var(--overlay-inverse-fgColor)',
+          backgroundColor: 'var(--bgColor-emphasis)',
+          color: 'var(--fgColor-onEmphasis)',
           padding: 'var(--stack-padding-normal)',
           '& p': {
             margin: 0,
@@ -102,16 +105,16 @@ export const ToastPrototype = () => {
             display: 'grid',
             placeSelf: 'center',
             '&[data-variant="info"]': {
-              color: 'var(--fgColor-accent-inverse)',
+              color: 'var(--fgColor-accent-onEmphasis)',
             },
             '&[data-variant="success"]': {
-              color: 'var(--fgColor-success-inverse)',
+              color: 'var(--fgColor-success-onEmphasis)',
             },
             '&[data-variant="attention"]': {
-              color: 'var(--fgColor-attention-inverse)',
+              color: 'var(--fgColor-attention-onEmphasis)',
             },
             '&[data-variant="danger"]': {
-              color: 'var(--fgColor-danger-inverse)',
+              color: 'var(--fgColor-danger-onEmphasis)',
             },
             '&[data-variant="loading"]': {
               color: 'var(--fgColor-default-inverse)',
@@ -133,8 +136,8 @@ export const ToastPrototype = () => {
           borderRadius: 'var(--borderRadius-medium)',
           boxShadow: 'shadow.large',
           overflow: 'hidden',
-          backgroundColor: 'var(--overlay-inverse-bgColor)',
-          color: 'var(--overlay-inverse-fgColor)',
+          backgroundColor: 'var(--bgColor-emphasis)',
+          color: 'var(--fgColor-onEmphasis)',
           padding: 'var(--stack-padding-normal)',
           '& p': {
             margin: 0,
@@ -146,16 +149,16 @@ export const ToastPrototype = () => {
             display: 'grid',
             placeSelf: 'center',
             '&[data-variant="info"]': {
-              color: 'var(--fgColor-accent-inverse)',
+              color: 'var(--fgColor-accent-onEmphasis)',
             },
             '&[data-variant="success"]': {
-              color: 'var(--fgColor-success-inverse)',
+              color: 'var(--fgColor-success-onEmphasis)',
             },
             '&[data-variant="attention"]': {
-              color: 'var(--fgColor-attention-inverse)',
+              color: 'var(--fgColor-attention-onEmphasis)',
             },
             '&[data-variant="danger"]': {
-              color: 'var(--fgColor-danger-inverse)',
+              color: 'var(--fgColor-danger-onEmphasis)',
             },
             '&[data-variant="loading"]': {
               color: 'var(--fgColor-default-inverse)',
@@ -177,8 +180,8 @@ export const ToastPrototype = () => {
           borderRadius: 'var(--borderRadius-medium)',
           boxShadow: 'shadow.large',
           overflow: 'hidden',
-          backgroundColor: 'var(--overlay-inverse-bgColor)',
-          color: 'var(--overlay-inverse-fgColor)',
+          backgroundColor: 'var(--bgColor-emphasis)',
+          color: 'var(--fgColor-onEmphasis)',
           padding: 'var(--stack-padding-normal)',
           '& p': {
             margin: 0,
@@ -190,16 +193,16 @@ export const ToastPrototype = () => {
             display: 'grid',
             placeSelf: 'center',
             '&[data-variant="info"]': {
-              color: 'var(--fgColor-accent-inverse)',
+              color: 'var(--fgColor-accent-onEmphasis)',
             },
             '&[data-variant="success"]': {
-              color: 'var(--fgColor-success-inverse)',
+              color: 'var(--fgColor-success-onEmphasis)',
             },
             '&[data-variant="attention"]': {
-              color: 'var(--fgColor-attention-inverse)',
+              color: 'var(--fgColor-attention-onEmphasis)',
             },
             '&[data-variant="danger"]': {
-              color: 'var(--fgColor-danger-inverse)',
+              color: 'var(--fgColor-danger-onEmphasis)',
             },
             '&[data-variant="loading"]': {
               color: 'var(--fgColor-default-inverse)',
@@ -221,8 +224,8 @@ export const ToastPrototype = () => {
           borderRadius: 'var(--borderRadius-medium)',
           boxShadow: 'shadow.large',
           overflow: 'hidden',
-          backgroundColor: 'var(--overlay-inverse-bgColor)',
-          color: 'var(--overlay-inverse-fgColor)',
+          backgroundColor: 'var(--bgColor-emphasis)',
+          color: 'var(--fgColor-onEmphasis)',
           padding: 'var(--stack-padding-normal)',
           '& p': {
             margin: 0,
@@ -234,16 +237,16 @@ export const ToastPrototype = () => {
             display: 'grid',
             placeSelf: 'center',
             '&[data-variant="info"]': {
-              color: 'var(--fgColor-accent-inverse)',
+              color: 'var(--fgColor-accent-onEmphasis)',
             },
             '&[data-variant="success"]': {
-              color: 'var(--fgColor-success-inverse)',
+              color: 'var(--fgColor-success-onEmphasis)',
             },
             '&[data-variant="attention"]': {
-              color: 'var(--fgColor-attention-inverse)',
+              color: 'var(--fgColor-attention-onEmphasis)',
             },
             '&[data-variant="danger"]': {
-              color: 'var(--fgColor-danger-inverse)',
+              color: 'var(--fgColor-danger-onEmphasis)',
             },
             '&[data-variant="loading"]': {
               color: 'var(--fgColor-default-inverse)',
@@ -265,8 +268,8 @@ export const ToastPrototype = () => {
           borderRadius: 'var(--borderRadius-medium)',
           boxShadow: 'shadow.large',
           overflow: 'hidden',
-          backgroundColor: 'var(--overlay-inverse-bgColor)',
-          color: 'var(--overlay-inverse-fgColor)',
+          backgroundColor: 'var(--bgColor-emphasis)',
+          color: 'var(--fgColor-onEmphasis)',
           padding: 'var(--stack-padding-normal)',
           '& p': {
             margin: 0,
@@ -278,16 +281,16 @@ export const ToastPrototype = () => {
             display: 'grid',
             placeSelf: 'center',
             '&[data-variant="info"]': {
-              color: 'var(--fgColor-accent-inverse)',
+              color: 'var(--fgColor-accent-onEmphasis)',
             },
             '&[data-variant="success"]': {
-              color: 'var(--fgColor-success-inverse)',
+              color: 'var(--fgColor-success-onEmphasis)',
             },
             '&[data-variant="attention"]': {
-              color: 'var(--fgColor-attention-inverse)',
+              color: 'var(--fgColor-attention-onEmphasis)',
             },
             '&[data-variant="danger"]': {
-              color: 'var(--fgColor-danger-inverse)',
+              color: 'var(--fgColor-danger-onEmphasis)',
             },
             '&[data-variant="loading"]': {
               color: 'var(--fgColor-default-inverse)',

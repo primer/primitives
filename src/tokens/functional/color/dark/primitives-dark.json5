@@ -29,55 +29,63 @@
         $value: '{fgColor.accent}',
         $type: 'color',
       },
-      inverse: {
-        $value: '{fgColor.accent.inverse}',
+      onEmphasis: {
+        rest: {
+          $value: '{fgColor.accent.onEmphasis}',
+          $type: 'color',
+        },
+      },
+    },
+    accent: {
+      default: {
+        $value: '{base.color.blue.4}',
         $type: 'color',
+        mix: {
+          color: '{base.color.blue.5}',
+          weight: 0.35,
+        },
       },
-    },
-    accent: {
-      $value: '{base.color.blue.4}',
-      $type: 'color',
-      mix: {
-        color: '{base.color.blue.5}',
-        weight: 0.35,
-      },
-    },
-    accent: {
-      inverse: {
+      onEmphasis: {
         $value: '{base.color.blue.5}',
         $type: 'color',
       },
     },
     success: {
-      $value: '{base.color.green.3}',
-      $type: 'color',
-    },
-    success: {
-      inverse: {
+      default: {
+        $value: '{base.color.green.3}',
+        $type: 'color',
+      },
+      onEmphasis: {
         $value: '{base.color.green.5}',
         $type: 'color',
       },
     },
     attention: {
-      $value: '{base.color.yellow.3}',
-      $type: 'color',
-    },
-    attention: {
-      inverse: {
+      default: {
+        $value: '{base.color.yellow.3}',
+        $type: 'color',
+      },
+      onEmphasis: {
         $value: '{base.color.yellow.5}',
         $type: 'color',
       },
     },
     severe: {
-      $value: '{base.color.orange.4}',
-      $type: 'color',
+      default: {
+        $value: '{base.color.orange.4}',
+        $type: 'color',
+      },
+      onEmphasis: {
+        $value: '{base.color.orange.5}',
+        $type: 'color',
+      },
     },
     danger: {
-      $value: '{base.color.red.4}',
-      $type: 'color',
-    },
-    danger: {
-      inverse: {
+      default: {
+        $value: '{base.color.red.4}',
+        $type: 'color',
+      },
+      onEmphasis: {
         $value: '{base.color.red.5}',
         $type: 'color',
         mix: {

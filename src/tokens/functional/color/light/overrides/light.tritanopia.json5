@@ -6,18 +6,16 @@
 {
   fgColor: {
     success: {
-      $value: '{base.color.blue.5}',
-      $type: 'color',
-    },
-    success: {
-      inverse: {
+      default: {
         $value: '{base.color.blue.5}',
         $type: 'color',
       },
     },
     severe: {
-      $value: '{base.color.red.5}',
-      $type: 'color',
+      default: {
+        $value: '{base.color.red.5}',
+        $type: 'color',
+      },
     },
     open: {
       $value: '{base.color.red.5}',

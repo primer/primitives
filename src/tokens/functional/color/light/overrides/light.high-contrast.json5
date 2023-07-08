@@ -11,44 +11,14 @@
       mix: null,
     },
     danger: {
-      $value: '{base.color.red.6}',
-      $type: 'color',
-    },
-    accent: {
-      $value: '{base.color.blue.6}',
-      $type: 'color',
-    },
-    disabled: {
-      $value: '{base.color.gray.6}',
-      $type: 'color',
-    },
-    link: {
-      inverse: {
-        $value: '{fgColor.accent.inverse}',
+      default: {
+        $value: '{base.color.red.6}',
         $type: 'color',
       },
     },
     accent: {
-      inverse: {
-        $value: '{base.color.blue.2}',
-        $type: 'color',
-      },
-    },
-    success: {
-      inverse: {
-        $value: '{base.color.green.2}',
-        $type: 'color',
-      },
-    },
-    attention: {
-      inverse: {
-        $value: '{base.color.yellow.2}',
-        $type: 'color',
-      },
-    },
-    danger: {
-      inverse: {
-        $value: '{base.color.red.2}',
+      default: {
+        $value: '{base.color.blue.6}',
         $type: 'color',
       },
     },
