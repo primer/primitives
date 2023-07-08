@@ -36,19 +36,19 @@ export const ToastPrototype = () => {
             display: 'grid',
             placeSelf: 'center',
             '&[data-variant="info"]': {
-              color: 'var(--fgColor-accent)',
+              color: 'var(--fgColor-accent-default)',
             },
             '&[data-variant="success"]': {
-              color: 'var(--fgColor-success)',
+              color: 'var(--fgColor-success-default)',
             },
             '&[data-variant="attention"]': {
-              color: 'var(--fgColor-attention)',
+              color: 'var(--fgColor-attention-default)',
             },
             '&[data-variant="danger"]': {
-              color: 'var(--fgColor-danger)',
+              color: 'var(--fgColor-danger-default)',
             },
             '&[data-variant="loading"]': {
-              color: 'var(--fgColor-default)',
+              color: 'var(--fgColor-default-default)',
             },
           }}
           data-variant="info"
