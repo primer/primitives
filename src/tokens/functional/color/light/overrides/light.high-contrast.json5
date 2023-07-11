@@ -11,16 +11,12 @@
       mix: null,
     },
     danger: {
-      default: {
-        $value: '{base.color.red.6}',
-        $type: 'color',
-      },
+      $value: '{base.color.red.6}',
+      $type: 'color',
     },
     accent: {
-      default: {
-        $value: '{base.color.blue.6}',
-        $type: 'color',
-      },
+      $value: '{base.color.blue.6}',
+      $type: 'color',
     },
   },
   bgColor: {
@@ -314,6 +310,20 @@
         },
       },
     },
+    invisible: {
+      bgColor: {
+        hover: {
+          $value: '{base.color.gray.8}',
+          $type: 'color',
+          alpha: 1,
+        },
+        active: {
+          $value: '{base.color.gray.6}',
+          $type: 'color',
+          alpha: 1,
+        },
+      },
+    },
   },
   buttonCounter: {
     default: {
@@ -381,6 +391,28 @@
       divider: {
         $value: '{base.color.gray.3}',
         $type: 'color',
+      },
+    },
+  },
+  overlay: {
+    inverse: {
+      fgColor: {
+        accent: {
+          $value: '{base.color.blue.2}',
+          $type: 'color',
+        },
+        success: {
+          $value: '{base.color.green.2}',
+          $type: 'color',
+        },
+        attention: {
+          $value: '{base.color.yellow.2}',
+          $type: 'color',
+        },
+        danger: {
+          $value: '{base.color.red.3}',
+          $type: 'color',
+        },
       },
     },
   },

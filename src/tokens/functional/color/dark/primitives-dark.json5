@@ -29,70 +29,30 @@
         $value: '{fgColor.accent}',
         $type: 'color',
       },
-      onEmphasis: {
-        rest: {
-          $value: '{fgColor.accent.onEmphasis}',
-          $type: 'color',
-        },
-      },
     },
     accent: {
-      default: {
-        $value: '{base.color.blue.4}',
-        $type: 'color',
-        mix: {
-          color: '{base.color.blue.5}',
-          weight: 0.35,
-        },
-      },
-      onEmphasis: {
-        $value: '{base.color.blue.5}',
-        $type: 'color',
+      $value: '{base.color.blue.4}',
+      $type: 'color',
+      mix: {
+        color: '{base.color.blue.5}',
+        weight: 0.35,
       },
     },
     success: {
-      default: {
-        $value: '{base.color.green.3}',
-        $type: 'color',
-      },
-      onEmphasis: {
-        $value: '{base.color.green.5}',
-        $type: 'color',
-      },
+      $value: '{base.color.green.3}',
+      $type: 'color',
     },
     attention: {
-      default: {
-        $value: '{base.color.yellow.3}',
-        $type: 'color',
-      },
-      onEmphasis: {
-        $value: '{base.color.yellow.5}',
-        $type: 'color',
-      },
+      $value: '{base.color.yellow.3}',
+      $type: 'color',
     },
     severe: {
-      default: {
-        $value: '{base.color.orange.4}',
-        $type: 'color',
-      },
-      onEmphasis: {
-        $value: '{base.color.orange.5}',
-        $type: 'color',
-      },
+      $value: '{base.color.orange.4}',
+      $type: 'color',
     },
     danger: {
-      default: {
-        $value: '{base.color.red.4}',
-        $type: 'color',
-      },
-      onEmphasis: {
-        $value: '{base.color.red.5}',
-        $type: 'color',
-        mix: {
-          color: '{base.color.red.4}',
-          weight: 0.05,
-        },
-      },
+      $value: '{base.color.red.4}',
+      $type: 'color',
     },
     open: {
       $value: '{fgColor.success}',

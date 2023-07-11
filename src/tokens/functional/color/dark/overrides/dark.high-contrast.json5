@@ -235,6 +235,22 @@
         },
       },
     },
+    invisible: {
+      bgColor: {
+        hover: {
+          $value: '{base.color.gray.1}',
+          $type: 'color',
+          alpha: null,
+          mix: null,
+        },
+        active: {
+          $value: '{base.color.gray.2}',
+          $type: 'color',
+          alpha: null,
+          mix: null,
+        },
+      },
+    },
   },
   buttonCounter: {
     primary: {
@@ -328,6 +344,28 @@
         $value: '{base.color.blue.4}',
         $type: 'color',
         alpha: 0.4,
+      },
+    },
+  },
+  overlay: {
+    inverse: {
+      fgColor: {
+        accent: {
+          $value: '{base.color.blue.8}',
+          $type: 'color',
+        },
+        success: {
+          $value: '{base.color.green.8}',
+          $type: 'color',
+        },
+        attention: {
+          $value: '{base.color.yellow.8}',
+          $type: 'color',
+        },
+        danger: {
+          $value: '{base.color.red.8}',
+          $type: 'color',
+        },
       },
     },
   },

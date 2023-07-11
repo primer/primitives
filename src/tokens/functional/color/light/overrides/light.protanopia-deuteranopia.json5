@@ -6,10 +6,8 @@
 {
   fgColor: {
     success: {
-      default: {
-        $value: '{base.color.blue.5}',
-        $type: 'color',
-      },
+      $value: '{base.color.blue.5}',
+      $type: 'color',
     },
     open: {
       $value: '{base.color.orange.5}',
@@ -20,13 +18,11 @@
       $type: 'color',
     },
     danger: {
-      default: {
-        $value: '{base.color.orange.5}',
-        $type: 'color',
-        mix: {
-          color: '{base.color.orange.4}',
-          weight: 0.05,
-        },
+      $value: '{base.color.orange.5}',
+      $type: 'color',
+      mix: {
+        color: '{base.color.orange.4}',
+        weight: 0.05,
       },
     },
   },
