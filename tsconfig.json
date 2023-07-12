@@ -17,7 +17,7 @@
       "~/*": ["*"]
     }
   },
-  "include": ["src/", "scripts/", "docs/", "config/"],
+  "include": ["src/", "scripts/", "docs/", "config/", "playwright.config.ts", "e2e"],
   "exclude": ["./src/@types"],
   "ts-node": {
     "require": ["tsconfig-paths/register"]
