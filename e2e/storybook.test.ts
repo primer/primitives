@@ -29,7 +29,7 @@ test.describe('storybook', () => {
               theme,
             },
           })
-          expect(await page.screenshot({fullPage: true})).toMatchSnapshot()
+          expect(await page.screenshot({animations: 'disabled', fullPage: true})).toMatchSnapshot()
         })
       }
     })
