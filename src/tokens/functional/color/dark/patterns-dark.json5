@@ -347,6 +347,10 @@
           $value: '{control.bgColor.active}',
           $type: 'color',
         },
+        disabled: {
+          $value: '{control.bgColor.disabled}',
+          $type: 'color',
+        },
       },
       borderColor: {
         rest: {
@@ -359,6 +363,10 @@
         },
         active: {
           $value: '{borderColor.default}',
+          $type: 'color',
+        },
+        disabled: {
+          $value: '{control.borderColor.disabled}',
           $type: 'color',
         },
       },
@@ -422,7 +430,7 @@
           $type: 'color',
         },
         disabled: {
-          $value: '{button.primary.borderColor.rest}',
+          $value: '{button.primary.bgColor.disabled}',
           $type: 'color',
         },
       },
@@ -456,7 +464,7 @@
           $type: 'color',
         },
         disabled: {
-          $value: '{control.transparent.bgColor.disabled}',
+          $value: '{control.bgColor.disabled}',
           $type: 'color',
         },
       },
@@ -467,6 +475,10 @@
         },
         hover: {
           $value: '{control.transparent.borderColor.hover}',
+          $type: 'color',
+        },
+        disabled: {
+          $value: '{control.borderColor.disabled}',
           $type: 'color',
         },
       },
@@ -568,7 +580,7 @@
           },
         },
         disabled: {
-          $value: '{control.bgColor.rest}',
+          $value: '{control.bgColor.disabled}',
           $type: 'color',
         },
       },
