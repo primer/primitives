@@ -1,5 +1,25 @@
 # @primer/primitives
 
+## 7.11.14
+
+### Patch Changes
+
+- [#674](https://github.com/primer/primitives/pull/674) [`41ff627`](https://github.com/primer/primitives/commit/41ff62721c82070761826c641d8ec9d280419809) Thanks [@langermank](https://github.com/langermank)! - Fix disabled fg color for controls
+
+- [#666](https://github.com/primer/primitives/pull/666) [`5c18c74`](https://github.com/primer/primitives/commit/5c18c74788d18619bc4b94558d532ec4df3288aa) Thanks [@ctmayn](https://github.com/ctmayn)! - Adjust the value of entity highlighting so it meets the required color contrast on a diff deletion background.
+
+- [#667](https://github.com/primer/primitives/pull/667) [`f8c7429`](https://github.com/primer/primitives/commit/f8c74297461cad1394148791a8c414bc6aad7fd8) Thanks [@langermank](https://github.com/langermank)! - - Update Overlay backdrop color for dark mode
+
+  - Add Overlay backdrop tokens to the old build
+
+- [#671](https://github.com/primer/primitives/pull/671) [`2d3861e`](https://github.com/primer/primitives/commit/2d3861ec2949f1c0e75dd1a6a27a0699fad82b88) Thanks [@langermank](https://github.com/langermank)! - Add transparent fallbacks
+
+- [#669](https://github.com/primer/primitives/pull/669) [`799a702`](https://github.com/primer/primitives/commit/799a702d015d6b7e292b7bc8d2e1fa207e60186f) Thanks [@langermank](https://github.com/langermank)! - Fix muted fallbacks for v8 test
+
+- [#672](https://github.com/primer/primitives/pull/672) [`1fc2662`](https://github.com/primer/primitives/commit/1fc2662945eee93ece6dc6805ef209be7232f661) Thanks [@langermank](https://github.com/langermank)! - Fix muted border fallback
+
+- [#673](https://github.com/primer/primitives/pull/673) [`6ebe450`](https://github.com/primer/primitives/commit/6ebe450433d2b5b228831d3ff0bf047459c6eda8) Thanks [@langermank](https://github.com/langermank)! - Update disabled control fallback
+
 ## 7.11.13
 
 ### Patch Changes

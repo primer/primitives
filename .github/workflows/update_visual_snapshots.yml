@@ -1,0 +1,56 @@
+name: Snapshots
+
+on:
+  pull_request:
+    types: [labeled]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  update:
+    if: ${{ github.event.label.name == 'update snapshots' }}
+    name: 'Update snapshots'
+    runs-on:
+      labels: ubuntu-latest-16-cores
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+          ref: ${{ github.head_ref }}
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund --ignore-scripts
+      - name: Install browsers
+        run: npx playwright install --with-deps
+      - name: Build v8 tokens
+        run: npm run build:next
+      - name: Build storybook
+        working-directory: docs/storybook
+        run: |
+          npm ci
+          npm run build-storybook
+      - name: Run storybook
+        id: storybook
+        run: |
+          npx serve -l 6006 storybook-static &
+          pid=$!
+          echo "pid=$pid" >> $GITHUB_OUTPUT
+          sleep 5
+        working-directory: docs/storybook
+      - name: Run Visual Regression Tests
+        run: npx playwright test --update-snapshots
+      - name: Stop storybook
+        run: kill ${{ steps.storybook.outputs.pid }}
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: github-actions[bot] Regenerated snapshots
+      - uses: actions-ecosystem/action-remove-labels@v1
+        with:
+          labels: 'update snapshots'

@@ -15,6 +15,9 @@ import {
   typographyToCss,
   colorToHexMix,
   dimensionToRem,
+  dimensionToPixelUnitless,
+  colorToRgbaFloat,
+  namePathToSlashNotation,
 } from './transformers'
 import {
   scssMixinCssVariables,
@@ -105,6 +108,11 @@ StyleDictionary.registerTransform({
 })
 
 StyleDictionary.registerTransform({
+  name: 'color/rgbaFloat',
+  ...colorToRgbaFloat,
+})
+
+StyleDictionary.registerTransform({
   name: 'color/hexAlpha',
   ...colorToHexAlpha,
 })
@@ -125,6 +133,11 @@ StyleDictionary.registerTransform({
 })
 
 StyleDictionary.registerTransform({
+  name: 'dimension/pixelUnitless',
+  ...dimensionToPixelUnitless,
+})
+
+StyleDictionary.registerTransform({
   name: 'json/deprecated',
   ...jsonDeprecated,
 })
@@ -142,6 +155,11 @@ StyleDictionary.registerTransform({
 StyleDictionary.registerTransform({
   name: 'name/pathToKebabCase',
   ...namePathToKebabCase,
+})
+
+StyleDictionary.registerTransform({
+  name: 'name/pathToSlashNotation',
+  ...namePathToSlashNotation,
 })
 
 StyleDictionary.registerTransform({
