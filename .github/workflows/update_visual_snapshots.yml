@@ -51,3 +51,6 @@ jobs:
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: github-actions[bot] Regenerated snapshots
+      - uses: actions-ecosystem/action-remove-labels@v1
+        with:
+          labels: 'update snapshots'
