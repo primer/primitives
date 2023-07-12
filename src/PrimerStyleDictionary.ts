@@ -15,6 +15,7 @@ import {
   typographyToCss,
   colorToHexMix,
   dimensionToRem,
+  colorToRgbaFloat,
 } from './transformers'
 import {
   scssMixinCssVariables,
@@ -102,6 +103,11 @@ StyleDictionary.registerFormat({
 StyleDictionary.registerTransform({
   name: 'color/rgbAlpha',
   ...colorToRgbAlpha,
+})
+
+StyleDictionary.registerTransform({
+  name: 'color/rgbaFloat',
+  ...colorToRgbaFloat,
 })
 
 StyleDictionary.registerTransform({
