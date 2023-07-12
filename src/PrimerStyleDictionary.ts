@@ -17,6 +17,7 @@ import {
   dimensionToRem,
   dimensionToPixelUnitless,
   colorToRgbaFloat,
+  namePathToSlashNotation,
 } from './transformers'
 import {
   scssMixinCssVariables,
@@ -154,6 +155,11 @@ StyleDictionary.registerTransform({
 StyleDictionary.registerTransform({
   name: 'name/pathToKebabCase',
   ...namePathToKebabCase,
+})
+
+StyleDictionary.registerTransform({
+  name: 'name/pathToSlashNotation',
+  ...namePathToSlashNotation,
 })
 
 StyleDictionary.registerTransform({
