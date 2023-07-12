@@ -15,6 +15,7 @@ import {
   typographyToCss,
   colorToHexMix,
   dimensionToRem,
+  dimensionToPixelUnitless,
   colorToRgbaFloat,
 } from './transformers'
 import {
@@ -128,6 +129,11 @@ StyleDictionary.registerTransform({
 StyleDictionary.registerTransform({
   name: 'dimension/rem',
   ...dimensionToRem,
+})
+
+StyleDictionary.registerTransform({
+  name: 'dimension/pixelUnitless',
+  ...dimensionToPixelUnitless,
 })
 
 StyleDictionary.registerTransform({
