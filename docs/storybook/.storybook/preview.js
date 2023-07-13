@@ -206,7 +206,7 @@ const tempTheme = deepmerge(theme, {
             hoverBg: 'var(--control-transparent-bgColor-hover)',
           },
           directory: {
-            fill: 'var(--treeViewItem-leadingVisual-bgColor-rest)',
+            fill: 'var(--treeViewItem-leadingVisual-iconColor-rest)',
           },
         },
         fg: {
