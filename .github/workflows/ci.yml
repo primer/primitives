@@ -71,6 +71,8 @@ jobs:
         working-directory: docs/storybook
       - name: Run Visual Regression Tests
         uses: docker://mcr.microsoft.com/playwright:v1.35.1-jammy
+        env:
+          STORYBOOK_URL: 'http://172.17.0.1:6006'
         with:
           args: npx playwright test --shard="${{ matrix.shard }}/${{ strategy.job-total }}"
       - name: Stop storybook
