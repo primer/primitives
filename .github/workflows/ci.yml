@@ -44,7 +44,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        shard: [1, 2]
+        shard: [1, 2, 3, 4]
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js 16.x
@@ -61,8 +61,6 @@ jobs:
         run: |
           npm ci
           npm run build-storybook
-      - name: Install browsers
-        run: npx playwright install --with-deps
       - name: Run storybook
         id: storybook
         run: |
@@ -72,7 +70,11 @@ jobs:
           sleep 5
         working-directory: docs/storybook
       - name: Run Visual Regression Tests
-        run: npx playwright test --shard="${{ matrix.shard }}/${{ strategy.job-total }}"
+        uses: docker://mcr.microsoft.com/playwright:v1.35.1-jammy
+        env:
+          STORYBOOK_URL: 'http://172.17.0.1:6006'
+        with:
+          args: npx playwright test --shard="${{ matrix.shard }}/${{ strategy.job-total }}"
       - name: Stop storybook
         run: kill ${{ steps.storybook.outputs.pid }}
       - name: Upload report
