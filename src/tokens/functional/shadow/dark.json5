@@ -20,7 +20,7 @@
         resting: {
           $value: [
             {
-              color: 'transparent',
+              color: '{base.color.transparent}',
               alpha: 0,
               offsetX: '0px',
               offsetY: '0px',
@@ -33,7 +33,7 @@
         },
         inset: {
           $value: {
-            color: 'transparent',
+            color: '{base.color.transparent}',
             alpha: 0,
             offsetX: '0px',
             offsetY: '0px',
@@ -50,7 +50,7 @@
         selected: {
           $value: [
             {
-              color: 'transparent',
+              color: '{base.color.transparent}',
               alpha: 0,
               offsetX: '0px',
               offsetY: '0px',
@@ -68,7 +68,7 @@
         selected: {
           $value: [
             {
-              color: 'transparent',
+              color: '{base.color.transparent}',
               alpha: 0,
               offsetX: '0px',
               offsetY: '0px',
@@ -86,7 +86,7 @@
         selected: {
           $value: [
             {
-              color: 'transparent',
+              color: '{base.color.transparent}',
               alpha: 0,
               offsetX: '0px',
               offsetY: '0px',
@@ -104,7 +104,7 @@
     inset: {
       $value: [
         {
-          color: 'transparent',
+          color: '{base.color.transparent}',
           alpha: 0,
           offsetX: '0px',
           offsetY: '0px',
@@ -117,7 +117,7 @@
     },
     highlight: {
       $value: {
-        color: 'transparent',
+        color: '{base.color.transparent}',
         alpha: 0,
         offsetX: '0px',
         offsetY: '0px',
@@ -145,7 +145,7 @@
       small: {
         $value: [
           {
-            color: 'transparent',
+            color: '{base.color.transparent}',
             alpha: 0,
             offsetX: '0px',
             offsetY: '0px',

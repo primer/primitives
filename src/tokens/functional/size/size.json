@@ -20,7 +20,8 @@
         "$type": "dimension"
       },
       "paddingBlock": {
-        "value": "calc(({control.xsmall.size} - {control.xsmall.lineBoxHeight}) / 2)"
+        "$value": "2px",
+        "$type": "dimension"
       },
       "paddingInline": {
         "condensed": {
@@ -51,7 +52,8 @@
         "$type": "dimension"
       },
       "paddingBlock": {
-        "value": "calc(({control.small.size} - {control.small.lineBoxHeight}) / 2)"
+        "$value": "{base.size.4}",
+        "$type": "dimension"
       },
       "paddingInline": {
         "condensed": {
@@ -78,7 +80,8 @@
         "$type": "dimension"
       },
       "paddingBlock": {
-        "value": "calc(({control.medium.size} - {control.medium.lineBoxHeight}) / 2)"
+        "$value": "6px",
+        "$type": "dimension"
       },
       "paddingInline": {
         "condensed": {
@@ -109,7 +112,8 @@
         "$type": "dimension"
       },
       "paddingBlock": {
-        "value": "calc(({control.large.size} - {control.large.lineBoxHeight}) / 2)"
+        "$value": "10px",
+        "$type": "dimension"
       },
       "paddingInline": {
         "normal": {
@@ -136,7 +140,8 @@
         "$type": "dimension"
       },
       "paddingBlock": {
-        "value": "calc(({control.xlarge.size} - {control.xlarge.lineBoxHeight}) / 2)"
+        "$value": "14px",
+        "$type": "dimension"
       },
       "paddingInline": {
         "normal": {
