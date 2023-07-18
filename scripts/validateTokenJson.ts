@@ -67,3 +67,7 @@ for (const fail of failed) {
   // eslint-disable-next-line no-console
   console.log('\n\n')
 }
+
+if (failed.length > 0) {
+  process.exit(1)
+}

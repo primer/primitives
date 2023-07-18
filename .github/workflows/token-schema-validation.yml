@@ -1,0 +1,31 @@
+name: Design Token Schema Validation
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  changes:
+    uses: ./.github/workflows/hasChanged.yml
+
+  build:
+    needs: changes
+    if: needs.changes.outputs.tokens == 'true'
+    name: Validate Design Tokens against Schema
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund --include=dev --ignore-scripts
+
+      - name: Validate tokens
+        run: npm run lint:tokens
