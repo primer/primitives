@@ -1,9 +1,10 @@
-import type {ValidationError} from 'zod-validation-error'
 import {fromZodError} from 'zod-validation-error'
 import fs from 'fs'
 import path from 'path'
 import json5 from 'json5'
 import {designToken} from '~/src/schemas/designToken'
+import {getFlag} from '../src/utilities/getFlag'
+import type {ZodIssue} from 'zod'
 
 const walkDir = (dir: string, ignoreDirs: string[] = []): string[] => {
   const files = fs
@@ -22,7 +23,8 @@ export const validateTokens = (tokenDir: string) => {
   const failed: {
     fileName: string
     errorMessage: string
-    errors: ValidationError
+    errors: ZodIssue[]
+    errorsByPath: Record<string, ZodIssue[]>
   }[] = []
 
   for (const file of tokenFiles) {
@@ -34,7 +36,16 @@ export const validateTokens = (tokenDir: string) => {
         failed.push({
           fileName: file,
           errorMessage: fromZodError(validatedTokenJson.error).message.replace(/;/g, '\n- '),
-          errors: fromZodError(validatedTokenJson.error),
+          errors: fromZodError(validatedTokenJson.error).details,
+          errorsByPath: fromZodError(validatedTokenJson.error).details.reduce((acc, item) => {
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-ignore
+            if (!acc[item.path.join('.')]) acc[item.path.join('.')] = []
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-ignore
+            acc[item.path.join('.')].push(item)
+            return acc
+          }, {}),
         })
       }
     } catch (error) {
@@ -49,25 +60,43 @@ export const validateTokens = (tokenDir: string) => {
   }
 }
 
-// const failed = validateTokens('./src/tokens/base/size')
 const {failed, files} = validateTokens('./src/tokens/')
 
-// eslint-disable-next-line no-console
-console.log(`\u001b[36;1m\u001b[1m${files.length} token files validated\u001b[0m`)
+if (getFlag('--silent') === null) {
+  // eslint-disable-next-line no-console
+  console.log(`\u001b[36;1m\u001b[1m${files.length} token files validated:\u001b[0m`)
+  // eslint-disable-next-line no-console
+  console.log(
+    `${files
+      .map(file => {
+        let prefix = '✅'
+        if (failed.find(item => item.fileName === file)) prefix = '❌'
+        return `${prefix} ${file}`
+      })
+      .join('\n')}`,
+  )
 
-for (const fail of failed) {
-  // eslint-disable-next-line no-console
-  console.log('++++++++++++++++++++++++++++++')
-  // eslint-disable-next-line no-console
-  console.log(`\u001b[36;1m\u001b[1m${fail.fileName}\u001b[0m`)
-  // eslint-disable-next-line no-console
-  console.log(fail.errorMessage)
-  // eslint-disable-next-line no-console
-  console.log(JSON.stringify(fail.errors.details))
-  // eslint-disable-next-line no-console
-  console.log('\n\n')
+  for (const fail of failed) {
+    // eslint-disable-next-line no-console
+    console.log('++++++++++++++++++++++++++++++')
+    // eslint-disable-next-line no-console
+    console.log(`\u001b[36;1m\u001b[1m${fail.fileName}\u001b[0m`)
+    // eslint-disable-next-line no-console
+    console.log(fail.errorMessage)
+    // eslint-disable-next-line no-console
+    console.log(JSON.stringify(fail.errors, null, 2))
+    // eslint-disable-next-line no-console
+    console.log('\n\n')
+  }
 }
 
-if (failed.length > 0) {
-  process.exit(1)
+if (getFlag('--failOnErrors')) {
+  if (failed.length > 0) {
+    process.exit(1)
+  }
+}
+
+if (getFlag('--outFile')) {
+  const filename = `${`${getFlag('--outFile')}`.replace('.json', '')}.json`
+  fs.writeFileSync(filename, JSON.stringify(failed))
 }

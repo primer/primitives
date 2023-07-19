@@ -1,1 +1,2 @@
-export const joinFriendly = (array: string[]) => `"${array.slice(0, -1).join('", "')}" and "${array.slice(-1)}"`
+export const joinFriendly = (array: string[], lastJoin = 'and') =>
+  `"${array.slice(0, -1).join('", "')}" ${lastJoin} "${array.slice(-1)}"`

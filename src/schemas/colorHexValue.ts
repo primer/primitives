@@ -8,4 +8,4 @@ const colorHexRegex = new RegExp(`(${colorHex3RegEx})|(${colorHex6RegEx})|(${col
 
 export const colorHexValue = z
   .string()
-  .regex(colorHexRegex, {message: 'Invalid color. Color must be a hex string or a reference to a color token.'})
+  .regex(colorHexRegex, {message: 'Invalid color: Color must be a hex string or a reference to a color token.'})
