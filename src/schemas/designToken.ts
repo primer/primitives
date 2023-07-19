@@ -30,8 +30,25 @@ export const designToken = z.record(
         numberToken,
         stringToken,
       ]),
-      designToken,
       referenceToken,
+      designToken,
     ])
   }),
 )
+
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore: TODO: fix this
+// export const addType = z.record(
+//   tokenName,
+//   z.lazy(() => {
+//     return z.union([
+//       z
+//         .object({
+//           $value: z.any(),
+//           $type: z.string().default('reference'),
+//         })
+//         .required(),
+//       addType,
+//     ])
+//   }),
+// )
