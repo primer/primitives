@@ -30,7 +30,7 @@
   },
   "borderRadius": {
     "small": {
-      "value": "3px",
+      "$value": "3px",
       "$type": "dimension",
       "$extensions": {
         "org.primer.figma": {
@@ -40,7 +40,7 @@
       }
     },
     "medium": {
-      "value": "6px",
+      "$value": "6px",
       "$type": "dimension",
       "$extensions": {
         "org.primer.figma": {
@@ -50,7 +50,7 @@
       }
     },
     "large": {
-      "value": "12px",
+      "$value": "12px",
       "$type": "dimension",
       "$extensions": {
         "org.primer.figma": {
@@ -60,7 +60,7 @@
       }
     },
     "full": {
-      "value": "9999px",
+      "$value": "9999px",
       "$type": "dimension",
       "$description": "Use this border radius for pill shaped elements",
       "$extensions": {
