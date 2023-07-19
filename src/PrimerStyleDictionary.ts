@@ -18,6 +18,7 @@ import {
   dimensionToPixelUnitless,
   colorToRgbaFloat,
   namePathToSlashNotation,
+  figmaAttributes,
 } from './transformers'
 import {
   scssMixinCssVariables,
@@ -135,6 +136,11 @@ StyleDictionary.registerTransform({
 StyleDictionary.registerTransform({
   name: 'dimension/pixelUnitless',
   ...dimensionToPixelUnitless,
+})
+
+StyleDictionary.registerTransform({
+  name: 'figma/attributes',
+  ...figmaAttributes,
 })
 
 StyleDictionary.registerTransform({
