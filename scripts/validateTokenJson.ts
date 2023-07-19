@@ -84,8 +84,6 @@ if (getFlag('--silent') === null) {
     // eslint-disable-next-line no-console
     console.log(fail.errorMessage)
     // eslint-disable-next-line no-console
-    console.log(JSON.stringify(fail.errors, null, 2))
-    // eslint-disable-next-line no-console
     console.log('\n\n')
   }
 }
