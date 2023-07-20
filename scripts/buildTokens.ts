@@ -16,6 +16,7 @@ import type {ConfigGeneratorOptions, StyleDictionaryConfigGenerator} from '~/src
 import type {TokenBuildInput} from '~/src/types/TokenBuildInput'
 import glob from 'fast-glob'
 import {themes} from './themes.config'
+import {buildFigma} from './buildPlatforms/buildFigma'
 /**
  * getStyleDictionaryConfig
  * @param filename output file name without extension
@@ -46,6 +47,7 @@ const getStyleDictionaryConfig: StyleDictionaryConfigGenerator = (
 })
 
 export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void => {
+  buildFigma(buildOptions)
   /** -----------------------------------
    * Colors, shadows & borders
    * ----------------------------------- */

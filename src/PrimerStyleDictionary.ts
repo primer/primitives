@@ -32,6 +32,7 @@ import {
   jsonPostCssFallback,
   cssWrapMediaQuery,
   cssVariables,
+  jsonFigma,
 } from './formats'
 
 /**
@@ -97,6 +98,11 @@ StyleDictionary.registerFormat({
 StyleDictionary.registerFormat({
   name: 'json/postCss-fallback',
   formatter: jsonPostCssFallback,
+})
+
+StyleDictionary.registerFormat({
+  name: 'json/figma',
+  formatter: jsonFigma,
 })
 
 /**
