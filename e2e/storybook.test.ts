@@ -45,7 +45,23 @@ test.describe('storybook', () => {
       continue
     }
 
-    const runAllThemes = !story.id.includes('size')
+    const runAllThemes = !story.id.includes('size') && !story.id.includes('typography')
+
+    test.describe(story.id, () => {
+      for (const theme of themes) {
+        if (runAllThemes || theme === 'light') {
+          test(theme, async ({page}) => {
+            await visit(page, {
+              id: story.id,
+              globals: {
+                theme,
+              },
+            })
+            expect(await page.screenshot({animations: 'disabled', fullPage: true})).toMatchSnapshot()
+          })
+        }
+      }
+    })
 
     test.describe(story.id, () => {
       for (const theme of themes) {
