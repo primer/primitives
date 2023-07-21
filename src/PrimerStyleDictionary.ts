@@ -19,6 +19,7 @@ import {
   colorToRgbaFloat,
   namePathToSlashNotation,
   figmaAttributes,
+  namePathToFigma,
 } from './transformers'
 import {
   scssMixinCssVariables,
@@ -155,8 +156,18 @@ StyleDictionary.registerTransform({
 })
 
 StyleDictionary.registerTransform({
+  name: 'name/pathToCamelCase',
+  ...namePathToCamelCase,
+})
+
+StyleDictionary.registerTransform({
   name: 'name/pathToDotNotation',
   ...namePathToDotNotation,
+})
+
+StyleDictionary.registerTransform({
+  name: 'name/pathToFigma',
+  ...namePathToFigma,
 })
 
 StyleDictionary.registerTransform({

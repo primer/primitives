@@ -18,7 +18,7 @@ const camelCase = (string: string): string => {
  * @description converts the [TransformedToken's](https://github.com/amzn/style-dictionary/blob/main/types/TransformedToken.d.ts) `.path` array to a dot.notation string
  * @type name transformer — [StyleDictionary.NameTransform](https://github.com/amzn/style-dictionary/blob/main/types/Transform.d.ts)
  * @matcher omitted to match all tokens
- * @transformer returns `string` on dot.notation
+ * @transformer returns `string` in dot.notation
  */
 export const namePathToDotNotation: StyleDictionary.Transform = {
   type: `name`,

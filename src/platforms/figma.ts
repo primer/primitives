@@ -22,7 +22,8 @@ export const figma: PlatformInitializer = (outputFile, prefix, buildPath, option
   buildPath,
   transforms: [
     'color/rgbaFloat',
-    'name/pathToSlashNotation',
+    'name/pathToFigma',
+    // 'name/pathToSlashNotation',
     'figma/attributes',
     'dimension/pixelUnitless',
     // 'border/figma',

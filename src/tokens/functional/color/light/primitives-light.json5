@@ -49,15 +49,13 @@
       },
     },
     link: {
-      rest: {
-        $value: '{fgColor.accent}',
-        $type: 'color',
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'mode',
-            mode: 'light',
-            scopes: ['fgColor'],
-          },
+      $value: '{fgColor.accent}',
+      $type: 'color',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'mode',
+          mode: 'light',
+          scopes: ['fgColor'],
         },
       },
     },
