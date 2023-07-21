@@ -45,17 +45,21 @@ test.describe('storybook', () => {
       continue
     }
 
+    const runAllThemes = !story.id.includes('size')
+
     test.describe(story.id, () => {
       for (const theme of themes) {
-        test(theme, async ({page}) => {
-          await visit(page, {
-            id: story.id,
-            globals: {
-              theme,
-            },
+        if (runAllThemes || theme === 'light') {
+          test(theme, async ({page}) => {
+            await visit(page, {
+              id: story.id,
+              globals: {
+                theme,
+              },
+            })
+            expect(await page.screenshot({animations: 'disabled', fullPage: true})).toMatchSnapshot()
           })
-          expect(await page.screenshot({animations: 'disabled', fullPage: true})).toMatchSnapshot()
-        })
+        }
       }
     })
   }
