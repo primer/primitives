@@ -1,6 +1,6 @@
 import {type Page, test, expect} from '@playwright/test'
 // eslint-disable-next-line import/extensions, import/no-unresolved
-import data from '../docs/storybook/storybook-static/stories.json'
+import data from '../docs/public/storybook/stories.json'
 
 interface Story {
   id: string
@@ -47,26 +47,10 @@ test.describe('storybook', () => {
 
     const runAllThemes = !story.id.includes('size') && !story.id.includes('typography')
 
-    test.describe(story.id, () => {
+    test.describe(`${story.id} (${runAllThemes ? 'all themes' : 'light theme only'})`, () => {
       for (const theme of themes) {
         if (runAllThemes || theme === 'light') {
-          test(theme, async ({page}) => {
-            await visit(page, {
-              id: story.id,
-              globals: {
-                theme,
-              },
-            })
-            expect(await page.screenshot({animations: 'disabled', fullPage: true})).toMatchSnapshot()
-          })
-        }
-      }
-    })
-
-    test.describe(story.id, () => {
-      for (const theme of themes) {
-        if (runAllThemes || theme === 'light') {
-          test(theme, async ({page}) => {
+          test(`${theme} theme`, async ({page}) => {
             await visit(page, {
               id: story.id,
               globals: {
