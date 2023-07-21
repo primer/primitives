@@ -1,6 +1,6 @@
 import {type Page, test, expect} from '@playwright/test'
 // eslint-disable-next-line import/extensions, import/no-unresolved
-import data from '../docs/public/storybook/stories.json'
+import data from '../docs/storybook/storybook-static/stories.json'
 
 interface Story {
   id: string
