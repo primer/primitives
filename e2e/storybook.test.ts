@@ -35,9 +35,13 @@ const themes = [
 
 test.describe('storybook', () => {
   for (const story of stories) {
-    if (story.excludeFromSnapshot || (story.tags && story.tags.includes('excludeSnapshot'))) {
+    if (
+      story.excludeFromSnapshot ||
+      (story.tags && story.tags.includes('excludeSnapshot')) ||
+      (story.tags && story.tags.includes('docs'))
+    ) {
       // eslint-disable-next-line @typescript-eslint/no-empty-function
-      test.skip(story.id, () => {})
+      test.skip(story.id, async () => {})
       continue
     }
 
