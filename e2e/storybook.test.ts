@@ -2,9 +2,24 @@ import {type Page, test, expect} from '@playwright/test'
 // eslint-disable-next-line import/extensions, import/no-unresolved
 import data from '../docs/storybook/storybook-static/stories.json'
 
-const stories = Object.values(data.stories).map(story => {
+interface Story {
+  id: string
+  parameters?: {
+    snapshot?: {
+      excludeFromSnapshot?: boolean
+    }
+    docs?: {
+      tags?: string[]
+    }
+  }
+}
+
+const stories = Object.values(data.stories).map((story: unknown) => {
+  const {id, parameters} = story as Story
   return {
-    id: story.id,
+    id,
+    excludeFromSnapshot: parameters?.snapshot?.excludeFromSnapshot,
+    tags: parameters?.docs?.tags,
   }
 })
 const themes = [
@@ -20,6 +35,12 @@ const themes = [
 
 test.describe('storybook', () => {
   for (const story of stories) {
+    if (story.excludeFromSnapshot || (story.tags && story.tags.includes('excludeSnapshot'))) {
+      // eslint-disable-next-line @typescript-eslint/no-empty-function
+      test.skip(story.id, () => {})
+      continue
+    }
+
     test.describe(story.id, () => {
       for (const theme of themes) {
         test(theme, async ({page}) => {

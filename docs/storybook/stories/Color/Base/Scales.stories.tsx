@@ -6,6 +6,7 @@ export default {
   parameters: {
     controls: {hideNoControlsWarning: true},
   },
+  tags: ['excludeSnapshot'],
 }
 
 const bgColors = [
