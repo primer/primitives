@@ -1,5 +1,6 @@
 import {z} from 'zod'
 import {joinFriendly} from '../utilities/joinFriendly'
+import {schemaErrorMessage} from '../utilities/schemaErrorMessage'
 
 type Collections =
   | 'base/color/light'
@@ -14,7 +15,10 @@ export const collection = (collections: Collections[]) => {
   return z.string().refine(
     value => collections.includes(value as Collections),
     value => ({
-      message: `Invalid collection: "${value}", valid collections are ${joinFriendly(collections)}`,
+      message: schemaErrorMessage(
+        `Invalid collection: "${value}"`,
+        `Valid collections are ${joinFriendly(collections)}`,
+      ),
     }),
   )
 }
@@ -25,7 +29,7 @@ export const mode = (modes: Modes[]) => {
   return z.string().refine(
     value => modes.includes(value as Modes),
     value => ({
-      message: `Invalid mode: "${value}", valid modes are ${joinFriendly(modes)}`,
+      message: schemaErrorMessage(`Invalid mode: "${value}"`, `Valid modes are ${joinFriendly(modes)}`),
     }),
   )
 }
