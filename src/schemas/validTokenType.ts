@@ -1,6 +1,6 @@
 import {z} from 'zod'
 import {joinFriendly} from '../utilities/joinFriendly'
-import {tokenName} from './tokenName'
+import {schemaErrorMessage} from '../utilities/schemaErrorMessage'
 
 const validTypes = [
   'color',
@@ -21,7 +21,7 @@ export type TokenType = (typeof validTypes)[number]
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore: TODO: fix this
 export const validateType = z.record(
-  tokenName,
+  z.string(),
   z.lazy(() => {
     return z.union([
       z
@@ -30,10 +30,10 @@ export const validateType = z.record(
           $type: z.string().refine(
             type => validTypes.includes(type as TokenType),
             val => ({
-              message: `**Invalid token $type:** "${val}"\nMust be one of the following: ${joinFriendly(
-                [...validTypes],
-                'or',
-              )}`,
+              message: schemaErrorMessage(
+                `Invalid token $type: "${val}"`,
+                `Must be one of the following: ${joinFriendly([...validTypes], 'or')}`,
+              ),
             }),
           ),
         })
