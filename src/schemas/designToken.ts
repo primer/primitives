@@ -1,6 +1,5 @@
 import {z} from 'zod'
 import {tokenName} from './tokenName'
-import {referenceToken} from './referenceToken'
 import {stringToken} from './stringToken'
 import {viewportRangeToken} from './viewportRangeToken'
 import {numberToken} from './numberToken'
@@ -30,25 +29,8 @@ export const designToken = z.record(
         numberToken,
         stringToken,
       ]),
-      referenceToken,
+      // referenceToken,
       designToken,
     ])
   }),
 )
-
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore: TODO: fix this
-// export const addType = z.record(
-//   tokenName,
-//   z.lazy(() => {
-//     return z.union([
-//       z
-//         .object({
-//           $value: z.any(),
-//           $type: z.string().default('reference'),
-//         })
-//         .required(),
-//       addType,
-//     ])
-//   }),
-// )
