@@ -1,20 +1,22 @@
 import StyleDictionary from 'style-dictionary'
 import {format} from 'prettier'
 import type {FormatterArguments} from 'style-dictionary/types/Format'
+import {transformNamePathToFigma} from '../transformers/namePathToFigma'
 const {sortByReference} = StyleDictionary.formatHelpers
-
-const replaceRegEx = /(?:{|})/g
 
 const isReference = (string: string): boolean => /^\{([^\\]*)\}$/g.test(string)
 
-const getReference = (dictionary: StyleDictionary.Dictionary, refString: string) => {
+const getReference = (
+  dictionary: StyleDictionary.Dictionary,
+  refString: string,
+  platform: StyleDictionary.Platform,
+) => {
   if (isReference(refString)) {
     // retrieve reference token
     const refToken = dictionary.getReferences(refString)[0]
     // return full reference
-    return [refToken.attributes?.collection, ...refToken.path].filter(Boolean).join('/')
+    return [refToken.attributes?.collection, transformNamePathToFigma(refToken, platform)].filter(Boolean).join('/')
   }
-  return undefined
 }
 
 const getFigmaType = (type: string): string => {
@@ -31,25 +33,20 @@ const getFigmaType = (type: string): string => {
  * @param arguments [FormatterArguments](https://github.com/amzn/style-dictionary/blob/main/types/Format.d.ts)
  * @returns formatted `string`
  */
-export const jsonFigma: StyleDictionary.Formatter = ({
-  dictionary,
-  file: _file,
-  platform: _platform,
-}: FormatterArguments) => {
+export const jsonFigma: StyleDictionary.Formatter = ({dictionary, file: _file, platform}: FormatterArguments) => {
   // sort tokens by reference
   const tokens = dictionary.allTokens.sort(sortByReference(dictionary)).map(token => {
     const {attributes, value, $type, comment: description, original, alpha, mix} = token
     const {mode, collection, scopes} = attributes || {}
-    const tokenName = token.name.replace(replaceRegEx, '')
     return {
-      name: tokenName,
+      name: token.name,
       value,
       type: getFigmaType($type),
       alpha,
       isMix: mix ? true : undefined,
       description,
-      refId: [collection, tokenName].filter(Boolean).join('/'),
-      reference: getReference(dictionary, original.value),
+      refId: [collection, token.name].filter(Boolean).join('/'),
+      reference: getReference(dictionary, original.value, platform),
       collection,
       mode,
       scopes,
