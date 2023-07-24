@@ -6,6 +6,9 @@ const colorHex8RegEx = '^#[0-9a-f]{8}$'
 
 const colorHexRegex = new RegExp(`(${colorHex3RegEx})|(${colorHex6RegEx})|(${colorHex8RegEx})`, 'i')
 
-export const colorHexValue = z
-  .string()
-  .regex(colorHexRegex, {message: 'Invalid color: Color must be a hex string or a reference to a color token.'})
+export const colorHexValue = z.string().refine(
+  color => colorHexRegex.test(color),
+  color => ({
+    message: `**Invalid color:** "${color}"\nColor must be a hex string or a reference to a color token.`,
+  }),
+)

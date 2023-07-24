@@ -25,7 +25,10 @@ export const validateTokens = (tokenDir: string) => {
       if (!validateTypes.success) {
         failed.push({
           fileName: file,
-          errorMessage: fromZodError(validateTypes.error).message.replace(/;/g, '\n- '),
+          errorMessage: fromZodError(validateTypes.error, {prefix: '', prefixSeparator: '- '}).message.replace(
+            /;/g,
+            '\n- ',
+          ),
           errors: fromZodError(validateTypes.error).details,
           errorsByPath: fromZodError(validateTypes.error).details.reduce((acc, item) => {
             // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -44,7 +47,10 @@ export const validateTokens = (tokenDir: string) => {
       if (validatedTokenJson.success === false) {
         failed.push({
           fileName: file,
-          errorMessage: fromZodError(validatedTokenJson.error).message.replace(/;/g, '\n- '),
+          errorMessage: fromZodError(validatedTokenJson.error, {prefix: '', prefixSeparator: '- '}).message.replace(
+            /;/g,
+            '\n- ',
+          ),
           errors: fromZodError(validatedTokenJson.error).details,
           errorsByPath: fromZodError(validatedTokenJson.error).details.reduce((acc, item) => {
             // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -94,7 +100,9 @@ if (getFlag('--silent') === null) {
     // eslint-disable-next-line no-console
     console.log(`\u001b[36;1m\u001b[1m${fail.fileName}\u001b[0m`)
     // eslint-disable-next-line no-console
-    console.log(fail.errorMessage)
+    console.log(
+      fail.errorMessage.replace(/\*\*(.*?)\*\*/g, '\u001b[31;1m\u001b[1m$1\u001b[0m').replace(/\n/g, '\n  ↳ '),
+    )
     // eslint-disable-next-line no-console
     console.log('\n\n')
   }
@@ -112,5 +120,11 @@ if (getFlag('--failOnErrors')) {
 if (getFlag('--outFile')) {
   // get file name from flag and add .json extension if missing
   const filename = `${`${getFlag('--outFile')}`.replace('.json', '')}.json`
-  fs.writeFileSync(filename, JSON.stringify(failed))
+  // replace linebreak with <br> for html output
+  const htmlFailed = failed.map(item => ({
+    ...item,
+    errorsByPath: JSON.parse(JSON.stringify(item.errorsByPath).replace(/\\n/g, '<br />')),
+  }))
+  //
+  fs.writeFileSync(filename, JSON.stringify(htmlFailed))
 }

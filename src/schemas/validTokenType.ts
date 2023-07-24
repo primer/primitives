@@ -30,7 +30,7 @@ export const validateType = z.record(
           $type: z.string().refine(
             type => validTypes.includes(type as TokenType),
             val => ({
-              message: `Invalid token $type: "${val}", must be one of the following: ${joinFriendly(
+              message: `**Invalid token $type:** "${val}"\nMust be one of the following: ${joinFriendly(
                 [...validTypes],
                 'or',
               )}`,
