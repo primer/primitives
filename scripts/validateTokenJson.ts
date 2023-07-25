@@ -11,60 +11,26 @@ export const validateTokens = (tokenDir: string) => {
   const failed: validationErrors[] = []
 
   for (const file of tokenFiles) {
+    // read and parse token file
     const tokenFile = fs.readFileSync(`${file}`, 'utf8')
+    let tokenJson
     try {
-      const tokenJson = json5.parse(tokenFile)
-      // validate token $type property
-      // const validateTypes = validateType.safeParse(tokenJson)
-      const typeValidationErrors = validateTokenWithSchema(file, tokenJson, validateType)
-      if (typeValidationErrors) {
-        failed.push(typeValidationErrors)
-        continue
-      }
-      //   failed.push({
-      //     fileName: file,
-      //     errorMessage: fromZodError(validateTypes.error, {prefix: '', prefixSeparator: '- '}).message.replace(
-      //       /;/g,
-      //       '\n-',
-      //     ),
-      //     errorsByPath: fromZodError(validateTypes.error).details.reduce((acc, item) => {
-      //       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      //       // @ts-ignore
-      //       if (!acc[item.path.join('.')]) acc[item.path.join('.')] = []
-      //       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      //       // @ts-ignore
-      //       acc[item.path.join('.')].push(item)
-      //       return acc
-      //     }, {}),
-      //   })
-      //   continue
-      // }
-      // validate token schema
-      const tokenValidationErrors = validateTokenWithSchema(file, tokenJson, designToken)
-      if (tokenValidationErrors) failed.push(tokenValidationErrors)
-      // const validatedTokenJson = designToken.safeParse(tokenJson)
-      // if (validatedTokenJson.success === false) {
-      //   failed.push({
-      //     fileName: file,
-      //     errorMessage: fromZodError(validatedTokenJson.error, {prefix: '', prefixSeparator: '- '}).message.replace(
-      //       /;/g,
-      //       '\n-',
-      //     ),
-      //     errors: fromZodError(validatedTokenJson.error).details,
-      //     errorsByPath: fromZodError(validatedTokenJson.error).details.reduce((acc, item) => {
-      //       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      //       // @ts-ignore
-      //       if (!acc[item.path.join('.')]) acc[item.path.join('.')] = []
-      //       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      //       // @ts-ignore
-      //       acc[item.path.join('.')].push(item)
-      //       return acc
-      //     }, {}),
-      //   })
-      // }
+      tokenJson = json5.parse(tokenFile)
     } catch (error) {
       // eslint-disable-next-line no-console
       console.error(`Invalid token file: ${file}`, error)
+    }
+    // validate token $type property
+    const typeValidationErrors = validateTokenWithSchema(file, tokenJson, validateType)
+    if (typeValidationErrors) {
+      failed.push(typeValidationErrors)
+      // abort file validation if invalid $types found
+      continue
+    }
+    // validate tokens
+    const tokenValidationErrors = validateTokenWithSchema(file, tokenJson, designToken)
+    if (tokenValidationErrors) {
+      failed.push(tokenValidationErrors)
     }
   }
 
