@@ -45,7 +45,13 @@
       },
       "paddingBlock": {
         "$value": "2px",
-        "$type": "dimension"
+        "$type": "dimension",
+        "$extensions": {
+          "org.primer.figma": {
+            "collection": "functional/size",
+            "scopes": ["gap"]
+          }
+        }
       },
       "paddingInline": {
         "condensed": {
@@ -113,7 +119,13 @@
       },
       "paddingBlock": {
         "$value": "{base.size.4}",
-        "$type": "dimension"
+        "$type": "dimension",
+        "$extensions": {
+          "org.primer.figma": {
+            "collection": "functional/size",
+            "scopes": ["gap"]
+          }
+        }
       },
       "paddingInline": {
         "condensed": {
@@ -171,7 +183,13 @@
       },
       "paddingBlock": {
         "$value": "6px",
-        "$type": "dimension"
+        "$type": "dimension",
+        "$extensions": {
+          "org.primer.figma": {
+            "collection": "functional/size",
+            "scopes": ["gap"]
+          }
+        }
       },
       "paddingInline": {
         "condensed": {
@@ -239,7 +257,13 @@
       },
       "paddingBlock": {
         "$value": "10px",
-        "$type": "dimension"
+        "$type": "dimension",
+        "$extensions": {
+          "org.primer.figma": {
+            "collection": "functional/size",
+            "scopes": ["gap"]
+          }
+        }
       },
       "paddingInline": {
         "normal": {
@@ -297,7 +321,13 @@
       },
       "paddingBlock": {
         "$value": "14px",
-        "$type": "dimension"
+        "$type": "dimension",
+        "$extensions": {
+          "org.primer.figma": {
+            "collection": "functional/size",
+            "scopes": ["gap"]
+          }
+        }
       },
       "paddingInline": {
         "normal": {
