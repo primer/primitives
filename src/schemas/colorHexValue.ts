@@ -11,7 +11,7 @@ export const colorHexValue = z.string().refine(
   color => colorHexRegex.test(color),
   color => ({
     message: schemaErrorMessage(
-      `Invalid color: ${color}`,
+      `Invalid color: "${color}"`,
       'Color must be a hex string or a reference to a color token.',
     ),
   }),

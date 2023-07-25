@@ -3,7 +3,6 @@ import {fromZodError} from 'zod-validation-error'
 
 export type validationErrors = {
   fileName: string
-  errorMessage: string
   errorsByPath: Record<string, ZodIssue[]>
 }
 
@@ -18,7 +17,6 @@ export const validateTokenWithSchema = (
   if (!validateTypes.success) {
     return {
       fileName,
-      errorMessage: fromZodError(validateTypes.error, {prefix: '', prefixSeparator: '- '}).message.replace(/;/g, '\n-'),
       errorsByPath: fromZodError(validateTypes.error).details.reduce((acc, item) => {
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
