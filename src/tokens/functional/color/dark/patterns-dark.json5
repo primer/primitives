@@ -1701,42 +1701,6 @@
         alpha: 0.4,
       },
     },
-    inverse: {
-      bgColor: {
-        $value: '{base.color.white}',
-        $type: 'color',
-      },
-      fgColor: {
-        default: {
-          $value: '{base.color.gray.9}',
-          $type: 'color',
-        },
-        link: {
-          $value: '{overlay.inverse.fgColor.accent}',
-          $type: 'color',
-        },
-        accent: {
-          $value: '{base.color.blue.5}',
-          $type: 'color',
-        },
-        success: {
-          $value: '{base.color.green.5}',
-          $type: 'color',
-        },
-        attention: {
-          $value: '{base.color.yellow.5}',
-          $type: 'color',
-        },
-        danger: {
-          $value: '{base.color.red.5}',
-          $type: 'color',
-          mix: {
-            color: '{base.color.red.4}',
-            weight: 0.05,
-          },
-        },
-      },
-    },
   },
   selectMenu: {
     borderColor: {

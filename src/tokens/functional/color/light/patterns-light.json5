@@ -826,7 +826,7 @@
               collection: 'pattern/mode',
               mode: 'light',
               scopes: ['borderColor'],
-            }
+            },
           },
         },
       },
@@ -1699,39 +1699,6 @@
           },
         },
         alpha: 0.2,
-      },
-    },
-    inverse: {
-      bgColor: {
-        $value: '{base.color.gray.9}',
-        $type: 'color',
-      },
-      fgColor: {
-        default: {
-          $value: '{base.color.gray.0}',
-          $type: 'color',
-        },
-        link: {
-          $value: '{overlay.inverse.fgColor.accent}',
-          $type: 'color',
-        },
-        accent: {
-          $value: '{base.color.blue.3}',
-          $type: 'color',
-        },
-        success: {
-          $value: '{base.color.green.3}',
-          $type: 'color',
-        },
-        attention: {
-          $value: '{base.color.yellow.3}',
-          $type: 'color',
-        },
-        danger: {
-          $value: '{base.color.red.4}',
-          $type: 'color',
-          mix: null,
-        },
       },
     },
   },

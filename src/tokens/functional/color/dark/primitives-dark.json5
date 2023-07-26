@@ -31,7 +31,7 @@
       },
     },
     onEmphasis: {
-      $value: '{base.color.white}',
+      $value: '{base.color.gray.9}',
       $type: 'color',
       $extensions: {
         'org.primer.figma': {
@@ -64,63 +64,143 @@
           },
         },
       },
-    },
-    accent: {
-      $value: '{base.color.blue.4}',
-      $type: 'color',
-      $extensions: {
-        'org.primer.figma': {
-          collection: 'mode',
-          mode: 'dark',
-          scopes: ['fgColor'],
+      onEmphasis: {
+        $value: '{}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'dark',
+            scopes: ['fgColor'],
+          },
         },
       },
-      mix: {
-        color: '{base.color.blue.5}',
-        weight: 0.35,
+    },
+    accent: {
+      '@': {
+        $value: '{base.color.blue.4}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'dark',
+            scopes: ['fgColor'],
+          },
+        },
+        mix: {
+          color: '{base.color.blue.5}',
+          weight: 0.35,
+        },
+      },
+      onEmphasis: {
+        $value: '{base.color.blue.5}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'dark',
+            scopes: ['fgColor'],
+          },
+        },
       },
     },
     success: {
-      $value: '{base.color.green.3}',
-      $type: 'color',
-      $extensions: {
-        'org.primer.figma': {
-          collection: 'mode',
-          mode: 'dark',
-          scopes: ['fgColor'],
+      '@': {
+        $value: '{base.color.green.3}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'dark',
+            scopes: ['fgColor'],
+          },
+        },
+      },
+      onEmphasis: {
+        $value: '{base.color.green.5}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'dark',
+            scopes: ['fgColor'],
+          },
         },
       },
     },
     attention: {
-      $value: '{base.color.yellow.3}',
-      $type: 'color',
-      $extensions: {
-        'org.primer.figma': {
-          collection: 'mode',
-          mode: 'dark',
-          scopes: ['fgColor'],
+      '@': {
+        $value: '{base.color.yellow.3}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'dark',
+            scopes: ['fgColor'],
+          },
+        },
+      },
+      onEmphasis: {
+        $value: '{base.color.yellow.5}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'dark',
+            scopes: ['fgColor'],
+          },
         },
       },
     },
     severe: {
-      $value: '{base.color.orange.4}',
-      $type: 'color',
-      $extensions: {
-        'org.primer.figma': {
-          collection: 'mode',
-          mode: 'dark',
-          scopes: ['fgColor'],
+      '@': {
+        $value: '{base.color.orange.4}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'dark',
+            scopes: ['fgColor'],
+          },
+        },
+      },
+      onEmphasis: {
+        $value: '{base.color.yellow.5}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'dark',
+            scopes: ['fgColor'],
+          },
         },
       },
     },
     danger: {
-      $value: '{base.color.red.4}',
-      $type: 'color',
-      $extensions: {
-        'org.primer.figma': {
-          collection: 'mode',
-          mode: 'dark',
-          scopes: ['fgColor'],
+      '@': {
+        $value: '{base.color.red.4}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'dark',
+            scopes: ['fgColor'],
+          },
+        },
+      },
+      onEmphasis: {
+        $value: '{base.color.red.5}',
+        $type: 'color',
+        mix: {
+          color: '{base.color.red.4}',
+          weight: 0.05,
+        },
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'dark',
+            scopes: ['fgColor'],
+          },
         },
       },
     },
@@ -204,7 +284,7 @@
       },
     },
     disabled: {
-      $value: '{base.color.gray.8}',
+      $value: '{base.color.white}',
       $type: 'color',
       $extensions: {
         'org.primer.figma': {

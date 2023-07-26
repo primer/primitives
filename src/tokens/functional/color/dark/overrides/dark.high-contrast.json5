@@ -15,10 +15,34 @@
       mix: null,
       alpha: 1,
     },
+    accent: {
+      onEmphasis: {
+        $value: '{base.color.blue.8}',
+        $type: 'color',
+      },
+    },
+    success: {
+      onEmphasis: {
+        $value: '{base.color.green.8}',
+        $type: 'color',
+      },
+    },
+    attention: {
+      onEmphasis: {
+        $value: '{base.color.yellow.8}',
+        $type: 'color',
+      },
+    },
+    danger: {
+      onEmphasis: {
+        $value: '{base.color.red.8}',
+        $type: 'color',
+      },
+    },
   },
   bgColor: {
     emphasis: {
-      $value: '{base.color.gray.0}',
+      $value: '{base.color.white}',
       $type: 'color',
     },
     neutral: {
@@ -344,28 +368,6 @@
         $value: '{base.color.blue.4}',
         $type: 'color',
         alpha: 0.4,
-      },
-    },
-  },
-  overlay: {
-    inverse: {
-      fgColor: {
-        accent: {
-          $value: '{base.color.blue.8}',
-          $type: 'color',
-        },
-        success: {
-          $value: '{base.color.green.8}',
-          $type: 'color',
-        },
-        attention: {
-          $value: '{base.color.yellow.8}',
-          $type: 'color',
-        },
-        danger: {
-          $value: '{base.color.red.8}',
-          $type: 'color',
-        },
       },
     },
   },
