@@ -1,11 +1,21 @@
-import {toHex} from 'color2k'
+import {mix, toHex} from 'color2k'
 import {isColor} from '~/src/filters'
 import type StyleDictionary from 'style-dictionary'
 import {getTokenValue} from './utilities/getTokenValue'
+import {rgbaFloatToHex} from './utilities/rgbaFloatToHex'
 
-const toRgbaFloat = (color: string, alpha?: number) => {
+const toRgbaFloat = (token: StyleDictionary.TransformedToken, alpha?: number) => {
+  let tokenValue = getTokenValue(token)
+  let tokenMixColor = token.mix?.color
   // get hex value from color string
-  const hex = toHex(color)
+  if (isRgbaFloat(tokenValue)) {
+    tokenValue = rgbaFloatToHex(tokenValue, false)
+  }
+  if (tokenMixColor && isRgbaFloat(tokenMixColor)) {
+    tokenMixColor = rgbaFloatToHex(tokenMixColor, false)
+  }
+  // mix color with mix color and weight
+  const hex = toHex(mix(tokenValue, tokenMixColor || tokenValue, token.mix?.weight || 0))
   // retrieve spots from hex value (hex 3, hex 6 or hex 8)
   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})?$/i.exec(hex) ?? ['00', '00', '00']
   // return parsed rgba float object using alpha value from token, from hex code or defaults to 1
@@ -26,7 +36,7 @@ const isRgbaFloat = (value: unknown) => {
     'r' in value &&
     'g' in value &&
     'b' in value &&
-    sum(Object.values(value)) < 5
+    sum([value.r, value.g, value.b]) < 5
   ) {
     return true
   }
@@ -45,8 +55,8 @@ export const colorToRgbaFloat: StyleDictionary.Transform = {
   matcher: isColor,
   transformer: (token: StyleDictionary.TransformedToken) => {
     // skip if value is already rgb float
-    if (isRgbaFloat(token.value)) return token.value
+    if (isRgbaFloat(token.value) && !('mix' in token) && !('alpha' in token)) return token.value
     // convert hex or rgb values to rgba float
-    return toRgbaFloat(getTokenValue(token), token.alpha)
+    return toRgbaFloat(token, token.alpha)
   },
 }

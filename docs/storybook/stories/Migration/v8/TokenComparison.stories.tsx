@@ -17,6 +17,7 @@ import {DataTable, Table} from '@primer/react/drafts'
 
 export default {
   title: 'Migration/Tables',
+  tags: ['excludeSnapshot'],
 }
 
 export const Primitives = () => {

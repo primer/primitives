@@ -3,10 +3,24 @@
     bgColor: {
       $value: '{base.color.white}',
       $type: 'color',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'pattern/mode',
+          mode: 'light',
+          scopes: ['bgColor'],
+        },
+      },
     },
     borderColor: {
       $value: '{borderColor.default}',
       $type: 'color',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'pattern/mode',
+          mode: 'light',
+          scopes: ['borderColor'],
+        },
+      },
     },
   },
   avatarStack: {
@@ -15,10 +29,24 @@
         default: {
           $value: '{base.color.gray.3}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['bgColor'],
+            },
+          },
         },
         muted: {
           $value: '{base.color.gray.2}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['bgColor'],
+            },
+          },
         },
       },
     },
@@ -28,10 +56,24 @@
       rest: {
         $value: '{base.color.gray.0}',
         $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'pattern/mode',
+            mode: 'light',
+            scopes: ['bgColor'],
+          },
+        },
       },
       hover: {
         $value: '{base.color.gray.0}',
         $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'pattern/mode',
+            mode: 'light',
+            scopes: ['bgColor'],
+          },
+        },
         mix: {
           color: '{base.color.gray.2}',
           weight: 0.2,
@@ -40,6 +82,13 @@
       active: {
         $value: '{base.color.gray.0}',
         $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'pattern/mode',
+            mode: 'light',
+            scopes: ['bgColor'],
+          },
+        },
         mix: {
           color: '{base.color.gray.2}',
           weight: 0.4,
@@ -48,34 +97,83 @@
       disabled: {
         $value: '{bgColor.disabled}',
         $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'pattern/mode',
+            mode: 'light',
+            scopes: ['bgColor'],
+          },
+        },
       },
       selected: {
         $value: '{base.color.gray.0}',
         $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'pattern/mode',
+            mode: 'light',
+            scopes: ['bgColor'],
+          },
+        },
       },
     },
     fgColor: {
       rest: {
         $value: '{base.color.gray.9}',
         $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'pattern/mode',
+            mode: 'light',
+            scopes: ['fgColor'],
+          },
+        },
       },
       placeholder: {
         $value: '{base.color.gray.5}',
         $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'pattern/mode',
+            mode: 'light',
+            scopes: ['fgColor'],
+          },
+        },
       },
       disabled: {
         $value: '{fgColor.disabled}',
         $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'pattern/mode',
+            mode: 'light',
+            scopes: ['fgColor'],
+          },
+        },
       },
     },
     borderColor: {
       rest: {
         $value: '{borderColor.default}',
         $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'pattern/mode',
+            mode: 'light',
+            scopes: ['borderColor'],
+          },
+        },
       },
       emphasis: {
         $value: '{base.color.gray.4}',
         $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'pattern/mode',
+            mode: 'light',
+            scopes: ['borderColor'],
+          },
+        },
         mix: {
           color: '{base.color.gray.5}',
           weight: 0.2,
@@ -84,28 +182,70 @@
       disabled: {
         $value: '{borderColor.disabled}',
         $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'pattern/mode',
+            mode: 'light',
+            scopes: ['borderColor'],
+          },
+        },
       },
       selected: {
         $value: '{base.color.gray.0}',
         $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'pattern/mode',
+            mode: 'light',
+            scopes: ['borderColor'],
+          },
+        },
       },
       success: {
         $value: '{borderColor.success.emphasis}',
         $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'pattern/mode',
+            mode: 'light',
+            scopes: ['borderColor'],
+          },
+        },
       },
       danger: {
         $value: '{borderColor.danger.emphasis}',
         $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'pattern/mode',
+            mode: 'light',
+            scopes: ['borderColor'],
+          },
+        },
       },
       warning: {
         $value: '{borderColor.attention.emphasis}',
         $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'pattern/mode',
+            mode: 'light',
+            scopes: ['borderColor'],
+          },
+        },
       },
     },
     iconColor: {
       rest: {
         $value: '{fgColor.muted}',
         $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'pattern/mode',
+            mode: 'light',
+            scopes: ['fgColor'],
+          },
+        },
       },
     },
     transparent: {
@@ -113,38 +253,94 @@
         rest: {
           $value: '{base.color.transparent}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['bgColor'],
+            },
+          },
         },
         hover: {
           $value: '{base.color.gray.2}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['bgColor'],
+            },
+          },
           alpha: 0.2,
         },
         active: {
           $value: '{base.color.gray.2}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['bgColor'],
+            },
+          },
           alpha: 0.4,
         },
         disabled: {
           $value: '{control.bgColor.disabled}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['bgColor'],
+            },
+          },
         },
         selected: {
           $value: '{base.color.gray.0}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['bgColor'],
+            },
+          },
         },
       },
       borderColor: {
         rest: {
           $value: '{base.color.transparent}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['borderColor'],
+            },
+          },
         },
         hover: {
           $value: '{base.color.transparent}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['borderColor'],
+            },
+          },
         },
         active: {
           $value: '{base.color.transparent}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['borderColor'],
+            },
+          },
         },
       },
     },
@@ -153,20 +349,48 @@
         rest: {
           $value: '{fgColor.danger}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['fgColor'],
+            },
+          },
         },
         hover: {
           $value: '{fgColor.danger}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['fgColor'],
+            },
+          },
         },
       },
       bgColor: {
         hover: {
           $value: '{bgColor.danger.muted}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['bgColor'],
+            },
+          },
         },
         active: {
           $value: '{bgColor.danger.muted}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['bgColor'],
+            },
+          },
           alpha: 0.4,
         },
       },
@@ -176,10 +400,24 @@
         rest: {
           $value: '{bgColor.accent.emphasis}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['bgColor'],
+            },
+          },
         },
         hover: {
           $value: '{bgColor.accent.emphasis}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['bgColor'],
+            },
+          },
           mix: {
             color: '{base.color.blue.7}',
             weight: 0.2,
@@ -188,6 +426,13 @@
         active: {
           $value: '{bgColor.accent.emphasis}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['bgColor'],
+            },
+          },
           mix: {
             color: '{base.color.blue.7}',
             weight: 0.4,
@@ -196,26 +441,61 @@
         disabled: {
           $value: '{fgColor.disabled}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['bgColor'],
+            },
+          },
         },
       },
       fgColor: {
         rest: {
           $value: '{fgColor.onEmphasis}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['fgColor'],
+            },
+          },
         },
         disabled: {
           $value: '{fgColor.onEmphasis}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['fgColor'],
+            },
+          },
         },
       },
       borderColor: {
         rest: {
           $value: '{bgColor.accent.emphasis}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['borderColor'],
+            },
+          },
         },
         hover: {
           $value: '{bgColor.accent.emphasis}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['borderColor'],
+            },
+          },
           mix: {
             color: '{base.color.blue.7}',
             weight: 0.2,
@@ -224,6 +504,13 @@
         active: {
           $value: '{bgColor.accent.emphasis}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['borderColor'],
+            },
+          },
           mix: {
             color: '{base.color.blue.7}',
             weight: 0.4,
@@ -232,6 +519,13 @@
         disabled: {
           $value: '{fgColor.disabled}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['borderColor'],
+            },
+          },
         },
       },
     },
@@ -241,10 +535,24 @@
       rest: {
         $value: '{base.color.gray.1}',
         $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'pattern/mode',
+            mode: 'light',
+            scopes: ['bgColor'],
+          },
+        },
       },
       hover: {
         $value: '{base.color.gray.1}',
         $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'pattern/mode',
+            mode: 'light',
+            scopes: ['bgColor'],
+          },
+        },
         mix: {
           color: '{base.color.gray.3}',
           weight: 0.2,
@@ -253,6 +561,13 @@
       active: {
         $value: '{base.color.gray.1}',
         $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'pattern/mode',
+            mode: 'light',
+            scopes: ['bgColor'],
+          },
+        },
         mix: {
           color: '{base.color.gray.3}',
           weight: 0.4,
@@ -261,26 +576,61 @@
       disabled: {
         $value: '{fgColor.disabled}',
         $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'pattern/mode',
+            mode: 'light',
+            scopes: ['bgColor'],
+          },
+        },
       },
     },
     fgColor: {
       rest: {
         $value: '{fgColor.muted}',
         $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'pattern/mode',
+            mode: 'light',
+            scopes: ['fgColor'],
+          },
+        },
       },
       disabled: {
         $value: '{fgColor.onEmphasis}',
         $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'pattern/mode',
+            mode: 'light',
+            scopes: ['fgColor'],
+          },
+        },
       },
     },
     borderColor: {
       rest: {
         $value: '{base.color.transparent}',
         $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'pattern/mode',
+            mode: 'light',
+            scopes: ['borderColor'],
+          },
+        },
       },
       disabled: {
         $value: '{fgColor.disabled}',
         $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'pattern/mode',
+            mode: 'light',
+            scopes: ['borderColor'],
+          },
+        },
       },
     },
   },
@@ -289,28 +639,70 @@
       rest: {
         $value: '{base.color.white}',
         $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'pattern/mode',
+            mode: 'light',
+            scopes: ['bgColor'],
+          },
+        },
       },
       disabled: {
         $value: '{control.bgColor.disabled}',
         $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'pattern/mode',
+            mode: 'light',
+            scopes: ['bgColor'],
+          },
+        },
       },
       checked: {
         $value: '{base.color.white}',
         $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'pattern/mode',
+            mode: 'light',
+            scopes: ['bgColor'],
+          },
+        },
       },
     },
     borderColor: {
       rest: {
         $value: '{control.borderColor.emphasis}',
         $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'pattern/mode',
+            mode: 'light',
+            scopes: ['borderColor'],
+          },
+        },
       },
       disabled: {
         $value: '{control.bgColor.disabled}',
         $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'pattern/mode',
+            mode: 'light',
+            scopes: ['borderColor'],
+          },
+        },
       },
       checked: {
         $value: '{control.checked.bgColor.rest}',
         $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'pattern/mode',
+            mode: 'light',
+            scopes: ['borderColor'],
+          },
+        },
       },
     },
   },
@@ -318,6 +710,13 @@
     borderColor: {
       $value: '{base.color.transparent}',
       $type: 'color',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'pattern/mode',
+          mode: 'light',
+          scopes: ['borderColor'],
+        },
+      },
     },
   },
   button: {
@@ -326,24 +725,59 @@
         rest: {
           $value: '{control.fgColor.rest}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['fgColor'],
+            },
+          },
         },
       },
       bgColor: {
         rest: {
           $value: '{control.bgColor.rest}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['bgColor'],
+            },
+          },
         },
         hover: {
           $value: '{control.bgColor.hover}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['bgColor'],
+            },
+          },
         },
         active: {
           $value: '{control.bgColor.active}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['bgColor'],
+            },
+          },
         },
         selected: {
           $value: '{control.bgColor.active}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['bgColor'],
+            },
+          },
         },
         disabled: {
           $value: '{control.bgColor.disabled}',
@@ -354,18 +788,46 @@
         rest: {
           $value: '{borderColor.default}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['borderColor'],
+            },
+          },
         },
         hover: {
           $value: '{borderColor.default}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['borderColor'],
+            },
+          },
         },
         active: {
           $value: '{borderColor.default}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['borderColor'],
+            },
+          },
         },
         disabled: {
           $value: '{control.borderColor.disabled}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['borderColor'],
+            }
+          },
         },
       },
     },
@@ -374,10 +836,24 @@
         rest: {
           $value: '{base.color.white}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['fgColor'],
+            },
+          },
         },
         disabled: {
           $value: '{base.color.white}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['fgColor'],
+            },
+          },
           alpha: 0.8,
         },
       },
@@ -385,6 +861,13 @@
         rest: {
           $value: '{base.color.white}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['fgColor'],
+            },
+          },
           alpha: 0.8,
         },
       },
@@ -392,10 +875,24 @@
         rest: {
           $value: '{bgColor.success.emphasis}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['bgColor'],
+            },
+          },
         },
         hover: {
           $value: '{bgColor.success.emphasis}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['bgColor'],
+            },
+          },
           mix: {
             color: '{base.color.green.6}',
             weight: 0.2,
@@ -404,6 +901,13 @@
         active: {
           $value: '{bgColor.success.emphasis}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['bgColor'],
+            },
+          },
           mix: {
             color: '{base.color.green.6}',
             weight: 0.4,
@@ -412,6 +916,13 @@
         disabled: {
           $value: '{base.color.green.4}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['bgColor'],
+            },
+          },
           mix: {
             color: '{base.color.green.0}',
             weight: 0.6,
@@ -422,15 +933,36 @@
         rest: {
           $value: '{base.color.black}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['borderColor'],
+            },
+          },
           alpha: 0.15,
         },
         hover: {
           $value: '{button.primary.borderColor.rest}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['borderColor'],
+            },
+          },
         },
         disabled: {
           $value: '{button.primary.bgColor.disabled}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['borderColor'],
+            },
+          },
         },
       },
     },
@@ -439,46 +971,116 @@
         rest: {
           $value: '{fgColor.accent}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['fgColor'],
+            },
+          },
         },
         hover: {
           $value: '{fgColor.accent}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['fgColor'],
+            },
+          },
         },
         disabled: {
           $value: '{control.fgColor.disabled}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['fgColor'],
+            },
+          },
         },
       },
       bgColor: {
         rest: {
           $value: '{control.transparent.bgColor.rest}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['bgColor'],
+            },
+          },
         },
         hover: {
           $value: '{control.transparent.bgColor.hover}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['bgColor'],
+            },
+          },
         },
         active: {
           $value: '{control.transparent.bgColor.active}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['bgColor'],
+            },
+          },
         },
         disabled: {
           $value: '{control.bgColor.disabled}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['bgColor'],
+            },
+          },
         },
       },
       borderColor: {
         rest: {
           $value: '{control.transparent.borderColor.rest}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['borderColor'],
+            },
+          },
         },
         hover: {
           $value: '{control.transparent.borderColor.hover}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['borderColor'],
+            },
+          },
         },
         disabled: {
           $value: '{control.borderColor.disabled}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['borderColor'],
+            },
+          },
         },
       },
     },
@@ -487,18 +1089,46 @@
         rest: {
           $value: '{fgColor.accent}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['fgColor'],
+            },
+          },
         },
         hover: {
           $value: '{base.color.white}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['fgColor'],
+            },
+          },
         },
         active: {
           $value: '{base.color.white}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['fgColor'],
+            },
+          },
         },
         disabled: {
           $value: '{fgColor.accent}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['fgColor'],
+            },
+          },
           alpha: 0.5,
         },
       },
@@ -506,14 +1136,35 @@
         rest: {
           $value: '{control.bgColor.rest}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['bgColor'],
+            },
+          },
         },
         hover: {
           $value: '{bgColor.accent.emphasis}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['bgColor'],
+            },
+          },
         },
         active: {
           $value: '{bgColor.accent.emphasis}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['bgColor'],
+            },
+          },
           mix: {
             color: '{base.color.blue.7}',
             weight: 0.4,
@@ -522,16 +1173,37 @@
         disabled: {
           $value: '{base.color.gray.0}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['bgColor'],
+            },
+          },
         },
       },
       borderColor: {
         hover: {
           $value: '{borderColor.default}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['borderColor'],
+            },
+          },
         },
         active: {
           $value: '{borderColor.default}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['borderColor'],
+            },
+          },
         },
       },
     },
@@ -540,18 +1212,46 @@
         rest: {
           $value: '{fgColor.danger}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['fgColor'],
+            },
+          },
         },
         hover: {
           $value: '{base.color.white}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['fgColor'],
+            },
+          },
         },
         active: {
           $value: '{base.color.white}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['fgColor'],
+            },
+          },
         },
         disabled: {
           $value: '{fgColor.danger}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['fgColor'],
+            },
+          },
           alpha: 0.5,
         },
       },
@@ -559,24 +1259,59 @@
         rest: {
           $value: '{fgColor.danger}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['fgColor'],
+            },
+          },
         },
         hover: {
           $value: '{base.color.white}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['fgColor'],
+            },
+          },
         },
       },
       bgColor: {
         rest: {
           $value: '{control.bgColor.rest}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['bgColor'],
+            },
+          },
         },
         hover: {
           $value: '{base.color.red.6}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['bgColor'],
+            },
+          },
         },
         active: {
           $value: '{base.color.red.6}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['bgColor'],
+            },
+          },
           mix: {
             color: '{base.color.red.8}',
             weight: 0.4,
@@ -585,20 +1320,48 @@
         disabled: {
           $value: '{control.bgColor.disabled}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['bgColor'],
+            },
+          },
         },
       },
       borderColor: {
         rest: {
           $value: '{borderColor.default}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['borderColor'],
+            },
+          },
         },
         hover: {
           $value: '{borderColor.default}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['borderColor'],
+            },
+          },
         },
         active: {
           $value: '{borderColor.default}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['borderColor'],
+            },
+          },
         },
       },
     },
@@ -609,6 +1372,13 @@
         rest: {
           $value: '{bgColor.neutral.muted}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['bgColor'],
+            },
+          },
           alpha: 1,
         },
       },
@@ -618,6 +1388,13 @@
         rest: {
           $value: '{bgColor.neutral.muted}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['bgColor'],
+            },
+          },
           alpha: 1,
         },
       },
@@ -627,6 +1404,13 @@
         rest: {
           $value: '{base.color.green.9}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['bgColor'],
+            },
+          },
           alpha: 0.2,
         },
       },
@@ -636,16 +1420,37 @@
         rest: {
           $value: '{bgColor.accent.emphasis}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['bgColor'],
+            },
+          },
           alpha: 0.1,
         },
         hover: {
           $value: '{base.color.white}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['bgColor'],
+            },
+          },
           alpha: 0.2,
         },
         disabled: {
           $value: '{bgColor.accent.emphasis}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['bgColor'],
+            },
+          },
           alpha: 0.05,
         },
       },
@@ -653,14 +1458,35 @@
         rest: {
           $value: '{base.color.blue.6}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['fgColor'],
+            },
+          },
         },
         hover: {
           $value: '{base.color.white}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['fgColor'],
+            },
+          },
         },
         disabled: {
           $value: '{fgColor.accent}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['fgColor'],
+            },
+          },
           alpha: 0.5,
         },
       },
@@ -670,16 +1496,37 @@
         hover: {
           $value: '{base.color.white}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['bgColor'],
+            },
+          },
           alpha: 0.2,
         },
         disabled: {
           $value: '{bgColor.danger.emphasis}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['bgColor'],
+            },
+          },
           alpha: 0.05,
         },
         rest: {
           $value: '{bgColor.danger.emphasis}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['bgColor'],
+            },
+          },
           alpha: 0.1,
         },
       },
@@ -687,6 +1534,13 @@
         rest: {
           $value: '{base.color.red.5}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['fgColor'],
+            },
+          },
           mix: {
             color: '{base.color.red.6}',
             weight: 0.3,
@@ -695,10 +1549,24 @@
         hover: {
           $value: '{base.color.white}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['fgColor'],
+            },
+          },
         },
         disabled: {
           $value: '{fgColor.danger}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['fgColor'],
+            },
+          },
           alpha: 0.5,
         },
       },
@@ -708,28 +1576,63 @@
     outlineColor: {
       $value: '{borderColor.accent.emphasis}',
       $type: 'color',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'pattern/mode',
+          mode: 'light',
+          scopes: ['borderColor'],
+        },
+      },
     },
   },
   header: {
     bgColor: {
       $value: '{base.color.gray.9}',
       $type: 'color',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'pattern/mode',
+          mode: 'light',
+          scopes: ['bgColor'],
+        },
+      },
     },
     fgColor: {
       default: {
         $value: '{base.color.white}',
         $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'pattern/mode',
+            mode: 'light',
+            scopes: ['fgColor'],
+          },
+        },
         alpha: 0.7,
       },
       logo: {
         $value: '{base.color.white}',
         $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'pattern/mode',
+            mode: 'light',
+            scopes: ['fgColor'],
+          },
+        },
       },
     },
     borderColor: {
       divider: {
         $value: '{base.color.gray.6}',
         $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'pattern/mode',
+            mode: 'light',
+            scopes: ['borderColor'],
+          },
+        },
       },
     },
   },
@@ -737,10 +1640,24 @@
     bgColor: {
       $value: '{base.color.gray.9}',
       $type: 'color',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'pattern/mode',
+          mode: 'light',
+          scopes: ['bgColor'],
+        },
+      },
     },
     borderColor: {
       $value: '{base.color.gray.6}',
       $type: 'color',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'pattern/mode',
+          mode: 'light',
+          scopes: ['borderColor'],
+        },
+      },
     },
   },
   menu: {
@@ -748,6 +1665,13 @@
       active: {
         $value: '{base.color.transparent}',
         $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'pattern/mode',
+            mode: 'light',
+            scopes: ['bgColor'],
+          },
+        },
       },
     },
   },
@@ -755,11 +1679,25 @@
     bgColor: {
       $value: '{base.color.white}',
       $type: 'color',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'pattern/mode',
+          mode: 'light',
+          scopes: ['bgColor'],
+        },
+      },
     },
     backdrop: {
       bgColor: {
         $value: '{base.color.gray.4}',
         $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'pattern/mode',
+            mode: 'light',
+            scopes: ['bgColor'],
+          },
+        },
         alpha: 0.2,
       },
     },
@@ -801,11 +1739,25 @@
     borderColor: {
       $value: '{base.color.transparent}',
       $type: 'color',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'pattern/mode',
+          mode: 'light',
+          scopes: ['borderColor'],
+        },
+      },
     },
     bgColor: {
       active: {
         $value: '{base.color.blue.1}',
         $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'pattern/mode',
+            mode: 'light',
+            scopes: ['bgColor'],
+          },
+        },
       },
     },
   },
@@ -814,6 +1766,13 @@
       selected: {
         $value: '{base.color.white}',
         $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'pattern/mode',
+            mode: 'light',
+            scopes: ['bgColor'],
+          },
+        },
       },
     },
   },
@@ -821,6 +1780,13 @@
     bgColor: {
       $value: '{base.color.gray.1}',
       $type: 'color',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'pattern/mode',
+          mode: 'light',
+          scopes: ['bgColor'],
+        },
+      },
     },
   },
   treeViewItem: {
@@ -829,6 +1795,13 @@
         rest: {
           $value: '{base.color.blue.3}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+              scopes: ['bgColor'],
+            },
+          },
         },
       },
     },
@@ -838,16 +1811,37 @@
       active: {
         $value: '{base.color.coral.3}',
         $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'pattern/mode',
+            mode: 'light',
+            scopes: ['borderColor'],
+          },
+        },
       },
       hover: {
         $value: '{borderColor.neutral.muted}',
         $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'pattern/mode',
+            mode: 'light',
+            scopes: ['borderColor'],
+          },
+        },
       },
     },
     iconColor: {
       rest: {
         $value: '{fgColor.muted}',
         $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'pattern/mode',
+            mode: 'light',
+            scopes: ['fgColor'],
+          },
+        },
       },
     },
   },

@@ -24,7 +24,8 @@
         "$type": "dimension"
       },
       "lineHeight": {
-        "$value": "calc(56/40)"
+        "$value": 1.4,
+        "$type": "number"
       },
       "weight": {
         "$value": "{base.text.weight.medium}",
@@ -58,13 +59,16 @@
       },
       "lineHeight": {
         "large": {
-          "$value": "calc(48/32)"
+          "$value": 1.5,
+          "$type": "number"
         },
         "medium": {
-          "$value": "calc(32/20)"
+          "$value": 1.6,
+          "$type": "number"
         },
         "small": {
-          "$value": "calc(24/16)"
+          "$value": 1.5,
+          "$type": "number"
         }
       },
       "weight": {
@@ -120,7 +124,8 @@
         "$type": "dimension"
       },
       "lineHeight": {
-        "$value": "calc(32/20)"
+        "$value": 1.6,
+        "$type": "number"
       },
       "weight": {
         "$value": "{base.text.weight.normal}",
@@ -154,13 +159,16 @@
       },
       "lineHeight": {
         "large": {
-          "$value": "calc(24/16)"
+          "$value": 1.5,
+          "$type": "number"
         },
         "medium": {
-          "$value": "calc(20/14)"
+          "$value": 1.4285,
+          "$type": "number"
         },
         "small": {
-          "$value": "calc(20/12)"
+          "$value": 1.6666,
+          "$type": "number"
         }
       },
       "weight": {
@@ -206,7 +214,8 @@
         "$type": "dimension"
       },
       "lineHeight": {
-        "$value": "calc(16/12)"
+        "$value": 1.3333,
+        "$type": "number"
       },
       "weight": {
         "$value": "{base.text.weight.normal}",
@@ -229,10 +238,12 @@
         "$type": "dimension"
       },
       "lineHeight": {
-        "$value": "calc(20/13)"
+        "$value": 1.5385,
+        "$type": "number"
       },
       "weight": {
-        "$value": "{base.text.weight.normal}"
+        "$value": "{base.text.weight.normal}",
+        "$type": "fontWeight"
       },
       "shorthand": {
         "$value": {

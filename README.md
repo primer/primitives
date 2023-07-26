@@ -168,6 +168,32 @@ A `mix` proprty must always have a `color` and a `weight` child. `color` can be 
 }
 ```
 
+#### Extensions property
+
+According to the [w3c design token specs](https://design-tokens.github.io/community-group/format/#design-token), the [`$extensions`](https://design-tokens.github.io/community-group/format/#extensions) property is used for additional meta data.
+
+For our Figma export we use the following meta data:
+
+- `collection` the collection that the token is added to within Figma
+- `mode` the mode that the token is added to within the collection in Figma
+- `scopes` the scopes that are assigned to the token in Figma, the actual Figma compatible `scopes` are retreive from an object in the [figmaAttributes transformer](./src/transformers/figmaAttributes.ts)
+
+Code example
+
+```js
+  bgColor: {
+    $value: '{borderColor.accent.muted}',
+    $type: 'color',
+    $extensions: {
+      'org.primer.figma': {
+        collection: 'pattern/mode',
+        mode: 'light',
+        scopes: ['bgColor'],
+      },
+    },
+  }
+```
+
 ## License
 
 [MIT](./LICENSE) &copy; [GitHub](https://github.com/)

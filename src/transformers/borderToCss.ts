@@ -4,7 +4,7 @@ import type {BorderTokenValue} from '~/src/types/BorderTokenValue'
 
 /**
  * checks if all required properties exist on shadow token
- * @param object - ShadowTokenValue
+ * @param object - BorderTokenValue
  * @returns void or throws error
  */
 const checkForBorderTokenProperties = (border: BorderTokenValue) => {
