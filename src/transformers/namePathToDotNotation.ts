@@ -26,7 +26,7 @@ export const namePathToDotNotation: StyleDictionary.Transform = {
     return (
       [options?.prefix, ...token.path]
         // remove undefined if exists
-        .filter((part: unknown): part is string => typeof part === 'string')
+        .filter((part: unknown): part is string => typeof part === 'string' && part !== '@')
         .map((part: string) => camelCase(part))
         .join('.')
     )
