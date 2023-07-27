@@ -1,4 +1,56 @@
 {
+  "space": {
+    "xsmall": {
+      "$value": "{base.size.4}",
+      "$type": "dimension",
+      "$extensions": {
+        "org.primer.figma": {
+          "collection": "functional/size",
+          "scopes": ["gap"]
+        }
+      }
+    },
+    "small": {
+      "$value": "6px",
+      "$type": "dimension",
+      "$extensions": {
+        "org.primer.figma": {
+          "collection": "functional/size",
+          "scopes": ["gap"]
+        }
+      }
+    },
+    "medium": {
+      "$value": "{base.size.8}",
+      "$type": "dimension",
+      "$extensions": {
+        "org.primer.figma": {
+          "collection": "functional/size",
+          "scopes": ["gap"]
+        }
+      }
+    },
+    "large": {
+      "$value": "{base.size.12}",
+      "$type": "dimension",
+      "$extensions": {
+        "org.primer.figma": {
+          "collection": "functional/size",
+          "scopes": ["gap"]
+        }
+      }
+    },
+    "xlarge": {
+      "$value": "{base.size.16}",
+      "$type": "dimension",
+      "$extensions": {
+        "org.primer.figma": {
+          "collection": "functional/size",
+          "scopes": ["gap"]
+        }
+      }
+    }
+  },
   "control": {
     "minTarget": {
       "fine": {
@@ -370,7 +422,7 @@
         "$type": "dimension",
         "$extensions": {
           "org.primer.figma": {
-            "collection": "functional/size",
+            "collection": "pattern/size",
             "scopes": ["gap"]
           }
         }
@@ -380,7 +432,7 @@
         "$type": "dimension",
         "$extensions": {
           "org.primer.figma": {
-            "collection": "functional/size",
+            "collection": "pattern/size",
             "scopes": ["gap"]
           }
         }
@@ -390,7 +442,7 @@
         "$type": "dimension",
         "$extensions": {
           "org.primer.figma": {
-            "collection": "functional/size",
+            "collection": "pattern/size",
             "scopes": ["gap"]
           }
         }
@@ -402,7 +454,7 @@
         "$type": "dimension",
         "$extensions": {
           "org.primer.figma": {
-            "collection": "functional/size",
+            "collection": "pattern/size",
             "scopes": ["gap"]
           }
         }
@@ -412,7 +464,7 @@
         "$type": "dimension",
         "$extensions": {
           "org.primer.figma": {
-            "collection": "functional/size",
+            "collection": "pattern/size",
             "scopes": ["gap"]
           }
         }
@@ -422,7 +474,7 @@
         "$type": "dimension",
         "$extensions": {
           "org.primer.figma": {
-            "collection": "functional/size",
+            "collection": "pattern/size",
             "scopes": ["gap"]
           }
         }
