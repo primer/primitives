@@ -183,16 +183,16 @@
           color: '{base.color.red.4}',
           weight: 0.05,
         },
-        onEmphasis: {
-          $value: '{base.color.red.4}',
-          $type: 'color',
-          mix: null,
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              mode: 'light',
-              scopes: ['fgColor'],
-            },
+      },
+      onEmphasis: {
+        $value: '{base.color.red.4}',
+        $type: 'color',
+        mix: null,
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'light',
+            scopes: ['fgColor'],
           },
         },
       },
