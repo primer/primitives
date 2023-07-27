@@ -155,15 +155,15 @@
             scopes: ['fgColor'],
           },
         },
-        onEmphasis: {
-          $value: '{base.color.yellow.3}',
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              mode: 'light',
-              scopes: ['fgColor'],
-            },
+      },
+      onEmphasis: {
+        $value: '{base.color.yellow.3}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'light',
+            scopes: ['fgColor'],
           },
         },
       },
@@ -198,7 +198,7 @@
       },
     },
     open: {
-      $value: '{fgColor.success}',
+      $value: '{fgColor.success.@}',
       $type: 'color',
       $extensions: {
         'org.primer.figma': {
