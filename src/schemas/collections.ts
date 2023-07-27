@@ -10,6 +10,7 @@ type Collections =
   | 'pattern/mode'
   | 'base/size'
   | 'functional/size'
+  | 'pattern/size'
 
 export const collection = (collections: Collections[]) => {
   return z.string().refine(
