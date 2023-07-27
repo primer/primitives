@@ -1,7 +1,7 @@
 import {getMockToken} from '~/src/test-utilities'
-import {namePathToKebabCase} from './namePathToKebabCase'
+import {namePathToFigma} from './namePathToFigma'
 
-describe('Transformer: namePathToKebabCase', () => {
+describe('Transformer: namePathToFigma', () => {
   it('converts path elements to dot.notation and ignores name proprty', () => {
     const input = [
       getMockToken({
@@ -21,9 +21,9 @@ describe('Transformer: namePathToKebabCase', () => {
         path: ['pathtoToken'],
       }),
     ]
-    const expectedOutput = ['path-to-token', 'PATH-tO-Token', 'path-toToken', 'pathtoToken']
+    const expectedOutput = ['path/to/token', 'PATH/tO/Token', 'path/toToken', 'pathtoToken']
 
-    expect(input.map(item => namePathToKebabCase.transformer(item, {}))).toStrictEqual(expectedOutput)
+    expect(input.map(item => namePathToFigma.transformer(item, {}))).toStrictEqual(expectedOutput)
   })
 
   it('replaces spaces, `-`, `_` and `+` within path elements and joins with camelCase, but does not change the rest of the word', () => {
@@ -41,8 +41,8 @@ describe('Transformer: namePathToKebabCase', () => {
         path: ['start', 'path+toToken'],
       }),
     ]
-    const expectedOutput = ['start-path to token', 'start-PATH_tO-Token', 'start-path+toToken']
-    expect(input.map(item => namePathToKebabCase.transformer(item, {}))).toStrictEqual(expectedOutput)
+    const expectedOutput = ['start/path to token', 'start/PATH_tO-Token', 'start/path+toToken']
+    expect(input.map(item => namePathToFigma.transformer(item, {}))).toStrictEqual(expectedOutput)
   })
 
   it('removes `@`, so we can use it for the default hack', () => {
@@ -56,8 +56,8 @@ describe('Transformer: namePathToKebabCase', () => {
         path: ['fgColor', '@', 'muted'],
       }),
     ]
-    const expectedOutput = ['fgColor-accent', 'fgColor-muted']
-    expect(input.map(item => namePathToKebabCase.transformer(item, {}))).toStrictEqual(expectedOutput)
+    const expectedOutput = ['fgColor/accent', 'fgColor/muted']
+    expect(input.map(item => namePathToFigma.transformer(item, {}))).toStrictEqual(expectedOutput)
   })
 
   it('adds prefix to token name', () => {
@@ -68,7 +68,7 @@ describe('Transformer: namePathToKebabCase', () => {
       name: 'tokenName',
       path: ['start', 'pathTo', 'token'],
     })
-    const expectedOutput = 'PRIMER-start-pathTo-token'
-    expect(namePathToKebabCase.transformer(input, platform)).toStrictEqual(expectedOutput)
+    const expectedOutput = 'PRIMER/start/pathTo/token'
+    expect(namePathToFigma.transformer(input, platform)).toStrictEqual(expectedOutput)
   })
 })
