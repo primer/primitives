@@ -50,7 +50,7 @@
     },
     link: {
       '@': {
-        $value: '{fgColor.accent}',
+        $value: '{fgColor.accent.@}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -209,7 +209,7 @@
       },
     },
     closed: {
-      $value: '{fgColor.danger}',
+      $value: '{fgColor.danger.@}',
       $type: 'color',
       $extensions: {
         'org.primer.figma': {

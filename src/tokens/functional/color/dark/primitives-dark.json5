@@ -54,7 +54,7 @@
     },
     link: {
       '@': {
-        $value: '{fgColor.accent}',
+        $value: '{fgColor.accent.@}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
