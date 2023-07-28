@@ -39,7 +39,7 @@ jobs:
             let body = '## Design Token JSON errors:\n\n' +
               errors.map(file => 
                 `<details>` +
-                `<summary><h3>${file.fileName} (${file.errors.length} errors)</h3></summary>\n` +
+                `<summary><h3>${file.fileName} (${Object.entries(file.errorsByPath).reduce((acc, [path, errors]) => acc + errors.length, 0)} errors)</h3></summary>\n` +
                 "  \n" +
                 "  | Path | Error | Code |\n" +
                 "  | ---- | ------ | ------- |\n" +
