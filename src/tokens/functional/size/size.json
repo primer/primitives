@@ -1,5 +1,15 @@
 {
   "space": {
+    "xxsmall": {
+      "$value": "2px",
+      "$type": "dimension",
+      "$extensions": {
+        "org.primer.figma": {
+          "collection": "functional/size",
+          "scopes": ["gap"]
+        }
+      }
+    },
     "xsmall": {
       "$value": "{base.size.4}",
       "$type": "dimension",
