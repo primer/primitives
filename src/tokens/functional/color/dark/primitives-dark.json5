@@ -192,6 +192,17 @@
         },
       },
     },
+    inset: {
+      $value: '{base.color.black}',
+      $type: 'color',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'mode',
+          mode: 'dark',
+          scopes: ['bgColor'],
+        },
+      },
+    },
     emphasis: {
       $value: '{base.color.gray.4}',
       $type: 'color',
