@@ -10,7 +10,7 @@ type FigmaVariableScope =
   | 'FRAME_FILL'
   | 'SHAPE_FILL'
   | 'TEXT_FILL'
-  | 'STROKE'
+  | 'STROKE_COLOR'
 
 const figmaScopes: Record<string, FigmaVariableScope[]> = {
   all: ['ALL_SCOPES'],
@@ -19,7 +19,7 @@ const figmaScopes: Record<string, FigmaVariableScope[]> = {
   gap: ['GAP'],
   bgColor: ['FRAME_FILL', 'SHAPE_FILL'],
   fgColor: ['TEXT_FILL', 'SHAPE_FILL'],
-  borderColor: ['STROKE'],
+  borderColor: ['STROKE_COLOR'],
 }
 
 const getScopes = (scopes: string[] | string | undefined): FigmaVariableScope[] => {
