@@ -18,7 +18,24 @@
 }
 
 /* add border to bg colors that match default bg */
-.ColorPreview:has([style='background-color: var(--bgColor-default); border: solid 1px var(--undefined);']) > div {
+.ColorPreview:has([style='background-color: var(--bgColor-default); border: solid 1px var(--undefined);']) > div,
+.ColorPreview:has([style='background-color: var(--bgColor-transparent); border: solid 1px var(--undefined);']) > div {
+  border: solid 1px var(--borderColor-default) !important;
+}
+
+[data-dark-theme='dark']
+  .ColorPreview:has([style='background-color: var(--bgColor-inset); border: solid 1px var(--undefined);'])
+  > div {
+  border: solid 1px var(--borderColor-default) !important;
+}
+
+[data-dark-theme='dark_high_contrast'],
+.ColorPreview:has([style='background-color: var(--bgColor-inset); border: solid 1px var(--undefined);']) > div {
+  border: solid 1px var(--borderColor-default) !important;
+}
+
+[data-light-theme='light_high_contrast'],
+.ColorPreview:has([style='background-color: var(--bgColor-inset); border: solid 1px var(--undefined);']) > div {
   border: solid 1px var(--borderColor-default) !important;
 }
 
