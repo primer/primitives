@@ -1701,6 +1701,30 @@
         alpha: 0.4,
       },
     },
+    inverse: {
+      bgColor: {
+        $value: '{base.color.white}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'pattern/mode',
+            mode: 'dark',
+            scopes: ['bgColor'],
+          },
+        },
+      },
+      fgColor: {
+        $value: '{base.color.gray.9}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'pattern/mode',
+            mode: 'dark',
+            scopes: ['fgColor'],
+          },
+        },
+      },
+    },
   },
   selectMenu: {
     borderColor: {

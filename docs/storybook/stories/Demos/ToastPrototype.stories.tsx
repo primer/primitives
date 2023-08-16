@@ -20,35 +20,32 @@ export const ToastPrototype = () => {
           boxShadow: 'shadow.large',
           overflow: 'hidden',
           backgroundColor: 'var(--overlay-inverse-bgColor)',
-          color: 'var(--overlay-inverse-fgColor-default)',
+          color: 'var(--fgColor-onEmphasis)',
           padding: 'var(--stack-padding-normal)',
           paddingInlineEnd: 'var(--stack-padding-condensed)',
           '& p': {
             margin: 0,
           },
         }}
-        // data-color-mode="dark"
-        // data-dark-theme="dark"
-        // data-light-theme="dark"
       >
         <Box
           sx={{
             display: 'grid',
             placeSelf: 'center',
             '&[data-variant="info"]': {
-              color: 'var(--overlay-inverse-fgColor-accent)',
+              color: 'var(--fgColor-accent-onEmphasis)',
             },
             '&[data-variant="success"]': {
-              color: 'var(--overlay-inverse-fgColor-success)',
+              color: 'var(--fgColor-success-onEmphasis)',
             },
             '&[data-variant="attention"]': {
-              color: 'var(--overlay-inverse-fgColor-attention)',
+              color: 'var(--fgColor-attention-onEmphasis)',
             },
             '&[data-variant="danger"]': {
-              color: 'var(--overlay-inverse-fgColor-danger)',
+              color: 'var(--fgColor-danger-onEmphasis)',
             },
             '&[data-variant="loading"]': {
-              color: 'var(--overlay-inverse-fgColor-default)',
+              color: 'var(--fgColor-onEmphasis)',
             },
           }}
           data-variant="info"
@@ -73,7 +70,7 @@ export const ToastPrototype = () => {
             icon={XIcon}
             variant="invisible"
             sx={{
-              color: 'var(--overlay-inverse-fgColor-default)',
+              color: 'var(--fgColor-onEmphasis)',
               '&:hover': {
                 backgroundColor: 'var(--button-invisible-bgColor-hover)',
               },
@@ -96,7 +93,7 @@ export const ToastPrototype = () => {
           boxShadow: 'shadow.large',
           overflow: 'hidden',
           backgroundColor: 'var(--overlay-inverse-bgColor)',
-          color: 'var(--overlay-inverse-fgColor-default)',
+          color: 'var(--fgColor-onEmphasis)',
           padding: 'var(--stack-padding-normal)',
           '& p': {
             margin: 0,
@@ -108,19 +105,19 @@ export const ToastPrototype = () => {
             display: 'grid',
             placeSelf: 'center',
             '&[data-variant="info"]': {
-              color: 'var(--overlay-inverse-fgColor-accent)',
+              color: 'var(--fgColor-accent-onEmphasis)',
             },
             '&[data-variant="success"]': {
-              color: 'var(--overlay-inverse-fgColor-success)',
+              color: 'var(--fgColor-success-onEmphasis)',
             },
             '&[data-variant="attention"]': {
-              color: 'var(--overlay-inverse-fgColor-attention)',
+              color: 'var(--fgColor-attention-onEmphasis)',
             },
             '&[data-variant="danger"]': {
-              color: 'var(--overlay-inverse-fgColor-danger)',
+              color: 'var(--fgColor-danger-onEmphasis)',
             },
             '&[data-variant="loading"]': {
-              color: 'var(--overlay-inverse-fgColor-default)',
+              color: 'var(--fgColor-onEmphasis)',
             },
           }}
           data-variant="info"
@@ -140,7 +137,7 @@ export const ToastPrototype = () => {
           boxShadow: 'shadow.large',
           overflow: 'hidden',
           backgroundColor: 'var(--overlay-inverse-bgColor)',
-          color: 'var(--overlay-inverse-fgColor-default)',
+          color: 'var(--fgColor-onEmphasis)',
           padding: 'var(--stack-padding-normal)',
           '& p': {
             margin: 0,
@@ -152,19 +149,19 @@ export const ToastPrototype = () => {
             display: 'grid',
             placeSelf: 'center',
             '&[data-variant="info"]': {
-              color: 'var(--overlay-inverse-fgColor-accent)',
+              color: 'var(--fgColor-accent-onEmphasis)',
             },
             '&[data-variant="success"]': {
-              color: 'var(--overlay-inverse-fgColor-success)',
+              color: 'var(--fgColor-success-onEmphasis)',
             },
             '&[data-variant="attention"]': {
-              color: 'var(--overlay-inverse-fgColor-attention)',
+              color: 'var(--fgColor-attention-onEmphasis)',
             },
             '&[data-variant="danger"]': {
-              color: 'var(--overlay-inverse-fgColor-danger)',
+              color: 'var(--fgColor-danger-onEmphasis)',
             },
             '&[data-variant="loading"]': {
-              color: 'var(--overlay-inverse-fgColor-default)',
+              color: 'var(--fgColor-onEmphasis)',
             },
           }}
           data-variant="success"
@@ -184,7 +181,7 @@ export const ToastPrototype = () => {
           boxShadow: 'shadow.large',
           overflow: 'hidden',
           backgroundColor: 'var(--overlay-inverse-bgColor)',
-          color: 'var(--overlay-inverse-fgColor-default)',
+          color: 'var(--fgColor-onEmphasis)',
           padding: 'var(--stack-padding-normal)',
           '& p': {
             margin: 0,
@@ -196,19 +193,19 @@ export const ToastPrototype = () => {
             display: 'grid',
             placeSelf: 'center',
             '&[data-variant="info"]': {
-              color: 'var(--overlay-inverse-fgColor-accent)',
+              color: 'var(--fgColor-accent-onEmphasis)',
             },
             '&[data-variant="success"]': {
-              color: 'var(--overlay-inverse-fgColor-success)',
+              color: 'var(--fgColor-success-onEmphasis)',
             },
             '&[data-variant="attention"]': {
-              color: 'var(--overlay-inverse-fgColor-attention)',
+              color: 'var(--fgColor-attention-onEmphasis)',
             },
             '&[data-variant="danger"]': {
-              color: 'var(--overlay-inverse-fgColor-danger)',
+              color: 'var(--fgColor-danger-onEmphasis)',
             },
             '&[data-variant="loading"]': {
-              color: 'var(--overlay-inverse-fgColor-default)',
+              color: 'var(--fgColor-onEmphasis)',
             },
           }}
           data-variant="attention"
@@ -228,7 +225,7 @@ export const ToastPrototype = () => {
           boxShadow: 'shadow.large',
           overflow: 'hidden',
           backgroundColor: 'var(--overlay-inverse-bgColor)',
-          color: 'var(--overlay-inverse-fgColor-default)',
+          color: 'var(--fgColor-onEmphasis)',
           padding: 'var(--stack-padding-normal)',
           '& p': {
             margin: 0,
@@ -240,19 +237,19 @@ export const ToastPrototype = () => {
             display: 'grid',
             placeSelf: 'center',
             '&[data-variant="info"]': {
-              color: 'var(--overlay-inverse-fgColor-accent)',
+              color: 'var(--fgColor-accent-onEmphasis)',
             },
             '&[data-variant="success"]': {
-              color: 'var(--overlay-inverse-fgColor-success)',
+              color: 'var(--fgColor-success-onEmphasis)',
             },
             '&[data-variant="attention"]': {
-              color: 'var(--overlay-inverse-fgColor-attention)',
+              color: 'var(--fgColor-attention-onEmphasis)',
             },
             '&[data-variant="danger"]': {
-              color: 'var(--overlay-inverse-fgColor-danger)',
+              color: 'var(--fgColor-danger-onEmphasis)',
             },
             '&[data-variant="loading"]': {
-              color: 'var(--overlay-inverse-fgColor-default)',
+              color: 'var(--fgColor-onEmphasis)',
             },
           }}
           data-variant="danger"
@@ -272,7 +269,7 @@ export const ToastPrototype = () => {
           boxShadow: 'shadow.large',
           overflow: 'hidden',
           backgroundColor: 'var(--overlay-inverse-bgColor)',
-          color: 'var(--overlay-inverse-fgColor-default)',
+          color: 'var(--fgColor-onEmphasis)',
           padding: 'var(--stack-padding-normal)',
           '& p': {
             margin: 0,
@@ -284,19 +281,19 @@ export const ToastPrototype = () => {
             display: 'grid',
             placeSelf: 'center',
             '&[data-variant="info"]': {
-              color: 'var(--overlay-inverse-fgColor-accent)',
+              color: 'var(--fgColor-accent-onEmphasis)',
             },
             '&[data-variant="success"]': {
-              color: 'var(--overlay-inverse-fgColor-success)',
+              color: 'var(--fgColor-success-onEmphasis)',
             },
             '&[data-variant="attention"]': {
-              color: 'var(--overlay-inverse-fgColor-attention)',
+              color: 'var(--fgColor-attention-onEmphasis)',
             },
             '&[data-variant="danger"]': {
-              color: 'var(--overlay-inverse-fgColor-danger)',
+              color: 'var(--fgColor-danger-onEmphasis)',
             },
             '&[data-variant="loading"]': {
-              color: 'var(--overlay-inverse-fgColor-default)',
+              color: 'var(--fgColor-onEmphasis)',
             },
           }}
           data-variant="loading"
