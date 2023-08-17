@@ -129,6 +129,7 @@ module.exports = {
             allow: ['path', 'fs', 'fs/promises'],
           },
         ],
+        'i18n-text/no-en': 0,
       },
     },
     // rules which apply only to Markdown

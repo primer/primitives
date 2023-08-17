@@ -15,6 +15,11 @@ import {
   typographyToCss,
   colorToHexMix,
   dimensionToRem,
+  dimensionToPixelUnitless,
+  colorToRgbaFloat,
+  namePathToSlashNotation,
+  figmaAttributes,
+  namePathToFigma,
 } from './transformers'
 import {
   scssMixinCssVariables,
@@ -25,8 +30,10 @@ import {
   cssThemed,
   cssCustomMedia,
   jsonOneDimensional,
+  jsonPostCssFallback,
   cssWrapMediaQuery,
   cssVariables,
+  jsonFigma,
 } from './formats'
 
 /**
@@ -89,6 +96,16 @@ StyleDictionary.registerFormat({
   formatter: jsonOneDimensional,
 })
 
+StyleDictionary.registerFormat({
+  name: 'json/postCss-fallback',
+  formatter: jsonPostCssFallback,
+})
+
+StyleDictionary.registerFormat({
+  name: 'json/figma',
+  formatter: jsonFigma,
+})
+
 /**
  * Transformers
  *
@@ -96,6 +113,11 @@ StyleDictionary.registerFormat({
 StyleDictionary.registerTransform({
   name: 'color/rgbAlpha',
   ...colorToRgbAlpha,
+})
+
+StyleDictionary.registerTransform({
+  name: 'color/rgbaFloat',
+  ...colorToRgbaFloat,
 })
 
 StyleDictionary.registerTransform({
@@ -119,13 +141,33 @@ StyleDictionary.registerTransform({
 })
 
 StyleDictionary.registerTransform({
+  name: 'dimension/pixelUnitless',
+  ...dimensionToPixelUnitless,
+})
+
+StyleDictionary.registerTransform({
+  name: 'figma/attributes',
+  ...figmaAttributes,
+})
+
+StyleDictionary.registerTransform({
   name: 'json/deprecated',
   ...jsonDeprecated,
 })
 
 StyleDictionary.registerTransform({
+  name: 'name/pathToCamelCase',
+  ...namePathToCamelCase,
+})
+
+StyleDictionary.registerTransform({
   name: 'name/pathToDotNotation',
   ...namePathToDotNotation,
+})
+
+StyleDictionary.registerTransform({
+  name: 'name/pathToFigma',
+  ...namePathToFigma,
 })
 
 StyleDictionary.registerTransform({
@@ -136,6 +178,11 @@ StyleDictionary.registerTransform({
 StyleDictionary.registerTransform({
   name: 'name/pathToKebabCase',
   ...namePathToKebabCase,
+})
+
+StyleDictionary.registerTransform({
+  name: 'name/pathToSlashNotation',
+  ...namePathToSlashNotation,
 })
 
 StyleDictionary.registerTransform({

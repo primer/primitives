@@ -17,6 +17,7 @@ import {DataTable, Table} from '@primer/react/drafts'
 
 export default {
   title: 'Migration/Tables',
+  tags: ['excludeSnapshot'],
 }
 
 export const Primitives = () => {
@@ -254,8 +255,8 @@ export const NoChange = () => {
 export const Fallbacks = () => {
   const data = Object.entries(fallbackVars).map(([key, value]) => {
     return {
-      id: key,
-      color: value,
+      id: key.replace(/^--/, ''),
+      color: value.replace(/^var\(--|\)/g, '').replace(/^--/, ''),
     }
   })
   return (

@@ -9,6 +9,9 @@ const config: StorybookConfig = {
     'storybook-addon-rem',
     'storybook-addon-paddings',
   ],
+  features: {
+    buildStoriesJson: true,
+  },
   framework: {
     name: '@storybook/react-webpack5',
     options: {},

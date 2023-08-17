@@ -1,39 +1,74 @@
 {
   "boxShadow": {
     "thin": {
-      "value": "inset 0 0 0 {borderWidth.thin}",
-      "description": "Thin shadow for borders"
+      "$value": "inset 0 0 0 {borderWidth.thin}",
+      "$description": "Thin shadow for borders",
+      "$type": "string"
     },
     "thick": {
-      "value": "inset 0 0 0 {borderWidth.thick}"
+      "$value": "inset 0 0 0 {borderWidth.thick}",
+      "$type": "string"
     },
     "thicker": {
-      "value": "inset 0 0 0 {borderWidth.thicker}"
+      "$value": "inset 0 0 0 {borderWidth.thicker}",
+      "$type": "string"
     }
   },
   "borderWidth": {
     "thin": {
-      "value": "max(1px, 0.0625rem)"
+      "$value": "max(1px, 0.0625rem)",
+      "$type": "string"
     },
     "thick": {
-      "value": "max(2px, 0.125rem)"
+      "$value": "max(2px, 0.125rem)",
+      "$type": "string"
     },
     "thicker": {
-      "value": "max(4px, 0.25rem)"
+      "$value": "max(4px, 0.25rem)",
+      "$type": "string"
     }
   },
   "borderRadius": {
     "small": {
-      "value": "3px"
+      "$value": "3px",
+      "$type": "dimension",
+      "$extensions": {
+        "org.primer.figma": {
+          "collection": "functional/size",
+          "scopes": ["radius"]
+        }
+      }
     },
     "medium": {
-      "value": "6px"
+      "$value": "6px",
+      "$type": "dimension",
+      "$extensions": {
+        "org.primer.figma": {
+          "collection": "functional/size",
+          "scopes": ["radius"]
+        }
+      }
     },
     "large": {
-      "value": "12px"
+      "$value": "12px",
+      "$type": "dimension",
+      "$extensions": {
+        "org.primer.figma": {
+          "collection": "functional/size",
+          "scopes": ["radius"]
+        }
+      }
     },
     "full": {
-      "value": "100vh"
+      "$value": "9999px",
+      "$type": "dimension",
+      "$description": "Use this border radius for pill shaped elements",
+      "$extensions": {
+        "org.primer.figma": {
+          "collection": "functional/size",
+          "scopes": ["radius"]
+        }
+      }
     }
   },
   "outline": {

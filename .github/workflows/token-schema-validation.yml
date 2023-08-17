@@ -1,0 +1,94 @@
+name: Design Token Schema Validation
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  changes:
+    uses: ./.github/workflows/hasChanged.yml
+
+  build:
+    needs: changes
+    if: needs.changes.outputs.tokens == 'true'
+    name: Validate Design Tokens against Schema
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund --include=dev --ignore-scripts
+
+      - name: Validate tokens
+        run: npm run lint:tokens -- --outFile=tokenErrors.json
+
+      - name: Comment on PR
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const errors = require('./tokenErrors.json')
+            // prepare comment body
+            let body = '## Design Token JSON errors:\n\n' +
+              errors.map(file => 
+                `<details>` +
+                `<summary><h3>${file.fileName} (${Object.entries(file.errorsByPath).reduce((acc, [path, errors]) => acc + errors.length, 0)} errors)</h3></summary>\n` +
+                "  \n" +
+                "  | Path | Error | Code |\n" +
+                "  | ---- | ------ | ------- |\n" +
+                Object.entries(file.errorsByPath).map(([path, errors]) => {
+                  return errors.map((error, index) => {
+                    return ` | ${index === 0 ? `**${path}**` : ""} | ${error.message} | ${error.code} |`
+                  }).join('\n')
+                }).join('\n') +
+                '\n</details>'
+              ).join('\n')
+
+            // get list of all comments
+            const {data: comments} = await github.rest.issues.listComments({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo
+            });
+
+            // get comment if exists
+            const existingComment = comments.filter(comment => comment.body.includes('## Design Token JSON errors:'));
+            // if token issue exists, update it
+            if(existingComment.length > 0) {
+              if (errors.length > 0) {
+                await github.rest.issues.updateComment({
+                  comment_id: existingComment[0].id,
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  body
+                })
+              } else {
+                await github.rest.issues.deleteComment({
+                  comment_id: existingComment[0].id,
+                  owner: context.repo.owner,
+                  repo: context.repo.repo
+                })
+              }
+            }
+
+            // if comment does not exist, create it
+            else if (errors.length > 0) {
+              await github.rest.issues.createComment({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body
+              })
+            }
+
+            // fail action on error
+            if (errors.length > 0) {
+              core.setFailed(`Errors found in ${errors.length} files. Check "Validate tokens" step for details."`);
+            }

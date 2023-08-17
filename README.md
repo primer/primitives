@@ -168,6 +168,53 @@ A `mix` proprty must always have a `color` and a `weight` child. `color` can be 
 }
 ```
 
+#### Extensions property
+
+According to the [w3c design token specs](https://design-tokens.github.io/community-group/format/#design-token), the [`$extensions`](https://design-tokens.github.io/community-group/format/#extensions) property is used for additional meta data.
+
+For our Figma export we use the following meta data:
+
+- `collection` the collection that the token is added to within Figma
+- `mode` the mode that the token is added to within the collection in Figma
+- `scopes` the scopes that are assigned to the token in Figma, the actual Figma compatible `scopes` are retreive from an object in the [figmaAttributes transformer](./src/transformers/figmaAttributes.ts)
+
+Code example
+
+```js
+  bgColor: {
+    $value: '{borderColor.accent.muted}',
+    $type: 'color',
+    $extensions: {
+      'org.primer.figma': {
+        collection: 'pattern/mode',
+        mode: 'light',
+        scopes: ['bgColor'],
+      },
+    },
+  }
+```
+
+#### Token names and @-hack
+
+Token names have to be in camelCase or kebab-case and may only include letters, numbers and `-`. This is enforced by the token validation (`npm run lint:tokens`).
+The only acception is the `@`-hack. This is used when you want to have a default value and sub-values, e.g. `bgColor.accent` and `bgColor.accent.muted`.
+In this case you can create the follwing structure. The `@` will be removed from the name and act as the default value.
+
+```js
+{
+  bgColor: {
+    accent: {
+      "@": {
+        // default values
+      },
+      "muted": {
+        // values for accent-muted
+      }
+    }
+  }
+}
+```
+
 ## License
 
 [MIT](./LICENSE) &copy; [GitHub](https://github.com/)

@@ -15,10 +15,9 @@ jobs:
     uses: primer/.github/.github/workflows/deploy_preview.yml@main
     with:
       node_version: 18
-      install: npm ci --no-audit --no-fund --ignore-scripts && npm run install:storybook && npm run install:docs
-      build: npm run build:tokens && npm run build && npm run build:next && cd docs && npm run build:preview
+      install: npm ci --no-audit --no-fund --ignore-scripts && npm run install:storybook
+      build: npm run build:tokens && npm run build && npm run build:next && cd docs/storybook && npm run build:preview
       output_dir: docs/public
-
 
   post_storybook:
     needs: deploy

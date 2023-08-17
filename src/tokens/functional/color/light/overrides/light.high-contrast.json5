@@ -18,10 +18,18 @@
       $value: '{base.color.blue.6}',
       $type: 'color',
     },
+    disabled: {
+      $value: '{base.color.gray.6}',
+      $type: 'color',
+    },
   },
   bgColor: {
     muted: {
       $value: '{base.color.gray.1}',
+      $type: 'color',
+    },
+    inset: {
+      $value: '{base.color.white}',
       $type: 'color',
     },
     neutral: {

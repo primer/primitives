@@ -12,7 +12,7 @@ describe('Transformer: fontWeightToNumbers', () => {
       }),
     ]
     const expectedOutput = [100, 1000]
-    expect(input.map(item => fontWeightToNumber.transformer(item))).toStrictEqual(expectedOutput)
+    expect(input.map(item => fontWeightToNumber.transformer(item, {}))).toStrictEqual(expectedOutput)
   })
 
   it('transforms string of number to number', () => {
@@ -20,7 +20,7 @@ describe('Transformer: fontWeightToNumbers', () => {
       value: '100',
     })
     const expectedOutput = 100
-    expect(fontWeightToNumber.transformer(input)).toStrictEqual(expectedOutput)
+    expect(fontWeightToNumber.transformer(input, {})).toStrictEqual(expectedOutput)
   })
 
   it('transforms font strings to number', () => {
@@ -50,7 +50,7 @@ describe('Transformer: fontWeightToNumbers', () => {
         value: fontWeightString,
       })
       try {
-        expect(fontWeightToNumber.transformer(input)).toStrictEqual(fontWeightNumber)
+        expect(fontWeightToNumber.transformer(input, {})).toStrictEqual(fontWeightNumber)
       } catch (e) {
         throw new Error(`❌ Expects ${fontWeightString} to be transformed to ${fontWeightNumber}`)
       }
@@ -63,6 +63,7 @@ describe('Transformer: fontWeightToNumbers', () => {
         getMockToken({
           value: 1001,
         }),
+        {},
       ),
     ).toThrowError()
 
@@ -71,6 +72,7 @@ describe('Transformer: fontWeightToNumbers', () => {
         getMockToken({
           value: 0,
         }),
+        {},
       ),
     ).toThrowError()
 
@@ -79,6 +81,7 @@ describe('Transformer: fontWeightToNumbers', () => {
         getMockToken({
           value: undefined,
         }),
+        {},
       ),
     ).toThrowError()
 
@@ -87,6 +90,7 @@ describe('Transformer: fontWeightToNumbers', () => {
         getMockToken({
           value: 'Roboto',
         }),
+        {},
       ),
     ).toThrowError()
 
@@ -95,6 +99,7 @@ describe('Transformer: fontWeightToNumbers', () => {
         getMockToken({
           value: ['Roboto'],
         }),
+        {},
       ),
     ).toThrowError()
 
@@ -105,6 +110,7 @@ describe('Transformer: fontWeightToNumbers', () => {
             fontWeight: 300,
           },
         }),
+        {},
       ),
     ).toThrowError()
   })

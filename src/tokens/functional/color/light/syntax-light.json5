@@ -4,70 +4,172 @@
       black: {
         $value: '{base.color.gray.9}',
         $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'pattern/mode',
+            mode: 'light',
+          },
+        },
       },
       'black-bright': {
         $value: '{base.color.gray.6}',
         $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'pattern/mode',
+            mode: 'light',
+          },
+        },
       },
       white: {
         $value: '{base.color.gray.5}',
         $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'pattern/mode',
+            mode: 'light',
+          },
+        },
       },
       'white-bright': {
         $value: '{base.color.gray.4}',
         $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'pattern/mode',
+            mode: 'light',
+          },
+        },
       },
       gray: {
         $value: '{base.color.gray.5}',
         $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'pattern/mode',
+            mode: 'light',
+          },
+        },
       },
       red: {
         $value: '{base.color.red.5}',
         $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'pattern/mode',
+            mode: 'light',
+          },
+        },
       },
       'red-bright': {
         $value: '{base.color.red.6}',
         $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'pattern/mode',
+            mode: 'light',
+          },
+        },
       },
       green: {
         $value: '{base.color.green.6}',
         $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'pattern/mode',
+            mode: 'light',
+          },
+        },
       },
       'green-bright': {
         $value: '{base.color.green.5}',
         $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'pattern/mode',
+            mode: 'light',
+          },
+        },
       },
       yellow: {
         $value: '{base.color.yellow.8}',
         $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'pattern/mode',
+            mode: 'light',
+          },
+        },
       },
       'yellow-bright': {
         $value: '{base.color.yellow.7}',
         $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'pattern/mode',
+            mode: 'light',
+          },
+        },
       },
       blue: {
         $value: '{base.color.blue.5}',
         $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'pattern/mode',
+            mode: 'light',
+          },
+        },
       },
       'blue-bright': {
         $value: '{base.color.blue.4}',
         $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'pattern/mode',
+            mode: 'light',
+          },
+        },
       },
       magenta: {
         $value: '{base.color.purple.5}',
         $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'pattern/mode',
+            mode: 'light',
+          },
+        },
       },
       'magenta-bright': {
         $value: '{base.color.purple.4}',
         $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'pattern/mode',
+            mode: 'light',
+          },
+        },
       },
       cyan: {
         $value: '#1b7c83',
         $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'pattern/mode',
+            mode: 'light',
+          },
+        },
       },
       'cyan-bright': {
         $value: '#3192aa',
         $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'pattern/mode',
+            mode: 'light',
+          },
+        },
       },
     },
     prettylights: {
@@ -75,51 +177,117 @@
         comment: {
           $value: '{base.color.gray.5}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+            },
+          },
         },
         constant: {
           $value: '{base.color.blue.6}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+            },
+          },
         },
         'constant-other-reference-link': {
           $value: '{base.color.blue.8}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+            },
+          },
         },
         entity: {
-          $value: '{base.color.purple.5}',
+          $value: '{base.color.purple.6}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+            },
+          },
         },
         storage: {
           modifier: {
             import: {
               $value: '{base.color.gray.9}',
               $type: 'color',
+              $extensions: {
+                'org.primer.figma': {
+                  collection: 'pattern/mode',
+                  mode: 'light',
+                },
+              },
             },
           },
         },
         'entity-tag': {
           $value: '{base.color.blue.6}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+            },
+          },
         },
         keyword: {
           $value: '{base.color.red.5}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+            },
+          },
         },
         string: {
           $value: '{base.color.blue.8}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+            },
+          },
         },
         variable: {
           $value: '{base.color.orange.6}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+            },
+          },
         },
         brackethighlighter: {
           unmatched: {
             $value: '{base.color.red.7}',
             $type: 'color',
+            $extensions: {
+              'org.primer.figma': {
+                collection: 'pattern/mode',
+                mode: 'light',
+              },
+            },
           },
           angle: {
             $value: '{base.color.gray.6}',
             $type: 'color',
+            $extensions: {
+              'org.primer.figma': {
+                collection: 'pattern/mode',
+                mode: 'light',
+              },
+            },
           },
         },
         invalid: {
@@ -127,10 +295,22 @@
             text: {
               $value: '{base.color.gray.0}',
               $type: 'color',
+              $extensions: {
+                'org.primer.figma': {
+                  collection: 'pattern/mode',
+                  mode: 'light',
+                },
+              },
             },
             bg: {
               $value: '{base.color.red.7}',
               $type: 'color',
+              $extensions: {
+                'org.primer.figma': {
+                  collection: 'pattern/mode',
+                  mode: 'light',
+                },
+              },
             },
           },
         },
@@ -139,72 +319,162 @@
             text: {
               $value: '{base.color.gray.0}',
               $type: 'color',
+              $extensions: {
+                'org.primer.figma': {
+                  collection: 'pattern/mode',
+                  mode: 'light',
+                },
+              },
             },
             bg: {
               $value: '{base.color.red.5}',
               $type: 'color',
+              $extensions: {
+                'org.primer.figma': {
+                  collection: 'pattern/mode',
+                  mode: 'light',
+                },
+              },
             },
           },
         },
         'string-regexp': {
           $value: '{base.color.green.6}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'pattern/mode',
+              mode: 'light',
+            },
+          },
         },
         markup: {
           list: {
             $value: '{base.color.yellow.9}',
             $type: 'color',
+            $extensions: {
+              'org.primer.figma': {
+                collection: 'pattern/mode',
+                mode: 'light',
+              },
+            },
           },
           heading: {
             $value: '{base.color.blue.6}',
             $type: 'color',
+            $extensions: {
+              'org.primer.figma': {
+                collection: 'pattern/mode',
+                mode: 'light',
+              },
+            },
           },
           italic: {
             $value: '{base.color.gray.9}',
             $type: 'color',
+            $extensions: {
+              'org.primer.figma': {
+                collection: 'pattern/mode',
+                mode: 'light',
+              },
+            },
           },
           bold: {
             $value: '{base.color.gray.9}',
             $type: 'color',
+            $extensions: {
+              'org.primer.figma': {
+                collection: 'pattern/mode',
+                mode: 'light',
+              },
+            },
           },
           deleted: {
             text: {
               $value: '{base.color.red.7}',
               $type: 'color',
+              $extensions: {
+                'org.primer.figma': {
+                  collection: 'pattern/mode',
+                  mode: 'light',
+                },
+              },
             },
             bg: {
               $value: '{base.color.red.0}',
               $type: 'color',
+              $extensions: {
+                'org.primer.figma': {
+                  collection: 'pattern/mode',
+                  mode: 'light',
+                },
+              },
             },
           },
           inserted: {
             text: {
               $value: '{base.color.green.6}',
               $type: 'color',
+              $extensions: {
+                'org.primer.figma': {
+                  collection: 'pattern/mode',
+                  mode: 'light',
+                },
+              },
             },
             bg: {
               $value: '{base.color.green.0}',
               $type: 'color',
+              $extensions: {
+                'org.primer.figma': {
+                  collection: 'pattern/mode',
+                  mode: 'light',
+                },
+              },
             },
           },
           changed: {
             text: {
               $value: '{base.color.orange.6}',
               $type: 'color',
+              $extensions: {
+                'org.primer.figma': {
+                  collection: 'pattern/mode',
+                  mode: 'light',
+                },
+              },
             },
             bg: {
               $value: '{base.color.orange.1}',
               $type: 'color',
+              $extensions: {
+                'org.primer.figma': {
+                  collection: 'pattern/mode',
+                  mode: 'light',
+                },
+              },
             },
           },
           ignored: {
             text: {
               $value: '{base.color.gray.1}',
               $type: 'color',
+              $extensions: {
+                'org.primer.figma': {
+                  collection: 'pattern/mode',
+                  mode: 'light',
+                },
+              },
             },
             bg: {
               $value: '{base.color.blue.6}',
               $type: 'color',
+              $extensions: {
+                'org.primer.figma': {
+                  collection: 'pattern/mode',
+                  mode: 'light',
+                },
+              },
             },
           },
         },
@@ -213,6 +483,12 @@
             range: {
               $value: '{base.color.purple.5}',
               $type: 'color',
+              $extensions: {
+                'org.primer.figma': {
+                  collection: 'pattern/mode',
+                  mode: 'light',
+                },
+              },
             },
           },
         },
@@ -221,9 +497,15 @@
             mark: {
               $value: '{base.color.gray.4}',
               $type: 'color',
+              $extensions: {
+                'org.primer.figma': {
+                  collection: 'pattern/mode',
+                  mode: 'light',
+                },
+              },
             },
           },
-        }
+        },
       },
     },
   },

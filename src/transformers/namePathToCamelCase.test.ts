@@ -23,7 +23,7 @@ describe('Transformer: namePathToCamelCase', () => {
     ]
     const expectedOutput = ['pathToToken', 'PATHTOToken', 'pathToToken', 'pathtoToken']
 
-    expect(input.map(item => namePathToCamelCase.transformer(item))).toStrictEqual(expectedOutput)
+    expect(input.map(item => namePathToCamelCase.transformer(item, {}))).toStrictEqual(expectedOutput)
   })
 
   it('replaces spaces, `-`, `_` and `+` within path elements and joins with camelCase, but does not change the rest of the word', () => {
@@ -34,7 +34,7 @@ describe('Transformer: namePathToCamelCase', () => {
       }),
       getMockToken({
         name: 'tokenName',
-        path: ['start', 'PATH_tO-Token'],
+        path: ['start', 'PATH_tO-+Token'],
       }),
       getMockToken({
         name: 'tokenName',
@@ -42,7 +42,22 @@ describe('Transformer: namePathToCamelCase', () => {
       }),
     ]
     const expectedOutput = ['startPathToToken', 'startPATHTOToken', 'startPathToToken']
-    expect(input.map(item => namePathToCamelCase.transformer(item))).toStrictEqual(expectedOutput)
+    expect(input.map(item => namePathToCamelCase.transformer(item, {}))).toStrictEqual(expectedOutput)
+  })
+
+  it('removes `@`, so we can use it for the default hack', () => {
+    const input = [
+      getMockToken({
+        name: 'tokenName',
+        path: ['fgColor', 'accent', '@'],
+      }),
+      getMockToken({
+        name: 'tokenName',
+        path: ['fgColor', '@', 'muted'],
+      }),
+    ]
+    const expectedOutput = ['fgColorAccent', 'fgColorMuted']
+    expect(input.map(item => namePathToCamelCase.transformer(item, {}))).toStrictEqual(expectedOutput)
   })
 
   it('adds prefix to token name', () => {

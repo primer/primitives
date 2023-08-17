@@ -1,156 +1,427 @@
 {
+  "space": {
+    "xxsmall": {
+      "$value": "2px",
+      "$type": "dimension",
+      "$extensions": {
+        "org.primer.figma": {
+          "collection": "functional/size",
+          "scopes": ["gap"]
+        }
+      }
+    },
+    "xsmall": {
+      "$value": "{base.size.4}",
+      "$type": "dimension",
+      "$extensions": {
+        "org.primer.figma": {
+          "collection": "functional/size",
+          "scopes": ["gap"]
+        }
+      }
+    },
+    "small": {
+      "$value": "6px",
+      "$type": "dimension",
+      "$extensions": {
+        "org.primer.figma": {
+          "collection": "functional/size",
+          "scopes": ["gap"]
+        }
+      }
+    },
+    "medium": {
+      "$value": "{base.size.8}",
+      "$type": "dimension",
+      "$extensions": {
+        "org.primer.figma": {
+          "collection": "functional/size",
+          "scopes": ["gap"]
+        }
+      }
+    },
+    "large": {
+      "$value": "{base.size.12}",
+      "$type": "dimension",
+      "$extensions": {
+        "org.primer.figma": {
+          "collection": "functional/size",
+          "scopes": ["gap"]
+        }
+      }
+    },
+    "xlarge": {
+      "$value": "{base.size.16}",
+      "$type": "dimension",
+      "$extensions": {
+        "org.primer.figma": {
+          "collection": "functional/size",
+          "scopes": ["gap"]
+        }
+      }
+    }
+  },
   "control": {
     "minTarget": {
       "fine": {
         "$value": "{base.size.16}",
-        "$type": "dimension"
+        "$type": "dimension",
+        "$extensions": {
+          "org.primer.figma": {
+            "collection": "pattern/size",
+            "scopes": ["size"]
+          }
+        }
       },
       "coarse": {
         "$value": "{base.size.44}",
-        "$type": "dimension"
+        "$type": "dimension",
+        "$extensions": {
+          "org.primer.figma": {
+            "collection": "pattern/size",
+            "scopes": ["size"]
+          }
+        }
       }
     },
     "xsmall": {
       "size": {
         "$value": "{base.size.24}",
-        "$type": "dimension"
+        "$type": "dimension",
+        "$extensions": {
+          "org.primer.figma": {
+            "collection": "pattern/size",
+            "scopes": ["size"]
+          }
+        }
       },
       "lineBoxHeight": {
         "$value": "{base.size.20}",
-        "$type": "dimension"
+        "$type": "dimension",
+        "$extensions": {
+          "org.primer.figma": {
+            "collection": "pattern/size",
+            "scopes": ["size"]
+          }
+        }
       },
       "paddingBlock": {
-        "value": "calc(({control.xsmall.size} - {control.xsmall.lineBoxHeight}) / 2)"
+        "$value": "2px",
+        "$type": "dimension",
+        "$extensions": {
+          "org.primer.figma": {
+            "collection": "pattern/size",
+            "scopes": ["gap"]
+          }
+        }
       },
       "paddingInline": {
         "condensed": {
           "$value": "{base.size.4}",
-          "$type": "dimension"
+          "$type": "dimension",
+          "$extensions": {
+            "org.primer.figma": {
+              "collection": "pattern/size",
+              "scopes": ["gap"]
+            }
+          }
         },
         "normal": {
           "$value": "{base.size.8}",
-          "$type": "dimension"
+          "$type": "dimension",
+          "$extensions": {
+            "org.primer.figma": {
+              "collection": "pattern/size",
+              "scopes": ["gap"]
+            }
+          }
         },
         "spacious": {
           "$value": "{base.size.12}",
-          "$type": "dimension"
+          "$type": "dimension",
+          "$extensions": {
+            "org.primer.figma": {
+              "collection": "pattern/size",
+              "scopes": ["gap"]
+            }
+          }
         }
       },
       "gap": {
         "$value": "{base.size.4}",
-        "$type": "dimension"
+        "$type": "dimension",
+        "$extensions": {
+          "org.primer.figma": {
+            "collection": "pattern/size",
+            "scopes": ["gap"]
+          }
+        }
       }
     },
     "small": {
       "size": {
         "$value": "{base.size.28}",
-        "$type": "dimension"
+        "$type": "dimension",
+        "$extensions": {
+          "org.primer.figma": {
+            "collection": "pattern/size",
+            "scopes": ["size"]
+          }
+        }
       },
       "lineBoxHeight": {
         "$value": "{base.size.20}",
-        "$type": "dimension"
+        "$type": "dimension",
+        "$extensions": {
+          "org.primer.figma": {
+            "collection": "pattern/size",
+            "scopes": ["size"]
+          }
+        }
       },
       "paddingBlock": {
-        "value": "calc(({control.small.size} - {control.small.lineBoxHeight}) / 2)"
+        "$value": "{base.size.4}",
+        "$type": "dimension",
+        "$extensions": {
+          "org.primer.figma": {
+            "collection": "pattern/size",
+            "scopes": ["gap"]
+          }
+        }
       },
       "paddingInline": {
         "condensed": {
           "$value": "{base.size.8}",
-          "$type": "dimension"
+          "$type": "dimension",
+          "$extensions": {
+            "org.primer.figma": {
+              "collection": "pattern/size",
+              "scopes": ["gap"]
+            }
+          }
         },
         "normal": {
           "$value": "{base.size.12}",
-          "$type": "dimension"
+          "$type": "dimension",
+          "$extensions": {
+            "org.primer.figma": {
+              "collection": "pattern/size",
+              "scopes": ["gap"]
+            }
+          }
         }
       },
       "gap": {
         "$value": "{base.size.4}",
-        "$type": "dimension"
+        "$type": "dimension",
+        "$extensions": {
+          "org.primer.figma": {
+            "collection": "pattern/size",
+            "scopes": ["gap"]
+          }
+        }
       }
     },
     "medium": {
       "size": {
         "$value": "{base.size.32}",
-        "$type": "dimension"
+        "$type": "dimension",
+        "$extensions": {
+          "org.primer.figma": {
+            "collection": "pattern/size",
+            "scopes": ["size"]
+          }
+        }
       },
       "lineBoxHeight": {
         "$value": "{base.size.20}",
-        "$type": "dimension"
+        "$type": "dimension",
+        "$extensions": {
+          "org.primer.figma": {
+            "collection": "pattern/size",
+            "scopes": ["size"]
+          }
+        }
       },
       "paddingBlock": {
-        "value": "calc(({control.medium.size} - {control.medium.lineBoxHeight}) / 2)"
+        "$value": "6px",
+        "$type": "dimension",
+        "$extensions": {
+          "org.primer.figma": {
+            "collection": "pattern/size",
+            "scopes": ["gap"]
+          }
+        }
       },
       "paddingInline": {
         "condensed": {
           "$value": "{base.size.8}",
-          "$type": "dimension"
+          "$type": "dimension",
+          "$extensions": {
+            "org.primer.figma": {
+              "collection": "pattern/size",
+              "scopes": ["gap"]
+            }
+          }
         },
         "normal": {
           "$value": "{base.size.12}",
-          "$type": "dimension"
+          "$type": "dimension",
+          "$extensions": {
+            "org.primer.figma": {
+              "collection": "pattern/size",
+              "scopes": ["gap"]
+            }
+          }
         },
         "spacious": {
           "$value": "{base.size.16}",
-          "$type": "dimension"
+          "$type": "dimension",
+          "$extensions": {
+            "org.primer.figma": {
+              "collection": "pattern/size",
+              "scopes": ["gap"]
+            }
+          }
         }
       },
       "gap": {
         "$value": "{base.size.8}",
-        "$type": "dimension"
+        "$type": "dimension",
+        "$extensions": {
+          "org.primer.figma": {
+            "collection": "pattern/size",
+            "scopes": ["gap"]
+          }
+        }
       }
     },
     "large": {
       "size": {
         "$value": "{base.size.40}",
-        "$type": "dimension"
+        "$type": "dimension",
+        "$extensions": {
+          "org.primer.figma": {
+            "collection": "pattern/size",
+            "scopes": ["size"]
+          }
+        }
       },
       "lineBoxHeight": {
         "$value": "{base.size.20}",
-        "$type": "dimension"
+        "$type": "dimension",
+        "$extensions": {
+          "org.primer.figma": {
+            "collection": "pattern/size",
+            "scopes": ["size"]
+          }
+        }
       },
       "paddingBlock": {
-        "value": "calc(({control.large.size} - {control.large.lineBoxHeight}) / 2)"
+        "$value": "10px",
+        "$type": "dimension",
+        "$extensions": {
+          "org.primer.figma": {
+            "collection": "pattern/size",
+            "scopes": ["gap"]
+          }
+        }
       },
       "paddingInline": {
         "normal": {
           "$value": "{base.size.12}",
-          "$type": "dimension"
+          "$type": "dimension",
+          "$extensions": {
+            "org.primer.figma": {
+              "collection": "pattern/size",
+              "scopes": ["gap"]
+            }
+          }
         },
         "spacious": {
           "$value": "{base.size.16}",
-          "$type": "dimension"
+          "$type": "dimension",
+          "$extensions": {
+            "org.primer.figma": {
+              "collection": "pattern/size",
+              "scopes": ["gap"]
+            }
+          }
         }
       },
       "gap": {
         "$value": "{base.size.8}",
-        "$type": "dimension"
+        "$type": "dimension",
+        "$extensions": {
+          "org.primer.figma": {
+            "collection": "pattern/size",
+            "scopes": ["gap"]
+          }
+        }
       }
     },
     "xlarge": {
       "size": {
         "$value": "{base.size.48}",
-        "$type": "dimension"
+        "$type": "dimension",
+        "$extensions": {
+          "org.primer.figma": {
+            "collection": "pattern/size",
+            "scopes": ["size"]
+          }
+        }
       },
       "lineBoxHeight": {
         "$value": "{base.size.20}",
-        "$type": "dimension"
+        "$type": "dimension",
+        "$extensions": {
+          "org.primer.figma": {
+            "collection": "pattern/size",
+            "scopes": ["size"]
+          }
+        }
       },
       "paddingBlock": {
-        "value": "calc(({control.xlarge.size} - {control.xlarge.lineBoxHeight}) / 2)"
+        "$value": "14px",
+        "$type": "dimension",
+        "$extensions": {
+          "org.primer.figma": {
+            "collection": "pattern/size",
+            "scopes": ["gap"]
+          }
+        }
       },
       "paddingInline": {
         "normal": {
           "$value": "{base.size.12}",
-          "$type": "dimension"
+          "$type": "dimension",
+          "$extensions": {
+            "org.primer.figma": {
+              "collection": "pattern/size",
+              "scopes": ["gap"]
+            }
+          }
         },
         "spacious": {
           "$value": "{base.size.16}",
-          "$type": "dimension"
+          "$type": "dimension",
+          "$extensions": {
+            "org.primer.figma": {
+              "collection": "pattern/size",
+              "scopes": ["gap"]
+            }
+          }
         }
       },
       "gap": {
         "$value": "{base.size.8}",
-        "$type": "dimension"
+        "$type": "dimension",
+        "$extensions": {
+          "org.primer.figma": {
+            "collection": "pattern/size",
+            "scopes": ["gap"]
+          }
+        }
       }
     }
   },
@@ -158,29 +429,65 @@
     "padding": {
       "condensed": {
         "$value": "{base.size.8}",
-        "$type": "dimension"
+        "$type": "dimension",
+        "$extensions": {
+          "org.primer.figma": {
+            "collection": "pattern/size",
+            "scopes": ["gap"]
+          }
+        }
       },
       "normal": {
         "$value": "{base.size.16}",
-        "$type": "dimension"
+        "$type": "dimension",
+        "$extensions": {
+          "org.primer.figma": {
+            "collection": "pattern/size",
+            "scopes": ["gap"]
+          }
+        }
       },
       "spacious": {
         "$value": "{base.size.24}",
-        "$type": "dimension"
+        "$type": "dimension",
+        "$extensions": {
+          "org.primer.figma": {
+            "collection": "pattern/size",
+            "scopes": ["gap"]
+          }
+        }
       }
     },
     "gap": {
       "condensed": {
         "$value": "{base.size.8}",
-        "$type": "dimension"
+        "$type": "dimension",
+        "$extensions": {
+          "org.primer.figma": {
+            "collection": "pattern/size",
+            "scopes": ["gap"]
+          }
+        }
       },
       "normal": {
         "$value": "{base.size.16}",
-        "$type": "dimension"
+        "$type": "dimension",
+        "$extensions": {
+          "org.primer.figma": {
+            "collection": "pattern/size",
+            "scopes": ["gap"]
+          }
+        }
       },
       "spacious": {
         "$value": "{base.size.24}",
-        "$type": "dimension"
+        "$type": "dimension",
+        "$extensions": {
+          "org.primer.figma": {
+            "collection": "pattern/size",
+            "scopes": ["gap"]
+          }
+        }
       }
     }
   },
@@ -189,11 +496,23 @@
       "gap": {
         "condensed": {
           "$value": "{base.size.8}",
-          "$type": "dimension"
+          "$type": "dimension",
+          "$extensions": {
+            "org.primer.figma": {
+              "collection": "pattern/size",
+              "scopes": ["gap"]
+            }
+          }
         },
         "spacious": {
           "$value": "{base.size.16}",
-          "$type": "dimension"
+          "$type": "dimension",
+          "$extensions": {
+            "org.primer.figma": {
+              "collection": "pattern/size",
+              "scopes": ["gap"]
+            }
+          }
         }
       }
     },
@@ -201,11 +520,23 @@
       "gap": {
         "condensed": {
           "$value": "{base.size.8}",
-          "$type": "dimension"
+          "$type": "dimension",
+          "$extensions": {
+            "org.primer.figma": {
+              "collection": "pattern/size",
+              "scopes": ["gap"]
+            }
+          }
         },
         "spacious": {
           "$value": "{base.size.12}",
-          "$type": "dimension"
+          "$type": "dimension",
+          "$extensions": {
+            "org.primer.figma": {
+              "collection": "pattern/size",
+              "scopes": ["gap"]
+            }
+          }
         }
       }
     },
@@ -213,15 +544,33 @@
       "gap": {
         "auto": {
           "$value": "{base.size.8}",
-          "$type": "dimension"
+          "$type": "dimension",
+          "$extensions": {
+            "org.primer.figma": {
+              "collection": "pattern/size",
+              "scopes": ["gap"]
+            }
+          }
         },
         "condensed": {
           "$value": "{base.size.8}",
-          "$type": "dimension"
+          "$type": "dimension",
+          "$extensions": {
+            "org.primer.figma": {
+              "collection": "pattern/size",
+              "scopes": ["gap"]
+            }
+          }
         },
         "spacious": {
           "$value": "{base.size.12}",
-          "$type": "dimension"
+          "$type": "dimension",
+          "$extensions": {
+            "org.primer.figma": {
+              "collection": "pattern/size",
+              "scopes": ["gap"]
+            }
+          }
         }
       }
     }

@@ -1,5 +1,81 @@
 # @primer/primitives
 
+## 7.12.0
+
+### Minor Changes
+
+- [#665](https://github.com/primer/primitives/pull/665) [`360a8b8`](https://github.com/primer/primitives/commit/360a8b866847d232cae70cdca630504c5c6e09e2) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Adding support for figma tokens
+
+- [#714](https://github.com/primer/primitives/pull/714) [`5b1cb91`](https://github.com/primer/primitives/commit/5b1cb91299b0245f713610cd179d8816b96cfc20) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Add space tokens
+
+### Patch Changes
+
+- [#704](https://github.com/primer/primitives/pull/704) [`aeb3b30`](https://github.com/primer/primitives/commit/aeb3b302b453452a1dc8fd6cf00a24d6c98a8e62) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - fix for figma references
+
+- [#707](https://github.com/primer/primitives/pull/707) [`ca974dc`](https://github.com/primer/primitives/commit/ca974dcea75d6447fa94096dc1b94cdbd7896e35) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - add paddingBlock to figma
+
+- [#711](https://github.com/primer/primitives/pull/711) [`0f7f801`](https://github.com/primer/primitives/commit/0f7f801a2bf3c43b41430b6fdd0cbb9af8f23858) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Move figma control tokens to component collection
+
+- [#709](https://github.com/primer/primitives/pull/709) [`c0cc1db`](https://github.com/primer/primitives/commit/c0cc1db6e1ee34ee695acbb9181e87846fe0c157) Thanks [@langermank](https://github.com/langermank)! - Update a few `bgColor` and `borderColor` Primitive fallbacks
+
+- [#717](https://github.com/primer/primitives/pull/717) [`8c278bd`](https://github.com/primer/primitives/commit/8c278bd81b71e84106676065a95f8bdaf1765d75) Thanks [@langermank](https://github.com/langermank)! - Add back `inset` color tokens to v8
+
+- [#686](https://github.com/primer/primitives/pull/686) [`40fdf5c`](https://github.com/primer/primitives/commit/40fdf5c611da88c824474347491a19f2e5a06a27) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - rename treeViewItem-leadingVisual-bgColor-rest to treeViewItem-leadingVisual-iconColor-rest
+
+- [#698](https://github.com/primer/primitives/pull/698) [`870cc60`](https://github.com/primer/primitives/commit/870cc602ee1935fdca0520f42dd84d9e0621c4ec) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Update figma token names & rename `fgColor-link-rest` to `fgColor-link`
+
+## 7.11.14
+
+### Patch Changes
+
+- [#674](https://github.com/primer/primitives/pull/674) [`41ff627`](https://github.com/primer/primitives/commit/41ff62721c82070761826c641d8ec9d280419809) Thanks [@langermank](https://github.com/langermank)! - Fix disabled fg color for controls
+
+- [#666](https://github.com/primer/primitives/pull/666) [`5c18c74`](https://github.com/primer/primitives/commit/5c18c74788d18619bc4b94558d532ec4df3288aa) Thanks [@ctmayn](https://github.com/ctmayn)! - Adjust the value of entity highlighting so it meets the required color contrast on a diff deletion background.
+
+- [#667](https://github.com/primer/primitives/pull/667) [`f8c7429`](https://github.com/primer/primitives/commit/f8c74297461cad1394148791a8c414bc6aad7fd8) Thanks [@langermank](https://github.com/langermank)! - - Update Overlay backdrop color for dark mode
+
+  - Add Overlay backdrop tokens to the old build
+
+- [#671](https://github.com/primer/primitives/pull/671) [`2d3861e`](https://github.com/primer/primitives/commit/2d3861ec2949f1c0e75dd1a6a27a0699fad82b88) Thanks [@langermank](https://github.com/langermank)! - Add transparent fallbacks
+
+- [#669](https://github.com/primer/primitives/pull/669) [`799a702`](https://github.com/primer/primitives/commit/799a702d015d6b7e292b7bc8d2e1fa207e60186f) Thanks [@langermank](https://github.com/langermank)! - Fix muted fallbacks for v8 test
+
+- [#672](https://github.com/primer/primitives/pull/672) [`1fc2662`](https://github.com/primer/primitives/commit/1fc2662945eee93ece6dc6805ef209be7232f661) Thanks [@langermank](https://github.com/langermank)! - Fix muted border fallback
+
+- [#673](https://github.com/primer/primitives/pull/673) [`6ebe450`](https://github.com/primer/primitives/commit/6ebe450433d2b5b228831d3ff0bf047459c6eda8) Thanks [@langermank](https://github.com/langermank)! - Update disabled control fallback
+
+## 7.11.13
+
+### Patch Changes
+
+- [#662](https://github.com/primer/primitives/pull/662) [`e3a6b0f`](https://github.com/primer/primitives/commit/e3a6b0f9bb4c59e2083cd802c345f2711fd2ae34) Thanks [@langermank](https://github.com/langermank)! - Add shadows to color fallback dist
+
+## 7.11.12
+
+### Patch Changes
+
+- [#659](https://github.com/primer/primitives/pull/659) [`77e0e07`](https://github.com/primer/primitives/commit/77e0e071d411f75ca70a9815b40260f3610c706a) Thanks [@langermank](https://github.com/langermank)! - Add functional transparent tokens
+
+## 7.11.11
+
+### Patch Changes
+
+- [#654](https://github.com/primer/primitives/pull/654) [`67bf5c0`](https://github.com/primer/primitives/commit/67bf5c077a445e8ec37ae1ee0f0b2cc7a51e7d54) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Add fallback json
+
+## 7.11.10
+
+### Patch Changes
+
+- [#651](https://github.com/primer/primitives/pull/651) [`26ed1fc`](https://github.com/primer/primitives/commit/26ed1fc7e0f5ee1aa0a570b9c7bfdd356d663a62) Thanks [@langermank](https://github.com/langermank)! - Format fallback CSS vars with `var()`
+
+## 7.11.9
+
+### Patch Changes
+
+- [#648](https://github.com/primer/primitives/pull/648) [`f559ad6`](https://github.com/primer/primitives/commit/f559ad6d638cd55dffd39a22eb861409b8273dce) Thanks [@langermank](https://github.com/langermank)! - Bug fix: `danger` counter fg
+
+- [#649](https://github.com/primer/primitives/pull/649) [`4e231ba`](https://github.com/primer/primitives/commit/4e231bad1f94027c36fea82dab8460eac85eebed) Thanks [@langermank](https://github.com/langermank)! - Fix fallback dist JSON
+
 ## 7.11.8
 
 ### Patch Changes
