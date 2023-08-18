@@ -15,6 +15,10 @@
       mix: null,
       alpha: 1,
     },
+    disabled: {
+      $value: '{base.color.gray.3}',
+      $type: 'color',
+    },
     neutral: {
       onInverse: {
         $value: '{base.color.gray.8}',
