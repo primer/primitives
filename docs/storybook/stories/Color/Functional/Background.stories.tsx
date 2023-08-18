@@ -16,6 +16,7 @@ const bgColors = [
   'bgColor-disabled',
   'bgColor-emphasis',
   'bgColor-transparent',
+  'bgColor-inverse',
 ]
 
 export const Background = () => {

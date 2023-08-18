@@ -15,8 +15,14 @@
         $value: '{base.color.red.6}',
         $type: 'color',
       },
-      onEmphasis: {
-        $value: '{base.color.red.3}',
+      onInverse: {
+        $value: '{base.color.red.2}',
+        $type: 'color',
+      },
+    },
+    neutral: {
+      onInverse: {
+        $value: '{base.color.gray.2}',
         $type: 'color',
       },
     },
@@ -25,20 +31,38 @@
         $value: '{base.color.blue.6}',
         $type: 'color',
       },
-      onEmphasis: {
+      onInverse: {
         $value: '{base.color.blue.2}',
         $type: 'color',
       },
     },
+    severe: {
+      onInverse: {
+        $value: '{base.color.orange.2}',
+        $type: 'color',
+      },
+    },
     success: {
-      onEmphasis: {
+      onInverse: {
         $value: '{base.color.green.2}',
         $type: 'color',
       },
     },
     attention: {
-      onEmphasis: {
+      onInverse: {
         $value: '{base.color.yellow.2}',
+        $type: 'color',
+      },
+    },
+    done: {
+      onInverse: {
+        $value: '{base.color.purple.2}',
+        $type: 'color',
+      },
+    },
+    sponsors: {
+      onInverse: {
+        $value: '{base.color.pink.2}',
         $type: 'color',
       },
     },

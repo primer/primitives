@@ -17,6 +17,11 @@
   background-color: var(--bgColor-emphasis) !important;
 }
 
+/* set bg color for text that matches default bg */
+.ColorPreview:has([style='color: var(--fgColor-onInverse);']) {
+  background-color: var(--bgColor-inverse) !important;
+}
+
 /* add border to bg colors that match default bg */
 .ColorPreview:has([style='background-color: var(--bgColor-default); border: solid 1px var(--undefined);']) > div,
 .ColorPreview:has([style='background-color: var(--bgColor-transparent); border: solid 1px var(--undefined);']) > div {

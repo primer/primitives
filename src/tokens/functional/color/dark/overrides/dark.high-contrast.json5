@@ -15,27 +15,51 @@
       mix: null,
       alpha: 1,
     },
+    neutral: {
+      onInverse: {
+        $value: '{base.color.gray.8}',
+        $type: 'color',
+      },
+    },
     accent: {
-      onEmphasis: {
+      onInverse: {
         $value: '{base.color.blue.8}',
         $type: 'color',
       },
     },
     success: {
-      onEmphasis: {
+      onInverse: {
         $value: '{base.color.green.8}',
         $type: 'color',
       },
     },
     attention: {
-      onEmphasis: {
+      onInverse: {
         $value: '{base.color.yellow.8}',
         $type: 'color',
       },
     },
     danger: {
-      onEmphasis: {
-        $value: '{base.color.red.8}',
+      onInverse: {
+        $value: '{base.color.red.9}',
+        $type: 'color',
+      },
+    },
+    severe: {
+      onInverse: {
+        $value: '{base.color.orange.8}',
+        $type: 'color',
+      },
+    },
+    done: {
+      onInverse: {
+        $value: '{base.color.purple.9}',
+        $type: 'color',
+      },
+    },
+    sponsors: {
+      onInverse: {
+        $value: '{base.color.pink.9}',
         $type: 'color',
       },
     },
