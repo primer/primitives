@@ -347,7 +347,7 @@
     danger: {
       fgColor: {
         rest: {
-          $value: '{fgColor.danger}',
+          $value: '{fgColor.danger.@}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -358,7 +358,7 @@
           },
         },
         hover: {
-          $value: '{fgColor.danger}',
+          $value: '{fgColor.danger.@}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -826,7 +826,7 @@
               collection: 'pattern/mode',
               mode: 'light',
               scopes: ['borderColor'],
-            }
+            },
           },
         },
       },
@@ -969,7 +969,7 @@
     invisible: {
       fgColor: {
         rest: {
-          $value: '{fgColor.accent}',
+          $value: '{fgColor.accent.@}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -980,7 +980,7 @@
           },
         },
         hover: {
-          $value: '{fgColor.accent}',
+          $value: '{fgColor.accent.@}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -1087,7 +1087,7 @@
     outline: {
       fgColor: {
         rest: {
-          $value: '{fgColor.accent}',
+          $value: '{fgColor.accent.@}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -1120,7 +1120,7 @@
           },
         },
         disabled: {
-          $value: '{fgColor.accent}',
+          $value: '{fgColor.accent.@}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -1210,7 +1210,7 @@
     danger: {
       fgColor: {
         rest: {
-          $value: '{fgColor.danger}',
+          $value: '{fgColor.danger.@}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -1243,7 +1243,7 @@
           },
         },
         disabled: {
-          $value: '{fgColor.danger}',
+          $value: '{fgColor.danger.@}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -1257,7 +1257,7 @@
       },
       iconColor: {
         rest: {
-          $value: '{fgColor.danger}',
+          $value: '{fgColor.danger.@}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -1478,7 +1478,7 @@
           },
         },
         disabled: {
-          $value: '{fgColor.accent}',
+          $value: '{fgColor.accent.@}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -1558,7 +1558,7 @@
           },
         },
         disabled: {
-          $value: '{fgColor.danger}',
+          $value: '{fgColor.danger.@}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {

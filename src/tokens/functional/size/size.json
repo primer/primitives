@@ -574,5 +574,155 @@
         }
       }
     }
+  },
+  "overlay": {
+    "width": {
+      "xsmall": {
+        "$value": "192px",
+        "$type": "dimension",
+        "$extensions": {
+          "org.primer.figma": {
+            "collection": "pattern/size",
+            "scopes": ["size"]
+          }
+        }
+      },
+      "small": {
+        "$value": "320px",
+        "$type": "dimension",
+        "$extensions": {
+          "org.primer.figma": {
+            "collection": "pattern/size",
+            "scopes": ["size"]
+          }
+        }
+      },
+      "medium": {
+        "$value": "480px",
+        "$type": "dimension",
+        "$extensions": {
+          "org.primer.figma": {
+            "collection": "pattern/size",
+            "scopes": ["size"]
+          }
+        }
+      },
+      "large": {
+        "$value": "640px",
+        "$type": "dimension",
+        "$extensions": {
+          "org.primer.figma": {
+            "collection": "pattern/size",
+            "scopes": ["size"]
+          }
+        }
+      },
+      "xlarge": {
+        "$value": "960px",
+        "$type": "dimension",
+        "$extensions": {
+          "org.primer.figma": {
+            "collection": "pattern/size",
+            "scopes": ["size"]
+          }
+        }
+      }
+    },
+    "height": {
+      "small": {
+        "$value": "256px",
+        "$type": "dimension",
+        "$extensions": {
+          "org.primer.figma": {
+            "collection": "pattern/size",
+            "scopes": ["size"]
+          }
+        }
+      },
+      "medium": {
+        "$value": "320px",
+        "$type": "dimension",
+        "$extensions": {
+          "org.primer.figma": {
+            "collection": "pattern/size",
+            "scopes": ["size"]
+          }
+        }
+      },
+      "large": {
+        "$value": "432px",
+        "$type": "dimension",
+        "$extensions": {
+          "org.primer.figma": {
+            "collection": "pattern/size",
+            "scopes": ["size"]
+          }
+        }
+      },
+      "xlarge": {
+        "$value": "600px",
+        "$type": "dimension",
+        "$extensions": {
+          "org.primer.figma": {
+            "collection": "pattern/size",
+            "scopes": ["size"]
+          }
+        }
+      }
+    },
+    "padding": {
+      "normal": {
+        "$value": "{base.size.16}",
+        "$type": "dimension",
+        "$extensions": {
+          "org.primer.figma": {
+            "collection": "pattern/size",
+            "scopes": ["gap"]
+          }
+        }
+      },
+      "condensed": {
+        "$value": "{base.size.8}",
+        "$type": "dimension",
+        "$extensions": {
+          "org.primer.figma": {
+            "collection": "pattern/size",
+            "scopes": ["gap"]
+          }
+        }
+      }
+    },
+    "paddingBlock": {
+      "condensed": {
+        "$value": "{base.size.4}",
+        "$type": "dimension",
+        "$extensions": {
+          "org.primer.figma": {
+            "collection": "pattern/size",
+            "scopes": ["gap"]
+          }
+        }
+      },
+      "normal": {
+        "$value": "{base.size.12}",
+        "$type": "dimension",
+        "$extensions": {
+          "org.primer.figma": {
+            "collection": "pattern/size",
+            "scopes": ["gap"]
+          }
+        }
+      }
+    },
+    "borderRadius": {
+      "$value": "{borderRadius.medium}",
+      "$type": "dimension",
+      "$extensions": {
+        "org.primer.figma": {
+          "collection": "pattern/size",
+          "scopes": ["radius"]
+        }
+      }
+    }
   }
 }

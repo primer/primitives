@@ -19,10 +19,58 @@
       $value: '{base.color.gray.3}',
       $type: 'color',
     },
+    neutral: {
+      onInverse: {
+        $value: '{base.color.gray.8}',
+        $type: 'color',
+      },
+    },
+    accent: {
+      onInverse: {
+        $value: '{base.color.blue.8}',
+        $type: 'color',
+      },
+    },
+    success: {
+      onInverse: {
+        $value: '{base.color.green.8}',
+        $type: 'color',
+      },
+    },
+    attention: {
+      onInverse: {
+        $value: '{base.color.yellow.8}',
+        $type: 'color',
+      },
+    },
+    danger: {
+      onInverse: {
+        $value: '{base.color.red.9}',
+        $type: 'color',
+      },
+    },
+    severe: {
+      onInverse: {
+        $value: '{base.color.orange.8}',
+        $type: 'color',
+      },
+    },
+    done: {
+      onInverse: {
+        $value: '{base.color.purple.9}',
+        $type: 'color',
+      },
+    },
+    sponsors: {
+      onInverse: {
+        $value: '{base.color.pink.9}',
+        $type: 'color',
+      },
+    },
   },
   bgColor: {
     emphasis: {
-      $value: '{base.color.gray.0}',
+      $value: '{base.color.white}',
       $type: 'color',
     },
     neutral: {
@@ -236,6 +284,22 @@
           $value: '{base.color.green.2}',
           $type: 'color',
           alpha: 0.4,
+        },
+      },
+    },
+    invisible: {
+      bgColor: {
+        hover: {
+          $value: '{base.color.gray.1}',
+          $type: 'color',
+          alpha: null,
+          mix: null,
+        },
+        active: {
+          $value: '{base.color.gray.2}',
+          $type: 'color',
+          alpha: null,
+          mix: null,
         },
       },
     },

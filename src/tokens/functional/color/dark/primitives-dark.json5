@@ -1,5 +1,5 @@
 {
-  "fgColor": {
+  fgColor: {
     default: {
       $value: '{base.color.gray.0}',
       $type: 'color',
@@ -41,6 +41,17 @@
         },
       },
     },
+    onInverse: {
+      $value: '{base.color.gray.9}',
+      $type: 'color',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'mode',
+          mode: 'dark',
+          scopes: ['fgColor'],
+        },
+      },
+    },
     disabled: {
       $value: '{base.color.gray.3}',
       $type: 'color',
@@ -54,7 +65,18 @@
     },
     link: {
       '@': {
-        $value: '{fgColor.accent}',
+        $value: '{fgColor.accent.@}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'dark',
+            scopes: ['fgColor'],
+          },
+        },
+      },
+      onInverse: {
+        $value: '{fgColor.accent.onInverse}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -65,106 +87,251 @@
         },
       },
     },
-    accent: {
-      $value: '{base.color.blue.4}',
-      $type: 'color',
-      $extensions: {
-        'org.primer.figma': {
-          collection: 'mode',
-          mode: 'dark',
-          scopes: ['fgColor'],
+    neutral: {
+      '@': {
+        $value: '{base.color.gray.4}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'light',
+            scopes: ['fgColor'],
+          },
         },
       },
-      mix: {
-        color: '{base.color.blue.5}',
-        weight: 0.35,
+      onInverse: {
+        $value: '{base.color.gray.5}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'light',
+            scopes: ['fgColor'],
+          },
+        },
+      },
+    },
+    accent: {
+      '@': {
+        $value: '{base.color.blue.4}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'dark',
+            scopes: ['fgColor'],
+          },
+        },
+        mix: {
+          color: '{base.color.blue.5}',
+          weight: 0.35,
+        },
+      },
+      onInverse: {
+        $value: '{base.color.blue.5}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'dark',
+            scopes: ['fgColor'],
+          },
+        },
       },
     },
     success: {
-      $value: '{base.color.green.3}',
-      $type: 'color',
-      $extensions: {
-        'org.primer.figma': {
-          collection: 'mode',
-          mode: 'dark',
-          scopes: ['fgColor'],
+      '@': {
+        $value: '{base.color.green.3}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'dark',
+            scopes: ['fgColor'],
+          },
+        },
+      },
+      onInverse: {
+        $value: '{base.color.green.5}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'dark',
+            scopes: ['fgColor'],
+          },
         },
       },
     },
     attention: {
-      $value: '{base.color.yellow.3}',
-      $type: 'color',
-      $extensions: {
-        'org.primer.figma': {
-          collection: 'mode',
-          mode: 'dark',
-          scopes: ['fgColor'],
+      '@': {
+        $value: '{base.color.yellow.3}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'dark',
+            scopes: ['fgColor'],
+          },
+        },
+      },
+      onInverse: {
+        $value: '{base.color.yellow.5}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'dark',
+            scopes: ['fgColor'],
+          },
         },
       },
     },
     severe: {
-      $value: '{base.color.orange.4}',
-      $type: 'color',
-      $extensions: {
-        'org.primer.figma': {
-          collection: 'mode',
-          mode: 'dark',
-          scopes: ['fgColor'],
+      '@': {
+        $value: '{base.color.orange.4}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'dark',
+            scopes: ['fgColor'],
+          },
+        },
+      },
+      onInverse: {
+        $value: '{base.color.orange.5}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'dark',
+            scopes: ['fgColor'],
+          },
         },
       },
     },
     danger: {
-      $value: '{base.color.red.4}',
-      $type: 'color',
-      $extensions: {
-        'org.primer.figma': {
-          collection: 'mode',
-          mode: 'dark',
-          scopes: ['fgColor'],
+      '@': {
+        $value: '{base.color.red.4}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'dark',
+            scopes: ['fgColor'],
+          },
+        },
+      },
+      onInverse: {
+        $value: '{base.color.red.5}',
+        $type: 'color',
+        mix: {
+          color: '{base.color.red.4}',
+          weight: 0.05,
+        },
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'dark',
+            scopes: ['fgColor'],
+          },
         },
       },
     },
     open: {
-      $value: '{fgColor.success}',
-      $type: 'color',
-      $extensions: {
-        'org.primer.figma': {
-          collection: 'mode',
-          mode: 'dark',
-          scopes: ['fgColor'],
+      '@': {
+        $value: '{fgColor.success.@}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'dark',
+            scopes: ['fgColor'],
+          },
+        },
+      },
+      onInverse: {
+        $value: '{fgColor.success.onInverse}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'dark',
+            scopes: ['fgColor'],
+          },
         },
       },
     },
     closed: {
-      $value: '{base.color.red.4}',
-      $type: 'color',
-      $extensions: {
-        'org.primer.figma': {
-          collection: 'mode',
-          mode: 'dark',
-          scopes: ['fgColor'],
+      '@': {
+        $value: '{base.color.red.4}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'dark',
+            scopes: ['fgColor'],
+          },
+        },
+      },
+      onInverse: {
+        $value: '{fgColor.danger.onInverse}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'dark',
+            scopes: ['fgColor'],
+          },
         },
       },
     },
     done: {
-      $value: '{base.color.purple.4}',
-      $type: 'color',
-      $extensions: {
-        'org.primer.figma': {
-          collection: 'mode',
-          mode: 'dark',
-          scopes: ['fgColor'],
+      '@': {
+        $value: '{base.color.purple.4}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'dark',
+            scopes: ['fgColor'],
+          },
+        },
+      },
+      onInverse: {
+        $value: '{base.color.purple.5}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'dark',
+            scopes: ['fgColor'],
+          },
         },
       },
     },
     sponsors: {
-      $value: '{base.color.pink.4}',
-      $type: 'color',
-      $extensions: {
-        'org.primer.figma': {
-          collection: 'mode',
-          mode: 'dark',
-          scopes: ['fgColor'],
+      '@': {
+        $value: '{base.color.pink.4}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'dark',
+            scopes: ['fgColor'],
+          },
+        },
+      },
+      onInverse: {
+        $value: '{base.color.pink.5}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'dark',
+            scopes: ['fgColor'],
+          },
         },
       },
     },
@@ -205,6 +372,17 @@
     },
     emphasis: {
       $value: '{base.color.gray.4}',
+      $type: 'color',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'mode',
+          mode: 'dark',
+          scopes: ['bgColor'],
+        },
+      },
+    },
+    inverse: {
+      $value: '{base.color.white}',
       $type: 'color',
       $extensions: {
         'org.primer.figma': {

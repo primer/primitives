@@ -6,20 +6,46 @@
 {
   fgColor: {
     success: {
-      $value: '{base.color.blue.3}',
-      $type: 'color',
+      '@': {
+        $value: '{base.color.blue.3}',
+        $type: 'color',
+      },
+      onInverse: {
+        $value: '{base.color.blue.5}',
+        $type: 'color',
+      },
     },
     danger: {
-      $value: '{base.color.orange.4}',
-      $type: 'color',
+      '@': {
+        $value: '{base.color.orange.4}',
+        $type: 'color',
+      },
+    },
+    severe: {
+      onInverse: {
+        $value: '{base.color.orange.5}',
+        $type: 'color',
+      },
     },
     open: {
-      $value: '{base.color.orange.3}',
-      $type: 'color',
+      '@': {
+        $value: '{base.color.orange.3}',
+        $type: 'color',
+      },
+      onInverse: {
+        $value: '{base.color.orange.5}',
+        $type: 'color',
+      },
     },
     closed: {
-      $value: '{base.color.gray.3}',
-      $type: 'color',
+      '@': {
+        $value: '{base.color.gray.3}',
+        $type: 'color',
+      },
+      onInverse: {
+        $value: '{base.color.gray.5}',
+        $type: 'color',
+      },
     },
   },
   bgColor: {
