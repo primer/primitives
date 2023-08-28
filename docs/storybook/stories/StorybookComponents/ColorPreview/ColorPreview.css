@@ -7,6 +7,10 @@
   border-radius: var(--borderRadius-medium);
 }
 
+.ColorPreview[data-type='shadow'] {
+  height: 200px;
+}
+
 .ColorPreview-wrap {
   display: grid;
   gap: var(--stack-gap-condensed);
@@ -52,6 +56,12 @@
 [data-bg] {
   width: var(--base-size-48);
   height: var(--base-size-48);
+  border-radius: var(--borderRadius-medium);
+}
+
+[data-shadow] {
+  width: var(--base-size-128);
+  height: var(--base-size-80);
   border-radius: var(--borderRadius-medium);
 }
 
