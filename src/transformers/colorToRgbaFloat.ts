@@ -14,8 +14,11 @@ const toRgbaFloat = (token: StyleDictionary.TransformedToken, alpha?: number) =>
   if (tokenMixColor && isRgbaFloat(tokenMixColor)) {
     tokenMixColor = rgbaFloatToHex(tokenMixColor, false)
   }
+  let hex = toHex(tokenValue)
   // mix color with mix color and weight
-  const hex = toHex(mix(tokenValue, tokenMixColor || tokenValue, token.mix?.weight || 0))
+  if (token.mix && token.mix.color && token.mix.weight) {
+    hex = toHex(mix(tokenValue, tokenMixColor, token.mix.weight))
+  }
   // retrieve spots from hex value (hex 3, hex 6 or hex 8)
   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})?$/i.exec(hex) ?? ['00', '00', '00']
   // return parsed rgba float object using alpha value from token, from hex code or defaults to 1
@@ -26,6 +29,7 @@ const toRgbaFloat = (token: StyleDictionary.TransformedToken, alpha?: number) =>
     a: alpha !== undefined ? alpha : parseInt(result[4], 16) / 255 || 1,
   }
 }
+
 // sum up the values of all values in an array
 const sum = (array: unknown[]): number => array.reduce((acc: number, v: unknown) => acc + parseInt(`${v}`), 0)
 

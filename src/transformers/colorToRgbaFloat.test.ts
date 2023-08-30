@@ -85,22 +85,22 @@ describe('Transformer: colorToRgbaFloat', () => {
   it('transforms `color` tokens including mix', () => {
     expect(
       [
-        getMockToken({value: '#343434', mix: {color: '#000000', weight: 0.5}}),
+        getMockToken({value: '#a40e26', mix: {color: '#660018', weight: 0.4}}),
         getMockToken({value: '#34343466', mix: {color: '#000000'}}),
         getMockToken({value: 'rgb(100,200,255)', mix: {weight: 0.5}}),
         getMockToken({value: 'rgba(100,200,255,0.8)', mix: {color: undefined, weight: undefined}}),
       ].map(item => colorToRgbaFloat.transformer(item, {})),
     ).toStrictEqual([
       {
-        b: 0.10196078431372549,
-        g: 0.10196078431372549,
-        r: 0.10196078431372549,
+        b: 0.12549019607843137,
+        g: 0.03137254901960784,
+        r: 0.5450980392156862,
         a: 1,
       },
       {
-        b: 0.050980392156862744,
-        g: 0.050980392156862744,
-        r: 0.050980392156862744,
+        r: 0.20392156862745098,
+        g: 0.20392156862745098,
+        b: 0.20392156862745098,
         a: 0.4,
       },
       {
