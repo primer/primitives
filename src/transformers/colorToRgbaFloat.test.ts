@@ -93,9 +93,9 @@ describe('Transformer: colorToRgbaFloat', () => {
       ].map(item => colorToRgbaFloat.transformer(item, {})),
     ).toStrictEqual([
       {
-        r: 0.4980392156862745,
-        g: 0.023529411764705882,
-        b: 0.11764705882352941,
+        b: 0.12549019607843137,
+        g: 0.03137254901960784,
+        r: 0.5450980392156862,
         a: 1,
       },
       {
@@ -127,7 +127,7 @@ describe('Transformer: colorToRgbaFloat', () => {
       ]
         .map(item => colorToRgbaFloat.transformer(item, {}))
         .map(item => rgbaFloatToHex(item)),
-    ).toStrictEqual(['#7f061e', '#34343466', '#64c8ff', '#64c8ffcc'])
+    ).toStrictEqual(['#8b0820', '#34343466', '#64c8ff', '#64c8ffcc'])
   })
 
   it('it forwards `rgb float` values', () => {

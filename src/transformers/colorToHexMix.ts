@@ -13,6 +13,7 @@ export const colorToHexMix: StyleDictionary.Transform = {
   type: `value`,
   transitive: true,
   matcher: isColorWithMix,
-  transformer: (token: StyleDictionary.TransformedToken) =>
-    toHex(mix(getTokenValue(token), token.mix?.color || getTokenValue(token), token.mix?.weight || 0)),
+  transformer: (token: StyleDictionary.TransformedToken) => {
+    return toHex(mix(getTokenValue(token), token.mix?.color || getTokenValue(token), token.mix?.weight || 0))
+  },
 }
