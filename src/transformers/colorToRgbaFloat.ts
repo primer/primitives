@@ -1,8 +1,9 @@
-import {mix, toHex} from 'color2k'
+import {toHex} from 'color2k'
 import {isColor} from '~/src/filters'
 import type StyleDictionary from 'style-dictionary'
 import {getTokenValue} from './utilities/getTokenValue'
 import {rgbaFloatToHex} from './utilities/rgbaFloatToHex'
+import mix from './utilities/mix'
 
 const toRgbaFloat = (token: StyleDictionary.TransformedToken, alpha?: number) => {
   let tokenValue = getTokenValue(token)

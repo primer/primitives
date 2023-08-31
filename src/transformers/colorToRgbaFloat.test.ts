@@ -1,5 +1,6 @@
 import {getMockToken} from '~/src/test-utilities'
 import {colorToRgbaFloat} from './colorToRgbaFloat'
+import {rgbaFloatToHex} from './utilities/rgbaFloatToHex'
 
 describe('Transformer: colorToRgbaFloat', () => {
   it('transforms `hex3`, `hex6`, and `hex8` tokens to rgb float value', () => {
@@ -92,9 +93,9 @@ describe('Transformer: colorToRgbaFloat', () => {
       ].map(item => colorToRgbaFloat.transformer(item, {})),
     ).toStrictEqual([
       {
-        b: 0.12549019607843137,
-        g: 0.03137254901960784,
-        r: 0.5450980392156862,
+        r: 0.4980392156862745,
+        g: 0.023529411764705882,
+        b: 0.11764705882352941,
         a: 1,
       },
       {
@@ -116,6 +117,17 @@ describe('Transformer: colorToRgbaFloat', () => {
         a: 0.8,
       },
     ])
+
+    expect(
+      [
+        getMockToken({value: '#a40e26', mix: {color: '#660018', weight: 0.4}}),
+        getMockToken({value: '#34343466', mix: {color: '#000000'}}),
+        getMockToken({value: 'rgb(100,200,255)', mix: {weight: 0.5}}),
+        getMockToken({value: 'rgba(100,200,255,0.8)', mix: {color: undefined, weight: undefined}}),
+      ]
+        .map(item => colorToRgbaFloat.transformer(item, {}))
+        .map(item => rgbaFloatToHex(item)),
+    ).toStrictEqual(['#7f061eff', '#34343466', '#64c8ffff', '#64c8ffcc'])
   })
 
   it('it forwards `rgb float` values', () => {
