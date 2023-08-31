@@ -38,6 +38,7 @@ export const jsonFigma: StyleDictionary.Formatter = ({dictionary, file: _file, p
   const tokens = dictionary.allTokens.sort(sortByReference(dictionary)).map(token => {
     const {attributes, value, $type, comment: description, original, alpha, mix} = token
     const {mode, collection, scopes} = attributes || {}
+
     return {
       name: token.name,
       value,

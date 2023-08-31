@@ -86,7 +86,7 @@ describe('Transformer: colorToRgbaFloat', () => {
   it('transforms `color` tokens including mix', () => {
     expect(
       [
-        getMockToken({value: '#a40e26', mix: {color: '#660018', weight: 0.4}}),
+        getMockToken({name: 'Mix of reds', value: '#a40e26', mix: {color: '#660018', weight: 0.4}}),
         getMockToken({value: '#34343466', mix: {color: '#000000'}}),
         getMockToken({value: 'rgb(100,200,255)', mix: {weight: 0.5}}),
         getMockToken({value: 'rgba(100,200,255,0.8)', mix: {color: undefined, weight: undefined}}),
@@ -120,14 +120,14 @@ describe('Transformer: colorToRgbaFloat', () => {
 
     expect(
       [
-        getMockToken({value: '#a40e26', mix: {color: '#660018', weight: 0.4}}),
+        getMockToken({name: 'Mix of reds', value: '#a40e26', mix: {color: '#660018', weight: 0.4}}),
         getMockToken({value: '#34343466', mix: {color: '#000000'}}),
         getMockToken({value: 'rgb(100,200,255)', mix: {weight: 0.5}}),
         getMockToken({value: 'rgba(100,200,255,0.8)', mix: {color: undefined, weight: undefined}}),
       ]
         .map(item => colorToRgbaFloat.transformer(item, {}))
         .map(item => rgbaFloatToHex(item)),
-    ).toStrictEqual(['#7f061eff', '#34343466', '#64c8ffff', '#64c8ffcc'])
+    ).toStrictEqual(['#7f061e', '#34343466', '#64c8ff', '#64c8ffcc'])
   })
 
   it('it forwards `rgb float` values', () => {

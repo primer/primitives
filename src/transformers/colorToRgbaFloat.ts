@@ -27,7 +27,7 @@ const toRgbaFloat = (token: StyleDictionary.TransformedToken, alpha?: number) =>
     r: parseInt(result[1], 16) / 255,
     g: parseInt(result[2], 16) / 255,
     b: parseInt(result[3], 16) / 255,
-    a: alpha !== undefined ? alpha : parseInt(result[4], 16) / 255 || 1,
+    a: alpha !== undefined ? alpha : result[4] ? parseInt(result[4], 16) / 255 : 1,
   }
 }
 
