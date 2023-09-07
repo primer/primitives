@@ -88,24 +88,20 @@ export const buildFigma = (buildOptions: ConfigGeneratorOptions): void => {
     {
       modes: string[]
       groups: string[]
-      modeTokens: string[]
     }
   > = {}
 
-  for (const {collection, mode, group, name} of tokens) {
+  for (const {collection, mode, group} of tokens) {
     if (!(collection in collections)) {
       collections[collection] = {
         modes: [],
         groups: [],
-        modeTokens: [],
       }
     }
     if (!collections[collection].modes.includes(mode)) {
       collections[collection].modes.push(mode)
     }
-    if (group === 'mode') {
-      collections[collection].modeTokens.push(name)
-    }
+
     if (!collections[collection].groups.includes(group)) {
       collections[collection].groups.push(group)
     }
