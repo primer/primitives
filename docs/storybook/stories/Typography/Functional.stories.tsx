@@ -600,7 +600,7 @@ export const BodyMedium = () => {
   })
 
   const filteredData = data.filter(
-    item => !item.id.includes('shorthand') && item.id.includes('title') && item.id.includes('medium'),
+    item => !item.id.includes('shorthand') && item.id.includes('body') && item.id.includes('medium'),
   )
 
   return (
@@ -677,7 +677,7 @@ export const BodySmall = () => {
   })
 
   const filteredData = data.filter(
-    item => !item.id.includes('shorthand') && item.id.includes('title') && item.id.includes('small'),
+    item => !item.id.includes('shorthand') && item.id.includes('body') && item.id.includes('small'),
   )
 
   return (
