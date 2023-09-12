@@ -18,10 +18,6 @@ export const buildFigma = (buildOptions: ConfigGeneratorOptions): void => {
       name: 'dark',
       source: [`src/tokens/base/color/dark/dark.json5`],
     },
-    // {
-    //   name: 'dark-dimmed',
-    //   source: [`src/tokens/base/color/dark/dark.json5`, `src/tokens/base/color/dark/dark.dimmed.json5`],
-    // },
   ]
 
   for (const {name, source} of baseScales) {
@@ -34,7 +30,7 @@ export const buildFigma = (buildOptions: ConfigGeneratorOptions): void => {
   }
   //
   for (const {filename, source, include} of themes) {
-    if (['light', 'dark' /*, 'dark-dimmed'*/].includes(filename)) {
+    if (['light', 'dark'].includes(filename)) {
       // build functional scales
       PrimerStyleDictionary.extend({
         source,
@@ -83,15 +79,31 @@ export const buildFigma = (buildOptions: ConfigGeneratorOptions): void => {
   const tokens: {
     collection: string
     mode: string
+    group: string
+    name: string
   }[] = files.flatMap(filePath => JSON.parse(fs.readFileSync(filePath, 'utf8')))
-  const collections: Record<string, string[]> = {}
-
-  for (const {collection, mode} of tokens) {
-    if (!(collection in collections)) {
-      collections[collection] = []
+  // create a list of groups with collections and modes
+  const collections: Record<
+    string,
+    {
+      modes: string[]
+      groups: string[]
     }
-    if (!collections[collection].includes(mode)) {
-      collections[collection].push(mode)
+  > = {}
+
+  for (const {collection, mode, group} of tokens) {
+    if (!(collection in collections)) {
+      collections[collection] = {
+        modes: [],
+        groups: [],
+      }
+    }
+    if (!collections[collection].modes.includes(mode)) {
+      collections[collection].modes.push(mode)
+    }
+
+    if (!collections[collection].groups.includes(group)) {
+      collections[collection].groups.push(group)
     }
   }
 
@@ -100,7 +112,7 @@ export const buildFigma = (buildOptions: ConfigGeneratorOptions): void => {
   const modeOrder = ['light', 'dark'].reverse()
   // sort modes in the order defined above
   for (const collection in collections) {
-    collections[collection].sort((a, b) => modeOrder.indexOf(b) - modeOrder.indexOf(a))
+    collections[collection].modes.sort((a, b) => modeOrder.indexOf(b) - modeOrder.indexOf(a))
   }
   // write to file
   fs.writeFileSync(`${buildOptions.buildPath}figma/figma.json`, JSON.stringify({collections, files}, null, 2))
