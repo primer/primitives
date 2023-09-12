@@ -205,7 +205,7 @@ In this case you can create the follwing structure. The `@` will be removed from
   bgColor: {
     accent: {
       "@": {
-        // default values
+        // values for accent (default)
       },
       "muted": {
         // values for accent-muted
