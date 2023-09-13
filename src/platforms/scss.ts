@@ -38,7 +38,7 @@ export const scss: PlatformInitializer = (outputFile, prefix, buildPath): StyleD
       {
         destination: outputFile,
         filter: isSource,
-        format: `scss/mixin-css-variables`,
+        format: `scss/variables`,
         options: {
           mixinName,
           outputReferences: false,
