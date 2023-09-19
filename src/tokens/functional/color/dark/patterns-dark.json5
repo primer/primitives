@@ -1295,7 +1295,7 @@
       },
       borderColor: {
         hover: {
-          $value: '{borderColor.muted}',
+          $value: '{base.color.gray.0}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -1305,9 +1305,10 @@
               scopes: ['borderColor'],
             },
           },
+          alpha: 0.1,
         },
         selected: {
-          $value: '{borderColor.muted}',
+          $value: '{button.outline.borderColor.hover}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
