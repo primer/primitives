@@ -1,7 +1,17 @@
 /* eslint @typescript-eslint/consistent-type-imports: 0 */
 import React from 'react'
 import './PatternOverrides.css'
-import {ToggleSwitch, SegmentedControl, ActionList, Button, TextInput, Checkbox, Radio, Select} from '@primer/react'
+import {
+  ToggleSwitch,
+  SegmentedControl,
+  ActionList,
+  Button,
+  TextInput,
+  Checkbox,
+  Radio,
+  Select,
+  IconButton,
+} from '@primer/react'
 import {EyeIcon, HeartIcon} from '@primer/octicons-react'
 
 export default {
@@ -75,6 +85,7 @@ export const ButtonScheme = () => {
       <Button disabled id="default" leadingIcon={HeartIcon} trailingIcon={EyeIcon}>
         Default
       </Button>
+      <IconButton id="invisible" variant="invisible" aria-label="invisible button" icon={HeartIcon}></IconButton>
       <Button id="invisible" variant="invisible">
         Invisible
       </Button>

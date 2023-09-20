@@ -35,14 +35,6 @@ export const Shadows = () => {
         shadowBg="bgColor-default"
         style={{border: `1px solid var(--borderColor-default)`}}
       />
-      <ColorPreview
-        color="shadow-highlight"
-        shadow
-        key="shadow-highlight"
-        canvasColor="bgColor-default"
-        shadowBg="bgColor-accent-emphasis"
-        style={{border: `1px solid var(--borderColor-muted)`}}
-      />
     </>
   )
 }
