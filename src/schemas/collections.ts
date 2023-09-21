@@ -1,17 +1,25 @@
 import {z} from 'zod'
 import {joinFriendly} from '../utilities/joinFriendly'
+import {schemaErrorMessage} from '../utilities/schemaErrorMessage'
 
-export const colorCollections = z.enum(['base/color/light', 'base/color/dark', 'mode', 'pattern/mode'])
-
-export const dimensionCollections = z.enum(['base/size', 'functional/size'])
-
-type Collections = 'base/color/light' | 'base/color/dark' | 'mode' | 'pattern/mode' | 'base/size' | 'functional/size'
+type Collections =
+  | 'base/color/light'
+  | 'base/color/dark'
+  | 'base/color/dark-dimmed'
+  | 'mode'
+  | 'pattern/mode'
+  | 'base/size'
+  | 'functional/size'
+  | 'pattern/size'
 
 export const collection = (collections: Collections[]) => {
   return z.string().refine(
     value => collections.includes(value as Collections),
     value => ({
-      message: `Invalid mode: "${value}", valid modes are ${joinFriendly(collections)}`,
+      message: schemaErrorMessage(
+        `Invalid collection: "${value}"`,
+        `Valid collections are ${joinFriendly(collections)}`,
+      ),
     }),
   )
 }
@@ -22,7 +30,7 @@ export const mode = (modes: Modes[]) => {
   return z.string().refine(
     value => modes.includes(value as Modes),
     value => ({
-      message: `Invalid mode: "${value}", valid modes are ${joinFriendly(modes)}`,
+      message: schemaErrorMessage(`Invalid mode: "${value}"`, `Valid modes are ${joinFriendly(modes)}`),
     }),
   )
 }

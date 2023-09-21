@@ -45,6 +45,21 @@ describe('Transformer: namePathToSlashNotation', () => {
     expect(input.map(item => namePathToSlashNotation.transformer(item, {}))).toStrictEqual(expectedOutput)
   })
 
+  it('removes `@`, so we can use it for the default hack', () => {
+    const input = [
+      getMockToken({
+        name: 'tokenName',
+        path: ['fgColor', 'accent', '@'],
+      }),
+      getMockToken({
+        name: 'tokenName',
+        path: ['fgColor', '@', 'muted'],
+      }),
+    ]
+    const expectedOutput = ['fgColor/accent', 'fgColor/muted']
+    expect(input.map(item => namePathToSlashNotation.transformer(item, {}))).toStrictEqual(expectedOutput)
+  })
+
   it('adds prefix to token name', () => {
     const platform = {
       prefix: 'PRIMER',

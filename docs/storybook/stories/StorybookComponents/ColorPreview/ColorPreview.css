@@ -7,6 +7,10 @@
   border-radius: var(--borderRadius-medium);
 }
 
+.ColorPreview[data-type='shadow'] {
+  height: 200px;
+}
+
 .ColorPreview-wrap {
   display: grid;
   gap: var(--stack-gap-condensed);
@@ -17,8 +21,30 @@
   background-color: var(--bgColor-emphasis) !important;
 }
 
+/* set bg color for text that matches default bg */
+.ColorPreview:has([style='color: var(--fgColor-onInverse);']) {
+  background-color: var(--bgColor-inverse) !important;
+}
+
 /* add border to bg colors that match default bg */
-.ColorPreview:has([style='background-color: var(--bgColor-default); border: solid 1px var(--undefined);']) > div {
+.ColorPreview:has([style='background-color: var(--bgColor-default); border: solid 1px var(--undefined);']) > div,
+.ColorPreview:has([style='background-color: var(--bgColor-transparent); border: solid 1px var(--undefined);']) > div {
+  border: solid 1px var(--borderColor-default) !important;
+}
+
+[data-dark-theme='dark']
+  .ColorPreview:has([style='background-color: var(--bgColor-inset); border: solid 1px var(--undefined);'])
+  > div {
+  border: solid 1px var(--borderColor-default) !important;
+}
+
+[data-dark-theme='dark_high_contrast'],
+.ColorPreview:has([style='background-color: var(--bgColor-inset); border: solid 1px var(--undefined);']) > div {
+  border: solid 1px var(--borderColor-default) !important;
+}
+
+[data-light-theme='light_high_contrast'],
+.ColorPreview:has([style='background-color: var(--bgColor-inset); border: solid 1px var(--undefined);']) > div {
   border: solid 1px var(--borderColor-default) !important;
 }
 
@@ -30,6 +56,12 @@
 [data-bg] {
   width: var(--base-size-48);
   height: var(--base-size-48);
+  border-radius: var(--borderRadius-medium);
+}
+
+[data-shadow] {
+  width: var(--base-size-128);
+  height: var(--base-size-80);
   border-radius: var(--borderRadius-medium);
 }
 

@@ -1,5 +1,6 @@
 import {z} from 'zod'
 import {joinFriendly} from '../utilities/joinFriendly'
+import {schemaErrorMessage} from '../utilities/schemaErrorMessage'
 
 type ValidScope = 'all' | 'bgColor' | 'fgColor' | 'borderColor' | 'size' | 'gap' | 'radius' | 'borderColor'
 const validScopes: ValidScope[] = ['all', 'bgColor', 'fgColor', 'borderColor', 'size', 'gap', 'radius', 'borderColor']
@@ -9,7 +10,7 @@ export const scopes = (scopeSubset?: ValidScope[]) => {
   return z.array(z.string()).refine(
     value => value.every(item => scopeArray.includes(item as ValidScope)),
     value => ({
-      message: `Invalid scope "${value}", valid scopes are: ${joinFriendly(scopeArray)}`,
+      message: schemaErrorMessage(`Invalid scope: "${value}"`, `Valid scopes are: ${joinFriendly(scopeArray)}`),
     }),
   )
 }

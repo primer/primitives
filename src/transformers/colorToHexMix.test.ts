@@ -55,7 +55,7 @@ describe('Transformer: colorToHexMix', () => {
         },
       }),
     ]
-    const expectedOutput = ['#15191d77', '#4c5b6a4b']
+    const expectedOutput = ['#51617177', '#3e4a574b']
     expect(input.map(item => colorToHexMix.transformer(item, {}))).toStrictEqual(expectedOutput)
   })
 

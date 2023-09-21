@@ -42,6 +42,20 @@
   color: var(--button-invisible-fgColor-rest) !important;
 }
 
+.Button button[id='invisible'][data-component='IconButton'] {
+  color: var(--button-invisible-iconColor-rest) !important;
+}
+
+.Button button[id='invisible'][data-component='IconButton']:hover {
+  color: var(--button-invisible-iconColor-hover) !important;
+}
+
+.Button button[id='danger']:hover:not(:disabled) {
+  background-color: var(--button-danger-bgColor-hover) !important;
+  color: var(--button-danger-fgColor-hover) !important;
+  border-color: var(--button-danger-borderColor-hover) !important;
+}
+
 .Button button[id='default']:not(:hover) [data-component='ButtonCounter'] {
   background-color: var(--buttonCounter-default-bgColor-rest) !important;
 }

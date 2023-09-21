@@ -1,6 +1,6 @@
 {
   "name": "@primer/primitives",
-  "version": "7.11.14",
+  "version": "7.13.1",
   "description": "Typography, spacing, and color primitives for Primer design system",
   "files": [
     "dist",
@@ -30,7 +30,8 @@
     "build": "ts-node ./scripts/build.ts && tsc --project tsconfig.build.json",
     "build:next": "ts-node -r tsconfig-paths/register ./scripts/buildTokens.ts && ts-node ./scripts/buildFallbacks.ts",
     "build:tokens": "node -e \"require('./build')._init()\"",
-    "build:new-tokens": "npm run build:tokens && npm run build:next",
+    "build:figma": "ts-node scripts/buildPlatforms/buildFigma.ts",
+    "build:new-tokens": "npm run build:tokens && npm run build:next && npm run build:figma",
     "tokenJson:check": "ts-node scripts/diffThemes.ts && ts-node scripts/diffTokenProps.ts",
     "contrast:check": "ts-node -e \"require('./scripts/color-contrast').check()\"",
     "format": "prettier --write  '**/*.{js,jsx,ts,tsx,md,mdx,css}'",
@@ -90,7 +91,7 @@
     "ts-node": "^10.9.1",
     "tsconfig-paths": "^4.2.0",
     "typescript": "^5.1.6",
-    "zod": "^3.21.4",
-    "zod-validation-error": "^1.3.1"
+    "zod": "^3.22.2",
+    "zod-validation-error": "^1.5.0"
   }
 }

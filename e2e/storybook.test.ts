@@ -2,9 +2,24 @@ import {type Page, test, expect} from '@playwright/test'
 // eslint-disable-next-line import/extensions, import/no-unresolved
 import data from '../docs/storybook/storybook-static/stories.json'
 
-const stories = Object.values(data.stories).map(story => {
+interface Story {
+  id: string
+  parameters?: {
+    snapshot?: {
+      excludeFromSnapshot?: boolean
+    }
+    docs?: {
+      tags?: string[]
+    }
+  }
+}
+
+const stories = Object.values(data.stories).map((story: unknown) => {
+  const {id, parameters} = story as Story
   return {
-    id: story.id,
+    id,
+    excludeFromSnapshot: parameters?.snapshot?.excludeFromSnapshot,
+    tags: parameters?.docs?.tags,
   }
 })
 const themes = [
@@ -20,17 +35,31 @@ const themes = [
 
 test.describe('storybook', () => {
   for (const story of stories) {
-    test.describe(story.id, () => {
+    if (
+      story.excludeFromSnapshot ||
+      (story.tags && story.tags.includes('excludeSnapshot')) ||
+      (story.tags && story.tags.includes('docs'))
+    ) {
+      // eslint-disable-next-line @typescript-eslint/no-empty-function
+      test.skip(story.id, async () => {})
+      continue
+    }
+
+    const runAllThemes = !story.id.includes('size') && !story.id.includes('typography')
+
+    test.describe(`${story.id} (${runAllThemes ? 'all themes' : 'light theme only'})`, () => {
       for (const theme of themes) {
-        test(theme, async ({page}) => {
-          await visit(page, {
-            id: story.id,
-            globals: {
-              theme,
-            },
+        if (runAllThemes || theme === 'light') {
+          test(`${theme} theme`, async ({page}) => {
+            await visit(page, {
+              id: story.id,
+              globals: {
+                theme,
+              },
+            })
+            expect(await page.screenshot({animations: 'disabled', fullPage: true})).toMatchSnapshot()
           })
-          expect(await page.screenshot({animations: 'disabled', fullPage: true})).toMatchSnapshot()
-        })
+        }
       }
     })
   }
@@ -72,4 +101,27 @@ export async function visit(page: Page, options: Options) {
 
   await page.goto(url.toString())
   await page.waitForSelector('body.sb-show-main:not(.sb-show-preparing-story)')
+  await waitForImages(page)
+}
+
+/**
+ * Helper specifically for working with images in storybook. Unfortunately, the
+ * `waitUntil: 'networkidle'` option does not work well with storybook during
+ * development as there is always a connection listening for updates.
+ */
+async function waitForImages(page: Page) {
+  await page.evaluate(async () => {
+    const images = Array.from(document.querySelectorAll('img'))
+    await Promise.all(
+      images.map(img => {
+        if (img.complete) {
+          return
+        }
+        return new Promise((resolve, reject) => {
+          img.addEventListener('load', resolve)
+          img.addEventListener('error', reject)
+        })
+      }),
+    )
+  })
 }

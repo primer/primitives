@@ -1,5 +1,66 @@
 # @primer/primitives
 
+## 7.13.1
+
+### Patch Changes
+
+- [#733](https://github.com/primer/primitives/pull/733) [`f431e7e`](https://github.com/primer/primitives/commit/f431e7e74350b6ec400b36dc5f1cb0a4046e5e4b) Thanks [@langermank](https://github.com/langermank)! - - Remove the default button inset shadow (its basically invisible)
+
+  - Switch danger button to use the same border strategy as primary for hover/active
+
+- [#735](https://github.com/primer/primitives/pull/735) [`0d982b1`](https://github.com/primer/primitives/commit/0d982b1c7629afcdaa0a3168ffcfbfbae17aeeee) Thanks [@langermank](https://github.com/langermank)! - Add missing fallbacks for disabled buttons
+
+- [#731](https://github.com/primer/primitives/pull/731) [`5ebfafe`](https://github.com/primer/primitives/commit/5ebfafe54df605f31e1c0a0e603a25a7248adf4a) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - change scss output from css variables to scss variables
+
+- [#734](https://github.com/primer/primitives/pull/734) [`df91f47`](https://github.com/primer/primitives/commit/df91f4799d0b6d4018ef2bb3bea639660ba0ec6f) Thanks [@langermank](https://github.com/langermank)! - - Add iconColor tokens for the invisible button variant
+  - Remove highlight shadow token as its no longer used for Button
+
+## 7.13.0
+
+### Minor Changes
+
+- [#682](https://github.com/primer/primitives/pull/682) [`a082224`](https://github.com/primer/primitives/commit/a082224be3ef4d8cc73d7e8af11a727bbfb6d00d) Thanks [@langermank](https://github.com/langermank)! - - Add `inverse` color options for semantic color tokens to support Toast
+  - Update the default `emphasis` background color to `white` in dark mode
+  - Add `overlay` size tokens
+
+### Patch Changes
+
+- [#722](https://github.com/primer/primitives/pull/722) [`5394816`](https://github.com/primer/primitives/commit/5394816c98924e5b80d27cdf2a17b4bca2ac97aa) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Fioxed RGBAfloatconversion
+
+- [#723](https://github.com/primer/primitives/pull/723) [`a3b0d21`](https://github.com/primer/primitives/commit/a3b0d21746ac288c89c4f0f89f944cbe4b46d61c) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Adding group prop to figma output
+
+- [#729](https://github.com/primer/primitives/pull/729) [`d6bbf2a`](https://github.com/primer/primitives/commit/d6bbf2a2a0f9c0e2c91e77870f380a60eee670a4) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - fix shadow
+
+- [#727](https://github.com/primer/primitives/pull/727) [`364c09f`](https://github.com/primer/primitives/commit/364c09fd462fc31a049d82f0a50d914695d5bde1) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Allow some bgColors to be used as borders
+
+- [#730](https://github.com/primer/primitives/pull/730) [`0c237e3`](https://github.com/primer/primitives/commit/0c237e392ab78863da8b17b0aa185dd0f3df92e1) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - update borderColor Success
+
+- [#721](https://github.com/primer/primitives/pull/721) [`01aae86`](https://github.com/primer/primitives/commit/01aae86812435d2a6dc387d75641aa2a526cbdad) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Fixing shadows
+
+## 7.12.0
+
+### Minor Changes
+
+- [#665](https://github.com/primer/primitives/pull/665) [`360a8b8`](https://github.com/primer/primitives/commit/360a8b866847d232cae70cdca630504c5c6e09e2) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Adding support for figma tokens
+
+- [#714](https://github.com/primer/primitives/pull/714) [`5b1cb91`](https://github.com/primer/primitives/commit/5b1cb91299b0245f713610cd179d8816b96cfc20) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Add space tokens
+
+### Patch Changes
+
+- [#704](https://github.com/primer/primitives/pull/704) [`aeb3b30`](https://github.com/primer/primitives/commit/aeb3b302b453452a1dc8fd6cf00a24d6c98a8e62) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - fix for figma references
+
+- [#707](https://github.com/primer/primitives/pull/707) [`ca974dc`](https://github.com/primer/primitives/commit/ca974dcea75d6447fa94096dc1b94cdbd7896e35) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - add paddingBlock to figma
+
+- [#711](https://github.com/primer/primitives/pull/711) [`0f7f801`](https://github.com/primer/primitives/commit/0f7f801a2bf3c43b41430b6fdd0cbb9af8f23858) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Move figma control tokens to component collection
+
+- [#709](https://github.com/primer/primitives/pull/709) [`c0cc1db`](https://github.com/primer/primitives/commit/c0cc1db6e1ee34ee695acbb9181e87846fe0c157) Thanks [@langermank](https://github.com/langermank)! - Update a few `bgColor` and `borderColor` Primitive fallbacks
+
+- [#717](https://github.com/primer/primitives/pull/717) [`8c278bd`](https://github.com/primer/primitives/commit/8c278bd81b71e84106676065a95f8bdaf1765d75) Thanks [@langermank](https://github.com/langermank)! - Add back `inset` color tokens to v8
+
+- [#686](https://github.com/primer/primitives/pull/686) [`40fdf5c`](https://github.com/primer/primitives/commit/40fdf5c611da88c824474347491a19f2e5a06a27) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - rename treeViewItem-leadingVisual-bgColor-rest to treeViewItem-leadingVisual-iconColor-rest
+
+- [#698](https://github.com/primer/primitives/pull/698) [`870cc60`](https://github.com/primer/primitives/commit/870cc602ee1935fdca0520f42dd84d9e0621c4ec) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Update figma token names & rename `fgColor-link-rest` to `fgColor-link`
+
 ## 7.11.14
 
 ### Patch Changes

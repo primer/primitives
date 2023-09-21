@@ -22,9 +22,15 @@ export const colorToken = baseToken
     $extensions: z
       .object({
         'org.primer.figma': z.object({
-          collection: collection(['base/color/light', 'base/color/dark', 'mode', 'pattern/mode']),
-          mode: mode(['light', 'dark']),
-          scopes: scopes(['all', 'bgColor', 'fgColor', 'borderColor']),
+          collection: collection([
+            'base/color/light',
+            'base/color/dark',
+            'base/color/dark-dimmed',
+            'mode',
+            'pattern/mode',
+          ]).optional(),
+          mode: mode(['light', 'dark']).optional(),
+          scopes: scopes(['all', 'bgColor', 'fgColor', 'borderColor']).optional(),
         }),
       })
       .optional(),

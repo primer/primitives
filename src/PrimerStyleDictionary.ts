@@ -18,6 +18,8 @@ import {
   dimensionToPixelUnitless,
   colorToRgbaFloat,
   namePathToSlashNotation,
+  figmaAttributes,
+  namePathToFigma,
 } from './transformers'
 import {
   scssMixinCssVariables,
@@ -31,6 +33,7 @@ import {
   jsonPostCssFallback,
   cssWrapMediaQuery,
   cssVariables,
+  jsonFigma,
 } from './formats'
 
 /**
@@ -98,6 +101,11 @@ StyleDictionary.registerFormat({
   formatter: jsonPostCssFallback,
 })
 
+StyleDictionary.registerFormat({
+  name: 'json/figma',
+  formatter: jsonFigma,
+})
+
 /**
  * Transformers
  *
@@ -138,13 +146,28 @@ StyleDictionary.registerTransform({
 })
 
 StyleDictionary.registerTransform({
+  name: 'figma/attributes',
+  ...figmaAttributes,
+})
+
+StyleDictionary.registerTransform({
   name: 'json/deprecated',
   ...jsonDeprecated,
 })
 
 StyleDictionary.registerTransform({
+  name: 'name/pathToCamelCase',
+  ...namePathToCamelCase,
+})
+
+StyleDictionary.registerTransform({
   name: 'name/pathToDotNotation',
   ...namePathToDotNotation,
+})
+
+StyleDictionary.registerTransform({
+  name: 'name/pathToFigma',
+  ...namePathToFigma,
 })
 
 StyleDictionary.registerTransform({
