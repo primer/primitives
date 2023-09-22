@@ -14,5 +14,5 @@ jobs:
     with:
       install: npm ci --legacy-peer-deps --no-audit --no-fund --include=dev && npm run build && npm run build:tokens
     secrets:
-      gh_token: ${{ secrets.GITHUB_TOKEN }}
+      gh_token: ${{ secrets.GPR_AUTH_TOKEN_SHARED }}
       npm_token: ${{ secrets.NPM_AUTH_TOKEN_SHARED }}
