@@ -1,5 +1,15 @@
 # @primer/primitives
 
+## 7.14.0
+
+### Minor Changes
+
+- [`6b46ff4`](https://github.com/primer/primitives/commit/6b46ff40d2619b46329e111cb8198bc81eabcb3a) Thanks [@camertron](https://github.com/camertron)! - rm diffStat/addition/bgColor
+
+### Patch Changes
+
+- [#736](https://github.com/primer/primitives/pull/736) [`2565a2d`](https://github.com/primer/primitives/commit/2565a2d30dbca13b73e21064036910e269385770) Thanks [@langermank](https://github.com/langermank)! - Fix `invisible` Button states for high contrast themes
+
 ## 7.13.1
 
 ### Patch Changes
