@@ -53,8 +53,3 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ steps.get-access-token.outputs.access-token }}
           NPM_TOKEN: ${{ secrets.NPM_AUTH_TOKEN_SHARED }}
-
-      - name: Setup tmate session
-        uses: mxschmitt/action-tmate@v3
-        env:
-          GITHUB_TOKEN: ${{ steps.get-access-token.outputs.access-token }}
