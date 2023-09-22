@@ -218,6 +218,22 @@
       },
     },
   },
+  diffStat: {
+    addition: {
+      bgColor: {
+        $value: '{bgColor.success.emphasis}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'dark',
+            group: 'component',
+            scopes: ['bgColor'],
+          },
+        },
+      },
+    },
+  },
   codeMirror: {
     fgColor: {
       $value: '{fgColor.default}',
