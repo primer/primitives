@@ -6,6 +6,12 @@ on:
       - 'changeset-release/**'
       - 'dependabot/**'
 
+permissions:
+  contents: write
+  pull-requests: write
+  checks: write
+  packages: write
+
 jobs:
   release-canary:
     name: Canary
