@@ -28,7 +28,7 @@ jobs:
         run: npm ci --legacy-peer-deps --no-audit --no-fund && pushd docs; npm ci --legacy-peer-deps --no-audit --no-fund; popd
 
       - name: Build tokens
-        run: npm ru build
+        run: npm run build
 
       - name: Build experimental tokens
         run: npm run build:tokens
