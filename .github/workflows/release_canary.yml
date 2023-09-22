@@ -10,57 +10,9 @@ jobs:
   release-canary:
     name: Canary
     if: ${{ github.repository == 'primer/primitives' }}
-
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-        with:
-          # This makes Actions fetch all Git history so that Changesets can generate changelogs with the correct commits
-          fetch-depth: 0
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16.x
-
-      - name: Install dependencies
-        run: npm ci --legacy-peer-deps --no-audit --no-fund --include=dev
-
-      - name: Build tokens
-        run: npm run build
-
-      - name: Build experimental tokens
-        run: npm run build:tokens
-
-      - name: Create .npmrc
-        run: |
-          cat << EOF > "$HOME/.npmrc"
-            //registry.npmjs.org/:_authToken=$NPM_TOKEN
-          EOF
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_AUTH_TOKEN_SHARED }}
-
-      - name: Publish canary version
-        run: |
-          echo "$( jq '.version = "0.0.0"' package.json )" > package.json
-          echo -e "---\n'@primer/primitives': patch\n---\n\nFake entry to force publishing" > .changeset/force-snapshot-release.md
-          npx changeset version --snapshot
-          npx changeset publish --tag canary
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Output canary version number
-        uses: actions/github-script@v6.4.0
-        with:
-          script: |
-            const package = require(`${process.env.GITHUB_WORKSPACE}/package.json`)
-            github.rest.repos.createCommitStatus({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              sha: context.sha,
-              state: 'success',
-              context: `Published ${package.name}`,
-              description: package.version,
-              target_url: `https://unpkg.com/${package.name}@${package.version}/`
-            })
+    uses: primer/.github/.github/workflows/release_canary.yml@main
+    with:
+      install: npm ci --legacy-peer-deps --no-audit --no-fund --include=dev && npm run build && npm run build:tokens
+    secrets:
+      gh_token: ${{ secrets.GITHUB_TOKEN }}
+      npm_token: ${{ secrets.NPM_AUTH_TOKEN_SHARED }}
