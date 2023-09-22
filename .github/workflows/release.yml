@@ -28,7 +28,7 @@ jobs:
         run: npm ci --legacy-peer-deps --no-audit --no-fund && pushd docs; npm ci --legacy-peer-deps --no-audit --no-fund; popd
 
       - name: Build tokens
-        run: npm run build
+        run: npm ru build
 
       - name: Build experimental tokens
         run: npm run build:tokens
@@ -42,14 +42,14 @@ jobs:
           client-secret: ${{ secrets.PRIMER_APP_CLIENT_SECRET_SHARED }}
           installation-id: ${{ vars.PRIMER_APP_INSTALLATION_ID_SHARED }}
 
-      - name: Setup tmate session
-        uses: mxschmitt/action-tmate@v3
-        env:
-          GITHUB_TOKEN: ${{ steps.get-access-token.outputs.access-token }}
+      # - name: Setup tmate session
+      #   uses: mxschmitt/action-tmate@v3
+      #   env:
+      #     GITHUB_TOKEN: ${{ steps.get-access-token.outputs.access-token }}
 
       - name: Create release pull request or publish to npm
         id: changesets
-        uses: changesets/action@v1.4.1
+        uses: changesets/action@v1.4.5
         with:
           title: Release Tracking
           # This expects you to have a script called release which does a build for your packages and calls changeset publish
