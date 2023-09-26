@@ -293,7 +293,7 @@
               scopes: ['bgColor'],
             },
           },
-          alpha: 0.2,
+          alpha: 0.36,
         },
         active: {
           $value: '{base.color.gray.2}',
@@ -306,10 +306,10 @@
               scopes: ['bgColor'],
             },
           },
-          alpha: 0.4,
+          alpha: 0.48,
         },
         disabled: {
-          $value: '{control.bgColor.disabled}',
+          $value: '{base.color.gray.2}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -319,9 +319,10 @@
               scopes: ['bgColor'],
             },
           },
+          alpha: 0.2,
         },
         selected: {
-          $value: '{base.color.gray.0}',
+          $value: '{base.color.gray.2}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -331,6 +332,7 @@
               scopes: ['bgColor'],
             },
           },
+          alpha: 0.2,
         },
       },
       borderColor: {

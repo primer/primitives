@@ -284,7 +284,7 @@
           },
         },
         hover: {
-          $value: '{base.color.gray.2}',
+          $value: '{base.color.gray.3}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -294,10 +294,10 @@
               scopes: ['bgColor'],
             },
           },
-          alpha: 0.12,
+          alpha: 0.24,
         },
         active: {
-          $value: '{base.color.gray.2}',
+          $value: '{base.color.gray.3}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -307,10 +307,10 @@
               scopes: ['bgColor'],
             },
           },
-          alpha: 0.2,
+          alpha: 0.28,
         },
         disabled: {
-          $value: '{base.color.transparent}',
+          $value: '{base.color.gray.3}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -320,9 +320,10 @@
               scopes: ['bgColor'],
             },
           },
+          alpha: 0.08,
         },
         selected: {
-          $value: '{base.color.gray.2}',
+          $value: '{base.color.gray.3}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
