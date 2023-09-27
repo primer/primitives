@@ -647,7 +647,7 @@
         },
       },
       disabled: {
-        $value: '{fgColor.muted}',
+        $value: '{fgColor.onEmphasis}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -1178,7 +1178,7 @@
           },
         },
         disabled: {
-          $value: '{control.bgColor.disabled}',
+          $value: '{control.transparent.bgColor.disabled}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
