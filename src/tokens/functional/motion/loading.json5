@@ -1,0 +1,17 @@
+/**
+ * Loading
+ * @description Used for consistent durations of loading indicator animations
+ */
+{
+  motion: {
+    loading: {
+      delay: {
+        default: {
+          $value: '1000ms',
+          $type: 'duration',
+          $description: 'The amount of time to wait before showing a loading indicator or announcing a loading state to assistive technologies.',
+        },
+      },
+    },
+  },
+}
