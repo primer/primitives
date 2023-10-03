@@ -1933,6 +1933,12 @@
       },
     },
   },
+  skeletonLoader: {
+    bgColor: {
+      $value: '{bgColor.muted}',
+      $type: 'color',
+    },
+  },
   timelineBadge: {
     bgColor: {
       $value: '{base.color.gray.7}',

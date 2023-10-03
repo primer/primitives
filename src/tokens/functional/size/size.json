@@ -425,6 +425,40 @@
       }
     }
   },
+  "spinner": {
+    "size": {
+      "small": {
+        "$value": "{base.size.16}",
+        "$type": "dimension",
+        "$extensions": {
+          "org.primer.figma": {
+            "collection": "pattern/size",
+            "scopes": ["size"]
+          }
+        }
+      },
+      "medium": {
+        "$value": "{base.size.32}",
+        "$type": "dimension",
+        "$extensions": {
+          "org.primer.figma": {
+            "collection": "pattern/size",
+            "scopes": ["size"]
+          }
+        }
+      },
+      "large": {
+        "$value": "{base.size.64}",
+        "$type": "dimension",
+        "$extensions": {
+          "org.primer.figma": {
+            "collection": "pattern/size",
+            "scopes": ["size"]
+          }
+        }
+      }
+    }
+  },
   "stack": {
     "padding": {
       "condensed": {
