@@ -5,21 +5,22 @@ import {
   colorToHexAlpha,
   colorToRgbAlpha,
   colorToHex,
+  colorToHexMix,
+  colorToRgbaFloat,
+  dimensionToRem,
+  dimensionToPixelUnitless,
+  durationToCss,
+  figmaAttributes,
   fontFamilyToCss,
   fontWeightToNumber,
   jsonDeprecated,
   namePathToDotNotation,
   namePathToCamelCase,
   namePathToKebabCase,
+  namePathToSlashNotation,
+  namePathToFigma,
   shadowToCss,
   typographyToCss,
-  colorToHexMix,
-  dimensionToRem,
-  dimensionToPixelUnitless,
-  colorToRgbaFloat,
-  namePathToSlashNotation,
-  figmaAttributes,
-  namePathToFigma,
 } from './transformers'
 import {
   scssMixinCssVariables,
@@ -143,6 +144,11 @@ StyleDictionary.registerTransform({
 StyleDictionary.registerTransform({
   name: 'dimension/pixelUnitless',
   ...dimensionToPixelUnitless,
+})
+
+StyleDictionary.registerTransform({
+  name: 'duration/css',
+  ...durationToCss,
 })
 
 StyleDictionary.registerTransform({
