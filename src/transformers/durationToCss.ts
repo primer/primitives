@@ -9,7 +9,7 @@ import type StyleDictionary from 'style-dictionary'
 export const durationToCss: StyleDictionary.Transform = {
   type: `value`,
   transitive: true,
-  matcher: (token: StyleDictionary.TransformedToken) => token.type === `duration`,
+  matcher: (token: StyleDictionary.TransformedToken) => token.$type === `duration`,
   transformer: (token: StyleDictionary.TransformedToken, _options?: StyleDictionary.Platform) => {
     // throw an error if token value is not a string or does not end with `ms`
     if (typeof token.value !== `string` || !token.value.endsWith(`ms`)) {
