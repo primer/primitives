@@ -5,8 +5,8 @@
 {
   motion: {
     spinner: {
-      rotationDuration: {
-        default: {
+      duration: {
+        rotation: {
           $value: '1000ms',
           $type: 'duration',
           $description: 'The amount of time it takes the "Spinner" loading indicator to make a full 360deg rotation',
@@ -14,11 +14,13 @@
       },
     },
     skeletonLoader: {
-      shimmerDuration: {
-        default: {
-          $value: '1000ms',
-          $type: 'duration',
-          $description: 'The amount of times it takes the "shimmer" effect to go from the start (left) of the skeleton loader to the end (right)',
+      shimmer: {
+        duration: {
+          scale: {
+            $value: '1000ms',
+            $type: 'duration',
+            $description: 'The amount of times it takes the "shimmer" effect to go from the start (left) of the skeleton loader to the end (right)',
+          },
         },
       },
     },
