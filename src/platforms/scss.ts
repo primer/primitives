@@ -24,6 +24,7 @@ export const scss: PlatformInitializer = (outputFile, prefix, buildPath): StyleD
       'color/hexMix',
       'color/hexAlpha',
       'dimension/rem',
+      'duration/css',
       'shadow/css',
       'border/css',
       'typography/css',
