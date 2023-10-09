@@ -8,7 +8,6 @@ const validTypes = [
   'dimension',
   'duration',
   'border',
-  'duration',
   'shadow',
   'fontFamily',
   'fontWeight',
