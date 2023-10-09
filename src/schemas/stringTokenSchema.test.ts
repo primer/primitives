@@ -1,57 +1,56 @@
-import {numberToken} from './numberToken'
+import {stringToken} from './stringToken'
 
-describe('Schema: numberToken', () => {
+describe('Schema: stringToken', () => {
   const validToken = {
-    $value: 10,
-    $type: 'number',
-    $description: 'a number token',
+    $value: 'a string',
+    $type: 'string',
+    $description: 'a string token',
   }
 
-  it('parses valid number tokens', () => {
-    expect(numberToken.safeParse(validToken).success).toStrictEqual(true)
+  it('parses valid string tokens', () => {
+    expect(stringToken.safeParse(validToken).success).toStrictEqual(true)
   })
 
   it('fails on invalid properties', () => {
     // additional element
     expect(
-      numberToken.safeParse({
+      stringToken.safeParse({
         ...validToken,
         additional: 1000,
       }).success,
     ).toStrictEqual(false)
     // missing value
     expect(
-      numberToken.safeParse({
-        $type: 'number',
+      stringToken.safeParse({
+        $type: 'string',
       }).success,
     ).toStrictEqual(false)
     // missing type
     expect(
-      numberToken.safeParse({
-        $value: 1000,
+      stringToken.safeParse({
+        $value: 'a string',
       }).success,
     ).toStrictEqual(false)
   })
 
   it('fails on wrong type', () => {
-    // invalid string
     expect(
-      numberToken.safeParse({
+      stringToken.safeParse({
         ...validToken,
         $type: 'motion',
       }).success,
     ).toStrictEqual(false)
     // undefined
     expect(
-      numberToken.safeParse({
+      stringToken.safeParse({
         ...validToken,
         $type: undefined,
       }).success,
     ).toStrictEqual(false)
     // no type
     expect(
-      numberToken.safeParse({
-        $value: 1000,
+      stringToken.safeParse({
+        $value: 'a string',
       }).success,
     ).toStrictEqual(false)
   })
@@ -59,21 +58,21 @@ describe('Schema: numberToken', () => {
   it('fails on wrong value', () => {
     // invalid string
     expect(
-      numberToken.safeParse({
+      stringToken.safeParse({
         ...validToken,
-        $value: 'string',
+        $value: 100,
       }).success,
     ).toStrictEqual(false)
     // undefined
     expect(
-      numberToken.safeParse({
+      stringToken.safeParse({
         ...validToken,
         $value: undefined,
       }).success,
     ).toStrictEqual(false)
     // no type
     expect(
-      numberToken.safeParse({
+      stringToken.safeParse({
         $value: false,
       }).success,
     ).toStrictEqual(false)
