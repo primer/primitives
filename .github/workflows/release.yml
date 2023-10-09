@@ -44,7 +44,8 @@ jobs:
 
       - name: Create release pull request or publish to npm
         id: changesets
-        uses: changesets/action@v1.4.1
+        uses: changesets/action@v1.4.5
+        continue-on-error: true
         with:
           title: Release Tracking
           # This expects you to have a script called release which does a build for your packages and calls changeset publish

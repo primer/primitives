@@ -1,5 +1,28 @@
 # @primer/primitives
 
+## 7.14.1
+
+### Patch Changes
+
+- [#743](https://github.com/primer/primitives/pull/743) [`5125c62`](https://github.com/primer/primitives/commit/5125c6275a0f03fa28227d06d34540b56dee949f) Thanks [@langermank](https://github.com/langermank)! - - Disabled state for transparent type controls is now transparent
+
+  - Reverted the selected color for transparent type controls back to the original (pulled from old source file)
+  - Fixed the disabled fgColor for ToggleSwitch
+
+- [#742](https://github.com/primer/primitives/pull/742) [`efa8b1c`](https://github.com/primer/primitives/commit/efa8b1c8542b9c7c1a124e7c2b6613cd4d622f52) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - buttonCounter color hotfix
+
+- [#739](https://github.com/primer/primitives/pull/739) [`04a316c`](https://github.com/primer/primitives/commit/04a316c5749f4eb889325f73e8188b7663229b45) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Fix contrast for bgColor-neutral-muted
+
+## 7.14.0
+
+### Minor Changes
+
+- [`6b46ff4`](https://github.com/primer/primitives/commit/6b46ff40d2619b46329e111cb8198bc81eabcb3a) Thanks [@camertron](https://github.com/camertron)! - rm diffStat/addition/bgColor
+
+### Patch Changes
+
+- [#736](https://github.com/primer/primitives/pull/736) [`2565a2d`](https://github.com/primer/primitives/commit/2565a2d30dbca13b73e21064036910e269385770) Thanks [@langermank](https://github.com/langermank)! - Fix `invisible` Button states for high contrast themes
+
 ## 7.13.1
 
 ### Patch Changes

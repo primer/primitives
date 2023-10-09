@@ -1,0 +1,28 @@
+/**
+ * Motion patterns
+ * @description Used to create animated components
+ */
+{
+  motion: {
+    spinner: {
+      duration: {
+        rotation: {
+          $value: '1000ms',
+          $type: 'duration',
+          $description: 'The amount of time it takes the "Spinner" loading indicator to make a full 360deg rotation',
+        },
+      },
+    },
+    skeletonLoader: {
+      shimmer: {
+        duration: {
+          scale: {
+            $value: '1000ms',
+            $type: 'duration',
+            $description: 'The amount of times it takes the "shimmer" effect to go from the start (left) of the skeleton loader to the end (right)',
+          },
+        },
+      },
+    },
+  },
+}

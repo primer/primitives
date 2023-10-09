@@ -6,6 +6,7 @@ const validTypes = [
   'color',
   'typography',
   'dimension',
+  'duration',
   'border',
   'duration',
   'shadow',
