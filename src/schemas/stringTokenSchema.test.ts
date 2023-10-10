@@ -70,9 +70,10 @@ describe('Schema: stringToken', () => {
         $value: undefined,
       }).success,
     ).toStrictEqual(false)
-    // no type
+    // boolean value
     expect(
       stringToken.safeParse({
+        ...validToken,
         $value: false,
       }).success,
     ).toStrictEqual(false)
