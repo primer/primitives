@@ -2,8 +2,8 @@ import {z} from 'zod'
 import {joinFriendly} from '../utilities/joinFriendly'
 import {schemaErrorMessage} from '../utilities/schemaErrorMessage'
 
-type ValidScope = 'all' | 'bgColor' | 'fgColor' | 'borderColor' | 'size' | 'gap' | 'radius' | 'borderColor'
-const validScopes: ValidScope[] = ['all', 'bgColor', 'fgColor', 'borderColor', 'size', 'gap', 'radius', 'borderColor']
+export type ValidScope = 'all' | 'bgColor' | 'fgColor' | 'borderColor' | 'size' | 'gap' | 'radius'
+const validScopes: ValidScope[] = ['all', 'bgColor', 'fgColor', 'borderColor', 'size', 'gap', 'radius']
 
 export const scopes = (scopeSubset?: ValidScope[]) => {
   const scopeArray = scopeSubset ?? validScopes
