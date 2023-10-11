@@ -2,4 +2,4 @@
 '@primer/primitives': patch
 ---
 
-Add stack szie tokens to figma export
+Add stack size tokens to figma export
