@@ -1,34 +1,34 @@
-import {numberToken} from './numberToken'
+import {fontWeightToken} from './fontWeightToken'
 
-describe('Schema: numberToken', () => {
+describe('Schema: fontWeightToken', () => {
   const validToken = {
-    $value: 10,
-    $type: 'number',
-    $description: 'a number token',
+    $value: 100,
+    $type: 'fontWeight',
+    $description: 'a fontWeight token',
   }
 
   it('parses valid number tokens', () => {
-    expect(numberToken.safeParse(validToken).success).toStrictEqual(true)
+    expect(fontWeightToken.safeParse(validToken).success).toStrictEqual(true)
   })
 
   it('fails on invalid properties', () => {
     // additional element
     expect(
-      numberToken.safeParse({
+      fontWeightToken.safeParse({
         ...validToken,
         additional: 1000,
       }).success,
     ).toStrictEqual(false)
     // missing value
     expect(
-      numberToken.safeParse({
-        $type: 'number',
+      fontWeightToken.safeParse({
+        $type: 'fontWeight',
       }).success,
     ).toStrictEqual(false)
     // missing type
     expect(
-      numberToken.safeParse({
-        $value: 1000,
+      fontWeightToken.safeParse({
+        $value: 100,
       }).success,
     ).toStrictEqual(false)
   })
@@ -36,22 +36,22 @@ describe('Schema: numberToken', () => {
   it('fails on wrong type', () => {
     // invalid string
     expect(
-      numberToken.safeParse({
+      fontWeightToken.safeParse({
         ...validToken,
         $type: 'motion',
       }).success,
     ).toStrictEqual(false)
     // undefined
     expect(
-      numberToken.safeParse({
+      fontWeightToken.safeParse({
         ...validToken,
         $type: undefined,
       }).success,
     ).toStrictEqual(false)
     // no type
     expect(
-      numberToken.safeParse({
-        $value: 1000,
+      fontWeightToken.safeParse({
+        $value: 100,
       }).success,
     ).toStrictEqual(false)
   })
@@ -59,23 +59,29 @@ describe('Schema: numberToken', () => {
   it('fails on wrong value', () => {
     // invalid string
     expect(
-      numberToken.safeParse({
+      fontWeightToken.safeParse({
         ...validToken,
         $value: 'string',
       }).success,
     ).toStrictEqual(false)
     // undefined
     expect(
-      numberToken.safeParse({
+      fontWeightToken.safeParse({
         ...validToken,
         $value: undefined,
       }).success,
     ).toStrictEqual(false)
     // boolean
     expect(
-      numberToken.safeParse({
+      fontWeightToken.safeParse({
         ...validToken,
         $value: false,
+      }).success,
+    ).toStrictEqual(false)
+    // wrong value
+    expect(
+      fontWeightToken.safeParse({
+        $value: 1500,
       }).success,
     ).toStrictEqual(false)
   })

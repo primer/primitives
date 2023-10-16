@@ -1,34 +1,34 @@
-import {numberToken} from './numberToken'
+import {fontFamilyToken} from './fontFamilyToken'
 
-describe('Schema: numberToken', () => {
+describe('Schema: fontFamilyToken', () => {
   const validToken = {
-    $value: 10,
-    $type: 'number',
-    $description: 'a number token',
+    $value: 'Helvetica',
+    $type: 'fontFamily',
+    $description: 'a fontFamily token',
   }
 
   it('parses valid number tokens', () => {
-    expect(numberToken.safeParse(validToken).success).toStrictEqual(true)
+    expect(fontFamilyToken.safeParse(validToken).success).toStrictEqual(true)
   })
 
   it('fails on invalid properties', () => {
     // additional element
     expect(
-      numberToken.safeParse({
+      fontFamilyToken.safeParse({
         ...validToken,
         additional: 1000,
       }).success,
     ).toStrictEqual(false)
     // missing value
     expect(
-      numberToken.safeParse({
-        $type: 'number',
+      fontFamilyToken.safeParse({
+        $type: 'fontWeight',
       }).success,
     ).toStrictEqual(false)
     // missing type
     expect(
-      numberToken.safeParse({
-        $value: 1000,
+      fontFamilyToken.safeParse({
+        $value: 'Helvetica',
       }).success,
     ).toStrictEqual(false)
   })
@@ -36,44 +36,44 @@ describe('Schema: numberToken', () => {
   it('fails on wrong type', () => {
     // invalid string
     expect(
-      numberToken.safeParse({
+      fontFamilyToken.safeParse({
         ...validToken,
         $type: 'motion',
       }).success,
     ).toStrictEqual(false)
     // undefined
     expect(
-      numberToken.safeParse({
+      fontFamilyToken.safeParse({
         ...validToken,
         $type: undefined,
       }).success,
     ).toStrictEqual(false)
     // no type
     expect(
-      numberToken.safeParse({
-        $value: 1000,
+      fontFamilyToken.safeParse({
+        $value: 'Helvetica',
       }).success,
     ).toStrictEqual(false)
   })
 
   it('fails on wrong value', () => {
-    // invalid string
+    // invalid value
     expect(
-      numberToken.safeParse({
+      fontFamilyToken.safeParse({
         ...validToken,
-        $value: 'string',
+        $value: 100,
       }).success,
     ).toStrictEqual(false)
     // undefined
     expect(
-      numberToken.safeParse({
+      fontFamilyToken.safeParse({
         ...validToken,
         $value: undefined,
       }).success,
     ).toStrictEqual(false)
     // boolean
     expect(
-      numberToken.safeParse({
+      fontFamilyToken.safeParse({
         ...validToken,
         $value: false,
       }).success,
