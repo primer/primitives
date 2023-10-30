@@ -28,7 +28,7 @@ export const ColorScale = ({color, border}: ColorScaleProps) => {
       style={{
         backgroundColor: `var(--${color})`,
         color: textColor,
-        border: border ? '1px solid var(--color-scale-gray-1)' : 'none',
+        border: border ? '1px solid var(--borderColor-default)' : 'none',
       }}
       data-color-scale
       ref={ref}
