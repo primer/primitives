@@ -218,6 +218,7 @@ In this case you can create the follwing structure. The `@` will be removed from
 ## License
 
 [MIT](./LICENSE) &copy; [GitHub](https://github.com/)
+
 [primer]: <https://github.com/primer/primer>
 [npm]: <https://www.npmjs.com/>
 [install-npm]: <https://docs.npmjs.com/getting-started/installing-node>
