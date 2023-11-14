@@ -1,5 +1,11 @@
 # @primer/primitives
 
+## 7.15.1
+
+### Patch Changes
+
+- [#774](https://github.com/primer/primitives/pull/774) [`3a6d736`](https://github.com/primer/primitives/commit/3a6d7364df107fed2d6d1f7412c94d597c103692) Thanks [@mperrotti](https://github.com/mperrotti)! - Adds color tokens for the "inactive" button state. Tokens are added to the old and new builds so we can still support styling with `styled-components`
+
 ## 7.15.0
 
 ### Minor Changes
