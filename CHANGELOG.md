@@ -1,5 +1,11 @@
 # @primer/primitives
 
+## 7.15.2
+
+### Patch Changes
+
+- [#776](https://github.com/primer/primitives/pull/776) [`cc36ab9`](https://github.com/primer/primitives/commit/cc36ab9a4f6f5eec4badef964ff0170e07e7d5d8) Thanks [@mperrotti](https://github.com/mperrotti)! - Corrects light theme inactive button bg color
+
 ## 7.15.1
 
 ### Patch Changes
