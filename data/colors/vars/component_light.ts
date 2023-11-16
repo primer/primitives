@@ -149,7 +149,7 @@ export default {
     },
 
     inactive: {
-      bg: get('scale.gray.2'),
+      bg: get('scale.gray.1'),
       text: get('fg.muted'),
     }
   },
