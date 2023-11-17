@@ -3,7 +3,7 @@ import {alpha, get, lighten} from '../../../src/utils-v1'
 export default {
   fg: {
     default: get('scale.black'),
-    muted: '#656d76',
+    muted: get('scale.gray.6'),
     subtle: get('scale.gray.5'),
     onEmphasis: get('scale.white')
   },
