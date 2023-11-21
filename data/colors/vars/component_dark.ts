@@ -75,7 +75,7 @@ export default {
   },
   btn: {
     text: get('scale.gray.1'),
-    bg: get('scale.gray.7'),
+    bg: get('scale.gray.8'),
     border: get('border.subtle'),
     shadow: '0 0 transparent',
     insetShadow: '0 0 transparent',
