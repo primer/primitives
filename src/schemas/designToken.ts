@@ -10,6 +10,7 @@ import {dimensionToken} from './dimensionToken'
 import {colorToken} from './colorToken'
 import {fontFamilyToken} from './fontFamilyToken'
 import {shadowToken} from './shadowToken'
+import {durationToken} from './durationToken'
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore: TODO: fix this
@@ -27,6 +28,7 @@ export const designToken = z.record(
         typographyToken,
         viewportRangeToken,
         numberToken,
+        durationToken,
         stringToken,
       ]),
       // referenceToken,

@@ -126,7 +126,7 @@ export const AllScales = () => {
 }
 
 export const Gray = () => {
-  const grayColors = bgColors.filter(color => color.includes('gray'))
+  const grayColors = bgColors.filter(color => color.includes('gray-'))
   return (
     <div>
       {grayColors.map(color => (
@@ -271,7 +271,7 @@ export const White = () => {
     <div>
       {whiteColors.map(color => (
         <>
-          <ColorScale color={color} key={color} />
+          <ColorScale color={color} border key={color} />
         </>
       ))}
     </div>

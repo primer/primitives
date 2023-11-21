@@ -20,10 +20,7 @@ export const themes: TokenBuildInput[] = [
       `src/tokens/functional/border/light.json5`,
       `src/tokens/functional/color/light/overrides/light.tritanopia.json5`,
     ],
-    include: [
-      `src/tokens/base/color/light/light.json5`,
-      // `src/tokens/base/color/light/light.tritanopia.json5`
-    ],
+    include: [`src/tokens/base/color/light/light.json5`],
   },
   {
     filename: 'light-colorblind',
@@ -34,10 +31,7 @@ export const themes: TokenBuildInput[] = [
       `src/tokens/functional/border/light.json5`,
       `src/tokens/functional/color/light/overrides/light.protanopia-deuteranopia.json5`,
     ],
-    include: [
-      `src/tokens/base/color/light/light.json5`,
-      // `src/tokens/base/color/light/light.protanopia-deuteranopia.json5`,
-    ],
+    include: [`src/tokens/base/color/light/light.json5`],
   },
   {
     filename: 'light-high-contrast',
@@ -80,10 +74,7 @@ export const themes: TokenBuildInput[] = [
       `src/tokens/functional/border/dark.json5`,
       `src/tokens/functional/color/dark/overrides/dark.tritanopia.json5`,
     ],
-    include: [
-      `src/tokens/base/color/dark/dark.json5`,
-      // `src/tokens/base/color/dark/dark.tritanopia.json5`,
-    ],
+    include: [`src/tokens/base/color/dark/dark.json5`],
   },
   {
     filename: 'dark-colorblind',
@@ -94,10 +85,7 @@ export const themes: TokenBuildInput[] = [
       `src/tokens/functional/border/dark.json5`,
       `src/tokens/functional/color/dark/overrides/dark.protanopia-deuteranopia.json5`,
     ],
-    include: [
-      `src/tokens/base/color/dark/dark.json5`,
-      // , `src/tokens/base/color/dark/dark.protanopia-deuteranopia.json5`
-    ],
+    include: [`src/tokens/base/color/dark/dark.json5`],
   },
   {
     filename: 'dark-high-contrast',

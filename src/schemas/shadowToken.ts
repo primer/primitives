@@ -6,15 +6,17 @@ import {alphaValue} from './alphaValue'
 import {dimensionValue} from './dimensionValue'
 import {tokenType} from './tokenType'
 
-const shadowValue = z.object({
-  color: z.union([colorHexValue, referenceValue]),
-  alpha: z.union([alphaValue, referenceValue]),
-  offsetX: z.union([dimensionValue, referenceValue]),
-  offsetY: z.union([dimensionValue, referenceValue]),
-  blur: z.union([dimensionValue, referenceValue]),
-  spread: z.union([dimensionValue, referenceValue]),
-  inset: z.boolean().optional(),
-})
+export const shadowValue = z
+  .object({
+    color: z.union([colorHexValue, referenceValue]),
+    alpha: z.union([alphaValue, referenceValue]),
+    offsetX: z.union([dimensionValue, referenceValue]),
+    offsetY: z.union([dimensionValue, referenceValue]),
+    blur: z.union([dimensionValue, referenceValue]),
+    spread: z.union([dimensionValue, referenceValue]),
+    inset: z.boolean().optional(),
+  })
+  .strict()
 
 export const shadowToken = baseToken
   .extend({

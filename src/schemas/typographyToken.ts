@@ -5,11 +5,11 @@ import {baseToken} from './baseToken'
 import {fontWeightValue} from './fontWeightValue'
 import {tokenType} from './tokenType'
 
-const typographyValue = z.object({
+export const typographyValue = z.object({
   fontSize: z.union([dimensionValue, referenceValue]),
   lineHeight: z.union([dimensionValue, referenceValue]).optional(),
   fontWeight: z.union([fontWeightValue, referenceValue]),
-  fontFamily: z.union([z.string(), referenceValue]),
+  fontFamily: z.union([z.string().min(1), referenceValue]),
 })
 
 export const typographyToken = baseToken

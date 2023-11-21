@@ -1,5 +1,27 @@
 # @primer/primitives
 
+## 7.15.2
+
+### Patch Changes
+
+- [#776](https://github.com/primer/primitives/pull/776) [`cc36ab9`](https://github.com/primer/primitives/commit/cc36ab9a4f6f5eec4badef964ff0170e07e7d5d8) Thanks [@mperrotti](https://github.com/mperrotti)! - Corrects light theme inactive button bg color
+
+## 7.15.1
+
+### Patch Changes
+
+- [#774](https://github.com/primer/primitives/pull/774) [`3a6d736`](https://github.com/primer/primitives/commit/3a6d7364df107fed2d6d1f7412c94d597c103692) Thanks [@mperrotti](https://github.com/mperrotti)! - Adds color tokens for the "inactive" button state. Tokens are added to the old and new builds so we can still support styling with `styled-components`
+
+## 7.15.0
+
+### Minor Changes
+
+- [#744](https://github.com/primer/primitives/pull/744) [`5f9eb77`](https://github.com/primer/primitives/commit/5f9eb77e157c25411723d131016536c9c4dec515) Thanks [@mperrotti](https://github.com/mperrotti)! - Introduces design tokens for motion properties, and adds tokens to support loading indicators.
+
+### Patch Changes
+
+- [#745](https://github.com/primer/primitives/pull/745) [`bcef815`](https://github.com/primer/primitives/commit/bcef815605cc086d7411fb61c37d08825502b84a) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - export control color tokens in Figma
+
 ## 7.14.1
 
 ### Patch Changes

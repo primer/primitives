@@ -145,6 +145,11 @@ export default {
       counterFg: get('danger.fg'),
       disabledCounterFg: alpha(get('danger.fg'), 0.5),
       hoverCounterFg: get('scale.white')
+    },
+
+    inactive: {
+      bg: get('scale.gray.7'),
+      text: get('fg.muted'),
     }
   },
   underlinenav: {

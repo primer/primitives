@@ -4,9 +4,10 @@ import './ColorScale.css'
 
 export type ColorScaleProps = {
   color?: string
+  border?: boolean
 }
 
-export const ColorScale = ({color}: ColorScaleProps) => {
+export const ColorScale = ({color, border}: ColorScaleProps) => {
   const ref = React.useRef<HTMLDivElement | null>(null)
   const [hex, setHex] = React.useState<string | null>(null)
   const textColor = hex ? readableColor(hex) : 'currentColor'
@@ -24,7 +25,11 @@ export const ColorScale = ({color}: ColorScaleProps) => {
   return (
     <div
       className="ColorScale--block"
-      style={{backgroundColor: `var(--${color})`, color: textColor}}
+      style={{
+        backgroundColor: `var(--${color})`,
+        color: textColor,
+        border: border ? '1px solid var(--borderColor-default)' : 'none',
+      }}
       data-color-scale
       ref={ref}
     >
