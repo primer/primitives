@@ -43,12 +43,13 @@ const getScopes = (scopes: string[] | string | undefined): FigmaVariableScope[] 
 export const figmaAttributes: StyleDictionary.Transform = {
   type: `attribute`,
   transformer: (token: StyleDictionary.TransformedToken, platform: StyleDictionary.Platform = {}) => {
-    const {mode, collection, scopes, group} = token.$extensions?.['org.primer.figma'] || {}
+    const {mode, collection, scopes, group, codeSyntax} = token.$extensions?.['org.primer.figma'] || {}
     return {
       mode: platform.options?.mode || mode || 'default',
       collection,
       group: group || collection,
       scopes: getScopes(scopes),
+      codeSyntax,
     }
   },
 }
