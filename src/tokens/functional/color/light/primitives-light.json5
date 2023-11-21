@@ -9,6 +9,9 @@
           mode: 'light',
           group: 'semantic',
           scopes: ['fgColor'],
+          codeSyntax: {
+            web: 'var(--fgColor-default) // css class: .color-fg-default'
+          }
         },
       },
     },
