@@ -1,5 +1,19 @@
 # @primer/primitives
 
+## 7.15.4
+
+### Patch Changes
+
+- [#781](https://github.com/primer/primitives/pull/781) [`8ba7d6b`](https://github.com/primer/primitives/commit/8ba7d6b7e6ef8eb72b5ac2b1eacbbcbf8d9a9a0f) Thanks [@langermank](https://github.com/langermank)! - Adjust `prettylights` comment fg color
+
+- [#747](https://github.com/primer/primitives/pull/747) [`2b76e2d`](https://github.com/primer/primitives/commit/2b76e2d7c98255ec3f6141d3146b702fa98b2953) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Add stack size tokens to figma export
+
+- [#782](https://github.com/primer/primitives/pull/782) [`ba763cc`](https://github.com/primer/primitives/commit/ba763cc75a0bcafbcee45bc33ca34951069a92f2) Thanks [@langermank](https://github.com/langermank)! - Update the muted foreground color to increase contrast against default controls in dark mode
+
+- [#783](https://github.com/primer/primitives/pull/783) [`d0f95c7`](https://github.com/primer/primitives/commit/d0f95c71061f9840c095e4e99c6a4919e1be9f62) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Update xxlarge breakpoint value
+
+- [#779](https://github.com/primer/primitives/pull/779) [`105afb5`](https://github.com/primer/primitives/commit/105afb5b4f4ad1c7fb912bd8cd6d629135e0ad38) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - adding CodeSyntax to tokens for figma
+
 ## 7.15.3
 
 ### Patch Changes
