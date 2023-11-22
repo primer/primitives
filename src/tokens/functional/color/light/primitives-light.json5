@@ -9,6 +9,9 @@
           mode: 'light',
           group: 'semantic',
           scopes: ['fgColor'],
+          codeSyntax: {
+            web: 'var(--fgColor-default) /* utility class: .color-fg-default */',
+          },
         },
       },
     },
@@ -21,6 +24,9 @@
           mode: 'light',
           group: 'semantic',
           scopes: ['fgColor'],
+          codeSyntax: {
+            web: 'var(--fgColor-muted) /* utility class: .color-fg-muted */',
+          },
         },
       },
       mix: {
@@ -37,6 +43,9 @@
           mode: 'light',
           group: 'semantic',
           scopes: ['fgColor'],
+          codeSyntax: {
+            web: 'var(--fgColor-onEmphasis) /* utility class: .color-fg-on-emphasis */',
+          },
         },
       },
     },
@@ -74,6 +83,9 @@
             mode: 'light',
             group: 'semantic',
             scopes: ['fgColor'],
+            codeSyntax: {
+              web: 'var(--fgColor-link) /* utility class: .color-fg-accent */',
+            },
           },
         },
       },
@@ -126,6 +138,9 @@
             mode: 'light',
             group: 'semantic',
             scopes: ['fgColor'],
+            codeSyntax: {
+              web: 'var(--fgColor-accent) /* utility class: .color-fg-accent */',
+            },
           },
         },
       },
@@ -152,6 +167,9 @@
             mode: 'light',
             group: 'semantic',
             scopes: ['fgColor'],
+            codeSyntax: {
+              web: 'var(--fgColor-success) /* utility class: .color-fg-success */',
+            },
           },
         },
       },
@@ -178,6 +196,9 @@
             mode: 'light',
             group: 'semantic',
             scopes: ['fgColor'],
+            codeSyntax: {
+              web: 'var(--fgColor-attention) /* utility class: .color-fg-attention */',
+            },
           },
         },
       },
@@ -204,6 +225,9 @@
             mode: 'light',
             group: 'semantic',
             scopes: ['fgColor'],
+            codeSyntax: {
+              web: 'var(--fgColor-severe) /* utility class: .color-fg-severe */',
+            },
           },
         },
       },
@@ -230,6 +254,9 @@
             mode: 'light',
             group: 'semantic',
             scopes: ['fgColor'],
+            codeSyntax: {
+              web: 'var(--fgColor-danger) /* utility class: .color-fg-danger */',
+            },
           },
         },
         mix: {
@@ -261,6 +288,9 @@
             mode: 'light',
             group: 'semantic',
             scopes: ['fgColor'],
+            codeSyntax: {
+              web: 'var(--fgColor-open) /* utility class: .color-fg-open */',
+            },
           },
         },
       },
@@ -288,6 +318,9 @@
             mode: 'light',
             group: 'semantic',
             scopes: ['fgColor'],
+            codeSyntax: {
+              web: 'var(--fgColor-closed) /* utility class: .color-fg-closed */',
+            },
           },
         },
       },
@@ -315,6 +348,9 @@
             mode: 'light',
             group: 'semantic',
             scopes: ['fgColor'],
+            codeSyntax: {
+              web: 'var(--fgColor-done) /* utility class: .color-fg-done */',
+            },
           },
         },
       },
@@ -341,6 +377,9 @@
             mode: 'light',
             group: 'semantic',
             scopes: ['fgColor'],
+            codeSyntax: {
+              web: 'var(--fgColor-sponsors) /* utility class: .color-fg-sponsors */',
+            },
           },
         },
       },
@@ -368,6 +407,9 @@
           mode: 'light',
           scopes: ['bgColor', 'borderColor'],
           group: 'semantic',
+          codeSyntax: {
+            web: 'var(--bgColor-default) /* utility class: .color-bg-default */',
+          },
         },
       },
     },
@@ -380,6 +422,9 @@
           mode: 'light',
           scopes: ['bgColor', 'borderColor'],
           group: 'semantic',
+          codeSyntax: {
+            web: 'var(--bgColor-muted) /* utility class: .color-bg-muted */',
+          },
         },
       },
     },
@@ -392,7 +437,9 @@
           mode: 'light',
           scopes: ['bgColor', 'borderColor'],
           group: 'semantic',
-
+          codeSyntax: {
+            web: 'var(--bgColor-inset) /* utility class: .color-bg-inset */',
+          },
         },
       },
     },
@@ -405,6 +452,9 @@
           mode: 'light',
           group: 'semantic',
           scopes: ['bgColor'],
+          codeSyntax: {
+            web: 'var(--bgColor-emphasis) /* utility class: .color-bg-emphasis */',
+          },
         },
       },
     },
@@ -441,6 +491,9 @@
           mode: 'light',
           group: 'semantic',
           scopes: ['bgColor'],
+          codeSyntax: {
+            web: 'var(--bgColor-transparent) /* utility class: .color-bg-transparent */',
+          },
         },
       },
     },
@@ -481,6 +534,9 @@
             mode: 'light',
             group: 'semantic',
             scopes: ['bgColor'],
+            codeSyntax: {
+              web: 'var(--bgColor-accent-muted) /* utility class: .color-bg-accent */',
+            },
           },
         },
       },
@@ -493,6 +549,9 @@
             mode: 'light',
             group: 'semantic',
             scopes: ['bgColor'],
+            codeSyntax: {
+              web: 'var(--bgColor-accent-emphasis) /* utility class: .color-bg-accent-emphasis */',
+            },
           },
         },
       },
@@ -507,6 +566,9 @@
             mode: 'light',
             group: 'semantic',
             scopes: ['bgColor'],
+            codeSyntax: {
+              web: 'var(--bgColor-success-muted) /* utility class: .color-bg-success */',
+            },
           },
         },
       },
@@ -519,6 +581,9 @@
             mode: 'light',
             group: 'semantic',
             scopes: ['bgColor'],
+            codeSyntax: {
+              web: 'var(--bgColor-success-emphasis) /* utility class: .color-bg-success-emphasis */',
+            },
           },
         },
         mix: {
@@ -537,6 +602,9 @@
             mode: 'light',
             group: 'semantic',
             scopes: ['bgColor'],
+            codeSyntax: {
+              web: 'var(--bgColor-attention-muted) /* utility class: .color-bg-attention */',
+            },
           },
         },
       },
@@ -549,6 +617,9 @@
             mode: 'light',
             group: 'semantic',
             scopes: ['bgColor'],
+            codeSyntax: {
+              web: 'var(--bgColor-attention-emphasis) /* utility class: .color-bg-attention-emphasis */',
+            },
           },
         },
       },
@@ -563,6 +634,9 @@
             mode: 'light',
             group: 'semantic',
             scopes: ['bgColor'],
+            codeSyntax: {
+              web: 'var(--bgColor-severe-muted) /* utility class: .color-bg-severe */',
+            },
           },
         },
       },
@@ -575,6 +649,9 @@
             mode: 'light',
             group: 'semantic',
             scopes: ['bgColor'],
+            codeSyntax: {
+              web: 'var(--bgColor-severe-emphasis) /* utility class: .color-bg-severe-emphasis */',
+            },
           },
         },
       },
@@ -589,6 +666,9 @@
             mode: 'light',
             group: 'semantic',
             scopes: ['bgColor'],
+            codeSyntax: {
+              web: 'var(--bgColor-danger-muted) /* utility class: .color-bg-danger */',
+            },
           },
         },
       },
@@ -601,6 +681,9 @@
             mode: 'light',
             group: 'semantic',
             scopes: ['bgColor'],
+            codeSyntax: {
+              web: 'var(--bgColor-danger-emphasis) /* utility class: .color-bg-danger-emphasis */',
+            },
           },
         },
       },
@@ -615,6 +698,9 @@
             mode: 'light',
             group: 'semantic',
             scopes: ['bgColor'],
+            codeSyntax: {
+              web: 'var(--bgColor-success-muted) /* utility class: .color-bg-success */',
+            },
           },
         },
       },
@@ -627,6 +713,9 @@
             mode: 'light',
             group: 'semantic',
             scopes: ['bgColor'],
+            codeSyntax: {
+              web: 'var(--bgColor-success-emphasis) /* utility class: .color-bg-success-emphasis */',
+            },
           },
         },
       },
@@ -641,6 +730,9 @@
             mode: 'light',
             group: 'semantic',
             scopes: ['bgColor'],
+            codeSyntax: {
+              web: 'var(--bgColor-closed-muted) /* utility class: .color-bg-closed */',
+            },
           },
         },
       },
@@ -653,6 +745,9 @@
             mode: 'light',
             group: 'semantic',
             scopes: ['bgColor'],
+            codeSyntax: {
+              web: 'var(--bgColor-closed-emphasis) /* utility class: .color-bg-closed-emphasis */',
+            },
           },
         },
       },
@@ -667,6 +762,9 @@
             mode: 'light',
             group: 'semantic',
             scopes: ['bgColor'],
+            codeSyntax: {
+              web: 'var(--bgColor-done-muted) /* utility class: .color-bg-done */',
+            },
           },
         },
       },
@@ -679,6 +777,9 @@
             mode: 'light',
             group: 'semantic',
             scopes: ['bgColor'],
+            codeSyntax: {
+              web: 'var(--bgColor-done-emphasis) /* utility class: .color-bg-done-emphasis */',
+            },
           },
         },
       },
@@ -693,6 +794,9 @@
             mode: 'light',
             group: 'semantic',
             scopes: ['bgColor'],
+            codeSyntax: {
+              web: 'var(--bgColor-sponsors-muted) /* utility class: .color-bg-sponsors */',
+            },
           },
         },
       },
@@ -705,6 +809,9 @@
             mode: 'light',
             group: 'semantic',
             scopes: ['bgColor'],
+            codeSyntax: {
+              web: 'var(--bgColor-sponsors-emphasis) /* utility class: .color-bg-sponsors-emphasis */',
+            },
           },
         },
       },
@@ -720,6 +827,9 @@
           mode: 'light',
           group: 'semantic',
           scopes: ['borderColor'],
+          codeSyntax: {
+            web: 'var(--borderColor-default) /* utility class: .color-border-default */',
+          },
         },
       },
     },
@@ -732,6 +842,9 @@
           mode: 'light',
           group: 'semantic',
           scopes: ['borderColor'],
+          codeSyntax: {
+            web: 'var(--borderColor-muted) /* utility class: .color-border-muted */',
+          },
         },
       },
       alpha: 0.4,
@@ -809,6 +922,9 @@
             mode: 'light',
             group: 'semantic',
             scopes: ['borderColor'],
+            codeSyntax: {
+              web: 'var(--borderColor-accent-muted) /* utility class: .color-border-accent */',
+            },
           },
         },
         alpha: 0.4,
@@ -822,6 +938,9 @@
             mode: 'light',
             group: 'semantic',
             scopes: ['borderColor'],
+            codeSyntax: {
+              web: 'var(--borderColor-accent-emphasis) /* utility class: .color-border-accent-emphasis */',
+            },
           },
         },
       },
@@ -836,6 +955,9 @@
             mode: 'light',
             group: 'semantic',
             scopes: ['borderColor'],
+            codeSyntax: {
+              web: 'var(--borderColor-success-muted) /* utility class: .color-border-success */',
+            },
           },
         },
         alpha: 0.4,
@@ -849,6 +971,9 @@
             mode: 'light',
             group: 'semantic',
             scopes: ['borderColor'],
+            codeSyntax: {
+              web: 'var(--borderColor-success-emphasis) /* utility class: .color-border-success-emphasis */',
+            },
           },
         },
       },
@@ -863,6 +988,9 @@
             mode: 'light',
             group: 'semantic',
             scopes: ['borderColor'],
+            codeSyntax: {
+              web: 'var(--borderColor-attention-muted) /* utility class: .color-border-attention */',
+            },
           },
         },
         alpha: 0.4,
@@ -876,6 +1004,9 @@
             mode: 'light',
             group: 'semantic',
             scopes: ['borderColor'],
+            codeSyntax: {
+              web: 'var(--borderColor-attention-emphasis) /* utility class: .color-border-attention-emphasis */',
+            },
           },
         },
       },
@@ -890,6 +1021,9 @@
             mode: 'light',
             group: 'semantic',
             scopes: ['borderColor'],
+            codeSyntax: {
+              web: 'var(--borderColor-severe-muted) /* utility class: .color-border-severe */',
+            },
           },
         },
         alpha: 0.4,
@@ -903,6 +1037,9 @@
             mode: 'light',
             group: 'semantic',
             scopes: ['borderColor'],
+            codeSyntax: {
+              web: 'var(--borderColor-severe-emphasis) /* utility class: .color-border-severe-emphasis */',
+            },
           },
         },
       },
@@ -917,6 +1054,9 @@
             mode: 'light',
             group: 'semantic',
             scopes: ['borderColor'],
+            codeSyntax: {
+              web: 'var(--borderColor-danger-muted) /* utility class: .color-border-danger */',
+            },
           },
         },
         alpha: 0.4,
@@ -930,6 +1070,9 @@
             mode: 'light',
             group: 'semantic',
             scopes: ['borderColor'],
+            codeSyntax: {
+              web: 'var(--borderColor-danger-emphasis) /* utility class: .color-border-danger-emphasis */',
+            },
           },
         },
       },
@@ -944,6 +1087,9 @@
             mode: 'light',
             group: 'semantic',
             scopes: ['borderColor'],
+            codeSyntax: {
+              web: 'var(--borderColor-open-muted) /* utility class: .color-border-open */',
+            },
           },
         },
       },
@@ -956,6 +1102,9 @@
             mode: 'light',
             group: 'semantic',
             scopes: ['borderColor'],
+            codeSyntax: {
+              web: 'var(--borderColor-open-emphasis) /* utility class: .color-border-open-emphasis */',
+            },
           },
         },
       },
@@ -970,6 +1119,9 @@
             mode: 'light',
             group: 'semantic',
             scopes: ['borderColor'],
+            codeSyntax: {
+              web: 'var(--borderColor-closed-muted) /* utility class: .color-border-closed */',
+            },
           },
         },
         alpha: 0.4,
@@ -983,6 +1135,9 @@
             mode: 'light',
             group: 'semantic',
             scopes: ['borderColor'],
+            codeSyntax: {
+              web: 'var(--borderColor-closed-emphasis) /* utility class: .color-border-closed-emphasis */',
+            },
           },
         },
       },
@@ -997,6 +1152,9 @@
             mode: 'light',
             group: 'semantic',
             scopes: ['borderColor'],
+            codeSyntax: {
+              web: 'var(--borderColor-done-muted) /* utility class: .color-border-done */',
+            },
           },
         },
         alpha: 0.4,
@@ -1010,6 +1168,9 @@
             mode: 'light',
             group: 'semantic',
             scopes: ['borderColor'],
+            codeSyntax: {
+              web: 'var(--borderColor-done-emphasis) /* utility class: .color-border-done-emphasis */',
+            },
           },
         },
       },
@@ -1024,6 +1185,9 @@
             mode: 'light',
             group: 'semantic',
             scopes: ['borderColor'],
+            codeSyntax: {
+              web: 'var(--borderColor-sponsors-muted) /* utility class: .color-border-sponsors */',
+            },
           },
         },
         alpha: 0.4,
@@ -1037,6 +1201,9 @@
             mode: 'light',
             group: 'semantic',
             scopes: ['borderColor'],
+            codeSyntax: {
+              web: 'var(--borderColor-sponsors-emphasis) /* utility class: .color-border-sponsors-emphasis */',
+            },
           },
         },
       },

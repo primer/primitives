@@ -9,6 +9,9 @@
           mode: 'dark',
           group: 'semantic',
           scopes: ['fgColor'],
+          codeSyntax: {
+            web: 'var(--fgColor-default) /* utility class: .color-fg-default */',
+          },
         },
       },
       mix: {
@@ -25,6 +28,9 @@
           mode: 'dark',
           group: 'semantic',
           scopes: ['fgColor'],
+          codeSyntax: {
+            web: 'var(--fgColor-muted) /* utility class: .color-fg-muted */',
+          },
         },
       },
       mix: {
@@ -41,6 +47,9 @@
           mode: 'dark',
           group: 'semantic',
           scopes: ['fgColor'],
+          codeSyntax: {
+            web: 'var(--fgColor-onEmphasis) /* utility class: .color-fg-on-emphasis */',
+          },
         },
       },
     },
@@ -78,6 +87,9 @@
             mode: 'dark',
             group: 'semantic',
             scopes: ['fgColor'],
+            codeSyntax: {
+              web: 'var(--fgColor-link) /* utility class: .color-fg-accent */',
+            },
           },
         },
       },
@@ -130,6 +142,9 @@
             mode: 'dark',
             group: 'semantic',
             scopes: ['fgColor'],
+            codeSyntax: {
+              web: 'var(--fgColor-accent) /* utility class: .color-fg-accent */',
+            },
           },
         },
         mix: {
@@ -160,6 +175,9 @@
             mode: 'dark',
             group: 'semantic',
             scopes: ['fgColor'],
+            codeSyntax: {
+              web: 'var(--fgColor-success) /* utility class: .color-fg-success */',
+            },
           },
         },
       },
@@ -186,6 +204,9 @@
             mode: 'dark',
             group: 'semantic',
             scopes: ['fgColor'],
+            codeSyntax: {
+              web: 'var(--fgColor-attention) /* utility class: .color-fg-attention */',
+            },
           },
         },
       },
@@ -212,6 +233,9 @@
             mode: 'dark',
             group: 'semantic',
             scopes: ['fgColor'],
+            codeSyntax: {
+              web: 'var(--fgColor-severe) /* utility class: .color-fg-severe */',
+            },
           },
         },
       },
@@ -238,6 +262,9 @@
             mode: 'dark',
             group: 'semantic',
             scopes: ['fgColor'],
+            codeSyntax: {
+              web: 'var(--fgColor-danger) /* utility class: .color-fg-danger */',
+            },
           },
         },
       },
@@ -268,6 +295,9 @@
             mode: 'dark',
             group: 'semantic',
             scopes: ['fgColor'],
+            codeSyntax: {
+              web: 'var(--fgColor-open) /* utility class: .color-fg-open */',
+            },
           },
         },
       },
@@ -294,6 +324,9 @@
             mode: 'dark',
             group: 'semantic',
             scopes: ['fgColor'],
+            codeSyntax: {
+              web: 'var(--fgColor-closed) /* utility class: .color-fg-closed */',
+            },
           },
         },
       },
@@ -320,6 +353,9 @@
             mode: 'dark',
             group: 'semantic',
             scopes: ['fgColor'],
+            codeSyntax: {
+              web: 'var(--fgColor-done) /* utility class: .color-fg-done */',
+            },
           },
         },
       },
@@ -346,6 +382,9 @@
             mode: 'dark',
             group: 'semantic',
             scopes: ['fgColor'],
+            codeSyntax: {
+              web: 'var(--fgColor-sponsors) /* utility class: .color-fg-sponsors */',
+            },
           },
         },
       },
@@ -373,6 +412,9 @@
           mode: 'dark',
           scopes: ['bgColor', 'borderColor'],
           group: 'semantic',
+          codeSyntax: {
+            web: 'var(--bgColor-default) /* utility class: .color-bg-default */',
+          },
         },
       },
     },
@@ -385,6 +427,9 @@
           mode: 'dark',
           scopes: ['bgColor', 'borderColor'],
           group: 'semantic',
+          codeSyntax: {
+            web: 'var(--bgColor-muted) /* utility class: .color-bg-muted */',
+          },
         },
       },
     },
@@ -397,6 +442,9 @@
           mode: 'dark',
           scopes: ['bgColor', 'borderColor'],
           group: 'semantic',
+          codeSyntax: {
+            web: 'var(--bgColor-inset) /* utility class: .color-bg-inset */',
+          },
         },
       },
     },
@@ -409,6 +457,9 @@
           mode: 'dark',
           group: 'semantic',
           scopes: ['bgColor'],
+          codeSyntax: {
+            web: 'var(--bgColor-emphasis) /* utility class: .color-bg-emphasis */',
+          },
         },
       },
     },
@@ -445,6 +496,9 @@
           mode: 'dark',
           group: 'semantic',
           scopes: ['bgColor'],
+          codeSyntax: {
+            web: 'var(--bgColor-transparent) /* utility class: .color-bg-transparent */',
+          },
         },
       },
     },
@@ -485,6 +539,9 @@
             mode: 'dark',
             group: 'semantic',
             scopes: ['bgColor'],
+            codeSyntax: {
+              web: 'var(--bgColor-accent-muted) /* utility class: .color-bg-accent */',
+            },
           },
         },
         alpha: 0.1,
@@ -498,6 +555,9 @@
             mode: 'dark',
             group: 'semantic',
             scopes: ['bgColor'],
+            codeSyntax: {
+              web: 'var(--bgColor-accent-emphasis) /* utility class: .color-bg-accent-emphasis */',
+            },
           },
         },
       },
@@ -512,6 +572,9 @@
             mode: 'dark',
             group: 'semantic',
             scopes: ['bgColor'],
+            codeSyntax: {
+              web: 'var(--bgColor-success-muted) /* utility class: .color-bg-success */',
+            },
           },
         },
         alpha: 0.15,
@@ -525,6 +588,9 @@
             mode: 'dark',
             group: 'semantic',
             scopes: ['bgColor'],
+            codeSyntax: {
+              web: 'var(--bgColor-success-emphasis) /* utility class: .color-bg-success-emphasis */',
+            },
           },
         },
       },
@@ -539,6 +605,9 @@
             mode: 'dark',
             group: 'semantic',
             scopes: ['bgColor'],
+            codeSyntax: {
+              web: 'var(--bgColor-attention-muted) /* utility class: .color-bg-attention */',
+            },
           },
         },
         alpha: 0.15,
@@ -552,6 +621,9 @@
             mode: 'dark',
             group: 'semantic',
             scopes: ['bgColor'],
+            codeSyntax: {
+              web: 'var(--bgColor-attention-emphasis) /* utility class: .color-bg-attention-emphasis */',
+            },
           },
         },
       },
@@ -566,6 +638,9 @@
             mode: 'dark',
             group: 'semantic',
             scopes: ['bgColor'],
+            codeSyntax: {
+              web: 'var(--bgColor-severe-muted) /* utility class: .color-bg-severe */',
+            },
           },
         },
         alpha: 0.1,
@@ -579,6 +654,9 @@
             mode: 'dark',
             group: 'semantic',
             scopes: ['bgColor'],
+            codeSyntax: {
+              web: 'var(--bgColor-severe-emphasis) /* utility class: .color-bg-severe-emphasis */',
+            },
           },
         },
       },
@@ -593,6 +671,9 @@
             mode: 'dark',
             group: 'semantic',
             scopes: ['bgColor'],
+            codeSyntax: {
+              web: 'var(--bgColor-danger-muted) /* utility class: .color-bg-danger */',
+            },
           },
         },
         alpha: 0.1,
@@ -606,6 +687,9 @@
             mode: 'dark',
             group: 'semantic',
             scopes: ['bgColor'],
+            codeSyntax: {
+              web: 'var(--bgColor-danger-emphasis) /* utility class: .color-bg-danger-emphasis */',
+            },
           },
         },
       },
@@ -620,6 +704,9 @@
             mode: 'dark',
             group: 'semantic',
             scopes: ['bgColor'],
+            codeSyntax: {
+              web: 'var(--bgColor-success-muted) /* utility class: .color-bg-success */',
+            },
           },
         },
         alpha: 0.1,
@@ -633,6 +720,9 @@
             mode: 'dark',
             group: 'semantic',
             scopes: ['bgColor'],
+            codeSyntax: {
+              web: 'var(--bgColor-success-emphasis) /* utility class: .color-bg-success-emphasis */',
+            },
           },
         },
       },
@@ -647,6 +737,9 @@
             mode: 'dark',
             group: 'semantic',
             scopes: ['bgColor'],
+            codeSyntax: {
+              web: 'var(--bgColor-closed-muted) /* utility class: .color-bg-closed */',
+            },
           },
         },
         alpha: 0.15,
@@ -660,6 +753,9 @@
             mode: 'dark',
             group: 'semantic',
             scopes: ['bgColor'],
+            codeSyntax: {
+              web: 'var(--bgColor-closed-emphasis) /* utility class: .color-bg-closed-emphasis */',
+            },
           },
         },
       },
@@ -674,6 +770,9 @@
             mode: 'dark',
             group: 'semantic',
             scopes: ['bgColor'],
+            codeSyntax: {
+              web: 'var(--bgColor-done-muted) /* utility class: .color-bg-done */',
+            },
           },
         },
         alpha: 0.15,
@@ -687,6 +786,9 @@
             mode: 'dark',
             group: 'semantic',
             scopes: ['bgColor'],
+            codeSyntax: {
+              web: 'var(--bgColor-done-emphasis) /* utility class: .color-bg-done-emphasis */',
+            },
           },
         },
       },
@@ -701,6 +803,9 @@
             mode: 'dark',
             group: 'semantic',
             scopes: ['bgColor'],
+            codeSyntax: {
+              web: 'var(--bgColor-sponsors-muted) /* utility class: .color-bg-sponsors */',
+            },
           },
         },
         alpha: 0.1,
@@ -714,6 +819,9 @@
             mode: 'dark',
             group: 'semantic',
             scopes: ['bgColor'],
+            codeSyntax: {
+              web: 'var(--bgColor-sponsors-emphasis) /* utility class: .color-bg-sponsors-emphasis */',
+            },
           },
         },
       },
@@ -729,6 +837,9 @@
           mode: 'dark',
           group: 'semantic',
           scopes: ['borderColor'],
+          codeSyntax: {
+            web: 'var(--borderColor-default) /* utility class: .color-border-default */',
+          },
         },
       },
     },
@@ -741,6 +852,9 @@
           mode: 'dark',
           group: 'semantic',
           scopes: ['borderColor'],
+          codeSyntax: {
+            web: 'var(--borderColor-muted) /* utility class: .color-border-muted */',
+          },
         },
       },
       alpha: 0.4,
@@ -818,6 +932,9 @@
             mode: 'dark',
             group: 'semantic',
             scopes: ['borderColor'],
+            codeSyntax: {
+              web: 'var(--borderColor-accent-muted) /* utility class: .color-border-accent */',
+            },
           },
         },
         alpha: 0.4,
@@ -831,6 +948,9 @@
             mode: 'dark',
             group: 'semantic',
             scopes: ['borderColor'],
+            codeSyntax: {
+              web: 'var(--borderColor-accent-emphasis) /* utility class: .color-border-accent-emphasis */',
+            },
           },
         },
       },
@@ -845,6 +965,9 @@
             mode: 'dark',
             group: 'semantic',
             scopes: ['borderColor'],
+            codeSyntax: {
+              web: 'var(--borderColor-success-muted) /* utility class: .color-border-success */',
+            },
           },
         },
         alpha: 0.4,
@@ -858,6 +981,9 @@
             mode: 'dark',
             group: 'semantic',
             scopes: ['borderColor'],
+            codeSyntax: {
+              web: 'var(--borderColor-success-emphasis) /* utility class: .color-border-success-emphasis */',
+            },
           },
         },
       },
@@ -872,6 +998,9 @@
             mode: 'dark',
             group: 'semantic',
             scopes: ['borderColor'],
+            codeSyntax: {
+              web: 'var(--borderColor-attention-muted) /* utility class: .color-border-attention */',
+            },
           },
         },
         alpha: 0.4,
@@ -885,6 +1014,9 @@
             mode: 'dark',
             group: 'semantic',
             scopes: ['borderColor'],
+            codeSyntax: {
+              web: 'var(--borderColor-attention-emphasis) /* utility class: .color-border-attention-emphasis */',
+            },
           },
         },
       },
@@ -899,6 +1031,9 @@
             mode: 'dark',
             group: 'semantic',
             scopes: ['borderColor'],
+            codeSyntax: {
+              web: 'var(--borderColor-severe-muted) /* utility class: .color-border-severe */',
+            },
           },
         },
         alpha: 0.4,
@@ -912,6 +1047,9 @@
             mode: 'dark',
             group: 'semantic',
             scopes: ['borderColor'],
+            codeSyntax: {
+              web: 'var(--borderColor-severe-emphasis) /* utility class: .color-border-severe-emphasis */',
+            },
           },
         },
       },
@@ -926,6 +1064,9 @@
             mode: 'dark',
             group: 'semantic',
             scopes: ['borderColor'],
+            codeSyntax: {
+              web: 'var(--borderColor-danger-muted) /* utility class: .color-border-danger */',
+            },
           },
         },
         alpha: 0.4,
@@ -939,6 +1080,9 @@
             mode: 'dark',
             group: 'semantic',
             scopes: ['borderColor'],
+            codeSyntax: {
+              web: 'var(--borderColor-danger-emphasis) /* utility class: .color-border-danger-emphasis */',
+            },
           },
         },
       },
@@ -953,6 +1097,9 @@
             mode: 'dark',
             group: 'semantic',
             scopes: ['borderColor'],
+            codeSyntax: {
+              web: 'var(--borderColor-open-muted) /* utility class: .color-border-open */',
+            },
           },
         },
       },
@@ -965,6 +1112,9 @@
             mode: 'dark',
             group: 'semantic',
             scopes: ['borderColor'],
+            codeSyntax: {
+              web: 'var(--borderColor-open-emphasis) /* utility class: .color-border-open-emphasis */',
+            },
           },
         },
       },
@@ -979,6 +1129,9 @@
             mode: 'dark',
             group: 'semantic',
             scopes: ['borderColor'],
+            codeSyntax: {
+              web: 'var(--borderColor-closed-muted) /* utility class: .color-border-closed */',
+            },
           },
         },
         alpha: 0.4,
@@ -992,6 +1145,9 @@
             mode: 'dark',
             group: 'semantic',
             scopes: ['borderColor'],
+            codeSyntax: {
+              web: 'var(--borderColor-closed-emphasis) /* utility class: .color-border-closed-emphasis */',
+            },
           },
         },
       },
@@ -1006,6 +1162,9 @@
             mode: 'dark',
             group: 'semantic',
             scopes: ['borderColor'],
+            codeSyntax: {
+              web: 'var(--borderColor-done-muted) /* utility class: .color-border-done */',
+            },
           },
         },
         alpha: 0.4,
@@ -1019,6 +1178,9 @@
             mode: 'dark',
             group: 'semantic',
             scopes: ['borderColor'],
+            codeSyntax: {
+              web: 'var(--borderColor-done-emphasis) /* utility class: .color-border-done-emphasis */',
+            },
           },
         },
       },
@@ -1033,6 +1195,9 @@
             mode: 'dark',
             group: 'semantic',
             scopes: ['borderColor'],
+            codeSyntax: {
+              web: 'var(--borderColor-sponsors-muted) /* utility class: .color-border-sponsors */',
+            },
           },
         },
         alpha: 0.4,
@@ -1046,6 +1211,9 @@
             mode: 'dark',
             group: 'semantic',
             scopes: ['borderColor'],
+            codeSyntax: {
+              web: 'var(--borderColor-sponsors-emphasis) /* utility class: .color-border-sponsors-emphasis */',
+            },
           },
         },
       },

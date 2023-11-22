@@ -473,7 +473,11 @@
         "$extensions": {
           "org.primer.figma": {
             "collection": "pattern/size",
-            "scopes": ["gap"]
+            "scopes": ["gap"],
+            "group": "component",
+            "codeSyntax": {
+              "web": "var(--stack-padding-condensed) /* utility class: .p-2 */"
+            }
           }
         }
       },
@@ -483,7 +487,11 @@
         "$extensions": {
           "org.primer.figma": {
             "collection": "pattern/size",
-            "scopes": ["gap"]
+            "group": "component",
+            "scopes": ["gap"],
+            "codeSyntax": {
+              "web": "var(--stack-padding-normal) /* utility class: .p-3 */"
+            }
           }
         }
       },
@@ -493,7 +501,11 @@
         "$extensions": {
           "org.primer.figma": {
             "collection": "pattern/size",
-            "scopes": ["gap"]
+            "group": "component",
+            "scopes": ["gap"],
+            "codeSyntax": {
+              "web": "var(--stack-padding-spacious) /* utility class: .p-4 */"
+            }
           }
         }
       }
@@ -505,7 +517,11 @@
         "$extensions": {
           "org.primer.figma": {
             "collection": "pattern/size",
-            "scopes": ["gap"]
+            "group": "component",
+            "scopes": ["gap"],
+            "codeSyntax": {
+              "web": "var(--stack-gap-condensed) /* utility class: .gap-2 */"
+            }
           }
         }
       },
@@ -515,7 +531,11 @@
         "$extensions": {
           "org.primer.figma": {
             "collection": "pattern/size",
-            "scopes": ["gap"]
+            "group": "component",
+            "scopes": ["gap"],
+            "codeSyntax": {
+              "web": "var(--stack-gap-normal) /* utility class: .gap-3 */"
+            }
           }
         }
       },
@@ -525,7 +545,11 @@
         "$extensions": {
           "org.primer.figma": {
             "collection": "pattern/size",
-            "scopes": ["gap"]
+            "group": "component",
+            "scopes": ["gap"],
+            "codeSyntax": {
+              "web": "var(--stack-gap-spacious) /* utility class: .gap-4 */"
+            }
           }
         }
       }
