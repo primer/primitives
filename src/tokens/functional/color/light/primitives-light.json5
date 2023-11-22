@@ -10,8 +10,8 @@
           group: 'semantic',
           scopes: ['fgColor'],
           codeSyntax: {
-            web: 'var(--fgColor-default) // css class: .color-fg-default'
-          }
+            web: 'var(--fgColor-default) /* utility class: .color-fg-default */',
+          },
         },
       },
     },
@@ -24,6 +24,9 @@
           mode: 'light',
           group: 'semantic',
           scopes: ['fgColor'],
+          codeSyntax: {
+            web: 'var(--fgColor-muted) /* utility class: .color-fg-muted */',
+          },
         },
       },
       mix: {
@@ -40,6 +43,9 @@
           mode: 'light',
           group: 'semantic',
           scopes: ['fgColor'],
+          codeSyntax: {
+            web: 'var(--fgColor-onEmphasis) /* utility class: .color-fg-on-emphasis */',
+          },
         },
       },
     },
@@ -77,6 +83,9 @@
             mode: 'light',
             group: 'semantic',
             scopes: ['fgColor'],
+            codeSyntax: {
+              web: 'var(--fgColor-link) /* utility class: .color-fg-accent */',
+            },
           },
         },
       },
@@ -129,6 +138,9 @@
             mode: 'light',
             group: 'semantic',
             scopes: ['fgColor'],
+            codeSyntax: {
+              web: 'var(--fgColor-accent) /* utility class: .color-fg-accent */',
+            },
           },
         },
       },
@@ -155,6 +167,9 @@
             mode: 'light',
             group: 'semantic',
             scopes: ['fgColor'],
+            codeSyntax: {
+              web: 'var(--fgColor-success) /* utility class: .color-fg-success */',
+            },
           },
         },
       },
@@ -181,6 +196,9 @@
             mode: 'light',
             group: 'semantic',
             scopes: ['fgColor'],
+            codeSyntax: {
+              web: 'var(--fgColor-attention) /* utility class: .color-fg-attention */',
+            },
           },
         },
       },
@@ -207,6 +225,9 @@
             mode: 'light',
             group: 'semantic',
             scopes: ['fgColor'],
+            codeSyntax: {
+              web: 'var(--fgColor-severe) /* utility class: .color-fg-severe */',
+            },
           },
         },
       },
@@ -233,6 +254,9 @@
             mode: 'light',
             group: 'semantic',
             scopes: ['fgColor'],
+            codeSyntax: {
+              web: 'var(--fgColor-danger) /* utility class: .color-fg-danger */',
+            },
           },
         },
         mix: {
@@ -264,6 +288,9 @@
             mode: 'light',
             group: 'semantic',
             scopes: ['fgColor'],
+            codeSyntax: {
+              web: 'var(--fgColor-open) /* utility class: .color-fg-open */',
+            },
           },
         },
       },
@@ -291,6 +318,9 @@
             mode: 'light',
             group: 'semantic',
             scopes: ['fgColor'],
+            codeSyntax: {
+              web: 'var(--fgColor-closed) /* utility class: .color-fg-closed */',
+            },
           },
         },
       },
@@ -318,6 +348,9 @@
             mode: 'light',
             group: 'semantic',
             scopes: ['fgColor'],
+            codeSyntax: {
+              web: 'var(--fgColor-done) /* utility class: .color-fg-done */',
+            },
           },
         },
       },
@@ -344,6 +377,9 @@
             mode: 'light',
             group: 'semantic',
             scopes: ['fgColor'],
+            codeSyntax: {
+              web: 'var(--fgColor-sponsors) /* utility class: .color-fg-sponsors */',
+            },
           },
         },
       },
@@ -395,7 +431,6 @@
           mode: 'light',
           scopes: ['bgColor', 'borderColor'],
           group: 'semantic',
-
         },
       },
     },

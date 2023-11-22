@@ -473,7 +473,10 @@
         "$extensions": {
           "org.primer.figma": {
             "collection": "pattern/size",
-            "scopes": ["gap"]
+            "scopes": ["gap"],
+            "codeSyntax": {
+              "web": "var(--stack-padding-condensed) /* utility class: .p-2 */"
+            }
           }
         }
       },
@@ -483,7 +486,10 @@
         "$extensions": {
           "org.primer.figma": {
             "collection": "pattern/size",
-            "scopes": ["gap"]
+            "scopes": ["gap"],
+            "codeSyntax": {
+              "web": "var(--stack-padding-normal) /* utility class: .p-3 */"
+            }
           }
         }
       },
@@ -493,7 +499,10 @@
         "$extensions": {
           "org.primer.figma": {
             "collection": "pattern/size",
-            "scopes": ["gap"]
+            "scopes": ["gap"],
+            "codeSyntax": {
+              "web": "var(--stack-padding-spacious) /* utility class: .p-4 */"
+            }
           }
         }
       }
@@ -505,7 +514,10 @@
         "$extensions": {
           "org.primer.figma": {
             "collection": "pattern/size",
-            "scopes": ["gap"]
+            "scopes": ["gap"],
+            "codeSyntax": {
+              "web": "var(--stack-gap-condensed) /* utility class: .gutter-condensed */"
+            }
           }
         }
       },
@@ -515,7 +527,10 @@
         "$extensions": {
           "org.primer.figma": {
             "collection": "pattern/size",
-            "scopes": ["gap"]
+            "scopes": ["gap"],
+            "codeSyntax": {
+              "web": "var(--stack-gap-normal) /* utility class: .gutter */"
+            }
           }
         }
       },
@@ -525,7 +540,10 @@
         "$extensions": {
           "org.primer.figma": {
             "collection": "pattern/size",
-            "scopes": ["gap"]
+            "scopes": ["gap"],
+            "codeSyntax": {
+              "web": "var(--stack-gap-spacious) /* utility class: .gutter-spacious */"
+            }
           }
         }
       }
