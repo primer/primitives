@@ -35,7 +35,10 @@
       "$extensions": {
         "org.primer.figma": {
           "collection": "functional/size",
-          "scopes": ["radius"]
+          "scopes": ["radius"],
+          "codeSyntax": {
+            "web": "var(--borderRadius-small) /* utility class: .rounded-1 */"
+          }
         }
       }
     },
@@ -45,7 +48,10 @@
       "$extensions": {
         "org.primer.figma": {
           "collection": "functional/size",
-          "scopes": ["radius"]
+          "scopes": ["radius"],
+          "codeSyntax": {
+            "web": "var(--borderRadius-medium) /* utility class: .rounded-2 */"
+          }
         }
       }
     },
@@ -55,7 +61,10 @@
       "$extensions": {
         "org.primer.figma": {
           "collection": "functional/size",
-          "scopes": ["radius"]
+          "scopes": ["radius"],
+          "codeSyntax": {
+            "web": "var(--borderRadius-large) /* utility class: .rounded-3 */"
+          }
         }
       }
     },
@@ -66,7 +75,10 @@
       "$extensions": {
         "org.primer.figma": {
           "collection": "functional/size",
-          "scopes": ["radius"]
+          "scopes": ["radius"],
+          "codeSyntax": {
+            "web": "var(--borderRadius-full) /* utility class: .circle */"
+          }
         }
       }
     }
