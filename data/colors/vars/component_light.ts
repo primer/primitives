@@ -150,7 +150,7 @@ export default {
 
     inactive: {
       bg: get('scale.gray.1'),
-      text: get('fg.muted'),
+      text: get('scale.gray.6'),
     }
   },
   underlinenav: {

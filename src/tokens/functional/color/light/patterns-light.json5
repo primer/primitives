@@ -1530,7 +1530,7 @@
     inactive: {
       fgColor: {
         rest: {
-          $value: '{fgColor.muted}',
+          $value: '{base.color.gray.6}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {

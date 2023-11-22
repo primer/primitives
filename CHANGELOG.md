@@ -1,5 +1,11 @@
 # @primer/primitives
 
+## 7.15.3
+
+### Patch Changes
+
+- [#778](https://github.com/primer/primitives/pull/778) [`f546c45`](https://github.com/primer/primitives/commit/f546c45c910f92d4a2ec803d78508f476b30375b) Thanks [@mperrotti](https://github.com/mperrotti)! - Updates inactive button text colors to meet contrast against the inactive button background color.
+
 ## 7.15.2
 
 ### Patch Changes
