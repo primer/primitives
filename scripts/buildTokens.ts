@@ -236,6 +236,12 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
 /** -----------------------------------
  * Run build script
  * ----------------------------------- */
+// build to private directory for backwards compatibility
 buildDesignTokens({
   buildPath: 'tokens-next-private/',
+})
+
+// build to dist
+buildDesignTokens({
+  buildPath: 'dist/',
 })
