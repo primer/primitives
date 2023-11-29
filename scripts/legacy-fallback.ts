@@ -13,7 +13,7 @@ const getNewVariable = (oldVariable: string) => {
 }
 
 const project = new Project({compilerOptions: {target: ScriptTarget.ES3}})
-project.addSourceFilesAtPaths(resolve('./data/colors/vars/global_light.ts'))
+project.addSourceFilesAtPaths(resolve('./data/colors/vars/component_dark.ts'))
 
 project.getSourceFiles().map(sourceFile => {
   /**
