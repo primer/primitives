@@ -90,7 +90,7 @@ project.getSourceFiles().map(sourceFile => {
        *
        * After:
        * fg: {
-       *   muted: "var(--color-fg-muted, '#656d76')"
+       *   muted: "var(--fgColor-muted, var(--color-fg-muted, '#656d76'))",
        * }
        */
 
@@ -100,18 +100,41 @@ project.getSourceFiles().map(sourceFile => {
       const oldVariableName = `--color-${prefix}-${propertyName}`
       const newVariableName = getNewVariable(oldVariableName)
       const newValue = `"var(${newVariableName}, var(${oldVariableName}, ${oldValue}))"`
-
       propertyValue.replaceWithText(newValue)
     } else if (propertyValue.getKind() === SyntaxKind.CallExpression) {
       /**
+       * Before:
        * fg: {
-       *   subtle: get('scale.gray.5'), ← CallExpression
+       *   default: get('scale.black') ← CallExpression
+       * }
+       *
+       * After:
+       * fg: {
+       *   default: (theme: any) => `var(--fgColor-default, var(--color-fg-default, ${get('scale.black')(theme)} ))`
+       * }
+       *
+       *   // expanded for readibility:
+       *   default: (theme: any) => `
+       *      var(
+       *        --fgColor-default,
+       *        var(
+       *          --color-fg-default,
+       *          ${ get('scale.black')(theme) }
+       *         )
+       *      )
+       *   `
        * }
        */
-      // const t = {
-      //   before: get('scale.black'),
-      //   after: `var(--color-fg-default, ${get('scale.black')(theme)})`,
-      // }
+
+      const oldValue = propertyValue.getText()
+      if (oldValue.includes(`"var(--`)) return // already replaced, skip!
+
+      const oldVariableName = `--color-${prefix}-${propertyName}`
+      const newVariableName = getNewVariable(oldVariableName)
+      const newValue = `(theme: any) => \`var(${newVariableName}, var(${oldVariableName}, $\{${oldValue}(theme)}))\``
+      propertyValue.replaceWithText(newValue)
+
+      // step 1: convert get('scale.white') to (theme: any) => get('scale.white')(theme),
     }
   })
   sourceFile.save()
