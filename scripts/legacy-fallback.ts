@@ -13,7 +13,7 @@ const getNewVariable = (oldVariable: string) => {
 }
 
 const project = new Project({compilerOptions: {target: ScriptTarget.ES3}})
-project.addSourceFilesAtPaths(resolve('./data/colors/vars/component_dark.ts'))
+project.addSourceFilesAtPaths(resolve('./data/colors/vars/app_dark.ts'))
 
 project.getSourceFiles().map(sourceFile => {
   /**
@@ -170,6 +170,9 @@ project.getSourceFiles().map(sourceFile => {
       const newFunctionBody = `var(${newVariableName}, var(${oldVariableName}, ${oldFunctionBody.replaceAll('`', '')}))`
 
       functionBody.replaceWithText(`\`${newFunctionBody}\``)
+    } else {
+      // eslint-disable-next-line no-console
+      console.warn('unhandled type!')
     }
   })
   sourceFile.save()
