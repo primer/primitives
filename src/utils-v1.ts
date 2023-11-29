@@ -7,6 +7,7 @@ import isFunction from 'lodash/isFunction'
 type Value = string | ((obj: any) => string)
 
 // New: instead of return #hex, this now returns var(--v, #hex) which fails parsing for transparentize
+// TODO: this feels super flaky, make this less flaky with some regex?
 function getFallbackValueFromVar(value: string) {
   if (typeof value !== 'string') return value
   if (!value.includes('var(--')) return value
