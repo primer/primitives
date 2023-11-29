@@ -5,11 +5,17 @@ import kebabCase from 'lodash/kebabCase'
 // eslint-disable-next-line import/extensions
 import fallbacks from '../src/tokens/fallback/color-fallbacks.json'
 
+// TODO: flag no fallback and multiple fallbacks
 type FallbackMap = Record<string, string>
 const getNewVariable = (oldVariable: string) => {
-  return Object.keys(fallbacks as FallbackMap).find(newVariable => {
+  const matchingVariables = Object.keys(fallbacks as FallbackMap).filter(newVariable => {
     return (fallbacks as FallbackMap)[newVariable] === `var(${oldVariable})`
   })
+  let optionalComment
+
+  if (matchingVariables.length === 0) optionalComment = ''
+  else if (matchingVariables.length > 1) optionalComment = ''
+  return [matchingVariables[0], optionalComment]
 }
 
 const project = new Project({compilerOptions: {target: ScriptTarget.ES3}})
@@ -101,9 +107,10 @@ project.getSourceFiles().map(sourceFile => {
       if (oldValue.startsWith(`"var(`)) return // already replaced, skip!
 
       const oldVariableName = `--color-${prefix}-${kebabCase(propertyName)}`
-      const newVariableName = getNewVariable(oldVariableName)
+      const [newVariableName, optionalComment] = getNewVariable(oldVariableName)
 
-      const newValue = `"var(${newVariableName}, var(${oldVariableName}, ${oldValue.replaceAll(`'`, ``)}))"`
+      let newValue = `"var(${newVariableName}, var(${oldVariableName}, ${oldValue.replaceAll(`'`, ``)}))"`
+      if (optionalComment) newValue += `// ${optionalComment}`
       propertyValue.replaceWithText(newValue)
     } else if (Node.isCallExpression(propertyValue)) {
       /**
@@ -134,8 +141,10 @@ project.getSourceFiles().map(sourceFile => {
       if (oldValue.includes(`"var(`)) return // already replaced, skip!
 
       const oldVariableName = `--color-${prefix}-${kebabCase(propertyName)}`
-      const newVariableName = getNewVariable(oldVariableName)
-      const newValue = `(theme: any) => \`var(${newVariableName}, var(${oldVariableName}, $\{${oldValue}(theme)}))\``
+
+      const [newVariableName, optionalComment] = getNewVariable(oldVariableName)
+      let newValue = `(theme: any) => \`var(${newVariableName}, var(${oldVariableName}, $\{${oldValue}(theme)}))\``
+      if (optionalComment) newValue += `// ${optionalComment}`
       propertyValue.replaceWithText(newValue)
     } else if (Node.isArrowFunction(propertyValue)) {
       /**
@@ -166,8 +175,11 @@ project.getSourceFiles().map(sourceFile => {
       if (oldFunctionBody.includes('`var(')) return // already replaced, skip!
 
       const oldVariableName = `--color-${prefix}-${kebabCase(propertyName)}`
-      const newVariableName = getNewVariable(oldVariableName)
-      const newFunctionBody = `var(${newVariableName}, var(${oldVariableName}, ${oldFunctionBody.replaceAll('`', '')}))`
+
+      const [newVariableName, optionalComment] = getNewVariable(oldVariableName)
+
+      let newFunctionBody = `var(${newVariableName}, var(${oldVariableName}, ${oldFunctionBody.replaceAll('`', '')}))`
+      if (optionalComment) newFunctionBody += `// ${optionalComment}`
 
       functionBody.replaceWithText(`\`${newFunctionBody}\``)
     } else {
