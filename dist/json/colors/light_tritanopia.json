@@ -31,7 +31,7 @@
   "diffstat": {
     "deletionBorder": "var(undefined, var(--color-diffstat-deletion-border, (theme) => `var(undefined, var(--color-border-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.black'), 0.15)(theme)}))`))",
     "additionBorder": "var(undefined, var(--color-diffstat-addition-border, (theme) => `var(undefined, var(--color-border-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.black'), 0.15)(theme)}))`))",
-    "additionBg": "#0969da"
+    "additionBg": "var(undefined, var(--color-diffstat-addition-bg, (obj) => (0, get_1.default)(obj, path)))"
   },
   "searchKeyword": {
     "hl": "var(undefined, var(--color-searchKeyword-hl, #fff8c5))"
@@ -189,214 +189,214 @@
   },
   "control": {
     "borderColor": {
-      "emphasis": "#858F99"
+      "emphasis": "var(undefined, var(--color-borderColor-emphasis, #858F99))"
     }
   },
   "avatar": {
-    "bg": "#ffffff",
-    "border": "var(undefined, var(--color-border-subtle, rgba(27,31,36,0.15)))",
-    "stackFade": "#afb8c1",
-    "stackFadeMore": "#d0d7de",
-    "childShadow": "0 0 0 2px rgba(255,255,255,0.8)"
+    "bg": "var(--avatar-bgColor, var(--color-avatar-bg, #ffffff))",
+    "border": "var(--avatar-borderColor, var(--color-avatar-border, (theme) => `var(undefined, var(--color-border-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.black'), 0.15)(theme)}))`))",
+    "stackFade": "var(--avatarStack-fade-bgColor-default, var(--color-avatar-stack-fade, #afb8c1))",
+    "stackFadeMore": "var(--avatarStack-fade-bgColor-muted, var(--color-avatar-stack-fade-more, #d0d7de))",
+    "childShadow": "var(--avatar-shadow, var(--color-avatar-child-shadow, 0 0 0 2px rgba(255,255,255,0.8)))"
   },
   "topicTag": {
-    "border": "rgba(0,0,0,0)"
+    "border": "var(undefined, var(--color-topicTag-border, transparent))"
   },
   "counter": {
-    "border": "rgba(0,0,0,0)"
+    "border": "var(--counter-borderColor, var(--color-counter-border, transparent))"
   },
   "selectMenu": {
-    "backdropBorder": "rgba(0,0,0,0)",
-    "tapHighlight": "rgba(175,184,193,0.5)",
-    "tapFocusBg": "#b6e3ff"
+    "backdropBorder": "var(undefined, var(--color-selectMenu-backdrop-border, transparent))",
+    "tapHighlight": "var(undefined, var(--color-selectMenu-tap-highlight, rgba(175,184,193,0.5)))",
+    "tapFocusBg": "var(undefined, var(--color-selectMenu-tap-focus-bg, #b6e3ff))"
   },
   "overlay": {
-    "shadow": "0 1px 3px rgba(27,31,36,0.12), 0 8px 24px rgba(66,74,83,0.12)",
-    "backdrop": "rgba(140,149,159,0.2)"
+    "shadow": "var(--shadow-floating-small, var(--color-overlay-shadow, 0 1px 3px rgba(27,31,36,0.12), 0 8px 24px rgba(66,74,83,0.12)))",
+    "backdrop": "var(--overlay-backdrop-bgColor, var(--color-overlay-backdrop, rgba(140,149,159,0.2)))"
   },
   "header": {
-    "text": "rgba(255,255,255,0.7)",
-    "bg": "#24292f",
-    "divider": "#57606a",
-    "logo": "#ffffff"
+    "text": "var(--header-fgColor-default, var(--color-header-text, rgba(255,255,255,0.7)))",
+    "bg": "var(--header-bgColor, var(--color-header-bg, #24292f))",
+    "divider": "var(--header-borderColor-divider, var(--color-header-divider, #57606a))",
+    "logo": "var(--header-fgColor-logo, var(--color-header-logo, #ffffff))"
   },
   "headerSearch": {
-    "bg": "#24292f",
-    "border": "#57606a"
+    "bg": "var(undefined, var(--color-headerSearch-bg, #24292f))",
+    "border": "var(undefined, var(--color-headerSearch-border, #57606a))"
   },
   "sidenav": {
-    "selectedBg": "#ffffff"
+    "selectedBg": "var(--sideNav-bgColor-selected, var(--color-sidenav-selected-bg, #ffffff))"
   },
   "menu": {
-    "bgActive": "rgba(0,0,0,0)"
+    "bgActive": "var(--menu-bgColor-active, var(--color-menu-bg-active, transparent))"
   },
   "input": {
-    "disabledBg": "var(--bgColor-disabled, var(--color-neutral-muted, rgba(175,184,193,0.2)))"
+    "disabledBg": "var(--control-bgColor-disabled, var(--color-input-disabled-bg, (theme) => `var(--bgColor-disabled, var(--color-neutral-muted, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.gray.3'), 0.2)(theme)}))`))"
   },
   "timeline": {
-    "badgeBg": "#eaeef2"
+    "badgeBg": "var(--timelineBadge-bgColor, var(--color-timeline-badge-bg, #eaeef2))"
   },
   "ansi": {
-    "black": "#24292f",
-    "blackBright": "#57606a",
-    "white": "#6e7781",
-    "whiteBright": "#8c959f",
-    "gray": "#6e7781",
-    "red": "#cf222e",
-    "redBright": "#a40e26",
-    "green": "#0550ae",
-    "greenBright": "#0969da",
-    "yellow": "#4d2d00",
-    "yellowBright": "#633c01",
-    "blue": "#0969da",
-    "blueBright": "#218bff",
-    "magenta": "#8250df",
-    "magentaBright": "#a475f9",
-    "cyan": "#1b7c83",
-    "cyanBright": "#3192aa"
+    "black": "var(undefined, var(--color-ansi-black, #24292f))",
+    "blackBright": "var(undefined, var(--color-ansi-black-bright, #57606a))",
+    "white": "var(undefined, var(--color-ansi-white, #6e7781))",
+    "whiteBright": "var(undefined, var(--color-ansi-white-bright, #8c959f))",
+    "gray": "var(undefined, var(--color-ansi-gray, #6e7781))",
+    "red": "var(undefined, var(--color-ansi-red, #cf222e))",
+    "redBright": "var(undefined, var(--color-ansi-red-bright, #a40e26))",
+    "green": "var(undefined, var(--color-ansi-green, #0550ae))",
+    "greenBright": "var(undefined, var(--color-ansi-green-bright, #0969da))",
+    "yellow": "var(undefined, var(--color-ansi-yellow, #4d2d00))",
+    "yellowBright": "var(undefined, var(--color-ansi-yellow-bright, #633c01))",
+    "blue": "var(undefined, var(--color-ansi-blue, #0969da))",
+    "blueBright": "var(undefined, var(--color-ansi-blue-bright, #218bff))",
+    "magenta": "var(undefined, var(--color-ansi-magenta, #8250df))",
+    "magentaBright": "var(undefined, var(--color-ansi-magenta-bright, #a475f9))",
+    "cyan": "var(undefined, var(--color-ansi-cyan, #1b7c83))",
+    "cyanBright": "var(undefined, var(--color-ansi-cyan-bright, #3192aa))"
   },
   "btn": {
-    "text": "#24292f",
-    "bg": "#f6f8fa",
-    "border": "var(undefined, var(--color-border-subtle, rgba(27,31,36,0.15)))",
-    "shadow": "0 1px 0 rgba(27,31,36,0.04)",
-    "insetShadow": "inset 0 1px 0 rgba(255,255,255,0.25)",
-    "hoverBg": "#f3f4f6",
-    "hoverBorder": "var(undefined, var(--color-border-subtle, rgba(27,31,36,0.15)))",
-    "activeBg": "hsla(220,14%,93%,1)",
-    "activeBorder": "var(undefined, var(--color-border-subtle, rgba(27,31,36,0.15)))",
-    "selectedBg": "hsla(220,14%,94%,1)",
-    "counterBg": "rgba(27,31,36,0.08)",
+    "text": "var(--button-default-fgColor-rest, var(--color-btn-text, #24292f))",
+    "bg": "var(--control-bgColor-rest, var(--color-btn-bg, #f6f8fa))",
+    "border": "var(--control-borderColor-rest, var(--color-btn-border, (theme) => `var(undefined, var(--color-border-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.black'), 0.15)(theme)}))`))",
+    "shadow": "var(--button-default-shadow-resting, var(--color-btn-shadow, 0 1px 0 rgba(27,31,36,0.04)))",
+    "insetShadow": "var(--button-default-shadow-inset, var(--color-btn-inset-shadow, inset 0 1px 0 rgba(255,255,255,0.25)))",
+    "hoverBg": "var(--control-bgColor-hover, var(--color-btn-hover-bg, #f3f4f6))",
+    "hoverBorder": "var(--button-default-borderColor-hover, var(--color-btn-hover-border, (theme) => `var(undefined, var(--color-border-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.black'), 0.15)(theme)}))`))",
+    "activeBg": "var(--button-default-bgColor-active, var(--color-btn-active-bg, var(--control-bgColor-hover, var(--color-btn-hover-bg, hsla(220,14%,93%,1)))))",
+    "activeBorder": "var(--button-default-borderColor-active, var(--color-btn-active-border, (theme) => `var(undefined, var(--color-border-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.black'), 0.15)(theme)}))`))",
+    "selectedBg": "var(--control-bgColor-active, var(--color-btn-selected-bg, var(--control-bgColor-hover, var(--color-btn-hover-bg, hsla(220,14%,94%,1)))))",
+    "counterBg": "var(--buttonCounter-default-bgColor-rest, var(--color-btn-counter-bg, rgba(27,31,36,0.08)))",
     "primary": {
-      "text": "#ffffff",
-      "bg": "#0969da",
-      "border": "var(undefined, var(--color-border-subtle, rgba(27,31,36,0.15)))",
-      "shadow": "0 1px 0 rgba(27,31,36,0.1)",
-      "insetShadow": "inset 0 1px 0 rgba(255,255,255,0.03)",
+      "text": "var(undefined, var(--color-primary-text, #ffffff))",
+      "bg": "var(undefined, var(--color-primary-bg, (obj) => (0, get_1.default)(obj, path)))",
+      "border": "var(undefined, var(--color-primary-border, (theme) => `var(undefined, var(--color-border-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.black'), 0.15)(theme)}))`))",
+      "shadow": "var(undefined, var(--color-primary-shadow, 0 1px 0 rgba(27,31,36,0.1)))",
+      "insetShadow": "var(undefined, var(--color-primary-inset-shadow, inset 0 1px 0 rgba(255,255,255,0.03)))",
       "hoverBg": "#0969da",
-      "hoverBorder": "var(undefined, var(--color-border-subtle, rgba(27,31,36,0.15)))",
-      "selectedBg": "hsla(212,92%,43%,1)",
-      "selectedShadow": "inset 0 1px 0 rgba(0,33,85,0.2)",
-      "disabledText": "rgba(255,255,255,0.8)",
+      "hoverBorder": "var(undefined, var(--color-primary-hover-border, (theme) => `var(undefined, var(--color-border-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.black'), 0.15)(theme)}))`))",
+      "selectedBg": "var(undefined, var(--color-primary-selected-bg, hsla(212,92%,43%,1)))",
+      "selectedShadow": "var(undefined, var(--color-primary-selected-shadow, inset 0 1px 0 rgba(0,33,85,0.2)))",
+      "disabledText": "var(undefined, var(--color-primary-disabled-text, rgba(255,255,255,0.8)))",
       "disabledBg": "#80ccff",
-      "disabledBorder": "var(undefined, var(--color-border-subtle, rgba(27,31,36,0.15)))",
-      "icon": "rgba(255,255,255,0.8)",
-      "counterBg": "rgba(0,33,85,0.2)"
+      "disabledBorder": "var(undefined, var(--color-primary-disabled-border, (theme) => `var(undefined, var(--color-border-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.black'), 0.15)(theme)}))`))",
+      "icon": "var(undefined, var(--color-primary-icon, rgba(255,255,255,0.8)))",
+      "counterBg": "var(undefined, var(--color-primary-counter-bg, rgba(0,33,85,0.2)))"
     },
     "outline": {
-      "text": "#0969da",
-      "hoverText": "#ffffff",
-      "hoverBg": "#0969da",
-      "hoverBorder": "var(undefined, var(--color-border-subtle, rgba(27,31,36,0.15)))",
-      "hoverShadow": "0 1px 0 rgba(27,31,36,0.1)",
-      "hoverInsetShadow": "inset 0 1px 0 rgba(255,255,255,0.03)",
-      "hoverCounterBg": "rgba(255,255,255,0.2)",
-      "selectedText": "#ffffff",
-      "selectedBg": "hsla(212,92%,42%,1)",
-      "selectedBorder": "var(undefined, var(--color-border-subtle, rgba(27,31,36,0.15)))",
-      "selectedShadow": "inset 0 1px 0 rgba(0,33,85,0.2)",
-      "disabledText": "rgba(9,105,218,0.5)",
-      "disabledBg": "#f6f8fa",
-      "disabledCounterBg": "rgba(9,105,218,0.05)",
-      "counterBg": "#0969da1a",
-      "counterFg": "#0550ae",
-      "hoverCounterFg": "#ffffff",
-      "disabledCounterFg": "rgba(9,105,218,0.5)"
+      "text": "var(undefined, var(--color-outline-text, #0969da))",
+      "hoverText": "var(undefined, var(--color-outline-hover-text, #ffffff))",
+      "hoverBg": "var(undefined, var(--color-outline-hover-bg, #0969da))",
+      "hoverBorder": "var(undefined, var(--color-outline-hover-border, (theme) => `var(undefined, var(--color-border-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.black'), 0.15)(theme)}))`))",
+      "hoverShadow": "var(undefined, var(--color-outline-hover-shadow, 0 1px 0 rgba(27,31,36,0.1)))",
+      "hoverInsetShadow": "var(undefined, var(--color-outline-hover-inset-shadow, inset 0 1px 0 rgba(255,255,255,0.03)))",
+      "hoverCounterBg": "var(undefined, var(--color-outline-hover-counter-bg, rgba(255,255,255,0.2)))",
+      "selectedText": "var(undefined, var(--color-outline-selected-text, #ffffff))",
+      "selectedBg": "var(undefined, var(--color-outline-selected-bg, hsla(212,92%,42%,1)))",
+      "selectedBorder": "var(undefined, var(--color-outline-selected-border, (theme) => `var(undefined, var(--color-border-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.black'), 0.15)(theme)}))`))",
+      "selectedShadow": "var(undefined, var(--color-outline-selected-shadow, inset 0 1px 0 rgba(0,33,85,0.2)))",
+      "disabledText": "var(undefined, var(--color-outline-disabled-text, rgba(9,105,218,0.5)))",
+      "disabledBg": "var(undefined, var(--color-outline-disabled-bg, #f6f8fa))",
+      "disabledCounterBg": "var(undefined, var(--color-outline-disabled-counter-bg, rgba(9,105,218,0.05)))",
+      "counterBg": "var(undefined, var(--color-outline-counter-bg, #0969da1a))",
+      "counterFg": "var(undefined, var(--color-outline-counter-fg, #0550ae))",
+      "hoverCounterFg": "var(undefined, var(--color-outline-hover-counter-fg, #ffffff))",
+      "disabledCounterFg": "var(undefined, var(--color-outline-disabled-counter-fg, rgba(9,105,218,0.5)))"
     },
     "danger": {
-      "text": "#cf222e",
-      "hoverText": "#ffffff",
-      "hoverBg": "#a40e26",
-      "hoverBorder": "var(undefined, var(--color-border-subtle, rgba(27,31,36,0.15)))",
-      "hoverShadow": "0 1px 0 rgba(27,31,36,0.1)",
-      "hoverInsetShadow": "inset 0 1px 0 rgba(255,255,255,0.03)",
-      "hoverCounterBg": "rgba(255,255,255,0.2)",
-      "selectedText": "#ffffff",
-      "selectedBg": "hsla(356,72%,44%,1)",
-      "selectedBorder": "var(undefined, var(--color-border-subtle, rgba(27,31,36,0.15)))",
-      "selectedShadow": "inset 0 1px 0 rgba(76,0,20,0.2)",
-      "disabledText": "rgba(207,34,46,0.5)",
-      "disabledBg": "#f6f8fa",
-      "disabledCounterBg": "rgba(207,34,46,0.05)",
-      "counterBg": "rgba(207,34,46,0.1)",
-      "icon": "#cf222e",
-      "hoverIcon": "#ffffff",
-      "counterFg": "#a40e26",
-      "hoverCounterFg": "#ffffff",
-      "disabledCounterFg": "rgba(207,34,46,0.5)"
+      "text": "var(undefined, var(--color-danger-text, #cf222e))",
+      "hoverText": "var(undefined, var(--color-danger-hover-text, #ffffff))",
+      "hoverBg": "var(undefined, var(--color-danger-hover-bg, #a40e26))",
+      "hoverBorder": "var(undefined, var(--color-danger-hover-border, (theme) => `var(undefined, var(--color-border-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.black'), 0.15)(theme)}))`))",
+      "hoverShadow": "var(undefined, var(--color-danger-hover-shadow, 0 1px 0 rgba(27,31,36,0.1)))",
+      "hoverInsetShadow": "var(undefined, var(--color-danger-hover-inset-shadow, inset 0 1px 0 rgba(255,255,255,0.03)))",
+      "hoverCounterBg": "var(undefined, var(--color-danger-hover-counter-bg, rgba(255,255,255,0.2)))",
+      "selectedText": "var(undefined, var(--color-danger-selected-text, #ffffff))",
+      "selectedBg": "var(undefined, var(--color-danger-selected-bg, hsla(356,72%,44%,1)))",
+      "selectedBorder": "var(undefined, var(--color-danger-selected-border, (theme) => `var(undefined, var(--color-border-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.black'), 0.15)(theme)}))`))",
+      "selectedShadow": "var(undefined, var(--color-danger-selected-shadow, inset 0 1px 0 rgba(76,0,20,0.2)))",
+      "disabledText": "var(undefined, var(--color-danger-disabled-text, rgba(207,34,46,0.5)))",
+      "disabledBg": "var(undefined, var(--color-danger-disabled-bg, #f6f8fa))",
+      "disabledCounterBg": "var(undefined, var(--color-danger-disabled-counter-bg, rgba(207,34,46,0.05)))",
+      "counterBg": "var(undefined, var(--color-danger-counter-bg, rgba(207,34,46,0.1)))",
+      "icon": "var(undefined, var(--color-danger-icon, #cf222e))",
+      "hoverIcon": "var(undefined, var(--color-danger-hover-icon, #ffffff))",
+      "counterFg": "var(undefined, var(--color-danger-counter-fg, #a40e26))",
+      "hoverCounterFg": "var(undefined, var(--color-danger-hover-counter-fg, #ffffff))",
+      "disabledCounterFg": "var(undefined, var(--color-danger-disabled-counter-fg, rgba(207,34,46,0.5)))"
     },
     "inactive": {
-      "bg": "#eaeef2",
-      "text": "#57606a"
+      "bg": "var(undefined, var(--color-inactive-bg, #eaeef2))",
+      "text": "var(undefined, var(--color-inactive-text, #57606a))"
     }
   },
   "underlinenav": {
-    "icon": "var(--control-fgColor-placeholder, var(--color-fg-subtle, #6e7781))",
-    "borderHover": "var(--bgColor-disabled, var(--color-neutral-muted, rgba(175,184,193,0.2)))"
+    "icon": "var(--underlineNav-iconColor-rest, var(--color-underlinenav-icon, (theme) => `var(--control-fgColor-placeholder, var(--color-fg-subtle, ${(0, utils_v1_1.get)('scale.gray.5')(theme)}))`))",
+    "borderHover": "var(--underlineNav-borderColor-hover, var(--color-underlinenav-border-hover, (theme) => `var(--bgColor-disabled, var(--color-neutral-muted, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.gray.3'), 0.2)(theme)}))`))"
   },
   "actionListItem": {
-    "inlineDivider": "var(--borderColor-default, var(--color-border-default, rgba(208,215,222,0.48)))",
+    "inlineDivider": "var(undefined, var(--color-actionListItem-inline-divider, var(--borderColor-default, var(--color-border-default, rgba(208,215,222,0.48)))))",
     "default": {
-      "hoverBg": "rgba(208,215,222,0.32)",
-      "hoverBorder": "rgba(0,0,0,0)",
-      "activeBg": "rgba(208,215,222,0.48)",
-      "activeBorder": "rgba(0,0,0,0)",
-      "selectedBg": "rgba(208,215,222,0.24)"
+      "hoverBg": "var(undefined, var(--color-default-hover-bg, rgba(208,215,222,0.32)))",
+      "hoverBorder": "var(undefined, var(--color-default-hover-border, transparent))",
+      "activeBg": "var(undefined, var(--color-default-active-bg, rgba(208,215,222,0.48)))",
+      "activeBorder": "var(undefined, var(--color-default-active-border, transparent))",
+      "selectedBg": "var(undefined, var(--color-default-selected-bg, rgba(208,215,222,0.24)))"
     },
     "danger": {
-      "hoverBg": "var(--bgColor-danger-muted, var(--color-danger-subtle, rgba(255,235,233,0.64)))",
-      "activeBg": "var(--bgColor-danger-muted, var(--color-danger-subtle, #ffebe9))",
-      "hoverText": "#cf222e"
+      "hoverBg": "var(undefined, var(--color-danger-hover-bg, var(--bgColor-danger-muted, var(--color-danger-subtle, rgba(255,235,233,0.64)))))",
+      "activeBg": "var(undefined, var(--color-danger-active-bg, (theme) => `var(--bgColor-danger-muted, var(--color-danger-subtle, ${(0, utils_v1_1.get)('scale.red.0')(theme)}))`))",
+      "hoverText": "var(undefined, var(--color-danger-hover-text, (obj) => (0, get_1.default)(obj, path)))"
     }
   },
   "switchTrack": {
-    "bg": "#eaeef2",
-    "hoverBg": "hsla(210,24%,90%,1)",
-    "activeBg": "hsla(210,24%,88%,1)",
-    "disabledBg": "#8c959f",
-    "fg": "#57606a",
-    "disabledFg": "var(--fgColor-onEmphasis, var(--color-fg-on-emphasis, #ffffff))",
-    "border": "rgba(0,0,0,0)",
+    "bg": "var(undefined, var(--color-switchTrack-bg, #eaeef2))",
+    "hoverBg": "var(undefined, var(--color-switchTrack-hover-bg, hsla(210,24%,90%,1)))",
+    "activeBg": "var(undefined, var(--color-switchTrack-active-bg, hsla(210,24%,88%,1)))",
+    "disabledBg": "var(undefined, var(--color-switchTrack-disabled-bg, #8c959f))",
+    "fg": "var(undefined, var(--color-switchTrack-fg, (obj) => (0, get_1.default)(obj, path)))",
+    "disabledFg": "var(undefined, var(--color-switchTrack-disabled-fg, (theme) => `var(--fgColor-onEmphasis, var(--color-fg-on-emphasis, ${(0, utils_v1_1.get)('scale.white')(theme)}))`))",
+    "border": "var(undefined, var(--color-switchTrack-border, transparent))",
     "checked": {
-      "bg": "var(--bgColor-accent-emphasis, var(--color-accent-emphasis, #0969da))",
-      "hoverBg": "#0860CA",
-      "activeBg": "#0757BA",
-      "fg": "var(--fgColor-onEmphasis, var(--color-fg-on-emphasis, #ffffff))",
-      "disabledFg": "var(--fgColor-onEmphasis, var(--color-fg-on-emphasis, #ffffff))",
-      "border": "rgba(0,0,0,0)"
+      "bg": "var(undefined, var(--color-checked-bg, (theme) => `var(--bgColor-accent-emphasis, var(--color-accent-emphasis, ${(0, utils_v1_1.get)('scale.blue.5')(theme)}))`))",
+      "hoverBg": "var(undefined, var(--color-checked-hover-bg, #0860CA))",
+      "activeBg": "var(undefined, var(--color-checked-active-bg, #0757BA))",
+      "fg": "var(undefined, var(--color-checked-fg, (theme) => `var(--fgColor-onEmphasis, var(--color-fg-on-emphasis, ${(0, utils_v1_1.get)('scale.white')(theme)}))`))",
+      "disabledFg": "var(undefined, var(--color-checked-disabled-fg, (theme) => `var(--fgColor-onEmphasis, var(--color-fg-on-emphasis, ${(0, utils_v1_1.get)('scale.white')(theme)}))`))",
+      "border": "var(undefined, var(--color-checked-border, transparent))"
     }
   },
   "switchKnob": {
-    "bg": "var(--bgColor-default, var(--color-canvas-default, #ffffff))",
-    "disabledBg": "var(--bgColor-muted, var(--color-canvas-subtle, #f6f8fa))",
-    "border": "#858F99",
+    "bg": "var(undefined, var(--color-switchKnob-bg, (theme) => `var(--bgColor-default, var(--color-canvas-default, ${(0, utils_v1_1.get)('scale.white')(theme)}))`))",
+    "disabledBg": "var(undefined, var(--color-switchKnob-disabled-bg, (theme) => `var(--bgColor-muted, var(--color-canvas-subtle, ${(0, utils_v1_1.get)('scale.gray.0')(theme)}))`))",
+    "border": "var(undefined, var(--color-switchKnob-border, #858F99))",
     "checked": {
-      "bg": "var(--bgColor-default, var(--color-canvas-default, #ffffff))",
-      "disabledBg": "var(--bgColor-muted, var(--color-canvas-subtle, #f6f8fa))",
-      "border": "var(--bgColor-accent-emphasis, var(--color-accent-emphasis, #0969da))"
+      "bg": "var(undefined, var(--color-checked-bg, (theme) => `var(--bgColor-default, var(--color-canvas-default, ${(0, utils_v1_1.get)('scale.white')(theme)}))`))",
+      "disabledBg": "var(undefined, var(--color-checked-disabled-bg, (theme) => `var(--bgColor-muted, var(--color-canvas-subtle, ${(0, utils_v1_1.get)('scale.gray.0')(theme)}))`))",
+      "border": "var(undefined, var(--color-checked-border, (theme) => `var(--bgColor-accent-emphasis, var(--color-accent-emphasis, ${(0, utils_v1_1.get)('scale.blue.5')(theme)}))`))"
     }
   },
   "segmentedControl": {
-    "bg": "#eaeef2",
+    "bg": "var(undefined, var(--color-segmentedControl-bg, #eaeef2))",
     "button": {
-      "bg": "var(--bgColor-default, var(--color-canvas-default, #ffffff))",
+      "bg": "var(undefined, var(--color-button-bg, (theme) => `var(--bgColor-default, var(--color-canvas-default, ${(0, utils_v1_1.get)('scale.white')(theme)}))`))",
       "hover": {
-        "bg": "rgba(175,184,193,0.2)"
+        "bg": "var(undefined, var(--color-hover-bg, rgba(175,184,193,0.2)))"
       },
       "active": {
-        "bg": "rgba(175,184,193,0.4)"
+        "bg": "var(undefined, var(--color-active-bg, rgba(175,184,193,0.4)))"
       },
       "selected": {
-        "border": "#8c959f"
+        "border": "var(undefined, var(--color-selected-border, #8c959f))"
       }
     }
   },
   "treeViewItem": {
     "chevron": {
-      "hoverBg": "rgba(208,215,222,0.32)"
+      "hoverBg": "var(undefined, var(--color-chevron-hover-bg, rgba(208,215,222,0.32)))"
     },
     "directory": {
-      "fill": "#54aeff"
+      "fill": "var(undefined, var(--color-directory-fill, #54aeff))"
     }
   },
   "fg": {

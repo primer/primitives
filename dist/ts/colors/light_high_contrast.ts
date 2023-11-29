@@ -31,7 +31,7 @@ export default {
   "diffstat": {
     "deletionBorder": "var(undefined, var(--color-diffstat-deletion-border, (obj) => {\n        const resolvedValue = resolveValue(value, obj);\n        // Instead of value being #hex, the value is now var(--v, #hex)\n        const hexColorValue = getFallbackValueFromVar(resolvedValue);\n        const hexColorValueWithTransparency = (0, color2k_1.transparentize)(hexColorValue, 1 - amount).replace(/ /g, '');\n        return resolvedValue.replace(hexColorValue, hexColorValueWithTransparency);\n    }))",
     "additionBorder": "var(undefined, var(--color-diffstat-addition-border, (obj) => {\n        const resolvedValue = resolveValue(value, obj);\n        // Instead of value being #hex, the value is now var(--v, #hex)\n        const hexColorValue = getFallbackValueFromVar(resolvedValue);\n        const hexColorValueWithTransparency = (0, color2k_1.transparentize)(hexColorValue, 1 - amount).replace(/ /g, '');\n        return resolvedValue.replace(hexColorValue, hexColorValueWithTransparency);\n    }))",
-    "additionBg": "#055d20"
+    "additionBg": "var(undefined, var(--color-diffstat-addition-bg, (obj) => (0, get_1.default)(obj, path)))"
   },
   "searchKeyword": {
     "hl": "var(undefined, var(--color-searchKeyword-hl, #fcf7be))"
@@ -193,11 +193,11 @@ export default {
     }
   },
   "avatar": {
-    "bg": "#ffffff",
-    "border": "rgba(1,4,9,0.8)",
-    "stackFade": "#acb6c0",
-    "stackFadeMore": "#ced5dc",
-    "childShadow": "0 0 0 2px rgba(255,255,255,0.8)"
+    "bg": "var(--avatar-bgColor, var(--color-avatar-bg, #ffffff))",
+    "border": "var(--avatar-borderColor, var(--color-avatar-border, (obj) => {\n        const resolvedValue = resolveValue(value, obj);\n        // Instead of value being #hex, the value is now var(--v, #hex)\n        const hexColorValue = getFallbackValueFromVar(resolvedValue);\n        const hexColorValueWithTransparency = (0, color2k_1.transparentize)(hexColorValue, 1 - amount).replace(/ /g, '');\n        return resolvedValue.replace(hexColorValue, hexColorValueWithTransparency);\n    }))",
+    "stackFade": "var(--avatarStack-fade-bgColor-default, var(--color-avatar-stack-fade, #acb6c0))",
+    "stackFadeMore": "var(--avatarStack-fade-bgColor-muted, var(--color-avatar-stack-fade-more, #ced5dc))",
+    "childShadow": "var(--avatar-shadow, var(--color-avatar-child-shadow, 0 0 0 2px rgba(255,255,255,0.8)))"
   },
   "topicTag": {
     "border": "var(--bgColor-accent-emphasis, var(--color-accent-emphasis, #0349b4))"
@@ -206,133 +206,133 @@ export default {
     "border": "#20252c"
   },
   "selectMenu": {
-    "backdropBorder": "rgba(0,0,0,0)",
-    "tapHighlight": "rgba(172,182,192,0.5)",
-    "tapFocusBg": "#9cd7ff"
+    "backdropBorder": "var(undefined, var(--color-selectMenu-backdrop-border, transparent))",
+    "tapHighlight": "var(undefined, var(--color-selectMenu-tap-highlight, rgba(172,182,192,0.5)))",
+    "tapFocusBg": "var(undefined, var(--color-selectMenu-tap-focus-bg, #9cd7ff))"
   },
   "overlay": {
-    "shadow": "0 1px 3px rgba(1,4,9,0.12), 0 8px 24px rgba(52,59,67,0.12)",
-    "backdrop": "rgba(136,146,157,0.2)"
+    "shadow": "var(--shadow-floating-small, var(--color-overlay-shadow, 0 1px 3px rgba(1,4,9,0.12), 0 8px 24px rgba(52,59,67,0.12)))",
+    "backdrop": "var(--overlay-backdrop-bgColor, var(--color-overlay-backdrop, rgba(136,146,157,0.2)))"
   },
   "header": {
-    "text": "rgba(255,255,255,0.7)",
-    "bg": "#0e1116",
+    "text": "var(--header-fgColor-default, var(--color-header-text, rgba(255,255,255,0.7)))",
+    "bg": "var(--header-bgColor, var(--color-header-bg, #0e1116))",
     "divider": "#acb6c0",
-    "logo": "#ffffff"
+    "logo": "var(--header-fgColor-logo, var(--color-header-logo, #ffffff))"
   },
   "headerSearch": {
-    "bg": "#0e1116",
-    "border": "#4b535d"
+    "bg": "var(undefined, var(--color-headerSearch-bg, #0e1116))",
+    "border": "var(undefined, var(--color-headerSearch-border, #4b535d))"
   },
   "sidenav": {
-    "selectedBg": "#ffffff"
+    "selectedBg": "var(--sideNav-bgColor-selected, var(--color-sidenav-selected-bg, #ffffff))"
   },
   "menu": {
-    "bgActive": "rgba(0,0,0,0)"
+    "bgActive": "var(--menu-bgColor-active, var(--color-menu-bg-active, transparent))"
   },
   "input": {
-    "disabledBg": "var(--bgColor-disabled, var(--color-neutral-muted, rgba(172,182,192,0.2)))"
+    "disabledBg": "var(--control-bgColor-disabled, var(--color-input-disabled-bg, (theme) => `var(--bgColor-disabled, var(--color-neutral-muted, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.gray.3'), 0.2)(theme)}))`))"
   },
   "timeline": {
-    "badgeBg": "#e7ecf0"
+    "badgeBg": "var(--timelineBadge-bgColor, var(--color-timeline-badge-bg, #e7ecf0))"
   },
   "ansi": {
-    "black": "#0e1116",
-    "blackBright": "#4b535d",
-    "white": "#66707b",
-    "whiteBright": "#88929d",
-    "gray": "#66707b",
-    "red": "#a0111f",
-    "redBright": "#86061d",
-    "green": "#024c1a",
-    "greenBright": "#055d20",
-    "yellow": "#3f2200",
-    "yellowBright": "#4e2c00",
-    "blue": "#0349b4",
-    "blueBright": "#1168e3",
-    "magenta": "#622cbc",
-    "magentaBright": "#844ae7",
-    "cyan": "#1b7c83",
-    "cyanBright": "#3192aa"
+    "black": "var(undefined, var(--color-ansi-black, #0e1116))",
+    "blackBright": "var(undefined, var(--color-ansi-black-bright, #4b535d))",
+    "white": "var(undefined, var(--color-ansi-white, #66707b))",
+    "whiteBright": "var(undefined, var(--color-ansi-white-bright, #88929d))",
+    "gray": "var(undefined, var(--color-ansi-gray, #66707b))",
+    "red": "var(undefined, var(--color-ansi-red, #a0111f))",
+    "redBright": "var(undefined, var(--color-ansi-red-bright, #86061d))",
+    "green": "var(undefined, var(--color-ansi-green, #024c1a))",
+    "greenBright": "var(undefined, var(--color-ansi-green-bright, #055d20))",
+    "yellow": "var(undefined, var(--color-ansi-yellow, #3f2200))",
+    "yellowBright": "var(undefined, var(--color-ansi-yellow-bright, #4e2c00))",
+    "blue": "var(undefined, var(--color-ansi-blue, #0349b4))",
+    "blueBright": "var(undefined, var(--color-ansi-blue-bright, #1168e3))",
+    "magenta": "var(undefined, var(--color-ansi-magenta, #622cbc))",
+    "magentaBright": "var(undefined, var(--color-ansi-magenta-bright, #844ae7))",
+    "cyan": "var(undefined, var(--color-ansi-cyan, #1b7c83))",
+    "cyanBright": "var(undefined, var(--color-ansi-cyan-bright, #3192aa))"
   },
   "btn": {
-    "text": "#0e1116",
+    "text": "var(--button-default-fgColor-rest, var(--color-btn-text, #0e1116))",
     "bg": "#e7ecf0",
     "border": "rgba(1,4,9,0.8)",
-    "shadow": "0 1px 0 rgba(1,4,9,0.04)",
-    "insetShadow": "inset 0 1px 0 rgba(255,255,255,0.25)",
+    "shadow": "var(--button-default-shadow-resting, var(--color-btn-shadow, 0 1px 0 rgba(1,4,9,0.04)))",
+    "insetShadow": "var(--button-default-shadow-inset, var(--color-btn-inset-shadow, inset 0 1px 0 rgba(255,255,255,0.25)))",
     "hoverBg": "#ced5dc",
-    "hoverBorder": "rgba(1,4,9,0.8)",
+    "hoverBorder": "var(--button-default-borderColor-hover, var(--color-btn-hover-border, (obj) => {\n        const resolvedValue = resolveValue(value, obj);\n        // Instead of value being #hex, the value is now var(--v, #hex)\n        const hexColorValue = getFallbackValueFromVar(resolvedValue);\n        const hexColorValueWithTransparency = (0, color2k_1.transparentize)(hexColorValue, 1 - amount).replace(/ /g, '');\n        return resolvedValue.replace(hexColorValue, hexColorValueWithTransparency);\n    }))",
     "activeBg": "#acb6c0",
-    "activeBorder": "rgba(1,4,9,0.8)",
+    "activeBorder": "var(--button-default-borderColor-active, var(--color-btn-active-border, (obj) => {\n        const resolvedValue = resolveValue(value, obj);\n        // Instead of value being #hex, the value is now var(--v, #hex)\n        const hexColorValue = getFallbackValueFromVar(resolvedValue);\n        const hexColorValueWithTransparency = (0, color2k_1.transparentize)(hexColorValue, 1 - amount).replace(/ /g, '');\n        return resolvedValue.replace(hexColorValue, hexColorValueWithTransparency);\n    }))",
     "selectedBg": "#acb6c0",
-    "counterBg": "rgba(1,4,9,0.08)",
+    "counterBg": "var(--buttonCounter-default-bgColor-rest, var(--color-btn-counter-bg, rgba(1,4,9,0.08)))",
     "primary": {
-      "text": "#ffffff",
+      "text": "var(undefined, var(--color-primary-text, #ffffff))",
       "bg": "#055d20",
       "border": "#013d14",
-      "shadow": "0 1px 0 rgba(1,4,9,0.1)",
-      "insetShadow": "inset 0 1px 0 rgba(255,255,255,0.03)",
+      "shadow": "var(undefined, var(--color-primary-shadow, 0 1px 0 rgba(1,4,9,0.1)))",
+      "insetShadow": "var(undefined, var(--color-primary-inset-shadow, inset 0 1px 0 rgba(255,255,255,0.03)))",
       "hoverBg": "#024c1a",
       "hoverBorder": "#013d14",
-      "selectedBg": "hsla(139,95%,13%,1)",
-      "selectedShadow": "inset 0 1px 0 rgba(0,35,11,0.2)",
-      "disabledText": "rgba(255,255,255,0.8)",
-      "disabledBg": "#94d3a2",
-      "disabledBorder": "rgba(1,4,9,0.8)",
-      "icon": "rgba(255,255,255,0.8)",
-      "counterBg": "rgba(0,35,11,0.2)"
+      "selectedBg": "var(undefined, var(--color-primary-selected-bg, hsla(139,95%,13%,1)))",
+      "selectedShadow": "var(undefined, var(--color-primary-selected-shadow, inset 0 1px 0 rgba(0,35,11,0.2)))",
+      "disabledText": "var(undefined, var(--color-primary-disabled-text, rgba(255,255,255,0.8)))",
+      "disabledBg": "var(undefined, var(--color-primary-disabled-bg, #94d3a2))",
+      "disabledBorder": "var(undefined, var(--color-primary-disabled-border, (obj) => {\n        const resolvedValue = resolveValue(value, obj);\n        // Instead of value being #hex, the value is now var(--v, #hex)\n        const hexColorValue = getFallbackValueFromVar(resolvedValue);\n        const hexColorValueWithTransparency = (0, color2k_1.transparentize)(hexColorValue, 1 - amount).replace(/ /g, '');\n        return resolvedValue.replace(hexColorValue, hexColorValueWithTransparency);\n    }))",
+      "icon": "var(undefined, var(--color-primary-icon, rgba(255,255,255,0.8)))",
+      "counterBg": "var(undefined, var(--color-primary-counter-bg, rgba(0,35,11,0.2)))"
     },
     "outline": {
       "text": "#023b95",
-      "hoverText": "#ffffff",
+      "hoverText": "var(undefined, var(--color-outline-hover-text, #ffffff))",
       "hoverBg": "var(--bgColor-accent-emphasis, var(--color-accent-emphasis, #0349b4))",
       "hoverBorder": "#022f7a",
-      "hoverShadow": "0 1px 0 rgba(1,4,9,0.1)",
-      "hoverInsetShadow": "inset 0 1px 0 rgba(255,255,255,0.03)",
-      "hoverCounterBg": "rgba(255,255,255,0.2)",
-      "selectedText": "#ffffff",
+      "hoverShadow": "var(undefined, var(--color-outline-hover-shadow, 0 1px 0 rgba(1,4,9,0.1)))",
+      "hoverInsetShadow": "var(undefined, var(--color-outline-hover-inset-shadow, inset 0 1px 0 rgba(255,255,255,0.03)))",
+      "hoverCounterBg": "var(undefined, var(--color-outline-hover-counter-bg, rgba(255,255,255,0.2)))",
+      "selectedText": "var(undefined, var(--color-outline-selected-text, #ffffff))",
       "selectedBg": "#022f7a",
       "selectedBorder": "#022f7a",
-      "selectedShadow": "inset 0 1px 0 rgba(2,26,74,0.2)",
+      "selectedShadow": "var(undefined, var(--color-outline-selected-shadow, inset 0 1px 0 rgba(2,26,74,0.2)))",
       "disabledText": "rgba(3,73,180,0.5)",
       "disabledBg": "#e7ecf0",
-      "disabledCounterBg": "rgba(3,73,180,0.05)",
-      "counterBg": "#0969da1a",
-      "counterFg": "#023b95",
-      "hoverCounterFg": "#ffffff",
-      "disabledCounterFg": "rgba(3,73,180,0.5)"
+      "disabledCounterBg": "var(undefined, var(--color-outline-disabled-counter-bg, rgba(3,73,180,0.05)))",
+      "counterBg": "var(undefined, var(--color-outline-counter-bg, #0969da1a))",
+      "counterFg": "var(undefined, var(--color-outline-counter-fg, #023b95))",
+      "hoverCounterFg": "var(undefined, var(--color-outline-hover-counter-fg, #ffffff))",
+      "disabledCounterFg": "var(undefined, var(--color-outline-disabled-counter-fg, rgba(3,73,180,0.5)))"
     },
     "danger": {
       "text": "#86061d",
-      "hoverText": "#ffffff",
+      "hoverText": "var(undefined, var(--color-danger-hover-text, #ffffff))",
       "hoverBg": "var(--control-borderColor-danger, var(--color-danger-emphasis, #a0111f))",
       "hoverBorder": "#6e011a",
-      "hoverShadow": "0 1px 0 rgba(1,4,9,0.1)",
-      "hoverInsetShadow": "inset 0 1px 0 rgba(255,255,255,0.03)",
-      "hoverCounterBg": "rgba(255,255,255,0.2)",
-      "selectedText": "#ffffff",
+      "hoverShadow": "var(undefined, var(--color-danger-hover-shadow, 0 1px 0 rgba(1,4,9,0.1)))",
+      "hoverInsetShadow": "var(undefined, var(--color-danger-hover-inset-shadow, inset 0 1px 0 rgba(255,255,255,0.03)))",
+      "hoverCounterBg": "var(undefined, var(--color-danger-hover-counter-bg, rgba(255,255,255,0.2)))",
+      "selectedText": "var(undefined, var(--color-danger-selected-text, #ffffff))",
       "selectedBg": "#6e011a",
       "selectedBorder": "#6e011a",
-      "selectedShadow": "inset 0 1px 0 rgba(67,0,17,0.2)",
-      "disabledText": "rgba(160,17,31,0.5)",
+      "selectedShadow": "var(undefined, var(--color-danger-selected-shadow, inset 0 1px 0 rgba(67,0,17,0.2)))",
+      "disabledText": "var(undefined, var(--color-danger-disabled-text, rgba(160,17,31,0.5)))",
       "disabledBg": "#e7ecf0",
-      "disabledCounterBg": "rgba(160,17,31,0.05)",
-      "counterBg": "rgba(160,17,31,0.1)",
+      "disabledCounterBg": "var(undefined, var(--color-danger-disabled-counter-bg, rgba(160,17,31,0.05)))",
+      "counterBg": "var(undefined, var(--color-danger-counter-bg, rgba(160,17,31,0.1)))",
       "icon": "#86061d",
-      "hoverIcon": "#ffffff",
-      "counterFg": "#86061d",
-      "hoverCounterFg": "#ffffff",
-      "disabledCounterFg": "rgba(160,17,31,0.5)"
+      "hoverIcon": "var(undefined, var(--color-danger-hover-icon, #ffffff))",
+      "counterFg": "var(undefined, var(--color-danger-counter-fg, #86061d))",
+      "hoverCounterFg": "var(undefined, var(--color-danger-hover-counter-fg, #ffffff))",
+      "disabledCounterFg": "var(undefined, var(--color-danger-disabled-counter-fg, rgba(160,17,31,0.5)))"
     },
     "inactive": {
-      "bg": "#e7ecf0",
-      "text": "#4b535d"
+      "bg": "var(undefined, var(--color-inactive-bg, #e7ecf0))",
+      "text": "var(undefined, var(--color-inactive-text, #4b535d))"
     }
   },
   "underlinenav": {
-    "icon": "var(--control-fgColor-placeholder, var(--color-fg-subtle, #66707b))",
-    "borderHover": "var(--bgColor-disabled, var(--color-neutral-muted, rgba(172,182,192,0.2)))"
+    "icon": "var(--underlineNav-iconColor-rest, var(--color-underlinenav-icon, (theme) => `var(--control-fgColor-placeholder, var(--color-fg-subtle, ${(0, utils_v1_1.get)('scale.gray.5')(theme)}))`))",
+    "borderHover": "var(--underlineNav-borderColor-hover, var(--color-underlinenav-border-hover, (theme) => `var(--bgColor-disabled, var(--color-neutral-muted, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.gray.3'), 0.2)(theme)}))`))"
   },
   "actionListItem": {
     "inlineDivider": "#88929d",
@@ -353,41 +353,41 @@ export default {
     "bg": "var(undefined, var(--color-neutral-emphasis, #66707b))",
     "hoverBg": "var(undefined, var(--color-neutral-emphasis, hsla(211,9%,47%,1)))",
     "activeBg": "var(undefined, var(--color-neutral-emphasis, hsla(211,9%,49%,1)))",
-    "disabledBg": "#88929d",
+    "disabledBg": "var(undefined, var(--color-switchTrack-disabled-bg, #88929d))",
     "fg": "var(--fgColor-onEmphasis, var(--color-fg-on-emphasis, #ffffff))",
     "disabledFg": "var(--fgColor-onEmphasis, var(--color-fg-on-emphasis, #ffffff))",
-    "border": "rgba(0,0,0,0)",
+    "border": "var(undefined, var(--color-switchTrack-border, transparent))",
     "checked": {
-      "bg": "var(--bgColor-accent-emphasis, var(--color-accent-emphasis, #0349b4))",
-      "hoverBg": "#0860CA",
-      "activeBg": "#0757BA",
+      "bg": "var(undefined, var(--color-checked-bg, (theme) => `var(--bgColor-accent-emphasis, var(--color-accent-emphasis, ${(0, utils_v1_1.get)('scale.blue.5')(theme)}))`))",
+      "hoverBg": "var(undefined, var(--color-checked-hover-bg, #0860CA))",
+      "activeBg": "var(undefined, var(--color-checked-active-bg, #0757BA))",
       "fg": "var(--fgColor-onEmphasis, var(--color-fg-on-emphasis, #ffffff))",
-      "disabledFg": "var(--fgColor-onEmphasis, var(--color-fg-on-emphasis, #ffffff))",
-      "border": "rgba(0,0,0,0)"
+      "disabledFg": "var(undefined, var(--color-checked-disabled-fg, (theme) => `var(--fgColor-onEmphasis, var(--color-fg-on-emphasis, ${(0, utils_v1_1.get)('scale.white')(theme)}))`))",
+      "border": "var(undefined, var(--color-checked-border, transparent))"
     }
   },
   "switchKnob": {
-    "bg": "var(--bgColor-default, var(--color-canvas-default, #ffffff))",
-    "disabledBg": "#e7ecf0",
+    "bg": "var(undefined, var(--color-switchKnob-bg, (theme) => `var(--bgColor-default, var(--color-canvas-default, ${(0, utils_v1_1.get)('scale.white')(theme)}))`))",
+    "disabledBg": "var(undefined, var(--color-switchKnob-disabled-bg, (obj) => (0, get_1.default)(obj, path)))",
     "border": "#20252c",
     "checked": {
-      "bg": "var(--bgColor-default, var(--color-canvas-default, #ffffff))",
-      "disabledBg": "#e7ecf0",
+      "bg": "var(undefined, var(--color-checked-bg, (theme) => `var(--bgColor-default, var(--color-canvas-default, ${(0, utils_v1_1.get)('scale.white')(theme)}))`))",
+      "disabledBg": "var(undefined, var(--color-checked-disabled-bg, (obj) => (0, get_1.default)(obj, path)))",
       "border": "var(--bgColor-accent-emphasis, var(--color-accent-emphasis, #0349b4))"
     }
   },
   "segmentedControl": {
-    "bg": "#e7ecf0",
+    "bg": "var(undefined, var(--color-segmentedControl-bg, #e7ecf0))",
     "button": {
-      "bg": "var(--bgColor-default, var(--color-canvas-default, #ffffff))",
+      "bg": "var(undefined, var(--color-button-bg, (theme) => `var(--bgColor-default, var(--color-canvas-default, ${(0, utils_v1_1.get)('scale.white')(theme)}))`))",
       "hover": {
-        "bg": "rgba(172,182,192,0.2)"
+        "bg": "var(undefined, var(--color-hover-bg, rgba(172,182,192,0.2)))"
       },
       "active": {
-        "bg": "rgba(172,182,192,0.4)"
+        "bg": "var(undefined, var(--color-active-bg, rgba(172,182,192,0.4)))"
       },
       "selected": {
-        "border": "#88929d"
+        "border": "var(undefined, var(--color-selected-border, #88929d))"
       }
     }
   },
@@ -396,7 +396,7 @@ export default {
       "hoverBg": "#ced5dc"
     },
     "directory": {
-      "fill": "#368cf9"
+      "fill": "var(undefined, var(--color-directory-fill, #368cf9))"
     }
   },
   "fg": {
