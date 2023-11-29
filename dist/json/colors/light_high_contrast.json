@@ -1,6 +1,6 @@
 {
-  "canvasDefaultTransparent": "rgba(255,255,255,0)",
-  "pageHeaderBg": "#ffffff",
+  "canvasDefaultTransparent": "var(--bgColor-default, var(--color-canvas-default, rgba(255,255,255,0)))",
+  "pageHeaderBg": "var(--bgColor-default, var(--color-canvas-default, #ffffff))",
   "marketingIcon": {
     "primary": "#1168e3",
     "secondary": "#368cf9"
@@ -8,17 +8,17 @@
   "diffBlob": {
     "addition": {
       "numText": "#0e1116",
-      "fg": "#ffffff",
+      "fg": "var(undefined, var(--color-fg-onEmphasis, #ffffff))",
       "numBg": "#ccffd8",
       "lineBg": "#e6ffec",
       "wordBg": "#055d20"
     },
     "deletion": {
       "numText": "#0e1116",
-      "fg": "#ffffff",
+      "fg": "var(undefined, var(--color-fg-onEmphasis, #ffffff))",
       "numBg": "#ffd7d5",
-      "lineBg": "#fff0ee",
-      "wordBg": "#a0111f"
+      "lineBg": "var(--bgColor-danger-muted, var(--color-danger-subtle, #fff0ee))",
+      "wordBg": "var(--control-borderColor-danger, var(--color-danger-emphasis, #a0111f))"
     },
     "hunk": {
       "numBg": "#9cd7ff"
@@ -72,16 +72,16 @@
   },
   "codemirror": {
     "text": "#0e1116",
-    "bg": "#ffffff",
-    "guttersBg": "#ffffff",
-    "guttermarkerText": "#ffffff",
-    "guttermarkerSubtleText": "#66707b",
+    "bg": "var(--bgColor-default, var(--color-canvas-default, #ffffff))",
+    "guttersBg": "var(--bgColor-default, var(--color-canvas-default, #ffffff))",
+    "guttermarkerText": "var(--bgColor-default, var(--color-canvas-default, #ffffff))",
+    "guttermarkerSubtleText": "var(--control-fgColor-placeholder, var(--color-fg-subtle, #66707b))",
     "linenumberText": "#0e1116",
     "cursor": "#0e1116",
     "selectionBg": "#368cf9",
     "activelineBg": "#e7ecf0",
     "matchingbracketText": "#0e1116",
-    "linesBg": "#ffffff",
+    "linesBg": "var(--bgColor-default, var(--color-canvas-default, #ffffff))",
     "syntax": {
       "comment": "#0e1116",
       "constant": "#023b95",
@@ -200,7 +200,7 @@
     "childShadow": "0 0 0 2px rgba(255,255,255,0.8)"
   },
   "topicTag": {
-    "border": "#0349b4"
+    "border": "var(--bgColor-accent-emphasis, var(--color-accent-emphasis, #0349b4))"
   },
   "counter": {
     "border": "#20252c"
@@ -231,7 +231,7 @@
     "bgActive": "rgba(0,0,0,0)"
   },
   "input": {
-    "disabledBg": "rgba(172,182,192,0.2)"
+    "disabledBg": "var(--bgColor-disabled, var(--color-neutral-muted, rgba(172,182,192,0.2)))"
   },
   "timeline": {
     "badgeBg": "#e7ecf0"
@@ -286,7 +286,7 @@
     "outline": {
       "text": "#023b95",
       "hoverText": "#ffffff",
-      "hoverBg": "#0349b4",
+      "hoverBg": "var(--bgColor-accent-emphasis, var(--color-accent-emphasis, #0349b4))",
       "hoverBorder": "#022f7a",
       "hoverShadow": "0 1px 0 rgba(1,4,9,0.1)",
       "hoverInsetShadow": "inset 0 1px 0 rgba(255,255,255,0.03)",
@@ -306,7 +306,7 @@
     "danger": {
       "text": "#86061d",
       "hoverText": "#ffffff",
-      "hoverBg": "#a0111f",
+      "hoverBg": "var(--control-borderColor-danger, var(--color-danger-emphasis, #a0111f))",
       "hoverBorder": "#6e011a",
       "hoverShadow": "0 1px 0 rgba(1,4,9,0.1)",
       "hoverInsetShadow": "inset 0 1px 0 rgba(255,255,255,0.03)",
@@ -331,8 +331,8 @@
     }
   },
   "underlinenav": {
-    "icon": "#66707b",
-    "borderHover": "rgba(172,182,192,0.2)"
+    "icon": "var(--control-fgColor-placeholder, var(--color-fg-subtle, #66707b))",
+    "borderHover": "var(--bgColor-disabled, var(--color-neutral-muted, rgba(172,182,192,0.2)))"
   },
   "actionListItem": {
     "inlineDivider": "#88929d",
@@ -344,42 +344,42 @@
       "selectedBg": "#ced5dc"
     },
     "danger": {
-      "hoverBg": "#a0111f",
+      "hoverBg": "var(--control-borderColor-danger, var(--color-danger-emphasis, #a0111f))",
       "activeBg": "#6e011a",
-      "hoverText": "#ffffff"
+      "hoverText": "var(undefined, var(--color-fg-onEmphasis, #ffffff))"
     }
   },
   "switchTrack": {
-    "bg": "#66707b",
-    "hoverBg": "hsla(211,9%,47%,1)",
-    "activeBg": "hsla(211,9%,49%,1)",
+    "bg": "var(undefined, var(--color-neutral-emphasis, #66707b))",
+    "hoverBg": "var(undefined, var(--color-neutral-emphasis, hsla(211,9%,47%,1)))",
+    "activeBg": "var(undefined, var(--color-neutral-emphasis, hsla(211,9%,49%,1)))",
     "disabledBg": "#88929d",
-    "fg": "#ffffff",
-    "disabledFg": "#ffffff",
+    "fg": "var(undefined, var(--color-fg-onEmphasis, #ffffff))",
+    "disabledFg": "var(undefined, var(--color-fg-onEmphasis, #ffffff))",
     "border": "rgba(0,0,0,0)",
     "checked": {
-      "bg": "#0349b4",
+      "bg": "var(--bgColor-accent-emphasis, var(--color-accent-emphasis, #0349b4))",
       "hoverBg": "#0860CA",
       "activeBg": "#0757BA",
-      "fg": "#ffffff",
-      "disabledFg": "#ffffff",
+      "fg": "var(undefined, var(--color-fg-onEmphasis, #ffffff))",
+      "disabledFg": "var(undefined, var(--color-fg-onEmphasis, #ffffff))",
       "border": "rgba(0,0,0,0)"
     }
   },
   "switchKnob": {
-    "bg": "#ffffff",
+    "bg": "var(--bgColor-default, var(--color-canvas-default, #ffffff))",
     "disabledBg": "#e7ecf0",
     "border": "#20252c",
     "checked": {
-      "bg": "#ffffff",
+      "bg": "var(--bgColor-default, var(--color-canvas-default, #ffffff))",
       "disabledBg": "#e7ecf0",
-      "border": "#0349b4"
+      "border": "var(--bgColor-accent-emphasis, var(--color-accent-emphasis, #0349b4))"
     }
   },
   "segmentedControl": {
     "bg": "#e7ecf0",
     "button": {
-      "bg": "#ffffff",
+      "bg": "var(--bgColor-default, var(--color-canvas-default, #ffffff))",
       "hover": {
         "bg": "rgba(172,182,192,0.2)"
       },
@@ -402,12 +402,12 @@
   "fg": {
     "default": "#0e1116",
     "muted": "#0e1116",
-    "subtle": "#66707b",
-    "onEmphasis": "#ffffff"
+    "subtle": "var(--control-fgColor-placeholder, var(--color-fg-subtle, #66707b))",
+    "onEmphasis": "var(undefined, var(--color-fg-onEmphasis, #ffffff))"
   },
   "canvas": {
-    "default": "#ffffff",
-    "overlay": "#ffffff",
+    "default": "var(--bgColor-default, var(--color-canvas-default, #ffffff))",
+    "overlay": "var(--overlay-bgColor, var(--color-canvas-overlay, #ffffff))",
     "inset": "#ffffff",
     "subtle": "#e7ecf0"
   },
@@ -423,76 +423,76 @@
     "extraLarge": "0 12px 28px rgba(136,146,157,0.3)"
   },
   "neutral": {
-    "emphasisPlus": "#0e1116",
-    "emphasis": "#66707b",
-    "muted": "rgba(172,182,192,0.2)",
+    "emphasisPlus": "var(undefined, var(--color-neutral-emphasisPlus, #0e1116))",
+    "emphasis": "var(undefined, var(--color-neutral-emphasis, #66707b))",
+    "muted": "var(--bgColor-disabled, var(--color-neutral-muted, rgba(172,182,192,0.2)))",
     "subtle": "#e7ecf0"
   },
   "accent": {
-    "fg": "#0349b4",
-    "emphasis": "#0349b4",
+    "fg": "var(--focus-outlineColor, var(--color-accent-fg, #0349b4))",
+    "emphasis": "var(--bgColor-accent-emphasis, var(--color-accent-emphasis, #0349b4))",
     "muted": "#368cf9",
-    "subtle": "#dff7ff"
+    "subtle": "var(--bgColor-accent-muted, var(--color-accent-subtle, #dff7ff))"
   },
   "success": {
-    "fg": "#055d20",
+    "fg": "var(--fgColor-success, var(--color-success-fg, #055d20))",
     "emphasis": "#055d20",
     "muted": "#26a148",
-    "subtle": "#d2fedb"
+    "subtle": "var(--bgColor-success-muted, var(--color-success-subtle, #d2fedb))"
   },
   "attention": {
-    "fg": "#744500",
+    "fg": "var(--fgColor-attention, var(--color-attention-fg, #744500))",
     "emphasis": "#744500",
     "muted": "#b58407",
-    "subtle": "#fcf7be"
+    "subtle": "var(--bgColor-attention-muted, var(--color-attention-subtle, #fcf7be))"
   },
   "severe": {
-    "fg": "#873800",
-    "emphasis": "#873800",
+    "fg": "var(--fgColor-severe, var(--color-severe-fg, #873800))",
+    "emphasis": "var(--bgColor-severe-emphasis, var(--color-severe-emphasis, #873800))",
     "muted": "#dc6d1a",
-    "subtle": "#fff2d5"
+    "subtle": "var(--bgColor-severe-muted, var(--color-severe-subtle, #fff2d5))"
   },
   "danger": {
-    "fg": "#d1242f",
-    "emphasis": "#a0111f",
+    "fg": "var(--control-danger-fgColor-rest, var(--color-danger-fg, #d1242f))",
+    "emphasis": "var(--control-borderColor-danger, var(--color-danger-emphasis, #a0111f))",
     "muted": "#ee5a5d",
-    "subtle": "#fff0ee"
+    "subtle": "var(--bgColor-danger-muted, var(--color-danger-subtle, #fff0ee))"
   },
   "open": {
-    "fg": "#055d20",
-    "emphasis": "#055d20",
-    "muted": "rgba(38,161,72,0.4)",
-    "subtle": "#d2fedb"
+    "fg": "var(--fgColor-open, var(--color-open-fg, #055d20))",
+    "emphasis": "var(--bgColor-open-emphasis, var(--color-open-emphasis, (obj) => (0, get_1.default)(obj, path)))",
+    "muted": "var(--borderColor-open-muted, var(--color-open-muted, rgba(38,161,72,0.4)))",
+    "subtle": "var(--bgColor-open-muted, var(--color-open-subtle, #d2fedb))"
   },
   "closed": {
-    "fg": "#d1242f",
-    "emphasis": "#a0111f",
-    "muted": "rgba(238,90,93,0.4)",
-    "subtle": "#fff0ee"
+    "fg": "var(--fgColor-closed, var(--color-closed-fg, var(--control-danger-fgColor-rest, var(--color-danger-fg, #d1242f))))",
+    "emphasis": "var(--bgColor-closed-emphasis, var(--color-closed-emphasis, #a0111f))",
+    "muted": "var(--borderColor-closed-muted, var(--color-closed-muted, rgba(238,90,93,0.4)))",
+    "subtle": "var(--bgColor-closed-muted, var(--color-closed-subtle, #fff0ee))"
   },
   "done": {
-    "fg": "#622cbc",
-    "emphasis": "#622cbc",
+    "fg": "var(--fgColor-done, var(--color-done-fg, #622cbc))",
+    "emphasis": "var(--bgColor-done-emphasis, var(--color-done-emphasis, #622cbc))",
     "muted": "#a371f7",
-    "subtle": "#faf0fe"
+    "subtle": "var(--bgColor-done-muted, var(--color-done-subtle, #faf0fe))"
   },
   "sponsors": {
-    "fg": "#971368",
-    "emphasis": "#971368",
+    "fg": "var(--fgColor-sponsors, var(--color-sponsors-fg, #971368))",
+    "emphasis": "var(--bgColor-sponsors-emphasis, var(--color-sponsors-emphasis, #971368))",
     "muted": "#ed4baf",
-    "subtle": "#feeff7"
+    "subtle": "var(--bgColor-sponsors-muted, var(--color-sponsors-subtle, #feeff7))"
   },
   "primer": {
     "fg": {
-      "disabled": "#88929d"
+      "disabled": "var(undefined, var(--color-fg-disabled, #88929d))"
     },
     "canvas": {
-      "backdrop": "rgba(1,4,9,0.5)",
-      "sticky": "rgba(255,255,255,0.95)"
+      "backdrop": "var(undefined, var(--color-canvas-backdrop, rgba(1,4,9,0.5)))",
+      "sticky": "var(undefined, var(--color-canvas-sticky, rgba(255,255,255,0.95)))"
     },
     "border": {
-      "active": "#ef5b48",
-      "contrast": "rgba(1,4,9,0.1)"
+      "active": "var(undefined, var(--color-border-active, #ef5b48))",
+      "contrast": "var(undefined, var(--color-border-contrast, rgba(1,4,9,0.1)))"
     },
     "shadow": {
       "highlight": "inset 0 1px 0 rgba(255,255,255,0.25)",

@@ -48,7 +48,8 @@
     "release": "changeset publish",
     "start:storybook": "npm run build:next && cd docs/storybook && npm run storybook",
     "test": "jest --verbose --coverage",
-    "watch": "ls data/**/*.scss scripts/**/*.ts | entr -s 'npm run build'"
+    "watch": "ls data/**/*.scss scripts/**/*.ts | entr -s 'npm run build'",
+    "legacy-fallback": "npx ts-node scripts/legacy-fallback.ts"
   },
   "prettier": "@github/prettier-config",
   "devDependencies": {

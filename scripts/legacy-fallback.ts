@@ -1,5 +1,7 @@
 import {resolve} from 'path'
 import {Project, ScriptTarget, SyntaxKind} from 'ts-morph'
+
+// eslint-disable-next-line import/extensions
 import fallbacks from '../src/tokens/fallback/color-fallbacks.json'
 
 type FallbackMap = Record<string, string>
@@ -90,7 +92,7 @@ project.getSourceFiles().map(sourceFile => {
        *
        * After:
        * fg: {
-       *   muted: "var(--fgColor-muted, var(--color-fg-muted, '#656d76'))",
+       *   muted: "var(--fgColor-muted, var(--color-fg-muted, #656d76))",
        * }
        */
 
@@ -99,7 +101,8 @@ project.getSourceFiles().map(sourceFile => {
 
       const oldVariableName = `--color-${prefix}-${propertyName}`
       const newVariableName = getNewVariable(oldVariableName)
-      const newValue = `"var(${newVariableName}, var(${oldVariableName}, ${oldValue}))"`
+
+      const newValue = `"var(${newVariableName}, var(${oldVariableName}, ${oldValue.replaceAll(`'`, ``)}))"`
       propertyValue.replaceWithText(newValue)
     } else if (propertyValue.getKind() === SyntaxKind.CallExpression) {
       /**

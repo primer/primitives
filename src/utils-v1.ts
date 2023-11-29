@@ -6,18 +6,9 @@ import isFunction from 'lodash/isFunction'
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type Value = string | ((obj: any) => string)
 
-// New: instead of return #hex, this now returns var(--v, #hex) which fails parsing for transparentize
-// TODO: this feels super flaky, make this less flaky with some regex?
-function getFallbackValueFromVar(value: string) {
-  if (typeof value !== 'string') return value
-  if (!value.includes('var(--')) return value
-
-  return value.split(',')[1].replace(' #', '#').replace(')', '')
-}
-
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function resolveValue(value: Value, obj: any): string {
-  return isFunction(value) ? resolveValue(value(obj), obj) : getFallbackValueFromVar(value)
+  return isFunction(value) ? resolveValue(value(obj), obj) : value
 }
 
 export function merge(...objects: object[]) {
@@ -29,17 +20,45 @@ export function get(path: string) {
   return (obj: any) => _get(obj, path)
 }
 
+// Instead of value being #hex, the value is now var(--v, #hex)
+function getFallbackValueFromVar(value: string) {
+  if (!value.includes('var(--')) return value // not required
+
+  const fallbackRegex = /var\(--[a-zA-Z0-9-]+,\s*(#(?:[0-9a-fA-F]{3}){1,2})\)/
+  const matches = value.match(fallbackRegex)
+  if (matches) return matches[1]
+  else return value // would probably throw error
+}
+
 export function alpha(value: Value, amount: number) {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  return (obj: any) => transparentize(resolveValue(value, obj), 1 - amount).replace(/ /g, '')
+  return (obj: any) => {
+    const resolvedValue = resolveValue(value, obj)
+    // Instead of value being #hex, the value is now var(--v, #hex)
+    const hexColorValue = getFallbackValueFromVar(resolvedValue)
+    const hexColorValueWithTransparency = transparentize(hexColorValue, 1 - amount).replace(/ /g, '')
+    return resolvedValue.replace(hexColorValue, hexColorValueWithTransparency)
+  }
 }
 
 export function lighten(value: Value, amount: number) {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  return (obj: any) => _lighten(resolveValue(value, obj), amount).replace(/ /g, '')
+  return (obj: any) => {
+    const resolvedValue = resolveValue(value, obj)
+    // Instead of value being #hex, the value is now var(--v, #hex)
+    const hexColorValue = getFallbackValueFromVar(resolvedValue)
+    const lightenedHexColorValue = _lighten(hexColorValue, amount).replace(/ /g, '')
+    return resolvedValue.replace(hexColorValue, lightenedHexColorValue)
+  }
 }
 
 export function darken(value: Value, amount: number) {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  return (obj: any) => _darken(resolveValue(value, obj), amount).replace(/ /g, '')
+  return (obj: any) => {
+    const resolvedValue = resolveValue(value, obj)
+    // Instead of value being #hex, the value is now var(--v, #hex)
+    const hexColorValue = getFallbackValueFromVar(resolvedValue)
+    const lightenedHexColorValue = _darken(hexColorValue, amount).replace(/ /g, '')
+    return resolvedValue.replace(hexColorValue, lightenedHexColorValue)
+  }
 }
