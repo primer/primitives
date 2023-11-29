@@ -24,10 +24,15 @@ export function get(path: string) {
 function getFallbackValueFromVar(value: string) {
   if (!value.includes('var(--')) return value // not required
 
-  const fallbackRegex = /var\(--[a-zA-Z0-9-]+,\s*(#(?:[0-9a-fA-F]{3}){1,2})\)/
-  const matches = value.match(fallbackRegex)
-  if (matches) return matches[1]
-  else return value // would probably throw error
+  const fallbackHexCodeRegex = /var\(--[a-zA-Z0-9-]+,\s*(#(?:[0-9a-fA-F]{3}){1,2})\)/
+  const fallbackRgbaCodeRegex = /var\(--[a-zA-Z0-9-]+,\s*(rgba\((\s*\d{1,3}\s*,){3}\s*(?:\d*\.?\d+|\.\d+)\s*\))/
+
+  const colorString = [fallbackHexCodeRegex, fallbackRgbaCodeRegex].map(regExp => {
+    const matches = value.match(regExp)
+    if (matches) return matches[1]
+  })
+
+  return colorString[0] || colorString[1] || value
 }
 
 export function alpha(value: Value, amount: number) {
@@ -35,6 +40,7 @@ export function alpha(value: Value, amount: number) {
   return (obj: any) => {
     const resolvedValue = resolveValue(value, obj)
     // Instead of value being #hex, the value is now var(--v, #hex)
+
     const hexColorValue = getFallbackValueFromVar(resolvedValue)
     const hexColorValueWithTransparency = transparentize(hexColorValue, 1 - amount).replace(/ /g, '')
     return resolvedValue.replace(hexColorValue, hexColorValueWithTransparency)

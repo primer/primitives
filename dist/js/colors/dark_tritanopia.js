@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = {
-    "canvasDefaultTransparent": "var(undefined, var(--color--canvas-default-transparent, rgba(13,17,23,0)))",
-    "pageHeaderBg": "var(undefined, var(--color--page-header-bg, (obj) => (0, get_1.default)(obj, path)))",
+    "canvasDefaultTransparent": "var(undefined, var(--color--canvas-default-transparent, var(--bgColor-default, var(--color-canvas-default, rgba(13,17,23,0)))))",
+    "pageHeaderBg": "var(undefined, var(--color--page-header-bg, (theme) => `var(--bgColor-default, var(--color-canvas-default, ${(0, utils_v1_1.get)('scale.gray.9')(theme)}))`))",
     "marketingIcon": {
         "primary": "var(undefined, var(--color-marketingIcon-primary, #79c0ff))",
         "secondary": "var(undefined, var(--color-marketingIcon-secondary, #1f6feb))"
@@ -12,18 +12,18 @@ exports.default = {
             "numText": "var(undefined, var(--color-addition-num-text, (obj) => (0, get_1.default)(obj, path)))",
             "fg": "var(undefined, var(--color-addition-fg, (obj) => (0, get_1.default)(obj, path)))",
             "numBg": "var(undefined, var(--color-addition-num-bg, rgba(88,166,255,0.3)))",
-            "lineBg": "var(undefined, var(--color-addition-line-bg, (obj) => {\n        const resolvedValue = resolveValue(value, obj);\n        // Instead of value being #hex, the value is now var(--v, #hex)\n        const hexColorValue = getFallbackValueFromVar(resolvedValue);\n        const hexColorValueWithTransparency = (0, color2k_1.transparentize)(hexColorValue, 1 - amount).replace(/ /g, '');\n        return resolvedValue.replace(hexColorValue, hexColorValueWithTransparency);\n    }))",
-            "wordBg": "var(undefined, var(--color-addition-word-bg, (obj) => {\n        const resolvedValue = resolveValue(value, obj);\n        // Instead of value being #hex, the value is now var(--v, #hex)\n        const hexColorValue = getFallbackValueFromVar(resolvedValue);\n        const hexColorValueWithTransparency = (0, color2k_1.transparentize)(hexColorValue, 1 - amount).replace(/ /g, '');\n        return resolvedValue.replace(hexColorValue, hexColorValueWithTransparency);\n    }))"
+            "lineBg": "var(undefined, var(--color-addition-line-bg, (theme) => `var(--bgColor-success-muted, var(--color-success-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.green.4'), 0.15)(theme)}))`))",
+            "wordBg": "var(undefined, var(--color-addition-word-bg, (theme) => `var(--borderColor-success-muted, var(--color-success-muted, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.green.4'), 0.4)(theme)}))`))"
         },
         "deletion": {
             "numText": "var(undefined, var(--color-deletion-num-text, (obj) => (0, get_1.default)(obj, path)))",
             "fg": "var(undefined, var(--color-deletion-fg, (obj) => (0, get_1.default)(obj, path)))",
             "numBg": "var(undefined, var(--color-deletion-num-bg, rgba(248,81,73,0.3)))",
-            "lineBg": "var(undefined, var(--color-deletion-line-bg, (obj) => {\n        const resolvedValue = resolveValue(value, obj);\n        // Instead of value being #hex, the value is now var(--v, #hex)\n        const hexColorValue = getFallbackValueFromVar(resolvedValue);\n        const hexColorValueWithTransparency = (0, color2k_1.transparentize)(hexColorValue, 1 - amount).replace(/ /g, '');\n        return resolvedValue.replace(hexColorValue, hexColorValueWithTransparency);\n    }))",
-            "wordBg": "var(undefined, var(--color-deletion-word-bg, (obj) => {\n        const resolvedValue = resolveValue(value, obj);\n        // Instead of value being #hex, the value is now var(--v, #hex)\n        const hexColorValue = getFallbackValueFromVar(resolvedValue);\n        const hexColorValueWithTransparency = (0, color2k_1.transparentize)(hexColorValue, 1 - amount).replace(/ /g, '');\n        return resolvedValue.replace(hexColorValue, hexColorValueWithTransparency);\n    }))"
+            "lineBg": "var(undefined, var(--color-deletion-line-bg, (theme) => `var(--bgColor-danger-muted, var(--color-danger-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.red.4'), 0.1)(theme)}))`))",
+            "wordBg": "var(undefined, var(--color-deletion-word-bg, (theme) => `var(--borderColor-danger-muted, var(--color-danger-muted, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.red.4'), 0.4)(theme)}))`))"
         },
         "hunk": {
-            "numBg": "var(undefined, var(--color-hunk-num-bg, (obj) => {\n        const resolvedValue = resolveValue(value, obj);\n        // Instead of value being #hex, the value is now var(--v, #hex)\n        const hexColorValue = getFallbackValueFromVar(resolvedValue);\n        const hexColorValueWithTransparency = (0, color2k_1.transparentize)(hexColorValue, 1 - amount).replace(/ /g, '');\n        return resolvedValue.replace(hexColorValue, hexColorValueWithTransparency);\n    }))"
+            "numBg": "var(undefined, var(--color-hunk-num-bg, (theme) => `var(--borderColor-accent-muted, var(--color-accent-muted, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.blue.4'), 0.4)(theme)}))`))"
         },
         "expander": {
             "icon": "var(undefined, var(--color-expander-icon, (obj) => (0, get_1.default)(obj, path)))"
@@ -31,8 +31,8 @@ exports.default = {
         "selectedLineHighlightMixBlendMode": "var(undefined, var(--color-expander-selected-line-highlight-mix-blend-mode, screen))"
     },
     "diffstat": {
-        "deletionBorder": "var(undefined, var(--color-diffstat-deletion-border, (obj) => {\n        const resolvedValue = resolveValue(value, obj);\n        // Instead of value being #hex, the value is now var(--v, #hex)\n        const hexColorValue = getFallbackValueFromVar(resolvedValue);\n        const hexColorValueWithTransparency = (0, color2k_1.transparentize)(hexColorValue, 1 - amount).replace(/ /g, '');\n        return resolvedValue.replace(hexColorValue, hexColorValueWithTransparency);\n    }))",
-        "additionBorder": "var(undefined, var(--color-diffstat-addition-border, (obj) => {\n        const resolvedValue = resolveValue(value, obj);\n        // Instead of value being #hex, the value is now var(--v, #hex)\n        const hexColorValue = getFallbackValueFromVar(resolvedValue);\n        const hexColorValueWithTransparency = (0, color2k_1.transparentize)(hexColorValue, 1 - amount).replace(/ /g, '');\n        return resolvedValue.replace(hexColorValue, hexColorValueWithTransparency);\n    }))",
+        "deletionBorder": "var(undefined, var(--color-diffstat-deletion-border, (theme) => `var(undefined, var(--color-border-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.gray.0'), 0.1)(theme)}))`))",
+        "additionBorder": "var(undefined, var(--color-diffstat-addition-border, (theme) => `var(undefined, var(--color-border-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.gray.0'), 0.1)(theme)}))`))",
         "additionBg": "var(undefined, var(--color-diffstat-addition-bg, #58a6ff))"
     },
     "searchKeyword": {
@@ -74,16 +74,16 @@ exports.default = {
     },
     "codemirror": {
         "text": "var(--codeMirror-fgColor, var(--color-codemirror-text, (obj) => (0, get_1.default)(obj, path)))",
-        "bg": "var(--codeMirror-bgColor, var(--color-codemirror-bg, (obj) => (0, get_1.default)(obj, path)))",
-        "guttersBg": "var(--codeMirror-gutters-bgColor, var(--color-codemirror-gutters-bg, (obj) => (0, get_1.default)(obj, path)))",
-        "guttermarkerText": "var(--codeMirror-gutterMarker-fgColor-default, var(--color-codemirror-guttermarker-text, (obj) => (0, get_1.default)(obj, path)))",
-        "guttermarkerSubtleText": "var(--codeMirror-gutterMarker-fgColor-muted, var(--color-codemirror-guttermarker-subtle-text, (obj) => (0, get_1.default)(obj, path)))",
+        "bg": "var(--codeMirror-bgColor, var(--color-codemirror-bg, (theme) => `var(--bgColor-default, var(--color-canvas-default, ${(0, utils_v1_1.get)('scale.gray.9')(theme)}))`))",
+        "guttersBg": "var(--codeMirror-gutters-bgColor, var(--color-codemirror-gutters-bg, (theme) => `var(--bgColor-default, var(--color-canvas-default, ${(0, utils_v1_1.get)('scale.gray.9')(theme)}))`))",
+        "guttermarkerText": "var(--codeMirror-gutterMarker-fgColor-default, var(--color-codemirror-guttermarker-text, (theme) => `var(--bgColor-default, var(--color-canvas-default, ${(0, utils_v1_1.get)('scale.gray.9')(theme)}))`))",
+        "guttermarkerSubtleText": "var(--codeMirror-gutterMarker-fgColor-muted, var(--color-codemirror-guttermarker-subtle-text, (theme) => `var(--control-fgColor-placeholder, var(--color-fg-subtle, ${(0, utils_v1_1.get)('scale.gray.4')(theme)}))`))",
         "linenumberText": "var(--codeMirror-lineNumber-fgColor, var(--color-codemirror-linenumber-text, (obj) => (0, get_1.default)(obj, path)))",
         "cursor": "var(--codeMirror-cursor-fgColor, var(--color-codemirror-cursor, (obj) => (0, get_1.default)(obj, path)))",
-        "selectionBg": "var(--codeMirror-selection-bgColor, var(--color-codemirror-selection-bg, (obj) => {\n        const resolvedValue = resolveValue(value, obj);\n        // Instead of value being #hex, the value is now var(--v, #hex)\n        const hexColorValue = getFallbackValueFromVar(resolvedValue);\n        const hexColorValueWithTransparency = (0, color2k_1.transparentize)(hexColorValue, 1 - amount).replace(/ /g, '');\n        return resolvedValue.replace(hexColorValue, hexColorValueWithTransparency);\n    }))",
-        "activelineBg": "var(--codeMirror-activeline-bgColor, var(--color-codemirror-activeline-bg, (obj) => {\n        const resolvedValue = resolveValue(value, obj);\n        // Instead of value being #hex, the value is now var(--v, #hex)\n        const hexColorValue = getFallbackValueFromVar(resolvedValue);\n        const hexColorValueWithTransparency = (0, color2k_1.transparentize)(hexColorValue, 1 - amount).replace(/ /g, '');\n        return resolvedValue.replace(hexColorValue, hexColorValueWithTransparency);\n    }))",
+        "selectionBg": "var(--codeMirror-selection-bgColor, var(--color-codemirror-selection-bg, (theme) => `var(--borderColor-accent-muted, var(--color-accent-muted, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.blue.4'), 0.4)(theme)}))`))",
+        "activelineBg": "var(--codeMirror-activeline-bgColor, var(--color-codemirror-activeline-bg, (theme) => `var(--bgColor-neutral-muted, var(--color-neutral-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.gray.4'), 0.1)(theme)}))`))",
         "matchingbracketText": "var(--codeMirror-matchingBracket-fgColor, var(--color-codemirror-matchingbracket-text, (obj) => (0, get_1.default)(obj, path)))",
-        "linesBg": "var(--codeMirror-lines-bgColor, var(--color-codemirror-lines-bg, (obj) => (0, get_1.default)(obj, path)))",
+        "linesBg": "var(--codeMirror-lines-bgColor, var(--color-codemirror-lines-bg, (theme) => `var(--bgColor-default, var(--color-canvas-default, ${(0, utils_v1_1.get)('scale.gray.9')(theme)}))`))",
         "syntax": {
             "comment": "var(undefined, var(--color-syntax-comment, #8b949e))",
             "constant": "var(undefined, var(--color-syntax-constant, #79c0ff))",
@@ -96,7 +96,7 @@ exports.default = {
         }
     },
     "checks": {
-        "bg": "var(undefined, var(--color-checks-bg, (obj) => (0, get_1.default)(obj, path)))",
+        "bg": "var(undefined, var(--color-checks-bg, (theme) => `var(--bgColor-inset, var(--color-canvas-inset, ${(0, utils_v1_1.get)('scale.black')(theme)}))`))",
         "runBorderWidth": "var(undefined, var(--color-checks-run-border-width, 1px))",
         "containerBorderWidth": "var(undefined, var(--color-checks-container-border-width, 1px))",
         "textPrimary": "var(undefined, var(--color-checks-text-primary, (obj) => (0, get_1.default)(obj, path)))",
@@ -104,54 +104,54 @@ exports.default = {
         "textLink": "var(undefined, var(--color-checks-text-link, (obj) => (0, get_1.default)(obj, path)))",
         "btnIcon": "var(undefined, var(--color-checks-btn-icon, (obj) => (0, get_1.default)(obj, path)))",
         "btnHoverIcon": "var(undefined, var(--color-checks-btn-hover-icon, (obj) => (0, get_1.default)(obj, path)))",
-        "btnHoverBg": "var(undefined, var(--color-checks-btn-hover-bg, (obj) => {\n        const resolvedValue = resolveValue(value, obj);\n        // Instead of value being #hex, the value is now var(--v, #hex)\n        const hexColorValue = getFallbackValueFromVar(resolvedValue);\n        const hexColorValueWithTransparency = (0, color2k_1.transparentize)(hexColorValue, 1 - amount).replace(/ /g, '');\n        return resolvedValue.replace(hexColorValue, hexColorValueWithTransparency);\n    }))",
+        "btnHoverBg": "var(undefined, var(--color-checks-btn-hover-bg, (theme) => `var(--bgColor-neutral-muted, var(--color-neutral-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.gray.4'), 0.1)(theme)}))`))",
         "inputText": "var(undefined, var(--color-checks-input-text, (obj) => (0, get_1.default)(obj, path)))",
-        "inputPlaceholderText": "var(undefined, var(--color-checks-input-placeholder-text, (obj) => (0, get_1.default)(obj, path)))",
+        "inputPlaceholderText": "var(undefined, var(--color-checks-input-placeholder-text, (theme) => `var(--control-fgColor-placeholder, var(--color-fg-subtle, ${(0, utils_v1_1.get)('scale.gray.4')(theme)}))`))",
         "inputFocusText": "var(undefined, var(--color-checks-input-focus-text, (obj) => (0, get_1.default)(obj, path)))",
         "inputBg": "var(undefined, var(--color-checks-input-bg, #161b22))",
-        "inputShadow": "var(undefined, var(--color-checks-input-shadow, 0 0 0 1px (obj) => (0, get_1.default)(obj, path)))",
+        "inputShadow": "var(undefined, var(--color-checks-input-shadow, 0 0 0 1px (theme) => `var(--borderColor-default, var(--color-border-default, ${(0, utils_v1_1.get)('scale.gray.6')(theme)}))`))",
         "donutError": "var(undefined, var(--color-checks-donut-error, #f85149))",
         "donutPending": "var(undefined, var(--color-checks-donut-pending, #d29922))",
         "donutSuccess": "var(undefined, var(--color-checks-donut-success, #388bfd))",
         "donutNeutral": "var(undefined, var(--color-checks-donut-neutral, #8b949e))",
         "dropdownText": "var(undefined, var(--color-checks-dropdown-text, (obj) => (0, get_1.default)(obj, path)))",
-        "dropdownBg": "var(undefined, var(--color-checks-dropdown-bg, (obj) => (0, get_1.default)(obj, path)))",
-        "dropdownBorder": "var(undefined, var(--color-checks-dropdown-border, (obj) => (0, get_1.default)(obj, path)))",
+        "dropdownBg": "var(undefined, var(--color-checks-dropdown-bg, (theme) => `var(--overlay-bgColor, var(--color-canvas-overlay, ${(0, utils_v1_1.get)('scale.gray.8')(theme)}))`))",
+        "dropdownBorder": "var(undefined, var(--color-checks-dropdown-border, (theme) => `var(--borderColor-default, var(--color-border-default, ${(0, utils_v1_1.get)('scale.gray.6')(theme)}))`))",
         "dropdownShadow": "var(undefined, var(--color-checks-dropdown-shadow, rgba(1,4,9,0.3)))",
         "dropdownHoverText": "var(undefined, var(--color-checks-dropdown-hover-text, (obj) => (0, get_1.default)(obj, path)))",
-        "dropdownHoverBg": "var(undefined, var(--color-checks-dropdown-hover-bg, (obj) => {\n        const resolvedValue = resolveValue(value, obj);\n        // Instead of value being #hex, the value is now var(--v, #hex)\n        const hexColorValue = getFallbackValueFromVar(resolvedValue);\n        const hexColorValueWithTransparency = (0, color2k_1.transparentize)(hexColorValue, 1 - amount).replace(/ /g, '');\n        return resolvedValue.replace(hexColorValue, hexColorValueWithTransparency);\n    }))",
+        "dropdownHoverBg": "var(undefined, var(--color-checks-dropdown-hover-bg, (theme) => `var(--bgColor-neutral-muted, var(--color-neutral-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.gray.4'), 0.1)(theme)}))`))",
         "dropdownBtnHoverText": "var(undefined, var(--color-checks-dropdown-btn-hover-text, (obj) => (0, get_1.default)(obj, path)))",
-        "dropdownBtnHoverBg": "var(undefined, var(--color-checks-dropdown-btn-hover-bg, (obj) => {\n        const resolvedValue = resolveValue(value, obj);\n        // Instead of value being #hex, the value is now var(--v, #hex)\n        const hexColorValue = getFallbackValueFromVar(resolvedValue);\n        const hexColorValueWithTransparency = (0, color2k_1.transparentize)(hexColorValue, 1 - amount).replace(/ /g, '');\n        return resolvedValue.replace(hexColorValue, hexColorValueWithTransparency);\n    }))",
-        "scrollbarThumbBg": "var(undefined, var(--color-checks-scrollbar-thumb-bg, (obj) => {\n        const resolvedValue = resolveValue(value, obj);\n        // Instead of value being #hex, the value is now var(--v, #hex)\n        const hexColorValue = getFallbackValueFromVar(resolvedValue);\n        const hexColorValueWithTransparency = (0, color2k_1.transparentize)(hexColorValue, 1 - amount).replace(/ /g, '');\n        return resolvedValue.replace(hexColorValue, hexColorValueWithTransparency);\n    }))",
+        "dropdownBtnHoverBg": "var(undefined, var(--color-checks-dropdown-btn-hover-bg, (theme) => `var(--bgColor-neutral-muted, var(--color-neutral-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.gray.4'), 0.1)(theme)}))`))",
+        "scrollbarThumbBg": "var(undefined, var(--color-checks-scrollbar-thumb-bg, (theme) => `var(--bgColor-disabled, var(--color-neutral-muted, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.gray.4'), 0.4)(theme)}))`))",
         "headerLabelText": "var(undefined, var(--color-checks-header-label-text, (obj) => (0, get_1.default)(obj, path)))",
         "headerLabelOpenText": "var(undefined, var(--color-checks-header-label-open-text, (obj) => (0, get_1.default)(obj, path)))",
-        "headerBorder": "var(undefined, var(--color-checks-header-border, (obj) => (0, get_1.default)(obj, path)))",
+        "headerBorder": "var(undefined, var(--color-checks-header-border, (theme) => `var(--borderColor-muted, var(--color-border-muted, ${(0, utils_v1_1.get)('scale.gray.7')(theme)}))`))",
         "headerIcon": "var(undefined, var(--color-checks-header-icon, (obj) => (0, get_1.default)(obj, path)))",
         "lineText": "var(undefined, var(--color-checks-line-text, (obj) => (0, get_1.default)(obj, path)))",
-        "lineNumText": "var(undefined, var(--color-checks-line-num-text, (obj) => (0, get_1.default)(obj, path)))",
-        "lineTimestampText": "var(undefined, var(--color-checks-line-timestamp-text, (obj) => (0, get_1.default)(obj, path)))",
-        "lineHoverBg": "var(undefined, var(--color-checks-line-hover-bg, (obj) => {\n        const resolvedValue = resolveValue(value, obj);\n        // Instead of value being #hex, the value is now var(--v, #hex)\n        const hexColorValue = getFallbackValueFromVar(resolvedValue);\n        const hexColorValueWithTransparency = (0, color2k_1.transparentize)(hexColorValue, 1 - amount).replace(/ /g, '');\n        return resolvedValue.replace(hexColorValue, hexColorValueWithTransparency);\n    }))",
-        "lineSelectedBg": "var(undefined, var(--color-checks-line-selected-bg, (obj) => {\n        const resolvedValue = resolveValue(value, obj);\n        // Instead of value being #hex, the value is now var(--v, #hex)\n        const hexColorValue = getFallbackValueFromVar(resolvedValue);\n        const hexColorValueWithTransparency = (0, color2k_1.transparentize)(hexColorValue, 1 - amount).replace(/ /g, '');\n        return resolvedValue.replace(hexColorValue, hexColorValueWithTransparency);\n    }))",
+        "lineNumText": "var(undefined, var(--color-checks-line-num-text, (theme) => `var(--control-fgColor-placeholder, var(--color-fg-subtle, ${(0, utils_v1_1.get)('scale.gray.4')(theme)}))`))",
+        "lineTimestampText": "var(undefined, var(--color-checks-line-timestamp-text, (theme) => `var(--control-fgColor-placeholder, var(--color-fg-subtle, ${(0, utils_v1_1.get)('scale.gray.4')(theme)}))`))",
+        "lineHoverBg": "var(undefined, var(--color-checks-line-hover-bg, (theme) => `var(--bgColor-neutral-muted, var(--color-neutral-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.gray.4'), 0.1)(theme)}))`))",
+        "lineSelectedBg": "var(undefined, var(--color-checks-line-selected-bg, (theme) => `var(--bgColor-accent-muted, var(--color-accent-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.blue.4'), 0.1)(theme)}))`))",
         "lineSelectedNumText": "var(undefined, var(--color-checks-line-selected-num-text, (obj) => (0, get_1.default)(obj, path)))",
-        "lineDtFmText": "var(undefined, var(--color-checks-line-dt-fm-text, (obj) => (0, get_1.default)(obj, path)))",
-        "lineDtFmBg": "var(undefined, var(--color-checks-line-dt-fm-bg, (obj) => (0, get_1.default)(obj, path)))",
-        "gateBg": "var(undefined, var(--color-checks-gate-bg, (obj) => {\n        const resolvedValue = resolveValue(value, obj);\n        // Instead of value being #hex, the value is now var(--v, #hex)\n        const hexColorValue = getFallbackValueFromVar(resolvedValue);\n        const hexColorValueWithTransparency = (0, color2k_1.transparentize)(hexColorValue, 1 - amount).replace(/ /g, '');\n        return resolvedValue.replace(hexColorValue, hexColorValueWithTransparency);\n    }))",
+        "lineDtFmText": "var(undefined, var(--color-checks-line-dt-fm-text, (theme) => `var(--fgColor-onEmphasis, var(--color-fg-on-emphasis, ${(0, utils_v1_1.get)('scale.white')(theme)}))`))",
+        "lineDtFmBg": "var(undefined, var(--color-checks-line-dt-fm-bg, (theme) => `var(--control-borderColor-warning, var(--color-attention-emphasis, ${(0, utils_v1_1.get)('scale.yellow.5')(theme)}))`))",
+        "gateBg": "var(undefined, var(--color-checks-gate-bg, (theme) => `var(--bgColor-attention-muted, var(--color-attention-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.yellow.4'), 0.15)(theme)}))`))",
         "gateText": "var(undefined, var(--color-checks-gate-text, (obj) => (0, get_1.default)(obj, path)))",
-        "gateWaitingText": "var(undefined, var(--color-checks-gate-waiting-text, (obj) => (0, get_1.default)(obj, path)))",
-        "stepHeaderOpenBg": "var(undefined, var(--color-checks-step-header-open-bg, (obj) => (0, get_1.default)(obj, path)))",
-        "stepErrorText": "var(undefined, var(--color-checks-step-error-text, (obj) => (0, get_1.default)(obj, path)))",
-        "stepWarningText": "var(undefined, var(--color-checks-step-warning-text, (obj) => (0, get_1.default)(obj, path)))",
+        "gateWaitingText": "var(undefined, var(--color-checks-gate-waiting-text, (theme) => `var(--fgColor-attention, var(--color-attention-fg, ${(0, utils_v1_1.get)('scale.yellow.3')(theme)}))`))",
+        "stepHeaderOpenBg": "var(undefined, var(--color-checks-step-header-open-bg, (theme) => `var(--bgColor-muted, var(--color-canvas-subtle, ${(0, utils_v1_1.get)('scale.gray.8')(theme)}))`))",
+        "stepErrorText": "var(undefined, var(--color-checks-step-error-text, (theme) => `var(--control-danger-fgColor-rest, var(--color-danger-fg, ${(0, utils_v1_1.get)('scale.red.4')(theme)}))`))",
+        "stepWarningText": "var(undefined, var(--color-checks-step-warning-text, (theme) => `var(--fgColor-attention, var(--color-attention-fg, ${(0, utils_v1_1.get)('scale.yellow.3')(theme)}))`))",
         "loglineText": "var(undefined, var(--color-checks-logline-text, (obj) => (0, get_1.default)(obj, path)))",
-        "loglineNumText": "var(undefined, var(--color-checks-logline-num-text, (obj) => (0, get_1.default)(obj, path)))",
-        "loglineDebugText": "var(undefined, var(--color-checks-logline-debug-text, (obj) => (0, get_1.default)(obj, path)))",
+        "loglineNumText": "var(undefined, var(--color-checks-logline-num-text, (theme) => `var(--control-fgColor-placeholder, var(--color-fg-subtle, ${(0, utils_v1_1.get)('scale.gray.4')(theme)}))`))",
+        "loglineDebugText": "var(undefined, var(--color-checks-logline-debug-text, (theme) => `var(--fgColor-done, var(--color-done-fg, ${(0, utils_v1_1.get)('scale.purple.4')(theme)}))`))",
         "loglineErrorText": "var(undefined, var(--color-checks-logline-error-text, (obj) => (0, get_1.default)(obj, path)))",
-        "loglineErrorNumText": "var(undefined, var(--color-checks-logline-error-num-text, (obj) => (0, get_1.default)(obj, path)))",
-        "loglineErrorBg": "var(undefined, var(--color-checks-logline-error-bg, (obj) => {\n        const resolvedValue = resolveValue(value, obj);\n        // Instead of value being #hex, the value is now var(--v, #hex)\n        const hexColorValue = getFallbackValueFromVar(resolvedValue);\n        const hexColorValueWithTransparency = (0, color2k_1.transparentize)(hexColorValue, 1 - amount).replace(/ /g, '');\n        return resolvedValue.replace(hexColorValue, hexColorValueWithTransparency);\n    }))",
+        "loglineErrorNumText": "var(undefined, var(--color-checks-logline-error-num-text, (theme) => `var(--control-fgColor-placeholder, var(--color-fg-subtle, ${(0, utils_v1_1.get)('scale.gray.4')(theme)}))`))",
+        "loglineErrorBg": "var(undefined, var(--color-checks-logline-error-bg, (theme) => `var(--bgColor-danger-muted, var(--color-danger-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.red.4'), 0.1)(theme)}))`))",
         "loglineWarningText": "var(undefined, var(--color-checks-logline-warning-text, (obj) => (0, get_1.default)(obj, path)))",
-        "loglineWarningNumText": "var(undefined, var(--color-checks-logline-warning-num-text, (obj) => (0, get_1.default)(obj, path)))",
-        "loglineWarningBg": "var(undefined, var(--color-checks-logline-warning-bg, (obj) => {\n        const resolvedValue = resolveValue(value, obj);\n        // Instead of value being #hex, the value is now var(--v, #hex)\n        const hexColorValue = getFallbackValueFromVar(resolvedValue);\n        const hexColorValueWithTransparency = (0, color2k_1.transparentize)(hexColorValue, 1 - amount).replace(/ /g, '');\n        return resolvedValue.replace(hexColorValue, hexColorValueWithTransparency);\n    }))",
+        "loglineWarningNumText": "var(undefined, var(--color-checks-logline-warning-num-text, (theme) => `var(--fgColor-attention, var(--color-attention-fg, ${(0, utils_v1_1.get)('scale.yellow.3')(theme)}))`))",
+        "loglineWarningBg": "var(undefined, var(--color-checks-logline-warning-bg, (theme) => `var(--bgColor-attention-muted, var(--color-attention-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.yellow.4'), 0.15)(theme)}))`))",
         "loglineCommandText": "var(undefined, var(--color-checks-logline-command-text, (obj) => (0, get_1.default)(obj, path)))",
-        "loglineSectionText": "var(undefined, var(--color-checks-logline-section-text, (obj) => (0, get_1.default)(obj, path)))",
+        "loglineSectionText": "var(undefined, var(--color-checks-logline-section-text, (theme) => `var(--fgColor-success, var(--color-success-fg, ${(0, utils_v1_1.get)('scale.green.3')(theme)}))`))",
         "ansi": {
             "black": "var(undefined, var(--color-ansi-black, #0d1117))",
             "blackBright": "var(undefined, var(--color-ansi-black-bright, #161b22))",
@@ -196,7 +196,7 @@ exports.default = {
     },
     "avatar": {
         "bg": "var(--avatar-bgColor, var(--color-avatar-bg, rgba(255,255,255,0.1)))",
-        "border": "var(--avatar-borderColor, var(--color-avatar-border, (obj) => {\n        const resolvedValue = resolveValue(value, obj);\n        // Instead of value being #hex, the value is now var(--v, #hex)\n        const hexColorValue = getFallbackValueFromVar(resolvedValue);\n        const hexColorValueWithTransparency = (0, color2k_1.transparentize)(hexColorValue, 1 - amount).replace(/ /g, '');\n        return resolvedValue.replace(hexColorValue, hexColorValueWithTransparency);\n    }))",
+        "border": "var(--avatar-borderColor, var(--color-avatar-border, (theme) => `var(undefined, var(--color-border-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.gray.0'), 0.1)(theme)}))`))",
         "stackFade": "var(--avatarStack-fade-bgColor-default, var(--color-avatar-stack-fade, #30363d))",
         "stackFadeMore": "var(--avatarStack-fade-bgColor-muted, var(--color-avatar-stack-fade-more, #21262d))",
         "childShadow": "var(--avatar-shadow, var(--color-avatar-child-shadow, 0 0 0 2px #0d1117))"
@@ -233,7 +233,7 @@ exports.default = {
         "bgActive": "var(--menu-bgColor-active, var(--color-menu-bg-active, #161b22))"
     },
     "input": {
-        "disabledBg": "var(--control-bgColor-disabled, var(--color-input-disabled-bg, rgba(110,118,129,0)))"
+        "disabledBg": "var(--control-bgColor-disabled, var(--color-input-disabled-bg, var(--bgColor-disabled, var(--color-neutral-muted, rgba(110,118,129,0)))))"
     },
     "timeline": {
         "badgeBg": "var(--timelineBadge-bgColor, var(--color-timeline-badge-bg, #21262d))"
@@ -260,7 +260,7 @@ exports.default = {
     "btn": {
         "text": "var(--button-default-fgColor-rest, var(--color-btn-text, #c9d1d9))",
         "bg": "var(--control-bgColor-rest, var(--color-btn-bg, #21262d))",
-        "border": "var(--control-borderColor-rest, var(--color-btn-border, (obj) => {\n        const resolvedValue = resolveValue(value, obj);\n        // Instead of value being #hex, the value is now var(--v, #hex)\n        const hexColorValue = getFallbackValueFromVar(resolvedValue);\n        const hexColorValueWithTransparency = (0, color2k_1.transparentize)(hexColorValue, 1 - amount).replace(/ /g, '');\n        return resolvedValue.replace(hexColorValue, hexColorValueWithTransparency);\n    }))",
+        "border": "var(--control-borderColor-rest, var(--color-btn-border, (theme) => `var(undefined, var(--color-border-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.gray.0'), 0.1)(theme)}))`))",
         "shadow": "var(--button-default-shadow-resting, var(--color-btn-shadow, 0 0 transparent))",
         "insetShadow": "var(--button-default-shadow-inset, var(--color-btn-inset-shadow, 0 0 transparent))",
         "hoverBg": "var(--control-bgColor-hover, var(--color-btn-hover-bg, #30363d))",
@@ -272,16 +272,16 @@ exports.default = {
         "primary": {
             "text": "var(undefined, var(--color-primary-text, #ffffff))",
             "bg": "var(undefined, var(--color-primary-bg, #1f6feb))",
-            "border": "var(undefined, var(--color-primary-border, (obj) => {\n        const resolvedValue = resolveValue(value, obj);\n        // Instead of value being #hex, the value is now var(--v, #hex)\n        const hexColorValue = getFallbackValueFromVar(resolvedValue);\n        const hexColorValueWithTransparency = (0, color2k_1.transparentize)(hexColorValue, 1 - amount).replace(/ /g, '');\n        return resolvedValue.replace(hexColorValue, hexColorValueWithTransparency);\n    }))",
+            "border": "var(undefined, var(--color-primary-border, (theme) => `var(undefined, var(--color-border-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.gray.0'), 0.1)(theme)}))`))",
             "shadow": "var(undefined, var(--color-primary-shadow, 0 0 transparent))",
             "insetShadow": "var(undefined, var(--color-primary-inset-shadow, 0 0 transparent))",
             "hoverBg": "var(undefined, var(--color-primary-hover-bg, #388bfd))",
-            "hoverBorder": "var(undefined, var(--color-primary-hover-border, (obj) => {\n        const resolvedValue = resolveValue(value, obj);\n        // Instead of value being #hex, the value is now var(--v, #hex)\n        const hexColorValue = getFallbackValueFromVar(resolvedValue);\n        const hexColorValueWithTransparency = (0, color2k_1.transparentize)(hexColorValue, 1 - amount).replace(/ /g, '');\n        return resolvedValue.replace(hexColorValue, hexColorValueWithTransparency);\n    }))",
+            "hoverBorder": "var(undefined, var(--color-primary-hover-border, (theme) => `var(undefined, var(--color-border-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.gray.0'), 0.1)(theme)}))`))",
             "selectedBg": "var(undefined, var(--color-primary-selected-bg, #1f6feb))",
             "selectedShadow": "var(undefined, var(--color-primary-selected-shadow, 0 0 transparent))",
             "disabledText": "var(undefined, var(--color-primary-disabled-text, rgba(255,255,255,0.5)))",
             "disabledBg": "var(undefined, var(--color-primary-disabled-bg, rgba(31,111,235,0.6)))",
-            "disabledBorder": "var(undefined, var(--color-primary-disabled-border, (obj) => {\n        const resolvedValue = resolveValue(value, obj);\n        // Instead of value being #hex, the value is now var(--v, #hex)\n        const hexColorValue = getFallbackValueFromVar(resolvedValue);\n        const hexColorValueWithTransparency = (0, color2k_1.transparentize)(hexColorValue, 1 - amount).replace(/ /g, '');\n        return resolvedValue.replace(hexColorValue, hexColorValueWithTransparency);\n    }))",
+            "disabledBorder": "var(undefined, var(--color-primary-disabled-border, (theme) => `var(undefined, var(--color-border-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.gray.0'), 0.1)(theme)}))`))",
             "icon": "var(undefined, var(--color-primary-icon, #ffffff))",
             "counterBg": "var(undefined, var(--color-primary-counter-bg, rgba(5,29,77,0.2)))"
         },
@@ -289,13 +289,13 @@ exports.default = {
             "text": "var(undefined, var(--color-outline-text, #388bfd))",
             "hoverText": "var(undefined, var(--color-outline-hover-text, #58a6ff))",
             "hoverBg": "var(undefined, var(--color-outline-hover-bg, #30363d))",
-            "hoverBorder": "var(undefined, var(--color-outline-hover-border, (obj) => {\n        const resolvedValue = resolveValue(value, obj);\n        // Instead of value being #hex, the value is now var(--v, #hex)\n        const hexColorValue = getFallbackValueFromVar(resolvedValue);\n        const hexColorValueWithTransparency = (0, color2k_1.transparentize)(hexColorValue, 1 - amount).replace(/ /g, '');\n        return resolvedValue.replace(hexColorValue, hexColorValueWithTransparency);\n    }))",
+            "hoverBorder": "var(undefined, var(--color-outline-hover-border, (theme) => `var(undefined, var(--color-border-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.gray.0'), 0.1)(theme)}))`))",
             "hoverShadow": "var(undefined, var(--color-outline-hover-shadow, 0 1px 0 rgba(1,4,9,0.1)))",
             "hoverInsetShadow": "var(undefined, var(--color-outline-hover-inset-shadow, inset 0 1px 0 rgba(255,255,255,0.03)))",
             "hoverCounterBg": "var(undefined, var(--color-outline-hover-counter-bg, rgba(5,29,77,0.2)))",
             "selectedText": "var(undefined, var(--color-outline-selected-text, #ffffff))",
             "selectedBg": "var(undefined, var(--color-outline-selected-bg, #0d419d))",
-            "selectedBorder": "var(undefined, var(--color-outline-selected-border, (obj) => {\n        const resolvedValue = resolveValue(value, obj);\n        // Instead of value being #hex, the value is now var(--v, #hex)\n        const hexColorValue = getFallbackValueFromVar(resolvedValue);\n        const hexColorValueWithTransparency = (0, color2k_1.transparentize)(hexColorValue, 1 - amount).replace(/ /g, '');\n        return resolvedValue.replace(hexColorValue, hexColorValueWithTransparency);\n    }))",
+            "selectedBorder": "var(undefined, var(--color-outline-selected-border, (theme) => `var(undefined, var(--color-border-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.gray.0'), 0.1)(theme)}))`))",
             "selectedShadow": "var(undefined, var(--color-outline-selected-shadow, 0 0 transparent))",
             "disabledText": "var(undefined, var(--color-outline-disabled-text, rgba(88,166,255,0.5)))",
             "disabledBg": "var(undefined, var(--color-outline-disabled-bg, #0d1117))",
@@ -307,12 +307,12 @@ exports.default = {
         },
         "danger": {
             "text": "var(undefined, var(--color-danger-text, #f85149))",
-            "hoverText": "var(undefined, var(--color-danger-hover-text, (obj) => (0, get_1.default)(obj, path)))",
+            "hoverText": "var(undefined, var(--color-danger-hover-text, (theme) => `var(--fgColor-onEmphasis, var(--color-fg-on-emphasis, ${(0, utils_v1_1.get)('scale.white')(theme)}))`))",
             "hoverBg": "var(undefined, var(--color-danger-hover-bg, #da3633))",
             "hoverBorder": "var(undefined, var(--color-danger-hover-border, #f85149))",
             "hoverShadow": "var(undefined, var(--color-danger-hover-shadow, 0 0 transparent))",
             "hoverInsetShadow": "var(undefined, var(--color-danger-hover-inset-shadow, 0 0 transparent))",
-            "hoverIcon": "var(undefined, var(--color-danger-hover-icon, (obj) => (0, get_1.default)(obj, path)))",
+            "hoverIcon": "var(undefined, var(--color-danger-hover-icon, (theme) => `var(--fgColor-onEmphasis, var(--color-fg-on-emphasis, ${(0, utils_v1_1.get)('scale.white')(theme)}))`))",
             "hoverCounterBg": "var(undefined, var(--color-danger-hover-counter-bg, rgba(255,255,255,0.2)))",
             "selectedText": "var(undefined, var(--color-danger-selected-text, #ffffff))",
             "selectedBg": "var(undefined, var(--color-danger-selected-bg, #b62324))",
@@ -323,8 +323,8 @@ exports.default = {
             "disabledCounterBg": "var(undefined, var(--color-danger-disabled-counter-bg, rgba(218,54,51,0.05)))",
             "counterBg": "var(undefined, var(--color-danger-counter-bg, rgba(73,2,2,0.2)))",
             "icon": "var(undefined, var(--color-danger-icon, #f85149))",
-            "counterFg": "var(undefined, var(--color-danger-counter-fg, (obj) => (0, get_1.default)(obj, path)))",
-            "disabledCounterFg": "var(undefined, var(--color-danger-disabled-counter-fg, rgba(248,81,73,0.5)))",
+            "counterFg": "var(undefined, var(--color-danger-counter-fg, (theme) => `var(--control-danger-fgColor-rest, var(--color-danger-fg, ${(0, utils_v1_1.get)('scale.red.4')(theme)}))`))",
+            "disabledCounterFg": "var(undefined, var(--color-danger-disabled-counter-fg, var(--control-danger-fgColor-rest, var(--color-danger-fg, rgba(248,81,73,0.5)))))",
             "hoverCounterFg": "var(undefined, var(--color-danger-hover-counter-fg, #ffffff))"
         },
         "inactive": {
@@ -333,11 +333,11 @@ exports.default = {
         }
     },
     "underlinenav": {
-        "icon": "var(--underlineNav-iconColor-rest, var(--color-underlinenav-icon, (obj) => (0, get_1.default)(obj, path)))",
-        "borderHover": "var(--underlineNav-borderColor-hover, var(--color-underlinenav-border-hover, (obj) => {\n        const resolvedValue = resolveValue(value, obj);\n        // Instead of value being #hex, the value is now var(--v, #hex)\n        const hexColorValue = getFallbackValueFromVar(resolvedValue);\n        const hexColorValueWithTransparency = (0, color2k_1.transparentize)(hexColorValue, 1 - amount).replace(/ /g, '');\n        return resolvedValue.replace(hexColorValue, hexColorValueWithTransparency);\n    }))"
+        "icon": "var(--underlineNav-iconColor-rest, var(--color-underlinenav-icon, (theme) => `var(--control-fgColor-placeholder, var(--color-fg-subtle, ${(0, utils_v1_1.get)('scale.gray.4')(theme)}))`))",
+        "borderHover": "var(--underlineNav-borderColor-hover, var(--color-underlinenav-border-hover, (theme) => `var(--bgColor-disabled, var(--color-neutral-muted, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.gray.4'), 0.4)(theme)}))`))"
     },
     "actionListItem": {
-        "inlineDivider": "var(undefined, var(--color-actionListItem-inline-divider, rgba(48,54,61,0.48)))",
+        "inlineDivider": "var(undefined, var(--color-actionListItem-inline-divider, var(--borderColor-default, var(--color-border-default, rgba(48,54,61,0.48)))))",
         "default": {
             "hoverBg": "var(undefined, var(--color-default-hover-bg, rgba(177,186,196,0.12)))",
             "hoverBorder": "var(undefined, var(--color-default-hover-border, transparent))",
@@ -352,9 +352,9 @@ exports.default = {
         }
     },
     "switchTrack": {
-        "bg": "var(undefined, var(--color-switchTrack-bg, (obj) => {\n        const resolvedValue = resolveValue(value, obj);\n        // Instead of value being #hex, the value is now var(--v, #hex)\n        const hexColorValue = getFallbackValueFromVar(resolvedValue);\n        const hexColorValueWithTransparency = (0, color2k_1.transparentize)(hexColorValue, 1 - amount).replace(/ /g, '');\n        return resolvedValue.replace(hexColorValue, hexColorValueWithTransparency);\n    }))",
-        "hoverBg": "var(undefined, var(--color-switchTrack-hover-bg, hsla(215,8%,72%,0.1)))",
-        "activeBg": "var(undefined, var(--color-switchTrack-active-bg, (obj) => {\n        const resolvedValue = resolveValue(value, obj);\n        // Instead of value being #hex, the value is now var(--v, #hex)\n        const hexColorValue = getFallbackValueFromVar(resolvedValue);\n        const hexColorValueWithTransparency = (0, color2k_1.transparentize)(hexColorValue, 1 - amount).replace(/ /g, '');\n        return resolvedValue.replace(hexColorValue, hexColorValueWithTransparency);\n    }))",
+        "bg": "var(undefined, var(--color-switchTrack-bg, (theme) => `var(--bgColor-neutral-muted, var(--color-neutral-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.gray.4'), 0.1)(theme)}))`))",
+        "hoverBg": "var(undefined, var(--color-switchTrack-hover-bg, var(--bgColor-neutral-muted, var(--color-neutral-subtle, hsla(215,8%,72%,0.1)))))",
+        "activeBg": "var(undefined, var(--color-switchTrack-active-bg, (theme) => `var(--bgColor-disabled, var(--color-neutral-muted, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.gray.4'), 0.4)(theme)}))`))",
         "disabledBg": "var(undefined, var(--color-switchTrack-disabled-bg, #21262d))",
         "fg": "var(undefined, var(--color-switchTrack-fg, (obj) => (0, get_1.default)(obj, path)))",
         "disabledFg": "var(undefined, var(--color-switchTrack-disabled-fg, #010409))",
@@ -363,25 +363,25 @@ exports.default = {
             "bg": "var(undefined, var(--color-checked-bg, rgba(31,111,235,0.35)))",
             "hoverBg": "var(undefined, var(--color-checked-hover-bg, rgba(31,111,235,0.5)))",
             "activeBg": "var(undefined, var(--color-checked-active-bg, rgba(31,111,235,0.65)))",
-            "fg": "var(undefined, var(--color-checked-fg, (obj) => (0, get_1.default)(obj, path)))",
+            "fg": "var(undefined, var(--color-checked-fg, (theme) => `var(--fgColor-onEmphasis, var(--color-fg-on-emphasis, ${(0, utils_v1_1.get)('scale.white')(theme)}))`))",
             "disabledFg": "var(undefined, var(--color-checked-disabled-fg, #010409))",
             "border": "var(undefined, var(--color-checked-border, transparent))"
         }
     },
     "switchKnob": {
-        "bg": "var(undefined, var(--color-switchKnob-bg, (obj) => (0, get_1.default)(obj, path)))",
+        "bg": "var(undefined, var(--color-switchKnob-bg, (theme) => `var(--bgColor-default, var(--color-canvas-default, ${(0, utils_v1_1.get)('scale.gray.9')(theme)}))`))",
         "border": "var(undefined, var(--color-switchKnob-border, #606771))",
-        "disabledBg": "var(undefined, var(--color-switchKnob-disabled-bg, (obj) => (0, get_1.default)(obj, path)))",
+        "disabledBg": "var(undefined, var(--color-switchKnob-disabled-bg, (theme) => `var(--bgColor-muted, var(--color-canvas-subtle, ${(0, utils_v1_1.get)('scale.gray.8')(theme)}))`))",
         "checked": {
-            "bg": "var(undefined, var(--color-checked-bg, (obj) => (0, get_1.default)(obj, path)))",
-            "disabledBg": "var(undefined, var(--color-checked-disabled-bg, (obj) => (0, get_1.default)(obj, path)))",
+            "bg": "var(undefined, var(--color-checked-bg, (theme) => `var(--bgColor-default, var(--color-canvas-default, ${(0, utils_v1_1.get)('scale.gray.9')(theme)}))`))",
+            "disabledBg": "var(undefined, var(--color-checked-disabled-bg, (theme) => `var(--bgColor-muted, var(--color-canvas-subtle, ${(0, utils_v1_1.get)('scale.gray.8')(theme)}))`))",
             "border": "var(undefined, var(--color-checked-border, rgba(31,111,235,0.35)))"
         }
     },
     "segmentedControl": {
-        "bg": "var(undefined, var(--color-segmentedControl-bg, (obj) => {\n        const resolvedValue = resolveValue(value, obj);\n        // Instead of value being #hex, the value is now var(--v, #hex)\n        const hexColorValue = getFallbackValueFromVar(resolvedValue);\n        const hexColorValueWithTransparency = (0, color2k_1.transparentize)(hexColorValue, 1 - amount).replace(/ /g, '');\n        return resolvedValue.replace(hexColorValue, hexColorValueWithTransparency);\n    }))",
+        "bg": "var(undefined, var(--color-segmentedControl-bg, (theme) => `var(--bgColor-neutral-muted, var(--color-neutral-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.gray.4'), 0.1)(theme)}))`))",
         "button": {
-            "bg": "var(undefined, var(--color-button-bg, (obj) => (0, get_1.default)(obj, path)))",
+            "bg": "var(undefined, var(--color-button-bg, (theme) => `var(--bgColor-default, var(--color-canvas-default, ${(0, utils_v1_1.get)('scale.gray.9')(theme)}))`))",
             "hover": {
                 "bg": "var(undefined, var(--color-hover-bg, #30363d))"
             },
@@ -404,61 +404,61 @@ exports.default = {
     "fg": {
         "default": "#c9d1d9",
         "muted": "#8b949e",
-        "subtle": "#6e7681",
-        "onEmphasis": "#ffffff"
+        "subtle": "var(--control-fgColor-placeholder, var(--color-fg-subtle, #6e7681))",
+        "onEmphasis": "var(--fgColor-onEmphasis, var(--color-fg-on-emphasis, #ffffff))"
     },
     "canvas": {
-        "default": "#0d1117",
-        "overlay": "#161b22",
-        "inset": "#010409",
-        "subtle": "#161b22"
+        "default": "var(--bgColor-default, var(--color-canvas-default, #0d1117))",
+        "overlay": "var(--overlay-bgColor, var(--color-canvas-overlay, #161b22))",
+        "inset": "var(--bgColor-inset, var(--color-canvas-inset, #010409))",
+        "subtle": "var(--bgColor-muted, var(--color-canvas-subtle, #161b22))"
     },
     "border": {
-        "default": "#30363d",
-        "muted": "#21262d",
-        "subtle": "rgba(240,246,252,0.1)"
+        "default": "var(--borderColor-default, var(--color-border-default, #30363d))",
+        "muted": "var(--borderColor-muted, var(--color-border-muted, #21262d))",
+        "subtle": "var(undefined, var(--color-border-subtle, rgba(240,246,252,0.1)))"
     },
     "shadow": {
-        "small": "0 0 transparent",
-        "medium": "0 3px 6px #010409",
-        "large": "0 8px 24px #010409",
-        "extraLarge": "0 12px 48px #010409"
+        "small": "var(--shadow-resting-small, var(--color-shadow-small, 0 0 transparent))",
+        "medium": "var(--shadow-resting-medium, var(--color-shadow-medium, 0 3px 6px #010409))",
+        "large": "var(--shadow-floating-large, var(--color-shadow-large, 0 8px 24px #010409))",
+        "extraLarge": "var(--shadow-floating-xlarge, var(--color-shadow-extra-large, 0 12px 48px #010409))"
     },
     "neutral": {
-        "emphasisPlus": "#6e7681",
-        "emphasis": "#6e7681",
-        "muted": "rgba(110,118,129,0.4)",
-        "subtle": "rgba(110,118,129,0.1)"
+        "emphasisPlus": "var(--bgColor-emphasis, var(--color-neutral-emphasis-plus, #6e7681))",
+        "emphasis": "var(undefined, var(--color-neutral-emphasis, #6e7681))",
+        "muted": "var(--bgColor-disabled, var(--color-neutral-muted, rgba(110,118,129,0.4)))",
+        "subtle": "var(--bgColor-neutral-muted, var(--color-neutral-subtle, rgba(110,118,129,0.1)))"
     },
     "accent": {
         "fg": "#58a6ff",
-        "emphasis": "#1f6feb",
-        "muted": "rgba(56,139,253,0.4)",
-        "subtle": "rgba(56,139,253,0.1)"
+        "emphasis": "var(--bgColor-accent-emphasis, var(--color-accent-emphasis, #1f6feb))",
+        "muted": "var(--borderColor-accent-muted, var(--color-accent-muted, rgba(56,139,253,0.4)))",
+        "subtle": "var(--bgColor-accent-muted, var(--color-accent-subtle, rgba(56,139,253,0.1)))"
     },
     "success": {
-        "fg": "#58a6ff",
-        "emphasis": "#1f6feb",
-        "muted": "rgba(56,139,253,0.4)",
-        "subtle": "rgba(56,139,253,0.15)"
+        "fg": "var(--fgColor-success, var(--color-success-fg, #58a6ff))",
+        "emphasis": "var(--control-borderColor-success, var(--color-success-emphasis, #1f6feb))",
+        "muted": "var(--borderColor-success-muted, var(--color-success-muted, rgba(56,139,253,0.4)))",
+        "subtle": "var(--bgColor-success-muted, var(--color-success-subtle, rgba(56,139,253,0.15)))"
     },
     "attention": {
-        "fg": "#d29922",
-        "emphasis": "#9e6a03",
-        "muted": "rgba(187,128,9,0.4)",
-        "subtle": "rgba(187,128,9,0.15)"
+        "fg": "var(--fgColor-attention, var(--color-attention-fg, #d29922))",
+        "emphasis": "var(--control-borderColor-warning, var(--color-attention-emphasis, #9e6a03))",
+        "muted": "var(--borderColor-attention-muted, var(--color-attention-muted, rgba(187,128,9,0.4)))",
+        "subtle": "var(--bgColor-attention-muted, var(--color-attention-subtle, rgba(187,128,9,0.15)))"
     },
     "severe": {
-        "fg": "#f85149",
-        "emphasis": "#da3633",
-        "muted": "rgba(248,81,73,0.4)",
-        "subtle": "rgba(248,81,73,0.1)"
+        "fg": "var(--fgColor-severe, var(--color-severe-fg, #f85149))",
+        "emphasis": "var(--bgColor-severe-emphasis, var(--color-severe-emphasis, #da3633))",
+        "muted": "var(--borderColor-severe-muted, var(--color-severe-muted, rgba(248,81,73,0.4)))",
+        "subtle": "var(--bgColor-severe-muted, var(--color-severe-subtle, rgba(248,81,73,0.1)))"
     },
     "danger": {
-        "fg": "#f85149",
-        "emphasis": "#da3633",
-        "muted": "rgba(248,81,73,0.4)",
-        "subtle": "rgba(248,81,73,0.1)"
+        "fg": "var(--control-danger-fgColor-rest, var(--color-danger-fg, #f85149))",
+        "emphasis": "var(--control-borderColor-danger, var(--color-danger-emphasis, #da3633))",
+        "muted": "var(--borderColor-danger-muted, var(--color-danger-muted, rgba(248,81,73,0.4)))",
+        "subtle": "var(--bgColor-danger-muted, var(--color-danger-subtle, rgba(248,81,73,0.1)))"
     },
     "open": {
         "fg": "#ff7b72",
@@ -473,32 +473,32 @@ exports.default = {
         "subtle": "rgba(110,118,129,0.1)"
     },
     "done": {
-        "fg": "#a371f7",
-        "emphasis": "#8957e5",
-        "muted": "rgba(163,113,247,0.4)",
-        "subtle": "rgba(163,113,247,0.1)"
+        "fg": "var(--fgColor-done, var(--color-done-fg, #a371f7))",
+        "emphasis": "var(--bgColor-done-emphasis, var(--color-done-emphasis, #8957e5))",
+        "muted": "var(--borderColor-done-muted, var(--color-done-muted, rgba(163,113,247,0.4)))",
+        "subtle": "var(--bgColor-done-muted, var(--color-done-subtle, rgba(163,113,247,0.1)))"
     },
     "sponsors": {
-        "fg": "#db61a2",
-        "emphasis": "#bf4b8a",
-        "muted": "rgba(219,97,162,0.4)",
-        "subtle": "rgba(219,97,162,0.1)"
+        "fg": "var(--fgColor-sponsors, var(--color-sponsors-fg, #db61a2))",
+        "emphasis": "var(--bgColor-sponsors-emphasis, var(--color-sponsors-emphasis, #bf4b8a))",
+        "muted": "var(--borderColor-sponsors-muted, var(--color-sponsors-muted, rgba(219,97,162,0.4)))",
+        "subtle": "var(--bgColor-sponsors-muted, var(--color-sponsors-subtle, rgba(219,97,162,0.1)))"
     },
     "primer": {
         "fg": {
-            "disabled": "#484f58"
+            "disabled": "var(undefined, var(--color-fg-disabled, #484f58))"
         },
         "canvas": {
-            "backdrop": "rgba(1,4,9,0.8)",
-            "sticky": "rgba(13,17,23,0.95)"
+            "backdrop": "var(undefined, var(--color-canvas-backdrop, rgba(1,4,9,0.8)))",
+            "sticky": "var(undefined, var(--color-canvas-sticky, rgba(13,17,23,0.95)))"
         },
         "border": {
-            "active": "#f78166",
-            "contrast": "rgba(255,255,255,0.2)"
+            "active": "var(undefined, var(--color-border-active, #f78166))",
+            "contrast": "var(undefined, var(--color-border-contrast, rgba(255,255,255,0.2)))"
         },
         "shadow": {
-            "highlight": "0 0 transparent",
-            "inset": "0 0 transparent"
+            "highlight": "var(undefined, var(--color-shadow-highlight, 0 0 transparent))",
+            "inset": "var(undefined, var(--color-shadow-inset, 0 0 transparent))"
         }
     },
     "scale": {

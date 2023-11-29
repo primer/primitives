@@ -1,6 +1,6 @@
 export default {
-  "canvasDefaultTransparent": "var(undefined, var(--color--canvas-default-transparent, rgba(10,12,16,0)))",
-  "pageHeaderBg": "var(undefined, var(--color--page-header-bg, (obj) => (0, get_1.default)(obj, path)))",
+  "canvasDefaultTransparent": "var(undefined, var(--color--canvas-default-transparent, var(--bgColor-default, var(--color-canvas-default, rgba(10,12,16,0)))))",
+  "pageHeaderBg": "var(undefined, var(--color--page-header-bg, (theme) => `var(--bgColor-default, var(--color-canvas-default, ${(0, utils_v1_1.get)('scale.gray.9')(theme)}))`))",
   "marketingIcon": {
     "primary": "var(undefined, var(--color-marketingIcon-primary, #91cbff))",
     "secondary": "var(undefined, var(--color-marketingIcon-secondary, #409eff))"
@@ -10,14 +10,14 @@ export default {
       "numText": "var(undefined, var(--color-addition-num-text, (obj) => (0, get_1.default)(obj, path)))",
       "fg": "#0a0c10",
       "numBg": "var(undefined, var(--color-addition-num-bg, rgba(38,205,77,0.3)))",
-      "lineBg": "var(undefined, var(--color-addition-line-bg, (obj) => {\n        const resolvedValue = resolveValue(value, obj);\n        // Instead of value being #hex, the value is now var(--v, #hex)\n        const hexColorValue = getFallbackValueFromVar(resolvedValue);\n        const hexColorValueWithTransparency = (0, color2k_1.transparentize)(hexColorValue, 1 - amount).replace(/ /g, '');\n        return resolvedValue.replace(hexColorValue, hexColorValueWithTransparency);\n    }))",
+      "lineBg": "var(undefined, var(--color-addition-line-bg, (theme) => `var(--bgColor-success-muted, var(--color-success-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.green.4'), 0.15)(theme)}))`))",
       "wordBg": "var(undefined, var(--color-addition-word-bg, (obj) => (0, get_1.default)(obj, path)))"
     },
     "deletion": {
       "numText": "var(undefined, var(--color-deletion-num-text, (obj) => (0, get_1.default)(obj, path)))",
       "fg": "#0a0c10",
       "numBg": "var(undefined, var(--color-deletion-num-bg, rgba(255,106,105,0.3)))",
-      "lineBg": "var(undefined, var(--color-deletion-line-bg, (obj) => {\n        const resolvedValue = resolveValue(value, obj);\n        // Instead of value being #hex, the value is now var(--v, #hex)\n        const hexColorValue = getFallbackValueFromVar(resolvedValue);\n        const hexColorValueWithTransparency = (0, color2k_1.transparentize)(hexColorValue, 1 - amount).replace(/ /g, '');\n        return resolvedValue.replace(hexColorValue, hexColorValueWithTransparency);\n    }))",
+      "lineBg": "var(undefined, var(--color-deletion-line-bg, (theme) => `var(--bgColor-danger-muted, var(--color-danger-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.red.4'), 0.1)(theme)}))`))",
       "wordBg": "var(undefined, var(--color-deletion-word-bg, (obj) => (0, get_1.default)(obj, path)))"
     },
     "hunk": {
@@ -72,16 +72,16 @@ export default {
   },
   "codemirror": {
     "text": "var(--codeMirror-fgColor, var(--color-codemirror-text, (obj) => (0, get_1.default)(obj, path)))",
-    "bg": "var(--codeMirror-bgColor, var(--color-codemirror-bg, (obj) => (0, get_1.default)(obj, path)))",
-    "guttersBg": "var(--codeMirror-gutters-bgColor, var(--color-codemirror-gutters-bg, (obj) => (0, get_1.default)(obj, path)))",
-    "guttermarkerText": "var(--codeMirror-gutterMarker-fgColor-default, var(--color-codemirror-guttermarker-text, (obj) => (0, get_1.default)(obj, path)))",
-    "guttermarkerSubtleText": "var(--codeMirror-gutterMarker-fgColor-muted, var(--color-codemirror-guttermarker-subtle-text, (obj) => (0, get_1.default)(obj, path)))",
+    "bg": "var(--codeMirror-bgColor, var(--color-codemirror-bg, (theme) => `var(--bgColor-default, var(--color-canvas-default, ${(0, utils_v1_1.get)('scale.gray.9')(theme)}))`))",
+    "guttersBg": "var(--codeMirror-gutters-bgColor, var(--color-codemirror-gutters-bg, (theme) => `var(--bgColor-default, var(--color-canvas-default, ${(0, utils_v1_1.get)('scale.gray.9')(theme)}))`))",
+    "guttermarkerText": "var(--codeMirror-gutterMarker-fgColor-default, var(--color-codemirror-guttermarker-text, (theme) => `var(--bgColor-default, var(--color-canvas-default, ${(0, utils_v1_1.get)('scale.gray.9')(theme)}))`))",
+    "guttermarkerSubtleText": "var(--codeMirror-gutterMarker-fgColor-muted, var(--color-codemirror-guttermarker-subtle-text, (theme) => `var(--control-fgColor-placeholder, var(--color-fg-subtle, ${(0, utils_v1_1.get)('scale.gray.4')(theme)}))`))",
     "linenumberText": "var(--codeMirror-lineNumber-fgColor, var(--color-codemirror-linenumber-text, (obj) => (0, get_1.default)(obj, path)))",
     "cursor": "var(--codeMirror-cursor-fgColor, var(--color-codemirror-cursor, (obj) => (0, get_1.default)(obj, path)))",
     "selectionBg": "rgba(64,158,255,0.4)",
-    "activelineBg": "var(--codeMirror-activeline-bgColor, var(--color-codemirror-activeline-bg, (obj) => {\n        const resolvedValue = resolveValue(value, obj);\n        // Instead of value being #hex, the value is now var(--v, #hex)\n        const hexColorValue = getFallbackValueFromVar(resolvedValue);\n        const hexColorValueWithTransparency = (0, color2k_1.transparentize)(hexColorValue, 1 - amount).replace(/ /g, '');\n        return resolvedValue.replace(hexColorValue, hexColorValueWithTransparency);\n    }))",
+    "activelineBg": "var(--codeMirror-activeline-bgColor, var(--color-codemirror-activeline-bg, (theme) => `var(--bgColor-neutral-muted, var(--color-neutral-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.gray.4'), 0.1)(theme)}))`))",
     "matchingbracketText": "var(--codeMirror-matchingBracket-fgColor, var(--color-codemirror-matchingbracket-text, (obj) => (0, get_1.default)(obj, path)))",
-    "linesBg": "var(--codeMirror-lines-bgColor, var(--color-codemirror-lines-bg, (obj) => (0, get_1.default)(obj, path)))",
+    "linesBg": "var(--codeMirror-lines-bgColor, var(--color-codemirror-lines-bg, (theme) => `var(--bgColor-default, var(--color-canvas-default, ${(0, utils_v1_1.get)('scale.gray.9')(theme)}))`))",
     "syntax": {
       "comment": "var(undefined, var(--color-syntax-comment, #bdc4cc))",
       "constant": "var(undefined, var(--color-syntax-constant, #91cbff))",
@@ -94,7 +94,7 @@ export default {
     }
   },
   "checks": {
-    "bg": "var(undefined, var(--color-checks-bg, (obj) => (0, get_1.default)(obj, path)))",
+    "bg": "var(undefined, var(--color-checks-bg, (theme) => `var(--bgColor-inset, var(--color-canvas-inset, ${(0, utils_v1_1.get)('scale.black')(theme)}))`))",
     "runBorderWidth": "var(undefined, var(--color-checks-run-border-width, 1px))",
     "containerBorderWidth": "var(undefined, var(--color-checks-container-border-width, 1px))",
     "textPrimary": "var(undefined, var(--color-checks-text-primary, (obj) => (0, get_1.default)(obj, path)))",
@@ -102,9 +102,9 @@ export default {
     "textLink": "var(undefined, var(--color-checks-text-link, (obj) => (0, get_1.default)(obj, path)))",
     "btnIcon": "var(undefined, var(--color-checks-btn-icon, (obj) => (0, get_1.default)(obj, path)))",
     "btnHoverIcon": "var(undefined, var(--color-checks-btn-hover-icon, (obj) => (0, get_1.default)(obj, path)))",
-    "btnHoverBg": "var(undefined, var(--color-checks-btn-hover-bg, (obj) => {\n        const resolvedValue = resolveValue(value, obj);\n        // Instead of value being #hex, the value is now var(--v, #hex)\n        const hexColorValue = getFallbackValueFromVar(resolvedValue);\n        const hexColorValueWithTransparency = (0, color2k_1.transparentize)(hexColorValue, 1 - amount).replace(/ /g, '');\n        return resolvedValue.replace(hexColorValue, hexColorValueWithTransparency);\n    }))",
+    "btnHoverBg": "var(undefined, var(--color-checks-btn-hover-bg, (theme) => `var(--bgColor-neutral-muted, var(--color-neutral-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.gray.4'), 0.1)(theme)}))`))",
     "inputText": "var(undefined, var(--color-checks-input-text, (obj) => (0, get_1.default)(obj, path)))",
-    "inputPlaceholderText": "var(undefined, var(--color-checks-input-placeholder-text, (obj) => (0, get_1.default)(obj, path)))",
+    "inputPlaceholderText": "var(undefined, var(--color-checks-input-placeholder-text, (theme) => `var(--control-fgColor-placeholder, var(--color-fg-subtle, ${(0, utils_v1_1.get)('scale.gray.4')(theme)}))`))",
     "inputFocusText": "var(undefined, var(--color-checks-input-focus-text, (obj) => (0, get_1.default)(obj, path)))",
     "inputBg": "var(undefined, var(--color-checks-input-bg, #272b33))",
     "inputShadow": "var(undefined, var(--color-checks-input-shadow, 0 0 0 1px (obj) => (0, get_1.default)(obj, path)))",
@@ -113,43 +113,43 @@ export default {
     "donutSuccess": "var(undefined, var(--color-checks-donut-success, #09b43a))",
     "donutNeutral": "var(undefined, var(--color-checks-donut-neutral, #bdc4cc))",
     "dropdownText": "var(undefined, var(--color-checks-dropdown-text, (obj) => (0, get_1.default)(obj, path)))",
-    "dropdownBg": "var(undefined, var(--color-checks-dropdown-bg, (obj) => (0, get_1.default)(obj, path)))",
+    "dropdownBg": "var(undefined, var(--color-checks-dropdown-bg, (theme) => `var(--overlay-bgColor, var(--color-canvas-overlay, ${(0, utils_v1_1.get)('scale.gray.8')(theme)}))`))",
     "dropdownBorder": "var(undefined, var(--color-checks-dropdown-border, (obj) => (0, get_1.default)(obj, path)))",
     "dropdownShadow": "var(undefined, var(--color-checks-dropdown-shadow, rgba(1,4,9,0.3)))",
     "dropdownHoverText": "var(undefined, var(--color-checks-dropdown-hover-text, (obj) => (0, get_1.default)(obj, path)))",
-    "dropdownHoverBg": "var(undefined, var(--color-checks-dropdown-hover-bg, (obj) => {\n        const resolvedValue = resolveValue(value, obj);\n        // Instead of value being #hex, the value is now var(--v, #hex)\n        const hexColorValue = getFallbackValueFromVar(resolvedValue);\n        const hexColorValueWithTransparency = (0, color2k_1.transparentize)(hexColorValue, 1 - amount).replace(/ /g, '');\n        return resolvedValue.replace(hexColorValue, hexColorValueWithTransparency);\n    }))",
+    "dropdownHoverBg": "var(undefined, var(--color-checks-dropdown-hover-bg, (theme) => `var(--bgColor-neutral-muted, var(--color-neutral-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.gray.4'), 0.1)(theme)}))`))",
     "dropdownBtnHoverText": "var(undefined, var(--color-checks-dropdown-btn-hover-text, (obj) => (0, get_1.default)(obj, path)))",
-    "dropdownBtnHoverBg": "var(undefined, var(--color-checks-dropdown-btn-hover-bg, (obj) => {\n        const resolvedValue = resolveValue(value, obj);\n        // Instead of value being #hex, the value is now var(--v, #hex)\n        const hexColorValue = getFallbackValueFromVar(resolvedValue);\n        const hexColorValueWithTransparency = (0, color2k_1.transparentize)(hexColorValue, 1 - amount).replace(/ /g, '');\n        return resolvedValue.replace(hexColorValue, hexColorValueWithTransparency);\n    }))",
-    "scrollbarThumbBg": "var(undefined, var(--color-checks-scrollbar-thumb-bg, (obj) => {\n        const resolvedValue = resolveValue(value, obj);\n        // Instead of value being #hex, the value is now var(--v, #hex)\n        const hexColorValue = getFallbackValueFromVar(resolvedValue);\n        const hexColorValueWithTransparency = (0, color2k_1.transparentize)(hexColorValue, 1 - amount).replace(/ /g, '');\n        return resolvedValue.replace(hexColorValue, hexColorValueWithTransparency);\n    }))",
+    "dropdownBtnHoverBg": "var(undefined, var(--color-checks-dropdown-btn-hover-bg, (theme) => `var(--bgColor-neutral-muted, var(--color-neutral-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.gray.4'), 0.1)(theme)}))`))",
+    "scrollbarThumbBg": "var(undefined, var(--color-checks-scrollbar-thumb-bg, (theme) => `var(--bgColor-disabled, var(--color-neutral-muted, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.gray.4'), 0.4)(theme)}))`))",
     "headerLabelText": "var(undefined, var(--color-checks-header-label-text, (obj) => (0, get_1.default)(obj, path)))",
     "headerLabelOpenText": "var(undefined, var(--color-checks-header-label-open-text, (obj) => (0, get_1.default)(obj, path)))",
     "headerBorder": "var(undefined, var(--color-checks-header-border, (obj) => (0, get_1.default)(obj, path)))",
     "headerIcon": "var(undefined, var(--color-checks-header-icon, (obj) => (0, get_1.default)(obj, path)))",
     "lineText": "var(undefined, var(--color-checks-line-text, (obj) => (0, get_1.default)(obj, path)))",
-    "lineNumText": "var(undefined, var(--color-checks-line-num-text, (obj) => (0, get_1.default)(obj, path)))",
-    "lineTimestampText": "var(undefined, var(--color-checks-line-timestamp-text, (obj) => (0, get_1.default)(obj, path)))",
-    "lineHoverBg": "var(undefined, var(--color-checks-line-hover-bg, (obj) => {\n        const resolvedValue = resolveValue(value, obj);\n        // Instead of value being #hex, the value is now var(--v, #hex)\n        const hexColorValue = getFallbackValueFromVar(resolvedValue);\n        const hexColorValueWithTransparency = (0, color2k_1.transparentize)(hexColorValue, 1 - amount).replace(/ /g, '');\n        return resolvedValue.replace(hexColorValue, hexColorValueWithTransparency);\n    }))",
-    "lineSelectedBg": "var(undefined, var(--color-checks-line-selected-bg, (obj) => {\n        const resolvedValue = resolveValue(value, obj);\n        // Instead of value being #hex, the value is now var(--v, #hex)\n        const hexColorValue = getFallbackValueFromVar(resolvedValue);\n        const hexColorValueWithTransparency = (0, color2k_1.transparentize)(hexColorValue, 1 - amount).replace(/ /g, '');\n        return resolvedValue.replace(hexColorValue, hexColorValueWithTransparency);\n    }))",
+    "lineNumText": "var(undefined, var(--color-checks-line-num-text, (theme) => `var(--control-fgColor-placeholder, var(--color-fg-subtle, ${(0, utils_v1_1.get)('scale.gray.4')(theme)}))`))",
+    "lineTimestampText": "var(undefined, var(--color-checks-line-timestamp-text, (theme) => `var(--control-fgColor-placeholder, var(--color-fg-subtle, ${(0, utils_v1_1.get)('scale.gray.4')(theme)}))`))",
+    "lineHoverBg": "var(undefined, var(--color-checks-line-hover-bg, (theme) => `var(--bgColor-neutral-muted, var(--color-neutral-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.gray.4'), 0.1)(theme)}))`))",
+    "lineSelectedBg": "var(undefined, var(--color-checks-line-selected-bg, (theme) => `var(--bgColor-accent-muted, var(--color-accent-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.blue.4'), 0.1)(theme)}))`))",
     "lineSelectedNumText": "var(undefined, var(--color-checks-line-selected-num-text, (obj) => (0, get_1.default)(obj, path)))",
     "lineDtFmText": "var(undefined, var(--color-checks-line-dt-fm-text, (obj) => (0, get_1.default)(obj, path)))",
-    "lineDtFmBg": "var(undefined, var(--color-checks-line-dt-fm-bg, (obj) => (0, get_1.default)(obj, path)))",
-    "gateBg": "var(undefined, var(--color-checks-gate-bg, (obj) => {\n        const resolvedValue = resolveValue(value, obj);\n        // Instead of value being #hex, the value is now var(--v, #hex)\n        const hexColorValue = getFallbackValueFromVar(resolvedValue);\n        const hexColorValueWithTransparency = (0, color2k_1.transparentize)(hexColorValue, 1 - amount).replace(/ /g, '');\n        return resolvedValue.replace(hexColorValue, hexColorValueWithTransparency);\n    }))",
+    "lineDtFmBg": "var(undefined, var(--color-checks-line-dt-fm-bg, (theme) => `var(--control-borderColor-warning, var(--color-attention-emphasis, ${(0, utils_v1_1.get)('scale.yellow.5')(theme)}))`))",
+    "gateBg": "var(undefined, var(--color-checks-gate-bg, (theme) => `var(--bgColor-attention-muted, var(--color-attention-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.yellow.4'), 0.15)(theme)}))`))",
     "gateText": "var(undefined, var(--color-checks-gate-text, (obj) => (0, get_1.default)(obj, path)))",
-    "gateWaitingText": "var(undefined, var(--color-checks-gate-waiting-text, (obj) => (0, get_1.default)(obj, path)))",
-    "stepHeaderOpenBg": "var(undefined, var(--color-checks-step-header-open-bg, (obj) => (0, get_1.default)(obj, path)))",
-    "stepErrorText": "var(undefined, var(--color-checks-step-error-text, (obj) => (0, get_1.default)(obj, path)))",
-    "stepWarningText": "var(undefined, var(--color-checks-step-warning-text, (obj) => (0, get_1.default)(obj, path)))",
+    "gateWaitingText": "var(undefined, var(--color-checks-gate-waiting-text, (theme) => `var(--fgColor-attention, var(--color-attention-fg, ${(0, utils_v1_1.get)('scale.yellow.3')(theme)}))`))",
+    "stepHeaderOpenBg": "var(undefined, var(--color-checks-step-header-open-bg, (theme) => `var(--bgColor-muted, var(--color-canvas-subtle, ${(0, utils_v1_1.get)('scale.gray.8')(theme)}))`))",
+    "stepErrorText": "var(undefined, var(--color-checks-step-error-text, (theme) => `var(--control-danger-fgColor-rest, var(--color-danger-fg, ${(0, utils_v1_1.get)('scale.red.4')(theme)}))`))",
+    "stepWarningText": "var(undefined, var(--color-checks-step-warning-text, (theme) => `var(--fgColor-attention, var(--color-attention-fg, ${(0, utils_v1_1.get)('scale.yellow.3')(theme)}))`))",
     "loglineText": "var(undefined, var(--color-checks-logline-text, (obj) => (0, get_1.default)(obj, path)))",
-    "loglineNumText": "var(undefined, var(--color-checks-logline-num-text, (obj) => (0, get_1.default)(obj, path)))",
-    "loglineDebugText": "var(undefined, var(--color-checks-logline-debug-text, (obj) => (0, get_1.default)(obj, path)))",
+    "loglineNumText": "var(undefined, var(--color-checks-logline-num-text, (theme) => `var(--control-fgColor-placeholder, var(--color-fg-subtle, ${(0, utils_v1_1.get)('scale.gray.4')(theme)}))`))",
+    "loglineDebugText": "var(undefined, var(--color-checks-logline-debug-text, (theme) => `var(--fgColor-done, var(--color-done-fg, ${(0, utils_v1_1.get)('scale.purple.4')(theme)}))`))",
     "loglineErrorText": "var(undefined, var(--color-checks-logline-error-text, (obj) => (0, get_1.default)(obj, path)))",
-    "loglineErrorNumText": "var(undefined, var(--color-checks-logline-error-num-text, (obj) => (0, get_1.default)(obj, path)))",
-    "loglineErrorBg": "var(undefined, var(--color-checks-logline-error-bg, (obj) => {\n        const resolvedValue = resolveValue(value, obj);\n        // Instead of value being #hex, the value is now var(--v, #hex)\n        const hexColorValue = getFallbackValueFromVar(resolvedValue);\n        const hexColorValueWithTransparency = (0, color2k_1.transparentize)(hexColorValue, 1 - amount).replace(/ /g, '');\n        return resolvedValue.replace(hexColorValue, hexColorValueWithTransparency);\n    }))",
+    "loglineErrorNumText": "var(undefined, var(--color-checks-logline-error-num-text, (theme) => `var(--control-fgColor-placeholder, var(--color-fg-subtle, ${(0, utils_v1_1.get)('scale.gray.4')(theme)}))`))",
+    "loglineErrorBg": "var(undefined, var(--color-checks-logline-error-bg, (theme) => `var(--bgColor-danger-muted, var(--color-danger-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.red.4'), 0.1)(theme)}))`))",
     "loglineWarningText": "var(undefined, var(--color-checks-logline-warning-text, (obj) => (0, get_1.default)(obj, path)))",
-    "loglineWarningNumText": "var(undefined, var(--color-checks-logline-warning-num-text, (obj) => (0, get_1.default)(obj, path)))",
-    "loglineWarningBg": "var(undefined, var(--color-checks-logline-warning-bg, (obj) => {\n        const resolvedValue = resolveValue(value, obj);\n        // Instead of value being #hex, the value is now var(--v, #hex)\n        const hexColorValue = getFallbackValueFromVar(resolvedValue);\n        const hexColorValueWithTransparency = (0, color2k_1.transparentize)(hexColorValue, 1 - amount).replace(/ /g, '');\n        return resolvedValue.replace(hexColorValue, hexColorValueWithTransparency);\n    }))",
+    "loglineWarningNumText": "var(undefined, var(--color-checks-logline-warning-num-text, (theme) => `var(--fgColor-attention, var(--color-attention-fg, ${(0, utils_v1_1.get)('scale.yellow.3')(theme)}))`))",
+    "loglineWarningBg": "var(undefined, var(--color-checks-logline-warning-bg, (theme) => `var(--bgColor-attention-muted, var(--color-attention-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.yellow.4'), 0.15)(theme)}))`))",
     "loglineCommandText": "var(undefined, var(--color-checks-logline-command-text, (obj) => (0, get_1.default)(obj, path)))",
-    "loglineSectionText": "var(undefined, var(--color-checks-logline-section-text, (obj) => (0, get_1.default)(obj, path)))",
+    "loglineSectionText": "var(undefined, var(--color-checks-logline-section-text, (theme) => `var(--fgColor-success, var(--color-success-fg, ${(0, utils_v1_1.get)('scale.green.3')(theme)}))`))",
     "ansi": {
       "black": "var(undefined, var(--color-ansi-black, #0a0c10))",
       "blackBright": "var(undefined, var(--color-ansi-black-bright, #272b33))",
@@ -200,7 +200,7 @@ export default {
     "childShadow": "var(--avatar-shadow, var(--color-avatar-child-shadow, 0 0 0 2px #0a0c10))"
   },
   "topicTag": {
-    "border": "#409eff"
+    "border": "var(--bgColor-accent-emphasis, var(--color-accent-emphasis, #409eff))"
   },
   "counter": {
     "border": "var(--counter-borderColor, var(--color-counter-border, transparent))"
@@ -231,7 +231,7 @@ export default {
     "bgActive": "var(--menu-bgColor-active, var(--color-menu-bg-active, #272b33))"
   },
   "input": {
-    "disabledBg": "var(--control-bgColor-disabled, var(--color-input-disabled-bg, rgba(158,167,179,0)))"
+    "disabledBg": "var(--control-bgColor-disabled, var(--color-input-disabled-bg, var(--bgColor-disabled, var(--color-neutral-muted, rgba(158,167,179,0)))))"
   },
   "timeline": {
     "badgeBg": "var(--timelineBadge-bgColor, var(--color-timeline-badge-bg, #272b33))"
@@ -321,8 +321,8 @@ export default {
       "disabledCounterBg": "var(undefined, var(--color-danger-disabled-counter-bg, rgba(255,106,105,0.05)))",
       "counterBg": "rgba(1,4,9,0.15)",
       "icon": "var(undefined, var(--color-danger-icon, #ff6a69))",
-      "counterFg": "var(undefined, var(--color-danger-counter-fg, (obj) => (0, get_1.default)(obj, path)))",
-      "disabledCounterFg": "var(undefined, var(--color-danger-disabled-counter-fg, rgba(255,106,105,0.5)))",
+      "counterFg": "var(undefined, var(--color-danger-counter-fg, (theme) => `var(--control-danger-fgColor-rest, var(--color-danger-fg, ${(0, utils_v1_1.get)('scale.red.4')(theme)}))`))",
+      "disabledCounterFg": "var(undefined, var(--color-danger-disabled-counter-fg, var(--control-danger-fgColor-rest, var(--color-danger-fg, rgba(255,106,105,0.5)))))",
       "hoverCounterFg": "var(undefined, var(--color-danger-hover-counter-fg, #ffffff))"
     },
     "inactive": {
@@ -344,7 +344,7 @@ export default {
       "selectedBg": "#525964"
     },
     "danger": {
-      "hoverBg": "#ff6a69",
+      "hoverBg": "var(--control-borderColor-danger, var(--color-danger-emphasis, #ff6a69))",
       "activeBg": "#ff4445",
       "hoverText": "#0a0c10"
     }
@@ -358,7 +358,7 @@ export default {
     "disabledFg": "var(undefined, var(--color-switchTrack-disabled-fg, #010409))",
     "border": "var(undefined, var(--color-switchTrack-border, transparent))",
     "checked": {
-      "bg": "#409eff",
+      "bg": "var(--bgColor-accent-emphasis, var(--color-accent-emphasis, #409eff))",
       "hoverBg": "var(undefined, var(--color-checked-hover-bg, rgba(64,158,255,0.5)))",
       "activeBg": "var(undefined, var(--color-checked-active-bg, rgba(64,158,255,0.65)))",
       "fg": "var(undefined, var(--color-checked-fg, (obj) => (0, get_1.default)(obj, path)))",
@@ -367,19 +367,19 @@ export default {
     }
   },
   "switchKnob": {
-    "bg": "var(undefined, var(--color-switchKnob-bg, (obj) => (0, get_1.default)(obj, path)))",
+    "bg": "var(undefined, var(--color-switchKnob-bg, (theme) => `var(--bgColor-default, var(--color-canvas-default, ${(0, utils_v1_1.get)('scale.gray.9')(theme)}))`))",
     "border": "#9ea7b3",
-    "disabledBg": "var(undefined, var(--color-switchKnob-disabled-bg, (obj) => (0, get_1.default)(obj, path)))",
+    "disabledBg": "var(undefined, var(--color-switchKnob-disabled-bg, (theme) => `var(--bgColor-muted, var(--color-canvas-subtle, ${(0, utils_v1_1.get)('scale.gray.8')(theme)}))`))",
     "checked": {
-      "bg": "var(undefined, var(--color-checked-bg, (obj) => (0, get_1.default)(obj, path)))",
-      "disabledBg": "var(undefined, var(--color-checked-disabled-bg, (obj) => (0, get_1.default)(obj, path)))",
-      "border": "#409eff"
+      "bg": "var(undefined, var(--color-checked-bg, (theme) => `var(--bgColor-default, var(--color-canvas-default, ${(0, utils_v1_1.get)('scale.gray.9')(theme)}))`))",
+      "disabledBg": "var(undefined, var(--color-checked-disabled-bg, (theme) => `var(--bgColor-muted, var(--color-canvas-subtle, ${(0, utils_v1_1.get)('scale.gray.8')(theme)}))`))",
+      "border": "var(--bgColor-accent-emphasis, var(--color-accent-emphasis, #409eff))"
     }
   },
   "segmentedControl": {
-    "bg": "var(undefined, var(--color-segmentedControl-bg, (obj) => {\n        const resolvedValue = resolveValue(value, obj);\n        // Instead of value being #hex, the value is now var(--v, #hex)\n        const hexColorValue = getFallbackValueFromVar(resolvedValue);\n        const hexColorValueWithTransparency = (0, color2k_1.transparentize)(hexColorValue, 1 - amount).replace(/ /g, '');\n        return resolvedValue.replace(hexColorValue, hexColorValueWithTransparency);\n    }))",
+    "bg": "var(undefined, var(--color-segmentedControl-bg, (theme) => `var(--bgColor-neutral-muted, var(--color-neutral-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.gray.4'), 0.1)(theme)}))`))",
     "button": {
-      "bg": "var(undefined, var(--color-button-bg, (obj) => (0, get_1.default)(obj, path)))",
+      "bg": "var(undefined, var(--color-button-bg, (theme) => `var(--bgColor-default, var(--color-canvas-default, ${(0, utils_v1_1.get)('scale.gray.9')(theme)}))`))",
       "hover": {
         "bg": "var(undefined, var(--color-hover-bg, #525964))"
       },
@@ -402,14 +402,14 @@ export default {
   "fg": {
     "default": "#f0f3f6",
     "muted": "#f0f3f6",
-    "subtle": "#9ea7b3",
+    "subtle": "var(--control-fgColor-placeholder, var(--color-fg-subtle, #9ea7b3))",
     "onEmphasis": "#0a0c10"
   },
   "canvas": {
-    "default": "#0a0c10",
-    "overlay": "#272b33",
-    "inset": "#010409",
-    "subtle": "#272b33"
+    "default": "var(--bgColor-default, var(--color-canvas-default, #0a0c10))",
+    "overlay": "var(--overlay-bgColor, var(--color-canvas-overlay, #272b33))",
+    "inset": "var(--bgColor-inset, var(--color-canvas-inset, #010409))",
+    "subtle": "var(--bgColor-muted, var(--color-canvas-subtle, #272b33))"
   },
   "border": {
     "default": "#7a828e",
@@ -417,86 +417,86 @@ export default {
     "subtle": "#7a828e"
   },
   "shadow": {
-    "small": "0 0 transparent",
-    "medium": "0 3px 6px #010409",
-    "large": "0 8px 24px #010409",
-    "extraLarge": "0 12px 48px #010409"
+    "small": "var(--shadow-resting-small, var(--color-shadow-small, 0 0 transparent))",
+    "medium": "var(--shadow-resting-medium, var(--color-shadow-medium, 0 3px 6px #010409))",
+    "large": "var(--shadow-floating-large, var(--color-shadow-large, 0 8px 24px #010409))",
+    "extraLarge": "var(--shadow-floating-xlarge, var(--color-shadow-extra-large, 0 12px 48px #010409))"
   },
   "neutral": {
     "emphasisPlus": "#ffffff",
     "emphasis": "#9ea7b3",
-    "muted": "rgba(158,167,179,0.4)",
-    "subtle": "rgba(158,167,179,0.1)"
+    "muted": "var(--bgColor-disabled, var(--color-neutral-muted, rgba(158,167,179,0.4)))",
+    "subtle": "var(--bgColor-neutral-muted, var(--color-neutral-subtle, rgba(158,167,179,0.1)))"
   },
   "accent": {
     "fg": "#71b7ff",
-    "emphasis": "#409eff",
+    "emphasis": "var(--bgColor-accent-emphasis, var(--color-accent-emphasis, #409eff))",
     "muted": "#409eff",
-    "subtle": "rgba(64,158,255,0.1)"
+    "subtle": "var(--bgColor-accent-muted, var(--color-accent-subtle, rgba(64,158,255,0.1)))"
   },
   "success": {
-    "fg": "#26cd4d",
-    "emphasis": "#09b43a",
+    "fg": "var(--fgColor-success, var(--color-success-fg, #26cd4d))",
+    "emphasis": "var(--control-borderColor-success, var(--color-success-emphasis, #09b43a))",
     "muted": "#09b43a",
-    "subtle": "rgba(9,180,58,0.15)"
+    "subtle": "var(--bgColor-success-muted, var(--color-success-subtle, rgba(9,180,58,0.15)))"
   },
   "attention": {
-    "fg": "#f0b72f",
-    "emphasis": "#e09b13",
+    "fg": "var(--fgColor-attention, var(--color-attention-fg, #f0b72f))",
+    "emphasis": "var(--control-borderColor-warning, var(--color-attention-emphasis, #e09b13))",
     "muted": "#e09b13",
-    "subtle": "rgba(224,155,19,0.15)"
+    "subtle": "var(--bgColor-attention-muted, var(--color-attention-subtle, rgba(224,155,19,0.15)))"
   },
   "severe": {
-    "fg": "#e7811d",
-    "emphasis": "#e7811d",
+    "fg": "var(--fgColor-severe, var(--color-severe-fg, #e7811d))",
+    "emphasis": "var(--bgColor-severe-emphasis, var(--color-severe-emphasis, #e7811d))",
     "muted": "#e7811d",
-    "subtle": "rgba(231,129,29,0.1)"
+    "subtle": "var(--bgColor-severe-muted, var(--color-severe-subtle, rgba(231,129,29,0.1)))"
   },
   "danger": {
-    "fg": "#ff6a69",
-    "emphasis": "#ff6a69",
+    "fg": "var(--control-danger-fgColor-rest, var(--color-danger-fg, #ff6a69))",
+    "emphasis": "var(--control-borderColor-danger, var(--color-danger-emphasis, #ff6a69))",
     "muted": "#ff6a69",
-    "subtle": "rgba(255,106,105,0.1)"
+    "subtle": "var(--bgColor-danger-muted, var(--color-danger-subtle, rgba(255,106,105,0.1)))"
   },
   "open": {
-    "fg": "#26cd4d",
-    "emphasis": "#09b43a",
-    "muted": "rgba(9,180,58,0.4)",
-    "subtle": "rgba(9,180,58,0.15)"
+    "fg": "var(--fgColor-open, var(--color-open-fg, #26cd4d))",
+    "emphasis": "var(--bgColor-open-emphasis, var(--color-open-emphasis, #09b43a))",
+    "muted": "var(--borderColor-open-muted, var(--color-open-muted, rgba(9,180,58,0.4)))",
+    "subtle": "var(--bgColor-open-muted, var(--color-open-subtle, rgba(9,180,58,0.15)))"
   },
   "closed": {
-    "fg": "#ff6a69",
-    "emphasis": "#ff6a69",
-    "muted": "rgba(255,106,105,0.4)",
-    "subtle": "rgba(255,106,105,0.15)"
+    "fg": "var(--fgColor-closed, var(--color-closed-fg, #ff6a69))",
+    "emphasis": "var(--bgColor-closed-emphasis, var(--color-closed-emphasis, #ff6a69))",
+    "muted": "var(--borderColor-closed-muted, var(--color-closed-muted, rgba(255,106,105,0.4)))",
+    "subtle": "var(--bgColor-closed-muted, var(--color-closed-subtle, rgba(255,106,105,0.15)))"
   },
   "done": {
-    "fg": "#b780ff",
-    "emphasis": "#b87fff",
+    "fg": "var(--fgColor-done, var(--color-done-fg, #b780ff))",
+    "emphasis": "var(--bgColor-done-emphasis, var(--color-done-emphasis, #b87fff))",
     "muted": "#b780ff",
-    "subtle": "rgba(183,128,255,0.1)"
+    "subtle": "var(--bgColor-done-muted, var(--color-done-subtle, rgba(183,128,255,0.1)))"
   },
   "sponsors": {
-    "fg": "#ef6eb1",
-    "emphasis": "#ef6eb1",
+    "fg": "var(--fgColor-sponsors, var(--color-sponsors-fg, #ef6eb1))",
+    "emphasis": "var(--bgColor-sponsors-emphasis, var(--color-sponsors-emphasis, #ef6eb1))",
     "muted": "#ef6eb1",
-    "subtle": "rgba(239,110,177,0.1)"
+    "subtle": "var(--bgColor-sponsors-muted, var(--color-sponsors-subtle, rgba(239,110,177,0.1)))"
   },
   "primer": {
     "fg": {
-      "disabled": "#7a828e"
+      "disabled": "var(undefined, var(--color-fg-disabled, #7a828e))"
     },
     "canvas": {
-      "backdrop": "rgba(1,4,9,0.8)",
-      "sticky": "rgba(10,12,16,0.95)"
+      "backdrop": "var(undefined, var(--color-canvas-backdrop, rgba(1,4,9,0.8)))",
+      "sticky": "var(undefined, var(--color-canvas-sticky, rgba(10,12,16,0.95)))"
     },
     "border": {
-      "active": "#ff967d",
-      "contrast": "rgba(255,255,255,0.2)"
+      "active": "var(undefined, var(--color-border-active, #ff967d))",
+      "contrast": "var(undefined, var(--color-border-contrast, rgba(255,255,255,0.2)))"
     },
     "shadow": {
-      "highlight": "0 0 transparent",
-      "inset": "0 0 transparent"
+      "highlight": "var(undefined, var(--color-shadow-highlight, 0 0 transparent))",
+      "inset": "var(undefined, var(--color-shadow-inset, 0 0 transparent))"
     }
   },
   "scale": {
