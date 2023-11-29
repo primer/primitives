@@ -19,10 +19,10 @@ export default {
     subtle: (theme: any) => `var(undefined, var(--color-border-subtle, ${alpha(get('scale.black'), 0.15)(theme)}))`
   },
   shadow: {
-    small: (theme: any) => `0 1px 0 ${alpha(get('scale.black'), 0.04)(theme)}`,
-    medium: (theme: any) => `0 3px 6px ${alpha(get('scale.gray.4'), 0.15)(theme)}`,
-    large: (theme: any) => `0 8px 24px ${alpha(get('scale.gray.4'), 0.2)(theme)}`,
-    extraLarge: (theme: any) => `0 12px 28px ${alpha(get('scale.gray.4'), 0.3)(theme)}`
+    small: (theme: any) => `var(--shadow-resting-small, var(--color-shadow-small, 0 1px 0 ${alpha(get('scale.black'), 0.04)(theme)}))`,
+    medium: (theme: any) => `var(--shadow-resting-medium, var(--color-shadow-medium, 0 3px 6px ${alpha(get('scale.gray.4'), 0.15)(theme)}))`,
+    large: (theme: any) => `var(--shadow-floating-large, var(--color-shadow-large, 0 8px 24px ${alpha(get('scale.gray.4'), 0.2)(theme)}))`,
+    extraLarge: (theme: any) => `var(--shadow-floating-xlarge, var(--color-shadow-extra-large, 0 12px 28px ${alpha(get('scale.gray.4'), 0.3)(theme)}))`
   },
 
   // Roles
@@ -101,8 +101,8 @@ export default {
       contrast: (theme: any) => `var(undefined, var(--color-border-contrast, ${alpha(get('scale.black'), 0.1)(theme)}))` // use to increase contrast
     },
     shadow: {
-      highlight: (theme: any) => `inset 0 1px 0 ${alpha(get('scale.white'), 0.25)(theme)}`, // top highlight
-      inset: (theme: any) => `inset 0 1px 0 ${alpha(get('scale.gray.2'), 0.2)(theme)}`, // top inner shadow
+      highlight: (theme: any) => `var(undefined, var(--color-shadow-highlight, inset 0 1px 0 ${alpha(get('scale.white'), 0.25)(theme)}))`, // top highlight
+      inset: (theme: any) => `var(undefined, var(--color-shadow-inset, inset 0 1px 0 ${alpha(get('scale.gray.2'), 0.2)(theme)}))`, // top inner shadow
     }
   }
 }

@@ -1,5 +1,5 @@
 import {resolve} from 'path'
-import {Project, ScriptTarget, SyntaxKind} from 'ts-morph'
+import {Project, ScriptTarget, SyntaxKind, Node} from 'ts-morph'
 import kebabCase from 'lodash/kebabCase'
 
 // eslint-disable-next-line import/extensions
@@ -74,7 +74,7 @@ project.getSourceFiles().map(sourceFile => {
      *
      */
 
-    if (propertyValue.getKind() === SyntaxKind.ObjectLiteralExpression) {
+    if (Node.isObjectLiteralExpression(propertyValue)) {
       /**
        * fg: { } ← ObjectLiteralExpression
        *
@@ -84,7 +84,7 @@ project.getSourceFiles().map(sourceFile => {
        * We only set the prefix, so that it can be used in the children
        */
       prefix = propertyName
-    } else if (propertyValue.getKind() === SyntaxKind.StringLiteral) {
+    } else if (Node.isStringLiteral(propertyValue)) {
       /**
        * Before:
        * fg: {
@@ -98,14 +98,14 @@ project.getSourceFiles().map(sourceFile => {
        */
 
       const oldValue = propertyValue.getText()
-      if (oldValue.startsWith(`"var(--`)) return // already replaced, skip!
+      if (oldValue.startsWith(`"var(`)) return // already replaced, skip!
 
       const oldVariableName = `--color-${prefix}-${kebabCase(propertyName)}`
       const newVariableName = getNewVariable(oldVariableName)
 
       const newValue = `"var(${newVariableName}, var(${oldVariableName}, ${oldValue.replaceAll(`'`, ``)}))"`
       propertyValue.replaceWithText(newValue)
-    } else if (propertyValue.getKind() === SyntaxKind.CallExpression) {
+    } else if (Node.isCallExpression(propertyValue)) {
       /**
        * Before:
        * fg: {
@@ -131,14 +131,45 @@ project.getSourceFiles().map(sourceFile => {
        */
 
       const oldValue = propertyValue.getText()
-      if (oldValue.includes(`"var(--`)) return // already replaced, skip!
+      if (oldValue.includes(`"var(`)) return // already replaced, skip!
 
       const oldVariableName = `--color-${prefix}-${kebabCase(propertyName)}`
       const newVariableName = getNewVariable(oldVariableName)
       const newValue = `(theme: any) => \`var(${newVariableName}, var(${oldVariableName}, $\{${oldValue}(theme)}))\``
       propertyValue.replaceWithText(newValue)
+    } else if (Node.isArrowFunction(propertyValue)) {
+      /**
+       * Before:
+       * shadow: {
+       *   small: (theme: any) => `0 1px 0 ${alpha(get('scale.black'), 0.04)(theme)}`,
+       * }
+       *
+       * After:
+       * shadow: {
+       *   small: (theme: any) => `var(--shadow-resting-small, var(--color-shadow-small, 0 1px 0 ${alpha(get('scale.black'), 0.04)(theme)}))`,
+       * }
+       *
+       *   // expanded for readibility:
+       *   small: (theme: any) => `
+       *   var(
+       *      --shadow-resting-small,
+       *      var(
+       *        --color-shadow-small,
+       *        0 1px 0 ${alpha(get('scale.black'), 0.04)(theme)}
+       *      )
+       *   )
+       *   `
+       * }
+       */
+      const functionBody = propertyValue.getBody()
+      const oldFunctionBody = functionBody.getText()
+      if (oldFunctionBody.includes('`var(')) return // already replaced, skip!
 
-      // step 1: convert get('scale.white') to (theme: any) => get('scale.white')(theme),
+      const oldVariableName = `--color-${prefix}-${kebabCase(propertyName)}`
+      const newVariableName = getNewVariable(oldVariableName)
+      const newFunctionBody = `var(${newVariableName}, var(${oldVariableName}, ${oldFunctionBody.replaceAll('`', '')}))`
+
+      functionBody.replaceWithText(`\`${newFunctionBody}\``)
     }
   })
   sourceFile.save()
