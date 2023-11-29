@@ -255,11 +255,11 @@
     --color-project-sidebar-bg: var(undefined, var(--color-project-sidebar-bg, #2d333b));
     --color-project-gradient-in: var(undefined, var(--color-project-gradient-in, #2d333b));
     --color-project-gradient-out: var(undefined, var(--color-project-gradient-out, rgba(45,51,59,0)));
-    --color-mktg-btn-bg: #f6f8fa;
-    --color-mktg-btn-shadow-outline: rgb(255 255 255 / 25%) 0 0 0 1px inset;
-    --color-mktg-btn-shadow-focus: rgb(255 255 255 / 25%) 0 0 0 4px;
-    --color-mktg-btn-shadow-hover: 0 4px 7px rgba(0, 0, 0, 0.15), 0 100px 80px rgba(255, 255, 255, 0.02), 0 42px 33px rgba(255, 255, 255, 0.024), 0 22px 18px rgba(255, 255, 255, 0.028), 0 12px 10px rgba(255, 255, 255, 0.034), 0 7px 5px rgba(255, 255, 255, 0.04), 0 3px 2px rgba(255, 255, 255, 0.07);
-    --color-mktg-btn-shadow-hover-muted: rgb(255 255 255) 0 0 0 2px inset;
+    --color-mktg-btn-bg: var(--control-bgColor-rest, var(--color-btn-bg, #f6f8fa));
+    --color-mktg-btn-shadow-outline: var(undefined, var(--color-shadow-outline, rgb(255 255 255 / 25%) 0 0 0 1px inset));
+    --color-mktg-btn-shadow-focus: var(undefined, var(--color-shadow-focus, rgb(255 255 255 / 25%) 0 0 0 4px));
+    --color-mktg-btn-shadow-hover: var(undefined, var(--color-shadow-hover, 0 4px 7px rgba(0, 0, 0, 0.15), 0 100px 80px rgba(255, 255, 255, 0.02), 0 42px 33px rgba(255, 255, 255, 0.024), 0 22px 18px rgba(255, 255, 255, 0.028), 0 12px 10px rgba(255, 255, 255, 0.034), 0 7px 5px rgba(255, 255, 255, 0.04), 0 3px 2px rgba(255, 255, 255, 0.07)));
+    --color-mktg-btn-shadow-hover-muted: var(undefined, var(--color-shadow-hover-muted, rgb(255 255 255) 0 0 0 2px inset));
     --color-control-border-color-emphasis: var(undefined, var(--color-borderColor-emphasis, #606771));
     --color-avatar-bg: var(--avatar-bgColor, var(--color-avatar-bg, rgba(205,217,229,0.1)));
     --color-avatar-border: var(--avatar-borderColor, var(--color-avatar-border, (obj) => {

@@ -147,11 +147,11 @@
     --color-project-sidebar-bg: var(undefined, var(--color-project-sidebar-bg, #ffffff));
     --color-project-gradient-in: var(undefined, var(--color-project-gradient-in, #ffffff));
     --color-project-gradient-out: var(undefined, var(--color-project-gradient-out, rgba(255,255,255,0)));
-    --color-mktg-btn-bg: #1b1f23;
-    --color-mktg-btn-shadow-outline: rgb(0 0 0 / 15%) 0 0 0 1px inset;
-    --color-mktg-btn-shadow-focus: rgb(0 0 0 / 15%) 0 0 0 4px;
-    --color-mktg-btn-shadow-hover: 0 3px 2px rgba(0, 0, 0, 0.07), 0 7px 5px rgba(0, 0, 0, 0.04), 0 12px 10px rgba(0, 0, 0, 0.03), 0 22px 18px rgba(0, 0, 0, 0.03), 0 42px 33px rgba(0, 0, 0, 0.02), 0 100px 80px rgba(0, 0, 0, 0.02);
-    --color-mktg-btn-shadow-hover-muted: rgb(0 0 0 / 70%) 0 0 0 2px inset;
+    --color-mktg-btn-bg: var(--control-bgColor-rest, var(--color-btn-bg, #1b1f23));
+    --color-mktg-btn-shadow-outline: var(undefined, var(--color-shadow-outline, rgb(0 0 0 / 15%) 0 0 0 1px inset));
+    --color-mktg-btn-shadow-focus: var(undefined, var(--color-shadow-focus, rgb(0 0 0 / 15%) 0 0 0 4px));
+    --color-mktg-btn-shadow-hover: var(undefined, var(--color-shadow-hover, 0 3px 2px rgba(0, 0, 0, 0.07), 0 7px 5px rgba(0, 0, 0, 0.04), 0 12px 10px rgba(0, 0, 0, 0.03), 0 22px 18px rgba(0, 0, 0, 0.03), 0 42px 33px rgba(0, 0, 0, 0.02), 0 100px 80px rgba(0, 0, 0, 0.02)));
+    --color-mktg-btn-shadow-hover-muted: var(undefined, var(--color-shadow-hover-muted, rgb(0 0 0 / 70%) 0 0 0 2px inset));
     --color-control-border-color-emphasis: var(undefined, var(--color-borderColor-emphasis, #858F99));
     --color-avatar-bg: var(--avatar-bgColor, var(--color-avatar-bg, #ffffff));
     --color-avatar-border: var(--avatar-borderColor, var(--color-avatar-border, (theme) => `var(undefined, var(--color-border-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.black'), 0.15)(theme)}))`));
