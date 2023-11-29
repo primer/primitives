@@ -8,14 +8,14 @@
   "diffBlob": {
     "addition": {
       "numText": "#0e1116",
-      "fg": "var(undefined, var(--color-fg-onEmphasis, #ffffff))",
+      "fg": "var(--fgColor-onEmphasis, var(--color-fg-on-emphasis, #ffffff))",
       "numBg": "#ccffd8",
       "lineBg": "#e6ffec",
       "wordBg": "#055d20"
     },
     "deletion": {
       "numText": "#0e1116",
-      "fg": "var(undefined, var(--color-fg-onEmphasis, #ffffff))",
+      "fg": "var(--fgColor-onEmphasis, var(--color-fg-on-emphasis, #ffffff))",
       "numBg": "#ffd7d5",
       "lineBg": "var(--bgColor-danger-muted, var(--color-danger-subtle, #fff0ee))",
       "wordBg": "var(--control-borderColor-danger, var(--color-danger-emphasis, #a0111f))"
@@ -346,7 +346,7 @@
     "danger": {
       "hoverBg": "var(--control-borderColor-danger, var(--color-danger-emphasis, #a0111f))",
       "activeBg": "#6e011a",
-      "hoverText": "var(undefined, var(--color-fg-onEmphasis, #ffffff))"
+      "hoverText": "var(--fgColor-onEmphasis, var(--color-fg-on-emphasis, #ffffff))"
     }
   },
   "switchTrack": {
@@ -354,15 +354,15 @@
     "hoverBg": "var(undefined, var(--color-neutral-emphasis, hsla(211,9%,47%,1)))",
     "activeBg": "var(undefined, var(--color-neutral-emphasis, hsla(211,9%,49%,1)))",
     "disabledBg": "#88929d",
-    "fg": "var(undefined, var(--color-fg-onEmphasis, #ffffff))",
-    "disabledFg": "var(undefined, var(--color-fg-onEmphasis, #ffffff))",
+    "fg": "var(--fgColor-onEmphasis, var(--color-fg-on-emphasis, #ffffff))",
+    "disabledFg": "var(--fgColor-onEmphasis, var(--color-fg-on-emphasis, #ffffff))",
     "border": "rgba(0,0,0,0)",
     "checked": {
       "bg": "var(--bgColor-accent-emphasis, var(--color-accent-emphasis, #0349b4))",
       "hoverBg": "#0860CA",
       "activeBg": "#0757BA",
-      "fg": "var(undefined, var(--color-fg-onEmphasis, #ffffff))",
-      "disabledFg": "var(undefined, var(--color-fg-onEmphasis, #ffffff))",
+      "fg": "var(--fgColor-onEmphasis, var(--color-fg-on-emphasis, #ffffff))",
+      "disabledFg": "var(--fgColor-onEmphasis, var(--color-fg-on-emphasis, #ffffff))",
       "border": "rgba(0,0,0,0)"
     }
   },
@@ -403,7 +403,7 @@
     "default": "#0e1116",
     "muted": "#0e1116",
     "subtle": "var(--control-fgColor-placeholder, var(--color-fg-subtle, #66707b))",
-    "onEmphasis": "var(undefined, var(--color-fg-onEmphasis, #ffffff))"
+    "onEmphasis": "var(--fgColor-onEmphasis, var(--color-fg-on-emphasis, #ffffff))"
   },
   "canvas": {
     "default": "var(--bgColor-default, var(--color-canvas-default, #ffffff))",
@@ -423,7 +423,7 @@
     "extraLarge": "0 12px 28px rgba(136,146,157,0.3)"
   },
   "neutral": {
-    "emphasisPlus": "var(undefined, var(--color-neutral-emphasisPlus, #0e1116))",
+    "emphasisPlus": "var(--bgColor-emphasis, var(--color-neutral-emphasis-plus, #0e1116))",
     "emphasis": "var(undefined, var(--color-neutral-emphasis, #66707b))",
     "muted": "var(--bgColor-disabled, var(--color-neutral-muted, rgba(172,182,192,0.2)))",
     "subtle": "#e7ecf0"

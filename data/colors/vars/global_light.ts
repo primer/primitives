@@ -5,7 +5,7 @@ export default {
     default: (theme: any) => `var(--control-fgColor-rest, var(--color-fg-default, ${get('scale.black')(theme)}))`,
     muted: "var(--control-iconColor-rest, var(--color-fg-muted, #656d76))",
     subtle: (theme: any) => `var(--control-fgColor-placeholder, var(--color-fg-subtle, ${get('scale.gray.5')(theme)}))`,
-    onEmphasis: (theme: any) => `var(undefined, var(--color-fg-onEmphasis, ${get('scale.white')(theme)}))`
+    onEmphasis: (theme: any) => `var(--fgColor-onEmphasis, var(--color-fg-on-emphasis, ${get('scale.white')(theme)}))`
   },
   canvas: {
     default: (theme: any) => `var(--bgColor-default, var(--color-canvas-default, ${get('scale.white')(theme)}))`,
@@ -27,7 +27,7 @@ export default {
 
   // Roles
   neutral: {
-    emphasisPlus: (theme: any) => `var(undefined, var(--color-neutral-emphasisPlus, ${get('scale.gray.9')(theme)}))`,
+    emphasisPlus: (theme: any) => `var(--bgColor-emphasis, var(--color-neutral-emphasis-plus, ${get('scale.gray.9')(theme)}))`,
     emphasis: (theme: any) => `var(undefined, var(--color-neutral-emphasis, ${get('scale.gray.5')(theme)}))`,
     muted: (theme: any) => `var(--bgColor-disabled, var(--color-neutral-muted, ${alpha(get('scale.gray.3'), 0.2)(theme)}))`,
     subtle: (theme: any) => `var(--bgColor-neutral-muted, var(--color-neutral-subtle, ${alpha(get('scale.gray.1'), 0.5)(theme)}))`

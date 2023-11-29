@@ -273,13 +273,13 @@
     --color-switch-track-active-bg: hsla(210,24%,88%,1);
     --color-switch-track-disabled-bg: #8c959f;
     --color-switch-track-fg: #57606a;
-    --color-switch-track-disabled-fg: var(undefined, var(--color-fg-onEmphasis, #ffffff));
+    --color-switch-track-disabled-fg: var(--fgColor-onEmphasis, var(--color-fg-on-emphasis, #ffffff));
     --color-switch-track-border: rgba(0,0,0,0);
     --color-switch-track-checked-bg: var(--bgColor-accent-emphasis, var(--color-accent-emphasis, #0969da));
     --color-switch-track-checked-hover-bg: #0860CA;
     --color-switch-track-checked-active-bg: #0757BA;
-    --color-switch-track-checked-fg: var(undefined, var(--color-fg-onEmphasis, #ffffff));
-    --color-switch-track-checked-disabled-fg: var(undefined, var(--color-fg-onEmphasis, #ffffff));
+    --color-switch-track-checked-fg: var(--fgColor-onEmphasis, var(--color-fg-on-emphasis, #ffffff));
+    --color-switch-track-checked-disabled-fg: var(--fgColor-onEmphasis, var(--color-fg-on-emphasis, #ffffff));
     --color-switch-track-checked-border: rgba(0,0,0,0);
     --color-switch-knob-bg: var(--bgColor-default, var(--color-canvas-default, #ffffff));
     --color-switch-knob-disabled-bg: var(--bgColor-muted, var(--color-canvas-subtle, #f6f8fa));
@@ -297,7 +297,7 @@
     --color-fg-default: #24292f;
     --color-fg-muted: #57606a;
     --color-fg-subtle: var(--control-fgColor-placeholder, var(--color-fg-subtle, #6e7781));
-    --color-fg-on-emphasis: var(undefined, var(--color-fg-onEmphasis, #ffffff));
+    --color-fg-on-emphasis: var(--fgColor-onEmphasis, var(--color-fg-on-emphasis, #ffffff));
     --color-canvas-default: var(--bgColor-default, var(--color-canvas-default, #ffffff));
     --color-canvas-overlay: var(--overlay-bgColor, var(--color-canvas-overlay, #ffffff));
     --color-canvas-inset: var(--bgColor-inset, var(--color-canvas-inset, #f6f8fa));
@@ -309,7 +309,7 @@
     --color-shadow-medium: 0 3px 6px rgba(140,149,159,0.15);
     --color-shadow-large: 0 8px 24px rgba(140,149,159,0.2);
     --color-shadow-extra-large: 0 12px 28px rgba(140,149,159,0.3);
-    --color-neutral-emphasis-plus: var(undefined, var(--color-neutral-emphasisPlus, #24292f));
+    --color-neutral-emphasis-plus: var(--bgColor-emphasis, var(--color-neutral-emphasis-plus, #24292f));
     --color-neutral-emphasis: var(undefined, var(--color-neutral-emphasis, #6e7781));
     --color-neutral-muted: var(--bgColor-disabled, var(--color-neutral-muted, rgba(175,184,193,0.2)));
     --color-neutral-subtle: var(--bgColor-neutral-muted, var(--color-neutral-subtle, rgba(234,238,242,0.5)));

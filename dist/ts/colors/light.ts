@@ -355,14 +355,14 @@ export default {
     "activeBg": "hsla(210,24%,88%,1)",
     "disabledBg": "#8c959f",
     "fg": "var(--control-iconColor-rest, var(--color-fg-muted, #656d76))",
-    "disabledFg": "var(undefined, var(--color-fg-onEmphasis, #ffffff))",
+    "disabledFg": "var(--fgColor-onEmphasis, var(--color-fg-on-emphasis, #ffffff))",
     "border": "rgba(0,0,0,0)",
     "checked": {
       "bg": "var(--bgColor-accent-emphasis, var(--color-accent-emphasis, #0969da))",
       "hoverBg": "#0860CA",
       "activeBg": "#0757BA",
-      "fg": "var(undefined, var(--color-fg-onEmphasis, #ffffff))",
-      "disabledFg": "var(undefined, var(--color-fg-onEmphasis, #ffffff))",
+      "fg": "var(--fgColor-onEmphasis, var(--color-fg-on-emphasis, #ffffff))",
+      "disabledFg": "var(--fgColor-onEmphasis, var(--color-fg-on-emphasis, #ffffff))",
       "border": "rgba(0,0,0,0)"
     }
   },
@@ -403,7 +403,7 @@ export default {
     "default": "var(--control-fgColor-rest, var(--color-fg-default, #1F2328))",
     "muted": "var(--control-iconColor-rest, var(--color-fg-muted, #656d76))",
     "subtle": "var(--control-fgColor-placeholder, var(--color-fg-subtle, #6e7781))",
-    "onEmphasis": "var(undefined, var(--color-fg-onEmphasis, #ffffff))"
+    "onEmphasis": "var(--fgColor-onEmphasis, var(--color-fg-on-emphasis, #ffffff))"
   },
   "canvas": {
     "default": "var(--bgColor-default, var(--color-canvas-default, #ffffff))",
@@ -423,7 +423,7 @@ export default {
     "extraLarge": "0 12px 28px rgba(140,149,159,0.3)"
   },
   "neutral": {
-    "emphasisPlus": "var(undefined, var(--color-neutral-emphasisPlus, #24292f))",
+    "emphasisPlus": "var(--bgColor-emphasis, var(--color-neutral-emphasis-plus, #24292f))",
     "emphasis": "var(undefined, var(--color-neutral-emphasis, #6e7781))",
     "muted": "var(--bgColor-disabled, var(--color-neutral-muted, rgba(175,184,193,0.2)))",
     "subtle": "var(--bgColor-neutral-muted, var(--color-neutral-subtle, rgba(234,238,242,0.5)))"

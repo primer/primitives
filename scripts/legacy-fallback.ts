@@ -1,5 +1,6 @@
 import {resolve} from 'path'
 import {Project, ScriptTarget, SyntaxKind} from 'ts-morph'
+import kebabCase from 'lodash/kebabCase'
 
 // eslint-disable-next-line import/extensions
 import fallbacks from '../src/tokens/fallback/color-fallbacks.json'
@@ -99,7 +100,7 @@ project.getSourceFiles().map(sourceFile => {
       const oldValue = propertyValue.getText()
       if (oldValue.startsWith(`"var(--`)) return // already replaced, skip!
 
-      const oldVariableName = `--color-${prefix}-${propertyName}`
+      const oldVariableName = `--color-${prefix}-${kebabCase(propertyName)}`
       const newVariableName = getNewVariable(oldVariableName)
 
       const newValue = `"var(${newVariableName}, var(${oldVariableName}, ${oldValue.replaceAll(`'`, ``)}))"`
@@ -132,7 +133,7 @@ project.getSourceFiles().map(sourceFile => {
       const oldValue = propertyValue.getText()
       if (oldValue.includes(`"var(--`)) return // already replaced, skip!
 
-      const oldVariableName = `--color-${prefix}-${propertyName}`
+      const oldVariableName = `--color-${prefix}-${kebabCase(propertyName)}`
       const newVariableName = getNewVariable(oldVariableName)
       const newValue = `(theme: any) => \`var(${newVariableName}, var(${oldVariableName}, $\{${oldValue}(theme)}))\``
       propertyValue.replaceWithText(newValue)
