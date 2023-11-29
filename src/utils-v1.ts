@@ -6,9 +6,17 @@ import isFunction from 'lodash/isFunction'
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type Value = string | ((obj: any) => string)
 
+// New: instead of return #hex, this now returns var(--v, #hex) which fails parsing for transparentize
+function getFallbackValueFromVar(value: string) {
+  if (typeof value !== 'string') return value
+  if (!value.includes('var(--')) return value
+
+  return value.split(',')[1].replace(' #', '#').replace(')', '')
+}
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function resolveValue(value: Value, obj: any): string {
-  return isFunction(value) ? resolveValue(value(obj), obj) : value
+  return isFunction(value) ? resolveValue(value(obj), obj) : getFallbackValueFromVar(value)
 }
 
 export function merge(...objects: object[]) {
