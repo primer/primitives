@@ -5,7 +5,6 @@ import kebabCase from 'lodash/kebabCase'
 // eslint-disable-next-line import/extensions
 import fallbacks from '../src/tokens/fallback/color-fallbacks.json'
 
-// TODO: flag no fallback and multiple fallbacks
 type FallbackMap = Record<string, string>
 const getNewVariable = (oldVariable: string) => {
   const matchingVariables = Object.keys(fallbacks as FallbackMap).filter(newVariable => {
@@ -13,8 +12,8 @@ const getNewVariable = (oldVariable: string) => {
   })
   let optionalComment
 
-  if (matchingVariables.length === 0) optionalComment = ''
-  else if (matchingVariables.length > 1) optionalComment = ''
+  if (matchingVariables.length === 0) optionalComment = 'no matches'
+  else if (matchingVariables.length > 1) optionalComment = 'multiple matches'
   return [matchingVariables[0], optionalComment]
 }
 
@@ -109,8 +108,8 @@ project.getSourceFiles().map(sourceFile => {
       const oldVariableName = `--color-${prefix}-${kebabCase(propertyName)}`
       const [newVariableName, optionalComment] = getNewVariable(oldVariableName)
 
-      let newValue = `"var(${newVariableName}, var(${oldVariableName}, ${oldValue.replaceAll(`'`, ``)}))"`
-      if (optionalComment) newValue += `// ${optionalComment}`
+      const newValue = `"var(${newVariableName}, var(${oldVariableName}, ${oldValue.replaceAll(`'`, ``)}))"`
+      // if (optionalComment) newValue += ` // ${optionalComment}`
       propertyValue.replaceWithText(newValue)
     } else if (Node.isCallExpression(propertyValue)) {
       /**
@@ -143,8 +142,13 @@ project.getSourceFiles().map(sourceFile => {
       const oldVariableName = `--color-${prefix}-${kebabCase(propertyName)}`
 
       const [newVariableName, optionalComment] = getNewVariable(oldVariableName)
-      let newValue = `(theme: any) => \`var(${newVariableName}, var(${oldVariableName}, $\{${oldValue}(theme)}))\``
-      if (optionalComment) newValue += `// ${optionalComment}`
+      let newValue
+      if (optionalComment) {
+        newValue = `(theme: any, HI_KATIE: '${optionalComment}') => \`var(${newVariableName}, var(${oldVariableName}, $\{${oldValue}(theme)}))\``
+      } else {
+        newValue = `(theme: any) => \`var(${newVariableName}, var(${oldVariableName}, $\{${oldValue}(theme)}))\``
+      }
+
       propertyValue.replaceWithText(newValue)
     } else if (Node.isArrowFunction(propertyValue)) {
       /**
