@@ -30,7 +30,7 @@ export default {
     expander: {
       icon: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-diffBlob-addition-deletion-hunk-expander-icon, ${get('fg.muted')(theme)}))`
     },
-    selectedLineHighlightMixBlendMode: "var(undefined, var(--color-diffBlob-addition-deletion-hunk-expander-selected-line-highlight-mix-blend-mode, screen))"
+    selectedLineHighlightMixBlendMode: /* HI_KATIE: no matches */"var(undefined, var(--color-diffBlob-addition-deletion-hunk-expander-selected-line-highlight-mix-blend-mode, screen))"
   },
   diffstat: {
     deletionBorder: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-diffstat-deletion-border, ${get('border.subtle')(theme)}))`,
@@ -98,8 +98,8 @@ export default {
   },
   checks: {
     bg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-checks-bg, ${get('canvas.inset')(theme)}))`,
-    runBorderWidth: "var(undefined, var(--color-checks-run-border-width, 1px))",
-    containerBorderWidth: "var(undefined, var(--color-checks-container-border-width, 1px))",
+    runBorderWidth: /* HI_KATIE: no matches */"var(undefined, var(--color-checks-run-border-width, 1px))",
+    containerBorderWidth: /* HI_KATIE: no matches */"var(undefined, var(--color-checks-container-border-width, 1px))",
     textPrimary: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-checks-text-primary, ${get('fg.default')(theme)}))`,
     textSecondary: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-checks-text-secondary, ${get('fg.muted')(theme)}))`,
     textLink: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-checks-text-link, ${get('accent.fg')(theme)}))`,
@@ -169,8 +169,8 @@ export default {
       blueBright: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-checks-ansi-blue-bright, ${get('scale.blue.2')(theme)}))`,
       magenta: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-checks-ansi-magenta, ${get('scale.purple.3')(theme)}))`,
       magentaBright: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-checks-ansi-magenta-bright, ${get('scale.purple.2')(theme)}))`,
-      cyan: "var(undefined, var(--color-checks-ansi-cyan, #76e3ea))",
-      cyanBright: "var(undefined, var(--color-checks-ansi-cyan-bright, #b3f0ff))"
+      cyan: /* HI_KATIE: no matches */"var(undefined, var(--color-checks-ansi-cyan, #76e3ea))",
+      cyanBright: /* HI_KATIE: no matches */"var(undefined, var(--color-checks-ansi-cyan-bright, #b3f0ff))"
     }
   },
   project: {

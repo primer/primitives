@@ -13,14 +13,14 @@ export default {
     addition: {
       numText: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-diffBlob-addition-num-text, ${get('fg.default')(theme)}))`,
       fg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-diffBlob-addition-fg, ${get('fg.default')(theme)}))`,
-      numBg: "var(undefined, var(--color-diffBlob-addition-num-bg, #ccffd8))",
-      lineBg: "var(undefined, var(--color-diffBlob-addition-line-bg, #e6ffec))",
-      wordBg: "var(undefined, var(--color-diffBlob-addition-word-bg, #abf2bc))"
+      numBg: /* HI_KATIE: no matches */"var(undefined, var(--color-diffBlob-addition-num-bg, #ccffd8))",
+      lineBg: /* HI_KATIE: no matches */"var(undefined, var(--color-diffBlob-addition-line-bg, #e6ffec))",
+      wordBg: /* HI_KATIE: no matches */"var(undefined, var(--color-diffBlob-addition-word-bg, #abf2bc))"
     },
     deletion: {
       numText: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-diffBlob-addition-deletion-num-text, ${get('fg.default')(theme)}))`,
       fg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-diffBlob-addition-deletion-fg, ${get('fg.default')(theme)}))`,
-      numBg: "var(undefined, var(--color-diffBlob-addition-deletion-num-bg, #ffd7d5))",
+      numBg: /* HI_KATIE: no matches */"var(undefined, var(--color-diffBlob-addition-deletion-num-bg, #ffd7d5))",
       lineBg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-diffBlob-addition-deletion-line-bg, ${get('danger.subtle')(theme)}))`,
       wordBg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-diffBlob-addition-deletion-word-bg, ${get('danger.muted')(theme)}))`
     },
@@ -30,7 +30,7 @@ export default {
     expander: {
       icon: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-diffBlob-addition-deletion-hunk-expander-icon, ${get('fg.muted')(theme)}))`
     },
-    selectedLineHighlightMixBlendMode: "var(undefined, var(--color-diffBlob-addition-deletion-hunk-expander-selected-line-highlight-mix-blend-mode, multiply))"
+    selectedLineHighlightMixBlendMode: /* HI_KATIE: no matches */"var(undefined, var(--color-diffBlob-addition-deletion-hunk-expander-selected-line-highlight-mix-blend-mode, multiply))"
   },
   diffstat: {
     deletionBorder: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-diffstat-deletion-border, ${get('border.subtle')(theme)}))`,
@@ -98,19 +98,19 @@ export default {
   },
   checks: {
     bg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-checks-bg, ${get('scale.gray.9')(theme)}))`,
-    runBorderWidth: "var(undefined, var(--color-checks-run-border-width, 0px))",
-    containerBorderWidth: "var(undefined, var(--color-checks-container-border-width, 0px))",
+    runBorderWidth: /* HI_KATIE: no matches */"var(undefined, var(--color-checks-run-border-width, 0px))",
+    containerBorderWidth: /* HI_KATIE: no matches */"var(undefined, var(--color-checks-container-border-width, 0px))",
     textPrimary: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-checks-text-primary, ${get('scale.gray.0')(theme)}))`,
     textSecondary: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-checks-text-secondary, ${get('scale.gray.4')(theme)}))`,
     textLink: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-checks-text-link, ${get('scale.blue.3')(theme)}))`,
     btnIcon: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-checks-btn-icon, ${get('scale.gray.3')(theme)}))`,
     btnHoverIcon: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-checks-btn-hover-icon, ${get('scale.gray.0')(theme)}))`,
-    btnHoverBg: "var(undefined, var(--color-checks-btn-hover-bg, rgba(255,255,255,0.125)))",
+    btnHoverBg: /* HI_KATIE: no matches */"var(undefined, var(--color-checks-btn-hover-bg, rgba(255,255,255,0.125)))",
     inputText: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-checks-input-text, ${get('scale.gray.1')(theme)}))`,
     inputPlaceholderText: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-checks-input-placeholder-text, ${get('scale.gray.4')(theme)}))`,
     inputFocusText: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-checks-input-focus-text, ${get('scale.gray.4')(theme)}))`,
     inputBg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-checks-input-bg, ${get('scale.gray.8')(theme)}))`,
-    inputShadow: "var(undefined, var(--color-checks-input-shadow, none))",
+    inputShadow: /* HI_KATIE: no matches */"var(undefined, var(--color-checks-input-shadow, none))",
     donutError: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-checks-donut-error, ${get('scale.red.4')(theme)}))`,
     donutPending: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-checks-donut-pending, ${get('scale.yellow.4')(theme)}))`,
     donutSuccess: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-checks-donut-success, ${get('success.emphasis')(theme)}))`,
@@ -169,8 +169,8 @@ export default {
       blueBright: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-checks-ansi-blue-bright, ${get('scale.blue.2')(theme)}))`,
       magenta: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-checks-ansi-magenta, ${get('scale.purple.3')(theme)}))`,
       magentaBright: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-checks-ansi-magenta-bright, ${get('scale.purple.2')(theme)}))`,
-      cyan: "var(undefined, var(--color-checks-ansi-cyan, #76e3ea))",
-      cyanBright: "var(undefined, var(--color-checks-ansi-cyan-bright, #b3f0ff))"
+      cyan: /* HI_KATIE: no matches */"var(undefined, var(--color-checks-ansi-cyan, #76e3ea))",
+      cyanBright: /* HI_KATIE: no matches */"var(undefined, var(--color-checks-ansi-cyan-bright, #b3f0ff))"
     }
   },
   project: {

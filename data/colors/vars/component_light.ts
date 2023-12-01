@@ -3,7 +3,7 @@ import {alpha, darken, get} from '../../../src/utils-v1'
 export default {
   control: {
     borderColor: {
-      emphasis: "var(undefined, var(--color-control-borderColor-emphasis, #858F99))"
+      emphasis: /* HI_KATIE: no matches */"var(undefined, var(--color-control-borderColor-emphasis, #858F99))"
     }
   },
   avatar: {
@@ -14,13 +14,13 @@ export default {
     childShadow: (theme: any) => `var(--avatar-shadow, var(--color-avatar-child-shadow, 0 0 0 2px ${alpha(get('scale.white'), 0.8)(theme)}))`
   },
   topicTag: {
-    border: "var(undefined, var(--color-topicTag-border, transparent))"
+    border: /* HI_KATIE: no matches */"var(undefined, var(--color-topicTag-border, transparent))"
   },
   counter: {
     border: "var(--counter-borderColor, var(--color-counter-border, transparent))"
   },
   selectMenu: {
-    backdropBorder: "var(undefined, var(--color-selectMenu-backdrop-border, transparent))",
+    backdropBorder: /* HI_KATIE: no matches */"var(undefined, var(--color-selectMenu-backdrop-border, transparent))",
     tapHighlight: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-selectMenu-tap-highlight, ${alpha(get('scale.gray.3'), 0.5)(theme)}))`,
     tapFocusBg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-selectMenu-tap-focus-bg, ${get('scale.blue.1')(theme)}))`
   },
@@ -70,8 +70,8 @@ export default {
     blueBright: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-ansi-blue-bright, ${get('scale.blue.4')(theme)}))`,
     magenta: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-ansi-magenta, ${get('scale.purple.5')(theme)}))`,
     magentaBright: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-ansi-magenta-bright, ${get('scale.purple.4')(theme)}))`,
-    cyan: "var(undefined, var(--color-ansi-cyan, #1b7c83))",
-    cyanBright: "var(undefined, var(--color-ansi-cyan-bright, #3192aa))"
+    cyan: /* HI_KATIE: no matches */"var(undefined, var(--color-ansi-cyan, #1b7c83))",
+    cyanBright: /* HI_KATIE: no matches */"var(undefined, var(--color-ansi-cyan-bright, #3192aa))"
   },
   // Do we need all these btn variables?
   btn: {
@@ -80,7 +80,7 @@ export default {
     border: (theme: any, HI_KATIE: 'multiple matches') => `var(--control-borderColor-rest, var(--color-btn-border, ${get('border.subtle')(theme)}))`,
     shadow: (theme: any) => `var(--button-default-shadow-resting, var(--color-btn-shadow, 0 1px 0 ${alpha(get('scale.black'), 0.04)(theme)}))`,
     insetShadow: (theme: any) => `var(--button-default-shadow-inset, var(--color-btn-inset-shadow, inset 0 1px 0 ${alpha(get('scale.white'), 0.25)(theme)}))`,
-    hoverBg: "var(--control-bgColor-hover, var(--color-btn-hover-bg, #f3f4f6))",
+    hoverBg: /* HI_KATIE: multiple matches */"var(--control-bgColor-hover, var(--color-btn-hover-bg, #f3f4f6))",
     hoverBorder: (theme: any) => `var(--button-default-borderColor-hover, var(--color-btn-hover-border, ${get('border.subtle')(theme)}))`,
     activeBg: (theme: any) => `var(--button-default-bgColor-active, var(--color-btn-active-bg, ${darken(get('btn.hoverBg'), 0.03)(theme)}))`,
     activeBorder: (theme: any) => `var(--button-default-borderColor-active, var(--color-btn-active-border, ${get('border.subtle')(theme)}))`,
@@ -119,7 +119,7 @@ export default {
       disabledText: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-btn-primary-outline-disabled-text, ${alpha(get('scale.blue.5'), 0.5)(theme)}))`,
       disabledBg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-btn-primary-outline-disabled-bg, ${get('scale.gray.0')(theme)}))`,
       disabledCounterBg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-btn-primary-outline-disabled-counter-bg, ${alpha(get('scale.blue.5'), 0.05)(theme)}))`,
-      counterBg: "var(undefined, var(--color-btn-primary-outline-counter-bg, #0969da1a))",
+      counterBg: /* HI_KATIE: no matches */"var(undefined, var(--color-btn-primary-outline-counter-bg, #0969da1a))",
       counterFg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-btn-primary-outline-counter-fg, ${get('scale.blue.6')(theme)}))`,
       hoverCounterFg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-btn-primary-outline-hover-counter-fg, ${get('scale.white')(theme)}))`,
       disabledCounterFg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-btn-primary-outline-disabled-counter-fg, ${alpha(get('scale.blue.5'), 0.5)(theme)}))`
@@ -163,9 +163,9 @@ export default {
 
     default: {
       hoverBg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-actionListItem-default-hover-bg, ${alpha(get('scale.gray.2'), 0.32)(theme)}))`,
-      hoverBorder: "var(undefined, var(--color-actionListItem-default-hover-border, transparent))",
+      hoverBorder: /* HI_KATIE: no matches */"var(undefined, var(--color-actionListItem-default-hover-border, transparent))",
       activeBg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-actionListItem-default-active-bg, ${alpha(get('scale.gray.2'), 0.48)(theme)}))`,
-      activeBorder: "var(undefined, var(--color-actionListItem-default-active-border, transparent))",
+      activeBorder: /* HI_KATIE: no matches */"var(undefined, var(--color-actionListItem-default-active-border, transparent))",
       selectedBg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-actionListItem-default-selected-bg, ${alpha(get('scale.gray.2'), 0.24)(theme)}))`
     },
     danger: {
@@ -182,22 +182,22 @@ export default {
     disabledBg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-switchTrack-disabled-bg, ${get('scale.gray.4')(theme)}))`,
     fg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-switchTrack-fg, ${get('fg.muted')(theme)}))`,
     disabledFg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-switchTrack-disabled-fg, ${get('fg.onEmphasis')(theme)}))`,
-    border: "var(undefined, var(--color-switchTrack-border, transparent))", // TODO: remove this in next major release
+    border: /* HI_KATIE: no matches */"var(undefined, var(--color-switchTrack-border, transparent))", // TODO: remove this in next major release
 
     checked: {
       bg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-switchTrack-checked-bg, ${get('accent.emphasis')(theme)}))`,
-      hoverBg: "var(undefined, var(--color-switchTrack-checked-hover-bg, #0860CA))", // accent-emphasis + scale-blue-7 @ 20% opacity
-      activeBg: "var(undefined, var(--color-switchTrack-checked-active-bg, #0757BA))", // accent-emphasis + scale-blue-7 @ 20% opacity
+      hoverBg: /* HI_KATIE: no matches */"var(undefined, var(--color-switchTrack-checked-hover-bg, #0860CA))", // accent-emphasis + scale-blue-7 @ 20% opacity
+      activeBg: /* HI_KATIE: no matches */"var(undefined, var(--color-switchTrack-checked-active-bg, #0757BA))", // accent-emphasis + scale-blue-7 @ 20% opacity
       fg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-switchTrack-checked-fg, ${get('fg.onEmphasis')(theme)}))`,
       disabledFg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-switchTrack-checked-disabled-fg, ${get('fg.onEmphasis')(theme)}))`,
-      border: "var(undefined, var(--color-switchTrack-checked-border, transparent))", // TODO: remove this in next major release
+      border: /* HI_KATIE: no matches */"var(undefined, var(--color-switchTrack-checked-border, transparent))", // TODO: remove this in next major release
     }
   },
 
   switchKnob: {
     bg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-switchKnob-bg, ${get('canvas.default')(theme)}))`,
     disabledBg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-switchKnob-disabled-bg, ${get('canvas.subtle')(theme)}))`,
-    border: "var(undefined, var(--color-switchKnob-border, #858F99))", // control contrast border https://github.com/primer/primitives/pull/485
+    border: /* HI_KATIE: no matches */"var(undefined, var(--color-switchKnob-border, #858F99))", // control contrast border https://github.com/primer/primitives/pull/485
 
     checked: {
       bg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-switchKnob-checked-bg, ${get('canvas.default')(theme)}))`, // TODO: remove this in next major release

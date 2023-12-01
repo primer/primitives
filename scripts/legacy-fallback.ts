@@ -110,10 +110,8 @@ project.getSourceFiles().map(sourceFile => {
       const oldVariableName = `--color-${prefix}-${kebabCase(propertyName)}`
       const [newVariableName, optionalComment] = getNewVariable(oldVariableName)
 
-      const newValue = `"var(${newVariableName}, var(${oldVariableName}, ${oldValue.replaceAll(`'`, ``)}))"`
-
-      // TODO: this doesn't work yet!
-      // if (optionalComment) newValue += ` // HI_KATIE: ${optionalComment}`
+      let newValue = `"var(${newVariableName}, var(${oldVariableName}, ${oldValue.replaceAll(`'`, ``)}))"`
+      if (optionalComment) newValue = `/* HI_KATIE: ${optionalComment} */${newValue}`
 
       propertyValue.replaceWithText(newValue)
     } else if (Node.isCallExpression(propertyValue)) {
@@ -147,12 +145,10 @@ project.getSourceFiles().map(sourceFile => {
       const oldVariableName = `--color-${prefix}-${kebabCase(propertyName)}`
 
       const [newVariableName, optionalComment] = getNewVariable(oldVariableName)
-      let newValue
-      if (optionalComment) {
-        newValue = `(theme: any, HI_KATIE: '${optionalComment}') => \`var(${newVariableName}, var(${oldVariableName}, $\{${oldValue}(theme)}))\``
-      } else {
-        newValue = `(theme: any) => \`var(${newVariableName}, var(${oldVariableName}, $\{${oldValue}(theme)}))\``
-      }
+
+      const newValue = `(theme: any${
+        optionalComment ? `, HI_KATIE: '${optionalComment}'` : ''
+      }) => \`var(${newVariableName}, var(${oldVariableName}, $\{${oldValue}(theme)}))\``
 
       propertyValue.replaceWithText(newValue)
     } else if (Node.isArrowFunction(propertyValue)) {

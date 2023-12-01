@@ -3,7 +3,7 @@ import {alpha, darken, lighten, get} from '../../../src/utils-v1'
 export default {
   control: {
     borderColor: {
-      emphasis: "var(undefined, var(--color-control-borderColor-emphasis, #606771))"
+      emphasis: /* HI_KATIE: no matches */"var(undefined, var(--color-control-borderColor-emphasis, #606771))"
     }
   },
   avatar: {
@@ -14,7 +14,7 @@ export default {
     childShadow: (theme: any) => `var(--avatar-shadow, var(--color-avatar-child-shadow, 0 0 0 2px ${get('scale.gray.9')(theme)}))`
   },
   topicTag: {
-    border: "var(undefined, var(--color-topicTag-border, transparent))"
+    border: /* HI_KATIE: no matches */"var(undefined, var(--color-topicTag-border, transparent))"
   },
   counter: {
     border: "var(--counter-borderColor, var(--color-counter-border, transparent))"
@@ -70,8 +70,8 @@ export default {
     blueBright: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-ansi-blue-bright, ${get('scale.blue.2')(theme)}))`,
     magenta: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-ansi-magenta, ${get('scale.purple.3')(theme)}))`,
     magentaBright: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-ansi-magenta-bright, ${get('scale.purple.2')(theme)}))`,
-    cyan: "var(undefined, var(--color-ansi-cyan, #39c5cf))",
-    cyanBright: "var(undefined, var(--color-ansi-cyan-bright, #56d4dd))"
+    cyan: /* HI_KATIE: no matches */"var(undefined, var(--color-ansi-cyan, #39c5cf))",
+    cyanBright: /* HI_KATIE: no matches */"var(undefined, var(--color-ansi-cyan-bright, #56d4dd))"
   },
   btn: {
     text: (theme: any) => `var(--button-default-fgColor-rest, var(--color-btn-text, ${get('scale.gray.1')(theme)}))`,
@@ -90,8 +90,8 @@ export default {
       text: "var(--button-primary-fgColor-rest, var(--color-btn-primary-text, #ffffff))",
       bg: (theme: any) => `var(--button-primary-bgColor-rest, var(--color-btn-primary-bg, ${get('scale.green.5')(theme)}))`,
       border: (theme: any) => `var(--button-primary-borderColor-rest, var(--color-btn-primary-border, ${get('border.subtle')(theme)}))`,
-      shadow: "var(undefined, var(--color-btn-primary-shadow, 0 0 transparent))",
-      insetShadow: "var(undefined, var(--color-btn-primary-inset-shadow, 0 0 transparent))",
+      shadow: /* HI_KATIE: no matches */"var(undefined, var(--color-btn-primary-shadow, 0 0 transparent))",
+      insetShadow: /* HI_KATIE: no matches */"var(undefined, var(--color-btn-primary-inset-shadow, 0 0 transparent))",
       hoverBg: (theme: any) => `var(--button-primary-bgColor-hover, var(--color-btn-primary-hover-bg, ${get('scale.green.4')(theme)}))`,
       hoverBorder: (theme: any) => `var(--button-primary-borderColor-hover, var(--color-btn-primary-hover-border, ${get('border.subtle')(theme)}))`,
       selectedBg: (theme: any) => `var(--button-primary-bgColor-active, var(--color-btn-primary-selected-bg, ${get('scale.green.5')(theme)}))`,
@@ -114,7 +114,7 @@ export default {
       selectedText: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-btn-primary-outline-selected-text, ${get('scale.white')(theme)}))`,
       selectedBg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-btn-primary-outline-selected-bg, ${get('scale.blue.7')(theme)}))`,
       selectedBorder: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-btn-primary-outline-selected-border, ${get('border.subtle')(theme)}))`,
-      selectedShadow: "var(undefined, var(--color-btn-primary-outline-selected-shadow, 0 0 transparent))",
+      selectedShadow: /* HI_KATIE: no matches */"var(undefined, var(--color-btn-primary-outline-selected-shadow, 0 0 transparent))",
       disabledText: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-btn-primary-outline-disabled-text, ${alpha(get('scale.blue.3'), 0.5)(theme)}))`,
       disabledBg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-btn-primary-outline-disabled-bg, ${get('scale.gray.9')(theme)}))`,
       disabledCounterBg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-btn-primary-outline-disabled-counter-bg, ${alpha(get('scale.blue.5'), 0.05)(theme)}))`,
@@ -129,14 +129,14 @@ export default {
       hoverText: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-btn-primary-outline-danger-hover-text, ${get('fg.onEmphasis')(theme)}))`,
       hoverBg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-btn-primary-outline-danger-hover-bg, ${get('scale.red.5')(theme)}))`,
       hoverBorder: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-btn-primary-outline-danger-hover-border, ${get('scale.red.4')(theme)}))`,
-      hoverShadow: "var(undefined, var(--color-btn-primary-outline-danger-hover-shadow, 0 0 transparent))",
-      hoverInsetShadow: "var(undefined, var(--color-btn-primary-outline-danger-hover-inset-shadow, 0 0 transparent))",
+      hoverShadow: /* HI_KATIE: no matches */"var(undefined, var(--color-btn-primary-outline-danger-hover-shadow, 0 0 transparent))",
+      hoverInsetShadow: /* HI_KATIE: no matches */"var(undefined, var(--color-btn-primary-outline-danger-hover-inset-shadow, 0 0 transparent))",
       hoverIcon: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-btn-primary-outline-danger-hover-icon, ${get('fg.onEmphasis')(theme)}))`,
       hoverCounterBg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-btn-primary-outline-danger-hover-counter-bg, ${alpha('#fff', 0.2)(theme)}))`,
-      selectedText: "var(undefined, var(--color-btn-primary-outline-danger-selected-text, #ffffff))",
+      selectedText: /* HI_KATIE: no matches */"var(undefined, var(--color-btn-primary-outline-danger-selected-text, #ffffff))",
       selectedBg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-btn-primary-outline-danger-selected-bg, ${get('scale.red.6')(theme)}))`,
       selectedBorder: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-btn-primary-outline-danger-selected-border, ${get('scale.red.3')(theme)}))`,
-      selectedShadow: "var(undefined, var(--color-btn-primary-outline-danger-selected-shadow, 0 0 transparent))",
+      selectedShadow: /* HI_KATIE: no matches */"var(undefined, var(--color-btn-primary-outline-danger-selected-shadow, 0 0 transparent))",
       disabledText: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-btn-primary-outline-danger-disabled-text, ${alpha(get('scale.red.4'), 0.5)(theme)}))`,
       disabledBg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-btn-primary-outline-danger-disabled-bg, ${get('scale.gray.9')(theme)}))`,
       disabledCounterBg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-btn-primary-outline-danger-disabled-counter-bg, ${alpha(get('scale.red.5'), 0.05)(theme)}))`,
@@ -162,9 +162,9 @@ export default {
 
     default: {
       hoverBg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-actionListItem-default-hover-bg, ${alpha(get('scale.gray.2'), 0.12)(theme)}))`,
-      hoverBorder: "var(undefined, var(--color-actionListItem-default-hover-border, transparent))",
+      hoverBorder: /* HI_KATIE: no matches */"var(undefined, var(--color-actionListItem-default-hover-border, transparent))",
       activeBg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-actionListItem-default-active-bg, ${alpha(get('scale.gray.2'), 0.2)(theme)}))`,
-      activeBorder: "var(undefined, var(--color-actionListItem-default-active-border, transparent))",
+      activeBorder: /* HI_KATIE: no matches */"var(undefined, var(--color-actionListItem-default-active-border, transparent))",
       selectedBg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-actionListItem-default-selected-bg, ${alpha(get('scale.gray.2'), 0.08)(theme)}))`
     },
     danger: {
@@ -181,7 +181,7 @@ export default {
     disabledBg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-switchTrack-disabled-bg, ${get('scale.gray.7')(theme)}))`,
     fg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-switchTrack-fg, ${get('fg.muted')(theme)}))`,
     disabledFg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-switchTrack-disabled-fg, ${get('scale.black')(theme)}))`,
-    border: "var(undefined, var(--color-switchTrack-border, transparent))",  // TODO: remove this in next major release
+    border: /* HI_KATIE: no matches */"var(undefined, var(--color-switchTrack-border, transparent))",  // TODO: remove this in next major release
 
     checked: {
       bg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-switchTrack-checked-bg, ${alpha(get('scale.blue.5'), 0.35)(theme)}))`,
@@ -189,13 +189,13 @@ export default {
       activeBg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-switchTrack-checked-active-bg, ${alpha(get('scale.blue.5'), 0.65)(theme)}))`,
       fg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-switchTrack-checked-fg, ${get('fg.onEmphasis')(theme)}))`,
       disabledFg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-switchTrack-checked-disabled-fg, ${get('scale.black')(theme)}))`,
-      border: "var(undefined, var(--color-switchTrack-checked-border, transparent))",  // TODO: remove this in next major release
+      border: /* HI_KATIE: no matches */"var(undefined, var(--color-switchTrack-checked-border, transparent))",  // TODO: remove this in next major release
     }
   },
 
   switchKnob: {
     bg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-switchKnob-bg, ${get('canvas.default')(theme)}))`,
-    border: "var(undefined, var(--color-switchKnob-border, #606771))", // control contrast border https://github.com/primer/primitives/pull/485
+    border: /* HI_KATIE: no matches */"var(undefined, var(--color-switchKnob-border, #606771))", // control contrast border https://github.com/primer/primitives/pull/485
     disabledBg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-switchKnob-disabled-bg, ${get('canvas.subtle')(theme)}))`,
 
     checked: {

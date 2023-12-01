@@ -2,8 +2,8 @@ import {alpha, get} from '../../../src/utils-v1'
 
 export default {
   fg: {
-    default: "var(--control-fgColor-rest, var(--color-fg-default, #e6edf3))",
-    muted: "var(--control-iconColor-rest, var(--color-fg-muted, #848d97))",
+    default: /* HI_KATIE: multiple matches */"var(--control-fgColor-rest, var(--color-fg-default, #e6edf3))",
+    muted: /* HI_KATIE: multiple matches */"var(--control-iconColor-rest, var(--color-fg-muted, #848d97))",
     subtle: (theme: any, HI_KATIE: 'multiple matches') => `var(--control-fgColor-placeholder, var(--color-fg-subtle, ${get('scale.gray.4')(theme)}))`,
     onEmphasis: (theme: any) => `var(--fgColor-onEmphasis, var(--color-fg-on-emphasis, ${get('scale.white')(theme)}))`
   },
@@ -33,7 +33,7 @@ export default {
     subtle: (theme: any) => `var(--bgColor-neutral-muted, var(--color-neutral-subtle, ${alpha(get('scale.gray.4'), 0.1)(theme)}))`
   },
   accent: {
-    fg: "var(--focus-outlineColor, var(--color-accent-fg, #2f81f7))",
+    fg: /* HI_KATIE: multiple matches */"var(--focus-outlineColor, var(--color-accent-fg, #2f81f7))",
     emphasis: (theme: any, HI_KATIE: 'multiple matches') => `var(--bgColor-accent-emphasis, var(--color-accent-emphasis, ${get('scale.blue.5')(theme)}))`,
     muted: (theme: any) => `var(--borderColor-accent-muted, var(--color-accent-muted, ${alpha(get('scale.blue.4'), 0.4)(theme)}))`,
     subtle: (theme: any) => `var(--bgColor-accent-muted, var(--color-accent-subtle, ${alpha(get('scale.blue.4'), 0.1)(theme)}))`
@@ -101,8 +101,8 @@ export default {
       contrast: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-primer-fg-canvas-border-contrast, ${alpha(get('scale.white'), 0.2)(theme)}))` // use to increase contrast
     },
     shadow: {
-      highlight: "var(undefined, var(--color-primer-fg-canvas-border-shadow-highlight, 0 0 transparent))", // top highlight
-      inset: "var(undefined, var(--color-primer-fg-canvas-border-shadow-inset, 0 0 transparent))", // top inner shadow
+      highlight: /* HI_KATIE: no matches */"var(undefined, var(--color-primer-fg-canvas-border-shadow-highlight, 0 0 transparent))", // top highlight
+      inset: /* HI_KATIE: no matches */"var(undefined, var(--color-primer-fg-canvas-border-shadow-inset, 0 0 transparent))", // top inner shadow
     }
   }
 }

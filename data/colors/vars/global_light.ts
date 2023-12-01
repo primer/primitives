@@ -3,7 +3,7 @@ import {alpha, get, lighten} from '../../../src/utils-v1'
 export default {
   fg: {
     default: (theme: any, HI_KATIE: 'multiple matches') => `var(--control-fgColor-rest, var(--color-fg-default, ${get('scale.black')(theme)}))`,
-    muted: "var(--control-iconColor-rest, var(--color-fg-muted, #656d76))",
+    muted: /* HI_KATIE: multiple matches */"var(--control-iconColor-rest, var(--color-fg-muted, #656d76))",
     subtle: (theme: any, HI_KATIE: 'multiple matches') => `var(--control-fgColor-placeholder, var(--color-fg-subtle, ${get('scale.gray.5')(theme)}))`,
     onEmphasis: (theme: any) => `var(--fgColor-onEmphasis, var(--color-fg-on-emphasis, ${get('scale.white')(theme)}))`
   },
@@ -40,7 +40,7 @@ export default {
   },
   success: {
     fg: (theme: any) => `var(--fgColor-success, var(--color-success-fg, ${get('scale.green.5')(theme)}))`,
-    emphasis: "var(--control-borderColor-success, var(--color-success-emphasis, #1f883d))",
+    emphasis: /* HI_KATIE: multiple matches */"var(--control-borderColor-success, var(--color-success-emphasis, #1f883d))",
     muted: (theme: any) => `var(--borderColor-success-muted, var(--color-success-muted, ${alpha(get('scale.green.3'), 0.4)(theme)}))`,
     subtle: (theme: any) => `var(--bgColor-success-muted, var(--color-success-subtle, ${get('scale.green.0')(theme)}))`
   },
@@ -57,7 +57,7 @@ export default {
     subtle: (theme: any) => `var(--bgColor-severe-muted, var(--color-severe-subtle, ${get('scale.orange.0')(theme)}))`
   },
   danger: {
-    fg: "var(--control-danger-fgColor-rest, var(--color-danger-fg, #d1242f))",
+    fg: /* HI_KATIE: multiple matches */"var(--control-danger-fgColor-rest, var(--color-danger-fg, #d1242f))",
     emphasis: (theme: any, HI_KATIE: 'multiple matches') => `var(--control-borderColor-danger, var(--color-danger-emphasis, ${get('scale.red.5')(theme)}))`,
     muted: (theme: any) => `var(--borderColor-danger-muted, var(--color-danger-muted, ${alpha(get('scale.red.3'), 0.4)(theme)}))`,
     subtle: (theme: any) => `var(--bgColor-danger-muted, var(--color-danger-subtle, ${get('scale.red.0')(theme)}))`
