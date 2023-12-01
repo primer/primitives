@@ -107,7 +107,7 @@ project.getSourceFiles().map(sourceFile => {
       const oldValue = propertyValue.getText()
       if (oldValue.startsWith(`"var(`)) return // already replaced, skip!
 
-      const oldVariableName = `--color-${prefix}-${kebabCase(propertyName)}`
+      const oldVariableName = `--color-${prefix ? `${prefix}-` : ''}${kebabCase(propertyName)}`
       const [newVariableName, optionalComment] = getNewVariable(oldVariableName)
 
       let newValue = `"var(${newVariableName}, var(${oldVariableName}, ${oldValue.replaceAll(`'`, ``)}))"`
@@ -142,7 +142,7 @@ project.getSourceFiles().map(sourceFile => {
       const oldValue = propertyValue.getText()
       if (oldValue.includes(`"var(`)) return // already replaced, skip!
 
-      const oldVariableName = `--color-${prefix}-${kebabCase(propertyName)}`
+      const oldVariableName = `--color-${prefix ? `${prefix}-` : ''}${kebabCase(propertyName)}`
 
       const [newVariableName, optionalComment] = getNewVariable(oldVariableName)
 
@@ -179,7 +179,7 @@ project.getSourceFiles().map(sourceFile => {
       const oldFunctionBody = functionBody.getText()
       if (oldFunctionBody.includes('`var(')) return // already replaced, skip!
 
-      const oldVariableName = `--color-${prefix}-${kebabCase(propertyName)}`
+      const oldVariableName = `--color-${prefix ? `${prefix}-` : ''}${kebabCase(propertyName)}`
 
       const [newVariableName, optionalComment] = getNewVariable(oldVariableName)
 

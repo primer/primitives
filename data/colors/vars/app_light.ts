@@ -3,8 +3,8 @@ import {alpha, get} from '../../../src/utils-v1'
 // Variables to be moved to github/github
 
 export default {
-  canvasDefaultTransparent: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color--canvas-default-transparent, ${alpha(get('canvas.default'), 0)(theme)}))`,
-  pageHeaderBg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color--page-header-bg, ${get('canvas.subtle')(theme)}))`,
+  canvasDefaultTransparent: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-canvas-default-transparent, ${alpha(get('canvas.default'), 0)(theme)}))`,
+  pageHeaderBg: (theme: any) => `var(--page-header-bgColor, var(--color-page-header-bg, ${get('canvas.subtle')(theme)}))`,
   marketingIcon: {
     primary: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-marketingIcon-primary, ${get('scale.blue.4')(theme)}))`,
     secondary: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-marketingIcon-secondary, ${get('scale.blue.3')(theme)}))`
