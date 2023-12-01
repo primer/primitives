@@ -90,19 +90,19 @@ export default {
   // Only meant to be used by Primer components
   primer: {
     fg: {
-      disabled: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-fg-disabled, ${get('scale.gray.4')(theme)}))`
+      disabled: (theme: any, HI_KATIE: 'multiple matches') => `var(--control-fgColor-disabled, var(--color-primer-fg-disabled, ${get('scale.gray.4')(theme)}))`
     },
     canvas: {
-      backdrop: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-canvas-backdrop, ${alpha(get('scale.black'), 0.5)(theme)}))`, // use for modal/dialogs
-      sticky: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-canvas-sticky, ${alpha(get('scale.white'), 0.95)(theme)}))` // use for sticky headers
+      backdrop: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-primer-fg-canvas-backdrop, ${alpha(get('scale.black'), 0.5)(theme)}))`, // use for modal/dialogs
+      sticky: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-primer-fg-canvas-sticky, ${alpha(get('scale.white'), 0.95)(theme)}))` // use for sticky headers
     },
     border: {
-      active: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-border-active, ${get('scale.coral.3')(theme)}))`,
-      contrast: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-border-contrast, ${alpha(get('scale.black'), 0.1)(theme)}))` // use to increase contrast
+      active: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-primer-fg-canvas-border-active, ${get('scale.coral.3')(theme)}))`,
+      contrast: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-primer-fg-canvas-border-contrast, ${alpha(get('scale.black'), 0.1)(theme)}))` // use to increase contrast
     },
     shadow: {
-      highlight: (theme: any) => `var(undefined, var(--color-shadow-highlight, inset 0 1px 0 ${alpha(get('scale.white'), 0.25)(theme)}))// no matches`, // top highlight
-      inset: (theme: any) => `var(undefined, var(--color-shadow-inset, inset 0 1px 0 ${alpha(get('scale.gray.2'), 0.2)(theme)}))// no matches`, // top inner shadow
+      highlight: (theme: any) => `var(undefined, var(--color-primer-fg-canvas-border-shadow-highlight, inset 0 1px 0 ${alpha(get('scale.white'), 0.25)(theme)}))// HI_KATIE: no matches`, // top highlight
+      inset: (theme: any) => `var(undefined, var(--color-primer-fg-canvas-border-shadow-inset, inset 0 1px 0 ${alpha(get('scale.gray.2'), 0.2)(theme)}))// HI_KATIE: no matches`, // top inner shadow
     }
   }
 }

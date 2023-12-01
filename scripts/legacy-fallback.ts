@@ -63,9 +63,9 @@ project.getSourceFiles().map(sourceFile => {
     /**
      * propertValue can be of 4 types: ObjectLiteralExpression, StringLiteral, CallExpression, ArrowFunction
      *
-     * fg: { }, ← ObjectLiteralExpression, we can ignore these
+     * fg: { }, ← ObjectLiteralExpression
      * primer: {
-     *   fg: { } ← ObjectLiteralExpression, we can ignore these
+     *   fg: { } ← ObjectLiteralExpression
      * },
      *
      *
@@ -84,11 +84,13 @@ project.getSourceFiles().map(sourceFile => {
        * fg: { } ← ObjectLiteralExpression
        *
        * We can ignore these
-       * because the propertyAssignment inside the object would be handled
+       * because the other propertyAssignment types inside the object would be handled
        *
        * We only set the prefix, so that it can be used in the children
        */
-      prefix = propertyName
+
+      if (propertyAssignment.getParent() === exportedObject) prefix = propertyName // top level
+      else prefix = `${prefix}-${propertyName}`
     } else if (Node.isStringLiteral(propertyValue)) {
       /**
        * Before:
@@ -109,7 +111,10 @@ project.getSourceFiles().map(sourceFile => {
       const [newVariableName, optionalComment] = getNewVariable(oldVariableName)
 
       const newValue = `"var(${newVariableName}, var(${oldVariableName}, ${oldValue.replaceAll(`'`, ``)}))"`
-      // if (optionalComment) newValue += ` // ${optionalComment}`
+
+      // TODO: this doesn't work yet!
+      // if (optionalComment) newValue += ` // HI_KATIE: ${optionalComment}`
+
       propertyValue.replaceWithText(newValue)
     } else if (Node.isCallExpression(propertyValue)) {
       /**
@@ -183,7 +188,7 @@ project.getSourceFiles().map(sourceFile => {
       const [newVariableName, optionalComment] = getNewVariable(oldVariableName)
 
       let newFunctionBody = `var(${newVariableName}, var(${oldVariableName}, ${oldFunctionBody.replaceAll('`', '')}))`
-      if (optionalComment) newFunctionBody += `// ${optionalComment}`
+      if (optionalComment) newFunctionBody += `// HI_KATIE: ${optionalComment}`
 
       functionBody.replaceWithText(`\`${newFunctionBody}\``)
     } else {
