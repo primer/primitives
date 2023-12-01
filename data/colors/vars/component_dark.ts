@@ -3,7 +3,7 @@ import {alpha, darken, lighten, get} from '../../../src/utils-v1'
 export default {
   control: {
     borderColor: {
-      emphasis: /* HI_KATIE: no matches */"var(undefined, var(--color-control-borderColor-emphasis, #606771))"
+      emphasis: /* HI_KATIE: no matches */"var(undefined, var(--color-control-border-color-emphasis, #606771))"
     }
   },
   avatar: {
@@ -14,15 +14,15 @@ export default {
     childShadow: (theme: any) => `var(--avatar-shadow, var(--color-avatar-child-shadow, 0 0 0 2px ${get('scale.gray.9')(theme)}))`
   },
   topicTag: {
-    border: /* HI_KATIE: no matches */"var(undefined, var(--color-topicTag-border, transparent))"
+    border: "var(--topicTag-borderColor, var(--color-topic-tag-border, transparent))"
   },
   counter: {
     border: "var(--counter-borderColor, var(--color-counter-border, transparent))"
   },
   selectMenu: {
-    backdropBorder: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-selectMenu-backdrop-border, ${get('scale.gray.5')(theme)}))`,
-    tapHighlight: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-selectMenu-tap-highlight, ${alpha(get('scale.gray.6'), 0.5)(theme)}))`,
-    tapFocusBg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-selectMenu-tap-focus-bg, ${get('scale.blue.8')(theme)}))`
+    backdropBorder: (theme: any) => `var(--selectMenu-borderColor, var(--color-select-menu-backdrop-border, ${get('scale.gray.5')(theme)}))`,
+    tapHighlight: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-select-menu-tap-highlight, ${alpha(get('scale.gray.6'), 0.5)(theme)}))`,
+    tapFocusBg: (theme: any) => `var(--selectMenu-bgColor-active, var(--color-select-menu-tap-focus-bg, ${get('scale.blue.8')(theme)}))`
   },
   overlay: {
     shadow: (theme: any) =>
@@ -36,8 +36,8 @@ export default {
     logo: (theme: any) => `var(--header-fgColor-logo, var(--color-header-logo, ${get('scale.gray.0')(theme)}))`
   },
   headerSearch: {
-    bg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-headerSearch-bg, ${get('scale.gray.9')(theme)}))`,
-    border: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-headerSearch-border, ${get('scale.gray.6')(theme)}))`
+    bg: (theme: any) => `var(--headerSearch-bgColor, var(--color-header-search-bg, ${get('scale.gray.9')(theme)}))`,
+    border: (theme: any) => `var(--headerSearch-borderColor, var(--color-header-search-border, ${get('scale.gray.6')(theme)}))`
   },
   sidenav: {
     selectedBg: (theme: any) => `var(--sideNav-bgColor-selected, var(--color-sidenav-selected-bg, ${get('scale.gray.7')(theme)}))`
@@ -158,78 +158,78 @@ export default {
   },
 
   actionListItem: {
-    inlineDivider: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-actionListItem-inline-divider, ${alpha(get('border.default'), 0.48)(theme)}))`,
+    inlineDivider: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-action-list-item-inline-divider, ${alpha(get('border.default'), 0.48)(theme)}))`,
 
     default: {
-      hoverBg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-actionListItem-default-hover-bg, ${alpha(get('scale.gray.2'), 0.12)(theme)}))`,
-      hoverBorder: /* HI_KATIE: no matches */"var(undefined, var(--color-actionListItem-default-hover-border, transparent))",
-      activeBg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-actionListItem-default-active-bg, ${alpha(get('scale.gray.2'), 0.2)(theme)}))`,
-      activeBorder: /* HI_KATIE: no matches */"var(undefined, var(--color-actionListItem-default-active-border, transparent))",
-      selectedBg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-actionListItem-default-selected-bg, ${alpha(get('scale.gray.2'), 0.08)(theme)}))`
+      hoverBg: (theme: any, HI_KATIE: 'multiple matches') => `var(--control-transparent-bgColor-hover, var(--color-action-list-item-default-hover-bg, ${alpha(get('scale.gray.2'), 0.12)(theme)}))`,
+      hoverBorder: "var(--control-transparent-borderColor-hover, var(--color-action-list-item-default-hover-border, transparent))",
+      activeBg: (theme: any, HI_KATIE: 'multiple matches') => `var(--control-transparent-bgColor-active, var(--color-action-list-item-default-active-bg, ${alpha(get('scale.gray.2'), 0.2)(theme)}))`,
+      activeBorder: "var(--control-transparent-borderColor-active, var(--color-action-list-item-default-active-border, transparent))",
+      selectedBg: (theme: any, HI_KATIE: 'multiple matches') => `var(--control-transparent-bgColor-disabled, var(--color-action-list-item-default-selected-bg, ${alpha(get('scale.gray.2'), 0.08)(theme)}))`
     },
     danger: {
-      hoverBg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-actionListItem-default-danger-hover-bg, ${alpha(get('scale.red.4'), 0.16)(theme)}))`,
-      activeBg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-actionListItem-default-danger-active-bg, ${alpha(get('scale.red.4'), 0.24)(theme)}))`,
-      hoverText: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-actionListItem-default-danger-hover-text, ${get('scale.red.3')(theme)}))`
+      hoverBg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-action-list-item-default-danger-hover-bg, ${alpha(get('scale.red.4'), 0.16)(theme)}))`,
+      activeBg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-action-list-item-default-danger-active-bg, ${alpha(get('scale.red.4'), 0.24)(theme)}))`,
+      hoverText: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-action-list-item-default-danger-hover-text, ${get('scale.red.3')(theme)}))`
     }
   },
 
   switchTrack: {
-    bg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-switchTrack-bg, ${get('neutral.subtle')(theme)}))`,
-    hoverBg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-switchTrack-hover-bg, ${lighten(get('neutral.subtle'), 0.25)(theme)}))`,
-    activeBg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-switchTrack-active-bg, ${get('neutral.muted')(theme)}))`,
-    disabledBg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-switchTrack-disabled-bg, ${get('scale.gray.7')(theme)}))`,
-    fg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-switchTrack-fg, ${get('fg.muted')(theme)}))`,
-    disabledFg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-switchTrack-disabled-fg, ${get('scale.black')(theme)}))`,
-    border: /* HI_KATIE: no matches */"var(undefined, var(--color-switchTrack-border, transparent))",  // TODO: remove this in next major release
+    bg: (theme: any) => `var(--controlTrack-bgColor-rest, var(--color-switch-track-bg, ${get('neutral.subtle')(theme)}))`,
+    hoverBg: (theme: any) => `var(--controlTrack-bgColor-hover, var(--color-switch-track-hover-bg, ${lighten(get('neutral.subtle'), 0.25)(theme)}))`,
+    activeBg: (theme: any) => `var(--controlTrack-bgColor-active, var(--color-switch-track-active-bg, ${get('neutral.muted')(theme)}))`,
+    disabledBg: (theme: any, HI_KATIE: 'multiple matches') => `var(--control-checked-bgColor-disabled, var(--color-switch-track-disabled-bg, ${get('scale.gray.7')(theme)}))`,
+    fg: (theme: any) => `var(--controlTrack-fgColor-rest, var(--color-switch-track-fg, ${get('fg.muted')(theme)}))`,
+    disabledFg: (theme: any) => `var(--controlTrack-fgColor-disabled, var(--color-switch-track-disabled-fg, ${get('scale.black')(theme)}))`,
+    border: "var(--controlTrack-borderColor-rest, var(--color-switch-track-border, transparent))",  // TODO: remove this in next major release
 
     checked: {
-      bg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-switchTrack-checked-bg, ${alpha(get('scale.blue.5'), 0.35)(theme)}))`,
-      hoverBg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-switchTrack-checked-hover-bg, ${alpha(get('scale.blue.5'), 0.5)(theme)}))`,
-      activeBg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-switchTrack-checked-active-bg, ${alpha(get('scale.blue.5'), 0.65)(theme)}))`,
-      fg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-switchTrack-checked-fg, ${get('fg.onEmphasis')(theme)}))`,
-      disabledFg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-switchTrack-checked-disabled-fg, ${get('scale.black')(theme)}))`,
-      border: /* HI_KATIE: no matches */"var(undefined, var(--color-switchTrack-checked-border, transparent))",  // TODO: remove this in next major release
+      bg: (theme: any, HI_KATIE: 'multiple matches') => `var(--control-checked-bgColor-rest, var(--color-switch-track-checked-bg, ${alpha(get('scale.blue.5'), 0.35)(theme)}))`,
+      hoverBg: (theme: any, HI_KATIE: 'multiple matches') => `var(--control-checked-bgColor-hover, var(--color-switch-track-checked-hover-bg, ${alpha(get('scale.blue.5'), 0.5)(theme)}))`,
+      activeBg: (theme: any, HI_KATIE: 'multiple matches') => `var(--control-checked-bgColor-active, var(--color-switch-track-checked-active-bg, ${alpha(get('scale.blue.5'), 0.65)(theme)}))`,
+      fg: (theme: any) => `var(--control-checked-fgColor-rest, var(--color-switch-track-checked-fg, ${get('fg.onEmphasis')(theme)}))`,
+      disabledFg: (theme: any) => `var(--control-checked-fgColor-disabled, var(--color-switch-track-checked-disabled-fg, ${get('scale.black')(theme)}))`,
+      border: /* HI_KATIE: no matches */"var(undefined, var(--color-switch-track-checked-border, transparent))",  // TODO: remove this in next major release
     }
   },
 
   switchKnob: {
-    bg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-switchKnob-bg, ${get('canvas.default')(theme)}))`,
-    border: /* HI_KATIE: no matches */"var(undefined, var(--color-switchKnob-border, #606771))", // control contrast border https://github.com/primer/primitives/pull/485
-    disabledBg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-switchKnob-disabled-bg, ${get('canvas.subtle')(theme)}))`,
+    bg: (theme: any) => `var(--controlKnob-bgColor-rest, var(--color-switch-knob-bg, ${get('canvas.default')(theme)}))`,
+    border: /* HI_KATIE: multiple matches */"var(--control-borderColor-emphasis, var(--color-switch-knob-border, #606771))", // control contrast border https://github.com/primer/primitives/pull/485
+    disabledBg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-switch-knob-disabled-bg, ${get('canvas.subtle')(theme)}))`,
 
     checked: {
-      bg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-switchKnob-checked-bg, ${get('canvas.default')(theme)}))`, // TODO: remove this in next major release
-      disabledBg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-switchKnob-checked-disabled-bg, ${get('canvas.subtle')(theme)}))`, // TODO: remove this in next major release
-      border: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-switchKnob-checked-border, ${alpha(get('scale.blue.5'), 0.35)(theme)}))`,
+      bg: (theme: any) => `var(--controlKnob-bgColor-checked, var(--color-switch-knob-checked-bg, ${get('canvas.default')(theme)}))`, // TODO: remove this in next major release
+      disabledBg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-switch-knob-checked-disabled-bg, ${get('canvas.subtle')(theme)}))`, // TODO: remove this in next major release
+      border: (theme: any) => `var(--controlKnob-borderColor-checked, var(--color-switch-knob-checked-border, ${alpha(get('scale.blue.5'), 0.35)(theme)}))`,
     }
   },
 
   segmentedControl: {
-    bg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-segmentedControl-bg, ${get('neutral.subtle')(theme)}))`,
+    bg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-segmented-control-bg, ${get('neutral.subtle')(theme)}))`,
 
     button: {
-      bg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-segmentedControl-button-bg, ${get('canvas.default')(theme)}))`,
+      bg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-segmented-control-button-bg, ${get('canvas.default')(theme)}))`,
       hover: {
-        bg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-segmentedControl-button-hover-bg, ${get('scale.gray.6')(theme)}))`,
+        bg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-segmented-control-button-hover-bg, ${get('scale.gray.6')(theme)}))`,
       },
 
       active: {
-        bg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-segmentedControl-button-hover-active-bg, ${get('scale.gray.7')(theme)}))`,
+        bg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-segmented-control-button-hover-active-bg, ${get('scale.gray.7')(theme)}))`,
       },
 
       selected: {
-        border: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-segmentedControl-button-hover-active-selected-border, ${get('scale.gray.4')(theme)}))`,
+        border: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-segmented-control-button-hover-active-selected-border, ${get('scale.gray.4')(theme)}))`,
       },
     },
   },
 
   treeViewItem: {
     chevron: {
-      hoverBg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-treeViewItem-chevron-hover-bg, ${alpha(get('scale.gray.2'), 0.12)(theme)}))`,
+      hoverBg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-tree-view-item-chevron-hover-bg, ${alpha(get('scale.gray.2'), 0.12)(theme)}))`,
     },
     directory: {
-      fill: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-treeViewItem-chevron-directory-fill, ${get('fg.muted')(theme)}))`
+      fill: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-tree-view-item-chevron-directory-fill, ${get('fg.muted')(theme)}))`
     }
   },
 }

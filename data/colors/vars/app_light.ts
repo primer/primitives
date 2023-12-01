@@ -6,38 +6,38 @@ export default {
   canvasDefaultTransparent: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-canvas-default-transparent, ${alpha(get('canvas.default'), 0)(theme)}))`,
   pageHeaderBg: (theme: any) => `var(--page-header-bgColor, var(--color-page-header-bg, ${get('canvas.subtle')(theme)}))`,
   marketingIcon: {
-    primary: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-marketingIcon-primary, ${get('scale.blue.4')(theme)}))`,
-    secondary: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-marketingIcon-secondary, ${get('scale.blue.3')(theme)}))`
+    primary: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-marketing-icon-primary, ${get('scale.blue.4')(theme)}))`,
+    secondary: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-marketing-icon-secondary, ${get('scale.blue.3')(theme)}))`
   },
   diffBlob: {
     addition: {
-      numText: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-diffBlob-addition-num-text, ${get('fg.default')(theme)}))`,
-      fg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-diffBlob-addition-fg, ${get('fg.default')(theme)}))`,
-      numBg: /* HI_KATIE: no matches */"var(undefined, var(--color-diffBlob-addition-num-bg, #ccffd8))",
-      lineBg: /* HI_KATIE: no matches */"var(undefined, var(--color-diffBlob-addition-line-bg, #e6ffec))",
-      wordBg: /* HI_KATIE: no matches */"var(undefined, var(--color-diffBlob-addition-word-bg, #abf2bc))"
+      numText: (theme: any) => `var(--diffBlob-addition-fgColor-num, var(--color-diff-blob-addition-num-text, ${get('fg.default')(theme)}))`,
+      fg: (theme: any) => `var(--diffBlob-addition-fgColor-text, var(--color-diff-blob-addition-fg, ${get('fg.default')(theme)}))`,
+      numBg: "var(--diffBlob-addition-bgColor-num, var(--color-diff-blob-addition-num-bg, #ccffd8))",
+      lineBg: "var(--diffBlob-addition-bgColor-line, var(--color-diff-blob-addition-line-bg, #e6ffec))",
+      wordBg: "var(--diffBlob-addition-bgColor-word, var(--color-diff-blob-addition-word-bg, #abf2bc))"
     },
     deletion: {
-      numText: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-diffBlob-addition-deletion-num-text, ${get('fg.default')(theme)}))`,
-      fg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-diffBlob-addition-deletion-fg, ${get('fg.default')(theme)}))`,
-      numBg: /* HI_KATIE: no matches */"var(undefined, var(--color-diffBlob-addition-deletion-num-bg, #ffd7d5))",
-      lineBg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-diffBlob-addition-deletion-line-bg, ${get('danger.subtle')(theme)}))`,
-      wordBg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-diffBlob-addition-deletion-word-bg, ${get('danger.muted')(theme)}))`
+      numText: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-diff-blob-addition-deletion-num-text, ${get('fg.default')(theme)}))`,
+      fg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-diff-blob-addition-deletion-fg, ${get('fg.default')(theme)}))`,
+      numBg: /* HI_KATIE: no matches */"var(undefined, var(--color-diff-blob-addition-deletion-num-bg, #ffd7d5))",
+      lineBg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-diff-blob-addition-deletion-line-bg, ${get('danger.subtle')(theme)}))`,
+      wordBg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-diff-blob-addition-deletion-word-bg, ${get('danger.muted')(theme)}))`
     },
     hunk: {
-      numBg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-diffBlob-addition-deletion-hunk-num-bg, ${get('accent.muted')(theme)}))`
+      numBg: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-diff-blob-addition-deletion-hunk-num-bg, ${get('accent.muted')(theme)}))`
     },
     expander: {
-      icon: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-diffBlob-addition-deletion-hunk-expander-icon, ${get('fg.muted')(theme)}))`
+      icon: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-diff-blob-addition-deletion-hunk-expander-icon, ${get('fg.muted')(theme)}))`
     },
-    selectedLineHighlightMixBlendMode: /* HI_KATIE: no matches */"var(undefined, var(--color-diffBlob-addition-deletion-hunk-expander-selected-line-highlight-mix-blend-mode, multiply))"
+    selectedLineHighlightMixBlendMode: /* HI_KATIE: no matches */"var(undefined, var(--color-diff-blob-addition-deletion-hunk-expander-selected-line-highlight-mix-blend-mode, multiply))"
   },
   diffstat: {
     deletionBorder: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-diffstat-deletion-border, ${get('border.subtle')(theme)}))`,
     additionBorder: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-diffstat-addition-border, ${get('border.subtle')(theme)}))`
   },
   searchKeyword: {
-    hl: (theme: any, HI_KATIE: 'no matches') => `var(undefined, var(--color-searchKeyword-hl, ${get('scale.yellow.0')(theme)}))`
+    hl: (theme: any) => `var(--highlight-neutral-bgColor, var(--color-search-keyword-hl, ${get('scale.yellow.0')(theme)}))`
   },
   prettylights: {
     syntax: {

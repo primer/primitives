@@ -89,8 +89,8 @@ project.getSourceFiles().map(sourceFile => {
        * We only set the prefix, so that it can be used in the children
        */
 
-      if (propertyAssignment.getParent() === exportedObject) prefix = propertyName // top level
-      else prefix = `${prefix}-${propertyName}`
+      if (propertyAssignment.getParent() === exportedObject) prefix = kebabCase(propertyName) // top level
+      else prefix = `${prefix}-${kebabCase(propertyName)}`
     } else if (Node.isStringLiteral(propertyValue)) {
       /**
        * Before:

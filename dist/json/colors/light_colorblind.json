@@ -1,32 +1,32 @@
 {
-  "canvasDefaultTransparent": "var(undefined, var(--color--canvas-default-transparent, var(--bgColor-default, var(--color-canvas-default, rgba(255,255,255,0)))))",
-  "pageHeaderBg": "var(undefined, var(--color--page-header-bg, (theme) => `var(--bgColor-muted, var(--color-canvas-subtle, ${(0, utils_v1_1.get)('scale.gray.0')(theme)}))`))",
+  "canvasDefaultTransparent": "var(undefined, var(--color-canvas-default-transparent, var(--bgColor-default, var(--color-canvas-default, rgba(255,255,255,0)))))",
+  "pageHeaderBg": "var(--page-header-bgColor, var(--color-page-header-bg, (theme) => `var(--bgColor-muted, var(--color-canvas-subtle, ${(0, utils_v1_1.get)('scale.gray.0')(theme)}))`))",
   "marketingIcon": {
-    "primary": "var(undefined, var(--color-marketingIcon-primary, #218bff))",
-    "secondary": "var(undefined, var(--color-marketingIcon-secondary, #54aeff))"
+    "primary": "var(undefined, var(--color-marketing-icon-primary, #218bff))",
+    "secondary": "var(undefined, var(--color-marketing-icon-secondary, #54aeff))"
   },
   "diffBlob": {
     "addition": {
-      "numText": "var(undefined, var(--color-diffBlob-addition-num-text, (obj) => (0, get_1.default)(obj, path)))",
-      "fg": "var(undefined, var(--color-diffBlob-addition-fg, (obj) => (0, get_1.default)(obj, path)))",
+      "numText": "var(--diffBlob-addition-fgColor-num, var(--color-diff-blob-addition-num-text, (obj) => (0, get_1.default)(obj, path)))",
+      "fg": "var(--diffBlob-addition-fgColor-text, var(--color-diff-blob-addition-fg, (obj) => (0, get_1.default)(obj, path)))",
       "numBg": "var(--borderColor-success-muted, var(--color-success-muted, rgba(84,174,255,0.4)))",
       "lineBg": "rgba(221,244,255,0.5)",
       "wordBg": "var(--borderColor-success-muted, var(--color-success-muted, rgba(84,174,255,0.4)))"
     },
     "deletion": {
-      "numText": "var(undefined, var(--color-diffBlob-addition-deletion-num-text, (obj) => (0, get_1.default)(obj, path)))",
-      "fg": "var(undefined, var(--color-diffBlob-addition-deletion-fg, (obj) => (0, get_1.default)(obj, path)))",
+      "numText": "var(undefined, var(--color-diff-blob-addition-deletion-num-text, (obj) => (0, get_1.default)(obj, path)))",
+      "fg": "var(undefined, var(--color-diff-blob-addition-deletion-fg, (obj) => (0, get_1.default)(obj, path)))",
       "numBg": "var(--borderColor-danger-muted, var(--color-danger-muted, rgba(247,153,57,0.4)))",
       "lineBg": "rgba(255,245,232,0.5)",
       "wordBg": "rgba(255,188,109,0.5)"
     },
     "hunk": {
-      "numBg": "var(undefined, var(--color-diffBlob-addition-deletion-hunk-num-bg, (theme) => `var(--borderColor-accent-muted, var(--color-accent-muted, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.blue.3'), 0.4)(theme)}))`))"
+      "numBg": "var(undefined, var(--color-diff-blob-addition-deletion-hunk-num-bg, (theme) => `var(--borderColor-accent-muted, var(--color-accent-muted, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.blue.3'), 0.4)(theme)}))`))"
     },
     "expander": {
-      "icon": "var(undefined, var(--color-diffBlob-addition-deletion-hunk-expander-icon, (obj) => (0, get_1.default)(obj, path)))"
+      "icon": "var(undefined, var(--color-diff-blob-addition-deletion-hunk-expander-icon, (obj) => (0, get_1.default)(obj, path)))"
     },
-    "selectedLineHighlightMixBlendMode": "var(undefined, var(--color-diffBlob-addition-deletion-hunk-expander-selected-line-highlight-mix-blend-mode, multiply))"
+    "selectedLineHighlightMixBlendMode": "var(undefined, var(--color-diff-blob-addition-deletion-hunk-expander-selected-line-highlight-mix-blend-mode, multiply))"
   },
   "diffstat": {
     "deletionBorder": "var(undefined, var(--color-diffstat-deletion-border, (theme, HI_KATIE) => `var(undefined, var(--color-border-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.black'), 0.15)(theme)}))`))",
@@ -34,7 +34,7 @@
     "additionBg": "var(undefined, var(--color-diffstat-addition-bg, (obj) => (0, get_1.default)(obj, path)))"
   },
   "searchKeyword": {
-    "hl": "var(undefined, var(--color-searchKeyword-hl, #fff8c5))"
+    "hl": "var(--highlight-neutral-bgColor, var(--color-search-keyword-hl, #fff8c5))"
   },
   "prettylights": {
     "syntax": {
@@ -189,7 +189,7 @@
   },
   "control": {
     "borderColor": {
-      "emphasis": "var(undefined, var(--color-control-borderColor-emphasis, #858F99))"
+      "emphasis": "var(undefined, var(--color-control-border-color-emphasis, #858F99))"
     }
   },
   "avatar": {
@@ -200,15 +200,15 @@
     "childShadow": "var(--avatar-shadow, var(--color-avatar-child-shadow, 0 0 0 2px rgba(255,255,255,0.8)))"
   },
   "topicTag": {
-    "border": "var(undefined, var(--color-topicTag-border, transparent))"
+    "border": "var(--topicTag-borderColor, var(--color-topic-tag-border, transparent))"
   },
   "counter": {
     "border": "var(--counter-borderColor, var(--color-counter-border, transparent))"
   },
   "selectMenu": {
-    "backdropBorder": "var(undefined, var(--color-selectMenu-backdrop-border, transparent))",
-    "tapHighlight": "var(undefined, var(--color-selectMenu-tap-highlight, rgba(175,184,193,0.5)))",
-    "tapFocusBg": "var(undefined, var(--color-selectMenu-tap-focus-bg, #b6e3ff))"
+    "backdropBorder": "var(--selectMenu-borderColor, var(--color-select-menu-backdrop-border, transparent))",
+    "tapHighlight": "var(undefined, var(--color-select-menu-tap-highlight, rgba(175,184,193,0.5)))",
+    "tapFocusBg": "var(--selectMenu-bgColor-active, var(--color-select-menu-tap-focus-bg, #b6e3ff))"
   },
   "overlay": {
     "shadow": "var(--shadow-floating-small, var(--color-overlay-shadow, 0 1px 3px rgba(27,31,36,0.12), 0 8px 24px rgba(66,74,83,0.12)))",
@@ -221,8 +221,8 @@
     "logo": "var(--header-fgColor-logo, var(--color-header-logo, #ffffff))"
   },
   "headerSearch": {
-    "bg": "var(undefined, var(--color-headerSearch-bg, #24292f))",
-    "border": "var(undefined, var(--color-headerSearch-border, #57606a))"
+    "bg": "var(--headerSearch-bgColor, var(--color-header-search-bg, #24292f))",
+    "border": "var(--headerSearch-borderColor, var(--color-header-search-border, #57606a))"
   },
   "sidenav": {
     "selectedBg": "var(--sideNav-bgColor-selected, var(--color-sidenav-selected-bg, #ffffff))"
@@ -335,68 +335,68 @@
     "borderHover": "var(--underlineNav-borderColor-hover, var(--color-underlinenav-border-hover, (theme, HI_KATIE) => `var(--bgColor-disabled, var(--color-neutral-muted, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.gray.3'), 0.2)(theme)}))`))"
   },
   "actionListItem": {
-    "inlineDivider": "var(undefined, var(--color-actionListItem-inline-divider, var(--borderColor-default, var(--color-border-default, rgba(208,215,222,0.48)))))",
+    "inlineDivider": "var(undefined, var(--color-action-list-item-inline-divider, var(--borderColor-default, var(--color-border-default, rgba(208,215,222,0.48)))))",
     "default": {
-      "hoverBg": "var(undefined, var(--color-actionListItem-default-hover-bg, rgba(208,215,222,0.32)))",
-      "hoverBorder": "var(undefined, var(--color-actionListItem-default-hover-border, transparent))",
-      "activeBg": "var(undefined, var(--color-actionListItem-default-active-bg, rgba(208,215,222,0.48)))",
-      "activeBorder": "var(undefined, var(--color-actionListItem-default-active-border, transparent))",
-      "selectedBg": "var(undefined, var(--color-actionListItem-default-selected-bg, rgba(208,215,222,0.24)))"
+      "hoverBg": "var(--control-transparent-bgColor-hover, var(--color-action-list-item-default-hover-bg, rgba(208,215,222,0.32)))",
+      "hoverBorder": "var(--control-transparent-borderColor-hover, var(--color-action-list-item-default-hover-border, transparent))",
+      "activeBg": "var(--control-transparent-bgColor-active, var(--color-action-list-item-default-active-bg, rgba(208,215,222,0.48)))",
+      "activeBorder": "var(--control-transparent-borderColor-active, var(--color-action-list-item-default-active-border, transparent))",
+      "selectedBg": "var(--control-transparent-bgColor-disabled, var(--color-action-list-item-default-selected-bg, rgba(208,215,222,0.24)))"
     },
     "danger": {
-      "hoverBg": "var(undefined, var(--color-actionListItem-default-danger-hover-bg, var(--bgColor-danger-muted, var(--color-danger-subtle, rgba(255,245,232,0.64)))))",
-      "activeBg": "var(undefined, var(--color-actionListItem-default-danger-active-bg, (theme) => `var(--bgColor-danger-muted, var(--color-danger-subtle, ${(0, utils_v1_1.get)('scale.red.0')(theme)}))`))",
-      "hoverText": "var(undefined, var(--color-actionListItem-default-danger-hover-text, (obj) => (0, get_1.default)(obj, path)))"
+      "hoverBg": "var(undefined, var(--color-action-list-item-default-danger-hover-bg, var(--bgColor-danger-muted, var(--color-danger-subtle, rgba(255,245,232,0.64)))))",
+      "activeBg": "var(undefined, var(--color-action-list-item-default-danger-active-bg, (theme) => `var(--bgColor-danger-muted, var(--color-danger-subtle, ${(0, utils_v1_1.get)('scale.red.0')(theme)}))`))",
+      "hoverText": "var(undefined, var(--color-action-list-item-default-danger-hover-text, (obj) => (0, get_1.default)(obj, path)))"
     }
   },
   "switchTrack": {
-    "bg": "var(undefined, var(--color-switchTrack-bg, #eaeef2))",
-    "hoverBg": "var(undefined, var(--color-switchTrack-hover-bg, hsla(210,24%,90%,1)))",
-    "activeBg": "var(undefined, var(--color-switchTrack-active-bg, hsla(210,24%,88%,1)))",
-    "disabledBg": "var(undefined, var(--color-switchTrack-disabled-bg, #8c959f))",
-    "fg": "var(undefined, var(--color-switchTrack-fg, (obj) => (0, get_1.default)(obj, path)))",
-    "disabledFg": "var(undefined, var(--color-switchTrack-disabled-fg, (theme) => `var(--fgColor-onEmphasis, var(--color-fg-on-emphasis, ${(0, utils_v1_1.get)('scale.white')(theme)}))`))",
-    "border": "var(undefined, var(--color-switchTrack-border, transparent))",
+    "bg": "var(--controlTrack-bgColor-rest, var(--color-switch-track-bg, #eaeef2))",
+    "hoverBg": "var(--controlTrack-bgColor-hover, var(--color-switch-track-hover-bg, hsla(210,24%,90%,1)))",
+    "activeBg": "var(--controlTrack-bgColor-active, var(--color-switch-track-active-bg, hsla(210,24%,88%,1)))",
+    "disabledBg": "var(--control-checked-bgColor-disabled, var(--color-switch-track-disabled-bg, #8c959f))",
+    "fg": "var(--controlTrack-fgColor-rest, var(--color-switch-track-fg, (obj) => (0, get_1.default)(obj, path)))",
+    "disabledFg": "var(--controlTrack-fgColor-disabled, var(--color-switch-track-disabled-fg, (theme) => `var(--fgColor-onEmphasis, var(--color-fg-on-emphasis, ${(0, utils_v1_1.get)('scale.white')(theme)}))`))",
+    "border": "var(--controlTrack-borderColor-rest, var(--color-switch-track-border, transparent))",
     "checked": {
-      "bg": "var(undefined, var(--color-switchTrack-checked-bg, (theme, HI_KATIE) => `var(--bgColor-accent-emphasis, var(--color-accent-emphasis, ${(0, utils_v1_1.get)('scale.blue.5')(theme)}))`))",
-      "hoverBg": "var(undefined, var(--color-switchTrack-checked-hover-bg, #0860CA))",
-      "activeBg": "var(undefined, var(--color-switchTrack-checked-active-bg, #0757BA))",
-      "fg": "var(undefined, var(--color-switchTrack-checked-fg, (theme) => `var(--fgColor-onEmphasis, var(--color-fg-on-emphasis, ${(0, utils_v1_1.get)('scale.white')(theme)}))`))",
-      "disabledFg": "var(undefined, var(--color-switchTrack-checked-disabled-fg, (theme) => `var(--fgColor-onEmphasis, var(--color-fg-on-emphasis, ${(0, utils_v1_1.get)('scale.white')(theme)}))`))",
-      "border": "var(undefined, var(--color-switchTrack-checked-border, transparent))"
+      "bg": "var(--control-checked-bgColor-rest, var(--color-switch-track-checked-bg, (theme, HI_KATIE) => `var(--bgColor-accent-emphasis, var(--color-accent-emphasis, ${(0, utils_v1_1.get)('scale.blue.5')(theme)}))`))",
+      "hoverBg": "var(--control-checked-bgColor-hover, var(--color-switch-track-checked-hover-bg, #0860CA))",
+      "activeBg": "var(--control-checked-bgColor-active, var(--color-switch-track-checked-active-bg, #0757BA))",
+      "fg": "var(--control-checked-fgColor-rest, var(--color-switch-track-checked-fg, (theme) => `var(--fgColor-onEmphasis, var(--color-fg-on-emphasis, ${(0, utils_v1_1.get)('scale.white')(theme)}))`))",
+      "disabledFg": "var(--control-checked-fgColor-disabled, var(--color-switch-track-checked-disabled-fg, (theme) => `var(--fgColor-onEmphasis, var(--color-fg-on-emphasis, ${(0, utils_v1_1.get)('scale.white')(theme)}))`))",
+      "border": "var(undefined, var(--color-switch-track-checked-border, transparent))"
     }
   },
   "switchKnob": {
-    "bg": "var(undefined, var(--color-switchKnob-bg, (theme) => `var(--bgColor-default, var(--color-canvas-default, ${(0, utils_v1_1.get)('scale.white')(theme)}))`))",
-    "disabledBg": "var(undefined, var(--color-switchKnob-disabled-bg, (theme) => `var(--bgColor-muted, var(--color-canvas-subtle, ${(0, utils_v1_1.get)('scale.gray.0')(theme)}))`))",
-    "border": "var(undefined, var(--color-switchKnob-border, #858F99))",
+    "bg": "var(--controlKnob-bgColor-rest, var(--color-switch-knob-bg, (theme) => `var(--bgColor-default, var(--color-canvas-default, ${(0, utils_v1_1.get)('scale.white')(theme)}))`))",
+    "disabledBg": "var(undefined, var(--color-switch-knob-disabled-bg, (theme) => `var(--bgColor-muted, var(--color-canvas-subtle, ${(0, utils_v1_1.get)('scale.gray.0')(theme)}))`))",
+    "border": "var(--control-borderColor-emphasis, var(--color-switch-knob-border, #858F99))",
     "checked": {
-      "bg": "var(undefined, var(--color-switchKnob-checked-bg, (theme) => `var(--bgColor-default, var(--color-canvas-default, ${(0, utils_v1_1.get)('scale.white')(theme)}))`))",
-      "disabledBg": "var(undefined, var(--color-switchKnob-checked-disabled-bg, (theme) => `var(--bgColor-muted, var(--color-canvas-subtle, ${(0, utils_v1_1.get)('scale.gray.0')(theme)}))`))",
-      "border": "var(undefined, var(--color-switchKnob-checked-border, (theme, HI_KATIE) => `var(--bgColor-accent-emphasis, var(--color-accent-emphasis, ${(0, utils_v1_1.get)('scale.blue.5')(theme)}))`))"
+      "bg": "var(--controlKnob-bgColor-checked, var(--color-switch-knob-checked-bg, (theme) => `var(--bgColor-default, var(--color-canvas-default, ${(0, utils_v1_1.get)('scale.white')(theme)}))`))",
+      "disabledBg": "var(undefined, var(--color-switch-knob-checked-disabled-bg, (theme) => `var(--bgColor-muted, var(--color-canvas-subtle, ${(0, utils_v1_1.get)('scale.gray.0')(theme)}))`))",
+      "border": "var(--controlKnob-borderColor-checked, var(--color-switch-knob-checked-border, (theme, HI_KATIE) => `var(--bgColor-accent-emphasis, var(--color-accent-emphasis, ${(0, utils_v1_1.get)('scale.blue.5')(theme)}))`))"
     }
   },
   "segmentedControl": {
-    "bg": "var(undefined, var(--color-segmentedControl-bg, #eaeef2))",
+    "bg": "var(undefined, var(--color-segmented-control-bg, #eaeef2))",
     "button": {
-      "bg": "var(undefined, var(--color-segmentedControl-button-bg, (theme) => `var(--bgColor-default, var(--color-canvas-default, ${(0, utils_v1_1.get)('scale.white')(theme)}))`))",
+      "bg": "var(undefined, var(--color-segmented-control-button-bg, (theme) => `var(--bgColor-default, var(--color-canvas-default, ${(0, utils_v1_1.get)('scale.white')(theme)}))`))",
       "hover": {
-        "bg": "var(undefined, var(--color-segmentedControl-button-hover-bg, rgba(175,184,193,0.2)))"
+        "bg": "var(undefined, var(--color-segmented-control-button-hover-bg, rgba(175,184,193,0.2)))"
       },
       "active": {
-        "bg": "var(undefined, var(--color-segmentedControl-button-hover-active-bg, rgba(175,184,193,0.4)))"
+        "bg": "var(undefined, var(--color-segmented-control-button-hover-active-bg, rgba(175,184,193,0.4)))"
       },
       "selected": {
-        "border": "var(undefined, var(--color-segmentedControl-button-hover-active-selected-border, #8c959f))"
+        "border": "var(undefined, var(--color-segmented-control-button-hover-active-selected-border, #8c959f))"
       }
     }
   },
   "treeViewItem": {
     "chevron": {
-      "hoverBg": "var(undefined, var(--color-treeViewItem-chevron-hover-bg, rgba(208,215,222,0.32)))"
+      "hoverBg": "var(undefined, var(--color-tree-view-item-chevron-hover-bg, rgba(208,215,222,0.32)))"
     },
     "directory": {
-      "fill": "var(undefined, var(--color-treeViewItem-chevron-directory-fill, #54aeff))"
+      "fill": "var(undefined, var(--color-tree-view-item-chevron-directory-fill, #54aeff))"
     }
   },
   "fg": {

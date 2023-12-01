@@ -1,32 +1,32 @@
 export default {
-  "canvasDefaultTransparent": "var(undefined, var(--color--canvas-default-transparent, var(--bgColor-default, var(--color-canvas-default, rgba(13,17,23,0)))))",
-  "pageHeaderBg": "var(undefined, var(--color--page-header-bg, (theme) => `var(--bgColor-default, var(--color-canvas-default, ${(0, utils_v1_1.get)('scale.gray.9')(theme)}))`))",
+  "canvasDefaultTransparent": "var(undefined, var(--color-canvas-default-transparent, var(--bgColor-default, var(--color-canvas-default, rgba(13,17,23,0)))))",
+  "pageHeaderBg": "var(--page-header-bgColor, var(--color-page-header-bg, (theme) => `var(--bgColor-default, var(--color-canvas-default, ${(0, utils_v1_1.get)('scale.gray.9')(theme)}))`))",
   "marketingIcon": {
-    "primary": "var(undefined, var(--color-marketingIcon-primary, #79c0ff))",
-    "secondary": "var(undefined, var(--color-marketingIcon-secondary, #1f6feb))"
+    "primary": "var(undefined, var(--color-marketing-icon-primary, #79c0ff))",
+    "secondary": "var(undefined, var(--color-marketing-icon-secondary, #1f6feb))"
   },
   "diffBlob": {
     "addition": {
-      "numText": "var(undefined, var(--color-diffBlob-addition-num-text, (obj) => (0, get_1.default)(obj, path)))",
-      "fg": "var(undefined, var(--color-diffBlob-addition-fg, (obj) => (0, get_1.default)(obj, path)))",
-      "numBg": "var(undefined, var(--color-diffBlob-addition-num-bg, rgba(88,166,255,0.3)))",
-      "lineBg": "var(undefined, var(--color-diffBlob-addition-line-bg, (theme) => `var(--bgColor-success-muted, var(--color-success-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.green.4'), 0.15)(theme)}))`))",
-      "wordBg": "var(undefined, var(--color-diffBlob-addition-word-bg, (theme) => `var(--borderColor-success-muted, var(--color-success-muted, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.green.4'), 0.4)(theme)}))`))"
+      "numText": "var(--diffBlob-addition-fgColor-num, var(--color-diff-blob-addition-num-text, (obj) => (0, get_1.default)(obj, path)))",
+      "fg": "var(--diffBlob-addition-fgColor-text, var(--color-diff-blob-addition-fg, (obj) => (0, get_1.default)(obj, path)))",
+      "numBg": "var(--diffBlob-addition-bgColor-num, var(--color-diff-blob-addition-num-bg, rgba(88,166,255,0.3)))",
+      "lineBg": "var(--diffBlob-addition-bgColor-line, var(--color-diff-blob-addition-line-bg, (theme) => `var(--bgColor-success-muted, var(--color-success-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.green.4'), 0.15)(theme)}))`))",
+      "wordBg": "var(--diffBlob-addition-bgColor-word, var(--color-diff-blob-addition-word-bg, (theme) => `var(--borderColor-success-muted, var(--color-success-muted, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.green.4'), 0.4)(theme)}))`))"
     },
     "deletion": {
-      "numText": "var(undefined, var(--color-diffBlob-addition-deletion-num-text, (obj) => (0, get_1.default)(obj, path)))",
-      "fg": "var(undefined, var(--color-diffBlob-addition-deletion-fg, (obj) => (0, get_1.default)(obj, path)))",
-      "numBg": "var(undefined, var(--color-diffBlob-addition-deletion-num-bg, rgba(248,81,73,0.3)))",
-      "lineBg": "var(undefined, var(--color-diffBlob-addition-deletion-line-bg, (theme) => `var(--bgColor-danger-muted, var(--color-danger-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.red.4'), 0.1)(theme)}))`))",
-      "wordBg": "var(undefined, var(--color-diffBlob-addition-deletion-word-bg, (theme) => `var(--borderColor-danger-muted, var(--color-danger-muted, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.red.4'), 0.4)(theme)}))`))"
+      "numText": "var(undefined, var(--color-diff-blob-addition-deletion-num-text, (obj) => (0, get_1.default)(obj, path)))",
+      "fg": "var(undefined, var(--color-diff-blob-addition-deletion-fg, (obj) => (0, get_1.default)(obj, path)))",
+      "numBg": "var(undefined, var(--color-diff-blob-addition-deletion-num-bg, rgba(248,81,73,0.3)))",
+      "lineBg": "var(undefined, var(--color-diff-blob-addition-deletion-line-bg, (theme) => `var(--bgColor-danger-muted, var(--color-danger-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.red.4'), 0.1)(theme)}))`))",
+      "wordBg": "var(undefined, var(--color-diff-blob-addition-deletion-word-bg, (theme) => `var(--borderColor-danger-muted, var(--color-danger-muted, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.red.4'), 0.4)(theme)}))`))"
     },
     "hunk": {
-      "numBg": "var(undefined, var(--color-diffBlob-addition-deletion-hunk-num-bg, (theme) => `var(--borderColor-accent-muted, var(--color-accent-muted, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.blue.4'), 0.4)(theme)}))`))"
+      "numBg": "var(undefined, var(--color-diff-blob-addition-deletion-hunk-num-bg, (theme) => `var(--borderColor-accent-muted, var(--color-accent-muted, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.blue.4'), 0.4)(theme)}))`))"
     },
     "expander": {
-      "icon": "var(undefined, var(--color-diffBlob-addition-deletion-hunk-expander-icon, (obj) => (0, get_1.default)(obj, path)))"
+      "icon": "var(undefined, var(--color-diff-blob-addition-deletion-hunk-expander-icon, (obj) => (0, get_1.default)(obj, path)))"
     },
-    "selectedLineHighlightMixBlendMode": "var(undefined, var(--color-diffBlob-addition-deletion-hunk-expander-selected-line-highlight-mix-blend-mode, screen))"
+    "selectedLineHighlightMixBlendMode": "var(undefined, var(--color-diff-blob-addition-deletion-hunk-expander-selected-line-highlight-mix-blend-mode, screen))"
   },
   "diffstat": {
     "deletionBorder": "var(undefined, var(--color-diffstat-deletion-border, (theme, HI_KATIE) => `var(undefined, var(--color-border-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.gray.0'), 0.1)(theme)}))`))",
@@ -34,7 +34,7 @@ export default {
     "additionBg": "var(undefined, var(--color-diffstat-addition-bg, #58a6ff))"
   },
   "searchKeyword": {
-    "hl": "var(undefined, var(--color-searchKeyword-hl, rgba(210,153,34,0.4)))"
+    "hl": "var(--highlight-neutral-bgColor, var(--color-search-keyword-hl, rgba(210,153,34,0.4)))"
   },
   "prettylights": {
     "syntax": {
@@ -189,7 +189,7 @@ export default {
   },
   "control": {
     "borderColor": {
-      "emphasis": "var(undefined, var(--color-control-borderColor-emphasis, #606771))"
+      "emphasis": "var(undefined, var(--color-control-border-color-emphasis, #606771))"
     }
   },
   "avatar": {
@@ -200,15 +200,15 @@ export default {
     "childShadow": "var(--avatar-shadow, var(--color-avatar-child-shadow, 0 0 0 2px #0d1117))"
   },
   "topicTag": {
-    "border": "var(undefined, var(--color-topicTag-border, transparent))"
+    "border": "var(--topicTag-borderColor, var(--color-topic-tag-border, transparent))"
   },
   "counter": {
     "border": "var(--counter-borderColor, var(--color-counter-border, transparent))"
   },
   "selectMenu": {
-    "backdropBorder": "var(undefined, var(--color-selectMenu-backdrop-border, #484f58))",
-    "tapHighlight": "var(undefined, var(--color-selectMenu-tap-highlight, rgba(48,54,61,0.5)))",
-    "tapFocusBg": "var(undefined, var(--color-selectMenu-tap-focus-bg, #0c2d6b))"
+    "backdropBorder": "var(--selectMenu-borderColor, var(--color-select-menu-backdrop-border, #484f58))",
+    "tapHighlight": "var(undefined, var(--color-select-menu-tap-highlight, rgba(48,54,61,0.5)))",
+    "tapFocusBg": "var(--selectMenu-bgColor-active, var(--color-select-menu-tap-focus-bg, #0c2d6b))"
   },
   "overlay": {
     "shadow": "var(--shadow-floating-small, var(--color-overlay-shadow, 0 0 0 1px #30363d, 0 16px 32px rgba(1,4,9,0.85)))",
@@ -221,8 +221,8 @@ export default {
     "logo": "var(--header-fgColor-logo, var(--color-header-logo, #f0f6fc))"
   },
   "headerSearch": {
-    "bg": "var(undefined, var(--color-headerSearch-bg, #0d1117))",
-    "border": "var(undefined, var(--color-headerSearch-border, #30363d))"
+    "bg": "var(--headerSearch-bgColor, var(--color-header-search-bg, #0d1117))",
+    "border": "var(--headerSearch-borderColor, var(--color-header-search-border, #30363d))"
   },
   "sidenav": {
     "selectedBg": "var(--sideNav-bgColor-selected, var(--color-sidenav-selected-bg, #21262d))"
@@ -335,68 +335,68 @@ export default {
     "borderHover": "var(--underlineNav-borderColor-hover, var(--color-underlinenav-border-hover, (theme, HI_KATIE) => `var(--bgColor-disabled, var(--color-neutral-muted, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.gray.4'), 0.4)(theme)}))`))"
   },
   "actionListItem": {
-    "inlineDivider": "var(undefined, var(--color-actionListItem-inline-divider, var(--borderColor-default, var(--color-border-default, rgba(48,54,61,0.48)))))",
+    "inlineDivider": "var(undefined, var(--color-action-list-item-inline-divider, var(--borderColor-default, var(--color-border-default, rgba(48,54,61,0.48)))))",
     "default": {
-      "hoverBg": "var(undefined, var(--color-actionListItem-default-hover-bg, rgba(177,186,196,0.12)))",
-      "hoverBorder": "var(undefined, var(--color-actionListItem-default-hover-border, transparent))",
-      "activeBg": "var(undefined, var(--color-actionListItem-default-active-bg, rgba(177,186,196,0.2)))",
-      "activeBorder": "var(undefined, var(--color-actionListItem-default-active-border, transparent))",
-      "selectedBg": "var(undefined, var(--color-actionListItem-default-selected-bg, rgba(177,186,196,0.08)))"
+      "hoverBg": "var(--control-transparent-bgColor-hover, var(--color-action-list-item-default-hover-bg, rgba(177,186,196,0.12)))",
+      "hoverBorder": "var(--control-transparent-borderColor-hover, var(--color-action-list-item-default-hover-border, transparent))",
+      "activeBg": "var(--control-transparent-bgColor-active, var(--color-action-list-item-default-active-bg, rgba(177,186,196,0.2)))",
+      "activeBorder": "var(--control-transparent-borderColor-active, var(--color-action-list-item-default-active-border, transparent))",
+      "selectedBg": "var(--control-transparent-bgColor-disabled, var(--color-action-list-item-default-selected-bg, rgba(177,186,196,0.08)))"
     },
     "danger": {
-      "hoverBg": "var(undefined, var(--color-actionListItem-default-danger-hover-bg, rgba(248,81,73,0.16)))",
-      "activeBg": "var(undefined, var(--color-actionListItem-default-danger-active-bg, rgba(248,81,73,0.24)))",
-      "hoverText": "var(undefined, var(--color-actionListItem-default-danger-hover-text, #ff7b72))"
+      "hoverBg": "var(undefined, var(--color-action-list-item-default-danger-hover-bg, rgba(248,81,73,0.16)))",
+      "activeBg": "var(undefined, var(--color-action-list-item-default-danger-active-bg, rgba(248,81,73,0.24)))",
+      "hoverText": "var(undefined, var(--color-action-list-item-default-danger-hover-text, #ff7b72))"
     }
   },
   "switchTrack": {
-    "bg": "var(undefined, var(--color-switchTrack-bg, (theme) => `var(--bgColor-neutral-muted, var(--color-neutral-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.gray.4'), 0.1)(theme)}))`))",
-    "hoverBg": "var(undefined, var(--color-switchTrack-hover-bg, var(--bgColor-neutral-muted, var(--color-neutral-subtle, hsla(215,8%,72%,0.1)))))",
-    "activeBg": "var(undefined, var(--color-switchTrack-active-bg, (theme, HI_KATIE) => `var(--bgColor-disabled, var(--color-neutral-muted, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.gray.4'), 0.4)(theme)}))`))",
-    "disabledBg": "var(undefined, var(--color-switchTrack-disabled-bg, #21262d))",
-    "fg": "var(undefined, var(--color-switchTrack-fg, (obj) => (0, get_1.default)(obj, path)))",
-    "disabledFg": "var(undefined, var(--color-switchTrack-disabled-fg, #010409))",
-    "border": "var(undefined, var(--color-switchTrack-border, transparent))",
+    "bg": "var(--controlTrack-bgColor-rest, var(--color-switch-track-bg, (theme) => `var(--bgColor-neutral-muted, var(--color-neutral-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.gray.4'), 0.1)(theme)}))`))",
+    "hoverBg": "var(--controlTrack-bgColor-hover, var(--color-switch-track-hover-bg, var(--bgColor-neutral-muted, var(--color-neutral-subtle, hsla(215,8%,72%,0.1)))))",
+    "activeBg": "var(--controlTrack-bgColor-active, var(--color-switch-track-active-bg, (theme, HI_KATIE) => `var(--bgColor-disabled, var(--color-neutral-muted, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.gray.4'), 0.4)(theme)}))`))",
+    "disabledBg": "var(--control-checked-bgColor-disabled, var(--color-switch-track-disabled-bg, #21262d))",
+    "fg": "var(--controlTrack-fgColor-rest, var(--color-switch-track-fg, (obj) => (0, get_1.default)(obj, path)))",
+    "disabledFg": "var(--controlTrack-fgColor-disabled, var(--color-switch-track-disabled-fg, #010409))",
+    "border": "var(--controlTrack-borderColor-rest, var(--color-switch-track-border, transparent))",
     "checked": {
-      "bg": "var(undefined, var(--color-switchTrack-checked-bg, rgba(31,111,235,0.35)))",
-      "hoverBg": "var(undefined, var(--color-switchTrack-checked-hover-bg, rgba(31,111,235,0.5)))",
-      "activeBg": "var(undefined, var(--color-switchTrack-checked-active-bg, rgba(31,111,235,0.65)))",
-      "fg": "var(undefined, var(--color-switchTrack-checked-fg, (theme) => `var(--fgColor-onEmphasis, var(--color-fg-on-emphasis, ${(0, utils_v1_1.get)('scale.white')(theme)}))`))",
-      "disabledFg": "var(undefined, var(--color-switchTrack-checked-disabled-fg, #010409))",
-      "border": "var(undefined, var(--color-switchTrack-checked-border, transparent))"
+      "bg": "var(--control-checked-bgColor-rest, var(--color-switch-track-checked-bg, rgba(31,111,235,0.35)))",
+      "hoverBg": "var(--control-checked-bgColor-hover, var(--color-switch-track-checked-hover-bg, rgba(31,111,235,0.5)))",
+      "activeBg": "var(--control-checked-bgColor-active, var(--color-switch-track-checked-active-bg, rgba(31,111,235,0.65)))",
+      "fg": "var(--control-checked-fgColor-rest, var(--color-switch-track-checked-fg, (theme) => `var(--fgColor-onEmphasis, var(--color-fg-on-emphasis, ${(0, utils_v1_1.get)('scale.white')(theme)}))`))",
+      "disabledFg": "var(--control-checked-fgColor-disabled, var(--color-switch-track-checked-disabled-fg, #010409))",
+      "border": "var(undefined, var(--color-switch-track-checked-border, transparent))"
     }
   },
   "switchKnob": {
-    "bg": "var(undefined, var(--color-switchKnob-bg, (theme) => `var(--bgColor-default, var(--color-canvas-default, ${(0, utils_v1_1.get)('scale.gray.9')(theme)}))`))",
-    "border": "var(undefined, var(--color-switchKnob-border, #606771))",
-    "disabledBg": "var(undefined, var(--color-switchKnob-disabled-bg, (theme) => `var(--bgColor-muted, var(--color-canvas-subtle, ${(0, utils_v1_1.get)('scale.gray.8')(theme)}))`))",
+    "bg": "var(--controlKnob-bgColor-rest, var(--color-switch-knob-bg, (theme) => `var(--bgColor-default, var(--color-canvas-default, ${(0, utils_v1_1.get)('scale.gray.9')(theme)}))`))",
+    "border": "var(--control-borderColor-emphasis, var(--color-switch-knob-border, #606771))",
+    "disabledBg": "var(undefined, var(--color-switch-knob-disabled-bg, (theme) => `var(--bgColor-muted, var(--color-canvas-subtle, ${(0, utils_v1_1.get)('scale.gray.8')(theme)}))`))",
     "checked": {
-      "bg": "var(undefined, var(--color-switchKnob-checked-bg, (theme) => `var(--bgColor-default, var(--color-canvas-default, ${(0, utils_v1_1.get)('scale.gray.9')(theme)}))`))",
-      "disabledBg": "var(undefined, var(--color-switchKnob-checked-disabled-bg, (theme) => `var(--bgColor-muted, var(--color-canvas-subtle, ${(0, utils_v1_1.get)('scale.gray.8')(theme)}))`))",
-      "border": "var(undefined, var(--color-switchKnob-checked-border, rgba(31,111,235,0.35)))"
+      "bg": "var(--controlKnob-bgColor-checked, var(--color-switch-knob-checked-bg, (theme) => `var(--bgColor-default, var(--color-canvas-default, ${(0, utils_v1_1.get)('scale.gray.9')(theme)}))`))",
+      "disabledBg": "var(undefined, var(--color-switch-knob-checked-disabled-bg, (theme) => `var(--bgColor-muted, var(--color-canvas-subtle, ${(0, utils_v1_1.get)('scale.gray.8')(theme)}))`))",
+      "border": "var(--controlKnob-borderColor-checked, var(--color-switch-knob-checked-border, rgba(31,111,235,0.35)))"
     }
   },
   "segmentedControl": {
-    "bg": "var(undefined, var(--color-segmentedControl-bg, (theme) => `var(--bgColor-neutral-muted, var(--color-neutral-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.gray.4'), 0.1)(theme)}))`))",
+    "bg": "var(undefined, var(--color-segmented-control-bg, (theme) => `var(--bgColor-neutral-muted, var(--color-neutral-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.gray.4'), 0.1)(theme)}))`))",
     "button": {
-      "bg": "var(undefined, var(--color-segmentedControl-button-bg, (theme) => `var(--bgColor-default, var(--color-canvas-default, ${(0, utils_v1_1.get)('scale.gray.9')(theme)}))`))",
+      "bg": "var(undefined, var(--color-segmented-control-button-bg, (theme) => `var(--bgColor-default, var(--color-canvas-default, ${(0, utils_v1_1.get)('scale.gray.9')(theme)}))`))",
       "hover": {
-        "bg": "var(undefined, var(--color-segmentedControl-button-hover-bg, #30363d))"
+        "bg": "var(undefined, var(--color-segmented-control-button-hover-bg, #30363d))"
       },
       "active": {
-        "bg": "var(undefined, var(--color-segmentedControl-button-hover-active-bg, #21262d))"
+        "bg": "var(undefined, var(--color-segmented-control-button-hover-active-bg, #21262d))"
       },
       "selected": {
-        "border": "var(undefined, var(--color-segmentedControl-button-hover-active-selected-border, #6e7681))"
+        "border": "var(undefined, var(--color-segmented-control-button-hover-active-selected-border, #6e7681))"
       }
     }
   },
   "treeViewItem": {
     "chevron": {
-      "hoverBg": "var(undefined, var(--color-treeViewItem-chevron-hover-bg, rgba(177,186,196,0.12)))"
+      "hoverBg": "var(undefined, var(--color-tree-view-item-chevron-hover-bg, rgba(177,186,196,0.12)))"
     },
     "directory": {
-      "fill": "var(undefined, var(--color-treeViewItem-chevron-directory-fill, (obj) => (0, get_1.default)(obj, path)))"
+      "fill": "var(undefined, var(--color-tree-view-item-chevron-directory-fill, (obj) => (0, get_1.default)(obj, path)))"
     }
   },
   "fg": {
