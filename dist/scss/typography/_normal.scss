@@ -1,0 +1,15 @@
+@mixin primer-typography-normal {
+  & {
+    --typography-font-size-0: 12px;
+    --typography-font-size-1: 14px;
+    --typography-font-size-2: 16px;
+    --typography-font-size-3: 20px;
+    --typography-font-size-4: 24px;
+    --typography-font-size-5: 32px;
+    --typography-font-size-6: 40px;
+    --typography-font-size-7: 48px;
+    --typography-line-height-condensed-ultra: 1;
+    --typography-line-height-condensed: 1.25;
+    --typography-line-height-default: 1.5;
+  }
+}
