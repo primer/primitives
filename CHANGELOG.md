@@ -1,5 +1,15 @@
 # @primer/primitives
 
+## 7.15.5
+
+### Patch Changes
+
+- [#789](https://github.com/primer/primitives/pull/789) [`0f97174`](https://github.com/primer/primitives/commit/0f9717440b376aae27d6e713bf7d17cb17a9ed6f) Thanks [@langermank](https://github.com/langermank)! - - fix fgColor for ToggleSwitch in dark high contrast
+
+  - darken borderColor-muted slightly in dark & light mode
+
+- [#785](https://github.com/primer/primitives/pull/785) [`1c830ae`](https://github.com/primer/primitives/commit/1c830ae6dcf7a566342e2aea0e74f88d342b52ed) Thanks [@langermank](https://github.com/langermank)! - Build v8 tokens to `/dist`
+
 ## 7.15.4
 
 ### Patch Changes
