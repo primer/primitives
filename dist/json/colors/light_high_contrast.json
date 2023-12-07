@@ -1,9 +1,9 @@
 {
-  "canvasDefaultTransparent": "var(undefined, var(--color-canvas-default-transparent, var(--bgColor-default, var(--color-canvas-default, rgba(255,255,255,0)))))",
+  "canvasDefaultTransparent": "var(--bgColor-transparent, var(--color-canvas-default-transparent, var(--bgColor-default, var(--color-canvas-default, rgba(255,255,255,0)))))",
   "pageHeaderBg": "var(--bgColor-default, var(--color-canvas-default, #ffffff))",
   "marketingIcon": {
-    "primary": "var(undefined, var(--color-marketing-icon-primary, #1168e3))",
-    "secondary": "var(undefined, var(--color-marketing-icon-secondary, #368cf9))"
+    "primary": "var(--color-marketing-icon-primary, #1168e3)",
+    "secondary": "var(--color-marketing-icon-secondary, #368cf9)"
   },
   "diffBlob": {
     "addition": {
@@ -14,23 +14,23 @@
       "wordBg": "#055d20"
     },
     "deletion": {
-      "numText": "var(undefined, var(--color-diff-blob-addition-deletion-num-text, (obj) => (0, get_1.default)(obj, path)))",
+      "numText": "var(--diffBlob-deletion-fgColor-num, var(--color-diff-blob-deletion-num-text, (obj) => (0, get_1.default)(obj, path)))",
       "fg": "var(--fgColor-onEmphasis, var(--color-fg-on-emphasis, #ffffff))",
-      "numBg": "var(undefined, var(--color-diff-blob-addition-deletion-num-bg, #ffd7d5))",
-      "lineBg": "var(undefined, var(--color-diff-blob-addition-deletion-line-bg, (theme) => `var(--bgColor-danger-muted, var(--color-danger-subtle, ${(0, utils_v1_1.get)('scale.red.0')(theme)}))`))",
-      "wordBg": "var(--control-borderColor-danger, var(--color-danger-emphasis, #a0111f))"
+      "numBg": "var(--diffBlob-deletion-bgColor-num, var(--color-diff-blob-deletion-num-bg, #ffd7d5))",
+      "lineBg": "var(--diffBlob-deletion-bgColor-line, var(--color-diff-blob-deletion-line-bg, (theme) => `var(--bgColor-danger-muted, var(--color-danger-subtle, ${(0, utils_v1_1.get)('scale.red.0')(theme)}))`))",
+      "wordBg": "var(--borderColor-danger-emphasis, var(--color-danger-emphasis, #a0111f))"
     },
     "hunk": {
       "numBg": "#9cd7ff"
     },
     "expander": {
-      "icon": "var(undefined, var(--color-diff-blob-addition-deletion-hunk-expander-icon, (obj) => (0, get_1.default)(obj, path)))"
+      "icon": "var(--diffBlob-expander-iconColor, var(--color-diff-blob-expander-icon, (obj) => (0, get_1.default)(obj, path)))"
     },
-    "selectedLineHighlightMixBlendMode": "var(undefined, var(--color-diff-blob-addition-deletion-hunk-expander-selected-line-highlight-mix-blend-mode, multiply))"
+    "selectedLineHighlightMixBlendMode": "var(--color-diff-blob-selected-line-highlight-mix-blend-mode, multiply)"
   },
   "diffstat": {
-    "deletionBorder": "var(undefined, var(--color-diffstat-deletion-border, (obj) => {\n        const resolvedValue = resolveValue(value, obj);\n        // Instead of value being #hex, the value is now var(--v, #hex)\n        const hexColorValue = getFallbackValueFromVar(resolvedValue);\n        const hexColorValueWithTransparency = (0, color2k_1.transparentize)(hexColorValue, 1 - amount).replace(/ /g, '');\n        return resolvedValue.replace(hexColorValue, hexColorValueWithTransparency);\n    }))",
-    "additionBorder": "var(undefined, var(--color-diffstat-addition-border, (obj) => {\n        const resolvedValue = resolveValue(value, obj);\n        // Instead of value being #hex, the value is now var(--v, #hex)\n        const hexColorValue = getFallbackValueFromVar(resolvedValue);\n        const hexColorValueWithTransparency = (0, color2k_1.transparentize)(hexColorValue, 1 - amount).replace(/ /g, '');\n        return resolvedValue.replace(hexColorValue, hexColorValueWithTransparency);\n    }))",
+    "deletionBorder": "var(--color-diffstat-deletion-border, (obj) => {\n        const resolvedValue = resolveValue(value, obj);\n        // Instead of value being #hex, the value is now var(--v, #hex)\n        const hexColorValue = getFallbackValueFromVar(resolvedValue);\n        const hexColorValueWithTransparency = (0, color2k_1.transparentize)(hexColorValue, 1 - amount).replace(/ /g, '');\n        return resolvedValue.replace(hexColorValue, hexColorValueWithTransparency);\n    })",
+    "additionBorder": "var(--color-diffstat-addition-border, (obj) => {\n        const resolvedValue = resolveValue(value, obj);\n        // Instead of value being #hex, the value is now var(--v, #hex)\n        const hexColorValue = getFallbackValueFromVar(resolvedValue);\n        const hexColorValueWithTransparency = (0, color2k_1.transparentize)(hexColorValue, 1 - amount).replace(/ /g, '');\n        return resolvedValue.replace(hexColorValue, hexColorValueWithTransparency);\n    })",
     "additionBg": "var(undefined, var(--color-diffstat-addition-bg, (obj) => (0, get_1.default)(obj, path)))"
   },
   "searchKeyword": {
@@ -38,36 +38,36 @@
   },
   "prettylights": {
     "syntax": {
-      "comment": "var(undefined, var(--color-prettylights-syntax-comment, #4b535d))",
-      "constant": "var(undefined, var(--color-prettylights-syntax-constant, #023b95))",
-      "entity": "var(undefined, var(--color-prettylights-syntax-entity, #512598))",
-      "storageModifierImport": "var(undefined, var(--color-prettylights-syntax-storage-modifier-import, #0e1116))",
-      "entityTag": "var(undefined, var(--color-prettylights-syntax-entity-tag, #024c1a))",
-      "keyword": "var(undefined, var(--color-prettylights-syntax-keyword, #a0111f))",
-      "string": "var(undefined, var(--color-prettylights-syntax-string, #032563))",
-      "variable": "var(undefined, var(--color-prettylights-syntax-variable, #702c00))",
-      "brackethighlighterUnmatched": "var(undefined, var(--color-prettylights-syntax-brackethighlighter-unmatched, #6e011a))",
-      "invalidIllegalText": "var(undefined, var(--color-prettylights-syntax-invalid-illegal-text, #ffffff))",
-      "invalidIllegalBg": "var(undefined, var(--color-prettylights-syntax-invalid-illegal-bg, #6e011a))",
-      "carriageReturnText": "var(undefined, var(--color-prettylights-syntax-carriage-return-text, #ffffff))",
-      "carriageReturnBg": "var(undefined, var(--color-prettylights-syntax-carriage-return-bg, #a0111f))",
-      "stringRegexp": "var(undefined, var(--color-prettylights-syntax-string-regexp, #024c1a))",
-      "markupList": "var(undefined, var(--color-prettylights-syntax-markup-list, #2e1800))",
-      "markupHeading": "var(undefined, var(--color-prettylights-syntax-markup-heading, #023b95))",
-      "markupItalic": "var(undefined, var(--color-prettylights-syntax-markup-italic, #0e1116))",
-      "markupBold": "var(undefined, var(--color-prettylights-syntax-markup-bold, #0e1116))",
-      "markupDeletedText": "var(undefined, var(--color-prettylights-syntax-markup-deleted-text, #6e011a))",
-      "markupDeletedBg": "var(undefined, var(--color-prettylights-syntax-markup-deleted-bg, #fff0ee))",
-      "markupInsertedText": "var(undefined, var(--color-prettylights-syntax-markup-inserted-text, #024c1a))",
-      "markupInsertedBg": "var(undefined, var(--color-prettylights-syntax-markup-inserted-bg, #d2fedb))",
-      "markupChangedText": "var(undefined, var(--color-prettylights-syntax-markup-changed-text, #702c00))",
-      "markupChangedBg": "var(undefined, var(--color-prettylights-syntax-markup-changed-bg, #ffc67b))",
-      "markupIgnoredText": "var(undefined, var(--color-prettylights-syntax-markup-ignored-text, #e7ecf0))",
-      "markupIgnoredBg": "var(undefined, var(--color-prettylights-syntax-markup-ignored-bg, #023b95))",
-      "metaDiffRange": "var(undefined, var(--color-prettylights-syntax-meta-diff-range, #622cbc))",
-      "brackethighlighterAngle": "var(undefined, var(--color-prettylights-syntax-brackethighlighter-angle, #4b535d))",
-      "sublimelinterGutterMark": "var(undefined, var(--color-prettylights-syntax-sublimelinter-gutter-mark, #88929d))",
-      "constantOtherReferenceLink": "var(undefined, var(--color-prettylights-syntax-constant-other-reference-link, #032563))"
+      "comment": "var(--color-prettylights-syntax-comment, #4b535d)",
+      "constant": "var(--color-prettylights-syntax-constant, #023b95)",
+      "entity": "var(--color-prettylights-syntax-entity, #512598)",
+      "storageModifierImport": "var(--color-prettylights-syntax-storage-modifier-import, #0e1116)",
+      "entityTag": "var(--color-prettylights-syntax-entity-tag, #024c1a)",
+      "keyword": "var(--color-prettylights-syntax-keyword, #a0111f)",
+      "string": "var(--color-prettylights-syntax-string, #032563)",
+      "variable": "var(--color-prettylights-syntax-variable, #702c00)",
+      "brackethighlighterUnmatched": "var(--color-prettylights-syntax-brackethighlighter-unmatched, #6e011a)",
+      "invalidIllegalText": "var(--color-prettylights-syntax-invalid-illegal-text, #ffffff)",
+      "invalidIllegalBg": "var(--color-prettylights-syntax-invalid-illegal-bg, #6e011a)",
+      "carriageReturnText": "var(--color-prettylights-syntax-carriage-return-text, #ffffff)",
+      "carriageReturnBg": "var(--color-prettylights-syntax-carriage-return-bg, #a0111f)",
+      "stringRegexp": "var(--color-prettylights-syntax-string-regexp, #024c1a)",
+      "markupList": "var(--color-prettylights-syntax-markup-list, #2e1800)",
+      "markupHeading": "var(--color-prettylights-syntax-markup-heading, #023b95)",
+      "markupItalic": "var(--color-prettylights-syntax-markup-italic, #0e1116)",
+      "markupBold": "var(--color-prettylights-syntax-markup-bold, #0e1116)",
+      "markupDeletedText": "var(--color-prettylights-syntax-markup-deleted-text, #6e011a)",
+      "markupDeletedBg": "var(--color-prettylights-syntax-markup-deleted-bg, #fff0ee)",
+      "markupInsertedText": "var(--color-prettylights-syntax-markup-inserted-text, #024c1a)",
+      "markupInsertedBg": "var(--color-prettylights-syntax-markup-inserted-bg, #d2fedb)",
+      "markupChangedText": "var(--color-prettylights-syntax-markup-changed-text, #702c00)",
+      "markupChangedBg": "var(--color-prettylights-syntax-markup-changed-bg, #ffc67b)",
+      "markupIgnoredText": "var(--color-prettylights-syntax-markup-ignored-text, #e7ecf0)",
+      "markupIgnoredBg": "var(--color-prettylights-syntax-markup-ignored-bg, #023b95)",
+      "metaDiffRange": "var(--color-prettylights-syntax-meta-diff-range, #622cbc)",
+      "brackethighlighterAngle": "var(--color-prettylights-syntax-brackethighlighter-angle, #4b535d)",
+      "sublimelinterGutterMark": "var(--color-prettylights-syntax-sublimelinter-gutter-mark, #88929d)",
+      "constantOtherReferenceLink": "var(--color-prettylights-syntax-constant-other-reference-link, #032563)"
     }
   },
   "codemirror": {
@@ -75,7 +75,7 @@
     "bg": "var(--codeMirror-bgColor, var(--color-codemirror-bg, (theme) => `var(--bgColor-default, var(--color-canvas-default, ${(0, utils_v1_1.get)('scale.white')(theme)}))`))",
     "guttersBg": "var(--codeMirror-gutters-bgColor, var(--color-codemirror-gutters-bg, (theme) => `var(--bgColor-default, var(--color-canvas-default, ${(0, utils_v1_1.get)('scale.white')(theme)}))`))",
     "guttermarkerText": "var(--codeMirror-gutterMarker-fgColor-default, var(--color-codemirror-guttermarker-text, (theme) => `var(--bgColor-default, var(--color-canvas-default, ${(0, utils_v1_1.get)('scale.white')(theme)}))`))",
-    "guttermarkerSubtleText": "var(--codeMirror-gutterMarker-fgColor-muted, var(--color-codemirror-guttermarker-subtle-text, (theme, HI_KATIE) => `var(--control-fgColor-placeholder, var(--color-fg-subtle, ${(0, utils_v1_1.get)('scale.gray.5')(theme)}))`))",
+    "guttermarkerSubtleText": "var(--codeMirror-gutterMarker-fgColor-muted, var(--color-codemirror-guttermarker-subtle-text, (theme) => `var(--fgColor-muted, var(--color-fg-subtle, ${(0, utils_v1_1.get)('scale.gray.5')(theme)}))`))",
     "linenumberText": "var(--codeMirror-lineNumber-fgColor, var(--color-codemirror-linenumber-text, (obj) => (0, get_1.default)(obj, path)))",
     "cursor": "var(--codeMirror-cursor-fgColor, var(--color-codemirror-cursor, (obj) => (0, get_1.default)(obj, path)))",
     "selectionBg": "var(--codeMirror-selection-bgColor, var(--color-codemirror-selection-bg, (obj) => (0, get_1.default)(obj, path)))",
@@ -94,96 +94,96 @@
     }
   },
   "checks": {
-    "bg": "var(undefined, var(--color-checks-bg, #0e1116))",
-    "runBorderWidth": "var(undefined, var(--color-checks-run-border-width, 0px))",
-    "containerBorderWidth": "var(undefined, var(--color-checks-container-border-width, 0px))",
-    "textPrimary": "var(undefined, var(--color-checks-text-primary, #ffffff))",
-    "textSecondary": "var(undefined, var(--color-checks-text-secondary, #88929d))",
-    "textLink": "var(undefined, var(--color-checks-text-link, #368cf9))",
-    "btnIcon": "var(undefined, var(--color-checks-btn-icon, #acb6c0))",
-    "btnHoverIcon": "var(undefined, var(--color-checks-btn-hover-icon, #ffffff))",
-    "btnHoverBg": "var(undefined, var(--color-checks-btn-hover-bg, rgba(255,255,255,0.125)))",
-    "inputText": "var(undefined, var(--color-checks-input-text, #e7ecf0))",
-    "inputPlaceholderText": "var(undefined, var(--color-checks-input-placeholder-text, #88929d))",
-    "inputFocusText": "var(undefined, var(--color-checks-input-focus-text, #88929d))",
-    "inputBg": "var(undefined, var(--color-checks-input-bg, #20252c))",
-    "inputShadow": "var(undefined, var(--color-checks-input-shadow, none))",
-    "donutError": "var(undefined, var(--color-checks-donut-error, #d5232c))",
-    "donutPending": "var(undefined, var(--color-checks-donut-pending, #956400))",
-    "donutSuccess": "var(undefined, var(--color-checks-donut-success, (obj) => (0, get_1.default)(obj, path)))",
-    "donutNeutral": "var(undefined, var(--color-checks-donut-neutral, #acb6c0))",
-    "dropdownText": "var(undefined, var(--color-checks-dropdown-text, #acb6c0))",
-    "dropdownBg": "var(undefined, var(--color-checks-dropdown-bg, #20252c))",
-    "dropdownBorder": "var(undefined, var(--color-checks-dropdown-border, #343b43))",
-    "dropdownShadow": "var(undefined, var(--color-checks-dropdown-shadow, rgba(1,4,9,0.3)))",
-    "dropdownHoverText": "var(undefined, var(--color-checks-dropdown-hover-text, #ffffff))",
-    "dropdownHoverBg": "var(undefined, var(--color-checks-dropdown-hover-bg, #343b43))",
-    "dropdownBtnHoverText": "var(undefined, var(--color-checks-dropdown-btn-hover-text, #ffffff))",
-    "dropdownBtnHoverBg": "var(undefined, var(--color-checks-dropdown-btn-hover-bg, #20252c))",
-    "scrollbarThumbBg": "var(undefined, var(--color-checks-scrollbar-thumb-bg, #4b535d))",
-    "headerLabelText": "var(undefined, var(--color-checks-header-label-text, #ced5dc))",
-    "headerLabelOpenText": "var(undefined, var(--color-checks-header-label-open-text, #ffffff))",
-    "headerBorder": "var(undefined, var(--color-checks-header-border, #20252c))",
-    "headerIcon": "var(undefined, var(--color-checks-header-icon, #88929d))",
-    "lineText": "var(undefined, var(--color-checks-line-text, #ced5dc))",
-    "lineNumText": "var(undefined, var(--color-checks-line-num-text, rgba(136,146,157,0.75)))",
-    "lineTimestampText": "var(undefined, var(--color-checks-line-timestamp-text, #88929d))",
-    "lineHoverBg": "var(undefined, var(--color-checks-line-hover-bg, #20252c))",
-    "lineSelectedBg": "var(undefined, var(--color-checks-line-selected-bg, rgba(17,104,227,0.15)))",
-    "lineSelectedNumText": "var(undefined, var(--color-checks-line-selected-num-text, #368cf9))",
-    "lineDtFmText": "var(undefined, var(--color-checks-line-dt-fm-text, #0e1116))",
-    "lineDtFmBg": "var(undefined, var(--color-checks-line-dt-fm-bg, #744500))",
-    "gateBg": "var(undefined, var(--color-checks-gate-bg, rgba(96,55,0,0.15)))",
-    "gateText": "var(undefined, var(--color-checks-gate-text, #ced5dc))",
-    "gateWaitingText": "var(undefined, var(--color-checks-gate-waiting-text, #b58407))",
-    "stepHeaderOpenBg": "var(undefined, var(--color-checks-step-header-open-bg, #20252c))",
-    "stepErrorText": "var(undefined, var(--color-checks-step-error-text, #ee5a5d))",
-    "stepWarningText": "var(undefined, var(--color-checks-step-warning-text, #b58407))",
-    "loglineText": "var(undefined, var(--color-checks-logline-text, #88929d))",
-    "loglineNumText": "var(undefined, var(--color-checks-logline-num-text, rgba(136,146,157,0.75)))",
-    "loglineDebugText": "var(undefined, var(--color-checks-logline-debug-text, #a371f7))",
-    "loglineErrorText": "var(undefined, var(--color-checks-logline-error-text, #ced5dc))",
-    "loglineErrorNumText": "var(undefined, var(--color-checks-logline-error-num-text, #ee5a5d))",
-    "loglineErrorBg": "var(undefined, var(--color-checks-logline-error-bg, rgba(134,6,29,0.15)))",
-    "loglineWarningText": "var(undefined, var(--color-checks-logline-warning-text, #ced5dc))",
-    "loglineWarningNumText": "var(undefined, var(--color-checks-logline-warning-num-text, #b58407))",
-    "loglineWarningBg": "var(undefined, var(--color-checks-logline-warning-bg, rgba(96,55,0,0.15)))",
-    "loglineCommandText": "var(undefined, var(--color-checks-logline-command-text, #368cf9))",
-    "loglineSectionText": "var(undefined, var(--color-checks-logline-section-text, #26a148))",
+    "bg": "var(--color-checks-bg, #0e1116)",
+    "runBorderWidth": "var(--color-checks-run-border-width, 0px)",
+    "containerBorderWidth": "var(--color-checks-container-border-width, 0px)",
+    "textPrimary": "var(--color-checks-text-primary, #ffffff)",
+    "textSecondary": "var(--color-checks-text-secondary, #88929d)",
+    "textLink": "var(--color-checks-text-link, #368cf9)",
+    "btnIcon": "var(--color-checks-btn-icon, #acb6c0)",
+    "btnHoverIcon": "var(--color-checks-btn-hover-icon, #ffffff)",
+    "btnHoverBg": "var(--color-checks-btn-hover-bg, rgba(255,255,255,0.125))",
+    "inputText": "var(--color-checks-input-text, #e7ecf0)",
+    "inputPlaceholderText": "var(--color-checks-input-placeholder-text, #88929d)",
+    "inputFocusText": "var(--color-checks-input-focus-text, #88929d)",
+    "inputBg": "var(--color-checks-input-bg, #20252c)",
+    "inputShadow": "var(--color-checks-input-shadow, none)",
+    "donutError": "var(--color-checks-donut-error, #d5232c)",
+    "donutPending": "var(--color-checks-donut-pending, #956400)",
+    "donutSuccess": "var(--color-checks-donut-success, (obj) => (0, get_1.default)(obj, path))",
+    "donutNeutral": "var(--color-checks-donut-neutral, #acb6c0)",
+    "dropdownText": "var(--color-checks-dropdown-text, #acb6c0)",
+    "dropdownBg": "var(--color-checks-dropdown-bg, #20252c)",
+    "dropdownBorder": "var(--color-checks-dropdown-border, #343b43)",
+    "dropdownShadow": "var(--color-checks-dropdown-shadow, rgba(1,4,9,0.3))",
+    "dropdownHoverText": "var(--color-checks-dropdown-hover-text, #ffffff)",
+    "dropdownHoverBg": "var(--color-checks-dropdown-hover-bg, #343b43)",
+    "dropdownBtnHoverText": "var(--color-checks-dropdown-btn-hover-text, #ffffff)",
+    "dropdownBtnHoverBg": "var(--color-checks-dropdown-btn-hover-bg, #20252c)",
+    "scrollbarThumbBg": "var(--color-checks-scrollbar-thumb-bg, #4b535d)",
+    "headerLabelText": "var(--color-checks-header-label-text, #ced5dc)",
+    "headerLabelOpenText": "var(--color-checks-header-label-open-text, #ffffff)",
+    "headerBorder": "var(--color-checks-header-border, #20252c)",
+    "headerIcon": "var(--color-checks-header-icon, #88929d)",
+    "lineText": "var(--color-checks-line-text, #ced5dc)",
+    "lineNumText": "var(--color-checks-line-num-text, rgba(136,146,157,0.75))",
+    "lineTimestampText": "var(--color-checks-line-timestamp-text, #88929d)",
+    "lineHoverBg": "var(--color-checks-line-hover-bg, #20252c)",
+    "lineSelectedBg": "var(--color-checks-line-selected-bg, rgba(17,104,227,0.15))",
+    "lineSelectedNumText": "var(--color-checks-line-selected-num-text, #368cf9)",
+    "lineDtFmText": "var(--color-checks-line-dt-fm-text, #0e1116)",
+    "lineDtFmBg": "var(--color-checks-line-dt-fm-bg, #744500)",
+    "gateBg": "var(--color-checks-gate-bg, rgba(96,55,0,0.15))",
+    "gateText": "var(--color-checks-gate-text, #ced5dc)",
+    "gateWaitingText": "var(--color-checks-gate-waiting-text, #b58407)",
+    "stepHeaderOpenBg": "var(--color-checks-step-header-open-bg, #20252c)",
+    "stepErrorText": "var(--color-checks-step-error-text, #ee5a5d)",
+    "stepWarningText": "var(--color-checks-step-warning-text, #b58407)",
+    "loglineText": "var(--color-checks-logline-text, #88929d)",
+    "loglineNumText": "var(--color-checks-logline-num-text, rgba(136,146,157,0.75))",
+    "loglineDebugText": "var(--color-checks-logline-debug-text, #a371f7)",
+    "loglineErrorText": "var(--color-checks-logline-error-text, #ced5dc)",
+    "loglineErrorNumText": "var(--color-checks-logline-error-num-text, #ee5a5d)",
+    "loglineErrorBg": "var(--color-checks-logline-error-bg, rgba(134,6,29,0.15))",
+    "loglineWarningText": "var(--color-checks-logline-warning-text, #ced5dc)",
+    "loglineWarningNumText": "var(--color-checks-logline-warning-num-text, #b58407)",
+    "loglineWarningBg": "var(--color-checks-logline-warning-bg, rgba(96,55,0,0.15))",
+    "loglineCommandText": "var(--color-checks-logline-command-text, #368cf9)",
+    "loglineSectionText": "var(--color-checks-logline-section-text, #26a148)",
     "ansi": {
-      "black": "var(undefined, var(--color-checks-ansi-black, #0e1116))",
-      "blackBright": "var(undefined, var(--color-checks-ansi-black-bright, #20252c))",
-      "white": "var(undefined, var(--color-checks-ansi-white, #ced5dc))",
-      "whiteBright": "var(undefined, var(--color-checks-ansi-white-bright, #ced5dc))",
-      "gray": "var(undefined, var(--color-checks-ansi-gray, #88929d))",
-      "red": "var(undefined, var(--color-checks-ansi-red, #ee5a5d))",
-      "redBright": "var(undefined, var(--color-checks-ansi-red-bright, #ff8e8a))",
-      "green": "var(undefined, var(--color-checks-ansi-green, #26a148))",
-      "greenBright": "var(undefined, var(--color-checks-ansi-green-bright, #43c663))",
-      "yellow": "var(undefined, var(--color-checks-ansi-yellow, #b58407))",
-      "yellowBright": "var(undefined, var(--color-checks-ansi-yellow-bright, #d5a824))",
-      "blue": "var(undefined, var(--color-checks-ansi-blue, #368cf9))",
-      "blueBright": "var(undefined, var(--color-checks-ansi-blue-bright, #67b3fd))",
-      "magenta": "var(undefined, var(--color-checks-ansi-magenta, #a371f7))",
-      "magentaBright": "var(undefined, var(--color-checks-ansi-magenta-bright, #c49bff))",
-      "cyan": "var(undefined, var(--color-checks-ansi-cyan, #76e3ea))",
-      "cyanBright": "var(undefined, var(--color-checks-ansi-cyan-bright, #b3f0ff))"
+      "black": "var(--color-checks-ansi-black, #0e1116)",
+      "blackBright": "var(--color-checks-ansi-black-bright, #20252c)",
+      "white": "var(--color-checks-ansi-white, #ced5dc)",
+      "whiteBright": "var(--color-checks-ansi-white-bright, #ced5dc)",
+      "gray": "var(--color-checks-ansi-gray, #88929d)",
+      "red": "var(--color-checks-ansi-red, #ee5a5d)",
+      "redBright": "var(--color-checks-ansi-red-bright, #ff8e8a)",
+      "green": "var(--color-checks-ansi-green, #26a148)",
+      "greenBright": "var(--color-checks-ansi-green-bright, #43c663)",
+      "yellow": "var(--color-checks-ansi-yellow, #b58407)",
+      "yellowBright": "var(--color-checks-ansi-yellow-bright, #d5a824)",
+      "blue": "var(--color-checks-ansi-blue, #368cf9)",
+      "blueBright": "var(--color-checks-ansi-blue-bright, #67b3fd)",
+      "magenta": "var(--color-checks-ansi-magenta, #a371f7)",
+      "magentaBright": "var(--color-checks-ansi-magenta-bright, #c49bff)",
+      "cyan": "var(--color-checks-ansi-cyan, #76e3ea)",
+      "cyanBright": "var(--color-checks-ansi-cyan-bright, #b3f0ff)"
     }
   },
   "project": {
-    "headerBg": "var(undefined, var(--color-project-header-bg, #0e1116))",
-    "sidebarBg": "var(undefined, var(--color-project-sidebar-bg, #ffffff))",
-    "gradientIn": "var(undefined, var(--color-project-gradient-in, #ffffff))",
-    "gradientOut": "var(undefined, var(--color-project-gradient-out, rgba(255,255,255,0)))"
+    "headerBg": "var(--color-project-header-bg, #0e1116)",
+    "sidebarBg": "var(--color-project-sidebar-bg, #ffffff)",
+    "gradientIn": "var(--color-project-gradient-in, #ffffff)",
+    "gradientOut": "var(--color-project-gradient-out, rgba(255,255,255,0))"
   },
   "mktg": {
     "btn": {
-      "bg": "var(undefined, var(--color-mktg-btn-bg, #1b1f23))",
+      "bg": "var(--color-mktg-btn-bg, #1b1f23))",
       "shadow": {
-        "outline": "var(undefined, var(--color-mktg-btn-shadow-outline, rgb(0 0 0 / 15%) 0 0 0 1px inset))",
-        "focus": "var(undefined, var(--color-mktg-btn-shadow-focus, rgb(0 0 0 / 15%) 0 0 0 4px))",
-        "hover": "var(undefined, var(--color-mktg-btn-shadow-hover, 0 3px 2px rgba(0, 0, 0, 0.07), 0 7px 5px rgba(0, 0, 0, 0.04), 0 12px 10px rgba(0, 0, 0, 0.03), 0 22px 18px rgba(0, 0, 0, 0.03), 0 42px 33px rgba(0, 0, 0, 0.02), 0 100px 80px rgba(0, 0, 0, 0.02)))",
-        "hoverMuted": "var(undefined, var(--color-mktg-btn-shadow-hover-muted, rgb(0 0 0 / 70%) 0 0 0 2px inset))"
+        "outline": "var(--color-mktg-btn-shadow-outline, rgb(0 0 0 / 15%) 0 0 0 1px inset))",
+        "focus": "var(--color-mktg-btn-shadow-focus, rgb(0 0 0 / 15%) 0 0 0 4px))",
+        "hover": "var(--color-mktg-btn-shadow-hover, 0 3px 2px rgba(0, 0, 0, 0.07), 0 7px 5px rgba(0, 0, 0, 0.04), 0 12px 10px rgba(0, 0, 0, 0.03), 0 22px 18px rgba(0, 0, 0, 0.03), 0 42px 33px rgba(0, 0, 0, 0.02), 0 100px 80px rgba(0, 0, 0, 0.02)))",
+        "hoverMuted": "var(--color-mktg-btn-shadow-hover-muted, rgb(0 0 0 / 70%) 0 0 0 2px inset))"
       }
     }
   },
@@ -207,7 +207,7 @@
   },
   "selectMenu": {
     "backdropBorder": "var(--selectMenu-borderColor, var(--color-select-menu-backdrop-border, transparent))",
-    "tapHighlight": "var(undefined, var(--color-select-menu-tap-highlight, rgba(172,182,192,0.5)))",
+    "tapHighlight": "var(--control-bgColor-active, var(--color-select-menu-tap-highlight, rgba(172,182,192,0.5)))",
     "tapFocusBg": "var(--selectMenu-bgColor-active, var(--color-select-menu-tap-focus-bg, #9cd7ff))"
   },
   "overlay": {
@@ -231,29 +231,29 @@
     "bgActive": "var(--menu-bgColor-active, var(--color-menu-bg-active, transparent))"
   },
   "input": {
-    "disabledBg": "var(--control-bgColor-disabled, var(--color-input-disabled-bg, (theme, HI_KATIE) => `var(--bgColor-disabled, var(--color-neutral-muted, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.gray.3'), 0.2)(theme)}))`))"
+    "disabledBg": "var(--control-bgColor-disabled, var(--color-input-disabled-bg, (theme) => `var(--borderColor-neutral-muted, var(--color-neutral-muted, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.gray.3'), 0.2)(theme)}))`))"
   },
   "timeline": {
     "badgeBg": "var(--timelineBadge-bgColor, var(--color-timeline-badge-bg, #e7ecf0))"
   },
   "ansi": {
-    "black": "var(undefined, var(--color-ansi-black, #0e1116))",
-    "blackBright": "var(undefined, var(--color-ansi-black-bright, #4b535d))",
-    "white": "var(undefined, var(--color-ansi-white, #66707b))",
-    "whiteBright": "var(undefined, var(--color-ansi-white-bright, #88929d))",
-    "gray": "var(undefined, var(--color-ansi-gray, #66707b))",
-    "red": "var(undefined, var(--color-ansi-red, #a0111f))",
-    "redBright": "var(undefined, var(--color-ansi-red-bright, #86061d))",
-    "green": "var(undefined, var(--color-ansi-green, #024c1a))",
-    "greenBright": "var(undefined, var(--color-ansi-green-bright, #055d20))",
-    "yellow": "var(undefined, var(--color-ansi-yellow, #3f2200))",
-    "yellowBright": "var(undefined, var(--color-ansi-yellow-bright, #4e2c00))",
-    "blue": "var(undefined, var(--color-ansi-blue, #0349b4))",
-    "blueBright": "var(undefined, var(--color-ansi-blue-bright, #1168e3))",
-    "magenta": "var(undefined, var(--color-ansi-magenta, #622cbc))",
-    "magentaBright": "var(undefined, var(--color-ansi-magenta-bright, #844ae7))",
-    "cyan": "var(undefined, var(--color-ansi-cyan, #1b7c83))",
-    "cyanBright": "var(undefined, var(--color-ansi-cyan-bright, #3192aa))"
+    "black": "var(--color-ansi-black, #0e1116)",
+    "blackBright": "var(--color-ansi-black-bright, #4b535d)",
+    "white": "var(--color-ansi-white, #66707b)",
+    "whiteBright": "var(--color-ansi-white-bright, #88929d)",
+    "gray": "var(--color-ansi-gray, #66707b)",
+    "red": "var(--color-ansi-red, #a0111f)",
+    "redBright": "var(--color-ansi-red-bright, #86061d)",
+    "green": "var(--color-ansi-green, #024c1a)",
+    "greenBright": "var(--color-ansi-green-bright, #055d20)",
+    "yellow": "var(--color-ansi-yellow, #3f2200)",
+    "yellowBright": "var(--color-ansi-yellow-bright, #4e2c00)",
+    "blue": "var(--color-ansi-blue, #0349b4)",
+    "blueBright": "var(--color-ansi-blue-bright, #1168e3)",
+    "magenta": "var(--color-ansi-magenta, #622cbc)",
+    "magentaBright": "var(--color-ansi-magenta-bright, #844ae7)",
+    "cyan": "var(--color-ansi-cyan, #1b7c83)",
+    "cyanBright": "var(--color-ansi-cyan-bright, #3192aa)"
   },
   "btn": {
     "text": "var(--button-default-fgColor-rest, var(--color-btn-text, #0e1116))",
@@ -271,8 +271,8 @@
       "text": "var(--button-primary-fgColor-rest, var(--color-btn-primary-text, #ffffff))",
       "bg": "#055d20",
       "border": "#013d14",
-      "shadow": "var(undefined, var(--color-btn-primary-shadow, 0 1px 0 rgba(1,4,9,0.1)))// HI_KATIE: no matches",
-      "insetShadow": "var(undefined, var(--color-btn-primary-inset-shadow, inset 0 1px 0 rgba(255,255,255,0.03)))// HI_KATIE: no matches",
+      "shadow": "var(--shadow-resting-small, var(--color-btn-primary-shadow, 0 1px 0 rgba(1,4,9,0.1)))",
+      "insetShadow": "var(--shadow-highlight, var(--color-btn-primary-inset-shadow, inset 0 1px 0 rgba(255,255,255,0.03)))",
       "hoverBg": "#024c1a",
       "hoverBorder": "#013d14",
       "selectedBg": "var(--button-primary-bgColor-active, var(--color-btn-primary-selected-bg, hsla(139,95%,13%,1)))",
@@ -285,54 +285,54 @@
     },
     "outline": {
       "text": "#023b95",
-      "hoverText": "var(undefined, var(--color-btn-primary-outline-hover-text, #ffffff))",
+      "hoverText": "var(--button-outline-fgColor-hover, var(--color-btn-outline-hover-text, #ffffff))",
       "hoverBg": "var(--bgColor-accent-emphasis, var(--color-accent-emphasis, #0349b4))",
       "hoverBorder": "#022f7a",
-      "hoverShadow": "var(undefined, var(--color-btn-primary-outline-hover-shadow, 0 1px 0 rgba(1,4,9,0.1)))// HI_KATIE: no matches",
-      "hoverInsetShadow": "var(undefined, var(--color-btn-primary-outline-hover-inset-shadow, inset 0 1px 0 rgba(255,255,255,0.03)))// HI_KATIE: no matches",
-      "hoverCounterBg": "var(undefined, var(--color-btn-primary-outline-hover-counter-bg, rgba(255,255,255,0.2)))",
-      "selectedText": "var(undefined, var(--color-btn-primary-outline-selected-text, #ffffff))",
+      "hoverShadow": "var(--shadow-resting-small, var(--color-btn-outline-hover-shadow, 0 1px 0 rgba(1,4,9,0.1)))",
+      "hoverInsetShadow": "var(--shadow-highlight, var(--color-btn-outline-hover-inset-shadow, inset 0 1px 0 rgba(255,255,255,0.03)))",
+      "hoverCounterBg": "var(--buttonCounter-outline-bgColor-hover, var(--color-btn-outline-hover-counter-bg, rgba(255,255,255,0.2)))",
+      "selectedText": "var(--button-outline-fgColor-active, var(--color-btn-outline-selected-text, #ffffff))",
       "selectedBg": "#022f7a",
       "selectedBorder": "#022f7a",
-      "selectedShadow": "var(undefined, var(--color-btn-primary-outline-selected-shadow, inset 0 1px 0 rgba(2,26,74,0.2)))// HI_KATIE: no matches",
+      "selectedShadow": "var(--button-outline-shadow-selected, var(--color-btn-outline-selected-shadow, inset 0 1px 0 rgba(2,26,74,0.2)))",
       "disabledText": "rgba(3,73,180,0.5)",
       "disabledBg": "#e7ecf0",
-      "disabledCounterBg": "var(undefined, var(--color-btn-primary-outline-disabled-counter-bg, rgba(3,73,180,0.05)))",
-      "counterBg": "var(undefined, var(--color-btn-primary-outline-counter-bg, #0969da1a))",
-      "counterFg": "var(undefined, var(--color-btn-primary-outline-counter-fg, #023b95))",
-      "hoverCounterFg": "var(undefined, var(--color-btn-primary-outline-hover-counter-fg, #ffffff))",
-      "disabledCounterFg": "var(undefined, var(--color-btn-primary-outline-disabled-counter-fg, rgba(3,73,180,0.5)))"
+      "disabledCounterBg": "var(--buttonCounter-outline-bgColor-disabled, var(--color-btn-outline-disabled-counter-bg, rgba(3,73,180,0.05)))",
+      "counterBg": "var(--buttonCounter-outline-bgColor-rest, var(--color-btn-outline-counter-bg, #0969da1a))",
+      "counterFg": "var(--buttonCounter-outline-fgColor-rest, var(--color-btn-outline-counter-fg, #023b95))",
+      "hoverCounterFg": "var(--buttonCounter-outline-fgColor-hover, var(--color-btn-outline-hover-counter-fg, #ffffff))",
+      "disabledCounterFg": "var(--buttonCounter-outline-fgColor-disabled, var(--color-btn-outline-disabled-counter-fg, rgba(3,73,180,0.5)))"
     },
     "danger": {
       "text": "#86061d",
-      "hoverText": "var(undefined, var(--color-btn-primary-outline-danger-hover-text, #ffffff))",
-      "hoverBg": "var(--control-borderColor-danger, var(--color-danger-emphasis, #a0111f))",
+      "hoverText": "var(--button-danger-fgColor-hover, var(--color-btn-danger-hover-text, #ffffff))",
+      "hoverBg": "var(--borderColor-danger-emphasis, var(--color-danger-emphasis, #a0111f))",
       "hoverBorder": "#6e011a",
-      "hoverShadow": "var(undefined, var(--color-btn-primary-outline-danger-hover-shadow, 0 1px 0 rgba(1,4,9,0.1)))// HI_KATIE: no matches",
-      "hoverInsetShadow": "var(undefined, var(--color-btn-primary-outline-danger-hover-inset-shadow, inset 0 1px 0 rgba(255,255,255,0.03)))// HI_KATIE: no matches",
-      "hoverCounterBg": "var(undefined, var(--color-btn-primary-outline-danger-hover-counter-bg, rgba(255,255,255,0.2)))",
-      "selectedText": "var(undefined, var(--color-btn-primary-outline-danger-selected-text, #ffffff))",
+      "hoverShadow": "var(--shadow-resting-small, var(--color-btn-danger-hover-shadow, 0 1px 0 rgba(1,4,9,0.1)))",
+      "hoverInsetShadow": "var(--shadow-highlight, var(--color-btn-danger-hover-inset-shadow, inset 0 1px 0 rgba(255,255,255,0.03)))",
+      "hoverCounterBg": "var(--buttonCounter-danger-bgColor-hover, var(--color-btn-danger-hover-counter-bg, rgba(255,255,255,0.2)))",
+      "selectedText": "var(--button-danger-fgColor-active, var(--color-btn-danger-selected-text, #ffffff))",
       "selectedBg": "#6e011a",
       "selectedBorder": "#6e011a",
-      "selectedShadow": "var(undefined, var(--color-btn-primary-outline-danger-selected-shadow, inset 0 1px 0 rgba(67,0,17,0.2)))// HI_KATIE: no matches",
-      "disabledText": "var(undefined, var(--color-btn-primary-outline-danger-disabled-text, rgba(160,17,31,0.5)))",
+      "selectedShadow": "var(--button-danger-shadow-selected, var(--color-btn-danger-selected-shadow, inset 0 1px 0 rgba(67,0,17,0.2)))",
+      "disabledText": "var(--button-danger-fgColor-disabled, var(--color-btn-danger-disabled-text, rgba(160,17,31,0.5)))",
       "disabledBg": "#e7ecf0",
-      "disabledCounterBg": "var(undefined, var(--color-btn-primary-outline-danger-disabled-counter-bg, rgba(160,17,31,0.05)))",
-      "counterBg": "var(undefined, var(--color-btn-primary-outline-danger-counter-bg, rgba(160,17,31,0.1)))",
+      "disabledCounterBg": "var(--buttonCounter-danger-bgColor-disabled, var(--color-btn-danger-disabled-counter-bg, rgba(160,17,31,0.05)))",
+      "counterBg": "var(--buttonCounter-danger-bgColor-rest, var(--color-btn-danger-counter-bg, rgba(160,17,31,0.1)))",
       "icon": "#86061d",
-      "hoverIcon": "var(undefined, var(--color-btn-primary-outline-danger-hover-icon, #ffffff))",
-      "counterFg": "var(undefined, var(--color-btn-primary-outline-danger-counter-fg, #86061d))",
-      "hoverCounterFg": "var(undefined, var(--color-btn-primary-outline-danger-hover-counter-fg, #ffffff))",
-      "disabledCounterFg": "var(undefined, var(--color-btn-primary-outline-danger-disabled-counter-fg, rgba(160,17,31,0.5)))"
+      "hoverIcon": "var(--button-danger-iconColor-hover, var(--color-btn-danger-hover-icon, #ffffff))",
+      "counterFg": "var(--buttonCounter-danger-fgColor-rest, var(--color-btn-danger-counter-fg, #86061d))",
+      "hoverCounterFg": "var(--buttonCounter-danger-fgColor-hover, var(--color-btn-danger-hover-counter-fg, #ffffff))",
+      "disabledCounterFg": "var(--buttonCounter-danger-fgColor-disabled, var(--color-btn-danger-disabled-counter-fg, rgba(160,17,31,0.5)))"
     },
     "inactive": {
-      "bg": "var(undefined, var(--color-btn-primary-outline-danger-inactive-bg, #e7ecf0))",
-      "text": "var(undefined, var(--color-btn-primary-outline-danger-inactive-text, #4b535d))"
+      "bg": "var(--button-inactive-bgColor-rest, var(--color-btn-inactive-bg, #e7ecf0))",
+      "text": "var(--button-inactive-fgColor-rest, var(--color-btn-inactive-text, #4b535d))"
     }
   },
   "underlinenav": {
-    "icon": "var(--underlineNav-iconColor-rest, var(--color-underlinenav-icon, (theme, HI_KATIE) => `var(--control-fgColor-placeholder, var(--color-fg-subtle, ${(0, utils_v1_1.get)('scale.gray.5')(theme)}))`))",
-    "borderHover": "var(--underlineNav-borderColor-hover, var(--color-underlinenav-border-hover, (theme, HI_KATIE) => `var(--bgColor-disabled, var(--color-neutral-muted, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.gray.3'), 0.2)(theme)}))`))"
+    "icon": "var(--underlineNav-iconColor-rest, var(--color-underlinenav-icon, (theme) => `var(--fgColor-muted, var(--color-fg-subtle, ${(0, utils_v1_1.get)('scale.gray.5')(theme)}))`))",
+    "borderHover": "var(--underlineNav-borderColor-hover, var(--color-underlinenav-border-hover, (theme) => `var(--borderColor-neutral-muted, var(--color-neutral-muted, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.gray.3'), 0.2)(theme)}))`))"
   },
   "actionListItem": {
     "inlineDivider": "#88929d",
@@ -344,50 +344,50 @@
       "selectedBg": "#ced5dc"
     },
     "danger": {
-      "hoverBg": "var(--control-borderColor-danger, var(--color-danger-emphasis, #a0111f))",
+      "hoverBg": "var(--borderColor-danger-emphasis, var(--color-danger-emphasis, #a0111f))",
       "activeBg": "#6e011a",
       "hoverText": "var(--fgColor-onEmphasis, var(--color-fg-on-emphasis, #ffffff))"
     }
   },
   "switchTrack": {
-    "bg": "var(undefined, var(--color-neutral-emphasis, #66707b))",
-    "hoverBg": "var(undefined, var(--color-neutral-emphasis, hsla(211,9%,47%,1)))",
-    "activeBg": "var(undefined, var(--color-neutral-emphasis, hsla(211,9%,49%,1)))",
-    "disabledBg": "var(--control-checked-bgColor-disabled, var(--color-switch-track-disabled-bg, #88929d))",
+    "bg": "var(--bgColor-neutral-emphasis, var(--color-neutral-emphasis, #66707b))",
+    "hoverBg": "var(--bgColor-neutral-emphasis, var(--color-neutral-emphasis, hsla(211,9%,47%,1)))",
+    "activeBg": "var(--bgColor-neutral-emphasis, var(--color-neutral-emphasis, hsla(211,9%,49%,1)))",
+    "disabledBg": "var(--controlTrack-bgColor-disabled, var(--color-switch-track-disabled-bg, #88929d))",
     "fg": "var(--fgColor-onEmphasis, var(--color-fg-on-emphasis, #ffffff))",
     "disabledFg": "var(--fgColor-onEmphasis, var(--color-fg-on-emphasis, #ffffff))",
     "border": "var(--controlTrack-borderColor-rest, var(--color-switch-track-border, transparent))",
     "checked": {
-      "bg": "var(--control-checked-bgColor-rest, var(--color-switch-track-checked-bg, (theme, HI_KATIE) => `var(--bgColor-accent-emphasis, var(--color-accent-emphasis, ${(0, utils_v1_1.get)('scale.blue.5')(theme)}))`))",
+      "bg": "var(--control-checked-bgColor-rest, var(--color-switch-track-checked-bg, (theme) => `var(--bgColor-accent-emphasis, var(--color-accent-emphasis, ${(0, utils_v1_1.get)('scale.blue.5')(theme)}))`))",
       "hoverBg": "var(--control-checked-bgColor-hover, var(--color-switch-track-checked-hover-bg, #0860CA))",
       "activeBg": "var(--control-checked-bgColor-active, var(--color-switch-track-checked-active-bg, #0757BA))",
       "fg": "var(--fgColor-onEmphasis, var(--color-fg-on-emphasis, #ffffff))",
       "disabledFg": "var(--control-checked-fgColor-disabled, var(--color-switch-track-checked-disabled-fg, (theme) => `var(--fgColor-onEmphasis, var(--color-fg-on-emphasis, ${(0, utils_v1_1.get)('scale.white')(theme)}))`))",
-      "border": "var(undefined, var(--color-switch-track-checked-border, transparent))"
+      "border": "var(--borderColor-transparent, var(--color-switch-track-checked-border, transparent))"
     }
   },
   "switchKnob": {
     "bg": "var(--controlKnob-bgColor-rest, var(--color-switch-knob-bg, (theme) => `var(--bgColor-default, var(--color-canvas-default, ${(0, utils_v1_1.get)('scale.white')(theme)}))`))",
-    "disabledBg": "var(undefined, var(--color-switch-knob-disabled-bg, (obj) => (0, get_1.default)(obj, path)))",
+    "disabledBg": "var(--controlKnob-bgColor-disabled, var(--color-switch-knob-disabled-bg, (obj) => (0, get_1.default)(obj, path)))",
     "border": "#20252c",
     "checked": {
       "bg": "var(--controlKnob-bgColor-checked, var(--color-switch-knob-checked-bg, (theme) => `var(--bgColor-default, var(--color-canvas-default, ${(0, utils_v1_1.get)('scale.white')(theme)}))`))",
-      "disabledBg": "var(undefined, var(--color-switch-knob-checked-disabled-bg, (obj) => (0, get_1.default)(obj, path)))",
+      "disabledBg": "var(--controlKnob-bgColor-disabled, var(--color-switch-knob-checked-disabled-bg, (obj) => (0, get_1.default)(obj, path)))",
       "border": "var(--bgColor-accent-emphasis, var(--color-accent-emphasis, #0349b4))"
     }
   },
   "segmentedControl": {
-    "bg": "var(undefined, var(--color-segmented-control-bg, #e7ecf0))",
+    "bg": "var(--controlTrack-bgColor-rest, var(--color-segmented-control-bg, #e7ecf0))",
     "button": {
-      "bg": "var(undefined, var(--color-segmented-control-button-bg, (theme) => `var(--bgColor-default, var(--color-canvas-default, ${(0, utils_v1_1.get)('scale.white')(theme)}))`))",
+      "bg": "var(--controlKnob-bgColor-rest, var(--color-segmented-control-button-bg, (theme) => `var(--bgColor-default, var(--color-canvas-default, ${(0, utils_v1_1.get)('scale.white')(theme)}))`))",
       "hover": {
-        "bg": "var(undefined, var(--color-segmented-control-button-hover-bg, rgba(172,182,192,0.2)))"
+        "bg": "var(--controlTrack-bgColor-hover, var(--color-segmented-control-button-hover-bg, rgba(172,182,192,0.2)))"
       },
       "active": {
-        "bg": "var(undefined, var(--color-segmented-control-button-hover-active-bg, rgba(172,182,192,0.4)))"
+        "bg": "var(--controlTrack-bgColor-active, var(--color-segmented-control-button-hover-active-bg, rgba(172,182,192,0.4)))"
       },
       "selected": {
-        "border": "var(undefined, var(--color-segmented-control-button-hover-active-selected-border, #88929d))"
+        "border": "var(--controlKnob-borderColor-rest, var(--color-segmented-control-button-hover-active-selected-border, #88929d))"
       }
     }
   },
@@ -396,13 +396,13 @@
       "hoverBg": "#ced5dc"
     },
     "directory": {
-      "fill": "var(undefined, var(--color-tree-view-item-chevron-directory-fill, #368cf9))"
+      "fill": "var(--treeViewItem-leadingVisual-bgColor-rest, var(--color-tree-view-item-chevron-directory-fill, #368cf9))"
     }
   },
   "fg": {
     "default": "#0e1116",
     "muted": "#0e1116",
-    "subtle": "var(--control-fgColor-placeholder, var(--color-fg-subtle, #66707b))",
+    "subtle": "var(--fgColor-muted, var(--color-fg-subtle, #66707b))",
     "onEmphasis": "var(--fgColor-onEmphasis, var(--color-fg-on-emphasis, #ffffff))"
   },
   "canvas": {
@@ -424,12 +424,12 @@
   },
   "neutral": {
     "emphasisPlus": "var(--bgColor-emphasis, var(--color-neutral-emphasis-plus, #0e1116))",
-    "emphasis": "var(undefined, var(--color-neutral-emphasis, #66707b))",
-    "muted": "var(--bgColor-disabled, var(--color-neutral-muted, rgba(172,182,192,0.2)))",
+    "emphasis": "var(--bgColor-neutral-emphasis, var(--color-neutral-emphasis, #66707b))",
+    "muted": "var(--borderColor-neutral-muted, var(--color-neutral-muted, rgba(172,182,192,0.2)))",
     "subtle": "#e7ecf0"
   },
   "accent": {
-    "fg": "var(--focus-outlineColor, var(--color-accent-fg, #0349b4))",
+    "fg": "var(--fgColor-accent, var(--color-accent-fg, #0349b4))",
     "emphasis": "var(--bgColor-accent-emphasis, var(--color-accent-emphasis, #0349b4))",
     "muted": "#368cf9",
     "subtle": "var(--bgColor-accent-muted, var(--color-accent-subtle, #dff7ff))"
@@ -453,8 +453,8 @@
     "subtle": "var(--bgColor-severe-muted, var(--color-severe-subtle, #fff2d5))"
   },
   "danger": {
-    "fg": "var(--control-danger-fgColor-rest, var(--color-danger-fg, #d1242f))",
-    "emphasis": "var(--control-borderColor-danger, var(--color-danger-emphasis, #a0111f))",
+    "fg": "var(--fgColor-danger, var(--color-danger-fg, #d1242f))",
+    "emphasis": "var(--borderColor-danger-emphasis, var(--color-danger-emphasis, #a0111f))",
     "muted": "#ee5a5d",
     "subtle": "var(--bgColor-danger-muted, var(--color-danger-subtle, #fff0ee))"
   },
@@ -465,7 +465,7 @@
     "subtle": "var(--bgColor-open-muted, var(--color-open-subtle, #d2fedb))"
   },
   "closed": {
-    "fg": "var(--fgColor-closed, var(--color-closed-fg, var(--control-danger-fgColor-rest, var(--color-danger-fg, #d1242f))))",
+    "fg": "var(--fgColor-closed, var(--color-closed-fg, var(--fgColor-danger, var(--color-danger-fg, #d1242f))))",
     "emphasis": "var(--bgColor-closed-emphasis, var(--color-closed-emphasis, #a0111f))",
     "muted": "var(--borderColor-closed-muted, var(--color-closed-muted, rgba(238,90,93,0.4)))",
     "subtle": "var(--bgColor-closed-muted, var(--color-closed-subtle, #fff0ee))"
@@ -484,19 +484,19 @@
   },
   "primer": {
     "fg": {
-      "disabled": "var(--control-fgColor-disabled, var(--color-primer-fg-disabled, #88929d))"
+      "disabled": "var(--fgColor-disabled, var(--color-primer-fg-disabled, #88929d))"
     },
     "canvas": {
-      "backdrop": "var(undefined, var(--color-primer-fg-canvas-backdrop, rgba(1,4,9,0.5)))",
-      "sticky": "var(undefined, var(--color-primer-fg-canvas-sticky, rgba(255,255,255,0.95)))"
+      "backdrop": "var(--overlay-backdrop-bgColor, var(--color-primer-fg-canvas-backdrop, rgba(1,4,9,0.5)))",
+      "sticky": "var(--color-primer-canvas-sticky, rgba(255,255,255,0.95))"
     },
     "border": {
-      "active": "var(undefined, var(--color-primer-fg-canvas-border-active, #ef5b48))",
-      "contrast": "var(undefined, var(--color-primer-fg-canvas-border-contrast, rgba(1,4,9,0.1)))"
+      "active": "var(--underlineNav-borderColor-active, var(--color-primer-border-active, #ef5b48))",
+      "contrast": "var(--borderColor-muted, var(--color-primer-border-contrast, rgba(1,4,9,0.1)))"
     },
     "shadow": {
-      "highlight": "var(undefined, var(--color-primer-fg-canvas-border-shadow-highlight, inset 0 1px 0 rgba(255,255,255,0.25)))// HI_KATIE: no matches",
-      "inset": "var(undefined, var(--color-primer-fg-canvas-border-shadow-inset, inset 0 1px 0 rgba(206,213,220,0.2)))// HI_KATIE: no matches"
+      "highlight": "var(--shadow-highlight, var(--color-primer-shadow-highlight, inset 0 1px 0 rgba(255,255,255,0.25)))",
+      "inset": "var(--shadow-inset, var(--color-primer-shadow-inset, inset 0 1px 0 rgba(206,213,220,0.2)))"
     }
   },
   "scale": {
