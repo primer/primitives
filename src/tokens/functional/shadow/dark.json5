@@ -31,6 +31,18 @@
           ],
           $type: 'shadow',
         },
+        inset: {
+          $value: {
+            color: '{base.color.transparent}',
+            alpha: 0,
+            offsetX: '0px',
+            offsetY: '0px',
+            blur: '0px',
+            spread: '0px',
+            inset: false,
+          },
+          $type: 'shadow',
+        },
       },
     },
     primary: {
