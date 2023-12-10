@@ -1,0 +1,7 @@
+.story-wrap-grid {
+  padding: 24px;
+}
+#storybook-root {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(400px, 100%), 1fr));
+}
