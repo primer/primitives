@@ -17,7 +17,14 @@ export function merge(...objects: object[]) {
 
 export function get(path: string) {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  return (obj: any) => _get(obj, path)
+  return (obj: any) => {
+    const unresolvedValue = _get(obj, path)
+    // console.log(path)
+    // console.log(unresolvedValue)
+
+    // this always flattens, we only want to sometimes flatten
+    return getFallbackValueFromVar(resolveValue(unresolvedValue, obj))
+  }
 }
 
 // Instead of value being #hex, the value is now var(--v, #hex)
