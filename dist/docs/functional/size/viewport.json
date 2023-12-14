@@ -1,0 +1,80 @@
+{
+  "viewportRange-narrow": {
+    "value": "(max-width: calc(48rem - 0.02px))",
+    "$type": "custom-viewportRange",
+    "filePath": "src/tokens/functional/size/viewport.json",
+    "isSource": true,
+    "original": {
+      "value": "(max-width: calc({breakpoint.medium} - 0.02px))",
+      "$type": "custom-viewportRange"
+    },
+    "name": "viewportRange-narrow",
+    "attributes": {},
+    "path": ["viewportRange", "narrow"]
+  },
+  "viewportRange-narrowLandscape": {
+    "value": "(max-width: calc(63.25rem - 0.02px) and (max-height: calc(34rem - 0.02px)) and (orientation: landscape))",
+    "$type": "custom-viewportRange",
+    "filePath": "src/tokens/functional/size/viewport.json",
+    "isSource": true,
+    "original": {
+      "value": "(max-width: calc({breakpoint.large} - 0.02px) and (max-height: calc({breakpoint.small} - 0.02px)) and (orientation: landscape))",
+      "$type": "custom-viewportRange"
+    },
+    "name": "viewportRange-narrowLandscape",
+    "attributes": {},
+    "path": ["viewportRange", "narrowLandscape"]
+  },
+  "viewportRange-regular": {
+    "value": "(min-width: 48rem)",
+    "$type": "custom-viewportRange",
+    "filePath": "src/tokens/functional/size/viewport.json",
+    "isSource": true,
+    "original": {
+      "value": "(min-width: {breakpoint.medium})",
+      "$type": "custom-viewportRange"
+    },
+    "name": "viewportRange-regular",
+    "attributes": {},
+    "path": ["viewportRange", "regular"]
+  },
+  "viewportRange-wide": {
+    "value": "(min-width: 87.5rem)",
+    "$type": "custom-viewportRange",
+    "filePath": "src/tokens/functional/size/viewport.json",
+    "isSource": true,
+    "original": {
+      "value": "(min-width: {breakpoint.xxlarge})",
+      "$type": "custom-viewportRange"
+    },
+    "name": "viewportRange-wide",
+    "attributes": {},
+    "path": ["viewportRange", "wide"]
+  },
+  "viewportRange-portrait": {
+    "value": "(orientation: portrait)",
+    "$type": "custom-viewportRange",
+    "filePath": "src/tokens/functional/size/viewport.json",
+    "isSource": true,
+    "original": {
+      "value": "(orientation: portrait)",
+      "$type": "custom-viewportRange"
+    },
+    "name": "viewportRange-portrait",
+    "attributes": {},
+    "path": ["viewportRange", "portrait"]
+  },
+  "viewportRange-landscape": {
+    "value": "(orientation: landscape)",
+    "$type": "custom-viewportRange",
+    "filePath": "src/tokens/functional/size/viewport.json",
+    "isSource": true,
+    "original": {
+      "value": "(orientation: landscape)",
+      "$type": "custom-viewportRange"
+    },
+    "name": "viewportRange-landscape",
+    "attributes": {},
+    "path": ["viewportRange", "landscape"]
+  }
+}

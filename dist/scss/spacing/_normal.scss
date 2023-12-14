@@ -1,0 +1,11 @@
+@mixin primer-spacing-normal {
+  & {
+    --spacing-spacer-0: 0;
+    --spacing-spacer-1: 4px;
+    --spacing-spacer-2: 8px;
+    --spacing-spacer-3: 16px;
+    --spacing-spacer-4: 24px;
+    --spacing-spacer-5: 32px;
+    --spacing-spacer-6: 40px;
+  }
+}
