@@ -1,0 +1,1058 @@
+[
+  {
+    "name": "borderRadius/full",
+    "value": 9999,
+    "type": "FLOAT",
+    "description": "Use this border radius for pill shaped elements",
+    "refId": "functional/size/borderRadius/full",
+    "collection": "functional/size",
+    "mode": "default",
+    "group": "functional/size",
+    "scopes": ["CORNER_RADIUS"],
+    "codeSyntax": {
+      "web": "var(--borderRadius-full) /* utility class: .circle */"
+    }
+  },
+  {
+    "name": "borderRadius/large",
+    "value": 12,
+    "type": "FLOAT",
+    "refId": "functional/size/borderRadius/large",
+    "collection": "functional/size",
+    "mode": "default",
+    "group": "functional/size",
+    "scopes": ["CORNER_RADIUS"],
+    "codeSyntax": {
+      "web": "var(--borderRadius-large) /* utility class: .rounded-3 */"
+    }
+  },
+  {
+    "name": "borderRadius/medium",
+    "value": 6,
+    "type": "FLOAT",
+    "refId": "functional/size/borderRadius/medium",
+    "collection": "functional/size",
+    "mode": "default",
+    "group": "functional/size",
+    "scopes": ["CORNER_RADIUS"],
+    "codeSyntax": {
+      "web": "var(--borderRadius-medium) /* utility class: .rounded-2 */"
+    }
+  },
+  {
+    "name": "borderRadius/small",
+    "value": 3,
+    "type": "FLOAT",
+    "refId": "functional/size/borderRadius/small",
+    "collection": "functional/size",
+    "mode": "default",
+    "group": "functional/size",
+    "scopes": ["CORNER_RADIUS"],
+    "codeSyntax": {
+      "web": "var(--borderRadius-small) /* utility class: .rounded-1 */"
+    }
+  },
+  {
+    "name": "overlay/height/xlarge",
+    "value": 600,
+    "type": "FLOAT",
+    "refId": "pattern/size/overlay/height/xlarge",
+    "collection": "pattern/size",
+    "mode": "default",
+    "group": "pattern/size",
+    "scopes": ["WIDTH_HEIGHT"]
+  },
+  {
+    "name": "overlay/height/large",
+    "value": 432,
+    "type": "FLOAT",
+    "refId": "pattern/size/overlay/height/large",
+    "collection": "pattern/size",
+    "mode": "default",
+    "group": "pattern/size",
+    "scopes": ["WIDTH_HEIGHT"]
+  },
+  {
+    "name": "overlay/height/medium",
+    "value": 320,
+    "type": "FLOAT",
+    "refId": "pattern/size/overlay/height/medium",
+    "collection": "pattern/size",
+    "mode": "default",
+    "group": "pattern/size",
+    "scopes": ["WIDTH_HEIGHT"]
+  },
+  {
+    "name": "overlay/height/small",
+    "value": 256,
+    "type": "FLOAT",
+    "refId": "pattern/size/overlay/height/small",
+    "collection": "pattern/size",
+    "mode": "default",
+    "group": "pattern/size",
+    "scopes": ["WIDTH_HEIGHT"]
+  },
+  {
+    "name": "overlay/width/xlarge",
+    "value": 960,
+    "type": "FLOAT",
+    "refId": "pattern/size/overlay/width/xlarge",
+    "collection": "pattern/size",
+    "mode": "default",
+    "group": "pattern/size",
+    "scopes": ["WIDTH_HEIGHT"]
+  },
+  {
+    "name": "overlay/width/large",
+    "value": 640,
+    "type": "FLOAT",
+    "refId": "pattern/size/overlay/width/large",
+    "collection": "pattern/size",
+    "mode": "default",
+    "group": "pattern/size",
+    "scopes": ["WIDTH_HEIGHT"]
+  },
+  {
+    "name": "overlay/width/medium",
+    "value": 480,
+    "type": "FLOAT",
+    "refId": "pattern/size/overlay/width/medium",
+    "collection": "pattern/size",
+    "mode": "default",
+    "group": "pattern/size",
+    "scopes": ["WIDTH_HEIGHT"]
+  },
+  {
+    "name": "overlay/width/small",
+    "value": 320,
+    "type": "FLOAT",
+    "refId": "pattern/size/overlay/width/small",
+    "collection": "pattern/size",
+    "mode": "default",
+    "group": "pattern/size",
+    "scopes": ["WIDTH_HEIGHT"]
+  },
+  {
+    "name": "overlay/width/xsmall",
+    "value": 192,
+    "type": "FLOAT",
+    "refId": "pattern/size/overlay/width/xsmall",
+    "collection": "pattern/size",
+    "mode": "default",
+    "group": "pattern/size",
+    "scopes": ["WIDTH_HEIGHT"]
+  },
+  {
+    "name": "control/xlarge/paddingBlock",
+    "value": 14,
+    "type": "FLOAT",
+    "refId": "pattern/size/control/xlarge/paddingBlock",
+    "collection": "pattern/size",
+    "mode": "default",
+    "group": "pattern/size",
+    "scopes": ["GAP"]
+  },
+  {
+    "name": "control/large/paddingBlock",
+    "value": 10,
+    "type": "FLOAT",
+    "refId": "pattern/size/control/large/paddingBlock",
+    "collection": "pattern/size",
+    "mode": "default",
+    "group": "pattern/size",
+    "scopes": ["GAP"]
+  },
+  {
+    "name": "control/medium/paddingBlock",
+    "value": 6,
+    "type": "FLOAT",
+    "refId": "pattern/size/control/medium/paddingBlock",
+    "collection": "pattern/size",
+    "mode": "default",
+    "group": "pattern/size",
+    "scopes": ["GAP"]
+  },
+  {
+    "name": "control/xsmall/paddingBlock",
+    "value": 2,
+    "type": "FLOAT",
+    "refId": "pattern/size/control/xsmall/paddingBlock",
+    "collection": "pattern/size",
+    "mode": "default",
+    "group": "pattern/size",
+    "scopes": ["GAP"]
+  },
+  {
+    "name": "space/small",
+    "value": 6,
+    "type": "FLOAT",
+    "refId": "functional/size/space/small",
+    "collection": "functional/size",
+    "mode": "default",
+    "group": "functional/size",
+    "scopes": ["GAP"]
+  },
+  {
+    "name": "space/xxsmall",
+    "value": 2,
+    "type": "FLOAT",
+    "refId": "functional/size/space/xxsmall",
+    "collection": "functional/size",
+    "mode": "default",
+    "group": "functional/size",
+    "scopes": ["GAP"]
+  },
+  {
+    "name": "breakpoint/xxlarge",
+    "value": 1400,
+    "type": "FLOAT",
+    "refId": "functional/size/breakpoint/xxlarge",
+    "collection": "functional/size",
+    "mode": "default",
+    "group": "functional/size",
+    "scopes": ["WIDTH_HEIGHT"]
+  },
+  {
+    "name": "breakpoint/xlarge",
+    "value": 1280,
+    "type": "FLOAT",
+    "refId": "functional/size/breakpoint/xlarge",
+    "collection": "functional/size",
+    "mode": "default",
+    "group": "functional/size",
+    "scopes": ["WIDTH_HEIGHT"]
+  },
+  {
+    "name": "breakpoint/large",
+    "value": 1012,
+    "type": "FLOAT",
+    "refId": "functional/size/breakpoint/large",
+    "collection": "functional/size",
+    "mode": "default",
+    "group": "functional/size",
+    "scopes": ["WIDTH_HEIGHT"]
+  },
+  {
+    "name": "breakpoint/medium",
+    "value": 768,
+    "type": "FLOAT",
+    "refId": "functional/size/breakpoint/medium",
+    "collection": "functional/size",
+    "mode": "default",
+    "group": "functional/size",
+    "scopes": ["WIDTH_HEIGHT"]
+  },
+  {
+    "name": "breakpoint/small",
+    "value": 544,
+    "type": "FLOAT",
+    "refId": "functional/size/breakpoint/small",
+    "collection": "functional/size",
+    "mode": "default",
+    "group": "functional/size",
+    "scopes": ["WIDTH_HEIGHT"]
+  },
+  {
+    "name": "breakpoint/xsmall",
+    "value": 320,
+    "type": "FLOAT",
+    "refId": "functional/size/breakpoint/xsmall",
+    "collection": "functional/size",
+    "mode": "default",
+    "group": "functional/size",
+    "scopes": ["WIDTH_HEIGHT"]
+  },
+  {
+    "name": "base/size/128",
+    "value": 128,
+    "type": "FLOAT",
+    "refId": "base/size/base/size/128",
+    "collection": "base/size",
+    "mode": "default",
+    "group": "base/size",
+    "scopes": ["WIDTH_HEIGHT"]
+  },
+  {
+    "name": "base/size/112",
+    "value": 112,
+    "type": "FLOAT",
+    "refId": "base/size/base/size/112",
+    "collection": "base/size",
+    "mode": "default",
+    "group": "base/size",
+    "scopes": ["WIDTH_HEIGHT"]
+  },
+  {
+    "name": "base/size/96",
+    "value": 96,
+    "type": "FLOAT",
+    "refId": "base/size/base/size/96",
+    "collection": "base/size",
+    "mode": "default",
+    "group": "base/size",
+    "scopes": ["WIDTH_HEIGHT"]
+  },
+  {
+    "name": "base/size/80",
+    "value": 80,
+    "type": "FLOAT",
+    "refId": "base/size/base/size/80",
+    "collection": "base/size",
+    "mode": "default",
+    "group": "base/size",
+    "scopes": ["WIDTH_HEIGHT"]
+  },
+  {
+    "name": "base/size/64",
+    "value": 64,
+    "type": "FLOAT",
+    "refId": "base/size/base/size/64",
+    "collection": "base/size",
+    "mode": "default",
+    "group": "base/size",
+    "scopes": ["WIDTH_HEIGHT"]
+  },
+  {
+    "name": "base/size/48",
+    "value": 48,
+    "type": "FLOAT",
+    "refId": "base/size/base/size/48",
+    "collection": "base/size",
+    "mode": "default",
+    "group": "base/size",
+    "scopes": ["WIDTH_HEIGHT"]
+  },
+  {
+    "name": "base/size/44",
+    "value": 44,
+    "type": "FLOAT",
+    "refId": "base/size/base/size/44",
+    "collection": "base/size",
+    "mode": "default",
+    "group": "base/size",
+    "scopes": ["WIDTH_HEIGHT"]
+  },
+  {
+    "name": "base/size/40",
+    "value": 40,
+    "type": "FLOAT",
+    "refId": "base/size/base/size/40",
+    "collection": "base/size",
+    "mode": "default",
+    "group": "base/size",
+    "scopes": ["WIDTH_HEIGHT"]
+  },
+  {
+    "name": "base/size/36",
+    "value": 36,
+    "type": "FLOAT",
+    "refId": "base/size/base/size/36",
+    "collection": "base/size",
+    "mode": "default",
+    "group": "base/size",
+    "scopes": ["WIDTH_HEIGHT"]
+  },
+  {
+    "name": "base/size/32",
+    "value": 32,
+    "type": "FLOAT",
+    "refId": "base/size/base/size/32",
+    "collection": "base/size",
+    "mode": "default",
+    "group": "base/size",
+    "scopes": ["WIDTH_HEIGHT"]
+  },
+  {
+    "name": "base/size/28",
+    "value": 28,
+    "type": "FLOAT",
+    "refId": "base/size/base/size/28",
+    "collection": "base/size",
+    "mode": "default",
+    "group": "base/size",
+    "scopes": ["WIDTH_HEIGHT"]
+  },
+  {
+    "name": "base/size/24",
+    "value": 24,
+    "type": "FLOAT",
+    "refId": "base/size/base/size/24",
+    "collection": "base/size",
+    "mode": "default",
+    "group": "base/size",
+    "scopes": ["WIDTH_HEIGHT"]
+  },
+  {
+    "name": "base/size/20",
+    "value": 20,
+    "type": "FLOAT",
+    "refId": "base/size/base/size/20",
+    "collection": "base/size",
+    "mode": "default",
+    "group": "base/size",
+    "scopes": ["WIDTH_HEIGHT"]
+  },
+  {
+    "name": "base/size/16",
+    "value": 16,
+    "type": "FLOAT",
+    "refId": "base/size/base/size/16",
+    "collection": "base/size",
+    "mode": "default",
+    "group": "base/size",
+    "scopes": ["WIDTH_HEIGHT"]
+  },
+  {
+    "name": "base/size/12",
+    "value": 12,
+    "type": "FLOAT",
+    "refId": "base/size/base/size/12",
+    "collection": "base/size",
+    "mode": "default",
+    "group": "base/size",
+    "scopes": ["WIDTH_HEIGHT"]
+  },
+  {
+    "name": "base/size/8",
+    "value": 8,
+    "type": "FLOAT",
+    "refId": "base/size/base/size/8",
+    "collection": "base/size",
+    "mode": "default",
+    "group": "base/size",
+    "scopes": ["WIDTH_HEIGHT"]
+  },
+  {
+    "name": "base/size/4",
+    "value": 4,
+    "type": "FLOAT",
+    "refId": "base/size/base/size/4",
+    "collection": "base/size",
+    "mode": "default",
+    "group": "base/size",
+    "scopes": ["WIDTH_HEIGHT"]
+  },
+  {
+    "name": "overlay/borderRadius",
+    "value": 6,
+    "type": "FLOAT",
+    "refId": "pattern/size/overlay/borderRadius",
+    "reference": "functional/size/borderRadius/medium",
+    "collection": "pattern/size",
+    "mode": "default",
+    "group": "pattern/size",
+    "scopes": ["CORNER_RADIUS"]
+  },
+  {
+    "name": "overlay/paddingBlock/normal",
+    "value": 12,
+    "type": "FLOAT",
+    "refId": "pattern/size/overlay/paddingBlock/normal",
+    "reference": "base/size/base/size/12",
+    "collection": "pattern/size",
+    "mode": "default",
+    "group": "pattern/size",
+    "scopes": ["GAP"]
+  },
+  {
+    "name": "overlay/paddingBlock/condensed",
+    "value": 4,
+    "type": "FLOAT",
+    "refId": "pattern/size/overlay/paddingBlock/condensed",
+    "reference": "base/size/base/size/4",
+    "collection": "pattern/size",
+    "mode": "default",
+    "group": "pattern/size",
+    "scopes": ["GAP"]
+  },
+  {
+    "name": "overlay/padding/condensed",
+    "value": 8,
+    "type": "FLOAT",
+    "refId": "pattern/size/overlay/padding/condensed",
+    "reference": "base/size/base/size/8",
+    "collection": "pattern/size",
+    "mode": "default",
+    "group": "pattern/size",
+    "scopes": ["GAP"]
+  },
+  {
+    "name": "overlay/padding/normal",
+    "value": 16,
+    "type": "FLOAT",
+    "refId": "pattern/size/overlay/padding/normal",
+    "reference": "base/size/base/size/16",
+    "collection": "pattern/size",
+    "mode": "default",
+    "group": "pattern/size",
+    "scopes": ["GAP"]
+  },
+  {
+    "name": "controlStack/large/gap/spacious",
+    "value": 12,
+    "type": "FLOAT",
+    "refId": "pattern/size/controlStack/large/gap/spacious",
+    "reference": "base/size/base/size/12",
+    "collection": "pattern/size",
+    "mode": "default",
+    "group": "pattern/size",
+    "scopes": ["GAP"]
+  },
+  {
+    "name": "controlStack/large/gap/condensed",
+    "value": 8,
+    "type": "FLOAT",
+    "refId": "pattern/size/controlStack/large/gap/condensed",
+    "reference": "base/size/base/size/8",
+    "collection": "pattern/size",
+    "mode": "default",
+    "group": "pattern/size",
+    "scopes": ["GAP"]
+  },
+  {
+    "name": "controlStack/large/gap/auto",
+    "value": 8,
+    "type": "FLOAT",
+    "refId": "pattern/size/controlStack/large/gap/auto",
+    "reference": "base/size/base/size/8",
+    "collection": "pattern/size",
+    "mode": "default",
+    "group": "pattern/size",
+    "scopes": ["GAP"]
+  },
+  {
+    "name": "controlStack/medium/gap/spacious",
+    "value": 12,
+    "type": "FLOAT",
+    "refId": "pattern/size/controlStack/medium/gap/spacious",
+    "reference": "base/size/base/size/12",
+    "collection": "pattern/size",
+    "mode": "default",
+    "group": "pattern/size",
+    "scopes": ["GAP"]
+  },
+  {
+    "name": "controlStack/medium/gap/condensed",
+    "value": 8,
+    "type": "FLOAT",
+    "refId": "pattern/size/controlStack/medium/gap/condensed",
+    "reference": "base/size/base/size/8",
+    "collection": "pattern/size",
+    "mode": "default",
+    "group": "pattern/size",
+    "scopes": ["GAP"]
+  },
+  {
+    "name": "controlStack/small/gap/spacious",
+    "value": 16,
+    "type": "FLOAT",
+    "refId": "pattern/size/controlStack/small/gap/spacious",
+    "reference": "base/size/base/size/16",
+    "collection": "pattern/size",
+    "mode": "default",
+    "group": "pattern/size",
+    "scopes": ["GAP"]
+  },
+  {
+    "name": "controlStack/small/gap/condensed",
+    "value": 8,
+    "type": "FLOAT",
+    "refId": "pattern/size/controlStack/small/gap/condensed",
+    "reference": "base/size/base/size/8",
+    "collection": "pattern/size",
+    "mode": "default",
+    "group": "pattern/size",
+    "scopes": ["GAP"]
+  },
+  {
+    "name": "stack/gap/spacious",
+    "value": 24,
+    "type": "FLOAT",
+    "refId": "pattern/size/stack/gap/spacious",
+    "reference": "base/size/base/size/24",
+    "collection": "pattern/size",
+    "mode": "default",
+    "group": "component",
+    "scopes": ["GAP"],
+    "codeSyntax": {
+      "web": "var(--stack-gap-spacious) /* utility class: .gap-4 */"
+    }
+  },
+  {
+    "name": "stack/gap/normal",
+    "value": 16,
+    "type": "FLOAT",
+    "refId": "pattern/size/stack/gap/normal",
+    "reference": "base/size/base/size/16",
+    "collection": "pattern/size",
+    "mode": "default",
+    "group": "component",
+    "scopes": ["GAP"],
+    "codeSyntax": {
+      "web": "var(--stack-gap-normal) /* utility class: .gap-3 */"
+    }
+  },
+  {
+    "name": "stack/gap/condensed",
+    "value": 8,
+    "type": "FLOAT",
+    "refId": "pattern/size/stack/gap/condensed",
+    "reference": "base/size/base/size/8",
+    "collection": "pattern/size",
+    "mode": "default",
+    "group": "component",
+    "scopes": ["GAP"],
+    "codeSyntax": {
+      "web": "var(--stack-gap-condensed) /* utility class: .gap-2 */"
+    }
+  },
+  {
+    "name": "stack/padding/spacious",
+    "value": 24,
+    "type": "FLOAT",
+    "refId": "pattern/size/stack/padding/spacious",
+    "reference": "base/size/base/size/24",
+    "collection": "pattern/size",
+    "mode": "default",
+    "group": "component",
+    "scopes": ["GAP"],
+    "codeSyntax": {
+      "web": "var(--stack-padding-spacious) /* utility class: .p-4 */"
+    }
+  },
+  {
+    "name": "stack/padding/normal",
+    "value": 16,
+    "type": "FLOAT",
+    "refId": "pattern/size/stack/padding/normal",
+    "reference": "base/size/base/size/16",
+    "collection": "pattern/size",
+    "mode": "default",
+    "group": "component",
+    "scopes": ["GAP"],
+    "codeSyntax": {
+      "web": "var(--stack-padding-normal) /* utility class: .p-3 */"
+    }
+  },
+  {
+    "name": "stack/padding/condensed",
+    "value": 8,
+    "type": "FLOAT",
+    "refId": "pattern/size/stack/padding/condensed",
+    "reference": "base/size/base/size/8",
+    "collection": "pattern/size",
+    "mode": "default",
+    "group": "component",
+    "scopes": ["GAP"],
+    "codeSyntax": {
+      "web": "var(--stack-padding-condensed) /* utility class: .p-2 */"
+    }
+  },
+  {
+    "name": "spinner/size/large",
+    "value": 64,
+    "type": "FLOAT",
+    "refId": "pattern/size/spinner/size/large",
+    "reference": "base/size/base/size/64",
+    "collection": "pattern/size",
+    "mode": "default",
+    "group": "pattern/size",
+    "scopes": ["WIDTH_HEIGHT"]
+  },
+  {
+    "name": "spinner/size/medium",
+    "value": 32,
+    "type": "FLOAT",
+    "refId": "pattern/size/spinner/size/medium",
+    "reference": "base/size/base/size/32",
+    "collection": "pattern/size",
+    "mode": "default",
+    "group": "pattern/size",
+    "scopes": ["WIDTH_HEIGHT"]
+  },
+  {
+    "name": "spinner/size/small",
+    "value": 16,
+    "type": "FLOAT",
+    "refId": "pattern/size/spinner/size/small",
+    "reference": "base/size/base/size/16",
+    "collection": "pattern/size",
+    "mode": "default",
+    "group": "pattern/size",
+    "scopes": ["WIDTH_HEIGHT"]
+  },
+  {
+    "name": "control/xlarge/gap",
+    "value": 8,
+    "type": "FLOAT",
+    "refId": "pattern/size/control/xlarge/gap",
+    "reference": "base/size/base/size/8",
+    "collection": "pattern/size",
+    "mode": "default",
+    "group": "pattern/size",
+    "scopes": ["GAP"]
+  },
+  {
+    "name": "control/xlarge/paddingInline/spacious",
+    "value": 16,
+    "type": "FLOAT",
+    "refId": "pattern/size/control/xlarge/paddingInline/spacious",
+    "reference": "base/size/base/size/16",
+    "collection": "pattern/size",
+    "mode": "default",
+    "group": "pattern/size",
+    "scopes": ["GAP"]
+  },
+  {
+    "name": "control/xlarge/paddingInline/normal",
+    "value": 12,
+    "type": "FLOAT",
+    "refId": "pattern/size/control/xlarge/paddingInline/normal",
+    "reference": "base/size/base/size/12",
+    "collection": "pattern/size",
+    "mode": "default",
+    "group": "pattern/size",
+    "scopes": ["GAP"]
+  },
+  {
+    "name": "control/xlarge/lineBoxHeight",
+    "value": 20,
+    "type": "FLOAT",
+    "refId": "pattern/size/control/xlarge/lineBoxHeight",
+    "reference": "base/size/base/size/20",
+    "collection": "pattern/size",
+    "mode": "default",
+    "group": "pattern/size",
+    "scopes": ["WIDTH_HEIGHT"]
+  },
+  {
+    "name": "control/xlarge/size",
+    "value": 48,
+    "type": "FLOAT",
+    "refId": "pattern/size/control/xlarge/size",
+    "reference": "base/size/base/size/48",
+    "collection": "pattern/size",
+    "mode": "default",
+    "group": "pattern/size",
+    "scopes": ["WIDTH_HEIGHT"]
+  },
+  {
+    "name": "control/large/gap",
+    "value": 8,
+    "type": "FLOAT",
+    "refId": "pattern/size/control/large/gap",
+    "reference": "base/size/base/size/8",
+    "collection": "pattern/size",
+    "mode": "default",
+    "group": "pattern/size",
+    "scopes": ["GAP"]
+  },
+  {
+    "name": "control/large/paddingInline/spacious",
+    "value": 16,
+    "type": "FLOAT",
+    "refId": "pattern/size/control/large/paddingInline/spacious",
+    "reference": "base/size/base/size/16",
+    "collection": "pattern/size",
+    "mode": "default",
+    "group": "pattern/size",
+    "scopes": ["GAP"]
+  },
+  {
+    "name": "control/large/paddingInline/normal",
+    "value": 12,
+    "type": "FLOAT",
+    "refId": "pattern/size/control/large/paddingInline/normal",
+    "reference": "base/size/base/size/12",
+    "collection": "pattern/size",
+    "mode": "default",
+    "group": "pattern/size",
+    "scopes": ["GAP"]
+  },
+  {
+    "name": "control/large/lineBoxHeight",
+    "value": 20,
+    "type": "FLOAT",
+    "refId": "pattern/size/control/large/lineBoxHeight",
+    "reference": "base/size/base/size/20",
+    "collection": "pattern/size",
+    "mode": "default",
+    "group": "pattern/size",
+    "scopes": ["WIDTH_HEIGHT"]
+  },
+  {
+    "name": "control/large/size",
+    "value": 40,
+    "type": "FLOAT",
+    "refId": "pattern/size/control/large/size",
+    "reference": "base/size/base/size/40",
+    "collection": "pattern/size",
+    "mode": "default",
+    "group": "pattern/size",
+    "scopes": ["WIDTH_HEIGHT"]
+  },
+  {
+    "name": "control/medium/gap",
+    "value": 8,
+    "type": "FLOAT",
+    "refId": "pattern/size/control/medium/gap",
+    "reference": "base/size/base/size/8",
+    "collection": "pattern/size",
+    "mode": "default",
+    "group": "pattern/size",
+    "scopes": ["GAP"]
+  },
+  {
+    "name": "control/medium/paddingInline/spacious",
+    "value": 16,
+    "type": "FLOAT",
+    "refId": "pattern/size/control/medium/paddingInline/spacious",
+    "reference": "base/size/base/size/16",
+    "collection": "pattern/size",
+    "mode": "default",
+    "group": "pattern/size",
+    "scopes": ["GAP"]
+  },
+  {
+    "name": "control/medium/paddingInline/normal",
+    "value": 12,
+    "type": "FLOAT",
+    "refId": "pattern/size/control/medium/paddingInline/normal",
+    "reference": "base/size/base/size/12",
+    "collection": "pattern/size",
+    "mode": "default",
+    "group": "pattern/size",
+    "scopes": ["GAP"]
+  },
+  {
+    "name": "control/medium/paddingInline/condensed",
+    "value": 8,
+    "type": "FLOAT",
+    "refId": "pattern/size/control/medium/paddingInline/condensed",
+    "reference": "base/size/base/size/8",
+    "collection": "pattern/size",
+    "mode": "default",
+    "group": "pattern/size",
+    "scopes": ["GAP"]
+  },
+  {
+    "name": "control/medium/lineBoxHeight",
+    "value": 20,
+    "type": "FLOAT",
+    "refId": "pattern/size/control/medium/lineBoxHeight",
+    "reference": "base/size/base/size/20",
+    "collection": "pattern/size",
+    "mode": "default",
+    "group": "pattern/size",
+    "scopes": ["WIDTH_HEIGHT"]
+  },
+  {
+    "name": "control/medium/size",
+    "value": 32,
+    "type": "FLOAT",
+    "refId": "pattern/size/control/medium/size",
+    "reference": "base/size/base/size/32",
+    "collection": "pattern/size",
+    "mode": "default",
+    "group": "pattern/size",
+    "scopes": ["WIDTH_HEIGHT"]
+  },
+  {
+    "name": "control/small/gap",
+    "value": 4,
+    "type": "FLOAT",
+    "refId": "pattern/size/control/small/gap",
+    "reference": "base/size/base/size/4",
+    "collection": "pattern/size",
+    "mode": "default",
+    "group": "pattern/size",
+    "scopes": ["GAP"]
+  },
+  {
+    "name": "control/small/paddingInline/normal",
+    "value": 12,
+    "type": "FLOAT",
+    "refId": "pattern/size/control/small/paddingInline/normal",
+    "reference": "base/size/base/size/12",
+    "collection": "pattern/size",
+    "mode": "default",
+    "group": "pattern/size",
+    "scopes": ["GAP"]
+  },
+  {
+    "name": "control/small/paddingInline/condensed",
+    "value": 8,
+    "type": "FLOAT",
+    "refId": "pattern/size/control/small/paddingInline/condensed",
+    "reference": "base/size/base/size/8",
+    "collection": "pattern/size",
+    "mode": "default",
+    "group": "pattern/size",
+    "scopes": ["GAP"]
+  },
+  {
+    "name": "control/small/paddingBlock",
+    "value": 4,
+    "type": "FLOAT",
+    "refId": "pattern/size/control/small/paddingBlock",
+    "reference": "base/size/base/size/4",
+    "collection": "pattern/size",
+    "mode": "default",
+    "group": "pattern/size",
+    "scopes": ["GAP"]
+  },
+  {
+    "name": "control/small/lineBoxHeight",
+    "value": 20,
+    "type": "FLOAT",
+    "refId": "pattern/size/control/small/lineBoxHeight",
+    "reference": "base/size/base/size/20",
+    "collection": "pattern/size",
+    "mode": "default",
+    "group": "pattern/size",
+    "scopes": ["WIDTH_HEIGHT"]
+  },
+  {
+    "name": "control/small/size",
+    "value": 28,
+    "type": "FLOAT",
+    "refId": "pattern/size/control/small/size",
+    "reference": "base/size/base/size/28",
+    "collection": "pattern/size",
+    "mode": "default",
+    "group": "pattern/size",
+    "scopes": ["WIDTH_HEIGHT"]
+  },
+  {
+    "name": "control/xsmall/gap",
+    "value": 4,
+    "type": "FLOAT",
+    "refId": "pattern/size/control/xsmall/gap",
+    "reference": "base/size/base/size/4",
+    "collection": "pattern/size",
+    "mode": "default",
+    "group": "pattern/size",
+    "scopes": ["GAP"]
+  },
+  {
+    "name": "control/xsmall/paddingInline/spacious",
+    "value": 12,
+    "type": "FLOAT",
+    "refId": "pattern/size/control/xsmall/paddingInline/spacious",
+    "reference": "base/size/base/size/12",
+    "collection": "pattern/size",
+    "mode": "default",
+    "group": "pattern/size",
+    "scopes": ["GAP"]
+  },
+  {
+    "name": "control/xsmall/paddingInline/normal",
+    "value": 8,
+    "type": "FLOAT",
+    "refId": "pattern/size/control/xsmall/paddingInline/normal",
+    "reference": "base/size/base/size/8",
+    "collection": "pattern/size",
+    "mode": "default",
+    "group": "pattern/size",
+    "scopes": ["GAP"]
+  },
+  {
+    "name": "control/xsmall/paddingInline/condensed",
+    "value": 4,
+    "type": "FLOAT",
+    "refId": "pattern/size/control/xsmall/paddingInline/condensed",
+    "reference": "base/size/base/size/4",
+    "collection": "pattern/size",
+    "mode": "default",
+    "group": "pattern/size",
+    "scopes": ["GAP"]
+  },
+  {
+    "name": "control/xsmall/lineBoxHeight",
+    "value": 20,
+    "type": "FLOAT",
+    "refId": "pattern/size/control/xsmall/lineBoxHeight",
+    "reference": "base/size/base/size/20",
+    "collection": "pattern/size",
+    "mode": "default",
+    "group": "pattern/size",
+    "scopes": ["WIDTH_HEIGHT"]
+  },
+  {
+    "name": "control/xsmall/size",
+    "value": 24,
+    "type": "FLOAT",
+    "refId": "pattern/size/control/xsmall/size",
+    "reference": "base/size/base/size/24",
+    "collection": "pattern/size",
+    "mode": "default",
+    "group": "pattern/size",
+    "scopes": ["WIDTH_HEIGHT"]
+  },
+  {
+    "name": "control/minTarget/coarse",
+    "value": 44,
+    "type": "FLOAT",
+    "refId": "pattern/size/control/minTarget/coarse",
+    "reference": "base/size/base/size/44",
+    "collection": "pattern/size",
+    "mode": "default",
+    "group": "pattern/size",
+    "scopes": ["WIDTH_HEIGHT"]
+  },
+  {
+    "name": "control/minTarget/fine",
+    "value": 16,
+    "type": "FLOAT",
+    "refId": "pattern/size/control/minTarget/fine",
+    "reference": "base/size/base/size/16",
+    "collection": "pattern/size",
+    "mode": "default",
+    "group": "pattern/size",
+    "scopes": ["WIDTH_HEIGHT"]
+  },
+  {
+    "name": "space/xlarge",
+    "value": 16,
+    "type": "FLOAT",
+    "refId": "functional/size/space/xlarge",
+    "reference": "base/size/base/size/16",
+    "collection": "functional/size",
+    "mode": "default",
+    "group": "functional/size",
+    "scopes": ["GAP"]
+  },
+  {
+    "name": "space/large",
+    "value": 12,
+    "type": "FLOAT",
+    "refId": "functional/size/space/large",
+    "reference": "base/size/base/size/12",
+    "collection": "functional/size",
+    "mode": "default",
+    "group": "functional/size",
+    "scopes": ["GAP"]
+  },
+  {
+    "name": "space/medium",
+    "value": 8,
+    "type": "FLOAT",
+    "refId": "functional/size/space/medium",
+    "reference": "base/size/base/size/8",
+    "collection": "functional/size",
+    "mode": "default",
+    "group": "functional/size",
+    "scopes": ["GAP"]
+  },
+  {
+    "name": "space/xsmall",
+    "value": 4,
+    "type": "FLOAT",
+    "refId": "functional/size/space/xsmall",
+    "reference": "base/size/base/size/4",
+    "collection": "functional/size",
+    "mode": "default",
+    "group": "functional/size",
+    "scopes": ["GAP"]
+  }
+]

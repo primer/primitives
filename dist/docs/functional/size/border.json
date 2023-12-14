@@ -1,0 +1,234 @@
+{
+  "boxShadow-thin": {
+    "value": "inset 0 0 0 max(1px, 0.0625rem)",
+    "comment": "Thin shadow for borders",
+    "$type": "string",
+    "filePath": "src/tokens/functional/size/border.json",
+    "isSource": true,
+    "original": {
+      "value": "inset 0 0 0 {borderWidth.thin}",
+      "comment": "Thin shadow for borders",
+      "$type": "string"
+    },
+    "name": "boxShadow-thin",
+    "attributes": {},
+    "path": ["boxShadow", "thin"]
+  },
+  "boxShadow-thick": {
+    "value": "inset 0 0 0 max(2px, 0.125rem)",
+    "$type": "string",
+    "filePath": "src/tokens/functional/size/border.json",
+    "isSource": true,
+    "original": {
+      "value": "inset 0 0 0 {borderWidth.thick}",
+      "$type": "string"
+    },
+    "name": "boxShadow-thick",
+    "attributes": {},
+    "path": ["boxShadow", "thick"]
+  },
+  "boxShadow-thicker": {
+    "value": "inset 0 0 0 max(4px, 0.25rem)",
+    "$type": "string",
+    "filePath": "src/tokens/functional/size/border.json",
+    "isSource": true,
+    "original": {
+      "value": "inset 0 0 0 {borderWidth.thicker}",
+      "$type": "string"
+    },
+    "name": "boxShadow-thicker",
+    "attributes": {},
+    "path": ["boxShadow", "thicker"]
+  },
+  "borderWidth-thin": {
+    "value": "max(1px, 0.0625rem)",
+    "$type": "string",
+    "filePath": "src/tokens/functional/size/border.json",
+    "isSource": true,
+    "original": {
+      "value": "max(1px, 0.0625rem)",
+      "$type": "string"
+    },
+    "name": "borderWidth-thin",
+    "attributes": {},
+    "path": ["borderWidth", "thin"]
+  },
+  "borderWidth-thick": {
+    "value": "max(2px, 0.125rem)",
+    "$type": "string",
+    "filePath": "src/tokens/functional/size/border.json",
+    "isSource": true,
+    "original": {
+      "value": "max(2px, 0.125rem)",
+      "$type": "string"
+    },
+    "name": "borderWidth-thick",
+    "attributes": {},
+    "path": ["borderWidth", "thick"]
+  },
+  "borderWidth-thicker": {
+    "value": "max(4px, 0.25rem)",
+    "$type": "string",
+    "filePath": "src/tokens/functional/size/border.json",
+    "isSource": true,
+    "original": {
+      "value": "max(4px, 0.25rem)",
+      "$type": "string"
+    },
+    "name": "borderWidth-thicker",
+    "attributes": {},
+    "path": ["borderWidth", "thicker"]
+  },
+  "borderRadius-small": {
+    "value": "0.1875rem",
+    "$type": "dimension",
+    "$extensions": {
+      "org.primer.figma": {
+        "collection": "functional/size",
+        "scopes": ["radius"],
+        "codeSyntax": {
+          "web": "var(--borderRadius-small) /* utility class: .rounded-1 */"
+        }
+      }
+    },
+    "filePath": "src/tokens/functional/size/border.json",
+    "isSource": true,
+    "original": {
+      "value": "3px",
+      "$type": "dimension",
+      "$extensions": {
+        "org.primer.figma": {
+          "collection": "functional/size",
+          "scopes": ["radius"],
+          "codeSyntax": {
+            "web": "var(--borderRadius-small) /* utility class: .rounded-1 */"
+          }
+        }
+      }
+    },
+    "name": "borderRadius-small",
+    "attributes": {},
+    "path": ["borderRadius", "small"]
+  },
+  "borderRadius-medium": {
+    "value": "0.375rem",
+    "$type": "dimension",
+    "$extensions": {
+      "org.primer.figma": {
+        "collection": "functional/size",
+        "scopes": ["radius"],
+        "codeSyntax": {
+          "web": "var(--borderRadius-medium) /* utility class: .rounded-2 */"
+        }
+      }
+    },
+    "filePath": "src/tokens/functional/size/border.json",
+    "isSource": true,
+    "original": {
+      "value": "6px",
+      "$type": "dimension",
+      "$extensions": {
+        "org.primer.figma": {
+          "collection": "functional/size",
+          "scopes": ["radius"],
+          "codeSyntax": {
+            "web": "var(--borderRadius-medium) /* utility class: .rounded-2 */"
+          }
+        }
+      }
+    },
+    "name": "borderRadius-medium",
+    "attributes": {},
+    "path": ["borderRadius", "medium"]
+  },
+  "borderRadius-large": {
+    "value": "0.75rem",
+    "$type": "dimension",
+    "$extensions": {
+      "org.primer.figma": {
+        "collection": "functional/size",
+        "scopes": ["radius"],
+        "codeSyntax": {
+          "web": "var(--borderRadius-large) /* utility class: .rounded-3 */"
+        }
+      }
+    },
+    "filePath": "src/tokens/functional/size/border.json",
+    "isSource": true,
+    "original": {
+      "value": "12px",
+      "$type": "dimension",
+      "$extensions": {
+        "org.primer.figma": {
+          "collection": "functional/size",
+          "scopes": ["radius"],
+          "codeSyntax": {
+            "web": "var(--borderRadius-large) /* utility class: .rounded-3 */"
+          }
+        }
+      }
+    },
+    "name": "borderRadius-large",
+    "attributes": {},
+    "path": ["borderRadius", "large"]
+  },
+  "borderRadius-full": {
+    "value": "624.9375rem",
+    "$type": "dimension",
+    "comment": "Use this border radius for pill shaped elements",
+    "$extensions": {
+      "org.primer.figma": {
+        "collection": "functional/size",
+        "scopes": ["radius"],
+        "codeSyntax": {
+          "web": "var(--borderRadius-full) /* utility class: .circle */"
+        }
+      }
+    },
+    "filePath": "src/tokens/functional/size/border.json",
+    "isSource": true,
+    "original": {
+      "value": "9999px",
+      "$type": "dimension",
+      "comment": "Use this border radius for pill shaped elements",
+      "$extensions": {
+        "org.primer.figma": {
+          "collection": "functional/size",
+          "scopes": ["radius"],
+          "codeSyntax": {
+            "web": "var(--borderRadius-full) /* utility class: .circle */"
+          }
+        }
+      }
+    },
+    "name": "borderRadius-full",
+    "attributes": {},
+    "path": ["borderRadius", "full"]
+  },
+  "outline-focus-offset": {
+    "value": "-0.125rem",
+    "$type": "dimension",
+    "filePath": "src/tokens/functional/size/border.json",
+    "isSource": true,
+    "original": {
+      "value": "-2px",
+      "$type": "dimension"
+    },
+    "name": "outline-focus-offset",
+    "attributes": {},
+    "path": ["outline", "focus", "offset"]
+  },
+  "outline-focus-width": {
+    "value": "0.125rem",
+    "$type": "dimension",
+    "filePath": "src/tokens/functional/size/border.json",
+    "isSource": true,
+    "original": {
+      "value": "2px",
+      "$type": "dimension"
+    },
+    "name": "outline-focus-width",
+    "attributes": {},
+    "path": ["outline", "focus", "width"]
+  }
+}

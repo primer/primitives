@@ -1,0 +1,45 @@
+$fontStack-system: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+$fontStack-sansSerif: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+$fontStack-monospace: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+$text-display-lineBoxHeight: 3.5rem;
+$text-display-size: 2.5rem;
+$text-display-lineHeight: 1.4;
+$text-display-weight: 500;
+$text-display-shorthand: 500 2.5rem/1.4 -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji'; // Hero-style text for brand to product transition pages. Utilize Title (large) styles on narrow viewports.
+$text-title-size-large: 2rem;
+$text-title-size-medium: 1.25rem;
+$text-title-size-small: 1rem;
+$text-title-lineHeight-large: 1.5;
+$text-title-lineHeight-medium: 1.6;
+$text-title-lineHeight-small: 1.5;
+$text-title-weight-large: 600;
+$text-title-weight-medium: 600;
+$text-title-weight-small: 600;
+$text-title-shorthand-large: 600 2rem/1.5 -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji'; // Page headings for user-created objects, such as issues or pull requests. Utilize title (medium) styles on narrow viewports.
+$text-title-shorthand-medium: 600 1.25rem/1.6 -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji'; // Default page title. The 32px-equivalent line-height matches with button and other medium control heights. Great for page header composition.
+$text-title-shorthand-small: 600 1rem/1.5 -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji'; // Uses the same size as body (large) with a heavier weight of semibold (600).
+$text-subtitle-size: 1.25rem;
+$text-subtitle-lineHeight: 1.6;
+$text-subtitle-weight: 400;
+$text-subtitle-shorthand: 400 1.25rem/1.6 -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji'; // Page sections/sub headings, or less important object names in page titles (automated action titles, for example). Same line-height as title (medium).
+$text-body-size-large: 1rem;
+$text-body-size-medium: 0.875rem;
+$text-body-size-small: 0.75rem;
+$text-body-lineHeight-large: 1.5;
+$text-body-lineHeight-medium: 1.4285;
+$text-body-lineHeight-small: 1.6666;
+$text-body-weight: 400;
+$text-body-shorthand-large: 400 1rem/1.5 -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji'; // User-generated content, markdown rendering.
+$text-body-shorthand-medium: 400 0.875rem/1.4285 -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji'; // Default UI font. Most commonly used for body text.
+$text-body-shorthand-small: 400 0.75rem/1.6666 -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji'; // Small body text for discrete UI applications, such as helper, footnote text. Should be used sparingly across pages. Line-height matches Body (medium) at 20px.
+$text-caption-size: 0.75rem;
+$text-caption-lineHeight: 1.3333;
+$text-caption-weight: 400;
+$text-caption-shorthand: 400 0.75rem/1.3333 -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji'; // Compact small font with a smaller line height of 16px. Use it for single-line scenarios, as the small sizing doesn’t pass accessibility requirements.
+$text-codeBlock-size: 0.8125rem;
+$text-codeBlock-lineHeight: 1.5385;
+$text-codeBlock-weight: 400;
+$text-codeBlock-shorthand: 400 0.8125rem/1.5385 ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace; // Default style for rendering code blocks.
+$text-codeInline-size: 0.9285em;
+$text-codeInline-weight: 400;
+$text-codeInline-shorthand: 400 0.9285em ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace; // Inline code blocks using em units to inherit size from its parent.

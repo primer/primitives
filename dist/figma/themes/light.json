@@ -1,0 +1,5150 @@
+[
+  {
+    "name": "color/ansi/cyan-bright",
+    "value": {
+      "r": 0.19215686274509805,
+      "g": 0.5725490196078431,
+      "b": 0.6666666666666666,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/color/ansi/cyan-bright",
+    "collection": "mode",
+    "mode": "light",
+    "group": "syntax",
+    "scopes": ["ALL_SCOPES"]
+  },
+  {
+    "name": "color/ansi/cyan",
+    "value": {
+      "r": 0.10588235294117647,
+      "g": 0.48627450980392156,
+      "b": 0.5137254901960784,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/color/ansi/cyan",
+    "collection": "mode",
+    "mode": "light",
+    "group": "syntax",
+    "scopes": ["ALL_SCOPES"]
+  },
+  {
+    "name": "color/prettylights/syntax/sublimelinter/gutter/mark",
+    "value": {
+      "r": 0.5490196078431373,
+      "g": 0.5843137254901961,
+      "b": 0.6235294117647059,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/color/prettylights/syntax/sublimelinter/gutter/mark",
+    "reference": "base/color/light/base/color/gray/4",
+    "collection": "mode",
+    "mode": "light",
+    "group": "syntax",
+    "scopes": ["ALL_SCOPES"]
+  },
+  {
+    "name": "color/prettylights/syntax/meta/diff/range",
+    "value": {
+      "r": 0.5098039215686274,
+      "g": 0.3137254901960784,
+      "b": 0.8745098039215686,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/color/prettylights/syntax/meta/diff/range",
+    "reference": "base/color/light/base/color/purple/5",
+    "collection": "mode",
+    "mode": "light",
+    "group": "syntax",
+    "scopes": ["ALL_SCOPES"]
+  },
+  {
+    "name": "color/prettylights/syntax/markup/ignored/bg",
+    "value": {
+      "r": 0.0196078431372549,
+      "g": 0.3137254901960784,
+      "b": 0.6823529411764706,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/color/prettylights/syntax/markup/ignored/bg",
+    "reference": "base/color/light/base/color/blue/6",
+    "collection": "mode",
+    "mode": "light",
+    "group": "syntax",
+    "scopes": ["ALL_SCOPES"]
+  },
+  {
+    "name": "color/prettylights/syntax/markup/ignored/text",
+    "value": {
+      "r": 0.9176470588235294,
+      "g": 0.9333333333333333,
+      "b": 0.9490196078431372,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/color/prettylights/syntax/markup/ignored/text",
+    "reference": "base/color/light/base/color/gray/1",
+    "collection": "mode",
+    "mode": "light",
+    "group": "syntax",
+    "scopes": ["ALL_SCOPES"]
+  },
+  {
+    "name": "color/prettylights/syntax/markup/changed/bg",
+    "value": {
+      "r": 1,
+      "g": 0.8470588235294118,
+      "b": 0.7098039215686275,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/color/prettylights/syntax/markup/changed/bg",
+    "reference": "base/color/light/base/color/orange/1",
+    "collection": "mode",
+    "mode": "light",
+    "group": "syntax",
+    "scopes": ["ALL_SCOPES"]
+  },
+  {
+    "name": "color/prettylights/syntax/markup/changed/text",
+    "value": {
+      "r": 0.5843137254901961,
+      "g": 0.2196078431372549,
+      "b": 0,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/color/prettylights/syntax/markup/changed/text",
+    "reference": "base/color/light/base/color/orange/6",
+    "collection": "mode",
+    "mode": "light",
+    "group": "syntax",
+    "scopes": ["ALL_SCOPES"]
+  },
+  {
+    "name": "color/prettylights/syntax/markup/inserted/bg",
+    "value": {
+      "r": 0.8549019607843137,
+      "g": 0.984313725490196,
+      "b": 0.8823529411764706,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/color/prettylights/syntax/markup/inserted/bg",
+    "reference": "base/color/light/base/color/green/0",
+    "collection": "mode",
+    "mode": "light",
+    "group": "syntax",
+    "scopes": ["ALL_SCOPES"]
+  },
+  {
+    "name": "color/prettylights/syntax/markup/inserted/text",
+    "value": {
+      "r": 0.06666666666666667,
+      "g": 0.38823529411764707,
+      "b": 0.1607843137254902,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/color/prettylights/syntax/markup/inserted/text",
+    "reference": "base/color/light/base/color/green/6",
+    "collection": "mode",
+    "mode": "light",
+    "group": "syntax",
+    "scopes": ["ALL_SCOPES"]
+  },
+  {
+    "name": "color/prettylights/syntax/markup/deleted/bg",
+    "value": {
+      "r": 1,
+      "g": 0.9215686274509803,
+      "b": 0.9137254901960784,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/color/prettylights/syntax/markup/deleted/bg",
+    "reference": "base/color/light/base/color/red/0",
+    "collection": "mode",
+    "mode": "light",
+    "group": "syntax",
+    "scopes": ["ALL_SCOPES"]
+  },
+  {
+    "name": "color/prettylights/syntax/markup/deleted/text",
+    "value": {
+      "r": 0.5098039215686274,
+      "g": 0.027450980392156862,
+      "b": 0.11764705882352941,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/color/prettylights/syntax/markup/deleted/text",
+    "reference": "base/color/light/base/color/red/7",
+    "collection": "mode",
+    "mode": "light",
+    "group": "syntax",
+    "scopes": ["ALL_SCOPES"]
+  },
+  {
+    "name": "color/prettylights/syntax/markup/bold",
+    "value": {
+      "r": 0.1411764705882353,
+      "g": 0.1607843137254902,
+      "b": 0.1843137254901961,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/color/prettylights/syntax/markup/bold",
+    "reference": "base/color/light/base/color/gray/9",
+    "collection": "mode",
+    "mode": "light",
+    "group": "syntax",
+    "scopes": ["ALL_SCOPES"]
+  },
+  {
+    "name": "color/prettylights/syntax/markup/italic",
+    "value": {
+      "r": 0.1411764705882353,
+      "g": 0.1607843137254902,
+      "b": 0.1843137254901961,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/color/prettylights/syntax/markup/italic",
+    "reference": "base/color/light/base/color/gray/9",
+    "collection": "mode",
+    "mode": "light",
+    "group": "syntax",
+    "scopes": ["ALL_SCOPES"]
+  },
+  {
+    "name": "color/prettylights/syntax/markup/heading",
+    "value": {
+      "r": 0.0196078431372549,
+      "g": 0.3137254901960784,
+      "b": 0.6823529411764706,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/color/prettylights/syntax/markup/heading",
+    "reference": "base/color/light/base/color/blue/6",
+    "collection": "mode",
+    "mode": "light",
+    "group": "syntax",
+    "scopes": ["ALL_SCOPES"]
+  },
+  {
+    "name": "color/prettylights/syntax/markup/list",
+    "value": {
+      "r": 0.23137254901960785,
+      "g": 0.13725490196078433,
+      "b": 0,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/color/prettylights/syntax/markup/list",
+    "reference": "base/color/light/base/color/yellow/9",
+    "collection": "mode",
+    "mode": "light",
+    "group": "syntax",
+    "scopes": ["ALL_SCOPES"]
+  },
+  {
+    "name": "color/prettylights/syntax/string-regexp",
+    "value": {
+      "r": 0.06666666666666667,
+      "g": 0.38823529411764707,
+      "b": 0.1607843137254902,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/color/prettylights/syntax/string-regexp",
+    "reference": "base/color/light/base/color/green/6",
+    "collection": "mode",
+    "mode": "light",
+    "group": "syntax",
+    "scopes": ["ALL_SCOPES"]
+  },
+  {
+    "name": "color/prettylights/syntax/carriage/return/bg",
+    "value": {
+      "r": 0.8117647058823529,
+      "g": 0.13333333333333333,
+      "b": 0.1803921568627451,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/color/prettylights/syntax/carriage/return/bg",
+    "reference": "base/color/light/base/color/red/5",
+    "collection": "mode",
+    "mode": "light",
+    "group": "syntax",
+    "scopes": ["ALL_SCOPES"]
+  },
+  {
+    "name": "color/prettylights/syntax/carriage/return/text",
+    "value": {
+      "r": 0.9647058823529412,
+      "g": 0.9725490196078431,
+      "b": 0.9803921568627451,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/color/prettylights/syntax/carriage/return/text",
+    "reference": "base/color/light/base/color/gray/0",
+    "collection": "mode",
+    "mode": "light",
+    "group": "syntax",
+    "scopes": ["ALL_SCOPES"]
+  },
+  {
+    "name": "color/prettylights/syntax/invalid/illegal/bg",
+    "value": {
+      "r": 0.5098039215686274,
+      "g": 0.027450980392156862,
+      "b": 0.11764705882352941,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/color/prettylights/syntax/invalid/illegal/bg",
+    "reference": "base/color/light/base/color/red/7",
+    "collection": "mode",
+    "mode": "light",
+    "group": "syntax",
+    "scopes": ["ALL_SCOPES"]
+  },
+  {
+    "name": "color/prettylights/syntax/invalid/illegal/text",
+    "value": {
+      "r": 0.9647058823529412,
+      "g": 0.9725490196078431,
+      "b": 0.9803921568627451,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/color/prettylights/syntax/invalid/illegal/text",
+    "reference": "base/color/light/base/color/gray/0",
+    "collection": "mode",
+    "mode": "light",
+    "group": "syntax",
+    "scopes": ["ALL_SCOPES"]
+  },
+  {
+    "name": "color/prettylights/syntax/brackethighlighter/angle",
+    "value": {
+      "r": 0.3411764705882353,
+      "g": 0.3764705882352941,
+      "b": 0.41568627450980394,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/color/prettylights/syntax/brackethighlighter/angle",
+    "reference": "base/color/light/base/color/gray/6",
+    "collection": "mode",
+    "mode": "light",
+    "group": "syntax",
+    "scopes": ["ALL_SCOPES"]
+  },
+  {
+    "name": "color/prettylights/syntax/brackethighlighter/unmatched",
+    "value": {
+      "r": 0.5098039215686274,
+      "g": 0.027450980392156862,
+      "b": 0.11764705882352941,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/color/prettylights/syntax/brackethighlighter/unmatched",
+    "reference": "base/color/light/base/color/red/7",
+    "collection": "mode",
+    "mode": "light",
+    "group": "syntax",
+    "scopes": ["ALL_SCOPES"]
+  },
+  {
+    "name": "color/prettylights/syntax/variable",
+    "value": {
+      "r": 0.5843137254901961,
+      "g": 0.2196078431372549,
+      "b": 0,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/color/prettylights/syntax/variable",
+    "reference": "base/color/light/base/color/orange/6",
+    "collection": "mode",
+    "mode": "light",
+    "group": "syntax",
+    "scopes": ["ALL_SCOPES"]
+  },
+  {
+    "name": "color/prettylights/syntax/string",
+    "value": {
+      "r": 0.0392156862745098,
+      "g": 0.18823529411764706,
+      "b": 0.4117647058823529,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/color/prettylights/syntax/string",
+    "reference": "base/color/light/base/color/blue/8",
+    "collection": "mode",
+    "mode": "light",
+    "group": "syntax",
+    "scopes": ["ALL_SCOPES"]
+  },
+  {
+    "name": "color/prettylights/syntax/keyword",
+    "value": {
+      "r": 0.8117647058823529,
+      "g": 0.13333333333333333,
+      "b": 0.1803921568627451,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/color/prettylights/syntax/keyword",
+    "reference": "base/color/light/base/color/red/5",
+    "collection": "mode",
+    "mode": "light",
+    "group": "syntax",
+    "scopes": ["ALL_SCOPES"]
+  },
+  {
+    "name": "color/prettylights/syntax/entity-tag",
+    "value": {
+      "r": 0.0196078431372549,
+      "g": 0.3137254901960784,
+      "b": 0.6823529411764706,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/color/prettylights/syntax/entity-tag",
+    "reference": "base/color/light/base/color/blue/6",
+    "collection": "mode",
+    "mode": "light",
+    "group": "syntax",
+    "scopes": ["ALL_SCOPES"]
+  },
+  {
+    "name": "color/prettylights/syntax/storage/modifier/import",
+    "value": {
+      "r": 0.1411764705882353,
+      "g": 0.1607843137254902,
+      "b": 0.1843137254901961,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/color/prettylights/syntax/storage/modifier/import",
+    "reference": "base/color/light/base/color/gray/9",
+    "collection": "mode",
+    "mode": "light",
+    "group": "syntax",
+    "scopes": ["ALL_SCOPES"]
+  },
+  {
+    "name": "color/prettylights/syntax/entity",
+    "value": {
+      "r": 0.4,
+      "g": 0.2235294117647059,
+      "b": 0.7294117647058823,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/color/prettylights/syntax/entity",
+    "reference": "base/color/light/base/color/purple/6",
+    "collection": "mode",
+    "mode": "light",
+    "group": "syntax",
+    "scopes": ["ALL_SCOPES"]
+  },
+  {
+    "name": "color/prettylights/syntax/constant-other-reference-link",
+    "value": {
+      "r": 0.0392156862745098,
+      "g": 0.18823529411764706,
+      "b": 0.4117647058823529,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/color/prettylights/syntax/constant-other-reference-link",
+    "reference": "base/color/light/base/color/blue/8",
+    "collection": "mode",
+    "mode": "light",
+    "group": "syntax",
+    "scopes": ["ALL_SCOPES"]
+  },
+  {
+    "name": "color/prettylights/syntax/constant",
+    "value": {
+      "r": 0.0196078431372549,
+      "g": 0.3137254901960784,
+      "b": 0.6823529411764706,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/color/prettylights/syntax/constant",
+    "reference": "base/color/light/base/color/blue/6",
+    "collection": "mode",
+    "mode": "light",
+    "group": "syntax",
+    "scopes": ["ALL_SCOPES"]
+  },
+  {
+    "name": "color/prettylights/syntax/comment",
+    "value": {
+      "r": 0.3411764705882353,
+      "g": 0.3764705882352941,
+      "b": 0.41568627450980394,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/color/prettylights/syntax/comment",
+    "reference": "base/color/light/base/color/gray/6",
+    "collection": "mode",
+    "mode": "light",
+    "group": "syntax",
+    "scopes": ["ALL_SCOPES"]
+  },
+  {
+    "name": "color/ansi/magenta-bright",
+    "value": {
+      "r": 0.6431372549019608,
+      "g": 0.4588235294117647,
+      "b": 0.9764705882352941,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/color/ansi/magenta-bright",
+    "reference": "base/color/light/base/color/purple/4",
+    "collection": "mode",
+    "mode": "light",
+    "group": "syntax",
+    "scopes": ["ALL_SCOPES"]
+  },
+  {
+    "name": "color/ansi/magenta",
+    "value": {
+      "r": 0.5098039215686274,
+      "g": 0.3137254901960784,
+      "b": 0.8745098039215686,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/color/ansi/magenta",
+    "reference": "base/color/light/base/color/purple/5",
+    "collection": "mode",
+    "mode": "light",
+    "group": "syntax",
+    "scopes": ["ALL_SCOPES"]
+  },
+  {
+    "name": "color/ansi/blue-bright",
+    "value": {
+      "r": 0.12941176470588237,
+      "g": 0.5450980392156862,
+      "b": 1,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/color/ansi/blue-bright",
+    "reference": "base/color/light/base/color/blue/4",
+    "collection": "mode",
+    "mode": "light",
+    "group": "syntax",
+    "scopes": ["ALL_SCOPES"]
+  },
+  {
+    "name": "color/ansi/blue",
+    "value": {
+      "r": 0.03529411764705882,
+      "g": 0.4117647058823529,
+      "b": 0.8549019607843137,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/color/ansi/blue",
+    "reference": "base/color/light/base/color/blue/5",
+    "collection": "mode",
+    "mode": "light",
+    "group": "syntax",
+    "scopes": ["ALL_SCOPES"]
+  },
+  {
+    "name": "color/ansi/yellow-bright",
+    "value": {
+      "r": 0.38823529411764707,
+      "g": 0.23529411764705882,
+      "b": 0.00392156862745098,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/color/ansi/yellow-bright",
+    "reference": "base/color/light/base/color/yellow/7",
+    "collection": "mode",
+    "mode": "light",
+    "group": "syntax",
+    "scopes": ["ALL_SCOPES"]
+  },
+  {
+    "name": "color/ansi/yellow",
+    "value": {
+      "r": 0.30196078431372547,
+      "g": 0.17647058823529413,
+      "b": 0,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/color/ansi/yellow",
+    "reference": "base/color/light/base/color/yellow/8",
+    "collection": "mode",
+    "mode": "light",
+    "group": "syntax",
+    "scopes": ["ALL_SCOPES"]
+  },
+  {
+    "name": "color/ansi/green-bright",
+    "value": {
+      "r": 0.10196078431372549,
+      "g": 0.4980392156862745,
+      "b": 0.21568627450980393,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/color/ansi/green-bright",
+    "reference": "base/color/light/base/color/green/5",
+    "collection": "mode",
+    "mode": "light",
+    "group": "syntax",
+    "scopes": ["ALL_SCOPES"]
+  },
+  {
+    "name": "color/ansi/green",
+    "value": {
+      "r": 0.06666666666666667,
+      "g": 0.38823529411764707,
+      "b": 0.1607843137254902,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/color/ansi/green",
+    "reference": "base/color/light/base/color/green/6",
+    "collection": "mode",
+    "mode": "light",
+    "group": "syntax",
+    "scopes": ["ALL_SCOPES"]
+  },
+  {
+    "name": "color/ansi/red-bright",
+    "value": {
+      "r": 0.6431372549019608,
+      "g": 0.054901960784313725,
+      "b": 0.14901960784313725,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/color/ansi/red-bright",
+    "reference": "base/color/light/base/color/red/6",
+    "collection": "mode",
+    "mode": "light",
+    "group": "syntax",
+    "scopes": ["ALL_SCOPES"]
+  },
+  {
+    "name": "color/ansi/red",
+    "value": {
+      "r": 0.8117647058823529,
+      "g": 0.13333333333333333,
+      "b": 0.1803921568627451,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/color/ansi/red",
+    "reference": "base/color/light/base/color/red/5",
+    "collection": "mode",
+    "mode": "light",
+    "group": "syntax",
+    "scopes": ["ALL_SCOPES"]
+  },
+  {
+    "name": "color/ansi/gray",
+    "value": {
+      "r": 0.43137254901960786,
+      "g": 0.4666666666666667,
+      "b": 0.5058823529411764,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/color/ansi/gray",
+    "reference": "base/color/light/base/color/gray/5",
+    "collection": "mode",
+    "mode": "light",
+    "group": "syntax",
+    "scopes": ["ALL_SCOPES"]
+  },
+  {
+    "name": "color/ansi/white-bright",
+    "value": {
+      "r": 0.5490196078431373,
+      "g": 0.5843137254901961,
+      "b": 0.6235294117647059,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/color/ansi/white-bright",
+    "reference": "base/color/light/base/color/gray/4",
+    "collection": "mode",
+    "mode": "light",
+    "group": "syntax",
+    "scopes": ["ALL_SCOPES"]
+  },
+  {
+    "name": "color/ansi/white",
+    "value": {
+      "r": 0.43137254901960786,
+      "g": 0.4666666666666667,
+      "b": 0.5058823529411764,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/color/ansi/white",
+    "reference": "base/color/light/base/color/gray/5",
+    "collection": "mode",
+    "mode": "light",
+    "group": "syntax",
+    "scopes": ["ALL_SCOPES"]
+  },
+  {
+    "name": "color/ansi/black-bright",
+    "value": {
+      "r": 0.3411764705882353,
+      "g": 0.3764705882352941,
+      "b": 0.41568627450980394,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/color/ansi/black-bright",
+    "reference": "base/color/light/base/color/gray/6",
+    "collection": "mode",
+    "mode": "light",
+    "group": "syntax",
+    "scopes": ["ALL_SCOPES"]
+  },
+  {
+    "name": "color/ansi/black",
+    "value": {
+      "r": 0.1411764705882353,
+      "g": 0.1607843137254902,
+      "b": 0.1843137254901961,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/color/ansi/black",
+    "reference": "base/color/light/base/color/gray/9",
+    "collection": "mode",
+    "mode": "light",
+    "group": "syntax",
+    "scopes": ["ALL_SCOPES"]
+  },
+  {
+    "name": "borderColor/sponsors-emphasis",
+    "value": {
+      "r": 0.7490196078431373,
+      "g": 0.2235294117647059,
+      "b": 0.5372549019607843,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/borderColor/sponsors-emphasis",
+    "reference": "base/color/light/base/color/pink/5",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["STROKE_COLOR"],
+    "codeSyntax": {
+      "web": "var(--borderColor-sponsors-emphasis) /* utility class: .color-border-sponsors-emphasis */"
+    }
+  },
+  {
+    "name": "borderColor/sponsors-muted",
+    "value": {
+      "r": 1,
+      "g": 0.5019607843137255,
+      "b": 0.7843137254901961,
+      "a": 0.4
+    },
+    "type": "COLOR",
+    "alpha": 0.4,
+    "refId": "mode/borderColor/sponsors-muted",
+    "reference": "base/color/light/base/color/pink/3",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["STROKE_COLOR"],
+    "codeSyntax": {
+      "web": "var(--borderColor-sponsors-muted) /* utility class: .color-border-sponsors */"
+    }
+  },
+  {
+    "name": "borderColor/done-emphasis",
+    "value": {
+      "r": 0.5098039215686274,
+      "g": 0.3137254901960784,
+      "b": 0.8745098039215686,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/borderColor/done-emphasis",
+    "reference": "base/color/light/base/color/purple/5",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["STROKE_COLOR"],
+    "codeSyntax": {
+      "web": "var(--borderColor-done-emphasis) /* utility class: .color-border-done-emphasis */"
+    }
+  },
+  {
+    "name": "borderColor/done-muted",
+    "value": {
+      "r": 0.7607843137254902,
+      "g": 0.592156862745098,
+      "b": 1,
+      "a": 0.4
+    },
+    "type": "COLOR",
+    "alpha": 0.4,
+    "refId": "mode/borderColor/done-muted",
+    "reference": "base/color/light/base/color/purple/3",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["STROKE_COLOR"],
+    "codeSyntax": {
+      "web": "var(--borderColor-done-muted) /* utility class: .color-border-done */"
+    }
+  },
+  {
+    "name": "borderColor/closed-emphasis",
+    "value": {
+      "r": 0.8117647058823529,
+      "g": 0.13333333333333333,
+      "b": 0.1803921568627451,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/borderColor/closed-emphasis",
+    "reference": "base/color/light/base/color/red/5",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["STROKE_COLOR"],
+    "codeSyntax": {
+      "web": "var(--borderColor-closed-emphasis) /* utility class: .color-border-closed-emphasis */"
+    }
+  },
+  {
+    "name": "borderColor/closed-muted",
+    "value": {
+      "r": 1,
+      "g": 0.5058823529411764,
+      "b": 0.5098039215686274,
+      "a": 0.4
+    },
+    "type": "COLOR",
+    "alpha": 0.4,
+    "refId": "mode/borderColor/closed-muted",
+    "reference": "base/color/light/base/color/red/3",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["STROKE_COLOR"],
+    "codeSyntax": {
+      "web": "var(--borderColor-closed-muted) /* utility class: .color-border-closed */"
+    }
+  },
+  {
+    "name": "borderColor/danger-emphasis",
+    "value": {
+      "r": 0.8117647058823529,
+      "g": 0.13333333333333333,
+      "b": 0.1803921568627451,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/borderColor/danger-emphasis",
+    "reference": "base/color/light/base/color/red/5",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["STROKE_COLOR"],
+    "codeSyntax": {
+      "web": "var(--borderColor-danger-emphasis) /* utility class: .color-border-danger-emphasis */"
+    }
+  },
+  {
+    "name": "borderColor/danger-muted",
+    "value": {
+      "r": 1,
+      "g": 0.5058823529411764,
+      "b": 0.5098039215686274,
+      "a": 0.4
+    },
+    "type": "COLOR",
+    "alpha": 0.4,
+    "refId": "mode/borderColor/danger-muted",
+    "reference": "base/color/light/base/color/red/3",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["STROKE_COLOR"],
+    "codeSyntax": {
+      "web": "var(--borderColor-danger-muted) /* utility class: .color-border-danger */"
+    }
+  },
+  {
+    "name": "borderColor/severe-emphasis",
+    "value": {
+      "r": 0.7372549019607844,
+      "g": 0.2980392156862745,
+      "b": 0,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/borderColor/severe-emphasis",
+    "reference": "base/color/light/base/color/orange/5",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["STROKE_COLOR"],
+    "codeSyntax": {
+      "web": "var(--borderColor-severe-emphasis) /* utility class: .color-border-severe-emphasis */"
+    }
+  },
+  {
+    "name": "borderColor/severe-muted",
+    "value": {
+      "r": 0.984313725490196,
+      "g": 0.5607843137254902,
+      "b": 0.26666666666666666,
+      "a": 0.4
+    },
+    "type": "COLOR",
+    "alpha": 0.4,
+    "refId": "mode/borderColor/severe-muted",
+    "reference": "base/color/light/base/color/orange/3",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["STROKE_COLOR"],
+    "codeSyntax": {
+      "web": "var(--borderColor-severe-muted) /* utility class: .color-border-severe */"
+    }
+  },
+  {
+    "name": "borderColor/attention-emphasis",
+    "value": {
+      "r": 0.7490196078431373,
+      "g": 0.5294117647058824,
+      "b": 0,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/borderColor/attention-emphasis",
+    "reference": "base/color/light/base/color/yellow/4",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["STROKE_COLOR"],
+    "codeSyntax": {
+      "web": "var(--borderColor-attention-emphasis) /* utility class: .color-border-attention-emphasis */"
+    }
+  },
+  {
+    "name": "borderColor/attention-muted",
+    "value": {
+      "r": 0.8313725490196079,
+      "g": 0.6549019607843137,
+      "b": 0.17254901960784313,
+      "a": 0.4
+    },
+    "type": "COLOR",
+    "alpha": 0.4,
+    "refId": "mode/borderColor/attention-muted",
+    "reference": "base/color/light/base/color/yellow/3",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["STROKE_COLOR"],
+    "codeSyntax": {
+      "web": "var(--borderColor-attention-muted) /* utility class: .color-border-attention */"
+    }
+  },
+  {
+    "name": "borderColor/success-emphasis",
+    "value": {
+      "r": 0.10196078431372549,
+      "g": 0.4980392156862745,
+      "b": 0.21568627450980393,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/borderColor/success-emphasis",
+    "reference": "base/color/light/base/color/green/5",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["STROKE_COLOR"],
+    "codeSyntax": {
+      "web": "var(--borderColor-success-emphasis) /* utility class: .color-border-success-emphasis */"
+    }
+  },
+  {
+    "name": "borderColor/success-muted",
+    "value": {
+      "r": 0.2901960784313726,
+      "g": 0.7607843137254902,
+      "b": 0.4196078431372549,
+      "a": 0.4
+    },
+    "type": "COLOR",
+    "alpha": 0.4,
+    "refId": "mode/borderColor/success-muted",
+    "reference": "base/color/light/base/color/green/3",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["STROKE_COLOR"],
+    "codeSyntax": {
+      "web": "var(--borderColor-success-muted) /* utility class: .color-border-success */"
+    }
+  },
+  {
+    "name": "borderColor/accent-emphasis",
+    "value": {
+      "r": 0.03529411764705882,
+      "g": 0.4117647058823529,
+      "b": 0.8549019607843137,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/borderColor/accent-emphasis",
+    "reference": "base/color/light/base/color/blue/5",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["STROKE_COLOR"],
+    "codeSyntax": {
+      "web": "var(--borderColor-accent-emphasis) /* utility class: .color-border-accent-emphasis */"
+    }
+  },
+  {
+    "name": "borderColor/accent-muted",
+    "value": {
+      "r": 0.32941176470588235,
+      "g": 0.6823529411764706,
+      "b": 1,
+      "a": 0.4
+    },
+    "type": "COLOR",
+    "alpha": 0.4,
+    "refId": "mode/borderColor/accent-muted",
+    "reference": "base/color/light/base/color/blue/3",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["STROKE_COLOR"],
+    "codeSyntax": {
+      "web": "var(--borderColor-accent-muted) /* utility class: .color-border-accent */"
+    }
+  },
+  {
+    "name": "borderColor/neutral-emphasis",
+    "value": {
+      "r": 0.43137254901960786,
+      "g": 0.4666666666666667,
+      "b": 0.5058823529411764,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/borderColor/neutral-emphasis",
+    "reference": "base/color/light/base/color/gray/5",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["STROKE_COLOR"]
+  },
+  {
+    "name": "borderColor/neutral-muted",
+    "value": {
+      "r": 0.6862745098039216,
+      "g": 0.7215686274509804,
+      "b": 0.7568627450980392,
+      "a": 0.2
+    },
+    "type": "COLOR",
+    "alpha": 0.2,
+    "refId": "mode/borderColor/neutral-muted",
+    "reference": "base/color/light/base/color/gray/3",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["STROKE_COLOR"]
+  },
+  {
+    "name": "borderColor/transparent",
+    "value": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 0
+    },
+    "type": "COLOR",
+    "refId": "mode/borderColor/transparent",
+    "reference": "base/color/light/base/color/transparent",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["STROKE_COLOR"]
+  },
+  {
+    "name": "borderColor/emphasis",
+    "value": {
+      "r": 0.43137254901960786,
+      "g": 0.4666666666666667,
+      "b": 0.5058823529411764,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/borderColor/emphasis",
+    "reference": "base/color/light/base/color/gray/5",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["STROKE_COLOR"]
+  },
+  {
+    "name": "borderColor/default",
+    "value": {
+      "r": 0.8156862745098039,
+      "g": 0.8431372549019608,
+      "b": 0.8705882352941177,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/borderColor/default",
+    "reference": "base/color/light/base/color/gray/2",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["STROKE_COLOR"],
+    "codeSyntax": {
+      "web": "var(--borderColor-default) /* utility class: .color-border-default */"
+    }
+  },
+  {
+    "name": "bgColor/sponsors-emphasis",
+    "value": {
+      "r": 0.7490196078431373,
+      "g": 0.2235294117647059,
+      "b": 0.5372549019607843,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/bgColor/sponsors-emphasis",
+    "reference": "base/color/light/base/color/pink/5",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+    "codeSyntax": {
+      "web": "var(--bgColor-sponsors-emphasis) /* utility class: .color-bg-sponsors-emphasis */"
+    }
+  },
+  {
+    "name": "bgColor/sponsors-muted",
+    "value": {
+      "r": 1,
+      "g": 0.9372549019607843,
+      "b": 0.9686274509803922,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/bgColor/sponsors-muted",
+    "reference": "base/color/light/base/color/pink/0",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+    "codeSyntax": {
+      "web": "var(--bgColor-sponsors-muted) /* utility class: .color-bg-sponsors */"
+    }
+  },
+  {
+    "name": "bgColor/done-emphasis",
+    "value": {
+      "r": 0.5098039215686274,
+      "g": 0.3137254901960784,
+      "b": 0.8745098039215686,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/bgColor/done-emphasis",
+    "reference": "base/color/light/base/color/purple/5",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+    "codeSyntax": {
+      "web": "var(--bgColor-done-emphasis) /* utility class: .color-bg-done-emphasis */"
+    }
+  },
+  {
+    "name": "bgColor/done-muted",
+    "value": {
+      "r": 0.984313725490196,
+      "g": 0.9372549019607843,
+      "b": 1,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/bgColor/done-muted",
+    "reference": "base/color/light/base/color/purple/0",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+    "codeSyntax": {
+      "web": "var(--bgColor-done-muted) /* utility class: .color-bg-done */"
+    }
+  },
+  {
+    "name": "bgColor/closed-emphasis",
+    "value": {
+      "r": 0.8117647058823529,
+      "g": 0.13333333333333333,
+      "b": 0.1803921568627451,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/bgColor/closed-emphasis",
+    "reference": "base/color/light/base/color/red/5",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+    "codeSyntax": {
+      "web": "var(--bgColor-closed-emphasis) /* utility class: .color-bg-closed-emphasis */"
+    }
+  },
+  {
+    "name": "bgColor/closed-muted",
+    "value": {
+      "r": 1,
+      "g": 0.9215686274509803,
+      "b": 0.9137254901960784,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/bgColor/closed-muted",
+    "reference": "base/color/light/base/color/red/0",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+    "codeSyntax": {
+      "web": "var(--bgColor-closed-muted) /* utility class: .color-bg-closed */"
+    }
+  },
+  {
+    "name": "bgColor/danger-emphasis",
+    "value": {
+      "r": 0.8117647058823529,
+      "g": 0.13333333333333333,
+      "b": 0.1803921568627451,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/bgColor/danger-emphasis",
+    "reference": "base/color/light/base/color/red/5",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+    "codeSyntax": {
+      "web": "var(--bgColor-danger-emphasis) /* utility class: .color-bg-danger-emphasis */"
+    }
+  },
+  {
+    "name": "bgColor/danger-muted",
+    "value": {
+      "r": 1,
+      "g": 0.9215686274509803,
+      "b": 0.9137254901960784,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/bgColor/danger-muted",
+    "reference": "base/color/light/base/color/red/0",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+    "codeSyntax": {
+      "web": "var(--bgColor-danger-muted) /* utility class: .color-bg-danger */"
+    }
+  },
+  {
+    "name": "bgColor/severe-emphasis",
+    "value": {
+      "r": 0.7372549019607844,
+      "g": 0.2980392156862745,
+      "b": 0,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/bgColor/severe-emphasis",
+    "reference": "base/color/light/base/color/orange/5",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+    "codeSyntax": {
+      "web": "var(--bgColor-severe-emphasis) /* utility class: .color-bg-severe-emphasis */"
+    }
+  },
+  {
+    "name": "bgColor/severe-muted",
+    "value": {
+      "r": 1,
+      "g": 0.9450980392156862,
+      "b": 0.8980392156862745,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/bgColor/severe-muted",
+    "reference": "base/color/light/base/color/orange/0",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+    "codeSyntax": {
+      "web": "var(--bgColor-severe-muted) /* utility class: .color-bg-severe */"
+    }
+  },
+  {
+    "name": "bgColor/attention-emphasis",
+    "value": {
+      "r": 0.6039215686274509,
+      "g": 0.403921568627451,
+      "b": 0,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/bgColor/attention-emphasis",
+    "reference": "base/color/light/base/color/yellow/5",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+    "codeSyntax": {
+      "web": "var(--bgColor-attention-emphasis) /* utility class: .color-bg-attention-emphasis */"
+    }
+  },
+  {
+    "name": "bgColor/attention-muted",
+    "value": {
+      "r": 1,
+      "g": 0.9725490196078431,
+      "b": 0.7725490196078432,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/bgColor/attention-muted",
+    "reference": "base/color/light/base/color/yellow/0",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+    "codeSyntax": {
+      "web": "var(--bgColor-attention-muted) /* utility class: .color-bg-attention */"
+    }
+  },
+  {
+    "name": "bgColor/success-emphasis",
+    "value": {
+      "r": 0.12156862745098039,
+      "g": 0.5333333333333333,
+      "b": 0.23921568627450981,
+      "a": 1
+    },
+    "type": "COLOR",
+    "isMix": true,
+    "refId": "mode/bgColor/success-emphasis",
+    "reference": "base/color/light/base/color/green/4",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+    "codeSyntax": {
+      "web": "var(--bgColor-success-emphasis) /* utility class: .color-bg-success-emphasis */"
+    }
+  },
+  {
+    "name": "bgColor/success-muted",
+    "value": {
+      "r": 0.8549019607843137,
+      "g": 0.984313725490196,
+      "b": 0.8823529411764706,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/bgColor/success-muted",
+    "reference": "base/color/light/base/color/green/0",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+    "codeSyntax": {
+      "web": "var(--bgColor-success-muted) /* utility class: .color-bg-success */"
+    }
+  },
+  {
+    "name": "bgColor/accent-emphasis",
+    "value": {
+      "r": 0.03529411764705882,
+      "g": 0.4117647058823529,
+      "b": 0.8549019607843137,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/bgColor/accent-emphasis",
+    "reference": "base/color/light/base/color/blue/5",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+    "codeSyntax": {
+      "web": "var(--bgColor-accent-emphasis) /* utility class: .color-bg-accent-emphasis */"
+    }
+  },
+  {
+    "name": "bgColor/accent-muted",
+    "value": {
+      "r": 0.8666666666666667,
+      "g": 0.9568627450980393,
+      "b": 1,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/bgColor/accent-muted",
+    "reference": "base/color/light/base/color/blue/0",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+    "codeSyntax": {
+      "web": "var(--bgColor-accent-muted) /* utility class: .color-bg-accent */"
+    }
+  },
+  {
+    "name": "bgColor/neutral-emphasis",
+    "value": {
+      "r": 0.43137254901960786,
+      "g": 0.4666666666666667,
+      "b": 0.5058823529411764,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/bgColor/neutral-emphasis",
+    "reference": "base/color/light/base/color/gray/5",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "bgColor/neutral-muted",
+    "value": {
+      "r": 0.6862745098039216,
+      "g": 0.7215686274509804,
+      "b": 0.7568627450980392,
+      "a": 0.2
+    },
+    "type": "COLOR",
+    "alpha": 0.2,
+    "refId": "mode/bgColor/neutral-muted",
+    "reference": "base/color/light/base/color/gray/3",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "bgColor/transparent",
+    "value": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 0
+    },
+    "type": "COLOR",
+    "refId": "mode/bgColor/transparent",
+    "reference": "base/color/light/base/color/transparent",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+    "codeSyntax": {
+      "web": "var(--bgColor-transparent) /* utility class: .color-bg-transparent */"
+    }
+  },
+  {
+    "name": "bgColor/disabled",
+    "value": {
+      "r": 0.9647058823529412,
+      "g": 0.9725490196078431,
+      "b": 0.9803921568627451,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/bgColor/disabled",
+    "reference": "base/color/light/base/color/gray/0",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "bgColor/inverse",
+    "value": {
+      "r": 0.1411764705882353,
+      "g": 0.1607843137254902,
+      "b": 0.1843137254901961,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/bgColor/inverse",
+    "reference": "base/color/light/base/color/gray/9",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "bgColor/emphasis",
+    "value": {
+      "r": 0.1411764705882353,
+      "g": 0.1607843137254902,
+      "b": 0.1843137254901961,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/bgColor/emphasis",
+    "reference": "base/color/light/base/color/gray/9",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+    "codeSyntax": {
+      "web": "var(--bgColor-emphasis) /* utility class: .color-bg-emphasis */"
+    }
+  },
+  {
+    "name": "bgColor/inset",
+    "value": {
+      "r": 0.9647058823529412,
+      "g": 0.9725490196078431,
+      "b": 0.9803921568627451,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/bgColor/inset",
+    "reference": "base/color/light/base/color/gray/0",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE_COLOR"],
+    "codeSyntax": {
+      "web": "var(--bgColor-inset) /* utility class: .color-bg-inset */"
+    }
+  },
+  {
+    "name": "bgColor/muted",
+    "value": {
+      "r": 0.9647058823529412,
+      "g": 0.9725490196078431,
+      "b": 0.9803921568627451,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/bgColor/muted",
+    "reference": "base/color/light/base/color/gray/0",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE_COLOR"],
+    "codeSyntax": {
+      "web": "var(--bgColor-muted) /* utility class: .color-bg-muted */"
+    }
+  },
+  {
+    "name": "bgColor/default",
+    "value": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/bgColor/default",
+    "reference": "base/color/light/base/color/white",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE_COLOR"],
+    "codeSyntax": {
+      "web": "var(--bgColor-default) /* utility class: .color-bg-default */"
+    }
+  },
+  {
+    "name": "fgColor/sponsors-onInverse",
+    "value": {
+      "r": 0.9098039215686274,
+      "g": 0.35294117647058826,
+      "b": 0.6784313725490196,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/fgColor/sponsors-onInverse",
+    "reference": "base/color/light/base/color/pink/4",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "fgColor/sponsors",
+    "value": {
+      "r": 0.7490196078431373,
+      "g": 0.2235294117647059,
+      "b": 0.5372549019607843,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/fgColor/sponsors",
+    "reference": "base/color/light/base/color/pink/5",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"],
+    "codeSyntax": {
+      "web": "var(--fgColor-sponsors) /* utility class: .color-fg-sponsors */"
+    }
+  },
+  {
+    "name": "fgColor/done-onInverse",
+    "value": {
+      "r": 0.6431372549019608,
+      "g": 0.4588235294117647,
+      "b": 0.9764705882352941,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/fgColor/done-onInverse",
+    "reference": "base/color/light/base/color/purple/4",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "fgColor/done",
+    "value": {
+      "r": 0.5098039215686274,
+      "g": 0.3137254901960784,
+      "b": 0.8745098039215686,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/fgColor/done",
+    "reference": "base/color/light/base/color/purple/5",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"],
+    "codeSyntax": {
+      "web": "var(--fgColor-done) /* utility class: .color-fg-done */"
+    }
+  },
+  {
+    "name": "fgColor/danger-onInverse",
+    "value": {
+      "r": 0.9803921568627451,
+      "g": 0.27058823529411763,
+      "b": 0.28627450980392155,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/fgColor/danger-onInverse",
+    "reference": "base/color/light/base/color/red/4",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "fgColor/danger",
+    "value": {
+      "r": 0.8196078431372549,
+      "g": 0.1411764705882353,
+      "b": 0.1843137254901961,
+      "a": 1
+    },
+    "type": "COLOR",
+    "isMix": true,
+    "refId": "mode/fgColor/danger",
+    "reference": "base/color/light/base/color/red/5",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"],
+    "codeSyntax": {
+      "web": "var(--fgColor-danger) /* utility class: .color-fg-danger */"
+    }
+  },
+  {
+    "name": "fgColor/severe-onInverse",
+    "value": {
+      "r": 0.984313725490196,
+      "g": 0.5607843137254902,
+      "b": 0.26666666666666666,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/fgColor/severe-onInverse",
+    "reference": "base/color/light/base/color/orange/3",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "fgColor/severe",
+    "value": {
+      "r": 0.7372549019607844,
+      "g": 0.2980392156862745,
+      "b": 0,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/fgColor/severe",
+    "reference": "base/color/light/base/color/orange/5",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"],
+    "codeSyntax": {
+      "web": "var(--fgColor-severe) /* utility class: .color-fg-severe */"
+    }
+  },
+  {
+    "name": "fgColor/attention-onInverse",
+    "value": {
+      "r": 0.8313725490196079,
+      "g": 0.6549019607843137,
+      "b": 0.17254901960784313,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/fgColor/attention-onInverse",
+    "reference": "base/color/light/base/color/yellow/3",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "fgColor/attention",
+    "value": {
+      "r": 0.6039215686274509,
+      "g": 0.403921568627451,
+      "b": 0,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/fgColor/attention",
+    "reference": "base/color/light/base/color/yellow/5",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"],
+    "codeSyntax": {
+      "web": "var(--fgColor-attention) /* utility class: .color-fg-attention */"
+    }
+  },
+  {
+    "name": "fgColor/success-onInverse",
+    "value": {
+      "r": 0.2901960784313726,
+      "g": 0.7607843137254902,
+      "b": 0.4196078431372549,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/fgColor/success-onInverse",
+    "reference": "base/color/light/base/color/green/3",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "fgColor/success",
+    "value": {
+      "r": 0.10196078431372549,
+      "g": 0.4980392156862745,
+      "b": 0.21568627450980393,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/fgColor/success",
+    "reference": "base/color/light/base/color/green/5",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"],
+    "codeSyntax": {
+      "web": "var(--fgColor-success) /* utility class: .color-fg-success */"
+    }
+  },
+  {
+    "name": "fgColor/accent-onInverse",
+    "value": {
+      "r": 0.32941176470588235,
+      "g": 0.6823529411764706,
+      "b": 1,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/fgColor/accent-onInverse",
+    "reference": "base/color/light/base/color/blue/3",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "fgColor/accent",
+    "value": {
+      "r": 0.03529411764705882,
+      "g": 0.4117647058823529,
+      "b": 0.8549019607843137,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/fgColor/accent",
+    "reference": "base/color/light/base/color/blue/5",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"],
+    "codeSyntax": {
+      "web": "var(--fgColor-accent) /* utility class: .color-fg-accent */"
+    }
+  },
+  {
+    "name": "fgColor/neutral-onInverse",
+    "value": {
+      "r": 0.5490196078431373,
+      "g": 0.5843137254901961,
+      "b": 0.6235294117647059,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/fgColor/neutral-onInverse",
+    "reference": "base/color/light/base/color/gray/4",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "fgColor/neutral",
+    "value": {
+      "r": 0.43137254901960786,
+      "g": 0.4666666666666667,
+      "b": 0.5058823529411764,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/fgColor/neutral",
+    "reference": "base/color/light/base/color/gray/5",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "fgColor/disabled",
+    "value": {
+      "r": 0.5490196078431373,
+      "g": 0.5843137254901961,
+      "b": 0.6235294117647059,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/fgColor/disabled",
+    "reference": "base/color/light/base/color/gray/4",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "fgColor/onInverse",
+    "value": {
+      "r": 0.9647058823529412,
+      "g": 0.9725490196078431,
+      "b": 0.9803921568627451,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/fgColor/onInverse",
+    "reference": "base/color/light/base/color/gray/0",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "fgColor/onEmphasis",
+    "value": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/fgColor/onEmphasis",
+    "reference": "base/color/light/base/color/white",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"],
+    "codeSyntax": {
+      "web": "var(--fgColor-onEmphasis) /* utility class: .color-fg-on-emphasis */"
+    }
+  },
+  {
+    "name": "fgColor/muted",
+    "value": {
+      "r": 0.38823529411764707,
+      "g": 0.4235294117647059,
+      "b": 0.4627450980392157,
+      "a": 1
+    },
+    "type": "COLOR",
+    "isMix": true,
+    "refId": "mode/fgColor/muted",
+    "reference": "base/color/light/base/color/gray/6",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"],
+    "codeSyntax": {
+      "web": "var(--fgColor-muted) /* utility class: .color-fg-muted */"
+    }
+  },
+  {
+    "name": "fgColor/default",
+    "value": {
+      "r": 0.12156862745098039,
+      "g": 0.13725490196078433,
+      "b": 0.1568627450980392,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/fgColor/default",
+    "reference": "base/color/light/base/color/black",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"],
+    "codeSyntax": {
+      "web": "var(--fgColor-default) /* utility class: .color-fg-default */"
+    }
+  },
+  {
+    "name": "underlineNav/borderColor/active",
+    "value": {
+      "r": 0.9921568627450981,
+      "g": 0.5490196078431373,
+      "b": 0.45098039215686275,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/underlineNav/borderColor/active",
+    "reference": "base/color/light/base/color/coral/3",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["STROKE_COLOR"]
+  },
+  {
+    "name": "treeViewItem/leadingVisual/iconColor/rest",
+    "value": {
+      "r": 0.32941176470588235,
+      "g": 0.6823529411764706,
+      "b": 1,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/treeViewItem/leadingVisual/iconColor/rest",
+    "reference": "base/color/light/base/color/blue/3",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "timelineBadge/bgColor",
+    "value": {
+      "r": 0.9176470588235294,
+      "g": 0.9333333333333333,
+      "b": 0.9490196078431372,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/timelineBadge/bgColor",
+    "reference": "base/color/light/base/color/gray/1",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "sideNav/bgColor/selected",
+    "value": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/sideNav/bgColor/selected",
+    "reference": "base/color/light/base/color/white",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "selectMenu/bgColor/active",
+    "value": {
+      "r": 0.7137254901960784,
+      "g": 0.8901960784313725,
+      "b": 1,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/selectMenu/bgColor/active",
+    "reference": "base/color/light/base/color/blue/1",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "selectMenu/borderColor",
+    "value": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 0
+    },
+    "type": "COLOR",
+    "refId": "mode/selectMenu/borderColor",
+    "reference": "base/color/light/base/color/transparent",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["STROKE_COLOR"]
+  },
+  {
+    "name": "overlay/backdrop/bgColor",
+    "value": {
+      "r": 0.5490196078431373,
+      "g": 0.5843137254901961,
+      "b": 0.6235294117647059,
+      "a": 0.2
+    },
+    "type": "COLOR",
+    "alpha": 0.2,
+    "refId": "mode/overlay/backdrop/bgColor",
+    "reference": "base/color/light/base/color/gray/4",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "overlay/bgColor",
+    "value": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/overlay/bgColor",
+    "reference": "base/color/light/base/color/white",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "menu/bgColor/active",
+    "value": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 0
+    },
+    "type": "COLOR",
+    "refId": "mode/menu/bgColor/active",
+    "reference": "base/color/light/base/color/transparent",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "buttonCounter/danger/fgColor/hover",
+    "value": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/buttonCounter/danger/fgColor/hover",
+    "reference": "base/color/light/base/color/white",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "buttonCounter/danger/fgColor/rest",
+    "value": {
+      "r": 0.7607843137254902,
+      "g": 0.10980392156862745,
+      "b": 0.17254901960784313,
+      "a": 1
+    },
+    "type": "COLOR",
+    "isMix": true,
+    "refId": "mode/buttonCounter/danger/fgColor/rest",
+    "reference": "base/color/light/base/color/red/5",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "buttonCounter/danger/bgColor/hover",
+    "value": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 0.2
+    },
+    "type": "COLOR",
+    "alpha": 0.2,
+    "refId": "mode/buttonCounter/danger/bgColor/hover",
+    "reference": "base/color/light/base/color/white",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "buttonCounter/outline/fgColor/hover",
+    "value": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/buttonCounter/outline/fgColor/hover",
+    "reference": "base/color/light/base/color/white",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "buttonCounter/outline/fgColor/rest",
+    "value": {
+      "r": 0.0196078431372549,
+      "g": 0.3137254901960784,
+      "b": 0.6823529411764706,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/buttonCounter/outline/fgColor/rest",
+    "reference": "base/color/light/base/color/blue/6",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "buttonCounter/outline/bgColor/hover",
+    "value": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 0.2
+    },
+    "type": "COLOR",
+    "alpha": 0.2,
+    "refId": "mode/buttonCounter/outline/bgColor/hover",
+    "reference": "base/color/light/base/color/white",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "buttonCounter/primary/bgColor/rest",
+    "value": {
+      "r": 0,
+      "g": 0.17647058823529413,
+      "b": 0.06666666666666667,
+      "a": 0.2
+    },
+    "type": "COLOR",
+    "alpha": 0.2,
+    "refId": "mode/buttonCounter/primary/bgColor/rest",
+    "reference": "base/color/light/base/color/green/9",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "button/inactive/bgColor/rest",
+    "value": {
+      "r": 0.9176470588235294,
+      "g": 0.9333333333333333,
+      "b": 0.9490196078431372,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/button/inactive/bgColor/rest",
+    "reference": "base/color/light/base/color/gray/1",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "button/inactive/fgColor/rest",
+    "value": {
+      "r": 0.3411764705882353,
+      "g": 0.3764705882352941,
+      "b": 0.41568627450980394,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/button/inactive/fgColor/rest",
+    "reference": "base/color/light/base/color/gray/6",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "button/danger/borderColor/hover",
+    "value": {
+      "r": 0.12156862745098039,
+      "g": 0.13725490196078433,
+      "b": 0.1568627450980392,
+      "a": 0.15
+    },
+    "type": "COLOR",
+    "alpha": 0.15,
+    "refId": "mode/button/danger/borderColor/hover",
+    "reference": "base/color/light/base/color/black",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["STROKE_COLOR"]
+  },
+  {
+    "name": "button/danger/bgColor/active",
+    "value": {
+      "r": 0.5450980392156862,
+      "g": 0.03137254901960784,
+      "b": 0.12549019607843137,
+      "a": 1
+    },
+    "type": "COLOR",
+    "isMix": true,
+    "refId": "mode/button/danger/bgColor/active",
+    "reference": "base/color/light/base/color/red/6",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "button/danger/bgColor/hover",
+    "value": {
+      "r": 0.6431372549019608,
+      "g": 0.054901960784313725,
+      "b": 0.14901960784313725,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/button/danger/bgColor/hover",
+    "reference": "base/color/light/base/color/red/6",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "button/danger/iconColor/hover",
+    "value": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/button/danger/iconColor/hover",
+    "reference": "base/color/light/base/color/white",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "button/danger/fgColor/active",
+    "value": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/button/danger/fgColor/active",
+    "reference": "base/color/light/base/color/white",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "button/danger/fgColor/hover",
+    "value": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/button/danger/fgColor/hover",
+    "reference": "base/color/light/base/color/white",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "button/outline/borderColor/hover",
+    "value": {
+      "r": 0.12156862745098039,
+      "g": 0.13725490196078433,
+      "b": 0.1568627450980392,
+      "a": 0.15
+    },
+    "type": "COLOR",
+    "alpha": 0.15,
+    "refId": "mode/button/outline/borderColor/hover",
+    "reference": "base/color/light/base/color/black",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["STROKE_COLOR"]
+  },
+  {
+    "name": "button/outline/bgColor/disabled",
+    "value": {
+      "r": 0.9647058823529412,
+      "g": 0.9725490196078431,
+      "b": 0.9803921568627451,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/button/outline/bgColor/disabled",
+    "reference": "base/color/light/base/color/gray/0",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "button/outline/fgColor/active",
+    "value": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/button/outline/fgColor/active",
+    "reference": "base/color/light/base/color/white",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "button/outline/fgColor/hover",
+    "value": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/button/outline/fgColor/hover",
+    "reference": "base/color/light/base/color/white",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "button/primary/borderColor/rest",
+    "value": {
+      "r": 0.12156862745098039,
+      "g": 0.13725490196078433,
+      "b": 0.1568627450980392,
+      "a": 0.15
+    },
+    "type": "COLOR",
+    "alpha": 0.15,
+    "refId": "mode/button/primary/borderColor/rest",
+    "reference": "base/color/light/base/color/black",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["STROKE_COLOR"]
+  },
+  {
+    "name": "button/primary/bgColor/disabled",
+    "value": {
+      "r": 0.5843137254901961,
+      "g": 0.8470588235294118,
+      "b": 0.6509803921568628,
+      "a": 1
+    },
+    "type": "COLOR",
+    "isMix": true,
+    "refId": "mode/button/primary/bgColor/disabled",
+    "reference": "base/color/light/base/color/green/4",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "button/primary/iconColor/rest",
+    "value": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 0.8
+    },
+    "type": "COLOR",
+    "alpha": 0.8,
+    "refId": "mode/button/primary/iconColor/rest",
+    "reference": "base/color/light/base/color/white",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "button/primary/fgColor/disabled",
+    "value": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 0.8
+    },
+    "type": "COLOR",
+    "alpha": 0.8,
+    "refId": "mode/button/primary/fgColor/disabled",
+    "reference": "base/color/light/base/color/white",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "button/primary/fgColor/rest",
+    "value": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/button/primary/fgColor/rest",
+    "reference": "base/color/light/base/color/white",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "counter/borderColor",
+    "value": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 0
+    },
+    "type": "COLOR",
+    "refId": "mode/counter/borderColor",
+    "reference": "base/color/light/base/color/transparent",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["STROKE_COLOR"]
+  },
+  {
+    "name": "controlKnob/bgColor/checked",
+    "value": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/controlKnob/bgColor/checked",
+    "reference": "base/color/light/base/color/white",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "controlKnob/bgColor/rest",
+    "value": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/controlKnob/bgColor/rest",
+    "reference": "base/color/light/base/color/white",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "controlTrack/borderColor/rest",
+    "value": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 0
+    },
+    "type": "COLOR",
+    "refId": "mode/controlTrack/borderColor/rest",
+    "reference": "base/color/light/base/color/transparent",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["STROKE_COLOR"]
+  },
+  {
+    "name": "controlTrack/bgColor/active",
+    "value": {
+      "r": 0.8235294117647058,
+      "g": 0.8470588235294118,
+      "b": 0.8705882352941177,
+      "a": 1
+    },
+    "type": "COLOR",
+    "isMix": true,
+    "refId": "mode/controlTrack/bgColor/active",
+    "reference": "base/color/light/base/color/gray/1",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "controlTrack/bgColor/hover",
+    "value": {
+      "r": 0.8705882352941177,
+      "g": 0.8901960784313725,
+      "b": 0.9098039215686274,
+      "a": 1
+    },
+    "type": "COLOR",
+    "isMix": true,
+    "refId": "mode/controlTrack/bgColor/hover",
+    "reference": "base/color/light/base/color/gray/1",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "controlTrack/bgColor/rest",
+    "value": {
+      "r": 0.9176470588235294,
+      "g": 0.9333333333333333,
+      "b": 0.9490196078431372,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/controlTrack/bgColor/rest",
+    "reference": "base/color/light/base/color/gray/1",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "control/transparent/borderColor/active",
+    "value": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 0
+    },
+    "type": "COLOR",
+    "refId": "mode/control/transparent/borderColor/active",
+    "reference": "base/color/light/base/color/transparent",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component",
+    "scopes": ["STROKE_COLOR"]
+  },
+  {
+    "name": "control/transparent/borderColor/hover",
+    "value": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 0
+    },
+    "type": "COLOR",
+    "refId": "mode/control/transparent/borderColor/hover",
+    "reference": "base/color/light/base/color/transparent",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component",
+    "scopes": ["STROKE_COLOR"]
+  },
+  {
+    "name": "control/transparent/borderColor/rest",
+    "value": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 0
+    },
+    "type": "COLOR",
+    "refId": "mode/control/transparent/borderColor/rest",
+    "reference": "base/color/light/base/color/transparent",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component",
+    "scopes": ["STROKE_COLOR"]
+  },
+  {
+    "name": "control/transparent/bgColor/selected",
+    "value": {
+      "r": 0.8156862745098039,
+      "g": 0.8431372549019608,
+      "b": 0.8705882352941177,
+      "a": 0.2
+    },
+    "type": "COLOR",
+    "alpha": 0.2,
+    "refId": "mode/control/transparent/bgColor/selected",
+    "reference": "base/color/light/base/color/gray/2",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "control/transparent/bgColor/disabled",
+    "value": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 0
+    },
+    "type": "COLOR",
+    "refId": "mode/control/transparent/bgColor/disabled",
+    "reference": "base/color/light/base/color/transparent",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "control/transparent/bgColor/active",
+    "value": {
+      "r": 0.8156862745098039,
+      "g": 0.8431372549019608,
+      "b": 0.8705882352941177,
+      "a": 0.4
+    },
+    "type": "COLOR",
+    "alpha": 0.4,
+    "refId": "mode/control/transparent/bgColor/active",
+    "reference": "base/color/light/base/color/gray/2",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "control/transparent/bgColor/hover",
+    "value": {
+      "r": 0.8156862745098039,
+      "g": 0.8431372549019608,
+      "b": 0.8705882352941177,
+      "a": 0.2
+    },
+    "type": "COLOR",
+    "alpha": 0.2,
+    "refId": "mode/control/transparent/bgColor/hover",
+    "reference": "base/color/light/base/color/gray/2",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "control/transparent/bgColor/rest",
+    "value": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 0
+    },
+    "type": "COLOR",
+    "refId": "mode/control/transparent/bgColor/rest",
+    "reference": "base/color/light/base/color/transparent",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "control/borderColor/selected",
+    "value": {
+      "r": 0.9647058823529412,
+      "g": 0.9725490196078431,
+      "b": 0.9803921568627451,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/control/borderColor/selected",
+    "reference": "base/color/light/base/color/gray/0",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component",
+    "scopes": ["STROKE_COLOR"]
+  },
+  {
+    "name": "control/borderColor/emphasis",
+    "value": {
+      "r": 0.5254901960784314,
+      "g": 0.5607843137254902,
+      "b": 0.6,
+      "a": 1
+    },
+    "type": "COLOR",
+    "isMix": true,
+    "refId": "mode/control/borderColor/emphasis",
+    "reference": "base/color/light/base/color/gray/4",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component",
+    "scopes": ["STROKE_COLOR"]
+  },
+  {
+    "name": "control/fgColor/placeholder",
+    "value": {
+      "r": 0.43137254901960786,
+      "g": 0.4666666666666667,
+      "b": 0.5058823529411764,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/control/fgColor/placeholder",
+    "reference": "base/color/light/base/color/gray/5",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "control/fgColor/rest",
+    "value": {
+      "r": 0.1411764705882353,
+      "g": 0.1607843137254902,
+      "b": 0.1843137254901961,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/control/fgColor/rest",
+    "reference": "base/color/light/base/color/gray/9",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "control/bgColor/selected",
+    "value": {
+      "r": 0.9647058823529412,
+      "g": 0.9725490196078431,
+      "b": 0.9803921568627451,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/control/bgColor/selected",
+    "reference": "base/color/light/base/color/gray/0",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "control/bgColor/active",
+    "value": {
+      "r": 0.9058823529411765,
+      "g": 0.9215686274509803,
+      "b": 0.9372549019607843,
+      "a": 1
+    },
+    "type": "COLOR",
+    "isMix": true,
+    "refId": "mode/control/bgColor/active",
+    "reference": "base/color/light/base/color/gray/0",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "control/bgColor/hover",
+    "value": {
+      "r": 0.9333333333333333,
+      "g": 0.9450980392156862,
+      "b": 0.9568627450980393,
+      "a": 1
+    },
+    "type": "COLOR",
+    "isMix": true,
+    "refId": "mode/control/bgColor/hover",
+    "reference": "base/color/light/base/color/gray/0",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "control/bgColor/rest",
+    "value": {
+      "r": 0.9647058823529412,
+      "g": 0.9725490196078431,
+      "b": 0.9803921568627451,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/control/bgColor/rest",
+    "reference": "base/color/light/base/color/gray/0",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "avatarStack/fade/bgColor/muted",
+    "value": {
+      "r": 0.8156862745098039,
+      "g": 0.8431372549019608,
+      "b": 0.8705882352941177,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/avatarStack/fade/bgColor/muted",
+    "reference": "base/color/light/base/color/gray/2",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "avatarStack/fade/bgColor/default",
+    "value": {
+      "r": 0.6862745098039216,
+      "g": 0.7215686274509804,
+      "b": 0.7568627450980392,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/avatarStack/fade/bgColor/default",
+    "reference": "base/color/light/base/color/gray/3",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "avatar/bgColor",
+    "value": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/avatar/bgColor",
+    "reference": "base/color/light/base/color/white",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "headerSearch/borderColor",
+    "value": {
+      "r": 0.3411764705882353,
+      "g": 0.3764705882352941,
+      "b": 0.41568627450980394,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/headerSearch/borderColor",
+    "reference": "base/color/light/base/color/gray/6",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["STROKE_COLOR"]
+  },
+  {
+    "name": "headerSearch/bgColor",
+    "value": {
+      "r": 0.1411764705882353,
+      "g": 0.1607843137254902,
+      "b": 0.1843137254901961,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/headerSearch/bgColor",
+    "reference": "base/color/light/base/color/gray/9",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "header/borderColor/divider",
+    "value": {
+      "r": 0.3411764705882353,
+      "g": 0.3764705882352941,
+      "b": 0.41568627450980394,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/header/borderColor/divider",
+    "reference": "base/color/light/base/color/gray/6",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["STROKE_COLOR"]
+  },
+  {
+    "name": "header/bgColor",
+    "value": {
+      "r": 0.1411764705882353,
+      "g": 0.1607843137254902,
+      "b": 0.1843137254901961,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/header/bgColor",
+    "reference": "base/color/light/base/color/gray/9",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "header/fgColor/logo",
+    "value": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/header/fgColor/logo",
+    "reference": "base/color/light/base/color/white",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "header/fgColor/default",
+    "value": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 0.7
+    },
+    "type": "COLOR",
+    "alpha": 0.7,
+    "refId": "mode/header/fgColor/default",
+    "reference": "base/color/light/base/color/white",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "codeMirror/syntax/fgColor/variable",
+    "value": {
+      "r": 0.5843137254901961,
+      "g": 0.2196078431372549,
+      "b": 0,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/codeMirror/syntax/fgColor/variable",
+    "reference": "base/color/light/base/color/orange/6",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "codeMirror/syntax/fgColor/support",
+    "value": {
+      "r": 0.0196078431372549,
+      "g": 0.3137254901960784,
+      "b": 0.6823529411764706,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/codeMirror/syntax/fgColor/support",
+    "reference": "base/color/light/base/color/blue/6",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "codeMirror/syntax/fgColor/string",
+    "value": {
+      "r": 0.0392156862745098,
+      "g": 0.18823529411764706,
+      "b": 0.4117647058823529,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/codeMirror/syntax/fgColor/string",
+    "reference": "base/color/light/base/color/blue/8",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "codeMirror/syntax/fgColor/storage",
+    "value": {
+      "r": 0.8117647058823529,
+      "g": 0.13333333333333333,
+      "b": 0.1803921568627451,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/codeMirror/syntax/fgColor/storage",
+    "reference": "base/color/light/base/color/red/5",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "codeMirror/syntax/fgColor/keyword",
+    "value": {
+      "r": 0.8117647058823529,
+      "g": 0.13333333333333333,
+      "b": 0.1803921568627451,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/codeMirror/syntax/fgColor/keyword",
+    "reference": "base/color/light/base/color/red/5",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "codeMirror/syntax/fgColor/entity",
+    "value": {
+      "r": 0.5098039215686274,
+      "g": 0.3137254901960784,
+      "b": 0.8745098039215686,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/codeMirror/syntax/fgColor/entity",
+    "reference": "base/color/light/base/color/purple/5",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "codeMirror/syntax/fgColor/constant",
+    "value": {
+      "r": 0.0196078431372549,
+      "g": 0.3137254901960784,
+      "b": 0.6823529411764706,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/codeMirror/syntax/fgColor/constant",
+    "reference": "base/color/light/base/color/blue/6",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "codeMirror/syntax/fgColor/comment",
+    "value": {
+      "r": 0.1411764705882353,
+      "g": 0.1607843137254902,
+      "b": 0.1843137254901961,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/codeMirror/syntax/fgColor/comment",
+    "reference": "base/color/light/base/color/gray/9",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "diffBlob/hunk/bgColor/num",
+    "value": {
+      "r": 0.32941176470588235,
+      "g": 0.6823529411764706,
+      "b": 1,
+      "a": 0.4
+    },
+    "type": "COLOR",
+    "alpha": 0.4,
+    "refId": "mode/diffBlob/hunk/bgColor/num",
+    "reference": "base/color/light/base/color/blue/3",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "diffBlob/deletion/bgColor/word",
+    "value": {
+      "r": 1,
+      "g": 0.5058823529411764,
+      "b": 0.5098039215686274,
+      "a": 0.4
+    },
+    "type": "COLOR",
+    "alpha": 0.4,
+    "refId": "mode/diffBlob/deletion/bgColor/word",
+    "reference": "base/color/light/base/color/red/3",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "diffBlob/deletion/bgColor/line",
+    "value": {
+      "r": 1,
+      "g": 0.9215686274509803,
+      "b": 0.9137254901960784,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/diffBlob/deletion/bgColor/line",
+    "reference": "base/color/light/base/color/red/0",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "diffBlob/deletion/bgColor/num",
+    "value": {
+      "r": 1,
+      "g": 0.807843137254902,
+      "b": 0.796078431372549,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/diffBlob/deletion/bgColor/num",
+    "reference": "base/color/light/base/color/red/1",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "diffBlob/addition/bgColor/word",
+    "value": {
+      "r": 0.6745098039215687,
+      "g": 0.9333333333333333,
+      "b": 0.7333333333333333,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/diffBlob/addition/bgColor/word",
+    "reference": "base/color/light/base/color/green/1",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "diffBlob/addition/bgColor/line",
+    "value": {
+      "r": 0.8549019607843137,
+      "g": 0.984313725490196,
+      "b": 0.8823529411764706,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/diffBlob/addition/bgColor/line",
+    "reference": "base/color/light/base/color/green/0",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "diffBlob/addition/bgColor/num",
+    "value": {
+      "r": 0.8196078431372549,
+      "g": 0.9725490196078431,
+      "b": 0.8509803921568627,
+      "a": 1
+    },
+    "type": "COLOR",
+    "isMix": true,
+    "refId": "mode/diffBlob/addition/bgColor/num",
+    "reference": "base/color/light/base/color/green/1",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "highlight/neutral/bgColor",
+    "value": {
+      "r": 1,
+      "g": 0.9725490196078431,
+      "b": 0.7725490196078432,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/highlight/neutral/bgColor",
+    "reference": "base/color/light/base/color/yellow/0",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "topicTag/borderColor",
+    "value": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 0
+    },
+    "type": "COLOR",
+    "refId": "mode/topicTag/borderColor",
+    "reference": "base/color/light/base/color/transparent",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component",
+    "scopes": ["STROKE_COLOR"]
+  },
+  {
+    "name": "borderColor/open-emphasis",
+    "value": {
+      "r": 0.10196078431372549,
+      "g": 0.4980392156862745,
+      "b": 0.21568627450980393,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/borderColor/open-emphasis",
+    "reference": "mode/borderColor/success-emphasis",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["STROKE_COLOR"],
+    "codeSyntax": {
+      "web": "var(--borderColor-open-emphasis) /* utility class: .color-border-open-emphasis */"
+    }
+  },
+  {
+    "name": "borderColor/open-muted",
+    "value": {
+      "r": 0.2901960784313726,
+      "g": 0.7607843137254902,
+      "b": 0.4196078431372549,
+      "a": 0.4
+    },
+    "type": "COLOR",
+    "refId": "mode/borderColor/open-muted",
+    "reference": "mode/borderColor/success-muted",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["STROKE_COLOR"],
+    "codeSyntax": {
+      "web": "var(--borderColor-open-muted) /* utility class: .color-border-open */"
+    }
+  },
+  {
+    "name": "borderColor/disabled",
+    "value": {
+      "r": 0.9647058823529412,
+      "g": 0.9725490196078431,
+      "b": 0.9803921568627451,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/borderColor/disabled",
+    "reference": "mode/bgColor/disabled",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["STROKE_COLOR"]
+  },
+  {
+    "name": "borderColor/muted",
+    "value": {
+      "r": 0.8156862745098039,
+      "g": 0.8431372549019608,
+      "b": 0.8705882352941177,
+      "a": 0.5
+    },
+    "type": "COLOR",
+    "alpha": 0.5,
+    "refId": "mode/borderColor/muted",
+    "reference": "mode/borderColor/default",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["STROKE_COLOR"],
+    "codeSyntax": {
+      "web": "var(--borderColor-muted) /* utility class: .color-border-muted */"
+    }
+  },
+  {
+    "name": "bgColor/open-emphasis",
+    "value": {
+      "r": 0.12156862745098039,
+      "g": 0.5333333333333333,
+      "b": 0.23921568627450981,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/bgColor/open-emphasis",
+    "reference": "mode/bgColor/success-emphasis",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+    "codeSyntax": {
+      "web": "var(--bgColor-success-emphasis) /* utility class: .color-bg-success-emphasis */"
+    }
+  },
+  {
+    "name": "bgColor/open-muted",
+    "value": {
+      "r": 0.8549019607843137,
+      "g": 0.984313725490196,
+      "b": 0.8823529411764706,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/bgColor/open-muted",
+    "reference": "mode/bgColor/success-muted",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+    "codeSyntax": {
+      "web": "var(--bgColor-success-muted) /* utility class: .color-bg-success */"
+    }
+  },
+  {
+    "name": "fgColor/closed-onInverse",
+    "value": {
+      "r": 0.9803921568627451,
+      "g": 0.27058823529411763,
+      "b": 0.28627450980392155,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/fgColor/closed-onInverse",
+    "reference": "mode/fgColor/danger-onInverse",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "fgColor/closed",
+    "value": {
+      "r": 0.8196078431372549,
+      "g": 0.1411764705882353,
+      "b": 0.1843137254901961,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/fgColor/closed",
+    "reference": "mode/fgColor/danger",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"],
+    "codeSyntax": {
+      "web": "var(--fgColor-closed) /* utility class: .color-fg-closed */"
+    }
+  },
+  {
+    "name": "fgColor/open-onInverse",
+    "value": {
+      "r": 0.2901960784313726,
+      "g": 0.7607843137254902,
+      "b": 0.4196078431372549,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/fgColor/open-onInverse",
+    "reference": "mode/fgColor/success-onInverse",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "fgColor/open",
+    "value": {
+      "r": 0.10196078431372549,
+      "g": 0.4980392156862745,
+      "b": 0.21568627450980393,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/fgColor/open",
+    "reference": "mode/fgColor/success",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"],
+    "codeSyntax": {
+      "web": "var(--fgColor-open) /* utility class: .color-fg-open */"
+    }
+  },
+  {
+    "name": "fgColor/link-onInverse",
+    "value": {
+      "r": 0.32941176470588235,
+      "g": 0.6823529411764706,
+      "b": 1,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/fgColor/link-onInverse",
+    "reference": "mode/fgColor/accent-onInverse",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "fgColor/link",
+    "value": {
+      "r": 0.03529411764705882,
+      "g": 0.4117647058823529,
+      "b": 0.8549019607843137,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/fgColor/link",
+    "reference": "mode/fgColor/accent",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"],
+    "codeSyntax": {
+      "web": "var(--fgColor-link) /* utility class: .color-fg-accent */"
+    }
+  },
+  {
+    "name": "underlineNav/iconColor/rest",
+    "value": {
+      "r": 0.38823529411764707,
+      "g": 0.4235294117647059,
+      "b": 0.4627450980392157,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/underlineNav/iconColor/rest",
+    "reference": "mode/fgColor/muted",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "underlineNav/borderColor/hover",
+    "value": {
+      "r": 0.6862745098039216,
+      "g": 0.7215686274509804,
+      "b": 0.7568627450980392,
+      "a": 0.2
+    },
+    "type": "COLOR",
+    "refId": "mode/underlineNav/borderColor/hover",
+    "reference": "mode/borderColor/neutral-muted",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["STROKE_COLOR"]
+  },
+  {
+    "name": "focus/outlineColor",
+    "value": {
+      "r": 0.03529411764705882,
+      "g": 0.4117647058823529,
+      "b": 0.8549019607843137,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/focus/outlineColor",
+    "reference": "mode/borderColor/accent-emphasis",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["STROKE_COLOR"]
+  },
+  {
+    "name": "buttonCounter/danger/fgColor/disabled",
+    "value": {
+      "r": 0.8196078431372549,
+      "g": 0.1411764705882353,
+      "b": 0.1843137254901961,
+      "a": 0.5
+    },
+    "type": "COLOR",
+    "alpha": 0.5,
+    "refId": "mode/buttonCounter/danger/fgColor/disabled",
+    "reference": "mode/fgColor/danger",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "buttonCounter/danger/bgColor/rest",
+    "value": {
+      "r": 0.8117647058823529,
+      "g": 0.13333333333333333,
+      "b": 0.1803921568627451,
+      "a": 0.1
+    },
+    "type": "COLOR",
+    "alpha": 0.1,
+    "refId": "mode/buttonCounter/danger/bgColor/rest",
+    "reference": "mode/bgColor/danger-emphasis",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "buttonCounter/danger/bgColor/disabled",
+    "value": {
+      "r": 0.8117647058823529,
+      "g": 0.13333333333333333,
+      "b": 0.1803921568627451,
+      "a": 0.05
+    },
+    "type": "COLOR",
+    "alpha": 0.05,
+    "refId": "mode/buttonCounter/danger/bgColor/disabled",
+    "reference": "mode/bgColor/danger-emphasis",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "buttonCounter/outline/fgColor/disabled",
+    "value": {
+      "r": 0.03529411764705882,
+      "g": 0.4117647058823529,
+      "b": 0.8549019607843137,
+      "a": 0.5
+    },
+    "type": "COLOR",
+    "alpha": 0.5,
+    "refId": "mode/buttonCounter/outline/fgColor/disabled",
+    "reference": "mode/fgColor/accent",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "buttonCounter/outline/bgColor/disabled",
+    "value": {
+      "r": 0.03529411764705882,
+      "g": 0.4117647058823529,
+      "b": 0.8549019607843137,
+      "a": 0.05
+    },
+    "type": "COLOR",
+    "alpha": 0.05,
+    "refId": "mode/buttonCounter/outline/bgColor/disabled",
+    "reference": "mode/bgColor/accent-emphasis",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "buttonCounter/outline/bgColor/rest",
+    "value": {
+      "r": 0.03529411764705882,
+      "g": 0.4117647058823529,
+      "b": 0.8549019607843137,
+      "a": 0.1
+    },
+    "type": "COLOR",
+    "alpha": 0.1,
+    "refId": "mode/buttonCounter/outline/bgColor/rest",
+    "reference": "mode/bgColor/accent-emphasis",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "buttonCounter/invisible/bgColor/rest",
+    "value": {
+      "r": 0.6862745098039216,
+      "g": 0.7215686274509804,
+      "b": 0.7568627450980392,
+      "a": 0.2
+    },
+    "type": "COLOR",
+    "refId": "mode/buttonCounter/invisible/bgColor/rest",
+    "reference": "mode/bgColor/neutral-muted",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "buttonCounter/default/bgColor/rest",
+    "value": {
+      "r": 0.6862745098039216,
+      "g": 0.7215686274509804,
+      "b": 0.7568627450980392,
+      "a": 0.2
+    },
+    "type": "COLOR",
+    "refId": "mode/buttonCounter/default/bgColor/rest",
+    "reference": "mode/bgColor/neutral-muted",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "button/danger/borderColor/active",
+    "value": {
+      "r": 0.12156862745098039,
+      "g": 0.13725490196078433,
+      "b": 0.1568627450980392,
+      "a": 0.15
+    },
+    "type": "COLOR",
+    "refId": "mode/button/danger/borderColor/active",
+    "reference": "mode/button/danger/borderColor/hover",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["STROKE_COLOR"]
+  },
+  {
+    "name": "button/danger/borderColor/rest",
+    "value": {
+      "r": 0.8156862745098039,
+      "g": 0.8431372549019608,
+      "b": 0.8705882352941177,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/button/danger/borderColor/rest",
+    "reference": "mode/borderColor/default",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["STROKE_COLOR"]
+  },
+  {
+    "name": "button/danger/bgColor/rest",
+    "value": {
+      "r": 0.9647058823529412,
+      "g": 0.9725490196078431,
+      "b": 0.9803921568627451,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/button/danger/bgColor/rest",
+    "reference": "mode/control/bgColor/rest",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "button/danger/iconColor/rest",
+    "value": {
+      "r": 0.8196078431372549,
+      "g": 0.1411764705882353,
+      "b": 0.1843137254901961,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/button/danger/iconColor/rest",
+    "reference": "mode/fgColor/danger",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "button/danger/fgColor/disabled",
+    "value": {
+      "r": 0.8196078431372549,
+      "g": 0.1411764705882353,
+      "b": 0.1843137254901961,
+      "a": 0.5
+    },
+    "type": "COLOR",
+    "alpha": 0.5,
+    "refId": "mode/button/danger/fgColor/disabled",
+    "reference": "mode/fgColor/danger",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "button/danger/fgColor/rest",
+    "value": {
+      "r": 0.8196078431372549,
+      "g": 0.1411764705882353,
+      "b": 0.1843137254901961,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/button/danger/fgColor/rest",
+    "reference": "mode/fgColor/danger",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "button/outline/borderColor/active",
+    "value": {
+      "r": 0.12156862745098039,
+      "g": 0.13725490196078433,
+      "b": 0.1568627450980392,
+      "a": 0.15
+    },
+    "type": "COLOR",
+    "refId": "mode/button/outline/borderColor/active",
+    "reference": "mode/button/outline/borderColor/hover",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["STROKE_COLOR"]
+  },
+  {
+    "name": "button/outline/bgColor/active",
+    "value": {
+      "r": 0.027450980392156862,
+      "g": 0.3411764705882353,
+      "b": 0.7294117647058823,
+      "a": 1
+    },
+    "type": "COLOR",
+    "isMix": true,
+    "refId": "mode/button/outline/bgColor/active",
+    "reference": "mode/bgColor/accent-emphasis",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "button/outline/bgColor/hover",
+    "value": {
+      "r": 0.03529411764705882,
+      "g": 0.4117647058823529,
+      "b": 0.8549019607843137,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/button/outline/bgColor/hover",
+    "reference": "mode/bgColor/accent-emphasis",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "button/outline/bgColor/rest",
+    "value": {
+      "r": 0.9647058823529412,
+      "g": 0.9725490196078431,
+      "b": 0.9803921568627451,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/button/outline/bgColor/rest",
+    "reference": "mode/control/bgColor/rest",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "button/outline/fgColor/disabled",
+    "value": {
+      "r": 0.03529411764705882,
+      "g": 0.4117647058823529,
+      "b": 0.8549019607843137,
+      "a": 0.5
+    },
+    "type": "COLOR",
+    "alpha": 0.5,
+    "refId": "mode/button/outline/fgColor/disabled",
+    "reference": "mode/fgColor/accent",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "button/outline/fgColor/rest",
+    "value": {
+      "r": 0.03529411764705882,
+      "g": 0.4117647058823529,
+      "b": 0.8549019607843137,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/button/outline/fgColor/rest",
+    "reference": "mode/fgColor/accent",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "button/invisible/borderColor/hover",
+    "value": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 0
+    },
+    "type": "COLOR",
+    "refId": "mode/button/invisible/borderColor/hover",
+    "reference": "mode/control/transparent/borderColor/hover",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["STROKE_COLOR"]
+  },
+  {
+    "name": "button/invisible/borderColor/rest",
+    "value": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 0
+    },
+    "type": "COLOR",
+    "refId": "mode/button/invisible/borderColor/rest",
+    "reference": "mode/control/transparent/borderColor/rest",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["STROKE_COLOR"]
+  },
+  {
+    "name": "button/invisible/bgColor/disabled",
+    "value": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 0
+    },
+    "type": "COLOR",
+    "refId": "mode/button/invisible/bgColor/disabled",
+    "reference": "mode/control/transparent/bgColor/disabled",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "button/invisible/bgColor/active",
+    "value": {
+      "r": 0.8156862745098039,
+      "g": 0.8431372549019608,
+      "b": 0.8705882352941177,
+      "a": 0.4
+    },
+    "type": "COLOR",
+    "refId": "mode/button/invisible/bgColor/active",
+    "reference": "mode/control/transparent/bgColor/active",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "button/invisible/bgColor/hover",
+    "value": {
+      "r": 0.8156862745098039,
+      "g": 0.8431372549019608,
+      "b": 0.8705882352941177,
+      "a": 0.2
+    },
+    "type": "COLOR",
+    "refId": "mode/button/invisible/bgColor/hover",
+    "reference": "mode/control/transparent/bgColor/hover",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "button/invisible/bgColor/rest",
+    "value": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 0
+    },
+    "type": "COLOR",
+    "refId": "mode/button/invisible/bgColor/rest",
+    "reference": "mode/control/transparent/bgColor/rest",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "button/invisible/iconColor/hover",
+    "value": {
+      "r": 0.38823529411764707,
+      "g": 0.4235294117647059,
+      "b": 0.4627450980392157,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/button/invisible/iconColor/hover",
+    "reference": "mode/fgColor/muted",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "button/invisible/iconColor/rest",
+    "value": {
+      "r": 0.38823529411764707,
+      "g": 0.4235294117647059,
+      "b": 0.4627450980392157,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/button/invisible/iconColor/rest",
+    "reference": "mode/fgColor/muted",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "button/invisible/fgColor/hover",
+    "value": {
+      "r": 0.03529411764705882,
+      "g": 0.4117647058823529,
+      "b": 0.8549019607843137,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/button/invisible/fgColor/hover",
+    "reference": "mode/fgColor/accent",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "button/invisible/fgColor/rest",
+    "value": {
+      "r": 0.03529411764705882,
+      "g": 0.4117647058823529,
+      "b": 0.8549019607843137,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/button/invisible/fgColor/rest",
+    "reference": "mode/fgColor/accent",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "button/primary/borderColor/disabled",
+    "value": {
+      "r": 0.5843137254901961,
+      "g": 0.8470588235294118,
+      "b": 0.6509803921568628,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/button/primary/borderColor/disabled",
+    "reference": "mode/button/primary/bgColor/disabled",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["STROKE_COLOR"]
+  },
+  {
+    "name": "button/primary/borderColor/active",
+    "value": {
+      "r": 0.12156862745098039,
+      "g": 0.13725490196078433,
+      "b": 0.1568627450980392,
+      "a": 0.15
+    },
+    "type": "COLOR",
+    "refId": "mode/button/primary/borderColor/active",
+    "reference": "mode/button/primary/borderColor/rest",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["STROKE_COLOR"]
+  },
+  {
+    "name": "button/primary/borderColor/hover",
+    "value": {
+      "r": 0.12156862745098039,
+      "g": 0.13725490196078433,
+      "b": 0.1568627450980392,
+      "a": 0.15
+    },
+    "type": "COLOR",
+    "refId": "mode/button/primary/borderColor/hover",
+    "reference": "mode/button/primary/borderColor/rest",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["STROKE_COLOR"]
+  },
+  {
+    "name": "button/primary/bgColor/active",
+    "value": {
+      "r": 0.09803921568627451,
+      "g": 0.4745098039215686,
+      "b": 0.20784313725490197,
+      "a": 1
+    },
+    "type": "COLOR",
+    "isMix": true,
+    "refId": "mode/button/primary/bgColor/active",
+    "reference": "mode/bgColor/success-emphasis",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "button/primary/bgColor/hover",
+    "value": {
+      "r": 0.10980392156862745,
+      "g": 0.5058823529411764,
+      "b": 0.2235294117647059,
+      "a": 1
+    },
+    "type": "COLOR",
+    "isMix": true,
+    "refId": "mode/button/primary/bgColor/hover",
+    "reference": "mode/bgColor/success-emphasis",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "button/primary/bgColor/rest",
+    "value": {
+      "r": 0.12156862745098039,
+      "g": 0.5333333333333333,
+      "b": 0.23921568627450981,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/button/primary/bgColor/rest",
+    "reference": "mode/bgColor/success-emphasis",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "button/default/borderColor/active",
+    "value": {
+      "r": 0.8156862745098039,
+      "g": 0.8431372549019608,
+      "b": 0.8705882352941177,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/button/default/borderColor/active",
+    "reference": "mode/borderColor/default",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["STROKE_COLOR"]
+  },
+  {
+    "name": "button/default/borderColor/hover",
+    "value": {
+      "r": 0.8156862745098039,
+      "g": 0.8431372549019608,
+      "b": 0.8705882352941177,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/button/default/borderColor/hover",
+    "reference": "mode/borderColor/default",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["STROKE_COLOR"]
+  },
+  {
+    "name": "button/default/borderColor/rest",
+    "value": {
+      "r": 0.8156862745098039,
+      "g": 0.8431372549019608,
+      "b": 0.8705882352941177,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/button/default/borderColor/rest",
+    "reference": "mode/borderColor/default",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["STROKE_COLOR"]
+  },
+  {
+    "name": "button/default/bgColor/selected",
+    "value": {
+      "r": 0.9058823529411765,
+      "g": 0.9215686274509803,
+      "b": 0.9372549019607843,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/button/default/bgColor/selected",
+    "reference": "mode/control/bgColor/active",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "button/default/bgColor/active",
+    "value": {
+      "r": 0.9058823529411765,
+      "g": 0.9215686274509803,
+      "b": 0.9372549019607843,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/button/default/bgColor/active",
+    "reference": "mode/control/bgColor/active",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "button/default/bgColor/hover",
+    "value": {
+      "r": 0.9333333333333333,
+      "g": 0.9450980392156862,
+      "b": 0.9568627450980393,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/button/default/bgColor/hover",
+    "reference": "mode/control/bgColor/hover",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "button/default/bgColor/rest",
+    "value": {
+      "r": 0.9647058823529412,
+      "g": 0.9725490196078431,
+      "b": 0.9803921568627451,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/button/default/bgColor/rest",
+    "reference": "mode/control/bgColor/rest",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "button/default/fgColor/rest",
+    "value": {
+      "r": 0.1411764705882353,
+      "g": 0.1607843137254902,
+      "b": 0.1843137254901961,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/button/default/fgColor/rest",
+    "reference": "mode/control/fgColor/rest",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "controlKnob/borderColor/rest",
+    "value": {
+      "r": 0.5254901960784314,
+      "g": 0.5607843137254902,
+      "b": 0.6,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/controlKnob/borderColor/rest",
+    "reference": "mode/control/borderColor/emphasis",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["STROKE_COLOR"]
+  },
+  {
+    "name": "controlTrack/borderColor/disabled",
+    "value": {
+      "r": 0.5490196078431373,
+      "g": 0.5843137254901961,
+      "b": 0.6235294117647059,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/controlTrack/borderColor/disabled",
+    "reference": "mode/fgColor/disabled",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["STROKE_COLOR"]
+  },
+  {
+    "name": "controlTrack/fgColor/disabled",
+    "value": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/controlTrack/fgColor/disabled",
+    "reference": "mode/fgColor/onEmphasis",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "controlTrack/fgColor/rest",
+    "value": {
+      "r": 0.38823529411764707,
+      "g": 0.4235294117647059,
+      "b": 0.4627450980392157,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/controlTrack/fgColor/rest",
+    "reference": "mode/fgColor/muted",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "controlTrack/bgColor/disabled",
+    "value": {
+      "r": 0.5490196078431373,
+      "g": 0.5843137254901961,
+      "b": 0.6235294117647059,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/controlTrack/bgColor/disabled",
+    "reference": "mode/fgColor/disabled",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "control/checked/borderColor/disabled",
+    "value": {
+      "r": 0.5490196078431373,
+      "g": 0.5843137254901961,
+      "b": 0.6235294117647059,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/control/checked/borderColor/disabled",
+    "reference": "mode/fgColor/disabled",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component",
+    "scopes": ["STROKE_COLOR"]
+  },
+  {
+    "name": "control/checked/borderColor/active",
+    "value": {
+      "r": 0.027450980392156862,
+      "g": 0.3411764705882353,
+      "b": 0.7294117647058823,
+      "a": 1
+    },
+    "type": "COLOR",
+    "isMix": true,
+    "refId": "mode/control/checked/borderColor/active",
+    "reference": "mode/bgColor/accent-emphasis",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component",
+    "scopes": ["STROKE_COLOR"]
+  },
+  {
+    "name": "control/checked/borderColor/hover",
+    "value": {
+      "r": 0.03137254901960784,
+      "g": 0.3764705882352941,
+      "b": 0.792156862745098,
+      "a": 1
+    },
+    "type": "COLOR",
+    "isMix": true,
+    "refId": "mode/control/checked/borderColor/hover",
+    "reference": "mode/bgColor/accent-emphasis",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component",
+    "scopes": ["STROKE_COLOR"]
+  },
+  {
+    "name": "control/checked/borderColor/rest",
+    "value": {
+      "r": 0.03529411764705882,
+      "g": 0.4117647058823529,
+      "b": 0.8549019607843137,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/control/checked/borderColor/rest",
+    "reference": "mode/bgColor/accent-emphasis",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component",
+    "scopes": ["STROKE_COLOR"]
+  },
+  {
+    "name": "control/checked/fgColor/disabled",
+    "value": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/control/checked/fgColor/disabled",
+    "reference": "mode/fgColor/onEmphasis",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "control/checked/fgColor/rest",
+    "value": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/control/checked/fgColor/rest",
+    "reference": "mode/fgColor/onEmphasis",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "control/checked/bgColor/disabled",
+    "value": {
+      "r": 0.5490196078431373,
+      "g": 0.5843137254901961,
+      "b": 0.6235294117647059,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/control/checked/bgColor/disabled",
+    "reference": "mode/fgColor/disabled",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "control/checked/bgColor/active",
+    "value": {
+      "r": 0.027450980392156862,
+      "g": 0.3411764705882353,
+      "b": 0.7294117647058823,
+      "a": 1
+    },
+    "type": "COLOR",
+    "isMix": true,
+    "refId": "mode/control/checked/bgColor/active",
+    "reference": "mode/bgColor/accent-emphasis",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "control/checked/bgColor/hover",
+    "value": {
+      "r": 0.03137254901960784,
+      "g": 0.3764705882352941,
+      "b": 0.792156862745098,
+      "a": 1
+    },
+    "type": "COLOR",
+    "isMix": true,
+    "refId": "mode/control/checked/bgColor/hover",
+    "reference": "mode/bgColor/accent-emphasis",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "control/checked/bgColor/rest",
+    "value": {
+      "r": 0.03529411764705882,
+      "g": 0.4117647058823529,
+      "b": 0.8549019607843137,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/control/checked/bgColor/rest",
+    "reference": "mode/bgColor/accent-emphasis",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "control/danger/bgColor/active",
+    "value": {
+      "r": 1,
+      "g": 0.9215686274509803,
+      "b": 0.9137254901960784,
+      "a": 0.4
+    },
+    "type": "COLOR",
+    "alpha": 0.4,
+    "refId": "mode/control/danger/bgColor/active",
+    "reference": "mode/bgColor/danger-muted",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "control/danger/bgColor/hover",
+    "value": {
+      "r": 1,
+      "g": 0.9215686274509803,
+      "b": 0.9137254901960784,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/control/danger/bgColor/hover",
+    "reference": "mode/bgColor/danger-muted",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "control/danger/fgColor/hover",
+    "value": {
+      "r": 0.8196078431372549,
+      "g": 0.1411764705882353,
+      "b": 0.1843137254901961,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/control/danger/fgColor/hover",
+    "reference": "mode/fgColor/danger",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "control/danger/fgColor/rest",
+    "value": {
+      "r": 0.8196078431372549,
+      "g": 0.1411764705882353,
+      "b": 0.1843137254901961,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/control/danger/fgColor/rest",
+    "reference": "mode/fgColor/danger",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "control/iconColor/rest",
+    "value": {
+      "r": 0.38823529411764707,
+      "g": 0.4235294117647059,
+      "b": 0.4627450980392157,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/control/iconColor/rest",
+    "reference": "mode/fgColor/muted",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "control/borderColor/warning",
+    "value": {
+      "r": 0.7490196078431373,
+      "g": 0.5294117647058824,
+      "b": 0,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/control/borderColor/warning",
+    "reference": "mode/borderColor/attention-emphasis",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component",
+    "scopes": ["STROKE_COLOR"]
+  },
+  {
+    "name": "control/borderColor/danger",
+    "value": {
+      "r": 0.8117647058823529,
+      "g": 0.13333333333333333,
+      "b": 0.1803921568627451,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/control/borderColor/danger",
+    "reference": "mode/borderColor/danger-emphasis",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component",
+    "scopes": ["STROKE_COLOR"]
+  },
+  {
+    "name": "control/borderColor/success",
+    "value": {
+      "r": 0.10196078431372549,
+      "g": 0.4980392156862745,
+      "b": 0.21568627450980393,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/control/borderColor/success",
+    "reference": "mode/borderColor/success-emphasis",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component",
+    "scopes": ["STROKE_COLOR"]
+  },
+  {
+    "name": "control/borderColor/rest",
+    "value": {
+      "r": 0.8156862745098039,
+      "g": 0.8431372549019608,
+      "b": 0.8705882352941177,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/control/borderColor/rest",
+    "reference": "mode/borderColor/default",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component",
+    "scopes": ["STROKE_COLOR"]
+  },
+  {
+    "name": "control/fgColor/disabled",
+    "value": {
+      "r": 0.5490196078431373,
+      "g": 0.5843137254901961,
+      "b": 0.6235294117647059,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/control/fgColor/disabled",
+    "reference": "mode/fgColor/disabled",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "control/bgColor/disabled",
+    "value": {
+      "r": 0.9647058823529412,
+      "g": 0.9725490196078431,
+      "b": 0.9803921568627451,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/control/bgColor/disabled",
+    "reference": "mode/bgColor/disabled",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "avatar/borderColor",
+    "value": {
+      "r": 0.8156862745098039,
+      "g": 0.8431372549019608,
+      "b": 0.8705882352941177,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/avatar/borderColor",
+    "reference": "mode/borderColor/default",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["STROKE_COLOR"]
+  },
+  {
+    "name": "codeMirror/lines/bgColor",
+    "value": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/codeMirror/lines/bgColor",
+    "reference": "mode/bgColor/default",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "codeMirror/matchingBracket/fgColor",
+    "value": {
+      "r": 0.12156862745098039,
+      "g": 0.13725490196078433,
+      "b": 0.1568627450980392,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/codeMirror/matchingBracket/fgColor",
+    "reference": "mode/fgColor/default",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "codeMirror/activeline/bgColor",
+    "value": {
+      "r": 0.6862745098039216,
+      "g": 0.7215686274509804,
+      "b": 0.7568627450980392,
+      "a": 0.2
+    },
+    "type": "COLOR",
+    "refId": "mode/codeMirror/activeline/bgColor",
+    "reference": "mode/bgColor/neutral-muted",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "codeMirror/selection/bgColor",
+    "value": {
+      "r": 0.32941176470588235,
+      "g": 0.6823529411764706,
+      "b": 1,
+      "a": 0.4
+    },
+    "type": "COLOR",
+    "refId": "mode/codeMirror/selection/bgColor",
+    "reference": "mode/borderColor/accent-muted",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "codeMirror/cursor/fgColor",
+    "value": {
+      "r": 0.12156862745098039,
+      "g": 0.13725490196078433,
+      "b": 0.1568627450980392,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/codeMirror/cursor/fgColor",
+    "reference": "mode/fgColor/default",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "codeMirror/lineNumber/fgColor",
+    "value": {
+      "r": 0.38823529411764707,
+      "g": 0.4235294117647059,
+      "b": 0.4627450980392157,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/codeMirror/lineNumber/fgColor",
+    "reference": "mode/fgColor/muted",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "codeMirror/gutterMarker/fgColor/muted",
+    "value": {
+      "r": 0.38823529411764707,
+      "g": 0.4235294117647059,
+      "b": 0.4627450980392157,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/codeMirror/gutterMarker/fgColor/muted",
+    "reference": "mode/fgColor/muted",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "codeMirror/gutterMarker/fgColor/default",
+    "value": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/codeMirror/gutterMarker/fgColor/default",
+    "reference": "mode/bgColor/default",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "codeMirror/gutters/bgColor",
+    "value": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/codeMirror/gutters/bgColor",
+    "reference": "mode/bgColor/default",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "codeMirror/bgColor",
+    "value": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/codeMirror/bgColor",
+    "reference": "mode/bgColor/default",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "codeMirror/fgColor",
+    "value": {
+      "r": 0.12156862745098039,
+      "g": 0.13725490196078433,
+      "b": 0.1568627450980392,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/codeMirror/fgColor",
+    "reference": "mode/fgColor/default",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "diffBlob/expander/iconColor",
+    "value": {
+      "r": 0.38823529411764707,
+      "g": 0.4235294117647059,
+      "b": 0.4627450980392157,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/diffBlob/expander/iconColor",
+    "reference": "mode/fgColor/muted",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "diffBlob/deletion/fgColor/num",
+    "value": {
+      "r": 0.12156862745098039,
+      "g": 0.13725490196078433,
+      "b": 0.1568627450980392,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/diffBlob/deletion/fgColor/num",
+    "reference": "mode/fgColor/default",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "diffBlob/deletion/fgColor/text",
+    "value": {
+      "r": 0.12156862745098039,
+      "g": 0.13725490196078433,
+      "b": 0.1568627450980392,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/diffBlob/deletion/fgColor/text",
+    "reference": "mode/fgColor/default",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "diffBlob/addition/fgColor/num",
+    "value": {
+      "r": 0.12156862745098039,
+      "g": 0.13725490196078433,
+      "b": 0.1568627450980392,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/diffBlob/addition/fgColor/num",
+    "reference": "mode/fgColor/default",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "diffBlob/addition/fgColor/text",
+    "value": {
+      "r": 0.12156862745098039,
+      "g": 0.13725490196078433,
+      "b": 0.1568627450980392,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/diffBlob/addition/fgColor/text",
+    "reference": "mode/fgColor/default",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "page/header/bgColor",
+    "value": {
+      "r": 0.9647058823529412,
+      "g": 0.9725490196078431,
+      "b": 0.9803921568627451,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/page/header/bgColor",
+    "reference": "mode/bgColor/muted",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "button/danger/bgColor/disabled",
+    "value": {
+      "r": 0.9647058823529412,
+      "g": 0.9725490196078431,
+      "b": 0.9803921568627451,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/button/danger/bgColor/disabled",
+    "reference": "mode/control/bgColor/disabled",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "button/invisible/iconColor/disabled",
+    "value": {
+      "r": 0.5490196078431373,
+      "g": 0.5843137254901961,
+      "b": 0.6235294117647059,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/button/invisible/iconColor/disabled",
+    "reference": "mode/control/fgColor/disabled",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "button/invisible/fgColor/disabled",
+    "value": {
+      "r": 0.5490196078431373,
+      "g": 0.5843137254901961,
+      "b": 0.6235294117647059,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/button/invisible/fgColor/disabled",
+    "reference": "mode/control/fgColor/disabled",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "controlKnob/borderColor/checked",
+    "value": {
+      "r": 0.03529411764705882,
+      "g": 0.4117647058823529,
+      "b": 0.8549019607843137,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/controlKnob/borderColor/checked",
+    "reference": "mode/control/checked/bgColor/rest",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["STROKE_COLOR"]
+  },
+  {
+    "name": "controlKnob/borderColor/disabled",
+    "value": {
+      "r": 0.9647058823529412,
+      "g": 0.9725490196078431,
+      "b": 0.9803921568627451,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/controlKnob/borderColor/disabled",
+    "reference": "mode/control/bgColor/disabled",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["STROKE_COLOR"]
+  },
+  {
+    "name": "controlKnob/bgColor/disabled",
+    "value": {
+      "r": 0.9647058823529412,
+      "g": 0.9725490196078431,
+      "b": 0.9803921568627451,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/controlKnob/bgColor/disabled",
+    "reference": "mode/control/bgColor/disabled",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "control/borderColor/disabled",
+    "value": {
+      "r": 0.9647058823529412,
+      "g": 0.9725490196078431,
+      "b": 0.9803921568627451,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/control/borderColor/disabled",
+    "reference": "mode/borderColor/disabled",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component",
+    "scopes": ["STROKE_COLOR"]
+  },
+  {
+    "name": "button/invisible/borderColor/disabled",
+    "value": {
+      "r": 0.9647058823529412,
+      "g": 0.9725490196078431,
+      "b": 0.9803921568627451,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/button/invisible/borderColor/disabled",
+    "reference": "mode/control/borderColor/disabled",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["STROKE_COLOR"]
+  },
+  {
+    "name": "button/default/borderColor/disabled",
+    "value": {
+      "r": 0.9647058823529412,
+      "g": 0.9725490196078431,
+      "b": 0.9803921568627451,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "mode/button/default/borderColor/disabled",
+    "reference": "mode/control/borderColor/disabled",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["STROKE_COLOR"]
+  }
+]

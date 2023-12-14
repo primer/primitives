@@ -1,0 +1,64 @@
+{
+  "collections": {
+    "functional/size": {
+      "modes": [
+        "default"
+      ],
+      "groups": [
+        "functional/size"
+      ]
+    },
+    "pattern/size": {
+      "modes": [
+        "default"
+      ],
+      "groups": [
+        "pattern/size",
+        "component"
+      ]
+    },
+    "base/size": {
+      "modes": [
+        "default"
+      ],
+      "groups": [
+        "base/size"
+      ]
+    },
+    "base/color/dark": {
+      "modes": [
+        "default"
+      ],
+      "groups": [
+        "base/color/dark"
+      ]
+    },
+    "base/color/light": {
+      "modes": [
+        "default"
+      ],
+      "groups": [
+        "base/color/light"
+      ]
+    },
+    "mode": {
+      "modes": [
+        "light",
+        "dark"
+      ],
+      "groups": [
+        "syntax",
+        "semantic",
+        "component (internal)",
+        "component"
+      ]
+    }
+  },
+  "files": [
+    "dist/figma/dimension/dimension.json",
+    "dist/figma/scales/dark.json",
+    "dist/figma/scales/light.json",
+    "dist/figma/themes/dark.json",
+    "dist/figma/themes/light.json"
+  ]
+}
