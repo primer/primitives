@@ -10,9 +10,9 @@ const getCssSelectors = (outputFile: string): {selector: string; selectorLight: 
   const mode = outputBasename.substring(0, 4) === 'dark' ? 'dark' : 'light'
 
   return {
-    selector: `[data-color-mode="${mode}"][data-${mode}-theme="${themeName}"], [data-color-mode="${mode}"][data-${mode}-theme="${themeName}"] :is(::backdrop, ::selection)`,
-    selectorLight: `[data-color-mode="auto"][data-light-theme="${themeName}"], [data-color-mode="auto"][data-light-theme="${themeName}"] :is(::backdrop, ::selection)`,
-    selectorDark: `[data-color-mode="auto"][data-dark-theme="${themeName}"], [data-color-mode="auto"][data-dark-theme="${themeName}"] :is(::backdrop, ::selection)`,
+    selector: `[data-color-mode="${mode}"][data-${mode}-theme="${themeName}"], [data-color-mode="${mode}"][data-${mode}-theme="${themeName}"] ::backdrop`,
+    selectorLight: `[data-color-mode="auto"][data-light-theme="${themeName}"], [data-color-mode="auto"][data-light-theme="${themeName}"] ::backdrop`,
+    selectorDark: `[data-color-mode="auto"][data-dark-theme="${themeName}"], [data-color-mode="auto"][data-dark-theme="${themeName}"] ::backdrop`,
   }
 }
 
