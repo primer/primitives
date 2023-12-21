@@ -248,9 +248,9 @@ export const check = async (themes?: Themes[], output: 'log' | 'file' | 'all' | 
   const results = await checkContrastForThemes(contrastRequirements, themes)
 
   if (output === 'log' || output === 'all') {
-    for (const {resultTable, failingContrast} of results) {
+    for (const {resultTable, failingContrast, theme} of results) {
       // eslint-disable-next-line no-console
-      console.log('\n', resultTable, '\n')
+      console.log('\n', '\x1b[1m', `Theme: ${theme}\n`, '\x1b[0m', resultTable, '\n')
       if (failingContrast > 0) {
         // eslint-disable-next-line no-console
         console.error('❌ Failing contrast checks:', failingContrast, '\n')
