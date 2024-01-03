@@ -506,6 +506,7 @@ declare const _default: {
             gray: string[];
             blue: string[];
             green: string[];
+            neonGreen: string[];
             yellow: string[];
             orange: string[];
             red: string[];
@@ -1021,6 +1022,7 @@ declare const _default: {
             gray: string[];
             blue: string[];
             green: string[];
+            neonGreen: string[];
             yellow: string[];
             orange: string[];
             red: string[];
@@ -1536,6 +1538,7 @@ declare const _default: {
             gray: string[];
             blue: string[];
             green: string[];
+            neonGreen: string[];
             yellow: string[];
             orange: string[];
             red: string[];
@@ -2051,6 +2054,7 @@ declare const _default: {
             gray: string[];
             blue: string[];
             green: string[];
+            neonGreen: string[];
             yellow: string[];
             orange: string[];
             red: string[];

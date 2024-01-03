@@ -538,6 +538,9 @@ export default {
       "#003110",
       "#00230b"
     ],
+    "neonGreen": [
+      "#c9f04d"
+    ],
     "yellow": [
       "#fcf7be",
       "#f0ce53",
