@@ -502,6 +502,11 @@ exports.default = {
         }
     },
     "scale": {
+        "prov": {
+            "neonGreen": [
+                "#c9f04d"
+            ]
+        },
         "black": "#1F2328",
         "white": "#ffffff",
         "gray": [
@@ -539,9 +544,6 @@ exports.default = {
             "#044f1e",
             "#003d16",
             "#002d11"
-        ],
-        "neonGreen": [
-            "#c9f04d"
         ],
         "yellow": [
             "#fff8c5",
