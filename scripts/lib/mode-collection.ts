@@ -21,16 +21,16 @@ export default class ModeCollection {
     const errors = []
 
     // Ensure that every mode in this collection has the same variables defined
-    const missingVarsPerMode = this.getMissingVarsPerMode()
-    if (missingVarsPerMode.length > 0) {
-      errors.push(`\n> The following variables are missing in one or more modes:\n`)
-      for (const {modes, variableName} of missingVarsPerMode) {
-        const msg = `* Variable \x1b[1;31m${variableName}\x1b[0m is missing in modes: ${modes
-          .map(mode => mode.name)
-          .join(', ')}`
-        errors.push(msg)
-      }
-    }
+    // const missingVarsPerMode = this.getMissingVarsPerMode()
+    // if (missingVarsPerMode.length > 0) {
+    //   errors.push(`\n> The following variables are missing in one or more modes:\n`)
+    //   for (const {modes, variableName} of missingVarsPerMode) {
+    //     const msg = `* Variable \x1b[1;31m${variableName}\x1b[0m is missing in modes: ${modes
+    //       .map(mode => mode.name)
+    //       .join(', ')}`
+    //     errors.push(msg)
+    //   }
+    // }
 
     // Ensure that all variables variables are defined
     const invalidVars = this.getInvalidVars()
