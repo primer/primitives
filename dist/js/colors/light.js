@@ -540,6 +540,9 @@ exports.default = {
             "#003d16",
             "#002d11"
         ],
+        "neonGreen": [
+            "#c9f04d"
+        ],
         "yellow": [
             "#fff8c5",
             "#fae17d",
