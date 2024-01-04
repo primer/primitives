@@ -40,7 +40,7 @@ export default {
   },
   success: {
     fg: get('scale.green.5'),
-    emphasis: get('scale.prov.neonGreen.0'), // was originally #1f883d. #c9f04d, aka --green-yellow or neon green, used in Webflow marketing site
+    emphasis: get('scale.prov.neonGreen'), // was originally #1f883d. #c9f04d, aka --green-yellow or neon green, used in Webflow marketing site
     muted: alpha(get('scale.green.3'), 0.4),
     subtle: get('scale.green.0')
   },

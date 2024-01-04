@@ -502,7 +502,7 @@ declare const _default: {
         };
         scale: {
             prov: {
-                neonGreen: string[];
+                neonGreen: string;
             };
             black: string;
             white: string;
@@ -1020,7 +1020,7 @@ declare const _default: {
         };
         scale: {
             prov: {
-                neonGreen: string[];
+                neonGreen: string;
             };
             black: string;
             white: string;
@@ -1538,7 +1538,7 @@ declare const _default: {
         };
         scale: {
             prov: {
-                neonGreen: string[];
+                neonGreen: string;
             };
             black: string;
             white: string;
@@ -2056,7 +2056,7 @@ declare const _default: {
         };
         scale: {
             prov: {
-                neonGreen: string[];
+                neonGreen: string;
             };
             black: string;
             white: string;
