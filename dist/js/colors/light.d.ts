@@ -502,6 +502,8 @@ declare const _default: {
     scale: {
         prov: {
             neonGreen: string;
+            green: string[];
+            gray: string[];
         };
         black: string;
         white: string;
