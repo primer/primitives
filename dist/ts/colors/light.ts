@@ -525,7 +525,14 @@ export default {
         "#686868",
         "#3C3C3C",
         "#1F1E1E"
-      ]
+      ],
+      "theme": {
+        "climate": "#C3EBE5",
+        "waste": "#D1DBEB",
+        "nature": "#E4F4C9",
+        "workers": "#FFB7B2",
+        "communities": "#FFDFC9"
+      }
     },
     "black": "#1F2328",
     "white": "#ffffff",
