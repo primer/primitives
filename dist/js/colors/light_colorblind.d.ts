@@ -504,6 +504,13 @@ declare const _default: {
             neonGreen: string;
             green: string[];
             gray: string[];
+            theme: {
+                climate: string;
+                waste: string;
+                nature: string;
+                workers: string;
+                communities: string;
+            };
         };
         black: string;
         white: string;
