@@ -501,7 +501,31 @@ export default {
   },
   "scale": {
     "prov": {
-      "neonGreen": "#c9f04d"
+      "neonGreen": "#c9f04d",
+      "green": [
+        "#F3F8F6",
+        "#E1EEEA",
+        "#BBD9D0",
+        "#94C5B6",
+        "#59A991",
+        "#08856C",
+        "#0A6351",
+        "#0A4337",
+        "#09332B",
+        "#07251F"
+      ],
+      "gray": [
+        "#F9FAFA",
+        "#F4F4F4",
+        "#EDEDED",
+        "#DDDDDD",
+        "#CCCCCC",
+        "#B4B4B4",
+        "#939393",
+        "#686868",
+        "#3C3C3C",
+        "#1F1E1E"
+      ]
     },
     "black": "#010409",
     "white": "#ffffff",
