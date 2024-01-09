@@ -1,5 +1,7 @@
 [data-color-mode="dark"][data-dark-theme="dark_tritanopia"],
-[data-color-mode="auto"][data-light-theme="dark_tritanopia"] {
+[data-color-mode="dark"][data-dark-theme="dark_tritanopia"] ::backdrop,
+[data-color-mode="auto"][data-light-theme="dark_tritanopia"],
+[data-color-mode="auto"][data-light-theme="dark_tritanopia"] ::backdrop {
   --topicTag-borderColor: #00000000;
   --highlight-neutral-bgColor: #d2992266;
   --page-header-bgColor: #0d1117;
@@ -419,7 +421,8 @@
   --outline-focus: #1f6feb solid 2px;
 }
 @media (prefers-color-scheme: dark) {
-  [data-color-mode="auto"][data-dark-theme="dark_tritanopia"] {
+  [data-color-mode="auto"][data-dark-theme="dark_tritanopia"],
+  [data-color-mode="auto"][data-dark-theme="dark_tritanopia"] ::backdrop {
     --topicTag-borderColor: #00000000;
     --highlight-neutral-bgColor: #d2992266;
     --page-header-bgColor: #0d1117;
