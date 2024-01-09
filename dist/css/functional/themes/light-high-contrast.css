@@ -1,5 +1,7 @@
 [data-color-mode="light"][data-light-theme="light_high_contrast"],
-[data-color-mode="auto"][data-light-theme="light_high_contrast"] {
+[data-color-mode="light"][data-light-theme="light_high_contrast"] ::backdrop,
+[data-color-mode="auto"][data-light-theme="light_high_contrast"],
+[data-color-mode="auto"][data-light-theme="light_high_contrast"] ::backdrop {
   --topicTag-borderColor: #0349b4;
   --highlight-neutral-bgColor: #fcf7be;
   --page-header-bgColor: #e7ecf0;
@@ -419,7 +421,8 @@
   --shadow-floating-xlarge: 0px 56px 112px 0px #343b4352;
 }
 @media (prefers-color-scheme: dark) {
-  [data-color-mode="auto"][data-dark-theme="light_high_contrast"] {
+  [data-color-mode="auto"][data-dark-theme="light_high_contrast"],
+  [data-color-mode="auto"][data-dark-theme="light_high_contrast"] ::backdrop {
     --topicTag-borderColor: #0349b4;
     --highlight-neutral-bgColor: #fcf7be;
     --page-header-bgColor: #e7ecf0;
