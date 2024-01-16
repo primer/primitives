@@ -1,39 +1,39 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = {
-    "canvasDefaultTransparent": "var(--bgColor-transparent, var(--color-canvas-default-transparent, var(--bgColor-default, var(--color-canvas-default, rgba(255,255,255,0)))))",
-    "pageHeaderBg": "var(--bgColor-default, var(--color-canvas-default, #ffffff))",
+    "canvasDefaultTransparent": "var(--bgColor-transparent, var(--color-canvas-default-transparent, rgba(255,255,255,0))",
+    "pageHeaderBg": "var(--page-header-bgColor, var(--color-page-header-bg, #ffffff))",
     "marketingIcon": {
         "primary": "var(--color-marketing-icon-primary, #1168e3)",
         "secondary": "var(--color-marketing-icon-secondary, #368cf9)"
     },
     "diffBlob": {
         "addition": {
-            "numText": "var(--diffBlob-addition-fgColor-num, var(--color-diff-blob-addition-num-text, (obj) => (0, get_1.default)(obj, path)))",
+            "numText": "var(--diffBlob-addition-fgColor-num, var(--color-diff-blob-addition-num-text, #0e1116))",
             "fg": "var(--fgColor-onEmphasis, var(--color-fg-on-emphasis, #ffffff))",
             "numBg": "var(--diffBlob-addition-bgColor-num, var(--color-diff-blob-addition-num-bg, #ccffd8))",
             "lineBg": "var(--diffBlob-addition-bgColor-line, var(--color-diff-blob-addition-line-bg, #e6ffec))",
             "wordBg": "#055d20"
         },
         "deletion": {
-            "numText": "var(--diffBlob-deletion-fgColor-num, var(--color-diff-blob-deletion-num-text, (obj) => (0, get_1.default)(obj, path)))",
+            "numText": "var(--diffBlob-deletion-fgColor-num, var(--color-diff-blob-deletion-num-text, #0e1116))",
             "fg": "var(--fgColor-onEmphasis, var(--color-fg-on-emphasis, #ffffff))",
             "numBg": "var(--diffBlob-deletion-bgColor-num, var(--color-diff-blob-deletion-num-bg, #ffd7d5))",
-            "lineBg": "var(--diffBlob-deletion-bgColor-line, var(--color-diff-blob-deletion-line-bg, (theme) => `var(--bgColor-danger-muted, var(--color-danger-subtle, ${(0, utils_v1_1.get)('scale.red.0')(theme)}))`))",
+            "lineBg": "var(--diffBlob-deletion-bgColor-line, var(--color-diff-blob-deletion-line-bg, #fff0ee))",
             "wordBg": "var(--borderColor-danger-emphasis, var(--color-danger-emphasis, #a0111f))"
         },
         "hunk": {
             "numBg": "#9cd7ff"
         },
         "expander": {
-            "icon": "var(--diffBlob-expander-iconColor, var(--color-diff-blob-expander-icon, (obj) => (0, get_1.default)(obj, path)))"
+            "icon": "var(--diffBlob-expander-iconColor, var(--color-diff-blob-expander-icon, #0e1116))"
         },
         "selectedLineHighlightMixBlendMode": "var(--color-diff-blob-selected-line-highlight-mix-blend-mode, multiply)"
     },
     "diffstat": {
-        "deletionBorder": "var(--color-diffstat-deletion-border, (obj) => {\n        const resolvedValue = resolveValue(value, obj);\n        // Instead of value being #hex, the value is now var(--v, #hex)\n        const hexColorValue = getFallbackValueFromVar(resolvedValue);\n        const hexColorValueWithTransparency = (0, color2k_1.transparentize)(hexColorValue, 1 - amount).replace(/ /g, '');\n        return resolvedValue.replace(hexColorValue, hexColorValueWithTransparency);\n    })",
-        "additionBorder": "var(--color-diffstat-addition-border, (obj) => {\n        const resolvedValue = resolveValue(value, obj);\n        // Instead of value being #hex, the value is now var(--v, #hex)\n        const hexColorValue = getFallbackValueFromVar(resolvedValue);\n        const hexColorValueWithTransparency = (0, color2k_1.transparentize)(hexColorValue, 1 - amount).replace(/ /g, '');\n        return resolvedValue.replace(hexColorValue, hexColorValueWithTransparency);\n    })",
-        "additionBg": "var(undefined, var(--color-diffstat-addition-bg, (obj) => (0, get_1.default)(obj, path)))"
+        "deletionBorder": "var(--color-diffstat-deletion-border, rgba(1,4,9,0.8))",
+        "additionBorder": "var(--color-diffstat-addition-border, rgba(1,4,9,0.8))",
+        "additionBg": "var(--color-diffstat-addition-bg, #055d20))"
     },
     "searchKeyword": {
         "hl": "var(--highlight-neutral-bgColor, var(--color-search-keyword-hl, #fcf7be))"
@@ -73,17 +73,17 @@ exports.default = {
         }
     },
     "codemirror": {
-        "text": "var(--codeMirror-fgColor, var(--color-codemirror-text, (obj) => (0, get_1.default)(obj, path)))",
-        "bg": "var(--codeMirror-bgColor, var(--color-codemirror-bg, (theme) => `var(--bgColor-default, var(--color-canvas-default, ${(0, utils_v1_1.get)('scale.white')(theme)}))`))",
-        "guttersBg": "var(--codeMirror-gutters-bgColor, var(--color-codemirror-gutters-bg, (theme) => `var(--bgColor-default, var(--color-canvas-default, ${(0, utils_v1_1.get)('scale.white')(theme)}))`))",
-        "guttermarkerText": "var(--codeMirror-gutterMarker-fgColor-default, var(--color-codemirror-guttermarker-text, (theme) => `var(--bgColor-default, var(--color-canvas-default, ${(0, utils_v1_1.get)('scale.white')(theme)}))`))",
-        "guttermarkerSubtleText": "var(--codeMirror-gutterMarker-fgColor-muted, var(--color-codemirror-guttermarker-subtle-text, (theme) => `var(--fgColor-muted, var(--color-fg-subtle, ${(0, utils_v1_1.get)('scale.gray.5')(theme)}))`))",
-        "linenumberText": "var(--codeMirror-lineNumber-fgColor, var(--color-codemirror-linenumber-text, (obj) => (0, get_1.default)(obj, path)))",
-        "cursor": "var(--codeMirror-cursor-fgColor, var(--color-codemirror-cursor, (obj) => (0, get_1.default)(obj, path)))",
-        "selectionBg": "var(--codeMirror-selection-bgColor, var(--color-codemirror-selection-bg, (obj) => (0, get_1.default)(obj, path)))",
-        "activelineBg": "var(--codeMirror-activeline-bgColor, var(--color-codemirror-activeline-bg, (obj) => (0, get_1.default)(obj, path)))",
-        "matchingbracketText": "var(--codeMirror-matchingBracket-fgColor, var(--color-codemirror-matchingbracket-text, (obj) => (0, get_1.default)(obj, path)))",
-        "linesBg": "var(--codeMirror-lines-bgColor, var(--color-codemirror-lines-bg, (theme) => `var(--bgColor-default, var(--color-canvas-default, ${(0, utils_v1_1.get)('scale.white')(theme)}))`))",
+        "text": "var(--codeMirror-fgColor, var(--color-codemirror-text, #0e1116))",
+        "bg": "var(--codeMirror-bgColor, var(--color-codemirror-bg, #ffffff))",
+        "guttersBg": "var(--codeMirror-gutters-bgColor, var(--color-codemirror-gutters-bg, #ffffff))",
+        "guttermarkerText": "var(--codeMirror-gutterMarker-fgColor-default, var(--color-codemirror-guttermarker-text, #ffffff))",
+        "guttermarkerSubtleText": "var(--codeMirror-gutterMarker-fgColor-muted, var(--color-codemirror-guttermarker-subtle-text, #66707b))",
+        "linenumberText": "var(--codeMirror-lineNumber-fgColor, var(--color-codemirror-linenumber-text, #0e1116))",
+        "cursor": "var(--codeMirror-cursor-fgColor, var(--color-codemirror-cursor, #0e1116))",
+        "selectionBg": "var(--codeMirror-selection-bgColor, var(--color-codemirror-selection-bg, #368cf9)",
+        "activelineBg": "var(--codeMirror-activeline-bgColor, var(--color-codemirror-activeline-bg, #e7ecf0)",
+        "matchingbracketText": "var(--codeMirror-matchingBracket-fgColor, var(--color-codemirror-matchingbracket-text, #0e1116))",
+        "linesBg": "var(--codeMirror-lines-bgColor, var(--color-codemirror-lines-bg, #ffffff))",
         "syntax": {
             "comment": "var(--codeMirror-syntax-fgColor-comment, var(--color-codemirror-syntax-comment, #0e1116))",
             "constant": "var(--codeMirror-syntax-fgColor-constant, var(--color-codemirror-syntax-constant, #023b95))",
@@ -112,7 +112,7 @@ exports.default = {
         "inputShadow": "var(--color-checks-input-shadow, none)",
         "donutError": "var(--color-checks-donut-error, #d5232c)",
         "donutPending": "var(--color-checks-donut-pending, #956400)",
-        "donutSuccess": "var(--color-checks-donut-success, (obj) => (0, get_1.default)(obj, path))",
+        "donutSuccess": "var(--color-checks-donut-success, #055d20)",
         "donutNeutral": "var(--color-checks-donut-neutral, #acb6c0)",
         "dropdownText": "var(--color-checks-dropdown-text, #acb6c0)",
         "dropdownBg": "var(--color-checks-dropdown-bg, #20252c)",
@@ -196,7 +196,7 @@ exports.default = {
     },
     "avatar": {
         "bg": "var(--avatar-bgColor, var(--color-avatar-bg, #ffffff))",
-        "border": "var(--avatar-borderColor, var(--color-avatar-border, (obj) => {\n        const resolvedValue = resolveValue(value, obj);\n        // Instead of value being #hex, the value is now var(--v, #hex)\n        const hexColorValue = getFallbackValueFromVar(resolvedValue);\n        const hexColorValueWithTransparency = (0, color2k_1.transparentize)(hexColorValue, 1 - amount).replace(/ /g, '');\n        return resolvedValue.replace(hexColorValue, hexColorValueWithTransparency);\n    }))",
+        "border": "var(--avatar-borderColor, var(--color-avatar-border, rgba(1,4,9,0.8)))",
         "stackFade": "var(--avatarStack-fade-bgColor-default, var(--color-avatar-stack-fade, #acb6c0))",
         "stackFadeMore": "var(--avatarStack-fade-bgColor-muted, var(--color-avatar-stack-fade-more, #ced5dc))",
         "childShadow": "var(--avatar-shadow, var(--color-avatar-child-shadow, 0 0 0 2px rgba(255,255,255,0.8)))"
@@ -233,7 +233,7 @@ exports.default = {
         "bgActive": "var(--menu-bgColor-active, var(--color-menu-bg-active, transparent))"
     },
     "input": {
-        "disabledBg": "var(--control-bgColor-disabled, var(--color-input-disabled-bg, (theme) => `var(--borderColor-neutral-muted, var(--color-neutral-muted, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.gray.3'), 0.2)(theme)}))`))"
+        "disabledBg": "var(--control-bgColor-disabled, var(--color-input-disabled-bg, rgba(172,182,192,0.2)))"
     },
     "timeline": {
         "badgeBg": "var(--timelineBadge-bgColor, var(--color-timeline-badge-bg, #e7ecf0))"
@@ -264,9 +264,9 @@ exports.default = {
         "shadow": "var(--button-default-shadow-resting, var(--color-btn-shadow, 0 1px 0 rgba(1,4,9,0.04)))",
         "insetShadow": "var(--button-default-shadow-inset, var(--color-btn-inset-shadow, inset 0 1px 0 rgba(255,255,255,0.25)))",
         "hoverBg": "#ced5dc",
-        "hoverBorder": "var(--button-default-borderColor-hover, var(--color-btn-hover-border, (obj) => {\n        const resolvedValue = resolveValue(value, obj);\n        // Instead of value being #hex, the value is now var(--v, #hex)\n        const hexColorValue = getFallbackValueFromVar(resolvedValue);\n        const hexColorValueWithTransparency = (0, color2k_1.transparentize)(hexColorValue, 1 - amount).replace(/ /g, '');\n        return resolvedValue.replace(hexColorValue, hexColorValueWithTransparency);\n    }))",
+        "hoverBorder": "var(--button-default-borderColor-hover, var(--color-btn-hover-border, rgba(1,4,9,0.8)))",
         "activeBg": "#acb6c0",
-        "activeBorder": "var(--button-default-borderColor-active, var(--color-btn-active-border, (obj) => {\n        const resolvedValue = resolveValue(value, obj);\n        // Instead of value being #hex, the value is now var(--v, #hex)\n        const hexColorValue = getFallbackValueFromVar(resolvedValue);\n        const hexColorValueWithTransparency = (0, color2k_1.transparentize)(hexColorValue, 1 - amount).replace(/ /g, '');\n        return resolvedValue.replace(hexColorValue, hexColorValueWithTransparency);\n    }))",
+        "activeBorder": "var(--button-default-borderColor-active, var(--color-btn-active-border, rgba(1,4,9,0.8)))",
         "selectedBg": "#acb6c0",
         "counterBg": "var(--buttonCounter-default-bgColor-rest, var(--color-btn-counter-bg, rgba(1,4,9,0.08)))",
         "primary": {
@@ -281,7 +281,7 @@ exports.default = {
             "selectedShadow": "var(--button-primary-shadow-selected, var(--color-btn-primary-selected-shadow, inset 0 1px 0 rgba(0,35,11,0.2)))",
             "disabledText": "var(--button-primary-fgColor-disabled, var(--color-btn-primary-disabled-text, rgba(255,255,255,0.8)))",
             "disabledBg": "var(--button-primary-bgColor-disabled, var(--color-btn-primary-disabled-bg, #94d3a2))",
-            "disabledBorder": "var(--button-primary-borderColor-disabled, var(--color-btn-primary-disabled-border, (obj) => {\n        const resolvedValue = resolveValue(value, obj);\n        // Instead of value being #hex, the value is now var(--v, #hex)\n        const hexColorValue = getFallbackValueFromVar(resolvedValue);\n        const hexColorValueWithTransparency = (0, color2k_1.transparentize)(hexColorValue, 1 - amount).replace(/ /g, '');\n        return resolvedValue.replace(hexColorValue, hexColorValueWithTransparency);\n    }))",
+            "disabledBorder": "var(--button-primary-borderColor-disabled, var(--color-btn-primary-disabled-border, rgba(1,4,9,0.8)))",
             "icon": "var(--button-primary-iconColor-rest, var(--color-btn-primary-icon, rgba(255,255,255,0.8)))",
             "counterBg": "var(--buttonCounter-primary-bgColor-rest, var(--color-btn-primary-counter-bg, rgba(0,35,11,0.2)))"
         },
@@ -333,8 +333,8 @@ exports.default = {
         }
     },
     "underlinenav": {
-        "icon": "var(--underlineNav-iconColor-rest, var(--color-underlinenav-icon, (theme) => `var(--fgColor-muted, var(--color-fg-subtle, ${(0, utils_v1_1.get)('scale.gray.5')(theme)}))`))",
-        "borderHover": "var(--underlineNav-borderColor-hover, var(--color-underlinenav-border-hover, (theme) => `var(--borderColor-neutral-muted, var(--color-neutral-muted, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.gray.3'), 0.2)(theme)}))`))"
+        "icon": "var(--underlineNav-iconColor-rest, var(--color-underlinenav-icon, #66707b))",
+        "borderHover": "var(--underlineNav-borderColor-hover, var(--color-underlinenav-border-hover, rgba(172,182,192,0.2)))"
     },
     "actionListItem": {
         "inlineDivider": "#88929d",
@@ -360,28 +360,28 @@ exports.default = {
         "disabledFg": "var(--fgColor-onEmphasis, var(--color-fg-on-emphasis, #ffffff))",
         "border": "var(--controlTrack-borderColor-rest, var(--color-switch-track-border, transparent))",
         "checked": {
-            "bg": "var(--control-checked-bgColor-rest, var(--color-switch-track-checked-bg, (theme) => `var(--bgColor-accent-emphasis, var(--color-accent-emphasis, ${(0, utils_v1_1.get)('scale.blue.5')(theme)}))`))",
+            "bg": "var(--control-checked-bgColor-rest, var(--color-switch-track-checked-bg, #0349b4))",
             "hoverBg": "var(--control-checked-bgColor-hover, var(--color-switch-track-checked-hover-bg, #0860CA))",
             "activeBg": "var(--control-checked-bgColor-active, var(--color-switch-track-checked-active-bg, #0757BA))",
             "fg": "var(--fgColor-onEmphasis, var(--color-fg-on-emphasis, #ffffff))",
-            "disabledFg": "var(--control-checked-fgColor-disabled, var(--color-switch-track-checked-disabled-fg, (theme) => `var(--fgColor-onEmphasis, var(--color-fg-on-emphasis, ${(0, utils_v1_1.get)('scale.white')(theme)}))`))",
+            "disabledFg": "var(--control-checked-fgColor-disabled, var(--color-switch-track-checked-disabled-fg, #ffffff))",
             "border": "var(--borderColor-transparent, var(--color-switch-track-checked-border, transparent))"
         }
     },
     "switchKnob": {
-        "bg": "var(--controlKnob-bgColor-rest, var(--color-switch-knob-bg, (theme) => `var(--bgColor-default, var(--color-canvas-default, ${(0, utils_v1_1.get)('scale.white')(theme)}))`))",
-        "disabledBg": "var(--controlKnob-bgColor-disabled, var(--color-switch-knob-disabled-bg, (obj) => (0, get_1.default)(obj, path)))",
+        "bg": "var(--controlKnob-bgColor-rest, var(--color-switch-knob-bg, #ffffff))",
+        "disabledBg": "var(--controlKnob-bgColor-disabled, var(--color-switch-knob-disabled-bg, #e7ecf0))",
         "border": "#20252c",
         "checked": {
-            "bg": "var(--controlKnob-bgColor-checked, var(--color-switch-knob-checked-bg, (theme) => `var(--bgColor-default, var(--color-canvas-default, ${(0, utils_v1_1.get)('scale.white')(theme)}))`))",
-            "disabledBg": "var(--controlKnob-bgColor-disabled, var(--color-switch-knob-checked-disabled-bg, (obj) => (0, get_1.default)(obj, path)))",
+            "bg": "var(--controlKnob-bgColor-checked, var(--color-switch-knob-checked-bg, #ffffff))",
+            "disabledBg": "var(--controlKnob-bgColor-disabled, var(--color-switch-knob-checked-disabled-bg, #e7ecf0))",
             "border": "var(--bgColor-accent-emphasis, var(--color-accent-emphasis, #0349b4))"
         }
     },
     "segmentedControl": {
         "bg": "var(--controlTrack-bgColor-rest, var(--color-segmented-control-bg, #e7ecf0))",
         "button": {
-            "bg": "var(--controlKnob-bgColor-rest, var(--color-segmented-control-button-bg, (theme) => `var(--bgColor-default, var(--color-canvas-default, ${(0, utils_v1_1.get)('scale.white')(theme)}))`))",
+            "bg": "var(--controlKnob-bgColor-rest, var(--color-segmented-control-button-bg, #ffffff))",
             "hover": {
                 "bg": "var(--controlTrack-bgColor-hover, var(--color-segmented-control-button-hover-bg, rgba(172,182,192,0.2)))"
             },
@@ -462,12 +462,12 @@ exports.default = {
     },
     "open": {
         "fg": "var(--fgColor-open, var(--color-open-fg, #055d20))",
-        "emphasis": "var(--bgColor-open-emphasis, var(--color-open-emphasis, (obj) => (0, get_1.default)(obj, path)))",
+        "emphasis": "var(--bgColor-open-emphasis, var(--color-open-emphasis, #055d20))",
         "muted": "var(--borderColor-open-muted, var(--color-open-muted, rgba(38,161,72,0.4)))",
         "subtle": "var(--bgColor-open-muted, var(--color-open-subtle, #d2fedb))"
     },
     "closed": {
-        "fg": "var(--fgColor-closed, var(--color-closed-fg, var(--fgColor-danger, var(--color-danger-fg, #d1242f))))",
+        "fg": "var(--fgColor-closed, var(--color-closed-fg, #d1242f))",
         "emphasis": "var(--bgColor-closed-emphasis, var(--color-closed-emphasis, #a0111f))",
         "muted": "var(--borderColor-closed-muted, var(--color-closed-muted, rgba(238,90,93,0.4)))",
         "subtle": "var(--bgColor-closed-muted, var(--color-closed-subtle, #fff0ee))"

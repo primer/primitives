@@ -1,29 +1,29 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = {
-    "canvasDefaultTransparent": "var(--bgColor-transparent, var(--color-canvas-default-transparent, var(--bgColor-default, var(--color-canvas-default, rgba(34,39,46,0)))))",
-    "pageHeaderBg": "var(--page-header-bgColor, var(--color-page-header-bg, (theme) => `var(--bgColor-default, var(--color-canvas-default, ${(0, utils_v1_1.get)('scale.gray.9')(theme)}))`))",
+    "canvasDefaultTransparent": "var(--bgColor-transparent, var(--color-canvas-default-transparent, rgba(34,39,46,0)))",
+    "pageHeaderBg": "var(--page-header-bgColor, var(--color-page-header-bg, #22272e))",
     "marketingIcon": {
         "primary": "var(--color-marketing-icon-primary, #6cb6ff)",
         "secondary": "var(--color-marketing-icon-secondary, #316dca)"
     },
     "diffBlob": {
         "addition": {
-            "numText": "var(--diffBlob-addition-fgColor-num, var(--color-diff-blob-addition-num-text, (obj) => (0, get_1.default)(obj, path)))",
-            "fg": "var(--diffBlob-addition-fgColor-text, var(--color-diff-blob-addition-fg, (obj) => (0, get_1.default)(obj, path)))",
+            "numText": "var(--diffBlob-addition-fgColor-num, var(--color-diff-blob-addition-num-text, #adbac7))",
+            "fg": "var(--diffBlob-addition-fgColor-text, var(--color-diff-blob-addition-fg, #adbac7))",
             "numBg": "var(--diffBlob-addition-bgColor-num, var(--color-diff-blob-addition-num-bg, rgba(87,171,90,0.3)))",
-            "lineBg": "var(--diffBlob-addition-bgColor-line, var(--color-diff-blob-addition-line-bg, (theme) => `var(--bgColor-success-muted, var(--color-success-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.green.4'), 0.15)(theme)}))`))",
-            "wordBg": "var(--diffBlob-addition-bgColor-word, var(--color-diff-blob-addition-word-bg, (theme) => `var(--borderColor-success-muted, var(--color-success-muted, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.green.4'), 0.4)(theme)}))`))"
+            "lineBg": "var(--diffBlob-addition-bgColor-line, var(--color-diff-blob-addition-line-bg, rgba(70,149,74,0.15)))",
+            "wordBg": "var(--diffBlob-addition-bgColor-word, var(--color-diff-blob-addition-word-bg, rgba(70,149,74,0.4)))"
         },
         "deletion": {
-            "numText": "var(--diffBlob-deletion-fgColor-num, var(--color-diff-blob-deletion-num-text, (obj) => (0, get_1.default)(obj, path)))",
-            "fg": "var(--diffBlob-deletion-fgColor-text, var(--color-diff-blob-deletion-fg, (obj) => (0, get_1.default)(obj, path)))",
+            "numText": "var(--diffBlob-deletion-fgColor-num, var(--color-diff-blob-deletion-num-text, #adbac7))",
+            "fg": "var(--diffBlob-deletion-fgColor-text, var(--color-diff-blob-deletion-fg, #adbac7))",
             "numBg": "var(--diffBlob-deletion-bgColor-num, var(--color-diff-blob-deletion-num-bg, rgba(229,83,75,0.3)))",
-            "lineBg": "var(--diffBlob-deletion-bgColor-line, var(--color-diff-blob-deletion-line-bg, (theme) => `var(--bgColor-danger-muted, var(--color-danger-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.red.4'), 0.1)(theme)}))`))",
-            "wordBg": "var(--diffBlob-deletion-bgColor-word, var(--color-diff-blob-deletion-word-bg, (theme) => `var(--borderColor-danger-muted, var(--color-danger-muted, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.red.4'), 0.4)(theme)}))`))"
+            "lineBg": "var(--diffBlob-deletion-bgColor-line, var(--color-diff-blob-deletion-line-bg, rgba(229,83,75,0.1)))",
+            "wordBg": "var(--diffBlob-deletion-bgColor-word, var(--color-diff-blob-deletion-word-bg, rgba(229,83,75,0.4)))"
         },
         "hunk": {
-            "numBg": "var(--diffBlob-hunk-bgColor-num, var(--color-diff-blob-hunk-num-bg, (theme) => `var(--borderColor-accent-muted, var(--color-accent-muted, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.blue.4'), 0.4)(theme)}))`))"
+            "numBg": "var(--diffBlob-hunk-bgColor-num, var(--color-diff-blob-hunk-num-bg, rgba(65,132,228,0.4)))"
         },
         "expander": {
             "icon": "#adbac7"
@@ -31,8 +31,8 @@ exports.default = {
         "selectedLineHighlightMixBlendMode": "var(--color-diff-blob-selected-line-highlight-mix-blend-mode, screen)"
     },
     "diffstat": {
-        "deletionBorder": "var(--color-diffstat-deletion-border, (theme) => `var(--borderColor-muted, var(--color-border-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.gray.0'), 0.1)(theme)}))`)",
-        "additionBorder": "var(--color-diffstat-addition-border, (theme) => `var(--borderColor-muted, var(--color-border-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.gray.0'), 0.1)(theme)}))`)",
+        "deletionBorder": "var(--color-diffstat-deletion-border, rgba(205,217,229,0.1))",
+        "additionBorder": "var(--color-diffstat-addition-border, rgba(205,217,229,0.1))",
         "additionBg": "var(--diffStat-addition-bgColor, var(--color-diffstat-addition-bg, #57ab5a))"
     },
     "searchKeyword": {
@@ -73,17 +73,17 @@ exports.default = {
         }
     },
     "codemirror": {
-        "text": "var(--codeMirror-fgColor, var(--color-codemirror-text, (obj) => (0, get_1.default)(obj, path)))",
-        "bg": "var(--codeMirror-bgColor, var(--color-codemirror-bg, (theme) => `var(--bgColor-default, var(--color-canvas-default, ${(0, utils_v1_1.get)('scale.gray.9')(theme)}))`))",
-        "guttersBg": "var(--codeMirror-gutters-bgColor, var(--color-codemirror-gutters-bg, (theme) => `var(--bgColor-default, var(--color-canvas-default, ${(0, utils_v1_1.get)('scale.gray.9')(theme)}))`))",
-        "guttermarkerText": "var(--codeMirror-gutterMarker-fgColor-default, var(--color-codemirror-guttermarker-text, (theme) => `var(--bgColor-default, var(--color-canvas-default, ${(0, utils_v1_1.get)('scale.gray.9')(theme)}))`))",
-        "guttermarkerSubtleText": "var(--codeMirror-gutterMarker-fgColor-muted, var(--color-codemirror-guttermarker-subtle-text, (theme) => `var(--fgColor-muted, var(--color-fg-subtle, ${(0, utils_v1_1.get)('scale.gray.4')(theme)}))`))",
-        "linenumberText": "var(--codeMirror-lineNumber-fgColor, var(--color-codemirror-linenumber-text, (obj) => (0, get_1.default)(obj, path)))",
-        "cursor": "var(--codeMirror-cursor-fgColor, var(--color-codemirror-cursor, (obj) => (0, get_1.default)(obj, path)))",
-        "selectionBg": "var(--codeMirror-selection-bgColor, var(--color-codemirror-selection-bg, (theme) => `var(--borderColor-accent-muted, var(--color-accent-muted, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.blue.4'), 0.4)(theme)}))`))",
-        "activelineBg": "var(--codeMirror-activeline-bgColor, var(--color-codemirror-activeline-bg, (theme) => `var(--bgColor-neutral-muted, var(--color-neutral-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.gray.4'), 0.1)(theme)}))`))",
-        "matchingbracketText": "var(--codeMirror-matchingBracket-fgColor, var(--color-codemirror-matchingbracket-text, (obj) => (0, get_1.default)(obj, path)))",
-        "linesBg": "var(--codeMirror-lines-bgColor, var(--color-codemirror-lines-bg, (theme) => `var(--bgColor-default, var(--color-canvas-default, ${(0, utils_v1_1.get)('scale.gray.9')(theme)}))`))",
+        "text": "var(--codeMirror-fgColor, var(--color-codemirror-text, #adbac7))",
+        "bg": "var(--codeMirror-bgColor, var(--color-codemirror-bg, #22272e))",
+        "guttersBg": "var(--codeMirror-gutters-bgColor, var(--color-codemirror-gutters-bg, #22272e))",
+        "guttermarkerText": "var(--codeMirror-gutterMarker-fgColor-default, var(--color-codemirror-guttermarker-text, #22272e))",
+        "guttermarkerSubtleText": "var(--codeMirror-gutterMarker-fgColor-muted, var(--color-codemirror-guttermarker-subtle-text, #636e7b))",
+        "linenumberText": "var(--codeMirror-lineNumber-fgColor, var(--color-codemirror-linenumber-text, #768390))",
+        "cursor": "var(--codeMirror-cursor-fgColor, var(--color-codemirror-cursor, #adbac7))",
+        "selectionBg": "var(--codeMirror-selection-bgColor, var(--color-codemirror-selection-bg, rgba(65,132,228,0.4)))",
+        "activelineBg": "var(--codeMirror-activeline-bgColor, var(--color-codemirror-activeline-bg, rgba(99,110,123,0.1)))",
+        "matchingbracketText": "var(--codeMirror-matchingBracket-fgColor, var(--color-codemirror-matchingbracket-text, #adbac7))",
+        "linesBg": "var(--codeMirror-lines-bgColor, var(--color-codemirror-lines-bg, #22272e))",
         "syntax": {
             "comment": "var(--codeMirror-syntax-fgColor-comment, var(--color-codemirror-syntax-comment, #768390))",
             "constant": "var(--codeMirror-syntax-fgColor-constant, var(--color-codemirror-syntax-constant, #6cb6ff))",
@@ -96,62 +96,62 @@ exports.default = {
         }
     },
     "checks": {
-        "bg": "var(--color-checks-bg, (theme) => `var(--bgColor-inset, var(--color-canvas-inset, ${(0, utils_v1_1.get)('scale.black')(theme)}))`)",
+        "bg": "var(--color-checks-bg, #1c2128)",
         "runBorderWidth": "var(--color-checks-run-border-width, 1px)",
         "containerBorderWidth": "var(--color-checks-container-border-width, 1px)",
-        "textPrimary": "var(--color-checks-text-primary, (obj) => (0, get_1.default)(obj, path))",
-        "textSecondary": "var(--color-checks-text-secondary, (obj) => (0, get_1.default)(obj, path))",
-        "textLink": "var(--color-checks-text-link, (obj) => (0, get_1.default)(obj, path))",
-        "btnIcon": "var(--color-checks-btn-icon, (obj) => (0, get_1.default)(obj, path))",
-        "btnHoverIcon": "var(--color-checks-btn-hover-icon, (obj) => (0, get_1.default)(obj, path))",
-        "btnHoverBg": "var(--color-checks-btn-hover-bg, (theme) => `var(--bgColor-neutral-muted, var(--color-neutral-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.gray.4'), 0.1)(theme)}))`)",
-        "inputText": "var(--color-checks-input-text, (obj) => (0, get_1.default)(obj, path))",
-        "inputPlaceholderText": "var(--color-checks-input-placeholder-text, (theme) => `var(--fgColor-muted, var(--color-fg-subtle, ${(0, utils_v1_1.get)('scale.gray.4')(theme)}))`)",
-        "inputFocusText": "var(--color-checks-input-focus-text, (obj) => (0, get_1.default)(obj, path))",
+        "textPrimary": "var(--color-checks-text-primary, #adbac7)",
+        "textSecondary": "var(--color-checks-text-secondary, #768390)",
+        "textLink": "var(--color-checks-text-link, #539bf5)",
+        "btnIcon": "var(--color-checks-btn-icon, #768390)",
+        "btnHoverIcon": "var(--color-checks-btn-hover-icon, #adbac7)",
+        "btnHoverBg": "var(--color-checks-btn-hover-bg, rgba(99,110,123,0.1))",
+        "inputText": "var(--color-checks-input-text, #768390)",
+        "inputPlaceholderText": "var(--color-checks-input-placeholder-text, #636e7b)",
+        "inputFocusText": "var(--color-checks-input-focus-text, #adbac7)",
         "inputBg": "var(--color-checks-input-bg, #2d333b)",
-        "inputShadow": "var(--color-checks-input-shadow, 0 0 0 1px (theme) => `var(--borderColor-default, var(--color-border-default, ${(0, utils_v1_1.get)('scale.gray.6')(theme)}))`)",
+        "inputShadow": "var(--color-checks-input-shadow, 0 0 0 1px #444c56)",
         "donutError": "var(--color-checks-donut-error, #e5534b)",
         "donutPending": "var(--color-checks-donut-pending, #c69026)",
         "donutSuccess": "var(--color-checks-donut-success, #46954a)",
         "donutNeutral": "var(--color-checks-donut-neutral, #768390)",
-        "dropdownText": "var(--color-checks-dropdown-text, (obj) => (0, get_1.default)(obj, path))",
-        "dropdownBg": "var(--color-checks-dropdown-bg, (theme) => `var(--overlay-bgColor, var(--color-canvas-overlay, ${(0, utils_v1_1.get)('scale.gray.8')(theme)}))`)",
-        "dropdownBorder": "var(--color-checks-dropdown-border, (theme) => `var(--borderColor-default, var(--color-border-default, ${(0, utils_v1_1.get)('scale.gray.6')(theme)}))`)",
+        "dropdownText": "var(--color-checks-dropdown-text, #adbac7)",
+        "dropdownBg": "var(--color-checks-dropdown-bg, #2d333b)",
+        "dropdownBorder": "var(--color-checks-dropdown-border, #444c56)",
         "dropdownShadow": "var(--color-checks-dropdown-shadow, rgba(28,33,40,0.3))",
-        "dropdownHoverText": "var(--color-checks-dropdown-hover-text, (obj) => (0, get_1.default)(obj, path))",
-        "dropdownHoverBg": "var(--color-checks-dropdown-hover-bg, (theme) => `var(--bgColor-neutral-muted, var(--color-neutral-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.gray.4'), 0.1)(theme)}))`)",
-        "dropdownBtnHoverText": "var(--color-checks-dropdown-btn-hover-text, (obj) => (0, get_1.default)(obj, path))",
-        "dropdownBtnHoverBg": "var(--color-checks-dropdown-btn-hover-bg, (theme) => `var(--bgColor-neutral-muted, var(--color-neutral-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.gray.4'), 0.1)(theme)}))`)",
-        "scrollbarThumbBg": "var(--color-checks-scrollbar-thumb-bg, (theme) => `var(--borderColor-neutral-muted, var(--color-neutral-muted, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.gray.4'), 0.4)(theme)}))`)",
-        "headerLabelText": "var(--color-checks-header-label-text, (obj) => (0, get_1.default)(obj, path))",
-        "headerLabelOpenText": "var(--color-checks-header-label-open-text, (obj) => (0, get_1.default)(obj, path))",
-        "headerBorder": "var(--color-checks-header-border, (theme) => `var(--borderColor-muted, var(--color-border-muted, ${(0, utils_v1_1.get)('scale.gray.7')(theme)}))`)",
-        "headerIcon": "var(--color-checks-header-icon, (obj) => (0, get_1.default)(obj, path))",
-        "lineText": "var(--color-checks-line-text, (obj) => (0, get_1.default)(obj, path))",
-        "lineNumText": "var(--color-checks-line-num-text, (theme) => `var(--fgColor-muted, var(--color-fg-subtle, ${(0, utils_v1_1.get)('scale.gray.4')(theme)}))`)",
-        "lineTimestampText": "var(--color-checks-line-timestamp-text, (theme) => `var(--fgColor-muted, var(--color-fg-subtle, ${(0, utils_v1_1.get)('scale.gray.4')(theme)}))`)",
-        "lineHoverBg": "var(--color-checks-line-hover-bg, (theme) => `var(--bgColor-neutral-muted, var(--color-neutral-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.gray.4'), 0.1)(theme)}))`)",
-        "lineSelectedBg": "var(--color-checks-line-selected-bg, (theme) => `var(--bgColor-accent-muted, var(--color-accent-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.blue.4'), 0.1)(theme)}))`)",
-        "lineSelectedNumText": "var(--color-checks-line-selected-num-text, (obj) => (0, get_1.default)(obj, path))",
-        "lineDtFmText": "var(--color-checks-line-dt-fm-text, (theme) => `var(--fgColor-onEmphasis, var(--color-fg-on-emphasis, ${(0, utils_v1_1.get)('scale.white')(theme)}))`)",
-        "lineDtFmBg": "var(--color-checks-line-dt-fm-bg, (theme) => `var(--bgColor-attention-emphasis, var(--color-attention-emphasis, ${(0, utils_v1_1.get)('scale.yellow.5')(theme)}))`)",
-        "gateBg": "var(--color-checks-gate-bg, (theme) => `var(--bgColor-attention-muted, var(--color-attention-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.yellow.4'), 0.15)(theme)}))`)",
-        "gateText": "var(--color-checks-gate-text, (obj) => (0, get_1.default)(obj, path))",
-        "gateWaitingText": "var(--color-checks-gate-waiting-text, (theme) => `var(--fgColor-attention, var(--color-attention-fg, ${(0, utils_v1_1.get)('scale.yellow.3')(theme)}))`)",
-        "stepHeaderOpenBg": "var(--color-checks-step-header-open-bg, (theme) => `var(--bgColor-muted, var(--color-canvas-subtle, ${(0, utils_v1_1.get)('scale.gray.8')(theme)}))`)",
-        "stepErrorText": "var(--color-checks-step-error-text, (theme) => `var(--fgColor-danger, var(--color-danger-fg, ${(0, utils_v1_1.get)('scale.red.4')(theme)}))`)",
-        "stepWarningText": "var(--color-checks-step-warning-text, (theme) => `var(--fgColor-attention, var(--color-attention-fg, ${(0, utils_v1_1.get)('scale.yellow.3')(theme)}))`)",
-        "loglineText": "var(--color-checks-logline-text, (obj) => (0, get_1.default)(obj, path))",
-        "loglineNumText": "var(--color-checks-logline-num-text, (theme) => `var(--fgColor-muted, var(--color-fg-subtle, ${(0, utils_v1_1.get)('scale.gray.4')(theme)}))`)",
-        "loglineDebugText": "var(--color-checks-logline-debug-text, (theme) => `var(--fgColor-done, var(--color-done-fg, ${(0, utils_v1_1.get)('scale.purple.4')(theme)}))`)",
-        "loglineErrorText": "var(--color-checks-logline-error-text, (obj) => (0, get_1.default)(obj, path))",
-        "loglineErrorNumText": "var(--color-checks-logline-error-num-text, (theme) => `var(--fgColor-muted, var(--color-fg-subtle, ${(0, utils_v1_1.get)('scale.gray.4')(theme)}))`)",
-        "loglineErrorBg": "var(--color-checks-logline-error-bg, (theme) => `var(--bgColor-danger-muted, var(--color-danger-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.red.4'), 0.1)(theme)}))`)",
-        "loglineWarningText": "var(--color-checks-logline-warning-text, (obj) => (0, get_1.default)(obj, path))",
-        "loglineWarningNumText": "var(--color-checks-logline-warning-num-text, (theme) => `var(--fgColor-attention, var(--color-attention-fg, ${(0, utils_v1_1.get)('scale.yellow.3')(theme)}))`)",
-        "loglineWarningBg": "var(--color-checks-logline-warning-bg, (theme) => `var(--bgColor-attention-muted, var(--color-attention-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.yellow.4'), 0.15)(theme)}))`)",
-        "loglineCommandText": "var(--color-checks-logline-command-text, (obj) => (0, get_1.default)(obj, path))",
-        "loglineSectionText": "var(--color-checks-logline-section-text, (theme) => `var(--fgColor-success, var(--color-success-fg, ${(0, utils_v1_1.get)('scale.green.3')(theme)}))`)",
+        "dropdownHoverText": "var(--color-checks-dropdown-hover-text, #adbac7)",
+        "dropdownHoverBg": "var(--color-checks-dropdown-hover-bg, rgba(99,110,123,0.1))",
+        "dropdownBtnHoverText": "var(--color-checks-dropdown-btn-hover-text, #adbac7)",
+        "dropdownBtnHoverBg": "var(--color-checks-dropdown-btn-hover-bg, rgba(99,110,123,0.1))",
+        "scrollbarThumbBg": "var(--color-checks-scrollbar-thumb-bg, rgba(99,110,123,0.4))",
+        "headerLabelText": "var(--color-checks-header-label-text, #768390)",
+        "headerLabelOpenText": "var(--color-checks-header-label-open-text, #adbac7)",
+        "headerBorder": "var(--color-checks-header-border, #373e47)",
+        "headerIcon": "var(--color-checks-header-icon, #768390)",
+        "lineText": "var(--color-checks-line-text, #768390)",
+        "lineNumText": "var(--color-checks-line-num-text, #636e7b)",
+        "lineTimestampText": "var(--color-checks-line-timestamp-text, #636e7b)",
+        "lineHoverBg": "var(--color-checks-line-hover-bg, rgba(99,110,123,0.1))",
+        "lineSelectedBg": "var(--color-checks-line-selected-bg, rgba(65,132,228,0.1))",
+        "lineSelectedNumText": "var(--color-checks-line-selected-num-text, #539bf5)",
+        "lineDtFmText": "var(--color-checks-line-dt-fm-text, #cdd9e5)",
+        "lineDtFmBg": "var(--color-checks-line-dt-fm-bg, #966600)",
+        "gateBg": "var(--color-checks-gate-bg, rgba(174,124,20,0.15))",
+        "gateText": "var(--color-checks-gate-text, #768390)",
+        "gateWaitingText": "var(--color-checks-gate-waiting-text, #c69026)",
+        "stepHeaderOpenBg": "var(--color-checks-step-header-open-bg, #2d333b)",
+        "stepErrorText": "var(--color-checks-step-error-text, #e5534b)",
+        "stepWarningText": "var(--color-checks-step-warning-text, #c69026)",
+        "loglineText": "var(--color-checks-logline-text, #768390)",
+        "loglineNumText": "var(--color-checks-logline-num-text, #636e7b)",
+        "loglineDebugText": "var(--color-checks-logline-debug-text, #986ee2)",
+        "loglineErrorText": "var(--color-checks-logline-error-text, #768390)",
+        "loglineErrorNumText": "var(--color-checks-logline-error-num-text, #636e7b)",
+        "loglineErrorBg": "var(--color-checks-logline-error-bg, rgba(229,83,75,0.1))",
+        "loglineWarningText": "var(--color-checks-logline-warning-text, #768390)",
+        "loglineWarningNumText": "var(--color-checks-logline-warning-num-text, #c69026)",
+        "loglineWarningBg": "var(--color-checks-logline-warning-bg, rgba(174,124,20,0.15))",
+        "loglineCommandText": "var(--color-checks-logline-command-text, #539bf5)",
+        "loglineSectionText": "var(--color-checks-logline-section-text, #57ab5a)",
         "ansi": {
             "black": "var(--color-checks-ansi-black, #22272e)",
             "blackBright": "var(--color-checks-ansi-black-bright, #2d333b)",
@@ -196,7 +196,7 @@ exports.default = {
     },
     "avatar": {
         "bg": "var(--avatar-bgColor, var(--color-avatar-bg, rgba(205,217,229,0.1)))",
-        "border": "var(--avatar-borderColor, var(--color-avatar-border, (theme) => `var(--borderColor-muted, var(--color-border-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.gray.0'), 0.1)(theme)}))`))",
+        "border": "var(--avatar-borderColor, var(--color-avatar-border, rgba(205,217,229,0.1)))",
         "stackFade": "var(--avatarStack-fade-bgColor-default, var(--color-avatar-stack-fade, #444c56))",
         "stackFadeMore": "var(--avatarStack-fade-bgColor-muted, var(--color-avatar-stack-fade-more, #373e47))",
         "childShadow": "var(--avatar-shadow, var(--color-avatar-child-shadow, 0 0 0 2px #22272e))"
@@ -233,7 +233,7 @@ exports.default = {
         "bgActive": "var(--menu-bgColor-active, var(--color-menu-bg-active, #2d333b))"
     },
     "input": {
-        "disabledBg": "var(--control-bgColor-disabled, var(--color-input-disabled-bg, var(--borderColor-neutral-muted, var(--color-neutral-muted, rgba(99,110,123,0)))))"
+        "disabledBg": "var(--control-bgColor-disabled, var(--color-input-disabled-bg, rgba(99,110,123,0)))"
     },
     "timeline": {
         "badgeBg": "var(--timelineBadge-bgColor, var(--color-timeline-badge-bg, #373e47))"
@@ -260,7 +260,7 @@ exports.default = {
     "btn": {
         "text": "var(--button-default-fgColor-rest, var(--color-btn-text, #adbac7))",
         "bg": "var(--button-default-bgColor-rest, var(--color-btn-bg, #373e47))",
-        "border": "var(--button-default-borderColor-rest, var(--color-btn-border, (theme) => `var(--borderColor-muted, var(--color-border-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.gray.0'), 0.1)(theme)}))`))",
+        "border": "var(--button-default-borderColor-rest, var(--color-btn-border, rgba(205,217,229,0.1)))",
         "shadow": "var(--button-default-shadow-resting, var(--color-btn-shadow, 0 0 transparent))",
         "insetShadow": "var(--button-default-shadow-inset, var(--color-btn-inset-shadow, 0 0 transparent))",
         "hoverBg": "var(--button-default-bgColor-hover, var(--color-btn-hover-bg, #444c56))",
@@ -272,16 +272,16 @@ exports.default = {
         "primary": {
             "text": "var(--button-primary-fgColor-rest, var(--color-btn-primary-text, #ffffff))",
             "bg": "var(--button-primary-bgColor-rest, var(--color-btn-primary-bg, #347d39))",
-            "border": "var(--button-primary-borderColor-rest, var(--color-btn-primary-border, (theme) => `var(--borderColor-muted, var(--color-border-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.gray.0'), 0.1)(theme)}))`))",
+            "border": "var(--button-primary-borderColor-rest, var(--color-btn-primary-border, rgba(205,217,229,0.1)))",
             "shadow": "var(--shadow-resting-small, var(--color-btn-primary-shadow, 0 0 transparent))",
             "insetShadow": "var(--shadow-highlight, var(--color-btn-primary-inset-shadow, 0 0 transparent))",
             "hoverBg": "var(--button-primary-bgColor-hover, var(--color-btn-primary-hover-bg, #46954a))",
-            "hoverBorder": "var(--button-primary-borderColor-hover, var(--color-btn-primary-hover-border, (theme) => `var(--borderColor-muted, var(--color-border-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.gray.0'), 0.1)(theme)}))`))",
+            "hoverBorder": "var(--button-primary-borderColor-hover, var(--color-btn-primary-hover-border, rgba(205,217,229,0.1)))",
             "selectedBg": "var(--button-primary-bgColor-active, var(--color-btn-primary-selected-bg, #347d39))",
             "selectedShadow": "var(--button-primary-shadow-selected, var(--color-btn-primary-selected-shadow, 0 0 transparent))",
             "disabledText": "var(--button-primary-fgColor-disabled, var(--color-btn-primary-disabled-text, rgba(205,217,229,0.5)))",
             "disabledBg": "var(--button-primary-bgColor-disabled, var(--color-btn-primary-disabled-bg, rgba(52,125,57,0.6)))",
-            "disabledBorder": "var(--button-primary-borderColor-disabled, var(--color-btn-primary-disabled-border, (theme) => `var(--borderColor-muted, var(--color-border-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.gray.0'), 0.1)(theme)}))`))",
+            "disabledBorder": "var(--button-primary-borderColor-disabled, var(--color-btn-primary-disabled-border, rgba(205,217,229,0.1)))",
             "icon": "var(--button-primary-iconColor-rest, var(--color-btn-primary-icon, #cdd9e5))",
             "counterBg": "var(--buttonCounter-primary-bgColor-rest, var(--color-btn-primary-counter-bg, rgba(17,52,23,0.2)))"
         },
@@ -289,13 +289,13 @@ exports.default = {
             "text": "var(--button-outline-fgColor-rest, var(--color-btn-outline-text, #4184e4))",
             "hoverText": "var(--button-outline-fgColor-hover, var(--color-btn-outline-hover-text, #539bf5))",
             "hoverBg": "var(--button-outline-bgColor-hover, var(--color-btn-outline-hover-bg, #444c56))",
-            "hoverBorder": "var(--button-outline-borderColor-hover, var(--color-btn-outline-hover-border, (theme) => `var(--borderColor-muted, var(--color-border-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.gray.0'), 0.1)(theme)}))`))",
-            "hoverShadow": "var(--shadow-resting-small, var(--color-btn-outline-hover-shadow, 0 1px 0 rgba(28,33,40,0.1)))// HI_KATIE: no matches",
-            "hoverInsetShadow": "var(--shadow-highlight, var(--color-btn-outline-hover-inset-shadow, inset 0 1px 0 rgba(205,217,229,0.03)))// HI_KATIE: no matches",
+            "hoverBorder": "var(--button-outline-borderColor-hover, var(--color-btn-outline-hover-border, rgba(205,217,229,0.1)))",
+            "hoverShadow": "var(--shadow-resting-small, var(--color-btn-outline-hover-shadow, 0 1px 0 rgba(28,33,40,0.1)))",
+            "hoverInsetShadow": "var(--shadow-highlight, var(--color-btn-outline-hover-inset-shadow, inset 0 1px 0 rgba(205,217,229,0.03)))",
             "hoverCounterBg": "var(--buttonCounter-outline-bgColor-hover, var(--color-btn-outline-hover-counter-bg, rgba(15,45,92,0.2)))",
             "selectedText": "var(--button-outline-fgColor-active, var(--color-btn-outline-selected-text, #cdd9e5))",
             "selectedBg": "var(--button-outline-bgColor-active, var(--color-btn-outline-selected-bg, #1b4b91))",
-            "selectedBorder": "var(--button-outline-borderColor-active, var(--color-btn-outline-selected-border, (theme) => `var(--borderColor-muted, var(--color-border-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.gray.0'), 0.1)(theme)}))`))",
+            "selectedBorder": "var(--button-outline-borderColor-active, var(--color-btn-outline-selected-border, rgba(205,217,229,0.1)))",
             "selectedShadow": "var(--button-outline-shadow-selected, var(--color-btn-outline-selected-shadow, 0 0 transparent))",
             "disabledText": "var(--button-outline-fgColor-disabled, var(--color-btn-outline-disabled-text, rgba(83,155,245,0.5)))",
             "disabledBg": "var(--button-outline-bgColor-disabled, var(--color-btn-outline-disabled-bg, #22272e))",
@@ -307,12 +307,12 @@ exports.default = {
         },
         "danger": {
             "text": "var(--button-danger-fgColor-rest, var(--color-btn-danger-text, #e5534b))",
-            "hoverText": "var(--button-danger-fgColor-hover, var(--color-btn-danger-hover-text, (theme) => `var(--fgColor-onEmphasis, var(--color-fg-on-emphasis, ${(0, utils_v1_1.get)('scale.white')(theme)}))`))",
+            "hoverText": "var(--button-danger-fgColor-hover, var(--color-btn-danger-hover-text, #cdd9e5))",
             "hoverBg": "var(--button-danger-bgColor-hover, var(--color-btn-danger-hover-bg, #c93c37))",
             "hoverBorder": "var(--button-danger-borderColor-hover, var(--color-btn-danger-hover-border, #e5534b))",
             "hoverShadow": "var(--shadow-resting-small, var(--color-btn-danger-hover-shadow, 0 0 transparent))",
             "hoverInsetShadow": "var(--shadow-highlight, var(--color-btn-danger-hover-inset-shadow, 0 0 transparent))",
-            "hoverIcon": "var(--button-danger-iconColor-hover, var(--color-btn-danger-hover-icon, (theme) => `var(--fgColor-onEmphasis, var(--color-fg-on-emphasis, ${(0, utils_v1_1.get)('scale.white')(theme)}))`))",
+            "hoverIcon": "var(--button-danger-iconColor-hover, var(--color-btn-danger-hover-icon, #cdd9e5))",
             "hoverCounterBg": "var(--buttonCounter-danger-bgColor-hover, var(--color-btn-danger-hover-counter-bg, rgba(255,255,255,0.2)))",
             "selectedText": "var(--button-danger-fgColor-active, var(--color-btn-danger-selected-text, #ffffff))",
             "selectedBg": "var(--button-danger-bgColor-active, var(--color-btn-danger-selected-bg, #ad2e2c))",
@@ -323,7 +323,7 @@ exports.default = {
             "disabledCounterBg": "var(--buttonCounter-danger-bgColor-disabled, var(--color-btn-danger-disabled-counter-bg, rgba(201,60,55,0.05)))",
             "counterBg": "var(--buttonCounter-danger-bgColor-rest, var(--color-btn-danger-counter-bg, rgba(93,15,18,0.2)))",
             "icon": "var(--button-danger-iconColor-rest, var(--color-btn-danger-icon, #e5534b))",
-            "counterFg": "var(--buttonCounter-danger-fgColor-rest, var(--color-btn-danger-counter-fg, (theme) => `var(--fgColor-danger, var(--color-danger-fg, ${(0, utils_v1_1.get)('scale.red.4')(theme)}))`))",
+            "counterFg": "var(--buttonCounter-danger-fgColor-rest, var(--color-btn-danger-counter-fg, #e5534b))",
             "disabledCounterFg": "var(--buttonCounter-danger-fgColor-disabled, var(--color-btn-danger-disabled-counter-fg, var(--fgColor-danger, var(--color-danger-fg, rgba(229,83,75,0.5)))))",
             "hoverCounterFg": "var(--buttonCounter-danger-fgColor-hover, var(--color-btn-danger-hover-counter-fg, #cdd9e5))"
         },
@@ -333,11 +333,11 @@ exports.default = {
         }
     },
     "underlinenav": {
-        "icon": "var(--underlineNav-iconColor-rest, var(--color-underlinenav-icon, (theme) => `var(--fgColor-muted, var(--color-fg-subtle, ${(0, utils_v1_1.get)('scale.gray.4')(theme)}))`))",
-        "borderHover": "var(--underlineNav-borderColor-hover, var(--color-underlinenav-border-hover, (theme) => `var(--borderColor-neutral-muted, var(--color-neutral-muted, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.gray.4'), 0.4)(theme)}))`))"
+        "icon": "var(--underlineNav-iconColor-rest, var(--color-underlinenav-icon, #636e7b))",
+        "borderHover": "var(--underlineNav-borderColor-hover, var(--color-underlinenav-border-hover, rgba(99,110,123,0.4)))"
     },
     "actionListItem": {
-        "inlineDivider": "var(--borderColor-muted, var(--color-action-list-item-inline-divider, var(--borderColor-default, var(--color-border-default, rgba(68,76,86,0.48)))))",
+        "inlineDivider": "var(--borderColor-muted, var(--color-action-list-item-inline-divider, rgba(68,76,86,0.48)))",
         "default": {
             "hoverBg": "var(--control-transparent-bgColor-hover, var(--color-action-list-item-default-hover-bg, rgba(144,157,171,0.12)))",
             "hoverBorder": "var(--control-transparent-borderColor-hover, var(--color-action-list-item-default-hover-border, transparent))",
@@ -352,36 +352,36 @@ exports.default = {
         }
     },
     "switchTrack": {
-        "bg": "var(--controlTrack-bgColor-rest, var(--color-switch-track-bg, (theme) => `var(--bgColor-neutral-muted, var(--color-neutral-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.gray.4'), 0.1)(theme)}))`))",
+        "bg": "var(--controlTrack-bgColor-rest, var(--color-switch-track-bg, rgba(99,110,123,0.1)))",
         "hoverBg": "var(--controlTrack-bgColor-hover, var(--color-switch-track-hover-bg, var(--bgColor-neutral-muted, var(--color-neutral-subtle, hsla(213,11%,69%,0.1)))))",
-        "activeBg": "var(--controlTrack-bgColor-active, var(--color-switch-track-active-bg, (theme) => `var(--borderColor-neutral-muted, var(--color-neutral-muted, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.gray.4'), 0.4)(theme)}))`))",
+        "activeBg": "var(--controlTrack-bgColor-active, var(--color-switch-track-active-bg, rgba(99,110,123,0.4)))",
         "disabledBg": "var(--controlTrack-bgColor-disabled, var(--color-switch-track-disabled-bg, #373e47))",
-        "fg": "var(--controlTrack-fgColor-rest, var(--color-switch-track-fg, (obj) => (0, get_1.default)(obj, path)))",
+        "fg": "var(--controlTrack-fgColor-rest, var(--color-switch-track-fg, #768390))",
         "disabledFg": "var(--controlTrack-fgColor-disabled, var(--color-switch-track-disabled-fg, #1c2128))",
         "border": "var(--controlTrack-borderColor-rest, var(--color-switch-track-border, transparent))",
         "checked": {
             "bg": "var(--control-checked-bgColor-rest, var(--color-switch-track-checked-bg, rgba(49,109,202,0.35)))",
             "hoverBg": "var(--control-checked-bgColor-hover, var(--color-switch-track-checked-hover-bg, rgba(49,109,202,0.5)))",
             "activeBg": "var(--control-checked-bgColor-active, var(--color-switch-track-checked-active-bg, rgba(49,109,202,0.65)))",
-            "fg": "var(--control-checked-fgColor-rest, var(--color-switch-track-checked-fg, (theme) => `var(--fgColor-onEmphasis, var(--color-fg-on-emphasis, ${(0, utils_v1_1.get)('scale.white')(theme)}))`))",
+            "fg": "var(--control-checked-fgColor-rest, var(--color-switch-track-checked-fg, #cdd9e5))",
             "disabledFg": "var(--control-checked-fgColor-disabled, var(--color-switch-track-checked-disabled-fg, #1c2128))",
             "border": "var(--borderColor-transparent, var(--color-switch-track-checked-border, transparent))"
         }
     },
     "switchKnob": {
-        "bg": "var(--controlKnob-bgColor-rest, var(--color-switch-knob-bg, (theme) => `var(--bgColor-default, var(--color-canvas-default, ${(0, utils_v1_1.get)('scale.gray.9')(theme)}))`))",
+        "bg": "var(--controlKnob-bgColor-rest, var(--color-switch-knob-bg, #22272e))",
         "border": "var(--controlKnob-borderColor-rest, var(--color-switch-knob-border, #606771))",
-        "disabledBg": "var(--controlKnob-bgColor-disabled, var(--color-switch-knob-disabled-bg, (theme) => `var(--bgColor-muted, var(--color-canvas-subtle, ${(0, utils_v1_1.get)('scale.gray.8')(theme)}))`))",
+        "disabledBg": "var(--controlKnob-bgColor-disabled, var(--color-switch-knob-disabled-bg, #2d333b))",
         "checked": {
-            "bg": "var(--controlKnob-bgColor-checked, var(--color-switch-knob-checked-bg, (theme) => `var(--bgColor-default, var(--color-canvas-default, ${(0, utils_v1_1.get)('scale.gray.9')(theme)}))`))",
-            "disabledBg": "var(--controlKnob-bgColor-disabled, var(--color-switch-knob-checked-disabled-bg, (theme) => `var(--bgColor-muted, var(--color-canvas-subtle, ${(0, utils_v1_1.get)('scale.gray.8')(theme)}))`))",
+            "bg": "var(--controlKnob-bgColor-checked, var(--color-switch-knob-checked-bg, #22272e))",
+            "disabledBg": "var(--controlKnob-bgColor-disabled, var(--color-switch-knob-checked-disabled-bg, #2d333b))",
             "border": "var(--controlKnob-borderColor-checked, var(--color-switch-knob-checked-border, rgba(49,109,202,0.35)))"
         }
     },
     "segmentedControl": {
-        "bg": "var(--controlTrack-bgColor-rest, var(--color-segmented-control-bg, (theme) => `var(--bgColor-neutral-muted, var(--color-neutral-subtle, ${(0, utils_v1_1.alpha)((0, utils_v1_1.get)('scale.gray.4'), 0.1)(theme)}))`))",
+        "bg": "var(--controlTrack-bgColor-rest, var(--color-segmented-control-bg, rgba(99,110,123,0.1)))",
         "button": {
-            "bg": "var(--controlKnob-bgColor-rest, var(--color-segmented-control-button-bg, (theme) => `var(--bgColor-default, var(--color-canvas-default, ${(0, utils_v1_1.get)('scale.gray.9')(theme)}))`))",
+            "bg": "var(--controlKnob-bgColor-rest, var(--color-segmented-control-button-bg, #22272e))",
             "hover": {
                 "bg": "var(--controlTrack-bgColor-hover, var(--color-segmented-control-button-hover-bg, #444c56))"
             },
@@ -398,7 +398,7 @@ exports.default = {
             "hoverBg": "var(--control-transparent-bgColor-hover, var(--color-tree-view-item-chevron-hover-bg, rgba(144,157,171,0.12)))"
         },
         "directory": {
-            "fill": "var(--treeViewItem-leadingVisual-bgColor-rest, var(--color-tree-view-item-directory-fill, (obj) => (0, get_1.default)(obj, path)))"
+            "fill": "var(--treeViewItem-leadingVisual-bgColor-rest, var(--color-tree-view-item-directory-fill, #768390))"
         }
     },
     "fg": {
