@@ -1,5 +1,15 @@
 # @primer/primitives
 
+## 7.15.6
+
+### Patch Changes
+
+- [#793](https://github.com/primer/primitives/pull/793) [`aa61b6e`](https://github.com/primer/primitives/commit/aa61b6ea6ec60c7b978c27541ff7a1a54c55bfaa) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Fix colors in dark HC
+
+- [#790](https://github.com/primer/primitives/pull/790) [`a7b7ac3`](https://github.com/primer/primitives/commit/a7b7ac37cd0d7aeb63b225f82c6e8ceb1e049a77) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Add ::backdrop to css
+
+- [#796](https://github.com/primer/primitives/pull/796) [`d842f87`](https://github.com/primer/primitives/commit/d842f87c3f88038bec3d504c01b092d134d0d0b4) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - reduce opacity for inset shadow
+
 ## 7.15.5
 
 ### Patch Changes
