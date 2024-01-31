@@ -11,6 +11,7 @@ export default {
 }
 
 const shadows = [
+  'shadow-inset',
   'shadow-resting-xsmall',
   'shadow-resting-small',
   'shadow-resting-medium',
@@ -22,19 +23,10 @@ const shadows = [
 
 export const Shadows = () => {
   return (
-    <>
+    <div className="ColorPreview-container">
       {shadows.map(shadow => (
         <ColorPreview color={shadow} shadow key={shadow} canvasColor="bgColor-default" shadowBg="bgColor-default" />
       ))}
-
-      <ColorPreview
-        color="shadow-inset"
-        shadow
-        key="shadow-inset"
-        canvasColor="bgColor-muted"
-        shadowBg="bgColor-default"
-        style={{border: `1px solid var(--borderColor-default)`}}
-      />
-    </>
+    </div>
   )
 }

@@ -19,10 +19,10 @@ const borderColors = [
 
 export const Border = () => {
   return (
-    <>
+    <div className="ColorPreview-container">
       {borderColors.map(color => (
         <ColorPreview color={color} borderColor key={color} canvasColor="bgColor-default" />
       ))}
-    </>
+    </div>
   )
 }

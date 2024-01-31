@@ -20,10 +20,10 @@ const fgColors = [
 
 export const Foreground = () => {
   return (
-    <>
+    <div className="ColorPreview-container">
       {fgColors.map(color => (
         <ColorPreview color={color} textColor key={color} canvasColor="bgColor-default" />
       ))}
-    </>
+    </div>
   )
 }

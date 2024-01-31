@@ -20,7 +20,9 @@ export const InlineCode = ({value, copyClipboard}: InlineCodeProps) => {
 
   return (
     <span className="InlineCode">
-      <code>--{value}</code> {copyClipboard && <ClipboardCopy value={`--${value}`} />}
+      {/* <code>{value}</code> {copyClipboard && <ClipboardCopy value={`--${value}`} />} */}
+      {copyClipboard && <ClipboardCopy value={`--${value}`} />}
+      <code>{value}</code>
     </span>
   )
 }
