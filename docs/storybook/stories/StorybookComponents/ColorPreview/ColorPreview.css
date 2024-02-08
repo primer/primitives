@@ -1,19 +1,31 @@
 .ColorPreview {
   width: 100%;
-  height: 100px;
+  /* height: 100px; */
   display: grid;
   place-items: center;
-  box-shadow: var(--borderColor-default) 0px 0px 0px 1px inset;
+  /* box-shadow: var(--borderColor-default) 0px 0px 0px 1px inset; */
   border-radius: var(--borderRadius-medium);
 }
 
-.ColorPreview[data-type='shadow'] {
+/* .ColorPreview[data-type='shadow'] {
   height: 200px;
+} */
+
+.ColorPreview-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: var(--stack-gap-normal);
 }
 
 .ColorPreview-wrap {
   display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: subgrid;
   gap: var(--stack-gap-condensed);
+}
+
+.InlineCode {
+  place-self: center end;
 }
 
 /* set bg color for text that matches default bg */
@@ -48,26 +60,64 @@
   border: solid 1px var(--borderColor-default) !important;
 }
 
+[data-text-wrap] {
+  place-self: center start;
+  height: var(--base-size-32);
+  padding-inline-start: var(--base-size-8);
+  display: grid;
+  align-items: center;
+}
+
 [data-text] {
-  font-size: var(--base-size-32);
-  font-weight: var(--fontWeight-semibold);
+  /* font-size: var(--base-size-32); */
+  /* font-size: var(--base-size-16);
+  font-weight: var(--fontWeight-semibold); */
+
+  font: var(--text-body-shorthand-large);
 }
 
 [data-bg] {
-  width: var(--base-size-48);
-  height: var(--base-size-48);
+  /* width: var(--base-size-96); */
+  width: 100%;
+  height: var(--base-size-32);
   border-radius: var(--borderRadius-medium);
+  place-self: center start;
 }
 
 [data-shadow] {
-  width: var(--base-size-128);
-  height: var(--base-size-80);
+  width: 100%;
+  height: var(--base-size-32);
   border-radius: var(--borderRadius-medium);
 }
 
+.ColorPreview-wrap:nth-of-type(4):has([data-shadow]) {
+  margin-block-start: var(--base-size-8);
+}
+
+.ColorPreview-wrap:nth-of-type(5):has([data-shadow]) {
+  margin-block-start: var(--base-size-16);
+}
+
+.ColorPreview-wrap:nth-of-type(6):has([data-shadow]) {
+  margin-block-start: var(--base-size-24);
+}
+
+.ColorPreview-wrap:nth-of-type(7):has([data-shadow]) {
+  margin-block-start: var(--base-size-32);
+}
+
+.ColorPreview-wrap:nth-of-type(8):has([data-shadow]) {
+  margin-block-start: var(--base-size-48);
+}
+
+.ColorPreview:has([style='box-shadow: var(--shadow-inset); background-color: var(--bgColor-default);'])
+  > [data-shadow] {
+  border: solid 1px var(--borderColor-default) !important;
+}
+
 [data-border] {
-  width: var(--base-size-48);
-  height: var(--base-size-48);
+  width: 100%;
+  height: var(--base-size-32);
   border-width: 2px;
   border-style: solid;
   border-radius: var(--borderRadius-medium);

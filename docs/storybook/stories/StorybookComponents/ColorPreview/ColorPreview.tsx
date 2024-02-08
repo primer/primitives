@@ -27,11 +27,14 @@ export function ColorPreview({
 }: ColorPreviewProps) {
   return (
     <div className="ColorPreview-wrap">
+      <InlineCode value={color} copyClipboard />
       <div className="ColorPreview" style={{backgroundColor: `var(--${canvasColor})`}} data-type={shadow && `shadow`}>
         {textColor && (
-          <p style={{color: `var(--${color})`, ...style}} data-text>
-            Aa
-          </p>
+          <div data-text-wrap>
+            <p style={{color: `var(--${color})`, ...style}} data-text>
+              Aa
+            </p>
+          </div>
         )}
         {borderColor && <div style={{borderColor: `var(--${color})`, ...style}} data-border></div>}
         {bgColor && (
@@ -51,7 +54,6 @@ export function ColorPreview({
           ></div>
         )}
       </div>
-      <InlineCode value={color} copyClipboard />
     </div>
   )
 }

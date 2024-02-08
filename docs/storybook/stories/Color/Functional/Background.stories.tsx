@@ -21,10 +21,10 @@ const bgColors = [
 
 export const Background = () => {
   return (
-    <>
+    <div className="ColorPreview-container">
       {bgColors.map(color => (
         <ColorPreview color={color} bgColor key={color} canvasColor="bgColor-default" />
       ))}
-    </>
+    </div>
   )
 }
