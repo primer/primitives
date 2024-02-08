@@ -13,7 +13,6 @@ const fgColors = [
   'fgColor-default',
   'fgColor-muted',
   'fgColor-onEmphasis',
-  'fgColor-onInverse',
   'fgColor-disabled',
   'fgColor-link',
 ]
