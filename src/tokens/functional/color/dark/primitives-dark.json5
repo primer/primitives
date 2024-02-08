@@ -53,18 +53,6 @@
         },
       },
     },
-    onInverse: {
-      $value: '{base.color.gray.9}',
-      $type: 'color',
-      $extensions: {
-        'org.primer.figma': {
-          collection: 'mode',
-          mode: 'dark',
-          group: 'semantic',
-          scopes: ['fgColor'],
-        },
-      },
-    },
     disabled: {
       $value: '{base.color.gray.3}',
       $type: 'color',
@@ -93,34 +81,10 @@
           },
         },
       },
-      onInverse: {
-        $value: '{fgColor.accent.onInverse}',
-        $type: 'color',
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'mode',
-            mode: 'dark',
-            group: 'semantic',
-            scopes: ['fgColor'],
-          },
-        },
-      },
     },
     neutral: {
       '@': {
         $value: '{base.color.gray.4}',
-        $type: 'color',
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'mode',
-            mode: 'dark',
-            group: 'semantic',
-            scopes: ['fgColor'],
-          },
-        },
-      },
-      onInverse: {
-        $value: '{base.color.gray.5}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -152,18 +116,6 @@
           weight: 0.35,
         },
       },
-      onInverse: {
-        $value: '{base.color.blue.5}',
-        $type: 'color',
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'mode',
-            mode: 'dark',
-            group: 'semantic',
-            scopes: ['fgColor'],
-          },
-        },
-      },
     },
     success: {
       '@': {
@@ -178,18 +130,6 @@
             codeSyntax: {
               web: 'var(--fgColor-success) /* utility class: .color-fg-success */',
             },
-          },
-        },
-      },
-      onInverse: {
-        $value: '{base.color.green.5}',
-        $type: 'color',
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'mode',
-            mode: 'dark',
-            group: 'semantic',
-            scopes: ['fgColor'],
           },
         },
       },
@@ -210,18 +150,6 @@
           },
         },
       },
-      onInverse: {
-        $value: '{base.color.yellow.5}',
-        $type: 'color',
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'mode',
-            mode: 'dark',
-            group: 'semantic',
-            scopes: ['fgColor'],
-          },
-        },
-      },
     },
     severe: {
       '@': {
@@ -236,18 +164,6 @@
             codeSyntax: {
               web: 'var(--fgColor-severe) /* utility class: .color-fg-severe */',
             },
-          },
-        },
-      },
-      onInverse: {
-        $value: '{base.color.orange.5}',
-        $type: 'color',
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'mode',
-            mode: 'dark',
-            group: 'semantic',
-            scopes: ['fgColor'],
           },
         },
       },
@@ -268,22 +184,6 @@
           },
         },
       },
-      onInverse: {
-        $value: '{base.color.red.5}',
-        $type: 'color',
-        mix: {
-          color: '{base.color.red.4}',
-          weight: 0.05,
-        },
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'mode',
-            mode: 'dark',
-            group: 'semantic',
-            scopes: ['fgColor'],
-          },
-        },
-      },
     },
     open: {
       '@': {
@@ -298,18 +198,6 @@
             codeSyntax: {
               web: 'var(--fgColor-open) /* utility class: .color-fg-open */',
             },
-          },
-        },
-      },
-      onInverse: {
-        $value: '{fgColor.success.onInverse}',
-        $type: 'color',
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'mode',
-            mode: 'dark',
-            group: 'semantic',
-            scopes: ['fgColor'],
           },
         },
       },
@@ -330,18 +218,6 @@
           },
         },
       },
-      onInverse: {
-        $value: '{fgColor.danger.onInverse}',
-        $type: 'color',
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'mode',
-            mode: 'dark',
-            group: 'semantic',
-            scopes: ['fgColor'],
-          },
-        },
-      },
     },
     done: {
       '@': {
@@ -359,18 +235,6 @@
           },
         },
       },
-      onInverse: {
-        $value: '{base.color.purple.5}',
-        $type: 'color',
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'mode',
-            mode: 'dark',
-            group: 'semantic',
-            scopes: ['fgColor'],
-          },
-        },
-      },
     },
     sponsors: {
       '@': {
@@ -385,18 +249,6 @@
             codeSyntax: {
               web: 'var(--fgColor-sponsors) /* utility class: .color-fg-sponsors */',
             },
-          },
-        },
-      },
-      onInverse: {
-        $value: '{base.color.pink.5}',
-        $type: 'color',
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'mode',
-            mode: 'dark',
-            group: 'semantic',
-            scopes: ['fgColor'],
           },
         },
       },
