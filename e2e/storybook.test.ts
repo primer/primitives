@@ -57,7 +57,6 @@ test.describe('storybook', () => {
                 theme,
               },
             })
-            await page.waitForTimeout(5000)
             expect(await page.screenshot({animations: 'disabled', fullPage: true})).toMatchSnapshot()
           })
         }
