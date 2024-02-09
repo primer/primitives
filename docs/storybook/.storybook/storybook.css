@@ -44,6 +44,19 @@
   position: relative;
 }
 
+light-dark-split {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+.light-dark-split .story-wrap {
+  padding: 1rem;
+}
+
+#storybook-root:has(.light-dark-split) {
+  padding: 0 !important;
+}
+
 @media (max-width: calc(20rem * 4)) {
   .theme-wrap-grid {
     grid-template-columns: repeat(3, minmax(var(--breakpoint-xsmall, 20rem), auto));
@@ -161,4 +174,8 @@ code {
   clip: rect(0, 0, 0, 0);
   word-wrap: normal;
   border: 0;
+}
+
+p {
+  margin: 0 !important;
 }
