@@ -3,17 +3,28 @@
   font-weight: var(--font-weight-semibold);
 }
 
+.ColorTokenSwatch-text[style='color: var(--fgColor-onEmphasis);'] {
+  background: var(--bgColor-emphasis);
+  border-radius: var(--borderRadius-small);
+  padding: 2px 4px;
+}
+
 .ColorTokenSwatch-bg {
   width: var(--base-size-20);
   height: var(--base-size-20);
   border-radius: var(--borderRadius-small);
 }
 
+.ColorTokenSwatch-bg[style='background-color: var(--bgColor-default);'],
+.ColorTokenSwatch-bg[style='background-color: var(--bgColor-transparent);'] {
+  border: solid var(--borderWidth-thin) var(--borderColor-muted);
+}
+
 .ColorTokenSwatch-shadow {
   width: var(--base-size-20);
   height: var(--base-size-20);
   border-radius: var(--borderRadius-small);
-  background-color: var(bgColor-default);
+  background-color: var(--bgColor-default);
 }
 
 .ColorTokenSwatch-border {

@@ -31,6 +31,10 @@
   height: 100% !important;
 }
 
+body {
+  background-color: var(--bgColor-default) !important;
+}
+
 .theme-wrap-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(var(--breakpoint-xsmall, 20rem), auto));
@@ -42,6 +46,19 @@
   outline: 1px solid #d4d4d8;
   padding-bottom: 40px;
   position: relative;
+}
+
+.light-dark-split {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+.light-dark-split .story-wrap {
+  padding: 1rem;
+}
+
+#storybook-root:has(.light-dark-split) {
+  padding: 0 !important;
 }
 
 @media (max-width: calc(20rem * 4)) {
@@ -161,4 +178,8 @@ code {
   clip: rect(0, 0, 0, 0);
   word-wrap: normal;
   border: 0;
+}
+
+p {
+  margin: 0 !important;
 }
