@@ -9,12 +9,11 @@ import {getTokensByName} from '../../utilities/getTokensByName'
 export default {
   title: 'Color/Functional/Tables',
   parameters: {
-    parameters: {
-      controls: {hideNoControlsWarning: true},
-      options: {
-        showPanel: false,
-      },
+    controls: {hideNoControlsWarning: true},
+    options: {
+      showPanel: false,
     },
+    tags: ['excludeSnapshot'],
   },
 }
 

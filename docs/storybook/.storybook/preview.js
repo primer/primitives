@@ -45,7 +45,7 @@ const primerThemes = [
 ]
 
 export const globalTypes = {
-  colorScheme: {
+  theme: {
     name: 'Theme',
     description: 'Switch themes',
     defaultValue: 'light',
@@ -67,24 +67,24 @@ export const globalTypes = {
 
 export const decorators = [
   (Story, context) => {
-    const {colorScheme} = context.globals
+    const {theme} = context.globals
 
     useEffect(() => {
-      const colorMode = colorScheme.startsWith('light') ? 'light' : 'dark'
+      const colorMode = theme.startsWith('light') ? 'light' : 'dark'
       document.body.setAttribute('data-color-mode', colorMode)
 
-      const lightTheme = colorScheme.startsWith('light') ? colorScheme : undefined
+      const lightTheme = theme.startsWith('light') ? theme : undefined
       document.body.setAttribute('data-light-theme', lightTheme)
 
-      const darkTheme = colorScheme.startsWith('dark') ? colorScheme : undefined
+      const darkTheme = theme.startsWith('dark') ? theme : undefined
       document.body.setAttribute('data-dark-theme', darkTheme)
-    }, [colorScheme])
+    }, [theme])
 
     const {parameters} = context
     const defaultStoryType = 'swatch'
     const storyType = parameters.storyType || defaultStoryType
 
-    if (context.globals.colorScheme === 'light-dark-split') {
+    if (context.globals.theme === 'light-dark-split') {
       return (
         <div className="light-dark-split">
           {['light', 'dark'].map(theme => (
@@ -105,7 +105,7 @@ export const decorators = [
       )
     }
 
-    return context.globals.colorScheme === 'all' ? (
+    return context.globals.theme === 'all' ? (
       primerThemes.map(({value: theme}) => (
         <ThemeProvider key={theme} dayScheme={theme} nightScheme={theme} colorMode="day">
           <div
@@ -126,7 +126,7 @@ export const decorators = [
         </ThemeProvider>
       ))
     ) : (
-      <ThemeProvider dayScheme={context.globals.colorScheme} nightScheme={context.globals.colorScheme} colorMode="day">
+      <ThemeProvider dayScheme={context.globals.theme} nightScheme={context.globals.theme} colorMode="day">
         <div className={clsx('story-wrap', parameters.storyType === 'swatch' && 'SwatchDecorator')}>
           <Story {...context} />
         </div>
