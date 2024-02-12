@@ -94,7 +94,7 @@ const renderKitchenSink = (variant: (typeof variants)[number], width?: number) =
           sx={{
             backgroundColor: `var(--color-presentational-${variant}-0)`,
             border: `0px solid var(--color-presentational-${variant}-4)`,
-            color: `var(--color-presentational-${variant}-6)`,
+            color: `var(--color-presentational-${variant}-7)`,
             '&:hover': {
               color: `var(--color-presentational-${variant}-8)`,
               backgroundColor: `var(--color-presentational-${variant}-1)`,
