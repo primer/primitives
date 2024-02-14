@@ -1611,22 +1611,6 @@
     }
   },
   {
-    "name": "fgColor/sponsors-onInverse",
-    "value": {
-      "r": 0.9098039215686274,
-      "g": 0.35294117647058826,
-      "b": 0.6784313725490196,
-      "a": 1
-    },
-    "type": "COLOR",
-    "refId": "mode/fgColor/sponsors-onInverse",
-    "reference": "base/color/light/base/color/pink/4",
-    "collection": "mode",
-    "mode": "light",
-    "group": "semantic",
-    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
-  },
-  {
     "name": "fgColor/sponsors",
     "value": {
       "r": 0.7490196078431373,
@@ -1646,22 +1630,6 @@
     }
   },
   {
-    "name": "fgColor/done-onInverse",
-    "value": {
-      "r": 0.6431372549019608,
-      "g": 0.4588235294117647,
-      "b": 0.9764705882352941,
-      "a": 1
-    },
-    "type": "COLOR",
-    "refId": "mode/fgColor/done-onInverse",
-    "reference": "base/color/light/base/color/purple/4",
-    "collection": "mode",
-    "mode": "light",
-    "group": "semantic",
-    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
-  },
-  {
     "name": "fgColor/done",
     "value": {
       "r": 0.5098039215686274,
@@ -1679,22 +1647,6 @@
     "codeSyntax": {
       "web": "var(--fgColor-done) /* utility class: .color-fg-done */"
     }
-  },
-  {
-    "name": "fgColor/danger-onInverse",
-    "value": {
-      "r": 0.9803921568627451,
-      "g": 0.27058823529411763,
-      "b": 0.28627450980392155,
-      "a": 1
-    },
-    "type": "COLOR",
-    "refId": "mode/fgColor/danger-onInverse",
-    "reference": "base/color/light/base/color/red/4",
-    "collection": "mode",
-    "mode": "light",
-    "group": "semantic",
-    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
   },
   {
     "name": "fgColor/danger",
@@ -1717,22 +1669,6 @@
     }
   },
   {
-    "name": "fgColor/severe-onInverse",
-    "value": {
-      "r": 0.984313725490196,
-      "g": 0.5607843137254902,
-      "b": 0.26666666666666666,
-      "a": 1
-    },
-    "type": "COLOR",
-    "refId": "mode/fgColor/severe-onInverse",
-    "reference": "base/color/light/base/color/orange/3",
-    "collection": "mode",
-    "mode": "light",
-    "group": "semantic",
-    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
-  },
-  {
     "name": "fgColor/severe",
     "value": {
       "r": 0.7372549019607844,
@@ -1750,22 +1686,6 @@
     "codeSyntax": {
       "web": "var(--fgColor-severe) /* utility class: .color-fg-severe */"
     }
-  },
-  {
-    "name": "fgColor/attention-onInverse",
-    "value": {
-      "r": 0.8313725490196079,
-      "g": 0.6549019607843137,
-      "b": 0.17254901960784313,
-      "a": 1
-    },
-    "type": "COLOR",
-    "refId": "mode/fgColor/attention-onInverse",
-    "reference": "base/color/light/base/color/yellow/3",
-    "collection": "mode",
-    "mode": "light",
-    "group": "semantic",
-    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
   },
   {
     "name": "fgColor/attention",
@@ -1787,22 +1707,6 @@
     }
   },
   {
-    "name": "fgColor/success-onInverse",
-    "value": {
-      "r": 0.2901960784313726,
-      "g": 0.7607843137254902,
-      "b": 0.4196078431372549,
-      "a": 1
-    },
-    "type": "COLOR",
-    "refId": "mode/fgColor/success-onInverse",
-    "reference": "base/color/light/base/color/green/3",
-    "collection": "mode",
-    "mode": "light",
-    "group": "semantic",
-    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
-  },
-  {
     "name": "fgColor/success",
     "value": {
       "r": 0.10196078431372549,
@@ -1822,22 +1726,6 @@
     }
   },
   {
-    "name": "fgColor/accent-onInverse",
-    "value": {
-      "r": 0.32941176470588235,
-      "g": 0.6823529411764706,
-      "b": 1,
-      "a": 1
-    },
-    "type": "COLOR",
-    "refId": "mode/fgColor/accent-onInverse",
-    "reference": "base/color/light/base/color/blue/3",
-    "collection": "mode",
-    "mode": "light",
-    "group": "semantic",
-    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
-  },
-  {
     "name": "fgColor/accent",
     "value": {
       "r": 0.03529411764705882,
@@ -1855,22 +1743,6 @@
     "codeSyntax": {
       "web": "var(--fgColor-accent) /* utility class: .color-fg-accent */"
     }
-  },
-  {
-    "name": "fgColor/neutral-onInverse",
-    "value": {
-      "r": 0.5490196078431373,
-      "g": 0.5843137254901961,
-      "b": 0.6235294117647059,
-      "a": 1
-    },
-    "type": "COLOR",
-    "refId": "mode/fgColor/neutral-onInverse",
-    "reference": "base/color/light/base/color/gray/4",
-    "collection": "mode",
-    "mode": "light",
-    "group": "semantic",
-    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
   },
   {
     "name": "fgColor/neutral",
@@ -1899,22 +1771,6 @@
     "type": "COLOR",
     "refId": "mode/fgColor/disabled",
     "reference": "base/color/light/base/color/gray/4",
-    "collection": "mode",
-    "mode": "light",
-    "group": "semantic",
-    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
-  },
-  {
-    "name": "fgColor/onInverse",
-    "value": {
-      "r": 0.9647058823529412,
-      "g": 0.9725490196078431,
-      "b": 0.9803921568627451,
-      "a": 1
-    },
-    "type": "COLOR",
-    "refId": "mode/fgColor/onInverse",
-    "reference": "base/color/light/base/color/gray/0",
     "collection": "mode",
     "mode": "light",
     "group": "semantic",
@@ -3427,22 +3283,6 @@
     }
   },
   {
-    "name": "fgColor/closed-onInverse",
-    "value": {
-      "r": 0.9803921568627451,
-      "g": 0.27058823529411763,
-      "b": 0.28627450980392155,
-      "a": 1
-    },
-    "type": "COLOR",
-    "refId": "mode/fgColor/closed-onInverse",
-    "reference": "mode/fgColor/danger-onInverse",
-    "collection": "mode",
-    "mode": "light",
-    "group": "semantic",
-    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
-  },
-  {
     "name": "fgColor/closed",
     "value": {
       "r": 0.8196078431372549,
@@ -3462,22 +3302,6 @@
     }
   },
   {
-    "name": "fgColor/open-onInverse",
-    "value": {
-      "r": 0.2901960784313726,
-      "g": 0.7607843137254902,
-      "b": 0.4196078431372549,
-      "a": 1
-    },
-    "type": "COLOR",
-    "refId": "mode/fgColor/open-onInverse",
-    "reference": "mode/fgColor/success-onInverse",
-    "collection": "mode",
-    "mode": "light",
-    "group": "semantic",
-    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
-  },
-  {
     "name": "fgColor/open",
     "value": {
       "r": 0.10196078431372549,
@@ -3495,22 +3319,6 @@
     "codeSyntax": {
       "web": "var(--fgColor-open) /* utility class: .color-fg-open */"
     }
-  },
-  {
-    "name": "fgColor/link-onInverse",
-    "value": {
-      "r": 0.32941176470588235,
-      "g": 0.6823529411764706,
-      "b": 1,
-      "a": 1
-    },
-    "type": "COLOR",
-    "refId": "mode/fgColor/link-onInverse",
-    "reference": "mode/fgColor/accent-onInverse",
-    "collection": "mode",
-    "mode": "light",
-    "group": "semantic",
-    "scopes": ["TEXT_FILL", "SHAPE_FILL"]
   },
   {
     "name": "fgColor/link",

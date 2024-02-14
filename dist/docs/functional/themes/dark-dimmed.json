@@ -5724,35 +5724,6 @@
     "attributes": {},
     "path": ["fgColor", "onEmphasis"]
   },
-  "fgColor-onInverse": {
-    "value": "#22272e",
-    "$type": "color",
-    "$extensions": {
-      "org.primer.figma": {
-        "collection": "mode",
-        "mode": "dark",
-        "group": "semantic",
-        "scopes": ["fgColor"]
-      }
-    },
-    "filePath": "src/tokens/functional/color/dark/primitives-dark.json5",
-    "isSource": true,
-    "original": {
-      "value": "{base.color.gray.9}",
-      "$type": "color",
-      "$extensions": {
-        "org.primer.figma": {
-          "collection": "mode",
-          "mode": "dark",
-          "group": "semantic",
-          "scopes": ["fgColor"]
-        }
-      }
-    },
-    "name": "fgColor-onInverse",
-    "attributes": {},
-    "path": ["fgColor", "onInverse"]
-  },
   "fgColor-disabled": {
     "value": "#768390",
     "$type": "color",
@@ -5817,35 +5788,6 @@
     "attributes": {},
     "path": ["fgColor", "link", "@"]
   },
-  "fgColor-link-onInverse": {
-    "value": "#316dca",
-    "$type": "color",
-    "$extensions": {
-      "org.primer.figma": {
-        "collection": "mode",
-        "mode": "dark",
-        "group": "semantic",
-        "scopes": ["fgColor"]
-      }
-    },
-    "filePath": "src/tokens/functional/color/dark/primitives-dark.json5",
-    "isSource": true,
-    "original": {
-      "value": "{fgColor.accent.onInverse}",
-      "$type": "color",
-      "$extensions": {
-        "org.primer.figma": {
-          "collection": "mode",
-          "mode": "dark",
-          "group": "semantic",
-          "scopes": ["fgColor"]
-        }
-      }
-    },
-    "name": "fgColor-link-onInverse",
-    "attributes": {},
-    "path": ["fgColor", "link", "onInverse"]
-  },
   "fgColor-neutral": {
     "value": "#636e7b",
     "$type": "color",
@@ -5874,35 +5816,6 @@
     "name": "fgColor-neutral",
     "attributes": {},
     "path": ["fgColor", "neutral", "@"]
-  },
-  "fgColor-neutral-onInverse": {
-    "value": "#545d68",
-    "$type": "color",
-    "$extensions": {
-      "org.primer.figma": {
-        "collection": "mode",
-        "mode": "dark",
-        "group": "semantic",
-        "scopes": ["fgColor"]
-      }
-    },
-    "filePath": "src/tokens/functional/color/dark/primitives-dark.json5",
-    "isSource": true,
-    "original": {
-      "value": "{base.color.gray.5}",
-      "$type": "color",
-      "$extensions": {
-        "org.primer.figma": {
-          "collection": "mode",
-          "mode": "dark",
-          "group": "semantic",
-          "scopes": ["fgColor"]
-        }
-      }
-    },
-    "name": "fgColor-neutral-onInverse",
-    "attributes": {},
-    "path": ["fgColor", "neutral", "onInverse"]
   },
   "fgColor-accent": {
     "value": "#3b7cdb",
@@ -5947,35 +5860,6 @@
     "attributes": {},
     "path": ["fgColor", "accent", "@"]
   },
-  "fgColor-accent-onInverse": {
-    "value": "#316dca",
-    "$type": "color",
-    "$extensions": {
-      "org.primer.figma": {
-        "collection": "mode",
-        "mode": "dark",
-        "group": "semantic",
-        "scopes": ["fgColor"]
-      }
-    },
-    "filePath": "src/tokens/functional/color/dark/primitives-dark.json5",
-    "isSource": true,
-    "original": {
-      "value": "{base.color.blue.5}",
-      "$type": "color",
-      "$extensions": {
-        "org.primer.figma": {
-          "collection": "mode",
-          "mode": "dark",
-          "group": "semantic",
-          "scopes": ["fgColor"]
-        }
-      }
-    },
-    "name": "fgColor-accent-onInverse",
-    "attributes": {},
-    "path": ["fgColor", "accent", "onInverse"]
-  },
   "fgColor-success": {
     "value": "#57ab5a",
     "$type": "color",
@@ -6010,35 +5894,6 @@
     "name": "fgColor-success",
     "attributes": {},
     "path": ["fgColor", "success", "@"]
-  },
-  "fgColor-success-onInverse": {
-    "value": "#347d39",
-    "$type": "color",
-    "$extensions": {
-      "org.primer.figma": {
-        "collection": "mode",
-        "mode": "dark",
-        "group": "semantic",
-        "scopes": ["fgColor"]
-      }
-    },
-    "filePath": "src/tokens/functional/color/dark/primitives-dark.json5",
-    "isSource": true,
-    "original": {
-      "value": "{base.color.green.5}",
-      "$type": "color",
-      "$extensions": {
-        "org.primer.figma": {
-          "collection": "mode",
-          "mode": "dark",
-          "group": "semantic",
-          "scopes": ["fgColor"]
-        }
-      }
-    },
-    "name": "fgColor-success-onInverse",
-    "attributes": {},
-    "path": ["fgColor", "success", "onInverse"]
   },
   "fgColor-attention": {
     "value": "#c69026",
@@ -6075,35 +5930,6 @@
     "attributes": {},
     "path": ["fgColor", "attention", "@"]
   },
-  "fgColor-attention-onInverse": {
-    "value": "#966600",
-    "$type": "color",
-    "$extensions": {
-      "org.primer.figma": {
-        "collection": "mode",
-        "mode": "dark",
-        "group": "semantic",
-        "scopes": ["fgColor"]
-      }
-    },
-    "filePath": "src/tokens/functional/color/dark/primitives-dark.json5",
-    "isSource": true,
-    "original": {
-      "value": "{base.color.yellow.5}",
-      "$type": "color",
-      "$extensions": {
-        "org.primer.figma": {
-          "collection": "mode",
-          "mode": "dark",
-          "group": "semantic",
-          "scopes": ["fgColor"]
-        }
-      }
-    },
-    "name": "fgColor-attention-onInverse",
-    "attributes": {},
-    "path": ["fgColor", "attention", "onInverse"]
-  },
   "fgColor-severe": {
     "value": "#cc6b2c",
     "$type": "color",
@@ -6138,35 +5964,6 @@
     "name": "fgColor-severe",
     "attributes": {},
     "path": ["fgColor", "severe", "@"]
-  },
-  "fgColor-severe-onInverse": {
-    "value": "#ae5622",
-    "$type": "color",
-    "$extensions": {
-      "org.primer.figma": {
-        "collection": "mode",
-        "mode": "dark",
-        "group": "semantic",
-        "scopes": ["fgColor"]
-      }
-    },
-    "filePath": "src/tokens/functional/color/dark/primitives-dark.json5",
-    "isSource": true,
-    "original": {
-      "value": "{base.color.orange.5}",
-      "$type": "color",
-      "$extensions": {
-        "org.primer.figma": {
-          "collection": "mode",
-          "mode": "dark",
-          "group": "semantic",
-          "scopes": ["fgColor"]
-        }
-      }
-    },
-    "name": "fgColor-severe-onInverse",
-    "attributes": {},
-    "path": ["fgColor", "severe", "onInverse"]
   },
   "fgColor-danger": {
     "value": "#e5534b",
@@ -6203,43 +6000,6 @@
     "attributes": {},
     "path": ["fgColor", "danger", "@"]
   },
-  "fgColor-danger-onInverse": {
-    "value": "#ca3d38",
-    "$type": "color",
-    "mix": {
-      "color": "#e5534b",
-      "weight": 0.05
-    },
-    "$extensions": {
-      "org.primer.figma": {
-        "collection": "mode",
-        "mode": "dark",
-        "group": "semantic",
-        "scopes": ["fgColor"]
-      }
-    },
-    "filePath": "src/tokens/functional/color/dark/primitives-dark.json5",
-    "isSource": true,
-    "original": {
-      "value": "{base.color.red.5}",
-      "$type": "color",
-      "mix": {
-        "color": "{base.color.red.4}",
-        "weight": 0.05
-      },
-      "$extensions": {
-        "org.primer.figma": {
-          "collection": "mode",
-          "mode": "dark",
-          "group": "semantic",
-          "scopes": ["fgColor"]
-        }
-      }
-    },
-    "name": "fgColor-danger-onInverse",
-    "attributes": {},
-    "path": ["fgColor", "danger", "onInverse"]
-  },
   "fgColor-open": {
     "value": "#57ab5a",
     "$type": "color",
@@ -6274,35 +6034,6 @@
     "name": "fgColor-open",
     "attributes": {},
     "path": ["fgColor", "open", "@"]
-  },
-  "fgColor-open-onInverse": {
-    "value": "#347d39",
-    "$type": "color",
-    "$extensions": {
-      "org.primer.figma": {
-        "collection": "mode",
-        "mode": "dark",
-        "group": "semantic",
-        "scopes": ["fgColor"]
-      }
-    },
-    "filePath": "src/tokens/functional/color/dark/primitives-dark.json5",
-    "isSource": true,
-    "original": {
-      "value": "{fgColor.success.onInverse}",
-      "$type": "color",
-      "$extensions": {
-        "org.primer.figma": {
-          "collection": "mode",
-          "mode": "dark",
-          "group": "semantic",
-          "scopes": ["fgColor"]
-        }
-      }
-    },
-    "name": "fgColor-open-onInverse",
-    "attributes": {},
-    "path": ["fgColor", "open", "onInverse"]
   },
   "fgColor-closed": {
     "value": "#e5534b",
@@ -6339,35 +6070,6 @@
     "attributes": {},
     "path": ["fgColor", "closed", "@"]
   },
-  "fgColor-closed-onInverse": {
-    "value": "#ca3d38",
-    "$type": "color",
-    "$extensions": {
-      "org.primer.figma": {
-        "collection": "mode",
-        "mode": "dark",
-        "group": "semantic",
-        "scopes": ["fgColor"]
-      }
-    },
-    "filePath": "src/tokens/functional/color/dark/primitives-dark.json5",
-    "isSource": true,
-    "original": {
-      "value": "{fgColor.danger.onInverse}",
-      "$type": "color",
-      "$extensions": {
-        "org.primer.figma": {
-          "collection": "mode",
-          "mode": "dark",
-          "group": "semantic",
-          "scopes": ["fgColor"]
-        }
-      }
-    },
-    "name": "fgColor-closed-onInverse",
-    "attributes": {},
-    "path": ["fgColor", "closed", "onInverse"]
-  },
   "fgColor-done": {
     "value": "#986ee2",
     "$type": "color",
@@ -6403,35 +6105,6 @@
     "attributes": {},
     "path": ["fgColor", "done", "@"]
   },
-  "fgColor-done-onInverse": {
-    "value": "#8256d0",
-    "$type": "color",
-    "$extensions": {
-      "org.primer.figma": {
-        "collection": "mode",
-        "mode": "dark",
-        "group": "semantic",
-        "scopes": ["fgColor"]
-      }
-    },
-    "filePath": "src/tokens/functional/color/dark/primitives-dark.json5",
-    "isSource": true,
-    "original": {
-      "value": "{base.color.purple.5}",
-      "$type": "color",
-      "$extensions": {
-        "org.primer.figma": {
-          "collection": "mode",
-          "mode": "dark",
-          "group": "semantic",
-          "scopes": ["fgColor"]
-        }
-      }
-    },
-    "name": "fgColor-done-onInverse",
-    "attributes": {},
-    "path": ["fgColor", "done", "onInverse"]
-  },
   "fgColor-sponsors": {
     "value": "#c96198",
     "$type": "color",
@@ -6466,35 +6139,6 @@
     "name": "fgColor-sponsors",
     "attributes": {},
     "path": ["fgColor", "sponsors", "@"]
-  },
-  "fgColor-sponsors-onInverse": {
-    "value": "#ae4c82",
-    "$type": "color",
-    "$extensions": {
-      "org.primer.figma": {
-        "collection": "mode",
-        "mode": "dark",
-        "group": "semantic",
-        "scopes": ["fgColor"]
-      }
-    },
-    "filePath": "src/tokens/functional/color/dark/primitives-dark.json5",
-    "isSource": true,
-    "original": {
-      "value": "{base.color.pink.5}",
-      "$type": "color",
-      "$extensions": {
-        "org.primer.figma": {
-          "collection": "mode",
-          "mode": "dark",
-          "group": "semantic",
-          "scopes": ["fgColor"]
-        }
-      }
-    },
-    "name": "fgColor-sponsors-onInverse",
-    "attributes": {},
-    "path": ["fgColor", "sponsors", "onInverse"]
   },
   "bgColor-default": {
     "value": "#22272e",
