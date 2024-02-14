@@ -5741,35 +5741,6 @@
     "attributes": {},
     "path": ["fgColor", "onEmphasis"]
   },
-  "fgColor-onInverse": {
-    "value": "#ffffff",
-    "$type": "color",
-    "$extensions": {
-      "org.primer.figma": {
-        "collection": "mode",
-        "mode": "light",
-        "group": "semantic",
-        "scopes": ["fgColor"]
-      }
-    },
-    "filePath": "src/tokens/functional/color/light/primitives-light.json5",
-    "isSource": true,
-    "original": {
-      "value": "{base.color.gray.0}",
-      "$type": "color",
-      "$extensions": {
-        "org.primer.figma": {
-          "collection": "mode",
-          "mode": "light",
-          "group": "semantic",
-          "scopes": ["fgColor"]
-        }
-      }
-    },
-    "name": "fgColor-onInverse",
-    "attributes": {},
-    "path": ["fgColor", "onInverse"]
-  },
   "fgColor-disabled": {
     "value": "#4b535d",
     "$type": "color",
@@ -5834,35 +5805,6 @@
     "attributes": {},
     "path": ["fgColor", "link", "@"]
   },
-  "fgColor-link-onInverse": {
-    "value": "#67b3fd",
-    "$type": "color",
-    "$extensions": {
-      "org.primer.figma": {
-        "collection": "mode",
-        "mode": "light",
-        "group": "semantic",
-        "scopes": ["fgColor"]
-      }
-    },
-    "filePath": "src/tokens/functional/color/light/primitives-light.json5",
-    "isSource": true,
-    "original": {
-      "value": "{fgColor.accent.onInverse}",
-      "$type": "color",
-      "$extensions": {
-        "org.primer.figma": {
-          "collection": "mode",
-          "mode": "light",
-          "group": "semantic",
-          "scopes": ["fgColor"]
-        }
-      }
-    },
-    "name": "fgColor-link-onInverse",
-    "attributes": {},
-    "path": ["fgColor", "link", "onInverse"]
-  },
   "fgColor-neutral": {
     "value": "#66707b",
     "$type": "color",
@@ -5891,35 +5833,6 @@
     "name": "fgColor-neutral",
     "attributes": {},
     "path": ["fgColor", "neutral", "@"]
-  },
-  "fgColor-neutral-onInverse": {
-    "value": "#ced5dc",
-    "$type": "color",
-    "$extensions": {
-      "org.primer.figma": {
-        "collection": "mode",
-        "mode": "light",
-        "group": "semantic",
-        "scopes": ["fgColor"]
-      }
-    },
-    "filePath": "src/tokens/functional/color/light/overrides/light.high-contrast.json5",
-    "isSource": true,
-    "original": {
-      "value": "{base.color.gray.2}",
-      "$type": "color",
-      "$extensions": {
-        "org.primer.figma": {
-          "collection": "mode",
-          "mode": "light",
-          "group": "semantic",
-          "scopes": ["fgColor"]
-        }
-      }
-    },
-    "name": "fgColor-neutral-onInverse",
-    "attributes": {},
-    "path": ["fgColor", "neutral", "onInverse"]
   },
   "fgColor-accent": {
     "value": "#023b95",
@@ -5956,35 +5869,6 @@
     "attributes": {},
     "path": ["fgColor", "accent", "@"]
   },
-  "fgColor-accent-onInverse": {
-    "value": "#67b3fd",
-    "$type": "color",
-    "$extensions": {
-      "org.primer.figma": {
-        "collection": "mode",
-        "mode": "light",
-        "group": "semantic",
-        "scopes": ["fgColor"]
-      }
-    },
-    "filePath": "src/tokens/functional/color/light/overrides/light.high-contrast.json5",
-    "isSource": true,
-    "original": {
-      "value": "{base.color.blue.2}",
-      "$type": "color",
-      "$extensions": {
-        "org.primer.figma": {
-          "collection": "mode",
-          "mode": "light",
-          "group": "semantic",
-          "scopes": ["fgColor"]
-        }
-      }
-    },
-    "name": "fgColor-accent-onInverse",
-    "attributes": {},
-    "path": ["fgColor", "accent", "onInverse"]
-  },
   "fgColor-success": {
     "value": "#055d20",
     "$type": "color",
@@ -6019,35 +5903,6 @@
     "name": "fgColor-success",
     "attributes": {},
     "path": ["fgColor", "success", "@"]
-  },
-  "fgColor-success-onInverse": {
-    "value": "#43c663",
-    "$type": "color",
-    "$extensions": {
-      "org.primer.figma": {
-        "collection": "mode",
-        "mode": "light",
-        "group": "semantic",
-        "scopes": ["fgColor"]
-      }
-    },
-    "filePath": "src/tokens/functional/color/light/overrides/light.high-contrast.json5",
-    "isSource": true,
-    "original": {
-      "value": "{base.color.green.2}",
-      "$type": "color",
-      "$extensions": {
-        "org.primer.figma": {
-          "collection": "mode",
-          "mode": "light",
-          "group": "semantic",
-          "scopes": ["fgColor"]
-        }
-      }
-    },
-    "name": "fgColor-success-onInverse",
-    "attributes": {},
-    "path": ["fgColor", "success", "onInverse"]
   },
   "fgColor-attention": {
     "value": "#744500",
@@ -6084,35 +5939,6 @@
     "attributes": {},
     "path": ["fgColor", "attention", "@"]
   },
-  "fgColor-attention-onInverse": {
-    "value": "#d5a824",
-    "$type": "color",
-    "$extensions": {
-      "org.primer.figma": {
-        "collection": "mode",
-        "mode": "light",
-        "group": "semantic",
-        "scopes": ["fgColor"]
-      }
-    },
-    "filePath": "src/tokens/functional/color/light/overrides/light.high-contrast.json5",
-    "isSource": true,
-    "original": {
-      "value": "{base.color.yellow.2}",
-      "$type": "color",
-      "$extensions": {
-        "org.primer.figma": {
-          "collection": "mode",
-          "mode": "light",
-          "group": "semantic",
-          "scopes": ["fgColor"]
-        }
-      }
-    },
-    "name": "fgColor-attention-onInverse",
-    "attributes": {},
-    "path": ["fgColor", "attention", "onInverse"]
-  },
   "fgColor-severe": {
     "value": "#873800",
     "$type": "color",
@@ -6147,35 +5973,6 @@
     "name": "fgColor-severe",
     "attributes": {},
     "path": ["fgColor", "severe", "@"]
-  },
-  "fgColor-severe-onInverse": {
-    "value": "#f99636",
-    "$type": "color",
-    "$extensions": {
-      "org.primer.figma": {
-        "collection": "mode",
-        "mode": "light",
-        "group": "semantic",
-        "scopes": ["fgColor"]
-      }
-    },
-    "filePath": "src/tokens/functional/color/light/overrides/light.high-contrast.json5",
-    "isSource": true,
-    "original": {
-      "value": "{base.color.orange.2}",
-      "$type": "color",
-      "$extensions": {
-        "org.primer.figma": {
-          "collection": "mode",
-          "mode": "light",
-          "group": "semantic",
-          "scopes": ["fgColor"]
-        }
-      }
-    },
-    "name": "fgColor-severe-onInverse",
-    "attributes": {},
-    "path": ["fgColor", "severe", "onInverse"]
   },
   "fgColor-danger": {
     "value": "#8a071e",
@@ -6220,37 +6017,6 @@
     "attributes": {},
     "path": ["fgColor", "danger", "@"]
   },
-  "fgColor-danger-onInverse": {
-    "value": "#ff8e8a",
-    "$type": "color",
-    "mix": null,
-    "$extensions": {
-      "org.primer.figma": {
-        "collection": "mode",
-        "mode": "light",
-        "group": "semantic",
-        "scopes": ["fgColor"]
-      }
-    },
-    "filePath": "src/tokens/functional/color/light/overrides/light.high-contrast.json5",
-    "isSource": true,
-    "original": {
-      "value": "{base.color.red.2}",
-      "$type": "color",
-      "mix": null,
-      "$extensions": {
-        "org.primer.figma": {
-          "collection": "mode",
-          "mode": "light",
-          "group": "semantic",
-          "scopes": ["fgColor"]
-        }
-      }
-    },
-    "name": "fgColor-danger-onInverse",
-    "attributes": {},
-    "path": ["fgColor", "danger", "onInverse"]
-  },
   "fgColor-open": {
     "value": "#055d20",
     "$type": "color",
@@ -6285,37 +6051,6 @@
     "name": "fgColor-open",
     "attributes": {},
     "path": ["fgColor", "open", "@"]
-  },
-  "fgColor-open-onInverse": {
-    "value": "#43c663",
-    "$type": "color",
-    "mix": null,
-    "$extensions": {
-      "org.primer.figma": {
-        "collection": "mode",
-        "mode": "light",
-        "group": "semantic",
-        "scopes": ["fgColor"]
-      }
-    },
-    "filePath": "src/tokens/functional/color/light/primitives-light.json5",
-    "isSource": true,
-    "original": {
-      "value": "{fgColor.success.onInverse}",
-      "$type": "color",
-      "mix": null,
-      "$extensions": {
-        "org.primer.figma": {
-          "collection": "mode",
-          "mode": "light",
-          "group": "semantic",
-          "scopes": ["fgColor"]
-        }
-      }
-    },
-    "name": "fgColor-open-onInverse",
-    "attributes": {},
-    "path": ["fgColor", "open", "onInverse"]
   },
   "fgColor-closed": {
     "value": "#8a071e",
@@ -6352,37 +6087,6 @@
     "attributes": {},
     "path": ["fgColor", "closed", "@"]
   },
-  "fgColor-closed-onInverse": {
-    "value": "#ff8e8a",
-    "$type": "color",
-    "mix": null,
-    "$extensions": {
-      "org.primer.figma": {
-        "collection": "mode",
-        "mode": "light",
-        "group": "semantic",
-        "scopes": ["fgColor"]
-      }
-    },
-    "filePath": "src/tokens/functional/color/light/primitives-light.json5",
-    "isSource": true,
-    "original": {
-      "value": "{fgColor.danger.onInverse}",
-      "$type": "color",
-      "mix": null,
-      "$extensions": {
-        "org.primer.figma": {
-          "collection": "mode",
-          "mode": "light",
-          "group": "semantic",
-          "scopes": ["fgColor"]
-        }
-      }
-    },
-    "name": "fgColor-closed-onInverse",
-    "attributes": {},
-    "path": ["fgColor", "closed", "onInverse"]
-  },
   "fgColor-done": {
     "value": "#622cbc",
     "$type": "color",
@@ -6418,35 +6122,6 @@
     "attributes": {},
     "path": ["fgColor", "done", "@"]
   },
-  "fgColor-done-onInverse": {
-    "value": "#c49bff",
-    "$type": "color",
-    "$extensions": {
-      "org.primer.figma": {
-        "collection": "mode",
-        "mode": "light",
-        "group": "semantic",
-        "scopes": ["fgColor"]
-      }
-    },
-    "filePath": "src/tokens/functional/color/light/overrides/light.high-contrast.json5",
-    "isSource": true,
-    "original": {
-      "value": "{base.color.purple.2}",
-      "$type": "color",
-      "$extensions": {
-        "org.primer.figma": {
-          "collection": "mode",
-          "mode": "light",
-          "group": "semantic",
-          "scopes": ["fgColor"]
-        }
-      }
-    },
-    "name": "fgColor-done-onInverse",
-    "attributes": {},
-    "path": ["fgColor", "done", "onInverse"]
-  },
   "fgColor-sponsors": {
     "value": "#971368",
     "$type": "color",
@@ -6481,35 +6156,6 @@
     "name": "fgColor-sponsors",
     "attributes": {},
     "path": ["fgColor", "sponsors", "@"]
-  },
-  "fgColor-sponsors-onInverse": {
-    "value": "#fc87ca",
-    "$type": "color",
-    "$extensions": {
-      "org.primer.figma": {
-        "collection": "mode",
-        "mode": "light",
-        "group": "semantic",
-        "scopes": ["fgColor"]
-      }
-    },
-    "filePath": "src/tokens/functional/color/light/overrides/light.high-contrast.json5",
-    "isSource": true,
-    "original": {
-      "value": "{base.color.pink.2}",
-      "$type": "color",
-      "$extensions": {
-        "org.primer.figma": {
-          "collection": "mode",
-          "mode": "light",
-          "group": "semantic",
-          "scopes": ["fgColor"]
-        }
-      }
-    },
-    "name": "fgColor-sponsors-onInverse",
-    "attributes": {},
-    "path": ["fgColor", "sponsors", "onInverse"]
   },
   "bgColor-default": {
     "value": "#ffffff",
@@ -10966,14 +10612,14 @@
     "path": ["color", "scale", "coral", "9"]
   },
   "shadow-inset": {
-    "value": "inset 0px 1px 0px 0px #01040914",
+    "value": "inset 0px 1px 0px 0px #0104090a",
     "$type": "shadow",
     "filePath": "src/tokens/functional/shadow/light.json5",
     "isSource": true,
     "original": {
       "value": {
         "color": "{base.color.black}",
-        "alpha": 0.08,
+        "alpha": 0.04,
         "offsetX": "0px",
         "offsetY": "1px",
         "blur": "0px",
