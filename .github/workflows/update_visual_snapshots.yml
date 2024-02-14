@@ -15,11 +15,18 @@ jobs:
     runs-on:
       labels: ubuntu-latest-16-cores
     steps:
+      - name: Generate token
+        id: generate_token
+        uses: actions/create-github-app-token@v1
+        with:
+          app_id: ${{ secrets.VRT_APP_ID }}
+          private_key: ${{ secrets.VRT_PRIVATE_KEY }}
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
           repository: ${{ github.event.pull_request.head.repo.full_name }}
           ref: ${{ github.head_ref }}
+          token: ${{ steps.generate_token.outputs.token }}
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
@@ -52,5 +59,6 @@ jobs:
         with:
           commit_message: github-actions[bot] Regenerated snapshots
       - uses: actions-ecosystem/action-remove-labels@v1
+        if: always()
         with:
           labels: 'update snapshots'
