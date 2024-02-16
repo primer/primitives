@@ -1,5 +1,19 @@
 # @primer/primitives
 
+## 7.15.7
+
+### Patch Changes
+
+- [#802](https://github.com/primer/primitives/pull/802) [`4fb40ff`](https://github.com/primer/primitives/commit/4fb40ffd596c80004f059ae5ac327d137be140df) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Update dark mode link color to lighter blue for better contrast
+
+- [#803](https://github.com/primer/primitives/pull/803) [`fce6921`](https://github.com/primer/primitives/commit/fce692154bfab9d580a9e69db85e419683ba2199) Thanks [@langermank](https://github.com/langermank)! - Add `overlay-offset` size token
+
+- [#799](https://github.com/primer/primitives/pull/799) [`f03e153`](https://github.com/primer/primitives/commit/f03e153b86f6919c3627d32407d6685a366f3d6a) Thanks [@langermank](https://github.com/langermank)! - Remove `onInverse` tokens
+
+- [#806](https://github.com/primer/primitives/pull/806) [`7016323`](https://github.com/primer/primitives/commit/7016323dc4a441649282ffb6cab01d8e19c98dfe) Thanks [@langermank](https://github.com/langermank)! - Add `::selection` background color token
+
+- [#804](https://github.com/primer/primitives/pull/804) [`3d8a006`](https://github.com/primer/primitives/commit/3d8a006dc266e6e3088ff6b5622f8d1a21867595) Thanks [@langermank](https://github.com/langermank)! - Darken `muted` border-color to 70% opacity
+
 ## 7.15.6
 
 ### Patch Changes
