@@ -26,9 +26,9 @@ export const Foreground = () => {
   })
   return (
     <Table.Container>
-      <Table.Title as="h1" id="pattern">
+      <h1 className="sr-only" id="table-heading">
         Foreground
-      </Table.Title>
+      </h1>
       <DataTable
         aria-labelledby="pattern"
         data={data}
@@ -72,9 +72,9 @@ export const Background = () => {
   })
   return (
     <Table.Container>
-      <Table.Title as="h1" id="pattern">
+      <h1 className="sr-only" id="table-heading">
         Background
-      </Table.Title>
+      </h1>
       <DataTable
         aria-labelledby="pattern"
         data={data}
@@ -118,9 +118,9 @@ export const Border = () => {
   })
   return (
     <Table.Container>
-      <Table.Title as="h1" id="pattern">
+      <h1 className="sr-only" id="table-heading">
         Border
-      </Table.Title>
+      </h1>
       <DataTable
         aria-labelledby="pattern"
         data={data}
@@ -164,9 +164,9 @@ export const Shadow = () => {
   })
   return (
     <Table.Container>
-      <Table.Title as="h1" id="pattern">
+      <h1 className="sr-only" id="table-heading">
         Shadow
-      </Table.Title>
+      </h1>
       <DataTable
         aria-labelledby="pattern"
         data={data}

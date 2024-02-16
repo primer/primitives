@@ -7,9 +7,17 @@ export type ColorTokenSwatchProps = {
   bgColor?: string
   shadowColor?: string
   outlineColor?: string
+  selectionColor?: string
 }
 
-export function ColorTokenSwatch({textColor, borderColor, bgColor, shadowColor, outlineColor}: ColorTokenSwatchProps) {
+export function ColorTokenSwatch({
+  textColor,
+  borderColor,
+  bgColor,
+  shadowColor,
+  outlineColor,
+  selectionColor,
+}: ColorTokenSwatchProps) {
   return (
     <>
       {textColor && (
@@ -23,6 +31,7 @@ export function ColorTokenSwatch({textColor, borderColor, bgColor, shadowColor, 
       {outlineColor && (
         <div style={{outlineColor: `var(--${outlineColor})`}} className="ColorTokenSwatch-outline"></div>
       )}
+      {selectionColor && <div className="ColorTokenSwatch-selection">Aa</div>}
     </>
   )
 }

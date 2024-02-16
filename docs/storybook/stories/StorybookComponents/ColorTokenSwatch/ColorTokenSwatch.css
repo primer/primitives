@@ -42,3 +42,22 @@
   outline-style: solid;
   border-radius: var(--borderRadius-small);
 }
+
+.ColorTokenSwatch-selection {
+  font: var(--text-codeBlock-shorthand);
+  padding-inline: var(--base-size-8);
+  width: var(--base-size-20);
+  height: var(--base-size-20);
+  position: relative;
+  display: grid;
+  color: var(--fgColor-default);
+}
+
+.ColorTokenSwatch-selection::before {
+  content: '';
+  height: 100%;
+  width: 100%;
+  background: var(--selection-bgColor);
+  position: absolute;
+  border-radius: var(--borderRadius-small);
+}
