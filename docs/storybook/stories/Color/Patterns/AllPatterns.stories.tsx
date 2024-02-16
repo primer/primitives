@@ -27,9 +27,9 @@ export const Avatar = () => {
   })
   return (
     <Table.Container>
-      <Table.Title as="h1" id="pattern">
+      <h1 className="sr-only" id="table-heading">
         Avatar
-      </Table.Title>
+      </h1>
       <DataTable
         aria-labelledby="pattern"
         data={data}
@@ -99,9 +99,9 @@ export const Control = () => {
   }))
   return (
     <Table.Container>
-      <Table.Title as="h1" id="pattern">
+      <h1 className="sr-only" id="table-heading">
         Control
-      </Table.Title>
+      </h1>
       <DataTable
         aria-labelledby="pattern"
         data={data}
@@ -152,9 +152,9 @@ export const Counter = () => {
   })
   return (
     <Table.Container>
-      <Table.Title as="h1" id="pattern">
+      <h1 className="sr-only" id="table-heading">
         Counter
-      </Table.Title>
+      </h1>
       <DataTable
         aria-labelledby="pattern"
         data={data}
@@ -217,9 +217,9 @@ export const Button = () => {
   }))
   return (
     <Table.Container>
-      <Table.Title as="h1" id="pattern">
+      <h1 className="sr-only" id="table-heading">
         Button
-      </Table.Title>
+      </h1>
       <DataTable
         aria-labelledby="pattern"
         data={data}
@@ -270,9 +270,9 @@ export const Focus = () => {
   })
   return (
     <Table.Container>
-      <Table.Title as="h1" id="pattern">
+      <h1 className="sr-only" id="table-heading">
         Focus
-      </Table.Title>
+      </h1>
       <DataTable
         aria-labelledby="pattern"
         data={data}
@@ -316,9 +316,9 @@ export const Header = () => {
   })
   return (
     <Table.Container>
-      <Table.Title as="h1" id="pattern">
+      <h1 className="sr-only" id="table-heading">
         Header
-      </Table.Title>
+      </h1>
       <DataTable
         aria-labelledby="pattern"
         data={data}
@@ -369,9 +369,9 @@ export const Menu = () => {
   })
   return (
     <Table.Container>
-      <Table.Title as="h1" id="pattern">
+      <h1 className="sr-only" id="table-heading">
         Menu
-      </Table.Title>
+      </h1>
       <DataTable
         aria-labelledby="pattern"
         data={data}
@@ -422,9 +422,9 @@ export const Overlay = () => {
   })
   return (
     <Table.Container>
-      <Table.Title as="h1" id="pattern">
+      <h1 className="sr-only" id="table-heading">
         Overlay
-      </Table.Title>
+      </h1>
       <DataTable
         aria-labelledby="pattern"
         data={data}
@@ -475,9 +475,9 @@ export const SelectMenu = () => {
   })
   return (
     <Table.Container>
-      <Table.Title as="h1" id="pattern">
+      <h1 className="sr-only" id="table-heading">
         SelectMenu
-      </Table.Title>
+      </h1>
       <DataTable
         aria-labelledby="pattern"
         data={data}
@@ -528,9 +528,9 @@ export const SideNav = () => {
   })
   return (
     <Table.Container>
-      <Table.Title as="h1" id="pattern">
+      <h1 className="sr-only" id="table-heading">
         SideNav
-      </Table.Title>
+      </h1>
       <DataTable
         aria-labelledby="pattern"
         data={data}
@@ -581,9 +581,9 @@ export const TimelineBadge = () => {
   })
   return (
     <Table.Container>
-      <Table.Title as="h1" id="pattern">
+      <h1 className="sr-only" id="table-heading">
         TimelineBadge
-      </Table.Title>
+      </h1>
       <DataTable
         aria-labelledby="pattern"
         data={data}
@@ -634,11 +634,11 @@ export const UnderlineNav = () => {
   })
   return (
     <Table.Container>
-      <Table.Title as="h1" id="pattern">
+      <h1 className="sr-only" id="table-heading">
         UnderlineNav
-      </Table.Title>
+      </h1>
       <DataTable
-        aria-labelledby="pattern"
+        aria-labelledby="table-heading"
         data={data}
         columns={[
           {
@@ -654,6 +654,52 @@ export const UnderlineNav = () => {
                   borderColor={row.name.includes('borderColor') ? row.name : undefined}
                 />
               )
+            },
+          },
+          {
+            header: 'Token',
+            field: 'name',
+            rowHeader: true,
+            renderCell: row => {
+              return <InlineCode value={row.name} copyClipboard />
+            },
+          },
+          {
+            header: 'Output value',
+            field: 'value',
+            rowHeader: true,
+            renderCell: row => {
+              return <p>{row.value}</p>
+            },
+          },
+        ]}
+      />
+    </Table.Container>
+  )
+}
+
+export const Selection = () => {
+  const data = getTokensByName(colorTokens, 'selection').map(token => {
+    return {
+      id: token.name,
+      ...token,
+    }
+  })
+  return (
+    <Table.Container>
+      <h1 className="sr-only" id="selection">
+        Text selection
+      </h1>
+      <DataTable
+        aria-labelledby="selection"
+        data={data}
+        columns={[
+          {
+            header: 'Sample',
+            field: 'name',
+            rowHeader: true,
+            renderCell: row => {
+              return <ColorTokenSwatch selectionColor={row.name.includes('bgColor') ? row.name : undefined} />
             },
           },
           {
