@@ -51,7 +51,7 @@ export const Breakpoints = () => {
             field: 'original',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.value}</p>
+              return <p>{row.original.value}</p>
             },
           },
         ]}
