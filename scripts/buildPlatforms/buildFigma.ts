@@ -38,18 +38,18 @@ export const buildFigma = (buildOptions: ConfigGeneratorOptions): void => {
   }
   //
   for (const {filename, source, include} of themes) {
-    // if (['light', 'dark'].includes(filename)) {
-    // build functional scales
-    PrimerStyleDictionary.extend({
-      source,
-      include,
-      platforms: {
-        figma: figma(`figma/themes/${filename}.json`, buildOptions.prefix, buildOptions.buildPath, {
-          mode: filename,
-        }),
-      },
-    }).buildAllPlatforms()
-    // }
+    if (!['light-high-contrast', 'dark-high-contrast', 'dark-dimmed'].includes(filename)) {
+      // build functional scales
+      PrimerStyleDictionary.extend({
+        source,
+        include,
+        platforms: {
+          figma: figma(`figma/themes/${filename}.json`, buildOptions.prefix, buildOptions.buildPath, {
+            mode: filename,
+          }),
+        },
+      }).buildAllPlatforms()
+    }
   }
   /** -----------------------------------
    * Size tokens
