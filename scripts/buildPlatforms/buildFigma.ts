@@ -38,7 +38,7 @@ export const buildFigma = (buildOptions: ConfigGeneratorOptions): void => {
   }
   //
   for (const {filename, source, include} of themes) {
-    if (!['light-high-contrast', 'dark-high-contrast', 'dark-dimmed'].includes(filename)) {
+    if (!['dark-high-contrast', 'dark-dimmed'].includes(filename)) {
       // build functional scales
       PrimerStyleDictionary.extend({
         source,
