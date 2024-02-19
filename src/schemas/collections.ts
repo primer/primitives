@@ -4,8 +4,10 @@ import {schemaErrorMessage} from '../utilities/schemaErrorMessage'
 
 type Collections =
   | 'base/color/light'
+  | 'base/color/light-high-contrast'
   | 'base/color/dark'
   | 'base/color/dark-dimmed'
+  | 'base/color/dark-high-contrast'
   | 'mode'
   | 'pattern/mode'
   | 'base/size'
