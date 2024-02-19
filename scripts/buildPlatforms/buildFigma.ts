@@ -26,6 +26,14 @@ export const buildFigma = (buildOptions: ConfigGeneratorOptions): void => {
       name: 'dark',
       source: [`src/tokens/base/color/dark/dark.json5`],
     },
+    {
+      name: 'dark-high-constrast',
+      source: [`src/tokens/base/color/dark/dark.json5`, `src/tokens/base/color/dark/dark.high-contrast.json5`],
+    },
+    {
+      name: 'dark-dimmed',
+      source: [`src/tokens/base/color/dark/dark.json5`, `src/tokens/base/color/dark/dark.dimmed.json5`],
+    },
   ]
 
   for (const {name, source} of baseScales) {
@@ -38,18 +46,16 @@ export const buildFigma = (buildOptions: ConfigGeneratorOptions): void => {
   }
   //
   for (const {filename, source, include} of themes) {
-    if (!['dark-high-contrast', 'dark-dimmed'].includes(filename)) {
-      // build functional scales
-      PrimerStyleDictionary.extend({
-        source,
-        include,
-        platforms: {
-          figma: figma(`figma/themes/${filename}.json`, buildOptions.prefix, buildOptions.buildPath, {
-            mode: filename,
-          }),
-        },
-      }).buildAllPlatforms()
-    }
+    // build functional scales
+    PrimerStyleDictionary.extend({
+      source,
+      include,
+      platforms: {
+        figma: figma(`figma/themes/${filename}.json`, buildOptions.prefix, buildOptions.buildPath, {
+          mode: filename,
+        }),
+      },
+    }).buildAllPlatforms()
   }
   /** -----------------------------------
    * Size tokens
