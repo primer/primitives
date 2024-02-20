@@ -19,10 +19,6 @@ export const buildFigma = (buildOptions: ConfigGeneratorOptions): void => {
       source: [`src/tokens/base/color/light/light.json5`, `src/tokens/base/color/light/light.high-contrast.json5`],
     },
     {
-      name: 'light',
-      source: [`src/tokens/base/color/light/light.json5`],
-    },
-    {
       name: 'dark',
       source: [`src/tokens/base/color/dark/dark.json5`],
     },
@@ -52,7 +48,7 @@ export const buildFigma = (buildOptions: ConfigGeneratorOptions): void => {
       include,
       platforms: {
         figma: figma(`figma/themes/${filename}.json`, buildOptions.prefix, buildOptions.buildPath, {
-          mode: filename,
+          mode: filename.replace('-', ' '),
         }),
       },
     }).buildAllPlatforms()
