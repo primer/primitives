@@ -4,8 +4,10 @@ import {schemaErrorMessage} from '../utilities/schemaErrorMessage'
 
 type Collections =
   | 'base/color/light'
+  | 'base/color/light-high-contrast'
   | 'base/color/dark'
   | 'base/color/dark-dimmed'
+  | 'base/color/dark-high-contrast'
   | 'mode'
   | 'pattern/mode'
   | 'base/size'
@@ -24,7 +26,16 @@ export const collection = (collections: Collections[]) => {
   )
 }
 
-type Modes = 'light' | 'dark'
+type Modes =
+  | 'light'
+  | 'dark'
+  | 'dark dimmed'
+  | 'light high contrast'
+  | 'dark high contrast'
+  | 'light colorblind'
+  | 'dark colorblind'
+  | 'light tritanopia'
+  | 'dark tritanopia'
 
 export const mode = (modes: Modes[]) => {
   return z.string().refine(

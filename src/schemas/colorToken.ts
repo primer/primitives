@@ -24,12 +24,24 @@ export const colorToken = baseToken
         'org.primer.figma': z.object({
           collection: collection([
             'base/color/light',
+            'base/color/light-high-contrast',
             'base/color/dark',
             'base/color/dark-dimmed',
+            'base/color/dark-high-contrast',
             'mode',
             'pattern/mode',
           ]).optional(),
-          mode: mode(['light', 'dark']).optional(),
+          mode: mode([
+            'light',
+            'dark',
+            'dark dimmed',
+            'light high contrast',
+            'dark high contrast',
+            'light colorblind',
+            'dark colorblind',
+            'light tritanopia',
+            'dark tritanopia',
+          ]).optional(),
           scopes: scopes(['all', 'bgColor', 'fgColor', 'borderColor']).optional(),
         }),
       })

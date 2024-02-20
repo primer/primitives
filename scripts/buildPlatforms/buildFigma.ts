@@ -15,8 +15,20 @@ export const buildFigma = (buildOptions: ConfigGeneratorOptions): void => {
       source: [`src/tokens/base/color/light/light.json5`],
     },
     {
+      name: 'light-high-constrast',
+      source: [`src/tokens/base/color/light/light.json5`, `src/tokens/base/color/light/light.high-contrast.json5`],
+    },
+    {
       name: 'dark',
       source: [`src/tokens/base/color/dark/dark.json5`],
+    },
+    {
+      name: 'dark-high-constrast',
+      source: [`src/tokens/base/color/dark/dark.json5`, `src/tokens/base/color/dark/dark.high-contrast.json5`],
+    },
+    {
+      name: 'dark-dimmed',
+      source: [`src/tokens/base/color/dark/dark.json5`, `src/tokens/base/color/dark/dark.dimmed.json5`],
     },
   ]
 
@@ -30,18 +42,16 @@ export const buildFigma = (buildOptions: ConfigGeneratorOptions): void => {
   }
   //
   for (const {filename, source, include} of themes) {
-    if (['light', 'dark'].includes(filename)) {
-      // build functional scales
-      PrimerStyleDictionary.extend({
-        source,
-        include,
-        platforms: {
-          figma: figma(`figma/themes/${filename}.json`, buildOptions.prefix, buildOptions.buildPath, {
-            mode: filename,
-          }),
-        },
-      }).buildAllPlatforms()
-    }
+    // build functional scales
+    PrimerStyleDictionary.extend({
+      source,
+      include,
+      platforms: {
+        figma: figma(`figma/themes/${filename}.json`, buildOptions.prefix, buildOptions.buildPath, {
+          mode: filename.replaceAll('-', ' '),
+        }),
+      },
+    }).buildAllPlatforms()
   }
   /** -----------------------------------
    * Size tokens
@@ -109,7 +119,17 @@ export const buildFigma = (buildOptions: ConfigGeneratorOptions): void => {
 
   // define the order of the modes
   // we inverse it to deal with the -1 of the indexOf if item is not found in the array: basically anything that is not in the list should come last
-  const modeOrder = ['light', 'dark'].reverse()
+  const modeOrder = [
+    'light',
+    'dark',
+    'dark dimmed',
+    'light high contrast',
+    'dark high contrast',
+    'light colorblind',
+    'dark colorblind',
+    'light tritanopia',
+    'dark tritanopia',
+  ].reverse()
   // sort modes in the order defined above
   for (const collection in collections) {
     collections[collection].modes.sort((a, b) => modeOrder.indexOf(b) - modeOrder.indexOf(a))
