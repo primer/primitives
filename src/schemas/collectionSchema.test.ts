@@ -3,8 +3,10 @@ import {collection, mode} from './collections'
 describe('Schema: collection', () => {
   const collections = collection([
     'base/color/light',
+    'base/color/light-high-contrast',
     'base/color/dark',
     'base/color/dark-dimmed',
+    'base/color/dark-high-contrast',
     'mode',
     'pattern/mode',
   ])
@@ -26,7 +28,17 @@ describe('Schema: collection', () => {
 })
 
 describe('Schema: mode', () => {
-  const modes = mode(['light', 'dark'])
+  const modes = mode([
+    'light',
+    'dark',
+    'dark dimmed',
+    'light high contrast',
+    'dark high contrast',
+    'light colorblind',
+    'dark colorblind',
+    'light tritanopia',
+    'dark tritanopia',
+  ])
 
   it('passes on valid values', () => {
     expect(modes.safeParse('light').success).toStrictEqual(true)

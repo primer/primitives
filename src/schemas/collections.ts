@@ -26,7 +26,16 @@ export const collection = (collections: Collections[]) => {
   )
 }
 
-type Modes = 'light' | 'dark'
+type Modes =
+  | 'light'
+  | 'dark'
+  | 'dark dimmed'
+  | 'light high contrast'
+  | 'dark high contrast'
+  | 'light colorblind'
+  | 'dark colorblind'
+  | 'light tritanopia'
+  | 'dark tritanopia'
 
 export const mode = (modes: Modes[]) => {
   return z.string().refine(
