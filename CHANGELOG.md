@@ -1,5 +1,11 @@
 # @primer/primitives
 
+## 7.15.8
+
+### Patch Changes
+
+- [#805](https://github.com/primer/primitives/pull/805) [`6e59707`](https://github.com/primer/primitives/commit/6e597077a16cdde21c68713968ff53dedad2c674) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Adding exports for all colormodes for Figma
+
 ## 7.15.7
 
 ### Patch Changes
