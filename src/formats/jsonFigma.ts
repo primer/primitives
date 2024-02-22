@@ -3,6 +3,9 @@ import {format} from 'prettier'
 import type {FormatterArguments} from 'style-dictionary/types/Format'
 import {transformNamePathToFigma} from '../transformers/namePathToFigma'
 import type {ShadowTokenValue} from '../types/ShadowTokenValue'
+import {hexToRgbaFloat} from '../transformers/utilities/hexToRgbaFloat'
+import type {RgbaFloat} from '../transformers/utilities/isRgbaFloat'
+import {isRgbaFloat} from '../transformers/utilities/isRgbaFloat'
 const {sortByReference} = StyleDictionary.formatHelpers
 
 const isReference = (string: string): boolean => /^\{([^\\]*)\}$/g.test(string)
@@ -30,7 +33,11 @@ const getFigmaType = (type: string): string => {
 }
 // const toRgbaFloat = (color: string | , alpha?: number) => {}
 
-const shadowToVariables = (name: string, values: ShadowTokenValue, token: StyleDictionary.TransformedToken) => {
+const shadowToVariables = (
+  name: string,
+  values: Omit<ShadowTokenValue, 'color'> & {color: string | RgbaFloat},
+  token: StyleDictionary.TransformedToken,
+) => {
   // floatValue
   const floatValue = (property: 'offsetX' | 'offsetY' | 'blur' | 'spread') => ({
     name: `${name}/${property}`,
@@ -52,7 +59,9 @@ const shadowToVariables = (name: string, values: ShadowTokenValue, token: StyleD
     floatValue('spread'),
     {
       name: `${name}/color`,
-      value: toRgbaFloat(values.color, token.alpha),
+      value: isRgbaFloat(values.color)
+        ? {...values.color, ...(token.alpha ? {a: token.alpha} : {})}
+        : hexToRgbaFloat(values.color, token.alpha),
       // value: {...values.color, a: token.alpha || values.color.a},
       type: 'COLOR',
       scopes: ['EFFECT_COLOR'],
