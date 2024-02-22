@@ -3,7 +3,7 @@ import type {PlatformInitializer} from '~/src/types/PlatformInitializer'
 import {isSource} from '~/src/filters'
 
 const validFigmaToken = (token: StyleDictionary.TransformedToken) => {
-  const validTypes = ['color', 'dimension']
+  const validTypes = ['color', 'dimension', 'shadow']
   // is a siource token, not an included one
   if (!isSource(token)) return false
   // has a collection attribute
@@ -25,6 +25,7 @@ export const figma: PlatformInitializer = (outputFile, prefix, buildPath, option
     'name/pathToFigma',
     // 'name/pathToSlashNotation',
     'figma/attributes',
+    // 'figma/shadow',
     'dimension/pixelUnitless',
     // 'border/figma',
     // 'typography/figma',

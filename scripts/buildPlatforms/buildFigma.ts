@@ -74,6 +74,31 @@ export const buildFigma = (buildOptions: ConfigGeneratorOptions): void => {
   }).buildAllPlatforms()
 
   /** -----------------------------------
+   * Shadow tokens
+   * ----------------------------------- */
+  const shadowFiles = [
+    {
+      name: 'shadow-light',
+      source: [`src/tokens/functional/shadow/light.json5`],
+      include: [`src/tokens/base/color/light/light.json5`],
+    },
+    {
+      name: 'shadow-dark',
+      source: [`src/tokens/functional/shadow/dark.json5`],
+      include: [`src/tokens/base/color/dark/dark.json5`],
+    },
+  ]
+  //
+  for (const {name, source, include} of shadowFiles) {
+    PrimerStyleDictionary.extend({
+      source,
+      include,
+      platforms: {
+        figma: figma(`figma/shadows/${name}.json`, buildOptions.prefix, buildOptions.buildPath),
+      },
+    }).buildAllPlatforms()
+  }
+  /** -----------------------------------
    * Create list of files
    * ----------------------------------- */
   const dirNames = fs

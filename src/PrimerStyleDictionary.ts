@@ -21,6 +21,7 @@ import {
   namePathToFigma,
   shadowToCss,
   typographyToCss,
+  shadowToFigmaVariable,
 } from './transformers'
 import {
   scssMixinCssVariables,
@@ -154,6 +155,11 @@ StyleDictionary.registerTransform({
 StyleDictionary.registerTransform({
   name: 'figma/attributes',
   ...figmaAttributes,
+})
+
+StyleDictionary.registerTransform({
+  name: 'figma/shadow',
+  ...shadowToFigmaVariable,
 })
 
 StyleDictionary.registerTransform({

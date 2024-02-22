@@ -12,6 +12,13 @@
         },
       ],
       $type: 'shadow',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'mode',
+          mode: 'light',
+          group: 'shadow'
+        },
+      },
     },
   },
   button: {
@@ -136,6 +143,13 @@
           },
         ],
         $type: 'shadow',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'light',
+            group: 'shadow'
+          },
+        },
       },
       medium: {
         $value: [
