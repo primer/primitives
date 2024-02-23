@@ -95,6 +95,12 @@ export const buildFigma = (buildOptions: ConfigGeneratorOptions): void => {
       include: [`src/tokens/base/color/dark/dark.json5`],
       mode: 'dark',
     },
+    {
+      name: 'dark-high-contrast',
+      source: [`src/tokens/functional/shadow/dark.json5`],
+      include: [`src/tokens/base/color/dark/dark.json5`, `src/tokens/base/color/dark/dark.high-contrast.json5`],
+      mode: 'dark high contrast',
+    },
   ]
   //
   for (const {name, source, include, mode} of shadowFiles) {
