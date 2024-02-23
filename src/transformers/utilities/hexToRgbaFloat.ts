@@ -1,9 +1,4 @@
-type RgbaFloat = {
-  r: number
-  g: number
-  b: number
-  a?: number
-}
+import type {RgbaFloat} from './isRgbaFloat'
 
 export const hexToRgbaFloat = (hex: string, alpha?: number): RgbaFloat => {
   // retrieve spots from hex value (hex 3, hex 4, hex 6 or hex 8)
