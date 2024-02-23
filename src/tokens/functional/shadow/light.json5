@@ -218,6 +218,14 @@
       small: {
         $value: [
           {
+            color: '{overlay.borderColor}',
+            alpha: 1,
+            offsetX: '0px',
+            offsetY: '0px',
+            blur: '0px',
+            spread: '1px',
+          },
+          {
             color: '{base.color.gray.7}',
             alpha: 0.04,
             offsetX: '0px',
@@ -245,6 +253,14 @@
       },
       medium: {
         $value: [
+          {
+            color: '{overlay.borderColor}',
+            alpha: 1,
+            offsetX: '0px',
+            offsetY: '0px',
+            blur: '0px',
+            spread: '1px',
+          },
           {
             color: '{base.color.gray.7}',
             alpha: 0.08,
@@ -290,6 +306,14 @@
       large: {
         $value: [
           {
+            color: '{overlay.borderColor}',
+            alpha: 1,
+            offsetX: '0px',
+            offsetY: '0px',
+            blur: '0px',
+            spread: '1px',
+          },
+          {
             color: '{base.color.gray.7}',
             alpha: 0.24,
             offsetX: '0px',
@@ -309,6 +333,14 @@
       },
       xlarge: {
         $value: [
+          {
+            color: '{overlay.borderColor}',
+            alpha: 1,
+            offsetX: '0px',
+            offsetY: '0px',
+            blur: '0px',
+            spread: '1px',
+          },
           {
             color: '{base.color.gray.7}',
             alpha: 0.32,

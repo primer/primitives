@@ -90,6 +90,15 @@ export const buildFigma = (buildOptions: ConfigGeneratorOptions): void => {
       mode: 'light high contrast',
     },
     {
+      name: 'light-colorblind',
+      source: [`src/tokens/functional/shadow/light.json5`],
+      include: [
+        `src/tokens/base/color/light/light.json5`,
+        `src/tokens/base/color/light/light.protanopia-deuteranopia.json5`,
+      ],
+      mode: 'light colorblind',
+    },
+    {
       name: 'dark',
       source: [`src/tokens/functional/shadow/dark.json5`],
       include: [`src/tokens/base/color/dark/dark.json5`],
@@ -100,6 +109,15 @@ export const buildFigma = (buildOptions: ConfigGeneratorOptions): void => {
       source: [`src/tokens/functional/shadow/dark.json5`],
       include: [`src/tokens/base/color/dark/dark.json5`, `src/tokens/base/color/dark/dark.high-contrast.json5`],
       mode: 'dark high contrast',
+    },
+    {
+      name: 'dark-colorblind',
+      source: [`src/tokens/functional/shadow/dark.json5`],
+      include: [
+        `src/tokens/base/color/dark/dark.json5`,
+        `src/tokens/base/color/dark/dark.protanopia-deuteranopia.json5`,
+      ],
+      mode: 'dark colorblind',
     },
   ]
   //
