@@ -88,11 +88,21 @@ export const jsonFigma: StyleDictionary.Formatter = ({dictionary, file: _file, p
       const shadowValues = !Array.isArray(value) ? [value] : value
       // if only one set of shadow values is present
       if (shadowValues.length === 1) {
-        tokens.push(...shadowToVariables(token.name, shadowValues[0], token))
+        tokens.push(
+          ...shadowToVariables(token.name, shadowValues[0], {
+            ...token,
+            ...(platform.mode ? {mode: platform.mode} : {}),
+          }),
+        )
       } else {
         // if multiple shadow sets values are present we need loop through them and add the index to the name
         for (const [index, stepValue] of shadowValues.entries()) {
-          tokens.push(...shadowToVariables(`${token.name}/${index + 1}`, stepValue, token))
+          tokens.push(
+            ...shadowToVariables(`${token.name}/${index + 1}`, stepValue, {
+              ...token,
+              ...(platform.mode ? {mode: platform.mode} : {}),
+            }),
+          )
         }
       }
       // other tokens just get added to tokens array

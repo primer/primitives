@@ -78,23 +78,31 @@ export const buildFigma = (buildOptions: ConfigGeneratorOptions): void => {
    * ----------------------------------- */
   const shadowFiles = [
     {
-      name: 'shadow-light',
+      name: 'light',
       source: [`src/tokens/functional/shadow/light.json5`],
       include: [`src/tokens/base/color/light/light.json5`],
+      mode: 'light',
     },
     {
-      name: 'shadow-dark',
+      name: 'light-high-contrast',
+      source: [`src/tokens/functional/shadow/light.json5`],
+      include: [`src/tokens/base/color/light/light.json5`, `src/tokens/base/color/light/light.high-contrast.json5`],
+      mode: 'light high contrast',
+    },
+    {
+      name: 'dark',
       source: [`src/tokens/functional/shadow/dark.json5`],
       include: [`src/tokens/base/color/dark/dark.json5`],
+      mode: 'dark',
     },
   ]
   //
-  for (const {name, source, include} of shadowFiles) {
+  for (const {name, source, include, mode} of shadowFiles) {
     PrimerStyleDictionary.extend({
       source,
       include,
       platforms: {
-        figma: figma(`figma/shadows/${name}.json`, buildOptions.prefix, buildOptions.buildPath),
+        figma: figma(`figma/shadows/${name}.json`, buildOptions.prefix, buildOptions.buildPath, {mode}),
       },
     }).buildAllPlatforms()
   }

@@ -41,6 +41,7 @@ export const figma: PlatformInitializer = (outputFile, prefix, buildPath, option
       format: `json/figma`,
       options: {
         outputReferences: true,
+        mode: options?.mode,
       },
     },
   ],
