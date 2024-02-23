@@ -5,6 +5,7 @@ import {getTokenValue} from './utilities/getTokenValue'
 import {rgbaFloatToHex} from './utilities/rgbaFloatToHex'
 import mix from './utilities/mix'
 import {hexToRgbaFloat} from './utilities/hexToRgbaFloat'
+import {isRgbaFloat} from './utilities/isRgbaFloat'
 
 const toRgbaFloat = (token: StyleDictionary.TransformedToken, alpha?: number) => {
   let tokenValue = getTokenValue(token)
@@ -23,23 +24,6 @@ const toRgbaFloat = (token: StyleDictionary.TransformedToken, alpha?: number) =>
   }
   // return color as RgbaFloat
   return hexToRgbaFloat(hex, alpha)
-}
-
-// sum up the values of all values in an array
-const sum = (array: unknown[]): number => array.reduce((acc: number, v: unknown) => acc + parseInt(`${v}`), 0)
-
-const isRgbaFloat = (value: unknown) => {
-  if (
-    value &&
-    typeof value === `object` &&
-    'r' in value &&
-    'g' in value &&
-    'b' in value &&
-    sum([value.r, value.g, value.b]) < 5
-  ) {
-    return true
-  }
-  return false
 }
 
 /**
