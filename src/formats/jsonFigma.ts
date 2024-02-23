@@ -31,7 +31,6 @@ const getFigmaType = (type: string): string => {
   if (type in validTypes) return validTypes[type as keyof typeof validTypes]
   throw new Error(`Invalid type: ${type}`)
 }
-// const toRgbaFloat = (color: string | , alpha?: number) => {}
 
 const shadowToVariables = (
   name: string,
@@ -60,9 +59,8 @@ const shadowToVariables = (
     {
       name: `${name}/color`,
       value: isRgbaFloat(values.color)
-        ? {...values.color, ...(token.alpha ? {a: token.alpha} : {})}
-        : hexToRgbaFloat(values.color, token.alpha),
-      // value: {...values.color, a: token.alpha || values.color.a},
+        ? {...values.color, ...(values.alpha ? {a: values.alpha} : {})}
+        : hexToRgbaFloat(values.color, values.alpha),
       type: 'COLOR',
       scopes: ['EFFECT_COLOR'],
       mode,
@@ -78,40 +76,45 @@ const shadowToVariables = (
  * @returns formatted `string`
  */
 export const jsonFigma: StyleDictionary.Formatter = ({dictionary, file: _file, platform}: FormatterArguments) => {
-  // sort tokens by reference
-  const shadows: Record<string, unknown>[] = []
-  const tokens = dictionary.allTokens.sort(sortByReference(dictionary)).map(token => {
+  // array to store tokens in
+  const tokens: Record<string, unknown>[] = []
+  // loop through tokens sorted by reference
+  for (const token of dictionary.allTokens.sort(sortByReference(dictionary))) {
+    // deconstruct token
     const {attributes, value, $type, comment: description, original, alpha, mix} = token
     const {mode, collection, scopes, group, codeSyntax} = attributes || {}
-
+    // shadows need to be specifically dealt with
     if ($type === 'shadow') {
+      // if only one set of shadow values is present
       if (token.value.length === 1) {
-        shadows.push(...shadowToVariables(token.name, token.value[0], token))
+        tokens.push(...shadowToVariables(token.name, token.value[0], token))
       } else {
+        // if multiple shadow sets values are present we need loop through them and add the index to the name
         for (const [index, stepValue] of token.value.entries()) {
-          shadows.push(...shadowToVariables(`${token.name}/${index + 1}`, stepValue, token))
+          tokens.push(...shadowToVariables(`${token.name}/${index + 1}`, stepValue, token))
         }
       }
-      return {}
+      // other tokens just get added to tokens array
+    } else {
+      tokens.push({
+        name: token.name,
+        value,
+        type: getFigmaType($type),
+        alpha,
+        isMix: mix ? true : undefined,
+        description,
+        refId: [collection, token.name].filter(Boolean).join('/'),
+        reference: getReference(dictionary, original.value, platform),
+        collection,
+        mode,
+        group,
+        scopes,
+        codeSyntax,
+      })
     }
-    return {
-      name: token.name,
-      value,
-      type: getFigmaType($type),
-      alpha,
-      isMix: mix ? true : undefined,
-      description,
-      refId: [collection, token.name].filter(Boolean).join('/'),
-      reference: getReference(dictionary, original.value, platform),
-      collection,
-      mode,
-      group,
-      scopes,
-      codeSyntax,
-    }
-  })
+  }
   // add file header and convert output
-  const output = JSON.stringify([...tokens, ...shadows], null, 2)
+  const output = JSON.stringify(tokens, null, 2)
   // return prettified
   return format(output, {parser: 'json', printWidth: 500})
 }

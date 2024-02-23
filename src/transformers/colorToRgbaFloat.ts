@@ -7,7 +7,7 @@ import mix from './utilities/mix'
 import {hexToRgbaFloat} from './utilities/hexToRgbaFloat'
 import {isRgbaFloat} from './utilities/isRgbaFloat'
 
-export const toRgbaFloat = (token: StyleDictionary.TransformedToken, alpha?: number) => {
+const toRgbaFloat = (token: StyleDictionary.TransformedToken, alpha?: number) => {
   let tokenValue = getTokenValue(token)
   let tokenMixColor = token.mix?.color
   // get hex value from color string
