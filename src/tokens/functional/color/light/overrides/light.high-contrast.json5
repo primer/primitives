@@ -423,4 +423,17 @@
       },
     },
   },
+  overlay: {
+    borderColor: {
+      $value: '{base.color.gray.8}',
+      $type: 'color',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'mode',
+          mode: 'light',
+          group: 'component (internal)',
+        },
+      },
+    },
+  },
 }
