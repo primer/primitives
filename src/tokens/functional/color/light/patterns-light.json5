@@ -1901,6 +1901,17 @@
         },
       },
     },
+    borderColor: {
+      $value: '{base.color.transparent}',
+      $type: 'color',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'mode',
+          mode: 'light',
+          group: 'component (internal)',
+        },
+      },
+    },
     backdrop: {
       bgColor: {
         $value: '{base.color.gray.4}',

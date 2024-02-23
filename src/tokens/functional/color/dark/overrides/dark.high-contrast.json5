@@ -368,4 +368,17 @@
       },
     },
   },
+  overlay: {
+    borderColor: {
+      $value: '{base.color.gray.5}',
+      $type: 'color',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'mode',
+          mode: 'dark',
+          group: 'component (internal)',
+        },
+      },
+    },
+  },
 }
