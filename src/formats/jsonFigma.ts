@@ -40,7 +40,7 @@ const shadowToVariables = (
   // floatValue
   const floatValue = (property: 'offsetX' | 'offsetY' | 'blur' | 'spread') => ({
     name: `${name}/${property}`,
-    value: values[property].replace('px', ''),
+    value: parseInt(values[property].replace('px', '')),
     type: 'FLOAT',
     scopes: ['EFFECT_FLOAT'],
     mode,
