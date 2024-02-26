@@ -80,13 +80,22 @@ export const buildFigma = (buildOptions: ConfigGeneratorOptions): void => {
     {
       name: 'light',
       source: [`src/tokens/functional/shadow/light.json5`],
-      include: [`src/tokens/base/color/light/light.json5`],
+      include: [
+        `src/tokens/base/color/light/light.json5`,
+        `src/tokens/functional/color/light/primitives-light.json5`,
+        `src/tokens/functional/color/light/patterns-light.json5`,
+      ],
       mode: 'light',
     },
     {
       name: 'light-high-contrast',
       source: [`src/tokens/functional/shadow/light.json5`],
-      include: [`src/tokens/base/color/light/light.json5`, `src/tokens/base/color/light/light.high-contrast.json5`],
+      include: [
+        `src/tokens/base/color/light/light.json5`,
+        `src/tokens/base/color/light/light.high-contrast.json5`,
+        `src/tokens/functional/color/light/primitives-light.json5`,
+        `src/tokens/functional/color/light/patterns-light.json5`,
+      ],
       mode: 'light high contrast',
     },
     {
@@ -95,19 +104,30 @@ export const buildFigma = (buildOptions: ConfigGeneratorOptions): void => {
       include: [
         `src/tokens/base/color/light/light.json5`,
         `src/tokens/base/color/light/light.protanopia-deuteranopia.json5`,
+        `src/tokens/functional/color/light/primitives-light.json5`,
+        `src/tokens/functional/color/light/patterns-light.json5`,
       ],
       mode: 'light colorblind',
     },
     {
       name: 'dark',
       source: [`src/tokens/functional/shadow/dark.json5`],
-      include: [`src/tokens/base/color/dark/dark.json5`],
+      include: [
+        `src/tokens/base/color/dark/dark.json5`,
+        `src/tokens/functional/color/dark/primitives-dark.json5`,
+        `src/tokens/functional/color/dark/patterns-dark.json5`,
+      ],
       mode: 'dark',
     },
     {
       name: 'dark-high-contrast',
       source: [`src/tokens/functional/shadow/dark.json5`],
-      include: [`src/tokens/base/color/dark/dark.json5`, `src/tokens/base/color/dark/dark.high-contrast.json5`],
+      include: [
+        `src/tokens/base/color/dark/dark.json5`,
+        `src/tokens/base/color/dark/dark.high-contrast.json5`,
+        `src/tokens/functional/color/dark/primitives-dark.json5`,
+        `src/tokens/functional/color/dark/patterns-dark.json5`,
+      ],
       mode: 'dark high contrast',
     },
     {
@@ -116,6 +136,8 @@ export const buildFigma = (buildOptions: ConfigGeneratorOptions): void => {
       include: [
         `src/tokens/base/color/dark/dark.json5`,
         `src/tokens/base/color/dark/dark.protanopia-deuteranopia.json5`,
+        `src/tokens/functional/color/dark/primitives-dark.json5`,
+        `src/tokens/functional/color/dark/patterns-dark.json5`,
       ],
       mode: 'dark colorblind',
     },
