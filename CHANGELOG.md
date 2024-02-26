@@ -1,5 +1,15 @@
 # @primer/primitives
 
+## 7.15.9
+
+### Patch Changes
+
+- [#809](https://github.com/primer/primitives/pull/809) [`296bc3e`](https://github.com/primer/primitives/commit/296bc3e0b57f08cd075c11e76f5b68043e782535) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Adding shadow tokens for figma
+
+- [#817](https://github.com/primer/primitives/pull/817) [`11f00db`](https://github.com/primer/primitives/commit/11f00dbc78b4731cddbfa48de95b8855599fc6aa) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Update alpha on shadow outline
+
+- [#810](https://github.com/primer/primitives/pull/810) [`a607bde`](https://github.com/primer/primitives/commit/a607bde1f804c4644764c38b8ef0edfafb6357cc) Thanks [@langermank](https://github.com/langermank)! - Shadow color adjustments
+
 ## 7.15.8
 
 ### Patch Changes
