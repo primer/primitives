@@ -42,7 +42,7 @@ const shadowToVariables = (
     name: `${name}/${property}`,
     value: values[property].replace('px', ''),
     type: 'FLOAT',
-    scopes: ['EFFECT_FLOATING'],
+    scopes: ['EFFECT_FLOAT'],
     mode,
     collection,
     group,
