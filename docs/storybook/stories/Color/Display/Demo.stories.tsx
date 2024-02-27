@@ -45,7 +45,7 @@ const variants = [
 ] as const
 
 export default {
-  title: 'Demos/Presentational Colors',
+  title: 'Color/Display/Demo',
   args: {
     variant: 'blue',
   },
@@ -64,11 +64,11 @@ const renderKitchenSink = (variant: (typeof variants)[number], width?: number) =
     <Box sx={{width: width ? `${width}px` : 'auto'}}>
       <Flash
         sx={{
-          backgroundColor: `var(--color-presentational-${variant}-0)`,
-          border: `1px solid var(--color-presentational-${variant}-4)`,
-          color: `var(--color-presentational-${variant}-6)`,
+          backgroundColor: `var(--base-color-${variant}-0)`,
+          border: `1px solid var(--base-color-${variant}-4)`,
+          color: `var(--base-color-${variant}-6)`,
           '.octicon': {
-            fill: `var(--color-presentational-${variant}-6)`,
+            fill: `var(--base-color-${variant}-6)`,
           },
         }}
       >
@@ -78,12 +78,12 @@ const renderKitchenSink = (variant: (typeof variants)[number], width?: number) =
         <Button
           variant="primary"
           sx={{
-            backgroundColor: `var(--color-presentational-${variant}-6)`,
+            backgroundColor: `var(--base-color-${variant}-6)`,
             '&:hover': {
-              backgroundColor: `var(--color-presentational-${variant}-7)`,
+              backgroundColor: `var(--base-color-${variant}-7)`,
             },
             '&:active': {
-              backgroundColor: `var(--color-presentational-${variant}-8)`,
+              backgroundColor: `var(--base-color-${variant}-8)`,
             },
           }}
         >
@@ -92,28 +92,28 @@ const renderKitchenSink = (variant: (typeof variants)[number], width?: number) =
         <Token
           text="Default Token"
           sx={{
-            backgroundColor: `var(--color-presentational-${variant}-0)`,
-            border: `0px solid var(--color-presentational-${variant}-4)`,
-            color: `var(--color-presentational-${variant}-7)`,
+            backgroundColor: `var(--base-color-${variant}-0)`,
+            border: `0px solid var(--base-color-${variant}-4)`,
+            color: `var(--base-color-${variant}-7)`,
             '&:hover': {
-              color: `var(--color-presentational-${variant}-8)`,
-              backgroundColor: `var(--color-presentational-${variant}-1)`,
+              color: `var(--base-color-${variant}-8)`,
+              backgroundColor: `var(--base-color-${variant}-1)`,
             },
             '&:active': {
-              color: `var(--color-presentational-${variant}-9)`,
-              backgroundColor: `var(--color-presentational-${variant}-2)`,
+              color: `var(--base-color-${variant}-9)`,
+              backgroundColor: `var(--base-color-${variant}-2)`,
             },
           }}
         />
         <Label
           sx={{
-            border: `1px solid var(--color-presentational-${variant}-6)`,
-            color: `var(--color-presentational-${variant}-6)`,
+            border: `1px solid var(--base-color-${variant}-6)`,
+            color: `var(--base-color-${variant}-6)`,
           }}
         >
           System label
         </Label>
-        <CircleBadge sx={{color: `var(--color-presentational-${variant}-6)`}} size={60}>
+        <CircleBadge sx={{color: `var(--base-color-${variant}-6)`}} size={60}>
           <CircleBadge.Icon icon={ZapIcon} />
         </CircleBadge>
       </Box>
@@ -135,14 +135,22 @@ const renderKitchenSink = (variant: (typeof variants)[number], width?: number) =
       <Box sx={{marginTop: 3, display: 'flex', gap: 2, alignItems: 'center'}}>
         <TextInput placeholder="Find user"></TextInput>
       </Box>
+      <Box
+        sx={{
+          marginTop: 3,
+          display: 'flex',
+          gap: 2,
+          alignItems: 'center',
+          backgroundColor: 'var(--bgColor-muted)',
+          padding: 2,
+        }}
+      >
+        <TextInput placeholder="Find user"></TextInput>
+      </Box>
       <Box sx={{marginTop: 3, display: 'flex', gap: 2, alignItems: 'center'}}>
         <Text mr={3}>5 of 10</Text>
-        <ProgressBar progress={50} inline sx={{width: '200px'}} bg={`var(--color-presentational-${variant}-6)`} />
-        <CircleOcticon
-          icon={CheckIcon}
-          size={24}
-          sx={{bg: `var(--color-presentational-${variant}-6)`, color: 'fg.onEmphasis'}}
-        />
+        <ProgressBar progress={50} inline sx={{width: '200px'}} bg={`var(--base-color-${variant}-6)`} />
+        <CircleOcticon icon={CheckIcon} size={24} sx={{bg: `var(--base-color-${variant}-6)`, color: 'fg.onEmphasis'}} />
       </Box>
       <ActionList>
         <ActionList.Item>
@@ -153,15 +161,15 @@ const renderKitchenSink = (variant: (typeof variants)[number], width?: number) =
         </ActionList.Item>
         <ActionList.Item
           sx={{
-            color: `var(--color-presentational-${variant}-6)`,
+            color: `var(--base-color-${variant}-6)`,
             '&:hover:not([aria-disabled])': {
-              color: `var(--color-presentational-${variant}-6)`,
-              backgroundColor: `var(--color-presentational-${variant}-1)`,
+              color: `var(--base-color-${variant}-6)`,
+              backgroundColor: `var(--base-color-${variant}-1)`,
             },
           }}
         >
           <ActionList.LeadingVisual>
-            <AlertIcon fill={`var(--color-presentational-${variant}-6)`} />
+            <AlertIcon fill={`var(--base-color-${variant}-6)`} />
           </ActionList.LeadingVisual>
           4 vulnerabilities
         </ActionList.Item>
