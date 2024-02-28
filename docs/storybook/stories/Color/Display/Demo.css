@@ -1,0 +1,9 @@
+.story-wrap-grid {
+  padding: 24px;
+
+  --control-borderColor-rest: var(--base-color-gray-5) !important;
+}
+#storybook-root {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(400px, 100%), 1fr));
+}
