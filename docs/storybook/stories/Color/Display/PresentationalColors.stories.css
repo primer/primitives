@@ -1,7 +1,9 @@
 .story-wrap-grid {
   padding: 24px;
 
-  --control-borderColor-rest: var(--base-color-gray-5) !important;
+  --control-borderColor-rest: var(--base-display-color-gray-6) !important;
+  --control-transparent-bgColor-hover: var(--base-display-color-gray-0) !important;
+  --bgColor-muted: var(--base-display-color-gray-0) !important;
 }
 #storybook-root {
   display: grid;
