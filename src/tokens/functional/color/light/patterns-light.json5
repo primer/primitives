@@ -2067,4 +2067,20 @@
       alpha: 0.1,
     },
   },
+  data: {
+    blue: {
+      color: {
+        $value: '{base.display.color.gray.0}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'light',
+            group: 'component',
+            scopes: ['bgColor'],
+          },
+        },
+      },
+    },
+  },
 }
