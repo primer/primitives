@@ -425,7 +425,7 @@
   },
   overlay: {
     borderColor: {
-      $value: '{base.color.gray.8}',
+      $value: '{borderColor.muted}',
       $type: 'color',
       $extensions: {
         'org.primer.figma': {
