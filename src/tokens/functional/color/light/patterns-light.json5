@@ -309,7 +309,7 @@
           alpha: 0.4,
         },
         disabled: {
-          $value: '{base.color.transparent}',
+          $value: '{bgColor.disabled}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
