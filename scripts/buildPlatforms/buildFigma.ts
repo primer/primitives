@@ -82,6 +82,7 @@ export const buildFigma = (buildOptions: ConfigGeneratorOptions): void => {
       source: [`src/tokens/functional/shadow/light.json5`],
       include: [
         `src/tokens/base/color/light/light.json5`,
+        `src/tokens/base/color/light/display-light.json5`,
         `src/tokens/functional/color/light/primitives-light.json5`,
         `src/tokens/functional/color/light/patterns-light.json5`,
       ],
@@ -93,6 +94,7 @@ export const buildFigma = (buildOptions: ConfigGeneratorOptions): void => {
       include: [
         `src/tokens/base/color/light/light.json5`,
         `src/tokens/base/color/light/light.high-contrast.json5`,
+        `src/tokens/base/color/light/display-light.json5`,
         `src/tokens/functional/color/light/primitives-light.json5`,
         `src/tokens/functional/color/light/patterns-light.json5`,
       ],
@@ -104,6 +106,7 @@ export const buildFigma = (buildOptions: ConfigGeneratorOptions): void => {
       include: [
         `src/tokens/base/color/light/light.json5`,
         `src/tokens/base/color/light/light.protanopia-deuteranopia.json5`,
+        `src/tokens/base/color/light/display-light.json5`,
         `src/tokens/functional/color/light/primitives-light.json5`,
         `src/tokens/functional/color/light/patterns-light.json5`,
       ],
@@ -115,6 +118,7 @@ export const buildFigma = (buildOptions: ConfigGeneratorOptions): void => {
       include: [
         `src/tokens/base/color/light/light.json5`,
         `src/tokens/base/color/light/light.tritanopia.json5`,
+        `src/tokens/base/color/light/display-light.json5`,
         `src/tokens/functional/color/light/primitives-light.json5`,
         `src/tokens/functional/color/light/patterns-light.json5`,
       ],
@@ -125,6 +129,7 @@ export const buildFigma = (buildOptions: ConfigGeneratorOptions): void => {
       source: [`src/tokens/functional/shadow/dark.json5`],
       include: [
         `src/tokens/base/color/dark/dark.json5`,
+        `src/tokens/base/color/dark/display-dark.json5`,
         `src/tokens/functional/color/dark/primitives-dark.json5`,
         `src/tokens/functional/color/dark/patterns-dark.json5`,
       ],
@@ -136,6 +141,7 @@ export const buildFigma = (buildOptions: ConfigGeneratorOptions): void => {
       include: [
         `src/tokens/base/color/dark/dark.json5`,
         `src/tokens/base/color/dark/dark.high-contrast.json5`,
+        `src/tokens/base/color/dark/display-dark.json5`,
         `src/tokens/functional/color/dark/primitives-dark.json5`,
         `src/tokens/functional/color/dark/patterns-dark.json5`,
       ],
@@ -147,6 +153,7 @@ export const buildFigma = (buildOptions: ConfigGeneratorOptions): void => {
       include: [
         `src/tokens/base/color/dark/dark.json5`,
         `src/tokens/base/color/dark/dark.dimmed.json5`,
+        `src/tokens/base/color/dark/display-dark.json5`,
         `src/tokens/functional/color/dark/primitives-dark.json5`,
         `src/tokens/functional/color/dark/patterns-dark.json5`,
       ],
@@ -158,6 +165,7 @@ export const buildFigma = (buildOptions: ConfigGeneratorOptions): void => {
       include: [
         `src/tokens/base/color/dark/dark.json5`,
         `src/tokens/base/color/dark/dark.protanopia-deuteranopia.json5`,
+        `src/tokens/base/color/dark/display-dark.json5`,
         `src/tokens/functional/color/dark/primitives-dark.json5`,
         `src/tokens/functional/color/dark/patterns-dark.json5`,
       ],
@@ -169,6 +177,7 @@ export const buildFigma = (buildOptions: ConfigGeneratorOptions): void => {
       include: [
         `src/tokens/base/color/dark/dark.json5`,
         `src/tokens/base/color/dark/dark.tritanopia.json5`,
+        `src/tokens/base/color/dark/display-dark.json5`,
         `src/tokens/functional/color/dark/primitives-dark.json5`,
         `src/tokens/functional/color/dark/patterns-dark.json5`,
       ],
@@ -249,7 +258,11 @@ export const buildFigma = (buildOptions: ConfigGeneratorOptions): void => {
   // write to file
   fs.writeFileSync(`${buildOptions.buildPath}figma/figma.json`, JSON.stringify({collections, files}, null, 2))
 }
-
-buildFigma({
-  buildPath: 'tokens-next-private/',
-})
+try {
+  buildFigma({
+    buildPath: 'tokens-next-private/',
+  })
+} catch (e) {
+  // eslint-disable-next-line no-console
+  console.error('🛑 Error trying to build Figma output:', e)
+}

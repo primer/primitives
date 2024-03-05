@@ -51,90 +51,108 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
   /** -----------------------------------
    * Colors, shadows & borders
    * ----------------------------------- */
-  for (const {filename, source, include} of themes) {
-    // build functional scales
-    PrimerStyleDictionary.extend(
-      getStyleDictionaryConfig(
-        `functional/themes/${filename}`,
-        source,
-        include,
-        {...buildOptions, themed: true},
-        // disable fallbacks for themes
-        {fallbacks: undefined},
-      ),
-    ).buildAllPlatforms()
+  try {
+    for (const {filename, source, include} of themes) {
+      // build functional scales
+      PrimerStyleDictionary.extend(
+        getStyleDictionaryConfig(
+          `functional/themes/${filename}`,
+          source,
+          include,
+          {...buildOptions, themed: true},
+          // disable fallbacks for themes
+          {fallbacks: undefined},
+        ),
+      ).buildAllPlatforms()
+    }
+  } catch (e) {
+    // eslint-disable-next-line no-console
+    console.error('🛑 Error trying to build Colors, shadows & borders for code output:', e)
   }
 
   /** -----------------------------------
    * Size tokens
    * ----------------------------------- */
-  const sizeFiles = glob.sync('src/tokens/functional/size/*')
-  //
-  for (const file of sizeFiles) {
+  try {
+    const sizeFiles = glob.sync('src/tokens/functional/size/*')
+    //
+    for (const file of sizeFiles) {
+      PrimerStyleDictionary.extend(
+        getStyleDictionaryConfig(
+          `functional/size/${file.replace('src/tokens/functional/size/', '').replace('.json', '')}`,
+          [file],
+          ['src/tokens/base/size/size.json', ...sizeFiles],
+          buildOptions,
+        ),
+      ).buildAllPlatforms()
+    }
+    // build base scales
     PrimerStyleDictionary.extend(
-      getStyleDictionaryConfig(
-        `functional/size/${file.replace('src/tokens/functional/size/', '').replace('.json', '')}`,
-        [file],
-        ['src/tokens/base/size/size.json', ...sizeFiles],
-        buildOptions,
-      ),
+      // using includes as source
+      getStyleDictionaryConfig(`base/size/size`, ['src/tokens/base/size/size.json'], [], {
+        buildPath: buildOptions.buildPath,
+        prefix: undefined,
+      }),
     ).buildAllPlatforms()
+  } catch (e) {
+    // eslint-disable-next-line no-console
+    console.error('🛑 Error trying to build size tokens for code output:', e)
   }
-  // build base scales
-  PrimerStyleDictionary.extend(
-    // using includes as source
-    getStyleDictionaryConfig(`base/size/size`, ['src/tokens/base/size/size.json'], [], {
-      buildPath: buildOptions.buildPath,
-      prefix: undefined,
-    }),
-  ).buildAllPlatforms()
-
   /** -----------------------------------
    * Typography tokens
    * ----------------------------------- */
-  PrimerStyleDictionary.extend(
-    getStyleDictionaryConfig(
-      `functional/typography/typography`,
-      [`src/tokens/functional/typography/*.json`],
-      [`src/tokens/base/typography/*.json`],
-      buildOptions,
-      {
-        css: css(`css/functional/typography/typography.css`, buildOptions.prefix, buildOptions.buildPath, {
-          options: {
-            outputReferences: true,
-          },
-        }),
-      },
-    ),
-  ).buildAllPlatforms()
+  try {
+    PrimerStyleDictionary.extend(
+      getStyleDictionaryConfig(
+        `functional/typography/typography`,
+        [`src/tokens/functional/typography/*.json`],
+        [`src/tokens/base/typography/*.json`],
+        buildOptions,
+        {
+          css: css(`css/functional/typography/typography.css`, buildOptions.prefix, buildOptions.buildPath, {
+            options: {
+              outputReferences: true,
+            },
+          }),
+        },
+      ),
+    ).buildAllPlatforms()
 
-  PrimerStyleDictionary.extend(
-    getStyleDictionaryConfig(`base/typography/typography`, [`src/tokens/base/typography/*.json`], [], buildOptions),
-  ).buildAllPlatforms()
+    PrimerStyleDictionary.extend(
+      getStyleDictionaryConfig(`base/typography/typography`, [`src/tokens/base/typography/*.json`], [], buildOptions),
+    ).buildAllPlatforms()
+  } catch (e) {
+    // eslint-disable-next-line no-console
+    console.error('🛑 Error trying to build typography tokens for code output:', e)
+  }
 
   /** -----------------------------------
    * Motion tokens
    * ----------------------------------- */
-  PrimerStyleDictionary.extend(
-    getStyleDictionaryConfig(
-      `functional/motion/motion`,
-      [`src/tokens/functional/motion/*.json5`],
-      [`src/tokens/base/motion/*.json5`],
-      buildOptions,
-      {
-        css: css(`css/functional/motion/motion.css`, buildOptions.prefix, buildOptions.buildPath, {
-          options: {
-            outputReferences: true,
-          },
-        }),
-      },
-    ),
-  ).buildAllPlatforms()
+  try {
+    PrimerStyleDictionary.extend(
+      getStyleDictionaryConfig(
+        `functional/motion/motion`,
+        [`src/tokens/functional/motion/*.json5`],
+        [`src/tokens/base/motion/*.json5`],
+        buildOptions,
+        {
+          css: css(`css/functional/motion/motion.css`, buildOptions.prefix, buildOptions.buildPath, {
+            options: {
+              outputReferences: true,
+            },
+          }),
+        },
+      ),
+    ).buildAllPlatforms()
 
-  PrimerStyleDictionary.extend(
-    getStyleDictionaryConfig(`base/motion/motion`, [`src/tokens/base/motion/*.json5`], [], buildOptions),
-  ).buildAllPlatforms()
-
+    PrimerStyleDictionary.extend(
+      getStyleDictionaryConfig(`base/motion/motion`, [`src/tokens/base/motion/*.json5`], [], buildOptions),
+    ).buildAllPlatforms()
+  } catch (e) {
+    // eslint-disable-next-line no-console
+    console.error('🛑 Error trying to build motion tokens for code output:', e)
+  }
   /** -----------------------------------
    * deprecated tokens
    * ----------------------------------- */
@@ -144,6 +162,7 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
       filename: 'theme',
       source: [
         `src/tokens/base/color/light/light.json5`,
+        `src/tokens/base/color/light/display-light.json5`,
         `src/tokens/functional/color/light/*.json5`,
         `src/tokens/functional/shadow/light.json5`,
         `src/tokens/functional/border/light.json5`,
@@ -170,16 +189,20 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
     },
   ]
   //
-  for (const {filename, source, include} of deprecatedBuilds) {
-    PrimerStyleDictionary.extend({
-      source,
-      include,
-      platforms: {
-        deprecated: deprecatedJson(`deprecated/${filename}.json`, buildOptions.prefix, buildOptions.buildPath),
-      },
-    }).buildAllPlatforms()
+  try {
+    for (const {filename, source, include} of deprecatedBuilds) {
+      PrimerStyleDictionary.extend({
+        source,
+        include,
+        platforms: {
+          deprecated: deprecatedJson(`deprecated/${filename}.json`, buildOptions.prefix, buildOptions.buildPath),
+        },
+      }).buildAllPlatforms()
+    }
+  } catch (e) {
+    // eslint-disable-next-line no-console
+    console.error('🛑 Error trying to build deprecated tokens output:', e)
   }
-
   /** -----------------------------------
    * Copy `removed` files
    * ----------------------------------- */
