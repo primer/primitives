@@ -5,7 +5,6 @@ import {ColorTokenSwatch} from '../../StorybookComponents/ColorTokenSwatch/Color
 import {DataTable, Table} from '@primer/react/drafts'
 import {InlineCode} from '../../StorybookComponents/InlineCode/InlineCode'
 import {getTokensByName} from '../../utilities/getTokensByName'
-import './highcharts.css'
 
 export default {
   title: 'Color/DataVis',
@@ -78,17 +77,23 @@ const primerDataVisColors = [
 ]
 
 export const Highcharts = () => {
+  const data = getTokensByName(colorTokens, 'data').map(token => {
+    return {
+      id: token.name,
+      ...token,
+    }
+  })
   return (
     <Table.Container>
       <Table.Title as="h1" id="pattern">
-        Primer color mappings to Highcharts
+        Data visualization
       </Table.Title>
       <DataTable
         aria-labelledby="pattern"
-        data={highchartColors.map((color, index) => ({name: color, primerColor: primerDataVisColors[index] || ''}))}
+        data={data}
         columns={[
           {
-            header: 'Highcarts',
+            header: 'Sample',
             field: 'name',
             rowHeader: true,
             renderCell: row => {
@@ -96,11 +101,19 @@ export const Highcharts = () => {
             },
           },
           {
-            header: 'Primer Data Vis Colors',
-            field: 'primerColor',
+            header: 'Token',
+            field: 'name',
             rowHeader: true,
             renderCell: row => {
-              return <ColorTokenSwatch bgColor={row.primerColor} />
+              return <InlineCode value={row.name} copyClipboard />
+            },
+          },
+          {
+            header: 'Output value',
+            field: 'value',
+            rowHeader: true,
+            renderCell: row => {
+              return <p>{row.value}</p>
             },
           },
         ]}

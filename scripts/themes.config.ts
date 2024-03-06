@@ -107,7 +107,7 @@ export const themes: TokenBuildInput[] = [
     include: [
       `src/tokens/base/color/dark/dark.json5`,
       `src/tokens/base/color/dark/dark.high-contrast.json5`,
-      `src/tokens/base/color/light/display-dark.json5`,
+      `src/tokens/base/color/dark/display-dark.json5`,
     ],
   },
 ]
