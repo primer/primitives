@@ -309,7 +309,7 @@
           alpha: 0.4,
         },
         disabled: {
-          $value: '{base.color.transparent}',
+          $value: '{bgColor.disabled}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -1902,7 +1902,7 @@
       },
     },
     borderColor: {
-      $value: '{base.color.transparent}',
+      $value: '{borderColor.muted}',
       $type: 'color',
       $extensions: {
         'org.primer.figma': {
@@ -1911,6 +1911,7 @@
           group: 'component (internal)',
         },
       },
+      alpha: 0.5,
     },
     backdrop: {
       bgColor: {

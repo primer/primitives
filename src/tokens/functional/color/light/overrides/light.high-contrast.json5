@@ -11,7 +11,7 @@
       mix: null,
     },
     disabled: {
-      $value: '{base.color.gray.6}',
+      $value: '{base.color.gray.5}',
       $type: 'color',
     },
     danger: {
@@ -44,7 +44,7 @@
       },
     },
     disabled: {
-      $value: '{base.color.gray.1}',
+      $value: '{base.color.gray.2}',
       $type: 'color',
     },
     success: {
@@ -425,7 +425,7 @@
   },
   overlay: {
     borderColor: {
-      $value: '{base.color.gray.8}',
+      $value: '{borderColor.muted}',
       $type: 'color',
       $extensions: {
         'org.primer.figma': {

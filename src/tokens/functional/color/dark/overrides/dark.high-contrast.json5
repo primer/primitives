@@ -16,7 +16,7 @@
       alpha: 1,
     },
     disabled: {
-      $value: '{base.color.gray.3}',
+      $value: '{base.color.gray.4}',
       $type: 'color',
     },
   },
@@ -370,7 +370,7 @@
   },
   overlay: {
     borderColor: {
-      $value: '{base.color.gray.5}',
+      $value: '{borderColor.muted}',
       $type: 'color',
       $extensions: {
         'org.primer.figma': {
