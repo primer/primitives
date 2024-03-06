@@ -29,9 +29,6 @@ const preview = {
       ],
       default: 'Small',
     },
-    snapshot: {
-      excludeFromSnapshot: true,
-    },
   },
 }
 

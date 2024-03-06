@@ -10,6 +10,7 @@ export default {
   title: 'Size/Base',
   parameters: {
     controls: {hideNoControlsWarning: true},
+    tags: ['snapshotLight'],
   },
 }
 

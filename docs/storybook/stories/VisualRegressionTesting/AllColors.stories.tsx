@@ -21,10 +21,10 @@ export default {
     },
   },
   args: {
-    color: extractNameAndValue[0].name,
+    colorToken: extractNameAndValue[0].name,
   },
   argTypes: {
-    color: {
+    colorToken: {
       control: {
         type: 'select',
       },
@@ -33,16 +33,16 @@ export default {
   },
 }
 
-export const ColorSwatches = ({color}: {color: string}) => {
+export const ColorSwatches = ({colorToken}: {colorToken: string}) => {
   return (
     <div style={{display: 'grid', placeContent: 'center', padding: '1rem'}}>
       <ColorTokenSwatch
         size="large"
-        bgColor={color.includes('bgColor') || color.includes('color') ? color : undefined}
-        textColor={color.includes('fgColor') ? color : undefined}
-        shadowColor={color.includes('shadow') ? color : undefined}
-        borderColor={color.includes('borderColor') ? color : undefined}
-        outlineColor={color.includes('outline') ? color : undefined}
+        bgColor={colorToken.includes('bgColor') || colorToken.includes('color') ? colorToken : undefined}
+        textColor={colorToken.includes('fgColor') ? colorToken : undefined}
+        shadowColor={colorToken.includes('shadow') ? colorToken : undefined}
+        borderColor={colorToken.includes('borderColor') ? colorToken : undefined}
+        outlineColor={colorToken.includes('outline') ? colorToken : undefined}
       />
     </div>
   )
