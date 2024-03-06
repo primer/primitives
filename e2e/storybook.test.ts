@@ -5,7 +5,7 @@ import data from '../docs/storybook/storybook-static/stories.json'
 import colorData from '../tokens-next-private/docs/functional/themes/light.json'
 
 const extractNameAndValue = Object.entries(colorData)
-  .map(([details]) => ({
+  .map(([_key, details]) => ({
     name: details.name,
     value: details.value,
   }))
