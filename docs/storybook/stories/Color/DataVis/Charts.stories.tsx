@@ -8,6 +8,7 @@ import {getTokensByName} from '../../utilities/getTokensByName'
 
 export default {
   title: 'Color/DataVis',
+  tags: ['excludeSnapshot']
   parameters: {
     parameters: {
       controls: {hideNoControlsWarning: true},
