@@ -1,6 +1,16 @@
 import {type Page, test, expect} from '@playwright/test'
 // eslint-disable-next-line import/extensions, import/no-unresolved
 import data from '../docs/storybook/storybook-static/stories.json'
+// eslint-disable-next-line import/extensions
+import colorData from '../tokens-next-private/docs/functional/themes/light.json'
+
+const extractNameAndValue = Object.entries(colorData)
+  .map(([details]) => ({
+    name: details.name,
+    value: details.value,
+  }))
+  .filter(item => !item.name.includes('scale'))
+  .map(item => item.name)
 
 interface Story {
   id: string
@@ -69,33 +79,22 @@ test.describe('storybook', () => {
     // take a screen shot
     // select the next color from the colorToken select menu
     // take a screen shot
-    test('all color swatches', async ({page}) => {
-      await visit(page, {
-        id: 'vrt-all-colors--color-swatches',
-        // args: {
-        //   colorToken,
-        // },
-      })
-      // Identify the select control for colorToken. Adjust the selector as necessary.
-      const selectSelector = 'select[id="control-colorToken"]' // Example selector; update it to match your actual control's selector.
-
-      // Retrieve all the option values for colorToken.
-      // eslint-disable-next-line @typescript-eslint/no-shadow
-      const options: string[] = await page.$$eval(`${selectSelector} option`, (options: HTMLOptionElement[]) =>
-        options.map(option => option.value),
-      )
-
-      // Iterate through each option, set it as the current value, and take a screenshot.
-      for (const optionValue of options) {
-        await page.selectOption(selectSelector, optionValue)
-
-        // Wait for any dynamic changes to take effect if necessary.
-        // await page.waitForTimeout(1000); // Example: wait for animations or DOM updates.
-
-        // Take a screenshot for each colorToken option.
-        await expect(await page.screenshot({animations: 'disabled', fullPage: true})).toMatchSnapshot(
-          `${optionValue}.png`,
-        )
+    test.describe(`all color swatches - ${story.id}`, async () => {
+      for (const theme of themes) {
+        for (const name of extractNameAndValue) {
+          test(`color swatch - ${name} - ${theme}`, async ({page}) => {
+            await visit(page, {
+              id: 'vrt-all-colors--color-swatches',
+              args: {
+                colorToken: name,
+              },
+              globals: {
+                theme,
+              },
+            })
+            expect(await page.screenshot()).toMatchSnapshot(`storybook.${story.id}.${theme}.${name}.png`)
+          })
+        }
       }
     })
   }

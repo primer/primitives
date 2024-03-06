@@ -38,8 +38,11 @@ export const ColorSwatches = ({colorToken}: {colorToken: string}) => {
     <div style={{display: 'grid', placeContent: 'center', padding: '1rem'}}>
       <ColorTokenSwatch
         size="large"
-        bgColor={colorToken.includes('bgColor') || colorToken.includes('color') ? colorToken : undefined}
-        textColor={colorToken.includes('fgColor') ? colorToken : undefined}
+        bgColor={
+          colorToken.includes('bgColor') || colorToken.includes('color') || colorToken.includes('fgColor')
+            ? colorToken
+            : undefined
+        }
         shadowColor={colorToken.includes('shadow') ? colorToken : undefined}
         borderColor={colorToken.includes('borderColor') ? colorToken : undefined}
         outlineColor={colorToken.includes('outline') ? colorToken : undefined}
