@@ -80,7 +80,6 @@ test.describe('storybook', () => {
     for (const theme of themes) {
       for (const name of extractNameAndValue) {
         test(`color swatch - ${name} - ${theme}`, async ({page}) => {
-          await page.setViewportSize({width: 300, height: 170})
           await visit(page, {
             id: 'vrt-all-colors--color-swatches',
             args: {
@@ -90,6 +89,7 @@ test.describe('storybook', () => {
               theme,
             },
           })
+          await page.setViewportSize({width: 300, height: 170})
           expect(await page.screenshot()).toMatchSnapshot(`storybook.all color swatches.${theme}.${name}.png`)
         })
       }
