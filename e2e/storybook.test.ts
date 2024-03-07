@@ -74,30 +74,26 @@ test.describe('storybook', () => {
         }
       }
     })
-
-    // select a color from the colorToken select menu
-    // take a screen shot
-    // select the next color from the colorToken select menu
-    // take a screen shot
-    test.describe(`all color swatches - ${story.id}`, async () => {
-      for (const theme of themes) {
-        for (const name of extractNameAndValue) {
-          test(`color swatch - ${name} - ${theme}`, async ({page}) => {
-            await visit(page, {
-              id: 'vrt-all-colors--color-swatches',
-              args: {
-                colorToken: name,
-              },
-              globals: {
-                theme,
-              },
-            })
-            expect(await page.screenshot()).toMatchSnapshot(`storybook.${story.id}.${theme}.${name}.png`)
-          })
-        }
-      }
-    })
   }
+
+  test.describe(`all color swatches`, async () => {
+    for (const theme of themes) {
+      for (const name of extractNameAndValue) {
+        test(`color swatch - ${name} - ${theme}`, async ({page}) => {
+          await visit(page, {
+            id: 'vrt-all-colors--color-swatches',
+            args: {
+              colorToken: name,
+            },
+            globals: {
+              theme,
+            },
+          })
+          expect(await page.screenshot()).toMatchSnapshot(`storybook.all color swatches.${theme}.${name}.png`)
+        })
+      }
+    }
+  })
 })
 
 interface Options {
