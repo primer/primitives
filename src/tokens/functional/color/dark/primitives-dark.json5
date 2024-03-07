@@ -54,7 +54,7 @@
       },
     },
     disabled: {
-      $value: '{base.color.gray.3}',
+      $value: '{base.color.gray.4}',
       $type: 'color',
       $extensions: {
         'org.primer.figma': {
@@ -328,7 +328,7 @@
       },
     },
     disabled: {
-      $value: '{base.color.gray.8}',
+      $value: '{base.color.gray.7}',
       $type: 'color',
       $extensions: {
         'org.primer.figma': {
@@ -338,6 +338,7 @@
           scopes: ['bgColor'],
         },
       },
+      alpha: 0.7,
     },
     transparent: {
       $value: '{base.color.transparent}',

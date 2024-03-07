@@ -310,7 +310,7 @@
           alpha: 0.2,
         },
         disabled: {
-          $value: '{base.color.transparent}',
+          $value: '{bgColor.disabled}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -932,7 +932,7 @@
               scopes: ['fgColor'],
             },
           },
-          alpha: 0.5,
+          alpha: 0.8,
         },
       },
       iconColor: {
@@ -995,7 +995,7 @@
           },
         },
         disabled: {
-          $value: '{base.color.green.4}',
+          $value: '{base.color.green.5}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -1006,7 +1006,7 @@
             },
           },
           mix: {
-            color: '{base.color.green.2}',
+            color: '{base.color.green.0}',
             weight: 0.6,
           },
         },
@@ -1904,7 +1904,7 @@
       },
     },
     borderColor: {
-      $value: '{base.color.gray.6}',
+      $value: '{borderColor.muted}',
       $type: 'color',
       $extensions: {
         'org.primer.figma': {
