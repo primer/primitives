@@ -272,6 +272,22 @@
         },
       },
     },
+    danger: {
+      fgColor: {
+        rest: {
+          $value: '{base.color.red.3}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              mode: 'light',
+              group: 'component (internal)',
+              scopes: ['fgColor'],
+            },
+          },
+        },
+      },
+    },
   },
   buttonCounter: {
     primary: {
@@ -294,20 +310,6 @@
           $value: '{base.color.black}',
           $type: 'color',
           alpha: 0.15,
-        },
-      },
-      fgColor: {
-        rest: {
-          $value: '{base.color.red.3}',
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              mode: 'light',
-              group: 'component (internal)',
-              scopes: ['fgColor'],
-            },
-          },
         },
       },
     },
