@@ -10,11 +10,9 @@ export default {
   title: 'Color/DataVis',
   tags: ['excludeSnapshot'],
   parameters: {
-    parameters: {
-      controls: {hideNoControlsWarning: true},
-      options: {
-        showPanel: false,
-      },
+    controls: {hideNoControlsWarning: true},
+    options: {
+      showPanel: false,
     },
   },
 }
@@ -64,3 +62,4 @@ export const HighchartsAccentColors = () => {
     </Table.Container>
   )
 }
+HighchartsAccentColors.tags = ['excludeSnapshot']
