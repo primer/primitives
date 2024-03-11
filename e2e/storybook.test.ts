@@ -90,7 +90,9 @@ test.describe('storybook', () => {
             },
           })
           await page.setViewportSize({width: 300, height: 170})
-          expect(await page.screenshot()).toMatchSnapshot(`storybook.all color swatches.${theme}.${name}.png`)
+          expect(await page.screenshot({animations: 'disabled'})).toMatchSnapshot(
+            `storybook.all color swatches.${theme}.${name}.png`,
+          )
         })
       }
     }
