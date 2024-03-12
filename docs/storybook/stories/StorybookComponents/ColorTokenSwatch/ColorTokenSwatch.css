@@ -63,6 +63,11 @@
   position: relative;
   display: grid;
   color: var(--fgColor-default);
+  grid-template: 'swatch' 1fr / 1fr;
+}
+
+.ColorTokenSwatch-selection--text {
+  grid-area: swatch;
 }
 
 .ColorTokenSwatch-selection::before {
@@ -70,6 +75,6 @@
   height: 100%;
   width: 100%;
   background: var(--selection-bgColor);
-  position: absolute;
   border-radius: var(--borderRadius-small);
+  grid-area: swatch;
 }

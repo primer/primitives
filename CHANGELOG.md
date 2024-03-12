@@ -1,5 +1,16 @@
 # @primer/primitives
 
+## 7.15.10
+
+### Patch Changes
+
+- [#827](https://github.com/primer/primitives/pull/827) [`59be7107`](https://github.com/primer/primitives/commit/59be71070372590ad77acf2fc7f79ecd15f5ba5e) Thanks [@langermank](https://github.com/langermank)! - Fix `danger` `fgColor` high contrast dark for button
+
+- [#820](https://github.com/primer/primitives/pull/820) [`f959cc7f`](https://github.com/primer/primitives/commit/f959cc7f6f97b95c6ee25d6b24a9f5309d87cf7e) Thanks [@langermank](https://github.com/langermank)! - Add alpha data-vis colors
+
+- [#821](https://github.com/primer/primitives/pull/821) [`009bcd74`](https://github.com/primer/primitives/commit/009bcd74af8588b3b1a67e5a02aaa3d6cd2861f0) Thanks [@langermank](https://github.com/langermank)! - - Update disabled control colors
+  - Add box-shadow to Overlay in light themes
+
 ## 7.15.9
 
 ### Patch Changes

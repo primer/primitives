@@ -272,6 +272,22 @@
         },
       },
     },
+    danger: {
+      fgColor: {
+        rest: {
+          $value: '{base.color.red.3}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              mode: 'light',
+              group: 'component (internal)',
+              scopes: ['fgColor'],
+            },
+          },
+        },
+      },
+    },
   },
   buttonCounter: {
     primary: {
