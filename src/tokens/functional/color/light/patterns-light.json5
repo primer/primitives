@@ -2055,7 +2055,7 @@
   },
   selection: {
     bgColor: {
-      $value: '{fgColor.link.@}',
+      $value: '{bgColor.accent.emphasis}',
       $type: 'color',
       $extensions: {
         'org.primer.figma': {
@@ -2065,7 +2065,7 @@
           scopes: ['bgColor'],
         },
       },
-      alpha: 0.1,
+      alpha: 0.2,
     },
   },
 }

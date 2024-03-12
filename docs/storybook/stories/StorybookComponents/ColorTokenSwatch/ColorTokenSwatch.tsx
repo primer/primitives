@@ -31,7 +31,11 @@ export function ColorTokenSwatch({
       {outlineColor && (
         <div style={{outlineColor: `var(--${outlineColor})`}} className="ColorTokenSwatch-outline"></div>
       )}
-      {selectionColor && <div className="ColorTokenSwatch-selection">Aa</div>}
+      {selectionColor && (
+        <div className="ColorTokenSwatch-selection">
+          <span className="ColorTokenSwatch-selection--text">Aa</span>
+        </div>
+      )}
     </>
   )
 }
