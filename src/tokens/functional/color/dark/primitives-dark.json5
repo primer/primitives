@@ -53,6 +53,18 @@
         },
       },
     },
+    white: {
+      $value: '#ffffff',
+      $type: 'color',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'mode',
+          mode: 'light',
+          group: 'semantic',
+          scopes: ['fgColor'],
+        },
+      },
+    },
     disabled: {
       $value: '{base.color.gray.4}',
       $type: 'color',
