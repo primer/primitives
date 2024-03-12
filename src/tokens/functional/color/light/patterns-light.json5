@@ -2065,18 +2065,7 @@
           scopes: ['bgColor'],
         },
       },
-    },
-    fgColor: {
-      $value: '{fgColor.onEmphasis}',
-      $type: 'color',
-      $extensions: {
-        'org.primer.figma': {
-          collection: 'mode',
-          mode: 'light',
-          group: 'component',
-          scopes: ['fgColor'],
-        },
-      },
+      alpha: 0.2,
     },
   },
 }
