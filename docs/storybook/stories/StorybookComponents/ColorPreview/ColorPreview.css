@@ -22,7 +22,7 @@
 }
 
 [data-dark-theme='dark_high_contrast'] .ColorPreview:has([style='color: var(--fgColor-white);']) {
-  background-color: var(--bgColor-inverse) !important;
+  background-color: var(--bgColor-default) !important;
 }
 
 /* set bg color for text that matches default bg */
