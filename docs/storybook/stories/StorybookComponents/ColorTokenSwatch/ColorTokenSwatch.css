@@ -1,16 +1,16 @@
 .ColorTokenSwatch-text {
   font-size: var(--base-size-20);
-  font-weight: var(--font-weight-semibold);
+  font-weight: var(--base-text-weight-semibold);
 }
 
 .ColorTokenSwatch-text[style='color: var(--fgColor-onEmphasis);'],
-.ColorTokenSwatch-text[style='color: var(--fgColor-white)'] {
+.ColorTokenSwatch-text[style='color: var(--fgColor-white);'] {
   background: var(--bgColor-emphasis);
   border-radius: var(--borderRadius-small);
   padding: 2px 4px;
 }
 
-[data-dark-theme='dark_high_contrast'] .ColorTokenSwatch-text[style='color: var(--fgColor-white)'] {
+[data-dark-theme='dark_high_contrast'] .ColorTokenSwatch-text[style='color: var(--fgColor-white);'] {
   background-color: var(--bgColor-default) !important;
 }
 
