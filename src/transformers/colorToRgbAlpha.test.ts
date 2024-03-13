@@ -25,4 +25,9 @@ describe('Transformer: colorToRgbAlpha', () => {
     const expectedOutput = 'rgba(100, 200, 255, 0.6)'
     expect(colorToRgbAlpha.transformer(input, {})).toStrictEqual(expectedOutput)
   })
+  it('transforms rgba `color` tokens with alpha null, ignoring alpha', () => {
+    const input = getMockToken({value: 'rgba(100,200,255, 0.5)', alpha: null})
+    const expectedOutput = 'rgba(100,200,255, 0.5)'
+    expect(colorToRgbAlpha.transformer(input, {})).toStrictEqual(expectedOutput)
+  })
 })
