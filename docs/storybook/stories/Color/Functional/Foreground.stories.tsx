@@ -10,7 +10,14 @@ export default {
   },
 }
 
-const fgColors = ['fgColor-default', 'fgColor-muted', 'fgColor-onEmphasis', 'fgColor-disabled', 'fgColor-link']
+const fgColors = [
+  'fgColor-default',
+  'fgColor-muted',
+  'fgColor-onEmphasis',
+  'fgColor-disabled',
+  'fgColor-link',
+  'fgColor-white',
+]
 
 export const Foreground = () => {
   return (

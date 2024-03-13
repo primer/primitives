@@ -22,4 +22,9 @@ describe('Transformer: colorToHexAlpha', () => {
     const input = getMockToken({value: 'rgba(100,200,255, 0.2)', alpha: 0.6})
     expect(colorToHexAlpha.transformer(input, {})).toStrictEqual('#64c8ff99')
   })
+
+  it('transforms rgba `color` tokens with alpha null, ignoring alpha', () => {
+    const input = getMockToken({value: 'rgba(100,200,255, 0.5)', alpha: null})
+    expect(colorToHexAlpha.transformer(input, {})).toStrictEqual('#64c8ff80')
+  })
 })
