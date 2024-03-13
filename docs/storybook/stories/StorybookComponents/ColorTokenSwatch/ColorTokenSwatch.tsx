@@ -38,7 +38,7 @@ export function ColorTokenSwatch({
           <span className="ColorTokenSwatch-selection--text">Aa</span>
         </div>
       )}
-    </>
+    </span>
   )
 }
 
