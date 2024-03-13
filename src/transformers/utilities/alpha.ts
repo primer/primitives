@@ -18,5 +18,6 @@ export const alpha = (color: string, desiredAlpha: number, token?: TransformedTo
       }`,
     )
   }
+
   return rgba(r, g, b, desiredAlpha)
 }
