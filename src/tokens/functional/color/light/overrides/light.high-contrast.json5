@@ -427,13 +427,7 @@
     borderColor: {
       $value: '{borderColor.muted}',
       $type: 'color',
-      $extensions: {
-        'org.primer.figma': {
-          collection: 'mode',
-          mode: 'light',
-          group: 'component (internal)',
-        },
-      },
+      alpha: null
     },
   },
 }
