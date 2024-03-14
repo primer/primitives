@@ -1529,30 +1529,26 @@
     },
     inactive: {
       fgColor: {
-        rest: {
-          $value: '{base.color.gray.6}',
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              mode: 'light',
-              group: 'component (internal)',
-              scopes: ['fgColor'],
-            },
+        $value: '{base.color.gray.6}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'light',
+            group: 'component (internal)',
+            scopes: ['fgColor'],
           },
         },
       },
       bgColor: {
-        rest: {
-          $value: '{base.color.gray.1}',
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              mode: 'light',
-              group: 'component (internal)',
-              scopes: ['bgColor'],
-            },
+        $value: '{base.color.gray.1}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'light',
+            group: 'component (internal)',
+            scopes: ['bgColor'],
           },
         },
       },
