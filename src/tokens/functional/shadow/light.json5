@@ -359,6 +359,27 @@
           },
         },
       },
+      legacy: {
+        $value: [
+          {
+            color: '{base.color.gray.7}',
+            alpha: 0.04,
+            offsetX: '0px',
+            offsetY: '6px',
+            blur: '12px',
+            spread: '-3px',
+          },
+          {
+            color: '{base.color.gray.7}',
+            alpha: 0.12,
+            offsetX: '0px',
+            offsetY: '6px',
+            blur: '18px',
+            spread: '0px',
+          },
+        ],
+        $type: 'shadow',
+      },
     },
   },
 }

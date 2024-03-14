@@ -359,6 +359,34 @@
           },
         },
       },
+      legacy: {
+        $value: [
+          {
+            color: '{base.color.black}',
+            alpha: 0.4,
+            offsetX: '0px',
+            offsetY: '6px',
+            blur: '12px',
+            spread: '-3px',
+          },
+          {
+            color: '{base.color.black}',
+            alpha: 0.4,
+            offsetX: '0px',
+            offsetY: '6px',
+            blur: '18px',
+            spread: '0px',
+          },
+        ],
+        $type: 'shadow',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'light',
+            group: 'shadow',
+          },
+        },
+      },
     },
   },
 }
