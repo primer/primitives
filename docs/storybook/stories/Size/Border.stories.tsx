@@ -10,6 +10,7 @@ export default {
   title: 'Size/Functional/Border',
   parameters: {
     controls: {hideNoControlsWarning: true},
+    tags: ['snapshotLight'],
   },
 }
 

@@ -910,7 +910,7 @@
     primary: {
       fgColor: {
         rest: {
-          $value: '{base.color.white}',
+          $value: '{fgColor.white}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -937,7 +937,7 @@
       },
       iconColor: {
         rest: {
-          $value: '{base.color.white}',
+          $value: '{fgColor.white}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -1533,30 +1533,26 @@
     },
     inactive: {
       fgColor: {
-        rest: {
-          $value: '{base.color.gray.3}',
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              mode: 'light',
-              group: 'component (internal)',
-              scopes: ['fgColor'],
-            },
+        $value: '{base.color.gray.3}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'light',
+            group: 'component (internal)',
+            scopes: ['fgColor'],
           },
         },
       },
       bgColor: {
-        rest: {
-          $value: '{base.color.gray.7}',
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              mode: 'light',
-              group: 'component (internal)',
-              scopes: ['bgColor'],
-            },
+        $value: '{base.color.gray.7}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'light',
+            group: 'component (internal)',
+            scopes: ['bgColor'],
           },
         },
       },

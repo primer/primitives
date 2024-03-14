@@ -10,6 +10,7 @@ export default {
   title: 'Typography/Functional',
   parameters: {
     controls: {hideNoControlsWarning: true},
+    tags: ['snapshotLight'],
   },
 }
 
