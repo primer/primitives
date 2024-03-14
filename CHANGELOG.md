@@ -1,5 +1,15 @@
 # @primer/primitives
 
+## 7.15.12
+
+### Patch Changes
+
+- [#835](https://github.com/primer/primitives/pull/835) [`08b506e8`](https://github.com/primer/primitives/commit/08b506e87b481163f750e1b76fd6db3f8655d1c6) Thanks [@langermank](https://github.com/langermank)! - Add legacy shadow variable for deprecated Primer components
+
+- [#834](https://github.com/primer/primitives/pull/834) [`0c94285f`](https://github.com/primer/primitives/commit/0c94285f2f9db7e49423e6db082629ce81429377) Thanks [@langermank](https://github.com/langermank)! - Fix `inactive` button color token names
+
+- [#833](https://github.com/primer/primitives/pull/833) [`3213393c`](https://github.com/primer/primitives/commit/3213393cec0236ed070fcca43b5c2ce4b9956430) Thanks [@langermank](https://github.com/langermank)! - Change `primary` button text color to pure white instead of scale white (impact dark_dimmed)
+
 ## 7.15.11
 
 ### Patch Changes
