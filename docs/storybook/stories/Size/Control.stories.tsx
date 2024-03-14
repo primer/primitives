@@ -14,6 +14,7 @@ export default {
   title: 'Size/Functional/Control',
   parameters: {
     controls: {hideNoControlsWarning: true},
+    tags: ['snapshotLight'],
   },
 }
 

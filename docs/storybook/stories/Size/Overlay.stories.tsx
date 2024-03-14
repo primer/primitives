@@ -10,7 +10,7 @@ export default {
   parameters: {
     controls: {hideNoControlsWarning: true},
   },
-  tags: ['excludeSnapshot'],
+  tags: ['snapshotLight'],
 }
 
 export const Overlay = () => {
