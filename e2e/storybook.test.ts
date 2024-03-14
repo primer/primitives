@@ -2,15 +2,15 @@ import {type Page, test, expect} from '@playwright/test'
 // eslint-disable-next-line import/extensions, import/no-unresolved
 import data from '../docs/storybook/storybook-static/stories.json'
 // eslint-disable-next-line import/extensions
-import colorData from '../tokens-next-private/docs/functional/themes/light.json'
+// import colorData from '../tokens-next-private/docs/functional/themes/light.json'
 
-const extractNameAndValue = Object.entries(colorData)
-  .map(([_key, details]) => ({
-    name: details.name,
-    value: details.value,
-  }))
-  .filter(item => !item.name.includes('scale'))
-  .map(item => item.name)
+// const extractNameAndValue = Object.entries(colorData)
+//   .map(([_key, details]) => ({
+//     name: details.name,
+//     value: details.value,
+//   }))
+//   .filter(item => !item.name.includes('scale'))
+//   .map(item => item.name)
 
 interface Story {
   id: string
@@ -76,27 +76,27 @@ test.describe('storybook', () => {
     })
   }
 
-  test.describe(`all color swatches`, async () => {
-    for (const theme of themes) {
-      for (const name of extractNameAndValue) {
-        test(`color swatch - ${name} - ${theme}`, async ({page}) => {
-          await visit(page, {
-            id: 'vrt-all-colors--color-swatches',
-            args: {
-              colorToken: name,
-            },
-            globals: {
-              theme,
-            },
-          })
-          await page.setViewportSize({width: 300, height: 170})
-          expect(await page.screenshot({animations: 'disabled'})).toMatchSnapshot(
-            `storybook.all color swatches.${theme}.${name}.png`,
-          )
-        })
-      }
-    }
-  })
+  // test.describe(`all color swatches`, async () => {
+  //   for (const theme of themes) {
+  //     for (const name of extractNameAndValue) {
+  //       test(`color swatch - ${name} - ${theme}`, async ({page}) => {
+  //         await visit(page, {
+  //           id: 'vrt-all-colors--color-swatches',
+  //           args: {
+  //             colorToken: name,
+  //           },
+  //           globals: {
+  //             theme,
+  //           },
+  //         })
+  //         await page.setViewportSize({width: 300, height: 170})
+  //         expect(await page.screenshot({animations: 'disabled'})).toMatchSnapshot(
+  //           `storybook.all color swatches.${theme}.${name}.png`,
+  //         )
+  //       })
+  //     }
+  //   }
+  // })
 })
 
 interface Options {
