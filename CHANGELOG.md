@@ -1,5 +1,15 @@
 # @primer/primitives
 
+## 7.15.11
+
+### Patch Changes
+
+- [#828](https://github.com/primer/primitives/pull/828) [`c029100a`](https://github.com/primer/primitives/commit/c029100a2efe5a77e8d84361c8823f016b2ded67) Thanks [@langermank](https://github.com/langermank)! - `::selection` color improvements
+
+- [#831](https://github.com/primer/primitives/pull/831) [`e13056ee`](https://github.com/primer/primitives/commit/e13056eef03d43d87f39762ac5d47e90db9f2e33) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - allow alpha: null value in color tokens
+
+- [#830](https://github.com/primer/primitives/pull/830) [`fd433300`](https://github.com/primer/primitives/commit/fd43330061533986cf2a6b50ea73dfbfcaa4a64b) Thanks [@langermank](https://github.com/langermank)! - Add `fgColor-white` for all color modes
+
 ## 7.15.10
 
 ### Patch Changes
