@@ -901,7 +901,7 @@
     primary: {
       fgColor: {
         rest: {
-          $value: '{base.color.white}',
+          $value: '{fgColor.white}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -928,7 +928,7 @@
       },
       iconColor: {
         rest: {
-          $value: '{base.color.white}',
+          $value: '{fgColor.white}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
