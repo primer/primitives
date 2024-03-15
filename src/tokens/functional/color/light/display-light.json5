@@ -1,5 +1,5 @@
 {
-  display-blue: {
+  blue: {
     bgColor: {
       muted: {
         $value: '{base.display.color.blue.0}',
@@ -65,7 +65,7 @@
       },
     },
   },
-  display-green: {
+  green: {
     bgColor: {
       muted: {
         $value: '{base.display.color.green.0}',
@@ -131,7 +131,7 @@
       },
     },
   },
-  display-orange: {
+  orange: {
     bgColor: {
       muted: {
         $value: '{base.display.color.orange.0}',
@@ -197,7 +197,7 @@
       },
     },
   },
-  display-purple: {
+  purple: {
     bgColor: {
       muted: {
         $value: '{base.display.color.purple.0}',
@@ -263,7 +263,7 @@
       },
     },
   },
-  display-red: {
+  red: {
     bgColor: {
       muted: {
         $value: '{base.display.color.red.0}',
@@ -329,7 +329,7 @@
       },
     },
   },
-  display-yellow: {
+  yellow: {
     bgColor: {
       muted: {
         $value: '{base.display.color.yellow.0}',
@@ -395,7 +395,7 @@
       },
     },
   },
-  display-gray: {
+  gray: {
     bgColor: {
       muted: {
         $value: '{base.display.color.gray.0}',
@@ -461,7 +461,7 @@
       },
     },
   },
-  display-auburn: {
+  auburn: {
     bgColor: {
       muted: {
         $value: '{base.display.color.auburn.0}',
@@ -527,7 +527,7 @@
       },
     },
   },
-  display-brown: {
+  brown: {
     bgColor: {
       muted: {
         $value: '{base.display.color.brown.0}',
@@ -593,7 +593,7 @@
       },
     },
   },
-  display-lemon: {
+  lemon: {
     bgColor: {
       muted: {
         $value: '{base.display.color.lemon.0}',
@@ -659,7 +659,7 @@
       },
     },
   },
-  display-olive: {
+  olive: {
     bgColor: {
       muted: {
         $value: '{base.display.color.olive.0}',
@@ -725,7 +725,7 @@
       },
     },
   },
-  display-lime: {
+  lime: {
     bgColor: {
       muted: {
         $value: '{base.display.color.lime.0}',
@@ -791,7 +791,7 @@
       },
     },
   },
-  display-pine: {
+  pine: {
     bgColor: {
       muted: {
         $value: '{base.display.color.pine.0}',
@@ -857,7 +857,7 @@
       },
     },
   },
-  display-teal: {
+  teal: {
     bgColor: {
       muted: {
         $value: '{base.display.color.teal.0}',
@@ -923,7 +923,7 @@
       },
     },
   },
-  display-cyan: {
+  cyan: {
     bgColor: {
       muted: {
         $value: '{base.display.color.cyan.0}',
@@ -989,7 +989,7 @@
       },
     },
   },
-  display-indigo: {
+  indigo: {
     bgColor: {
       muted: {
         $value: '{base.display.color.indigo.0}',
@@ -1033,3 +1033,27 @@
         $value: '{base.display.color.indigo.1}',
         $type: 'color',
         $extensions
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'light',
+            group: 'component (internal)',
+            scopes: ['borderColor'],
+          },
+        },
+      },
+      emphasis: {
+        $value: '{base.display.color.indigo.5}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'light',
+            group: 'component (internal)',
+            scopes: ['borderColor'],
+          },
+        },
+      },
+    },
+  },
+}
