@@ -1,5 +1,11 @@
 # @primer/primitives
 
+## 7.15.13
+
+### Patch Changes
+
+- [#838](https://github.com/primer/primitives/pull/838) [`5e51127e`](https://github.com/primer/primitives/commit/5e51127e55755b78a7d97f71541b9ead8d7baf52) Thanks [@langermank](https://github.com/langermank)! - Add display color tokens
+
 ## 7.15.12
 
 ### Patch Changes
