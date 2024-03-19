@@ -5,8 +5,6 @@ import {ColorTokenSwatch} from '../../StorybookComponents/ColorTokenSwatch/Color
 import {DataTable, Table} from '@primer/react/drafts'
 import {InlineCode} from '../../StorybookComponents/InlineCode/InlineCode'
 import {getTokensByName} from '../../utilities/getTokensByName'
-import {Button} from '@primer/react'
-import {StarFillIcon} from '@primer/octicons-react'
 
 export default {
   title: 'Color/Alpha/Display',
@@ -161,13 +159,5 @@ export const Border = () => {
         ]}
       />
     </Table.Container>
-  )
-}
-
-export const ButtonTest = () => {
-  return (
-    <Button leadingVisual={StarFillIcon} sx={{svg: {color: 'var(--button-star-iconColor)'}}}>
-      Test
-    </Button>
   )
 }
