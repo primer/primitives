@@ -54,6 +54,25 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
   try {
     for (const {filename, source, include} of themes) {
       // build functional scales
+      PrimerStyleDictionary.extend({
+        source: [...source, ...include], // build the special formats
+        include,
+        platforms: {
+          css: css(`internalCss/${filename}.css`, buildOptions.prefix, buildOptions.buildPath, {themed: true}),
+        },
+      }).buildAllPlatforms()
+    }
+  } catch (e) {
+    // eslint-disable-next-line no-console
+    console.error('🛑 Error trying to build internal css colors for code output:', e)
+  }
+
+  /** -----------------------------------
+   * Internal Colors
+   * ----------------------------------- */
+  try {
+    for (const {filename, source, include} of themes) {
+      // build functional scales
       PrimerStyleDictionary.extend(
         getStyleDictionaryConfig(
           `functional/themes/${filename}`,
