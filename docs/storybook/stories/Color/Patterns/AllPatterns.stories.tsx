@@ -40,7 +40,7 @@ export const Avatar = () => {
             renderCell: row => {
               return (
                 <ColorTokenSwatch
-                  bgColor={row.name.includes('bgColor') ? row.name : undefined}
+                  bgColor={row.name.includes('bgColor') || row.name.includes('iconColor') ? row.name : undefined}
                   textColor={row.name.includes('fgColor') ? row.name : undefined}
                   shadowColor={row.name.includes('shadow') ? row.name : undefined}
                   borderColor={row.name.includes('borderColor') ? row.name : undefined}
@@ -112,7 +112,7 @@ export const Control = () => {
             renderCell: row => {
               return (
                 <ColorTokenSwatch
-                  bgColor={row.name.includes('bgColor') ? row.name : undefined}
+                  bgColor={row.name.includes('bgColor') || row.name.includes('iconColor') ? row.name : undefined}
                   textColor={row.name.includes('fgColor') ? row.name : undefined}
                   shadowColor={row.name.includes('shadow') ? row.name : undefined}
                   borderColor={row.name.includes('borderColor') ? row.name : undefined}
@@ -165,7 +165,7 @@ export const Counter = () => {
             renderCell: row => {
               return (
                 <ColorTokenSwatch
-                  bgColor={row.name.includes('bgColor') ? row.name : undefined}
+                  bgColor={row.name.includes('bgColor') || row.name.includes('iconColor') ? row.name : undefined}
                   textColor={row.name.includes('fgColor') ? row.name : undefined}
                   shadowColor={row.name.includes('shadow') ? row.name : undefined}
                   borderColor={row.name.includes('borderColor') ? row.name : undefined}
@@ -230,7 +230,7 @@ export const Button = () => {
             renderCell: row => {
               return (
                 <ColorTokenSwatch
-                  bgColor={row.name.includes('bgColor') ? row.name : undefined}
+                  bgColor={row.name.includes('bgColor') || row.name.includes('iconColor') ? row.name : undefined}
                   textColor={row.name.includes('fgColor') ? row.name : undefined}
                   shadowColor={row.name.includes('shadow') ? row.name : undefined}
                   borderColor={row.name.includes('borderColor') ? row.name : undefined}
@@ -329,7 +329,7 @@ export const Header = () => {
             renderCell: row => {
               return (
                 <ColorTokenSwatch
-                  bgColor={row.name.includes('bgColor') ? row.name : undefined}
+                  bgColor={row.name.includes('bgColor') || row.name.includes('iconColor') ? row.name : undefined}
                   textColor={row.name.includes('fgColor') ? row.name : undefined}
                   shadowColor={row.name.includes('shadow') ? row.name : undefined}
                   borderColor={row.name.includes('borderColor') ? row.name : undefined}
@@ -382,7 +382,7 @@ export const Menu = () => {
             renderCell: row => {
               return (
                 <ColorTokenSwatch
-                  bgColor={row.name.includes('bgColor') ? row.name : undefined}
+                  bgColor={row.name.includes('bgColor') || row.name.includes('iconColor') ? row.name : undefined}
                   textColor={row.name.includes('fgColor') ? row.name : undefined}
                   shadowColor={row.name.includes('shadow') ? row.name : undefined}
                   borderColor={row.name.includes('borderColor') ? row.name : undefined}
@@ -435,7 +435,7 @@ export const Overlay = () => {
             renderCell: row => {
               return (
                 <ColorTokenSwatch
-                  bgColor={row.name.includes('bgColor') ? row.name : undefined}
+                  bgColor={row.name.includes('bgColor') || row.name.includes('iconColor') ? row.name : undefined}
                   textColor={row.name.includes('fgColor') ? row.name : undefined}
                   shadowColor={row.name.includes('shadow') ? row.name : undefined}
                   borderColor={row.name.includes('borderColor') ? row.name : undefined}
@@ -488,7 +488,7 @@ export const SelectMenu = () => {
             renderCell: row => {
               return (
                 <ColorTokenSwatch
-                  bgColor={row.name.includes('bgColor') ? row.name : undefined}
+                  bgColor={row.name.includes('bgColor') || row.name.includes('iconColor') ? row.name : undefined}
                   textColor={row.name.includes('fgColor') ? row.name : undefined}
                   shadowColor={row.name.includes('shadow') ? row.name : undefined}
                   borderColor={row.name.includes('borderColor') ? row.name : undefined}
@@ -541,7 +541,7 @@ export const SideNav = () => {
             renderCell: row => {
               return (
                 <ColorTokenSwatch
-                  bgColor={row.name.includes('bgColor') ? row.name : undefined}
+                  bgColor={row.name.includes('bgColor') || row.name.includes('iconColor') ? row.name : undefined}
                   textColor={row.name.includes('fgColor') ? row.name : undefined}
                   shadowColor={row.name.includes('shadow') ? row.name : undefined}
                   borderColor={row.name.includes('borderColor') ? row.name : undefined}
@@ -594,7 +594,7 @@ export const TimelineBadge = () => {
             renderCell: row => {
               return (
                 <ColorTokenSwatch
-                  bgColor={row.name.includes('bgColor') ? row.name : undefined}
+                  bgColor={row.name.includes('bgColor') || row.name.includes('iconColor') ? row.name : undefined}
                   textColor={row.name.includes('fgColor') ? row.name : undefined}
                   shadowColor={row.name.includes('shadow') ? row.name : undefined}
                   borderColor={row.name.includes('borderColor') ? row.name : undefined}
@@ -647,7 +647,7 @@ export const UnderlineNav = () => {
             renderCell: row => {
               return (
                 <ColorTokenSwatch
-                  bgColor={row.name.includes('bgColor') ? row.name : undefined}
+                  bgColor={row.name.includes('bgColor') || row.name.includes('iconColor') ? row.name : undefined}
                   textColor={row.name.includes('fgColor') ? row.name : undefined}
                   shadowColor={row.name.includes('shadow') ? row.name : undefined}
                   borderColor={row.name.includes('borderColor') ? row.name : undefined}
@@ -698,7 +698,11 @@ export const Selection = () => {
             field: 'name',
             rowHeader: true,
             renderCell: row => {
-              return <ColorTokenSwatch selectionColor={row.name.includes('bgColor') ? row.name : undefined} />
+              return (
+                <ColorTokenSwatch
+                  selectionColor={row.name.includes('bgColor') || row.name.includes('iconColor') ? row.name : undefined}
+                />
+              )
             },
           },
           {

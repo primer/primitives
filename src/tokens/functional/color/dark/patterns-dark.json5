@@ -1557,6 +1557,20 @@
         },
       },
     },
+    star: {
+      iconColor: {
+        $value: '{base.color.yellow.2}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'dark',
+            group: 'component (internal)',
+            scopes: ['bgColor'],
+          },
+        },
+      },
+    },
   },
   buttonCounter: {
     default: {
