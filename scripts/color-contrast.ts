@@ -1,10 +1,9 @@
 import type {ContrastRequirement, Themes} from './color-contrast.config'
 import {contrastRequirements, canvasColors} from './color-contrast.config'
 import {Table} from 'console-table-printer'
-import {flattenObject} from './utilities/flattenObject'
 // eslint-disable-next-line import/no-unresolved
-import colors from '../dist/ts'
-import {writeFile} from 'fs'
+// import colors from '../dist/ts'
+import {writeFile, readFileSync} from 'fs'
 import {normal} from 'color-blend'
 import {getContrast, parseToRgba, rgba} from 'color2k'
 import {getMarkdownTable as markdownTable} from 'markdown-table-ts'
@@ -50,6 +49,7 @@ const runContrastTest = (colorPairs: ContrastRequirement[], scopedColors: any): 
     const contrastPair = `${colorA} vs. ${colorB}`
     // build required string
     const minimumContrastRatio = `${minimumContrast}:1`
+    console.log(scopedColors, colorB)
     // colorB is fully opaque
     if (parseToRgba(scopedColors[colorB])[3] === 1) {
       return {
@@ -222,8 +222,14 @@ const checkContrastForThemes = async (
       // turn deeply nested colors object into one level object like 'fg.default': '#000'
 
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const flattenColors = flattenObject((colors.colors as any)[theme])
-
+      const json = JSON.parse(readFileSync(`./dist/docs/functional/themes/${theme.replaceAll('_', '-')}.json`, 'utf8'))
+      const flattenColors = Object.fromEntries(
+        Object.values(json)
+          // @ts-expect-error: invalid type
+          .filter(color => color.$type === 'color')
+          // @ts-expect-error: invalid type
+          .map(color => [color.path.join('.'), color.value]),
+      )
       // run tests on all color pairs
       const scopedResults = runContrastTest(colorPairs, flattenColors)
       // failing contrasts
