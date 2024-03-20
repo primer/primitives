@@ -351,6 +351,30 @@
         },
       },
     },
+    white: {
+      $value: '{base.color.white}',
+      $type: 'color',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'mode',
+          mode: 'dark',
+          group: 'semantic',
+          scopes: ['bgColor'],
+        },
+      },
+    },
+    black: {
+      $value: '{base.color.black}',
+      $type: 'color',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'mode',
+          mode: 'dark',
+          group: 'semantic',
+          scopes: ['bgColor'],
+        },
+      },
+    },
     disabled: {
       $value: '{base.color.gray.7}',
       $type: 'color',
