@@ -124,6 +124,7 @@ export const AllScales = () => {
     </div>
   )
 }
+AllScales.tags = ['includeSnapshot']
 
 export const Gray = () => {
   const grayColors = bgColors.filter(color => color.includes('gray-'))
@@ -137,7 +138,6 @@ export const Gray = () => {
     </div>
   )
 }
-Gray.tags = ['excludeSnapshot']
 
 export const Blue = () => {
   const blueColors = bgColors.filter(color => color.includes('blue'))
@@ -151,7 +151,6 @@ export const Blue = () => {
     </div>
   )
 }
-Blue.tags = ['excludeSnapshot']
 
 export const Green = () => {
   const greenColors = bgColors.filter(color => color.includes('green'))
@@ -165,7 +164,6 @@ export const Green = () => {
     </div>
   )
 }
-Green.tags = ['excludeSnapshot']
 
 export const Yellow = () => {
   const yellowColors = bgColors.filter(color => color.includes('yellow'))
@@ -179,7 +177,6 @@ export const Yellow = () => {
     </div>
   )
 }
-Yellow.tags = ['excludeSnapshot']
 
 export const Orange = () => {
   const orangeColors = bgColors.filter(color => color.includes('orange'))
@@ -193,7 +190,6 @@ export const Orange = () => {
     </div>
   )
 }
-Orange.tags = ['excludeSnapshot']
 
 export const Red = () => {
   const redColors = bgColors.filter(color => color.includes('red'))
@@ -207,7 +203,6 @@ export const Red = () => {
     </div>
   )
 }
-Red.tags = ['excludeSnapshot']
 
 export const Purple = () => {
   const purpleColors = bgColors.filter(color => color.includes('purple'))
@@ -221,7 +216,6 @@ export const Purple = () => {
     </div>
   )
 }
-Purple.tags = ['excludeSnapshot']
 
 export const Pink = () => {
   const pinkColors = bgColors.filter(color => color.includes('pink'))
@@ -235,7 +229,6 @@ export const Pink = () => {
     </div>
   )
 }
-Pink.tags = ['excludeSnapshot']
 
 export const Coral = () => {
   const coralColors = bgColors.filter(color => color.includes('coral'))
@@ -249,7 +242,6 @@ export const Coral = () => {
     </div>
   )
 }
-Coral.tags = ['excludeSnapshot']
 
 export const Black = () => {
   const blackColors = bgColors.filter(color => color.includes('black'))
@@ -263,7 +255,6 @@ export const Black = () => {
     </div>
   )
 }
-Black.tags = ['excludeSnapshot']
 
 export const White = () => {
   const whiteColors = bgColors.filter(color => color.includes('white'))
@@ -277,4 +268,3 @@ export const White = () => {
     </div>
   )
 }
-White.tags = ['excludeSnapshot']

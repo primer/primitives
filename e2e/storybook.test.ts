@@ -16,7 +16,7 @@ interface Story {
   id: string
   parameters?: {
     snapshot?: {
-      excludeFromSnapshot?: boolean
+      includeSnapshot?: boolean
       snapshotLight?: boolean
     }
     docs?: {
@@ -29,7 +29,7 @@ const stories = Object.values(data.stories).map((story: unknown) => {
   const {id, parameters} = story as Story
   return {
     id,
-    excludeFromSnapshot: parameters?.snapshot?.excludeFromSnapshot,
+    includeSnapshot: parameters?.snapshot?.includeSnapshot,
     snapshotLight: parameters?.snapshot?.snapshotLight,
     tags: parameters?.docs?.tags,
   }
@@ -47,13 +47,12 @@ const themes = [
 
 test.describe('storybook', () => {
   for (const story of stories) {
-    if (
-      story.excludeFromSnapshot ||
-      (story.tags && story.tags.includes('excludeSnapshot')) ||
-      (story.tags && story.tags.includes('docs'))
-    ) {
-      // eslint-disable-next-line @typescript-eslint/no-empty-function
-      test.skip(story.id, async () => {})
+    const shouldIncludeSnapshot = story.includeSnapshot || (story.tags && story.tags.includes('includeSnapshot'))
+
+    if (!shouldIncludeSnapshot) {
+      test.skip(story.id, async () => {
+        // Skipping test because includeSnapshot is false or the story has the 'includeSnapshot' tag.
+      })
       continue
     }
 
@@ -76,6 +75,7 @@ test.describe('storybook', () => {
     })
   }
 
+  // The behavior for "all color swatches" stories remains unchanged.
   test.describe(`all color swatches`, async () => {
     for (const theme of themes) {
       for (const name of extractNameAndValue) {
