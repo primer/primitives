@@ -8,7 +8,6 @@ import {getTokensByName} from '../../utilities/getTokensByName'
 
 export default {
   title: 'Color/DataVis',
-  tags: ['excludeSnapshot'],
   parameters: {
     controls: {hideNoControlsWarning: true},
     options: {
@@ -62,4 +61,3 @@ export const HighchartsAccentColors = () => {
     </Table.Container>
   )
 }
-HighchartsAccentColors.tags = ['excludeSnapshot']

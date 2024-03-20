@@ -7,7 +7,6 @@ export default {
   parameters: {
     storyType: 'swatch',
     controls: {hideNoControlsWarning: true},
-    tags: ['excludeSnapshot'],
   },
 }
 

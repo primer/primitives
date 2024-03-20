@@ -85,6 +85,7 @@ export const BorderSize = () => {
     </Table.Container>
   )
 }
+BorderSize.tags = ['snapshotLight']
 
 export const BorderRadius = () => {
   const data = getTokensByName(sizeTokens, 'borderRadius').map(token => {
@@ -140,6 +141,7 @@ export const BorderRadius = () => {
     </Table.Container>
   )
 }
+BorderRadius.tags = ['snapshotLight']
 
 export const Outline = () => {
   const data = getTokensByName(sizeTokens, 'outline').map(token => {
@@ -200,3 +202,4 @@ export const Outline = () => {
     </Table.Container>
   )
 }
+Outline.tags = ['snapshotLight']

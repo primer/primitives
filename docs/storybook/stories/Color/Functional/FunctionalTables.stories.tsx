@@ -13,7 +13,6 @@ export default {
     options: {
       showPanel: false,
     },
-    tags: ['excludeSnapshot'],
   },
 }
 

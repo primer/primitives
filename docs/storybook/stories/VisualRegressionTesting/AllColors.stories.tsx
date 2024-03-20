@@ -31,6 +31,7 @@ export default {
       options: extractNameAndValue.map(item => item.name),
     },
   },
+  tags: ['includeSnapshot'],
 }
 
 export const ColorSwatches = ({colorToken}: {colorToken: string}) => {
