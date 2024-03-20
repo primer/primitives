@@ -50,7 +50,19 @@
       },
     },
     white: {
-      $value: '#ffffff',
+      $value: '{base.color.white}',
+      $type: 'color',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'mode',
+          mode: 'light',
+          group: 'semantic',
+          scopes: ['fgColor'],
+        },
+      },
+    },
+    black: {
+      $value: '{base.color.black}',
       $type: 'color',
       $extensions: {
         'org.primer.figma': {
