@@ -211,16 +211,6 @@
           $type: 'color',
         },
       },
-      bgColor: {
-        disabled: {
-          $value: '{base.color.green.5}',
-          $type: 'color',
-          mix: {
-            color: '{base.color.green.0}',
-            weight: 0.6,
-          },
-        },
-      },
       borderColor: {
         rest: {
           $value: '{base.color.green.2}',

@@ -137,6 +137,13 @@
     },
   },
   // patterns
+  avatar: {
+    borderColor: {
+      $value: '{base.color.black}',
+      $type: 'color',
+      alpha: 0.9,
+    },
+  },
   topicTag: {
     borderColor: {
       $value: '{borderColor.accent.emphasis}',
@@ -427,7 +434,7 @@
     borderColor: {
       $value: '{borderColor.muted}',
       $type: 'color',
-      alpha: null
+      alpha: null,
     },
   },
 }

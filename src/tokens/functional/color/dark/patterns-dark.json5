@@ -14,7 +14,7 @@
       alpha: 0.1,
     },
     borderColor: {
-      $value: '{borderColor.muted}',
+      $value: '{base.color.white}',
       $type: 'color',
       $extensions: {
         'org.primer.figma': {
@@ -24,6 +24,7 @@
           scopes: ['borderColor'],
         },
       },
+      alpha: 0.15,
     },
   },
   avatarStack: {
@@ -932,7 +933,7 @@
               scopes: ['fgColor'],
             },
           },
-          alpha: 0.8,
+          alpha: 0.4,
         },
       },
       iconColor: {
@@ -1006,7 +1007,7 @@
             },
           },
           mix: {
-            color: '{base.color.green.0}',
+            color: '{base.color.green.8}',
             weight: 0.6,
           },
         },

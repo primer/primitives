@@ -50,7 +50,19 @@
       },
     },
     white: {
-      $value: '#ffffff',
+      $value: '{base.color.white}',
+      $type: 'color',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'mode',
+          mode: 'light',
+          group: 'semantic',
+          scopes: ['fgColor'],
+        },
+      },
+    },
+    black: {
+      $value: '{base.color.black}',
       $type: 'color',
       $extensions: {
         'org.primer.figma': {
@@ -325,6 +337,30 @@
     },
     inverse: {
       $value: '{base.color.gray.9}',
+      $type: 'color',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'mode',
+          mode: 'light',
+          group: 'semantic',
+          scopes: ['bgColor'],
+        },
+      },
+    },
+    white: {
+      $value: '{base.color.white}',
+      $type: 'color',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'mode',
+          mode: 'light',
+          group: 'semantic',
+          scopes: ['bgColor'],
+        },
+      },
+    },
+    black: {
+      $value: '{base.color.black}',
       $type: 'color',
       $extensions: {
         'org.primer.figma': {
