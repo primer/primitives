@@ -44,7 +44,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        shard: [1, 2, 3, 4]
+        shard: [1, 2, 3, 4, 5]
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js 16.x
@@ -70,7 +70,7 @@ jobs:
           sleep 5
         working-directory: docs/storybook
       - name: Run Visual Regression Tests
-        uses: docker://mcr.microsoft.com/playwright:v1.35.1-jammy
+        uses: docker://mcr.microsoft.com/playwright:v1.42.1-jammy
         env:
           STORYBOOK_URL: 'http://172.17.0.1:6006'
         with:
@@ -79,10 +79,11 @@ jobs:
         run: kill ${{ steps.storybook.outputs.pid }}
       - name: Upload report
         if: ${{ always() }}
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: vrt-${{ matrix.shard }}
-          path: .playwright/report
+          path: blob-report
+          retention-days: 1
 
   vrt:
     name: 'Visual Regression Testing'
@@ -90,6 +91,27 @@ jobs:
     runs-on: ubuntu-latest
     needs: vrt-runner
     steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js 16.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: 16
+          cache: 'npm'
+      - name: install dependencies
+        run: npm ci
+      - name: download all reports
+        uses: actions/download-artifact@v4
+        with:
+          path: all-blob-reports
+          pattern: vrt-*
+          merge-multiple: true
+      - name: merge all reports
+        run: npx playwright merge-reports --reporter html ./all-blob-reports
+      - name: Upload report
+        uses: actions/upload-artifact@v4
+        with:
+          name: vrt
+          path: playwright-report
       - name: Check vrt-runner job status
         if: ${{ needs.vrt-runner.result == 'failure' }}
         run: exit 1
