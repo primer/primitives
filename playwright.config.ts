@@ -10,7 +10,7 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   reporter: [
     ['line'],
-    ['html', {open: 'never', outputFolder: path.join(__dirname, '.playwright/report')}],
+    process.env.CI ? ['blob'] : ['html', {open: 'never', outputFolder: path.join(__dirname, '.playwright/report')}],
     [
       'json',
       {
