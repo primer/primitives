@@ -1,5 +1,11 @@
 # @primer/primitives
 
+## 7.15.14
+
+### Patch Changes
+
+- [#843](https://github.com/primer/primitives/pull/843) [`d43b576f`](https://github.com/primer/primitives/commit/d43b576ff8d98fd012e9dc1331f493505e0bda8f) Thanks [@langermank](https://github.com/langermank)! - v8 bug fixes + enhancements for rollout
+
 ## 7.15.13
 
 ### Patch Changes
