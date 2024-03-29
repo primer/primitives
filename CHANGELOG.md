@@ -1,5 +1,11 @@
 # @primer/primitives
 
+## 7.15.15
+
+### Patch Changes
+
+- [#849](https://github.com/primer/primitives/pull/849) [`ba6a5a88`](https://github.com/primer/primitives/commit/ba6a5a8892f58f71952a370f660f57ab308d166b) Thanks [@langermank](https://github.com/langermank)! - Add colors for reaction button pattern
+
 ## 7.15.14
 
 ### Patch Changes
