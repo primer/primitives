@@ -30,9 +30,6 @@ jobs:
       - name: Build tokens
         run: npm run build
 
-      - name: Build experimental tokens
-        run: npm run build:tokens
-
       - name: Create .npmrc
         run: |
           cat << EOF > "$HOME/.npmrc"

@@ -29,7 +29,7 @@ jobs:
         run: npm ci --no-audit --no-fund --ignore-scripts
 
       - name: Build tokens
-        run: npm run build:next # building v1 as they are currently used for contrast check
+        run: npm run build
 
       - name: Run required checks
         run: |
