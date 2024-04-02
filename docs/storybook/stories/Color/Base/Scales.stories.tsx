@@ -131,9 +131,7 @@ export const Gray = () => {
   return (
     <div>
       {grayColors.map(color => (
-        <>
-          <ColorScale color={color} key={color} />
-        </>
+        <ColorScale color={color} key={color} />
       ))}
     </div>
   )
@@ -144,9 +142,7 @@ export const Blue = () => {
   return (
     <div>
       {blueColors.map(color => (
-        <>
-          <ColorScale color={color} key={color} />
-        </>
+        <ColorScale color={color} key={color} />
       ))}
     </div>
   )
@@ -157,9 +153,7 @@ export const Green = () => {
   return (
     <div>
       {greenColors.map(color => (
-        <>
-          <ColorScale color={color} key={color} />
-        </>
+        <ColorScale color={color} key={color} />
       ))}
     </div>
   )
@@ -170,9 +164,7 @@ export const Yellow = () => {
   return (
     <div>
       {yellowColors.map(color => (
-        <>
-          <ColorScale color={color} key={color} />
-        </>
+        <ColorScale color={color} key={color} />
       ))}
     </div>
   )
@@ -183,9 +175,7 @@ export const Orange = () => {
   return (
     <div>
       {orangeColors.map(color => (
-        <>
-          <ColorScale color={color} key={color} />
-        </>
+        <ColorScale color={color} key={color} />
       ))}
     </div>
   )
@@ -196,9 +186,7 @@ export const Red = () => {
   return (
     <div>
       {redColors.map(color => (
-        <>
-          <ColorScale color={color} key={color} />
-        </>
+        <ColorScale color={color} key={color} />
       ))}
     </div>
   )
@@ -209,9 +197,7 @@ export const Purple = () => {
   return (
     <div>
       {purpleColors.map(color => (
-        <>
-          <ColorScale color={color} key={color} />
-        </>
+        <ColorScale color={color} key={color} />
       ))}
     </div>
   )
@@ -222,9 +208,7 @@ export const Pink = () => {
   return (
     <div>
       {pinkColors.map(color => (
-        <>
-          <ColorScale color={color} key={color} />
-        </>
+        <ColorScale color={color} key={color} />
       ))}
     </div>
   )
@@ -235,9 +219,7 @@ export const Coral = () => {
   return (
     <div>
       {coralColors.map(color => (
-        <>
-          <ColorScale color={color} key={color} />
-        </>
+        <ColorScale color={color} key={color} />
       ))}
     </div>
   )
@@ -248,9 +230,7 @@ export const Black = () => {
   return (
     <div>
       {blackColors.map(color => (
-        <>
-          <ColorScale color={color} key={color} />
-        </>
+        <ColorScale color={color} key={color} />
       ))}
     </div>
   )
@@ -261,9 +241,7 @@ export const White = () => {
   return (
     <div>
       {whiteColors.map(color => (
-        <>
-          <ColorScale color={color} border key={color} />
-        </>
+        <ColorScale color={color} border key={color} />
       ))}
     </div>
   )
