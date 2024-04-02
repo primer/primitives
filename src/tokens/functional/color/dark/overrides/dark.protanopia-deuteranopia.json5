@@ -310,34 +310,5 @@
         },
       },
     },
-    /**
-     * @description All overwrites for color scales
-     */
-    scale: {
-      green: {
-        '0': {$value: '{base.color.blue.0}', $type: 'color'},
-        '1': {$value: '{base.color.blue.1}', $type: 'color'},
-        '2': {$value: '{base.color.blue.2}', $type: 'color'},
-        '3': {$value: '{base.color.blue.3}', $type: 'color'},
-        '4': {$value: '{base.color.blue.4}', $type: 'color'},
-        '5': {$value: '{base.color.blue.5}', $type: 'color'},
-        '6': {$value: '{base.color.blue.6}', $type: 'color'},
-        '7': {$value: '{base.color.blue.7}', $type: 'color'},
-        '8': {$value: '{base.color.blue.8}', $type: 'color'},
-        '9': {$value: '{base.color.blue.9}', $type: 'color'},
-      },
-      red: {
-        '0': {$value: '{base.color.orange.0}', $type: 'color'},
-        '1': {$value: '{base.color.orange.1}', $type: 'color'},
-        '2': {$value: '{base.color.orange.2}', $type: 'color'},
-        '3': {$value: '{base.color.orange.3}', $type: 'color'},
-        '4': {$value: '{base.color.orange.4}', $type: 'color'},
-        '5': {$value: '{base.color.orange.5}', $type: 'color'},
-        '6': {$value: '{base.color.orange.6}', $type: 'color'},
-        '7': {$value: '{base.color.orange.7}', $type: 'color'},
-        '8': {$value: '{base.color.orange.8}', $type: 'color'},
-        '9': {$value: '{base.color.orange.9}', $type: 'color'},
-      },
-    },
   },
 }
