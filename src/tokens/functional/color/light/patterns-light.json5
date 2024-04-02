@@ -1788,6 +1788,66 @@
       },
     },
   },
+  reactionButton: {
+    selected: {
+      bgColor: {
+        rest: {
+          $value: '{base.color.blue.0}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              mode: 'light',
+              group: 'component (internal)',
+              scopes: ['bgColor'],
+            },
+          },
+        },
+        hover: {
+          $value: '{reactionButton.selected.bgColor.rest}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              mode: 'light',
+              group: 'component (internal)',
+              scopes: ['bgColor'],
+            },
+          },
+          mix: {
+            color: '{base.color.blue.2}',
+            weight: 0.2,
+          },
+        },
+      },
+      fgColor: {
+        rest: {
+          $value: '{fgColor.link.@}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              mode: 'light',
+              group: 'component (internal)',
+              scopes: ['fgColor'],
+            },
+          },
+        },
+        hover: {
+          $value: '{base.color.blue.6}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              mode: 'light',
+              group: 'component (internal)',
+              scopes: ['fgColor'],
+            },
+          },
+        },
+      },
+    },
+  },
   focus: {
     outlineColor: {
       $value: '{borderColor.accent.emphasis}',
