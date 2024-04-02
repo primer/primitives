@@ -55,7 +55,7 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
     for (const {filename, source, include} of themes) {
       // build functional scales
       PrimerStyleDictionary.extend({
-        source: [...source, ...include, `src/tokens/functional/color/internal.scales.json5`], // build the special formats
+        source: [...source, ...include], // build the special formats
         include,
         platforms: {
           css: css(`internalCss/${filename}.css`, buildOptions.prefix, buildOptions.buildPath, {themed: true}),
