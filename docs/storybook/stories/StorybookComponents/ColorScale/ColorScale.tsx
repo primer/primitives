@@ -12,16 +12,19 @@ export const ColorScale = ({color, border}: ColorScaleProps) => {
   const {resolvedColorScheme: theme} = useTheme()
   const ref = React.useRef<HTMLDivElement | null>(null)
   const [hex, setHex] = React.useState<string | null>(null)
-  const textColor = hex ? readableColor(hex) : 'currentColor'
+  const [textColor, setTextColor] = React.useState<string>('currentColor')
 
   React.useEffect(() => {
-    if (ref.current === null) {
-      return
-    }
-
-    const style = getComputedStyle(ref.current)
-    const rgb = style.getPropertyValue('background-color')
-    setHex(toHex(rgb))
+    setTimeout(() => {
+      if (ref.current === null) {
+        return
+      }
+      const style = getComputedStyle(ref.current)
+      const rgb = style.getPropertyValue('background-color')
+      const asHex = toHex(rgb)
+      setHex(asHex)
+      setTextColor(asHex ? readableColor(asHex) : 'currentColor')
+    }, 0)
   }, [color, theme])
 
   return (
