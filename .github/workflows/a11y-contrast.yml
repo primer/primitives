@@ -36,6 +36,7 @@ jobs:
           npm run contrast:check
       
       - name: Report check results
+        if: github.event_name == 'pull_request'
         uses: actions/github-script@v6
         with:
           script: |
