@@ -44,8 +44,8 @@ jobs:
       dependencies: ${{ steps.filter.outputs.dependencies }}
       docs: ${{ steps.filter.outputs.docs }}
     steps:
-    - uses: actions/checkout@v3
-    - uses: dorny/paths-filter@v2
+    - uses: actions/checkout@v4
+    - uses: dorny/paths-filter@v3
       id: filter
       with:
         list-files: shell
