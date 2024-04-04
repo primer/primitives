@@ -2,8 +2,7 @@ name: A11y contrast check
 
 on:
   pull_request:
-    branches:
-      - main
+  workflow_dispatch:
 
 jobs:
   changes:
