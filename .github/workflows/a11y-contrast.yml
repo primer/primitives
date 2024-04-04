@@ -2,8 +2,7 @@ name: A11y contrast check
 
 on:
   pull_request:
-    branches:
-      - main
+  workflow_dispatch:
 
 jobs:
   changes:
@@ -11,7 +10,7 @@ jobs:
 
   build:
     needs: changes
-    if: needs.changes.outputs.oldTokens == 'true'
+    if: needs.changes.outputs.tokens == 'true' || github.event_name == 'workflow_dispatch'
     name: Check design token color contrast
     runs-on: ubuntu-latest
     steps:
