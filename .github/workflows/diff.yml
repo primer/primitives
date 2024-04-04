@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Set up node
         uses: actions/setup-node@v4
@@ -21,7 +21,7 @@ jobs:
           cache: 'npm'
 
       - name: Create comment (if necessary)
-        uses: actions/github-script@v5
+        uses: actions/github-script@v6
         with:
           script: |
             const body = '<details>\n' +
@@ -49,10 +49,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Checkout base branch
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           ref: ${{ github.base_ref }}
           path: base
