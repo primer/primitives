@@ -256,6 +256,23 @@
         },
       },
     },
+    upsell: {
+      '@': {
+        $value: '{base.color.purple.5}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'light',
+            group: 'semantic',
+            scopes: ['fgColor'],
+            codeSyntax: {
+              web: 'var(--fgColor-upsell)',
+            },
+          },
+        },
+      },
+    },
     sponsors: {
       '@': {
         $value: '{base.color.pink.5}',
@@ -686,6 +703,38 @@
         },
       },
     },
+    upsell: {
+      muted: {
+        $value: '{base.color.purple.0}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'light',
+            group: 'semantic',
+            scopes: ['bgColor'],
+            codeSyntax: {
+              web: 'var(--bgColor-upsell-muted)',
+            },
+          },
+        },
+      },
+      emphasis: {
+        $value: '{base.color.purple.5}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'light',
+            group: 'semantic',
+            scopes: ['bgColor'],
+            codeSyntax: {
+              web: 'var(--bgColor-upsell-emphasis)',
+            },
+          },
+        },
+      },
+    },
     sponsors: {
       muted: {
         $value: '{base.color.pink.0}',
@@ -1071,7 +1120,40 @@
             group: 'semantic',
             scopes: ['borderColor'],
             codeSyntax: {
-              web: 'var(--borderColor-done-emphasis) /* utility class: .color-border-done-emphasis */',
+              web: 'var(--borderColor-done-emphasis)',
+            },
+          },
+        },
+      },
+    },
+    upsell: {
+      muted: {
+        $value: '{base.color.purple.3}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'light',
+            group: 'semantic',
+            scopes: ['borderColor'],
+            codeSyntax: {
+              web: 'var(--borderColor-upsell-muted)',
+            },
+          },
+        },
+        alpha: 0.4,
+      },
+      emphasis: {
+        $value: '{base.color.purple.5}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'light',
+            group: 'semantic',
+            scopes: ['borderColor'],
+            codeSyntax: {
+              web: 'var(--borderColor-upsell-emphasis)',
             },
           },
         },
