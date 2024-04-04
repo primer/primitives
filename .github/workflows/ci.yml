@@ -13,12 +13,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: 16
+          node-version: 20
           cache: 'npm'
 
       - name: Install dependencies
@@ -46,11 +46,11 @@ jobs:
       matrix:
         shard: [1, 2, 3, 4]
     steps:
-      - uses: actions/checkout@v3
-      - name: Use Node.js 16.x
-        uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - name: Use Node.js 20.x
+        uses: actions/setup-node@v4
         with:
-          node-version: 16
+          node-version: 20
           cache: 'npm'
       - name: Install dependencies
         run: npm ci
@@ -79,7 +79,7 @@ jobs:
         run: kill ${{ steps.storybook.outputs.pid }}
       - name: Upload report
         if: ${{ always() }}
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: vrt-${{ matrix.shard }}
           path: .playwright/report

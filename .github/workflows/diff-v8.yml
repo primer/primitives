@@ -4,13 +4,15 @@ on:
   pull_request:
     branches-ignore:
       - 'changeset-release/**'
+  workflow_dispatch:
+
 jobs:
   changes:
     uses: ./.github/workflows/hasChanged.yml
 
   diff:
     needs: changes
-    if: ${{ needs.changes.outputs.tokens == 'true' }}
+    if: needs.changes.outputs.tokens == 'true' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -23,9 +25,9 @@ jobs:
           path: base
 
       - name: Set up Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: 16
+          node-version: 20
           cache: 'npm'
 
       - name: Install dependencies
