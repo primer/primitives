@@ -2139,4 +2139,18 @@
       alpha: 0.2,
     },
   },
+  card: {
+    bgColor: {
+      $value: '{bgColor.default}',
+      $type: 'color',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'mode',
+          mode: 'light',
+          group: 'component',
+          scopes: ['bgColor'],
+        },
+      },
+    },
+  },
 }

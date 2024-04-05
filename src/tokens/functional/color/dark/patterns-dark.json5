@@ -2142,4 +2142,18 @@
       alpha: 0.7,
     },
   },
+  card: {
+    bgColor: {
+      $value: '{bgColor.muted}',
+      $type: 'color',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'mode',
+          mode: 'dark',
+          group: 'component',
+          scopes: ['bgColor'],
+        },
+      },
+    },
+  },
 }
