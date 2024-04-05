@@ -1,6 +1,6 @@
 import fs from 'fs'
 import {PrimerStyleDictionary} from '~/src/PrimerStyleDictionary'
-import {themes} from '../themes.config'
+import {themes} from './themes.config'
 import {figma} from '~/src/platforms'
 import type {ConfigGeneratorOptions} from '~/src/types/StyleDictionaryConfigGenerator'
 
@@ -260,7 +260,7 @@ export const buildFigma = (buildOptions: ConfigGeneratorOptions): void => {
 }
 try {
   buildFigma({
-    buildPath: 'tokens-next-private/',
+    buildPath: 'dist/',
   })
 } catch (e) {
   // eslint-disable-next-line no-console
