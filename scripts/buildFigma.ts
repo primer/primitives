@@ -4,7 +4,7 @@ import {themes} from './themes.config'
 import {figma} from '~/src/platforms'
 import type {ConfigGeneratorOptions} from '~/src/types/StyleDictionaryConfigGenerator'
 
-export const buildFigma = (buildOptions: ConfigGeneratorOptions): void => {
+const buildFigma = (buildOptions: ConfigGeneratorOptions): void => {
   /** -----------------------------------
    * Colors
    * ----------------------------------- */
@@ -258,6 +258,7 @@ export const buildFigma = (buildOptions: ConfigGeneratorOptions): void => {
   // write to file
   fs.writeFileSync(`${buildOptions.buildPath}figma/figma.json`, JSON.stringify({collections, files}, null, 2))
 }
+
 try {
   buildFigma({
     buildPath: 'dist/',
