@@ -21,7 +21,7 @@ jobs:
           cache: 'npm'
 
       - name: Create comment (if necessary)
-        uses: actions/github-script@v6
+        uses: actions/github-script@v7
         with:
           script: |
             const body = '<details>\n' +
