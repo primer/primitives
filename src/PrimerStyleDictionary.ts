@@ -21,6 +21,7 @@ import {
   namePathToFigma,
   shadowToCss,
   typographyToCss,
+  dimensionToRemPxArray,
 } from './transformers'
 import {
   scssMixinCssVariables,
@@ -139,6 +140,11 @@ StyleDictionary.registerTransform({
 StyleDictionary.registerTransform({
   name: 'dimension/rem',
   ...dimensionToRem,
+})
+
+StyleDictionary.registerTransform({
+  name: 'dimension/remPxArray',
+  ...dimensionToRemPxArray,
 })
 
 StyleDictionary.registerTransform({

@@ -1,7 +1,7 @@
 import type StyleDictionary from 'style-dictionary'
 import {PrimerStyleDictionary} from '~/src/PrimerStyleDictionary'
 import {copyFromDir} from '~/src/utilities'
-import {deprecatedJson, css, docJson, scss, fallbacks} from '~/src/platforms'
+import {deprecatedJson, css, docJson, scss, fallbacks, styleLint} from '~/src/platforms'
 import type {ConfigGeneratorOptions, StyleDictionaryConfigGenerator} from '~/src/types/StyleDictionaryConfigGenerator'
 import type {TokenBuildInput} from '~/src/types/TokenBuildInput'
 import glob from 'fast-glob'
@@ -25,17 +25,18 @@ const getStyleDictionaryConfig: StyleDictionaryConfigGenerator = (
   source, // build the special formats
   include,
   platforms: {
-    css: css(`css/${filename}.css`, options.prefix, options.buildPath, {themed: options.themed}),
-    scss: scss(`scss/${filename}.scss`, options.prefix, options.buildPath),
-    docJson: docJson(`docs/${filename}.json`, options.prefix, options.buildPath),
-    fallbacks: fallbacks(`fallbacks/${filename}.json`, options.prefix, options.buildPath),
+    // css: css(`css/${filename}.css`, options.prefix, options.buildPath, {themed: options.themed}),
+    // scss: scss(`scss/${filename}.scss`, options.prefix, options.buildPath),
+    // docJson: docJson(`docs/${filename}.json`, options.prefix, options.buildPath),
+    styleLint: styleLint(`styleLint/${filename}.json`, options.prefix, options.buildPath),
+    // fallbacks: fallbacks(`fallbacks/${filename}.json`, options.prefix, options.buildPath),
     ...platforms,
   },
 })
 
 export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void => {
   /** -----------------------------------
-   * Colors, shadows & borders
+   * Internal Colors
    * ----------------------------------- */
   try {
     for (const {filename, source, include} of themes) {
@@ -54,7 +55,7 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
   }
 
   /** -----------------------------------
-   * Internal Colors
+   * Colors, shadows & borders
    * ----------------------------------- */
   try {
     for (const {filename, source, include} of themes) {
