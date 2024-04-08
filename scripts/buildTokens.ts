@@ -25,11 +25,11 @@ const getStyleDictionaryConfig: StyleDictionaryConfigGenerator = (
   source, // build the special formats
   include,
   platforms: {
-    // css: css(`css/${filename}.css`, options.prefix, options.buildPath, {themed: options.themed}),
-    // scss: scss(`scss/${filename}.scss`, options.prefix, options.buildPath),
-    // docJson: docJson(`docs/${filename}.json`, options.prefix, options.buildPath),
+    css: css(`css/${filename}.css`, options.prefix, options.buildPath, {themed: options.themed}),
+    scss: scss(`scss/${filename}.scss`, options.prefix, options.buildPath),
+    docJson: docJson(`docs/${filename}.json`, options.prefix, options.buildPath),
     styleLint: styleLint(`styleLint/${filename}.json`, options.prefix, options.buildPath),
-    // fallbacks: fallbacks(`fallbacks/${filename}.json`, options.prefix, options.buildPath),
+    fallbacks: fallbacks(`fallbacks/${filename}.json`, options.prefix, options.buildPath),
     ...platforms,
   },
 })
