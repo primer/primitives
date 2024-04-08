@@ -14,6 +14,7 @@ describe('Format: Json One Dimensional', () => {
         },
       },
     }),
+    options: {outputVerbose: true},
   })
 
   test('Formats tokens', () => {
