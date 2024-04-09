@@ -1,4 +1,4 @@
-import {getMockToken} from '~/src/test-utilities'
+import {getMockToken} from '../test-utilities'
 import {borderToCss} from './borderToCss'
 
 describe('Transformer: borderToCss', () => {

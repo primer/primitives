@@ -1,4 +1,4 @@
-import {getMockToken} from '~/src/test-utilities'
+import {getMockToken} from '../../../../src/test-utilities'
 import {getTokensByName} from './getTokensByName'
 
 getTokensByName
