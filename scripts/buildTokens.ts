@@ -1,7 +1,7 @@
 import type StyleDictionary from 'style-dictionary'
 import {PrimerStyleDictionary} from '~/src/PrimerStyleDictionary'
 import {copyFromDir} from '~/src/utilities'
-import {deprecatedJson, css, docJson, scss, fallbacks} from '~/src/platforms'
+import {deprecatedJson, css, docJson, fallbacks} from '~/src/platforms'
 import type {ConfigGeneratorOptions, StyleDictionaryConfigGenerator} from '~/src/types/StyleDictionaryConfigGenerator'
 import type {TokenBuildInput} from '~/src/types/TokenBuildInput'
 import glob from 'fast-glob'
@@ -26,7 +26,6 @@ const getStyleDictionaryConfig: StyleDictionaryConfigGenerator = (
   include,
   platforms: {
     css: css(`css/${filename}.css`, options.prefix, options.buildPath, {themed: options.themed}),
-    scss: scss(`scss/${filename}.scss`, options.prefix, options.buildPath),
     docJson: docJson(`docs/${filename}.json`, options.prefix, options.buildPath),
     fallbacks: fallbacks(`fallbacks/${filename}.json`, options.prefix, options.buildPath),
     ...platforms,
