@@ -2,8 +2,9 @@ name: Design Token Schema Validation
 
 on:
   pull_request:
-    branches:
-      - main
+    branches-ignore:
+      - 'changeset-release/**'
+  workflow_dispatch:
 
 jobs:
   changes:
@@ -11,17 +12,17 @@ jobs:
 
   build:
     needs: changes
-    if: needs.changes.outputs.tokens == 'true'
+    if: needs.changes.outputs.tokens == 'true' || github.event_name == 'workflow_dispatch'
     name: Validate Design Tokens against Schema
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20
           cache: 'npm'
 
       - name: Install dependencies
@@ -31,7 +32,8 @@ jobs:
         run: npm run lint:tokens -- --outFile=tokenErrors.json
 
       - name: Comment on PR
-        uses: actions/github-script@v6
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
         with:
           script: |
             const errors = require('./tokenErrors.json')

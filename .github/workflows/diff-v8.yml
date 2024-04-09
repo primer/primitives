@@ -4,50 +4,53 @@ on:
   pull_request:
     branches-ignore:
       - 'changeset-release/**'
+  workflow_dispatch:
+
 jobs:
   changes:
     uses: ./.github/workflows/hasChanged.yml
 
   diff:
     needs: changes
-    if: ${{ needs.changes.outputs.tokens == 'true' }}
+    if: needs.changes.outputs.tokens == 'true' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Checkout base branch
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           ref: ${{ github.base_ref }}
           path: base
 
       - name: Set up Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: 16
+          node-version: 20
           cache: 'npm'
 
-      - name: Install dependencies
+      - name: Install dependencies (pr)
         run: npm ci --no-audit --no-fund --include=dev --ignore-scripts
 
-      - name: Build v8 tokens
-        run: npm run build:next
+      - name: Build tokens (pr)
+        run: npm run build:v8
 
       - name: Install dependencies (base)
         run: pushd base; npm i --no-audit --no-fund --ignore-scripts; popd
 
-      - name: Build (base)
-        run: pushd base; npm run build:next; popd
+      - name: Build tokens (base)
+        run: pushd base; npm run build:v8; popd
 
       - name: Install dependecies for diffing
         run: npm install shelljs
 
       - name: Diff v8 tokens
-        uses: actions/github-script@v6
+        id: diff-files
+        uses: actions/github-script@v7
         with:
           script: |
-            const cssFolder = 'tokens-next-private/css'
+            const cssFolder = 'dist/css'
             const shell = require('shelljs')
             const globber = await glob.create(cssFolder + '/**/**/*.css')
             const files = await globber.glob()
@@ -57,7 +60,7 @@ jobs:
               // run diff
               const diff = shell.exec(`diff -u ${file.replace(cssFolder, 'base/' + cssFolder)} ${file}`)
               // get filename
-              const regexRunnerPath = new RegExp('^[a-z\/]+\/tokens-next-private', 'g')
+              const regexRunnerPath = new RegExp('^[a-z\/]+\/dist', 'g')
               const filename = file.replaceAll(regexRunnerPath,'')
 
               console.log('Checking diff for ' + filename + '...')
@@ -82,6 +85,45 @@ jobs:
             .filter(item => {
               return item.diff !== ''
             })
+            
+            // set output to use diff in pr comment
+            core.setOutput('diffs', diffs);
+
+      - name: Write summary
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const diffs = ${{ steps.diff-files.outputs.diffs }}
+            
+            core.summary.clear()
+            
+            core.summary.addHeading('V8 Design Token Diff', '1')
+            
+            if (diffs.length === 0) {
+              core.summary.addRaw('No design tokens changed', true)
+            } else {
+
+              diffs.forEach(({file: fileName, diff: content}) => {
+                const diffDetails = `<details><summary><h3>${fileName}</h3></summary>\n\n`+
+                '```diff\n'+
+                `${content}\n`+
+                '```\n\n'+
+                '</details>'
+
+                core.summary.addRaw(diffDetails, true)
+              })
+
+            }
+
+            // write summary
+            core.summary.write({overwrite: true})
+
+      - name: Comment on pr
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const diffs = ${{ steps.diff-files.outputs.diffs }}
 
             // prepare comment body
             let body = '## Design Token Diff\n\n'
@@ -98,6 +140,7 @@ jobs:
                 '\n</details>'
               ).join('\n')
             }
+
             // get comments
             const {data: comments} = await github.rest.issues.listComments({
               issue_number: context.issue.number,

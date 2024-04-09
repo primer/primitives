@@ -1,22 +1,12 @@
 import type StyleDictionary from 'style-dictionary'
 import {PrimerStyleDictionary} from '~/src/PrimerStyleDictionary'
 import {copyFromDir} from '~/src/utilities'
-import {
-  // typeDefinitions,
-  deprecatedJson,
-  css,
-  docJson,
-  scss,
-  // javascript,
-  // typescript,
-  // json,
-  fallbacks,
-} from '~/src/platforms'
+import {deprecatedJson, css, docJson, fallbacks} from '~/src/platforms'
 import type {ConfigGeneratorOptions, StyleDictionaryConfigGenerator} from '~/src/types/StyleDictionaryConfigGenerator'
 import type {TokenBuildInput} from '~/src/types/TokenBuildInput'
 import glob from 'fast-glob'
 import {themes} from './themes.config'
-import {buildFigma} from './buildPlatforms/buildFigma'
+
 /**
  * getStyleDictionaryConfig
  * @param filename output file name without extension
@@ -36,10 +26,6 @@ const getStyleDictionaryConfig: StyleDictionaryConfigGenerator = (
   include,
   platforms: {
     css: css(`css/${filename}.css`, options.prefix, options.buildPath, {themed: options.themed}),
-    scss: scss(`scss/${filename}.scss`, options.prefix, options.buildPath),
-    // js: javascript(`js/${filename}.js`, options.prefix, options.buildPath),
-    // ts: typescript(`ts/${filename}.ts`, options.prefix, options.buildPath),
-    // json: json(`json/${filename}.json`, options.prefix, options.buildPath),
     docJson: docJson(`docs/${filename}.json`, options.prefix, options.buildPath),
     fallbacks: fallbacks(`fallbacks/${filename}.json`, options.prefix, options.buildPath),
     ...platforms,
@@ -47,7 +33,6 @@ const getStyleDictionaryConfig: StyleDictionaryConfigGenerator = (
 })
 
 export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void => {
-  buildFigma(buildOptions)
   /** -----------------------------------
    * Colors, shadows & borders
    * ----------------------------------- */
@@ -226,53 +211,6 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
    * Copy `removed` files
    * ----------------------------------- */
   copyFromDir(`src/tokens/removed`, `${buildOptions.buildPath}removed`)
-
-  /** -----------------------------------
-   * Type definitions
-   * ----------------------------------- */
-  // const typeBuilds: TokenBuildInput[] = [
-  //   // color, shadow & border
-  //   {
-  //     filename: 'theme',
-  //     source: [
-  //       `src/tokens/functional/color/light/*.json5`,
-  //       `src/tokens/functional/shadow/light.json5`,
-  //       `src/tokens/functional/border/light.json5`,
-  //     ],
-  //     include: [`src/tokens/base/color/light/light.json5`],
-  //   },
-  //   // typography
-  //   {
-  //     filename: 'typography',
-  //     source: [`src/tokens/functional/typography/*.json`],
-  //     include: [`src/tokens/base/typography/*.json`],
-  //   },
-  //   // size
-  //   {
-  //     filename: 'size',
-  //     source: [`src/tokens/functional/size/*.json`],
-  //     include: [`src/tokens/base/size/*.json`],
-  //   },
-  // ]
-  // //
-  // for (const {filename, source, include} of typeBuilds) {
-  //   PrimerStyleDictionary.extend({
-  //     source,
-  //     include,
-  //     platforms: {
-  //       types: typeDefinitions(filename, buildOptions.prefix, `${buildOptions.buildPath}ts/types/`),
-  //     },
-  //   }).buildAllPlatforms()
-  // }
-
-  // // build types for base scale
-  // PrimerStyleDictionary.extend({
-  //   source: [`src/tokens/functional/color/scales.json5`],
-  //   include: [`src/tokens/base/color/light/light.json5`],
-  //   platforms: {
-  //     types: typeDefinitions(`baseColor`, undefined, `${buildOptions.buildPath}ts/types/`),
-  //   },
-  // }).buildAllPlatforms()
 }
 
 /** -----------------------------------
