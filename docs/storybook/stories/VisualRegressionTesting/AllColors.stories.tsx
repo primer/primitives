@@ -1,6 +1,6 @@
 import React from 'react'
 // eslint-disable-next-line import/extensions
-import colorData from '../../../../tokens-next-private/docs/functional/themes/light.json'
+import colorData from '../../../../dist/docs/functional/themes/light.json'
 import {ColorTokenSwatch} from '../StorybookComponents/ColorTokenSwatch/ColorTokenSwatch'
 
 const extractNameAndValue = Object.entries(colorData)
