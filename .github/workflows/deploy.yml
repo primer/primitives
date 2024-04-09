@@ -17,6 +17,6 @@ jobs:
     with:
       node_version: 20
       install: npm ci --legacy-peer-deps --no-audit --no-fund && npm run install:storybook
-      build: npm run build && npm run build:next && cd docs/storybook && npm run build:prod
+      build: npm run build:next && cd docs/storybook && npm run build:prod
       output_dir: docs/public
 
