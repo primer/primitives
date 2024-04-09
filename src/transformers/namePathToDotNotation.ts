@@ -1,4 +1,4 @@
-import {upperCaseFirstCharacter} from '~/src/utilities'
+import {upperCaseFirstCharacter} from '../utilities'
 import type StyleDictionary from 'style-dictionary'
 
 /**

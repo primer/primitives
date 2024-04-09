@@ -1,4 +1,4 @@
-import {getMockToken} from '~/src/test-utilities'
+import {getMockToken} from '../test-utilities'
 import {namePathToFigma} from './namePathToFigma'
 
 describe('Transformer: namePathToFigma', () => {

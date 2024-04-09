@@ -1,5 +1,5 @@
 import {typescriptExportDefinition} from './typescriptExportDefinition'
-import {getMockFormatterArguments, getMockDictionary, getMockToken} from '~/src/test-utilities'
+import {getMockFormatterArguments, getMockDictionary, getMockToken} from '../test-utilities'
 import {format} from 'prettier'
 
 describe('Format: TypeScript definitions', () => {

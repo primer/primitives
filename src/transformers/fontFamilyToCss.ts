@@ -1,5 +1,5 @@
 import type StyleDictionary from 'style-dictionary'
-import {isFontFamily} from '~/src/filters'
+import {isFontFamily} from '../filters'
 import {getTokenValue} from './utilities/getTokenValue'
 
 const hasSpaceInName = (string: string) => /\s/g.test(string)

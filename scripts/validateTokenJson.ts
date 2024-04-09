@@ -1,8 +1,8 @@
 import fs from 'fs'
 import json5 from 'json5'
-import {designToken} from '~/src/schemas/designToken'
+import {designToken} from '../src/schemas/designToken'
 import {getFlag} from '../src/utilities/getFlag'
-import {validateType} from '~/src/schemas/validTokenType'
+import {validateType} from '../src/schemas/validTokenType'
 import {walkDir} from './utilities/walkDir'
 import {validateTokenWithSchema, type validationErrors} from './utilities/validateTokenWithSchema'
 
