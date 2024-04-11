@@ -12,9 +12,9 @@ permissions:
 jobs:
   deploy:
     name: Build and deploy
-    uses: primer/.github/.github/workflows/deploy_preview.yml@main
+    uses: primer/.github/.github/workflows/deploy_preview.yml@v1
     with:
-      node_version: 18
+      node_version: 20
       install: npm ci --no-audit --no-fund --ignore-scripts && npm run install:storybook
       build: npm run build:tokens && npm run build && npm run build:next && cd docs/storybook && npm run build:preview
       output_dir: docs/public
