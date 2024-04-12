@@ -1,6 +1,6 @@
 import type StyleDictionary from 'style-dictionary'
-import {isTypography} from '~/src/filters'
-import type {TypographyTokenValue} from '~/src/types/TypographyTokenValue'
+import {isTypography} from '../filters'
+import type {TypographyTokenValue} from '../types/TypographyTokenValue'
 import {checkRequiredTokenProperties} from './utilities/checkRequiredTokenProperties'
 import {parseFontFamily} from './fontFamilyToCss'
 import {parseFontWeight} from './fontWeightToNumber'

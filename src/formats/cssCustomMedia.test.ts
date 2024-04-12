@@ -1,5 +1,5 @@
 import {cssCustomMedia} from './cssCustomMedia'
-import {getMockFormatterArguments} from '~/src/test-utilities'
+import {getMockFormatterArguments} from '../test-utilities'
 import {format} from 'prettier'
 
 describe('Format: tokens to custom-media', () => {

@@ -1,7 +1,7 @@
 import type StyleDictionary from 'style-dictionary'
-import type {PlatformInitializer} from '~/src/types/PlatformInitializer'
-import {isSource} from '~/src/filters'
-import {upperCaseFirstCharacter} from '~/src/utilities'
+import type {PlatformInitializer} from '../types/PlatformInitializer'
+import {isSource} from '../filters'
+import {upperCaseFirstCharacter} from '../utilities'
 
 export const typeDefinitions: PlatformInitializer = (outputFile, prefix, buildPath): StyleDictionary.Platform => ({
   prefix,

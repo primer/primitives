@@ -1,5 +1,5 @@
 import {jsonOneDimensional} from './jsonOneDimensional'
-import {getMockDictionary, getMockFormatterArguments, getMockToken} from '~/src/test-utilities'
+import {getMockDictionary, getMockFormatterArguments, getMockToken} from '../test-utilities'
 import {format} from 'prettier'
 
 describe('Format: Json One Dimensional', () => {

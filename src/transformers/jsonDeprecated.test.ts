@@ -1,4 +1,4 @@
-import {getMockToken} from '~/src/test-utilities'
+import {getMockToken} from '../test-utilities'
 import {jsonDeprecated} from './jsonDeprecated'
 
 describe('Transformer: jsonDeprecated', () => {

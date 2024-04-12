@@ -1,4 +1,4 @@
-import {PrimerStyleDictionary} from '~/src/PrimerStyleDictionary'
+import {PrimerStyleDictionary} from '../src/PrimerStyleDictionary'
 // @ts-expect-error: no types exists for style-dictionary createDictionary
 import createDictionary from 'style-dictionary/lib/utils/createDictionary'
 import {themes as themesConfigArray} from './themes.config'

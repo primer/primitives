@@ -1,6 +1,6 @@
 import React from 'react'
 // eslint-disable-next-line import/extensions
-import sizeTokens from '../../../../tokens-next-private/docs/base/size/size.json'
+import sizeTokens from '../../../../dist/docs/base/size/size.json'
 import {SizeTokenSwatch} from '../StorybookComponents/SizeTokenSwatch/SizeTokenSwatch'
 import {DataTable, Table} from '@primer/react/drafts'
 import {InlineCode} from '../StorybookComponents/InlineCode/InlineCode'
