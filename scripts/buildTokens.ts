@@ -1,7 +1,7 @@
 import type StyleDictionary from 'style-dictionary'
 import {PrimerStyleDictionary} from '../src/PrimerStyleDictionary'
 import {copyFromDir} from '../src/utilities'
-import {deprecatedJson, css, docJson, fallbacks} from '../src/platforms'
+import {deprecatedJson, css, docJson, fallbacks, styleLint} from '../src/platforms'
 import type {ConfigGeneratorOptions, StyleDictionaryConfigGenerator} from '../src/types/StyleDictionaryConfigGenerator'
 import type {TokenBuildInput} from '../src/types/TokenBuildInput'
 import glob from 'fast-glob'

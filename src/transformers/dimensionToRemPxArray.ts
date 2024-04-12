@@ -1,4 +1,4 @@
-import {isDimension} from '~/src/filters'
+import {isDimension} from '../filters'
 import type StyleDictionary from 'style-dictionary'
 import type {Platform} from 'style-dictionary'
 
