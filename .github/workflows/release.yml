@@ -53,3 +53,11 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ steps.get-access-token.outputs.access-token }}
           NPM_TOKEN: ${{ secrets.NPM_AUTH_TOKEN_SHARED }}
+
+      - name: Output release version to summary
+        env:
+          VERSION: ${{ steps.changesets.outputs.publishedPackages[0].version }}
+          PACKAGE_NAME: ${{ steps.changesets.outputs.publishedPackages[0].name }}
+        run: |
+          echo "### Latest release" >> $GITHUB_STEP_SUMMARY
+          echo "[v$VERSION](https://unpkg.com/$PACKAGE_NAME@$VERSION/)" >> $GITHUB_STEP_SUMMARY

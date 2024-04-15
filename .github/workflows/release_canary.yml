@@ -51,6 +51,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Output canary version number
+        id: commitStatus
         uses: actions/github-script@v7
         with:
           script: |
@@ -64,3 +65,15 @@ jobs:
               description: package.version,
               target_url: `https://unpkg.com/${package.name}@${package.version}/`
             })
+            // Output the release version for next step
+            core.setOutput('packageVersion', package.version);
+            // Output the package name for next step
+            core.setOutput('packageName', package.name);
+      
+      - name: Output canary version to summary
+        env:
+          VERSION: ${{ steps.commitStatus.outputs.packageVersion }}
+          PACKAGE_NAME: ${{ steps.commitStatus.outputs.packageName }}
+        run: |
+          echo "### Latest canary release" >> $GITHUB_STEP_SUMMARY
+          echo "[v$VERSION](https://unpkg.com/$PACKAGE_NAME@$VERSION/)" >> $GITHUB_STEP_SUMMARY
