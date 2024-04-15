@@ -92,10 +92,10 @@ jobs:
     needs: vrt-runner
     steps:
       - uses: actions/checkout@v4
-      - name: Use Node.js 16.x
+      - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          node-version: 16
+          node-version: 20
           cache: 'npm'
       - name: install dependencies
         run: npm ci
