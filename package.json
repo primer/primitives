@@ -7,7 +7,9 @@
     "tokens-v2-private",
     "tokens-next-private",
     "build.js",
-    "tokens/"
+    "tokens/",
+    "src/**/*",
+    "!src/**/*.test.ts"
   ],
   "main": "dist/js/index.js",
   "types": "dist/js/index.d.ts",
