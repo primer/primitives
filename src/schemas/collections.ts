@@ -8,11 +8,13 @@ type Collections =
   | 'base/color/dark'
   | 'base/color/dark-dimmed'
   | 'base/color/dark-high-contrast'
+  | 'base/typography'
   | 'mode'
   | 'pattern/mode'
   | 'base/size'
   | 'functional/size'
   | 'pattern/size'
+  | 'typography'
 
 export const collection = (collections: Collections[]) => {
   return z.string().refine(

@@ -3,7 +3,7 @@ import type {PlatformInitializer} from '../types/PlatformInitializer'
 import {isSource} from '../filters'
 
 const validFigmaToken = (token: StyleDictionary.TransformedToken) => {
-  const validTypes = ['color', 'dimension', 'shadow']
+  const validTypes = ['color', 'dimension', 'shadow', 'fontWeight', 'fontFamily']
   // is a siource token, not an included one
   if (!isSource(token)) return false
   // has a collection attribute
