@@ -12,16 +12,16 @@ import {getTokensByName} from '~/docs/storybook/stories/utilities/getTokensByNam
 import type StyleDictionary from 'style-dictionary'
 
 // stories
-import functionalTypographyTokens from '~/tokens-next-private/docs/functional/typography/typography.json'
-import baseTypographyTokens from '~/tokens-next-private/docs/base/typography/typography.json'
-import functionalBorderTokens from '~/tokens-next-private/docs/functional/size/border.json'
-import functionalSizeTokens from '~/tokens-next-private/docs/functional/size/size.json'
-import functionalSizeFineTokens from '~/tokens-next-private/docs/functional/size/size-fine.json'
-import baseSizeTokens from '~/tokens-next-private/docs/base/size/size.json'
-import functionalColorTokens from '~/tokens-next-private/docs/functional/themes/light.json'
+import functionalTypographyTokens from '~/dist/docs/functional/typography/typography.json'
+import baseTypographyTokens from '~/dist/docs/base/typography/typography.json'
+import functionalBorderTokens from '~/dist/docs/functional/size/border.json'
+import functionalSizeTokens from '~/dist/docs/functional/size/size.json'
+import functionalSizeFineTokens from '~/dist/docs/functional/size/size-fine.json'
+import baseSizeTokens from '~/dist/docs/base/size/size.json'
+import functionalColorTokens from '~/dist/docs/functional/themes/light.json'
 
 // path relative to script
-const tokensDirectory = path.join(__dirname, '../tokens-next-private')
+const tokensDirectory = path.join(__dirname, '../dist')
 
 if (!fs.existsSync(tokensDirectory)) {
   // eslint-disable-next-line no-console
@@ -43,7 +43,7 @@ filePaths.map(filePath => {
   ast.walkDecls(declaration => {
     if (!declaration.variable) return
 
-    const relativePath = filePath.split('tokens-next-private/css/')[1]
+    const relativePath = filePath.split('dist/css/')[1]
 
     const parsedFilePath = path.parse(filePath)
 
@@ -51,7 +51,7 @@ filePaths.map(filePath => {
       name: declaration.prop,
       value: declaration.value,
       type: relativePath.startsWith('functional/') ? 'functional' : 'base',
-      file: {name: parsedFilePath.name, path: `tokens-next-private/css/${relativePath}`},
+      file: {name: parsedFilePath.name, path: `dist/css/${relativePath}`},
     })
   })
 })
