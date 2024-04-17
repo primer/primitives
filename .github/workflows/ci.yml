@@ -27,8 +27,11 @@ jobs:
       - name: Build v1 tokens
         run: npm run build
 
-      - name: Build v8 tokens
+      - name: Build v8 tokens & fallbacks
         run: npm run build:v8
+
+      - name: Build fallbacks
+        run: npm run build:fallbacks
 
       - name: Code linting check
         run: npm run lint

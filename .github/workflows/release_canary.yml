@@ -30,6 +30,9 @@ jobs:
       - name: Build tokens
         run: npm run build
 
+      - name: Build v8 tokens
+        run: npm run build:v8
+
       - name: Create .npmrc
         run: |
           cat << EOF > "$HOME/.npmrc"
