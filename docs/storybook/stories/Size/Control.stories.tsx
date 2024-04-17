@@ -1,8 +1,8 @@
 import React from 'react'
 // eslint-disable-next-line import/extensions
-import sizeTokens from '../../../../tokens-next-private/docs/functional/size/size.json'
-import sizeTokensFine from '../../../../tokens-next-private/docs/functional/size/size-fine.json'
-import sizeTokensCoarse from '../../../../tokens-next-private/docs/functional/size/size-coarse.json'
+import sizeTokens from '../../../../dist/docs/functional/size/size.json'
+import sizeTokensFine from '../../../../dist/docs/functional/size/size-fine.json'
+import sizeTokensCoarse from '../../../../dist/docs/functional/size/size-coarse.json'
 import {ControlSizeDemo} from '../StorybookComponents/ControlSizeDemo/ControlSizeDemo'
 import {ControlStackDemo} from '../StorybookComponents/ControlStackDemo/ControlStackDemo'
 import {TouchTargetDemo} from '../StorybookComponents/TouchTargetDemo/TouchTargetDemo'
@@ -14,6 +14,7 @@ export default {
   title: 'Size/Functional/Control',
   parameters: {
     controls: {hideNoControlsWarning: true},
+    tags: ['snapshotLight'],
   },
 }
 

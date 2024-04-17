@@ -24,6 +24,34 @@
           },
         },
       },
+      fgColor: {
+        rest: {
+          $value: '#ffffff',
+          $type: 'color',
+        },
+      },
+      iconColor: {
+        rest: {
+          $value: '#ffffff',
+          $type: 'color',
+        },
+      },
+    },
+    invisible: {
+      iconColor: {
+        hover: {
+          $value: '{fgColor.muted}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              mode: 'dark',
+              group: 'component',
+              scopes: ['fgColor'],
+            },
+          },
+        },
+      },
     },
   },
 }

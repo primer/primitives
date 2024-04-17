@@ -5,19 +5,25 @@ import {
   colorToHexAlpha,
   colorToRgbAlpha,
   colorToHex,
+  colorToHexMix,
+  colorToRgbaFloat,
+  dimensionToRem,
+  dimensionToPixelUnitless,
+  durationToCss,
+  figmaAttributes,
   fontFamilyToCss,
   fontWeightToNumber,
   jsonDeprecated,
   namePathToDotNotation,
   namePathToCamelCase,
   namePathToKebabCase,
+  namePathToSlashNotation,
+  namePathToFigma,
   shadowToCss,
   typographyToCss,
-  colorToHexMix,
-  dimensionToRem,
+  dimensionToRemPxArray,
 } from './transformers'
 import {
-  scssMixinCssVariables,
   javascriptCommonJs,
   javascriptEsm,
   typescriptExportDefinition,
@@ -28,6 +34,7 @@ import {
   jsonPostCssFallback,
   cssWrapMediaQuery,
   cssVariables,
+  jsonFigma,
 } from './formats'
 
 /**
@@ -61,11 +68,6 @@ StyleDictionary.registerFormat({
 })
 
 StyleDictionary.registerFormat({
-  name: 'scss/mixin-css-variables',
-  formatter: scssMixinCssVariables,
-})
-
-StyleDictionary.registerFormat({
   name: 'javascript/esm',
   formatter: javascriptEsm,
 })
@@ -95,6 +97,11 @@ StyleDictionary.registerFormat({
   formatter: jsonPostCssFallback,
 })
 
+StyleDictionary.registerFormat({
+  name: 'json/figma',
+  formatter: jsonFigma,
+})
+
 /**
  * Transformers
  *
@@ -102,6 +109,11 @@ StyleDictionary.registerFormat({
 StyleDictionary.registerTransform({
   name: 'color/rgbAlpha',
   ...colorToRgbAlpha,
+})
+
+StyleDictionary.registerTransform({
+  name: 'color/rgbaFloat',
+  ...colorToRgbaFloat,
 })
 
 StyleDictionary.registerTransform({
@@ -125,13 +137,43 @@ StyleDictionary.registerTransform({
 })
 
 StyleDictionary.registerTransform({
+  name: 'dimension/remPxArray',
+  ...dimensionToRemPxArray,
+})
+
+StyleDictionary.registerTransform({
+  name: 'dimension/pixelUnitless',
+  ...dimensionToPixelUnitless,
+})
+
+StyleDictionary.registerTransform({
+  name: 'duration/css',
+  ...durationToCss,
+})
+
+StyleDictionary.registerTransform({
+  name: 'figma/attributes',
+  ...figmaAttributes,
+})
+
+StyleDictionary.registerTransform({
   name: 'json/deprecated',
   ...jsonDeprecated,
 })
 
 StyleDictionary.registerTransform({
+  name: 'name/pathToCamelCase',
+  ...namePathToCamelCase,
+})
+
+StyleDictionary.registerTransform({
   name: 'name/pathToDotNotation',
   ...namePathToDotNotation,
+})
+
+StyleDictionary.registerTransform({
+  name: 'name/pathToFigma',
+  ...namePathToFigma,
 })
 
 StyleDictionary.registerTransform({
@@ -142,6 +184,11 @@ StyleDictionary.registerTransform({
 StyleDictionary.registerTransform({
   name: 'name/pathToKebabCase',
   ...namePathToKebabCase,
+})
+
+StyleDictionary.registerTransform({
+  name: 'name/pathToSlashNotation',
+  ...namePathToSlashNotation,
 })
 
 StyleDictionary.registerTransform({
@@ -173,7 +220,7 @@ StyleDictionary.registerTransform({
  * @name {@link PrimerStyleDictionary}
  * @description Returns style dictionary object with primer preset that includes parsers, formats and transformers
  * @parsers [w3cJsonParser](https://github.com/primer/primitives/blob/main/config//parsers/w3c-json-parser.ts)
- * @formats [scss/mixin-css-variables](https://github.com/primer/primitives/blob/main/config/formats/scss-mixin-css-variables.ts), [javascript/esm](https://github.com/primer/primitives/blob/main/config/formats/javascript-esm.ts), [javascript/commonJs](https://github.com/primer/primitives/blob/main/config/formats/javascript-commonJs.ts), [typescript/export-definition](https://github.com/primer/primitives/blob/main/config/formats/typescript-export-defition.ts)
+ * @formats [javascript/esm](https://github.com/primer/primitives/blob/main/config/formats/javascript-esm.ts), [javascript/commonJs](https://github.com/primer/primitives/blob/main/config/formats/javascript-commonJs.ts), [typescript/export-definition](https://github.com/primer/primitives/blob/main/config/formats/typescript-export-defition.ts)
  * @transformers [color/rgbAlpha](https://github.com/primer/primitives/blob/main/config/tranformers/color-to-rgb-alpha.ts), [color/hexAlpha](https://github.com/primer/primitives/blob/main/config/tranformers/color-to-hex-alpha.ts), [color/hex](https://github.com/primer/primitives/blob/main/config/tranformers/color-to-hex6.ts), [json/deprecated](https://github.com/primer/primitives/blob/main/config/tranformers/json-deprecated.ts), [name/pathToDotNotation](https://github.com/primer/primitives/blob/main/config/tranformers/name-path-to-dot-notation.ts)
  */
 export const PrimerStyleDictionary: StyleDictionary.Core = StyleDictionary

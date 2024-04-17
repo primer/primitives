@@ -15,10 +15,14 @@
       mix: null,
       alpha: 1,
     },
+    disabled: {
+      $value: '{base.color.gray.4}',
+      $type: 'color',
+    },
   },
   bgColor: {
     emphasis: {
-      $value: '{base.color.gray.0}',
+      $value: '{base.color.white}',
       $type: 'color',
     },
     neutral: {
@@ -183,7 +187,7 @@
   controlTrack: {
     fgColor: {
       rest: {
-        $value: '{fgColor.onEmphasis}',
+        $value: '{fgColor.default}',
         $type: 'color',
       },
     },
@@ -207,16 +211,6 @@
           $type: 'color',
         },
       },
-      bgColor: {
-        disabled: {
-          $value: '{base.color.green.5}',
-          $type: 'color',
-          mix: {
-            color: '{base.color.green.0}',
-            weight: 0.6,
-          },
-        },
-      },
       borderColor: {
         rest: {
           $value: '{base.color.green.2}',
@@ -228,10 +222,59 @@
           $type: 'color',
           alpha: 1,
         },
+        active: {
+          $value: '{base.color.green.2}',
+          $type: 'color',
+          alpha: 1,
+        },
         disabled: {
           $value: '{base.color.green.2}',
           $type: 'color',
           alpha: 0.4,
+        },
+      },
+    },
+    invisible: {
+      fgColor: {
+        hover: {
+          $value: '{base.color.blue.8}',
+          $type: 'color',
+        },
+      },
+      iconColor: {
+        hover: {
+          $value: '{fgColor.onEmphasis}',
+          $type: 'color',
+        },
+      },
+      bgColor: {
+        hover: {
+          $value: '{base.color.gray.1}',
+          $type: 'color',
+          alpha: null,
+          mix: null,
+        },
+        active: {
+          $value: '{base.color.gray.2}',
+          $type: 'color',
+          alpha: null,
+          mix: null,
+        },
+      },
+    },
+    danger: {
+      fgColor: {
+        rest: {
+          $value: '{base.color.red.3}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              mode: 'light',
+              group: 'component (internal)',
+              scopes: ['fgColor'],
+            },
+          },
         },
       },
     },
@@ -328,6 +371,19 @@
         $value: '{base.color.blue.4}',
         $type: 'color',
         alpha: 0.4,
+      },
+    },
+  },
+  overlay: {
+    borderColor: {
+      $value: '{borderColor.muted}',
+      $type: 'color',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'mode',
+          mode: 'dark',
+          group: 'component (internal)',
+        },
       },
     },
   },

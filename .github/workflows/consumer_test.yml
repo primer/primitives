@@ -5,6 +5,7 @@ on:
     branches:
       - main
   pull_request:
+  workflow_dispatch:
 
 env:
   TEST_FOLDER: primer-brand
@@ -20,21 +21,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout current repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Checkout Primer Brand repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           repository: primer/brand
           path: ${{env.TEST_FOLDER}}
 
       - name: Set up Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: 16
+          node-version: 20
 
       - name: Caching dependencies
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}

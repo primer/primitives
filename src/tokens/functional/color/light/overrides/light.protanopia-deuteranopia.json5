@@ -6,23 +6,31 @@
 {
   fgColor: {
     success: {
-      $value: '{base.color.blue.5}',
-      $type: 'color',
+      '@': {
+        $value: '{base.color.blue.5}',
+        $type: 'color',
+      },
     },
     open: {
-      $value: '{base.color.orange.5}',
-      $type: 'color',
+      '@': {
+        $value: '{base.color.orange.5}',
+        $type: 'color',
+      },
     },
     closed: {
-      $value: '{base.color.gray.5}',
-      $type: 'color',
+      '@': {
+        $value: '{base.color.gray.5}',
+        $type: 'color',
+      },
     },
     danger: {
-      $value: '{base.color.orange.5}',
-      $type: 'color',
-      mix: {
-        color: '{base.color.orange.4}',
-        weight: 0.05,
+      '@': {
+        $value: '{base.color.orange.5}',
+        $type: 'color',
+        mix: {
+          color: '{base.color.orange.4}',
+          weight: 0.05,
+        },
       },
     },
   },
@@ -326,35 +334,6 @@
             },
           },
         },
-      },
-    },
-    /**
-     * @description All overwrites for color scales
-     */
-    scale: {
-      green: {
-        '0': {$value: '{base.color.blue.0}'},
-        '1': {$value: '{base.color.blue.1}'},
-        '2': {$value: '{base.color.blue.2}'},
-        '3': {$value: '{base.color.blue.3}'},
-        '4': {$value: '{base.color.blue.4}'},
-        '5': {$value: '{base.color.blue.5}'},
-        '6': {$value: '{base.color.blue.6}'},
-        '7': {$value: '{base.color.blue.7}'},
-        '8': {$value: '{base.color.blue.8}'},
-        '9': {$value: '{base.color.blue.9}'},
-      },
-      red: {
-        '0': {$value: '{base.color.orange.0}'},
-        '1': {$value: '{base.color.orange.1}'},
-        '2': {$value: '{base.color.orange.2}'},
-        '3': {$value: '{base.color.orange.3}'},
-        '4': {$value: '{base.color.orange.4}'},
-        '5': {$value: '{base.color.orange.5}'},
-        '6': {$value: '{base.color.orange.6}'},
-        '7': {$value: '{base.color.orange.7}'},
-        '8': {$value: '{base.color.orange.8}'},
-        '9': {$value: '{base.color.orange.9}'},
       },
     },
   },

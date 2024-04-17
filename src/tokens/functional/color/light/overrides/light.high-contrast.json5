@@ -10,18 +10,30 @@
       $type: 'color',
       mix: null,
     },
-    danger: {
-      $value: '{base.color.red.6}',
+    disabled: {
+      $value: '{base.color.gray.5}',
       $type: 'color',
     },
+    danger: {
+      '@': {
+        $value: '{base.color.red.6}',
+        $type: 'color',
+      },
+    },
     accent: {
-      $value: '{base.color.blue.6}',
-      $type: 'color',
+      '@': {
+        $value: '{base.color.blue.6}',
+        $type: 'color',
+      },
     },
   },
   bgColor: {
     muted: {
       $value: '{base.color.gray.1}',
+      $type: 'color',
+    },
+    inset: {
+      $value: '{base.color.white}',
       $type: 'color',
     },
     neutral: {
@@ -32,7 +44,7 @@
       },
     },
     disabled: {
-      $value: '{base.color.gray.1}',
+      $value: '{base.color.gray.2}',
       $type: 'color',
     },
     success: {
@@ -125,6 +137,13 @@
     },
   },
   // patterns
+  avatar: {
+    borderColor: {
+      $value: '{base.color.black}',
+      $type: 'color',
+      alpha: 0.9,
+    },
+  },
   topicTag: {
     borderColor: {
       $value: '{borderColor.accent.emphasis}',
@@ -308,6 +327,37 @@
           $type: 'color',
           alpha: 1,
         },
+        active: {
+          $value: '{base.color.green.7}',
+          $type: 'color',
+          alpha: 1,
+        },
+      },
+    },
+    invisible: {
+      fgColor: {
+        hover: {
+          $value: '{base.color.blue.2}',
+          $type: 'color',
+        },
+      },
+      iconColor: {
+        hover: {
+          $value: '{fgColor.onEmphasis}',
+          $type: 'color',
+        },
+      },
+      bgColor: {
+        hover: {
+          $value: '{base.color.gray.8}',
+          $type: 'color',
+          alpha: 1,
+        },
+        active: {
+          $value: '{base.color.gray.6}',
+          $type: 'color',
+          alpha: 1,
+        },
       },
     },
   },
@@ -378,6 +428,13 @@
         $value: '{base.color.gray.3}',
         $type: 'color',
       },
+    },
+  },
+  overlay: {
+    borderColor: {
+      $value: '{borderColor.muted}',
+      $type: 'color',
+      alpha: null,
     },
   },
 }

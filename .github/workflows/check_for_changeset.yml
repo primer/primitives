@@ -16,9 +16,9 @@ jobs:
     name: Check for changeset
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: 'Check for changeset'
-        uses: brettcannon/check-for-changed-files@v1
+        uses: brettcannon/check-for-changed-files@1d976b36a566141b41cdafbbc63a89eb54ec8a8a
         with:
           file-pattern: '.changeset/*.md'
           skip-label: 'skip changeset'

@@ -1,6 +1,6 @@
 import React from 'react'
 // eslint-disable-next-line import/extensions
-import sizeTokens from '../../../../tokens-next-private/docs/functional/typography/typography.json'
+import sizeTokens from '../../../../dist/docs/functional/typography/typography.json'
 import {DataTable, Table} from '@primer/react/drafts'
 import {InlineCode} from '../StorybookComponents/InlineCode/InlineCode'
 import {TypographyDemo} from '../StorybookComponents/TypographyDemo/TypographyDemo'
@@ -10,6 +10,7 @@ export default {
   title: 'Typography/Functional',
   parameters: {
     controls: {hideNoControlsWarning: true},
+    tags: ['snapshotLight'],
   },
 }
 
@@ -68,6 +69,7 @@ export const FontFamily = () => {
     </Table.Container>
   )
 }
+FontFamily.tags = ['excludeSnapshot']
 
 export const FontShorthand = () => {
   const data = getTokensByName(sizeTokens, 'text').map(token => {
@@ -134,6 +136,7 @@ export const FontShorthand = () => {
     </Table.Container>
   )
 }
+FontShorthand.tags = ['excludeSnapshot']
 
 export const Display = () => {
   const data = getTokensByName(sizeTokens, 'text').map(token => {
@@ -205,6 +208,7 @@ export const Display = () => {
     </Table.Container>
   )
 }
+Display.tags = ['excludeSnapshot']
 
 export const TitleLarge = () => {
   const data = getTokensByName(sizeTokens, 'text').map(token => {
@@ -280,6 +284,7 @@ export const TitleLarge = () => {
     </Table.Container>
   )
 }
+TitleLarge.tags = ['excludeSnapshot']
 
 export const TitleMedium = () => {
   const data = getTokensByName(sizeTokens, 'text').map(token => {
@@ -356,6 +361,7 @@ export const TitleMedium = () => {
     </Table.Container>
   )
 }
+TitleMedium.tags = ['excludeSnapshot']
 
 export const TitleSmall = () => {
   const data = getTokensByName(sizeTokens, 'text').map(token => {
@@ -432,6 +438,7 @@ export const TitleSmall = () => {
     </Table.Container>
   )
 }
+TitleSmall.tags = ['excludeSnapshot']
 
 export const Subtitle = () => {
   const data = getTokensByName(sizeTokens, 'text').map(token => {
@@ -506,6 +513,7 @@ export const Subtitle = () => {
     </Table.Container>
   )
 }
+Subtitle.tags = ['excludeSnapshot']
 
 export const BodyLarge = () => {
   const data = getTokensByName(sizeTokens, 'text').map(token => {
@@ -582,6 +590,7 @@ export const BodyLarge = () => {
     </Table.Container>
   )
 }
+BodyLarge.tags = ['excludeSnapshot']
 
 export const BodyMedium = () => {
   const data = getTokensByName(sizeTokens, 'text').map(token => {
@@ -592,7 +601,7 @@ export const BodyMedium = () => {
   })
 
   const filteredData = data.filter(
-    item => !item.id.includes('shorthand') && item.id.includes('title') && item.id.includes('medium'),
+    item => !item.id.includes('shorthand') && item.id.includes('body') && item.id.includes('medium'),
   )
 
   return (
@@ -658,6 +667,7 @@ export const BodyMedium = () => {
     </Table.Container>
   )
 }
+BodyMedium.tags = ['excludeSnapshot']
 
 export const BodySmall = () => {
   const data = getTokensByName(sizeTokens, 'text').map(token => {
@@ -668,7 +678,7 @@ export const BodySmall = () => {
   })
 
   const filteredData = data.filter(
-    item => !item.id.includes('shorthand') && item.id.includes('title') && item.id.includes('small'),
+    item => !item.id.includes('shorthand') && item.id.includes('body') && item.id.includes('small'),
   )
 
   return (
@@ -734,6 +744,7 @@ export const BodySmall = () => {
     </Table.Container>
   )
 }
+BodySmall.tags = ['excludeSnapshot']
 
 export const Caption = () => {
   const data = getTokensByName(sizeTokens, 'text').map(token => {
@@ -808,6 +819,7 @@ export const Caption = () => {
     </Table.Container>
   )
 }
+Caption.tags = ['excludeSnapshot']
 
 export const CodeBlock = () => {
   const data = getTokensByName(sizeTokens, 'text').map(token => {
@@ -882,6 +894,7 @@ export const CodeBlock = () => {
     </Table.Container>
   )
 }
+CodeBlock.tags = ['excludeSnapshot']
 
 export const InlineCodeBlock = () => {
   const data = getTokensByName(sizeTokens, 'text').map(token => {
@@ -956,6 +969,7 @@ export const InlineCodeBlock = () => {
     </Table.Container>
   )
 }
+InlineCodeBlock.tags = ['excludeSnapshot']
 
 export const Overview = () => {
   const data = getTokensByName(sizeTokens, 'text').map(token => {

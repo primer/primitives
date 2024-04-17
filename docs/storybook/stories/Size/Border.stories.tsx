@@ -1,6 +1,6 @@
 import React from 'react'
 // eslint-disable-next-line import/extensions
-import sizeTokens from '../../../../tokens-next-private/docs/functional/size/border.json'
+import sizeTokens from '../../../../dist/docs/functional/size/border.json'
 import {SizeTokenSwatch} from '../StorybookComponents/SizeTokenSwatch/SizeTokenSwatch'
 import {DataTable, Table} from '@primer/react/drafts'
 import {InlineCode} from '../StorybookComponents/InlineCode/InlineCode'
@@ -10,6 +10,7 @@ export default {
   title: 'Size/Functional/Border',
   parameters: {
     controls: {hideNoControlsWarning: true},
+    tags: ['snapshotLight'],
   },
 }
 
@@ -76,7 +77,7 @@ export const BorderSize = () => {
             field: 'original',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.value}</p>
+              return <p>{row.original.value}</p>
             },
           },
         ]}
@@ -84,6 +85,7 @@ export const BorderSize = () => {
     </Table.Container>
   )
 }
+BorderSize.tags = ['snapshotLight']
 
 export const BorderRadius = () => {
   const data = getTokensByName(sizeTokens, 'borderRadius').map(token => {
@@ -139,6 +141,7 @@ export const BorderRadius = () => {
     </Table.Container>
   )
 }
+BorderRadius.tags = ['snapshotLight']
 
 export const Outline = () => {
   const data = getTokensByName(sizeTokens, 'outline').map(token => {
@@ -199,3 +202,4 @@ export const Outline = () => {
     </Table.Container>
   )
 }
+Outline.tags = ['snapshotLight']

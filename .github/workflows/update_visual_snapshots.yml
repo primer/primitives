@@ -1,0 +1,64 @@
+name: Snapshots
+
+on:
+  pull_request:
+    types: [labeled]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  update:
+    if: ${{ github.event.label.name == 'update snapshots' }}
+    name: 'Update snapshots'
+    runs-on:
+      labels: ubuntu-latest-16-cores
+    steps:
+      - name: Generate token
+        id: generate_token
+        uses: actions/create-github-app-token@v1
+        with:
+          app_id: ${{ secrets.VRT_APP_ID }}
+          private_key: ${{ secrets.VRT_PRIVATE_KEY }}
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+          ref: ${{ github.head_ref }}
+          token: ${{ steps.generate_token.outputs.token }}
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund --ignore-scripts
+      - name: Install browsers
+        run: npx playwright install --with-deps
+      - name: Build v8 tokens
+        run: npm run build:next
+      - name: Build storybook
+        working-directory: docs/storybook
+        run: |
+          npm ci
+          npm run build-storybook
+      - name: Run storybook
+        id: storybook
+        run: |
+          npx serve -l 6006 storybook-static &
+          pid=$!
+          echo "pid=$pid" >> $GITHUB_OUTPUT
+          sleep 5
+        working-directory: docs/storybook
+      - name: Run Visual Regression Tests
+        run: npx playwright test --update-snapshots
+      - name: Stop storybook
+        run: kill ${{ steps.storybook.outputs.pid }}
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: github-actions[bot] Regenerated snapshots
+      - uses: actions-ecosystem/action-remove-labels@v1
+        if: always()
+        with:
+          labels: 'update snapshots'

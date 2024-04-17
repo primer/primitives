@@ -1,4 +1,4 @@
-import {getMockToken} from '~/src/test-utilities'
+import {getMockToken} from '../test-utilities'
 import {fontFamilyToCss} from './fontFamilyToCss'
 
 describe('Transformer: fontFamilyToCss', () => {
@@ -12,7 +12,7 @@ describe('Transformer: fontFamilyToCss', () => {
       }),
     ]
     const expectedOutput = ['Roboto, Noto Sans', 'Roboto']
-    expect(input.map(item => fontFamilyToCss.transformer(item))).toStrictEqual(expectedOutput)
+    expect(input.map(item => fontFamilyToCss.transformer(item, {}))).toStrictEqual(expectedOutput)
   })
 
   it('transforms fontFamily array', () => {
@@ -25,7 +25,7 @@ describe('Transformer: fontFamilyToCss', () => {
       }),
     ]
     const expectedOutput = ["Roboto, 'Noto Sans'", 'Roboto']
-    expect(input.map(item => fontFamilyToCss.transformer(item))).toStrictEqual(expectedOutput)
+    expect(input.map(item => fontFamilyToCss.transformer(item, {}))).toStrictEqual(expectedOutput)
   })
 
   it('throws on invalid value', () => {
@@ -37,6 +37,7 @@ describe('Transformer: fontFamilyToCss', () => {
             fontSize: '42px',
           },
         }),
+        {},
       ),
     ).toThrowError()
 
@@ -45,6 +46,7 @@ describe('Transformer: fontFamilyToCss', () => {
         getMockToken({
           value: 42,
         }),
+        {},
       ),
     ).toThrowError()
 
@@ -53,6 +55,7 @@ describe('Transformer: fontFamilyToCss', () => {
         getMockToken({
           value: undefined,
         }),
+        {},
       ),
     ).toThrowError()
 
@@ -61,6 +64,7 @@ describe('Transformer: fontFamilyToCss', () => {
         getMockToken({
           value: [42, 'Roboto'],
         }),
+        {},
       ),
     ).toThrowError()
   })

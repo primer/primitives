@@ -4,22 +4,24 @@ on:
   pull_request:
     branches-ignore:
       - 'changeset-release/**'
+  workflow_dispatch:
+
 jobs:
 
   comment:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Set up node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: 16
+          node-version: 20
           cache: 'npm'
 
       - name: Create comment (if necessary)
-        uses: actions/github-script@v5
+        uses: actions/github-script@v7
         with:
           script: |
             const body = '<details>\n' +
@@ -47,18 +49,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Checkout base branch
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           ref: ${{ github.base_ref }}
           path: base
 
       - name: Set up Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: 16
+          node-version: 20
           cache: 'npm'
 
       - name: Install dependencies

@@ -1,6 +1,6 @@
 import React from 'react'
 // eslint-disable-next-line import/extensions
-import sizeTokens from '../../../../tokens-next-private/docs/functional/size/size.json'
+import sizeTokens from '../../../../dist/docs/functional/size/size.json'
 import {StackDemo} from '../StorybookComponents/StackDemo/StackDemo'
 import {DataTable, Table} from '@primer/react/drafts'
 import {InlineCode} from '../StorybookComponents/InlineCode/InlineCode'
@@ -10,6 +10,7 @@ export default {
   title: 'Size/Functional/Stack',
   parameters: {
     controls: {hideNoControlsWarning: true},
+    tags: ['snapshotLight'],
   },
 }
 

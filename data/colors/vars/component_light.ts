@@ -26,7 +26,8 @@ export default {
   },
   overlay: {
     shadow: (theme: any) =>
-      `0 1px 3px ${alpha(get('scale.black'), 0.12)(theme)}, 0 8px 24px ${alpha(get('scale.gray.7'), 0.12)(theme)}`
+      `0 1px 3px ${alpha(get('scale.black'), 0.12)(theme)}, 0 8px 24px ${alpha(get('scale.gray.7'), 0.12)(theme)}`,
+    backdrop: alpha(get('scale.gray.4'), 0.2)
   },
   header: {
     text: alpha(get('scale.white'), 0.7),
@@ -145,6 +146,11 @@ export default {
       counterFg: get('scale.red.6'),
       hoverCounterFg: get('scale.white'),
       disabledCounterFg: alpha(get('scale.red.5'), 0.5)
+    },
+
+    inactive: {
+      bg: get('scale.gray.1'),
+      text: get('scale.gray.6'),
     }
   },
   underlinenav: {

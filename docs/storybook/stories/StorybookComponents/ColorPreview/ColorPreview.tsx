@@ -11,6 +11,7 @@ export type ColorPreviewProps = {
   bgColorBorder?: string
   shadow?: boolean
   shadowBg?: string
+  style?: React.CSSProperties
 }
 
 export function ColorPreview({
@@ -22,20 +23,33 @@ export function ColorPreview({
   bgColorBorder,
   shadow,
   shadowBg,
+  style,
 }: ColorPreviewProps) {
   return (
     <div className="ColorPreview-wrap">
-      <div className="ColorPreview" style={{backgroundColor: `var(--${canvasColor})`}}>
+      <div className="ColorPreview" style={{backgroundColor: `var(--${canvasColor})`}} data-type={shadow && `shadow`}>
         {textColor && (
-          <p style={{color: `var(--${color})`}} data-text>
+          <p style={{color: `var(--${color})`, ...style}} data-text>
             Aa
           </p>
         )}
-        {borderColor && <div style={{borderColor: `var(--${color})`}} data-border></div>}
+        {borderColor && <div style={{borderColor: `var(--${color})`, ...style}} data-border></div>}
         {bgColor && (
-          <div style={{backgroundColor: `var(--${color})`, border: `solid 1px var(--${bgColorBorder})`}} data-bg></div>
+          <div
+            style={{backgroundColor: `var(--${color})`, border: `solid 1px var(--${bgColorBorder})`, ...style}}
+            data-bg
+          ></div>
         )}
-        {shadow && <div style={{boxShadow: `var(--${color})`, backgroundColor: `var(--${shadowBg})`}} data-bg></div>}
+        {shadow && (
+          <div
+            style={{
+              boxShadow: `var(--${color})`,
+              backgroundColor: `var(--${shadowBg})`,
+              ...style,
+            }}
+            data-shadow
+          ></div>
+        )}
       </div>
       <InlineCode value={color} copyClipboard />
     </div>

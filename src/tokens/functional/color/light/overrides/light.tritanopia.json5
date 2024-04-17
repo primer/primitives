@@ -6,20 +6,28 @@
 {
   fgColor: {
     success: {
-      $value: '{base.color.blue.5}',
-      $type: 'color',
+      '@': {
+        $value: '{base.color.blue.5}',
+        $type: 'color',
+      },
     },
     severe: {
-      $value: '{base.color.red.5}',
-      $type: 'color',
+      '@': {
+        $value: '{base.color.red.5}',
+        $type: 'color',
+      },
     },
     open: {
-      $value: '{base.color.red.5}',
-      $type: 'color',
+      '@': {
+        $value: '{base.color.red.5}',
+        $type: 'color',
+      },
     },
     closed: {
-      $value: '{base.color.gray.5}',
-      $type: 'color',
+      '@': {
+        $value: '{base.color.gray.5}',
+        $type: 'color',
+      },
     },
   },
   bgColor: {
@@ -235,35 +243,6 @@
             },
           },
         },
-      },
-    },
-    /**
-     * @description All overwrites for color scales
-     */
-    scale: {
-      green: {
-        '0': {$value: '{base.color.blue.0}'},
-        '1': {$value: '{base.color.blue.1}'},
-        '2': {$value: '{base.color.blue.2}'},
-        '3': {$value: '{base.color.blue.3}'},
-        '4': {$value: '{base.color.blue.4}'},
-        '5': {$value: '{base.color.blue.5}'},
-        '6': {$value: '{base.color.blue.6}'},
-        '7': {$value: '{base.color.blue.7}'},
-        '8': {$value: '{base.color.blue.8}'},
-        '9': {$value: '{base.color.blue.9}'},
-      },
-      orange: {
-        '0': {$value: '{base.color.red.0}'},
-        '1': {$value: '{base.color.red.1}'},
-        '2': {$value: '{base.color.red.2}'},
-        '3': {$value: '{base.color.red.3}'},
-        '4': {$value: '{base.color.red.4}'},
-        '5': {$value: '{base.color.red.5}'},
-        '6': {$value: '{base.color.red.6}'},
-        '7': {$value: '{base.color.red.7}'},
-        '8': {$value: '{base.color.red.8}'},
-        '9': {$value: '{base.color.red.9}'},
       },
     },
   },

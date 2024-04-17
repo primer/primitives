@@ -1,33 +1,85 @@
+[data-size='default'] {
+  --swatch-text-size: var(--base-size-20);
+  --swatch-block-size: var(--base-size-20);
+  --swatch-borderWidth: var(--borderWidth-thin);
+}
+
+[data-size='large'] {
+  --swatch-text-size: var(--base-size-96);
+  --swatch-block-size: var(--base-size-96);
+  --swatch-borderWidth: var(--borderWidth-thicker);
+}
+
 .ColorTokenSwatch-text {
   font-size: var(--base-size-20);
-  font-weight: var(--font-weight-semibold);
+  font-weight: var(--base-text-weight-semibold);
+}
+
+.ColorTokenSwatch-text[style='color: var(--fgColor-onEmphasis);'],
+.ColorTokenSwatch-text[style='color: var(--fgColor-white);'] {
+  background: var(--bgColor-emphasis);
+  border-radius: var(--borderRadius-small);
+  padding: 2px 4px;
+}
+
+[data-dark-theme='dark_high_contrast'] .ColorTokenSwatch-text[style='color: var(--fgColor-white);'] {
+  background-color: var(--bgColor-default) !important;
 }
 
 .ColorTokenSwatch-bg {
-  width: var(--base-size-20);
-  height: var(--base-size-20);
+  width: var(--swatch-block-size);
+  height: var(--swatch-block-size);
   border-radius: var(--borderRadius-small);
+}
+
+.ColorTokenSwatch-bg[style='background-color: var(--bgColor-default);'],
+.ColorTokenSwatch-bg[style='background-color: var(--bgColor-transparent);'] {
+  border: solid var(--swatch-borderWidth) var(--borderColor-muted);
 }
 
 .ColorTokenSwatch-shadow {
-  width: var(--base-size-20);
-  height: var(--base-size-20);
+  width: var(--swatch-block-size);
+  height: var(--swatch-block-size);
   border-radius: var(--borderRadius-small);
-  background-color: var(bgColor-default);
+  background-color: var(--bgColor-default);
 }
 
 .ColorTokenSwatch-border {
-  width: var(--base-size-20);
-  height: var(--base-size-20);
-  border-width: var(--borderWidth-thin);
+  width: var(--swatch-block-size);
+  height: var(--swatch-block-size);
+  border-width: var(--swatch-borderWidth);
   border-style: solid;
   border-radius: var(--borderRadius-small);
 }
 
 .ColorTokenSwatch-outline {
-  width: var(--base-size-20);
-  height: var(--base-size-20);
+  width: var(--swatch-block-size);
+  height: var(--swatch-block-size);
   outline-width: var(--outline-focus-width);
   outline-style: solid;
   border-radius: var(--borderRadius-small);
+}
+
+.ColorTokenSwatch-selection {
+  font: var(--text-codeBlock-shorthand);
+  padding-inline: var(--base-size-8);
+  width: var(--swatch-block-size);
+  height: var(--swatch-block-size);
+  position: relative;
+  display: grid;
+  color: var(--fgColor-default);
+  grid-template: 'swatch' 1fr / 1fr;
+}
+
+.ColorTokenSwatch-selection--text {
+  grid-area: swatch;
+}
+
+.ColorTokenSwatch-selection::before {
+  content: '';
+  height: 100%;
+  width: 100%;
+  background: var(--selection-bgColor);
+  border-radius: var(--borderRadius-small);
+  grid-area: swatch;
 }

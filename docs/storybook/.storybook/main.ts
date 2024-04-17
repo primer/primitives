@@ -8,7 +8,11 @@ const config: StorybookConfig = {
     '@storybook/addon-a11y',
     'storybook-addon-rem',
     'storybook-addon-paddings',
+    '@storybook/addon-mdx-gfm',
   ],
+  features: {
+    buildStoriesJson: true,
+  },
   framework: {
     name: '@storybook/react-webpack5',
     options: {},

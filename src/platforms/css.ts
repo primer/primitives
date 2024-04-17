@@ -1,6 +1,6 @@
-import {isFromFile, isSource} from '~/src/filters'
+import {isFromFile, isSource} from '../filters'
 import type StyleDictionary from 'style-dictionary'
-import type {PlatformInitializer} from '~/src/types/PlatformInitializer'
+import type {PlatformInitializer} from '../types/PlatformInitializer'
 
 const getCssSelectors = (outputFile: string): {selector: string; selectorLight: string; selectorDark: string} => {
   // check for dark in the beginning of the output filename
@@ -10,9 +10,9 @@ const getCssSelectors = (outputFile: string): {selector: string; selectorLight: 
   const mode = outputBasename.substring(0, 4) === 'dark' ? 'dark' : 'light'
 
   return {
-    selector: `[data-color-mode="${mode}"][data-${mode}-theme="${themeName}"]`,
-    selectorLight: `[data-color-mode="auto"][data-light-theme="${themeName}"]`,
-    selectorDark: `[data-color-mode="auto"][data-dark-theme="${themeName}"]`,
+    selector: `[data-color-mode="${mode}"][data-${mode}-theme="${themeName}"], [data-color-mode="${mode}"][data-${mode}-theme="${themeName}"] ::backdrop`,
+    selectorLight: `[data-color-mode="auto"][data-light-theme="${themeName}"], [data-color-mode="auto"][data-light-theme="${themeName}"] ::backdrop`,
+    selectorDark: `[data-color-mode="auto"][data-dark-theme="${themeName}"], [data-color-mode="auto"][data-dark-theme="${themeName}"] ::backdrop`,
   }
 }
 
@@ -27,6 +27,7 @@ export const css: PlatformInitializer = (outputFile, prefix, buildPath, options)
       'color/hexAlpha',
       'color/hexMix',
       'dimension/rem',
+      'duration/css',
       'shadow/css',
       'border/css',
       'typography/css',

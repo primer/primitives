@@ -1,6 +1,6 @@
 import React from 'react'
 // eslint-disable-next-line import/extensions
-import colorTokens from '../../../../../tokens-next-private/docs/functional/themes/light.json'
+import colorTokens from '../../../../../dist/docs/functional/themes/light.json'
 import {ColorTokenSwatch} from '../../StorybookComponents/ColorTokenSwatch/ColorTokenSwatch'
 import {DataTable, Table} from '@primer/react/drafts'
 import {InlineCode} from '../../StorybookComponents/InlineCode/InlineCode'
@@ -9,11 +9,9 @@ import {getTokensByName} from '../../utilities/getTokensByName'
 export default {
   title: 'Color/Patterns',
   parameters: {
-    parameters: {
-      controls: {hideNoControlsWarning: true},
-      options: {
-        showPanel: false,
-      },
+    controls: {hideNoControlsWarning: true},
+    options: {
+      showPanel: false,
     },
   },
 }
@@ -27,9 +25,9 @@ export const Avatar = () => {
   })
   return (
     <Table.Container>
-      <Table.Title as="h1" id="pattern">
+      <h1 className="sr-only" id="table-heading">
         Avatar
-      </Table.Title>
+      </h1>
       <DataTable
         aria-labelledby="pattern"
         data={data}
@@ -41,7 +39,7 @@ export const Avatar = () => {
             renderCell: row => {
               return (
                 <ColorTokenSwatch
-                  bgColor={row.name.includes('bgColor') ? row.name : undefined}
+                  bgColor={row.name.includes('bgColor') || row.name.includes('iconColor') ? row.name : undefined}
                   textColor={row.name.includes('fgColor') ? row.name : undefined}
                   shadowColor={row.name.includes('shadow') ? row.name : undefined}
                   borderColor={row.name.includes('borderColor') ? row.name : undefined}
@@ -99,9 +97,9 @@ export const Control = () => {
   }))
   return (
     <Table.Container>
-      <Table.Title as="h1" id="pattern">
+      <h1 className="sr-only" id="table-heading">
         Control
-      </Table.Title>
+      </h1>
       <DataTable
         aria-labelledby="pattern"
         data={data}
@@ -113,7 +111,7 @@ export const Control = () => {
             renderCell: row => {
               return (
                 <ColorTokenSwatch
-                  bgColor={row.name.includes('bgColor') ? row.name : undefined}
+                  bgColor={row.name.includes('bgColor') || row.name.includes('iconColor') ? row.name : undefined}
                   textColor={row.name.includes('fgColor') ? row.name : undefined}
                   shadowColor={row.name.includes('shadow') ? row.name : undefined}
                   borderColor={row.name.includes('borderColor') ? row.name : undefined}
@@ -152,9 +150,9 @@ export const Counter = () => {
   })
   return (
     <Table.Container>
-      <Table.Title as="h1" id="pattern">
+      <h1 className="sr-only" id="table-heading">
         Counter
-      </Table.Title>
+      </h1>
       <DataTable
         aria-labelledby="pattern"
         data={data}
@@ -166,7 +164,7 @@ export const Counter = () => {
             renderCell: row => {
               return (
                 <ColorTokenSwatch
-                  bgColor={row.name.includes('bgColor') ? row.name : undefined}
+                  bgColor={row.name.includes('bgColor') || row.name.includes('iconColor') ? row.name : undefined}
                   textColor={row.name.includes('fgColor') ? row.name : undefined}
                   shadowColor={row.name.includes('shadow') ? row.name : undefined}
                   borderColor={row.name.includes('borderColor') ? row.name : undefined}
@@ -217,9 +215,9 @@ export const Button = () => {
   }))
   return (
     <Table.Container>
-      <Table.Title as="h1" id="pattern">
+      <h1 className="sr-only" id="table-heading">
         Button
-      </Table.Title>
+      </h1>
       <DataTable
         aria-labelledby="pattern"
         data={data}
@@ -231,7 +229,7 @@ export const Button = () => {
             renderCell: row => {
               return (
                 <ColorTokenSwatch
-                  bgColor={row.name.includes('bgColor') ? row.name : undefined}
+                  bgColor={row.name.includes('bgColor') || row.name.includes('iconColor') ? row.name : undefined}
                   textColor={row.name.includes('fgColor') ? row.name : undefined}
                   shadowColor={row.name.includes('shadow') ? row.name : undefined}
                   borderColor={row.name.includes('borderColor') ? row.name : undefined}
@@ -270,9 +268,9 @@ export const Focus = () => {
   })
   return (
     <Table.Container>
-      <Table.Title as="h1" id="pattern">
+      <h1 className="sr-only" id="table-heading">
         Focus
-      </Table.Title>
+      </h1>
       <DataTable
         aria-labelledby="pattern"
         data={data}
@@ -316,9 +314,9 @@ export const Header = () => {
   })
   return (
     <Table.Container>
-      <Table.Title as="h1" id="pattern">
+      <h1 className="sr-only" id="table-heading">
         Header
-      </Table.Title>
+      </h1>
       <DataTable
         aria-labelledby="pattern"
         data={data}
@@ -330,7 +328,7 @@ export const Header = () => {
             renderCell: row => {
               return (
                 <ColorTokenSwatch
-                  bgColor={row.name.includes('bgColor') ? row.name : undefined}
+                  bgColor={row.name.includes('bgColor') || row.name.includes('iconColor') ? row.name : undefined}
                   textColor={row.name.includes('fgColor') ? row.name : undefined}
                   shadowColor={row.name.includes('shadow') ? row.name : undefined}
                   borderColor={row.name.includes('borderColor') ? row.name : undefined}
@@ -369,9 +367,9 @@ export const Menu = () => {
   })
   return (
     <Table.Container>
-      <Table.Title as="h1" id="pattern">
+      <h1 className="sr-only" id="table-heading">
         Menu
-      </Table.Title>
+      </h1>
       <DataTable
         aria-labelledby="pattern"
         data={data}
@@ -383,7 +381,7 @@ export const Menu = () => {
             renderCell: row => {
               return (
                 <ColorTokenSwatch
-                  bgColor={row.name.includes('bgColor') ? row.name : undefined}
+                  bgColor={row.name.includes('bgColor') || row.name.includes('iconColor') ? row.name : undefined}
                   textColor={row.name.includes('fgColor') ? row.name : undefined}
                   shadowColor={row.name.includes('shadow') ? row.name : undefined}
                   borderColor={row.name.includes('borderColor') ? row.name : undefined}
@@ -422,9 +420,9 @@ export const Overlay = () => {
   })
   return (
     <Table.Container>
-      <Table.Title as="h1" id="pattern">
+      <h1 className="sr-only" id="table-heading">
         Overlay
-      </Table.Title>
+      </h1>
       <DataTable
         aria-labelledby="pattern"
         data={data}
@@ -436,7 +434,7 @@ export const Overlay = () => {
             renderCell: row => {
               return (
                 <ColorTokenSwatch
-                  bgColor={row.name.includes('bgColor') ? row.name : undefined}
+                  bgColor={row.name.includes('bgColor') || row.name.includes('iconColor') ? row.name : undefined}
                   textColor={row.name.includes('fgColor') ? row.name : undefined}
                   shadowColor={row.name.includes('shadow') ? row.name : undefined}
                   borderColor={row.name.includes('borderColor') ? row.name : undefined}
@@ -475,9 +473,9 @@ export const SelectMenu = () => {
   })
   return (
     <Table.Container>
-      <Table.Title as="h1" id="pattern">
+      <h1 className="sr-only" id="table-heading">
         SelectMenu
-      </Table.Title>
+      </h1>
       <DataTable
         aria-labelledby="pattern"
         data={data}
@@ -489,7 +487,7 @@ export const SelectMenu = () => {
             renderCell: row => {
               return (
                 <ColorTokenSwatch
-                  bgColor={row.name.includes('bgColor') ? row.name : undefined}
+                  bgColor={row.name.includes('bgColor') || row.name.includes('iconColor') ? row.name : undefined}
                   textColor={row.name.includes('fgColor') ? row.name : undefined}
                   shadowColor={row.name.includes('shadow') ? row.name : undefined}
                   borderColor={row.name.includes('borderColor') ? row.name : undefined}
@@ -528,9 +526,9 @@ export const SideNav = () => {
   })
   return (
     <Table.Container>
-      <Table.Title as="h1" id="pattern">
+      <h1 className="sr-only" id="table-heading">
         SideNav
-      </Table.Title>
+      </h1>
       <DataTable
         aria-labelledby="pattern"
         data={data}
@@ -542,7 +540,7 @@ export const SideNav = () => {
             renderCell: row => {
               return (
                 <ColorTokenSwatch
-                  bgColor={row.name.includes('bgColor') ? row.name : undefined}
+                  bgColor={row.name.includes('bgColor') || row.name.includes('iconColor') ? row.name : undefined}
                   textColor={row.name.includes('fgColor') ? row.name : undefined}
                   shadowColor={row.name.includes('shadow') ? row.name : undefined}
                   borderColor={row.name.includes('borderColor') ? row.name : undefined}
@@ -581,9 +579,9 @@ export const TimelineBadge = () => {
   })
   return (
     <Table.Container>
-      <Table.Title as="h1" id="pattern">
+      <h1 className="sr-only" id="table-heading">
         TimelineBadge
-      </Table.Title>
+      </h1>
       <DataTable
         aria-labelledby="pattern"
         data={data}
@@ -595,7 +593,7 @@ export const TimelineBadge = () => {
             renderCell: row => {
               return (
                 <ColorTokenSwatch
-                  bgColor={row.name.includes('bgColor') ? row.name : undefined}
+                  bgColor={row.name.includes('bgColor') || row.name.includes('iconColor') ? row.name : undefined}
                   textColor={row.name.includes('fgColor') ? row.name : undefined}
                   shadowColor={row.name.includes('shadow') ? row.name : undefined}
                   borderColor={row.name.includes('borderColor') ? row.name : undefined}
@@ -634,11 +632,11 @@ export const UnderlineNav = () => {
   })
   return (
     <Table.Container>
-      <Table.Title as="h1" id="pattern">
+      <h1 className="sr-only" id="table-heading">
         UnderlineNav
-      </Table.Title>
+      </h1>
       <DataTable
-        aria-labelledby="pattern"
+        aria-labelledby="table-heading"
         data={data}
         columns={[
           {
@@ -648,10 +646,60 @@ export const UnderlineNav = () => {
             renderCell: row => {
               return (
                 <ColorTokenSwatch
-                  bgColor={row.name.includes('bgColor') ? row.name : undefined}
+                  bgColor={row.name.includes('bgColor') || row.name.includes('iconColor') ? row.name : undefined}
                   textColor={row.name.includes('fgColor') ? row.name : undefined}
                   shadowColor={row.name.includes('shadow') ? row.name : undefined}
                   borderColor={row.name.includes('borderColor') ? row.name : undefined}
+                />
+              )
+            },
+          },
+          {
+            header: 'Token',
+            field: 'name',
+            rowHeader: true,
+            renderCell: row => {
+              return <InlineCode value={row.name} copyClipboard />
+            },
+          },
+          {
+            header: 'Output value',
+            field: 'value',
+            rowHeader: true,
+            renderCell: row => {
+              return <p>{row.value}</p>
+            },
+          },
+        ]}
+      />
+    </Table.Container>
+  )
+}
+
+export const Selection = () => {
+  const data = getTokensByName(colorTokens, 'selection').map(token => {
+    return {
+      id: token.name,
+      ...token,
+    }
+  })
+  return (
+    <Table.Container>
+      <h1 className="sr-only" id="selection">
+        Text selection
+      </h1>
+      <DataTable
+        aria-labelledby="selection"
+        data={data}
+        columns={[
+          {
+            header: 'Sample',
+            field: 'name',
+            rowHeader: true,
+            renderCell: row => {
+              return (
+                <ColorTokenSwatch
+                  selectionColor={row.name.includes('bgColor') || row.name.includes('iconColor') ? row.name : undefined}
                 />
               )
             },

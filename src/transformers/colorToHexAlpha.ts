@@ -1,6 +1,6 @@
 import {toHex} from 'color2k'
 import {alpha} from './utilities/alpha'
-import {isColorWithAlpha} from '~/src/filters'
+import {isColorWithAlpha} from '../filters'
 import type StyleDictionary from 'style-dictionary'
 import {getTokenValue} from './utilities/getTokenValue'
 /**
@@ -13,5 +13,11 @@ export const colorToHexAlpha: StyleDictionary.Transform = {
   type: `value`,
   transitive: true,
   matcher: isColorWithAlpha,
-  transformer: (token: StyleDictionary.TransformedToken) => toHex(alpha(getTokenValue(token), token.alpha, token)),
+  transformer: (token: StyleDictionary.TransformedToken) => {
+    // don't change if alpha is null
+    if (token.alpha === null) {
+      return toHex(getTokenValue(token))
+    }
+    return toHex(alpha(getTokenValue(token), token.alpha, token))
+  },
 }

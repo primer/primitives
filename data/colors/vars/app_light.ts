@@ -41,9 +41,9 @@ export default {
   },
   prettylights: {
     syntax: {
-      comment: get('scale.gray.5'),
+      comment: get('scale.gray.6'),
       constant: get('scale.blue.6'),
-      entity: get('scale.purple.5'),
+      entity: get('scale.purple.6'),
       storageModifierImport: get('scale.gray.9'),
       entityTag: get('scale.green.6'),
       keyword: get('scale.red.5'),

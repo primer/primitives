@@ -1,13 +1,13 @@
-tokens-v2-private/
-tokens-next-private/
+dist/
 .cache/
 docs/public/
 # next line needed for <Note> reference
-docs/content/colors.mdx 
 .changeset/*.md
 coverage/
+storybook-static
 
 # Ignore all files relating to v1 tokens
 # TODO: Remove after v1 tokens have been removed
 data/
-dist/
+tokens-next-private/
+tokens-v2-private/
