@@ -2,6 +2,10 @@ import {isDimension} from '../filters'
 import type StyleDictionary from 'style-dictionary'
 import type {Platform} from 'style-dictionary'
 
+type SizePx = '0' | `${number}px`
+type SizeRem = '0' | `${number}rem`
+type SizeEm = '0' | `${number}em`
+
 /**
  * @description base font size from options or 16
  * @param options
@@ -24,37 +28,33 @@ const hasUnit = (value: string | number, unit: string): boolean => {
 }
 
 /**
- * @description converts dimension tokens value to pixel value without unit, ignores `em` as they are relative to the font size of the parent element
+ * @description converts dimension tokens value to `rem`, ignores `em` as they are relative to the font size of the parent element
  * @type value transformer — [StyleDictionary.ValueTransform](https://github.com/amzn/style-dictionary/blob/main/types/Transform.d.ts)
  * @matcher matches all tokens of $type `dimension`
- * @transformer returns a float number
+ * @transformer returns an array with the `rem` and `pixel` string
  */
-export const dimensionToPixelUnitless: StyleDictionary.Transform = {
+export const dimensionToRemPxArray: StyleDictionary.Transform = {
   type: `value`,
   transitive: true,
   matcher: isDimension,
-  transformer: (token: StyleDictionary.TransformedToken, options?: Platform) => {
+  transformer: (token: StyleDictionary.TransformedToken, options?: Platform): [SizeRem | SizeEm, SizePx] => {
     const baseFont = getBasePxFontSize(options)
     const floatVal = parseFloat(token.value)
 
     if (isNaN(floatVal)) {
       throw new Error(
-        `Invalid dimension token: '${token.name}: ${token.value}' is not valid and cannot be transform to 'float' \n`,
+        `Invalid dimension token: '${token.name}: ${token.value}' is not valid and cannot be transform to 'rem' \n`,
       )
     }
 
     if (floatVal === 0) {
-      return 0
+      return ['0', '0']
     }
 
-    if (hasUnit(token.value, 'rem')) {
-      return floatVal * baseFont
+    if (hasUnit(token.value, 'rem') || hasUnit(token.value, 'em')) {
+      return [token.value, `${floatVal * baseFont}px`]
     }
 
-    if (hasUnit(token.value, 'px')) {
-      return floatVal
-    }
-
-    return token.value
+    return [`${floatVal / baseFont}rem`, `${floatVal}px`]
   },
 }

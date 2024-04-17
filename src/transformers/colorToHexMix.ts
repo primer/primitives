@@ -1,5 +1,5 @@
 import {toHex} from 'color2k'
-import {isColorWithMix} from '~/src/filters'
+import {isColorWithMix} from '../filters'
 import type StyleDictionary from 'style-dictionary'
 import {getTokenValue} from './utilities/getTokenValue'
 import mix from './utilities/mix'

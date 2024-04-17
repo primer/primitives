@@ -1,5 +1,5 @@
 import type StyleDictionary from 'style-dictionary'
-import {isFontWeight} from '~/src/filters'
+import {isFontWeight} from '../filters'
 import {getTokenValue} from './utilities/getTokenValue'
 
 const fontWeightMatrix: Record<string, string[]> = {

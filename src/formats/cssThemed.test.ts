@@ -1,5 +1,5 @@
 import {cssThemed} from './cssThemed'
-import {getMockFormatterArguments} from '~/src/test-utilities'
+import {getMockFormatterArguments} from '../test-utilities'
 import {format} from 'prettier'
 
 describe('Format: Css Themed', () => {

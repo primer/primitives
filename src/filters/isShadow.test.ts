@@ -1,4 +1,4 @@
-import {getMockToken} from '~/src/test-utilities'
+import {getMockToken} from '../test-utilities'
 import {isShadow} from './isShadow'
 
 describe('Filter: isShadow', () => {
