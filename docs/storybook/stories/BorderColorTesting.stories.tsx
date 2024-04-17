@@ -192,6 +192,7 @@ export const BorderDemo = () => {
               <Box sx={{display: 'flex', gap: '8px'}}>
                 <TextInput leadingVisual={SearchIcon} />
                 <Button>A default button</Button>
+                <Button variant="invisible">An invisible button</Button>
                 <Button variant="primary">A primary button</Button>
               </Box>
 
@@ -213,6 +214,7 @@ export const BorderDemo = () => {
                   }}
                 >
                   <Button>A default button</Button>
+                  <Button variant="invisible">An invisible button</Button>
                   <SegmentedControl aria-label="File view">
                     <SegmentedControl.IconButton defaultSelected aria-label={'Preview'} icon={EyeIcon} />
                     <SegmentedControl.IconButton aria-label={'Raw'} icon={FileCodeIcon} />

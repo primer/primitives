@@ -8,6 +8,22 @@ export default {
   },
 }
 
+const tempNewBaseColors = [
+  'base-display-color-grayWhite',
+  'base-display-color-white',
+  'base-display-color-black',
+  'base-display-color-gray-0',
+  'base-display-color-gray-1',
+  'base-display-color-gray-2',
+  'base-display-color-gray-3',
+  'base-display-color-gray-4',
+  'base-display-color-gray-5',
+  'base-display-color-gray-6',
+  'base-display-color-gray-7',
+  'base-display-color-gray-8',
+  'base-display-color-gray-9',
+]
+
 const bgColors = [
   'base-color-black',
   'base-color-white',
@@ -129,10 +145,17 @@ AllScales.tags = ['includeSnapshot']
 export const Gray = () => {
   const grayColors = bgColors.filter(color => color.includes('gray-'))
   return (
-    <div>
-      {grayColors.map(color => (
-        <ColorScale color={color} key={color} />
-      ))}
+    <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr'}}>
+      <div>
+        {grayColors.map(color => (
+          <ColorScale color={color} key={color} />
+        ))}
+      </div>
+      <div style={{display: 'flex', flexDirection: 'column-reverse'}}>
+        {tempNewBaseColors.map(color => (
+          <ColorScale color={color} key={color} />
+        ))}
+      </div>
     </div>
   )
 }

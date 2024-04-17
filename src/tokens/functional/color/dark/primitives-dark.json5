@@ -1,7 +1,7 @@
 {
   fgColor: {
     default: {
-      $value: '{base.color.gray.0}',
+      $value: '{base.display.color.white}',
       $type: 'color',
       $extensions: {
         'org.primer.figma': {
@@ -14,13 +14,13 @@
           },
         },
       },
-      mix: {
-        color: '{base.color.gray.1}',
-        weight: 0.25,
-      },
+      // mix: {
+      //   color: '{base.display.color.gray.1}',
+      //   weight: 0.25,
+      // },
     },
     muted: {
-      $value: '{base.color.gray.3}',
+      $value: '{base.display.color.gray.9}',
       $type: 'color',
       $extensions: {
         'org.primer.figma': {
@@ -33,10 +33,10 @@
           },
         },
       },
-      mix: {
-        color: '{base.color.gray.4}',
-        weight: 0.25,
-      },
+      // mix: {
+      //   color: '{base.display.color.gray.4}',
+      //   weight: 0.25,
+      // },
     },
     onEmphasis: {
       $value: '{base.color.white}',
@@ -66,7 +66,7 @@
       },
     },
     black: {
-      $value: '{base.color.black}',
+      $value: '{base.display.color.black}',
       $type: 'color',
       $extensions: {
         'org.primer.figma': {
@@ -78,7 +78,7 @@
       },
     },
     disabled: {
-      $value: '{base.color.gray.4}',
+      $value: '{base.display.color.gray.4}',
       $type: 'color',
       $extensions: {
         'org.primer.figma': {
@@ -108,7 +108,7 @@
     },
     neutral: {
       '@': {
-        $value: '{base.color.gray.4}',
+        $value: '{base.display.color.gray.5}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -297,7 +297,7 @@
   },
   bgColor: {
     default: {
-      $value: '{base.color.gray.9}',
+      $value: '{base.display.color.gray.0}',
       $type: 'color',
       $extensions: {
         'org.primer.figma': {
@@ -312,7 +312,7 @@
       },
     },
     muted: {
-      $value: '{base.color.gray.8}',
+      $value: '{base.display.color.gray.1}',
       $type: 'color',
       $extensions: {
         'org.primer.figma': {
@@ -327,7 +327,7 @@
       },
     },
     inset: {
-      $value: '{base.color.black}',
+      $value: '{base.display.color.black}',
       $type: 'color',
       $extensions: {
         'org.primer.figma': {
@@ -342,7 +342,7 @@
       },
     },
     emphasis: {
-      $value: '{base.color.gray.4}',
+      $value: '{base.display.color.gray.5}',
       $type: 'color',
       $extensions: {
         'org.primer.figma': {
@@ -381,7 +381,7 @@
       },
     },
     black: {
-      $value: '{base.color.black}',
+      $value: '{base.display.color.black}',
       $type: 'color',
       $extensions: {
         'org.primer.figma': {
@@ -393,7 +393,7 @@
       },
     },
     disabled: {
-      $value: '{base.color.gray.7}',
+      $value: '{base.display.color.gray.1}',
       $type: 'color',
       $extensions: {
         'org.primer.figma': {
@@ -422,7 +422,7 @@
     },
     neutral: {
       muted: {
-        $value: '{base.color.gray.4}',
+        $value: '{base.display.color.gray.3}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -435,7 +435,7 @@
         alpha: 0.4,
       },
       emphasis: {
-        $value: '{base.color.gray.4}',
+        $value: '{base.display.color.gray.5}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -780,7 +780,7 @@
   },
   borderColor: {
     default: {
-      $value: '{base.color.gray.6}',
+      $value: '{base.display.color.gray.3}',
       $type: 'color',
       $extensions: {
         'org.primer.figma': {
@@ -811,7 +811,7 @@
       alpha: 0.7,
     },
     emphasis: {
-      $value: '{base.color.gray.5}',
+      $value: '{base.display.color.gray.6}',
       $type: 'color',
       $extensions: {
         'org.primer.figma': {
@@ -848,7 +848,7 @@
     },
     neutral: {
       muted: {
-        $value: '{base.color.gray.4}',
+        $value: '{base.display.color.gray.2}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -861,7 +861,7 @@
         alpha: 0.4,
       },
       emphasis: {
-        $value: '{base.color.gray.4}',
+        $value: '{base.display.color.gray.6}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
