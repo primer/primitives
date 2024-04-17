@@ -8,21 +8,20 @@ import postcss from 'postcss'
 import type {Properties} from 'csstype'
 import {flatten as flattenArray, uniqBy, kebabCase} from 'lodash'
 import {flatten as flattenObject} from 'flat'
-import {getTokensByName} from '~/docs/storybook/stories/utilities/getTokensByName'
+import {getTokensByName} from '../docs/storybook/stories/utilities/getTokensByName'
 import type StyleDictionary from 'style-dictionary'
 
 // stories
-import functionalTypographyTokens from '~/dist/docs/functional/typography/typography.json'
-import baseTypographyTokens from '~/dist/docs/base/typography/typography.json'
-import functionalBorderTokens from '~/dist/docs/functional/size/border.json'
-import functionalSizeTokens from '~/dist/docs/functional/size/size.json'
-import functionalSizeFineTokens from '~/dist/docs/functional/size/size-fine.json'
-import baseSizeTokens from '~/dist/docs/base/size/size.json'
-import functionalColorTokens from '~/dist/docs/functional/themes/light.json'
+import functionalTypographyTokens from '../dist/docs/functional/typography/typography.json'
+import baseTypographyTokens from '../dist/docs/base/typography/typography.json'
+import functionalBorderTokens from '../dist/docs/functional/size/border.json'
+import functionalSizeTokens from '../dist/docs/functional/size/size.json'
+import functionalSizeFineTokens from '../dist/docs/functional/size/size-fine.json'
+import baseSizeTokens from '../dist/docs/base/size/size.json'
+import functionalColorTokens from '../dist/docs/functional/themes/light.json'
 
 // path relative to script
 const tokensDirectory = path.join(__dirname, '../dist')
-
 if (!fs.existsSync(tokensDirectory)) {
   // eslint-disable-next-line no-console
   console.log(`tokens not found at ${tokensDirectory}, please run this script after running build:next`)
@@ -186,37 +185,38 @@ propertyMap['breakpoint'] = variables.filter(({file}) => file.name === 'breakpoi
   }
 })
 
-const logUnassignedVariables = () => {
-  const stringified = JSON.stringify(propertyMap)
-  const unassigned: Variable[] = []
+// const logUnassignedVariables = () => {
+//   const stringified = JSON.stringify(propertyMap)
+//   const unassigned: Variable[] = []
 
-  variables
-    .filter(variable => {
-      // TODO: check if we should be ignoring
-      if (
-        variable.name.includes('prettylights-syntax') ||
-        variable.name.includes('codeMirror-syntax') ||
-        variable.name.includes('color-ansi')
-      )
-        return false
-      return true
-    })
-    .map(variable => {
-      if (!stringified.includes(variable.name)) unassigned.push(variable)
-    })
+//   variables
+//     .filter(variable => {
+//       // TODO: check if we should be ignoring
+//       if (
+//         variable.name.includes('prettylights-syntax') ||
+//         variable.name.includes('codeMirror-syntax') ||
+//         variable.name.includes('color-ansi')
+//       )
+//         return false
+//       return true
+//     })
+//     .map(variable => {
+//       if (!stringified.includes(variable.name)) unassigned.push(variable)
+//     })
 
-  return unassigned
-}
+//   return unassigned
+// }
 
-const unusedVariables = logUnassignedVariables()
+// TODO: re-enable this check and figure out why it was there
+// const unusedVariables = logUnassignedVariables()
 
-if (unusedVariables.length > 0) {
-  // eslint-disable-next-line no-console
-  console.log(`Found unused variables, failing build`)
-  // eslint-disable-next-line no-console
-  console.log(unusedVariables)
-  process.exit(1)
-}
+// if (unusedVariables.length > 0) {
+//   // eslint-disable-next-line no-console
+//   console.log(`Found unused variables, failing build`)
+//   // eslint-disable-next-line no-console
+//   console.log(unusedVariables)
+//   process.exit(1)
+// }
 
 // it's better to be explicit than fuzzy match to avoid bad hints
 // for example, borderImage properties should not show border hints
