@@ -27,6 +27,8 @@ const getFigmaType = (type: string): string => {
   const validTypes = {
     color: 'COLOR',
     dimension: 'FLOAT',
+    fontWeight: 'FLOAT',
+    fontFamily: 'STRING',
   }
   if (type in validTypes) return validTypes[type as keyof typeof validTypes]
   throw new Error(`Invalid type: ${type}`)
