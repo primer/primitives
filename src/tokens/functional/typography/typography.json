@@ -2,15 +2,33 @@
   "fontStack": {
     "system": {
       "$value": "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji'",
-      "$type": "fontFamily"
+      "$type": "fontFamily",
+      "$extensions": {
+        "org.primer.figma": {
+          "collection": "typography",
+          "scopes": ["all"]
+        }
+      }
     },
     "sansSerif": {
       "$value": "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji'",
-      "$type": "fontFamily"
+      "$type": "fontFamily",
+      "$extensions": {
+        "org.primer.figma": {
+          "collection": "typography",
+          "scopes": ["all"]
+        }
+      }
     },
     "monospace": {
       "$value": "ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace",
-      "$type": "fontFamily"
+      "$type": "fontFamily",
+      "$extensions": {
+        "org.primer.figma": {
+          "collection": "typography",
+          "scopes": ["all"]
+        }
+      }
     }
   },
   "text": {
