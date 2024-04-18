@@ -45,7 +45,7 @@
     "lint:tokens": "ts-node ./scripts/validateTokenJson.ts",
     "prebuild": "rm -rf dist",
     "prebuild:tokens": "rm -rf tokens-v2-private",
-    "prebuild:next": "rm -rf tokens-next-private",
+    "prebuild:next": "rm -rf dist",
     "prepack": "npm run build && npm run build:tokens && npm run build:next",
     "prepare": "husky",
     "release": "changeset publish",
