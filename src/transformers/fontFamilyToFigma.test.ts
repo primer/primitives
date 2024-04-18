@@ -15,7 +15,7 @@ describe('Transformer: fontFamilyToFigma', () => {
     expect(input.map(item => fontFamilyToFigma.transformer(item, {}))).toStrictEqual(expectedOutput)
   })
 
-  it.skip('transforms fontFamily array', () => {
+  it('transforms fontFamily array', () => {
     const input = [
       getMockToken({
         value: ['Roboto', 'Noto Sans'],
