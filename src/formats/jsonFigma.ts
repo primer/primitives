@@ -28,6 +28,7 @@ const getFigmaType = (type: string): string => {
     color: 'COLOR',
     dimension: 'FLOAT',
     fontWeight: 'FLOAT',
+    number: 'FLOAT',
     fontFamily: 'STRING',
   }
   if (type in validTypes) return validTypes[type as keyof typeof validTypes]
