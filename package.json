@@ -4,9 +4,6 @@
   "description": "Typography, spacing, and color primitives for Primer design system",
   "files": [
     "dist",
-    "tokens-v2-private",
-    "build.js",
-    "tokens/",
     "src/**/*",
     "!src/**/*.test.ts"
   ],
@@ -33,8 +30,6 @@
     "build:v8": "ts-node ./scripts/buildTokens.ts",
     "build:fallbacks": "ts-node ./scripts/buildFallbacks.ts",
     "build:figma": "ts-node scripts/buildFigma.ts",
-    "build:tokens": "node -e \"require('./build')._init()\"",
-    "build:new-tokens": "npm run build:tokens && npm run build:next && npm run build:figma",
     "tokenJson:check": "ts-node scripts/diffThemes.ts && ts-node scripts/diffTokenProps.ts",
     "contrast:check": "ts-node scripts/color-contrast.ts",
     "format": "prettier --write  '**/*.{js,jsx,ts,tsx,md,mdx,css}'",
@@ -44,14 +39,12 @@
     "lint:fix": "eslint '**/*.{js,ts,tsx,md,mdx}' --fix --max-warnings=0 --config .eslintrc.js",
     "lint:tokens": "ts-node ./scripts/validateTokenJson.ts",
     "prebuild": "rm -rf dist",
-    "prebuild:tokens": "rm -rf tokens-v2-private",
     "prebuild:next": "rm -rf dist",
-    "prepack": "npm run build && npm run build:tokens && npm run build:next",
+    "prepack": "npm run build && npm run build:next",
     "prepare": "husky",
     "release": "changeset publish",
-    "start:storybook": "npm run build:next && cd docs/storybook && npm run storybook",
-    "test": "jest --verbose --coverage",
-    "watch": "ls data/**/*.scss scripts/**/*.ts | entr -s 'npm run build'"
+    "start:storybook": "npm run build && cd docs/storybook && npm run storybook",
+    "test": "jest --verbose --coverage"
   },
   "prettier": "@github/prettier-config",
   "devDependencies": {

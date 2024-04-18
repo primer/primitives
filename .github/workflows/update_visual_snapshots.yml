@@ -37,7 +37,7 @@ jobs:
       - name: Install browsers
         run: npx playwright install --with-deps
       - name: Build v8 tokens
-        run: npm run build:next
+        run: npm run build:v8
       - name: Build storybook
         working-directory: docs/storybook
         run: |
