@@ -1,5 +1,5 @@
 ---
-'@primer/primitives': patch
+'@primer/primitives': minor
 ---
 
-rm v2 output
+Remove v2 token output (dist/tokens-v2-private)

@@ -27,7 +27,7 @@ jobs:
       - name: Build v1 tokens
         run: npm run build
 
-      - name: Build v8 tokens & fallbacks
+      - name: Build v8 tokens
         run: npm run build:v8
 
       - name: Build fallbacks
