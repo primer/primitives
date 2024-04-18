@@ -30,9 +30,6 @@ jobs:
       - name: Build tokens
         run: npm run build
 
-      - name: Build experimental tokens
-        run: npm run build:tokens
-
       - id: get-access-token
         uses: camertron/github-app-installation-auth-action@v1
         with:
