@@ -12,6 +12,7 @@ import {
   durationToCss,
   figmaAttributes,
   fontFamilyToCss,
+  fontFamilyToFigma,
   fontWeightToNumber,
   jsonDeprecated,
   namePathToDotNotation,
@@ -214,6 +215,11 @@ StyleDictionary.registerTransform({
 StyleDictionary.registerTransform({
   name: 'fontFamily/css',
   ...fontFamilyToCss,
+})
+
+StyleDictionary.registerTransform({
+  name: 'fontFamily/figma',
+  ...fontFamilyToFigma,
 })
 
 /**
