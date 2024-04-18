@@ -1,4 +1,4 @@
-import {isColorWithAlpha} from '~/src/filters'
+import {isColorWithAlpha} from '../filters'
 import {alpha} from './utilities/alpha'
 import type StyleDictionary from 'style-dictionary'
 import {getTokenValue} from './utilities/getTokenValue'

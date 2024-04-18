@@ -1,5 +1,21 @@
 # @primer/primitives
 
+## 7.16.0
+
+### Minor Changes
+
+- [#851](https://github.com/primer/primitives/pull/851) [`b46607e5`](https://github.com/primer/primitives/commit/b46607e55a4d1a56f885732ba03be7135ed72efe) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - remove color-scale colors from output
+
+- [#873](https://github.com/primer/primitives/pull/873) [`30cb6371`](https://github.com/primer/primitives/commit/30cb63719833d88f75213d9159ff619a22349c8f) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Removes scss output for v8 tokens
+
+### Patch Changes
+
+- [#857](https://github.com/primer/primitives/pull/857) [`8f372b04`](https://github.com/primer/primitives/commit/8f372b04a3c5efca0b3d4997811839af9c20a12c) Thanks [@langermank](https://github.com/langermank)! - Add `card` pattern tokens
+
+- [#863](https://github.com/primer/primitives/pull/863) [`48d50a30`](https://github.com/primer/primitives/commit/48d50a3061e6dd1a706eebd7b89b935752ed806d) Thanks [@langermank](https://github.com/langermank)! - Add `label` pattern tokens
+
+- [#856](https://github.com/primer/primitives/pull/856) [`f2d49f22`](https://github.com/primer/primitives/commit/f2d49f22bc87f6ce48c1d79701665ab9be82ddd3) Thanks [@langermank](https://github.com/langermank)! - Add `upsell` Banner tokens
+
 ## 7.15.15
 
 ### Patch Changes

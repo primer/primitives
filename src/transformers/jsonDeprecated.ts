@@ -1,4 +1,4 @@
-import {isDeprecated} from '~/src/filters'
+import {isDeprecated} from '../filters'
 import type StyleDictionary from 'style-dictionary'
 /**
  * @description replaces tokens value with content of tokens `deprecated` property

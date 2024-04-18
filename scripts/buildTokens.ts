@@ -1,9 +1,9 @@
 import type StyleDictionary from 'style-dictionary'
-import {PrimerStyleDictionary} from '~/src/PrimerStyleDictionary'
-import {copyFromDir} from '~/src/utilities'
-import {deprecatedJson, css, docJson, scss, fallbacks} from '~/src/platforms'
-import type {ConfigGeneratorOptions, StyleDictionaryConfigGenerator} from '~/src/types/StyleDictionaryConfigGenerator'
-import type {TokenBuildInput} from '~/src/types/TokenBuildInput'
+import {PrimerStyleDictionary} from '../src/PrimerStyleDictionary'
+import {copyFromDir} from '../src/utilities'
+import {deprecatedJson, css, docJson, fallbacks, styleLint} from '../src/platforms'
+import type {ConfigGeneratorOptions, StyleDictionaryConfigGenerator} from '../src/types/StyleDictionaryConfigGenerator'
+import type {TokenBuildInput} from '../src/types/TokenBuildInput'
 import glob from 'fast-glob'
 import {themes} from './themes.config'
 
@@ -26,8 +26,8 @@ const getStyleDictionaryConfig: StyleDictionaryConfigGenerator = (
   include,
   platforms: {
     css: css(`css/${filename}.css`, options.prefix, options.buildPath, {themed: options.themed}),
-    scss: scss(`scss/${filename}.scss`, options.prefix, options.buildPath),
     docJson: docJson(`docs/${filename}.json`, options.prefix, options.buildPath),
+    styleLint: styleLint(`styleLint/${filename}.json`, options.prefix, options.buildPath),
     fallbacks: fallbacks(`fallbacks/${filename}.json`, options.prefix, options.buildPath),
     ...platforms,
   },
@@ -35,7 +35,7 @@ const getStyleDictionaryConfig: StyleDictionaryConfigGenerator = (
 
 export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void => {
   /** -----------------------------------
-   * Colors, shadows & borders
+   * Internal Colors
    * ----------------------------------- */
   try {
     for (const {filename, source, include} of themes) {
@@ -54,7 +54,7 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
   }
 
   /** -----------------------------------
-   * Internal Colors
+   * Colors, shadows & borders
    * ----------------------------------- */
   try {
     for (const {filename, source, include} of themes) {
@@ -217,11 +217,6 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
 /** -----------------------------------
  * Run build script
  * ----------------------------------- */
-// build to private directory for backwards compatibility
-buildDesignTokens({
-  buildPath: 'tokens-next-private/',
-})
-
 // build to dist
 buildDesignTokens({
   buildPath: 'dist/',

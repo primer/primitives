@@ -1,8 +1,8 @@
 import fs from 'fs'
-import {PrimerStyleDictionary} from '~/src/PrimerStyleDictionary'
+import {PrimerStyleDictionary} from '../src/PrimerStyleDictionary'
 import {themes} from './themes.config'
-import {figma} from '~/src/platforms'
-import type {ConfigGeneratorOptions} from '~/src/types/StyleDictionaryConfigGenerator'
+import {figma} from '../src/platforms'
+import type {ConfigGeneratorOptions} from '../src/types/StyleDictionaryConfigGenerator'
 
 const buildFigma = (buildOptions: ConfigGeneratorOptions): void => {
   /** -----------------------------------
@@ -70,6 +70,18 @@ const buildFigma = (buildOptions: ConfigGeneratorOptions): void => {
     include: sizeFiles,
     platforms: {
       figma: figma(`figma/dimension/dimension.json`, buildOptions.prefix, buildOptions.buildPath),
+    },
+  }).buildAllPlatforms()
+
+  /** -----------------------------------
+   * Typography
+   * ----------------------------------- */
+  //
+  PrimerStyleDictionary.extend({
+    source: ['src/tokens/base/typography/typography.json', 'src/tokens/functional/typography/typography.json'],
+    include: [],
+    platforms: {
+      figma: figma(`figma/typography/typography.json`, buildOptions.prefix, buildOptions.buildPath),
     },
   }).buildAllPlatforms()
 

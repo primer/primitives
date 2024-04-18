@@ -1,5 +1,5 @@
 import {cssWrapMediaQuery} from './cssWrapMediaQuery'
-import {getMockDictionary, getMockFormatterArguments, getMockToken} from '~/src/test-utilities'
+import {getMockDictionary, getMockFormatterArguments, getMockToken} from '../test-utilities'
 import {format} from 'prettier'
 
 describe('Format: tokens nested in media query', () => {

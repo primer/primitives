@@ -12,6 +12,7 @@ import {
   durationToCss,
   figmaAttributes,
   fontFamilyToCss,
+  fontFamilyToFigma,
   fontWeightToNumber,
   jsonDeprecated,
   namePathToDotNotation,
@@ -21,9 +22,9 @@ import {
   namePathToFigma,
   shadowToCss,
   typographyToCss,
+  dimensionToRemPxArray,
 } from './transformers'
 import {
-  scssMixinCssVariables,
   javascriptCommonJs,
   javascriptEsm,
   typescriptExportDefinition,
@@ -65,11 +66,6 @@ StyleDictionary.registerFormat({
 StyleDictionary.registerFormat({
   name: 'css/variables',
   formatter: cssVariables,
-})
-
-StyleDictionary.registerFormat({
-  name: 'scss/mixin-css-variables',
-  formatter: scssMixinCssVariables,
 })
 
 StyleDictionary.registerFormat({
@@ -139,6 +135,11 @@ StyleDictionary.registerTransform({
 StyleDictionary.registerTransform({
   name: 'dimension/rem',
   ...dimensionToRem,
+})
+
+StyleDictionary.registerTransform({
+  name: 'dimension/remPxArray',
+  ...dimensionToRemPxArray,
 })
 
 StyleDictionary.registerTransform({
@@ -216,11 +217,16 @@ StyleDictionary.registerTransform({
   ...fontFamilyToCss,
 })
 
+StyleDictionary.registerTransform({
+  name: 'fontFamily/figma',
+  ...fontFamilyToFigma,
+})
+
 /**
  * @name {@link PrimerStyleDictionary}
  * @description Returns style dictionary object with primer preset that includes parsers, formats and transformers
  * @parsers [w3cJsonParser](https://github.com/primer/primitives/blob/main/config//parsers/w3c-json-parser.ts)
- * @formats [scss/mixin-css-variables](https://github.com/primer/primitives/blob/main/config/formats/scss-mixin-css-variables.ts), [javascript/esm](https://github.com/primer/primitives/blob/main/config/formats/javascript-esm.ts), [javascript/commonJs](https://github.com/primer/primitives/blob/main/config/formats/javascript-commonJs.ts), [typescript/export-definition](https://github.com/primer/primitives/blob/main/config/formats/typescript-export-defition.ts)
+ * @formats [javascript/esm](https://github.com/primer/primitives/blob/main/config/formats/javascript-esm.ts), [javascript/commonJs](https://github.com/primer/primitives/blob/main/config/formats/javascript-commonJs.ts), [typescript/export-definition](https://github.com/primer/primitives/blob/main/config/formats/typescript-export-defition.ts)
  * @transformers [color/rgbAlpha](https://github.com/primer/primitives/blob/main/config/tranformers/color-to-rgb-alpha.ts), [color/hexAlpha](https://github.com/primer/primitives/blob/main/config/tranformers/color-to-hex-alpha.ts), [color/hex](https://github.com/primer/primitives/blob/main/config/tranformers/color-to-hex6.ts), [json/deprecated](https://github.com/primer/primitives/blob/main/config/tranformers/json-deprecated.ts), [name/pathToDotNotation](https://github.com/primer/primitives/blob/main/config/tranformers/name-path-to-dot-notation.ts)
  */
 export const PrimerStyleDictionary: StyleDictionary.Core = StyleDictionary
