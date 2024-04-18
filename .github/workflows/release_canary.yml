@@ -25,7 +25,7 @@ jobs:
           node-version: 20
 
       - name: Install dependencies
-        run: npm ci --legacy-peer-deps --no-audit --no-fund --include=dev
+        run: npm ci --no-audit --no-fund --include=dev
 
       - name: Build tokens
         run: npm run build

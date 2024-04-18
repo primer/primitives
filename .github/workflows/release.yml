@@ -25,7 +25,7 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci --legacy-peer-deps --no-audit --no-fund && pushd docs; npm ci --legacy-peer-deps --no-audit --no-fund; popd
+        run: npm ci --no-audit --no-fund && pushd docs; npm ci --no-audit --no-fund; popd
 
       - name: Build tokens
         run: npm run build
@@ -55,6 +55,7 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_AUTH_TOKEN_SHARED }}
 
       - name: Output release version to summary
+        if: ${{ steps.changesets.outputs.published}} = 'true'
         env:
           VERSION: ${{ steps.changesets.outputs.publishedPackages[0].version }}
           PACKAGE_NAME: ${{ steps.changesets.outputs.publishedPackages[0].name }}
