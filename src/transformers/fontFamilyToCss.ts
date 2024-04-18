@@ -1,8 +1,7 @@
 import type StyleDictionary from 'style-dictionary'
 import {isFontFamily} from '../filters'
 import {getTokenValue} from './utilities/getTokenValue'
-
-const hasSpaceInName = (string: string) => /\s/g.test(string)
+import {hasSpaceInString} from './utilities/hasSpaceInString'
 /**
  * takes a value and returns it if its a string or concats strings in an array quoting strings with spaces
  * @param value
@@ -18,7 +17,7 @@ export const parseFontFamily = (value: unknown): string => {
         if (typeof string !== 'string') {
           throw new Error(`Invalid value in array ${string}, must be a string`)
         }
-        return hasSpaceInName(string) ? `'${string}'` : string
+        return hasSpaceInString(string) ? `'${string}'` : string
       })
       .join(', ')
   }
