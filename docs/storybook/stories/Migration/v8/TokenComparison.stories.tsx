@@ -12,7 +12,7 @@ import cssShadowVars from './DeprecatedShadowTokensMap.json'
 // eslint-disable-next-line import/extensions
 import noChangeCssVars from './NoChangeTokensMap.json'
 // eslint-disable-next-line import/extensions
-import fallbackVars from '../../../../../dist/fallbacks/color-fallbacks.json'
+import fallbackVars from './static-fallbacks.json'
 import {DataTable, Table} from '@primer/react/drafts'
 
 export default {
