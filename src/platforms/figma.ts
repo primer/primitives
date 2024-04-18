@@ -3,9 +3,11 @@ import type {PlatformInitializer} from '../types/PlatformInitializer'
 import {isSource} from '../filters'
 
 const validFigmaToken = (token: StyleDictionary.TransformedToken) => {
-  const validTypes = ['color', 'dimension', 'shadow', 'fontWeight', 'fontFamily']
+  const validTypes = ['color', 'dimension', 'shadow', 'fontWeight', 'fontFamily', 'number']
   // is a siource token, not an included one
   if (!isSource(token)) return false
+
+  if (`${token.value}`.substring(token.value.length - 2) === 'em') return false
   // has a collection attribute
   if (
     !('$extensions' in token) ||
