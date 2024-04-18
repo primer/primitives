@@ -25,6 +25,7 @@ export const figma: PlatformInitializer = (outputFile, prefix, buildPath, option
     'name/pathToFigma',
     // 'name/pathToSlashNotation',
     'figma/attributes',
+    'fontFamily/figma',
     'dimension/pixelUnitless',
     // 'border/figma',
     // 'typography/figma',
@@ -32,6 +33,11 @@ export const figma: PlatformInitializer = (outputFile, prefix, buildPath, option
   ],
   options: {
     basePxFontSize: 16,
+    fontFamilies: {
+      'fontStack/system': 'SF Pro Text',
+      'fontStack/sansSerif': 'SF Pro Text',
+      'fontStack/monospace': 'SF Mono',
+    },
     ...options,
   },
   files: [
