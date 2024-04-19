@@ -23,6 +23,7 @@ import {
   shadowToCss,
   typographyToCss,
   dimensionToRemPxArray,
+  floatToPixel,
 } from './transformers'
 import {
   javascriptCommonJs,
@@ -130,6 +131,11 @@ StyleDictionary.registerTransform({
 StyleDictionary.registerTransform({
   name: 'color/hex',
   ...colorToHex,
+})
+
+StyleDictionary.registerTransform({
+  name: 'float/pixel',
+  ...floatToPixel,
 })
 
 StyleDictionary.registerTransform({
