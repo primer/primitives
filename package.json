@@ -43,7 +43,7 @@
     "prepack": "npm run build && npm run build:next",
     "prepare": "husky",
     "release": "changeset publish",
-    "start:storybook": "npm run build && cd docs/storybook && npm run storybook",
+    "start:storybook": "npm run build && npm run build:next && cd docs/storybook && npm run storybook",
     "test": "jest --verbose --coverage"
   },
   "prettier": "@github/prettier-config",
