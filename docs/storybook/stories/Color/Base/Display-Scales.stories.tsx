@@ -226,11 +226,10 @@ export const AllScales = () => {
       <Color color="lemon" />
       <Color color="yellow" />
       <Color color="orange" />
-      <Color color="amber" />
       <Color color="red" />
       <Color color="coral" />
       <Color color="pink" />
-      <Color color="plumn" />
+      <Color color="plum" />
       <Color color="purple" />
       <Color color="brown" />
       <Color color="auburn" />
@@ -262,7 +261,6 @@ export const Olive = () => <Color color="olive" />
 export const Lemon = () => <Color color="lemon" />
 export const Yellow = () => <Color color="yellow" />
 export const Orange = () => <Color color="orange" />
-export const Amber = () => <Color color="amber" />
 export const Red = () => <Color color="red" />
 export const Coral = () => <Color color="coral" />
 export const Pink = () => <Color color="pink" />
