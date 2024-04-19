@@ -17,7 +17,7 @@ export const convertFloatToPixel = (token: StyleDictionary.TransformedToken) => 
   // convert value
   const convertedValue = token.$extensions?.['org.primer.data']?.fontSize * token.value
   // return converted value
-  return `${convertedValue}px`
+  return convertedValue === 0 ? 0 : `${convertedValue}px`
 }
 /**
  * @description converts a float value to a pixel value based on the provided fontSize on the tokersn extension
