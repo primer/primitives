@@ -16,109 +16,43 @@ npm install --save @primer/primitives
 
 ## Usage
 
-[Storybook](https://primer.style/primitives/storybook) | [Docs](https://primer.style/primitives/)
+[Storybook](https://primer.style/primitives/storybook) | [Docs](https://primer.style/foundations/primitives/getting-started)
 
-Primitive data is served in several formats from the `dist/` folder:
+See [Primitives documentation](https://primer.style/foundations/primitives/getting-started) for more information on theming and using CSS variables.
 
-- `dist/scss` contains [SCSS][scss] files that define CSS variables to be imported into other SCSS files
-- `dist/json` contains JSON files for each set of primitives
-- `dist/js` contains CommonJS-style JavaScript modules for each set of primitives, as well as an index file that loads all of the primitives for all primitive types; you can access this via `require('@primer/primitives')`. The JavaScript modules also include TypeScript typings files for use in TypeScript projects.
+Data is served from the `dist/` folder:
 
-## Deprecating variables
+- `dist/css` contains CSS files with values available as CSS variables
 
-To deprecate a variable, define a mapping from the deprecated variable to its replacement(s) in a file called `deprecated.json` in the appropriate subdirectory of `data`:
-
-```diff
-  data/
-    colors/
-+     deprecated.json
-    spacing/
-    ...
-```
+All available imports:
 
 ```
-// data/colors/deprecated.json
+/* size/typography */
+@import '@primer/primitives/dist/css/base/size/size.css';
+@import '@primer/primitives/dist/css/base/typography/typography.css';
+@import '@primer/primitives/dist/css/functional/size/border.css';
+@import '@primer/primitives/dist/css/functional/size/breakpoints.css';
+@import '@primer/primitives/dist/css/functional/size/size-coarse.css';
+@import '@primer/primitives/dist/css/functional/size/size-fine.css';
+@import '@primer/primitives/dist/css/functional/size/size.css';
+@import '@primer/primitives/dist/css/functional/size/viewport.css';
+@import '@primer/primitives/dist/css/functional/typography/typography.css';
 
-{
-  "text.primary": "fg.default", // this means: `text.primary` is deprecated. Use `fg.default` instead
-  "auto.blue.4": ["accent.fg, accent.emphasis"], // this means: `auto.blue.4` is deprecated. Use `accent.fg` or `accent.emphasis` instead
-  "text.white": null // this means: `text.white` is deprecated. We don't have a replacement for it
-}
-
+/* color */
+@import '@primer/primitives/dist/css/functional/themes/light.css';
+@import '@primer/primitives/dist/css/functional/themes/light-tritanopia.css';
+@import '@primer/primitives/dist/css/functional/themes/light-high-contrast.css';
+@import '@primer/primitives/dist/css/functional/themes/light-colorblind.css';
+@import '@primer/primitives/dist/css/functional/themes/dark.css';
+@import '@primer/primitives/dist/css/functional/themes/dark-colorblind.css';
+@import '@primer/primitives/dist/css/functional/themes/dark-dimmed.css';
+@import '@primer/primitives/dist/css/functional/themes/dark-high-contrast.css';
+@import '@primer/primitives/dist/css/functional/themes/dark-tritanopia.css';
 ```
 
-During the build process, the `deprecated.json` files will be added to a `dist/deprecated` directory organized by variable category:
+## Design token data
 
-```diff
-  dist/
-    js/
-    ts/
-    json/
-    scss/
-+   deprecated/
-+     colors.json
-```
-
-## Removing variables
-
-When you're ready to remove a variable, first remove it's definitions:
-
-```diff
-// data/colors/vars/global_light.ts
-import {get} from '../../../src/utils-v1'
-
-export default {
-  text: {
--   primary: get('scale.gray.9'),
-    secondary: get('scale.gray.6')
-  }
-}
-```
-
-```diff
-// data/colors/vars/global_dark.ts
-import {get} from '../../../src/utils-v1'
-
-export default {
-  text: {
--   primary: get('scale.gray.1'),
-    secondary: get('scale.gray.3')
-  }
-}
-```
-
-Then remove it from `deprecated.json` and add it to `removed.json`:
-
-```diff
-// data/colors/deprecated.json
-{
-- "text.primary": "fg.default"
-}
-```
-
-```diff
-// data/colors/removed.json
-{
-+ "text.primary": "fg.default"
-}
-```
-
-During the build process, the `removed.json` files will be added to a `dist/removed` directory organized by variable category:
-
-```diff
-  dist/
-    js/
-    ts/
-    json/
-    scss/
-    deprecated/
-+   removed/
-+     colors.json
-```
-
-## V8 Tokens
-
-With `/primitives` version 8, design tokens have been moved to json files in the [src/tokens](./src/tokens/) directory. Those tokens are compiled with [style dictionary](https://amzn.github.io/style-dictionary/#/) in [scripts/buildTokens.ts](./scripts/buildTokens.ts).
+Design token data is stored in the [src/tokens](./src/tokens/) directory. These tokens are compiled with [style dictionary](https://amzn.github.io/style-dictionary/#/) in [scripts/buildTokens.ts](./scripts/buildTokens.ts).
 
 To make working with tokens easier, we added some additional functionality on top of what style dictionary comes with:
 
