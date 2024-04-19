@@ -34,8 +34,8 @@
   "text": {
     "display": {
       "lineBoxHeight": {
-        "$value": "56px",
-        "$type": "dimension",
+        "$value": 1.4,
+        "$type": "number",
         "$extensions": {
           "org.primer.data": {
             "fontSize": 40
@@ -52,7 +52,16 @@
       },
       "lineHeight": {
         "$value": 1.4,
-        "$type": "number"
+        "$type": "number",
+        "$extensions": {
+          "org.primer.data": {
+            "fontSize": 40
+          },
+          "org.primer.figma": {
+            "collection": "typography",
+            "scopes": ["all"]
+          }
+        }
       },
       "weight": {
         "$value": "{base.text.weight.medium}",

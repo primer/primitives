@@ -23,7 +23,11 @@ import {
   shadowToCss,
   typographyToCss,
   dimensionToRemPxArray,
+<<<<<<< HEAD
   floatToPixel,
+=======
+  convertWithFontSizeToPixel,
+>>>>>>> c920fd97 (converting line height to pixel value)
 } from './transformers'
 import {
   javascriptCommonJs,
