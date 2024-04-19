@@ -28,7 +28,7 @@ jobs:
         run: npm ci --no-audit --no-fund && pushd docs; npm ci --no-audit --no-fund; popd
 
       - name: Build tokens
-        run: npm run build
+        run: npm run build:next
 
       - id: get-access-token
         uses: camertron/github-app-installation-auth-action@v1

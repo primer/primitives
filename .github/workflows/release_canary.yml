@@ -27,9 +27,6 @@ jobs:
       - name: Install dependencies
         run: npm ci --no-audit --no-fund --include=dev
 
-      - name: Build tokens
-        run: npm run build
-
       - name: Build v8 tokens
         run: npm run build:v8
 
