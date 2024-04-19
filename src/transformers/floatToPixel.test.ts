@@ -12,8 +12,24 @@ describe('Transformer: floatToPixel', () => {
           },
         },
       }),
+      getMockToken({
+        value: 1.342,
+        $extensions: {
+          'org.primer.data': {
+            fontSize: 16,
+          },
+        },
+      }),
+      getMockToken({
+        value: 1.548,
+        $extensions: {
+          'org.primer.data': {
+            fontSize: 16,
+          },
+        },
+      }),
     ]
-    const expectedOutput = ['24px']
+    const expectedOutput = ['24px', '21px', '25px']
     expect(input.map(item => floatToPixel.transformer(item, {}))).toStrictEqual(expectedOutput)
   })
 
