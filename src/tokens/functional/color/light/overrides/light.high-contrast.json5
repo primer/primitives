@@ -6,12 +6,12 @@
 {
   fgColor: {
     muted: {
-      $value: '{base.color.gray.9}',
+      $value: '{base.color.neutral.9}',
       $type: 'color',
       mix: null,
     },
     disabled: {
-      $value: '{base.color.gray.5}',
+      $value: '{base.color.neutral.5}',
       $type: 'color',
     },
     danger: {
@@ -29,7 +29,7 @@
   },
   bgColor: {
     muted: {
-      $value: '{base.color.gray.1}',
+      $value: '{base.color.neutral.1}',
       $type: 'color',
     },
     inset: {
@@ -38,13 +38,13 @@
     },
     neutral: {
       muted: {
-        $value: '{base.color.gray.1}',
+        $value: '{base.color.neutral.1}',
         $type: 'color',
         alpha: 1,
       },
     },
     disabled: {
-      $value: '{base.color.gray.2}',
+      $value: '{base.color.neutral.2}',
       $type: 'color',
     },
     success: {
@@ -63,17 +63,17 @@
   },
   borderColor: {
     default: {
-      $value: '{base.color.gray.8}',
+      $value: '{base.color.neutral.8}',
       $type: 'color',
     },
     muted: {
-      $value: '{base.color.gray.4}',
+      $value: '{base.color.neutral.4}',
       $type: 'color',
       alpha: 1,
     },
     neutral: {
       muted: {
-        $value: '{base.color.gray.4}',
+        $value: '{base.color.neutral.4}',
         $type: 'color',
         alpha: 1,
       },
@@ -159,27 +159,27 @@
   control: {
     bgColor: {
       rest: {
-        $value: '{base.color.gray.1}',
+        $value: '{base.color.neutral.1}',
         $type: 'color',
       },
       hover: {
-        $value: '{base.color.gray.1}',
+        $value: '{base.color.neutral.1}',
         $type: 'color',
         mix: {
-          color: '{base.color.gray.3}',
+          color: '{base.color.neutral.3}',
           weight: 0.2,
         },
       },
       active: {
-        $value: '{base.color.gray.1}',
+        $value: '{base.color.neutral.1}',
         $type: 'color',
         mix: {
-          color: '{base.color.gray.3}',
+          color: '{base.color.neutral.3}',
           weight: 0.4,
         },
       },
       selected: {
-        $value: '{base.color.gray.3}',
+        $value: '{base.color.neutral.3}',
         $type: 'color',
       },
     },
@@ -193,19 +193,19 @@
     transparent: {
       bgColor: {
         hover: {
-          $value: '{base.color.gray.1}',
+          $value: '{base.color.neutral.1}',
           $type: 'color',
           alpha: null,
           mix: null,
         },
         active: {
-          $value: '{base.color.gray.2}',
+          $value: '{base.color.neutral.2}',
           $type: 'color',
           alpha: null,
           mix: null,
         },
         selected: {
-          $value: '{base.color.gray.2}',
+          $value: '{base.color.neutral.2}',
           $type: 'color',
         },
       },
@@ -245,22 +245,22 @@
   controlTrack: {
     bgColor: {
       rest: {
-        $value: '{base.color.gray.3}',
+        $value: '{base.color.neutral.3}',
         $type: 'color',
       },
       hover: {
-        $value: '{base.color.gray.3}',
+        $value: '{base.color.neutral.3}',
         $type: 'color',
         mix: {
-          color: '{base.color.gray.5}',
+          color: '{base.color.neutral.5}',
           weight: 0.2,
         },
       },
       active: {
-        $value: '{base.color.gray.3}',
+        $value: '{base.color.neutral.3}',
         $type: 'color',
         mix: {
-          color: '{base.color.gray.5}',
+          color: '{base.color.neutral.5}',
           weight: 0.4,
         },
       },
@@ -349,12 +349,12 @@
       },
       bgColor: {
         hover: {
-          $value: '{base.color.gray.8}',
+          $value: '{base.color.neutral.8}',
           $type: 'color',
           alpha: 1,
         },
         active: {
-          $value: '{base.color.gray.6}',
+          $value: '{base.color.neutral.6}',
           $type: 'color',
           alpha: 1,
         },
@@ -425,7 +425,7 @@
   header: {
     borderColor: {
       divider: {
-        $value: '{base.color.gray.3}',
+        $value: '{base.color.neutral.3}',
         $type: 'color',
       },
     },

@@ -6,17 +6,17 @@
 {
   fgColor: {
     onEmphasis: {
-      $value: '{base.color.gray.9}',
+      $value: '{base.color.neutral.9}',
       $type: 'color',
     },
     muted: {
-      $value: '{base.color.gray.1}',
+      $value: '{base.color.neutral.1}',
       $type: 'color',
       mix: null,
       alpha: 1,
     },
     disabled: {
-      $value: '{base.color.gray.4}',
+      $value: '{base.color.neutral.4}',
       $type: 'color',
     },
   },
@@ -27,29 +27,29 @@
     },
     neutral: {
       emphasis: {
-        $value: '{base.color.gray.4}',
+        $value: '{base.color.neutral.4}',
         $type: 'color',
       },
     },
   },
   borderColor: {
     default: {
-      $value: '{base.color.gray.5}',
+      $value: '{base.color.neutral.5}',
       $type: 'color',
     },
     muted: {
-      $value: '{base.color.gray.5}',
+      $value: '{base.color.neutral.5}',
       $type: 'color',
       alpha: 1,
     },
     neutral: {
       muted: {
-        $value: '{base.color.gray.4}',
+        $value: '{base.color.neutral.4}',
         $type: 'color',
         alpha: 1,
       },
       emphasis: {
-        $value: '{base.color.gray.4}',
+        $value: '{base.color.neutral.4}',
         $type: 'color',
       },
     },
@@ -120,7 +120,7 @@
   control: {
     bgColor: {
       selected: {
-        $value: '{base.color.gray.6}',
+        $value: '{base.color.neutral.6}',
         $type: 'color',
       },
     },
@@ -134,17 +134,17 @@
     transparent: {
       bgColor: {
         hover: {
-          $value: '{base.color.gray.8}',
+          $value: '{base.color.neutral.8}',
           $type: 'color',
           alpha: 1,
         },
         active: {
-          $value: '{base.color.gray.6}',
+          $value: '{base.color.neutral.6}',
           $type: 'color',
           alpha: 1,
         },
         selected: {
-          $value: '{base.color.gray.6}',
+          $value: '{base.color.neutral.6}',
           $type: 'color',
           alpha: 1,
         },
@@ -155,7 +155,7 @@
           $type: 'color',
         },
         active: {
-          $value: '{base.color.gray.4}',
+          $value: '{base.color.neutral.4}',
           $type: 'color',
         },
       },
@@ -249,13 +249,13 @@
       },
       bgColor: {
         hover: {
-          $value: '{base.color.gray.1}',
+          $value: '{base.color.neutral.1}',
           $type: 'color',
           alpha: null,
           mix: null,
         },
         active: {
-          $value: '{base.color.gray.2}',
+          $value: '{base.color.neutral.2}',
           $type: 'color',
           alpha: null,
           mix: null,
@@ -354,13 +354,13 @@
   underlineNav: {
     borderColor: {
       hover: {
-        $value: '{base.color.gray.3}',
+        $value: '{base.color.neutral.3}',
         $type: 'color',
       },
     },
     iconColor: {
       rest: {
-        $value: '{base.color.gray.1}',
+        $value: '{base.color.neutral.1}',
         $type: 'color',
       },
     },
