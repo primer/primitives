@@ -1,11 +1,11 @@
 import type StyleDictionary from 'style-dictionary'
 import {isNumber} from '../filters'
 /**
- * takes a value and returns it if its a string or concats strings in an array quoting strings with spaces
+ * takes a value and returns it if its a px string if it is a float and the token has a fontSize value in extensions['org.primer.data']
  * @param value
  * @returns string
  */
-export const convertFloatToPixel = (token: StyleDictionary.TransformedToken, unitless?: boolean) => {
+export const convertFloatToPixel = (token: StyleDictionary.TransformedToken) => {
   // short circut if value is not a number
   if (
     typeof token.value !== 'number' ||
@@ -17,18 +17,17 @@ export const convertFloatToPixel = (token: StyleDictionary.TransformedToken, uni
   // convert value
   const convertedValue = token.$extensions?.['org.primer.data']?.fontSize * token.value
   // return converted value
-  return unitless ? convertedValue : `${convertedValue}px`
+  return `${convertedValue}px`
 }
 /**
- * @description converts fontFamily tokens value to string
+ * @description converts a float value to a pixel value based on the provided fontSize on the tokersn extension
  * @type value transformer — [StyleDictionary.ValueTransform](https://github.com/amzn/style-dictionary/blob/main/types/Transform.d.ts)
- * @matcher matches all tokens of $type `fontFamily`
- * @transformer returns a string
+ * @matcher matches all tokens of $type `isNumber`
+ * @transformer returns a pixel string
  */
 export const floatToPixel: StyleDictionary.Transform = {
   type: `value`,
   transitive: true,
   matcher: isNumber,
-  transformer: (token: StyleDictionary.TransformedToken, platform: StyleDictionary.Platform): string =>
-    convertFloatToPixel(token, platform.options?.unitless ?? false),
+  transformer: (token: StyleDictionary.TransformedToken): string => convertFloatToPixel(token),
 }
