@@ -12,6 +12,7 @@ import {
   durationToCss,
   figmaAttributes,
   fontFamilyToCss,
+  fontFamilyToFigma,
   fontWeightToNumber,
   jsonDeprecated,
   namePathToDotNotation,
@@ -21,6 +22,8 @@ import {
   namePathToFigma,
   shadowToCss,
   typographyToCss,
+  dimensionToRemPxArray,
+  floatToPixel,
 } from './transformers'
 import {
   javascriptCommonJs,
@@ -131,8 +134,18 @@ StyleDictionary.registerTransform({
 })
 
 StyleDictionary.registerTransform({
+  name: 'float/pixel',
+  ...floatToPixel,
+})
+
+StyleDictionary.registerTransform({
   name: 'dimension/rem',
   ...dimensionToRem,
+})
+
+StyleDictionary.registerTransform({
+  name: 'dimension/remPxArray',
+  ...dimensionToRemPxArray,
 })
 
 StyleDictionary.registerTransform({
@@ -208,6 +221,11 @@ StyleDictionary.registerTransform({
 StyleDictionary.registerTransform({
   name: 'fontFamily/css',
   ...fontFamilyToCss,
+})
+
+StyleDictionary.registerTransform({
+  name: 'fontFamily/figma',
+  ...fontFamilyToFigma,
 })
 
 /**

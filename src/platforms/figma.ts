@@ -3,9 +3,11 @@ import type {PlatformInitializer} from '../types/PlatformInitializer'
 import {isSource} from '../filters'
 
 const validFigmaToken = (token: StyleDictionary.TransformedToken) => {
-  const validTypes = ['color', 'dimension', 'shadow']
+  const validTypes = ['color', 'dimension', 'shadow', 'fontWeight', 'fontFamily', 'number']
   // is a siource token, not an included one
   if (!isSource(token)) return false
+
+  if (`${token.value}`.substring(token.value.length - 2) === 'em') return false
   // has a collection attribute
   if (
     !('$extensions' in token) ||
@@ -25,6 +27,8 @@ export const figma: PlatformInitializer = (outputFile, prefix, buildPath, option
     'name/pathToFigma',
     // 'name/pathToSlashNotation',
     'figma/attributes',
+    'fontFamily/figma',
+    'float/pixel',
     'dimension/pixelUnitless',
     // 'border/figma',
     // 'typography/figma',
@@ -32,6 +36,11 @@ export const figma: PlatformInitializer = (outputFile, prefix, buildPath, option
   ],
   options: {
     basePxFontSize: 16,
+    fontFamilies: {
+      'fontStack/system': 'SF Pro Text',
+      'fontStack/sansSerif': 'SF Pro Text',
+      'fontStack/monospace': 'SF Mono',
+    },
     ...options,
   },
   files: [

@@ -5,6 +5,15 @@ describe('Schema: numberToken', () => {
     $value: 10,
     $type: 'number',
     $description: 'a number token',
+    $extensions: {
+      'org.primer.data': {
+        fontSize: 40,
+      },
+      'org.primer.figma': {
+        collection: 'typography',
+        scopes: ['all'],
+      },
+    },
   }
 
   it('parses valid number tokens', () => {
@@ -76,6 +85,20 @@ describe('Schema: numberToken', () => {
       numberToken.safeParse({
         ...validToken,
         $value: false,
+      }).success,
+    ).toStrictEqual(false)
+  })
+
+  it('fails on invalid extension', () => {
+    // additional element
+    expect(
+      numberToken.safeParse({
+        ...validToken,
+        $extensions: {
+          'org.primer.data': {
+            fontSize: '40',
+          },
+        },
       }).success,
     ).toStrictEqual(false)
   })

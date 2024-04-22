@@ -2,34 +2,83 @@
   "fontStack": {
     "system": {
       "$value": "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji'",
-      "$type": "fontFamily"
+      "$type": "fontFamily",
+      "$extensions": {
+        "org.primer.figma": {
+          "collection": "typography",
+          "scopes": ["all"]
+        }
+      }
     },
     "sansSerif": {
       "$value": "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji'",
-      "$type": "fontFamily"
+      "$type": "fontFamily",
+      "$extensions": {
+        "org.primer.figma": {
+          "collection": "typography",
+          "scopes": ["all"]
+        }
+      }
     },
     "monospace": {
       "$value": "ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace",
-      "$type": "fontFamily"
+      "$type": "fontFamily",
+      "$extensions": {
+        "org.primer.figma": {
+          "collection": "typography",
+          "scopes": ["all"]
+        }
+      }
     }
   },
   "text": {
     "display": {
       "lineBoxHeight": {
-        "$value": "56px",
-        "$type": "dimension"
+        "$value": 1.4,
+        "$type": "number",
+        "$extensions": {
+          "org.primer.data": {
+            "fontSize": 40
+          },
+          "org.primer.figma": {
+            "collection": "typography",
+            "scopes": ["all"],
+            "fontSizeInPx": 40
+          }
+        }
       },
       "size": {
         "$value": "40px",
-        "$type": "dimension"
+        "$type": "dimension",
+        "$extensions": {
+          "org.primer.figma": {
+            "collection": "typography",
+            "scopes": ["all"]
+          }
+        }
       },
       "lineHeight": {
         "$value": 1.4,
-        "$type": "number"
+        "$type": "number",
+        "$extensions": {
+          "org.primer.data": {
+            "fontSize": 40
+          },
+          "org.primer.figma": {
+            "collection": "typography",
+            "scopes": ["all"]
+          }
+        }
       },
       "weight": {
         "$value": "{base.text.weight.medium}",
-        "$type": "fontWeight"
+        "$type": "fontWeight",
+        "$extensions": {
+          "org.primer.figma": {
+            "collection": "typography",
+            "scopes": ["all"]
+          }
+        }
       },
       "shorthand": {
         "$value": {
@@ -46,43 +95,106 @@
       "size": {
         "large": {
           "$value": "32px",
-          "$type": "dimension"
+          "$type": "dimension",
+          "$extensions": {
+            "org.primer.figma": {
+              "collection": "typography",
+              "scopes": ["all"]
+            }
+          }
         },
         "medium": {
           "$value": "20px",
-          "$type": "dimension"
+          "$type": "dimension",
+          "$extensions": {
+            "org.primer.figma": {
+              "collection": "typography",
+              "scopes": ["all"]
+            }
+          }
         },
         "small": {
           "$value": "16px",
-          "$type": "dimension"
+          "$type": "dimension",
+          "$extensions": {
+            "org.primer.figma": {
+              "collection": "typography",
+              "scopes": ["all"]
+            }
+          }
         }
       },
       "lineHeight": {
         "large": {
           "$value": 1.5,
-          "$type": "number"
+          "$type": "number",
+          "$extensions": {
+            "org.primer.data": {
+              "fontSize": 32
+            },
+            "org.primer.figma": {
+              "collection": "typography",
+              "scopes": ["all"]
+            }
+          }
         },
         "medium": {
           "$value": 1.6,
-          "$type": "number"
+          "$type": "number",
+          "$extensions": {
+            "org.primer.data": {
+              "fontSize": 20
+            },
+            "org.primer.figma": {
+              "collection": "typography",
+              "scopes": ["all"]
+            }
+          }
         },
         "small": {
           "$value": 1.5,
-          "$type": "number"
+          "$type": "number",
+          "$extensions": {
+            "org.primer.data": {
+              "fontSize": 16
+            },
+            "org.primer.figma": {
+              "collection": "typography",
+              "scopes": ["all"]
+            }
+          }
         }
       },
       "weight": {
         "large": {
           "$value": "{base.text.weight.semibold}",
-          "$type": "fontWeight"
+          "$type": "fontWeight",
+          "$extensions": {
+            "org.primer.figma": {
+              "collection": "typography",
+              "scopes": ["all"]
+            }
+          }
         },
         "medium": {
           "$value": "{base.text.weight.semibold}",
-          "$type": "fontWeight"
+          "$type": "fontWeight",
+          "$extensions": {
+            "org.primer.figma": {
+              "collection": "typography",
+              "scopes": ["all"]
+            }
+          }
         },
         "small": {
           "$value": "{base.text.weight.semibold}",
-          "$type": "fontWeight"
+          "$type": "fontWeight",
+          "$extensions": {
+            "org.primer.figma": {
+              "collection": "typography",
+              "scopes": ["all"]
+            }
+          }
         }
       },
       "shorthand": {
@@ -121,15 +233,33 @@
     "subtitle": {
       "size": {
         "$value": "20px",
-        "$type": "dimension"
+        "$type": "dimension",
+        "$extensions": {
+          "org.primer.figma": {
+            "collection": "typography",
+            "scopes": ["all"]
+          }
+        }
       },
       "lineHeight": {
         "$value": 1.6,
-        "$type": "number"
+        "$type": "number",
+        "$extensions": {
+          "org.primer.figma": {
+            "collection": "typography",
+            "scopes": ["all"]
+          }
+        }
       },
       "weight": {
         "$value": "{base.text.weight.normal}",
-        "$type": "fontWeight"
+        "$type": "fontWeight",
+        "$extensions": {
+          "org.primer.figma": {
+            "collection": "typography",
+            "scopes": ["all"]
+          }
+        }
       },
       "shorthand": {
         "$value": {
@@ -146,29 +276,74 @@
       "size": {
         "large": {
           "$value": "16px",
-          "$type": "dimension"
+          "$type": "dimension",
+          "$extensions": {
+            "org.primer.figma": {
+              "collection": "typography",
+              "scopes": ["all"]
+            }
+          }
         },
         "medium": {
           "$value": "14px",
-          "$type": "dimension"
+          "$type": "dimension",
+          "$extensions": {
+            "org.primer.figma": {
+              "collection": "typography",
+              "scopes": ["all"]
+            }
+          }
         },
         "small": {
           "$value": "12px",
-          "$type": "dimension"
+          "$type": "dimension",
+          "$extensions": {
+            "org.primer.figma": {
+              "collection": "typography",
+              "scopes": ["all"]
+            }
+          }
         }
       },
       "lineHeight": {
         "large": {
           "$value": 1.5,
-          "$type": "number"
+          "$type": "number",
+          "$extensions": {
+            "org.primer.data": {
+              "fontSize": 16
+            },
+            "org.primer.figma": {
+              "collection": "typography",
+              "scopes": ["all"]
+            }
+          }
         },
         "medium": {
           "$value": 1.4285,
-          "$type": "number"
+          "$type": "number",
+          "$extensions": {
+            "org.primer.data": {
+              "fontSize": 14
+            },
+            "org.primer.figma": {
+              "collection": "typography",
+              "scopes": ["all"]
+            }
+          }
         },
         "small": {
           "$value": 1.6666,
-          "$type": "number"
+          "$type": "number",
+          "$extensions": {
+            "org.primer.data": {
+              "fontSize": 12
+            },
+            "org.primer.figma": {
+              "collection": "typography",
+              "scopes": ["all"]
+            }
+          }
         }
       },
       "weight": {
@@ -211,15 +386,36 @@
     "caption": {
       "size": {
         "$value": "12px",
-        "$type": "dimension"
+        "$type": "dimension",
+        "$extensions": {
+          "org.primer.figma": {
+            "collection": "typography",
+            "scopes": ["all"]
+          }
+        }
       },
       "lineHeight": {
         "$value": 1.3333,
-        "$type": "number"
+        "$type": "number",
+        "$extensions": {
+          "org.primer.data": {
+            "fontSize": 12
+          },
+          "org.primer.figma": {
+            "collection": "typography",
+            "scopes": ["all"]
+          }
+        }
       },
       "weight": {
         "$value": "{base.text.weight.normal}",
-        "$type": "fontWeight"
+        "$type": "fontWeight",
+        "$extensions": {
+          "org.primer.figma": {
+            "collection": "typography",
+            "scopes": ["all"]
+          }
+        }
       },
       "shorthand": {
         "$value": {
@@ -235,15 +431,36 @@
     "codeBlock": {
       "size": {
         "$value": "13px",
-        "$type": "dimension"
+        "$type": "dimension",
+        "$extensions": {
+          "org.primer.figma": {
+            "collection": "typography",
+            "scopes": ["all"]
+          }
+        }
       },
       "lineHeight": {
         "$value": 1.5385,
-        "$type": "number"
+        "$type": "number",
+        "$extensions": {
+          "org.primer.data": {
+            "fontSize": 13
+          },
+          "org.primer.figma": {
+            "collection": "typography",
+            "scopes": ["all"]
+          }
+        }
       },
       "weight": {
         "$value": "{base.text.weight.normal}",
-        "$type": "fontWeight"
+        "$type": "fontWeight",
+        "$extensions": {
+          "org.primer.figma": {
+            "collection": "typography",
+            "scopes": ["all"]
+          }
+        }
       },
       "shorthand": {
         "$value": {
@@ -259,11 +476,23 @@
     "codeInline": {
       "size": {
         "$value": "0.9285em",
-        "$type": "dimension"
+        "$type": "dimension",
+        "$extensions": {
+          "org.primer.figma": {
+            "collection": "typography",
+            "scopes": ["all"]
+          }
+        }
       },
       "weight": {
         "$value": "{base.text.weight.normal}",
-        "$type": "fontWeight"
+        "$type": "fontWeight",
+        "$extensions": {
+          "org.primer.figma": {
+            "collection": "typography",
+            "scopes": ["all"]
+          }
+        }
       },
       "shorthand": {
         "$value": {

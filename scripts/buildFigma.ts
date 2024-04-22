@@ -74,6 +74,18 @@ const buildFigma = (buildOptions: ConfigGeneratorOptions): void => {
   }).buildAllPlatforms()
 
   /** -----------------------------------
+   * Typography
+   * ----------------------------------- */
+  //
+  PrimerStyleDictionary.extend({
+    source: ['src/tokens/base/typography/typography.json', 'src/tokens/functional/typography/typography.json'],
+    include: [],
+    platforms: {
+      figma: figma(`figma/typography/typography.json`, buildOptions.prefix, buildOptions.buildPath),
+    },
+  }).buildAllPlatforms()
+
+  /** -----------------------------------
    * Shadow tokens
    * ----------------------------------- */
   const shadowFiles = [

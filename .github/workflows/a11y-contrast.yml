@@ -28,8 +28,8 @@ jobs:
       - name: Install dependencies
         run: npm ci --no-audit --no-fund --ignore-scripts
 
-      - name: Build tokens
-        run: npm run build:next # building v1 as they are currently used for contrast check
+      - name: Build v8 tokens
+        run: npm run build:v8
 
       - name: Run required checks
         run: |
@@ -41,8 +41,10 @@ jobs:
         with:
           script: |
             const results = require('./color-contrast-check.json');
+            const faildChecks = results.reduce((acc, {failingContrast}) => acc + failingContrast, 0);
+
             // prepare comment body
-            const body = '## Design Token Contrast Check\n\n' + 
+            const resultsMarkdown = '## Design Token Contrast Check\n\n' + 
               results.map(({theme, failingContrast, markdownTable}) => 
                 "### `"+theme+"`: " + `${failingContrast === 0 ? '✅ all checks passed' : `❌ ${failingContrast} checks failed`}\n\n` +
                 '<details>' +
@@ -51,29 +53,42 @@ jobs:
                 `  ${markdownTable}` +
                 '\n</details>'
               ).join('\n\n')
+            
             // get comments
             const {data: comments} = await github.rest.issues.listComments({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo
             });
+            
             // get token issue
             const tokenCheckComment = comments.filter(comment => comment.body.includes('## Design Token Contrast Check'));
+            
             // if token issue exists, update it
             if(tokenCheckComment.length > 0) {
               await github.rest.issues.updateComment({
                 comment_id: tokenCheckComment[0].id,
                 owner: context.repo.owner,
                 repo: context.repo.repo,
-                body
+                body: resultsMarkdown
               })
             }
+
             // if token issue does not exist, create it
             else {
               await github.rest.issues.createComment({
                 issue_number: context.issue.number,
                 owner: context.repo.owner,
                 repo: context.repo.repo,
-                body
+                body: resultsMarkdown
               })
+            }
+
+            // output results to summary
+            core.summary.addRaw(resultsMarkdown, true)
+            core.summary.write({overwrite: true})
+
+            // fail action if any contrast check fails
+            if (faildChecks > 0) {
+              core.setFailed(`${faildChecks} contrast checks failed. Please fix the failing checks and try again.\n\nCheck action summary for more details.`);
             }

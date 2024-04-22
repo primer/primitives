@@ -1,5 +1,31 @@
 # @primer/primitives
 
+## 7.17.0
+
+### Minor Changes
+
+- [#891](https://github.com/primer/primitives/pull/891) [`68d7424`](https://github.com/primer/primitives/commit/68d7424f441e5fa6c726414d2456ae0f836127a8) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - adding typo tokens for figma
+
+- [#853](https://github.com/primer/primitives/pull/853) [`bdddfec`](https://github.com/primer/primitives/commit/bdddfec1f0b7a77876ee2a32afee68304c37bfd6) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Remove v2 token output (dist/tokens-v2-private)
+
+- [#886](https://github.com/primer/primitives/pull/886) [`372d6d2`](https://github.com/primer/primitives/commit/372d6d23e2ede040cfa9db67788030e275667a0b) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Adding src to output so it can be reused by other packages
+
+- [#916](https://github.com/primer/primitives/pull/916) [`eeb7a9f`](https://github.com/primer/primitives/commit/eeb7a9fc160cc6bdd8bb296ffe724088af0750b1) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Rename base.color.gray to base.color.neutral, minor because base colors should not be exported
+
+### Patch Changes
+
+- [#852](https://github.com/primer/primitives/pull/852) [`58cce33`](https://github.com/primer/primitives/commit/58cce33ee32df75f75b75787a4bf0f2a223d44bb) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - rm private output fodlers which should not have been used
+
+- [#905](https://github.com/primer/primitives/pull/905) [`e7d3c6c`](https://github.com/primer/primitives/commit/e7d3c6cba27dbbae61ab8833b6cbb45c436db419) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Convert lineHeight from float to pixel value for figma
+
+- [#902](https://github.com/primer/primitives/pull/902) [`50890c6`](https://github.com/primer/primitives/commit/50890c6d6cae48ef97a08bb19b2da236db4e47d9) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - add figma font family output
+
+- [#889](https://github.com/primer/primitives/pull/889) [`ef6a6c3`](https://github.com/primer/primitives/commit/ef6a6c333e7427a4b5776c9e0472862e47767ba9) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Fixes failing contrast for fgColor-done on bg-muted in dark mode
+
+- [#911](https://github.com/primer/primitives/pull/911) [`998fc24`](https://github.com/primer/primitives/commit/998fc241be99aa771979db363bf29f4377e63f6e) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Round pixel value in floatToPixel
+
+- [#904](https://github.com/primer/primitives/pull/904) [`ae118b7`](https://github.com/primer/primitives/commit/ae118b72e6612f9cc5ca35ecfa3e39375fb27ad1) Thanks [@langermank](https://github.com/langermank)! - Add missing `pink` display tokens
+
 ## 7.16.0
 
 ### Minor Changes

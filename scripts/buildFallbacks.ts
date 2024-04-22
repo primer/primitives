@@ -10,10 +10,3 @@ fs.writeFileSync(
   JSON.stringify(Object.fromEntries(storybookFallbacks), null, 2),
   'utf8',
 )
-// build in tokens-next-private until it can be removed
-fs.mkdirSync('tokens-next-private/fallbacks', {recursive: true})
-fs.writeFileSync(
-  'tokens-next-private/fallbacks/color-fallbacks.json',
-  JSON.stringify(Object.fromEntries(storybookFallbacks), null, 2),
-  'utf8',
-)

@@ -12,26 +12,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           # This makes Actions fetch all Git history so that Changesets can generate changelogs with the correct commits
           fetch-depth: 0
           persist-credentials: false
 
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: 16
+          node-version: 20
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci --legacy-peer-deps --no-audit --no-fund && pushd docs; npm ci --legacy-peer-deps --no-audit --no-fund; popd
+        run: npm ci --no-audit --no-fund && pushd docs; npm ci --no-audit --no-fund; popd
 
       - name: Build tokens
-        run: npm run build
-
-      - name: Build experimental tokens
-        run: npm run build:tokens
+        run: npm run build:next
 
       - id: get-access-token
         uses: camertron/github-app-installation-auth-action@v1
@@ -44,7 +41,7 @@ jobs:
 
       - name: Create release pull request or publish to npm
         id: changesets
-        uses: changesets/action@v1.4.5
+        uses: changesets/action@v1.4.7
         continue-on-error: true
         with:
           title: Release Tracking
@@ -53,3 +50,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ steps.get-access-token.outputs.access-token }}
           NPM_TOKEN: ${{ secrets.NPM_AUTH_TOKEN_SHARED }}
+
+      - name: Output release version to summary
+        if: ${{ steps.changesets.outputs.published}} = 'true'
+        env:
+          VERSION: ${{ steps.changesets.outputs.publishedPackages[0].version }}
+          PACKAGE_NAME: ${{ steps.changesets.outputs.publishedPackages[0].name }}
+        run: |
+          echo "### Latest release" >> $GITHUB_STEP_SUMMARY
+          echo "[v$VERSION](https://unpkg.com/$PACKAGE_NAME@$VERSION/)" >> $GITHUB_STEP_SUMMARY

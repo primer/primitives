@@ -12,25 +12,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           # This makes Actions fetch all Git history so that Changesets can generate changelogs with the correct commits
           fetch-depth: 0
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
+      - name: Set up Node
+        uses: actions/setup-node@v4
         with:
-          node-version: 16
+          node-version: 20
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci --legacy-peer-deps
+        run: npm ci --no-audit --no-fund --include=dev
 
-      - name: Build tokens
-        run: npm run build
-
-      - name: Build experimental tokens
-        run: npm run build:tokens
+      - name: Build tokens v8
+        run: npm run build:v8
 
       - name: Create .npmrc
         run: |
@@ -49,7 +46,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Output candidate version number
-        uses: actions/github-script@v6.4.0
+        id: commitStatus
+        uses: actions/github-script@v7
         with:
           script: |
             const package = require(`${process.env.GITHUB_WORKSPACE}/package.json`)
@@ -62,3 +60,15 @@ jobs:
               description: package.version,
               target_url: `https://unpkg.com/${package.name}@${package.version}/`
             })
+            // Output the release version for next step
+            core.setOutput('packageVersion', package.version);
+            // Output the package name for next step
+            core.setOutput('packageName', package.name);
+
+      - name: Output candidate version to summary
+        env:
+          VERSION: ${{ steps.commitStatus.outputs.packageVersion }}
+          PACKAGE_NAME: ${{ steps.commitStatus.outputs.packageName }}
+        run: |
+          echo "### Latest release candidate" >> $GITHUB_STEP_SUMMARY
+          echo "[v$VERSION](https://unpkg.com/$PACKAGE_NAME@$VERSION/)" >> $GITHUB_STEP_SUMMARY
