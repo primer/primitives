@@ -26,7 +26,7 @@
   "homepage": "https://github.com/primer/primitives#readme",
   "scripts": {
     "build": "ts-node ./scripts/build.ts && tsc --project tsconfig.build.json",
-    "build:next": "npm run build:v8 && npm run build:fallbacks && npm run build:figma",
+    "build:next": "npm run build && npm run build:v8 && npm run build:fallbacks && npm run build:figma",
     "build:v8": "ts-node ./scripts/buildTokens.ts",
     "build:fallbacks": "ts-node ./scripts/buildFallbacks.ts",
     "build:figma": "ts-node scripts/buildFigma.ts",
