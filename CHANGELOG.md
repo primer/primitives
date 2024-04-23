@@ -1,5 +1,13 @@
 # @primer/primitives
 
+## 8.0.0
+
+### Major Changes
+
+- [#917](https://github.com/primer/primitives/pull/917) [`273d8aa`](https://github.com/primer/primitives/commit/273d8aacdf2c99845ba58937ad5fb66a4fcf415e) Thanks [@langermank](https://github.com/langermank)! - Update `README` for v8 major release
+
+- [#874](https://github.com/primer/primitives/pull/874) [`c4e1275`](https://github.com/primer/primitives/commit/c4e1275e794a92e7cef4f9faab1ce7d6f2898dc4) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - remove v1 tokens and build process
+
 ## 7.17.0
 
 ### Minor Changes
