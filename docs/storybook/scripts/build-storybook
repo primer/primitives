@@ -2,21 +2,24 @@
 set -e
 npm ci --legacy-peer-deps --no-audit --no-fund
 
+# create public and storybook folders
+mkdir -p ../public/storybook
+
 # Add base url to be able to serve static files
 if [ -n "$1" ]; then
   echo "Building storybook for preview"
   echo '<base href="/storybook/" />' >> .storybook/manager-head.html
+    # create file to redirect to storybook
+  echo '<!DOCTYPE html><html><head><meta http-equiv="refresh" content="0;url=/storybook/"></head></html>' > ../public/index.html
 else
   echo "Building storybook for production"
   echo '<base href="/primitives/storybook/" />' >> .storybook/manager-head.html
+  # create file to redirect to storybook
+  echo '<!DOCTYPE html><html><head><meta http-equiv="refresh" content="0;url=/primitives/storybook/"></head></html>' > ../public/index.html
 fi
 
-mkdir -p ../public/storybook
 # Build storybook inside docs
 ./node_modules/.bin/storybook build -o ../public/storybook ../public/static
 
 # Remove manager-head after build to not interfere with dev builds
 rm .storybook/manager-head.html
-
-# create file to redirect to storybook
-echo '<!DOCTYPE html><html><head><meta http-equiv="refresh" content="0;url=/storybook/"></head></html>' > ../public/index.html
