@@ -4,9 +4,9 @@ import type {LineFormatting} from 'style-dictionary/types/FormatHelpers'
 const {fileHeader, formattedVariables} = StyleDictionary.formatHelpers
 
 /**
- * @description Converts `StyleDictionary.dictionary.tokens` to css with prefers dark and light section
+ * @description Converts `StyleDictionary.dictionary.tokens` to csssection
  * @param arguments [FormatterArguments](https://github.com/amzn/style-dictionary/blob/main/types/Format.d.ts)
- * @param arguments.options outputReferences `boolean`, selector `string`, selectorLight `string`, selectorDark `string`
+ * @param arguments.options outputReferences `boolean`, selector `string`
  * @returns formatted `string`
  */
 export const cssVariables: StyleDictionary.Formatter = ({dictionary, options = {}, file}: FormatterArguments) => {
