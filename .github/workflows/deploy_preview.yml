@@ -32,7 +32,7 @@ jobs:
         with:
           token: '${{ secrets.GITHUB_TOKEN }}'
           environment-url: ${{needs.deploy.outputs.deployment_url}}storybook
-          environment: storybook-preview
+          environment: Preview (Storybook)
       - name: Update deployment status (success)
         if: success()
         uses: chrnorm/deployment-status@v2
