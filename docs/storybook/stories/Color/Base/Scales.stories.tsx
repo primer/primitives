@@ -11,16 +11,16 @@ export default {
 const bgColors = [
   'base-color-black',
   'base-color-white',
-  'base-color-gray-0',
-  'base-color-gray-1',
-  'base-color-gray-2',
-  'base-color-gray-3',
-  'base-color-gray-4',
-  'base-color-gray-5',
-  'base-color-gray-6',
-  'base-color-gray-7',
-  'base-color-gray-8',
-  'base-color-gray-9',
+  'base-color-neutral-0',
+  'base-color-neutral-1',
+  'base-color-neutral-2',
+  'base-color-neutral-3',
+  'base-color-neutral-4',
+  'base-color-neutral-5',
+  'base-color-neutral-6',
+  'base-color-neutral-7',
+  'base-color-neutral-8',
+  'base-color-neutral-9',
   'base-color-blue-0',
   'base-color-blue-1',
   'base-color-blue-2',
@@ -106,7 +106,7 @@ const bgColors = [
 export const AllScales = () => {
   return (
     <div className="ColorScale--grid">
-      <Gray />
+      <Neutral />
       <Blue />
 
       <Green />
@@ -126,11 +126,11 @@ export const AllScales = () => {
 }
 AllScales.tags = ['includeSnapshot']
 
-export const Gray = () => {
-  const grayColors = bgColors.filter(color => color.includes('gray-'))
+export const Neutral = () => {
+  const neutralColors = bgColors.filter(color => color.includes('neutral-'))
   return (
     <div>
-      {grayColors.map(color => (
+      {neutralColors.map(color => (
         <ColorScale color={color} key={color} />
       ))}
     </div>
