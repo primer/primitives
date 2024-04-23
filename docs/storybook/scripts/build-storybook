@@ -17,3 +17,6 @@ mkdir -p ../public/storybook
 
 # Remove manager-head after build to not interfere with dev builds
 rm .storybook/manager-head.html
+
+# create file to redirect to storybook
+echo '<!DOCTYPE html><html><head><meta http-equiv="refresh" content="0;url=/storybook/"></head></html>' > ../public/index.html
