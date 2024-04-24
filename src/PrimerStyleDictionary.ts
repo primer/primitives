@@ -34,7 +34,7 @@ import {
   cssCustomMedia,
   jsonOneDimensional,
   jsonPostCssFallback,
-  cssWrapMediaQuery,
+  cssMediaQuery,
   cssVariables,
   jsonFigma,
 } from './formats'
@@ -60,8 +60,8 @@ StyleDictionary.registerFormat({
 })
 
 StyleDictionary.registerFormat({
-  name: 'css/wrapMediaQuery',
-  formatter: cssWrapMediaQuery,
+  name: 'css/mediaQuery',
+  formatter: cssMediaQuery,
 })
 
 StyleDictionary.registerFormat({
