@@ -1,6 +1,6 @@
 export {cssThemed} from './cssThemed'
 export {cssCustomMedia} from './cssCustomMedia'
-export {cssWrapMediaQuery} from './cssWrapMediaQuery'
+export {cssMediaQuery} from './cssMediaQuery'
 export {cssVariables} from './cssVariables'
 export {jsonFigma} from './jsonFigma'
 export {javascriptCommonJs} from './javascriptCommonJs'

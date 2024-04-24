@@ -1,6 +1,7 @@
 import {isFromFile, isSource} from '../filters'
 import type StyleDictionary from 'style-dictionary'
 import type {PlatformInitializer} from '../types/PlatformInitializer'
+import type {TransformedToken} from 'style-dictionary'
 
 const getCssSelectors = (outputFile: string): {selector: string; selectorLight: string; selectorDark: string} => {
   // check for dark in the beginning of the output filename
@@ -72,7 +73,7 @@ export const css: PlatformInitializer = (outputFile, prefix, buildPath, options)
       },
       {
         destination: `${outputFile}`,
-        format: `css/wrapMediaQuery`,
+        format: `css/mediaQuery`,
         filter: token =>
           isSource(token) &&
           isFromFile(token, [
@@ -82,10 +83,16 @@ export const css: PlatformInitializer = (outputFile, prefix, buildPath, options)
         options: {
           descriptions: false,
           showFileHeader: false,
-          mediaQuery: {
-            'css/functional/size/size-fine.css': '(pointer: fine)',
-            'css/functional/size/size-coarse.css': '(pointer: coarse)',
-          },
+          queries: [
+            {
+              query: '@media (pointer: fine)',
+              matcher: (token: TransformedToken) => token.path.includes('size-fine'),
+            },
+            {
+              query: '@media (pointer: coarse)',
+              matcher: (token: TransformedToken) => token.path.includes('size-coarse'),
+            },
+          ],
         },
       },
     ],
