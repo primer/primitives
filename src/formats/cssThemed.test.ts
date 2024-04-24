@@ -1,4 +1,4 @@
-import {cssMediaQuery} from './cssMediaQuery'
+import {cssAdvanced} from './cssAdvanced'
 import {getMockFormatterArguments} from '../test-utilities'
 import {format} from 'prettier'
 
@@ -14,7 +14,7 @@ describe('Format: Css Themed', () => {
         printWidth: 500,
       },
     )
-    expect(cssMediaQuery(input)).toStrictEqual(expectedOutput)
+    expect(cssAdvanced(input)).toStrictEqual(expectedOutput)
   })
 
   it('Formats tokens with custom selectors', () => {
@@ -48,7 +48,7 @@ describe('Format: Css Themed', () => {
     }`,
       {parser: 'css', printWidth: 500},
     )
-    expect(cssMediaQuery(input)).toStrictEqual(expectedOutput)
+    expect(cssAdvanced(input)).toStrictEqual(expectedOutput)
   })
 
   it('Formats tokens with only one selector', () => {
@@ -72,6 +72,6 @@ describe('Format: Css Themed', () => {
     }`,
       {parser: 'css', printWidth: 500},
     )
-    expect(cssMediaQuery(input)).toStrictEqual(expectedOutput)
+    expect(cssAdvanced(input)).toStrictEqual(expectedOutput)
   })
 })

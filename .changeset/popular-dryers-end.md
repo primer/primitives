@@ -2,4 +2,4 @@
 '@primer/primitives': minor
 ---
 
-replacing css/themed with css/mediaQuery
+Replacing css/themed and css/variables with css/advanced

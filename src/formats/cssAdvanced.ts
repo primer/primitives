@@ -12,7 +12,7 @@ const wrapWithSelector = (css: string, selector: string | false): string => {
   return `${selector} { ${css} }`
 }
 
-export const cssMediaQuery: StyleDictionary.Formatter = ({
+export const cssAdvanced: StyleDictionary.Formatter = ({
   dictionary: originalDictionary,
   options = {
     queries: [],

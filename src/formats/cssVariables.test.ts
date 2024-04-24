@@ -1,4 +1,4 @@
-import {cssVariables} from './cssVariables'
+import {cssAdvanced} from './cssAdvanced'
 import {getMockFormatterArguments} from '../test-utilities'
 import {format} from 'prettier'
 
@@ -14,13 +14,17 @@ describe('Format: css/variables', () => {
         printWidth: 500,
       },
     )
-    expect(cssVariables(input)).toStrictEqual(expectedOutput)
+    expect(cssAdvanced(input)).toStrictEqual(expectedOutput)
   })
 
   it('Formats tokens with custom selectors', () => {
     const input = getMockFormatterArguments({
-      options: {
-        selector: `[data-color-mode="dark"]`,
+      file: {
+        destination: 'test.css',
+        options: {
+          showFileHeader: false,
+          selector: `[data-color-mode="dark"]`,
+        },
       },
     })
     const expectedOutput = format(
@@ -29,13 +33,17 @@ describe('Format: css/variables', () => {
     }`,
       {parser: 'css', printWidth: 500},
     )
-    expect(cssVariables(input)).toStrictEqual(expectedOutput)
+    expect(cssAdvanced(input)).toStrictEqual(expectedOutput)
   })
 
   it('Formats tokens with only options.selector', () => {
     const input = getMockFormatterArguments({
-      options: {
-        selector: `[data-color-mode="dark"]`,
+      file: {
+        destination: 'test.css',
+        options: {
+          showFileHeader: false,
+          selector: `[data-color-mode="dark"]`,
+        },
       },
     })
     const expectedOutput = format(
@@ -44,6 +52,6 @@ describe('Format: css/variables', () => {
     }`,
       {parser: 'css', printWidth: 500},
     )
-    expect(cssVariables(input)).toStrictEqual(expectedOutput)
+    expect(cssAdvanced(input)).toStrictEqual(expectedOutput)
   })
 })

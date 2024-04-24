@@ -30,12 +30,10 @@ import {
   javascriptEsm,
   typescriptExportDefinition,
   jsonNestedPrefixed,
-  cssThemed,
   cssCustomMedia,
   jsonOneDimensional,
   jsonPostCssFallback,
-  cssMediaQuery,
-  cssVariables,
+  cssAdvanced,
   jsonFigma,
 } from './formats'
 
@@ -50,23 +48,13 @@ StyleDictionary.registerParser(w3cJsonParser)
  *
  */
 StyleDictionary.registerFormat({
-  name: 'css/themed',
-  formatter: cssThemed,
+  name: 'css/advanced',
+  formatter: cssAdvanced,
 })
 
 StyleDictionary.registerFormat({
   name: 'css/customMedia',
   formatter: cssCustomMedia,
-})
-
-StyleDictionary.registerFormat({
-  name: 'css/mediaQuery',
-  formatter: cssMediaQuery,
-})
-
-StyleDictionary.registerFormat({
-  name: 'css/variables',
-  formatter: cssVariables,
 })
 
 StyleDictionary.registerFormat({

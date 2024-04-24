@@ -44,7 +44,7 @@ export const css: PlatformInitializer = (outputFile, prefix, buildPath, options)
     files: [
       {
         destination: `${outputFile}`,
-        format: `css/mediaQuery`,
+        format: `css/advanced`,
         filter: token => isSource(token) && options?.themed === true,
         options: {
           showFileHeader: false,
@@ -56,7 +56,7 @@ export const css: PlatformInitializer = (outputFile, prefix, buildPath, options)
       },
       {
         destination: `${outputFile}`,
-        format: `css/variables`,
+        format: `css/advanced`,
         filter: token => isSource(token) && options?.themed !== true,
         options: {
           showFileHeader: false,
@@ -74,7 +74,7 @@ export const css: PlatformInitializer = (outputFile, prefix, buildPath, options)
       },
       {
         destination: `${outputFile}`,
-        format: `css/mediaQuery`,
+        format: `css/advanced`,
         filter: token =>
           isSource(token) &&
           isFromFile(token, [

@@ -1,4 +1,4 @@
-import {cssMediaQuery} from './cssMediaQuery'
+import {cssAdvanced} from './cssAdvanced'
 import {getMockDictionary, getMockFormatterArguments, getMockToken} from '../test-utilities'
 import {format} from 'prettier'
 import type {TransformedToken} from 'style-dictionary'
@@ -12,7 +12,7 @@ describe('Format: tokens nested in media query', () => {
       }`,
       {parser: 'css', printWidth: 500},
     )
-    expect(cssMediaQuery(input)).toStrictEqual(expectedOutput)
+    expect(cssAdvanced(input)).toStrictEqual(expectedOutput)
   })
 
   it('Wrap all tokens in screen media query', () => {
@@ -37,7 +37,7 @@ describe('Format: tokens nested in media query', () => {
       }`,
       {parser: 'css', printWidth: 500},
     )
-    expect(cssMediaQuery(input)).toStrictEqual(expectedOutput)
+    expect(cssAdvanced(input)).toStrictEqual(expectedOutput)
   })
 
   it('Ignore if no matching media query is found', () => {
@@ -55,7 +55,7 @@ describe('Format: tokens nested in media query', () => {
         },
       },
     })
-    expect(cssMediaQuery(input)).toStrictEqual('')
+    expect(cssAdvanced(input)).toStrictEqual('')
   })
 
   it('Wraps in defined media query if files match', () => {
@@ -91,7 +91,7 @@ describe('Format: tokens nested in media query', () => {
       }`,
       {parser: 'css', printWidth: 500},
     )
-    expect(cssMediaQuery(input)).toStrictEqual(expectedOutput)
+    expect(cssAdvanced(input)).toStrictEqual(expectedOutput)
   })
 
   it('Show comment if option.description is true', () => {
@@ -131,7 +131,7 @@ describe('Format: tokens nested in media query', () => {
       }`,
       {parser: 'css', printWidth: 500},
     )
-    expect(cssMediaQuery(input)).toStrictEqual(expectedOutput)
+    expect(cssAdvanced(input)).toStrictEqual(expectedOutput)
   })
 
   it('Hides comment if option.description is false or not set', () => {
@@ -197,7 +197,7 @@ describe('Format: tokens nested in media query', () => {
       }`,
       {parser: 'css', printWidth: 500},
     )
-    expect(cssMediaQuery(input)).toStrictEqual(expectedOutput)
-    expect(cssMediaQuery(inputUnset)).toStrictEqual(expectedOutput)
+    expect(cssAdvanced(input)).toStrictEqual(expectedOutput)
+    expect(cssAdvanced(inputUnset)).toStrictEqual(expectedOutput)
   })
 })
