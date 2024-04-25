@@ -28,7 +28,7 @@ jobs:
         run: npm ci
 
       - name: Build v8 tokens
-        run: npm run build:next
+        run: npm run build
 
       - name: Build storybook
         working-directory: docs/storybook

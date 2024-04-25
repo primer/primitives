@@ -23,7 +23,8 @@
   },
   "homepage": "https://github.com/primer/primitives#readme",
   "scripts": {
-    "build:next": "npm run build:v8 && npm run build:fallbacks && npm run build:figma",
+    "build": "npm run build:v8 && npm run build:fallbacks && npm run build:figma",
+    "build:next": "echo '\\033[31m 🛑 Use npm run build instead of npm run build:next\\033[0m'",
     "build:v8": "ts-node ./scripts/buildTokens.ts",
     "build:fallbacks": "ts-node ./scripts/buildFallbacks.ts",
     "build:figma": "ts-node scripts/buildFigma.ts",
@@ -36,11 +37,10 @@
     "lint:fix": "eslint '**/*.{js,ts,tsx,md,mdx}' --fix --max-warnings=0 --config .eslintrc.js",
     "lint:tokens": "ts-node ./scripts/validateTokenJson.ts",
     "prebuild": "rm -rf dist",
-    "prebuild:next": "rm -rf dist",
-    "prepack": "npm run build:next",
+    "prepack": "npm run build",
     "prepare": "husky",
     "release": "changeset publish",
-    "start:storybook": "npm run build:next && cd docs/storybook && npm run storybook",
+    "start:storybook": "npm run build && cd docs/storybook && npm run storybook",
     "test": "jest --verbose --coverage"
   },
   "prettier": "@github/prettier-config",
