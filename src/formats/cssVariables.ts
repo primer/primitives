@@ -1,4 +1,5 @@
 import StyleDictionary from 'style-dictionary'
+import {format} from 'prettier'
 import type {FormatterArguments} from 'style-dictionary/types/Format'
 import type {LineFormatting} from 'style-dictionary/types/FormatHelpers'
 const {fileHeader, formattedVariables} = StyleDictionary.formatHelpers
@@ -16,10 +17,12 @@ export const cssVariables: StyleDictionary.Formatter = ({dictionary, options = {
     commentStyle: descriptions ? 'long' : 'none',
   }
 
-  return `${fileHeader({file})}${selector} {\n${formattedVariables({
+  const output = `${fileHeader({file})}${selector} {\n${formattedVariables({
     format: 'css',
     dictionary,
     outputReferences,
     formatting,
   })}\n}\n`
+  // return formatted output
+  return format(output, {parser: 'css', printWidth: 500})
 }
