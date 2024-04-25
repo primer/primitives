@@ -4,18 +4,46 @@ import {format} from 'prettier'
 import type {TransformedToken} from 'style-dictionary'
 
 describe('Format: tokens nested in media query', () => {
-  it('Wraps in :root if no media query defined', () => {
+  /**
+   * Test cases for formatting tokens with simple css variables
+   */
+  it('Formats tokens as css variables with default :root selector', () => {
     const input = getMockFormatterArguments()
     const expectedOutput = format(
       `:root {
-          --red: transformedValue;
-      }`,
+      --red: transformedValue;
+    }`,
+      {
+        parser: 'css',
+        printWidth: 500,
+      },
+    )
+    expect(cssAdvanced(input)).toStrictEqual(expectedOutput)
+  })
+
+  it('Formats tokens with custom selectors', () => {
+    const input = getMockFormatterArguments({
+      file: {
+        destination: 'test.css',
+        options: {
+          showFileHeader: false,
+          selector: `[data-color-mode="dark"]`,
+        },
+      },
+    })
+    const expectedOutput = format(
+      ` [data-color-mode="dark"] {
+            --red: transformedValue;
+    }`,
       {parser: 'css', printWidth: 500},
     )
     expect(cssAdvanced(input)).toStrictEqual(expectedOutput)
   })
 
-  it('Wrap all tokens in screen media query', () => {
+  /**
+   * Test cases for formatting using media queries
+   */
+  it('Formats all tokens with screen media query and default selector', () => {
     const input = getMockFormatterArguments({
       file: {
         destination: 'tokens.ts',
@@ -40,7 +68,33 @@ describe('Format: tokens nested in media query', () => {
     expect(cssAdvanced(input)).toStrictEqual(expectedOutput)
   })
 
-  it('Ignore if no matching media query is found', () => {
+  it('Formats all tokens with screen media query and custom selector', () => {
+    const input = getMockFormatterArguments({
+      file: {
+        destination: 'tokens.ts',
+        options: {
+          showFileHeader: false,
+          queries: [
+            {
+              query: '@media screen',
+              selector: '[data-color-mode="dark"]',
+            },
+          ],
+        },
+      },
+    })
+    const expectedOutput = format(
+      ` @media screen {
+        [data-color-mode="dark"] {
+          --red: transformedValue;
+        }
+      }`,
+      {parser: 'css', printWidth: 500},
+    )
+    expect(cssAdvanced(input)).toStrictEqual(expectedOutput)
+  })
+
+  it('Outputs nothing if no matching media query is found', () => {
     const input = getMockFormatterArguments({
       file: {
         destination: 'size-coarse.css',
@@ -58,7 +112,7 @@ describe('Format: tokens nested in media query', () => {
     expect(cssAdvanced(input)).toStrictEqual('')
   })
 
-  it('Wraps in defined media query if files match', () => {
+  it('Formats only matching tokens in defined media query using matcher', () => {
     const input = getMockFormatterArguments({
       dictionary: getMockDictionary({
         tokens: {
@@ -66,6 +120,10 @@ describe('Format: tokens nested in media query', () => {
             gap: getMockToken({
               name: 'tokens-subgroup-gap',
               filePath: 'size-fine.json',
+            }),
+            bigGap: getMockToken({
+              name: 'tokens-subgroup-gap',
+              filePath: 'size-coarse.json',
             }),
           },
         },
@@ -93,8 +151,80 @@ describe('Format: tokens nested in media query', () => {
     )
     expect(cssAdvanced(input)).toStrictEqual(expectedOutput)
   })
+  /**
+   * Test cases for formatting using selectors
+   */
+  it('Formats all tokens with custom selectors', () => {
+    const input = getMockFormatterArguments({
+      file: {
+        destination: 'dark.css',
+        options: {
+          showFileHeader: false,
+          queries: [
+            {
+              selector:
+                '[data-color-mode="dark"][data-dark-theme="dark"], [data-color-mode="auto"][data-light-theme="dark"]',
+            },
+          ],
+        },
+      },
+    })
+    const expectedOutput = format(
+      ` [data-color-mode="dark"][data-dark-theme="dark"],
+        [data-color-mode="auto"][data-light-theme="dark"] {
+          --red: transformedValue;
+    }`,
+      {parser: 'css', printWidth: 500},
+    )
+    expect(cssAdvanced(input)).toStrictEqual(expectedOutput)
+  })
 
-  it('Show comment if option.description is true', () => {
+  it('Formats only matching tokens with custom selectors', () => {
+    const input = getMockFormatterArguments({
+      dictionary: getMockDictionary({
+        tokens: {
+          subgroup: {
+            gap: getMockToken({
+              name: 'tokens-subgroup-gap',
+              filePath: 'size-fine.json',
+            }),
+            bigGap: getMockToken({
+              name: 'tokens-subgroup-gap',
+              filePath: 'size-coarse.json', // should not show up in output
+            }),
+          },
+        },
+      }),
+      file: {
+        destination: 'dark.css',
+        options: {
+          showFileHeader: false,
+          queries: [
+            {
+              selector:
+                '[data-color-mode="dark"][data-dark-theme="dark"], [data-color-mode="auto"][data-light-theme="dark"]',
+              matcher: (token: TransformedToken) => token.filePath.includes('size.json'), // no token in this file
+            },
+            {
+              selector: '[data-color-mode="auto"][data-dark-theme="dark"]',
+              matcher: (token: TransformedToken) => token.filePath.includes('size-fine.json'),
+            },
+          ],
+        },
+      },
+    })
+    const expectedOutput = format(
+      `[data-color-mode="auto"][data-dark-theme="dark"] {
+            --tokens-subgroup-gap: transformedValue;
+    }`,
+      {parser: 'css', printWidth: 500},
+    )
+    expect(cssAdvanced(input)).toStrictEqual(expectedOutput)
+  })
+  /**
+   * Test cases for formatting tokens with simple css variables
+   */
+  it('Shows comment if option.description is true', () => {
     const input = getMockFormatterArguments({
       dictionary: getMockDictionary({
         tokens: {
