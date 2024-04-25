@@ -16,7 +16,7 @@
       },
     },
     muted: {
-      $value: '{base.color.neutral.6}',
+      $value: '{base.color.neutral.5}',
       $type: 'color',
       $extensions: {
         'org.primer.figma': {
@@ -29,10 +29,10 @@
           },
         },
       },
-      mix: {
-        color: '{base.color.neutral.5}',
-        weight: 0.5,
-      },
+      // mix: {
+      //   color: '{base.color.neutral.5}',
+      //   weight: 0.5,
+      // },
     },
     onEmphasis: {
       $value: '{base.color.white}',

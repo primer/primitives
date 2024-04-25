@@ -211,6 +211,7 @@ export const BorderDemo = () => {
                     borderBottom: 'solid 1px var(--borderColor-default)',
                     display: 'flex',
                     gap: '8px',
+                    alignItems: 'center',
                   }}
                 >
                   <Button>A default button</Button>
@@ -220,6 +221,7 @@ export const BorderDemo = () => {
                     <SegmentedControl.IconButton aria-label={'Raw'} icon={FileCodeIcon} />
                     <SegmentedControl.IconButton aria-label={'Blame'} icon={PeopleIcon} />
                   </SegmentedControl>
+                  <Text sx={{color: 'fg.muted'}}>Muted text</Text>
                 </Box>
                 <Box sx={{backgroundColor: 'var(--bgColor-default)', padding: 'var(--base-size-36)'}}>
                   This is a box oh wow

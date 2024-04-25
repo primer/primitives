@@ -71,7 +71,7 @@
         },
       },
       hover: {
-        $value: '{base.color.neutral.0}',
+        $value: '{base.color.neutral.1}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -81,13 +81,13 @@
             scopes: ['bgColor'],
           },
         },
-        mix: {
-          color: '{base.color.neutral.2}',
-          weight: 0.2,
-        },
+        // mix: {
+        //   color: '{base.color.neutral.2}',
+        //   weight: 0.2,
+        // },
       },
       active: {
-        $value: '{base.color.neutral.0}',
+        $value: '{base.color.neutral.2}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -97,10 +97,10 @@
             scopes: ['bgColor'],
           },
         },
-        mix: {
-          color: '{base.color.neutral.2}',
-          weight: 0.4,
-        },
+        // mix: {
+        //   color: '{base.color.neutral.2}',
+        //   weight: 0.4,
+        // },
       },
       disabled: {
         $value: '{bgColor.disabled}',
@@ -167,7 +167,7 @@
     },
     borderColor: {
       rest: {
-        $value: '{borderColor.default}',
+        $value: '{borderColor.emphasis}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -179,7 +179,7 @@
         },
       },
       emphasis: {
-        $value: '{base.color.neutral.4}',
+        $value: '{borderColor.emphasis}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -189,10 +189,10 @@
             scopes: ['borderColor'],
           },
         },
-        mix: {
-          color: '{base.color.neutral.5}',
-          weight: 0.2,
-        },
+        // mix: {
+        //   color: '{base.color.neutral.5}',
+        //   weight: 0.2,
+        // },
       },
       disabled: {
         $value: '{borderColor.disabled}',
@@ -589,7 +589,7 @@
         },
       },
       hover: {
-        $value: '{base.color.neutral.1}',
+        $value: '{base.color.neutral.2}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -599,13 +599,13 @@
             scopes: ['bgColor'],
           },
         },
-        mix: {
-          color: '{base.color.neutral.3}',
-          weight: 0.2,
-        },
+        // mix: {
+        //   color: '{base.color.neutral.3}',
+        //   weight: 0.2,
+        // },
       },
       active: {
-        $value: '{base.color.neutral.1}',
+        $value: '{base.color.neutral.3}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -615,10 +615,10 @@
             scopes: ['bgColor'],
           },
         },
-        mix: {
-          color: '{base.color.neutral.3}',
-          weight: 0.4,
-        },
+        // mix: {
+        //   color: '{base.color.neutral.3}',
+        //   weight: 0.4,
+        // },
       },
       disabled: {
         $value: '{fgColor.disabled}',
@@ -850,7 +850,7 @@
       },
       borderColor: {
         rest: {
-          $value: '{borderColor.default}',
+          $value: '{control.borderColor.rest}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -862,7 +862,7 @@
           },
         },
         hover: {
-          $value: '{borderColor.default}',
+          $value: '{control.borderColor.rest}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -874,7 +874,7 @@
           },
         },
         active: {
-          $value: '{borderColor.default}',
+          $value: '{control.borderColor.rest}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -1016,7 +1016,7 @@
               scopes: ['borderColor'],
             },
           },
-          alpha: 0.15,
+          alpha: 0.4,
         },
         hover: {
           $value: '{button.primary.borderColor.rest}',
@@ -1316,7 +1316,7 @@
           },
         },
         disabled: {
-          $value: '{base.color.neutral.0}',
+          $value: '{control.bgColor.disabled}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -1330,7 +1330,7 @@
       },
       borderColor: {
         hover: {
-          $value: '{base.color.black}',
+          $value: '{button.primary.borderColor.hover}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -1340,7 +1340,7 @@
               scopes: ['borderColor'],
             },
           },
-          alpha: 0.15,
+          // alpha: 0.15,
         },
         active: {
           $value: '{button.outline.borderColor.hover}',
@@ -1490,7 +1490,7 @@
       },
       borderColor: {
         rest: {
-          $value: '{borderColor.default}',
+          $value: '{control.borderColor.rest}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -1502,7 +1502,7 @@
           },
         },
         hover: {
-          $value: '{base.color.black}',
+          $value: '{button.primary.borderColor.rest}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -1512,7 +1512,7 @@
               scopes: ['borderColor'],
             },
           },
-          alpha: 0.15,
+          // alpha: 0.15,
         },
         active: {
           $value: '{button.danger.borderColor.hover}',
