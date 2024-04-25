@@ -1,4 +1,4 @@
-import {cssThemed} from './cssThemed'
+import {cssAdvanced} from './cssAdvanced'
 import {getMockFormatterArguments} from '../test-utilities'
 import {format} from 'prettier'
 
@@ -14,15 +14,26 @@ describe('Format: Css Themed', () => {
         printWidth: 500,
       },
     )
-    expect(cssThemed(input)).toStrictEqual(expectedOutput)
+    expect(cssAdvanced(input)).toStrictEqual(expectedOutput)
   })
 
   it('Formats tokens with custom selectors', () => {
     const input = getMockFormatterArguments({
-      options: {
-        selector: `[data-color-mode="dark"][data-dark-theme="dark"]`,
-        selectorLight: `[data-color-mode="auto"][data-light-theme="dark"]`,
-        selectorDark: `[data-color-mode="auto"][data-dark-theme="dark"]`,
+      file: {
+        destination: 'dark.css',
+        options: {
+          showFileHeader: false,
+          queries: [
+            {
+              selector:
+                '[data-color-mode="dark"][data-dark-theme="dark"], [data-color-mode="auto"][data-light-theme="dark"]',
+            },
+            {
+              query: '@media (prefers-color-scheme: dark)',
+              selector: '[data-color-mode="auto"][data-dark-theme="dark"]',
+            },
+          ],
+        },
       },
     })
     const expectedOutput = format(
@@ -37,13 +48,22 @@ describe('Format: Css Themed', () => {
     }`,
       {parser: 'css', printWidth: 500},
     )
-    expect(cssThemed(input)).toStrictEqual(expectedOutput)
+    expect(cssAdvanced(input)).toStrictEqual(expectedOutput)
   })
 
-  it('Formats tokens with only options.selector', () => {
+  it('Formats tokens with only one selector', () => {
     const input = getMockFormatterArguments({
-      options: {
-        selector: `[data-color-mode="dark"]`,
+      file: {
+        destination: 'dark.css',
+        options: {
+          showFileHeader: false,
+          selector: '',
+          queries: [
+            {
+              query: `[data-color-mode="dark"]`,
+            },
+          ],
+        },
       },
     })
     const expectedOutput = format(
@@ -52,36 +72,6 @@ describe('Format: Css Themed', () => {
     }`,
       {parser: 'css', printWidth: 500},
     )
-    expect(cssThemed(input)).toStrictEqual(expectedOutput)
-  })
-
-  it('Formats tokens with only options.selectorLight', () => {
-    const input = getMockFormatterArguments({
-      options: {
-        selectorLight: `[data-color-mode="light"]`,
-      },
-    })
-    const expectedOutput = format(
-      `:root, [data-color-mode="light"]{
-        --red: transformedValue;
-    }`,
-      {parser: 'css', printWidth: 500},
-    )
-    expect(cssThemed(input)).toStrictEqual(expectedOutput)
-  })
-
-  it('Formats tokens with only options.selectorDark', () => {
-    const input = getMockFormatterArguments({
-      options: {
-        selectorLight: `[data-color-mode="dark"]`,
-      },
-    })
-    const expectedOutput = format(
-      `:root, [data-color-mode="dark"]{
-        --red: transformedValue;
-    }`,
-      {parser: 'css', printWidth: 500},
-    )
-    expect(cssThemed(input)).toStrictEqual(expectedOutput)
+    expect(cssAdvanced(input)).toStrictEqual(expectedOutput)
   })
 })
