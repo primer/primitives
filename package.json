@@ -38,7 +38,6 @@
     "lint:tokens": "ts-node ./scripts/validateTokenJson.ts",
     "prebuild": "rm -rf dist",
     "prepack": "npm run build",
-    "prepare": "husky",
     "release": "changeset publish",
     "start:storybook": "npm run build && cd docs/storybook && npm run storybook",
     "test": "jest --verbose --coverage"
@@ -69,7 +68,6 @@
     "eslint-plugin-react": "^7.29.4",
     "eslint-plugin-react-hooks": "^4.4.0",
     "eslint-plugin-storybook": "^0.6.15",
-    "husky": "^9.0.11",
     "jest": "^29.6.1",
     "json5": "^2.2.1",
     "markdown-table-ts": "^1.0.3",
