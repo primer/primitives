@@ -48,8 +48,8 @@ const runContrastTest = (colorPairs: ContrastRequirement[], tokens: Tokens): con
     // build required string
     const minimumContrastRatio = `${minimumContrast}:1`
     // colorB is fully opaque
-    if (!tokens[colorA]) throw new Error(`Color token not found ${colorB}`)
-    if (!tokens[colorB]) throw new Error(`Color token not found ${colorB}`)
+    if (!tokens.hasOwnProperty(colorA)) throw new Error(`Color token not found ${colorA}`)
+    if (!tokens.hasOwnProperty(colorB)) throw new Error(`Color token not found ${colorB}`)
 
     if (parseToRgba(tokens[colorB].value)[3] === 1) {
       return {
