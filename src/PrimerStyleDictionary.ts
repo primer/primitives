@@ -24,6 +24,7 @@ import {
   typographyToCss,
   dimensionToRemPxArray,
   floatToPixel,
+  floatToPixelUnitless,
 } from './transformers'
 import {
   javascriptCommonJs,
@@ -124,6 +125,11 @@ StyleDictionary.registerTransform({
 StyleDictionary.registerTransform({
   name: 'float/pixel',
   ...floatToPixel,
+})
+
+StyleDictionary.registerTransform({
+  name: 'float/pixelUnitless',
+  ...floatToPixelUnitless,
 })
 
 StyleDictionary.registerTransform({
