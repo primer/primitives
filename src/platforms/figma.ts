@@ -28,7 +28,7 @@ export const figma: PlatformInitializer = (outputFile, prefix, buildPath, option
     // 'name/pathToSlashNotation',
     'figma/attributes',
     'fontFamily/figma',
-    'float/pixel',
+    'float/pixelUnitless',
     'dimension/pixelUnitless',
     // 'border/figma',
     // 'typography/figma',
