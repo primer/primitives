@@ -330,6 +330,72 @@
         },
       },
     },
+    coral: {
+      bgColor: {
+        muted: {
+          $value: '{base.display.color.red.0}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              mode: 'light',
+              group: 'component (internal)',
+              scopes: ['bgColor'],
+            },
+          },
+        },
+        emphasis: {
+          $value: '{base.display.color.red.5}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              mode: 'light',
+              group: 'component (internal)',
+              scopes: ['bgColor'],
+            },
+          },
+        },
+      },
+      fgColor: {
+        $value: '{base.display.color.red.6}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'light',
+            group: 'component (internal)',
+            scopes: ['fgColor'],
+          },
+        },
+      },
+      borderColor: {
+        muted: {
+          $value: '{base.display.color.red.1}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              mode: 'light',
+              group: 'component (internal)',
+              scopes: ['borderColor'],
+            },
+          },
+        },
+        emphasis: {
+          $value: '{base.display.color.red.5}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              mode: 'light',
+              group: 'component (internal)',
+              scopes: ['borderColor'],
+            },
+          },
+        },
+      },
+    },
     yellow: {
       bgColor: {
         muted: {
