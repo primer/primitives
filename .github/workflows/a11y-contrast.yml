@@ -34,25 +34,44 @@ jobs:
       - name: Run required checks
         run: |
           npm run contrast:check
-      
-      - name: Report check results
-        if: github.event_name == 'pull_request'
+
+      - name: Fail or pass action based on check results
+        id: check-results
         uses: actions/github-script@v7
         with:
           script: |
             const results = require('./color-contrast-check.json');
             const faildChecks = results.reduce((acc, {failingContrast}) => acc + failingContrast, 0);
-
+            
             // prepare comment body
             const resultsMarkdown = '## Design Token Contrast Check\n\n' + 
               results.map(({theme, failingContrast, markdownTable}) => 
-                "### `"+theme+"`: " + `${failingContrast === 0 ? '✅ all checks passed' : `❌ ${failingContrast} checks failed`}\n\n` +
+                "### \\`"+theme+"\\`: " + `${failingContrast === 0 ? '✅ all checks passed' : `❌ ${failingContrast} checks failed`}\n\n` +
                 '<details>' +
                 `<summary>Show results table for theme: ${theme}</summary>\n` +
                 "  \n"+
                 `  ${markdownTable}` +
                 '\n</details>'
               ).join('\n\n')
+
+            // set output
+            core.setOutput('markdown', resultsMarkdown)
+
+            // fail action if any contrast check fails
+            if (faildChecks > 0) {
+              core.setFailed(`${faildChecks} contrast checks failed. Please fix the failing checks and try again.\n\nCheck action summary for more details.`);
+              core.error(`\u001b[91;1m🛑 ${faildChecks} contrast checks failed!`)
+            }
+            // success
+            core.info('\u001b[32;1m✅ All contrast checks passed!')
+      
+      - name: Report check results as comment
+        if: github.event_name == 'pull_request'
+        continue-on-error: true
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const resultsMarkdown = `${{ steps.check-results.outputs.markdown }}`
             
             // get comments
             const {data: comments} = await github.rest.issues.listComments({
@@ -84,11 +103,13 @@ jobs:
               })
             }
 
+      - name: Report check results as summary
+        continue-on-error: true
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const resultsMarkdown = `${{ steps.check-results.outputs.markdown }}`
+
             // output results to summary
             core.summary.addRaw(resultsMarkdown, true)
             core.summary.write({overwrite: true})
-
-            // fail action if any contrast check fails
-            if (faildChecks > 0) {
-              core.setFailed(`${faildChecks} contrast checks failed. Please fix the failing checks and try again.\n\nCheck action summary for more details.`);
-            }
