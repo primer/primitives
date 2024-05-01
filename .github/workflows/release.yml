@@ -28,7 +28,7 @@ jobs:
         run: npm ci --no-audit --no-fund && pushd docs; npm ci --no-audit --no-fund; popd
 
       - name: Build tokens
-        run: npm run build:next
+        run: npm run build
 
       - name: Create release pull request or publish to npm
         id: changesets

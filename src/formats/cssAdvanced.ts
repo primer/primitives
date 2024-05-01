@@ -5,7 +5,14 @@ import {format} from 'prettier'
 import type {LineFormatting} from 'style-dictionary/types/FormatHelpers'
 const {fileHeader, formattedVariables} = StyleDictionary.formatHelpers
 
-export const cssMediaQuery: StyleDictionary.Formatter = ({
+const wrapWithSelector = (css: string, selector: string | false): string => {
+  // return without selector
+  if (selector === false || selector.trim().length === 0) return css
+  // return with selector
+  return `${selector} { ${css} }`
+}
+
+export const cssAdvanced: StyleDictionary.Formatter = ({
   dictionary: originalDictionary,
   options = {
     queries: [],
@@ -16,7 +23,7 @@ export const cssMediaQuery: StyleDictionary.Formatter = ({
   // get options
   const {outputReferences, descriptions} = options
   // selector
-  const selector = file.options?.selector || ':root'
+  const selector = file.options?.selector !== undefined ? file.options.selector : ':root'
   // query extension property
   const queryExtProp = file.options?.queryExtensionProperty || 'mediaQuery'
   // get queries from file options
@@ -81,14 +88,11 @@ export const cssMediaQuery: StyleDictionary.Formatter = ({
     // early abort if no matches
     if (!filteredDictionary.allTokens.length) continue
     // add tokens into root
-    const rootCss = `${selector} {${formattedVariables({
-      format: 'css',
-      dictionary: filteredDictionary,
-      outputReferences,
-      formatting,
-    })}}`
+    const css = formattedVariables({format: 'css', dictionary: filteredDictionary, outputReferences, formatting})
+    // wrap css
+    const cssWithSelector = wrapWithSelector(css, query.selector !== undefined ? query.selector : selector)
     // add css with or without query
-    output.push(queryString ? `${queryString} { ${rootCss} }` : rootCss)
+    output.push(queryString ? `${queryString} { ${cssWithSelector} }` : cssWithSelector)
   }
   // return prettified
   return format(output.join('\n'), {parser: 'css', printWidth: 500})

@@ -348,7 +348,13 @@
       },
       "weight": {
         "$value": "{base.text.weight.normal}",
-        "$type": "fontWeight"
+        "$type": "fontWeight",
+        "$extensions": {
+          "org.primer.figma": {
+            "collection": "typography",
+            "scopes": ["all"]
+          }
+        }
       },
       "shorthand": {
         "large": {

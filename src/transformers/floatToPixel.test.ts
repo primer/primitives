@@ -1,5 +1,5 @@
 import {getMockToken} from '../test-utilities'
-import {floatToPixel} from './floatToPixel'
+import {floatToPixel, floatToPixelUnitless} from './floatToPixel'
 
 describe('Transformer: floatToPixel', () => {
   it('transforms float to pixel', () => {
@@ -73,5 +73,36 @@ describe('Transformer: floatToPixel', () => {
     ]
     const expectedOutput = ['1.5', 1.5, 2]
     expect(input.map(item => floatToPixel.transformer(item, {}))).toStrictEqual(expectedOutput)
+  })
+
+  it('transforms float to pixel unitless', () => {
+    const input = [
+      getMockToken({
+        value: 1.5,
+        $extensions: {
+          'org.primer.data': {
+            fontSize: 16,
+          },
+        },
+      }),
+      getMockToken({
+        value: 1.342,
+        $extensions: {
+          'org.primer.data': {
+            fontSize: 16,
+          },
+        },
+      }),
+      getMockToken({
+        value: 1.548,
+        $extensions: {
+          'org.primer.data': {
+            fontSize: 16,
+          },
+        },
+      }),
+    ]
+    const expectedOutput = [24, 21, 25]
+    expect(input.map(item => floatToPixelUnitless.transformer(item, {}))).toStrictEqual(expectedOutput)
   })
 })
