@@ -161,7 +161,7 @@ export const BorderDemo = () => {
               >
                 {/* <GitHubAvatar src="https://avatars.githubusercontent.com/u/9919?s=200&v=4" size={40} /> */}
                 <Box sx={{ml: 2}}>
-                  <Box sx={{fontWeight: 'bold'}}>tbenning</Box>
+                  <Box sx={{fontWeight: 'bold'}}>primer</Box>
                   <Box sx={{fontSize: 1, color: 'fg.muted'}}>Personal account</Box>
                 </Box>
                 <Box sx={{ml: 'auto'}}>
@@ -190,7 +190,7 @@ export const BorderDemo = () => {
             <Box sx={{py: 1, px: [3, 0, 0, 0, 0], display: 'flex', flexDirection: 'column', gap: 3}}>
               <h1>Heading</h1>
               <Box sx={{display: 'flex', gap: '8px'}}>
-                <TextInput leadingVisual={SearchIcon} />
+                <TextInput leadingVisual={SearchIcon} placeholder="Placeholder" />
                 <Button>A default button</Button>
                 <Button variant="invisible">An invisible button</Button>
                 <Button variant="primary">A primary button</Button>
@@ -223,8 +223,35 @@ export const BorderDemo = () => {
                   </SegmentedControl>
                   <Text sx={{color: 'fg.muted'}}>Muted text</Text>
                 </Box>
-                <Box sx={{backgroundColor: 'var(--bgColor-default)', padding: 'var(--base-size-36)'}}>
+                <Box
+                  sx={{
+                    backgroundColor: 'var(--bgColor-default)',
+                    padding: 'var(--base-size-36)',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'start',
+                    gap: '1rem',
+                  }}
+                >
                   This is a box oh wow
+                  <Button count="20">Counter</Button>
+                  <Button variant="invisible" count="20">
+                    Counter
+                  </Button>
+                  <Button leadingVisual={SearchIcon}>Leading visual</Button>
+                  <Button leadingVisual={SearchIcon} variant="invisible">
+                    Leading visual
+                  </Button>
+                  <TextInput leadingVisual={SearchIcon} placeholder="Disabled" disabled />
+                  <Button disabled variant="default">
+                    Disabled default
+                  </Button>
+                  <Button variant="invisible" count="20" disabled>
+                    Disabled
+                  </Button>
+                  <Button count="20" inactive>
+                    Inactive
+                  </Button>
                 </Box>
               </Box>
               <Table.Container>

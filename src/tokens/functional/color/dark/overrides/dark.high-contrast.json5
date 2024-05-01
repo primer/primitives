@@ -5,18 +5,22 @@
  */
 {
   fgColor: {
+    default: {
+      $value: '{base.color.white}',
+      $type: 'color',
+    },
     onEmphasis: {
-      $value: '{base.color.neutral.9}',
+      $value: '{base.color.neutral.14}',
       $type: 'color',
     },
     muted: {
-      $value: '{base.color.neutral.1}',
+      $value: '{base.color.neutral.11}',
       $type: 'color',
       mix: null,
       alpha: 1,
     },
     disabled: {
-      $value: '{base.color.neutral.4}',
+      $value: '{base.color.neutral.7}',
       $type: 'color',
     },
   },

@@ -6,12 +6,12 @@
 {
   fgColor: {
     muted: {
-      $value: '{base.color.neutral.9}',
+      $value: '{base.color.neutral.11}',
       $type: 'color',
       mix: null,
     },
     disabled: {
-      $value: '{base.color.neutral.5}',
+      $value: '{base.color.neutral.7}',
       $type: 'color',
     },
     danger: {
@@ -29,22 +29,22 @@
   },
   bgColor: {
     muted: {
-      $value: '{base.color.neutral.1}',
+      $value: '{base.color.neutral.2}',
       $type: 'color',
     },
     inset: {
-      $value: '{base.color.white}',
+      $value: '{base.color.neutral.1}',
       $type: 'color',
     },
     neutral: {
       muted: {
-        $value: '{base.color.neutral.1}',
+        $value: '{base.color.neutral.2}',
         $type: 'color',
         alpha: 1,
       },
     },
     disabled: {
-      $value: '{base.color.neutral.2}',
+      $value: '{base.color.neutral.1}',
       $type: 'color',
     },
     success: {
@@ -63,17 +63,17 @@
   },
   borderColor: {
     default: {
-      $value: '{base.color.neutral.8}',
+      $value: '{base.color.neutral.11}',
       $type: 'color',
     },
-    muted: {
-      $value: '{base.color.neutral.4}',
-      $type: 'color',
-      alpha: 1,
-    },
+    // muted: {
+    //   $value: '{base.color.neutral.4}',
+    //   $type: 'color',
+    //   alpha: 1,
+    // },
     neutral: {
       muted: {
-        $value: '{base.color.neutral.4}',
+        $value: '{base.color.neutral.6}',
         $type: 'color',
         alpha: 1,
       },
@@ -159,27 +159,27 @@
   control: {
     bgColor: {
       rest: {
-        $value: '{base.color.neutral.1}',
+        $value: '{base.color.neutral.2}',
         $type: 'color',
       },
       hover: {
-        $value: '{base.color.neutral.1}',
+        $value: '{base.color.neutral.3}',
         $type: 'color',
-        mix: {
-          color: '{base.color.neutral.3}',
-          weight: 0.2,
-        },
+        // mix: {
+        //   color: '{base.color.neutral.3}',
+        //   weight: 0.2,
+        // },
       },
       active: {
-        $value: '{base.color.neutral.1}',
+        $value: '{base.color.neutral.4}',
         $type: 'color',
-        mix: {
-          color: '{base.color.neutral.3}',
-          weight: 0.4,
-        },
+        // mix: {
+        //   color: '{base.color.neutral.3}',
+        //   weight: 0.4,
+        // },
       },
       selected: {
-        $value: '{base.color.neutral.3}',
+        $value: '{base.color.neutral.2}',
         $type: 'color',
       },
     },
@@ -193,20 +193,21 @@
     transparent: {
       bgColor: {
         hover: {
-          $value: '{base.color.neutral.1}',
+          $value: '{base.color.neutral.4}',
           $type: 'color',
           alpha: null,
-          mix: null,
+          // mix: null,
         },
         active: {
-          $value: '{base.color.neutral.2}',
+          $value: '{base.color.neutral.5}',
           $type: 'color',
           alpha: null,
-          mix: null,
+          // mix: null,
         },
         selected: {
-          $value: '{base.color.neutral.2}',
+          $value: '{base.color.neutral.6}',
           $type: 'color',
+          alpha: 1,
         },
       },
       borderColor: {
@@ -249,20 +250,20 @@
         $type: 'color',
       },
       hover: {
-        $value: '{base.color.neutral.3}',
+        $value: '{base.color.neutral.4}',
         $type: 'color',
-        mix: {
-          color: '{base.color.neutral.5}',
-          weight: 0.2,
-        },
+        // mix: {
+        //   color: '{base.color.neutral.5}',
+        //   weight: 0.2,
+        // },
       },
       active: {
-        $value: '{base.color.neutral.3}',
+        $value: '{base.color.neutral.5}',
         $type: 'color',
-        mix: {
-          color: '{base.color.neutral.5}',
-          weight: 0.4,
-        },
+        // mix: {
+        //   color: '{base.color.neutral.5}',
+        //   weight: 0.4,
+        // },
       },
       disabled: {
         $value: '{fgColor.disabled}',
@@ -347,18 +348,18 @@
           $type: 'color',
         },
       },
-      bgColor: {
-        hover: {
-          $value: '{base.color.neutral.8}',
-          $type: 'color',
-          alpha: 1,
-        },
-        active: {
-          $value: '{base.color.neutral.6}',
-          $type: 'color',
-          alpha: 1,
-        },
-      },
+      // bgColor: {
+      //   hover: {
+      //     $value: '{base.color.neutral.8}',
+      //     $type: 'color',
+      //     alpha: 1,
+      //   },
+      //   active: {
+      //     $value: '{base.color.neutral.6}',
+      //     $type: 'color',
+      //     alpha: 1,
+      //   },
+      // },
     },
   },
   buttonCounter: {
@@ -425,7 +426,7 @@
   header: {
     borderColor: {
       divider: {
-        $value: '{base.color.neutral.3}',
+        $value: '{base.color.neutral.6}',
         $type: 'color',
       },
     },

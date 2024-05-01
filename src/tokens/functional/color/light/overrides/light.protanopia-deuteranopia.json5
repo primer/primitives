@@ -19,7 +19,7 @@
     },
     closed: {
       '@': {
-        $value: '{base.color.neutral.5}',
+        $value: '{fgColor.muted}',
         $type: 'color',
       },
     },
@@ -72,12 +72,12 @@
     },
     closed: {
       muted: {
-        $value: '{base.color.neutral.3}',
+        $value: '{bgColor.muted}',
         $type: 'color',
-        alpha: 0.4,
+        // alpha: 0.4,
       },
       emphasis: {
-        $value: '{base.color.neutral.5}',
+        $value: '{bgColor.emphasis}',
         $type: 'color',
       },
     },
@@ -96,12 +96,12 @@
     },
     closed: {
       muted: {
-        $value: '{base.color.neutral.3}',
+        $value: '{borderColor.default}',
         $type: 'color',
-        alpha: 0.4,
+        // alpha: 0.4,
       },
       emphasis: {
-        $value: '{base.color.neutral.5}',
+        $value: '{borderColor.emphasis}',
         $type: 'color',
       },
     },
