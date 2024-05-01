@@ -52,3 +52,7 @@
 .TextInput-wrapper {
   /* border-width: var(--control-borderWidth) !important; */
 }
+
+[data-component='ButtonCounter'] {
+  background-color: var(--buttonCounter-default-bgColor-rest) !important;
+}

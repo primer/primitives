@@ -10,14 +10,14 @@
       $type: 'color',
     },
     onEmphasis: {
-      $value: '{base.color.neutral.14}',
+      $value: '{base.color.black}',
       $type: 'color',
     },
     muted: {
       $value: '{base.color.neutral.11}',
       $type: 'color',
-      mix: null,
-      alpha: 1,
+      // mix: null,
+      // alpha: 1,
     },
     disabled: {
       $value: '{base.color.neutral.7}',
@@ -25,35 +25,48 @@
     },
   },
   bgColor: {
+    muted: {
+      $value: '{base.color.neutral.2}',
+      $type: 'color',
+      alpha: 1,
+    },
     emphasis: {
       $value: '{base.color.white}',
       $type: 'color',
     },
+    disabled: {
+      $value: '{base.color.neutral.3}',
+      $type: 'color',
+    },
     neutral: {
+      muted: {
+        $value: '{base.color.neutral.6}',
+        $type: 'color',
+      },
       emphasis: {
-        $value: '{base.color.neutral.4}',
+        $value: '{base.color.neutral.11}',
         $type: 'color',
       },
     },
   },
   borderColor: {
     default: {
-      $value: '{base.color.neutral.5}',
+      $value: '{borderColor.emphasis}',
       $type: 'color',
     },
     muted: {
-      $value: '{base.color.neutral.5}',
+      $value: '{borderColor.emphasis}',
       $type: 'color',
       alpha: 1,
     },
     neutral: {
       muted: {
-        $value: '{base.color.neutral.4}',
+        $value: '{borderColor.emphasis}',
         $type: 'color',
         alpha: 1,
       },
       emphasis: {
-        $value: '{base.color.neutral.4}',
+        $value: '{borderColor.emphasis}',
         $type: 'color',
       },
     },

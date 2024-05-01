@@ -394,7 +394,7 @@
       },
     },
     disabled: {
-      $value: '{base.color.neutral.1}',
+      $value: '{base.color.neutral.2}',
       $type: 'color',
       $extensions: {
         'org.primer.figma': {
@@ -404,7 +404,7 @@
           scopes: ['bgColor'],
         },
       },
-      alpha: 0.7,
+      // alpha: 0.7,
     },
     transparent: {
       $value: '{base.color.transparent}',

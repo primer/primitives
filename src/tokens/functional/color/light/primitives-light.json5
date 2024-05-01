@@ -29,10 +29,6 @@
           },
         },
       },
-      // mix: {
-      //   color: '{base.color.neutral.5}',
-      //   weight: 0.5,
-      // },
     },
     onEmphasis: {
       $value: '{base.color.white}',
@@ -324,7 +320,7 @@
       },
     },
     inset: {
-      $value: '{base.color.neutral.1}',
+      $value: '{bgColor.muted}',
       $type: 'color',
       $extensions: {
         'org.primer.figma': {
@@ -390,7 +386,7 @@
       },
     },
     disabled: {
-      $value: '{base.color.neutral.1}',
+      $value: '{base.color.neutral.2}',
       $type: 'color',
       $extensions: {
         'org.primer.figma': {
@@ -400,7 +396,6 @@
           scopes: ['bgColor'],
         },
       },
-      alpha: 0.7,
     },
     transparent: {
       $value: '{base.color.transparent}',
@@ -839,7 +834,7 @@
     },
     neutral: {
       muted: {
-        $value: '{base.color.neutral.6}',
+        $value: '{borderColor.default}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -852,7 +847,7 @@
         alpha: 0.4,
       },
       emphasis: {
-        $value: '{base.color.neutral.7}',
+        $value: '{borderColor.emphasis}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {

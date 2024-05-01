@@ -81,10 +81,6 @@
             scopes: ['bgColor'],
           },
         },
-        // mix: {
-        //   color: '{base.color.neutral.2}',
-        //   weight: 0.2,
-        // },
       },
       active: {
         $value: '{base.color.neutral.3}',
@@ -97,10 +93,6 @@
             scopes: ['bgColor'],
           },
         },
-        // mix: {
-        //   color: '{base.color.neutral.2}',
-        //   weight: 0.4,
-        // },
       },
       disabled: {
         $value: '{bgColor.disabled}',
@@ -115,7 +107,7 @@
         },
       },
       selected: {
-        $value: '{base.color.neutral.1}',
+        $value: '{control.bgColor.rest}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -141,7 +133,7 @@
         },
       },
       placeholder: {
-        $value: '{base.color.neutral.7}',
+        $value: '{fgColor.muted}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -189,10 +181,6 @@
             scopes: ['borderColor'],
           },
         },
-        // mix: {
-        //   color: '{base.color.neutral.5}',
-        //   weight: 0.2,
-        // },
       },
       disabled: {
         $value: '{borderColor.disabled}',
@@ -207,7 +195,7 @@
         },
       },
       selected: {
-        $value: '{base.color.neutral.1}',
+        $value: '{control.bgColor.selected}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -322,7 +310,7 @@
           },
         },
         selected: {
-          $value: '{base.color.neutral.1}',
+          $value: '{control.transparent.bgColor.active}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -599,10 +587,6 @@
             scopes: ['bgColor'],
           },
         },
-        // mix: {
-        //   color: '{base.color.neutral.3}',
-        //   weight: 0.2,
-        // },
       },
       active: {
         $value: '{base.color.neutral.5}',
@@ -615,10 +599,6 @@
             scopes: ['bgColor'],
           },
         },
-        // mix: {
-        //   color: '{base.color.neutral.3}',
-        //   weight: 0.4,
-        // },
       },
       disabled: {
         $value: '{fgColor.disabled}',
@@ -1554,7 +1534,7 @@
     },
     inactive: {
       fgColor: {
-        $value: '{base.color.neutral.8}',
+        $value: '{base.color.neutral.9}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -1566,7 +1546,7 @@
         },
       },
       bgColor: {
-        $value: '{base.color.neutral.2}',
+        $value: '{base.color.neutral.3}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -2076,7 +2056,7 @@
   },
   timelineBadge: {
     bgColor: {
-      $value: '{base.color.neutral.1}',
+      $value: '{bgColor.muted}',
       $type: 'color',
       $extensions: {
         'org.primer.figma': {
@@ -2121,7 +2101,7 @@
         },
       },
       hover: {
-        $value: '{borderColor.neutral.muted}',
+        $value: '{borderColor.muted}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
