@@ -1284,7 +1284,7 @@
       },
       bgColor: {
         rest: {
-          $value: '{control.bgColor.rest}',
+          $value: '{base.color.neutral.14}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -1296,7 +1296,7 @@
           },
         },
         hover: {
-          $value: '{bgColor.accent.emphasis}',
+          $value: '{control.bgColor.hover}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -1308,7 +1308,7 @@
           },
         },
         active: {
-          $value: '{bgColor.accent.emphasis}',
+          $value: '{base.color.blue.7}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
