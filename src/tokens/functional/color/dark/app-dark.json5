@@ -205,7 +205,7 @@
     },
     expander: {
       iconColor: {
-        $value: '{fgColor.muted}',
+        $value: '{fgColor.muted.@}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -272,7 +272,7 @@
           },
         },
         muted: {
-          $value: '{fgColor.muted}',
+          $value: '{fgColor.muted.@}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -287,7 +287,7 @@
     },
     lineNumber: {
       fgColor: {
-        $value: '{fgColor.muted}',
+        $value: '{fgColor.muted.@}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {

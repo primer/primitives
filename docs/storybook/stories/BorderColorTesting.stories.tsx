@@ -194,6 +194,10 @@ export const BorderDemo = () => {
                 <Button>A default button</Button>
                 <Button variant="invisible">An invisible button</Button>
                 <Button variant="primary">A primary button</Button>
+                <Button variant="danger">A danger button</Button>
+                <button class="btn btn-outline" type="button">
+                  Button
+                </button>
               </Box>
 
               <Box

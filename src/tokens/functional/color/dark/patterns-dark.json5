@@ -82,10 +82,6 @@
             scopes: ['bgColor'],
           },
         },
-        // mix: {
-        //   color: '{base.color.neutral.5}',
-        //   weight: 0.2,
-        // },
       },
       active: {
         $value: '{base.color.neutral.4}',
@@ -98,10 +94,6 @@
             scopes: ['bgColor'],
           },
         },
-        // mix: {
-        //   color: '{base.color.neutral.5}',
-        //   weight: 0.4,
-        // },
       },
       disabled: {
         $value: '{bgColor.disabled}',
@@ -116,7 +108,7 @@
         },
       },
       selected: {
-        $value: '{base.color.neutral.2}',
+        $value: '{control.bgColor.rest}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -130,7 +122,7 @@
     },
     fgColor: {
       rest: {
-        $value: '{base.color.neutral.14}',
+        $value: '{fgColor.default}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -190,10 +182,6 @@
             scopes: ['borderColor'],
           },
         },
-        // mix: {
-        //   color: '{base.color.neutral.5}',
-        //   weight: 0.2,
-        // },
       },
       disabled: {
         $value: '{borderColor.disabled}',
@@ -258,7 +246,31 @@
     },
     iconColor: {
       rest: {
-        $value: '{fgColor.muted}',
+        $value: '{fgColor.muted.@}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'dark',
+            group: 'component',
+            scopes: ['fgColor'],
+          },
+        },
+      },
+      hover: {
+        $value: '{base.color.neutral.9}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'dark',
+            group: 'component',
+            scopes: ['fgColor'],
+          },
+        },
+      },
+      active: {
+        $value: '{base.color.neutral.10}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -285,7 +297,7 @@
           },
         },
         hover: {
-          $value: '{base.color.neutral.4}',
+          $value: '{base.color.neutral.3}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -298,7 +310,7 @@
           alpha: 0.7,
         },
         active: {
-          $value: '{base.color.neutral.5}',
+          $value: '{base.color.neutral.4}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -323,7 +335,7 @@
           },
         },
         selected: {
-          $value: '{base.color.neutral.2}',
+          $value: '{base.color.neutral.3}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -333,7 +345,7 @@
               scopes: ['bgColor'],
             },
           },
-          alpha: 0.7,
+          alpha: 0.4,
         },
       },
       borderColor: {
@@ -370,6 +382,56 @@
               mode: 'dark',
               group: 'component',
               scopes: ['borderColor'],
+            },
+          },
+        },
+      },
+      iconColor: {
+        rest: {
+          $value: '{fgColor.muted.@}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              mode: 'dark',
+              group: 'component',
+              scopes: ['fgColor'],
+            },
+          },
+        },
+        hover: {
+          $value: '{base.color.neutral.9}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              mode: 'dark',
+              group: 'component',
+              scopes: ['fgColor'],
+            },
+          },
+        },
+        active: {
+          $value: '{base.color.neutral.10}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              mode: 'dark',
+              group: 'component',
+              scopes: ['fgColor'],
+            },
+          },
+        },
+        selected: {
+          $value: '{base.color.neutral.9}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              mode: 'dark',
+              group: 'component',
+              scopes: ['fgColor'],
             },
           },
         },
@@ -578,7 +640,7 @@
   controlTrack: {
     bgColor: {
       rest: {
-        $value: '{base.color.neutral.4}',
+        $value: '{base.color.neutral.3}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -590,6 +652,18 @@
         },
       },
       hover: {
+        $value: '{base.color.neutral.4}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'dark',
+            group: 'component (internal)',
+            scopes: ['bgColor'],
+          },
+        },
+      },
+      active: {
         $value: '{base.color.neutral.5}',
         $type: 'color',
         $extensions: {
@@ -600,26 +674,6 @@
             scopes: ['bgColor'],
           },
         },
-        // mix: {
-        //   color: '{base.color.neutral.5}',
-        //   weight: 0.2,
-        // },
-      },
-      active: {
-        $value: '{base.color.neutral.6}',
-        $type: 'color',
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'mode',
-            mode: 'dark',
-            group: 'component (internal)',
-            scopes: ['bgColor'],
-          },
-        },
-        // mix: {
-        //   color: '{base.color.neutral.5}',
-        //   weight: 0.4,
-        // },
       },
       disabled: {
         $value: '{fgColor.disabled}',
@@ -636,7 +690,7 @@
     },
     fgColor: {
       rest: {
-        $value: '{fgColor.muted}',
+        $value: '{fgColor.muted.@}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -649,6 +703,44 @@
       },
       disabled: {
         $value: '{fgColor.onEmphasis}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'dark',
+            group: 'component (internal)',
+            scopes: ['fgColor'],
+          },
+        },
+      },
+    },
+    iconColor: {
+      rest: {
+        $value: '{base.color.neutral.9}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'dark',
+            group: 'component (internal)',
+            scopes: ['fgColor'],
+          },
+        },
+      },
+      hover: {
+        $value: '{base.color.neutral.10}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'dark',
+            group: 'component (internal)',
+            scopes: ['fgColor'],
+          },
+        },
+      },
+      active: {
+        $value: '{base.color.neutral.11}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -1105,7 +1197,7 @@
       },
       iconColor: {
         rest: {
-          $value: '{fgColor.muted}',
+          $value: '{fgColor.muted.@}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -1334,7 +1426,7 @@
       },
       borderColor: {
         hover: {
-          $value: '{button.primary.borderColor.hover}',
+          $value: '{button.default.borderColor.hover}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -1344,7 +1436,6 @@
               scopes: ['borderColor'],
             },
           },
-          // alpha: 0.1,
         },
         selected: {
           $value: '{button.outline.borderColor.hover}',
@@ -1516,7 +1607,6 @@
               scopes: ['borderColor'],
             },
           },
-          // alpha: 0.1,
         },
         active: {
           $value: '{button.danger.borderColor.hover}',
@@ -1534,7 +1624,7 @@
     },
     inactive: {
       fgColor: {
-        $value: '{base.color.neutral.8}',
+        $value: '{base.color.neutral.9}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -1546,7 +1636,19 @@
         },
       },
       bgColor: {
-        $value: '{base.color.neutral.2}',
+        $value: '{base.color.neutral.3}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'light',
+            group: 'component (internal)',
+            scopes: ['bgColor'],
+          },
+        },
+      },
+      borderColor: {
+        $value: '{button.inactive.bgColor}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -1577,7 +1679,55 @@
     default: {
       bgColor: {
         rest: {
-          $value: '{bgColor.neutral.muted}',
+          $value: '{base.color.neutral.5}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              mode: 'dark',
+              group: 'component (internal)',
+              scopes: ['bgColor'],
+            },
+          },
+        },
+        hover: {
+          $value: '{base.color.neutral.6}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              mode: 'dark',
+              group: 'component (internal)',
+              scopes: ['bgColor'],
+            },
+          },
+        },
+        active: {
+          $value: '{base.color.neutral.6}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              mode: 'dark',
+              group: 'component (internal)',
+              scopes: ['bgColor'],
+            },
+          },
+        },
+        disabled: {
+          $value: '{base.color.neutral.5}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              mode: 'dark',
+              group: 'component (internal)',
+              scopes: ['bgColor'],
+            },
+          },
+        },
+        inactive: {
+          $value: '{base.color.neutral.6}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -2071,7 +2221,7 @@
     leadingVisual: {
       iconColor: {
         rest: {
-          $value: '{fgColor.muted}',
+          $value: '{fgColor.muted.@}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -2114,7 +2264,7 @@
     },
     iconColor: {
       rest: {
-        $value: '{fgColor.muted}',
+        $value: '{fgColor.muted.@}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {

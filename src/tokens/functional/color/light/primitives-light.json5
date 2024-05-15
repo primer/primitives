@@ -16,16 +16,42 @@
       },
     },
     muted: {
-      $value: '{base.color.neutral.7}',
-      $type: 'color',
-      $extensions: {
-        'org.primer.figma': {
-          collection: 'mode',
-          mode: 'light',
-          group: 'semantic',
-          scopes: ['fgColor'],
-          codeSyntax: {
-            web: 'var(--fgColor-muted) /* utility class: .color-fg-muted */',
+      '@': {
+        $value: '{base.color.neutral.7}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'light',
+            group: 'semantic',
+            scopes: ['fgColor'],
+            codeSyntax: {
+              web: 'var(--fgColor-muted) /* utility class: .color-fg-muted */',
+            },
+          },
+        },
+      },
+      hover: {
+        $value: '{base.color.neutral.8}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'light',
+            group: 'semantic',
+            scopes: ['fgColor'],
+          },
+        },
+      },
+      active: {
+        $value: '{base.color.neutral.9}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'light',
+            group: 'semantic',
+            scopes: ['fgColor'],
           },
         },
       },
@@ -335,7 +361,7 @@
       },
     },
     emphasis: {
-      $value: '{base.color.neutral.7}',
+      $value: '{base.color.neutral.14}',
       $type: 'color',
       $extensions: {
         'org.primer.figma': {
@@ -414,7 +440,7 @@
     },
     neutral: {
       muted: {
-        $value: '{base.color.neutral.1}',
+        $value: '{bgColor.muted}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -424,7 +450,6 @@
             scopes: ['bgColor'],
           },
         },
-        alpha: 0.8,
       },
       emphasis: {
         $value: '{base.color.neutral.7}',
@@ -834,7 +859,7 @@
     },
     neutral: {
       muted: {
-        $value: '{borderColor.default}',
+        $value: '{borderColor.muted}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -844,7 +869,6 @@
             scopes: ['borderColor'],
           },
         },
-        alpha: 0.4,
       },
       emphasis: {
         $value: '{borderColor.emphasis}',

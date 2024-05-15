@@ -25,7 +25,7 @@
     },
     closed: {
       '@': {
-        $value: '{fgColor.muted}',
+        $value: '{fgColor.muted.@}',
         $type: 'color',
       },
     },
@@ -110,7 +110,6 @@
       muted: {
         $value: '{borderColor.default}',
         $type: 'color',
-        // alpha: 0.4,
       },
       emphasis: {
         $value: '{borderColor.emphasis}',

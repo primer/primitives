@@ -6,12 +6,39 @@
 {
   fgColor: {
     muted: {
-      $value: '{base.color.neutral.11}',
-      $type: 'color',
+      '@': {
+        $value: '{base.color.neutral.11}',
+        $type: 'color',
+      },
+      hover: {
+        $value: '{base.color.neutral.12}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'light',
+            group: 'semantic',
+            scopes: ['fgColor'],
+          },
+        },
+      },
+      active: {
+        $value: '{base.color.neutral.13}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'light',
+            group: 'semantic',
+            scopes: ['fgColor'],
+          },
+        },
+      },
     },
     disabled: {
       $value: '{base.color.neutral.9}',
       $type: 'color',
+      alpha: 1,
     },
     danger: {
       '@': {
@@ -36,10 +63,9 @@
       $type: 'color',
     },
     neutral: {
-      muted: {
-        $value: '{base.color.neutral.2}',
+      emphasis: {
+        $value: '{base.color.neutral.11}',
         $type: 'color',
-        alpha: 1,
       },
     },
     disabled: {
@@ -65,12 +91,14 @@
       $value: '{base.color.neutral.11}',
       $type: 'color',
     },
-    neutral: {
-      muted: {
-        $value: '{borderColor.default}',
-        $type: 'color',
-        alpha: 1,
-      },
+    muted: {
+      $value: '{borderColor.default}',
+      $type: 'color',
+      alpha: 1,
+    },
+    emphasis: {
+      $value: '{base.color.neutral.11}',
+      $type: 'color',
     },
     accent: {
       muted: {
@@ -164,25 +192,49 @@
         $value: '{base.color.neutral.5}',
         $type: 'color',
       },
-      selected: {
-        $value: '{control.bgColor.rest}',
+    },
+    fgColor: {
+      rest: {
+        $value: '{base.color.black}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'light',
+            group: 'component',
+            scopes: ['fgColor'],
+          },
+        },
+      },
+    },
+    iconColor: {
+      rest: {
+        $value: '{base.color.neutral.12}',
+        $type: 'color',
+      },
+      hover: {
+        $value: '{base.color.neutral.13}',
+        $type: 'color',
+      },
+      active: {
+        $value: '{base.color.neutral.14}',
         $type: 'color',
       },
     },
     transparent: {
       bgColor: {
         hover: {
-          $value: '{base.color.neutral.3}',
-          $type: 'color',
-          alpha: 1,
-        },
-        active: {
           $value: '{base.color.neutral.4}',
           $type: 'color',
           alpha: 1,
         },
+        active: {
+          $value: '{base.color.neutral.5}',
+          $type: 'color',
+          alpha: 1,
+        },
         selected: {
-          $value: '{control.transparent.bgColor.active}',
+          $value: '{base.color.neutral.4}',
           $type: 'color',
           alpha: 1,
         },
@@ -190,6 +242,24 @@
       borderColor: {
         hover: {
           $value: '{borderColor.default}',
+          $type: 'color',
+        },
+        active: {
+          $value: '{borderColor.default}',
+          $type: 'color',
+        },
+      },
+      iconColor: {
+        hover: {
+          $value: '{base.color.neutral.13}',
+          $type: 'color',
+        },
+        active: {
+          $value: '{base.color.neutral.14}',
+          $type: 'color',
+        },
+        selected: {
+          $value: '{base.color.neutral.13}',
           $type: 'color',
         },
       },
@@ -217,6 +287,36 @@
             weight: 0.4,
           },
         },
+      },
+    },
+  },
+  controlTrack: {
+    bgColor: {
+      rest: {
+        $value: '{base.color.neutral.4}',
+        $type: 'color',
+      },
+      hover: {
+        $value: '{base.color.neutral.5}',
+        $type: 'color',
+      },
+      active: {
+        $value: '{base.color.neutral.6}',
+        $type: 'color',
+      },
+    },
+    iconColor: {
+      rest: {
+        $value: '{base.color.neutral.13}',
+        $type: 'color',
+      },
+      hover: {
+        $value: '{base.color.neutral.14}',
+        $type: 'color',
+      },
+      active: {
+        $value: '{base.color.black}',
+        $type: 'color',
       },
     },
   },
@@ -276,6 +376,46 @@
         },
       },
     },
+    inactive: {
+      fgColor: {
+        $value: '{base.color.neutral.11}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'light',
+            group: 'component (internal)',
+            scopes: ['fgColor'],
+          },
+        },
+      },
+      bgColor: {
+        $value: '{control.bgColor.rest}',
+        $type: 'color',
+      },
+    },
+  },
+  buttonCounter: {
+    default: {
+      bgColor: {
+        rest: {
+          $value: '{base.color.neutral.6}',
+          $type: 'color',
+        },
+        hover: {
+          $value: '{base.color.neutral.6}',
+          $type: 'color',
+        },
+        active: {
+          $value: '{base.color.neutral.6}',
+          $type: 'color',
+        },
+        disabled: {
+          $value: '{base.color.neutral.5}',
+          $type: 'color',
+        },
+      },
+    },
   },
   diffBlob: {
     addition: {
@@ -331,6 +471,13 @@
       $value: '{borderColor.muted}',
       $type: 'color',
       alpha: null,
+    },
+    backdrop: {
+      bgColor: {
+        $value: '{base.color.neutral.11}',
+        $type: 'color',
+        alpha: 0.4,
+      },
     },
   },
 }
