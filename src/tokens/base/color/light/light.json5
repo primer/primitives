@@ -10,7 +10,16 @@
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
-            "collection": "base/color/light",
+            collection: 'base/color/light',
+          },
+        },
+      },
+      inset: {
+        $value: '{base.color.neutral.0}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'base/color/dark',
           },
         },
       },
@@ -19,7 +28,7 @@
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
-            "collection": "base/color/light",
+            collection: 'base/color/light',
           },
         },
         alpha: 0,
@@ -29,98 +38,143 @@
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
-            "collection": "base/color/light",
+            collection: 'base/color/light',
           },
         },
       },
       neutral: {
         '0': {
-          $value: '#f6f8fa',
+          $value: '#F6F8FA',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
         '1': {
-          $value: '#eaeef2',
+          $value: '#EFF2F5',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
         '2': {
-          $value: '#d0d7de',
+          $value: '#E9EDF1',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
         '3': {
-          $value: '#afb8c1',
+          $value: '#E0E6EB',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
         '4': {
-          $value: '#8c959f',
+          $value: '#DAE0E7',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
         '5': {
-          $value: '#6e7781',
+          $value: '#D1D9E0',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
         '6': {
-          $value: '#57606a',
+          $value: '#C8D1DA',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
         '7': {
-          $value: '#424a53',
+          $value: '#656F7B',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
         '8': {
-          $value: '#32383f',
+          $value: '#606A76',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
         '9': {
-          $value: '#24292f',
+          $value: '#5C6570',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
+            },
+          },
+        },
+        '10': {
+          $value: '#57606B',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'base/color/light',
+            },
+          },
+        },
+        '11': {
+          $value: '#454C54',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'base/color/light',
+            },
+          },
+        },
+        '12': {
+          $value: '#40474F',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'base/color/light',
+            },
+          },
+        },
+        '13': {
+          $value: '#393F46',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'base/color/light',
+            },
+          },
+        },
+        '14': {
+          $value: '#25292E',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'base/color/light',
             },
           },
         },
@@ -131,7 +185,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -140,7 +194,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -149,7 +203,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -158,7 +212,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -167,7 +221,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -176,7 +230,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -185,7 +239,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -194,7 +248,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -203,7 +257,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -212,7 +266,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -223,7 +277,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -232,7 +286,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -241,7 +295,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -250,7 +304,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -259,7 +313,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -268,7 +322,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -277,7 +331,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -286,7 +340,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -295,7 +349,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -304,7 +358,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -315,7 +369,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -324,7 +378,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -333,7 +387,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -342,7 +396,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -351,7 +405,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -360,7 +414,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -369,7 +423,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -378,7 +432,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -387,7 +441,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -396,7 +450,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -407,7 +461,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -416,7 +470,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -425,7 +479,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -434,7 +488,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -443,7 +497,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -452,7 +506,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -461,7 +515,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -470,7 +524,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -479,7 +533,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -488,7 +542,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -499,7 +553,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -508,7 +562,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -517,7 +571,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -526,7 +580,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -535,7 +589,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -544,7 +598,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -553,7 +607,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -562,7 +616,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -571,7 +625,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -580,7 +634,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -591,7 +645,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -600,7 +654,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -609,7 +663,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -618,7 +672,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -627,7 +681,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -636,7 +690,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -645,7 +699,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -654,7 +708,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -663,7 +717,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -672,7 +726,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -683,7 +737,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -692,7 +746,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -701,7 +755,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -710,7 +764,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -719,7 +773,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -728,7 +782,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -737,7 +791,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -746,7 +800,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -755,7 +809,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -764,7 +818,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -775,7 +829,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -784,7 +838,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -793,7 +847,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -802,7 +856,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -811,7 +865,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -820,7 +874,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -829,7 +883,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -838,7 +892,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -847,7 +901,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },
@@ -856,7 +910,7 @@
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
-              "collection": "base/color/light",
+              collection: 'base/color/light',
             },
           },
         },

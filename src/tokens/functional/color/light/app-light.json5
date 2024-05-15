@@ -202,7 +202,7 @@
     },
     expander: {
       iconColor: {
-        $value: '{fgColor.muted}',
+        $value: '{fgColor.muted.@}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -269,7 +269,7 @@
           },
         },
         muted: {
-          $value: '{fgColor.muted}',
+          $value: '{fgColor.muted.@}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -284,7 +284,7 @@
     },
     lineNumber: {
       fgColor: {
-        $value: '{fgColor.muted}',
+        $value: '{fgColor.muted.@}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -369,7 +369,7 @@
     syntax: {
       fgColor: {
         comment: {
-          $value: '{base.color.neutral.9}',
+          $value: '{base.color.black}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -496,7 +496,7 @@
       },
     },
     bgColor: {
-      $value: '{base.color.neutral.9}',
+      $value: '{base.color.black}',
       $type: 'color',
       $extensions: {
         'org.primer.figma': {
@@ -509,7 +509,7 @@
     },
     borderColor: {
       divider: {
-        $value: '{base.color.neutral.6}',
+        $value: '{base.color.neutral.10}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -524,7 +524,7 @@
   },
   headerSearch: {
     bgColor: {
-      $value: '{base.color.neutral.9}',
+      $value: '{base.color.black}',
       $type: 'color',
       $extensions: {
         'org.primer.figma': {
@@ -536,7 +536,7 @@
       },
     },
     borderColor: {
-      $value: '{base.color.neutral.6}',
+      $value: '{base.color.neutral.10}',
       $type: 'color',
       $extensions: {
         'org.primer.figma': {

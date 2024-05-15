@@ -25,7 +25,7 @@
     },
     closed: {
       '@': {
-        $value: '{base.color.neutral.3}',
+        $value: '{fgColor.muted.@}',
         $type: 'color',
       },
     },
@@ -66,12 +66,11 @@
     },
     closed: {
       muted: {
-        $value: '{base.color.neutral.4}',
+        $value: '{bgColor.muted}',
         $type: 'color',
-        alpha: 0.4,
       },
       emphasis: {
-        $value: '{base.color.neutral.4}',
+        $value: '{bgColor.emphasis}',
         $type: 'color',
       },
     },
@@ -90,12 +89,11 @@
     },
     closed: {
       muted: {
-        $value: '{base.color.neutral.4}',
+        $value: '{borderColor.muted}',
         $type: 'color',
-        alpha: 0.4,
       },
       emphasis: {
-        $value: '{base.color.neutral.4}',
+        $value: '{borderColor.emphasis}',
         $type: 'color',
       },
     },
