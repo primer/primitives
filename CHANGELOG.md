@@ -1,5 +1,27 @@
 # @primer/primitives
 
+## 8.1.0
+
+### Minor Changes
+
+- [#926](https://github.com/primer/primitives/pull/926) [`8357f04`](https://github.com/primer/primitives/commit/8357f04fd3d24d8bf8730b25b537939c5e56a5f8) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Add css/mediaQuery formatter and replace use of cssWrapMediaQuery
+
+- [#931](https://github.com/primer/primitives/pull/931) [`518fbfc`](https://github.com/primer/primitives/commit/518fbfc42211033d3af24660d1e940b478f99995) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Replacing css/themed and css/variables with css/advanced
+
+### Patch Changes
+
+- [#941](https://github.com/primer/primitives/pull/941) [`7378534`](https://github.com/primer/primitives/commit/7378534a78dc99a6cd6fe6d5e9d2d5997edfaeda) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - change lineheight from pixel string to unitless pixel value, e.g. "24px" -> 24
+
+- [#937](https://github.com/primer/primitives/pull/937) [`6c7d120`](https://github.com/primer/primitives/commit/6c7d1204fa9608f676507341ab95f8f7c8fc47db) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Adding missing coral color to display colors
+
+## 8.0.0
+
+### Major Changes
+
+- [#917](https://github.com/primer/primitives/pull/917) [`273d8aa`](https://github.com/primer/primitives/commit/273d8aacdf2c99845ba58937ad5fb66a4fcf415e) Thanks [@langermank](https://github.com/langermank)! - Update `README` for v8 major release
+
+- [#874](https://github.com/primer/primitives/pull/874) [`c4e1275`](https://github.com/primer/primitives/commit/c4e1275e794a92e7cef4f9faab1ce7d6f2898dc4) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - removed v1 tokens and build process
+
 ## 7.17.0
 
 ### Minor Changes

@@ -12,7 +12,7 @@ jobs:
 
   diff:
     needs: changes
-    if: needs.changes.outputs.tokens == 'true' || github.event_name == 'workflow_dispatch'
+    if: needs.changes.outputs.outputAffected == 'true' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository

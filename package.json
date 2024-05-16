@@ -1,6 +1,6 @@
 {
   "name": "@primer/primitives",
-  "version": "7.17.0",
+  "version": "8.1.0",
   "description": "Typography, spacing, and color primitives for Primer design system",
   "files": [
     "dist",
@@ -23,7 +23,8 @@
   },
   "homepage": "https://github.com/primer/primitives#readme",
   "scripts": {
-    "build:next": "npm run build:v8 && npm run build:fallbacks && npm run build:figma",
+    "build": "npm run build:v8 && npm run build:fallbacks && npm run build:figma",
+    "build:next": "echo '\\033[31m 🛑 Use npm run build instead of npm run build:next\\033[0m'",
     "build:v8": "ts-node ./scripts/buildTokens.ts",
     "build:fallbacks": "ts-node ./scripts/buildFallbacks.ts",
     "build:figma": "ts-node scripts/buildFigma.ts",
@@ -36,11 +37,9 @@
     "lint:fix": "eslint '**/*.{js,ts,tsx,md,mdx}' --fix --max-warnings=0 --config .eslintrc.js",
     "lint:tokens": "ts-node ./scripts/validateTokenJson.ts",
     "prebuild": "rm -rf dist",
-    "prebuild:next": "rm -rf dist",
-    "prepack": "npm run build:next",
-    "prepare": "husky",
+    "prepack": "npm run build",
     "release": "changeset publish",
-    "start:storybook": "npm run build:next && cd docs/storybook && npm run storybook",
+    "start:storybook": "npm run build && cd docs/storybook && npm run storybook",
     "test": "jest --verbose --coverage"
   },
   "prettier": "@github/prettier-config",
@@ -69,7 +68,6 @@
     "eslint-plugin-react": "^7.29.4",
     "eslint-plugin-react-hooks": "^4.4.0",
     "eslint-plugin-storybook": "^0.6.15",
-    "husky": "^9.0.11",
     "jest": "^29.6.1",
     "json5": "^2.2.1",
     "markdown-table-ts": "^1.0.3",

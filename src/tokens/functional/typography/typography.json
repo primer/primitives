@@ -245,6 +245,9 @@
         "$value": 1.6,
         "$type": "number",
         "$extensions": {
+          "org.primer.data": {
+            "fontSize": 20
+          },
           "org.primer.figma": {
             "collection": "typography",
             "scopes": ["all"]
@@ -348,7 +351,13 @@
       },
       "weight": {
         "$value": "{base.text.weight.normal}",
-        "$type": "fontWeight"
+        "$type": "fontWeight",
+        "$extensions": {
+          "org.primer.figma": {
+            "collection": "typography",
+            "scopes": ["all"]
+          }
+        }
       },
       "shorthand": {
         "large": {

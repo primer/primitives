@@ -24,18 +24,17 @@ import {
   typographyToCss,
   dimensionToRemPxArray,
   floatToPixel,
+  floatToPixelUnitless,
 } from './transformers'
 import {
   javascriptCommonJs,
   javascriptEsm,
   typescriptExportDefinition,
   jsonNestedPrefixed,
-  cssThemed,
   cssCustomMedia,
   jsonOneDimensional,
   jsonPostCssFallback,
-  cssWrapMediaQuery,
-  cssVariables,
+  cssAdvanced,
   jsonFigma,
 } from './formats'
 
@@ -50,23 +49,13 @@ StyleDictionary.registerParser(w3cJsonParser)
  *
  */
 StyleDictionary.registerFormat({
-  name: 'css/themed',
-  formatter: cssThemed,
+  name: 'css/advanced',
+  formatter: cssAdvanced,
 })
 
 StyleDictionary.registerFormat({
   name: 'css/customMedia',
   formatter: cssCustomMedia,
-})
-
-StyleDictionary.registerFormat({
-  name: 'css/wrapMediaQuery',
-  formatter: cssWrapMediaQuery,
-})
-
-StyleDictionary.registerFormat({
-  name: 'css/variables',
-  formatter: cssVariables,
 })
 
 StyleDictionary.registerFormat({
@@ -136,6 +125,11 @@ StyleDictionary.registerTransform({
 StyleDictionary.registerTransform({
   name: 'float/pixel',
   ...floatToPixel,
+})
+
+StyleDictionary.registerTransform({
+  name: 'float/pixelUnitless',
+  ...floatToPixelUnitless,
 })
 
 StyleDictionary.registerTransform({

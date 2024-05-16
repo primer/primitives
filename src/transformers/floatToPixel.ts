@@ -5,7 +5,7 @@ import {isNumber} from '../filters'
  * @param value
  * @returns string
  */
-export const convertFloatToPixel = (token: StyleDictionary.TransformedToken) => {
+export const convertFloatToPixel = (token: StyleDictionary.TransformedToken, unitless = false) => {
   // short circut if value is not a number
   if (
     typeof token.value !== 'number' ||
@@ -17,7 +17,7 @@ export const convertFloatToPixel = (token: StyleDictionary.TransformedToken) => 
   // convert value
   const convertedValue = token.$extensions?.['org.primer.data']?.fontSize * token.value
   // return converted value
-  return convertedValue === 0 ? 0 : `${Math.round(convertedValue)}px`
+  return convertedValue === 0 ? 0 : unitless ? Math.round(convertedValue) : `${Math.round(convertedValue)}px`
 }
 /**
  * @description converts a float value to a pixel value based on the provided fontSize on the tokersn extension
@@ -30,4 +30,11 @@ export const floatToPixel: StyleDictionary.Transform = {
   transitive: true,
   matcher: isNumber,
   transformer: (token: StyleDictionary.TransformedToken): string => convertFloatToPixel(token),
+}
+
+export const floatToPixelUnitless: StyleDictionary.Transform = {
+  type: `value`,
+  transitive: true,
+  matcher: isNumber,
+  transformer: (token: StyleDictionary.TransformedToken): string => convertFloatToPixel(token, true),
 }

@@ -16,7 +16,7 @@ jobs:
     with:
       node_version: 20
       install: npm ci --no-audit --no-fund --ignore-scripts && npm run install:storybook
-      build: npm run build:next && cd docs/storybook && npm run build:preview
+      build: npm run build && cd docs/storybook && npm run build:preview
       output_dir: docs/public
 
   post_storybook:
@@ -31,14 +31,14 @@ jobs:
         id: deployment
         with:
           token: '${{ secrets.GITHUB_TOKEN }}'
-          environment-url: ${{needs.deploy.outputs.deployment_url}}/storybook
-          environment: storybook-preview
+          environment-url: ${{needs.deploy.outputs.deployment_url}}storybook
+          environment: Preview (Storybook)
       - name: Update deployment status (success)
         if: success()
         uses: chrnorm/deployment-status@v2
         with:
           token: '${{ secrets.GITHUB_TOKEN }}'
-          environment-url: ${{needs.deploy.outputs.deployment_url}}/storybook
+          environment-url: ${{needs.deploy.outputs.deployment_url}}storybook
           state: 'success'
           deployment-id: ${{ steps.deployment.outputs.deployment_id }}
       - name: Update deployment status (failure)
@@ -46,6 +46,6 @@ jobs:
         uses: chrnorm/deployment-status@v2
         with:
           token: '${{ secrets.GITHUB_TOKEN }}'
-          environment-url: ${{needs.deploy.outputs.deployment_url}}/storybook
+          environment-url: ${{needs.deploy.outputs.deployment_url}}storybook
           state: 'failure'
           deployment-id: ${{ steps.deployment.outputs.deployment_id }}
