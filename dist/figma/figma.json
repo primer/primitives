@@ -25,12 +25,28 @@
         "base/size"
       ]
     },
+    "base/color/dark-dimmed": {
+      "modes": [
+        "default"
+      ],
+      "groups": [
+        "base/color/dark-dimmed"
+      ]
+    },
     "base/color/dark": {
       "modes": [
         "default"
       ],
       "groups": [
         "base/color/dark"
+      ]
+    },
+    "base/color/dark-high-contrast": {
+      "modes": [
+        "default"
+      ],
+      "groups": [
+        "base/color/dark-high-contrast"
       ]
     },
     "base/color/light": {
@@ -41,24 +57,77 @@
         "base/color/light"
       ]
     },
+    "base/color/light-high-contrast": {
+      "modes": [
+        "default"
+      ],
+      "groups": [
+        "base/color/light-high-contrast"
+      ]
+    },
     "mode": {
       "modes": [
         "light",
-        "dark"
+        "dark",
+        "dark dimmed",
+        "light high contrast",
+        "dark high contrast",
+        "light colorblind",
+        "dark colorblind",
+        "light tritanopia",
+        "dark tritanopia"
       ],
       "groups": [
+        "shadow",
+        "component shadow",
         "syntax",
         "semantic",
-        "component (internal)",
-        "component"
+        "component",
+        "component (internal)"
+      ]
+    },
+    "typography": {
+      "modes": [
+        "default"
+      ],
+      "groups": [
+        "typography"
+      ]
+    },
+    "base/typography": {
+      "modes": [
+        "default"
+      ],
+      "groups": [
+        "base/typography"
       ]
     }
   },
   "files": [
     "dist/figma/dimension/dimension.json",
+    "dist/figma/scales/dark-dimmed.json",
+    "dist/figma/scales/dark-high-constrast.json",
     "dist/figma/scales/dark.json",
+    "dist/figma/scales/light-high-constrast.json",
     "dist/figma/scales/light.json",
+    "dist/figma/shadows/dark-colorblind.json",
+    "dist/figma/shadows/dark-dimmed.json",
+    "dist/figma/shadows/dark-high-contrast.json",
+    "dist/figma/shadows/dark-tritanopia.json",
+    "dist/figma/shadows/dark.json",
+    "dist/figma/shadows/light-colorblind.json",
+    "dist/figma/shadows/light-high-contrast.json",
+    "dist/figma/shadows/light-tritanopia.json",
+    "dist/figma/shadows/light.json",
+    "dist/figma/themes/dark-colorblind.json",
+    "dist/figma/themes/dark-dimmed.json",
+    "dist/figma/themes/dark-high-contrast.json",
+    "dist/figma/themes/dark-tritanopia.json",
     "dist/figma/themes/dark.json",
-    "dist/figma/themes/light.json"
+    "dist/figma/themes/light-colorblind.json",
+    "dist/figma/themes/light-high-contrast.json",
+    "dist/figma/themes/light-tritanopia.json",
+    "dist/figma/themes/light.json",
+    "dist/figma/typography/typography.json"
   ]
 }

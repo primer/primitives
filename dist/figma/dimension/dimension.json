@@ -53,6 +53,16 @@
     }
   },
   {
+    "name": "overlay/offset",
+    "value": 4,
+    "type": "FLOAT",
+    "refId": "pattern/size/overlay/offset",
+    "collection": "pattern/size",
+    "mode": "default",
+    "group": "pattern/size",
+    "scopes": ["WIDTH_HEIGHT"]
+  },
+  {
     "name": "overlay/height/xlarge",
     "value": 600,
     "type": "FLOAT",
@@ -423,10 +433,30 @@
     "scopes": ["WIDTH_HEIGHT"]
   },
   {
+    "name": "base/size/6",
+    "value": 6,
+    "type": "FLOAT",
+    "refId": "base/size/base/size/6",
+    "collection": "base/size",
+    "mode": "default",
+    "group": "base/size",
+    "scopes": ["WIDTH_HEIGHT"]
+  },
+  {
     "name": "base/size/4",
     "value": 4,
     "type": "FLOAT",
     "refId": "base/size/base/size/4",
+    "collection": "base/size",
+    "mode": "default",
+    "group": "base/size",
+    "scopes": ["WIDTH_HEIGHT"]
+  },
+  {
+    "name": "base/size/2",
+    "value": 2,
+    "type": "FLOAT",
+    "refId": "base/size/base/size/2",
     "collection": "base/size",
     "mode": "default",
     "group": "base/size",

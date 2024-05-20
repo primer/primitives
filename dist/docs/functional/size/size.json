@@ -1027,6 +1027,7 @@
   "space-xxsmall": {
     "value": "0.125rem",
     "$type": "dimension",
+    "deprecated": "Use --base-size-2 instead",
     "$extensions": {
       "org.primer.figma": {
         "collection": "functional/size",
@@ -1038,6 +1039,7 @@
     "original": {
       "value": "2px",
       "$type": "dimension",
+      "deprecated": "Use --base-size-2 instead",
       "$extensions": {
         "org.primer.figma": {
           "collection": "functional/size",
@@ -1052,6 +1054,7 @@
   "space-xsmall": {
     "value": "0.25rem",
     "$type": "dimension",
+    "deprecated": "Use --base-size-4 instead",
     "$extensions": {
       "org.primer.figma": {
         "collection": "functional/size",
@@ -1063,6 +1066,7 @@
     "original": {
       "value": "{base.size.4}",
       "$type": "dimension",
+      "deprecated": "Use --base-size-4 instead",
       "$extensions": {
         "org.primer.figma": {
           "collection": "functional/size",
@@ -1077,6 +1081,7 @@
   "space-small": {
     "value": "0.375rem",
     "$type": "dimension",
+    "deprecated": "Use --base-size-6 instead",
     "$extensions": {
       "org.primer.figma": {
         "collection": "functional/size",
@@ -1088,6 +1093,7 @@
     "original": {
       "value": "6px",
       "$type": "dimension",
+      "deprecated": "Use --base-size-6 instead",
       "$extensions": {
         "org.primer.figma": {
           "collection": "functional/size",
@@ -1102,6 +1108,7 @@
   "space-medium": {
     "value": "0.5rem",
     "$type": "dimension",
+    "deprecated": "Use --base-size-8 instead",
     "$extensions": {
       "org.primer.figma": {
         "collection": "functional/size",
@@ -1113,6 +1120,7 @@
     "original": {
       "value": "{base.size.8}",
       "$type": "dimension",
+      "deprecated": "Use --base-size-8 instead",
       "$extensions": {
         "org.primer.figma": {
           "collection": "functional/size",
@@ -1127,6 +1135,7 @@
   "space-large": {
     "value": "0.75rem",
     "$type": "dimension",
+    "deprecated": "Use --base-size-12 instead",
     "$extensions": {
       "org.primer.figma": {
         "collection": "functional/size",
@@ -1138,6 +1147,7 @@
     "original": {
       "value": "{base.size.12}",
       "$type": "dimension",
+      "deprecated": "Use --base-size-12 instead",
       "$extensions": {
         "org.primer.figma": {
           "collection": "functional/size",
@@ -1152,6 +1162,7 @@
   "space-xlarge": {
     "value": "1rem",
     "$type": "dimension",
+    "deprecated": "Use --base-size-16 instead",
     "$extensions": {
       "org.primer.figma": {
         "collection": "functional/size",
@@ -1163,6 +1174,7 @@
     "original": {
       "value": "{base.size.16}",
       "$type": "dimension",
+      "deprecated": "Use --base-size-16 instead",
       "$extensions": {
         "org.primer.figma": {
           "collection": "functional/size",
@@ -1809,5 +1821,30 @@
     "name": "overlay-borderRadius",
     "attributes": {},
     "path": ["overlay", "borderRadius"]
+  },
+  "overlay-offset": {
+    "value": "0.25rem",
+    "$type": "dimension",
+    "$extensions": {
+      "org.primer.figma": {
+        "collection": "pattern/size",
+        "scopes": ["size"]
+      }
+    },
+    "filePath": "src/tokens/functional/size/size.json",
+    "isSource": true,
+    "original": {
+      "value": "4px",
+      "$type": "dimension",
+      "$extensions": {
+        "org.primer.figma": {
+          "collection": "pattern/size",
+          "scopes": ["size"]
+        }
+      }
+    },
+    "name": "overlay-offset",
+    "attributes": {},
+    "path": ["overlay", "offset"]
   }
 }

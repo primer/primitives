@@ -2,11 +2,23 @@
   "base-text-weight-light": {
     "$type": "fontWeight",
     "value": 300,
+    "$extensions": {
+      "org.primer.figma": {
+        "collection": "base/typography",
+        "scopes": ["all"]
+      }
+    },
     "filePath": "src/tokens/base/typography/typography.json",
     "isSource": true,
     "original": {
       "$type": "fontWeight",
-      "value": 300
+      "value": 300,
+      "$extensions": {
+        "org.primer.figma": {
+          "collection": "base/typography",
+          "scopes": ["all"]
+        }
+      }
     },
     "name": "base-text-weight-light",
     "attributes": {},
@@ -15,11 +27,23 @@
   "base-text-weight-normal": {
     "value": 400,
     "$type": "fontWeight",
+    "$extensions": {
+      "org.primer.figma": {
+        "collection": "base/typography",
+        "scopes": ["all"]
+      }
+    },
     "filePath": "src/tokens/base/typography/typography.json",
     "isSource": true,
     "original": {
       "value": 400,
-      "$type": "fontWeight"
+      "$type": "fontWeight",
+      "$extensions": {
+        "org.primer.figma": {
+          "collection": "base/typography",
+          "scopes": ["all"]
+        }
+      }
     },
     "name": "base-text-weight-normal",
     "attributes": {},
@@ -28,11 +52,23 @@
   "base-text-weight-medium": {
     "value": 500,
     "$type": "fontWeight",
+    "$extensions": {
+      "org.primer.figma": {
+        "collection": "base/typography",
+        "scopes": ["all"]
+      }
+    },
     "filePath": "src/tokens/base/typography/typography.json",
     "isSource": true,
     "original": {
       "value": 500,
-      "$type": "fontWeight"
+      "$type": "fontWeight",
+      "$extensions": {
+        "org.primer.figma": {
+          "collection": "base/typography",
+          "scopes": ["all"]
+        }
+      }
     },
     "name": "base-text-weight-medium",
     "attributes": {},
@@ -41,11 +77,23 @@
   "base-text-weight-semibold": {
     "value": 600,
     "$type": "fontWeight",
+    "$extensions": {
+      "org.primer.figma": {
+        "collection": "base/typography",
+        "scopes": ["all"]
+      }
+    },
     "filePath": "src/tokens/base/typography/typography.json",
     "isSource": true,
     "original": {
       "value": 600,
-      "$type": "fontWeight"
+      "$type": "fontWeight",
+      "$extensions": {
+        "org.primer.figma": {
+          "collection": "base/typography",
+          "scopes": ["all"]
+        }
+      }
     },
     "name": "base-text-weight-semibold",
     "attributes": {},
