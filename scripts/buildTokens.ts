@@ -6,6 +6,7 @@ import type {ConfigGeneratorOptions, StyleDictionaryConfigGenerator} from '../sr
 import type {TokenBuildInput} from '../src/types/TokenBuildInput'
 import glob from 'fast-glob'
 import {themes} from './themes.config'
+import fs from 'fs'
 
 /**
  * getStyleDictionaryConfig
@@ -212,6 +213,14 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
    * Copy `removed` files
    * ----------------------------------- */
   copyFromDir(`src/tokens/removed`, `${buildOptions.buildPath}removed`)
+  /** -----------------------------------
+   * Roll up
+   * ----------------------------------- */
+  const contents = glob.sync('dist/css/{base,functional}/{motion,size,typography}/**/*.css').map(path => {
+    return fs.readFileSync(path, 'utf8').trim()
+  })
+
+  fs.writeFileSync('dist/css/primer.css', `${contents.join('\n')}\n`)
 }
 
 /** -----------------------------------
