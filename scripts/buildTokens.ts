@@ -213,14 +213,24 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
    * Copy `removed` files
    * ----------------------------------- */
   copyFromDir(`src/tokens/removed`, `${buildOptions.buildPath}removed`)
+
   /** -----------------------------------
-   * Roll up
+   * Roll up common files
    * ----------------------------------- */
-  const contents = glob.sync('dist/css/{base,functional}/{motion,size,typography}/**/*.css').map(path => {
+  const commonContents = glob.sync('dist/css/{base,functional}/{motion,size,typography}/**/*.css').map(path => {
     return fs.readFileSync(path, 'utf8').trim()
   })
 
-  fs.writeFileSync('dist/css/primer.css', `${contents.join('\n')}\n`)
+  fs.writeFileSync('dist/css/primer.css', `${commonContents.join('\n')}\n`)
+
+  /** -----------------------------------
+   * Roll up themes
+   * ----------------------------------- */
+  const themeContents = glob.sync('dist/css/functional/themes/*.css').map(path => {
+    return fs.readFileSync(path, 'utf8').trim()
+  })
+
+  fs.writeFileSync('dist/css/functional/themes/all.css', `${themeContents.join('\n')}\n`)
 }
 
 /** -----------------------------------
