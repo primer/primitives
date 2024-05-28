@@ -7,6 +7,7 @@ import type {TokenBuildInput} from '../src/types/TokenBuildInput'
 import glob from 'fast-glob'
 import {themes} from './themes.config'
 import fs from 'fs'
+import path from 'path'
 
 /**
  * getStyleDictionaryConfig
@@ -215,22 +216,23 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
   copyFromDir(`src/tokens/removed`, `${buildOptions.buildPath}removed`)
 
   /** -----------------------------------
-   * Roll up common files
+   * Roll up
    * ----------------------------------- */
-  const commonContents = glob.sync('dist/css/{base,functional}/{motion,size,typography}/**/*.css').map(path => {
-    return fs.readFileSync(path, 'utf8').trim()
+  for (const dir of glob.sync('dist/css/{base,functional}/{motion,size,typography,themes}', {onlyDirectories: true})) {
+    const contents = glob.sync(path.join(dir, '**/*.css')).map(cssFile => {
+      return fs.readFileSync(cssFile, 'utf8').trim()
+    })
+
+    if (contents.length > 0) {
+      fs.writeFileSync(`${dir}.css`, `${contents.join('\n')}\n`)
+    }
+  }
+
+  const commonContents = glob.sync('dist/css/{base,functional}/{motion,size,typography}/**/*.css').map(cssFile => {
+    return fs.readFileSync(cssFile, 'utf8').trim()
   })
 
   fs.writeFileSync('dist/css/primer.css', `${commonContents.join('\n')}\n`)
-
-  /** -----------------------------------
-   * Roll up themes
-   * ----------------------------------- */
-  const themeContents = glob.sync('dist/css/functional/themes/*.css').map(path => {
-    return fs.readFileSync(path, 'utf8').trim()
-  })
-
-  fs.writeFileSync('dist/css/functional/themes/all.css', `${themeContents.join('\n')}\n`)
 }
 
 /** -----------------------------------
