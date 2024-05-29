@@ -135,6 +135,12 @@
       $type: 'color',
     },
   },
+  counter: {
+    borderColor: {
+      $value: '{borderColor.default}',
+      $type: 'color',
+    },
+  },
   control: {
     bgColor: {
       rest: {
@@ -489,6 +495,11 @@
     },
   },
   overlay: {
+    borderColor: {
+      $value: '{borderColor.default}',
+      $type: 'color',
+      alpha: null,
+    },
     backdrop: {
       bgColor: {
         $value: '{base.color.neutral.11}',
