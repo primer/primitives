@@ -1804,6 +1804,18 @@
           alpha: 0.2,
         },
       },
+      borderColor: {
+        $value: '{button.primary.borderColor.rest}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'light',
+            group: 'component (internal)',
+            scopes: ['borderColor'],
+          },
+        },
+      },
     },
     outline: {
       bgColor: {
