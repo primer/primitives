@@ -72,11 +72,11 @@
     },
     closed: {
       muted: {
-        $value: '{bgColor.muted}',
+        $value: '{bgColor.neutral.muted}',
         $type: 'color',
       },
       emphasis: {
-        $value: '{bgColor.emphasis}',
+        $value: '{bgColor.neutral.emphasis}',
         $type: 'color',
       },
     },
