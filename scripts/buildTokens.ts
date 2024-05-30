@@ -6,6 +6,7 @@ import type {ConfigGeneratorOptions, StyleDictionaryConfigGenerator} from '../sr
 import type {TokenBuildInput} from '../src/types/TokenBuildInput'
 import glob from 'fast-glob'
 import {themes} from './themes.config'
+import fs from 'fs'
 
 /**
  * getStyleDictionaryConfig
@@ -212,6 +213,34 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
    * Copy `removed` files
    * ----------------------------------- */
   copyFromDir(`src/tokens/removed`, `${buildOptions.buildPath}removed`)
+
+  const excludePaths = [
+    (path: string) => {
+      return path === 'dist/css/functional/size/viewport.css'
+    },
+    (path: string) => {
+      return path.startsWith('dist/css/functional/themes/')
+    },
+  ]
+
+  const all: string[] = []
+
+  for (const cssFile of glob.sync('dist/css/{base,functional}/**/*.css')) {
+    let skip = false
+
+    for (const matcher of excludePaths) {
+      if (matcher(cssFile)) {
+        skip = true
+        break
+      }
+    }
+
+    if (skip) continue
+
+    all.push(fs.readFileSync(cssFile, {encoding: 'utf8'}).trim())
+  }
+
+  fs.writeFileSync('dist/css/primitives.css', `${all.join('\n')}\n`)
 }
 
 /** -----------------------------------
