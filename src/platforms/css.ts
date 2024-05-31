@@ -87,11 +87,11 @@ export const css: PlatformInitializer = (outputFile, prefix, buildPath, options)
           queries: [
             {
               query: '@media (pointer: fine)',
-              matcher: (token: TransformedToken) => token.path.includes('size-fine'),
+              matcher: (token: TransformedToken) => token.filePath.includes('size-fine'),
             },
             {
               query: '@media (pointer: coarse)',
-              matcher: (token: TransformedToken) => token.path.includes('size-coarse'),
+              matcher: (token: TransformedToken) => token.filePath.includes('size-coarse'),
             },
           ],
         },
