@@ -11,6 +11,15 @@ type FigmaVariableScope =
   | 'SHAPE_FILL'
   | 'TEXT_FILL'
   | 'STROKE_COLOR'
+  | 'OPACITY'
+  | 'FONT_FAMILY'
+  | 'FONT_STYLE'
+  | 'FONT_WEIGHT'
+  | 'FONT_SIZE'
+  | 'LINE_HEIGHT'
+  | 'LETTER_SPACING'
+  | 'PARAGRAPH_SPACING'
+  | 'PARAGRAPH_INDENT'
 
 const figmaScopes: Record<string, FigmaVariableScope[]> = {
   all: ['ALL_SCOPES'],
@@ -20,6 +29,14 @@ const figmaScopes: Record<string, FigmaVariableScope[]> = {
   bgColor: ['FRAME_FILL', 'SHAPE_FILL'],
   fgColor: ['TEXT_FILL', 'SHAPE_FILL'],
   borderColor: ['STROKE_COLOR'],
+  fontFamily: ['FONT_FAMILY'],
+  fontStyle: ['FONT_STYLE'],
+  fontWeight: ['FONT_WEIGHT'],
+  fontSize: ['FONT_SIZE'],
+  lineHeight: ['LINE_HEIGHT'],
+  letterSpacing: ['LETTER_SPACING'],
+  paragraphSpacing: ['PARAGRAPH_SPACING'],
+  paragraphIndent: ['PARAGRAPH_INDENT'],
 }
 
 const getScopes = (scopes: string[] | string | undefined): FigmaVariableScope[] => {
