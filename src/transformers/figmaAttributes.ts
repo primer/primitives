@@ -29,6 +29,7 @@ const figmaScopes: Record<string, FigmaVariableScope[]> = {
   bgColor: ['FRAME_FILL', 'SHAPE_FILL'],
   fgColor: ['TEXT_FILL', 'SHAPE_FILL'],
   borderColor: ['STROKE_COLOR'],
+  opacity: ['OPACITY'],
   fontFamily: ['FONT_FAMILY'],
   fontStyle: ['FONT_STYLE'],
   fontWeight: ['FONT_WEIGHT'],
