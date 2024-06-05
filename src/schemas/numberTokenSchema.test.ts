@@ -11,7 +11,7 @@ describe('Schema: numberToken', () => {
       },
       'org.primer.figma': {
         collection: 'typography',
-        scopes: ['all'],
+        scopes: ['fontWeight'],
       },
     },
   }
