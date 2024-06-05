@@ -1,5 +1,15 @@
 # @primer/primitives
 
+## 8.2.1
+
+### Patch Changes
+
+- [#963](https://github.com/primer/primitives/pull/963) [`8b726b8`](https://github.com/primer/primitives/commit/8b726b87c9fb62bd414f86aaf416b3cd38675f2e) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Fix to output size fine and coarse as css
+
+- [#961](https://github.com/primer/primitives/pull/961) [`0828682`](https://github.com/primer/primitives/commit/08286825c486b11088a1cd091533fcab90ce120c) Thanks [@langermank](https://github.com/langermank)! - Add `primitives.css` index file
+
+- [#964](https://github.com/primer/primitives/pull/964) [`587ba02`](https://github.com/primer/primitives/commit/587ba02797db998960acfb8e4a46353058f01476) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Updates the figma build process to add and use new typographic scopes
+
 ## 8.2.0
 
 ### Minor Changes
