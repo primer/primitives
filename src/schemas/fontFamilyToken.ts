@@ -13,7 +13,7 @@ export const fontFamilyToken = baseToken
       .object({
         'org.primer.figma': z.object({
           collection: collection(['base/typography', 'typography']).optional(),
-          scopes: scopes(['all']).optional(),
+          scopes: scopes(['fontFamily']).optional(),
         }),
       })
       .optional(),

@@ -19,7 +19,7 @@ export const numberToken = baseToken
         'org.primer.figma': z
           .object({
             collection: collection(['typography']).optional(),
-            scopes: scopes(['all']).optional(),
+            scopes: scopes(['fontWeight', 'lineHeight']).optional(),
           })
           .optional(),
       })
