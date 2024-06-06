@@ -1,5 +1,11 @@
 # @primer/primitives
 
+## 8.2.2
+
+### Patch Changes
+
+- [#965](https://github.com/primer/primitives/pull/965) [`43ddc91`](https://github.com/primer/primitives/commit/43ddc916c07e9a555baa69ef32c71a6aa3dcbb0d) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Adding scope to type tokens
+
 ## 8.2.1
 
 ### Patch Changes
