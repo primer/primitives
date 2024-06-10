@@ -14,7 +14,7 @@ export const fontWeightToken = baseToken
       .object({
         'org.primer.figma': z.object({
           collection: collection(['base/typography', 'typography']).optional(),
-          scopes: scopes(['all']).optional(),
+          scopes: scopes(['fontWeight']).optional(),
         }),
       })
       .optional(),

@@ -4,7 +4,8 @@
 
 This repo contains values for color, spacing, and typography primitives for use with [Primer][primer], GitHub's design system.
 
-![primer primitives diagram](https://user-images.githubusercontent.com/4608155/135384588-192c279f-020f-4544-a61f-559be6629f18.png)
+![primer primitives diagram showing how the package connects with other primer libraries](./readme-light.png#gh-light-mode-only)
+![primer primitives diagram showing how the package connects with other primer libraries](./readme-dark.png#gh-dark-mode-only)
 
 ## Install
 
@@ -32,8 +33,6 @@ All available imports:
 @import '@primer/primitives/dist/css/base/typography/typography.css';
 @import '@primer/primitives/dist/css/functional/size/border.css';
 @import '@primer/primitives/dist/css/functional/size/breakpoints.css';
-@import '@primer/primitives/dist/css/functional/size/size-coarse.css';
-@import '@primer/primitives/dist/css/functional/size/size-fine.css';
 @import '@primer/primitives/dist/css/functional/size/size.css';
 @import '@primer/primitives/dist/css/functional/size/viewport.css';
 @import '@primer/primitives/dist/css/functional/typography/typography.css';

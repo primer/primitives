@@ -14,7 +14,18 @@ export const dimensionToken = baseToken
       .object({
         'org.primer.figma': z.object({
           collection: collection(['base/size', 'functional/size', 'pattern/size', 'typography']),
-          scopes: scopes(['all', 'size', 'gap', 'radius', 'borderColor']),
+          scopes: scopes([
+            'all',
+            'size',
+            'gap',
+            'radius',
+            'borderColor',
+            'fontSize',
+            'letterSpacing',
+            'lineHeight',
+            'paragraphSpacing',
+            'paragraphIndent',
+          ]),
         }),
       })
       .optional(),
