@@ -1,5 +1,41 @@
 # @primer/primitives
 
+## 8.2.2
+
+### Patch Changes
+
+- [#965](https://github.com/primer/primitives/pull/965) [`43ddc91`](https://github.com/primer/primitives/commit/43ddc916c07e9a555baa69ef32c71a6aa3dcbb0d) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Adding scope to type tokens
+
+## 8.2.1
+
+### Patch Changes
+
+- [#963](https://github.com/primer/primitives/pull/963) [`8b726b8`](https://github.com/primer/primitives/commit/8b726b87c9fb62bd414f86aaf416b3cd38675f2e) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Fix to output size fine and coarse as css
+
+- [#961](https://github.com/primer/primitives/pull/961) [`0828682`](https://github.com/primer/primitives/commit/08286825c486b11088a1cd091533fcab90ce120c) Thanks [@langermank](https://github.com/langermank)! - Add `primitives.css` index file
+
+- [#964](https://github.com/primer/primitives/pull/964) [`587ba02`](https://github.com/primer/primitives/commit/587ba02797db998960acfb8e4a46353058f01476) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Updates the figma build process to add and use new typographic scopes
+
+## 8.2.0
+
+### Minor Changes
+
+- [#954](https://github.com/primer/primitives/pull/954) [`8c4f775`](https://github.com/primer/primitives/commit/8c4f775b4643fc9af0ce4f42604a50d3970e4e4b) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Deprecated space tokens
+
+### Patch Changes
+
+- [#948](https://github.com/primer/primitives/pull/948) [`56226cd`](https://github.com/primer/primitives/commit/56226cd0bd148a854d7376bed81ed2c44c112c88) Thanks [@smockle](https://github.com/smockle)! - Increase secondary text contrast in hovered ActionMenu items (dark mode) by making fgColor-muted brighter.
+
+- [#942](https://github.com/primer/primitives/pull/942) [`0eb2320`](https://github.com/primer/primitives/commit/0eb23203b8b6012c489f2440a46739b084cc6b86) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Add missing plum color to display colors
+
+- [#881](https://github.com/primer/primitives/pull/881) [`adc84b5`](https://github.com/primer/primitives/commit/adc84b5df830fd8d24ae7e39c452a1230222b017) Thanks [@langermank](https://github.com/langermank)! - Add new set of `muted` data-vis colors for charts
+
+- [#953](https://github.com/primer/primitives/pull/953) [`09d1380`](https://github.com/primer/primitives/commit/09d13806cda2bcc4f2ef20a23346adeec932be4b) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Added 2px and 6px size to base scale
+
+- [#944](https://github.com/primer/primitives/pull/944) [`02777f6`](https://github.com/primer/primitives/commit/02777f61f6094f3134e40d75f553123c726f0d25) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Added body-weight token to figma output
+
+- [#950](https://github.com/primer/primitives/pull/950) [`f0149e1`](https://github.com/primer/primitives/commit/f0149e13960592161b5be34f9759e17deaddc465) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Added missing prop which lead to wrong output for subtitle line-height in Figma
+
 ## 8.1.0
 
 ### Minor Changes

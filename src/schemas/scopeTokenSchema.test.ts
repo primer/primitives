@@ -1,7 +1,25 @@
 import type {ValidScope} from './scopes'
 import {scopes} from './scopes'
 
-const validScopes: ValidScope[] = ['all', 'bgColor', 'fgColor', 'borderColor', 'size', 'gap', 'radius']
+const validScopes: ValidScope[] = [
+  'all',
+  'bgColor',
+  'fgColor',
+  'borderColor',
+  'size',
+  'gap',
+  'radius',
+  'effectColor',
+  'opacity',
+  'fontFamily',
+  'fontStyle',
+  'fontWeight',
+  'fontSize',
+  'lineHeight',
+  'letterSpacing',
+  'paragraphSpacing',
+  'paragraphIndent',
+]
 const scopeSchema = scopes(validScopes)
 
 describe('Schema: scopes', () => {
@@ -13,8 +31,36 @@ describe('Schema: scopes', () => {
     expect(scopeSchema.safeParse(['size']).success).toStrictEqual(true)
     expect(scopeSchema.safeParse(['gap']).success).toStrictEqual(true)
     expect(scopeSchema.safeParse(['radius']).success).toStrictEqual(true)
+    expect(scopeSchema.safeParse(['effectColor']).success).toStrictEqual(true)
+    expect(scopeSchema.safeParse(['opacity']).success).toStrictEqual(true)
+    expect(scopeSchema.safeParse(['fontFamily']).success).toStrictEqual(true)
+    expect(scopeSchema.safeParse(['fontStyle']).success).toStrictEqual(true)
+    expect(scopeSchema.safeParse(['fontWeight']).success).toStrictEqual(true)
+    expect(scopeSchema.safeParse(['fontSize']).success).toStrictEqual(true)
+    expect(scopeSchema.safeParse(['lineHeight']).success).toStrictEqual(true)
+    expect(scopeSchema.safeParse(['letterSpacing']).success).toStrictEqual(true)
+    expect(scopeSchema.safeParse(['paragraphSpacing']).success).toStrictEqual(true)
+    expect(scopeSchema.safeParse(['paragraphIndent']).success).toStrictEqual(true)
     expect(
-      scopeSchema.safeParse(['all', 'bgColor', 'fgColor', 'borderColor', 'size', 'gap', 'radius']).success,
+      scopeSchema.safeParse([
+        'all',
+        'bgColor',
+        'fgColor',
+        'borderColor',
+        'size',
+        'gap',
+        'radius',
+        'effectColor',
+        'opacity',
+        'fontFamily',
+        'fontStyle',
+        'fontWeight',
+        'fontSize',
+        'lineHeight',
+        'letterSpacing',
+        'paragraphSpacing',
+        'paragraphIndent',
+      ]).success,
     ).toStrictEqual(true)
     expect(scopeSchema.safeParse([]).success).toStrictEqual(true)
   })
