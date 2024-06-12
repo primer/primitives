@@ -202,7 +202,7 @@
     },
     expander: {
       iconColor: {
-        $value: '{fgColor.muted.@}',
+        $value: '{fgColor.muted}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -269,7 +269,7 @@
           },
         },
         muted: {
-          $value: '{fgColor.muted.@}',
+          $value: '{fgColor.muted}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -284,7 +284,7 @@
     },
     lineNumber: {
       fgColor: {
-        $value: '{fgColor.muted.@}',
+        $value: '{fgColor.muted}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -509,7 +509,7 @@
     },
     borderColor: {
       divider: {
-        $value: '{base.color.neutral.10}',
+        $value: '{base.color.neutral.9}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -536,7 +536,7 @@
       },
     },
     borderColor: {
-      $value: '{base.color.neutral.10}',
+      $value: '{base.color.neutral.9}',
       $type: 'color',
       $extensions: {
         'org.primer.figma': {

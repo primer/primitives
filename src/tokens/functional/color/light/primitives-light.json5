@@ -16,42 +16,16 @@
       },
     },
     muted: {
-      '@': {
-        $value: '{base.color.neutral.7}',
-        $type: 'color',
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'mode',
-            mode: 'light',
-            group: 'semantic',
-            scopes: ['fgColor'],
-            codeSyntax: {
-              web: 'var(--fgColor-muted) /* utility class: .color-fg-muted */',
-            },
-          },
-        },
-      },
-      hover: {
-        $value: '{base.color.neutral.8}',
-        $type: 'color',
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'mode',
-            mode: 'light',
-            group: 'semantic',
-            scopes: ['fgColor'],
-          },
-        },
-      },
-      active: {
-        $value: '{base.color.neutral.9}',
-        $type: 'color',
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'mode',
-            mode: 'light',
-            group: 'semantic',
-            scopes: ['fgColor'],
+      $value: '{base.color.neutral.8}',
+      $type: 'color',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'mode',
+          mode: 'light',
+          group: 'semantic',
+          scopes: ['fgColor'],
+          codeSyntax: {
+            web: 'var(--fgColor-muted) /* utility class: .color-fg-muted */',
           },
         },
       },
@@ -127,7 +101,7 @@
     },
     neutral: {
       '@': {
-        $value: '{base.color.neutral.7}',
+        $value: '{base.color.neutral.8}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -361,7 +335,7 @@
       },
     },
     emphasis: {
-      $value: '{base.color.neutral.14}',
+      $value: '{base.color.neutral.11}',
       $type: 'color',
       $extensions: {
         'org.primer.figma': {
@@ -376,7 +350,7 @@
       },
     },
     inverse: {
-      $value: '{base.color.neutral.14}',
+      $value: '{base.color.neutral.11}',
       $type: 'color',
       $extensions: {
         'org.primer.figma': {
@@ -452,7 +426,7 @@
         },
       },
       emphasis: {
-        $value: '{base.color.neutral.7}',
+        $value: '{base.color.neutral.8}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {

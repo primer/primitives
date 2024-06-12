@@ -196,7 +196,7 @@
         },
       },
       selected: {
-        $value: '{base.color.neutral.14}',
+        $value: '{base.color.neutral.11}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -246,31 +246,7 @@
     },
     iconColor: {
       rest: {
-        $value: '{fgColor.muted.@}',
-        $type: 'color',
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'mode',
-            mode: 'dark',
-            group: 'component',
-            scopes: ['fgColor'],
-          },
-        },
-      },
-      hover: {
-        $value: '{base.color.neutral.9}',
-        $type: 'color',
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'mode',
-            mode: 'dark',
-            group: 'component',
-            scopes: ['fgColor'],
-          },
-        },
-      },
-      active: {
-        $value: '{base.color.neutral.10}',
+        $value: '{fgColor.muted}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -388,7 +364,7 @@
       },
       iconColor: {
         rest: {
-          $value: '{fgColor.muted.@}',
+          $value: '{fgColor.muted}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -400,7 +376,7 @@
           },
         },
         hover: {
-          $value: '{base.color.neutral.9}',
+          $value: '{fgColor.muted}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -412,7 +388,7 @@
           },
         },
         active: {
-          $value: '{base.color.neutral.10}',
+          $value: '{fgColor.muted}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -424,7 +400,7 @@
           },
         },
         selected: {
-          $value: '{base.color.neutral.9}',
+          $value: '{fgColor.muted}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -690,7 +666,7 @@
     },
     fgColor: {
       rest: {
-        $value: '{fgColor.muted.@}',
+        $value: '{fgColor.muted}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -716,7 +692,7 @@
     },
     iconColor: {
       rest: {
-        $value: '{base.color.neutral.9}',
+        $value: '{base.color.neutral.8}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -728,7 +704,7 @@
         },
       },
       hover: {
-        $value: '{base.color.neutral.10}',
+        $value: '{base.color.neutral.9}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -740,7 +716,7 @@
         },
       },
       active: {
-        $value: '{base.color.neutral.11}',
+        $value: '{base.color.neutral.9}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -1197,7 +1173,7 @@
       },
       iconColor: {
         rest: {
-          $value: '{fgColor.muted.@}',
+          $value: '{fgColor.muted}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -1376,7 +1352,7 @@
       },
       bgColor: {
         rest: {
-          $value: '{base.color.neutral.14}',
+          $value: '{base.color.neutral.11}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -1624,7 +1600,7 @@
     },
     inactive: {
       fgColor: {
-        $value: '{base.color.neutral.9}',
+        $value: '{base.color.neutral.8}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -2056,7 +2032,7 @@
         alpha: 0.7,
       },
       logo: {
-        $value: '{base.color.neutral.14}',
+        $value: '{base.color.neutral.11}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -2233,7 +2209,7 @@
     leadingVisual: {
       iconColor: {
         rest: {
-          $value: '{fgColor.muted.@}',
+          $value: '{fgColor.muted}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -2276,7 +2252,7 @@
     },
     iconColor: {
       rest: {
-        $value: '{fgColor.muted.@}',
+        $value: '{fgColor.muted}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {

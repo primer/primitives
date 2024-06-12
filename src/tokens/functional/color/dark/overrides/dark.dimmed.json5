@@ -36,11 +36,11 @@
   },
   fgColor: {
     default: {
-      $value: '{base.color.neutral.13}',
+      $value: '{base.color.neutral.10}',
       $type: 'color',
     },
     onEmphasis: {
-      $value: '{base.color.neutral.14}',
+      $value: '{base.color.neutral.11}',
       $type: 'color',
     },
   },
@@ -65,16 +65,6 @@
         $type: 'color',
       },
     },
-    iconColor: {
-      hover: {
-        $value: '{base.color.neutral.8}',
-        $type: 'color',
-      },
-      active: {
-        $value: '{base.color.neutral.9}',
-        $type: 'color',
-      },
-    },
     transparent: {
       bgColor: {
         hover: {
@@ -95,15 +85,15 @@
       },
       iconColor: {
         hover: {
-          $value: '{fgColor.muted.@}',
+          $value: '{fgColor.muted}',
           $type: 'color',
         },
         active: {
-          $value: '{fgColor.muted.@}',
+          $value: '{fgColor.muted}',
           $type: 'color',
         },
         selected: {
-          $value: '{fgColor.muted.@}',
+          $value: '{fgColor.muted}',
           $type: 'color',
         },
       },
@@ -184,7 +174,7 @@
     invisible: {
       iconColor: {
         hover: {
-          $value: '{fgColor.muted.@}',
+          $value: '{fgColor.muted}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
