@@ -17,6 +17,14 @@ const baseRequirements: ContrastRequirement[] = [
   [4.5, 'fgColor-muted', 'bgColor-muted'],
   [4.5, 'fgColor-default', 'bgColor-inset'],
   [4.5, 'fgColor-muted', 'bgColor-inset'],
+  [4.5, 'control-fgColor-rest', 'bgColor-default'],
+  [4.5, 'control-fgColor-rest', 'bgColor-muted'],
+  [4.5, 'control-fgColor-rest', 'bgColor-inset'],
+  // control colors
+  [4.5, 'control-fgColor-rest', 'control-bgColor-rest'],
+  [4.5, 'control-fgColor-placeholder', 'control-bgColor-rest'],
+  [4.5, 'control-fgColor-rest', 'control-bgColor-active'],
+  [4.5, 'control-fgColor-rest', 'control-bgColor-selected'],
   // default text on role bg
   // TODO: contrast does not work with semi-transparent colors
   [4.5, 'fgColor-default', 'bgColor-accent-muted'],
@@ -91,6 +99,26 @@ const highContrast: ContrastRequirement[] = [
   [7, 'fgColor-muted', 'bgColor-muted'],
   [7, 'fgColor-default', 'bgColor-inset'],
   [7, 'fgColor-muted', 'bgColor-inset'],
+  [7, 'control-fgColor-rest', 'bgColor-default'],
+  [7, 'control-fgColor-placeholder', 'bgColor-default'],
+  [7, 'control-fgColor-rest', 'bgColor-muted'],
+  [7, 'control-fgColor-placeholder', 'bgColor-muted'],
+  [7, 'control-fgColor-rest', 'bgColor-inset'],
+  [7, 'control-fgColor-placeholder', 'bgColor-inset'],
+  // control colors
+  [7, 'fgColor-default', 'control-bgColor-rest'],
+  [7, 'fgColor-muted', 'control-bgColor-rest'],
+  [7, 'control-fgColor-rest', 'control-bgColor-rest'],
+  [7, 'control-fgColor-placeholder', 'control-bgColor-rest'],
+  [7, 'fgColor-default', 'control-bgColor-hover'],
+  [7, 'fgColor-muted', 'control-bgColor-hover'],
+  [7, 'control-fgColor-rest', 'control-bgColor-hover'],
+  [7, 'fgColor-default', 'control-bgColor-active'],
+  [7, 'fgColor-muted', 'control-bgColor-active'],
+  [7, 'control-fgColor-rest', 'control-bgColor-active'],
+  [7, 'fgColor-default', 'control-bgColor-selected'],
+  [7, 'fgColor-muted', 'control-bgColor-selected'],
+  [7, 'control-fgColor-rest', 'control-bgColor-selected'],
   // default text on role bg
   // TODO: contrast does not work with semi-transparent colors
   [7, 'fgColor-default', 'bgColor-accent-muted'],
