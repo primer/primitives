@@ -836,6 +836,19 @@
         },
       },
     },
+    translucent: {
+      $value: '{base.color.black}',
+      $type: 'color',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'mode',
+          mode: 'light',
+          group: 'semantic',
+          scopes: ['borderColor'],
+        },
+      },
+      alpha: 0.15,
+    },
     neutral: {
       muted: {
         $value: '{base.color.neutral.3}',

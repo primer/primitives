@@ -14,7 +14,7 @@
       alpha: 0.1,
     },
     borderColor: {
-      $value: '{base.color.white}',
+      $value: '{borderColor.translucent}',
       $type: 'color',
       $extensions: {
         'org.primer.figma': {
@@ -24,7 +24,6 @@
           scopes: ['borderColor'],
         },
       },
-      alpha: 0.15,
     },
   },
   avatarStack: {

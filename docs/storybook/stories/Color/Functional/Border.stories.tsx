@@ -15,6 +15,7 @@ const borderColors = [
   'borderColor-emphasis',
   'borderColor-disabled',
   'borderColor-transparent',
+  'borderColor-translucent',
 ]
 
 export const Border = () => {
