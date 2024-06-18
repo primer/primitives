@@ -39,6 +39,7 @@ export const figma: PlatformInitializer = (outputFile, prefix, buildPath, option
     fontFamilies: {
       'fontStack/system': 'SF Pro Text',
       'fontStack/sansSerif': 'SF Pro Text',
+      'fontStack/sansSerifDisplay': 'SF Pro Display',
       'fontStack/monospace': 'SF Mono',
     },
     ...options,
