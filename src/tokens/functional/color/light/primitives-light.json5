@@ -424,6 +424,7 @@
             scopes: ['bgColor'],
           },
         },
+        alpha: 0.7,
       },
       emphasis: {
         $value: '{base.color.neutral.8}',
@@ -830,6 +831,19 @@
           scopes: ['borderColor'],
         },
       },
+    },
+    translucent: {
+      $value: '{base.color.black}',
+      $type: 'color',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'mode',
+          mode: 'light',
+          group: 'semantic',
+          scopes: ['borderColor'],
+        },
+      },
+      alpha: 0.15,
     },
     neutral: {
       muted: {

@@ -1,7 +1,7 @@
 {
   avatar: {
     bgColor: {
-      $value: '{base.color.white}',
+      $value: '{borderColor.translucent}',
       $type: 'color',
       $extensions: {
         'org.primer.figma': {
@@ -11,7 +11,6 @@
           scopes: ['bgColor'],
         },
       },
-      alpha: 0.1,
     },
     borderColor: {
       $value: '{base.color.white}',
@@ -1092,7 +1091,7 @@
               scopes: ['borderColor'],
             },
           },
-          alpha: 0.2,
+          alpha: 0.1,
         },
         hover: {
           $value: '{button.primary.borderColor.rest}',
