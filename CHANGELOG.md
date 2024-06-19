@@ -1,5 +1,13 @@
 # @primer/primitives
 
+## 8.2.3
+
+### Patch Changes
+
+- [#970](https://github.com/primer/primitives/pull/970) [`395d45f`](https://github.com/primer/primitives/commit/395d45f57ee0b7d8ec33d3073dd4f122281c27e8) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Add a display font family variant as Figma does not automatically switch
+
+- [#969](https://github.com/primer/primitives/pull/969) [`52d8bf7`](https://github.com/primer/primitives/commit/52d8bf7c8e28286c8fa12fd7696db5d3a10454d4) Thanks [@langermank](https://github.com/langermank)! - Add `borderColor-translucent`
+
 ## 8.2.2
 
 ### Patch Changes
