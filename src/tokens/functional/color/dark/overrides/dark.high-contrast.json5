@@ -154,16 +154,8 @@
       },
     },
     iconColor: {
-      rest: {
-        $value: '{base.color.neutral.9}',
-        $type: 'color',
-      },
-      hover: {
-        $value: '{base.color.neutral.9}',
-        $type: 'color',
-      },
       active: {
-        $value: '{base.color.neutral.9}',
+        $value: '{base.color.neutral.10}',
         $type: 'color',
       },
     },
@@ -316,12 +308,6 @@
       fgColor: {
         hover: {
           $value: '{base.color.blue.8}',
-          $type: 'color',
-        },
-      },
-      iconColor: {
-        hover: {
-          $value: '{fgColor.onEmphasis}',
           $type: 'color',
         },
       },

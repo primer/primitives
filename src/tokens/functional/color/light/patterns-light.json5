@@ -255,6 +255,30 @@
           },
         },
       },
+      hover: {
+        $value: '{fgColor.muted}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'light',
+            group: 'component',
+            scopes: ['fgColor'],
+          },
+        },
+      },
+      active: {
+        $value: '{fgColor.muted}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'light',
+            group: 'component',
+            scopes: ['fgColor'],
+          },
+        },
+      },
     },
     transparent: {
       bgColor: {
@@ -1188,7 +1212,7 @@
       },
       iconColor: {
         rest: {
-          $value: '{fgColor.muted}',
+          $value: '{control.transparent.iconColor.rest}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {

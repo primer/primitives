@@ -65,6 +65,16 @@
         $type: 'color',
       },
     },
+    iconColor: {
+      hover: {
+        $value: '{base.color.neutral.9}',
+        $type: 'color',
+      },
+      active: {
+        $value: '{base.color.neutral.9}',
+        $type: 'color',
+      },
+    },
     transparent: {
       bgColor: {
         hover: {
@@ -168,22 +178,6 @@
         rest: {
           $value: '#ffffff',
           $type: 'color',
-        },
-      },
-    },
-    invisible: {
-      iconColor: {
-        hover: {
-          $value: '{fgColor.muted}',
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              mode: 'dark',
-              group: 'component',
-              scopes: ['fgColor'],
-            },
-          },
         },
       },
     },
