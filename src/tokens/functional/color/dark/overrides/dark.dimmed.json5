@@ -4,11 +4,117 @@
  * @description All overwrites for functional color tokens for dark dimmed color mode are in this file
  */
 {
+  bgColor: {
+    default: {
+      $value: '{base.color.neutral.2}',
+      $type: 'color',
+    },
+    muted: {
+      $value: '{base.color.neutral.3}',
+      $type: 'color',
+    },
+    inset: {
+      $value: '{base.color.neutral.1}',
+      $type: 'color',
+    },
+    disabled: {
+      $value: '{base.color.neutral.4}',
+      $type: 'color',
+    },
+    neutral: {
+      emphasis: {
+        $value: '{base.color.neutral.7}',
+        $type: 'color',
+      },
+    },
+  },
+  borderColor: {
+    default: {
+      $value: '{base.color.neutral.5}',
+      $type: 'color',
+    },
+  },
+  fgColor: {
+    default: {
+      $value: '{base.color.neutral.10}',
+      $type: 'color',
+    },
+    onEmphasis: {
+      $value: '{base.color.neutral.11}',
+      $type: 'color',
+    },
+  },
+  control: {
+    bgColor: {
+      rest: {
+        $value: '{base.color.neutral.4}',
+        $type: 'color',
+      },
+      hover: {
+        $value: '{base.color.neutral.5}',
+        $type: 'color',
+      },
+      active: {
+        $value: '{base.color.neutral.6}',
+        $type: 'color',
+      },
+    },
+    borderColor: {
+      rest: {
+        $value: '{borderColor.default}',
+        $type: 'color',
+      },
+    },
+    transparent: {
+      bgColor: {
+        hover: {
+          $value: '{base.color.neutral.5}',
+          $type: 'color',
+          alpha: 0.7,
+        },
+        active: {
+          $value: '{base.color.neutral.6}',
+          $type: 'color',
+          alpha: 0.7,
+        },
+        selected: {
+          $value: '{base.color.neutral.5}',
+          $type: 'color',
+          alpha: 0.4,
+        },
+      },
+    },
+  },
+  controlTrack: {
+    bgColor: {
+      rest: {
+        $value: '{base.color.neutral.4}',
+        $type: 'color',
+      },
+      hover: {
+        $value: '{base.color.neutral.5}',
+        $type: 'color',
+      },
+      active: {
+        $value: '{base.color.neutral.6}',
+        $type: 'color',
+      },
+    },
+  },
   diffBlob: {
     expander: {
       iconColor: {
         $value: '{fgColor.default}',
         $type: 'color',
+      },
+    },
+  },
+  overlay: {
+    backdrop: {
+      bgColor: {
+        $value: '{base.color.neutral.5}',
+        $type: 'color',
+        alpha: 0.4,
       },
     },
   },
@@ -37,21 +143,21 @@
         },
       },
     },
-    invisible: {
-      iconColor: {
-        hover: {
-          $value: '{fgColor.muted}',
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              mode: 'dark',
-              group: 'component',
-              scopes: ['fgColor'],
-            },
-          },
-        },
+    inactive: {
+      bgColor: {
+        $value: '{base.color.neutral.4}',
+        $type: 'color',
       },
+      fgColor: {
+        $value: '{base.color.neutral.7}',
+        $type: 'color',
+      },
+    },
+  },
+  timelineBadge: {
+    bgColor: {
+      $value: '{base.color.neutral.3}',
+      $type: 'color',
     },
   },
 }
