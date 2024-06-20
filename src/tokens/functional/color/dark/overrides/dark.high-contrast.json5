@@ -153,12 +153,6 @@
         mix: null,
       },
     },
-    iconColor: {
-      active: {
-        $value: '{base.color.neutral.10}',
-        $type: 'color',
-      },
-    },
     transparent: {
       bgColor: {
         hover: {
@@ -184,20 +178,6 @@
         },
         active: {
           $value: '{borderColor.default}',
-          $type: 'color',
-        },
-      },
-      iconColor: {
-        hover: {
-          $value: '{base.color.neutral.10}',
-          $type: 'color',
-        },
-        active: {
-          $value: '{base.color.neutral.10}',
-          $type: 'color',
-        },
-        selected: {
-          $value: '{base.color.neutral.10}',
           $type: 'color',
         },
       },
@@ -244,20 +224,6 @@
       },
       active: {
         $value: '{base.color.neutral.6}',
-        $type: 'color',
-      },
-    },
-    iconColor: {
-      rest: {
-        $value: '{base.color.neutral.9}',
-        $type: 'color',
-      },
-      hover: {
-        $value: '{base.color.neutral.10}',
-        $type: 'color',
-      },
-      active: {
-        $value: '{base.color.neutral.10}',
         $type: 'color',
       },
     },

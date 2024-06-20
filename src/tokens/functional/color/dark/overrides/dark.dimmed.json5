@@ -65,16 +65,6 @@
         $type: 'color',
       },
     },
-    iconColor: {
-      hover: {
-        $value: '{base.color.neutral.9}',
-        $type: 'color',
-      },
-      active: {
-        $value: '{base.color.neutral.9}',
-        $type: 'color',
-      },
-    },
     transparent: {
       bgColor: {
         hover: {
@@ -93,20 +83,6 @@
           alpha: 0.4,
         },
       },
-      iconColor: {
-        hover: {
-          $value: '{fgColor.muted}',
-          $type: 'color',
-        },
-        active: {
-          $value: '{fgColor.muted}',
-          $type: 'color',
-        },
-        selected: {
-          $value: '{fgColor.muted}',
-          $type: 'color',
-        },
-      },
     },
   },
   controlTrack: {
@@ -121,20 +97,6 @@
       },
       active: {
         $value: '{base.color.neutral.6}',
-        $type: 'color',
-      },
-    },
-    iconColor: {
-      rest: {
-        $value: '{base.color.neutral.7}',
-        $type: 'color',
-      },
-      hover: {
-        $value: '{base.color.neutral.7}',
-        $type: 'color',
-      },
-      active: {
-        $value: '{base.color.neutral.7}',
         $type: 'color',
       },
     },
