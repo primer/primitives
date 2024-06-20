@@ -169,6 +169,26 @@ const baseRequirements: ContrastRequirement[] = [
   [3, 'bgColor-muted', 'display-purple-borderColor-emphasis'],
   [3, 'bgColor-muted', 'display-brown-borderColor-emphasis'],
   [3, 'bgColor-muted', 'display-auburn-borderColor-emphasis'],
+  //
+  [3, 'display-gray-borderColor-emphasis', 'display-gray-bgColor-muted'],
+  [3, 'display-indigo-borderColor-emphasis', 'display-indigo-bgColor-muted'],
+  [3, 'display-blue-borderColor-emphasis', 'display-blue-bgColor-muted'],
+  [3, 'display-cyan-borderColor-emphasis', 'display-cyan-bgColor-muted'],
+  [3, 'display-teal-borderColor-emphasis', 'display-teal-bgColor-muted'],
+  [3, 'display-pine-borderColor-emphasis', 'display-pine-bgColor-muted'],
+  [3, 'display-green-borderColor-emphasis', 'display-green-bgColor-muted'],
+  [3, 'display-lime-borderColor-emphasis', 'display-lime-bgColor-muted'],
+  [3, 'display-olive-borderColor-emphasis', 'display-olive-bgColor-muted'],
+  [3, 'display-lemon-borderColor-emphasis', 'display-lemon-bgColor-muted'],
+  [3, 'display-yellow-borderColor-emphasis', 'display-yellow-bgColor-muted'],
+  [3, 'display-orange-borderColor-emphasis', 'display-orange-bgColor-muted'],
+  [3, 'display-red-borderColor-emphasis', 'display-red-bgColor-muted'],
+  [3, 'display-coral-borderColor-emphasis', 'display-coral-bgColor-muted'],
+  [3, 'display-pink-borderColor-emphasis', 'display-pink-bgColor-muted'],
+  [3, 'display-plum-borderColor-emphasis', 'display-plum-bgColor-muted'],
+  [3, 'display-purple-borderColor-emphasis', 'display-purple-bgColor-muted'],
+  [3, 'display-brown-borderColor-emphasis', 'display-brown-bgColor-muted'],
+  [3, 'display-auburn-borderColor-emphasis', 'display-auburn-bgColor-muted'],
 ]
 
 const highContrast: ContrastRequirement[] = [
