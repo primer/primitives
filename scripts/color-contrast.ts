@@ -48,6 +48,9 @@ const runContrastTest = (colorPairs: ContrastRequirement[], tokens: Tokens): con
     // build required string
     const minimumContrastRatio = `${minimumContrast}:1`
     // colorB is fully opaque
+    if (!tokens.hasOwnProperty(colorA)) throw new Error(`Color token not found ${colorA}`)
+    if (!tokens.hasOwnProperty(colorB)) throw new Error(`Color token not found ${colorB}`)
+
     if (parseToRgba(tokens[colorB].value)[3] === 1) {
       return {
         contrastPair,
@@ -135,9 +138,9 @@ export const logResults = async (
   output: 'log' | 'file' | 'all' | 'none' = 'all',
 ) => {
   if (output === 'log' || output === 'all') {
-    for (const {resultTable, failingContrast} of results) {
+    for (const {resultTable, failingContrast, theme} of results) {
       // eslint-disable-next-line no-console
-      console.log('\n', resultTable, '\n')
+      console.log('\n', `\x1B[32m\x1b[1mTheme: ${theme}\x1B[0m`, '\n', resultTable, '\n')
       if (failingContrast > 0) {
         // eslint-disable-next-line no-console
         console.error('❌ Failing contrast checks:', failingContrast, '\n')
