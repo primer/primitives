@@ -1,5 +1,5 @@
 ---
-'@primer/primitives': minor
+'@primer/primitives': major
 ---
 
 Removed space tokens
