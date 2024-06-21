@@ -129,10 +129,10 @@
             web: 'var(--fgColor-accent) /* utility class: .color-fg-accent */',
           },
         },
-        mix: {
-          color: '{base.color.blue.5}',
-          weight: 0.35,
-        },
+      },
+      mix: {
+        color: '{base.color.blue.5}',
+        weight: 0.35,
       },
     },
     success: {
