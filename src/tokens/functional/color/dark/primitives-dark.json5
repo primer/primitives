@@ -193,20 +193,22 @@
       },
     },
     danger: {
-      '@': {
-        $value: '{base.color.red.4}',
-        $type: 'color',
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'mode',
-            mode: 'dark',
-            group: 'semantic',
-            scopes: ['fgColor'],
-            codeSyntax: {
-              web: 'var(--fgColor-danger) /* utility class: .color-fg-danger */',
-            },
+      $value: '{base.color.red.4}',
+      $type: 'color',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'mode',
+          mode: 'dark',
+          group: 'semantic',
+          scopes: ['fgColor'],
+          codeSyntax: {
+            web: 'var(--fgColor-danger) /* utility class: .color-fg-danger */',
           },
         },
+      },
+      mix: {
+        color: '{base.color.red.5}',
+        weight: 0.35,
       },
     },
     open: {
