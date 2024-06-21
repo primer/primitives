@@ -1434,6 +1434,23 @@
     "scopes": ["STROKE_COLOR"]
   },
   {
+    "name": "borderColor/translucent",
+    "value": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 0.15
+    },
+    "type": "COLOR",
+    "alpha": 0.15,
+    "refId": "mode/borderColor/translucent",
+    "reference": "base/color/dark/base/color/white",
+    "collection": "mode",
+    "mode": "dark",
+    "group": "component (internal)",
+    "scopes": ["STROKE_COLOR"]
+  },
+  {
     "name": "borderColor/transparent",
     "value": {
       "r": 0,
@@ -5314,14 +5331,15 @@
   {
     "name": "control/fgColor/placeholder",
     "value": {
-      "r": 0.2823529411764706,
-      "g": 0.30980392156862746,
-      "b": 0.34509803921568627,
+      "r": 0.5215686274509804,
+      "g": 0.5568627450980392,
+      "b": 0.596078431372549,
       "a": 1
     },
     "type": "COLOR",
+    "isMix": true,
     "refId": "mode/control/fgColor/placeholder",
-    "reference": "base/color/dark/base/color/neutral/5",
+    "reference": "base/color/dark/base/color/neutral/3",
     "collection": "mode",
     "mode": "dark",
     "group": "component",
@@ -5492,23 +5510,6 @@
     "group": "component shadow"
   },
   {
-    "name": "avatar/borderColor",
-    "value": {
-      "r": 1,
-      "g": 1,
-      "b": 1,
-      "a": 0.15
-    },
-    "type": "COLOR",
-    "alpha": 0.15,
-    "refId": "mode/avatar/borderColor",
-    "reference": "base/color/dark/base/color/white",
-    "collection": "mode",
-    "mode": "dark",
-    "group": "component (internal)",
-    "scopes": ["STROKE_COLOR"]
-  },
-  {
     "name": "avatar/bgColor",
     "value": {
       "r": 1,
@@ -5576,14 +5577,14 @@
   {
     "name": "display/pink/bgColor/emphasis",
     "value": {
-      "r": 0.8274509803921568,
-      "g": 0.27058823529411763,
-      "b": 0.5686274509803921,
+      "r": 0.6745098039215687,
+      "g": 0.1843137254901961,
+      "b": 0.4549019607843137,
       "a": 1
     },
     "type": "COLOR",
     "refId": "mode/display/pink/bgColor/emphasis",
-    "reference": "base/color/dark/base/display/color/pink/5",
+    "reference": "base/color/dark/base/display/color/pink/4",
     "collection": "mode",
     "mode": "dark",
     "group": "component (internal)",
@@ -5656,14 +5657,14 @@
   {
     "name": "display/indigo/bgColor/emphasis",
     "value": {
-      "r": 0.4392156862745098,
-      "g": 0.4392156862745098,
-      "b": 0.8823529411764706,
+      "r": 0.3176470588235294,
+      "g": 0.3058823529411765,
+      "b": 0.8313725490196079,
       "a": 1
     },
     "type": "COLOR",
     "refId": "mode/display/indigo/bgColor/emphasis",
-    "reference": "base/color/dark/base/display/color/indigo/5",
+    "reference": "base/color/dark/base/display/color/indigo/4",
     "collection": "mode",
     "mode": "dark",
     "group": "component (internal)",
@@ -5736,14 +5737,14 @@
   {
     "name": "display/cyan/bgColor/emphasis",
     "value": {
-      "r": 0.0196078431372549,
-      "g": 0.5294117647058824,
-      "b": 0.7019607843137254,
+      "r": 0.011764705882352941,
+      "g": 0.41568627450980394,
+      "b": 0.5490196078431373,
       "a": 1
     },
     "type": "COLOR",
     "refId": "mode/display/cyan/bgColor/emphasis",
-    "reference": "base/color/dark/base/display/color/cyan/5",
+    "reference": "base/color/dark/base/display/color/cyan/4",
     "collection": "mode",
     "mode": "dark",
     "group": "component (internal)",
@@ -5816,14 +5817,14 @@
   {
     "name": "display/teal/bgColor/emphasis",
     "value": {
-      "r": 0.08235294117647059,
-      "g": 0.5411764705882353,
-      "b": 0.5411764705882353,
+      "r": 0.06274509803921569,
+      "g": 0.4235294117647059,
+      "b": 0.4392156862745098,
       "a": 1
     },
     "type": "COLOR",
     "refId": "mode/display/teal/bgColor/emphasis",
-    "reference": "base/color/dark/base/display/color/teal/5",
+    "reference": "base/color/dark/base/display/color/teal/4",
     "collection": "mode",
     "mode": "dark",
     "group": "component (internal)",
@@ -5896,14 +5897,14 @@
   {
     "name": "display/pine/bgColor/emphasis",
     "value": {
-      "r": 0.09411764705882353,
-      "g": 0.5686274509803921,
-      "b": 0.3686274509803922,
+      "r": 0.0784313725490196,
+      "g": 0.44313725490196076,
+      "b": 0.2980392156862745,
       "a": 1
     },
     "type": "COLOR",
     "refId": "mode/display/pine/bgColor/emphasis",
-    "reference": "base/color/dark/base/display/color/pine/5",
+    "reference": "base/color/dark/base/display/color/pine/4",
     "collection": "mode",
     "mode": "dark",
     "group": "component (internal)",
@@ -5976,14 +5977,14 @@
   {
     "name": "display/lime/bgColor/emphasis",
     "value": {
-      "r": 0.37254901960784315,
-      "g": 0.5372549019607843,
-      "b": 0.1843137254901961,
+      "r": 0.28627450980392155,
+      "g": 0.4235294117647059,
+      "b": 0.1568627450980392,
       "a": 1
     },
     "type": "COLOR",
     "refId": "mode/display/lime/bgColor/emphasis",
-    "reference": "base/color/dark/base/display/color/lime/5",
+    "reference": "base/color/dark/base/display/color/lime/4",
     "collection": "mode",
     "mode": "dark",
     "group": "component (internal)",
@@ -6056,14 +6057,14 @@
   {
     "name": "display/olive/bgColor/emphasis",
     "value": {
-      "r": 0.47843137254901963,
-      "g": 0.5137254901960784,
-      "b": 0.12941176470588237,
+      "r": 0.3686274509803922,
+      "g": 0.40784313725490196,
+      "b": 0.11372549019607843,
       "a": 1
     },
     "type": "COLOR",
     "refId": "mode/display/olive/bgColor/emphasis",
-    "reference": "base/color/dark/base/display/color/olive/5",
+    "reference": "base/color/dark/base/display/color/olive/4",
     "collection": "mode",
     "mode": "dark",
     "group": "component (internal)",
@@ -6136,14 +6137,14 @@
   {
     "name": "display/lemon/bgColor/emphasis",
     "value": {
-      "r": 0.592156862745098,
-      "g": 0.4823529411764706,
-      "b": 0.047058823529411764,
+      "r": 0.47058823529411764,
+      "g": 0.3764705882352941,
+      "b": 0.03137254901960784,
       "a": 1
     },
     "type": "COLOR",
     "refId": "mode/display/lemon/bgColor/emphasis",
-    "reference": "base/color/dark/base/display/color/lemon/5",
+    "reference": "base/color/dark/base/display/color/lemon/4",
     "collection": "mode",
     "mode": "dark",
     "group": "component (internal)",
@@ -6216,14 +6217,14 @@
   {
     "name": "display/brown/bgColor/emphasis",
     "value": {
-      "r": 0.5803921568627451,
-      "g": 0.4666666666666667,
-      "b": 0.2980392156862745,
+      "r": 0.4588235294117647,
+      "g": 0.3686274509803922,
+      "b": 0.24313725490196078,
       "a": 1
     },
     "type": "COLOR",
     "refId": "mode/display/brown/bgColor/emphasis",
-    "reference": "base/color/dark/base/display/color/brown/5",
+    "reference": "base/color/dark/base/display/color/brown/4",
     "collection": "mode",
     "mode": "dark",
     "group": "component (internal)",
@@ -6296,14 +6297,14 @@
   {
     "name": "display/auburn/bgColor/emphasis",
     "value": {
-      "r": 0.6588235294117647,
-      "g": 0.43529411764705883,
-      "b": 0.4196078431372549,
+      "r": 0.5294117647058824,
+      "g": 0.3254901960784314,
+      "b": 0.30980392156862746,
       "a": 1
     },
     "type": "COLOR",
     "refId": "mode/display/auburn/bgColor/emphasis",
-    "reference": "base/color/dark/base/display/color/auburn/5",
+    "reference": "base/color/dark/base/display/color/auburn/4",
     "collection": "mode",
     "mode": "dark",
     "group": "component (internal)",
@@ -6376,14 +6377,14 @@
   {
     "name": "display/gray/bgColor/emphasis",
     "value": {
-      "r": 0.43137254901960786,
-      "g": 0.4980392156862745,
-      "b": 0.5882352941176471,
+      "r": 0.3411764705882353,
+      "g": 0.3843137254901961,
+      "b": 0.4392156862745098,
       "a": 1
     },
     "type": "COLOR",
     "refId": "mode/display/gray/bgColor/emphasis",
-    "reference": "base/color/dark/base/display/color/gray/5",
+    "reference": "base/color/dark/base/display/color/gray/4",
     "collection": "mode",
     "mode": "dark",
     "group": "component (internal)",
@@ -6456,14 +6457,14 @@
   {
     "name": "display/yellow/bgColor/emphasis",
     "value": {
-      "r": 0.6666666666666666,
-      "g": 0.44313725490196076,
-      "b": 0.03529411764705882,
+      "r": 0.5372549019607843,
+      "g": 0.34901960784313724,
+      "b": 0.023529411764705882,
       "a": 1
     },
     "type": "COLOR",
     "refId": "mode/display/yellow/bgColor/emphasis",
-    "reference": "base/color/dark/base/display/color/yellow/5",
+    "reference": "base/color/dark/base/display/color/yellow/4",
     "collection": "mode",
     "mode": "dark",
     "group": "component (internal)",
@@ -6536,14 +6537,14 @@
   {
     "name": "display/coral/bgColor/emphasis",
     "value": {
-      "r": 0.9215686274509803,
-      "g": 0.2,
-      "b": 0.25882352941176473,
+      "r": 0.7647058823529411,
+      "g": 0.07450980392156863,
+      "b": 0.1568627450980392,
       "a": 1
     },
     "type": "COLOR",
     "refId": "mode/display/coral/bgColor/emphasis",
-    "reference": "base/color/dark/base/display/color/red/5",
+    "reference": "base/color/dark/base/display/color/red/4",
     "collection": "mode",
     "mode": "dark",
     "group": "component (internal)",
@@ -6616,14 +6617,14 @@
   {
     "name": "display/red/bgColor/emphasis",
     "value": {
-      "r": 0.9215686274509803,
-      "g": 0.2,
-      "b": 0.25882352941176473,
+      "r": 0.7647058823529411,
+      "g": 0.07450980392156863,
+      "b": 0.1568627450980392,
       "a": 1
     },
     "type": "COLOR",
     "refId": "mode/display/red/bgColor/emphasis",
-    "reference": "base/color/dark/base/display/color/red/5",
+    "reference": "base/color/dark/base/display/color/red/4",
     "collection": "mode",
     "mode": "dark",
     "group": "component (internal)",
@@ -6696,14 +6697,14 @@
   {
     "name": "display/plum/bgColor/emphasis",
     "value": {
-      "r": 0.7137254901960784,
-      "g": 0.2627450980392157,
-      "b": 0.9372549019607843,
+      "r": 0.5843137254901961,
+      "g": 0.09411764705882353,
+      "b": 0.8470588235294118,
       "a": 1
     },
     "type": "COLOR",
     "refId": "mode/display/plum/bgColor/emphasis",
-    "reference": "base/color/dark/base/display/color/plum/5",
+    "reference": "base/color/dark/base/display/color/plum/4",
     "collection": "mode",
     "mode": "dark",
     "group": "component (internal)",
@@ -6776,14 +6777,14 @@
   {
     "name": "display/purple/bgColor/emphasis",
     "value": {
-      "r": 0.592156862745098,
-      "g": 0.3568627450980392,
-      "b": 0.9450980392156862,
+      "r": 0.4666666666666667,
+      "g": 0.18823529411764706,
+      "b": 0.9098039215686274,
       "a": 1
     },
     "type": "COLOR",
     "refId": "mode/display/purple/bgColor/emphasis",
-    "reference": "base/color/dark/base/display/color/purple/5",
+    "reference": "base/color/dark/base/display/color/purple/4",
     "collection": "mode",
     "mode": "dark",
     "group": "component (internal)",
@@ -6856,14 +6857,14 @@
   {
     "name": "display/orange/bgColor/emphasis",
     "value": {
-      "r": 0.7686274509803922,
-      "g": 0.3843137254901961,
-      "b": 0.07058823529411765,
+      "r": 0.596078431372549,
+      "g": 0.29411764705882354,
+      "b": 0.06274509803921569,
       "a": 1
     },
     "type": "COLOR",
     "refId": "mode/display/orange/bgColor/emphasis",
-    "reference": "base/color/dark/base/display/color/orange/5",
+    "reference": "base/color/dark/base/display/color/orange/4",
     "collection": "mode",
     "mode": "dark",
     "group": "component (internal)",
@@ -6936,14 +6937,14 @@
   {
     "name": "display/green/bgColor/emphasis",
     "value": {
-      "r": 0.2196078431372549,
-      "g": 0.5607843137254902,
-      "b": 0.24705882352941178,
+      "r": 0.1843137254901961,
+      "g": 0.43529411764705883,
+      "b": 0.21568627450980393,
       "a": 1
     },
     "type": "COLOR",
     "refId": "mode/display/green/bgColor/emphasis",
-    "reference": "base/color/dark/base/display/color/green/5",
+    "reference": "base/color/dark/base/display/color/green/4",
     "collection": "mode",
     "mode": "dark",
     "group": "component (internal)",
@@ -7016,14 +7017,14 @@
   {
     "name": "display/blue/bgColor/emphasis",
     "value": {
-      "r": 0.0196078431372549,
-      "g": 0.4627450980392157,
-      "b": 1,
+      "r": 0,
+      "g": 0.3568627450980392,
+      "b": 0.8196078431372549,
       "a": 1
     },
     "type": "COLOR",
     "refId": "mode/display/blue/bgColor/emphasis",
-    "reference": "base/color/dark/base/display/color/blue/5",
+    "reference": "base/color/dark/base/display/color/blue/4",
     "collection": "mode",
     "mode": "dark",
     "group": "component (internal)",
@@ -8964,6 +8965,22 @@
     "mode": "dark",
     "group": "component",
     "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "avatar/borderColor",
+    "value": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 0.15
+    },
+    "type": "COLOR",
+    "refId": "mode/avatar/borderColor",
+    "reference": "mode/borderColor/translucent",
+    "collection": "mode",
+    "mode": "dark",
+    "group": "component (internal)",
+    "scopes": ["STROKE_COLOR"]
   },
   {
     "name": "codeMirror/lines/bgColor",

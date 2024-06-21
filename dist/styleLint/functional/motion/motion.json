@@ -1,0 +1,47 @@
+{
+  "motion-loading-delay-default": {
+    "value": "1000ms",
+    "$type": "duration",
+    "comment": "The amount of time to wait before showing a loading indicator or announcing a loading state to assistive technologies.",
+    "filePath": "src/tokens/functional/motion/loading.json5",
+    "isSource": true,
+    "original": {
+      "value": "1000ms",
+      "$type": "duration",
+      "comment": "The amount of time to wait before showing a loading indicator or announcing a loading state to assistive technologies."
+    },
+    "name": "motion-loading-delay-default",
+    "attributes": {},
+    "path": ["motion", "loading", "delay", "default"]
+  },
+  "motion-spinner-duration-rotation": {
+    "value": "1000ms",
+    "$type": "duration",
+    "comment": "The amount of time it takes the \"Spinner\" loading indicator to make a full 360deg rotation",
+    "filePath": "src/tokens/functional/motion/patterns.json5",
+    "isSource": true,
+    "original": {
+      "value": "1000ms",
+      "$type": "duration",
+      "comment": "The amount of time it takes the \"Spinner\" loading indicator to make a full 360deg rotation"
+    },
+    "name": "motion-spinner-duration-rotation",
+    "attributes": {},
+    "path": ["motion", "spinner", "duration", "rotation"]
+  },
+  "motion-skeletonLoader-shimmer-duration-scale": {
+    "value": "1000ms",
+    "$type": "duration",
+    "comment": "The amount of times it takes the \"shimmer\" effect to go from the start (left) of the skeleton loader to the end (right)",
+    "filePath": "src/tokens/functional/motion/patterns.json5",
+    "isSource": true,
+    "original": {
+      "value": "1000ms",
+      "$type": "duration",
+      "comment": "The amount of times it takes the \"shimmer\" effect to go from the start (left) of the skeleton loader to the end (right)"
+    },
+    "name": "motion-skeletonLoader-shimmer-duration-scale",
+    "attributes": {},
+    "path": ["motion", "skeletonLoader", "shimmer", "duration", "scale"]
+  }
+}

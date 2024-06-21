@@ -1334,6 +1334,23 @@
     "scopes": ["STROKE_COLOR"]
   },
   {
+    "name": "borderColor/translucent",
+    "value": {
+      "r": 0.12156862745098039,
+      "g": 0.13725490196078433,
+      "b": 0.1568627450980392,
+      "a": 0.15
+    },
+    "type": "COLOR",
+    "alpha": 0.15,
+    "refId": "mode/borderColor/translucent",
+    "reference": "base/color/light/base/color/black",
+    "collection": "mode",
+    "mode": "light",
+    "group": "semantic",
+    "scopes": ["STROKE_COLOR"]
+  },
+  {
     "name": "borderColor/transparent",
     "value": {
       "r": 1,
@@ -5039,12 +5056,13 @@
   {
     "name": "control/fgColor/placeholder",
     "value": {
-      "r": 0.43137254901960786,
-      "g": 0.4666666666666667,
-      "b": 0.5058823529411764,
+      "r": 0.4117647058823529,
+      "g": 0.4470588235294118,
+      "b": 0.48627450980392156,
       "a": 1
     },
     "type": "COLOR",
+    "isMix": true,
     "refId": "mode/control/fgColor/placeholder",
     "reference": "base/color/light/base/color/neutral/5",
     "collection": "mode",
@@ -5215,23 +5233,6 @@
     "mode": "light",
     "collection": "mode",
     "group": "component shadow"
-  },
-  {
-    "name": "avatar/borderColor",
-    "value": {
-      "r": 0.12156862745098039,
-      "g": 0.13725490196078433,
-      "b": 0.1568627450980392,
-      "a": 0.15
-    },
-    "type": "COLOR",
-    "alpha": 0.15,
-    "refId": "mode/avatar/borderColor",
-    "reference": "base/color/light/base/color/black",
-    "collection": "mode",
-    "mode": "light",
-    "group": "component (internal)",
-    "scopes": ["STROKE_COLOR"]
   },
   {
     "name": "avatar/bgColor",
@@ -8896,6 +8897,22 @@
     "mode": "light",
     "group": "component",
     "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+  },
+  {
+    "name": "avatar/borderColor",
+    "value": {
+      "r": 0.12156862745098039,
+      "g": 0.13725490196078433,
+      "b": 0.1568627450980392,
+      "a": 0.15
+    },
+    "type": "COLOR",
+    "refId": "mode/avatar/borderColor",
+    "reference": "mode/borderColor/translucent",
+    "collection": "mode",
+    "mode": "light",
+    "group": "component (internal)",
+    "scopes": ["STROKE_COLOR"]
   },
   {
     "name": "codeMirror/lines/bgColor",
