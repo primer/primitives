@@ -20,7 +20,6 @@
     disabled: {
       $value: '{base.color.neutral.8}',
       $type: 'color',
-      alpha: 1,
     },
   },
   bgColor: {
@@ -279,6 +278,16 @@
       fgColor: {
         hover: {
           $value: '{base.color.blue.8}',
+          $type: 'color',
+        },
+      },
+      iconColor: {
+        rest: {
+          $value: '{base.color.neutral.10}',
+          $type: 'color',
+        },
+        hover: {
+          $value: '{base.color.neutral.10}',
           $type: 'color',
         },
       },

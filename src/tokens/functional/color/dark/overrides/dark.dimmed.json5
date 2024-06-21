@@ -28,12 +28,6 @@
       },
     },
   },
-  borderColor: {
-    default: {
-      $value: '{base.color.neutral.5}',
-      $type: 'color',
-    },
-  },
   fgColor: {
     default: {
       $value: '{base.color.neutral.10}',
@@ -112,10 +106,14 @@
   overlay: {
     backdrop: {
       bgColor: {
-        $value: '{base.color.neutral.5}',
+        $value: '{base.color.neutral.3}',
         $type: 'color',
         alpha: 0.4,
       },
+    },
+    bgColor: {
+      $value: '{base.color.neutral.4}',
+      $type: 'color',
     },
   },
   button: {
@@ -139,6 +137,18 @@
       iconColor: {
         rest: {
           $value: '#ffffff',
+          $type: 'color',
+        },
+      },
+    },
+    invisible: {
+      iconColor: {
+        rest: {
+          $value: '{base.color.neutral.9}',
+          $type: 'color',
+        },
+        hover: {
+          $value: '{base.color.neutral.9}',
           $type: 'color',
         },
       },
