@@ -90,206 +90,182 @@
       },
     },
     link: {
-      '@': {
-        $value: '{fgColor.accent.@}',
-        $type: 'color',
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'mode',
-            mode: 'dark',
-            group: 'semantic',
-            scopes: ['fgColor'],
-            codeSyntax: {
-              web: 'var(--fgColor-link) /* utility class: .color-fg-accent */',
-            },
+      $value: '{fgColor.accent}',
+      $type: 'color',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'mode',
+          mode: 'dark',
+          group: 'semantic',
+          scopes: ['fgColor'],
+          codeSyntax: {
+            web: 'var(--fgColor-link) /* utility class: .color-fg-accent */',
           },
         },
       },
     },
     neutral: {
-      '@': {
-        $value: '{base.color.neutral.4}',
-        $type: 'color',
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'mode',
-            mode: 'dark',
-            group: 'semantic',
-            scopes: ['fgColor'],
-          },
+      $value: '{base.color.neutral.4}',
+      $type: 'color',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'mode',
+          mode: 'dark',
+          group: 'semantic',
+          scopes: ['fgColor'],
         },
       },
     },
     accent: {
-      '@': {
-        $value: '{base.color.blue.3}',
-        $type: 'color',
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'mode',
-            mode: 'dark',
-            group: 'semantic',
-            scopes: ['fgColor'],
-            codeSyntax: {
-              web: 'var(--fgColor-accent) /* utility class: .color-fg-accent */',
-            },
+      $value: '{base.color.blue.3}',
+      $type: 'color',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'mode',
+          mode: 'dark',
+          group: 'semantic',
+          scopes: ['fgColor'],
+          codeSyntax: {
+            web: 'var(--fgColor-accent) /* utility class: .color-fg-accent */',
           },
         },
-        mix: {
-          color: '{base.color.blue.5}',
-          weight: 0.35,
-        },
+      },
+      mix: {
+        color: '{base.color.blue.5}',
+        weight: 0.35,
       },
     },
     success: {
-      '@': {
-        $value: '{base.color.green.3}',
-        $type: 'color',
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'mode',
-            mode: 'dark',
-            group: 'semantic',
-            scopes: ['fgColor'],
-            codeSyntax: {
-              web: 'var(--fgColor-success) /* utility class: .color-fg-success */',
-            },
+      $value: '{base.color.green.3}',
+      $type: 'color',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'mode',
+          mode: 'dark',
+          group: 'semantic',
+          scopes: ['fgColor'],
+          codeSyntax: {
+            web: 'var(--fgColor-success) /* utility class: .color-fg-success */',
           },
         },
       },
     },
     attention: {
-      '@': {
-        $value: '{base.color.yellow.3}',
-        $type: 'color',
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'mode',
-            mode: 'dark',
-            group: 'semantic',
-            scopes: ['fgColor'],
-            codeSyntax: {
-              web: 'var(--fgColor-attention) /* utility class: .color-fg-attention */',
-            },
+      $value: '{base.color.yellow.3}',
+      $type: 'color',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'mode',
+          mode: 'dark',
+          group: 'semantic',
+          scopes: ['fgColor'],
+          codeSyntax: {
+            web: 'var(--fgColor-attention) /* utility class: .color-fg-attention */',
           },
         },
       },
     },
     severe: {
-      '@': {
-        $value: '{base.color.orange.4}',
-        $type: 'color',
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'mode',
-            mode: 'dark',
-            group: 'semantic',
-            scopes: ['fgColor'],
-            codeSyntax: {
-              web: 'var(--fgColor-severe) /* utility class: .color-fg-severe */',
-            },
+      $value: '{base.color.orange.4}',
+      $type: 'color',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'mode',
+          mode: 'dark',
+          group: 'semantic',
+          scopes: ['fgColor'],
+          codeSyntax: {
+            web: 'var(--fgColor-severe) /* utility class: .color-fg-severe */',
           },
         },
       },
     },
     danger: {
-      '@': {
-        $value: '{base.color.red.4}',
-        $type: 'color',
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'mode',
-            mode: 'dark',
-            group: 'semantic',
-            scopes: ['fgColor'],
-            codeSyntax: {
-              web: 'var(--fgColor-danger) /* utility class: .color-fg-danger */',
-            },
+      $value: '{base.color.red.4}',
+      $type: 'color',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'mode',
+          mode: 'dark',
+          group: 'semantic',
+          scopes: ['fgColor'],
+          codeSyntax: {
+            web: 'var(--fgColor-danger) /* utility class: .color-fg-danger */',
           },
         },
       },
     },
     open: {
-      '@': {
-        $value: '{fgColor.success.@}',
-        $type: 'color',
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'mode',
-            mode: 'dark',
-            group: 'semantic',
-            scopes: ['fgColor'],
-            codeSyntax: {
-              web: 'var(--fgColor-open) /* utility class: .color-fg-open */',
-            },
+      $value: '{fgColor.success}',
+      $type: 'color',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'mode',
+          mode: 'dark',
+          group: 'semantic',
+          scopes: ['fgColor'],
+          codeSyntax: {
+            web: 'var(--fgColor-open) /* utility class: .color-fg-open */',
           },
         },
       },
     },
     closed: {
-      '@': {
-        $value: '{base.color.red.4}',
-        $type: 'color',
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'mode',
-            mode: 'dark',
-            group: 'semantic',
-            scopes: ['fgColor'],
-            codeSyntax: {
-              web: 'var(--fgColor-closed) /* utility class: .color-fg-closed */',
-            },
+      $value: '{base.color.red.4}',
+      $type: 'color',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'mode',
+          mode: 'dark',
+          group: 'semantic',
+          scopes: ['fgColor'],
+          codeSyntax: {
+            web: 'var(--fgColor-closed) /* utility class: .color-fg-closed */',
           },
         },
       },
     },
     done: {
-      '@': {
-        $value: '{base.color.purple.4}',
-        $type: 'color',
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'mode',
-            mode: 'dark',
-            group: 'semantic',
-            scopes: ['fgColor'],
-            codeSyntax: {
-              web: 'var(--fgColor-done) /* utility class: .color-fg-done */',
-            },
+      $value: '{base.color.purple.4}',
+      $type: 'color',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'mode',
+          mode: 'dark',
+          group: 'semantic',
+          scopes: ['fgColor'],
+          codeSyntax: {
+            web: 'var(--fgColor-done) /* utility class: .color-fg-done */',
           },
         },
       },
     },
     upsell: {
-      '@': {
-        $value: '{base.color.purple.4}',
-        $type: 'color',
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'mode',
-            mode: 'dark',
-            group: 'semantic',
-            scopes: ['fgColor'],
-            codeSyntax: {
-              web: 'var(--fgColor-upsell)',
-            },
+      $value: '{base.color.purple.4}',
+      $type: 'color',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'mode',
+          mode: 'dark',
+          group: 'semantic',
+          scopes: ['fgColor'],
+          codeSyntax: {
+            web: 'var(--fgColor-upsell)',
           },
         },
       },
     },
     sponsors: {
-      '@': {
-        $value: '{base.color.pink.4}',
-        $type: 'color',
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'mode',
-            mode: 'dark',
-            group: 'semantic',
-            scopes: ['fgColor'],
-            codeSyntax: {
-              web: 'var(--fgColor-sponsors) /* utility class: .color-fg-sponsors */',
-            },
+      $value: '{base.color.pink.4}',
+      $type: 'color',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'mode',
+          mode: 'dark',
+          group: 'semantic',
+          scopes: ['fgColor'],
+          codeSyntax: {
+            web: 'var(--fgColor-sponsors) /* utility class: .color-fg-sponsors */',
           },
         },
       },
