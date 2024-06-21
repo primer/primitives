@@ -15,16 +15,12 @@
       $type: 'color',
     },
     danger: {
-      '@': {
-        $value: '{base.color.red.6}',
-        $type: 'color',
-      },
+      $value: '{base.color.red.6}',
+      $type: 'color',
     },
     accent: {
-      '@': {
-        $value: '{base.color.blue.6}',
-        $type: 'color',
-      },
+      $value: '{base.color.blue.6}',
+      $type: 'color',
     },
   },
   bgColor: {
@@ -68,6 +64,11 @@
     },
     muted: {
       $value: '{base.color.neutral.4}',
+      $type: 'color',
+      alpha: 1,
+    },
+    translucent: {
+      $value: '{base.color.neutral.8}',
       $type: 'color',
       alpha: 1,
     },

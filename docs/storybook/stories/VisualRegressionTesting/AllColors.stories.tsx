@@ -40,13 +40,16 @@ export const ColorSwatches = ({colorToken}: {colorToken: string}) => {
       <ColorTokenSwatch
         size="large"
         bgColor={
-          colorToken.includes('bgColor') || colorToken.includes('color') || colorToken.includes('fgColor')
+          colorToken.includes('bgColor') ||
+          colorToken.includes('color') ||
+          colorToken.includes('fgColor') ||
+          colorToken.includes('iconColor')
             ? colorToken
             : undefined
         }
         shadowColor={colorToken.includes('shadow') ? colorToken : undefined}
         borderColor={colorToken.includes('borderColor') ? colorToken : undefined}
-        outlineColor={colorToken.includes('outline') ? colorToken : undefined}
+        outlineColor={colorToken.includes('outline') && !colorToken.includes('borderColor') ? colorToken : undefined}
       />
     </div>
   )

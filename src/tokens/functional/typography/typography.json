@@ -20,6 +20,16 @@
         }
       }
     },
+    "sansSerifDisplay": {
+      "$value": "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji'",
+      "$type": "fontFamily",
+      "$extensions": {
+        "org.primer.figma": {
+          "collection": "typography",
+          "scopes": ["fontFamily"]
+        }
+      }
+    },
     "monospace": {
       "$value": "ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace",
       "$type": "fontFamily",
@@ -85,7 +95,7 @@
           "fontWeight": "{text.display.weight}",
           "fontSize": "{text.display.size}",
           "lineHeight": "{text.display.lineHeight}",
-          "fontFamily": "{fontStack.sansSerif}"
+          "fontFamily": "{fontStack.sansSerifDisplay}"
         },
         "$type": "typography",
         "$description": "Hero-style text for brand to product transition pages. Utilize Title (large) styles on narrow viewports."
@@ -203,7 +213,7 @@
             "fontWeight": "{text.title.weight.large}",
             "fontSize": "{text.title.size.large}",
             "lineHeight": "{text.title.lineHeight.large}",
-            "fontFamily": "{fontStack.sansSerif}"
+            "fontFamily": "{fontStack.sansSerifDisplay}"
           },
           "$type": "typography",
           "$description": "Page headings for user-created objects, such as issues or pull requests. Utilize title (medium) styles on narrow viewports."
@@ -213,7 +223,7 @@
             "fontWeight": "{text.title.weight.medium}",
             "fontSize": "{text.title.size.medium}",
             "lineHeight": "{text.title.lineHeight.medium}",
-            "fontFamily": "{fontStack.sansSerif}"
+            "fontFamily": "{fontStack.sansSerifDisplay}"
           },
           "$type": "typography",
           "$description": "Default page title. The 32px-equivalent line-height matches with button and other medium control heights. Great for page header composition."
@@ -269,7 +279,7 @@
           "fontWeight": "{text.subtitle.weight}",
           "fontSize": "{text.subtitle.size}",
           "lineHeight": "{text.subtitle.lineHeight}",
-          "fontFamily": "{fontStack.sansSerif}"
+          "fontFamily": "{fontStack.sansSerifDisplay}"
         },
         "$type": "typography",
         "$description": "Page sections/sub headings, or less important object names in page titles (automated action titles, for example). Same line-height as title (medium)."

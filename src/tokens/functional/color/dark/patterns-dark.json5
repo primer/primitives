@@ -14,7 +14,7 @@
       alpha: 0.1,
     },
     borderColor: {
-      $value: '{base.color.white}',
+      $value: '{borderColor.translucent}',
       $type: 'color',
       $extensions: {
         'org.primer.figma': {
@@ -24,7 +24,6 @@
           scopes: ['borderColor'],
         },
       },
-      alpha: 0.15,
     },
   },
   avatarStack: {
@@ -142,8 +141,12 @@
         },
       },
       placeholder: {
-        $value: '{base.color.neutral.5}',
+        $value: '{base.color.neutral.3}',
         $type: 'color',
+        mix: {
+          color: '{base.color.neutral.4}',
+          weight: 0.2,
+        },
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
@@ -378,7 +381,7 @@
     danger: {
       fgColor: {
         rest: {
-          $value: '{fgColor.danger.@}',
+          $value: '{fgColor.danger}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -1067,7 +1070,7 @@
     invisible: {
       fgColor: {
         rest: {
-          $value: '{fgColor.accent.@}',
+          $value: '{fgColor.accent}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -1269,7 +1272,7 @@
           },
         },
         disabled: {
-          $value: '{fgColor.accent.@}',
+          $value: '{fgColor.accent}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -1363,7 +1366,7 @@
     danger: {
       fgColor: {
         rest: {
-          $value: '{fgColor.danger.@}',
+          $value: '{fgColor.danger}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -1399,7 +1402,7 @@
           },
         },
         disabled: {
-          $value: '{fgColor.danger.@}',
+          $value: '{fgColor.danger}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -1414,7 +1417,7 @@
       },
       iconColor: {
         rest: {
-          $value: '{fgColor.danger.@}',
+          $value: '{fgColor.danger}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -1692,7 +1695,7 @@
           },
         },
         disabled: {
-          $value: '{fgColor.accent.@}',
+          $value: '{fgColor.accent}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -1750,7 +1753,7 @@
       },
       fgColor: {
         rest: {
-          $value: '{fgColor.danger.@}',
+          $value: '{fgColor.danger}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -1774,7 +1777,7 @@
           },
         },
         disabled: {
-          $value: '{fgColor.danger.@}',
+          $value: '{fgColor.danger}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -1825,7 +1828,7 @@
       },
       fgColor: {
         rest: {
-          $value: '{fgColor.link.@}',
+          $value: '{fgColor.link}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
