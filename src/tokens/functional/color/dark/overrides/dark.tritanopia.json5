@@ -6,28 +6,20 @@
 {
   fgColor: {
     success: {
-      '@': {
-        $value: '{base.color.blue.3}',
-        $type: 'color',
-      },
+      $value: '{base.color.blue.3}',
+      $type: 'color',
     },
     severe: {
-      '@': {
-        $value: '{base.color.red.4}',
-        $type: 'color',
-      },
+      $value: '{base.color.red.4}',
+      $type: 'color',
     },
     open: {
-      '@': {
-        $value: '{base.color.red.4}',
-        $type: 'color',
-      },
+      $value: '{base.color.red.4}',
+      $type: 'color',
     },
     closed: {
-      '@': {
-        $value: '{base.color.neutral.4}',
-        $type: 'color',
-      },
+      $value: '{base.color.neutral.4}',
+      $type: 'color',
     },
   },
   bgColor: {
@@ -224,6 +216,6 @@
           },
         },
       },
-    }
+    },
   },
 }
