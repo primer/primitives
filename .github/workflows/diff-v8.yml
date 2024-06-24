@@ -50,69 +50,43 @@ jobs:
         uses: actions/github-script@v7
         with:
           script: |
-            const cssFolder = 'dist/css'
             const shell = require('shelljs')
-            const globber = await glob.create(cssFolder + '/**/**/*.css')
+            const globber = await glob.create('dist/css/**/*.css')
             const files = await globber.glob()
+            const diffFilePath = 'diffs/diff_output.txt'
+            shell.mkdir('-p', 'diffs')
+            shell.touch(diffFilePath)
 
-            // create diffs
-            const diffs = files.map(file => {
-              // run diff
-              const diff = shell.exec(`diff -u ${file.replace(cssFolder, 'base/' + cssFolder)} ${file}`)
-              // get filename
-              const regexRunnerPath = new RegExp('^[a-z\/]+\/dist', 'g')
-              const filename = file.replaceAll(regexRunnerPath,'')
-
-              console.log('Checking diff for ' + filename + '...')
-
+            files.forEach(file => {
+              const diff = shell.exec(`diff -u ${file.replace('dist/css', 'base/dist/css')} ${file} >> ${diffFilePath}`)
               if (diff.stderr) {
                 console.error(diff.stderr)
                 core.setFailed(diff.stderr)
               }
-              
-              if (diff.stdout === '') {
-                console.log('No diff for ' + filename + '\n')
-              } else {
-                console.log(diff.stdout + '\n')
-              }
-              
-              return {
-                file: filename,
-                diff: diff.stdout || ''
-              }
             })
-            // filter files with no diffs
-            .filter(item => {
-              return item.diff !== ''
-            })
-            
-            // set output to use diff in pr comment
-            core.setOutput('diffs', diffs);
+
+            if (shell.cat(diffFilePath).stdout === '') {
+              console.log('No differences in design tokens.')
+            } else {
+              console.log('Differences detected in design tokens.')
+            }
 
       - name: Write summary
         uses: actions/github-script@v7
         with:
           script: |
-            const diffs = ${{ steps.diff-files.outputs.diffs }}
+            const fs = require('fs')
+            const diffFilePath = 'diffs/diff_output.txt'
+            const diffs = fs.readFileSync(diffFilePath, 'utf8')
             
             core.summary.clear()
             
             core.summary.addHeading('V8 Design Token Diff', '1')
             
-            if (diffs.length === 0) {
+            if (!diffs) {
               core.summary.addRaw('No design tokens changed', true)
             } else {
-
-              diffs.forEach(({file: fileName, diff: content}) => {
-                const diffDetails = `<details><summary><h3>${fileName}</h3></summary>\n\n`+
-                '```diff\n'+
-                `${content}\n`+
-                '```\n\n'+
-                '</details>'
-
-                core.summary.addRaw(diffDetails, true)
-              })
-
+              core.summary.addRaw('```diff\n' + diffs + '\n```', true)
             }
 
             // write summary
@@ -123,45 +97,32 @@ jobs:
         uses: actions/github-script@v7
         with:
           script: |
-            const diffs = ${{ steps.diff-files.outputs.diffs }}
+            const fs = require('fs')
+            const diffFilePath = 'diffs/diff_output.txt'
+            const diffs = fs.readFileSync(diffFilePath, 'utf8')
 
-            // prepare comment body
             let body = '## Design Token Diff\n\n'
-            if (diffs.length === 0) {
+            if (!diffs) {
               body += 'No design tokens changed'
             } else {
-              body += diffs.map(({file, diff}) => 
-                '<details>' +
-                `<summary><h3>${file}</h3></summary>\n` +
-                "  \n"+
-                "  ```diff"+
-                `  ${diff}` +
-                "  ```"+
-                '\n</details>'
-              ).join('\n')
+              body += '```diff\n' + diffs + '\n```'
             }
 
-            // get comments
             const {data: comments} = await github.rest.issues.listComments({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo
             });
 
-            // get comment if exists
-            const existingComment = comments.filter(comment => comment.body.includes('## Design Token Diff'));
-            // if token issue exists, update it
-            if(existingComment.length > 0) {
+            const existingComment = comments.find(comment => comment.body.includes('## Design Token Diff'));
+            if (existingComment) {
               await github.rest.issues.updateComment({
-                comment_id: existingComment[0].id,
+                comment_id: existingComment.id,
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 body
               })
-            }
-
-            // if comment does not exist, create it
-            else {
+            } else {
               await github.rest.issues.createComment({
                 issue_number: context.issue.number,
                 owner: context.repo.owner,
