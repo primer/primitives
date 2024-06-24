@@ -19,8 +19,20 @@
       $value: '{base.color.neutral.4}',
       $type: 'color',
     },
+    accent: {
+      $value: '{base.color.blue.4}',
+      $type: 'color',
+    },
   },
   bgColor: {
+    muted: {
+      $value: '{base.color.neutral.9}',
+      $type: 'color',
+      mix: {
+        color: '{base.color.neutral.8}',
+        weight: 0.5,
+      },
+    },
     emphasis: {
       $value: '{base.color.white}',
       $type: 'color',
@@ -46,6 +58,10 @@
       $value: '{base.color.neutral.5}',
       $type: 'color',
       alpha: 1,
+    },
+    emphasis: {
+      $value: '{base.color.neutral.4}',
+      $type: 'color',
     },
     neutral: {
       muted: {
@@ -130,6 +146,16 @@
     },
   },
   control: {
+    fgColor: {
+      placeholder: {
+        $value: '{base.color.neutral.2}',
+        $type: 'color',
+        mix: {
+          color: '{base.color.neutral.1}',
+          weight: 0.5,
+        },
+      },
+    },
     bgColor: {
       selected: {
         $value: '{base.color.neutral.6}',
