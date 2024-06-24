@@ -234,6 +234,7 @@ const highContrast: ContrastRequirement[] = [
   [7, 'fgColor-default', 'bgColor-attention-muted'],
   [7, 'fgColor-default', 'bgColor-severe-muted'],
   [7, 'fgColor-default', 'bgColor-done-muted'],
+  [7, 'fgColor-default', 'bgColor-upsell-muted'],
   [7, 'fgColor-default', 'bgColor-sponsors-muted'],
   // role
   [7, 'fgColor-accent', 'bgColor-default'],
