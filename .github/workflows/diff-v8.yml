@@ -170,6 +170,11 @@ jobs:
               repo: context.repo.repo
             });
 
+            // overwrite body if to long
+            if(body.length > 65536) {
+              body = '## Design Token Diff\n\nThe diff is too long to be displayed here. Please check the job summary for more details.'
+            }
+
             // get comment if exists
             const existingComment = comments.filter(comment => comment.body.includes('## Design Token Diff'));
             // if token issue exists, update it
