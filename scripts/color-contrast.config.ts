@@ -61,6 +61,9 @@ const baseRequirements: ContrastRequirement[] = [
   [4.5, 'fgColor-done', 'bgColor-default'],
   [4.5, 'fgColor-done', 'bgColor-muted'],
   [4.5, 'fgColor-done', 'bgColor-inset'],
+  [4.5, 'fgColor-upsell', 'bgColor-default'],
+  [4.5, 'fgColor-upsell', 'bgColor-muted'],
+  [4.5, 'fgColor-upsell', 'bgColor-inset'],
   [4.5, 'fgColor-sponsors', 'bgColor-default'],
   [4.5, 'fgColor-sponsors', 'bgColor-muted'],
   [4.5, 'fgColor-sponsors', 'bgColor-inset'],
@@ -73,6 +76,7 @@ const baseRequirements: ContrastRequirement[] = [
   [4.5, 'fgColor-attention', 'bgColor-attention-muted'],
   [4.5, 'fgColor-severe', 'bgColor-severe-muted'],
   [4.5, 'fgColor-done', 'bgColor-done-muted'],
+  [4.5, 'fgColor-upsell', 'bgColor-upsell-muted'],
   [4.5, 'fgColor-sponsors', 'bgColor-sponsors-muted'],
   // fgColor-onEmphasis
   [4.5, 'fgColor-onEmphasis', 'bgColor-neutral-emphasis'],
@@ -84,6 +88,7 @@ const baseRequirements: ContrastRequirement[] = [
   [4.5, 'fgColor-onEmphasis', 'bgColor-attention-emphasis'],
   [4.5, 'fgColor-onEmphasis', 'bgColor-severe-emphasis'],
   [4.5, 'fgColor-onEmphasis', 'bgColor-done-emphasis'],
+  [4.5, 'fgColor-onEmphasis', 'bgColor-upsell-emphasis'],
   [4.5, 'fgColor-onEmphasis', 'bgColor-sponsors-emphasis'],
   // borders
   [3, 'control-borderColor-emphasis', 'bgColor-default'],
@@ -255,6 +260,9 @@ const highContrast: ContrastRequirement[] = [
   [7, 'fgColor-done', 'bgColor-default'],
   [7, 'fgColor-done', 'bgColor-muted'],
   [7, 'fgColor-done', 'bgColor-inset'],
+  [7, 'fgColor-upsell', 'bgColor-default'],
+  [7, 'fgColor-upsell', 'bgColor-muted'],
+  [7, 'fgColor-upsell', 'bgColor-inset'],
   [7, 'fgColor-sponsors', 'bgColor-default'],
   [7, 'fgColor-sponsors', 'bgColor-muted'],
   [7, 'fgColor-sponsors', 'bgColor-inset'],
@@ -267,6 +275,7 @@ const highContrast: ContrastRequirement[] = [
   [7, 'fgColor-attention', 'bgColor-attention-muted'],
   [7, 'fgColor-severe', 'bgColor-severe-muted'],
   [7, 'fgColor-done', 'bgColor-done-muted'],
+  [7, 'fgColor-upsell', 'bgColor-done-muted'],
   [7, 'fgColor-sponsors', 'bgColor-sponsors-muted'],
   // fgColor-onEmphasis
   [7, 'fgColor-onEmphasis', 'bgColor-neutral-emphasis'],
@@ -278,6 +287,7 @@ const highContrast: ContrastRequirement[] = [
   [7, 'fgColor-onEmphasis', 'bgColor-attention-emphasis'],
   [7, 'fgColor-onEmphasis', 'bgColor-severe-emphasis'],
   [7, 'fgColor-onEmphasis', 'bgColor-done-emphasis'],
+  [7, 'fgColor-onEmphasis', 'bgColor-upsell-emphasis'],
   [7, 'fgColor-onEmphasis', 'bgColor-sponsors-emphasis'],
   // borders
   [4.5, 'control-borderColor-emphasis', 'bgColor-default'],
