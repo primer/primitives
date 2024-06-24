@@ -54,10 +54,16 @@ jobs:
             const shell = require('shelljs')
             const globber = await glob.create(cssFolder + '/**/**/*.css')
             const files = await globber.glob()
+            const fs = require('fs')
+            
+            // create file to store diffs
+            const diffFilePath = 'diff_output.json'
+            shell.touch(diffFilePath)
+            core.setOutput('diffFilePath', diffFilePath);
 
             // create diffs
             const diffs = files.map(file => {
-              // run diff
+              // run diff & store in file
               const diff = shell.exec(`diff -u ${file.replace(cssFolder, 'base/' + cssFolder)} ${file}`)
               // get filename
               const regexRunnerPath = new RegExp('^[a-z\/]+\/dist', 'g')
@@ -86,15 +92,23 @@ jobs:
               return item.diff !== ''
             })
             
-            // set output to use diff in pr comment
-            core.setOutput('diffs', diffs);
+            // store diffs in file
+            fs.writeFileSync(diffFilePath, JSON.stringify(diffs, null, ' '))
 
       - name: Write summary
         uses: actions/github-script@v7
         with:
           script: |
-            const diffs = ${{ steps.diff-files.outputs.diffs }}
+            const fs = require('fs')
+            const diffFilePath = "${{ steps.diff-files.outputs.diffFilePath }}"
             
+            // check if file exists
+            if(!fs.existsSync(diffFilePath)) {
+              return
+            }
+            // read file
+            const diffs = JSON.parse(fs.readFileSync(diffFilePath, 'utf8'))
+
             core.summary.clear()
             
             core.summary.addHeading('V8 Design Token Diff', '1')
@@ -123,7 +137,15 @@ jobs:
         uses: actions/github-script@v7
         with:
           script: |
-            const diffs = ${{ steps.diff-files.outputs.diffs }}
+            const fs = require('fs')
+            const diffFilePath = "${{ steps.diff-files.outputs.diffFilePath }}"
+            
+            // check if file exists
+            if(!fs.existsSync(diffFilePath)) {
+              return
+            }
+            // read file
+            const diffs = JSON.parse(fs.readFileSync(diffFilePath, 'utf8'))
 
             // prepare comment body
             let body = '## Design Token Diff\n\n'
