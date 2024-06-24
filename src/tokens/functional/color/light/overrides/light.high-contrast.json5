@@ -194,6 +194,16 @@
     },
   },
   control: {
+    fgColor: {
+      placeholder: {
+        $value: '{base.color.neutral.6}',
+        $type: 'color',
+        mix: {
+          color: '{base.color.neutral.7}',
+          weight: 0.2,
+        },
+      },
+    },
     bgColor: {
       rest: {
         $value: '{base.color.neutral.1}',

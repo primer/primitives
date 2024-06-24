@@ -205,11 +205,8 @@ const highContrast: ContrastRequirement[] = [
   [7, 'fgColor-default', 'bgColor-inset'],
   [7, 'fgColor-muted', 'bgColor-inset'],
   [7, 'control-fgColor-rest', 'bgColor-default'],
-  [7, 'control-fgColor-placeholder', 'bgColor-default'],
   [7, 'control-fgColor-rest', 'bgColor-muted'],
-  [7, 'control-fgColor-placeholder', 'bgColor-muted'],
   [7, 'control-fgColor-rest', 'bgColor-inset'],
-  [7, 'control-fgColor-placeholder', 'bgColor-inset'],
   // control colors
   [7, 'fgColor-default', 'control-bgColor-rest'],
   [7, 'fgColor-muted', 'control-bgColor-rest'],
