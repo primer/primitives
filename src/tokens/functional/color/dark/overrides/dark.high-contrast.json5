@@ -22,6 +22,18 @@
     accent: {
       $value: '{base.color.blue.3}',
       $type: 'color',
+      mix: {
+        color: '{base.color.blue.2}',
+        weight: 0.05,
+      },
+    },
+    danger: {
+      $value: '{base.color.red.3}',
+      $type: 'color',
+      // mix: {
+      //   color: '{base.color.red.3}',
+      //   weight: 0.5,
+      // },
     },
     severe: {
       $value: '{base.color.orange.3}',
@@ -53,6 +65,48 @@
       emphasis: {
         $value: '{base.color.neutral.4}',
         $type: 'color',
+      },
+    },
+    accent: {
+      muted: {
+        $value: '{base.color.blue.5}',
+        $type: 'color',
+        alpha: 0.1,
+      },
+    },
+    success: {
+      muted: {
+        $value: '{base.color.green.4}',
+        $type: 'color',
+        alpha: 0.14,
+      },
+    },
+    danger: {
+      muted: {
+        $value: '{base.color.red.4}',
+        $type: 'color',
+        alpha: 0.09,
+      },
+    },
+    severe: {
+      muted: {
+        $value: '{base.color.orange.4}',
+        $type: 'color',
+        alpha: 0.088,
+      },
+    },
+    done: {
+      muted: {
+        $value: '{base.color.purple.5}',
+        $type: 'color',
+        alpha: 0.09,
+      },
+    },
+    sponsors: {
+      muted: {
+        $value: '{base.color.pink.5}',
+        $type: 'color',
+        alpha: 0.09,
       },
     },
   },
@@ -176,7 +230,7 @@
           color: '{base.color.neutral.8}',
           weight: 0.2,
         },
-      }
+      },
     },
     borderColor: {
       emphasis: {
