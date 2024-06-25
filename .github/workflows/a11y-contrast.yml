@@ -16,6 +16,7 @@ jobs:
     if: needs.changes.outputs.tokens == 'true' || github.event_name == 'workflow_dispatch'
     name: Check design token color contrast
     runs-on: ubuntu-latest
+    continue-on-error: true
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -58,6 +59,7 @@ jobs:
 
             // set output
             core.setOutput('markdown', resultsMarkdown)
+            core.setOutput('faildChecks', faildChecks)
 
             // fail action if any contrast check fails
             if (faildChecks > 0) {
@@ -69,7 +71,7 @@ jobs:
             }
       
       - name: Report check results as comment
-        if: github.event_name == 'pull_request' && ${{ failure() || success() }}
+        if: github.event_name == 'pull_request'
         uses: actions/github-script@v7
         with:
           script: |
@@ -114,3 +116,11 @@ jobs:
             // output results to summary
             core.summary.addRaw(resultsMarkdown, true)
             core.summary.write({overwrite: true})
+  
+  fail:
+    needs: build
+    if: needs.build.outputs.faildChecks > 0
+    runs-on: ubuntu-latest
+    steps:
+      - name: Some contrast checks failed
+        run: exit 1
