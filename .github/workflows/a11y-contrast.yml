@@ -39,7 +39,7 @@ jobs:
         run: |
           npm run contrast:check
 
-      - name: Fail or pass action based on check results
+      - name: Prepare check results
         id: check-results
         continue-on-error: true
         uses: actions/github-script@v7
@@ -119,10 +119,12 @@ jobs:
             core.summary.addRaw(resultsMarkdown, true)
             core.summary.write({overwrite: true})
   
-  fail:
+  Fail_action_on_contrast_failing:
     needs: build
     if: needs.build.outputs.faildChecks > 0
     runs-on: ubuntu-latest
     steps:
-      - name: Some contrast checks failed
-        run: exit 1
+      - name: Contrast checks failed
+        run: |
+          echo "::error::{needs.build.outputs.faildChecks} contrast checks failed. Please fix the failing checks and try again."
+          exit 1
