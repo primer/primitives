@@ -29,12 +29,9 @@
         $type: 'color',
       },
       emphasis: {
-        $value: '{base.color.blue.4}',
+        $value: '{base.color.blue.5}',
         $type: 'color',
-        mix: {
-          color: '{base.color.blue.5}',
-          weight: 0.75,
-        },
+        mix: null
       },
     },
     open: {
