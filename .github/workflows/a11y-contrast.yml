@@ -17,6 +17,8 @@ jobs:
     name: Check design token color contrast
     runs-on: ubuntu-latest
     continue-on-error: true
+    outputs:
+      faildChecks: ${{ steps.check-results.outputs.faildChecks }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
