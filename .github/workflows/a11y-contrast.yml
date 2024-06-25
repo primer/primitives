@@ -121,10 +121,11 @@ jobs:
   
   Fail_action_on_contrast_failing:
     needs: build
+    name: Fail action on contrast failing
     if: needs.build.outputs.faildChecks > 0
     runs-on: ubuntu-latest
     steps:
       - name: Contrast checks failed
         run: |
-          echo "::error::{needs.build.outputs.faildChecks} contrast checks failed. Please fix the failing checks and try again."
+          echo "::error::${{ needs.build.outputs.faildChecks }} contrast checks failed. Please fix the failing checks and try again."
           exit 1
