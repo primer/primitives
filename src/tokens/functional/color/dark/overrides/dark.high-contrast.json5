@@ -20,7 +20,19 @@
       $type: 'color',
     },
     accent: {
-      $value: '{base.color.blue.4}',
+      $value: '{base.color.blue.3}',
+      $type: 'color',
+    },
+    severe: {
+      $value: '{base.color.orange.3}',
+      $type: 'color',
+    },
+    done: {
+      $value: '{base.color.purple.3}',
+      $type: 'color',
+    },
+    sponsors: {
+      $value: '{base.color.pink.3}',
       $type: 'color',
     },
   },
@@ -157,10 +169,14 @@
       },
     },
     bgColor: {
-      selected: {
-        $value: '{base.color.neutral.6}',
+      active: {
+        $value: '{base.color.neutral.7}',
         $type: 'color',
-      },
+        mix: {
+          color: '{base.color.neutral.8}',
+          weight: 0.2,
+        },
+      }
     },
     borderColor: {
       emphasis: {
