@@ -13,12 +13,36 @@
       $value: '{base.color.neutral.8}',
       $type: 'color',
     },
+    success: {
+      $value: '{base.color.green.6}',
+      $type: 'color',
+    },
     danger: {
       $value: '{base.color.red.6}',
       $type: 'color',
     },
+    attention: {
+      $value: '{base.color.yellow.6}',
+      $type: 'color',
+    },
+    severe: {
+      $value: '{base.color.orange.6}',
+      $type: 'color',
+    },
+    done: {
+      $value: '{base.color.purple.6}',
+      $type: 'color',
+    },
     accent: {
       $value: '{base.color.blue.6}',
+      $type: 'color',
+    },
+    accent: {
+      $value: '{base.color.blue.6}',
+      $type: 'color',
+    },
+    sponsors: {
+      $value: '{base.color.pink.6}',
       $type: 'color',
     },
   },
@@ -35,6 +59,11 @@
       emphasis: {
         $value: '{base.color.neutral.9}',
         $type: 'color',
+      },
+      emphasis: {
+        $value: '{base.color.neutral.6}',
+        $type: 'color',
+        alpha: 1,
       },
     },
     disabled: {
@@ -90,6 +119,13 @@
       emphasis: {
         $value: '{base.color.green.5}',
         $type: 'color',
+      },
+    },
+    open: {
+      muted: {
+        $value: '{borderColor.success.muted}',
+        $type: 'color',
+        alpha: 1,
       },
     },
     attention: {
@@ -153,6 +189,16 @@
     },
   },
   control: {
+    fgColor: {
+      placeholder: {
+        $value: '{base.color.neutral.6}',
+        $type: 'color',
+        mix: {
+          color: '{base.color.neutral.7}',
+          weight: 0.2,
+        },
+      },
+    },
     bgColor: {
       rest: {
         $value: '{base.color.neutral.3}',

@@ -21,6 +21,30 @@
       $value: '{base.color.neutral.8}',
       $type: 'color',
     },
+    accent: {
+      $value: '{base.color.blue.3}',
+      $type: 'color',
+      mix: {
+        color: '{base.color.blue.2}',
+        weight: 0.05,
+      },
+    },
+    danger: {
+      $value: '{base.color.red.3}',
+      $type: 'color',
+    },
+    severe: {
+      $value: '{base.color.orange.3}',
+      $type: 'color',
+    },
+    done: {
+      $value: '{base.color.purple.3}',
+      $type: 'color',
+    },
+    sponsors: {
+      $value: '{base.color.pink.3}',
+      $type: 'color',
+    },
   },
   bgColor: {
     default: {
@@ -45,6 +69,62 @@
         $type: 'color',
       },
     },
+    accent: {
+      muted: {
+        $value: '{base.color.blue.5}',
+        $type: 'color',
+        alpha: 0.1,
+      },
+    },
+    success: {
+      muted: {
+        $value: '{base.color.green.4}',
+        $type: 'color',
+        alpha: 0.14,
+      },
+    },
+    open: {
+      muted: {
+        $value: '{bgColor.success.muted}',
+        $type: 'color',
+        alpha: 0.14,
+      },
+    },
+    danger: {
+      muted: {
+        $value: '{base.color.red.4}',
+        $type: 'color',
+        alpha: 0.09,
+      },
+    },
+    closed: {
+      muted: {
+        $value: '{bgColor.danger.muted}',
+        $type: 'color',
+        alpha: 0.09,
+      },
+    },
+    severe: {
+      muted: {
+        $value: '{base.color.orange.4}',
+        $type: 'color',
+        alpha: 0.088,
+      },
+    },
+    done: {
+      muted: {
+        $value: '{base.color.purple.5}',
+        $type: 'color',
+        alpha: 0.09,
+      },
+    },
+    sponsors: {
+      muted: {
+        $value: '{base.color.pink.5}',
+        $type: 'color',
+        alpha: 0.09,
+      },
+    },
   },
   borderColor: {
     default: {
@@ -65,6 +145,17 @@
       $type: 'color',
       alpha: 1,
     },
+    neutral: {
+      muted: {
+        $value: '{base.color.neutral.4}',
+        $type: 'color',
+        alpha: 1,
+      },
+      emphasis: {
+        $value: '{base.color.neutral.4}',
+        $type: 'color',
+      },
+    },
     accent: {
       muted: {
         $value: '{base.color.blue.4}',
@@ -75,6 +166,13 @@
     success: {
       muted: {
         $value: '{base.color.green.4}',
+        $type: 'color',
+        alpha: 1,
+      },
+    },
+    open: {
+      muted: {
+        $value: '{borderColor.success.muted}',
         $type: 'color',
         alpha: 1,
       },
@@ -136,6 +234,16 @@
     },
   },
   control: {
+    fgColor: {
+      placeholder: {
+        $value: '{base.color.neutral.2}',
+        $type: 'color',
+        mix: {
+          color: '{base.color.neutral.1}',
+          weight: 0.5,
+        },
+      },
+    },
     bgColor: {
       rest: {
         $value: '{base.color.neutral.3}',
