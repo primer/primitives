@@ -38,6 +38,7 @@ jobs:
 
       - name: Fail or pass action based on check results
         id: check-results
+        continue-on-error: true
         uses: actions/github-script@v7
         with:
           script: |
@@ -68,7 +69,7 @@ jobs:
             }
       
       - name: Report check results as comment
-        if: github.event_name == 'pull_request'
+        if: github.event_name == 'pull_request' && ${{ failure() || success() }}
         uses: actions/github-script@v7
         with:
           script: |
