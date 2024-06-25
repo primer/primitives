@@ -30,10 +30,6 @@
     danger: {
       $value: '{base.color.red.3}',
       $type: 'color',
-      // mix: {
-      //   color: '{base.color.red.3}',
-      //   weight: 0.5,
-      // },
     },
     severe: {
       $value: '{base.color.orange.3}',
@@ -81,9 +77,23 @@
         alpha: 0.14,
       },
     },
+    open: {
+      muted: {
+        $value: '{bgColor.success.muted}',
+        $type: 'color',
+        alpha: 0.14,
+      },
+    },
     danger: {
       muted: {
         $value: '{base.color.red.4}',
+        $type: 'color',
+        alpha: 0.09,
+      },
+    },
+    closed: {
+      muted: {
+        $value: '{bgColor.danger.muted}',
         $type: 'color',
         alpha: 0.09,
       },
