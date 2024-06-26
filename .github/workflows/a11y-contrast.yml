@@ -10,11 +10,15 @@ jobs:
   changes:
     uses: ./.github/workflows/hasChanged.yml
 
+  
   build:
     needs: changes
     if: needs.changes.outputs.tokens == 'true' || github.event_name == 'workflow_dispatch'
     name: Check design token color contrast
     runs-on: ubuntu-latest
+    continue-on-error: true
+    outputs:
+      faildChecks: ${{ steps.check-results.outputs.faildChecks }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -35,7 +39,7 @@ jobs:
         run: |
           npm run contrast:check
 
-      - name: Fail or pass action based on check results
+      - name: Prepare check results
         id: check-results
         continue-on-error: true
         uses: actions/github-script@v7
@@ -57,6 +61,7 @@ jobs:
 
             // set output
             core.setOutput('markdown', resultsMarkdown)
+            core.setOutput('faildChecks', faildChecks)
 
             // fail action if any contrast check fails
             if (faildChecks > 0) {
@@ -113,3 +118,14 @@ jobs:
             // output results to summary
             core.summary.addRaw(resultsMarkdown, true)
             core.summary.write({overwrite: true})
+  
+  Fail_action_on_contrast_failing:
+    needs: build
+    name: Fail action on contrast failing
+    if: needs.build.outputs.faildChecks > 0
+    runs-on: ubuntu-latest
+    steps:
+      - name: Contrast checks failed
+        run: |
+          echo "::error::${{ needs.build.outputs.faildChecks }} contrast checks failed. Please fix the failing checks and try again."
+          exit 1
