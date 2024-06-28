@@ -48,6 +48,7 @@ jobs:
         filters: |
           tokens:
             - 'src/tokens/**'
+            - 'scripts/color-contrast.config.ts'
           src:
             - 'src/**/**.ts'
             - 'src/**/**.json'
