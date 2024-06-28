@@ -21,6 +21,10 @@
       $value: '{base.color.neutral.8}',
       $type: 'color',
     },
+    neutral: {
+      $value: '{base.color.neutral.1}',
+      $type: 'color',
+    },
     accent: {
       $value: '{base.color.blue.3}',
       $type: 'color',
@@ -64,6 +68,11 @@
       $type: 'color',
     },
     neutral: {
+      muted: {
+        $value: '{base.color.neutral.5}',
+        $type: 'color',
+        alpha: 0.4,
+      },
       emphasis: {
         $value: '{base.color.neutral.9}',
         $type: 'color',
@@ -114,6 +123,13 @@
     done: {
       muted: {
         $value: '{base.color.purple.5}',
+        $type: 'color',
+        alpha: 0.09,
+      },
+    },
+    upsell: {
+      muted: {
+        $value: '{bgColor.done.muted}',
         $type: 'color',
         alpha: 0.09,
       },
