@@ -121,6 +121,13 @@
         alpha: 0.09,
       },
     },
+    upsell: {
+      muted: {
+        $value: '{bgColor.done.muted}',
+        $type: 'color',
+        alpha: 0.09,
+      },
+    },
     sponsors: {
       muted: {
         $value: '{base.color.pink.5}',

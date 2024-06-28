@@ -639,7 +639,7 @@
         alpha: 0.1,
       },
       emphasis: {
-        $value: '{base.color.red.5}',
+        $value: '{bgColor.danger.emphasis}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -689,7 +689,7 @@
     },
     upsell: {
       muted: {
-        $value: '{base.color.purple.4}',
+        $value: '{bgColor.done.muted}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -705,7 +705,7 @@
         alpha: 0.15,
       },
       emphasis: {
-        $value: '{base.color.purple.5}',
+        $value: '{bgColor.done.emphasis}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
