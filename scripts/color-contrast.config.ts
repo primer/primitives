@@ -28,6 +28,7 @@ const baseRequirements: ContrastRequirement[] = [
   [4.5, 'control-fgColor-rest', 'control-bgColor-selected'],
   // default text on role bg
   // TODO: contrast does not work with semi-transparent colors
+  [4.5, 'fgColor-default', 'bgColor-neutral-muted'],
   [4.5, 'fgColor-default', 'bgColor-accent-muted'],
   [4.5, 'fgColor-default', 'bgColor-success-muted'],
   [4.5, 'fgColor-default', 'bgColor-open-muted'],
@@ -38,6 +39,9 @@ const baseRequirements: ContrastRequirement[] = [
   [4.5, 'fgColor-default', 'bgColor-done-muted'],
   [4.5, 'fgColor-default', 'bgColor-sponsors-muted'],
   // role
+  [4.5, 'fgColor-neutral', 'bgColor-default'],
+  [4.5, 'fgColor-neutral', 'bgColor-muted'],
+  [4.5, 'fgColor-neutral', 'bgColor-inset'],
   [4.5, 'fgColor-accent', 'bgColor-default'],
   [4.5, 'fgColor-accent', 'bgColor-muted'],
   [4.5, 'fgColor-accent', 'bgColor-inset'],
@@ -69,11 +73,12 @@ const baseRequirements: ContrastRequirement[] = [
   [4.5, 'fgColor-sponsors', 'bgColor-muted'],
   [4.5, 'fgColor-sponsors', 'bgColor-inset'],
   // role text on role bg
-  [4.5, 'fgColor-accent', 'bgColor-accent-muted', {bg: ['bgColor-default']}],
+  [4.5, 'fgColor-neutral', 'bgColor-neutral-muted'],
+  [4.5, 'fgColor-accent', 'bgColor-accent-muted'],
   [4.5, 'fgColor-success', 'bgColor-success-muted'],
   [4.5, 'fgColor-open', 'bgColor-open-muted'],
   [4.5, 'fgColor-danger', 'bgColor-danger-muted'],
-  [4.5, 'fgColor-closed', 'bgColor-closed-muted', {bg: ['bgColor-default']}],
+  [4.5, 'fgColor-closed', 'bgColor-closed-muted'],
   [4.5, 'fgColor-attention', 'bgColor-attention-muted'],
   [4.5, 'fgColor-severe', 'bgColor-severe-muted'],
   [4.5, 'fgColor-done', 'bgColor-done-muted'],
@@ -216,6 +221,7 @@ const highContrast: ContrastRequirement[] = [
   [7, 'control-fgColor-rest', 'control-bgColor-hover'],
   // default text on role bg
   // TODO: contrast does not work with semi-transparent colors
+  [7, 'fgColor-default', 'bgColor-neutral-muted'],
   [7, 'fgColor-default', 'bgColor-accent-muted'],
   [7, 'fgColor-default', 'bgColor-success-muted'],
   [7, 'fgColor-default', 'bgColor-open-muted'],
@@ -227,6 +233,9 @@ const highContrast: ContrastRequirement[] = [
   [7, 'fgColor-default', 'bgColor-upsell-muted'],
   [7, 'fgColor-default', 'bgColor-sponsors-muted'],
   // role
+  [7, 'fgColor-neutral', 'bgColor-default'],
+  [7, 'fgColor-neutral', 'bgColor-muted'],
+  [7, 'fgColor-neutral', 'bgColor-inset'],
   [7, 'fgColor-accent', 'bgColor-default'],
   [7, 'fgColor-accent', 'bgColor-muted'],
   [7, 'fgColor-accent', 'bgColor-inset'],
@@ -258,6 +267,7 @@ const highContrast: ContrastRequirement[] = [
   [7, 'fgColor-sponsors', 'bgColor-muted'],
   [7, 'fgColor-sponsors', 'bgColor-inset'],
   // role text on role bg
+  [7, 'fgColor-neutral', 'bgColor-neutral-muted'],
   [7, 'fgColor-accent', 'bgColor-accent-muted'],
   [7, 'fgColor-success', 'bgColor-success-muted'],
   [7, 'fgColor-open', 'bgColor-open-muted'],
