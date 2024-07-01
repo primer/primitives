@@ -246,6 +246,7 @@ const defaultContrast: ContrastRequirement[] = setContrastRatios('default', [
 
 const highContrast: ContrastRequirement[] = setContrastRatios('highContrast', [
   ...baseRequirements,
+  ...displayColorRequirements,
   // add high contrast overwrites or additions
 ])
 
