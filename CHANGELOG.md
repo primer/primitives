@@ -1,5 +1,15 @@
 # @primer/primitives
 
+## 8.2.4
+
+### Patch Changes
+
+- [#993](https://github.com/primer/primitives/pull/993) [`adf195c`](https://github.com/primer/primitives/commit/adf195c44799a6ece39a744b00ad8d4b9245d3eb) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Add neutral to contrast checks and fix contrasts
+
+- [#994](https://github.com/primer/primitives/pull/994) [`4944964`](https://github.com/primer/primitives/commit/49449640973dd907566943763e3c2a0ffa033bee) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Simplify contrast checker script and bugfix for bgColor.upsell.muted in dark high contrast mode
+
+- [#977](https://github.com/primer/primitives/pull/977) [`86a263b`](https://github.com/primer/primitives/commit/86a263b1004b5ecf75af8bf8f2af7bf17a178ec5) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - rm @ where it does not effect output
+
 ## 8.2.3
 
 ### Patch Changes
