@@ -119,6 +119,7 @@ export const decorators = [
             data-color-mode={theme.startsWith('dark') ? 'dark' : 'light'}
             data-light-theme={theme.startsWith('light') ? theme : undefined}
             data-dark-theme={theme.startsWith('dark') ? theme : undefined}
+            style={{backgroundColor: 'var(--bgColor-default)', padding: 'var(--base-size-16)'}}
           >
             <Story {...context} />
             {context.globals.theme === 'all' && <p className="theme-name">{theme}</p>}

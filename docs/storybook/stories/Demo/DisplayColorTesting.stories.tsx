@@ -36,8 +36,8 @@ const colors = [
 
 export const DisplayDemo = () => {
   return (
-    <Box sx={{ml: 2, gap: 3, display: 'flex', flexDirection: 'column'}}>
-      <Box sx={{ml: 2, gap: 2, display: 'flex'}}>
+    <Box sx={{gap: 3, display: 'flex', flexDirection: 'column'}}>
+      <Box sx={{gap: 2, display: 'flex'}}>
         {colors.map(color => (
           <Token
             text={color}
@@ -49,7 +49,7 @@ export const DisplayDemo = () => {
           />
         ))}
       </Box>
-      <Box sx={{ml: 2, gap: 2, display: 'flex'}}>
+      <Box sx={{gap: 2, display: 'flex'}}>
         {colors.map(color => (
           <Token
             text={color}
@@ -81,8 +81,8 @@ const roles = [
 
 export const RoleDemo = () => {
   return (
-    <Box sx={{ml: 2, gap: 3, display: 'flex', flexDirection: 'column'}}>
-      <Box sx={{ml: 2, gap: 2, display: 'flex'}}>
+    <Box sx={{gap: 3, display: 'flex', flexDirection: 'column'}}>
+      <Box sx={{gap: 2, display: 'flex'}}>
         {roles.map(role => (
           <Token
             text={role}
@@ -94,7 +94,7 @@ export const RoleDemo = () => {
           />
         ))}
       </Box>
-      <Box sx={{ml: 2, gap: 2, display: 'flex'}}>
+      <Box sx={{gap: 2, display: 'flex'}}>
         {roles.map(role => (
           <Token
             text={role}
