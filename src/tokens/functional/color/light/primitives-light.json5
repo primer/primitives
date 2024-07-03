@@ -128,24 +128,7 @@
       },
     },
     success: {
-      '@': {
-        $value: '{prov.color.green.5}',
-        $type: 'color',
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'mode',
-            mode: 'light',
-            group: 'semantic',
-            scopes: ['fgColor'],
-            codeSyntax: {
-              web: 'var(--fgColor-success) /* utility class: .color-fg-success */',
-            },
-          },
-        },
-      },
-    },
-    attention: {
-      $value: '{base.color.yellow.5}',
+      $value: '{base.color.green.5}',
       $type: 'color',
       $extensions: {
         'org.primer.figma': {
@@ -154,7 +137,22 @@
           group: 'semantic',
           scopes: ['fgColor'],
           codeSyntax: {
-            web: 'var(--fgColor-attention) /* utility class: .color-fg-attention */',
+            web: 'var(--fgColor-success) /* utility class: .color-fg-success */',
+          },
+        },
+      },
+    },
+    open: {
+      $value: '{fgColor.success}',
+      $type: 'color',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'mode',
+          mode: 'light',
+          group: 'semantic',
+          scopes: ['fgColor'],
+          codeSyntax: {
+            web: 'var(--fgColor-open) /* utility class: .color-fg-open */',
           },
         },
       },
