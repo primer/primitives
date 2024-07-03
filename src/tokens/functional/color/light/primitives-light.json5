@@ -157,6 +157,21 @@
         },
       },
     },
+    attention: {
+      $value: '{base.color.yellow.5}',
+      $type: 'color',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'mode',
+          mode: 'light',
+          group: 'semantic',
+          scopes: ['fgColor'],
+          codeSyntax: {
+            web: 'var(--fgColor-attention) /* utility class: .color-fg-attention */',
+          },
+        },
+      },
+    },
     severe: {
       $value: '{base.color.orange.5}',
       $type: 'color',
