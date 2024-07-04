@@ -1,5 +1,5 @@
 import type StyleDictionary from 'style-dictionary'
-import {format} from 'prettier'
+import syncPrettier from '@prettier/sync'
 
 /**
  * @description Takes a style dictionary token dictionary and converts it to a one dimensional json object.
@@ -12,5 +12,5 @@ export const jsonPostCssFallback: StyleDictionary.Formatter = ({dictionary, file
   // add file header and convert output
   const output = JSON.stringify(tokens, null, 2)
   // return prettified
-  return format(output, {parser: 'json', printWidth: 500})
+  return syncPrettier.format(output, {parser: 'json', printWidth: 500})
 }

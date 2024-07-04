@@ -1,5 +1,5 @@
 import type StyleDictionary from 'style-dictionary'
-import {format} from 'prettier'
+import syncPrettier from '@prettier/sync'
 import {prefixTokens} from './utilities/prefixTokens'
 import {jsonToNestedValue} from './utilities/jsonToNestedValue'
 
@@ -19,5 +19,5 @@ export const jsonNestedPrefixed: StyleDictionary.Formatter = ({dictionary, file:
   // add file header and convert output
   const output = JSON.stringify(tokens, null, 2)
   // return prettified
-  return format(output, {parser: 'json', printWidth: 500})
+  return syncPrettier.format(output, {parser: 'json', printWidth: 500})
 }

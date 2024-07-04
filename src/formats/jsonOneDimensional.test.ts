@@ -1,6 +1,6 @@
 import {jsonOneDimensional} from './jsonOneDimensional'
 import {getMockDictionary, getMockFormatterArguments, getMockToken} from '../test-utilities'
-import {format} from 'prettier'
+import syncPrettier from '@prettier/sync'
 
 describe('Format: Json One Dimensional', () => {
   const dictionary = getMockDictionary({
@@ -20,7 +20,7 @@ describe('Format: Json One Dimensional', () => {
       options: {outputVerbose: true},
     })
 
-    const expectedOutput = format(
+    const expectedOutput = syncPrettier.format(
       `{
         "tokens-subgroup-red": {
           "name": "tokens-subgroup-red",
@@ -45,7 +45,7 @@ describe('Format: Json One Dimensional', () => {
       dictionary,
     })
 
-    const expectedOutput = format(
+    const expectedOutput = syncPrettier.format(
       `{
         "tokens-subgroup-red": "transformedValue"
       }`,
