@@ -3,8 +3,8 @@ import {isShadow} from '../filters/index.js'
 import {alpha} from './utilities/alpha.js'
 import {checkRequiredTokenProperties} from './utilities/checkRequiredTokenProperties.js'
 import type {ShadowTokenValue} from '../types/ShadowTokenValue.js'
-import type StyleDictionary from 'style-dictionary'
 import {getTokenValue} from './utilities/getTokenValue.js'
+import type {Transform, TransformedToken} from 'style-dictionary/types'
 
 /**
  * @description converts w3c shadow tokens in css shadow string
@@ -12,13 +12,15 @@ import {getTokenValue} from './utilities/getTokenValue.js'
  * @matcher matches all tokens of $type `shadow`
  * @transformer returns css shadow `string`
  */
-export const shadowToCss: StyleDictionary.Transform = {
-  type: `value`,
+export const shadowToCss: Transform = {
+  name: 'shadow/css',
+  type: 'value',
   transitive: true,
-  matcher: isShadow,
-  transformer: (token: StyleDictionary.TransformedToken) => {
+  filter: isShadow,
+  transform: (token: TransformedToken) => {
     // extract value
-    const {value}: {value: ShadowTokenValue | ShadowTokenValue[]} = token
+    const value: ShadowTokenValue | ShadowTokenValue[] = getTokenValue(token)
+    const valueProp = token.$value ? '$value' : 'value'
     // turn value into array
     const shadowValues = !Array.isArray(value) ? [value] : value
 
@@ -30,7 +32,7 @@ export const shadowToCss: StyleDictionary.Transform = {
         /*css box shadow:  inset? | offset-x | offset-y | blur-radius | spread-radius | color */
         return `${shadow.inset === true ? 'inset ' : ''}${shadow.offsetX} ${shadow.offsetY} ${shadow.blur} ${
           shadow.spread
-        } ${toHex(alpha(getTokenValue({...token, ...{value: shadow}}, 'color'), shadow.alpha || 1, token))}`
+        } ${toHex(alpha(getTokenValue({...token, ...{[valueProp]: shadow}}, 'color'), shadow.alpha || 1, token))}`
       })
       .join(', ')
   },

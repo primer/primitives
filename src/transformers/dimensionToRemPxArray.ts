@@ -1,6 +1,5 @@
 import {isDimension} from '../filters/index.js'
-import type StyleDictionary from 'style-dictionary'
-import type {Platform} from 'style-dictionary'
+import type {Config, PlatformConfig, Transform, TransformedToken} from 'style-dictionary/types'
 
 type SizePx = '0' | `${number}px`
 type SizeRem = '0' | `${number}rem`
@@ -11,7 +10,7 @@ type SizeEm = '0' | `${number}em`
  * @param options
  * @returns number
  */
-const getBasePxFontSize = (options?: Platform): number => (options && options.basePxFontSize) || 16
+const getBasePxFontSize = (options?: PlatformConfig): number => (options && options.basePxFontSize) || 16
 
 /**
  * @description checks if token value has a specific unit
@@ -33,17 +32,19 @@ const hasUnit = (value: string | number, unit: string): boolean => {
  * @matcher matches all tokens of $type `dimension`
  * @transformer returns an array with the `rem` and `pixel` string
  */
-export const dimensionToRemPxArray: StyleDictionary.Transform = {
-  type: `value`,
+export const dimensionToRemPxArray: Transform = {
+  name: 'dimension/remPxArray',
+  type: 'value',
   transitive: true,
-  matcher: isDimension,
-  transformer: (token: StyleDictionary.TransformedToken, options?: Platform): [SizeRem | SizeEm, SizePx] => {
-    const baseFont = getBasePxFontSize(options)
-    const floatVal = parseFloat(token.value)
+  filter: isDimension,
+  transform: (token: TransformedToken, config: PlatformConfig, options: Config): [SizeRem | SizeEm, SizePx] => {
+    const valueProp = options.usesDtcg ? '$value' : 'value'
+    const baseFont = getBasePxFontSize(config)
+    const floatVal = parseFloat(token[valueProp])
 
     if (isNaN(floatVal)) {
       throw new Error(
-        `Invalid dimension token: '${token.name}: ${token.value}' is not valid and cannot be transform to 'rem' \n`,
+        `Invalid dimension token: '${token.name}: ${token[valueProp]}' is not valid and cannot be transform to 'rem' \n`,
       )
     }
 
@@ -51,7 +52,7 @@ export const dimensionToRemPxArray: StyleDictionary.Transform = {
       return ['0', '0']
     }
 
-    if (hasUnit(token.value, 'rem') || hasUnit(token.value, 'em')) {
+    if (hasUnit(token[valueProp], 'rem') || hasUnit(token[valueProp], 'em')) {
       return [token.value, `${floatVal * baseFont}px`]
     }
 

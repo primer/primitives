@@ -1,15 +1,15 @@
 import {javascriptEsm} from './javascriptEsm.js'
 import {getMockFormatterArguments} from '../test-utilities/index.js'
-import syncPrettier from '@prettier/sync'
+import {format} from 'prettier'
 
 describe('Format: ESM', () => {
-  it('Formats tokens adding prefix', () => {
+  it('Formats tokens adding prefix', async () => {
     const input = getMockFormatterArguments({
       platform: {
         prefix: 'test',
       },
     })
-    const expectedOutput = syncPrettier.format(
+    const expectedOutput = await format(
       `export default {
       test: {
         tokens: {
@@ -21,12 +21,12 @@ describe('Format: ESM', () => {
     };`,
       {parser: 'typescript', printWidth: 500},
     )
-    expect(javascriptEsm(input)).toStrictEqual(expectedOutput)
+    expect(await javascriptEsm(input)).toStrictEqual(expectedOutput)
   })
 
-  it('Formats tokens without prefix', () => {
+  it('Formats tokens without prefix', async () => {
     const input = getMockFormatterArguments()
-    const expectedOutput = syncPrettier.format(
+    const expectedOutput = await format(
       `export default {
       tokens: {
         subgroup: {
@@ -36,6 +36,6 @@ describe('Format: ESM', () => {
     };`,
       {parser: 'typescript', printWidth: 500},
     )
-    expect(javascriptEsm(input)).toStrictEqual(expectedOutput)
+    expect(await javascriptEsm(input)).toStrictEqual(expectedOutput)
   })
 })

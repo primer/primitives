@@ -8,7 +8,7 @@ describe('Transformer: durationToCss', () => {
     })
 
     const expectedOutput = '100ms'
-    expect(durationToCss.transformer(input, {})).toStrictEqual(expectedOutput)
+    expect(durationToCss.transform(input, {}, {})).toStrictEqual(expectedOutput)
   })
 
   it('transforms `ms` to `s`', () => {
@@ -17,26 +17,28 @@ describe('Transformer: durationToCss', () => {
     })
 
     const expectedOutput = '1.252s'
-    expect(durationToCss.transformer(input, {})).toStrictEqual(expectedOutput)
+    expect(durationToCss.transform(input, {}, {})).toStrictEqual(expectedOutput)
   })
 
   it('throws an error when unit is missing or invalid', () => {
     // missing unit
     expect(() =>
-      durationToCss.transformer(
+      durationToCss.transform(
         getMockToken({
           value: '1000',
         }),
+        {},
         {},
       ),
     ).toThrowError()
 
     // only ms unit is supported
     expect(() =>
-      durationToCss.transformer(
+      durationToCss.transform(
         getMockToken({
           value: '1s',
         }),
+        {},
         {},
       ),
     ).toThrowError()
@@ -45,10 +47,11 @@ describe('Transformer: durationToCss', () => {
   it('throws an error when value is number', () => {
     // missing unit
     expect(() =>
-      durationToCss.transformer(
+      durationToCss.transform(
         getMockToken({
           value: 1000,
         }),
+        {},
         {},
       ),
     ).toThrowError()

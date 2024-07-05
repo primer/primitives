@@ -1,5 +1,5 @@
+import type {PlatformConfig, Transform, TransformedToken} from 'style-dictionary/types'
 import {upperCaseFirstCharacter} from '../utilities/index.js'
-import type StyleDictionary from 'style-dictionary'
 
 /**
  * camelCase
@@ -20,9 +20,10 @@ const camelCase = (string: string): string => {
  * @matcher omitted to match all tokens
  * @transformer returns `string` in dot.notation
  */
-export const namePathToDotNotation: StyleDictionary.Transform = {
-  type: `name`,
-  transformer: (token: StyleDictionary.TransformedToken, options?: StyleDictionary.Platform): string => {
+export const namePathToDotNotation: Transform = {
+  name: 'name/pathToDotNotation',
+  type: 'name',
+  transform: (token: TransformedToken, options?: PlatformConfig): string => {
     return (
       [options?.prefix, ...token.path]
         // remove undefined if exists

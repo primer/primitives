@@ -1,4 +1,4 @@
-import type StyleDictionary from 'style-dictionary'
+import type {Config, PlatformConfig} from 'style-dictionary/types'
 
 export type ConfigGeneratorOptions = {
   buildPath: string
@@ -11,5 +11,5 @@ export type StyleDictionaryConfigGenerator = (
   source: string[],
   include: string[],
   options: ConfigGeneratorOptions,
-  platforms?: Record<string, StyleDictionary.Platform | undefined>,
-) => StyleDictionary.Config
+  platforms?: Record<string, PlatformConfig | undefined>,
+) => Config

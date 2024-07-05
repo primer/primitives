@@ -8,7 +8,7 @@ describe('Transformer: jsonDeprecated', () => {
       deprecated: true,
     })
     const expectedOutput = null
-    expect(jsonDeprecated.transformer(item, {})).toStrictEqual(expectedOutput)
+    expect(jsonDeprecated.transform(item, {}, {})).toStrictEqual(expectedOutput)
   })
 
   it('Replaces token value with deprecated value if deprecated is a `string`', () => {
@@ -17,7 +17,7 @@ describe('Transformer: jsonDeprecated', () => {
       deprecated: `token.pumpkin`,
     })
     const expectedOutput = 'token.pumpkin'
-    expect(jsonDeprecated.transformer(item, {})).toStrictEqual(expectedOutput)
+    expect(jsonDeprecated.transform(item, {}, {})).toStrictEqual(expectedOutput)
   })
 
   it('Replaces token value with deprecated value if deprecated is a `string` and removes {}', () => {
@@ -26,6 +26,6 @@ describe('Transformer: jsonDeprecated', () => {
       deprecated: `{token.pumpkin}`,
     })
     const expectedOutput = 'token.pumpkin'
-    expect(jsonDeprecated.transformer(item, {})).toStrictEqual(expectedOutput)
+    expect(jsonDeprecated.transform(item, {}, {})).toStrictEqual(expectedOutput)
   })
 })

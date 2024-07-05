@@ -1,9 +1,6 @@
-import type {TransformedToken} from 'style-dictionary'
-import StyleDictionary from 'style-dictionary'
-import type {FormatterArguments} from 'style-dictionary/types/Format'
-import syncPrettier from '@prettier/sync'
-import type {LineFormatting} from 'style-dictionary/types/FormatHelpers'
-const {fileHeader, formattedVariables} = StyleDictionary.formatHelpers
+import type {TransformedToken, FormatFn, FormatFnArguments, FormattingOptions} from 'style-dictionary/types'
+import {format} from 'prettier'
+import {fileHeader, formattedVariables} from 'style-dictionary/utils'
 
 const wrapWithSelector = (css: string, selector: string | false): string => {
   // return without selector
@@ -12,15 +9,15 @@ const wrapWithSelector = (css: string, selector: string | false): string => {
   return `${selector} { ${css} }`
 }
 
-export const cssAdvanced: StyleDictionary.Formatter = ({
+export const cssAdvanced: FormatFn = async ({
   dictionary: originalDictionary,
   options = {
     queries: [],
   },
   file,
-}: FormatterArguments): string => {
+}: FormatFnArguments) => {
   // get options
-  const {outputReferences, formatting} = options
+  const {outputReferences, usesDtcg, formatting} = options
   // selector
   const selector = file.options?.selector !== undefined ? file.options.selector : ':root'
   // query extension property
@@ -33,7 +30,7 @@ export const cssAdvanced: StyleDictionary.Formatter = ({
     },
   ]
   // set formatting
-  const mergedFormatting: LineFormatting = {
+  const mergedFormatting: FormattingOptions = {
     commentStyle: 'long',
     ...formatting,
   }
@@ -65,7 +62,7 @@ export const cssAdvanced: StyleDictionary.Formatter = ({
     }
   }
   // add file header
-  const output = [fileHeader({file})]
+  const output = [await fileHeader({file})]
   // add single theme css
   for (const query of queries) {
     const {query: queryString, matcher} = query
@@ -82,6 +79,7 @@ export const cssAdvanced: StyleDictionary.Formatter = ({
       dictionary: filteredDictionary,
       outputReferences,
       formatting: mergedFormatting,
+      usesDtcg,
     })
     // wrap css
     const cssWithSelector = wrapWithSelector(css, query.selector !== undefined ? query.selector : selector)
@@ -89,5 +87,5 @@ export const cssAdvanced: StyleDictionary.Formatter = ({
     output.push(queryString ? `${queryString} { ${cssWithSelector} }` : cssWithSelector)
   }
   // return prettified
-  return syncPrettier.format(output.join('\n'), {parser: 'css', printWidth: 500})
+  return await format(output.join('\n'), {parser: 'css', printWidth: 500})
 }

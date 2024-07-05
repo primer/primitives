@@ -4,13 +4,13 @@ import {jsonToFlat} from './jsonToFlat.js'
 describe('Utilities: jsonToFlat', () => {
   const tokens = [
     getMockToken({
-      value: '#111',
+      $value: '#111',
       $type: 'color',
       path: ['parent', 'subparent', 'child1'],
       name: 'parent-subparent-child1',
     }),
     getMockToken({
-      value: '#222',
+      $value: '#222',
       $type: 'color',
       path: ['parent', 'subparent', 'child2'],
       name: 'parent-subparent-child2',
@@ -27,7 +27,7 @@ describe('Utilities: jsonToFlat', () => {
 
   it('it returns objects as value of object if return Object is true', () => {
     expect(jsonToFlat(tokens, true)['parent-subparent-child1']).toEqual({
-      value: '#111',
+      $value: '#111',
       $type: 'color',
       path: ['parent', 'subparent', 'child1'],
       name: 'parent-subparent-child1',
@@ -36,7 +36,7 @@ describe('Utilities: jsonToFlat', () => {
       isSource: true,
       original: {
         attributes: {},
-        value: 'originalValue',
+        $value: 'originalValue',
       },
     })
   })

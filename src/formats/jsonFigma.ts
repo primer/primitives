@@ -1,23 +1,18 @@
-import StyleDictionary from 'style-dictionary'
-import syncPrettier from '@prettier/sync'
-import type {FormatterArguments} from 'style-dictionary/types/Format'
+import type {Dictionary, TransformedToken, FormatFn, FormatFnArguments, PlatformConfig} from 'style-dictionary/types'
+import {format} from 'prettier'
 import {transformNamePathToFigma} from '../transformers/namePathToFigma.js'
 import type {ShadowTokenValue} from '../types/ShadowTokenValue.js'
 import {hexToRgbaFloat} from '../transformers/utilities/hexToRgbaFloat.js'
 import type {RgbaFloat} from '../transformers/utilities/isRgbaFloat.js'
 import {isRgbaFloat} from '../transformers/utilities/isRgbaFloat.js'
-const {sortByReference} = StyleDictionary.formatHelpers
+import {getReferences, sortByReference} from 'style-dictionary/utils'
 
 const isReference = (string: string): boolean => /^\{([^\\]*)\}$/g.test(string)
 
-const getReference = (
-  dictionary: StyleDictionary.Dictionary,
-  refString: string,
-  platform: StyleDictionary.Platform,
-) => {
+const getReference = (dictionary: Dictionary, refString: string, platform: PlatformConfig) => {
   if (isReference(refString)) {
     // retrieve reference token
-    const refToken = dictionary.getReferences(refString)[0]
+    const refToken = getReferences(refString, dictionary.tokens, {unfilteredTokens: dictionary.unfilteredTokens})[0]
     // return full reference
     return [refToken.attributes?.collection, transformNamePathToFigma(refToken, platform)].filter(Boolean).join('/')
   }
@@ -38,7 +33,7 @@ const getFigmaType = (type: string): string => {
 const shadowToVariables = (
   name: string,
   values: Omit<ShadowTokenValue, 'color'> & {color: string | RgbaFloat},
-  token: StyleDictionary.TransformedToken,
+  token: TransformedToken,
 ) => {
   // floatValue
   const floatValue = (property: 'offsetX' | 'offsetY' | 'blur' | 'spread') => ({
@@ -78,14 +73,19 @@ const shadowToVariables = (
  * @param arguments [FormatterArguments](https://github.com/amzn/style-dictionary/blob/main/types/Format.d.ts)
  * @returns formatted `string`
  */
-export const jsonFigma: StyleDictionary.Formatter = ({dictionary, file: _file, platform}: FormatterArguments) => {
+export const jsonFigma: FormatFn = async ({dictionary, file: _file, platform}: FormatFnArguments) => {
   // array to store tokens in
   const tokens: Record<string, unknown>[] = []
+  const sortedTokens = [...dictionary.allTokens].sort(
+    sortByReference(dictionary.tokens, {unfilteredTokens: dictionary.unfilteredTokens}),
+  )
   // loop through tokens sorted by reference
-  for (const token of dictionary.allTokens.sort(sortByReference(dictionary))) {
+  for (const token of sortedTokens) {
     // deconstruct token
-    const {attributes, value, $type, comment: description, original, alpha, mix} = token
+    const {attributes, $value: value, $type, $description: description, original, alpha, mix} = token
     const {mode, collection, scopes, group, codeSyntax} = attributes || {}
+    // early escape if no type is present
+    if (!$type) return
     // shadows need to be specifically dealt with
     if ($type === 'shadow') {
       const shadowValues = !Array.isArray(value) ? [value] : value
@@ -118,7 +118,7 @@ export const jsonFigma: StyleDictionary.Formatter = ({dictionary, file: _file, p
         isMix: mix ? true : undefined,
         description,
         refId: [collection, token.name].filter(Boolean).join('/'),
-        reference: getReference(dictionary, original.value, platform),
+        reference: getReference(dictionary, original.$value, platform),
         collection,
         mode,
         group,
@@ -130,5 +130,5 @@ export const jsonFigma: StyleDictionary.Formatter = ({dictionary, file: _file, p
   // add file header and convert output
   const output = JSON.stringify(tokens, null, 2)
   // return prettified
-  return syncPrettier.format(output, {parser: 'json', printWidth: 500})
+  return format(output, {parser: 'json', printWidth: 500})
 }

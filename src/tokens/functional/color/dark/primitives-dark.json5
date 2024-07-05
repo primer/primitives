@@ -85,6 +85,7 @@
       $value: '{base.color.neutral.8}',
       $type: 'color',
       $extensions: {
+        alpha: 0.6,
         'org.primer.figma': {
           collection: 'mode',
           mode: 'dark',
@@ -92,7 +93,6 @@
           scopes: ['fgColor'],
         },
       },
-      alpha: 0.6,
     },
     link: {
       $value: '{fgColor.accent}',
@@ -597,6 +597,7 @@
         $value: '{base.color.red.4}',
         $type: 'color',
         $extensions: {
+          alpha: 0.1,
           'org.primer.figma': {
             collection: 'mode',
             mode: 'dark',
@@ -607,7 +608,6 @@
             },
           },
         },
-        alpha: 0.1,
       },
       emphasis: {
         $value: '{base.color.red.5}',
@@ -630,6 +630,7 @@
         $value: '{bgColor.danger.muted}',
         $type: 'color',
         $extensions: {
+          alpha: 0.1,
           'org.primer.figma': {
             collection: 'mode',
             mode: 'dark',
@@ -640,7 +641,6 @@
             },
           },
         },
-        alpha: 0.1,
       },
       emphasis: {
         $value: '{bgColor.danger.emphasis}',
