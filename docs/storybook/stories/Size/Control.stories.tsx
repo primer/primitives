@@ -56,8 +56,8 @@ export const XSmall = () => {
                     row.name.includes('spacious')
                       ? spaciousValueString
                       : row.name.includes('condensed')
-                      ? condensedValueString
-                      : normalValueString
+                        ? condensedValueString
+                        : normalValueString
                   }
                   paddingBlock={paddingBlockValueString}
                   blockSize={blockSizeValueString}
@@ -215,8 +215,8 @@ export const Medium = () => {
                     row.name.includes('spacious')
                       ? spaciousValueString
                       : row.name.includes('condensed')
-                      ? condensedValueString
-                      : normalValueString
+                        ? condensedValueString
+                        : normalValueString
                   }
                   paddingBlock={paddingBlockValueString}
                   blockSize={blockSizeValueString}
@@ -441,8 +441,8 @@ export const ControlStackRegular = () => {
                     row.name.includes('small')
                       ? 'control-small-size'
                       : row.name.includes('medium')
-                      ? 'control-medium-size'
-                      : 'control-large-size'
+                        ? 'control-medium-size'
+                        : 'control-large-size'
                   }
                 />
               )
