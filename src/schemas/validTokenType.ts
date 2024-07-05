@@ -22,7 +22,7 @@ export type TokenType = (typeof validTypes)[number]
 // @ts-ignore: TODO: fix this
 export const validateType = z.record(
   z.string(),
-  z.lazy(() => {
+  z.lazy((): z.ZodTypeAny => {
     return z.union([
       z
         .object({

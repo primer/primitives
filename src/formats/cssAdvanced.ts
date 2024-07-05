@@ -1,7 +1,7 @@
 import type {TransformedToken} from 'style-dictionary'
 import StyleDictionary from 'style-dictionary'
 import type {FormatterArguments} from 'style-dictionary/types/Format'
-import {format} from 'prettier'
+import syncPrettier from '@prettier/sync'
 import type {LineFormatting} from 'style-dictionary/types/FormatHelpers'
 const {fileHeader, formattedVariables} = StyleDictionary.formatHelpers
 
@@ -47,7 +47,7 @@ export const cssAdvanced: StyleDictionary.Formatter = ({
           ...token,
           name: `${platform.prefix}-${token.name}`,
           path: [platform.prefix, ...token.path],
-        } as TransformedToken),
+        }) as TransformedToken,
     )
   }
   // get queries from tokens
@@ -95,5 +95,5 @@ export const cssAdvanced: StyleDictionary.Formatter = ({
     output.push(queryString ? `${queryString} { ${cssWithSelector} }` : cssWithSelector)
   }
   // return prettified
-  return format(output.join('\n'), {parser: 'css', printWidth: 500})
+  return syncPrettier.format(output.join('\n'), {parser: 'css', printWidth: 500})
 }

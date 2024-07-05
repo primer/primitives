@@ -1,6 +1,6 @@
 import {jsonNestedPrefixed} from './jsonNestedPrefixed'
 import {getMockFormatterArguments} from '../test-utilities'
-import {format} from 'prettier'
+import syncPrettier from '@prettier/sync'
 
 describe('Format: Json nested with prefixes', () => {
   test('Formats tokens with prefix', () => {
@@ -10,7 +10,7 @@ describe('Format: Json nested with prefixes', () => {
       },
     })
 
-    const expectedOutput = format(
+    const expectedOutput = syncPrettier.format(
       `{
         "test": {
           "tokens": {
@@ -28,7 +28,7 @@ describe('Format: Json nested with prefixes', () => {
 
   test('Formats tokens without prefix', () => {
     const input = getMockFormatterArguments()
-    const expectedOutput = format(
+    const expectedOutput = syncPrettier.format(
       `{
         "tokens": {
           "subgroup": {
@@ -47,7 +47,7 @@ describe('Format: Json nested with prefixes', () => {
         outputVerbose: true,
       },
     })
-    const expectedOutput = format(
+    const expectedOutput = syncPrettier.format(
       `{
         "tokens": {
           "subgroup": {

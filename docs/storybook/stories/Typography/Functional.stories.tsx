@@ -167,14 +167,14 @@ export const Display = () => {
                   {row.name.includes('size')
                     ? 'font-size'
                     : row.name.includes('weight')
-                    ? 'font-weight'
-                    : row.name.includes('lineHeight')
-                    ? 'line-height'
-                    : row.name.includes('lineBoxHeight')
-                    ? 'height'
-                    : row.name.includes('shorthand')
-                    ? 'font'
-                    : undefined}
+                      ? 'font-weight'
+                      : row.name.includes('lineHeight')
+                        ? 'line-height'
+                        : row.name.includes('lineBoxHeight')
+                          ? 'height'
+                          : row.name.includes('shorthand')
+                            ? 'font'
+                            : undefined}
                 </code>
               )
             },
@@ -242,14 +242,14 @@ export const TitleLarge = () => {
                   {row.name.includes('size')
                     ? 'font-size'
                     : row.name.includes('weight')
-                    ? 'font-weight'
-                    : row.name.includes('lineHeight')
-                    ? 'line-height'
-                    : row.name.includes('lineBoxHeight')
-                    ? 'height'
-                    : row.name.includes('shorthand')
-                    ? 'font'
-                    : undefined}
+                      ? 'font-weight'
+                      : row.name.includes('lineHeight')
+                        ? 'line-height'
+                        : row.name.includes('lineBoxHeight')
+                          ? 'height'
+                          : row.name.includes('shorthand')
+                            ? 'font'
+                            : undefined}
                 </code>
               )
             },
@@ -319,14 +319,14 @@ export const TitleMedium = () => {
                   {row.name.includes('size')
                     ? 'font-size'
                     : row.name.includes('weight')
-                    ? 'font-weight'
-                    : row.name.includes('lineHeight')
-                    ? 'line-height'
-                    : row.name.includes('lineBoxHeight')
-                    ? 'height'
-                    : row.name.includes('shorthand')
-                    ? 'font'
-                    : undefined}
+                      ? 'font-weight'
+                      : row.name.includes('lineHeight')
+                        ? 'line-height'
+                        : row.name.includes('lineBoxHeight')
+                          ? 'height'
+                          : row.name.includes('shorthand')
+                            ? 'font'
+                            : undefined}
                 </code>
               )
             },
@@ -396,14 +396,14 @@ export const TitleSmall = () => {
                   {row.name.includes('size')
                     ? 'font-size'
                     : row.name.includes('weight')
-                    ? 'font-weight'
-                    : row.name.includes('lineHeight')
-                    ? 'line-height'
-                    : row.name.includes('lineBoxHeight')
-                    ? 'height'
-                    : row.name.includes('shorthand')
-                    ? 'font'
-                    : undefined}
+                      ? 'font-weight'
+                      : row.name.includes('lineHeight')
+                        ? 'line-height'
+                        : row.name.includes('lineBoxHeight')
+                          ? 'height'
+                          : row.name.includes('shorthand')
+                            ? 'font'
+                            : undefined}
                 </code>
               )
             },
@@ -471,14 +471,14 @@ export const Subtitle = () => {
                   {row.name.includes('size')
                     ? 'font-size'
                     : row.name.includes('weight')
-                    ? 'font-weight'
-                    : row.name.includes('lineHeight')
-                    ? 'line-height'
-                    : row.name.includes('lineBoxHeight')
-                    ? 'height'
-                    : row.name.includes('shorthand')
-                    ? 'font'
-                    : undefined}
+                      ? 'font-weight'
+                      : row.name.includes('lineHeight')
+                        ? 'line-height'
+                        : row.name.includes('lineBoxHeight')
+                          ? 'height'
+                          : row.name.includes('shorthand')
+                            ? 'font'
+                            : undefined}
                 </code>
               )
             },
@@ -548,14 +548,14 @@ export const BodyLarge = () => {
                   {row.name.includes('size')
                     ? 'font-size'
                     : row.name.includes('weight')
-                    ? 'font-weight'
-                    : row.name.includes('lineHeight')
-                    ? 'line-height'
-                    : row.name.includes('lineBoxHeight')
-                    ? 'height'
-                    : row.name.includes('shorthand')
-                    ? 'font'
-                    : undefined}
+                      ? 'font-weight'
+                      : row.name.includes('lineHeight')
+                        ? 'line-height'
+                        : row.name.includes('lineBoxHeight')
+                          ? 'height'
+                          : row.name.includes('shorthand')
+                            ? 'font'
+                            : undefined}
                 </code>
               )
             },
@@ -625,14 +625,14 @@ export const BodyMedium = () => {
                   {row.name.includes('size')
                     ? 'font-size'
                     : row.name.includes('weight')
-                    ? 'font-weight'
-                    : row.name.includes('lineHeight')
-                    ? 'line-height'
-                    : row.name.includes('lineBoxHeight')
-                    ? 'height'
-                    : row.name.includes('shorthand')
-                    ? 'font'
-                    : undefined}
+                      ? 'font-weight'
+                      : row.name.includes('lineHeight')
+                        ? 'line-height'
+                        : row.name.includes('lineBoxHeight')
+                          ? 'height'
+                          : row.name.includes('shorthand')
+                            ? 'font'
+                            : undefined}
                 </code>
               )
             },
@@ -702,14 +702,14 @@ export const BodySmall = () => {
                   {row.name.includes('size')
                     ? 'font-size'
                     : row.name.includes('weight')
-                    ? 'font-weight'
-                    : row.name.includes('lineHeight')
-                    ? 'line-height'
-                    : row.name.includes('lineBoxHeight')
-                    ? 'height'
-                    : row.name.includes('shorthand')
-                    ? 'font'
-                    : undefined}
+                      ? 'font-weight'
+                      : row.name.includes('lineHeight')
+                        ? 'line-height'
+                        : row.name.includes('lineBoxHeight')
+                          ? 'height'
+                          : row.name.includes('shorthand')
+                            ? 'font'
+                            : undefined}
                 </code>
               )
             },
@@ -777,14 +777,14 @@ export const Caption = () => {
                   {row.name.includes('size')
                     ? 'font-size'
                     : row.name.includes('weight')
-                    ? 'font-weight'
-                    : row.name.includes('lineHeight')
-                    ? 'line-height'
-                    : row.name.includes('lineBoxHeight')
-                    ? 'height'
-                    : row.name.includes('shorthand')
-                    ? 'font'
-                    : undefined}
+                      ? 'font-weight'
+                      : row.name.includes('lineHeight')
+                        ? 'line-height'
+                        : row.name.includes('lineBoxHeight')
+                          ? 'height'
+                          : row.name.includes('shorthand')
+                            ? 'font'
+                            : undefined}
                 </code>
               )
             },
@@ -852,14 +852,14 @@ export const CodeBlock = () => {
                   {row.name.includes('size')
                     ? 'font-size'
                     : row.name.includes('weight')
-                    ? 'font-weight'
-                    : row.name.includes('lineHeight')
-                    ? 'line-height'
-                    : row.name.includes('lineBoxHeight')
-                    ? 'height'
-                    : row.name.includes('shorthand')
-                    ? 'font'
-                    : undefined}
+                      ? 'font-weight'
+                      : row.name.includes('lineHeight')
+                        ? 'line-height'
+                        : row.name.includes('lineBoxHeight')
+                          ? 'height'
+                          : row.name.includes('shorthand')
+                            ? 'font'
+                            : undefined}
                 </code>
               )
             },
@@ -927,14 +927,14 @@ export const InlineCodeBlock = () => {
                   {row.name.includes('size')
                     ? 'font-size'
                     : row.name.includes('weight')
-                    ? 'font-weight'
-                    : row.name.includes('lineHeight')
-                    ? 'line-height'
-                    : row.name.includes('lineBoxHeight')
-                    ? 'height'
-                    : row.name.includes('shorthand')
-                    ? 'font'
-                    : undefined}
+                      ? 'font-weight'
+                      : row.name.includes('lineHeight')
+                        ? 'line-height'
+                        : row.name.includes('lineBoxHeight')
+                          ? 'height'
+                          : row.name.includes('shorthand')
+                            ? 'font'
+                            : undefined}
                 </code>
               )
             },
@@ -1002,10 +1002,10 @@ export const Overview = () => {
                   {row.name.includes('large')
                     ? ' large'
                     : row.name.includes('small')
-                    ? ' small'
-                    : row.name.includes('medium')
-                    ? ' medium'
-                    : undefined}
+                      ? ' small'
+                      : row.name.includes('medium')
+                        ? ' medium'
+                        : undefined}
                 </TypographyDemo>
               )
             },

@@ -1,6 +1,6 @@
 import StyleDictionary from 'style-dictionary'
 import type {FormatterArguments} from 'style-dictionary/types/Format'
-import {format} from 'prettier'
+import syncPrettier from '@prettier/sync'
 const {fileHeader} = StyleDictionary.formatHelpers
 
 /**
@@ -20,5 +20,5 @@ export const cssCustomMedia: StyleDictionary.Formatter = ({
     output.push(`@custom-media --${name} ${value};`)
   })
   // return prettified
-  return format(output.join('\n'), {parser: 'css', printWidth: 500})
+  return syncPrettier.format(output.join('\n'), {parser: 'css', printWidth: 500})
 }

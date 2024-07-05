@@ -1,6 +1,6 @@
 import {javascriptCommonJs} from './javascriptCommonJs'
 import {getMockFormatterArguments} from '../test-utilities'
-import {format} from 'prettier'
+import syncPrettier from '@prettier/sync'
 
 describe('Format: CommonJs', () => {
   it('Formats tokens adding prefix', () => {
@@ -10,7 +10,7 @@ describe('Format: CommonJs', () => {
       },
     })
 
-    const expectedOutput = format(
+    const expectedOutput = syncPrettier.format(
       `exports.default = {
       test: {
         tokens: {
@@ -28,7 +28,7 @@ describe('Format: CommonJs', () => {
 
   it('Formats tokens without prefix', () => {
     const input = getMockFormatterArguments()
-    const expectedOutput = format(
+    const expectedOutput = syncPrettier.format(
       `exports.default = {
       tokens: {
         subgroup: {

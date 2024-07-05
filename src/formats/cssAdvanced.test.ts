@@ -1,6 +1,6 @@
 import {cssAdvanced} from './cssAdvanced'
 import {getMockDictionary, getMockFormatterArguments, getMockToken} from '../test-utilities'
-import {format} from 'prettier'
+import syncPrettier from '@prettier/sync'
 import type {TransformedToken} from 'style-dictionary'
 
 describe('Format: tokens nested in media query', () => {
@@ -9,7 +9,7 @@ describe('Format: tokens nested in media query', () => {
    */
   it('Formats tokens as css variables with default :root selector', () => {
     const input = getMockFormatterArguments()
-    const expectedOutput = format(
+    const expectedOutput = syncPrettier.format(
       `:root {
       --red: transformedValue;
     }`,
@@ -31,7 +31,7 @@ describe('Format: tokens nested in media query', () => {
         },
       },
     })
-    const expectedOutput = format(
+    const expectedOutput = syncPrettier.format(
       ` [data-color-mode="dark"] {
             --red: transformedValue;
     }`,
@@ -57,7 +57,7 @@ describe('Format: tokens nested in media query', () => {
         },
       },
     })
-    const expectedOutput = format(
+    const expectedOutput = syncPrettier.format(
       ` @media screen {
         :root {
           --red: transformedValue;
@@ -83,7 +83,7 @@ describe('Format: tokens nested in media query', () => {
         },
       },
     })
-    const expectedOutput = format(
+    const expectedOutput = syncPrettier.format(
       ` @media screen {
         [data-color-mode="dark"] {
           --red: transformedValue;
@@ -141,7 +141,7 @@ describe('Format: tokens nested in media query', () => {
         },
       },
     })
-    const expectedOutput = format(
+    const expectedOutput = syncPrettier.format(
       ` @media (pointer: fine) {
         :root {
           --tokens-subgroup-gap: transformedValue;
@@ -169,7 +169,7 @@ describe('Format: tokens nested in media query', () => {
         },
       },
     })
-    const expectedOutput = format(
+    const expectedOutput = syncPrettier.format(
       ` [data-color-mode="dark"][data-dark-theme="dark"],
         [data-color-mode="auto"][data-light-theme="dark"] {
           --red: transformedValue;
@@ -213,7 +213,7 @@ describe('Format: tokens nested in media query', () => {
         },
       },
     })
-    const expectedOutput = format(
+    const expectedOutput = syncPrettier.format(
       `[data-color-mode="auto"][data-dark-theme="dark"] {
             --tokens-subgroup-gap: transformedValue;
     }`,
@@ -253,7 +253,7 @@ describe('Format: tokens nested in media query', () => {
       },
     })
 
-    const expectedOutput = format(
+    const expectedOutput = syncPrettier.format(
       ` @media (prefers-color-scheme: light){
         :root {
           --red: transformedValue; /* This is a description */
@@ -319,7 +319,7 @@ describe('Format: tokens nested in media query', () => {
       },
     })
 
-    const expectedOutput = format(
+    const expectedOutput = syncPrettier.format(
       ` @media (prefers-color-scheme: dark) {
         :root {
           --red: transformedValue;
