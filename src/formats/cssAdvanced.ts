@@ -47,7 +47,7 @@ export const cssAdvanced: StyleDictionary.Formatter = ({
           ...token,
           name: `${platform.prefix}-${token.name}`,
           path: [platform.prefix, ...token.path],
-        } as TransformedToken),
+        }) as TransformedToken,
     )
   }
   // get queries from tokens
