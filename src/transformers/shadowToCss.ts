@@ -1,10 +1,10 @@
 import {toHex} from 'color2k'
-import {isShadow} from '../filters'
-import {alpha} from './utilities/alpha'
-import {checkRequiredTokenProperties} from './utilities/checkRequiredTokenProperties'
-import type {ShadowTokenValue} from '../types/ShadowTokenValue'
-import type StyleDictionary from 'style-dictionary'
-import {getTokenValue} from './utilities/getTokenValue'
+import {isShadow} from '../filters/index.js'
+import {alpha} from './utilities/alpha.js'
+import {checkRequiredTokenProperties} from './utilities/checkRequiredTokenProperties.js'
+import type {ShadowTokenValue} from '../types/ShadowTokenValue.js'
+import {getTokenValue} from './utilities/getTokenValue.js'
+import type {Transform, TransformedToken} from 'style-dictionary/types'
 
 /**
  * @description converts w3c shadow tokens in css shadow string
@@ -12,13 +12,14 @@ import {getTokenValue} from './utilities/getTokenValue'
  * @matcher matches all tokens of $type `shadow`
  * @transformer returns css shadow `string`
  */
-export const shadowToCss: StyleDictionary.Transform = {
+export const shadowToCss: Transform = {
+  name: 'shadow/css',
   type: `value`,
   transitive: true,
-  matcher: isShadow,
-  transformer: (token: StyleDictionary.TransformedToken) => {
+  filter: isShadow,
+  transform: (token: TransformedToken) => {
     // extract value
-    const {value}: {value: ShadowTokenValue | ShadowTokenValue[]} = token
+    const value: ShadowTokenValue | ShadowTokenValue[] = token.value || undefined
     // turn value into array
     const shadowValues = !Array.isArray(value) ? [value] : value
 

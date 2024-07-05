@@ -1,10 +1,10 @@
-import type {ContrastRequirement, ContrastRequirements, ThemeName} from './color-contrast.config'
-import {contrastRequirements, bgColors} from './color-contrast.config'
+import type {ContrastRequirement, ContrastRequirements, ThemeName} from './color-contrast.config.js'
+import {contrastRequirements, bgColors} from './color-contrast.config.js'
 import {writeFile} from 'fs'
 import {readFile} from 'fs/promises'
 import {normal} from 'color-blend'
 import {getContrast, parseToRgba, rgba} from 'color2k'
-import {makeConsoleTable, makeMarkdownTable} from './utilities/makeTable'
+import {makeConsoleTable, makeMarkdownTable} from './utilities/makeTable.js'
 /**
  * Type definitions
  */

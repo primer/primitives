@@ -1,4 +1,4 @@
-import {hexToRgbaFloat} from './hexToRgbaFloat'
+import {hexToRgbaFloat} from './hexToRgbaFloat.js'
 
 describe('Utilities: hexToRgbaFloat', () => {
   it('it converts hex3', () => {

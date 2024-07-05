@@ -1,4 +1,4 @@
-import {rgbaFloatToHex} from './rgbaFloatToHex'
+import {rgbaFloatToHex} from './rgbaFloatToHex.js'
 
 describe('Utilities: rgbaFloatToHex', () => {
   it('valid RgbaFloat value', () => {

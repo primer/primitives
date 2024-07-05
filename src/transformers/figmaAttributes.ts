@@ -1,4 +1,4 @@
-import type StyleDictionary from 'style-dictionary'
+import type {PlatformConfig, Transform, TransformedToken} from 'style-dictionary/types'
 
 type FigmaVariableScope =
   | 'ALL_SCOPES'
@@ -58,9 +58,10 @@ const getScopes = (scopes: string[] | string | undefined): FigmaVariableScope[] 
  * @matcher matches all tokens
  * @transformer returns ab object of figma attributes
  */
-export const figmaAttributes: StyleDictionary.Transform = {
+export const figmaAttributes: Transform = {
+  name: 'figma/attributes',
   type: `attribute`,
-  transformer: (token: StyleDictionary.TransformedToken, platform: StyleDictionary.Platform = {}) => {
+  transform: (token: TransformedToken, platform: PlatformConfig = {}) => {
     const {mode, collection, scopes, group, codeSyntax} = token.$extensions?.['org.primer.figma'] || {}
     return {
       mode: platform.options?.mode || mode || 'default',

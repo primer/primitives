@@ -1,5 +1,5 @@
-import {getMockToken} from '../test-utilities'
-import {shadowToCss} from './shadowToCss'
+import {getMockToken} from '../test-utilities/index.js'
+import {shadowToCss} from './shadowToCss.js'
 
 describe('Transformer: shadowToCss', () => {
   it('transforms `shadow` token to css shadow string', () => {
@@ -15,7 +15,7 @@ describe('Transformer: shadowToCss', () => {
       }),
     ]
     const expectedOutput = ['0px 2px 1px 0 #000000']
-    expect(input.map(item => shadowToCss.transformer(item, {}))).toStrictEqual(expectedOutput)
+    expect(input.map(item => shadowToCss.transform(item, {}, {}))).toStrictEqual(expectedOutput)
   })
 
   it('transforms inset `shadow` token to css shadow string', () => {
@@ -42,13 +42,13 @@ describe('Transformer: shadowToCss', () => {
       }),
     ]
     const expectedOutput = ['inset 0px 2px 1px 0px #000000', '0px 2px 1px 0px #000000']
-    expect(input.map(item => shadowToCss.transformer(item, {}))).toStrictEqual(expectedOutput)
+    expect(input.map(item => shadowToCss.transform(item, {}, {}))).toStrictEqual(expectedOutput)
   })
 
   it('throws an error when required values are missing', () => {
     // missing blur
     expect(() =>
-      shadowToCss.transformer(
+      shadowToCss.transform(
         getMockToken({
           value: {
             color: '#000000',
@@ -57,13 +57,14 @@ describe('Transformer: shadowToCss', () => {
             blur: '1px',
           },
         }),
+        {},
         {},
       ),
     ).toThrowError()
 
     // missing spread
     expect(() =>
-      shadowToCss.transformer(
+      shadowToCss.transform(
         getMockToken({
           value: {
             color: '#000000',
@@ -72,13 +73,14 @@ describe('Transformer: shadowToCss', () => {
             blur: '1px',
           },
         }),
+        {},
         {},
       ),
     ).toThrowError()
 
     // missing offsets
     expect(() =>
-      shadowToCss.transformer(
+      shadowToCss.transform(
         getMockToken({
           value: {
             color: '#000000',
@@ -88,11 +90,12 @@ describe('Transformer: shadowToCss', () => {
           },
         }),
         {},
+        {},
       ),
     ).toThrowError()
 
     expect(() =>
-      shadowToCss.transformer(
+      shadowToCss.transform(
         getMockToken({
           value: {
             color: '#000000',
@@ -102,11 +105,12 @@ describe('Transformer: shadowToCss', () => {
           },
         }),
         {},
+        {},
       ),
     ).toThrowError()
     // missing color
     expect(() =>
-      shadowToCss.transformer(
+      shadowToCss.transform(
         getMockToken({
           value: {
             offsetX: '0px',
@@ -115,6 +119,7 @@ describe('Transformer: shadowToCss', () => {
             blur: '1px',
           },
         }),
+        {},
         {},
       ),
     ).toThrowError()
@@ -144,7 +149,7 @@ describe('Transformer: shadowToCss', () => {
       }),
     ]
     const expectedOutput = ['0px 2px 1px 0 #00000080', '0px 2px 1px 0 #22222280']
-    expect(input.map(item => shadowToCss.transformer(item, {}))).toStrictEqual(expectedOutput)
+    expect(input.map(item => shadowToCss.transform(item, {}, {}))).toStrictEqual(expectedOutput)
   })
 
   it('transforms multi-layer `shadow` token to css shadow string', () => {
@@ -170,6 +175,6 @@ describe('Transformer: shadowToCss', () => {
     })
 
     const expectedOutput = '0px 2px 1px 0 #00000080, 0px 8px 16px 0 #22222233'
-    expect(shadowToCss.transformer(item, {})).toStrictEqual(expectedOutput)
+    expect(shadowToCss.transform(item, {}, {})).toStrictEqual(expectedOutput)
   })
 })

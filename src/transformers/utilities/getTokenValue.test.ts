@@ -1,5 +1,5 @@
-import {getMockToken} from '../../test-utilities'
-import {getTokenValue} from './getTokenValue'
+import {getMockToken} from '../../test-utilities/index.js'
+import {getTokenValue} from './getTokenValue.js'
 
 describe('Utilities: getTokenValue', () => {
   it('it retrieves the token value', () => {

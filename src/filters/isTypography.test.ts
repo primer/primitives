@@ -1,5 +1,5 @@
-import {getMockToken} from '../test-utilities'
-import {isTypography} from './isTypography'
+import {getMockToken} from '../test-utilities/index.js'
+import {isTypography} from './isTypography.js'
 
 describe('Filter: isTypography', () => {
   it('returns true if $type property is `typography`', () => {

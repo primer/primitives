@@ -1,6 +1,6 @@
-import {typescriptExportDefinition} from './typescriptExportDefinition'
-import {getMockFormatterArguments, getMockDictionary, getMockToken} from '../test-utilities'
-import syncPrettier from '@prettier/sync'
+import {typescriptExportDefinition} from './typescriptExportDefinition.js'
+import {getMockFormatterArguments, getMockDictionary, getMockToken} from '../test-utilities/index.js'
+import {format} from 'prettier'
 
 describe('Format: TypeScript definitions', () => {
   const dictionary = getMockDictionary({
@@ -31,7 +31,7 @@ describe('Format: TypeScript definitions', () => {
     },
   })
 
-  it('Formats dimension tokens', () => {
+  it('Formats dimension tokens', async () => {
     const input = getMockFormatterArguments({
       dictionary: getMockDictionary({
         tokens: {
@@ -54,7 +54,7 @@ describe('Format: TypeScript definitions', () => {
         },
       }),
     })
-    const expectedOutput = syncPrettier.format(
+    const expectedOutput = await format(
       `/**
         * @description size in px
         */
@@ -84,17 +84,17 @@ describe('Format: TypeScript definitions', () => {
       {parser: 'typescript', printWidth: 500},
     )
 
-    expect(typescriptExportDefinition(input)).toStrictEqual(expectedOutput)
+    expect(await typescriptExportDefinition(input)).toStrictEqual(expectedOutput)
   })
 
-  it('Formats tokens adding prefix', () => {
+  it('Formats tokens adding prefix', async () => {
     const input = getMockFormatterArguments({
       dictionary,
       platform: {
         prefix: 'test',
       },
     })
-    const expectedOutput = syncPrettier.format(
+    const expectedOutput = await format(
       `/**
        * @description hex string (6 or 8-digit)
        */
@@ -122,12 +122,12 @@ describe('Format: TypeScript definitions', () => {
       {parser: 'typescript', printWidth: 500},
     )
 
-    expect(typescriptExportDefinition(input)).toStrictEqual(expectedOutput)
+    expect(await typescriptExportDefinition(input)).toStrictEqual(expectedOutput)
   })
 
-  it('Formats tokens without prefix', () => {
+  it('Formats tokens without prefix', async () => {
     const input = getMockFormatterArguments({dictionary})
-    const expectedOutput = syncPrettier.format(
+    const expectedOutput = await format(
       `/**
       * @description hex string (6 or 8-digit)
       */
@@ -152,13 +152,12 @@ describe('Format: TypeScript definitions', () => {
       };`,
       {parser: 'typescript', printWidth: 500},
     )
-    expect(typescriptExportDefinition(input)).toStrictEqual(expectedOutput)
+    expect(await typescriptExportDefinition(input)).toStrictEqual(expectedOutput)
   })
 
-  it('throws an invalidTokenValue error if a token has an invalid value for the defined type', () => {
+  it('throws an invalidTokenValue error if a token has an invalid value for the defined type', async () => {
     const input = getMockFormatterArguments({
       dictionary: getMockDictionary({
-        // @ts-expect-error: Because of invalid token
         tokens: {
           subgroup: {
             color: {
@@ -170,9 +169,8 @@ describe('Format: TypeScript definitions', () => {
         },
       }),
     })
-
-    expect(() => {
-      typescriptExportDefinition(input)
-    }).toThrowError('Invalid token: "color token name" with type "color" can not have a value of "rgb(100,200,255)"')
+    expect(async () => await typescriptExportDefinition(input)).rejects.toThrowError(
+      'Invalid token: "color token name" with type "color" can not have a value of "rgb(100,200,255)"',
+    )
   })
 })

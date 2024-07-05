@@ -1,6 +1,5 @@
-import {isDimension} from '../filters'
-import type StyleDictionary from 'style-dictionary'
-import type {Platform} from 'style-dictionary'
+import {isDimension} from '../filters/index.js'
+import type {PlatformConfig, Transform, TransformedToken} from 'style-dictionary/types'
 
 type SizePx = '0' | `${number}px`
 type SizeRem = '0' | `${number}rem`
@@ -11,7 +10,7 @@ type SizeEm = '0' | `${number}em`
  * @param options
  * @returns number
  */
-const getBasePxFontSize = (options?: Platform): number => (options && options.basePxFontSize) || 16
+const getBasePxFontSize = (options?: PlatformConfig): number => (options && options.basePxFontSize) || 16
 
 /**
  * @description checks if token value has a specific unit
@@ -33,11 +32,12 @@ const hasUnit = (value: string | number, unit: string): boolean => {
  * @matcher matches all tokens of $type `dimension`
  * @transformer returns an array with the `rem` and `pixel` string
  */
-export const dimensionToRemPxArray: StyleDictionary.Transform = {
+export const dimensionToRemPxArray: Transform = {
+  name: 'dimension/remPxArray',
   type: `value`,
   transitive: true,
-  matcher: isDimension,
-  transformer: (token: StyleDictionary.TransformedToken, options?: Platform): [SizeRem | SizeEm, SizePx] => {
+  filter: isDimension,
+  transform: (token: TransformedToken, options?: PlatformConfig): [SizeRem | SizeEm, SizePx] => {
     const baseFont = getBasePxFontSize(options)
     const floatVal = parseFloat(token.value)
 

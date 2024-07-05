@@ -1,6 +1,6 @@
-import {jsonOneDimensional} from './jsonOneDimensional'
-import {getMockDictionary, getMockFormatterArguments, getMockToken} from '../test-utilities'
-import syncPrettier from '@prettier/sync'
+import {jsonOneDimensional} from './jsonOneDimensional.js'
+import {getMockDictionary, getMockFormatterArguments, getMockToken} from '../test-utilities/index.js'
+import {format} from 'prettier'
 
 describe('Format: Json One Dimensional', () => {
   const dictionary = getMockDictionary({
@@ -14,13 +14,13 @@ describe('Format: Json One Dimensional', () => {
     },
   })
 
-  test('Formats tokens as object', () => {
+  test('Formats tokens as object', async () => {
     const input = getMockFormatterArguments({
       dictionary,
       options: {outputVerbose: true},
     })
 
-    const expectedOutput = syncPrettier.format(
+    const expectedOutput = await format(
       `{
         "tokens-subgroup-red": {
           "name": "tokens-subgroup-red",
@@ -37,20 +37,20 @@ describe('Format: Json One Dimensional', () => {
       }`,
       {parser: 'json', printWidth: 500},
     )
-    expect(jsonOneDimensional(input)).toStrictEqual(expectedOutput)
+    expect(await jsonOneDimensional(input)).toStrictEqual(expectedOutput)
   })
 
-  test('Formats tokens as values only', () => {
+  test('Formats tokens as values only', async () => {
     const input = getMockFormatterArguments({
       dictionary,
     })
 
-    const expectedOutput = syncPrettier.format(
+    const expectedOutput = await format(
       `{
         "tokens-subgroup-red": "transformedValue"
       }`,
       {parser: 'json', printWidth: 500},
     )
-    expect(jsonOneDimensional(input)).toStrictEqual(expectedOutput)
+    expect(await jsonOneDimensional(input)).toStrictEqual(expectedOutput)
   })
 })

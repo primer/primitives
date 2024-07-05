@@ -1,7 +1,7 @@
-import type StyleDictionary from 'style-dictionary'
-import {isFontFamily} from '../filters'
-import {getTokenValue} from './utilities/getTokenValue'
-import {hasSpaceInString} from './utilities/hasSpaceInString'
+import type {Transform, TransformedToken} from 'style-dictionary/types'
+import {isFontFamily} from '../filters/index.js'
+import {getTokenValue} from './utilities/getTokenValue.js'
+import {hasSpaceInString} from './utilities/hasSpaceInString.js'
 /**
  * takes a value and returns it if its a string or concats strings in an array quoting strings with spaces
  * @param value
@@ -29,9 +29,10 @@ export const parseFontFamily = (value: unknown): string => {
  * @matcher matches all tokens of $type `fontFamily`
  * @transformer returns a string
  */
-export const fontFamilyToCss: StyleDictionary.Transform = {
+export const fontFamilyToCss: Transform = {
+  name: 'fontFamily/css',
   type: `value`,
   transitive: true,
-  matcher: isFontFamily,
-  transformer: (token: StyleDictionary.TransformedToken): string => parseFontFamily(getTokenValue(token)),
+  filter: isFontFamily,
+  transform: (token: TransformedToken): string => parseFontFamily(getTokenValue(token)),
 }

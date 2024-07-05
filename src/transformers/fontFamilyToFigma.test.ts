@@ -1,5 +1,5 @@
-import {getMockToken} from '../test-utilities'
-import {fontFamilyToFigma} from './fontFamilyToFigma'
+import {getMockToken} from '../test-utilities/index.js'
+import {fontFamilyToFigma} from './fontFamilyToFigma.js'
 
 describe('Transformer: fontFamilyToFigma', () => {
   it('transforms fontFamily string', () => {
@@ -12,7 +12,7 @@ describe('Transformer: fontFamilyToFigma', () => {
       }),
     ]
     const expectedOutput = ['Roboto, Noto Sans', 'Roboto']
-    expect(input.map(item => fontFamilyToFigma.transformer(item, {}))).toStrictEqual(expectedOutput)
+    expect(input.map(item => fontFamilyToFigma.transform(item, {}, {}))).toStrictEqual(expectedOutput)
   })
 
   it('transforms fontFamily array', () => {
@@ -25,7 +25,7 @@ describe('Transformer: fontFamilyToFigma', () => {
       }),
     ]
     const expectedOutput = ["Roboto, 'Noto Sans'", 'Roboto']
-    expect(input.map(item => fontFamilyToFigma.transformer(item, {}))).toStrictEqual(expectedOutput)
+    expect(input.map(item => fontFamilyToFigma.transform(item, {}, {}))).toStrictEqual(expectedOutput)
   })
 
   it('transforms fontFamily with platform options', () => {
@@ -48,12 +48,12 @@ describe('Transformer: fontFamilyToFigma', () => {
     }
 
     const expectedOutput = ['Inter', 'Slab Serif']
-    expect(input.map(item => fontFamilyToFigma.transformer(item, platform))).toStrictEqual(expectedOutput)
+    expect(input.map(item => fontFamilyToFigma.transform(item, platform, {}))).toStrictEqual(expectedOutput)
   })
 
   it('throws on invalid value', () => {
     expect(() =>
-      fontFamilyToFigma.transformer(
+      fontFamilyToFigma.transform(
         getMockToken({
           value: {
             fontFamily: 'Roboto',
@@ -61,32 +61,36 @@ describe('Transformer: fontFamilyToFigma', () => {
           },
         }),
         {},
+        {},
       ),
     ).toThrowError()
 
     expect(() =>
-      fontFamilyToFigma.transformer(
+      fontFamilyToFigma.transform(
         getMockToken({
           value: 42,
         }),
         {},
-      ),
-    ).toThrowError()
-
-    expect(() =>
-      fontFamilyToFigma.transformer(
-        getMockToken({
-          value: undefined,
-        }),
         {},
       ),
     ).toThrowError()
 
     expect(() =>
-      fontFamilyToFigma.transformer(
+      fontFamilyToFigma.transform(
+        getMockToken({
+          value: undefined,
+        }),
+        {},
+        {},
+      ),
+    ).toThrowError()
+
+    expect(() =>
+      fontFamilyToFigma.transform(
         getMockToken({
           value: [42, 'Roboto'],
         }),
+        {},
         {},
       ),
     ).toThrowError()

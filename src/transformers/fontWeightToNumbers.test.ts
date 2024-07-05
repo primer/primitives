@@ -1,5 +1,5 @@
-import {getMockToken} from '../test-utilities'
-import {fontWeightToNumber} from './fontWeightToNumber'
+import {getMockToken} from '../test-utilities/index.js'
+import {fontWeightToNumber} from './fontWeightToNumber.js'
 
 describe('Transformer: fontWeightToNumbers', () => {
   it('keeps number if within range of 1-1000', () => {
@@ -12,7 +12,7 @@ describe('Transformer: fontWeightToNumbers', () => {
       }),
     ]
     const expectedOutput = [100, 1000]
-    expect(input.map(item => fontWeightToNumber.transformer(item, {}))).toStrictEqual(expectedOutput)
+    expect(input.map(item => fontWeightToNumber.transform(item, {}, {}))).toStrictEqual(expectedOutput)
   })
 
   it('transforms string of number to number', () => {
@@ -20,7 +20,7 @@ describe('Transformer: fontWeightToNumbers', () => {
       value: '100',
     })
     const expectedOutput = 100
-    expect(fontWeightToNumber.transformer(input, {})).toStrictEqual(expectedOutput)
+    expect(fontWeightToNumber.transform(input, {}, {})).toStrictEqual(expectedOutput)
   })
 
   it('transforms font strings to number', () => {
@@ -50,7 +50,7 @@ describe('Transformer: fontWeightToNumbers', () => {
         value: fontWeightString,
       })
       try {
-        expect(fontWeightToNumber.transformer(input, {})).toStrictEqual(fontWeightNumber)
+        expect(fontWeightToNumber.transform(input, {}, {})).toStrictEqual(fontWeightNumber)
       } catch (e) {
         throw new Error(`❌ Expects ${fontWeightString} to be transformed to ${fontWeightNumber}`)
       }
@@ -59,57 +59,63 @@ describe('Transformer: fontWeightToNumbers', () => {
 
   it('throws on invalid value', () => {
     expect(() =>
-      fontWeightToNumber.transformer(
+      fontWeightToNumber.transform(
         getMockToken({
           value: 1001,
         }),
         {},
+        {},
       ),
     ).toThrowError()
 
     expect(() =>
-      fontWeightToNumber.transformer(
+      fontWeightToNumber.transform(
         getMockToken({
           value: 0,
         }),
         {},
+        {},
       ),
     ).toThrowError()
 
     expect(() =>
-      fontWeightToNumber.transformer(
+      fontWeightToNumber.transform(
         getMockToken({
           value: undefined,
         }),
         {},
+        {},
       ),
     ).toThrowError()
 
     expect(() =>
-      fontWeightToNumber.transformer(
+      fontWeightToNumber.transform(
         getMockToken({
           value: 'Roboto',
         }),
         {},
-      ),
-    ).toThrowError()
-
-    expect(() =>
-      fontWeightToNumber.transformer(
-        getMockToken({
-          value: ['Roboto'],
-        }),
         {},
       ),
     ).toThrowError()
 
     expect(() =>
-      fontWeightToNumber.transformer(
+      fontWeightToNumber.transform(
+        getMockToken({
+          value: ['Roboto'],
+        }),
+        {},
+        {},
+      ),
+    ).toThrowError()
+
+    expect(() =>
+      fontWeightToNumber.transform(
         getMockToken({
           value: {
             fontWeight: 300,
           },
         }),
+        {},
         {},
       ),
     ).toThrowError()

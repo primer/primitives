@@ -1,5 +1,5 @@
-import {getMockToken} from '../test-utilities'
-import {isDeprecated} from './isDeprecated'
+import {getMockToken} from '../test-utilities/index.js'
+import {isDeprecated} from './isDeprecated.js'
 
 describe('Filter: isDeprecated', () => {
   it('Returns true if depreacted property is true', () => {

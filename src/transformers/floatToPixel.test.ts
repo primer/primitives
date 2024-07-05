@@ -1,5 +1,5 @@
-import {getMockToken} from '../test-utilities'
-import {floatToPixel, floatToPixelUnitless} from './floatToPixel'
+import {getMockToken} from '../test-utilities/index.js'
+import {floatToPixel, floatToPixelUnitless} from './floatToPixel.js'
 
 describe('Transformer: floatToPixel', () => {
   it('transforms float to pixel', () => {
@@ -30,7 +30,7 @@ describe('Transformer: floatToPixel', () => {
       }),
     ]
     const expectedOutput = ['24px', '21px', '25px']
-    expect(input.map(item => floatToPixel.transformer(item, {}))).toStrictEqual(expectedOutput)
+    expect(input.map(item => floatToPixel.transform(item, {}, {}))).toStrictEqual(expectedOutput)
   })
 
   it('transforms 0 to 0', () => {
@@ -48,7 +48,7 @@ describe('Transformer: floatToPixel', () => {
       }),
     ]
     const expectedOutput = [0, 0]
-    expect(input.map(item => floatToPixel.transformer(item, {}))).toStrictEqual(expectedOutput)
+    expect(input.map(item => floatToPixel.transform(item, {}, {}))).toStrictEqual(expectedOutput)
   })
 
   it('ignore invalid', () => {
@@ -72,7 +72,7 @@ describe('Transformer: floatToPixel', () => {
       }),
     ]
     const expectedOutput = ['1.5', 1.5, 2]
-    expect(input.map(item => floatToPixel.transformer(item, {}))).toStrictEqual(expectedOutput)
+    expect(input.map(item => floatToPixel.transform(item, {}, {}))).toStrictEqual(expectedOutput)
   })
 
   it('transforms float to pixel unitless', () => {
@@ -103,6 +103,6 @@ describe('Transformer: floatToPixel', () => {
       }),
     ]
     const expectedOutput = [24, 21, 25]
-    expect(input.map(item => floatToPixelUnitless.transformer(item, {}))).toStrictEqual(expectedOutput)
+    expect(input.map(item => floatToPixelUnitless.transform(item, {}, {}))).toStrictEqual(expectedOutput)
   })
 })

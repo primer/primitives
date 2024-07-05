@@ -1,6 +1,6 @@
-import {getMockToken} from '../test-utilities'
-import {colorToRgbaFloat} from './colorToRgbaFloat'
-import {rgbaFloatToHex} from './utilities/rgbaFloatToHex'
+import {getMockToken} from '../test-utilities/index.js'
+import {colorToRgbaFloat} from './colorToRgbaFloat.js'
+import {rgbaFloatToHex} from './utilities/rgbaFloatToHex.js'
 
 describe('Transformer: colorToRgbaFloat', () => {
   it('transforms `hex3`, `hex6`, and `hex8` tokens to rgb float value', () => {
@@ -25,7 +25,7 @@ describe('Transformer: colorToRgbaFloat', () => {
         a: 0.4,
       },
     ]
-    expect(input.map(item => colorToRgbaFloat.transformer(item, {}))).toStrictEqual(expectedOutput)
+    expect(input.map(item => colorToRgbaFloat.transform(item, {}, {}))).toStrictEqual(expectedOutput)
   })
 
   it('transforms `rgb` and `rgba` to rgb float value', () => {
@@ -44,7 +44,7 @@ describe('Transformer: colorToRgbaFloat', () => {
         a: 0.4,
       },
     ]
-    expect(input.map(item => colorToRgbaFloat.transformer(item, {}))).toStrictEqual(expectedOutput)
+    expect(input.map(item => colorToRgbaFloat.transform(item, {}, {}))).toStrictEqual(expectedOutput)
   })
 
   it('transforms `color` tokens including alpha value', () => {
@@ -54,7 +54,7 @@ describe('Transformer: colorToRgbaFloat', () => {
         getMockToken({value: '#34343466', alpha: 0.9}),
         getMockToken({value: 'rgb(100,200,255)', alpha: 0.4}),
         getMockToken({value: 'rgba(100,200,255,0.8)', alpha: 0.4}),
-      ].map(item => colorToRgbaFloat.transformer(item, {})),
+      ].map(item => colorToRgbaFloat.transform(item, {}, {})),
     ).toStrictEqual([
       {
         r: 0.20392156862745098,
@@ -90,7 +90,7 @@ describe('Transformer: colorToRgbaFloat', () => {
         getMockToken({value: '#34343466', mix: {color: '#000000'}}),
         getMockToken({value: 'rgb(100,200,255)', mix: {weight: 0.5}}),
         getMockToken({value: 'rgba(100,200,255,0.8)', mix: {color: undefined, weight: undefined}}),
-      ].map(item => colorToRgbaFloat.transformer(item, {})),
+      ].map(item => colorToRgbaFloat.transform(item, {}, {})),
     ).toStrictEqual([
       {
         b: 0.12549019607843137,
@@ -125,7 +125,7 @@ describe('Transformer: colorToRgbaFloat', () => {
         getMockToken({value: 'rgb(100,200,255)', mix: {weight: 0.5}}),
         getMockToken({value: 'rgba(100,200,255,0.8)', mix: {color: undefined, weight: undefined}}),
       ]
-        .map(item => colorToRgbaFloat.transformer(item, {}))
+        .map(item => colorToRgbaFloat.transform(item, {}, {}) as {r: number; g: number; b: number; a?: number})
         .map(item => rgbaFloatToHex(item)),
     ).toStrictEqual(['#8b0820', '#34343466', '#64c8ff', '#64c8ffcc'])
   })
@@ -163,6 +163,6 @@ describe('Transformer: colorToRgbaFloat', () => {
         a: 0.4,
       },
     ]
-    expect(input.map(item => colorToRgbaFloat.transformer(item, {}))).toStrictEqual(expectedOutput)
+    expect(input.map(item => colorToRgbaFloat.transform(item, {}, {}))).toStrictEqual(expectedOutput)
   })
 })
