@@ -1,8 +1,8 @@
-import type StyleDictionary from 'style-dictionary'
-import type {PlatformInitializer} from '../types/PlatformInitializer'
-import {isDeprecated} from '../filters'
+import type {PlatformInitializer} from '../types/PlatformInitializer.js'
+import type {PlatformConfig} from 'style-dictionary/types'
+import {isDeprecated} from '../filters/index.js'
 
-export const deprecatedJson: PlatformInitializer = (outputFile, prefix, buildPath): StyleDictionary.Platform => ({
+export const deprecatedJson: PlatformInitializer = (outputFile, prefix, buildPath): PlatformConfig => ({
   prefix,
   buildPath,
   transforms: ['name/pathToDotNotation', 'json/deprecated'],

@@ -1,13 +1,14 @@
-import {parse as json5Parse} from 'json5'
-import type StyleDictionary from 'style-dictionary'
+import JSON5 from 'json5'
+import type {Parser, ParserOptions} from 'style-dictionary/types'
 
 /**
  * @description Parses a valid [json5](https://json5.org) file and replaces `$value` with `value` and `$description` with `comment` to make a w3c standard file compatible with style dictionary
  * @pattern supported file extensions `.json` or `.json5`
  */
-export const w3cJsonParser: StyleDictionary.Parser = {
+export const w3cJsonParser: Parser = {
+  name: 'w3cJsonParser',
   pattern: /\.json5?$/,
-  parse: ({filePath, contents}: {filePath: string; contents: string}) => {
+  parser: ({filePath, contents}: ParserOptions) => {
     // replace $value with value so that style dictionary recognizes it
     try {
       contents = contents
@@ -17,7 +18,7 @@ export const w3cJsonParser: StyleDictionary.Parser = {
         .replace(/["|']?\$?type["|']?:/g, '"$type":')
         .replace(/["|']?\$?extensions["|']?:/g, '"$extensions":')
       //
-      return json5Parse(contents)
+      return JSON5.parse(contents)
     } catch (e) {
       throw new Error(`Invalid json5 file "${filePath}".`)
     }

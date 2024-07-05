@@ -2,6 +2,7 @@
   "name": "@primer/primitives",
   "version": "9.1.2",
   "description": "Typography, spacing, and color primitives for Primer design system",
+  "type": "module",
   "files": [
     "dist",
     "src/tokens"
@@ -22,11 +23,11 @@
   },
   "homepage": "https://github.com/primer/primitives#readme",
   "scripts": {
-    "build": "npm run build:tokens && npm run build:fallbacks && npm run build:figma && npm run build:config",
+    "build": "npm run clean && npm run build:tokens && npm run build:fallbacks && npm run build:figma",
     "build:tokens": "tsx ./scripts/buildTokens.ts",
     "build:fallbacks": "tsx ./scripts/buildFallbacks.ts",
     "build:figma": "tsx scripts/buildFigma.ts",
-    "build:config": "tsc -p buildConfig.tsconfig.jsonc",
+    "clean": "rm -rf dist",
     "tokenJson:check": "tsx scripts/diffThemes.ts && tsx scripts/diffTokenProps.ts",
     "contrast:check": "tsx scripts/color-contrast.ts",
     "format": "prettier --write  '**/*.{js,jsx,ts,tsx,md,mdx,css}'",
@@ -53,11 +54,11 @@
     "@changesets/changelog-github": "^0.5.0",
     "@changesets/cli": "^2.27.7",
     "@github/prettier-config": "^0.0.6",
-    "@playwright/test": "^1.45.1",
-    "@types/node": "^20.14.9",
+    "@playwright/test": "^1.45.2",
+    "@types/node": "^20.14.11",
     "@typescript-eslint/eslint-plugin": "^7.15.0",
     "@typescript-eslint/parser": "^7.15.0",
-    "@vitest/coverage-v8": "^2.0.1",
+    "@vitest/coverage-v8": "^2.0.3",
     "color-blend": "^4.0.0",
     "color2k": "^2.0.3",
     "console-table-printer": "^2.12.1",
@@ -73,11 +74,14 @@
     "eslint-plugin-storybook": "^0.8.0",
     "json5": "^2.2.1",
     "markdown-table-ts": "^1.0.3",
-    "style-dictionary": "^3.9.2",
-    "tsx": "^4.16.2",
+    "tsx": "^4.19.0",
     "typescript": "5.5",
-    "vitest": "^2.0.1",
+    "vitest": "^2.0.3",
     "zod": "3.23",
-    "zod-validation-error": "3.3"
+    "zod-validation-error": "3.3",
+    "style-dictionary": "^4.0.1"
+  },
+  "peerDependencies": {
+    "style-dictionary": "^4.0.1"
   }
 }

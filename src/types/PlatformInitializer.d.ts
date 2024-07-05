@@ -1,4 +1,4 @@
-import type StyleDictionary from 'style-dictionary'
+import type {LocalOptions, PlatformConfig} from 'style-dictionary/types'
 
 export type PlatformInitializer = (
   // the filename including the extension (e.g. `.css`) and any subfolders after the buildPath (e.g. `functional`)
@@ -7,5 +7,5 @@ export type PlatformInitializer = (
   prefix: string | undefined,
   // the build path in which the `outputFile` is placed
   buildPath: string,
-  options?: StyleDictionary.Options,
-) => StyleDictionary.Platform
+  options?: LocalOptions,
+) => PlatformConfig

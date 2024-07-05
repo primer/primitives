@@ -1,4 +1,4 @@
-import {validateType} from './validTokenType'
+import {validateType} from './validTokenType.js'
 
 const token = (type: string) => ({
   tokenName: {$value: 1, $type: type},

@@ -1,11 +1,11 @@
 import {z} from 'zod'
-import {colorHexValue} from './colorHexValue'
-import {referenceValue} from './referenceValue'
-import {alphaValue} from './alphaValue'
-import {baseToken} from './baseToken'
-import {collection, mode} from './collections'
-import {scopes} from './scopes'
-import {tokenType} from './tokenType'
+import {colorHexValue} from './colorHexValue.js'
+import {referenceValue} from './referenceValue.js'
+import {alphaValue} from './alphaValue.js'
+import {baseToken} from './baseToken.js'
+import {collection, mode} from './collections.js'
+import {scopes} from './scopes.js'
+import {tokenType} from './tokenType.js'
 
 export const colorToken = baseToken
   .extend({
@@ -21,29 +21,32 @@ export const colorToken = baseToken
       .optional(),
     $extensions: z
       .object({
-        'org.primer.figma': z.object({
-          collection: collection([
-            'base/color/light',
-            'base/color/light-high-contrast',
-            'base/color/dark',
-            'base/color/dark-dimmed',
-            'base/color/dark-high-contrast',
-            'mode',
-            'pattern/mode',
-          ]).optional(),
-          mode: mode([
-            'light',
-            'dark',
-            'dark dimmed',
-            'light high contrast',
-            'dark high contrast',
-            'light colorblind',
-            'dark colorblind',
-            'light tritanopia',
-            'dark tritanopia',
-          ]).optional(),
-          scopes: scopes(['all', 'bgColor', 'fgColor', 'borderColor', 'effectColor']).optional(),
-        }),
+        alpha: z.number().min(0).max(1).optional().nullable(),
+        'org.primer.figma': z
+          .object({
+            collection: collection([
+              'base/color/light',
+              'base/color/light-high-contrast',
+              'base/color/dark',
+              'base/color/dark-dimmed',
+              'base/color/dark-high-contrast',
+              'mode',
+              'pattern/mode',
+            ]).optional(),
+            mode: mode([
+              'light',
+              'dark',
+              'dark dimmed',
+              'light high contrast',
+              'dark high contrast',
+              'light colorblind',
+              'dark colorblind',
+              'light tritanopia',
+              'dark tritanopia',
+            ]).optional(),
+            scopes: scopes(['all', 'bgColor', 'fgColor', 'borderColor', 'effectColor']).optional(),
+          })
+          .optional(),
       })
       .optional(),
   })

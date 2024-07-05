@@ -1,5 +1,5 @@
-import {getMockToken} from '../test-utilities'
-import {namePathToFigma} from './namePathToFigma'
+import {getMockToken} from '../test-utilities/index.js'
+import {namePathToFigma} from './namePathToFigma.js'
 
 describe('Transformer: namePathToFigma', () => {
   it('converts path elements to dot.notation and ignores name proprty', () => {
@@ -23,7 +23,7 @@ describe('Transformer: namePathToFigma', () => {
     ]
     const expectedOutput = ['path/to/token', 'PATH/tO/Token', 'path/toToken', 'pathtoToken']
 
-    expect(input.map(item => namePathToFigma.transformer(item, {}))).toStrictEqual(expectedOutput)
+    expect(input.map(item => namePathToFigma.transform(item, {}, {}))).toStrictEqual(expectedOutput)
   })
 
   it('replaces spaces, `-`, `_` and `+` within path elements and joins with camelCase, but does not change the rest of the word', () => {
@@ -42,7 +42,7 @@ describe('Transformer: namePathToFigma', () => {
       }),
     ]
     const expectedOutput = ['start/path to token', 'start/PATH_tO-Token', 'start/path+toToken']
-    expect(input.map(item => namePathToFigma.transformer(item, {}))).toStrictEqual(expectedOutput)
+    expect(input.map(item => namePathToFigma.transform(item, {}, {}))).toStrictEqual(expectedOutput)
   })
 
   it('removes `@`, so we can use it for the default hack', () => {
@@ -57,7 +57,7 @@ describe('Transformer: namePathToFigma', () => {
       }),
     ]
     const expectedOutput = ['fgColor/accent', 'fgColor/muted']
-    expect(input.map(item => namePathToFigma.transformer(item, {}))).toStrictEqual(expectedOutput)
+    expect(input.map(item => namePathToFigma.transform(item, {}, {}))).toStrictEqual(expectedOutput)
   })
 
   it('adds prefix to token name', () => {
@@ -69,6 +69,6 @@ describe('Transformer: namePathToFigma', () => {
       path: ['start', 'pathTo', 'token'],
     })
     const expectedOutput = 'PRIMER/start/pathTo/token'
-    expect(namePathToFigma.transformer(input, platform)).toStrictEqual(expectedOutput)
+    expect(namePathToFigma.transform(input, platform, {})).toStrictEqual(expectedOutput)
   })
 })

@@ -1,10 +1,10 @@
-import type StyleDictionary from 'style-dictionary'
-import {isTypography} from '../filters'
-import type {TypographyTokenValue} from '../types/TypographyTokenValue'
-import {checkRequiredTokenProperties} from './utilities/checkRequiredTokenProperties'
-import {parseFontFamily} from './fontFamilyToCss'
-import {parseFontWeight} from './fontWeightToNumber'
-import {getTokenValue} from './utilities/getTokenValue'
+import {isTypography} from '../filters/index.js'
+import type {TypographyTokenValue} from '../types/TypographyTokenValue.js'
+import {checkRequiredTokenProperties} from './utilities/checkRequiredTokenProperties.js'
+import {parseFontFamily} from './fontFamilyToCss.js'
+import {parseFontWeight} from './fontWeightToNumber.js'
+import {getTokenValue} from './utilities/getTokenValue.js'
+import type {Config, PlatformConfig, Transform, TransformedToken} from 'style-dictionary/types'
 
 /**
  * @description converts typograhy token value to css font shorthand
@@ -12,19 +12,20 @@ import {getTokenValue} from './utilities/getTokenValue'
  * @matcher matches all tokens of $type `typography`
  * @transformer returns a css font string
  */
-export const typographyToCss: StyleDictionary.Transform = {
-  type: `value`,
+export const typographyToCss: Transform = {
+  name: 'typography/css',
+  type: 'value',
   transitive: true,
-  matcher: isTypography,
-  transformer: (token: StyleDictionary.TransformedToken) => {
+  filter: isTypography,
+  transform: (token: TransformedToken, config: PlatformConfig, options: Config) => {
     // extract value
     const value: TypographyTokenValue = getTokenValue(token)
     // validate token properties
     checkRequiredTokenProperties(value, ['fontWeight', 'fontSize', 'fontFamily'])
     // format output
-    return `${value.fontStyle || ''} ${parseFontWeight(getTokenValue(token, 'fontWeight'))} ${value.fontSize}${
+    return `${value.fontStyle || ''} ${parseFontWeight(getTokenValue(token, 'fontWeight', options))} ${value.fontSize}${
       value.lineHeight ? `/${value.lineHeight}` : ''
-    } ${parseFontFamily(getTokenValue(token, 'fontFamily'))}`
+    } ${parseFontFamily(getTokenValue(token, 'fontFamily', options))}`
       .trim()
       .replace(/\s\s+/g, ' ')
   },

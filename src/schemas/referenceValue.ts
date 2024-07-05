@@ -1,5 +1,5 @@
 import {z} from 'zod'
-import {schemaErrorMessage} from '../utilities/schemaErrorMessage'
+import {schemaErrorMessage} from '../utilities/index.js'
 
 export const referenceValue = z.string().refine(
   ref => /^{\w+(\.\w+)*(\.\w+|\.@)}$/.test(ref),

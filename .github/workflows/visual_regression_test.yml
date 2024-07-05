@@ -25,7 +25,7 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci
+        run: npm ci && npm run install:storybook
 
       - name: Build tokens
         run: npm run build
@@ -33,7 +33,6 @@ jobs:
       - name: Build storybook
         working-directory: docs/storybook
         run: |
-          npm ci
           npm run build-storybook
 
       - name: Run storybook
@@ -46,7 +45,7 @@ jobs:
           sleep 5
 
       - name: Run Visual Regression Tests
-        uses: docker://mcr.microsoft.com/playwright:v1.45.1-jammy
+        uses: docker://mcr.microsoft.com/playwright:v1.47.1-jammy
         env:
           STORYBOOK_URL: 'http://172.17.0.1:6006'
         with:

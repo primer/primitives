@@ -1,4 +1,4 @@
-import {hasSpaceInString} from './hasSpaceInString'
+import {hasSpaceInString} from './hasSpaceInString.js'
 
 describe('Utilities: hasSpaceInString', () => {
   it('returns true if string has space', () => {

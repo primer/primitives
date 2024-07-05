@@ -1,18 +1,20 @@
-import type StyleDictionary from 'style-dictionary'
-import {invalidTokenValueError, invalidTokenValuePropertyError} from './invalidTokenError'
+import type {TransformedToken} from 'style-dictionary/types'
+import {invalidTokenValueError, invalidTokenValuePropertyError} from './invalidTokenError.js'
 
-export const getTokenValue = (token: StyleDictionary.TransformedToken, property?: string) => {
-  if (token.value === undefined) {
+export const getTokenValue = (token: TransformedToken, property?: string) => {
+  const value = token.$value ?? token.value
+
+  if (value === undefined) {
     throw new invalidTokenValueError(token)
   }
   // for composite token if subproperty is needed
-  if (typeof property === 'string' && token.value[property] === undefined) {
+  if (typeof property === 'string' && value[property] === undefined) {
     throw new invalidTokenValuePropertyError(token, property)
   }
 
   if (typeof property === 'string') {
-    return token.value[property]
+    return value[property]
   }
 
-  return token.value
+  return value
 }

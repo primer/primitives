@@ -1,12 +1,12 @@
-import {PrimerStyleDictionary} from '../src/PrimerStyleDictionary'
+import {PrimerStyleDictionary} from '../src/PrimerStyleDictionary.js'
 import fs from 'fs'
 
-describe('PrimerStyleDictionary', () => {
+describe('PrimerStyleDictionary', async () => {
   const basePath = `./integration`
   const buildPath = `${basePath}/build/baseline`
 
-  beforeAll(() => {
-    const extendedSD = PrimerStyleDictionary.extend({
+  beforeAll(async () => {
+    const extendedSD = await PrimerStyleDictionary.extend({
       source: [`${basePath}/tokens/**/*.json5`],
       platforms: {
         css: {
@@ -39,7 +39,7 @@ describe('PrimerStyleDictionary', () => {
         jsonFlat: {
           prefix: 'PREFIX',
           buildPath: `${buildPath}/json/`,
-          transforms: ['name/cti/pascal'],
+          transforms: ['name/pathToPascalCase'],
           files: [
             {
               options: {
@@ -53,15 +53,15 @@ describe('PrimerStyleDictionary', () => {
       },
     })
 
-    extendedSD.cleanAllPlatforms()
-    extendedSD.buildAllPlatforms()
+    await extendedSD.cleanAllPlatforms()
+    await extendedSD.buildAllPlatforms()
   })
 
   it('runs baseline css/variables format', () => {
     const output = fs.readFileSync(`${buildPath}/css/variables.css`, 'utf8')
     const expectedOutput = `:root {
-  --prefix-base-color-aqua-blue-500: #2C29FF; /* The primary color for interactive elements. */
-  --prefix-fg-color-link-rest-01: #2C29FF;
+  --prefix-base-color-aqua-blue-500: #2c29ff; /* The primary color for interactive elements. */
+  --prefix-fg-color-link-rest-01: #2c29ff;
 }
 `
     expect(output).toBe(expectedOutput)
@@ -74,15 +74,15 @@ describe('PrimerStyleDictionary', () => {
     "color": {
       "aquaBlue": {
         "500": {
-          "value": "#2C29FF",
+          "$value": "#2C29FF",
           "$type": "color",
-          "comment": "The primary color for interactive elements.",
+          "$description": "The primary color for interactive elements.",
           "filePath": "integration/tokens/base.json5",
           "isSource": true,
           "original": {
-            "value": "#2C29FF",
+            "$value": "#2C29FF",
             "$type": "color",
-            "comment": "The primary color for interactive elements."
+            "$description": "The primary color for interactive elements."
           },
           "name": "500",
           "attributes": {},
@@ -98,12 +98,12 @@ describe('PrimerStyleDictionary', () => {
   },
   "fgColor": {
     "link-rest-01": {
-      "value": "#2C29FF",
+      "$value": "#2C29FF",
       "$type": "color",
       "filePath": "integration/tokens/functional.json5",
       "isSource": true,
       "original": {
-        "value": "{base.color.aquaBlue.500}",
+        "$value": "{base.color.aquaBlue.500}",
         "$type": "color"
       },
       "name": "link-rest-01",
@@ -122,8 +122,8 @@ describe('PrimerStyleDictionary', () => {
   it('runs baseline flat json format', () => {
     const output = fs.readFileSync(`${buildPath}/json/flat.json`, 'utf8')
     const expectedOutput = `{
-  "PrefixBaseColorAquaBlue500": "#2C29FF",
-  "PrefixFgColorLinkRest01": "#2C29FF"
+  "PREFIXBaseColorAquaBlue500": "#2C29FF",
+  "PREFIXFgColorLinkRest01": "#2C29FF"
 }
 `
     expect(output).toBe(expectedOutput)

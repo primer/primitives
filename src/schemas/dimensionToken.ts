@@ -1,10 +1,10 @@
 import {z} from 'zod'
-import {baseToken} from './baseToken'
-import {referenceValue} from './referenceValue'
-import {collection} from './collections'
-import {scopes} from './scopes'
-import {dimensionValue} from './dimensionValue'
-import {tokenType} from './tokenType'
+import {baseToken} from './baseToken.js'
+import {referenceValue} from './referenceValue.js'
+import {collection} from './collections.js'
+import {scopes} from './scopes.js'
+import {dimensionValue} from './dimensionValue.js'
+import {tokenType} from './tokenType.js'
 
 export const dimensionToken = baseToken
   .extend({

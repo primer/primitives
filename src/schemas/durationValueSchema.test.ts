@@ -1,4 +1,4 @@
-import {durationValue} from './durationValue'
+import {durationValue} from './durationValue.js'
 
 describe('Schema: durationValue', () => {
   it('passes on valid duration values', () => {

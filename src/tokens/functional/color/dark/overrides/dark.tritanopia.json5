@@ -73,7 +73,9 @@
       muted: {
         $value: '{base.color.blue.4}',
         $type: 'color',
-        alpha: 0.4,
+        $extensions: {
+          alpha: 0.4,
+        },
       },
       emphasis: {
         $value: '{base.color.blue.5}',
@@ -84,7 +86,9 @@
       muted: {
         $value: '{base.color.red.4}',
         $type: 'color',
-        alpha: 0.4,
+        $extensions: {
+          alpha: 0.4,
+        },
       },
       emphasis: {
         $value: '{base.color.red.5}',
@@ -95,7 +99,9 @@
       muted: {
         $value: '{base.color.red.4}',
         $type: 'color',
-        alpha: 0.4,
+        $extensions: {
+          alpha: 0.4,
+        },
       },
       emphasis: {
         $value: '{base.color.red.5}',
@@ -106,6 +112,9 @@
       muted: {
         $value: '{borderColor.default}',
         $type: 'color',
+        $extensions: {
+          alpha: 0.4,
+        },
       },
       emphasis: {
         $value: '{borderColor.emphasis}',
@@ -119,14 +128,23 @@
         num: {
           $value: '{base.color.blue.3}',
           $type: 'color',
+          $extensions: {
+            alpha: 0.3,
+          },
         },
         line: {
           $value: '{base.color.blue.4}',
           $type: 'color',
+          $extensions: {
+            alpha: 0.15,
+          },
         },
         word: {
           $value: '{base.color.blue.4}',
           $type: 'color',
+          $extensions: {
+            alpha: 0.4,
+          },
         },
       },
     },

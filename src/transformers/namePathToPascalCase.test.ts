@@ -23,7 +23,7 @@ describe('Transformer: namePathToPascalCase', () => {
     ]
     const expectedOutput = ['PathToToken', 'PATHTOToken', 'PathToToken', 'PathtoToken']
 
-    expect(input.map(item => namePathToPascalCase.transformer(item, {}))).toStrictEqual(expectedOutput)
+    expect(input.map(item => namePathToPascalCase.transform(item, {}, {}))).toStrictEqual(expectedOutput)
   })
 
   it('removes `@`, so we can use it for the default hack', () => {
@@ -38,7 +38,7 @@ describe('Transformer: namePathToPascalCase', () => {
       }),
     ]
     const expectedOutput = ['FgColorAccent', 'FgColorMuted']
-    expect(input.map(item => namePathToPascalCase.transformer(item, {}))).toStrictEqual(expectedOutput)
+    expect(input.map(item => namePathToPascalCase.transform(item, {}, {}))).toStrictEqual(expectedOutput)
   })
 
   it('adds prefix to token name', () => {
@@ -50,6 +50,6 @@ describe('Transformer: namePathToPascalCase', () => {
       path: ['start', 'pathTo', 'token'],
     })
     const expectedOutput = 'PRIMERStartPathToToken'
-    expect(namePathToPascalCase.transformer(input, platform)).toStrictEqual(expectedOutput)
+    expect(namePathToPascalCase.transform(input, platform, {})).toStrictEqual(expectedOutput)
   })
 })

@@ -1,4 +1,4 @@
-import {shadowValue, shadowToken} from './shadowToken'
+import {shadowValue, shadowToken} from './shadowToken.js'
 
 const tokenValue = {
   color: '#000000',

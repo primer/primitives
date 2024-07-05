@@ -60,6 +60,9 @@
       muted: {
         $value: '{bgColor.neutral.muted}',
         $type: 'color',
+        $extensions: {
+          alpha: 0.1,
+        },
       },
       emphasis: {
         $value: '{bgColor.neutral.emphasis}',
@@ -83,6 +86,9 @@
       muted: {
         $value: '{borderColor.muted}',
         $type: 'color',
+        $extensions: {
+          alpha: 0.4,
+        },
       },
       emphasis: {
         $value: '{borderColor.emphasis}',

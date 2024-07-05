@@ -1,4 +1,4 @@
-import {fontWeightValue} from './fontWeightValue'
+import {fontWeightValue} from './fontWeightValue.js'
 
 describe('Schema: fontWeightValue', () => {
   const allowed = [100, 200, 300, 400, 500, 600, 700, 800, 900, 950]
