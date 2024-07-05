@@ -1,5 +1,5 @@
-import type StyleDictionary from 'style-dictionary'
-import {isDuration} from '../filters/isDuration'
+import type {PlatformConfig, Transform, TransformedToken} from 'style-dictionary/types'
+import {isDuration} from '../filters/isDuration.js'
 
 /**
  * @description converts duration tokens string value to number with `ms` unit
@@ -7,11 +7,12 @@ import {isDuration} from '../filters/isDuration'
  * @matcher matches all tokens of $type `duration`
  * @transformer returns a css duration
  */
-export const durationToCss: StyleDictionary.Transform = {
+export const durationToCss: Transform = {
+  name: 'duration/css',
   type: `value`,
   transitive: true,
-  matcher: isDuration,
-  transformer: (token: StyleDictionary.TransformedToken, _options?: StyleDictionary.Platform) => {
+  filter: isDuration,
+  transform: (token: TransformedToken, _options?: PlatformConfig) => {
     // throw an error if token value is not a string or does not end with `ms`
     if (typeof token.value !== `string` || !token.value.endsWith(`ms`)) {
       throw new Error(`duration token value must be a string with an "ms" unit`)

@@ -1,4 +1,4 @@
-import {alpha} from './alpha'
+import {alpha} from './alpha.js'
 
 describe('Utilities: alpha', () => {
   it('it transforms `hex3`', () => {

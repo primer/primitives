@@ -1,13 +1,12 @@
-import {isDimension} from '../filters'
-import type StyleDictionary from 'style-dictionary'
-import type {Platform} from 'style-dictionary'
+import {isDimension} from '../filters/index.js'
+import type {PlatformConfig, Transform, TransformedToken} from 'style-dictionary/types'
 
 /**
  * @description base font size from options or 16
  * @param options
  * @returns number
  */
-const getBasePxFontSize = (options?: Platform): number => (options && options.basePxFontSize) || 16
+const getBasePxFontSize = (options?: PlatformConfig): number => (options && options.basePxFontSize) || 16
 
 /**
  * @description checks if token value has a specific unit
@@ -29,17 +28,17 @@ const hasUnit = (value: string | number, unit: string): boolean => {
  * @matcher matches all tokens of $type `dimension`
  * @transformer returns a float number
  */
-export const dimensionToPixelUnitless: StyleDictionary.Transform = {
+export const dimensionToPixelUnitless: Transform = {
+  name: 'dimension/pixelUnitless',
   type: `value`,
   transitive: true,
-  matcher: isDimension,
-  transformer: (token: StyleDictionary.TransformedToken, options?: Platform) => {
+  filter: isDimension,
+  transform: (token: TransformedToken, options?: PlatformConfig) => {
     const baseFont = getBasePxFontSize(options)
     const floatVal = parseFloat(token.value)
-
     if (isNaN(floatVal)) {
       throw new Error(
-        `Invalid dimension token: '${token.name}: ${token.value}' is not valid and cannot be transform to 'float' \n`,
+        `Invalid dimension token: '${token.path.join('.')}: ${token.value}' is not valid and cannot be transform to 'float' \n`,
       )
     }
 

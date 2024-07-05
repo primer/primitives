@@ -1,5 +1,5 @@
-import {getMockToken} from '../test-utilities'
-import {isFromFile} from './isFromFile'
+import {getMockToken} from '../test-utilities/index.js'
+import {isFromFile} from './isFromFile.js'
 
 describe('Filter: isFromFile', () => {
   it('returns true if token.filePath is in provided array of file paths', () => {

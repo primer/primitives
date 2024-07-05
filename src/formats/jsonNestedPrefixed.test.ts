@@ -1,16 +1,16 @@
 import {jsonNestedPrefixed} from './jsonNestedPrefixed'
 import {getMockFormatterArguments} from '../test-utilities'
-import syncPrettier from '@prettier/sync'
+import {format} from 'prettier'
 
 describe('Format: Json nested with prefixes', () => {
-  test('Formats tokens with prefix', () => {
+  test('Formats tokens with prefix', async () => {
     const input = getMockFormatterArguments({
       platform: {
         prefix: 'test',
       },
     })
 
-    const expectedOutput = syncPrettier.format(
+    const expectedOutput = await format(
       `{
         "test": {
           "tokens": {
@@ -23,12 +23,12 @@ describe('Format: Json nested with prefixes', () => {
       {parser: 'json', printWidth: 500},
     )
 
-    expect(jsonNestedPrefixed(input)).toBe(expectedOutput)
+    expect(await jsonNestedPrefixed(input)).toBe(expectedOutput)
   })
 
-  test('Formats tokens without prefix', () => {
+  test('Formats tokens without prefix', async () => {
     const input = getMockFormatterArguments()
-    const expectedOutput = syncPrettier.format(
+    const expectedOutput = await format(
       `{
         "tokens": {
           "subgroup": {
@@ -38,16 +38,16 @@ describe('Format: Json nested with prefixes', () => {
       }`,
       {parser: 'json', printWidth: 500},
     )
-    expect(jsonNestedPrefixed(input)).toStrictEqual(expectedOutput)
+    expect(await jsonNestedPrefixed(input)).toStrictEqual(expectedOutput)
   })
 
-  test('Formats tokens without verbose setting', () => {
+  test('Formats tokens without verbose setting', async () => {
     const input = getMockFormatterArguments({
       options: {
         outputVerbose: true,
       },
     })
-    const expectedOutput = syncPrettier.format(
+    const expectedOutput = await format(
       `{
         "tokens": {
           "subgroup": {
@@ -68,6 +68,6 @@ describe('Format: Json nested with prefixes', () => {
       }`,
       {parser: 'json', printWidth: 500},
     )
-    expect(jsonNestedPrefixed(input)).toStrictEqual(expectedOutput)
+    expect(await jsonNestedPrefixed(input)).toStrictEqual(expectedOutput)
   })
 })

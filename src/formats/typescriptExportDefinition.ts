@@ -1,14 +1,11 @@
-import StyleDictionary from 'style-dictionary'
-import syncPrettier from '@prettier/sync'
-import fs = require('fs')
-import path = require('path')
-import {treeWalker} from '../utilities/treeWalker'
-
-import type {FormatterArguments} from 'style-dictionary/types/Format'
-import type {w3cTransformedToken} from '../types/w3cTransformedToken'
-import {prefixTokens} from './utilities/prefixTokens'
-
-const {fileHeader} = StyleDictionary.formatHelpers
+import {format} from 'prettier'
+import {readFileSync} from 'fs'
+import {resolve as resolvePath} from 'path'
+import {treeWalker} from '../utilities/treeWalker.js'
+import type {w3cTransformedToken} from '../types/w3cTransformedToken.js'
+import {prefixTokens} from './utilities/prefixTokens.js'
+import type {DesignTokens, FormatFn, FormatFnArguments} from 'style-dictionary/types'
+import {fileHeader} from 'style-dictionary/utils'
 
 /**
  * unquoteTypes
@@ -31,7 +28,7 @@ const unquoteTypes = (output: string, designTokenTypes: string[]): string => {
  */
 const getTokenType = (tokenTypesPath: string): string => {
   try {
-    const designTokenType = fs.readFileSync(path.resolve(tokenTypesPath), {encoding: 'utf-8'})
+    const designTokenType = readFileSync(resolvePath(tokenTypesPath), {encoding: 'utf-8'})
     return designTokenType
   } catch (e) {
     // eslint-disable-next-line no-console
@@ -92,7 +89,7 @@ const validTokenNode = (item: w3cTransformedToken | unknown): item is w3cTransfo
  * @param validTypes array, all other types will be removed
  * @returns set of all used token types
  */
-const getUsedTokenTypes = (tokens: StyleDictionary.DesignTokens, validTypes: string[]): Set<string> => {
+const getUsedTokenTypes = (tokens: DesignTokens, validTypes: string[]): Set<string> => {
   // using a set to assure every value only exists once
   const usedTypes = new Set<string>()
   // adds type to set
@@ -112,7 +109,7 @@ const getUsedTokenTypes = (tokens: StyleDictionary.DesignTokens, validTypes: str
  * @param item object
  * @returns object
  */
-const getTokenObjectWithTypes = (tokens: StyleDictionary.DesignTokens): Record<string, unknown> => {
+const getTokenObjectWithTypes = (tokens: DesignTokens): Record<string, unknown> => {
   // TODO: FIX typescript issues
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
@@ -126,11 +123,7 @@ const getTokenObjectWithTypes = (tokens: StyleDictionary.DesignTokens): Record<s
  * @param tokenTypesPath
  * @returns string
  */
-const getTypeDefinition = (
-  tokens: StyleDictionary.DesignTokens,
-  moduleName: string,
-  tokenTypesPath: string,
-): string => {
+const getTypeDefinition = (tokens: DesignTokens, moduleName: string, tokenTypesPath: string): string => {
   const usedTypes = getUsedTokenTypes(tokens, ['ColorHex', 'Shadow', 'Border', 'SizeEm', 'SizeRem', 'SizePx'])
   const tokenObjectWithTypes = getTokenObjectWithTypes(tokens)
   // get token type declaration from file
@@ -153,18 +146,18 @@ const getTypeDefinition = (
  * @param arguments [FormatterArguments](https://github.com/amzn/style-dictionary/blob/main/types/Format.d.ts)
  * @returns formatted `string`
  */
-export const typescriptExportDefinition: StyleDictionary.Formatter = ({
+export const typescriptExportDefinition: FormatFn = async ({
   dictionary,
   file,
   options = {},
   platform,
-}: FormatterArguments): string => {
+}: FormatFnArguments) => {
   // extract options
   const {moduleName = `tokens`, tokenTypesPath = `./src/types/`} = options
   // add prefix if defined
   const tokens = prefixTokens(dictionary.tokens, platform)
   // add file header and convert output
-  const output = `${fileHeader({file})}\n${getTypeDefinition(tokens, moduleName, tokenTypesPath)}\n`
+  const output = `${await fileHeader({file})}\n${getTypeDefinition(tokens, moduleName, tokenTypesPath)}\n`
   // return prettified
-  return syncPrettier.format(output, {parser: 'typescript', printWidth: 500})
+  return format(output, {parser: 'typescript', printWidth: 500})
 }

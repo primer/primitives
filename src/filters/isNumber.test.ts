@@ -1,5 +1,5 @@
-import {getMockToken} from '../test-utilities'
-import {isNumber} from './isNumber'
+import {getMockToken} from '../test-utilities/index.js'
+import {isNumber} from './isNumber.js'
 
 describe('Filter: isNumber', () => {
   it('returns true if $type property is `number`', () => {

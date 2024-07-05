@@ -1,6 +1,6 @@
-import type StyleDictionary from 'style-dictionary'
-import {isFontWeight} from '../filters'
-import {getTokenValue} from './utilities/getTokenValue'
+import type {Transform, TransformedToken} from 'style-dictionary/types'
+import {isFontWeight} from '../filters/index.js'
+import {getTokenValue} from './utilities/getTokenValue.js'
 
 const fontWeightMatrix: Record<string, string[]> = {
   '100': ['thin', 'hairline'],
@@ -45,9 +45,10 @@ export const parseFontWeight = (value: unknown): number => {
  * @matcher matches all tokens of $type `fontWeight`
  * @transformer returns a number
  */
-export const fontWeightToNumber: StyleDictionary.Transform = {
+export const fontWeightToNumber: Transform = {
+  name: 'fontWeight/number',
   type: `value`,
   transitive: true,
-  matcher: isFontWeight,
-  transformer: (token: StyleDictionary.TransformedToken): number => parseFontWeight(getTokenValue(token)),
+  filter: isFontWeight,
+  transform: (token: TransformedToken): number => parseFontWeight(getTokenValue(token)),
 }

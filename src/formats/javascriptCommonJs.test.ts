@@ -1,16 +1,16 @@
-import {javascriptCommonJs} from './javascriptCommonJs'
-import {getMockFormatterArguments} from '../test-utilities'
-import syncPrettier from '@prettier/sync'
+import {javascriptCommonJs} from './javascriptCommonJs.js'
+import {getMockFormatterArguments} from '../test-utilities/index.js'
+import {format} from 'prettier'
 
 describe('Format: CommonJs', () => {
-  it('Formats tokens adding prefix', () => {
+  it('Formats tokens adding prefix', async () => {
     const input = getMockFormatterArguments({
       platform: {
         prefix: 'test',
       },
     })
 
-    const expectedOutput = syncPrettier.format(
+    const expectedOutput = await format(
       `exports.default = {
       test: {
         tokens: {
@@ -23,12 +23,12 @@ describe('Format: CommonJs', () => {
       {parser: 'typescript', printWidth: 500},
     )
 
-    expect(javascriptCommonJs(input)).toBe(expectedOutput)
+    expect(await javascriptCommonJs(input)).toBe(expectedOutput)
   })
 
-  it('Formats tokens without prefix', () => {
+  it('Formats tokens without prefix', async () => {
     const input = getMockFormatterArguments()
-    const expectedOutput = syncPrettier.format(
+    const expectedOutput = await format(
       `exports.default = {
       tokens: {
         subgroup: {
@@ -38,6 +38,6 @@ describe('Format: CommonJs', () => {
     };`,
       {parser: 'typescript', printWidth: 500},
     )
-    expect(javascriptCommonJs(input)).toStrictEqual(expectedOutput)
+    expect(await javascriptCommonJs(input)).toStrictEqual(expectedOutput)
   })
 })

@@ -1,5 +1,5 @@
-import {getMockToken} from '../test-utilities'
-import {isDimension} from './isDimension'
+import {getMockToken} from '../test-utilities/index.js'
+import {isDimension} from './index.js'
 
 describe('Filter: isDimension', () => {
   it('returns true if $type property is `dimension`', () => {

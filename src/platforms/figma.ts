@@ -1,11 +1,11 @@
-import type StyleDictionary from 'style-dictionary'
-import type {PlatformInitializer} from '../types/PlatformInitializer'
-import {isSource} from '../filters'
+import type {PlatformInitializer} from '../types/PlatformInitializer.js'
+import {isSource} from '../filters/index.js'
+import type {TransformedToken, PlatformConfig} from 'style-dictionary/types'
 
-const validFigmaToken = (token: StyleDictionary.TransformedToken) => {
+const validFigmaToken = async (token: TransformedToken) => {
   const validTypes = ['color', 'dimension', 'shadow', 'fontWeight', 'fontFamily', 'number']
   // is a siource token, not an included one
-  if (!isSource(token)) return false
+  if (!isSource(token) || !token.$type) return false
 
   if (`${token.value}`.substring(token.value.length - 2) === 'em') return false
   // has a collection attribute
@@ -19,20 +19,19 @@ const validFigmaToken = (token: StyleDictionary.TransformedToken) => {
   return validTypes.includes(token.$type)
 }
 
-export const figma: PlatformInitializer = (outputFile, prefix, buildPath, options): StyleDictionary.Platform => ({
+export const figma: PlatformInitializer = (outputFile, prefix, buildPath, options): PlatformConfig => ({
   prefix,
   buildPath,
   transforms: [
     'color/rgbaFloat',
-    'name/pathToFigma',
-    // 'name/pathToSlashNotation',
-    'figma/attributes',
     'fontFamily/figma',
     'float/pixelUnitless',
     'dimension/pixelUnitless',
     // 'border/figma',
     // 'typography/figma',
     'fontWeight/number',
+    'figma/attributes',
+    'name/pathToFigma',
   ],
   options: {
     basePxFontSize: 16,
@@ -47,7 +46,9 @@ export const figma: PlatformInitializer = (outputFile, prefix, buildPath, option
   files: [
     {
       destination: outputFile,
-      filter: validFigmaToken,
+      filter: token => {
+        return validFigmaToken(token)
+      },
       format: `json/figma`,
       options: {
         outputReferences: true,

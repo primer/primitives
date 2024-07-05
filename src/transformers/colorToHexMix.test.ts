@@ -1,5 +1,5 @@
-import {getMockToken} from '../test-utilities'
-import {colorToHexMix} from './colorToHexMix'
+import {getMockToken} from '../test-utilities/index.js'
+import {colorToHexMix} from './colorToHexMix.js'
 
 describe('Transformer: colorToHexMix', () => {
   it('transforms hex3, hex6 `color` tokens with mix', () => {
@@ -20,7 +20,7 @@ describe('Transformer: colorToHexMix', () => {
       }),
     ]
     const expectedOutput = ['#2b333c', '#2b333c']
-    expect(input.map(item => colorToHexMix.transformer(item, {}))).toStrictEqual(expectedOutput)
+    expect(input.map(item => colorToHexMix.transform(item, {}, {}))).toStrictEqual(expectedOutput)
   })
 
   it('transforms color with mix but ignores alpha property of token', () => {
@@ -35,7 +35,7 @@ describe('Transformer: colorToHexMix', () => {
       }),
     ]
     const expectedOutput = ['#44525f']
-    expect(input.map(item => colorToHexMix.transformer(item, {}))).toStrictEqual(expectedOutput)
+    expect(input.map(item => colorToHexMix.transform(item, {}, {}))).toStrictEqual(expectedOutput)
   })
 
   it('transforms color with mix and merges alpha from hex8', () => {
@@ -56,7 +56,7 @@ describe('Transformer: colorToHexMix', () => {
       }),
     ]
     const expectedOutput = ['#51617177', '#3e4a574b']
-    expect(input.map(item => colorToHexMix.transformer(item, {}))).toStrictEqual(expectedOutput)
+    expect(input.map(item => colorToHexMix.transform(item, {}, {}))).toStrictEqual(expectedOutput)
   })
 
   it('ignore mix if undefined or weight or color is undefined', () => {
@@ -78,6 +78,6 @@ describe('Transformer: colorToHexMix', () => {
       }),
     ]
     const expectedOutput = ['#556677', '#556677', '#556677']
-    expect(input.map(item => colorToHexMix.transformer(item, {}))).toStrictEqual(expectedOutput)
+    expect(input.map(item => colorToHexMix.transform(item, {}, {}))).toStrictEqual(expectedOutput)
   })
 })

@@ -1,4 +1,4 @@
-import {getMockToken} from '../../test-utilities'
+import {getMockToken} from '../../test-utilities/index.js'
 import {jsonToFlat} from './jsonToFlat'
 
 describe('Utilities: jsonToFlat', () => {
