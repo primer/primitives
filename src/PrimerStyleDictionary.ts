@@ -1,5 +1,5 @@
 import StyleDictionary from 'style-dictionary'
-import {w3cJsonParser} from './parsers'
+import {w3cJsonParser} from './parsers/index.js'
 import {
   borderToCss,
   colorToHexAlpha,
@@ -25,7 +25,7 @@ import {
   dimensionToRemPxArray,
   floatToPixel,
   floatToPixelUnitless,
-} from './transformers'
+} from './transformers/index.js'
 import {
   javascriptCommonJs,
   javascriptEsm,
@@ -36,7 +36,7 @@ import {
   jsonPostCssFallback,
   cssAdvanced,
   jsonFigma,
-} from './formats'
+} from './formats/index.js'
 
 /**
  * Parsers
@@ -50,47 +50,47 @@ StyleDictionary.registerParser(w3cJsonParser)
  */
 StyleDictionary.registerFormat({
   name: 'css/advanced',
-  formatter: cssAdvanced,
+  format: cssAdvanced,
 })
 
 StyleDictionary.registerFormat({
   name: 'css/customMedia',
-  formatter: cssCustomMedia,
+  format: cssCustomMedia,
 })
 
 StyleDictionary.registerFormat({
   name: 'javascript/esm',
-  formatter: javascriptEsm,
+  format: javascriptEsm,
 })
 
 StyleDictionary.registerFormat({
   name: 'javascript/commonJs',
-  formatter: javascriptCommonJs,
+  format: javascriptCommonJs,
 })
 
 StyleDictionary.registerFormat({
   name: 'typescript/export-definition',
-  formatter: typescriptExportDefinition,
+  format: typescriptExportDefinition,
 })
 
 StyleDictionary.registerFormat({
   name: 'json/nested-prefixed',
-  formatter: jsonNestedPrefixed,
+  format: jsonNestedPrefixed,
 })
 
 StyleDictionary.registerFormat({
   name: 'json/one-dimensional',
-  formatter: jsonOneDimensional,
+  format: jsonOneDimensional,
 })
 
 StyleDictionary.registerFormat({
   name: 'json/postCss-fallback',
-  formatter: jsonPostCssFallback,
+  format: jsonPostCssFallback,
 })
 
 StyleDictionary.registerFormat({
   name: 'json/figma',
-  formatter: jsonFigma,
+  format: jsonFigma,
 })
 
 /**
@@ -229,4 +229,4 @@ StyleDictionary.registerTransform({
  * @formats [javascript/esm](https://github.com/primer/primitives/blob/main/config/formats/javascript-esm.ts), [javascript/commonJs](https://github.com/primer/primitives/blob/main/config/formats/javascript-commonJs.ts), [typescript/export-definition](https://github.com/primer/primitives/blob/main/config/formats/typescript-export-defition.ts)
  * @transformers [color/rgbAlpha](https://github.com/primer/primitives/blob/main/config/tranformers/color-to-rgb-alpha.ts), [color/hexAlpha](https://github.com/primer/primitives/blob/main/config/tranformers/color-to-hex-alpha.ts), [color/hex](https://github.com/primer/primitives/blob/main/config/tranformers/color-to-hex6.ts), [json/deprecated](https://github.com/primer/primitives/blob/main/config/tranformers/json-deprecated.ts), [name/pathToDotNotation](https://github.com/primer/primitives/blob/main/config/tranformers/name-path-to-dot-notation.ts)
  */
-export const PrimerStyleDictionary: StyleDictionary.Core = StyleDictionary
+export const PrimerStyleDictionary: StyleDictionary = new StyleDictionary()

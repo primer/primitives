@@ -2,6 +2,10 @@
   "name": "@primer/primitives",
   "version": "8.2.3",
   "description": "Typography, spacing, and color primitives for Primer design system",
+  "type": "module",
+  "engines": {
+    "node": ">=18.18.0 <18.19.0"
+  },
   "files": [
     "dist",
     "src/**/*",
@@ -25,17 +29,17 @@
   "scripts": {
     "build": "npm run build:v8 && npm run build:fallbacks && npm run build:figma",
     "build:next": "echo '\\033[31m 🛑 Use npm run build instead of npm run build:next\\033[0m'",
-    "build:v8": "ts-node ./scripts/buildTokens.ts",
-    "build:fallbacks": "ts-node ./scripts/buildFallbacks.ts",
-    "build:figma": "ts-node scripts/buildFigma.ts",
-    "tokenJson:check": "ts-node scripts/diffThemes.ts && ts-node scripts/diffTokenProps.ts",
-    "contrast:check": "ts-node scripts/color-contrast.ts",
+    "build:v8": "tsx --esm ./scripts/buildTokens.ts",
+    "build:fallbacks": "tsx ./scripts/buildFallbacks.ts",
+    "build:figma": "tsx scripts/buildFigma.ts",
+    "tokenJson:check": "tsx scripts/diffThemes.ts && ts-node scripts/diffTokenProps.ts",
+    "contrast:check": "tsx scripts/color-contrast.ts",
     "format": "prettier --write  '**/*.{js,jsx,ts,tsx,md,mdx,css}'",
     "format:check": "prettier --check '**/*.{js,jsx,ts,tsx,md,mdx,css}'",
     "install:storybook": "cd docs/storybook && npm ci --legacy-peer-deps --no-audit --no-fund",
-    "lint": "ESLINT_USE_FLAT_CONFIG=false eslint '**/*.{js,ts,tsx,md,mdx}' --max-warnings=0 --config .eslintrc.js && npm run lint:tokens",
-    "lint:fix": "eslint '**/*.{js,ts,tsx,md,mdx}' --fix --max-warnings=0 --config .eslintrc.js",
-    "lint:tokens": "ts-node ./scripts/validateTokenJson.ts",
+    "lint": "ESLINT_USE_FLAT_CONFIG=false eslint '**/*.{js,ts,tsx,md,mdx}' --max-warnings=0 --config .eslintrc.cjs && npm run lint:tokens",
+    "lint:fix": "eslint '**/*.{js,ts,tsx,md,mdx}' --fix --max-warnings=0 --config .eslintrc.cjs",
+    "lint:tokens": "tsx ./scripts/validateTokenJson.ts",
     "prebuild": "rm -rf dist",
     "prepack": "npm run build",
     "release": "changeset publish",
@@ -70,13 +74,8 @@
     "json5": "^2.2.1",
     "markdown-table-ts": "^1.0.3",
     "prettier": "3.3",
-<<<<<<< HEAD
-    "style-dictionary": "^3.9.2",
-=======
     "style-dictionary": "^4.0.0",
-    "ts-jest": "^29.1.5",
->>>>>>> 8a1469d0 (update dependency)
-    "ts-node": "^10.9.2",
+    "tsx": "^4.16.2",
     "typescript": "5.5",
     "vitest": "^2.0.1",
     "zod": "3.23",
