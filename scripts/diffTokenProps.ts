@@ -9,7 +9,7 @@ type DiffItem = {
   overridesDir: string
 }
 
-const isToken = (obj: Record<string, unknown>): boolean => obj.hasOwnProperty('$value')
+const isToken = (obj: Record<string, unknown>): boolean => Object.prototype.hasOwnProperty.call(obj, '$value')
 
 const diffProps = (diffArray: DiffItem[], propsToCheck = ['mix', 'alpha']) => {
   const diff = []
@@ -41,20 +41,18 @@ const diffProps = (diffArray: DiffItem[], propsToCheck = ['mix', 'alpha']) => {
       const tokens = flattenObject(JSON5.parse(file), undefined, undefined, isToken)
 
       for (const [name, value] of Object.entries(tokens)) {
-        if (!mainTheme.hasOwnProperty(name)) {
+        if (!Object.prototype.hasOwnProperty.call(mainTheme, name)) {
           throw new Error(`Token "${name}" doesn't exist in "${mainThemeName}" theme`)
         }
 
         const missingProps = Object.keys((mainTheme as Record<string, Record<string, unknown>>)[name]).filter(
-          prop => propsToCheck.includes(prop) && !value.hasOwnProperty(prop),
+          prop => propsToCheck.includes(prop) && !Object.prototype.hasOwnProperty.call(value, prop),
         )
         if (missingProps.length > 0) {
-          // eslint-disable-next-line i18n-text/no-en
           fileDiff.push(`Token "${name}" is missing props: ${missingProps.join(', ')}`)
         }
       }
       if (fileDiff.length > 0) {
-        // eslint-disable-next-line i18n-text/no-en
         diff.push(`Missing props in file "${filePath}": \n\n - ${fileDiff.join('\n - ')}`)
       }
     }

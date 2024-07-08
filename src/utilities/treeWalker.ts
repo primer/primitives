@@ -20,7 +20,7 @@ export const treeWalker = (
   }
   // is obj -> continue
   const nextObj: Record<string, unknown> = {}
-  for (const [prop, value] of Object.entries(tree) as [prop: string, value: unknown][]) {
+  for (const [prop, value] of Object.entries(tree) as Array<[prop: string, value: unknown]>) {
     nextObj[prop] = treeWalker(value, callback, isValidItem)
   }
   return nextObj

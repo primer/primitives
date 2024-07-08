@@ -7,6 +7,7 @@ import {prefixTokens} from './utilities/prefixTokens.js'
 import type {Config, DesignTokens, FormatFn, FormatFnArguments, LocalOptions} from 'style-dictionary/types'
 import {fileHeader} from 'style-dictionary/utils'
 import {getPropName} from './utilities/getPropName.js'
+import {lowerCaseFirstCharacter} from '../utilities/lowerCaseFirstCharacter.js'
 
 /**
  * unquoteTypes
@@ -32,7 +33,6 @@ const getTokenType = (tokenTypesPath: string): string => {
     const designTokenType = readFileSync(resolvePath(tokenTypesPath), {encoding: 'utf-8'})
     return designTokenType
   } catch (error) {
-    // eslint-disable-next-line no-console
     throw new Error(`Error trying to load design token type from file "${tokenTypesPath}". Error: ${error}`)
   }
 }
@@ -145,7 +145,7 @@ const getTypeDefinition = (tokens: DesignTokens, options: Config & LocalOptions)
     // path to type files without trailing slash
     const typePath = tokenTypesPath.replace(new RegExp(/\/$/, 'g'), '')
 
-    designTokenTypes.push(getTokenType(`${typePath}/${type}.d.ts`))
+    designTokenTypes.push(getTokenType(`${typePath}/${lowerCaseFirstCharacter(type)}.d.ts`))
   }
   // build output
   const output = `${designTokenTypes.join('\n')} 

@@ -64,7 +64,7 @@ if (getFlag('--silent') === null) {
     console.log('++++++++++++++++++++++++++++++')
     // eslint-disable-next-line no-console
     console.log(`\u001b[36;1m\u001b[1m${fail.fileName}\u001b[0m`)
-    // eslint-disable-next-line no-console
+
     for (const path of Object.keys(fail.errorsByPath)) {
       // eslint-disable-next-line no-console
       console.log(`\nPath: \u001b[34;1m\u001b[1m${path}\u001b[0m`)

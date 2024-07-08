@@ -1,6 +1,6 @@
 import type {Transform, TransformedToken} from 'style-dictionary/types'
 import {isBorder} from '../filters/isBorder.js'
-import type {BorderTokenValue} from '../types/BorderTokenValue.js'
+import type {BorderTokenValue} from '../types/borderTokenValue.js'
 
 /**
  * checks if all required properties exist on shadow token

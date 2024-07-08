@@ -1,4 +1,4 @@
-import type {PlatformInitializer} from '../types/PlatformInitializer.js'
+import type {PlatformInitializer} from '../types/platformInitializer.js'
 import type {PlatformConfig} from 'style-dictionary/types'
 import {isDeprecated} from '../filters/index.js'
 

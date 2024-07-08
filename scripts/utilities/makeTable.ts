@@ -22,7 +22,7 @@ export const makeMarkdownTable = (rows: RowsObject[], titles: string[]): string 
  * @description takes in rows and creates a console table
  * @param rows - RowsObject[]
  */
-export const makeConsoleTable = (rows: Record<string, string | number>[], titles: string[]): string => {
+export const makeConsoleTable = (rows: Array<Record<string, string | number>>, titles: string[]): string => {
   // config table
   const table = new Table({
     // title: `Contrast checks for: ${theme}`,

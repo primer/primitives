@@ -1,4 +1,4 @@
-import type {TokenBuildInput} from '../src/types/TokenBuildInput.js'
+import type {TokenBuildInput} from '../src/types/tokenBuildInput.js'
 
 export const themes: TokenBuildInput[] = [
   {

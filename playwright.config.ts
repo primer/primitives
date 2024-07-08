@@ -1,5 +1,4 @@
 import {defineConfig} from '@playwright/test'
-// eslint-disable-next-line import/no-nodejs-modules
 import path from 'node:path'
 import {fileURLToPath} from 'url'
 

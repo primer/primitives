@@ -169,7 +169,7 @@ describe('Format: TypeScript definitions', () => {
         },
       }),
     })
-    expect(async () => await typescriptExportDefinition(input)).rejects.toThrowError(
+    await expect(async () => await typescriptExportDefinition(input)).rejects.toThrowError(
       'Invalid token: "color token name" with type "color" can not have a value of "rgb(100,200,255)"',
     )
   })

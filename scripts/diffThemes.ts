@@ -1,4 +1,4 @@
-import {PrimerStyleDictionary} from '../src/PrimerStyleDictionary.js'
+import {PrimerStyleDictionary} from '../src/primerStyleDictionary.js'
 import {flattenTokens} from 'style-dictionary/utils'
 import {themes as themesConfigArray} from './themes.config.js'
 import type {Dictionary} from 'style-dictionary/types'
@@ -38,12 +38,12 @@ const themesArray = await Promise.all(
  * @param themes - array of themes to compare against mainThemeName in the format of [themeName, [tokenNames]]
  */
 
-export const diffThemes = (mainThemeName: string, themes: [string, string[]][]) => {
+export const diffThemes = (mainThemeName: string, themes: Array<[string, string[]]>) => {
   const [, mainTokens] = themes.find(([name]) => name === mainThemeName) || []
   if (mainTokens === undefined) {
     throw new Error(`Theme ${mainThemeName} not found`)
   }
-  const otherThemes: [string, string[]][] = themes.filter(([name]) => name !== mainThemeName)
+  const otherThemes: Array<[string, string[]]> = themes.filter(([name]) => name !== mainThemeName)
 
   const resultArray: string[] = []
 
