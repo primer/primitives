@@ -1,8 +1,10 @@
 module.exports = {
-  parser: '@typescript-eslint/parser',
-  parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
+  languageOptions: {
+    parser: '@typescript-eslint/parser',
+    parserOptions: {
+      ecmaFeatures: {
+        jsx: true,
+      },
     },
   },
   extends: [
@@ -82,8 +84,10 @@ module.exports = {
     },
     // rules which apply only to TS
     {
-      parserOptions: {
-        project: 'tsconfig.json',
+      languageOptions: {
+        parserOptions: {
+          project: 'tsconfig.json',
+        },
       },
       files: ['**/*.{ts,tsx}'],
       extends: ['plugin:@typescript-eslint/recommended', 'prettier'],
@@ -137,8 +141,10 @@ module.exports = {
     // rules which apply only to Markdown code blocks
     {
       files: ['**/*.{md,mdx}/**'],
-      parserOptions: {
-        project: false,
+      languageOptions: {
+        parserOptions: {
+          project: false,
+        },
       },
       rules: {
         camelcase: 0,
