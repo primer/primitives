@@ -91,7 +91,7 @@ export const decorators = [
               <div
                 key={theme}
                 id="story"
-                className={`story-wrap ${parameters.storyType === 'swatch' ? 'SwatchDecorator' : ""}`}
+                className={`story-wrap ${parameters.storyType === 'swatch' ? 'SwatchDecorator' : ''}`}
                 data-color-mode={theme}
                 data-light-theme={theme === 'light' ? theme : undefined}
                 data-dark-theme={theme === 'dark' ? theme : undefined}
@@ -110,9 +110,9 @@ export const decorators = [
           <div
             key={theme}
             id="story"
-            className={`story-wrap ${
-              context.globals.theme === 'all' ? 'story-wrap-grid' : ""} ${
-              parameters.storyType === 'swatch' ? 'SwatchDecorator': ""}`}
+            className={`story-wrap ${context.globals.theme === 'all' ? 'story-wrap-grid' : ''} ${
+              parameters.storyType === 'swatch' ? 'SwatchDecorator' : ''
+            }`}
             data-color-mode={theme.startsWith('dark') ? 'dark' : 'light'}
             data-light-theme={theme.startsWith('light') ? theme : undefined}
             data-dark-theme={theme.startsWith('dark') ? theme : undefined}
@@ -125,7 +125,7 @@ export const decorators = [
       ))
     ) : (
       <ThemeProvider dayScheme={context.globals.theme} nightScheme={context.globals.theme} colorMode="day">
-        <div className={`story-wrap ${parameters.storyType === 'swatch' ? 'SwatchDecorator' : ""}`}>
+        <div className={`story-wrap ${parameters.storyType === 'swatch' ? 'SwatchDecorator' : ''}`}>
           <Story {...context} />
         </div>
       </ThemeProvider>
