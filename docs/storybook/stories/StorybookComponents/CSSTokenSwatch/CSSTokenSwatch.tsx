@@ -13,9 +13,15 @@ const hexHasChanged = (hex: string, prevColor?: string) => {
   if (prevColor === undefined) {
     return ''
   }
-  const prevHex = toHex(
-    `${getComputedStyle(document.documentElement).getPropertyValue(`--${prevColor}`)}`.replace(/ /g, ''),
+  const prevHexProperty = `${getComputedStyle(document.documentElement).getPropertyValue(`--${prevColor}`)}`.replace(
+    / /g,
+    '',
   )
+  if (prevHexProperty === undefined || prevHexProperty === '') {
+    return ''
+  }
+
+  const prevHex = toHex(prevHexProperty)
 
   return prevHex !== hex
 }
@@ -31,10 +37,10 @@ export const CSSTokenSwatch = ({color, prevColor, shadow}: CSSTokenSwatchProps) 
 
     const style = getComputedStyle(ref.current)
     const rgb = style.getPropertyValue('background-color')
-    setHex(toHex(rgb))
+    setHex(rgb && rgb !== '' ? toHex(rgb) : null)
   }, [color])
 
-  if (color === undefined) {
+  if (color === undefined || color === '') {
     return null
   }
   return (
