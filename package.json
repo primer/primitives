@@ -40,7 +40,7 @@
     "prepack": "npm run build",
     "release": "changeset publish",
     "start:storybook": "npm run build && cd docs/storybook && npm run storybook",
-    "test": "jest --verbose --coverage"
+    "test": "vitest run --coverage"
   },
   "prettier": "@github/prettier-config",
   "devDependencies": {
@@ -50,10 +50,10 @@
     "@github/prettier-config": "^0.0.6",
     "@playwright/test": "^1.45.1",
     "@prettier/sync": "^0.5.2",
-    "@types/jest": "^29.5.12",
     "@types/node": "^20.14.9",
     "@typescript-eslint/eslint-plugin": "^7.15.0",
     "@typescript-eslint/parser": "^7.15.0",
+    "@vitest/coverage-v8": "^2.0.1",
     "color-blend": "^4.0.0",
     "color2k": "^2.0.3",
     "console-table-printer": "^2.12.1",
@@ -67,14 +67,13 @@
     "eslint-plugin-react": "7.34",
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-storybook": "^0.8.0",
-    "jest": "29.7",
     "json5": "^2.2.1",
     "markdown-table-ts": "^1.0.3",
     "prettier": "3.3",
     "style-dictionary": "^3.9.2",
-    "ts-jest": "^29.1.5",
     "ts-node": "^10.9.2",
     "typescript": "5.5",
+    "vitest": "^2.0.1",
     "zod": "3.23",
     "zod-validation-error": "3.3"
   }
