@@ -1,7 +1,7 @@
-import githubConfig from "@github/prettier-config"
+import githubConfig from '@github/prettier-config'
 
 const config = {
-  ...githubConfig
-};
+  ...githubConfig,
+}
 
-export default config;
+export default config
