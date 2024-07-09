@@ -53,17 +53,16 @@
     "@prettier/sync": "^0.5.2",
     "@types/jest": "^29.5.12",
     "@types/node": "^20.14.10",
-    "@typescript-eslint/eslint-plugin": "^8.0.0-alpha.41",
-    "@typescript-eslint/parser": "^8.0.0-alpha.41",
+    "@typescript-eslint/eslint-plugin": "^7.16.0",
+    "@typescript-eslint/parser": "^7.16.0",
     "color-blend": "^4.0.0",
     "color2k": "^2.0.3",
     "console-table-printer": "^2.12.1",
-    "eslint": "9.6",
+    "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
-    "eslint-import-resolver-typescript": "3.6",
+    "eslint-plugin-github": "^5.0.1",
     "eslint-plugin-jsx-a11y": "6.9",
     "eslint-plugin-mdx": "^3.1.5",
-    "eslint-plugin-primer-react": "^5.3.0",
     "eslint-plugin-react": "7.34",
     "eslint-plugin-react-hooks": "^5.1.0-rc-f38c22b244-20240704",
     "eslint-plugin-storybook": "^0.8.0",
@@ -77,5 +76,8 @@
     "typescript": "5.5",
     "zod": "3.23",
     "zod-validation-error": "3.3"
+  },
+  "dependencies": {
+    "typescript-eslint": "^7.16.0"
   }
 }

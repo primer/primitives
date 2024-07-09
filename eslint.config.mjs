@@ -6,10 +6,23 @@ import jsxA11y from 'eslint-plugin-jsx-a11y'
 import eslintPluginReactHooks from 'eslint-plugin-react-hooks'
 import eslintPluginReact from 'eslint-plugin-react'
 import eslintPluginGithub from 'eslint-plugin-github'
+import eslintPluginTypescript from 'typescript-eslint'
+// import {plugins} from 'eslint-plugin-react/configs/all'
+// "eslint-plugin-primer-react": "^5.3.0",
+// "eslint-import-resolver-typescript": "3.6",
 
 export default [
   // 'plugin:github/recommended',
   // 'plugin:github/browser',
+  // {
+  //   plugins: {
+  //     react: eslintPluginReact,
+  //     'react-hooks': fixupPluginRules(eslintPluginReactHooks),
+  //   },
+  //   rules: {
+  //     ...eslintPluginGithub.rules
+  //   },
+  // },
   jsxA11y.flatConfigs.recommended,
   {
     plugins: {
@@ -98,38 +111,44 @@ export default [
       ],
     },
   },
-  //   // rules which apply only to TS
-  //   {
-  //     languageOptions: {
-  //       parserOptions: {
-  //         project: 'tsconfig.json',
-  //       },
-  //     },
-  //     files: ['**/*.{ts,tsx}'],
-  //     extends: ['plugin:@typescript-eslint/recommended', 'prettier'],
-  //     rules: {
-  //       'no-shadow': 'off',
-  //       '@typescript-eslint/no-shadow': 'error',
-  //       '@typescript-eslint/no-explicit-any': 2,
-  //       '@typescript-eslint/no-unnecessary-condition': 2,
-  //       '@typescript-eslint/explicit-module-boundary-types': 0,
-  //       '@typescript-eslint/consistent-type-imports': 'warn',
-  //       '@typescript-eslint/no-unused-vars': [
-  //         'error',
-  //         {
-  //           argsIgnorePattern: '^_',
-  //           ignoreRestSiblings: true,
-  //         },
-  //       ],
-  //     },
-  //   },
+  {
+    plugins: {
+      eslintPluginTypescript: eslintPluginTypescript.configs.recommended,
+    },
+    files: ['**/*.{ts,tsx}'],
+  },
+  // rules which apply only to TS
+  {
+    languageOptions: {
+      parserOptions: {
+        project: 'tsconfig.json',
+      },
+    },
+    files: ['**/*.{ts,tsx}'],
+    // extends: ['plugin:@typescript-eslint/recommended', 'prettier'],
+    rules: {
+      'no-shadow': 'off',
+      '@typescript-eslint/no-shadow': 'error',
+      '@typescript-eslint/no-explicit-any': 2,
+      '@typescript-eslint/no-unnecessary-condition': 2,
+      '@typescript-eslint/explicit-module-boundary-types': 0,
+      '@typescript-eslint/consistent-type-imports': 'warn',
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        {
+          argsIgnorePattern: '^_',
+          ignoreRestSiblings: true,
+        },
+      ],
+    },
+  },
   // rules which apply only to tests files
-  // {
-  //   files: ['**/*.test.{ts,tsx,js,jsx}'],
-  //   rules: {
-  //     'i18n-text/no-en': 0,
-  //   },
-  // },
+  {
+    files: ['**/*.test.{ts,tsx,js,jsx}'],
+    rules: {
+      'i18n-text/no-en': 0,
+    },
+  },
   //   // rules which apply only to TS scripts
   //   {
   //     files: ['scripts/**/*.ts', 'src/**/*.ts'],
