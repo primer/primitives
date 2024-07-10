@@ -18,6 +18,6 @@
       "~/*": ["*"]
     }
   },
-  "include": ["src/", "scripts/", "docs/", "config/", "playwright.config.ts", "e2e", "vite.config.ts"],
+  "include": ["src/", "scripts/", "docs/", "config/", "playwright.config.ts", "e2e", "vitest.config.ts"],
   "exclude": ["./src/@types"]
 }
