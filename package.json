@@ -29,7 +29,7 @@
   "scripts": {
     "build": "npm run build:v8 && npm run build:fallbacks && npm run build:figma",
     "build:next": "echo '\\033[31m 🛑 Use npm run build instead of npm run build:next\\033[0m'",
-    "build:v8": "tsx --esm ./scripts/buildTokens.ts",
+    "build:v8": "tsx ./scripts/buildTokens.ts",
     "build:fallbacks": "tsx ./scripts/buildFallbacks.ts",
     "build:figma": "tsx scripts/buildFigma.ts",
     "tokenJson:check": "tsx scripts/diffThemes.ts && ts-node scripts/diffTokenProps.ts",
