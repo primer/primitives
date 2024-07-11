@@ -27,7 +27,7 @@ Data is served from the `dist/` folder:
 
 All available imports:
 
-```
+```css
 /* size/typography */
 @import '@primer/primitives/dist/css/base/size/size.css';
 @import '@primer/primitives/dist/css/base/typography/typography.css';
@@ -70,13 +70,13 @@ In the individual files, e.g. `light.high-contrast.json5` you can now add tokens
 You can create color tokens that inherit a color but have a different alpha value by adding the `alpha` property.
 **Note:** The original alpha value will be replaced by your value. If you add `alpha: 0.4` to a color, it doesn't matter if the color you reference has no `alpha` or `alpha: 0.7`, the new token will always have newly the defined value of `alpha: 0.4`.
 
-```js
+```json5
 {
   muted: {
     $value: '{base.color.blue.3}',
     alpha: 0.4, // the opacity value of the color === 40% opaque
     $type: 'color',
-  }
+  },
 }
 ```
 
@@ -88,16 +88,16 @@ The `mix` proeprty mixes the color it gets into the main color from the `$value`
 
 A `mix` proprty must always have a `color` and a `weight` child. `color` can be a `hex` value or a reference to a valid color. The `weight` property must receive a value between `0.0` and `1`.
 
-```js
+```json5
 {
   control: {
-  $value: '{base.color.gray.4}', // main color
-  $type: 'color',
-  mix: {
-    color: '{base.color.gray.5}', // color to mix into the main color
-    weight: 0.2, // amount of the mix color that is added === 20% of gray.5 is mix into gray.4
+    $value: '{base.color.gray.4}', // main color
+    $type: 'color',
+    mix: {
+      color: '{base.color.gray.5}', // color to mix into the main color
+      weight: 0.2, // amount of the mix color that is added === 20% of gray.5 is mix into gray.4
+    },
   },
-}
 }
 ```
 
@@ -113,7 +113,7 @@ For our Figma export we use the following meta data:
 
 Code example
 
-```js
+```json5
   bgColor: {
     $value: '{borderColor.accent.muted}',
     $type: 'color',
@@ -133,18 +133,18 @@ Token names have to be in camelCase or kebab-case and may only include letters, 
 The only acception is the `@`-hack. This is used when you want to have a default value and sub-values, e.g. `bgColor.accent` and `bgColor.accent.muted`.
 In this case you can create the follwing structure. The `@` will be removed from the name and act as the default value.
 
-```js
+```json5
 {
   bgColor: {
     accent: {
-      "@": {
+      '@': {
         // values for accent (default)
       },
-      "muted": {
+      muted: {
         // values for accent-muted
-      }
-    }
-  }
+      },
+    },
+  },
 }
 ```
 
@@ -155,4 +155,3 @@ In this case you can create the follwing structure. The `@` will be removed from
 [primer]: https://github.com/primer/primer
 [npm]: https://www.npmjs.com/
 [install-npm]: https://docs.npmjs.com/getting-started/installing-node
-[scss]: https://sass-lang.com/
