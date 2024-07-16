@@ -81,6 +81,19 @@
           }
         }
       }
+    },
+    "default": {
+      "$value": "{borderRadius.medium}",
+      "$type": "dimension",
+      "$extensions": {
+        "org.primer.figma": {
+          "collection": "functional/size",
+          "scopes": ["radius"],
+          "codeSyntax": {
+            "web": "var(--borderRadius-default) /* utility class: .rounded-2 */"
+          }
+        }
+      }
     }
   },
   "outline": {
