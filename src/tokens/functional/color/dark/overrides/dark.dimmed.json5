@@ -59,25 +59,6 @@
         $type: 'color',
       },
     },
-    transparent: {
-      bgColor: {
-        hover: {
-          $value: '{base.color.neutral.5}',
-          $type: 'color',
-          alpha: 0.7,
-        },
-        active: {
-          $value: '{base.color.neutral.6}',
-          $type: 'color',
-          alpha: 0.7,
-        },
-        selected: {
-          $value: '{base.color.neutral.5}',
-          $type: 'color',
-          alpha: 0.4,
-        },
-      },
-    },
   },
   controlTrack: {
     bgColor: {
