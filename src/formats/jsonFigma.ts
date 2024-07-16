@@ -1,5 +1,5 @@
 import StyleDictionary from 'style-dictionary'
-import {format} from 'prettier'
+import syncPrettier from '@prettier/sync'
 import type {FormatterArguments} from 'style-dictionary/types/Format'
 import {transformNamePathToFigma} from '../transformers/namePathToFigma'
 import type {ShadowTokenValue} from '../types/ShadowTokenValue'
@@ -130,5 +130,5 @@ export const jsonFigma: StyleDictionary.Formatter = ({dictionary, file: _file, p
   // add file header and convert output
   const output = JSON.stringify(tokens, null, 2)
   // return prettified
-  return format(output, {parser: 'json', printWidth: 500})
+  return syncPrettier.format(output, {parser: 'json', printWidth: 500})
 }

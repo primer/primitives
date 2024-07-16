@@ -15,7 +15,7 @@ module.exports = {
     'plugin:github/browser',
     'prettier',
   ],
-  ignorePatterns: ['node_modules', 'coverage/**/*', 'docs', 'dist/**/*', 'README.md'],
+  ignorePatterns: ['node_modules', 'coverage/**/*', 'docs', 'dist/**/*', 'CHANGELOG.md', 'src/@types/'],
   globals: {
     __DEV__: 'readonly',
   },
@@ -23,7 +23,6 @@ module.exports = {
     browser: true,
     commonjs: true,
     es6: true,
-    jest: true,
     node: true,
   },
   settings: {
@@ -131,7 +130,7 @@ module.exports = {
         'mdx/code-blocks': true,
       },
       rules: {
-        'prettier/prettier': 0,
+        'prettier/prettier': 2,
       },
     },
     // rules which apply only to Markdown code blocks
