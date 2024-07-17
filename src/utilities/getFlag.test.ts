@@ -3,7 +3,7 @@ import {vi} from 'vitest'
 
 describe('Utilities: getFlag', () => {
   vi.spyOn(process, 'argv', 'get').mockReturnValue([
-    'ts-node',
+    'tsx',
     'src/utilities/getFlag.test.ts',
     '--outFile=test.json',
     '--silent',
