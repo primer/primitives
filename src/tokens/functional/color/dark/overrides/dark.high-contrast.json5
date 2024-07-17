@@ -22,7 +22,7 @@
       $type: 'color',
     },
     neutral: {
-      $value: '{base.color.neutral.3}',
+      $value: '{base.color.neutral.9}',
       $type: 'color',
     },
     accent: {
@@ -289,12 +289,8 @@
   control: {
     fgColor: {
       placeholder: {
-        $value: '{base.color.neutral.2}',
+        $value: '{base.color.neutral.9}',
         $type: 'color',
-        mix: {
-          color: '{base.color.neutral.1}',
-          weight: 0.5,
-        },
       },
     },
     bgColor: {
