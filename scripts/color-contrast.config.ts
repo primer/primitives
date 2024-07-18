@@ -43,7 +43,7 @@ const baseRequirements: ContrastRequirementBlueprint[] = [
   ['contrast.text', 'control-fgColor-rest', 'bgColor-inset'],
   // control colors
   ['contrast.text', 'control-fgColor-rest', 'control-bgColor-rest'],
-  ['contrast.text', 'control-fgColor-placeholder', 'control-bgColor-rest'],
+  ['contrast.text', 'control-fgColor-placeholder', 'bgColor-default'],
   ['contrast.text', 'control-fgColor-rest', 'control-bgColor-active'],
   ['contrast.text', 'control-fgColor-rest', 'control-bgColor-hover'],
   ['contrast.text', 'control-fgColor-rest', 'control-bgColor-selected'],
