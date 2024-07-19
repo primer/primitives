@@ -1037,7 +1037,7 @@
     invisible: {
       fgColor: {
         rest: {
-          $value: '{fgColor.accent}',
+          $value: '{control.fgColor.rest}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -1049,7 +1049,7 @@
           },
         },
         hover: {
-          $value: '{fgColor.accent}',
+          $value: '{control.fgColor.rest}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {

@@ -432,12 +432,6 @@
       },
     },
     invisible: {
-      fgColor: {
-        hover: {
-          $value: '{base.color.blue.8}',
-          $type: 'color',
-        },
-      },
       iconColor: {
         rest: {
           $value: '{base.color.neutral.10}',
@@ -581,20 +575,6 @@
           $type: 'color',
           alpha: 0.4,
         },
-      },
-    },
-  },
-  underlineNav: {
-    borderColor: {
-      hover: {
-        $value: '{base.color.neutral.3}',
-        $type: 'color',
-      },
-    },
-    iconColor: {
-      rest: {
-        $value: '{base.color.neutral.1}',
-        $type: 'color',
       },
     },
   },
