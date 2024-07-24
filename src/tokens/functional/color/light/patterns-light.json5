@@ -3043,4 +3043,30 @@
       },
     },
   },
+  tooltip: {
+    bgColor: {
+      $value: '{bgColor.emphasis}',
+      $type: 'color',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'mode',
+          mode: 'light',
+          group: 'component',
+          scopes: ['bgColor'],
+        },
+      },
+    },
+    fgColor: {
+      $value: '{fgColor.onEmphasis}',
+      $type: 'color',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'mode',
+          mode: 'light',
+          group: 'component',
+          scopes: ['fgColor'],
+        },
+      },
+    },
+  },
 }
