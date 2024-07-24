@@ -639,7 +639,7 @@
     },
     borderColor: {
       rest: {
-        $value: '{base.color.transparent}',
+        $value: '{borderColor.default}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {

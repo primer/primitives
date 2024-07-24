@@ -21,6 +21,8 @@ const bgColors = [
   'base-color-neutral-7',
   'base-color-neutral-8',
   'base-color-neutral-9',
+  'base-color-neutral-10',
+  'base-color-neutral-11',
   'base-color-blue-0',
   'base-color-blue-1',
   'base-color-blue-2',
