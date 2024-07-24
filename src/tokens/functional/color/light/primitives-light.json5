@@ -49,6 +49,18 @@
         },
       },
     },
+    onInverse: {
+      $value: '{base.color.white}',
+      $type: 'color',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'mode',
+          mode: 'light',
+          group: 'semantic',
+          scopes: ['fgColor'],
+        },
+      },
+    },
     white: {
       $value: '{base.color.white}',
       $type: 'color',
