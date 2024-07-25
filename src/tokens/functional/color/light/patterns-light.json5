@@ -502,7 +502,7 @@
       },
       borderColor: {
         rest: {
-          $value: '{bgColor.accent.emphasis}',
+          $value: '{control.checked.bgColor.rest}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -514,7 +514,7 @@
           },
         },
         hover: {
-          $value: '{bgColor.accent.emphasis}',
+          $value: '{control.checked.bgColor.hover}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -523,14 +523,10 @@
               group: 'component',
               scopes: ['borderColor'],
             },
-          },
-          mix: {
-            color: '{base.color.blue.7}',
-            weight: 0.2,
           },
         },
         active: {
-          $value: '{bgColor.accent.emphasis}',
+          $value: '{control.checked.bgColor.active}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -540,13 +536,9 @@
               scopes: ['borderColor'],
             },
           },
-          mix: {
-            color: '{base.color.blue.7}',
-            weight: 0.4,
-          },
         },
         disabled: {
-          $value: '{fgColor.disabled}',
+          $value: '{control.checked.bgColor.disabled}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {

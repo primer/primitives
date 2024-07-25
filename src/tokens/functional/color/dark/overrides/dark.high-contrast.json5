@@ -366,11 +366,33 @@
         },
       },
     },
+    checked: {
+      borderColor: {
+        rest: {
+          $value: '{base.color.blue.7}',
+          $type: 'color',
+        },
+        hover: {
+          $value: '{base.color.blue.7}',
+          $type: 'color',
+        },
+        active: {
+          $value: '{base.color.blue.7}',
+          $type: 'color',
+        },
+      },
+    },
   },
   controlTrack: {
     fgColor: {
       rest: {
         $value: '{fgColor.default}',
+        $type: 'color',
+      },
+    },
+    borderColor: {
+      rest: {
+        $value: '{borderColor.emphasis}',
         $type: 'color',
       },
     },
