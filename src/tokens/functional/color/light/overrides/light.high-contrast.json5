@@ -326,6 +326,12 @@
         $type: 'color',
       },
     },
+    borderColor: {
+      rest: {
+        $value: '{borderColor.default}',
+        $type: 'color',
+      },
+    },
   },
   button: {
     default: {
