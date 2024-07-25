@@ -9,10 +9,6 @@
       $value: '{base.color.white}',
       $type: 'color',
     },
-    // onEmphasis: {
-    //   $value: '{base.color.black}',
-    //   $type: 'color',
-    // },
     muted: {
       $value: '{base.color.neutral.9}',
       $type: 'color',
@@ -59,20 +55,11 @@
       $value: '{base.color.neutral.1}',
       $type: 'color',
     },
-    // emphasis: {
-    //   $value: '{base.color.white}',
-    //   $type: 'color',
-    // },
     disabled: {
       $value: '{base.color.neutral.3}',
       $type: 'color',
     },
     neutral: {
-      // muted: {
-      //   $value: '{base.color.neutral.5}',
-      //   $type: 'color',
-      //   alpha: 0.1,
-      // },
       emphasis: {
         $value: '{base.color.neutral.6}',
         $type: 'color',
@@ -198,17 +185,6 @@
       $type: 'color',
       alpha: 1,
     },
-    // neutral: {
-    //   muted: {
-    //     $value: '{base.color.neutral.4}',
-    //     $type: 'color',
-    //     alpha: 1,
-    //   },
-    //   emphasis: {
-    //     $value: '{base.color.neutral.4}',
-    //     $type: 'color',
-    //   },
-    // },
     accent: {
       muted: {
         $value: '{base.color.blue.4}',
@@ -344,12 +320,6 @@
       },
     },
     danger: {
-      fgColor: {
-        hover: {
-          $value: '{fgColor.onEmphasis}',
-          $type: 'color',
-        },
-      },
       bgColor: {
         hover: {
           $value: '{bgColor.danger.emphasis}',
@@ -397,23 +367,6 @@
   },
   button: {
     primary: {
-      fgColor: {
-        rest: {
-          $value: '{fgColor.onEmphasis}',
-          $type: 'color',
-        },
-        disabled: {
-          $value: '{fgColor.onEmphasis}',
-          $type: 'color',
-          alpha: 0.5,
-        },
-      },
-      iconColor: {
-        rest: {
-          $value: '{fgColor.onEmphasis}',
-          $type: 'color',
-        },
-      },
       borderColor: {
         rest: {
           $value: '{base.color.green.2}',
@@ -547,7 +500,7 @@
       },
       bgColor: {
         word: {
-          $value: '{base.color.green.4}',
+          $value: '{bgColor.success.emphasis}',
           $type: 'color',
           alpha: 1,
         },
@@ -562,7 +515,7 @@
       },
       bgColor: {
         word: {
-          $value: '{base.color.red.5}',
+          $value: '{bgColor.danger.emphasis}',
           $type: 'color',
           alpha: 1,
         },
