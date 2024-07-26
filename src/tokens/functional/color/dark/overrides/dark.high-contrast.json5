@@ -336,6 +336,22 @@
         },
       },
     },
+    checked: {
+      borderColor: {
+        rest: {
+          $value: '{base.color.blue.2}',
+          $type: 'color',
+        },
+        hover: {
+          $value: '{base.color.blue.2}',
+          $type: 'color',
+        },
+        active: {
+          $value: '{base.color.blue.2}',
+          $type: 'color',
+        },
+      },
+    },
   },
   controlTrack: {
     fgColor: {
