@@ -1,5 +1,23 @@
 # @primer/primitives
 
+## 8.2.4
+
+### Patch Changes
+
+- [#993](https://github.com/primer/primitives/pull/993) [`adf195c`](https://github.com/primer/primitives/commit/adf195c44799a6ece39a744b00ad8d4b9245d3eb) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Add neutral to contrast checks and fix contrasts
+
+- [#994](https://github.com/primer/primitives/pull/994) [`4944964`](https://github.com/primer/primitives/commit/49449640973dd907566943763e3c2a0ffa033bee) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Simplify contrast checker script and bugfix for bgColor.upsell.muted in dark high contrast mode
+
+- [#991](https://github.com/primer/primitives/pull/991) [`421741e`](https://github.com/primer/primitives/commit/421741e19834a354e9a6875a41aadcb7d06c0047) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Update high contrast display colors to meet contrast requirements
+
+- [#977](https://github.com/primer/primitives/pull/977) [`86a263b`](https://github.com/primer/primitives/commit/86a263b1004b5ecf75af8bf8f2af7bf17a178ec5) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - rm @ where it does not effect output
+
+- [#1018](https://github.com/primer/primitives/pull/1018) [`abe900a`](https://github.com/primer/primitives/commit/abe900a8fd5d60038c04c7daabc4b36a1709c5f7) Thanks [@langermank](https://github.com/langermank)! - - Minor changes to prepare for adding more borders to high contrast themes
+
+  - Adds tooltip pattern to allow for an inverse style in dark high contrast
+
+- [#1012](https://github.com/primer/primitives/pull/1012) [`2ac3905`](https://github.com/primer/primitives/commit/2ac39054630c2e043fab07b0c7ef227b5dd67124) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - add borderRadius.default token
+
 ## 8.2.3
 
 ### Patch Changes
