@@ -362,6 +362,12 @@
         $type: 'color',
       },
     },
+    borderColor: {
+      rest: {
+        $value: '{borderColor.emphasis}',
+        $type: 'color',
+      },
+    },
   },
   button: {
     primary: {
@@ -900,6 +906,16 @@
           $type: 'color',
         },
       },
+    },
+  },
+  tooltip: {
+    bgColor: {
+      $value: '{bgColor.inverse}',
+      $type: 'color',
+    },
+    fgColor: {
+      $value: '{fgColor.onInverse}',
+      $type: 'color',
     },
   },
 }

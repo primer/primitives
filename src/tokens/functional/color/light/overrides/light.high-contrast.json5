@@ -326,6 +326,12 @@
         $type: 'color',
       },
     },
+    borderColor: {
+      rest: {
+        $value: '{borderColor.emphasis}',
+        $type: 'color',
+      },
+    },
   },
   button: {
     default: {
