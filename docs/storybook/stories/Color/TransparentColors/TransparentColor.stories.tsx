@@ -16,6 +16,7 @@ export default {
     options: {
       showPanel: false,
     },
+    theme: 'dark',
   },
 }
 
@@ -144,9 +145,10 @@ export const Dark = () => {
     </Table.Container>
   )
 }
-Dark.args = {
-  theme: 'dark',
-}
+// Dark.parameters = {
+//   theme: 'dark',
+// }
+// console.log('Dark.parameters', Dark.parameters)
 
 export const LightHighContrast = () => {
   const data = Object.entries(lightHCColorTokens).filter(([name, token]) => token.alpha).map(([name, token]) => {
