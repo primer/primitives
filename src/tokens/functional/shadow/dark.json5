@@ -72,31 +72,6 @@
         },
       },
     },
-    outline: {
-      shadow: {
-        selected: {
-          $value: [
-            {
-              color: '{base.color.transparent}',
-              alpha: 0,
-              offsetX: '0px',
-              offsetY: '0px',
-              blur: '0px',
-              spread: '0px',
-              inset: false,
-            },
-          ],
-          $type: 'shadow',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              mode: 'light',
-              group: 'component shadow',
-            },
-          },
-        },
-      },
-    },
     danger: {
       shadow: {
         selected: {
