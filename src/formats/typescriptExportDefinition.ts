@@ -1,5 +1,5 @@
 import StyleDictionary from 'style-dictionary'
-import {format} from 'prettier'
+import syncPrettier from '@prettier/sync'
 import fs = require('fs')
 import path = require('path')
 import {treeWalker} from '../utilities/treeWalker'
@@ -166,5 +166,5 @@ export const typescriptExportDefinition: StyleDictionary.Formatter = ({
   // add file header and convert output
   const output = `${fileHeader({file})}\n${getTypeDefinition(tokens, moduleName, tokenTypesPath)}\n`
   // return prettified
-  return format(output, {parser: 'typescript', printWidth: 500})
+  return syncPrettier.format(output, {parser: 'typescript', printWidth: 500})
 }

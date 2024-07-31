@@ -1,4 +1,4 @@
-import {format} from 'prettier'
+import syncPrettier from '@prettier/sync'
 import {jsonToNestedValue} from './utilities/jsonToNestedValue'
 import {prefixTokens} from './utilities/prefixTokens'
 import StyleDictionary from 'style-dictionary'
@@ -17,5 +17,5 @@ export const javascriptCommonJs: StyleDictionary.Formatter = ({dictionary, file,
   // add file header and convert output
   const output = `${fileHeader({file})}exports.default = ${JSON.stringify(jsonToNestedValue(tokens), null, 2)}\n`
   // return prettified
-  return format(output, {parser: 'typescript', printWidth: 500})
+  return syncPrettier.format(output, {parser: 'typescript', printWidth: 500})
 }

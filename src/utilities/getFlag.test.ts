@@ -1,8 +1,9 @@
 import {getFlag} from './getFlag'
+import {vi} from 'vitest'
 
 describe('Utilities: getFlag', () => {
-  jest.replaceProperty(process, 'argv', [
-    'ts-node',
+  vi.spyOn(process, 'argv', 'get').mockReturnValue([
+    'tsx',
     'src/utilities/getFlag.test.ts',
     '--outFile=test.json',
     '--silent',

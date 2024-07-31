@@ -1,6 +1,6 @@
 import {typescriptExportDefinition} from './typescriptExportDefinition'
 import {getMockFormatterArguments, getMockDictionary, getMockToken} from '../test-utilities'
-import {format} from 'prettier'
+import syncPrettier from '@prettier/sync'
 
 describe('Format: TypeScript definitions', () => {
   const dictionary = getMockDictionary({
@@ -54,7 +54,7 @@ describe('Format: TypeScript definitions', () => {
         },
       }),
     })
-    const expectedOutput = format(
+    const expectedOutput = syncPrettier.format(
       `/**
         * @description size in px
         */
@@ -94,7 +94,7 @@ describe('Format: TypeScript definitions', () => {
         prefix: 'test',
       },
     })
-    const expectedOutput = format(
+    const expectedOutput = syncPrettier.format(
       `/**
        * @description hex string (6 or 8-digit)
        */
@@ -127,7 +127,7 @@ describe('Format: TypeScript definitions', () => {
 
   it('Formats tokens without prefix', () => {
     const input = getMockFormatterArguments({dictionary})
-    const expectedOutput = format(
+    const expectedOutput = syncPrettier.format(
       `/**
       * @description hex string (6 or 8-digit)
       */

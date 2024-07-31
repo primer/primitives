@@ -14,12 +14,40 @@
       $value: '{base.color.neutral.5}',
       $type: 'color',
     },
+    neutral: {
+      $value: '{base.color.neutral.7}',
+      $type: 'color',
+    },
+    success: {
+      $value: '{base.color.green.6}',
+      $type: 'color',
+    },
     danger: {
       $value: '{base.color.red.6}',
       $type: 'color',
     },
+    attention: {
+      $value: '{base.color.yellow.6}',
+      $type: 'color',
+    },
+    severe: {
+      $value: '{base.color.orange.6}',
+      $type: 'color',
+    },
+    done: {
+      $value: '{base.color.purple.6}',
+      $type: 'color',
+    },
     accent: {
       $value: '{base.color.blue.6}',
+      $type: 'color',
+    },
+    accent: {
+      $value: '{base.color.blue.6}',
+      $type: 'color',
+    },
+    sponsors: {
+      $value: '{base.color.pink.6}',
       $type: 'color',
     },
   },
@@ -35,6 +63,11 @@
     neutral: {
       muted: {
         $value: '{base.color.neutral.1}',
+        $type: 'color',
+        alpha: 1,
+      },
+      emphasis: {
+        $value: '{base.color.neutral.6}',
         $type: 'color',
         alpha: 1,
       },
@@ -95,6 +128,13 @@
       emphasis: {
         $value: '{base.color.green.5}',
         $type: 'color',
+      },
+    },
+    open: {
+      muted: {
+        $value: '{borderColor.success.muted}',
+        $type: 'color',
+        alpha: 1,
       },
     },
     attention: {
@@ -158,6 +198,16 @@
     },
   },
   control: {
+    fgColor: {
+      placeholder: {
+        $value: '{base.color.neutral.6}',
+        $type: 'color',
+        mix: {
+          color: '{base.color.neutral.7}',
+          weight: 0.2,
+        },
+      },
+    },
     bgColor: {
       rest: {
         $value: '{base.color.neutral.1}',
@@ -273,6 +323,12 @@
     fgColor: {
       rest: {
         $value: '{fgColor.default}',
+        $type: 'color',
+      },
+    },
+    borderColor: {
+      rest: {
+        $value: '{borderColor.emphasis}',
         $type: 'color',
       },
     },
@@ -436,6 +492,350 @@
       $value: '{borderColor.muted}',
       $type: 'color',
       alpha: null,
+    },
+  },
+  display: {
+    blue: {
+      bgColor: {
+        emphasis: {
+          $value: '{base.display.color.blue.7}',
+          $type: 'color',
+        },
+      },
+      fgColor: {
+        $value: '{base.display.color.blue.8}',
+        $type: 'color',
+      },
+      borderColor: {
+        emphasis: {
+          $value: '{base.display.color.blue.6}',
+          $type: 'color',
+        },
+      },
+    },
+    indigo: {
+      bgColor: {
+        emphasis: {
+          $value: '{base.display.color.indigo.7}',
+          $type: 'color',
+        },
+      },
+      fgColor: {
+        $value: '{base.display.color.indigo.8}',
+        $type: 'color',
+      },
+      borderColor: {
+        emphasis: {
+          $value: '{base.display.color.indigo.6}',
+          $type: 'color',
+        },
+      },
+    },
+    gray: {
+      bgColor: {
+        emphasis: {
+          $value: '{base.display.color.gray.7}',
+          $type: 'color',
+        },
+      },
+      fgColor: {
+        $value: '{base.display.color.gray.8}',
+        $type: 'color',
+      },
+      borderColor: {
+        emphasis: {
+          $value: '{base.display.color.gray.6}',
+          $type: 'color',
+        },
+      },
+    },
+    cyan: {
+      bgColor: {
+        emphasis: {
+          $value: '{base.display.color.cyan.7}',
+          $type: 'color',
+        },
+      },
+      fgColor: {
+        $value: '{base.display.color.cyan.8}',
+        $type: 'color',
+      },
+      borderColor: {
+        emphasis: {
+          $value: '{base.display.color.cyan.6}',
+          $type: 'color',
+        },
+      },
+    },
+    teal: {
+      bgColor: {
+        emphasis: {
+          $value: '{base.display.color.teal.7}',
+          $type: 'color',
+        },
+      },
+      fgColor: {
+        $value: '{base.display.color.teal.8}',
+        $type: 'color',
+      },
+      borderColor: {
+        emphasis: {
+          $value: '{base.display.color.teal.6}',
+          $type: 'color',
+        },
+      },
+    },
+    pine: {
+      bgColor: {
+        emphasis: {
+          $value: '{base.display.color.pine.7}',
+          $type: 'color',
+        },
+      },
+      fgColor: {
+        $value: '{base.display.color.pine.8}',
+        $type: 'color',
+      },
+      borderColor: {
+        emphasis: {
+          $value: '{base.display.color.pine.6}',
+          $type: 'color',
+        },
+      },
+    },
+    green: {
+      bgColor: {
+        emphasis: {
+          $value: '{base.display.color.green.7}',
+          $type: 'color',
+        },
+      },
+      fgColor: {
+        $value: '{base.display.color.green.8}',
+        $type: 'color',
+      },
+      borderColor: {
+        emphasis: {
+          $value: '{base.display.color.green.6}',
+          $type: 'color',
+        },
+      },
+    },
+    lime: {
+      bgColor: {
+        emphasis: {
+          $value: '{base.display.color.lime.7}',
+          $type: 'color',
+        },
+      },
+      fgColor: {
+        $value: '{base.display.color.lime.8}',
+        $type: 'color',
+      },
+      borderColor: {
+        emphasis: {
+          $value: '{base.display.color.lime.6}',
+          $type: 'color',
+        },
+      },
+    },
+    olive: {
+      bgColor: {
+        emphasis: {
+          $value: '{base.display.color.olive.7}',
+          $type: 'color',
+        },
+      },
+      fgColor: {
+        $value: '{base.display.color.olive.8}',
+        $type: 'color',
+      },
+      borderColor: {
+        emphasis: {
+          $value: '{base.display.color.olive.6}',
+          $type: 'color',
+        },
+      },
+    },
+    lemon: {
+      bgColor: {
+        emphasis: {
+          $value: '{base.display.color.lemon.7}',
+          $type: 'color',
+        },
+      },
+      fgColor: {
+        $value: '{base.display.color.lemon.8}',
+        $type: 'color',
+      },
+      borderColor: {
+        emphasis: {
+          $value: '{base.display.color.lemon.6}',
+          $type: 'color',
+        },
+      },
+    },
+    yellow: {
+      bgColor: {
+        emphasis: {
+          $value: '{base.display.color.yellow.7}',
+          $type: 'color',
+        },
+      },
+      fgColor: {
+        $value: '{base.display.color.yellow.8}',
+        $type: 'color',
+      },
+      borderColor: {
+        emphasis: {
+          $value: '{base.display.color.yellow.6}',
+          $type: 'color',
+        },
+      },
+    },
+    orange: {
+      bgColor: {
+        emphasis: {
+          $value: '{base.display.color.orange.7}',
+          $type: 'color',
+        },
+      },
+      fgColor: {
+        $value: '{base.display.color.orange.8}',
+        $type: 'color',
+      },
+      borderColor: {
+        emphasis: {
+          $value: '{base.display.color.orange.6}',
+          $type: 'color',
+        },
+      },
+    },
+    red: {
+      bgColor: {
+        emphasis: {
+          $value: '{base.display.color.red.7}',
+          $type: 'color',
+        },
+      },
+      fgColor: {
+        $value: '{base.display.color.red.8}',
+        $type: 'color',
+      },
+      borderColor: {
+        emphasis: {
+          $value: '{base.display.color.red.6}',
+          $type: 'color',
+        },
+      },
+    },
+    coral: {
+      bgColor: {
+        emphasis: {
+          $value: '{base.display.color.coral.7}',
+          $type: 'color',
+        },
+      },
+      fgColor: {
+        $value: '{base.display.color.coral.8}',
+        $type: 'color',
+      },
+      borderColor: {
+        emphasis: {
+          $value: '{base.display.color.coral.6}',
+          $type: 'color',
+        },
+      },
+    },
+    pink: {
+      bgColor: {
+        emphasis: {
+          $value: '{base.display.color.pink.7}',
+          $type: 'color',
+        },
+      },
+      fgColor: {
+        $value: '{base.display.color.pink.8}',
+        $type: 'color',
+      },
+      borderColor: {
+        emphasis: {
+          $value: '{base.display.color.pink.6}',
+          $type: 'color',
+        },
+      },
+    },
+    plum: {
+      bgColor: {
+        emphasis: {
+          $value: '{base.display.color.plum.7}',
+          $type: 'color',
+        },
+      },
+      fgColor: {
+        $value: '{base.display.color.plum.8}',
+        $type: 'color',
+      },
+      borderColor: {
+        emphasis: {
+          $value: '{base.display.color.plum.6}',
+          $type: 'color',
+        },
+      },
+    },
+    purple: {
+      bgColor: {
+        emphasis: {
+          $value: '{base.display.color.purple.7}',
+          $type: 'color',
+        },
+      },
+      fgColor: {
+        $value: '{base.display.color.purple.8}',
+        $type: 'color',
+      },
+      borderColor: {
+        emphasis: {
+          $value: '{base.display.color.purple.6}',
+          $type: 'color',
+        },
+      },
+    },
+    brown: {
+      bgColor: {
+        emphasis: {
+          $value: '{base.display.color.brown.7}',
+          $type: 'color',
+        },
+      },
+      fgColor: {
+        $value: '{base.display.color.brown.8}',
+        $type: 'color',
+      },
+      borderColor: {
+        emphasis: {
+          $value: '{base.display.color.brown.6}',
+          $type: 'color',
+        },
+      },
+    },
+    auburn: {
+      bgColor: {
+        emphasis: {
+          $value: '{base.display.color.auburn.7}',
+          $type: 'color',
+        },
+      },
+      fgColor: {
+        $value: '{base.display.color.auburn.8}',
+        $type: 'color',
+      },
+      borderColor: {
+        emphasis: {
+          $value: '{base.display.color.auburn.6}',
+          $type: 'color',
+        },
+      },
     },
   },
 }

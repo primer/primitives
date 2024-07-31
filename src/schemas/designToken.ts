@@ -16,7 +16,7 @@ import {durationToken} from './durationToken'
 // @ts-ignore: TODO: fix this
 export const designToken = z.record(
   tokenName,
-  z.lazy(() => {
+  z.lazy((): z.ZodTypeAny => {
     return z.union([
       z.discriminatedUnion('$type', [
         colorToken,

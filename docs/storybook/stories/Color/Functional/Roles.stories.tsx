@@ -117,6 +117,18 @@ export const Done = () => {
   )
 }
 
+export const Upsell = () => {
+  return (
+    <>
+      <ColorPreview color={'fgColor-upsell'} textColor canvasColor="bgColor-default" />
+      <ColorPreview color={'bgColor-upsell-muted'} bgColor canvasColor="bgColor-default" />
+      <ColorPreview color={'bgColor-upsell-emphasis'} bgColor canvasColor="bgColor-default" />
+      <ColorPreview color={'borderColor-upsell-muted'} borderColor canvasColor="bgColor-default" />
+      <ColorPreview color={'borderColor-upsell-emphasis'} borderColor canvasColor="bgColor-default" />
+    </>
+  )
+}
+
 export const Sponsors = () => {
   return (
     <>

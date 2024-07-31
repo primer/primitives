@@ -53,6 +53,18 @@
         },
       },
     },
+    onInverse: {
+      $value: '{base.color.black}',
+      $type: 'color',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'mode',
+          mode: 'dark',
+          group: 'semantic',
+          scopes: ['fgColor'],
+        },
+      },
+    },
     white: {
       $value: '{base.color.white}',
       $type: 'color',
@@ -105,7 +117,7 @@
       },
     },
     neutral: {
-      $value: '{base.color.neutral.4}',
+      $value: '{base.color.neutral.2}',
       $type: 'color',
       $extensions: {
         'org.primer.figma': {
@@ -146,6 +158,21 @@
           scopes: ['fgColor'],
           codeSyntax: {
             web: 'var(--fgColor-success) /* utility class: .color-fg-success */',
+          },
+        },
+      },
+    },
+    open: {
+      $value: '{fgColor.success}',
+      $type: 'color',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'mode',
+          mode: 'dark',
+          group: 'semantic',
+          scopes: ['fgColor'],
+          codeSyntax: {
+            web: 'var(--fgColor-open) /* utility class: .color-fg-open */',
           },
         },
       },
@@ -195,23 +222,8 @@
         },
       },
     },
-    open: {
-      $value: '{fgColor.success}',
-      $type: 'color',
-      $extensions: {
-        'org.primer.figma': {
-          collection: 'mode',
-          mode: 'dark',
-          group: 'semantic',
-          scopes: ['fgColor'],
-          codeSyntax: {
-            web: 'var(--fgColor-open) /* utility class: .color-fg-open */',
-          },
-        },
-      },
-    },
     closed: {
-      $value: '{base.color.red.4}',
+      $value: '{fgColor.danger}',
       $type: 'color',
       $extensions: {
         'org.primer.figma': {
@@ -241,7 +253,7 @@
       },
     },
     upsell: {
-      $value: '{base.color.purple.4}',
+      $value: '{fgColor.done}',
       $type: 'color',
       $extensions: {
         'org.primer.figma': {
@@ -489,6 +501,39 @@
         },
       },
     },
+    open: {
+      muted: {
+        $value: '{bgColor.success.muted}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'dark',
+            group: 'semantic',
+            scopes: ['bgColor'],
+            codeSyntax: {
+              web: 'var(--bgColor-success-muted) /* utility class: .color-bg-success */',
+            },
+          },
+        },
+        alpha: 0.15,
+      },
+      emphasis: {
+        $value: '{bgColor.success.emphasis}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'dark',
+            group: 'semantic',
+            scopes: ['bgColor'],
+            codeSyntax: {
+              web: 'var(--bgColor-success-emphasis) /* utility class: .color-bg-success-emphasis */',
+            },
+          },
+        },
+      },
+    },
     attention: {
       muted: {
         $value: '{base.color.yellow.4}',
@@ -588,42 +633,9 @@
         },
       },
     },
-    open: {
-      muted: {
-        $value: '{bgColor.success.muted}',
-        $type: 'color',
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'mode',
-            mode: 'dark',
-            group: 'semantic',
-            scopes: ['bgColor'],
-            codeSyntax: {
-              web: 'var(--bgColor-success-muted) /* utility class: .color-bg-success */',
-            },
-          },
-        },
-        alpha: 0.1,
-      },
-      emphasis: {
-        $value: '{bgColor.success.emphasis}',
-        $type: 'color',
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'mode',
-            mode: 'dark',
-            group: 'semantic',
-            scopes: ['bgColor'],
-            codeSyntax: {
-              web: 'var(--bgColor-success-emphasis) /* utility class: .color-bg-success-emphasis */',
-            },
-          },
-        },
-      },
-    },
     closed: {
       muted: {
-        $value: '{base.color.red.4}',
+        $value: '{bgColor.danger.muted}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -636,10 +648,10 @@
             },
           },
         },
-        alpha: 0.15,
+        alpha: 0.1,
       },
       emphasis: {
-        $value: '{base.color.red.5}',
+        $value: '{bgColor.danger.emphasis}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -689,7 +701,7 @@
     },
     upsell: {
       muted: {
-        $value: '{base.color.purple.4}',
+        $value: '{bgColor.done.muted}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -705,7 +717,7 @@
         alpha: 0.15,
       },
       emphasis: {
-        $value: '{base.color.purple.5}',
+        $value: '{bgColor.done.emphasis}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -928,6 +940,39 @@
         },
       },
     },
+    open: {
+      muted: {
+        $value: '{borderColor.success.muted}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'dark',
+            group: 'semantic',
+            scopes: ['borderColor'],
+            codeSyntax: {
+              web: 'var(--borderColor-open-muted) /* utility class: .color-border-open */',
+            },
+          },
+        },
+        alpha: 0.4,
+      },
+      emphasis: {
+        $value: '{borderColor.success.emphasis}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'dark',
+            group: 'semantic',
+            scopes: ['borderColor'],
+            codeSyntax: {
+              web: 'var(--borderColor-open-emphasis) /* utility class: .color-border-open-emphasis */',
+            },
+          },
+        },
+      },
+    },
     attention: {
       muted: {
         $value: '{base.color.yellow.4}',
@@ -1027,41 +1072,9 @@
         },
       },
     },
-    open: {
-      muted: {
-        $value: '{borderColor.success.muted}',
-        $type: 'color',
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'mode',
-            mode: 'dark',
-            group: 'semantic',
-            scopes: ['borderColor'],
-            codeSyntax: {
-              web: 'var(--borderColor-open-muted) /* utility class: .color-border-open */',
-            },
-          },
-        },
-      },
-      emphasis: {
-        $value: '{borderColor.success.emphasis}',
-        $type: 'color',
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'mode',
-            mode: 'dark',
-            group: 'semantic',
-            scopes: ['borderColor'],
-            codeSyntax: {
-              web: 'var(--borderColor-open-emphasis) /* utility class: .color-border-open-emphasis */',
-            },
-          },
-        },
-      },
-    },
     closed: {
       muted: {
-        $value: '{base.color.red.4}',
+        $value: '{borderColor.danger.muted}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -1077,7 +1090,7 @@
         alpha: 0.4,
       },
       emphasis: {
-        $value: '{base.color.red.5}',
+        $value: '{borderColor.danger.emphasis}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -1127,7 +1140,7 @@
     },
     upsell: {
       muted: {
-        $value: '{base.color.purple.4}',
+        $value: '{borderColor.done.muted}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -1143,7 +1156,7 @@
         alpha: 0.4,
       },
       emphasis: {
-        $value: '{base.color.purple.5}',
+        $value: '{borderColor.done.emphasis}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
