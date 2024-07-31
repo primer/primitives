@@ -61,7 +61,7 @@ export const BorderSize = () => {
             field: 'name',
             rowHeader: true,
             renderCell: row => {
-              return <InlineCode value={row.name} copyClipboard />
+              return <InlineCode value={row.name} copyClipboard cssVar />
             },
           },
           {
@@ -117,7 +117,7 @@ export const BorderRadius = () => {
             field: 'name',
             rowHeader: true,
             renderCell: row => {
-              return <InlineCode value={row.name} copyClipboard />
+              return <InlineCode value={row.name} copyClipboard cssVar />
             },
           },
           {
@@ -178,7 +178,7 @@ export const Outline = () => {
             field: 'name',
             rowHeader: true,
             renderCell: row => {
-              return <InlineCode value={row.name} copyClipboard />
+              return <InlineCode value={row.name} copyClipboard cssVar />
             },
           },
           {

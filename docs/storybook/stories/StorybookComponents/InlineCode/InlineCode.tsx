@@ -5,9 +5,10 @@ import './InlineCode.css'
 export type InlineCodeProps = {
   value?: string
   copyClipboard?: boolean
+  cssVar?: boolean
 }
 
-export const InlineCode = ({value, copyClipboard}: InlineCodeProps) => {
+export const InlineCode = ({value, copyClipboard, cssVar}: InlineCodeProps) => {
   const [copied, setCopied] = React.useState(false)
 
   React.useEffect(() => {
@@ -20,7 +21,7 @@ export const InlineCode = ({value, copyClipboard}: InlineCodeProps) => {
 
   return (
     <span className="InlineCode">
-      <code>--{value}</code> {copyClipboard && <ClipboardCopy value={`--${value}`} />}
+      <code>{cssVar ? `--${value}` : value}</code> {copyClipboard && <ClipboardCopy value={cssVar ? `--${value}` : value} />}
     </span>
   )
 }

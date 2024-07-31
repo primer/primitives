@@ -52,7 +52,7 @@ export const Avatar = () => {
             field: 'name',
             rowHeader: true,
             renderCell: row => {
-              return <InlineCode value={row.name} copyClipboard />
+              return <InlineCode value={row.name} copyClipboard cssVar />
             },
           },
           {
@@ -124,7 +124,7 @@ export const Control = () => {
             field: 'name',
             rowHeader: true,
             renderCell: row => {
-              return <InlineCode value={row.name} copyClipboard />
+              return <InlineCode value={row.name} copyClipboard cssVar />
             },
           },
           {
@@ -177,7 +177,7 @@ export const Counter = () => {
             field: 'name',
             rowHeader: true,
             renderCell: row => {
-              return <InlineCode value={row.name} copyClipboard />
+              return <InlineCode value={row.name} copyClipboard cssVar />
             },
           },
           {
@@ -242,7 +242,7 @@ export const Button = () => {
             field: 'name',
             rowHeader: true,
             renderCell: row => {
-              return <InlineCode value={row.name} copyClipboard />
+              return <InlineCode value={row.name} copyClipboard cssVar />
             },
           },
           {
@@ -288,7 +288,7 @@ export const Focus = () => {
             field: 'name',
             rowHeader: true,
             renderCell: row => {
-              return <InlineCode value={row.name} copyClipboard />
+              return <InlineCode value={row.name} copyClipboard cssVar />
             },
           },
           {
@@ -341,7 +341,7 @@ export const Header = () => {
             field: 'name',
             rowHeader: true,
             renderCell: row => {
-              return <InlineCode value={row.name} copyClipboard />
+              return <InlineCode value={row.name} copyClipboard cssVar />
             },
           },
           {
@@ -394,7 +394,7 @@ export const Menu = () => {
             field: 'name',
             rowHeader: true,
             renderCell: row => {
-              return <InlineCode value={row.name} copyClipboard />
+              return <InlineCode value={row.name} copyClipboard cssVar />
             },
           },
           {
@@ -447,7 +447,7 @@ export const Overlay = () => {
             field: 'name',
             rowHeader: true,
             renderCell: row => {
-              return <InlineCode value={row.name} copyClipboard />
+              return <InlineCode value={row.name} copyClipboard cssVar />
             },
           },
           {
@@ -500,7 +500,7 @@ export const SelectMenu = () => {
             field: 'name',
             rowHeader: true,
             renderCell: row => {
-              return <InlineCode value={row.name} copyClipboard />
+              return <InlineCode value={row.name} copyClipboard cssVar />
             },
           },
           {
@@ -553,7 +553,7 @@ export const SideNav = () => {
             field: 'name',
             rowHeader: true,
             renderCell: row => {
-              return <InlineCode value={row.name} copyClipboard />
+              return <InlineCode value={row.name} copyClipboard cssVar />
             },
           },
           {
@@ -606,7 +606,7 @@ export const TimelineBadge = () => {
             field: 'name',
             rowHeader: true,
             renderCell: row => {
-              return <InlineCode value={row.name} copyClipboard />
+              return <InlineCode value={row.name} copyClipboard cssVar />
             },
           },
           {
@@ -659,7 +659,7 @@ export const UnderlineNav = () => {
             field: 'name',
             rowHeader: true,
             renderCell: row => {
-              return <InlineCode value={row.name} copyClipboard />
+              return <InlineCode value={row.name} copyClipboard cssVar />
             },
           },
           {
@@ -709,7 +709,7 @@ export const Selection = () => {
             field: 'name',
             rowHeader: true,
             renderCell: row => {
-              return <InlineCode value={row.name} copyClipboard />
+              return <InlineCode value={row.name} copyClipboard cssVar />
             },
           },
           {
@@ -762,7 +762,7 @@ export const Tooltip = () => {
             field: 'name',
             rowHeader: true,
             renderCell: row => {
-              return <InlineCode value={row.name} copyClipboard />
+              return <InlineCode value={row.name} copyClipboard cssVar />
             },
           },
           {

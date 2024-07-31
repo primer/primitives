@@ -76,7 +76,7 @@ export const XSmall = () => {
             field: 'name',
             rowHeader: true,
             renderCell: row => {
-              return <InlineCode value={row.name} copyClipboard />
+              return <InlineCode value={row.name} copyClipboard cssVar />
             },
           },
           {
@@ -152,7 +152,7 @@ export const Small = () => {
             field: 'name',
             rowHeader: true,
             renderCell: row => {
-              return <InlineCode value={row.name} copyClipboard />
+              return <InlineCode value={row.name} copyClipboard cssVar />
             },
           },
           {
@@ -235,7 +235,7 @@ export const Medium = () => {
             field: 'name',
             rowHeader: true,
             renderCell: row => {
-              return <InlineCode value={row.name} copyClipboard />
+              return <InlineCode value={row.name} copyClipboard cssVar />
             },
           },
           {
@@ -311,7 +311,7 @@ export const Large = () => {
             field: 'name',
             rowHeader: true,
             renderCell: row => {
-              return <InlineCode value={row.name} copyClipboard />
+              return <InlineCode value={row.name} copyClipboard cssVar />
             },
           },
           {
@@ -387,7 +387,7 @@ export const XLarge = () => {
             field: 'name',
             rowHeader: true,
             renderCell: row => {
-              return <InlineCode value={row.name} copyClipboard />
+              return <InlineCode value={row.name} copyClipboard cssVar />
             },
           },
           {
@@ -453,7 +453,7 @@ export const ControlStackRegular = () => {
             field: 'name',
             rowHeader: true,
             renderCell: row => {
-              return <InlineCode value={row.name} copyClipboard />
+              return <InlineCode value={row.name} copyClipboard cssVar />
             },
           },
           {
@@ -516,7 +516,7 @@ export const ControlStackResponsive = () => {
             field: 'name',
             rowHeader: true,
             renderCell: row => {
-              return <InlineCode value={row.name} copyClipboard />
+              return <InlineCode value={row.name} copyClipboard cssVar />
             },
           },
           {
@@ -571,7 +571,7 @@ export const ControlTouchTarget = () => {
             field: 'name',
             rowHeader: true,
             renderCell: row => {
-              return <InlineCode value={row.name} copyClipboard />
+              return <InlineCode value={row.name} copyClipboard cssVar />
             },
           },
           {
@@ -628,7 +628,7 @@ export const ControlTouchTargetResponsive = () => {
             field: 'name',
             rowHeader: true,
             renderCell: row => {
-              return <InlineCode value={row.name} copyClipboard />
+              return <InlineCode value={row.name} copyClipboard cssVar />
             },
           },
           {
