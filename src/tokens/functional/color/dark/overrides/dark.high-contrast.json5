@@ -68,11 +68,6 @@
       $type: 'color',
     },
     neutral: {
-      // muted: {
-      //   $value: '{base.color.neutral.5}',
-      //   $type: 'color',
-      //   alpha: 0.1,
-      // },
       emphasis: {
         $value: '{base.color.neutral.9}',
         $type: 'color',
@@ -160,13 +155,6 @@
         alpha: 0.09,
       },
     },
-    upsell: {
-      muted: {
-        $value: '{bgColor.done.muted}',
-        $type: 'color',
-        alpha: 0.09,
-      },
-    },
     sponsors: {
       muted: {
         $value: '{base.color.pink.5}',
@@ -198,17 +186,6 @@
       $type: 'color',
       alpha: 1,
     },
-    // neutral: {
-    //   muted: {
-    //     $value: '{base.color.neutral.4}',
-    //     $type: 'color',
-    //     alpha: 1,
-    //   },
-    //   emphasis: {
-    //     $value: '{base.color.neutral.4}',
-    //     $type: 'color',
-    //   },
-    // },
     accent: {
       muted: {
         $value: '{base.color.blue.4}',
