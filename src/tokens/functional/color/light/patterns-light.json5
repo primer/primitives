@@ -1038,7 +1038,7 @@
     invisible: {
       fgColor: {
         rest: {
-          $value: '{control.fgColor.rest}',
+          $value: '{fgColor.muted}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -1050,7 +1050,7 @@
           },
         },
         hover: {
-          $value: '{control.fgColor.rest}',
+          $value: '{fgColor.muted}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
