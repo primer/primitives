@@ -309,7 +309,7 @@
           },
         },
         selected: {
-          $value: '{control.transparent.bgColor.hover}',
+          $value: '{base.color.neutral.7}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -319,6 +319,7 @@
               scopes: ['bgColor'],
             },
           },
+          alpha: 0.18,
         },
       },
       borderColor: {
