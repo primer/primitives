@@ -9,10 +9,6 @@
       $value: '{base.color.white}',
       $type: 'color',
     },
-    onEmphasis: {
-      $value: '{base.color.black}',
-      $type: 'color',
-    },
     muted: {
       $value: '{base.color.neutral.9}',
       $type: 'color',
@@ -59,8 +55,8 @@
       $value: '{base.color.neutral.1}',
       $type: 'color',
     },
-    emphasis: {
-      $value: '{base.color.white}',
+    disabled: {
+      $value: '{base.color.neutral.3}',
       $type: 'color',
     },
     disabled: {
@@ -69,7 +65,7 @@
     },
     neutral: {
       emphasis: {
-        $value: '{base.color.neutral.9}',
+        $value: '{base.color.neutral.6}',
         $type: 'color',
       },
     },
@@ -80,7 +76,7 @@
         alpha: 0.1,
       },
       emphasis: {
-        $value: '{base.color.blue.4}',
+        $value: '{base.color.blue.9}',
         $type: 'color',
       },
     },
@@ -91,7 +87,7 @@
         alpha: 0.14,
       },
       emphasis: {
-        $value: '{base.color.green.4}',
+        $value: '{base.color.green.9}',
         $type: 'color',
       },
     },
@@ -109,7 +105,7 @@
         alpha: 0.09,
       },
       emphasis: {
-        $value: '{base.color.red.4}',
+        $value: '{base.color.red.9}',
         $type: 'color',
       },
     },
@@ -127,13 +123,13 @@
         alpha: 0.088,
       },
       emphasis: {
-        $value: '{base.color.orange.4}',
+        $value: '{base.color.orange.9}',
         $type: 'color',
       },
     },
     attention: {
       emphasis: {
-        $value: '{base.color.yellow.4}',
+        $value: '{base.color.yellow.9}',
         $type: 'color',
       },
     },
@@ -144,7 +140,7 @@
         alpha: 0.09,
       },
       emphasis: {
-        $value: '{base.color.purple.4}',
+        $value: '{base.color.purple.9}',
         $type: 'color',
       },
     },
@@ -162,7 +158,7 @@
         alpha: 0.09,
       },
       emphasis: {
-        $value: '{base.color.pink.4}',
+        $value: '{base.color.pink.9}',
         $type: 'color',
       },
     },
@@ -180,6 +176,11 @@
     emphasis: {
       $value: '{borderColor.default}',
       $type: 'color',
+    },
+    disabled: {
+      $value: '{base.color.neutral.8}',
+      $type: 'color',
+      alpha: 0.12,
     },
     translucent: {
       $value: '{base.color.neutral.5}',
@@ -321,12 +322,6 @@
       },
     },
     danger: {
-      fgColor: {
-        hover: {
-          $value: '{fgColor.onEmphasis}',
-          $type: 'color',
-        },
-      },
       bgColor: {
         hover: {
           $value: '{bgColor.danger.emphasis}',
@@ -343,11 +338,33 @@
         },
       },
     },
+    checked: {
+      borderColor: {
+        rest: {
+          $value: '{base.color.blue.2}',
+          $type: 'color',
+        },
+        hover: {
+          $value: '{base.color.blue.2}',
+          $type: 'color',
+        },
+        active: {
+          $value: '{base.color.blue.2}',
+          $type: 'color',
+        },
+      },
+    },
   },
   controlTrack: {
     fgColor: {
       rest: {
         $value: '{fgColor.default}',
+        $type: 'color',
+      },
+    },
+    borderColor: {
+      rest: {
+        $value: '{borderColor.emphasis}',
         $type: 'color',
       },
     },
@@ -365,32 +382,9 @@
         $type: 'color',
       },
     },
-    borderColor: {
-      rest: {
-        $value: '{borderColor.emphasis}',
-        $type: 'color',
-      },
-    },
   },
   button: {
     primary: {
-      fgColor: {
-        rest: {
-          $value: '{fgColor.onEmphasis}',
-          $type: 'color',
-        },
-        disabled: {
-          $value: '{fgColor.onEmphasis}',
-          $type: 'color',
-          alpha: 0.5,
-        },
-      },
-      iconColor: {
-        rest: {
-          $value: '{fgColor.onEmphasis}',
-          $type: 'color',
-        },
-      },
       borderColor: {
         rest: {
           $value: '{base.color.green.2}',
@@ -467,6 +461,21 @@
           alpha: 1,
         },
       },
+      bgColor: {
+        hover: {
+          $value: '{bgColor.danger.emphasis}',
+          $type: 'color',
+        },
+        active: {
+          $value: '{bgColor.danger.emphasis}',
+          $type: 'color',
+          alpha: 1,
+          mix: {
+            color: '{base.color.red.7}',
+            weight: 0.4,
+          },
+        },
+      },
     },
     inactive: {
       bgColor: {
@@ -514,7 +523,7 @@
       },
       bgColor: {
         word: {
-          $value: '{base.color.green.4}',
+          $value: '{bgColor.success.emphasis}',
           $type: 'color',
           alpha: 1,
         },
@@ -529,7 +538,7 @@
       },
       bgColor: {
         word: {
-          $value: '{base.color.red.5}',
+          $value: '{bgColor.danger.emphasis}',
           $type: 'color',
           alpha: 1,
         },
@@ -578,7 +587,7 @@
     blue: {
       bgColor: {
         emphasis: {
-          $value: '{base.display.color.blue.6}',
+          $value: '{base.display.color.blue.3}',
           $type: 'color',
         },
       },
@@ -596,7 +605,7 @@
     indigo: {
       bgColor: {
         emphasis: {
-          $value: '{base.display.color.indigo.6}',
+          $value: '{base.display.color.indigo.3}',
           $type: 'color',
         },
       },
@@ -614,7 +623,7 @@
     gray: {
       bgColor: {
         emphasis: {
-          $value: '{base.display.color.gray.6}',
+          $value: '{base.display.color.gray.3}',
           $type: 'color',
         },
       },
@@ -632,7 +641,7 @@
     cyan: {
       bgColor: {
         emphasis: {
-          $value: '{base.display.color.cyan.6}',
+          $value: '{base.display.color.cyan.3}',
           $type: 'color',
         },
       },
@@ -650,7 +659,7 @@
     teal: {
       bgColor: {
         emphasis: {
-          $value: '{base.display.color.teal.6}',
+          $value: '{base.display.color.teal.3}',
           $type: 'color',
         },
       },
@@ -668,7 +677,7 @@
     pine: {
       bgColor: {
         emphasis: {
-          $value: '{base.display.color.pine.6}',
+          $value: '{base.display.color.pine.3}',
           $type: 'color',
         },
       },
@@ -686,7 +695,7 @@
     green: {
       bgColor: {
         emphasis: {
-          $value: '{base.display.color.green.6}',
+          $value: '{base.display.color.green.3}',
           $type: 'color',
         },
       },
@@ -704,7 +713,7 @@
     lime: {
       bgColor: {
         emphasis: {
-          $value: '{base.display.color.lime.6}',
+          $value: '{base.display.color.lime.3}',
           $type: 'color',
         },
       },
@@ -722,7 +731,7 @@
     olive: {
       bgColor: {
         emphasis: {
-          $value: '{base.display.color.olive.6}',
+          $value: '{base.display.color.olive.3}',
           $type: 'color',
         },
       },
@@ -740,7 +749,7 @@
     lemon: {
       bgColor: {
         emphasis: {
-          $value: '{base.display.color.lemon.6}',
+          $value: '{base.display.color.lemon.3}',
           $type: 'color',
         },
       },
@@ -758,7 +767,7 @@
     yellow: {
       bgColor: {
         emphasis: {
-          $value: '{base.display.color.yellow.6}',
+          $value: '{base.display.color.yellow.3}',
           $type: 'color',
         },
       },
@@ -776,7 +785,7 @@
     orange: {
       bgColor: {
         emphasis: {
-          $value: '{base.display.color.orange.6}',
+          $value: '{base.display.color.orange.3}',
           $type: 'color',
         },
       },
@@ -794,7 +803,7 @@
     red: {
       bgColor: {
         emphasis: {
-          $value: '{base.display.color.red.6}',
+          $value: '{base.display.color.red.3}',
           $type: 'color',
         },
       },
@@ -812,7 +821,7 @@
     coral: {
       bgColor: {
         emphasis: {
-          $value: '{base.display.color.coral.6}',
+          $value: '{base.display.color.coral.3}',
           $type: 'color',
         },
       },
@@ -830,7 +839,7 @@
     pink: {
       bgColor: {
         emphasis: {
-          $value: '{base.display.color.pink.6}',
+          $value: '{base.display.color.pink.3}',
           $type: 'color',
         },
       },
@@ -848,7 +857,7 @@
     plum: {
       bgColor: {
         emphasis: {
-          $value: '{base.display.color.plum.6}',
+          $value: '{base.display.color.plum.3}',
           $type: 'color',
         },
       },
@@ -866,7 +875,7 @@
     purple: {
       bgColor: {
         emphasis: {
-          $value: '{base.display.color.purple.6}',
+          $value: '{base.display.color.purple.3}',
           $type: 'color',
         },
       },
@@ -884,7 +893,7 @@
     brown: {
       bgColor: {
         emphasis: {
-          $value: '{base.display.color.brown.6}',
+          $value: '{base.display.color.brown.3}',
           $type: 'color',
         },
       },
@@ -902,7 +911,7 @@
     auburn: {
       bgColor: {
         emphasis: {
-          $value: '{base.display.color.auburn.6}',
+          $value: '{base.display.color.auburn.3}',
           $type: 'color',
         },
       },
