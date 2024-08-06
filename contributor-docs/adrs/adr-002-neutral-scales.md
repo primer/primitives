@@ -17,7 +17,7 @@ This document outlines key design decisions made for these new neutral scales.
 
 ### General scale generation
 
-The goal was to make adjustments with minimal impact on the existing theme designs. For light default, shade 0 remains the same value as it's a prominent background color used throughout GitHub. All other steps are based on this value by adjusting saturation and lightness. 
+The goal was to make adjustments with minimal impact on the existing theme designs. For light default, shade 0 remains the same value as it's a prominent background color used throughout GitHub. All other steps are based on this value by adjusting saturation and lightness.
 
 ### Saturation adjustments
 
@@ -38,7 +38,6 @@ Shade 11 leans blue with roughly 70% saturation. The saturation gradually declin
 ### Increase background shades
 
 The new scales accommodate component states such as rest, hover, and active for all levels of contrast (dimmed, default, high) by providing additional shades with subtle lightness adjustments. A lower contrast theme may start at shade 0 for rest, 1 for hover and 2 for active, while a higher contrast theme may start at shade 3 for rest, 4 for hover and 5 for active.
-
 
 ### Add minimum shade for 3:1 contrast
 

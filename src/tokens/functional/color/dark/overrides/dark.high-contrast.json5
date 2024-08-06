@@ -59,6 +59,10 @@
       $value: '{base.color.neutral.3}',
       $type: 'color',
     },
+    disabled: {
+      $value: '{base.color.neutral.3}',
+      $type: 'color',
+    },
     neutral: {
       emphasis: {
         $value: '{base.color.neutral.6}',
@@ -138,13 +142,6 @@
       emphasis: {
         $value: '{base.color.purple.9}',
         $type: 'color',
-      },
-    },
-    upsell: {
-      muted: {
-        $value: '{bgColor.done.muted}',
-        $type: 'color',
-        alpha: 0.09,
       },
     },
     upsell: {
@@ -448,11 +445,6 @@
         },
       },
       borderColor: {
-        rest: {
-          $value: '{base.color.red.2}',
-          $type: 'color',
-          alpha: 1,
-        },
         hover: {
           $value: '{base.color.red.2}',
           $type: 'color',
