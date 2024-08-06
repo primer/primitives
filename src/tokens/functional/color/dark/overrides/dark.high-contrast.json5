@@ -177,6 +177,11 @@
       $value: '{borderColor.default}',
       $type: 'color',
     },
+    disabled: {
+      $value: '{base.color.neutral.8}',
+      $type: 'color',
+      alpha: 0.12,
+    },
     translucent: {
       $value: '{base.color.neutral.5}',
       $type: 'color',
