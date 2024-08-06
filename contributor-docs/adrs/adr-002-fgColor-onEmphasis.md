@@ -4,8 +4,8 @@
 
 | Stage    | Status |
 | -------- | ------ |
-| Approved | ✅      |
-| Adopted  | ✅      |
+| Approved | ✅     |
+| Adopted  | ✅     |
 
 ## Context
 
