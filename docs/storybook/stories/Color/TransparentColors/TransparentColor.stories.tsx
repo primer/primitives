@@ -21,12 +21,14 @@ export default {
 }
 
 export const Light = () => {
-  const data = Object.entries(lightColorTokens).filter(([name, token]) => token.alpha).map(([name, token]) => {
-    return {
-      id: name,
-      ...token,
-    }
-  })
+  const data = Object.entries(lightColorTokens)
+    .filter(([name, token]) => token.alpha)
+    .map(([name, token]) => {
+      return {
+        id: name,
+        ...token,
+      }
+    })
   return (
     <Table.Container>
       {/* <Table.Title as="h1" id="pattern">
@@ -58,7 +60,11 @@ export const Light = () => {
             rowHeader: true,
             renderCell: row => {
               const cleanedValue = `${row.original.value.replace(/[{}]/g, '').replace(/\./g, '-')}`
-              return <Stack direction="horizontal" gap="condensed"><ColorTokenSwatch bgColor={cleanedValue} /> <code>{cleanedValue}</code></Stack>
+              return (
+                <Stack direction="horizontal" gap="condensed">
+                  <ColorTokenSwatch bgColor={cleanedValue} /> <code>{cleanedValue}</code>
+                </Stack>
+              )
             },
           },
           {
@@ -83,21 +89,22 @@ export const Light = () => {
   )
 }
 Light.decorators = [
-  (Story) => (
+  Story => (
     <div data-color-mode="light" data-light-theme="light" data-dark-theme="light">
       <Story />
     </div>
   ),
 ]
 
-
 export const Dark = () => {
-  const data = Object.entries(darkColorTokens).filter(([name, token]) => token.alpha).map(([name, token]) => {
-    return {
-      id: name,
-      ...token,
-    }
-  })
+  const data = Object.entries(darkColorTokens)
+    .filter(([name, token]) => token.alpha)
+    .map(([name, token]) => {
+      return {
+        id: name,
+        ...token,
+      }
+    })
   return (
     <Table.Container>
       {/* <Table.Title as="h1" id="pattern">
@@ -129,7 +136,11 @@ export const Dark = () => {
             rowHeader: true,
             renderCell: row => {
               const cleanedValue = `${row.original.value.replace(/[{}]/g, '').replace(/\./g, '-')}`
-              return <Stack direction="horizontal" gap="condensed"><ColorTokenSwatch bgColor={cleanedValue} /> <code>{cleanedValue}</code></Stack>
+              return (
+                <Stack direction="horizontal" gap="condensed">
+                  <ColorTokenSwatch bgColor={cleanedValue} /> <code>{cleanedValue}</code>
+                </Stack>
+              )
             },
           },
           {
@@ -154,7 +165,7 @@ export const Dark = () => {
   )
 }
 Dark.decorators = [
-  (Story) => (
+  Story => (
     <div data-color-mode="dark" data-light-theme="dark" data-dark-theme="dark">
       <Story />
     </div>
@@ -162,12 +173,14 @@ Dark.decorators = [
 ]
 
 export const LightHighContrast = () => {
-  const data = Object.entries(lightHCColorTokens).filter(([name, token]) => token.alpha).map(([name, token]) => {
-    return {
-      id: name,
-      ...token,
-    }
-  })
+  const data = Object.entries(lightHCColorTokens)
+    .filter(([name, token]) => token.alpha)
+    .map(([name, token]) => {
+      return {
+        id: name,
+        ...token,
+      }
+    })
   return (
     <Table.Container>
       {/* <Table.Title as="h1" id="pattern">
@@ -199,7 +212,11 @@ export const LightHighContrast = () => {
             rowHeader: true,
             renderCell: row => {
               const cleanedValue = `${row.original.value.replace(/[{}]/g, '').replace(/\./g, '-')}`
-              return <Stack direction="horizontal" gap="condensed"><ColorTokenSwatch bgColor={cleanedValue} /> <code>{cleanedValue}</code></Stack>
+              return (
+                <Stack direction="horizontal" gap="condensed">
+                  <ColorTokenSwatch bgColor={cleanedValue} /> <code>{cleanedValue}</code>
+                </Stack>
+              )
             },
           },
           {
@@ -224,7 +241,7 @@ export const LightHighContrast = () => {
   )
 }
 LightHighContrast.decorators = [
-  (Story) => (
+  Story => (
     <div data-color-mode="light" data-light-theme="light_high_contrast" data-dark-theme="light_high_contrast">
       <Story />
     </div>
@@ -232,12 +249,14 @@ LightHighContrast.decorators = [
 ]
 
 export const DarkHighContrast = () => {
-  const data = Object.entries(darkHCColorTokens).filter(([name, token]) => token.alpha).map(([name, token]) => {
-    return {
-      id: name,
-      ...token,
-    }
-  })
+  const data = Object.entries(darkHCColorTokens)
+    .filter(([name, token]) => token.alpha)
+    .map(([name, token]) => {
+      return {
+        id: name,
+        ...token,
+      }
+    })
   return (
     <Table.Container>
       {/* <Table.Title as="h1" id="pattern">
@@ -269,7 +288,11 @@ export const DarkHighContrast = () => {
             rowHeader: true,
             renderCell: row => {
               const cleanedValue = `${row.original.value.replace(/[{}]/g, '').replace(/\./g, '-')}`
-              return <Stack direction="horizontal" gap="condensed"><ColorTokenSwatch bgColor={cleanedValue} /> <code>{cleanedValue}</code></Stack>
+              return (
+                <Stack direction="horizontal" gap="condensed">
+                  <ColorTokenSwatch bgColor={cleanedValue} /> <code>{cleanedValue}</code>
+                </Stack>
+              )
             },
           },
           {
@@ -294,7 +317,7 @@ export const DarkHighContrast = () => {
   )
 }
 DarkHighContrast.decorators = [
-  (Story) => (
+  Story => (
     <div data-color-mode="dark" data-light-theme="dark_high_contrast" data-dark-theme="dark_high_contrast">
       <Story />
     </div>
@@ -302,12 +325,14 @@ DarkHighContrast.decorators = [
 ]
 
 export const DarkDimmed = () => {
-  const data = Object.entries(darkDimmedColorTokens).filter(([name, token]) => token.alpha).map(([name, token]) => {
-    return {
-      id: name,
-      ...token,
-    }
-  })
+  const data = Object.entries(darkDimmedColorTokens)
+    .filter(([name, token]) => token.alpha)
+    .map(([name, token]) => {
+      return {
+        id: name,
+        ...token,
+      }
+    })
   return (
     <Table.Container>
       <DataTable
@@ -336,7 +361,11 @@ export const DarkDimmed = () => {
             rowHeader: true,
             renderCell: row => {
               const cleanedValue = `${row.original.value.replace(/[{}]/g, '').replace(/\./g, '-')}`
-              return <Stack direction="horizontal" gap="condensed"><ColorTokenSwatch bgColor={cleanedValue} /> <code>{cleanedValue}</code></Stack>
+              return (
+                <Stack direction="horizontal" gap="condensed">
+                  <ColorTokenSwatch bgColor={cleanedValue} /> <code>{cleanedValue}</code>
+                </Stack>
+              )
             },
           },
           {
@@ -361,7 +390,7 @@ export const DarkDimmed = () => {
   )
 }
 DarkDimmed.decorators = [
-  (Story) => (
+  Story => (
     <div data-color-mode="dark" data-light-theme="dark_dimmed" data-dark-theme="dark_dimmed">
       <Story />
     </div>
