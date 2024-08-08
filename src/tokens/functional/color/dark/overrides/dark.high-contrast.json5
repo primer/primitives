@@ -48,7 +48,7 @@
   },
   bgColor: {
     default: {
-      $value: '{base.color.black}',
+      $value: '{base.color.neutral.0-new}',
       $type: 'color',
     },
     muted: {
@@ -492,7 +492,7 @@
     primary: {
       bgColor: {
         rest: {
-          $value: '{base.color.black}',
+          $value: '{base.color.neutral.0-new}',
           $type: 'color',
           alpha: 0.15,
         },
@@ -501,12 +501,12 @@
     danger: {
       bgColor: {
         hover: {
-          $value: '{base.color.black}',
+          $value: '{base.color.neutral.0-new}',
           $type: 'color',
           alpha: 0.15,
         },
         rest: {
-          $value: '{base.color.black}',
+          $value: '{base.color.neutral.0-new}',
           $type: 'color',
           alpha: 0.15,
         },
