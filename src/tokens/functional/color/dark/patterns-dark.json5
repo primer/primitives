@@ -30,7 +30,7 @@
     fade: {
       bgColor: {
         default: {
-          $value: '{base.color.neutral.6}',
+          $value: '{base.color.neutral.7}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -42,7 +42,7 @@
           },
         },
         muted: {
-          $value: '{base.color.neutral.4}',
+          $value: '{base.color.neutral.5}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -59,18 +59,6 @@
   control: {
     bgColor: {
       rest: {
-        $value: '{base.color.neutral.2}',
-        $type: 'color',
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'mode',
-            mode: 'dark',
-            group: 'component',
-            scopes: ['bgColor'],
-          },
-        },
-      },
-      hover: {
         $value: '{base.color.neutral.3}',
         $type: 'color',
         $extensions: {
@@ -82,8 +70,20 @@
           },
         },
       },
-      active: {
+      hover: {
         $value: '{base.color.neutral.4}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'dark',
+            group: 'component',
+            scopes: ['bgColor'],
+          },
+        },
+      },
+      active: {
+        $value: '{base.color.neutral.5}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -195,7 +195,7 @@
         },
       },
       selected: {
-        $value: '{base.color.neutral.11}',
+        $value: '{base.color.neutral.12}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -272,7 +272,7 @@
           },
         },
         hover: {
-          $value: '{base.color.neutral.7}',
+          $value: '{base.color.neutral.8}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -285,7 +285,7 @@
           alpha: 0.2,
         },
         active: {
-          $value: '{base.color.neutral.7}',
+          $value: '{base.color.neutral.8}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -310,7 +310,7 @@
           },
         },
         selected: {
-          $value: '{base.color.neutral.7}',
+          $value: '{base.color.neutral.8}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -557,18 +557,6 @@
   controlTrack: {
     bgColor: {
       rest: {
-        $value: '{base.color.neutral.3}',
-        $type: 'color',
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'mode',
-            mode: 'dark',
-            group: 'component (internal)',
-            scopes: ['bgColor'],
-          },
-        },
-      },
-      hover: {
         $value: '{base.color.neutral.4}',
         $type: 'color',
         $extensions: {
@@ -580,8 +568,20 @@
           },
         },
       },
-      active: {
+      hover: {
         $value: '{base.color.neutral.5}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'dark',
+            group: 'component (internal)',
+            scopes: ['bgColor'],
+          },
+        },
+      },
+      active: {
+        $value: '{base.color.neutral.6}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -1255,7 +1255,7 @@
       },
       bgColor: {
         rest: {
-          $value: '{base.color.neutral.11}',
+          $value: '{base.color.neutral.12}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -1503,7 +1503,7 @@
     },
     inactive: {
       fgColor: {
-        $value: '{base.color.neutral.8}',
+        $value: '{base.color.neutral.9}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -1515,7 +1515,7 @@
         },
       },
       bgColor: {
-        $value: '{base.color.neutral.3}',
+        $value: '{base.color.neutral.4}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -1546,7 +1546,7 @@
     default: {
       bgColor: {
         rest: {
-          $value: '{base.color.neutral.5}',
+          $value: '{base.color.neutral.6}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -1836,7 +1836,7 @@
   },
   header: {
     bgColor: {
-      $value: '{base.color.neutral.1}',
+      $value: '{base.color.neutral.2}',
       $type: 'color',
       $extensions: {
         'org.primer.figma': {
@@ -1863,7 +1863,7 @@
         alpha: 0.7,
       },
       logo: {
-        $value: '{base.color.neutral.11}',
+        $value: '{base.color.neutral.12}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -1877,7 +1877,7 @@
     },
     borderColor: {
       divider: {
-        $value: '{base.color.neutral.7}',
+        $value: '{base.color.neutral.8}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -1892,7 +1892,7 @@
   },
   headerSearch: {
     bgColor: {
-      $value: '{base.color.neutral.0}',
+      $value: '{base.color.neutral.1}',
       $type: 'color',
       $extensions: {
         'org.primer.figma': {
@@ -1904,7 +1904,7 @@
       },
     },
     borderColor: {
-      $value: '{base.color.neutral.4}',
+      $value: '{base.color.neutral.5}',
       $type: 'color',
       $extensions: {
         'org.primer.figma': {
@@ -1919,7 +1919,7 @@
   menu: {
     bgColor: {
       active: {
-        $value: '{base.color.neutral.1}',
+        $value: '{base.color.neutral.2}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -1958,7 +1958,7 @@
     },
     backdrop: {
       bgColor: {
-        $value: '{base.color.neutral.2}',
+        $value: '{base.color.neutral.3}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -2003,7 +2003,7 @@
   sideNav: {
     bgColor: {
       selected: {
-        $value: '{base.color.neutral.2}',
+        $value: '{base.color.neutral.3}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -2024,7 +2024,7 @@
   },
   timelineBadge: {
     bgColor: {
-      $value: '{base.color.neutral.2}',
+      $value: '{base.color.neutral.3}',
       $type: 'color',
       $extensions: {
         'org.primer.figma': {
