@@ -14,7 +14,7 @@
       $type: 'color',
     },
     closed: {
-      $value: '{base.color.neutral.5}',
+      $value: '{fgColor.muted}',
       $type: 'color',
     },
     danger: {
@@ -61,12 +61,11 @@
     },
     closed: {
       muted: {
-        $value: '{base.color.neutral.3}',
+        $value: '{bgColor.neutral.muted}',
         $type: 'color',
-        alpha: 0.4,
       },
       emphasis: {
-        $value: '{base.color.neutral.5}',
+        $value: '{bgColor.neutral.emphasis}',
         $type: 'color',
       },
     },
@@ -85,12 +84,11 @@
     },
     closed: {
       muted: {
-        $value: '{base.color.neutral.3}',
+        $value: '{borderColor.default}',
         $type: 'color',
-        alpha: 0.4,
       },
       emphasis: {
-        $value: '{base.color.neutral.5}',
+        $value: '{borderColor.emphasis}',
         $type: 'color',
       },
     },
