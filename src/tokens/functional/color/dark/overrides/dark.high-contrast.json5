@@ -6,7 +6,7 @@
 {
   fgColor: {
     default: {
-      $value: '{base.color.white}',
+      $value: '{base.color.neutral.13}',
       $type: 'color',
     },
     muted: {
@@ -247,7 +247,7 @@
   // patterns
   avatar: {
     borderColor: {
-      $value: '{base.color.white}',
+      $value: '{base.color.neutral.13}',
       $type: 'color',
       alpha: 0.9,
     },
