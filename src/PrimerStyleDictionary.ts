@@ -208,5 +208,5 @@ const InitializeSd: StyleDictionary = new StyleDictionary()
 
 export const PrimerStyleDictionary = await InitializeSd.extend({
   // @ts-expect-error: wrong type?
-  parsers: ['w3cJsonParser'],
+  // parsers: ['w3cJsonParser'],
 })

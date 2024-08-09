@@ -1,30 +1,4 @@
-import type {Filter, TransformedToken} from 'style-dictionary/types'
 import {PrimerStyleDictionary} from '../src/PrimerStyleDictionary.js'
-import {figma} from '../src/platforms/index.js'
-
-const validFigmaToken: Filter['filter'] = (token: TransformedToken) => {
-  console.log(token, 'WOOOO')
-  // return true
-  const validTypes = ['color', 'dimension', 'shadow', 'fontWeight', 'fontFamily', 'number']
-  // is a siource token, not an included one
-  // if (!isSource(token)) return false
-
-  if (`${token.value}`.substring(token.value.length - 2) === 'em') return false
-  // has a collection attribute
-  if (
-    !('$extensions' in token) ||
-    !('org.primer.figma' in token.$extensions) ||
-    !('collection' in token.$extensions['org.primer.figma'])
-  )
-    return false
-  // is a color or dimension type
-  return validTypes.includes(token.$type)
-}
-
-PrimerStyleDictionary.registerFilter({
-  name: 'validFigmaToken',
-  filter: validFigmaToken,
-})
 
 const buildOptions = {
   prefix: undefined,
@@ -42,24 +16,29 @@ const sizeFiles = [
 //
 
 const sizeExtended = await PrimerStyleDictionary.extend({
+  log: {
+    warnings: 'warn', // "error", "warn", "disabled" -> "warn" is default
+    verbosity: 'verbose', // "silent", "default", "verbose" -> "default" is default
+  },
   source: sizeFiles,
   include: sizeFiles,
   platforms: {
     figma: {
-      prefix: undefined,
+      prefix: 'TESTPREF',
       buildPath: 'dist/',
       transforms: [
-        'color/rgbaFloat',
-        'fontFamily/figma',
-        'float/pixelUnitless',
-        'dimension/pixelUnitless',
-        // 'border/figma',
-        // 'typography/figma',
-        'fontWeight/number',
-        'figma/attributes',
-        'name/pathToFigma',
+        // 'color/rgbaFloat',
+        // 'fontFamily/figma',
+        // 'float/pixelUnitless',
+        // 'dimension/pixelUnitless',
+        // // 'border/figma',
+        // // 'typography/figma',
+        // 'fontWeight/number',
+        // 'figma/attributes',
+        // 'name/pathToFigma',
       ],
       options: {
+        useDtcg: true,
         basePxFontSize: 16,
         fontFamilies: {
           'fontStack/system': 'SF Pro Text',
@@ -70,9 +49,8 @@ const sizeExtended = await PrimerStyleDictionary.extend({
       },
       files: [
         {
-          destination: 'figma/dimension/dimension.json',
-          filter: 'validFigmaToken',
-          format: `json/figma`,
+          destination: 'figma/dimension/dimension.css',
+          format: 'css/advanced',
           options: {
             outputReferences: true,
             mode: '',
@@ -82,5 +60,4 @@ const sizeExtended = await PrimerStyleDictionary.extend({
     },
   },
 })
-
 await sizeExtended.buildAllPlatforms()

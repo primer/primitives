@@ -8,7 +8,7 @@ import type {FormatFn, FormatFnArguments} from 'style-dictionary/types'
  * @returns formatted json `string`
  */
 export const jsonPostCssFallback: FormatFn = ({dictionary, file: _file}: FormatFnArguments) => {
-  const tokens = Object.fromEntries(dictionary.allTokens.map(token => [`--${token.name}`, token.value]))
+  const tokens = Object.fromEntries(dictionary.allTokens.map(token => [`--${token.name}`, token.$value]))
   // add file header and convert output
   const output = JSON.stringify(tokens, null, 2)
   // return prettified

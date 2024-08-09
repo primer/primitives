@@ -19,7 +19,7 @@ export const cssAdvanced: FormatFn = async ({
   platform,
 }: FormatFnArguments) => {
   // get options
-  const {outputReferences, descriptions} = options
+  const {outputReferences, descriptions, usesDtcg} = options
   // selector
   const selector = file.options?.selector !== undefined ? file.options.selector : ':root'
   // query extension property
@@ -86,7 +86,13 @@ export const cssAdvanced: FormatFn = async ({
     // early abort if no matches
     if (!filteredDictionary.allTokens.length) continue
     // add tokens into root
-    const css = formattedVariables({format: 'css', dictionary: filteredDictionary, outputReferences, formatting})
+    const css = formattedVariables({
+      format: 'css',
+      dictionary: filteredDictionary,
+      outputReferences,
+      formatting,
+      usesDtcg,
+    })
     // wrap css
     const cssWithSelector = wrapWithSelector(css, query.selector !== undefined ? query.selector : selector)
     // add css with or without query

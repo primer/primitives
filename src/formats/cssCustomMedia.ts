@@ -11,8 +11,8 @@ export const cssCustomMedia: FormatFn = async ({dictionary, options: _options, f
   // add file header
   const output = [await fileHeader({file})]
   // add single theme css
-  dictionary.allTokens.map(({name, value}) => {
-    output.push(`@custom-media --${name} ${value};`)
+  dictionary.allTokens.map(({name, $value}) => {
+    output.push(`@custom-media --${name} ${$value};`)
   })
   // return prettified
   return format(output.join('\n'), {parser: 'css', printWidth: 500})

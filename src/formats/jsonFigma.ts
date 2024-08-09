@@ -74,13 +74,13 @@ const shadowToVariables = (
  * @param arguments [FormatterArguments](https://github.com/amzn/style-dictionary/blob/main/types/Format.d.ts)
  * @returns formatted `string`
  */
-export const jsonFigma: FormatFn = ({dictionary, file: _file, platform}: FormatFnArguments) => {
+export const jsonFigma: FormatFn = async ({dictionary, file: _file, platform}: FormatFnArguments) => {
   // array to store tokens in
   const tokens: Record<string, unknown>[] = []
   // loop through tokens sorted by reference
   for (const token of dictionary.allTokens.sort(sortByReference(dictionary.tokens))) {
     // deconstruct token
-    const {attributes, value, $type, comment: description, original, alpha, mix} = token
+    const {attributes, $value: value, $type, comment: description, original, alpha, mix} = token
     const {mode, collection, scopes, group, codeSyntax} = attributes || {}
     // early escape if no type is present
     if (!$type) return
@@ -116,7 +116,7 @@ export const jsonFigma: FormatFn = ({dictionary, file: _file, platform}: FormatF
         isMix: mix ? true : undefined,
         description,
         refId: [collection, token.name].filter(Boolean).join('/'),
-        reference: getReference(dictionary, original.value, platform),
+        reference: getReference(dictionary, original.$value, platform),
         collection,
         mode,
         group,

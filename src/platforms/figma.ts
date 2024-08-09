@@ -5,7 +5,7 @@ import type {TransformedToken, PlatformConfig} from 'style-dictionary/types'
 const validFigmaToken = async (token: TransformedToken) => {
   const validTypes = ['color', 'dimension', 'shadow', 'fontWeight', 'fontFamily', 'number']
   // is a siource token, not an included one
-  if (!isSource(token)) return false
+  if (!isSource(token) || !token.$type) return false
 
   if (`${token.value}`.substring(token.value.length - 2) === 'em') return false
   // has a collection attribute
@@ -47,7 +47,6 @@ export const figma: PlatformInitializer = (outputFile, prefix, buildPath, option
     {
       destination: outputFile,
       filter: token => {
-        console.log(token)
         return validFigmaToken(token)
       },
       format: `json/figma`,

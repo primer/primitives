@@ -38,7 +38,7 @@ export const dimensionToPixelUnitless: Transform = {
     const floatVal = parseFloat(token.value)
     if (isNaN(floatVal)) {
       throw new Error(
-        `Invalid dimension token: '${token.name}: ${token.value}' is not valid and cannot be transform to 'float' \n`,
+        `Invalid dimension token: '${token.path.join('.')}: ${token.value}' is not valid and cannot be transform to 'float' \n`,
       )
     }
 

@@ -219,66 +219,66 @@ const buildFigma = async (buildOptions: ConfigGeneratorOptions): Promise<void> =
   /** -----------------------------------
    * Create list of files
    * ----------------------------------- */
-  // const dirNames = fs
-  //   .readdirSync(`${buildOptions.buildPath}figma`, {withFileTypes: true})
-  //   .filter(dir => dir.isDirectory())
-  //   .map(dir => dir.name)
+  const dirNames = fs
+    .readdirSync(`${buildOptions.buildPath}figma`, {withFileTypes: true})
+    .filter(dir => dir.isDirectory())
+    .map(dir => dir.name)
 
-  // const files = dirNames.flatMap(dir => {
-  //   const localFiles = fs.readdirSync(`${buildOptions.buildPath}figma/${dir}`)
-  //   return localFiles.map(file => `${buildOptions.buildPath}figma/${dir}/${file}`)
-  // })
+  const files = dirNames.flatMap(dir => {
+    const localFiles = fs.readdirSync(`${buildOptions.buildPath}figma/${dir}`)
+    return localFiles.map(file => `${buildOptions.buildPath}figma/${dir}/${file}`)
+  })
 
-  // const tokens: {
-  //   collection: string
-  //   mode: string
-  //   group: string
-  //   name: string
-  // }[] = files.flatMap(filePath => JSON.parse(fs.readFileSync(filePath, 'utf8')))
-  // // create a list of groups with collections and modes
-  // const collections: Record<
-  //   string,
-  //   {
-  //     modes: string[]
-  //     groups: string[]
-  //   }
-  // > = {}
+  const tokens: {
+    collection: string
+    mode: string
+    group: string
+    name: string
+  }[] = files.flatMap(filePath => JSON.parse(fs.readFileSync(filePath, 'utf8')))
+  // create a list of groups with collections and modes
+  const collections: Record<
+    string,
+    {
+      modes: string[]
+      groups: string[]
+    }
+  > = {}
 
-  // for (const {collection, mode, group} of tokens) {
-  //   if (!(collection in collections)) {
-  //     collections[collection] = {
-  //       modes: [],
-  //       groups: [],
-  //     }
-  //   }
-  //   if (!collections[collection].modes.includes(mode)) {
-  //     collections[collection].modes.push(mode)
-  //   }
+  for (const {collection, mode, group} of tokens) {
+    if (!(collection in collections)) {
+      collections[collection] = {
+        modes: [],
+        groups: [],
+      }
+    }
+    if (!collections[collection].modes.includes(mode)) {
+      collections[collection].modes.push(mode)
+    }
 
-  //   if (!collections[collection].groups.includes(group)) {
-  //     collections[collection].groups.push(group)
-  //   }
-  // }
+    if (!collections[collection].groups.includes(group)) {
+      collections[collection].groups.push(group)
+    }
+  }
 
-  // // define the order of the modes
-  // // we inverse it to deal with the -1 of the indexOf if item is not found in the array: basically anything that is not in the list should come last
-  // const modeOrder = [
-  //   'light',
-  //   'dark',
-  //   'dark dimmed',
-  //   'light high contrast',
-  //   'dark high contrast',
-  //   'light colorblind',
-  //   'dark colorblind',
-  //   'light tritanopia',
-  //   'dark tritanopia',
-  // ].reverse()
-  // // sort modes in the order defined above
-  // for (const collection in collections) {
-  //   collections[collection].modes.sort((a, b) => modeOrder.indexOf(b) - modeOrder.indexOf(a))
-  // }
-  // // write to file
-  // fs.writeFileSync(`${buildOptions.buildPath}figma/figma.json`, JSON.stringify({collections, files}, null, 2))
+  // define the order of the modes
+  // we inverse it to deal with the -1 of the indexOf if item is not found in the array: basically anything that is not in the list should come last
+  const modeOrder = [
+    'light',
+    'dark',
+    'dark dimmed',
+    'light high contrast',
+    'dark high contrast',
+    'light colorblind',
+    'dark colorblind',
+    'light tritanopia',
+    'dark tritanopia',
+  ].reverse()
+  // sort modes in the order defined above
+  for (const collection in collections) {
+    collections[collection].modes.sort((a, b) => modeOrder.indexOf(b) - modeOrder.indexOf(a))
+  }
+  // write to file
+  fs.writeFileSync(`${buildOptions.buildPath}figma/figma.json`, JSON.stringify({collections, files}, null, 2))
 }
 
 try {
