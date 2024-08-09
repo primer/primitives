@@ -138,51 +138,71 @@
     },
     accent: {
       muted: {
+        $value: '{base.color.blue.4}',
+        $type: 'color',
         alpha: 1,
       },
     },
     success: {
       muted: {
+        $value: '{base.color.green.4}',
+        $type: 'color',
         alpha: 1,
       },
     },
     open: {
       muted: {
+        $value: '{borderColor.success.muted}',
+        $type: 'color',
         alpha: 1,
       },
     },
     attention: {
       muted: {
+        $value: '{base.color.yellow.4}',
+        $type: 'color',
         alpha: 1,
       },
     },
     closed: {
       muted: {
+        $value: '{borderColor.danger.muted}',
+        $type: 'color',
         alpha: 1,
       },
     },
     upsell: {
       muted: {
+          $value: '{borderColor.done.muted}',
+        $type: 'color',
         alpha: 1,
       },
     },
     severe: {
       muted: {
+        $value: '{base.color.orange.4}',
+        $type: 'color',
         alpha: 1,
       },
     },
     danger: {
       muted: {
+        $value: '{base.color.red.4}',
+        $type: 'color',
         alpha: 1,
       },
     },
     done: {
       muted: {
+        $value: '{base.color.purple.4}',
+        $type: 'color',
         alpha: 1,
       },
     },
     sponsors: {
       muted: {
+        $value: '{base.color.pink.4}',
+        $type: 'color',
         alpha: 1,
       },
     },

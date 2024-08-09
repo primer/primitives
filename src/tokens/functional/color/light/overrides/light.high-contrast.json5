@@ -109,51 +109,79 @@
     },
     accent: {
       muted: {
+        $value: '{base.color.blue.3}',
+        $type: 'color',
         alpha: 1,
       },
     },
     success: {
       muted: {
+        $value: '{base.color.green.3}',
+        $type: 'color',
         alpha: 1,
+      },
+      emphasis: {
+        $value: '{base.color.green.5}',
+        $type: 'color',
       },
     },
     open: {
       muted: {
+        $value: '{borderColor.success.muted}',
+        $type: 'color',
         alpha: 1,
       },
     },
     attention: {
       muted: {
+        $value: '{base.color.yellow.3}',
+        $type: 'color',
         alpha: 1,
+      },
+      emphasis: {
+        $value: '{base.color.yellow.5}',
+        $type: 'color',
       },
     },
     severe: {
       muted: {
+        $value: '{base.color.orange.3}',
+        $type: 'color',
         alpha: 1,
       },
     },
     danger: {
       muted: {
+        $value: '{base.color.red.3}',
+        $type: 'color',
         alpha: 1,
       },
     },
     done: {
       muted: {
+        $value: '{base.color.purple.3}',
+        $type: 'color',
         alpha: 1,
       },
     },
     sponsors: {
       muted: {
-        alpha: 1,
-      },
-    },
-    closed: {
-      muted: {
+        $value: '{base.color.pink.3}',
+        $type: 'color',
         alpha: 1,
       },
     },
     upsell: {
       muted: {
+        $value: '{borderColor.done.muted}',
+        $type: 'color',
+        alpha: 1,
+      },
+    },
+    closed: {
+      muted: {
+        $value: '{borderColor.danger.muted}',
+        $type: 'color',
         alpha: 1,
       },
     },
