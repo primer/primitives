@@ -1,10 +1,10 @@
 {
   "compilerOptions": {
     "jsx": "react",
-    "target": "ES2016",
-    "module": "commonjs",
+    "target": "ES2022",
+    "module": "Node16",
     "lib": ["ESNext", "dom"],
-    "moduleResolution": "node",
+    "moduleResolution": "Node16",
     "esModuleInterop": true,
     "strict": true,
     "noImplicitAny": true,

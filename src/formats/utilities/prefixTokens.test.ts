@@ -1,4 +1,4 @@
-import {getMockToken} from '../../test-utilities'
+import {getMockToken} from '../../test-utilities/index.js'
 import {prefixTokens} from './prefixTokens'
 
 describe('Utilities: prefixTokens', () => {

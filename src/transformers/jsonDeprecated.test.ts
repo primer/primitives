@@ -1,5 +1,5 @@
-import {getMockToken} from '../test-utilities'
-import {jsonDeprecated} from './jsonDeprecated'
+import {getMockToken} from '../test-utilities/index.js'
+import {jsonDeprecated} from './jsonDeprecated.js'
 
 describe('Transformer: jsonDeprecated', () => {
   it('Replaces token value with `null` if deprecated is set to `true`', () => {
@@ -8,7 +8,7 @@ describe('Transformer: jsonDeprecated', () => {
       deprecated: true,
     })
     const expectedOutput = null
-    expect(jsonDeprecated.transformer(item, {})).toStrictEqual(expectedOutput)
+    expect(jsonDeprecated.transform(item, {}, {})).toStrictEqual(expectedOutput)
   })
 
   it('Replaces token value with deprecated value if deprecated is a `string`', () => {
@@ -17,7 +17,7 @@ describe('Transformer: jsonDeprecated', () => {
       deprecated: `token.pumpkin`,
     })
     const expectedOutput = 'token.pumpkin'
-    expect(jsonDeprecated.transformer(item, {})).toStrictEqual(expectedOutput)
+    expect(jsonDeprecated.transform(item, {}, {})).toStrictEqual(expectedOutput)
   })
 
   it('Replaces token value with deprecated value if deprecated is a `string` and removes {}', () => {
@@ -26,6 +26,6 @@ describe('Transformer: jsonDeprecated', () => {
       deprecated: `{token.pumpkin}`,
     })
     const expectedOutput = 'token.pumpkin'
-    expect(jsonDeprecated.transformer(item, {})).toStrictEqual(expectedOutput)
+    expect(jsonDeprecated.transform(item, {}, {})).toStrictEqual(expectedOutput)
   })
 })

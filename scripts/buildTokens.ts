@@ -1,11 +1,14 @@
-import type StyleDictionary from 'style-dictionary'
-import {PrimerStyleDictionary} from '../src/PrimerStyleDictionary'
-import {copyFromDir} from '../src/utilities'
-import {deprecatedJson, css, docJson, fallbacks, styleLint} from '../src/platforms'
-import type {ConfigGeneratorOptions, StyleDictionaryConfigGenerator} from '../src/types/StyleDictionaryConfigGenerator'
-import type {TokenBuildInput} from '../src/types/TokenBuildInput'
+import type {Config} from 'style-dictionary/types'
+import {PrimerStyleDictionary} from '../src/PrimerStyleDictionary.js'
+import {copyFromDir} from '../src/utilities/index.js'
+import {deprecatedJson, css, docJson, fallbacks, styleLint} from '../src/platforms/index.js'
+import type {
+  ConfigGeneratorOptions,
+  StyleDictionaryConfigGenerator,
+} from '../src/types/StyleDictionaryConfigGenerator.js'
+import type {TokenBuildInput} from '../src/types/TokenBuildInput.js'
 import glob from 'fast-glob'
-import {themes} from './themes.config'
+import {themes} from './themes.config.js'
 import fs from 'fs'
 
 /**
@@ -22,7 +25,7 @@ const getStyleDictionaryConfig: StyleDictionaryConfigGenerator = (
   include,
   options,
   platforms = {},
-): StyleDictionary.Config => ({
+): Config => ({
   source, // build the special formats
   include,
   platforms: {

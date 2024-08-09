@@ -1,5 +1,5 @@
-import {getMockToken} from '../test-utilities'
-import {namePathToCamelCase} from './namePathToCamelCase'
+import {getMockToken} from '../test-utilities/index.js'
+import {namePathToCamelCase} from './namePathToCamelCase.js'
 
 describe('Transformer: namePathToCamelCase', () => {
   it('converts path elements to dot.notation and ignores name proprty', () => {
@@ -23,7 +23,7 @@ describe('Transformer: namePathToCamelCase', () => {
     ]
     const expectedOutput = ['pathToToken', 'PATHTOToken', 'pathToToken', 'pathtoToken']
 
-    expect(input.map(item => namePathToCamelCase.transformer(item, {}))).toStrictEqual(expectedOutput)
+    expect(input.map(item => namePathToCamelCase.transform(item, {}, {}))).toStrictEqual(expectedOutput)
   })
 
   it('replaces spaces, `-`, `_` and `+` within path elements and joins with camelCase, but does not change the rest of the word', () => {
@@ -42,7 +42,7 @@ describe('Transformer: namePathToCamelCase', () => {
       }),
     ]
     const expectedOutput = ['startPathToToken', 'startPATHTOToken', 'startPathToToken']
-    expect(input.map(item => namePathToCamelCase.transformer(item, {}))).toStrictEqual(expectedOutput)
+    expect(input.map(item => namePathToCamelCase.transform(item, {}, {}))).toStrictEqual(expectedOutput)
   })
 
   it('removes `@`, so we can use it for the default hack', () => {
@@ -57,7 +57,7 @@ describe('Transformer: namePathToCamelCase', () => {
       }),
     ]
     const expectedOutput = ['fgColorAccent', 'fgColorMuted']
-    expect(input.map(item => namePathToCamelCase.transformer(item, {}))).toStrictEqual(expectedOutput)
+    expect(input.map(item => namePathToCamelCase.transform(item, {}, {}))).toStrictEqual(expectedOutput)
   })
 
   it('adds prefix to token name', () => {
@@ -69,6 +69,6 @@ describe('Transformer: namePathToCamelCase', () => {
       path: ['start', 'pathTo', 'token'],
     })
     const expectedOutput = 'PRIMERStartPathToToken'
-    expect(namePathToCamelCase.transformer(input, platform)).toStrictEqual(expectedOutput)
+    expect(namePathToCamelCase.transform(input, platform, {})).toStrictEqual(expectedOutput)
   })
 })

@@ -1,10 +1,10 @@
 import fs from 'fs'
-import {PrimerStyleDictionary} from '../src/PrimerStyleDictionary'
-import {themes} from './themes.config'
-import {figma} from '../src/platforms'
-import type {ConfigGeneratorOptions} from '../src/types/StyleDictionaryConfigGenerator'
+import {PrimerStyleDictionary} from '../src/PrimerStyleDictionary.js'
+import {themes} from './themes.config.js'
+import {figma} from '../src/platforms/index.js'
+import type {ConfigGeneratorOptions} from '../src/types/StyleDictionaryConfigGenerator.js'
 
-const buildFigma = (buildOptions: ConfigGeneratorOptions): void => {
+const buildFigma = async (buildOptions: ConfigGeneratorOptions): Promise<void> => {
   /** -----------------------------------
    * Colors
    * ----------------------------------- */
@@ -33,17 +33,19 @@ const buildFigma = (buildOptions: ConfigGeneratorOptions): void => {
   ]
 
   for (const {name, source} of baseScales) {
-    PrimerStyleDictionary.extend({
+    const extended = await PrimerStyleDictionary.extend({
       source,
       platforms: {
         figma: figma(`figma/scales/${name}.json`, buildOptions.prefix, buildOptions.buildPath),
       },
-    }).buildAllPlatforms()
+    })
+    // build
+    extended.buildAllPlatforms()
   }
   //
   for (const {filename, source, include} of themes) {
     // build functional scales
-    PrimerStyleDictionary.extend({
+    const extended = await PrimerStyleDictionary.extend({
       source,
       include,
       platforms: {
@@ -51,7 +53,9 @@ const buildFigma = (buildOptions: ConfigGeneratorOptions): void => {
           mode: filename.replaceAll('-', ' '),
         }),
       },
-    }).buildAllPlatforms()
+    })
+
+    extended.buildAllPlatforms()
   }
   /** -----------------------------------
    * Size tokens
@@ -65,25 +69,29 @@ const buildFigma = (buildOptions: ConfigGeneratorOptions): void => {
     // 'src/tokens/functional/size/size-coarse.json',
   ]
   //
-  PrimerStyleDictionary.extend({
+  const sizeExtended = await PrimerStyleDictionary.extend({
     source: sizeFiles,
     include: sizeFiles,
     platforms: {
       figma: figma(`figma/dimension/dimension.json`, buildOptions.prefix, buildOptions.buildPath),
     },
-  }).buildAllPlatforms()
+  })
+
+  sizeExtended.buildAllPlatforms()
 
   /** -----------------------------------
    * Typography
    * ----------------------------------- */
   //
-  PrimerStyleDictionary.extend({
+  const typeExtended = await PrimerStyleDictionary.extend({
     source: ['src/tokens/base/typography/typography.json', 'src/tokens/functional/typography/typography.json'],
     include: [],
     platforms: {
       figma: figma(`figma/typography/typography.json`, buildOptions.prefix, buildOptions.buildPath),
     },
-  }).buildAllPlatforms()
+  })
+
+  typeExtended.buildAllPlatforms()
 
   /** -----------------------------------
    * Shadow tokens
@@ -198,13 +206,15 @@ const buildFigma = (buildOptions: ConfigGeneratorOptions): void => {
   ]
   //
   for (const {name, source, include, mode} of shadowFiles) {
-    PrimerStyleDictionary.extend({
+    const extended = await PrimerStyleDictionary.extend({
       source,
       include,
       platforms: {
         figma: figma(`figma/shadows/${name}.json`, buildOptions.prefix, buildOptions.buildPath, {mode}),
       },
-    }).buildAllPlatforms()
+    })
+
+    extended.buildAllPlatforms()
   }
   /** -----------------------------------
    * Create list of files
@@ -272,7 +282,7 @@ const buildFigma = (buildOptions: ConfigGeneratorOptions): void => {
 }
 
 try {
-  buildFigma({
+  await buildFigma({
     buildPath: 'dist/',
   })
 } catch (e) {

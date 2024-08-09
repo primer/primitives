@@ -1,15 +1,15 @@
-import {cssAdvanced} from './cssAdvanced'
-import {getMockDictionary, getMockFormatterArguments, getMockToken} from '../test-utilities'
-import syncPrettier from '@prettier/sync'
+import {cssAdvanced} from './cssAdvanced.js'
+import {getMockDictionary, getMockFormatterArguments, getMockToken} from '../test-utilities/index.js'
+import {format} from 'prettier'
 import type {TransformedToken} from 'style-dictionary'
 
 describe('Format: tokens nested in media query', () => {
   /**
    * Test cases for formatting tokens with simple css variables
    */
-  it('Formats tokens as css variables with default :root selector', () => {
+  it('Formats tokens as css variables with default :root selector', async () => {
     const input = getMockFormatterArguments()
-    const expectedOutput = syncPrettier.format(
+    const expectedOutput = await format(
       `:root {
       --red: transformedValue;
     }`,
@@ -18,10 +18,10 @@ describe('Format: tokens nested in media query', () => {
         printWidth: 500,
       },
     )
-    expect(cssAdvanced(input)).toStrictEqual(expectedOutput)
+    expect(await cssAdvanced(input)).toStrictEqual(expectedOutput)
   })
 
-  it('Formats tokens with custom selectors', () => {
+  it('Formats tokens with custom selectors', async () => {
     const input = getMockFormatterArguments({
       file: {
         destination: 'test.css',
@@ -31,19 +31,19 @@ describe('Format: tokens nested in media query', () => {
         },
       },
     })
-    const expectedOutput = syncPrettier.format(
+    const expectedOutput = await format(
       ` [data-color-mode="dark"] {
             --red: transformedValue;
     }`,
       {parser: 'css', printWidth: 500},
     )
-    expect(cssAdvanced(input)).toStrictEqual(expectedOutput)
+    expect(await cssAdvanced(input)).toStrictEqual(expectedOutput)
   })
 
   /**
    * Test cases for formatting using media queries
    */
-  it('Formats all tokens with screen media query and default selector', () => {
+  it('Formats all tokens with screen media query and default selector', async () => {
     const input = getMockFormatterArguments({
       file: {
         destination: 'tokens.ts',
@@ -57,7 +57,7 @@ describe('Format: tokens nested in media query', () => {
         },
       },
     })
-    const expectedOutput = syncPrettier.format(
+    const expectedOutput = await format(
       ` @media screen {
         :root {
           --red: transformedValue;
@@ -65,10 +65,10 @@ describe('Format: tokens nested in media query', () => {
       }`,
       {parser: 'css', printWidth: 500},
     )
-    expect(cssAdvanced(input)).toStrictEqual(expectedOutput)
+    expect(await cssAdvanced(input)).toStrictEqual(expectedOutput)
   })
 
-  it('Formats all tokens with screen media query and custom selector', () => {
+  it('Formats all tokens with screen media query and custom selector', async () => {
     const input = getMockFormatterArguments({
       file: {
         destination: 'tokens.ts',
@@ -83,7 +83,7 @@ describe('Format: tokens nested in media query', () => {
         },
       },
     })
-    const expectedOutput = syncPrettier.format(
+    const expectedOutput = await format(
       ` @media screen {
         [data-color-mode="dark"] {
           --red: transformedValue;
@@ -91,10 +91,10 @@ describe('Format: tokens nested in media query', () => {
       }`,
       {parser: 'css', printWidth: 500},
     )
-    expect(cssAdvanced(input)).toStrictEqual(expectedOutput)
+    expect(await cssAdvanced(input)).toStrictEqual(expectedOutput)
   })
 
-  it('Outputs nothing if no matching media query is found', () => {
+  it('Outputs nothing if no matching media query is found', async () => {
     const input = getMockFormatterArguments({
       file: {
         destination: 'size-coarse.css',
@@ -109,10 +109,10 @@ describe('Format: tokens nested in media query', () => {
         },
       },
     })
-    expect(cssAdvanced(input)).toStrictEqual('')
+    expect(await cssAdvanced(input)).toStrictEqual('')
   })
 
-  it('Formats only matching tokens in defined media query using matcher', () => {
+  it('Formats only matching tokens in defined media query using matcher', async () => {
     const input = getMockFormatterArguments({
       dictionary: getMockDictionary({
         tokens: {
@@ -141,7 +141,7 @@ describe('Format: tokens nested in media query', () => {
         },
       },
     })
-    const expectedOutput = syncPrettier.format(
+    const expectedOutput = await format(
       ` @media (pointer: fine) {
         :root {
           --tokens-subgroup-gap: transformedValue;
@@ -149,12 +149,12 @@ describe('Format: tokens nested in media query', () => {
       }`,
       {parser: 'css', printWidth: 500},
     )
-    expect(cssAdvanced(input)).toStrictEqual(expectedOutput)
+    expect(await cssAdvanced(input)).toStrictEqual(expectedOutput)
   })
   /**
    * Test cases for formatting using selectors
    */
-  it('Formats all tokens with custom selectors', () => {
+  it('Formats all tokens with custom selectors', async () => {
     const input = getMockFormatterArguments({
       file: {
         destination: 'dark.css',
@@ -169,17 +169,17 @@ describe('Format: tokens nested in media query', () => {
         },
       },
     })
-    const expectedOutput = syncPrettier.format(
+    const expectedOutput = await format(
       ` [data-color-mode="dark"][data-dark-theme="dark"],
         [data-color-mode="auto"][data-light-theme="dark"] {
           --red: transformedValue;
     }`,
       {parser: 'css', printWidth: 500},
     )
-    expect(cssAdvanced(input)).toStrictEqual(expectedOutput)
+    expect(await cssAdvanced(input)).toStrictEqual(expectedOutput)
   })
 
-  it('Formats only matching tokens with custom selectors', () => {
+  it('Formats only matching tokens with custom selectors', async () => {
     const input = getMockFormatterArguments({
       dictionary: getMockDictionary({
         tokens: {
@@ -213,18 +213,18 @@ describe('Format: tokens nested in media query', () => {
         },
       },
     })
-    const expectedOutput = syncPrettier.format(
+    const expectedOutput = await format(
       `[data-color-mode="auto"][data-dark-theme="dark"] {
             --tokens-subgroup-gap: transformedValue;
     }`,
       {parser: 'css', printWidth: 500},
     )
-    expect(cssAdvanced(input)).toStrictEqual(expectedOutput)
+    expect(await cssAdvanced(input)).toStrictEqual(expectedOutput)
   })
   /**
    * Test cases for formatting tokens with simple css variables
    */
-  it('Shows comment if option.description is true', () => {
+  it('Shows comment if option.description is true', async () => {
     const input = getMockFormatterArguments({
       dictionary: getMockDictionary({
         tokens: {
@@ -253,7 +253,7 @@ describe('Format: tokens nested in media query', () => {
       },
     })
 
-    const expectedOutput = syncPrettier.format(
+    const expectedOutput = await format(
       ` @media (prefers-color-scheme: light){
         :root {
           --red: transformedValue; /* This is a description */
@@ -261,10 +261,10 @@ describe('Format: tokens nested in media query', () => {
       }`,
       {parser: 'css', printWidth: 500},
     )
-    expect(cssAdvanced(input)).toStrictEqual(expectedOutput)
+    expect(await cssAdvanced(input)).toStrictEqual(expectedOutput)
   })
 
-  it('Hides comment if option.description is false or not set', () => {
+  it('Hides comment if option.description is false or not set', async () => {
     const input = getMockFormatterArguments({
       dictionary: getMockDictionary({
         tokens: {
@@ -319,7 +319,7 @@ describe('Format: tokens nested in media query', () => {
       },
     })
 
-    const expectedOutput = syncPrettier.format(
+    const expectedOutput = await format(
       ` @media (prefers-color-scheme: dark) {
         :root {
           --red: transformedValue;
@@ -327,7 +327,7 @@ describe('Format: tokens nested in media query', () => {
       }`,
       {parser: 'css', printWidth: 500},
     )
-    expect(cssAdvanced(input)).toStrictEqual(expectedOutput)
-    expect(cssAdvanced(inputUnset)).toStrictEqual(expectedOutput)
+    expect(await cssAdvanced(input)).toStrictEqual(expectedOutput)
+    expect(await cssAdvanced(inputUnset)).toStrictEqual(expectedOutput)
   })
 })

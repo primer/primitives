@@ -1,9 +1,6 @@
-import type StyleDictionary from 'style-dictionary'
+import type {PlatformConfig, Transform, TransformedToken} from 'style-dictionary/types'
 
-export const transformNamePathToFigma = (
-  token: StyleDictionary.TransformedToken,
-  options?: StyleDictionary.Platform,
-): string => {
+export const transformNamePathToFigma = (token: TransformedToken, options?: PlatformConfig): string => {
   let pathArray = token.path.filter((part: unknown): part is string => part !== '@')
   if (['fgColor', 'borderColor', 'bgColor'].includes(pathArray[0]) && pathArray.length === 3) {
     pathArray = [pathArray[0], `${pathArray[1]}-${pathArray[2]}`]
@@ -22,7 +19,8 @@ export const transformNamePathToFigma = (
  * @matcher omitted to match all tokens
  * @transformer returns `string`
  */
-export const namePathToFigma: StyleDictionary.Transform = {
+export const namePathToFigma: Transform = {
+  name: 'name/pathToFigma',
   type: `name`,
-  transformer: transformNamePathToFigma,
+  transform: transformNamePathToFigma,
 }

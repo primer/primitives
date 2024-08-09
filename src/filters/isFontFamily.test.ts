@@ -1,5 +1,5 @@
-import {getMockToken} from '../test-utilities'
-import {isFontFamily} from './isFontFamily'
+import {getMockToken} from '../test-utilities/index.js'
+import {isFontFamily} from './isFontFamily.js'
 
 describe('Filter: isFontFamily', () => {
   it('returns true if $type property is `fontFamily`', () => {

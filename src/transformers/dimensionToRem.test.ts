@@ -1,5 +1,5 @@
-import {getMockToken} from '../test-utilities'
-import {dimensionToRem} from './dimensionToRem'
+import {getMockToken} from '../test-utilities/index.js'
+import {dimensionToRem} from './dimensionToRem.js'
 
 describe('Transformer: dimensionToRem', () => {
   it('transforms pixel string tokens to rem', () => {
@@ -9,7 +9,7 @@ describe('Transformer: dimensionToRem', () => {
       }),
     ]
     const expectedOutput = ['1rem']
-    expect(input.map(item => dimensionToRem.transformer(item, {}))).toStrictEqual(expectedOutput)
+    expect(input.map(item => dimensionToRem.transform(item, {}, {}))).toStrictEqual(expectedOutput)
   })
 
   it('transforms number to rem', () => {
@@ -22,7 +22,7 @@ describe('Transformer: dimensionToRem', () => {
       }),
     ]
     const expectedOutput = ['1rem', '1rem']
-    expect(input.map(item => dimensionToRem.transformer(item, {}))).toStrictEqual(expectedOutput)
+    expect(input.map(item => dimensionToRem.transform(item, {}, {}))).toStrictEqual(expectedOutput)
   })
 
   it('transforms rem to rem', () => {
@@ -32,7 +32,7 @@ describe('Transformer: dimensionToRem', () => {
       }),
     ]
     const expectedOutput = ['1rem']
-    expect(input.map(item => dimensionToRem.transformer(item, {}))).toStrictEqual(expectedOutput)
+    expect(input.map(item => dimensionToRem.transform(item, {}, {}))).toStrictEqual(expectedOutput)
   })
 
   it('does not transforms em to rem', () => {
@@ -42,7 +42,7 @@ describe('Transformer: dimensionToRem', () => {
       }),
     ]
     const expectedOutput = ['1em']
-    expect(input.map(item => dimensionToRem.transformer(item, {}))).toStrictEqual(expectedOutput)
+    expect(input.map(item => dimensionToRem.transform(item, {}, {}))).toStrictEqual(expectedOutput)
   })
 
   it('transforms 0 to 0', () => {
@@ -58,7 +58,7 @@ describe('Transformer: dimensionToRem', () => {
       }),
     ]
     const expectedOutput = ['0', '0', '0']
-    expect(input.map(item => dimensionToRem.transformer(item, {}))).toStrictEqual(expectedOutput)
+    expect(input.map(item => dimensionToRem.transform(item, {}, {}))).toStrictEqual(expectedOutput)
   })
 
   it('throws on invalid tokens', () => {
@@ -76,6 +76,6 @@ describe('Transformer: dimensionToRem', () => {
         value: null,
       }),
     ]
-    expect(() => input.map(item => dimensionToRem.transformer(item, {}))).toThrow()
+    expect(() => input.map(item => dimensionToRem.transform(item, {}, {}))).toThrow()
   })
 })

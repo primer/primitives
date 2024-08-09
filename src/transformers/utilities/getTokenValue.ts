@@ -1,7 +1,7 @@
-import type StyleDictionary from 'style-dictionary'
-import {invalidTokenValueError, invalidTokenValuePropertyError} from './invalidTokenError'
+import type {TransformedToken} from 'style-dictionary/types'
+import {invalidTokenValueError, invalidTokenValuePropertyError} from './invalidTokenError.js'
 
-export const getTokenValue = (token: StyleDictionary.TransformedToken, property?: string) => {
+export const getTokenValue = (token: TransformedToken, property?: string) => {
   if (token.value === undefined) {
     throw new invalidTokenValueError(token)
   }
