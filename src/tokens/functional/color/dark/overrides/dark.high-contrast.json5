@@ -70,58 +70,24 @@
       },
     },
     accent: {
-      muted: {
-        $value: '{base.color.blue.5}',
-        $type: 'color',
-        alpha: 0.1,
-      },
       emphasis: {
         $value: '{base.color.blue.9}',
         $type: 'color',
       },
     },
     success: {
-      muted: {
-        $value: '{base.color.green.4}',
-        $type: 'color',
-        alpha: 0.14,
-      },
       emphasis: {
         $value: '{base.color.green.9}',
         $type: 'color',
       },
     },
-    open: {
-      muted: {
-        $value: '{bgColor.success.muted}',
-        $type: 'color',
-        alpha: 0.14,
-      },
-    },
     danger: {
-      muted: {
-        $value: '{base.color.red.4}',
-        $type: 'color',
-        alpha: 0.09,
-      },
       emphasis: {
         $value: '{base.color.red.9}',
         $type: 'color',
       },
     },
-    closed: {
-      muted: {
-        $value: '{bgColor.danger.muted}',
-        $type: 'color',
-        alpha: 0.09,
-      },
-    },
     severe: {
-      muted: {
-        $value: '{base.color.orange.4}',
-        $type: 'color',
-        alpha: 0.088,
-      },
       emphasis: {
         $value: '{base.color.orange.9}',
         $type: 'color',
@@ -134,29 +100,12 @@
       },
     },
     done: {
-      muted: {
-        $value: '{base.color.purple.5}',
-        $type: 'color',
-        alpha: 0.09,
-      },
       emphasis: {
         $value: '{base.color.purple.9}',
         $type: 'color',
       },
     },
-    upsell: {
-      muted: {
-        $value: '{bgColor.done.muted}',
-        $type: 'color',
-        alpha: 0.09,
-      },
-    },
     sponsors: {
-      muted: {
-        $value: '{base.color.pink.5}',
-        $type: 'color',
-        alpha: 0.09,
-      },
       emphasis: {
         $value: '{base.color.pink.9}',
         $type: 'color',
@@ -211,6 +160,20 @@
     attention: {
       muted: {
         $value: '{base.color.yellow.4}',
+        $type: 'color',
+        alpha: 1,
+      },
+    },
+    closed: {
+      muted: {
+        $value: '{borderColor.danger.muted}',
+        $type: 'color',
+        alpha: 1,
+      },
+    },
+    upsell: {
+      muted: {
+          $value: '{borderColor.done.muted}',
         $type: 'color',
         alpha: 1,
       },
