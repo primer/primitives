@@ -171,6 +171,20 @@
         alpha: 1,
       },
     },
+    upsell: {
+      muted: {
+        $value: '{borderColor.done.muted}',
+        $type: 'color',
+        alpha: 1,
+      },
+    },
+    closed: {
+      muted: {
+        $value: '{borderColor.danger.muted}',
+        $type: 'color',
+        alpha: 1,
+      },
+    },
   },
   // patterns
   avatar: {
