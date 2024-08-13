@@ -18,7 +18,7 @@
       $type: 'color',
     },
     neutral: {
-      $value: '{base.color.neutral.10}',
+      $value: '{base.color.neutral.11}',
       $type: 'color',
     },
     accent: {
@@ -83,6 +83,11 @@
       emphasis: {
         $value: '{base.color.neutral.7}',
         $type: 'color',
+      },
+      muted: {
+        $value: '{base.color.neutral.3}',
+        $type: 'color',
+        alpha: 1,
       },
     },
     accent: {

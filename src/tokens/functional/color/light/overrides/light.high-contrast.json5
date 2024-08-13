@@ -14,7 +14,7 @@
       $type: 'color',
     },
     neutral: {
-      $value: '{base.color.neutral.10}',
+      $value: '{base.color.neutral.11}',
       $type: 'color',
     },
     success: {
@@ -65,9 +65,9 @@
         $type: 'color',
       },
       muted: {
-        $value: '{base.color.neutral.8}',
+        $value: '{base.color.neutral.4}',
         $type: 'color',
-        alpha: 0.03,
+        alpha: 1,
       },
     },
     disabled: {
@@ -384,6 +384,20 @@
         $type: 'color',
       },
     },
+    invisible: {
+      fgColor: {
+        hover: {
+          $value: '{base.color.neutral.11}',
+          $type: 'color',
+        },
+      },
+      iconColor: {
+        hover: {
+          $value: '{base.color.neutral.11}',
+          $type: 'color',
+        },
+      }
+    }
   },
   buttonCounter: {
     default: {
