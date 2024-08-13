@@ -751,7 +751,7 @@
     },
     bgColor: {
       muted: {
-        $value: '{base.color.neutral.8}',
+        $value: '{bgColor.neutral.muted}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -761,7 +761,6 @@
             scopes: ['bgColor'],
           },
         },
-        alpha: 0.2,
       },
       emphasis: {
         $value: '{bgColor.neutral.emphasis}',

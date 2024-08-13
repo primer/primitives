@@ -400,8 +400,21 @@
       },
     },
     neutral: {
+      // muted: {
+      //   $value: '{base.color.neutral.4}',
+      //   $type: 'color',
+      //   $extensions: {
+      //     'org.primer.figma': {
+      //       collection: 'mode',
+      //       mode: 'light',
+      //       group: 'semantic',
+      //       scopes: ['bgColor'],
+      //     },
+      //   },
+      //   alpha: 0.7,
+      // },
       muted: {
-        $value: '{base.color.neutral.4}',
+        $value: '{base.color.neutral.8}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -411,7 +424,7 @@
             scopes: ['bgColor'],
           },
         },
-        alpha: 0.7,
+        alpha: 0.12,
       },
       emphasis: {
         $value: '{base.color.neutral.9}',
