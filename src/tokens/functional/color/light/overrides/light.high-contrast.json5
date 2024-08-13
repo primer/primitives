@@ -64,6 +64,11 @@
         $value: '{base.color.neutral.10}',
         $type: 'color',
       },
+      muted: {
+        $value: '{base.color.neutral.8}',
+        $type: 'color',
+        alpha: 0.03,
+      },
     },
     disabled: {
       $value: '{base.color.neutral.4}',
