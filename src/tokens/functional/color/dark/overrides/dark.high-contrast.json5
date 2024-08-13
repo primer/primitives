@@ -29,6 +29,14 @@
         weight: 0.08,
       },
     },
+    success: {
+      $value: '{base.color.green.3}',
+      $type: 'color',
+      mix: {
+        color: '{base.color.green.2}',
+        weight: 0.08,
+      },
+    },
     danger: {
       $value: '{base.color.red.3}',
       $type: 'color',
@@ -48,6 +56,10 @@
     sponsors: {
       $value: '{base.color.pink.3}',
       $type: 'color',
+      mix: {
+        color: '{base.color.pink.2}',
+        weight: 0.08,
+      },
     },
   },
   bgColor: {
