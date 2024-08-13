@@ -26,7 +26,7 @@
       $type: 'color',
       mix: {
         color: '{base.color.blue.2}',
-        weight: 0.05,
+        weight: 0.08,
       },
     },
     danger: {
@@ -40,6 +40,10 @@
     done: {
       $value: '{base.color.purple.3}',
       $type: 'color',
+      mix: {
+        color: '{base.color.purple.2}',
+        weight: 0.5,
+      },
     },
     sponsors: {
       $value: '{base.color.pink.3}',
