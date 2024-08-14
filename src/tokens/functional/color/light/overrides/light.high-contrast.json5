@@ -14,7 +14,7 @@
       $type: 'color',
     },
     neutral: {
-      $value: '{base.color.neutral.10}',
+      $value: '{base.color.neutral.11}',
       $type: 'color',
     },
     success: {
@@ -63,6 +63,11 @@
       emphasis: {
         $value: '{base.color.neutral.10}',
         $type: 'color',
+      },
+      muted: {
+        $value: '{base.color.neutral.4}',
+        $type: 'color',
+        alpha: 1,
       },
     },
     disabled: {
@@ -204,6 +209,21 @@
     borderColor: {
       $value: '{borderColor.default}',
       $type: 'color',
+    },
+    bgColor: {
+      muted: {
+        $value: '{bgColor.neutral.muted}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'light',
+            group: 'component',
+            scopes: ['bgColor'],
+          },
+        },
+        alpha: 1,
+      },
     },
   },
   control: {
@@ -364,6 +384,20 @@
         $type: 'color',
       },
     },
+    invisible: {
+      fgColor: {
+        hover: {
+          $value: '{base.color.neutral.11}',
+          $type: 'color',
+        },
+      },
+      iconColor: {
+        hover: {
+          $value: '{base.color.neutral.11}',
+          $type: 'color',
+        },
+      }
+    }
   },
   buttonCounter: {
     default: {

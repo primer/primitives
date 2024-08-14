@@ -749,6 +749,32 @@
         },
       },
     },
+    bgColor: {
+      muted: {
+        $value: '{bgColor.neutral.muted}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'dark',
+            group: 'component',
+            scopes: ['bgColor'],
+          },
+        },
+      },
+      emphasis: {
+        $value: '{bgColor.neutral.emphasis}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'dark',
+            group: 'component',
+            scopes: ['bgColor'],
+          },
+        },
+      }
+    },
   },
   button: {
     default: {
@@ -1572,7 +1598,6 @@
               scopes: ['bgColor'],
             },
           },
-          alpha: 1,
         },
       },
     },

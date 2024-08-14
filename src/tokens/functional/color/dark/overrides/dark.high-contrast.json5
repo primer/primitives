@@ -18,7 +18,7 @@
       $type: 'color',
     },
     neutral: {
-      $value: '{base.color.neutral.10}',
+      $value: '{base.color.neutral.11}',
       $type: 'color',
     },
     accent: {
@@ -26,7 +26,15 @@
       $type: 'color',
       mix: {
         color: '{base.color.blue.2}',
-        weight: 0.05,
+        weight: 0.08,
+      },
+    },
+    success: {
+      $value: '{base.color.green.3}',
+      $type: 'color',
+      mix: {
+        color: '{base.color.green.2}',
+        weight: 0.08,
       },
     },
     danger: {
@@ -40,10 +48,18 @@
     done: {
       $value: '{base.color.purple.3}',
       $type: 'color',
+      mix: {
+        color: '{base.color.purple.2}',
+        weight: 0.5,
+      },
     },
     sponsors: {
       $value: '{base.color.pink.3}',
       $type: 'color',
+      mix: {
+        color: '{base.color.pink.2}',
+        weight: 0.08,
+      },
     },
   },
   bgColor: {
@@ -67,6 +83,11 @@
       emphasis: {
         $value: '{base.color.neutral.7}',
         $type: 'color',
+      },
+      muted: {
+        $value: '{base.color.neutral.3}',
+        $type: 'color',
+        alpha: 1,
       },
     },
     accent: {
@@ -225,6 +246,21 @@
     borderColor: {
       $value: '{borderColor.default}',
       $type: 'color',
+    },
+    bgColor: {
+      muted: {
+        $value: '{bgColor.neutral.muted}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'dark',
+            group: 'component',
+            scopes: ['bgColor'],
+          },
+        },
+        alpha: 1,
+      },
     },
   },
   control: {
