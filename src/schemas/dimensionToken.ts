@@ -20,6 +20,7 @@ export const dimensionToken = baseToken
             'gap',
             'radius',
             'borderColor',
+            'effectFloat',
             'fontSize',
             'letterSpacing',
             'lineHeight',

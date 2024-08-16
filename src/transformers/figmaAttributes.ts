@@ -11,6 +11,9 @@ type FigmaVariableScope =
   | 'SHAPE_FILL'
   | 'TEXT_FILL'
   | 'STROKE_COLOR'
+  | 'STROKE_FLOAT'
+  | 'EFFECT_COLOR'
+  | 'EFFECT_FLOAT'
   | 'OPACITY'
   | 'FONT_FAMILY'
   | 'FONT_STYLE'
@@ -28,7 +31,10 @@ const figmaScopes: Record<string, FigmaVariableScope[]> = {
   gap: ['GAP'],
   bgColor: ['FRAME_FILL', 'SHAPE_FILL'],
   fgColor: ['TEXT_FILL', 'SHAPE_FILL'],
+  effectColor: ['EFFECT_COLOR'],
+  effectFloat: ['EFFECT_FLOAT'],
   borderColor: ['STROKE_COLOR'],
+  borderWidth: ['STROKE_FLOAT'],
   opacity: ['OPACITY'],
   fontFamily: ['FONT_FAMILY'],
   fontStyle: ['FONT_STYLE'],
