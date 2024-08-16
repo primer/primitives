@@ -2,33 +2,17 @@ import {z} from 'zod'
 import {joinFriendly} from '../utilities/joinFriendly'
 import {schemaErrorMessage} from '../utilities/schemaErrorMessage'
 
-export type ValidScope =
-  | 'all'
-  | 'bgColor'
-  | 'fgColor'
-  | 'borderColor'
-  | 'size'
-  | 'gap'
-  | 'radius'
-  | 'effectColor'
-  | 'opacity'
-  | 'fontFamily'
-  | 'fontStyle'
-  | 'fontWeight'
-  | 'fontSize'
-  | 'lineHeight'
-  | 'letterSpacing'
-  | 'paragraphSpacing'
-  | 'paragraphIndent'
-const validScopes: ValidScope[] = [
+const validScopes = [
   'all',
   'bgColor',
   'fgColor',
   'borderColor',
+  'borderWidth',
   'size',
   'gap',
   'radius',
   'effectColor',
+  'effectFloat',
   'opacity',
   'fontFamily',
   'fontStyle',
@@ -38,14 +22,19 @@ const validScopes: ValidScope[] = [
   'letterSpacing',
   'paragraphSpacing',
   'paragraphIndent',
-]
+] as const
+
+export type ValidScope = (typeof validScopes)[number]
 
 export const scopes = (scopeSubset?: ValidScope[]) => {
   const scopeArray = scopeSubset ?? validScopes
   return z.array(z.string()).refine(
     value => value.every(item => scopeArray.includes(item as ValidScope)),
     value => ({
-      message: schemaErrorMessage(`Invalid scope: "${value}"`, `Valid scopes are: ${joinFriendly(scopeArray)}`),
+      message: schemaErrorMessage(
+        `Invalid scope: "${value}"`,
+        `Valid scopes are: ${joinFriendly(scopeArray as string[])}`,
+      ),
     }),
   )
 }

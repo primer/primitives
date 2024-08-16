@@ -42,7 +42,7 @@ export const colorToken = baseToken
             'light tritanopia',
             'dark tritanopia',
           ]).optional(),
-          scopes: scopes(['all', 'bgColor', 'fgColor', 'borderColor']).optional(),
+          scopes: scopes(['all', 'bgColor', 'fgColor', 'borderColor', 'effectColor']).optional(),
         }),
       })
       .optional(),
