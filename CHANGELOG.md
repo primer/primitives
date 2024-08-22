@@ -1,5 +1,11 @@
 # @primer/primitives
 
+## 9.0.1
+
+### Patch Changes
+
+- [#1028](https://github.com/primer/primitives/pull/1028) [`74915a8`](https://github.com/primer/primitives/commit/74915a85b46aad1befcfa99db7ccb3d03d61e9b7) Thanks [@langermank](https://github.com/langermank)! - Bug fix: `invisible` text color `muted` to `default`
+
 ## 9.0.0
 
 ### Major Changes
