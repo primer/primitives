@@ -1359,7 +1359,7 @@
     danger: {
       fgColor: {
         rest: {
-          $value: '{fgColor.danger}',
+          $value: '{base.color.red.4}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -1368,6 +1368,10 @@
               group: 'component (internal)',
               scopes: ['fgColor'],
             },
+          },
+          mix: {
+            color: '{base.color.red.3}',
+            weight: 0.3,
           },
         },
         hover: {
@@ -1410,7 +1414,7 @@
       },
       iconColor: {
         rest: {
-          $value: '{fgColor.danger}',
+          $value: '{button.danger.fgColor.rest}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
