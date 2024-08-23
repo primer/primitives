@@ -436,7 +436,7 @@
     danger: {
       fgColor: {
         rest: {
-          $value: '{base.color.red.3}',
+          $value: '{base.color.red.2}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -444,10 +444,6 @@
               mode: 'light',
               group: 'component (internal)',
               scopes: ['fgColor'],
-              mix: {
-                color: '{base.color.red.2}',
-                weight: 0.5,
-              },
             },
           },
         },
