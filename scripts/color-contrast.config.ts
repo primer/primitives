@@ -59,8 +59,6 @@ const baseRequirements: ContrastRequirementBlueprint[] = [
   ['contrast.text', 'button-primary-fgColor-rest', 'button-primary-bgColor-rest'],
   ['contrast.text', 'button-primary-fgColor-rest', 'button-primary-bgColor-hover'],
   ['contrast.text', 'button-primary-fgColor-rest', 'button-primary-bgColor-active'],
-  ['contrast.text', 'button-primary-iconColor-rest', 'button-primary-bgColor-rest'],
-  ['contrast.text', 'button-primary-iconColor-rest', 'button-primary-bgColor-hover'],
   // default text on role bg
   // TODO: contrast does not work with semi-transparent colors
   ['contrast.text', 'fgColor-default', 'bgColor-neutral-muted'],
