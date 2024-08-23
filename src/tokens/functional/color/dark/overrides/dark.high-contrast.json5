@@ -444,6 +444,10 @@
               mode: 'light',
               group: 'component (internal)',
               scopes: ['fgColor'],
+              mix: {
+                color: '{base.color.red.2}',
+                weight: 0.4,
+              },
             },
           },
         },
