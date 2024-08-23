@@ -1359,7 +1359,7 @@
     danger: {
       fgColor: {
         rest: {
-          $value: '{fgColor.danger}',
+          $value: '{base.color.red.4}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
