@@ -1,5 +1,11 @@
 # @primer/primitives
 
+## 9.0.2
+
+### Patch Changes
+
+- [#1030](https://github.com/primer/primitives/pull/1030) [`9083a0f`](https://github.com/primer/primitives/commit/9083a0fb2ca43210b99bfa50681fbecb634abc59) Thanks [@langermank](https://github.com/langermank)! - Danger button contrast fix + tests
+
 ## 9.0.1
 
 ### Patch Changes
