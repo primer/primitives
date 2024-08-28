@@ -8,16 +8,20 @@
     "esModuleInterop": true,
     "strict": true,
     "noImplicitAny": true,
+    "skipLibCheck": false,
     "typeRoots": ["./src/@types", "./node_modules/", "./node_modules/@types", "types"],
     "types": ["vitest/globals"],
-    "rootDir": "./",
+    "rootDir": "./src",
+    "outDir": "./dist/build",
     "declaration": true,
     "resolveJsonModule": true,
     "baseUrl": ".",
     "paths": {
-      "~/*": ["*"]
+      "~/*": ["*"],
+      // workaround for: https://github.com/vitest-dev/vitest/issues/4567
+      "rollup/parseAst": ["./node_modules/rollup/dist/parseAst"]
     }
   },
-  "include": ["src/", "scripts/", "docs/", "config/", "playwright.config.ts", "e2e", "vitest.config.ts"],
-  "exclude": ["./src/@types"]
+  "include": ["src/**/*.ts"],
+  "exclude": ["./src/@types", "**/*.test.ts", "src/test-utilities/*.ts", "vitest.config.ts"]
 }
