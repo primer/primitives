@@ -1,5 +1,11 @@
 # @primer/primitives
 
+## 9.0.3
+
+### Patch Changes
+
+- [#1033](https://github.com/primer/primitives/pull/1033) [`f9dcc4e`](https://github.com/primer/primitives/commit/f9dcc4eac57af2a890976e05a582f2d302e21b07) Thanks [@langermank](https://github.com/langermank)! - Fix `danger` fgColor in colorblind theme
+
 ## 9.0.2
 
 ### Patch Changes
