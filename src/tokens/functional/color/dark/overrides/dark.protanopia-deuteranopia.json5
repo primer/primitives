@@ -163,6 +163,13 @@
       },
     },
     danger: {
+      fgColor: {
+        rest: {
+          $value: '{fgColor.danger}',
+          $type: 'color',
+        },
+        }
+      },
       bgColor: {
         hover: {
           $value: '{base.color.orange.6}',
