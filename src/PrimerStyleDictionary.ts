@@ -17,6 +17,7 @@ import {
   jsonDeprecated,
   namePathToDotNotation,
   namePathToCamelCase,
+  namePathToPascalCase,
   namePathToKebabCase,
   namePathToSlashNotation,
   namePathToFigma,
@@ -165,6 +166,10 @@ StyleDictionary.registerTransform({
 StyleDictionary.registerTransform({
   name: 'name/pathToCamelCase',
   ...namePathToCamelCase,
+})
+StyleDictionary.registerTransform({
+  name: 'name/pathToPascalCase',
+  ...namePathToPascalCase,
 })
 
 StyleDictionary.registerTransform({
