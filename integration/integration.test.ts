@@ -32,30 +32,120 @@ describe('PrimerStyleDictionary', () => {
           },
         ],
       },
-      json: {
+      commonJs: {
         prefix: 'PREFIX',
-        buildPath: `${basePath}/build/json/`,
+        transforms: [
+          'color/hex',
+          'color/hexMix',
+          'color/hexAlpha',
+          'dimension/rem',
+          'shadow/css',
+          'border/css',
+          'typography/css',
+          'fontFamily/css',
+          'fontWeight/number',
+        ],
+        buildPath: `${basePath}/build/js/`,
         files: [
           {
             options: {
               showFileHeader: false,
             },
-            destination: 'variables.json',
-            format: 'json',
+            destination: 'common.js',
+            format: 'javascript/commonJs',
           },
         ],
       },
-      jsonFlat: {
+      javascriptEsm: {
         prefix: 'PREFIX',
-        buildPath: `${basePath}/build/json/`,
-        transforms: ['name/cti/pascal'],
+        buildPath: `${basePath}/build/js/`,
+        transforms: [
+          'color/hex',
+          'color/hexMix',
+          'color/hexAlpha',
+          'dimension/rem',
+          'shadow/css',
+          'border/css',
+          'typography/css',
+          'fontFamily/css',
+          'fontWeight/number',
+        ],
         files: [
           {
             options: {
               showFileHeader: false,
             },
-            destination: 'flat.json',
-            format: 'json/flat',
+            destination: 'esm.mjs',
+            format: 'javascript/esm',
+          },
+        ],
+      },
+      jsonFigma: {
+        prefix: 'PREFIX',
+        buildPath: `${basePath}/build/json/`,
+        transforms: [
+          'color/rgbaFloat',
+          'name/pathToFigma',
+          'figma/attributes',
+          'fontFamily/figma',
+          'float/pixelUnitless',
+          'dimension/pixelUnitless',
+          'fontWeight/number',
+        ],
+        files: [
+          {
+            options: {
+              showFileHeader: false,
+            },
+            destination: 'figma.json',
+            format: 'json/figma',
+          },
+        ],
+      },
+      jsonNestedPrefixed: {
+        prefix: 'PREFIX',
+        buildPath: `${basePath}/build/json/`,
+        transforms: [
+          'color/hex',
+          'color/hexMix',
+          'color/hexAlpha',
+          'dimension/rem',
+          'shadow/css',
+          'border/css',
+          'typography/css',
+          'fontFamily/css',
+          'fontWeight/number',
+        ],
+        files: [
+          {
+            options: {
+              showFileHeader: false,
+            },
+            destination: 'nested.json',
+            format: 'json/nested-prefixed',
+          },
+        ],
+      },
+      tsDefinition: {
+        prefix: 'PREFIX',
+        buildPath: `${basePath}/build/js/`,
+        transforms: [
+          'color/hex',
+          'color/hexAlpha',
+          'shadow/css',
+          'border/css',
+          'dimension/rem',
+          'typography/css',
+          'fontFamily/css',
+          'fontWeight/number',
+        ],
+        files: [
+          {
+            options: {
+              showFileHeader: false,
+            },
+            destination: 'definitions.d.ts',
+            format: 'typescript/export-definition',
           },
         ],
       },
@@ -68,58 +158,102 @@ describe('PrimerStyleDictionary', () => {
   it('runs css/advanced format', () => {
     const output = fs.readFileSync(`${basePath}/build/css/advanced.css`, 'utf8')
     const expectedOutput = `:root {
-  --prefix-base-color-aqua-blue-500: #2c29ff; /* The primary color for interactive elements. */
-  --prefix-fg-color-link-rest-01: #2c29ff;
+  --PREFIX-base-color-aquaBlue-500: #2c29ff; /* The primary color for interactive elements. */
+  --PREFIX-fgColor-link-rest-01: #2c29ff;
 }
 `
     expect(output).toBe(expectedOutput)
   })
 
-  it('runs baseline json format', () => {
-    const output = fs.readFileSync(`${basePath}/build/json/variables.json`, 'utf8')
+  it('runs commonJs format', () => {
+    const output = fs.readFileSync(`${basePath}/build/js/common.js`, 'utf8')
+    const expectedOutput = `exports.default = {
+  PREFIX: {
+    base: {
+      color: {
+        aquaBlue: {
+          "500": "#2c29ff",
+        },
+      },
+    },
+    fgColor: {
+      "link-rest-01": "#2c29ff",
+    },
+  },
+};
+`
+    expect(output).toBe(expectedOutput)
+  })
+
+  it('runs esm format', () => {
+    const output = fs.readFileSync(`${basePath}/build/js/esm.mjs`, 'utf8')
+    const expectedOutput = `export default {
+  PREFIX: {
+    base: {
+      color: {
+        aquaBlue: {
+          "500": "#2c29ff",
+        },
+      },
+    },
+    fgColor: {
+      "link-rest-01": "#2c29ff",
+    },
+  },
+};
+`
+    expect(output).toBe(expectedOutput)
+  })
+
+  it('runs figma format', () => {
+    const output = fs.readFileSync(`${basePath}/build/json/figma.json`, 'utf8')
+    const expectedOutput = `[
+  {
+    "name": "PREFIX/base/color/aquaBlue/500",
+    "value": {
+      "r": 0.17254901960784313,
+      "g": 0.1607843137254902,
+      "b": 1,
+      "a": 1
+    },
+    "type": "COLOR",
+    "description": "The primary color for interactive elements.",
+    "refId": "PREFIX/base/color/aquaBlue/500",
+    "mode": "default",
+    "scopes": ["ALL_SCOPES"]
+  },
+  {
+    "name": "PREFIX/fgColor/link-rest-01",
+    "value": {
+      "r": 0.17254901960784313,
+      "g": 0.1607843137254902,
+      "b": 1,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "PREFIX/fgColor/link-rest-01",
+    "reference": "PREFIX/base/color/aquaBlue/500",
+    "mode": "default",
+    "scopes": ["ALL_SCOPES"]
+  }
+]
+`
+    expect(output).toBe(expectedOutput)
+  })
+
+  it('runs json-nested-prefixed format', () => {
+    const output = fs.readFileSync(`${basePath}/build/json/nested.json`, 'utf8')
     const expectedOutput = `{
-  "base": {
-    "color": {
-      "aquaBlue": {
-        "500": {
-          "value": "#2C29FF",
-          "$type": "color",
-          "comment": "The primary color for interactive elements.",
-          "filePath": "integration/tokens/base.json5",
-          "isSource": true,
-          "original": {
-            "value": "#2C29FF",
-            "$type": "color",
-            "comment": "The primary color for interactive elements."
-          },
-          "name": "500",
-          "attributes": {},
-          "path": [
-            "base",
-            "color",
-            "aquaBlue",
-            "500"
-          ]
+  "PREFIX": {
+    "base": {
+      "color": {
+        "aquaBlue": {
+          "500": "#2c29ff"
         }
       }
-    }
-  },
-  "fgColor": {
-    "link-rest-01": {
-      "value": "#2C29FF",
-      "$type": "color",
-      "filePath": "integration/tokens/functional.json5",
-      "isSource": true,
-      "original": {
-        "value": "{base.color.aquaBlue.500}",
-        "$type": "color"
-      },
-      "name": "link-rest-01",
-      "attributes": {},
-      "path": [
-        "fgColor",
-        "link-rest-01"
-      ]
+    },
+    "fgColor": {
+      "link-rest-01": "#2c29ff"
     }
   }
 }
@@ -127,12 +261,27 @@ describe('PrimerStyleDictionary', () => {
     expect(output).toBe(expectedOutput)
   })
 
-  it('runs baseline flat json format', () => {
-    const output = fs.readFileSync(`${basePath}/build/json/flat.json`, 'utf8')
-    const expectedOutput = `{
-  "PrefixBaseColorAquaBlue500": "#2C29FF",
-  "PrefixFgColorLinkRest01": "#2C29FF"
-}
+  it('runs ts definition format', () => {
+    const output = fs.readFileSync(`${basePath}/build/js/definitions.d.ts`, 'utf8')
+    const expectedOutput = `/**
+ * @description hex string (6 or 8-digit)
+ */
+type ColorHex = string;
+
+export type tokens = {
+  PREFIX: {
+    base: {
+      color: {
+        aquaBlue: {
+          "500": ColorHex;
+        };
+      };
+    };
+    fgColor: {
+      "link-rest-01": ColorHex;
+    };
+  };
+};
 `
     expect(output).toBe(expectedOutput)
   })
