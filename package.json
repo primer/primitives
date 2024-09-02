@@ -40,7 +40,8 @@
     "prepack": "npm run build",
     "release": "changeset publish",
     "start:storybook": "npm run build && cd docs/storybook && npm run storybook",
-    "test": "vitest run --coverage"
+    "test": "vitest run --coverage",
+    "test:integration": "vitest run -r integration"
   },
   "prettier": "@github/prettier-config",
   "devDependencies": {

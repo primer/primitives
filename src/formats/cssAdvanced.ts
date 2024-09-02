@@ -18,10 +18,9 @@ export const cssAdvanced: StyleDictionary.Formatter = ({
     queries: [],
   },
   file,
-  platform,
 }: FormatterArguments): string => {
   // get options
-  const {outputReferences, descriptions} = options
+  const {outputReferences, formatting} = options
   // selector
   const selector = file.options?.selector !== undefined ? file.options.selector : ':root'
   // query extension property
@@ -34,22 +33,12 @@ export const cssAdvanced: StyleDictionary.Formatter = ({
     },
   ]
   // set formatting
-  const formatting: LineFormatting = {
-    commentStyle: descriptions ? 'long' : 'none',
+  const mergedFormatting: LineFormatting = {
+    commentStyle: 'long',
+    ...formatting,
   }
   // clone dictionary
   const dictionary = {...originalDictionary}
-  // add prefix to tokens
-  if (platform.prefix) {
-    dictionary.allTokens = dictionary.allTokens.map(
-      token =>
-        ({
-          ...token,
-          name: `${platform.prefix}-${token.name}`,
-          path: [platform.prefix, ...token.path],
-        }) as TransformedToken,
-    )
-  }
   // get queries from tokens
   for (const designToken of dictionary.allTokens) {
     const query = designToken.$extensions?.[queryExtProp]
@@ -88,7 +77,12 @@ export const cssAdvanced: StyleDictionary.Formatter = ({
     // early abort if no matches
     if (!filteredDictionary.allTokens.length) continue
     // add tokens into root
-    const css = formattedVariables({format: 'css', dictionary: filteredDictionary, outputReferences, formatting})
+    const css = formattedVariables({
+      format: 'css',
+      dictionary: filteredDictionary,
+      outputReferences,
+      formatting: mergedFormatting,
+    })
     // wrap css
     const cssWithSelector = wrapWithSelector(css, query.selector !== undefined ? query.selector : selector)
     // add css with or without query

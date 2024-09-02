@@ -35,6 +35,7 @@ module.exports = {
   },
   // rules which apply to JS, TS, etc.
   rules: {
+    'import/no-nodejs-modules': 0,
     'filenames/match-regex': 0,
     'eslint-comments/no-unused-disable': 0,
     'react/prop-types': 0,
