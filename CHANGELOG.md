@@ -1,5 +1,19 @@
 # @primer/primitives
 
+## 9.1.0
+
+### Minor Changes
+
+- [#1036](https://github.com/primer/primitives/pull/1036) [`56ba227`](https://github.com/primer/primitives/commit/56ba227a68d1d532067b8fc1c9c4b8d801bf71d6) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Adding a pascalCase trasnformer
+
+- [#1032](https://github.com/primer/primitives/pull/1032) [`a349dc7`](https://github.com/primer/primitives/commit/a349dc705bf87ac978a3a58dd27d70ddae408454) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Move build files from src to dist/build and add complied version
+
+### Patch Changes
+
+- [#1039](https://github.com/primer/primitives/pull/1039) [`2232f12`](https://github.com/primer/primitives/commit/2232f12af81d08eac87a4b298c15c201ba07c829) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Add src/tokens to package output
+
+- [#1038](https://github.com/primer/primitives/pull/1038) [`8430aea`](https://github.com/primer/primitives/commit/8430aea7355782d51053d40a0b2d672b955ed9ef) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Remove engine prop from package.json
+
 ## 9.0.3
 
 ### Patch Changes
