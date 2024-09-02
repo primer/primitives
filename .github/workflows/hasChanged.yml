@@ -12,6 +12,9 @@ on:
       src:
         description: "Boolean value indicating change in src folder"
         value: ${{ jobs.hasChanged.outputs.src }}
+      buildConfig:
+        description: "Boolean value indicating changes of the build configuration in src folder"
+        value: ${{ jobs.hasChanged.outputs.buildConfig }}
       scripts:
         description: "Boolean value indicating change in scripts folder"
         value: ${{ jobs.hasChanged.outputs.scripts }}
@@ -35,6 +38,7 @@ jobs:
       outputAffected: ${{ steps.filter.outputs.outputAffected }}
       tokens: ${{ steps.filter.outputs.tokens }}
       src: ${{ steps.filter.outputs.src }}
+      buildConfig: ${{ steps.filter.outputs.buildConfig }}
       scripts: ${{ steps.filter.outputs.scripts }}
       buildScripts: ${{ steps.filter.outputs.buildScripts }}
       dependencies: ${{ steps.filter.outputs.dependencies }}
@@ -53,6 +57,8 @@ jobs:
             - 'src/**/**.ts'
             - 'src/**/**.json'
             - 'src/**/**.json5'
+          buildConfig:
+            - 'src/**/**.ts'
           scripts:
             - 'scripts/**'
           buildScripts:

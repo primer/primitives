@@ -1,0 +1,33 @@
+name: Testing custom transforms, formats, etc. for Style Dictionary
+
+on:
+  pull_request:
+    branches-ignore:
+      - 'changeset-release/**'
+  workflow_dispatch:
+
+jobs:
+  changes:
+    uses: ./.github/workflows/hasChanged.yml
+
+  build:
+    needs: changes
+    if: needs.changes.outputs.buildConfig == 'true' || github.event_name == 'workflow_dispatch'
+    name: Test if custom transforms, formats, etc. are working
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm i --no-audit --no-fund --ignore-scripts
+
+      - name: Run test
+        run: |
+          npm run test:integration
