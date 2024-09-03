@@ -167,7 +167,7 @@ describe('PrimerStyleDictionary', () => {
 
   it('runs commonJs format', () => {
     const output = fs.readFileSync(`${basePath}/build/js/common.js`, 'utf8')
-    const expectedOutput = `exports.default = {
+    const expectedOutput = `module.exports = {
   PREFIX: {
     base: {
       color: {

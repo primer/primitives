@@ -15,7 +15,7 @@ export const javascriptCommonJs: StyleDictionary.Formatter = ({dictionary, file,
   // add prefix if defined
   const tokens = prefixTokens(dictionary.tokens, platform)
   // add file header and convert output
-  const output = `${fileHeader({file})}exports.default = ${JSON.stringify(jsonToNestedValue(tokens), null, 2)}\n`
+  const output = `${fileHeader({file})}module.exports = ${JSON.stringify(jsonToNestedValue(tokens), null, 2)}\n`
   // return prettified
   return syncPrettier.format(output, {parser: 'typescript', printWidth: 500})
 }
