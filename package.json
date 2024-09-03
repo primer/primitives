@@ -44,6 +44,9 @@
     "test:integration": "vitest run -r integration"
   },
   "prettier": "@github/prettier-config",
+  "dependencies": {
+    "prettier": "3.3"
+  },
   "devDependencies": {
     "@actions/github": "^6.0.0",
     "@changesets/changelog-github": "^0.5.0",
@@ -70,7 +73,6 @@
     "eslint-plugin-storybook": "^0.8.0",
     "json5": "^2.2.1",
     "markdown-table-ts": "^1.0.3",
-    "prettier": "3.3",
     "style-dictionary": "^3.9.2",
     "tsx": "^4.16.2",
     "typescript": "5.5",
