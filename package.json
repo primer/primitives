@@ -45,7 +45,8 @@
   },
   "prettier": "@github/prettier-config",
   "dependencies": {
-    "prettier": "3.3"
+    "prettier": "3.3",
+    "@prettier/sync": "^0.5.2"
   },
   "devDependencies": {
     "@actions/github": "^6.0.0",
@@ -53,7 +54,6 @@
     "@changesets/cli": "^2.27.7",
     "@github/prettier-config": "^0.0.6",
     "@playwright/test": "^1.45.1",
-    "@prettier/sync": "^0.5.2",
     "@types/node": "^20.14.9",
     "@typescript-eslint/eslint-plugin": "^7.15.0",
     "@typescript-eslint/parser": "^7.15.0",
