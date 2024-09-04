@@ -130,7 +130,7 @@ Code example
 #### Token names and @-hack
 
 Token names have to be in camelCase or kebab-case and may only include letters, numbers and `-`. This is enforced by the token validation (`npm run lint:tokens`).
-The only acception is the `@`-hack. This is used when you want to have a default value and sub-values, e.g. `bgColor.accent` and `bgColor.accent.muted`.
+The only exception is the `@`-hack. This is used when you want to have a default value and sub-values, e.g. `bgColor.accent` and `bgColor.accent.muted`.
 In this case you can create the follwing structure. The `@` will be removed from the name and act as the default value.
 
 ```json5
