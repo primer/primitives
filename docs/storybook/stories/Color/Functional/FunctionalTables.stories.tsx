@@ -45,7 +45,7 @@ export const Foreground = () => {
             field: 'name',
             rowHeader: true,
             renderCell: row => {
-              return <InlineCode value={row.name} copyClipboard />
+              return <InlineCode value={row.name} copyClipboard cssVar />
             },
           },
           {
@@ -91,7 +91,7 @@ export const Background = () => {
             field: 'name',
             rowHeader: true,
             renderCell: row => {
-              return <InlineCode value={row.name} copyClipboard />
+              return <InlineCode value={row.name} copyClipboard cssVar />
             },
           },
           {
@@ -137,7 +137,7 @@ export const Border = () => {
             field: 'name',
             rowHeader: true,
             renderCell: row => {
-              return <InlineCode value={row.name} copyClipboard />
+              return <InlineCode value={row.name} copyClipboard cssVar />
             },
           },
           {
@@ -183,7 +183,7 @@ export const Shadow = () => {
             field: 'name',
             rowHeader: true,
             renderCell: row => {
-              return <InlineCode value={row.name} copyClipboard />
+              return <InlineCode value={row.name} copyClipboard cssVar />
             },
           },
           {

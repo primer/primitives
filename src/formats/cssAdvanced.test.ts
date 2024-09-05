@@ -224,7 +224,7 @@ describe('Format: tokens nested in media query', () => {
   /**
    * Test cases for formatting tokens with simple css variables
    */
-  it('Shows comment if option.description is true', async () => {
+  it('Shows comment if option.formatting.commentStyle is long or not set', async () => {
     const input = getMockFormatterArguments({
       dictionary: getMockDictionary({
         tokens: {
@@ -238,7 +238,9 @@ describe('Format: tokens nested in media query', () => {
         },
       }),
       options: {
-        descriptions: true,
+        formatting: {
+          commentStyle: 'long',
+        },
       },
       file: {
         destination: 'size-fine.css',
@@ -247,46 +249,6 @@ describe('Format: tokens nested in media query', () => {
           queries: [
             {
               query: '@media (prefers-color-scheme: light)',
-            },
-          ],
-        },
-      },
-    })
-
-    const expectedOutput = await format(
-      ` @media (prefers-color-scheme: light){
-        :root {
-          --red: transformedValue; /* This is a description */
-        }
-      }`,
-      {parser: 'css', printWidth: 500},
-    )
-    expect(await cssAdvanced(input)).toStrictEqual(expectedOutput)
-  })
-
-  it('Hides comment if option.description is false or not set', async () => {
-    const input = getMockFormatterArguments({
-      dictionary: getMockDictionary({
-        tokens: {
-          subgroup: {
-            red: getMockToken({
-              name: 'red',
-              value: 'transformedValue',
-              comment: 'This is a description',
-            }),
-          },
-        },
-      }),
-      options: {
-        descriptions: false,
-      },
-      file: {
-        destination: 'size-fine.css',
-        options: {
-          showFileHeader: false,
-          queries: [
-            {
-              query: '@media (prefers-color-scheme: dark)',
             },
           ],
         },
@@ -306,6 +268,49 @@ describe('Format: tokens nested in media query', () => {
         },
       }),
       options: {}, // description not set
+      file: {
+        destination: 'size-fine.css',
+        options: {
+          showFileHeader: false,
+          queries: [
+            {
+              query: '@media (prefers-color-scheme: light)',
+            },
+          ],
+        },
+      },
+    })
+
+    const expectedOutput = syncPrettier.format(
+      ` @media (prefers-color-scheme: light){
+        :root {
+          --red: transformedValue; /* This is a description */
+        }
+      }`,
+      {parser: 'css', printWidth: 500},
+    )
+    expect(await cssAdvanced(input)).toStrictEqual(expectedOutput)
+    expect(await cssAdvanced(inputUnset)).toStrictEqual(expectedOutput)
+  })
+
+  it('Hides comment if option.formatting.commentStle is set to none', async () => {
+    const input = getMockFormatterArguments({
+      dictionary: getMockDictionary({
+        tokens: {
+          subgroup: {
+            red: getMockToken({
+              name: 'red',
+              value: 'transformedValue',
+              comment: 'This is a description',
+            }),
+          },
+        },
+      }),
+      options: {
+        formatting: {
+          commentStyle: 'none',
+        },
+      },
       file: {
         destination: 'size-fine.css',
         options: {

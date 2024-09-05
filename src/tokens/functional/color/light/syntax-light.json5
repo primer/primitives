@@ -2,7 +2,7 @@
   color: {
     ansi: {
       black: {
-        $value: '{base.color.neutral.9}',
+        $value: '{base.color.neutral.13}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -13,7 +13,7 @@
         },
       },
       'black-bright': {
-        $value: '{base.color.neutral.6}',
+        $value: '{base.color.neutral.11}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -24,7 +24,7 @@
         },
       },
       white: {
-        $value: '{base.color.neutral.5}',
+        $value: '{base.color.neutral.9}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -35,7 +35,7 @@
         },
       },
       'white-bright': {
-        $value: '{base.color.neutral.4}',
+        $value: '{base.color.neutral.8}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -46,7 +46,7 @@
         },
       },
       gray: {
-        $value: '{base.color.neutral.5}',
+        $value: '{base.color.neutral.9}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -192,7 +192,7 @@
     prettylights: {
       syntax: {
         comment: {
-          $value: '{base.color.neutral.6}',
+          $value: '{base.color.neutral.9}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -238,7 +238,7 @@
         storage: {
           modifier: {
             import: {
-              $value: '{base.color.neutral.9}',
+              $value: '{base.color.neutral.13}',
               $type: 'color',
               $extensions: {
                 'org.primer.figma': {
@@ -307,7 +307,7 @@
             },
           },
           angle: {
-            $value: '{base.color.neutral.6}',
+            $value: '{base.color.neutral.9}',
             $type: 'color',
             $extensions: {
               'org.primer.figma': {
@@ -321,7 +321,7 @@
         invalid: {
           illegal: {
             text: {
-              $value: '{base.color.neutral.0}',
+              $value: '{base.color.neutral.1}',
               $type: 'color',
               $extensions: {
                 'org.primer.figma': {
@@ -347,7 +347,7 @@
         carriage: {
           return: {
             text: {
-              $value: '{base.color.neutral.0}',
+              $value: '{base.color.neutral.1}',
               $type: 'color',
               $extensions: {
                 'org.primer.figma': {
@@ -405,7 +405,7 @@
             },
           },
           italic: {
-            $value: '{base.color.neutral.9}',
+            $value: '{base.color.neutral.13}',
             $type: 'color',
             $extensions: {
               'org.primer.figma': {
@@ -416,7 +416,7 @@
             },
           },
           bold: {
-            $value: '{base.color.neutral.9}',
+            $value: '{base.color.neutral.13}',
             $type: 'color',
             $extensions: {
               'org.primer.figma': {
@@ -500,7 +500,7 @@
           },
           ignored: {
             text: {
-              $value: '{base.color.neutral.1}',
+              $value: '{base.color.neutral.6}',
               $type: 'color',
               $extensions: {
                 'org.primer.figma': {
@@ -541,7 +541,7 @@
         sublimelinter: {
           gutter: {
             mark: {
-              $value: '{base.color.neutral.4}',
+              $value: '{base.color.neutral.8}',
               $type: 'color',
               $extensions: {
                 'org.primer.figma': {

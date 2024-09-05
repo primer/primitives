@@ -8,7 +8,7 @@
     "esModuleInterop": true,
     "strict": true,
     "noImplicitAny": true,
-    "typeRoots": ["./src/@types", "./node_modules/", "./node_modules/@types", "types", "config/types/"],
+    "typeRoots": ["./src/@types", "./node_modules/", "./node_modules/@types", "types"],
     "types": ["vitest/globals"],
     "rootDir": "./",
     "declaration": true,
@@ -18,6 +18,6 @@
       "~/*": ["*"]
     }
   },
-  "include": ["src/", "scripts/", "docs/", "config/", "playwright.config.ts", "e2e", "vitest.config.ts"],
+  "include": ["src/", "scripts/", "docs/", "config/", "playwright.config.ts", "e2e", "integration", "vitest.config.ts"],
   "exclude": ["./src/@types"]
 }

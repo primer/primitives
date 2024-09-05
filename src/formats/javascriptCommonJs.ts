@@ -13,7 +13,8 @@ export const javascriptCommonJs: FormatFn = async ({dictionary, file, platform}:
   // add prefix if defined
   const tokens = prefixTokens(dictionary.tokens, platform)
   // add file header and convert output
-  const output = `${await fileHeader({file})}exports.default = ${JSON.stringify(jsonToNestedValue(tokens), null, 2)}\n`
+  const output = `${await fileHeader({file})}module.exports = ${JSON.stringify(jsonToNestedValue(tokens), null, 2)}\n`
+
   // return prettified
   return format(output, {parser: 'typescript', printWidth: 500})
 }

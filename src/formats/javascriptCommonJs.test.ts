@@ -11,7 +11,7 @@ describe('Format: CommonJs', () => {
     })
 
     const expectedOutput = await format(
-      `exports.default = {
+      `module.exports = {
       test: {
         tokens: {
           subgroup: {
@@ -28,8 +28,9 @@ describe('Format: CommonJs', () => {
 
   it('Formats tokens without prefix', async () => {
     const input = getMockFormatterArguments()
+
     const expectedOutput = await format(
-      `exports.default = {
+      `module.exports = {
       tokens: {
         subgroup: {
           red: "transformedValue",

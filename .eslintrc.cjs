@@ -15,7 +15,15 @@ module.exports = {
     'plugin:github/browser',
     'prettier',
   ],
-  ignorePatterns: ['node_modules', 'coverage/**/*', 'docs', 'dist/**/*', 'CHANGELOG.md', 'src/@types/'],
+  ignorePatterns: [
+    'node_modules',
+    'coverage/**/*',
+    'docs',
+    'dist/**/*',
+    'integration/build/**/*',
+    'CHANGELOG.md',
+    'src/@types/',
+  ],
   globals: {
     __DEV__: 'readonly',
   },
@@ -35,6 +43,7 @@ module.exports = {
   },
   // rules which apply to JS, TS, etc.
   rules: {
+    'import/no-nodejs-modules': 0,
     'filenames/match-regex': 0,
     'eslint-comments/no-unused-disable': 0,
     'react/prop-types': 0,

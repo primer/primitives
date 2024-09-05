@@ -1,15 +1,10 @@
 {
   "name": "@primer/primitives",
-  "version": "8.2.3",
+  "version": "9.1.0",
   "description": "Typography, spacing, and color primitives for Primer design system",
-  "type": "module",
-  "engines": {
-    "node": ">=18.18.0 <18.19.0"
-  },
   "files": [
     "dist",
-    "src/**/*",
-    "!src/**/*.test.ts"
+    "src/tokens"
   ],
   "repository": "https://github.com/primer/primitives",
   "keywords": [
@@ -27,10 +22,11 @@
   },
   "homepage": "https://github.com/primer/primitives#readme",
   "scripts": {
-    "build": "npm run clean && npm run build:v8 && npm run build:fallbacks && npm run build:figma",
+    "build": "npm run clean && npm run build:v8 && npm run build:fallbacks && npm run build:figma && npm run build:config",
     "build:v8": "tsx ./scripts/buildTokens.ts",
     "build:fallbacks": "tsx ./scripts/buildFallbacks.ts",
     "build:figma": "tsx scripts/buildFigma.ts",
+    "build:config": "tsc -p buildConfig.tsconfig.jsonc",
     "clean": "rm -rf dist",
     "tokenJson:check": "tsx scripts/diffThemes.ts && tsx scripts/diffTokenProps.ts",
     "contrast:check": "tsx scripts/color-contrast.ts",
@@ -44,16 +40,21 @@
     "prepack": "npm run build",
     "release": "changeset publish",
     "start:storybook": "npm run build && cd docs/storybook && npm run storybook",
-    "test": "vitest run --coverage"
+    "test": "npm run test:unit && npm run test:integration",
+    "test:unit": "vitest run --coverage",
+    "test:integration": "vitest run -r integration"
   },
   "prettier": "@github/prettier-config",
+  "dependencies": {
+    "prettier": "3.3",
+    "@prettier/sync": "^0.5.2"
+  },
   "devDependencies": {
     "@actions/github": "^6.0.0",
     "@changesets/changelog-github": "^0.5.0",
     "@changesets/cli": "^2.27.7",
     "@github/prettier-config": "^0.0.6",
     "@playwright/test": "^1.45.2",
-    "@prettier/sync": "^0.5.2",
     "@types/node": "^20.14.11",
     "@typescript-eslint/eslint-plugin": "^7.15.0",
     "@typescript-eslint/parser": "^7.15.0",
@@ -73,7 +74,6 @@
     "eslint-plugin-storybook": "^0.8.0",
     "json5": "^2.2.1",
     "markdown-table-ts": "^1.0.3",
-    "prettier": "3.3",
     "style-dictionary": "^4.0.1",
     "tsx": "^4.16.2",
     "typescript": "5.5",

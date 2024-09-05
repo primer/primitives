@@ -16,10 +16,9 @@ export const cssAdvanced: FormatFn = async ({
     queries: [],
   },
   file,
-  platform,
 }: FormatFnArguments) => {
   // get options
-  const {outputReferences, descriptions, usesDtcg} = options
+  const {outputReferences, formatting, usesDtcg} = options
   // selector
   const selector = file.options?.selector !== undefined ? file.options.selector : ':root'
   // query extension property
@@ -32,22 +31,12 @@ export const cssAdvanced: FormatFn = async ({
     },
   ]
   // set formatting
-  const formatting: FormattingOptions = {
-    commentStyle: descriptions ? 'long' : 'none',
+  const mergedFormatting: LineFormatting = {
+    commentStyle: 'long',
+    ...formatting,
   }
   // clone dictionary
   const dictionary = {...originalDictionary}
-  // add prefix to tokens
-  if (platform.prefix) {
-    dictionary.allTokens = dictionary.allTokens.map(
-      token =>
-        ({
-          ...token,
-          name: `${platform.prefix}-${token.name}`,
-          path: [platform.prefix, ...token.path],
-        }) as TransformedToken,
-    )
-  }
   // get queries from tokens
   for (const designToken of dictionary.allTokens) {
     const query = designToken.$extensions?.[queryExtProp]
@@ -90,7 +79,7 @@ export const cssAdvanced: FormatFn = async ({
       format: 'css',
       dictionary: filteredDictionary,
       outputReferences,
-      formatting,
+      formatting: mergedFormatting,
       usesDtcg,
     })
     // wrap css

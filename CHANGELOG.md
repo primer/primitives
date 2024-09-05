@@ -1,5 +1,162 @@
 # @primer/primitives
 
+## 9.1.0
+
+### Minor Changes
+
+- [#1036](https://github.com/primer/primitives/pull/1036) [`56ba227`](https://github.com/primer/primitives/commit/56ba227a68d1d532067b8fc1c9c4b8d801bf71d6) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Adding a pascalCase trasnformer
+
+- [#1032](https://github.com/primer/primitives/pull/1032) [`a349dc7`](https://github.com/primer/primitives/commit/a349dc705bf87ac978a3a58dd27d70ddae408454) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Move build files from src to dist/build and add complied version
+
+### Patch Changes
+
+- [#1039](https://github.com/primer/primitives/pull/1039) [`2232f12`](https://github.com/primer/primitives/commit/2232f12af81d08eac87a4b298c15c201ba07c829) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Add src/tokens to package output
+
+- [#1038](https://github.com/primer/primitives/pull/1038) [`8430aea`](https://github.com/primer/primitives/commit/8430aea7355782d51053d40a0b2d672b955ed9ef) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Remove engine prop from package.json
+
+## 9.0.3
+
+### Patch Changes
+
+- [#1033](https://github.com/primer/primitives/pull/1033) [`f9dcc4e`](https://github.com/primer/primitives/commit/f9dcc4eac57af2a890976e05a582f2d302e21b07) Thanks [@langermank](https://github.com/langermank)! - Fix `danger` fgColor in colorblind theme
+
+## 9.0.2
+
+### Patch Changes
+
+- [#1030](https://github.com/primer/primitives/pull/1030) [`9083a0f`](https://github.com/primer/primitives/commit/9083a0fb2ca43210b99bfa50681fbecb634abc59) Thanks [@langermank](https://github.com/langermank)! - Danger button contrast fix + tests
+
+## 9.0.1
+
+### Patch Changes
+
+- [#1028](https://github.com/primer/primitives/pull/1028) [`74915a8`](https://github.com/primer/primitives/commit/74915a85b46aad1befcfa99db7ccb3d03d61e9b7) Thanks [@langermank](https://github.com/langermank)! - Bug fix: `invisible` text color `muted` to `default`
+
+## 9.0.0
+
+### Major Changes
+
+- [#1021](https://github.com/primer/primitives/pull/1021) [`8b015a0`](https://github.com/primer/primitives/commit/8b015a0d718eb3434c68d0d73fd55a1114e16fb2) Thanks [@langermank](https://github.com/langermank)! - Update `invisible` button variant text color to be default instead of link blue
+
+- [#1025](https://github.com/primer/primitives/pull/1025) [`9ab8102`](https://github.com/primer/primitives/commit/9ab8102c9b16737b76f581441c3c2c54f44e6ccb) Thanks [@langermank](https://github.com/langermank)! - Fix inconsistent HC transparent colors
+
+- [#1023](https://github.com/primer/primitives/pull/1023) [`0f5625e`](https://github.com/primer/primitives/commit/0f5625e957f5ea4c6d105e853beee1bf4869c64d) Thanks [@langermank](https://github.com/langermank)! - Change `fgColor-onEmphasis` to white in dark high contrast theme
+
+- [#1016](https://github.com/primer/primitives/pull/1016) [`39862e9`](https://github.com/primer/primitives/commit/39862e9839f39810bea1a2f8fd148a5673f1c850) Thanks [@langermank](https://github.com/langermank)! - # Updated neutral base color scales
+
+  ## Changes
+
+  - Theme specific neutral scales have been replaced with two new scales: `light` and `dark`.
+  - The new `light` and `dark` scales are inverted, where 0 is the lightest shade in `light` and the darkest shade in `dark`.
+  - Functional color tokens have been updated to use the new `light` and `dark` scales, and several overrides have been removed due to the new inverted design.
+
+  ## Migration
+
+  - Functional color tokens all work as expected and have been tested to meet minimum contrast requirements.
+  - If you are using `primer/primitives` base color scales directly, you may need to update how those colors are applied. See the migration table which outlines approximately how the new colors map to the old colors.
+
+  ### Light scale migration
+
+  | Old color | New color |
+  | --------- | --------- |
+  | `0`       | `0`       |
+  | `1`       | `2`       |
+  | `2`       | `5`       |
+  | `3`       | `7`       |
+  | `4`       | `7`       |
+  | `5`       | `8`       |
+  | `6`       | `8`       |
+  | `7`       | `9`       |
+  | `8`       | `10`      |
+  | `9`       | `11`      |
+
+  ### Dark scale migration
+
+  | Old color | New color |
+  | --------- | --------- |
+  | `9`       | `0`       |
+  | `8`       | `1`       |
+  | `7`       | `2`       |
+  | `6`       | `4`       |
+  | `5`       | `6`       |
+  | `4`       | `7`       |
+  | `3`       | `8`       |
+  | `2`       | `9`       |
+  | `1`       | `10`      |
+  | `0`       | `11`      |
+
+  ### Dark high contrast scale migration
+
+  | Old color | New color |
+  | --------- | --------- |
+  | `9`       | `0`       |
+  | `8`       | `3`       |
+  | `7`       | `5`       |
+  | `6`       | `6`       |
+  | `5`       | `7`       |
+  | `4`       | `8`       |
+  | `3`       | `9`       |
+  | `2`       | `10`      |
+  | `1`       | `11`      |
+
+  ### Dark dimmed scale migration
+
+  | Old color | New color |
+  | --------- | --------- |
+  | `9`       | `1`       |
+  | `8`       | `2`       |
+  | `7`       | `4`       |
+  | `6`       | `5`       |
+  | `5`       | `6`       |
+  | `4`       | `7`       |
+  | `3`       | `7`       |
+  | `2`       | `8`       |
+  | `1`       | `9`       |
+  | `0`       | `10`      |
+
+  ### Light high contrast scale migration
+
+  | Old color | New color |
+  | --------- | --------- |
+  | `0`       | `white`   |
+  | `1`       | `2`       |
+  | `2`       | `5`       |
+  | `3`       | `7`       |
+  | `4`       | `7`       |
+  | `5`       | `8`       |
+  | `6`       | `9`       |
+  | `7`       | `10`      |
+  | `8`       | `11`      |
+  | `9`       | `black`   |
+
+- [#1024](https://github.com/primer/primitives/pull/1024) [`2348455`](https://github.com/primer/primitives/commit/23484550d0af0c6f29496e2dfd6522426adbff39) Thanks [@langermank](https://github.com/langermank)! - Extend neutral scale to include white/black (0-13)
+
+- [#956](https://github.com/primer/primitives/pull/956) [`13f62d5`](https://github.com/primer/primitives/commit/13f62d5b313bf188ebfde22f114fcaf277a32821) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Removed space tokens
+
+- [#1026](https://github.com/primer/primitives/pull/1026) [`401fef1`](https://github.com/primer/primitives/commit/401fef13e3ef1706638260ed5db1c9911e5bb62f) Thanks [@langermank](https://github.com/langermank)! - - Update counter bg styles
+
+  - Contrast fixes
+
+- [#968](https://github.com/primer/primitives/pull/968) [`d845fdf`](https://github.com/primer/primitives/commit/d845fdfec1b98e4674127eb6246b6416c0971d62) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Rename data-[colorName]-color to data-[colorName]-color-emphasis
+
+## 8.2.4
+
+### Patch Changes
+
+- [#993](https://github.com/primer/primitives/pull/993) [`adf195c`](https://github.com/primer/primitives/commit/adf195c44799a6ece39a744b00ad8d4b9245d3eb) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Add neutral to contrast checks and fix contrasts
+
+- [#994](https://github.com/primer/primitives/pull/994) [`4944964`](https://github.com/primer/primitives/commit/49449640973dd907566943763e3c2a0ffa033bee) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Simplify contrast checker script and bugfix for bgColor.upsell.muted in dark high contrast mode
+
+- [#991](https://github.com/primer/primitives/pull/991) [`421741e`](https://github.com/primer/primitives/commit/421741e19834a354e9a6875a41aadcb7d06c0047) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Update high contrast display colors to meet contrast requirements
+
+- [#977](https://github.com/primer/primitives/pull/977) [`86a263b`](https://github.com/primer/primitives/commit/86a263b1004b5ecf75af8bf8f2af7bf17a178ec5) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - rm @ where it does not effect output
+
+- [#1018](https://github.com/primer/primitives/pull/1018) [`abe900a`](https://github.com/primer/primitives/commit/abe900a8fd5d60038c04c7daabc4b36a1709c5f7) Thanks [@langermank](https://github.com/langermank)! - - Minor changes to prepare for adding more borders to high contrast themes
+
+  - Adds tooltip pattern to allow for an inverse style in dark high contrast
+
+- [#1012](https://github.com/primer/primitives/pull/1012) [`2ac3905`](https://github.com/primer/primitives/commit/2ac39054630c2e043fab07b0c7ef227b5dd67124) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - add borderRadius.default token
+
 ## 8.2.3
 
 ### Patch Changes

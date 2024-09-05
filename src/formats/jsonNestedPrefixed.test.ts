@@ -61,7 +61,8 @@ describe('Format: Json nested with prefixes', () => {
                "filePath": "file.json",
                "isSource": true,
                "value": "transformedValue",
-               "attributes": {}
+               "attributes": {},
+               "description": "This is a description"
             }
           }
         }
