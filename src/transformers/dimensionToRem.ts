@@ -1,5 +1,5 @@
 import {isDimension} from '../filters/index.js'
-import type {PlatformConfig, Transform, TransformedToken} from 'style-dictionary/types'
+import type {Config, PlatformConfig, Transform, TransformedToken} from 'style-dictionary/types'
 
 /**
  * @description base font size from options or 16
@@ -33,13 +33,14 @@ export const dimensionToRem: Transform = {
   type: `value`,
   transitive: true,
   filter: isDimension,
-  transform: (token: TransformedToken, options?: PlatformConfig) => {
-    const baseFont = getBasePxFontSize(options)
-    const floatVal = parseFloat(token.value)
+  transform: (token: TransformedToken, config: PlatformConfig, options: Config) => {
+    const valueProp = options.usesDtcg ? '$value' : 'value'
+    const baseFont = getBasePxFontSize(config)
+    const floatVal = parseFloat(token[valueProp])
 
     if (isNaN(floatVal)) {
       throw new Error(
-        `Invalid dimension token: '${token.name}: ${token.value}' is not valid and cannot be transform to 'rem' \n`,
+        `Invalid dimension token: '${token.name}: ${token[valueProp]}' is not valid and cannot be transform to 'rem' \n`,
       )
     }
 
@@ -47,8 +48,8 @@ export const dimensionToRem: Transform = {
       return '0'
     }
 
-    if (hasUnit(token.value, 'rem') || hasUnit(token.value, 'em')) {
-      return token.value
+    if (hasUnit(token[valueProp], 'rem') || hasUnit(token[valueProp], 'em')) {
+      return token[valueProp]
     }
 
     return `${floatVal / baseFont}rem`

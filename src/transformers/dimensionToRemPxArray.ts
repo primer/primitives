@@ -1,5 +1,5 @@
 import {isDimension} from '../filters/index.js'
-import type {PlatformConfig, Transform, TransformedToken} from 'style-dictionary/types'
+import type {Config, PlatformConfig, Transform, TransformedToken} from 'style-dictionary/types'
 
 type SizePx = '0' | `${number}px`
 type SizeRem = '0' | `${number}rem`
@@ -37,13 +37,14 @@ export const dimensionToRemPxArray: Transform = {
   type: `value`,
   transitive: true,
   filter: isDimension,
-  transform: (token: TransformedToken, options?: PlatformConfig): [SizeRem | SizeEm, SizePx] => {
-    const baseFont = getBasePxFontSize(options)
-    const floatVal = parseFloat(token.value)
+  transform: (token: TransformedToken, config: PlatformConfig, options: Config): [SizeRem | SizeEm, SizePx] => {
+    const valueProp = options.usesDtcg ? '$value' : 'value'
+    const baseFont = getBasePxFontSize(config)
+    const floatVal = parseFloat(token[valueProp])
 
     if (isNaN(floatVal)) {
       throw new Error(
-        `Invalid dimension token: '${token.name}: ${token.value}' is not valid and cannot be transform to 'rem' \n`,
+        `Invalid dimension token: '${token.name}: ${token[valueProp]}' is not valid and cannot be transform to 'rem' \n`,
       )
     }
 
@@ -51,7 +52,7 @@ export const dimensionToRemPxArray: Transform = {
       return ['0', '0']
     }
 
-    if (hasUnit(token.value, 'rem') || hasUnit(token.value, 'em')) {
+    if (hasUnit(token[valueProp], 'rem') || hasUnit(token[valueProp], 'em')) {
       return [token.value, `${floatVal * baseFont}px`]
     }
 

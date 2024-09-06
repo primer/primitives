@@ -1,5 +1,5 @@
 # Posts a comment listing all the variables that changed in a PR
-name: v8 Diff for design tokens
+name: Diff for design tokens
 on:
   pull_request:
     branches-ignore:
@@ -34,18 +34,18 @@ jobs:
         run: npm ci --no-audit --no-fund --include=dev --ignore-scripts
 
       - name: Build tokens (pr)
-        run: npm run build:v8
+        run: npm run build:tokens
 
       - name: Install dependencies (base)
         run: pushd base; npm i --no-audit --no-fund --ignore-scripts; popd
 
       - name: Build tokens (base)
-        run: pushd base; npm run build:v8; popd
+        run: pushd base; npm run build:tokens; popd
 
       - name: Install dependecies for diffing
         run: npm install shelljs
 
-      - name: Diff v8 tokens
+      - name: Diff tokens
         id: diff-files
         uses: actions/github-script@v7
         with:
@@ -111,7 +111,7 @@ jobs:
 
             core.summary.clear()
             
-            core.summary.addHeading('V8 Design Token Diff', '1')
+            core.summary.addHeading('Design Token Diff', '1')
             
             if (diffs.length === 0) {
               core.summary.addRaw('No design tokens changed', true)

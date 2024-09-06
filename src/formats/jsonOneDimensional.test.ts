@@ -26,12 +26,12 @@ describe('Format: Json One Dimensional', () => {
           "name": "tokens-subgroup-red",
           "path": ["tokens", "subgroup", "red"],
           "original": {
-            "value": "originalValue",
+            "$value": "originalValue",
             "attributes": {}
           },
           "filePath": "file.json",
           "isSource": true,
-          "value": "transformedValue",
+          "$value": "transformedValue",
           "attributes": {}
         }
       }`,

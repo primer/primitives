@@ -1,4 +1,4 @@
-import type {Transform, TransformedToken} from 'style-dictionary/types'
+import type {PlatformConfig, Transform, TransformedToken} from 'style-dictionary/types'
 import {isFontFamily} from '../filters/index.js'
 import {getTokenValue} from './utilities/getTokenValue.js'
 import {hasSpaceInString} from './utilities/hasSpaceInString.js'
@@ -34,5 +34,6 @@ export const fontFamilyToCss: Transform = {
   type: `value`,
   transitive: true,
   filter: isFontFamily,
-  transform: (token: TransformedToken): string => parseFontFamily(getTokenValue(token)),
+  transform: (token: TransformedToken, config: PlatformConfig): string =>
+    parseFontFamily(getTokenValue(token, undefined, config)),
 }

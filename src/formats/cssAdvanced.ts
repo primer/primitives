@@ -1,6 +1,5 @@
-import type {TransformedToken} from 'style-dictionary'
+import type {TransformedToken, FormatFn, FormatFnArguments, FormattingOptions} from 'style-dictionary/types'
 import {format} from 'prettier'
-import type {FormatFn, FormatFnArguments, FormattingOptions} from 'style-dictionary/types'
 import {fileHeader, formattedVariables} from 'style-dictionary/utils'
 
 const wrapWithSelector = (css: string, selector: string | false): string => {
@@ -31,7 +30,7 @@ export const cssAdvanced: FormatFn = async ({
     },
   ]
   // set formatting
-  const mergedFormatting: LineFormatting = {
+  const mergedFormatting: FormattingOptions = {
     commentStyle: 'long',
     ...formatting,
   }

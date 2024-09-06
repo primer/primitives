@@ -1,5 +1,5 @@
 import {rgba, parseToRgba} from 'color2k'
-import type {TransformedToken} from 'style-dictionary'
+import type {TransformedToken} from 'style-dictionary/types'
 /**
  * alpha
  * @description takes a colors string like hex or rgba and returns an rgba color with the specified alpha value

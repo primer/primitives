@@ -7,7 +7,7 @@ const mockDictionaryDefault = {
       red: getMockToken({
         name: 'red',
         description: 'This is a description',
-        value: 'transformedValue',
+        $value: 'transformedValue',
         path: ['tokens', 'subgroup', 'red'],
       }),
     },

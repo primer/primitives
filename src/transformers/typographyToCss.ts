@@ -4,7 +4,7 @@ import {checkRequiredTokenProperties} from './utilities/checkRequiredTokenProper
 import {parseFontFamily} from './fontFamilyToCss.js'
 import {parseFontWeight} from './fontWeightToNumber.js'
 import {getTokenValue} from './utilities/getTokenValue.js'
-import type {Transform, TransformedToken} from 'style-dictionary/types'
+import type {Config, PlatformConfig, Transform, TransformedToken} from 'style-dictionary/types'
 
 /**
  * @description converts typograhy token value to css font shorthand
@@ -17,15 +17,15 @@ export const typographyToCss: Transform = {
   type: `value`,
   transitive: true,
   filter: isTypography,
-  transform: (token: TransformedToken) => {
+  transform: (token: TransformedToken, config: PlatformConfig, options: Config) => {
     // extract value
-    const value: TypographyTokenValue = getTokenValue(token)
+    const value: TypographyTokenValue = getTokenValue(token, undefined, options)
     // validate token properties
     checkRequiredTokenProperties(value, ['fontWeight', 'fontSize', 'fontFamily'])
     // format output
-    return `${value.fontStyle || ''} ${parseFontWeight(getTokenValue(token, 'fontWeight'))} ${value.fontSize}${
+    return `${value.fontStyle || ''} ${parseFontWeight(getTokenValue(token, 'fontWeight', options))} ${value.fontSize}${
       value.lineHeight ? `/${value.lineHeight}` : ''
-    } ${parseFontFamily(getTokenValue(token, 'fontFamily'))}`
+    } ${parseFontFamily(getTokenValue(token, 'fontFamily', options))}`
       .trim()
       .replace(/\s\s+/g, ' ')
   },

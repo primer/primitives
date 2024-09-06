@@ -1,13 +1,13 @@
-import type {TransformedToken} from 'style-dictionary'
+import type {TransformedToken} from 'style-dictionary/types'
 import {namePathToDotNotation} from '../namePathToDotNotation.js'
 
-const composeValueErrorMessage = (token: TransformedToken) => {
+const composeValueErrorMessage = (token: TransformedToken, usesDtcg?: boolean) => {
   // eslint-disable-next-line i18n-text/no-en
   return `Invalid token "${namePathToDotNotation.transform(token, {}, {})}" in file "${
     token.filePath
   }". Transformed value: "${JSON.stringify(token.value)}". ${
     token.original.value ? `Original value: "${JSON.stringify(token.original.value)}" ` : ''
-  }This may be due to referencing a token that does not exists.`
+  }This may be due to referencing a token that does not exists. ${usesDtcg ? `usesDtcg is set to '${usesDtcg}.'` : ''}`
 }
 
 const composeValuePropertyErrorMessage = (token: TransformedToken, property: string) => {
@@ -20,8 +20,8 @@ const composeValuePropertyErrorMessage = (token: TransformedToken, property: str
 }
 
 export class invalidTokenValueError extends Error {
-  constructor(token: TransformedToken) {
-    super(composeValueErrorMessage(token))
+  constructor(token: TransformedToken, usesDtcg?: boolean) {
+    super(composeValueErrorMessage(token, usesDtcg))
     Error.captureStackTrace(this, invalidTokenValueError)
   }
 }

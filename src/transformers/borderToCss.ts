@@ -1,4 +1,4 @@
-import type {Transform, TransformedToken} from 'style-dictionary/types'
+import type {Config, PlatformConfig, Transform, TransformedToken} from 'style-dictionary/types'
 import {isBorder} from '../filters/isBorder.js'
 import type {BorderTokenValue} from '../types/BorderTokenValue.js'
 
@@ -24,8 +24,9 @@ export const borderToCss: Transform = {
   type: `value`,
   transitive: true,
   filter: isBorder,
-  transform: (token: TransformedToken) => {
-    const value = token.value
+  transform: (token: TransformedToken, config: PlatformConfig, options: Config) => {
+    const valueProp = options.usesDtcg ? '$value' : 'value'
+    const value = token[valueProp]
     // if value === string it was probably already transformed
     if (typeof value === 'string') {
       return value

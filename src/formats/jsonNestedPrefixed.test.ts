@@ -55,12 +55,12 @@ describe('Format: Json nested with prefixes', () => {
                "name": "red",
                "path": ["tokens", "subgroup", "red"],
                "original": {
-                 "value": "originalValue",
+                 "$value": "originalValue",
                  "attributes": {}
                },
                "filePath": "file.json",
                "isSource": true,
-               "value": "transformedValue",
+               "$value": "transformedValue",
                "attributes": {},
                "description": "This is a description"
             }

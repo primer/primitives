@@ -1,18 +1,21 @@
-import type {TransformedToken} from 'style-dictionary/types'
+import type {Config, TransformedToken} from 'style-dictionary/types'
 import {invalidTokenValueError, invalidTokenValuePropertyError} from './invalidTokenError.js'
 
-export const getTokenValue = (token: TransformedToken, property?: string) => {
-  if (token.value === undefined) {
-    throw new invalidTokenValueError(token)
+export const getTokenValue = (token: TransformedToken, property?: string, config: Config = {}) => {
+  const {usesDtcg} = config
+  const valueProp = usesDtcg ? '$value' : 'value'
+
+  if (token[valueProp] === undefined) {
+    throw new invalidTokenValueError(token, usesDtcg)
   }
   // for composite token if subproperty is needed
-  if (typeof property === 'string' && token.value[property] === undefined) {
+  if (typeof property === 'string' && token[valueProp][property] === undefined) {
     throw new invalidTokenValuePropertyError(token, property)
   }
 
   if (typeof property === 'string') {
-    return token.value[property]
+    return token[valueProp][property]
   }
 
-  return token.value
+  return token[valueProp]
 }

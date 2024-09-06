@@ -1,10 +1,10 @@
-import type StyleDictionary from 'style-dictionary'
+import type {TransformedToken} from 'style-dictionary/types'
 
 /**
  * @description Checks if token is of $type `color`
- * @param token [StyleDictionary.TransformedToken](https://github.com/amzn/style-dictionary/blob/main/types/TransformedToken.d.ts)
+ * @param token [TransformedToken](https://github.com/amzn/style-dictionary/blob/main/types/TransformedToken.d.ts)
  * @returns boolean
  */
-export const isColor = (token: StyleDictionary.TransformedToken): boolean => {
+export const isColor = (token: TransformedToken): boolean => {
   return token.$type === 'color'
 }

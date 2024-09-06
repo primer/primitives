@@ -1,9 +1,9 @@
 import {PrimerStyleDictionary} from '../src/PrimerStyleDictionary.js'
 
-const buildOptions = {
-  prefix: undefined,
-  buildPath: 'dist/',
-}
+// const buildOptions = {
+//   prefix: undefined,
+//   buildPath: 'dist/',
+// }
 
 const sizeFiles = [
   'src/tokens/base/size/size.json',
@@ -38,7 +38,7 @@ const sizeExtended = await PrimerStyleDictionary.extend({
         // 'name/pathToFigma',
       ],
       options: {
-        useDtcg: true,
+        usesDtcg: true,
         basePxFontSize: 16,
         fontFamilies: {
           'fontStack/system': 'SF Pro Text',

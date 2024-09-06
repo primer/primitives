@@ -1,4 +1,4 @@
-import type {PlatformConfig, Transform, TransformedToken} from 'style-dictionary/types'
+import type {Config, PlatformConfig, Transform, TransformedToken} from 'style-dictionary/types'
 import {isDuration} from '../filters/isDuration.js'
 
 /**
@@ -12,13 +12,14 @@ export const durationToCss: Transform = {
   type: `value`,
   transitive: true,
   filter: isDuration,
-  transform: (token: TransformedToken, _options?: PlatformConfig) => {
+  transform: (token: TransformedToken, _config: PlatformConfig, options: Config) => {
+    const valueProp = options.usesDtcg ? '$value' : 'value'
     // throw an error if token value is not a string or does not end with `ms`
-    if (typeof token.value !== `string` || !token.value.endsWith(`ms`)) {
+    if (typeof token[valueProp] !== `string` || !token[valueProp].endsWith(`ms`)) {
       throw new Error(`duration token value must be a string with an "ms" unit`)
     }
     // get value
-    let value = parseInt(token.value.replace('ms', ''))
+    let value = parseInt(token[valueProp].replace('ms', ''))
     let unit = `ms`
     if (value >= 1000) {
       value = value / 1000

@@ -1,11 +1,10 @@
-import type {Dictionary, TransformedToken} from 'style-dictionary'
+import type {Dictionary, TransformedToken, FormatFn, FormatFnArguments, PlatformConfig} from 'style-dictionary/types'
 import {format} from 'prettier'
 import {transformNamePathToFigma} from '../transformers/namePathToFigma.js'
 import type {ShadowTokenValue} from '../types/ShadowTokenValue.js'
 import {hexToRgbaFloat} from '../transformers/utilities/hexToRgbaFloat.js'
 import type {RgbaFloat} from '../transformers/utilities/isRgbaFloat.js'
 import {isRgbaFloat} from '../transformers/utilities/isRgbaFloat.js'
-import type {FormatFn, FormatFnArguments, PlatformConfig} from 'style-dictionary/types'
 import {getReferences, sortByReference} from 'style-dictionary/utils'
 
 const isReference = (string: string): boolean => /^\{([^\\]*)\}$/g.test(string)
@@ -80,7 +79,7 @@ export const jsonFigma: FormatFn = async ({dictionary, file: _file, platform}: F
   // loop through tokens sorted by reference
   for (const token of dictionary.allTokens.sort(sortByReference(dictionary.tokens))) {
     // deconstruct token
-    const {attributes, $value: value, $type, comment: description, original, alpha, mix} = token
+    const {attributes, $value: value, $type, $description: description, original, alpha, mix} = token
     const {mode, collection, scopes, group, codeSyntax} = attributes || {}
     // early escape if no type is present
     if (!$type) return

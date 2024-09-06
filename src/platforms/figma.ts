@@ -1,13 +1,14 @@
 import type {PlatformInitializer} from '../types/PlatformInitializer.js'
 import {isSource} from '../filters/index.js'
-import type {TransformedToken, PlatformConfig} from 'style-dictionary/types'
+import type {TransformedToken, PlatformConfig, Config} from 'style-dictionary/types'
 
-const validFigmaToken = async (token: TransformedToken) => {
+const validFigmaToken = async (token: TransformedToken, options: Config) => {
+  const valueProp = options.usesDtcg ? '$value' : 'value'
   const validTypes = ['color', 'dimension', 'shadow', 'fontWeight', 'fontFamily', 'number']
   // is a siource token, not an included one
   if (!isSource(token) || !token.$type) return false
 
-  if (`${token.value}`.substring(token.value.length - 2) === 'em') return false
+  if (`${token[valueProp]}`.substring(token[valueProp].length - 2) === 'em') return false
   // has a collection attribute
   if (
     !('$extensions' in token) ||
@@ -46,8 +47,8 @@ export const figma: PlatformInitializer = (outputFile, prefix, buildPath, option
   files: [
     {
       destination: outputFile,
-      filter: token => {
-        return validFigmaToken(token)
+      filter: (token: TransformedToken, config: Config) => {
+        return validFigmaToken(token, config)
       },
       format: `json/figma`,
       options: {

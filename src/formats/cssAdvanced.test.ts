@@ -1,7 +1,7 @@
 import {cssAdvanced} from './cssAdvanced.js'
 import {getMockDictionary, getMockFormatterArguments, getMockToken} from '../test-utilities/index.js'
 import {format} from 'prettier'
-import type {TransformedToken} from 'style-dictionary'
+import type {TransformedToken} from 'style-dictionary/types'
 
 describe('Format: tokens nested in media query', () => {
   /**
@@ -231,7 +231,7 @@ describe('Format: tokens nested in media query', () => {
           subgroup: {
             red: getMockToken({
               name: 'red',
-              value: 'transformedValue',
+              $value: 'transformedValue',
               comment: 'This is a description',
             }),
           },
@@ -241,6 +241,7 @@ describe('Format: tokens nested in media query', () => {
         formatting: {
           commentStyle: 'long',
         },
+        usesDtcg: true,
       },
       file: {
         destination: 'size-fine.css',
@@ -261,13 +262,15 @@ describe('Format: tokens nested in media query', () => {
           subgroup: {
             red: getMockToken({
               name: 'red',
-              value: 'transformedValue',
+              $value: 'transformedValue',
               comment: 'This is a description',
             }),
           },
         },
       }),
-      options: {}, // description not set
+      options: {
+        usesDtcg: true,
+      }, // description not set
       file: {
         destination: 'size-fine.css',
         options: {
@@ -281,7 +284,7 @@ describe('Format: tokens nested in media query', () => {
       },
     })
 
-    const expectedOutput = syncPrettier.format(
+    const expectedOutput = await format(
       ` @media (prefers-color-scheme: light){
         :root {
           --red: transformedValue; /* This is a description */
@@ -293,14 +296,14 @@ describe('Format: tokens nested in media query', () => {
     expect(await cssAdvanced(inputUnset)).toStrictEqual(expectedOutput)
   })
 
-  it('Hides comment if option.formatting.commentStle is set to none', async () => {
+  it('Hides comment if option.formatting.commentStyle is set to none', async () => {
     const input = getMockFormatterArguments({
       dictionary: getMockDictionary({
         tokens: {
           subgroup: {
             red: getMockToken({
               name: 'red',
-              value: 'transformedValue',
+              $value: 'transformedValue',
               comment: 'This is a description',
             }),
           },
@@ -310,6 +313,7 @@ describe('Format: tokens nested in media query', () => {
         formatting: {
           commentStyle: 'none',
         },
+        usesDtcg: true,
       },
       file: {
         destination: 'size-fine.css',
@@ -333,6 +337,5 @@ describe('Format: tokens nested in media query', () => {
       {parser: 'css', printWidth: 500},
     )
     expect(await cssAdvanced(input)).toStrictEqual(expectedOutput)
-    expect(await cssAdvanced(inputUnset)).toStrictEqual(expectedOutput)
   })
 })

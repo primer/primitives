@@ -8,24 +8,24 @@ describe('Format: TypeScript definitions', () => {
       subgroup: {
         red: getMockToken({
           $type: 'color',
-          value: '#FF0000',
+          $value: '#FF0000',
         }),
         stringValue: getMockToken({
-          value: '#FF0000',
+          $value: '#FF0000',
         }),
         border: getMockToken({
           $type: 'border',
-          value: {
+          $value: {
             color: '#FF0000',
             style: 'solid',
             width: '1px',
           },
         }),
         numberValue: getMockToken({
-          value: 20,
+          $value: 20,
         }),
         booleanValue: getMockToken({
-          value: true,
+          $value: true,
         }),
       },
     },
@@ -39,15 +39,15 @@ describe('Format: TypeScript definitions', () => {
             size: {
               px: getMockToken({
                 $type: 'dimension',
-                value: '100px',
+                $value: '100px',
               }),
               rem: getMockToken({
                 $type: 'dimension',
-                value: '10rem',
+                $value: '10rem',
               }),
               em: getMockToken({
                 $type: 'dimension',
-                value: '10em',
+                $value: '10em',
               }),
             },
           },
@@ -162,7 +162,7 @@ describe('Format: TypeScript definitions', () => {
           subgroup: {
             color: {
               name: 'color token name',
-              value: 'rgb(100,200,255)',
+              $value: 'rgb(100,200,255)',
               $type: 'color',
             },
           },

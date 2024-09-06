@@ -5,10 +5,10 @@ import {rgbaFloatToHex} from './utilities/rgbaFloatToHex.js'
 import mix from './utilities/mix.js'
 import {hexToRgbaFloat} from './utilities/hexToRgbaFloat.js'
 import {isRgbaFloat} from './utilities/isRgbaFloat.js'
-import type {Transform, TransformedToken} from 'style-dictionary/types'
+import type {Transform, TransformedToken, Config, PlatformConfig} from 'style-dictionary/types'
 
-const toRgbaFloat = (token: TransformedToken, alpha?: number) => {
-  let tokenValue = getTokenValue(token)
+const toRgbaFloat = (token: TransformedToken, alpha: undefined | number = undefined, options: Config) => {
+  let tokenValue = getTokenValue(token, undefined, options)
   let tokenMixColor = token.mix?.color
   // get hex value from color string
   if (isRgbaFloat(tokenValue)) {
@@ -37,10 +37,12 @@ export const colorToRgbaFloat: Transform = {
   type: `value`,
   transitive: true,
   filter: isColor,
-  transform: (token: TransformedToken) => {
+  transform: (token: TransformedToken, config: PlatformConfig, options: Config) => {
+    const {usesDtcg} = options
+    const valueProp = usesDtcg ? '$value' : 'value'
     // skip if value is already rgb float
-    if (isRgbaFloat(token.value) && !('mix' in token) && !('alpha' in token)) return token.value
+    if (isRgbaFloat(token[valueProp]) && !('mix' in token) && !('alpha' in token)) return token[valueProp]
     // convert hex or rgb values to rgba float
-    return toRgbaFloat(token, token.alpha)
+    return toRgbaFloat(token, token.alpha, options)
   },
 }

@@ -1,4 +1,4 @@
-import type {Transform, TransformedToken} from 'style-dictionary/types'
+import type {Config, PlatformConfig, Transform, TransformedToken} from 'style-dictionary/types'
 import {isFontWeight} from '../filters/index.js'
 import {getTokenValue} from './utilities/getTokenValue.js'
 
@@ -50,5 +50,6 @@ export const fontWeightToNumber: Transform = {
   type: `value`,
   transitive: true,
   filter: isFontWeight,
-  transform: (token: TransformedToken): number => parseFontWeight(getTokenValue(token)),
+  transform: (token: TransformedToken, config: PlatformConfig, options: Config): number =>
+    parseFontWeight(getTokenValue(token, undefined, options)),
 }

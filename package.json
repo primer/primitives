@@ -2,6 +2,7 @@
   "name": "@primer/primitives",
   "version": "9.1.0",
   "description": "Typography, spacing, and color primitives for Primer design system",
+  "type": "module",
   "files": [
     "dist",
     "src/tokens"
@@ -22,8 +23,8 @@
   },
   "homepage": "https://github.com/primer/primitives#readme",
   "scripts": {
-    "build": "npm run clean && npm run build:v8 && npm run build:fallbacks && npm run build:figma && npm run build:config",
-    "build:v8": "tsx ./scripts/buildTokens.ts",
+    "build": "npm run clean && npm run build:tokens && npm run build:fallbacks && npm run build:figma && npm run build:config",
+    "build:tokens": "tsx ./scripts/buildTokens.ts",
     "build:fallbacks": "tsx ./scripts/buildFallbacks.ts",
     "build:figma": "tsx scripts/buildFigma.ts",
     "build:config": "tsc -p buildConfig.tsconfig.jsonc",
@@ -46,8 +47,8 @@
   },
   "prettier": "@github/prettier-config",
   "dependencies": {
-    "prettier": "3.3",
-    "@prettier/sync": "^0.5.2"
+    "@prettier/sync": "^0.5.2",
+    "prettier": "3.3"
   },
   "devDependencies": {
     "@actions/github": "^6.0.0",
@@ -75,7 +76,7 @@
     "json5": "^2.2.1",
     "markdown-table-ts": "^1.0.3",
     "style-dictionary": "^4.0.1",
-    "tsx": "^4.16.2",
+    "tsx": "^4.19.0",
     "typescript": "5.5",
     "vitest": "^2.0.3",
     "zod": "3.23",

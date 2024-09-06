@@ -40,7 +40,7 @@ const buildFigma = async (buildOptions: ConfigGeneratorOptions): Promise<void> =
       },
     })
     // build
-    extended.buildAllPlatforms()
+    await extended.buildAllPlatforms()
   }
   //
   for (const {filename, source, include} of themes) {
@@ -55,7 +55,7 @@ const buildFigma = async (buildOptions: ConfigGeneratorOptions): Promise<void> =
       },
     })
 
-    extended.buildAllPlatforms()
+    await extended.buildAllPlatforms()
   }
   /** -----------------------------------
    * Size tokens
@@ -77,7 +77,7 @@ const buildFigma = async (buildOptions: ConfigGeneratorOptions): Promise<void> =
     },
   })
 
-  sizeExtended.buildAllPlatforms()
+  await sizeExtended.buildAllPlatforms()
 
   /** -----------------------------------
    * Typography
@@ -91,7 +91,7 @@ const buildFigma = async (buildOptions: ConfigGeneratorOptions): Promise<void> =
     },
   })
 
-  typeExtended.buildAllPlatforms()
+  await typeExtended.buildAllPlatforms()
 
   /** -----------------------------------
    * Shadow tokens
@@ -214,7 +214,7 @@ const buildFigma = async (buildOptions: ConfigGeneratorOptions): Promise<void> =
       },
     })
 
-    extended.buildAllPlatforms()
+    await extended.buildAllPlatforms()
   }
   /** -----------------------------------
    * Create list of files

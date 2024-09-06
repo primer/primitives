@@ -154,7 +154,6 @@ StyleDictionary.registerTransform({
   ...namePathToCamelCase,
 })
 StyleDictionary.registerTransform({
-  name: 'name/pathToPascalCase',
   ...namePathToPascalCase,
 })
 
@@ -209,9 +208,5 @@ StyleDictionary.registerTransform({
  * @formats [javascript/esm](https://github.com/primer/primitives/blob/main/config/formats/javascript-esm.ts), [javascript/commonJs](https://github.com/primer/primitives/blob/main/config/formats/javascript-commonJs.ts), [typescript/export-definition](https://github.com/primer/primitives/blob/main/config/formats/typescript-export-defition.ts)
  * @transformers [color/rgbAlpha](https://github.com/primer/primitives/blob/main/config/tranformers/color-to-rgb-alpha.ts), [color/hexAlpha](https://github.com/primer/primitives/blob/main/config/tranformers/color-to-hex-alpha.ts), [color/hex](https://github.com/primer/primitives/blob/main/config/tranformers/color-to-hex6.ts), [json/deprecated](https://github.com/primer/primitives/blob/main/config/tranformers/json-deprecated.ts), [name/pathToDotNotation](https://github.com/primer/primitives/blob/main/config/tranformers/name-path-to-dot-notation.ts)
  */
-const InitializeSd: StyleDictionary = new StyleDictionary()
 
-export const PrimerStyleDictionary = await InitializeSd.extend({
-  // @ts-expect-error: wrong type?
-  // parsers: ['w3cJsonParser'],
-})
+export const PrimerStyleDictionary: StyleDictionary = new StyleDictionary()

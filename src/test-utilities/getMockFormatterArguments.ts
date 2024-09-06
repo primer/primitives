@@ -9,7 +9,9 @@ const defaultFormatterArguments: FormatFnArguments = {
       showFileHeader: false,
     },
   },
-  options: {},
+  options: {
+    usesDtcg: true,
+  },
   platform: {},
 }
 
