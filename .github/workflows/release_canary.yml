@@ -27,8 +27,8 @@ jobs:
       - name: Install dependencies
         run: npm ci --no-audit --no-fund --include=dev
 
-      - name: Build v8 tokens
-        run: npm run build:v8
+      - name: Build tokens
+        run: npm run build:tokens
 
       - name: Create .npmrc
         run: |
@@ -66,7 +66,7 @@ jobs:
             core.setOutput('packageVersion', package.version);
             // Output the package name for next step
             core.setOutput('packageName', package.name);
-      
+
       - name: Output canary version to summary
         env:
           VERSION: ${{ steps.commitStatus.outputs.packageVersion }}
