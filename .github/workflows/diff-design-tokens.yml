@@ -55,7 +55,7 @@ jobs:
             const globber = await glob.create(cssFolder + '/**/**/*.css')
             const files = await globber.glob()
             const fs = require('fs')
-            
+
             // create file to store diffs
             const diffFilePath = 'diff_output.json'
             shell.touch(diffFilePath)
@@ -91,7 +91,7 @@ jobs:
             .filter(item => {
               return item.diff !== ''
             })
-            
+
             // store diffs in file
             fs.writeFileSync(diffFilePath, JSON.stringify(diffs, null, ' '))
 
@@ -101,7 +101,7 @@ jobs:
           script: |
             const fs = require('fs')
             const diffFilePath = "${{ steps.diff-files.outputs.diffFilePath }}"
-            
+
             // check if file exists
             if(!fs.existsSync(diffFilePath)) {
               return
@@ -112,7 +112,7 @@ jobs:
             core.summary.clear()
             
             core.summary.addHeading('Design Token Diff', '1')
-            
+
             if (diffs.length === 0) {
               core.summary.addRaw('No design tokens changed', true)
             } else {
@@ -139,7 +139,7 @@ jobs:
           script: |
             const fs = require('fs')
             const diffFilePath = "${{ steps.diff-files.outputs.diffFilePath }}"
-            
+
             // check if file exists
             if(!fs.existsSync(diffFilePath)) {
               return
@@ -213,7 +213,7 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo
             });
-            
+
             // get comment if exists
             const existingComment = comments.filter(comment => comment.body.includes('## Design Token Diff'));
 

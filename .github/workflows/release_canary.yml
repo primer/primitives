@@ -66,7 +66,7 @@ jobs:
             core.setOutput('packageVersion', package.version);
             // Output the package name for next step
             core.setOutput('packageName', package.name);
-      
+
       - name: Output canary version to summary
         env:
           VERSION: ${{ steps.commitStatus.outputs.packageVersion }}
