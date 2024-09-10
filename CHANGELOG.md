@@ -1,5 +1,11 @@
 # @primer/primitives
 
+## 9.1.1
+
+### Patch Changes
+
+- [#1043](https://github.com/primer/primitives/pull/1043) [`faead48`](https://github.com/primer/primitives/commit/faead480aceb8a07e2812244d351cdc5d57fa0ad) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Update exports.default to module.exports in commonJs
+
 ## 9.1.0
 
 ### Minor Changes
