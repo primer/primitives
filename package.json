@@ -23,11 +23,10 @@
   },
   "homepage": "https://github.com/primer/primitives#readme",
   "scripts": {
-    "build": "npm run clean && npm run build:tokens && npm run build:fallbacks && npm run build:figma && npm run build:config",
+    "build": "npm run clean && npm run build:tokens && npm run build:fallbacks && npm run build:figma",
     "build:tokens": "tsx ./scripts/buildTokens.ts",
     "build:fallbacks": "tsx ./scripts/buildFallbacks.ts",
     "build:figma": "tsx scripts/buildFigma.ts",
-    "build:config": "tsc -p buildConfig.tsconfig.jsonc",
     "clean": "rm -rf dist",
     "tokenJson:check": "tsx scripts/diffThemes.ts && tsx scripts/diffTokenProps.ts",
     "contrast:check": "tsx scripts/color-contrast.ts",

@@ -28,6 +28,13 @@ const getStyleDictionaryConfig: StyleDictionaryConfigGenerator = (
 ): Config => ({
   source, // build the special formats
   include,
+  log: {
+    warnings: 'disabled', // 'warn' | 'error' | 'disabled'
+    verbosity: 'silent', // 'default' | 'silent' | 'verbose'
+    errors: {
+      brokenReferences: 'throw', // 'throw' | 'console'
+    },
+  },
   platforms: Object.fromEntries(
     Object.entries({
       css: css(`css/${filename}.css`, options.prefix, options.buildPath, {themed: options.themed}),

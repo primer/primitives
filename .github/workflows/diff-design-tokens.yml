@@ -110,7 +110,7 @@ jobs:
             const diffs = JSON.parse(fs.readFileSync(diffFilePath, 'utf8'))
 
             core.summary.clear()
-            
+
             core.summary.addHeading('Design Token Diff', '1')
 
             if (diffs.length === 0) {

@@ -3,58 +3,62 @@ import fs from 'fs'
 
 describe('PrimerStyleDictionary', async () => {
   const basePath = `./integration`
-  const extendedSD = await PrimerStyleDictionary.extend({
-    source: [`${basePath}/tokens/**/*.json5`],
-    platforms: {
-      css: {
-        prefix: 'PREFIX',
-        transformGroup: 'css',
-        buildPath: `${basePath}/build/css/`,
-        files: [
-          {
-            options: {
-              showFileHeader: false,
+  const buildPath = `${basePath}/build/baseline`
+
+  beforeAll(async () => {
+    const extendedSD = await PrimerStyleDictionary.extend({
+      source: [`${basePath}/tokens/**/*.json5`],
+      platforms: {
+        css: {
+          prefix: 'PREFIX',
+          transformGroup: 'css',
+          buildPath: `${buildPath}/css/`,
+          files: [
+            {
+              options: {
+                showFileHeader: false,
+              },
+              destination: 'variables.css',
+              format: 'css/variables',
             },
-            destination: 'variables.css',
-            format: 'css/variables',
-          },
-        ],
-      },
-      json: {
-        prefix: 'PREFIX',
-        buildPath: `${basePath}/build/json/`,
-        files: [
-          {
-            options: {
-              showFileHeader: false,
+          ],
+        },
+        json: {
+          prefix: 'PREFIX',
+          buildPath: `${buildPath}/json/`,
+          files: [
+            {
+              options: {
+                showFileHeader: false,
+              },
+              destination: 'variables.json',
+              format: 'json',
             },
-            destination: 'variables.json',
-            format: 'json',
-          },
-        ],
-      },
-      jsonFlat: {
-        prefix: 'PREFIX',
-        buildPath: `${basePath}/build/json/`,
-        transforms: ['name/pathToPascalCase'],
-        files: [
-          {
-            options: {
-              showFileHeader: false,
+          ],
+        },
+        jsonFlat: {
+          prefix: 'PREFIX',
+          buildPath: `${buildPath}/json/`,
+          transforms: ['name/pathToPascalCase'],
+          files: [
+            {
+              options: {
+                showFileHeader: false,
+              },
+              destination: 'flat.json',
+              format: 'json/flat',
             },
-            destination: 'flat.json',
-            format: 'json/flat',
-          },
-        ],
+          ],
+        },
       },
-    },
+    })
+
+    await extendedSD.cleanAllPlatforms()
+    await extendedSD.buildAllPlatforms()
   })
 
-  await extendedSD.cleanAllPlatforms()
-  await extendedSD.buildAllPlatforms()
-
   it('runs baseline css/variables format', () => {
-    const output = fs.readFileSync(`${basePath}/build/css/variables.css`, 'utf8')
+    const output = fs.readFileSync(`${buildPath}/css/variables.css`, 'utf8')
     const expectedOutput = `:root {
   --prefix-base-color-aqua-blue-500: #2c29ff; /* The primary color for interactive elements. */
   --prefix-fg-color-link-rest-01: #2c29ff;
@@ -64,7 +68,7 @@ describe('PrimerStyleDictionary', async () => {
   })
 
   it('runs baseline json format', () => {
-    const output = fs.readFileSync(`${basePath}/build/json/variables.json`, 'utf8')
+    const output = fs.readFileSync(`${buildPath}/json/variables.json`, 'utf8')
     const expectedOutput = `{
   "base": {
     "color": {
@@ -116,7 +120,7 @@ describe('PrimerStyleDictionary', async () => {
   })
 
   it('runs baseline flat json format', () => {
-    const output = fs.readFileSync(`${basePath}/build/json/flat.json`, 'utf8')
+    const output = fs.readFileSync(`${buildPath}/json/flat.json`, 'utf8')
     const expectedOutput = `{
   "PREFIXBaseColorAquaBlue500": "#2C29FF",
   "PREFIXFgColorLinkRest01": "#2C29FF"

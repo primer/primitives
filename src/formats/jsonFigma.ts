@@ -12,7 +12,7 @@ const isReference = (string: string): boolean => /^\{([^\\]*)\}$/g.test(string)
 const getReference = (dictionary: Dictionary, refString: string, platform: PlatformConfig) => {
   if (isReference(refString)) {
     // retrieve reference token
-    const refToken = getReferences(refString, dictionary.tokens)[0]
+    const refToken = getReferences(refString, dictionary.tokens, {unfilteredTokens: dictionary.unfilteredTokens})[0]
     // return full reference
     return [refToken.attributes?.collection, transformNamePathToFigma(refToken, platform)].filter(Boolean).join('/')
   }
@@ -76,8 +76,11 @@ const shadowToVariables = (
 export const jsonFigma: FormatFn = async ({dictionary, file: _file, platform}: FormatFnArguments) => {
   // array to store tokens in
   const tokens: Record<string, unknown>[] = []
+  const sortedTokens = [...dictionary.allTokens].sort(
+    sortByReference(dictionary.tokens, {unfilteredTokens: dictionary.unfilteredTokens}),
+  )
   // loop through tokens sorted by reference
-  for (const token of dictionary.allTokens.sort(sortByReference(dictionary.tokens))) {
+  for (const token of sortedTokens) {
     // deconstruct token
     const {attributes, $value: value, $type, $description: description, original, alpha, mix} = token
     const {mode, collection, scopes, group, codeSyntax} = attributes || {}
