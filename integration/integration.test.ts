@@ -11,7 +11,6 @@ describe('PrimerStyleDictionary', () => {
         transforms: [
           'name/pathToKebabCase',
           'color/hex',
-          'color/hexAlpha',
           'color/hexMix',
           'dimension/rem',
           'duration/css',
@@ -37,7 +36,6 @@ describe('PrimerStyleDictionary', () => {
         transforms: [
           'color/hex',
           'color/hexMix',
-          'color/hexAlpha',
           'dimension/rem',
           'shadow/css',
           'border/css',
@@ -62,7 +60,6 @@ describe('PrimerStyleDictionary', () => {
         transforms: [
           'color/hex',
           'color/hexMix',
-          'color/hexAlpha',
           'dimension/rem',
           'shadow/css',
           'border/css',
@@ -108,7 +105,6 @@ describe('PrimerStyleDictionary', () => {
         transforms: [
           'color/hex',
           'color/hexMix',
-          'color/hexAlpha',
           'dimension/rem',
           'shadow/css',
           'border/css',
@@ -131,7 +127,6 @@ describe('PrimerStyleDictionary', () => {
         buildPath: `${basePath}/build/js/`,
         transforms: [
           'color/hex',
-          'color/hexAlpha',
           'shadow/css',
           'border/css',
           'dimension/rem',

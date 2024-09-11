@@ -8,7 +8,6 @@ export const typeDefinitions: PlatformInitializer = (outputFile, prefix, buildPa
   buildPath,
   transforms: [
     'color/hex',
-    'color/hexAlpha',
     'shadow/css',
     'border/css',
     'dimension/rem',
