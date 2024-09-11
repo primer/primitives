@@ -2,7 +2,6 @@ import StyleDictionary from 'style-dictionary'
 import {w3cJsonParser} from './parsers'
 import {
   borderToCss,
-  colorToHexAlpha,
   colorToRgbAlpha,
   colorToHex,
   colorToHexMix,
@@ -106,11 +105,6 @@ StyleDictionary.registerTransform({
 StyleDictionary.registerTransform({
   name: 'color/rgbaFloat',
   ...colorToRgbaFloat,
-})
-
-StyleDictionary.registerTransform({
-  name: 'color/hexAlpha',
-  ...colorToHexAlpha,
 })
 
 StyleDictionary.registerTransform({
