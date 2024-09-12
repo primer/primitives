@@ -3,58 +3,62 @@ import fs from 'fs'
 
 describe('PrimerStyleDictionary', () => {
   const basePath = `./integration`
-  const extendedSD = PrimerStyleDictionary.extend({
-    source: [`${basePath}/tokens/**/*.json5`],
-    platforms: {
-      css: {
-        prefix: 'PREFIX',
-        transformGroup: 'css',
-        buildPath: `${basePath}/build/css/`,
-        files: [
-          {
-            options: {
-              showFileHeader: false,
+  const buildPath = `${basePath}/build/baseline`
+
+  beforeAll(() => {
+    const extendedSD = PrimerStyleDictionary.extend({
+      source: [`${basePath}/tokens/**/*.json5`],
+      platforms: {
+        css: {
+          prefix: 'PREFIX',
+          transformGroup: 'css',
+          buildPath: `${buildPath}/css/`,
+          files: [
+            {
+              options: {
+                showFileHeader: false,
+              },
+              destination: 'variables.css',
+              format: 'css/variables',
             },
-            destination: 'variables.css',
-            format: 'css/variables',
-          },
-        ],
-      },
-      json: {
-        prefix: 'PREFIX',
-        buildPath: `${basePath}/build/json/`,
-        files: [
-          {
-            options: {
-              showFileHeader: false,
+          ],
+        },
+        json: {
+          prefix: 'PREFIX',
+          buildPath: `${buildPath}/json/`,
+          files: [
+            {
+              options: {
+                showFileHeader: false,
+              },
+              destination: 'variables.json',
+              format: 'json',
             },
-            destination: 'variables.json',
-            format: 'json',
-          },
-        ],
-      },
-      jsonFlat: {
-        prefix: 'PREFIX',
-        buildPath: `${basePath}/build/json/`,
-        transforms: ['name/cti/pascal'],
-        files: [
-          {
-            options: {
-              showFileHeader: false,
+          ],
+        },
+        jsonFlat: {
+          prefix: 'PREFIX',
+          buildPath: `${buildPath}/json/`,
+          transforms: ['name/cti/pascal'],
+          files: [
+            {
+              options: {
+                showFileHeader: false,
+              },
+              destination: 'flat.json',
+              format: 'json/flat',
             },
-            destination: 'flat.json',
-            format: 'json/flat',
-          },
-        ],
+          ],
+        },
       },
-    },
+    })
+
+    extendedSD.cleanAllPlatforms()
+    extendedSD.buildAllPlatforms()
   })
 
-  extendedSD.cleanAllPlatforms()
-  extendedSD.buildAllPlatforms()
-
   it('runs baseline css/variables format', () => {
-    const output = fs.readFileSync(`${basePath}/build/css/variables.css`, 'utf8')
+    const output = fs.readFileSync(`${buildPath}/css/variables.css`, 'utf8')
     const expectedOutput = `:root {
   --prefix-base-color-aqua-blue-500: #2C29FF; /* The primary color for interactive elements. */
   --prefix-fg-color-link-rest-01: #2C29FF;
@@ -64,7 +68,7 @@ describe('PrimerStyleDictionary', () => {
   })
 
   it('runs baseline json format', () => {
-    const output = fs.readFileSync(`${basePath}/build/json/variables.json`, 'utf8')
+    const output = fs.readFileSync(`${buildPath}/json/variables.json`, 'utf8')
     const expectedOutput = `{
   "base": {
     "color": {
@@ -116,7 +120,7 @@ describe('PrimerStyleDictionary', () => {
   })
 
   it('runs baseline flat json format', () => {
-    const output = fs.readFileSync(`${basePath}/build/json/flat.json`, 'utf8')
+    const output = fs.readFileSync(`${buildPath}/json/flat.json`, 'utf8')
     const expectedOutput = `{
   "PrefixBaseColorAquaBlue500": "#2C29FF",
   "PrefixFgColorLinkRest01": "#2C29FF"
