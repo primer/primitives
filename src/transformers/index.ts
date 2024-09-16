@@ -1,6 +1,5 @@
 export {borderToCss} from './borderToCss'
 export {colorToHex} from './colorToHex'
-export {colorToHexAlpha} from './colorToHexAlpha'
 export {colorToHexMix} from './colorToHexMix'
 export {colorToRgbAlpha} from './colorToRgbAlpha'
 export {colorToRgbaFloat} from './colorToRgbaFloat'

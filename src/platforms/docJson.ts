@@ -9,7 +9,6 @@ export const docJson: PlatformInitializer = (outputFile, prefix, buildPath): Sty
     'name/pathToKebabCase',
     'color/hex',
     'color/hexMix',
-    'color/hexAlpha',
     'dimension/rem',
     'shadow/css',
     'border/css',
