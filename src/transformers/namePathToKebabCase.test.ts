@@ -1,5 +1,5 @@
-import {getMockToken} from '../test-utilities'
-import {namePathToKebabCase} from './namePathToKebabCase'
+import {getMockToken} from '../test-utilities/index.js'
+import {namePathToKebabCase} from './namePathToKebabCase.js'
 
 describe('Transformer: namePathToKebabCase', () => {
   it('converts path elements to dot.notation and ignores name proprty', () => {

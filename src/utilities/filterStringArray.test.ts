@@ -1,4 +1,4 @@
-import {filterStringArray} from './filterStringArray'
+import {filterStringArray} from './filterStringArray.js'
 
 describe('Utilities: filterStringArray', () => {
   it('keeps words', () => {

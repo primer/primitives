@@ -1,5 +1,5 @@
-import {getMockToken} from '../test-utilities'
-import {fontFamilyToFigma} from './fontFamilyToFigma'
+import {getMockToken} from '../test-utilities/index.js'
+import {fontFamilyToFigma} from './fontFamilyToFigma.js'
 
 describe('Transformer: fontFamilyToFigma', () => {
   it('transforms fontFamily string', () => {

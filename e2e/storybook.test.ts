@@ -1,8 +1,8 @@
 import {type Page, test, expect} from '@playwright/test'
 // eslint-disable-next-line import/extensions, import/no-unresolved
-import data from '../docs/storybook/storybook-static/stories.json'
+import data from '../docs/storybook/storybook-static/stories.json' assert {type: 'json'}
 // eslint-disable-next-line import/extensions, import/no-unresolved
-import colorData from '../dist/docs/functional/themes/light.json'
+import colorData from '../dist/docs/functional/themes/light.json' assert {type: 'json'}
 
 const extractNameAndValue = Object.entries(colorData)
   .map(([_key, details]) => ({

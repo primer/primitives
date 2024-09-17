@@ -1,5 +1,5 @@
 import type {TransformedToken} from 'style-dictionary'
-import {namePathToDotNotation} from '../namePathToDotNotation'
+import {namePathToDotNotation} from '../namePathToDotNotation.js'
 
 const composeValueErrorMessage = (token: TransformedToken) => {
   // eslint-disable-next-line i18n-text/no-en

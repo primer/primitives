@@ -1,5 +1,5 @@
-import {jsonNestedPrefixed} from './jsonNestedPrefixed'
-import {getMockFormatterArguments} from '../test-utilities'
+import {jsonNestedPrefixed} from './jsonNestedPrefixed.js'
+import {getMockFormatterArguments} from '../test-utilities/index.js'
 import syncPrettier from '@prettier/sync'
 
 describe('Format: Json nested with prefixes', () => {

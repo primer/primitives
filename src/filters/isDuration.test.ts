@@ -1,5 +1,5 @@
-import {getMockToken} from '../test-utilities'
-import {isDuration} from './isDuration'
+import {getMockToken} from '../test-utilities/index.js'
+import {isDuration} from './isDuration.js'
 
 describe('Filter: isDuration', () => {
   it('returns true if $type property is `duration`', () => {

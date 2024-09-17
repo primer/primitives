@@ -1,4 +1,4 @@
-import {fontFamilyToken} from './fontFamilyToken'
+import {fontFamilyToken} from './fontFamilyToken.js'
 
 describe('Schema: fontFamilyToken', () => {
   const validToken = {

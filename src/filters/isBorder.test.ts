@@ -1,5 +1,5 @@
-import {getMockToken} from '../test-utilities'
-import {isBorder} from './isBorder'
+import {getMockToken} from '../test-utilities/index.js'
+import {isBorder} from './isBorder.js'
 
 describe('Filter: isBorder', () => {
   it('returns true if $type property is `border`', () => {

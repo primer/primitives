@@ -1,5 +1,5 @@
-import {w3cJsonParser} from './w3cJsonParser'
-import {parserOutput as expectedOutput, getMockParserInput} from '../test-utilities'
+import {w3cJsonParser} from './w3cJsonParser.js'
+import {parserOutput as expectedOutput, getMockParserInput} from '../test-utilities/index.js'
 
 describe('Parser: w3c token json5 parser', () => {
   it('parses valid w3c json5', () => {

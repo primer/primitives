@@ -1,5 +1,5 @@
-import {getMockToken} from '../test-utilities'
-import {durationToCss} from './durationToCss'
+import {getMockToken} from '../test-utilities/index.js'
+import {durationToCss} from './durationToCss.js'
 
 describe('Transformer: durationToCss', () => {
   it('transforms `duration` token to css duration', () => {

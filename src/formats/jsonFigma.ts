@@ -1,11 +1,11 @@
 import StyleDictionary from 'style-dictionary'
 import syncPrettier from '@prettier/sync'
 import type {FormatterArguments} from 'style-dictionary/types/Format'
-import {transformNamePathToFigma} from '../transformers/namePathToFigma'
-import type {ShadowTokenValue} from '../types/ShadowTokenValue'
-import {hexToRgbaFloat} from '../transformers/utilities/hexToRgbaFloat'
-import type {RgbaFloat} from '../transformers/utilities/isRgbaFloat'
-import {isRgbaFloat} from '../transformers/utilities/isRgbaFloat'
+import {transformNamePathToFigma} from '../transformers/namePathToFigma.js'
+import type {ShadowTokenValue} from '../types/ShadowTokenValue.js'
+import {hexToRgbaFloat} from '../transformers/utilities/hexToRgbaFloat.js'
+import type {RgbaFloat} from '../transformers/utilities/isRgbaFloat.js'
+import {isRgbaFloat} from '../transformers/utilities/isRgbaFloat.js'
 const {sortByReference} = StyleDictionary.formatHelpers
 
 const isReference = (string: string): boolean => /^\{([^\\]*)\}$/g.test(string)

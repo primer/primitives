@@ -1,4 +1,4 @@
-import {baseToken} from './baseToken'
+import {baseToken} from './baseToken.js'
 
 describe('Schema: baseToken', () => {
   const validToken = {

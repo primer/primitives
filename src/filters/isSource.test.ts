@@ -1,6 +1,6 @@
 import type StyleDictionary from 'style-dictionary'
-import {getMockToken} from '../test-utilities'
-import {isSource} from './isSource'
+import {getMockToken} from '../test-utilities/index.js'
+import {isSource} from './isSource.js'
 
 describe('Filter: isSource', () => {
   it('Returns true if isSource property is true', () => {

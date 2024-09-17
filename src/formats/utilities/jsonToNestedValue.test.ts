@@ -1,4 +1,4 @@
-import {jsonToNestedValue} from './jsonToNestedValue'
+import {jsonToNestedValue} from './jsonToNestedValue.js'
 
 describe('Utilities: jsonToNestedValue', () => {
   const obj = {

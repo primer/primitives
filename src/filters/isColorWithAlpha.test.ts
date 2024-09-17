@@ -1,5 +1,5 @@
-import {getMockToken} from '../test-utilities'
-import {isColorWithAlpha} from './isColorWithAlpha'
+import {getMockToken} from '../test-utilities/index.js'
+import {isColorWithAlpha} from './isColorWithAlpha.js'
 
 describe('Filter: isColorWithAlpha', () => {
   it('returns true if $type property is `color` and `alpha` is number', () => {

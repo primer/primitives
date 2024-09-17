@@ -1,4 +1,4 @@
-import {dimensionValue} from './dimensionValue'
+import {dimensionValue} from './dimensionValue.js'
 
 describe('Schema: dimensionValue', () => {
   it('passes on valid values', () => {

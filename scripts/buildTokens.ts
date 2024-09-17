@@ -1,11 +1,14 @@
 import type StyleDictionary from 'style-dictionary'
-import {PrimerStyleDictionary} from '../src/PrimerStyleDictionary'
-import {copyFromDir} from '../src/utilities'
-import {deprecatedJson, css, docJson, fallbacks, styleLint} from '../src/platforms'
-import type {ConfigGeneratorOptions, StyleDictionaryConfigGenerator} from '../src/types/StyleDictionaryConfigGenerator'
-import type {TokenBuildInput} from '../src/types/TokenBuildInput'
+import {PrimerStyleDictionary} from '../src/PrimerStyleDictionary.js'
+import {copyFromDir} from '../src/utilities/index.js'
+import {deprecatedJson, css, docJson, fallbacks, styleLint} from '../src/platforms/index.js'
+import type {
+  ConfigGeneratorOptions,
+  StyleDictionaryConfigGenerator,
+} from '../src/types/StyleDictionaryConfigGenerator.js'
+import type {TokenBuildInput} from '../src/types/TokenBuildInput.js'
 import glob from 'fast-glob'
-import {themes} from './themes.config'
+import {themes} from './themes.config.js'
 import fs from 'fs'
 
 /**
@@ -25,16 +28,18 @@ const getStyleDictionaryConfig: StyleDictionaryConfigGenerator = (
 ): StyleDictionary.Config => ({
   source, // build the special formats
   include,
-  platforms: {
-    css: css(`css/${filename}.css`, options.prefix, options.buildPath, {themed: options.themed}),
-    docJson: docJson(`docs/${filename}.json`, options.prefix, options.buildPath),
-    styleLint: styleLint(`styleLint/${filename}.json`, options.prefix, options.buildPath),
-    fallbacks: fallbacks(`fallbacks/${filename}.json`, options.prefix, options.buildPath),
-    ...platforms,
-  },
+  platforms: Object.fromEntries(
+    Object.entries({
+      css: css(`css/${filename}.css`, options.prefix, options.buildPath, {themed: options.themed}),
+      docJson: docJson(`docs/${filename}.json`, options.prefix, options.buildPath),
+      styleLint: styleLint(`styleLint/${filename}.json`, options.prefix, options.buildPath),
+      fallbacks: fallbacks(`fallbacks/${filename}.json`, options.prefix, options.buildPath),
+      ...platforms,
+    }).filter((entry: [string, unknown]) => entry[1] !== undefined),
+  ),
 })
 
-export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void => {
+export const buildDesignTokens = async (buildOptions: ConfigGeneratorOptions): Promise<void> => {
   /** -----------------------------------
    * Internal Colors
    * ----------------------------------- */
@@ -247,6 +252,6 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
  * Run build script
  * ----------------------------------- */
 // build to dist
-buildDesignTokens({
+await buildDesignTokens({
   buildPath: 'dist/',
 })

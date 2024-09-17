@@ -1,6 +1,6 @@
-import {isFromFile, isSource} from '../filters'
+import {isFromFile, isSource} from '../filters/index.js'
 import type StyleDictionary from 'style-dictionary'
-import type {PlatformInitializer} from '../types/PlatformInitializer'
+import type {PlatformInitializer} from '../types/PlatformInitializer.js'
 import type {TransformedToken} from 'style-dictionary'
 
 const getCssSelectors = (outputFile: string) => {

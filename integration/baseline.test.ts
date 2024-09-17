@@ -1,4 +1,4 @@
-import {PrimerStyleDictionary} from '../src/PrimerStyleDictionary'
+import {PrimerStyleDictionary} from '../src/PrimerStyleDictionary.js'
 import fs from 'fs'
 
 describe('PrimerStyleDictionary', () => {

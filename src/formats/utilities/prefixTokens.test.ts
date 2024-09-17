@@ -1,5 +1,5 @@
-import {getMockToken} from '../../test-utilities'
-import {prefixTokens} from './prefixTokens'
+import {getMockToken} from '../../test-utilities/index.js'
+import {prefixTokens} from './prefixTokens.js'
 
 describe('Utilities: prefixTokens', () => {
   const tokens = {

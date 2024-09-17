@@ -1,5 +1,5 @@
-import {getMockToken} from '../test-utilities'
-import {typographyToCss} from './typographyToCss'
+import {getMockToken} from '../test-utilities/index.js'
+import {typographyToCss} from './typographyToCss.js'
 
 describe('Transformer: typographyToCss', () => {
   it('transforms `typography` token to css typography string', () => {

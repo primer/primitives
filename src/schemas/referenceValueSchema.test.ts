@@ -1,4 +1,4 @@
-import {referenceValue} from './referenceValue'
+import {referenceValue} from './referenceValue.js'
 
 describe('Schema: referenceValue', () => {
   it('returns success on valid reference', () => {

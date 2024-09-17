@@ -1,5 +1,5 @@
-import {getMockToken} from '../test-utilities'
-import {dimensionToRem} from './dimensionToRem'
+import {getMockToken} from '../test-utilities/index.js'
+import {dimensionToRem} from './dimensionToRem.js'
 
 describe('Transformer: dimensionToRem', () => {
   it('transforms pixel string tokens to rem', () => {

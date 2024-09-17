@@ -1,6 +1,6 @@
 import syncPrettier from '@prettier/sync'
-import {jsonToNestedValue} from './utilities/jsonToNestedValue'
-import {prefixTokens} from './utilities/prefixTokens'
+import {jsonToNestedValue} from './utilities/jsonToNestedValue.js'
+import {prefixTokens} from './utilities/prefixTokens.js'
 import StyleDictionary from 'style-dictionary'
 import type {FormatterArguments} from 'style-dictionary/types/Format'
 

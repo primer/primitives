@@ -1,5 +1,5 @@
-import {getMockToken} from '../test-utilities'
-import {dimensionToPixelUnitless} from './dimensionToPixelUnitless'
+import {getMockToken} from '../test-utilities/index.js'
+import {dimensionToPixelUnitless} from './dimensionToPixelUnitless.js'
 
 describe('Transformer: dimensionToPixelUnitless', () => {
   it('transforms pixel string tokens', () => {

@@ -1,5 +1,5 @@
-import {getMockToken} from '../../test-utilities'
-import {jsonToFlat} from './jsonToFlat'
+import {getMockToken} from '../../test-utilities/index.js'
+import {jsonToFlat} from './jsonToFlat.js'
 
 describe('Utilities: jsonToFlat', () => {
   const tokens = [

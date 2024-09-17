@@ -1,4 +1,4 @@
-import {parse as json5Parse} from 'json5'
+import JSON5 from 'json5'
 import type StyleDictionary from 'style-dictionary'
 
 /**
@@ -17,7 +17,7 @@ export const w3cJsonParser: StyleDictionary.Parser = {
         .replace(/["|']?\$?type["|']?:/g, '"$type":')
         .replace(/["|']?\$?extensions["|']?:/g, '"$extensions":')
       //
-      return json5Parse(contents)
+      return JSON5.parse(contents)
     } catch (e) {
       throw new Error(`Invalid json5 file "${filePath}".`)
     }

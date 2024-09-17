@@ -1,5 +1,5 @@
-import {getMockToken} from '../test-utilities'
-import {fontWeightToNumber} from './fontWeightToNumber'
+import {getMockToken} from '../test-utilities/index.js'
+import {fontWeightToNumber} from './fontWeightToNumber.js'
 
 describe('Transformer: fontWeightToNumbers', () => {
   it('keeps number if within range of 1-1000', () => {

@@ -1,5 +1,5 @@
 import type StyleDictionary from 'style-dictionary'
-import {isNumber} from '../filters'
+import {isNumber} from '../filters/index.js'
 /**
  * takes a value and returns it if its a px string if it is a float and the token has a fontSize value in extensions['org.primer.data']
  * @param value

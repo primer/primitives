@@ -1,4 +1,4 @@
-import {viewportRangeToken} from './viewportRangeToken'
+import {viewportRangeToken} from './viewportRangeToken.js'
 
 describe('Schema: viewportRangeToken', () => {
   const validToken = {

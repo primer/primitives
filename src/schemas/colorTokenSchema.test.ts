@@ -1,4 +1,4 @@
-import {colorToken} from './colorToken'
+import {colorToken} from './colorToken.js'
 
 describe('Schema: colorToken', () => {
   const validToken = {

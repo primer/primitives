@@ -1,6 +1,6 @@
 import type StyleDictionary from 'style-dictionary'
-import type {PlatformInitializer} from '../types/PlatformInitializer'
-import {isSource} from '../filters'
+import type {PlatformInitializer} from '../types/PlatformInitializer.js'
+import {isSource} from '../filters/index.js'
 
 const validFigmaToken = (token: StyleDictionary.TransformedToken) => {
   const validTypes = ['color', 'dimension', 'shadow', 'fontWeight', 'fontFamily', 'number']

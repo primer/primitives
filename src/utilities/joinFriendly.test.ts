@@ -1,4 +1,4 @@
-import {joinFriendly} from './joinFriendly'
+import {joinFriendly} from './joinFriendly.js'
 
 describe('Utilities: joinFriendly', () => {
   it('it joins items with and for last item', () => {

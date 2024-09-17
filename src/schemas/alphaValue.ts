@@ -1,5 +1,5 @@
 import {z} from 'zod'
-import {schemaErrorMessage} from '../utilities/schemaErrorMessage'
+import {schemaErrorMessage} from '../utilities/index.js'
 
 export const alphaValue = z.any().refine(
   value => typeof value === 'number' && value >= 0 && value <= 1,

@@ -1,12 +1,12 @@
 import StyleDictionary from 'style-dictionary'
 import syncPrettier from '@prettier/sync'
-import fs = require('fs')
-import path = require('path')
-import {treeWalker} from '../utilities/treeWalker'
+import fs from 'fs'
+import path from 'path'
+import {treeWalker} from '../utilities/index.js'
+import {prefixTokens} from './utilities/prefixTokens.js'
 
 import type {FormatterArguments} from 'style-dictionary/types/Format'
-import type {w3cTransformedToken} from '../types/w3cTransformedToken'
-import {prefixTokens} from './utilities/prefixTokens'
+import type {w3cTransformedToken} from '../types/w3cTransformedToken.js'
 
 const {fileHeader} = StyleDictionary.formatHelpers
 

@@ -1,9 +1,9 @@
-import {PrimerStyleDictionary} from '../src/PrimerStyleDictionary'
+import {PrimerStyleDictionary} from '../src/PrimerStyleDictionary.js'
 import fs from 'fs'
 
 describe('PrimerStyleDictionary', () => {
   const basePath = `./integration`
-  const buildPath = `${basePath}/build/integreation`
+  const buildPath = `${basePath}/build/integration`
 
   beforeAll(() => {
     const extendedSD = PrimerStyleDictionary.extend({

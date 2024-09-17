@@ -1,4 +1,4 @@
-import {isRgbaFloat} from './isRgbaFloat'
+import {isRgbaFloat} from './isRgbaFloat.js'
 
 describe('Utilities: isRgbaFloat', () => {
   it('valid RgbaFloat', () => {

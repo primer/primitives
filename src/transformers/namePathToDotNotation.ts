@@ -1,4 +1,4 @@
-import {upperCaseFirstCharacter} from '../utilities'
+import {upperCaseFirstCharacter} from '../utilities/index.js'
 import type StyleDictionary from 'style-dictionary'
 
 /**

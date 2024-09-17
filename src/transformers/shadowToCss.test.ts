@@ -1,5 +1,5 @@
-import {getMockToken} from '../test-utilities'
-import {shadowToCss} from './shadowToCss'
+import {getMockToken} from '../test-utilities/index.js'
+import {shadowToCss} from './shadowToCss.js'
 
 describe('Transformer: shadowToCss', () => {
   it('transforms `shadow` token to css shadow string', () => {

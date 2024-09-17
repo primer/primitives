@@ -1,9 +1,9 @@
 import {z} from 'zod'
-import {baseToken} from './baseToken'
-import {referenceValue} from './referenceValue'
-import {tokenType} from './tokenType'
-import {scopes} from './scopes'
-import {collection} from './collections'
+import {baseToken} from './baseToken.js'
+import {referenceValue} from './referenceValue.js'
+import {tokenType} from './tokenType.js'
+import {scopes} from './scopes.js'
+import {collection} from './collections.js'
 
 export const numberToken = baseToken
   .extend({

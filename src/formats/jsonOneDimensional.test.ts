@@ -1,5 +1,5 @@
-import {jsonOneDimensional} from './jsonOneDimensional'
-import {getMockDictionary, getMockFormatterArguments, getMockToken} from '../test-utilities'
+import {jsonOneDimensional} from './jsonOneDimensional.js'
+import {getMockDictionary, getMockFormatterArguments, getMockToken} from '../test-utilities/index.js'
 import syncPrettier from '@prettier/sync'
 
 describe('Format: Json One Dimensional', () => {

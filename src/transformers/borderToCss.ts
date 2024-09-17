@@ -1,6 +1,6 @@
-import {isBorder} from '../filters/isBorder'
+import {isBorder} from '../filters/index.js'
 import type StyleDictionary from 'style-dictionary'
-import type {BorderTokenValue} from '../types/BorderTokenValue'
+import type {BorderTokenValue} from '../types/BorderTokenValue.js'
 
 /**
  * checks if all required properties exist on shadow token

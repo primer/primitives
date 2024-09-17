@@ -1,4 +1,4 @@
-import {durationToken} from './durationToken'
+import {durationToken} from './durationToken.js'
 
 describe('Schema: durationToken', () => {
   const validToken = {

@@ -1,5 +1,5 @@
 import type StyleDictionary from 'style-dictionary'
-import {toCamelCase} from '../utilities'
+import {toCamelCase} from '../utilities/index.js'
 
 /**
  * @description converts the [TransformedToken's](https://github.com/amzn/style-dictionary/blob/main/types/TransformedToken.d.ts) `.path` array to a camelCase string, preserves casing of parts

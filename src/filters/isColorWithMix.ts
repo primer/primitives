@@ -1,5 +1,5 @@
 import type StyleDictionary from 'style-dictionary'
-import {isColor} from './isColor'
+import {isColor} from './isColor.js'
 
 const throwError = (token: StyleDictionary.TransformedToken) => {
   throw new Error(

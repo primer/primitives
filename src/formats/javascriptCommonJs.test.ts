@@ -1,5 +1,5 @@
-import {javascriptCommonJs} from './javascriptCommonJs'
-import {getMockFormatterArguments} from '../test-utilities'
+import {javascriptCommonJs} from './javascriptCommonJs.js'
+import {getMockFormatterArguments} from '../test-utilities/index.js'
 import syncPrettier from '@prettier/sync'
 
 describe('Format: CommonJs', () => {
