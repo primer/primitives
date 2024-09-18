@@ -32,12 +32,7 @@ jobs:
 
       - name: Build storybook
         working-directory: docs/storybook
-<<<<<<< HEAD
         run: npm run build-storybook
-=======
-        run: |
-          npm run build-storybook
->>>>>>> 57d8a769 (update to type module to see what breaks the build in sdv4)
 
       - name: Run storybook
         id: storybook
