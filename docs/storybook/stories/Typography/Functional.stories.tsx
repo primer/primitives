@@ -1012,7 +1012,7 @@ export const Overview = () => {
           },
           {
             header: 'Description',
-            field: 'comment',
+            field: 'description',
             rowHeader: true,
             width: 'auto',
             renderCell: row => {
@@ -1025,7 +1025,7 @@ export const Overview = () => {
                     marginBottom: '0',
                   }}
                 >
-                  {row.comment}
+                  {row.description}
                 </p>
               )
             },
