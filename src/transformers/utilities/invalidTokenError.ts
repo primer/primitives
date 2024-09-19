@@ -1,21 +1,25 @@
-import type {TransformedToken} from 'style-dictionary'
+import type {TransformedToken} from 'style-dictionary/types'
 import {namePathToDotNotation} from '../namePathToDotNotation.js'
 
 const composeValueErrorMessage = (token: TransformedToken) => {
+  const originalValue = token.original.$value ?? token.original.value
+  const value = token.$value ?? token.value
   // eslint-disable-next-line i18n-text/no-en
-  return `Invalid token "${namePathToDotNotation.transformer(token, {})}" in file "${
+  return `Invalid token "${namePathToDotNotation.transform(token, {}, {})}" in file "${
     token.filePath
-  }". Transformed value: "${JSON.stringify(token.value)}". ${
-    token.original.value ? `Original value: "${JSON.stringify(token.original.value)}" ` : ''
+  }". Transformed value: "${JSON.stringify(value)}". ${
+    originalValue ? `Original value: "${JSON.stringify(originalValue)}" ` : ''
   }This may be due to referencing a token that does not exists.`
 }
 
 const composeValuePropertyErrorMessage = (token: TransformedToken, property: string) => {
+  const originalValue = token.original.$value ?? token.original.value
+  const value = token.$value ?? token.value
   // eslint-disable-next-line i18n-text/no-en
-  return `Invalid property "${property}" of token "${namePathToDotNotation.transformer(token, {})}" in file "${
+  return `Invalid property "${property}" of token "${namePathToDotNotation.transform(token, {}, {})}" in file "${
     token.filePath
-  }". Transformed property value: "${token.value[property]}". ${
-    token.original.value ? `Original value: "${token.original.value[property]}" ` : ''
+  }". Transformed property value: "${value[property]}". ${
+    originalValue ? `Original value: "${originalValue[property]}" ` : ''
   }This may be due to referencing a token that does not exists.`
 }
 

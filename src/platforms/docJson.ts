@@ -1,8 +1,8 @@
-import type StyleDictionary from 'style-dictionary'
 import type {PlatformInitializer} from '../types/PlatformInitializer.js'
 import {isSource} from '../filters/index.js'
+import type {PlatformConfig} from 'style-dictionary/types'
 
-export const docJson: PlatformInitializer = (outputFile, prefix, buildPath): StyleDictionary.Platform => ({
+export const docJson: PlatformInitializer = (outputFile, prefix, buildPath): PlatformConfig => ({
   prefix,
   buildPath,
   transforms: [
@@ -18,6 +18,11 @@ export const docJson: PlatformInitializer = (outputFile, prefix, buildPath): Sty
   ],
   options: {
     basePxFontSize: 16,
+    propertyConversion: {
+      $value: 'value',
+      $type: 'type',
+      $description: 'description',
+    },
   },
   files: [
     {

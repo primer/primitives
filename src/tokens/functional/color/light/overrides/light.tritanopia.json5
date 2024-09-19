@@ -31,7 +31,7 @@
       emphasis: {
         $value: '{base.color.blue.5}',
         $type: 'color',
-        mix: null
+        mix: null,
       },
     },
     open: {
@@ -103,6 +103,9 @@
       muted: {
         $value: '{borderColor.default}',
         $type: 'color',
+        $extensions: {
+          alpha: 0.4,
+        },
       },
       emphasis: {
         $value: '{borderColor.emphasis}',

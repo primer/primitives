@@ -23,7 +23,7 @@ describe('Transformer: namePathToDotNotation', () => {
     ]
     const expectedOutput = ['path.to.token', 'PATH.tO.Token', 'path.toToken', 'pathtoToken']
 
-    expect(input.map(item => namePathToDotNotation.transformer(item, {}))).toStrictEqual(expectedOutput)
+    expect(input.map(item => namePathToDotNotation.transform(item, {}, {}))).toStrictEqual(expectedOutput)
   })
 
   it('replaces spaces, `-`, `_` and `+` within path elements and joins with camelCase, but does not change the rest of the word', () => {
@@ -42,7 +42,7 @@ describe('Transformer: namePathToDotNotation', () => {
       }),
     ]
     const expectedOutput = ['start.pathToToken', 'start.PATHTOToken', 'start.pathToToken']
-    expect(input.map(item => namePathToDotNotation.transformer(item, {}))).toStrictEqual(expectedOutput)
+    expect(input.map(item => namePathToDotNotation.transform(item, {}, {}))).toStrictEqual(expectedOutput)
   })
 
   it('removes `@`, so we can use it for the default hack', () => {
@@ -57,7 +57,7 @@ describe('Transformer: namePathToDotNotation', () => {
       }),
     ]
     const expectedOutput = ['fgColor.accent', 'fgColor.muted']
-    expect(input.map(item => namePathToDotNotation.transformer(item, {}))).toStrictEqual(expectedOutput)
+    expect(input.map(item => namePathToDotNotation.transform(item, {}, {}))).toStrictEqual(expectedOutput)
   })
 
   it('adds prefix to token name', () => {
@@ -69,6 +69,6 @@ describe('Transformer: namePathToDotNotation', () => {
       path: ['start', 'pathTo', 'token'],
     })
     const expectedOutput = 'PRIMER.start.pathTo.token'
-    expect(namePathToDotNotation.transformer(input, platform)).toStrictEqual(expectedOutput)
+    expect(namePathToDotNotation.transform(input, platform, {})).toStrictEqual(expectedOutput)
   })
 })

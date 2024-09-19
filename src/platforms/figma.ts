@@ -1,13 +1,14 @@
-import type StyleDictionary from 'style-dictionary'
 import type {PlatformInitializer} from '../types/PlatformInitializer.js'
 import {isSource} from '../filters/index.js'
+import type {TransformedToken, PlatformConfig, Config} from 'style-dictionary/types'
 
-const validFigmaToken = (token: StyleDictionary.TransformedToken) => {
+const validFigmaToken = async (token: TransformedToken, options: Config) => {
+  const valueProp = options.usesDtcg ? '$value' : 'value'
   const validTypes = ['color', 'dimension', 'shadow', 'fontWeight', 'fontFamily', 'number']
   // is a siource token, not an included one
-  if (!isSource(token)) return false
+  if (!isSource(token) || !token.$type) return false
 
-  if (`${token.value}`.substring(token.value.length - 2) === 'em') return false
+  if (`${token[valueProp]}`.substring(token[valueProp].length - 2) === 'em') return false
   // has a collection attribute
   if (
     !('$extensions' in token) ||
@@ -19,20 +20,19 @@ const validFigmaToken = (token: StyleDictionary.TransformedToken) => {
   return validTypes.includes(token.$type)
 }
 
-export const figma: PlatformInitializer = (outputFile, prefix, buildPath, options): StyleDictionary.Platform => ({
+export const figma: PlatformInitializer = (outputFile, prefix, buildPath, options): PlatformConfig => ({
   prefix,
   buildPath,
   transforms: [
     'color/rgbaFloat',
-    'name/pathToFigma',
-    // 'name/pathToSlashNotation',
-    'figma/attributes',
     'fontFamily/figma',
     'float/pixelUnitless',
     'dimension/pixelUnitless',
     // 'border/figma',
     // 'typography/figma',
     'fontWeight/number',
+    'figma/attributes',
+    'name/pathToFigma',
   ],
   options: {
     basePxFontSize: 16,
@@ -47,7 +47,9 @@ export const figma: PlatformInitializer = (outputFile, prefix, buildPath, option
   files: [
     {
       destination: outputFile,
-      filter: validFigmaToken,
+      filter: (token: TransformedToken, config: Config) => {
+        return validFigmaToken(token, config)
+      },
       format: `json/figma`,
       options: {
         outputReferences: true,

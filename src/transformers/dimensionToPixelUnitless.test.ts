@@ -9,7 +9,7 @@ describe('Transformer: dimensionToPixelUnitless', () => {
       }),
     ]
     const expectedOutput = [16]
-    expect(input.map(item => dimensionToPixelUnitless.transformer(item, {}))).toStrictEqual(expectedOutput)
+    expect(input.map(item => dimensionToPixelUnitless.transform(item, {}, {}))).toStrictEqual(expectedOutput)
   })
 
   it('does not transforms number or number string', () => {
@@ -22,7 +22,7 @@ describe('Transformer: dimensionToPixelUnitless', () => {
       }),
     ]
     const expectedOutput = ['16', 16]
-    expect(input.map(item => dimensionToPixelUnitless.transformer(item, {}))).toStrictEqual(expectedOutput)
+    expect(input.map(item => dimensionToPixelUnitless.transform(item, {}, {}))).toStrictEqual(expectedOutput)
   })
 
   it('transforms rem', () => {
@@ -32,7 +32,7 @@ describe('Transformer: dimensionToPixelUnitless', () => {
       }),
     ]
     const expectedOutput = [16]
-    expect(input.map(item => dimensionToPixelUnitless.transformer(item, {}))).toStrictEqual(expectedOutput)
+    expect(input.map(item => dimensionToPixelUnitless.transform(item, {}, {}))).toStrictEqual(expectedOutput)
   })
 
   it('transforms rem with custom basePxFontSize', () => {
@@ -42,7 +42,7 @@ describe('Transformer: dimensionToPixelUnitless', () => {
       }),
     ]
     const expectedOutput = [20]
-    expect(input.map(item => dimensionToPixelUnitless.transformer(item, {basePxFontSize: 10}))).toStrictEqual(
+    expect(input.map(item => dimensionToPixelUnitless.transform(item, {basePxFontSize: 10}, {}))).toStrictEqual(
       expectedOutput,
     )
   })
@@ -54,7 +54,7 @@ describe('Transformer: dimensionToPixelUnitless', () => {
       }),
     ]
     const expectedOutput = ['1em']
-    expect(input.map(item => dimensionToPixelUnitless.transformer(item, {}))).toStrictEqual(expectedOutput)
+    expect(input.map(item => dimensionToPixelUnitless.transform(item, {}, {}))).toStrictEqual(expectedOutput)
   })
 
   it('transforms 0 to 0', () => {
@@ -70,7 +70,7 @@ describe('Transformer: dimensionToPixelUnitless', () => {
       }),
     ]
     const expectedOutput = [0, 0, 0]
-    expect(input.map(item => dimensionToPixelUnitless.transformer(item, {}))).toStrictEqual(expectedOutput)
+    expect(input.map(item => dimensionToPixelUnitless.transform(item, {}, {}))).toStrictEqual(expectedOutput)
   })
 
   it('throws on invalid tokens', () => {
@@ -88,6 +88,6 @@ describe('Transformer: dimensionToPixelUnitless', () => {
         value: null,
       }),
     ]
-    expect(() => input.map(item => dimensionToPixelUnitless.transformer(item, {}))).toThrow()
+    expect(() => input.map(item => dimensionToPixelUnitless.transform(item, {}, {}))).toThrow()
   })
 })

@@ -1,4 +1,4 @@
-import type StyleDictionary from 'style-dictionary'
+import type {TransformedToken} from 'style-dictionary/types'
 import {getMockToken} from '../test-utilities/index.js'
 import {isSource} from './isSource.js'
 
@@ -19,7 +19,7 @@ describe('Filter: isSource', () => {
   })
 
   it('Returns false if no isSource property exists', () => {
-    expect(isSource({value: 'pumpkin'} as StyleDictionary.TransformedToken)).toStrictEqual(false)
+    expect(isSource({value: 'pumpkin'} as TransformedToken)).toStrictEqual(false)
   })
 
   it('Usage as a filter function', () => {
@@ -35,7 +35,7 @@ describe('Filter: isSource', () => {
       {
         value: 'yellow is not source',
       },
-    ] as StyleDictionary.TransformedToken[]
+    ] as TransformedToken[]
 
     const expectedOutput = inputArray.filter(item => item.isSource === true)
 

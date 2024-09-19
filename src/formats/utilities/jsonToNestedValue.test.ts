@@ -5,11 +5,11 @@ describe('Utilities: jsonToNestedValue', () => {
     parent: {
       subparent: {
         child1: {
-          value: '#111',
+          $value: '#111',
           $type: 'color',
         },
         child2: {
-          value: '#222',
+          $value: '#222',
           $type: 'color',
         },
       },

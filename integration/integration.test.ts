@@ -1,16 +1,17 @@
 import {PrimerStyleDictionary} from '../src/PrimerStyleDictionary.js'
 import fs from 'fs'
 
-describe('PrimerStyleDictionary', () => {
+describe('PrimerStyleDictionary', async () => {
   const basePath = `./integration`
   const buildPath = `${basePath}/build/integration`
 
-  beforeAll(() => {
-    const extendedSD = PrimerStyleDictionary.extend({
+  beforeAll(async () => {
+    const extendedSD = await PrimerStyleDictionary.extend({
       source: [`${basePath}/tokens/**/*.json5`],
       platforms: {
         advancedCss: {
           prefix: 'PREFIX',
+          usesDtcg: true,
           transforms: [
             'name/pathToKebabCase',
             'color/hex',
@@ -36,6 +37,7 @@ describe('PrimerStyleDictionary', () => {
         },
         commonJs: {
           prefix: 'PREFIX',
+          usesDtcg: true,
           transforms: [
             'color/hex',
             'color/hexMix',
@@ -59,6 +61,7 @@ describe('PrimerStyleDictionary', () => {
         },
         javascriptEsm: {
           prefix: 'PREFIX',
+          usesDtcg: true,
           buildPath: `${buildPath}/js/`,
           transforms: [
             'color/hex',
@@ -82,6 +85,7 @@ describe('PrimerStyleDictionary', () => {
         },
         jsonFigma: {
           prefix: 'PREFIX',
+          usesDtcg: true,
           buildPath: `${buildPath}/json/`,
           transforms: [
             'color/rgbaFloat',
@@ -104,6 +108,7 @@ describe('PrimerStyleDictionary', () => {
         },
         jsonNestedPrefixed: {
           prefix: 'PREFIX',
+          usesDtcg: true,
           buildPath: `${buildPath}/json/`,
           transforms: [
             'color/hex',
@@ -150,8 +155,8 @@ describe('PrimerStyleDictionary', () => {
       },
     })
 
-    extendedSD.cleanAllPlatforms()
-    extendedSD.buildAllPlatforms()
+    await extendedSD.cleanAllPlatforms()
+    await extendedSD.buildAllPlatforms()
   })
 
   it('runs css/advanced format', () => {
@@ -208,20 +213,6 @@ describe('PrimerStyleDictionary', () => {
     const output = fs.readFileSync(`${buildPath}/json/figma.json`, 'utf8')
     const expectedOutput = `[
   {
-    "name": "PREFIX/base/color/aquaBlue/500",
-    "value": {
-      "r": 0.17254901960784313,
-      "g": 0.1607843137254902,
-      "b": 1,
-      "a": 1
-    },
-    "type": "COLOR",
-    "description": "The primary color for interactive elements.",
-    "refId": "PREFIX/base/color/aquaBlue/500",
-    "mode": "default",
-    "scopes": ["ALL_SCOPES"]
-  },
-  {
     "name": "PREFIX/fgColor/link-rest-01",
     "value": {
       "r": 0.17254901960784313,
@@ -232,6 +223,20 @@ describe('PrimerStyleDictionary', () => {
     "type": "COLOR",
     "refId": "PREFIX/fgColor/link-rest-01",
     "reference": "PREFIX/base/color/aquaBlue/500",
+    "mode": "default",
+    "scopes": ["ALL_SCOPES"]
+  },
+  {
+    "name": "PREFIX/base/color/aquaBlue/500",
+    "value": {
+      "r": 0.17254901960784313,
+      "g": 0.1607843137254902,
+      "b": 1,
+      "a": 1
+    },
+    "type": "COLOR",
+    "description": "The primary color for interactive elements.",
+    "refId": "PREFIX/base/color/aquaBlue/500",
     "mode": "default",
     "scopes": ["ALL_SCOPES"]
   }

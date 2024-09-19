@@ -1,7 +1,7 @@
-import type StyleDictionary from 'style-dictionary'
 import {isColor} from './isColor.js'
+import type {TransformedToken} from 'style-dictionary/types'
 
-const throwError = (token: StyleDictionary.TransformedToken) => {
+const throwError = (token: TransformedToken) => {
   throw new Error(
     `Invalid mix property on token: ${token.name}. "mix.color": ${token.mix.color}, "mix.weight": ${
       typeof token.mix.weight === 'string' ? `"${token.mix.weight}" (string)` : token.mix.weight
@@ -11,10 +11,10 @@ const throwError = (token: StyleDictionary.TransformedToken) => {
 
 /**
  * @description Checks if token is color and has a mix property
- * @param arguments [StyleDictionary.TransformedToken](https://github.com/amzn/style-dictionary/blob/main/types/TransformedToken.d.ts)
+ * @param arguments [TransformedToken](https://github.com/amzn/style-dictionary/blob/main/types/TransformedToken.d.ts)
  * @returns boolean
  */
-export const isColorWithMix = (token: StyleDictionary.TransformedToken): boolean => {
+export const isColorWithMix = (token: TransformedToken): boolean => {
   // no color or no mix property
   if (!isColor(token) || token.mix === undefined || token.mix === null) {
     return false

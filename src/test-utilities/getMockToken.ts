@@ -4,12 +4,12 @@ const mockTokenDefaults = {
   name: 'tokenName',
   path: ['path'],
   original: {
-    value: 'originalValue',
+    $value: 'originalValue',
     attributes: {},
   },
   filePath: 'file.json',
   isSource: true,
-  value: 'transformedValue',
+  $value: 'transformedValue',
   attributes: {},
 }
 /**
