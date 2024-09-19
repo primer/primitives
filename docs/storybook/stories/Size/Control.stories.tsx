@@ -92,7 +92,7 @@ export const XSmall = () => {
             field: 'original.value',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.original.value}</p>
+              return <p>{row.original.$value}</p>
             },
           },
         ]}
@@ -168,7 +168,7 @@ export const Small = () => {
             field: 'original.value',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.original.value}</p>
+              return <p>{row.original.$value}</p>
             },
           },
         ]}
@@ -251,7 +251,7 @@ export const Medium = () => {
             field: 'original.value',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.original.value}</p>
+              return <p>{row.original.$value}</p>
             },
           },
         ]}
@@ -327,7 +327,7 @@ export const Large = () => {
             field: 'original.value',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.original.value}</p>
+              return <p>{row.original.$value}</p>
             },
           },
         ]}
@@ -403,7 +403,7 @@ export const XLarge = () => {
             field: 'original.value',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.original.value}</p>
+              return <p>{row.original.$value}</p>
             },
           },
         ]}
@@ -469,7 +469,7 @@ export const ControlStackRegular = () => {
             field: 'original.value',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.original.value}</p>
+              return <p>{row.original.$value}</p>
             },
           },
         ]}
@@ -587,7 +587,7 @@ export const ControlTouchTarget = () => {
             field: 'original.value',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.original.value}</p>
+              return <p>{row.original.$value}</p>
             },
           },
         ]}

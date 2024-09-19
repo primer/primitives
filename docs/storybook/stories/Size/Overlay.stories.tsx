@@ -50,7 +50,7 @@ export const Overlay = () => {
             field: 'original',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.original.value}</p>
+              return <p>{row.original.$value}</p>
             },
           },
         ]}

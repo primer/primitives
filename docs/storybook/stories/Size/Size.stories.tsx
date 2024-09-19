@@ -60,7 +60,7 @@ export const Base = () => {
             field: 'original.value',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.original.value}</p>
+              return <p>{row.original.$value}</p>
             },
           },
         ]}
