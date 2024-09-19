@@ -1,4 +1,4 @@
-import {toPascalCase} from './toPascalCase'
+import {toPascalCase} from './toPascalCase.js'
 
 describe('Utilities: toPascalCase', () => {
   it('it transforms all lowercase word', () => {

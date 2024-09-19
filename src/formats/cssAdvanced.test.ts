@@ -1,5 +1,5 @@
-import {cssAdvanced} from './cssAdvanced'
-import {getMockDictionary, getMockFormatterArguments, getMockToken} from '../test-utilities'
+import {cssAdvanced} from './cssAdvanced.js'
+import {getMockDictionary, getMockFormatterArguments, getMockToken} from '../test-utilities/index.js'
 import syncPrettier from '@prettier/sync'
 import type {TransformedToken} from 'style-dictionary'
 

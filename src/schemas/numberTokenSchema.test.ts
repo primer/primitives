@@ -1,4 +1,4 @@
-import {numberToken} from './numberToken'
+import {numberToken} from './numberToken.js'
 
 describe('Schema: numberToken', () => {
   const validToken = {

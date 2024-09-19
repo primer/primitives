@@ -1,4 +1,4 @@
-import {colorHexValue} from './colorHexValue'
+import {colorHexValue} from './colorHexValue.js'
 
 describe('Schema: colorHexValue', () => {
   it('passes on valid colorHexValue values', () => {

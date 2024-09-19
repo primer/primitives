@@ -1,5 +1,5 @@
 import {z} from 'zod'
-import {schemaErrorMessage} from '../utilities/schemaErrorMessage'
+import {schemaErrorMessage} from '../utilities/index.js'
 
 export const dimensionValue = z.union([
   z.string().refine(

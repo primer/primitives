@@ -1,5 +1,5 @@
-import {getMockToken} from '../test-utilities'
-import {borderToCss} from './borderToCss'
+import {getMockToken} from '../test-utilities/index.js'
+import {borderToCss} from './borderToCss.js'
 
 describe('Transformer: borderToCss', () => {
   it('transforms `border` token to css border string', () => {

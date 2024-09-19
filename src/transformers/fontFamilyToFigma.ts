@@ -1,6 +1,6 @@
 import type StyleDictionary from 'style-dictionary'
-import {isFontFamily} from '../filters'
-import {hasSpaceInString} from './utilities/hasSpaceInString'
+import {isFontFamily} from '../filters/index.js'
+import {hasSpaceInString} from './utilities/hasSpaceInString.js'
 /**
  * takes a value and returns it if its a string or concats strings in an array quoting strings with spaces
  * @param value

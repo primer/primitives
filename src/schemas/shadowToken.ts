@@ -1,11 +1,11 @@
 import {z} from 'zod'
-import {baseToken} from './baseToken'
-import {referenceValue} from './referenceValue'
-import {colorHexValue} from './colorHexValue'
-import {alphaValue} from './alphaValue'
-import {dimensionValue} from './dimensionValue'
-import {tokenType} from './tokenType'
-import {collection, mode} from './collections'
+import {baseToken} from './baseToken.js'
+import {referenceValue} from './referenceValue.js'
+import {colorHexValue} from './colorHexValue.js'
+import {alphaValue} from './alphaValue.js'
+import {dimensionValue} from './dimensionValue.js'
+import {tokenType} from './tokenType.js'
+import {collection, mode} from './collections.js'
 
 export const shadowValue = z
   .object({

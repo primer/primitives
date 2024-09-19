@@ -1,5 +1,5 @@
-import {javascriptEsm} from './javascriptEsm'
-import {getMockFormatterArguments} from '../test-utilities'
+import {javascriptEsm} from './javascriptEsm.js'
+import {getMockFormatterArguments} from '../test-utilities/index.js'
 import syncPrettier from '@prettier/sync'
 
 describe('Format: ESM', () => {

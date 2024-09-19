@@ -1,5 +1,5 @@
-import {getMockToken} from '../test-utilities'
-import {namePathToFigma} from './namePathToFigma'
+import {getMockToken} from '../test-utilities/index.js'
+import {namePathToFigma} from './namePathToFigma.js'
 
 describe('Transformer: namePathToFigma', () => {
   it('converts path elements to dot.notation and ignores name proprty', () => {

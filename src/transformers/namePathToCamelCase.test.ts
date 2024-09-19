@@ -1,5 +1,5 @@
-import {getMockToken} from '../test-utilities'
-import {namePathToCamelCase} from './namePathToCamelCase'
+import {getMockToken} from '../test-utilities/index.js'
+import {namePathToCamelCase} from './namePathToCamelCase.js'
 
 describe('Transformer: namePathToCamelCase', () => {
   it('converts path elements to dot.notation and ignores name proprty', () => {

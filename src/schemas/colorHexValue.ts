@@ -1,5 +1,5 @@
 import {z} from 'zod'
-import {schemaErrorMessage} from '../utilities/schemaErrorMessage'
+import {schemaErrorMessage} from '../utilities/index.js'
 
 const colorHex3RegEx = '^#[0-9a-f]{3}$'
 const colorHex6RegEx = '^#[0-9a-f]{6}$'

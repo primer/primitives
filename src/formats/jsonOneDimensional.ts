@@ -1,6 +1,6 @@
 import type StyleDictionary from 'style-dictionary'
 import syncPrettier from '@prettier/sync'
-import {jsonToFlat} from './utilities/jsonToFlat'
+import {jsonToFlat} from './utilities/jsonToFlat.js'
 /**
  * @description Takes a style dictionary token dictionary and converts it to a one dimensional json object.
  * @param StyleDictionary.FormatterArguments

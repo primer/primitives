@@ -1,9 +1,9 @@
 import {z} from 'zod'
-import {baseToken} from './baseToken'
-import {referenceValue} from './referenceValue'
-import {colorHexValue} from './colorHexValue'
-import {dimensionValue} from './dimensionValue'
-import {tokenType} from './tokenType'
+import {baseToken} from './baseToken.js'
+import {referenceValue} from './referenceValue.js'
+import {colorHexValue} from './colorHexValue.js'
+import {dimensionValue} from './dimensionValue.js'
+import {tokenType} from './tokenType.js'
 
 export const borderValue = z.object({
   color: z.union([colorHexValue, referenceValue]),

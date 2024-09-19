@@ -1,10 +1,10 @@
 import {toHex} from 'color2k'
-import {isShadow} from '../filters'
-import {alpha} from './utilities/alpha'
-import {checkRequiredTokenProperties} from './utilities/checkRequiredTokenProperties'
-import type {ShadowTokenValue} from '../types/ShadowTokenValue'
+import {isShadow} from '../filters/index.js'
+import {alpha} from './utilities/alpha.js'
+import {checkRequiredTokenProperties} from './utilities/checkRequiredTokenProperties.js'
+import type {ShadowTokenValue} from '../types/ShadowTokenValue.js'
 import type StyleDictionary from 'style-dictionary'
-import {getTokenValue} from './utilities/getTokenValue'
+import {getTokenValue} from './utilities/getTokenValue.js'
 
 /**
  * @description converts w3c shadow tokens in css shadow string

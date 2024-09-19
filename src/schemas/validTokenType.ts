@@ -1,6 +1,5 @@
 import {z} from 'zod'
-import {joinFriendly} from '../utilities/joinFriendly'
-import {schemaErrorMessage} from '../utilities/schemaErrorMessage'
+import {joinFriendly, schemaErrorMessage} from '../utilities/index.js'
 
 const validTypes = [
   'color',

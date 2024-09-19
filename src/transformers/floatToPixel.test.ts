@@ -1,5 +1,5 @@
-import {getMockToken} from '../test-utilities'
-import {floatToPixel, floatToPixelUnitless} from './floatToPixel'
+import {getMockToken} from '../test-utilities/index.js'
+import {floatToPixel, floatToPixelUnitless} from './floatToPixel.js'
 
 describe('Transformer: floatToPixel', () => {
   it('transforms float to pixel', () => {

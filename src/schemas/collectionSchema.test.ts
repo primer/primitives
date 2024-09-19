@@ -1,4 +1,4 @@
-import {collection, mode} from './collections'
+import {collection, mode} from './collections.js'
 
 describe('Schema: collection', () => {
   const collections = collection([

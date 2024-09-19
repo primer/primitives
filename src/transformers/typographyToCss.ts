@@ -1,10 +1,10 @@
 import type StyleDictionary from 'style-dictionary'
-import {isTypography} from '../filters'
-import type {TypographyTokenValue} from '../types/TypographyTokenValue'
-import {checkRequiredTokenProperties} from './utilities/checkRequiredTokenProperties'
-import {parseFontFamily} from './fontFamilyToCss'
-import {parseFontWeight} from './fontWeightToNumber'
-import {getTokenValue} from './utilities/getTokenValue'
+import {isTypography} from '../filters/index.js'
+import type {TypographyTokenValue} from '../types/TypographyTokenValue.js'
+import {checkRequiredTokenProperties} from './utilities/checkRequiredTokenProperties.js'
+import {parseFontFamily} from './fontFamilyToCss.js'
+import {parseFontWeight} from './fontWeightToNumber.js'
+import {getTokenValue} from './utilities/getTokenValue.js'
 
 /**
  * @description converts typograhy token value to css font shorthand

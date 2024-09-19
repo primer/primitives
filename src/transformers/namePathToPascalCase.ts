@@ -1,5 +1,5 @@
 import type StyleDictionary from 'style-dictionary'
-import {toPascalCase} from '../utilities/toPascalCase'
+import {toPascalCase} from '../utilities/index.js'
 /**
  * @description converts the [TransformedToken's](https://github.com/amzn/style-dictionary/blob/main/types/TransformedToken.d.ts) `.path` array to a PascalCase string, preserves casing of parts
  * @type name transformer — [StyleDictionary.NameTransform](https://github.com/amzn/style-dictionary/blob/main/types/Transform.d.ts)

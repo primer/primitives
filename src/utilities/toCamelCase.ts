@@ -1,5 +1,5 @@
-import {filterStringArray} from './filterStringArray'
-import {upperCaseFirstCharacter} from './upperCaseFirstCharacter'
+import {filterStringArray} from './filterStringArray.js'
+import {upperCaseFirstCharacter} from './upperCaseFirstCharacter.js'
 
 export const toCamelCase = (string: string | string[]) => {
   if (!Array.isArray(string)) {

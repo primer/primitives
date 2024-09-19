@@ -1,4 +1,4 @@
-import {checkRequiredTokenProperties} from './checkRequiredTokenProperties'
+import {checkRequiredTokenProperties} from './checkRequiredTokenProperties.js'
 
 describe('Utilities: checkRequiredTokenProperties', () => {
   it('it throws if property is missing', () => {

@@ -1,5 +1,5 @@
 import StyleDictionary from 'style-dictionary'
-import {w3cJsonParser} from './parsers'
+import {w3cJsonParser} from './parsers/w3cJsonParser.js'
 import {
   borderToCss,
   colorToRgbAlpha,
@@ -25,7 +25,7 @@ import {
   dimensionToRemPxArray,
   floatToPixel,
   floatToPixelUnitless,
-} from './transformers'
+} from './transformers/index.js'
 import {
   javascriptCommonJs,
   javascriptEsm,
@@ -36,7 +36,7 @@ import {
   jsonPostCssFallback,
   cssAdvanced,
   jsonFigma,
-} from './formats'
+} from './formats/index.js'
 
 /**
  * Parsers

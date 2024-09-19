@@ -1,5 +1,5 @@
 import type StyleDictionary from 'style-dictionary'
-import {isDuration} from '../filters/isDuration'
+import {isDuration} from '../filters/index.js'
 
 /**
  * @description converts duration tokens string value to number with `ms` unit

@@ -1,7 +1,7 @@
-import {PrimerStyleDictionary} from '../src/PrimerStyleDictionary'
+import {PrimerStyleDictionary} from '../src/PrimerStyleDictionary.js'
 // @ts-expect-error: no types exists for style-dictionary createDictionary
 import createDictionary from 'style-dictionary/lib/utils/createDictionary'
-import {themes as themesConfigArray} from './themes.config'
+import {themes as themesConfigArray} from './themes.config.js'
 import type StyleDictionary from 'style-dictionary'
 
 const tokenNameArray = ({dictionary}: {dictionary: StyleDictionary.Dictionary}) =>

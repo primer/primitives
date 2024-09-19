@@ -1,4 +1,4 @@
-import {dimensionToken} from './dimensionToken'
+import {dimensionToken} from './dimensionToken.js'
 
 describe('Schema: dimensionToken', () => {
   const validToken = {

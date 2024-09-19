@@ -1,7 +1,7 @@
 import type StyleDictionary from 'style-dictionary'
 import syncPrettier from '@prettier/sync'
-import {prefixTokens} from './utilities/prefixTokens'
-import {jsonToNestedValue} from './utilities/jsonToNestedValue'
+import {prefixTokens} from './utilities/prefixTokens.js'
+import {jsonToNestedValue} from './utilities/jsonToNestedValue.js'
 
 /**
  * @description Takes a style dictionary token dictionary and converts it to a nested json string.

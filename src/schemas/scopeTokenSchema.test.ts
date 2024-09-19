@@ -1,5 +1,5 @@
-import type {ValidScope} from './scopes'
-import {scopes} from './scopes'
+import type {ValidScope} from './scopes.js'
+import {scopes} from './scopes.js'
 
 const validScopes: ValidScope[] = [
   'all',

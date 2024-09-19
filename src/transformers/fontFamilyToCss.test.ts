@@ -1,5 +1,5 @@
-import {getMockToken} from '../test-utilities'
-import {fontFamilyToCss} from './fontFamilyToCss'
+import {getMockToken} from '../test-utilities/index.js'
+import {fontFamilyToCss} from './fontFamilyToCss.js'
 
 describe('Transformer: fontFamilyToCss', () => {
   it('transforms fontFamily string', () => {

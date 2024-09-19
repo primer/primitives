@@ -1,6 +1,6 @@
-import {getMockToken} from '../test-utilities'
-import {colorToRgbaFloat} from './colorToRgbaFloat'
-import {rgbaFloatToHex} from './utilities/rgbaFloatToHex'
+import {getMockToken} from '../test-utilities/index.js'
+import {colorToRgbaFloat} from './colorToRgbaFloat.js'
+import {rgbaFloatToHex} from './utilities/rgbaFloatToHex.js'
 
 describe('Transformer: colorToRgbaFloat', () => {
   it('transforms `hex3`, `hex6`, and `hex8` tokens to rgb float value', () => {

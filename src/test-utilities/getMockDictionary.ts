@@ -1,5 +1,5 @@
 import type StyleDictionary from 'style-dictionary'
-import {getMockToken} from './getMockToken'
+import {getMockToken} from './getMockToken.js'
 
 const mockDictionaryDefault = {
   tokens: {

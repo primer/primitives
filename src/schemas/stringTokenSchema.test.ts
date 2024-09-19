@@ -1,4 +1,4 @@
-import {stringToken} from './stringToken'
+import {stringToken} from './stringToken.js'
 
 describe('Schema: stringToken', () => {
   const validToken = {

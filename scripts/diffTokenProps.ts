@@ -1,6 +1,6 @@
-import {parse as json5Parse} from 'json5'
+import JSON5 from 'json5'
 import fs from 'fs'
-import {flattenObject} from './utilities/flattenObject'
+import {flattenObject} from './utilities/flattenObject.js'
 
 type DiffItem = {
   mainThemeName: string
@@ -20,7 +20,7 @@ const diffProps = (diffArray: DiffItem[], propsToCheck = ['mix', 'alpha']) => {
     // add files from mainFiles
     for (const filePath of mainFiles) {
       const file = fs.readFileSync(filePath, 'utf8')
-      mainTheme = {...mainTheme, ...flattenObject(json5Parse(file), undefined, undefined, isToken)}
+      mainTheme = {...mainTheme, ...flattenObject(JSON5.parse(file), undefined, undefined, isToken)}
     }
     // add files from mainThemeDir
     for (const filePath of fs.readdirSync(mainThemeDir)) {
@@ -29,7 +29,7 @@ const diffProps = (diffArray: DiffItem[], propsToCheck = ['mix', 'alpha']) => {
       }
       const file = fs.readFileSync(`${mainThemeDir}/${filePath}`, 'utf8')
 
-      mainTheme = {...mainTheme, ...flattenObject(json5Parse(file), undefined, undefined, isToken)}
+      mainTheme = {...mainTheme, ...flattenObject(JSON5.parse(file), undefined, undefined, isToken)}
     }
 
     for (const filePath of fs.readdirSync(overridesDir)) {
@@ -38,7 +38,7 @@ const diffProps = (diffArray: DiffItem[], propsToCheck = ['mix', 'alpha']) => {
       }
       const fileDiff = []
       const file = fs.readFileSync(`${overridesDir}/${filePath}`, 'utf8')
-      const tokens = flattenObject(json5Parse(file), undefined, undefined, isToken)
+      const tokens = flattenObject(JSON5.parse(file), undefined, undefined, isToken)
 
       for (const [name, value] of Object.entries(tokens)) {
         if (!mainTheme.hasOwnProperty(name)) {

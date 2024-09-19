@@ -1,11 +1,11 @@
 import {toHex} from 'color2k'
-import {isColor} from '../filters'
+import {isColor} from '../filters/index.js'
 import type StyleDictionary from 'style-dictionary'
-import {getTokenValue} from './utilities/getTokenValue'
-import {rgbaFloatToHex} from './utilities/rgbaFloatToHex'
-import mix from './utilities/mix'
-import {hexToRgbaFloat} from './utilities/hexToRgbaFloat'
-import {isRgbaFloat} from './utilities/isRgbaFloat'
+import {getTokenValue} from './utilities/getTokenValue.js'
+import {rgbaFloatToHex} from './utilities/rgbaFloatToHex.js'
+import mix from './utilities/mix.js'
+import {hexToRgbaFloat} from './utilities/hexToRgbaFloat.js'
+import {isRgbaFloat} from './utilities/isRgbaFloat.js'
 
 const toRgbaFloat = (token: StyleDictionary.TransformedToken, alpha?: number) => {
   let tokenValue = getTokenValue(token)

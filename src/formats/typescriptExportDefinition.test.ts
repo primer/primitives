@@ -1,5 +1,5 @@
-import {typescriptExportDefinition} from './typescriptExportDefinition'
-import {getMockFormatterArguments, getMockDictionary, getMockToken} from '../test-utilities'
+import {typescriptExportDefinition} from './typescriptExportDefinition.js'
+import {getMockFormatterArguments, getMockDictionary, getMockToken} from '../test-utilities/index.js'
 import syncPrettier from '@prettier/sync'
 
 describe('Format: TypeScript definitions', () => {

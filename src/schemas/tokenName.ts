@@ -1,5 +1,5 @@
 import {z} from 'zod'
-import {schemaErrorMessage} from '../utilities/schemaErrorMessage'
+import {schemaErrorMessage} from '../utilities/index.js'
 
 export const tokenName = z.string().refine(
   name => /(^[a-z0-9][A-Za-z0-9-]*$|^@$)/.test(name),

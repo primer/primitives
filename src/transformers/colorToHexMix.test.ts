@@ -1,5 +1,5 @@
-import {getMockToken} from '../test-utilities'
-import {colorToHexMix} from './colorToHexMix'
+import {getMockToken} from '../test-utilities/index.js'
+import {colorToHexMix} from './colorToHexMix.js'
 
 describe('Transformer: colorToHexMix', () => {
   it('transforms hex3, hex6 `color` tokens with mix', () => {

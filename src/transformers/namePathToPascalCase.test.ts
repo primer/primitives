@@ -1,5 +1,5 @@
-import {getMockToken} from '../test-utilities'
-import {namePathToPascalCase} from './namePathToPascalCase'
+import {getMockToken} from '../test-utilities/index.js'
+import {namePathToPascalCase} from './namePathToPascalCase.js'
 
 describe('Transformer: namePathToPascalCase', () => {
   it('converts path elements to dot.notation and ignores name proprty', () => {

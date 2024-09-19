@@ -1,4 +1,4 @@
-import {flattenObject} from './flattenObject'
+import {flattenObject} from './flattenObject.js'
 
 describe('Utilities: flattenObject', () => {
   it('flattens an object with dot separator by default', () => {

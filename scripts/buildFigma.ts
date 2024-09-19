@@ -1,8 +1,8 @@
 import fs from 'fs'
-import {PrimerStyleDictionary} from '../src/PrimerStyleDictionary'
-import {themes} from './themes.config'
-import {figma} from '../src/platforms'
-import type {ConfigGeneratorOptions} from '../src/types/StyleDictionaryConfigGenerator'
+import {PrimerStyleDictionary} from '../src/PrimerStyleDictionary.js'
+import {themes} from './themes.config.js'
+import {figma} from '../src/platforms/index.js'
+import type {ConfigGeneratorOptions} from '../src/types/StyleDictionaryConfigGenerator.js'
 
 const buildFigma = (buildOptions: ConfigGeneratorOptions): void => {
   /** -----------------------------------
