@@ -89,10 +89,10 @@ export const XSmall = () => {
           },
           {
             header: 'Source value',
-            field: 'original.value',
+            field: 'original.$value',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.original.value}</p>
+              return <p>{row.original.$value}</p>
             },
           },
         ]}
@@ -165,10 +165,10 @@ export const Small = () => {
           },
           {
             header: 'Source value',
-            field: 'original.value',
+            field: 'original.$value',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.original.value}</p>
+              return <p>{row.original.$value}</p>
             },
           },
         ]}
@@ -248,10 +248,10 @@ export const Medium = () => {
           },
           {
             header: 'Source value',
-            field: 'original.value',
+            field: 'original.$value',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.original.value}</p>
+              return <p>{row.original.$value}</p>
             },
           },
         ]}
@@ -324,10 +324,10 @@ export const Large = () => {
           },
           {
             header: 'Source value',
-            field: 'original.value',
+            field: 'original.$value',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.original.value}</p>
+              return <p>{row.original.$value}</p>
             },
           },
         ]}
@@ -400,10 +400,10 @@ export const XLarge = () => {
           },
           {
             header: 'Source value',
-            field: 'original.value',
+            field: 'original.$value',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.original.value}</p>
+              return <p>{row.original.$value}</p>
             },
           },
         ]}
@@ -466,10 +466,10 @@ export const ControlStackRegular = () => {
           },
           {
             header: 'Source value',
-            field: 'original.value',
+            field: 'original.$value',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.original.value}</p>
+              return <p>{row.original.$value}</p>
             },
           },
         ]}
@@ -584,10 +584,10 @@ export const ControlTouchTarget = () => {
           },
           {
             header: 'Source value',
-            field: 'original.value',
+            field: 'original.$value',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.original.value}</p>
+              return <p>{row.original.$value}</p>
             },
           },
         ]}
