@@ -23,5 +23,5 @@
     },
   },
   "include": ["src/**/*.ts"],
-  "exclude": ["./src/@types", "**/*.test.ts", "src/test-utilities/*.ts", "vitest.config.ts"],
+  "exclude": ["**/*.test.ts", "src/test-utilities/*.ts", "vitest.config.ts"],
 }

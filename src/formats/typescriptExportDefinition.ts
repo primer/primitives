@@ -137,8 +137,7 @@ const getTokenObjectWithTypes = (tokens: DesignTokens, options: Config & LocalOp
 const getTypeDefinition = (tokens: DesignTokens, options: Config & LocalOptions): string => {
   // extract options
   const {moduleName = `tokens`, tokenTypesPath = `./src/types/`} = options
-
-  const usedTypes = getUsedTokenTypes(tokens, ['ColorHex', 'Shadow', 'Border', 'SizeEm', 'SizeRem', 'SizePx'], options)
+  const usedTypes = getUsedTokenTypes(tokens, ['Shadow', 'ColorHex', 'Border', 'SizeEm', 'SizeRem', 'SizePx'], options)
   const tokenObjectWithTypes = getTokenObjectWithTypes(tokens, options)
   // get token type declaration from file
   const designTokenTypes: string[] = []

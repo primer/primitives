@@ -1,4 +1,4 @@
-import type {PlatformConfig, Transform, TransformedToken} from 'style-dictionary/types'
+import type {Transform, TransformedToken} from 'style-dictionary/types'
 import {isFontFamily} from '../filters/index.js'
 import {getTokenValue} from './utilities/getTokenValue.js'
 import {hasSpaceInString} from './utilities/hasSpaceInString.js'
