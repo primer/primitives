@@ -27,6 +27,7 @@
     "build:tokens": "tsx ./scripts/buildTokens.ts",
     "build:fallbacks": "tsx ./scripts/buildFallbacks.ts",
     "build:figma": "tsx scripts/buildFigma.ts",
+    "build:config": "tsc -p build.tsconfig.jsonc",
     "clean": "rm -rf dist",
     "tokenJson:check": "tsx scripts/diffThemes.ts && tsx scripts/diffTokenProps.ts",
     "contrast:check": "tsx scripts/color-contrast.ts",

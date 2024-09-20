@@ -34,6 +34,5 @@ export const fontFamilyToCss: Transform = {
   type: 'value',
   transitive: true,
   filter: isFontFamily,
-  transform: (token: TransformedToken, config: PlatformConfig): string =>
-    parseFontFamily(getTokenValue(token, undefined, config)),
+  transform: (token: TransformedToken): string => parseFontFamily(getTokenValue(token)),
 }
