@@ -104,7 +104,7 @@ describe('Format: TypeScript definitions', () => {
        * @description a css border string
        * @format color | style | width
        */
-      type Border = \`\${ColorHex} \${string} \${string}\`;
+      type Border = \`\${string} \${string} \${string}\`;
 
       export type tokens = {
         test: {
@@ -129,15 +129,15 @@ describe('Format: TypeScript definitions', () => {
     const input = getMockFormatterArguments({dictionary})
     const expectedOutput = await format(
       `/**
-      * @description hex string (6 or 8-digit)
-      */
+       * @description hex string (6 or 8-digit)
+       */
       type ColorHex = string;
 
       /**
        * @description a css border string
        * @format color | style | width
        */
-      type Border = \`\${ColorHex} \${string} \${string}\`;
+      type Border = \`\${string} \${string} \${string}\`;
 
       export type tokens = {
         tokens: {
