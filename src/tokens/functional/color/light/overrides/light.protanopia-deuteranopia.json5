@@ -20,10 +20,6 @@
     danger: {
       $value: '{base.color.orange.5}',
       $type: 'color',
-      mix: {
-        color: '{base.color.orange.4}',
-        weight: 0.05,
-      },
     },
   },
   bgColor: {
@@ -40,12 +36,11 @@
     },
     open: {
       muted: {
-        $value: '{base.color.orange.3}',
+        $value: '{base.color.orange.0}',
         $type: 'color',
-        alpha: 0.4,
       },
       emphasis: {
-        $value: '{base.color.orange.4}',
+        $value: '{base.color.orange.5}',
         $type: 'color',
       },
     },
