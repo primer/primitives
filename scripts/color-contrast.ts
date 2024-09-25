@@ -188,7 +188,16 @@ const getColorsFromFiles = async (filePaths: ThemeName[]): Promise<Theme[]> => {
  * RUN CODE
  */
 const runCheck = async () => {
-  const themesNamesToCheck = ['light', 'dark', 'light_high_contrast', 'dark_high_contrast'] as ThemeName[]
+  const themesNamesToCheck = [
+    'light',
+    'dark',
+    'light_high_contrast',
+    'dark_high_contrast',
+    'light_colorblind',
+    'dark_colorblind',
+    'light_tritanopia',
+    'dark_tritanopia',
+  ] as ThemeName[]
   // get colors from doc json files
   const themes = await getColorsFromFiles(themesNamesToCheck)
   // check contrast for themes
