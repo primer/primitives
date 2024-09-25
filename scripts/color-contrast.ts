@@ -106,7 +106,7 @@ const testContrast = (
 }
 
 const checkContrastForThemes = async (themes: Theme[], contrastRequirementsObj: ContrastRequirements) => {
-  return await Promise.all(
+  const allResults = await Promise.all(
     themes.map(async ([themeName, tokens]) => {
       // run tests on all color pairs
       const results = runContrastTest(contrastRequirementsObj[themeName], tokens)
@@ -123,10 +123,18 @@ const checkContrastForThemes = async (themes: Theme[], contrastRequirementsObj: 
           'contrastRatio',
           'minimumContrastRatio',
         ]),
+        failedMarkdownTable:
+          failingContrast > 0 &&
+          (await makeMarkdownTable(
+            results.filter(item => item.pass === '❌'),
+            ['contrastPair', 'pass', 'contrastRatio', 'minimumContrastRatio'],
+          )),
         results,
       }
     }),
   )
+  // return results
+  return allResults
 }
 
 /**
