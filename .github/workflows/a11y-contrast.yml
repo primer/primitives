@@ -47,19 +47,30 @@ jobs:
             const results = require('./color-contrast-check.json');
             const faildChecks = results.reduce((acc, {failingContrast}) => acc + failingContrast, 0);
 
-            // prepare comment body
-            const resultsMarkdown = '## Design Token Contrast Check\n\n' + 
-              results.map(({theme, failingContrast, markdownTable}) => 
-                "### \\`"+theme+"\\`: " + `${failingContrast === 0 ? '✅ all checks passed' : `❌ ${failingContrast} checks failed`}\n\n` +
+            // prepare outputs for all failed themes
+            const failedResults = results.filter(themeResults => themeResults.failingContrast > 0).map(({theme, failingContrast, markdownTable}) => ({
+              title: `# ❌ \`${theme}\`: ${failingContrast} checks failed`,
+              body: `${markdownTable}`
+            }))
+
+            // prepare summary body
+            const summaryMarkdown = '## Design Token Contrast Check\n\n' + 
+              results.map(({theme, failingContrast, failedMarkdownTable}) => {
+                if(failingContrast === 0) {
+                  return "### \\`"+theme+"\\`: " + `✅ all checks passed\n\n`
+                }
+                // if there are failing checks, return a summary with a details section
+                return "### \\`"+theme+"\\`: " + `❌ ${failingContrast} checks failed\n\n` + 
                 '<details>' +
                 `<summary>Show results table for theme: ${theme}</summary>\n` +
                 "  \n"+
-                `  ${markdownTable}` +
+                `  ${failedMarkdownTable}` +
                 '\n</details>'
-              ).join('\n\n')
+              }).join('\n\n')
 
             // set output
-            core.setOutput('markdown', resultsMarkdown)
+            core.setOutput('summaryMarkdown', summaryMarkdown)
+            core.setOutput('failedResults', failedResults)
             core.setOutput('faildChecks', faildChecks)
 
             // fail action if any contrast check fails
@@ -71,12 +82,26 @@ jobs:
               core.info('\u001b[32;1m✅ All contrast checks passed!')
             }
 
-      - name: Report check results as comment
-        if: github.event_name == 'pull_request'
+      - name: Report check results as summary
         uses: actions/github-script@v7
         with:
           script: |
-            const resultsMarkdown = `${{ steps.check-results.outputs.markdown }}`
+            const resultsMarkdown = `${{ steps.check-results.outputs.summaryMarkdown }}`
+
+            // output results to summary
+            core.summary.addRaw(resultsMarkdown, true)
+            core.summary.write({overwrite: true})
+
+      - name: Report check results as comment
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        env:
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          GITHUB_RUN_ID: ${{ github.run_id }}
+        with:
+          script: |
+            const results = ${{ steps.check-results.outputs.failedResults }}
+            const WORKFLOW_SUMMARY_URL = `https://github.com/${{env.GITHUB_REPOSITORY}}/actions/runs/${{env.GITHUB_RUN_ID}}`
 
             // get comments
             const {data: comments} = await github.rest.issues.listComments({
@@ -85,38 +110,31 @@ jobs:
               repo: context.repo.repo
             });
 
-            // get token issue
-            const tokenCheckComment = comments.filter(comment => comment.body.includes('## Design Token Contrast Check'));
+            for (const {title, body} of results) {
+              // get token issue
+              const tokenCheckComment = comments.filter(comment => comment.body.includes(title));
+              const outputBody = `${title}\n\n${body}\n\n<a href="${WORKFLOW_SUMMARY_URL}">→ Details</a>`
 
-            // if token issue exists, update it
-            if(tokenCheckComment.length > 0) {
-              await github.rest.issues.updateComment({
-                comment_id: tokenCheckComment[0].id,
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                body: resultsMarkdown
-              })
+              // if token issue exists, update it
+              if(tokenCheckComment.length > 0) {
+                await github.rest.issues.updateComment({
+                  comment_id: tokenCheckComment[0].id,
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  body: outputBody
+                })
+              }
+
+              // if token issue does not exist, create it
+              else {
+                await github.rest.issues.createComment({
+                  issue_number: context.issue.number,
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  body: outputBody
+                })
+              }
             }
-
-            // if token issue does not exist, create it
-            else {
-              await github.rest.issues.createComment({
-                issue_number: context.issue.number,
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                body: resultsMarkdown
-              })
-            }
-
-      - name: Report check results as summary
-        uses: actions/github-script@v7
-        with:
-          script: |
-            const resultsMarkdown = `${{ steps.check-results.outputs.markdown }}`
-
-            // output results to summary
-            core.summary.addRaw(resultsMarkdown, true)
-            core.summary.write({overwrite: true})
 
   Fail_action_on_contrast_failing:
     needs: build
