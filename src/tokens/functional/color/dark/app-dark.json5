@@ -61,6 +61,18 @@
             },
           },
         },
+        word: {
+          $value: '{fgColor.default}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              mode: 'dark',
+              group: 'component',
+              scopes: ['fgColor'],
+            },
+          },
+        },
         num: {
           $value: '{fgColor.default}',
           $type: 'color',
@@ -89,7 +101,7 @@
           alpha: 0.3,
         },
         line: {
-          $value: '{base.color.green.4}',
+          $value: '{bgColor.success.muted}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -102,24 +114,23 @@
           alpha: 0.15,
           mix: null,
         },
-        word: {
-          $value: '{base.color.green.4}',
+      },
+    },
+    deletion: {
+      fgColor: {
+        text: {
+          $value: '{fgColor.default}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
               collection: 'mode',
               mode: 'dark',
               group: 'component',
-              scopes: ['bgColor'],
+              scopes: ['fgColor'],
             },
           },
-          alpha: 0.4,
         },
-      },
-    },
-    deletion: {
-      fgColor: {
-        text: {
+        word: {
           $value: '{fgColor.default}',
           $type: 'color',
           $extensions: {
@@ -159,7 +170,7 @@
           alpha: 0.3,
         },
         line: {
-          $value: '{base.color.red.4}',
+          $value: '{bgColor.danger.muted}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -169,7 +180,6 @@
               scopes: ['bgColor'],
             },
           },
-          alpha: 0.15,
           mix: null,
         },
         word: {
@@ -188,9 +198,49 @@
       },
     },
     hunk: {
-      bgColor: {
+      fgColor: {
+        text: {
+          $value: '{fgColor.muted}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              mode: 'dark',
+              group: 'component',
+              scopes: ['fgColor'],
+            },
+          },
+        },
         num: {
-          $value: '{borderColor.accent.muted}',
+          rest: {
+            $value: '{fgColor.default}',
+            $type: 'color',
+            $extensions: {
+              'org.primer.figma': {
+                collection: 'mode',
+                mode: 'dark',
+                group: 'component',
+                scopes: ['fgColor'],
+              },
+            },
+          },
+          hover: {
+            $value: '{fgColor.onEmphasis}',
+            $type: 'color',
+            $extensions: {
+              'org.primer.figma': {
+                collection: 'mode',
+                mode: 'dark',
+                group: 'component',
+                scopes: ['fgColor'],
+              },
+            },
+          },
+        },
+      },
+      bgColor: {
+        line: {
+          $value: '{bgColor.accent.muted}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -198,6 +248,32 @@
               mode: 'dark',
               group: 'component',
               scopes: ['bgColor'],
+            },
+          },
+        },
+        num: {
+          rest: {
+            $value: '{base.color.blue.8}',
+            $type: 'color',
+            $extensions: {
+              'org.primer.figma': {
+                collection: 'mode',
+                mode: 'dark',
+                group: 'component',
+                scopes: ['bgColor'],
+              },
+            },
+          },
+          hover: {
+            $value: '{bgColor.accent.emphasis}',
+            $type: 'color',
+            $extensions: {
+              'org.primer.figma': {
+                collection: 'mode',
+                mode: 'dark',
+                group: 'component',
+                scopes: ['bgColor'],
+              },
             },
           },
         },

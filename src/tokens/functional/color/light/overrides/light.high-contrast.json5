@@ -396,8 +396,8 @@
           $value: '{base.color.neutral.11}',
           $type: 'color',
         },
-      }
-    }
+      },
+    },
   },
   buttonCounter: {
     default: {
@@ -412,21 +412,23 @@
   diffBlob: {
     addition: {
       fgColor: {
-        text: {
+        word: {
           $value: '{fgColor.onEmphasis}',
           $type: 'color',
         },
       },
       bgColor: {
         word: {
-          $value: '{base.color.green.4}',
+          $value: '{base.color.green.5}',
           $type: 'color',
+          mix: null,
+          alpha: 1,
         },
       },
     },
     deletion: {
       fgColor: {
-        text: {
+        word: {
           $value: '{fgColor.onEmphasis}',
           $type: 'color',
         },
@@ -443,9 +445,11 @@
     hunk: {
       bgColor: {
         num: {
-          $value: '{base.color.blue.1}',
-          $type: 'color',
-          alpha: 1,
+          rest: {
+            $value: '{base.color.blue.1}',
+            $type: 'color',
+            alpha: 1,
+          },
         },
       },
     },
@@ -822,5 +826,5 @@
       $type: 'color',
       alpha: 1,
     },
-  }
+  },
 }

@@ -199,12 +199,6 @@
           $type: 'color',
           alpha: 0.3,
         },
-        line: {
-          $value: '{base.color.blue.4}',
-          $type: 'color',
-          alpha: 0.15,
-          mix: null,
-        },
         word: {
           $value: '{base.color.blue.4}',
           $type: 'color',
@@ -229,6 +223,36 @@
           $value: '{base.color.orange.4}',
           $type: 'color',
           alpha: 0.4,
+        },
+      },
+    },
+    hunk: {
+      bgColor: {
+        num: {
+          rest: {
+            $value: '{base.color.neutral.6}',
+            $type: 'color',
+            mix: null,
+            $extensions: {
+              alpha: 1,
+            },
+          },
+          hover: {
+            $value: '{base.color.neutral.8}',
+            $type: 'color',
+            mix: null,
+            $extensions: {
+              alpha: 1,
+            },
+          },
+        },
+        line: {
+          $value: '{base.color.neutral.3}',
+          $type: 'color',
+          mix: null,
+          $extensions: {
+            alpha: 1,
+          },
         },
       },
     },

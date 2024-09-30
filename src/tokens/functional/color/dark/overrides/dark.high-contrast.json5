@@ -441,7 +441,7 @@
           $extensions: {
             'org.primer.figma': {
               collection: 'mode',
-              mode: 'light',
+              mode: 'dark',
               group: 'component (internal)',
               scopes: ['fgColor'],
             },
@@ -517,6 +517,11 @@
         },
       },
       bgColor: {
+        line: {
+          $value: '{bgColor.success.muted}',
+          $type: 'color',
+          alpha: 0.2,
+        },
         word: {
           $value: '{bgColor.success.emphasis}',
           $type: 'color',
@@ -532,6 +537,11 @@
         },
       },
       bgColor: {
+        line: {
+          $value: '{bgColor.danger.muted}',
+          $type: 'color',
+          alpha: 0.2,
+        },
         word: {
           $value: '{bgColor.danger.emphasis}',
           $type: 'color',
@@ -548,9 +558,16 @@
     hunk: {
       bgColor: {
         num: {
-          $value: '{base.color.blue.4}',
+          rest: {
+            $value: '{base.color.blue.4}',
+            $type: 'color',
+            alpha: 0.4,
+          },
+        },
+        line: {
+          $value: '{bgColor.accent.muted}',
           $type: 'color',
-          alpha: 0.4,
+          alpha: 0.2,
         },
       },
     },

@@ -117,39 +117,74 @@
     addition: {
       bgColor: {
         num: {
-          $value: '{base.color.blue.3}',
+          $value: '{base.color.blue.1}',
           $type: 'color',
-          mix: null,
-          alpha: 0.4,
-        },
-        line: {
-          $value: '{base.color.blue.0}',
-          $type: 'color',
-          alpha: 0.5,
         },
         word: {
-          $value: '{base.color.blue.3}',
+          $value: '{base.color.blue.1}',
           $type: 'color',
-          alpha: 0.4,
         },
       },
     },
     deletion: {
       bgColor: {
         num: {
-          $value: '{base.color.orange.3}',
+          $value: '{base.color.orange.1}',
           $type: 'color',
-          alpha: 0.4,
-        },
-        line: {
-          $value: '{base.color.orange.0}',
-          $type: 'color',
-          alpha: 0.5,
         },
         word: {
-          $value: '{base.color.orange.2}',
+          $value: '{base.color.orange.1}',
           $type: 'color',
-          alpha: 0.5,
+        },
+      },
+    },
+    hunk: {
+      bgColor: {
+        line: {
+          $value: '{base.color.neutral.1}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              mode: 'light',
+              group: 'component',
+              scopes: ['bgColor'],
+            },
+          },
+        },
+        num: {
+          rest: {
+            $value: '{base.color.neutral.3}',
+            $type: 'color',
+            $extensions: {
+              'org.primer.figma': {
+                collection: 'mode',
+                mode: 'light',
+                group: 'component',
+                scopes: ['bgColor'],
+              },
+            },
+          },
+          hover: {
+            $value: '{base.color.neutral.7}',
+            $type: 'color',
+            $extensions: {
+              'org.primer.figma': {
+                collection: 'mode',
+                mode: 'light',
+                group: 'component',
+                scopes: ['bgColor'],
+              },
+            },
+          },
+        },
+      },
+      fgColor: {
+        num: {
+          hover: {
+            $value: '{fgColor.default}',
+            $type: 'color',
+          },
         },
       },
     },
