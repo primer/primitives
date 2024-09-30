@@ -114,22 +114,74 @@
     },
   },
   diffBlob: {
-    addition: {
+    additionNum: {
       bgColor: {
-        num: {
-          $value: '{base.color.blue.1}',
-          $type: 'color',
-          mix: {
-            color: '{base.color.blue.0}',
-            weight: 0.8,
+        $value: '{base.color.blue.1}',
+        $type: 'color',
+      },
+    },
+    additionWord: {
+      bgColor: {
+        $value: '{base.color.blue.1}',
+        $type: 'color',
+      },
+    },
+    deletionNum: {
+      bgColor: {
+        $value: '{base.color.red.1}',
+        $type: 'color',
+      },
+    },
+    deletionWord: {
+      bgColor: {
+        $value: '{base.color.red.1}',
+        $type: 'color',
+      },
+    },
+    hunkLine: {
+      bgColor: {
+        $value: '{base.color.neutral.1}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'light',
+            group: 'component',
+            scopes: ['bgColor'],
           },
         },
-        line: {
-          $value: '{base.color.blue.0}',
+      },
+    },
+    hunkNum: {
+      bgColor: {
+        rest: {
+          $value: '{base.color.neutral.3}',
           $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              mode: 'light',
+              group: 'component',
+              scopes: ['bgColor'],
+            },
+          },
         },
-        word: {
-          $value: '{base.color.blue.1}',
+        hover: {
+          $value: '{base.color.neutral.7}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              mode: 'light',
+              group: 'component',
+              scopes: ['bgColor'],
+            },
+          },
+        },
+      },
+      fgColor: {
+        hover: {
+          $value: '{fgColor.default}',
           $type: 'color',
         },
       },

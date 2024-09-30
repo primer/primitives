@@ -396,8 +396,8 @@
           $value: '{base.color.neutral.11}',
           $type: 'color',
         },
-      }
-    }
+      },
+    },
   },
   buttonCounter: {
     default: {
@@ -410,43 +410,43 @@
     },
   },
   diffBlob: {
-    addition: {
+    additionWord: {
       fgColor: {
-        text: {
-          $value: '{fgColor.onEmphasis}',
-          $type: 'color',
-        },
+        $value: '{fgColor.onEmphasis}',
+        $type: 'color',
       },
       bgColor: {
-        word: {
-          $value: '{base.color.green.4}',
-          $type: 'color',
-        },
+        $value: '{base.color.green.5}',
+        $type: 'color',
+        mix: null,
+        alpha: 1,
       },
     },
-    deletion: {
+    deletionWord: {
       fgColor: {
-        text: {
-          $value: '{fgColor.onEmphasis}',
-          $type: 'color',
-        },
+        $value: '{fgColor.onEmphasis}',
+        $type: 'color',
       },
       bgColor: {
-        word: {
-          $value: '{base.color.red.5}',
-          $type: 'color',
-          mix: null,
-          alpha: 1,
-        },
+        $value: '{base.color.red.5}',
+        $type: 'color',
+        mix: null,
+        alpha: 1,
       },
     },
-    hunk: {
+    hunkNum: {
       bgColor: {
-        num: {
+        rest: {
           $value: '{base.color.blue.1}',
           $type: 'color',
           alpha: 1,
         },
+      },
+    },
+    expander: {
+      iconColor: {
+        $value: '{fgColor.default}',
+        $type: 'color',
       },
     },
   },
@@ -822,5 +822,5 @@
       $type: 'color',
       alpha: 1,
     },
-  }
+  },
 }

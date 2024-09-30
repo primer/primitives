@@ -114,42 +114,75 @@
     },
   },
   diffBlob: {
-    addition: {
+    additionNum: {
       bgColor: {
-        num: {
-          $value: '{base.color.blue.3}',
-          $type: 'color',
-          mix: null,
-          alpha: 0.4,
-        },
-        line: {
-          $value: '{base.color.blue.0}',
-          $type: 'color',
-          alpha: 0.5,
-        },
-        word: {
-          $value: '{base.color.blue.3}',
-          $type: 'color',
-          alpha: 0.4,
+        $value: '{base.color.blue.1}',
+        $type: 'color',
+      },
+    },
+    additionWord: {
+      bgColor: {
+        $value: '{base.color.blue.1}',
+        $type: 'color',
+      },
+    },
+    deletionNum: {
+      bgColor: {
+        $value: '{base.color.orange.1}',
+        $type: 'color',
+      },
+    },
+    deletionWord: {
+      bgColor: {
+        $value: '{base.color.orange.1}',
+        $type: 'color',
+      },
+    },
+    hunkLine: {
+      bgColor: {
+        $value: '{base.color.neutral.1}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'light',
+            group: 'component',
+            scopes: ['bgColor'],
+          },
         },
       },
     },
-    deletion: {
+    hunkNum: {
       bgColor: {
-        num: {
-          $value: '{base.color.orange.3}',
+        rest: {
+          $value: '{base.color.neutral.3}',
           $type: 'color',
-          alpha: 0.4,
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              mode: 'light',
+              group: 'component',
+              scopes: ['bgColor'],
+            },
+          },
         },
-        line: {
-          $value: '{base.color.orange.0}',
+        hover: {
+          $value: '{base.color.neutral.7}',
           $type: 'color',
-          alpha: 0.5,
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              mode: 'light',
+              group: 'component',
+              scopes: ['bgColor'],
+            },
+          },
         },
-        word: {
-          $value: '{base.color.orange.2}',
+      },
+      fgColor: {
+        hover: {
+          $value: '{fgColor.default}',
           $type: 'color',
-          alpha: 0.5,
         },
       },
     },
