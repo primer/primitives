@@ -52,9 +52,19 @@ const runContrastTest = (colorPairs: ContrastRequirement[], tokens: Tokens): con
     if (!tokens.hasOwnProperty(colorB)) throw new Error(`Color token not found ${colorB}`)
 
     if (parseToRgba(tokens[colorB].value)[3] === 1) {
-      return {
+      const testResults = testContrast(
+        minimumContrast,
+        tokens[colorA].value,
+        tokens[colorB].value,
+        undefined,
         contrastPair,
-        ...testContrast(minimumContrast, tokens[colorA].value, tokens[colorB].value, undefined, contrastPair),
+      )
+      return {
+        contrastPair:
+          testResults.pass === '✅'
+            ? `${contrastPair}`
+            : `${colorA} (${tokens[colorA].value}) vs. ${colorB} (${tokens[colorB].value})`,
+        ...testResults,
         minimumContrastRatio,
       }
     }
@@ -64,11 +74,23 @@ const runContrastTest = (colorPairs: ContrastRequirement[], tokens: Tokens): con
     // overwrite background if custom canvas array is set
     if (options?.bg) canvasColorArrays = options.bg
     // test transparent colorB with default bgs `canvasColors`
-    return canvasColorArrays.map(bg => ({
-      contrastPair: `${contrastPair} on ${bg}`,
-      ...testContrast(minimumContrast, tokens[colorA].value, tokens[colorB].value, tokens[bg].value, contrastPair),
-      minimumContrastRatio,
-    }))
+    return canvasColorArrays.map(bg => {
+      const testResults = testContrast(
+        minimumContrast,
+        tokens[colorA].value,
+        tokens[colorB].value,
+        tokens[bg].value,
+        contrastPair,
+      )
+      return {
+        contrastPair:
+          testResults.pass === '✅'
+            ? `${contrastPair} on ${bg}`
+            : `${colorA} (${tokens[colorA].value}) vs. ${colorB} (${tokens[colorB].value}) on ${bg}`,
+        ...testResults,
+        minimumContrastRatio,
+      }
+    })
   })
 }
 /**
@@ -99,6 +121,7 @@ const testContrast = (
     // eslint-disable-next-line no-console
     console.error(`${contrastPair || ''} as ${colorA} vs.${colorB}: ${err}`)
   }
+
   return {
     pass: contrast >= minimumContrast ? '✅' : '❌',
     contrastRatio: `${contrast}:1`,
