@@ -47,10 +47,12 @@ jobs:
             const results = require('./color-contrast-check.json');
             const faildChecks = results.reduce((acc, {failingContrast}) => acc + failingContrast, 0);
 
+
             // prepare outputs for all failed themes
             const failedResults = results.filter(themeResults => themeResults.failingContrast > 0).map(({theme, failingContrast, markdownTable}) => ({
-              title: `# ❌ \`${theme}\`: ${failingContrast} checks failed`,
+              title: `# ❌ \`${theme}\`:  ${failingContrast} checks failed`,
               body: `${markdownTable}`
+              identifier: `<!-- contrast check --><!-- Theme: ${theme} -->` 
             }))
 
             // prepare summary body
@@ -101,6 +103,7 @@ jobs:
         with:
           script: |
             const results = ${{ steps.check-results.outputs.failedResults }}
+
             const WORKFLOW_SUMMARY_URL = `https://github.com/${{env.GITHUB_REPOSITORY}}/actions/runs/${{env.GITHUB_RUN_ID}}`
 
             // get comments
@@ -110,30 +113,47 @@ jobs:
               repo: context.repo.repo
             });
 
-            for (const {title, body} of results) {
-              // get token issue
-              const tokenCheckComment = comments.filter(comment => comment.body.includes(title));
-              const outputBody = `${title}\n\n${body}\n\n<a href="${WORKFLOW_SUMMARY_URL}">→ Details</a>`
+            // get comments of token issues
+            let currentComments = comments.filter(comment => possibleTitles.some(titleStart => comment.body.includes(titleStart)));
 
-              // if token issue exists, update it
-              if(tokenCheckComment.length > 0) {
-                await github.rest.issues.updateComment({
-                  comment_id: tokenCheckComment[0].id,
+            // get token issue
+            const tokenCheckComment = comments.filter(comment => comment.body.includes("<!-- contrast check -->"));
+
+            // if token issue exists, update it
+            if(tokenCheckComment.length > 0) {
+              for (const comment of tokenCheckComment) {
+                await github.rest.issues.deleteComment({
+                  comment_id: comment.id,
                   owner: context.repo.owner,
                   repo: context.repo.repo,
-                  body: outputBody
                 })
               }
+            }
+
+            for (const {title, body, indentifier} of results) {
+              // get token issue
+
+              const outputBody = `${title}\n\n${body}\n\n<a href="${WORKFLOW_SUMMARY_URL}">→ Details</a>${indentifier}`
 
               // if token issue does not exist, create it
-              else {
-                await github.rest.issues.createComment({
-                  issue_number: context.issue.number,
+              await github.rest.issues.createComment({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: outputBody
+              })
+            }
+
+            // if token issue exists, update it
+            if(currentComments.length > 0) {
+              await currentComments.map(comment => {
+                console.log('deleting comment', comment.id, comment)
+                github.rest.issues.deleteComment({
+                  comment_id: comment.id,
                   owner: context.repo.owner,
                   repo: context.repo.repo,
-                  body: outputBody
                 })
-              }
+              })
             }
 
   Fail_action_on_contrast_failing:
@@ -165,15 +185,17 @@ jobs:
             });
 
             // get token issue
-            const tokenCheckComment = comments.filter(comment => comment.body.includes('## Design Token Contrast Check'));
+            const tokenCheckComment = comments.filter(comment => comment.body.includes("<!-- contrast check -->"));
 
             // if token issue exists, update it
             if(tokenCheckComment.length > 0) {
-              await github.rest.issues.deleteComment({
-                comment_id: tokenCheckComment[0].id,
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-              })
+              for (const comment of tokenCheckComment) {
+                await github.rest.issues.deleteComment({
+                  comment_id: comment.id,
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                })
+              }
             }
 
             // remove summary
