@@ -217,6 +217,19 @@
           },
         },
         num: {
+          '@': {
+            $value: '{fgColor.default}',
+            $type: 'color',
+            $extensions: {
+              deprecated: true,
+              'org.primer.figma': {
+                collection: 'mode',
+                mode: 'light',
+                group: 'component',
+                scopes: ['fgColor'],
+              },
+            },
+          },
           rest: {
             $value: '{fgColor.default}',
             $type: 'color',
@@ -257,6 +270,19 @@
           },
         },
         num: {
+          '@': {
+            $value: '{base.color.blue.1}',
+            $type: 'color',
+            $extensions: {
+              deprecated: true,
+              'org.primer.figma': {
+                collection: 'mode',
+                mode: 'light',
+                group: 'component',
+                scopes: ['bgColor'],
+              },
+            },
+          },
           rest: {
             $value: '{base.color.blue.1}',
             $type: 'color',
