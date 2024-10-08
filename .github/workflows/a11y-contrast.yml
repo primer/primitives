@@ -47,9 +47,12 @@ jobs:
             const results = require('./color-contrast-check.json');
             const faildChecks = results.reduce((acc, {failingContrast}) => acc + failingContrast, 0);
 
+            const themesTitlePrefixes = Object.fromEntries(results.map(({theme}) => [theme, `❌ \`${theme}\`: `]))
+            core.setOutput('themesTitlePrefixes', themesTitlePrefixes)
+
             // prepare outputs for all failed themes
             const failedResults = results.filter(themeResults => themeResults.failingContrast > 0).map(({theme, failingContrast, markdownTable}) => ({
-              title: `# ❌ \`${theme}\`: ${failingContrast} checks failed`,
+              title: `# ${themesTitlePrefixes[theme]} ${failingContrast} checks failed`,
               body: `${markdownTable}`
             }))
 
@@ -101,6 +104,8 @@ jobs:
         with:
           script: |
             const results = ${{ steps.check-results.outputs.failedResults }}
+            const themesTitlePrefixes = ${{ steps.check-results.outputs.themesTitlePrefixes }}
+
             const WORKFLOW_SUMMARY_URL = `https://github.com/${{env.GITHUB_REPOSITORY}}/actions/runs/${{env.GITHUB_RUN_ID}}`
 
             // get comments
@@ -110,9 +115,18 @@ jobs:
               repo: context.repo.repo
             });
 
+            const possibleTitles = Object.values(themesTitlePrefixes)
+
+            // get comments of token issues
+            let currentComments = comments.filter(comment => possibleTitles.some(titleStart => comment.body.includes(titleStart)));
+
             for (const {title, body} of results) {
               // get token issue
-              const tokenCheckComment = comments.filter(comment => comment.body.includes(title));
+              const titleStart = title.substring(0, title.indexOf(':') + 1);
+              // remove from currentComments
+              currentComments = currentComments.filter(comment => !comment.body.includes(titleStart));
+              //
+              const tokenCheckComment = comments.filter(comment => comment.body.includes(titleStart));
               const outputBody = `${title}\n\n${body}\n\n<a href="${WORKFLOW_SUMMARY_URL}">→ Details</a>`
 
               // if token issue exists, update it
@@ -136,6 +150,18 @@ jobs:
               }
             }
 
+            // if token issue exists, update it
+            if(currentComments.length > 0) {
+              await currentComments.map(comment => {
+                console.log('deleting comment', comment.id, comment)
+                github.rest.issues.deleteComment({
+                  comment_id: comment.id,
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                })
+              })
+            }
+
   Fail_action_on_contrast_failing:
     needs: build
     name: Fail action on contrast failing
@@ -157,6 +183,7 @@ jobs:
         uses: actions/github-script@v7
         with:
           script: |
+            const themesTitlePrefixes = ${{ steps.check-results.outputs.themesTitlePrefixes }}
             // get comments
             const {data: comments} = await github.rest.issues.listComments({
               issue_number: context.issue.number,
@@ -164,8 +191,10 @@ jobs:
               repo: context.repo.repo
             });
 
+            const possibleTitles = Object.values(themesTitlePrefixes)
+
             // get token issue
-            const tokenCheckComment = comments.filter(comment => comment.body.includes('## Design Token Contrast Check'));
+            const tokenCheckComment = comments.filter(comment => possibleTitles.some(titleStart => comment.body.includes(titleStart)));
 
             // if token issue exists, update it
             if(tokenCheckComment.length > 0) {
