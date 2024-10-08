@@ -47,13 +47,12 @@ jobs:
             const results = require('./color-contrast-check.json');
             const faildChecks = results.reduce((acc, {failingContrast}) => acc + failingContrast, 0);
 
-            const themesTitlePrefixes = Object.fromEntries(results.map(({theme}) => [theme, `❌ \`${theme}\`: `]))
-            core.setOutput('themesTitlePrefixes', themesTitlePrefixes)
 
             // prepare outputs for all failed themes
             const failedResults = results.filter(themeResults => themeResults.failingContrast > 0).map(({theme, failingContrast, markdownTable}) => ({
-              title: `# ${themesTitlePrefixes[theme]} ${failingContrast} checks failed`,
+              title: `# ❌ \`${theme}\`:  ${failingContrast} checks failed`,
               body: `${markdownTable}`
+              identifier: `<!-- contrast check --><!-- Theme: ${theme} -->` 
             }))
 
             // prepare summary body
@@ -104,7 +103,6 @@ jobs:
         with:
           script: |
             const results = ${{ steps.check-results.outputs.failedResults }}
-            const themesTitlePrefixes = ${{ steps.check-results.outputs.themesTitlePrefixes }}
 
             const WORKFLOW_SUMMARY_URL = `https://github.com/${{env.GITHUB_REPOSITORY}}/actions/runs/${{env.GITHUB_RUN_ID}}`
 
@@ -115,39 +113,35 @@ jobs:
               repo: context.repo.repo
             });
 
-            const possibleTitles = Object.values(themesTitlePrefixes)
-
             // get comments of token issues
             let currentComments = comments.filter(comment => possibleTitles.some(titleStart => comment.body.includes(titleStart)));
 
-            for (const {title, body} of results) {
-              // get token issue
-              const titleStart = title.substring(0, title.indexOf(':') + 1);
-              // remove from currentComments
-              currentComments = currentComments.filter(comment => !comment.body.includes(titleStart));
-              //
-              const tokenCheckComment = comments.filter(comment => comment.body.includes(titleStart));
-              const outputBody = `${title}\n\n${body}\n\n<a href="${WORKFLOW_SUMMARY_URL}">→ Details</a>`
+            // get token issue
+            const tokenCheckComment = comments.filter(comment => comment.body.includes("<!-- contrast check -->"));
 
-              // if token issue exists, update it
-              if(tokenCheckComment.length > 0) {
-                await github.rest.issues.updateComment({
-                  comment_id: tokenCheckComment[0].id,
+            // if token issue exists, update it
+            if(tokenCheckComment.length > 0) {
+              for (const comment of tokenCheckComment) {
+                await github.rest.issues.deleteComment({
+                  comment_id: comment.id,
                   owner: context.repo.owner,
                   repo: context.repo.repo,
-                  body: outputBody
                 })
               }
+            }
+
+            for (const {title, body, indentifier} of results) {
+              // get token issue
+
+              const outputBody = `${title}\n\n${body}\n\n<a href="${WORKFLOW_SUMMARY_URL}">→ Details</a>${indentifier}`
 
               // if token issue does not exist, create it
-              else {
-                await github.rest.issues.createComment({
-                  issue_number: context.issue.number,
-                  owner: context.repo.owner,
-                  repo: context.repo.repo,
-                  body: outputBody
-                })
-              }
+              await github.rest.issues.createComment({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: outputBody
+              })
             }
 
             // if token issue exists, update it
@@ -183,7 +177,6 @@ jobs:
         uses: actions/github-script@v7
         with:
           script: |
-            const themesTitlePrefixes = ${{ steps.check-results.outputs.themesTitlePrefixes }}
             // get comments
             const {data: comments} = await github.rest.issues.listComments({
               issue_number: context.issue.number,
@@ -191,18 +184,18 @@ jobs:
               repo: context.repo.repo
             });
 
-            const possibleTitles = Object.values(themesTitlePrefixes)
-
             // get token issue
-            const tokenCheckComment = comments.filter(comment => possibleTitles.some(titleStart => comment.body.includes(titleStart)));
+            const tokenCheckComment = comments.filter(comment => comment.body.includes("<!-- contrast check -->"));
 
             // if token issue exists, update it
             if(tokenCheckComment.length > 0) {
-              await github.rest.issues.deleteComment({
-                comment_id: tokenCheckComment[0].id,
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-              })
+              for (const comment of tokenCheckComment) {
+                await github.rest.issues.deleteComment({
+                  comment_id: comment.id,
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                })
+              }
             }
 
             // remove summary
