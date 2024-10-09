@@ -36,4 +36,13 @@ For example:
 npm i @primer/primitives-my-feature-flag@npm:@primer/primitives@0.0.0-20241007214729 --workspace=@npm-workspaces/primer
 ```
 
+### Create a new bundle (optional)
+If you want to load some new tokens you can add a new bundle and load it for users who have the feature flags enabled.
+
+To do so, first create a new bundle by creating a new folder in 
+
+app/assets/stylesheets/bundles/primer-primitives-experimental/index.scss
+
+
+
 `bin/generate-service-files.rb `
