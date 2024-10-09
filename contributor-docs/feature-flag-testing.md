@@ -39,9 +39,12 @@ npm i @primer/primitives-my-feature-flag@npm:@primer/primitives@0.0.0-2024100721
 ### Create a new bundle (optional)
 If you want to load some new tokens you can add a new bundle and load it for users who have the feature flags enabled.
 
-To do so, first create a new bundle by creating a new folder in 
+To do so, first create a new bundle by creating a new folder in `app/assets/stylesheets/bundles/` for example `primer-primitives-your-test`.
+In this folder add an `index.scss` file that includes all files you want to load:
 
-app/assets/stylesheets/bundles/primer-primitives-experimental/index.scss
+```scss
+@import '@primer/primitives-my-feature-flag/dist/css/functional/themes/new-theme.css';
+```
 
 
 
