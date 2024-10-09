@@ -136,7 +136,7 @@
       },
     },
     success: {
-      $value: '{base.color.green.5}',
+      $value: '{base.color.green.6}',
       $type: 'color',
       $extensions: {
         'org.primer.figma': {
@@ -475,7 +475,7 @@
         },
       },
       emphasis: {
-        $value: '{base.color.green.4}',
+        $value: '{base.color.green.5}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -487,10 +487,6 @@
               web: 'var(--bgColor-success-emphasis) /* utility class: .color-bg-success-emphasis */',
             },
           },
-        },
-        mix: {
-          color: '{base.color.green.5}',
-          weight: 0.75,
         },
       },
     },
