@@ -290,6 +290,20 @@
         },
       },
     },
+    expander: {
+      iconColor: {
+        $value: '{fgColor.muted}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'dark',
+            group: 'component',
+            scopes: ['fgColor'],
+          },
+        },
+      },
+    },
   },
   codeMirror: {
     fgColor: {

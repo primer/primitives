@@ -509,66 +509,62 @@
     },
   },
   diffBlob: {
-    addition: {
+    additionLine: {
       fgColor: {
-        text: {
-          $value: '{fgColor.onEmphasis}',
-          $type: 'color',
-        },
+        $value: '{fgColor.onEmphasis}',
+        $type: 'color',
       },
       bgColor: {
-        line: {
-          $value: '{bgColor.success.muted}',
+        $value: '{bgColor.success.muted}',
+        $type: 'color',
+        alpha: 0.2,
+      },
+    },
+    additionWord: {
+      bgColor: {
+        $value: '{bgColor.success.emphasis}',
+        $type: 'color',
+        alpha: 1,
+      },
+    },
+    deletionLine: {
+      fgColor: {
+        $value: '{fgColor.onEmphasis}',
+        $type: 'color',
+      },
+      bgColor: {
+        $value: '{bgColor.danger.muted}',
+        $type: 'color',
+        alpha: 0.2,
+      },
+    },
+    deletionWord: {
+      bgColor: {
+        $value: '{bgColor.danger.emphasis}',
+        $type: 'color',
+        alpha: 1,
+      },
+    },
+    hunkNum: {
+      bgColor: {
+        rest: {
+          $value: '{base.color.blue.4}',
           $type: 'color',
-          alpha: 0.2,
-        },
-        word: {
-          $value: '{bgColor.success.emphasis}',
-          $type: 'color',
-          alpha: 1,
+          alpha: 0.4,
         },
       },
     },
-    deletion: {
-      fgColor: {
-        text: {
-          $value: '{fgColor.onEmphasis}',
-          $type: 'color',
-        },
-      },
+    hunkLine: {
       bgColor: {
-        line: {
-          $value: '{bgColor.danger.muted}',
-          $type: 'color',
-          alpha: 0.2,
-        },
-        word: {
-          $value: '{bgColor.danger.emphasis}',
-          $type: 'color',
-          alpha: 1,
-        },
+        $value: '{bgColor.accent.muted}',
+        $type: 'color',
+        alpha: 0.2,
       },
     },
     expander: {
       iconColor: {
         $value: '{fgColor.default}',
         $type: 'color',
-      },
-    },
-    hunk: {
-      bgColor: {
-        num: {
-          rest: {
-            $value: '{base.color.blue.4}',
-            $type: 'color',
-            alpha: 0.4,
-          },
-        },
-        line: {
-          $value: '{bgColor.accent.muted}',
-          $type: 'color',
-          alpha: 0.2,
-        },
       },
     },
   },

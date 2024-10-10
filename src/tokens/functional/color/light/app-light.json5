@@ -46,166 +46,192 @@
     },
   },
   diffBlob: {
-    addition: {
+    additionLine: {
       fgColor: {
-        text: {
-          $value: '{fgColor.default}',
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              mode: 'light',
-              group: 'component',
-              scopes: ['fgColor'],
-            },
-          },
-        },
-        word: {
-          $value: '{fgColor.default}',
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              mode: 'light',
-              group: 'component',
-              scopes: ['fgColor'],
-            },
-          },
-        },
-        num: {
-          $value: '{fgColor.default}',
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              mode: 'light',
-              group: 'component',
-              scopes: ['fgColor'],
-            },
+        $value: '{fgColor.default}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'light',
+            group: 'component',
+            scopes: ['fgColor'],
           },
         },
       },
       bgColor: {
-        num: {
-          $value: '{base.color.green.1}',
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              mode: 'light',
-              group: 'component',
-              scopes: ['bgColor'],
-            },
-          },
-        },
-        line: {
-          $value: '{bgColor.success.muted}',
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              mode: 'light',
-              group: 'component',
-              scopes: ['bgColor'],
-            },
-          },
-        },
-        word: {
-          $value: '{base.color.green.1}',
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              mode: 'light',
-              group: 'component',
-              scopes: ['bgColor'],
-            },
+        $value: '{bgColor.success.muted}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'light',
+            group: 'component',
+            scopes: ['bgColor'],
           },
         },
       },
     },
-    deletion: {
+    additionWord: {
       fgColor: {
-        text: {
-          $value: '{fgColor.default}',
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              mode: 'light',
-              group: 'component',
-              scopes: ['fgColor'],
-            },
-          },
-        },
-        word: {
-          $value: '{fgColor.default}',
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              mode: 'light',
-              group: 'component',
-              scopes: ['fgColor'],
-            },
-          },
-        },
-        num: {
-          $value: '{fgColor.default}',
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              mode: 'light',
-              group: 'component',
-              scopes: ['fgColor'],
-            },
+        $value: '{fgColor.default}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'light',
+            group: 'component',
+            scopes: ['fgColor'],
           },
         },
       },
       bgColor: {
-        num: {
-          $value: '{base.color.red.1}',
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              mode: 'light',
-              group: 'component',
-              scopes: ['bgColor'],
-            },
-          },
-        },
-        line: {
-          $value: '{bgColor.danger.muted}',
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              mode: 'light',
-              group: 'component',
-              scopes: ['bgColor'],
-            },
-          },
-        },
-        word: {
-          $value: '{base.color.red.1}',
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              mode: 'light',
-              group: 'component',
-              scopes: ['bgColor'],
-            },
+        $value: '{base.color.green.1}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'light',
+            group: 'component',
+            scopes: ['bgColor'],
           },
         },
       },
     },
-    hunk: {
+    additionNum: {
       fgColor: {
-        text: {
-          $value: '{fgColor.muted}',
+        $value: '{fgColor.default}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'light',
+            group: 'component',
+            scopes: ['fgColor'],
+          },
+        },
+      },
+      bgColor: {
+        $value: '{base.color.green.1}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'light',
+            group: 'component',
+            scopes: ['bgColor'],
+          },
+        },
+      },
+    },
+    deletionLine: {
+      fgColor: {
+        $value: '{fgColor.default}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'light',
+            group: 'component',
+            scopes: ['fgColor'],
+          },
+        },
+      },
+      bgColor: {
+        $value: '{bgColor.danger.muted}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'light',
+            group: 'component',
+            scopes: ['bgColor'],
+          },
+        },
+      },
+    },
+    deletionWord: {
+      fgColor: {
+        $value: '{fgColor.default}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'light',
+            group: 'component',
+            scopes: ['fgColor'],
+          },
+        },
+      },
+      bgColor: {
+        $value: '{base.color.red.1}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'light',
+            group: 'component',
+            scopes: ['bgColor'],
+          },
+        },
+      },
+    },
+    deletionNum: {
+      fgColor: {
+        $value: '{fgColor.default}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'light',
+            group: 'component',
+            scopes: ['fgColor'],
+          },
+        },
+      },
+      bgColor: {
+        $value: '{base.color.red.1}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'light',
+            group: 'component',
+            scopes: ['bgColor'],
+          },
+        },
+      },
+    },
+    hunkLine: {
+      bgColor: {
+        $value: '{bgColor.accent.muted}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'light',
+            group: 'component',
+            scopes: ['bgColor'],
+          },
+        },
+      },
+      fgColor: {
+        $value: '{fgColor.muted}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'light',
+            group: 'component',
+            scopes: ['fgColor'],
+          },
+        },
+      },
+    },
+    hunkNum: {
+      fgColor: {
+        rest: {
+          $value: '{fgColor.default}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -216,49 +242,22 @@
             },
           },
         },
-        num: {
-          '@': {
-            $value: '{fgColor.default}',
-            $type: 'color',
-            $extensions: {
-              deprecated: true,
-              'org.primer.figma': {
-                collection: 'mode',
-                mode: 'light',
-                group: 'component',
-                scopes: ['fgColor'],
-              },
-            },
-          },
-          rest: {
-            $value: '{fgColor.default}',
-            $type: 'color',
-            $extensions: {
-              'org.primer.figma': {
-                collection: 'mode',
-                mode: 'light',
-                group: 'component',
-                scopes: ['fgColor'],
-              },
-            },
-          },
-          hover: {
-            $value: '{fgColor.onEmphasis}',
-            $type: 'color',
-            $extensions: {
-              'org.primer.figma': {
-                collection: 'mode',
-                mode: 'light',
-                group: 'component',
-                scopes: ['fgColor'],
-              },
+        hover: {
+          $value: '{fgColor.onEmphasis}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              mode: 'light',
+              group: 'component',
+              scopes: ['fgColor'],
             },
           },
         },
       },
       bgColor: {
-        line: {
-          $value: '{bgColor.accent.muted}',
+        rest: {
+          $value: '{base.color.blue.1}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -269,42 +268,15 @@
             },
           },
         },
-        num: {
-          '@': {
-            $value: '{base.color.blue.1}',
-            $type: 'color',
-            $extensions: {
-              deprecated: true,
-              'org.primer.figma': {
-                collection: 'mode',
-                mode: 'light',
-                group: 'component',
-                scopes: ['bgColor'],
-              },
-            },
-          },
-          rest: {
-            $value: '{base.color.blue.1}',
-            $type: 'color',
-            $extensions: {
-              'org.primer.figma': {
-                collection: 'mode',
-                mode: 'light',
-                group: 'component',
-                scopes: ['bgColor'],
-              },
-            },
-          },
-          hover: {
-            $value: '{bgColor.accent.emphasis}',
-            $type: 'color',
-            $extensions: {
-              'org.primer.figma': {
-                collection: 'mode',
-                mode: 'light',
-                group: 'component',
-                scopes: ['bgColor'],
-              },
+        hover: {
+          $value: '{bgColor.accent.emphasis}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              mode: 'light',
+              group: 'component',
+              scopes: ['bgColor'],
             },
           },
         },
