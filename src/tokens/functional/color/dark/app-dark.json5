@@ -49,7 +49,7 @@
   diffBlob: {
     addition: {
       fgColor: {
-        text: {
+        line: {
           $value: '{fgColor.default}',
           $type: 'color',
           $extensions: {
@@ -114,11 +114,24 @@
           alpha: 0.15,
           mix: null,
         },
+        word: {
+          $value: '{base.color.green.4}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              mode: 'dark',
+              group: 'component',
+              scopes: ['bgColor'],
+            },
+          },
+          alpha: 0.4,
+        },
       },
     },
     deletion: {
       fgColor: {
-        text: {
+        line: {
           $value: '{fgColor.default}',
           $type: 'color',
           $extensions: {
@@ -199,7 +212,7 @@
     },
     hunk: {
       fgColor: {
-        text: {
+        line: {
           $value: '{fgColor.muted}',
           $type: 'color',
           $extensions: {
@@ -212,19 +225,6 @@
           },
         },
         num: {
-          '@': {
-            $value: '{fgColor.default}',
-            $type: 'color',
-            $extensions: {
-              deprecated: true,
-              'org.primer.figma': {
-                collection: 'mode',
-                mode: 'dark',
-                group: 'component',
-                scopes: ['fgColor'],
-              },
-            },
-          },
           rest: {
             $value: '{fgColor.default}',
             $type: 'color',
@@ -265,19 +265,6 @@
           },
         },
         num: {
-          '@': {
-            $value: '{base.color.blue.8}',
-            $type: 'color',
-            $extensions: {
-              deprecated: true,
-              'org.primer.figma': {
-                collection: 'mode',
-                mode: 'dark',
-                group: 'component',
-                scopes: ['bgColor'],
-              },
-            },
-          },
           rest: {
             $value: '{base.color.blue.8}',
             $type: 'color',
