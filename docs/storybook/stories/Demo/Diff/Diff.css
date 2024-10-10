@@ -30,27 +30,26 @@
     --diff-word-bg: var(--bgColor-default);
   }
   &.type-hunk {
-    --diff-num-bg: var(--diffBlob-hunk-bgColor-num-rest);
-    --diff-num-fg: var(--diffBlob-hunk-fgColor-num-rest);
-    --diff-line-bg: var(--diffBlob-hunk-bgColor-line);
-    --diff-line-fg: var(--diffBlob-hunk-fgColor-text);
-    --diff-word-bg: var(--diffBlob-hunk-bgColor-word);
+    --diff-num-bg: var(--diffBlob-hunkNum-bgColor-rest);
+    --diff-num-fg: var(--diffBlob-hunkNum-fgColor-rest);
+    --diff-line-bg: var(--diffBlob-hunkLine-bgColor);
+    --diff-line-fg: var(--diffBlob-hunkLine-fgColor);
   }
   &.type-addition {
-    --diff-num-bg: var(--diffBlob-addition-bgColor-num);
-    --diff-num-fg: var(--diffBlob-addition-fgColor-num);
-    --diff-line-bg: var(--diffBlob-addition-bgColor-line);
-    --diff-line-fg: var(--diffBlob-addition-fgColor-text);
-    --diff-word-bg: var(--diffBlob-addition-bgColor-word);
-    --diff-word-fg: var(--diffBlob-addition-fgColor-word);
+    --diff-num-bg: var(--diffBlob-additionNum-bgColor);
+    --diff-num-fg: var(--diffBlob-additionNum-fgColor);
+    --diff-line-bg: var(--diffBlob-additionLine-bgColor);
+    --diff-line-fg: var(--diffBlob-additionLine-fgColor);
+    --diff-word-bg: var(--diffBlob-additionWord-bgColor);
+    --diff-word-fg: var(--diffBlob-additionWord-fgColor);
   }
   &.type-deletion {
-    --diff-num-bg: var(--diffBlob-deletion-bgColor-num);
-    --diff-num-fg: var(--diffBlob-deletion-fgColor-num);
-    --diff-line-bg: var(--diffBlob-deletion-bgColor-line);
-    --diff-line-fg: var(--diffBlob-deletion-fgColor-text);
-    --diff-word-bg: var(--diffBlob-deletion-bgColor-word);
-    --diff-word-fg: var(--diffBlob-deletion-fgColor-word);
+    --diff-num-bg: var(--diffBlob-deletionNum-bgColor);
+    --diff-num-fg: var(--diffBlob-deletionNum-fgColor);
+    --diff-line-bg: var(--diffBlob-deletionLine-bgColor);
+    --diff-line-fg: var(--diffBlob-deletionLine-fgColor);
+    --diff-word-bg: var(--diffBlob-deletionWord-bgColor);
+    --diff-word-fg: var(--diffBlob-deletionWord-fgColor);
   }
   border-spacing: 0;
   border-collapse: collapse;
