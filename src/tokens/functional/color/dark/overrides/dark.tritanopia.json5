@@ -123,28 +123,51 @@
     },
   },
   diffBlob: {
-    addition: {
+    additionNum: {
       bgColor: {
-        num: {
-          $value: '{base.color.blue.3}',
+        $value: '{base.color.blue.3}',
+        $type: 'color',
+        $extensions: {
+          alpha: 0.3,
+        },
+      },
+    },
+    additionWord: {
+      bgColor: {
+        $value: '{base.color.blue.4}',
+        $type: 'color',
+        $extensions: {
+          alpha: 0.4,
+        },
+      },
+    },
+    hunkNum: {
+      bgColor: {
+        rest: {
+          $value: '{base.color.neutral.6}',
           $type: 'color',
+          mix: null,
           $extensions: {
-            alpha: 0.3,
+            alpha: 1,
           },
         },
-        line: {
-          $value: '{base.color.blue.4}',
+        hover: {
+          $value: '{base.color.neutral.8}',
           $type: 'color',
+          mix: null,
           $extensions: {
-            alpha: 0.15,
+            alpha: 1,
           },
         },
-        word: {
-          $value: '{base.color.blue.4}',
-          $type: 'color',
-          $extensions: {
-            alpha: 0.4,
-          },
+      },
+    },
+    hunkLine: {
+      bgColor: {
+        $value: '{base.color.neutral.3}',
+        $type: 'color',
+        mix: null,
+        $extensions: {
+          alpha: 1,
         },
       },
     },
