@@ -20,8 +20,8 @@
   border-bottom: 1px solid var(--borderColor-default);
 }
 .diff-line {
-  --diff-num-bg: var(--bgColor-muted);
-  --diff-line-bg: var(--bgColor-muted);
+  --diff-num-bg: var(--diffBlob-emptyNum-bgColor);
+  --diff-line-bg: var(--diffBlob-emptyLine-bgColor);
   &.type-default {
     --diff-num-bg: var(--bgColor-default);
     --diff-num-fg: var(--fgColor-default);

@@ -290,6 +290,34 @@
         },
       },
     },
+    emptyNum: {
+      bgColor: {
+        $value: '{bgColor.muted}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'dark',
+            group: 'component',
+            scopes: ['bgColor'],
+          },
+        },
+      },
+    },
+    emptyLine: {
+      bgColor: {
+        $value: '{bgColor.muted}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            mode: 'dark',
+            group: 'component',
+            scopes: ['bgColor'],
+          },
+        },
+      },
+    },
     expander: {
       iconColor: {
         $value: '{fgColor.muted}',
