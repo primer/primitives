@@ -114,17 +114,17 @@ export const FontShorthand = () => {
               return (
                 <div>
                   <p>
-                    font-weight: <code>{row.original.value.fontSize}</code>
+                    font-weight: <code>{row.original.$value.fontSize}</code>
                   </p>
                   <p>
-                    font-size: <code>{row.original.value.fontSize}</code>
+                    font-size: <code>{row.original.$value.fontSize}</code>
                   </p>
                   <p>
-                    font-family: <code>{row.original.value.fontFamily}</code>
+                    font-family: <code>{row.original.$value.fontFamily}</code>
                   </p>
-                  {row.original.value.lineHeight && (
+                  {row.original.$value.lineHeight && (
                     <p>
-                      line-height: <code>{row.original.value.lineHeight}</code>
+                      line-height: <code>{row.original.$value.lineHeight}</code>
                     </p>
                   )}
                 </div>
@@ -200,7 +200,7 @@ export const Display = () => {
             field: 'original',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.name.includes('shorthand') ? undefined : row.original.value}</p>
+              return <p>{row.name.includes('shorthand') ? undefined : row.original.$value}</p>
             },
           },
         ]}
@@ -276,7 +276,7 @@ export const TitleLarge = () => {
             field: 'original',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.name.includes('shorthand') ? undefined : row.original.value}</p>
+              return <p>{row.name.includes('shorthand') ? undefined : row.original.$value}</p>
             },
           },
         ]}
@@ -353,7 +353,7 @@ export const TitleMedium = () => {
             field: 'original',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.name.includes('shorthand') ? undefined : row.original.value}</p>
+              return <p>{row.name.includes('shorthand') ? undefined : row.original.$value}</p>
             },
           },
         ]}
@@ -430,7 +430,7 @@ export const TitleSmall = () => {
             field: 'original',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.name.includes('shorthand') ? undefined : row.original.value}</p>
+              return <p>{row.name.includes('shorthand') ? undefined : row.original.$value}</p>
             },
           },
         ]}
@@ -505,7 +505,7 @@ export const Subtitle = () => {
             field: 'original',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.name.includes('shorthand') ? undefined : row.original.value}</p>
+              return <p>{row.name.includes('shorthand') ? undefined : row.original.$value}</p>
             },
           },
         ]}
@@ -582,7 +582,7 @@ export const BodyLarge = () => {
             field: 'original',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.name.includes('shorthand') ? undefined : row.original.value}</p>
+              return <p>{row.name.includes('shorthand') ? undefined : row.original.$value}</p>
             },
           },
         ]}
@@ -659,7 +659,7 @@ export const BodyMedium = () => {
             field: 'original',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.name.includes('shorthand') ? undefined : row.original.value}</p>
+              return <p>{row.name.includes('shorthand') ? undefined : row.original.$value}</p>
             },
           },
         ]}
@@ -736,7 +736,7 @@ export const BodySmall = () => {
             field: 'original',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.name.includes('shorthand') ? undefined : row.original.value}</p>
+              return <p>{row.name.includes('shorthand') ? undefined : row.original.$value}</p>
             },
           },
         ]}
@@ -811,7 +811,7 @@ export const Caption = () => {
             field: 'original',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.name.includes('shorthand') ? undefined : row.original.value}</p>
+              return <p>{row.name.includes('shorthand') ? undefined : row.original.$value}</p>
             },
           },
         ]}
@@ -886,7 +886,7 @@ export const CodeBlock = () => {
             field: 'original',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.name.includes('shorthand') ? undefined : row.original.value}</p>
+              return <p>{row.name.includes('shorthand') ? undefined : row.original.$value}</p>
             },
           },
         ]}
@@ -961,7 +961,7 @@ export const InlineCodeBlock = () => {
             field: 'original',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.name.includes('shorthand') ? undefined : row.original.value}</p>
+              return <p>{row.name.includes('shorthand') ? undefined : row.original.$value}</p>
             },
           },
         ]}
@@ -1012,7 +1012,7 @@ export const Overview = () => {
           },
           {
             header: 'Description',
-            field: 'comment',
+            field: 'description',
             rowHeader: true,
             width: 'auto',
             renderCell: row => {
@@ -1025,7 +1025,7 @@ export const Overview = () => {
                     marginBottom: '0',
                   }}
                 >
-                  {row.comment}
+                  {row.description}
                 </p>
               )
             },

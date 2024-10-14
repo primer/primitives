@@ -1,5 +1,5 @@
 import type StyleDictionary from 'style-dictionary'
-import {getMockToken} from './getMockToken'
+import {getMockToken} from './getMockToken.js'
 
 const mockDictionaryDefault = {
   tokens: {
@@ -7,7 +7,7 @@ const mockDictionaryDefault = {
       red: getMockToken({
         name: 'red',
         description: 'This is a description',
-        value: 'transformedValue',
+        $value: 'transformedValue',
         path: ['tokens', 'subgroup', 'red'],
       }),
     },

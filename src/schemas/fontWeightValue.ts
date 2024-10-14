@@ -1,5 +1,5 @@
 import {z} from 'zod'
-import {schemaErrorMessage} from '../utilities/schemaErrorMessage'
+import {schemaErrorMessage} from '../utilities/index.js'
 
 const allowed = [100, 200, 300, 400, 500, 600, 700, 800, 900, 950]
 

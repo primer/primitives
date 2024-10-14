@@ -1,10 +1,10 @@
-import {getMockToken} from '../test-utilities'
-import {borderToCss} from './borderToCss'
+import {getMockToken} from '../test-utilities/index.js'
+import {borderToCss} from './borderToCss.js'
 
 describe('Transformer: borderToCss', () => {
   it('transforms `border` token to css border string', () => {
     const input = getMockToken({
-      value: {
+      $value: {
         color: '#000000',
         style: 'solid',
         width: '1px',
@@ -12,45 +12,48 @@ describe('Transformer: borderToCss', () => {
     })
 
     const expectedOutput = '#000000 solid 1px'
-    expect(borderToCss.transformer(input, {})).toStrictEqual(expectedOutput)
+    expect(borderToCss.transform(input, {}, {})).toStrictEqual(expectedOutput)
   })
 
   it('throws an error when required values are missing', () => {
     // missing blur
     expect(() =>
-      borderToCss.transformer(
+      borderToCss.transform(
         getMockToken({
-          value: {
+          $value: {
             color: '#000000',
             style: 'solid',
           },
         }),
+        {},
         {},
       ),
     ).toThrowError()
 
     // missing spread
     expect(() =>
-      borderToCss.transformer(
+      borderToCss.transform(
         getMockToken({
-          value: {
+          $value: {
             color: '#000000',
             width: '1px',
           },
         }),
+        {},
         {},
       ),
     ).toThrowError()
 
     // missing offsets
     expect(() =>
-      borderToCss.transformer(
+      borderToCss.transform(
         getMockToken({
-          value: {
+          $value: {
             style: 'solid',
             width: '1px',
           },
         }),
+        {},
         {},
       ),
     ).toThrowError()

@@ -1,4 +1,4 @@
-import {toCamelCase} from './toCamelCase'
+import {toCamelCase} from './toCamelCase.js'
 
 describe('Utilities: toCamelCase', () => {
   it('it transforms all lowercase word', () => {

@@ -1,4 +1,4 @@
-import {tokenName} from './tokenName'
+import {tokenName} from './tokenName.js'
 
 describe('Schema: tokenName', () => {
   it('parses valid token names', () => {

@@ -57,10 +57,10 @@ export const Base = () => {
           },
           {
             header: 'Source value',
-            field: 'original.value',
+            field: 'original.$value',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.original.value}</p>
+              return <p>{row.original.$value}</p>
             },
           },
         ]}

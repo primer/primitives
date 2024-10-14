@@ -1,5 +1,5 @@
-import {getMockToken} from '../test-utilities'
-import {namePathToPascalCase} from './namePathToPascalCase'
+import {getMockToken} from '../test-utilities/index.js'
+import {namePathToPascalCase} from './namePathToPascalCase.js'
 
 describe('Transformer: namePathToPascalCase', () => {
   it('converts path elements to dot.notation and ignores name proprty', () => {
@@ -23,7 +23,7 @@ describe('Transformer: namePathToPascalCase', () => {
     ]
     const expectedOutput = ['PathToToken', 'PATHTOToken', 'PathToToken', 'PathtoToken']
 
-    expect(input.map(item => namePathToPascalCase.transformer(item, {}))).toStrictEqual(expectedOutput)
+    expect(input.map(item => namePathToPascalCase.transform(item, {}, {}))).toStrictEqual(expectedOutput)
   })
 
   it('removes `@`, so we can use it for the default hack', () => {
@@ -38,7 +38,7 @@ describe('Transformer: namePathToPascalCase', () => {
       }),
     ]
     const expectedOutput = ['FgColorAccent', 'FgColorMuted']
-    expect(input.map(item => namePathToPascalCase.transformer(item, {}))).toStrictEqual(expectedOutput)
+    expect(input.map(item => namePathToPascalCase.transform(item, {}, {}))).toStrictEqual(expectedOutput)
   })
 
   it('adds prefix to token name', () => {
@@ -50,6 +50,6 @@ describe('Transformer: namePathToPascalCase', () => {
       path: ['start', 'pathTo', 'token'],
     })
     const expectedOutput = 'PRIMERStartPathToToken'
-    expect(namePathToPascalCase.transformer(input, platform)).toStrictEqual(expectedOutput)
+    expect(namePathToPascalCase.transform(input, platform, {})).toStrictEqual(expectedOutput)
   })
 })

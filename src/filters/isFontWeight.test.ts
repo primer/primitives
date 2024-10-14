@@ -1,5 +1,5 @@
-import {getMockToken} from '../test-utilities'
-import {isFontWeight} from './isFontWeight'
+import {getMockToken} from '../test-utilities/index.js'
+import {isFontWeight} from './isFontWeight.js'
 
 describe('Filter: isFontWeight', () => {
   it('returns true if $type property is `fontWeight`', () => {

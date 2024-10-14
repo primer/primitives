@@ -2,7 +2,7 @@
   data: {
     blue: {
       color: {
-        'emphasis': {
+        emphasis: {
           $value: '{base.display.color.blue.5}',
           $type: 'color',
           $extensions: {
@@ -10,7 +10,7 @@
               collection: 'mode',
               mode: 'dark',
               group: 'component',
-              scopes: ['bgColor'],
+              scopes: ['bgColor', 'borderColor'],
             },
           },
         },
@@ -30,7 +30,7 @@
     },
     auburn: {
       color: {
-        'emphasis': {
+        emphasis: {
           $value: '{base.display.color.auburn.5}',
           $type: 'color',
           $extensions: {
@@ -38,7 +38,7 @@
               collection: 'mode',
               mode: 'dark',
               group: 'component',
-              scopes: ['bgColor'],
+              scopes: ['bgColor', 'borderColor'],
             },
           },
         },
@@ -58,7 +58,7 @@
     },
     orange: {
       color: {
-        'emphasis': {
+        emphasis: {
           $value: '{base.display.color.orange.4}',
           $type: 'color',
           $extensions: {
@@ -66,7 +66,7 @@
               collection: 'mode',
               mode: 'dark',
               group: 'component',
-              scopes: ['bgColor'],
+              scopes: ['bgColor', 'borderColor'],
             },
           },
         },
@@ -86,7 +86,7 @@
     },
     yellow: {
       color: {
-        'emphasis': {
+        emphasis: {
           $value: '{base.display.color.yellow.4}',
           $type: 'color',
           $extensions: {
@@ -94,7 +94,7 @@
               collection: 'mode',
               mode: 'dark',
               group: 'component',
-              scopes: ['bgColor'],
+              scopes: ['bgColor', 'borderColor'],
             },
           },
         },
@@ -114,7 +114,7 @@
     },
     green: {
       color: {
-        'emphasis': {
+        emphasis: {
           $value: '{base.display.color.green.4}',
           $type: 'color',
           $extensions: {
@@ -122,7 +122,7 @@
               collection: 'mode',
               mode: 'dark',
               group: 'component',
-              scopes: ['bgColor'],
+              scopes: ['bgColor', 'borderColor'],
             },
           },
         },
@@ -142,7 +142,7 @@
     },
     teal: {
       color: {
-        'emphasis': {
+        emphasis: {
           $value: '{base.display.color.teal.4}',
           $type: 'color',
           $extensions: {
@@ -150,7 +150,7 @@
               collection: 'mode',
               mode: 'dark',
               group: 'component',
-              scopes: ['bgColor'],
+              scopes: ['bgColor', 'borderColor'],
             },
           },
         },
@@ -170,7 +170,7 @@
     },
     purple: {
       color: {
-        'emphasis': {
+        emphasis: {
           $value: '{base.display.color.purple.5}',
           $type: 'color',
           $extensions: {
@@ -178,7 +178,7 @@
               collection: 'mode',
               mode: 'dark',
               group: 'component',
-              scopes: ['bgColor'],
+              scopes: ['bgColor', 'borderColor'],
             },
           },
         },
@@ -198,7 +198,7 @@
     },
     pink: {
       color: {
-        'emphasis': {
+        emphasis: {
           $value: '{base.display.color.pink.5}',
           $type: 'color',
           $extensions: {
@@ -206,7 +206,7 @@
               collection: 'mode',
               mode: 'dark',
               group: 'component',
-              scopes: ['bgColor'],
+              scopes: ['bgColor', 'borderColor'],
             },
           },
         },
@@ -226,7 +226,7 @@
     },
     red: {
       color: {
-        'emphasis': {
+        emphasis: {
           $value: '{base.display.color.red.5}',
           $type: 'color',
           $extensions: {
@@ -234,7 +234,7 @@
               collection: 'mode',
               mode: 'dark',
               group: 'component',
-              scopes: ['bgColor'],
+              scopes: ['bgColor', 'borderColor'],
             },
           },
         },
@@ -254,7 +254,7 @@
     },
     gray: {
       color: {
-        'emphasis': {
+        emphasis: {
           $value: '{base.display.color.gray.4}',
           $type: 'color',
           $extensions: {
@@ -262,7 +262,7 @@
               collection: 'mode',
               mode: 'dark',
               group: 'component',
-              scopes: ['bgColor'],
+              scopes: ['bgColor', 'borderColor'],
             },
           },
         },

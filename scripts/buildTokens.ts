@@ -1,11 +1,14 @@
-import type StyleDictionary from 'style-dictionary'
-import {PrimerStyleDictionary} from '../src/PrimerStyleDictionary'
-import {copyFromDir} from '../src/utilities'
-import {deprecatedJson, css, docJson, fallbacks, styleLint} from '../src/platforms'
-import type {ConfigGeneratorOptions, StyleDictionaryConfigGenerator} from '../src/types/StyleDictionaryConfigGenerator'
-import type {TokenBuildInput} from '../src/types/TokenBuildInput'
+import type {Config} from 'style-dictionary/types'
+import {PrimerStyleDictionary} from '../src/PrimerStyleDictionary.js'
+import {copyFromDir} from '../src/utilities/index.js'
+import {deprecatedJson, css, docJson, fallbacks, styleLint} from '../src/platforms/index.js'
+import type {
+  ConfigGeneratorOptions,
+  StyleDictionaryConfigGenerator,
+} from '../src/types/StyleDictionaryConfigGenerator.js'
+import type {TokenBuildInput} from '../src/types/TokenBuildInput.js'
 import glob from 'fast-glob'
-import {themes} from './themes.config'
+import {themes} from './themes.config.js'
 import fs from 'fs'
 
 /**
@@ -22,32 +25,42 @@ const getStyleDictionaryConfig: StyleDictionaryConfigGenerator = (
   include,
   options,
   platforms = {},
-): StyleDictionary.Config => ({
+): Config => ({
   source, // build the special formats
   include,
-  platforms: {
-    css: css(`css/${filename}.css`, options.prefix, options.buildPath, {themed: options.themed}),
-    docJson: docJson(`docs/${filename}.json`, options.prefix, options.buildPath),
-    styleLint: styleLint(`styleLint/${filename}.json`, options.prefix, options.buildPath),
-    fallbacks: fallbacks(`fallbacks/${filename}.json`, options.prefix, options.buildPath),
-    ...platforms,
+  log: {
+    warnings: 'warn', // 'warn' | 'error' | 'disabled'
+    verbosity: 'verbose', // 'default' | 'silent' | 'verbose'
+    errors: {
+      brokenReferences: 'throw', // 'throw' | 'console'
+    },
   },
+  platforms: Object.fromEntries(
+    Object.entries({
+      css: css(`css/${filename}.css`, options.prefix, options.buildPath, {themed: options.themed}),
+      docJson: docJson(`docs/${filename}.json`, options.prefix, options.buildPath),
+      styleLint: styleLint(`styleLint/${filename}.json`, options.prefix, options.buildPath),
+      fallbacks: fallbacks(`fallbacks/${filename}.json`, options.prefix, options.buildPath),
+      ...platforms,
+    }).filter((entry: [string, unknown]) => entry[1] !== undefined),
+  ),
 })
 
-export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void => {
+export const buildDesignTokens = async (buildOptions: ConfigGeneratorOptions): Promise<void> => {
   /** -----------------------------------
    * Internal Colors
    * ----------------------------------- */
   try {
     for (const {filename, source, include} of themes) {
       // build functional scales
-      PrimerStyleDictionary.extend({
+      const extendedSD = await PrimerStyleDictionary.extend({
         source: [...source, ...include], // build the special formats
         include,
         platforms: {
           css: css(`internalCss/${filename}.css`, buildOptions.prefix, buildOptions.buildPath, {themed: true}),
         },
-      }).buildAllPlatforms()
+      })
+      await extendedSD.buildAllPlatforms()
     }
   } catch (e) {
     // eslint-disable-next-line no-console
@@ -60,7 +73,7 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
   try {
     for (const {filename, source, include} of themes) {
       // build functional scales
-      PrimerStyleDictionary.extend(
+      const extendedSD = await PrimerStyleDictionary.extend(
         getStyleDictionaryConfig(
           `functional/themes/${filename}`,
           source,
@@ -69,7 +82,8 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
           // disable fallbacks for themes
           {fallbacks: undefined},
         ),
-      ).buildAllPlatforms()
+      )
+      await extendedSD.buildAllPlatforms()
     }
   } catch (e) {
     // eslint-disable-next-line no-console
@@ -83,23 +97,25 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
     const sizeFiles = glob.sync('src/tokens/functional/size/*')
     //
     for (const file of sizeFiles) {
-      PrimerStyleDictionary.extend(
+      const extendedSD = await PrimerStyleDictionary.extend(
         getStyleDictionaryConfig(
           `functional/size/${file.replace('src/tokens/functional/size/', '').replace('.json', '')}`,
           [file],
           ['src/tokens/base/size/size.json', ...sizeFiles],
           buildOptions,
         ),
-      ).buildAllPlatforms()
+      )
+      await extendedSD.buildAllPlatforms()
     }
     // build base scales
-    PrimerStyleDictionary.extend(
+    const SdBaseSize = await PrimerStyleDictionary.extend(
       // using includes as source
       getStyleDictionaryConfig(`base/size/size`, ['src/tokens/base/size/size.json'], [], {
         buildPath: buildOptions.buildPath,
         prefix: undefined,
       }),
-    ).buildAllPlatforms()
+    )
+    await SdBaseSize.buildAllPlatforms()
   } catch (e) {
     // eslint-disable-next-line no-console
     console.error('🛑 Error trying to build size tokens for code output:', e)
@@ -108,7 +124,7 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
    * Typography tokens
    * ----------------------------------- */
   try {
-    PrimerStyleDictionary.extend(
+    const extendedSD = await PrimerStyleDictionary.extend(
       getStyleDictionaryConfig(
         `functional/typography/typography`,
         [`src/tokens/functional/typography/*.json`],
@@ -122,11 +138,13 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
           }),
         },
       ),
-    ).buildAllPlatforms()
+    )
+    await extendedSD.buildAllPlatforms()
 
-    PrimerStyleDictionary.extend(
+    const SdTypo = await PrimerStyleDictionary.extend(
       getStyleDictionaryConfig(`base/typography/typography`, [`src/tokens/base/typography/*.json`], [], buildOptions),
-    ).buildAllPlatforms()
+    )
+    await SdTypo.buildAllPlatforms()
   } catch (e) {
     // eslint-disable-next-line no-console
     console.error('🛑 Error trying to build typography tokens for code output:', e)
@@ -136,7 +154,7 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
    * Motion tokens
    * ----------------------------------- */
   try {
-    PrimerStyleDictionary.extend(
+    const extendedSD = await PrimerStyleDictionary.extend(
       getStyleDictionaryConfig(
         `functional/motion/motion`,
         [`src/tokens/functional/motion/*.json5`],
@@ -150,11 +168,13 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
           }),
         },
       ),
-    ).buildAllPlatforms()
+    )
+    await extendedSD.buildAllPlatforms()
 
-    PrimerStyleDictionary.extend(
+    const SdMotion = await PrimerStyleDictionary.extend(
       getStyleDictionaryConfig(`base/motion/motion`, [`src/tokens/base/motion/*.json5`], [], buildOptions),
-    ).buildAllPlatforms()
+    )
+    await SdMotion.buildAllPlatforms()
   } catch (e) {
     // eslint-disable-next-line no-console
     console.error('🛑 Error trying to build motion tokens for code output:', e)
@@ -197,13 +217,14 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
   //
   try {
     for (const {filename, source, include} of deprecatedBuilds) {
-      PrimerStyleDictionary.extend({
+      const extendedSD = await PrimerStyleDictionary.extend({
         source,
         include,
         platforms: {
           deprecated: deprecatedJson(`deprecated/${filename}.json`, buildOptions.prefix, buildOptions.buildPath),
         },
-      }).buildAllPlatforms()
+      })
+      await extendedSD.buildAllPlatforms()
     }
   } catch (e) {
     // eslint-disable-next-line no-console
@@ -247,6 +268,6 @@ export const buildDesignTokens = (buildOptions: ConfigGeneratorOptions): void =>
  * Run build script
  * ----------------------------------- */
 // build to dist
-buildDesignTokens({
+await buildDesignTokens({
   buildPath: 'dist/',
 })

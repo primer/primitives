@@ -1,10 +1,10 @@
 import fs from 'fs'
 import json5 from 'json5'
-import {designToken} from '../src/schemas/designToken'
-import {getFlag} from '../src/utilities/getFlag'
-import {validateType} from '../src/schemas/validTokenType'
-import {walkDir} from './utilities/walkDir'
-import {validateTokenWithSchema, type validationErrors} from './utilities/validateTokenWithSchema'
+import {designToken} from '../src/schemas/designToken.js'
+import {getFlag} from '../src/utilities/index.js'
+import {validateType} from '../src/schemas/validTokenType.js'
+import {walkDir} from './utilities/walkDir.js'
+import {validateTokenWithSchema, type validationErrors} from './utilities/validateTokenWithSchema.js'
 
 export const validateTokens = (tokenDir: string) => {
   const tokenFiles = walkDir(tokenDir, ['removed', 'fallback'])

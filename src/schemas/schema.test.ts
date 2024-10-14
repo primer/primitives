@@ -1,4 +1,4 @@
-import {designToken} from './designToken'
+import {designToken} from './designToken.js'
 
 describe('Schema validation', () => {
   const validTokenJson = {

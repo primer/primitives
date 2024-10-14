@@ -1,4 +1,4 @@
-import {treeWalker} from './treeWalker'
+import {treeWalker} from './treeWalker.js'
 
 describe('Utilities: treeWalker', () => {
   const isValidItem = (item: unknown) => {

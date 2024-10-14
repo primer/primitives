@@ -1,4 +1,4 @@
-import {upperCaseFirstCharacter} from './upperCaseFirstCharacter'
+import {upperCaseFirstCharacter} from './upperCaseFirstCharacter.js'
 
 describe('Utilities: upperCaseFirstCharacter', () => {
   it('it transforms all lowercase word', () => {

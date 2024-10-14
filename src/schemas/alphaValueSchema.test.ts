@@ -1,4 +1,4 @@
-import {alphaValue} from './alphaValue'
+import {alphaValue} from './alphaValue.js'
 
 describe('Schema: alphaValue', () => {
   it('passes on valid alpha values', () => {

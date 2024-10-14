@@ -1,10 +1,10 @@
-import type {ContrastRequirement, ContrastRequirements, ThemeName} from './color-contrast.config'
-import {contrastRequirements, bgColors} from './color-contrast.config'
+import type {ContrastRequirement, ContrastRequirements, ThemeName} from './color-contrast.config.js'
+import {contrastRequirements, bgColors} from './color-contrast.config.js'
 import {writeFile} from 'fs'
 import {readFile} from 'fs/promises'
 import {normal} from 'color-blend'
 import {getContrast, parseToRgba, rgba} from 'color2k'
-import {makeConsoleTable, makeMarkdownTable} from './utilities/makeTable'
+import {makeConsoleTable, makeMarkdownTable} from './utilities/makeTable.js'
 /**
  * Type definitions
  */
@@ -52,9 +52,19 @@ const runContrastTest = (colorPairs: ContrastRequirement[], tokens: Tokens): con
     if (!tokens.hasOwnProperty(colorB)) throw new Error(`Color token not found ${colorB}`)
 
     if (parseToRgba(tokens[colorB].value)[3] === 1) {
-      return {
+      const testResults = testContrast(
+        minimumContrast,
+        tokens[colorA].value,
+        tokens[colorB].value,
+        undefined,
         contrastPair,
-        ...testContrast(minimumContrast, tokens[colorA].value, tokens[colorB].value, undefined, contrastPair),
+      )
+      return {
+        contrastPair:
+          testResults.pass === '✅'
+            ? `${contrastPair}`
+            : `${colorA} (${tokens[colorA].value}) vs. ${colorB} (${tokens[colorB].value})`,
+        ...testResults,
         minimumContrastRatio,
       }
     }
@@ -64,11 +74,23 @@ const runContrastTest = (colorPairs: ContrastRequirement[], tokens: Tokens): con
     // overwrite background if custom canvas array is set
     if (options?.bg) canvasColorArrays = options.bg
     // test transparent colorB with default bgs `canvasColors`
-    return canvasColorArrays.map(bg => ({
-      contrastPair: `${contrastPair} on ${bg}`,
-      ...testContrast(minimumContrast, tokens[colorA].value, tokens[colorB].value, tokens[bg].value, contrastPair),
-      minimumContrastRatio,
-    }))
+    return canvasColorArrays.map(bg => {
+      const testResults = testContrast(
+        minimumContrast,
+        tokens[colorA].value,
+        tokens[colorB].value,
+        tokens[bg].value,
+        contrastPair,
+      )
+      return {
+        contrastPair:
+          testResults.pass === '✅'
+            ? `${contrastPair} on ${bg}`
+            : `${colorA} (${tokens[colorA].value}) vs. ${colorB} (${tokens[colorB].value}) on ${bg}`,
+        ...testResults,
+        minimumContrastRatio,
+      }
+    })
   })
 }
 /**
@@ -99,6 +121,7 @@ const testContrast = (
     // eslint-disable-next-line no-console
     console.error(`${contrastPair || ''} as ${colorA} vs.${colorB}: ${err}`)
   }
+
   return {
     pass: contrast >= minimumContrast ? '✅' : '❌',
     contrastRatio: `${contrast}:1`,
@@ -106,7 +129,7 @@ const testContrast = (
 }
 
 const checkContrastForThemes = async (themes: Theme[], contrastRequirementsObj: ContrastRequirements) => {
-  return await Promise.all(
+  const allResults = await Promise.all(
     themes.map(async ([themeName, tokens]) => {
       // run tests on all color pairs
       const results = runContrastTest(contrastRequirementsObj[themeName], tokens)
@@ -123,10 +146,18 @@ const checkContrastForThemes = async (themes: Theme[], contrastRequirementsObj: 
           'contrastRatio',
           'minimumContrastRatio',
         ]),
+        failedMarkdownTable:
+          failingContrast > 0 &&
+          (await makeMarkdownTable(
+            results.filter(item => item.pass === '❌'),
+            ['contrastPair', 'pass', 'contrastRatio', 'minimumContrastRatio'],
+          )),
         results,
       }
     }),
   )
+  // return results
+  return allResults
 }
 
 /**
@@ -188,7 +219,16 @@ const getColorsFromFiles = async (filePaths: ThemeName[]): Promise<Theme[]> => {
  * RUN CODE
  */
 const runCheck = async () => {
-  const themesNamesToCheck = ['light', 'dark', 'light_high_contrast', 'dark_high_contrast'] as ThemeName[]
+  const themesNamesToCheck = [
+    'light',
+    'dark',
+    'light_high_contrast',
+    'dark_high_contrast',
+    'light_colorblind',
+    'dark_colorblind',
+    'light_tritanopia',
+    'dark_tritanopia',
+  ] as ThemeName[]
   // get colors from doc json files
   const themes = await getColorsFromFiles(themesNamesToCheck)
   // check contrast for themes

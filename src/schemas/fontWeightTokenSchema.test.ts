@@ -1,4 +1,4 @@
-import {fontWeightToken} from './fontWeightToken'
+import {fontWeightToken} from './fontWeightToken.js'
 
 describe('Schema: fontWeightToken', () => {
   const validToken = {

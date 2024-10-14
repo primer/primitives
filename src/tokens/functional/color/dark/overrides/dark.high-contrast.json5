@@ -14,7 +14,7 @@
       $type: 'color',
     },
     disabled: {
-      $value: '{base.color.neutral.9}',
+      $value: '{base.color.neutral.8}',
       $type: 'color',
     },
     neutral: {
@@ -194,7 +194,7 @@
     },
     upsell: {
       muted: {
-          $value: '{borderColor.done.muted}',
+        $value: '{borderColor.done.muted}',
         $type: 'color',
         alpha: 1,
       },
@@ -468,7 +468,7 @@
         active: {
           $value: '{bgColor.danger.emphasis}',
           $type: 'color',
-          mix: null
+          mix: null,
         },
       },
     },
@@ -930,6 +930,13 @@
     fgColor: {
       $value: '{fgColor.onInverse}',
       $type: 'color',
+    },
+  },
+  skeletonLoader: {
+    bgColor: {
+      $value: '{base.color.neutral.5}',
+      $type: 'color',
+      alpha: 1,
     },
   },
 }

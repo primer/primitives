@@ -1,7 +1,6 @@
-import {isFromFile, isSource} from '../filters'
-import type StyleDictionary from 'style-dictionary'
-import type {PlatformInitializer} from '../types/PlatformInitializer'
-import type {TransformedToken} from 'style-dictionary'
+import {isFromFile, isSource} from '../filters/index.js'
+import type {PlatformInitializer} from '../types/PlatformInitializer.ts'
+import type {PlatformConfig, TransformedToken} from 'style-dictionary/types'
 
 const getCssSelectors = (outputFile: string) => {
   // check for dark in the beginning of the output filename
@@ -21,7 +20,7 @@ const getCssSelectors = (outputFile: string) => {
   ]
 }
 
-export const css: PlatformInitializer = (outputFile, prefix, buildPath, options): StyleDictionary.Platform => {
+export const css: PlatformInitializer = (outputFile, prefix, buildPath, options): PlatformConfig => {
   return {
     prefix,
     buildPath,
@@ -44,7 +43,14 @@ export const css: PlatformInitializer = (outputFile, prefix, buildPath, options)
       {
         destination: `${outputFile}`,
         format: `css/advanced`,
-        filter: token => isSource(token) && options?.themed === true,
+        filter: token =>
+          isSource(token) &&
+          options?.themed === true &&
+          token.$type !== 'custom-viewportRange' &&
+          !isFromFile(token, [
+            'src/tokens/functional/size/size-coarse.json',
+            'src/tokens/functional/size/size-fine.json',
+          ]),
         options: {
           showFileHeader: false,
           outputReferences: false,
@@ -56,7 +62,14 @@ export const css: PlatformInitializer = (outputFile, prefix, buildPath, options)
       {
         destination: `${outputFile}`,
         format: `css/advanced`,
-        filter: token => isSource(token) && options?.themed !== true,
+        filter: token =>
+          isSource(token) &&
+          options?.themed !== true &&
+          token.$type !== 'custom-viewportRange' &&
+          !isFromFile(token, [
+            'src/tokens/functional/size/size-coarse.json',
+            'src/tokens/functional/size/size-fine.json',
+          ]),
         options: {
           showFileHeader: false,
           descriptions: false,

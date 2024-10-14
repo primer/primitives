@@ -249,17 +249,6 @@ const setContrastRatios = (
   ])
 }
 
-const defaultContrast: ContrastRequirement[] = setContrastRatios('default', [
-  ...baseRequirements,
-  ...displayColorRequirements,
-])
-
-const highContrast: ContrastRequirement[] = setContrastRatios('highContrast', [
-  ...baseRequirements,
-  ...displayColorRequirements,
-  // add high contrast overwrites or additions
-])
-
 export const bgColors: string[] = ['bgColor-default', 'bgColor-muted']
 
 export type ThemeName =
@@ -272,6 +261,17 @@ export type ThemeName =
   | 'dark_high_contrast'
   | 'dark_colorblind'
   | 'dark_tritanopia'
+
+const defaultContrast: ContrastRequirement[] = setContrastRatios('default', [
+  ...baseRequirements,
+  ...displayColorRequirements,
+])
+
+const highContrast: ContrastRequirement[] = setContrastRatios('highContrast', [
+  ...baseRequirements,
+  ...displayColorRequirements,
+  // add high contrast overwrites or additions
+])
 
 export type ContrastRequirements = {[key in ThemeName]: ContrastRequirement[]}
 export const contrastRequirements: ContrastRequirements = {

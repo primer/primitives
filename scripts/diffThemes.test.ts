@@ -1,4 +1,4 @@
-import {diffThemes} from './diffThemes'
+import {diffThemes} from './diffThemes.js'
 
 describe('diffThemes', () => {
   const themesArray: [string, string[]][] = [

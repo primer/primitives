@@ -1,5 +1,4 @@
 import StyleDictionary from 'style-dictionary'
-import {w3cJsonParser} from './parsers'
 import {
   borderToCss,
   colorToRgbAlpha,
@@ -25,7 +24,7 @@ import {
   dimensionToRemPxArray,
   floatToPixel,
   floatToPixelUnitless,
-} from './transformers'
+} from './transformers/index.js'
 import {
   javascriptCommonJs,
   javascriptEsm,
@@ -36,196 +35,164 @@ import {
   jsonPostCssFallback,
   cssAdvanced,
   jsonFigma,
-} from './formats'
+} from './formats/index.js'
 
 /**
- * Parsers
- *
+ * @name {@link PrimerStyleDictionary}
+ * @description Returns style dictionary object with primer preset that includes parsers, formats and transformers
+ * @formats [javascript/esm](https://github.com/primer/primitives/blob/main/config/formats/javascript-esm.ts), [javascript/commonJs](https://github.com/primer/primitives/blob/main/config/formats/javascript-commonJs.ts), [typescript/export-definition](https://github.com/primer/primitives/blob/main/config/formats/typescript-export-defition.ts)
+ * @transformers [color/rgbAlpha](https://github.com/primer/primitives/blob/main/config/tranformers/color-to-rgb-alpha.ts), [color/hexAlpha](https://github.com/primer/primitives/blob/main/config/tranformers/color-to-hex-alpha.ts), [color/hex](https://github.com/primer/primitives/blob/main/config/tranformers/color-to-hex6.ts), [json/deprecated](https://github.com/primer/primitives/blob/main/config/tranformers/json-deprecated.ts), [name/pathToDotNotation](https://github.com/primer/primitives/blob/main/config/tranformers/name-path-to-dot-notation.ts)
  */
-StyleDictionary.registerParser(w3cJsonParser)
+export const PrimerStyleDictionary: StyleDictionary = new StyleDictionary()
 
 /**
  * Formats
  *
  */
-StyleDictionary.registerFormat({
+PrimerStyleDictionary.registerFormat({
   name: 'css/advanced',
-  formatter: cssAdvanced,
+  format: cssAdvanced,
 })
 
-StyleDictionary.registerFormat({
+PrimerStyleDictionary.registerFormat({
   name: 'css/customMedia',
-  formatter: cssCustomMedia,
+  format: cssCustomMedia,
 })
 
-StyleDictionary.registerFormat({
+PrimerStyleDictionary.registerFormat({
   name: 'javascript/esm',
-  formatter: javascriptEsm,
+  format: javascriptEsm,
 })
 
-StyleDictionary.registerFormat({
+PrimerStyleDictionary.registerFormat({
   name: 'javascript/commonJs',
-  formatter: javascriptCommonJs,
+  format: javascriptCommonJs,
 })
 
-StyleDictionary.registerFormat({
+PrimerStyleDictionary.registerFormat({
   name: 'typescript/export-definition',
-  formatter: typescriptExportDefinition,
+  format: typescriptExportDefinition,
 })
 
-StyleDictionary.registerFormat({
+PrimerStyleDictionary.registerFormat({
   name: 'json/nested-prefixed',
-  formatter: jsonNestedPrefixed,
+  format: jsonNestedPrefixed,
 })
 
-StyleDictionary.registerFormat({
+PrimerStyleDictionary.registerFormat({
   name: 'json/one-dimensional',
-  formatter: jsonOneDimensional,
+  format: jsonOneDimensional,
 })
 
-StyleDictionary.registerFormat({
+PrimerStyleDictionary.registerFormat({
   name: 'json/postCss-fallback',
-  formatter: jsonPostCssFallback,
+  format: jsonPostCssFallback,
 })
 
-StyleDictionary.registerFormat({
+PrimerStyleDictionary.registerFormat({
   name: 'json/figma',
-  formatter: jsonFigma,
+  format: jsonFigma,
 })
 
 /**
  * Transformers
  *
  */
-StyleDictionary.registerTransform({
-  name: 'color/rgbAlpha',
+PrimerStyleDictionary.registerTransform({
   ...colorToRgbAlpha,
 })
 
-StyleDictionary.registerTransform({
-  name: 'color/rgbaFloat',
+PrimerStyleDictionary.registerTransform({
   ...colorToRgbaFloat,
 })
 
-StyleDictionary.registerTransform({
-  name: 'color/hexMix',
+PrimerStyleDictionary.registerTransform({
   ...colorToHexMix,
 })
 
-StyleDictionary.registerTransform({
-  name: 'color/hex',
+PrimerStyleDictionary.registerTransform({
   ...colorToHex,
 })
 
-StyleDictionary.registerTransform({
-  name: 'float/pixel',
+PrimerStyleDictionary.registerTransform({
   ...floatToPixel,
 })
 
-StyleDictionary.registerTransform({
-  name: 'float/pixelUnitless',
+PrimerStyleDictionary.registerTransform({
   ...floatToPixelUnitless,
 })
 
-StyleDictionary.registerTransform({
-  name: 'dimension/rem',
+PrimerStyleDictionary.registerTransform({
   ...dimensionToRem,
 })
 
-StyleDictionary.registerTransform({
-  name: 'dimension/remPxArray',
+PrimerStyleDictionary.registerTransform({
   ...dimensionToRemPxArray,
 })
 
-StyleDictionary.registerTransform({
-  name: 'dimension/pixelUnitless',
+PrimerStyleDictionary.registerTransform({
   ...dimensionToPixelUnitless,
 })
 
-StyleDictionary.registerTransform({
-  name: 'duration/css',
+PrimerStyleDictionary.registerTransform({
   ...durationToCss,
 })
 
-StyleDictionary.registerTransform({
-  name: 'figma/attributes',
+PrimerStyleDictionary.registerTransform({
   ...figmaAttributes,
 })
 
-StyleDictionary.registerTransform({
-  name: 'json/deprecated',
+PrimerStyleDictionary.registerTransform({
   ...jsonDeprecated,
 })
 
-StyleDictionary.registerTransform({
-  name: 'name/pathToCamelCase',
+PrimerStyleDictionary.registerTransform({
   ...namePathToCamelCase,
 })
-StyleDictionary.registerTransform({
-  name: 'name/pathToPascalCase',
+PrimerStyleDictionary.registerTransform({
   ...namePathToPascalCase,
 })
 
-StyleDictionary.registerTransform({
-  name: 'name/pathToDotNotation',
+PrimerStyleDictionary.registerTransform({
   ...namePathToDotNotation,
 })
 
-StyleDictionary.registerTransform({
-  name: 'name/pathToFigma',
+PrimerStyleDictionary.registerTransform({
   ...namePathToFigma,
 })
 
-StyleDictionary.registerTransform({
-  name: 'name/pathToCamelCase',
+PrimerStyleDictionary.registerTransform({
   ...namePathToCamelCase,
 })
 
-StyleDictionary.registerTransform({
-  name: 'name/pathToKebabCase',
+PrimerStyleDictionary.registerTransform({
   ...namePathToKebabCase,
 })
 
-StyleDictionary.registerTransform({
-  name: 'name/pathToSlashNotation',
+PrimerStyleDictionary.registerTransform({
   ...namePathToSlashNotation,
 })
 
-StyleDictionary.registerTransform({
-  name: 'shadow/css',
+PrimerStyleDictionary.registerTransform({
   ...shadowToCss,
 })
 
-StyleDictionary.registerTransform({
-  name: 'border/css',
+PrimerStyleDictionary.registerTransform({
   ...borderToCss,
 })
 
-StyleDictionary.registerTransform({
-  name: 'typography/css',
+PrimerStyleDictionary.registerTransform({
   ...typographyToCss,
 })
 
-StyleDictionary.registerTransform({
-  name: 'fontWeight/number',
+PrimerStyleDictionary.registerTransform({
   ...fontWeightToNumber,
 })
 
-StyleDictionary.registerTransform({
-  name: 'fontFamily/css',
+PrimerStyleDictionary.registerTransform({
   ...fontFamilyToCss,
 })
 
-StyleDictionary.registerTransform({
-  name: 'fontFamily/figma',
+PrimerStyleDictionary.registerTransform({
   ...fontFamilyToFigma,
 })
-
-/**
- * @name {@link PrimerStyleDictionary}
- * @description Returns style dictionary object with primer preset that includes parsers, formats and transformers
- * @parsers [w3cJsonParser](https://github.com/primer/primitives/blob/main/config//parsers/w3c-json-parser.ts)
- * @formats [javascript/esm](https://github.com/primer/primitives/blob/main/config/formats/javascript-esm.ts), [javascript/commonJs](https://github.com/primer/primitives/blob/main/config/formats/javascript-commonJs.ts), [typescript/export-definition](https://github.com/primer/primitives/blob/main/config/formats/typescript-export-defition.ts)
- * @transformers [color/rgbAlpha](https://github.com/primer/primitives/blob/main/config/tranformers/color-to-rgb-alpha.ts), [color/hexAlpha](https://github.com/primer/primitives/blob/main/config/tranformers/color-to-hex-alpha.ts), [color/hex](https://github.com/primer/primitives/blob/main/config/tranformers/color-to-hex6.ts), [json/deprecated](https://github.com/primer/primitives/blob/main/config/tranformers/json-deprecated.ts), [name/pathToDotNotation](https://github.com/primer/primitives/blob/main/config/tranformers/name-path-to-dot-notation.ts)
- */
-export const PrimerStyleDictionary: StyleDictionary.Core = StyleDictionary

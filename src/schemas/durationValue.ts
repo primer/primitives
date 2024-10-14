@@ -1,5 +1,5 @@
 import {z} from 'zod'
-import {schemaErrorMessage} from '../utilities/schemaErrorMessage'
+import {schemaErrorMessage} from '../utilities/index.js'
 
 export const durationValue = z.string().refine(
   duration => /(^[0-9]+ms$)/.test(duration),

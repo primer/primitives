@@ -1,5 +1,11 @@
 # @primer/primitives
 
+## 9.1.2
+
+### Patch Changes
+
+- [#1053](https://github.com/primer/primitives/pull/1053) [`8892a4c`](https://github.com/primer/primitives/commit/8892a4c0c0faea6000ae681f168ccb8fc6df58fb) Thanks [@langermank](https://github.com/langermank)! - Update `skeleton` pattern color
+
 ## 9.1.1
 
 ### Patch Changes

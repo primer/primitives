@@ -1,4 +1,4 @@
-import {typographyToken, typographyValue} from './typographyToken'
+import {typographyToken, typographyValue} from './typographyToken.js'
 
 describe('Schema: typographyToken', () => {
   const validValue = {

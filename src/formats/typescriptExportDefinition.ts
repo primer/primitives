@@ -1,14 +1,12 @@
-import StyleDictionary from 'style-dictionary'
-import syncPrettier from '@prettier/sync'
-import fs = require('fs')
-import path = require('path')
-import {treeWalker} from '../utilities/treeWalker'
-
-import type {FormatterArguments} from 'style-dictionary/types/Format'
-import type {w3cTransformedToken} from '../types/w3cTransformedToken'
-import {prefixTokens} from './utilities/prefixTokens'
-
-const {fileHeader} = StyleDictionary.formatHelpers
+import {format} from 'prettier'
+import {readFileSync} from 'fs'
+import {resolve as resolvePath} from 'path'
+import {treeWalker} from '../utilities/treeWalker.js'
+import type {w3cTransformedToken} from '../types/w3cTransformedToken.js'
+import {prefixTokens} from './utilities/prefixTokens.js'
+import type {Config, DesignTokens, FormatFn, FormatFnArguments, LocalOptions} from 'style-dictionary/types'
+import {fileHeader} from 'style-dictionary/utils'
+import {getPropName} from './utilities/getPropName.js'
 
 /**
  * unquoteTypes
@@ -31,7 +29,7 @@ const unquoteTypes = (output: string, designTokenTypes: string[]): string => {
  */
 const getTokenType = (tokenTypesPath: string): string => {
   try {
-    const designTokenType = fs.readFileSync(path.resolve(tokenTypesPath), {encoding: 'utf-8'})
+    const designTokenType = readFileSync(resolvePath(tokenTypesPath), {encoding: 'utf-8'})
     return designTokenType
   } catch (e) {
     // eslint-disable-next-line no-console
@@ -43,8 +41,10 @@ const getTokenType = (tokenTypesPath: string): string => {
  * @description throws an error stating the token name, type and invalid value
  * @param token w3cTransformedToken
  */
-const invalidTokenValueError = (token: w3cTransformedToken) => {
-  throw new Error(`Invalid token: "${token.name}" with type "${token.$type}" can not have a value of "${token.value}"`)
+const invalidTokenValueError = (token: w3cTransformedToken, options: Config & LocalOptions) => {
+  throw new Error(
+    `Invalid token: "${token.name}" with type "${token[getPropName('type', options.usesDtcg)]}" can not have a value of "${token[getPropName('value', options.usesDtcg)]}"`,
+  )
 }
 /**
  * convertPropToType
@@ -52,29 +52,34 @@ const invalidTokenValueError = (token: w3cTransformedToken) => {
  * @param type
  * @returns
  */
-const convertPropToType = (tree: w3cTransformedToken): string => {
-  if (!Object.prototype.hasOwnProperty.call(tree, 'value')) {
+const convertPropToType = (tree: w3cTransformedToken, options: Config & LocalOptions): string => {
+  const valueProp = getPropName('value', options.usesDtcg)
+
+  if (!Object.prototype.hasOwnProperty.call(tree, valueProp)) {
     throw new Error(`Invalid token: ${tree}`)
   }
   switch (tree.$type) {
     case 'color':
-      if (typeof tree.value === 'string' && tree.value[0] === '#') {
+      if (typeof tree[valueProp] === 'string' && tree[valueProp][0] === '#') {
         return 'ColorHex'
       }
-      return invalidTokenValueError(tree)
+      return invalidTokenValueError(tree, options)
     case 'dimension':
-      if (typeof tree.value === 'string' && tree.value.substring(tree.value.length - 3) === 'rem') return 'SizeRem'
-      if (typeof tree.value === 'string' && tree.value.substring(tree.value.length - 2) === 'em') return 'SizeEm'
-      if (typeof tree.value === 'string' && tree.value.substring(tree.value.length - 2) === 'px') return 'SizePx'
-      return invalidTokenValueError(tree)
+      if (typeof tree[valueProp] === 'string' && tree[valueProp].substring(tree[valueProp].length - 3) === 'rem')
+        return 'SizeRem'
+      if (typeof tree[valueProp] === 'string' && tree[valueProp].substring(tree[valueProp].length - 2) === 'em')
+        return 'SizeEm'
+      if (typeof tree[valueProp] === 'string' && tree[valueProp].substring(tree[valueProp].length - 2) === 'px')
+        return 'SizePx'
+      return invalidTokenValueError(tree, options)
     case 'shadow':
       return 'Shadow'
     case 'border':
       return 'Border'
     default:
-      if (typeof tree.value === 'number') return 'number'
-      if (typeof tree.value === 'string') return 'string'
-      if (typeof tree.value === 'boolean') return 'boolean'
+      if (typeof tree[valueProp] === 'number') return 'number'
+      if (typeof tree[valueProp] === 'string') return 'string'
+      if (typeof tree[valueProp] === 'boolean') return 'boolean'
       return 'any'
   }
 }
@@ -83,22 +88,24 @@ const convertPropToType = (tree: w3cTransformedToken): string => {
  * @param item object
  * @returns boolean
  */
-const validTokenNode = (item: w3cTransformedToken | unknown): item is w3cTransformedToken => {
-  return typeof item === 'object' && item !== null && 'value' in item
-}
+const validTokenNode =
+  (usesDtcg?: boolean) =>
+  (item: w3cTransformedToken | unknown): item is w3cTransformedToken => {
+    return typeof item === 'object' && item !== null && getPropName('value', usesDtcg) in item
+  }
 /**
  * returns a set with every used token type
  * @param item object
  * @param validTypes array, all other types will be removed
  * @returns set of all used token types
  */
-const getUsedTokenTypes = (tokens: StyleDictionary.DesignTokens, validTypes: string[]): Set<string> => {
+const getUsedTokenTypes = (tokens: DesignTokens, validTypes: string[], options: Config & LocalOptions): Set<string> => {
   // using a set to assure every value only exists once
   const usedTypes = new Set<string>()
   // adds type to set
-  const callback = (tree: unknown) => usedTypes.add(convertPropToType(tree as w3cTransformedToken))
+  const callback = (tree: unknown) => usedTypes.add(convertPropToType(tree as w3cTransformedToken, options))
   // tree walker adds to usedTypes
-  treeWalker(tokens, callback, validTokenNode)
+  treeWalker(tokens, callback, validTokenNode(options.usesDtcg))
   // clean up types
   for (const type of usedTypes) {
     if (!validTypes.includes(type)) {
@@ -112,11 +119,12 @@ const getUsedTokenTypes = (tokens: StyleDictionary.DesignTokens, validTypes: str
  * @param item object
  * @returns object
  */
-const getTokenObjectWithTypes = (tokens: StyleDictionary.DesignTokens): Record<string, unknown> => {
+const getTokenObjectWithTypes = (tokens: DesignTokens, options: Config & LocalOptions): Record<string, unknown> => {
+  const callback = (tree: unknown) => convertPropToType(tree as w3cTransformedToken, options)
   // TODO: FIX typescript issues
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
-  return treeWalker(tokens, convertPropToType, validTokenNode) as Record<string, unknown>
+  return treeWalker(tokens, callback, validTokenNode(options.usesDtcg)) as Record<string, unknown>
 }
 /**
  * getTypeDefinition
@@ -126,13 +134,11 @@ const getTokenObjectWithTypes = (tokens: StyleDictionary.DesignTokens): Record<s
  * @param tokenTypesPath
  * @returns string
  */
-const getTypeDefinition = (
-  tokens: StyleDictionary.DesignTokens,
-  moduleName: string,
-  tokenTypesPath: string,
-): string => {
-  const usedTypes = getUsedTokenTypes(tokens, ['ColorHex', 'Shadow', 'Border', 'SizeEm', 'SizeRem', 'SizePx'])
-  const tokenObjectWithTypes = getTokenObjectWithTypes(tokens)
+const getTypeDefinition = (tokens: DesignTokens, options: Config & LocalOptions): string => {
+  // extract options
+  const {moduleName = `tokens`, tokenTypesPath = `./src/types/`} = options
+  const usedTypes = getUsedTokenTypes(tokens, ['Shadow', 'ColorHex', 'Border', 'SizeEm', 'SizeRem', 'SizePx'], options)
+  const tokenObjectWithTypes = getTokenObjectWithTypes(tokens, options)
   // get token type declaration from file
   const designTokenTypes: string[] = []
   for (const type of usedTypes) {
@@ -153,18 +159,16 @@ const getTypeDefinition = (
  * @param arguments [FormatterArguments](https://github.com/amzn/style-dictionary/blob/main/types/Format.d.ts)
  * @returns formatted `string`
  */
-export const typescriptExportDefinition: StyleDictionary.Formatter = ({
+export const typescriptExportDefinition: FormatFn = async ({
   dictionary,
   file,
   options = {},
   platform,
-}: FormatterArguments): string => {
-  // extract options
-  const {moduleName = `tokens`, tokenTypesPath = `./src/types/`} = options
+}: FormatFnArguments) => {
   // add prefix if defined
   const tokens = prefixTokens(dictionary.tokens, platform)
   // add file header and convert output
-  const output = `${fileHeader({file})}\n${getTypeDefinition(tokens, moduleName, tokenTypesPath)}\n`
+  const output = `${await fileHeader({file})}\n${getTypeDefinition(tokens, options)}\n`
   // return prettified
-  return syncPrettier.format(output, {parser: 'typescript', printWidth: 500})
+  return format(output, {parser: 'typescript', printWidth: 500})
 }

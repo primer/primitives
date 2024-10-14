@@ -59,7 +59,7 @@ export const Light = () => {
             field: 'name',
             rowHeader: true,
             renderCell: row => {
-              const cleanedValue = `${row.original.value.replace(/[{}]/g, '').replace(/\./g, '-')}`
+              const cleanedValue = `${row.original.$value.replace(/[{}]/g, '').replace(/\./g, '-')}`
               return (
                 <Stack direction="horizontal" gap="condensed">
                   <ColorTokenSwatch bgColor={cleanedValue} /> <code>{cleanedValue}</code>
@@ -135,7 +135,7 @@ export const Dark = () => {
             field: 'name',
             rowHeader: true,
             renderCell: row => {
-              const cleanedValue = `${row.original.value.replace(/[{}]/g, '').replace(/\./g, '-')}`
+              const cleanedValue = `${row.original.$value.replace(/[{}]/g, '').replace(/\./g, '-')}`
               return (
                 <Stack direction="horizontal" gap="condensed">
                   <ColorTokenSwatch bgColor={cleanedValue} /> <code>{cleanedValue}</code>
@@ -211,7 +211,7 @@ export const LightHighContrast = () => {
             field: 'name',
             rowHeader: true,
             renderCell: row => {
-              const cleanedValue = `${row.original.value.replace(/[{}]/g, '').replace(/\./g, '-')}`
+              const cleanedValue = `${row.original.$value.replace(/[{}]/g, '').replace(/\./g, '-')}`
               return (
                 <Stack direction="horizontal" gap="condensed">
                   <ColorTokenSwatch bgColor={cleanedValue} /> <code>{cleanedValue}</code>
@@ -287,7 +287,7 @@ export const DarkHighContrast = () => {
             field: 'name',
             rowHeader: true,
             renderCell: row => {
-              const cleanedValue = `${row.original.value.replace(/[{}]/g, '').replace(/\./g, '-')}`
+              const cleanedValue = `${row.original.$value.replace(/[{}]/g, '').replace(/\./g, '-')}`
               return (
                 <Stack direction="horizontal" gap="condensed">
                   <ColorTokenSwatch bgColor={cleanedValue} /> <code>{cleanedValue}</code>
@@ -360,7 +360,7 @@ export const DarkDimmed = () => {
             field: 'name',
             rowHeader: true,
             renderCell: row => {
-              const cleanedValue = `${row.original.value.replace(/[{}]/g, '').replace(/\./g, '-')}`
+              const cleanedValue = `${row.original.$value.replace(/[{}]/g, '').replace(/\./g, '-')}`
               return (
                 <Stack direction="horizontal" gap="condensed">
                   <ColorTokenSwatch bgColor={cleanedValue} /> <code>{cleanedValue}</code>

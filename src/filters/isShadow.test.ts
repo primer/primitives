@@ -1,5 +1,5 @@
-import {getMockToken} from '../test-utilities'
-import {isShadow} from './isShadow'
+import {getMockToken} from '../test-utilities/index.js'
+import {isShadow} from './isShadow.js'
 
 describe('Filter: isShadow', () => {
   it('returns true if $type property is `shadow`', () => {

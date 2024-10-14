@@ -1,5 +1,5 @@
-import {getMockToken} from '../test-utilities'
-import {isColorWithMix} from './isColorWithMix'
+import {getMockToken} from '../test-utilities/index.js'
+import {isColorWithMix} from './isColorWithMix.js'
 
 describe('Filter: isColorWithMix', () => {
   it('returns true if $type property is `color` and valid `mix` property exists', () => {

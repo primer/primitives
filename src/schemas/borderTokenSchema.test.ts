@@ -1,4 +1,4 @@
-import {borderToken, borderValue} from './borderToken'
+import {borderToken, borderValue} from './borderToken.js'
 
 const validBorderValue = {
   color: '#333',

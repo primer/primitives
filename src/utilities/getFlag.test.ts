@@ -1,4 +1,4 @@
-import {getFlag} from './getFlag'
+import {getFlag} from './getFlag.js'
 import {vi} from 'vitest'
 
 describe('Utilities: getFlag', () => {
