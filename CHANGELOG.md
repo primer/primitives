@@ -1,5 +1,23 @@
 # @primer/primitives
 
+## 10.0.0
+
+### Major Changes
+
+- [#1058](https://github.com/primer/primitives/pull/1058) [`9c3b2c8`](https://github.com/primer/primitives/commit/9c3b2c80e5d602bb584710fd13c0a17338353837) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - turn into esm module
+
+- [#1055](https://github.com/primer/primitives/pull/1055) [`7806a4c`](https://github.com/primer/primitives/commit/7806a4caa9fe8a16101da4ee08e7d491a2dec93b) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - update to SDv4
+
+### Minor Changes
+
+- [#1072](https://github.com/primer/primitives/pull/1072) [`028ad8e`](https://github.com/primer/primitives/commit/028ad8e25dbdc77b00ba691dd6972198fd63ef35) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - rm peerDep & unused dep
+
+- [#1064](https://github.com/primer/primitives/pull/1064) [`c6a8dc5`](https://github.com/primer/primitives/commit/c6a8dc59f5b07908d7a1ec9544bccea177697a2d) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Adds src to dist as "build" so that primer/brand can use it
+
+### Patch Changes
+
+- [#1066](https://github.com/primer/primitives/pull/1066) [`51b0324`](https://github.com/primer/primitives/commit/51b03241e96b3db7e37a4e50f28d06cf751aa35c) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Fixes for colorblind themes
+
 ## 9.1.2
 
 ### Patch Changes
