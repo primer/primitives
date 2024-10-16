@@ -12,23 +12,35 @@ const buildFigma = async (buildOptions: ConfigGeneratorOptions): Promise<void> =
   const baseScales = [
     {
       name: 'light',
-      source: [`src/tokens/base/color/light/light.json5`],
+      source: [`src/tokens/base/color/light/light.json5`, `src/tokens/base/color/light/display-light.json5`],
     },
     {
       name: 'light-high-constrast',
-      source: [`src/tokens/base/color/light/light.json5`, `src/tokens/base/color/light/light.high-contrast.json5`],
+      source: [
+        `src/tokens/base/color/light/light.json5`,
+        `src/tokens/base/color/light/display-light.json5`,
+        `src/tokens/base/color/light/light.high-contrast.json5`,
+      ],
     },
     {
       name: 'dark',
-      source: [`src/tokens/base/color/dark/dark.json5`],
+      source: [`src/tokens/base/color/dark/dark.json5`, `src/tokens/base/color/dark/display-dark.json5`],
     },
     {
       name: 'dark-high-constrast',
-      source: [`src/tokens/base/color/dark/dark.json5`, `src/tokens/base/color/dark/dark.high-contrast.json5`],
+      source: [
+        `src/tokens/base/color/dark/dark.json5`,
+        `src/tokens/base/color/dark/display-dark.json5`,
+        `src/tokens/base/color/dark/dark.high-contrast.json5`,
+      ],
     },
     {
       name: 'dark-dimmed',
-      source: [`src/tokens/base/color/dark/dark.json5`, `src/tokens/base/color/dark/dark.dimmed.json5`],
+      source: [
+        `src/tokens/base/color/dark/dark.json5`,
+        `src/tokens/base/color/dark/display-dark.json5`,
+        `src/tokens/base/color/dark/dark.dimmed.json5`,
+      ],
     },
   ]
 
