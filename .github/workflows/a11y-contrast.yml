@@ -52,7 +52,6 @@ jobs:
             const failedResults = results.filter(themeResults => themeResults.failingContrast > 0).map(({theme, failingContrast, markdownTable}) => ({
               title: `# ❌ \`${theme}\`:  ${failingContrast} checks failed`,
               body: `${markdownTable}`
-              identifier: `<!-- contrast check --><!-- Theme: ${theme} -->` 
             }))
 
             // prepare summary body
@@ -103,7 +102,7 @@ jobs:
         with:
           script: |
             const results = ${{ steps.check-results.outputs.failedResults }}
-
+            const identifier = `<!-- contrast check -->` 
             const WORKFLOW_SUMMARY_URL = `https://github.com/${{env.GITHUB_REPOSITORY}}/actions/runs/${{env.GITHUB_RUN_ID}}`
 
             // get comments
@@ -113,13 +112,10 @@ jobs:
               repo: context.repo.repo
             });
 
-            // get comments of token issues
-            let currentComments = comments.filter(comment => possibleTitles.some(titleStart => comment.body.includes(titleStart)));
-
             // get token issue
-            const tokenCheckComment = comments.filter(comment => comment.body.includes("<!-- contrast check -->"));
+            const tokenCheckComment = comments.filter(comment => comment.body.includes(identifier));
 
-            // if token issue exists, update it
+            // delete existing comments
             if(tokenCheckComment.length > 0) {
               for (const comment of tokenCheckComment) {
                 await github.rest.issues.deleteComment({
@@ -130,10 +126,10 @@ jobs:
               }
             }
 
-            for (const {title, body, indentifier} of results) {
+            for (const {title, body} of results) {
               // get token issue
 
-              const outputBody = `${title}\n\n${body}\n\n<a href="${WORKFLOW_SUMMARY_URL}">→ Details</a>${indentifier}`
+              const outputBody = `${title}\n\n${body}\n\n<a href="${WORKFLOW_SUMMARY_URL}">→ Details</a>${identifier}`
 
               // if token issue does not exist, create it
               await github.rest.issues.createComment({
@@ -141,18 +137,6 @@ jobs:
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 body: outputBody
-              })
-            }
-
-            // if token issue exists, update it
-            if(currentComments.length > 0) {
-              await currentComments.map(comment => {
-                console.log('deleting comment', comment.id, comment)
-                github.rest.issues.deleteComment({
-                  comment_id: comment.id,
-                  owner: context.repo.owner,
-                  repo: context.repo.repo,
-                })
               })
             }
 
@@ -177,6 +161,7 @@ jobs:
         uses: actions/github-script@v7
         with:
           script: |
+            const identifier = `<!-- contrast check -->`
             // get comments
             const {data: comments} = await github.rest.issues.listComments({
               issue_number: context.issue.number,
@@ -185,9 +170,9 @@ jobs:
             });
 
             // get token issue
-            const tokenCheckComment = comments.filter(comment => comment.body.includes("<!-- contrast check -->"));
+            const tokenCheckComment = comments.filter(comment => comment.body.includes(identifier));
 
-            // if token issue exists, update it
+            // delete existing comments
             if(tokenCheckComment.length > 0) {
               for (const comment of tokenCheckComment) {
                 await github.rest.issues.deleteComment({
