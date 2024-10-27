@@ -11,6 +11,7 @@ import {colorToken} from './colorToken.js'
 import {fontFamilyToken} from './fontFamilyToken.js'
 import {shadowToken} from './shadowToken.js'
 import {durationToken} from './durationToken.js'
+import {cubicBezierToken} from './cubicBezierToken.js'
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore: TODO: fix this
@@ -20,6 +21,7 @@ export const designToken = z.record(
     return z.union([
       z.discriminatedUnion('$type', [
         colorToken,
+        cubicBezierToken,
         dimensionToken,
         shadowToken,
         borderToken,
