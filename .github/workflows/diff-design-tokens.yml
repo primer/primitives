@@ -63,11 +63,19 @@ jobs:
 
             // create diffs
             const diffs = files.map(file => {
-              // run diff & store in file
-              const diff = shell.exec(`diff -u ${file.replace(cssFolder, 'base/' + cssFolder)} ${file}`)
               // get filename
               const regexRunnerPath = new RegExp('^[a-z\/]+\/dist', 'g')
               const filename = file.replaceAll(regexRunnerPath,'')
+              // if file is new
+              if (!fs.existsSync(file.replace(cssFolder, 'base/' + cssFolder))) {
+                console.info('⚠️ File is new: ' + file + '\n')
+                return {
+                  file: file.replaceAll('dist/', ''),
+                  diff: ''
+                }
+              }
+              // run diff & store in file
+              const diff = shell.exec(`diff -u ${file.replace(cssFolder, 'base/' + cssFolder)} ${file}`)
 
               console.log('Checking diff for ' + filename + '...')
 
