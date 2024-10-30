@@ -3,6 +3,7 @@ import {joinFriendly, schemaErrorMessage} from '../utilities/index.js'
 
 const validTypes = [
   'color',
+  'cubicBezier',
   'typography',
   'dimension',
   'duration',
