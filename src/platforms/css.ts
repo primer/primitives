@@ -28,6 +28,7 @@ export const css: PlatformInitializer = (outputFile, prefix, buildPath, options)
       'name/pathToKebabCase',
       'color/hex',
       'color/hexMix',
+      'cubicBezier/css',
       'dimension/rem',
       'duration/css',
       'shadow/css',

@@ -5,6 +5,7 @@ import {
   colorToHex,
   colorToHexMix,
   colorToRgbaFloat,
+  cubicBezierToCss,
   dimensionToRem,
   dimensionToPixelUnitless,
   durationToCss,
@@ -112,6 +113,10 @@ PrimerStyleDictionary.registerTransform({
 
 PrimerStyleDictionary.registerTransform({
   ...colorToHex,
+})
+
+PrimerStyleDictionary.registerTransform({
+  ...cubicBezierToCss,
 })
 
 PrimerStyleDictionary.registerTransform({
