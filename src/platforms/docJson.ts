@@ -2,9 +2,10 @@ import type {PlatformInitializer} from '../types/platformInitializer.js'
 import {isSource} from '../filters/index.js'
 import type {PlatformConfig} from 'style-dictionary/types'
 
-export const docJson: PlatformInitializer = (outputFile, prefix, buildPath): PlatformConfig => ({
+export const docJson: PlatformInitializer = (outputFile, prefix, buildPath, options): PlatformConfig => ({
   prefix,
   buildPath,
+  preprocessors: ['themeOverrides'],
   transforms: [
     'name/pathToKebabCase',
     'color/hex',
@@ -22,6 +23,9 @@ export const docJson: PlatformInitializer = (outputFile, prefix, buildPath): Pla
       $value: 'value',
       $type: 'type',
       $description: 'description',
+    },
+    themeOverrides: {
+      theme: options?.theme,
     },
   },
   files: [

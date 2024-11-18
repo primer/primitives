@@ -37,9 +37,16 @@ const getStyleDictionaryConfig: StyleDictionaryConfigGenerator = (
   },
   platforms: Object.fromEntries(
     Object.entries({
-      css: css(`css/${filename}.css`, options.prefix, options.buildPath, {themed: options.themed}),
-      docJson: docJson(`docs/${filename}.json`, options.prefix, options.buildPath),
-      styleLint: styleLint(`styleLint/${filename}.json`, options.prefix, options.buildPath),
+      css: css(`css/${filename}.css`, options.prefix, options.buildPath, {
+        themed: options.themed,
+        theme: options.theme,
+      }),
+      docJson: docJson(`docs/${filename}.json`, options.prefix, options.buildPath, {
+        theme: options.theme,
+      }),
+      styleLint: styleLint(`styleLint/${filename}.json`, options.prefix, options.buildPath, {
+        theme: options.theme,
+      }),
       fallbacks: fallbacks(`fallbacks/${filename}.json`, options.prefix, options.buildPath),
       ...platforms,
     }).filter((entry: [string, unknown]) => entry[1] !== undefined),
@@ -71,14 +78,14 @@ export const buildDesignTokens = async (buildOptions: ConfigGeneratorOptions): P
    * Colors, shadows & borders
    * ----------------------------------- */
   try {
-    for (const {filename, source, include} of themes) {
+    for (const {filename, source, include, theme} of themes) {
       // build functional scales
       const extendedSD = await PrimerStyleDictionary.extend(
         getStyleDictionaryConfig(
           `functional/themes/${filename}`,
           source,
           include,
-          {...buildOptions, themed: true},
+          {...buildOptions, themed: true, theme},
           // disable fallbacks for themes
           {fallbacks: undefined},
         ),

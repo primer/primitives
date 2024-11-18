@@ -70,7 +70,7 @@ export const figmaAttributes: Transform = {
   transform: (token: TransformedToken, platform: PlatformConfig = {}) => {
     const {modeOverride, collection, scopes, group, codeSyntax} = token.$extensions?.['org.primer.figma'] || {}
     return {
-      mode: modeOverride || platform.options?.mode || 'default',
+      mode: platform.options?.theme || modeOverride || 'default',
       collection,
       group: group || collection,
       scopes: getScopes(scopes),

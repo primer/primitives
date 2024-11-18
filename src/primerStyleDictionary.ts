@@ -37,6 +37,7 @@ import {
   cssAdvanced,
   jsonFigma,
 } from './formats/index.js'
+import {themeOverrides} from './preprocessor/themeOverrides.js'
 
 /**
  * @name {@link PrimerStyleDictionary}
@@ -150,3 +151,5 @@ PrimerStyleDictionary.registerTransform(fontWeightToNumber)
 PrimerStyleDictionary.registerTransform(fontFamilyToCss)
 
 PrimerStyleDictionary.registerTransform(fontFamilyToFigma)
+
+PrimerStyleDictionary.registerPreprocessor(themeOverrides)

@@ -2,9 +2,10 @@ import type {PlatformInitializer} from '../types/platformInitializer.js'
 import type {PlatformConfig} from 'style-dictionary/types'
 import {isSource} from '../filters/index.js'
 
-export const javascript: PlatformInitializer = (outputFile, prefix, buildPath): PlatformConfig => ({
+export const javascript: PlatformInitializer = (outputFile, prefix, buildPath, options): PlatformConfig => ({
   prefix,
   buildPath,
+  preprocessors: ['themeOverrides'],
   transforms: [
     'color/hex',
     'color/hexMix',
@@ -18,6 +19,9 @@ export const javascript: PlatformInitializer = (outputFile, prefix, buildPath): 
   options: {
     showFileHeader: false,
     basePxFontSize: 16,
+    themeOverrides: {
+      theme: options?.theme,
+    },
   },
   files: [
     {

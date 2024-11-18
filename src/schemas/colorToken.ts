@@ -48,6 +48,32 @@ export const colorToken = baseToken
             group: z.string().optional(),
           })
           .optional(),
+        'org.primer.overrides': z
+          .object(
+            {
+              light: z.union([colorHexValue, referenceValue]).optional(),
+              'light-tritanopia': z.union([colorHexValue, referenceValue]).optional(),
+              'light-deutranopia-protanopia': z.union([colorHexValue, referenceValue]).optional(),
+              'light-high-contrast': z.union([colorHexValue, referenceValue]).optional(),
+              dark: z.union([colorHexValue, referenceValue]).optional(),
+              'dark-tritanopia': z.union([colorHexValue, referenceValue]).optional(),
+              'dark-deutranopia-protanopia': z.union([colorHexValue, referenceValue]).optional(),
+              'dark-high-contrast': z.union([colorHexValue, referenceValue]).optional(),
+              'dark-dimmed': z.union([colorHexValue, referenceValue]).optional(),
+            },
+            {
+              errorMap: e => {
+                if (e.code === 'unrecognized_keys') {
+                  return {
+                    message: `Unrecognized key: "${e.keys.join(', ')}", must be one of: light, light-tritanopia, light-deutranopia-protanopia, light-high-contrast, dark, dark-tritanopia, dark-deutranopia-protanopia, dark-high-contrast, dark-dimmed`,
+                  }
+                }
+                return {message: `Error: ${e.code}`}
+              },
+            },
+          )
+          .strict()
+          .optional(),
       })
       .optional(),
   })
