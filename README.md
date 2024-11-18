@@ -138,10 +138,10 @@ In this case you can create the follwing structure. The `@` will be removed from
   bgColor: {
     accent: {
       '@': {
-        // values for accent (default)
+        // values for bgColor-accent (default)
       },
       muted: {
-        // values for accent-muted
+        // values for bgColor-accent-muted
       },
     },
   },
