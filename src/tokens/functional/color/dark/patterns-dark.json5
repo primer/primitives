@@ -1087,6 +1087,18 @@
             },
           },
         },
+        active: {
+          $value: '{control.fgColor.rest}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              mode: 'dark',
+              group: 'component (internal)',
+              scopes: ['fgColor'],
+            },
+          },
+        },
         disabled: {
           $value: '{control.fgColor.disabled}',
           $type: 'color',

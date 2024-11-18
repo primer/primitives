@@ -772,7 +772,7 @@
             scopes: ['bgColor'],
           },
         },
-      }
+      },
     },
   },
   button: {
@@ -1068,6 +1068,18 @@
           },
         },
         hover: {
+          $value: '{control.fgColor.rest}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              mode: 'light',
+              group: 'component (internal)',
+              scopes: ['fgColor'],
+            },
+          },
+        },
+        active: {
           $value: '{control.fgColor.rest}',
           $type: 'color',
           $extensions: {
