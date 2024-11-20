@@ -213,20 +213,6 @@ describe('PrimerStyleDictionary', async () => {
     const output = fs.readFileSync(`${buildPath}/json/figma.json`, 'utf8')
     const expectedOutput = `[
   {
-    "name": "PREFIX/fgColor/link-rest-01",
-    "value": {
-      "r": 0.17254901960784313,
-      "g": 0.1607843137254902,
-      "b": 1,
-      "a": 1
-    },
-    "type": "COLOR",
-    "refId": "PREFIX/fgColor/link-rest-01",
-    "reference": "PREFIX/base/color/aquaBlue/500",
-    "mode": "default",
-    "scopes": ["ALL_SCOPES"]
-  },
-  {
     "name": "PREFIX/base/color/aquaBlue/500",
     "value": {
       "r": 0.17254901960784313,
@@ -237,6 +223,20 @@ describe('PrimerStyleDictionary', async () => {
     "type": "COLOR",
     "description": "The primary color for interactive elements.",
     "refId": "PREFIX/base/color/aquaBlue/500",
+    "mode": "default",
+    "scopes": ["ALL_SCOPES"]
+  },
+  {
+    "name": "PREFIX/fgColor/link-rest-01",
+    "value": {
+      "r": 0.17254901960784313,
+      "g": 0.1607843137254902,
+      "b": 1,
+      "a": 1
+    },
+    "type": "COLOR",
+    "refId": "PREFIX/fgColor/link-rest-01",
+    "reference": "PREFIX/base/color/aquaBlue/500",
     "mode": "default",
     "scopes": ["ALL_SCOPES"]
   }

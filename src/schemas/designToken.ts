@@ -33,7 +33,6 @@ export const designToken = z.record(
         durationToken,
         stringToken,
       ]),
-      // referenceToken,
       designToken,
     ])
   }),

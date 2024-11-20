@@ -99,105 +99,54 @@ PrimerStyleDictionary.registerFormat({
  * Transformers
  *
  */
-PrimerStyleDictionary.registerTransform({
-  ...colorToRgbAlpha,
-})
+PrimerStyleDictionary.registerTransform(colorToRgbAlpha)
 
-PrimerStyleDictionary.registerTransform({
-  ...colorToRgbaFloat,
-})
+PrimerStyleDictionary.registerTransform(colorToRgbaFloat)
 
-PrimerStyleDictionary.registerTransform({
-  ...colorToHexMix,
-})
+PrimerStyleDictionary.registerTransform(colorToHexMix)
 
-PrimerStyleDictionary.registerTransform({
-  ...colorToHex,
-})
+PrimerStyleDictionary.registerTransform(colorToHex)
 
-PrimerStyleDictionary.registerTransform({
-  ...cubicBezierToCss,
-})
+PrimerStyleDictionary.registerTransform(cubicBezierToCss)
 
-PrimerStyleDictionary.registerTransform({
-  ...floatToPixel,
-})
+PrimerStyleDictionary.registerTransform(floatToPixel)
 
-PrimerStyleDictionary.registerTransform({
-  ...floatToPixelUnitless,
-})
+PrimerStyleDictionary.registerTransform(floatToPixelUnitless)
 
-PrimerStyleDictionary.registerTransform({
-  ...dimensionToRem,
-})
+PrimerStyleDictionary.registerTransform(dimensionToRem)
 
-PrimerStyleDictionary.registerTransform({
-  ...dimensionToRemPxArray,
-})
+PrimerStyleDictionary.registerTransform(dimensionToRemPxArray)
 
-PrimerStyleDictionary.registerTransform({
-  ...dimensionToPixelUnitless,
-})
+PrimerStyleDictionary.registerTransform(dimensionToPixelUnitless)
 
-PrimerStyleDictionary.registerTransform({
-  ...durationToCss,
-})
+PrimerStyleDictionary.registerTransform(durationToCss)
 
-PrimerStyleDictionary.registerTransform({
-  ...figmaAttributes,
-})
+PrimerStyleDictionary.registerTransform(figmaAttributes)
 
-PrimerStyleDictionary.registerTransform({
-  ...jsonDeprecated,
-})
+PrimerStyleDictionary.registerTransform(jsonDeprecated)
 
-PrimerStyleDictionary.registerTransform({
-  ...namePathToCamelCase,
-})
-PrimerStyleDictionary.registerTransform({
-  ...namePathToPascalCase,
-})
+PrimerStyleDictionary.registerTransform(namePathToCamelCase)
 
-PrimerStyleDictionary.registerTransform({
-  ...namePathToDotNotation,
-})
+PrimerStyleDictionary.registerTransform(namePathToPascalCase)
 
-PrimerStyleDictionary.registerTransform({
-  ...namePathToFigma,
-})
+PrimerStyleDictionary.registerTransform(namePathToDotNotation)
 
-PrimerStyleDictionary.registerTransform({
-  ...namePathToCamelCase,
-})
+PrimerStyleDictionary.registerTransform(namePathToFigma)
 
-PrimerStyleDictionary.registerTransform({
-  ...namePathToKebabCase,
-})
+PrimerStyleDictionary.registerTransform(namePathToCamelCase)
 
-PrimerStyleDictionary.registerTransform({
-  ...namePathToSlashNotation,
-})
+PrimerStyleDictionary.registerTransform(namePathToKebabCase)
 
-PrimerStyleDictionary.registerTransform({
-  ...shadowToCss,
-})
+PrimerStyleDictionary.registerTransform(namePathToSlashNotation)
 
-PrimerStyleDictionary.registerTransform({
-  ...borderToCss,
-})
+PrimerStyleDictionary.registerTransform(shadowToCss)
 
-PrimerStyleDictionary.registerTransform({
-  ...typographyToCss,
-})
+PrimerStyleDictionary.registerTransform(borderToCss)
 
-PrimerStyleDictionary.registerTransform({
-  ...fontWeightToNumber,
-})
+PrimerStyleDictionary.registerTransform(typographyToCss)
 
-PrimerStyleDictionary.registerTransform({
-  ...fontFamilyToCss,
-})
+PrimerStyleDictionary.registerTransform(fontWeightToNumber)
 
-PrimerStyleDictionary.registerTransform({
-  ...fontFamilyToFigma,
-})
+PrimerStyleDictionary.registerTransform(fontFamilyToCss)
+
+PrimerStyleDictionary.registerTransform(fontFamilyToFigma)
