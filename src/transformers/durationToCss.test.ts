@@ -36,7 +36,7 @@ describe('Transformer: durationToCss', () => {
     expect(() =>
       durationToCss.transform(
         getMockToken({
-          value: '1s',
+          value: '1sec',
         }),
         {},
         {},
