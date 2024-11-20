@@ -15,8 +15,10 @@ export const durationToCss: Transform = {
   transform: (token: TransformedToken, _config: PlatformConfig, options: Config) => {
     const valueProp = options.usesDtcg ? '$value' : 'value'
     // throw an error if token value is not a string or does not end with `ms`
-    if (typeof token[valueProp] !== `string` || !token[valueProp].endsWith(`ms`)) {
-      throw new Error(`duration token value must be a string with an "ms" unit`)
+    if (typeof token[valueProp] !== `string` || !(token[valueProp].endsWith(`ms`) || token[valueProp].endsWith(`s`))) {
+      throw new Error(
+        `duration token value must be a string with an "ms" || "s" unit, invalid token: ${token.name} with value: ${token[valueProp]}`,
+      )
     }
     // get value
     let value = parseInt(token[valueProp].replace('ms', ''))
