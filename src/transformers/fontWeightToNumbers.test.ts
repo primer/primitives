@@ -51,8 +51,8 @@ describe('Transformer: fontWeightToNumbers', () => {
       })
       try {
         expect(fontWeightToNumber.transform(input, {}, {})).toStrictEqual(fontWeightNumber)
-      } catch (e) {
-        throw new Error(`❌ Expects ${fontWeightString} to be transformed to ${fontWeightNumber}`)
+      } catch (error) {
+        throw new Error(`❌ Expects ${fontWeightString} to be transformed to ${fontWeightNumber}. Error: ${error}`)
       }
     }
   })

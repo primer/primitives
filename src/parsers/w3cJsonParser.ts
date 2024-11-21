@@ -19,8 +19,8 @@ export const w3cJsonParser: Parser = {
         .replace(/["|']?\$?extensions["|']?:/g, '"$extensions":')
       //
       return JSON5.parse(contents)
-    } catch (e) {
-      throw new Error(`Invalid json5 file "${filePath}".`)
+    } catch (error) {
+      throw new Error(`Invalid json5 file "${filePath}". Error: ${error}`)
     }
   },
 }

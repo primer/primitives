@@ -31,9 +31,9 @@ const getTokenType = (tokenTypesPath: string): string => {
   try {
     const designTokenType = readFileSync(resolvePath(tokenTypesPath), {encoding: 'utf-8'})
     return designTokenType
-  } catch (e) {
+  } catch (error) {
     // eslint-disable-next-line no-console
-    throw new Error(`Error trying to load design token type from file "${tokenTypesPath}".`)
+    throw new Error(`Error trying to load design token type from file "${tokenTypesPath}". Error: ${error}`)
   }
 }
 
