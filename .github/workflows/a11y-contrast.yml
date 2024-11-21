@@ -34,9 +34,9 @@ jobs:
       - name: Build tokens
         run: npm run build:tokens
 
-      - name: Run required checks
+      - name: Run required contrast validation tests
         run: |
-          npm run contrast:check
+          npm run validate:contrast
 
       - name: Prepare check results
         id: check-results
