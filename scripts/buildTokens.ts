@@ -159,8 +159,8 @@ export const buildDesignTokens = async (buildOptions: ConfigGeneratorOptions): P
         `functional/motion/motion`,
         [
           `src/tokens/functional/motion/*.json5`,
-          `src/tokens/base/motion/timing.json5`,
-          `src/tokens/base/motion/easing.json5`,
+          // `src/tokens/base/motion/timing.json5`,
+          // `src/tokens/base/motion/easing.json5`,
         ],
         [`src/tokens/base/motion/*.json5`],
         buildOptions,
