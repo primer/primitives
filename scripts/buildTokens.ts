@@ -29,8 +29,8 @@ const getStyleDictionaryConfig: StyleDictionaryConfigGenerator = (
   source, // build the special formats
   include,
   log: {
-    warnings: 'warn', // 'warn' | 'error' | 'disabled'
-    verbosity: 'verbose', // 'default' | 'silent' | 'verbose'
+    warnings: 'disabled', // 'warn' | 'error' | 'disabled'
+    verbosity: 'silent', // 'default' | 'silent' | 'verbose'
     errors: {
       brokenReferences: 'throw', // 'throw' | 'console'
     },
@@ -157,7 +157,11 @@ export const buildDesignTokens = async (buildOptions: ConfigGeneratorOptions): P
     const extendedSD = await PrimerStyleDictionary.extend(
       getStyleDictionaryConfig(
         `functional/motion/motion`,
-        [`src/tokens/functional/motion/*.json5`],
+        [
+          `src/tokens/functional/motion/*.json5`,
+          // `src/tokens/base/motion/timing.json5`,
+          // `src/tokens/base/motion/easing.json5`,
+        ],
         [`src/tokens/base/motion/*.json5`],
         buildOptions,
         {
