@@ -250,8 +250,8 @@ const Color = ({color: colorName}: {color: string}) => {
 }
 
 export const Gray = () => <Color color="gray" />
-export const Indigo = () => <Color color="blue" />
-export const Blue = () => <Color color="indigo" />
+export const Indigo = () => <Color color="indigo" />
+export const Blue = () => <Color color="blue" />
 export const Cyan = () => <Color color="cyan" />
 export const Teal = () => <Color color="teal" />
 export const Pine = () => <Color color="pine" />
