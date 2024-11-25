@@ -7,7 +7,7 @@ on:
 jobs:
   release_candidate:
     name: Final
-    if: ${{ github.repository == 'primer/primitives' && github.ref_name == 'changeset-release/main' }}
+    if: ${{ github.repository == 'primer/primitives' && github.ref_name == 'main' }}
 
     runs-on: ubuntu-latest
     steps:
@@ -59,7 +59,7 @@ jobs:
 
   release_candidate_next_major:
     name: Final
-    if: ${{ github.repository == 'primer/primitives' && github.ref_name == 'changeset-release/next-major' }}
+    if: ${{ github.repository == 'primer/primitives' && github.ref_name == 'next-major' }}
 
     runs-on: ubuntu-latest
     steps:
