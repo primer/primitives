@@ -1,5 +1,35 @@
 # @primer/primitives
 
+## 10.0.0
+
+### Major Changes
+
+- [#1058](https://github.com/primer/primitives/pull/1058) [`9c3b2c8`](https://github.com/primer/primitives/commit/9c3b2c80e5d602bb584710fd13c0a17338353837) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - turn into esm module
+
+- [#1055](https://github.com/primer/primitives/pull/1055) [`7806a4c`](https://github.com/primer/primitives/commit/7806a4caa9fe8a16101da4ee08e7d491a2dec93b) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - update to SDv4
+
+- [#1068](https://github.com/primer/primitives/pull/1068) [`08186e7`](https://github.com/primer/primitives/commit/08186e784a5e7a460fd3c6bd5a4e106f8ff9b005) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Adding diffBlob tokens, renaming some old ones and removing one.
+
+### Minor Changes
+
+- [#1072](https://github.com/primer/primitives/pull/1072) [`028ad8e`](https://github.com/primer/primitives/commit/028ad8e25dbdc77b00ba691dd6972198fd63ef35) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - rm peerDep & unused dep
+
+- [#1064](https://github.com/primer/primitives/pull/1064) [`c6a8dc5`](https://github.com/primer/primitives/commit/c6a8dc59f5b07908d7a1ec9544bccea177697a2d) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Adds src to dist as "build" so that primer/brand can use it
+
+- [#1080](https://github.com/primer/primitives/pull/1080) [`ab5ab6b`](https://github.com/primer/primitives/commit/ab5ab6bf3d21a0e61b6928fc5f6636e58ac7140a) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Adding motion tokens
+
+### Patch Changes
+
+- [#1081](https://github.com/primer/primitives/pull/1081) [`523ad13`](https://github.com/primer/primitives/commit/523ad1339df82e2e47540589af66f9a817e488ba) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Add cubicBezier transform to platform
+
+- [#1066](https://github.com/primer/primitives/pull/1066) [`51b0324`](https://github.com/primer/primitives/commit/51b03241e96b3db7e37a4e50f28d06cf751aa35c) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Fixes for colorblind themes
+
+- [`2168c66`](https://github.com/primer/primitives/commit/2168c66ae701f9b529d5cbedcbd1b9dfe6160657) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Add token button-invisible-fgColor-active
+
+- [#1078](https://github.com/primer/primitives/pull/1078) [`de32449`](https://github.com/primer/primitives/commit/de32449d3f07a67ceb2fe1d0cc9613b0dde6d4bf) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Add linting validation for cubicBezier token schema
+
+- [#1079](https://github.com/primer/primitives/pull/1079) [`a2b1b79`](https://github.com/primer/primitives/commit/a2b1b79c165121d719164981c054d5f1f653e636) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - add cubicBezier transformer
+
 ## 9.1.2
 
 ### Patch Changes
