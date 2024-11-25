@@ -3,6 +3,7 @@ on:
   push:
     branches-ignore:
       - 'main'
+      - 'next-major'
       - 'changeset-release/**'
       - 'dependabot/**'
 
