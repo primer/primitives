@@ -6,7 +6,7 @@ on:
       - 'next-major'
 jobs:
   release_candidate:
-    name: Final
+    name: Release for latest version
     if: ${{ github.repository == 'primer/primitives' && github.ref_name == 'main' }}
 
     runs-on: ubuntu-latest
@@ -58,7 +58,7 @@ jobs:
           echo "[v$VERSION](https://unpkg.com/$PACKAGE_NAME@$VERSION/)" >> $GITHUB_STEP_SUMMARY
 
   release_candidate_next_major:
-    name: Final
+    name: Release for next version
     if: ${{ github.repository == 'primer/primitives' && github.ref_name == 'next-major' }}
 
     runs-on: ubuntu-latest
