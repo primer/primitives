@@ -73,7 +73,6 @@ jobs:
           echo "### Latest release candidate" >> $GITHUB_STEP_SUMMARY
           echo "[v$VERSION](https://unpkg.com/$PACKAGE_NAME@$VERSION/)" >> $GITHUB_STEP_SUMMARY
 
-
   release-candidate-next-major:
     if: ${{ github.repository == 'primer/primitives' && github.ref_name == 'changeset-release/next-major' }}
     name: Candidate (@next-major)
