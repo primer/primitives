@@ -25,20 +25,23 @@ export const shadowToken = baseToken
     $type: tokenType('shadow'),
     $extensions: z
       .object({
-        'org.primer.figma': z.object({
-          collection: collection(['mode']).optional(),
-          mode: mode([
-            'light',
-            'dark',
-            'dark dimmed',
-            'light high contrast',
-            'dark high contrast',
-            'light colorblind',
-            'dark colorblind',
-            'light tritanopia',
-            'dark tritanopia',
-          ]).optional(),
-        }),
+        'org.primer.figma': z
+          .object({
+            collection: collection(['mode']).optional(),
+            modeOverride: mode([
+              'light',
+              'dark',
+              'dark dimmed',
+              'light high contrast',
+              'dark high contrast',
+              'light colorblind',
+              'dark colorblind',
+              'light tritanopia',
+              'dark tritanopia',
+            ]).optional(),
+            group: z.string().optional(),
+          })
+          .strict(),
       })
       .optional(),
   })

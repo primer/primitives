@@ -33,7 +33,7 @@ export const colorToken = baseToken
               'mode',
               'pattern/mode',
             ]).optional(),
-            mode: mode([
+            modeOverride: mode([
               'light',
               'dark',
               'dark dimmed',
@@ -45,6 +45,7 @@ export const colorToken = baseToken
               'dark tritanopia',
             ]).optional(),
             scopes: scopes(['all', 'bgColor', 'fgColor', 'borderColor', 'effectColor']).optional(),
+            group: z.string().optional(),
           })
           .optional(),
       })
