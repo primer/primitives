@@ -10,8 +10,25 @@ jobs:
   changes:
     uses: ./.github/workflows/hasChanged.yml
 
+  setup:
+    runs-on: ubuntu-latest
+    outputs:
+      diffs: ${{ steps.config.outputs.diffs }}
+    steps:
+      - name: Setup config
+        id: config
+        uses: actions/github-script@v7
+        with:
+          script: |
+            core.setOutput('diffs', `[{
+              "title": "## Design Token Diff (CSS)",
+              "folder": "dist/css",
+              "globString": "**/**/*.css",
+              "outputFile": "diff_css.json"
+            }]`)
+
   diff:
-    needs: changes
+    needs: [changes, setup]
     if: needs.changes.outputs.outputAffected == 'true' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     steps:
@@ -52,23 +69,34 @@ jobs:
           script: |
             const fs = require('fs')
             const diffFiles = require('./.github/workflows/utilities/diffFiles.cjs')
-            await diffFiles('dist/css', '**/**/*.css', 'diff_css.json')
-            // read diff file
-            const diffs = JSON.parse(fs.readFileSync('diff_css.json', 'utf8'))
+
+            // get config
+            const diffConfig = ${{ needs.setup.outputs.diffs }}
+
+            const output = []
+
             // create sections
-            const sections = []
-            for (const {title, body} of diffs) {
-              sections.push({
-                title,
-                body
+            for (const config of diffConfig) {
+              await diffFiles(config.folder, config.globString, config.outputFile)
+              // read diff file
+              const diff = JSON.parse(fs.readFileSync(config.outputFile, 'utf8'))
+              // create sections
+              const sections = []
+              for (const {title, body} of diff) {
+                sections.push({
+                  title,
+                  body
+                })
+              }
+              output.push({
+                file: config.outputFile,
+                title: config.title,
+                sections
               })
             }
-            // set output file paths
-            core.setOutput('diffFilePath', [{
-              file: 'diff_css.json',
-              title: '## Design Token Diff (CSS)',
-              sections
-            }]);
+
+            // set output
+            core.setOutput('diffFilePath', output);
 
       - name: Write summary
         uses: actions/github-script@v7
@@ -97,7 +125,7 @@ jobs:
             }
 
   remove_comment:
-    needs: changes
+    needs: [changes, setup]
     if: needs.changes.outputs.outputAffected == 'false'
     runs-on: ubuntu-latest
     steps:
@@ -109,9 +137,8 @@ jobs:
         with:
           script: |
             const deleteComment = require('./.github/workflows/utilities/deleteCommentByContent.cjs')
-            const commentTitles = [
-              '## Design Token Diff (CSS)'
-            ]
+            const diffs = ${{ needs.setup.outputs.diffs }}
+            const commentTitles = diffs.map(({title}) => title)
             // delete all comments
             for (const title of commentTitles) {
               await deleteComment(`## ${title}`, context, github)
