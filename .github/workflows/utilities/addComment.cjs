@@ -1,10 +1,9 @@
+const findCommentByContent = (searchContent, comments) => {
+  return comments.filter(comment => comment.body.includes(searchContent));
+}
+
 module.exports = async ({title, body, sections}, summaryLink, context, github) => {
-  // get comments
-  const {data: comments} = await github.rest.issues.listComments({
-    issue_number: context.issue.number,
-    owner: context.repo.owner,
-    repo: context.repo.repo
-  });
+  console.log(`Preparing comment content for ${title}`)
   // prepare body
   let commentBody = ''
   if(title) {
@@ -30,24 +29,49 @@ module.exports = async ({title, body, sections}, summaryLink, context, github) =
     commentBody = `## ${title}\n\nThe message is too long to be displayed here. For more details, please check the <a href="${summaryLink}">job summary</a>.`
   }
 
+  // get comments
+  const {data: comments} = await github.rest.issues.listComments({
+    issue_number: context.issue.number,
+    owner: context.repo.owner,
+    repo: context.repo.repo
+  });
+
+  console.log(`Found ${comments.length} comments`)
   // get comment if exists
-  const existingComment = comments.filter(comment => comment.body.includes(`## ${title}`));
-  // if comment exists, update it
-  if(existingComment.length > 0) {
-    await github.rest.issues.updateComment({
-      comment_id: existingComment[0].id,
-      owner: context.repo.owner,
-      repo: context.repo.repo,
-      body: commentBody
-    })
+  const existingComment = findCommentByContent(`## ${title}`, comments);
+  console.log(`Found ${existingComment.length} comments, with the title "## ${title}"`)
+  // delete comment if no body or sections
+  if(!body && (!sections || sections.length === 0)) {
+    if(existingComment.length > 0 &&) {
+      console.log(`Deleting comment with the title "## ${title}" and the id ${existingComment[0].id}`)
+      // if comment exists, delete it
+      await github.rest.issues.deleteComment({
+        comment_id: existingComment[0].id,
+        owner: context.repo.owner,
+        repo: context.repo.repo,
+      })
+    }
+    return
   }
+
   // if comment does not exist, create it
-  else {
+  if(existingComment.length === 0) {
+    console.log(`Creating comment with the title "## ${title}"`)
     await github.rest.issues.createComment({
       issue_number: context.issue.number,
       owner: context.repo.owner,
       repo: context.repo.repo,
       body: commentBody
     })
+    return
   }
+
+  // if comment exists, update it
+  console.log(`Updating comment with the title "## ${title}" and the id ${existingComment[0].id}`)
+  await github.rest.issues.updateComment({
+    comment_id: existingComment[0].id,
+    owner: context.repo.owner,
+    repo: context.repo.repo,
+    body: commentBody
+  })
 }
