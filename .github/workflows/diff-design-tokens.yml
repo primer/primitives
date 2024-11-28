@@ -21,20 +21,25 @@ jobs:
         with:
           script: |
             core.setOutput('diffs', `[{
-              "title": "## Design Token Diff (CSS)",
+              "title": "Design Token Diff (CSS)",
               "folder": "dist/css",
               "globString": "**/**/*.css",
               "outputFile": "diff_css.json"
             },{
-              "title": "## Design Token Diff (StyleLint)",
+              "title": "Design Token Diff (StyleLint)",
               "folder": "dist/styleLint",
               "globString": "**/**/*.json",
               "outputFile": "diff_style_lint.json"
             },{
-              "title": "## Design Token Diff (Figma)",
+              "title": "Design Token Diff (Figma)",
               "folder": "dist/figma",
               "globString": "**/**/*.json",
               "outputFile": "diff_figma.json"
+            },{
+              "title": "Design Token Diff (Fallbacks)",
+              "folder": "dist/fallbacks",
+              "globString": "**/**/*.json",
+              "outputFile": "diff_fallbacks.json"
             }]`)
 
   diff:
