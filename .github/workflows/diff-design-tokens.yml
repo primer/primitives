@@ -25,6 +25,11 @@ jobs:
               "folder": "dist/css",
               "globString": "**/**/*.css",
               "outputFile": "diff_css.json"
+            },{
+              "title": "## Design Token Diff (StyleLint)",
+              "folder": "dist/styleLint",
+              "globString": "**/**/*.json",
+              "outputFile": "diff_style_lint.json"
             }]`)
 
   diff:
