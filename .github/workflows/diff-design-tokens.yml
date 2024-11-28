@@ -30,6 +30,11 @@ jobs:
               "folder": "dist/styleLint",
               "globString": "**/**/*.json",
               "outputFile": "diff_style_lint.json"
+            },{
+              "title": "## Design Token Diff (Figma)",
+              "folder": "dist/figma",
+              "globString": "**/**/*.json",
+              "outputFile": "diff_figma.json"
             }]`)
 
   diff:
