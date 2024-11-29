@@ -2,6 +2,8 @@ const findCommentByContent = (searchContent, comments) => {
   return comments.filter(comment => comment.body.includes(searchContent));
 }
 
+const COMMENT_CHAR_LIMIT = 65536
+
 module.exports = async ({title, body, sections}, summaryLink, context, github) => {
   console.log(`Preparing comment content for ${title}`)
   // prepare body
@@ -25,7 +27,7 @@ module.exports = async ({title, body, sections}, summaryLink, context, github) =
   }
 
   // overwrite body if to long
-  if(summaryLink && commentBody.length > 65536) {
+  if(summaryLink && commentBody.length > COMMENT_CHAR_LIMIT) {
     commentBody = `## ${title}\n\nThe message is too long to be displayed here. For more details, please check the <a href="${summaryLink}">job summary</a>.`
   }
 
@@ -42,7 +44,7 @@ module.exports = async ({title, body, sections}, summaryLink, context, github) =
   console.log(`Found ${existingComment.length} comments, with the title "## ${title}"`)
   // delete comment if no body or sections
   if(!body && (!sections || sections.length === 0)) {
-    if(existingComment.length > 0 &&) {
+    if(existingComment.length > 0) {
       console.log(`Deleting comment with the title "## ${title}" and the id ${existingComment[0].id}`)
       // if comment exists, delete it
       await github.rest.issues.deleteComment({
