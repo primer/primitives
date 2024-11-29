@@ -34,7 +34,7 @@ module.exports = (content, overwrite = false) => {
         }
         else {
           core.warning('Summary character limit reached, content will be truncated.')
-          core.info('---------------',`${title}:`, body, '---------------')
+          core.info(`---------------\n${title}:\n${body}\n---------------`)
         }
       })
     }
