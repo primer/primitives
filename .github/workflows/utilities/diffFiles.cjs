@@ -2,7 +2,7 @@ const shell = require('shelljs')
 const fs = require('fs')
 const glob = require('@actions/glob')
 
-module.exports = async (folder, globString, outputFile) => {
+module.exports = async ({folder, globString, outputFile}, originPath) => {
   const globber = await glob.create(folder + globString)
   const files = await globber.glob()
   // create output file
@@ -13,7 +13,7 @@ module.exports = async (folder, globString, outputFile) => {
     const regexRunnerPath = new RegExp('^[a-z\/]+\/dist', 'g')
     const filename = file.replaceAll(regexRunnerPath,'')
     // if file is new
-    if (!fs.existsSync(file.replace(folder, 'base/' + folder))) {
+    if (!fs.existsSync(file.replace(folder, `${originPath}/` + folder))) {
       console.info('⚠️ File is new: ' + file + '\n')
       return {
         title: file.replaceAll('dist/', ''),
@@ -21,7 +21,7 @@ module.exports = async (folder, globString, outputFile) => {
       }
     }
     // run diff & store in file
-    const diff = shell.exec(`diff -u ${file.replace(folder, 'base/' + folder)} ${file}`)
+    const diff = shell.exec(`diff -u ${file.replace(folder, `${originPath}/` + folder)} ${file}`)
 
     console.log('Checking diff for ' + filename + '...')
 

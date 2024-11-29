@@ -1,10 +1,11 @@
 const core = require('@actions/core')
 
+const SUMMARY_CHAR_LIMIT = 1024000
+
 module.exports = (content, overwrite = false) => {
   if(!Array.isArray(content)) {
     content = [content]
   }
-  // core.summary.clear()
 
   for (const {title, body, sections} of content) {
     // if no body or sections, skip
@@ -27,7 +28,14 @@ module.exports = (content, overwrite = false) => {
         `${body}\n`+
         '```\n\n'+
         '</details>'
-        core.summary.addRaw(section, true)
+
+        if(core.summary.stringify().length + section.length <= SUMMARY_CHAR_LIMIT) {
+          core.summary.addRaw(section, true)
+        }
+        else {
+          core.warning('Summary character limit reached, content will be truncated.')
+          core.info('---------------',`${title}:`, body, '---------------')
+        }
       })
     }
   }

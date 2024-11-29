@@ -88,40 +88,32 @@ jobs:
             // get config
             const diffConfig = ${{ needs.setup.outputs.diffs }}
 
-            const output = []
-
-            // create sections
+            // create diff for each config
             for (const config of diffConfig) {
-              await diffFiles(config.folder, config.globString, config.outputFile)
-              // read diff file
-              const diff = JSON.parse(fs.readFileSync(config.outputFile, 'utf8'))
-              // create sections
-              const sections = []
-              for (const {title, body} of diff) {
-                sections.push({
-                  title,
-                  body
-                })
-              }
-              output.push({
-                file: config.outputFile,
-                title: config.title,
-                sections
-              })
+              await diffFiles(config, 'base')
             }
-
-            // set output
-            core.setOutput('diffFilePath', output);
 
       - name: Write summary
         uses: actions/github-script@v7
         with:
           script: |
+            const fs = require('fs')
             const addSummary = require('./.github/workflows/utilities/addSummary.cjs')
-            const diffFileArray = ${{ steps.diff-files.outputs.diffFilePath }}
+            const diffConfig = ${{ needs.setup.outputs.diffs }}
+
+            const output = []
+            // read diff files
+            for (const config of diffConfig) {
+              const diff = JSON.parse(fs.readFileSync(config.outputFile, 'utf8'))
+              // add to output
+              output.push({
+                title: config.title,
+                sections: diff
+              })
+            }
 
             // add summary
-            addSummary(diffFileArray, true)
+            addSummary(output, true)
 
       - name: Comment on pr
         if: github.event_name == 'pull_request'
@@ -131,12 +123,18 @@ jobs:
           GITHUB_RUN_ID: ${{ github.run_id }}
         with:
           script: |
+            const fs = require('fs')
             const addComment = require('./.github/workflows/utilities/addComment.cjs')
-            const diffFilePath = ${{ steps.diff-files.outputs.diffFilePath }}
+            const diffConfig = ${{ needs.setup.outputs.diffs }}
             const WORKFLOW_SUMMARY_URL = `https://github.com/${{env.GITHUB_REPOSITORY}}/actions/runs/${{env.GITHUB_RUN_ID}}`
 
-            for (const diff of diffFilePath) {
-              await addComment(diff, WORKFLOW_SUMMARY_URL, context, github)
+            // read diff files
+            for (const config of diffConfig) {
+              const diff = JSON.parse(fs.readFileSync(config.outputFile, 'utf8'))
+              await addComment({
+                title: config.title,
+                sections: diff
+              }, WORKFLOW_SUMMARY_URL, context, github)
             }
 
   remove_comment:
