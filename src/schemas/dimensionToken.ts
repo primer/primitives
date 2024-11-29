@@ -27,6 +27,7 @@ export const dimensionToken = baseToken
             'paragraphSpacing',
             'paragraphIndent',
           ]),
+          group: z.string().optional(),
         }),
       })
       .optional(),
