@@ -1,6 +1,7 @@
 import {isFromFile, isSource} from '../filters/index.js'
 import type {PlatformInitializer} from '../types/platformInitializer.js'
 import type {PlatformConfig, TransformedToken} from 'style-dictionary/types'
+import {outputReferencesTransformed, outputReferencesFilter} from 'style-dictionary/utils'
 
 const getCssSelectors = (outputFile: string) => {
   // check for dark in the beginning of the output filename
@@ -57,7 +58,8 @@ export const css: PlatformInitializer = (outputFile, prefix, buildPath, options)
           ]),
         options: {
           showFileHeader: false,
-          outputReferences: false,
+          outputReferences: (token, platformOptions) =>
+            outputReferencesFilter(token, platformOptions) && outputReferencesTransformed(token, platformOptions),
           descriptions: false,
           queries: getCssSelectors(outputFile),
           ...options?.options,
@@ -76,6 +78,8 @@ export const css: PlatformInitializer = (outputFile, prefix, buildPath, options)
           ]),
         options: {
           showFileHeader: false,
+          outputReferences: (token, platformOptions) =>
+            outputReferencesFilter(token, platformOptions) && outputReferencesTransformed(token, platformOptions),
           descriptions: false,
           ...options?.options,
         },
@@ -86,6 +90,8 @@ export const css: PlatformInitializer = (outputFile, prefix, buildPath, options)
         filter: token => isSource(token) && options?.themed !== true && token.$type === 'custom-viewportRange',
         options: {
           showFileHeader: false,
+          outputReferences: (token, platformOptions) =>
+            outputReferencesFilter(token, platformOptions) && outputReferencesTransformed(token, platformOptions),
         },
       },
       {
@@ -99,6 +105,8 @@ export const css: PlatformInitializer = (outputFile, prefix, buildPath, options)
           ]),
         options: {
           descriptions: false,
+          outputReferences: (token, platformOptions) =>
+            outputReferencesFilter(token, platformOptions) && outputReferencesTransformed(token, platformOptions),
           showFileHeader: false,
           queries: [
             {
