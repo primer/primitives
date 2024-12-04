@@ -3,17 +3,17 @@ import {isDeprecated} from './isDeprecated.js'
 
 describe('Filter: isDeprecated', () => {
   it('Returns true if depreacted property is true', () => {
-    expect(isDeprecated(getMockToken({deprecated: true}))).toStrictEqual(true)
+    expect(isDeprecated(getMockToken({$deprecated: true}))).toStrictEqual(true)
   })
 
   it('Returns true if depreacted property is a string', () => {
-    expect(isDeprecated(getMockToken({deprecated: 'pumpkin'}))).toStrictEqual(true)
+    expect(isDeprecated(getMockToken({$deprecated: 'pumpkin'}))).toStrictEqual(true)
   })
 
   it('Returns false if deprecated is falsy', () => {
-    expect(isDeprecated(getMockToken({deprecated: false}))).toStrictEqual(false)
-    expect(isDeprecated(getMockToken({deprecated: null}))).toStrictEqual(false)
-    expect(isDeprecated(getMockToken({deprecated: undefined}))).toStrictEqual(false)
+    expect(isDeprecated(getMockToken({$deprecated: false}))).toStrictEqual(false)
+    expect(isDeprecated(getMockToken({$deprecated: null}))).toStrictEqual(false)
+    expect(isDeprecated(getMockToken({$deprecated: undefined}))).toStrictEqual(false)
   })
 
   it('Returns false if no deprecated property exists', () => {
@@ -22,19 +22,19 @@ describe('Filter: isDeprecated', () => {
 
   const inputArray = [
     getMockToken({
-      deprecated: true,
+      $deprecated: true,
     }),
     getMockToken({
-      deprecated: '{scale.yellow}',
+      $deprecated: '{scale.yellow}',
     }),
     getMockToken({
-      deprecated: null,
+      $deprecated: null,
     }),
     getMockToken({
-      deprecated: false,
+      $deprecated: false,
     }),
     getMockToken({
-      deprecated: undefined,
+      $deprecated: undefined,
     }),
     getMockToken({
       value: 'pumpkin',
@@ -43,10 +43,10 @@ describe('Filter: isDeprecated', () => {
 
   const expectedOutput = [
     getMockToken({
-      deprecated: true,
+      $deprecated: true,
     }),
     getMockToken({
-      deprecated: '{scale.yellow}',
+      $deprecated: '{scale.yellow}',
     }),
   ]
 

@@ -12,5 +12,5 @@ export const jsonDeprecated: Transform = {
   transitive: true,
   filter: isDeprecated,
   transform: (token: TransformedToken) =>
-    typeof token.deprecated === 'string' ? token.deprecated.replace(/[{}]/g, '') : null,
+    typeof token.$deprecated === 'string' ? token.$deprecated.replace(/[{}]/g, '') : null,
 }
