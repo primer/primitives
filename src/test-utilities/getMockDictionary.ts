@@ -1,5 +1,23 @@
-import type StyleDictionary from 'style-dictionary'
 import {getMockToken} from './getMockToken.js'
+import type {Dictionary, TransformedToken, TransformedTokens} from 'style-dictionary/types'
+
+const flattenTokens = (tokenTree: TransformedTokens): TransformedToken[] => {
+  const output: TransformedToken[] = []
+
+  const getToken = (tokens: TransformedTokens, flatTokens: TransformedToken[]) => {
+    for (const token of Object.values(tokens)) {
+      if (Object.prototype.hasOwnProperty.call(token, 'name')) {
+        flatTokens.push(token as TransformedToken)
+        continue
+      }
+      getToken(token, flatTokens)
+    }
+  }
+
+  getToken(tokenTree, output)
+
+  return output
+}
 
 const mockDictionaryDefault = {
   tokens: {
@@ -14,11 +32,7 @@ const mockDictionaryDefault = {
   },
 }
 
-export const getMockDictionary = (tokens?: StyleDictionary.TransformedTokens): StyleDictionary.Dictionary => ({
-  allTokens: Object.values((tokens || mockDictionaryDefault).tokens.subgroup),
+export const getMockDictionary = (tokens?: TransformedTokens): Dictionary => ({
+  allTokens: flattenTokens(tokens || mockDictionaryDefault),
   tokens: tokens || mockDictionaryDefault,
-  allProperties: Object.values((tokens || mockDictionaryDefault).tokens.subgroup),
-  properties: tokens || mockDictionaryDefault,
-  usesReference: _value => false,
-  getReferences: _value => [],
 })
