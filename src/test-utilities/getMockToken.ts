@@ -1,4 +1,4 @@
-import {TransformedToken} from 'style-dictionary/types'
+import type {TransformedToken} from 'style-dictionary/types'
 
 const mockTokenDefaults = {
   name: 'tokenName',

@@ -12,10 +12,12 @@ const buildFigma = async (buildOptions: ConfigGeneratorOptions): Promise<void> =
   const baseScales = [
     {
       name: 'light',
+      theme: 'light',
       source: [`src/tokens/base/color/light/light.json5`, `src/tokens/base/color/light/display-light.json5`],
     },
     {
       name: 'light-high-constrast',
+      theme: 'light-high-constrast',
       source: [
         `src/tokens/base/color/light/light.json5`,
         `src/tokens/base/color/light/display-light.json5`,
@@ -24,9 +26,11 @@ const buildFigma = async (buildOptions: ConfigGeneratorOptions): Promise<void> =
     },
     {
       name: 'dark',
+      theme: 'dark',
       source: [`src/tokens/base/color/dark/dark.json5`, `src/tokens/base/color/dark/display-dark.json5`],
     },
     {
+      theme: 'dark-high-constrast',
       name: 'dark-high-constrast',
       source: [
         `src/tokens/base/color/dark/dark.json5`,
@@ -35,6 +39,7 @@ const buildFigma = async (buildOptions: ConfigGeneratorOptions): Promise<void> =
       ],
     },
     {
+      theme: 'dark-dimmed',
       name: 'dark-dimmed',
       source: [
         `src/tokens/base/color/dark/dark.json5`,
@@ -62,7 +67,7 @@ const buildFigma = async (buildOptions: ConfigGeneratorOptions): Promise<void> =
       include,
       platforms: {
         figma: figma(`figma/themes/${filename}.json`, buildOptions.prefix, buildOptions.buildPath, {
-          mode: filename.replaceAll('-', ' '),
+          theme: filename.replaceAll('-', ' '),
         }),
       },
     })
@@ -118,7 +123,7 @@ const buildFigma = async (buildOptions: ConfigGeneratorOptions): Promise<void> =
         `src/tokens/functional/color/light/primitives-light.json5`,
         `src/tokens/functional/color/light/patterns-light.json5`,
       ],
-      mode: 'light',
+      theme: 'light',
     },
     {
       name: 'light-high-contrast',
@@ -130,7 +135,7 @@ const buildFigma = async (buildOptions: ConfigGeneratorOptions): Promise<void> =
         `src/tokens/functional/color/light/primitives-light.json5`,
         `src/tokens/functional/color/light/patterns-light.json5`,
       ],
-      mode: 'light high contrast',
+      theme: 'light high contrast',
     },
     {
       name: 'light-colorblind',
@@ -142,7 +147,7 @@ const buildFigma = async (buildOptions: ConfigGeneratorOptions): Promise<void> =
         `src/tokens/functional/color/light/primitives-light.json5`,
         `src/tokens/functional/color/light/patterns-light.json5`,
       ],
-      mode: 'light colorblind',
+      theme: 'light colorblind',
     },
     {
       name: 'light-tritanopia',
@@ -154,7 +159,7 @@ const buildFigma = async (buildOptions: ConfigGeneratorOptions): Promise<void> =
         `src/tokens/functional/color/light/primitives-light.json5`,
         `src/tokens/functional/color/light/patterns-light.json5`,
       ],
-      mode: 'light tritanopia',
+      theme: 'light tritanopia',
     },
     {
       name: 'dark',
@@ -165,7 +170,7 @@ const buildFigma = async (buildOptions: ConfigGeneratorOptions): Promise<void> =
         `src/tokens/functional/color/dark/primitives-dark.json5`,
         `src/tokens/functional/color/dark/patterns-dark.json5`,
       ],
-      mode: 'dark',
+      theme: 'dark',
     },
     {
       name: 'dark-high-contrast',
@@ -177,7 +182,7 @@ const buildFigma = async (buildOptions: ConfigGeneratorOptions): Promise<void> =
         `src/tokens/functional/color/dark/primitives-dark.json5`,
         `src/tokens/functional/color/dark/patterns-dark.json5`,
       ],
-      mode: 'dark high contrast',
+      theme: 'dark high contrast',
     },
     {
       name: 'dark-dimmed',
@@ -189,7 +194,7 @@ const buildFigma = async (buildOptions: ConfigGeneratorOptions): Promise<void> =
         `src/tokens/functional/color/dark/primitives-dark.json5`,
         `src/tokens/functional/color/dark/patterns-dark.json5`,
       ],
-      mode: 'dark dimmed',
+      theme: 'dark dimmed',
     },
     {
       name: 'dark-colorblind',
@@ -201,7 +206,7 @@ const buildFigma = async (buildOptions: ConfigGeneratorOptions): Promise<void> =
         `src/tokens/functional/color/dark/primitives-dark.json5`,
         `src/tokens/functional/color/dark/patterns-dark.json5`,
       ],
-      mode: 'dark colorblind',
+      theme: 'dark colorblind',
     },
     {
       name: 'dark-tritanopia',
@@ -213,16 +218,16 @@ const buildFigma = async (buildOptions: ConfigGeneratorOptions): Promise<void> =
         `src/tokens/functional/color/dark/primitives-dark.json5`,
         `src/tokens/functional/color/dark/patterns-dark.json5`,
       ],
-      mode: 'dark tritanopia',
+      theme: 'dark tritanopia',
     },
   ]
   //
-  for (const {name, source, include, mode} of shadowFiles) {
+  for (const {name, source, include, theme} of shadowFiles) {
     const extended = await PrimerStyleDictionary.extend({
       source,
       include,
       platforms: {
-        figma: figma(`figma/shadows/${name}.json`, buildOptions.prefix, buildOptions.buildPath, {mode}),
+        figma: figma(`figma/shadows/${name}.json`, buildOptions.prefix, buildOptions.buildPath, {theme}),
       },
     })
 
@@ -247,6 +252,7 @@ const buildFigma = async (buildOptions: ConfigGeneratorOptions): Promise<void> =
     group: string
     name: string
   }> = files.flatMap(filePath => JSON.parse(fs.readFileSync(filePath, 'utf8')))
+
   // create a list of groups with collections and modes
   const collections: Record<
     string,
@@ -257,6 +263,9 @@ const buildFigma = async (buildOptions: ConfigGeneratorOptions): Promise<void> =
   > = {}
 
   for (const {collection, mode, group} of tokens) {
+    if (!collection) {
+      continue
+    }
     if (!(collection in collections)) {
       collections[collection] = {
         modes: [],
@@ -271,7 +280,6 @@ const buildFigma = async (buildOptions: ConfigGeneratorOptions): Promise<void> =
       collections[collection].groups.push(group)
     }
   }
-
   // define the order of the modes
   // we inverse it to deal with the -1 of the indexOf if item is not found in the array: basically anything that is not in the list should come last
   const modeOrder = [

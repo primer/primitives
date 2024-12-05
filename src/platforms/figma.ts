@@ -23,6 +23,7 @@ const validFigmaToken = async (token: TransformedToken, options: Config) => {
 export const figma: PlatformInitializer = (outputFile, prefix, buildPath, options): PlatformConfig => ({
   prefix,
   buildPath,
+  preprocessors: ['themeOverrides'],
   transforms: [
     'color/rgbaFloat',
     'fontFamily/figma',
@@ -42,7 +43,11 @@ export const figma: PlatformInitializer = (outputFile, prefix, buildPath, option
       'fontStack/sansSerifDisplay': 'SF Pro Display',
       'fontStack/monospace': 'SF Mono',
     },
+    // should this object be spread here?
     ...options,
+    themeOverrides: {
+      theme: options?.theme,
+    },
   },
   files: [
     {
@@ -53,7 +58,7 @@ export const figma: PlatformInitializer = (outputFile, prefix, buildPath, option
       format: `json/figma`,
       options: {
         outputReferences: true,
-        mode: options?.mode,
+        theme: options?.theme,
       },
     },
   ],

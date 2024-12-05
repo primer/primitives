@@ -24,6 +24,7 @@ export const css: PlatformInitializer = (outputFile, prefix, buildPath, options)
   return {
     prefix,
     buildPath,
+    preprocessors: ['themeOverrides'],
     transforms: [
       'name/pathToKebabCase',
       'color/hex',
@@ -39,6 +40,9 @@ export const css: PlatformInitializer = (outputFile, prefix, buildPath, options)
     ],
     options: {
       basePxFontSize: 16,
+      themeOverrides: {
+        theme: options?.theme,
+      },
     },
     files: [
       {

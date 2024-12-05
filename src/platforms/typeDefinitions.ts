@@ -3,9 +3,10 @@ import {isSource} from '../filters/index.js'
 import {upperCaseFirstCharacter} from '../utilities/index.js'
 import type {PlatformConfig} from 'style-dictionary/types'
 
-export const typeDefinitions: PlatformInitializer = (outputFile, prefix, buildPath): PlatformConfig => ({
+export const typeDefinitions: PlatformInitializer = (outputFile, prefix, buildPath, options): PlatformConfig => ({
   prefix,
   buildPath,
+  preprocessors: ['themeOverrides'],
   transforms: [
     'color/hex',
     'shadow/css',
@@ -23,6 +24,9 @@ export const typeDefinitions: PlatformInitializer = (outputFile, prefix, buildPa
       options: {
         tokenTypesPath: './src/types/',
         moduleName: `${upperCaseFirstCharacter(outputFile)}DesignTokens`,
+        themeOverrides: {
+          theme: options?.theme,
+        },
       },
     },
   ],
