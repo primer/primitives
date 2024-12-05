@@ -24,7 +24,7 @@ describe('Transformer: fontWeightToNumbers', () => {
   })
 
   it('transforms font strings to number', () => {
-    const testCases: [fontWeightNumber: number, fontWeightString: string][] = [
+    const testCases: Array<[fontWeightNumber: number, fontWeightString: string]> = [
       [100, 'thin'],
       [100, 'hairline'],
       [200, 'extra-light'],

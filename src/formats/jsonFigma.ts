@@ -1,7 +1,7 @@
 import type {Dictionary, TransformedToken, FormatFn, FormatFnArguments, PlatformConfig} from 'style-dictionary/types'
 import {format} from 'prettier'
 import {transformNamePathToFigma} from '../transformers/namePathToFigma.js'
-import type {ShadowTokenValue} from '../types/ShadowTokenValue.js'
+import type {ShadowTokenValue} from '../types/shadowTokenValue.js'
 import {hexToRgbaFloat} from '../transformers/utilities/hexToRgbaFloat.js'
 import type {RgbaFloat} from '../transformers/utilities/isRgbaFloat.js'
 import {isRgbaFloat} from '../transformers/utilities/isRgbaFloat.js'
@@ -75,7 +75,7 @@ const shadowToVariables = (
  */
 export const jsonFigma: FormatFn = async ({dictionary, file: _file, platform}: FormatFnArguments) => {
   // array to store tokens in
-  const tokens: Record<string, unknown>[] = []
+  const tokens: Array<Record<string, unknown>> = []
   const sortedTokens = [...dictionary.allTokens].sort(
     sortByReference(dictionary.tokens, {unfilteredTokens: dictionary.unfilteredTokens}),
   )

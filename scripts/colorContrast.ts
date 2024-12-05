@@ -1,5 +1,5 @@
-import type {ContrastRequirement, ContrastRequirements, ThemeName} from './color-contrast.config.js'
-import {contrastRequirements, bgColors} from './color-contrast.config.js'
+import type {ContrastRequirement, ContrastRequirements, ThemeName} from './colorContrast.config.js'
+import {contrastRequirements, bgColors} from './colorContrast.config.js'
 import {writeFile} from 'fs'
 import {readFile} from 'fs/promises'
 import {normal} from 'color-blend'
@@ -40,7 +40,7 @@ const getOpaqueColor = (color: string, background: string): string => {
  * @param colors
  * @returns contrastTestResult
  */
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+
 const runContrastTest = (colorPairs: ContrastRequirement[], tokens: Tokens): contrastTestResult[] => {
   return colorPairs.flatMap(([minimumContrast, colorA, colorB, options]: ContrastRequirement) => {
     // concat name
@@ -48,8 +48,8 @@ const runContrastTest = (colorPairs: ContrastRequirement[], tokens: Tokens): con
     // build required string
     const minimumContrastRatio = `${minimumContrast}:1`
     // colorB is fully opaque
-    if (!tokens.hasOwnProperty(colorA)) throw new Error(`Color token not found ${colorA}`)
-    if (!tokens.hasOwnProperty(colorB)) throw new Error(`Color token not found ${colorB}`)
+    if (!Object.prototype.hasOwnProperty.call(tokens, colorA)) throw new Error(`Color token not found ${colorA}`)
+    if (!Object.prototype.hasOwnProperty.call(tokens, colorB)) throw new Error(`Color token not found ${colorB}`)
 
     if (parseToRgba(tokens[colorB].value)[3] === 1) {
       const testResults = testContrast(

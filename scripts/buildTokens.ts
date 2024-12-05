@@ -1,12 +1,12 @@
 import type {Config} from 'style-dictionary/types'
-import {PrimerStyleDictionary} from '../src/PrimerStyleDictionary.js'
+import {PrimerStyleDictionary} from '../src/primerStyleDictionary.js'
 import {copyFromDir} from '../src/utilities/index.js'
 import {deprecatedJson, css, docJson, fallbacks, styleLint} from '../src/platforms/index.js'
 import type {
   ConfigGeneratorOptions,
   StyleDictionaryConfigGenerator,
-} from '../src/types/StyleDictionaryConfigGenerator.js'
-import type {TokenBuildInput} from '../src/types/TokenBuildInput.js'
+} from '../src/types/styleDictionaryConfigGenerator.js'
+import type {TokenBuildInput} from '../src/types/tokenBuildInput.js'
 import glob from 'fast-glob'
 import {themes} from './themes.config.js'
 import fs from 'fs'

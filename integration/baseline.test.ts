@@ -1,4 +1,4 @@
-import {PrimerStyleDictionary} from '../src/PrimerStyleDictionary.js'
+import {PrimerStyleDictionary} from '../src/primerStyleDictionary.js'
 import fs from 'fs'
 
 describe('PrimerStyleDictionary', async () => {

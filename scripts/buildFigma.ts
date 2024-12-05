@@ -1,8 +1,8 @@
 import fs from 'fs'
-import {PrimerStyleDictionary} from '../src/PrimerStyleDictionary.js'
+import {PrimerStyleDictionary} from '../src/primerStyleDictionary.js'
 import {themes} from './themes.config.js'
 import {figma} from '../src/platforms/index.js'
-import type {ConfigGeneratorOptions} from '../src/types/StyleDictionaryConfigGenerator.js'
+import type {ConfigGeneratorOptions} from '../src/types/styleDictionaryConfigGenerator.js'
 
 const buildFigma = async (buildOptions: ConfigGeneratorOptions): Promise<void> => {
   /** -----------------------------------
@@ -241,12 +241,12 @@ const buildFigma = async (buildOptions: ConfigGeneratorOptions): Promise<void> =
     return localFiles.map(file => `${buildOptions.buildPath}figma/${dir}/${file}`)
   })
 
-  const tokens: {
+  const tokens: Array<{
     collection: string
     mode: string
     group: string
     name: string
-  }[] = files.flatMap(filePath => JSON.parse(fs.readFileSync(filePath, 'utf8')))
+  }> = files.flatMap(filePath => JSON.parse(fs.readFileSync(filePath, 'utf8')))
   // create a list of groups with collections and modes
   const collections: Record<
     string,

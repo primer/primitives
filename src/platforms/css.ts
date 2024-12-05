@@ -1,5 +1,5 @@
 import {isFromFile, isSource} from '../filters/index.js'
-import type {PlatformInitializer} from '../types/PlatformInitializer.ts'
+import type {PlatformInitializer} from '../types/platformInitializer.js'
 import type {PlatformConfig, TransformedToken} from 'style-dictionary/types'
 
 const getCssSelectors = (outputFile: string) => {

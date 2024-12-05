@@ -1,7 +1,7 @@
 import {diffThemes} from './diffThemes.js'
 
 describe('diffThemes', () => {
-  const themesArray: [string, string[]][] = [
+  const themesArray: Array<[string, string[]]> = [
     ['light', ['color', 'color.text']],
     ['dark', ['color', 'color.text']],
   ]

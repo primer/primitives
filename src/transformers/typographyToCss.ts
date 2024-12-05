@@ -1,5 +1,5 @@
 import {isTypography} from '../filters/index.js'
-import type {TypographyTokenValue} from '../types/TypographyTokenValue.js'
+import type {TypographyTokenValue} from '../types/typographyTokenValue.js'
 import {checkRequiredTokenProperties} from './utilities/checkRequiredTokenProperties.js'
 import {parseFontFamily} from './fontFamilyToCss.js'
 import {parseFontWeight} from './fontWeightToNumber.js'

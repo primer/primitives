@@ -2,7 +2,7 @@ import {toHex} from 'color2k'
 import {isShadow} from '../filters/index.js'
 import {alpha} from './utilities/alpha.js'
 import {checkRequiredTokenProperties} from './utilities/checkRequiredTokenProperties.js'
-import type {ShadowTokenValue} from '../types/ShadowTokenValue.js'
+import type {ShadowTokenValue} from '../types/shadowTokenValue.js'
 import {getTokenValue} from './utilities/getTokenValue.js'
 import type {Transform, TransformedToken} from 'style-dictionary/types'
 

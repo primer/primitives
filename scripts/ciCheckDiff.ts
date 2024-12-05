@@ -1,12 +1,11 @@
-// eslint-disable-next-line import/no-commonjs, @typescript-eslint/no-var-requires
 import fs from 'fs'
 
 const cleanLine = (line: string) => line.replace(/\t/g, '').trim()
 
-const beforeAfterArr: {
+const beforeAfterArr: Array<{
   before: string
   after: string
-}[] = []
+}> = []
 
 try {
   const data = fs.readFileSync('diff.txt', 'utf8')

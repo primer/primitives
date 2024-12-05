@@ -1,5 +1,4 @@
-// eslint-disable-next-line import/extensions
-import colorFallbacks from '../src/tokens/fallback/color-fallbacks.json'
+import colorFallbacks from '../src/tokens/fallback/color-fallbacks.json' assert {type: 'json'}
 import fs from 'fs'
 
 const storybookFallbacks = Object.entries(colorFallbacks).map(([key, value]) => [key, value])
