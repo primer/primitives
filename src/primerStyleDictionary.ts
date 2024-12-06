@@ -38,6 +38,7 @@ import {
   jsonFigma,
 } from './formats/index.js'
 import {themeOverrides} from './preprocessors/themeOverrides.js'
+import {colorAlphaToCss} from './transformers/colorAlphaToCss.js'
 
 /**
  * @name {@link PrimerStyleDictionary}
@@ -100,6 +101,8 @@ PrimerStyleDictionary.registerFormat({
  * Transformers
  *
  */
+PrimerStyleDictionary.registerTransform(colorAlphaToCss)
+
 PrimerStyleDictionary.registerTransform(colorToRgbAlpha)
 
 PrimerStyleDictionary.registerTransform(colorToRgbaFloat)
