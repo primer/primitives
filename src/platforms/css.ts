@@ -28,10 +28,11 @@ export const css: PlatformInitializer = (outputFile, prefix, buildPath, options)
     transforms: [
       'name/pathToKebabCase',
       'color/hex',
+      'colorAlpha/css',
       'cubicBezier/css',
       'dimension/rem',
       'duration/css',
-      'shadow/css',
+      // 'shadow/css',
       'border/css',
       'typography/css',
       'fontFamily/css',
