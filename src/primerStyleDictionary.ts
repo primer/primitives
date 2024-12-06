@@ -37,7 +37,7 @@ import {
   cssAdvanced,
   jsonFigma,
 } from './formats/index.js'
-import {themeOverrides} from './preprocessor/themeOverrides.js'
+import {themeOverrides} from './preprocessors/themeOverrides.js'
 
 /**
  * @name {@link PrimerStyleDictionary}
