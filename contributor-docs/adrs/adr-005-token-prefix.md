@@ -4,7 +4,7 @@
 
 | Stage    | Status      |
 | -------- | ----------- |
-| Approved | 🚧 |
+| Approved | 🚧          |
 | Adopted  | <!-- 🚧 --> |
 
 ## Context
@@ -21,7 +21,7 @@ To decide this, the following questions need to be answered:
 ~2. If yes, what is an appropriate prefix?~
 
 3. If no, do we need some kind of guidance in primer.style, or are we good without it?
-    -> Without specific issues there is no specific need for guidance.
+   -> Without specific issues there is no specific need for guidance.
 
 ## Decision
 
