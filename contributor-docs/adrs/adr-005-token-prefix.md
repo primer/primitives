@@ -13,13 +13,19 @@ Currently primitives have no prefix, which means once converted to css they can 
 
 To solve this we could add a prefix like `primer` or `product` to our tokens, resulting in css variables like `--primer-fgColor-default`.
 
+To decide this, the following questions need to be answered:
+
+1. Do we think that this is a legit problem that is serious enough to invest somewhat significant resources into?  
+   -> No, because we did not get any issues or other reports of complications with token naming collisions. We also have not had any reports of people running into issues where they have a hard time differentiating between their own tokens and primitives.
+
+~2. If yes, what is an appropriate prefix?~
+
+3. If no, do we need some kind of guidance in primer.style, or are we good without it?
+    -> Without specific issues there is no specific need for guidance.
+
 ## Decision
 
-The following decisions need ot be made:
-
-1. Do we think that this is a legit problem that is serious enough to invest somewhat significant resources into?
-2. If yes, what is an appropriate prefix?
-3. If no, do we need some kind of guidance in primer.style, or are we good without it?
+We will not add a prefix to our primitives at this time. The main reason being that we have no reports of issues
 
 ### Impact
 
