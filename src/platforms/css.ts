@@ -32,7 +32,7 @@ export const css: PlatformInitializer = (outputFile, prefix, buildPath, options)
       'cubicBezier/css',
       'dimension/rem',
       'duration/css',
-      // 'shadow/css',
+      'shadow/css',
       'border/css',
       'typography/css',
       'fontFamily/css',

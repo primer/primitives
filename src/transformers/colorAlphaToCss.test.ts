@@ -1,4 +1,4 @@
-import {TransformedToken} from 'style-dictionary/types'
+import type {TransformedToken} from 'style-dictionary/types'
 import {getMockToken} from '../test-utilities/index.js'
 import {colorAlphaToCss} from './colorAlphaToCss.js'
 
