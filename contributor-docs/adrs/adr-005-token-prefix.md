@@ -25,7 +25,7 @@ To decide this, the following questions need to be answered:
 
 ## Decision
 
-We will not add a prefix to our primitives at this time. The main reason being that we have no reports of issues
+We will not add a prefix to our primitives at this time. The main reason being that we have no reports of issues and the effort required to implement it, specifically to update usage on github.com, will be quite significant.
 
 ### Impact
 
