@@ -1,5 +1,11 @@
 # @primer/primitives
 
+## 10.1.0
+
+### Minor Changes
+
+- [#1092](https://github.com/primer/primitives/pull/1092) [`a17e9a7`](https://github.com/primer/primitives/commit/a17e9a7ef969df03bc5fb938d511adbc7f56fc09) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Adding new themeOverride preprocessor
+
 ## 10.0.0
 
 ### Major Changes
