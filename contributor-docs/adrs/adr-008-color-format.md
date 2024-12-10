@@ -74,19 +74,19 @@ But, it makes manipulating values directly in the `.json` file harder. This is a
 
 ### Alternatives
 
-### RGBA
+#### RGBA
 
 `RGBA` has the benefit of being easier to read. This is the only benefit over `hex` and it is not valid within the `w3c standard`. They are also harder to copy between tools.
 
-### HSL
+#### HSL
 
 `HSL` seems easy to edit, but changing the lightness value produces vastly different perceived levels of lightness between colors[^1] and should be avoided. This is why [`HSLuv`](https://www.hsluv.org/) is used in [prism](https://primer.style/prism/) and to create primer color scales. HSL is also a hard to copy between tools.
 
 We want to discourage a workflow were people _tinker_ with colors in the `.json` files. People should work on colors in a tool like [prism](https://primer.style/prism/) with the entire color system in mind. This means the ease of copying `hex` colors outweighs the better readability of `RGBA` and `HSL`.
 
-## Accepted risks
+### Accepted risks
 
-### The w3c draft could evolve in a way that invalidates this ADR
+#### The w3c draft could evolve in a way that invalidates this ADR
 
 - This would require changing our color tokens to a different format.
 - Since we are coming from a `hex` format, we would have to do the same if we would decided to use a different color format for the input now.
