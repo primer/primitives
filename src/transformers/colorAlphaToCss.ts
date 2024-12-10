@@ -2,7 +2,7 @@ import {Transform, TransformedToken} from 'style-dictionary/types'
 import {isColorWithAlpha} from '../filters/isColorWithAlpha.js'
 import {getTokenValue} from './utilities/getTokenValue.js'
 
-const cssColorMix = (colorA: string, colorB: string, colorBPercent: number) => {
+export const cssColorMix = (colorA: string, colorB: string, colorBPercent: number) => {
   if (colorBPercent < 0 || colorBPercent > 1) {
     throw new Error(
       `Invalid argument for "cssColorMix", colorBPercent must be between 0 and 1, ${colorBPercent} provided.`,
