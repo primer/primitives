@@ -82,14 +82,7 @@ This object is used to provide overrides for a specific theme. The usage is stil
 
 ### Valid token types and values
 
-| Token                                                                                | $type           | Accepted value                                                                                                                                                            | Example                                 |
-| ------------------------------------------------------------------------------------ | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------- |
-| [Color](https://design-tokens.github.io/community-group/format/#color)               | `"color"`       | Hex3/6/8 string                                                                                                                                                           | `"#ABC"`, `"#AABBCC"`, `"#AABBCCFF"`    |
-| [Size](https://design-tokens.github.io/community-group/format/#dimension)            | `"dimension"`   | Size string with `px` or `rem` unit                                                                                                                                       | `"16px"`, `"16rem"`                     |
-| [Font family](https://design-tokens.github.io/community-group/format/#font-family)   | `"fontFamily"`  | String or array of strings                                                                                                                                                | `"Helvetica"`, `["Helvetica", "Arial"]` |
-| [Font weight](https://design-tokens.github.io/community-group/format/#font-weight)   | `"fontWeight"`  | [number](https://design-tokens.github.io/community-group/format/#font-weight) or [fontWeight string](https://design-tokens.github.io/community-group/format/#font-weight) | `300`, `"semi-bold"`                    |
-| [Duration](https://design-tokens.github.io/community-group/format/#duration)         | `"duration"`    | Duration string with `ms` unit                                                                                                                                            | `"300ms"`                               |
-| [Cubic bezier](https://design-tokens.github.io/community-group/format/#cubic-bezier) | `"cubicBezier"` | Valid cubic bezier array with 4 numbers                                                                                                                                   | `[0, 0, 0.5, 1]`                        |
+We support all [simple](https://tr.designtokens.org/format/#types) and [composite](https://tr.designtokens.org/format/#composite-types) token types define by the w3c standard.
 
 #### Composite token types
 
