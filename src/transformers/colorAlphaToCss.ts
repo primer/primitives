@@ -19,6 +19,6 @@ export const colorAlphaToCss: Transform = {
   filter: isColorWithAlpha,
   transform: (token: TransformedToken) => {
     if (!token.alpha || token.alpha === null) return getTokenValue(token)
-    return cssColorMix(getTokenValue(token), 'transparent', token.alpha)
+    return cssColorMix(getTokenValue(token), 'transparent', 1 - token.alpha)
   },
 }
