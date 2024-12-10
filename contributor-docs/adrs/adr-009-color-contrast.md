@@ -27,7 +27,7 @@ This in turn is important for governmental requirements like [Section 508 of the
 | Disabled text vs. bg                     | `none`          | Disabled text (text in a disabled control) does not have any contrast requirements[^1.4.3]                                                        |
 | Decorative text<sup>\*\*</sup> vs. bg    | `none`          | Decorative text does not have any contrast requirements[^1.4.3]                                                                                   |
 
-<sup>*</sup> *Backgrounds is any color an element like text is placed on, like the page background, the background color of a `card` component or the fill of an `input` field.*  
+<sup>*</sup> _Backgrounds is any color an element like text is placed on, like the page background, the background color of a `card` component or the fill of an `input` field._  
 <sup>\*\*</sup>*Decorative text is defined as serving only an aesthetic purpose, providing no information, and having no functionality.[^pure-decoration]\*
 
 ### State contrast
@@ -42,7 +42,7 @@ This in turn is important for governmental requirements like [Section 508 of the
 
 | Contrast pair                      | Ratio  | Description                                                                                                                                                                                                             |
 | ---------------------------------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Border of *empty* control vs. bg   | `3:1`  | An empty control without any text or icon must have a background or border that has a `3:1` contrast with the bg[^understanding-1.4.11][^issue/1302/eric]                                                               |
+| Border of _empty_ control vs. bg   | `3:1`  | An empty control without any text or icon must have a background or border that has a `3:1` contrast with the bg[^understanding-1.4.11][^issue/1302/eric]                                                               |
 | Border of control with text vs. bg | `none` | If text passes `4.5:1`, no background or border contrast is required[^understanding-1.4.11][^issue/1302/eric]                                                                                                           |
 | Decorative border vs. bg           | `none` | Borders that mark regions of a page, view, or component and don't mark boundaries of interaction are largely seen as decorative[^pure-decoration] or graphical and have no contrast requirements[^understanding-1.4.11] |
 
@@ -79,3 +79,5 @@ We are auditing primer `light default` and `dark default` mode and exploring sol
 [^focus]: <https://www.w3.org/WAI/WCAG22/Understanding/focus-appearance-minimum.html>
 
 [^link]: <https://www.w3.org/TR/WCAG20-TECHS/G183.html>
+
+This ADR was moved from its original place in github/primer ([view original](https://github.com/github/primer/blob/85827cee9022657301b88c3548e8dd6e3f728afa/adrs/2022-10-13-color-contrast-requirements.md)).
