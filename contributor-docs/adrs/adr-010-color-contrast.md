@@ -19,15 +19,15 @@ This in turn is important for governmental requirements like [Section 508 of the
 
 ### Text contrast
 
-| Contrast pair                            | Ratio           | Description                                                                                                                                       |
-| ---------------------------------------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Contrast pair                           | Ratio           | Description                                                                                                                                       |
+| --------------------------------------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Text vs. backgrounds<sup>_</sup>_(bg)\* | `4.5:1`[^1.4.3] | Any text color vs. any background color it can be used on                                                                                         |
-| Link vs. Text                            | `3:1`           | Links need to have a `4.5:1` ratio against the background AND a `3:1` ratio against surrounding text or be underlined[^link]                      |
-| Placeholder text vs. bg                  | `4.5:1`         | Placeholder text must have a `4.5:1` contrast to the background e.g. input background[^placeholder], or a visible text label[^1.4.3] must be used |
-| Disabled text vs. bg                     | `none`          | Disabled text (text in a disabled control) does not have any contrast requirements[^1.4.3]                                                        |
-| Decorative text<sup>\*\*</sup> vs. bg    | `none`          | Decorative text does not have any contrast requirements[^1.4.3]                                                                                   |
+| Link vs. Text                           | `3:1`           | Links need to have a `4.5:1` ratio against the background AND a `3:1` ratio against surrounding text or be underlined[^link]                      |
+| Placeholder text vs. bg                 | `4.5:1`         | Placeholder text must have a `4.5:1` contrast to the background e.g. input background[^placeholder], or a visible text label[^1.4.3] must be used |
+| Disabled text vs. bg                    | `none`          | Disabled text (text in a disabled control) does not have any contrast requirements[^1.4.3]                                                        |
+| Decorative text<sup>\*\*</sup> vs. bg   | `none`          | Decorative text does not have any contrast requirements[^1.4.3]                                                                                   |
 
-<sup>*</sup> _Backgrounds is any color an element like text is placed on, like the page background, the background color of a `card` component or the fill of an `input` field._  
+<sup>*</sup> *Backgrounds is any color an element like text is placed on, like the page background, the background color of a `card` component or the fill of an `input` field.*  
 <sup>\*\*</sup>*Decorative text is defined as serving only an aesthetic purpose, providing no information, and having no functionality.[^pure-decoration]\*
 
 ### State contrast
