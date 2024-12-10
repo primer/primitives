@@ -27,7 +27,6 @@ export const css: PlatformInitializer = (outputFile, prefix, buildPath, options)
     preprocessors: ['themeOverrides'],
     transforms: [
       'name/pathToKebabCase',
-      'color/hex',
       'colorAlpha/css',
       'cubicBezier/css',
       'dimension/rem',

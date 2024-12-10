@@ -8,6 +8,8 @@ export const cssColorMix = (colorA: string, colorB: string, colorBPercent: numbe
       `Invalid argument for "cssColorMix", colorBPercent must be between 0 and 1, ${colorBPercent} provided.`,
     )
   }
+  if (colorBPercent === 0) return colorA
+  if (colorBPercent === 1) return colorB
 
   return `color-mix(in srgb, ${colorA}, ${colorB} ${colorBPercent * 100}%)`
 }
@@ -19,6 +21,6 @@ export const colorAlphaToCss: Transform = {
   filter: isColorWithAlpha,
   transform: (token: TransformedToken) => {
     if (!token.alpha || token.alpha === null) return getTokenValue(token)
-    return cssColorMix(getTokenValue(token), 'transparent', token.alpha)
+    return cssColorMix(getTokenValue(token), 'transparent', 1 - token.alpha)
   },
 }

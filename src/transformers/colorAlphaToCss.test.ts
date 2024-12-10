@@ -19,9 +19,9 @@ describe('Transformer: colorAlphaToCss', () => {
       getMockToken({$value: '#34343466', alpha: 0.1}),
     ]
     const expectedOutput = [
-      'color-mix(#123, transparent 25%)',
-      'color-mix(#343434, transparent 60%)',
-      'color-mix(#34343466, transparent 10%)',
+      'color-mix(in srgb, #123, transparent 75%)',
+      'color-mix(in srgb, #343434, transparent 40%)',
+      'color-mix(in srgb, #34343466, transparent 90%)',
     ]
     expect(input.map(item => colorAlphaToCss.transform(item, {}, {}))).toStrictEqual(expectedOutput)
   })
@@ -31,8 +31,8 @@ describe('Transformer: colorAlphaToCss', () => {
       getMockToken({$value: '{base.color.green.5}'}),
       getMockToken({$value: '{base.color.red.5}', alpha: 0.25}),
     ]
-    const expectedOutput = ['{base.color.green.5}', 'color-mix({base.color.red.5}, transparent 25%)']
-    expect(input.map(item => colorAlphaToCss.transform(item, {}, {}))).toStrictEqual(expectedOutput)
+    const expectedOutput = ['{base.color.green.5}', 'color-mix(in srgb, {base.color.red.5}, transparent 75%)']
+    expect(input.map(item => colorAlphaToCss.transform(item as TransformedToken, {}, {}))).toStrictEqual(expectedOutput)
   })
 
   it('transforms color-mix with and without alpha value', () => {
@@ -42,7 +42,7 @@ describe('Transformer: colorAlphaToCss', () => {
     ]
     const expectedOutput = [
       'color-mix(in srgb, {base.color.red.5}, transparent 25%)',
-      'color-mix(in srgb, color-mix(in srgb, {base.color.red.5}, transparent 25%), transparent 35%)',
+      'color-mix(in srgb, color-mix(in srgb, {base.color.red.5}, transparent 25%), transparent 65%)',
     ]
     expect(input.map(item => colorAlphaToCss.transform(item as TransformedToken, {}, {}))).toStrictEqual(expectedOutput)
   })
