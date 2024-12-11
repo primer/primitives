@@ -1,4 +1,19 @@
 {
+  highlight: {
+    neutral: {
+      bgColor: {
+        $value: '{base.color.yellow.0}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            group: 'component',
+            scopes: ['bgColor'],
+          },
+        },
+      },
+    },
+  },
   avatar: {
     bgColor: {
       $value: '{base.color.neutral.0}',
