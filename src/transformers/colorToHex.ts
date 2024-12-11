@@ -15,7 +15,7 @@ export const colorToHex: Transform = {
   transitive: true,
   filter: isColor,
   transform: (token: TransformedToken) => {
-    const alphaValue = token.alpha ?? token.$extensions?.alpha
+    const alphaValue = token.alpha
     if (alphaValue === null || alphaValue === undefined) {
       return toHex(getTokenValue(token))
     }

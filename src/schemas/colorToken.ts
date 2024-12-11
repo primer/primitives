@@ -21,7 +21,6 @@ export const colorToken = baseToken
       .optional(),
     $extensions: z
       .object({
-        alpha: z.number().min(0).max(1).optional().nullable(),
         'org.primer.figma': z
           .object({
             collection: collection([
