@@ -36,7 +36,7 @@ export const borderToCss: Transform = {
         `Invalid border token property ${JSON.stringify(value)}. Must be an object with color, width and style properties.`,
       )
     }
-    /* color | style | width */
-    return `${value.color} ${value.style} ${value.width}`
+    /* width | style | color */
+    return `${value.width} ${value.style} ${value.color}`
   },
 }

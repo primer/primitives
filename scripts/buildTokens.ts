@@ -204,7 +204,7 @@ export const buildDesignTokens = async (buildOptions: ConfigGeneratorOptions): P
         `src/tokens/functional/shadow/light.json5`,
         `src/tokens/functional/border/*.json5`,
       ],
-      include: [`src/tokens/base/color/light/light.json5`],
+      include: [`src/tokens/base/color/light/light.json5`, 'src/tokens/functional/size/border.json5'],
     },
     // typography
     {
