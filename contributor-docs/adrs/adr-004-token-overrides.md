@@ -35,6 +35,12 @@ This ADR provides a solution for thoses cases by allowing to specifiy specific o
 }
 ```
 
+### Default value
+
+The `$value` property always represents the `light` theme value, which we define to be the default. Any theme that does not specify an override, will use the default value from the `$value` property.
+
+### Advanced overrides
+
 To allow for more advanced overrides, you can provide an object with multiple properties instead of a value string.
 
 ```json5
