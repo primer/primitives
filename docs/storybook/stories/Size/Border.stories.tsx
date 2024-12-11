@@ -4,6 +4,7 @@ import {SizeTokenSwatch} from '../StorybookComponents/SizeTokenSwatch/SizeTokenS
 import {DataTable, Table} from '@primer/react/drafts'
 import {InlineCode} from '../StorybookComponents/InlineCode/InlineCode'
 import {getTokensByName} from '../utilities/getTokensByName'
+import sizeTokens from '../../../../dist/docs/functional/size/border.json'
 
 export default {
   title: 'Size/Functional/Border',
