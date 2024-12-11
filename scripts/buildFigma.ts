@@ -78,12 +78,10 @@ const buildFigma = async (buildOptions: ConfigGeneratorOptions): Promise<void> =
    * Size tokens
    * ----------------------------------- */
   const sizeFiles = [
-    'src/tokens/base/size/size.json',
-    'src/tokens/functional/size/breakpoints.json',
-    'src/tokens/functional/size/size.json',
-    'src/tokens/functional/size/border.json',
-    // 'src/tokens/functional/size/size-fine.json',
-    // 'src/tokens/functional/size/size-coarse.json',
+    'src/tokens/base/size/size.json5',
+    'src/tokens/functional/size/breakpoints.json5',
+    'src/tokens/functional/size/size.json5',
+    'src/tokens/functional/size/border.json5',
   ]
   //
   const sizeExtended = await PrimerStyleDictionary.extend({
@@ -101,7 +99,7 @@ const buildFigma = async (buildOptions: ConfigGeneratorOptions): Promise<void> =
    * ----------------------------------- */
   //
   const typeExtended = await PrimerStyleDictionary.extend({
-    source: ['src/tokens/base/typography/typography.json', 'src/tokens/functional/typography/typography.json'],
+    source: ['src/tokens/base/typography/typography.json5', 'src/tokens/functional/typography/typography.json5'],
     include: [],
     platforms: {
       figma: figma(`figma/typography/typography.json`, buildOptions.prefix, buildOptions.buildPath),

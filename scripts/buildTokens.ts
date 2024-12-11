@@ -30,7 +30,7 @@ const getStyleDictionaryConfig: StyleDictionaryConfigGenerator = (
   include,
   log: {
     warnings: 'disabled', // 'warn' | 'error' | 'disabled'
-    verbosity: 'silent', // 'default' | 'silent' | 'verbose'
+    verbosity: 'verbose', // 'default' | 'silent' | 'verbose'
     errors: {
       brokenReferences: 'throw', // 'throw' | 'console'
     },
@@ -106,9 +106,9 @@ export const buildDesignTokens = async (buildOptions: ConfigGeneratorOptions): P
     for (const file of sizeFiles) {
       const extendedSD = await PrimerStyleDictionary.extend(
         getStyleDictionaryConfig(
-          `functional/size/${file.replace('src/tokens/functional/size/', '').replace('.json', '')}`,
+          `functional/size/${file.replace('src/tokens/functional/size/', '').replace('.json5', '')}`,
           [file],
-          ['src/tokens/base/size/size.json', ...sizeFiles],
+          ['src/tokens/base/size/size.json5', ...sizeFiles],
           buildOptions,
         ),
       )
@@ -117,7 +117,7 @@ export const buildDesignTokens = async (buildOptions: ConfigGeneratorOptions): P
     // build base scales
     const SdBaseSize = await PrimerStyleDictionary.extend(
       // using includes as source
-      getStyleDictionaryConfig(`base/size/size`, ['src/tokens/base/size/size.json'], [], {
+      getStyleDictionaryConfig(`base/size/size`, ['src/tokens/base/size/size.json5'], [], {
         buildPath: buildOptions.buildPath,
         prefix: undefined,
       }),
@@ -134,8 +134,8 @@ export const buildDesignTokens = async (buildOptions: ConfigGeneratorOptions): P
     const extendedSD = await PrimerStyleDictionary.extend(
       getStyleDictionaryConfig(
         `functional/typography/typography`,
-        [`src/tokens/functional/typography/*.json`],
-        [`src/tokens/base/typography/*.json`],
+        [`src/tokens/functional/typography/*.json5`],
+        [`src/tokens/base/typography/*.json5`],
         buildOptions,
         {
           css: css(`css/functional/typography/typography.css`, buildOptions.prefix, buildOptions.buildPath, {
@@ -149,7 +149,7 @@ export const buildDesignTokens = async (buildOptions: ConfigGeneratorOptions): P
     await extendedSD.buildAllPlatforms()
 
     const SdTypo = await PrimerStyleDictionary.extend(
-      getStyleDictionaryConfig(`base/typography/typography`, [`src/tokens/base/typography/*.json`], [], buildOptions),
+      getStyleDictionaryConfig(`base/typography/typography`, [`src/tokens/base/typography/*.json5`], [], buildOptions),
     )
     await SdTypo.buildAllPlatforms()
   } catch (e) {
@@ -202,21 +202,21 @@ export const buildDesignTokens = async (buildOptions: ConfigGeneratorOptions): P
         `src/tokens/base/color/light/display-light.json5`,
         `src/tokens/functional/color/light/*.json5`,
         `src/tokens/functional/shadow/light.json5`,
-        `src/tokens/functional/border/light.json5`,
+        `src/tokens/functional/border/*.json5`,
       ],
       include: [`src/tokens/base/color/light/light.json5`],
     },
     // typography
     {
       filename: 'typography',
-      source: [`src/tokens/base/typography/*.json`, `src/tokens/functional/typography/*.json`],
-      include: [`src/tokens/base/typography/*.json`],
+      source: [`src/tokens/base/typography/*.json5`, `src/tokens/functional/typography/*.json5`],
+      include: [`src/tokens/base/typography/*.json5`],
     },
     // size
     {
       filename: 'size',
-      source: [`src/tokens/base/size/*.json`, `src/tokens/functional/size/*.json`],
-      include: [`src/tokens/base/size/*.json`],
+      source: [`src/tokens/base/size/*.json5`, `src/tokens/functional/size/*.json5`],
+      include: [`src/tokens/base/size/*.json5`],
     },
     // motion
     {

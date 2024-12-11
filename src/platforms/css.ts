@@ -53,8 +53,8 @@ export const css: PlatformInitializer = (outputFile, prefix, buildPath, options)
           options?.themed === true &&
           token.$type !== 'custom-viewportRange' &&
           !isFromFile(token, [
-            'src/tokens/functional/size/size-coarse.json',
-            'src/tokens/functional/size/size-fine.json',
+            'src/tokens/functional/size/size-coarse.json5',
+            'src/tokens/functional/size/size-fine.json5',
           ]),
         options: {
           showFileHeader: false,
@@ -72,8 +72,8 @@ export const css: PlatformInitializer = (outputFile, prefix, buildPath, options)
           options?.themed !== true &&
           token.$type !== 'custom-viewportRange' &&
           !isFromFile(token, [
-            'src/tokens/functional/size/size-coarse.json',
-            'src/tokens/functional/size/size-fine.json',
+            'src/tokens/functional/size/size-coarse.json5',
+            'src/tokens/functional/size/size-fine.json5',
           ]),
         options: {
           showFileHeader: false,
@@ -95,8 +95,8 @@ export const css: PlatformInitializer = (outputFile, prefix, buildPath, options)
         filter: token =>
           isSource(token) &&
           isFromFile(token, [
-            'src/tokens/functional/size/size-coarse.json',
-            'src/tokens/functional/size/size-fine.json',
+            'src/tokens/functional/size/size-coarse.json5',
+            'src/tokens/functional/size/size-fine.json5',
           ]),
         options: {
           descriptions: false,
