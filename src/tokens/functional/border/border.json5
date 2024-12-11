@@ -9,4 +9,64 @@
       $type: 'border',
     },
   },
+  border: {
+    default: {
+      $value: {
+        color: '{borderColor.default}',
+        style: 'solid',
+        width: '{borderWidth.default}',
+      },
+      $type: 'border',
+    },
+    muted: {
+      $value: {
+        color: '{borderColor.muted}',
+        style: 'solid',
+        width: '{borderWidth.default}',
+      },
+      $type: 'border',
+    },
+    emphasis: {
+      $value: {
+        color: '{borderColor.emphasis}',
+        style: 'solid',
+        width: '{borderWidth.default}',
+      },
+      $type: 'border',
+    },
+    disabled: {
+      $value: {
+        color: '{borderColor.disabled}',
+        style: 'solid',
+        width: '{borderWidth.default}',
+      },
+      $type: 'border',
+    },
+    transparent: {
+      $value: {
+        color: '{borderColor.transparent}',
+        style: 'solid',
+        width: '{borderWidth.default}',
+      },
+      $type: 'border',
+    },
+    accent: {
+      emphasis: {
+        $value: {
+          color: '{borderColor.accent.emphasis}',
+          style: 'solid',
+          width: '{borderWidth.default}',
+        },
+        $type: 'border',
+      },
+      muted: {
+        $value: {
+          color: '{borderColor.accent.muted}',
+          style: 'solid',
+          width: '{borderWidth.default}',
+        },
+        $type: 'border',
+      },
+    },
+  },
 }

@@ -15,12 +15,12 @@
     },
   },
   borderWidth: {
-    default: {
-      $value: '{borderWidth.thin}',
-      $type: 'string',
-    },
     thin: {
       $value: 'max(1px, 0.0625rem)',
+      $type: 'string',
+    },
+    default: {
+      $value: '{borderWidth.thin}',
       $type: 'string',
     },
     thick: {
