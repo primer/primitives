@@ -22,20 +22,12 @@
       $type: 'color',
     },
     accent: {
-      $value: '{base.color.blue.3}',
+      $value: '#74B9FF',
       $type: 'color',
-      mix: {
-        color: '{base.color.blue.2}',
-        weight: 0.08,
-      },
     },
     success: {
-      $value: '{base.color.green.3}',
+      $value: '#2BD853',
       $type: 'color',
-      mix: {
-        color: '{base.color.green.2}',
-        weight: 0.08,
-      },
     },
     danger: {
       $value: '{base.color.red.3}',
@@ -46,20 +38,12 @@
       $type: 'color',
     },
     done: {
-      $value: '{base.color.purple.3}',
+      $value: '#D3ABFF',
       $type: 'color',
-      mix: {
-        color: '{base.color.purple.2}',
-        weight: 0.5,
-      },
     },
     sponsors: {
-      $value: '{base.color.pink.3}',
+      $value: '#FF90C8',
       $type: 'color',
-      mix: {
-        color: '{base.color.pink.2}',
-        weight: 0.08,
-      },
     },
   },
   bgColor: {
@@ -288,7 +272,6 @@
       emphasis: {
         $value: '{borderColor.emphasis}',
         $type: 'color',
-        mix: null,
       },
     },
     transparent: {
@@ -327,17 +310,23 @@
           $type: 'color',
         },
         active: {
-          $value: '{bgColor.danger.emphasis}',
+          $value: '#c51120',
           $type: 'color',
           alpha: 1,
-          mix: {
-            color: '{base.color.red.7}',
-            weight: 0.4,
-          },
         },
       },
     },
     checked: {
+      bgColor: {
+        hover: {
+          $value: '#2b64c1',
+          $type: 'color',
+        },
+        active: {
+          $value: '#3c79d0',
+          $type: 'color',
+        },
+      },
       borderColor: {
         rest: {
           $value: '{base.color.blue.2}',
@@ -384,6 +373,20 @@
   },
   button: {
     primary: {
+      bgColor: {
+        hover: {
+          $value: '#08792b',
+          $type: 'color',
+        },
+        active: {
+          $value: '#109135',
+          $type: 'color',
+        },
+        disabled: {
+          $value: '#048f2f',
+          $type: 'color',
+        },
+      },
       borderColor: {
         rest: {
           $value: '{base.color.green.2}',
@@ -423,13 +426,11 @@
           $value: '{base.color.neutral.2}',
           $type: 'color',
           alpha: null,
-          mix: null,
         },
         active: {
           $value: '{base.color.neutral.3}',
           $type: 'color',
           alpha: null,
-          mix: null,
         },
       },
     },
@@ -468,7 +469,12 @@
         active: {
           $value: '{bgColor.danger.emphasis}',
           $type: 'color',
-          mix: null,
+        },
+      },
+      iconColor: {
+        rest: {
+          $value: '#ffb1af',
+          $type: 'color',
         },
       },
     },
@@ -490,6 +496,18 @@
           $value: '{base.color.neutral.0}',
           $type: 'color',
           alpha: 0.15,
+        },
+        hover: {
+          $value: '#08792b',
+          $type: 'color',
+        },
+        active: {
+          $value: '#109135',
+          $type: 'color',
+        },
+        disabled: {
+          $value: '#048f2f',
+          $type: 'color',
         },
       },
     },
@@ -943,6 +961,17 @@
     fgColor: {
       $value: '{fgColor.onInverse}',
       $type: 'color',
+    },
+  },
+  reactionButton: {
+    selected: {
+      bgColor: {
+        hover: {
+          $value: '#5dadff',
+          $type: 'color',
+          alpha: 0.36,
+        },
+      },
     },
   },
   skeletonLoader: {

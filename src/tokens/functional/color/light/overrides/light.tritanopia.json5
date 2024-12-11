@@ -31,7 +31,6 @@
       emphasis: {
         $value: '{base.color.blue.5}',
         $type: 'color',
-        mix: null,
       },
     },
     open: {
@@ -198,28 +197,16 @@
     primary: {
       bgColor: {
         hover: {
-          $value: '{bgColor.success.emphasis}',
+          $value: '#0864d1',
           $type: 'color',
-          mix: {
-            color: '{base.color.blue.6}',
-            weight: 0.2,
-          },
         },
         active: {
-          $value: '{bgColor.success.emphasis}',
+          $value: '#075fc8',
           $type: 'color',
-          mix: {
-            color: '{base.color.blue.6}',
-            weight: 0.4,
-          },
         },
         disabled: {
-          $value: '{base.color.blue.4}',
+          $value: '#92caff',
           $type: 'color',
-          mix: {
-            color: '{base.color.blue.0}',
-            weight: 0.6,
-          },
         },
       },
       shadow: {

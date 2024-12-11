@@ -42,6 +42,28 @@
       $type: 'color',
       alpha: 1,
     },
+    accent: {
+      $value: '#478be6',
+      $type: 'color',
+    },
+  },
+  borderColor: {
+    default: {
+      $value: '{base.color.neutral.4}',
+      $type: 'color',
+    },
+    muted: {
+      $value: '{base.color.neutral.5}',
+      $type: 'color',
+    },
+    inset: {
+      $value: '{base.color.neutral.3}',
+      $type: 'color',
+    },
+    disabled: {
+      $value: '{base.color.neutral.6}',
+      $type: 'color',
+    },
   },
   control: {
     bgColor: {
@@ -60,8 +82,13 @@
     },
     borderColor: {
       rest: {
-        $value: '{borderColor.default}',
+        $value: '#3d444d',
         $type: 'color',
+      },
+      disabled: {
+        $value: '{base.color.neutral.8}',
+        $type: 'color',
+        alpha: 0.1,
       },
     },
     transparent: {
@@ -84,6 +111,28 @@
       },
     },
   },
+  checked: {
+    bgColor: {
+      hover: {
+        $value: '#3876d3',
+        $type: 'color',
+      },
+      active: {
+        $value: '#3f7fdb',
+        $type: 'color',
+      },
+    },
+    borderColor: {
+      hover: {
+        $value: '#3876d3',
+        $type: 'color',
+      },
+      active: {
+        $value: '#3f7fdb',
+        $type: 'color',
+      },
+    },
+  },
   controlTrack: {
     bgColor: {
       rest: {
@@ -95,6 +144,12 @@
         $type: 'color',
       },
       active: {
+        $value: '{base.color.neutral.7}',
+        $type: 'color',
+      },
+    },
+    borderColor: {
+      rest: {
         $value: '{base.color.neutral.7}',
         $type: 'color',
       },
@@ -132,13 +187,23 @@
   button: {
     primary: {
       bgColor: {
-        disabled: {
-          $value: '{base.color.green.4}',
+        hover: {
+          $value: '#3b8640',
           $type: 'color',
-          mix: {
-            color: '{base.color.green.3}',
-            weight: 0.6,
-          },
+        },
+        active: {
+          $value: '#428f46',
+          $type: 'color',
+        },
+        disabled: {
+          $value: '#50a254',
+          $type: 'color',
+        },
+      },
+      borderColor: {
+        disabled: {
+          $value: '#50a254',
+          $type: 'color',
         },
       },
       fgColor: {
@@ -174,6 +239,14 @@
       fgColor: {
         $value: '{base.color.neutral.8}',
         $type: 'color',
+      },
+    },
+    outline: {
+      fgColor: {
+        disabled: {
+          $value: '#478be680',
+          $type: 'color',
+        },
       },
     },
   },

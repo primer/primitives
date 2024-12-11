@@ -1,6 +1,5 @@
 export {borderToCss} from './borderToCss.js'
 export {colorToHex} from './colorToHex.js'
-export {colorToHexMix} from './colorToHexMix.js'
 export {colorToRgbAlpha} from './colorToRgbAlpha.js'
 export {colorToRgbaFloat} from './colorToRgbaFloat.js'
 export {cubicBezierToCss} from './cubicBezierToCss.js'
