@@ -508,66 +508,6 @@
       },
     },
   },
-  diffBlob: {
-    additionLine: {
-      fgColor: {
-        $value: '{fgColor.onEmphasis}',
-        $type: 'color',
-      },
-      bgColor: {
-        $value: '{bgColor.success.muted}',
-        $type: 'color',
-        alpha: 0.2,
-      },
-    },
-    additionWord: {
-      bgColor: {
-        $value: '{bgColor.success.emphasis}',
-        $type: 'color',
-        alpha: 1,
-      },
-    },
-    deletionLine: {
-      fgColor: {
-        $value: '{fgColor.onEmphasis}',
-        $type: 'color',
-      },
-      bgColor: {
-        $value: '{bgColor.danger.muted}',
-        $type: 'color',
-        alpha: 0.2,
-      },
-    },
-    deletionWord: {
-      bgColor: {
-        $value: '{bgColor.danger.emphasis}',
-        $type: 'color',
-        alpha: 1,
-      },
-    },
-    hunkNum: {
-      bgColor: {
-        rest: {
-          $value: '{base.color.blue.4}',
-          $type: 'color',
-          alpha: 0.4,
-        },
-      },
-    },
-    hunkLine: {
-      bgColor: {
-        $value: '{bgColor.accent.muted}',
-        $type: 'color',
-        alpha: 0.2,
-      },
-    },
-    expander: {
-      iconColor: {
-        $value: '{fgColor.default}',
-        $type: 'color',
-      },
-    },
-  },
   codeMirror: {
     selection: {
       bgColor: {
