@@ -11,7 +11,7 @@ describe('Transformer: borderToCss', () => {
       },
     })
 
-    const expectedOutput = '#000000 solid 1px'
+    const expectedOutput = '1px solid #000000'
     expect(borderToCss.transform(input, {}, {})).toStrictEqual(expectedOutput)
   })
 
