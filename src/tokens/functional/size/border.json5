@@ -15,21 +15,21 @@
     },
   },
   borderWidth: {
-    thin: {
-      $value: 'max(1px, 0.0625rem)',
-      $type: 'string',
-    },
     default: {
       $value: '{borderWidth.thin}',
-      $type: 'string',
+      $type: 'dimension',
+    },
+    thin: {
+      $value: '1px',
+      $type: 'dimension',
     },
     thick: {
-      $value: 'max(2px, 0.125rem)',
-      $type: 'string',
+      $value: '2px',
+      $type: 'dimension',
     },
     thicker: {
-      $value: 'max(4px, 0.25rem)',
-      $type: 'string',
+      $value: '4px',
+      $type: 'dimension',
     },
   },
   borderRadius: {
