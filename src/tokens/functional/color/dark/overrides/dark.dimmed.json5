@@ -49,20 +49,29 @@
   },
   borderColor: {
     default: {
-      $value: '{base.color.neutral.4}',
+      $value: '{base.color.neutral.7}',
       $type: 'color',
     },
     muted: {
-      $value: '{base.color.neutral.5}',
+      $value: '{base.color.neutral.7}',
       $type: 'color',
+      alpha: 0.7,
     },
     inset: {
       $value: '{base.color.neutral.3}',
       $type: 'color',
     },
     disabled: {
-      $value: '{base.color.neutral.6}',
+      $value: '{base.color.neutral.8}',
       $type: 'color',
+      alpha: 0.1,
+    },
+    neutral: {
+      muted: {
+        $value: '{base.color.neutral.7}',
+        $type: 'color',
+        alpha: 0.7,
+      },
     },
   },
   control: {
