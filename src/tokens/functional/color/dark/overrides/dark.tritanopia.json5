@@ -80,9 +80,7 @@
       muted: {
         $value: '{base.color.blue.4}',
         $type: 'color',
-        $extensions: {
-          alpha: 0.4,
-        },
+        alpha: 0.4,
       },
       emphasis: {
         $value: '{base.color.blue.5}',
@@ -93,9 +91,7 @@
       muted: {
         $value: '{base.color.red.4}',
         $type: 'color',
-        $extensions: {
-          alpha: 0.4,
-        },
+        alpha: 0.4,
       },
       emphasis: {
         $value: '{base.color.red.5}',
@@ -106,9 +102,7 @@
       muted: {
         $value: '{base.color.red.4}',
         $type: 'color',
-        $extensions: {
-          alpha: 0.4,
-        },
+        alpha: 0.4,
       },
       emphasis: {
         $value: '{base.color.red.5}',
@@ -119,9 +113,7 @@
       muted: {
         $value: '{borderColor.default}',
         $type: 'color',
-        $extensions: {
-          alpha: 0.4,
-        },
+        alpha: 0.4,
       },
       emphasis: {
         $value: '{borderColor.emphasis}',
@@ -134,18 +126,14 @@
       bgColor: {
         $value: '{base.color.blue.3}',
         $type: 'color',
-        $extensions: {
-          alpha: 0.3,
-        },
+        alpha: 0.3,
       },
     },
     additionWord: {
       bgColor: {
         $value: '{base.color.blue.4}',
         $type: 'color',
-        $extensions: {
-          alpha: 0.4,
-        },
+        alpha: 0.4,
       },
     },
     hunkNum: {
@@ -153,16 +141,12 @@
         rest: {
           $value: '{base.color.neutral.6}',
           $type: 'color',
-          $extensions: {
-            alpha: 1,
-          },
+          alpha: 1,
         },
         hover: {
           $value: '{base.color.neutral.8}',
           $type: 'color',
-          $extensions: {
-            alpha: 1,
-          },
+          alpha: 1,
         },
       },
     },
@@ -170,9 +154,7 @@
       bgColor: {
         $value: '{base.color.neutral.3}',
         $type: 'color',
-        $extensions: {
-          alpha: 1,
-        },
+        alpha: 1,
       },
     },
   },

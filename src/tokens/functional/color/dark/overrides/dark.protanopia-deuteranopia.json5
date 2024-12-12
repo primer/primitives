@@ -60,9 +60,7 @@
       muted: {
         $value: '{bgColor.neutral.muted}',
         $type: 'color',
-        $extensions: {
-          alpha: 0.1,
-        },
+        alpha: 0.1,
       },
       emphasis: {
         $value: '{bgColor.neutral.emphasis}',
@@ -86,9 +84,7 @@
       muted: {
         $value: '{borderColor.muted}',
         $type: 'color',
-        $extensions: {
-          alpha: 0.4,
-        },
+        alpha: 0.4,
       },
       emphasis: {
         $value: '{borderColor.emphasis}',
@@ -231,16 +227,12 @@
         rest: {
           $value: '{base.color.neutral.6}',
           $type: 'color',
-          $extensions: {
-            alpha: 1,
-          },
+          alpha: 1,
         },
         hover: {
           $value: '{base.color.neutral.8}',
           $type: 'color',
-          $extensions: {
-            alpha: 1,
-          },
+          alpha: 1,
         },
       },
     },
@@ -248,9 +240,7 @@
       bgColor: {
         $value: '{base.color.neutral.3}',
         $type: 'color',
-        $extensions: {
-          alpha: 1,
-        },
+        alpha: 1,
       },
     },
   },

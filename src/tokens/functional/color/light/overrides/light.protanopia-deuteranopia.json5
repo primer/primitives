@@ -80,9 +80,7 @@
       muted: {
         $value: '{borderColor.default}',
         $type: 'color',
-        $extensions: {
-          alpha: 0.4,
-        },
+        alpha: 0.4,
       },
       emphasis: {
         $value: '{borderColor.emphasis}',
