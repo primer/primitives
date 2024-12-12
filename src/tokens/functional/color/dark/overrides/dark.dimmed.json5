@@ -57,10 +57,6 @@
       $type: 'color',
       alpha: 0.7,
     },
-    inset: {
-      $value: '{base.color.neutral.3}',
-      $type: 'color',
-    },
     disabled: {
       $value: '{base.color.neutral.8}',
       $type: 'color',
@@ -119,26 +115,26 @@
         },
       },
     },
-  },
-  checked: {
-    bgColor: {
-      hover: {
-        $value: '#3876d3',
-        $type: 'color',
+    checked: {
+      bgColor: {
+        hover: {
+          $value: '#3876d3',
+          $type: 'color',
+        },
+        active: {
+          $value: '#3f7fdb',
+          $type: 'color',
+        },
       },
-      active: {
-        $value: '#3f7fdb',
-        $type: 'color',
-      },
-    },
-    borderColor: {
-      hover: {
-        $value: '#3876d3',
-        $type: 'color',
-      },
-      active: {
-        $value: '#3f7fdb',
-        $type: 'color',
+      borderColor: {
+        hover: {
+          $value: '#3876d3',
+          $type: 'color',
+        },
+        active: {
+          $value: '#3f7fdb',
+          $type: 'color',
+        },
       },
     },
   },
@@ -191,6 +187,11 @@
     bgColor: {
       $value: '{base.color.neutral.5}',
       $type: 'color',
+    },
+    borderColor: {
+      $value: '{base.color.neutral.7}',
+      $type: 'color',
+      alpha: 0.7,
     },
   },
   button: {
