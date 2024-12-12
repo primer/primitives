@@ -8,7 +8,6 @@ export const json: PlatformInitializer = (outputFile, prefix, buildPath, options
   preprocessors: ['themeOverrides'],
   transforms: [
     'color/hex',
-    'color/hexMix',
     'dimension/rem',
     'shadow/css',
     'border/css',

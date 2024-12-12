@@ -67,6 +67,13 @@
         $type: 'color',
       },
     },
+    sponsors: {
+      muted: {
+        $value: '#db61a2',
+        $type: 'color',
+        alpha: 0.1,
+      },
+    },
   },
   borderColor: {
     success: {
@@ -146,7 +153,6 @@
         rest: {
           $value: '{base.color.neutral.6}',
           $type: 'color',
-          mix: null,
           $extensions: {
             alpha: 1,
           },
@@ -154,7 +160,6 @@
         hover: {
           $value: '{base.color.neutral.8}',
           $type: 'color',
-          mix: null,
           $extensions: {
             alpha: 1,
           },
@@ -165,7 +170,6 @@
       bgColor: {
         $value: '{base.color.neutral.3}',
         $type: 'color',
-        mix: null,
         $extensions: {
           alpha: 1,
         },
@@ -186,28 +190,38 @@
     primary: {
       bgColor: {
         hover: {
-          $value: '{bgColor.success.emphasis}',
+          $value: '#2a7aef',
           $type: 'color',
-          mix: {
-            color: '{base.color.blue.3}',
-            weight: 0.2,
-          },
         },
         active: {
-          $value: '{bgColor.success.emphasis}',
+          $value: '#3685f3',
           $type: 'color',
-          mix: {
-            color: '{base.color.blue.3}',
-            weight: 0.4,
-          },
         },
         disabled: {
-          $value: '{base.color.blue.4}',
+          $value: '#5fabfe',
           $type: 'color',
-          mix: {
-            color: '{base.color.blue.2}',
-            weight: 0.6,
-          },
+        },
+      },
+      borderColor: {
+        disabled: {
+          $value: '#5fabfe',
+          $type: 'color',
+        },
+      },
+    },
+    outline: {
+      bgColor: {
+        hover: {
+          $value: '#262c36',
+          $type: 'color',
+        },
+        active: {
+          $value: '#0d419d',
+          $type: 'color',
+        },
+        disabled: {
+          $value: '#212830',
+          $type: 'color',
         },
       },
     },

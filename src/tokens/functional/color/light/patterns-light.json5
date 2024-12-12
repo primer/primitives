@@ -398,7 +398,7 @@
           },
         },
         hover: {
-          $value: '{bgColor.accent.emphasis}',
+          $value: '#0860ca',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -406,14 +406,10 @@
               group: 'component',
               scopes: ['bgColor'],
             },
-          },
-          mix: {
-            color: '{base.color.blue.7}',
-            weight: 0.2,
           },
         },
         active: {
-          $value: '{bgColor.accent.emphasis}',
+          $value: '#0757ba',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -421,10 +417,6 @@
               group: 'component',
               scopes: ['bgColor'],
             },
-          },
-          mix: {
-            color: '{base.color.blue.7}',
-            weight: 0.4,
           },
         },
         disabled: {
@@ -881,7 +873,7 @@
           },
         },
         hover: {
-          $value: '{bgColor.success.emphasis}',
+          $value: '#1c8139',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -889,14 +881,10 @@
               group: 'component (internal)',
               scopes: ['bgColor'],
             },
-          },
-          mix: {
-            color: '{base.color.green.6}',
-            weight: 0.2,
           },
         },
         active: {
-          $value: '{bgColor.success.emphasis}',
+          $value: '#197935',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -904,14 +892,10 @@
               group: 'component (internal)',
               scopes: ['bgColor'],
             },
-          },
-          mix: {
-            color: '{base.color.green.6}',
-            weight: 0.4,
           },
         },
         disabled: {
-          $value: '{base.color.green.4}',
+          $value: '#95d8a6',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -919,10 +903,6 @@
               group: 'component (internal)',
               scopes: ['bgColor'],
             },
-          },
-          mix: {
-            color: '{base.color.green.0}',
-            weight: 0.6,
           },
         },
       },
@@ -1210,7 +1190,7 @@
           },
         },
         active: {
-          $value: '{bgColor.accent.emphasis}',
+          $value: '#0757ba',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -1218,10 +1198,6 @@
               group: 'component (internal)',
               scopes: ['bgColor'],
             },
-          },
-          mix: {
-            color: '{base.color.blue.7}',
-            weight: 0.4,
           },
         },
         disabled: {
@@ -1357,7 +1333,7 @@
           },
         },
         active: {
-          $value: '{base.color.red.6}',
+          $value: '#8b0820',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -1365,10 +1341,6 @@
               group: 'component (internal)',
               scopes: ['bgColor'],
             },
-          },
-          mix: {
-            color: '{base.color.red.8}',
-            weight: 0.4,
           },
         },
         disabled: {
@@ -1621,7 +1593,7 @@
       },
       fgColor: {
         rest: {
-          $value: '{base.color.red.5}',
+          $value: '#c21c2c',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -1629,10 +1601,6 @@
               group: 'component (internal)',
               scopes: ['fgColor'],
             },
-          },
-          mix: {
-            color: '{base.color.red.6}',
-            weight: 0.3,
           },
         },
         hover: {
@@ -1676,7 +1644,7 @@
           },
         },
         hover: {
-          $value: '{reactionButton.selected.bgColor.rest}',
+          $value: '#caecff',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -1684,10 +1652,6 @@
               group: 'component (internal)',
               scopes: ['bgColor'],
             },
-          },
-          mix: {
-            color: '{base.color.blue.2}',
-            weight: 0.2,
           },
         },
       },

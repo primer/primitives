@@ -15,7 +15,6 @@ describe('PrimerStyleDictionary', async () => {
           transforms: [
             'name/pathToKebabCase',
             'color/hex',
-            'color/hexMix',
             'dimension/rem',
             'duration/css',
             'shadow/css',
@@ -40,7 +39,6 @@ describe('PrimerStyleDictionary', async () => {
           usesDtcg: true,
           transforms: [
             'color/hex',
-            'color/hexMix',
             'dimension/rem',
             'shadow/css',
             'border/css',
@@ -65,7 +63,6 @@ describe('PrimerStyleDictionary', async () => {
           buildPath: `${buildPath}/js/`,
           transforms: [
             'color/hex',
-            'color/hexMix',
             'dimension/rem',
             'shadow/css',
             'border/css',
@@ -112,7 +109,6 @@ describe('PrimerStyleDictionary', async () => {
           buildPath: `${buildPath}/json/`,
           transforms: [
             'color/hex',
-            'color/hexMix',
             'dimension/rem',
             'shadow/css',
             'border/css',

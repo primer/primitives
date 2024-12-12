@@ -8,7 +8,6 @@ export const javascript: PlatformInitializer = (outputFile, prefix, buildPath, o
   preprocessors: ['themeOverrides'],
   transforms: [
     'color/hex',
-    'color/hexMix',
     'dimension/rem',
     'shadow/css',
     'border/css',

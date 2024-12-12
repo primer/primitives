@@ -182,7 +182,7 @@
       },
     },
     danger: {
-      $value: '{base.color.red.5}',
+      $value: '#d1242f',
       $type: 'color',
       $extensions: {
         'org.primer.figma': {
@@ -193,10 +193,6 @@
             web: 'var(--fgColor-danger) /* utility class: .color-fg-danger */',
           },
         },
-      },
-      mix: {
-        color: '{base.color.red.4}',
-        weight: 0.05,
       },
     },
     closed: {
@@ -442,7 +438,7 @@
         },
       },
       emphasis: {
-        $value: '{base.color.green.4}',
+        $value: '#1f883d',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -453,10 +449,6 @@
               web: 'var(--bgColor-success-emphasis) /* utility class: .color-bg-success-emphasis */',
             },
           },
-        },
-        mix: {
-          color: '{base.color.green.5}',
-          weight: 0.75,
         },
       },
     },
