@@ -778,3 +778,56 @@ export const Tooltip = () => {
     </Table.Container>
   )
 }
+
+export const Treeview = () => {
+  const data = getTokensByName(colorTokens, 'treeViewItem').map(token => {
+    return {
+      id: token.name,
+      ...token,
+    }
+  })
+  return (
+    <Table.Container>
+      <h1 className="sr-only" id="treeViewItem">
+        Tooltip
+      </h1>
+      <DataTable
+        aria-labelledby="treeViewItem"
+        data={data}
+        columns={[
+          {
+            header: 'Sample',
+            field: 'name',
+            rowHeader: true,
+            renderCell: row => {
+              return (
+                <ColorTokenSwatch
+                  bgColor={row.name.includes('bgColor') || row.name.includes('iconColor') ? row.name : undefined}
+                  textColor={row.name.includes('fgColor') ? row.name : undefined}
+                  shadowColor={row.name.includes('shadow') ? row.name : undefined}
+                  borderColor={row.name.includes('borderColor') ? row.name : undefined}
+                />
+              )
+            },
+          },
+          {
+            header: 'Token',
+            field: 'name',
+            rowHeader: true,
+            renderCell: row => {
+              return <InlineCode value={row.name} copyClipboard cssVar />
+            },
+          },
+          {
+            header: 'Output value',
+            field: 'value',
+            rowHeader: true,
+            renderCell: row => {
+              return <p>{row.value}</p>
+            },
+          },
+        ]}
+      />
+    </Table.Container>
+  )
+}

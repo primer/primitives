@@ -1078,7 +1078,7 @@
           },
         },
         disabled: {
-          $value: '{control.transparent.bgColor.disabled}',
+          $value: '{base.color.transparent}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -1113,7 +1113,7 @@
           },
         },
         disabled: {
-          $value: '{control.borderColor.disabled}',
+          $value: '{base.color.transparent}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
