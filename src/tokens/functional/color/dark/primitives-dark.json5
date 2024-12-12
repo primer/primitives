@@ -84,8 +84,8 @@
     disabled: {
       $value: '{base.color.neutral.8}',
       $type: 'color',
+      alpha: 0.6,
       $extensions: {
-        alpha: 0.6,
         'org.primer.figma': {
           collection: 'mode',
 
@@ -592,8 +592,8 @@
       muted: {
         $value: '{base.color.red.4}',
         $type: 'color',
+        alpha: 0.1,
         $extensions: {
-          alpha: 0.1,
           'org.primer.figma': {
             collection: 'mode',
 
@@ -625,8 +625,8 @@
       muted: {
         $value: '{bgColor.danger.muted}',
         $type: 'color',
+        alpha: 0.1,
         $extensions: {
-          alpha: 0.1,
           'org.primer.figma': {
             collection: 'mode',
 
