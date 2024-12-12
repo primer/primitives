@@ -249,11 +249,42 @@
         },
       },
     },
+    danger: {
+      bgColor: {
+        active: {
+          $value: '#c33d38',
+          $type: 'color',
+        },
+      },
+      fgColor: {
+        rest: {
+          $value: '#ea5c53',
+          $type: 'color',
+        },
+      },
+      iconColor: {
+        rest: {
+          $value: '#ea5c53',
+          $type: 'color',
+        },
+      },
+    },
   },
   timelineBadge: {
     bgColor: {
       $value: '{base.color.neutral.4}',
       $type: 'color',
+    },
+  },
+  reactionButton: {
+    selected: {
+      bgColor: {
+        hover: {
+          $value: '#4285e5',
+          $type: 'color',
+          alpha: 0.36,
+        },
+      },
     },
   },
 }
