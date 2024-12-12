@@ -1,5 +1,19 @@
 # @primer/primitives
 
+## 10.1.0
+
+### Minor Changes
+
+- [#1092](https://github.com/primer/primitives/pull/1092) [`a17e9a7`](https://github.com/primer/primitives/commit/a17e9a7ef969df03bc5fb938d511adbc7f56fc09) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Adding new themeOverride preprocessor
+
+- [#1118](https://github.com/primer/primitives/pull/1118) [`1d7def1`](https://github.com/primer/primitives/commit/1d7def1467d7bfeae4d7ce53f056d6cdaf774d14) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Adding composite tokens for borders
+
+### Patch Changes
+
+- [#1117](https://github.com/primer/primitives/pull/1117) [`b516379`](https://github.com/primer/primitives/commit/b516379be8689f2fb687a58e97b95d66bb9e60be) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Add default border and fix wrong dark color token
+
+- [#1121](https://github.com/primer/primitives/pull/1121) [`033336d`](https://github.com/primer/primitives/commit/033336dd328db38c6970473065df4f2572163daa) Thanks [@langermank](https://github.com/langermank)! - Make `invisible` button disabled state background and border transparent
+
 ## 10.0.0
 
 ### Major Changes
