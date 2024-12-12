@@ -3,7 +3,6 @@ import {
   borderToCss,
   colorToRgbAlpha,
   colorToHex,
-  colorToHexMix,
   colorToRgbaFloat,
   cubicBezierToCss,
   dimensionToRem,
@@ -108,8 +107,6 @@ PrimerStyleDictionary.registerFormat({
 PrimerStyleDictionary.registerTransform(colorToRgbAlpha)
 
 PrimerStyleDictionary.registerTransform(colorToRgbaFloat)
-
-PrimerStyleDictionary.registerTransform(colorToHexMix)
 
 PrimerStyleDictionary.registerTransform(colorToHex)
 

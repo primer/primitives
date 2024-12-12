@@ -12,13 +12,6 @@ export const colorToken = baseToken
     $value: z.union([colorHexValue, referenceValue]),
     $type: tokenType('color'),
     alpha: alphaValue.optional().nullable(),
-    mix: z
-      .object({
-        color: z.string(),
-        weight: z.number().min(0).max(1),
-      })
-      .nullable()
-      .optional(),
     $extensions: z
       .object({
         alpha: z.number().min(0).max(1).optional().nullable(),

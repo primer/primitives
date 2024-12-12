@@ -80,27 +80,6 @@ You can create color tokens that inherit a color but have a different alpha valu
 }
 ```
 
-#### Mix
-
-In rare cases, you may need to create a color between two steps in the color scale, e.g. between `gray.4` and `gray.5`. A common example are interactive states, like `hover` where a full step on the color scale would be to much. For those cases you can use the `mix` property.
-
-The `mix` proeprty mixes the color it gets into the main color from the `$value` attribute. The amount added is controlled by the `weight`. A weight of `0.1` adds 10% of the color, and a weight of `0.75` adds 75%.
-
-A `mix` proprty must always have a `color` and a `weight` child. `color` can be a `hex` value or a reference to a valid color. The `weight` property must receive a value between `0.0` and `1`.
-
-```json5
-{
-  control: {
-    $value: '{base.color.gray.4}', // main color
-    $type: 'color',
-    mix: {
-      color: '{base.color.gray.5}', // color to mix into the main color
-      weight: 0.2, // amount of the mix color that is added === 20% of gray.5 is mix into gray.4
-    },
-  },
-}
-```
-
 #### Extensions property
 
 According to the [w3c design token specs](https://design-tokens.github.io/community-group/format/#design-token), the [`$extensions`](https://design-tokens.github.io/community-group/format/#extensions) property is used for additional meta data.

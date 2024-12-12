@@ -11,7 +11,7 @@ type DiffItem = {
 
 const isToken = (obj: Record<string, unknown>): boolean => Object.prototype.hasOwnProperty.call(obj, '$value')
 
-const diffProps = (diffArray: DiffItem[], propsToCheck = ['mix', 'alpha']) => {
+const diffProps = (diffArray: DiffItem[], propsToCheck = ['alpha']) => {
   const diff = []
   // iterate over each theme
   for (const {mainThemeName, mainThemeDir, mainFiles, overridesDir} of diffArray) {

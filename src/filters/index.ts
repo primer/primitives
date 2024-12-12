@@ -1,7 +1,6 @@
 export {isBorder} from './isBorder.js'
 export {isColor} from './isColor.js'
 export {isColorWithAlpha} from './isColorWithAlpha.js'
-export {isColorWithMix} from './isColorWithMix.js'
 export {isDimension} from './isDimension.js'
 export {isDeprecated} from './isDeprecated.js'
 export {isDuration} from './isDuration.js'
