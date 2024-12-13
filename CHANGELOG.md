@@ -1,5 +1,11 @@
 # @primer/primitives
 
+## 10.2.0
+
+### Minor Changes
+
+- [#1109](https://github.com/primer/primitives/pull/1109) [`da8a1d9`](https://github.com/primer/primitives/commit/da8a1d91b3ef495791c60a5fb9178c3ce08e5607) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - use cssColorMix instead of converting variables to hex when we use transparency
+
 ## 10.1.0
 
 ### Minor Changes
