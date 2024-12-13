@@ -1,6 +1,6 @@
 import type {TransformedToken, FormatFn, FormatFnArguments, FormattingOptions} from 'style-dictionary/types'
 import {format} from 'prettier'
-import {fileHeader, formattedVariables} from 'style-dictionary/utils'
+import {fileHeader, formattedVariables, sortByName} from 'style-dictionary/utils'
 
 const wrapWithSelector = (css: string, selector: string | false): string => {
   // return without selector
@@ -69,7 +69,7 @@ export const cssAdvanced: FormatFn = async ({
     // filter tokens to only include the ones that pass the matcher
     const filteredDictionary = {
       ...dictionary,
-      allTokens: dictionary.allTokens.filter(matcher || (() => true)),
+      allTokens: dictionary.allTokens.filter(matcher || (() => true)).sort(sortByName),
     }
     // early abort if no matches
     if (!filteredDictionary.allTokens.length) continue

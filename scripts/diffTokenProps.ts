@@ -65,13 +65,13 @@ const diff = diffProps([
   {
     mainThemeName: 'light',
     mainThemeDir: './src/tokens/functional/color/light',
-    mainFiles: ['./src/tokens/functional/shadow/light.json5', './src/tokens/functional/border/light.json5'],
+    mainFiles: ['./src/tokens/functional/shadow/light.json5', './src/tokens/functional/border/border.json5'],
     overridesDir: './src/tokens/functional/color/light/overrides',
   },
   {
     mainThemeName: 'dark',
     mainThemeDir: './src/tokens/functional/color/dark',
-    mainFiles: ['./src/tokens/functional/shadow/dark.json5', './src/tokens/functional/border/dark.json5'],
+    mainFiles: ['./src/tokens/functional/shadow/dark.json5', './src/tokens/functional/border/border.json5'],
     overridesDir: './src/tokens/functional/color/dark/overrides',
   },
 ])
