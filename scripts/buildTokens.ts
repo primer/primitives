@@ -58,13 +58,16 @@ export const buildDesignTokens = async (buildOptions: ConfigGeneratorOptions): P
    * Internal Colors
    * ----------------------------------- */
   try {
-    for (const {filename, source, include} of themes) {
+    for (const {filename, source, include, theme} of themes) {
       // build functional scales
       const extendedSD = await PrimerStyleDictionary.extend({
         source: [...source, ...include], // build the special formats
         include,
         platforms: {
-          css: css(`internalCss/${filename}.css`, buildOptions.prefix, buildOptions.buildPath, {themed: true}),
+          css: css(`internalCss/${filename}.css`, buildOptions.prefix, buildOptions.buildPath, {
+            themed: true,
+            theme,
+          }),
         },
       })
       await extendedSD.buildAllPlatforms()
