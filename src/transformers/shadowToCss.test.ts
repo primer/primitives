@@ -148,10 +148,7 @@ describe('Transformer: shadowToCss', () => {
         },
       }),
     ]
-    const expectedOutput = [
-      '0px 2px 1px 0 color-mix(in srgb, #000000, transparent 50%)',
-      '0px 2px 1px 0 color-mix(in srgb, #22222266, transparent 50%)',
-    ]
+    const expectedOutput = ['0px 2px 1px 0 #00000080', '0px 2px 1px 0 #22222280']
     expect(input.map(item => shadowToCss.transform(item, {}, {}))).toStrictEqual(expectedOutput)
   })
 
@@ -177,8 +174,7 @@ describe('Transformer: shadowToCss', () => {
       ],
     })
 
-    const expectedOutput =
-      '0px 2px 1px 0 color-mix(in srgb, #000000, transparent 50%), 0px 8px 16px 0 color-mix(in srgb, #22222266, transparent 80%)'
+    const expectedOutput = '0px 2px 1px 0 #00000080, 0px 8px 16px 0 #22222233'
     expect(shadowToCss.transform(item, {}, {})).toStrictEqual(expectedOutput)
   })
 })

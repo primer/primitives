@@ -1,9 +1,10 @@
+import {toHex} from 'color2k'
 import {isShadow} from '../filters/index.js'
+import {alpha} from './utilities/alpha.js'
 import {checkRequiredTokenProperties} from './utilities/checkRequiredTokenProperties.js'
 import type {ShadowTokenValue} from '../types/shadowTokenValue.js'
 import {getTokenValue} from './utilities/getTokenValue.js'
 import type {Transform, TransformedToken} from 'style-dictionary/types'
-import {cssColorMix} from './colorAlphaToCss.js'
 
 /**
  * @description converts w3c shadow tokens in css shadow string
@@ -31,7 +32,7 @@ export const shadowToCss: Transform = {
         /*css box shadow:  inset? | offset-x | offset-y | blur-radius | spread-radius | color */
         return `${shadow.inset === true ? 'inset ' : ''}${shadow.offsetX} ${shadow.offsetY} ${shadow.blur} ${
           shadow.spread
-        } ${cssColorMix(getTokenValue({...token, ...{[valueProp]: shadow}}, 'color'), 'transparent', 1 - (shadow.alpha || 1))}`
+        } ${toHex(alpha(getTokenValue({...token, ...{[valueProp]: shadow}}, 'color'), shadow.alpha || 1, token))}`
       })
       .join(', ')
   },
