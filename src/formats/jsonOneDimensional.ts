@@ -1,6 +1,7 @@
 import {format} from 'prettier'
 import {jsonToFlat} from './utilities/jsonToFlat.js'
 import type {FormatFn, FormatFnArguments} from 'style-dictionary/types'
+import {sortByName} from 'style-dictionary/utils'
 /**
  * @description Takes a style dictionary token dictionary and converts it to a one dimensional json object.
  * @param FormatFnArguments
@@ -10,7 +11,7 @@ import type {FormatFn, FormatFnArguments} from 'style-dictionary/types'
 export const jsonOneDimensional: FormatFn = ({dictionary, file: _file, options}: FormatFnArguments) => {
   // option to allow verbose output (object) or just the value
   const {outputVerbose, propertyConversion} = options
-  const tokens = jsonToFlat(dictionary.allTokens, outputVerbose)
+  const tokens = jsonToFlat(dictionary.allTokens.sort(sortByName), outputVerbose)
   if (propertyConversion === undefined) {
     //
     const output = JSON.stringify(tokens, null, 2)
