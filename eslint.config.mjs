@@ -1,4 +1,4 @@
-import tseslint from 'typescript-eslint';
+import tseslint from 'typescript-eslint'
 import * as parser from '@typescript-eslint/parser'
 import {fixupPluginRules} from '@eslint/compat'
 import eslintConfigPrettier from 'eslint-config-prettier'
@@ -30,7 +30,17 @@ export default tseslint.config([
   eslintPluginPrettierRecommended,
   eslintConfigPrettier,
   {
-    ignores: ['node_modules', 'coverage/**', 'docs/**', 'dist/**/*', 'CHANGELOG.md', 'src/@types/', ".prettierrc.js", 'integration/build/'],
+    ignores: [
+      'node_modules',
+      'e2e/**',
+      'coverage/**',
+      'docs/**',
+      'dist/**/*',
+      'CHANGELOG.md',
+      'src/@types/',
+      '.prettierrc.js',
+      'integration/build/',
+    ],
   },
   {
     languageOptions: {
@@ -61,11 +71,15 @@ export default tseslint.config([
     // rules which apply to JS, TS, etc.
     rules: {
       'i18n-text/no-en': 0,
-      'importPlugin/no-nodejs-modules': "off",
-      "importPlugin/extensions": ['error', "never", {
-        "js": "ignorePackages",
-        "json": "always",
-      }],
+      'importPlugin/no-nodejs-modules': 'off',
+      'importPlugin/extensions': [
+        'error',
+        'never',
+        {
+          js: 'ignorePackages',
+          json: 'always',
+        },
+      ],
       'github/filenames-match-regex': ['error', '^([a-z0-9]+)([A-Z][a-z0-9]+)*([.test])?(.[a-z0-9-]+)?$'],
       'eslint-comments/no-unused-disable': 0,
       'react/prop-types': 0,

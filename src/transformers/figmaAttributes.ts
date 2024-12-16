@@ -1,4 +1,5 @@
 import type {PlatformConfig, Transform, TransformedToken} from 'style-dictionary/types'
+import {asArray} from '../utilities/asArray.js'
 
 type FigmaVariableScope =
   | 'ALL_SCOPES'
@@ -70,7 +71,7 @@ export const figmaAttributes: Transform = {
   transform: (token: TransformedToken, platform: PlatformConfig = {}) => {
     const {modeOverride, collection, scopes, group, codeSyntax} = token.$extensions?.['org.primer.figma'] || {}
     return {
-      mode: platform.options?.theme || modeOverride || 'default',
+      mode: asArray(platform.options?.theme)[0] || modeOverride || 'default',
       collection,
       group: group || collection,
       scopes: getScopes(scopes),

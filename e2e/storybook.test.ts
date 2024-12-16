@@ -1,5 +1,5 @@
 import {type Page, test, expect} from '@playwright/test'
-// eslint-disable-next-line importPlugin/no-unresolved
+
 import data from '../docs/storybook/storybook-static/stories.json' assert {type: 'json'}
 import colorData from '../dist/docs/functional/themes/light.json' assert {type: 'json'}
 
