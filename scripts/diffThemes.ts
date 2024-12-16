@@ -1,5 +1,4 @@
 import {PrimerStyleDictionary} from '../src/primerStyleDictionary.js'
-import {flattenTokens} from 'style-dictionary/utils'
 import {themes as themesConfigArray} from './themes.config.js'
 import type {Dictionary} from 'style-dictionary/types'
 
@@ -7,26 +6,36 @@ const tokenNameArray = ({dictionary}: {dictionary: Dictionary}) =>
   dictionary.allTokens.map(({name}: {name: string}) => name)
 
 const themesArray = await Promise.all(
-  themesConfigArray.map(async ({filename, source, include}): Promise<[string, string[]]> => {
+  themesConfigArray.map(async ({filename, source, include, theme}): Promise<[string, string[]]> => {
     const sd = await PrimerStyleDictionary.extend({
       source,
       include,
+      log: {
+        warnings: 'disabled', // 'warn' | 'error' | 'disabled'
+        verbosity: 'verbose', // 'default' | 'silent' | 'verbose'
+        errors: {
+          brokenReferences: 'throw', // 'throw' | 'console'
+        },
+      },
       platforms: {
         json: {
+          preprocessors: ['themeOverrides'],
           transforms: ['name/pathToDotNotation'],
+          options: {
+            themeOverrides: {
+              theme,
+            },
+          },
         },
       },
     })
 
-    const tokens = await sd.exportPlatform('json')
+    const dictionary = await sd.getPlatformTokens('json')
 
     return [
       filename,
       tokenNameArray({
-        dictionary: {
-          tokens,
-          allTokens: await flattenTokens(tokens),
-        },
+        dictionary,
       }),
     ]
   }),

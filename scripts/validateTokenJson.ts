@@ -71,8 +71,13 @@ if (getFlag('--silent') === null) {
       // eslint-disable-next-line no-console
       console.log(
         fail.errorsByPath[path]
-          .map(({message}) =>
-            message.replace(/\*\*(.*?)\*\*/g, '- \u001b[31;1m\u001b[1m$1\u001b[0m').replace(/\n(?!-)/g, '\n  ↳ '),
+          .map(
+            ({message, code, errors}) =>
+              `${message.replace(/\*\*(.*?)\*\*/g, '- \u001b[31;1m\u001b[1m$1\u001b[0m').replace(/\n(?!-)/g, '\n  ↳ ')}, code: ${code}, errors:\n ${errors
+                .map(error => {
+                  return `- ${error.issues[0].code}: ${error.issues[0].message}`
+                })
+                .join('\n')}`,
           )
           .join('\n'),
         '\n',

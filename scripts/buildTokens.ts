@@ -10,6 +10,7 @@ import type {TokenBuildInput} from '../src/types/tokenBuildInput.js'
 import glob from 'fast-glob'
 import {themes} from './themes.config.js'
 import fs from 'fs'
+import {getFallbackTheme} from './utilities/getFallbackTheme.js'
 
 /**
  * getStyleDictionaryConfig
@@ -39,10 +40,10 @@ const getStyleDictionaryConfig: StyleDictionaryConfigGenerator = (
     Object.entries({
       css: css(`css/${filename}.css`, options.prefix, options.buildPath, {
         themed: options.themed,
-        theme: options.theme,
+        theme: [options.theme, getFallbackTheme(options.theme)],
       }),
       docJson: docJson(`docs/${filename}.json`, options.prefix, options.buildPath, {
-        theme: options.theme,
+        theme: [options.theme, getFallbackTheme(options.theme)],
       }),
       styleLint: styleLint(`styleLint/${filename}.json`, options.prefix, options.buildPath, {
         theme: options.theme,
@@ -66,7 +67,7 @@ export const buildDesignTokens = async (buildOptions: ConfigGeneratorOptions): P
         platforms: {
           css: css(`internalCss/${filename}.css`, buildOptions.prefix, buildOptions.buildPath, {
             themed: true,
-            theme,
+            theme: [theme, getFallbackTheme(theme)],
           }),
         },
       })
@@ -88,7 +89,7 @@ export const buildDesignTokens = async (buildOptions: ConfigGeneratorOptions): P
           `functional/themes/${filename}`,
           source,
           include,
-          {...buildOptions, themed: true, theme},
+          {...buildOptions, themed: true, theme: [theme, getFallbackTheme(theme)]},
           // disable fallbacks for themes
           {fallbacks: undefined},
         ),
