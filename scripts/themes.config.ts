@@ -69,10 +69,10 @@ export const themes: TokenBuildInput[] = [
     filename: 'dark',
     theme: 'dark',
     source: [
-      `src/tokens/functional/color/dark/*.json5`,
       `src/tokens/functional/shadow/dark.json5`,
       `src/tokens/functional/border/*.json5`,
       `src/tokens/component/*.json5`,
+      `src/tokens/functional/color/dark/*.json5`,
     ],
     include: [
       `src/tokens/functional/size/border.json5`,
