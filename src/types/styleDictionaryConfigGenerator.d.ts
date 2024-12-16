@@ -4,7 +4,7 @@ export type ConfigGeneratorOptions = {
   buildPath: string
   prefix?: string
   themed?: boolean
-  theme?: string
+  theme?: string | [string | undefined, string | undefined]
 }
 
 export type StyleDictionaryConfigGenerator = (

@@ -1,4 +1,4 @@
-import {Transform, TransformedToken} from 'style-dictionary/types'
+import type {Transform, TransformedToken} from 'style-dictionary/types'
 import {isColorWithAlpha} from '../filters/isColorWithAlpha.js'
 import {getTokenValue} from './utilities/getTokenValue.js'
 
