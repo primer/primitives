@@ -33,8 +33,8 @@ type Modes =
   | 'dark dimmed'
   | 'light high contrast'
   | 'dark high contrast'
-  | 'light colorblind'
-  | 'dark colorblind'
+  | 'light protanopia deuteranopia'
+  | 'dark protanopia deuteranopia'
   | 'light tritanopia'
   | 'dark tritanopia'
 

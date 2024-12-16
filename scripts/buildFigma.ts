@@ -61,14 +61,14 @@ const buildFigma = async (buildOptions: ConfigGeneratorOptions): Promise<void> =
     await extended.buildAllPlatforms()
   }
   //
-  for (const {filename, source, include} of themes) {
+  for (const {filename, source, include, theme} of themes) {
     // build functional scales
     const extended = await PrimerStyleDictionary.extend({
       source,
       include,
       platforms: {
         figma: figma(`figma/themes/${filename}.json`, buildOptions.prefix, buildOptions.buildPath, {
-          theme: filename.replaceAll('-', ' '),
+          theme: [theme, getFallbackTheme(theme)],
         }),
       },
     })
@@ -146,7 +146,7 @@ const buildFigma = async (buildOptions: ConfigGeneratorOptions): Promise<void> =
         `src/tokens/functional/color/light/primitives-light.json5`,
         `src/tokens/functional/color/light/patterns-light.json5`,
       ],
-      theme: 'light colorblind',
+      theme: 'light protanopia deuteranopia',
     },
     {
       name: 'light-tritanopia',
@@ -205,7 +205,7 @@ const buildFigma = async (buildOptions: ConfigGeneratorOptions): Promise<void> =
         `src/tokens/functional/color/dark/primitives-dark.json5`,
         `src/tokens/functional/color/dark/patterns-dark.json5`,
       ],
-      theme: 'dark colorblind',
+      theme: 'dark protanopia deuteranopia',
     },
     {
       name: 'dark-tritanopia',
@@ -289,8 +289,8 @@ const buildFigma = async (buildOptions: ConfigGeneratorOptions): Promise<void> =
     'dark dimmed',
     'light high contrast',
     'dark high contrast',
-    'light colorblind',
-    'dark colorblind',
+    'light protanopia deuteranopia',
+    'dark protanopia deuteranopia',
     'light tritanopia',
     'dark tritanopia',
   ].reverse()

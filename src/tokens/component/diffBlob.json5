@@ -21,6 +21,11 @@
             group: 'component',
             scopes: ['bgColor'],
           },
+          'org.primer.overrides': {
+            dark: {
+              alpha: 0.15,
+            },
+          },
         },
       },
     },
@@ -45,6 +50,12 @@
             group: 'component',
             scopes: ['bgColor'],
           },
+          'org.primer.overrides': {
+            dark: {
+              $value: '{base.color.green.4}',
+              alpha: 0.4,
+            },
+          },
         },
       },
     },
@@ -68,6 +79,12 @@
             collection: 'mode',
             group: 'component',
             scopes: ['bgColor'],
+          },
+          'org.primer.overrides': {
+            dark: {
+              $value: '{base.color.green.3}',
+              alpha: 0.3,
+            },
           },
         },
       },
@@ -117,6 +134,12 @@
             group: 'component',
             scopes: ['bgColor'],
           },
+          'org.primer.overrides': {
+            dark: {
+              $value: '{base.color.red.4}',
+              alpha: 0.4,
+            },
+          },
         },
       },
     },
@@ -140,6 +163,12 @@
             collection: 'mode',
             group: 'component',
             scopes: ['bgColor'],
+          },
+          'org.primer.overrides': {
+            dark: {
+              $value: '{base.color.red.4}',
+              alpha: 0.3,
+            },
           },
         },
       },
@@ -202,6 +231,9 @@
               collection: 'mode',
               group: 'component',
               scopes: ['bgColor'],
+            },
+            'org.primer.overrides': {
+              dark: '{base.color.blue.8}',
             },
           },
         },

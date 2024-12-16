@@ -254,12 +254,12 @@ export const bgColors: string[] = ['bgColor-default', 'bgColor-muted']
 export type ThemeName =
   | 'light'
   | 'light_high_contrast'
-  | 'light_colorblind'
+  | 'light_protanopia_deuteranopia'
   | 'light_tritanopia'
   | 'dark'
   | 'dark_dimmed'
   | 'dark_high_contrast'
-  | 'dark_colorblind'
+  | 'dark_protanopia_deuteranopia'
   | 'dark_tritanopia'
 
 const defaultContrast: ContrastRequirement[] = setContrastRatios('default', [
@@ -278,12 +278,12 @@ export const contrastRequirements: ContrastRequirements = {
   // default light mode
   light: defaultContrast,
   light_high_contrast: highContrast,
-  light_colorblind: defaultContrast,
+  light_protanopia_deuteranopia: defaultContrast,
   light_tritanopia: defaultContrast,
   // default dark mode
   dark: defaultContrast,
   dark_dimmed: defaultContrast,
   dark_high_contrast: highContrast,
-  dark_colorblind: defaultContrast,
+  dark_protanopia_deuteranopia: defaultContrast,
   dark_tritanopia: defaultContrast,
 }
