@@ -45,6 +45,7 @@ export const figma: PlatformInitializer = (outputFile, prefix, buildPath, option
     },
     // should this object be spread here?
     ...options,
+    theme: options?.theme[0].replaceAll('-', ' '),
     themeOverrides: {
       theme: options?.theme,
     },
@@ -58,7 +59,7 @@ export const figma: PlatformInitializer = (outputFile, prefix, buildPath, option
       format: `json/figma`,
       options: {
         outputReferences: true,
-        theme: options?.theme,
+        theme: options?.theme[0].replaceAll('-', ' '),
       },
     },
   ],

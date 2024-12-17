@@ -96,11 +96,11 @@ export default tseslint.config([
         {
           allow: [
             'light_high_contrast',
-            'light_colorblind',
+            'light_protanopia_deuteranopia',
             'light_tritanopia',
             'dark_dimmed',
             'dark_high_contrast',
-            'dark_colorblind',
+            'dark_protanopia_deuteranopia',
             'dark_tritanopia',
           ],
         },
