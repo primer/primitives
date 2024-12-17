@@ -10,7 +10,7 @@
       $type: 'color',
     },
     open: {
-      $value: '{base.color.orange.5}',
+      $value: '{base.color.blue.5}',
       $type: 'color',
     },
     closed: {
@@ -35,11 +35,11 @@
     },
     open: {
       muted: {
-        $value: '{base.color.orange.0}',
+        $value: '{base.color.blue.0}',
         $type: 'color',
       },
       emphasis: {
-        $value: '{base.color.orange.5}',
+        $value: '{base.color.blue.5}',
         $type: 'color',
       },
     },
@@ -67,12 +67,12 @@
   borderColor: {
     open: {
       muted: {
-        $value: '{base.color.orange.3}',
+        $value: '{base.color.blue.3}',
         $type: 'color',
         alpha: 0.4,
       },
       emphasis: {
-        $value: '{base.color.orange.4}',
+        $value: '{base.color.blue.4}',
         $type: 'color',
       },
     },
