@@ -31,6 +31,16 @@
       emphasis: {
         $value: '{base.color.blue.5}',
         $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            group: 'semantic',
+            scopes: ['bgColor'],
+            codeSyntax: {
+              web: 'var(--bgColor-success-emphasis) /* utility class: .color-bg-success-emphasis */',
+            },
+          },
+        },
       },
     },
     open: {

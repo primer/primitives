@@ -134,7 +134,7 @@ const buildFigma = async (buildOptions: ConfigGeneratorOptions): Promise<void> =
         `src/tokens/functional/color/light/primitives-light.json5`,
         `src/tokens/functional/color/light/patterns-light.json5`,
       ],
-      theme: 'light high contrast',
+      theme: 'light-high-contrast',
     },
     {
       name: 'light-colorblind',
@@ -146,7 +146,7 @@ const buildFigma = async (buildOptions: ConfigGeneratorOptions): Promise<void> =
         `src/tokens/functional/color/light/primitives-light.json5`,
         `src/tokens/functional/color/light/patterns-light.json5`,
       ],
-      theme: 'light protanopia deuteranopia',
+      theme: 'light-protanopia-deuteranopia',
     },
     {
       name: 'light-tritanopia',
@@ -158,7 +158,7 @@ const buildFigma = async (buildOptions: ConfigGeneratorOptions): Promise<void> =
         `src/tokens/functional/color/light/primitives-light.json5`,
         `src/tokens/functional/color/light/patterns-light.json5`,
       ],
-      theme: 'light tritanopia',
+      theme: 'light-tritanopia',
     },
     {
       name: 'dark',
@@ -181,7 +181,7 @@ const buildFigma = async (buildOptions: ConfigGeneratorOptions): Promise<void> =
         `src/tokens/functional/color/dark/primitives-dark.json5`,
         `src/tokens/functional/color/dark/patterns-dark.json5`,
       ],
-      theme: 'dark high contrast',
+      theme: 'dark-high-contrast',
     },
     {
       name: 'dark-dimmed',
@@ -193,7 +193,7 @@ const buildFigma = async (buildOptions: ConfigGeneratorOptions): Promise<void> =
         `src/tokens/functional/color/dark/primitives-dark.json5`,
         `src/tokens/functional/color/dark/patterns-dark.json5`,
       ],
-      theme: 'dark dimmed',
+      theme: 'dark-dimmed',
     },
     {
       name: 'dark-colorblind',
@@ -205,7 +205,7 @@ const buildFigma = async (buildOptions: ConfigGeneratorOptions): Promise<void> =
         `src/tokens/functional/color/dark/primitives-dark.json5`,
         `src/tokens/functional/color/dark/patterns-dark.json5`,
       ],
-      theme: 'dark protanopia deuteranopia',
+      theme: 'dark-protanopia-deuteranopia',
     },
     {
       name: 'dark-tritanopia',
@@ -217,7 +217,7 @@ const buildFigma = async (buildOptions: ConfigGeneratorOptions): Promise<void> =
         `src/tokens/functional/color/dark/primitives-dark.json5`,
         `src/tokens/functional/color/dark/patterns-dark.json5`,
       ],
-      theme: 'dark tritanopia',
+      theme: 'dark-tritanopia',
     },
   ]
   //
