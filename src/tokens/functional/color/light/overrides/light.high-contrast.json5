@@ -440,45 +440,6 @@
       },
     },
   },
-  diffBlob: {
-    additionWord: {
-      fgColor: {
-        $value: '{fgColor.onEmphasis}',
-        $type: 'color',
-      },
-      bgColor: {
-        $value: '{base.color.green.5}',
-        $type: 'color',
-        alpha: 1,
-      },
-    },
-    deletionWord: {
-      fgColor: {
-        $value: '{fgColor.onEmphasis}',
-        $type: 'color',
-      },
-      bgColor: {
-        $value: '{base.color.red.5}',
-        $type: 'color',
-        alpha: 1,
-      },
-    },
-    hunkNum: {
-      bgColor: {
-        rest: {
-          $value: '{base.color.blue.1}',
-          $type: 'color',
-          alpha: 1,
-        },
-      },
-    },
-    expander: {
-      iconColor: {
-        $value: '{fgColor.default}',
-        $type: 'color',
-      },
-    },
-  },
   header: {
     borderColor: {
       divider: {

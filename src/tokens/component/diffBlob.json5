@@ -10,6 +10,9 @@
             group: 'component',
             scopes: ['fgColor'],
           },
+          'org.primer.overrides': {
+            'dark-high-contrast': '{fgColor.onEmphasis}',
+          },
         },
       },
       bgColor: {
@@ -25,6 +28,10 @@
             dark: {
               alpha: 0.15,
             },
+            'dark-high-contrast': {
+              $value: '{bgColor.success.muted}',
+              alpha: 0.2,
+            },
           },
         },
       },
@@ -38,6 +45,9 @@
             collection: 'mode',
             group: 'component',
             scopes: ['fgColor'],
+          },
+          'org.primer.overrides': {
+            'light-high-contrast': '{fgColor.onEmphasis}',
           },
         },
       },
@@ -60,6 +70,8 @@
               $value: '{base.color.blue.4}',
               alpha: 0.4,
             },
+            'light-high-contrast': '{base.color.green.5}',
+            'dark-high-contrast': '{bgColor.success.emphasis}',
           },
         },
       },
@@ -109,6 +121,9 @@
             group: 'component',
             scopes: ['fgColor'],
           },
+          'org.primer.overrides': {
+            'dark-high-contrast': '{fgColor.onEmphasis}',
+          },
         },
       },
       bgColor: {
@@ -125,6 +140,10 @@
               $value: '{base.color.orange.4}',
               alpha: 0.15,
             },
+            'dark-high-contrast': {
+              $value: '{bgColor.danger.muted}',
+              alpha: 0.2,
+            },
           },
         },
       },
@@ -138,6 +157,9 @@
             collection: 'mode',
             group: 'component',
             scopes: ['fgColor'],
+          },
+          'org.primer.overrides': {
+            'light-high-contrast': '{fgColor.onEmphasis}',
           },
         },
       },
@@ -160,6 +182,8 @@
               $value: '{base.color.orange.4}',
               alpha: 0.4,
             },
+            'light-high-contrast': '{base.color.red.5}',
+            'dark-high-contrast': '{bgColor.danger.emphasis}',
           },
         },
       },
@@ -212,6 +236,10 @@
           'org.primer.overrides': {
             'light-protanopia-deuteranopia': '{base.color.neutral.1}',
             'dark-protanopia-deuteranopia': '{base.color.neutral.3}',
+            'dark-high-contrast': {
+              $value: '{bgColor.accent.muted}',
+              alpha: 0.2,
+            },
           },
         },
       },
@@ -269,6 +297,10 @@
               dark: '{base.color.blue.8}',
               'light-protanopia-deuteranopia': '{base.color.neutral.3}',
               'dark-protanopia-deuteranopia': '{base.color.neutral.6}',
+              'dark-high-contrast': {
+                $value: '{base.color.blue.4}',
+                alpha: 0.4,
+              },
             },
           },
         },
@@ -324,6 +356,10 @@
             collection: 'mode',
             group: 'component',
             scopes: ['fgColor'],
+          },
+          'org.primer.overrides': {
+            'light-high-contrast': '{fgColor.default}',
+            'dark-high-contrast': '{fgColor.default}',
           },
         },
       },
