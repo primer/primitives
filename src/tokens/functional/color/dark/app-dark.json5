@@ -1,20 +1,4 @@
 {
-  page: {
-    header: {
-      bgColor: {
-        $value: '{bgColor.default}',
-        $type: 'color',
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'mode',
-
-            group: 'component',
-            scopes: ['bgColor'],
-          },
-        },
-      },
-    },
-  },
   codeMirror: {
     fgColor: {
       $value: '{fgColor.default}',
