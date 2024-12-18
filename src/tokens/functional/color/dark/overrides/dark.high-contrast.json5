@@ -885,17 +885,6 @@
       $type: 'color',
     },
   },
-  reactionButton: {
-    selected: {
-      bgColor: {
-        hover: {
-          $value: '#5dadff',
-          $type: 'color',
-          alpha: 0.36,
-        },
-      },
-    },
-  },
   skeletonLoader: {
     bgColor: {
       $value: '{base.color.neutral.5}',
