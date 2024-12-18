@@ -40,10 +40,10 @@ const getStyleDictionaryConfig: StyleDictionaryConfigGenerator = (
     Object.entries({
       css: css(`css/${filename}.css`, options.prefix, options.buildPath, {
         themed: options.themed,
-        theme: [options.theme, getFallbackTheme(options.theme)],
+        theme: options.theme,
       }),
       docJson: docJson(`docs/${filename}.json`, options.prefix, options.buildPath, {
-        theme: [options.theme, getFallbackTheme(options.theme)],
+        theme: options.theme,
       }),
       styleLint: styleLint(`styleLint/${filename}.json`, options.prefix, options.buildPath, {
         theme: options.theme,
