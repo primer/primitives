@@ -186,64 +186,6 @@
       },
     },
   },
-  diffBlob: {
-    additionNum: {
-      bgColor: {
-        $value: '{base.color.blue.3}',
-        $type: 'color',
-        alpha: 0.3,
-      },
-    },
-    additionWord: {
-      bgColor: {
-        $value: '{base.color.blue.4}',
-        $type: 'color',
-        alpha: 0.4,
-      },
-    },
-    deletionNum: {
-      bgColor: {
-        $value: '{base.color.orange.4}',
-        $type: 'color',
-        alpha: 0.3,
-      },
-    },
-    deletionLine: {
-      bgColor: {
-        $value: '{base.color.orange.4}',
-        $type: 'color',
-        alpha: 0.15,
-      },
-    },
-    deletionWord: {
-      bgColor: {
-        $value: '{base.color.orange.4}',
-        $type: 'color',
-        alpha: 0.4,
-      },
-    },
-    hunkNum: {
-      bgColor: {
-        rest: {
-          $value: '{base.color.neutral.6}',
-          $type: 'color',
-          alpha: 1,
-        },
-        hover: {
-          $value: '{base.color.neutral.8}',
-          $type: 'color',
-          alpha: 1,
-        },
-      },
-    },
-    hunkLine: {
-      bgColor: {
-        $value: '{base.color.neutral.3}',
-        $type: 'color',
-        alpha: 1,
-      },
-    },
-  },
   color: {
     ansi: {
       green: {

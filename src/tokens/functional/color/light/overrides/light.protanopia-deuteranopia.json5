@@ -31,6 +31,16 @@
       emphasis: {
         $value: '{base.color.blue.5}',
         $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            group: 'semantic',
+            scopes: ['bgColor'],
+            codeSyntax: {
+              web: 'var(--bgColor-success-emphasis) /* utility class: .color-bg-success-emphasis */',
+            },
+          },
+        },
       },
     },
     open: {
@@ -107,77 +117,6 @@
       emphasis: {
         $value: '{base.color.orange.5}',
         $type: 'color',
-      },
-    },
-  },
-  diffBlob: {
-    additionNum: {
-      bgColor: {
-        $value: '{base.color.blue.1}',
-        $type: 'color',
-      },
-    },
-    additionWord: {
-      bgColor: {
-        $value: '{base.color.blue.1}',
-        $type: 'color',
-      },
-    },
-    deletionNum: {
-      bgColor: {
-        $value: '{base.color.orange.1}',
-        $type: 'color',
-      },
-    },
-    deletionWord: {
-      bgColor: {
-        $value: '{base.color.orange.1}',
-        $type: 'color',
-      },
-    },
-    hunkLine: {
-      bgColor: {
-        $value: '{base.color.neutral.1}',
-        $type: 'color',
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'mode',
-            group: 'component',
-            scopes: ['bgColor'],
-          },
-        },
-      },
-    },
-    hunkNum: {
-      bgColor: {
-        rest: {
-          $value: '{base.color.neutral.3}',
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              group: 'component',
-              scopes: ['bgColor'],
-            },
-          },
-        },
-        hover: {
-          $value: '{base.color.neutral.7}',
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              group: 'component',
-              scopes: ['bgColor'],
-            },
-          },
-        },
-      },
-      fgColor: {
-        hover: {
-          $value: '{fgColor.default}',
-          $type: 'color',
-        },
       },
     },
   },

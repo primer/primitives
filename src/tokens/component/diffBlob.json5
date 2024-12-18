@@ -55,6 +55,11 @@
               $value: '{base.color.green.4}',
               alpha: 0.4,
             },
+            'light-protanopia-deuteranopia': '{base.color.blue.1}',
+            'dark-protanopia-deuteranopia': {
+              $value: '{base.color.blue.4}',
+              alpha: 0.4,
+            },
           },
         },
       },
@@ -85,6 +90,11 @@
               $value: '{base.color.green.3}',
               alpha: 0.3,
             },
+            'light-protanopia-deuteranopia': '{base.color.blue.1}',
+            'dark-protanopia-deuteranopia': {
+              $value: '{base.color.blue.3}',
+              alpha: 0.3,
+            },
           },
         },
       },
@@ -109,6 +119,12 @@
             collection: 'mode',
             group: 'component',
             scopes: ['bgColor'],
+          },
+          'org.primer.overrides': {
+            'dark-protanopia-deuteranopia': {
+              $value: '{base.color.orange.4}',
+              alpha: 0.15,
+            },
           },
         },
       },
@@ -137,6 +153,11 @@
           'org.primer.overrides': {
             dark: {
               $value: '{base.color.red.4}',
+              alpha: 0.4,
+            },
+            'light-protanopia-deuteranopia': '{base.color.orange.1}',
+            'dark-protanopia-deuteranopia': {
+              $value: '{base.color.orange.4}',
               alpha: 0.4,
             },
           },
@@ -169,6 +190,11 @@
               $value: '{base.color.red.4}',
               alpha: 0.3,
             },
+            'light-protanopia-deuteranopia': '{base.color.orange.1}',
+            'dark-protanopia-deuteranopia': {
+              $value: '{base.color.orange.4}',
+              alpha: 0.3,
+            },
           },
         },
       },
@@ -182,6 +208,10 @@
             collection: 'mode',
             group: 'component',
             scopes: ['bgColor'],
+          },
+          'org.primer.overrides': {
+            'light-protanopia-deuteranopia': '{base.color.neutral.1}',
+            'dark-protanopia-deuteranopia': '{base.color.neutral.3}',
           },
         },
       },
@@ -219,6 +249,9 @@
               group: 'component',
               scopes: ['fgColor'],
             },
+            'org.primer.overrides': {
+              'light-protanopia-deuteranopia': '{fgColor.default}',
+            },
           },
         },
       },
@@ -234,6 +267,8 @@
             },
             'org.primer.overrides': {
               dark: '{base.color.blue.8}',
+              'light-protanopia-deuteranopia': '{base.color.neutral.3}',
+              'dark-protanopia-deuteranopia': '{base.color.neutral.6}',
             },
           },
         },
@@ -245,6 +280,10 @@
               collection: 'mode',
               group: 'component',
               scopes: ['bgColor'],
+            },
+            'org.primer.overrides': {
+              'light-protanopia-deuteranopia': '{base.color.neutral.7}',
+              'dark-protanopia-deuteranopia': '{base.color.neutral.8}',
             },
           },
         },
