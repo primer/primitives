@@ -48,7 +48,6 @@
           },
           'org.primer.overrides': {
             'light-high-contrast': '{fgColor.onEmphasis}',
-            'light-tritanopia': '{base.color.blue.1}',
           },
         },
       },
@@ -73,6 +72,7 @@
             },
             'light-high-contrast': '{base.color.green.5}',
             'dark-high-contrast': '{bgColor.success.emphasis}',
+            'light-tritanopia': '{base.color.blue.1}',
             'dark-tritanopia': {
               $value: '{base.color.blue.4}',
               alpha: 0.4,
