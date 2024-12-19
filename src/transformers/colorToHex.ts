@@ -16,7 +16,7 @@ export const colorToHex: Transform = {
   filter: isColor,
   transform: (token: TransformedToken, config: PlatformConfig) => {
     const alphaValue = token.alpha
-    if (alphaValue === null || alphaValue === undefined) {
+    if (alphaValue === null || alphaValue === undefined || alphaValue === 1) {
       return toHex(getTokenValue(token))
     }
     return toHex(alpha(getTokenValue(token), alphaValue, token, config))

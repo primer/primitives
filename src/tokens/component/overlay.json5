@@ -1,0 +1,68 @@
+{
+  overlay: {
+    bgColor: {
+      $value: '{base.color.neutral.0}',
+      $type: 'color',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'mode',
+          group: 'component (internal)',
+          scopes: ['bgColor'],
+        },
+        'org.primer.overrides': {
+          dark: '{bgColor.muted}',
+          'dark-dimmed': '{base.color.neutral.5}',
+        },
+      },
+    },
+    borderColor: {
+      $value: '{borderColor.muted}',
+      $type: 'color',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'mode',
+          group: 'component (internal)',
+        },
+        'org.primer.overrides': {
+          dark: {
+            alpha: 1,
+            $value: '{borderColor.muted}',
+          },
+          'dark-dimmed': {
+            $value: '{base.color.neutral.7}',
+            alpha: 0.7,
+          },
+          'light-high-contrast': {
+            alpha: 1,
+            $value: '{borderColor.default}',
+          },
+          'dark-high-contrast': {
+            $value: '{borderColor.default}',
+            alpha: 1,
+          },
+        },
+      },
+      alpha: 0.5,
+    },
+    backdrop: {
+      bgColor: {
+        $value: '{base.color.neutral.7}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            group: 'component (internal)',
+            scopes: ['bgColor'],
+          },
+          'org.primer.overrides': {
+            dark: '{base.color.neutral.3}',
+            'dark-dimmed': '{base.color.neutral.4}',
+            'light-high-contrast': '{base.color.neutral.11}',
+            'dark-high-contrast': '{base.color.neutral.11}',
+          },
+        },
+        alpha: 0.4,
+      },
+    },
+  },
+}
