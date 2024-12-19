@@ -1643,81 +1643,6 @@
       },
     },
   },
-  header: {
-    bgColor: {
-      $value: '{base.color.neutral.12}',
-      $type: 'color',
-      $extensions: {
-        'org.primer.figma': {
-          collection: 'mode',
-          group: 'component (internal)',
-          scopes: ['bgColor'],
-        },
-      },
-    },
-    fgColor: {
-      default: {
-        $value: '{base.color.neutral.0}',
-        $type: 'color',
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'mode',
-            group: 'component (internal)',
-            scopes: ['fgColor'],
-          },
-        },
-        alpha: 0.7,
-      },
-      logo: {
-        $value: '{base.color.neutral.0}',
-        $type: 'color',
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'mode',
-            group: 'component (internal)',
-            scopes: ['fgColor'],
-          },
-        },
-      },
-    },
-    borderColor: {
-      divider: {
-        $value: '{base.color.neutral.8}',
-        $type: 'color',
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'mode',
-            group: 'component (internal)',
-            scopes: ['borderColor'],
-          },
-        },
-      },
-    },
-  },
-  headerSearch: {
-    bgColor: {
-      $value: '{base.color.neutral.12}',
-      $type: 'color',
-      $extensions: {
-        'org.primer.figma': {
-          collection: 'mode',
-          group: 'component (internal)',
-          scopes: ['bgColor'],
-        },
-      },
-    },
-    borderColor: {
-      $value: '{base.color.neutral.8}',
-      $type: 'color',
-      $extensions: {
-        'org.primer.figma': {
-          collection: 'mode',
-          group: 'component (internal)',
-          scopes: ['borderColor'],
-        },
-      },
-    },
-  },
   menu: {
     bgColor: {
       active: {
@@ -1730,44 +1655,6 @@
             scopes: ['bgColor'],
           },
         },
-      },
-    },
-  },
-  overlay: {
-    bgColor: {
-      $value: '{base.color.neutral.0}',
-      $type: 'color',
-      $extensions: {
-        'org.primer.figma': {
-          collection: 'mode',
-          group: 'component (internal)',
-          scopes: ['bgColor'],
-        },
-      },
-    },
-    borderColor: {
-      $value: '{borderColor.muted}',
-      $type: 'color',
-      $extensions: {
-        'org.primer.figma': {
-          collection: 'mode',
-          group: 'component (internal)',
-        },
-      },
-      alpha: 0.5,
-    },
-    backdrop: {
-      bgColor: {
-        $value: '{base.color.neutral.7}',
-        $type: 'color',
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'mode',
-            group: 'component (internal)',
-            scopes: ['bgColor'],
-          },
-        },
-        alpha: 0.4,
       },
     },
   },
@@ -1810,20 +1697,6 @@
           },
         },
       },
-    },
-  },
-  skeletonLoader: {
-    bgColor: {
-      $value: '{base.color.neutral.8}',
-      $type: 'color',
-      $extensions: {
-        'org.primer.figma': {
-          collection: 'mode',
-          group: 'component',
-          scopes: ['bgColor'],
-        },
-      },
-      alpha: 0.1,
     },
   },
   treeViewItem: {
