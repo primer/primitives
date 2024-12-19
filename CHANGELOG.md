@@ -1,5 +1,15 @@
 # @primer/primitives
 
+## 10.3.0
+
+### Minor Changes
+
+- [#1100](https://github.com/primer/primitives/pull/1100) [`b995538`](https://github.com/primer/primitives/commit/b995538c38aaaa6dbb754082f556e96e3feddc5e) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Changing the way we use references in css output, to keep all references to tokens that are present in the final output
+
+### Patch Changes
+
+- [#1136](https://github.com/primer/primitives/pull/1136) [`3e281b1`](https://github.com/primer/primitives/commit/3e281b13e3f431498dd61f30e240455d1f302af9) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Change open role color from red to blue for colorblind themes
+
 ## 10.2.0
 
 ### Minor Changes
