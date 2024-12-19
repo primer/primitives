@@ -4,7 +4,7 @@ import {alpha} from './utilities/alpha.js'
 import {checkRequiredTokenProperties} from './utilities/checkRequiredTokenProperties.js'
 import type {ShadowTokenValue} from '../types/shadowTokenValue.js'
 import {getTokenValue} from './utilities/getTokenValue.js'
-import type {Transform, TransformedToken} from 'style-dictionary/types'
+import type {PlatformConfig, Transform, TransformedToken} from 'style-dictionary/types'
 
 /**
  * @description converts w3c shadow tokens in css shadow string
@@ -17,7 +17,7 @@ export const shadowToCss: Transform = {
   type: 'value',
   transitive: true,
   filter: isShadow,
-  transform: (token: TransformedToken) => {
+  transform: (token: TransformedToken, config: PlatformConfig) => {
     // extract value
     const value: ShadowTokenValue | ShadowTokenValue[] = getTokenValue(token)
     const valueProp = token.$value ? '$value' : 'value'
@@ -32,7 +32,7 @@ export const shadowToCss: Transform = {
         /*css box shadow:  inset? | offset-x | offset-y | blur-radius | spread-radius | color */
         return `${shadow.inset === true ? 'inset ' : ''}${shadow.offsetX} ${shadow.offsetY} ${shadow.blur} ${
           shadow.spread
-        } ${toHex(alpha(getTokenValue({...token, ...{[valueProp]: shadow}}, 'color'), shadow.alpha || 1, token))}`
+        } ${toHex(alpha(getTokenValue({...token, ...{[valueProp]: shadow}}, 'color'), shadow.alpha || 1, token, config))}`
       })
       .join(', ')
   },
