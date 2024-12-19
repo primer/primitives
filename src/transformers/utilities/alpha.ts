@@ -1,6 +1,6 @@
 import {rgba, parseToRgba} from 'color2k'
 import type {PlatformConfig, TransformedToken} from 'style-dictionary/types'
-import {log} from '~/src/utilities/log.js'
+import {log} from '../../utilities/log.js'
 /**
  * alpha
  * @description takes a colors string like hex or rgba and returns an rgba color with the specified alpha value
