@@ -31,7 +31,7 @@ const getStyleDictionaryConfig: StyleDictionaryConfigGenerator = (
   include,
   log: {
     warnings: 'disabled', // 'warn' | 'error' | 'disabled'
-    verbosity: 'verbose', // 'default' | 'silent' | 'verbose'
+    verbosity: 'silent', // 'default' | 'silent' | 'verbose'
     errors: {
       brokenReferences: 'throw', // 'throw' | 'console'
     },
@@ -241,7 +241,7 @@ export const buildDesignTokens = async (buildOptions: ConfigGeneratorOptions): P
         },
         log: {
           warnings: 'disabled', // 'warn' | 'error' | 'disabled'
-          verbosity: 'verbose', // 'default' | 'silent' | 'verbose'
+          verbosity: 'silent', // 'default' | 'silent' | 'verbose'
           errors: {
             brokenReferences: 'throw', // 'throw' | 'console'
           },
