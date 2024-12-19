@@ -21,6 +21,7 @@ export const themeOverrides: Preprocessor = {
       // get override
       const override =
         token.$extensions?.[extensionProp][currentTheme] || token.$extensions?.[extensionProp][fallbackTheme]
+
       // token an theme value exist
       return {
         ...token,
