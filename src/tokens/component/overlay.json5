@@ -26,6 +26,7 @@
         'org.primer.overrides': {
           dark: {
             alpha: 1,
+            $value: '{borderColor.muted}',
           },
           'dark-dimmed': {
             $value: '{base.color.neutral.7}',
