@@ -31,7 +31,7 @@ const getStyleDictionaryConfig: StyleDictionaryConfigGenerator = (
   include,
   log: {
     warnings: 'disabled', // 'warn' | 'error' | 'disabled'
-    verbosity: 'silent', // 'default' | 'silent' | 'verbose'
+    verbosity: 'verbose', // 'default' | 'silent' | 'verbose'
     errors: {
       brokenReferences: 'throw', // 'throw' | 'console'
     },
@@ -207,6 +207,7 @@ export const buildDesignTokens = async (buildOptions: ConfigGeneratorOptions): P
         `src/tokens/functional/color/light/*.json5`,
         `src/tokens/functional/shadow/light.json5`,
         `src/tokens/functional/border/*.json5`,
+        `src/tokens/component/*.json5`,
       ],
       include: [`src/tokens/base/color/light/light.json5`, 'src/tokens/functional/size/border.json5'],
     },
@@ -237,6 +238,13 @@ export const buildDesignTokens = async (buildOptions: ConfigGeneratorOptions): P
         include,
         platforms: {
           deprecated: deprecatedJson(`deprecated/${filename}.json`, buildOptions.prefix, buildOptions.buildPath),
+        },
+        log: {
+          warnings: 'disabled', // 'warn' | 'error' | 'disabled'
+          verbosity: 'verbose', // 'default' | 'silent' | 'verbose'
+          errors: {
+            brokenReferences: 'throw', // 'throw' | 'console'
+          },
         },
       })
       await extendedSD.buildAllPlatforms()
