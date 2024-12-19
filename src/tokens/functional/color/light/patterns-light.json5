@@ -1629,58 +1629,7 @@
       },
     },
   },
-  reactionButton: {
-    selected: {
-      bgColor: {
-        rest: {
-          $value: '{base.color.blue.0}',
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              group: 'component (internal)',
-              scopes: ['bgColor'],
-            },
-          },
-        },
-        hover: {
-          $value: '#caecff',
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              group: 'component (internal)',
-              scopes: ['bgColor'],
-            },
-          },
-        },
-      },
-      fgColor: {
-        rest: {
-          $value: '{fgColor.link}',
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              group: 'component (internal)',
-              scopes: ['fgColor'],
-            },
-          },
-        },
-        hover: {
-          $value: '{base.color.blue.6}',
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              group: 'component (internal)',
-              scopes: ['fgColor'],
-            },
-          },
-        },
-      },
-    },
-  },
+
   focus: {
     outlineColor: {
       $value: '{borderColor.accent.emphasis}',
@@ -1875,19 +1824,6 @@
         },
       },
       alpha: 0.1,
-    },
-  },
-  timelineBadge: {
-    bgColor: {
-      $value: '{bgColor.muted}',
-      $type: 'color',
-      $extensions: {
-        'org.primer.figma': {
-          collection: 'mode',
-          group: 'component (internal)',
-          scopes: ['bgColor'],
-        },
-      },
     },
   },
   treeViewItem: {
