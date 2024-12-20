@@ -62,7 +62,7 @@ export const colorToken = baseColorToken
               errorMap: e => {
                 if (e.code === 'unrecognized_keys') {
                   return {
-                    message: `Unrecognized key: "${e.keys.join(', ')}", must be one of: light, light-tritanopia, light-protanopia-deutranopia, light-high-contrast, dark, dark-tritanopia, dark-protanopia-deutranopia, dark-high-contrast, dark-dimmed`,
+                    message: `Unrecognized key: "${e.keys.join(', ')}", must be one of: light, light-tritanopia, light-protanopia-deuteranopia, light-high-contrast, dark, dark-tritanopia, dark-protanopia-deuteranopia, dark-high-contrast, dark-dimmed`,
                   }
                 }
                 return {message: `Error: ${e.code}`}
