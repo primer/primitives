@@ -45,11 +45,11 @@
     },
     open: {
       muted: {
-        $value: '{base.color.blue.0}',
+        $value: '{bgColor.success.muted}',
         $type: 'color',
       },
       emphasis: {
-        $value: '{base.color.blue.5}',
+        $value: '{bgColor.success.emphasis}',
         $type: 'color',
       },
     },
@@ -75,14 +75,23 @@
     },
   },
   borderColor: {
-    open: {
+    success: {
       muted: {
-        $value: '{base.color.blue.3}',
+        $value: '{base.color.blue.0}',
         $type: 'color',
-        alpha: 0.4,
       },
       emphasis: {
-        $value: '{base.color.blue.4}',
+        $value: '{base.color.blue.5}',
+        $type: 'color',
+      },
+    },
+    open: {
+      muted: {
+        $value: '{borderColor.success.muted}',
+        $type: 'color',
+      },
+      emphasis: {
+        $value: '{borderColor.success.emphasis}',
         $type: 'color',
       },
     },
@@ -97,22 +106,10 @@
         $type: 'color',
       },
     },
-    success: {
-      muted: {
-        $value: '{base.color.blue.3}',
-        $type: 'color',
-        alpha: 0.4,
-      },
-      emphasis: {
-        $value: '{base.color.blue.5}',
-        $type: 'color',
-      },
-    },
     danger: {
       muted: {
-        $value: '{base.color.orange.3}',
+        $value: '{base.color.orange.0}',
         $type: 'color',
-        alpha: 0.4,
       },
       emphasis: {
         $value: '{base.color.orange.5}',
