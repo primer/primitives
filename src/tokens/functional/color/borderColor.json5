@@ -8,6 +8,7 @@
           dark: '{base.color.neutral.7}',
           'dark-dimmed': '{base.color.neutral.7}',
           'light-high-contrast': '{base.color.neutral.10}',
+          'dark-high-contrast': '{base.color.neutral.10}',
         },
         'org.primer.figma': {
           collection: 'mode',
@@ -40,6 +41,10 @@
             $value: '{base.color.neutral.10}',
             alpha: 1,
           },
+          'dark-high-contrast': {
+            $value: '{borderColor.default}',
+            alpha: 1,
+          },
         },
       },
       alpha: 0.7,
@@ -55,6 +60,7 @@
         },
         'org.primer.overrides': {
           'light-high-contrast': '{borderColor.default}',
+          'dark-high-contrast': '{borderColor.default}',
         },
       },
     },
@@ -103,6 +109,10 @@
         'org.primer.overrides': {
           'light-high-contrast': {
             $value: '{base.color.neutral.9}',
+            alpha: 1,
+          },
+          'dark-high-contrast': {
+            $value: '{base.color.neutral.6}',
             alpha: 1,
           },
         },
@@ -161,6 +171,10 @@
               $value: '{base.color.blue.3}',
               alpha: 1,
             },
+            'dark-high-contrast': {
+              $value: '{base.color.blue.4}',
+              alpha: 1,
+            },
           },
         },
         alpha: 0.4,
@@ -197,6 +211,10 @@
             dark: '{base.color.green.4}',
             'light-high-contrast': {
               $value: '{base.color.green.3}',
+              alpha: 1,
+            },
+            'dark-high-contrast': {
+              $value: '{base.color.green.4}',
               alpha: 1,
             },
           },
@@ -267,6 +285,10 @@
               $value: '{base.color.yellow.3}',
               alpha: 1,
             },
+            'dark-high-contrast': {
+              $value: '{base.color.yellow.4}',
+              alpha: 1,
+            },
           },
         },
         alpha: 0.4,
@@ -305,6 +327,10 @@
               $value: '{base.color.orange.3}',
               alpha: 1,
             },
+            'dark-high-contrast': {
+              $value: '{base.color.orange.4}',
+              alpha: 1,
+            },
           },
         },
         alpha: 0.4,
@@ -341,6 +367,10 @@
             dark: '{base.color.red.4}',
             'light-high-contrast': {
               $value: '{base.color.red.3}',
+              alpha: 1,
+            },
+            'dark-high-contrast': {
+              $value: '{base.color.red.4}',
               alpha: 1,
             },
           },
@@ -411,6 +441,10 @@
               $value: '{base.color.purple.3}',
               alpha: 1,
             },
+            'dark-high-contrast': {
+              $value: '{base.color.purple.4}',
+              alpha: 1,
+            },
           },
         },
         alpha: 0.4,
@@ -477,6 +511,10 @@
             dark: '{base.color.pink.4}',
             'light-high-contrast': {
               $value: '{base.color.pink.3}',
+              alpha: 1,
+            },
+            'light-high-contrast': {
+              $value: '{base.color.pink.4}',
               alpha: 1,
             },
           },
