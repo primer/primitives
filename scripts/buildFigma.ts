@@ -121,6 +121,7 @@ const buildFigma = async (buildOptions: ConfigGeneratorOptions): Promise<void> =
         `src/tokens/base/color/light/display-light.json5`,
         `src/tokens/functional/color/light/primitives-light.json5`,
         `src/tokens/functional/color/light/patterns-light.json5`,
+        `src/tokens/component/*.json5`,
       ],
       theme: 'light',
     },
@@ -133,6 +134,7 @@ const buildFigma = async (buildOptions: ConfigGeneratorOptions): Promise<void> =
         `src/tokens/base/color/light/display-light.json5`,
         `src/tokens/functional/color/light/primitives-light.json5`,
         `src/tokens/functional/color/light/patterns-light.json5`,
+        `src/tokens/component/*.json5`,
       ],
       theme: 'light-high-contrast',
     },
@@ -145,6 +147,7 @@ const buildFigma = async (buildOptions: ConfigGeneratorOptions): Promise<void> =
         `src/tokens/base/color/light/display-light.json5`,
         `src/tokens/functional/color/light/primitives-light.json5`,
         `src/tokens/functional/color/light/patterns-light.json5`,
+        `src/tokens/component/*.json5`,
       ],
       theme: 'light-protanopia-deuteranopia',
     },
@@ -157,6 +160,7 @@ const buildFigma = async (buildOptions: ConfigGeneratorOptions): Promise<void> =
         `src/tokens/base/color/light/display-light.json5`,
         `src/tokens/functional/color/light/primitives-light.json5`,
         `src/tokens/functional/color/light/patterns-light.json5`,
+        `src/tokens/component/*.json5`,
       ],
       theme: 'light-tritanopia',
     },
@@ -168,6 +172,7 @@ const buildFigma = async (buildOptions: ConfigGeneratorOptions): Promise<void> =
         `src/tokens/base/color/dark/display-dark.json5`,
         `src/tokens/functional/color/dark/primitives-dark.json5`,
         `src/tokens/functional/color/dark/patterns-dark.json5`,
+        `src/tokens/component/*.json5`,
       ],
       theme: 'dark',
     },
@@ -180,6 +185,7 @@ const buildFigma = async (buildOptions: ConfigGeneratorOptions): Promise<void> =
         `src/tokens/base/color/dark/display-dark.json5`,
         `src/tokens/functional/color/dark/primitives-dark.json5`,
         `src/tokens/functional/color/dark/patterns-dark.json5`,
+        `src/tokens/component/*.json5`,
       ],
       theme: 'dark-high-contrast',
     },
@@ -192,6 +198,7 @@ const buildFigma = async (buildOptions: ConfigGeneratorOptions): Promise<void> =
         `src/tokens/base/color/dark/display-dark.json5`,
         `src/tokens/functional/color/dark/primitives-dark.json5`,
         `src/tokens/functional/color/dark/patterns-dark.json5`,
+        `src/tokens/component/*.json5`,
       ],
       theme: 'dark-dimmed',
     },
@@ -204,6 +211,7 @@ const buildFigma = async (buildOptions: ConfigGeneratorOptions): Promise<void> =
         `src/tokens/base/color/dark/display-dark.json5`,
         `src/tokens/functional/color/dark/primitives-dark.json5`,
         `src/tokens/functional/color/dark/patterns-dark.json5`,
+        `src/tokens/component/*.json5`,
       ],
       theme: 'dark-protanopia-deuteranopia',
     },
@@ -216,6 +224,7 @@ const buildFigma = async (buildOptions: ConfigGeneratorOptions): Promise<void> =
         `src/tokens/base/color/dark/display-dark.json5`,
         `src/tokens/functional/color/dark/primitives-dark.json5`,
         `src/tokens/functional/color/dark/patterns-dark.json5`,
+        `src/tokens/component/*.json5`,
       ],
       theme: 'dark-tritanopia',
     },
@@ -225,6 +234,13 @@ const buildFigma = async (buildOptions: ConfigGeneratorOptions): Promise<void> =
     const extended = await PrimerStyleDictionary.extend({
       source,
       include,
+      log: {
+        warnings: 'disabled', // 'warn' | 'error' | 'disabled'
+        verbosity: 'verbose', // 'default' | 'silent' | 'verbose'
+        errors: {
+          brokenReferences: 'throw', // 'throw' | 'console'
+        },
+      },
       platforms: {
         figma: figma(`figma/shadows/${name}.json`, buildOptions.prefix, buildOptions.buildPath, {
           theme: [theme, getFallbackTheme(theme)],
