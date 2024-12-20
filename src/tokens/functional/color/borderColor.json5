@@ -383,6 +383,10 @@
             'dark-protanopia-deuteranopia': {
               $value: '{base.color.orange.4}',
             },
+            'light-protanopia-deuteranopia': {
+              $value: '{base.color.orange.0}',
+              alpha: 1,
+            },
           },
         },
         alpha: 0.4,
@@ -397,6 +401,14 @@
             scopes: ['borderColor'],
             codeSyntax: {
               web: 'var(--borderColor-danger-emphasis) /* utility class: .color-border-danger-emphasis */',
+            },
+          },
+          'org.primer.overrides': {
+            'dark-protanopia-deuteranopia': {
+              $value: '{base.color.orange.5}',
+            },
+            'light-protanopia-deuteranopia': {
+              $value: '{base.color.orange.5}',
             },
           },
         },
@@ -415,6 +427,12 @@
               web: 'var(--borderColor-closed-muted) /* utility class: .color-border-closed */',
             },
           },
+          'org.primer.overrides': {
+            'light-protanopia-deutranopia': {
+              $value: '{borderColor.default}',
+              alpha: 0.4,
+            },
+          },
         },
       },
       emphasis: {
@@ -428,6 +446,9 @@
             codeSyntax: {
               web: 'var(--borderColor-closed-emphasis) /* utility class: .color-border-closed-emphasis */',
             },
+          },
+          'org.primer.overrides': {
+            'light-protanopia-deutranopia': '{borderColor.emphasis}',
           },
         },
       },

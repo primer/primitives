@@ -74,29 +74,6 @@
       },
     },
   },
-  borderColor: {
-    closed: {
-      muted: {
-        $value: '{borderColor.default}',
-        $type: 'color',
-        alpha: 0.4,
-      },
-      emphasis: {
-        $value: '{borderColor.emphasis}',
-        $type: 'color',
-      },
-    },
-    danger: {
-      muted: {
-        $value: '{base.color.orange.0}',
-        $type: 'color',
-      },
-      emphasis: {
-        $value: '{base.color.orange.5}',
-        $type: 'color',
-      },
-    },
-  },
   codeMirror: {
     syntax: {
       fgColor: {
