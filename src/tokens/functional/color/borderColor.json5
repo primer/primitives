@@ -7,6 +7,7 @@
         'org.primer.overrides': {
           dark: '{base.color.neutral.7}',
           'dark-dimmed': '{base.color.neutral.7}',
+          'light-high-contrast': '{base.color.neutral.10}',
         },
         'org.primer.figma': {
           collection: 'mode',
@@ -35,6 +36,10 @@
             $value: '{base.color.neutral.7}',
             alpha: 0.7,
           },
+          'light-high-contrast': {
+            $value: '{base.color.neutral.10}',
+            alpha: 1,
+          },
         },
       },
       alpha: 0.7,
@@ -47,6 +52,9 @@
           collection: 'mode',
           group: 'semantic',
           scopes: ['borderColor'],
+        },
+        'org.primer.overrides': {
+          'light-high-contrast': '{borderColor.default}',
         },
       },
     },
@@ -63,6 +71,10 @@
           'dark-dimmed': {
             $value: '{base.color.neutral.8}',
             alpha: 0.1,
+          },
+          'light-high-contrast': {
+            $value: '{base.color.neutral.9}',
+            alpha: 0.12,
           },
         },
       },
@@ -88,8 +100,14 @@
           group: 'semantic',
           scopes: ['borderColor'],
         },
+        'org.primer.overrides': {
+          'light-high-contrast': {
+            $value: '{base.color.neutral.9}',
+            alpha: 1,
+          },
+        },
+        alpha: 0.15,
       },
-      alpha: 0.15,
     },
     neutral: {
       muted: {
@@ -139,6 +157,10 @@
           },
           'org.primer.overrides': {
             dark: '{base.color.blue.4}',
+            'light-high-contrast': {
+              $value: '{base.color.blue.3}',
+              alpha: 1,
+            },
           },
         },
         alpha: 0.4,
@@ -173,6 +195,10 @@
           },
           'org.primer.overrides': {
             dark: '{base.color.green.4}',
+            'light-high-contrast': {
+              $value: '{base.color.green.3}',
+              alpha: 1,
+            },
           },
         },
         alpha: 0.4,
@@ -237,6 +263,10 @@
           },
           'org.primer.overrides': {
             dark: '{base.color.yellow.4}',
+            'light-high-contrast': {
+              $value: '{base.color.yellow.3}',
+              alpha: 1,
+            },
           },
         },
         alpha: 0.4,
@@ -271,6 +301,10 @@
           },
           'org.primer.overrides': {
             dark: '{base.color.orange.4}',
+            'light-high-contrast': {
+              $value: '{base.color.orange.3}',
+              alpha: 1,
+            },
           },
         },
         alpha: 0.4,
@@ -305,6 +339,10 @@
           },
           'org.primer.overrides': {
             dark: '{base.color.red.4}',
+            'light-high-contrast': {
+              $value: '{base.color.red.3}',
+              alpha: 1,
+            },
           },
         },
         alpha: 0.4,
@@ -369,6 +407,10 @@
           },
           'org.primer.overrides': {
             dark: '{base.color.purple.4}',
+            'light-high-contrast': {
+              $value: '{base.color.purple.3}',
+              alpha: 1,
+            },
           },
         },
         alpha: 0.4,
@@ -402,7 +444,6 @@
             },
           },
         },
-        alpha: 0.4,
       },
       emphasis: {
         $value: '{borderColor.done.emphasis}',
@@ -434,6 +475,10 @@
           },
           'org.primer.overrides': {
             dark: '{base.color.pink.4}',
+            'light-high-contrast': {
+              $value: '{base.color.pink.3}',
+              alpha: 1,
+            },
           },
         },
         alpha: 0.4,
