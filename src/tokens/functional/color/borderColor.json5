@@ -217,6 +217,10 @@
               $value: '{base.color.green.4}',
               alpha: 1,
             },
+            'dark-tritanopia': {
+              $value: '{base.color.blue.4}',
+              alpha: 0.4,
+            },
             'dark-protanopia-deuteranopia': {
               $value: '{base.color.blue.4}',
             },
@@ -240,6 +244,12 @@
               web: 'var(--borderColor-success-emphasis) /* utility class: .color-border-success-emphasis */',
             },
           },
+          'org.primer.overrides': {
+            'dark-tritanopia': {
+              $value: '{base.color.blue.5}',
+              $type: 'color',
+            },
+          },
         },
       },
     },
@@ -256,6 +266,12 @@
               web: 'var(--borderColor-open-muted) /* utility class: .color-border-open */',
             },
           },
+          'org.primer.overrides': {
+            'dark-tritanopia': {
+              $value: '{base.color.red.4}',
+              alpha: 0.4,
+            },
+          },
         },
       },
       emphasis: {
@@ -269,6 +285,9 @@
             codeSyntax: {
               web: 'var(--borderColor-open-emphasis) /* utility class: .color-border-open-emphasis */',
             },
+          },
+          'org.primer.overrides': {
+            'dark-tritanopia': '{base.color.red.5}',
           },
         },
       },
@@ -338,6 +357,9 @@
               $value: '{base.color.orange.4}',
               alpha: 1,
             },
+            'dark-tritanopia': {
+              $value: '{base.color.red.4}',
+            },
           },
         },
         alpha: 0.4,
@@ -353,6 +375,9 @@
             codeSyntax: {
               web: 'var(--borderColor-severe-emphasis) /* utility class: .color-border-severe-emphasis */',
             },
+          },
+          'org.primer.overrides': {
+            'dark-tritanopia': '{base.color.red.5}',
           },
         },
       },
@@ -432,6 +457,10 @@
               $value: '{borderColor.default}',
               alpha: 0.4,
             },
+            'dark-tritanopia': {
+              $value: '{borderColor.default}',
+              alpha: 0.4,
+            },
           },
         },
       },
@@ -449,6 +478,7 @@
           },
           'org.primer.overrides': {
             'light-protanopia-deutranopia': '{borderColor.emphasis}',
+            'dark-tritanopia': '{borderColor.emphasis}',
           },
         },
       },
@@ -544,7 +574,7 @@
               $value: '{base.color.pink.3}',
               alpha: 1,
             },
-            'light-high-contrast': {
+            'dark-high-contrast': {
               $value: '{base.color.pink.4}',
               alpha: 1,
             },
