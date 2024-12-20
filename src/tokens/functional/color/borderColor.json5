@@ -1,0 +1,438 @@
+{
+  borderColor: {
+    default: {
+      $value: '{base.color.neutral.6}',
+      $type: 'color',
+      $extensions: {
+        'org.primer.overrides': {
+          dark: '{base.color.neutral.7}',
+        },
+        'org.primer.figma': {
+          collection: 'mode',
+          group: 'semantic',
+          scopes: ['borderColor'],
+          codeSyntax: {
+            web: 'var(--borderColor-default) /* utility class: .color-border-default */',
+          },
+        },
+      },
+    },
+    muted: {
+      $value: '{borderColor.default}',
+      $type: 'color',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'mode',
+          group: 'semantic',
+          scopes: ['borderColor'],
+          codeSyntax: {
+            web: 'var(--borderColor-muted) /* utility class: .color-border-muted */',
+          },
+        },
+      },
+      alpha: 0.7,
+    },
+    emphasis: {
+      $value: '{base.color.neutral.8}',
+      $type: 'color',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'mode',
+          group: 'semantic',
+          scopes: ['borderColor'],
+        },
+      },
+    },
+    disabled: {
+      $value: '{base.color.neutral.8}',
+      $type: 'color',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'mode',
+          group: 'semantic',
+          scopes: ['borderColor'],
+        },
+      },
+      alpha: 0.1,
+    },
+    transparent: {
+      $value: '{base.color.transparent}',
+      $type: 'color',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'mode',
+          group: 'semantic',
+          scopes: ['borderColor'],
+        },
+      },
+    },
+    translucent: {
+      $value: '{base.color.neutral.13}',
+      $type: 'color',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'mode',
+          group: 'semantic',
+          scopes: ['borderColor'],
+        },
+      },
+      alpha: 0.15,
+    },
+    neutral: {
+      muted: {
+        $value: '{borderColor.muted}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            group: 'semantic',
+            scopes: ['borderColor'],
+          },
+        },
+      },
+      emphasis: {
+        $value: '{base.color.neutral.9}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            group: 'semantic',
+            scopes: ['borderColor'],
+          },
+          'org.primer.overrides': {
+            dark: '{borderColor.emphasis}',
+          },
+        },
+      },
+    },
+    accent: {
+      muted: {
+        $value: '{base.color.blue.3}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            group: 'semantic',
+            scopes: ['borderColor'],
+            codeSyntax: {
+              web: 'var(--borderColor-accent-muted) /* utility class: .color-border-accent */',
+            },
+          },
+          'org.primer.overrides': {
+            dark: '{base.color.blue.4}',
+          },
+        },
+        alpha: 0.4,
+      },
+      emphasis: {
+        $value: '{base.color.blue.5}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            group: 'semantic',
+            scopes: ['borderColor'],
+            codeSyntax: {
+              web: 'var(--borderColor-accent-emphasis) /* utility class: .color-border-accent-emphasis */',
+            },
+          },
+        },
+      },
+    },
+    success: {
+      muted: {
+        $value: '{base.color.green.3}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            group: 'semantic',
+            scopes: ['borderColor'],
+            codeSyntax: {
+              web: 'var(--borderColor-success-muted) /* utility class: .color-border-success */',
+            },
+          },
+          'org.primer.overrides': {
+            dark: '{base.color.green.4}',
+          },
+        },
+        alpha: 0.4,
+      },
+      emphasis: {
+        $value: '{base.color.green.5}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            group: 'semantic',
+            scopes: ['borderColor'],
+            codeSyntax: {
+              web: 'var(--borderColor-success-emphasis) /* utility class: .color-border-success-emphasis */',
+            },
+          },
+        },
+      },
+    },
+    open: {
+      muted: {
+        $value: '{borderColor.success.muted}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            group: 'semantic',
+            scopes: ['borderColor'],
+            codeSyntax: {
+              web: 'var(--borderColor-open-muted) /* utility class: .color-border-open */',
+            },
+          },
+        },
+      },
+      emphasis: {
+        $value: '{borderColor.success.emphasis}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            group: 'semantic',
+            scopes: ['borderColor'],
+            codeSyntax: {
+              web: 'var(--borderColor-open-emphasis) /* utility class: .color-border-open-emphasis */',
+            },
+          },
+        },
+      },
+    },
+    attention: {
+      muted: {
+        $value: '{base.color.yellow.3}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            group: 'semantic',
+            scopes: ['borderColor'],
+            codeSyntax: {
+              web: 'var(--borderColor-attention-muted) /* utility class: .color-border-attention */',
+            },
+          },
+          'org.primer.overrides': {
+            dark: '{base.color.yellow.4}',
+          },
+        },
+        alpha: 0.4,
+      },
+      emphasis: {
+        $value: '{base.color.yellow.5}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            group: 'semantic',
+            scopes: ['borderColor'],
+            codeSyntax: {
+              web: 'var(--borderColor-attention-emphasis) /* utility class: .color-border-attention-emphasis */',
+            },
+          },
+        },
+      },
+    },
+    severe: {
+      muted: {
+        $value: '{base.color.orange.3}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            group: 'semantic',
+            scopes: ['borderColor'],
+            codeSyntax: {
+              web: 'var(--borderColor-severe-muted) /* utility class: .color-border-severe */',
+            },
+          },
+          'org.primer.overrides': {
+            dark: '{base.color.orange.4}',
+          },
+        },
+        alpha: 0.4,
+      },
+      emphasis: {
+        $value: '{base.color.orange.5}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            group: 'semantic',
+            scopes: ['borderColor'],
+            codeSyntax: {
+              web: 'var(--borderColor-severe-emphasis) /* utility class: .color-border-severe-emphasis */',
+            },
+          },
+        },
+      },
+    },
+    danger: {
+      muted: {
+        $value: '{base.color.red.3}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            group: 'semantic',
+            scopes: ['borderColor'],
+            codeSyntax: {
+              web: 'var(--borderColor-danger-muted) /* utility class: .color-border-danger */',
+            },
+          },
+          'org.primer.overrides': {
+            dark: '{base.color.red.4}',
+          },
+        },
+        alpha: 0.4,
+      },
+      emphasis: {
+        $value: '{base.color.red.5}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            group: 'semantic',
+            scopes: ['borderColor'],
+            codeSyntax: {
+              web: 'var(--borderColor-danger-emphasis) /* utility class: .color-border-danger-emphasis */',
+            },
+          },
+        },
+      },
+    },
+    closed: {
+      muted: {
+        $value: '{borderColor.danger.muted}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            group: 'semantic',
+            scopes: ['borderColor'],
+            codeSyntax: {
+              web: 'var(--borderColor-closed-muted) /* utility class: .color-border-closed */',
+            },
+          },
+        },
+      },
+      emphasis: {
+        $value: '{borderColor.danger.emphasis}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            group: 'semantic',
+            scopes: ['borderColor'],
+            codeSyntax: {
+              web: 'var(--borderColor-closed-emphasis) /* utility class: .color-border-closed-emphasis */',
+            },
+          },
+        },
+      },
+    },
+    done: {
+      muted: {
+        $value: '{base.color.purple.3}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            group: 'semantic',
+            scopes: ['borderColor'],
+            codeSyntax: {
+              web: 'var(--borderColor-done-muted) /* utility class: .color-border-done */',
+            },
+          },
+          'org.primer.overrides': {
+            dark: '{base.color.purple.4}',
+          },
+        },
+        alpha: 0.4,
+      },
+      emphasis: {
+        $value: '{base.color.purple.5}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            group: 'semantic',
+            scopes: ['borderColor'],
+            codeSyntax: {
+              web: 'var(--borderColor-done-emphasis)',
+            },
+          },
+        },
+      },
+    },
+    upsell: {
+      muted: {
+        $value: '{borderColor.done.muted}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            group: 'semantic',
+            scopes: ['borderColor'],
+            codeSyntax: {
+              web: 'var(--borderColor-upsell-muted)',
+            },
+          },
+        },
+        alpha: 0.4,
+      },
+      emphasis: {
+        $value: '{borderColor.done.emphasis}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            group: 'semantic',
+            scopes: ['borderColor'],
+            codeSyntax: {
+              web: 'var(--borderColor-upsell-emphasis)',
+            },
+          },
+        },
+      },
+    },
+    sponsors: {
+      muted: {
+        $value: '{base.color.pink.3}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            group: 'semantic',
+            scopes: ['borderColor'],
+            codeSyntax: {
+              web: 'var(--borderColor-sponsors-muted) /* utility class: .color-border-sponsors */',
+            },
+          },
+          'org.primer.overrides': {
+            dark: '{base.color.pink.4}',
+          },
+        },
+        alpha: 0.4,
+      },
+      emphasis: {
+        $value: '{base.color.pink.5}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            group: 'semantic',
+            scopes: ['borderColor'],
+            codeSyntax: {
+              web: 'var(--borderColor-sponsors-emphasis) /* utility class: .color-border-sponsors-emphasis */',
+            },
+          },
+        },
+      },
+    },
+  },
+}
