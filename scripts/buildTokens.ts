@@ -201,15 +201,8 @@ export const buildDesignTokens = async (buildOptions: ConfigGeneratorOptions): P
     // color, shadow & borders
     {
       filename: 'theme',
-      source: [
-        `src/tokens/base/color/light/light.json5`,
-        `src/tokens/base/color/light/display-light.json5`,
-        `src/tokens/functional/color/light/*.json5`,
-        `src/tokens/functional/shadow/light.json5`,
-        `src/tokens/functional/border/*.json5`,
-        `src/tokens/component/*.json5`,
-      ],
-      include: [`src/tokens/base/color/light/light.json5`, 'src/tokens/functional/size/border.json5'],
+      source: themes.find(theme => theme.filename === 'light')?.source || [],
+      include: themes.find(theme => theme.filename === 'light')?.include || [],
     },
     // typography
     {

@@ -27,10 +27,20 @@
       muted: {
         $value: '{base.color.blue.4}',
         $type: 'color',
-        alpha: 0.15,
+        alpha: 0.2,
       },
       emphasis: {
         $value: '{base.color.blue.5}',
+        $type: 'color',
+      },
+    },
+    open: {
+      muted: {
+        $value: '{bgColor.success.muted}',
+        $type: 'color',
+      },
+      emphasis: {
+        $value: '{bgColor.success.emphasis}',
         $type: 'color',
       },
     },
@@ -42,17 +52,6 @@
       },
       emphasis: {
         $value: '{base.color.orange.5}',
-        $type: 'color',
-      },
-    },
-    open: {
-      muted: {
-        $value: '{base.color.blue.4}',
-        $type: 'color',
-        alpha: 0.2,
-      },
-      emphasis: {
-        $value: '{base.color.blue.5}',
         $type: 'color',
       },
     },
@@ -64,52 +63,6 @@
       },
       emphasis: {
         $value: '{bgColor.neutral.emphasis}',
-        $type: 'color',
-      },
-    },
-  },
-  borderColor: {
-    open: {
-      muted: {
-        $value: '{base.color.blue.4}',
-        $type: 'color',
-        alpha: 0.4,
-      },
-      emphasis: {
-        $value: '{base.color.blue.4}',
-        $type: 'color',
-      },
-    },
-    closed: {
-      muted: {
-        $value: '{borderColor.muted}',
-        $type: 'color',
-        alpha: 0.4,
-      },
-      emphasis: {
-        $value: '{borderColor.emphasis}',
-        $type: 'color',
-      },
-    },
-    success: {
-      muted: {
-        $value: '{base.color.blue.4}',
-        $type: 'color',
-        alpha: 0.4,
-      },
-      emphasis: {
-        $value: '{base.color.blue.5}',
-        $type: 'color',
-      },
-    },
-    danger: {
-      muted: {
-        $value: '{base.color.orange.4}',
-        $type: 'color',
-        alpha: 0.4,
-      },
-      emphasis: {
-        $value: '{base.color.orange.5}',
         $type: 'color',
       },
     },

@@ -47,29 +47,6 @@
       $type: 'color',
     },
   },
-  borderColor: {
-    default: {
-      $value: '{base.color.neutral.7}',
-      $type: 'color',
-    },
-    muted: {
-      $value: '{base.color.neutral.7}',
-      $type: 'color',
-      alpha: 0.7,
-    },
-    disabled: {
-      $value: '{base.color.neutral.8}',
-      $type: 'color',
-      alpha: 0.1,
-    },
-    neutral: {
-      muted: {
-        $value: '{base.color.neutral.7}',
-        $type: 'color',
-        alpha: 0.7,
-      },
-    },
-  },
   control: {
     bgColor: {
       rest: {
