@@ -116,8 +116,8 @@
             alpha: 1,
           },
         },
-        alpha: 0.15,
       },
+      alpha: 0.15,
     },
     neutral: {
       muted: {
@@ -219,7 +219,10 @@
             },
             'dark-protanopia-deuteranopia': {
               $value: '{base.color.blue.4}',
-              alpha: 0.4,
+            },
+            'light-protanopia-deuteranopia': {
+              $value: '{base.color.blue.0}',
+              alpha: 1,
             },
           },
         },

@@ -75,26 +75,6 @@
     },
   },
   borderColor: {
-    success: {
-      muted: {
-        $value: '{base.color.blue.0}',
-        $type: 'color',
-      },
-      emphasis: {
-        $value: '{base.color.blue.5}',
-        $type: 'color',
-      },
-    },
-    open: {
-      muted: {
-        $value: '{borderColor.success.muted}',
-        $type: 'color',
-      },
-      emphasis: {
-        $value: '{borderColor.success.emphasis}',
-        $type: 'color',
-      },
-    },
     closed: {
       muted: {
         $value: '{borderColor.default}',
