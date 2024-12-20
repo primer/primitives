@@ -1,0 +1,42 @@
+{
+  avatar: {
+    bgColor: {
+      $value: '{base.color.neutral.0}',
+      $type: 'color',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'mode',
+          group: 'component (internal)',
+          scopes: ['bgColor'],
+        },
+        'org.primer.overrides': {
+          dark: {
+            $value: '{base.color.neutral.13}',
+            alpha: 0.1,
+          },
+        },
+      },
+    },
+    borderColor: {
+      $value: '{borderColor.translucent}',
+      $type: 'color',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'mode',
+          group: 'component (internal)',
+          scopes: ['borderColor'],
+        },
+        'org.primer.overrides': {
+          'dark-high-contrast': {
+            $value: '{base.color.neutral.13}',
+            alpha: 0.9,
+          },
+          'light-high-contrast': {
+            $value: '{base.color.neutral.13}',
+            alpha: 0.9,
+          },
+        },
+      },
+    },
+  },
+}
