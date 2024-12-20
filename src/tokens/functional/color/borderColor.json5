@@ -6,6 +6,7 @@
       $extensions: {
         'org.primer.overrides': {
           dark: '{base.color.neutral.7}',
+          'dark-dimmed': '{base.color.neutral.7}',
         },
         'org.primer.figma': {
           collection: 'mode',
@@ -27,6 +28,12 @@
           scopes: ['borderColor'],
           codeSyntax: {
             web: 'var(--borderColor-muted) /* utility class: .color-border-muted */',
+          },
+        },
+        'org.primer.overrides': {
+          'dark-dimmed': {
+            $value: '{base.color.neutral.7}',
+            alpha: 0.7,
           },
         },
       },
@@ -51,6 +58,12 @@
           collection: 'mode',
           group: 'semantic',
           scopes: ['borderColor'],
+        },
+        'org.primer.overrides': {
+          'dark-dimmed': {
+            $value: '{base.color.neutral.8}',
+            alpha: 0.1,
+          },
         },
       },
       alpha: 0.1,
@@ -87,6 +100,12 @@
             collection: 'mode',
             group: 'semantic',
             scopes: ['borderColor'],
+          },
+          'org.primer.overrides': {
+            'dark-dimmed': {
+              $value: '{base.color.neutral.7}',
+              alpha: 0.7,
+            },
           },
         },
       },
