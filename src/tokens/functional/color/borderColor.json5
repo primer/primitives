@@ -217,6 +217,10 @@
               $value: '{base.color.green.4}',
               alpha: 1,
             },
+            'dark-protanopia-deuteranopia': {
+              $value: '{base.color.blue.4}',
+              alpha: 0.4,
+            },
           },
         },
         alpha: 0.4,
@@ -372,6 +376,9 @@
             'dark-high-contrast': {
               $value: '{base.color.red.4}',
               alpha: 1,
+            },
+            'dark-protanopia-deuteranopia': {
+              $value: '{base.color.orange.4}',
             },
           },
         },

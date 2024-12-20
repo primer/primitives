@@ -67,51 +67,6 @@
       },
     },
   },
-  borderColor: {
-    success: {
-      muted: {
-        $value: '{base.color.blue.4}',
-        $type: 'color',
-        alpha: 0.4,
-      },
-      emphasis: {
-        $value: '{base.color.blue.5}',
-        $type: 'color',
-      },
-    },
-    open: {
-      muted: {
-        $value: '{borderColor.success.muted}',
-        $type: 'color',
-      },
-      emphasis: {
-        $value: '{borderColor.success.emphasis}',
-        $type: 'color',
-      },
-    },
-    closed: {
-      muted: {
-        $value: '{bgColor.neutral.muted}',
-        $type: 'color',
-        alpha: 0.4,
-      },
-      emphasis: {
-        $value: '{bgColor.neutral.emphasis}',
-        $type: 'color',
-      },
-    },
-    danger: {
-      muted: {
-        $value: '{base.color.orange.4}',
-        $type: 'color',
-        alpha: 0.4,
-      },
-      emphasis: {
-        $value: '{base.color.orange.5}',
-        $type: 'color',
-      },
-    },
-  },
   control: {
     danger: {
       fgColor: {
