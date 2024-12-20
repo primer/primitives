@@ -1,5 +1,11 @@
 # @primer/primitives
 
+## 10.3.1
+
+### Patch Changes
+
+- [#1146](https://github.com/primer/primitives/pull/1146) [`a16f30e`](https://github.com/primer/primitives/commit/a16f30e132a13a4e59f8fdd893796d1515717be7) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Fix borderColors in colorblind modes
+
 ## 10.3.0
 
 ### Minor Changes
