@@ -1,5 +1,11 @@
 # @primer/primitives
 
+## 10.3.2
+
+### Patch Changes
+
+- [#1149](https://github.com/primer/primitives/pull/1149) [`24aa6fc`](https://github.com/primer/primitives/commit/24aa6fc22786622dec00eac19ee7ec4b5a5da6c8) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Add 100ms duration for very short transitions
+
 ## 10.3.1
 
 ### Patch Changes
