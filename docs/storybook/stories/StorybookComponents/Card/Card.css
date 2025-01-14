@@ -1,0 +1,11 @@
+.Card {
+  border-radius: var(--borderRadius-default);
+  border-color: var(--borderColor-default);
+  border-width: 1px;
+  border-style: solid;
+  padding: 16px;
+
+  * {
+    max-width: 100%;
+  }
+}
