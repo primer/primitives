@@ -1,5 +1,11 @@
 # @primer/primitives
 
+## 10.3.3
+
+### Patch Changes
+
+- [#1151](https://github.com/primer/primitives/pull/1151) [`f98e52f`](https://github.com/primer/primitives/commit/f98e52f057fac3da10eb7d689a291fb3f6f60ae6) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Update easing curves
+
 ## 10.3.2
 
 ### Patch Changes
