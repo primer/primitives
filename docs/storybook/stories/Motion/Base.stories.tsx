@@ -4,6 +4,8 @@ import baseMotionTokens from '../../../../dist/docs/base/motion/motion.json'
 import {DataTable, Table} from '@primer/react/drafts'
 import {InlineCode} from '../StorybookComponents/InlineCode/InlineCode'
 import {getTokensByName} from '../utilities/getTokensByName'
+import {CubicBezier} from '../StorybookComponents/BezierCurve/BezierCurve'
+import {Card} from '../StorybookComponents/Card/Card'
 
 export default {
   title: 'Motion/Base',
@@ -36,7 +38,7 @@ export const Base = () => {
               field: 'name',
               rowHeader: true,
               renderCell: row => {
-                return <InlineCode value={row.name} copyClipboard />
+                return <InlineCode value={row.name} cssVar={true} copyClipboard />
               },
             },
             {
@@ -58,39 +60,29 @@ export const Base = () => {
           ]}
         />
       </Table.Container>
-      <Table.Container>
-        <h2 id="easing">Base easing</h2>
-        <DataTable
-          aria-labelledby="easing"
-          data={data.filter(item => item.type === 'cubicBezier')}
-          columns={[
-            {
-              header: 'Token',
-              field: 'name',
-              rowHeader: true,
-              renderCell: row => {
-                return <InlineCode value={row.name} copyClipboard />
-              },
-            },
-            {
-              header: 'Output value',
-              field: 'value',
-              rowHeader: true,
-              renderCell: row => {
-                return <p>{JSON.stringify(row.value)}</p>
-              },
-            },
-            {
-              header: 'Source value',
-              field: 'original',
-              rowHeader: true,
-              renderCell: row => {
-                return <p>{JSON.stringify(row.original.$value)}</p>
-              },
-            },
-          ]}
-        />
-      </Table.Container>
+
+      <h2 id="easing">Base easing</h2>
+      <div style={{display: 'flex', flexDirection: 'row', alignItems: 'start', gap: 8}}>
+        {data
+          .filter(item => item.type === 'cubicBezier')
+          .map(item => (
+            <Card
+              key={item.name}
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                gap: 8,
+                minWidth: 200,
+                maxWidth: 300,
+              }}
+            >
+              <CubicBezier bezier={item.value} />
+              <p>[{item.value.join(', ')}]</p>
+              <InlineCode value={item.name} cssVar={true} copyClipboard />
+            </Card>
+          ))}
+      </div>
     </>
   )
 }
