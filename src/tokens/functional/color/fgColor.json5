@@ -168,8 +168,10 @@
         },
         'org.primer.overrides': {
           dark: '{base.color.green.3}',
+          "dark-protanopia-deuteranopia": '{base.color.blue.3}',
           'light-high-contrast': '{base.color.green.6}',
           'light-protanopia-deuteranopia': '{base.color.blue.5}',
+          "dark-tritanopia": '{base.color.blue.3}',
           "light-tritanopia": '{base.color.blue.5}',
         },
       },
@@ -187,7 +189,9 @@
           },
         },
         'org.primer.overrides': {
+          "dark-protanopia-deuteranopia": '{base.color.blue.3}',
           'light-protanopia-deuteranopia': '{base.color.blue.5}',
+          "dark-tritanopia": '{base.color.red.4}',
           "light-tritanopia": '{base.color.red.5}',
         },
       },
@@ -225,6 +229,7 @@
         'org.primer.overrides': {
           dark: '{base.color.orange.4}',
           'light-high-contrast': '{base.color.orange.6}',
+          "dark-tritanopia": '{base.color.red.4}',
           "light-tritanopia": '{base.color.red.5}',
         },
       },
@@ -243,6 +248,7 @@
         },
         'org.primer.overrides': {
           dark: '{base.color.red.4}',
+          "dark-protanopia-deuteranopia": '{base.color.orange.3}',
           'light-high-contrast': '{base.color.red.6}',
           'light-protanopia-deuteranopia': '{base.color.orange.5}',
         },
@@ -261,7 +267,9 @@
           },
         },
         'org.primer.overrides': {
+          "dark-protanopia-deuteranopia": '{fgColor.muted}',
           'light-protanopia-deuteranopia': '{fgColor.muted}',
+          "dark-tritanopia": '{fgColor.muted}',
           "light-tritanopia": '{fgColor.muted}',
         },
       },
