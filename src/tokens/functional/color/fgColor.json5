@@ -100,6 +100,10 @@
           scopes: ['fgColor'],
         },
         'org.primer.overrides': {
+          dark: {
+            $value: '{base.color.neutral.8}',
+            alpha: 0.6,
+          },
           'light-high-contrast': '{base.color.neutral.9}',
         },
       },
