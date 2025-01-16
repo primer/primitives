@@ -150,7 +150,7 @@
         },
         'org.primer.overrides': {
           dark: '#4493F8',
-          "light-high-contrast": "{base.color.blue.6}",
+          'light-high-contrast': '{base.color.blue.6}',
         },
       },
     },
@@ -169,6 +169,8 @@
         'org.primer.overrides': {
           dark: '{base.color.green.3}',
           'light-high-contrast': '{base.color.green.6}',
+          'light-protanopia-deuteranopia': '{base.color.blue.5}',
+          "light-tritanopia": '{base.color.blue.5}',
         },
       },
     },
@@ -183,6 +185,10 @@
           codeSyntax: {
             web: 'var(--fgColor-open) /* utility class: .color-fg-open */',
           },
+        },
+        'org.primer.overrides': {
+          'light-protanopia-deuteranopia': '{base.color.blue.5}',
+          "light-tritanopia": '{base.color.red.5}',
         },
       },
     },
@@ -200,7 +206,7 @@
         },
         'org.primer.overrides': {
           dark: '{base.color.yellow.3}',
-          "light-high-contrast": "{base.color.yellow.6}",
+          'light-high-contrast': '{base.color.yellow.6}',
         },
       },
     },
@@ -218,7 +224,8 @@
         },
         'org.primer.overrides': {
           dark: '{base.color.orange.4}',
-          "light-high-contrast": "{base.color.orange.6}",
+          'light-high-contrast': '{base.color.orange.6}',
+          "light-tritanopia": '{base.color.red.5}',
         },
       },
     },
@@ -236,7 +243,8 @@
         },
         'org.primer.overrides': {
           dark: '{base.color.red.4}',
-          "light-high-contrast": "{base.color.red.6}",
+          'light-high-contrast': '{base.color.red.6}',
+          'light-protanopia-deuteranopia': '{base.color.orange.5}',
         },
       },
     },
@@ -251,6 +259,10 @@
           codeSyntax: {
             web: 'var(--fgColor-closed) /* utility class: .color-fg-closed */',
           },
+        },
+        'org.primer.overrides': {
+          'light-protanopia-deuteranopia': '{fgColor.muted}',
+          "light-tritanopia": '{fgColor.muted}',
         },
       },
     },
@@ -268,7 +280,7 @@
         },
         'org.primer.overrides': {
           dark: '{base.color.purple.4}',
-          "light-high-contrast": "{base.color.purple.6}",
+          'light-high-contrast': '{base.color.purple.6}',
         },
       },
     },
@@ -300,7 +312,7 @@
         },
         'org.primer.overrides': {
           dark: '{base.color.pink.4}',
-          "light-high-contrast": "{base.color.pink.6}",
+          'light-high-contrast': '{base.color.pink.6}',
         },
       },
     },
