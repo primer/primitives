@@ -29,6 +29,9 @@
             web: 'var(--fgColor-muted) /* utility class: .color-fg-muted */',
           },
         },
+        'org.primer.overrides': {
+          'light-high-contrast': '{base.color.neutral.10}',
+        },
       },
     },
     onEmphasis: {
@@ -96,6 +99,9 @@
           group: 'semantic',
           scopes: ['fgColor'],
         },
+        'org.primer.overrides': {
+          'light-high-contrast': '{base.color.neutral.9}',
+        },
       },
     },
     link: {
@@ -121,6 +127,9 @@
           group: 'semantic',
           scopes: ['fgColor'],
         },
+        'org.primer.overrides': {
+          'light-high-contrast': '{base.color.neutral.11}',
+        },
       },
     },
     accent: {
@@ -137,6 +146,7 @@
         },
         'org.primer.overrides': {
           dark: '#4493F8',
+          "light-high-contrast": "{base.color.blue.6}",
         },
       },
     },
@@ -152,8 +162,9 @@
             web: 'var(--fgColor-success) /* utility class: .color-fg-success */',
           },
         },
-                'org.primer.overrides': {
+        'org.primer.overrides': {
           dark: '{base.color.green.3}',
+          'light-high-contrast': '{base.color.green.6}',
         },
       },
     },
@@ -183,8 +194,9 @@
             web: 'var(--fgColor-attention) /* utility class: .color-fg-attention */',
           },
         },
-                        'org.primer.overrides': {
+        'org.primer.overrides': {
           dark: '{base.color.yellow.3}',
+          "light-high-contrast": "{base.color.yellow.6}",
         },
       },
     },
@@ -200,8 +212,9 @@
             web: 'var(--fgColor-severe) /* utility class: .color-fg-severe */',
           },
         },
-                                'org.primer.overrides': {
+        'org.primer.overrides': {
           dark: '{base.color.orange.4}',
+          "light-high-contrast": "{base.color.orange.6}",
         },
       },
     },
@@ -217,8 +230,9 @@
             web: 'var(--fgColor-danger) /* utility class: .color-fg-danger */',
           },
         },
-                                        'org.primer.overrides': {
+        'org.primer.overrides': {
           dark: '{base.color.red.4}',
+          "light-high-contrast": "{base.color.red.6}",
         },
       },
     },
@@ -248,8 +262,9 @@
             web: 'var(--fgColor-done) /* utility class: .color-fg-done */',
           },
         },
-                                        'org.primer.overrides': {
+        'org.primer.overrides': {
           dark: '{base.color.purple.4}',
+          "light-high-contrast": "{base.color.purple.6}",
         },
       },
     },
@@ -279,8 +294,9 @@
             web: 'var(--fgColor-sponsors) /* utility class: .color-fg-sponsors */',
           },
         },
-                                        'org.primer.overrides': {
-          dark: '{base.color.orange.4}',
+        'org.primer.overrides': {
+          dark: '{base.color.pink.4}',
+          "light-high-contrast": "{base.color.pink.6}",
         },
       },
     },
