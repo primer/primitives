@@ -4,24 +4,6 @@
  * @description All overwrites for functional color tokens for dark protanopia and deuteranopia color mode are in this file
  */
 {
-  fgColor: {
-    success: {
-      $value: '{base.color.blue.3}',
-      $type: 'color',
-    },
-    danger: {
-      $value: '{base.color.orange.3}',
-      $type: 'color',
-    },
-    open: {
-      $value: '{base.color.blue.3}',
-      $type: 'color',
-    },
-    closed: {
-      $value: '{fgColor.muted}',
-      $type: 'color',
-    },
-  },
   bgColor: {
     success: {
       muted: {

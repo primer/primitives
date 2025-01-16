@@ -28,25 +28,6 @@
       },
     },
   },
-  fgColor: {
-    default: {
-      $value: '{base.color.neutral.11}',
-      $type: 'color',
-    },
-    onEmphasis: {
-      $value: '{base.color.neutral.12}',
-      $type: 'color',
-    },
-    disabled: {
-      $value: '{base.color.neutral.8}',
-      $type: 'color',
-      alpha: 1,
-    },
-    accent: {
-      $value: '#478be6',
-      $type: 'color',
-    },
-  },
   control: {
     bgColor: {
       rest: {

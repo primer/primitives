@@ -4,48 +4,6 @@
  * @description All overwrites for functional color tokens for dark high contrast color mode are in this file
  */
 {
-  fgColor: {
-    default: {
-      $value: '{base.color.neutral.13}',
-      $type: 'color',
-    },
-    muted: {
-      $value: '{base.color.neutral.10}',
-      $type: 'color',
-    },
-    disabled: {
-      $value: '{base.color.neutral.8}',
-      $type: 'color',
-    },
-    neutral: {
-      $value: '{base.color.neutral.11}',
-      $type: 'color',
-    },
-    accent: {
-      $value: '#74B9FF',
-      $type: 'color',
-    },
-    success: {
-      $value: '#2BD853',
-      $type: 'color',
-    },
-    danger: {
-      $value: '{base.color.red.3}',
-      $type: 'color',
-    },
-    severe: {
-      $value: '{base.color.orange.3}',
-      $type: 'color',
-    },
-    done: {
-      $value: '#D3ABFF',
-      $type: 'color',
-    },
-    sponsors: {
-      $value: '#FF90C8',
-      $type: 'color',
-    },
-  },
   bgColor: {
     default: {
       $value: '{base.color.neutral.0}',
