@@ -4,58 +4,6 @@
  * @description All overwrites for functional color tokens for light protanopia and deuteranopia color mode are in this file
  */
 {
-  bgColor: {
-    success: {
-      muted: {
-        $value: '{base.color.blue.0}',
-        $type: 'color',
-      },
-      emphasis: {
-        $value: '{base.color.blue.5}',
-        $type: 'color',
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'mode',
-            group: 'semantic',
-            scopes: ['bgColor'],
-            codeSyntax: {
-              web: 'var(--bgColor-success-emphasis) /* utility class: .color-bg-success-emphasis */',
-            },
-          },
-        },
-      },
-    },
-    open: {
-      muted: {
-        $value: '{bgColor.success.muted}',
-        $type: 'color',
-      },
-      emphasis: {
-        $value: '{bgColor.success.emphasis}',
-        $type: 'color',
-      },
-    },
-    danger: {
-      muted: {
-        $value: '{base.color.orange.0}',
-        $type: 'color',
-      },
-      emphasis: {
-        $value: '{base.color.orange.5}',
-        $type: 'color',
-      },
-    },
-    closed: {
-      muted: {
-        $value: '{bgColor.neutral.muted}',
-        $type: 'color',
-      },
-      emphasis: {
-        $value: '{bgColor.neutral.emphasis}',
-        $type: 'color',
-      },
-    },
-  },
   codeMirror: {
     syntax: {
       fgColor: {
