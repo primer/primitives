@@ -4,44 +4,6 @@
  * @description All overwrites for functional color tokens for light high contrast color mode are in this file
  */
 {
-  bgColor: {
-    muted: {
-      $value: '{base.color.neutral.3}',
-      $type: 'color',
-    },
-    inset: {
-      $value: '{base.color.neutral.2}',
-      $type: 'color',
-    },
-    neutral: {
-      emphasis: {
-        $value: '{base.color.neutral.10}',
-        $type: 'color',
-      },
-      muted: {
-        $value: '{base.color.neutral.4}',
-        $type: 'color',
-        alpha: 1,
-      },
-    },
-    disabled: {
-      $value: '{base.color.neutral.4}',
-      $type: 'color',
-    },
-    success: {
-      emphasis: {
-        $value: '{base.color.green.5}',
-        $type: 'color',
-      },
-    },
-    attention: {
-      emphasis: {
-        $value: '{base.color.yellow.5}',
-        $type: 'color',
-      },
-    },
-  },
-  // patterns
   counter: {
     borderColor: {
       $value: '{borderColor.default}',
