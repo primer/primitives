@@ -232,6 +232,11 @@
               $value: '{base.color.green.4}',
               alpha: 0.15,
             },
+            'light-tritanopia': '{base.color.blue.0}',
+            'dark-tritanopia': {
+              $value: '{base.color.blue.4}',
+              alpha: 0.15,
+            },
           },
         },
       },
@@ -249,6 +254,8 @@
           },
           'org.primer.overrides': {
             dark: '{base.color.green.5}',
+            'light-tritanopia': '{base.color.blue.5}',
+            'dark-tritanopia': '{base.color.blue.5}',
           },
         },
       },
@@ -266,6 +273,13 @@
               web: 'var(--bgColor-success-muted) /* utility class: .color-bg-success */',
             },
           },
+          'org.primer.overrides': {
+            'light-tritanopia': '{base.color.red.0}',
+            'dark-tritanopia': {
+              $value: '{base.color.red.4}',
+              alpha: 0.1,
+            },
+          },
         },
       },
       emphasis: {
@@ -279,6 +293,10 @@
             codeSyntax: {
               web: 'var(--bgColor-success-emphasis) /* utility class: .color-bg-success-emphasis */',
             },
+          },
+          'org.primer.overrides': {
+            'light-tritanopia': '{base.color.red.5}',
+            'dark-tritanopia': '{base.color.red.5}',
           },
         },
       },
@@ -337,6 +355,11 @@
               $value: '{base.color.orange.4}',
               alpha: 0.1,
             },
+            'light-tritanopia': '{base.color.red.0}',
+            'dark-tritanopia': {
+              $value: '{base.color.red.4}',
+              alpha: 0.1,
+            },
           },
         },
       },
@@ -351,6 +374,10 @@
             codeSyntax: {
               web: 'var(--bgColor-severe-emphasis) /* utility class: .color-bg-severe-emphasis */',
             },
+          },
+          'org.primer.overrides': {
+            'light-tritanopia': '{base.color.red.5}',
+            'dark-tritanopia': '{base.color.red.5}',
           },
         },
       },
@@ -404,6 +431,13 @@
               web: 'var(--bgColor-closed-muted) /* utility class: .color-bg-closed */',
             },
           },
+          'org.primer.overrides': {
+            'light-tritanopia': '{bgColor.neutral.muted}',
+            'dark-tritanopia': {
+              $value: '{bgColor.neutral.muted}',
+              alpha: 0.1,
+            },
+          },
         },
       },
       emphasis: {
@@ -417,6 +451,10 @@
             codeSyntax: {
               web: 'var(--bgColor-closed-emphasis) /* utility class: .color-bg-closed-emphasis */',
             },
+          },
+          'org.primer.overrides': {
+            'light-tritanopia': '{bgColor.neutral.emphasis}',
+            'dark-tritanopia': '{bgColor.neutral.emphasis}',
           },
         },
       },
@@ -503,6 +541,10 @@
           'org.primer.overrides': {
             dark: {
               $value: '{base.color.pink.4}',
+              alpha: 0.1,
+            },
+            'dark-tritanopia': {
+              $value: '#db61a2',
               alpha: 0.1,
             },
           },

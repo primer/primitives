@@ -4,59 +4,6 @@
  * @description All overwrites for functional color tokens for this theme are in this file
  */
 {
-  bgColor: {
-    success: {
-      muted: {
-        $value: '{base.color.blue.4}',
-        $type: 'color',
-        alpha: 0.15,
-      },
-      emphasis: {
-        $value: '{base.color.blue.5}',
-        $type: 'color',
-      },
-    },
-    severe: {
-      muted: {
-        $value: '{base.color.red.4}',
-        $type: 'color',
-        alpha: 0.1,
-      },
-      emphasis: {
-        $value: '{base.color.red.5}',
-        $type: 'color',
-      },
-    },
-    open: {
-      muted: {
-        $value: '{base.color.red.4}',
-        $type: 'color',
-        alpha: 0.1,
-      },
-      emphasis: {
-        $value: '{base.color.red.5}',
-        $type: 'color',
-      },
-    },
-    closed: {
-      muted: {
-        $value: '{bgColor.neutral.muted}',
-        $type: 'color',
-        alpha: 0.1,
-      },
-      emphasis: {
-        $value: '{bgColor.neutral.emphasis}',
-        $type: 'color',
-      },
-    },
-    sponsors: {
-      muted: {
-        $value: '#db61a2',
-        $type: 'color',
-        alpha: 0.1,
-      },
-    },
-  },
   codeMirror: {
     syntax: {
       fgColor: {
