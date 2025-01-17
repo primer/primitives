@@ -10,7 +10,6 @@ import type {TokenBuildInput} from '../src/types/tokenBuildInput.js'
 import glob from 'fast-glob'
 import {themes} from './themes.config.js'
 import fs from 'fs'
-import {getFallbackTheme} from './utilities/getFallbackTheme.js'
 
 /**
  * getStyleDictionaryConfig
@@ -67,7 +66,7 @@ export const buildDesignTokens = async (buildOptions: ConfigGeneratorOptions): P
         platforms: {
           css: css(`internalCss/${filename}.css`, buildOptions.prefix, buildOptions.buildPath, {
             themed: true,
-            theme: [theme, getFallbackTheme(theme)],
+            theme: [theme],
           }),
         },
       })
@@ -89,7 +88,7 @@ export const buildDesignTokens = async (buildOptions: ConfigGeneratorOptions): P
           `functional/themes/${filename}`,
           source,
           include,
-          {...buildOptions, themed: true, theme: [theme, getFallbackTheme(theme)]},
+          {...buildOptions, themed: true, theme},
           // disable fallbacks for themes
           {fallbacks: undefined},
         ),

@@ -3,7 +3,6 @@ import {PrimerStyleDictionary} from '../src/primerStyleDictionary.js'
 import {themes} from './themes.config.js'
 import {figma} from '../src/platforms/index.js'
 import type {ConfigGeneratorOptions} from '../src/types/styleDictionaryConfigGenerator.js'
-import {getFallbackTheme} from './utilities/getFallbackTheme.js'
 
 const buildFigma = async (buildOptions: ConfigGeneratorOptions): Promise<void> => {
   /** -----------------------------------
@@ -68,7 +67,7 @@ const buildFigma = async (buildOptions: ConfigGeneratorOptions): Promise<void> =
       include,
       platforms: {
         figma: figma(`figma/themes/${filename}.json`, buildOptions.prefix, buildOptions.buildPath, {
-          theme: [theme, getFallbackTheme(theme)],
+          theme,
         }),
       },
     })
@@ -252,7 +251,7 @@ const buildFigma = async (buildOptions: ConfigGeneratorOptions): Promise<void> =
       },
       platforms: {
         figma: figma(`figma/shadows/${name}.json`, buildOptions.prefix, buildOptions.buildPath, {
-          theme: [theme, getFallbackTheme(theme)],
+          theme,
         }),
       },
     })
