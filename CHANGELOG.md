@@ -1,5 +1,16 @@
 # @primer/primitives
 
+## 10.3.4
+
+### Patch Changes
+
+- [#1154](https://github.com/primer/primitives/pull/1154) [`f86174b`](https://github.com/primer/primitives/commit/f86174b05a516b8d46b0f2ef5258c72b53ea6e82) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Fix borderColor-closed-muted in dark-protanopia-deuteranopia and revert protanopia-deuteranopia open color to be orange again
+
+  - `borderColor-closed-muted` in dark-protanopia-deuteranopia is now `gray` instead of `orange`
+  - `borderColor-open-[muted|emphasis]` in protanopia-deuteranopia is now `orange` again (instead of `blue`)
+  - `fgColor-open` in protanopia-deuteranopia is now `orange` again (instead of `blue`)
+  - `bgColor-open-[muted|emphasis]` in protanopia-deuteranopia is now `orange` again (instead of `blue`)
+
 ## 10.3.3
 
 ### Patch Changes
