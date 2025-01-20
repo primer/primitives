@@ -1,4 +1,4 @@
-import type {Config} from 'style-dictionary/types'
+import type {Config, LogConfig} from 'style-dictionary/types'
 import {PrimerStyleDictionary} from '../src/primerStyleDictionary.js'
 import {copyFromDir} from '../src/utilities/index.js'
 import {deprecatedJson, css, docJson, fallbacks, styleLint} from '../src/platforms/index.js'
@@ -11,6 +11,14 @@ import glob from 'fast-glob'
 import {themes} from './themes.config.js'
 import fs from 'fs'
 import {getFallbackTheme} from './utilities/getFallbackTheme.js'
+
+const log: LogConfig = {
+  warnings: 'disabled', // 'warn' | 'error' | 'disabled'
+  verbosity: 'silent', // 'default' | 'silent' | 'verbose'
+  errors: {
+    brokenReferences: 'throw', // 'throw' | 'console'
+  },
+}
 
 /**
  * getStyleDictionaryConfig
@@ -29,13 +37,7 @@ const getStyleDictionaryConfig: StyleDictionaryConfigGenerator = (
 ): Config => ({
   source, // build the special formats
   include,
-  log: {
-    warnings: 'disabled', // 'warn' | 'error' | 'disabled'
-    verbosity: 'silent', // 'default' | 'silent' | 'verbose'
-    errors: {
-      brokenReferences: 'throw', // 'throw' | 'console'
-    },
-  },
+  log,
   platforms: Object.fromEntries(
     Object.entries({
       css: css(`css/${filename}.css`, options.prefix, options.buildPath, {
@@ -64,6 +66,7 @@ export const buildDesignTokens = async (buildOptions: ConfigGeneratorOptions): P
       const extendedSD = await PrimerStyleDictionary.extend({
         source: [...source, ...include], // build the special formats
         include,
+        log,
         platforms: {
           css: css(`internalCss/${filename}.css`, buildOptions.prefix, buildOptions.buildPath, {
             themed: true,

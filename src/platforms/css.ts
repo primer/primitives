@@ -2,6 +2,8 @@ import {isFromFile, isSource} from '../filters/index.js'
 import type {PlatformInitializer} from '../types/platformInitializer.js'
 import type {PlatformConfig, TransformedToken} from 'style-dictionary/types'
 import {outputReferencesTransformed, outputReferencesFilter} from 'style-dictionary/utils'
+import {outputReferencesTransformedWithObject} from './utilities/outputReferencesTransformedWithObject.js'
+import {outputReferencesFilterObject} from './utilities/outputReferencesFilterObject.js'
 
 const getCssSelectors = (outputFile: string) => {
   // check for dark in the beginning of the output filename
@@ -58,8 +60,13 @@ export const css: PlatformInitializer = (outputFile, prefix, buildPath, options)
           ]),
         options: {
           showFileHeader: false,
-          outputReferences: (token, platformOptions) =>
-            outputReferencesFilter(token, platformOptions) && outputReferencesTransformed(token, platformOptions),
+          // outputReferences: true,
+          outputReferences: (token, platformOptions) => {
+            return (
+              outputReferencesFilterObject(token, platformOptions) &&
+              outputReferencesTransformedWithObject(token, platformOptions)
+            )
+          },
           descriptions: false,
           queries: getCssSelectors(outputFile),
           ...options?.options,

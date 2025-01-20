@@ -1,6 +1,7 @@
 import type {TransformedToken, FormatFn, FormatFnArguments, FormattingOptions} from 'style-dictionary/types'
 import {format} from 'prettier'
-import {fileHeader, formattedVariables, sortByName} from 'style-dictionary/utils'
+import {fileHeader, sortByName} from 'style-dictionary/utils'
+import getFormattedVariables from './utilities/getFormattedVariables.js'
 
 const wrapWithSelector = (css: string, selector: string | false): string => {
   // return without selector
@@ -74,7 +75,7 @@ export const cssAdvanced: FormatFn = async ({
     // early abort if no matches
     if (!filteredDictionary.allTokens.length) continue
     // add tokens into root
-    const css = formattedVariables({
+    const css = getFormattedVariables({
       format: 'css',
       dictionary: filteredDictionary,
       outputReferences,
