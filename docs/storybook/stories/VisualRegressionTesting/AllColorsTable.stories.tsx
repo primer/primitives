@@ -1,6 +1,6 @@
 import React from 'react'
 import lightColorTokens from '../../../../dist/docs/functional/themes/light.json'
-import {Stack} from '@primer/react/drafts'
+import {Stack} from '@primer/react/experimental'
 import {InlineCode} from '../StorybookComponents/InlineCode/InlineCode'
 import {ColorTokenSwatch} from '../StorybookComponents/ColorTokenSwatch/ColorTokenSwatch'
 import styles from './AllColorsTable.module.css'

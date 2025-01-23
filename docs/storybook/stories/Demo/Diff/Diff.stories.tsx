@@ -1,6 +1,6 @@
 import React from 'react'
 import './Diff.css'
-import {Box, Link} from '@primer/react'
+import {Link} from '@primer/react'
 
 export default {
   title: 'Testing/Diff',
