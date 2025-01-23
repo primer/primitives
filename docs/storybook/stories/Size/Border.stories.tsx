@@ -1,7 +1,7 @@
 import React from 'react'
 // eslint-disable-next-line import/extensions
 import {SizeTokenSwatch} from '../StorybookComponents/SizeTokenSwatch/SizeTokenSwatch'
-import {DataTable, Table} from '@primer/react/drafts'
+import {DataTable, Table} from '@primer/react/experimental'
 import {InlineCode} from '../StorybookComponents/InlineCode/InlineCode'
 import {getTokensByName} from '../utilities/getTokensByName'
 import sizeTokens from '../../../../dist/docs/functional/size/border.json'

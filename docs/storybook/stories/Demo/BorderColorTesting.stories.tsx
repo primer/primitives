@@ -1,5 +1,5 @@
 import React from 'react'
-import {DataTable, Table} from '@primer/react/drafts'
+import {DataTable, Table} from '@primer/react/experimental'
 import './BorderTesting.css'
 import {
   ThreeBarsIcon,
@@ -29,7 +29,7 @@ import {
   PeopleIcon,
   SearchIcon,
 } from '@primer/octicons-react'
-import {PageLayout, Button, TextInput, SegmentedControl, NavList, Box, Text, IconButton, Octicon} from '@primer/react'
+import {PageLayout, Button, TextInput, SegmentedControl, NavList, Box, Text, IconButton} from '@primer/react'
 
 export default {
   title: 'Testing/Borders',
@@ -128,7 +128,7 @@ export const BorderDemo = () => {
             }}
           >
             <IconButton icon={ThreeBarsIcon} aria-label="Menu" />
-            <Octicon icon={MarkGithubIcon} size={32} />
+            <MarkGithubIcon size={32} />
             <Box sx={{display: 'flex', gap: 2}}>
               <Text sx={{fontSize: 1, fontWeight: 'bold'}}>Settings</Text>
             </Box>
