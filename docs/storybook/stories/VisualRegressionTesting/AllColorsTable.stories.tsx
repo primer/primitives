@@ -58,7 +58,7 @@ export const AllThemesInOneTable = () => {
             </Stack.Item>
             <Stack.Item
               data-color-mode="dark"
-              data-light-theme="dark"
+              data-light-theme="dark_high_contrast"
               data-dark-theme="dark_high_contrast"
               className={styles.swatch}
             >
@@ -75,7 +75,7 @@ export const AllThemesInOneTable = () => {
             </Stack.Item>
             <Stack.Item
               data-color-mode="dark"
-              data-light-theme="dark"
+              data-light-theme="dark_dimmed"
               data-dark-theme="dark_dimmed"
               className={styles.swatch}
             >
@@ -92,7 +92,7 @@ export const AllThemesInOneTable = () => {
             </Stack.Item>
             <Stack.Item
               data-color-mode="dark"
-              data-light-theme="dark"
+              data-light-theme="dark_tritanopia"
               data-dark-theme="dark_tritanopia"
               className={styles.swatch}
             >
@@ -109,8 +109,8 @@ export const AllThemesInOneTable = () => {
             </Stack.Item>
             <Stack.Item
               data-color-mode="dark"
-              data-light-theme="dark"
-              data-dark-theme="darky_colorblind"
+              data-light-theme="dark_colorblind"
+              data-dark-theme="dark_colorblind"
               className={styles.swatch}
             >
               <ColorTokenSwatch
