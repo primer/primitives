@@ -4,30 +4,6 @@
  * @description All overwrites for functional color tokens for dark dimmed color mode are in this file
  */
 {
-  bgColor: {
-    default: {
-      $value: '{base.color.neutral.3}',
-      $type: 'color',
-    },
-    muted: {
-      $value: '{base.color.neutral.4}',
-      $type: 'color',
-    },
-    inset: {
-      $value: '{base.color.neutral.2}',
-      $type: 'color',
-    },
-    disabled: {
-      $value: '{base.color.neutral.5}',
-      $type: 'color',
-    },
-    neutral: {
-      emphasis: {
-        $value: '{base.color.neutral.8}',
-        $type: 'color',
-      },
-    },
-  },
   control: {
     bgColor: {
       rest: {
