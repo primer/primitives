@@ -619,43 +619,6 @@
       },
     },
   },
-  counter: {
-    borderColor: {
-      $value: '{base.color.transparent}',
-      $type: 'color',
-      $extensions: {
-        'org.primer.figma': {
-          collection: 'mode',
-          group: 'component (internal)',
-          scopes: ['borderColor'],
-        },
-      },
-    },
-    bgColor: {
-      muted: {
-        $value: '{bgColor.neutral.muted}',
-        $type: 'color',
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'mode',
-            group: 'component',
-            scopes: ['bgColor'],
-          },
-        },
-      },
-      emphasis: {
-        $value: '{bgColor.neutral.emphasis}',
-        $type: 'color',
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'mode',
-            group: 'component',
-            scopes: ['bgColor'],
-          },
-        },
-      },
-    },
-  },
   button: {
     default: {
       fgColor: {
@@ -1577,20 +1540,6 @@
       },
     },
   },
-
-  focus: {
-    outlineColor: {
-      $value: '{borderColor.accent.emphasis}',
-      $type: 'color',
-      $extensions: {
-        'org.primer.figma': {
-          collection: 'mode',
-          group: 'component (internal)',
-          scopes: ['borderColor', 'effectColor'],
-        },
-      },
-    },
-  },
   menu: {
     bgColor: {
       active: {
@@ -1715,19 +1664,6 @@
         },
       },
       alpha: 0.2,
-    },
-  },
-  card: {
-    bgColor: {
-      $value: '{bgColor.default}',
-      $type: 'color',
-      $extensions: {
-        'org.primer.figma': {
-          collection: 'mode',
-          group: 'component',
-          scopes: ['bgColor'],
-        },
-      },
     },
   },
   label: {
@@ -2640,30 +2576,6 @@
           $extensions: {
             'org.primer.figma': {collection: 'mode', group: 'component', scopes: ['fgColor']},
           },
-        },
-      },
-    },
-  },
-  tooltip: {
-    bgColor: {
-      $value: '{bgColor.emphasis}',
-      $type: 'color',
-      $extensions: {
-        'org.primer.figma': {
-          collection: 'mode',
-          group: 'component',
-          scopes: ['bgColor'],
-        },
-      },
-    },
-    fgColor: {
-      $value: '{fgColor.onEmphasis}',
-      $type: 'color',
-      $extensions: {
-        'org.primer.figma': {
-          collection: 'mode',
-          group: 'component',
-          scopes: ['fgColor'],
         },
       },
     },
