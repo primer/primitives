@@ -4,26 +4,6 @@
  * @description All overwrites for functional color tokens for light high contrast color mode are in this file
  */
 {
-  counter: {
-    borderColor: {
-      $value: '{borderColor.default}',
-      $type: 'color',
-    },
-    bgColor: {
-      muted: {
-        $value: '{bgColor.neutral.muted}',
-        $type: 'color',
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'mode',
-            group: 'component',
-            scopes: ['bgColor'],
-          },
-        },
-        alpha: 1,
-      },
-    },
-  },
   control: {
     fgColor: {
       placeholder: {
