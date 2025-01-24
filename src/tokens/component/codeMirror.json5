@@ -10,8 +10,8 @@
           scopes: ['fgColor'],
         },
         'org.primer.overrides': {
-          dark: '{fgColor.default}'
-        }
+          dark: '{fgColor.default}',
+        },
       },
     },
     bgColor: {
@@ -24,8 +24,8 @@
           scopes: ['bgColor'],
         },
         'org.primer.overrides': {
-          dark: '{bgColor.default}'
-        }
+          dark: '{bgColor.default}',
+        },
       },
     },
     gutters: {
@@ -39,8 +39,8 @@
             scopes: ['bgColor'],
           },
           'org.primer.overrides': {
-            dark: '{bgColor.default}'
-          }
+            dark: '{bgColor.default}',
+          },
         },
       },
     },
@@ -56,8 +56,8 @@
               scopes: ['fgColor'],
             },
             'org.primer.overrides': {
-              dark: '{bgColor.default}'
-            }
+              dark: '{bgColor.default}',
+            },
           },
         },
         muted: {
@@ -70,8 +70,8 @@
               scopes: ['fgColor'],
             },
             'org.primer.overrides': {
-              dark: '{fgColor.muted}'
-            }
+              dark: '{fgColor.muted}',
+            },
           },
         },
       },
@@ -87,8 +87,8 @@
             scopes: ['fgColor'],
           },
           'org.primer.overrides': {
-            dark: '{fgColor.muted}'
-          }
+            dark: '{fgColor.muted}',
+          },
         },
       },
     },
@@ -103,8 +103,8 @@
             scopes: ['fgColor'],
           },
           'org.primer.overrides': {
-            dark: '{fgColor.default}'
-          }
+            dark: '{fgColor.default}',
+          },
         },
       },
     },
@@ -119,8 +119,12 @@
             scopes: ['bgColor'],
           },
           'org.primer.overrides': {
-            dark: '{borderColor.accent.muted}'
-          }
+            dark: '{borderColor.accent.muted}',
+            'dark-high-contrast': {
+              $value: '{base.color.blue.4}',
+              alpha: 0.4,
+            },
+          },
         },
       },
     },
@@ -135,8 +139,8 @@
             scopes: ['bgColor'],
           },
           'org.primer.overrides': {
-            dark: '{bgColor.neutral.muted}'
-          }
+            dark: '{bgColor.neutral.muted}',
+          },
         },
       },
     },
@@ -151,8 +155,8 @@
             scopes: ['fgColor'],
           },
           'org.primer.overrides': {
-            dark: '{fgColor.default}'
-          }
+            dark: '{fgColor.default}',
+          },
         },
       },
     },
@@ -167,8 +171,8 @@
             scopes: ['bgColor'],
           },
           'org.primer.overrides': {
-            dark: '{bgColor.default}'
-          }
+            dark: '{bgColor.default}',
+          },
         },
       },
     },
@@ -184,8 +188,8 @@
               scopes: ['fgColor'],
             },
             'org.primer.overrides': {
-              dark: '{base.color.neutral.8}'
-            }
+              dark: '{base.color.neutral.8}',
+            },
           },
         },
         constant: {
@@ -198,8 +202,8 @@
               scopes: ['fgColor'],
             },
             'org.primer.overrides': {
-              dark: '{base.color.blue.2}'
-            }
+              dark: '{base.color.blue.2}',
+            },
           },
         },
         entity: {
@@ -212,8 +216,8 @@
               scopes: ['fgColor'],
             },
             'org.primer.overrides': {
-              dark: '{base.color.purple.2}'
-            }
+              dark: '{base.color.purple.2}',
+            },
           },
         },
         keyword: {
@@ -226,8 +230,10 @@
               scopes: ['fgColor'],
             },
             'org.primer.overrides': {
-              dark: '{base.color.red.3}'
-            }
+              dark: '{base.color.red.3}',
+              'light-protanopia-deuteranopia': '{base.color.orange.5}',
+              "dark-protanopia-deuteranopia": '{base.color.orange.3}',
+            },
           },
         },
         storage: {
@@ -240,8 +246,10 @@
               scopes: ['fgColor'],
             },
             'org.primer.overrides': {
-              dark: '{base.color.red.3}'
-            }
+              dark: '{base.color.red.3}',
+              'light-protanopia-deuteranopia': '{base.color.orange.5}',
+              "dark-protanopia-deuteranopia": '{base.color.orange.3}',
+            },
           },
         },
         string: {
@@ -254,8 +262,8 @@
               scopes: ['fgColor'],
             },
             'org.primer.overrides': {
-              dark: '{base.color.blue.1}'
-            }
+              dark: '{base.color.blue.1}',
+            },
           },
         },
         support: {
@@ -268,8 +276,8 @@
               scopes: ['fgColor'],
             },
             'org.primer.overrides': {
-              dark: '{base.color.blue.2}'
-            }
+              dark: '{base.color.blue.2}',
+            },
           },
         },
         variable: {
@@ -282,8 +290,10 @@
               scopes: ['fgColor'],
             },
             'org.primer.overrides': {
-              dark: '{base.color.orange.2}'
-            }
+              dark: '{base.color.orange.2}',
+              'light-tritanopia': '{base.color.red.6}',
+              'dark-tritanopia': '{base.color.red.2}',
+            },
           },
         },
       },
