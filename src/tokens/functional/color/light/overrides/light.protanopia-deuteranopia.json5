@@ -4,20 +4,6 @@
  * @description All overwrites for functional color tokens for light protanopia and deuteranopia color mode are in this file
  */
 {
-  codeMirror: {
-    syntax: {
-      fgColor: {
-        keyword: {
-          $value: '{base.color.orange.5}',
-          $type: 'color',
-        },
-        storage: {
-          $value: '{base.color.orange.5}',
-          $type: 'color',
-        },
-      },
-    },
-  },
   button: {
     primary: {
       bgColor: {
