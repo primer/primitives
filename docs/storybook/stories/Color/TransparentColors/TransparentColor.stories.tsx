@@ -6,7 +6,7 @@ import lightHCColorTokens from '../../../../../dist/docs/functional/themes/light
 import darkHCColorTokens from '../../../../../dist/docs/functional/themes/dark-high-contrast.json'
 import darkDimmedColorTokens from '../../../../../dist/docs/functional/themes/dark-dimmed.json'
 import {ColorTokenSwatch} from '../../StorybookComponents/ColorTokenSwatch/ColorTokenSwatch'
-import {DataTable, Table, Stack} from '@primer/react/drafts'
+import {DataTable, Table, Stack} from '@primer/react/experimental'
 import {InlineCode} from '../../StorybookComponents/InlineCode/InlineCode'
 
 export default {

@@ -1,7 +1,7 @@
 import React from 'react'
 // eslint-disable-next-line import/extensions
 import sizeTokens from '../../../../dist/docs/functional/size/size.json'
-import {DataTable, Table} from '@primer/react/drafts'
+import {DataTable, Table} from '@primer/react/experimental'
 import {InlineCode} from '../StorybookComponents/InlineCode/InlineCode'
 import {getTokensByName} from '../utilities/getTokensByName'
 

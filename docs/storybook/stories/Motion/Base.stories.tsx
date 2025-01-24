@@ -1,7 +1,7 @@
 import React from 'react'
 // eslint-disable-next-line import/extensions
 import baseMotionTokens from '../../../../dist/docs/base/motion/motion.json'
-import {DataTable, Table} from '@primer/react/drafts'
+import {DataTable, Table} from '@primer/react/experimental'
 import {InlineCode} from '../StorybookComponents/InlineCode/InlineCode'
 import {getTokensByName} from '../utilities/getTokensByName'
 import {CubicBezier} from '../StorybookComponents/BezierCurve/BezierCurve'
