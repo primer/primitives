@@ -6,10 +6,12 @@
       $extensions: {
         'org.primer.figma': {
           collection: 'mode',
-
           group: 'component',
           scopes: ['fgColor'],
         },
+        'org.primer.overrides': {
+          dark: '{fgColor.default}'
+        }
       },
     },
     bgColor: {
@@ -18,10 +20,12 @@
       $extensions: {
         'org.primer.figma': {
           collection: 'mode',
-
           group: 'component',
           scopes: ['bgColor'],
         },
+        'org.primer.overrides': {
+          dark: '{bgColor.default}'
+        }
       },
     },
     gutters: {
@@ -31,10 +35,12 @@
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
-
             group: 'component',
             scopes: ['bgColor'],
           },
+          'org.primer.overrides': {
+            dark: '{bgColor.default}'
+          }
         },
       },
     },
@@ -46,10 +52,12 @@
           $extensions: {
             'org.primer.figma': {
               collection: 'mode',
-
               group: 'component',
               scopes: ['fgColor'],
             },
+            'org.primer.overrides': {
+              dark: '{bgColor.default}'
+            }
           },
         },
         muted: {
@@ -58,10 +66,12 @@
           $extensions: {
             'org.primer.figma': {
               collection: 'mode',
-
               group: 'component',
               scopes: ['fgColor'],
             },
+            'org.primer.overrides': {
+              dark: '{fgColor.muted}'
+            }
           },
         },
       },
@@ -73,10 +83,12 @@
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
-
             group: 'component',
             scopes: ['fgColor'],
           },
+          'org.primer.overrides': {
+            dark: '{fgColor.muted}'
+          }
         },
       },
     },
@@ -87,10 +99,12 @@
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
-
             group: 'component',
             scopes: ['fgColor'],
           },
+          'org.primer.overrides': {
+            dark: '{fgColor.default}'
+          }
         },
       },
     },
@@ -101,10 +115,12 @@
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
-
             group: 'component',
             scopes: ['bgColor'],
           },
+          'org.primer.overrides': {
+            dark: '{borderColor.accent.muted}'
+          }
         },
       },
     },
@@ -115,10 +131,12 @@
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
-
             group: 'component',
             scopes: ['bgColor'],
           },
+          'org.primer.overrides': {
+            dark: '{bgColor.neutral.muted}'
+          }
         },
       },
     },
@@ -129,10 +147,12 @@
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
-
             group: 'component',
             scopes: ['fgColor'],
           },
+          'org.primer.overrides': {
+            dark: '{fgColor.default}'
+          }
         },
       },
     },
@@ -143,109 +163,127 @@
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
-
             group: 'component',
             scopes: ['bgColor'],
           },
+          'org.primer.overrides': {
+            dark: '{bgColor.default}'
+          }
         },
       },
     },
     syntax: {
       fgColor: {
         comment: {
-          $value: '{base.color.neutral.8}',
+          $value: '{base.color.neutral.13}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
               collection: 'mode',
-
               group: 'component',
               scopes: ['fgColor'],
             },
+            'org.primer.overrides': {
+              dark: '{base.color.neutral.8}'
+            }
           },
         },
         constant: {
-          $value: '{base.color.blue.2}',
+          $value: '{base.color.blue.6}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
               collection: 'mode',
-
               group: 'component',
               scopes: ['fgColor'],
             },
+            'org.primer.overrides': {
+              dark: '{base.color.blue.2}'
+            }
           },
         },
         entity: {
-          $value: '{base.color.purple.2}',
+          $value: '{base.color.purple.5}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
               collection: 'mode',
-
               group: 'component',
               scopes: ['fgColor'],
             },
+            'org.primer.overrides': {
+              dark: '{base.color.purple.2}'
+            }
           },
         },
         keyword: {
-          $value: '{base.color.red.3}',
+          $value: '{base.color.red.5}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
               collection: 'mode',
-
               group: 'component',
               scopes: ['fgColor'],
             },
+            'org.primer.overrides': {
+              dark: '{base.color.red.3}'
+            }
           },
         },
         storage: {
-          $value: '{base.color.red.3}',
+          $value: '{base.color.red.5}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
               collection: 'mode',
-
               group: 'component',
               scopes: ['fgColor'],
             },
+            'org.primer.overrides': {
+              dark: '{base.color.red.3}'
+            }
           },
         },
         string: {
-          $value: '{base.color.blue.1}',
+          $value: '{base.color.blue.8}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
               collection: 'mode',
-
               group: 'component',
               scopes: ['fgColor'],
             },
+            'org.primer.overrides': {
+              dark: '{base.color.blue.1}'
+            }
           },
         },
         support: {
-          $value: '{base.color.blue.2}',
+          $value: '{base.color.blue.6}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
               collection: 'mode',
-
               group: 'component',
               scopes: ['fgColor'],
             },
+            'org.primer.overrides': {
+              dark: '{base.color.blue.2}'
+            }
           },
         },
         variable: {
-          $value: '{base.color.orange.2}',
+          $value: '{base.color.orange.6}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
               collection: 'mode',
-
               group: 'component',
               scopes: ['fgColor'],
             },
+            'org.primer.overrides': {
+              dark: '{base.color.orange.2}'
+            }
           },
         },
       },
