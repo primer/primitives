@@ -9,6 +9,7 @@ describe('Preprocessor: themeOverrides', () => {
         name: 'red',
         description: 'This is a description',
         $value: 'transformedValue',
+        alpha: 0.6,
         path: ['tokens', 'subgroup', 'red'],
         $extensions: {
           'org.primer.overrides': {
@@ -30,6 +31,20 @@ describe('Preprocessor: themeOverrides', () => {
           },
         },
       }),
+      alphaOnlyOverride: getMockToken({
+        name: 'red',
+        description: 'This is a description',
+        $value: 'transformedValue',
+        alpha: 0.6,
+        path: ['tokens', 'subgroup', 'red'],
+        $extensions: {
+          'org.primer.overrides': {
+            dark: {
+              alpha: 0.75,
+            },
+          },
+        },
+      }),
     })
 
     const resultDictionary = getMockDictionary({
@@ -37,6 +52,7 @@ describe('Preprocessor: themeOverrides', () => {
         name: 'red',
         description: 'This is a description',
         $value: 'darkValue',
+        alpha: 0.6,
         path: ['tokens', 'subgroup', 'red'],
         $extensions: {
           'org.primer.overrides': {
@@ -54,6 +70,20 @@ describe('Preprocessor: themeOverrides', () => {
             dark: {
               $value: 'darkValue',
               description: 'DarkMode description',
+            },
+          },
+        },
+      }),
+      alphaOnlyOverride: getMockToken({
+        name: 'red',
+        description: 'This is a description',
+        $value: 'transformedValue',
+        alpha: 0.75,
+        path: ['tokens', 'subgroup', 'red'],
+        $extensions: {
+          'org.primer.overrides': {
+            dark: {
+              alpha: 0.75,
             },
           },
         },
