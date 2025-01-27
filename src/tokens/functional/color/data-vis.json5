@@ -8,10 +8,12 @@
           $extensions: {
             'org.primer.figma': {
               collection: 'mode',
-
               group: 'component',
               scopes: ['bgColor', 'borderColor'],
             },
+            'org.primer.overrides': {
+              dark: '{base.display.color.blue.5}'
+            }
           },
         },
         muted: {
@@ -20,10 +22,12 @@
           $extensions: {
             'org.primer.figma': {
               collection: 'mode',
-
               group: 'component',
               scopes: ['bgColor'],
             },
+            'org.primer.overrides': {
+              dark: '{base.display.color.blue.0}'
+            }
           },
         },
       },
@@ -36,10 +40,12 @@
           $extensions: {
             'org.primer.figma': {
               collection: 'mode',
-
               group: 'component',
               scopes: ['bgColor', 'borderColor'],
             },
+            'org.primer.overrides': {
+              dark: '{base.display.color.auburn.5}'
+            }
           },
         },
         muted: {
@@ -48,10 +54,12 @@
           $extensions: {
             'org.primer.figma': {
               collection: 'mode',
-
               group: 'component',
               scopes: ['bgColor'],
             },
+            'org.primer.overrides': {
+              dark: '{base.display.color.auburn.0}'
+            }
           },
         },
       },
@@ -64,10 +72,12 @@
           $extensions: {
             'org.primer.figma': {
               collection: 'mode',
-
               group: 'component',
               scopes: ['bgColor', 'borderColor'],
             },
+            'org.primer.overrides': {
+              dark: '{base.display.color.orange.4}'
+            }
           },
         },
         muted: {
@@ -76,10 +86,12 @@
           $extensions: {
             'org.primer.figma': {
               collection: 'mode',
-
               group: 'component',
               scopes: ['bgColor'],
             },
+            'org.primer.overrides': {
+              dark: '{base.display.color.orange.0}'
+            }
           },
         },
       },
@@ -92,10 +104,12 @@
           $extensions: {
             'org.primer.figma': {
               collection: 'mode',
-
               group: 'component',
               scopes: ['bgColor', 'borderColor'],
             },
+            'org.primer.overrides': {
+              dark: '{base.display.color.yellow.4}'
+            }
           },
         },
         muted: {
@@ -104,10 +118,12 @@
           $extensions: {
             'org.primer.figma': {
               collection: 'mode',
-
               group: 'component',
               scopes: ['bgColor'],
             },
+            'org.primer.overrides': {
+              dark: '{base.display.color.yellow.0}'
+            }
           },
         },
       },
@@ -120,10 +136,12 @@
           $extensions: {
             'org.primer.figma': {
               collection: 'mode',
-
               group: 'component',
               scopes: ['bgColor', 'borderColor'],
             },
+            'org.primer.overrides': {
+              dark: '{base.display.color.green.4}'
+            }
           },
         },
         muted: {
@@ -132,10 +150,12 @@
           $extensions: {
             'org.primer.figma': {
               collection: 'mode',
-
               group: 'component',
               scopes: ['bgColor'],
             },
+            'org.primer.overrides': {
+              dark: '{base.display.color.green.0}'
+            }
           },
         },
       },
@@ -148,10 +168,12 @@
           $extensions: {
             'org.primer.figma': {
               collection: 'mode',
-
               group: 'component',
               scopes: ['bgColor', 'borderColor'],
             },
+            'org.primer.overrides': {
+              dark: '{base.display.color.teal.4}'
+            }
           },
         },
         muted: {
@@ -160,10 +182,12 @@
           $extensions: {
             'org.primer.figma': {
               collection: 'mode',
-
               group: 'component',
               scopes: ['bgColor'],
             },
+            'org.primer.overrides': {
+              dark: '{base.display.color.teal.0}'
+            }
           },
         },
       },
@@ -176,10 +200,12 @@
           $extensions: {
             'org.primer.figma': {
               collection: 'mode',
-
               group: 'component',
               scopes: ['bgColor', 'borderColor'],
             },
+            'org.primer.overrides': {
+              dark: '{base.display.color.purple.5}'
+            }
           },
         },
         muted: {
@@ -188,10 +214,12 @@
           $extensions: {
             'org.primer.figma': {
               collection: 'mode',
-
               group: 'component',
               scopes: ['bgColor'],
             },
+            'org.primer.overrides': {
+              dark: '{base.display.color.purple.0}'
+            }
           },
         },
       },
@@ -204,10 +232,12 @@
           $extensions: {
             'org.primer.figma': {
               collection: 'mode',
-
               group: 'component',
               scopes: ['bgColor', 'borderColor'],
             },
+            'org.primer.overrides': {
+              dark: '{base.display.color.pink.5}'
+            }
           },
         },
         muted: {
@@ -216,10 +246,12 @@
           $extensions: {
             'org.primer.figma': {
               collection: 'mode',
-
               group: 'component',
               scopes: ['bgColor'],
             },
+            'org.primer.overrides': {
+              dark: '{base.display.color.pink.0}'
+            }
           },
         },
       },
@@ -232,10 +264,12 @@
           $extensions: {
             'org.primer.figma': {
               collection: 'mode',
-
               group: 'component',
               scopes: ['bgColor', 'borderColor'],
             },
+            'org.primer.overrides': {
+              dark: '{base.display.color.red.5}'
+            }
           },
         },
         muted: {
@@ -244,10 +278,12 @@
           $extensions: {
             'org.primer.figma': {
               collection: 'mode',
-
               group: 'component',
               scopes: ['bgColor'],
             },
+            'org.primer.overrides': {
+              dark: '{base.display.color.red.0}'
+            }
           },
         },
       },
@@ -260,10 +296,12 @@
           $extensions: {
             'org.primer.figma': {
               collection: 'mode',
-
               group: 'component',
               scopes: ['bgColor', 'borderColor'],
             },
+            'org.primer.overrides': {
+              dark: '{base.display.color.gray.4}'
+            }
           },
         },
         muted: {
@@ -272,10 +310,12 @@
           $extensions: {
             'org.primer.figma': {
               collection: 'mode',
-
               group: 'component',
               scopes: ['bgColor'],
             },
+            'org.primer.overrides': {
+              dark: '{base.display.color.gray.0}'
+            }
           },
         },
       },
