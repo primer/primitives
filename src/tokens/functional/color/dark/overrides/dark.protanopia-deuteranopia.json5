@@ -65,10 +65,6 @@
   color: {
     prettylights: {
       syntax: {
-        'entity-tag': {
-          $value: '{base.color.blue.1}',
-          $type: 'color',
-        },
         keyword: {
           $value: '{base.color.orange.3}',
           $type: 'color',
@@ -95,10 +91,6 @@
             },
           },
         },
-        'string-regexp': {
-          $value: '{base.color.blue.1}',
-          $type: 'color',
-        },
         markup: {
           deleted: {
             text: {
@@ -107,16 +99,6 @@
             },
             bg: {
               $value: '{base.color.orange.8}',
-              $type: 'color',
-            },
-          },
-          inserted: {
-            text: {
-              $value: '{base.color.blue.0}',
-              $type: 'color',
-            },
-            bg: {
-              $value: '{base.color.blue.8}',
               $type: 'color',
             },
           },

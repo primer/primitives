@@ -89,10 +89,6 @@
             },
           },
         },
-        'string-regexp': {
-          $value: '{base.color.blue.6}',
-          $type: 'color',
-        },
         brackethighlighter: {
           unmatched: {
             $value: '{base.color.orange.7}',
@@ -107,16 +103,6 @@
             },
             bg: {
               $value: '{base.color.orange.0}',
-              $type: 'color',
-            },
-          },
-          inserted: {
-            text: {
-              $value: '{base.color.blue.6}',
-              $type: 'color',
-            },
-            bg: {
-              $value: '{base.color.blue.0}',
               $type: 'color',
             },
           },
