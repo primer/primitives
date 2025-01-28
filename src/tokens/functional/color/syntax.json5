@@ -7,9 +7,12 @@
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
-            group: 'syntax',
+            group: 'syntax'
           },
-        },
+          'org.primer.overrides': {
+            dark: '{base.color.neutral.6}'
+          }
+        }
       },
       'black-bright': {
         $value: '{base.color.neutral.11}',
@@ -17,9 +20,12 @@
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
-            group: 'syntax',
+            group: 'syntax'
           },
-        },
+          'org.primer.overrides': {
+            dark: '{base.color.neutral.8}'
+          }
+        }
       },
       white: {
         $value: '{base.color.neutral.9}',
@@ -27,9 +33,12 @@
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
-            group: 'syntax',
+            group: 'syntax'
           },
-        },
+          'org.primer.overrides': {
+            dark: '{base.color.neutral.12}'
+          }
+        }
       },
       'white-bright': {
         $value: '{base.color.neutral.8}',
@@ -37,9 +46,12 @@
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
-            group: 'syntax',
+            group: 'syntax'
           },
-        },
+          'org.primer.overrides': {
+            dark: '{base.color.neutral.13}'
+          }
+        }
       },
       gray: {
         $value: '{base.color.neutral.9}',
@@ -47,9 +59,12 @@
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
-            group: 'syntax',
+            group: 'syntax'
           },
-        },
+          'org.primer.overrides': {
+            dark: '{base.color.neutral.8}'
+          }
+        }
       },
       red: {
         $value: '{base.color.red.5}',
@@ -57,9 +72,12 @@
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
-            group: 'syntax',
+            group: 'syntax'
           },
-        },
+          'org.primer.overrides': {
+            dark: '{base.color.red.3}'
+          }
+        }
       },
       'red-bright': {
         $value: '{base.color.red.6}',
@@ -67,9 +85,12 @@
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
-            group: 'syntax',
+            group: 'syntax'
           },
-        },
+          'org.primer.overrides': {
+            dark: '{base.color.red.2}'
+          }
+        }
       },
       green: {
         $value: '{base.color.green.6}',
@@ -77,9 +98,12 @@
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
-            group: 'syntax',
+            group: 'syntax'
           },
-        },
+          'org.primer.overrides': {
+            dark: '{base.color.green.3}'
+          }
+        }
       },
       'green-bright': {
         $value: '{base.color.green.5}',
@@ -87,9 +111,12 @@
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
-            group: 'syntax',
+            group: 'syntax'
           },
-        },
+          'org.primer.overrides': {
+            dark: '{base.color.green.2}'
+          }
+        }
       },
       yellow: {
         $value: '{base.color.yellow.8}',
@@ -97,9 +124,12 @@
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
-            group: 'syntax',
+            group: 'syntax'
           },
-        },
+          'org.primer.overrides': {
+            dark: '{base.color.yellow.3}'
+          }
+        }
       },
       'yellow-bright': {
         $value: '{base.color.yellow.7}',
@@ -107,9 +137,12 @@
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
-            group: 'syntax',
+            group: 'syntax'
           },
-        },
+          'org.primer.overrides': {
+            dark: '{base.color.yellow.2}'
+          }
+        }
       },
       blue: {
         $value: '{base.color.blue.5}',
@@ -117,9 +150,12 @@
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
-            group: 'syntax',
+            group: 'syntax'
           },
-        },
+          'org.primer.overrides': {
+            dark: '{base.color.blue.3}'
+          }
+        }
       },
       'blue-bright': {
         $value: '{base.color.blue.4}',
@@ -127,9 +163,12 @@
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
-            group: 'syntax',
+            group: 'syntax'
           },
-        },
+          'org.primer.overrides': {
+            dark: '{base.color.blue.2}'
+          }
+        }
       },
       magenta: {
         $value: '{base.color.purple.5}',
@@ -137,9 +176,12 @@
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
-            group: 'syntax',
+            group: 'syntax'
           },
-        },
+          'org.primer.overrides': {
+            dark: '{base.color.purple.3}'
+          }
+        }
       },
       'magenta-bright': {
         $value: '{base.color.purple.4}',
@@ -147,9 +189,12 @@
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
-            group: 'syntax',
+            group: 'syntax'
           },
-        },
+          'org.primer.overrides': {
+            dark: '{base.color.purple.2}'
+          }
+        }
       },
       cyan: {
         $value: '#1b7c83',
@@ -157,9 +202,12 @@
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
-            group: 'syntax',
+            group: 'syntax'
           },
-        },
+          'org.primer.overrides': {
+            dark: '#39c5cf'
+          }
+        }
       },
       'cyan-bright': {
         $value: '#3192aa',
@@ -167,10 +215,13 @@
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
-            group: 'syntax',
+            group: 'syntax'
           },
-        },
-      },
+          'org.primer.overrides': {
+            dark: '#56d4dd'
+          }
+        }
+      }
     },
     prettylights: {
       syntax: {
@@ -180,9 +231,12 @@
           $extensions: {
             'org.primer.figma': {
               collection: 'mode',
-              group: 'syntax',
+              group: 'syntax'
             },
-          },
+            'org.primer.overrides': {
+              dark: '{base.color.neutral.9}'
+            }
+          }
         },
         constant: {
           $value: '{base.color.blue.6}',
@@ -190,9 +244,12 @@
           $extensions: {
             'org.primer.figma': {
               collection: 'mode',
-              group: 'syntax',
+              group: 'syntax'
             },
-          },
+            'org.primer.overrides': {
+              dark: '{base.color.blue.2}'
+            }
+          }
         },
         'constant-other-reference-link': {
           $value: '{base.color.blue.8}',
@@ -200,9 +257,12 @@
           $extensions: {
             'org.primer.figma': {
               collection: 'mode',
-              group: 'syntax',
+              group: 'syntax'
             },
-          },
+            'org.primer.overrides': {
+              dark: '{base.color.blue.1}'
+            }
+          }
         },
         entity: {
           $value: '{base.color.purple.6}',
@@ -210,9 +270,12 @@
           $extensions: {
             'org.primer.figma': {
               collection: 'mode',
-              group: 'syntax',
+              group: 'syntax'
             },
-          },
+            'org.primer.overrides': {
+              dark: '{base.color.purple.2}'
+            }
+          }
         },
         storage: {
           modifier: {
@@ -222,11 +285,14 @@
               $extensions: {
                 'org.primer.figma': {
                   collection: 'mode',
-                  group: 'syntax',
+                  group: 'syntax'
                 },
-              },
-            },
-          },
+                'org.primer.overrides': {
+                  dark: '{base.color.neutral.12}'
+                }
+              }
+            }
+          }
         },
         'entity-tag': {
           $value: '{base.color.blue.6}',
@@ -234,9 +300,12 @@
           $extensions: {
             'org.primer.figma': {
               collection: 'mode',
-              group: 'syntax',
+              group: 'syntax'
             },
-          },
+            'org.primer.overrides': {
+              dark: '{base.color.green.1}'
+            }
+          }
         },
         keyword: {
           $value: '{base.color.red.5}',
@@ -244,9 +313,12 @@
           $extensions: {
             'org.primer.figma': {
               collection: 'mode',
-              group: 'syntax',
+              group: 'syntax'
             },
-          },
+            'org.primer.overrides': {
+              dark: '{base.color.red.3}'
+            }
+          }
         },
         string: {
           $value: '{base.color.blue.8}',
@@ -254,9 +326,12 @@
           $extensions: {
             'org.primer.figma': {
               collection: 'mode',
-              group: 'syntax',
+              group: 'syntax'
             },
-          },
+            'org.primer.overrides': {
+              dark: '{base.color.blue.1}'
+            }
+          }
         },
         variable: {
           $value: '{base.color.orange.6}',
@@ -264,9 +339,12 @@
           $extensions: {
             'org.primer.figma': {
               collection: 'mode',
-              group: 'syntax',
+              group: 'syntax'
             },
-          },
+            'org.primer.overrides': {
+              dark: '{base.color.orange.2}'
+            }
+          }
         },
         brackethighlighter: {
           unmatched: {
@@ -275,9 +353,12 @@
             $extensions: {
               'org.primer.figma': {
                 collection: 'mode',
-                group: 'syntax',
+                group: 'syntax'
               },
-            },
+              'org.primer.overrides': {
+                dark: '{base.color.red.4}'
+              }
+            }
           },
           angle: {
             $value: '{base.color.neutral.9}',
@@ -285,10 +366,13 @@
             $extensions: {
               'org.primer.figma': {
                 collection: 'mode',
-                group: 'syntax',
+                group: 'syntax'
               },
-            },
-          },
+              'org.primer.overrides': {
+                dark: '{base.color.neutral.9}'
+              }
+            }
+          }
         },
         invalid: {
           illegal: {
@@ -298,9 +382,12 @@
               $extensions: {
                 'org.primer.figma': {
                   collection: 'mode',
-                  group: 'syntax',
+                  group: 'syntax'
                 },
-              },
+                'org.primer.overrides': {
+                  dark: '{base.color.neutral.12}'
+                }
+              }
             },
             bg: {
               $value: '{base.color.red.7}',
@@ -308,11 +395,14 @@
               $extensions: {
                 'org.primer.figma': {
                   collection: 'mode',
-                  group: 'syntax',
+                  group: 'syntax'
                 },
-              },
-            },
-          },
+                'org.primer.overrides': {
+                  dark: '{base.color.red.7}'
+                }
+              }
+            }
+          }
         },
         carriage: {
           return: {
@@ -322,9 +412,12 @@
               $extensions: {
                 'org.primer.figma': {
                   collection: 'mode',
-                  group: 'syntax',
+                  group: 'syntax'
                 },
-              },
+                'org.primer.overrides': {
+                  dark: '{base.color.neutral.12}'
+                }
+              }
             },
             bg: {
               $value: '{base.color.red.5}',
@@ -332,11 +425,14 @@
               $extensions: {
                 'org.primer.figma': {
                   collection: 'mode',
-                  group: 'syntax',
+                  group: 'syntax'
                 },
-              },
-            },
-          },
+                'org.primer.overrides': {
+                  dark: '{base.color.red.6}'
+                }
+              }
+            }
+          }
         },
         'string-regexp': {
           $value: '{base.color.green.6}',
@@ -344,9 +440,12 @@
           $extensions: {
             'org.primer.figma': {
               collection: 'mode',
-              group: 'syntax',
+              group: 'syntax'
             },
-          },
+            'org.primer.overrides': {
+              dark: '{base.color.green.1}'
+            }
+          }
         },
         markup: {
           list: {
@@ -355,9 +454,12 @@
             $extensions: {
               'org.primer.figma': {
                 collection: 'mode',
-                group: 'syntax',
+                group: 'syntax'
               },
-            },
+              'org.primer.overrides': {
+                dark: '{base.color.yellow.1}'
+              }
+            }
           },
           heading: {
             $value: '{base.color.blue.6}',
@@ -365,9 +467,12 @@
             $extensions: {
               'org.primer.figma': {
                 collection: 'mode',
-                group: 'syntax',
+                group: 'syntax'
               },
-            },
+              'org.primer.overrides': {
+                dark: '{base.color.blue.5}'
+              }
+            }
           },
           italic: {
             $value: '{base.color.neutral.13}',
@@ -375,9 +480,12 @@
             $extensions: {
               'org.primer.figma': {
                 collection: 'mode',
-                group: 'syntax',
+                group: 'syntax'
               },
-            },
+              'org.primer.overrides': {
+                dark: '{base.color.neutral.12}'
+              }
+            }
           },
           bold: {
             $value: '{base.color.neutral.13}',
@@ -385,9 +493,12 @@
             $extensions: {
               'org.primer.figma': {
                 collection: 'mode',
-                group: 'syntax',
+                group: 'syntax'
               },
-            },
+              'org.primer.overrides': {
+                dark: '{base.color.neutral.12}'
+              }
+            }
           },
           deleted: {
             text: {
@@ -396,9 +507,12 @@
               $extensions: {
                 'org.primer.figma': {
                   collection: 'mode',
-                  group: 'syntax',
+                  group: 'syntax'
                 },
-              },
+                'org.primer.overrides': {
+                  dark: '{base.color.red.0}'
+                }
+              }
             },
             bg: {
               $value: '{base.color.red.0}',
@@ -406,10 +520,13 @@
               $extensions: {
                 'org.primer.figma': {
                   collection: 'mode',
-                  group: 'syntax',
+                  group: 'syntax'
                 },
-              },
-            },
+                'org.primer.overrides': {
+                  dark: '{base.color.red.8}'
+                }
+              }
+            }
           },
           inserted: {
             text: {
@@ -418,9 +535,12 @@
               $extensions: {
                 'org.primer.figma': {
                   collection: 'mode',
-                  group: 'syntax',
+                  group: 'syntax'
                 },
-              },
+                'org.primer.overrides': {
+                  dark: '{base.color.green.0}'
+                }
+              }
             },
             bg: {
               $value: '{base.color.green.0}',
@@ -428,10 +548,13 @@
               $extensions: {
                 'org.primer.figma': {
                   collection: 'mode',
-                  group: 'syntax',
+                  group: 'syntax'
                 },
-              },
-            },
+                'org.primer.overrides': {
+                  dark: '{base.color.green.8}'
+                }
+              }
+            }
           },
           changed: {
             text: {
@@ -440,9 +563,12 @@
               $extensions: {
                 'org.primer.figma': {
                   collection: 'mode',
-                  group: 'syntax',
+                  group: 'syntax'
                 },
-              },
+                'org.primer.overrides': {
+                  dark: '{base.color.orange.0}'
+                }
+              }
             },
             bg: {
               $value: '{base.color.orange.1}',
@@ -450,10 +576,13 @@
               $extensions: {
                 'org.primer.figma': {
                   collection: 'mode',
-                  group: 'syntax',
+                  group: 'syntax'
                 },
-              },
-            },
+                'org.primer.overrides': {
+                  dark: '{base.color.orange.8}'
+                }
+              }
+            }
           },
           ignored: {
             text: {
@@ -462,9 +591,12 @@
               $extensions: {
                 'org.primer.figma': {
                   collection: 'mode',
-                  group: 'syntax',
+                  group: 'syntax'
                 },
-              },
+                'org.primer.overrides': {
+                  dark: '{base.color.neutral.12}'
+                }
+              }
             },
             bg: {
               $value: '{base.color.blue.6}',
@@ -472,11 +604,14 @@
               $extensions: {
                 'org.primer.figma': {
                   collection: 'mode',
-                  group: 'syntax',
+                  group: 'syntax'
                 },
-              },
-            },
-          },
+                'org.primer.overrides': {
+                  dark: '{base.color.blue.6}'
+                }
+              }
+            }
+          }
         },
         meta: {
           diff: {
@@ -486,11 +621,14 @@
               $extensions: {
                 'org.primer.figma': {
                   collection: 'mode',
-                  group: 'syntax',
+                  group: 'syntax'
                 },
-              },
-            },
-          },
+                'org.primer.overrides': {
+                  dark: '{base.color.purple.2}'
+                }
+              }
+            }
+          }
         },
         sublimelinter: {
           gutter: {
@@ -500,13 +638,16 @@
               $extensions: {
                 'org.primer.figma': {
                   collection: 'mode',
-                  group: 'syntax',
+                  group: 'syntax'
                 },
-              },
-            },
-          },
-        },
-      },
-    },
-  },
+                'org.primer.overrides': {
+                  dark: '{base.color.neutral.7}'
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
