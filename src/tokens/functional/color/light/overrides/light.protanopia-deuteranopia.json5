@@ -66,48 +66,4 @@
       },
     },
   },
-  color: {
-    prettylights: {
-      syntax: {
-        keyword: {
-          $value: '{base.color.orange.5}',
-          $type: 'color',
-        },
-        invalid: {
-          illegal: {
-            bg: {
-              $value: '{base.color.orange.7}',
-              $type: 'color',
-            },
-          },
-        },
-        carriage: {
-          return: {
-            bg: {
-              $value: '{base.color.orange.5}',
-              $type: 'color',
-            },
-          },
-        },
-        brackethighlighter: {
-          unmatched: {
-            $value: '{base.color.orange.7}',
-            $type: 'color',
-          },
-        },
-        markup: {
-          deleted: {
-            text: {
-              $value: '{base.color.orange.7}',
-              $type: 'color',
-            },
-            bg: {
-              $value: '{base.color.orange.0}',
-              $type: 'color',
-            },
-          },
-        },
-      },
-    },
-  },
 }

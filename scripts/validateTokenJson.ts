@@ -69,7 +69,6 @@ if (getFlag('--silent') === null) {
       // eslint-disable-next-line no-console
       console.log(`\nPath: \u001b[34;1m\u001b[1m${path}\u001b[0m`)
       // eslint-disable-next-line no-console
-      console.log(fail.errorsByPath[path][0]['errors'])
       console.log(
         fail.errorsByPath[path]
           .map(
