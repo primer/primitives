@@ -1,0 +1,789 @@
+{
+  control: {
+    bgColor: {
+      rest: {
+        $value: '{base.color.neutral.1}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            group: 'component',
+            scopes: ['bgColor'],
+          },
+          'org.primer.overrides': {
+            dark: '{base.color.neutral.3}'
+          }
+        },
+      },
+      hover: {
+        $value: '{base.color.neutral.2}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            group: 'component',
+            scopes: ['bgColor'],
+          },
+          'org.primer.overrides': {
+            dark: '{base.color.neutral.4}'
+          }
+        },
+      },
+      active: {
+        $value: '{base.color.neutral.3}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            group: 'component',
+            scopes: ['bgColor'],
+          },
+          'org.primer.overrides': {
+            dark: '{base.color.neutral.5}'
+          }
+        },
+      },
+      disabled: {
+        $value: '{bgColor.disabled}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            group: 'component',
+            scopes: ['bgColor'],
+          },
+          'org.primer.overrides': {
+            dark: '{bgColor.disabled}'
+          }
+        },
+      },
+      selected: {
+        $value: '{control.bgColor.rest}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            group: 'component',
+            scopes: ['bgColor'],
+          },
+          'org.primer.overrides': {
+            dark: '{control.bgColor.rest}'
+          }
+        },
+      },
+    },
+    fgColor: {
+      rest: {
+        $value: '{base.color.neutral.12}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            group: 'component',
+            scopes: ['fgColor'],
+          },
+          'org.primer.overrides': {
+            dark: '{fgColor.default}'
+          }
+        },
+      },
+      placeholder: {
+        $value: '{fgColor.muted}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            group: 'component',
+            scopes: ['fgColor'],
+          },
+          'org.primer.overrides': {
+            dark: '{fgColor.muted}'
+          }
+        },
+      },
+      disabled: {
+        $value: '{fgColor.disabled}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            group: 'component',
+            scopes: ['fgColor'],
+          },
+          'org.primer.overrides': {
+            dark: '{fgColor.disabled}'
+          }
+        },
+      },
+    },
+    borderColor: {
+      rest: {
+        $value: '{borderColor.default}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            group: 'component',
+            scopes: ['borderColor'],
+          },
+          'org.primer.overrides': {
+            dark: '{borderColor.default}'
+          }
+        },
+      },
+      emphasis: {
+        $value: '{borderColor.emphasis}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            group: 'component',
+            scopes: ['borderColor'],
+          },
+          'org.primer.overrides': {
+            dark: '{borderColor.emphasis}'
+          }
+        },
+      },
+      disabled: {
+        $value: '{borderColor.disabled}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            group: 'component',
+            scopes: ['borderColor'],
+          },
+          'org.primer.overrides': {
+            dark: '{borderColor.disabled}'
+          }
+        },
+      },
+      selected: {
+        $value: '{control.bgColor.selected}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            group: 'component',
+            scopes: ['borderColor'],
+          },
+          'org.primer.overrides': {
+            dark: '{base.color.neutral.12}'
+          }
+        },
+      },
+      success: {
+        $value: '{borderColor.success.emphasis}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            group: 'component',
+            scopes: ['borderColor'],
+          },
+          'org.primer.overrides': {
+            dark: '{borderColor.success.emphasis}'
+          }
+        },
+      },
+      danger: {
+        $value: '{borderColor.danger.emphasis}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            group: 'component',
+            scopes: ['borderColor'],
+          },
+          'org.primer.overrides': {
+            dark: '{borderColor.danger.emphasis}'
+          }
+        },
+      },
+      warning: {
+        $value: '{borderColor.attention.emphasis}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            group: 'component',
+            scopes: ['borderColor'],
+          },
+          'org.primer.overrides': {
+            dark: '{borderColor.attention.emphasis}'
+          }
+        },
+      },
+    },
+    iconColor: {
+      rest: {
+        $value: '{fgColor.muted}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            group: 'component',
+            scopes: ['fgColor'],
+          },
+          'org.primer.overrides': {
+            dark: '{fgColor.muted}'
+          }
+        },
+      },
+    },
+    transparent: {
+      bgColor: {
+        rest: {
+          $value: '{base.color.transparent}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component',
+              scopes: ['bgColor'],
+            },
+            'org.primer.overrides': {
+              dark: '{base.color.transparent}'
+            }
+          },
+        },
+        hover: {
+          $value: '{base.color.neutral.8}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component',
+              scopes: ['bgColor'],
+            },
+            'org.primer.overrides': {
+              dark: {
+                $value: '{base.color.neutral.8}',
+                alpha: 0.2
+              }
+            }
+          },
+          alpha: 0.1,
+        },
+        active: {
+          $value: '{base.color.neutral.8}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component',
+              scopes: ['bgColor'],
+            },
+            'org.primer.overrides': {
+              dark: {
+                $value: '{base.color.neutral.8}',
+                alpha: 0.25
+              }
+            }
+          },
+          alpha: 0.15,
+        },
+        disabled: {
+          $value: '{bgColor.disabled}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component',
+              scopes: ['bgColor'],
+            },
+            'org.primer.overrides': {
+              dark: '{bgColor.disabled}'
+            }
+          },
+        },
+        selected: {
+          $value: '{base.color.neutral.8}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component',
+              scopes: ['bgColor'],
+            },
+            'org.primer.overrides': {
+              dark: {
+                $value: '{base.color.neutral.8}',
+                alpha: 0.1
+              }
+            }
+          },
+          alpha: 0.15,
+        },
+      },
+      borderColor: {
+        rest: {
+          $value: '{base.color.transparent}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component',
+              scopes: ['borderColor'],
+            },
+            'org.primer.overrides': {
+              dark: '{base.color.transparent}'
+            }
+          },
+        },
+        hover: {
+          $value: '{base.color.transparent}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component',
+              scopes: ['borderColor'],
+            },
+            'org.primer.overrides': {
+              dark: '{base.color.transparent}'
+            }
+          },
+        },
+        active: {
+          $value: '{base.color.transparent}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component',
+              scopes: ['borderColor'],
+            },
+            'org.primer.overrides': {
+              dark: '{base.color.transparent}'
+            }
+          },
+        },
+      },
+    },
+    danger: {
+      fgColor: {
+        rest: {
+          $value: '{fgColor.danger}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component',
+              scopes: ['fgColor'],
+            },
+            'org.primer.overrides': {
+              dark: '{fgColor.danger}'
+            }
+          },
+        },
+        hover: {
+          $value: '{fgColor.danger}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component',
+              scopes: ['fgColor'],
+            },
+            'org.primer.overrides': {
+              dark: '{base.color.red.3}'
+            }
+          },
+        },
+      },
+      bgColor: {
+        hover: {
+          $value: '{bgColor.danger.muted}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component',
+              scopes: ['bgColor'],
+            },
+            'org.primer.overrides': {
+              dark: '{bgColor.danger.muted}'
+            }
+          },
+        },
+        active: {
+          $value: '{bgColor.danger.muted}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component',
+              scopes: ['bgColor'],
+            },
+            'org.primer.overrides': {
+              dark: {
+                $value: '{bgColor.danger.muted}',
+                alpha: 0.4
+              }
+            }
+          },
+        },
+      },
+    },
+    checked: {
+      bgColor: {
+        rest: {
+          $value: '{bgColor.accent.emphasis}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component',
+              scopes: ['bgColor'],
+            },
+            'org.primer.overrides': {
+              dark: '{bgColor.accent.emphasis}'
+            }
+          },
+        },
+        hover: {
+          $value: '#0860ca',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component',
+              scopes: ['bgColor'],
+            },
+            'org.primer.overrides': {
+              dark: '#2A7AEF'
+            }
+          },
+        },
+        active: {
+          $value: '#0757ba',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component',
+              scopes: ['bgColor'],
+            },
+            'org.primer.overrides': {
+              dark: '#3685F3'
+            }
+          },
+        },
+        disabled: {
+          $value: '{fgColor.disabled}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component',
+              scopes: ['bgColor'],
+            },
+            'org.primer.overrides': {
+              dark: '{fgColor.disabled}'
+            }
+          },
+        },
+      },
+      fgColor: {
+        rest: {
+          $value: '{fgColor.onEmphasis}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component',
+              scopes: ['fgColor'],
+            },
+            'org.primer.overrides': {
+              dark: '{fgColor.onEmphasis}'
+            }
+          },
+        },
+        disabled: {
+          $value: '{fgColor.onEmphasis}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component',
+              scopes: ['fgColor'],
+            },
+            'org.primer.overrides': {
+              dark: '{base.color.inset}'
+            }
+          },
+        },
+      },
+      borderColor: {
+        rest: {
+          $value: '{control.checked.bgColor.rest}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component',
+              scopes: ['borderColor'],
+            },
+            'org.primer.overrides': {
+              dark: '{control.checked.bgColor.rest}'
+            }
+          },
+        },
+        hover: {
+          $value: '{control.checked.bgColor.hover}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component',
+              scopes: ['borderColor'],
+            },
+            'org.primer.overrides': {
+              dark: '{control.checked.bgColor.hover}'
+            }
+          },
+        },
+        active: {
+          $value: '{control.checked.bgColor.active}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component',
+              scopes: ['borderColor'],
+            },
+            'org.primer.overrides': {
+              dark: '{control.checked.bgColor.active}'
+            }
+          },
+        },
+        disabled: {
+          $value: '{control.checked.bgColor.disabled}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component',
+              scopes: ['borderColor'],
+            },
+            'org.primer.overrides': {
+              dark: '{control.checked.bgColor.disabled}'
+            }
+          },
+        },
+      },
+    },
+  },
+  controlTrack: {
+    bgColor: {
+      rest: {
+        $value: '{base.color.neutral.3}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            group: 'component (internal)',
+            scopes: ['bgColor'],
+          },
+          'org.primer.overrides': {
+            dark: '{base.color.neutral.4}'
+          }
+        },
+      },
+      hover: {
+        $value: '{base.color.neutral.4}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            group: 'component (internal)',
+            scopes: ['bgColor'],
+          },
+          'org.primer.overrides': {
+            dark: '{base.color.neutral.5}'
+          }
+        },
+      },
+      active: {
+        $value: '{base.color.neutral.5}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            group: 'component (internal)',
+            scopes: ['bgColor'],
+          },
+          'org.primer.overrides': {
+            dark: '{base.color.neutral.6}'
+          }
+        },
+      },
+      disabled: {
+        $value: '{fgColor.disabled}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            group: 'component (internal)',
+            scopes: ['bgColor'],
+          },
+          'org.primer.overrides': {
+            dark: '{fgColor.disabled}'
+          }
+        },
+      },
+    },
+    fgColor: {
+      rest: {
+        $value: '{base.color.neutral.9}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            group: 'component (internal)',
+            scopes: ['fgColor'],
+          },
+          'org.primer.overrides': {
+            dark: '{fgColor.muted}'
+          }
+        },
+      },
+      disabled: {
+        $value: '{fgColor.onEmphasis}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            group: 'component (internal)',
+            scopes: ['fgColor'],
+          },
+          'org.primer.overrides': {
+            dark: '{fgColor.onEmphasis}'
+          }
+        },
+      },
+    },
+    borderColor: {
+      rest: {
+        $value: '{borderColor.default}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            group: 'component (internal)',
+            scopes: ['borderColor'],
+          },
+          'org.primer.overrides': {
+            dark: '{borderColor.default}'
+          }
+        },
+      },
+      disabled: {
+        $value: '{fgColor.disabled}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            group: 'component (internal)',
+            scopes: ['borderColor'],
+          },
+          'org.primer.overrides': {
+            dark: '{fgColor.disabled}'
+          }
+        },
+      },
+    },
+  },
+  controlKnob: {
+    bgColor: {
+      rest: {
+        $value: '{base.color.neutral.0}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            group: 'component (internal)',
+            scopes: ['bgColor'],
+          },
+          'org.primer.overrides': {
+            dark: '{bgColor.inset}'
+          }
+        },
+      },
+      disabled: {
+        $value: '{control.bgColor.disabled}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            group: 'component (internal)',
+            scopes: ['bgColor'],
+          },
+          'org.primer.overrides': {
+            dark: '{control.bgColor.disabled}'
+          }
+        },
+      },
+      checked: {
+        $value: '{base.color.neutral.0}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            group: 'component (internal)',
+            scopes: ['bgColor'],
+          },
+          'org.primer.overrides': {
+            dark: '{base.color.neutral.13}'
+          }
+        },
+      },
+    },
+    borderColor: {
+      rest: {
+        $value: '{control.borderColor.emphasis}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            group: 'component (internal)',
+            scopes: ['borderColor'],
+          },
+          'org.primer.overrides': {
+            dark: '{control.borderColor.emphasis}'
+          }
+        },
+      },
+      disabled: {
+        $value: '{control.bgColor.disabled}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            group: 'component (internal)',
+            scopes: ['borderColor'],
+          },
+          'org.primer.overrides': {
+            dark: '{control.bgColor.disabled}'
+          }
+        },
+      },
+      checked: {
+        $value: '{control.checked.bgColor.rest}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            group: 'component (internal)',
+            scopes: ['borderColor'],
+          },
+          'org.primer.overrides': {
+            dark: '{control.checked.bgColor.rest}'
+          }
+        },
+      },
+    },
+  },
+}
