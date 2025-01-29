@@ -11,9 +11,6 @@
               group: 'component (internal)',
               scopes: ['fgColor'],
             },
-            'org.primer.overrides': {
-              dark: '{control.fgColor.rest}'
-            }
           },
         },
       },
@@ -27,9 +24,6 @@
               group: 'component (internal)',
               scopes: ['bgColor'],
             },
-            'org.primer.overrides': {
-              dark: '{control.bgColor.rest}'
-            }
           },
         },
         hover: {
@@ -41,9 +35,6 @@
               group: 'component (internal)',
               scopes: ['bgColor'],
             },
-            'org.primer.overrides': {
-              dark: '{control.bgColor.hover}'
-            }
           },
         },
         active: {
@@ -55,9 +46,6 @@
               group: 'component (internal)',
               scopes: ['bgColor'],
             },
-            'org.primer.overrides': {
-              dark: '{control.bgColor.active}'
-            }
           },
         },
         selected: {
@@ -69,24 +57,11 @@
               group: 'component (internal)',
               scopes: ['bgColor'],
             },
-            'org.primer.overrides': {
-              dark: '{control.bgColor.active}'
-            }
           },
         },
         disabled: {
           $value: '{control.bgColor.disabled}',
           $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              group: 'component (internal)',
-              scopes: ['bgColor'],
-            },
-            'org.primer.overrides': {
-              dark: '{control.bgColor.disabled}'
-            }
-          },
         },
       },
       borderColor: {
@@ -99,9 +74,6 @@
               group: 'component (internal)',
               scopes: ['borderColor'],
             },
-            'org.primer.overrides': {
-              dark: '{control.borderColor.rest}'
-            }
           },
         },
         hover: {
@@ -113,9 +85,6 @@
               group: 'component (internal)',
               scopes: ['borderColor'],
             },
-            'org.primer.overrides': {
-              dark: '{button.default.borderColor.rest}'
-            }
           },
         },
         active: {
@@ -127,9 +96,6 @@
               group: 'component (internal)',
               scopes: ['borderColor'],
             },
-            'org.primer.overrides': {
-              dark: '{button.default.borderColor.rest}'
-            }
           },
         },
         disabled: {
@@ -141,31 +107,15 @@
               group: 'component (internal)',
               scopes: ['borderColor'],
             },
-            'org.primer.overrides': {
-              dark: '{control.borderColor.disabled}'
-            }
           },
         },
       },
     },
     primary: {
       fgColor: {
-        rest: {
-          $value: '{fgColor.white}',
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              group: 'component (internal)',
-              scopes: ['fgColor'],
-            },
-            'org.primer.overrides': {
-              dark: '{fgColor.white}'
-            }
-          },
-        },
         disabled: {
           $value: '{base.color.neutral.0}',
+          alpha: 0.8,
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -176,43 +126,13 @@
             'org.primer.overrides': {
               dark: {
                 $value: '{base.color.neutral.13}',
-                alpha: 0.4
-              }
-            }
-          },
-        },
-      },
-      iconColor: {
-        rest: {
-          $value: '{fgColor.white}',
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              group: 'component (internal)',
-              scopes: ['fgColor'],
+                alpha: 0.4,
+              },
             },
-            'org.primer.overrides': {
-              dark: '{fgColor.white}'
-            }
           },
         },
       },
       bgColor: {
-        rest: {
-          $value: '{bgColor.success.emphasis}',
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              group: 'component (internal)',
-              scopes: ['bgColor'],
-            },
-            'org.primer.overrides': {
-              dark: '{bgColor.success.emphasis}'
-            }
-          },
-        },
         hover: {
           $value: '#1c8139',
           $type: 'color',
@@ -223,8 +143,8 @@
               scopes: ['bgColor'],
             },
             'org.primer.overrides': {
-              dark: '#29903B'
-            }
+              dark: '#29903B',
+            },
           },
         },
         active: {
@@ -237,8 +157,8 @@
               scopes: ['bgColor'],
             },
             'org.primer.overrides': {
-              dark: '#2E9A40'
-            }
+              dark: '#2E9A40',
+            },
           },
         },
         disabled: {
@@ -251,69 +171,8 @@
               scopes: ['bgColor'],
             },
             'org.primer.overrides': {
-              dark: '#105823'
-            }
-          },
-        },
-      },
-      borderColor: {
-        rest: {
-          $value: '{base.color.neutral.13}',
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              group: 'component (internal)',
-              scopes: ['borderColor'],
+              dark: '#105823',
             },
-            'org.primer.overrides': {
-              dark: {
-                $value: '{base.color.neutral.13}',
-                alpha: 0.1
-              }
-            }
-          },
-        },
-        hover: {
-          $value: '{button.primary.borderColor.rest}',
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              group: 'component (internal)',
-              scopes: ['borderColor'],
-            },
-            'org.primer.overrides': {
-              dark: '{button.primary.borderColor.rest}'
-            }
-          },
-        },
-        active: {
-          $value: '{button.primary.borderColor.rest}',
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              group: 'component (internal)',
-              scopes: ['borderColor'],
-            },
-            'org.primer.overrides': {
-              dark: '{button.primary.borderColor.rest}'
-            }
-          },
-        },
-        disabled: {
-          $value: '{button.primary.bgColor.disabled}',
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              group: 'component (internal)',
-              scopes: ['borderColor'],
-            },
-            'org.primer.overrides': {
-              dark: '#105823'
-            }
           },
         },
       },
@@ -329,9 +188,6 @@
               group: 'component (internal)',
               scopes: ['fgColor'],
             },
-            'org.primer.overrides': {
-              dark: '{control.fgColor.rest}'
-            }
           },
         },
         hover: {
@@ -343,9 +199,6 @@
               group: 'component (internal)',
               scopes: ['fgColor'],
             },
-            'org.primer.overrides': {
-              dark: '{control.fgColor.rest}'
-            }
           },
         },
         active: {
@@ -357,9 +210,6 @@
               group: 'component (internal)',
               scopes: ['fgColor'],
             },
-            'org.primer.overrides': {
-              dark: '{control.fgColor.rest}'
-            }
           },
         },
         disabled: {
@@ -371,9 +221,6 @@
               group: 'component (internal)',
               scopes: ['fgColor'],
             },
-            'org.primer.overrides': {
-              dark: '{control.fgColor.disabled}'
-            }
           },
         },
       },
@@ -387,9 +234,6 @@
               group: 'component (internal)',
               scopes: ['fgColor'],
             },
-            'org.primer.overrides': {
-              dark: '{fgColor.muted}'
-            }
           },
         },
         hover: {
@@ -401,9 +245,6 @@
               group: 'component (internal)',
               scopes: ['fgColor'],
             },
-            'org.primer.overrides': {
-              dark: '{fgColor.muted}'
-            }
           },
         },
         disabled: {
@@ -415,9 +256,6 @@
               group: 'component (internal)',
               scopes: ['fgColor'],
             },
-            'org.primer.overrides': {
-              dark: '{control.fgColor.disabled}'
-            }
           },
         },
       },
@@ -431,9 +269,6 @@
               group: 'component (internal)',
               scopes: ['bgColor'],
             },
-            'org.primer.overrides': {
-              dark: '{control.transparent.bgColor.rest}'
-            }
           },
         },
         hover: {
@@ -445,12 +280,6 @@
               group: 'component (internal)',
               scopes: ['bgColor'],
             },
-            'org.primer.overrides': {
-              dark: {
-                $value: '{control.transparent.bgColor.hover}',
-                alpha: 0.2
-              }
-            }
           },
         },
         active: {
@@ -462,12 +291,6 @@
               group: 'component (internal)',
               scopes: ['bgColor'],
             },
-            'org.primer.overrides': {
-              dark: {
-                $value: '{control.transparent.bgColor.active}',
-                alpha: 0.25
-              }
-            }
           },
         },
         disabled: {
@@ -479,9 +302,6 @@
               group: 'component (internal)',
               scopes: ['bgColor'],
             },
-            'org.primer.overrides': {
-              dark: '{base.color.transparent}'
-            }
           },
         },
       },
@@ -495,9 +315,6 @@
               group: 'component (internal)',
               scopes: ['borderColor'],
             },
-            'org.primer.overrides': {
-              dark: '{base.color.transparent}'
-            }
           },
         },
         hover: {
@@ -509,13 +326,10 @@
               group: 'component (internal)',
               scopes: ['borderColor'],
             },
-            'org.primer.overrides': {
-              dark: '{base.color.transparent}'
-            }
           },
         },
-        active: {
-          $value: '{control.transparent.borderColor.active}',
+        disabled: {
+          $value: '{base.color.transparent}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -523,9 +337,155 @@
               group: 'component (internal)',
               scopes: ['borderColor'],
             },
+          },
+        },
+      },
+    },
+    outline: {
+      fgColor: {
+        rest: {
+          $value: '{fgColor.accent}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component (internal)',
+              scopes: ['fgColor'],
+            },
             'org.primer.overrides': {
-              dark: '{base.color.transparent}'
-            }
+              dark: '{base.color.blue.4}',
+            },
+          },
+        },
+        hover: {
+          $value: '{base.color.neutral.0}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component (internal)',
+              scopes: ['fgColor'],
+            },
+            'org.primer.overrides': {
+              dark: '{base.color.blue.3}',
+            },
+          },
+        },
+      },
+      bgColor: {
+        rest: {
+          $value: '{control.bgColor.rest}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component (internal)',
+              scopes: ['bgColor'],
+            },
+            'org.primer.overrides': {
+              dark: '{base.color.neutral.12}',
+            },
+          },
+        },
+        active: {
+          $value: '#0757ba',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component (internal)',
+              scopes: ['bgColor'],
+            },
+            'org.primer.overrides': {
+              dark: '{base.color.blue.7}',
+            },
+          },
+        },
+      },
+    },
+    danger: {
+      fgColor: {
+        rest: {
+          $value: '{fgColor.danger}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component (internal)',
+              scopes: ['fgColor'],
+            },
+            'org.primer.overrides': {
+              dark: '#FA5E55',
+            },
+          },
+        },
+      },
+      iconColor: {
+        rest: {
+          $value: '{fgColor.danger}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component (internal)',
+              scopes: ['fgColor'],
+            },
+            'org.primer.overrides': {
+              dark: '#FA5E55',
+            },
+          },
+        },
+      },
+      bgColor: {
+        active: {
+          $value: '#8b0820',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component (internal)',
+              scopes: ['bgColor'],
+            },
+            'org.primer.overrides': {
+              dark: '#D03533',
+            },
+          },
+        },
+      },
+    },
+    inactive: {
+      fgColor: {
+        $value: '{base.color.neutral.9}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            group: 'component (internal)',
+            scopes: ['fgColor'],
+          },
+        },
+      },
+      bgColor: {
+        $value: '{base.color.neutral.3}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            group: 'component (internal)',
+            scopes: ['bgColor'],
+          },
+        },
+      },
+    },
+    star: {
+      iconColor: {
+        $value: '{base.color.yellow.2}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            group: 'component (internal)',
+            scopes: ['bgColor'],
           },
         },
       },
