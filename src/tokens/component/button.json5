@@ -269,6 +269,9 @@
               'dark-protanopia-deuteranopia': {
                 $value: '#2a7aef',
               },
+              'dark-high-contrast': {
+                $value: '#08792b',
+              },
             },
           },
         },
@@ -295,6 +298,9 @@
               },
               'dark-protanopia-deuteranopia': {
                 $value: '#3685f3',
+              },
+              'dark-high-contrast': {
+                $value: '#109135',
               },
             },
           },
@@ -323,6 +329,9 @@
               'dark-protanopia-deuteranopia': {
                 $value: '{base.color.blue.6}',
               },
+              'dark-high-contrast': {
+                $value: '#048f2f',
+              },
             },
           },
         },
@@ -344,6 +353,10 @@
                 $value: '{base.color.neutral.13}',
                 alpha: 0.1,
               },
+              'dark-high-contrast': {
+                $value: '{base.color.green.2}',
+                alpha: 1,
+              },
             },
           },
           alpha: 0.15,
@@ -363,6 +376,10 @@
               dark: {
                 $value: '{button.primary.borderColor.rest}',
               },
+              'dark-high-contrast': {
+                $value: '{base.color.green.2}',
+                alpha: 1,
+              },
             },
           },
         },
@@ -380,6 +397,10 @@
             'org.primer.overrides': {
               dark: {
                 $value: '{button.primary.borderColor.rest}',
+              },
+              'dark-high-contrast': {
+                $value: '{base.color.green.2}',
+                alpha: 1,
               },
             },
           },
@@ -407,6 +428,10 @@
               },
               'dark-protanopia-deuteranopia': {
                 $value: '#1158c7',
+              },
+              'dark-high-contrast': {
+                $value: '{base.color.green.2}',
+                alpha: 0.4,
               },
             },
           },
@@ -507,6 +532,9 @@
               'dark-dimmed': {
                 $value: '{base.color.neutral.10}',
               },
+              'dark-high-contrast': {
+                $value: '{base.color.neutral.11}',
+              },
             },
           },
         },
@@ -527,6 +555,9 @@
               },
               'dark-dimmed': {
                 $value: '{base.color.neutral.10}',
+              },
+              'dark-high-contrast': {
+                $value: '{base.color.neutral.11}',
               },
             },
           },
@@ -584,6 +615,10 @@
               dark: {
                 $value: '{control.transparent.bgColor.hover}',
               },
+              'dark-high-contrast': {
+                $value: '{base.color.neutral.2}',
+                alpha: null,
+              },
             },
           },
         },
@@ -601,6 +636,10 @@
             'org.primer.overrides': {
               dark: {
                 $value: '{control.transparent.bgColor.active}',
+              },
+              'dark-high-contrast': {
+                $value: '{base.color.neutral.3}',
+                alpha: null,
               },
             },
           },
@@ -901,6 +940,9 @@
               'dark-protanopia-deuteranopia': {
                 $value: '{fgColor.danger}',
               },
+              'dark-high-contrast': {
+                $value: '{base.color.red.2}',
+              },
             },
           },
         },
@@ -983,6 +1025,9 @@
               'dark-protanopia-deuteranopia': {
                 $value: '#f0883e',
               },
+              'dark-high-contrast': {
+                $value: '#ffb1af',
+              },
             },
           },
         },
@@ -1042,6 +1087,9 @@
               'dark-protanopia-deuteranopia': {
                 $value: '{base.color.orange.6}',
               },
+              'dark-high-contrast': {
+                $value: '{bgColor.danger.emphasis}',
+              },
             },
           },
         },
@@ -1065,6 +1113,9 @@
               },
               'dark-protanopia-deuteranopia': {
                 $value: '#b5531d',
+              },
+              'dark-high-contrast': {
+                $value: '{bgColor.danger.emphasis}',
               },
             },
           },
@@ -1122,6 +1173,10 @@
               dark: {
                 $value: '{button.primary.borderColor.rest}',
               },
+              'dark-high-contrast': {
+                $value: '{base.color.red.2}',
+                alpha: 1,
+              },
             },
           },
         },
@@ -1139,6 +1194,10 @@
             'org.primer.overrides': {
               dark: {
                 $value: '{button.danger.borderColor.hover}',
+              },
+              'dark-high-contrast': {
+                $value: '{base.color.red.2}',
+                alpha: 1,
               },
             },
           },
@@ -1164,6 +1223,9 @@
             'dark-dimmed': {
               $value: '{base.color.neutral.8}',
             },
+            'dark-high-contrast': {
+              $value: '{base.color.neutral.10}',
+            },
           },
         },
       },
@@ -1184,6 +1246,9 @@
             },
             'dark-dimmed': {
               $value: '{base.color.neutral.5}',
+            },
+            'dark-high-contrast': {
+              $value: '{control.bgColor.rest}',
             },
           },
         },
@@ -1272,6 +1337,10 @@
               dark: {
                 $value: '{base.color.green.9}',
                 alpha: 0.2,
+              },
+              'dark-high-contrast': {
+                $value: '{base.color.neutral.0}',
+                alpha: 0.15,
               },
             },
           },
@@ -1419,6 +1488,10 @@
                 $value: '{base.color.neutral.13}',
                 alpha: 0.2,
               },
+              'dark-high-contrast': {
+                $value: '{base.color.neutral.0}',
+                alpha: 0.15,
+              },
             },
           },
           alpha: 0.2,
@@ -1458,6 +1531,10 @@
               dark: {
                 $value: '{base.color.red.9}',
                 alpha: 0.2,
+              },
+              'dark-high-contrast': {
+                $value: '{base.color.neutral.0}',
+                alpha: 0.15,
               },
             },
           },
