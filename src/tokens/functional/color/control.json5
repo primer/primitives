@@ -17,6 +17,9 @@
             'dark-high-contrast': {
               $value: '{base.color.neutral.4}',
             },
+            'dark-dimmed': {
+              $value: '{base.color.neutral.5}',
+            },
           },
         },
       },
@@ -36,6 +39,9 @@
             'dark-high-contrast': {
               $value: '{base.color.neutral.5}',
             },
+            'dark-dimmed': {
+              $value: '{base.color.neutral.6}',
+            },
           },
         },
       },
@@ -54,6 +60,9 @@
             dark: '{base.color.neutral.5}',
             'dark-high-contrast': {
               $value: '{base.color.neutral.6}',
+            },
+            'dark-dimmed': {
+              $value: '{base.color.neutral.7}',
             },
           },
         },
@@ -158,6 +167,9 @@
           },
           'org.primer.overrides': {
             dark: '{borderColor.default}',
+            'dark-dimmed': {
+              $value: '#3d444d',
+            },
           },
         },
       },
@@ -193,6 +205,10 @@
           },
           'org.primer.overrides': {
             dark: '{borderColor.disabled}',
+            'dark-dimmed': {
+              $value: '{base.color.neutral.8}',
+              alpha: 0.1,
+            },
           },
         },
       },
@@ -317,6 +333,10 @@
                 $value: '{base.color.neutral.6}',
                 alpha: 1,
               },
+              'dark-dimmed': {
+                $value: '{base.color.neutral.8}',
+                alpha: 0.15,
+              },
             },
           },
           alpha: 0.1,
@@ -340,6 +360,10 @@
               'dark-high-contrast': {
                 $value: '{base.color.neutral.7}',
                 alpha: 1,
+              },
+              'dark-dimmed': {
+                $value: '{base.color.neutral.8}',
+                alpha: 0.2,
               },
             },
           },
@@ -380,6 +404,10 @@
               'dark-high-contrast': {
                 $value: '{base.color.neutral.6}',
                 alpha: 1,
+              },
+              'dark-dimmed': {
+                $value: '{base.color.neutral.8}',
+                alpha: 0.1,
               },
             },
           },
@@ -562,6 +590,9 @@
               'dark-high-contrast': {
                 $value: '#2b64c1',
               },
+              'dark-dimmed': {
+                $value: '#3876d3',
+              },
             },
           },
         },
@@ -580,6 +611,9 @@
               dark: '#3685F3',
               'dark-high-contrast': {
                 $value: '#3c79d0',
+              },
+              'dark-dimmed': {
+                $value: '#3f7fdb',
               },
             },
           },
@@ -671,6 +705,9 @@
               'dark-high-contrast': {
                 $value: '{base.color.blue.2}',
               },
+              'dark-dimmed': {
+                $value: '#3876d3',
+              },
             },
           },
         },
@@ -689,6 +726,9 @@
               dark: '{control.checked.bgColor.active}',
               'dark-high-contrast': {
                 $value: '{base.color.blue.2}',
+              },
+              'dark-dimmed': {
+                $value: '#3f7fdb',
               },
             },
           },
@@ -730,6 +770,9 @@
             'dark-high-contrast': {
               $value: '{base.color.neutral.5}',
             },
+            'dark-dimmed': {
+              $value: '{base.color.neutral.5}',
+            },
           },
         },
       },
@@ -749,6 +792,9 @@
             'dark-high-contrast': {
               $value: '{base.color.neutral.6}',
             },
+            'dark-dimmed': {
+              $value: '{base.color.neutral.6}',
+            },
           },
         },
       },
@@ -766,6 +812,9 @@
           'org.primer.overrides': {
             dark: '{base.color.neutral.6}',
             'dark-high-contrast': {
+              $value: '{base.color.neutral.7}',
+            },
+            'dark-dimmed': {
               $value: '{base.color.neutral.7}',
             },
           },
@@ -842,6 +891,9 @@
             'dark-high-contrast': {
               $value: '{borderColor.emphasis}',
             },
+            'dark-dimmed': {
+              $value: '{base.color.neutral.7}',
+            },
           },
         },
       },
@@ -878,6 +930,9 @@
           },
           'org.primer.overrides': {
             dark: '{bgColor.inset}',
+            'dark-dimmed': {
+              $value: '{bgColor.inset}',
+            },
           },
         },
       },
