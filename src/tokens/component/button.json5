@@ -272,6 +272,12 @@
               'dark-high-contrast': {
                 $value: '#08792b',
               },
+              'light-tritanopia': {
+                $value: '#0864d1',
+              },
+              'light-protanopia-deuteranopia': {
+                $value: '#0864d1',
+              },
             },
           },
         },
@@ -302,6 +308,12 @@
               'dark-high-contrast': {
                 $value: '#109135',
               },
+              'light-tritanopia': {
+                $value: '#075fc8',
+              },
+              'light-protanopia-deuteranopia': {
+                $value: '#075fc8',
+              },
             },
           },
         },
@@ -331,6 +343,12 @@
               },
               'dark-high-contrast': {
                 $value: '#048f2f',
+              },
+              'light-tritanopia': {
+                $value: '#92caff',
+              },
+              'light-protanopia-deuteranopia': {
+                $value: '#92caff',
               },
             },
           },
@@ -1090,6 +1108,9 @@
               'dark-high-contrast': {
                 $value: '{bgColor.danger.emphasis}',
               },
+              'light-protanopia-deuteranopia': {
+                $value: '{base.color.orange.6}',
+              },
             },
           },
         },
@@ -1116,6 +1137,9 @@
               },
               'dark-high-contrast': {
                 $value: '{bgColor.danger.emphasis}',
+              },
+              'light-protanopia-deuteranopia': {
+                $value: '#7e2f00',
               },
             },
           },
