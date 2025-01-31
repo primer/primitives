@@ -418,6 +418,10 @@
               scopes: ['bgColor'],
             },
             'org.primer.overrides': {
+              light: {
+                $value: '{bgColor.danger.muted}',
+                alpha: 0.4
+              },
               dark: {
                 $value: '{bgColor.danger.muted}',
                 alpha: 0.4
