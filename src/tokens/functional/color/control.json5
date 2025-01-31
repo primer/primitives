@@ -20,6 +20,9 @@
             'dark-dimmed': {
               $value: '{base.color.neutral.5}',
             },
+            'light-high-contrast': {
+              $value: '{base.color.neutral.4}',
+            },
           },
         },
       },
@@ -42,6 +45,9 @@
             'dark-dimmed': {
               $value: '{base.color.neutral.6}',
             },
+            'light-high-contrast': {
+              $value: '{base.color.neutral.5}',
+            },
           },
         },
       },
@@ -63,6 +69,9 @@
             },
             'dark-dimmed': {
               $value: '{base.color.neutral.7}',
+            },
+            'light-high-contrast': {
+              $value: '{base.color.neutral.6}',
             },
           },
         },
@@ -131,6 +140,9 @@
           'org.primer.overrides': {
             dark: '{fgColor.muted}',
             'dark-high-contrast': {
+              $value: '{base.color.neutral.10}',
+            },
+            'light-high-contrast': {
               $value: '{base.color.neutral.10}',
             },
           },
@@ -337,6 +349,10 @@
                 $value: '{base.color.neutral.8}',
                 alpha: 0.15,
               },
+              'light-high-contrast': {
+                $value: '{base.color.neutral.5}',
+                alpha: 1,
+              },
             },
           },
           alpha: 0.1,
@@ -364,6 +380,10 @@
               'dark-dimmed': {
                 $value: '{base.color.neutral.8}',
                 alpha: 0.2,
+              },
+              'light-high-contrast': {
+                $value: '{base.color.neutral.6}',
+                alpha: 1,
               },
             },
           },
@@ -409,6 +429,10 @@
                 $value: '{base.color.neutral.8}',
                 alpha: 0.1,
               },
+              'light-high-contrast': {
+                $value: '{base.color.neutral.5}',
+                alpha: 1,
+              },
             },
           },
           alpha: 0.15,
@@ -447,6 +471,9 @@
               'dark-high-contrast': {
                 $value: '{borderColor.default}',
               },
+              'light-high-contrast': {
+                $value: '{borderColor.default}',
+              },
             },
           },
         },
@@ -464,6 +491,9 @@
             'org.primer.overrides': {
               dark: '{base.color.transparent}',
               'dark-high-contrast': {
+                $value: '{borderColor.default}',
+              },
+              'light-high-contrast': {
                 $value: '{borderColor.default}',
               },
             },
@@ -503,6 +533,9 @@
             'org.primer.overrides': {
               dark: '{base.color.red.3}',
               'dark-protanopia-deuteranopia': '{base.color.orange.3}',
+              'light-high-contrast': {
+                $value: '{fgColor.onEmphasis}',
+              },
             },
           },
         },
@@ -523,6 +556,10 @@
               dark: '{bgColor.danger.muted}',
               'dark-high-contrast': {
                 $value: '{bgColor.danger.emphasis}',
+              },
+              'light-high-contrast': {
+                $value: '{bgColor.danger.emphasis}',
+                alpha: null,
               },
             },
           },
@@ -550,6 +587,9 @@
               'dark-high-contrast': {
                 $value: '#c51120',
                 alpha: 1,
+              },
+              'light-high-contrast': {
+                $value: '#8c0b1d',
               },
             },
           },
@@ -593,6 +633,9 @@
               'dark-dimmed': {
                 $value: '#3876d3',
               },
+              'light-high-contrast': {
+                $value: '#0344a8',
+              },
             },
           },
         },
@@ -614,6 +657,9 @@
               },
               'dark-dimmed': {
                 $value: '#3f7fdb',
+              },
+              'light-high-contrast': {
+                $value: '#033f9d',
               },
             },
           },
@@ -708,6 +754,9 @@
               'dark-dimmed': {
                 $value: '#3876d3',
               },
+              'light-high-contrast': {
+                $value: '#0344a8',
+              },
             },
           },
         },
@@ -729,6 +778,9 @@
               },
               'dark-dimmed': {
                 $value: '#3f7fdb',
+              },
+              'light-high-contrast': {
+                $value: '#033f9d',
               },
             },
           },
@@ -773,6 +825,9 @@
             'dark-dimmed': {
               $value: '{base.color.neutral.5}',
             },
+            'light-high-contrast': {
+              $value: '{base.color.neutral.5}',
+            },
           },
         },
       },
@@ -795,6 +850,9 @@
             'dark-dimmed': {
               $value: '{base.color.neutral.6}',
             },
+            'light-high-contrast': {
+              $value: '{base.color.neutral.6}',
+            },
           },
         },
       },
@@ -815,6 +873,9 @@
               $value: '{base.color.neutral.7}',
             },
             'dark-dimmed': {
+              $value: '{base.color.neutral.7}',
+            },
+            'light-high-contrast': {
               $value: '{base.color.neutral.7}',
             },
           },
@@ -893,6 +954,9 @@
             },
             'dark-dimmed': {
               $value: '{base.color.neutral.7}',
+            },
+            'light-high-contrast': {
+              $value: '{borderColor.emphasis}',
             },
           },
         },
