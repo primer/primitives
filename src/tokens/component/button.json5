@@ -235,12 +235,15 @@
               ],
             },
             'org.primer.overrides': {
+              'light': {
+                $value: '{fgColor.white}',
+                alpha: 0.8,
+              },
               'dark': {
                 $value: '{fgColor.white}',
               },
             },
           },
-          alpha: 0.8,
         },
       },
       bgColor: {
