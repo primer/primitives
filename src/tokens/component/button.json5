@@ -266,6 +266,9 @@
               'dark-tritanopia': {
                 $value: '#2a7aef',
               },
+              'dark-protanopia-deuteranopia': {
+                $value: '#2a7aef',
+              },
             },
           },
         },
@@ -288,6 +291,9 @@
                 $value: '#428f46',
               },
               'dark-tritanopia': {
+                $value: '#3685f3',
+              },
+              'dark-protanopia-deuteranopia': {
                 $value: '#3685f3',
               },
             },
@@ -313,6 +319,9 @@
               },
               'dark-tritanopia': {
                 $value: '#5fabfe',
+              },
+              'dark-protanopia-deuteranopia': {
+                $value: '{base.color.blue.6}',
               },
             },
           },
@@ -395,6 +404,9 @@
               },
               'dark-tritanopia': {
                 $value: '#5fabfe',
+              },
+              'dark-protanopia-deuteranopia': {
+                $value: '#1158c7',
               },
             },
           },
@@ -886,6 +898,9 @@
               'dark-dimmed': {
                 $value: '#ea5c53',
               },
+              'dark-protanopia-deuteranopia': {
+                $value: '{fgColor.danger}',
+              },
             },
           },
         },
@@ -965,6 +980,9 @@
               'dark-dimmed': {
                 $value: '#ea5c53',
               },
+              'dark-protanopia-deuteranopia': {
+                $value: '#f0883e',
+              },
             },
           },
         },
@@ -1021,6 +1039,9 @@
               dark: {
                 $value: '{base.color.red.6}',
               },
+              'dark-protanopia-deuteranopia': {
+                $value: '{base.color.orange.6}',
+              },
             },
           },
         },
@@ -1041,6 +1062,9 @@
               },
               'dark-dimmed': {
                 $value: '#c33d38',
+              },
+              'dark-protanopia-deuteranopia': {
+                $value: '#b5531d',
               },
             },
           },
