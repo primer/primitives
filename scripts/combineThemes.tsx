@@ -3,7 +3,7 @@ import {basename, extname} from 'path'
 import JSON5 from 'json5'
 
 interface Theme {
-  [key: string]: any
+  [key: string]: unknown
 }
 
 function combineThemes(baseFilePath: string, overrideFilePath: string, outputFilePath: string): void {
@@ -20,7 +20,7 @@ function combine(base: Theme, override: Theme, overrideFileName: string): Theme 
   const result = {...base}
 
   for (const key in override) {
-    if (override.hasOwnProperty(key) && result.hasOwnProperty(key)) {
+    if (Object.prototype.hasOwnProperty.call(override, key) && Object.prototype.hasOwnProperty.call(result, key)) {
       const overrideValue = override[key]
 
       if (overrideValue && typeof overrideValue === 'object' && overrideValue.$value) {
@@ -47,6 +47,7 @@ function combine(base: Theme, override: Theme, overrideFileName: string): Theme 
 function main() {
   const args = process.argv.slice(2)
   if (args.length !== 3) {
+    // eslint-disable-next-line no-console
     console.error('Usage: npx tsx combineThemes.ts <baseFilePath> <overrideFilePath> <outputFilePath>')
     process.exit(1)
   }
