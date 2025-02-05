@@ -79,6 +79,19 @@
                   },
                 ],
               },
+              'light-protanopia-deuteranopia': {
+                $value: [
+                  {
+                    color: '{base.color.blue.9}',
+                    alpha: 0.3,
+                    offsetX: '0px',
+                    offsetY: '1px',
+                    blur: '0px',
+                    spread: '0px',
+                    inset: true,
+                  },
+                ],
+              },
             },
           },
         },
@@ -127,6 +140,21 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component shadow',
+            },
+            'org.primer.overrides': {
+              'light-protanopia-deuteranopia': {
+                $value: [
+                  {
+                    color: '{base.color.orange.9}',
+                    alpha: 0.2,
+                    offsetX: '0px',
+                    offsetY: '1px',
+                    blur: '0px',
+                    spread: '0px',
+                    inset: true,
+                  },
+                ],
+              },
             },
           },
         },
