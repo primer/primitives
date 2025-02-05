@@ -66,17 +66,19 @@
               group: 'component shadow',
             },
             'org.primer.overrides': {
-              'light-tritanopia': [
-                {
-                  color: '{base.color.blue.9}',
-                  alpha: 0.3,
-                  offsetX: '0px',
-                  offsetY: '1px',
-                  blur: '0px',
-                  spread: '0px',
-                  inset: true,
-                },
-              ],
+              'light-tritanopia': {
+                $value: [
+                  {
+                    color: '{base.color.blue.9}',
+                    alpha: 0.3,
+                    offsetX: '0px',
+                    offsetY: '1px',
+                    blur: '0px',
+                    spread: '0px',
+                    inset: true,
+                  },
+                ],
+              },
             },
           },
         },
