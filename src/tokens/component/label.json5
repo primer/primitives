@@ -1,194 +1,4 @@
 {
-  menu: {
-    bgColor: {
-      active: {
-        $value: '{base.color.transparent}',
-        $type: 'color',
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'mode',
-            group: 'component (internal)',
-            scopes: [
-              'bgColor',
-            ],
-          },
-          'org.primer.overrides': {
-            dark: {
-              $value: '{base.color.neutral.2}',
-            },
-          },
-        },
-      },
-    },
-  },
-  selectMenu: {
-    borderColor: {
-      $value: '{base.color.transparent}',
-      $type: 'color',
-      $extensions: {
-        'org.primer.figma': {
-          collection: 'mode',
-          group: 'component (internal)',
-          scopes: [
-            'borderColor',
-          ],
-        },
-        'org.primer.overrides': {
-          dark: {
-            $value: '{borderColor.default}',
-          },
-        },
-      },
-    },
-    bgColor: {
-      active: {
-        $value: '{base.color.blue.1}',
-        $type: 'color',
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'mode',
-            group: 'component (internal)',
-            scopes: [
-              'bgColor',
-            ],
-          },
-          'org.primer.overrides': {
-            dark: {
-              $value: '{base.color.blue.8}',
-            },
-          },
-        },
-      },
-    },
-  },
-  sideNav: {
-    bgColor: {
-      selected: {
-        $value: '{base.color.neutral.0}',
-        $type: 'color',
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'mode',
-            group: 'component (internal)',
-            scopes: [
-              'bgColor',
-            ],
-          },
-          'org.primer.overrides': {
-            dark: {
-              $value: '{base.color.neutral.3}',
-            },
-          },
-        },
-      },
-    },
-  },
-  treeViewItem: {
-    leadingVisual: {
-      iconColor: {
-        rest: {
-          $value: '{base.color.blue.3}',
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              group: 'component (internal)',
-              scopes: [
-                'bgColor',
-              ],
-            },
-            'org.primer.overrides': {
-              dark: {
-                $value: '{fgColor.muted}',
-              },
-            },
-          },
-        },
-      },
-    },
-  },
-  underlineNav: {
-    borderColor: {
-      active: {
-        $value: '{base.color.coral.3}',
-        $type: 'color',
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'mode',
-            group: 'component (internal)',
-            scopes: [
-              'borderColor',
-            ],
-          },
-          'org.primer.overrides': {
-            dark: {
-              $value: '{base.color.coral.3}',
-            },
-          },
-        },
-      },
-      hover: {
-        $value: '{borderColor.muted}',
-        $type: 'color',
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'mode',
-            group: 'component (internal)',
-            scopes: [
-              'borderColor',
-            ],
-          },
-          'org.primer.overrides': {
-            dark: {
-              $value: '{borderColor.neutral.muted}',
-            },
-          },
-        },
-      },
-    },
-    iconColor: {
-      rest: {
-        $value: '{fgColor.muted}',
-        $type: 'color',
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'mode',
-            group: 'component (internal)',
-            scopes: [
-              'fgColor',
-            ],
-          },
-          'org.primer.overrides': {
-            dark: {
-              $value: '{fgColor.muted}',
-            },
-          },
-        },
-      },
-    },
-  },
-  selection: {
-    bgColor: {
-      $value: '{bgColor.accent.emphasis}',
-      $type: 'color',
-      $extensions: {
-        'org.primer.figma': {
-          collection: 'mode',
-          group: 'component',
-          scopes: [
-            'bgColor',
-          ],
-        },
-        'org.primer.overrides': {
-          dark: {
-            $value: '{bgColor.accent.emphasis}',
-            alpha: 0.7,
-          },
-        },
-      },
-      alpha: 0.2,
-    },
-  },
   label: {
     green: {
       bgColor: {
@@ -199,9 +9,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'bgColor',
-              ],
+              scopes: ['bgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -217,9 +25,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'bgColor',
-              ],
+              scopes: ['bgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -235,9 +41,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'bgColor',
-              ],
+              scopes: ['bgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -255,9 +59,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'fgColor',
-              ],
+              scopes: ['fgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -273,9 +75,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'fgColor',
-              ],
+              scopes: ['fgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -291,9 +91,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'fgColor',
-              ],
+              scopes: ['fgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -313,9 +111,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'bgColor',
-              ],
+              scopes: ['bgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -331,9 +127,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'bgColor',
-              ],
+              scopes: ['bgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -349,9 +143,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'bgColor',
-              ],
+              scopes: ['bgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -369,9 +161,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'fgColor',
-              ],
+              scopes: ['fgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -387,9 +177,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'fgColor',
-              ],
+              scopes: ['fgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -405,9 +193,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'fgColor',
-              ],
+              scopes: ['fgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -427,9 +213,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'bgColor',
-              ],
+              scopes: ['bgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -445,9 +229,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'bgColor',
-              ],
+              scopes: ['bgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -463,9 +245,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'bgColor',
-              ],
+              scopes: ['bgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -483,9 +263,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'fgColor',
-              ],
+              scopes: ['fgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -501,9 +279,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'fgColor',
-              ],
+              scopes: ['fgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -519,9 +295,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'fgColor',
-              ],
+              scopes: ['fgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -541,9 +315,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'bgColor',
-              ],
+              scopes: ['bgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -559,9 +331,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'bgColor',
-              ],
+              scopes: ['bgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -577,9 +347,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'bgColor',
-              ],
+              scopes: ['bgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -597,9 +365,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'fgColor',
-              ],
+              scopes: ['fgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -615,9 +381,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'fgColor',
-              ],
+              scopes: ['fgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -633,9 +397,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'fgColor',
-              ],
+              scopes: ['fgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -655,9 +417,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'bgColor',
-              ],
+              scopes: ['bgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -673,9 +433,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'bgColor',
-              ],
+              scopes: ['bgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -691,9 +449,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'bgColor',
-              ],
+              scopes: ['bgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -711,9 +467,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'fgColor',
-              ],
+              scopes: ['fgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -729,9 +483,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'fgColor',
-              ],
+              scopes: ['fgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -747,9 +499,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'fgColor',
-              ],
+              scopes: ['fgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -769,9 +519,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'bgColor',
-              ],
+              scopes: ['bgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -787,9 +535,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'bgColor',
-              ],
+              scopes: ['bgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -805,9 +551,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'bgColor',
-              ],
+              scopes: ['bgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -825,9 +569,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'fgColor',
-              ],
+              scopes: ['fgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -843,9 +585,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'fgColor',
-              ],
+              scopes: ['fgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -861,9 +601,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'fgColor',
-              ],
+              scopes: ['fgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -883,9 +621,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'bgColor',
-              ],
+              scopes: ['bgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -901,9 +637,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'bgColor',
-              ],
+              scopes: ['bgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -919,9 +653,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'bgColor',
-              ],
+              scopes: ['bgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -939,9 +671,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'fgColor',
-              ],
+              scopes: ['fgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -957,9 +687,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'fgColor',
-              ],
+              scopes: ['fgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -975,9 +703,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'fgColor',
-              ],
+              scopes: ['fgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -997,9 +723,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'bgColor',
-              ],
+              scopes: ['bgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -1015,9 +739,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'bgColor',
-              ],
+              scopes: ['bgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -1033,9 +755,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'bgColor',
-              ],
+              scopes: ['bgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -1053,9 +773,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'fgColor',
-              ],
+              scopes: ['fgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -1071,9 +789,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'fgColor',
-              ],
+              scopes: ['fgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -1089,9 +805,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'fgColor',
-              ],
+              scopes: ['fgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -1111,9 +825,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'bgColor',
-              ],
+              scopes: ['bgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -1129,9 +841,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'bgColor',
-              ],
+              scopes: ['bgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -1147,9 +857,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'bgColor',
-              ],
+              scopes: ['bgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -1167,9 +875,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'fgColor',
-              ],
+              scopes: ['fgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -1185,9 +891,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'fgColor',
-              ],
+              scopes: ['fgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -1203,9 +907,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'fgColor',
-              ],
+              scopes: ['fgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -1225,9 +927,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'bgColor',
-              ],
+              scopes: ['bgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -1243,9 +943,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'bgColor',
-              ],
+              scopes: ['bgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -1261,9 +959,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'bgColor',
-              ],
+              scopes: ['bgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -1281,9 +977,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'fgColor',
-              ],
+              scopes: ['fgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -1299,9 +993,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'fgColor',
-              ],
+              scopes: ['fgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -1317,9 +1009,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'fgColor',
-              ],
+              scopes: ['fgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -1339,9 +1029,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'bgColor',
-              ],
+              scopes: ['bgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -1357,9 +1045,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'bgColor',
-              ],
+              scopes: ['bgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -1375,9 +1061,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'bgColor',
-              ],
+              scopes: ['bgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -1395,9 +1079,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'fgColor',
-              ],
+              scopes: ['fgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -1413,9 +1095,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'fgColor',
-              ],
+              scopes: ['fgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -1431,9 +1111,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'fgColor',
-              ],
+              scopes: ['fgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -1453,9 +1131,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'bgColor',
-              ],
+              scopes: ['bgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -1471,9 +1147,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'bgColor',
-              ],
+              scopes: ['bgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -1489,9 +1163,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'bgColor',
-              ],
+              scopes: ['bgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -1509,9 +1181,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'fgColor',
-              ],
+              scopes: ['fgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -1527,9 +1197,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'fgColor',
-              ],
+              scopes: ['fgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -1545,9 +1213,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'fgColor',
-              ],
+              scopes: ['fgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -1567,9 +1233,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'bgColor',
-              ],
+              scopes: ['bgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -1585,9 +1249,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'bgColor',
-              ],
+              scopes: ['bgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -1603,9 +1265,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'bgColor',
-              ],
+              scopes: ['bgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -1623,9 +1283,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'fgColor',
-              ],
+              scopes: ['fgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -1641,9 +1299,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'fgColor',
-              ],
+              scopes: ['fgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -1659,9 +1315,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'fgColor',
-              ],
+              scopes: ['fgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -1681,9 +1335,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'bgColor',
-              ],
+              scopes: ['bgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -1699,9 +1351,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'bgColor',
-              ],
+              scopes: ['bgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -1717,9 +1367,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'bgColor',
-              ],
+              scopes: ['bgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -1737,9 +1385,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'fgColor',
-              ],
+              scopes: ['fgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -1755,9 +1401,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'fgColor',
-              ],
+              scopes: ['fgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -1773,9 +1417,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'fgColor',
-              ],
+              scopes: ['fgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -1795,9 +1437,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'bgColor',
-              ],
+              scopes: ['bgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -1813,9 +1453,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'bgColor',
-              ],
+              scopes: ['bgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -1831,9 +1469,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'bgColor',
-              ],
+              scopes: ['bgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -1851,9 +1487,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'fgColor',
-              ],
+              scopes: ['fgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -1869,9 +1503,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'fgColor',
-              ],
+              scopes: ['fgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -1887,9 +1519,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'fgColor',
-              ],
+              scopes: ['fgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -1909,9 +1539,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'bgColor',
-              ],
+              scopes: ['bgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -1927,9 +1555,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'bgColor',
-              ],
+              scopes: ['bgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -1945,9 +1571,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'bgColor',
-              ],
+              scopes: ['bgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -1965,9 +1589,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'fgColor',
-              ],
+              scopes: ['fgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -1983,9 +1605,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'fgColor',
-              ],
+              scopes: ['fgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -2001,9 +1621,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'fgColor',
-              ],
+              scopes: ['fgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -2023,9 +1641,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'bgColor',
-              ],
+              scopes: ['bgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -2041,9 +1657,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'bgColor',
-              ],
+              scopes: ['bgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -2059,9 +1673,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'bgColor',
-              ],
+              scopes: ['bgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -2079,9 +1691,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'fgColor',
-              ],
+              scopes: ['fgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -2097,9 +1707,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'fgColor',
-              ],
+              scopes: ['fgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -2115,9 +1723,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'fgColor',
-              ],
+              scopes: ['fgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -2137,9 +1743,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'bgColor',
-              ],
+              scopes: ['bgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -2155,9 +1759,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'bgColor',
-              ],
+              scopes: ['bgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -2173,9 +1775,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'bgColor',
-              ],
+              scopes: ['bgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -2193,9 +1793,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'fgColor',
-              ],
+              scopes: ['fgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -2211,9 +1809,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'fgColor',
-              ],
+              scopes: ['fgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -2229,9 +1825,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'fgColor',
-              ],
+              scopes: ['fgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -2251,9 +1845,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'bgColor',
-              ],
+              scopes: ['bgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -2269,9 +1861,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'bgColor',
-              ],
+              scopes: ['bgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -2287,9 +1877,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'bgColor',
-              ],
+              scopes: ['bgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -2307,9 +1895,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'fgColor',
-              ],
+              scopes: ['fgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -2325,9 +1911,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'fgColor',
-              ],
+              scopes: ['fgColor'],
             },
             'org.primer.overrides': {
               dark: {
@@ -2343,9 +1927,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: [
-                'fgColor',
-              ],
+              scopes: ['fgColor'],
             },
             'org.primer.overrides': {
               dark: {
