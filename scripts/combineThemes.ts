@@ -6,12 +6,17 @@ interface Theme {
   [key: string]: unknown
 }
 
-function combineThemes(baseFilePath: string, overrideFilePath: string, outputFilePath: string): void {
+function combineThemes(
+  baseFilePath: string,
+  overrideFilePath: string,
+  outputFilePath: string,
+  themeName?: string,
+): void {
   const baseFile = JSON5.parse(readFileSync(baseFilePath, 'utf8'))
   const overrideFile = JSON5.parse(readFileSync(overrideFilePath, 'utf8'))
   const overrideFileName = basename(overrideFilePath, extname(overrideFilePath)).replace(/\./g, '-')
 
-  const combinedTheme = combine(baseFile, overrideFile, overrideFileName)
+  const combinedTheme = combine(baseFile, overrideFile, themeName || overrideFileName)
 
   writeFileSync(outputFilePath, JSON5.stringify(combinedTheme, null, 2))
 }
