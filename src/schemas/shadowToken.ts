@@ -19,6 +19,12 @@ export const shadowValue = z
   })
   .strict()
 
+const baseShadowToken = baseToken.extend({
+  $value: z.union([shadowValue, referenceValue, z.array(shadowValue)]),
+})
+
+const override = z.union([referenceValue, baseShadowToken]).optional()
+
 export const shadowToken = baseToken
   .extend({
     $value: z.union([shadowValue, z.array(shadowValue), referenceValue]),
@@ -42,6 +48,32 @@ export const shadowToken = baseToken
             group: z.string().optional(),
           })
           .strict(),
+        'org.primer.overrides': z
+          .object(
+            {
+              light: override,
+              'light-tritanopia': override,
+              'light-protanopia-deuteranopia': override,
+              'light-high-contrast': override,
+              dark: override,
+              'dark-tritanopia': override,
+              'dark-protanopia-deuteranopia': override,
+              'dark-high-contrast': override,
+              'dark-dimmed': override,
+            },
+            {
+              errorMap: e => {
+                if (e.code === 'unrecognized_keys') {
+                  return {
+                    message: `Unrecognized key: "${e.keys.join(', ')}", must be one of: light, light-tritanopia, light-protanopia-deuteranopia, light-high-contrast, dark, dark-tritanopia, dark-protanopia-deuteranopia, dark-high-contrast, dark-dimmed`,
+                  }
+                }
+                return {message: `Error: ${e.code}`}
+              },
+            },
+          )
+          .strict()
+          .optional(),
       })
       .optional(),
   })

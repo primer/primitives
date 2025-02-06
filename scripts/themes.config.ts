@@ -5,7 +5,7 @@ export const themes: TokenBuildInput[] = [
     filename: 'light',
     theme: 'light',
     source: [
-      `src/tokens/functional/shadow/light.json5`,
+      `src/tokens/functional/shadow/shadow.json5`,
       `src/tokens/functional/border/*.json5`,
       `src/tokens/component/*.json5`,
       `src/tokens/functional/color/*.json5`,
@@ -21,7 +21,7 @@ export const themes: TokenBuildInput[] = [
     filename: 'light-tritanopia',
     theme: 'light-tritanopia',
     source: [
-      `src/tokens/functional/shadow/light.json5`,
+      `src/tokens/functional/shadow/shadow.json5`,
       `src/tokens/functional/border/*.json5`,
       `src/tokens/component/*.json5`,
       `src/tokens/functional/color/*.json5`,
@@ -38,7 +38,7 @@ export const themes: TokenBuildInput[] = [
     filename: 'light-colorblind',
     theme: 'light-protanopia-deuteranopia',
     source: [
-      `src/tokens/functional/shadow/light.json5`,
+      `src/tokens/functional/shadow/shadow.json5`,
       `src/tokens/functional/border/*.json5`,
       `src/tokens/component/*.json5`,
       `src/tokens/functional/color/*.json5`,
@@ -55,7 +55,7 @@ export const themes: TokenBuildInput[] = [
     filename: 'light-high-contrast',
     theme: 'light-high-contrast',
     source: [
-      `src/tokens/functional/shadow/light.json5`,
+      `src/tokens/functional/shadow/shadow.json5`,
       `src/tokens/functional/border/*.json5`,
       `src/tokens/component/*.json5`,
       `src/tokens/functional/color/*.json5`,
@@ -72,7 +72,7 @@ export const themes: TokenBuildInput[] = [
     filename: 'dark',
     theme: 'dark',
     source: [
-      `src/tokens/functional/shadow/dark.json5`,
+      `src/tokens/functional/shadow/shadow.json5`,
       `src/tokens/functional/border/*.json5`,
       `src/tokens/functional/color/*.json5`,
       `src/tokens/functional/color/dark/*.json5`,
@@ -88,7 +88,7 @@ export const themes: TokenBuildInput[] = [
     filename: 'dark-dimmed',
     theme: 'dark-dimmed',
     source: [
-      `src/tokens/functional/shadow/dark.json5`,
+      `src/tokens/functional/shadow/shadow.json5`,
       `src/tokens/functional/border/*.json5`,
       `src/tokens/component/*.json5`,
       `src/tokens/functional/color/*.json5`,
@@ -105,7 +105,7 @@ export const themes: TokenBuildInput[] = [
     filename: 'dark-tritanopia',
     theme: 'dark-tritanopia',
     source: [
-      `src/tokens/functional/shadow/dark.json5`,
+      `src/tokens/functional/shadow/shadow.json5`,
       `src/tokens/functional/border/*.json5`,
       `src/tokens/component/*.json5`,
       `src/tokens/functional/color/*.json5`,
@@ -122,7 +122,7 @@ export const themes: TokenBuildInput[] = [
     filename: 'dark-colorblind',
     theme: 'dark-protanopia-deuteranopia',
     source: [
-      `src/tokens/functional/shadow/dark.json5`,
+      `src/tokens/functional/shadow/shadow.json5`,
       `src/tokens/functional/border/*.json5`,
       `src/tokens/component/*.json5`,
       `src/tokens/functional/color/*.json5`,
@@ -139,7 +139,7 @@ export const themes: TokenBuildInput[] = [
     filename: 'dark-high-contrast',
     theme: 'dark-high-contrast',
     source: [
-      `src/tokens/functional/shadow/dark.json5`,
+      `src/tokens/functional/shadow/shadow.json5`,
       `src/tokens/functional/border/*.json5`,
       `src/tokens/component/*.json5`,
       `src/tokens/functional/color/*.json5`,
