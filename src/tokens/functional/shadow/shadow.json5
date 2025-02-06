@@ -17,6 +17,20 @@
           collection: 'mode',
           group: 'component shadow',
         },
+        'org.primer.overrides': {
+          dark: {
+            $value: [
+              {
+                color: '{base.color.neutral.1}',
+                alpha: 1,
+                offsetX: '0px',
+                offsetY: '0px',
+                blur: '0px',
+                spread: '2px',
+              },
+            ],
+          },
+        },
       },
     },
   },
@@ -40,6 +54,21 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component shadow',
+            },
+            'org.primer.overrides': {
+              dark: {
+                $value: [
+                  {
+                    color: '{base.color.transparent}',
+                    alpha: 0,
+                    offsetX: '0px',
+                    offsetY: '0px',
+                    blur: '0px',
+                    spread: '0px',
+                    inset: false,
+                  },
+                ],
+              },
             },
           },
         },
@@ -92,6 +121,19 @@
                   },
                 ],
               },
+              dark: {
+                $value: [
+                  {
+                    color: '{base.color.transparent}',
+                    alpha: 0,
+                    offsetX: '0px',
+                    offsetY: '0px',
+                    blur: '0px',
+                    spread: '0px',
+                    inset: false,
+                  },
+                ],
+              },
             },
           },
         },
@@ -116,6 +158,21 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component shadow',
+            },
+            'org.primer.overrides': {
+              dark: {
+                $value: [
+                  {
+                    color: '{base.color.transparent}',
+                    alpha: 0,
+                    offsetX: '0px',
+                    offsetY: '0px',
+                    blur: '0px',
+                    spread: '0px',
+                    inset: false,
+                  },
+                ],
+              },
             },
           },
         },
@@ -155,6 +212,19 @@
                   },
                 ],
               },
+              dark: {
+                $value: [
+                  {
+                    color: '{base.color.transparent}',
+                    alpha: 0,
+                    offsetX: '0px',
+                    offsetY: '0px',
+                    blur: '0px',
+                    spread: '0px',
+                    inset: false,
+                  },
+                ],
+              },
             },
           },
         },
@@ -178,6 +248,19 @@
           collection: 'mode',
           group: 'shadow',
         },
+        'org.primer.overrides': {
+          dark: {
+            $value: {
+              color: '{base.color.neutral.0}',
+              alpha: 0.24,
+              offsetX: '0px',
+              offsetY: '1px',
+              blur: '0px',
+              spread: '0px',
+              inset: true,
+            },
+          },
+        },
       },
     },
     resting: {
@@ -196,6 +279,19 @@
           'org.primer.figma': {
             collection: 'mode',
             group: 'shadow',
+          },
+          'org.primer.overrides': {
+            dark: {
+              $value: {
+                color: '{base.color.neutral.0}',
+                alpha: 0.8,
+                offsetX: '0px',
+                offsetY: '1px',
+                blur: '0px',
+                spread: '0px',
+                inset: false,
+              },
+            },
           },
         },
       },
@@ -217,6 +313,21 @@
             collection: 'mode',
             group: 'shadow',
           },
+          'org.primer.overrides': {
+            dark: {
+              $value: [
+                {
+                  color: '{base.color.neutral.0}',
+                  alpha: 0.4,
+                  offsetX: '0px',
+                  offsetY: '1px',
+                  blur: '0px',
+                  spread: '0px',
+                  inset: false,
+                },
+              ],
+            },
+          },
         },
       },
       medium: {
@@ -235,6 +346,20 @@
           'org.primer.figma': {
             collection: 'mode',
             group: 'shadow',
+          },
+          'org.primer.overrides': {
+            dark: {
+              $value: [
+                {
+                  color: '{base.color.neutral.0}',
+                  alpha: 0.8,
+                  offsetX: '0px',
+                  offsetY: '3px',
+                  blur: '6px',
+                  spread: '0px',
+                },
+              ],
+            },
           },
         },
       },
@@ -272,6 +397,36 @@
           'org.primer.figma': {
             collection: 'mode',
             group: 'shadow',
+          },
+          'org.primer.overrides': {
+            dark: {
+              $value: [
+                {
+                  color: '{overlay.borderColor}',
+                  alpha: 1,
+                  offsetX: '0px',
+                  offsetY: '0px',
+                  blur: '0px',
+                  spread: '1px',
+                },
+                {
+                  color: '{base.color.neutral.0}',
+                  alpha: 0.4,
+                  offsetX: '0px',
+                  offsetY: '6px',
+                  blur: '12px',
+                  spread: '-3px',
+                },
+                {
+                  color: '{base.color.neutral.0}',
+                  alpha: 0.4,
+                  offsetX: '0px',
+                  offsetY: '6px',
+                  blur: '18px',
+                  spread: '0px',
+                },
+              ],
+            },
           },
         },
       },
@@ -324,6 +479,52 @@
             collection: 'mode',
             group: 'shadow',
           },
+          'org.primer.overrides': {
+            dark: {
+              $value: [
+                {
+                  color: '{overlay.borderColor}',
+                  alpha: 1,
+                  offsetX: '0px',
+                  offsetY: '0px',
+                  blur: '0px',
+                  spread: '1px',
+                },
+                {
+                  color: '{base.color.neutral.0}',
+                  alpha: 0.4,
+                  offsetX: '0px',
+                  offsetY: '8px',
+                  blur: '16px',
+                  spread: '-4px',
+                },
+                {
+                  color: '{base.color.neutral.0}',
+                  alpha: 0.4,
+                  offsetX: '0px',
+                  offsetY: '4px',
+                  blur: '32px',
+                  spread: '-4px',
+                },
+                {
+                  color: '{base.color.neutral.0}',
+                  alpha: 0.4,
+                  offsetX: '0px',
+                  offsetY: '24px',
+                  blur: '48px',
+                  spread: '-12px',
+                },
+                {
+                  color: '{base.color.neutral.0}',
+                  alpha: 0.4,
+                  offsetX: '0px',
+                  offsetY: '48px',
+                  blur: '96px',
+                  spread: '-24px',
+                },
+              ],
+            },
+          },
         },
       },
       large: {
@@ -350,6 +551,28 @@
           'org.primer.figma': {
             collection: 'mode',
             group: 'shadow',
+          },
+          'org.primer.overrides': {
+            dark: {
+              $value: [
+                {
+                  color: '{overlay.borderColor}',
+                  alpha: 1,
+                  offsetX: '0px',
+                  offsetY: '0px',
+                  blur: '0px',
+                  spread: '1px',
+                },
+                {
+                  color: '{base.color.neutral.0}',
+                  alpha: 1,
+                  offsetX: '0px',
+                  offsetY: '24px',
+                  blur: '48px',
+                  spread: '0px',
+                },
+              ],
+            },
           },
         },
       },
@@ -378,6 +601,28 @@
             collection: 'mode',
             group: 'shadow',
           },
+          'org.primer.overrides': {
+            dark: {
+              $value: [
+                {
+                  color: '{overlay.borderColor}',
+                  alpha: 1,
+                  offsetX: '0px',
+                  offsetY: '0px',
+                  blur: '0px',
+                  spread: '1px',
+                },
+                {
+                  color: '{base.color.neutral.0}',
+                  alpha: 1,
+                  offsetX: '0px',
+                  offsetY: '32px',
+                  blur: '64px',
+                  spread: '0px',
+                },
+              ],
+            },
+          },
         },
       },
       legacy: {
@@ -400,6 +645,30 @@
           },
         ],
         $type: 'shadow',
+        $extensions: {
+          'org.primer.overrides': {
+            dark: {
+              $value: [
+                {
+                  color: '{base.color.neutral.0}',
+                  alpha: 0.4,
+                  offsetX: '0px',
+                  offsetY: '6px',
+                  blur: '12px',
+                  spread: '-3px',
+                },
+                {
+                  color: '{base.color.neutral.0}',
+                  alpha: 0.4,
+                  offsetX: '0px',
+                  offsetY: '6px',
+                  blur: '18px',
+                  spread: '0px',
+                },
+              ],
+            },
+          },
+        },
       },
     },
   },
