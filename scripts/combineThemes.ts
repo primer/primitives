@@ -51,14 +51,14 @@ function combine(base: Theme, override: Theme, overrideFileName: string): Theme 
 // Main function to handle CLI arguments
 function main() {
   const args = process.argv.slice(2)
-  if (args.length !== 3) {
+  if (args.length < 3 || args.length > 4) {
     // eslint-disable-next-line no-console
-    console.error('Usage: npx tsx combineThemes.ts <baseFilePath> <overrideFilePath> <outputFilePath>')
+    console.error('Usage: npx tsx combineThemes.ts <baseFilePath> <overrideFilePath> <outputFilePath> <themeName?>')
     process.exit(1)
   }
 
-  const [baseFilePath, overrideFilePath, outputFilePath] = args
-  combineThemes(baseFilePath, overrideFilePath, outputFilePath)
+  const [baseFilePath, overrideFilePath, outputFilePath, themeName] = args
+  combineThemes(baseFilePath, overrideFilePath, outputFilePath, themeName || undefined)
 }
 
 main()
