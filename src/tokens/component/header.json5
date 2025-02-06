@@ -58,6 +58,9 @@
             group: 'component (internal)',
             scopes: ['borderColor'],
           },
+          'org.primer.overrides': {
+            'light-high-contrast': '{base.color.neutral.7}',
+          },
         },
       },
     },
