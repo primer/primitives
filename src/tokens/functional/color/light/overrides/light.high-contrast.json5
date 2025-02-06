@@ -4,49 +4,6 @@
  * @description All overwrites for functional color tokens for light high contrast color mode are in this file
  */
 {
-  button: {
-    primary: {
-      bgColor: {
-        rest: {
-          $value: '{base.color.green.5}',
-          $type: 'color',
-        },
-        hover: {
-          $value: '#04571e',
-          $type: 'color',
-        },
-        active: {
-          $value: '#03501b',
-          $type: 'color',
-        },
-        disabled: {
-          $value: '#85cb97',
-          $type: 'color',
-        },
-      },
-      borderColor: {
-        rest: {
-          $value: '{base.color.green.7}',
-          $type: 'color',
-          alpha: 1,
-        },
-        hover: {
-          $value: '{base.color.green.7}',
-          $type: 'color',
-          alpha: 1,
-        },
-        active: {
-          $value: '{base.color.green.7}',
-          $type: 'color',
-          alpha: 1,
-        },
-        disabled: {
-          $value: '#85cb97',
-          $type: 'color',
-        },
-      },
-    },
-  },
   display: {
     blue: {
       bgColor: {

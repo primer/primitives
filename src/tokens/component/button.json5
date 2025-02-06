@@ -216,6 +216,9 @@
               dark: {
                 $value: '{bgColor.success.emphasis}',
               },
+              'light-high-contrast': {
+                $value: '{base.color.green.5}',
+              },
             },
           },
         },
@@ -249,6 +252,9 @@
               },
               'light-protanopia-deuteranopia': {
                 $value: '#0864d1',
+              },
+              'light-high-contrast': {
+                $value: '#04571e',
               },
             },
           },
@@ -284,6 +290,9 @@
               'light-protanopia-deuteranopia': {
                 $value: '#075fc8',
               },
+              'light-high-contrast': {
+                $value: '#03501b',
+              },
             },
           },
         },
@@ -318,6 +327,9 @@
               'light-protanopia-deuteranopia': {
                 $value: '#92caff',
               },
+              'light-high-contrast': {
+                $value: '#85cb97',
+              },
             },
           },
         },
@@ -341,6 +353,10 @@
                 $value: '{base.color.green.2}',
                 alpha: 1,
               },
+              'light-high-contrast': {
+                $value: '{base.color.green.7}',
+                alpha: 1,
+              },
             },
           },
           alpha: 0.15,
@@ -362,6 +378,10 @@
                 $value: '{base.color.green.2}',
                 alpha: 1,
               },
+              'light-high-contrast': {
+                $value: '{base.color.green.7}',
+                alpha: 1,
+              },
             },
           },
         },
@@ -380,6 +400,10 @@
               },
               'dark-high-contrast': {
                 $value: '{base.color.green.2}',
+                alpha: 1,
+              },
+              'light-high-contrast': {
+                $value: '{base.color.green.7}',
                 alpha: 1,
               },
             },
@@ -410,6 +434,9 @@
               'dark-high-contrast': {
                 $value: '{base.color.green.2}',
                 alpha: 0.4,
+              },
+              'light-high-contrast': {
+                $value: '#85cb97',
               },
             },
           },
@@ -912,9 +939,6 @@
               dark: {
                 $value: '{base.color.neutral.13}',
               },
-              'light-high-contrast': {
-                $value: '#74041a',
-              },
             },
           },
         },
@@ -1046,6 +1070,9 @@
               },
               'light-protanopia-deuteranopia': {
                 $value: '#7e2f00',
+              },
+              'light-high-contrast': {
+                $value: '#74041a',
               },
             },
           },
