@@ -1317,6 +1317,7 @@
               dark: {
                 $value: '{base.color.neutral.6}',
               },
+              'light-high-contrast': '{base.color.neutral.7}',
             },
           },
         },
@@ -1580,6 +1581,9 @@
             'org.primer.overrides': {
               dark: {
                 $value: '{fgColor.danger}',
+              },
+              'light-high-contrast': {
+                $value: '#980e1e',
               },
             },
           },

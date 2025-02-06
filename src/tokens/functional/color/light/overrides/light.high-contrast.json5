@@ -94,32 +94,6 @@
       },
     },
   },
-  buttonCounter: {
-    default: {
-      bgColor: {
-        rest: {
-          $value: '{base.color.neutral.7}',
-          $type: 'color',
-        },
-      },
-    },
-    danger: {
-      fgColor: {
-        rest: {
-          $value: '#980e1e',
-          $type: 'color',
-        },
-      },
-    },
-  },
-  header: {
-    borderColor: {
-      divider: {
-        $value: '{base.color.neutral.7}',
-        $type: 'color',
-      },
-    },
-  },
   display: {
     blue: {
       bgColor: {
