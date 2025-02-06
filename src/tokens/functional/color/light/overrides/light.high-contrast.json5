@@ -46,53 +46,6 @@
         },
       },
     },
-    inactive: {
-      fgColor: {
-        $value: '{base.color.neutral.10}',
-        $type: 'color',
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'mode',
-            group: 'component (internal)',
-            scopes: ['fgColor'],
-          },
-        },
-      },
-      bgColor: {
-        $value: '{control.bgColor.rest}',
-        $type: 'color',
-      },
-    },
-    invisible: {
-      fgColor: {
-        hover: {
-          $value: '{base.color.neutral.11}',
-          $type: 'color',
-        },
-      },
-      iconColor: {
-        hover: {
-          $value: '{base.color.neutral.11}',
-          $type: 'color',
-        },
-      },
-    },
-    outline: {
-      bgColor: {
-        active: {
-          $value: '#033f9d',
-          $type: 'color',
-        },
-      },
-    },
-    danger: {
-      bgColor: {
-        active: {
-          $value: '#74041a',
-          $type: 'color',
-        },
-      },
-    },
   },
   display: {
     blue: {
