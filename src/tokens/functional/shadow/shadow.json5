@@ -35,10 +35,10 @@
       xsmall: {
         $value: {
           color: '{base.color.neutral.13}',
-          alpha: 0.1,
+          alpha: 0.06,
           offsetX: '0px',
           offsetY: '1px',
-          blur: '0px',
+          blur: '1px',
           spread: '0px',
           inset: false,
         },
@@ -55,7 +55,7 @@
                 alpha: 0.8,
                 offsetX: '0px',
                 offsetY: '1px',
-                blur: '0px',
+                blur: '1px',
                 spread: '0px',
                 inset: false,
               },
@@ -67,10 +67,19 @@
         $value: [
           {
             color: '{base.color.neutral.13}',
-            alpha: 0.04,
+            alpha: 0.06,
             offsetX: '0px',
             offsetY: '1px',
-            blur: '0px',
+            blur: '1px',
+            spread: '0px',
+            inset: false,
+          },
+          {
+            color: '{base.color.neutral.13}',
+            alpha: 0.06,
+            offsetX: '0px',
+            offsetY: '1px',
+            blur: '3px',
             spread: '0px',
             inset: false,
           },
@@ -86,10 +95,19 @@
               $value: [
                 {
                   color: '{base.color.neutral.0}',
-                  alpha: 0.4,
+                  alpha: 0.6,
                   offsetX: '0px',
                   offsetY: '1px',
-                  blur: '0px',
+                  blur: '1px',
+                  spread: '0px',
+                  inset: false,
+                },
+                {
+                  color: '{base.color.neutral.0}',
+                  alpha: 0.6,
+                  offsetX: '0px',
+                  offsetY: '1px',
+                  blur: '3px',
                   spread: '0px',
                   inset: false,
                 },
@@ -100,6 +118,14 @@
       },
       medium: {
         $value: [
+          {
+            color: '{base.color.neutral.12}',
+            alpha: 0.4,
+            offsetX: '0px',
+            offsetY: '1px',
+            blur: '1px',
+            spread: '0px',
+          },
           {
             color: '{base.color.neutral.12}',
             alpha: 0.12,
@@ -118,6 +144,14 @@
           'org.primer.overrides': {
             dark: {
               $value: [
+                {
+                  color: '{base.color.neutral.0}',
+                  alpha: 0.4,
+                  offsetX: '0px',
+                  offsetY: '1px',
+                  blur: '1px',
+                  spread: '0px',
+                },
                 {
                   color: '{base.color.neutral.0}',
                   alpha: 0.8,
@@ -414,8 +448,7 @@
         ],
         $type: 'shadow',
         $extensions: {
-          'org.primer.figma': {
-          },
+          'org.primer.figma': {},
           'org.primer.overrides': {
             dark: {
               $value: [
@@ -437,6 +470,26 @@
                 },
               ],
             },
+          },
+        },
+      },
+    },
+    border: {
+      thin: {
+        $value: {
+          color: '{base.color.neutral.13}',
+          alpha: 0.04,
+          offsetX: '0px',
+          offsetY: '1px',
+          blur: '0px',
+          spread: '0px',
+          inset: true,
+        },
+        $type: 'shadow',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            group: 'shadow',
           },
         },
       },
