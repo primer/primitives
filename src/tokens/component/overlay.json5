@@ -51,7 +51,7 @@
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
-            group: 'component (internal)',
+            group: 'component', // this is NOT internal so that users can see it in figma
             scopes: ['bgColor'],
           },
           'org.primer.overrides': {
