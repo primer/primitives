@@ -35,6 +35,23 @@ export const themes: TokenBuildInput[] = [
     ],
   },
   {
+    filename: 'light-tritanopia-high-contrast',
+    theme: 'light-tritanopia-high-contrast',
+    source: [
+      `src/tokens/functional/shadow/shadow.json5`,
+      `src/tokens/functional/border/*.json5`,
+      `src/tokens/component/*.json5`,
+      `src/tokens/functional/color/*.json5`,
+      `src/tokens/functional/color/light/*.json5`,
+    ],
+    include: [
+      `src/tokens/functional/size/border.json5`,
+      `src/tokens/base/color/light/light.json5`,
+      `src/tokens/base/color/light/light.high-contrast.json5`,
+      `src/tokens/base/color/light/display-light.json5`,
+    ],
+  },
+  {
     filename: 'light-colorblind',
     theme: 'light-protanopia-deuteranopia',
     source: [
