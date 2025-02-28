@@ -789,10 +789,63 @@ export const Treeview = () => {
   return (
     <Table.Container>
       <h1 className="sr-only" id="treeViewItem">
-        Tooltip
+        Treeview
       </h1>
       <DataTable
         aria-labelledby="treeViewItem"
+        data={data}
+        columns={[
+          {
+            header: 'Sample',
+            field: 'name',
+            rowHeader: true,
+            renderCell: row => {
+              return (
+                <ColorTokenSwatch
+                  bgColor={row.name.includes('bgColor') || row.name.includes('iconColor') ? row.name : undefined}
+                  textColor={row.name.includes('fgColor') ? row.name : undefined}
+                  shadowColor={row.name.includes('shadow') ? row.name : undefined}
+                  borderColor={row.name.includes('borderColor') ? row.name : undefined}
+                />
+              )
+            },
+          },
+          {
+            header: 'Token',
+            field: 'name',
+            rowHeader: true,
+            renderCell: row => {
+              return <InlineCode value={row.name} copyClipboard cssVar />
+            },
+          },
+          {
+            header: 'Output value',
+            field: 'value',
+            rowHeader: true,
+            renderCell: row => {
+              return <p>{row.value}</p>
+            },
+          },
+        ]}
+      />
+    </Table.Container>
+  )
+}
+
+export const ContributionGraph = () => {
+  const data = getTokensByName(colorTokens, 'contribution').map(token => {
+    return {
+      id: token.name,
+      ...token,
+    }
+  })
+  return (
+    <Table.Container>
+      <h1 className="sr-only" id="contribution">
+        Contribution graph
+      </h1>
+      <DataTable
+        aria-labelledby="contribution"
         data={data}
         columns={[
           {
