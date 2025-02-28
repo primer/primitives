@@ -832,7 +832,7 @@ export const Treeview = () => {
   )
 }
 
-export const ContributionGraphic = () => {
+export const ContributionGraph = () => {
   const data = getTokensByName(colorTokens, 'contribution').map(token => {
     return {
       id: token.name,
