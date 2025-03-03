@@ -1,5 +1,23 @@
 # @primer/primitives
 
+## 10.4.0
+
+### Minor Changes
+
+- [#1166](https://github.com/primer/primitives/pull/1166) [`7256edd`](https://github.com/primer/primitives/commit/7256eddda15c974bfc55ecf3c1f7a3a6969daf6d) Thanks [@langermank](https://github.com/langermank)! - Add contribution graph tokens
+
+### Patch Changes
+
+- [#1186](https://github.com/primer/primitives/pull/1186) [`277ed66`](https://github.com/primer/primitives/commit/277ed66a1c134d9232d2dd66fed2550b2788ee0d) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Removed unused motion tokens
+
+- [#1180](https://github.com/primer/primitives/pull/1180) [`ec128aa`](https://github.com/primer/primitives/commit/ec128aa811326c31b22656b888f032a674433777) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Fix bug where dark modes had --button-outline-borderColor-selected instead of --button-outline-borderColor-active token
+
+- [#1191](https://github.com/primer/primitives/pull/1191) [`7ae4324`](https://github.com/primer/primitives/commit/7ae4324a90a02af3b6747532cf860b0fbae8f335) Thanks [@langermank](https://github.com/langermank)! - Add contribution graph stories
+
+- [#1187](https://github.com/primer/primitives/pull/1187) [`4266174`](https://github.com/primer/primitives/commit/4266174d2c67759923282327ad7c161a7caf2db1) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Update resting shadow values
+
+- [#1172](https://github.com/primer/primitives/pull/1172) [`a2ba4e4`](https://github.com/primer/primitives/commit/a2ba4e44b5e4915550bb9624e13bfa287c09b1a6) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Adding 50ms duration token
+
 ## 10.3.4
 
 ### Patch Changes
