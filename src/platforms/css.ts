@@ -37,6 +37,7 @@ export const css: PlatformInitializer = (outputFile, prefix, buildPath, options)
       'typography/css',
       'fontFamily/css',
       'fontWeight/number',
+      'gradient/css',
     ],
     options: {
       basePxFontSize: 16,

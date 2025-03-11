@@ -18,5 +18,12 @@ export const gradientToken = baseToken
       referenceValue,
     ]),
     $type: tokenType('gradient'),
+    $extensions: z
+      .object({
+        'org.primer.gradient': z.object({
+          angle: z.number().int().min(0).max(360).optional(),
+        }),
+      })
+      .optional(),
   })
   .strict()

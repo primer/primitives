@@ -32,6 +32,11 @@ describe('Schema: gradientToken', () => {
           },
         ],
         $type: 'gradient',
+        $extensions: {
+          'org.primer.gradient': {
+            angle: 45,
+          },
+        },
       },
     ]
 
