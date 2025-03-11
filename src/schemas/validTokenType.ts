@@ -11,6 +11,7 @@ const validTypes = [
   'shadow',
   'fontFamily',
   'fontWeight',
+  'gradient',
   'number',
   'string',
   'custom-viewportRange',
