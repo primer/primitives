@@ -12,8 +12,8 @@
               scopes: ['bgColor', 'borderColor'],
             },
             'org.primer.overrides': {
-              dark: '{base.display.color.blue.5}'
-            }
+              dark: '{base.display.color.blue.5}',
+            },
           },
         },
         muted: {
@@ -26,10 +26,46 @@
               scopes: ['bgColor'],
             },
             'org.primer.overrides': {
-              dark: '{base.display.color.blue.0}'
-            }
+              dark: '{base.display.color.blue.0}',
+            },
           },
         },
+        'gradient-stop-1': {
+          $value: '{data.blue.color.muted}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component',
+              scopes: ['bgColor'],
+            },
+          },
+        },
+        'gradient-stop-2': {
+          $value: '{data.blue.color.muted}',
+          $type: 'color',
+          alpha: 0,
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component',
+              scopes: ['bgColor'],
+            },
+          },
+        },
+      },
+      gradient: {
+        $type: 'gradient',
+        $value: [
+          {
+            color: '{data.blue.color.gradient-stop-1}',
+            position: 0,
+          },
+          {
+            color: '{data.blue.color.gradient-stop-2}',
+            position: 1,
+          },
+        ],
       },
     },
     auburn: {
@@ -44,8 +80,8 @@
               scopes: ['bgColor', 'borderColor'],
             },
             'org.primer.overrides': {
-              dark: '{base.display.color.auburn.5}'
-            }
+              dark: '{base.display.color.auburn.5}',
+            },
           },
         },
         muted: {
@@ -58,8 +94,8 @@
               scopes: ['bgColor'],
             },
             'org.primer.overrides': {
-              dark: '{base.display.color.auburn.0}'
-            }
+              dark: '{base.display.color.auburn.0}',
+            },
           },
         },
       },
@@ -76,8 +112,8 @@
               scopes: ['bgColor', 'borderColor'],
             },
             'org.primer.overrides': {
-              dark: '{base.display.color.orange.4}'
-            }
+              dark: '{base.display.color.orange.4}',
+            },
           },
         },
         muted: {
@@ -90,8 +126,8 @@
               scopes: ['bgColor'],
             },
             'org.primer.overrides': {
-              dark: '{base.display.color.orange.0}'
-            }
+              dark: '{base.display.color.orange.0}',
+            },
           },
         },
       },
@@ -108,8 +144,8 @@
               scopes: ['bgColor', 'borderColor'],
             },
             'org.primer.overrides': {
-              dark: '{base.display.color.yellow.4}'
-            }
+              dark: '{base.display.color.yellow.4}',
+            },
           },
         },
         muted: {
@@ -122,8 +158,8 @@
               scopes: ['bgColor'],
             },
             'org.primer.overrides': {
-              dark: '{base.display.color.yellow.0}'
-            }
+              dark: '{base.display.color.yellow.0}',
+            },
           },
         },
       },
@@ -140,8 +176,8 @@
               scopes: ['bgColor', 'borderColor'],
             },
             'org.primer.overrides': {
-              dark: '{base.display.color.green.4}'
-            }
+              dark: '{base.display.color.green.4}',
+            },
           },
         },
         muted: {
@@ -154,8 +190,8 @@
               scopes: ['bgColor'],
             },
             'org.primer.overrides': {
-              dark: '{base.display.color.green.0}'
-            }
+              dark: '{base.display.color.green.0}',
+            },
           },
         },
       },
@@ -172,8 +208,8 @@
               scopes: ['bgColor', 'borderColor'],
             },
             'org.primer.overrides': {
-              dark: '{base.display.color.teal.4}'
-            }
+              dark: '{base.display.color.teal.4}',
+            },
           },
         },
         muted: {
@@ -186,8 +222,8 @@
               scopes: ['bgColor'],
             },
             'org.primer.overrides': {
-              dark: '{base.display.color.teal.0}'
-            }
+              dark: '{base.display.color.teal.0}',
+            },
           },
         },
       },
@@ -204,8 +240,8 @@
               scopes: ['bgColor', 'borderColor'],
             },
             'org.primer.overrides': {
-              dark: '{base.display.color.purple.5}'
-            }
+              dark: '{base.display.color.purple.5}',
+            },
           },
         },
         muted: {
@@ -218,8 +254,8 @@
               scopes: ['bgColor'],
             },
             'org.primer.overrides': {
-              dark: '{base.display.color.purple.0}'
-            }
+              dark: '{base.display.color.purple.0}',
+            },
           },
         },
       },
@@ -236,8 +272,8 @@
               scopes: ['bgColor', 'borderColor'],
             },
             'org.primer.overrides': {
-              dark: '{base.display.color.pink.5}'
-            }
+              dark: '{base.display.color.pink.5}',
+            },
           },
         },
         muted: {
@@ -250,8 +286,8 @@
               scopes: ['bgColor'],
             },
             'org.primer.overrides': {
-              dark: '{base.display.color.pink.0}'
-            }
+              dark: '{base.display.color.pink.0}',
+            },
           },
         },
       },
@@ -268,8 +304,8 @@
               scopes: ['bgColor', 'borderColor'],
             },
             'org.primer.overrides': {
-              dark: '{base.display.color.red.5}'
-            }
+              dark: '{base.display.color.red.5}',
+            },
           },
         },
         muted: {
@@ -282,8 +318,8 @@
               scopes: ['bgColor'],
             },
             'org.primer.overrides': {
-              dark: '{base.display.color.red.0}'
-            }
+              dark: '{base.display.color.red.0}',
+            },
           },
         },
       },
@@ -300,8 +336,8 @@
               scopes: ['bgColor', 'borderColor'],
             },
             'org.primer.overrides': {
-              dark: '{base.display.color.gray.4}'
-            }
+              dark: '{base.display.color.gray.4}',
+            },
           },
         },
         muted: {
@@ -314,8 +350,8 @@
               scopes: ['bgColor'],
             },
             'org.primer.overrides': {
-              dark: '{base.display.color.gray.0}'
-            }
+              dark: '{base.display.color.gray.0}',
+            },
           },
         },
       },
