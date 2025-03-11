@@ -4,6 +4,7 @@ describe('Schema: referenceValue', () => {
   it('returns success on valid reference', () => {
     expect(referenceValue.safeParse('{color.token}').success).toStrictEqual(true)
     expect(referenceValue.safeParse('{color.token.900}').success).toStrictEqual(true)
+    expect(referenceValue.safeParse('{color.gradient-stop-01}').success).toStrictEqual(true)
     expect(referenceValue.safeParse('{color.@}').success).toStrictEqual(true)
   })
 
