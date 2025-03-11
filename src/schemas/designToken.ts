@@ -12,6 +12,7 @@ import {fontFamilyToken} from './fontFamilyToken.js'
 import {shadowToken} from './shadowToken.js'
 import {durationToken} from './durationToken.js'
 import {cubicBezierToken} from './cubicBezierToken.js'
+import {gradientToken} from './gradientToken.js'
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore: TODO: fix this
@@ -27,6 +28,7 @@ export const designToken = z.record(
         borderToken,
         fontFamilyToken,
         fontWeightToken,
+        gradientToken,
         typographyToken,
         viewportRangeToken,
         numberToken,
