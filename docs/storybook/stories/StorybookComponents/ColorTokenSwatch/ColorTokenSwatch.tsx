@@ -8,6 +8,8 @@ export type ColorTokenSwatchProps = {
   shadowColor?: string
   outlineColor?: string
   selectionColor?: string
+  gradientStops?: Record<string, number>[]
+  gradientAngle?: number
   size?: 'default' | 'large'
 }
 
@@ -18,6 +20,8 @@ export function ColorTokenSwatch({
   shadowColor,
   outlineColor,
   selectionColor,
+  gradientStops,
+  gradientAngle = 180,
   size = 'default',
 }: ColorTokenSwatchProps) {
   return (
@@ -29,6 +33,14 @@ export function ColorTokenSwatch({
       )}
       {borderColor && <div style={{borderColor: `var(--${borderColor})`}} className="ColorTokenSwatch-border"></div>}
       {bgColor && <div style={{backgroundColor: `var(--${bgColor})`}} className="ColorTokenSwatch-bg"></div>}
+      {gradientStops && (
+        <div
+          style={{
+            background: `linear-gradient(${gradientAngle}deg, ${gradientStops.map(({color, position}) => `${color} ${position * 100}%`).join(', ')})`,
+          }}
+          className="ColorTokenSwatch-bg"
+        ></div>
+      )}
       {shadowColor && <div style={{boxShadow: `var(--${shadowColor})`}} className="ColorTokenSwatch-shadow"></div>}
       {outlineColor && (
         <div style={{outlineColor: `var(--${outlineColor})`}} className="ColorTokenSwatch-outline"></div>
