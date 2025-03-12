@@ -18,6 +18,8 @@ export default {
 
 export const HighchartsAccentColors = () => {
   const data = getTokensByName(colorTokens, 'data').map(token => {
+    console.log(token)
+    
     return {
       id: token.name,
       ...token,
