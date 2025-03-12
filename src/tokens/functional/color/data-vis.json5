@@ -30,26 +30,28 @@
             },
           },
         },
-        'gradient-stop-1': {
-          $value: '{data.blue.color.muted}',
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              group: 'component',
-              scopes: ['bgColor'],
+        gradientStop: {
+          '1': {
+            $value: '{data.blue.color.muted}',
+            $type: 'color',
+            $extensions: {
+              'org.primer.figma': {
+                collection: 'mode',
+                group: 'component',
+                scopes: ['bgColor'],
+              },
             },
           },
-        },
-        'gradient-stop-2': {
-          $value: '{data.blue.color.muted}',
-          $type: 'color',
-          alpha: 0,
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              group: 'component',
-              scopes: ['bgColor'],
+          '2': {
+            $value: '{data.blue.color.muted}',
+            $type: 'color',
+            alpha: 0,
+            $extensions: {
+              'org.primer.figma': {
+                collection: 'mode',
+                group: 'component',
+                scopes: ['bgColor'],
+              },
             },
           },
         },
