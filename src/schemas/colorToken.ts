@@ -50,7 +50,9 @@ export const colorToken = baseColorToken
             {
               light: override,
               'light-tritanopia': override,
+              'light-tritanopia-high-contrast': override,
               'light-protanopia-deuteranopia': override,
+              'light-protanopia-deuteranopia-high-contrast': override,
               'light-high-contrast': override,
               dark: override,
               'dark-tritanopia': override,
