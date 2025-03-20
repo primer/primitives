@@ -34,12 +34,16 @@ const preview = {
 const primerThemes = [
   {value: 'light', left: '🔆', title: 'Light'},
   {value: 'light_colorblind', left: '🔆', title: 'Light Protanopia & Deuteranopia'},
+  {value: 'light_colorblind_high_contrast', left: '🔆', title: 'Light Protanopia & Deuteranopia High Contrast'},
   {value: 'light_tritanopia', left: '🔆', title: 'Light Tritanopia'},
+  {value: 'light_tritanopia_high_contrast', left: '🔆', title: 'Light Tritanopia High Contrast'},
   {value: 'light_high_contrast', left: '🔆', title: 'Light High Contrast'},
   {value: 'dark', left: '🌑', title: 'Dark'},
   {value: 'dark_dimmed', left: '🌑', title: 'Dark Dimmed'},
   {value: 'dark_colorblind', left: '🌑', title: 'Dark Protanopia & Deuteranopia'},
+  {value: 'dark_colorblind_high_contrast', left: '🌑', title: 'Dark Protanopia & Deuteranopia High Contrast'},
   {value: 'dark_tritanopia', left: '🌑', title: 'Dark Tritanopia'},
+  {value: 'dark_tritanopia_high_contrast', left: '🌑', title: 'Dark Tritanopia High Contrast'},
   {value: 'dark_high_contrast', left: '🌑', title: 'Dark High Contrast'},
 ]
 
