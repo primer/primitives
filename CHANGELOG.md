@@ -1,5 +1,15 @@
 # @primer/primitives
 
+## 10.5.0
+
+### Minor Changes
+
+- [#1193](https://github.com/primer/primitives/pull/1193) [`87bc71e`](https://github.com/primer/primitives/commit/87bc71e30167261310a2581432f89a9d5e49032f) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Adding data gradients
+
+### Patch Changes
+
+- [#1197](https://github.com/primer/primitives/pull/1197) [`f51b006`](https://github.com/primer/primitives/commit/f51b0060185a97974d5f6937fa57a90b30376dab) Thanks [@langermank](https://github.com/langermank)! - Use default colors for high contrast contribution graph
+
 ## 10.4.0
 
 ### Minor Changes
