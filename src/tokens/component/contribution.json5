@@ -12,8 +12,12 @@
               scopes: ['bgColor'],
             },
             'org.primer.overrides': {
-              'dark-high-contrast': '{base.color.neutral.3}',
-              'light-high-contrast': '{base.color.neutral.3}',
+              'dark-high-contrast': '{base.color.neutral.0}',
+              'dark-tritanopia-high-contrast': '{base.color.neutral.0}',
+              'dark-protanopia-deuteranopia-high-contrast': '{base.color.neutral.0}',
+              'light-high-contrast': '{base.color.neutral.0}',
+              'light-tritanopia-high-contrast': '{base.color.neutral.0}',
+              'light-protanopia-deuteranopia-high-contrast': '{base.color.neutral.0}',
               'dark-dimmed': '{base.color.neutral.5}',
             },
           },
@@ -99,6 +103,20 @@
               'light-high-contrast': {
                 alpha: 1,
               },
+              'dark-tritanopia-high-contrast': {
+                $value: '{base.color.white}',
+                alpha: 1,
+              },
+              'light-tritanopia-high-contrast': {
+                alpha: 1,
+              },
+              'dark-protanopia-deuteranopia-high-contrast': {
+                $value: '{base.color.white}',
+                alpha: 1,
+              },
+              'light-protanopia-deuteranopia-high-contrast': {
+                alpha: 1,
+              },
             },
           },
         },
@@ -126,6 +144,20 @@
                 alpha: 1,
               },
               'light-high-contrast': {
+                alpha: 1,
+              },
+              'dark-tritanopia-high-contrast': {
+                $value: '{base.color.white}',
+                alpha: 1,
+              },
+              'light-tritanopia-high-contrast': {
+                alpha: 1,
+              },
+              'dark-protanopia-deuteranopia-high-contrast': {
+                $value: '{base.color.white}',
+                alpha: 1,
+              },
+              'light-protanopia-deuteranopia-high-contrast': {
                 alpha: 1,
               },
             },
@@ -157,6 +189,20 @@
               'light-high-contrast': {
                 alpha: 1,
               },
+              'dark-tritanopia-high-contrast': {
+                $value: '{base.color.white}',
+                alpha: 1,
+              },
+              'light-tritanopia-high-contrast': {
+                alpha: 1,
+              },
+              'dark-protanopia-deuteranopia-high-contrast': {
+                $value: '{base.color.white}',
+                alpha: 1,
+              },
+              'light-protanopia-deuteranopia-high-contrast': {
+                alpha: 1,
+              },
             },
           },
         },
@@ -186,6 +232,20 @@
               'light-high-contrast': {
                 alpha: 1,
               },
+              'dark-tritanopia-high-contrast': {
+                $value: '{base.color.white}',
+                alpha: 1,
+              },
+              'light-tritanopia-high-contrast': {
+                alpha: 1,
+              },
+              'dark-protanopia-deuteranopia-high-contrast': {
+                $value: '{base.color.white}',
+                alpha: 1,
+              },
+              'light-protanopia-deuteranopia-high-contrast': {
+                alpha: 1,
+              },
             },
           },
         },
@@ -213,6 +273,20 @@
                 alpha: 1,
               },
               'light-high-contrast': {
+                alpha: 1,
+              },
+              'dark-tritanopia-high-contrast': {
+                $value: '{base.color.white}',
+                alpha: 1,
+              },
+              'light-tritanopia-high-contrast': {
+                alpha: 1,
+              },
+              'dark-protanopia-deuteranopia-high-contrast': {
+                $value: '{base.color.white}',
+                alpha: 1,
+              },
+              'light-protanopia-deuteranopia-high-contrast': {
                 alpha: 1,
               },
             },
