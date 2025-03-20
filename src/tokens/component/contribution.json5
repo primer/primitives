@@ -12,8 +12,6 @@
               scopes: ['bgColor'],
             },
             'org.primer.overrides': {
-              'dark-high-contrast': '{base.color.neutral.3}',
-              'light-high-contrast': '{base.color.neutral.3}',
               'dark-dimmed': '{base.color.neutral.5}',
             },
           },
@@ -92,13 +90,6 @@
                 $value: '{base.color.white}',
                 alpha: 0.05,
               },
-              'dark-high-contrast': {
-                $value: '{base.color.white}',
-                alpha: 1,
-              },
-              'light-high-contrast': {
-                alpha: 1,
-              },
             },
           },
         },
@@ -120,13 +111,6 @@
               'dark-dimmed': {
                 $value: '{base.color.white}',
                 alpha: 0.05,
-              },
-              'dark-high-contrast': {
-                $value: '{base.color.white}',
-                alpha: 1,
-              },
-              'light-high-contrast': {
-                alpha: 1,
               },
             },
           },
@@ -150,13 +134,6 @@
                 $value: '{base.color.white}',
                 alpha: 0.05,
               },
-              'dark-high-contrast': {
-                $value: '{base.color.white}',
-                alpha: 1,
-              },
-              'light-high-contrast': {
-                alpha: 1,
-              },
             },
           },
         },
@@ -179,13 +156,6 @@
                 $value: '{base.color.white}',
                 alpha: 0.05,
               },
-              'dark-high-contrast': {
-                $value: '{base.color.white}',
-                alpha: 1,
-              },
-              'light-high-contrast': {
-                alpha: 1,
-              },
             },
           },
         },
@@ -207,13 +177,6 @@
               'dark-dimmed': {
                 $value: '{base.color.white}',
                 alpha: 0.05,
-              },
-              'dark-high-contrast': {
-                $value: '{base.color.white}',
-                alpha: 1,
-              },
-              'light-high-contrast': {
-                alpha: 1,
               },
             },
           },

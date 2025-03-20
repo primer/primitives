@@ -15,12 +15,18 @@ export default {
 }
 
 export const Base = () => {
-  const data = getTokensByName(sizeTokens, 'base').map(token => {
-    return {
-      id: token.name,
-      ...token,
-    }
-  })
+  const data = getTokensByName(sizeTokens, 'base')
+    .map(token => {
+      return {
+        id: token.name,
+        ...token,
+      }
+    })
+    .sort((a, b) => {
+      const numA = parseInt(a.name.split('-').pop() || '0', 10)
+      const numB = parseInt(b.name.split('-').pop() || '0', 10)
+      return numA - numB
+    })
 
   return (
     <Table.Container>
