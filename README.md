@@ -60,7 +60,7 @@ To make working with tokens easier, we added some additional functionality on to
 We have two main color modes: `light` and `dark`. Additionally we have specific accessibility modes based on those, such as `light high contrast`.
 
 We added a way to create a mode by only including the changes from the main mode. We call this `overrides`.
-`Overrides` are cerated in `src/tokens/functional/color/[light|dark]/overrides/` and have to be added to [themes.config.ts](./scripts/themes.config.ts) to work.
+`Overrides` are created in `src/tokens/functional/color/[light|dark]/overrides/` and have to be added to [themes.config.ts](./scripts/themes.config.ts) to work.
 In the individual files, e.g. `light.high-contrast.json5` you can now add tokens in the same structure as in any main file, e.g. `primitives-light.json5` to replace them.
 
 ### Transforming Colors with Alpha and Mix
@@ -88,7 +88,7 @@ For our Figma export we use the following meta data:
 
 - `collection` the collection that the token is added to within Figma
 - `mode` the mode that the token is added to within the collection in Figma
-- `scopes` the scopes that are assigned to the token in Figma, the actual Figma compatible `scopes` are retreive from an object in the [figmaAttributes transformer](./src/transformers/figmaAttributes.ts)
+- `scopes` the scopes that are assigned to the token in Figma, the actual Figma compatible `scopes` are retrieved from an object in the [figmaAttributes transformer](./src/transformers/figmaAttributes.ts)
 
 Code example
 
@@ -109,8 +109,8 @@ Code example
 #### Token names and @-hack
 
 Token names have to be in camelCase or kebab-case and may only include letters, numbers and `-`. This is enforced by the token validation (`npm run lint:tokens`).
-The only acception is the `@`-hack. This is used when you want to have a default value and sub-values, e.g. `bgColor.accent` and `bgColor.accent.muted`.
-In this case you can create the follwing structure. The `@` will be removed from the name and act as the default value.
+The only exception is the `@`-hack. This is used when you want to have a default value and sub-values, e.g. `bgColor.accent` and `bgColor.accent.muted`.
+In this case you can create the following structure. The `@` will be removed from the name and act as the default value.
 
 ```json5
 {
