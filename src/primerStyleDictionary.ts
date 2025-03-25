@@ -12,6 +12,7 @@ import {
   fontFamilyToCss,
   fontFamilyToFigma,
   fontWeightToNumber,
+  gradientToCss,
   jsonDeprecated,
   namePathToDotNotation,
   namePathToCamelCase,
@@ -156,5 +157,7 @@ PrimerStyleDictionary.registerTransform(fontWeightToNumber)
 PrimerStyleDictionary.registerTransform(fontFamilyToCss)
 
 PrimerStyleDictionary.registerTransform(fontFamilyToFigma)
+
+PrimerStyleDictionary.registerTransform(gradientToCss)
 
 PrimerStyleDictionary.registerPreprocessor(themeOverrides)

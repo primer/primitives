@@ -17,7 +17,7 @@
         'org.primer.figma': {
           collection: 'mode',
           group: 'semantic',
-          scopes: ['borderColor'],
+          scopes: ['borderColor', 'effectColor'],
           codeSyntax: {
             web: 'var(--borderColor-default) /* utility class: .color-border-default */',
           },
@@ -31,7 +31,7 @@
         'org.primer.figma': {
           collection: 'mode',
           group: 'semantic',
-          scopes: ['borderColor'],
+          scopes: ['borderColor', 'effectColor'],
           codeSyntax: {
             web: 'var(--borderColor-muted) /* utility class: .color-border-muted */',
           },
@@ -76,7 +76,7 @@
         'org.primer.figma': {
           collection: 'mode',
           group: 'semantic',
-          scopes: ['borderColor'],
+          scopes: ['borderColor', 'effectColor'],
         },
         'org.primer.overrides': {
           'light-high-contrast': '{borderColor.default}',
@@ -95,7 +95,7 @@
         'org.primer.figma': {
           collection: 'mode',
           group: 'semantic',
-          scopes: ['borderColor'],
+          scopes: ['borderColor', 'effectColor'],
         },
         'org.primer.overrides': {
           'dark-dimmed': {
@@ -125,7 +125,7 @@
         'org.primer.figma': {
           collection: 'mode',
           group: 'semantic',
-          scopes: ['borderColor'],
+          scopes: ['borderColor', 'effectColor'],
         },
       },
     },
@@ -136,7 +136,7 @@
         'org.primer.figma': {
           collection: 'mode',
           group: 'semantic',
-          scopes: ['borderColor'],
+          scopes: ['borderColor', 'effectColor'],
         },
         'org.primer.overrides': {
           'light-high-contrast': {
@@ -208,7 +208,7 @@
           'org.primer.figma': {
             collection: 'mode',
             group: 'semantic',
-            scopes: ['borderColor'],
+            scopes: ['borderColor', 'effectColor'],
             codeSyntax: {
               web: 'var(--borderColor-accent-muted) /* utility class: .color-border-accent */',
             },
@@ -250,7 +250,7 @@
           'org.primer.figma': {
             collection: 'mode',
             group: 'semantic',
-            scopes: ['borderColor'],
+            scopes: ['borderColor', 'effectColor'],
             codeSyntax: {
               web: 'var(--borderColor-accent-emphasis) /* utility class: .color-border-accent-emphasis */',
             },
