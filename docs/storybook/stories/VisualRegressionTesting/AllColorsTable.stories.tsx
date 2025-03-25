@@ -15,7 +15,7 @@ export default {
 
 export const AllThemesInOneTable = () => {
   const data = Object.entries(lightColorTokens)
-    .filter(([name]) => !name.startsWith('border-') && name.includes('control'))
+    .filter(([name]) => !name.startsWith('border-'))
     .map(([name, token]) => {
       return {
         id: name,
