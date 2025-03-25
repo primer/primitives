@@ -174,10 +174,10 @@
               $value: '{base.color.neutral.10}',
             },
             'light-protanopia-deuteranopia-high-contrast': {
-              $value: '{base.color.neutral.6}',
+              $value: '{base.color.neutral.10}',
             },
             'light-tritanopia-high-contrast': {
-              $value: '{base.color.neutral.6}',
+              $value: '{base.color.neutral.10}',
             },
           },
         },
@@ -683,7 +683,7 @@
                 alpha: 1,
               },
               'dark-protanopia-deuteranopia-high-contrast': {
-                $value: '#c51120',
+                $value: '{bgColor.danger.muted}',
                 alpha: 1,
               },
               'light-high-contrast': {
@@ -693,7 +693,8 @@
                 $value: '#8c0b1d',
               },
               'light-protanopia-deuteranopia-high-contrast': {
-                $value: '#8c0b1d',
+                // $value: '#8c0b1d',
+                alpha: 1,
               },
             },
           },
