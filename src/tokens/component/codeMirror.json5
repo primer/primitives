@@ -120,6 +120,18 @@
           },
           'org.primer.overrides': {
             dark: '{borderColor.accent.muted}',
+            'dark-high-contrast': {
+              $value: '{base.color.blue.4}',
+              alpha: 0.4,
+            },
+            'dark-tritanopia-high-contrast': {
+              $value: '{base.color.blue.4}',
+              alpha: 0.4,
+            },
+            'dark-protanopia-deuteranopia-high-contrast': {
+              $value: '{base.color.blue.4}',
+              alpha: 0.4,
+            },
           },
         },
       },
