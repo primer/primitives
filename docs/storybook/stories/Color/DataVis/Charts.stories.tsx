@@ -18,7 +18,7 @@ export default {
 
 export const HighchartsAccentColors = () => {
   const data = getTokensByName(colorTokens, 'data')
-    .filter(({type}) => type === 'color')
+    .filter(({type, name}) => type === 'color' && !name.includes('muted'))
     .map(token => {
       return {
         id: token.name,
@@ -64,12 +64,10 @@ export const HighchartsAccentColors = () => {
   )
 }
 
-export const HighchartsGradients = () => {
+export const HighchartsMutedColors = () => {
   const data = getTokensByName(colorTokens, 'data')
-    .filter(({type}) => type === 'gradient')
+    .filter(({type, name}) => type === 'color' && name.includes('muted'))
     .map(token => {
-      console.log(token)
-
       return {
         id: token.name,
         ...token,
@@ -78,7 +76,7 @@ export const HighchartsGradients = () => {
   return (
     <Table.Container>
       <Table.Title as="h1" id="pattern">
-        Data visualization gradients
+        Data visualization colors
       </Table.Title>
       <DataTable
         aria-labelledby="pattern"
@@ -89,7 +87,7 @@ export const HighchartsGradients = () => {
             field: 'name',
             rowHeader: true,
             renderCell: row => {
-              return <ColorTokenSwatch gradientStops={row.value} />
+              return <ColorTokenSwatch bgColor={row.name} />
             },
           },
           {
@@ -105,7 +103,7 @@ export const HighchartsGradients = () => {
             field: 'value',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.value.map(({color, position}) => `${color} ${position * 100}%`).join(', ')}</p>
+              return <p>{row.value}</p>
             },
           },
         ]}
