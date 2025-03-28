@@ -2,8 +2,8 @@
   data: {
     blue: {
       color: {
-        emphasis: {
-          $value: '{base.display.color.blue.5}',
+        "1": {
+          $value: '{base.display.color.blue.4}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -11,8 +11,38 @@
               group: 'component',
               scopes: ['bgColor', 'borderColor'],
             },
-            'org.primer.overrides': {
-              dark: '{base.display.color.blue.5}',
+          },
+        },
+        "2": {
+          $value: '{base.display.color.blue.6}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component',
+              scopes: ['bgColor', 'borderColor'],
+            },
+          },
+        },
+        "3": {
+          $value: '{base.display.color.blue.8}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component',
+              scopes: ['bgColor', 'borderColor'],
+            },
+          },
+        },
+        "4": {
+          $value: '{base.display.color.blue.9}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component',
+              scopes: ['bgColor', 'borderColor'],
             },
           },
         },
