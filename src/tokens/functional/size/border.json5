@@ -18,18 +18,42 @@
     default: {
       $value: '{borderWidth.thin}',
       $type: 'dimension',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'functional/size',
+          scopes: ['borderWidth', 'effectFloat'],
+        },
+      },
     },
     thin: {
       $value: '1px',
       $type: 'dimension',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'functional/size',
+          scopes: ['borderWidth', 'effectFloat'],
+        },
+      },
     },
     thick: {
       $value: '2px',
       $type: 'dimension',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'functional/size',
+          scopes: ['borderWidth', 'effectFloat'],
+        },
+      },
     },
     thicker: {
       $value: '4px',
       $type: 'dimension',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'functional/size',
+          scopes: ['borderWidth', 'effectFloat'],
+        },
+      },
     },
   },
   borderRadius: {
@@ -105,10 +129,22 @@
       offset: {
         $value: '-2px',
         $type: 'dimension',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'functional/size',
+            scopes: ['borderWidth', 'effectFloat'],
+          },
+        },
       },
       width: {
         $value: '2px',
         $type: 'dimension',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'functional/size',
+            scopes: ['borderWidth', 'effectFloat'],
+          },
+        },
       },
     },
   },
