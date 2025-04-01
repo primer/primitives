@@ -30,10 +30,12 @@ describe('Schema: scopes', () => {
     expect(scopeSchema.safeParse(['bgColor']).success).toStrictEqual(true)
     expect(scopeSchema.safeParse(['fgColor']).success).toStrictEqual(true)
     expect(scopeSchema.safeParse(['borderColor']).success).toStrictEqual(true)
+    expect(scopeSchema.safeParse(['borderWidth']).success).toStrictEqual(true)
     expect(scopeSchema.safeParse(['size']).success).toStrictEqual(true)
     expect(scopeSchema.safeParse(['gap']).success).toStrictEqual(true)
     expect(scopeSchema.safeParse(['radius']).success).toStrictEqual(true)
     expect(scopeSchema.safeParse(['effectColor']).success).toStrictEqual(true)
+    expect(scopeSchema.safeParse(['effectFloat']).success).toStrictEqual(true)
     expect(scopeSchema.safeParse(['opacity']).success).toStrictEqual(true)
     expect(scopeSchema.safeParse(['fontFamily']).success).toStrictEqual(true)
     expect(scopeSchema.safeParse(['fontStyle']).success).toStrictEqual(true)
@@ -49,10 +51,12 @@ describe('Schema: scopes', () => {
         'bgColor',
         'fgColor',
         'borderColor',
+        'borderWidth',
         'size',
         'gap',
         'radius',
         'effectColor',
+        'effectFloat',
         'opacity',
         'fontFamily',
         'fontStyle',
