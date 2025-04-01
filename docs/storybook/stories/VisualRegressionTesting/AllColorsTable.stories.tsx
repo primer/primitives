@@ -29,14 +29,18 @@ export const AllThemesInOneTable = () => {
       <Stack direction="horizontal" className={styles.sticky}>
         <Stack.Item className={styles.name}>blank</Stack.Item>
         <Stack.Item className={styles.swatch}>dark</Stack.Item>
-        <Stack.Item className={styles.swatch}>d hc</Stack.Item>
         <Stack.Item className={styles.swatch}>d dim</Stack.Item>
         <Stack.Item className={styles.swatch}>d tri</Stack.Item>
         <Stack.Item className={styles.swatch}>d cb</Stack.Item>
+        <Stack.Item className={styles.swatch}>d hc</Stack.Item>
+        <Stack.Item className={styles.swatch}>d tri hc</Stack.Item>
+        <Stack.Item className={styles.swatch}>d cb hc</Stack.Item>
         <Stack.Item className={styles.swatch}>light</Stack.Item>
-        <Stack.Item className={styles.swatch}>l hc</Stack.Item>
         <Stack.Item className={styles.swatch}>l tri</Stack.Item>
         <Stack.Item className={styles.swatch}>l cb</Stack.Item>
+        <Stack.Item className={styles.swatch}>l hc</Stack.Item>
+        <Stack.Item className={styles.swatch}>l tri hc</Stack.Item>
+        <Stack.Item className={styles.swatch}>l cb hc</Stack.Item>
       </Stack>
       <Stack>
         {data.map(({id}) => (
@@ -47,30 +51,16 @@ export const AllThemesInOneTable = () => {
             <Stack.Item data-color-mode="dark" data-light-theme="dark" data-dark-theme="dark" className={styles.swatch}>
               <ColorTokenSwatch
                 bgColor={
-                  id.includes('bgColor') || id.includes('color') || id.includes('fgColor') || id.includes('iconColor')
+                  id.includes('bgColor') ||
+                  id.includes('color') ||
+                  id.includes('fgColor') ||
+                  id.includes('borderColor') ||
+                  id.includes('outlineColor') ||
+                  id.includes('iconColor')
                     ? id
                     : undefined
                 }
                 shadowColor={id.includes('shadow') ? id : undefined}
-                borderColor={id.includes('borderColor') ? id : undefined}
-                outlineColor={id.includes('outline') && !id.includes('borderColor') ? id : undefined}
-              />
-            </Stack.Item>
-            <Stack.Item
-              data-color-mode="dark"
-              data-light-theme="dark_high_contrast"
-              data-dark-theme="dark_high_contrast"
-              className={styles.swatch}
-            >
-              <ColorTokenSwatch
-                bgColor={
-                  id.includes('bgColor') || id.includes('color') || id.includes('fgColor') || id.includes('iconColor')
-                    ? id
-                    : undefined
-                }
-                shadowColor={id.includes('shadow') ? id : undefined}
-                borderColor={id.includes('borderColor') ? id : undefined}
-                outlineColor={id.includes('outline') && !id.includes('borderColor') ? id : undefined}
               />
             </Stack.Item>
             <Stack.Item
@@ -81,13 +71,16 @@ export const AllThemesInOneTable = () => {
             >
               <ColorTokenSwatch
                 bgColor={
-                  id.includes('bgColor') || id.includes('color') || id.includes('fgColor') || id.includes('iconColor')
+                  id.includes('bgColor') ||
+                  id.includes('color') ||
+                  id.includes('fgColor') ||
+                  id.includes('borderColor') ||
+                  id.includes('outlineColor') ||
+                  id.includes('iconColor')
                     ? id
                     : undefined
                 }
                 shadowColor={id.includes('shadow') ? id : undefined}
-                borderColor={id.includes('borderColor') ? id : undefined}
-                outlineColor={id.includes('outline') && !id.includes('borderColor') ? id : undefined}
               />
             </Stack.Item>
             <Stack.Item
@@ -98,13 +91,16 @@ export const AllThemesInOneTable = () => {
             >
               <ColorTokenSwatch
                 bgColor={
-                  id.includes('bgColor') || id.includes('color') || id.includes('fgColor') || id.includes('iconColor')
+                  id.includes('bgColor') ||
+                  id.includes('color') ||
+                  id.includes('fgColor') ||
+                  id.includes('borderColor') ||
+                  id.includes('outlineColor') ||
+                  id.includes('iconColor')
                     ? id
                     : undefined
                 }
                 shadowColor={id.includes('shadow') ? id : undefined}
-                borderColor={id.includes('borderColor') ? id : undefined}
-                outlineColor={id.includes('outline') && !id.includes('borderColor') ? id : undefined}
               />
             </Stack.Item>
             <Stack.Item
@@ -115,13 +111,76 @@ export const AllThemesInOneTable = () => {
             >
               <ColorTokenSwatch
                 bgColor={
-                  id.includes('bgColor') || id.includes('color') || id.includes('fgColor') || id.includes('iconColor')
+                  id.includes('bgColor') ||
+                  id.includes('color') ||
+                  id.includes('fgColor') ||
+                  id.includes('borderColor') ||
+                  id.includes('outlineColor') ||
+                  id.includes('iconColor')
                     ? id
                     : undefined
                 }
                 shadowColor={id.includes('shadow') ? id : undefined}
-                borderColor={id.includes('borderColor') ? id : undefined}
-                outlineColor={id.includes('outline') && !id.includes('borderColor') ? id : undefined}
+              />
+            </Stack.Item>
+            <Stack.Item
+              data-color-mode="dark"
+              data-light-theme="dark_high_contrast"
+              data-dark-theme="dark_high_contrast"
+              className={styles.swatch}
+            >
+              <ColorTokenSwatch
+                bgColor={
+                  id.includes('bgColor') ||
+                  id.includes('color') ||
+                  id.includes('fgColor') ||
+                  id.includes('borderColor') ||
+                  id.includes('outlineColor') ||
+                  id.includes('iconColor')
+                    ? id
+                    : undefined
+                }
+                shadowColor={id.includes('shadow') ? id : undefined}
+              />
+            </Stack.Item>
+            <Stack.Item
+              data-color-mode="dark"
+              data-light-theme="dark_tritanopia_high_contrast"
+              data-dark-theme="dark_tritanopia_high_contrast"
+              className={styles.swatch}
+            >
+              <ColorTokenSwatch
+                bgColor={
+                  id.includes('bgColor') ||
+                  id.includes('color') ||
+                  id.includes('fgColor') ||
+                  id.includes('borderColor') ||
+                  id.includes('outlineColor') ||
+                  id.includes('iconColor')
+                    ? id
+                    : undefined
+                }
+                shadowColor={id.includes('shadow') ? id : undefined}
+              />
+            </Stack.Item>
+            <Stack.Item
+              data-color-mode="dark"
+              data-light-theme="dark_colorblind_high_contrast"
+              data-dark-theme="dark_colorblind_high_contrast"
+              className={styles.swatch}
+            >
+              <ColorTokenSwatch
+                bgColor={
+                  id.includes('bgColor') ||
+                  id.includes('color') ||
+                  id.includes('fgColor') ||
+                  id.includes('borderColor') ||
+                  id.includes('outlineColor') ||
+                  id.includes('iconColor')
+                    ? id
+                    : undefined
+                }
+                shadowColor={id.includes('shadow') ? id : undefined}
               />
             </Stack.Item>
             <Stack.Item
@@ -132,30 +191,16 @@ export const AllThemesInOneTable = () => {
             >
               <ColorTokenSwatch
                 bgColor={
-                  id.includes('bgColor') || id.includes('color') || id.includes('fgColor') || id.includes('iconColor')
+                  id.includes('bgColor') ||
+                  id.includes('color') ||
+                  id.includes('fgColor') ||
+                  id.includes('borderColor') ||
+                  id.includes('outlineColor') ||
+                  id.includes('iconColor')
                     ? id
                     : undefined
                 }
                 shadowColor={id.includes('shadow') ? id : undefined}
-                borderColor={id.includes('borderColor') ? id : undefined}
-                outlineColor={id.includes('outline') && !id.includes('borderColor') ? id : undefined}
-              />
-            </Stack.Item>
-            <Stack.Item
-              data-color-mode="light"
-              data-light-theme="light_high_contrast"
-              data-dark-theme="light_high_contrast"
-              className={styles.swatch}
-            >
-              <ColorTokenSwatch
-                bgColor={
-                  id.includes('bgColor') || id.includes('color') || id.includes('fgColor') || id.includes('iconColor')
-                    ? id
-                    : undefined
-                }
-                shadowColor={id.includes('shadow') ? id : undefined}
-                borderColor={id.includes('borderColor') ? id : undefined}
-                outlineColor={id.includes('outline') && !id.includes('borderColor') ? id : undefined}
               />
             </Stack.Item>
             <Stack.Item
@@ -166,13 +211,16 @@ export const AllThemesInOneTable = () => {
             >
               <ColorTokenSwatch
                 bgColor={
-                  id.includes('bgColor') || id.includes('color') || id.includes('fgColor') || id.includes('iconColor')
+                  id.includes('bgColor') ||
+                  id.includes('color') ||
+                  id.includes('fgColor') ||
+                  id.includes('borderColor') ||
+                  id.includes('outlineColor') ||
+                  id.includes('iconColor')
                     ? id
                     : undefined
                 }
                 shadowColor={id.includes('shadow') ? id : undefined}
-                borderColor={id.includes('borderColor') ? id : undefined}
-                outlineColor={id.includes('outline') && !id.includes('borderColor') ? id : undefined}
               />
             </Stack.Item>
             <Stack.Item
@@ -183,13 +231,76 @@ export const AllThemesInOneTable = () => {
             >
               <ColorTokenSwatch
                 bgColor={
-                  id.includes('bgColor') || id.includes('color') || id.includes('fgColor') || id.includes('iconColor')
+                  id.includes('bgColor') ||
+                  id.includes('color') ||
+                  id.includes('fgColor') ||
+                  id.includes('borderColor') ||
+                  id.includes('outlineColor') ||
+                  id.includes('iconColor')
                     ? id
                     : undefined
                 }
                 shadowColor={id.includes('shadow') ? id : undefined}
-                borderColor={id.includes('borderColor') ? id : undefined}
-                outlineColor={id.includes('outline') && !id.includes('borderColor') ? id : undefined}
+              />
+            </Stack.Item>
+            <Stack.Item
+              data-color-mode="light"
+              data-light-theme="light_high_contrast"
+              data-dark-theme="light_high_contrast"
+              className={styles.swatch}
+            >
+              <ColorTokenSwatch
+                bgColor={
+                  id.includes('bgColor') ||
+                  id.includes('color') ||
+                  id.includes('fgColor') ||
+                  id.includes('borderColor') ||
+                  id.includes('outlineColor') ||
+                  id.includes('iconColor')
+                    ? id
+                    : undefined
+                }
+                shadowColor={id.includes('shadow') ? id : undefined}
+              />
+            </Stack.Item>
+            <Stack.Item
+              data-color-mode="light"
+              data-light-theme="light_tritanopia_high_contrast"
+              data-dark-theme="light_tritanopia_high_contrast"
+              className={styles.swatch}
+            >
+              <ColorTokenSwatch
+                bgColor={
+                  id.includes('bgColor') ||
+                  id.includes('color') ||
+                  id.includes('fgColor') ||
+                  id.includes('borderColor') ||
+                  id.includes('outlineColor') ||
+                  id.includes('iconColor')
+                    ? id
+                    : undefined
+                }
+                shadowColor={id.includes('shadow') ? id : undefined}
+              />
+            </Stack.Item>
+            <Stack.Item
+              data-color-mode="light"
+              data-light-theme="light_colorblind_high_contrast"
+              data-dark-theme="light_colorblind_high_contrast"
+              className={styles.swatch}
+            >
+              <ColorTokenSwatch
+                bgColor={
+                  id.includes('bgColor') ||
+                  id.includes('color') ||
+                  id.includes('fgColor') ||
+                  id.includes('borderColor') ||
+                  id.includes('outlineColor') ||
+                  id.includes('iconColor')
+                    ? id
+                    : undefined
+                }
+                shadowColor={id.includes('shadow') ? id : undefined}
               />
             </Stack.Item>
           </Stack>
