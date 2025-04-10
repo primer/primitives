@@ -45,6 +45,7 @@ export const fontFamilyToFigma: Transform = {
   type: 'value',
   transitive: true,
   filter: isFontFamily,
-  transform: (token: TransformedToken, platform: PlatformConfig, options: Config): string =>
-    parseFontFamily(token, platform.options?.fontFamilies, options),
+  transform: (token: TransformedToken, platform: PlatformConfig, options: Config): string => {
+    return parseFontFamily(token, platform.options?.fontFamilies, options)
+  },
 }
