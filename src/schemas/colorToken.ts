@@ -34,6 +34,7 @@ export const colorToken = baseColorToken
               'light',
               'dark',
               'dark dimmed',
+              'dark dimmed high contrast',
               'light high contrast',
               'dark high contrast',
               'light protanopia deuteranopia',
@@ -65,6 +66,7 @@ export const colorToken = baseColorToken
               'dark-protanopia-deuteranopia-high-contrast': override,
               'dark-high-contrast': override,
               'dark-dimmed': override,
+              'dark-dimmed-high-contrast': override,
             },
             {
               errorMap: e => {

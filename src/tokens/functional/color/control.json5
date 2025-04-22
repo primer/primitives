@@ -24,6 +24,9 @@
             'dark-dimmed': {
               $value: '{base.color.neutral.5}',
             },
+            'dark-dimmed-high-contrast': {
+              $value: '{base.color.neutral.4}',
+            },
             'light-high-contrast': {
               $value: '{base.color.neutral.4}',
             },
@@ -59,6 +62,9 @@
             'dark-dimmed': {
               $value: '{base.color.neutral.6}',
             },
+            'dark-dimmed-high-contrast': {
+              $value: '{base.color.neutral.5}',
+            },
             'light-high-contrast': {
               $value: '{base.color.neutral.5}',
             },
@@ -93,6 +99,9 @@
             },
             'dark-dimmed': {
               $value: '{base.color.neutral.7}',
+            },
+            'dark-dimmed-high-contrast': {
+              $value: '{base.color.neutral.6}',
             },
             'light-high-contrast': {
               $value: '{base.color.neutral.6}',
@@ -164,6 +173,9 @@
             'dark-high-contrast': {
               $value: '{base.color.neutral.10}',
             },
+            'dark-dimmed-high-contrast': {
+              $value: '{base.color.neutral.10}',
+            },
             'dark-tritanopia-high-contrast': {
               $value: '{base.color.neutral.10}',
             },
@@ -227,6 +239,9 @@
           'org.primer.overrides': {
             dark: '{borderColor.emphasis}',
             'dark-high-contrast': {
+              $value: '{borderColor.emphasis}',
+            },
+            'dark-dimmed-high-contrast': {
               $value: '{borderColor.emphasis}',
             },
             'dark-tritanopia-high-contrast': {
@@ -375,6 +390,10 @@
                 $value: '{base.color.neutral.8}',
                 alpha: 0.15,
               },
+              'dark-dimmed-high-contrast': {
+                $value: '{base.color.neutral.6}',
+                alpha: 1,
+              },
               'light-high-contrast': {
                 $value: '{base.color.neutral.5}',
                 alpha: 1,
@@ -420,6 +439,10 @@
               'dark-dimmed': {
                 $value: '{base.color.neutral.8}',
                 alpha: 0.2,
+              },
+              'dark-dimmed-high-contrast': {
+                $value: '{base.color.neutral.7}',
+                alpha: 1,
               },
               'light-high-contrast': {
                 $value: '{base.color.neutral.6}',
@@ -481,6 +504,10 @@
                 $value: '{base.color.neutral.8}',
                 alpha: 0.1,
               },
+              'dark-dimmed-high-contrast': {
+                $value: '{base.color.neutral.6}',
+                alpha: 1,
+              },
               'light-high-contrast': {
                 $value: '{base.color.neutral.5}',
                 alpha: 1,
@@ -527,6 +554,9 @@
               'dark-high-contrast': {
                 $value: '{borderColor.default}',
               },
+              'dark-dimmed-high-contrast': {
+                $value: '{borderColor.default}',
+              },
               'dark-protanopia-deuteranopia-high-contrast': {
                 $value: '{borderColor.default}',
               },
@@ -557,6 +587,9 @@
             'org.primer.overrides': {
               dark: '{base.color.transparent}',
               'dark-high-contrast': {
+                $value: '{borderColor.default}',
+              },
+              'dark-dimmed-high-contrast': {
                 $value: '{borderColor.default}',
               },
               'dark-protanopia-deuteranopia-high-contrast': {
@@ -625,7 +658,7 @@
               'dark-protanopia-deuteranopia-high-contrast': {
                 $value: '{fgColor.onEmphasis}',
               },
-              'dark-high-contrast': {
+              'dark-dimmed-high-contrast': {
                 $value: '{fgColor.onEmphasis}',
               },
             },
@@ -645,6 +678,9 @@
             'org.primer.overrides': {
               dark: '{bgColor.danger.muted}',
               'dark-high-contrast': {
+                $value: '{bgColor.danger.emphasis}',
+              },
+              'dark-dimmed-high-contrast': {
                 $value: '{bgColor.danger.emphasis}',
               },
               'dark-tritanopia-high-contrast': {
@@ -687,6 +723,10 @@
                 alpha: 0.4,
               },
               'dark-high-contrast': {
+                $value: '#c51120',
+                alpha: 1,
+              },
+              'dark-dimmed-high-contrast': {
                 $value: '#c51120',
                 alpha: 1,
               },
@@ -750,6 +790,9 @@
               'dark-dimmed': {
                 $value: '#3876d3',
               },
+              'dark-dimmed-high-contrast': {
+                $value: '#2b64c1',
+              },
               'light-high-contrast': {
                 $value: '#0344a8',
               },
@@ -784,6 +827,9 @@
               },
               'dark-dimmed': {
                 $value: '#3f7fdb',
+              },
+              'dark-dimmed-high-contrast': {
+                $value: '#3c79d0',
               },
               'light-high-contrast': {
                 $value: '#033f9d',
@@ -857,6 +903,9 @@
               'dark-high-contrast': {
                 $value: '{base.color.blue.2}',
               },
+              'dark-dimmed-high-contrast': {
+                $value: '{base.color.blue.2}',
+              },
               'dark-tritanopia-high-contrast': {
                 $value: '{base.color.blue.2}',
               },
@@ -888,6 +937,9 @@
               },
               'dark-dimmed': {
                 $value: '#3876d3',
+              },
+              'dark-dimmed-high-contrast': {
+                $value: '{base.color.blue.2}',
               },
               'light-high-contrast': {
                 $value: '#0344a8',
@@ -923,6 +975,9 @@
               },
               'dark-dimmed': {
                 $value: '#3f7fdb',
+              },
+              'dark-dimmed-high-contrast': {
+                $value: '{base.color.blue.2}',
               },
               'light-high-contrast': {
                 $value: '#033f9d',
@@ -978,6 +1033,9 @@
             'dark-dimmed': {
               $value: '{base.color.neutral.5}',
             },
+            'dark-dimmed-high-contrast': {
+              $value: '{base.color.neutral.5}',
+            },
             'light-high-contrast': {
               $value: '{base.color.neutral.5}',
             },
@@ -1013,6 +1071,9 @@
             'dark-dimmed': {
               $value: '{base.color.neutral.6}',
             },
+            'dark-dimmed-high-contrast': {
+              $value: '{base.color.neutral.6}',
+            },
             'light-high-contrast': {
               $value: '{base.color.neutral.6}',
             },
@@ -1046,6 +1107,9 @@
               $value: '{base.color.neutral.7}',
             },
             'dark-dimmed': {
+              $value: '{base.color.neutral.7}',
+            },
+            'dark-dimmed-high-contrast': {
               $value: '{base.color.neutral.7}',
             },
             'light-high-contrast': {
@@ -1137,6 +1201,9 @@
             },
             'dark-dimmed': {
               $value: '{base.color.neutral.7}',
+            },
+            'dark-dimmed-high-contrast': {
+              $value: '{borderColor.emphasis}',
             },
             'light-high-contrast': {
               $value: '{borderColor.emphasis}',

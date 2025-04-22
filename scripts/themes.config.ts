@@ -136,6 +136,24 @@ export const themes: TokenBuildInput[] = [
     ],
   },
   {
+    filename: 'dark-dimmed-high-contrast',
+    theme: 'dark-dimmed-high-contrast',
+    source: [
+      `src/tokens/functional/shadow/shadow.json5`,
+      `src/tokens/functional/border/*.json5`,
+      `src/tokens/component/*.json5`,
+      `src/tokens/functional/color/*.json5`,
+      `src/tokens/functional/color/dark/*.json5`,
+    ],
+    include: [
+      `src/tokens/functional/size/border.json5`,
+      `src/tokens/base/color/dark/dark.json5`,
+      `src/tokens/base/color/dark/dark.high-contrast.json5`,
+      `src/tokens/base/color/dark/dark.dimmed.json5`,
+      `src/tokens/base/color/dark/display-dark.json5`,
+    ],
+  },
+  {
     filename: 'dark-tritanopia',
     theme: 'dark-tritanopia',
     source: [
