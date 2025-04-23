@@ -10,7 +10,7 @@ export const transitionToken = baseToken
     $value: z.union([
       z.object({
         duration: z.union([durationToken.shape.$value, referenceValue]),
-        timing: z.union([cubicBezierToken.shape.$value, referenceValue]),
+        timingFunction: z.union([cubicBezierToken.shape.$value, referenceValue]),
         delay: z.union([durationToken.shape.$value, referenceValue]).optional(),
       }),
       referenceValue,

@@ -4,7 +4,7 @@ describe('Schema: transitionToken', () => {
   const validToken = {
     $value: {
       duration: '300ms',
-      timing: [0.4, 0, 0.2, 1],
+      timingFunction: [0.4, 0, 0.2, 1],
       delay: '0ms',
     },
     $type: 'transition',
@@ -19,7 +19,7 @@ describe('Schema: transitionToken', () => {
     const tokenWithoutDelay = {
       $value: {
         duration: '300ms',
-        timing: [0.4, 0, 0.2, 1],
+        timingFunction: [0.4, 0, 0.2, 1],
       },
       $type: 'transition',
       $description: 'Standard transition without delay',
@@ -31,7 +31,7 @@ describe('Schema: transitionToken', () => {
     const tokenWithReferences = {
       $value: {
         duration: '{duration.medium}',
-        timing: '{timing.easeInOut}',
+        timingFunction: '{timing.easeInOut}',
         delay: '{duration.small}',
       },
       $type: 'transition',
@@ -68,7 +68,7 @@ describe('Schema: transitionToken', () => {
       transitionToken.safeParse({
         $value: {
           duration: '300ms',
-          timing: [0.4, 0, 0.2, 1],
+          timingFunction: [0.4, 0, 0.2, 1],
         },
       }).success,
     ).toStrictEqual(false)
@@ -92,7 +92,7 @@ describe('Schema: transitionToken', () => {
         ...validToken,
         $value: {
           ...validToken.$value,
-          timing: [0.4, 0, 0.2], // Missing one value
+          timingFunction: [0.4, 0, 0.2], // Missing one value
         },
       }).success,
     ).toStrictEqual(false)
@@ -130,7 +130,7 @@ describe('Schema: transitionToken', () => {
       transitionToken.safeParse({
         $value: {
           duration: '300ms',
-          timing: [0.4, 0, 0.2, 1],
+          timingFunction: [0.4, 0, 0.2, 1],
         },
       }).success,
     ).toStrictEqual(false)
