@@ -14,6 +14,7 @@ const validTypes = [
   'gradient',
   'number',
   'string',
+  'transition',
   'custom-viewportRange',
 ] as const
 
