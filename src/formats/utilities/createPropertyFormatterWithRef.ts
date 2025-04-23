@@ -12,6 +12,7 @@
  */
 import type {Dictionary, FormattingOptions, OutputReferences, TransformedToken} from 'style-dictionary/types'
 import {getReferences, usesReferences} from 'style-dictionary/utils'
+import {processCompositeTokenReferences} from './processCompositeTokenReferences.js'
 
 /**
  * @typedef {import('../../../types/DesignToken.d.ts').TransformedToken} TransformedToken
@@ -191,18 +192,20 @@ export default function createPropertyFormatterWithRef({
         value = originalValue
       } else {
         if (token.$type === 'border') {
-          const transformedValues = value.split(' ')
-          value = ['width', 'style', 'color']
-            .map((prop, index) => {
-              if (
-                originalValue[prop].startsWith('{') &&
-                refs.find(ref => ref.path.join('.') === originalValue[prop].replace(/[{}]/g, ''))?.isSource === true
-              ) {
-                return originalValue[prop]
-              }
-              return transformedValues[index]
-            })
-            .join(' ')
+          value = processCompositeTokenReferences(value, originalValue, ['width', 'style', 'color'], refs)
+        }
+        if (token.$type === 'shadow') {
+          value = processCompositeTokenReferences(
+            value,
+            originalValue,
+            ['offsetX', 'offsetY', 'blur', 'spread', 'color'],
+            refs,
+            ['inset'],
+          )
+        }
+        // add if clause for transition tokens
+        if (token.$type === 'transition') {
+          value = processCompositeTokenReferences(value, originalValue, ['duration', 'timingFunction', 'delay'], refs)
         }
       }
       /* eslint-disable-next-line github/array-foreach */
