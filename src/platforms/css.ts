@@ -35,6 +35,7 @@ export const css: PlatformInitializer = (outputFile, prefix, buildPath, options)
       'shadow/css',
       'border/css',
       'typography/css',
+      'transition/css',
       'fontFamily/css',
       'fontWeight/number',
       'gradient/css',

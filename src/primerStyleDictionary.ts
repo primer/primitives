@@ -25,6 +25,7 @@ import {
   dimensionToRemPxArray,
   floatToPixel,
   floatToPixelUnitless,
+  transitionToCss,
 } from './transformers/index.js'
 import {
   javascriptCommonJs,
@@ -151,6 +152,8 @@ PrimerStyleDictionary.registerTransform(shadowToCss)
 PrimerStyleDictionary.registerTransform(borderToCss)
 
 PrimerStyleDictionary.registerTransform(typographyToCss)
+
+PrimerStyleDictionary.registerTransform(transitionToCss)
 
 PrimerStyleDictionary.registerTransform(fontWeightToNumber)
 

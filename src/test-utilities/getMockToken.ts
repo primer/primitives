@@ -36,9 +36,9 @@ export const getMockToken = (
     [key: keyof TransformedToken]: unknown
   },
   options?: getMockTokenOptions,
-) => {
+): TransformedToken => {
   return {
     ...removeProps(mockTokenDefaults, options?.remove),
     ...valueOverrides,
-  }
+  } as TransformedToken
 }
