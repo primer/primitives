@@ -1,4 +1,5 @@
 import {isTransition} from '../filters/index.js'
+import {cubicBezierArrayToCss} from './cubicBezierToCss.js'
 import {checkRequiredTokenProperties} from './utilities/checkRequiredTokenProperties.js'
 import {getTokenValue} from './utilities/getTokenValue.js'
 import type {Transform, TransformedToken} from 'style-dictionary/types'
@@ -26,6 +27,6 @@ export const transitionToCss: Transform = {
     // check required properties
     checkRequiredTokenProperties(value, ['duration', 'timingFunction'])
 
-    return `${value.duration} ${value.timingFunction} ${value.delay ? value.delay : ''}`.trim()
+    return `${value.duration} ${cubicBezierArrayToCss(value.timingFunction, token.path)} ${value.delay ? value.delay : ''}`.trim()
   },
 }
