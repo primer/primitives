@@ -1,5 +1,18 @@
 # @primer/primitives
 
+## 10.6.0
+
+### Minor Changes
+
+- [#1201](https://github.com/primer/primitives/pull/1201) [`2018f15`](https://github.com/primer/primitives/commit/2018f1551fd74d62c062eae0b549bca3f732e634) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Remove gradients from data colors
+
+### Patch Changes
+
+- [#1200](https://github.com/primer/primitives/pull/1200) [`72cf27d`](https://github.com/primer/primitives/commit/72cf27d4624485d497267fb4e7b2d3279c273221) Thanks [@langermank](https://github.com/langermank)! - Bug fixes:
+  - High contrast danger color on hover
+  - High contrast translucent border
+  - High contrast danger button hover border-color
+
 ## 10.5.0
 
 ### Minor Changes
