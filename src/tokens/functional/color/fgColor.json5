@@ -202,7 +202,7 @@
         'org.primer.overrides': {
           dark: '{base.color.green.3}',
           'dark-high-contrast': '#2BD853',
-          'dark-dimmed-high-contrast': '#2BD853',
+          'dark-dimmed-high-contrast': '{base.color.green.1}',
           'light-high-contrast': '{base.color.green.6}',
           'dark-protanopia-deuteranopia': '{base.color.blue.3}',
           'dark-protanopia-deuteranopia-high-contrast': '{base.color.blue.1}',
@@ -389,7 +389,7 @@
         'org.primer.overrides': {
           dark: '{base.color.pink.4}',
           'dark-high-contrast': '#FF90C8',
-          'dark-dimmed-high-contrast': '#FF90C8',
+          'dark-dimmed-high-contrast': '{base.color.pink.1}',
           'dark-protanopia-deuteranopia-high-contrast': '#FF90C8',
           'dark-tritanopia-high-contrast': '#FF90C8',
           'light-high-contrast': '{base.color.pink.6}',
