@@ -260,6 +260,7 @@ export type ThemeName =
   | 'light_tritanopia_high_contrast'
   | 'dark'
   | 'dark_dimmed'
+  | 'dark_dimmed_high_contrast'
   | 'dark_high_contrast'
   | 'dark_protanopia_deuteranopia'
   | 'dark_protanopia_deuteranopia_high_contrast'
@@ -289,6 +290,7 @@ export const contrastRequirements: ContrastRequirements = {
   // default dark mode
   dark: defaultContrast,
   dark_dimmed: defaultContrast,
+  dark_dimmed_high_contrast: highContrast,
   dark_high_contrast: highContrast,
   dark_protanopia_deuteranopia: defaultContrast,
   dark_protanopia_deuteranopia_high_contrast: highContrast,
