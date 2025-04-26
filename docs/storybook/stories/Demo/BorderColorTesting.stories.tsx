@@ -29,7 +29,17 @@ import {
   PeopleIcon,
   SearchIcon,
 } from '@primer/octicons-react'
-import {PageLayout, Button, TextInput, SegmentedControl, NavList, Box, Text, IconButton} from '@primer/react'
+import {
+  PageLayout,
+  Button,
+  TextInput,
+  SegmentedControl,
+  NavList,
+  Box,
+  Text,
+  IconButton,
+  StateLabel,
+} from '@primer/react'
 
 export default {
   title: 'Testing/Borders',
@@ -240,46 +250,6 @@ export const BorderDemo = () => {
                   ]}
                 />
               </Table.Container>
-            </Box>
-            <Box sx={{display: 'flex', gap: '8px'}}>
-              <Button leadingVisual={SearchIcon}>A default button</Button>
-              <Button leadingVisual={SearchIcon} variant="invisible">
-                An invisible button
-              </Button>
-              <Button leadingVisual={SearchIcon} variant="primary">
-                A primary button
-              </Button>
-              <Button leadingVisual={SearchIcon} variant="danger">
-                A danger button
-              </Button>
-            </Box>
-            <Box sx={{display: 'flex', gap: '8px'}}>
-              <Button leadingVisual={SearchIcon} disabled>
-                A default button
-              </Button>
-              <Button leadingVisual={SearchIcon} disabled variant="invisible">
-                An invisible button
-              </Button>
-              <Button leadingVisual={SearchIcon} disabled variant="primary">
-                A primary button
-              </Button>
-              <Button leadingVisual={SearchIcon} disabled variant="danger">
-                A danger button
-              </Button>
-            </Box>
-            <Box sx={{display: 'flex', gap: '8px'}}>
-              <Button leadingVisual={SearchIcon} inactive>
-                A default button
-              </Button>
-              <Button leadingVisual={SearchIcon} inactive variant="invisible">
-                An invisible button
-              </Button>
-              <Button leadingVisual={SearchIcon} inactive variant="primary">
-                A primary button
-              </Button>
-              <Button leadingVisual={SearchIcon} inactive variant="danger">
-                A danger button
-              </Button>
             </Box>
           </PageLayout.Content>
         </PageLayout>
