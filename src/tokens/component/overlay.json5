@@ -48,6 +48,10 @@
             $value: '{borderColor.default}',
             alpha: 1,
           },
+          'dark-dimmed-high-contrast': {
+            $value: '{borderColor.default}',
+            alpha: 1,
+          },
           'dark-protanopia-deuteranopia-high-contrast': {
             $value: '{borderColor.default}',
             alpha: 1,
@@ -77,6 +81,7 @@
             'light-protanopia-deuteranopia-high-contrast': '{base.color.neutral.11}',
             'light-tritanopia-high-contrast': '{base.color.neutral.11}',
             'dark-high-contrast': '{base.color.neutral.11}',
+            'dark-dimmed-high-contrast': '{base.color.neutral.9}',
             'dark-protanopia-deuteranopia-high-contrast': '{base.color.neutral.11}',
             'dark-tritanopia-high-contrast': '{base.color.neutral.11}',
           },
