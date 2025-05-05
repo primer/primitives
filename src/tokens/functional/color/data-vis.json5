@@ -30,44 +30,6 @@
             },
           },
         },
-        gradientStop: {
-          '1': {
-            $value: '{data.blue.color.muted}',
-            $type: 'color',
-            $extensions: {
-              'org.primer.figma': {
-                collection: 'mode',
-                group: 'component',
-                scopes: ['bgColor'],
-              },
-            },
-          },
-          '2': {
-            $value: '{data.blue.color.muted}',
-            $type: 'color',
-            alpha: 0,
-            $extensions: {
-              'org.primer.figma': {
-                collection: 'mode',
-                group: 'component',
-                scopes: ['bgColor'],
-              },
-            },
-          },
-        },
-      },
-      gradient: {
-        $type: 'gradient',
-        $value: [
-          {
-            color: '{data.blue.color.gradientStop.1}',
-            position: 0,
-          },
-          {
-            color: '{data.blue.color.gradientStop.2}',
-            position: 1,
-          },
-        ],
       },
     },
     auburn: {
@@ -100,44 +62,6 @@
             },
           },
         },
-        gradientStop: {
-          '1': {
-            $value: '{data.auburn.color.muted}',
-            $type: 'color',
-            $extensions: {
-              'org.primer.figma': {
-                collection: 'mode',
-                group: 'component',
-                scopes: ['bgColor'],
-              },
-            },
-          },
-          '2': {
-            $value: '{data.auburn.color.muted}',
-            $type: 'color',
-            alpha: 0,
-            $extensions: {
-              'org.primer.figma': {
-                collection: 'mode',
-                group: 'component',
-                scopes: ['bgColor'],
-              },
-            },
-          },
-        },
-      },
-      gradient: {
-        $type: 'gradient',
-        $value: [
-          {
-            color: '{data.auburn.color.gradientStop.1}',
-            position: 0,
-          },
-          {
-            color: '{data.auburn.color.gradientStop.2}',
-            position: 1,
-          },
-        ],
       },
     },
     orange: {
@@ -170,44 +94,6 @@
             },
           },
         },
-        gradientStop: {
-          '1': {
-            $value: '{data.orange.color.muted}',
-            $type: 'color',
-            $extensions: {
-              'org.primer.figma': {
-                collection: 'mode',
-                group: 'component',
-                scopes: ['bgColor'],
-              },
-            },
-          },
-          '2': {
-            $value: '{data.orange.color.muted}',
-            $type: 'color',
-            alpha: 0,
-            $extensions: {
-              'org.primer.figma': {
-                collection: 'mode',
-                group: 'component',
-                scopes: ['bgColor'],
-              },
-            },
-          },
-        },
-      },
-      gradient: {
-        $type: 'gradient',
-        $value: [
-          {
-            color: '{data.orange.color.gradientStop.1}',
-            position: 0,
-          },
-          {
-            color: '{data.orange.color.gradientStop.2}',
-            position: 1,
-          },
-        ],
       },
     },
     yellow: {
@@ -240,44 +126,6 @@
             },
           },
         },
-        gradientStop: {
-          '1': {
-            $value: '{data.yellow.color.muted}',
-            $type: 'color',
-            $extensions: {
-              'org.primer.figma': {
-                collection: 'mode',
-                group: 'component',
-                scopes: ['bgColor'],
-              },
-            },
-          },
-          '2': {
-            $value: '{data.yellow.color.muted}',
-            $type: 'color',
-            alpha: 0,
-            $extensions: {
-              'org.primer.figma': {
-                collection: 'mode',
-                group: 'component',
-                scopes: ['bgColor'],
-              },
-            },
-          },
-        },
-      },
-      gradient: {
-        $type: 'gradient',
-        $value: [
-          {
-            color: '{data.yellow.color.gradientStop.1}',
-            position: 0,
-          },
-          {
-            color: '{data.yellow.color.gradientStop.2}',
-            position: 1,
-          },
-        ],
       },
     },
     green: {
@@ -310,44 +158,6 @@
             },
           },
         },
-        gradientStop: {
-          '1': {
-            $value: '{data.green.color.muted}',
-            $type: 'color',
-            $extensions: {
-              'org.primer.figma': {
-                collection: 'mode',
-                group: 'component',
-                scopes: ['bgColor'],
-              },
-            },
-          },
-          '2': {
-            $value: '{data.green.color.muted}',
-            $type: 'color',
-            alpha: 0,
-            $extensions: {
-              'org.primer.figma': {
-                collection: 'mode',
-                group: 'component',
-                scopes: ['bgColor'],
-              },
-            },
-          },
-        },
-      },
-      gradient: {
-        $type: 'gradient',
-        $value: [
-          {
-            color: '{data.green.color.gradientStop.1}',
-            position: 0,
-          },
-          {
-            color: '{data.green.color.gradientStop.2}',
-            position: 1,
-          },
-        ],
       },
     },
     teal: {
@@ -380,44 +190,6 @@
             },
           },
         },
-        gradientStop: {
-          '1': {
-            $value: '{data.teal.color.muted}',
-            $type: 'color',
-            $extensions: {
-              'org.primer.figma': {
-                collection: 'mode',
-                group: 'component',
-                scopes: ['bgColor'],
-              },
-            },
-          },
-          '2': {
-            $value: '{data.teal.color.muted}',
-            $type: 'color',
-            alpha: 0,
-            $extensions: {
-              'org.primer.figma': {
-                collection: 'mode',
-                group: 'component',
-                scopes: ['bgColor'],
-              },
-            },
-          },
-        },
-      },
-      gradient: {
-        $type: 'gradient',
-        $value: [
-          {
-            color: '{data.teal.color.gradientStop.1}',
-            position: 0,
-          },
-          {
-            color: '{data.teal.color.gradientStop.2}',
-            position: 1,
-          },
-        ],
       },
     },
     purple: {
@@ -450,44 +222,6 @@
             },
           },
         },
-        gradientStop: {
-          '1': {
-            $value: '{data.purple.color.muted}',
-            $type: 'color',
-            $extensions: {
-              'org.primer.figma': {
-                collection: 'mode',
-                group: 'component',
-                scopes: ['bgColor'],
-              },
-            },
-          },
-          '2': {
-            $value: '{data.purple.color.muted}',
-            $type: 'color',
-            alpha: 0,
-            $extensions: {
-              'org.primer.figma': {
-                collection: 'mode',
-                group: 'component',
-                scopes: ['bgColor'],
-              },
-            },
-          },
-        },
-      },
-      gradient: {
-        $type: 'gradient',
-        $value: [
-          {
-            color: '{data.purple.color.gradientStop.1}',
-            position: 0,
-          },
-          {
-            color: '{data.purple.color.gradientStop.2}',
-            position: 1,
-          },
-        ],
       },
     },
     pink: {
@@ -520,44 +254,6 @@
             },
           },
         },
-        gradientStop: {
-          '1': {
-            $value: '{data.pink.color.muted}',
-            $type: 'color',
-            $extensions: {
-              'org.primer.figma': {
-                collection: 'mode',
-                group: 'component',
-                scopes: ['bgColor'],
-              },
-            },
-          },
-          '2': {
-            $value: '{data.pink.color.muted}',
-            $type: 'color',
-            alpha: 0,
-            $extensions: {
-              'org.primer.figma': {
-                collection: 'mode',
-                group: 'component',
-                scopes: ['bgColor'],
-              },
-            },
-          },
-        },
-      },
-      gradient: {
-        $type: 'gradient',
-        $value: [
-          {
-            color: '{data.pink.color.gradientStop.1}',
-            position: 0,
-          },
-          {
-            color: '{data.pink.color.gradientStop.2}',
-            position: 1,
-          },
-        ],
       },
     },
     plum: {
@@ -590,44 +286,6 @@
             },
           },
         },
-        gradientStop: {
-          '1': {
-            $value: '{data.plum.color.muted}',
-            $type: 'color',
-            $extensions: {
-              'org.primer.figma': {
-                collection: 'mode',
-                group: 'component',
-                scopes: ['bgColor'],
-              },
-            },
-          },
-          '2': {
-            $value: '{data.plum.color.muted}',
-            $type: 'color',
-            alpha: 0,
-            $extensions: {
-              'org.primer.figma': {
-                collection: 'mode',
-                group: 'component',
-                scopes: ['bgColor'],
-              },
-            },
-          },
-        },
-      },
-      gradient: {
-        $type: 'gradient',
-        $value: [
-          {
-            color: '{data.plum.color.gradientStop.1}',
-            position: 0,
-          },
-          {
-            color: '{data.plum.color.gradientStop.2}',
-            position: 1,
-          },
-        ],
       },
     },
     red: {
@@ -660,44 +318,6 @@
             },
           },
         },
-        gradientStop: {
-          '1': {
-            $value: '{data.red.color.muted}',
-            $type: 'color',
-            $extensions: {
-              'org.primer.figma': {
-                collection: 'mode',
-                group: 'component',
-                scopes: ['bgColor'],
-              },
-            },
-          },
-          '2': {
-            $value: '{data.red.color.muted}',
-            $type: 'color',
-            alpha: 0,
-            $extensions: {
-              'org.primer.figma': {
-                collection: 'mode',
-                group: 'component',
-                scopes: ['bgColor'],
-              },
-            },
-          },
-        },
-      },
-      gradient: {
-        $type: 'gradient',
-        $value: [
-          {
-            color: '{data.red.color.gradientStop.1}',
-            position: 0,
-          },
-          {
-            color: '{data.red.color.gradientStop.2}',
-            position: 1,
-          },
-        ],
       },
     },
     gray: {
@@ -730,44 +350,6 @@
             },
           },
         },
-        gradientStop: {
-          '1': {
-            $value: '{data.gray.color.muted}',
-            $type: 'color',
-            $extensions: {
-              'org.primer.figma': {
-                collection: 'mode',
-                group: 'component',
-                scopes: ['bgColor'],
-              },
-            },
-          },
-          '2': {
-            $value: '{data.gray.color.muted}',
-            $type: 'color',
-            alpha: 0,
-            $extensions: {
-              'org.primer.figma': {
-                collection: 'mode',
-                group: 'component',
-                scopes: ['bgColor'],
-              },
-            },
-          },
-        },
-      },
-      gradient: {
-        $type: 'gradient',
-        $value: [
-          {
-            color: '{data.gray.color.gradientStop.1}',
-            position: 0,
-          },
-          {
-            color: '{data.gray.color.gradientStop.2}',
-            position: 1,
-          },
-        ],
       },
     },
     coral: {
@@ -800,44 +382,6 @@
             },
           },
         },
-        gradientStop: {
-          '1': {
-            $value: '{data.coral.color.muted}',
-            $type: 'color',
-            $extensions: {
-              'org.primer.figma': {
-                collection: 'mode',
-                group: 'component',
-                scopes: ['bgColor'],
-              },
-            },
-          },
-          '2': {
-            $value: '{data.coral.color.muted}',
-            $type: 'color',
-            alpha: 0,
-            $extensions: {
-              'org.primer.figma': {
-                collection: 'mode',
-                group: 'component',
-                scopes: ['bgColor'],
-              },
-            },
-          },
-        },
-      },
-      gradient: {
-        $type: 'gradient',
-        $value: [
-          {
-            color: '{data.coral.color.gradientStop.1}',
-            position: 0,
-          },
-          {
-            color: '{data.coral.color.gradientStop.2}',
-            position: 1,
-          },
-        ],
       },
     },
     brown: {
@@ -870,44 +414,6 @@
             },
           },
         },
-        gradientStop: {
-          '1': {
-            $value: '{data.brown.color.muted}',
-            $type: 'color',
-            $extensions: {
-              'org.primer.figma': {
-                collection: 'mode',
-                group: 'component',
-                scopes: ['bgColor'],
-              },
-            },
-          },
-          '2': {
-            $value: '{data.brown.color.muted}',
-            $type: 'color',
-            alpha: 0,
-            $extensions: {
-              'org.primer.figma': {
-                collection: 'mode',
-                group: 'component',
-                scopes: ['bgColor'],
-              },
-            },
-          },
-        },
-      },
-      gradient: {
-        $type: 'gradient',
-        $value: [
-          {
-            color: '{data.brown.color.gradientStop.1}',
-            position: 0,
-          },
-          {
-            color: '{data.brown.color.gradientStop.2}',
-            position: 1,
-          },
-        ],
       },
     },
     lemon: {
@@ -940,44 +446,6 @@
             },
           },
         },
-        gradientStop: {
-          '1': {
-            $value: '{data.lemon.color.muted}',
-            $type: 'color',
-            $extensions: {
-              'org.primer.figma': {
-                collection: 'mode',
-                group: 'component',
-                scopes: ['bgColor'],
-              },
-            },
-          },
-          '2': {
-            $value: '{data.lemon.color.muted}',
-            $type: 'color',
-            alpha: 0,
-            $extensions: {
-              'org.primer.figma': {
-                collection: 'mode',
-                group: 'component',
-                scopes: ['bgColor'],
-              },
-            },
-          },
-        },
-      },
-      gradient: {
-        $type: 'gradient',
-        $value: [
-          {
-            color: '{data.lemon.color.gradientStop.1}',
-            position: 0,
-          },
-          {
-            color: '{data.lemon.color.gradientStop.2}',
-            position: 1,
-          },
-        ],
       },
     },
     olive: {
@@ -1010,44 +478,6 @@
             },
           },
         },
-        gradientStop: {
-          '1': {
-            $value: '{data.olive.color.muted}',
-            $type: 'color',
-            $extensions: {
-              'org.primer.figma': {
-                collection: 'mode',
-                group: 'component',
-                scopes: ['bgColor'],
-              },
-            },
-          },
-          '2': {
-            $value: '{data.olive.color.muted}',
-            $type: 'color',
-            alpha: 0,
-            $extensions: {
-              'org.primer.figma': {
-                collection: 'mode',
-                group: 'component',
-                scopes: ['bgColor'],
-              },
-            },
-          },
-        },
-      },
-      gradient: {
-        $type: 'gradient',
-        $value: [
-          {
-            color: '{data.olive.color.gradientStop.1}',
-            position: 0,
-          },
-          {
-            color: '{data.olive.color.gradientStop.2}',
-            position: 1,
-          },
-        ],
       },
     },
     lime: {
@@ -1080,44 +510,6 @@
             },
           },
         },
-        gradientStop: {
-          '1': {
-            $value: '{data.lime.color.muted}',
-            $type: 'color',
-            $extensions: {
-              'org.primer.figma': {
-                collection: 'mode',
-                group: 'component',
-                scopes: ['bgColor'],
-              },
-            },
-          },
-          '2': {
-            $value: '{data.lime.color.muted}',
-            $type: 'color',
-            alpha: 0,
-            $extensions: {
-              'org.primer.figma': {
-                collection: 'mode',
-                group: 'component',
-                scopes: ['bgColor'],
-              },
-            },
-          },
-        },
-      },
-      gradient: {
-        $type: 'gradient',
-        $value: [
-          {
-            color: '{data.lime.color.gradientStop.1}',
-            position: 0,
-          },
-          {
-            color: '{data.lime.color.gradientStop.2}',
-            position: 1,
-          },
-        ],
       },
     },
     pine: {
@@ -1150,44 +542,6 @@
             },
           },
         },
-        gradientStop: {
-          '1': {
-            $value: '{data.pine.color.muted}',
-            $type: 'color',
-            $extensions: {
-              'org.primer.figma': {
-                collection: 'mode',
-                group: 'component',
-                scopes: ['bgColor'],
-              },
-            },
-          },
-          '2': {
-            $value: '{data.pine.color.muted}',
-            $type: 'color',
-            alpha: 0,
-            $extensions: {
-              'org.primer.figma': {
-                collection: 'mode',
-                group: 'component',
-                scopes: ['bgColor'],
-              },
-            },
-          },
-        },
-      },
-      gradient: {
-        $type: 'gradient',
-        $value: [
-          {
-            color: '{data.pine.color.gradientStop.1}',
-            position: 0,
-          },
-          {
-            color: '{data.pine.color.gradientStop.2}',
-            position: 1,
-          },
-        ],
       },
     },
   },

@@ -42,10 +42,10 @@ export const figma: PlatformInitializer = (outputFile, prefix, buildPath, option
     options: {
       basePxFontSize: 16,
       fontFamilies: {
-        'fontStack/system': 'SF Pro Text',
-        'fontStack/sansSerif': 'SF Pro Text',
-        'fontStack/sansSerifDisplay': 'SF Pro Display',
-        'fontStack/monospace': 'SF Mono',
+        system: 'SF Pro Text',
+        sansSerif: 'SF Pro Text',
+        sansSerifDisplay: 'SF Pro Display',
+        monospace: 'SF Mono',
       },
       // should this object be spread here?
       ...options,

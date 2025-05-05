@@ -14,13 +14,17 @@ export const cubicBezierToCss: Transform = {
   filter: isCubicBezier,
   transform: (token: TransformedToken, _config: PlatformConfig) => {
     const value = token.$value ?? token.value
-    // throw value of more or less than 4 items in array
-    if (value.length !== 4 || value.some((item: unknown) => typeof item !== 'number')) {
-      throw new Error(
-        `Invalid cubicBezier token ${token.path.join('.')}, must be an array with 4 numbers, but got this instead: ${JSON.stringify(value)}`,
-      )
-    }
-    // return value
-    return `cubic-bezier(${value.join(',')})`
+    return cubicBezierArrayToCss(value, token.path)
   },
+}
+
+export const cubicBezierArrayToCss = (value: number[], path: string[]) => {
+  // throw value of more or less than 4 items in array
+  if (value.length !== 4 || value.some((item: unknown) => typeof item !== 'number')) {
+    throw new Error(
+      `Invalid cubicBezier token ${path.join('.')}, must be an array with 4 numbers, but got this instead: ${JSON.stringify(value)}`,
+    )
+  }
+  // return value
+  return `cubic-bezier(${value.join(',')})`
 }
