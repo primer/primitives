@@ -1,5 +1,11 @@
 # @primer/primitives
 
+## 10.6.1
+
+### Patch Changes
+
+- [#1214](https://github.com/primer/primitives/pull/1214) [`f002fca`](https://github.com/primer/primitives/commit/f002fcaf50d75ad8ee88ee38822957ecb6fe5012) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - removed deleted files from themes.config.ts
+
 ## 10.6.0
 
 ### Minor Changes
