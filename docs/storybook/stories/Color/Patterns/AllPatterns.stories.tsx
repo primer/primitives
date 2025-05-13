@@ -943,7 +943,6 @@ export const Label = () => {
             {
               header: 'Token',
               field: 'name',
-              rowHeader: true,
               renderCell: row => {
                 return <InlineCode value={row.name} copyClipboard cssVar />
               },
