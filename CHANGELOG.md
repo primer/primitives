@@ -1,5 +1,15 @@
 # @primer/primitives
 
+## 10.7.0
+
+### Minor Changes
+
+- [#1218](https://github.com/primer/primitives/pull/1218) [`63e86dc`](https://github.com/primer/primitives/commit/63e86dc7ce0c19ab830cd9c9909c0b0ac0279806) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Adding scale to display color output
+
+### Patch Changes
+
+- [#1214](https://github.com/primer/primitives/pull/1214) [`f002fca`](https://github.com/primer/primitives/commit/f002fcaf50d75ad8ee88ee38822957ecb6fe5012) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - removed deleted files from themes.config.ts
+
 ## 10.6.0
 
 ### Minor Changes
