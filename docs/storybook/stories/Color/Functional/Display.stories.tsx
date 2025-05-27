@@ -6,7 +6,6 @@ import {Banner, DataTable, Table} from '@primer/react/experimental'
 import {InlineCode} from '../../StorybookComponents/InlineCode/InlineCode'
 import {getTokensByName} from '../../utilities/getTokensByName'
 import {Box} from '@primer/react'
-import {ColorScale} from '../../StorybookComponents/ColorScale/ColorScale'
 import {ColorScaleByName} from '../../StorybookComponents/ColorScale/ColorScaleByName'
 
 export default {
@@ -188,7 +187,7 @@ export const Scales = () => {
       <div className="ColorScale--grid" style={{paddingTop: '1rem'}}>
         {data.map(token => {
           return (
-            <div>
+            <div key={token}>
               <ColorScaleByName colorBaseVariable={`display-${token}-scale`} steps={9} />
             </div>
           )
