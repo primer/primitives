@@ -5,6 +5,7 @@ import {ColorTokenSwatch} from '../../StorybookComponents/ColorTokenSwatch/Color
 import {DataTable, Table} from '@primer/react/experimental'
 import {InlineCode} from '../../StorybookComponents/InlineCode/InlineCode'
 import {getTokensByName} from '../../utilities/getTokensByName'
+import {Box, Token} from '@primer/react'
 
 export default {
   title: 'Color/Patterns',
@@ -882,5 +883,81 @@ export const ContributionGraph = () => {
         ]}
       />
     </Table.Container>
+  )
+}
+
+export const Label = () => {
+  const data = getTokensByName(colorTokens, 'label').map(token => {
+    return {
+      id: token.name,
+      ...token,
+    }
+  })
+  const colors = [...new Set(data.map(({id}) => id.replace(/label-([a-zA-Z0-9]+)-.*/, '$1')))]
+
+  return (
+    <>
+      <h1 id="label">Labels</h1>
+      <Box paddingBottom={5} sx={{gap: 2, display: 'flex'}}>
+        {colors.map(color => (
+          <Token
+            text={color}
+            sx={{
+              backgroundColor: `var(--label-${color}-bgColor-rest)`,
+              color: `var(--label-${color}-fgColor-rest)`,
+              borderColor: 'transparent',
+              '&:hover': {
+                backgroundColor: `var(--label-${color}-bgColor-hover)`,
+                color: `var(--label-${color}-fgColor-hover)`,
+                cursor: 'pointer',
+              },
+              '&:active': {
+                backgroundColor: `var(--label-${color}-bgColor-active)`,
+                color: `var(--label-${color}-fgColor-active)`,
+                cursor: 'pointer',
+              },
+            }}
+          />
+        ))}
+      </Box>
+      <Table.Container>
+        <DataTable
+          aria-labelledby="label"
+          data={data}
+          columns={[
+            {
+              header: 'Sample',
+              field: 'name',
+              rowHeader: true,
+              renderCell: row => {
+                return (
+                  <ColorTokenSwatch
+                    bgColor={row.name.includes('bgColor') || row.name.includes('iconColor') ? row.name : undefined}
+                    textColor={row.name.includes('fgColor') ? row.name : undefined}
+                    shadowColor={row.name.includes('shadow') ? row.name : undefined}
+                    borderColor={row.name.includes('borderColor') ? row.name : undefined}
+                  />
+                )
+              },
+            },
+            {
+              header: 'Token',
+              field: 'name',
+              renderCell: row => {
+                return <InlineCode value={row.name} copyClipboard cssVar />
+              },
+            },
+            {
+              header: 'Output value',
+              field: 'value',
+              rowHeader: true,
+              renderCell: row => {
+                return <p>{row.value}</p>
+              },
+            },
+          ]}
+        />
+      </Table.Container>
+    </>
   )
 }
