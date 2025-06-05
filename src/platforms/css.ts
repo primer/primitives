@@ -16,7 +16,7 @@ const getCssSelectors = (outputFile: string) => {
     },
     {
       query: '@media (prefers-color-scheme: light)',
-      selector: `[data-color-mode="auto"][data-light-theme="${themeName}"], [data-color-mode="auto"][data-light-theme="${themeName}"] ::backdrop`,
+      selector: `[data-color-mode][data-color-mode="auto"][data-light-theme="${themeName}"], [data-color-mode][data-color-mode="auto"][data-light-theme="${themeName}"] ::backdrop`,
     },
   ]
 }
