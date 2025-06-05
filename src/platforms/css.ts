@@ -16,6 +16,7 @@ const getCssSelectors = (outputFile: string) => {
     },
     {
       query: '@media (prefers-color-scheme: dark)',
+      // [data-color-mode] here is duplicated to increase the specificity so that light mode can't override it when prefers-color-scheme: dark is enabled
       selector: `[data-color-mode][data-color-mode="auto"][data-dark-theme="${themeName}"], [data-color-mode][data-color-mode="auto"][data-dark-theme="${themeName}"] ::backdrop`,
     },
   ]
