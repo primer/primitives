@@ -78,13 +78,14 @@
       },
       borderColor: {
         '0': {
-          $value: '{borderColor.translucent}',
+          $value: '{base.color.black}',
+          alpha: 0.05,
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
               collection: 'mode',
               group: 'component (internal)',
-              scopes: ['bgColor'],
+              scopes: ['borderColor'],
             },
             'org.primer.overrides': {
               'dark-high-contrast': {
@@ -121,7 +122,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component (internal)',
-              scopes: ['bgColor'],
+              scopes: ['borderColor'],
             },
           },
         },
@@ -132,7 +133,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component (internal)',
-              scopes: ['bgColor'],
+              scopes: ['borderColor'],
             },
           },
         },
@@ -143,7 +144,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component (internal)',
-              scopes: ['bgColor'],
+              scopes: ['borderColor'],
             },
           },
         },
@@ -154,7 +155,7 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component (internal)',
-              scopes: ['bgColor'],
+              scopes: ['borderColor'],
             },
           },
         },
