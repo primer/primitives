@@ -1,5 +1,11 @@
 # @primer/primitives
 
+## 10.8.0
+
+### Minor Changes
+
+- [#1220](https://github.com/primer/primitives/pull/1220) [`078ffd6`](https://github.com/primer/primitives/commit/078ffd6637a1d2f97b9ed5543f20e5f69ccf618b) Thanks [@langermank](https://github.com/langermank)! - Change `overlay` background color in `dark` themes
+
 ## 10.7.0
 
 ### Minor Changes
