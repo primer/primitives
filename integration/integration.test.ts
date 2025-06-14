@@ -158,7 +158,7 @@ describe('PrimerStyleDictionary', async () => {
   it('runs css/advanced format', () => {
     const output = fs.readFileSync(`${buildPath}/css/advanced.css`, 'utf8')
     const expectedOutput = `:root {
-  --PREFIX-base-color-aquaBlue-500: #2c29ff; /* The primary color for interactive elements. */
+  --PREFIX-base-color-aquaBlue-500: #2c29ff; /** The primary color for interactive elements. */
   --PREFIX-fgColor-link-rest-01: #2c29ff;
 }
 `

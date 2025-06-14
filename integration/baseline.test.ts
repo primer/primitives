@@ -60,7 +60,7 @@ describe('PrimerStyleDictionary', async () => {
   it('runs baseline css/variables format', () => {
     const output = fs.readFileSync(`${buildPath}/css/variables.css`, 'utf8')
     const expectedOutput = `:root {
-  --prefix-base-color-aqua-blue-500: #2c29ff; /* The primary color for interactive elements. */
+  --prefix-base-color-aqua-blue-500: #2c29ff; /** The primary color for interactive elements. */
   --prefix-fg-color-link-rest-01: #2c29ff;
 }
 `
@@ -74,6 +74,7 @@ describe('PrimerStyleDictionary', async () => {
     "color": {
       "aquaBlue": {
         "500": {
+          "key": "{base.color.aquaBlue.500}",
           "$value": "#2C29FF",
           "$type": "color",
           "$description": "The primary color for interactive elements.",
@@ -82,7 +83,8 @@ describe('PrimerStyleDictionary', async () => {
           "original": {
             "$value": "#2C29FF",
             "$type": "color",
-            "$description": "The primary color for interactive elements."
+            "$description": "The primary color for interactive elements.",
+            "key": "{base.color.aquaBlue.500}"
           },
           "name": "500",
           "attributes": {},
@@ -98,13 +100,15 @@ describe('PrimerStyleDictionary', async () => {
   },
   "fgColor": {
     "link-rest-01": {
+      "key": "{fgColor.link-rest-01}",
       "$value": "#2C29FF",
       "$type": "color",
       "filePath": "integration/tokens/functional.json5",
       "isSource": true,
       "original": {
         "$value": "{base.color.aquaBlue.500}",
-        "$type": "color"
+        "$type": "color",
+        "key": "{fgColor.link-rest-01}"
       },
       "name": "link-rest-01",
       "attributes": {},

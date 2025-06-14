@@ -287,7 +287,7 @@ describe('Format: tokens nested in media query', () => {
     const expectedOutput = await format(
       ` @media (prefers-color-scheme: light){
         :root {
-          --red: transformedValue; /* This is a description */
+          --red: transformedValue; /** This is a description */
         }
       }`,
       {parser: 'css', printWidth: 500},
