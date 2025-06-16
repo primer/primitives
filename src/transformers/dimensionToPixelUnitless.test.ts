@@ -7,8 +7,11 @@ describe('Transformer: dimensionToPixelUnitless', () => {
       getMockToken({
         value: '16px',
       }),
+      getMockToken({
+        value: {value: 16, unit: 'px'},
+      }),
     ]
-    const expectedOutput = [16]
+    const expectedOutput = [16, 16]
     expect(input.map(item => dimensionToPixelUnitless.transform(item, {}, {}))).toStrictEqual(expectedOutput)
   })
 
@@ -30,8 +33,11 @@ describe('Transformer: dimensionToPixelUnitless', () => {
       getMockToken({
         value: '1rem',
       }),
+      getMockToken({
+        value: {value: 1, unit: 'rem'},
+      }),
     ]
-    const expectedOutput = [16]
+    const expectedOutput = [16, 16]
     expect(input.map(item => dimensionToPixelUnitless.transform(item, {}, {}))).toStrictEqual(expectedOutput)
   })
 
@@ -40,8 +46,11 @@ describe('Transformer: dimensionToPixelUnitless', () => {
       getMockToken({
         value: '2rem',
       }),
+      getMockToken({
+        value: {value: 2, unit: 'rem'},
+      }),
     ]
-    const expectedOutput = [20]
+    const expectedOutput = [20, 20]
     expect(input.map(item => dimensionToPixelUnitless.transform(item, {basePxFontSize: 10}, {}))).toStrictEqual(
       expectedOutput,
     )
@@ -52,8 +61,11 @@ describe('Transformer: dimensionToPixelUnitless', () => {
       getMockToken({
         value: '1em',
       }),
+      getMockToken({
+        value: {value: 1, unit: 'em'},
+      }),
     ]
-    const expectedOutput = ['1em']
+    const expectedOutput = ['1em', '1em']
     expect(input.map(item => dimensionToPixelUnitless.transform(item, {}, {}))).toStrictEqual(expectedOutput)
   })
 
@@ -68,8 +80,11 @@ describe('Transformer: dimensionToPixelUnitless', () => {
       getMockToken({
         value: '0',
       }),
+      getMockToken({
+        value: {value: 0, unit: 'px'},
+      }),
     ]
-    const expectedOutput = [0, 0, 0]
+    const expectedOutput = [0, 0, 0, 0]
     expect(input.map(item => dimensionToPixelUnitless.transform(item, {}, {}))).toStrictEqual(expectedOutput)
   })
 

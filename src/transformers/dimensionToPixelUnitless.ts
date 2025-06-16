@@ -23,6 +23,47 @@ const hasUnit = (value: string | number, unit: string): boolean => {
 }
 
 /**
+ * @description extracts numeric value and unit from dimension token value
+ * @param value dimension token value (string or object format)
+ * @returns object with value and unit, or original value for special cases
+ */
+const parseDimensionValue = (value: string | number | {value: number; unit: string}): {value: number; unit: string} | {original: any} => {
+  // Handle invalid values
+  if (value === null || value === undefined || value === '') {
+    throw new Error(`Invalid dimension value: ${JSON.stringify(value)}`)
+  }
+
+  // Handle new object format
+  if (typeof value === 'object' && value !== null && 'value' in value && 'unit' in value) {
+    return {value: value.value, unit: value.unit}
+  }
+
+  // Handle legacy string/number format
+  if (typeof value === 'number') {
+    return {original: value} // Return original for pixelUnitless
+  }
+
+  if (value === '0') {
+    return {value: 0, unit: 'px'}
+  }
+
+  if (typeof value === 'string') {
+    // Handle pure number strings (return as original)
+    if (/^-?[0-9]+\.?[0-9]*$/.test(value)) {
+      return {original: value}
+    }
+    
+    const match = value.match(/^(-?[0-9]+\.?[0-9]*)(px|rem|em)$/)
+    if (match) {
+      return {value: parseFloat(match[1]), unit: match[2]}
+    }
+  }
+
+  // Invalid values like 'rem', 'px' without numbers
+  throw new Error(`Invalid dimension value: ${JSON.stringify(value)}`)
+}
+
+/**
  * @description converts dimension tokens value to pixel value without unit, ignores `em` as they are relative to the font size of the parent element
  * @type value transformer — [StyleDictionary.ValueTransform](https://github.com/amzn/style-dictionary/blob/main/types/Transform.d.ts)
  * @matcher matches all tokens of $type `dimension`
@@ -36,25 +77,40 @@ export const dimensionToPixelUnitless: Transform = {
   transform: (token: TransformedToken, config: PlatformConfig, options: Config) => {
     const valueProp = options.usesDtcg ? '$value' : 'value'
     const baseFont = getBasePxFontSize(config)
-    const floatVal = parseFloat(token[valueProp])
-    if (isNaN(floatVal)) {
+    
+    try {
+      const parsed = parseDimensionValue(token[valueProp])
+      
+      if ('original' in parsed) {
+        // Return original value for numbers and em values
+        return parsed.original
+      }
+
+      const {value, unit} = parsed
+
+      if (value === 0) {
+        return 0
+      }
+
+      if (unit === 'rem') {
+        return value * baseFont
+      }
+
+      if (unit === 'px') {
+        return value
+      }
+
+      if (unit === 'em') {
+        // Return as string for em values (not converted)
+        return `${value}em`
+      }
+
+      // Fallback for unexpected units
+      return parsed.original || value
+    } catch (error) {
       throw new Error(
-        `Invalid dimension token: '${token.path.join('.')}: ${token[valueProp]}' is not valid and cannot be transform to 'float' \n`,
+        `Invalid dimension token: '${token.path.join('.')}: ${JSON.stringify(token[valueProp])}' is not valid and cannot be transform to 'float' \n`,
       )
     }
-
-    if (floatVal === 0) {
-      return 0
-    }
-
-    if (hasUnit(token[valueProp], 'rem')) {
-      return floatVal * baseFont
-    }
-
-    if (hasUnit(token[valueProp], 'px')) {
-      return floatVal
-    }
-
-    return token[valueProp]
   },
 }

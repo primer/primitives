@@ -12,6 +12,16 @@ describe('Transformer: dimensionToRem', () => {
     expect(input.map(item => dimensionToRem.transform(item, {}, {}))).toStrictEqual(expectedOutput)
   })
 
+  it('transforms pixel object tokens to rem (new format)', () => {
+    const input = [
+      getMockToken({
+        value: {value: 16, unit: 'px'},
+      }),
+    ]
+    const expectedOutput = ['1rem']
+    expect(input.map(item => dimensionToRem.transform(item, {}, {}))).toStrictEqual(expectedOutput)
+  })
+
   it('transforms number to rem', () => {
     const input = [
       getMockToken({
@@ -30,8 +40,11 @@ describe('Transformer: dimensionToRem', () => {
       getMockToken({
         value: '1rem',
       }),
+      getMockToken({
+        value: {value: 1, unit: 'rem'},
+      }),
     ]
-    const expectedOutput = ['1rem']
+    const expectedOutput = ['1rem', '1rem']
     expect(input.map(item => dimensionToRem.transform(item, {}, {}))).toStrictEqual(expectedOutput)
   })
 
@@ -40,8 +53,11 @@ describe('Transformer: dimensionToRem', () => {
       getMockToken({
         value: '1em',
       }),
+      getMockToken({
+        value: {value: 1, unit: 'em'},
+      }),
     ]
-    const expectedOutput = ['1em']
+    const expectedOutput = ['1em', '1em']
     expect(input.map(item => dimensionToRem.transform(item, {}, {}))).toStrictEqual(expectedOutput)
   })
 
@@ -56,8 +72,11 @@ describe('Transformer: dimensionToRem', () => {
       getMockToken({
         value: '0',
       }),
+      getMockToken({
+        value: {value: 0, unit: 'px'},
+      }),
     ]
-    const expectedOutput = ['0', '0', '0']
+    const expectedOutput = ['0', '0', '0', '0']
     expect(input.map(item => dimensionToRem.transform(item, {}, {}))).toStrictEqual(expectedOutput)
   })
 

@@ -1,7 +1,14 @@
 import {z} from 'zod'
 import {schemaErrorMessage} from '../utilities/index.js'
 
-export const dimensionValue = z.union([
+// New object-based dimension format
+const dimensionObjectValue = z.object({
+  value: z.number(),
+  unit: z.enum(['px', 'rem', 'em']),
+})
+
+// Legacy string-based dimension format (for backward compatibility)
+const dimensionStringValue = z.union([
   z.string().refine(
     dim => /(^-?[0-9]+(px|rem)$|^-?[0-9]+\.?[0-9]*em$)/.test(dim),
     val => ({
@@ -13,4 +20,9 @@ export const dimensionValue = z.union([
   ),
   z.literal('0'),
   z.literal(0),
+])
+
+export const dimensionValue = z.union([
+  dimensionObjectValue,
+  dimensionStringValue,
 ])
