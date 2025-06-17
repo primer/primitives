@@ -29,7 +29,17 @@ import {
   PeopleIcon,
   SearchIcon,
 } from '@primer/octicons-react'
-import {PageLayout, Button, TextInput, SegmentedControl, NavList, Box, Text, IconButton} from '@primer/react'
+import {
+  PageLayout,
+  Button,
+  TextInput,
+  SegmentedControl,
+  NavList,
+  Box,
+  Text,
+  IconButton,
+  StateLabel,
+} from '@primer/react'
 
 export default {
   title: 'Testing/Borders',
