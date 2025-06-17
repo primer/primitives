@@ -29,7 +29,6 @@
     "build:figma": "tsx scripts/buildFigma.ts",
     "build:config": "tsc -p build.tsconfig.jsonc && tsx ./scripts/copyDir.ts src/types dist/build/types",
     "clean": "rm -rf dist",
-    "validate:tokenJson": "tsx scripts/diffThemes.ts && tsx scripts/diffTokenProps.ts",
     "validate:contrast": "tsx scripts/colorContrast.ts",
     "format": "prettier --check '**/*.{js,jsx,ts,tsx,md,mdx,css}'",
     "format:fix": "prettier --write  '**/*.{js,jsx,ts,tsx,md,mdx,css}'",
