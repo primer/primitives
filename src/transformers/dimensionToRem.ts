@@ -23,8 +23,8 @@ export const dimensionToRem: Transform = {
     const valueProp = options.usesDtcg ? '$value' : 'value'
     const baseFont = getBasePxFontSize(config)
     const dimensionValue = token[valueProp] as {value: number; unit: string}
-    
-    if (!dimensionValue || typeof dimensionValue !== 'object' || !('value' in dimensionValue) || !('unit' in dimensionValue)) {
+
+    if (typeof dimensionValue !== 'object' || !('value' in dimensionValue) || !('unit' in dimensionValue)) {
       throw new Error(
         `Invalid dimension token: '${token.name}: ${JSON.stringify(token[valueProp])}' must be an object with value and unit properties \n`,
       )

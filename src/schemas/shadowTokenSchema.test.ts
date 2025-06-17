@@ -16,12 +16,12 @@ describe('Schema: shadowValue', () => {
     // without inset
     expect(
       shadowValue.safeParse({
-        color: '#000000', 
-        alpha: 0.5, 
-        offsetX: {value: 4, unit: 'px'}, 
-        offsetY: {value: 4, unit: 'px'}, 
-        blur: {value: 2, unit: 'px'}, 
-        spread: {value: 2, unit: 'px'}
+        color: '#000000',
+        alpha: 0.5,
+        offsetX: {value: 4, unit: 'px'},
+        offsetY: {value: 4, unit: 'px'},
+        blur: {value: 2, unit: 'px'},
+        spread: {value: 2, unit: 'px'},
       }).success,
     ).toStrictEqual(true)
   })
