@@ -2,33 +2,20 @@ import {getMockToken} from '../test-utilities/index.js'
 import {dimensionToRem} from './dimensionToRem.js'
 
 describe('Transformer: dimensionToRem', () => {
-  it('transforms pixel string tokens to rem', () => {
+  it('transforms pixel object tokens to rem', () => {
     const input = [
       getMockToken({
-        value: '16px',
+        value: {value: 16, unit: 'px'},
       }),
     ]
     const expectedOutput = ['1rem']
     expect(input.map(item => dimensionToRem.transform(item, {}, {}))).toStrictEqual(expectedOutput)
   })
 
-  it('transforms number to rem', () => {
-    const input = [
-      getMockToken({
-        value: '16',
-      }),
-      getMockToken({
-        value: 16,
-      }),
-    ]
-    const expectedOutput = ['1rem', '1rem']
-    expect(input.map(item => dimensionToRem.transform(item, {}, {}))).toStrictEqual(expectedOutput)
-  })
-
   it('transforms rem to rem', () => {
     const input = [
       getMockToken({
-        value: '1rem',
+        value: {value: 1, unit: 'rem'},
       }),
     ]
     const expectedOutput = ['1rem']
@@ -38,7 +25,7 @@ describe('Transformer: dimensionToRem', () => {
   it('does not transforms em to rem', () => {
     const input = [
       getMockToken({
-        value: '1em',
+        value: {value: 1, unit: 'em'},
       }),
     ]
     const expectedOutput = ['1em']
@@ -48,13 +35,13 @@ describe('Transformer: dimensionToRem', () => {
   it('transforms 0 to 0', () => {
     const input = [
       getMockToken({
-        value: '0rem',
+        value: {value: 0, unit: 'rem'},
       }),
       getMockToken({
-        value: '0px',
+        value: {value: 0, unit: 'px'},
       }),
       getMockToken({
-        value: '0',
+        value: {value: 0, unit: 'em'},
       }),
     ]
     const expectedOutput = ['0', '0', '0']
@@ -67,6 +54,12 @@ describe('Transformer: dimensionToRem', () => {
         value: 'rem',
       }),
       getMockToken({
+        value: '16px',
+      }),
+      getMockToken({
+        value: 16,
+      }),
+      getMockToken({
         value: '',
       }),
       getMockToken({
@@ -75,7 +68,18 @@ describe('Transformer: dimensionToRem', () => {
       getMockToken({
         value: null,
       }),
+      getMockToken({
+        value: {},
+      }),
+      getMockToken({
+        value: {value: 16},
+      }),
+      getMockToken({
+        value: {unit: 'px'},
+      }),
     ]
-    expect(() => input.map(item => dimensionToRem.transform(item, {}, {}))).toThrow()
+    for (const token of input) {
+      expect(() => dimensionToRem.transform(token, {}, {})).toThrow()
+    }
   })
 })

@@ -44,7 +44,7 @@
         }
       },
       "paddingBlock": {
-        "$value": "2px",
+        "$value": {"value": 2, "unit": "px"},
         "$type": "dimension",
         "$extensions": {
           "org.primer.figma": {
@@ -182,7 +182,7 @@
         }
       },
       "paddingBlock": {
-        "$value": "6px",
+        "$value": {"value": 6, "unit": "px"},
         "$type": "dimension",
         "$extensions": {
           "org.primer.figma": {
@@ -256,7 +256,7 @@
         }
       },
       "paddingBlock": {
-        "$value": "10px",
+        "$value": {"value": 10, "unit": "px"},
         "$type": "dimension",
         "$extensions": {
           "org.primer.figma": {
@@ -320,7 +320,7 @@
         }
       },
       "paddingBlock": {
-        "$value": "14px",
+        "$value": {"value": 14, "unit": "px"},
         "$type": "dimension",
         "$extensions": {
           "org.primer.figma": {
@@ -366,7 +366,7 @@
   "spinner": {
     "strokeWidth": {
       "default": {
-        "$value": "2px",
+        "$value": {"value": 2, "unit": "px"},
         "$type": "dimension"
       }
     },
@@ -580,7 +580,7 @@
   "overlay": {
     "width": {
       "xsmall": {
-        "$value": "192px",
+        "$value": {"value": 192, "unit": "px"},
         "$type": "dimension",
         "$extensions": {
           "org.primer.figma": {
@@ -590,7 +590,7 @@
         }
       },
       "small": {
-        "$value": "320px",
+        "$value": {"value": 320, "unit": "px"},
         "$type": "dimension",
         "$extensions": {
           "org.primer.figma": {
@@ -600,7 +600,7 @@
         }
       },
       "medium": {
-        "$value": "480px",
+        "$value": {"value": 480, "unit": "px"},
         "$type": "dimension",
         "$extensions": {
           "org.primer.figma": {
@@ -610,7 +610,7 @@
         }
       },
       "large": {
-        "$value": "640px",
+        "$value": {"value": 640, "unit": "px"},
         "$type": "dimension",
         "$extensions": {
           "org.primer.figma": {
@@ -620,7 +620,7 @@
         }
       },
       "xlarge": {
-        "$value": "960px",
+        "$value": {"value": 960, "unit": "px"},
         "$type": "dimension",
         "$extensions": {
           "org.primer.figma": {
@@ -632,7 +632,7 @@
     },
     "height": {
       "small": {
-        "$value": "256px",
+        "$value": {"value": 256, "unit": "px"},
         "$type": "dimension",
         "$extensions": {
           "org.primer.figma": {
@@ -642,7 +642,7 @@
         }
       },
       "medium": {
-        "$value": "320px",
+        "$value": {"value": 320, "unit": "px"},
         "$type": "dimension",
         "$extensions": {
           "org.primer.figma": {
@@ -652,7 +652,7 @@
         }
       },
       "large": {
-        "$value": "432px",
+        "$value": {"value": 432, "unit": "px"},
         "$type": "dimension",
         "$extensions": {
           "org.primer.figma": {
@@ -662,7 +662,7 @@
         }
       },
       "xlarge": {
-        "$value": "600px",
+        "$value": {"value": 600, "unit": "px"},
         "$type": "dimension",
         "$extensions": {
           "org.primer.figma": {
@@ -727,7 +727,7 @@
       }
     },
     "offset": {
-      "$value": "4px",
+      "$value": {"value": 4, "unit": "px"},
       "$type": "dimension",
       "$extensions": {
         "org.primer.figma": {
