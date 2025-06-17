@@ -78,8 +78,8 @@ describe('Transformer: dimensionToRem', () => {
         value: {unit: 'px'},
       }),
     ]
-    input.forEach(token => {
+    for (const token of input) {
       expect(() => dimensionToRem.transform(token, {}, {})).toThrow()
-    })
+    }
   })
 })

@@ -90,8 +90,8 @@ describe('Transformer: dimensionToPixelUnitless', () => {
         value: {unit: 'px'},
       }),
     ]
-    input.forEach(token => {
+    for (const token of input) {
       expect(() => dimensionToPixelUnitless.transform(token, {}, {})).toThrow()
-    })
+    }
   })
 })
