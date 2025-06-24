@@ -961,3 +961,50 @@ export const Label = () => {
     </>
   )
 }
+
+export const Syntax = () => {
+  const data = getTokensByName(colorTokens, 'color').map(token => {
+    return {
+      id: token.name,
+      ...token,
+    }
+  })
+
+  return (
+    <Table.Container>
+      <h1 className="sr-only" id="ansi">
+        Syntax Colors
+      </h1>
+      <DataTable
+        aria-labelledby="contribution"
+        data={data}
+        columns={[
+          {
+            header: 'Sample',
+            field: 'name',
+            rowHeader: true,
+            renderCell: row => {
+              return <ColorTokenSwatch bgColor={row.name} />
+            },
+          },
+          {
+            header: 'Token',
+            field: 'name',
+            rowHeader: true,
+            renderCell: row => {
+              return <InlineCode value={row.name} copyClipboard cssVar />
+            },
+          },
+          {
+            header: 'Output value',
+            field: 'value',
+            rowHeader: true,
+            renderCell: row => {
+              return <p>{row.value}</p>
+            },
+          },
+        ]}
+      />
+    </Table.Container>
+  )
+}
