@@ -1,5 +1,20 @@
 # @primer/primitives
 
+## 11.0.0
+
+### Major Changes
+
+- [#1190](https://github.com/primer/primitives/pull/1190) [`0b1e88e`](https://github.com/primer/primitives/commit/0b1e88e20ef02c19d30c868ae71bede9ce8f13a9) Thanks [@langermank](https://github.com/langermank)! - - Adds new high contrast themes for light/dark tritanopia, colorblind, and dark dimmed (soft dark) themes
+
+### Minor Changes
+
+- [#1220](https://github.com/primer/primitives/pull/1220) [`078ffd6`](https://github.com/primer/primitives/commit/078ffd6637a1d2f97b9ed5543f20e5f69ccf618b) Thanks [@langermank](https://github.com/langermank)! - Change `overlay` background color in `dark` themes
+
+### Patch Changes
+
+- [#1234](https://github.com/primer/primitives/pull/1234) [`efaa46c`](https://github.com/primer/primitives/commit/efaa46c75cdb608a9012c34d7ba09c14b356ee37) Thanks [@langermank](https://github.com/langermank)! - - Fix disabled fg color in dark
+  - Increase opacity of transparent color selected state in dark
+
 ## 10.7.0
 
 ### Minor Changes
