@@ -12,6 +12,12 @@
               scopes: ['bgColor'],
             },
             'org.primer.overrides': {
+              'dark-high-contrast': '{base.color.neutral.0}',
+              'dark-tritanopia-high-contrast': '{base.color.neutral.0}',
+              'dark-protanopia-deuteranopia-high-contrast': '{base.color.neutral.0}',
+              'light-high-contrast': '{base.color.neutral.0}',
+              'light-tritanopia-high-contrast': '{base.color.neutral.0}',
+              'light-protanopia-deuteranopia-high-contrast': '{base.color.neutral.0}',
               'dark-dimmed': '{base.color.neutral.5}',
             },
           },
@@ -79,105 +85,77 @@
             'org.primer.figma': {
               collection: 'mode',
               group: 'component (internal)',
-              scopes: ['bgColor'],
+              scopes: ['borderColor'],
             },
             'org.primer.overrides': {
-              dark: {
+              'dark-high-contrast': {
                 $value: '{base.color.white}',
-                alpha: 0.05,
+                alpha: 1,
               },
-              'dark-dimmed': {
+              'light-high-contrast': {
+                $value: '{base.color.black}',
+                alpha: 1,
+              },
+              'dark-tritanopia-high-contrast': {
                 $value: '{base.color.white}',
-                alpha: 0.05,
+                alpha: 1,
+              },
+              'light-tritanopia-high-contrast': {
+                $value: '{base.color.black}',
+                alpha: 1,
+              },
+              'dark-protanopia-deuteranopia-high-contrast': {
+                $value: '{base.color.white}',
+                alpha: 1,
+              },
+              'light-protanopia-deuteranopia-high-contrast': {
+                $value: '{base.color.black}',
+                alpha: 1,
               },
             },
           },
         },
         '1': {
-          $value: '{base.color.black}',
-          alpha: 0.05,
+          $value: '{contribution.default.borderColor.0}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
               collection: 'mode',
               group: 'component (internal)',
-              scopes: ['bgColor'],
-            },
-            'org.primer.overrides': {
-              dark: {
-                $value: '{base.color.white}',
-                alpha: 0.05,
-              },
-              'dark-dimmed': {
-                $value: '{base.color.white}',
-                alpha: 0.05,
-              },
+              scopes: ['borderColor'],
             },
           },
         },
         '2': {
-          $value: '{base.color.black}',
-          alpha: 0.05,
+          $value: '{contribution.default.borderColor.0}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
               collection: 'mode',
               group: 'component (internal)',
-              scopes: ['bgColor'],
-            },
-            'org.primer.overrides': {
-              dark: {
-                $value: '{base.color.white}',
-                alpha: 0.05,
-              },
-              'dark-dimmed': {
-                $value: '{base.color.white}',
-                alpha: 0.05,
-              },
+              scopes: ['borderColor'],
             },
           },
         },
         '3': {
-          $value: '{base.color.black}',
-          alpha: 0.05,
+          $value: '{contribution.default.borderColor.0}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
               collection: 'mode',
               group: 'component (internal)',
-              scopes: ['bgColor'],
-            },
-            'org.primer.overrides': {
-              dark: {
-                $value: '{base.color.white}',
-                alpha: 0.05,
-              },
-              'dark-dimmed': {
-                $value: '{base.color.white}',
-                alpha: 0.05,
-              },
+              scopes: ['borderColor'],
             },
           },
         },
         '4': {
-          $value: '{base.color.black}',
-          alpha: 0.05,
+          $value: '{contribution.default.borderColor.0}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
               collection: 'mode',
               group: 'component (internal)',
-              scopes: ['bgColor'],
-            },
-            'org.primer.overrides': {
-              dark: {
-                $value: '{base.color.white}',
-                alpha: 0.05,
-              },
-              'dark-dimmed': {
-                $value: '{base.color.white}',
-                alpha: 0.05,
-              },
+              scopes: ['borderColor'],
             },
           },
         },

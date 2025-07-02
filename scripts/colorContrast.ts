@@ -227,8 +227,13 @@ const runCheck = async () => {
     'dark_high_contrast',
     'light_protanopia_deuteranopia',
     'dark_protanopia_deuteranopia',
+    'light_protanopia_deuteranopia_high_contrast',
+    'dark_protanopia_deuteranopia_high_contrast',
     'light_tritanopia',
     'dark_tritanopia',
+    'light_tritanopia_high_contrast',
+    'dark_tritanopia_high_contrast',
+    'dark_dimmed_high_contrast',
   ] as ThemeName[]
   // get colors from doc json files
   const themes = await getColorsFromFiles(themesNamesToCheck)

@@ -37,10 +37,14 @@ const themes = [
   'light',
   'light_colorblind',
   'light_tritanopia',
+  'light_colorblind_high_contrast',
+  'light_tritanopia_high_contrast',
   'light_high_contrast',
   'dark',
   'dark_colorblind',
   'dark_tritanopia',
+  'dark_colorblind_high_contrast',
+  'dark_tritanopia_high_contrast',
   'dark_high_contrast',
 ]
 

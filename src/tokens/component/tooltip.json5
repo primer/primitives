@@ -10,7 +10,10 @@
           scopes: ['bgColor'],
         },
         'org.primer.overrides': {
-          "dark-high-contrast": '{bgColor.inverse}',
+          'dark-high-contrast': '{bgColor.inverse}',
+          'dark-dimmed-high-contrast': '{bgColor.inverse}',
+          'dark-protanopia-deuteranopia-high-contrast': '{bgColor.inverse}',
+          'dark-tritanopia-high-contrast': '{bgColor.inverse}',
         },
       },
     },
@@ -24,7 +27,10 @@
           scopes: ['fgColor'],
         },
         'org.primer.overrides': {
-          "dark-high-contrast": '{fgColor.onInverse}',
+          'dark-high-contrast': '{fgColor.onInverse}',
+          'dark-dimmed-high-contrast': '{fgColor.onInverse}',
+          'dark-protanopia-deuteranopia-high-contrast': '{fgColor.onInverse}',
+          'dark-tritanopia-high-contrast': '{fgColor.onInverse}',
         },
       },
     },
