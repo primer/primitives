@@ -87,6 +87,11 @@ You now need to load your css bundle if the feature flag is active by placing th
 
 Now you need to generate the `SERVICEOWNERS` and `CODEOWNERS` by running `bin/generate-service-files.rb` in the console or by running it as a task in vs code.
 
+> Note: to run a task in vscoode, open the command palette with `cmd + shift +p` or add a `>` in to the search palette and type `run task`. 
+> Select `Tasks: Run Task` and hit `return`
+> Select `bin/generate-service-files.rb` fromn the list and hit `return`
+> Select `Default` and hit return
+
 It should add a line like this to the `SERVICEOWNERS`:
 
 ```
