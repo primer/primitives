@@ -54,6 +54,7 @@ npm i @primer/primitives-my-feature-flag@npm:@primer/primitives@0.0.0-2024100721
 ### Load your file
 
 #### Option 1: SCSS feature flag
+
 [Read more about scss feature flags](https://github.com/github/github/blob/10168573894287782ddabd7d8b9bfd47850a1b31/ui/packages/feature-flags/client-feature-flags.ts#L223-L233)
 
 > Note: these flags are all automatically preloaded
@@ -64,7 +65,7 @@ npm i @primer/primitives-my-feature-flag@npm:@primer/primitives@0.0.0-2024100721
  * [data-css-features~="my_feature_flag" i] {
  *  // styles behind flag
  * }
- * 
+ *
 ```
 
 #### Option 2: Create a new bundle
@@ -87,7 +88,7 @@ You now need to load your css bundle if the feature flag is active by placing th
 
 Now you need to generate the `SERVICEOWNERS` and `CODEOWNERS` by running `bin/generate-service-files.rb` in the console or by running it as a task in vs code.
 
-> Note: to run a task in vscoode, open the command palette with `cmd + shift +p` or add a `>` in to the search palette and type `run task`. 
+> Note: to run a task in vscoode, open the command palette with `cmd + shift +p` or add a `>` in to the search palette and type `run task`.
 > Select `Tasks: Run Task` and hit `return`
 > Select `bin/generate-service-files.rb` fromn the list and hit `return`
 > Select `Default` and hit return
