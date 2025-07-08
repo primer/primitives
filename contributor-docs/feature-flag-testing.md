@@ -55,7 +55,9 @@ npm i @primer/primitives-my-feature-flag@npm:@primer/primitives@0.0.0-2024100721
 
 #### Option 1: SCSS feature flag
 
-[Read more about scss feature flags](https://github.com/github/github/blob/10168573894287782ddabd7d8b9bfd47850a1b31/ui/packages/feature-flags/client-feature-flags.ts#L223-L233)
+[Read more about scss feature flags](https://github.com/github/github/blob/10168573894287782ddabd7d8b9bfd47850a1b31/ui/packages/feature-flags/client-feature-flags.ts#L223-L233).
+
+You can't use `@import` inside a feature flag as `@import` has to be top level.
 
 > Note: these flags are all automatically preloaded
 
