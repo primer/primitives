@@ -2657,6 +2657,46 @@
           },
         },
       },
+      borderColor: {
+        $value: '{base.color.transparent}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            group: 'component',
+            scopes: ['borderColor'],
+          },
+          'org.primer.overrides': {
+            dark: {
+              $value: '{base.color.transparent}',
+            },
+            'dark-dimmed': {
+              $value: '{base.color.transparent}',
+            },
+            'light-high-contrast': {
+              $value: '{label.coral.fgColor.rest}',
+            },
+            'dark-high-contrast': {
+              $value: '{label.coral.fgColor.rest}',
+            },
+            'dark-dimmed-high-contrast': {
+              $value: '{label.coral.fgColor.rest}',
+            },
+            'dark-tritanopia-high-contrast': {
+              $value: '{label.coral.fgColor.rest}',
+            },
+            'dark-protanopia-deuteranopia-high-contrast': {
+              $value: '{label.coral.fgColor.rest}',
+            },
+            'light-tritanopia-high-contrast': {
+              $value: '{label.coral.fgColor.rest}',
+            },
+            'light-protanopia-deuteranopia-high-contrast': {
+              $value: '{label.coral.fgColor.rest}',
+            },
+          },
+        },
+      },
     },
   },
 }
