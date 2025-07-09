@@ -31,12 +31,17 @@ type Modes =
   | 'light'
   | 'dark'
   | 'dark dimmed'
+  | 'dark dimmed high contrast'
   | 'light high contrast'
   | 'dark high contrast'
   | 'light protanopia deuteranopia'
   | 'dark protanopia deuteranopia'
   | 'light tritanopia'
   | 'dark tritanopia'
+  | 'light high contrast protanopia deuteranopia'
+  | 'dark high contrast protanopia deuteranopia'
+  | 'light high contrast tritanopia'
+  | 'dark high contrast tritanopia'
 
 export const mode = (modes: Modes[]) => {
   return z.string().refine(
