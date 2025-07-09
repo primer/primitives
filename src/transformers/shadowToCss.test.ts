@@ -7,14 +7,14 @@ describe('Transformer: shadowToCss', () => {
       getMockToken({
         $value: {
           color: '#000000',
-          offsetX: '0px',
-          offsetY: '2px',
-          blur: '1px',
-          spread: '0',
+          offsetX: {value: 0, unit: 'px'},
+          offsetY: {value: 2, unit: 'px'},
+          blur: {value: 1, unit: 'px'},
+          spread: {value: 0, unit: 'px'},
         },
       }),
     ]
-    const expectedOutput = ['0px 2px 1px 0 #000000']
+    const expectedOutput = ['0px 2px 1px 0px #000000']
     expect(input.map(item => shadowToCss.transform(item, {}, {}))).toStrictEqual(expectedOutput)
   })
 
@@ -23,20 +23,20 @@ describe('Transformer: shadowToCss', () => {
       getMockToken({
         $value: {
           color: '#000000',
-          offsetX: '0px',
-          offsetY: '2px',
-          blur: '1px',
-          spread: '0px',
+          offsetX: {value: 0, unit: 'px'},
+          offsetY: {value: 2, unit: 'px'},
+          blur: {value: 1, unit: 'px'},
+          spread: {value: 0, unit: 'px'},
           inset: true,
         },
       }),
       getMockToken({
         $value: {
           color: '#000000',
-          offsetX: '0px',
-          offsetY: '2px',
-          blur: '1px',
-          spread: '0px',
+          offsetX: {value: 0, unit: 'px'},
+          offsetY: {value: 2, unit: 'px'},
+          blur: {value: 1, unit: 'px'},
+          spread: {value: 0, unit: 'px'},
           inset: false,
         },
       }),
@@ -52,9 +52,9 @@ describe('Transformer: shadowToCss', () => {
         getMockToken({
           $value: {
             color: '#000000',
-            offsetX: '2px',
-            offsetY: '2px',
-            blur: '1px',
+            offsetX: {value: 2, unit: 'px'},
+            offsetY: {value: 2, unit: 'px'},
+            spread: {value: 0, unit: 'px'},
           },
         }),
         {},
@@ -68,9 +68,9 @@ describe('Transformer: shadowToCss', () => {
         getMockToken({
           $value: {
             color: '#000000',
-            offsetX: '2px',
-            offsetY: '2px',
-            blur: '1px',
+            offsetX: {value: 2, unit: 'px'},
+            offsetY: {value: 2, unit: 'px'},
+            blur: {value: 1, unit: 'px'},
           },
         }),
         {},
@@ -84,9 +84,9 @@ describe('Transformer: shadowToCss', () => {
         getMockToken({
           $value: {
             color: '#000000',
-            offsetX: '2px',
-            spread: '0px',
-            blur: '1px',
+            offsetX: {value: 2, unit: 'px'},
+            spread: {value: 0, unit: 'px'},
+            blur: {value: 1, unit: 'px'},
           },
         }),
         {},
@@ -99,9 +99,9 @@ describe('Transformer: shadowToCss', () => {
         getMockToken({
           $value: {
             color: '#000000',
-            offsetY: '2px',
-            spread: '0px',
-            blur: '1px',
+            offsetY: {value: 2, unit: 'px'},
+            spread: {value: 0, unit: 'px'},
+            blur: {value: 1, unit: 'px'},
           },
         }),
         {},
@@ -113,10 +113,10 @@ describe('Transformer: shadowToCss', () => {
       shadowToCss.transform(
         getMockToken({
           $value: {
-            offsetX: '0px',
-            offsetY: '2px',
-            spread: '0px',
-            blur: '1px',
+            offsetX: {value: 0, unit: 'px'},
+            offsetY: {value: 2, unit: 'px'},
+            spread: {value: 0, unit: 'px'},
+            blur: {value: 1, unit: 'px'},
           },
         }),
         {},
@@ -130,25 +130,25 @@ describe('Transformer: shadowToCss', () => {
       getMockToken({
         $value: {
           color: '#000000',
-          offsetX: '0px',
-          offsetY: '2px',
-          blur: '1px',
-          spread: '0',
+          offsetX: {value: 0, unit: 'px'},
+          offsetY: {value: 2, unit: 'px'},
+          blur: {value: 1, unit: 'px'},
+          spread: {value: 0, unit: 'px'},
           alpha: 0.5,
         },
       }),
       getMockToken({
         $value: {
           color: '#22222266',
-          offsetX: '0px',
-          offsetY: '2px',
-          blur: '1px',
-          spread: '0',
+          offsetX: {value: 0, unit: 'px'},
+          offsetY: {value: 2, unit: 'px'},
+          blur: {value: 1, unit: 'px'},
+          spread: {value: 0, unit: 'px'},
           alpha: 0.5,
         },
       }),
     ]
-    const expectedOutput = ['0px 2px 1px 0 #00000080', '0px 2px 1px 0 #22222280']
+    const expectedOutput = ['0px 2px 1px 0px #00000080', '0px 2px 1px 0px #22222280']
     expect(input.map(item => shadowToCss.transform(item, {}, {}))).toStrictEqual(expectedOutput)
   })
 
@@ -157,24 +157,40 @@ describe('Transformer: shadowToCss', () => {
       $value: [
         {
           color: '#000000',
-          offsetX: '0px',
-          offsetY: '2px',
-          blur: '1px',
-          spread: '0',
+          offsetX: {value: 0, unit: 'px'},
+          offsetY: {value: 2, unit: 'px'},
+          blur: {value: 1, unit: 'px'},
+          spread: {value: 0, unit: 'px'},
           alpha: 0.5,
         },
         {
           color: '#22222266',
-          offsetX: '0px',
-          offsetY: '8px',
-          blur: '16px',
-          spread: '0',
+          offsetX: {value: 0, unit: 'px'},
+          offsetY: {value: 8, unit: 'px'},
+          blur: {value: 16, unit: 'px'},
+          spread: {value: 0, unit: 'px'},
           alpha: 0.2,
         },
       ],
     })
 
-    const expectedOutput = '0px 2px 1px 0 #00000080, 0px 8px 16px 0 #22222233'
+    const expectedOutput = '0px 2px 1px 0px #00000080, 0px 8px 16px 0px #22222233'
     expect(shadowToCss.transform(item, {}, {})).toStrictEqual(expectedOutput)
+  })
+
+  it('maintains backward compatibility with string dimension values', () => {
+    const input = [
+      getMockToken({
+        $value: {
+          color: '#000000',
+          offsetX: '0px',
+          offsetY: '2px',
+          blur: '1px',
+          spread: '0px',
+        },
+      }),
+    ]
+    const expectedOutput = ['0px 2px 1px 0px #000000']
+    expect(input.map(item => shadowToCss.transform(item, {}, {}))).toStrictEqual(expectedOutput)
   })
 })

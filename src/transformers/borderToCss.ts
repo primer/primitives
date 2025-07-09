@@ -1,6 +1,7 @@
 import type {Transform, TransformedToken} from 'style-dictionary/types'
 import {isBorder} from '../filters/isBorder.js'
 import type {BorderTokenValue} from '../types/borderTokenValue.js'
+import {dimensionToString} from './utilities/dimensionToString.js'
 
 /**
  * checks if all required properties exist on shadow token
@@ -13,6 +14,31 @@ const checkForBorderTokenProperties = (border: Record<string, unknown>): border 
   }
   return false
 }
+
+/**
+ * Converts width value to string, handling different formats
+ * @param width - The width value (string, dimension object, or array from dimension/remPxArray)
+ * @returns CSS width string
+ */
+const getWidthString = (width: unknown): string => {
+  // If it's already a string, return as is
+  if (typeof width === 'string') {
+    return width
+  }
+
+  // If it's an array from dimension/remPxArray transformer, use the px value (second element)
+  if (Array.isArray(width) && width.length === 2) {
+    return width[1] // Return the px value for styleLint compatibility
+  }
+
+  // If it's a dimension object, convert to string
+  if (typeof width === 'object' && width !== null && 'value' in width && 'unit' in width) {
+    return dimensionToString(width as {value: number; unit: string})
+  }
+
+  throw new Error(`Invalid width value: ${JSON.stringify(width)}`)
+}
+
 /**
  * @description converts w3c border tokens in css border string
  * @type valueTransformer — [StyleDictionary.ValueTransform](https://github.com/amzn/style-dictionary/blob/main/types/Transform.d.ts)
@@ -36,7 +62,10 @@ export const borderToCss: Transform = {
         `Invalid border token property ${JSON.stringify(value)}. Must be an object with color, width and style properties.`,
       )
     }
+
+    const widthString = getWidthString(value.width)
+
     /* width | style | color */
-    return `${value.width} ${value.style} ${value.color}`
+    return `${widthString} ${value.style} ${value.color}`
   },
 }
