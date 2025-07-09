@@ -7,8 +7,8 @@ import type {RgbaFloat} from '../transformers/utilities/isRgbaFloat.js'
 import {isRgbaFloat} from '../transformers/utilities/isRgbaFloat.js'
 import {getReferences, sortByReference} from 'style-dictionary/utils'
 
-// Type for dimension value that can be either string (legacy) or object (new format)
-type DimensionValue = string | { value: number; unit: string }
+// Type for dimension value in new W3C object format
+type DimensionValue = {value: number; unit: string}
 
 const isReference = (string: string): boolean => /^\{([^\\]*)\}$/g.test(string)
 
@@ -36,29 +36,20 @@ const getFigmaType = (type: string): string => {
 const shadowToVariables = (
   name: string,
   values: Omit<ShadowTokenValue, 'color' | 'offsetX' | 'offsetY' | 'blur' | 'spread'> & {
-    color: string | RgbaFloat;
-    offsetX: DimensionValue;
-    offsetY: DimensionValue;
-    blur: DimensionValue;
-    spread: DimensionValue;
+    color: string | RgbaFloat
+    offsetX: DimensionValue
+    offsetY: DimensionValue
+    blur: DimensionValue
+    spread: DimensionValue
   },
   token: TransformedToken,
 ) => {
   // floatValue
   const floatValue = (property: 'offsetX' | 'offsetY' | 'blur' | 'spread') => {
-    const dimValue = values[property];
-    let numValue: number;
-    
-    if (typeof dimValue === 'string') {
-      // Legacy string format like "1px"
-      numValue = parseInt(dimValue.replace('px', ''));
-    } else if (typeof dimValue === 'object' && dimValue.value !== undefined) {
-      // New object format like {value: 1, unit: "px"}
-      numValue = dimValue.value;
-    } else {
-      throw new Error(`Invalid dimension value for ${property}: ${JSON.stringify(dimValue)}`);
-    }
-    
+    const dimValue = values[property]
+    // New object format like {value: 1, unit: "px"}
+    const numValue = dimValue.value
+
     return {
       name: `${name}/${property}`,
       value: numValue,
@@ -67,7 +58,7 @@ const shadowToVariables = (
       mode,
       collection,
       group,
-    };
+    }
   }
 
   const {attributes} = token
