@@ -5,6 +5,6 @@
 export type StrokeStyleString = 'solid' | 'dashed' | 'dotted' | 'double' | 'groove' | 'ridge' | 'outset' | 'inset'
 export type BorderTokenValue = {
   color: string
-  width: string
+  width: string | {value: number; unit: string} | [string, string] // Support string, dimension object, or array from transformers
   style: StrokeStyleString
 }
