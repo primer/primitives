@@ -1283,7 +1283,7 @@
     },
     borderColor: {
       rest: {
-        $value: '{control.borderColor.emphasis}',
+        $value: '{control.borderColor.rest}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -1292,7 +1292,14 @@
             scopes: ['borderColor'],
           },
           'org.primer.overrides': {
-            dark: '{control.borderColor.emphasis}',
+            dark: '{control.borderColor.rest}',
+            'dark-dimmed-high-contrast': '{control.borderColor.emphasis}',
+            'light-high-contrast': '{control.borderColor.emphasis}',
+            'light-tritanopia-high-contrast': '{control.borderColor.emphasis}',
+            'light-protanopia-deuteranopia-high-contrast': '{control.borderColor.emphasis}',
+            'dark-high-contrast': '{control.borderColor.emphasis}',
+            'dark-tritanopia-high-contrast': '{control.borderColor.emphasis}',
+            'dark-protanopia-deuteranopia-high-contrast': '{control.borderColor.emphasis}',
           },
         },
       },
