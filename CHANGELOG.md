@@ -1,5 +1,13 @@
 # @primer/primitives
 
+## 11.0.1
+
+### Patch Changes
+
+- [#1237](https://github.com/primer/primitives/pull/1237) [`889f65b`](https://github.com/primer/primitives/commit/889f65bc2578191931d6c07e7b5685fbb91f1800) Thanks [@langermank](https://github.com/langermank)! - Add `label` border-color tokens
+
+- [#1237](https://github.com/primer/primitives/pull/1237) [`889f65b`](https://github.com/primer/primitives/commit/889f65bc2578191931d6c07e7b5685fbb91f1800) Thanks [@langermank](https://github.com/langermank)! - Add `label` border-color tokens
+
 ## 11.0.0
 
 ### Major Changes
