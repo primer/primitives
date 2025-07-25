@@ -226,9 +226,6 @@
             web: 'var(--fgColor-open) /* utility class: .color-fg-open */',
           },
         },
-        'org.primer.overrides': {
-
-        },
       },
     },
     attention: {
@@ -295,8 +292,10 @@
           'dark-high-contrast': '{base.color.red.3}',
           'dark-dimmed-high-contrast': '{base.color.red.1}',
           'dark-tritanopia-high-contrast': '{base.color.red.3}',
+          'dark-protanopia-deuteranopia-high-contrast': '{base.color.red.3}',
           'light-high-contrast': '{base.color.red.6}',
           'light-tritanopia-high-contrast': '{base.color.red.6}',
+          'light-protanopia-deuteranopia-high-contrast': '{base.color.red.6}',
         },
       },
     },
@@ -343,7 +342,7 @@
       },
     },
     upsell: {
-      $value: '{base.color.purple.5}',
+      $value: '{fgColor.done}',
       $type: 'color',
       $extensions: {
         'org.primer.figma': {
@@ -354,15 +353,15 @@
             web: 'var(--fgColor-upsell)',
           },
         },
-      'org.primer.overrides': {
-          dark: '{base.color.purple.4}',
-          'dark-high-contrast': '#D3ABFF',
-          'dark-dimmed-high-contrast': '{base.color.purple.1}',
-          'dark-tritanopia-high-contrast': '#D3ABFF',
-          'light-high-contrast': '{base.color.purple.6}',
-          'dark-protanopia-deuteranopia-high-contrast': '#D3ABFF',
-          'light-protanopia-deuteranopia-high-contrast': '{base.color.purple.5}', 
-          'light-tritanopia-high-contrast': '{base.color.purple.6}',
+        'org.primer.overrides': {
+          'light-protanopia-deuteranopia': '{base.color.neutral.9}',
+          'dark-protanopia-deuteranopia': '{base.color.neutral.9}',
+          'dark-protanopia-deuteranopia-high-contrast': '{base.color.neutral.11}',
+          'light-protanopia-deuteranopia-high-contrast': '{base.color.neutral.11}',
+          'light-tritanopia': '{base.color.neutral.9}',
+          'dark-tritanopia': '{base.color.neutral.9}',
+          'dark-tritanopia-high-contrast': '{base.color.neutral.11}',
+          'light-tritanopia-high-contrast': '{base.color.neutral.11}',
         },
       },
     },
