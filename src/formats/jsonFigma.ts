@@ -7,6 +7,9 @@ import type {RgbaFloat} from '../transformers/utilities/isRgbaFloat.js'
 import {isRgbaFloat} from '../transformers/utilities/isRgbaFloat.js'
 import {getReferences, sortByReference} from 'style-dictionary/utils'
 
+// Type for dimension value in new W3C object format
+type DimensionValue = {value: number; unit: string}
+
 const isReference = (string: string): boolean => /^\{([^\\]*)\}$/g.test(string)
 
 const getReference = (dictionary: Dictionary, refString: string, platform: PlatformConfig) => {
@@ -32,19 +35,31 @@ const getFigmaType = (type: string): string => {
 
 const shadowToVariables = (
   name: string,
-  values: Omit<ShadowTokenValue, 'color'> & {color: string | RgbaFloat},
+  values: Omit<ShadowTokenValue, 'color' | 'offsetX' | 'offsetY' | 'blur' | 'spread'> & {
+    color: string | RgbaFloat
+    offsetX: DimensionValue
+    offsetY: DimensionValue
+    blur: DimensionValue
+    spread: DimensionValue
+  },
   token: TransformedToken,
 ) => {
   // floatValue
-  const floatValue = (property: 'offsetX' | 'offsetY' | 'blur' | 'spread') => ({
-    name: `${name}/${property}`,
-    value: parseInt(values[property].replace('px', '')),
-    type: 'FLOAT',
-    scopes: ['EFFECT_FLOAT'],
-    mode,
-    collection,
-    group,
-  })
+  const floatValue = (property: 'offsetX' | 'offsetY' | 'blur' | 'spread') => {
+    const dimValue = values[property]
+    // New object format like {value: 1, unit: "px"}
+    const numValue = dimValue.value
+
+    return {
+      name: `${name}/${property}`,
+      value: numValue,
+      type: 'FLOAT',
+      scopes: ['EFFECT_FLOAT'],
+      mode,
+      collection,
+      group,
+    }
+  }
 
   const {attributes} = token
   const {mode, collection, group} = attributes || {}
