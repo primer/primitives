@@ -594,10 +594,22 @@
           'org.primer.overrides': {
             'light-protanopia-deuteranopia': '{base.color.purple.0}',
             'light-protanopia-deuteranopia-high-contrast': '{base.color.purple.0}',
-            'dark-protanopia-deuteranopia': '{base.color.purple.9}',
-            'dark-protanopia-deuteranopia-high-contrast': '{base.color.purple.9}',
-            'dark-tritanopia-high-contrast': '{base.color.purple.9}',
-            'dark-tritanopia': '{base.color.purple.9}',
+            'dark-protanopia-deuteranopia': {
+              $value: '{base.color.purple.4}',
+              alpha: 0.15,
+            },
+            'dark-protanopia-deuteranopia-high-contrast': {
+              $value: '{base.color.purple.4}',
+              alpha: 0.15,
+            },
+            'dark-tritanopia-high-contrast': {
+              $value: '{base.color.purple.4}',
+              alpha: 0.15,
+            },
+            'dark-tritanopia': {
+              $value: '{base.color.purple.4}',
+              alpha: 0.15,
+            },
             'light-tritanopia': '{base.color.purple.0}',
             'light-tritanopia-high-contrast': '{base.color.purple.0}',
           },
@@ -619,9 +631,9 @@
             'light-protanopia-deuteranopia': '{base.color.purple.5}',
             'light-protanopia-deuteranopia-high-contrast': '{base.color.purple.5}',
             'dark-protanopia-deuteranopia': '{base.color.purple.5}',
-            'dark-protanopia-deuteranopia-high-contrast': '{base.color.purple.5}',
+            'dark-protanopia-deuteranopia-high-contrast': '{base.color.purple.9}',
             'dark-tritanopia': '{base.color.purple.5}',
-            'dark-tritanopia-high-contrast': '{base.color.purple.5}',
+            'dark-tritanopia-high-contrast': '{base.color.purple.9}',
             'light-tritanopia': '{base.color.purple.5}',
             'light-tritanopia-high-contrast': '{base.color.purple.5}',
           },
