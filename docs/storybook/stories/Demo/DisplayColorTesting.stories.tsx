@@ -89,6 +89,18 @@ export const RoleDemo = () => {
             sx={{
               backgroundColor: `var(--bgColor-${role}-muted)`,
               color: `var(--fgColor-${role})`,
+              borderColor: `var(--borderColor-${role}-muted)`,
+            }}
+          />
+        ))}
+      </Box>
+      <Box sx={{gap: 2, display: 'flex'}}>
+        {roles.map(role => (
+          <Token
+            text={role}
+            sx={{
+              backgroundColor: `var(--bgColor-${role}-muted)`,
+              color: `var(--fgColor-${role})`,
               borderColor: `var(--borderColor-${role}-emphasis)`,
             }}
           />
