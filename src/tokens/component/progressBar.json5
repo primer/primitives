@@ -92,7 +92,7 @@
     },
     sponsor: {
       bgColor: {
-        $value: '{bgColor.sponsor.emphasis}',
+        $value: '{bgColor.sponsors.emphasis}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -193,10 +193,10 @@
             scopes: ['bgColor'],
           },
           'org.primer.overrides': {
-            'dark-high-contrast': '{base.color.neutral.9}',
-            'dark-dimmed-high-contrast': '{base.color.neutral.9}',
-            'dark-protanopia-deuteranopia-high-contrast': '{base.color.neutral.9}',
-            'dark-tritanopia-high-contrast': '{base.color.neutral.9}',
+            'dark-high-contrast': '{base.color.neutral.3}',
+            'dark-dimmed-high-contrast': '{base.color.neutral.3}',
+            'dark-protanopia-deuteranopia-high-contrast': '{base.color.neutral.3}',
+            'dark-tritanopia-high-contrast': '{base.color.neutral.3}',
             'light-high-contrast': '{base.color.neutral.3}',
             'light-dimmed-high-contrast': '{base.color.neutral.3}',
             'light-protanopia-deuteranopia-high-contrast': '{base.color.neutral.3}',
