@@ -1,0 +1,71 @@
+{
+  progressBar: {
+    track: {
+      bgColor: {
+        $value: '{borderColor.default}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            group: 'component',
+            scopes: ['bgColor'],
+          },
+          'org.primer.overrides': {
+            'dark-high-contrast': '{base.color.neutral.10}',
+            'dark-dimmed-high-contrast': '{base.color.neutral.10}',
+            'dark-protanopia-deuteranopia-high-contrast': '{base.color.neutral.10}',
+            'dark-tritanopia-high-contrast': '{base.color.neutral.10}',
+            'light-high-contrast': '{base.color.neutral.11}',
+            'light-dimmed-high-contrast': '{base.color.neutral.11}',
+            'light-protanopia-deuteranopia-high-contrast': '{base.color.neutral.11}',
+            'light-tritanopia-high-contrast': '{base.color.neutral.11}',
+          },
+        },
+      },
+      borderColor: {
+        $value: '{base.color.transparent}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            group: 'component',
+            scopes: ['borderColor'],
+          },
+          'org.primer.overrides': {
+            'dark-high-contrast': '{progressBar.track.bgColor}',
+            'dark-dimmed-high-contrast': '{progressBar.track.bgColor}',
+            'dark-protanopia-deuteranopia-high-contrast': '{progressBar.track.bgColor}',
+            'dark-tritanopia-high-contrast': '{progressBar.track.bgColor}',
+            'light-high-contrast': '{progressBar.track.bgColor}',
+            'light-dimmed-high-contrast': '{progressBar.track.bgColor}',
+            'light-protanopia-deuteranopia-high-contrast': '{progressBar.track.bgColor}',
+            'light-tritanopia-high-contrast': '{progressBar.track.bgColor}',
+          },
+        },
+      },
+    },
+    danger: {
+      bgColor: {
+        $value: '{bgColor.danger.emphasis}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            group: 'component',
+            scopes: ['bgColor'],
+          },
+          'org.primer.overrides': {
+            'dark-high-contrast': '{base.color.red.9}',
+            'dark-dimmed-high-contrast': '{base.color.red.9}',
+            'dark-protanopia-deuteranopia-high-contrast': '{base.color.red.9}',
+            'dark-tritanopia-high-contrast': '{base.color.red.9}',
+            'light-high-contrast': '{base.color.red.3}',
+            'light-dimmed-high-contrast': '{base.color.red.3}',
+            'light-protanopia-deuteranopia-high-contrast': '{base.color.red.3}',
+            'light-tritanopia-high-contrast': '{base.color.red.3}',
+          },
+        },
+      },
+    },
+  },
+}
