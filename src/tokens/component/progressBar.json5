@@ -16,7 +16,6 @@
             'dark-protanopia-deuteranopia-high-contrast': '{base.color.neutral.10}',
             'dark-tritanopia-high-contrast': '{base.color.neutral.10}',
             'light-high-contrast': '{base.color.neutral.11}',
-            'light-dimmed-high-contrast': '{base.color.neutral.11}',
             'light-protanopia-deuteranopia-high-contrast': '{base.color.neutral.11}',
             'light-tritanopia-high-contrast': '{base.color.neutral.11}',
           },
@@ -43,8 +42,8 @@
         },
       },
     },
-    danger: {
-      bgColor: {
+    bgColor: {
+      danger: {
         $value: '{bgColor.danger.emphasis}',
         $type: 'color',
         $extensions: {
@@ -64,9 +63,7 @@
           },
         },
       },
-    },
-    severe: {
-      bgColor: {
+      severe: {
         $value: '{bgColor.severe.emphasis}',
         $type: 'color',
         $extensions: {
@@ -86,9 +83,7 @@
           },
         },
       },
-    },
-    sponsor: {
-      bgColor: {
+      sponsor: {
         $value: '{bgColor.sponsors.emphasis}',
         $type: 'color',
         $extensions: {
@@ -108,9 +103,7 @@
           },
         },
       },
-    },
-    done: {
-      bgColor: {
+      done: {
         $value: '{bgColor.done.emphasis}',
         $type: 'color',
         $extensions: {
@@ -130,9 +123,7 @@
           },
         },
       },
-    },
-    accent: {
-      bgColor: {
+      accent: {
         $value: '{bgColor.accent.emphasis}',
         $type: 'color',
         $extensions: {
@@ -152,9 +143,7 @@
           },
         },
       },
-    },
-    success: {
-      bgColor: {
+      success: {
         $value: '{bgColor.success.emphasis}',
         $type: 'color',
         $extensions: {
@@ -174,9 +163,7 @@
           },
         },
       },
-    },
-    neutral: {
-      bgColor: {
+      neutral: {
         $value: '{bgColor.neutral.emphasis}',
         $type: 'color',
         $extensions: {
@@ -196,9 +183,7 @@
           },
         },
       },
-    },
-    attention: {
-      bgColor: {
+      attention: {
         $value: '{bgColor.attention.emphasis}',
         $type: 'color',
         $extensions: {
