@@ -28,25 +28,31 @@ Data is served from the `dist/` folder:
 All available imports:
 
 ```css
+/* size, motion & typography in one file */
+@import '@primer/primitives/primitives.css';
+
+/* motion */
+@import '@primer/primitives/base/motion/motion.css';
+
 /* size/typography */
-@import '@primer/primitives/dist/css/base/size/size.css';
-@import '@primer/primitives/dist/css/base/typography/typography.css';
-@import '@primer/primitives/dist/css/functional/size/border.css';
-@import '@primer/primitives/dist/css/functional/size/breakpoints.css';
-@import '@primer/primitives/dist/css/functional/size/size.css';
-@import '@primer/primitives/dist/css/functional/size/viewport.css';
-@import '@primer/primitives/dist/css/functional/typography/typography.css';
+@import '@primer/primitives/base/typography/typography.css';
+@import '@primer/primitives/base/size/size.css';
+@import '@primer/primitives/functional/size/border.css';
+@import '@primer/primitives/functional/size/breakpoints.css';
+@import '@primer/primitives/functional/size/size.css';
+@import '@primer/primitives/functional/size/viewport.css';
+@import '@primer/primitives/functional/typography/typography.css';
 
 /* color */
-@import '@primer/primitives/dist/css/functional/themes/light.css';
-@import '@primer/primitives/dist/css/functional/themes/light-tritanopia.css';
-@import '@primer/primitives/dist/css/functional/themes/light-high-contrast.css';
-@import '@primer/primitives/dist/css/functional/themes/light-colorblind.css';
-@import '@primer/primitives/dist/css/functional/themes/dark.css';
-@import '@primer/primitives/dist/css/functional/themes/dark-colorblind.css';
-@import '@primer/primitives/dist/css/functional/themes/dark-dimmed.css';
-@import '@primer/primitives/dist/css/functional/themes/dark-high-contrast.css';
-@import '@primer/primitives/dist/css/functional/themes/dark-tritanopia.css';
+@import '@primer/primitives/themes/light.css';
+@import '@primer/primitives/themes/light-tritanopia.css';
+@import '@primer/primitives/themes/light-high-contrast.css';
+@import '@primer/primitives/themes/light-colorblind.css';
+@import '@primer/primitives/themes/dark.css';
+@import '@primer/primitives/themes/dark-colorblind.css';
+@import '@primer/primitives/themes/dark-dimmed.css';
+@import '@primer/primitives/themes/dark-high-contrast.css';
+@import '@primer/primitives/themes/dark-tritanopia.css';
 ```
 
 ## Design token data
