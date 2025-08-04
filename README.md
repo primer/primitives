@@ -32,16 +32,16 @@ All available imports:
 @import '@primer/primitives/primitives.css';
 
 /* motion */
-@import '@primer/primitives/base/motion/motion.css';
+@import '@primer/primitives/base/motion.css';
 
 /* size/typography */
-@import '@primer/primitives/base/typography/typography.css';
-@import '@primer/primitives/base/size/size.css';
-@import '@primer/primitives/functional/size/border.css';
-@import '@primer/primitives/functional/size/breakpoints.css';
-@import '@primer/primitives/functional/size/size.css';
-@import '@primer/primitives/functional/size/viewport.css';
-@import '@primer/primitives/functional/typography/typography.css';
+@import '@primer/primitives/base/typography.css';
+@import '@primer/primitives/base/size.css';
+@import '@primer/primitives/functional/border.css';
+@import '@primer/primitives/functional/breakpoints.css';
+@import '@primer/primitives/functional/size.css';
+@import '@primer/primitives/functional/viewport.css';
+@import '@primer/primitives/functional/typography.css';
 
 /* color */
 @import '@primer/primitives/themes/light.css';
