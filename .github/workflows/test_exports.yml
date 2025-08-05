@@ -44,7 +44,7 @@ jobs:
       - name: Install packed package
         run: |
           cd test-exports
-          PACKAGE_FILE=$(ls ../@primer-primitives-*.tgz | head -1)
+          PACKAGE_FILE=$(ls ../primer-primitives-*.tgz | head -1)
           npm install "$PACKAGE_FILE"
 
       - name: Test main exports
