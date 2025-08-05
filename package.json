@@ -8,6 +8,8 @@
     "src/tokens"
   ],
   "exports": {
+    "./dist/*": "./dist/*",
+    "./src/*": "./src/*",
     "./themes/light.css": "./dist/css/functional/themes/light.css",
     "./themes/light-high-contrast.css": "./dist/css/functional/themes/light-high-contrast.css",
     "./themes/light-colorblind.css": "./dist/css/functional/themes/light-colorblind.css",
