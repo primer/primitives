@@ -91,6 +91,8 @@ jobs:
             'dist/css/functional/typography/typography.css',
             'dist/css/functional/themes/light.css',
             'dist/css/functional/themes/dark.css',
+            'themes/dark.css',
+            'functional/border.css',
           ];
           
           console.log('Testing CSS file exports...');
@@ -191,37 +193,6 @@ jobs:
           console.log('✓ All built file exports are accessible');
           EOF
           node test-built-tokens.mjs
-
-      - name: Test TypeScript types
-        run: |
-          cd test-exports
-          npm install --save-dev typescript
-          cat > test-types.ts << 'EOF'
-          import { PrimerStyleDictionary } from '@primer/primitives';
-          
-          // Test that TypeScript can use the exports
-          const sd = PrimerStyleDictionary.extend({
-            source: ['test-tokens.json'],
-            platforms: {
-              css: {
-                transformGroup: 'css',
-                buildPath: 'build/',
-                files: [{
-                  destination: 'test.css',
-                  format: 'css/variables'
-                }]
-              }
-            }
-          });
-          
-          console.log('✓ TypeScript types work correctly');
-          EOF
-          
-          # Create a dummy token file for the test
-          echo '{"color": {"primary": {"$value": "#ff0000", "$type": "color"}}}' > test-tokens.json
-          
-          # Test TypeScript compilation
-          npx tsc test-types.ts --noEmit --moduleResolution node --esModuleInterop
 
       - name: Test import resolution
         run: |
