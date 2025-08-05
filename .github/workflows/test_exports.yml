@@ -1,0 +1,270 @@
+name: Test Package Exports
+
+on:
+  push:
+    branches:
+      - main
+      - 'changeset-release/**'
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test-exports:
+    name: Test Package Exports
+    runs-on: ubuntu-latest
+    if: ${{ github.repository == 'primer/primitives' }}
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund --ignore-scripts
+
+      - name: Build package
+        run: npm run build
+
+      - name: Pack package for testing
+        run: npm pack
+
+      - name: Create test project
+        run: |
+          mkdir -p test-exports
+          cd test-exports
+          npm init -y
+          # Enable module type for ES imports
+          sed -i 's/"main": "index.js"/"main": "index.js",\n  "type": "module"/' package.json
+
+      - name: Install packed package
+        run: |
+          cd test-exports
+          PACKAGE_FILE=$(ls ../@primer-primitives-*.tgz | head -1)
+          npm install "$PACKAGE_FILE"
+
+      - name: Test main exports
+        run: |
+          cd test-exports
+          cat > test-main.mjs << 'EOF'
+          // Test main export
+          try {
+            const { PrimerStyleDictionary } = await import('@primer/primitives');
+            console.log('✓ Main export works:', typeof PrimerStyleDictionary);
+            
+            if (!PrimerStyleDictionary || typeof PrimerStyleDictionary !== 'object') {
+              throw new Error('PrimerStyleDictionary is not properly exported');
+            }
+            
+            // Test that it has expected methods
+            if (typeof PrimerStyleDictionary.extend !== 'function') {
+              throw new Error('PrimerStyleDictionary.extend is not a function');
+            }
+            
+            console.log('✓ PrimerStyleDictionary has expected API');
+          } catch (error) {
+            console.error('✗ Main export failed:', error.message);
+            process.exit(1);
+          }
+          EOF
+          node test-main.mjs
+
+      - name: Test CSS exports
+        run: |
+          cd test-exports
+          cat > test-css.mjs << 'EOF'
+          import { promises as fs } from 'fs';
+          import { join } from 'path';
+          
+          // List of expected CSS files based on README
+          const expectedCssFiles = [
+            'dist/css/base/size/size.css',
+            'dist/css/base/typography/typography.css',
+            'dist/css/functional/size/border.css',
+            'dist/css/functional/size/breakpoints.css',
+            'dist/css/functional/size/size.css',
+            'dist/css/functional/size/viewport.css',
+            'dist/css/functional/typography/typography.css',
+            'dist/css/functional/themes/light.css',
+            'dist/css/functional/themes/dark.css',
+          ];
+          
+          console.log('Testing CSS file exports...');
+          
+          for (const cssFile of expectedCssFiles) {
+            try {
+              const fullPath = join('node_modules/@primer/primitives', cssFile);
+              const stats = await fs.stat(fullPath);
+              if (stats.isFile() && stats.size > 0) {
+                console.log('✓', cssFile, 'exists and has content');
+              } else {
+                throw new Error('File exists but is empty');
+              }
+            } catch (error) {
+              console.error('✗', cssFile, 'failed:', error.message);
+              process.exit(1);
+            }
+          }
+          
+          console.log('✓ All CSS exports are accessible');
+          EOF
+          node test-css.mjs
+
+      - name: Test JSON token exports
+        run: |
+          cd test-exports
+          cat > test-tokens.mjs << 'EOF'
+          import { promises as fs } from 'fs';
+          import { join } from 'path';
+          
+          // Test some expected token files
+          const expectedTokenFiles = [
+            'src/tokens/base/color/light/light.json5',
+            'src/tokens/base/color/dark/dark.json5',
+            'src/tokens/base/size/size.json5',
+            'src/tokens/functional/size/size.json5',
+            'src/tokens/functional/color/bgColor.json5',
+          ];
+          
+          console.log('Testing token file exports...');
+          
+          for (const tokenFile of expectedTokenFiles) {
+            try {
+              const fullPath = join('node_modules/@primer/primitives', tokenFile);
+              const stats = await fs.stat(fullPath);
+              if (stats.isFile() && stats.size > 0) {
+                console.log('✓', tokenFile, 'exists and has content');
+              } else {
+                throw new Error('File exists but is empty');
+              }
+            } catch (error) {
+              console.error('✗', tokenFile, 'failed:', error.message);
+              process.exit(1);
+            }
+          }
+          
+          console.log('✓ All token exports are accessible');
+          EOF
+          node test-tokens.mjs
+
+      - name: Test built JSON exports
+        run: |
+          cd test-exports
+          cat > test-built-tokens.mjs << 'EOF'
+          import { promises as fs } from 'fs';
+          import { join } from 'path';
+          
+          // Test some expected built token files
+          const expectedBuiltFiles = [
+            'dist/docs/functional-colors.json',
+            'dist/fallbacks/color-fallbacks.json',
+          ];
+          
+          console.log('Testing built token file exports...');
+          
+          for (const builtFile of expectedBuiltFiles) {
+            try {
+              const fullPath = join('node_modules/@primer/primitives', builtFile);
+              const stats = await fs.stat(fullPath);
+              if (stats.isFile() && stats.size > 0) {
+                console.log('✓', builtFile, 'exists and has content');
+                
+                // For JSON files, verify they're valid JSON
+                if (builtFile.endsWith('.json')) {
+                  const content = await fs.readFile(fullPath, 'utf8');
+                  JSON.parse(content); // Will throw if invalid
+                  console.log('✓', builtFile, 'contains valid JSON');
+                }
+              } else {
+                throw new Error('File exists but is empty');
+              }
+            } catch (error) {
+              console.error('✗', builtFile, 'failed:', error.message);
+              process.exit(1);
+            }
+          }
+          
+          console.log('✓ All built file exports are accessible');
+          EOF
+          node test-built-tokens.mjs
+
+      - name: Test TypeScript types
+        run: |
+          cd test-exports
+          npm install --save-dev typescript
+          cat > test-types.ts << 'EOF'
+          import { PrimerStyleDictionary } from '@primer/primitives';
+          
+          // Test that TypeScript can use the exports
+          const sd = PrimerStyleDictionary.extend({
+            source: ['test-tokens.json'],
+            platforms: {
+              css: {
+                transformGroup: 'css',
+                buildPath: 'build/',
+                files: [{
+                  destination: 'test.css',
+                  format: 'css/variables'
+                }]
+              }
+            }
+          });
+          
+          console.log('✓ TypeScript types work correctly');
+          EOF
+          
+          # Create a dummy token file for the test
+          echo '{"color": {"primary": {"$value": "#ff0000", "$type": "color"}}}' > test-tokens.json
+          
+          # Test TypeScript compilation
+          npx tsc test-types.ts --noEmit --moduleResolution node --esModuleInterop
+
+      - name: Test import resolution
+        run: |
+          cd test-exports
+          cat > test-import-resolution.mjs << 'EOF'
+          // Test various import patterns that users might use
+          console.log('Testing different import patterns...');
+          
+          try {
+            // Main export
+            const main = await import('@primer/primitives');
+            console.log('✓ Default import works');
+            
+            // Direct file import
+            const cssPath = '@primer/primitives/dist/css/functional/themes/light.css';
+            // We can't actually import CSS in Node, but we can check the path resolves
+            const { resolve } = await import('module');
+            const resolved = resolve(cssPath, import.meta.url);
+            console.log('✓ CSS file path resolves');
+            
+            // Token file import
+            const tokenPath = '@primer/primitives/src/tokens/base/color/light/light.json5';
+            // Check if the path would resolve
+            const resolvedToken = resolve(tokenPath, import.meta.url);
+            console.log('✓ Token file path resolves');
+            
+          } catch (error) {
+            console.error('✗ Import resolution failed:', error.message);
+            process.exit(1);
+          }
+          
+          console.log('✓ All import patterns work correctly');
+          EOF
+          node test-import-resolution.mjs
+
+      - name: Summary
+        run: |
+          echo "🎉 All package exports are working correctly!"
+          echo ""
+          echo "Tested exports:"
+          echo "- Main JavaScript/TypeScript API (PrimerStyleDictionary)"
+          echo "- CSS variable files"
+          echo "- Source token files"
+          echo "- Built token files"
+          echo "- TypeScript type definitions"
+          echo "- Import path resolution"
