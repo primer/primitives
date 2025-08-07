@@ -6,6 +6,7 @@ import {
   colorToRgbaFloat,
   cubicBezierToCss,
   dimensionToRem,
+  dimensionToPixel,
   dimensionToPixelUnitless,
   durationToCss,
   figmaAttributes,
@@ -122,6 +123,8 @@ PrimerStyleDictionary.registerTransform(floatToPixel)
 PrimerStyleDictionary.registerTransform(floatToPixelUnitless)
 
 PrimerStyleDictionary.registerTransform(dimensionToRem)
+
+PrimerStyleDictionary.registerTransform(dimensionToPixel)
 
 PrimerStyleDictionary.registerTransform(dimensionToRemPxArray)
 

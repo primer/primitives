@@ -9,20 +9,6 @@ import type {Config, PlatformConfig, Transform, TransformedToken} from 'style-di
 const getBasePxFontSize = (options?: PlatformConfig): number => (options && options.basePxFontSize) || 16
 
 /**
- * @description checks if token value has a specific unit
- * @param value token value
- * @param unit unit string like px or value
- * @returns boolean
- */
-const hasUnit = (value: string | number, unit: string): boolean => {
-  if (typeof value === 'number') {
-    return false
-  }
-
-  return value.indexOf(unit) > -1
-}
-
-/**
  * @description converts dimension tokens value to `rem`, ignores `em` as they are relative to the font size of the parent element
  * @type value transformer — [StyleDictionary.ValueTransform](https://github.com/amzn/style-dictionary/blob/main/types/Transform.d.ts)
  * @matcher matches all tokens of $type `dimension`
@@ -36,22 +22,31 @@ export const dimensionToRem: Transform = {
   transform: (token: TransformedToken, config: PlatformConfig, options: Config) => {
     const valueProp = options.usesDtcg ? '$value' : 'value'
     const baseFont = getBasePxFontSize(config)
-    const floatVal = parseFloat(token[valueProp])
+    const dimensionValue = token[valueProp] as {value: number; unit: string}
 
-    if (isNaN(floatVal)) {
+    if (typeof dimensionValue !== 'object' || !('value' in dimensionValue) || !('unit' in dimensionValue)) {
       throw new Error(
-        `Invalid dimension token: '${token.name}: ${token[valueProp]}' is not valid and cannot be transform to 'rem' \n`,
+        `Invalid dimension token: '${token.name}: ${JSON.stringify(token[valueProp])}' must be an object with value and unit properties \n`,
       )
     }
 
-    if (floatVal === 0) {
+    const {value, unit} = dimensionValue
+
+    if (value === 0) {
       return '0'
     }
 
-    if (hasUnit(token[valueProp], 'rem') || hasUnit(token[valueProp], 'em')) {
-      return token[valueProp]
+    if (unit === 'rem' || unit === 'em') {
+      return `${value}${unit}`
     }
 
-    return `${floatVal / baseFont}rem`
+    if (unit === 'px') {
+      // Convert px to rem
+      return `${value / baseFont}rem`
+    }
+
+    throw new Error(
+      `Invalid dimension token: '${token.name}: ${JSON.stringify(token[valueProp])}' has unsupported unit '${unit}' \n`,
+    )
   },
 }

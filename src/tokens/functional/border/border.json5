@@ -4,7 +4,7 @@
       $value: {
         color: '{focus.outlineColor}',
         style: 'solid',
-        width: '2px',
+        width: { value: 2, unit: 'px' },
       },
       $type: 'border',
     },
