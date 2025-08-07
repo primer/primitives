@@ -65,14 +65,19 @@ if (getFlag('--silent') === null) {
     // eslint-disable-next-line no-console
     console.log(`\u001b[36;1m\u001b[1m${fail.fileName}\u001b[0m`)
 
-    for (const path of Object.keys(fail.errorsByPath)) {
+    for (const mainPath of Object.keys(fail.errorsByPath)) {
       // eslint-disable-next-line no-console
-      console.log(`\nPath: \u001b[34;1m\u001b[1m${path}\u001b[0m`)
+      console.log(`\nPath: \u001b[34;1m\u001b[1m${mainPath}\u001b[0m`)
       // eslint-disable-next-line no-console
       console.log(
-        fail.errorsByPath[path]
-          .map(({message}) =>
-            message.replace(/\*\*(.*?)\*\*/g, '- \u001b[31;1m\u001b[1m$1\u001b[0m').replace(/\n(?!-)/g, '\n  ↳ '),
+        fail.errorsByPath[mainPath]
+          .map(
+            ({message, code, errors, ...item}) =>
+              `${message.replace(/\*\*(.*?)\*\*/g, '- \u001b[31;1m\u001b[1m$1\u001b[0m').replace(/\n(?!-)/g, '\n  ↳ ')}, code: ${code}, path: ${item.path}, errors:\n ${errors
+                .map(error => {
+                  return `- ${error.issues[0].code}: ${error.issues[0].message}`
+                })
+                .join('\n')}`,
           )
           .join('\n'),
         '\n',

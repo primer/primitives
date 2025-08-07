@@ -20,46 +20,52 @@ const validFigmaToken = async (token: TransformedToken, options: Config) => {
   return validTypes.includes(token.$type)
 }
 
-export const figma: PlatformInitializer = (outputFile, prefix, buildPath, options): PlatformConfig => ({
-  prefix,
-  buildPath,
-  preprocessors: ['themeOverrides'],
-  transforms: [
-    'color/rgbaFloat',
-    'fontFamily/figma',
-    'float/pixelUnitless',
-    'dimension/pixelUnitless',
-    // 'border/figma',
-    // 'typography/figma',
-    'fontWeight/number',
-    'figma/attributes',
-    'name/pathToFigma',
-  ],
-  options: {
-    basePxFontSize: 16,
-    fontFamilies: {
-      'fontStack/system': 'SF Pro Text',
-      'fontStack/sansSerif': 'SF Pro Text',
-      'fontStack/sansSerifDisplay': 'SF Pro Display',
-      'fontStack/monospace': 'SF Mono',
-    },
-    // should this object be spread here?
-    ...options,
-    themeOverrides: {
-      theme: options?.theme,
-    },
-  },
-  files: [
-    {
-      destination: outputFile,
-      filter: (token: TransformedToken, config: Config) => {
-        return validFigmaToken(token, config)
+export const figma: PlatformInitializer = (outputFile, prefix, buildPath, options = {}): PlatformConfig => {
+  const {theme} = options
+  const figmaTheme = (theme?.[0] || '').replaceAll('-', ' ')
+
+  return {
+    prefix,
+    buildPath,
+    preprocessors: ['themeOverrides'],
+    transforms: [
+      'color/rgbaFloat',
+      'fontFamily/figma',
+      'float/pixelUnitless',
+      'dimension/pixelUnitless',
+      // 'border/figma',
+      // 'typography/figma',
+      'fontWeight/number',
+      'figma/attributes',
+      'name/pathToFigma',
+    ],
+    options: {
+      basePxFontSize: 16,
+      fontFamilies: {
+        system: 'SF Pro Text',
+        sansSerif: 'SF Pro Text',
+        sansSerifDisplay: 'SF Pro Display',
+        monospace: 'SF Mono',
       },
-      format: `json/figma`,
-      options: {
-        outputReferences: true,
-        theme: options?.theme,
+      // should this object be spread here?
+      ...options,
+      theme: figmaTheme,
+      themeOverrides: {
+        theme: options.theme,
       },
     },
-  ],
-})
+    files: [
+      {
+        destination: outputFile,
+        filter: (token: TransformedToken, config: Config) => {
+          return validFigmaToken(token, config)
+        },
+        format: `json/figma`,
+        options: {
+          outputReferences: true,
+          theme: figmaTheme,
+        },
+      },
+    ],
+  }
+}

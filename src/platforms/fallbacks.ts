@@ -8,7 +8,6 @@ export const fallbacks: PlatformInitializer = (outputFile, prefix, buildPath): P
   transforms: [
     'name/pathToKebabCase',
     'color/hex',
-    'color/hexMix',
     'dimension/rem',
     'shadow/css',
     'border/css',

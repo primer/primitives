@@ -15,7 +15,6 @@ describe('PrimerStyleDictionary', async () => {
           transforms: [
             'name/pathToKebabCase',
             'color/hex',
-            'color/hexMix',
             'dimension/rem',
             'duration/css',
             'shadow/css',
@@ -40,7 +39,6 @@ describe('PrimerStyleDictionary', async () => {
           usesDtcg: true,
           transforms: [
             'color/hex',
-            'color/hexMix',
             'dimension/rem',
             'shadow/css',
             'border/css',
@@ -65,7 +63,6 @@ describe('PrimerStyleDictionary', async () => {
           buildPath: `${buildPath}/js/`,
           transforms: [
             'color/hex',
-            'color/hexMix',
             'dimension/rem',
             'shadow/css',
             'border/css',
@@ -112,7 +109,6 @@ describe('PrimerStyleDictionary', async () => {
           buildPath: `${buildPath}/json/`,
           transforms: [
             'color/hex',
-            'color/hexMix',
             'dimension/rem',
             'shadow/css',
             'border/css',
@@ -162,7 +158,7 @@ describe('PrimerStyleDictionary', async () => {
   it('runs css/advanced format', () => {
     const output = fs.readFileSync(`${buildPath}/css/advanced.css`, 'utf8')
     const expectedOutput = `:root {
-  --PREFIX-base-color-aquaBlue-500: #2c29ff; /* The primary color for interactive elements. */
+  --PREFIX-base-color-aquaBlue-500: #2c29ff; /** The primary color for interactive elements. */
   --PREFIX-fgColor-link-rest-01: #2c29ff;
 }
 `

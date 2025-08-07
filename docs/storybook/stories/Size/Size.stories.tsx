@@ -2,7 +2,7 @@ import React from 'react'
 // eslint-disable-next-line import/extensions
 import sizeTokens from '../../../../dist/docs/base/size/size.json'
 import {SizeTokenSwatch} from '../StorybookComponents/SizeTokenSwatch/SizeTokenSwatch'
-import {DataTable, Table} from '@primer/react/drafts'
+import {DataTable, Table} from '@primer/react/experimental'
 import {InlineCode} from '../StorybookComponents/InlineCode/InlineCode'
 import {getTokensByName} from '../utilities/getTokensByName'
 
@@ -15,12 +15,18 @@ export default {
 }
 
 export const Base = () => {
-  const data = getTokensByName(sizeTokens, 'base').map(token => {
-    return {
-      id: token.name,
-      ...token,
-    }
-  })
+  const data = getTokensByName(sizeTokens, 'base')
+    .map(token => {
+      return {
+        id: token.name,
+        ...token,
+      }
+    })
+    .sort((a, b) => {
+      const numA = parseInt(a.name.split('-').pop() || '0', 10)
+      const numB = parseInt(b.name.split('-').pop() || '0', 10)
+      return numA - numB
+    })
 
   return (
     <Table.Container>

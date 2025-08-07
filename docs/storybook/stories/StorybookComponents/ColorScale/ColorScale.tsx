@@ -1,7 +1,6 @@
 import React from 'react'
 import {toHex, readableColor} from 'color2k'
 import './ColorScale.css'
-import {useTheme} from '@primer/react/lib-esm/ThemeProvider'
 
 export type ColorScaleProps = {
   color?: string
@@ -9,7 +8,6 @@ export type ColorScaleProps = {
 }
 
 export const ColorScale = ({color, border}: ColorScaleProps) => {
-  const {resolvedColorScheme: theme} = useTheme()
   const ref = React.useRef<HTMLDivElement | null>(null)
   const [hex, setHex] = React.useState<string | null>(null)
   const [textColor, setTextColor] = React.useState<string>('currentColor')
@@ -25,7 +23,7 @@ export const ColorScale = ({color, border}: ColorScaleProps) => {
       setHex(asHex)
       setTextColor(asHex ? readableColor(asHex) : 'currentColor')
     }, 0)
-  }, [color, theme])
+  }, [color])
 
   return (
     <div

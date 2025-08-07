@@ -3,7 +3,6 @@ import {
   borderToCss,
   colorToRgbAlpha,
   colorToHex,
-  colorToHexMix,
   colorToRgbaFloat,
   cubicBezierToCss,
   dimensionToRem,
@@ -13,6 +12,7 @@ import {
   fontFamilyToCss,
   fontFamilyToFigma,
   fontWeightToNumber,
+  gradientToCss,
   jsonDeprecated,
   namePathToDotNotation,
   namePathToCamelCase,
@@ -25,6 +25,7 @@ import {
   dimensionToRemPxArray,
   floatToPixel,
   floatToPixelUnitless,
+  transitionToCss,
 } from './transformers/index.js'
 import {
   javascriptCommonJs,
@@ -38,6 +39,7 @@ import {
   jsonFigma,
 } from './formats/index.js'
 import {themeOverrides} from './preprocessors/themeOverrides.js'
+import {colorAlphaToCss} from './transformers/colorAlphaToCss.js'
 
 /**
  * @name {@link PrimerStyleDictionary}
@@ -45,7 +47,12 @@ import {themeOverrides} from './preprocessors/themeOverrides.js'
  * @formats [javascript/esm](https://github.com/primer/primitives/blob/main/config/formats/javascript-esm.ts), [javascript/commonJs](https://github.com/primer/primitives/blob/main/config/formats/javascript-commonJs.ts), [typescript/export-definition](https://github.com/primer/primitives/blob/main/config/formats/typescript-export-defition.ts)
  * @transformers [color/rgbAlpha](https://github.com/primer/primitives/blob/main/config/tranformers/color-to-rgb-alpha.ts), [color/hexAlpha](https://github.com/primer/primitives/blob/main/config/tranformers/color-to-hex-alpha.ts), [color/hex](https://github.com/primer/primitives/blob/main/config/tranformers/color-to-hex6.ts), [json/deprecated](https://github.com/primer/primitives/blob/main/config/tranformers/json-deprecated.ts), [name/pathToDotNotation](https://github.com/primer/primitives/blob/main/config/tranformers/name-path-to-dot-notation.ts)
  */
-export const PrimerStyleDictionary: StyleDictionary = new StyleDictionary()
+export const PrimerStyleDictionary: StyleDictionary = new StyleDictionary({
+  // these are the defaults
+  log: {
+    verbosity: 'default', // 'default' | 'silent' | 'verbose'
+  },
+})
 
 /**
  * Formats
@@ -100,11 +107,11 @@ PrimerStyleDictionary.registerFormat({
  * Transformers
  *
  */
+PrimerStyleDictionary.registerTransform(colorAlphaToCss)
+
 PrimerStyleDictionary.registerTransform(colorToRgbAlpha)
 
 PrimerStyleDictionary.registerTransform(colorToRgbaFloat)
-
-PrimerStyleDictionary.registerTransform(colorToHexMix)
 
 PrimerStyleDictionary.registerTransform(colorToHex)
 
@@ -146,10 +153,14 @@ PrimerStyleDictionary.registerTransform(borderToCss)
 
 PrimerStyleDictionary.registerTransform(typographyToCss)
 
+PrimerStyleDictionary.registerTransform(transitionToCss)
+
 PrimerStyleDictionary.registerTransform(fontWeightToNumber)
 
 PrimerStyleDictionary.registerTransform(fontFamilyToCss)
 
 PrimerStyleDictionary.registerTransform(fontFamilyToFigma)
+
+PrimerStyleDictionary.registerTransform(gradientToCss)
 
 PrimerStyleDictionary.registerPreprocessor(themeOverrides)

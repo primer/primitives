@@ -1,5 +1,5 @@
 import {type Page, test, expect} from '@playwright/test'
-// eslint-disable-next-line importPlugin/no-unresolved
+
 import data from '../docs/storybook/storybook-static/stories.json' assert {type: 'json'}
 import colorData from '../dist/docs/functional/themes/light.json' assert {type: 'json'}
 
@@ -37,10 +37,14 @@ const themes = [
   'light',
   'light_colorblind',
   'light_tritanopia',
+  'light_colorblind_high_contrast',
+  'light_tritanopia_high_contrast',
   'light_high_contrast',
   'dark',
   'dark_colorblind',
   'dark_tritanopia',
+  'dark_colorblind_high_contrast',
+  'dark_tritanopia_high_contrast',
   'dark_high_contrast',
 ]
 

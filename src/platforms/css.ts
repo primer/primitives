@@ -1,6 +1,7 @@
 import {isFromFile, isSource} from '../filters/index.js'
 import type {PlatformInitializer} from '../types/platformInitializer.js'
 import type {PlatformConfig, TransformedToken} from 'style-dictionary/types'
+import {outputReferencesTransformed, outputReferencesFilter} from 'style-dictionary/utils'
 
 const getCssSelectors = (outputFile: string) => {
   // check for dark in the beginning of the output filename
@@ -15,7 +16,8 @@ const getCssSelectors = (outputFile: string) => {
     },
     {
       query: '@media (prefers-color-scheme: dark)',
-      selector: `[data-color-mode="auto"][data-dark-theme="${themeName}"], [data-color-mode="auto"][data-dark-theme="${themeName}"] ::backdrop`,
+      // [data-color-mode] here is duplicated to increase the specificity so that light mode can't override it when prefers-color-scheme: dark is enabled
+      selector: `[data-color-mode][data-color-mode="auto"][data-dark-theme="${themeName}"], [data-color-mode][data-color-mode="auto"][data-dark-theme="${themeName}"] ::backdrop`,
     },
   ]
 }
@@ -28,15 +30,16 @@ export const css: PlatformInitializer = (outputFile, prefix, buildPath, options)
     transforms: [
       'name/pathToKebabCase',
       'color/hex',
-      'color/hexMix',
       'cubicBezier/css',
       'dimension/rem',
       'duration/css',
       'shadow/css',
       'border/css',
       'typography/css',
+      'transition/css',
       'fontFamily/css',
       'fontWeight/number',
+      'gradient/css',
     ],
     options: {
       basePxFontSize: 16,
@@ -53,12 +56,13 @@ export const css: PlatformInitializer = (outputFile, prefix, buildPath, options)
           options?.themed === true &&
           token.$type !== 'custom-viewportRange' &&
           !isFromFile(token, [
-            'src/tokens/functional/size/size-coarse.json',
-            'src/tokens/functional/size/size-fine.json',
+            'src/tokens/functional/size/size-coarse.json5',
+            'src/tokens/functional/size/size-fine.json5',
           ]),
         options: {
           showFileHeader: false,
-          outputReferences: false,
+          outputReferences: (token, platformOptions) =>
+            outputReferencesFilter(token, platformOptions) && outputReferencesTransformed(token, platformOptions),
           descriptions: false,
           queries: getCssSelectors(outputFile),
           ...options?.options,
@@ -72,11 +76,13 @@ export const css: PlatformInitializer = (outputFile, prefix, buildPath, options)
           options?.themed !== true &&
           token.$type !== 'custom-viewportRange' &&
           !isFromFile(token, [
-            'src/tokens/functional/size/size-coarse.json',
-            'src/tokens/functional/size/size-fine.json',
+            'src/tokens/functional/size/size-coarse.json5',
+            'src/tokens/functional/size/size-fine.json5',
           ]),
         options: {
           showFileHeader: false,
+          outputReferences: (token, platformOptions) =>
+            outputReferencesFilter(token, platformOptions) && outputReferencesTransformed(token, platformOptions),
           descriptions: false,
           ...options?.options,
         },
@@ -87,6 +93,8 @@ export const css: PlatformInitializer = (outputFile, prefix, buildPath, options)
         filter: token => isSource(token) && options?.themed !== true && token.$type === 'custom-viewportRange',
         options: {
           showFileHeader: false,
+          outputReferences: (token, platformOptions) =>
+            outputReferencesFilter(token, platformOptions) && outputReferencesTransformed(token, platformOptions),
         },
       },
       {
@@ -95,11 +103,13 @@ export const css: PlatformInitializer = (outputFile, prefix, buildPath, options)
         filter: token =>
           isSource(token) &&
           isFromFile(token, [
-            'src/tokens/functional/size/size-coarse.json',
-            'src/tokens/functional/size/size-fine.json',
+            'src/tokens/functional/size/size-coarse.json5',
+            'src/tokens/functional/size/size-fine.json5',
           ]),
         options: {
           descriptions: false,
+          outputReferences: (token, platformOptions) =>
+            outputReferencesFilter(token, platformOptions) && outputReferencesTransformed(token, platformOptions),
           showFileHeader: false,
           queries: [
             {

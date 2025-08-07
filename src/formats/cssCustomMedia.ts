@@ -1,6 +1,6 @@
 import {format} from 'prettier'
 import type {FormatFn, FormatFnArguments} from 'style-dictionary/types'
-import {fileHeader} from 'style-dictionary/utils'
+import {fileHeader, sortByName} from 'style-dictionary/utils'
 
 /**
  * @description Converts `StyleDictionary.dictionary.tokens` to css with @custom-media
@@ -11,7 +11,7 @@ export const cssCustomMedia: FormatFn = async ({dictionary, options: _options, f
   // add file header
   const output = [await fileHeader({file})]
   // add single theme css
-  dictionary.allTokens.map(({name, $value}) => {
+  dictionary.allTokens.sort(sortByName).map(({name, $value}) => {
     output.push(`@custom-media --${name} ${$value};`)
   })
   // return prettified

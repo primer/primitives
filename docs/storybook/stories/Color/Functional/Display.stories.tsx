@@ -2,9 +2,11 @@ import React from 'react'
 // eslint-disable-next-line import/extensions
 import colorTokens from '../../../../../dist/docs/functional/themes/light.json'
 import {ColorTokenSwatch} from '../../StorybookComponents/ColorTokenSwatch/ColorTokenSwatch'
-import {DataTable, Table} from '@primer/react/drafts'
+import {Banner, DataTable, Table} from '@primer/react/experimental'
 import {InlineCode} from '../../StorybookComponents/InlineCode/InlineCode'
 import {getTokensByName} from '../../utilities/getTokensByName'
+import {Box} from '@primer/react'
+import {ColorScaleByName} from '../../StorybookComponents/ColorScale/ColorScaleByName'
 
 export default {
   title: 'Color/Alpha/Display',
@@ -158,5 +160,39 @@ export const Border = () => {
         ]}
       />
     </Table.Container>
+  )
+}
+
+export const Scales = () => {
+  const data = [
+    ...new Set(
+      getTokensByName(colorTokens, 'display')
+        .map(token => {
+          return {
+            id: token.name,
+            ...token,
+          }
+        })
+        .filter(token => token.name.includes('scale'))
+        .map(token => token.path.at(1)),
+    ),
+  ]
+
+  return (
+    <Box>
+      <h1 className="sr-only">Scales</h1>
+      <Banner title="Display scales are designed for very limited use cases only." variant="warning">
+        If you feel like they make sense in your case, please reach out to the Primer team.
+      </Banner>
+      <div className="ColorScale--grid" style={{paddingTop: '1rem'}}>
+        {data.map(token => {
+          return (
+            <div key={token}>
+              <ColorScaleByName colorBaseVariable={`display-${token}-scale`} steps={9} />
+            </div>
+          )
+        })}
+      </div>
+    </Box>
   )
 }

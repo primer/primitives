@@ -1,5 +1,144 @@
 # @primer/primitives
 
+## 11.1.0
+
+### Minor Changes
+
+- [#1242](https://github.com/primer/primitives/pull/1242) [`846d34b`](https://github.com/primer/primitives/commit/846d34bb578ad1d09556dd9d7e511cab70eaaa54) Thanks [@langermank](https://github.com/langermank)! - Add progress bar tokens
+
+- [#1239](https://github.com/primer/primitives/pull/1239) [`101f812`](https://github.com/primer/primitives/commit/101f81288b8612889f9c26d9bfbd72b09312d81f) Thanks [@langermank](https://github.com/langermank)! - Update `control` knob border-color values
+
+### Patch Changes
+
+- [#1237](https://github.com/primer/primitives/pull/1237) [`889f65b`](https://github.com/primer/primitives/commit/889f65bc2578191931d6c07e7b5685fbb91f1800) Thanks [@langermank](https://github.com/langermank)! - Add `label` border-color tokens
+
+- [#1237](https://github.com/primer/primitives/pull/1237) [`889f65b`](https://github.com/primer/primitives/commit/889f65bc2578191931d6c07e7b5685fbb91f1800) Thanks [@langermank](https://github.com/langermank)! - Add `label` border-color tokens
+
+## 11.0.0
+
+### Major Changes
+
+- [#1190](https://github.com/primer/primitives/pull/1190) [`0b1e88e`](https://github.com/primer/primitives/commit/0b1e88e20ef02c19d30c868ae71bede9ce8f13a9) Thanks [@langermank](https://github.com/langermank)! - - Adds new high contrast themes for light/dark tritanopia, colorblind, and dark dimmed (soft dark) themes
+
+### Minor Changes
+
+- [#1220](https://github.com/primer/primitives/pull/1220) [`078ffd6`](https://github.com/primer/primitives/commit/078ffd6637a1d2f97b9ed5543f20e5f69ccf618b) Thanks [@langermank](https://github.com/langermank)! - Change `overlay` background color in `dark` themes
+
+### Patch Changes
+
+- [#1234](https://github.com/primer/primitives/pull/1234) [`efaa46c`](https://github.com/primer/primitives/commit/efaa46c75cdb608a9012c34d7ba09c14b356ee37) Thanks [@langermank](https://github.com/langermank)! - - Fix disabled fg color in dark
+  - Increase opacity of transparent color selected state in dark
+
+## 10.7.0
+
+### Minor Changes
+
+- [#1218](https://github.com/primer/primitives/pull/1218) [`63e86dc`](https://github.com/primer/primitives/commit/63e86dc7ce0c19ab830cd9c9909c0b0ac0279806) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Adding scale to display color output
+
+### Patch Changes
+
+- [#1214](https://github.com/primer/primitives/pull/1214) [`f002fca`](https://github.com/primer/primitives/commit/f002fcaf50d75ad8ee88ee38822957ecb6fe5012) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - removed deleted files from themes.config.ts
+
+## 10.6.0
+
+### Minor Changes
+
+- [#1201](https://github.com/primer/primitives/pull/1201) [`2018f15`](https://github.com/primer/primitives/commit/2018f1551fd74d62c062eae0b549bca3f732e634) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Remove gradients from data colors
+
+### Patch Changes
+
+- [#1200](https://github.com/primer/primitives/pull/1200) [`72cf27d`](https://github.com/primer/primitives/commit/72cf27d4624485d497267fb4e7b2d3279c273221) Thanks [@langermank](https://github.com/langermank)! - Bug fixes:
+  - High contrast danger color on hover
+  - High contrast translucent border
+  - High contrast danger button hover border-color
+
+## 10.5.0
+
+### Minor Changes
+
+- [#1193](https://github.com/primer/primitives/pull/1193) [`87bc71e`](https://github.com/primer/primitives/commit/87bc71e30167261310a2581432f89a9d5e49032f) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Adding data gradients
+
+### Patch Changes
+
+- [#1197](https://github.com/primer/primitives/pull/1197) [`f51b006`](https://github.com/primer/primitives/commit/f51b0060185a97974d5f6937fa57a90b30376dab) Thanks [@langermank](https://github.com/langermank)! - Use default colors for high contrast contribution graph
+
+## 10.4.0
+
+### Minor Changes
+
+- [#1166](https://github.com/primer/primitives/pull/1166) [`7256edd`](https://github.com/primer/primitives/commit/7256eddda15c974bfc55ecf3c1f7a3a6969daf6d) Thanks [@langermank](https://github.com/langermank)! - Add contribution graph tokens
+
+### Patch Changes
+
+- [#1186](https://github.com/primer/primitives/pull/1186) [`277ed66`](https://github.com/primer/primitives/commit/277ed66a1c134d9232d2dd66fed2550b2788ee0d) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Removed unused motion tokens
+
+- [#1180](https://github.com/primer/primitives/pull/1180) [`ec128aa`](https://github.com/primer/primitives/commit/ec128aa811326c31b22656b888f032a674433777) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Fix bug where dark modes had --button-outline-borderColor-selected instead of --button-outline-borderColor-active token
+
+- [#1191](https://github.com/primer/primitives/pull/1191) [`7ae4324`](https://github.com/primer/primitives/commit/7ae4324a90a02af3b6747532cf860b0fbae8f335) Thanks [@langermank](https://github.com/langermank)! - Add contribution graph stories
+
+- [#1187](https://github.com/primer/primitives/pull/1187) [`4266174`](https://github.com/primer/primitives/commit/4266174d2c67759923282327ad7c161a7caf2db1) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Update resting shadow values
+
+- [#1172](https://github.com/primer/primitives/pull/1172) [`a2ba4e4`](https://github.com/primer/primitives/commit/a2ba4e44b5e4915550bb9624e13bfa287c09b1a6) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Adding 50ms duration token
+
+## 10.3.4
+
+### Patch Changes
+
+- [#1154](https://github.com/primer/primitives/pull/1154) [`f86174b`](https://github.com/primer/primitives/commit/f86174b05a516b8d46b0f2ef5258c72b53ea6e82) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Fix borderColor-closed-muted in dark-protanopia-deuteranopia and revert protanopia-deuteranopia open color to be orange again
+
+  - `borderColor-closed-muted` in dark-protanopia-deuteranopia is now `gray` instead of `orange`
+  - `borderColor-open-[muted|emphasis]` in protanopia-deuteranopia is now `orange` again (instead of `blue`)
+  - `fgColor-open` in protanopia-deuteranopia is now `orange` again (instead of `blue`)
+  - `bgColor-open-[muted|emphasis]` in protanopia-deuteranopia is now `orange` again (instead of `blue`)
+
+## 10.3.3
+
+### Patch Changes
+
+- [#1151](https://github.com/primer/primitives/pull/1151) [`f98e52f`](https://github.com/primer/primitives/commit/f98e52f057fac3da10eb7d689a291fb3f6f60ae6) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Update easing curves
+
+## 10.3.2
+
+### Patch Changes
+
+- [#1149](https://github.com/primer/primitives/pull/1149) [`24aa6fc`](https://github.com/primer/primitives/commit/24aa6fc22786622dec00eac19ee7ec4b5a5da6c8) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Add 100ms duration for very short transitions
+
+## 10.3.1
+
+### Patch Changes
+
+- [#1146](https://github.com/primer/primitives/pull/1146) [`a16f30e`](https://github.com/primer/primitives/commit/a16f30e132a13a4e59f8fdd893796d1515717be7) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Fix borderColors in colorblind modes
+
+## 10.3.0
+
+### Minor Changes
+
+- [#1100](https://github.com/primer/primitives/pull/1100) [`b995538`](https://github.com/primer/primitives/commit/b995538c38aaaa6dbb754082f556e96e3feddc5e) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Changing the way we use references in css output, to keep all references to tokens that are present in the final output
+
+### Patch Changes
+
+- [#1136](https://github.com/primer/primitives/pull/1136) [`3e281b1`](https://github.com/primer/primitives/commit/3e281b13e3f431498dd61f30e240455d1f302af9) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Change open role color from red to blue for colorblind themes
+
+## 10.2.0
+
+### Minor Changes
+
+- [#1109](https://github.com/primer/primitives/pull/1109) [`da8a1d9`](https://github.com/primer/primitives/commit/da8a1d91b3ef495791c60a5fb9178c3ce08e5607) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - use cssColorMix instead of converting variables to hex when we use transparency
+
+## 10.1.0
+
+### Minor Changes
+
+- [#1092](https://github.com/primer/primitives/pull/1092) [`a17e9a7`](https://github.com/primer/primitives/commit/a17e9a7ef969df03bc5fb938d511adbc7f56fc09) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Adding new themeOverride preprocessor
+
+- [#1118](https://github.com/primer/primitives/pull/1118) [`1d7def1`](https://github.com/primer/primitives/commit/1d7def1467d7bfeae4d7ce53f056d6cdaf774d14) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Adding composite tokens for borders
+
+### Patch Changes
+
+- [#1117](https://github.com/primer/primitives/pull/1117) [`b516379`](https://github.com/primer/primitives/commit/b516379be8689f2fb687a58e97b95d66bb9e60be) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Add default border and fix wrong dark color token
+
+- [#1121](https://github.com/primer/primitives/pull/1121) [`033336d`](https://github.com/primer/primitives/commit/033336dd328db38c6970473065df4f2572163daa) Thanks [@langermank](https://github.com/langermank)! - Make `invisible` button disabled state background and border transparent
+
 ## 10.0.0
 
 ### Major Changes

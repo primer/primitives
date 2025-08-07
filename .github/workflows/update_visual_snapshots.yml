@@ -9,24 +9,14 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  update:
+  update-snapshots-runner:
     if: ${{ github.event.label.name == 'update snapshots' }}
-    name: 'Update snapshots'
-    runs-on:
-      labels: ubuntu-latest-16-cores
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        shard: [1, 2, 3, 4]
     steps:
-      - name: Generate token
-        id: generate_token
-        uses: actions/create-github-app-token@v1
-        with:
-          app-id: ${{ secrets.VRT_APP_ID }}
-          private-key: ${{ secrets.VRT_PRIVATE_KEY }}
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          repository: ${{ github.event.pull_request.head.repo.full_name }}
-          ref: ${{ github.head_ref }}
-          token: ${{ steps.generate_token.outputs.token }}
+      - uses: actions/checkout@v4
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
@@ -52,9 +42,48 @@ jobs:
           sleep 5
         working-directory: docs/storybook
       - name: Run Visual Regression Tests
-        run: npx playwright test --update-snapshots
+        run: npx playwright test --update-snapshots --shard="${{ matrix.shard }}/${{ strategy.job-total }}"
       - name: Stop storybook
         run: kill ${{ steps.storybook.outputs.pid }}
+      - name: Create snapshots.zip
+        run: |
+          if [[ ! -z  $(git ls-files --others --exclude-standard --modified) ]]; then
+            git ls-files --others --exclude-standard --modified | zip snapshots -@
+          fi
+      - name: Upload snapshots
+        uses: actions/upload-artifact@v4
+        with:
+          name: snapshots-${{ matrix.shard }}
+          path: snapshots.zip
+          retention-days: 1
+          if-no-files-found: ignore
+    
+  update:
+    name: 'Update snapshots'
+    needs: update-snapshots-runner
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate token
+        id: generate_token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.VRT_APP_ID }}
+          private-key: ${{ secrets.VRT_PRIVATE_KEY }}
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+          ref: ${{ github.head_ref }}
+          token: ${{ steps.generate_token.outputs.token }}
+      - uses: actions/download-artifact@v4
+        with:
+          path: snapshots
+          pattern: snapshots-*
+      - run: |
+          for snapshots in snapshots/*/*.zip; do
+            unzip -o "$snapshots" -d .
+          done
+          rm -rf snapshots
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: github-actions[bot] Regenerated snapshots

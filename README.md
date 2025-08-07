@@ -60,7 +60,7 @@ To make working with tokens easier, we added some additional functionality on to
 We have two main color modes: `light` and `dark`. Additionally we have specific accessibility modes based on those, such as `light high contrast`.
 
 We added a way to create a mode by only including the changes from the main mode. We call this `overrides`.
-`Overrides` are cerated in `src/tokens/functional/color/[light|dark]/overrides/` and have to be added to [themes.config.ts](./scripts/themes.config.ts) to work.
+`Overrides` are created in `src/tokens/functional/color/[light|dark]/overrides/` and have to be added to [themes.config.ts](./scripts/themes.config.ts) to work.
 In the individual files, e.g. `light.high-contrast.json5` you can now add tokens in the same structure as in any main file, e.g. `primitives-light.json5` to replace them.
 
 ### Transforming Colors with Alpha and Mix
@@ -80,27 +80,6 @@ You can create color tokens that inherit a color but have a different alpha valu
 }
 ```
 
-#### Mix
-
-In rare cases, you may need to create a color between two steps in the color scale, e.g. between `gray.4` and `gray.5`. A common example are interactive states, like `hover` where a full step on the color scale would be to much. For those cases you can use the `mix` property.
-
-The `mix` proeprty mixes the color it gets into the main color from the `$value` attribute. The amount added is controlled by the `weight`. A weight of `0.1` adds 10% of the color, and a weight of `0.75` adds 75%.
-
-A `mix` proprty must always have a `color` and a `weight` child. `color` can be a `hex` value or a reference to a valid color. The `weight` property must receive a value between `0.0` and `1`.
-
-```json5
-{
-  control: {
-    $value: '{base.color.gray.4}', // main color
-    $type: 'color',
-    mix: {
-      color: '{base.color.gray.5}', // color to mix into the main color
-      weight: 0.2, // amount of the mix color that is added === 20% of gray.5 is mix into gray.4
-    },
-  },
-}
-```
-
 #### Extensions property
 
 According to the [w3c design token specs](https://design-tokens.github.io/community-group/format/#design-token), the [`$extensions`](https://design-tokens.github.io/community-group/format/#extensions) property is used for additional meta data.
@@ -109,7 +88,7 @@ For our Figma export we use the following meta data:
 
 - `collection` the collection that the token is added to within Figma
 - `mode` the mode that the token is added to within the collection in Figma
-- `scopes` the scopes that are assigned to the token in Figma, the actual Figma compatible `scopes` are retreive from an object in the [figmaAttributes transformer](./src/transformers/figmaAttributes.ts)
+- `scopes` the scopes that are assigned to the token in Figma, the actual Figma compatible `scopes` are retrieved from an object in the [figmaAttributes transformer](./src/transformers/figmaAttributes.ts)
 
 Code example
 
@@ -130,8 +109,8 @@ Code example
 #### Token names and @-hack
 
 Token names have to be in camelCase or kebab-case and may only include letters, numbers and `-`. This is enforced by the token validation (`npm run lint:tokens`).
-The only acception is the `@`-hack. This is used when you want to have a default value and sub-values, e.g. `bgColor.accent` and `bgColor.accent.muted`.
-In this case you can create the follwing structure. The `@` will be removed from the name and act as the default value.
+The only exception is the `@`-hack. This is used when you want to have a default value and sub-values, e.g. `bgColor.accent` and `bgColor.accent.muted`.
+In this case you can create the following structure. The `@` will be removed from the name and act as the default value.
 
 ```json5
 {

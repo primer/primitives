@@ -5,6 +5,7 @@ import './ColorPreview.css'
 export type ColorPreviewProps = {
   textColor?: boolean
   borderColor?: boolean
+  border?: boolean
   bgColor?: boolean
   canvasColor?: string
   color?: string
@@ -16,6 +17,7 @@ export type ColorPreviewProps = {
 
 export function ColorPreview({
   textColor,
+  border,
   borderColor,
   bgColor,
   canvasColor,
@@ -34,6 +36,7 @@ export function ColorPreview({
           </p>
         )}
         {borderColor && <div style={{borderColor: `var(--${color})`, ...style}} data-border></div>}
+        {border && <div style={{border: `var(--${color})`, ...style}} data-border></div>}
         {bgColor && (
           <div
             style={{backgroundColor: `var(--${color})`, border: `solid 1px var(--${bgColorBorder})`, ...style}}

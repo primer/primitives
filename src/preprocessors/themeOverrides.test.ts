@@ -9,6 +9,7 @@ describe('Preprocessor: themeOverrides', () => {
         name: 'red',
         description: 'This is a description',
         $value: 'transformedValue',
+        alpha: 0.6,
         path: ['tokens', 'subgroup', 'red'],
         $extensions: {
           'org.primer.overrides': {
@@ -30,6 +31,20 @@ describe('Preprocessor: themeOverrides', () => {
           },
         },
       }),
+      alphaOnlyOverride: getMockToken({
+        name: 'red',
+        description: 'This is a description',
+        $value: 'transformedValue',
+        alpha: 0.6,
+        path: ['tokens', 'subgroup', 'red'],
+        $extensions: {
+          'org.primer.overrides': {
+            dark: {
+              alpha: 0.75,
+            },
+          },
+        },
+      }),
     })
 
     const resultDictionary = getMockDictionary({
@@ -37,6 +52,7 @@ describe('Preprocessor: themeOverrides', () => {
         name: 'red',
         description: 'This is a description',
         $value: 'darkValue',
+        alpha: 0.6,
         path: ['tokens', 'subgroup', 'red'],
         $extensions: {
           'org.primer.overrides': {
@@ -54,6 +70,20 @@ describe('Preprocessor: themeOverrides', () => {
             dark: {
               $value: 'darkValue',
               description: 'DarkMode description',
+            },
+          },
+        },
+      }),
+      alphaOnlyOverride: getMockToken({
+        name: 'red',
+        description: 'This is a description',
+        $value: 'transformedValue',
+        alpha: 0.75,
+        path: ['tokens', 'subgroup', 'red'],
+        $extensions: {
+          'org.primer.overrides': {
+            dark: {
+              alpha: 0.75,
             },
           },
         },
@@ -119,6 +149,164 @@ describe('Preprocessor: themeOverrides', () => {
             dark: {
               value: 'darkValue',
               description: 'DarkMode description',
+            },
+          },
+        },
+      }),
+    })
+
+    expect(
+      themeOverrides.preprocessor(dictionary.tokens, {
+        themeOverrides: {
+          valueProp: 'value',
+          extensionProp: 'theme',
+        },
+      }),
+    ).toStrictEqual(dictionary.tokens)
+    expect(
+      themeOverrides.preprocessor(dictionary.tokens, {
+        options: {themeOverrides: {theme: 'dark', valueProp: 'value', extensionProp: 'theme'}},
+      }),
+    ).toStrictEqual(resultDictionary.tokens)
+  })
+
+  it('works with fallback theme', () => {
+    const dictionary = getMockDictionary({
+      valueOverride: getMockToken({
+        name: 'red',
+        description: 'This is a description',
+        $value: 'transformedValue',
+        path: ['tokens', 'subgroup', 'red'],
+        $extensions: {
+          'org.primer.overrides': {
+            dark: 'darkValue',
+          },
+        },
+      }),
+      objectOverride: getMockToken({
+        name: 'red',
+        description: 'This is a description',
+        $value: 'transformedValue',
+        path: ['tokens', 'subgroup', 'red'],
+        $extensions: {
+          'org.primer.overrides': {
+            dark: {
+              $value: 'darkValue',
+              description: 'DarkMode description',
+            },
+          },
+        },
+      }),
+    })
+
+    const resultDictionary = getMockDictionary({
+      valueOverride: getMockToken({
+        name: 'red',
+        description: 'This is a description',
+        $value: 'darkValue',
+        path: ['tokens', 'subgroup', 'red'],
+        $extensions: {
+          'org.primer.overrides': {
+            dark: 'darkValue',
+          },
+        },
+      }),
+      objectOverride: getMockToken({
+        name: 'red',
+        description: 'DarkMode description',
+        $value: 'darkValue',
+        path: ['tokens', 'subgroup', 'red'],
+        $extensions: {
+          'org.primer.overrides': {
+            dark: {
+              $value: 'darkValue',
+              description: 'DarkMode description',
+            },
+          },
+        },
+      }),
+    })
+
+    expect(
+      themeOverrides.preprocessor(dictionary.tokens, {
+        options: {themeOverrides: {theme: ['dark-dimmed', undefined]}},
+      }),
+    ).toStrictEqual(dictionary.tokens)
+    expect(
+      themeOverrides.preprocessor(dictionary.tokens, {
+        options: {themeOverrides: {theme: ['dark-dimmed', 'dark']}},
+      }),
+    ).toStrictEqual(resultDictionary.tokens)
+  })
+
+  it('works with non-string values', () => {
+    const dictionary = getMockDictionary({
+      objectValueOverride: getMockToken({
+        name: 'red',
+        description: 'This is a description',
+        value: 'transformedValue',
+        path: ['tokens', 'subgroup', 'red'],
+        $extensions: {
+          theme: {
+            dark: {
+              value: {test: 'value'},
+            },
+          },
+        },
+      }),
+      arrayValueOverride: getMockToken({
+        name: 'red',
+        description: 'This is a description',
+        value: 'transformedValue',
+        path: ['tokens', 'subgroup', 'red'],
+        $extensions: {
+          theme: {
+            dark: {
+              value: [
+                {
+                  value: 'darkValue',
+                  description: 'DarkMode description',
+                },
+              ],
+            },
+          },
+        },
+      }),
+    })
+
+    const resultDictionary = getMockDictionary({
+      objectValueOverride: getMockToken({
+        name: 'red',
+        description: 'This is a description',
+        value: {test: 'value'},
+        path: ['tokens', 'subgroup', 'red'],
+        $extensions: {
+          theme: {
+            dark: {
+              value: {test: 'value'},
+            },
+          },
+        },
+      }),
+      arrayValueOverride: getMockToken({
+        name: 'red',
+        description: 'This is a description',
+        value: [
+          {
+            value: 'darkValue',
+            description: 'DarkMode description',
+          },
+        ],
+        path: ['tokens', 'subgroup', 'red'],
+        $extensions: {
+          theme: {
+            dark: {
+              value: [
+                {
+                  value: 'darkValue',
+                  description: 'DarkMode description',
+                },
+              ],
             },
           },
         },

@@ -1,10 +1,10 @@
 import React from 'react'
 // eslint-disable-next-line import/extensions
-import sizeTokens from '../../../../dist/docs/functional/size/border.json'
 import {SizeTokenSwatch} from '../StorybookComponents/SizeTokenSwatch/SizeTokenSwatch'
-import {DataTable, Table} from '@primer/react/drafts'
+import {DataTable, Table} from '@primer/react/experimental'
 import {InlineCode} from '../StorybookComponents/InlineCode/InlineCode'
 import {getTokensByName} from '../utilities/getTokensByName'
+import sizeTokens from '../../../../dist/docs/functional/size/border.json'
 
 export default {
   title: 'Size/Functional/Border',
@@ -133,7 +133,7 @@ export const BorderRadius = () => {
             field: 'original',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.value}</p>
+              return <p>{row.original.$value}</p>
             },
           },
         ]}
@@ -194,7 +194,7 @@ export const Outline = () => {
             field: 'original',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.value}</p>
+              return <p>{row.original.$value}</p>
             },
           },
         ]}

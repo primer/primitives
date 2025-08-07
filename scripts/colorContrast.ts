@@ -5,6 +5,7 @@ import {readFile} from 'fs/promises'
 import {normal} from 'color-blend'
 import {getContrast, parseToRgba, rgba} from 'color2k'
 import {makeConsoleTable, makeMarkdownTable} from './utilities/makeTable.js'
+import {getThemeFileName} from './utilities/getThemeFileName.js'
 /**
  * Type definitions
  */
@@ -207,7 +208,7 @@ const getColorsFromFiles = async (filePaths: ThemeName[]): Promise<Theme[]> => {
       [
         themeName,
         await JSON.parse(
-          await readFile(`./dist/docs/functional/themes/${themeName.replaceAll('_', '-')}.json`, 'utf8'),
+          await readFile(`./dist/docs/functional/themes/${getThemeFileName(themeName, '_', '-')}.json`, 'utf8'),
         ),
       ] as Theme,
   )
@@ -224,10 +225,15 @@ const runCheck = async () => {
     'dark',
     'light_high_contrast',
     'dark_high_contrast',
-    'light_colorblind',
-    'dark_colorblind',
+    'light_protanopia_deuteranopia',
+    'dark_protanopia_deuteranopia',
+    'light_protanopia_deuteranopia_high_contrast',
+    'dark_protanopia_deuteranopia_high_contrast',
     'light_tritanopia',
     'dark_tritanopia',
+    'light_tritanopia_high_contrast',
+    'dark_tritanopia_high_contrast',
+    'dark_dimmed_high_contrast',
   ] as ThemeName[]
   // get colors from doc json files
   const themes = await getColorsFromFiles(themesNamesToCheck)

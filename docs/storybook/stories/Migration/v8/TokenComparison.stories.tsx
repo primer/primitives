@@ -13,7 +13,7 @@ import cssShadowVars from './DeprecatedShadowTokensMap.json'
 import noChangeCssVars from './NoChangeTokensMap.json'
 // eslint-disable-next-line import/extensions
 import fallbackVars from './static-fallbacks.json'
-import {DataTable, Table} from '@primer/react/drafts'
+import {DataTable, Table} from '@primer/react/experimental'
 
 export default {
   title: 'Migration/Tables',

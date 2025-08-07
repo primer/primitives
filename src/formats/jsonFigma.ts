@@ -82,7 +82,7 @@ export const jsonFigma: FormatFn = async ({dictionary, file: _file, platform}: F
   // loop through tokens sorted by reference
   for (const token of sortedTokens) {
     // deconstruct token
-    const {attributes, $value: value, $type, $description: description, original, alpha, mix} = token
+    const {attributes, $value: value, $type, $description: description, original, alpha} = token
     const {mode, collection, scopes, group, codeSyntax} = attributes || {}
     // early escape if no type is present
     if (!$type) return
@@ -115,7 +115,6 @@ export const jsonFigma: FormatFn = async ({dictionary, file: _file, platform}: F
         value,
         type: getFigmaType($type),
         alpha,
-        isMix: mix ? true : undefined,
         description,
         refId: [collection, token.name].filter(Boolean).join('/'),
         reference: getReference(dictionary, original.$value, platform),

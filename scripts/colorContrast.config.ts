@@ -254,13 +254,18 @@ export const bgColors: string[] = ['bgColor-default', 'bgColor-muted']
 export type ThemeName =
   | 'light'
   | 'light_high_contrast'
-  | 'light_colorblind'
+  | 'light_protanopia_deuteranopia'
   | 'light_tritanopia'
+  | 'light_protanopia_deuteranopia_high_contrast'
+  | 'light_tritanopia_high_contrast'
   | 'dark'
   | 'dark_dimmed'
+  | 'dark_dimmed_high_contrast'
   | 'dark_high_contrast'
-  | 'dark_colorblind'
+  | 'dark_protanopia_deuteranopia'
+  | 'dark_protanopia_deuteranopia_high_contrast'
   | 'dark_tritanopia'
+  | 'dark_tritanopia_high_contrast'
 
 const defaultContrast: ContrastRequirement[] = setContrastRatios('default', [
   ...baseRequirements,
@@ -278,12 +283,17 @@ export const contrastRequirements: ContrastRequirements = {
   // default light mode
   light: defaultContrast,
   light_high_contrast: highContrast,
-  light_colorblind: defaultContrast,
+  light_protanopia_deuteranopia: defaultContrast,
+  light_protanopia_deuteranopia_high_contrast: highContrast,
   light_tritanopia: defaultContrast,
+  light_tritanopia_high_contrast: highContrast,
   // default dark mode
   dark: defaultContrast,
   dark_dimmed: defaultContrast,
+  dark_dimmed_high_contrast: highContrast,
   dark_high_contrast: highContrast,
-  dark_colorblind: defaultContrast,
+  dark_protanopia_deuteranopia: defaultContrast,
+  dark_protanopia_deuteranopia_high_contrast: highContrast,
   dark_tritanopia: defaultContrast,
+  dark_tritanopia_high_contrast: highContrast,
 }

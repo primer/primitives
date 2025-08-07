@@ -1,0 +1,26 @@
+.swatch {
+  height: 50px;
+  width: 50px;
+  background: var(--bgColor-default);
+  border: solid 1px var(--borderColor-default);
+  display: grid;
+  place-content: center;
+  font: var(--text-codeInline-shorthand);
+  font-size: 12px;
+}
+
+.name {
+  width: 300px;
+  display: grid;
+  place-content: center end;
+  background: #ffffff;
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+}
+
+[data-dark-theme='dark_dimmed_high_contrast'] {
+  outline: solid 1px deeppink;
+}
