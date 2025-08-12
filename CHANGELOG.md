@@ -1,5 +1,19 @@
 # @primer/primitives
 
+## 11.1.0
+
+### Minor Changes
+
+- [#1242](https://github.com/primer/primitives/pull/1242) [`846d34b`](https://github.com/primer/primitives/commit/846d34bb578ad1d09556dd9d7e511cab70eaaa54) Thanks [@langermank](https://github.com/langermank)! - Add progress bar tokens
+
+- [#1239](https://github.com/primer/primitives/pull/1239) [`101f812`](https://github.com/primer/primitives/commit/101f81288b8612889f9c26d9bfbd72b09312d81f) Thanks [@langermank](https://github.com/langermank)! - Update `control` knob border-color values
+
+### Patch Changes
+
+- [#1237](https://github.com/primer/primitives/pull/1237) [`889f65b`](https://github.com/primer/primitives/commit/889f65bc2578191931d6c07e7b5685fbb91f1800) Thanks [@langermank](https://github.com/langermank)! - Add `label` border-color tokens
+
+- [#1237](https://github.com/primer/primitives/pull/1237) [`889f65b`](https://github.com/primer/primitives/commit/889f65bc2578191931d6c07e7b5685fbb91f1800) Thanks [@langermank](https://github.com/langermank)! - Add `label` border-color tokens
+
 ## 11.0.0
 
 ### Major Changes
