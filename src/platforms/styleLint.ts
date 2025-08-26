@@ -9,7 +9,7 @@ export const styleLint: PlatformInitializer = (outputFile, prefix, buildPath, op
   transforms: [
     'name/pathToKebabCase',
     'color/hex',
-    'dimension/remPxArray',
+    'dimension/pixel',
     'shadow/css',
     'border/css',
     'typography/css',

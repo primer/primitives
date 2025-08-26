@@ -3,10 +3,10 @@ import {shadowValue, shadowToken} from './shadowToken.js'
 const tokenValue = {
   color: '#000000',
   alpha: 0.5,
-  offsetX: '4px',
-  offsetY: '4px',
-  blur: '2px',
-  spread: '2px',
+  offsetX: {value: 4, unit: 'px'},
+  offsetY: {value: 4, unit: 'px'},
+  blur: {value: 2, unit: 'px'},
+  spread: {value: 2, unit: 'px'},
   inset: false,
 }
 
@@ -15,8 +15,14 @@ describe('Schema: shadowValue', () => {
     expect(shadowValue.safeParse(tokenValue).success).toStrictEqual(true)
     // without inset
     expect(
-      shadowValue.safeParse({color: '#000000', alpha: 0.5, offsetX: '4px', offsetY: '4px', blur: '2px', spread: '2px'})
-        .success,
+      shadowValue.safeParse({
+        color: '#000000',
+        alpha: 0.5,
+        offsetX: {value: 4, unit: 'px'},
+        offsetY: {value: 4, unit: 'px'},
+        blur: {value: 2, unit: 'px'},
+        spread: {value: 2, unit: 'px'},
+      }).success,
     ).toStrictEqual(true)
   })
 

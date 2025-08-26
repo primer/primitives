@@ -26,7 +26,7 @@
       },
     },
     thin: {
-      $value: '1px',
+      $value: { value: 1, unit: 'px' },
       $type: 'dimension',
       $extensions: {
         'org.primer.figma': {
@@ -36,7 +36,7 @@
       },
     },
     thick: {
-      $value: '2px',
+      $value: { value: 2, unit: 'px' },
       $type: 'dimension',
       $extensions: {
         'org.primer.figma': {
@@ -46,7 +46,7 @@
       },
     },
     thicker: {
-      $value: '4px',
+      $value: { value: 4, unit: 'px' },
       $type: 'dimension',
       $extensions: {
         'org.primer.figma': {
@@ -58,7 +58,7 @@
   },
   borderRadius: {
     small: {
-      $value: '3px',
+      $value: { value: 3, unit: 'px' },
       $type: 'dimension',
       $extensions: {
         'org.primer.figma': {
@@ -71,7 +71,7 @@
       },
     },
     medium: {
-      $value: '6px',
+      $value: { value: 6, unit: 'px' },
       $type: 'dimension',
       $extensions: {
         'org.primer.figma': {
@@ -84,7 +84,7 @@
       },
     },
     large: {
-      $value: '12px',
+      $value: { value: 12, unit: 'px' },
       $type: 'dimension',
       $extensions: {
         'org.primer.figma': {
@@ -97,7 +97,7 @@
       },
     },
     full: {
-      $value: '9999px',
+      $value: { value: 9999, unit: 'px' },
       $type: 'dimension',
       $description: 'Use this border radius for pill shaped elements',
       $extensions: {
@@ -127,7 +127,7 @@
   outline: {
     focus: {
       offset: {
-        $value: '-2px',
+        $value: { value: -2, unit: 'px' },
         $type: 'dimension',
         $extensions: {
           'org.primer.figma': {
@@ -137,7 +137,7 @@
         },
       },
       width: {
-        $value: '2px',
+        $value: { value: 2, unit: 'px' },
         $type: 'dimension',
         $extensions: {
           'org.primer.figma': {
