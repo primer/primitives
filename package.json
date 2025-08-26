@@ -3,6 +3,14 @@
   "version": "11.1.0",
   "description": "Typography, spacing, and color primitives for Primer design system",
   "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/build/primerStyleDictionary.d.ts",
+      "import": "./dist/build/primerStyleDictionary.js"
+    },
+    "./tokens/*": "./src/tokens/*",
+    "./dist/*": "./dist/*"
+  },
   "files": [
     "dist",
     "src/tokens"
@@ -45,6 +53,13 @@
     "start:storybook": "npm run build && cd docs/storybook && npm run storybook"
   },
   "prettier": "@github/prettier-config",
+  "dependencies": {
+    "color2k": "^2.0.3",
+    "json5": "^2.2.1",
+    "prettier": "^3.3.3",
+    "style-dictionary": "^5.0.0",
+    "zod": "3.23"
+  },
   "devDependencies": {
     "@actions/core": "^1.11.1",
     "@actions/glob": "^0.5.0",
@@ -57,7 +72,6 @@
     "@typescript-eslint/parser": "8.15",
     "@vitest/coverage-v8": "^2.0.3",
     "color-blend": "^4.0.0",
-    "color2k": "^2.0.3",
     "console-table-printer": "^2.12.1",
     "eslint": "9.16",
     "eslint-config-prettier": "^9.1.0",
@@ -66,15 +80,11 @@
     "eslint-plugin-github": "^5.1.3",
     "eslint-plugin-jsx-a11y": "6.10",
     "eslint-plugin-react-hooks": "^5.0.0",
-    "json5": "^2.2.1",
     "markdown-table-ts": "^1.0.3",
-    "prettier": "^3.3.3",
-    "style-dictionary": "^5.0.0",
     "tsx": "^4.19.0",
     "typescript": "5.6",
     "typescript-eslint": "^8.16.0",
     "vitest": "^2.0.3",
-    "zod": "3.23",
     "zod-validation-error": "3.4"
   }
 }
