@@ -8,23 +8,27 @@ import jsxA11y from 'eslint-plugin-jsx-a11y'
 import eslintPluginReactHooks from 'eslint-plugin-react-hooks'
 import eslintPluginGithub from 'eslint-plugin-github'
 import eslintPluginTypescript from 'typescript-eslint'
+import eslintPluginImport from 'eslint-plugin-import'
 
 export default tseslint.config([
-  eslintPluginGithub.getFlatConfigs().recommended,
-  eslintPluginGithub.getFlatConfigs().browser,
-  eslintPluginGithub.getFlatConfigs().react,
-  ...eslintPluginGithub.getFlatConfigs().typescript,
-  jsxA11y.flatConfigs.recommended,
-  tseslint.configs.recommended,
+  // register plugin objects up-front so merged rule sets can reference them
   {
     plugins: {
       react: eslintPluginReact,
       'react-hooks': fixupPluginRules(eslintPluginReactHooks),
+      github: eslintPluginGithub,
+      'jsx-a11y': jsxA11y,
     },
+  },
+  tseslint.configs.recommended,
+  {
     rules: {
+      // include jsx-a11y rules without redefining the plugin
+      ...jsxA11y.configs.recommended.rules,
       ...eslintPluginReactHooks.configs.recommended.rules,
       ...eslintPluginReact.configs['jsx-runtime'].rules,
-      ...eslintPluginGithub.getFlatConfigs().rules,
+      // merge github rules but avoid including its flat configs (which register plugin entries)
+      ...(typeof eslintPluginGithub.getFlatConfigs === 'function' ? eslintPluginGithub.getFlatConfigs().rules : {}),
     },
   },
   eslintPluginPrettierRecommended,
@@ -60,6 +64,9 @@ export default tseslint.config([
       },
     },
     ignores: ['README.md'],
+    plugins: {
+      importPlugin: eslintPluginImport,
+    },
     settings: {
       react: {
         version: 'detect',
