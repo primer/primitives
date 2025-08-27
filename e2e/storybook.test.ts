@@ -98,8 +98,6 @@ test.describe('storybook', () => {
           )
         })
       }
-
-      break
     }
   })
 })
