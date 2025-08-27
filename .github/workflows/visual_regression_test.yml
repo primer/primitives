@@ -42,9 +42,16 @@ jobs:
           pid=$!
           echo "pid=$pid" >> $GITHUB_OUTPUT
           sleep 5
+      
+      - name: get current playwright version
+        id: get_playwright_version
+        run: |
+          PLAYWRIGHT_VERSION=$(npm --json list @playwright/test | jq --raw-output '.dependencies["@playwright/test"].version')
+          echo "PLAYWRIGHT_VERSION=$PLAYWRIGHT_VERSION" >> $GITHUB_ENV
 
       - name: Run Visual Regression Tests
-        uses: docker://mcr.microsoft.com/playwright:v1.49.0-jammy
+        uses: docker://mcr.microsoft.com/playwright:v${{ steps.get_playwright_version.outputs.PLAYWRIGHT_VERSION }}-jammy
+
         env:
           STORYBOOK_URL: 'http://172.17.0.1:6006'
         with:
