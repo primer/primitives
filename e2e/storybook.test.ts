@@ -74,12 +74,8 @@ test.describe('storybook', () => {
             expect(await page.screenshot({animations: 'disabled', fullPage: true})).toMatchSnapshot()
           })
         }
-
-        break
       }
     })
-
-    break
   }
 
   // The behavior for "all color swatches" stories remains unchanged.
@@ -101,8 +97,6 @@ test.describe('storybook', () => {
             `storybook.all color swatches.${theme}.${name}.png`,
           )
         })
-
-        break
       }
 
       break
