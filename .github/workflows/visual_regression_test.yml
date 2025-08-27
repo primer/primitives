@@ -50,12 +50,18 @@ jobs:
           echo "PLAYWRIGHT_VERSION=$PLAYWRIGHT_VERSION" >> $GITHUB_ENV
 
       - name: Run Visual Regression Tests
-        uses: docker://mcr.microsoft.com/playwright:v${{ steps.get_playwright_version.outputs.PLAYWRIGHT_VERSION }}-jammy
-
         env:
           STORYBOOK_URL: 'http://172.17.0.1:6006'
-        with:
-          args: npx playwright test --shard="${{ matrix.shard }}/${{ strategy.job-total }}"
+        run: |
+          IMAGE="mcr.microsoft.com/playwright:v${PLAYWRIGHT_VERSION}-jammy"
+          echo "Using image: $IMAGE"
+          docker pull "$IMAGE"
+          docker run --rm \
+            -e STORYBOOK_URL="$STORYBOOK_URL" \
+            -v "$PWD":"$PWD" \
+            -w "$PWD" \
+            "$IMAGE" \
+            npx playwright test --shard="${{ matrix.shard }}/${{ strategy.job-total }}"
 
       - name: Stop storybook
         run: kill ${{ steps.storybook.outputs.pid }}
