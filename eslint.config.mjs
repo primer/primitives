@@ -28,6 +28,7 @@ export default tseslint.config([
       ...eslintPluginReactHooks.configs.recommended.rules,
       ...eslintPluginReact.configs['jsx-runtime'].rules,
       // merge github rules but avoid including its flat configs (which register plugin entries)
+      // Some versions of eslint-plugin-github do not provide getFlatConfigs; this check ensures compatibility with multiple versions.
       ...(typeof eslintPluginGithub.getFlatConfigs === 'function' ? eslintPluginGithub.getFlatConfigs().rules : {}),
     },
   },
