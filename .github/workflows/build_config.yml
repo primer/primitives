@@ -12,7 +12,7 @@ jobs:
 
   build:
     needs: changes
-    if: needs.changes.outputs.buildConfig == 'true' || github.event_name == 'workflow_dispatch'
+    if: needs.changes.outputs.buildConfig == 'true' || needs.changes.outputs.dependencies == 'true' || github.event_name == 'workflow_dispatch'
     name: Test if custom transforms, formats, etc. are working
     runs-on: ubuntu-latest
     steps:
