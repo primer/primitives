@@ -44,24 +44,18 @@ jobs:
           sleep 5
       
       - name: get current playwright version
-        id: get_playwright_version
+        id: get-playwright-version
         run: |
           PLAYWRIGHT_VERSION=$(npm --json list @playwright/test | jq --raw-output '.dependencies["@playwright/test"].version')
           echo "PLAYWRIGHT_VERSION=$PLAYWRIGHT_VERSION" >> $GITHUB_ENV
 
       - name: Run Visual Regression Tests
+        uses: docker://mcr.microsoft.com/playwright:v1.55.0-jammy
+        
         env:
-          STORYBOOK_URL: 'http://host.docker.internal:6006'
-        run: |
-          IMAGE="mcr.microsoft.com/playwright:v${PLAYWRIGHT_VERSION}-jammy"
-          echo "Using image: $IMAGE"
-          docker pull "$IMAGE"
-          docker run --rm \
-            -e STORYBOOK_URL="$STORYBOOK_URL" \
-            -v "$PWD":"$PWD" \
-            -w "$PWD" \
-            "$IMAGE" \
-            npx playwright test --shard="${{ matrix.shard }}/${{ strategy.job-total }}"
+          STORYBOOK_URL: 'http://172.17.0.1:6006'
+        with:
+          args: npx playwright test --shard="${{ matrix.shard }}/${{ strategy.job-total }}"
 
       - name: Stop storybook
         run: kill ${{ steps.storybook.outputs.pid }}
