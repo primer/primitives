@@ -29,15 +29,17 @@ export const validateType = z.record(
       z
         .object({
           $value: z.any(),
-          $type: z.string().refine(
-            type => validTypes.includes(type as TokenType),
-            val => ({
-              message: schemaErrorMessage(
-                `Invalid token $type: "${val}"`,
-                `Must be one of the following: ${joinFriendly([...validTypes], 'or')}`,
-              ),
-            }),
-          ),
+          $type: z.string().superRefine((value, ctx) => {
+            if (!validTypes.includes(value as TokenType)) {
+              ctx.addIssue({
+                code: 'custom',
+                message: schemaErrorMessage(
+                  `Invalid token $type: "${value}"`,
+                  `Must be one of the following: ${joinFriendly([...validTypes], 'or')}`,
+                ),
+              })
+            }
+          }),
         })
         .required(),
       validateType,

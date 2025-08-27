@@ -329,10 +329,7 @@ const buildFigma = async (buildOptions: ConfigGeneratorOptions): Promise<void> =
 }
 
 try {
-  await buildFigma({
-    buildPath: 'dist/',
-  })
+  await buildFigma({buildPath: 'dist/'})
 } catch (e) {
-  // eslint-disable-next-line no-console
   console.error('🛑 Error trying to build Figma output:', e)
 }

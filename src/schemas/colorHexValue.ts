@@ -7,12 +7,14 @@ const colorHex8RegEx = '^#[0-9a-f]{8}$'
 
 const colorHexRegex = new RegExp(`(${colorHex3RegEx})|(${colorHex6RegEx})|(${colorHex8RegEx})`, 'i')
 
-export const colorHexValue = z.string().refine(
-  color => colorHexRegex.test(color),
-  color => ({
-    message: schemaErrorMessage(
-      `Invalid color: "${color}"`,
-      'Color must be a hex string or a reference to a color token.',
-    ),
-  }),
-)
+export const colorHexValue = z.string().superRefine((color, ctx) => {
+  if (!colorHexRegex.test(color)) {
+    ctx.addIssue({
+      code: 'custom',
+      message: schemaErrorMessage(
+        `Invalid color: "${color}"`,
+        'Color must be a hex string or a reference to a color token.',
+      ),
+    })
+  }
+})

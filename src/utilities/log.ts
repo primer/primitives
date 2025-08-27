@@ -18,14 +18,11 @@ const logMessage = (message: string, type: 'info' | 'warning' | 'error' = 'warni
     return
   }
   if (type === 'warning') {
-    // eslint-disable-next-line no-console
     return console.warn(message)
   }
   if (type === 'error') {
-    // eslint-disable-next-line no-console
     return console.error(message)
   }
-  // eslint-disable-next-line no-console
   console.log(message)
 }
 

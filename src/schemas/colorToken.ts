@@ -69,7 +69,7 @@ export const colorToken = baseColorToken
               'dark-dimmed-high-contrast': override,
             },
             {
-              errorMap: e => {
+              error: e => {
                 if (e.code === 'unrecognized_keys') {
                   return {
                     message: `Unrecognized key: "${e.keys.join(', ')}", must be one of: light, light-tritanopia, light-protanopia-deuteranopia, light-high-contrast, dark, dark-tritanopia, dark-protanopia-deuteranopia, dark-high-contrast, dark-dimmed`,

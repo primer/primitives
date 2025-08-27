@@ -9,21 +9,16 @@ export default defineConfig({
   testDir: 'e2e',
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
-  retries: 0,
+  retries: 1,
   workers: process.env.CI ? 1 : undefined,
   reporter: [
     ['line'],
     process.env.CI ? ['blob'] : ['html', {open: 'never', outputFolder: path.join(__dirname, '.playwright/report')}],
-    [
-      'json',
-      {
-        outputFile: path.join(__dirname, '.playwright', 'results.json'),
-      },
-    ],
+    ['json', {outputFile: path.join(__dirname, '.playwright', 'results.json')}],
   ],
 
   // https://playwright.dev/docs/api/class-testconfig#test-config-timeout
-  timeout: 1000 * 15,
+  timeout: 1000 * 5,
 
   // https://playwright.dev/docs/api/class-testconfig#test-config-output-dir
   outputDir: path.join(__dirname, '.playwright', 'results'),

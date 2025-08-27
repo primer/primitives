@@ -16,15 +16,17 @@ type Collections =
   | 'typography'
 
 export const collection = (collections: Collections[]) => {
-  return z.string().refine(
-    value => collections.includes(value as Collections),
-    value => ({
-      message: schemaErrorMessage(
-        `Invalid collection: "${value}"`,
-        `Valid collections are ${joinFriendly(collections)}`,
-      ),
-    }),
-  )
+  return z.string().superRefine((value, ctx) => {
+    if (!collections.includes(value as Collections)) {
+      ctx.addIssue({
+        code: 'custom',
+        message: schemaErrorMessage(
+          `Invalid collection: "${value}"`,
+          `Valid collections are ${joinFriendly(collections)}`,
+        ),
+      })
+    }
+  })
 }
 
 type Modes =
@@ -44,10 +46,12 @@ type Modes =
   | 'dark high contrast tritanopia'
 
 export const mode = (modes: Modes[]) => {
-  return z.string().refine(
-    value => modes.includes(value as Modes),
-    value => ({
-      message: schemaErrorMessage(`Invalid mode: "${value}"`, `Valid modes are ${joinFriendly(modes)}`),
-    }),
-  )
+  return z.string().superRefine((value, ctx) => {
+    if (!modes.includes(value as Modes)) {
+      ctx.addIssue({
+        code: 'custom',
+        message: schemaErrorMessage(`Invalid mode: "${value}"`, `Valid modes are ${joinFriendly(modes)}`),
+      })
+    }
+  })
 }

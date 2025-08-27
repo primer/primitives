@@ -74,7 +74,6 @@ export const buildDesignTokens = async (buildOptions: ConfigGeneratorOptions): P
       await extendedSD.buildAllPlatforms()
     }
   } catch (e) {
-    // eslint-disable-next-line no-console
     console.error('🛑 Error trying to build internal css colors for code output:', e)
   }
 
@@ -97,7 +96,6 @@ export const buildDesignTokens = async (buildOptions: ConfigGeneratorOptions): P
       await extendedSD.buildAllPlatforms()
     }
   } catch (e) {
-    // eslint-disable-next-line no-console
     console.error('🛑 Error trying to build Colors, shadows & borders for code output:', e)
   }
 
@@ -128,7 +126,6 @@ export const buildDesignTokens = async (buildOptions: ConfigGeneratorOptions): P
     )
     await SdBaseSize.buildAllPlatforms()
   } catch (e) {
-    // eslint-disable-next-line no-console
     console.error('🛑 Error trying to build size tokens for code output:', e)
   }
   /** -----------------------------------
@@ -143,9 +140,7 @@ export const buildDesignTokens = async (buildOptions: ConfigGeneratorOptions): P
         buildOptions,
         {
           css: css(`css/functional/typography/typography.css`, buildOptions.prefix, buildOptions.buildPath, {
-            options: {
-              outputReferences: true,
-            },
+            options: {outputReferences: true},
           }),
         },
       ),
@@ -157,7 +152,6 @@ export const buildDesignTokens = async (buildOptions: ConfigGeneratorOptions): P
     )
     await SdTypo.buildAllPlatforms()
   } catch (e) {
-    // eslint-disable-next-line no-console
     console.error('🛑 Error trying to build typography tokens for code output:', e)
   }
 
@@ -177,9 +171,7 @@ export const buildDesignTokens = async (buildOptions: ConfigGeneratorOptions): P
         buildOptions,
         {
           css: css(`css/functional/motion/motion.css`, buildOptions.prefix, buildOptions.buildPath, {
-            options: {
-              outputReferences: true,
-            },
+            options: {outputReferences: true},
           }),
         },
       ),
@@ -191,7 +183,6 @@ export const buildDesignTokens = async (buildOptions: ConfigGeneratorOptions): P
     )
     await SdMotion.buildAllPlatforms()
   } catch (e) {
-    // eslint-disable-next-line no-console
     console.error('🛑 Error trying to build motion tokens for code output:', e)
   }
   /** -----------------------------------
@@ -243,7 +234,6 @@ export const buildDesignTokens = async (buildOptions: ConfigGeneratorOptions): P
       await extendedSD.buildAllPlatforms()
     }
   } catch (e) {
-    // eslint-disable-next-line no-console
     console.error('🛑 Error trying to build deprecated tokens output:', e)
   }
   /** -----------------------------------
