@@ -51,7 +51,7 @@ jobs:
 
       - name: Run Visual Regression Tests
         env:
-          STORYBOOK_URL: 'http://172.17.0.1:6006'
+          STORYBOOK_URL: 'http://host.docker.internal:6006'
         run: |
           IMAGE="mcr.microsoft.com/playwright:v${PLAYWRIGHT_VERSION}-jammy"
           echo "Using image: $IMAGE"
