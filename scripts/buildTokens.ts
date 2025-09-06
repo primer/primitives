@@ -243,9 +243,6 @@ export const buildDesignTokens = async (buildOptions: ConfigGeneratorOptions): P
 
   const excludePaths = [
     (path: string) => {
-      return path === 'dist/css/functional/size/viewport.css'
-    },
-    (path: string) => {
       return path.startsWith('dist/css/functional/themes/')
     },
   ]
@@ -263,8 +260,7 @@ export const buildDesignTokens = async (buildOptions: ConfigGeneratorOptions): P
     }
 
     if (skip) continue
-
-    all.push(fs.readFileSync(cssFile, {encoding: 'utf8'}).trim())
+    all.push(`@import '${cssFile.replace(/dist\/css/g, '.')}';`)
   }
 
   fs.writeFileSync('dist/css/primitives.css', `${all.join('\n')}\n`)
