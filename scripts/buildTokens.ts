@@ -55,7 +55,7 @@ const getStyleDictionaryConfig: StyleDictionaryConfigGenerator = (
 })
 
 export const buildDesignTokens = async (buildOptions: ConfigGeneratorOptions): Promise<void> => {
-  let debugCurrentFile = undefined
+  let debugCurrentFile: string | undefined = undefined
   /** -----------------------------------
    * Internal Colors
    * ----------------------------------- */
