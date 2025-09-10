@@ -22,6 +22,7 @@ const roles = [
   'done',
   'upsell',
   'sponsors',
+  'draft',
 ]
 
 export const All = () => {
