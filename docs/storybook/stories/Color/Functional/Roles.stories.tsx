@@ -198,3 +198,15 @@ export const Sponsors = () => {
     </>
   )
 }
+
+export const Draft = () => {
+  return (
+    <>
+      <ColorPreview color={'fgColor-draft'} textColor canvasColor="bgColor-default" />
+      <ColorPreview color={'bgColor-draft-muted'} bgColor canvasColor="bgColor-default" />
+      <ColorPreview color={'bgColor-draft-emphasis'} bgColor canvasColor="bgColor-default" />
+      <ColorPreview color={'borderColor-draft-muted'} borderColor canvasColor="bgColor-default" />
+      <ColorPreview color={'borderColor-draft-emphasis'} borderColor canvasColor="bgColor-default" />
+    </>
+  )
+}
