@@ -1148,17 +1148,17 @@
               'dark-dimmed-high-contrast': {
                 $value: '{base.color.red.1}',
               },
-              'dark-protanopia-deuteranopia': {
-                $value: '#FA5E55',
-              },
               'dark-high-contrast': {
                 $value: '{base.color.red.2}',
+              },
+              'dark-protanopia-deuteranopia': {
+                $value: '{base.color.yellow.3}',
               },
               'dark-tritanopia-high-contrast': {
                 $value: '{base.color.red.2}',
               },
               'dark-protanopia-deuteranopia-high-contrast': {
-                $value: '{base.color.orange.2}',
+                $value: '{base.color.yellow.2}',
               },
             },
           },
