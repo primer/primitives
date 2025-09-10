@@ -592,6 +592,54 @@
         },
       },
     },
+    draft: {
+      muted: {
+        $value: '{bgColor.neutral.muted',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            group: 'semantic',
+            scopes: ['bgColor'],
+            codeSyntax: {
+              web: 'var(--bgColor-draft-muted)',
+            },
+          },
+          'org.primer.overrides': {
+            'light-tritanopia': '{bgColor.neutral.muted}',
+            'light-tritanopia-high-contrast': '{bgColor.neutral.muted}',
+            'dark-tritanopia': {
+              $value: '{bgColor.neutral.muted}',
+              alpha: 0.1,
+            },
+            'light-protanopia-deuteranopia': '{bgColor.neutral.muted}',
+            'light-protanopia-deuteranopia-high-contrast': '{bgColor.neutral.muted}',
+            'dark-protanopia-deuteranopia': {
+              $value: '{bgColor.neutral.muted}',
+              alpha: 0.1,
+            },
+            'dark-protanopia-deuteranopia-high-contrast': {
+              $value: '{bgColor.neutral.muted}',
+              alpha: 0.1,
+            },
+          },
+        },
+      },
+      emphasis: {
+        $value: '{bgColor.neutral.emphasis}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            group: 'semantic',
+            scopes: ['bgColor'],
+            codeSyntax: {
+              web: 'var(--bgColor-draft-emphasis)',
+            },
+          },
+        },
+      },
+    },
     done: {
       muted: {
         $value: '{base.color.purple.0}',
