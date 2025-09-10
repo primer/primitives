@@ -734,6 +734,70 @@
         },
       },
     },
+    draft: {
+      muted: {
+        $value: '{borderColor.neutral.muted}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            group: 'semantic',
+            scopes: ['borderColor'],
+            codeSyntax: {
+              web: 'var(--borderColor-draft-muted) */',
+            },
+          },
+          'org.primer.overrides': {
+            'dark-tritanopia': {
+              $value: '{borderColor.default}',
+              alpha: 0.4,
+            },
+            'dark-tritanopia-high-contrast': {
+              $value: '{borderColor.default}',
+              alpha: 1,
+            },
+            'light-tritanopia': {
+              $value: '{borderColor.default}',
+              alpha: 0.4,
+            },
+            'light-tritanopia-high-contrast': {
+              $value: '{borderColor.default}',
+              alpha: 1,
+            },
+            'dark-protanopia-deuteranopia': {
+              $value: '{borderColor.default}',
+              alpha: 0.4,
+            },
+            'dark-protanopia-deuteranopia-high-contrast': {
+              $value: '{borderColor.default}',
+              alpha: 1,
+            },
+            'light-protanopia-deuteranopia': {
+              $value: '{borderColor.default}',
+              alpha: 0.4,
+            },
+            'light-protanopia-deuteranopia-high-contrast': {
+              $value: '{borderColor.default}',
+              alpha: 1,
+            },
+          },
+        },
+      },
+      emphasis: {
+        $value: '{borderColor.neutral.emphasis}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            group: 'semantic',
+            scopes: ['borderColor'],
+            codeSyntax: {
+              web: 'var(--borderColor-draft-emphasis)',
+            },
+          },
+        },
+      },
+    },
     done: {
       muted: {
         $value: '{base.color.purple.3}',
