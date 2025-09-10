@@ -1,5 +1,6 @@
 import React from 'react'
 import {ColorPreview} from '../../StorybookComponents/ColorPreview/ColorPreview'
+import {Token} from '@primer/react'
 
 export default {
   title: 'Color/Functional/Roles',
@@ -9,44 +10,58 @@ export default {
   },
 }
 
+const roles = [
+  'neutral',
+  'accent',
+  'success',
+  'open',
+  'danger',
+  'closed',
+  'attention',
+  'severe',
+  'done',
+  'upsell',
+  'sponsors',
+]
+
 export const All = () => {
   return (
-    <div>
-      <div style={{display: 'flex', flexDirection: 'row', gap: '1rem', marginBottom: '2rem'}}>
-        {['neutral', 'accent', 'success', 'attention', 'severe', 'danger', 'open', 'closed', 'done', 'sponsors'].map(
-          role => (
-            <div
-              style={{
-                border: `1px solid var(--borderColor-${role}-emphasis)`,
-                background: `var(--bgColor-${role}-emphasis)`,
-                color: `var(--fgColor-onEmphasis)`,
-                padding: '4px 8px',
-                borderRadius: '9999px',
-                display: 'inline-block',
-              }}
-            >
-              {role}
-            </div>
-          ),
-        )}
+    <div style={{gap: '16px', display: 'flex', flexDirection: 'column'}}>
+      <div style={{gap: '8px', display: 'flex'}}>
+        {roles.map(role => (
+          <Token
+            text={role}
+            sx={{
+              backgroundColor: `var(--bgColor-${role}-muted)`,
+              color: `var(--fgColor-${role})`,
+              borderColor: `var(--borderColor-${role}-muted)`,
+            }}
+          />
+        ))}
       </div>
-      <div style={{display: 'flex', flexDirection: 'row', gap: '1rem'}}>
-        {['neutral', 'accent', 'success', 'attention', 'severe', 'danger', 'open', 'closed', 'done', 'sponsors'].map(
-          role => (
-            <div
-              style={{
-                border: `1px solid var(--borderColor-${role}-muted)`,
-                background: `var(--bgColor-${role}-muted)`,
-                color: `var(--fgColor-${role})`,
-                padding: '4px 8px',
-                borderRadius: '9999px',
-                display: 'inline-block',
-              }}
-            >
-              {role}
-            </div>
-          ),
-        )}
+      <div style={{gap: '8px', display: 'flex'}}>
+        {roles.map(role => (
+          <Token
+            text={role}
+            sx={{
+              backgroundColor: `var(--bgColor-${role}-muted)`,
+              color: `var(--fgColor-${role})`,
+              borderColor: `var(--borderColor-${role}-emphasis)`,
+            }}
+          />
+        ))}
+      </div>
+      <div style={{gap: '8px', display: 'flex'}}>
+        {roles.map(role => (
+          <Token
+            text={role}
+            sx={{
+              backgroundColor: `var(--bgColor-${role}-emphasis)`,
+              color: `var(--fgColor-onEmphasis)`,
+              borderColor: 'transparent',
+            }}
+          />
+        ))}
       </div>
     </div>
   )
