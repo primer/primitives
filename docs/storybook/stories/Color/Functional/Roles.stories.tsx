@@ -9,6 +9,49 @@ export default {
   },
 }
 
+export const All = () => {
+  return (
+    <div>
+      <div style={{display: 'flex', flexDirection: 'row', gap: '1rem', marginBottom: '2rem'}}>
+        {['neutral', 'accent', 'success', 'attention', 'severe', 'danger', 'open', 'closed', 'done', 'sponsors'].map(
+          role => (
+            <div
+              style={{
+                border: `1px solid var(--borderColor-${role}-emphasis)`,
+                background: `var(--bgColor-${role}-emphasis)`,
+                color: `var(--fgColor-onEmphasis)`,
+                padding: '4px 8px',
+                borderRadius: '9999px',
+                display: 'inline-block',
+              }}
+            >
+              {role}
+            </div>
+          ),
+        )}
+      </div>
+      <div style={{display: 'flex', flexDirection: 'row', gap: '1rem'}}>
+        {['neutral', 'accent', 'success', 'attention', 'severe', 'danger', 'open', 'closed', 'done', 'sponsors'].map(
+          role => (
+            <div
+              style={{
+                border: `1px solid var(--borderColor-${role}-muted)`,
+                background: `var(--bgColor-${role}-muted)`,
+                color: `var(--fgColor-${role})`,
+                padding: '4px 8px',
+                borderRadius: '9999px',
+                display: 'inline-block',
+              }}
+            >
+              {role}
+            </div>
+          ),
+        )}
+      </div>
+    </div>
+  )
+}
+
 export const Neutral = () => {
   return (
     <>
