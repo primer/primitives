@@ -261,6 +261,9 @@ export const buildDesignTokens = async (buildOptions: ConfigGeneratorOptions): P
 
   const excludePaths = [
     (path: string) => {
+      return path === 'dist/css/functional/size/viewport.css'
+    },
+    (path: string) => {
       return path.startsWith('dist/css/functional/themes/')
     },
   ]
