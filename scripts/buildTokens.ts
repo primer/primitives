@@ -55,11 +55,13 @@ const getStyleDictionaryConfig: StyleDictionaryConfigGenerator = (
 })
 
 export const buildDesignTokens = async (buildOptions: ConfigGeneratorOptions): Promise<void> => {
+  let debugCurrentFile: string | undefined = undefined
   /** -----------------------------------
    * Internal Colors
    * ----------------------------------- */
   try {
     for (const {filename, source, include, theme} of themes) {
+      debugCurrentFile = `internalCss/${filename}.css`
       // build functional scales
       const extendedSD = await PrimerStyleDictionary.extend({
         source: [...source, ...include], // build the special formats
@@ -74,8 +76,10 @@ export const buildDesignTokens = async (buildOptions: ConfigGeneratorOptions): P
       await extendedSD.buildAllPlatforms()
     }
   } catch (e) {
-    // eslint-disable-next-line no-console
-    console.error('🛑 Error trying to build internal css colors for code output:', e)
+    console.error(
+      '🛑 Error trying to build internal css colors for code output:',
+      `${e} when building ${debugCurrentFile}`,
+    )
   }
 
   /** -----------------------------------
@@ -83,6 +87,7 @@ export const buildDesignTokens = async (buildOptions: ConfigGeneratorOptions): P
    * ----------------------------------- */
   try {
     for (const {filename, source, include, theme} of themes) {
+      debugCurrentFile = `functional/themes/${filename}.css`
       // build functional scales
       const extendedSD = await PrimerStyleDictionary.extend(
         getStyleDictionaryConfig(
@@ -97,8 +102,10 @@ export const buildDesignTokens = async (buildOptions: ConfigGeneratorOptions): P
       await extendedSD.buildAllPlatforms()
     }
   } catch (e) {
-    // eslint-disable-next-line no-console
-    console.error('🛑 Error trying to build Colors, shadows & borders for code output:', e)
+    console.error(
+      '🛑 Error trying to build Colors, shadows & borders for code output:',
+      `${e} when building ${debugCurrentFile}`,
+    )
   }
 
   /** -----------------------------------
@@ -108,6 +115,7 @@ export const buildDesignTokens = async (buildOptions: ConfigGeneratorOptions): P
     const sizeFiles = glob.sync('src/tokens/functional/size/*')
     //
     for (const file of sizeFiles) {
+      debugCurrentFile = `functional/size/${file.replace('src/tokens/functional/size/', '').replace('.json5', '')}`
       const extendedSD = await PrimerStyleDictionary.extend(
         getStyleDictionaryConfig(
           `functional/size/${file.replace('src/tokens/functional/size/', '').replace('.json5', '')}`,
@@ -119,6 +127,7 @@ export const buildDesignTokens = async (buildOptions: ConfigGeneratorOptions): P
       await extendedSD.buildAllPlatforms()
     }
     // build base scales
+    debugCurrentFile = `base/size/size.css`
     const SdBaseSize = await PrimerStyleDictionary.extend(
       // using includes as source
       getStyleDictionaryConfig(`base/size/size`, ['src/tokens/base/size/size.json5'], [], {
@@ -128,13 +137,13 @@ export const buildDesignTokens = async (buildOptions: ConfigGeneratorOptions): P
     )
     await SdBaseSize.buildAllPlatforms()
   } catch (e) {
-    // eslint-disable-next-line no-console
-    console.error('🛑 Error trying to build size tokens for code output:', e)
+    console.error('🛑 Error trying to build size tokens for code output:', `${e} when building ${debugCurrentFile}`)
   }
   /** -----------------------------------
    * Typography tokens
    * ----------------------------------- */
   try {
+    debugCurrentFile = `functional/typography/typography.css`
     const extendedSD = await PrimerStyleDictionary.extend(
       getStyleDictionaryConfig(
         `functional/typography/typography`,
@@ -143,28 +152,30 @@ export const buildDesignTokens = async (buildOptions: ConfigGeneratorOptions): P
         buildOptions,
         {
           css: css(`css/functional/typography/typography.css`, buildOptions.prefix, buildOptions.buildPath, {
-            options: {
-              outputReferences: true,
-            },
+            options: {outputReferences: true},
           }),
         },
       ),
     )
     await extendedSD.buildAllPlatforms()
 
+    debugCurrentFile = `base/typography/typography.css`
     const SdTypo = await PrimerStyleDictionary.extend(
       getStyleDictionaryConfig(`base/typography/typography`, [`src/tokens/base/typography/*.json5`], [], buildOptions),
     )
     await SdTypo.buildAllPlatforms()
   } catch (e) {
-    // eslint-disable-next-line no-console
-    console.error('🛑 Error trying to build typography tokens for code output:', e)
+    console.error(
+      '🛑 Error trying to build typography tokens for code output:',
+      `${e} when building ${debugCurrentFile}`,
+    )
   }
 
   /** -----------------------------------
    * Motion tokens
    * ----------------------------------- */
   try {
+    debugCurrentFile = `functional/motion/motion.css`
     const extendedSD = await PrimerStyleDictionary.extend(
       getStyleDictionaryConfig(
         `functional/motion/motion`,
@@ -177,22 +188,20 @@ export const buildDesignTokens = async (buildOptions: ConfigGeneratorOptions): P
         buildOptions,
         {
           css: css(`css/functional/motion/motion.css`, buildOptions.prefix, buildOptions.buildPath, {
-            options: {
-              outputReferences: true,
-            },
+            options: {outputReferences: true},
           }),
         },
       ),
     )
     await extendedSD.buildAllPlatforms()
 
+    debugCurrentFile = `base/motion/motion.css`
     const SdMotion = await PrimerStyleDictionary.extend(
       getStyleDictionaryConfig(`base/motion/motion`, [`src/tokens/base/motion/*.json5`], [], buildOptions),
     )
     await SdMotion.buildAllPlatforms()
   } catch (e) {
-    // eslint-disable-next-line no-console
-    console.error('🛑 Error trying to build motion tokens for code output:', e)
+    console.error('🛑 Error trying to build motion tokens for code output:', `${e} when building ${debugCurrentFile}`)
   }
   /** -----------------------------------
    * deprecated tokens
@@ -243,7 +252,6 @@ export const buildDesignTokens = async (buildOptions: ConfigGeneratorOptions): P
       await extendedSD.buildAllPlatforms()
     }
   } catch (e) {
-    // eslint-disable-next-line no-console
     console.error('🛑 Error trying to build deprecated tokens output:', e)
   }
   /** -----------------------------------

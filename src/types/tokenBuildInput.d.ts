@@ -1,6 +1,8 @@
 export type TokenBuildInput = {
   // The output filename WITHOUT the extension
   filename: string
+  // defines if the theme should be exported to Figma
+  exportToFigma: boolean
   // Array of `filepaths` to token files that should be converted and included in the output. Accepts relative or glob paths.
   source: string[]
   // The mode of the theme

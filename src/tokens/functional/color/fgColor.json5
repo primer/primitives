@@ -335,6 +335,20 @@
         },
       },
     },
+    draft: {
+      $value: '{fgColor.neutral}',
+      $type: 'color',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'mode',
+          group: 'semantic',
+          scopes: ['fgColor'],
+          codeSyntax: {
+            web: 'var(--fgColor-draft)',
+          },
+        },
+      },
+    },
     done: {
       $value: '{base.color.purple.5}',
       $type: 'color',

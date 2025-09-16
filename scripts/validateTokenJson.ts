@@ -17,7 +17,6 @@ export const validateTokens = (tokenDir: string) => {
     try {
       tokenJson = json5.parse(tokenFile)
     } catch (error) {
-      // eslint-disable-next-line no-console
       console.error(`Invalid token file: ${file}`, error)
     }
     // validate token $type property
@@ -34,10 +33,7 @@ export const validateTokens = (tokenDir: string) => {
     }
   }
 
-  return {
-    failed,
-    files: tokenFiles,
-  }
+  return {failed, files: tokenFiles}
 }
 
 // *****************************************************
@@ -46,9 +42,8 @@ const {failed, files} = validateTokens('./src/tokens/')
 
 // if silent flag is NOT set, output to console
 if (getFlag('--silent') === null) {
-  // eslint-disable-next-line no-console
   console.log(`\u001b[36;1m\u001b[1m${files.length} token files validated:\u001b[0m`)
-  // eslint-disable-next-line no-console
+
   console.log(
     `${files
       .map(file => {
@@ -60,15 +55,13 @@ if (getFlag('--silent') === null) {
   )
 
   for (const fail of failed) {
-    // eslint-disable-next-line no-console
     console.log('++++++++++++++++++++++++++++++')
-    // eslint-disable-next-line no-console
+
     console.log(`\u001b[36;1m\u001b[1m${fail.fileName}\u001b[0m`)
 
     for (const mainPath of Object.keys(fail.errorsByPath)) {
-      // eslint-disable-next-line no-console
       console.log(`\nPath: \u001b[34;1m\u001b[1m${mainPath}\u001b[0m`)
-      // eslint-disable-next-line no-console
+
       console.log(
         fail.errorsByPath[mainPath]
           .map(
@@ -101,7 +94,7 @@ if (getFlag('--outFile')) {
   // replace linebreak with <br> for html output
   const htmlFailed = failed.map(item => ({
     ...item,
-    // eslint-disable-next-line github/unescaped-html-literal
+
     errorsByPath: JSON.parse(JSON.stringify(item.errorsByPath).replace(/\\n/g, '<br />')),
   }))
   //

@@ -21,7 +21,7 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: 'npm'
 
       - name: Install dependencies
@@ -44,7 +44,8 @@ jobs:
           sleep 5
 
       - name: Run Visual Regression Tests
-        uses: docker://mcr.microsoft.com/playwright:v1.49.0-jammy
+        uses: docker://mcr.microsoft.com/playwright:v1.55.0-jammy
+        
         env:
           STORYBOOK_URL: 'http://172.17.0.1:6006'
         with:
@@ -73,7 +74,7 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: 'npm'
 
       - name: install dependencies

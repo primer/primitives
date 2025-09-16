@@ -1,11 +1,12 @@
 import fs from 'fs'
 import {PrimerStyleDictionary} from '../src/primerStyleDictionary.js'
-import {themes} from './themes.config.js'
+import {themes as origialThemes} from './themes.config.js'
 import {figma} from '../src/platforms/index.js'
 import type {ConfigGeneratorOptions} from '../src/types/styleDictionaryConfigGenerator.js'
 import {getFallbackTheme} from './utilities/getFallbackTheme.js'
 
 const buildFigma = async (buildOptions: ConfigGeneratorOptions): Promise<void> => {
+  const themes = origialThemes.filter(theme => theme.exportToFigma !== false)
   /** -----------------------------------
    * Colors
    * ----------------------------------- */
@@ -328,10 +329,7 @@ const buildFigma = async (buildOptions: ConfigGeneratorOptions): Promise<void> =
 }
 
 try {
-  await buildFigma({
-    buildPath: 'dist/',
-  })
+  await buildFigma({buildPath: 'dist/'})
 } catch (e) {
-  // eslint-disable-next-line no-console
   console.error('🛑 Error trying to build Figma output:', e)
 }

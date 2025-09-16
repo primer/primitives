@@ -1,5 +1,6 @@
 import React from 'react'
 import {ColorPreview} from '../../StorybookComponents/ColorPreview/ColorPreview'
+import {Token} from '@primer/react'
 
 export default {
   title: 'Color/Functional/Roles',
@@ -7,6 +8,64 @@ export default {
     storyType: 'swatch',
     controls: {hideNoControlsWarning: true},
   },
+}
+
+const roles = [
+  'neutral',
+  'accent',
+  'success',
+  'open',
+  'danger',
+  'closed',
+  'attention',
+  'severe',
+  'done',
+  'upsell',
+  'sponsors',
+  'draft',
+]
+
+export const All = () => {
+  return (
+    <div style={{gap: '16px', display: 'flex', flexDirection: 'column'}}>
+      <div style={{gap: '8px', display: 'flex'}}>
+        {roles.map(role => (
+          <Token
+            text={role}
+            sx={{
+              backgroundColor: `var(--bgColor-${role}-muted)`,
+              color: `var(--fgColor-${role})`,
+              borderColor: `var(--borderColor-${role}-muted)`,
+            }}
+          />
+        ))}
+      </div>
+      <div style={{gap: '8px', display: 'flex'}}>
+        {roles.map(role => (
+          <Token
+            text={role}
+            sx={{
+              backgroundColor: `var(--bgColor-${role}-muted)`,
+              color: `var(--fgColor-${role})`,
+              borderColor: `var(--borderColor-${role}-emphasis)`,
+            }}
+          />
+        ))}
+      </div>
+      <div style={{gap: '8px', display: 'flex'}}>
+        {roles.map(role => (
+          <Token
+            text={role}
+            sx={{
+              backgroundColor: `var(--bgColor-${role}-emphasis)`,
+              color: `var(--fgColor-onEmphasis)`,
+              borderColor: 'transparent',
+            }}
+          />
+        ))}
+      </div>
+    </div>
+  )
 }
 
 export const Neutral = () => {
@@ -137,6 +196,18 @@ export const Sponsors = () => {
       <ColorPreview color={'bgColor-sponsors-emphasis'} bgColor canvasColor="bgColor-default" />
       <ColorPreview color={'borderColor-sponsors-muted'} borderColor canvasColor="bgColor-default" />
       <ColorPreview color={'borderColor-sponsors-emphasis'} borderColor canvasColor="bgColor-default" />
+    </>
+  )
+}
+
+export const Draft = () => {
+  return (
+    <>
+      <ColorPreview color={'fgColor-draft'} textColor canvasColor="bgColor-default" />
+      <ColorPreview color={'bgColor-draft-muted'} bgColor canvasColor="bgColor-default" />
+      <ColorPreview color={'bgColor-draft-emphasis'} bgColor canvasColor="bgColor-default" />
+      <ColorPreview color={'borderColor-draft-muted'} borderColor canvasColor="bgColor-default" />
+      <ColorPreview color={'borderColor-draft-emphasis'} borderColor canvasColor="bgColor-default" />
     </>
   )
 }
