@@ -1,5 +1,13 @@
 # @primer/primitives
 
+## 11.2.0
+
+### Minor Changes
+
+- [#1255](https://github.com/primer/primitives/pull/1255) [`092dea7`](https://github.com/primer/primitives/commit/092dea7456ae44110c87ce945c704b56a74a6894) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Adding new draft role token
+
+- [#1247](https://github.com/primer/primitives/pull/1247) [`d1deb93`](https://github.com/primer/primitives/commit/d1deb93e190ce00f18b6a24d9976205325403b03) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Change primer.css to using imports
+
 ## 11.1.0
 
 ### Minor Changes
