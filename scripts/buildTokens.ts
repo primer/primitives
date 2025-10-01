@@ -281,8 +281,7 @@ export const buildDesignTokens = async (buildOptions: ConfigGeneratorOptions): P
     }
 
     if (skip) continue
-
-    all.push(fs.readFileSync(cssFile, {encoding: 'utf8'}).trim())
+    all.push(`@import '${cssFile.replace(/dist\/css/g, '.')}';`)
   }
 
   fs.writeFileSync('dist/css/primitives.css', `${all.join('\n')}\n`)

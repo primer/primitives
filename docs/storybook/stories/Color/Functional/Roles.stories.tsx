@@ -22,6 +22,7 @@ const roles = [
   'done',
   'upsell',
   'sponsors',
+  'draft',
 ]
 
 export const All = () => {
@@ -195,6 +196,18 @@ export const Sponsors = () => {
       <ColorPreview color={'bgColor-sponsors-emphasis'} bgColor canvasColor="bgColor-default" />
       <ColorPreview color={'borderColor-sponsors-muted'} borderColor canvasColor="bgColor-default" />
       <ColorPreview color={'borderColor-sponsors-emphasis'} borderColor canvasColor="bgColor-default" />
+    </>
+  )
+}
+
+export const Draft = () => {
+  return (
+    <>
+      <ColorPreview color={'fgColor-draft'} textColor canvasColor="bgColor-default" />
+      <ColorPreview color={'bgColor-draft-muted'} bgColor canvasColor="bgColor-default" />
+      <ColorPreview color={'bgColor-draft-emphasis'} bgColor canvasColor="bgColor-default" />
+      <ColorPreview color={'borderColor-draft-muted'} borderColor canvasColor="bgColor-default" />
+      <ColorPreview color={'borderColor-draft-emphasis'} borderColor canvasColor="bgColor-default" />
     </>
   )
 }
