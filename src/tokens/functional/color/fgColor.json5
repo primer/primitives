@@ -316,7 +316,7 @@
       },
     },
     draft: {
-      $value: '{fgColor.neutral}',
+      $value: '{fgColor.upsell}',
       $type: 'color',
       $extensions: {
         'org.primer.figma': {
@@ -330,7 +330,7 @@
       },
     },
     done: {
-      $value: '{base.color.purple.5}',
+      $value: '{fgColor.neutral}',
       $type: 'color',
       $extensions: {
         'org.primer.figma': {
@@ -341,24 +341,10 @@
             web: 'var(--fgColor-done) /* utility class: .color-fg-done */',
           },
         },
-        'org.primer.overrides': {
-          dark: '{base.color.purple.4}',
-          'dark-high-contrast': '#D3ABFF',
-          'dark-dimmed-high-contrast': '{base.color.purple.1}',
-          'light-high-contrast': '{base.color.purple.6}',
-          'light-protanopia-deuteranopia': '{base.color.neutral.9}',
-          'dark-protanopia-deuteranopia': '{base.color.neutral.9}',
-          'dark-protanopia-deuteranopia-high-contrast': '{base.color.neutral.11}',
-          'light-protanopia-deuteranopia-high-contrast': '{base.color.neutral.11}',
-          'light-tritanopia': '{base.color.neutral.9}',
-          'dark-tritanopia': '{base.color.neutral.9}',
-          'dark-tritanopia-high-contrast': '{base.color.neutral.11}',
-          'light-tritanopia-high-contrast': '{base.color.neutral.11}',
-        },
       },
     },
     upsell: {
-      $value: '{fgColor.done}',
+      $value: '{base.color.purple.5}',
       $type: 'color',
       $extensions: {
         'org.primer.figma': {
@@ -373,11 +359,14 @@
           'light-protanopia-deuteranopia': '{base.color.purple.5}',
           'dark-protanopia-deuteranopia': '{base.color.purple.4}',
           'dark-protanopia-deuteranopia-high-contrast': '{base.color.purple.1}',
+          'dark-dimmed-high-contrast': '{base.color.purple.1}',
           'light-protanopia-deuteranopia-high-contrast': '{base.color.purple.6}',
           'light-tritanopia': '{base.color.purple.5}',
           'dark-tritanopia': '{base.color.purple.4}',
           'dark-tritanopia-high-contrast': '{base.color.purple.1}',
           'light-tritanopia-high-contrast': '{base.color.purple.6}',
+          'dark-high-contrast': '{base.color.purple.1}',
+          'light-high-contrast': '{base.color.purple.6}',
         },
       },
     },
