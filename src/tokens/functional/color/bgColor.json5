@@ -250,10 +250,16 @@
           },
           'org.primer.overrides': {
             dark: '{base.color.blue.5}',
+            'dark-protanopia-deuteranopia': '{base.color.blue.7}',
+            'dark-tritanopia': '{base.color.blue.7}',
             'dark-high-contrast': '{base.color.blue.9}',
             'dark-dimmed-high-contrast': '{base.color.blue.7}',
             'dark-tritanopia-high-contrast': '{base.color.blue.9}',
             'dark-protanopia-deuteranopia-high-contrast': '{base.color.blue.9}',
+            'light-tritanopia': '{base.color.blue.7}',
+            'light-protanopia-deuteranopia': '{base.color.blue.7}',
+            'light-tritanopia-high-contrast': '{base.color.blue.7}',
+            'light-protanopia-deuteranopia-high-contrast': '{base.color.blue.7}',
           },
         },
       },
@@ -530,7 +536,7 @@
     },
     draft: {
       muted: {
-        $value: '{bgColor.upsell.muted}',
+        $value: '{bgColor.neutral.muted}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -544,7 +550,7 @@
         },
       },
       emphasis: {
-        $value: '{bgColor.upsell.emphasis}',
+        $value: '{bgColor.neutral.emphasis}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -560,7 +566,7 @@
     },
     done: {
       muted: {
-        $value: '{bgColor.neutral.muted}',
+        $value: '{bgColor.upsell.muted}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -574,7 +580,7 @@
         },
       },
       emphasis: {
-        $value: '{bgColor.neutral.emphasis}',
+        $value: '{bgColor.upsell.emphasis}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -645,13 +651,13 @@
             'light-protanopia-deuteranopia': '{base.color.purple.5}',
             'light-protanopia-deuteranopia-high-contrast': '{base.color.purple.5}',
             'dark-protanopia-deuteranopia': '{base.color.purple.5}',
-            'dark-protanopia-deuteranopia-high-contrast': '{base.color.purple.7}',
             'dark-tritanopia': '{base.color.purple.5}',
-            'dark-tritanopia-high-contrast': '{base.color.purple.7}',
             'light-tritanopia': '{base.color.purple.5}',
             'light-tritanopia-high-contrast': '{base.color.purple.5}',
-            'dark-high-contrast': '{base.color.purple.7}',
-            'dark-dimmed-high-contrast': '{base.color.purple.7}',
+            'dark-protanopia-deuteranopia-high-contrast': '{base.color.purple.9}',
+            'dark-tritanopia-high-contrast': '{base.color.purple.9}',
+            'dark-high-contrast': '{base.color.purple.9}',
+            'dark-dimmed-high-contrast': '{base.color.purple.9}',
           },
         },
       },

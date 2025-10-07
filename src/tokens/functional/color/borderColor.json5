@@ -651,7 +651,7 @@
     },
     draft: {
       muted: {
-        $value: '{borderColor.upsell.muted}',
+        $value: '{borderColor.neutral.muted}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -665,7 +665,7 @@
         },
       },
       emphasis: {
-        $value: '{borderColor.upsell.emphasis}',
+        $value: '{borderColor.neutral.emphasis}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -681,7 +681,7 @@
     },
     done: {
       muted: {
-        $value: '{borderColor.neutral.muted}',
+        $value: '{borderColor.upsell.muted}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -695,7 +695,7 @@
         }
       },
       emphasis: {
-        $value: '{borderColor.neutral.emphasis}',
+        $value: '{borderColor.upsell.emphasis}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
