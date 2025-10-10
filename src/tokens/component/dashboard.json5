@@ -13,16 +13,19 @@
           dark: {
             $value: '{bgColor.inset}',
           },
-          dark_dimmed: {
+          'dark-dimmed': {
             $value: '{bgColor.inset}',
           },
-          dark_high_contrast: {
+          'dark-dimmed-high-contrast': {
             $value: '{bgColor.inset}',
           },
-          dark_colorblind_high_contrast: {
+          'dark-high-contrast': {
             $value: '{bgColor.inset}',
           },
-          dark_tritanopia_high_contrast: {
+          'dark-protanopia-deuteranopia-high-contrast': {
+            $value: '{bgColor.inset}',
+          },
+          'dark-tritanopia-high-contrast': {
             $value: '{bgColor.inset}',
           },
         },
