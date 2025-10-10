@@ -1,0 +1,32 @@
+{
+  dashboard: {
+    bgColor: {
+      $value: '{bgColor.default}',
+      $type: 'color',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'mode',
+          group: 'component (internal)',
+          scopes: ['bgColor'],
+        },
+        'org.primer.overrides': {
+          dark: {
+            $value: '{bgColor.inset}',
+          },
+          dark_dimmed: {
+            $value: '{bgColor.inset}',
+          },
+          dark_high_contrast: {
+            $value: '{bgColor.inset}',
+          },
+          dark_colorblind_high_contrast: {
+            $value: '{bgColor.inset}',
+          },
+          dark_tritanopia_high_contrast: {
+            $value: '{bgColor.inset}',
+          },
+        },
+      },
+    },
+  },
+}
