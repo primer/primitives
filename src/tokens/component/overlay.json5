@@ -11,6 +11,7 @@
         },
         'org.primer.overrides': {
           'dark-dimmed': '{base.color.neutral.5}',
+          'dark-dimmed-high-contrast': '{base.color.neutral.4}',
         },
       },
     },
@@ -27,7 +28,7 @@
             alpha: 1,
             $value: '{borderColor.muted}',
           },
-          'dark-dimmed': {
+          'dark-dimmed': {y
             $value: '{base.color.neutral.7}',
             alpha: 0.7,
           },
