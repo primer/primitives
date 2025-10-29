@@ -41,9 +41,11 @@ const themes = [
   'light_tritanopia_high_contrast',
   'light_high_contrast',
   'dark',
+  'dark_dimmed',
   'dark_colorblind',
   'dark_tritanopia',
   'dark_colorblind_high_contrast',
+  'dark_dimmed_high_contrast',
   'dark_tritanopia_high_contrast',
   'dark_high_contrast',
 ]
