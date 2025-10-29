@@ -32,7 +32,7 @@ export const All = () => {
         {roles.map(role => (
           <Token
             text={role}
-            sx={{
+            style={{
               backgroundColor: `var(--bgColor-${role}-muted)`,
               color: `var(--fgColor-${role})`,
               borderColor: `var(--borderColor-${role}-muted)`,
@@ -44,7 +44,7 @@ export const All = () => {
         {roles.map(role => (
           <Token
             text={role}
-            sx={{
+            style={{
               backgroundColor: `var(--bgColor-${role}-muted)`,
               color: `var(--fgColor-${role})`,
               borderColor: `var(--borderColor-${role}-emphasis)`,
@@ -56,7 +56,7 @@ export const All = () => {
         {roles.map(role => (
           <Token
             text={role}
-            sx={{
+            style={{
               backgroundColor: `var(--bgColor-${role}-emphasis)`,
               color: `var(--fgColor-onEmphasis)`,
               borderColor: 'transparent',
