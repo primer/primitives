@@ -3,10 +3,12 @@ description: 'Upload version information for public packages'
 runs:
   using: 'composite'
   steps:
-    - name: Set up Node.js
-      uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+    - name: Set up Node
+      uses: actions/setup-node@v6
       with:
-        node-version: 22
+        node-version: 24
+        cache: 'npm'
+
     - name: Write workspace versions as JSON file
       uses: actions/github-script@a3e7071a34d7e1f219a8a4de9a5e0a34d1ee1293
       with:
