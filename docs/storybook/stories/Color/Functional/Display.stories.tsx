@@ -179,7 +179,7 @@ export const Scales = () => {
   ]
 
   return (
-    <Box>
+    <div>
       <h1 className="sr-only">Scales</h1>
       <Banner title="Display scales are designed for very limited use cases only." variant="warning">
         If you feel like they make sense in your case, please reach out to the Primer team.
@@ -193,6 +193,6 @@ export const Scales = () => {
           )
         })}
       </div>
-    </Box>
+    </div>
   )
 }
