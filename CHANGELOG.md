@@ -1,5 +1,11 @@
 # @primer/primitives
 
+## 11.2.2
+
+### Patch Changes
+
+- [#1265](https://github.com/primer/primitives/pull/1265) [`394d649`](https://github.com/primer/primitives/commit/394d649807794c05cbf9de2739e8fdc3463c2e10) Thanks [@langermank](https://github.com/langermank)! - Fix overlay bg color for dark dimmed high contrast
+
 ## 11.2.1
 
 ### Patch Changes
