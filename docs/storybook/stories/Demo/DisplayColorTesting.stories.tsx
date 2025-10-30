@@ -38,14 +38,16 @@ export const DisplayDemo = () => {
     <Stack direction="vertical" gap="spacious">
       <Stack direction="horizontal" gap="condensed" wrap="wrap">
         {colors.map(color => (
-          // @ts-expect-error - color names from tokens match IssueLabel variants
-          <IssueLabel key={color} variant={color} text={color} />
+          <IssueLabel href="/" key={color} variant={color}>
+            {color}
+          </IssueLabel>
         ))}
       </Stack>
       <Stack direction="horizontal" gap="condensed" wrap="wrap">
         {colors.map(color => (
-          // @ts-expect-error - color names from tokens match IssueLabel variants
-          <IssueLabel key={color} variant={color} text={color} />
+          <IssueLabel href="/" key={color} variant={color}>
+            {color}
+          </IssueLabel>
         ))}
       </Stack>
     </Stack>

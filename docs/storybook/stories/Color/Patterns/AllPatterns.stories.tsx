@@ -899,7 +899,9 @@ export const Label = () => {
       <h1 id="label">Labels</h1>
       <div style={{paddingBottom: '20px', gap: '8px', display: 'flex', flexWrap: 'wrap'}}>
         {colors.map(color => (
-          <IssueLabel href="/" key={color} variant={color} text={color} />
+          <IssueLabel href="/" key={color} variant={color}>
+            {color}
+          </IssueLabel>
         ))}
       </div>
       <Table.Container>
