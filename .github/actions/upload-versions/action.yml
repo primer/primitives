@@ -19,9 +19,6 @@ runs:
 
           const contents = fs.readFileSync('./package.json', 'utf8');
           const packageJson = JSON.parse(contents);
-          if (packageJson.private) {
-            continue;
-          }
 
           const pkg = {
             name: packageJson.name,
