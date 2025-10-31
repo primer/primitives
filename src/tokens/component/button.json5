@@ -2151,11 +2151,15 @@
             },
             'org.primer.overrides': {
               'dark-dimmed': {
-                $value: '{base.color.black}',
+                $value: '{buttonCounter.primary.bgColor.rest}',
                 alpha: 0.1,
               },
               'dark-dimmed-high-contrast': {
                 $value: '{base.color.white}',
+              },
+              dark: {
+                $value: '{buttonCounter.primary.bgColor.rest}',
+                alpha: 0.1,
               },
               'dark-high-contrast': {
                 $value: '{base.color.white}',
@@ -2286,6 +2290,10 @@
               scopes: ['borderColor'],
             },
             'org.primer.overrides': {
+              dark: {
+                $value: '{base.color.black}',
+                alpha: 0.1,
+              },
               'dark-dimmed': {
                 $value: '{base.color.black}',
                 alpha: 0.1,
@@ -2311,6 +2319,17 @@
               'light-protanopia-deuteranopia-high-contrast': {
                 $value: '{base.color.white}',
               },
+            },
+          },
+        },
+        active: {
+          $value: '{buttonKeybindingHint.danger.borderColor.hover}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component (internal)',
+              scopes: ['borderColor'],
             },
           },
         },
