@@ -209,7 +209,14 @@ export const Button = () => {
     }
   })
 
-  const data = button.concat(buttonCounter).map((item, index) => ({
+  const buttonKeybindingHint = getTokensByName(colorTokens, 'buttonKeybindingHint').map(token => {
+    return {
+      id: token.name,
+      ...token,
+    }
+  })
+
+  const data = button.concat(buttonCounter, buttonKeybindingHint).map((item, index) => ({
     ...item,
     index,
   }))
