@@ -2,10 +2,9 @@ import React from 'react'
 // eslint-disable-next-line import/extensions
 import colorTokens from '../../../../../dist/docs/functional/themes/light.json'
 import {ColorTokenSwatch} from '../../StorybookComponents/ColorTokenSwatch/ColorTokenSwatch'
-import {DataTable, Table} from '@primer/react/experimental'
+import {DataTable, Table, IssueLabel} from '@primer/react/experimental'
 import {InlineCode} from '../../StorybookComponents/InlineCode/InlineCode'
 import {getTokensByName} from '../../utilities/getTokensByName'
-import {Box, Token} from '@primer/react'
 
 export default {
   title: 'Color/Patterns',
@@ -210,7 +209,14 @@ export const Button = () => {
     }
   })
 
-  const data = button.concat(buttonCounter).map((item, index) => ({
+  const buttonKeybindingHint = getTokensByName(colorTokens, 'buttonKeybindingHint').map(token => {
+    return {
+      id: token.name,
+      ...token,
+    }
+  })
+
+  const data = button.concat(buttonCounter, buttonKeybindingHint).map((item, index) => ({
     ...item,
     index,
   }))
@@ -898,28 +904,13 @@ export const Label = () => {
   return (
     <>
       <h1 id="label">Labels</h1>
-      <Box paddingBottom={5} sx={{gap: 2, display: 'flex'}}>
+      <div style={{paddingBottom: '20px', gap: '8px', display: 'flex', flexWrap: 'wrap'}}>
         {colors.map(color => (
-          <Token
-            text={color}
-            sx={{
-              backgroundColor: `var(--label-${color}-bgColor-rest)`,
-              color: `var(--label-${color}-fgColor-rest)`,
-              borderColor: 'transparent',
-              '&:hover': {
-                backgroundColor: `var(--label-${color}-bgColor-hover)`,
-                color: `var(--label-${color}-fgColor-hover)`,
-                cursor: 'pointer',
-              },
-              '&:active': {
-                backgroundColor: `var(--label-${color}-bgColor-active)`,
-                color: `var(--label-${color}-fgColor-active)`,
-                cursor: 'pointer',
-              },
-            }}
-          />
+          <IssueLabel href="/" key={color} variant={color}>
+            {color}
+          </IssueLabel>
         ))}
-      </Box>
+      </div>
       <Table.Container>
         <DataTable
           aria-labelledby="label"

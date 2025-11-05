@@ -1,5 +1,11 @@
 # @primer/primitives
 
+## 11.2.1
+
+### Patch Changes
+
+- [#1261](https://github.com/primer/primitives/pull/1261) [`b42c900`](https://github.com/primer/primitives/commit/b42c9004c5e24228fd5f9aa0e9ef8d7d428d5a04) Thanks [@langermank](https://github.com/langermank)! - add token
+
 ## 11.2.0
 
 ### Minor Changes
