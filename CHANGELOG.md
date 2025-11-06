@@ -1,5 +1,15 @@
 # @primer/primitives
 
+## 11.3.0
+
+### Minor Changes
+
+- [#1269](https://github.com/primer/primitives/pull/1269) [`0dd1e26`](https://github.com/primer/primitives/commit/0dd1e264b29b214830190411a90f725f497831eb) Thanks [@langermank](https://github.com/langermank)! - Add new color tokens for buttons with keybinding hint
+
+### Patch Changes
+
+- [#1265](https://github.com/primer/primitives/pull/1265) [`394d649`](https://github.com/primer/primitives/commit/394d649807794c05cbf9de2739e8fdc3463c2e10) Thanks [@langermank](https://github.com/langermank)! - Fix overlay bg color for dark dimmed high contrast
+
 ## 11.2.1
 
 ### Patch Changes
