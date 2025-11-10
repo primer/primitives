@@ -1,5 +1,11 @@
 # @primer/primitives
 
+## 11.3.1
+
+### Patch Changes
+
+- [#1271](https://github.com/primer/primitives/pull/1271) [`c160d8b`](https://github.com/primer/primitives/commit/c160d8b7bd81be83ac4dd0d26453b3cc1e4419c7) Thanks [@langermank](https://github.com/langermank)! - Add one more digit to line-height values
+
 ## 11.3.0
 
 ### Minor Changes
