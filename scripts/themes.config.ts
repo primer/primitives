@@ -6,6 +6,7 @@ export const themes: TokenBuildInput[] = [
     theme: 'light',
     exportToFigma: true,
     source: [
+      `src/tokens/base/color/light/light.json5`,
       `src/tokens/functional/shadow/shadow.json5`,
       `src/tokens/functional/border/*.json5`,
       `src/tokens/functional/color/*.json5`,
@@ -22,6 +23,7 @@ export const themes: TokenBuildInput[] = [
     theme: 'light-tritanopia',
     exportToFigma: true,
     source: [
+      `src/tokens/base/color/light/light.json5`,
       `src/tokens/functional/shadow/shadow.json5`,
       `src/tokens/functional/border/*.json5`,
       `src/tokens/functional/color/*.json5`,
@@ -38,6 +40,7 @@ export const themes: TokenBuildInput[] = [
     theme: 'light-tritanopia-high-contrast',
     exportToFigma: false,
     source: [
+      `src/tokens/base/color/light/light.json5`,
       `src/tokens/functional/shadow/shadow.json5`,
       `src/tokens/functional/border/*.json5`,
       `src/tokens/component/*.json5`,
@@ -56,6 +59,7 @@ export const themes: TokenBuildInput[] = [
     theme: 'light-protanopia-deuteranopia',
     exportToFigma: true,
     source: [
+      `src/tokens/base/color/light/light.json5`,
       `src/tokens/functional/shadow/shadow.json5`,
       `src/tokens/functional/border/*.json5`,
       `src/tokens/functional/color/*.json5`,
@@ -72,6 +76,7 @@ export const themes: TokenBuildInput[] = [
     theme: 'light-protanopia-deuteranopia-high-contrast',
     exportToFigma: false,
     source: [
+      `src/tokens/base/color/light/light.json5`,
       `src/tokens/functional/shadow/shadow.json5`,
       `src/tokens/functional/border/*.json5`,
       `src/tokens/component/*.json5`,
@@ -90,6 +95,7 @@ export const themes: TokenBuildInput[] = [
     theme: 'light-high-contrast',
     exportToFigma: true,
     source: [
+      `src/tokens/base/color/light/light.json5`,
       `src/tokens/functional/shadow/shadow.json5`,
       `src/tokens/functional/border/*.json5`,
       `src/tokens/functional/color/*.json5`,
@@ -107,6 +113,7 @@ export const themes: TokenBuildInput[] = [
     theme: 'dark',
     exportToFigma: true,
     source: [
+      `src/tokens/base/color/dark/dark.json5`,
       `src/tokens/functional/shadow/shadow.json5`,
       `src/tokens/functional/border/*.json5`,
       `src/tokens/functional/color/*.json5`,
@@ -123,6 +130,7 @@ export const themes: TokenBuildInput[] = [
     theme: 'dark-dimmed',
     exportToFigma: true,
     source: [
+      `src/tokens/base/color/dark/dark.json5`,
       `src/tokens/functional/shadow/shadow.json5`,
       `src/tokens/functional/border/*.json5`,
       `src/tokens/functional/color/*.json5`,
@@ -140,6 +148,7 @@ export const themes: TokenBuildInput[] = [
     theme: 'dark-dimmed-high-contrast',
     exportToFigma: false,
     source: [
+      `src/tokens/base/color/dark/dark.json5`,
       `src/tokens/functional/shadow/shadow.json5`,
       `src/tokens/functional/border/*.json5`,
       `src/tokens/component/*.json5`,
@@ -159,6 +168,7 @@ export const themes: TokenBuildInput[] = [
     theme: 'dark-tritanopia',
     exportToFigma: true,
     source: [
+      `src/tokens/base/color/dark/dark.json5`,
       `src/tokens/functional/shadow/shadow.json5`,
       `src/tokens/functional/border/*.json5`,
       `src/tokens/functional/color/*.json5`,
@@ -175,6 +185,7 @@ export const themes: TokenBuildInput[] = [
     theme: 'dark-tritanopia-high-contrast',
     exportToFigma: false,
     source: [
+      `src/tokens/base/color/dark/dark.json5`,
       `src/tokens/functional/shadow/shadow.json5`,
       `src/tokens/functional/border/*.json5`,
       `src/tokens/component/*.json5`,
@@ -193,6 +204,7 @@ export const themes: TokenBuildInput[] = [
     theme: 'dark-protanopia-deuteranopia',
     exportToFigma: true,
     source: [
+      `src/tokens/base/color/dark/dark.json5`,
       `src/tokens/functional/shadow/shadow.json5`,
       `src/tokens/functional/border/*.json5`,
       `src/tokens/functional/color/*.json5`,
@@ -209,6 +221,7 @@ export const themes: TokenBuildInput[] = [
     theme: 'dark-protanopia-deuteranopia-high-contrast',
     exportToFigma: false,
     source: [
+      `src/tokens/base/color/dark/dark.json5`,
       `src/tokens/functional/shadow/shadow.json5`,
       `src/tokens/functional/border/*.json5`,
       `src/tokens/component/*.json5`,
@@ -227,6 +240,7 @@ export const themes: TokenBuildInput[] = [
     theme: 'dark-high-contrast',
     exportToFigma: true,
     source: [
+      `src/tokens/base/color/dark/dark.json5`,
       `src/tokens/functional/shadow/shadow.json5`,
       `src/tokens/functional/border/*.json5`,
       `src/tokens/functional/color/*.json5`,
