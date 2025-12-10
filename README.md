@@ -37,6 +37,9 @@ All available imports:
 @import '@primer/primitives/dist/css/functional/size/viewport.css';
 @import '@primer/primitives/dist/css/functional/typography/typography.css';
 
+/* motion */
+@import '@primer/primitives/dist/css/base/motion/motion.css';
+
 /* color */
 @import '@primer/primitives/dist/css/functional/themes/light.css';
 @import '@primer/primitives/dist/css/functional/themes/light-tritanopia.css';
@@ -48,6 +51,8 @@ All available imports:
 @import '@primer/primitives/dist/css/functional/themes/dark-high-contrast.css';
 @import '@primer/primitives/dist/css/functional/themes/dark-tritanopia.css';
 ```
+
+> **Note:** Motion CSS imports are required for components with animations, such as `Spinner` from `@primer/react`. If you're experiencing issues with animated components appearing static, ensure you've imported the motion CSS files.
 
 ## Design token data
 
