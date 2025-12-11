@@ -33,86 +33,46 @@ export const Code = () => {
             {'// Comment - used for code comments'}
           </span>
           <br />
-
           {/* Keyword */}
-          <span style={{color: 'var(--color-prettylights-syntax-keyword)'}}>
-            const
-          </span>
-          {' '}
-          <span style={{color: 'var(--color-prettylights-syntax-variable)'}}>
-            name
-          </span>
+          <span style={{color: 'var(--color-prettylights-syntax-keyword)'}}>const</span>{' '}
+          <span style={{color: 'var(--color-prettylights-syntax-variable)'}}>name</span>
           {' = '}
           {/* String */}
-          <span style={{color: 'var(--color-prettylights-syntax-string)'}}>
-            'example'
-          </span>
+          <span style={{color: 'var(--color-prettylights-syntax-string)'}}>'example'</span>
           ;
           <br />
-
           {/* String Regexp */}
-          <span style={{color: 'var(--color-prettylights-syntax-keyword)'}}>
-            const
-          </span>
-          {' '}
-          <span style={{color: 'var(--color-prettylights-syntax-variable)'}}>
-            pattern
-          </span>
+          <span style={{color: 'var(--color-prettylights-syntax-keyword)'}}>const</span>{' '}
+          <span style={{color: 'var(--color-prettylights-syntax-variable)'}}>pattern</span>
           {' = '}
-          <span style={{color: 'var(--color-prettylights-syntax-string-regexp)'}}>
-            /regex/g
-          </span>
+          <span style={{color: 'var(--color-prettylights-syntax-string-regexp)'}}>/regex/g</span>
           ;
           <br />
-
           {/* Constant */}
-          <span style={{color: 'var(--color-prettylights-syntax-constant)'}}>
-            Math
-          </span>
+          <span style={{color: 'var(--color-prettylights-syntax-constant)'}}>Math</span>
           <span>.PI</span>
           <br />
-
           {/* Entity */}
-          <span style={{color: 'var(--color-prettylights-syntax-keyword)'}}>
-            class
-          </span>
-          {' '}
-          <span style={{color: 'var(--color-prettylights-syntax-entity)'}}>
-            MyClass
-          </span>
+          <span style={{color: 'var(--color-prettylights-syntax-keyword)'}}>class</span>{' '}
+          <span style={{color: 'var(--color-prettylights-syntax-entity)'}}>MyClass</span>
           {' {'}
           <br />
-
           {/* Entity Tag */}
-          <span style={{color: 'var(--color-prettylights-syntax-entity-tag)'}}>
-            {'  <Component />'}
-          </span>
+          <span style={{color: 'var(--color-prettylights-syntax-entity-tag)'}}>{'  <Component />'}</span>
           <br />
           {'}'}
           <br />
-
           {/* Meta Diff Range */}
-          <span style={{color: 'var(--color-prettylights-syntax-comment)'}}>
-            {' '}
-          </span>
+          <span style={{color: 'var(--color-prettylights-syntax-comment)'}}> </span>
           <br />
-          <span style={{color: 'var(--color-prettylights-syntax-meta-diff-range)'}}>
-            {'@@'}
-          </span>
+          <span style={{color: 'var(--color-prettylights-syntax-meta-diff-range)'}}>{'@@'}</span>
           <br />
-
           {/* Markup - Heading */}
-          <span style={{color: 'var(--color-prettylights-syntax-markup-heading)'}}>
-            {'# Heading'}
-          </span>
+          <span style={{color: 'var(--color-prettylights-syntax-markup-heading)'}}>{'# Heading'}</span>
           <br />
-
           {/* Markup - List */}
-          <span style={{color: 'var(--color-prettylights-syntax-markup-list)'}}>
-            {'- List item'}
-          </span>
+          <span style={{color: 'var(--color-prettylights-syntax-markup-list)'}}>{'- List item'}</span>
           <br />
-
           {/* Markup - Inserted */}
           <span
             style={{
@@ -122,11 +82,8 @@ export const Code = () => {
           >
             {'+'}
           </span>
-          <span style={{color: 'var(--color-prettylights-syntax-markup-inserted-text)'}}>
-            {' Added line'}
-          </span>
+          <span style={{color: 'var(--color-prettylights-syntax-markup-inserted-text)'}}>{' Added line'}</span>
           <br />
-
           {/* Markup - Deleted */}
           <span
             style={{
@@ -136,11 +93,8 @@ export const Code = () => {
           >
             {'-'}
           </span>
-          <span style={{color: 'var(--color-prettylights-syntax-markup-deleted-text)'}}>
-            {' Removed line'}
-          </span>
+          <span style={{color: 'var(--color-prettylights-syntax-markup-deleted-text)'}}>{' Removed line'}</span>
           <br />
-
           {/* Markup - Changed */}
           <span
             style={{
@@ -150,29 +104,19 @@ export const Code = () => {
           >
             {'~'}
           </span>
-          <span style={{color: 'var(--color-prettylights-syntax-markup-changed-text)'}}>
-            {' Changed line'}
-          </span>
+          <span style={{color: 'var(--color-prettylights-syntax-markup-changed-text)'}}>{' Changed line'}</span>
           <br />
-
           {/* Bracket Highlighter - Angle */}
-          <span style={{color: 'var(--color-prettylights-syntax-brackethighlighter-angle)'}}>
-            {'<tag>'}
-          </span>
+          <span style={{color: 'var(--color-prettylights-syntax-brackethighlighter-angle)'}}>{'<tag>'}</span>
           <br />
-
           {/* Bracket Highlighter - Unmatched */}
           <span style={{color: 'var(--color-prettylights-syntax-brackethighlighter-unmatched)'}}>
             {'[ unmatched bracket'}
           </span>
           <br />
-
           {/* Invalid - Illegal Text */}
-          <span style={{color: 'var(--color-prettylights-syntax-invalid-illegal-text)'}}>
-            {'⚠ Invalid syntax'}
-          </span>
+          <span style={{color: 'var(--color-prettylights-syntax-invalid-illegal-text)'}}>{'⚠ Invalid syntax'}</span>
           <br />
-
           {/* Invalid - Illegal BG */}
           <span
             style={{
@@ -183,25 +127,19 @@ export const Code = () => {
             {' Error: syntax error '}
           </span>
           <br />
-
           {/* Markup - Bold */}
           <span style={{color: 'var(--color-prettylights-syntax-markup-bold)', fontWeight: 'bold'}}>
             {'**bold text**'}
           </span>
           <br />
-
           {/* Markup - Italic */}
           <span style={{color: 'var(--color-prettylights-syntax-markup-italic)', fontStyle: 'italic'}}>
             {'_italic text_'}
           </span>
           <br />
-
           {/* Storage - Modifier - Import */}
-          <span style={{color: 'var(--color-prettylights-syntax-storage-modifier-import)'}}>
-            {'import'}
-          </span>
+          <span style={{color: 'var(--color-prettylights-syntax-storage-modifier-import)'}}>{'import'}</span>
           <br />
-
           {/* Carriage Return */}
           <span
             style={{
@@ -212,13 +150,9 @@ export const Code = () => {
             {' ↵ '}
           </span>
           <br />
-
           {/* Constant Other Reference Link */}
-          <span style={{color: 'var(--color-prettylights-syntax-constant-other-reference-link)'}}>
-            {'[link]'}
-          </span>
+          <span style={{color: 'var(--color-prettylights-syntax-constant-other-reference-link)'}}>{'[link]'}</span>
           <br />
-
           {/* Markup - Ignored */}
           <span
             style={{
@@ -229,11 +163,8 @@ export const Code = () => {
             {' Ignored content'}
           </span>
           <br />
-
           {/* Sublime Linter Gutter Mark */}
-          <span style={{color: 'var(--color-prettylights-syntax-sublimelinter-gutter-mark)'}}>
-            {'◯ Linter mark'}
-          </span>
+          <span style={{color: 'var(--color-prettylights-syntax-sublimelinter-gutter-mark)'}}>{'◯ Linter mark'}</span>
         </div>
       </div>
 
@@ -283,7 +214,6 @@ export const Code = () => {
 export const ANSI = () => {
   return (
     <div style={{display: 'flex', flexDirection: 'column', gap: 24}}>
-
       <div
         style={{
           backgroundColor: `var(--bgColor-default)`,
@@ -298,125 +228,65 @@ export const ANSI = () => {
         }}
       >
         <div style={{whiteSpace: 'pre-wrap', wordWrap: 'break-word'}}>
-          <span style={{color: 'var(--color-ansi-black)'}}>
-            user@terminal
-          </span>
+          <span style={{color: 'var(--color-ansi-black)'}}>user@terminal</span>
           <span style={{color: 'var(--color-ansi-black)'}}>:</span>
           <span style={{color: 'var(--color-ansi-black-bright)'}}>~/project</span>
           <span style={{color: 'var(--color-ansi-white)'}}> $ </span>
           <span style={{color: 'var(--color-ansi-yellow)'}}>npm test</span>
           <br />
           <br />
-          <span style={{color: 'var(--color-ansi-white-bright)'}}>
-            ▶ Test Suite for Components
-          </span>
+          <span style={{color: 'var(--color-ansi-white-bright)'}}>▶ Test Suite for Components</span>
           <br />
           <br />
-          <span style={{color: 'var(--color-ansi-green-bright)'}}>
-            ✓ Button component
-          </span>
-          {' '}
-          <span style={{color: 'var(--color-ansi-white)'}}>
-            (42ms)
-          </span>
+          <span style={{color: 'var(--color-ansi-green-bright)'}}>✓ Button component</span>{' '}
+          <span style={{color: 'var(--color-ansi-white)'}}>(42ms)</span>
           <br />
-          <span style={{color: 'var(--color-ansi-green-bright)'}}>
-            ✓ Input field
-          </span>
-          {' '}
-          <span style={{color: 'var(--color-ansi-white)'}}>
-            (38ms)
-          </span>
+          <span style={{color: 'var(--color-ansi-green-bright)'}}>✓ Input field</span>{' '}
+          <span style={{color: 'var(--color-ansi-white)'}}>(38ms)</span>
           <br />
-          <span style={{color: 'var(--color-ansi-red-bright)'}}>
-            ✗ Form validation
-          </span>
-          {' '}
-          <span style={{color: 'var(--color-ansi-white)'}}>
-            (1ms)
-          </span>
+          <span style={{color: 'var(--color-ansi-red-bright)'}}>✗ Form validation</span>{' '}
+          <span style={{color: 'var(--color-ansi-white)'}}>(1ms)</span>
           <br />
-          <span style={{color: 'var(--color-ansi-gray)'}}>
-            {'  → Expected value to be true'}
-          </span>
+          <span style={{color: 'var(--color-ansi-gray)'}}>{'  → Expected value to be true'}</span>
           <br />
-          <span style={{color: 'var(--color-ansi-green-bright)'}}>
-            ✓ Modal dialog
-          </span>
-          {' '}
-          <span style={{color: 'var(--color-ansi-white)'}}>
-            (55ms)
-          </span>
+          <span style={{color: 'var(--color-ansi-green-bright)'}}>✓ Modal dialog</span>{' '}
+          <span style={{color: 'var(--color-ansi-white)'}}>(55ms)</span>
           <br />
           <br />
-          <span style={{color: 'var(--color-ansi-white-bright)'}}>
-            ▶ Test Suite for Utilities
-          </span>
+          <span style={{color: 'var(--color-ansi-white-bright)'}}>▶ Test Suite for Utilities</span>
           <br />
           <br />
-          <span style={{color: 'var(--color-ansi-green-bright)'}}>
-            ✓ Format date
-          </span>
-          {' '}
-          <span style={{color: 'var(--color-ansi-white)'}}>
-            (5ms)
-          </span>
+          <span style={{color: 'var(--color-ansi-green-bright)'}}>✓ Format date</span>{' '}
+          <span style={{color: 'var(--color-ansi-white)'}}>(5ms)</span>
           <br />
-          <span style={{color: 'var(--color-ansi-green-bright)'}}>
-            ✓ Parse JSON
-          </span>
-          {' '}
-          <span style={{color: 'var(--color-ansi-white)'}}>
-            (8ms)
-          </span>
+          <span style={{color: 'var(--color-ansi-green-bright)'}}>✓ Parse JSON</span>{' '}
+          <span style={{color: 'var(--color-ansi-white)'}}>(8ms)</span>
           <br />
           <br />
-          <span style={{color: 'var(--color-ansi-magenta-bright)'}}>
-            Support us
-          </span>
+          <span style={{color: 'var(--color-ansi-magenta-bright)'}}>Support us</span>
           <br />
-          <span style={{color: 'var(--color-ansi-magenta)'}}>
-            A small donation can keep out effort going.
-          </span>
+          <span style={{color: 'var(--color-ansi-magenta)'}}>A small donation can keep out effort going.</span>
           <br />
           <br />
-          <span style={{color: 'var(--color-ansi-yellow-bright)'}}>
-            ⚠ Warnings (2)
-          </span>
+          <span style={{color: 'var(--color-ansi-yellow-bright)'}}>⚠ Warnings (2)</span>
           <br />
-          <span style={{color: 'var(--color-ansi-yellow)'}}>
-            {'  › Deprecated API usage in utils.ts:45'}
-          </span>
+          <span style={{color: 'var(--color-ansi-yellow)'}}>{'  › Deprecated API usage in utils.ts:45'}</span>
           <br />
-          <span style={{color: 'var(--color-ansi-yellow)'}}>
-            {'  › Missing JSDoc comment in helpers.ts:12'}
-          </span>
+          <span style={{color: 'var(--color-ansi-yellow)'}}>{'  › Missing JSDoc comment in helpers.ts:12'}</span>
           <br />
           <br />
-          <span style={{color: 'var(--color-ansi-blue-bright)'}}>
-            {'Tips: 2'}
-          </span>
+          <span style={{color: 'var(--color-ansi-blue-bright)'}}>{'Tips: 2'}</span>
           <br />
-          <span style={{color: 'var(--color-ansi-green-bright)'}}>
-            {'Passed: 7'}
-          </span>
+          <span style={{color: 'var(--color-ansi-green-bright)'}}>{'Passed: 7'}</span>
           <br />
-          <span style={{color: 'var(--color-ansi-red-bright)'}}>
-            {'Failed: 1'}
-          </span>
+          <span style={{color: 'var(--color-ansi-red-bright)'}}>{'Failed: 1'}</span>
           <br />
-          <span style={{color: 'var(--color-ansi-yellow-bright)'}}>
-            {'Warnings: 2'}
-          </span>
+          <span style={{color: 'var(--color-ansi-yellow-bright)'}}>{'Warnings: 2'}</span>
           <br />
-          <span style={{color: 'var(--color-ansi-white)'}}>
-            {'Duration: 2.4s'}
-          </span>
+          <span style={{color: 'var(--color-ansi-white)'}}>{'Duration: 2.4s'}</span>
           <br />
           <br />
-          <span style={{color: 'var(--color-ansi-white-bright)'}}>
-            user@terminal
-          </span>
+          <span style={{color: 'var(--color-ansi-white-bright)'}}>user@terminal</span>
           <span style={{color: 'var(--color-ansi-white)'}}>:</span>
           <span style={{color: 'var(--color-ansi-blue)'}}>~/project</span>
           <span style={{color: 'var(--color-ansi-white)'}}>$ </span>
