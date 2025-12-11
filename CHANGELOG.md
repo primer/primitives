@@ -1,5 +1,11 @@
 # @primer/primitives
 
+## 11.3.2
+
+### Patch Changes
+
+- [#1281](https://github.com/primer/primitives/pull/1281) [`49baecd`](https://github.com/primer/primitives/commit/49baecd3c4c9d5f46d4856d9deee8125b81c5f6a) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Improve invalid.illegal tokens for syntax
+
 ## 11.3.1
 
 ### Patch Changes
