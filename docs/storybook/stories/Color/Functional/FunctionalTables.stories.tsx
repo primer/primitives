@@ -55,7 +55,7 @@ export default {
   },
 }
 
-const Foreground = ({colorTokens}: {colorTokens: Record<string, StyleDictionary.TransformedToken>}) => {
+export const Foreground = ({colorTokens}: {colorTokens: Record<string, StyleDictionary.TransformedToken>}) => {
   const data = getTokensByName(colorTokens, 'fgColor').map(token => {
     return {
       id: token.name,
@@ -101,7 +101,7 @@ const Foreground = ({colorTokens}: {colorTokens: Record<string, StyleDictionary.
   )
 }
 
-const Background = ({colorTokens}: {colorTokens: Record<string, StyleDictionary.TransformedToken>}) => {
+export const Background = ({colorTokens}: {colorTokens: Record<string, StyleDictionary.TransformedToken>}) => {
   const data = getTokensByName(colorTokens, 'bgColor').map(token => {
     return {
       id: token.name,
@@ -147,7 +147,7 @@ const Background = ({colorTokens}: {colorTokens: Record<string, StyleDictionary.
   )
 }
 
-const Border = ({colorTokens}: {colorTokens: Record<string, StyleDictionary.TransformedToken>}) => {
+export const Border = ({colorTokens}: {colorTokens: Record<string, StyleDictionary.TransformedToken>}) => {
   const data = getTokensByName(colorTokens, 'borderColor').map(token => {
     return {
       id: token.name,
@@ -193,7 +193,7 @@ const Border = ({colorTokens}: {colorTokens: Record<string, StyleDictionary.Tran
   )
 }
 
-const Shadow = ({colorTokens}: {colorTokens: Record<string, StyleDictionary.TransformedToken>}) => {
+export const Shadow = ({colorTokens}: {colorTokens: Record<string, StyleDictionary.TransformedToken>}) => {
   const data = getTokensByName(colorTokens, 'shadow').map(token => {
     return {
       id: token.name,
@@ -238,5 +238,3 @@ const Shadow = ({colorTokens}: {colorTokens: Record<string, StyleDictionary.Tran
     </Table.Container>
   )
 }
-
-export {Foreground, Background, Border, Shadow}
