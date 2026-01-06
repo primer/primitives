@@ -40,7 +40,7 @@ const themeTokens: Record<string, Record<string, StyleDictionary.TransformedToke
 
 // Helper function to get tokens for the current theme
 function getColorTokensForTheme(theme: string): Record<string, StyleDictionary.TransformedToken> {
-  return themeTokens[theme] || lightColorTokens
+  return themeTokens[theme]
 }
 
 export default {
