@@ -38,11 +38,6 @@ const themeTokens: Record<string, Record<string, StyleDictionary.TransformedToke
   dark_high_contrast: darkHighContrastColorTokens,
 }
 
-// Helper function to get tokens for the current theme
-function getColorTokensForTheme(theme: string): Record<string, StyleDictionary.TransformedToken> {
-  return themeTokens[theme]
-}
-
 export default {
   title: 'Color/Functional/Tables',
   parameters: {
@@ -55,7 +50,7 @@ export default {
 
 export const Foreground = {
   render: (_args: unknown, context: {globals: {theme: string}}) => {
-    const colorTokens = getColorTokensForTheme(context.globals.theme)
+    const colorTokens = themeTokens[context.globals.theme]
     const data = getTokensByName(colorTokens, 'fgColor').map(token => {
       return {
         id: token.name,
@@ -104,7 +99,7 @@ export const Foreground = {
 
 export const Background = {
   render: (_args: unknown, context: {globals: {theme: string}}) => {
-    const colorTokens = getColorTokensForTheme(context.globals.theme)
+    const colorTokens = themeTokens[context.globals.theme]
     const data = getTokensByName(colorTokens, 'bgColor').map(token => {
       return {
         id: token.name,
@@ -153,7 +148,7 @@ export const Background = {
 
 export const Border = {
   render: (_args: unknown, context: {globals: {theme: string}}) => {
-    const colorTokens = getColorTokensForTheme(context.globals.theme)
+    const colorTokens = themeTokens[context.globals.theme]
     const data = getTokensByName(colorTokens, 'borderColor').map(token => {
       return {
         id: token.name,
@@ -202,7 +197,7 @@ export const Border = {
 
 export const Shadow = {
   render: (_args: unknown, context: {globals: {theme: string}}) => {
-    const colorTokens = getColorTokensForTheme(context.globals.theme)
+    const colorTokens = themeTokens[context.globals.theme]
     const data = getTokensByName(colorTokens, 'shadow').map(token => {
       return {
         id: token.name,
