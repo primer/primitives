@@ -17,10 +17,6 @@ export default {
 }
 
 export const Foreground = ({colorTokens}: {colorTokens: ColorTokens}) => {
-  if (!colorTokens || Object.keys(colorTokens).length === 0) {
-    return <div>No color tokens available</div>
-  }
-
   const data = getTokensByName(colorTokens, 'fgColor').map(token => {
     return {
       id: token.name,
