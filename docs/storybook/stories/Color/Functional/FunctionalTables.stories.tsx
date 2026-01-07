@@ -18,10 +18,11 @@ import {ColorTokenSwatch} from '../../StorybookComponents/ColorTokenSwatch/Color
 import {DataTable, Table} from '@primer/react/experimental'
 import {InlineCode} from '../../StorybookComponents/InlineCode/InlineCode'
 import {getTokensByName} from '../../utilities/getTokensByName'
-import type StyleDictionary from 'style-dictionary'
+import type {TransformedToken} from 'style-dictionary'
+import type {StoryContext, Decorator} from '@storybook/react'
 
 // Map theme names to their corresponding JSON data
-const themeTokens: Record<string, Record<string, StyleDictionary.TransformedToken>> = {
+const themeTokens: Record<string, Record<string, TransformedToken>> = {
   light: lightColorTokens,
   light_colorblind: lightColorblindColorTokens,
   light_colorblind_high_contrast: lightColorblindHighContrastColorTokens,
@@ -39,12 +40,9 @@ const themeTokens: Record<string, Record<string, StyleDictionary.TransformedToke
 }
 
 // Decorator that provides colorTokens based on the current theme
-const withColorTokens = (
-  Story: React.ComponentType<{colorTokens: Record<string, StyleDictionary.TransformedToken>}>,
-  context: {globals: {theme: string}},
-) => {
+const withColorTokens: Decorator = (Story, context: StoryContext) => {
   const colorTokens = themeTokens[context.globals.theme]
-  return <Story colorTokens={colorTokens} />
+  return <Story args={{...context.args, colorTokens}} />
 }
 
 export default {
@@ -58,7 +56,7 @@ export default {
   },
 }
 
-export const Foreground = ({colorTokens}: {colorTokens: Record<string, StyleDictionary.TransformedToken>}) => {
+export const Foreground = ({colorTokens}: {colorTokens: Record<string, TransformedToken>}) => {
   const data = getTokensByName(colorTokens, 'fgColor').map(token => {
     return {
       id: token.name,
@@ -104,7 +102,7 @@ export const Foreground = ({colorTokens}: {colorTokens: Record<string, StyleDict
   )
 }
 
-export const Background = ({colorTokens}: {colorTokens: Record<string, StyleDictionary.TransformedToken>}) => {
+export const Background = ({colorTokens}: {colorTokens: Record<string, TransformedToken>}) => {
   const data = getTokensByName(colorTokens, 'bgColor').map(token => {
     return {
       id: token.name,
@@ -150,7 +148,7 @@ export const Background = ({colorTokens}: {colorTokens: Record<string, StyleDict
   )
 }
 
-export const Border = ({colorTokens}: {colorTokens: Record<string, StyleDictionary.TransformedToken>}) => {
+export const Border = ({colorTokens}: {colorTokens: Record<string, TransformedToken>}) => {
   const data = getTokensByName(colorTokens, 'borderColor').map(token => {
     return {
       id: token.name,
@@ -196,7 +194,7 @@ export const Border = ({colorTokens}: {colorTokens: Record<string, StyleDictiona
   )
 }
 
-export const Shadow = ({colorTokens}: {colorTokens: Record<string, StyleDictionary.TransformedToken>}) => {
+export const Shadow = ({colorTokens}: {colorTokens: Record<string, TransformedToken>}) => {
   const data = getTokensByName(colorTokens, 'shadow').map(token => {
     return {
       id: token.name,
