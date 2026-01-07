@@ -1,49 +1,9 @@
 import React from 'react'
-// eslint-disable-next-line import/extensions
-import lightColorTokens from '../../../../../dist/docs/functional/themes/light.json'
-import lightColorblindColorTokens from '../../../../../dist/docs/functional/themes/light-colorblind.json'
-import lightColorblindHighContrastColorTokens from '../../../../../dist/docs/functional/themes/light-colorblind-high-contrast.json'
-import lightTritanopiaColorTokens from '../../../../../dist/docs/functional/themes/light-tritanopia.json'
-import lightTritanopiaHighContrastColorTokens from '../../../../../dist/docs/functional/themes/light-tritanopia-high-contrast.json'
-import lightHighContrastColorTokens from '../../../../../dist/docs/functional/themes/light-high-contrast.json'
-import darkColorTokens from '../../../../../dist/docs/functional/themes/dark.json'
-import darkDimmedColorTokens from '../../../../../dist/docs/functional/themes/dark-dimmed.json'
-import darkDimmedHighContrastColorTokens from '../../../../../dist/docs/functional/themes/dark-dimmed-high-contrast.json'
-import darkColorblindColorTokens from '../../../../../dist/docs/functional/themes/dark-colorblind.json'
-import darkColorblindHighContrastColorTokens from '../../../../../dist/docs/functional/themes/dark-colorblind-high-contrast.json'
-import darkTritanopiaColorTokens from '../../../../../dist/docs/functional/themes/dark-tritanopia.json'
-import darkTritanopiaHighContrastColorTokens from '../../../../../dist/docs/functional/themes/dark-tritanopia-high-contrast.json'
-import darkHighContrastColorTokens from '../../../../../dist/docs/functional/themes/dark-high-contrast.json'
 import {ColorTokenSwatch} from '../../StorybookComponents/ColorTokenSwatch/ColorTokenSwatch'
 import {DataTable, Table} from '@primer/react/experimental'
 import {InlineCode} from '../../StorybookComponents/InlineCode/InlineCode'
 import {getTokensByName} from '../../utilities/getTokensByName'
-import type {TransformedToken} from 'style-dictionary'
-import type {StoryContext, Decorator} from '@storybook/react'
-
-// Map theme names to their corresponding JSON data
-const themeTokens: Record<string, Record<string, TransformedToken>> = {
-  light: lightColorTokens,
-  light_colorblind: lightColorblindColorTokens,
-  light_colorblind_high_contrast: lightColorblindHighContrastColorTokens,
-  light_tritanopia: lightTritanopiaColorTokens,
-  light_tritanopia_high_contrast: lightTritanopiaHighContrastColorTokens,
-  light_high_contrast: lightHighContrastColorTokens,
-  dark: darkColorTokens,
-  dark_dimmed: darkDimmedColorTokens,
-  dark_dimmed_high_contrast: darkDimmedHighContrastColorTokens,
-  dark_colorblind: darkColorblindColorTokens,
-  dark_colorblind_high_contrast: darkColorblindHighContrastColorTokens,
-  dark_tritanopia: darkTritanopiaColorTokens,
-  dark_tritanopia_high_contrast: darkTritanopiaHighContrastColorTokens,
-  dark_high_contrast: darkHighContrastColorTokens,
-}
-
-// Decorator that provides colorTokens based on the current theme
-const withColorTokens: Decorator = (Story, context: StoryContext) => {
-  const colorTokens = themeTokens[context.globals.theme]
-  return <Story args={{...context.args, colorTokens}} />
-}
+import {withColorTokens, type ColorTokens} from '../../utilities/withColorTokens'
 
 export default {
   title: 'Color/Functional/Tables',
@@ -56,7 +16,11 @@ export default {
   },
 }
 
-export const Foreground = ({colorTokens}: {colorTokens: Record<string, TransformedToken>}) => {
+export const Foreground = ({colorTokens}: {colorTokens: ColorTokens}) => {
+  if (!colorTokens || Object.keys(colorTokens).length === 0) {
+    return <div>No color tokens available</div>
+  }
+
   const data = getTokensByName(colorTokens, 'fgColor').map(token => {
     return {
       id: token.name,
@@ -102,7 +66,7 @@ export const Foreground = ({colorTokens}: {colorTokens: Record<string, Transform
   )
 }
 
-export const Background = ({colorTokens}: {colorTokens: Record<string, TransformedToken>}) => {
+export const Background = ({colorTokens}: {colorTokens: ColorTokens}) => {
   const data = getTokensByName(colorTokens, 'bgColor').map(token => {
     return {
       id: token.name,
@@ -148,7 +112,7 @@ export const Background = ({colorTokens}: {colorTokens: Record<string, Transform
   )
 }
 
-export const Border = ({colorTokens}: {colorTokens: Record<string, TransformedToken>}) => {
+export const Border = ({colorTokens}: {colorTokens: ColorTokens}) => {
   const data = getTokensByName(colorTokens, 'borderColor').map(token => {
     return {
       id: token.name,
@@ -194,7 +158,7 @@ export const Border = ({colorTokens}: {colorTokens: Record<string, TransformedTo
   )
 }
 
-export const Shadow = ({colorTokens}: {colorTokens: Record<string, TransformedToken>}) => {
+export const Shadow = ({colorTokens}: {colorTokens: ColorTokens}) => {
   const data = getTokensByName(colorTokens, 'shadow').map(token => {
     return {
       id: token.name,
