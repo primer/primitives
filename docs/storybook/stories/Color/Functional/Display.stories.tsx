@@ -1,15 +1,15 @@
 import React from 'react'
-// eslint-disable-next-line import/extensions
-import colorTokens from '../../../../../dist/docs/functional/themes/light.json'
 import {ColorTokenSwatch} from '../../StorybookComponents/ColorTokenSwatch/ColorTokenSwatch'
 import {Banner, DataTable, Table} from '@primer/react/experimental'
 import {InlineCode} from '../../StorybookComponents/InlineCode/InlineCode'
 import {getTokensByName} from '../../utilities/getTokensByName'
 import {Box} from '@primer/react'
 import {ColorScaleByName} from '../../StorybookComponents/ColorScale/ColorScaleByName'
+import {withColorTokens, type ColorTokens} from '../../utilities/withColorTokens'
 
 export default {
   title: 'Color/Alpha/Display',
+  decorators: [withColorTokens],
   parameters: {
     controls: {hideNoControlsWarning: true},
     options: {
@@ -18,7 +18,7 @@ export default {
   },
 }
 
-export const Foreground = () => {
+export const Foreground = ({colorTokens}: {colorTokens: ColorTokens}) => {
   const data = getTokensByName(colorTokens, 'display')
     .map(token => {
       return {
@@ -67,7 +67,7 @@ export const Foreground = () => {
   )
 }
 
-export const Background = () => {
+export const Background = ({colorTokens}: {colorTokens: ColorTokens}) => {
   const data = getTokensByName(colorTokens, 'display')
     .map(token => {
       return {
@@ -115,7 +115,7 @@ export const Background = () => {
   )
 }
 
-export const Border = () => {
+export const Border = ({colorTokens}: {colorTokens: ColorTokens}) => {
   const data = getTokensByName(colorTokens, 'display')
     .map(token => {
       return {
@@ -163,7 +163,7 @@ export const Border = () => {
   )
 }
 
-export const Scales = () => {
+export const Scales = ({colorTokens}: {colorTokens: ColorTokens}) => {
   const data = [
     ...new Set(
       getTokensByName(colorTokens, 'display')
