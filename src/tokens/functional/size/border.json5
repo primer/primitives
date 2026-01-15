@@ -2,21 +2,24 @@
   boxShadow: {
     thin: {
       $value: 'inset 0 0 0 {borderWidth.thin}',
-      $description: 'Thin shadow for borders',
+      $description: 'Thin shadow used instead of a border to prevent layout shift',
       $type: 'string',
     },
     thick: {
       $value: 'inset 0 0 0 {borderWidth.thick}',
+      $description: 'Thick shadow (2px) used instead of a border for emphasis without layout shift',
       $type: 'string',
     },
     thicker: {
       $value: 'inset 0 0 0 {borderWidth.thicker}',
+      $description: 'Thickest shadow (4px) used for high emphasis borders without layout shift. Use sparingly for maximum visual impact',
       $type: 'string',
     },
   },
   borderWidth: {
     default: {
       $value: '{borderWidth.thin}',
+      $description: 'Default border width for most UI elements. Alias of borderWidth.thin (1px)',
       $type: 'dimension',
       $extensions: {
         'org.primer.figma': {
@@ -27,6 +30,7 @@
     },
     thin: {
       $value: '1px',
+      $description: 'Standard 1px border width. Use for most borders, dividers, and outlines throughout the interface',
       $type: 'dimension',
       $extensions: {
         'org.primer.figma': {
@@ -37,6 +41,7 @@
     },
     thick: {
       $value: '2px',
+      $description: 'Thick 2px border for emphasis. Use for focus indicators, selected states, or to emphasize important boundaries',
       $type: 'dimension',
       $extensions: {
         'org.primer.figma': {
@@ -47,6 +52,7 @@
     },
     thicker: {
       $value: '4px',
+      $description: 'Extra thick 4px border for maximum emphasis. Use sparingly for high-contrast focus indicators or critical visual separators',
       $type: 'dimension',
       $extensions: {
         'org.primer.figma': {
@@ -59,6 +65,7 @@
   borderRadius: {
     small: {
       $value: '3px',
+      $description: 'Small border radius (3px). Use for small variants of components or small UI elements like badges, tags, or anything below 16px in height',
       $type: 'dimension',
       $extensions: {
         'org.primer.figma': {
@@ -72,6 +79,7 @@
     },
     medium: {
       $value: '6px',
+      $description: 'Medium border radius (6px). The default choice for most buttons, cards, and containers',
       $type: 'dimension',
       $extensions: {
         'org.primer.figma': {
@@ -85,6 +93,7 @@
     },
     large: {
       $value: '12px',
+      $description: 'Large border radius (12px). Use for larger containers, dialogs, or when more visual softness is desired. Always use this for buttons.',
       $type: 'dimension',
       $extensions: {
         'org.primer.figma': {
@@ -112,6 +121,7 @@
     },
     default: {
       $value: '{borderRadius.medium}',
+      $description: 'Default border radius for most UI elements. Alias of borderRadius.medium (6px). Use when in doubt',
       $type: 'dimension',
       $extensions: {
         'org.primer.figma': {
@@ -128,6 +138,7 @@
     focus: {
       offset: {
         $value: '-2px',
+        $description: 'Focus outline offset (-2px). Negative value creates an inset outline for keyboard focus indicators, ensuring the focus ring stays within the element bounds',
         $type: 'dimension',
         $extensions: {
           'org.primer.figma': {
@@ -138,6 +149,7 @@
       },
       width: {
         $value: '2px',
+        $description: 'Focus outline width (2px). Standard width for keyboard focus indicators to meet WCAG 2.4.7 accessibility requirements',
         $type: 'dimension',
         $extensions: {
           'org.primer.figma': {
