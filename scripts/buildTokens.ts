@@ -271,7 +271,7 @@ export const buildDesignTokens = async (buildOptions: ConfigGeneratorOptions): P
         'src/tokens/component/*.json5',
       ],
       platforms: {
-        llmGuidelines: llmGuidelines('llm/llm-token-guidelines.json', undefined, buildOptions.buildPath),
+        llmGuidelines: llmGuidelines('token-guidelines.llm.json', undefined, './'),
       },
       log: {
         warnings: 'disabled',
