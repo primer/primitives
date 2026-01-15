@@ -5,7 +5,7 @@
       "$type": "custom-viewportRange"
     },
     "narrowLandscape": {
-      "$value": "(max-width: calc({breakpoint.large} - 0.02px) and (max-height: calc({breakpoint.small} - 0.02px)) and (orientation: landscape))",
+      "$value": "((max-width: calc({breakpoint.large} - 0.02px)) and (max-height: calc({breakpoint.small} - 0.02px)) and (orientation: landscape))",
       "$type": "custom-viewportRange"
     },
     "regular": {
