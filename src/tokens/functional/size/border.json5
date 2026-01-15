@@ -48,6 +48,10 @@
           collection: 'functional/size',
           scopes: ['borderWidth', 'effectFloat'],
         },
+        'org.primer.llm': {
+          usage: ['focus-indicator', 'selected-state', 'emphasis-border'],
+          rules: 'MUST use for focus rings on interactive elements. Do NOT use for subtle dividers.',
+        },
       },
     },
     thicker: {
@@ -75,6 +79,10 @@
             web: 'var(--borderRadius-small) /* utility class: .rounded-1 */',
           },
         },
+        'org.primer.llm': {
+          usage: ['badge', 'tag', 'label', 'small-input'],
+          rules: 'Use for small UI elements under 16px height. Do NOT use for buttons or cards.',
+        },
       },
     },
     medium: {
@@ -88,6 +96,10 @@
           codeSyntax: {
             web: 'var(--borderRadius-medium) /* utility class: .rounded-2 */',
           },
+        },
+        'org.primer.llm': {
+          usage: ['input', 'textarea', 'select', 'card', 'container'],
+          rules: 'Default choice for most components. Use for inputs, cards, and general containers.',
         },
       },
     },
@@ -103,6 +115,10 @@
             web: 'var(--borderRadius-large) /* utility class: .rounded-3 */',
           },
         },
+        'org.primer.llm': {
+          usage: ['button', 'dialog', 'card', 'modal'],
+          rules: 'MUST use for all buttons. Recommended for dialogs and modals.',
+        },
       },
     },
     full: {
@@ -116,6 +132,10 @@
           codeSyntax: {
             web: 'var(--borderRadius-full) /* utility class: .circle */',
           },
+        },
+        'org.primer.llm': {
+          usage: ['avatar', 'pill-badge', 'circular-button'],
+          rules: 'Use for avatars and pill-shaped elements. Do NOT use for rectangular containers.',
         },
       },
     },
@@ -155,6 +175,10 @@
           'org.primer.figma': {
             collection: 'functional/size',
             scopes: ['borderWidth', 'effectFloat'],
+          },
+          'org.primer.llm': {
+            usage: ['focus-ring', 'keyboard-focus', 'accessibility'],
+            rules: 'MUST use for all keyboard focus indicators. Required for WCAG 2.4.7 compliance.',
           },
         },
       },

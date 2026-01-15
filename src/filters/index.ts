@@ -1,3 +1,4 @@
+export {hasLlmExtensions} from './hasLlmExtensions.js'
 export {isBorder} from './isBorder.js'
 export {isColor} from './isColor.js'
 export {isColorWithAlpha} from './isColorWithAlpha.js'

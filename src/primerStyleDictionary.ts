@@ -37,6 +37,7 @@ import {
   jsonPostCssFallback,
   cssAdvanced,
   jsonFigma,
+  jsonLlmGuidelines,
 } from './formats/index.js'
 import {themeOverrides} from './preprocessors/themeOverrides.js'
 import {colorAlphaToCss} from './transformers/colorAlphaToCss.js'
@@ -101,6 +102,11 @@ PrimerStyleDictionary.registerFormat({
 PrimerStyleDictionary.registerFormat({
   name: 'json/figma',
   format: jsonFigma,
+})
+
+PrimerStyleDictionary.registerFormat({
+  name: 'json/llm-guidelines',
+  format: jsonLlmGuidelines,
 })
 
 /**
