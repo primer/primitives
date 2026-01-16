@@ -261,14 +261,18 @@ export const buildDesignTokens = async (buildOptions: ConfigGeneratorOptions): P
     const llmSD = await PrimerStyleDictionary.extend({
       source: [
         'src/tokens/functional/size/border.json5',
+        'src/tokens/functional/size/radius.json5',
         'src/tokens/functional/shadow/shadow.json5',
         'src/tokens/functional/color/bgColor.json5',
+        'src/tokens/functional/typography/font-stack.json5',
+        'src/tokens/functional/typography/typography.json5',
         'src/tokens/base/motion/easing.json5',
       ],
       include: [
         'src/tokens/base/**/*.json5',
         'src/tokens/functional/color/*.json5',
         'src/tokens/functional/border/*.json5',
+        'src/tokens/functional/typography/*.json5',
         'src/tokens/component/*.json5',
       ],
       platforms: {
