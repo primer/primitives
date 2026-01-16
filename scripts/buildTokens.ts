@@ -263,6 +263,7 @@ export const buildDesignTokens = async (buildOptions: ConfigGeneratorOptions): P
         'src/tokens/functional/size/border.json5',
         'src/tokens/functional/shadow/shadow.json5',
         'src/tokens/functional/color/bgColor.json5',
+        'src/tokens/base/motion/easing.json5',
       ],
       include: [
         'src/tokens/base/**/*.json5',
