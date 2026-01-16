@@ -4,6 +4,7 @@ import {referenceValue} from './referenceValue.js'
 import {tokenType} from './tokenType.js'
 import {scopes} from './scopes.js'
 import {collection} from './collections.js'
+import {llmExtension} from './llmExtension.js'
 
 export const numberToken = baseToken
   .extend({
@@ -22,6 +23,7 @@ export const numberToken = baseToken
             scopes: scopes(['fontWeight', 'lineHeight']).optional(),
           })
           .optional(),
+        'org.primer.llm': llmExtension,
       })
       .optional(),
   })

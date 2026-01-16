@@ -4,6 +4,7 @@ import {referenceValue} from './referenceValue.js'
 import {colorHexValue} from './colorHexValue.js'
 import {dimensionValue} from './dimensionValue.js'
 import {tokenType} from './tokenType.js'
+import {llmExtension} from './llmExtension.js'
 
 export const borderValue = z.object({
   color: z.union([colorHexValue, referenceValue]),
@@ -15,5 +16,10 @@ export const borderToken = baseToken
   .extend({
     $value: z.union([borderValue, referenceValue]),
     $type: tokenType('border'),
+    $extensions: z
+      .object({
+        'org.primer.llm': llmExtension,
+      })
+      .optional(),
   })
   .strict()

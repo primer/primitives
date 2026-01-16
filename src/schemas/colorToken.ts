@@ -6,6 +6,7 @@ import {baseToken} from './baseToken.js'
 import {collection, mode} from './collections.js'
 import {scopes} from './scopes.js'
 import {tokenType} from './tokenType.js'
+import {llmExtension} from './llmExtension.js'
 
 const baseColorToken = baseToken.extend({
   $value: z.union([colorHexValue, referenceValue]),
@@ -81,6 +82,7 @@ export const colorToken = baseColorToken
           )
           .strict()
           .optional(),
+        'org.primer.llm': llmExtension,
       })
       .strict()
       .optional(),

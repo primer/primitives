@@ -5,6 +5,7 @@ import {collection} from './collections.js'
 import {scopes} from './scopes.js'
 import {dimensionValue} from './dimensionValue.js'
 import {tokenType} from './tokenType.js'
+import {llmExtension} from './llmExtension.js'
 
 export const dimensionToken = baseToken
   .extend({
@@ -30,6 +31,7 @@ export const dimensionToken = baseToken
           ]),
           group: z.string().optional(),
         }),
+        'org.primer.llm': llmExtension,
       })
       .optional(),
   })

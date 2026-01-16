@@ -3,6 +3,7 @@
     default: {
       $value: '{base.color.neutral.0}',
       $type: 'color',
+      $description: 'Default background color for pages and main content areas',
       $extensions: {
         'org.primer.figma': {
           collection: 'mode',
@@ -19,6 +20,10 @@
           'dark-high-contrast': '{base.color.neutral.0}',
           'dark-tritanopia-high-contrast': '{base.color.neutral.0}',
           'dark-protanopia-deuteranopia-high-contrast': '{base.color.neutral.0}',
+        },
+        'org.primer.llm': {
+          usage: ['page-background', 'main-content', 'card-background'],
+          rules: 'Use as the primary background for pages and content areas. Do NOT use for emphasis or highlighting.',
         },
       },
     },
@@ -487,6 +492,7 @@
       muted: {
         $value: '{base.color.red.0}',
         $type: 'color',
+        $description: 'Muted danger background for error states and destructive action contexts',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
@@ -508,11 +514,16 @@
               alpha: 0.1,
             },
           },
+          'org.primer.llm': {
+            usage: ['error-message', 'destructive-action', 'validation-error'],
+            rules: 'Use for error states and destructive action backgrounds. Pair with fgColor.danger for text.',
+          },
         },
       },
       emphasis: {
         $value: '{base.color.red.5}',
         $type: 'color',
+        $description: 'Emphasized danger background for critical errors and delete confirmations',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
@@ -530,6 +541,10 @@
             'dark-high-contrast': '{base.color.red.9}',
             'dark-dimmed-high-contrast': '{base.color.red.7}',
             'dark-tritanopia-high-contrast': '{base.color.red.9}',
+          },
+          'org.primer.llm': {
+            usage: ['delete-button', 'critical-alert', 'destructive-confirmation'],
+            rules: 'MUST use for destructive action buttons like delete. Use fgColor.onEmphasis for text on this background.',
           },
         },
       },

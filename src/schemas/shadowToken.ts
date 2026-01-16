@@ -6,6 +6,7 @@ import {alphaValue} from './alphaValue.js'
 import {dimensionValue} from './dimensionValue.js'
 import {tokenType} from './tokenType.js'
 import {collection, mode} from './collections.js'
+import {llmExtension} from './llmExtension.js'
 
 export const shadowValue = z
   .object({
@@ -62,6 +63,7 @@ export const shadowToken = baseToken
           })
           .strict()
           .optional(),
+        'org.primer.llm': llmExtension,
       })
       .optional(),
   })

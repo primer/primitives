@@ -4,6 +4,7 @@ import {referenceValue} from './referenceValue.js'
 import {durationToken} from './durationToken.js'
 import {cubicBezierToken} from './cubicBezierToken.js'
 import {tokenType} from './tokenType.js'
+import {llmExtension} from './llmExtension.js'
 
 export const transitionToken = baseToken
   .extend({
@@ -16,5 +17,10 @@ export const transitionToken = baseToken
       referenceValue,
     ]),
     $type: tokenType('transition'),
+    $extensions: z
+      .object({
+        'org.primer.llm': llmExtension,
+      })
+      .optional(),
   })
   .strict()

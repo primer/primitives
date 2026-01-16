@@ -3,6 +3,7 @@ import {baseToken} from './baseToken.js'
 import {referenceValue} from './referenceValue.js'
 import {tokenType} from './tokenType.js'
 import {colorHexValue} from './colorHexValue.js'
+import {llmExtension} from './llmExtension.js'
 
 export const gradientToken = baseToken
   .extend({
@@ -23,6 +24,7 @@ export const gradientToken = baseToken
         'org.primer.gradient': z.object({
           angle: z.number().int().min(0).max(360).optional(),
         }),
+        'org.primer.llm': llmExtension,
       })
       .optional(),
   })
