@@ -8,7 +8,7 @@ import {getFallbackTheme} from './utilities/getFallbackTheme.js'
 const buildFigma = async (buildOptions: ConfigGeneratorOptions): Promise<void> => {
   const themes = origialThemes.filter(theme => theme.exportToFigma !== false)
   /** -----------------------------------
-   * Colors
+   * Colors (PARALLELIZED)
    * ----------------------------------- */
   // base colors
   const baseScales = [
@@ -51,31 +51,35 @@ const buildFigma = async (buildOptions: ConfigGeneratorOptions): Promise<void> =
     },
   ]
 
-  for (const {name, source} of baseScales) {
-    const extended = await PrimerStyleDictionary.extend({
-      source,
-      platforms: {
-        figma: figma(`figma/scales/${name}.json`, buildOptions.prefix, buildOptions.buildPath),
-      },
-    })
-    // build
-    await extended.buildAllPlatforms()
-  }
-  //
-  for (const {filename, source, include, theme} of themes) {
-    // build functional scales
-    const extended = await PrimerStyleDictionary.extend({
-      source,
-      include,
-      platforms: {
-        figma: figma(`figma/themes/${filename}.json`, buildOptions.prefix, buildOptions.buildPath, {
-          theme: [theme, getFallbackTheme(theme)],
-        }),
-      },
-    })
+  // Build base scales in parallel
+  await Promise.all(
+    baseScales.map(async ({name, source}) => {
+      const extended = await PrimerStyleDictionary.extend({
+        source,
+        platforms: {
+          figma: figma(`figma/scales/${name}.json`, buildOptions.prefix, buildOptions.buildPath),
+        },
+      })
+      await extended.buildAllPlatforms()
+    }),
+  )
 
-    await extended.buildAllPlatforms()
-  }
+  // Build functional themes in parallel
+  await Promise.all(
+    themes.map(async ({filename, source, include, theme}) => {
+      const extended = await PrimerStyleDictionary.extend({
+        source,
+        include,
+        platforms: {
+          figma: figma(`figma/themes/${filename}.json`, buildOptions.prefix, buildOptions.buildPath, {
+            theme: [theme, getFallbackTheme(theme)],
+          }),
+        },
+      })
+      await extended.buildAllPlatforms()
+    }),
+  )
+
   /** -----------------------------------
    * Size tokens
    * ----------------------------------- */
@@ -239,27 +243,30 @@ const buildFigma = async (buildOptions: ConfigGeneratorOptions): Promise<void> =
       theme: 'dark-tritanopia',
     },
   ]
-  //
-  for (const {name, source, include, theme} of shadowFiles) {
-    const extended = await PrimerStyleDictionary.extend({
-      source,
-      include,
-      log: {
-        warnings: 'disabled', // 'warn' | 'error' | 'disabled'
-        verbosity: 'verbose', // 'default' | 'silent' | 'verbose'
-        errors: {
-          brokenReferences: 'throw', // 'throw' | 'console'
-        },
-      },
-      platforms: {
-        figma: figma(`figma/shadows/${name}.json`, buildOptions.prefix, buildOptions.buildPath, {
-          theme: [theme, getFallbackTheme(theme)],
-        }),
-      },
-    })
 
-    await extended.buildAllPlatforms()
-  }
+  // Build all shadow files in parallel
+  await Promise.all(
+    shadowFiles.map(async ({name, source, include, theme}) => {
+      const extended = await PrimerStyleDictionary.extend({
+        source,
+        include,
+        log: {
+          warnings: 'disabled',
+          verbosity: 'verbose',
+          errors: {
+            brokenReferences: 'throw',
+          },
+        },
+        platforms: {
+          figma: figma(`figma/shadows/${name}.json`, buildOptions.prefix, buildOptions.buildPath, {
+            theme: [theme, getFallbackTheme(theme)],
+          }),
+        },
+      })
+      await extended.buildAllPlatforms()
+    }),
+  )
+
   /** -----------------------------------
    * Create list of files
    * ----------------------------------- */

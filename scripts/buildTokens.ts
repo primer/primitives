@@ -55,81 +55,74 @@ const getStyleDictionaryConfig: StyleDictionaryConfigGenerator = (
 })
 
 export const buildDesignTokens = async (buildOptions: ConfigGeneratorOptions): Promise<void> => {
-  let debugCurrentFile: string | undefined = undefined
   /** -----------------------------------
-   * Internal Colors
+   * Internal Colors (PARALLELIZED)
    * ----------------------------------- */
   try {
-    for (const {filename, source, include, theme} of themes) {
-      debugCurrentFile = `internalCss/${filename}.css`
-      // build functional scales
-      const extendedSD = await PrimerStyleDictionary.extend({
-        source: [...source, ...include], // build the special formats
-        include,
-        platforms: {
-          css: css(`internalCss/${filename}.css`, buildOptions.prefix, buildOptions.buildPath, {
-            themed: true,
-            theme: [theme, getFallbackTheme(theme)],
-          }),
-        },
-      })
-      await extendedSD.buildAllPlatforms()
-    }
-  } catch (e) {
-    console.error(
-      '🛑 Error trying to build internal css colors for code output:',
-      `${e} when building ${debugCurrentFile}`,
-    )
-  }
-
-  /** -----------------------------------
-   * Colors, shadows & borders
-   * ----------------------------------- */
-  try {
-    for (const {filename, source, include, theme} of themes) {
-      debugCurrentFile = `functional/themes/${filename}.css`
-      // build functional scales
-      const extendedSD = await PrimerStyleDictionary.extend(
-        getStyleDictionaryConfig(
-          `functional/themes/${filename}`,
-          source,
+    await Promise.all(
+      themes.map(async ({filename, source, include, theme}) => {
+        const extendedSD = await PrimerStyleDictionary.extend({
+          source: [...source, ...include],
           include,
-          {...buildOptions, themed: true, theme: [theme, getFallbackTheme(theme)]},
-          // disable fallbacks for themes
-          {fallbacks: undefined},
-        ),
-      )
-      await extendedSD.buildAllPlatforms()
-    }
-  } catch (e) {
-    console.error(
-      '🛑 Error trying to build Colors, shadows & borders for code output:',
-      `${e} when building ${debugCurrentFile}`,
+          platforms: {
+            css: css(`internalCss/${filename}.css`, buildOptions.prefix, buildOptions.buildPath, {
+              themed: true,
+              theme: [theme, getFallbackTheme(theme)],
+            }),
+          },
+        })
+        await extendedSD.buildAllPlatforms()
+      }),
     )
+  } catch (e) {
+    console.error('🛑 Error trying to build internal css colors for code output:', e)
   }
 
   /** -----------------------------------
-   * Size tokens
+   * Colors, shadows & borders (PARALLELIZED)
+   * ----------------------------------- */
+  try {
+    await Promise.all(
+      themes.map(async ({filename, source, include, theme}) => {
+        const extendedSD = await PrimerStyleDictionary.extend(
+          getStyleDictionaryConfig(
+            `functional/themes/${filename}`,
+            source,
+            include,
+            {...buildOptions, themed: true, theme: [theme, getFallbackTheme(theme)]},
+            {fallbacks: undefined},
+          ),
+        )
+        await extendedSD.buildAllPlatforms()
+      }),
+    )
+  } catch (e) {
+    console.error('🛑 Error trying to build Colors, shadows & borders for code output:', e)
+  }
+
+  /** -----------------------------------
+   * Size tokens (PARALLELIZED)
    * ----------------------------------- */
   try {
     const sizeFiles = glob.sync('src/tokens/functional/size/*')
-    //
-    for (const file of sizeFiles) {
-      debugCurrentFile = `functional/size/${file.replace('src/tokens/functional/size/', '').replace('.json5', '')}`
-      const extendedSD = await PrimerStyleDictionary.extend(
-        getStyleDictionaryConfig(
-          `functional/size/${file.replace('src/tokens/functional/size/', '').replace('.json5', '')}`,
-          [file],
-          ['src/tokens/base/size/size.json5', ...sizeFiles],
-          buildOptions,
-        ),
-      )
-      await extendedSD.buildAllPlatforms()
-    }
+
+    // Build all size files in parallel
+    await Promise.all(
+      sizeFiles.map(async file => {
+        const extendedSD = await PrimerStyleDictionary.extend(
+          getStyleDictionaryConfig(
+            `functional/size/${file.replace('src/tokens/functional/size/', '').replace('.json5', '')}`,
+            [file],
+            ['src/tokens/base/size/size.json5', ...sizeFiles],
+            buildOptions,
+          ),
+        )
+        await extendedSD.buildAllPlatforms()
+      }),
+    )
+
     // build base scales
-    debugCurrentFile = `base/size/size.css`
     const SdBaseSize = await PrimerStyleDictionary.extend(
-      // using includes as source
       getStyleDictionaryConfig(`base/size/size`, ['src/tokens/base/size/size.json5'], [], {
         buildPath: buildOptions.buildPath,
         prefix: undefined,
@@ -137,13 +130,13 @@ export const buildDesignTokens = async (buildOptions: ConfigGeneratorOptions): P
     )
     await SdBaseSize.buildAllPlatforms()
   } catch (e) {
-    console.error('🛑 Error trying to build size tokens for code output:', `${e} when building ${debugCurrentFile}`)
+    console.error('🛑 Error trying to build size tokens for code output:', e)
   }
+
   /** -----------------------------------
    * Typography tokens
    * ----------------------------------- */
   try {
-    debugCurrentFile = `functional/typography/typography.css`
     const extendedSD = await PrimerStyleDictionary.extend(
       getStyleDictionaryConfig(
         `functional/typography/typography`,
@@ -159,30 +152,23 @@ export const buildDesignTokens = async (buildOptions: ConfigGeneratorOptions): P
     )
     await extendedSD.buildAllPlatforms()
 
-    debugCurrentFile = `base/typography/typography.css`
     const SdTypo = await PrimerStyleDictionary.extend(
       getStyleDictionaryConfig(`base/typography/typography`, [`src/tokens/base/typography/*.json5`], [], buildOptions),
     )
     await SdTypo.buildAllPlatforms()
   } catch (e) {
-    console.error(
-      '🛑 Error trying to build typography tokens for code output:',
-      `${e} when building ${debugCurrentFile}`,
-    )
+    console.error('🛑 Error trying to build typography tokens for code output:', e)
   }
 
   /** -----------------------------------
    * Motion tokens
    * ----------------------------------- */
   try {
-    debugCurrentFile = `functional/motion/motion.css`
     const extendedSD = await PrimerStyleDictionary.extend(
       getStyleDictionaryConfig(
         `functional/motion/motion`,
         [
           `src/tokens/functional/motion/*.json5`,
-          // `src/tokens/base/motion/timing.json5`,
-          // `src/tokens/base/motion/easing.json5`,
         ],
         [`src/tokens/base/motion/*.json5`],
         buildOptions,
@@ -195,16 +181,16 @@ export const buildDesignTokens = async (buildOptions: ConfigGeneratorOptions): P
     )
     await extendedSD.buildAllPlatforms()
 
-    debugCurrentFile = `base/motion/motion.css`
     const SdMotion = await PrimerStyleDictionary.extend(
       getStyleDictionaryConfig(`base/motion/motion`, [`src/tokens/base/motion/*.json5`], [], buildOptions),
     )
     await SdMotion.buildAllPlatforms()
   } catch (e) {
-    console.error('🛑 Error trying to build motion tokens for code output:', `${e} when building ${debugCurrentFile}`)
+    console.error('🛑 Error trying to build motion tokens for code output:', e)
   }
+
   /** -----------------------------------
-   * deprecated tokens
+   * deprecated tokens (PARALLELIZED)
    * ----------------------------------- */
   const deprecatedBuilds: TokenBuildInput[] = [
     // color, shadow & borders
@@ -234,26 +220,29 @@ export const buildDesignTokens = async (buildOptions: ConfigGeneratorOptions): P
   ]
   //
   try {
-    for (const {filename, source, include} of deprecatedBuilds) {
-      const extendedSD = await PrimerStyleDictionary.extend({
-        source,
-        include,
-        platforms: {
-          deprecated: deprecatedJson(`deprecated/${filename}.json`, buildOptions.prefix, buildOptions.buildPath),
-        },
-        log: {
-          warnings: 'disabled', // 'warn' | 'error' | 'disabled'
-          verbosity: 'silent', // 'default' | 'silent' | 'verbose'
-          errors: {
-            brokenReferences: 'throw', // 'throw' | 'console'
+    await Promise.all(
+      deprecatedBuilds.map(async ({filename, source, include}) => {
+        const extendedSD = await PrimerStyleDictionary.extend({
+          source,
+          include,
+          platforms: {
+            deprecated: deprecatedJson(`deprecated/${filename}.json`, buildOptions.prefix, buildOptions.buildPath),
           },
-        },
-      })
-      await extendedSD.buildAllPlatforms()
-    }
+          log: {
+            warnings: 'disabled',
+            verbosity: 'silent',
+            errors: {
+              brokenReferences: 'throw',
+            },
+          },
+        })
+        await extendedSD.buildAllPlatforms()
+      }),
+    )
   } catch (e) {
     console.error('🛑 Error trying to build deprecated tokens output:', e)
   }
+
   /** -----------------------------------
    * Copy `removed` files
    * ----------------------------------- */
