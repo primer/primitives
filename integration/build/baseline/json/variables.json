@@ -1,0 +1,50 @@
+{
+  "base": {
+    "color": {
+      "aquaBlue": {
+        "500": {
+          "key": "{base.color.aquaBlue.500}",
+          "$value": "#2C29FF",
+          "$type": "color",
+          "$description": "The primary color for interactive elements.",
+          "filePath": "integration/tokens/base.json5",
+          "isSource": true,
+          "original": {
+            "$value": "#2C29FF",
+            "$type": "color",
+            "$description": "The primary color for interactive elements.",
+            "key": "{base.color.aquaBlue.500}"
+          },
+          "name": "500",
+          "attributes": {},
+          "path": [
+            "base",
+            "color",
+            "aquaBlue",
+            "500"
+          ]
+        }
+      }
+    }
+  },
+  "fgColor": {
+    "link-rest-01": {
+      "key": "{fgColor.link-rest-01}",
+      "$value": "#2C29FF",
+      "$type": "color",
+      "filePath": "integration/tokens/functional.json5",
+      "isSource": true,
+      "original": {
+        "$value": "{base.color.aquaBlue.500}",
+        "$type": "color",
+        "key": "{fgColor.link-rest-01}"
+      },
+      "name": "link-rest-01",
+      "attributes": {},
+      "path": [
+        "fgColor",
+        "link-rest-01"
+      ]
+    }
+  }
+}
