@@ -11,6 +11,7 @@ import glob from 'fast-glob'
 import {themes} from './themes.config.js'
 import fs from 'fs'
 import {getFallbackTheme} from './utilities/getFallbackTheme.js'
+import {buildWithWorkers} from './workerPool.js'
 
 /**
  * getStyleDictionaryConfig
@@ -60,52 +61,18 @@ export const buildDesignTokens = async (buildOptions: ConfigGeneratorOptions): P
    * Internal Colors
    * ----------------------------------- */
   try {
-    for (const {filename, source, include, theme} of themes) {
-      debugCurrentFile = `internalCss/${filename}.css`
-      // build functional scales
-      const extendedSD = await PrimerStyleDictionary.extend({
-        source: [...source, ...include], // build the special formats
-        include,
-        platforms: {
-          css: css(`internalCss/${filename}.css`, buildOptions.prefix, buildOptions.buildPath, {
-            themed: true,
-            theme: [theme, getFallbackTheme(theme)],
-          }),
-        },
-      })
-      await extendedSD.buildAllPlatforms()
-    }
+    await buildWithWorkers(themes, buildOptions, 'internalCss')
   } catch (e) {
-    console.error(
-      '🛑 Error trying to build internal css colors for code output:',
-      `${e} when building ${debugCurrentFile}`,
-    )
+    console.error('🛑 Error trying to build internal css colors for code output:', e)
   }
 
   /** -----------------------------------
    * Colors, shadows & borders
    * ----------------------------------- */
   try {
-    for (const {filename, source, include, theme} of themes) {
-      debugCurrentFile = `functional/themes/${filename}.css`
-      // build functional scales
-      const extendedSD = await PrimerStyleDictionary.extend(
-        getStyleDictionaryConfig(
-          `functional/themes/${filename}`,
-          source,
-          include,
-          {...buildOptions, themed: true, theme: [theme, getFallbackTheme(theme)]},
-          // disable fallbacks for themes
-          {fallbacks: undefined},
-        ),
-      )
-      await extendedSD.buildAllPlatforms()
-    }
+    await buildWithWorkers(themes, buildOptions, 'functional')
   } catch (e) {
-    console.error(
-      '🛑 Error trying to build Colors, shadows & borders for code output:',
-      `${e} when building ${debugCurrentFile}`,
-    )
+    console.error('🛑 Error trying to build Colors, shadows & borders for code output:', e)
   }
 
   /** -----------------------------------
