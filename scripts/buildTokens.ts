@@ -167,9 +167,7 @@ export const buildDesignTokens = async (buildOptions: ConfigGeneratorOptions): P
     const extendedSD = await PrimerStyleDictionary.extend(
       getStyleDictionaryConfig(
         `functional/motion/motion`,
-        [
-          `src/tokens/functional/motion/*.json5`,
-        ],
+        [`src/tokens/functional/motion/*.json5`],
         [`src/tokens/base/motion/*.json5`],
         buildOptions,
         {
