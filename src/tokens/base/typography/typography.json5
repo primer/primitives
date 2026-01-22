@@ -43,6 +43,63 @@
           },
         },
       },
+      lineHeight: {
+        tight: {
+          $value: 1.25,
+          $type: 'number',
+          $description: 'Use for single-line text in compact UI elements like labels, badges, buttons, or captions where vertical space is limited. Not recommended for multi-line body text due to reduced readability.',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'typography',
+              scopes: ['lineHeight'],
+            },
+          },
+        },
+        snug: {
+          $value: 1.375,
+          $type: 'number',
+          $description: 'Use for display text, large headings, or short multi-line text where moderate density is needed. Good for hero sections and marketing headlines.',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'typography',
+              scopes: ['lineHeight'],
+            },
+          },
+        },
+        normal: {
+          $value: 1.5,
+          $type: 'number',
+          $description: 'Default choice for body text and general UI content. Provides optimal readability for paragraphs, descriptions, and most multi-line text. Use when unsure which line-height to pick.',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'typography',
+              scopes: ['lineHeight'],
+            },
+          },
+        },
+        relaxed: {
+          $value: 1.625,
+          $type: 'number',
+          $description: 'Use for longer-form content, smaller text sizes (12-13px), or when increased readability is desired. Good for text that needs extra breathing room.',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'typography',
+              scopes: ['lineHeight'],
+            },
+          },
+        },
+        loose: {
+          $value: 1.75,
+          $type: 'number',
+          $description: 'Use sparingly for very small text or when maximum readability is critical. Best for footnotes, legal text, or content requiring high accessibility.',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'typography',
+              scopes: ['lineHeight'],
+            },
+          },
+        },
+      },
     },
   },
 }
