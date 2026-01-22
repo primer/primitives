@@ -50,8 +50,8 @@
           $description: 'Use for single-line text in compact UI elements like labels, badges, buttons, or captions where vertical space is limited. Not recommended for multi-line body text due to reduced readability.',
           $extensions: {
             'org.primer.figma': {
-              collection: 'base/typography',
-              scopes: ['all'],
+              collection: 'typography',
+              scopes: ['lineHeight'],
             },
           },
         },
@@ -61,8 +61,8 @@
           $description: 'Use for display text, large headings, or short multi-line text where moderate density is needed. Good for hero sections and marketing headlines.',
           $extensions: {
             'org.primer.figma': {
-              collection: 'base/typography',
-              scopes: ['all'],
+              collection: 'typography',
+              scopes: ['lineHeight'],
             },
           },
         },
@@ -72,8 +72,8 @@
           $description: 'Default choice for body text and general UI content. Provides optimal readability for paragraphs, descriptions, and most multi-line text. Use when unsure which line-height to pick.',
           $extensions: {
             'org.primer.figma': {
-              collection: 'base/typography',
-              scopes: ['all'],
+              collection: 'typography',
+              scopes: ['lineHeight'],
             },
           },
         },
@@ -83,8 +83,8 @@
           $description: 'Use for longer-form content, smaller text sizes (12-13px), or when increased readability is desired. Good for text that needs extra breathing room.',
           $extensions: {
             'org.primer.figma': {
-              collection: 'base/typography',
-              scopes: ['all'],
+              collection: 'typography',
+              scopes: ['lineHeight'],
             },
           },
         },
@@ -94,8 +94,8 @@
           $description: 'Use sparingly for very small text or when maximum readability is critical. Best for footnotes, legal text, or content requiring high accessibility.',
           $extensions: {
             'org.primer.figma': {
-              collection: 'base/typography',
-              scopes: ['all'],
+              collection: 'typography',
+              scopes: ['lineHeight'],
             },
           },
         },
