@@ -43,6 +43,58 @@
           },
         },
       },
+      lineHeight: {
+        tight: {
+          $value: 1.25,
+          $type: 'number',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'base/typography',
+              scopes: ['all'],
+            },
+          },
+        },
+        snug: {
+          $value: 1.375,
+          $type: 'number',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'base/typography',
+              scopes: ['all'],
+            },
+          },
+        },
+        normal: {
+          $value: 1.5,
+          $type: 'number',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'base/typography',
+              scopes: ['all'],
+            },
+          },
+        },
+        relaxed: {
+          $value: 1.625,
+          $type: 'number',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'base/typography',
+              scopes: ['all'],
+            },
+          },
+        },
+        loose: {
+          $value: 1.75,
+          $type: 'number',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'base/typography',
+              scopes: ['all'],
+            },
+          },
+        },
+      },
     },
   },
 }
