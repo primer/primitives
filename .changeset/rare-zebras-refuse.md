@@ -2,4 +2,4 @@
 '@primer/primitives': minor
 ---
 
-Adding lineHeight and size scale
+Adding text size scale
