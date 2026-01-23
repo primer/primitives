@@ -1,6 +1,74 @@
 {
   base: {
     text: {
+      size: {
+        xs: {
+          $value: '0.75rem',
+          $type: 'dimension',
+          $description: '12px - Smallest text size for captions and compact UI elements.',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'base/typography',
+              scopes: ['fontSize'],
+            },
+          },
+        },
+        sm: {
+          $value: '0.875rem',
+          $type: 'dimension',
+          $description: '14px - Default body text size for UI.',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'base/typography',
+              scopes: ['fontSize'],
+            },
+          },
+        },
+        md: {
+          $value: '1rem',
+          $type: 'dimension',
+          $description: '16px - Large body text and small titles.',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'base/typography',
+              scopes: ['fontSize'],
+            },
+          },
+        },
+        lg: {
+          $value: '1.25rem',
+          $type: 'dimension',
+          $description: '20px - Medium titles and subtitles.',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'base/typography',
+              scopes: ['fontSize'],
+            },
+          },
+        },
+        xl: {
+          $value: '2rem',
+          $type: 'dimension',
+          $description: '32px - Large titles and page headings.',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'base/typography',
+              scopes: ['fontSize'],
+            },
+          },
+        },
+        '2xl': {
+          $value: '2.5rem',
+          $type: 'dimension',
+          $description: '40px - Display text for hero sections.',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'base/typography',
+              scopes: ['fontSize'],
+            },
+          },
+        },
+      },
       weight: {
         light: {
           $type: 'fontWeight',
