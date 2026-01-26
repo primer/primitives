@@ -18,7 +18,9 @@ Add AI guidelines to tokens using the `$extensions['org.primer.ai']` namespace, 
       $type: 'dimension',
       $description: 'Large border radius (12px). Use for larger containers, dialogs, or when more visual softness is desired.',
       $extensions: {
-        'org.primer.figma': { /* existing Figma extensions */ },
+        'org.primer.figma': {
+          /* existing Figma extensions */
+        },
         'org.primer.ai': {
           usage: ['button', 'dialog', 'card', 'modal'],
           rules: 'MUST use for all buttons. Recommended for dialogs and modals.',
@@ -31,10 +33,10 @@ Add AI guidelines to tokens using the `$extensions['org.primer.ai']` namespace, 
 
 ### Extension Properties
 
-| Property | Type | Description |
-|----------|------|-------------|
-| `usage` | `string[]` | Array of use cases where this token applies |
-| `rules` | `string` | Prescriptive guidance using RFC 2119 keywords (MUST, SHOULD, etc.) |
+| Property | Type       | Description                                                        |
+| -------- | ---------- | ------------------------------------------------------------------ |
+| `usage`  | `string[]` | Array of use cases where this token applies                        |
+| `rules`  | `string`   | Prescriptive guidance using RFC 2119 keywords (MUST, SHOULD, etc.) |
 
 The `$description` field from the token itself is also included in the output.
 
@@ -62,6 +64,7 @@ The build process generates `dist/ai/ai-token-guidelines.json` with a flat struc
 ### Step 1: Identify High-Priority Tokens
 
 Focus on tokens where AI assistants commonly make mistakes or need explicit guidance:
+
 - Focus indicators and accessibility-related tokens
 - Semantic color tokens (danger, success, accent)
 - Border radius for specific component types
@@ -80,7 +83,9 @@ Add `org.primer.ai` to the token's `$extensions`:
         $type: 'color',
         $description: 'Emphasized danger background for critical errors',
         $extensions: {
-          'org.primer.figma': { /* ... */ },
+          'org.primer.figma': {
+            /* ... */
+          },
           'org.primer.ai': {
             usage: ['delete-button', 'critical-alert'],
             rules: 'MUST use for destructive action buttons. Use fgColor.onEmphasis for text.',
@@ -111,13 +116,15 @@ Check that your token appears in `dist/ai/ai-token-guidelines.json`.
 ### Writing Effective Rules
 
 Use RFC 2119 keywords for clarity:
+
 - **MUST** - Absolute requirement
-- **MUST NOT** - Absolute prohibition  
+- **MUST NOT** - Absolute prohibition
 - **SHOULD** - Recommended but not required
 - **SHOULD NOT** - Discouraged but not prohibited
 - **MAY** - Optional
 
 Example rules:
+
 - ✅ "MUST use for focus rings on interactive elements"
 - ✅ "Do NOT use for subtle dividers"
 - ✅ "SHOULD pair with fgColor.onEmphasis for text"
@@ -127,11 +134,11 @@ Example rules:
 
 ### Files
 
-| File | Purpose |
-|------|---------|
-| `src/filters/hasAiExtensions.ts` | Filter for tokens with `org.primer.ai` |
+| File                              | Purpose                                  |
+| --------------------------------- | ---------------------------------------- |
+| `src/filters/hasAiExtensions.ts`  | Filter for tokens with `org.primer.ai`   |
 | `src/formats/jsonAiGuidelines.ts` | Format outputting flat AI-optimized JSON |
-| `src/platforms/aiGuidelines.ts` | Platform configuration |
+| `src/platforms/aiGuidelines.ts`   | Platform configuration                   |
 
 ### Build Integration
 

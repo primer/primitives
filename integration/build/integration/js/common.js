@@ -3,12 +3,12 @@ module.exports = {
     base: {
       color: {
         aquaBlue: {
-          "500": "#2c29ff",
+          500: '#2c29ff',
         },
       },
     },
     fgColor: {
-      "link-rest-01": "#2c29ff",
+      'link-rest-01': '#2c29ff',
     },
   },
-};
+}

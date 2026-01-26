@@ -1,9 +1,8 @@
-import {jsonLlmGuidelines} from './jsonLlmGuidelines.js'
+import {markdownLlmGuidelines} from './markdownLlmGuidelines.js'
 import {getMockDictionary, getMockFormatterArguments, getMockToken} from '../test-utilities/index.js'
-import {format} from 'prettier'
 
-describe('Format: Json LLM Guidelines', () => {
-  it('Outputs tokens with LLM extensions in flat structure', async () => {
+describe('Format: Markdown LLM Guidelines', () => {
+  it('Outputs tokens with LLM extensions in markdown format', async () => {
     const dictionary = getMockDictionary({
       tokens: {
         borderWidth: {
@@ -23,19 +22,14 @@ describe('Format: Json LLM Guidelines', () => {
     })
 
     const input = getMockFormatterArguments({dictionary})
+    const result = await markdownLlmGuidelines(input)
 
-    const expectedOutput = await format(
-      JSON.stringify({
-        'borderWidth-thick': {
-          description: 'Thick 2px border for emphasis',
-          usage: ['focus-indicator', 'selected-state'],
-          rules: 'MUST use for focus rings',
-        },
-      }),
-      {parser: 'json', printWidth: 120},
-    )
-
-    expect(await jsonLlmGuidelines(input)).toStrictEqual(expectedOutput)
+    expect(result).toContain('# Token Guidelines')
+    expect(result).toContain('## BorderWidth')
+    expect(result).toContain('### borderWidth-thick')
+    expect(result).toContain('Thick 2px border for emphasis')
+    expect(result).toContain('**Usage:** focus-indicator, selected-state')
+    expect(result).toContain('**Rules:** MUST use for focus rings')
   })
 
   it('Excludes tokens without LLM extensions', async () => {
@@ -63,11 +57,10 @@ describe('Format: Json LLM Guidelines', () => {
     })
 
     const input = getMockFormatterArguments({dictionary})
-    const result = await jsonLlmGuidelines(input)
-    const parsed = JSON.parse(result)
+    const result = await markdownLlmGuidelines(input)
 
-    expect(parsed).toHaveProperty('borderWidth-thick')
-    expect(parsed).not.toHaveProperty('borderWidth-thin')
+    expect(result).toContain('borderWidth-thick')
+    expect(result).not.toContain('borderWidth-thin')
   })
 
   it('Handles tokens with only description (no usage or rules)', async () => {
@@ -87,12 +80,12 @@ describe('Format: Json LLM Guidelines', () => {
     })
 
     const input = getMockFormatterArguments({dictionary})
-    const result = await jsonLlmGuidelines(input)
-    const parsed = JSON.parse(result)
+    const result = await markdownLlmGuidelines(input)
 
-    expect(parsed['test-token']).toEqual({
-      description: 'Just a description',
-    })
+    expect(result).toContain('### test-token')
+    expect(result).toContain('Just a description')
+    expect(result).not.toContain('**Usage:**')
+    expect(result).not.toContain('**Rules:**')
   })
 
   it('Handles tokens with only usage (no description or rules)', async () => {
@@ -113,12 +106,11 @@ describe('Format: Json LLM Guidelines', () => {
     })
 
     const input = getMockFormatterArguments({dictionary})
-    const result = await jsonLlmGuidelines(input)
-    const parsed = JSON.parse(result)
+    const result = await markdownLlmGuidelines(input)
 
-    expect(parsed['test-token']).toEqual({
-      usage: ['button', 'card'],
-    })
+    expect(result).toContain('### test-token')
+    expect(result).toContain('**Usage:** button, card')
+    expect(result).not.toContain('**Rules:**')
   })
 
   it('Handles tokens with only rules (no description or usage)', async () => {
@@ -139,15 +131,14 @@ describe('Format: Json LLM Guidelines', () => {
     })
 
     const input = getMockFormatterArguments({dictionary})
-    const result = await jsonLlmGuidelines(input)
-    const parsed = JSON.parse(result)
+    const result = await markdownLlmGuidelines(input)
 
-    expect(parsed['test-token']).toEqual({
-      rules: 'MUST use for buttons',
-    })
+    expect(result).toContain('### test-token')
+    expect(result).toContain('**Rules:** MUST use for buttons')
+    expect(result).not.toContain('**Usage:**')
   })
 
-  it('Returns empty object when no tokens have LLM extensions', async () => {
+  it('Returns only header when no tokens have LLM extensions', async () => {
     const dictionary = getMockDictionary({
       tokens: {
         test: {
@@ -163,13 +154,12 @@ describe('Format: Json LLM Guidelines', () => {
     })
 
     const input = getMockFormatterArguments({dictionary})
-    const result = await jsonLlmGuidelines(input)
-    const parsed = JSON.parse(result)
+    const result = await markdownLlmGuidelines(input)
 
-    expect(parsed).toEqual({})
+    expect(result).toBe('# Token Guidelines\n')
   })
 
-  it('Sorts tokens by name', async () => {
+  it('Groups tokens by category and sorts alphabetically', async () => {
     const dictionary = getMockDictionary({
       tokens: {
         z: {
@@ -190,9 +180,71 @@ describe('Format: Json LLM Guidelines', () => {
     })
 
     const input = getMockFormatterArguments({dictionary})
-    const result = await jsonLlmGuidelines(input)
-    const keys = Object.keys(JSON.parse(result))
+    const result = await markdownLlmGuidelines(input)
 
-    expect(keys).toEqual(['a-token', 'z-token'])
+    // Categories should be sorted alphabetically
+    const aIndex = result.indexOf('## A')
+    const zIndex = result.indexOf('## Z')
+    expect(aIndex).toBeLessThan(zIndex)
+  })
+
+  it('Uses second word for base-* tokens category', async () => {
+    const dictionary = getMockDictionary({
+      tokens: {
+        base: {
+          easing: {
+            ease: getMockToken({
+              name: 'base-easing-ease',
+              path: ['base', 'easing', 'ease'],
+              $extensions: {'org.primer.llm': {usage: ['hover']}},
+            }),
+          },
+        },
+      },
+    })
+
+    const input = getMockFormatterArguments({dictionary})
+    const result = await markdownLlmGuidelines(input)
+
+    expect(result).toContain('## Easing')
+    expect(result).toContain('### base-easing-ease')
+  })
+
+  it('Maps bgColor to "background color"', async () => {
+    const dictionary = getMockDictionary({
+      tokens: {
+        bgColor: {
+          default: getMockToken({
+            name: 'bgColor-default',
+            path: ['bgColor', 'default'],
+            $extensions: {'org.primer.llm': {usage: ['page']}},
+          }),
+        },
+      },
+    })
+
+    const input = getMockFormatterArguments({dictionary})
+    const result = await markdownLlmGuidelines(input)
+
+    expect(result).toContain('## background color')
+  })
+
+  it('Maps fgColor to "text and foreground color"', async () => {
+    const dictionary = getMockDictionary({
+      tokens: {
+        fgColor: {
+          default: getMockToken({
+            name: 'fgColor-default',
+            path: ['fgColor', 'default'],
+            $extensions: {'org.primer.llm': {usage: ['text']}},
+          }),
+        },
+      },
+    })
+
+    const input = getMockFormatterArguments({dictionary})
+    const result = await markdownLlmGuidelines(input)
+
+    expect(result).toContain('## text and foreground color')
   })
 })

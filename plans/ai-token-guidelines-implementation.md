@@ -44,31 +44,32 @@ Flat structure optimized for AI context:
 
 ## Files to Create (8)
 
-| File | Purpose |
-|------|---------|
-| `src/filters/hasAiExtensions.ts` | Filter for tokens with `org.primer.ai` extensions |
-| `src/filters/hasAiExtensions.test.ts` | Unit tests |
-| `src/formats/jsonAiGuidelines.ts` | Format outputting flat AI-optimized JSON |
-| `src/formats/jsonAiGuidelines.test.ts` | Unit tests |
-| `src/platforms/aiGuidelines.ts` | Platform configuration |
-| `src/types/aiExtensions.d.ts` | TypeScript types |
-| `integration/ai-guidelines.test.ts` | Integration tests |
-| `contributor-docs/ai-token-guidelines.md` | Documentation |
+| File                                      | Purpose                                           |
+| ----------------------------------------- | ------------------------------------------------- |
+| `src/filters/hasAiExtensions.ts`          | Filter for tokens with `org.primer.ai` extensions |
+| `src/filters/hasAiExtensions.test.ts`     | Unit tests                                        |
+| `src/formats/jsonAiGuidelines.ts`         | Format outputting flat AI-optimized JSON          |
+| `src/formats/jsonAiGuidelines.test.ts`    | Unit tests                                        |
+| `src/platforms/aiGuidelines.ts`           | Platform configuration                            |
+| `src/types/aiExtensions.d.ts`             | TypeScript types                                  |
+| `integration/ai-guidelines.test.ts`       | Integration tests                                 |
+| `contributor-docs/ai-token-guidelines.md` | Documentation                                     |
 
 ## Files to Modify (6)
 
-| File | Change |
-|------|--------|
-| `src/filters/index.ts` | Export `hasAiExtensions` |
-| `src/formats/index.ts` | Export `jsonAiGuidelines` |
-| `src/platforms/index.ts` | Export `aiGuidelines` |
+| File                           | Change                               |
+| ------------------------------ | ------------------------------------ |
+| `src/filters/index.ts`         | Export `hasAiExtensions`             |
+| `src/formats/index.ts`         | Export `jsonAiGuidelines`            |
+| `src/platforms/index.ts`       | Export `aiGuidelines`                |
 | `src/primerStyleDictionary.ts` | Register `json/ai-guidelines` format |
-| `scripts/buildTokens.ts` | Add AI guidelines build step |
-| `README.md` | Document feature |
+| `scripts/buildTokens.ts`       | Add AI guidelines build step         |
+| `README.md`                    | Document feature                     |
 
 ## Token Files to Enhance (10-15)
 
 Priority tokens in `src/tokens/functional/`:
+
 - `size/border.json5` - borderWidth tokens
 - `color/bgColor.json5` - background colors
 - `color/fgColor.json5` - foreground colors
@@ -85,20 +86,22 @@ Add `$extensions['org.primer.ai']` to 10-15 high-priority tokens:
 
 ```json5
 {
-  "borderWidth": {
-    "thick": {
-      "$value": "2px",
-      "$type": "dimension",
-      "$description": "Thick 2px border for emphasis...",
-      "$extensions": {
-        "org.primer.figma": { /* existing */ },
-        "org.primer.ai": {
-          "usage": ["focus-indicator", "selected-state", "emphasis-border"],
-          "rules": "MUST use for focus rings on interactive elements. Do NOT use for subtle dividers."
-        }
-      }
-    }
-  }
+  borderWidth: {
+    thick: {
+      $value: '2px',
+      $type: 'dimension',
+      $description: 'Thick 2px border for emphasis...',
+      $extensions: {
+        'org.primer.figma': {
+          /* existing */
+        },
+        'org.primer.ai': {
+          usage: ['focus-indicator', 'selected-state', 'emphasis-border'],
+          rules: 'MUST use for focus rings on interactive elements. Do NOT use for subtle dividers.',
+        },
+      },
+    },
+  },
 }
 ```
 
@@ -111,9 +114,7 @@ import type {TransformedToken} from 'style-dictionary/types'
 
 export const hasAiExtensions = (token: TransformedToken): boolean => {
   return (
-    token.$extensions !== undefined &&
-    typeof token.$extensions === 'object' &&
-    'org.primer.ai' in token.$extensions
+    token.$extensions !== undefined && typeof token.$extensions === 'object' && 'org.primer.ai' in token.$extensions
   )
 }
 ```
@@ -129,23 +130,26 @@ import {sortByName} from 'style-dictionary/utils'
 
 export const jsonAiGuidelines: FormatFn = ({dictionary}: FormatFnArguments) => {
   const tokens = dictionary.allTokens.sort(sortByName)
-  
-  const aiGuidelines: Record<string, {
-    description?: string
-    usage?: string[]
-    rules?: string
-  }> = {}
-  
+
+  const aiGuidelines: Record<
+    string,
+    {
+      description?: string
+      usage?: string[]
+      rules?: string
+    }
+  > = {}
+
   for (const token of tokens) {
     const aiExt = token.$extensions?.['org.primer.ai']
     if (!aiExt) continue
-    
+
     const guideline: {
       description?: string
       usage?: string[]
       rules?: string
     } = {}
-    
+
     if (token.$description && typeof token.$description === 'string') {
       guideline.description = token.$description
     }
@@ -155,12 +159,12 @@ export const jsonAiGuidelines: FormatFn = ({dictionary}: FormatFnArguments) => {
     if (aiExt.rules && typeof aiExt.rules === 'string') {
       guideline.rules = aiExt.rules
     }
-    
+
     if (Object.keys(guideline).length > 0) {
       aiGuidelines[token.name] = guideline
     }
   }
-  
+
   const output = JSON.stringify(aiGuidelines, null, 2)
   return format(output, {parser: 'json', printWidth: 120})
 }
@@ -191,7 +195,7 @@ import type {PlatformConfig} from 'style-dictionary/types'
 export const aiGuidelines: PlatformInitializer = (
   outputFile: string,
   prefix: string | undefined,
-  buildPath: string
+  buildPath: string,
 ): PlatformConfig => ({
   prefix,
   buildPath,
@@ -220,17 +224,14 @@ Add AI guidelines build section:
  * AI Guidelines - Combined output
  * ----------------------------------- */
 const aiSD = await PrimerStyleDictionary.extend({
-  source: [
-    'src/tokens/base/**/*.json5',
-    'src/tokens/functional/**/*.json5',
-  ],
+  source: ['src/tokens/base/**/*.json5', 'src/tokens/functional/**/*.json5'],
   platforms: {
     aiGuidelines: aiGuidelines('ai/ai-token-guidelines.json', undefined, buildOptions.buildPath),
   },
   log: {
     warnings: 'disabled',
     verbosity: 'silent',
-    errors: { brokenReferences: 'throw' },
+    errors: {brokenReferences: 'throw'},
   },
 })
 await aiSD.buildAllPlatforms()
@@ -263,6 +264,7 @@ export interface PrimerTokenExtensions {
 **File**: `contributor-docs/ai-token-guidelines.md`
 
 Document:
+
 - Overview and purpose
 - Source format with examples
 - Output format
@@ -280,7 +282,7 @@ Document:
 ## Build Order
 
 1. **Infrastructure** (Steps 2-6): Filter → Format → Platform → Register → Build integration
-2. **Token Extensions** (Step 1): Add `$extensions['org.primer.ai']` to priority tokens  
+2. **Token Extensions** (Step 1): Add `$extensions['org.primer.ai']` to priority tokens
 3. **Polish** (Steps 7-10): Types, docs, tests
 
 ## Output
