@@ -3,7 +3,7 @@ import {schemaErrorMessage} from '../utilities/index.js'
 
 export const dimensionValue = z.union([
   z.string().superRefine((dim, ctx) => {
-    if (!/(^-?[0-9]+(px|rem)$|^-?[0-9]+\.?[0-9]*em$)/.test(dim)) {
+    if (!/(^-?[0-9]+\.?[0-9]*(px|rem)$|^-?[0-9]+\.?[0-9]*em$)/.test(dim)) {
       ctx.addIssue({
         code: 'custom',
         message: schemaErrorMessage(
