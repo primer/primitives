@@ -1,13 +1,13 @@
 import React from 'react'
-// eslint-disable-next-line import/extensions
-import colorTokens from '../../../../../dist/docs/functional/themes/light.json'
 import {ColorTokenSwatch} from '../../StorybookComponents/ColorTokenSwatch/ColorTokenSwatch'
 import {DataTable, Table, IssueLabel} from '@primer/react/experimental'
 import {InlineCode} from '../../StorybookComponents/InlineCode/InlineCode'
 import {getTokensByName} from '../../utilities/getTokensByName'
+import {withColorTokens, type ColorTokens} from '../../utilities/withColorTokens'
 
 export default {
   title: 'Color/Patterns',
+  decorators: [withColorTokens],
   parameters: {
     controls: {hideNoControlsWarning: true},
     options: {
@@ -16,7 +16,7 @@ export default {
   },
 }
 
-export const Avatar = () => {
+export const Avatar = ({colorTokens}: {colorTokens: ColorTokens}) => {
   const data = getTokensByName(colorTokens, 'avatar').map(token => {
     return {
       id: token.name,
@@ -69,7 +69,7 @@ export const Avatar = () => {
   )
 }
 
-export const Control = () => {
+export const Control = ({colorTokens}: {colorTokens: ColorTokens}) => {
   const control = getTokensByName(colorTokens, 'control').map(token => {
     return {
       id: token.name,
@@ -141,7 +141,7 @@ export const Control = () => {
   )
 }
 
-export const Counter = () => {
+export const Counter = ({colorTokens}: {colorTokens: ColorTokens}) => {
   const data = getTokensByName(colorTokens, 'counter').map(token => {
     return {
       id: token.name,
@@ -194,7 +194,7 @@ export const Counter = () => {
   )
 }
 
-export const Button = () => {
+export const Button = ({colorTokens}: {colorTokens: ColorTokens}) => {
   const button = getTokensByName(colorTokens, 'button').map(token => {
     return {
       id: token.name,
@@ -266,7 +266,7 @@ export const Button = () => {
   )
 }
 
-export const Focus = () => {
+export const Focus = ({colorTokens}: {colorTokens: ColorTokens}) => {
   const data = getTokensByName(colorTokens, 'focus-outlineColor').map(token => {
     return {
       id: token.name,
@@ -312,7 +312,7 @@ export const Focus = () => {
   )
 }
 
-export const Header = () => {
+export const Header = ({colorTokens}: {colorTokens: ColorTokens}) => {
   const data = getTokensByName(colorTokens, 'header').map(token => {
     return {
       id: token.name,
@@ -365,7 +365,7 @@ export const Header = () => {
   )
 }
 
-export const Menu = () => {
+export const Menu = ({colorTokens}: {colorTokens: ColorTokens}) => {
   const data = getTokensByName(colorTokens, 'menu').map(token => {
     return {
       id: token.name,
@@ -418,7 +418,7 @@ export const Menu = () => {
   )
 }
 
-export const Overlay = () => {
+export const Overlay = ({colorTokens}: {colorTokens: ColorTokens}) => {
   const data = getTokensByName(colorTokens, 'overlay').map(token => {
     return {
       id: token.name,
@@ -471,7 +471,7 @@ export const Overlay = () => {
   )
 }
 
-export const SelectMenu = () => {
+export const SelectMenu = ({colorTokens}: {colorTokens: ColorTokens}) => {
   const data = getTokensByName(colorTokens, 'selectMenu').map(token => {
     return {
       id: token.name,
@@ -524,7 +524,7 @@ export const SelectMenu = () => {
   )
 }
 
-export const SideNav = () => {
+export const SideNav = ({colorTokens}: {colorTokens: ColorTokens}) => {
   const data = getTokensByName(colorTokens, 'sideNav').map(token => {
     return {
       id: token.name,
@@ -577,7 +577,7 @@ export const SideNav = () => {
   )
 }
 
-export const TimelineBadge = () => {
+export const TimelineBadge = ({colorTokens}: {colorTokens: ColorTokens}) => {
   const data = getTokensByName(colorTokens, 'timelineBadge').map(token => {
     return {
       id: token.name,
@@ -630,7 +630,7 @@ export const TimelineBadge = () => {
   )
 }
 
-export const UnderlineNav = () => {
+export const UnderlineNav = ({colorTokens}: {colorTokens: ColorTokens}) => {
   const data = getTokensByName(colorTokens, 'underlineNav').map(token => {
     return {
       id: token.name,
@@ -683,7 +683,7 @@ export const UnderlineNav = () => {
   )
 }
 
-export const Selection = () => {
+export const Selection = ({colorTokens}: {colorTokens: ColorTokens}) => {
   const data = getTokensByName(colorTokens, 'selection').map(token => {
     return {
       id: token.name,
@@ -733,7 +733,7 @@ export const Selection = () => {
   )
 }
 
-export const Tooltip = () => {
+export const Tooltip = ({colorTokens}: {colorTokens: ColorTokens}) => {
   const data = getTokensByName(colorTokens, 'tooltip').map(token => {
     return {
       id: token.name,
@@ -786,7 +786,7 @@ export const Tooltip = () => {
   )
 }
 
-export const Treeview = () => {
+export const Treeview = ({colorTokens}: {colorTokens: ColorTokens}) => {
   const data = getTokensByName(colorTokens, 'treeViewItem').map(token => {
     return {
       id: token.name,
@@ -839,7 +839,7 @@ export const Treeview = () => {
   )
 }
 
-export const ContributionGraph = () => {
+export const ContributionGraph = ({colorTokens}: {colorTokens: ColorTokens}) => {
   const data = getTokensByName(colorTokens, 'contribution').map(token => {
     return {
       id: token.name,
@@ -892,7 +892,7 @@ export const ContributionGraph = () => {
   )
 }
 
-export const Label = () => {
+export const Label = ({colorTokens}: {colorTokens: ColorTokens}) => {
   const data = getTokensByName(colorTokens, 'label').map(token => {
     return {
       id: token.name,
@@ -953,7 +953,7 @@ export const Label = () => {
   )
 }
 
-export const Syntax = () => {
+export const Syntax = ({colorTokens}: {colorTokens: ColorTokens}) => {
   const data = getTokensByName(colorTokens, 'color').map(token => {
     return {
       id: token.name,

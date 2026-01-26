@@ -2,7 +2,7 @@
   text: {
     display: {
       lineBoxHeight: {
-        $value: 1.4,
+        $value: '{base.text.lineHeight.snug}',
         $type: 'number',
         $extensions: {
           'org.primer.data': {
@@ -16,7 +16,7 @@
         },
       },
       size: {
-        $value: '40px',
+        $value: '{base.text.size.2xl}',
         $type: 'dimension',
         $extensions: {
           'org.primer.figma': {
@@ -26,7 +26,7 @@
         },
       },
       lineHeight: {
-        $value: 1.4,
+        $value: '{base.text.lineHeight.snug}',
         $type: 'number',
         $extensions: {
           'org.primer.data': {
@@ -68,7 +68,7 @@
     title: {
       size: {
         large: {
-          $value: '32px',
+          $value: '{base.text.size.xl}',
           $type: 'dimension',
           $extensions: {
             'org.primer.figma': {
@@ -78,7 +78,7 @@
           },
         },
         medium: {
-          $value: '20px',
+          $value: '{base.text.size.lg}',
           $type: 'dimension',
           $extensions: {
             'org.primer.figma': {
@@ -88,7 +88,7 @@
           },
         },
         small: {
-          $value: '16px',
+          $value: '{base.text.size.md}',
           $type: 'dimension',
           $extensions: {
             'org.primer.figma': {
@@ -100,7 +100,7 @@
       },
       lineHeight: {
         large: {
-          $value: 1.5,
+          $value: '{base.text.lineHeight.normal}',
           $type: 'number',
           $extensions: {
             'org.primer.data': {
@@ -113,7 +113,7 @@
           },
         },
         medium: {
-          $value: 1.6,
+          $value: '{base.text.lineHeight.relaxed}',
           $type: 'number',
           $extensions: {
             'org.primer.data': {
@@ -126,7 +126,7 @@
           },
         },
         small: {
-          $value: 1.5,
+          $value: '{base.text.lineHeight.normal}',
           $type: 'number',
           $extensions: {
             'org.primer.data': {
@@ -224,7 +224,7 @@
     },
     subtitle: {
       size: {
-        $value: '20px',
+        $value: '{base.text.size.lg}',
         $type: 'dimension',
         $extensions: {
           'org.primer.figma': {
@@ -234,7 +234,7 @@
         },
       },
       lineHeight: {
-        $value: 1.6,
+        $value: '{base.text.lineHeight.relaxed}',
         $type: 'number',
         $extensions: {
           'org.primer.data': {
@@ -276,7 +276,7 @@
     body: {
       size: {
         large: {
-          $value: '16px',
+          $value: '{base.text.size.md}',
           $type: 'dimension',
           $extensions: {
             'org.primer.figma': {
@@ -286,7 +286,7 @@
           },
         },
         medium: {
-          $value: '14px',
+          $value: '{base.text.size.sm}',
           $type: 'dimension',
           $extensions: {
             'org.primer.figma': {
@@ -296,7 +296,7 @@
           },
         },
         small: {
-          $value: '12px',
+          $value: '{base.text.size.xs}',
           $type: 'dimension',
           $extensions: {
             'org.primer.figma': {
@@ -308,7 +308,7 @@
       },
       lineHeight: {
         large: {
-          $value: 1.5,
+          $value: '{base.text.lineHeight.normal}',
           $type: 'number',
           $extensions: {
             'org.primer.data': {
@@ -321,7 +321,7 @@
           },
         },
         medium: {
-          $value: 1.42857,
+          $value: '{base.text.lineHeight.normal}',
           $type: 'number',
           $extensions: {
             'org.primer.data': {
@@ -334,7 +334,7 @@
           },
         },
         small: {
-          $value: 1.66667,
+          $value: '{base.text.lineHeight.relaxed}',
           $type: 'number',
           $extensions: {
             'org.primer.data': {
@@ -410,7 +410,7 @@
     },
     caption: {
       size: {
-        $value: '12px',
+        $value: '{base.text.size.xs}',
         $type: 'dimension',
         $extensions: {
           'org.primer.figma': {
@@ -420,7 +420,7 @@
         },
       },
       lineHeight: {
-        $value: 1.3333,
+        $value: '{base.text.lineHeight.tight}',
         $type: 'number',
         $extensions: {
           'org.primer.data': {
@@ -469,7 +469,7 @@
         },
       },
       lineHeight: {
-        $value: 1.5385,
+        $value: '{base.text.lineHeight.normal}',
         $type: 'number',
         $extensions: {
           'org.primer.data': {

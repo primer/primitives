@@ -1,13 +1,13 @@
 import React from 'react'
-// eslint-disable-next-line import/extensions
-import colorTokens from '../../../../../dist/docs/functional/themes/light.json'
 import {ColorTokenSwatch} from '../../StorybookComponents/ColorTokenSwatch/ColorTokenSwatch'
 import {DataTable, Table} from '@primer/react/experimental'
 import {InlineCode} from '../../StorybookComponents/InlineCode/InlineCode'
 import {getTokensByName} from '../../utilities/getTokensByName'
+import {withColorTokens, type ColorTokens} from '../../utilities/withColorTokens'
 
 export default {
   title: 'Color/Functional/Tables',
+  decorators: [withColorTokens],
   parameters: {
     controls: {hideNoControlsWarning: true},
     options: {
@@ -16,7 +16,7 @@ export default {
   },
 }
 
-export const Foreground = () => {
+export const Foreground = ({colorTokens}: {colorTokens: ColorTokens}) => {
   const data = getTokensByName(colorTokens, 'fgColor').map(token => {
     return {
       id: token.name,
@@ -62,7 +62,7 @@ export const Foreground = () => {
   )
 }
 
-export const Background = () => {
+export const Background = ({colorTokens}: {colorTokens: ColorTokens}) => {
   const data = getTokensByName(colorTokens, 'bgColor').map(token => {
     return {
       id: token.name,
@@ -108,7 +108,7 @@ export const Background = () => {
   )
 }
 
-export const Border = () => {
+export const Border = ({colorTokens}: {colorTokens: ColorTokens}) => {
   const data = getTokensByName(colorTokens, 'borderColor').map(token => {
     return {
       id: token.name,
@@ -154,7 +154,7 @@ export const Border = () => {
   )
 }
 
-export const Shadow = () => {
+export const Shadow = ({colorTokens}: {colorTokens: ColorTokens}) => {
   const data = getTokensByName(colorTokens, 'shadow').map(token => {
     return {
       id: token.name,

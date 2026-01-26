@@ -14,7 +14,7 @@ export const dimensionToken = baseToken
     $extensions: z
       .object({
         'org.primer.figma': z.object({
-          collection: collection(['base/size', 'functional/size', 'pattern/size', 'typography']),
+          collection: collection(['base/size', 'base/typography', 'functional/size', 'pattern/size', 'typography']),
           scopes: scopes([
             'all',
             'size',
