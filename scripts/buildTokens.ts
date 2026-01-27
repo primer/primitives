@@ -1,7 +1,7 @@
 import type {Config} from 'style-dictionary/types'
 import {PrimerStyleDictionary} from '../src/primerStyleDictionary.js'
 import {copyFromDir} from '../src/utilities/index.js'
-import {deprecatedJson, css, docJson, fallbacks, styleLint} from '../src/platforms/index.js'
+import {deprecatedJson, css, docJson, fallbacks, styleLint, llmGuidelines} from '../src/platforms/index.js'
 import type {
   ConfigGeneratorOptions,
   StyleDictionaryConfigGenerator,
@@ -253,6 +253,40 @@ export const buildDesignTokens = async (buildOptions: ConfigGeneratorOptions): P
     }
   } catch (e) {
     console.error('🛑 Error trying to build deprecated tokens output:', e)
+  }
+  /** -----------------------------------
+   * AI Guidelines - Combined output
+   * ----------------------------------- */
+  try {
+    const llmSD = await PrimerStyleDictionary.extend({
+      source: [
+        'src/tokens/functional/size/border.json5',
+        'src/tokens/functional/size/radius.json5',
+        'src/tokens/functional/shadow/shadow.json5',
+        'src/tokens/functional/color/bgColor.json5',
+        'src/tokens/functional/typography/font-stack.json5',
+        'src/tokens/functional/typography/typography.json5',
+        'src/tokens/base/motion/easing.json5',
+      ],
+      include: [
+        'src/tokens/base/**/*.json5',
+        'src/tokens/functional/color/*.json5',
+        'src/tokens/functional/border/*.json5',
+        'src/tokens/functional/typography/*.json5',
+        'src/tokens/component/*.json5',
+      ],
+      platforms: {
+        llmGuidelines: llmGuidelines('token-guidelines.llm.md', undefined, './'),
+      },
+      log: {
+        warnings: 'disabled',
+        verbosity: 'silent',
+        errors: {brokenReferences: 'throw'},
+      },
+    })
+    await llmSD.buildAllPlatforms()
+  } catch (e) {
+    console.error('🛑 Error trying to build LLM guidelines output:', e)
   }
   /** -----------------------------------
    * Copy `removed` files

@@ -3,6 +3,7 @@
     default: {
       $value: '{base.color.neutral.0}',
       $type: 'color',
+      $description: 'Default background color for pages and main content areas',
       $extensions: {
         'org.primer.figma': {
           collection: 'mode',
@@ -20,11 +21,16 @@
           'dark-tritanopia-high-contrast': '{base.color.neutral.0}',
           'dark-protanopia-deuteranopia-high-contrast': '{base.color.neutral.0}',
         },
+        'org.primer.llm': {
+          usage: ['page-background', 'main-content', 'card-background'],
+          rules: 'Use as the primary background for pages and content areas. Do NOT use for emphasis or highlighting.',
+        },
       },
     },
     muted: {
       $value: '{base.color.neutral.1}',
       $type: 'color',
+      $description: 'Muted background for secondary content areas and subtle grouping',
       $extensions: {
         'org.primer.figma': {
           collection: 'mode',
@@ -45,11 +51,16 @@
           'dark-tritanopia-high-contrast': '{base.color.neutral.2}',
           'dark-protanopia-deuteranopia-high-contrast': '{base.color.neutral.2}',
         },
+        'org.primer.llm': {
+          usage: ['secondary-content', 'code-block-background', 'table-header', 'sidebar'],
+          rules: 'Use for secondary content areas or to create visual grouping. Do NOT use for primary page backgrounds.',
+        },
       },
     },
     inset: {
       $value: '{bgColor.muted}',
       $type: 'color',
+      $description: 'Inset background for recessed content areas like wells or sunken panels',
       $extensions: {
         'org.primer.figma': {
           collection: 'mode',
@@ -67,11 +78,16 @@
           'light-tritanopia-high-contrast': '{base.color.neutral.2}',
           'light-protanopia-deuteranopia-high-contrast': '{base.color.neutral.2}',
         },
+        'org.primer.llm': {
+          usage: ['well', 'sunken-panel', 'recessed-area', 'input-background'],
+          rules: 'Use for visually recessed areas. Creates depth hierarchy. Suitable for input fields and wells.',
+        },
       },
     },
     emphasis: {
       $value: '{base.color.neutral.12}',
       $type: 'color',
+      $description: 'High-emphasis dark background for strong visual contrast',
       $extensions: {
         'org.primer.figma': {
           collection: 'mode',
@@ -84,11 +100,16 @@
         'org.primer.overrides': {
           dark: '{base.color.neutral.7}',
         },
+        'org.primer.llm': {
+          usage: ['tooltip', 'badge-background', 'high-contrast-element'],
+          rules: 'Use for elements needing strong visual emphasis. Pair with fgColor.onEmphasis for text. Do NOT use for large areas.',
+        },
       },
     },
     inverse: {
       $value: '{base.color.neutral.12}',
       $type: 'color',
+      $description: 'Inverse background that flips between light and dark modes',
       $extensions: {
         'org.primer.figma': {
           collection: 'mode',
@@ -98,11 +119,16 @@
         'org.primer.overrides': {
           dark: '{base.color.neutral.13}',
         },
+        'org.primer.llm': {
+          usage: ['overlay-content', 'inverse-theme-element'],
+          rules: 'Use when you need opposite theme background. Pair with fgColor.onInverse for text.',
+        },
       },
     },
     white: {
       $value: '{base.color.neutral.0}',
       $type: 'color',
+      $description: 'Pure white background',
       $extensions: {
         'org.primer.figma': {
           collection: 'mode',
@@ -117,6 +143,7 @@
     black: {
       $value: '{base.color.neutral.13}',
       $type: 'color',
+      $description: 'Pure black background',
       $extensions: {
         'org.primer.figma': {
           collection: 'mode',
@@ -131,6 +158,7 @@
     disabled: {
       $value: '{base.color.neutral.2}',
       $type: 'color',
+      $description: 'Background for disabled interactive elements',
       $extensions: {
         'org.primer.figma': {
           collection: 'mode',
@@ -148,11 +176,16 @@
           'dark-tritanopia-high-contrast': '{base.color.neutral.4}',
           'dark-protanopia-deuteranopia-high-contrast': '{base.color.neutral.4}',
         },
+        'org.primer.llm': {
+          usage: ['disabled-button', 'disabled-input', 'inactive-element'],
+          rules: 'MUST use for disabled state backgrounds. Pair with fgColor.disabled for text. Do NOT use for active elements.',
+        },
       },
     },
     transparent: {
       $value: '{base.color.transparent}',
       $type: 'color',
+      $description: 'Fully transparent background',
       $extensions: {
         'org.primer.figma': {
           collection: 'mode',
@@ -162,12 +195,17 @@
             web: 'var(--bgColor-transparent) /* utility class: .color-bg-transparent */',
           },
         },
+        'org.primer.llm': {
+          usage: ['ghost-button', 'icon-button', 'overlay-trigger'],
+          rules: 'Use for ghost/icon buttons or when element should blend with parent. Ensure sufficient contrast for interactive states.',
+        },
       },
     },
     neutral: {
       muted: {
         $value: '{base.color.neutral.8}',
         $type: 'color',
+        $description: 'Subtle neutral background for tags, labels, and secondary UI elements',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
@@ -190,11 +228,16 @@
             'dark-tritanopia-high-contrast': '{base.color.neutral.3}',
             'dark-protanopia-deuteranopia-high-contrast': '{base.color.neutral.3}',
           },
+          'org.primer.llm': {
+            usage: ['neutral-label', 'neutral-badge', 'secondary-tag', 'counter'],
+            rules: 'Use for neutral semantic meaning. Pair with fgColor.default for text. Do NOT use for status indicators.',
+          },
         },
       },
       emphasis: {
         $value: '{base.color.neutral.9}',
         $type: 'color',
+        $description: 'Strong neutral background for prominent neutral elements',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
@@ -212,6 +255,10 @@
             'dark-tritanopia-high-contrast': '{base.color.neutral.7}',
             'dark-protanopia-deuteranopia-high-contrast': '{base.color.neutral.7}',
           },
+          'org.primer.llm': {
+            usage: ['neutral-button', 'secondary-action', 'neutral-indicator'],
+            rules: 'Use for emphasized neutral elements. Pair with fgColor.onEmphasis for text.',
+          },
         },
       },
     },
@@ -219,6 +266,7 @@
       muted: {
         $value: '{base.color.blue.0}',
         $type: 'color',
+        $description: 'Subtle accent background for informational or selected elements',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
@@ -234,11 +282,16 @@
               alpha: 0.1,
             },
           },
+          'org.primer.llm': {
+            usage: ['selected-row', 'info-banner', 'active-nav-item', 'highlight'],
+            rules: 'Use for selected states or informational highlights. Pair with fgColor.accent for text.',
+          },
         },
       },
       emphasis: {
         $value: '{base.color.blue.5}',
         $type: 'color',
+        $description: 'Strong accent background for active states and focused states',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
@@ -255,6 +308,10 @@
             'dark-tritanopia-high-contrast': '{base.color.blue.9}',
             'dark-protanopia-deuteranopia-high-contrast': '{base.color.blue.9}',
           },
+          'org.primer.llm': {
+            usage: ['active-states', 'current', 'selected', 'active-toggle'],
+            rules: 'MUST use for selected or active states. Pair with fgColor.onEmphasis for text.',
+          },
         },
       },
     },
@@ -262,6 +319,7 @@
       muted: {
         $value: '{base.color.green.0}',
         $type: 'color',
+        $description: 'Subtle success background for positive feedback and completed states',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
@@ -297,11 +355,16 @@
               alpha: 0.2,
             },
           },
+          'org.primer.llm': {
+            usage: ['success-message', 'completed-state', 'positive-feedback'],
+            rules: 'Use for success states and positive feedback. Pair with fgColor.success for text.',
+          },
         },
       },
       emphasis: {
         $value: '#1f883d',
         $type: 'color',
+        $description: 'Strong success background for prominent positive actions',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
@@ -325,6 +388,10 @@
             'dark-high-contrast': '{base.color.green.9}',
             'dark-dimmed-high-contrast': '{base.color.green.7}',
           },
+          'org.primer.llm': {
+            usage: ['merge-button', 'confirm-action', 'success-badge'],
+            rules: 'Use for positive action buttons like merge or confirm. Pair with fgColor.onEmphasis for text.',
+          },
         },
       },
     },
@@ -332,6 +399,7 @@
       muted: {
         $value: '{bgColor.success.muted}',
         $type: 'color',
+        $description: 'Subtle background for open state indicators (issues, PRs)',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
@@ -363,11 +431,16 @@
               alpha: 0.1,
             },
           },
+          'org.primer.llm': {
+            usage: ['open-issue', 'open-pr', 'active-status'],
+            rules: 'Use for open/active status indicators. Specifically for GitHub issues and PRs.',
+          },
         },
       },
       emphasis: {
         $value: '{bgColor.success.emphasis}',
         $type: 'color',
+        $description: 'Strong background for open state badges and labels',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
@@ -387,6 +460,10 @@
             'dark-protanopia-deuteranopia': '{base.color.orange.5}',
             'dark-protanopia-deuteranopia-high-contrast': '{base.color.orange.9}',
           },
+          'org.primer.llm': {
+            usage: ['open-badge', 'open-label', 'active-status-badge'],
+            rules: 'Use for prominent open/active state indicators. Pair with fgColor.onEmphasis for text.',
+          },
         },
       },
     },
@@ -394,6 +471,7 @@
       muted: {
         $value: '{base.color.yellow.0}',
         $type: 'color',
+        $description: 'Subtle attention background for warnings and caution states',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
@@ -409,11 +487,16 @@
               alpha: 0.15,
             },
           },
+          'org.primer.llm': {
+            usage: ['warning-banner', 'caution-message', 'pending-state'],
+            rules: 'Use for warnings that need user attention. Pair with fgColor.attention for text.',
+          },
         },
       },
       emphasis: {
         $value: '{base.color.yellow.5}',
         $type: 'color',
+        $description: 'Strong attention background for prominent warnings',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
@@ -429,6 +512,10 @@
             'dark-protanopia-deuteranopia-high-contrast': '{base.color.yellow.9}',
             'dark-tritanopia-high-contrast': '{base.color.yellow.9}',
           },
+          'org.primer.llm': {
+            usage: ['warning-badge', 'caution-label', 'attention-indicator'],
+            rules: 'Use for prominent warnings. Consider fgColor.default for text due to yellow contrast.',
+          },
         },
       },
     },
@@ -436,6 +523,7 @@
       muted: {
         $value: '{base.color.orange.0}',
         $type: 'color',
+        $description: 'Subtle severe background for high-priority warnings',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
@@ -457,11 +545,16 @@
               alpha: 0.1,
             },
           },
+          'org.primer.llm': {
+            usage: ['high-priority-warning', 'urgent-message', 'escalation'],
+            rules: 'Use for severe warnings, less critical than danger. Pair with fgColor.severe for text.',
+          },
         },
       },
       emphasis: {
         $value: '{base.color.orange.5}',
         $type: 'color',
+        $description: 'Strong severe background for prominent high-priority warnings',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
@@ -480,6 +573,10 @@
             'dark-dimmed-high-contrast': '{base.color.orange.7}',
             'dark-protanopia-deuteranopia-high-contrast': '{base.color.orange.9}',
           },
+          'org.primer.llm': {
+            usage: ['severe-badge', 'urgent-label', 'high-priority-indicator'],
+            rules: 'Use for prominent severe warnings. Pair with fgColor.onEmphasis for text.',
+          },
         },
       },
     },
@@ -487,6 +584,7 @@
       muted: {
         $value: '{base.color.red.0}',
         $type: 'color',
+        $description: 'Muted danger background for error states and destructive action contexts',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
@@ -508,11 +606,16 @@
               alpha: 0.1,
             },
           },
+          'org.primer.llm': {
+            usage: ['error-message', 'destructive-action', 'validation-error'],
+            rules: 'Use for error states and destructive action backgrounds. Pair with fgColor.danger for text.',
+          },
         },
       },
       emphasis: {
         $value: '{base.color.red.5}',
         $type: 'color',
+        $description: 'Emphasized danger background for critical errors and delete confirmations',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
@@ -531,6 +634,10 @@
             'dark-dimmed-high-contrast': '{base.color.red.7}',
             'dark-tritanopia-high-contrast': '{base.color.red.9}',
           },
+          'org.primer.llm': {
+            usage: ['delete-button', 'critical-alert', 'destructive-confirmation'],
+            rules: 'MUST use for destructive action buttons like delete. Use fgColor.onEmphasis for text on this background.',
+          },
         },
       },
     },
@@ -538,6 +645,7 @@
       muted: {
         $value: '{bgColor.danger.muted}',
         $type: 'color',
+        $description: 'Subtle background for closed state indicators (issues, PRs)',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
@@ -565,11 +673,16 @@
               alpha: 0.1,
             },
           },
+          'org.primer.llm': {
+            usage: ['closed-issue', 'closed-pr', 'declined-state'],
+            rules: 'Use for closed/declined status indicators. Specifically for GitHub issues and PRs.',
+          },
         },
       },
       emphasis: {
         $value: '{bgColor.danger.emphasis}',
         $type: 'color',
+        $description: 'Strong background for closed state badges and labels',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
@@ -589,6 +702,10 @@
             'dark-protanopia-deuteranopia': '{bgColor.neutral.emphasis}',
             'dark-protanopia-deuteranopia-high-contrast': '{bgColor.neutral.emphasis}',
           },
+          'org.primer.llm': {
+            usage: ['closed-badge', 'closed-label', 'declined-status-badge'],
+            rules: 'Use for prominent closed/declined state indicators. Pair with fgColor.onEmphasis for text.',
+          },
         },
       },
     },
@@ -596,6 +713,7 @@
       muted: {
         $value: '{bgColor.neutral.muted}',
         $type: 'color',
+        $description: 'Subtle background for draft state indicators',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
@@ -623,11 +741,16 @@
               alpha: 0.1,
             },
           },
+          'org.primer.llm': {
+            usage: ['draft-pr', 'draft-issue', 'work-in-progress'],
+            rules: 'Use for draft/WIP status indicators. Conveys incomplete or pending state.',
+          },
         },
       },
       emphasis: {
         $value: '{bgColor.neutral.emphasis}',
         $type: 'color',
+        $description: 'Strong background for draft state badges and labels',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
@@ -637,6 +760,10 @@
               web: 'var(--bgColor-draft-emphasis)',
             },
           },
+          'org.primer.llm': {
+            usage: ['draft-badge', 'draft-label', 'wip-indicator'],
+            rules: 'Use for prominent draft state indicators. Pair with fgColor.onEmphasis for text.',
+          },
         },
       },
     },
@@ -644,6 +771,7 @@
       muted: {
         $value: '{base.color.purple.0}',
         $type: 'color',
+        $description: 'Subtle background for completed/done state indicators',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
@@ -659,11 +787,16 @@
               alpha: 0.15,
             },
           },
+          'org.primer.llm': {
+            usage: ['completed-task', 'merged-pr', 'done-state'],
+            rules: 'Use for completed/done status indicators. Conveys finished or merged state.',
+          },
         },
       },
       emphasis: {
         $value: '{base.color.purple.5}',
         $type: 'color',
+        $description: 'Strong background for completed/done state badges and labels',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
@@ -679,6 +812,10 @@
             'dark-tritanopia-high-contrast': '{base.color.purple.9}',
             'dark-protanopia-deuteranopia-high-contrast': '{base.color.purple.9}',
           },
+          'org.primer.llm': {
+            usage: ['done-badge', 'merged-label', 'completed-indicator'],
+            rules: 'Use for prominent done/completed state indicators. Pair with fgColor.onEmphasis for text.',
+          },
         },
       },
     },
@@ -686,6 +823,7 @@
       muted: {
         $value: '{bgColor.done.muted}',
         $type: 'color',
+        $description: 'Subtle background for upsell and promotional content',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
@@ -695,11 +833,16 @@
               web: 'var(--bgColor-upsell-muted)',
             },
           },
+          'org.primer.llm': {
+            usage: ['upgrade-prompt', 'premium-feature', 'promotional-banner'],
+            rules: 'Use for upgrade prompts and premium feature highlights. Do NOT use for regular content.',
+          },
         },
       },
       emphasis: {
         $value: '{bgColor.done.emphasis}',
         $type: 'color',
+        $description: 'Strong background for prominent upsell elements',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
@@ -709,6 +852,10 @@
               web: 'var(--bgColor-upsell-emphasis)',
             },
           },
+          'org.primer.llm': {
+            usage: ['upgrade-button', 'premium-badge', 'upsell-cta'],
+            rules: 'Use for prominent upgrade/upsell CTAs. Pair with fgColor.onEmphasis for text.',
+          },
         },
       },
     },
@@ -716,6 +863,7 @@
       muted: {
         $value: '{base.color.pink.0}',
         $type: 'color',
+        $description: 'Subtle background for GitHub Sponsors content',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
@@ -735,11 +883,16 @@
               alpha: 0.1,
             },
           },
+          'org.primer.llm': {
+            usage: ['sponsor-card', 'sponsor-highlight', 'funding-prompt'],
+            rules: 'Use for GitHub Sponsors related content. Do NOT use for general pink-colored elements.',
+          },
         },
       },
       emphasis: {
         $value: '{base.color.pink.5}',
         $type: 'color',
+        $description: 'Strong background for prominent GitHub Sponsors elements',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
@@ -754,6 +907,10 @@
             'dark-dimmed-high-contrast': '{base.color.pink.7}',
             'dark-tritanopia-high-contrast': '{base.color.pink.9}',
             'dark-protanopia-deuteranopia-high-contrast': '{base.color.pink.9}',
+          },
+          'org.primer.llm': {
+            usage: ['sponsor-button', 'sponsor-badge', 'funding-cta'],
+            rules: 'Use for prominent Sponsors CTAs. Pair with fgColor.onEmphasis for text.',
           },
         },
       },
