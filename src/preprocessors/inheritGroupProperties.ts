@@ -60,7 +60,8 @@ function inheritProperties(
       const token = tokenValue as DesignToken
 
       // Only inherit $description if token doesn't have its own
-      const inheritedDescription = !token.$description && mergedProps.$description ? mergedProps.$description : undefined
+      const inheritedDescription =
+        !token.$description && mergedProps.$description ? mergedProps.$description : undefined
 
       // Merge $extensions (token-level takes precedence over inherited)
       let mergedExtensions = token.$extensions
