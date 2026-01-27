@@ -450,7 +450,8 @@
           fontFamily: '{fontStack.sansSerif}',
         },
         $type: 'typography',
-        $description: 'Compact small font with a smaller line height of 16px. Use it for single-line scenarios, as the small sizing doesn’t pass accessibility requirements.',        $extensions: {
+        $description: 'Compact small font with a smaller line height of 16px. Use it for single-line scenarios, as the small sizing doesn’t pass accessibility requirements.',        
+        $extensions: {
           'org.primer.llm': {
             usage: ['caption', 'label', 'badge-text', 'single-line-metadata'],
             rules: 'Use only for single-line or short text. Does NOT meet accessibility requirements for body text.',
