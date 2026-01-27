@@ -247,4 +247,87 @@ describe('Format: Markdown LLM Guidelines', () => {
 
     expect(result).toContain('## text and foreground color')
   })
+
+  it('Consolidates tokens with identical guidelines into a single entry', async () => {
+    const sharedGuidelines = {
+      $description: 'Shared description for all tokens',
+      $extensions: {
+        'org.primer.llm': {
+          usage: ['chart', 'graph'],
+          rules: 'Use for data visualization',
+        },
+      },
+    }
+
+    const dictionary = getMockDictionary({
+      tokens: {
+        data: {
+          blue: getMockToken({
+            name: 'data-blue',
+            path: ['data', 'blue'],
+            ...sharedGuidelines,
+          }),
+          red: getMockToken({
+            name: 'data-red',
+            path: ['data', 'red'],
+            ...sharedGuidelines,
+          }),
+          green: getMockToken({
+            name: 'data-green',
+            path: ['data', 'green'],
+            ...sharedGuidelines,
+          }),
+        },
+      },
+    })
+
+    const input = getMockFormatterArguments({dictionary})
+    const result = await markdownLlmGuidelines(input)
+
+    // Should have description and rules only once
+    expect(result.match(/Shared description for all tokens/g)?.length).toBe(1)
+    expect(result.match(/Use for data visualization/g)?.length).toBe(1)
+
+    // Should list all tokens together
+    expect(result).toContain('**Tokens:**')
+    expect(result).toContain('data-blue')
+    expect(result).toContain('data-red')
+    expect(result).toContain('data-green')
+
+    // Should NOT have individual ### headings for consolidated tokens
+    expect(result).not.toContain('### data-blue')
+    expect(result).not.toContain('### data-red')
+    expect(result).not.toContain('### data-green')
+  })
+
+  it('Does not consolidate tokens with different guidelines', async () => {
+    const dictionary = getMockDictionary({
+      tokens: {
+        color: {
+          primary: getMockToken({
+            name: 'color-primary',
+            path: ['color', 'primary'],
+            $description: 'Primary color',
+            $extensions: {'org.primer.llm': {usage: ['primary']}},
+          }),
+          secondary: getMockToken({
+            name: 'color-secondary',
+            path: ['color', 'secondary'],
+            $description: 'Secondary color',
+            $extensions: {'org.primer.llm': {usage: ['secondary']}},
+          }),
+        },
+      },
+    })
+
+    const input = getMockFormatterArguments({dictionary})
+    const result = await markdownLlmGuidelines(input)
+
+    // Each token should have its own heading
+    expect(result).toContain('### color-primary')
+    expect(result).toContain('### color-secondary')
+
+    // Should NOT have consolidated Tokens: line
+    expect(result).not.toContain('**Tokens:**')
+  })
 })
