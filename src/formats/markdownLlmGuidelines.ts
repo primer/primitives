@@ -10,6 +10,17 @@ interface LlmGuideline {
 }
 
 /**
+ * Creates a unique key for grouping tokens with identical guidelines
+ */
+function createGuidelineKey(guideline: LlmGuideline): string {
+  return JSON.stringify({
+    description: guideline.description || '',
+    usage: guideline.usage?.sort() || [],
+    rules: guideline.rules || '',
+  })
+}
+
+/**
  * Extracts category from token name
  * - For "base-*" tokens, uses second word (e.g., "base-easing-ease" -> "easing")
  * - Otherwise uses first word (e.g., "bgColor-danger-emphasis" -> "bgColor")
@@ -39,7 +50,9 @@ function formatCategoryName(category: string): string {
 
 /**
  * @description Outputs a markdown file with LLM token guidelines, extracting
- * description from $description and usage/rules from $extensions['org.primer.llm']
+ * description from $description and usage/rules from $extensions['org.primer.llm'].
+ * Tokens with identical guidelines (from group-level inheritance) are consolidated
+ * into a single entry listing all token names.
  * @param FormatFnArguments
  * @returns formatted markdown `string`
  */
@@ -85,18 +98,50 @@ export const markdownLlmGuidelines: FormatFn = async ({dictionary}: FormatFnArgu
   for (const category of Object.keys(grouped).sort()) {
     lines.push(`## ${formatCategoryName(category)}`, '')
 
-    for (const guideline of grouped[category]) {
-      lines.push(`### ${guideline.name}`)
-      if (guideline.description) {
-        lines.push(guideline.description)
+    const categoryGuidelines = grouped[category]
+
+    // Group tokens with identical guidelines
+    const consolidatedGroups: Map<string, LlmGuideline[]> = new Map()
+    for (const guideline of categoryGuidelines) {
+      const key = createGuidelineKey(guideline)
+      if (!consolidatedGroups.has(key)) {
+        consolidatedGroups.set(key, [])
       }
-      if (guideline.usage && guideline.usage.length > 0) {
-        lines.push(`**Usage:** ${guideline.usage.join(', ')}`)
+      consolidatedGroups.get(key)!.push(guideline)
+    }
+
+    for (const [, guidelinesGroup] of consolidatedGroups) {
+      const first = guidelinesGroup[0]
+
+      if (guidelinesGroup.length > 1) {
+        // Multiple tokens share the same guidelines - consolidate
+        if (first.description) {
+          lines.push(first.description)
+          lines.push('')
+        }
+        if (first.usage && first.usage.length > 0) {
+          lines.push(`**Usage:** ${first.usage.join(', ')}`)
+        }
+        if (first.rules) {
+          lines.push(`**Rules:** ${first.rules}`)
+        }
+        lines.push('')
+        lines.push(`**Tokens:** ${guidelinesGroup.map(g => g.name).join(', ')}`)
+        lines.push('')
+      } else {
+        // Single token - output individually
+        lines.push(`### ${first.name}`)
+        if (first.description) {
+          lines.push(first.description)
+        }
+        if (first.usage && first.usage.length > 0) {
+          lines.push(`**Usage:** ${first.usage.join(', ')}`)
+        }
+        if (first.rules) {
+          lines.push(`**Rules:** ${first.rules}`)
+        }
+        lines.push('')
       }
-      if (guideline.rules) {
-        lines.push(`**Rules:** ${guideline.rules}`)
-      }
-      lines.push('')
     }
   }
 

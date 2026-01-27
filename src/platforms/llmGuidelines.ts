@@ -9,6 +9,7 @@ export const llmGuidelines: PlatformInitializer = (
 ): PlatformConfig => ({
   prefix,
   buildPath,
+  preprocessors: ['inheritGroupProperties'],
   transforms: ['name/pathToKebabCase'],
   files: [
     {

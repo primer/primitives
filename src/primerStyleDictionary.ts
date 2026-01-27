@@ -40,6 +40,7 @@ import {
   markdownLlmGuidelines,
 } from './formats/index.js'
 import {themeOverrides} from './preprocessors/themeOverrides.js'
+import {inheritGroupProperties} from './preprocessors/inheritGroupProperties.js'
 import {colorAlphaToCss} from './transformers/colorAlphaToCss.js'
 
 /**
@@ -170,3 +171,5 @@ PrimerStyleDictionary.registerTransform(fontFamilyToFigma)
 PrimerStyleDictionary.registerTransform(gradientToCss)
 
 PrimerStyleDictionary.registerPreprocessor(themeOverrides)
+
+PrimerStyleDictionary.registerPreprocessor(inheritGroupProperties)

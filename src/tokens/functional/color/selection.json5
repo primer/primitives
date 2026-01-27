@@ -3,6 +3,7 @@
     bgColor: {
       $value: '{bgColor.accent.emphasis}',
       $type: 'color',
+      $description: 'Background color for text selection highlights',
       $extensions: {
         'org.primer.figma': {
           collection: 'mode',
@@ -14,6 +15,10 @@
             $value: '{bgColor.accent.emphasis}',
             alpha: 0.7,
           },
+        },
+        'org.primer.llm': {
+          usage: ['text-selection', 'highlighted-text', 'selected-content'],
+          rules: 'Use for native text selection (::selection) and programmatic text highlighting. Do NOT use for general emphasis or background colors on containers.',
         },
       },
       alpha: 0.2,
