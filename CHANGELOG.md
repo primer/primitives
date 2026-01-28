@@ -1,5 +1,25 @@
 # @primer/primitives
 
+## 11.4.0
+
+### Minor Changes
+
+- [#1298](https://github.com/primer/primitives/pull/1298) [`3cec8c2`](https://github.com/primer/primitives/commit/3cec8c272da221e0a7eb0575b63c91a25158e8ba) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Adding text size scale
+
+- [#1295](https://github.com/primer/primitives/pull/1295) [`b9e6685`](https://github.com/primer/primitives/commit/b9e6685dee330b6fdeed9a12ec9db3fc92863db0) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Add LLM context metadata and a new build process to build a markdown file with all token context.
+
+- [#1297](https://github.com/primer/primitives/pull/1297) [`bfe0d46`](https://github.com/primer/primitives/commit/bfe0d4660dd09ecabc8b11321b2d89990f143270) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Added lineHeight tokens
+
+### Patch Changes
+
+- [#1289](https://github.com/primer/primitives/pull/1289) [`4c0bf67`](https://github.com/primer/primitives/commit/4c0bf671418a101dd10a45363b5b6abf87348558) Thanks [@tfeijo](https://github.com/tfeijo)! - fix: correct @custom-media syntax for narrowLandscape viewport range
+
+- [#1294](https://github.com/primer/primitives/pull/1294) [`6e285f2`](https://github.com/primer/primitives/commit/6e285f2a74d18913982005ac40c24bbdd8438bc8) Thanks [@jonrohan](https://github.com/jonrohan)! - Remove the ::backdrop css selectors from the color themes queries
+
+- [#1300](https://github.com/primer/primitives/pull/1300) [`dcde6af`](https://github.com/primer/primitives/commit/dcde6af489bc3fbba4ad1fdc9d4cb54e1b0a30b4) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Adding metadata to borders and more colors
+
+- [#1299](https://github.com/primer/primitives/pull/1299) [`e4333ea`](https://github.com/primer/primitives/commit/e4333ea7b6843f01e7db0099e69ec648addb83a9) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Add metadata for some more size and color tokens
+
 ## 11.3.2
 
 ### Patch Changes
