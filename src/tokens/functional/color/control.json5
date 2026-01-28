@@ -1,5 +1,12 @@
 {
   control: {
+    $description: 'Colors for interactive form controls like buttons, inputs, selects, and checkboxes.',
+    $extensions: {
+      'org.primer.llm': {
+        usage: ['button', 'input', 'select', 'checkbox', 'radio', 'form-control'],
+        rules: 'Use control tokens for interactive form elements. Match states (rest, hover, active, disabled) to user interactions. Use transparent variants for ghost/tertiary buttons. Use danger variants for destructive actions. Use checked variants for selected checkboxes and radios.',
+      },
+    },
     bgColor: {
       rest: {
         $value: '{base.color.neutral.1}',
@@ -345,6 +352,7 @@
       },
     },
     transparent: {
+      $description: 'Transparent control colors for ghost buttons and tertiary actions with no visible background at rest.',
       bgColor: {
         rest: {
           $value: '{base.color.transparent}',
@@ -613,6 +621,7 @@
       },
     },
     danger: {
+      $description: 'Danger control colors for destructive actions like delete buttons and remove actions.',
       fgColor: {
         rest: {
           $value: '{fgColor.danger}',
@@ -752,6 +761,7 @@
       },
     },
     checked: {
+      $description: 'Colors for checked/selected state of checkboxes, radio buttons, and toggle switches.',
       bgColor: {
         rest: {
           $value: '{bgColor.accent.emphasis}',
@@ -1009,6 +1019,13 @@
     },
   },
   controlTrack: {
+    $description: 'Colors for toggle switch tracks (the background rail that the knob slides along).',
+    $extensions: {
+      'org.primer.llm': {
+        usage: ['toggle-track', 'switch-track', 'slider-track'],
+        rules: 'Use for the track/rail element of toggle switches and sliders. Pair with controlKnob tokens for the movable handle.',
+      },
+    },
     bgColor: {
       rest: {
         $value: '{base.color.neutral.3}',
@@ -1234,6 +1251,13 @@
     },
   },
   controlKnob: {
+    $description: 'Colors for toggle switch knobs (the circular handle that moves along the track).',
+    $extensions: {
+      'org.primer.llm': {
+        usage: ['toggle-knob', 'switch-handle', 'slider-thumb'],
+        rules: 'Use for the movable handle/thumb of toggle switches and sliders. Pair with controlTrack tokens for the background rail.',
+      },
+    },
     bgColor: {
       rest: {
         $value: '{base.color.neutral.0}',
