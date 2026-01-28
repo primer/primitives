@@ -9,7 +9,7 @@ describe('Schema validation', () => {
         $description: 'The color black',
       },
       duration: {
-        $value: '1000ms',
+        $value: {value: 1000, unit: 'ms'},
         $type: 'duration',
         $description: '1000 milliseconds',
       },
