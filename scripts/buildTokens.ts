@@ -267,6 +267,7 @@ export const buildDesignTokens = async (buildOptions: ConfigGeneratorOptions): P
         'src/tokens/functional/typography/font-stack.json5',
         'src/tokens/functional/typography/typography.json5',
         'src/tokens/base/motion/easing.json5',
+        'src/tokens/functional/border/border.json5',
       ],
       include: [
         'src/tokens/base/**/*.json5',

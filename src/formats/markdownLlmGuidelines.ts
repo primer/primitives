@@ -49,6 +49,37 @@ function formatCategoryName(category: string): string {
 }
 
 /**
+ * Creates a key for grouping by usage and rules only (not description)
+ */
+function createUsageRulesKey(guideline: LlmGuideline): string {
+  return JSON.stringify({
+    usage: guideline.usage?.sort() || [],
+    rules: guideline.rules || '',
+  })
+}
+
+/**
+ * Extracts a subcategory name from token names for headings
+ * e.g., "border-accent-emphasis" -> "accent"
+ */
+function extractSubcategory(tokenNames: string[]): string | null {
+  if (tokenNames.length < 2) return null
+
+  // Get the second part of each token name
+  const subcategories = tokenNames.map(name => {
+    const parts = name.split('-')
+    return parts[1] || null
+  })
+
+  // Check if all tokens share the same subcategory
+  const uniqueSubcats = [...new Set(subcategories.filter(Boolean))]
+  if (uniqueSubcats.length === 1) {
+    return uniqueSubcats[0]!
+  }
+  return null
+}
+
+/**
  * @description Outputs a markdown file with LLM token guidelines, extracting
  * description from $description and usage/rules from $extensions['org.primer.llm'].
  * Tokens with identical guidelines (from group-level inheritance) are consolidated
@@ -100,7 +131,23 @@ export const markdownLlmGuidelines: FormatFn = async ({dictionary}: FormatFnArgu
 
     const categoryGuidelines = grouped[category]
 
-    // Group tokens with identical guidelines
+    // Check if all tokens in category share the same usage/rules AND there are multiple tokens
+    const usageRulesKeys = new Set(categoryGuidelines.map(createUsageRulesKey))
+    const sharedUsageRules = usageRulesKeys.size === 1 && categoryGuidelines.length > 1
+
+    // If shared, output usage/rules once at category level
+    if (sharedUsageRules) {
+      const first = categoryGuidelines[0]
+      if (first.usage && first.usage.length > 0) {
+        lines.push(`**Usage:** ${first.usage.join(', ')}`)
+      }
+      if (first.rules) {
+        lines.push(`**Rules:** ${first.rules}`)
+      }
+      lines.push('')
+    }
+
+    // Group tokens with identical guidelines (description + usage + rules)
     const consolidatedGroups: Map<string, LlmGuideline[]> = new Map()
     for (const guideline of categoryGuidelines) {
       const key = createGuidelineKey(guideline)
@@ -112,21 +159,32 @@ export const markdownLlmGuidelines: FormatFn = async ({dictionary}: FormatFnArgu
 
     for (const [, guidelinesGroup] of consolidatedGroups) {
       const first = guidelinesGroup[0]
+      const tokenNames = guidelinesGroup.map(g => g.name)
 
       if (guidelinesGroup.length > 1) {
         // Multiple tokens share the same guidelines - consolidate
+        const subcategory = extractSubcategory(tokenNames)
+        if (subcategory) {
+          lines.push(`### ${subcategory}`)
+        } else {
+          // No common subcategory - use "general" or skip heading if description serves as intro
+          if (first.description && consolidatedGroups.size > 1) {
+            lines.push(`### general`)
+          }
+        }
         if (first.description) {
           lines.push(first.description)
-          lines.push('')
         }
-        if (first.usage && first.usage.length > 0) {
-          lines.push(`**Usage:** ${first.usage.join(', ')}`)
+        // Only show usage/rules if not already shown at category level
+        if (!sharedUsageRules) {
+          if (first.usage && first.usage.length > 0) {
+            lines.push(`**Usage:** ${first.usage.join(', ')}`)
+          }
+          if (first.rules) {
+            lines.push(`**Rules:** ${first.rules}`)
+          }
         }
-        if (first.rules) {
-          lines.push(`**Rules:** ${first.rules}`)
-        }
-        lines.push('')
-        lines.push(`**Tokens:** ${guidelinesGroup.map(g => g.name).join(', ')}`)
+        lines.push(`**Tokens:** ${tokenNames.join(', ')}`)
         lines.push('')
       } else {
         // Single token - output individually
@@ -134,11 +192,14 @@ export const markdownLlmGuidelines: FormatFn = async ({dictionary}: FormatFnArgu
         if (first.description) {
           lines.push(first.description)
         }
-        if (first.usage && first.usage.length > 0) {
-          lines.push(`**Usage:** ${first.usage.join(', ')}`)
-        }
-        if (first.rules) {
-          lines.push(`**Rules:** ${first.rules}`)
+        // Only show usage/rules if not already shown at category level
+        if (!sharedUsageRules) {
+          if (first.usage && first.usage.length > 0) {
+            lines.push(`**Usage:** ${first.usage.join(', ')}`)
+          }
+          if (first.rules) {
+            lines.push(`**Rules:** ${first.rules}`)
+          }
         }
         lines.push('')
       }
