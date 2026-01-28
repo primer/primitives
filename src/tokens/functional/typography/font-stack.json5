@@ -1,0 +1,60 @@
+{
+  fontStack: {
+    system: {
+      $value: "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji'",
+      $type: 'fontFamily',
+      $description: 'System font stack optimized for cross-platform rendering. Primary font for all UI text.',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'typography',
+          scopes: ['fontFamily'],
+        },
+      },
+    },
+    sansSerif: {
+      $value: "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji'",
+      $type: 'fontFamily',
+      $description: 'Sans-serif font stack for body text and general UI elements.',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'typography',
+          scopes: ['fontFamily'],
+        },
+        'org.primer.llm': {
+          usage: ['body-text', 'form-inputs', 'labels', 'paragraphs'],
+          rules: 'Default font stack for all UI text. Use for body text and standard UI elements. MUST use for readable content.',
+        },
+      },
+    },
+    sansSerifDisplay: {
+      $value: "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji'",
+      $type: 'fontFamily',
+      $description: 'Display font stack for headings and titles. Same as sansSerif but semantically distinct.',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'typography',
+          scopes: ['fontFamily'],
+        },
+        'org.primer.llm': {
+          usage: ['heading', 'title', 'display-text', 'hero-text'],
+          rules: 'Use for headings and display text. Prefer over sansSerif for titles.',
+        },
+      },
+    },
+    monospace: {
+      $value: 'ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace',
+      $type: 'fontFamily',
+      $description: 'Monospace font stack for code, technical content, and tabular data.',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'typography',
+          scopes: ['fontFamily'],
+        },
+        'org.primer.llm': {
+          usage: ['code-block', 'inline-code', 'terminal', 'technical-data', 'tabular-numbers'],
+          rules: 'MUST use for all code display. Use for technical content requiring fixed-width characters.',
+        },
+      },
+    },
+  },
+}

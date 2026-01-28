@@ -3,11 +3,16 @@
     outlineColor: {
       $value: '{borderColor.accent.emphasis}',
       $type: 'color',
+      $description: 'Outline color for focus states on interactive elements',
       $extensions: {
         'org.primer.figma': {
           collection: 'mode',
           group: 'component (internal)',
           scopes: ['borderColor', 'effectColor'],
+        },
+        'org.primer.llm': {
+          usage: ['focus-ring', 'keyboard-navigation', 'accessibility-indicator'],
+          rules: 'Use for focus outlines on interactive elements like buttons, links, and form controls. MUST be visible for keyboard navigation accessibility. Do NOT use for decorative borders or non-interactive elements.',
         },
       },
     },

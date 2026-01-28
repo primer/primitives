@@ -195,6 +195,7 @@
           },
         ],
         $type: 'shadow',
+        $description: 'Small floating shadow for dropdowns, tooltips, and small overlays',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
@@ -229,6 +230,10 @@
                 },
               ],
             },
+          },
+          'org.primer.llm': {
+            usage: ['dropdown', 'tooltip', 'popover', 'menu'],
+            rules: 'Use for small floating elements like dropdowns and tooltips. Do NOT use for modals or dialogs.',
           },
         },
       },
@@ -349,6 +354,7 @@
           },
         ],
         $type: 'shadow',
+        $description: 'Large floating shadow for modals and dialogs',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
@@ -375,6 +381,10 @@
                 },
               ],
             },
+          },
+          'org.primer.llm': {
+            usage: ['modal', 'dialog', 'full-screen-overlay'],
+            rules: 'MUST use for modals and dialogs. Do NOT use for small floating elements.',
           },
         },
       },

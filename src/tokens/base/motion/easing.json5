@@ -4,22 +4,57 @@
       linear: {
         $value: [0, 0, 1, 1],
         $type: 'cubicBezier',
-        $description: 'Ideal for non-movement properties, like opacity or background color.',
+        $description: 'Constant motion with no acceleration. Use for continuous animations like progress bars or loaders.',
+        $extensions: {
+          'org.primer.llm': {
+            usage: ['progress-bar', 'loader', 'continuous-animation', 'scrolling'],
+            rules: 'Use if the motion is constant.',
+          },
+        },
+      },
+      ease: {
+        $value: [0.25, 0.1, 0.25, 1],
+        $type: 'cubicBezier',
+        $description: 'CSS default easing. Use for hover state changes and micro-interactions.',
+        $extensions: {
+          'org.primer.llm': {
+            usage: ['hover-state', 'micro-interaction', 'button-hover', 'link-hover'],
+            rules: 'Use for hover state changes.',
+          },
+        },
       },
       easeIn: {
         $value: [0.7, 0.1, 0.75, 0.9],
         $type: 'cubicBezier',
-        $description: 'Ideal for movement that starts on the page and ends off the page.',
+        $description: 'Accelerating motion. Use for elements exiting the viewport (moving off-screen).',
+        $extensions: {
+          'org.primer.llm': {
+            usage: ['exit-animation', 'element-leaving', 'off-screen-motion'],
+            rules: 'Rarely used alone. Prefer ease-out for most exit animations.',
+          },
+        },
       },
       easeOut: {
         $value: [0.3, 0.8, 0.6, 1],
         $type: 'cubicBezier',
-        $description: 'Ideal for movement that starts off the page and ends on the page.',
+        $description: 'Decelerating motion. Use for elements entering the viewport or appearing on screen.',
+        $extensions: {
+          'org.primer.llm': {
+            usage: ['enter-animation', 'element-appearing', 'modal-open', 'dropdown-open', 'tooltip-appear'],
+            rules: 'RECOMMENDED default. Use if an element enters or exits the viewport.',
+          },
+        },
       },
       easeInOut: {
         $value: [0.6, 0, 0.2, 1],
         $type: 'cubicBezier',
-        $description: 'Ideal for movement that starts and ends on the page.',
+        $description: 'Smooth acceleration and deceleration. Use for elements moving or morphing within the viewport.',
+        $extensions: {
+          'org.primer.llm': {
+            usage: ['position-change', 'size-change', 'morph-animation', 'expand-collapse', 'slide-transition'],
+            rules: 'Use if an element moves or morphs on screen.',
+          },
+        },
       },
     },
   },

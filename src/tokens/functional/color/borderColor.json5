@@ -3,6 +3,7 @@
     default: {
       $value: '{base.color.neutral.6}',
       $type: 'color',
+      $description: 'Default border color for most UI elements',
       $extensions: {
         'org.primer.overrides': {
           dark: '{base.color.neutral.7}',
@@ -23,11 +24,16 @@
             web: 'var(--borderColor-default) /* utility class: .color-border-default */',
           },
         },
+        'org.primer.llm': {
+          usage: ['default-border', 'card-border', 'input-border', 'divider'],
+          rules: 'RECOMMENDED default for all borders. Use for cards, inputs, and dividers.',
+        },
       },
     },
     muted: {
       $value: '{borderColor.default}',
       $type: 'color',
+      $description: 'Subtle border for secondary elements and light separators',
       $extensions: {
         'org.primer.figma': {
           collection: 'mode',
@@ -71,12 +77,17 @@
             alpha: 1,
           },
         },
+        'org.primer.llm': {
+          usage: ['subtle-border', 'light-divider', 'secondary-border'],
+          rules: 'Use for subtle borders and separators. Less prominent than borderColor.default.',
+        },
       },
       alpha: 0.7,
     },
     emphasis: {
       $value: '{base.color.neutral.8}',
       $type: 'color',
+      $description: 'Strong border for emphasis and visual weight',
       $extensions: {
         'org.primer.figma': {
           collection: 'mode',
@@ -92,11 +103,16 @@
           'dark-tritanopia-high-contrast': '{borderColor.default}',
           'dark-protanopia-deuteranopia-high-contrast': '{borderColor.default}',
         },
+        'org.primer.llm': {
+          usage: ['emphasis-border', 'strong-border', 'selected-border'],
+          rules: 'Use for borders needing more visual weight. Darker than borderColor.default.',
+        },
       },
     },
     disabled: {
       $value: '{base.color.neutral.8}',
       $type: 'color',
+      $description: 'Border color for disabled interactive elements',
       $extensions: {
         'org.primer.figma': {
           collection: 'mode',
@@ -125,12 +141,17 @@
             alpha: 0.12,
           },
         },
+        'org.primer.llm': {
+          usage: ['disabled-border', 'inactive-border', 'unavailable'],
+          rules: 'MUST use for disabled state borders. Pair with bgColor.disabled. Do NOT use for active elements.',
+        },
       },
       alpha: 0.1,
     },
     transparent: {
       $value: '{base.color.transparent}',
       $type: 'color',
+      $description: 'Fully transparent border',
       $extensions: {
         'org.primer.figma': {
           collection: 'mode',
@@ -142,6 +163,7 @@
     translucent: {
       $value: '{base.color.neutral.13}',
       $type: 'color',
+      $description: 'Semi-transparent border for overlays and layered elements',
       $extensions: {
         'org.primer.figma': {
           collection: 'mode',
@@ -178,6 +200,10 @@
             alpha: 1,
           },
         },
+        'org.primer.llm': {
+          usage: ['overlay-border', 'translucent-border'],
+          rules: 'Use for semi-transparent borders on overlays. Works well with translucent backgrounds.',
+        },
       },
       alpha: 0.15,
     },
@@ -185,6 +211,7 @@
       muted: {
         $value: '{borderColor.muted}',
         $type: 'color',
+        $description: 'Subtle neutral semantic border',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
@@ -201,11 +228,16 @@
               alpha: 1,
             },
           },
+          'org.primer.llm': {
+            usage: ['neutral-muted', 'neutral-secondary'],
+            rules: 'Use for neutral semantic borders on tags and badges. Prefer borderColor.muted for general use.',
+          },
         },
       },
       emphasis: {
         $value: '{base.color.neutral.9}',
         $type: 'color',
+        $description: 'Strong neutral semantic border',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
@@ -215,6 +247,10 @@
           'org.primer.overrides': {
             dark: '{borderColor.emphasis}',
           },
+          'org.primer.llm': {
+            usage: ['neutral-emphasis', 'neutral-strong'],
+            rules: 'Use for emphasized neutral semantic borders. Stronger than neutral.muted.',
+          },
         },
       },
     },
@@ -222,6 +258,7 @@
       muted: {
         $value: '{base.color.blue.3}',
         $type: 'color',
+        $description: 'Subtle accent border for selected or focused elements',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
@@ -262,12 +299,17 @@
               alpha: 1,
             },
           },
+          'org.primer.llm': {
+            usage: ['accent-muted', 'selected-muted', 'info-muted'],
+            rules: 'Use for accent-colored borders on selected elements. Pair with bgColor.accent.muted.',
+          },
         },
         alpha: 0.4,
       },
       emphasis: {
         $value: '{base.color.blue.5}',
         $type: 'color',
+        $description: 'Strong accent border for selected or focused elements',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
@@ -280,6 +322,10 @@
           'org.primer.overrides': {
             'dark-dimmed-high-contrast': '{base.color.blue.2}',
           },
+          'org.primer.llm': {
+            usage: ['accent-emphasis', 'selected-border', 'focus-border'],
+            rules: 'Use for selected elements and focus states. Strong visual emphasis.',
+          },
         },
       },
     },
@@ -287,6 +333,7 @@
       muted: {
         $value: '{base.color.green.3}',
         $type: 'color',
+        $description: 'Subtle success border for positive feedback elements',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
@@ -342,12 +389,17 @@
               alpha: 1,
             },
           },
+          'org.primer.llm': {
+            usage: ['success-muted', 'valid-muted', 'positive-muted'],
+            rules: 'Use for success state borders. Pair with bgColor.success.muted.',
+          },
         },
         alpha: 0.4,
       },
       emphasis: {
         $value: '{base.color.green.5}',
         $type: 'color',
+        $description: 'Strong success border for prominent positive elements',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
@@ -368,6 +420,10 @@
             'light-protanopia-deuteranopia-high-contrast': '{base.color.blue.5}',
             'dark-dimmed-high-contrast': '{base.color.green.2}',
           },
+          'org.primer.llm': {
+            usage: ['success-emphasis', 'confirmed', 'positive-emphasis'],
+            rules: 'Use for emphasized success borders. Pair with bgColor.success.emphasis.',
+          },
         },
       },
     },
@@ -375,6 +431,7 @@
       muted: {
         $value: '{borderColor.success.muted}',
         $type: 'color',
+        $description: 'Subtle border for open state indicators',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
@@ -418,11 +475,16 @@
               alpha: 1,
             },
           },
+          'org.primer.llm': {
+            usage: ['open-muted', 'open-issue', 'open-pr'],
+            rules: 'Use for open/active status borders. Specifically for GitHub issues and PRs.',
+          },
         },
       },
       emphasis: {
         $value: '{borderColor.success.emphasis}',
         $type: 'color',
+        $description: 'Strong border for open state badges',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
@@ -442,6 +504,10 @@
             'light-protanopia-deuteranopia': '{base.color.orange.5}',
             'light-protanopia-deuteranopia-high-contrast': '{base.color.orange.5}',
           },
+          'org.primer.llm': {
+            usage: ['open-emphasis', 'open-status'],
+            rules: 'Use for emphasized open state borders. Pair with bgColor.open.emphasis.',
+          },
         },
       },
     },
@@ -449,6 +515,7 @@
       muted: {
         $value: '{base.color.yellow.3}',
         $type: 'color',
+        $description: 'Subtle attention border for warnings and caution states',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
@@ -489,12 +556,17 @@
               alpha: 1,
             },
           },
+          'org.primer.llm': {
+            usage: ['attention-muted', 'warning-muted', 'caution-muted'],
+            rules: 'Use for warning state borders. Pair with bgColor.attention.muted.',
+          },
         },
         alpha: 0.4,
       },
       emphasis: {
         $value: '{base.color.yellow.5}',
         $type: 'color',
+        $description: 'Strong attention border for prominent warnings',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
@@ -507,6 +579,10 @@
           'org.primer.overrides': {
             'dark-dimmed-high-contrast': '{base.color.yellow.2}',
           },
+          'org.primer.llm': {
+            usage: ['attention-emphasis', 'warning-emphasis', 'caution-emphasis'],
+            rules: 'Use for emphasized warning borders. Pair with bgColor.attention.emphasis.',
+          },
         },
       },
     },
@@ -514,6 +590,7 @@
       muted: {
         $value: '{base.color.orange.3}',
         $type: 'color',
+        $description: 'Subtle severe border for high-priority warnings',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
@@ -552,12 +629,17 @@
               alpha: 1,
             },
           },
+          'org.primer.llm': {
+            usage: ['severe-muted', 'urgent-muted'],
+            rules: 'Use for severe warning borders. More critical than attention, less than danger.',
+          },
         },
         alpha: 0.4,
       },
       emphasis: {
         $value: '{base.color.orange.5}',
         $type: 'color',
+        $description: 'Strong severe border for prominent high-priority warnings',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
@@ -573,6 +655,10 @@
             'light-tritanopia-high-contrast': '{base.color.red.5}',
             'dark-dimmed-high-contrast': '{base.color.orange.2}',
           },
+          'org.primer.llm': {
+            usage: ['severe-emphasis', 'urgent-emphasis'],
+            rules: 'Use for emphasized severe borders. Pair with bgColor.severe.emphasis.',
+          },
         },
       },
     },
@@ -580,6 +666,7 @@
       muted: {
         $value: '{base.color.red.3}',
         $type: 'color',
+        $description: 'Subtle danger border for errors and destructive contexts',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
@@ -627,12 +714,17 @@
               alpha: 1,
             },
           },
+          'org.primer.llm': {
+            usage: ['danger-muted', 'error-muted', 'destructive-muted'],
+            rules: 'Use for error state borders. Pair with bgColor.danger.muted.',
+          },
         },
         alpha: 0.4,
       },
       emphasis: {
         $value: '{base.color.red.5}',
         $type: 'color',
+        $description: 'Strong danger border for destructive actions and errors',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
@@ -657,6 +749,10 @@
             },
             'dark-dimmed-high-contrast': '{base.color.red.2}',
           },
+          'org.primer.llm': {
+            usage: ['danger-emphasis', 'error-emphasis', 'destructive-emphasis'],
+            rules: 'MUST use for destructive action borders. Pair with bgColor.danger.emphasis.',
+          },
         },
       },
     },
@@ -664,6 +760,7 @@
       muted: {
         $value: '{borderColor.danger.muted}',
         $type: 'color',
+        $description: 'Subtle border for closed state indicators',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
@@ -707,11 +804,16 @@
               alpha: 1,
             },
           },
+          'org.primer.llm': {
+            usage: ['closed-muted', 'closed-issue', 'closed-pr'],
+            rules: 'Use for closed/declined status borders. Specifically for GitHub issues and PRs.',
+          },
         },
       },
       emphasis: {
         $value: '{borderColor.danger.emphasis}',
         $type: 'color',
+        $description: 'Strong border for closed state badges',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
@@ -731,6 +833,10 @@
             'light-tritanopia': '{borderColor.emphasis}',
             'light-tritanopia-high-contrast': '{borderColor.emphasis}',
           },
+          'org.primer.llm': {
+            usage: ['closed-emphasis', 'closed-status'],
+            rules: 'Use for emphasized closed state borders. Pair with bgColor.closed.emphasis.',
+          },
         },
       },
     },
@@ -738,6 +844,7 @@
       muted: {
         $value: '{borderColor.neutral.muted}',
         $type: 'color',
+        $description: 'Subtle border for draft state indicators',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
@@ -781,11 +888,16 @@
               alpha: 1,
             },
           },
+          'org.primer.llm': {
+            usage: ['draft-muted', 'draft-pr', 'draft-issue'],
+            rules: 'Use for draft/WIP status borders. Conveys incomplete or pending state.',
+          },
         },
       },
       emphasis: {
         $value: '{borderColor.neutral.emphasis}',
         $type: 'color',
+        $description: 'Strong border for draft state badges',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
@@ -795,6 +907,10 @@
               web: 'var(--borderColor-draft-emphasis)',
             },
           },
+          'org.primer.llm': {
+            usage: ['draft-emphasis', 'draft-status'],
+            rules: 'Use for emphasized draft state borders. Pair with bgColor.draft.emphasis.',
+          },
         },
       },
     },
@@ -802,6 +918,7 @@
       muted: {
         $value: '{base.color.purple.3}',
         $type: 'color',
+        $description: 'Subtle border for completed/done state indicators',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
@@ -842,12 +959,17 @@
               alpha: 1,
             },
           },
+          'org.primer.llm': {
+            usage: ['done-muted', 'merged', 'completed'],
+            rules: 'Use for completed/done status borders. Conveys finished or merged state.',
+          },
         },
         alpha: 0.4,
       },
       emphasis: {
         $value: '{base.color.purple.5}',
         $type: 'color',
+        $description: 'Strong border for completed/done state badges',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
@@ -860,6 +982,10 @@
           'org.primer.overrides': {
             'dark-dimmed-high-contrast': '{base.color.purple.2}',
           },
+          'org.primer.llm': {
+            usage: ['done-emphasis', 'merged-status'],
+            rules: 'Use for emphasized done state borders. Pair with bgColor.done.emphasis.',
+          },
         },
       },
     },
@@ -867,6 +993,7 @@
       muted: {
         $value: '{borderColor.done.muted}',
         $type: 'color',
+        $description: 'Subtle border for upsell and promotional content',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
@@ -876,11 +1003,16 @@
               web: 'var(--borderColor-upsell-muted)',
             },
           },
+          'org.primer.llm': {
+            usage: ['upsell-muted', 'premium-muted'],
+            rules: 'Use for upgrade prompts and premium feature borders. Do NOT use for regular content.',
+          },
         },
       },
       emphasis: {
         $value: '{borderColor.done.emphasis}',
         $type: 'color',
+        $description: 'Strong border for prominent upsell elements',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
@@ -890,6 +1022,10 @@
               web: 'var(--borderColor-upsell-emphasis)',
             },
           },
+          'org.primer.llm': {
+            usage: ['upsell-emphasis', 'premium-emphasis'],
+            rules: 'Use for emphasized upsell borders. Pair with bgColor.upsell.emphasis.',
+          },
         },
       },
     },
@@ -897,6 +1033,7 @@
       muted: {
         $value: '{base.color.pink.3}',
         $type: 'color',
+        $description: 'Subtle border for GitHub Sponsors content',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
@@ -937,12 +1074,17 @@
               alpha: 1,
             },
           },
+          'org.primer.llm': {
+            usage: ['sponsors-muted', 'funding-muted'],
+            rules: 'Use for GitHub Sponsors related borders. Do NOT use for general pink-colored elements.',
+          },
         },
         alpha: 0.4,
       },
       emphasis: {
         $value: '{base.color.pink.5}',
         $type: 'color',
+        $description: 'Strong border for prominent GitHub Sponsors elements',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
@@ -954,6 +1096,10 @@
           },
           'org.primer.overrides': {
             'dark-dimmed-high-contrast': '{base.color.pink.3}',
+          },
+          'org.primer.llm': {
+            usage: ['sponsors-emphasis', 'funding-emphasis'],
+            rules: 'Use for emphasized Sponsors borders. Pair with bgColor.sponsors.emphasis.',
           },
         },
       },

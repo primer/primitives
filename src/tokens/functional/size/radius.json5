@@ -1,0 +1,90 @@
+{
+  borderRadius: {
+    small: {
+      $value: '3px',
+      $description: 'Small border radius (3px). Use for small variants of components or small UI elements like badges, tags, or anything below 16px in height',
+      $type: 'dimension',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'functional/size',
+          scopes: ['radius'],
+          codeSyntax: {
+            web: 'var(--borderRadius-small) /* utility class: .rounded-1 */',
+          },
+        },
+        'org.primer.llm': {
+          usage: ['badge', 'tag', 'label', 'small-input'],
+          rules: 'Use for small UI elements under 16px height. Do NOT use for buttons or cards.',
+        },
+      },
+    },
+    medium: {
+      $value: '6px',
+      $description: 'Medium border radius (6px). The default choice for most buttons, cards, and containers',
+      $type: 'dimension',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'functional/size',
+          scopes: ['radius'],
+          codeSyntax: {
+            web: 'var(--borderRadius-medium) /* utility class: .rounded-2 */',
+          },
+        },
+        'org.primer.llm': {
+          usage: ['button', 'input', 'textarea', 'select', 'card', 'container'],
+          rules: 'Default choice for most components. Use for inputs, cards, and general containers.',
+        },
+      },
+    },
+    large: {
+      $value: '12px',
+      $description: 'Large border radius (12px). Use for larger containers, dialogs, or when more visual softness is desired. Always use this for buttons.',
+      $type: 'dimension',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'functional/size',
+          scopes: ['radius'],
+          codeSyntax: {
+            web: 'var(--borderRadius-large) /* utility class: .rounded-3 */',
+          },
+        },
+        'org.primer.llm': {
+          usage: ['dialog', 'card', 'modal'],
+          rules: 'Recommended for dialogs and modals.',
+        },
+      },
+    },
+    full: {
+      $value: '9999px',
+      $type: 'dimension',
+      $description: 'Use this border radius for pill shaped elements',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'functional/size',
+          scopes: ['radius'],
+          codeSyntax: {
+            web: 'var(--borderRadius-full) /* utility class: .circle */',
+          },
+        },
+        'org.primer.llm': {
+          usage: ['avatar', 'pill-badge', 'circular-button'],
+          rules: 'Use for avatars and pill-shaped elements. Do NOT use for rectangular containers.',
+        },
+      },
+    },
+    default: {
+      $value: '{borderRadius.medium}',
+      $description: 'Default border radius for most UI elements. Alias of borderRadius.medium (6px). Use when in doubt',
+      $type: 'dimension',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'functional/size',
+          scopes: ['radius'],
+          codeSyntax: {
+            web: 'var(--borderRadius-default) /* utility class: .rounded-2 */',
+          },
+        },
+      },
+    },
+  },
+}
