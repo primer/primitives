@@ -2,80 +2,110 @@ import {getMockToken} from '../test-utilities/index.js'
 import {dimensionToRem} from './dimensionToRem.js'
 
 describe('Transformer: dimensionToRem', () => {
-  it('transforms pixel string tokens to rem', () => {
-    const input = [
-      getMockToken({
-        value: '16px',
-      }),
-    ]
-    const expectedOutput = ['1rem']
-    expect(input.map(item => dimensionToRem.transform(item, {}, {}))).toStrictEqual(expectedOutput)
+  describe('W3C DTCG object format', () => {
+    it('transforms px dimension object to rem', () => {
+      const input = [
+        getMockToken({
+          value: {value: 16, unit: 'px'},
+        }),
+      ]
+      const expectedOutput = ['1rem']
+      expect(input.map(item => dimensionToRem.transform(item, {}, {}))).toStrictEqual(expectedOutput)
+    })
+
+    it('transforms rem dimension object to rem', () => {
+      const input = [
+        getMockToken({
+          value: {value: 1, unit: 'rem'},
+        }),
+      ]
+      const expectedOutput = ['1rem']
+      expect(input.map(item => dimensionToRem.transform(item, {}, {}))).toStrictEqual(expectedOutput)
+    })
+
+    it('transforms zero dimension object to 0', () => {
+      const input = [
+        getMockToken({
+          value: {value: 0, unit: 'px'},
+        }),
+        getMockToken({
+          value: {value: 0, unit: 'rem'},
+        }),
+      ]
+      const expectedOutput = ['0', '0']
+      expect(input.map(item => dimensionToRem.transform(item, {}, {}))).toStrictEqual(expectedOutput)
+    })
+
+    it('transforms decimal dimension object', () => {
+      const input = [
+        getMockToken({
+          value: {value: 8, unit: 'px'},
+        }),
+      ]
+      const expectedOutput = ['0.5rem']
+      expect(input.map(item => dimensionToRem.transform(item, {}, {}))).toStrictEqual(expectedOutput)
+    })
+
+    it('respects custom basePxFontSize', () => {
+      const input = [
+        getMockToken({
+          value: {value: 20, unit: 'px'},
+        }),
+      ]
+      const expectedOutput = ['2rem']
+      expect(input.map(item => dimensionToRem.transform(item, {basePxFontSize: 10}, {}))).toStrictEqual(expectedOutput)
+    })
+
+    it('transforms negative dimension object', () => {
+      const input = [
+        getMockToken({
+          value: {value: -16, unit: 'px'},
+        }),
+      ]
+      const expectedOutput = ['-1rem']
+      expect(input.map(item => dimensionToRem.transform(item, {}, {}))).toStrictEqual(expectedOutput)
+    })
   })
 
-  it('transforms number to rem', () => {
-    const input = [
-      getMockToken({
-        value: '16',
-      }),
-      getMockToken({
-        value: 16,
-      }),
-    ]
-    const expectedOutput = ['1rem', '1rem']
-    expect(input.map(item => dimensionToRem.transform(item, {}, {}))).toStrictEqual(expectedOutput)
-  })
+  describe('invalid inputs', () => {
+    it('throws on legacy string format', () => {
+      const input = [
+        getMockToken({
+          value: '16px',
+        }),
+      ]
+      expect(() => input.map(item => dimensionToRem.transform(item, {}, {}))).toThrow()
+    })
 
-  it('transforms rem to rem', () => {
-    const input = [
-      getMockToken({
-        value: '1rem',
-      }),
-    ]
-    const expectedOutput = ['1rem']
-    expect(input.map(item => dimensionToRem.transform(item, {}, {}))).toStrictEqual(expectedOutput)
-  })
+    it('throws on legacy number format', () => {
+      const input = [
+        getMockToken({
+          value: 16,
+        }),
+      ]
+      expect(() => input.map(item => dimensionToRem.transform(item, {}, {}))).toThrow()
+    })
 
-  it('does not transforms em to rem', () => {
-    const input = [
-      getMockToken({
-        value: '1em',
-      }),
-    ]
-    const expectedOutput = ['1em']
-    expect(input.map(item => dimensionToRem.transform(item, {}, {}))).toStrictEqual(expectedOutput)
-  })
+    it('throws on null or undefined', () => {
+      expect(() =>
+        dimensionToRem.transform(
+          getMockToken({
+            value: null,
+          }),
+          {},
+          {},
+        ),
+      ).toThrow()
 
-  it('transforms 0 to 0', () => {
-    const input = [
-      getMockToken({
-        value: '0rem',
-      }),
-      getMockToken({
-        value: '0px',
-      }),
-      getMockToken({
-        value: '0',
-      }),
-    ]
-    const expectedOutput = ['0', '0', '0']
-    expect(input.map(item => dimensionToRem.transform(item, {}, {}))).toStrictEqual(expectedOutput)
-  })
-
-  it('throws on invalid tokens', () => {
-    const input = [
-      getMockToken({
-        value: 'rem',
-      }),
-      getMockToken({
-        value: '',
-      }),
-      getMockToken({
-        value: undefined,
-      }),
-      getMockToken({
-        value: null,
-      }),
-    ]
-    expect(() => input.map(item => dimensionToRem.transform(item, {}, {}))).toThrow()
+      expect(() =>
+        dimensionToRem.transform(
+          getMockToken({
+            value: undefined,
+          }),
+          {},
+          {},
+        ),
+      ).toThrow()
+    })
   })
 })
