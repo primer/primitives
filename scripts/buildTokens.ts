@@ -13,6 +13,20 @@ import fs from 'fs'
 import {getFallbackTheme} from './utilities/getFallbackTheme.js'
 
 /**
+ * Configuration for the design token spec file
+ */
+export const DESIGN_TOKENS_SPEC_FILE = 'DESIGN_TOKENS_SPEC.md'
+
+/**
+ * Header comment to be added to CSS output files
+ */
+export const CSS_SPEC_HEADER = `/**
+ * @spec See /${DESIGN_TOKENS_SPEC_FILE} for naming logic and semantic pairings.
+ * @rule Never use raw values (hex/px). Use semantic tokens ONLY.
+ */
+`
+
+/**
  * getStyleDictionaryConfig
  * @param filename output file name without extension
  * @param source array of source token json files
@@ -279,7 +293,7 @@ export const buildDesignTokens = async (buildOptions: ConfigGeneratorOptions): P
         'src/tokens/component/*.json5',
       ],
       platforms: {
-        llmGuidelines: llmGuidelines('token-guidelines.llm.md', undefined, './'),
+        llmGuidelines: llmGuidelines(DESIGN_TOKENS_SPEC_FILE, undefined, './'),
       },
       log: {
         warnings: 'disabled',
@@ -321,7 +335,19 @@ export const buildDesignTokens = async (buildOptions: ConfigGeneratorOptions): P
     all.push(`@import '${cssFile.replace(/dist\/css/g, '.')}';`)
   }
 
-  fs.writeFileSync('dist/css/primitives.css', `${all.join('\n')}\n`)
+  // Write primitives.css with spec header
+  fs.writeFileSync('dist/css/primitives.css', `${CSS_SPEC_HEADER}${all.join('\n')}\n`)
+
+  /** -----------------------------------
+   * Add spec header to theme CSS files
+   * ----------------------------------- */
+  for (const themeFile of glob.sync('dist/css/functional/themes/*.css')) {
+    const content = fs.readFileSync(themeFile, 'utf-8')
+    // Only add header if not already present
+    if (!content.startsWith('/**')) {
+      fs.writeFileSync(themeFile, `${CSS_SPEC_HEADER}${content}`)
+    }
+  }
 }
 
 /** -----------------------------------

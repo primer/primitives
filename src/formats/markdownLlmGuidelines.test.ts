@@ -28,8 +28,8 @@ describe('Format: Markdown LLM Guidelines', () => {
     expect(result).toContain('## BorderWidth')
     expect(result).toContain('### borderWidth-thick')
     expect(result).toContain('Thick 2px border for emphasis')
-    expect(result).toContain('**Usage:** focus-indicator, selected-state')
-    expect(result).toContain('**Rules:** MUST use for focus rings')
+    expect(result).toContain('**U:** focus-indicator, selected-state')
+    expect(result).toContain('**R:** MUST use for focus rings')
   })
 
   it('Excludes tokens without LLM extensions', async () => {
@@ -84,8 +84,8 @@ describe('Format: Markdown LLM Guidelines', () => {
 
     expect(result).toContain('### test-token')
     expect(result).toContain('Just a description')
-    expect(result).not.toContain('**Usage:**')
-    expect(result).not.toContain('**Rules:**')
+    expect(result).not.toContain('**U:**')
+    expect(result).not.toContain('**R:**')
   })
 
   it('Handles tokens with only usage (no description or rules)', async () => {
@@ -109,8 +109,8 @@ describe('Format: Markdown LLM Guidelines', () => {
     const result = await markdownLlmGuidelines(input)
 
     expect(result).toContain('### test-token')
-    expect(result).toContain('**Usage:** button, card')
-    expect(result).not.toContain('**Rules:**')
+    expect(result).toContain('**U:** button, card')
+    expect(result).not.toContain('**R:**')
   })
 
   it('Handles tokens with only rules (no description or usage)', async () => {
@@ -134,8 +134,8 @@ describe('Format: Markdown LLM Guidelines', () => {
     const result = await markdownLlmGuidelines(input)
 
     expect(result).toContain('### test-token')
-    expect(result).toContain('**Rules:** MUST use for buttons')
-    expect(result).not.toContain('**Usage:**')
+    expect(result).toContain('**R:** MUST use for buttons')
+    expect(result).not.toContain('**U:**')
   })
 
   it('Returns only header when no tokens have LLM extensions', async () => {
@@ -210,7 +210,7 @@ describe('Format: Markdown LLM Guidelines', () => {
     expect(result).toContain('### base-easing-ease')
   })
 
-  it('Maps bgColor to "background color"', async () => {
+  it('Maps bgColor to "Background"', async () => {
     const dictionary = getMockDictionary({
       tokens: {
         bgColor: {
@@ -226,10 +226,10 @@ describe('Format: Markdown LLM Guidelines', () => {
     const input = getMockFormatterArguments({dictionary})
     const result = await markdownLlmGuidelines(input)
 
-    expect(result).toContain('## background color')
+    expect(result).toContain('## Background')
   })
 
-  it('Maps fgColor to "text and foreground color"', async () => {
+  it('Maps fgColor to "Text"', async () => {
     const dictionary = getMockDictionary({
       tokens: {
         fgColor: {
@@ -245,7 +245,7 @@ describe('Format: Markdown LLM Guidelines', () => {
     const input = getMockFormatterArguments({dictionary})
     const result = await markdownLlmGuidelines(input)
 
-    expect(result).toContain('## text and foreground color')
+    expect(result).toContain('## Text')
   })
 
   it('Consolidates tokens with identical guidelines into a single entry', async () => {
@@ -329,5 +329,219 @@ describe('Format: Markdown LLM Guidelines', () => {
 
     // Should NOT have consolidated Tokens: line
     expect(result).not.toContain('**Tokens:**')
+  })
+
+  it('Densifies descriptions by removing filler words', async () => {
+    const dictionary = getMockDictionary({
+      tokens: {
+        test: {
+          a: getMockToken({
+            name: 'test-a',
+            path: ['test', 'a'],
+            $description: 'Use this for primary actions',
+            $extensions: {'org.primer.llm': {}},
+          }),
+          b: getMockToken({
+            name: 'test-b',
+            path: ['test', 'b'],
+            $description: 'This is used for secondary actions',
+            $extensions: {'org.primer.llm': {}},
+          }),
+          c: getMockToken({
+            name: 'test-c',
+            path: ['test', 'c'],
+            $description: 'Used for tertiary actions',
+            $extensions: {'org.primer.llm': {}},
+          }),
+        },
+      },
+    })
+
+    const input = getMockFormatterArguments({dictionary})
+    const result = await markdownLlmGuidelines(input)
+
+    // Descriptions should be densified
+    expect(result).toContain('For primary actions')
+    expect(result).toContain('For secondary actions')
+    expect(result).toContain('For tertiary actions')
+    expect(result).not.toContain('Use this for')
+    expect(result).not.toContain('This is used for')
+  })
+
+  it('Shortens rules with key shorthands', async () => {
+    const dictionary = getMockDictionary({
+      tokens: {
+        bgColor: {
+          test: getMockToken({
+            name: 'bgColor-test',
+            path: ['bgColor', 'test'],
+            $extensions: {
+              'org.primer.llm': {
+                rules: 'Pair with fgColor.onEmphasis for text',
+              },
+            },
+          }),
+        },
+      },
+    })
+
+    const input = getMockFormatterArguments({dictionary})
+    const result = await markdownLlmGuidelines(input)
+
+    // Should use shortened format
+    expect(result).toContain('Pair -> fg.onEmphasis')
+    expect(result).not.toContain('Pair with')
+  })
+
+  it('Limits usage to max 3 items', async () => {
+    const dictionary = getMockDictionary({
+      tokens: {
+        test: {
+          token: getMockToken({
+            name: 'test-token',
+            path: ['test', 'token'],
+            $extensions: {
+              'org.primer.llm': {
+                usage: ['one', 'two', 'three', 'four', 'five'],
+              },
+            },
+          }),
+        },
+      },
+    })
+
+    const input = getMockFormatterArguments({dictionary})
+    const result = await markdownLlmGuidelines(input)
+
+    expect(result).toContain('one, two, three')
+    expect(result).not.toContain('four')
+    expect(result).not.toContain('five')
+  })
+
+  it('Outputs semantic tokens in table format with bracket notation', async () => {
+    const dictionary = getMockDictionary({
+      tokens: {
+        bgColor: {
+          danger: {
+            muted: getMockToken({
+              name: 'bgColor-danger-muted',
+              path: ['bgColor', 'danger', 'muted'],
+              $description: 'Danger background',
+              $extensions: {
+                'org.primer.llm': {
+                  usage: ['error-state'],
+                  rules: 'Use for errors',
+                },
+              },
+            }),
+            emphasis: getMockToken({
+              name: 'bgColor-danger-emphasis',
+              path: ['bgColor', 'danger', 'emphasis'],
+              $description: 'Danger background',
+              $extensions: {
+                'org.primer.llm': {
+                  usage: ['error-state'],
+                  rules: 'Use for errors',
+                },
+              },
+            }),
+          },
+        },
+      },
+    })
+
+    const input = getMockFormatterArguments({dictionary})
+    const result = await markdownLlmGuidelines(input)
+
+    // Should contain table headers
+    expect(result).toContain('| Token')
+    expect(result).toContain('|---')
+    // Should use bracket notation for tokens with same guidelines
+    expect(result).toContain('bgColor-danger-[emphasis, muted]')
+  })
+
+  it('Merges cross-category tokens with identical guidelines into wildcard patterns', async () => {
+    const sharedGuidelines = {
+      $description: 'Danger emphasis color',
+      $extensions: {
+        'org.primer.llm': {
+          usage: ['error-state'],
+          rules: 'Use for errors',
+        },
+      },
+    }
+
+    const dictionary = getMockDictionary({
+      tokens: {
+        bgColor: {
+          danger: {
+            emphasis: getMockToken({
+              name: 'bgColor-danger-emphasis',
+              path: ['bgColor', 'danger', 'emphasis'],
+              ...sharedGuidelines,
+            }),
+          },
+        },
+        borderColor: {
+          danger: {
+            emphasis: getMockToken({
+              name: 'borderColor-danger-emphasis',
+              path: ['borderColor', 'danger', 'emphasis'],
+              ...sharedGuidelines,
+            }),
+          },
+        },
+      },
+    })
+
+    const input = getMockFormatterArguments({dictionary})
+    const result = await markdownLlmGuidelines(input)
+
+    // Should contain wildcard pattern
+    expect(result).toContain('*-danger-emphasis')
+    // Should contain merged section
+    expect(result).toContain('## Semantic Colors')
+  })
+
+  it('Extracts global category rules when all tokens share same usage/rules', async () => {
+    const sharedRules = 'MUST use for danger states'
+    const dictionary = getMockDictionary({
+      tokens: {
+        bgColor: {
+          danger: {
+            muted: getMockToken({
+              name: 'bgColor-danger-muted',
+              path: ['bgColor', 'danger', 'muted'],
+              $description: 'Muted danger',
+              $extensions: {
+                'org.primer.llm': {
+                  usage: ['error'],
+                  rules: sharedRules,
+                },
+              },
+            }),
+            emphasis: getMockToken({
+              name: 'bgColor-danger-emphasis',
+              path: ['bgColor', 'danger', 'emphasis'],
+              $description: 'Strong danger',
+              $extensions: {
+                'org.primer.llm': {
+                  usage: ['error'],
+                  rules: sharedRules,
+                },
+              },
+            }),
+          },
+        },
+      },
+    })
+
+    const input = getMockFormatterArguments({dictionary})
+    const result = await markdownLlmGuidelines(input)
+
+    // Rules should appear once at category level, not in table
+    expect(result.match(/MUST use for danger states/g)?.length).toBe(1)
+    // Should have R: shorthand
+    expect(result).toContain('**R:**')
   })
 })
