@@ -16,32 +16,31 @@ export const CSS_SPEC_HEADER = `/**
 `
 
 /**
- * Build LLM guidelines markdown file
+ * Source files for LLM guidelines build
+ * Uses glob patterns - tokens are filtered by hasLlmExtensions filter
  */
-export const buildLlmGuidelines = async (): Promise<void> => {
+export const LLM_SOURCE_FILES = [
+  'src/tokens/base/**/*.json5',
+  'src/tokens/functional/**/*.json5',
+  'src/tokens/component/*.json5',
+]
+
+/**
+ * Include files for LLM guidelines build (for resolving references)
+ */
+export const LLM_INCLUDE_FILES = ['src/tokens/base/**/*.json5']
+
+/**
+ * Build LLM guidelines markdown file
+ * @param buildPath - Output directory path (default: './')
+ */
+export const buildLlmGuidelines = async (buildPath = './'): Promise<void> => {
   try {
     const llmSD = await PrimerStyleDictionary.extend({
-      source: [
-        'src/tokens/functional/size/border.json5',
-        'src/tokens/functional/size/radius.json5',
-        'src/tokens/functional/shadow/shadow.json5',
-        'src/tokens/functional/color/bgColor.json5',
-        'src/tokens/functional/typography/font-stack.json5',
-        'src/tokens/functional/typography/typography.json5',
-        'src/tokens/base/motion/easing.json5',
-        'src/tokens/functional/border/border.json5',
-        'src/tokens/functional/color/control.json5',
-        'src/tokens/functional/size/size.json5',
-      ],
-      include: [
-        'src/tokens/base/**/*.json5',
-        'src/tokens/functional/color/*.json5',
-        'src/tokens/functional/border/*.json5',
-        'src/tokens/functional/typography/*.json5',
-        'src/tokens/component/*.json5',
-      ],
+      source: LLM_SOURCE_FILES,
+      include: LLM_INCLUDE_FILES,
       platforms: {
-        llmGuidelines: llmGuidelines(DESIGN_TOKENS_SPEC_FILE, undefined, './'),
+        llmGuidelines: llmGuidelines(DESIGN_TOKENS_SPEC_FILE, undefined, buildPath),
       },
       log: {
         warnings: 'disabled',
@@ -50,6 +49,7 @@ export const buildLlmGuidelines = async (): Promise<void> => {
       },
     })
     await llmSD.buildAllPlatforms()
+    console.log(`✅ LLM guidelines built: ${buildPath}${DESIGN_TOKENS_SPEC_FILE}`)
   } catch (e) {
     console.error('🛑 Error trying to build LLM guidelines output:', e)
   }
