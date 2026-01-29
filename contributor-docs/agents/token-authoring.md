@@ -9,13 +9,19 @@ Tokens are defined in JSON5 files in `src/tokens/`:
 ```json5
 {
   tokenName: {
-    $value: '{reference.to.other.token}',  // or literal like '16px'
-    $type: 'color',  // color, dimension, shadow, duration, etc.
+    $value: '{reference.to.other.token}', // or literal like '16px'
+    $type: 'color', // color, dimension, shadow, duration, etc.
     $description: 'Human-readable description',
     $extensions: {
-      'org.primer.figma': { /* Figma export config */ },
-      'org.primer.overrides': { /* Theme-specific values */ },
-      'org.primer.llm': { /* LLM guidelines metadata */ },
+      'org.primer.figma': {
+        /* Figma export config */
+      },
+      'org.primer.overrides': {
+        /* Theme-specific values */
+      },
+      'org.primer.llm': {
+        /* LLM guidelines metadata */
+      },
     },
   },
 }

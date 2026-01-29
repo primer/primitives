@@ -7,7 +7,7 @@ Design tokens for GitHub's Primer design system, built with Style Dictionary.
 **After every change, run and fix any errors:**
 
 ```bash
-npm run build && npm run lint && npm run test
+npm run build && npm run lint && npm run format:fix && npm run test
 ```
 
 ## Key Files

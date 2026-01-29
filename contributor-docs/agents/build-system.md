@@ -25,23 +25,23 @@ npm run validate:contrast # Check color contrast ratios
 
 This repo uses [Style Dictionary](https://styledictionary.com/) with custom extensions:
 
-| Directory | Purpose |
-|-----------|---------|
-| `src/platforms/` | Output platform configs (CSS, JSON, etc.) |
-| `src/formats/` | Custom output formatters |
-| `src/transformers/` | Value transformations |
-| `src/filters/` | Token filtering logic |
-| `src/preprocessors/` | Pre-build token processing |
-| `src/parsers/` | Token file parsing |
+| Directory            | Purpose                                   |
+| -------------------- | ----------------------------------------- |
+| `src/platforms/`     | Output platform configs (CSS, JSON, etc.) |
+| `src/formats/`       | Custom output formatters                  |
+| `src/transformers/`  | Value transformations                     |
+| `src/filters/`       | Token filtering logic                     |
+| `src/preprocessors/` | Pre-build token processing                |
+| `src/parsers/`       | Token file parsing                        |
 
 ## Key Files
 
-| File | Purpose |
-|------|---------|
-| `scripts/buildTokens.ts` | Main build orchestration |
-| `scripts/buildLlm.ts` | LLM guidelines build + shared constants |
-| `src/primerStyleDictionary.ts` | Style Dictionary configuration |
-| `src/schemas/` | Zod schemas for token validation |
+| File                           | Purpose                                 |
+| ------------------------------ | --------------------------------------- |
+| `scripts/buildTokens.ts`       | Main build orchestration                |
+| `scripts/buildLlm.ts`          | LLM guidelines build + shared constants |
+| `src/primerStyleDictionary.ts` | Style Dictionary configuration          |
+| `src/schemas/`                 | Zod schemas for token validation        |
 
 ## Modifying Build Output
 
