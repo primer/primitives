@@ -1,23 +1,15 @@
 import type {DimensionTokenValue} from '../../types/dimensionTokenValue.js'
 
 /**
- * Parsed dimension result
- */
-export type ParsedDimension = {
-  value: number
-  unit: 'px' | 'rem'
-}
-
-/**
- * @description Parses a dimension value from W3C DTCG object format
+ * @description Parses and validates a dimension value in W3C DTCG object format
  * @param input - The dimension value in W3C object format { value: number, unit: "px" | "rem" }
- * @returns ParsedDimension with numeric value and unit
+ * @returns Validated DimensionTokenValue
  * @throws Error if the input is not a valid W3C dimension object
  *
  * W3C DTCG format: { value: 16, unit: "px" }
  * @link https://www.designtokens.org/tr/drafts/format/#dimension
  */
-export const parseDimension = (input: DimensionTokenValue): ParsedDimension => {
+export const parseDimension = (input: DimensionTokenValue): DimensionTokenValue => {
   // Runtime validation for W3C DTCG object format
   // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
   if (typeof input !== 'object' || input === null) {

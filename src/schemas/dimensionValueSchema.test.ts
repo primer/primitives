@@ -29,7 +29,7 @@ describe('Schema: dimensionValue', () => {
     })
   })
 
-  describe('legacy string format', () => {
+  describe('legacy string format (deprecated)', () => {
     it('passes on valid values', () => {
       expect(dimensionValue.safeParse('1px').success).toStrictEqual(true)
       expect(dimensionValue.safeParse('-1px').success).toStrictEqual(true)

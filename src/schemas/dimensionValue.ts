@@ -16,7 +16,7 @@ export const dimensionValueObject = z
  * Legacy dimension value format (string with unit)
  * @deprecated Use W3C DTCG object format instead
  */
-export const dimensionValueLegacy = z.union([
+const dimensionValueLegacy = z.union([
   z.string().superRefine((dim, ctx) => {
     if (!/(^-?[0-9]+\.?[0-9]*(px|rem)$|^-?[0-9]+\.?[0-9]*em$)/.test(dim)) {
       ctx.addIssue({
@@ -34,5 +34,6 @@ export const dimensionValueLegacy = z.union([
 
 /**
  * Dimension value - supports both W3C DTCG object format and legacy string format
+ * Note: Transformers only accept W3C format, but schema validates both for migration period
  */
 export const dimensionValue = z.union([dimensionValueObject, dimensionValueLegacy])
