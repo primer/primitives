@@ -56,6 +56,10 @@ export const buildLlmGuidelines = async (buildPath = './'): Promise<void> => {
 }
 
 /** -----------------------------------
- * Run build script
+ * Run build script only when executed directly
  * ----------------------------------- */
-await buildLlmGuidelines()
+import {fileURLToPath} from 'node:url'
+
+if (process.argv[1] === fileURLToPath(import.meta.url)) {
+  await buildLlmGuidelines()
+}
