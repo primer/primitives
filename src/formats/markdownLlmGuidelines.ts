@@ -555,7 +555,9 @@ function outputTypographyByRole(tokens: LlmGuideline[], lines: string[]): void {
  * Escapes pipe characters for markdown tables
  */
 function escapeTableCell(text: string): string {
-  return text.replace(/\|/g, '\\|')
+  // First escape backslashes, then escape pipe characters, to avoid
+  // existing backslashes altering how pipes are interpreted.
+  return text.replace(/\\/g, '\\\\').replace(/\|/g, '\\|')
 }
 
 /**
