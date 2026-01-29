@@ -257,7 +257,8 @@ function outputPatternCompressedCategory(
       if (formattedPatterns.length > 1) {
         // Check if they share a common structure
         const suffixes = formattedPatterns.map(p => {
-          const match = p.match(new RegExp(`${sizeNotation.replace(/[[\]]/g, '\\$&')}-(.+)$`))
+          const escapedSizeNotation = sizeNotation.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+          const match = p.match(new RegExp(`${escapedSizeNotation}-(.+)$`))
           return match ? match[1] : null
         })
 
@@ -378,18 +379,6 @@ const CATEGORY_INFO: Record<string, {name: string; description: string}> = {
 }
 
 /**
- * Gets the typography role for a token name
- */
-function getTypographyRole(tokenName: string): string | null {
-  for (const {role, patterns} of TYPOGRAPHY_ROLES) {
-    if (patterns.some(pattern => tokenName.startsWith(pattern))) {
-      return role
-    }
-  }
-  return null
-}
-
-/**
  * Densifies description by removing filler words
  */
 function densifyDescription(description: string): string {
@@ -473,7 +462,7 @@ function extractVariant(tokenName: string): string | null {
  * Formats category name for display
  */
 function formatCategoryName(category: string): string {
-  if (CATEGORY_INFO[category]) {
+  if (category in CATEGORY_INFO) {
     return CATEGORY_INFO[category].name
   }
   return category.charAt(0).toUpperCase() + category.slice(1)
@@ -483,7 +472,7 @@ function formatCategoryName(category: string): string {
  * Gets category description if available
  */
 function getCategoryDescription(category: string): string | null {
-  if (CATEGORY_INFO[category]) {
+  if (category in CATEGORY_INFO) {
     return CATEGORY_INFO[category].description
   }
   return null
@@ -570,99 +559,6 @@ function escapeTableCell(text: string): string {
 }
 
 /**
- * Groups tokens by description+rules and creates bracket notation
- * e.g., bgColor-danger-emphasis, bgColor-danger-muted -> bgColor-danger-[emphasis, muted]
- * Only groups tokens that share the same category AND subcategory
- */
-function createBracketNotation(tokens: LlmGuideline[]): {name: string; guideline: LlmGuideline}[] {
-  // Group by category + subcategory + description + rules
-  const groups: Map<string, LlmGuideline[]> = new Map()
-
-  for (const token of tokens) {
-    const category = extractCategory(token.name)
-    const subcategory = extractSemanticSubcategory(token.name)
-    const key = JSON.stringify({
-      category,
-      subcategory,
-      description: token.description || '',
-      rules: token.rules || '',
-    })
-    if (!groups.has(key)) {
-      groups.set(key, [])
-    }
-    groups.get(key)!.push(token)
-  }
-
-  const result: {name: string; guideline: LlmGuideline}[] = []
-
-  for (const [, groupTokens] of groups) {
-    if (groupTokens.length === 1) {
-      result.push({name: `**${groupTokens[0].name}**`, guideline: groupTokens[0]})
-    } else {
-      // Extract common prefix and variants
-      const category = extractCategory(groupTokens[0].name)
-      const subcategory = extractSemanticSubcategory(groupTokens[0].name)
-      const variants = groupTokens.map(t => extractVariant(t.name)).filter(Boolean) as string[]
-
-      if (subcategory && variants.length > 1) {
-        variants.sort()
-        const bracketName = `**${category}-${subcategory}-[${variants.join(', ')}]**`
-        result.push({name: bracketName, guideline: groupTokens[0]})
-      } else {
-        // Fallback to listing all
-        for (const token of groupTokens) {
-          result.push({name: `**${token.name}**`, guideline: token})
-        }
-      }
-    }
-  }
-
-  return result
-}
-
-/**
- * Creates wildcard bracket notation for cross-category tokens
- * e.g., bgColor-danger-emphasis + borderColor-danger-emphasis -> *-danger-[emphasis]
- */
-function createCrossCategyBracketNotation(
-  entries: {subcategory: string; variant: string; guideline: LlmGuideline}[],
-): {name: string; guideline: LlmGuideline}[] {
-  // Group by subcategory + description + rules (normalized)
-  const groups: Map<string, {subcategory: string; variants: string[]; guideline: LlmGuideline}> = new Map()
-
-  for (const entry of entries) {
-    const key = JSON.stringify({
-      subcategory: entry.subcategory,
-      description: entry.guideline.description || '',
-      rules: entry.guideline.rules || '',
-    })
-    if (!groups.has(key)) {
-      groups.set(key, {subcategory: entry.subcategory, variants: [], guideline: entry.guideline})
-    }
-    const group = groups.get(key)!
-    if (!group.variants.includes(entry.variant)) {
-      group.variants.push(entry.variant)
-    }
-  }
-
-  const result: {name: string; guideline: LlmGuideline}[] = []
-
-  for (const group of groups.values()) {
-    group.variants.sort()
-    if (group.variants.length === 1) {
-      result.push({name: `**\\*-${group.subcategory}-${group.variants[0]}**`, guideline: group.guideline})
-    } else {
-      result.push({
-        name: `**\\*-${group.subcategory}-[${group.variants.join(', ')}]**`,
-        guideline: group.guideline,
-      })
-    }
-  }
-
-  return result
-}
-
-/**
  * @description Outputs a hyper-optimized markdown file with LLM token guidelines.
  * Optimizations:
  * - Bracket notation for tokens with identical guidelines
@@ -741,7 +637,7 @@ export const markdownLlmGuidelines: FormatFn = async ({dictionary}: FormatFnArgu
   > = new Map()
 
   for (const category of MERGEABLE_CATEGORIES) {
-    if (!grouped[category]) continue
+    if (!(category in grouped)) continue
     for (const guideline of grouped[category]) {
       const subcategory = extractSemanticSubcategory(guideline.name)
       const variant = extractVariant(guideline.name)
@@ -846,7 +742,7 @@ export const markdownLlmGuidelines: FormatFn = async ({dictionary}: FormatFnArgu
     }
 
     // Special handling for pattern-compressed categories (control, overlay, stack, spinner)
-    if (PATTERN_COMPRESSED_CATEGORIES[category]) {
+    if (category in PATTERN_COMPRESSED_CATEGORIES) {
       const categoryDesc = getCategoryDescription(category)
       if (categoryDesc) {
         lines.push('')
