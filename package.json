@@ -6,7 +6,7 @@
   "files": [
     "dist",
     "src/tokens",
-    "token-guidelines.llm.md",
+    "DESIGN_TOKENS_SPEC.md",
     "guidelines"
   ],
   "repository": "https://github.com/primer/primitives",
@@ -25,11 +25,12 @@
   },
   "homepage": "https://github.com/primer/primitives#readme",
   "scripts": {
-    "build": "npm run clean && npm run build:tokens && npm run build:fallbacks && npm run build:figma && npm run build:config",
+    "build": "npm run clean && npm run build:tokens && npm run build:fallbacks && npm run build:figma && npm run build:config && npm run build:llm",
     "build:tokens": "tsx ./scripts/buildTokens.ts",
     "build:fallbacks": "tsx ./scripts/buildFallbacks.ts",
     "build:figma": "tsx scripts/buildFigma.ts",
     "build:config": "tsc -p build.tsconfig.jsonc && tsx ./scripts/copyDir.ts src/types dist/build/types",
+    "build:llm": "tsx ./scripts/buildLlm.ts",
     "clean": "rm -rf dist",
     "validate:contrast": "tsx scripts/colorContrast.ts",
     "format": "prettier --check '**/*.{js,jsx,ts,tsx,md,mdx,css}'",
