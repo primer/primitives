@@ -3,9 +3,9 @@ import {transitionToken} from './transitionToken.js'
 describe('Schema: transitionToken', () => {
   const validToken = {
     $value: {
-      duration: '300ms',
+      duration: {value: 300, unit: 'ms'},
       timingFunction: [0.4, 0, 0.2, 1],
-      delay: '0ms',
+      delay: {value: 0, unit: 'ms'},
     },
     $type: 'transition',
     $description: 'Standard transition',
@@ -18,7 +18,7 @@ describe('Schema: transitionToken', () => {
   it('parses valid transition tokens without delay', () => {
     const tokenWithoutDelay = {
       $value: {
-        duration: '300ms',
+        duration: {value: 300, unit: 'ms'},
         timingFunction: [0.4, 0, 0.2, 1],
       },
       $type: 'transition',
@@ -67,7 +67,7 @@ describe('Schema: transitionToken', () => {
     expect(
       transitionToken.safeParse({
         $value: {
-          duration: '300ms',
+          duration: {value: 300, unit: 'ms'},
           timingFunction: [0.4, 0, 0.2, 1],
         },
       }).success,
@@ -81,6 +81,18 @@ describe('Schema: transitionToken', () => {
         $value: {
           ...validToken.$value,
           duration: 'invalid',
+        },
+      }).success,
+    ).toStrictEqual(false)
+  })
+
+  it('fails on legacy string duration format', () => {
+    expect(
+      transitionToken.safeParse({
+        ...validToken,
+        $value: {
+          ...validToken.$value,
+          duration: '300ms',
         },
       }).success,
     ).toStrictEqual(false)
@@ -129,7 +141,7 @@ describe('Schema: transitionToken', () => {
     expect(
       transitionToken.safeParse({
         $value: {
-          duration: '300ms',
+          duration: {value: 300, unit: 'ms'},
           timingFunction: [0.4, 0, 0.2, 1],
         },
       }).success,
