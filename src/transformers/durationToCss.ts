@@ -39,9 +39,11 @@ export const durationToCss: Transform = {
       throw new Error(`duration token unit must be "ms" or "s", invalid token: ${token.name} with unit: ${unit}`)
     }
 
-    // Validate value is a number
-    if (typeof value !== 'number') {
-      throw new Error(`duration token value must be a number, invalid token: ${token.name} with value: ${value}`)
+    // Validate value is a finite, non-negative number
+    if (typeof value !== 'number' || !Number.isFinite(value) || value < 0) {
+      throw new Error(
+        `duration token value must be a finite, non-negative number, invalid token: ${token.name} with value: ${value}`,
+      )
     }
 
     // Convert ms >= 1000 to seconds for cleaner output
