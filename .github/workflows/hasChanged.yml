@@ -27,6 +27,11 @@ on:
       docs:
         description: "Boolean value indicating change in docs folder"
         value: ${{ jobs.hasChanged.outputs.docs }}
+      # VRT-specific outputs
+      vrtColor:
+        description: "Boolean value indicating change in color or component tokens"
+        value: ${{ jobs.hasChanged.outputs.vrtColor }}
+
 jobs:
   hasChanged:
     name: Checking for changes
@@ -43,6 +48,8 @@ jobs:
       buildScripts: ${{ steps.filter.outputs.buildScripts }}
       dependencies: ${{ steps.filter.outputs.dependencies }}
       docs: ${{ steps.filter.outputs.docs }}
+      # VRT outputs
+      vrtColor: ${{ steps.filter.outputs.vrtColor }}
     steps:
     - uses: actions/checkout@v4
     - uses: dorny/paths-filter@v3
@@ -71,6 +78,15 @@ jobs:
             - 'package-lock.json'
           docs:
             - 'docs/**'
+          # VRT-specific filters
+          vrtColor:
+            - 'src/tokens/base/color/**'
+            - 'src/tokens/functional/color/**'
+            - 'src/tokens/functional/shadow/**'
+            - 'src/tokens/fallback/**'
+            - 'src/tokens/component/**'
+            - 'docs/storybook/stories/Color/**'
+            - 'docs/storybook/stories/VisualRegressionTesting/**'
     - name: Detecting changes that effect output
       if: steps.filter.outputs.tokens == 'true' || steps.filter.outputs.src == 'true' || steps.filter.outputs.scripts == 'true' || steps.filter.outputs.dependencies == 'true' || steps.filter.outputs.docs == 'true'
       run: |
@@ -81,3 +97,4 @@ jobs:
         echo   - buildScripts: ${{ steps.filter.outputs.buildScripts }}
         echo   - dependencies: ${{ steps.filter.outputs.dependencies }}
         echo   - docs: ${{ steps.filter.outputs.docs }}
+        echo   - vrtColor: ${{ steps.filter.outputs.vrtColor }}

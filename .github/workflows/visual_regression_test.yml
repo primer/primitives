@@ -7,7 +7,18 @@ on:
   pull_request:
 
 jobs:
+  # ============================================
+  # Step 1: Use shared hasChanged workflow
+  # ============================================
+  changes:
+    uses: ./.github/workflows/hasChanged.yml
+
+  # ============================================
+  # Step 2: Run VRT (only if color tokens changed)
+  # ============================================
   vrt-runner:
+    needs: changes
+    if: needs.changes.outputs.vrtColor == 'true'
     runs-on: ubuntu-latest-8-cores
 
     strategy:
@@ -45,7 +56,6 @@ jobs:
 
       - name: Run Visual Regression Tests
         uses: docker://mcr.microsoft.com/playwright:v1.56.1-jammy
-        
         env:
           STORYBOOK_URL: 'http://172.17.0.1:6006'
         with:
@@ -62,11 +72,14 @@ jobs:
           path: blob-report
           retention-days: 1
 
+  # ============================================
+  # Step 3: Merge reports
+  # ============================================
   vrt:
     name: 'Visual Regression Testing'
-    if: ${{ always() }}
+    if: ${{ always() && needs.changes.outputs.vrtColor == 'true' }}
     runs-on: ubuntu-latest
-    needs: vrt-runner
+    needs: [changes, vrt-runner]
 
     steps:
       - uses: actions/checkout@v4
@@ -77,17 +90,17 @@ jobs:
           node-version: 22
           cache: 'npm'
 
-      - name: install dependencies
+      - name: Install dependencies
         run: npm ci
 
-      - name: download all reports
+      - name: Download all reports
         uses: actions/download-artifact@v4
         with:
           path: all-blob-reports
           pattern: vrt-*
           merge-multiple: true
 
-      - name: merge all reports
+      - name: Merge all reports
         run: npx playwright merge-reports --reporter html ./all-blob-reports
 
       - name: Upload report
@@ -99,3 +112,15 @@ jobs:
       - name: Check vrt-runner job status
         if: ${{ needs.vrt-runner.result == 'failure' }}
         run: exit 1
+
+  # ============================================
+  # Step 4: Skip notification (when no color changes)
+  # ============================================
+  vrt-skipped:
+    name: 'Visual Regression Testing'
+    if: ${{ needs.changes.outputs.vrtColor == 'false' }}
+    runs-on: ubuntu-latest
+    needs: changes
+    steps:
+      - name: No VRT needed
+        run: echo "No visual regression tests needed - no color token changes detected"
