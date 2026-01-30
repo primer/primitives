@@ -608,6 +608,8 @@ export const markdownLlmGuidelines: FormatFn = async ({dictionary}: FormatFnArgu
   const lines: string[] = [
     '# Primer Design Token Guidelines',
     '',
+    '> Metadata: This file is a Dictionary of tokens. For usage rules, contrast requirements, and motion logic, refer to DESIGN_TOKENS_GUIDE.md.',
+    '',
     'Reference for using GitHub Primer design tokens.',
     '',
     '## Legend',
