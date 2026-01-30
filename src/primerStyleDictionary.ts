@@ -42,7 +42,6 @@ import {
 import {themeOverrides} from './preprocessors/themeOverrides.js'
 import {inheritGroupProperties} from './preprocessors/inheritGroupProperties.js'
 import {colorAlphaToCss} from './transformers/colorAlphaToCss.js'
-import {w3cJsonParser} from './parsers/index.js'
 
 /**
  * @name {@link PrimerStyleDictionary}
@@ -56,12 +55,6 @@ export const PrimerStyleDictionary: StyleDictionary = new StyleDictionary({
     verbosity: 'default', // 'default' | 'silent' | 'verbose'
   },
 })
-
-/**
- * Parsers
- *
- */
-PrimerStyleDictionary.registerParser(w3cJsonParser)
 
 /**
  * Formats
