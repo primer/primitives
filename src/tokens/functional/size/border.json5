@@ -29,7 +29,7 @@
       },
     },
     thin: {
-      $value: '1px',
+      $value: {value: 1, unit: 'px'},
       $description: 'Standard 1px border width. Use for most borders, dividers, and outlines throughout the interface',
       $type: 'dimension',
       $extensions: {
@@ -40,7 +40,7 @@
       },
     },
     thick: {
-      $value: '2px',
+      $value: {value: 2, unit: 'px'},
       $description: 'Thick 2px border for emphasis. Use for focus indicators, selected states, or to emphasize important boundaries',
       $type: 'dimension',
       $extensions: {
@@ -55,7 +55,7 @@
       },
     },
     thicker: {
-      $value: '4px',
+      $value: {value: 4, unit: 'px'},
       $description: 'Extra thick 4px border for maximum emphasis. Use sparingly for high-contrast focus indicators or critical visual separators',
       $type: 'dimension',
       $extensions: {
@@ -69,7 +69,7 @@
   outline: {
     focus: {
       offset: {
-        $value: '-2px',
+        $value: {value: -2, unit: 'px'},
         $description: 'Focus outline offset (-2px). Negative value creates an inset outline for keyboard focus indicators, ensuring the focus ring stays within the element bounds',
         $type: 'dimension',
         $extensions: {
@@ -80,7 +80,7 @@
         },
       },
       width: {
-        $value: '2px',
+        $value: {value: 2, unit: 'px'},
         $description: 'Focus outline width (2px). Standard width for keyboard focus indicators to meet WCAG 2.4.7 accessibility requirements',
         $type: 'dimension',
         $extensions: {
