@@ -43,7 +43,7 @@ export const shadowToCss: Transform = {
         if (typeof shadow === 'string') return shadow
         checkRequiredTokenProperties(shadow, ['color', 'offsetX', 'offsetY', 'blur', 'spread'])
         /*css box shadow:  inset? | offset-x | offset-y | blur-radius | spread-radius | color */
-        return `${shadow.inset === true ? 'inset ' : ''}${dimensionToCss(shadow.offsetX as DimensionTokenValue)} ${dimensionToCss(shadow.offsetY as DimensionTokenValue)} ${dimensionToCss(shadow.blur as DimensionTokenValue)} ${dimensionToCss(shadow.spread as DimensionTokenValue)} ${toHex(alpha(getTokenValue({...token, ...{[valueProp]: shadow}}, 'color'), shadow.alpha || 1, token, config))}`
+        return `${shadow.inset === true ? 'inset ' : ''}${dimensionToCss(shadow.offsetX)} ${dimensionToCss(shadow.offsetY)} ${dimensionToCss(shadow.blur)} ${dimensionToCss(shadow.spread)} ${toHex(alpha(getTokenValue({...token, ...{[valueProp]: shadow}}, 'color'), shadow.alpha || 1, token, config))}`
       })
       .join(', ')
   },
