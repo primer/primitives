@@ -3,10 +3,10 @@ import {shadowValue, shadowToken} from './shadowToken.js'
 const tokenValue = {
   color: '#000000',
   alpha: 0.5,
-  offsetX: '4px',
-  offsetY: '4px',
-  blur: '2px',
-  spread: '2px',
+  offsetX: {value: 4, unit: 'px'},
+  offsetY: {value: 4, unit: 'px'},
+  blur: {value: 2, unit: 'px'},
+  spread: {value: 2, unit: 'px'},
   inset: false,
 }
 
@@ -15,9 +15,54 @@ describe('Schema: shadowValue', () => {
     expect(shadowValue.safeParse(tokenValue).success).toStrictEqual(true)
     // without inset
     expect(
-      shadowValue.safeParse({color: '#000000', alpha: 0.5, offsetX: '4px', offsetY: '4px', blur: '2px', spread: '2px'})
-        .success,
+      shadowValue.safeParse({
+        color: '#000000',
+        alpha: 0.5,
+        offsetX: {value: 4, unit: 'px'},
+        offsetY: {value: 4, unit: 'px'},
+        blur: {value: 2, unit: 'px'},
+        spread: {value: 2, unit: 'px'},
+      }).success,
     ).toStrictEqual(true)
+  })
+
+  it('parses shadow with zero values', () => {
+    expect(
+      shadowValue.safeParse({
+        color: '#000000',
+        alpha: 0.5,
+        offsetX: {value: 0, unit: 'px'},
+        offsetY: {value: 0, unit: 'px'},
+        blur: {value: 0, unit: 'px'},
+        spread: {value: 0, unit: 'px'},
+      }).success,
+    ).toStrictEqual(true)
+  })
+
+  it('parses shadow with negative values', () => {
+    expect(
+      shadowValue.safeParse({
+        color: '#000000',
+        alpha: 0.5,
+        offsetX: {value: -4, unit: 'px'},
+        offsetY: {value: -4, unit: 'px'},
+        blur: {value: 2, unit: 'px'},
+        spread: {value: -2, unit: 'px'},
+      }).success,
+    ).toStrictEqual(true)
+  })
+
+  it('fails on legacy string format', () => {
+    expect(
+      shadowValue.safeParse({
+        color: '#000000',
+        alpha: 0.5,
+        offsetX: '4px',
+        offsetY: '4px',
+        blur: '2px',
+        spread: '2px',
+      }).success,
+    ).toStrictEqual(false)
   })
 
   it('fails on invalid properties', () => {
@@ -34,55 +79,55 @@ describe('Schema: shadowValue', () => {
     expect(
       shadowValue.safeParse({
         alpha: 0.5,
-        offsetX: '4px',
-        offsetY: '4px',
-        blur: '2px',
-        spread: '2px',
+        offsetX: {value: 4, unit: 'px'},
+        offsetY: {value: 4, unit: 'px'},
+        blur: {value: 2, unit: 'px'},
+        spread: {value: 2, unit: 'px'},
       }).success,
     ).toStrictEqual(false)
     expect(
       shadowValue.safeParse({
         color: '#000000',
-        offsetX: '4px',
-        offsetY: '4px',
-        blur: '2px',
-        spread: '2px',
-      }).success,
-    ).toStrictEqual(false)
-    expect(
-      shadowValue.safeParse({
-        color: '#000000',
-        alpha: 0.5,
-        offsetY: '4px',
-        blur: '2px',
-        spread: '2px',
+        offsetX: {value: 4, unit: 'px'},
+        offsetY: {value: 4, unit: 'px'},
+        blur: {value: 2, unit: 'px'},
+        spread: {value: 2, unit: 'px'},
       }).success,
     ).toStrictEqual(false)
     expect(
       shadowValue.safeParse({
         color: '#000000',
         alpha: 0.5,
-        offsetY: '4px',
-        blur: '2px',
-        spread: '2px',
+        offsetY: {value: 4, unit: 'px'},
+        blur: {value: 2, unit: 'px'},
+        spread: {value: 2, unit: 'px'},
       }).success,
     ).toStrictEqual(false)
     expect(
       shadowValue.safeParse({
         color: '#000000',
         alpha: 0.5,
-        offsetX: '4px',
-        offsetY: '4px',
-        spread: '2px',
+        offsetX: {value: 4, unit: 'px'},
+        blur: {value: 2, unit: 'px'},
+        spread: {value: 2, unit: 'px'},
       }).success,
     ).toStrictEqual(false)
     expect(
       shadowValue.safeParse({
         color: '#000000',
         alpha: 0.5,
-        offsetX: '4px',
-        offsetY: '4px',
-        blur: '2px',
+        offsetX: {value: 4, unit: 'px'},
+        offsetY: {value: 4, unit: 'px'},
+        spread: {value: 2, unit: 'px'},
+      }).success,
+    ).toStrictEqual(false)
+    expect(
+      shadowValue.safeParse({
+        color: '#000000',
+        alpha: 0.5,
+        offsetX: {value: 4, unit: 'px'},
+        offsetY: {value: 4, unit: 'px'},
+        blur: {value: 2, unit: 'px'},
       }).success,
     ).toStrictEqual(false)
   })
