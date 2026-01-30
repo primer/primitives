@@ -331,6 +331,262 @@ function outputPatternCompressedCategory(
   }
 }
 
+/**
+ * Outputs pattern-compressed display color tokens
+ * Extracts unique colors and properties to show as display-[color]-[property] pattern
+ */
+function outputDisplayColorPattern(tokens: LlmGuideline[], lines: string[]): void {
+  const tokenNames = tokens.map(t => t.name)
+
+  // Extract unique colors and properties
+  const colors = new Set<string>()
+  const properties = new Set<string>()
+  const hasScale = new Set<string>()
+
+  for (const name of tokenNames) {
+    // Parse: display-{color}-{property} or display-{color}-scale-{n}
+    const parts = name.replace('display-', '').split('-')
+    if (parts.length < 2) continue
+
+    const color = parts[0]
+    colors.add(color)
+
+    // Check for scale tokens (display-blue-scale-0)
+    if (parts[1] === 'scale' && parts.length >= 3) {
+      hasScale.add(parts[2])
+    } else {
+      // Property tokens (display-blue-bgColor-emphasis, display-blue-fgColor)
+      const property = parts.slice(1).join('-')
+      properties.add(property)
+    }
+  }
+
+  // Sort colors alphabetically
+  const sortedColors = [...colors].sort()
+  const sortedProperties = [...properties].sort((a, b) => {
+    // Sort by type first (bgColor, borderColor, fgColor)
+    const typeOrder = ['bgColor-emphasis', 'bgColor-muted', 'borderColor-emphasis', 'borderColor-muted', 'fgColor']
+    const aIdx = typeOrder.indexOf(a)
+    const bIdx = typeOrder.indexOf(b)
+    if (aIdx !== -1 && bIdx !== -1) return aIdx - bIdx
+    if (aIdx !== -1) return -1
+    if (bIdx !== -1) return 1
+    return a.localeCompare(b)
+  })
+
+  // Output pattern with variables
+  lines.push('**Pattern:** `display-[color]-[property]`')
+  lines.push('')
+  lines.push('**Variables:**')
+  lines.push(`- **color:** ${sortedColors.join(' | ')}`)
+  lines.push(`- **property:** ${sortedProperties.join(' | ')}`)
+  lines.push('')
+
+  // Output scale pattern if present
+  if (hasScale.size > 0) {
+    const sortedScales = [...hasScale].sort((a, b) => parseInt(a) - parseInt(b))
+    lines.push('**Scale pattern:** `display-[color]-scale-[n]`')
+    lines.push(`- **n:** ${sortedScales.join(' | ')}`)
+    lines.push('')
+    lines.push('*Scale 0-2: lighter (backgrounds), 3-5: mid-tones, 6-9: darker (foregrounds/borders)*')
+    lines.push('')
+  }
+}
+
+/**
+ * Outputs pattern-compressed data visualization tokens
+ * Extracts unique colors and variants to show as data-[color]-color-[variant] pattern
+ */
+function outputDataVisColorPattern(tokens: LlmGuideline[], lines: string[]): void {
+  const tokenNames = tokens.map(t => t.name)
+
+  // Extract unique colors and variants
+  const colors = new Set<string>()
+  const variants = new Set<string>()
+
+  for (const name of tokenNames) {
+    // Parse: data-{color}-color-{variant}
+    const parts = name.replace('data-', '').split('-')
+    if (parts.length < 3) continue
+
+    const color = parts[0]
+    colors.add(color)
+
+    // Variant is the last part (emphasis, muted)
+    // Format: color-color-variant -> parts[1] is 'color', parts[2] is variant
+    if (parts[1] === 'color' && parts.length >= 3) {
+      variants.add(parts[2])
+    }
+  }
+
+  // Sort colors alphabetically
+  const sortedColors = [...colors].sort()
+  const sortedVariants = [...variants].sort((a, b) => {
+    // emphasis first, then muted
+    const order = ['emphasis', 'muted']
+    return order.indexOf(a) - order.indexOf(b)
+  })
+
+  // Output pattern with variables
+  lines.push('**Pattern:** `data-[color]-color-[variant]`')
+  lines.push('')
+  lines.push('**Variables:**')
+  lines.push(`- **color:** ${sortedColors.join(' | ')}`)
+  lines.push(`- **variant:** ${sortedVariants.join(' | ')}`)
+  lines.push('')
+
+  // Add usage guidance
+  lines.push('**Variant usage:**')
+  lines.push('- **emphasis:** Lines, bars, borders, data points')
+  lines.push('- **muted:** Area fills, backgrounds, subtle regions')
+  lines.push('')
+  lines.push('*Pair emphasis with muted variants of the same color for cohesive chart styling.*')
+  lines.push('')
+}
+
+/**
+ * Outputs pattern-compressed ANSI color tokens
+ * Extracts unique colors and variants (default/bright) to show as color-ansi-[color]-[variant] pattern
+ */
+function outputAnsiColorPattern(tokens: LlmGuideline[], lines: string[]): void {
+  const tokenNames = tokens.map(t => t.name)
+
+  // Extract unique colors and variants
+  const colors = new Set<string>()
+  const hasVariants = new Set<string>()
+
+  for (const name of tokenNames) {
+    // Parse: color-ansi-{color} or color-ansi-{color}-bright
+    const parts = name.replace('color-ansi-', '').split('-')
+    if (parts.length < 1) continue
+
+    const color = parts[0]
+    colors.add(color)
+
+    // Check for bright variant
+    if (parts.length > 1 && parts[1] === 'bright') {
+      hasVariants.add('bright')
+    } else {
+      hasVariants.add('default')
+    }
+  }
+
+  // Sort colors in ANSI order
+  const ansiOrder = ['black', 'red', 'green', 'yellow', 'blue', 'magenta', 'cyan', 'white', 'gray']
+  const sortedColors = [...colors].sort((a, b) => {
+    const aIdx = ansiOrder.indexOf(a)
+    const bIdx = ansiOrder.indexOf(b)
+    if (aIdx !== -1 && bIdx !== -1) return aIdx - bIdx
+    if (aIdx !== -1) return -1
+    if (bIdx !== -1) return 1
+    return a.localeCompare(b)
+  })
+
+  // Output pattern with variables
+  lines.push('**Pattern:** `color-ansi-[color]` or `color-ansi-[color]-bright`')
+  lines.push('')
+  lines.push('**Variables:**')
+  lines.push(`- **color:** ${sortedColors.join(' | ')}`)
+  if (hasVariants.has('bright')) {
+    lines.push('- **variant:** default (no suffix) | bright')
+  }
+  lines.push('')
+}
+
+/**
+ * Outputs pattern-compressed prettylights syntax tokens using prefix grouping
+ * Groups tokens by their primary element category
+ */
+function outputPrettylightsPattern(tokens: LlmGuideline[], lines: string[]): void {
+  const tokenNames = tokens.map(t => t.name)
+
+  // Common single-word elements (no sub-variants)
+  const simpleElements: string[] = []
+  // Grouped elements with sub-variants (markup-*, brackethighlighter-*, etc.)
+  const groupedElements: Map<string, Set<string>> = new Map()
+  // Elements with bg/text variants - track the base name and which suffixes exist
+  const bgTextVariants: Map<string, Set<string>> = new Map()
+
+  for (const name of tokenNames) {
+    // Parse: color-prettylights-syntax-{element} or color-prettylights-syntax-{group}-{sub}
+    const element = name.replace('color-prettylights-syntax-', '')
+    const parts = element.split('-')
+
+    if (parts.length === 1) {
+      // Simple element: comment, constant, entity, keyword, string, variable
+      simpleElements.push(parts[0])
+    } else {
+      const group = parts[0]
+      const rest = parts.slice(1).join('-')
+
+      // Check for bg/text suffix patterns (e.g., markup-changed-bg, markup-changed-text)
+      if (rest.endsWith('-bg') || rest.endsWith('-text')) {
+        const baseName = rest.replace(/-bg$/, '').replace(/-text$/, '')
+        const suffix = rest.endsWith('-bg') ? 'bg' : 'text'
+        const key = `${group}:${baseName}` // Use colon to separate group from base
+        if (!bgTextVariants.has(key)) {
+          bgTextVariants.set(key, new Set())
+        }
+        bgTextVariants.get(key)!.add(suffix)
+      } else {
+        // Regular grouped element
+        if (!groupedElements.has(group)) {
+          groupedElements.set(group, new Set())
+        }
+        groupedElements.get(group)!.add(rest)
+      }
+    }
+  }
+
+  // Output pattern
+  lines.push('**Pattern:** `color-prettylights-syntax-[element]`')
+  lines.push('')
+
+  // Output simple elements
+  if (simpleElements.length > 0) {
+    const sorted = [...new Set(simpleElements)].sort()
+    lines.push(`**Core elements:** ${sorted.join(', ')}`)
+  }
+
+  // Merge bg/text variants into grouped elements for cleaner output
+  // Group bg/text variants by their prefix group
+  const bgTextByGroup: Map<string, string[]> = new Map()
+  for (const [key] of bgTextVariants) {
+    const [group, baseName] = key.split(':')
+    if (!bgTextByGroup.has(group)) {
+      bgTextByGroup.set(group, [])
+    }
+    bgTextByGroup.get(group)!.push(baseName)
+  }
+
+  // Output grouped elements
+  if (groupedElements.size > 0 || bgTextByGroup.size > 0) {
+    lines.push('')
+    lines.push('**Compound elements:**')
+
+    // Get all groups (both regular and bg/text)
+    const allGroups = new Set([...groupedElements.keys(), ...bgTextByGroup.keys()])
+
+    for (const group of [...allGroups].sort()) {
+      const regularSubs = groupedElements.get(group) || new Set()
+      const bgTextBases = bgTextByGroup.get(group) || []
+
+      // Combine regular subs
+      if (regularSubs.size > 0) {
+        const uniqueSubs = [...regularSubs].sort()
+        lines.push(`- \`${group}-[${uniqueSubs.join(', ')}]\``)
+      }
+
+      // Output bg/text variants separately for clarity
+      if (bgTextBases.length > 0) {
+        const uniqueBases = [...new Set(bgTextBases)].sort()
+        lines.push(`- \`${group}-[${uniqueBases.join(', ')}]-[bg, text]\``)
+      }
+    }
+  }
+  lines.push('')
+}
+
 // Human-readable category names and descriptions
 const CATEGORY_INFO: Record<string, {name: string; description: string}> = {
   bgColor: {
@@ -365,6 +621,11 @@ const CATEGORY_INFO: Record<string, {name: string; description: string}> = {
     name: 'Data Visualization',
     description:
       'Color tokens for charts, graphs, and diagrams. Use emphasis variants for lines/bars, muted variants for fills.',
+  },
+  display: {
+    name: 'Display Colors',
+    description:
+      'Decorative colors for categorization without semantic meaning. Use for labels, tags, avatars, and user-assigned colors. Do NOT use for success/error/warning—use semantic colors instead.',
   },
   easing: {name: 'Easing', description: 'Animation easing function tokens.'},
   focus: {name: 'Focus', description: 'Focus ring and outline tokens for keyboard navigation accessibility.'},
@@ -608,6 +869,8 @@ export const markdownLlmGuidelines: FormatFn = async ({dictionary}: FormatFnArgu
   const lines: string[] = [
     '# Primer Design Token Guidelines',
     '',
+    '> Metadata: This file is a Dictionary of tokens. For usage rules, contrast requirements, and motion logic, refer to DESIGN_TOKENS_GUIDE.md.',
+    '',
     'Reference for using GitHub Primer design tokens.',
     '',
     '## Legend',
@@ -740,6 +1003,128 @@ export const markdownLlmGuidelines: FormatFn = async ({dictionary}: FormatFnArgu
       }
       lines.push('')
       outputTypographyByRole(nonSemanticTokens, lines)
+      continue
+    }
+
+    // Special handling for data visualization colors - use pattern compression
+    if (category === 'data') {
+      const categoryDesc = getCategoryDescription(category)
+      if (categoryDesc) {
+        lines.push('')
+        lines.push(categoryDesc)
+      }
+      lines.push('')
+
+      // Get usage and rules from the first token with LLM metadata
+      const firstWithMeta = nonSemanticTokens.find(t => t.usage || t.rules)
+      if (firstWithMeta) {
+        if (firstWithMeta.usage && firstWithMeta.usage.length > 0) {
+          lines.push(`**U:** ${firstWithMeta.usage.join(', ')}`)
+        }
+        if (firstWithMeta.rules) {
+          lines.push(`**R:** ${firstWithMeta.rules}`)
+        }
+        lines.push('')
+      }
+
+      outputDataVisColorPattern(nonSemanticTokens, lines)
+      continue
+    }
+
+    // Special handling for display colors - use pattern compression
+    if (category === 'display') {
+      const categoryDesc = getCategoryDescription(category)
+      if (categoryDesc) {
+        lines.push('')
+        lines.push(categoryDesc)
+      }
+      lines.push('')
+
+      // Get usage and rules from the first token with LLM metadata
+      const firstWithMeta = nonSemanticTokens.find(t => t.usage || t.rules)
+      if (firstWithMeta) {
+        if (firstWithMeta.usage && firstWithMeta.usage.length > 0) {
+          lines.push(`**U:** ${firstWithMeta.usage.join(', ')}`)
+        }
+        if (firstWithMeta.rules) {
+          lines.push(`**R:** ${firstWithMeta.rules}`)
+        }
+        lines.push('')
+      }
+
+      outputDisplayColorPattern(nonSemanticTokens, lines)
+      continue
+    }
+
+    // Special handling for color category (ansi, prettylights subcategories)
+    if (category === 'color') {
+      // Separate tokens by subcategory
+      const ansiTokens = nonSemanticTokens.filter(t => t.name.startsWith('color-ansi-'))
+      const prettylightsTokens = nonSemanticTokens.filter(t => t.name.startsWith('color-prettylights-'))
+      const otherTokens = nonSemanticTokens.filter(
+        t => !t.name.startsWith('color-ansi-') && !t.name.startsWith('color-prettylights-'),
+      )
+
+      // Output ANSI tokens with pattern compression
+      if (ansiTokens.length > 0) {
+        lines.push('### ANSI Terminal Colors')
+        lines.push('')
+        const ansiMeta = ansiTokens.find(t => t.description)
+        if (ansiMeta?.description) {
+          lines.push(ansiMeta.description)
+          lines.push('')
+        }
+        const ansiWithMeta = ansiTokens.find(t => t.usage || t.rules)
+        if (ansiWithMeta) {
+          if (ansiWithMeta.usage && ansiWithMeta.usage.length > 0) {
+            lines.push(`**U:** ${ansiWithMeta.usage.join(', ')}`)
+          }
+          if (ansiWithMeta.rules) {
+            lines.push(`**R:** ${ansiWithMeta.rules}`)
+          }
+          lines.push('')
+        }
+        outputAnsiColorPattern(ansiTokens, lines)
+      }
+
+      // Output prettylights tokens with prefix grouping
+      if (prettylightsTokens.length > 0) {
+        lines.push('### Syntax Highlighting (prettylights)')
+        lines.push('')
+        const plMeta = prettylightsTokens.find(t => t.description)
+        if (plMeta?.description) {
+          lines.push(plMeta.description)
+          lines.push('')
+        }
+        const plWithMeta = prettylightsTokens.find(t => t.usage || t.rules)
+        if (plWithMeta) {
+          if (plWithMeta.usage && plWithMeta.usage.length > 0) {
+            lines.push(`**U:** ${plWithMeta.usage.join(', ')}`)
+          }
+          if (plWithMeta.rules) {
+            lines.push(`**R:** ${plWithMeta.rules}`)
+          }
+          lines.push('')
+        }
+        outputPrettylightsPattern(prettylightsTokens, lines)
+      }
+
+      // Output any other color tokens normally
+      if (otherTokens.length > 0) {
+        for (const token of otherTokens) {
+          lines.push(`### ${token.name}`)
+          if (token.description) {
+            lines.push(token.description)
+          }
+          if (token.usage && token.usage.length > 0) {
+            lines.push(`**U:** ${token.usage.join(', ')}`)
+          }
+          if (token.rules) {
+            lines.push(`**R:** ${token.rules}`)
+          }
+          lines.push('')
+        }
+      }
       continue
     }
 

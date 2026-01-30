@@ -2,7 +2,7 @@
 
 Design tokens for GitHub's Primer design system, built with Style Dictionary.
 
-## Required Workflow
+## MANDATORY Workflow
 
 **After every change, run and fix any errors:**
 

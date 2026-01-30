@@ -3,7 +3,7 @@
     text: {
       size: {
         xs: {
-          $value: '0.75rem',
+          $value: {value: 0.75, unit: 'rem'},
           $type: 'dimension',
           $description: '12px - Smallest text size for captions and compact UI elements.',
           $extensions: {
@@ -14,7 +14,7 @@
           },
         },
         sm: {
-          $value: '0.875rem',
+          $value: {value: 0.875, unit: 'rem'},
           $type: 'dimension',
           $description: '14px - Default body text size for UI.',
           $extensions: {
@@ -25,7 +25,7 @@
           },
         },
         md: {
-          $value: '1rem',
+          $value: {value: 1, unit: 'rem'},
           $type: 'dimension',
           $description: '16px - Large body text and small titles.',
           $extensions: {
@@ -36,7 +36,7 @@
           },
         },
         lg: {
-          $value: '1.25rem',
+          $value: {value: 1.25, unit: 'rem'},
           $type: 'dimension',
           $description: '20px - Medium titles and subtitles.',
           $extensions: {
@@ -47,7 +47,7 @@
           },
         },
         xl: {
-          $value: '2rem',
+          $value: {value: 2, unit: 'rem'},
           $type: 'dimension',
           $description: '32px - Large titles and page headings.',
           $extensions: {
@@ -58,7 +58,7 @@
           },
         },
         '2xl': {
-          $value: '2.5rem',
+          $value: {value: 2.5, unit: 'rem'},
           $type: 'dimension',
           $description: '40px - Display text for hero sections.',
           $extensions: {

@@ -108,6 +108,10 @@
         'org.primer.overrides': {
           dark: '{base.color.neutral.13}',
         },
+        'org.primer.llm': {
+          doNotUse: true,
+          rules: 'Avoid using raw white. Use semantic alternatives: fgColor.onEmphasis for text on dark backgrounds, fgColor.onInverse for inverted contexts. Raw black/white ignore theme preferences and accessibility settings.',
+        },
       },
     },
     black: {
@@ -122,6 +126,10 @@
         },
         'org.primer.overrides': {
           dark: '{base.color.neutral.0}',
+        },
+        'org.primer.llm': {
+          doNotUse: true,
+          rules: 'Avoid using raw black. Use semantic alternatives: fgColor.default for standard text, fgColor.muted for secondary text. Raw black/white ignore theme preferences and accessibility settings.',
         },
       },
     },

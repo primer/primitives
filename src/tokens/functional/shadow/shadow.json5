@@ -11,6 +11,7 @@
         inset: true,
       },
       $type: 'shadow',
+      $description: 'Inset shadow for recessed elements',
       $extensions: {
         'org.primer.figma': {
           collection: 'mode',
@@ -29,13 +30,17 @@
             },
           },
         },
+        'org.primer.llm': {
+          usage: ['input-field', 'pressed-button', 'recessed-area', 'well'],
+          rules: 'Use for elements that appear pressed or inset into the surface. Commonly used for input fields and wells. Do NOT use for floating elements.',
+        },
       },
     },
     resting: {
       xsmall: {
         $value: {
           color: '{base.color.neutral.13}',
-          alpha: 0.06,
+          alpha: 0.05,
           offsetX: '0px',
           offsetY: '1px',
           blur: '1px',
@@ -43,6 +48,7 @@
           inset: false,
         },
         $type: 'shadow',
+        $description: 'Extra small resting shadow for minimal elevation',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
@@ -61,13 +67,17 @@
               },
             },
           },
+          'org.primer.llm': {
+            usage: ['badge', 'chip', 'small-card', 'subtle-elevation'],
+            rules: 'Use for very subtle elevation on small elements. Provides minimal lift from surface. Do NOT use for interactive elements needing clear affordance.',
+          },
         },
       },
       small: {
         $value: [
           {
             color: '{base.color.neutral.13}',
-            alpha: 0.06,
+            alpha: 0.04,
             offsetX: '0px',
             offsetY: '1px',
             blur: '1px',
@@ -76,15 +86,16 @@
           },
           {
             color: '{base.color.neutral.13}',
-            alpha: 0.06,
+            alpha: 0.03,
             offsetX: '0px',
             offsetY: '1px',
-            blur: '3px',
+            blur: '2px',
             spread: '0px',
             inset: false,
           },
         ],
         $type: 'shadow',
+        $description: 'Small resting shadow for buttons and interactive elements',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
@@ -114,6 +125,10 @@
               ],
             },
           },
+          'org.primer.llm': {
+            usage: ['button', 'interactive-card', 'clickable-element'],
+            rules: 'Use for buttons and small interactive elements at rest. Provides subtle depth and clickable affordance. RECOMMENDED for default button shadows.',
+          },
         },
       },
       medium: {
@@ -136,6 +151,7 @@
           },
         ],
         $type: 'shadow',
+        $description: 'Medium resting shadow for cards and elevated surfaces',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
@@ -162,6 +178,10 @@
                 },
               ],
             },
+          },
+          'org.primer.llm': {
+            usage: ['card', 'panel', 'elevated-surface', 'elevated-sidebar'],
+            rules: 'Use for cards and content panels that sit above the page surface. Provides moderate elevation without appearing to float. Do NOT use for overlays or modals.',
           },
         },
       },
@@ -281,6 +301,7 @@
           },
         ],
         $type: 'shadow',
+        $description: 'Medium floating shadow for popovers and action menus',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
@@ -331,6 +352,10 @@
                 },
               ],
             },
+          },
+          'org.primer.llm': {
+            usage: ['popover', 'action-menu', 'select-panel', 'autocomplete'],
+            rules: 'Use for medium-sized floating elements like popovers and action menus. More prominent than small but less than dialogs. Do NOT use for full modals.',
           },
         },
       },
@@ -408,6 +433,7 @@
           },
         ],
         $type: 'shadow',
+        $description: 'Extra large floating shadow for full-screen overlays and sheets',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
@@ -435,6 +461,10 @@
               ],
             },
           },
+          'org.primer.llm': {
+            usage: ['full-screen-overlay', 'side-sheet', 'drawer', 'large-modal'],
+            rules: 'Use for full-screen or near-full-screen overlays like side sheets and drawers. Maximum elevation in the system. Do NOT use for small floating elements.',
+          },
         },
       },
       legacy: {
@@ -457,6 +487,7 @@
           },
         ],
         $type: 'shadow',
+        $description: 'Legacy floating shadow for backward compatibility',
         $extensions: {
           'org.primer.figma': {},
           'org.primer.overrides': {
@@ -480,6 +511,10 @@
                 },
               ],
             },
+          },
+          'org.primer.llm': {
+            usage: ['legacy-component', 'backward-compatibility'],
+            rules: 'DEPRECATED: Use shadow-floating-small instead. Only use for maintaining backward compatibility with existing implementations.',
           },
         },
       },
