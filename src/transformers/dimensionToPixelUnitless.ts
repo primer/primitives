@@ -47,7 +47,7 @@ export const dimensionToPixelUnitless: Transform = {
     } catch (error) {
       const originalMessage = error instanceof Error ? error.message : String(error)
       throw new Error(
-        `Invalid dimension token: '${token.path.join('.')}': ${JSON.stringify(token[valueProp])}' - ${originalMessage}\n`,
+        `Invalid dimension token: '${token.path.join('.')}: ${JSON.stringify(token[valueProp])}' - ${originalMessage}\n`,
       )
     }
   },
