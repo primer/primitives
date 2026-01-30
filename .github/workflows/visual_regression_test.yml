@@ -7,7 +7,57 @@ on:
   pull_request:
 
 jobs:
+  # ============================================
+  # Step 1: Use shared hasChanged workflow
+  # ============================================
+  changes:
+    uses: ./.github/workflows/hasChanged.yml
+
+  # ============================================
+  # Step 2: Build grep pattern based on changes
+  # ============================================
+  build-grep:
+    needs: changes
+    runs-on: ubuntu-latest
+    outputs:
+      grep_pattern: ${{ steps.build.outputs.pattern }}
+      should_run: ${{ steps.build.outputs.should_run }}
+    steps:
+      - name: Build grep pattern
+        id: build
+        run: |
+          patterns=()
+
+          # Build pattern from changed categories
+          if [[ "${{ needs.changes.outputs.vrtColor }}" == "true" ]]; then
+            patterns+=("all color swatches|color-base")
+          fi
+
+          if [[ "${{ needs.changes.outputs.vrtSize }}" == "true" ]]; then
+            patterns+=("size-")
+          fi
+
+          if [[ "${{ needs.changes.outputs.vrtTypography }}" == "true" ]]; then
+            patterns+=("typography-")
+          fi
+
+          # No VRT-relevant changes
+          if [[ ${#patterns[@]} -eq 0 ]]; then
+            echo "should_run=false" >> $GITHUB_OUTPUT
+            echo "pattern=" >> $GITHUB_OUTPUT
+          else
+            # Join patterns with |
+            joined=$(IFS='|'; echo "${patterns[*]}")
+            echo "pattern=$joined" >> $GITHUB_OUTPUT
+            echo "should_run=true" >> $GITHUB_OUTPUT
+          fi
+
+  # ============================================
+  # Step 3: Run VRT with grep filter
+  # ============================================
   vrt-runner:
+    needs: [changes, build-grep]
+    if: needs.build-grep.outputs.should_run == 'true'
     runs-on: ubuntu-latest-8-cores
 
     strategy:
@@ -45,11 +95,13 @@ jobs:
 
       - name: Run Visual Regression Tests
         uses: docker://mcr.microsoft.com/playwright:v1.56.1-jammy
-        
         env:
           STORYBOOK_URL: 'http://172.17.0.1:6006'
         with:
-          args: npx playwright test --shard="${{ matrix.shard }}/${{ strategy.job-total }}"
+          args: >-
+            npx playwright test
+            ${{ needs.build-grep.outputs.grep_pattern != '' && format('--grep="{0}"', needs.build-grep.outputs.grep_pattern) || '' }}
+            --shard="${{ matrix.shard }}/${{ strategy.job-total }}"
 
       - name: Stop storybook
         run: kill ${{ steps.storybook.outputs.pid }}
@@ -62,11 +114,14 @@ jobs:
           path: blob-report
           retention-days: 1
 
+  # ============================================
+  # Step 4: Merge reports
+  # ============================================
   vrt:
     name: 'Visual Regression Testing'
-    if: ${{ always() }}
+    if: ${{ always() && needs.build-grep.outputs.should_run == 'true' }}
     runs-on: ubuntu-latest
-    needs: vrt-runner
+    needs: [build-grep, vrt-runner]
 
     steps:
       - uses: actions/checkout@v4
@@ -77,17 +132,17 @@ jobs:
           node-version: 22
           cache: 'npm'
 
-      - name: install dependencies
+      - name: Install dependencies
         run: npm ci
 
-      - name: download all reports
+      - name: Download all reports
         uses: actions/download-artifact@v4
         with:
           path: all-blob-reports
           pattern: vrt-*
           merge-multiple: true
 
-      - name: merge all reports
+      - name: Merge all reports
         run: npx playwright merge-reports --reporter html ./all-blob-reports
 
       - name: Upload report
@@ -99,3 +154,15 @@ jobs:
       - name: Check vrt-runner job status
         if: ${{ needs.vrt-runner.result == 'failure' }}
         run: exit 1
+
+  # ============================================
+  # Step 5: Skip notification (when no tests needed)
+  # ============================================
+  vrt-skipped:
+    name: 'Visual Regression Testing'
+    if: ${{ needs.build-grep.outputs.should_run == 'false' }}
+    runs-on: ubuntu-latest
+    needs: build-grep
+    steps:
+      - name: No VRT needed
+        run: echo "No visual regression tests needed for this change"
