@@ -29,14 +29,8 @@ on:
         value: ${{ jobs.hasChanged.outputs.docs }}
       # VRT-specific outputs
       vrtColor:
-        description: "Boolean value indicating change in color tokens (includes component tokens)"
+        description: "Boolean value indicating change in color or component tokens"
         value: ${{ jobs.hasChanged.outputs.vrtColor }}
-      vrtSize:
-        description: "Boolean value indicating change in size tokens"
-        value: ${{ jobs.hasChanged.outputs.vrtSize }}
-      vrtTypography:
-        description: "Boolean value indicating change in typography tokens"
-        value: ${{ jobs.hasChanged.outputs.vrtTypography }}
 
 jobs:
   hasChanged:
@@ -56,8 +50,6 @@ jobs:
       docs: ${{ steps.filter.outputs.docs }}
       # VRT outputs
       vrtColor: ${{ steps.filter.outputs.vrtColor }}
-      vrtSize: ${{ steps.filter.outputs.vrtSize }}
-      vrtTypography: ${{ steps.filter.outputs.vrtTypography }}
     steps:
     - uses: actions/checkout@v4
     - uses: dorny/paths-filter@v3
@@ -95,16 +87,6 @@ jobs:
             - 'src/tokens/component/**'
             - 'docs/storybook/stories/Color/**'
             - 'docs/storybook/stories/VisualRegressionTesting/**'
-          vrtSize:
-            - 'src/tokens/base/size/**'
-            - 'src/tokens/functional/size/**'
-            - 'src/tokens/functional/border/**'
-            - 'docs/storybook/stories/Size/**'
-            - 'docs/storybook/stories/Border/**'
-          vrtTypography:
-            - 'src/tokens/base/typography/**'
-            - 'src/tokens/functional/typography/**'
-            - 'docs/storybook/stories/Typography/**'
     - name: Detecting changes that effect output
       if: steps.filter.outputs.tokens == 'true' || steps.filter.outputs.src == 'true' || steps.filter.outputs.scripts == 'true' || steps.filter.outputs.dependencies == 'true' || steps.filter.outputs.docs == 'true'
       run: |
@@ -116,5 +98,3 @@ jobs:
         echo   - dependencies: ${{ steps.filter.outputs.dependencies }}
         echo   - docs: ${{ steps.filter.outputs.docs }}
         echo   - vrtColor: ${{ steps.filter.outputs.vrtColor }}
-        echo   - vrtSize: ${{ steps.filter.outputs.vrtSize }}
-        echo   - vrtTypography: ${{ steps.filter.outputs.vrtTypography }}

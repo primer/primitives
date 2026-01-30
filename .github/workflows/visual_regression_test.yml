@@ -14,50 +14,11 @@ jobs:
     uses: ./.github/workflows/hasChanged.yml
 
   # ============================================
-  # Step 2: Build grep pattern based on changes
-  # ============================================
-  build-grep:
-    needs: changes
-    runs-on: ubuntu-latest
-    outputs:
-      grep_pattern: ${{ steps.build.outputs.pattern }}
-      should_run: ${{ steps.build.outputs.should_run }}
-    steps:
-      - name: Build grep pattern
-        id: build
-        run: |
-          patterns=()
-
-          # Build pattern from changed categories
-          if [[ "${{ needs.changes.outputs.vrtColor }}" == "true" ]]; then
-            patterns+=("all color swatches|color-base")
-          fi
-
-          if [[ "${{ needs.changes.outputs.vrtSize }}" == "true" ]]; then
-            patterns+=("size-")
-          fi
-
-          if [[ "${{ needs.changes.outputs.vrtTypography }}" == "true" ]]; then
-            patterns+=("typography-")
-          fi
-
-          # No VRT-relevant changes
-          if [[ ${#patterns[@]} -eq 0 ]]; then
-            echo "should_run=false" >> $GITHUB_OUTPUT
-            echo "pattern=" >> $GITHUB_OUTPUT
-          else
-            # Join patterns with |
-            joined=$(IFS='|'; echo "${patterns[*]}")
-            echo "pattern=$joined" >> $GITHUB_OUTPUT
-            echo "should_run=true" >> $GITHUB_OUTPUT
-          fi
-
-  # ============================================
-  # Step 3: Run VRT with grep filter
+  # Step 2: Run VRT (only if color tokens changed)
   # ============================================
   vrt-runner:
-    needs: [changes, build-grep]
-    if: needs.build-grep.outputs.should_run == 'true'
+    needs: changes
+    if: needs.changes.outputs.vrtColor == 'true'
     runs-on: ubuntu-latest-8-cores
 
     strategy:
@@ -98,10 +59,7 @@ jobs:
         env:
           STORYBOOK_URL: 'http://172.17.0.1:6006'
         with:
-          args: >-
-            npx playwright test
-            ${{ needs.build-grep.outputs.grep_pattern != '' && format('--grep="{0}"', needs.build-grep.outputs.grep_pattern) || '' }}
-            --shard="${{ matrix.shard }}/${{ strategy.job-total }}"
+          args: npx playwright test --shard="${{ matrix.shard }}/${{ strategy.job-total }}"
 
       - name: Stop storybook
         run: kill ${{ steps.storybook.outputs.pid }}
@@ -115,13 +73,13 @@ jobs:
           retention-days: 1
 
   # ============================================
-  # Step 4: Merge reports
+  # Step 3: Merge reports
   # ============================================
   vrt:
     name: 'Visual Regression Testing'
-    if: ${{ always() && needs.build-grep.outputs.should_run == 'true' }}
+    if: ${{ always() && needs.changes.outputs.vrtColor == 'true' }}
     runs-on: ubuntu-latest
-    needs: [build-grep, vrt-runner]
+    needs: [changes, vrt-runner]
 
     steps:
       - uses: actions/checkout@v4
@@ -156,13 +114,13 @@ jobs:
         run: exit 1
 
   # ============================================
-  # Step 5: Skip notification (when no tests needed)
+  # Step 4: Skip notification (when no color changes)
   # ============================================
   vrt-skipped:
     name: 'Visual Regression Testing'
-    if: ${{ needs.build-grep.outputs.should_run == 'false' }}
+    if: ${{ needs.changes.outputs.vrtColor == 'false' }}
     runs-on: ubuntu-latest
-    needs: build-grep
+    needs: changes
     steps:
       - name: No VRT needed
-        run: echo "No visual regression tests needed for this change"
+        run: echo "No visual regression tests needed - no color token changes detected"
