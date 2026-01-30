@@ -44,9 +44,10 @@ export const dimensionToPixelUnitless: Transform = {
 
       // px values return the number directly
       return value
-    } catch {
+    } catch (error) {
+      const originalMessage = error instanceof Error ? error.message : String(error)
       throw new Error(
-        `Invalid dimension token: '${token.path.join('.')}: ${JSON.stringify(token[valueProp])}' is not valid and cannot be transformed to 'float'\n`,
+        `Invalid dimension token: '${token.path.join('.')}': ${JSON.stringify(token[valueProp])}' - ${originalMessage}\n`,
       )
     }
   },
