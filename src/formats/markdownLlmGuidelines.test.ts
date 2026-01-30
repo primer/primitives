@@ -251,27 +251,28 @@ describe('Format: Markdown LLM Guidelines', () => {
       $extensions: {
         'org.primer.llm': {
           usage: ['chart', 'graph'],
-          rules: 'Use for data visualization',
+          rules: 'Use for shared visualization',
         },
       },
     }
 
     const dictionary = getMockDictionary({
       tokens: {
-        data: {
+        // Use 'viz' category instead of 'data' since 'data' now uses pattern compression
+        viz: {
           blue: getMockToken({
-            name: 'data-blue',
-            path: ['data', 'blue'],
+            name: 'viz-blue',
+            path: ['viz', 'blue'],
             ...sharedGuidelines,
           }),
           red: getMockToken({
-            name: 'data-red',
-            path: ['data', 'red'],
+            name: 'viz-red',
+            path: ['viz', 'red'],
             ...sharedGuidelines,
           }),
           green: getMockToken({
-            name: 'data-green',
-            path: ['data', 'green'],
+            name: 'viz-green',
+            path: ['viz', 'green'],
             ...sharedGuidelines,
           }),
         },
@@ -283,18 +284,18 @@ describe('Format: Markdown LLM Guidelines', () => {
 
     // Should have description and rules only once
     expect(result.match(/Shared description for all tokens/g)?.length).toBe(1)
-    expect(result.match(/Use for data visualization/g)?.length).toBe(1)
+    expect(result.match(/Use for shared visualization/g)?.length).toBe(1)
 
     // Should list all tokens together
     expect(result).toContain('**Tokens:**')
-    expect(result).toContain('data-blue')
-    expect(result).toContain('data-red')
-    expect(result).toContain('data-green')
+    expect(result).toContain('viz-blue')
+    expect(result).toContain('viz-red')
+    expect(result).toContain('viz-green')
 
     // Should NOT have individual ### headings for consolidated tokens
-    expect(result).not.toContain('### data-blue')
-    expect(result).not.toContain('### data-red')
-    expect(result).not.toContain('### data-green')
+    expect(result).not.toContain('### viz-blue')
+    expect(result).not.toContain('### viz-red')
+    expect(result).not.toContain('### viz-green')
   })
 
   it('Does not consolidate tokens with different guidelines', async () => {
