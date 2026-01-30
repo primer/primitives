@@ -14,7 +14,7 @@ const getBasePxFontSize = (options?: PlatformConfig): number => (options && opti
  * @type value transformer — [StyleDictionary.ValueTransform](https://github.com/amzn/style-dictionary/blob/main/types/Transform.d.ts)
  * @matcher matches all tokens of $type `dimension`
  * @transformer returns a float number
- * @note Expects W3C DTCG format { value: number, unit: "px" | "rem" }
+ * @note Expects W3C DTCG format { value: number, unit: "px" | "rem" | "em" }
  */
 export const dimensionToPixelUnitless: Transform = {
   name: 'dimension/pixelUnitless',
