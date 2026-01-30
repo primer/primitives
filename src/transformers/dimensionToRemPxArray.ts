@@ -18,7 +18,7 @@ const getBasePxFontSize = (options?: PlatformConfig): number => (options && opti
  * @type value transformer — [StyleDictionary.ValueTransform](https://github.com/amzn/style-dictionary/blob/main/types/Transform.d.ts)
  * @matcher matches all tokens of $type `dimension`
  * @transformer returns an array with the `rem` and `pixel` string
- * @note Expects W3C DTCG format { value: number, unit: "px" | "rem" }
+ * @note Expects W3C DTCG format { value: number, unit: "px" | "rem" | "em" }
  */
 export const dimensionToRemPxArray: Transform = {
   name: 'dimension/remPxArray',
