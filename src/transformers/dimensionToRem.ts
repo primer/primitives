@@ -44,9 +44,11 @@ export const dimensionToRem: Transform = {
 
       // px values convert to rem
       return `${value / baseFont}rem`
-    } catch {
+    } catch (error) {
+      const details =
+        error instanceof Error && error.message ? ` - ${error.message}` : error ? ` - ${String(error)}` : ''
       throw new Error(
-        `Invalid dimension token: '${token.name}: ${JSON.stringify(token[valueProp])}' is not valid and cannot be transformed to 'rem'\n`,
+        `Invalid dimension token: '${token.name}: ${JSON.stringify(token[valueProp])}' is not valid and cannot be transformed to 'rem'${details}\n`,
       )
     }
   },
