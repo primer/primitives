@@ -126,19 +126,43 @@
           {
             color: '{base.color.neutral.13}',
             alpha: 0.04,
-            offsetX: '0px',
-            offsetY: '1px',
-            blur: '1px',
-            spread: '0px',
+            offsetX: {
+              value: 0,
+              unit: 'px',
+            },
+            offsetY: {
+              value: 1,
+              unit: 'px',
+            },
+            blur: {
+              value: 1,
+              unit: 'px',
+            },
+            spread: {
+              value: 0,
+              unit: 'px',
+            },
             inset: false,
           },
           {
             color: '{base.color.neutral.13}',
             alpha: 0.03,
-            offsetX: '0px',
-            offsetY: '1px',
-            blur: '2px',
-            spread: '0px',
+            offsetX: {
+              value: 0,
+              unit: 'px',
+            },
+            offsetY: {
+              value: 1,
+              unit: 'px',
+            },
+            blur: {
+              value: 2,
+              unit: 'px',
+            },
+            spread: {
+              value: 0,
+              unit: 'px',
+            },
             inset: false,
           },
         ],
