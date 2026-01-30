@@ -115,8 +115,8 @@
 /* Button: All 5 interactive states with correct token usage */
 .btn {
   /* Base styles */
-  background-color: var(--bgColor-accent-emphasis);
-  color: var(--fgColor-onEmphasis); /* MUST pair with -emphasis bg */
+  background-color: var(--control-bgColor-rest);
+  color: var(--fgColor-default);
   border: none;
   border-radius: var(--borderRadius-medium);
   padding-block: var(--control-medium-paddingBlock-normal);
@@ -133,18 +133,18 @@
 
 /* State: Hover */
 .btn:hover {
-  background-color: var(--bgColor-accent-emphasis-hover);
+  background-color: var(--control-bgColor-hover);
 }
 
 /* State: Focus-visible (MUST use :focus-visible, not :focus) */
 .btn:focus-visible {
-  outline: 2px solid var(--borderColor-accent-emphasis);
-  outline-offset: 2px;
+  outline: var(--focus-outline);
+  outline-offset: var(--outline-focus-offset);
 }
 
 /* State: Active/Pressed */
 .btn:active {
-  background-color: var(--bgColor-accent-emphasis-active);
+  background-color: var(--control-bgColor-active);
   transform: scale(0.98);
 }
 
