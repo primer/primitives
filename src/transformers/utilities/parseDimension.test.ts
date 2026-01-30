@@ -22,9 +22,13 @@ describe('Utility: parseDimension', () => {
       expect(parseDimension({value: 0.5, unit: 'rem'})).toEqual({value: 0.5, unit: 'rem'})
     })
 
+    it('parses em dimension object', () => {
+      expect(parseDimension({value: 0.9285, unit: 'em'})).toEqual({value: 0.9285, unit: 'em'})
+    })
+
     it('throws on invalid unit', () => {
       // @ts-expect-error testing invalid input
-      expect(() => parseDimension({value: 16, unit: 'em'})).toThrow('Invalid dimension unit')
+      expect(() => parseDimension({value: 16, unit: 'pt'})).toThrow('Invalid dimension unit')
     })
 
     it('throws on non-finite value', () => {

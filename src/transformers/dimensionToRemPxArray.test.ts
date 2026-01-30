@@ -83,6 +83,16 @@ describe('Transformer: dimensionToRemPxArray', () => {
       )
     })
 
+    it('transforms em dimension object to [em, em] array (cannot convert)', () => {
+      const input = [
+        getMockToken({
+          value: {value: 0.9285, unit: 'em'},
+        }),
+      ]
+      const expectedOutput = [['0.9285em', '0.9285em']]
+      expect(input.map(item => dimensionToRemPxArray.transform(item, {}, {}))).toStrictEqual(expectedOutput)
+    })
+
     it('transforms negative dimension object', () => {
       const input = [
         getMockToken({

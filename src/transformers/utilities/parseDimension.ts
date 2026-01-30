@@ -2,11 +2,12 @@ import type {DimensionTokenValue} from '../../types/dimensionTokenValue.js'
 
 /**
  * @description Parses and validates a dimension value in W3C DTCG object format
- * @param input - The dimension value in W3C object format { value: number, unit: "px" | "rem" }
+ * @param input - The dimension value in W3C object format { value: number, unit: "px" | "rem" | "em" }
  * @returns Validated DimensionTokenValue
  * @throws Error if the input is not a valid W3C dimension object
  *
  * W3C DTCG format: { value: 16, unit: "px" }
+ * @note `em` is not in the W3C spec but is supported for practical use
  * @link https://www.designtokens.org/tr/drafts/format/#dimension
  */
 export const parseDimension = (input: DimensionTokenValue): DimensionTokenValue => {
@@ -33,8 +34,8 @@ export const parseDimension = (input: DimensionTokenValue): DimensionTokenValue 
 
   // Runtime check - unit could be invalid at runtime even if types say otherwise
   // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-  if (unit !== 'px' && unit !== 'rem') {
-    throw new Error(`Invalid dimension unit: ${String(unit)} - must be "px" or "rem"`)
+  if (unit !== 'px' && unit !== 'rem' && unit !== 'em') {
+    throw new Error(`Invalid dimension unit: ${String(unit)} - must be "px", "rem", or "em"`)
   }
 
   return {value, unit}

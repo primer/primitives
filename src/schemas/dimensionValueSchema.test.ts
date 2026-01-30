@@ -5,13 +5,14 @@ describe('Schema: dimensionValue', () => {
     it('passes on valid W3C dimension objects', () => {
       expect(dimensionValue.safeParse({value: 16, unit: 'px'}).success).toStrictEqual(true)
       expect(dimensionValue.safeParse({value: 1, unit: 'rem'}).success).toStrictEqual(true)
+      expect(dimensionValue.safeParse({value: 0.9285, unit: 'em'}).success).toStrictEqual(true)
       expect(dimensionValue.safeParse({value: 0, unit: 'px'}).success).toStrictEqual(true)
       expect(dimensionValue.safeParse({value: -2, unit: 'px'}).success).toStrictEqual(true)
       expect(dimensionValue.safeParse({value: 0.5, unit: 'rem'}).success).toStrictEqual(true)
     })
 
     it('fails on invalid W3C dimension objects', () => {
-      expect(dimensionValue.safeParse({value: 16, unit: 'em'}).success).toStrictEqual(false)
+      expect(dimensionValue.safeParse({value: 16, unit: 'pt'}).success).toStrictEqual(false)
       expect(dimensionValue.safeParse({value: '16', unit: 'px'}).success).toStrictEqual(false)
       expect(dimensionValue.safeParse({value: 16}).success).toStrictEqual(false)
       expect(dimensionValue.safeParse({unit: 'px'}).success).toStrictEqual(false)
@@ -22,6 +23,7 @@ describe('Schema: dimensionValue', () => {
     it('passes on valid W3C dimension objects', () => {
       expect(dimensionValueObject.safeParse({value: 16, unit: 'px'}).success).toStrictEqual(true)
       expect(dimensionValueObject.safeParse({value: 1, unit: 'rem'}).success).toStrictEqual(true)
+      expect(dimensionValueObject.safeParse({value: 0.9285, unit: 'em'}).success).toStrictEqual(true)
     })
 
     it('fails on extra properties', () => {

@@ -58,6 +58,16 @@ describe('Transformer: dimensionToPixelUnitless', () => {
       expect(input.map(item => dimensionToPixelUnitless.transform(item, {}, {}))).toStrictEqual(expectedOutput)
     })
 
+    it('transforms em dimension object to em string (cannot convert)', () => {
+      const input = [
+        getMockToken({
+          value: {value: 0.9285, unit: 'em'},
+        }),
+      ]
+      const expectedOutput = ['0.9285em']
+      expect(input.map(item => dimensionToPixelUnitless.transform(item, {}, {}))).toStrictEqual(expectedOutput)
+    })
+
     it('transforms negative dimension object', () => {
       const input = [
         getMockToken({

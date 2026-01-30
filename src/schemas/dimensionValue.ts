@@ -8,7 +8,7 @@ import {schemaErrorMessage} from '../utilities/index.js'
 export const dimensionValueObject = z
   .object({
     value: z.number(),
-    unit: z.enum(['px', 'rem']),
+    unit: z.enum(['px', 'rem', 'em']),
   })
   .strict()
 

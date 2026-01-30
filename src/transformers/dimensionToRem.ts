@@ -37,6 +37,11 @@ export const dimensionToRem: Transform = {
         return `${value}rem`
       }
 
+      // em values pass through unchanged (relative to parent, cannot convert)
+      if (unit === 'em') {
+        return `${value}em`
+      }
+
       // px values convert to rem
       return `${value / baseFont}rem`
     } catch {

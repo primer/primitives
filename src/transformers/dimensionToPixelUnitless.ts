@@ -37,6 +37,11 @@ export const dimensionToPixelUnitless: Transform = {
         return value * baseFont
       }
 
+      // em values pass through as string (relative to parent, cannot convert to unitless px)
+      if (unit === 'em') {
+        return `${value}em`
+      }
+
       // px values return the number directly
       return value
     } catch {

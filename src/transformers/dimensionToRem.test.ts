@@ -56,6 +56,16 @@ describe('Transformer: dimensionToRem', () => {
       expect(input.map(item => dimensionToRem.transform(item, {basePxFontSize: 10}, {}))).toStrictEqual(expectedOutput)
     })
 
+    it('transforms em dimension object to em (pass through)', () => {
+      const input = [
+        getMockToken({
+          value: {value: 0.9285, unit: 'em'},
+        }),
+      ]
+      const expectedOutput = ['0.9285em']
+      expect(input.map(item => dimensionToRem.transform(item, {}, {}))).toStrictEqual(expectedOutput)
+    })
+
     it('transforms negative dimension object', () => {
       const input = [
         getMockToken({
