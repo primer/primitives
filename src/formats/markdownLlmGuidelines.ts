@@ -331,6 +331,68 @@ function outputPatternCompressedCategory(
   }
 }
 
+/**
+ * Outputs pattern-compressed display color tokens
+ * Extracts unique colors and properties to show as display-[color]-[property] pattern
+ */
+function outputDisplayColorPattern(tokens: LlmGuideline[], lines: string[]): void {
+  const tokenNames = tokens.map(t => t.name)
+
+  // Extract unique colors and properties
+  const colors = new Set<string>()
+  const properties = new Set<string>()
+  const hasScale = new Set<string>()
+
+  for (const name of tokenNames) {
+    // Parse: display-{color}-{property} or display-{color}-scale-{n}
+    const parts = name.replace('display-', '').split('-')
+    if (parts.length < 2) continue
+
+    const color = parts[0]
+    colors.add(color)
+
+    // Check for scale tokens (display-blue-scale-0)
+    if (parts[1] === 'scale' && parts.length >= 3) {
+      hasScale.add(parts[2])
+    } else {
+      // Property tokens (display-blue-bgColor-emphasis, display-blue-fgColor)
+      const property = parts.slice(1).join('-')
+      properties.add(property)
+    }
+  }
+
+  // Sort colors alphabetically
+  const sortedColors = [...colors].sort()
+  const sortedProperties = [...properties].sort((a, b) => {
+    // Sort by type first (bgColor, borderColor, fgColor)
+    const typeOrder = ['bgColor-emphasis', 'bgColor-muted', 'borderColor-emphasis', 'borderColor-muted', 'fgColor']
+    const aIdx = typeOrder.indexOf(a)
+    const bIdx = typeOrder.indexOf(b)
+    if (aIdx !== -1 && bIdx !== -1) return aIdx - bIdx
+    if (aIdx !== -1) return -1
+    if (bIdx !== -1) return 1
+    return a.localeCompare(b)
+  })
+
+  // Output pattern with variables
+  lines.push('**Pattern:** `display-[color]-[property]`')
+  lines.push('')
+  lines.push('**Variables:**')
+  lines.push(`- **color:** ${sortedColors.join(' | ')}`)
+  lines.push(`- **property:** ${sortedProperties.join(' | ')}`)
+  lines.push('')
+
+  // Output scale pattern if present
+  if (hasScale.size > 0) {
+    const sortedScales = [...hasScale].sort((a, b) => parseInt(a) - parseInt(b))
+    lines.push('**Scale pattern:** `display-[color]-scale-[n]`')
+    lines.push(`- **n:** ${sortedScales.join(' | ')}`)
+    lines.push('')
+    lines.push('*Scale 0-2: lighter (backgrounds), 3-5: mid-tones, 6-9: darker (foregrounds/borders)*')
+    lines.push('')
+  }
+}
+
 // Human-readable category names and descriptions
 const CATEGORY_INFO: Record<string, {name: string; description: string}> = {
   bgColor: {
@@ -365,6 +427,11 @@ const CATEGORY_INFO: Record<string, {name: string; description: string}> = {
     name: 'Data Visualization',
     description:
       'Color tokens for charts, graphs, and diagrams. Use emphasis variants for lines/bars, muted variants for fills.',
+  },
+  display: {
+    name: 'Display Colors',
+    description:
+      'Decorative colors for categorization without semantic meaning. Use for labels, tags, avatars, and user-assigned colors. Do NOT use for success/error/warning—use semantic colors instead.',
   },
   easing: {name: 'Easing', description: 'Animation easing function tokens.'},
   focus: {name: 'Focus', description: 'Focus ring and outline tokens for keyboard navigation accessibility.'},
@@ -742,6 +809,31 @@ export const markdownLlmGuidelines: FormatFn = async ({dictionary}: FormatFnArgu
       }
       lines.push('')
       outputTypographyByRole(nonSemanticTokens, lines)
+      continue
+    }
+
+    // Special handling for display colors - use pattern compression
+    if (category === 'display') {
+      const categoryDesc = getCategoryDescription(category)
+      if (categoryDesc) {
+        lines.push('')
+        lines.push(categoryDesc)
+      }
+      lines.push('')
+
+      // Get usage and rules from the first token with LLM metadata
+      const firstWithMeta = nonSemanticTokens.find(t => t.usage || t.rules)
+      if (firstWithMeta) {
+        if (firstWithMeta.usage && firstWithMeta.usage.length > 0) {
+          lines.push(`**U:** ${firstWithMeta.usage.join(', ')}`)
+        }
+        if (firstWithMeta.rules) {
+          lines.push(`**R:** ${firstWithMeta.rules}`)
+        }
+        lines.push('')
+      }
+
+      outputDisplayColorPattern(nonSemanticTokens, lines)
       continue
     }
 
