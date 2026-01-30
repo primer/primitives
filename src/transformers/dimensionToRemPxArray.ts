@@ -52,9 +52,12 @@ export const dimensionToRemPxArray: Transform = {
 
       // px values convert to rem for first value
       return [`${value / baseFont}rem`, `${value}px`]
-    } catch {
+    } catch (error) {
+      const errorMessage = error instanceof Error ? error.message : String(error)
       throw new Error(
-        `Invalid dimension token: '${token.name}: ${JSON.stringify(token[valueProp])}' is not valid and cannot be transformed to 'rem'\n`,
+        `Invalid dimension token: '${token.name}: ${JSON.stringify(
+          token[valueProp],
+        )}' is not valid and cannot be transformed to 'rem' - ${errorMessage}\n`,
       )
     }
   },
