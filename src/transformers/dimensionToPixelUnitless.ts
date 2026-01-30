@@ -13,7 +13,7 @@ const getBasePxFontSize = (options?: PlatformConfig): number => (options && opti
  * @description converts dimension tokens value to pixel value without unit
  * @type value transformer — [StyleDictionary.ValueTransform](https://github.com/amzn/style-dictionary/blob/main/types/Transform.d.ts)
  * @matcher matches all tokens of $type `dimension`
- * @transformer returns a float number
+ * @transformer returns a number for px/rem values, or a string with unit for em values (cannot convert to unitless)
  * @note Expects W3C DTCG format { value: number, unit: "px" | "rem" | "em" }
  */
 export const dimensionToPixelUnitless: Transform = {
