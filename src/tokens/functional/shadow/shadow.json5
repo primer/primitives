@@ -4,10 +4,22 @@
       $value: {
         color: '{base.color.neutral.13}',
         alpha: 0.04,
-        offsetX: '0px',
-        offsetY: '1px',
-        blur: '0px',
-        spread: '0px',
+        offsetX: {
+          value: 0,
+          unit: 'px',
+        },
+        offsetY: {
+          value: 1,
+          unit: 'px',
+        },
+        blur: {
+          value: 0,
+          unit: 'px',
+        },
+        spread: {
+          value: 0,
+          unit: 'px',
+        },
         inset: true,
       },
       $type: 'shadow',
@@ -22,10 +34,22 @@
             $value: {
               color: '{base.color.neutral.0}',
               alpha: 0.24,
-              offsetX: '0px',
-              offsetY: '1px',
-              blur: '0px',
-              spread: '0px',
+              offsetX: {
+                value: 0,
+                unit: 'px',
+              },
+              offsetY: {
+                value: 1,
+                unit: 'px',
+              },
+              blur: {
+                value: 0,
+                unit: 'px',
+              },
+              spread: {
+                value: 0,
+                unit: 'px',
+              },
               inset: true,
             },
           },
@@ -41,10 +65,22 @@
         $value: {
           color: '{base.color.neutral.13}',
           alpha: 0.05,
-          offsetX: '0px',
-          offsetY: '1px',
-          blur: '1px',
-          spread: '0px',
+          offsetX: {
+            value: 0,
+            unit: 'px',
+          },
+          offsetY: {
+            value: 1,
+            unit: 'px',
+          },
+          blur: {
+            value: 1,
+            unit: 'px',
+          },
+          spread: {
+            value: 0,
+            unit: 'px',
+          },
           inset: false,
         },
         $type: 'shadow',
@@ -59,10 +95,22 @@
               $value: {
                 color: '{base.color.neutral.0}',
                 alpha: 0.8,
-                offsetX: '0px',
-                offsetY: '1px',
-                blur: '1px',
-                spread: '0px',
+                offsetX: {
+                  value: 0,
+                  unit: 'px',
+                },
+                offsetY: {
+                  value: 1,
+                  unit: 'px',
+                },
+                blur: {
+                  value: 1,
+                  unit: 'px',
+                },
+                spread: {
+                  value: 0,
+                  unit: 'px',
+                },
                 inset: false,
               },
             },
@@ -78,19 +126,43 @@
           {
             color: '{base.color.neutral.13}',
             alpha: 0.04,
-            offsetX: '0px',
-            offsetY: '1px',
-            blur: '1px',
-            spread: '0px',
+            offsetX: {
+              value: 0,
+              unit: 'px',
+            },
+            offsetY: {
+              value: 1,
+              unit: 'px',
+            },
+            blur: {
+              value: 1,
+              unit: 'px',
+            },
+            spread: {
+              value: 0,
+              unit: 'px',
+            },
             inset: false,
           },
           {
             color: '{base.color.neutral.13}',
             alpha: 0.03,
-            offsetX: '0px',
-            offsetY: '1px',
-            blur: '2px',
-            spread: '0px',
+            offsetX: {
+              value: 0,
+              unit: 'px',
+            },
+            offsetY: {
+              value: 1,
+              unit: 'px',
+            },
+            blur: {
+              value: 2,
+              unit: 'px',
+            },
+            spread: {
+              value: 0,
+              unit: 'px',
+            },
             inset: false,
           },
         ],
@@ -107,19 +179,43 @@
                 {
                   color: '{base.color.neutral.0}',
                   alpha: 0.6,
-                  offsetX: '0px',
-                  offsetY: '1px',
-                  blur: '1px',
-                  spread: '0px',
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 1,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 1,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: 0,
+                    unit: 'px',
+                  },
                   inset: false,
                 },
                 {
                   color: '{base.color.neutral.0}',
                   alpha: 0.6,
-                  offsetX: '0px',
-                  offsetY: '1px',
-                  blur: '3px',
-                  spread: '0px',
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 1,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 3,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: 0,
+                    unit: 'px',
+                  },
                   inset: false,
                 },
               ],
@@ -136,18 +232,42 @@
           {
             color: '{base.color.neutral.12}',
             alpha: 0.1,
-            offsetX: '0px',
-            offsetY: '1px',
-            blur: '1px',
-            spread: '0px',
+            offsetX: {
+              value: 0,
+              unit: 'px',
+            },
+            offsetY: {
+              value: 1,
+              unit: 'px',
+            },
+            blur: {
+              value: 1,
+              unit: 'px',
+            },
+            spread: {
+              value: 0,
+              unit: 'px',
+            },
           },
           {
             color: '{base.color.neutral.12}',
             alpha: 0.12,
-            offsetX: '0px',
-            offsetY: '3px',
-            blur: '6px',
-            spread: '0px',
+            offsetX: {
+              value: 0,
+              unit: 'px',
+            },
+            offsetY: {
+              value: 3,
+              unit: 'px',
+            },
+            blur: {
+              value: 6,
+              unit: 'px',
+            },
+            spread: {
+              value: 0,
+              unit: 'px',
+            },
           },
         ],
         $type: 'shadow',
@@ -163,18 +283,42 @@
                 {
                   color: '{base.color.neutral.0}',
                   alpha: 0.4,
-                  offsetX: '0px',
-                  offsetY: '1px',
-                  blur: '1px',
-                  spread: '0px',
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 1,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 1,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: 0,
+                    unit: 'px',
+                  },
                 },
                 {
                   color: '{base.color.neutral.0}',
                   alpha: 0.8,
-                  offsetX: '0px',
-                  offsetY: '3px',
-                  blur: '6px',
-                  spread: '0px',
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 3,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 6,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: 0,
+                    unit: 'px',
+                  },
                 },
               ],
             },
@@ -192,26 +336,62 @@
           {
             color: '{overlay.borderColor}',
             alpha: 0.5,
-            offsetX: '0px',
-            offsetY: '0px',
-            blur: '0px',
-            spread: '1px',
+            offsetX: {
+              value: 0,
+              unit: 'px',
+            },
+            offsetY: {
+              value: 0,
+              unit: 'px',
+            },
+            blur: {
+              value: 0,
+              unit: 'px',
+            },
+            spread: {
+              value: 1,
+              unit: 'px',
+            },
           },
           {
             color: '{base.color.neutral.12}',
             alpha: 0.04,
-            offsetX: '0px',
-            offsetY: '6px',
-            blur: '12px',
-            spread: '-3px',
+            offsetX: {
+              value: 0,
+              unit: 'px',
+            },
+            offsetY: {
+              value: 6,
+              unit: 'px',
+            },
+            blur: {
+              value: 12,
+              unit: 'px',
+            },
+            spread: {
+              value: -3,
+              unit: 'px',
+            },
           },
           {
             color: '{base.color.neutral.12}',
             alpha: 0.12,
-            offsetX: '0px',
-            offsetY: '6px',
-            blur: '18px',
-            spread: '0px',
+            offsetX: {
+              value: 0,
+              unit: 'px',
+            },
+            offsetY: {
+              value: 6,
+              unit: 'px',
+            },
+            blur: {
+              value: 18,
+              unit: 'px',
+            },
+            spread: {
+              value: 0,
+              unit: 'px',
+            },
           },
         ],
         $type: 'shadow',
@@ -227,26 +407,62 @@
                 {
                   color: '{overlay.borderColor}',
                   alpha: 1,
-                  offsetX: '0px',
-                  offsetY: '0px',
-                  blur: '0px',
-                  spread: '1px',
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: 1,
+                    unit: 'px',
+                  },
                 },
                 {
                   color: '{base.color.neutral.0}',
                   alpha: 0.4,
-                  offsetX: '0px',
-                  offsetY: '6px',
-                  blur: '12px',
-                  spread: '-3px',
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 6,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 12,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: -3,
+                    unit: 'px',
+                  },
                 },
                 {
                   color: '{base.color.neutral.0}',
                   alpha: 0.4,
-                  offsetX: '0px',
-                  offsetY: '6px',
-                  blur: '18px',
-                  spread: '0px',
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 6,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 18,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: 0,
+                    unit: 'px',
+                  },
                 },
               ],
             },
@@ -262,42 +478,102 @@
           {
             color: '{overlay.borderColor}',
             alpha: 0,
-            offsetX: '0px',
-            offsetY: '0px',
-            blur: '0px',
-            spread: '1px',
+            offsetX: {
+              value: 0,
+              unit: 'px',
+            },
+            offsetY: {
+              value: 0,
+              unit: 'px',
+            },
+            blur: {
+              value: 0,
+              unit: 'px',
+            },
+            spread: {
+              value: 1,
+              unit: 'px',
+            },
           },
           {
             color: '{base.color.neutral.12}',
             alpha: 0.08,
-            offsetX: '0px',
-            offsetY: '8px',
-            blur: '16px',
-            spread: '-4px',
+            offsetX: {
+              value: 0,
+              unit: 'px',
+            },
+            offsetY: {
+              value: 8,
+              unit: 'px',
+            },
+            blur: {
+              value: 16,
+              unit: 'px',
+            },
+            spread: {
+              value: -4,
+              unit: 'px',
+            },
           },
           {
             color: '{base.color.neutral.12}',
             alpha: 0.08,
-            offsetX: '0px',
-            offsetY: '4px',
-            blur: '32px',
-            spread: '-4px',
+            offsetX: {
+              value: 0,
+              unit: 'px',
+            },
+            offsetY: {
+              value: 4,
+              unit: 'px',
+            },
+            blur: {
+              value: 32,
+              unit: 'px',
+            },
+            spread: {
+              value: -4,
+              unit: 'px',
+            },
           },
           {
             color: '{base.color.neutral.12}',
             alpha: 0.08,
-            offsetX: '0px',
-            offsetY: '24px',
-            blur: '48px',
-            spread: '-12px',
+            offsetX: {
+              value: 0,
+              unit: 'px',
+            },
+            offsetY: {
+              value: 24,
+              unit: 'px',
+            },
+            blur: {
+              value: 48,
+              unit: 'px',
+            },
+            spread: {
+              value: -12,
+              unit: 'px',
+            },
           },
           {
             color: '{base.color.neutral.12}',
             alpha: 0.08,
-            offsetX: '0px',
-            offsetY: '48px',
-            blur: '96px',
-            spread: '-24px',
+            offsetX: {
+              value: 0,
+              unit: 'px',
+            },
+            offsetY: {
+              value: 48,
+              unit: 'px',
+            },
+            blur: {
+              value: 96,
+              unit: 'px',
+            },
+            spread: {
+              value: -24,
+              unit: 'px',
+            },
           },
         ],
         $type: 'shadow',
@@ -313,42 +589,102 @@
                 {
                   color: '{overlay.borderColor}',
                   alpha: 1,
-                  offsetX: '0px',
-                  offsetY: '0px',
-                  blur: '0px',
-                  spread: '1px',
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: 1,
+                    unit: 'px',
+                  },
                 },
                 {
                   color: '{base.color.neutral.0}',
                   alpha: 0.4,
-                  offsetX: '0px',
-                  offsetY: '8px',
-                  blur: '16px',
-                  spread: '-4px',
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 8,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 16,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: -4,
+                    unit: 'px',
+                  },
                 },
                 {
                   color: '{base.color.neutral.0}',
                   alpha: 0.4,
-                  offsetX: '0px',
-                  offsetY: '4px',
-                  blur: '32px',
-                  spread: '-4px',
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 4,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 32,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: -4,
+                    unit: 'px',
+                  },
                 },
                 {
                   color: '{base.color.neutral.0}',
                   alpha: 0.4,
-                  offsetX: '0px',
-                  offsetY: '24px',
-                  blur: '48px',
-                  spread: '-12px',
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 24,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 48,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: -12,
+                    unit: 'px',
+                  },
                 },
                 {
                   color: '{base.color.neutral.0}',
                   alpha: 0.4,
-                  offsetX: '0px',
-                  offsetY: '48px',
-                  blur: '96px',
-                  spread: '-24px',
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 48,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 96,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: -24,
+                    unit: 'px',
+                  },
                 },
               ],
             },
@@ -364,18 +700,42 @@
           {
             color: '{overlay.borderColor}',
             alpha: 0,
-            offsetX: '0px',
-            offsetY: '0px',
-            blur: '0px',
-            spread: '1px',
+            offsetX: {
+              value: 0,
+              unit: 'px',
+            },
+            offsetY: {
+              value: 0,
+              unit: 'px',
+            },
+            blur: {
+              value: 0,
+              unit: 'px',
+            },
+            spread: {
+              value: 1,
+              unit: 'px',
+            },
           },
           {
             color: '{base.color.neutral.12}',
             alpha: 0.24,
-            offsetX: '0px',
-            offsetY: '40px',
-            blur: '80px',
-            spread: '0px',
+            offsetX: {
+              value: 0,
+              unit: 'px',
+            },
+            offsetY: {
+              value: 40,
+              unit: 'px',
+            },
+            blur: {
+              value: 80,
+              unit: 'px',
+            },
+            spread: {
+              value: 0,
+              unit: 'px',
+            },
           },
         ],
         $type: 'shadow',
@@ -391,18 +751,42 @@
                 {
                   color: '{overlay.borderColor}',
                   alpha: 1,
-                  offsetX: '0px',
-                  offsetY: '0px',
-                  blur: '0px',
-                  spread: '1px',
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: 1,
+                    unit: 'px',
+                  },
                 },
                 {
                   color: '{base.color.neutral.0}',
                   alpha: 1,
-                  offsetX: '0px',
-                  offsetY: '24px',
-                  blur: '48px',
-                  spread: '0px',
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 24,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 48,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: 0,
+                    unit: 'px',
+                  },
                 },
               ],
             },
@@ -418,18 +802,42 @@
           {
             color: '{overlay.borderColor}',
             alpha: 0,
-            offsetX: '0px',
-            offsetY: '0px',
-            blur: '0px',
-            spread: '1px',
+            offsetX: {
+              value: 0,
+              unit: 'px',
+            },
+            offsetY: {
+              value: 0,
+              unit: 'px',
+            },
+            blur: {
+              value: 0,
+              unit: 'px',
+            },
+            spread: {
+              value: 1,
+              unit: 'px',
+            },
           },
           {
             color: '{base.color.neutral.12}',
             alpha: 0.32,
-            offsetX: '0px',
-            offsetY: '56px',
-            blur: '112px',
-            spread: '0px',
+            offsetX: {
+              value: 0,
+              unit: 'px',
+            },
+            offsetY: {
+              value: 56,
+              unit: 'px',
+            },
+            blur: {
+              value: 112,
+              unit: 'px',
+            },
+            spread: {
+              value: 0,
+              unit: 'px',
+            },
           },
         ],
         $type: 'shadow',
@@ -445,18 +853,42 @@
                 {
                   color: '{overlay.borderColor}',
                   alpha: 1,
-                  offsetX: '0px',
-                  offsetY: '0px',
-                  blur: '0px',
-                  spread: '1px',
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: 1,
+                    unit: 'px',
+                  },
                 },
                 {
                   color: '{base.color.neutral.0}',
                   alpha: 1,
-                  offsetX: '0px',
-                  offsetY: '32px',
-                  blur: '64px',
-                  spread: '0px',
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 32,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 64,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: 0,
+                    unit: 'px',
+                  },
                 },
               ],
             },
@@ -472,18 +904,42 @@
           {
             color: '{base.color.neutral.12}',
             alpha: 0.04,
-            offsetX: '0px',
-            offsetY: '6px',
-            blur: '12px',
-            spread: '-3px',
+            offsetX: {
+              value: 0,
+              unit: 'px',
+            },
+            offsetY: {
+              value: 6,
+              unit: 'px',
+            },
+            blur: {
+              value: 12,
+              unit: 'px',
+            },
+            spread: {
+              value: -3,
+              unit: 'px',
+            },
           },
           {
             color: '{base.color.neutral.12}',
             alpha: 0.12,
-            offsetX: '0px',
-            offsetY: '6px',
-            blur: '18px',
-            spread: '0px',
+            offsetX: {
+              value: 0,
+              unit: 'px',
+            },
+            offsetY: {
+              value: 6,
+              unit: 'px',
+            },
+            blur: {
+              value: 18,
+              unit: 'px',
+            },
+            spread: {
+              value: 0,
+              unit: 'px',
+            },
           },
         ],
         $type: 'shadow',
@@ -496,18 +952,42 @@
                 {
                   color: '{base.color.neutral.0}',
                   alpha: 0.4,
-                  offsetX: '0px',
-                  offsetY: '6px',
-                  blur: '12px',
-                  spread: '-3px',
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 6,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 12,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: -3,
+                    unit: 'px',
+                  },
                 },
                 {
                   color: '{base.color.neutral.0}',
                   alpha: 0.4,
-                  offsetX: '0px',
-                  offsetY: '6px',
-                  blur: '18px',
-                  spread: '0px',
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 6,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 18,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: 0,
+                    unit: 'px',
+                  },
                 },
               ],
             },

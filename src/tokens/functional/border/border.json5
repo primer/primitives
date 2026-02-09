@@ -4,7 +4,10 @@
       $value: {
         color: '{focus.outlineColor}',
         style: 'solid',
-        width: '2px',
+        width: {
+          value: 2,
+          unit: 'px',
+        },
       },
       $type: 'border',
       $description: 'Focus ring outline for keyboard navigation and accessibility.',
