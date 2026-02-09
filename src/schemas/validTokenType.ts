@@ -13,7 +13,7 @@ const validTypes = [
   'fontWeight',
   'gradient',
   'number',
-  'string',
+  'custom-string',
   'transition',
   'custom-viewportRange',
 ] as const

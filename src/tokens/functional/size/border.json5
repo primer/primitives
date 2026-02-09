@@ -3,17 +3,17 @@
     thin: {
       $value: 'inset 0 0 0 {borderWidth.thin}',
       $description: 'Thin shadow used instead of a border to prevent layout shift',
-      $type: 'string',
+      $type: 'custom-string',
     },
     thick: {
       $value: 'inset 0 0 0 {borderWidth.thick}',
       $description: 'Thick shadow (2px) used instead of a border for emphasis without layout shift',
-      $type: 'string',
+      $type: 'custom-string',
     },
     thicker: {
       $value: 'inset 0 0 0 {borderWidth.thicker}',
       $description: 'Thickest shadow (4px) used for high emphasis borders without layout shift. Use sparingly for maximum visual impact',
-      $type: 'string',
+      $type: 'custom-string',
     },
   },
   borderWidth: {

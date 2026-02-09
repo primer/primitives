@@ -3,7 +3,7 @@ import {stringToken} from './stringToken.js'
 describe('Schema: stringToken', () => {
   const validToken = {
     $value: 'a string',
-    $type: 'string',
+    $type: 'custom-string',
     $description: 'a string token',
   }
 
@@ -22,7 +22,7 @@ describe('Schema: stringToken', () => {
     // missing value
     expect(
       stringToken.safeParse({
-        $type: 'string',
+        $type: 'custom-string',
       }).success,
     ).toStrictEqual(false)
     // missing type
