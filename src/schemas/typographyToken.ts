@@ -8,7 +8,7 @@ import {llmExtension} from './llmExtension.js'
 
 export const typographyValue = z.object({
   fontSize: z.union([dimensionValue, referenceValue]),
-  lineHeight: z.union([dimensionValue, referenceValue]).optional(),
+  lineHeight: z.union([z.number(), referenceValue]).optional(),
   fontWeight: z.union([fontWeightValue, referenceValue]),
   fontFamily: z.union([z.string().min(1), referenceValue]),
 })
