@@ -12,6 +12,11 @@ describe('Transformer: colorAlphaToCss', () => {
     expect(input.map(item => colorAlphaToCss.transform(item, {}, {}))).toStrictEqual(expectedOutput)
   })
 
+  it('transforms color token with alpha: 0 to fully transparent', () => {
+    const input = getMockToken({$value: '#ff0000', alpha: 0})
+    expect(colorAlphaToCss.transform(input, {}, {})).toBe('transparent')
+  })
+
   it('transforms hex3, hex6, hex8 `color` tokens with alpha value', () => {
     const input = [
       getMockToken({$value: '#123', alpha: 0.25}),

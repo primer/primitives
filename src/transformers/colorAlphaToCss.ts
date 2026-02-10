@@ -23,7 +23,7 @@ export const colorAlphaToCss: Transform = {
   transform: (token: TransformedToken) => {
     const rawValue = getTokenValue(token)
     const colorString = normalizeColorValue(rawValue)
-    if (!token.alpha || token.alpha === null) return colorString
+    if (token.alpha === null || token.alpha === undefined) return colorString
     return cssColorMix(colorString, 'transparent', 1 - token.alpha)
   },
 }

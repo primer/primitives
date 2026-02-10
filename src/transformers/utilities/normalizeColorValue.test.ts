@@ -45,6 +45,84 @@ describe('Utility: normalizeColorValue', () => {
     }
     expect(normalizeColorValue(input)).toBe('#00ff00')
   })
+
+  it('converts display-p3 color to sRGB hex', () => {
+    const input = {
+      colorSpace: 'display-p3' as const,
+      components: [1, 0, 0] as [number, number, number],
+    }
+    // display-p3 red is slightly different in sRGB
+    expect(normalizeColorValue(input)).toBe('#ff0b0c')
+  })
+
+  it('converts oklab color to sRGB hex', () => {
+    const input = {
+      colorSpace: 'oklab' as const,
+      components: [0.5, 0.1, -0.1] as [number, number, number],
+    }
+    expect(normalizeColorValue(input)).toBe('#81459a')
+  })
+
+  it('converts non-sRGB W3C object even when hex is provided', () => {
+    // hex property should be ignored for non-sRGB spaces
+    // because the hex should reflect the actual color space conversion
+    const input = {
+      colorSpace: 'display-p3' as const,
+      components: [1, 0, 0] as [number, number, number],
+      hex: '#ff0000',
+    }
+    expect(normalizeColorValue(input)).toBe('#ff0b0c')
+  })
+
+  it('uses hex shortcut for sRGB with hex property', () => {
+    const input = {
+      colorSpace: 'srgb' as const,
+      components: [1, 0, 0] as [number, number, number],
+      hex: '#ff0000',
+    }
+    expect(normalizeColorValue(input)).toBe('#ff0000')
+  })
+
+  it('converts hsl color to sRGB hex', () => {
+    const input = {
+      colorSpace: 'hsl' as const,
+      components: [0, 100, 50] as [number, number, number],
+    }
+    expect(normalizeColorValue(input)).toBe('#ff0000')
+  })
+
+  it('converts hwb color to sRGB hex', () => {
+    const input = {
+      colorSpace: 'hwb' as const,
+      components: [0, 0, 0] as [number, number, number],
+    }
+    expect(normalizeColorValue(input)).toBe('#ff0000')
+  })
+
+  it('converts lch color to sRGB hex', () => {
+    const input = {
+      colorSpace: 'lch' as const,
+      components: [50, 0, 0] as [number, number, number],
+    }
+    expect(normalizeColorValue(input)).toBe('#777777')
+  })
+
+  it('converts oklch color to sRGB hex', () => {
+    const input = {
+      colorSpace: 'oklch' as const,
+      components: [0.5, 0.2, 260] as [number, number, number],
+    }
+    expect(normalizeColorValue(input)).toBe('#0559d2')
+  })
+
+  it('handles none keyword in components', () => {
+    const input = {
+      colorSpace: 'hsl' as const,
+      components: ['none' as const, 0, 50] as [number | 'none', number | 'none', number | 'none'],
+    }
+    // hsl(none, 0, 50) = achromatic gray, none hue treated as 0
+    expect(normalizeColorValue(input)).toBe('#808080')
+  })
 })
 
 describe('Utility: isW3cColorValue', () => {

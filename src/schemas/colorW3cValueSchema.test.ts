@@ -32,12 +32,16 @@ describe('Schema: colorW3cValue', () => {
     const colorSpaces = [
       'srgb',
       'srgb-linear',
+      'hsl',
+      'hwb',
+      'lab',
+      'lch',
+      'oklab',
+      'oklch',
       'display-p3',
       'a98-rgb',
       'prophoto-rgb',
       'rec2020',
-      'lab',
-      'oklab',
       'xyz',
       'xyz-d50',
       'xyz-d65',
@@ -82,12 +86,36 @@ describe('Schema: colorW3cValue', () => {
     expect(colorW3cValue.safeParse(input).success).toBe(false)
   })
 
-  it('accepts 8-digit hex with alpha', () => {
+  it('rejects 8-digit hex (spec requires 6-digit only)', () => {
     const input = {
       colorSpace: 'srgb',
       components: [1, 0, 0],
       hex: '#ff000080',
     }
+    expect(colorW3cValue.safeParse(input).success).toBe(false)
+  })
+
+  it('accepts the none keyword in components', () => {
+    const input = {
+      colorSpace: 'hsl',
+      components: ['none', 0, 50],
+    }
     expect(colorW3cValue.safeParse(input).success).toBe(true)
+  })
+
+  it('accepts multiple none keywords in components', () => {
+    const input = {
+      colorSpace: 'oklch',
+      components: [0.5, 'none', 'none'],
+    }
+    expect(colorW3cValue.safeParse(input).success).toBe(true)
+  })
+
+  it('rejects invalid strings in components (not none)', () => {
+    const input = {
+      colorSpace: 'srgb',
+      components: [0, 'red', 0],
+    }
+    expect(colorW3cValue.safeParse(input).success).toBe(false)
   })
 })
