@@ -3,6 +3,7 @@ import {isBorder} from '../filters/isBorder.js'
 import type {BorderTokenValue} from '../types/borderTokenValue.js'
 import type {DimensionTokenValue} from '../types/dimensionTokenValue.js'
 import {parseDimension} from './utilities/parseDimension.js'
+import {normalizeColorValue} from './utilities/normalizeColorValue.js'
 
 /**
  * @description Converts a W3C dimension object to CSS string, preserving the original unit
@@ -58,6 +59,7 @@ export const borderToCss: Transform = {
       )
     }
     /* width | style | color */
-    return `${dimensionToCss(value.width)} ${value.style} ${value.color}`
+    const color = typeof value.color === 'object' ? normalizeColorValue(value.color) : value.color
+    return `${dimensionToCss(value.width)} ${value.style} ${color}`
   },
 }

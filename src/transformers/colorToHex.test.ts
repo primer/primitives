@@ -76,4 +76,33 @@ describe('Transform: colorToHex', () => {
     })
     expect(colorToHex.transform(input, {}, {})).toBe('#ff000080')
   })
+
+  it('transforms W3C color object with token-level alpha', () => {
+    const input = getMockToken({
+      $value: {
+        colorSpace: 'srgb',
+        components: [0.5, 0.5, 0.5],
+        hex: '#808080',
+      },
+      alpha: 0.4,
+    })
+    expect(colorToHex.transform(input, {}, {})).toBe('#80808066')
+  })
+
+  it('produces same output for hex string and W3C color object', () => {
+    const hexInput = getMockToken({$value: '#343434'})
+    const w3cInput = getMockToken({
+      $value: {colorSpace: 'srgb', components: [0.204, 0.204, 0.204], hex: '#343434'},
+    })
+    expect(colorToHex.transform(hexInput, {}, {})).toStrictEqual(colorToHex.transform(w3cInput, {}, {}))
+  })
+
+  it('produces same output for hex string and W3C color object with alpha', () => {
+    const hexInput = getMockToken({$value: '#343434', alpha: 0.4})
+    const w3cInput = getMockToken({
+      $value: {colorSpace: 'srgb', components: [0.204, 0.204, 0.204], hex: '#343434'},
+      alpha: 0.4,
+    })
+    expect(colorToHex.transform(hexInput, {}, {})).toStrictEqual(colorToHex.transform(w3cInput, {}, {}))
+  })
 })

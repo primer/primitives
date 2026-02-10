@@ -42,4 +42,25 @@ describe('Transformer: colorToRgbAlpha', () => {
     })
     expect(colorToRgbAlpha.transform(input, {}, {})).toBe('rgba(128, 128, 128, 0.5)')
   })
+
+  it('transforms W3C color object with alpha null', () => {
+    const input = getMockToken({
+      $value: {
+        colorSpace: 'srgb',
+        components: [0.5, 0.5, 0.5],
+        hex: '#808080',
+      },
+      alpha: null,
+    })
+    expect(colorToRgbAlpha.transform(input, {}, {})).toBe('#808080')
+  })
+
+  it('produces same output for hex string and W3C color object with alpha', () => {
+    const hexInput = getMockToken({$value: '#808080', alpha: 0.5})
+    const w3cInput = getMockToken({
+      $value: {colorSpace: 'srgb', components: [0.502, 0.502, 0.502], hex: '#808080'},
+      alpha: 0.5,
+    })
+    expect(colorToRgbAlpha.transform(hexInput, {}, {})).toStrictEqual(colorToRgbAlpha.transform(w3cInput, {}, {}))
+  })
 })
