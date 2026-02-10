@@ -150,4 +150,30 @@ describe('Utility: isW3cColorValue', () => {
   it('returns false for object without components', () => {
     expect(isW3cColorValue({colorSpace: 'srgb'})).toBe(false)
   })
+
+  it('returns false when colorSpace is not a string', () => {
+    expect(isW3cColorValue({colorSpace: 123, components: [0, 0, 0]})).toBe(false)
+  })
+
+  it('returns false when components is not an array', () => {
+    expect(isW3cColorValue({colorSpace: 'srgb', components: 'red'})).toBe(false)
+  })
+
+  it('returns false when components has wrong length', () => {
+    expect(isW3cColorValue({colorSpace: 'srgb', components: [0, 0]})).toBe(false)
+    expect(isW3cColorValue({colorSpace: 'srgb', components: [0, 0, 0, 0]})).toBe(false)
+  })
+
+  it('returns false when components contain invalid values', () => {
+    expect(isW3cColorValue({colorSpace: 'srgb', components: [0, 'red', 0]})).toBe(false)
+    expect(isW3cColorValue({colorSpace: 'srgb', components: [0, true, 0]})).toBe(false)
+  })
+
+  it('returns true when components contain none keyword', () => {
+    expect(isW3cColorValue({colorSpace: 'hsl', components: ['none', 0, 50]})).toBe(true)
+  })
+
+  it('returns false for rgba float object (r,g,b,a)', () => {
+    expect(isW3cColorValue({r: 1, g: 0, b: 0, a: 1})).toBe(false)
+  })
 })

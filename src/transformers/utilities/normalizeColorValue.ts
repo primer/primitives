@@ -4,10 +4,17 @@ import type {ColorW3cValue} from '../../schemas/colorW3cValue.js'
 export type ColorValue = string | ColorW3cValue
 
 /**
- * Type guard to check if value is W3C color object
+ * Type guard to check if value is a valid W3C color object.
+ * Validates structure: colorSpace is a string, components is a 3-element array
+ * of numbers or 'none' keywords.
  */
 export function isW3cColorValue(value: unknown): value is ColorW3cValue {
-  return typeof value === 'object' && value !== null && 'colorSpace' in value && 'components' in value
+  if (typeof value !== 'object' || value === null) return false
+  if (!('colorSpace' in value) || typeof (value as Record<string, unknown>).colorSpace !== 'string') return false
+  if (!('components' in value)) return false
+  const components = (value as Record<string, unknown>).components
+  if (!Array.isArray(components) || components.length !== 3) return false
+  return components.every(c => typeof c === 'number' || c === 'none')
 }
 
 /**

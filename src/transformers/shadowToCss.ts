@@ -45,7 +45,9 @@ export const shadowToCss: Transform = {
         checkRequiredTokenProperties(shadow, ['color', 'offsetX', 'offsetY', 'blur', 'spread'])
         /*css box shadow:  inset? | offset-x | offset-y | blur-radius | spread-radius | color */
         const colorString = normalizeColorValue(getTokenValue({...token, ...{[valueProp]: shadow}}, 'color'))
-        return `${shadow.inset === true ? 'inset ' : ''}${dimensionToCss(shadow.offsetX)} ${dimensionToCss(shadow.offsetY)} ${dimensionToCss(shadow.blur)} ${dimensionToCss(shadow.spread)} ${toHex(alpha(colorString, shadow.alpha || 1, token, config))}`
+        const colorHex =
+          shadow.alpha !== undefined ? toHex(alpha(colorString, shadow.alpha, token, config)) : toHex(colorString)
+        return `${shadow.inset === true ? 'inset ' : ''}${dimensionToCss(shadow.offsetX)} ${dimensionToCss(shadow.offsetY)} ${dimensionToCss(shadow.blur)} ${dimensionToCss(shadow.spread)} ${colorHex}`
       })
       .join(', ')
   },
