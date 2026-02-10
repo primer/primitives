@@ -121,4 +121,21 @@ describe('Transformer: colorToRgbaFloat', () => {
     ]
     expect(input.map(item => colorToRgbaFloat.transform(item, {}, {}))).toStrictEqual(expectedOutput)
   })
+
+  it('transforms W3C color object to rgb float', () => {
+    const input = getMockToken({
+      $value: {
+        colorSpace: 'srgb',
+        components: [0.5, 0.25, 0.75],
+        hex: '#8040bf',
+      },
+    })
+    const result = colorToRgbaFloat.transform(input, {}, {})
+    expect(result).toMatchObject({
+      r: expect.closeTo(0.5, 1),
+      g: expect.closeTo(0.25, 1),
+      b: expect.closeTo(0.75, 1),
+      a: 1,
+    })
+  })
 })

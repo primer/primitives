@@ -30,4 +30,16 @@ describe('Transformer: colorToRgbAlpha', () => {
     const expectedOutput = 'rgba(100,200,255, 0.5)'
     expect(colorToRgbAlpha.transform(input, {}, {})).toStrictEqual(expectedOutput)
   })
+
+  it('transforms W3C color object with alpha property', () => {
+    const input = getMockToken({
+      $value: {
+        colorSpace: 'srgb',
+        components: [0.5, 0.5, 0.5],
+        hex: '#808080',
+      },
+      alpha: 0.5,
+    })
+    expect(colorToRgbAlpha.transform(input, {}, {})).toBe('rgba(128, 128, 128, 0.5)')
+  })
 })

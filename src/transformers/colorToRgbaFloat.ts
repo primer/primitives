@@ -4,10 +4,17 @@ import {getTokenValue} from './utilities/getTokenValue.js'
 import {rgbaFloatToHex} from './utilities/rgbaFloatToHex.js'
 import {hexToRgbaFloat} from './utilities/hexToRgbaFloat.js'
 import {isRgbaFloat} from './utilities/isRgbaFloat.js'
+import {normalizeColorValue, isW3cColorValue} from './utilities/normalizeColorValue.js'
 import type {Transform, TransformedToken} from 'style-dictionary/types'
 
 const toRgbaFloat = (token: TransformedToken, alpha: undefined | number = undefined) => {
   let tokenValue = getTokenValue(token)
+
+  // Handle W3C color object - convert to hex first
+  if (isW3cColorValue(tokenValue)) {
+    tokenValue = normalizeColorValue(tokenValue)
+  }
+
   // get hex value from color string
   if (isRgbaFloat(tokenValue)) {
     tokenValue = rgbaFloatToHex(tokenValue, false)

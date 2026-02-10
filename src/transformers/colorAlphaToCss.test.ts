@@ -46,4 +46,27 @@ describe('Transformer: colorAlphaToCss', () => {
     ]
     expect(input.map(item => colorAlphaToCss.transform(item as TransformedToken, {}, {}))).toStrictEqual(expectedOutput)
   })
+
+  it('transforms W3C color object with alpha', () => {
+    const input = getMockToken({
+      $value: {
+        colorSpace: 'srgb',
+        components: [1, 0, 0],
+        hex: '#ff0000',
+      },
+      alpha: 0.5,
+    })
+    expect(colorAlphaToCss.transform(input, {}, {})).toBe('color-mix(in srgb, #ff0000, transparent 50%)')
+  })
+
+  it('transforms W3C color object without alpha', () => {
+    const input = getMockToken({
+      $value: {
+        colorSpace: 'srgb',
+        components: [0, 1, 0],
+        hex: '#00ff00',
+      },
+    })
+    expect(colorAlphaToCss.transform(input, {}, {})).toBe('#00ff00')
+  })
 })

@@ -43,4 +43,37 @@ describe('Transform: colorToHex', () => {
     const input = getMockToken({$value: 'rgba(100,200,255, 0.5)', alpha: null})
     expect(colorToHex.transform(input, {}, {})).toStrictEqual('#64c8ff80')
   })
+
+  it('transforms W3C color object with hex property to hex value', () => {
+    const input = getMockToken({
+      $value: {
+        colorSpace: 'srgb',
+        components: [0.5, 0.25, 0.75],
+        alpha: 1,
+        hex: '#8040bf',
+      },
+    })
+    expect(colorToHex.transform(input, {}, {})).toBe('#8040bf')
+  })
+
+  it('transforms W3C color object without hex property using components', () => {
+    const input = getMockToken({
+      $value: {
+        colorSpace: 'srgb',
+        components: [1, 0.5, 0],
+      },
+    })
+    expect(colorToHex.transform(input, {}, {})).toBe('#ff8000')
+  })
+
+  it('transforms W3C color object with alpha < 1', () => {
+    const input = getMockToken({
+      $value: {
+        colorSpace: 'srgb',
+        components: [1, 0, 0],
+        alpha: 0.5,
+      },
+    })
+    expect(colorToHex.transform(input, {}, {})).toBe('#ff000080')
+  })
 })
