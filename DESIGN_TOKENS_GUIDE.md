@@ -119,7 +119,7 @@
   color: var(--fgColor-default);
   border: none;
   border-radius: var(--borderRadius-medium);
-  padding-block: var(--control-medium-paddingBlock-normal);
+  padding-block: var(--control-medium-paddingBlock);
   padding-inline: var(--control-medium-paddingInline-normal);
   font: var(--text-body-shorthand-medium);
   cursor: pointer;
