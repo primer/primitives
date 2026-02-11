@@ -12,7 +12,7 @@ import {llmExtension} from './llmExtension.js'
 export const shadowValue = z
   .object({
     color: z.union([colorHexValue, colorW3cValue, referenceValue]),
-    alpha: z.union([alphaValue, referenceValue]),
+    alpha: z.union([alphaValue, referenceValue]).optional(),
     offsetX: z.union([dimensionValue, referenceValue]),
     offsetY: z.union([dimensionValue, referenceValue]),
     blur: z.union([dimensionValue, referenceValue]),

@@ -61,7 +61,7 @@ export function normalizeColorValue(value: ColorValue): string {
   }
 
   // W3C object with hex property and sRGB color space - use hex directly
-  if (value.hex && value.colorSpace === 'srgb') {
+  if (value.hex && value.colorSpace === 'srgb' && (value.alpha === undefined || value.alpha === 1)) {
     return value.hex
   }
 

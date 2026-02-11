@@ -83,6 +83,16 @@ describe('Utility: normalizeColorValue', () => {
     expect(normalizeColorValue(input)).toBe('#ff0000')
   })
 
+  it('does not use hex shortcut when sRGB has alpha < 1', () => {
+    const input = {
+      colorSpace: 'srgb' as const,
+      components: [1, 0, 0] as [number, number, number],
+      hex: '#ff0000',
+      alpha: 0.5,
+    }
+    expect(normalizeColorValue(input)).toBe('#ff000080')
+  })
+
   it('converts hsl color to sRGB hex', () => {
     const input = {
       colorSpace: 'hsl' as const,

@@ -76,6 +76,7 @@ describe('Schema: shadowValue', () => {
   })
 
   it('fails on missing properties', () => {
+    // missing color
     expect(
       shadowValue.safeParse({
         alpha: 0.5,
@@ -85,15 +86,7 @@ describe('Schema: shadowValue', () => {
         spread: {value: 2, unit: 'px'},
       }).success,
     ).toStrictEqual(false)
-    expect(
-      shadowValue.safeParse({
-        color: '#000000',
-        offsetX: {value: 4, unit: 'px'},
-        offsetY: {value: 4, unit: 'px'},
-        blur: {value: 2, unit: 'px'},
-        spread: {value: 2, unit: 'px'},
-      }).success,
-    ).toStrictEqual(false)
+    // missing offsetX
     expect(
       shadowValue.safeParse({
         color: '#000000',
@@ -103,6 +96,7 @@ describe('Schema: shadowValue', () => {
         spread: {value: 2, unit: 'px'},
       }).success,
     ).toStrictEqual(false)
+    // missing offsetY
     expect(
       shadowValue.safeParse({
         color: '#000000',
@@ -112,6 +106,7 @@ describe('Schema: shadowValue', () => {
         spread: {value: 2, unit: 'px'},
       }).success,
     ).toStrictEqual(false)
+    // missing blur
     expect(
       shadowValue.safeParse({
         color: '#000000',
@@ -121,6 +116,7 @@ describe('Schema: shadowValue', () => {
         spread: {value: 2, unit: 'px'},
       }).success,
     ).toStrictEqual(false)
+    // missing spread
     expect(
       shadowValue.safeParse({
         color: '#000000',
@@ -130,6 +126,18 @@ describe('Schema: shadowValue', () => {
         blur: {value: 2, unit: 'px'},
       }).success,
     ).toStrictEqual(false)
+  })
+
+  it('parses shadow without alpha (optional)', () => {
+    expect(
+      shadowValue.safeParse({
+        color: '#000000',
+        offsetX: {value: 4, unit: 'px'},
+        offsetY: {value: 4, unit: 'px'},
+        blur: {value: 2, unit: 'px'},
+        spread: {value: 2, unit: 'px'},
+      }).success,
+    ).toStrictEqual(true)
   })
 })
 

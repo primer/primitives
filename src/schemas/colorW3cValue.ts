@@ -32,14 +32,16 @@ const colorComponent = z.union([z.number(), z.literal('none')])
  * W3C DTCG color value schema
  * @see https://www.designtokens.org/tr/drafts/color/#color-type
  */
-export const colorW3cValue = z.object({
-  colorSpace: colorSpace,
-  components: z.tuple([colorComponent, colorComponent, colorComponent]),
-  alpha: z.number().min(0).max(1).optional(),
-  hex: z
-    .string()
-    .regex(/^#[0-9a-fA-F]{6}$/)
-    .optional(),
-})
+export const colorW3cValue = z
+  .object({
+    colorSpace: colorSpace,
+    components: z.tuple([colorComponent, colorComponent, colorComponent]),
+    alpha: z.number().min(0).max(1).optional(),
+    hex: z
+      .string()
+      .regex(/^#[0-9a-fA-F]{6}$/)
+      .optional(),
+  })
+  .strict()
 
 export type ColorW3cValue = z.infer<typeof colorW3cValue>
