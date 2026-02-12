@@ -1,4 +1,5 @@
 import type {DimensionTokenValue} from './dimensionTokenValue.js'
+import type {ColorW3cValue} from '../schemas/colorW3cValue.js'
 
 /**
  * Type definition for w3c border composite token value
@@ -6,7 +7,7 @@ import type {DimensionTokenValue} from './dimensionTokenValue.js'
  */
 export type StrokeStyleString = 'solid' | 'dashed' | 'dotted' | 'double' | 'groove' | 'ridge' | 'outset' | 'inset'
 export type BorderTokenValue = {
-  color: string
+  color: string | ColorW3cValue
   width: string | DimensionTokenValue
   style: StrokeStyleString
 }
