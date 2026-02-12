@@ -35,7 +35,7 @@
 ```
 --control-[size]-[property]
   ├── size: xsmall | small | medium | large | xlarge
-  └── property: size | paddingInline-[density] | paddingBlock-[density]
+  └── property: size | paddingInline-[density] | paddingBlock
                  └── density: condensed | normal | spacious
 ```
 
