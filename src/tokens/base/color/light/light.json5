@@ -5,15 +5,6 @@
 {
   base: {
     color: {
-      test: {
-        $value: '{base.color.neutral.0}',
-        $type: 'color',
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'base/color/dark',
-          },
-        },
-      },
       black: {
         $value: '#1f2328',
         $type: 'color',
