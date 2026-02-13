@@ -154,6 +154,16 @@
               "scopes": ["gap"]
             }
           }
+        },
+        "spacious": {
+          "$value": "{base.size.16}",
+          "$type": "dimension",
+          "$extensions": {
+            "org.primer.figma": {
+              "collection": "pattern/size",
+              "scopes": ["gap"]
+            }
+          }
         }
       },
       "gap": {
@@ -273,6 +283,16 @@
         }
       },
       "paddingInline": {
+        "condensed": {
+          "$value": "{base.size.8}",
+          "$type": "dimension",
+          "$extensions": {
+            "org.primer.figma": {
+              "collection": "pattern/size",
+              "scopes": ["gap"]
+            }
+          }
+        },
         "normal": {
           "$value": "{base.size.12}",
           "$type": "dimension",
@@ -337,6 +357,16 @@
         }
       },
       "paddingInline": {
+        "condensed": {
+          "$value": "{base.size.8}",
+          "$type": "dimension",
+          "$extensions": {
+            "org.primer.figma": {
+              "collection": "pattern/size",
+              "scopes": ["gap"]
+            }
+          }
+        },
         "normal": {
           "$value": "{base.size.12}",
           "$type": "dimension",
