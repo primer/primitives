@@ -45,5 +45,20 @@
         },
       },
     },
+    large: {
+      gap: {
+        auto: {
+          $value: '{base.size.8}',
+          $type: 'dimension',
+          $description: 'Gap between stacked controls in large density layouts for mouse interfaces',
+          $extensions: {
+            'org.primer.llm': {
+              usage: ['desktop-control-spacing', 'form-gap', 'stacked-buttons'],
+              rules: 'Use for spacing between interactive controls on desktop in large layouts. Do NOT use for mobile/touch interfaces.',
+            },
+          },
+        },
+      },
+    },
   },
 }

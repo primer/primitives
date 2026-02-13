@@ -554,6 +554,16 @@
     },
     "small": {
       "gap": {
+        "auto": {
+          "$value": "{base.size.8}",
+          "$type": "dimension",
+          "$extensions": {
+            "org.primer.figma": {
+              "collection": "pattern/size",
+              "scopes": ["gap"]
+            }
+          }
+        },
         "condensed": {
           "$value": "{base.size.8}",
           "$type": "dimension",
@@ -578,6 +588,16 @@
     },
     "medium": {
       "gap": {
+        "auto": {
+          "$value": "{base.size.8}",
+          "$type": "dimension",
+          "$extensions": {
+            "org.primer.figma": {
+              "collection": "pattern/size",
+              "scopes": ["gap"]
+            }
+          }
+        },
         "condensed": {
           "$value": "{base.size.8}",
           "$type": "dimension",

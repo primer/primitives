@@ -44,6 +44,21 @@
           }
         }
       }
+    },
+    "large": {
+      "gap": {
+        "auto": {
+          "$value": "{base.size.12}",
+          "$type": "dimension",
+          "$description": "Gap between stacked controls in large density layouts for touch devices",
+          "$extensions": {
+            "org.primer.llm": {
+              "usage": ["touch-control-spacing", "mobile-form-gap", "stacked-buttons"],
+              "rules": "Use for spacing between interactive controls on touch devices in large layouts. Provides adequate touch separation. Do NOT use for desktop/mouse interfaces."
+            }
+          }
+        }
+      }
     }
   }
 }

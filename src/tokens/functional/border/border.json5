@@ -67,6 +67,15 @@
       },
       $type: 'border',
     },
+    translucent: {
+      $description: 'Semi-transparent border shorthand for overlays and layered elements. Border-specific token — no bgColor-translucent counterpart exists by design.',
+      $value: {
+        color: '{borderColor.translucent}',
+        style: 'solid',
+        width: '{borderWidth.default}',
+      },
+      $type: 'border',
+    },
     neutral: {
       $description: 'Neutral gray borders for non-semantic boundaries and subtle UI separation.',
       emphasis: {
@@ -162,6 +171,25 @@
       },
       muted: {
         $value: '{border.danger.muted}',
+        $type: 'border',
+      },
+    },
+    draft: {
+      $description: 'Borders for draft/WIP state indicators. Use for draft pull requests and unpublished items.',
+      emphasis: {
+        $value: {
+          color: '{borderColor.draft.emphasis}',
+          style: 'solid',
+          width: '{borderWidth.default}',
+        },
+        $type: 'border',
+      },
+      muted: {
+        $value: {
+          color: '{borderColor.draft.muted}',
+          style: 'solid',
+          width: '{borderWidth.default}',
+        },
         $type: 'border',
       },
     },

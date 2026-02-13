@@ -163,7 +163,7 @@
     translucent: {
       $value: '{base.color.neutral.13}',
       $type: 'color',
-      $description: 'Semi-transparent border for overlays and layered elements',
+      $description: 'Semi-transparent border for overlays and layered elements. Border-specific token — no bgColor-translucent counterpart exists by design.',
       $extensions: {
         'org.primer.figma': {
           collection: 'mode',
