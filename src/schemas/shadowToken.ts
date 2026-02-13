@@ -56,11 +56,16 @@ export const shadowToken = baseToken
             'light-tritanopia': override,
             'light-protanopia-deuteranopia': override,
             'light-high-contrast': override,
+            'light-tritanopia-high-contrast': override,
+            'light-protanopia-deuteranopia-high-contrast': override,
             dark: override,
             'dark-tritanopia': override,
             'dark-protanopia-deuteranopia': override,
             'dark-high-contrast': override,
+            'dark-tritanopia-high-contrast': override,
+            'dark-protanopia-deuteranopia-high-contrast': override,
             'dark-dimmed': override,
+            'dark-dimmed-high-contrast': override,
           })
           .strict()
           .optional(),
