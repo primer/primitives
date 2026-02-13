@@ -356,7 +356,11 @@
       },
     },
     danger: {
-      $value: '#d1242f',
+      $value: {
+        colorSpace: 'srgb',
+        components: [0.82, 0.141, 0.184],
+        hex: '#d1242f',
+      },
       $type: 'color',
       $description: 'Danger text for errors and destructive actions',
       $extensions: {

@@ -6,7 +6,11 @@
   base: {
     color: {
       black: {
-        $value: '#010409',
+        $value: {
+          colorSpace: 'srgb',
+          components: [0.004, 0.016, 0.035],
+          hex: '#010409',
+        },
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -16,7 +20,11 @@
       },
       blue: {
         '0': {
-          $value: '#dff7ff',
+          $value: {
+            colorSpace: 'srgb',
+            components: [0.875, 0.969, 1],
+            hex: '#dff7ff',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -25,7 +33,11 @@
         },
         },
         '1': {
-          $value: '#9cd7ff',
+          $value: {
+            colorSpace: 'srgb',
+            components: [0.612, 0.843, 1],
+            hex: '#9cd7ff',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -34,7 +46,11 @@
         },
         },
         '2': {
-          $value: '#67b3fd',
+          $value: {
+            colorSpace: 'srgb',
+            components: [0.404, 0.702, 0.992],
+            hex: '#67b3fd',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -43,7 +59,11 @@
         },
         },
         '3': {
-          $value: '#368cf9',
+          $value: {
+            colorSpace: 'srgb',
+            components: [0.212, 0.549, 0.976],
+            hex: '#368cf9',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -52,7 +72,11 @@
         },
         },
         '4': {
-          $value: '#1168e3',
+          $value: {
+            colorSpace: 'srgb',
+            components: [0.067, 0.408, 0.89],
+            hex: '#1168e3',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -61,7 +85,11 @@
         },
         },
         '5': {
-          $value: '#0349b4',
+          $value: {
+            colorSpace: 'srgb',
+            components: [0.012, 0.286, 0.706],
+            hex: '#0349b4',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -70,7 +98,11 @@
         },
         },
         '6': {
-          $value: '#023b95',
+          $value: {
+            colorSpace: 'srgb',
+            components: [0.008, 0.231, 0.584],
+            hex: '#023b95',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -79,7 +111,11 @@
         },
         },
         '7': {
-          $value: '#022f7a',
+          $value: {
+            colorSpace: 'srgb',
+            components: [0.008, 0.184, 0.478],
+            hex: '#022f7a',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -88,7 +124,11 @@
         },
         },
         '8': {
-          $value: '#032563',
+          $value: {
+            colorSpace: 'srgb',
+            components: [0.012, 0.145, 0.388],
+            hex: '#032563',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -97,7 +137,11 @@
         },
         },
         '9': {
-          $value: '#021a4a',
+          $value: {
+            colorSpace: 'srgb',
+            components: [0.008, 0.102, 0.29],
+            hex: '#021a4a',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -108,7 +152,11 @@
       },
       green: {
         '0': {
-          $value: '#d2fedb',
+          $value: {
+            colorSpace: 'srgb',
+            components: [0.824, 0.996, 0.859],
+            hex: '#d2fedb',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -117,7 +165,11 @@
         },
         },
         '1': {
-          $value: '#82e596',
+          $value: {
+            colorSpace: 'srgb',
+            components: [0.51, 0.898, 0.588],
+            hex: '#82e596',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -126,7 +178,11 @@
         },
         },
         '2': {
-          $value: '#43c663',
+          $value: {
+            colorSpace: 'srgb',
+            components: [0.263, 0.776, 0.388],
+            hex: '#43c663',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -135,7 +191,11 @@
         },
         },
         '3': {
-          $value: '#26a148',
+          $value: {
+            colorSpace: 'srgb',
+            components: [0.149, 0.631, 0.282],
+            hex: '#26a148',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -144,7 +204,11 @@
         },
         },
         '4': {
-          $value: '#117f32',
+          $value: {
+            colorSpace: 'srgb',
+            components: [0.067, 0.498, 0.196],
+            hex: '#117f32',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -153,7 +217,11 @@
         },
         },
         '5': {
-          $value: '#055d20',
+          $value: {
+            colorSpace: 'srgb',
+            components: [0.02, 0.365, 0.125],
+            hex: '#055d20',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -162,7 +230,11 @@
         },
         },
         '6': {
-          $value: '#024c1a',
+          $value: {
+            colorSpace: 'srgb',
+            components: [0.008, 0.298, 0.102],
+            hex: '#024c1a',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -171,7 +243,11 @@
         },
         },
         '7': {
-          $value: '#013d14',
+          $value: {
+            colorSpace: 'srgb',
+            components: [0.004, 0.239, 0.078],
+            hex: '#013d14',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -180,7 +256,11 @@
         },
         },
         '8': {
-          $value: '#003110',
+          $value: {
+            colorSpace: 'srgb',
+            components: [0, 0.192, 0.063],
+            hex: '#003110',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -189,7 +269,11 @@
         },
         },
         '9': {
-          $value: '#00230b',
+          $value: {
+            colorSpace: 'srgb',
+            components: [0, 0.137, 0.043],
+            hex: '#00230b',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -200,7 +284,11 @@
       },
       yellow: {
         '0': {
-          $value: '#fcf7be',
+          $value: {
+            colorSpace: 'srgb',
+            components: [0.988, 0.969, 0.745],
+            hex: '#fcf7be',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -209,7 +297,11 @@
         },
         },
         '1': {
-          $value: '#f0ce53',
+          $value: {
+            colorSpace: 'srgb',
+            components: [0.941, 0.808, 0.325],
+            hex: '#f0ce53',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -218,7 +310,11 @@
         },
         },
         '2': {
-          $value: '#d5a824',
+          $value: {
+            colorSpace: 'srgb',
+            components: [0.835, 0.659, 0.141],
+            hex: '#d5a824',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -227,7 +323,11 @@
         },
         },
         '3': {
-          $value: '#b58407',
+          $value: {
+            colorSpace: 'srgb',
+            components: [0.71, 0.518, 0.027],
+            hex: '#b58407',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -236,7 +336,11 @@
         },
         },
         '4': {
-          $value: '#956400',
+          $value: {
+            colorSpace: 'srgb',
+            components: [0.584, 0.392, 0],
+            hex: '#956400',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -245,7 +349,11 @@
         },
         },
         '5': {
-          $value: '#744500',
+          $value: {
+            colorSpace: 'srgb',
+            components: [0.455, 0.271, 0],
+            hex: '#744500',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -254,7 +362,11 @@
         },
         },
         '6': {
-          $value: '#603700',
+          $value: {
+            colorSpace: 'srgb',
+            components: [0.376, 0.216, 0],
+            hex: '#603700',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -263,7 +375,11 @@
         },
         },
         '7': {
-          $value: '#4e2c00',
+          $value: {
+            colorSpace: 'srgb',
+            components: [0.306, 0.173, 0],
+            hex: '#4e2c00',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -272,7 +388,11 @@
         },
         },
         '8': {
-          $value: '#3f2200',
+          $value: {
+            colorSpace: 'srgb',
+            components: [0.247, 0.133, 0],
+            hex: '#3f2200',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -281,7 +401,11 @@
         },
         },
         '9': {
-          $value: '#2e1800',
+          $value: {
+            colorSpace: 'srgb',
+            components: [0.18, 0.094, 0],
+            hex: '#2e1800',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -292,7 +416,11 @@
       },
       orange: {
         '0': {
-          $value: '#fff2d5',
+          $value: {
+            colorSpace: 'srgb',
+            components: [1, 0.949, 0.835],
+            hex: '#fff2d5',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -301,7 +429,11 @@
         },
         },
         '1': {
-          $value: '#ffc67b',
+          $value: {
+            colorSpace: 'srgb',
+            components: [1, 0.776, 0.482],
+            hex: '#ffc67b',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -310,7 +442,11 @@
         },
         },
         '2': {
-          $value: '#f99636',
+          $value: {
+            colorSpace: 'srgb',
+            components: [0.976, 0.588, 0.212],
+            hex: '#f99636',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -319,7 +455,11 @@
         },
         },
         '3': {
-          $value: '#dc6d1a',
+          $value: {
+            colorSpace: 'srgb',
+            components: [0.863, 0.427, 0.102],
+            hex: '#dc6d1a',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -328,7 +468,11 @@
         },
         },
         '4': {
-          $value: '#b45105',
+          $value: {
+            colorSpace: 'srgb',
+            components: [0.706, 0.318, 0.02],
+            hex: '#b45105',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -337,7 +481,11 @@
         },
         },
         '5': {
-          $value: '#873800',
+          $value: {
+            colorSpace: 'srgb',
+            components: [0.529, 0.22, 0],
+            hex: '#873800',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -346,7 +494,11 @@
         },
         },
         '6': {
-          $value: '#702c00',
+          $value: {
+            colorSpace: 'srgb',
+            components: [0.439, 0.173, 0],
+            hex: '#702c00',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -355,7 +507,11 @@
         },
         },
         '7': {
-          $value: '#5b2300',
+          $value: {
+            colorSpace: 'srgb',
+            components: [0.357, 0.137, 0],
+            hex: '#5b2300',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -364,7 +520,11 @@
         },
         },
         '8': {
-          $value: '#491b00',
+          $value: {
+            colorSpace: 'srgb',
+            components: [0.286, 0.106, 0],
+            hex: '#491b00',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -373,7 +533,11 @@
         },
         },
         '9': {
-          $value: '#361200',
+          $value: {
+            colorSpace: 'srgb',
+            components: [0.212, 0.071, 0],
+            hex: '#361200',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -384,7 +548,11 @@
       },
       red: {
         '0': {
-          $value: '#fff0ee',
+          $value: {
+            colorSpace: 'srgb',
+            components: [1, 0.941, 0.933],
+            hex: '#fff0ee',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -393,7 +561,11 @@
         },
         },
         '1': {
-          $value: '#ffc1bc',
+          $value: {
+            colorSpace: 'srgb',
+            components: [1, 0.757, 0.737],
+            hex: '#ffc1bc',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -402,7 +574,11 @@
         },
         },
         '2': {
-          $value: '#ff8e8a',
+          $value: {
+            colorSpace: 'srgb',
+            components: [1, 0.557, 0.541],
+            hex: '#ff8e8a',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -411,7 +587,11 @@
         },
         },
         '3': {
-          $value: '#ee5a5d',
+          $value: {
+            colorSpace: 'srgb',
+            components: [0.933, 0.353, 0.365],
+            hex: '#ee5a5d',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -420,7 +600,11 @@
         },
         },
         '4': {
-          $value: '#d5232c',
+          $value: {
+            colorSpace: 'srgb',
+            components: [0.835, 0.137, 0.173],
+            hex: '#d5232c',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -429,7 +613,11 @@
         },
         },
         '5': {
-          $value: '#a0111f',
+          $value: {
+            colorSpace: 'srgb',
+            components: [0.627, 0.067, 0.122],
+            hex: '#a0111f',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -438,7 +626,11 @@
         },
         },
         '6': {
-          $value: '#86061d',
+          $value: {
+            colorSpace: 'srgb',
+            components: [0.525, 0.024, 0.114],
+            hex: '#86061d',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -447,7 +639,11 @@
         },
         },
         '7': {
-          $value: '#6e011a',
+          $value: {
+            colorSpace: 'srgb',
+            components: [0.431, 0.004, 0.102],
+            hex: '#6e011a',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -456,7 +652,11 @@
         },
         },
         '8': {
-          $value: '#5a0016',
+          $value: {
+            colorSpace: 'srgb',
+            components: [0.353, 0, 0.086],
+            hex: '#5a0016',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -465,7 +665,11 @@
         },
         },
         '9': {
-          $value: '#430011',
+          $value: {
+            colorSpace: 'srgb',
+            components: [0.263, 0, 0.067],
+            hex: '#430011',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -476,7 +680,11 @@
       },
       purple: {
         '0': {
-          $value: '#faf0fe',
+          $value: {
+            colorSpace: 'srgb',
+            components: [0.98, 0.941, 0.996],
+            hex: '#faf0fe',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -485,7 +693,11 @@
         },
         },
         '1': {
-          $value: '#e0c5ff',
+          $value: {
+            colorSpace: 'srgb',
+            components: [0.878, 0.773, 1],
+            hex: '#e0c5ff',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -494,7 +706,11 @@
         },
         },
         '2': {
-          $value: '#c49bff',
+          $value: {
+            colorSpace: 'srgb',
+            components: [0.769, 0.608, 1],
+            hex: '#c49bff',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -503,7 +719,11 @@
         },
         },
         '3': {
-          $value: '#a371f7',
+          $value: {
+            colorSpace: 'srgb',
+            components: [0.639, 0.443, 0.969],
+            hex: '#a371f7',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -512,7 +732,11 @@
         },
         },
         '4': {
-          $value: '#844ae7',
+          $value: {
+            colorSpace: 'srgb',
+            components: [0.518, 0.29, 0.906],
+            hex: '#844ae7',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -521,7 +745,11 @@
         },
         },
         '5': {
-          $value: '#622cbc',
+          $value: {
+            colorSpace: 'srgb',
+            components: [0.384, 0.173, 0.737],
+            hex: '#622cbc',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -530,7 +758,11 @@
         },
         },
         '6': {
-          $value: '#512598',
+          $value: {
+            colorSpace: 'srgb',
+            components: [0.318, 0.145, 0.596],
+            hex: '#512598',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -539,7 +771,11 @@
         },
         },
         '7': {
-          $value: '#411d7b',
+          $value: {
+            colorSpace: 'srgb',
+            components: [0.255, 0.114, 0.482],
+            hex: '#411d7b',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -548,7 +784,11 @@
         },
         },
         '8': {
-          $value: '#341763',
+          $value: {
+            colorSpace: 'srgb',
+            components: [0.204, 0.09, 0.388],
+            hex: '#341763',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -557,7 +797,11 @@
         },
         },
         '9': {
-          $value: '#260f49',
+          $value: {
+            colorSpace: 'srgb',
+            components: [0.149, 0.059, 0.286],
+            hex: '#260f49',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -568,7 +812,11 @@
       },
       pink: {
         '0': {
-          $value: '#feeff7',
+          $value: {
+            colorSpace: 'srgb',
+            components: [0.996, 0.937, 0.969],
+            hex: '#feeff7',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -577,7 +825,11 @@
         },
         },
         '1': {
-          $value: '#ffbde0',
+          $value: {
+            colorSpace: 'srgb',
+            components: [1, 0.741, 0.878],
+            hex: '#ffbde0',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -586,7 +838,11 @@
         },
         },
         '2': {
-          $value: '#fc87ca',
+          $value: {
+            colorSpace: 'srgb',
+            components: [0.988, 0.529, 0.792],
+            hex: '#fc87ca',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -595,7 +851,11 @@
         },
         },
         '3': {
-          $value: '#ed4baf',
+          $value: {
+            colorSpace: 'srgb',
+            components: [0.929, 0.294, 0.686],
+            hex: '#ed4baf',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -604,7 +864,11 @@
         },
         },
         '4': {
-          $value: '#c9248e',
+          $value: {
+            colorSpace: 'srgb',
+            components: [0.788, 0.141, 0.557],
+            hex: '#c9248e',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -613,7 +877,11 @@
         },
         },
         '5': {
-          $value: '#971368',
+          $value: {
+            colorSpace: 'srgb',
+            components: [0.592, 0.075, 0.408],
+            hex: '#971368',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -622,7 +890,11 @@
         },
         },
         '6': {
-          $value: '#7d0c57',
+          $value: {
+            colorSpace: 'srgb',
+            components: [0.49, 0.047, 0.341],
+            hex: '#7d0c57',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -631,7 +903,11 @@
         },
         },
         '7': {
-          $value: '#660847',
+          $value: {
+            colorSpace: 'srgb',
+            components: [0.4, 0.031, 0.278],
+            hex: '#660847',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -640,7 +916,11 @@
         },
         },
         '8': {
-          $value: '#53043a',
+          $value: {
+            colorSpace: 'srgb',
+            components: [0.325, 0.016, 0.227],
+            hex: '#53043a',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -649,7 +929,11 @@
         },
         },
         '9': {
-          $value: '#3e022b',
+          $value: {
+            colorSpace: 'srgb',
+            components: [0.243, 0.008, 0.169],
+            hex: '#3e022b',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -660,7 +944,11 @@
       },
       coral: {
         '0': {
-          $value: '#fff0ed',
+          $value: {
+            colorSpace: 'srgb',
+            components: [1, 0.941, 0.929],
+            hex: '#fff0ed',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -669,7 +957,11 @@
         },
         },
         '1': {
-          $value: '#ffc2b6',
+          $value: {
+            colorSpace: 'srgb',
+            components: [1, 0.761, 0.714],
+            hex: '#ffc2b6',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -678,7 +970,11 @@
         },
         },
         '2': {
-          $value: '#ff8f7e',
+          $value: {
+            colorSpace: 'srgb',
+            components: [1, 0.561, 0.494],
+            hex: '#ff8f7e',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -687,7 +983,11 @@
         },
         },
         '4': {
-          $value: '#ef5b48',
+          $value: {
+            colorSpace: 'srgb',
+            components: [0.937, 0.357, 0.282],
+            hex: '#ef5b48',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -696,7 +996,11 @@
         },
         },
         '3': {
-          $value: '#cd3425',
+          $value: {
+            colorSpace: 'srgb',
+            components: [0.804, 0.204, 0.145],
+            hex: '#cd3425',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -705,7 +1009,11 @@
         },
         },
         '5': {
-          $value: '#9f1710',
+          $value: {
+            colorSpace: 'srgb',
+            components: [0.624, 0.09, 0.063],
+            hex: '#9f1710',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -714,7 +1022,11 @@
         },
         },
         '6': {
-          $value: '#870706',
+          $value: {
+            colorSpace: 'srgb',
+            components: [0.529, 0.027, 0.024],
+            hex: '#870706',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -723,7 +1035,11 @@
         },
         },
         '7': {
-          $value: '#6f0107',
+          $value: {
+            colorSpace: 'srgb',
+            components: [0.435, 0.004, 0.027],
+            hex: '#6f0107',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -732,7 +1048,11 @@
         },
         },
         '8': {
-          $value: '#5b0002',
+          $value: {
+            colorSpace: 'srgb',
+            components: [0.357, 0, 0.008],
+            hex: '#5b0002',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -741,7 +1061,11 @@
         },
         },
         '9': {
-          $value: '#430200',
+          $value: {
+            colorSpace: 'srgb',
+            components: [0.263, 0.008, 0],
+            hex: '#430200',
+          },
           $type: 'color',
         $extensions: {
           'org.primer.figma': {
