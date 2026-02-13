@@ -47,15 +47,15 @@
   └── size: condensed | normal | spacious
 
 --controlStack-[size]-gap-[density]
-  ├── size: xsmall | small | medium | large | xlarge
-  └── density: condensed | normal | spacious
+  ├── size: small | medium | large
+  └── density: condensed | auto | spacious
 ```
 
 ### Typography Tokens
 
 ```
 --text-[role]-shorthand-[size]
-  ├── role: title | body | subtitle | caption | codeBlock | codeInline
+  ├── role: display | title | body | subtitle | caption | codeBlock | codeInline
   └── size: small | medium | large
 ```
 
