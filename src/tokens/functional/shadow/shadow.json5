@@ -688,6 +688,318 @@
                 },
               ],
             },
+            'light-high-contrast': {
+              $value: [
+                {
+                  color: '{overlay.borderColor}',
+                  alpha: 1,
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: 1,
+                    unit: 'px',
+                  },
+                },
+                {
+                  color: '{base.color.neutral.12}',
+                  alpha: 0.08,
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 8,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 16,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: -4,
+                    unit: 'px',
+                  },
+                },
+                {
+                  color: '{base.color.neutral.12}',
+                  alpha: 0.08,
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 4,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 32,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: -4,
+                    unit: 'px',
+                  },
+                },
+                {
+                  color: '{base.color.neutral.12}',
+                  alpha: 0.08,
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 24,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 48,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: -12,
+                    unit: 'px',
+                  },
+                },
+                {
+                  color: '{base.color.neutral.12}',
+                  alpha: 0.08,
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 48,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 96,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: -24,
+                    unit: 'px',
+                  },
+                },
+              ],
+            },
+            'light-protanopia-deuteranopia-high-contrast': {
+              $value: [
+                {
+                  color: '{overlay.borderColor}',
+                  alpha: 1,
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: 1,
+                    unit: 'px',
+                  },
+                },
+                {
+                  color: '{base.color.neutral.12}',
+                  alpha: 0.08,
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 8,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 16,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: -4,
+                    unit: 'px',
+                  },
+                },
+                {
+                  color: '{base.color.neutral.12}',
+                  alpha: 0.08,
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 4,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 32,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: -4,
+                    unit: 'px',
+                  },
+                },
+                {
+                  color: '{base.color.neutral.12}',
+                  alpha: 0.08,
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 24,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 48,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: -12,
+                    unit: 'px',
+                  },
+                },
+                {
+                  color: '{base.color.neutral.12}',
+                  alpha: 0.08,
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 48,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 96,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: -24,
+                    unit: 'px',
+                  },
+                },
+              ],
+            },
+            'light-tritanopia-high-contrast': {
+              $value: [
+                {
+                  color: '{overlay.borderColor}',
+                  alpha: 1,
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: 1,
+                    unit: 'px',
+                  },
+                },
+                {
+                  color: '{base.color.neutral.12}',
+                  alpha: 0.08,
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 8,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 16,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: -4,
+                    unit: 'px',
+                  },
+                },
+                {
+                  color: '{base.color.neutral.12}',
+                  alpha: 0.08,
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 4,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 32,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: -4,
+                    unit: 'px',
+                  },
+                },
+                {
+                  color: '{base.color.neutral.12}',
+                  alpha: 0.08,
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 24,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 48,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: -12,
+                    unit: 'px',
+                  },
+                },
+                {
+                  color: '{base.color.neutral.12}',
+                  alpha: 0.08,
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 48,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 96,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: -24,
+                    unit: 'px',
+                  },
+                },
+              ],
+            },
           },
           'org.primer.llm': {
             usage: ['popover', 'action-menu', 'select-panel', 'autocomplete'],
@@ -790,6 +1102,138 @@
                 },
               ],
             },
+            'light-high-contrast': {
+              $value: [
+                {
+                  color: '{overlay.borderColor}',
+                  alpha: 1,
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: 1,
+                    unit: 'px',
+                  },
+                },
+                {
+                  color: '{base.color.neutral.12}',
+                  alpha: 0.24,
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 40,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 80,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                },
+              ],
+            },
+            'light-protanopia-deuteranopia-high-contrast': {
+              $value: [
+                {
+                  color: '{overlay.borderColor}',
+                  alpha: 1,
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: 1,
+                    unit: 'px',
+                  },
+                },
+                {
+                  color: '{base.color.neutral.12}',
+                  alpha: 0.24,
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 40,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 80,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                },
+              ],
+            },
+            'light-tritanopia-high-contrast': {
+              $value: [
+                {
+                  color: '{overlay.borderColor}',
+                  alpha: 1,
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: 1,
+                    unit: 'px',
+                  },
+                },
+                {
+                  color: '{base.color.neutral.12}',
+                  alpha: 0.24,
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 40,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 80,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                },
+              ],
+            },
           },
           'org.primer.llm': {
             usage: ['modal', 'dialog', 'full-screen-overlay'],
@@ -883,6 +1327,138 @@
                   },
                   blur: {
                     value: 64,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                },
+              ],
+            },
+            'light-high-contrast': {
+              $value: [
+                {
+                  color: '{overlay.borderColor}',
+                  alpha: 1,
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: 1,
+                    unit: 'px',
+                  },
+                },
+                {
+                  color: '{base.color.neutral.12}',
+                  alpha: 0.32,
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 56,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 112,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                },
+              ],
+            },
+            'light-protanopia-deuteranopia-high-contrast': {
+              $value: [
+                {
+                  color: '{overlay.borderColor}',
+                  alpha: 1,
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: 1,
+                    unit: 'px',
+                  },
+                },
+                {
+                  color: '{base.color.neutral.12}',
+                  alpha: 0.32,
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 56,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 112,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                },
+              ],
+            },
+            'light-tritanopia-high-contrast': {
+              $value: [
+                {
+                  color: '{overlay.borderColor}',
+                  alpha: 1,
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: 1,
+                    unit: 'px',
+                  },
+                },
+                {
+                  color: '{base.color.neutral.12}',
+                  alpha: 0.32,
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 56,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 112,
                     unit: 'px',
                   },
                   spread: {

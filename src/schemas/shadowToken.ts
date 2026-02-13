@@ -2,6 +2,7 @@ import {z} from 'zod'
 import {baseToken} from './baseToken.js'
 import {referenceValue} from './referenceValue.js'
 import {colorHexValue} from './colorHexValue.js'
+import {colorW3cValue} from './colorW3cValue.js'
 import {alphaValue} from './alphaValue.js'
 import {dimensionValue} from './dimensionValue.js'
 import {tokenType} from './tokenType.js'
@@ -10,8 +11,8 @@ import {llmExtension} from './llmExtension.js'
 
 export const shadowValue = z
   .object({
-    color: z.union([colorHexValue, referenceValue]),
-    alpha: z.union([alphaValue, referenceValue]),
+    color: z.union([colorHexValue, colorW3cValue, referenceValue]),
+    alpha: z.union([alphaValue, referenceValue]).optional(),
     offsetX: z.union([dimensionValue, referenceValue]),
     offsetY: z.union([dimensionValue, referenceValue]),
     blur: z.union([dimensionValue, referenceValue]),
@@ -55,11 +56,16 @@ export const shadowToken = baseToken
             'light-tritanopia': override,
             'light-protanopia-deuteranopia': override,
             'light-high-contrast': override,
+            'light-tritanopia-high-contrast': override,
+            'light-protanopia-deuteranopia-high-contrast': override,
             dark: override,
             'dark-tritanopia': override,
             'dark-protanopia-deuteranopia': override,
             'dark-high-contrast': override,
+            'dark-tritanopia-high-contrast': override,
+            'dark-protanopia-deuteranopia-high-contrast': override,
             'dark-dimmed': override,
+            'dark-dimmed-high-contrast': override,
           })
           .strict()
           .optional(),

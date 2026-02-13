@@ -5,6 +5,7 @@ import {checkRequiredTokenProperties} from './utilities/checkRequiredTokenProper
 import type {ShadowTokenValue} from '../types/shadowTokenValue.js'
 import type {DimensionTokenValue} from '../types/dimensionTokenValue.js'
 import {getTokenValue} from './utilities/getTokenValue.js'
+import {normalizeColorValue} from './utilities/normalizeColorValue.js'
 import type {PlatformConfig, Transform, TransformedToken} from 'style-dictionary/types'
 
 /**
@@ -43,7 +44,10 @@ export const shadowToCss: Transform = {
         if (typeof shadow === 'string') return shadow
         checkRequiredTokenProperties(shadow, ['color', 'offsetX', 'offsetY', 'blur', 'spread'])
         /*css box shadow:  inset? | offset-x | offset-y | blur-radius | spread-radius | color */
-        return `${shadow.inset === true ? 'inset ' : ''}${dimensionToCss(shadow.offsetX)} ${dimensionToCss(shadow.offsetY)} ${dimensionToCss(shadow.blur)} ${dimensionToCss(shadow.spread)} ${toHex(alpha(getTokenValue({...token, ...{[valueProp]: shadow}}, 'color'), shadow.alpha || 1, token, config))}`
+        const colorString = normalizeColorValue(getTokenValue({...token, ...{[valueProp]: shadow}}, 'color'))
+        const colorHex =
+          shadow.alpha !== undefined ? toHex(alpha(colorString, shadow.alpha, token, config)) : toHex(colorString)
+        return `${shadow.inset === true ? 'inset ' : ''}${dimensionToCss(shadow.offsetX)} ${dimensionToCss(shadow.offsetY)} ${dimensionToCss(shadow.blur)} ${dimensionToCss(shadow.spread)} ${colorHex}`
       })
       .join(', ')
   },

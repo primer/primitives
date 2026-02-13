@@ -63,6 +63,33 @@ describe('Transformer: shadowToCss', () => {
       expect(input.map(item => shadowToCss.transform(item, {}, {}))).toStrictEqual(expectedOutput)
     })
 
+    it('transforms W3C shadow with alpha: 0 to fully transparent', () => {
+      const input = getMockToken({
+        $value: {
+          color: '#000000',
+          offsetX: {value: 0, unit: 'px'},
+          offsetY: {value: 2, unit: 'px'},
+          blur: {value: 1, unit: 'px'},
+          spread: {value: 0, unit: 'px'},
+          alpha: 0,
+        },
+      })
+      expect(shadowToCss.transform(input, {}, {})).toBe('0 2px 1px 0 #00000000')
+    })
+
+    it('preserves color as-is when alpha is omitted', () => {
+      const input = getMockToken({
+        $value: {
+          color: '#ff000080',
+          offsetX: {value: 0, unit: 'px'},
+          offsetY: {value: 2, unit: 'px'},
+          blur: {value: 1, unit: 'px'},
+          spread: {value: 0, unit: 'px'},
+        },
+      })
+      expect(shadowToCss.transform(input, {}, {})).toBe('0 2px 1px 0 #ff000080')
+    })
+
     it('transforms W3C multi-layer shadow', () => {
       const item = getMockToken({
         $value: [
@@ -203,6 +230,60 @@ describe('Transformer: shadowToCss', () => {
           {},
         ),
       ).toThrowError()
+    })
+  })
+
+  describe('W3C color object support', () => {
+    it('transforms shadow with W3C color object', () => {
+      const input = getMockToken({
+        $value: {
+          color: {colorSpace: 'srgb', components: [0, 0, 0], hex: '#000000'},
+          offsetX: {value: 0, unit: 'px'},
+          offsetY: {value: 2, unit: 'px'},
+          blur: {value: 1, unit: 'px'},
+          spread: {value: 0, unit: 'px'},
+        },
+      })
+      expect(shadowToCss.transform(input, {}, {})).toBe('0 2px 1px 0 #000000')
+    })
+
+    it('transforms shadow with W3C color object and alpha', () => {
+      const input = getMockToken({
+        $value: {
+          color: {colorSpace: 'srgb', components: [0, 0, 0], hex: '#000000'},
+          offsetX: {value: 0, unit: 'px'},
+          offsetY: {value: 2, unit: 'px'},
+          blur: {value: 1, unit: 'px'},
+          spread: {value: 0, unit: 'px'},
+          alpha: 0.5,
+        },
+      })
+      expect(shadowToCss.transform(input, {}, {})).toBe('0 2px 1px 0 #00000080')
+    })
+
+    it('produces same output for hex string and W3C color object', () => {
+      const hexInput = getMockToken({
+        $value: {
+          color: '#000000',
+          offsetX: {value: 0, unit: 'px'},
+          offsetY: {value: 2, unit: 'px'},
+          blur: {value: 1, unit: 'px'},
+          spread: {value: 0, unit: 'px'},
+          alpha: 0.5,
+        },
+      })
+      const w3cInput = getMockToken({
+        $value: {
+          color: {colorSpace: 'srgb', components: [0, 0, 0], hex: '#000000'},
+          offsetX: {value: 0, unit: 'px'},
+          offsetY: {value: 2, unit: 'px'},
+          blur: {value: 1, unit: 'px'},
+          spread: {value: 0, unit: 'px'},
+          alpha: 0.5,
+        },
+      })
+
+      expect(shadowToCss.transform(hexInput, {}, {})).toStrictEqual(shadowToCss.transform(w3cInput, {}, {}))
     })
   })
 })

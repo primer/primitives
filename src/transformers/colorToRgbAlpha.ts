@@ -1,6 +1,7 @@
 import {isColorWithAlpha} from '../filters/index.js'
 import {alpha} from './utilities/alpha.js'
 import {getTokenValue} from './utilities/getTokenValue.js'
+import {normalizeColorValue} from './utilities/normalizeColorValue.js'
 import type {PlatformConfig, Transform, TransformedToken} from 'style-dictionary/types'
 /**
  * @description replaces tokens value with `rgba` color using the tokens `alpha` property to specify the value used for alpha
@@ -14,7 +15,9 @@ export const colorToRgbAlpha: Transform = {
   transitive: true,
   filter: isColorWithAlpha,
   transform: (token: TransformedToken, config: PlatformConfig) => {
-    if (token.alpha === null) return getTokenValue(token)
-    return alpha(getTokenValue(token), token.alpha, token, config)
+    const rawValue = getTokenValue(token)
+    const colorString = normalizeColorValue(rawValue)
+    if (token.alpha === null) return colorString
+    return alpha(colorString, token.alpha, token, config)
   },
 }
