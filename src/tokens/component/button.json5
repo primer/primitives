@@ -19,6 +19,19 @@
               }
             }
           }
+        },
+        disabled: {
+          '$value': '{control.fgColor.disabled}',
+          '$type': 'color',
+          '$extensions': {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component (internal)',
+              scopes: [
+                'fgColor'
+              ]
+            }
+          }
         }
       },
       bgColor: {
@@ -305,6 +318,19 @@
                   hex: '#ffffff',
                 }
               }
+            }
+          }
+        },
+        disabled: {
+          '$value': '{button.primary.fgColor.disabled}',
+          '$type': 'color',
+          '$extensions': {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component (internal)',
+              scopes: [
+                'fgColor'
+              ]
             }
           }
         }
@@ -1709,6 +1735,19 @@
               }
             }
           }
+        },
+        disabled: {
+          '$value': '{button.danger.fgColor.disabled}',
+          '$type': 'color',
+          '$extensions': {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component (internal)',
+              scopes: [
+                'fgColor'
+              ]
+            }
+          }
         }
       },
       bgColor: {
@@ -2000,6 +2039,7 @@
       }
     },
     inactive: {
+      $description: 'Single-state button variant for non-interactive/inactive buttons (e.g. unselected segmented control tabs). Does not have rest/hover/active/disabled interaction states — "inactive" is the state.',
       fgColor: {
         '$value': '{base.color.neutral.9}',
         '$type': 'color',
@@ -2068,6 +2108,7 @@
       }
     },
     star: {
+      $description: 'Star icon color for the starred/filled state of the star button. Single-state token — does not have rest/hover/active/disabled interaction states.',
       iconColor: {
         '$value': '{base.color.yellow.2}',
         '$type': 'color',
@@ -3000,6 +3041,7 @@
       }
     },
     inactive: {
+      $description: 'Keybinding hint colors for inactive button state. Single-state — does not have rest/hover/active/disabled interaction states.',
       bgColor: {
         '$value': '{base.color.neutral.2}',
         '$type': 'color',

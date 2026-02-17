@@ -46,11 +46,11 @@ export const durationToCss: Transform = {
       )
     }
 
-    // Convert ms >= 1000 to seconds for cleaner output
-    if (unit === 'ms' && value >= 1000) {
-      return `${value / 1000}s`
+    // Always output in ms
+    if (unit === 's') {
+      return `${value * 1000}ms`
     }
 
-    return `${value}${unit}`
+    return `${value}ms`
   },
 }

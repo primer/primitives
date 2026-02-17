@@ -1,5 +1,12 @@
 {
   borderColor: {
+    $description: 'Border color tokens that resolve to a single color value (e.g. #cf222e). For composite border shorthand (color + style + width), use border.* tokens instead.',
+    $extensions: {
+      'org.primer.llm': {
+        usage: ['border-color', 'border-styling'],
+        rules: 'These are COLOR-ONLY tokens (resolve to a hex value like #cf222e). Use for the CSS `border-color` property. Do NOT use for the CSS `border` shorthand — use border.* tokens instead.',
+      },
+    },
     default: {
       $value: '{base.color.neutral.6}',
       $type: 'color',
@@ -163,7 +170,7 @@
     translucent: {
       $value: '{base.color.neutral.13}',
       $type: 'color',
-      $description: 'Semi-transparent border for overlays and layered elements',
+      $description: 'Semi-transparent border for overlays and layered elements. Border-specific token — no bgColor-translucent counterpart exists by design.',
       $extensions: {
         'org.primer.figma': {
           collection: 'mode',

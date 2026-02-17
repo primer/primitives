@@ -9,18 +9,18 @@ describe('Transformer: durationToCss', () => {
     expect(durationToCss.transform(input, {}, {})).toStrictEqual('100ms')
   })
 
-  it('transforms duration object with s unit', () => {
+  it('converts s unit to ms', () => {
     const input = getMockToken({
       value: {value: 1.5, unit: 's'},
     })
-    expect(durationToCss.transform(input, {}, {})).toStrictEqual('1.5s')
+    expect(durationToCss.transform(input, {}, {})).toStrictEqual('1500ms')
   })
 
-  it('converts ms >= 1000 to seconds', () => {
+  it('keeps ms >= 1000 as ms', () => {
     const input = getMockToken({
       value: {value: 1500, unit: 'ms'},
     })
-    expect(durationToCss.transform(input, {}, {})).toStrictEqual('1.5s')
+    expect(durationToCss.transform(input, {}, {})).toStrictEqual('1500ms')
   })
 
   it('handles 0ms correctly', () => {

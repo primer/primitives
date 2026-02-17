@@ -24,7 +24,7 @@
     $extensions: {
       'org.primer.llm': {
         usage: ['container-border', 'card-border', 'divider', 'input-border', 'panel-border'],
-        rules: 'Use default for standard container borders. Use muted for subtle dividers and low-emphasis boundaries. Use emphasis when borders need to stand out. Match status border colors to their semantic meaning (danger for errors, success for positive states). Use disabled only for non-interactive or disabled elements. Prefer semantic variants (open/closed, done) over raw color variants when the context matches.',
+        rules: 'These are COMPOSITE border shorthand tokens that resolve to CSS shorthand values like "1px solid #color". Use for the CSS `border` property. Do NOT use for `border-color` — use borderColor.* tokens instead. Every border.* token includes width, style, AND color. Use default for standard container borders. Use muted for subtle dividers and low-emphasis boundaries. Use emphasis when borders need to stand out. Match status border colors to their semantic meaning (danger for errors, success for positive states). Use disabled only for non-interactive or disabled elements. Prefer semantic variants (open/closed, done) over raw color variants when the context matches.',
       },
     },
     default: {
@@ -62,6 +62,15 @@
     transparent: {
       $value: {
         color: '{borderColor.transparent}',
+        style: 'solid',
+        width: '{borderWidth.default}',
+      },
+      $type: 'border',
+    },
+    translucent: {
+      $description: 'Semi-transparent border shorthand for overlays and layered elements. Border-specific token — no bgColor-translucent counterpart exists by design.',
+      $value: {
+        color: '{borderColor.translucent}',
         style: 'solid',
         width: '{borderWidth.default}',
       },
@@ -162,6 +171,25 @@
       },
       muted: {
         $value: '{border.danger.muted}',
+        $type: 'border',
+      },
+    },
+    draft: {
+      $description: 'Borders for draft/WIP state indicators. Use for draft pull requests and unpublished items.',
+      emphasis: {
+        $value: {
+          color: '{borderColor.draft.emphasis}',
+          style: 'solid',
+          width: '{borderWidth.default}',
+        },
+        $type: 'border',
+      },
+      muted: {
+        $value: {
+          color: '{borderColor.draft.muted}',
+          style: 'solid',
+          width: '{borderWidth.default}',
+        },
         $type: 'border',
       },
     },
