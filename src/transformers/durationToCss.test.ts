@@ -16,6 +16,14 @@ describe('Transformer: durationToCss', () => {
     expect(durationToCss.transform(input, {}, {})).toStrictEqual('1500ms')
   })
 
+  it('avoids floating-point noise when converting s to ms', () => {
+    const input = getMockToken({
+      value: {value: 0.0049, unit: 's'},
+    })
+    // 0.0049 * 1000 === 4.8999999999999995 in IEEE 754; must output clean 4.9ms
+    expect(durationToCss.transform(input, {}, {})).toStrictEqual('4.9ms')
+  })
+
   it('keeps ms >= 1000 as ms', () => {
     const input = getMockToken({
       value: {value: 1500, unit: 'ms'},
