@@ -370,7 +370,11 @@
         },
       },
       emphasis: {
-        $value: '#1f883d',
+        $value: {
+          colorSpace: 'hsl',
+          components: [137.1, 62.9, 32.7],
+          hex: '#1f883d',
+        },
         $type: 'color',
         $description: 'Strong success background for prominent positive actions',
         $extensions: {
@@ -887,7 +891,11 @@
               alpha: 0.1,
             },
             'dark-tritanopia': {
-              $value: '#db61a2',
+              $value: {
+                colorSpace: 'hsl',
+                components: [328, 62.9, 62],
+                hex: '#db61a2',
+              },
               alpha: 0.1,
             },
           },

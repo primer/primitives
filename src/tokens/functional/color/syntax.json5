@@ -228,7 +228,11 @@
         },
       },
       cyan: {
-        $value: '#1b7c83',
+        $value: {
+          colorSpace: 'hsl',
+          components: [184, 65.8, 31],
+          hex: '#1b7c83',
+        },
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -241,7 +245,11 @@
         },
       },
       'cyan-bright': {
-        $value: '#3192aa',
+        $value: {
+          colorSpace: 'hsl',
+          components: [191.9, 55.3, 42.9],
+          hex: '#3192aa',
+        },
         $type: 'color',
         $extensions: {
           'org.primer.figma': {

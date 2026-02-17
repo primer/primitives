@@ -20,7 +20,11 @@
           },
         },
         hover: {
-          $value: '#caecff',
+          $value: {
+            colorSpace: 'hsl',
+            components: [201.5, 100, 89.6],
+            hex: '#caecff',
+          },
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -30,16 +34,28 @@
             },
             'org.primer.overrides': {
               dark: {
-                $value: '#3a8cfd',
+                $value: {
+                  colorSpace: 'hsl',
+                  components: [214.8, 98, 61],
+                  hex: '#3a8cfd',
+                },
                 alpha: 0.36,
               },
               'dark-dimmed': {
-                $value: '#4285e5',
+                $value: {
+                  colorSpace: 'hsl',
+                  components: [215.3, 75.8, 57.8],
+                  hex: '#4285e5',
+                },
                 alpha: 0.36,
               },
               'light-high-contrast': '#c7e9ff',
               'dark-high-contrast': {
-                $value: '#5dadff',
+                $value: {
+                  colorSpace: 'hsl',
+                  components: [210.4, 100, 68.2],
+                  hex: '#5dadff',
+                },
                 alpha: 0.36,
               },
             },

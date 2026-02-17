@@ -356,7 +356,11 @@
       },
     },
     danger: {
-      $value: '#d1242f',
+      $value: {
+        colorSpace: 'hsl',
+        components: [356.2, 70.6, 48],
+        hex: '#d1242f',
+      },
       $type: 'color',
       $description: 'Danger text for errors and destructive actions',
       $extensions: {
