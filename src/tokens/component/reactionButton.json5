@@ -21,8 +21,8 @@
         },
         hover: {
           $value: {
-            colorSpace: 'srgb',
-            components: [0.792, 0.925, 1],
+            colorSpace: 'hsl',
+            components: [201.5, 100, 89.6],
             hex: '#caecff',
           },
           $type: 'color',
@@ -35,16 +35,16 @@
             'org.primer.overrides': {
               dark: {
                 $value: {
-                  colorSpace: 'srgb',
-                  components: [0.227, 0.549, 0.992],
+                  colorSpace: 'hsl',
+                  components: [214.8, 98, 61],
                   hex: '#3a8cfd',
                 },
                 alpha: 0.36,
               },
               'dark-dimmed': {
                 $value: {
-                  colorSpace: 'srgb',
-                  components: [0.259, 0.522, 0.898],
+                  colorSpace: 'hsl',
+                  components: [215.3, 75.8, 57.8],
                   hex: '#4285e5',
                 },
                 alpha: 0.36,
@@ -52,8 +52,8 @@
               'light-high-contrast': '#c7e9ff',
               'dark-high-contrast': {
                 $value: {
-                  colorSpace: 'srgb',
-                  components: [0.365, 0.678, 1],
+                  colorSpace: 'hsl',
+                  components: [210.4, 100, 68.2],
                   hex: '#5dadff',
                 },
                 alpha: 0.36,

@@ -230,8 +230,8 @@
             dark: '{borderColor.default}',
             'dark-dimmed': {
               $value: {
-                colorSpace: 'srgb',
-                components: [0.239, 0.267, 0.302],
+                colorSpace: 'hsl',
+                components: [213.8, 11.6, 27.1],
                 hex: '#3d444d',
               },
             },
@@ -737,24 +737,24 @@
               },
               'dark-high-contrast': {
                 $value: {
-                  colorSpace: 'srgb',
-                  components: [0.773, 0.067, 0.125],
+                  colorSpace: 'hsl',
+                  components: [355, 84.1, 42],
                   hex: '#c51120',
                 },
                 alpha: 1,
               },
               'dark-dimmed-high-contrast': {
                 $value: {
-                  colorSpace: 'srgb',
-                  components: [0.773, 0.067, 0.125],
+                  colorSpace: 'hsl',
+                  components: [355, 84.1, 42],
                   hex: '#c51120',
                 },
                 alpha: 1,
               },
               'dark-tritanopia-high-contrast': {
                 $value: {
-                  colorSpace: 'srgb',
-                  components: [0.773, 0.067, 0.125],
+                  colorSpace: 'hsl',
+                  components: [355, 84.1, 42],
                   hex: '#c51120',
                 },
                 alpha: 1,
@@ -764,15 +764,15 @@
               },
               'light-high-contrast': {
                 $value: {
-                  colorSpace: 'srgb',
-                  components: [0.549, 0.043, 0.114],
+                  colorSpace: 'hsl',
+                  components: [351.6, 85.4, 29.6],
                   hex: '#8c0b1d',
                 },
               },
               'light-tritanopia-high-contrast': {
                 $value: {
-                  colorSpace: 'srgb',
-                  components: [0.549, 0.043, 0.114],
+                  colorSpace: 'hsl',
+                  components: [351.6, 85.4, 29.6],
                   hex: '#8c0b1d',
                 },
               },
@@ -803,8 +803,8 @@
         },
         hover: {
           $value: {
-            colorSpace: 'srgb',
-            components: [0.031, 0.376, 0.792],
+            colorSpace: 'hsl',
+            components: [212.8, 92.4, 41.2],
             hex: '#0860ca',
           },
           $type: 'color',
@@ -818,57 +818,57 @@
               dark: '#2A7AEF',
               'dark-high-contrast': {
                 $value: {
-                  colorSpace: 'srgb',
-                  components: [0.169, 0.392, 0.757],
+                  colorSpace: 'hsl',
+                  components: [217.2, 63.6, 46.3],
                   hex: '#2b64c1',
                 },
               },
               'dark-tritanopia-high-contrast': {
                 $value: {
-                  colorSpace: 'srgb',
-                  components: [0.169, 0.392, 0.757],
+                  colorSpace: 'hsl',
+                  components: [217.2, 63.6, 46.3],
                   hex: '#2b64c1',
                 },
               },
               'dark-protanopia-deuteranopia-high-contrast': {
                 $value: {
-                  colorSpace: 'srgb',
-                  components: [0.169, 0.392, 0.757],
+                  colorSpace: 'hsl',
+                  components: [217.2, 63.6, 46.3],
                   hex: '#2b64c1',
                 },
               },
               'dark-dimmed': {
                 $value: {
-                  colorSpace: 'srgb',
-                  components: [0.22, 0.463, 0.827],
+                  colorSpace: 'hsl',
+                  components: [216, 63.8, 52.4],
                   hex: '#3876d3',
                 },
               },
               'dark-dimmed-high-contrast': {
                 $value: {
-                  colorSpace: 'srgb',
-                  components: [0.169, 0.392, 0.757],
+                  colorSpace: 'hsl',
+                  components: [217.2, 63.6, 46.3],
                   hex: '#2b64c1',
                 },
               },
               'light-high-contrast': {
                 $value: {
-                  colorSpace: 'srgb',
-                  components: [0.012, 0.267, 0.659],
+                  colorSpace: 'hsl',
+                  components: [216.4, 96.5, 33.5],
                   hex: '#0344a8',
                 },
               },
               'light-tritanopia-high-contrast': {
                 $value: {
-                  colorSpace: 'srgb',
-                  components: [0.012, 0.267, 0.659],
+                  colorSpace: 'hsl',
+                  components: [216.4, 96.5, 33.5],
                   hex: '#0344a8',
                 },
               },
               'light-protanopia-deuteranopia-high-contrast': {
                 $value: {
-                  colorSpace: 'srgb',
-                  components: [0.012, 0.267, 0.659],
+                  colorSpace: 'hsl',
+                  components: [216.4, 96.5, 33.5],
                   hex: '#0344a8',
                 },
               },
@@ -877,8 +877,8 @@
         },
         active: {
           $value: {
-            colorSpace: 'srgb',
-            components: [0.027, 0.341, 0.729],
+            colorSpace: 'hsl',
+            components: [213.2, 92.7, 37.8],
             hex: '#0757ba',
           },
           $type: 'color',
@@ -892,57 +892,57 @@
               dark: '#3685F3',
               'dark-high-contrast': {
                 $value: {
-                  colorSpace: 'srgb',
-                  components: [0.235, 0.475, 0.816],
+                  colorSpace: 'hsl',
+                  components: [215.3, 61.2, 52.5],
                   hex: '#3c79d0',
                 },
               },
               'dark-protanopia-deuteranopia-high-contrast': {
                 $value: {
-                  colorSpace: 'srgb',
-                  components: [0.235, 0.475, 0.816],
+                  colorSpace: 'hsl',
+                  components: [215.3, 61.2, 52.5],
                   hex: '#3c79d0',
                 },
               },
               'dark-tritanopia-high-contrast': {
                 $value: {
-                  colorSpace: 'srgb',
-                  components: [0.235, 0.475, 0.816],
+                  colorSpace: 'hsl',
+                  components: [215.3, 61.2, 52.5],
                   hex: '#3c79d0',
                 },
               },
               'dark-dimmed': {
                 $value: {
-                  colorSpace: 'srgb',
-                  components: [0.247, 0.498, 0.859],
+                  colorSpace: 'hsl',
+                  components: [215.4, 68.4, 55.3],
                   hex: '#3f7fdb',
                 },
               },
               'dark-dimmed-high-contrast': {
                 $value: {
-                  colorSpace: 'srgb',
-                  components: [0.235, 0.475, 0.816],
+                  colorSpace: 'hsl',
+                  components: [215.3, 61.2, 52.5],
                   hex: '#3c79d0',
                 },
               },
               'light-high-contrast': {
                 $value: {
-                  colorSpace: 'srgb',
-                  components: [0.012, 0.247, 0.616],
+                  colorSpace: 'hsl',
+                  components: [216.6, 96.3, 31.4],
                   hex: '#033f9d',
                 },
               },
               'light-tritanopia-high-contrast': {
                 $value: {
-                  colorSpace: 'srgb',
-                  components: [0.012, 0.247, 0.616],
+                  colorSpace: 'hsl',
+                  components: [216.6, 96.3, 31.4],
                   hex: '#033f9d',
                 },
               },
               'light-protanopia-deuteranopia-high-contrast': {
                 $value: {
-                  colorSpace: 'srgb',
-                  components: [0.012, 0.247, 0.616],
+                  colorSpace: 'hsl',
+                  components: [216.6, 96.3, 31.4],
                   hex: '#033f9d',
                 },
               },
@@ -1043,8 +1043,8 @@
               },
               'dark-dimmed': {
                 $value: {
-                  colorSpace: 'srgb',
-                  components: [0.22, 0.463, 0.827],
+                  colorSpace: 'hsl',
+                  components: [216, 63.8, 52.4],
                   hex: '#3876d3',
                 },
               },
@@ -1053,22 +1053,22 @@
               },
               'light-high-contrast': {
                 $value: {
-                  colorSpace: 'srgb',
-                  components: [0.012, 0.267, 0.659],
+                  colorSpace: 'hsl',
+                  components: [216.4, 96.5, 33.5],
                   hex: '#0344a8',
                 },
               },
               'light-tritanopia-high-contrast': {
                 $value: {
-                  colorSpace: 'srgb',
-                  components: [0.012, 0.267, 0.659],
+                  colorSpace: 'hsl',
+                  components: [216.4, 96.5, 33.5],
                   hex: '#0344a8',
                 },
               },
               'light-protanopia-deuteranopia-high-contrast': {
                 $value: {
-                  colorSpace: 'srgb',
-                  components: [0.012, 0.267, 0.659],
+                  colorSpace: 'hsl',
+                  components: [216.4, 96.5, 33.5],
                   hex: '#0344a8',
                 },
               },
@@ -1097,8 +1097,8 @@
               },
               'dark-dimmed': {
                 $value: {
-                  colorSpace: 'srgb',
-                  components: [0.247, 0.498, 0.859],
+                  colorSpace: 'hsl',
+                  components: [215.4, 68.4, 55.3],
                   hex: '#3f7fdb',
                 },
               },
@@ -1107,22 +1107,22 @@
               },
               'light-high-contrast': {
                 $value: {
-                  colorSpace: 'srgb',
-                  components: [0.012, 0.247, 0.616],
+                  colorSpace: 'hsl',
+                  components: [216.6, 96.3, 31.4],
                   hex: '#033f9d',
                 },
               },
               'light-protanopia-deuteranopia-high-contrast': {
                 $value: {
-                  colorSpace: 'srgb',
-                  components: [0.012, 0.247, 0.616],
+                  colorSpace: 'hsl',
+                  components: [216.6, 96.3, 31.4],
                   hex: '#033f9d',
                 },
               },
               'light-tritanopia-high-contrast': {
                 $value: {
-                  colorSpace: 'srgb',
-                  components: [0.012, 0.247, 0.616],
+                  colorSpace: 'hsl',
+                  components: [216.6, 96.3, 31.4],
                   hex: '#033f9d',
                 },
               },
