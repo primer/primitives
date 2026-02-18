@@ -26,6 +26,10 @@
           collection: 'functional/size',
           scopes: ['borderWidth', 'effectFloat'],
         },
+        'org.primer.llm': {
+          usage: ['card-border', 'input-border', 'button-border', 'divider'],
+          rules: 'RECOMMENDED default. Alias of borderWidth.thin. Use for standard borders, dividers, and input outlines.',
+        },
       },
     },
     thin: {
@@ -36,6 +40,10 @@
         'org.primer.figma': {
           collection: 'functional/size',
           scopes: ['borderWidth', 'effectFloat'],
+        },
+        'org.primer.llm': {
+          usage: ['subtle-border', 'table-divider', 'separator'],
+          rules: 'Prefer borderWidth.default over borderWidth.thin for standard borders. Do NOT use for focus indicators—use borderWidth.thick instead.',
         },
       },
     },
@@ -63,6 +71,10 @@
           collection: 'functional/size',
           scopes: ['borderWidth', 'effectFloat'],
         },
+        'org.primer.llm': {
+          usage: ['high-contrast-focus', 'critical-boundary'],
+          rules: 'Do NOT use unless the user explicitly requests a very thick border. SHOULD only use for high-contrast focus indicators or critical visual separators.',
+        },
       },
     },
   },
@@ -76,6 +88,10 @@
           'org.primer.figma': {
             collection: 'functional/size',
             scopes: ['borderWidth', 'effectFloat'],
+          },
+          'org.primer.llm': {
+            usage: ['focus-ring-inset', 'keyboard-navigation'],
+            rules: 'MUST use with outline.focus.width. Negative value creates inset focus ring within element bounds.',
           },
         },
       },

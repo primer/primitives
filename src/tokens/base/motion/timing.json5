@@ -4,50 +4,137 @@
       '0': {
         $value: {value: 0, unit: 'ms'},
         $type: 'duration',
+        $description: 'Instant, no animation',
+        $extensions: {
+          'org.primer.llm': {
+            usage: ['instant-feedback', 'disabled-motion'],
+            rules:
+              'Use for immediate state changes or when prefers-reduced-motion is active. Do NOT use for visible transitions.',
+          },
+        },
       },
       '50': {
         $value: {value: 50, unit: 'ms'},
         $type: 'duration',
+        $description: 'Fastest perceptible duration',
+        $extensions: {
+          'org.primer.llm': {
+            usage: ['tooltip-fade', 'opacity-change', 'micro-feedback'],
+            rules: 'Use for near-instant feedback. SHOULD pair with ease or linear easing.',
+          },
+        },
       },
       '100': {
         $value: {value: 100, unit: 'ms'},
         $type: 'duration',
+        $description: 'Fast micro-interaction',
+        $extensions: {
+          'org.primer.llm': {
+            usage: ['hover-transition', 'color-change', 'icon-swap'],
+            rules: 'RECOMMENDED for hover and color transitions. SHOULD pair with ease easing.',
+          },
+        },
       },
       '200': {
         $value: {value: 200, unit: 'ms'},
         $type: 'duration',
+        $description: 'Standard micro-interaction',
+        $extensions: {
+          'org.primer.llm': {
+            usage: ['button-press', 'toggle-switch', 'focus-transition'],
+            rules: 'RECOMMENDED default for micro-interactions. SHOULD use 100–200ms range per motion guidelines.',
+          },
+        },
       },
       '300': {
         $value: {value: 300, unit: 'ms'},
         $type: 'duration',
+        $description: 'State change',
+        $extensions: {
+          'org.primer.llm': {
+            usage: ['modal-enter', 'dropdown-open', 'panel-expand'],
+            rules:
+              'RECOMMENDED for element enter/exit and state changes. MUST NOT exceed 300ms for standard UI interactions.',
+          },
+        },
       },
       '400': {
         $value: {value: 400, unit: 'ms'},
         $type: 'duration',
+        $description: 'Deliberate transition',
+        $extensions: {
+          'org.primer.llm': {
+            usage: ['sidebar-slide', 'page-transition', 'accordion-expand'],
+            rules: 'Use for larger layout changes. SHOULD pair with easeInOut for morphing or easeOut for entering.',
+          },
+        },
       },
       '500': {
         $value: {value: 500, unit: 'ms'},
         $type: 'duration',
+        $description: 'Maximum UI interaction',
+        $extensions: {
+          'org.primer.llm': {
+            usage: ['complex-layout-shift', 'multi-step-animation'],
+            rules: 'Maximum duration for UI interactions per motion guidelines. Do NOT exceed for interactive elements.',
+          },
+        },
       },
       '600': {
         $value: {value: 600, unit: 'ms'},
         $type: 'duration',
+        $description: 'Extended animation',
+        $extensions: {
+          'org.primer.llm': {
+            usage: ['skeleton-pulse', 'loading-shimmer'],
+            rules: 'Use for non-interactive loading animations only. Do NOT use for direct user interactions.',
+          },
+        },
       },
       '700': {
         $value: {value: 700, unit: 'ms'},
         $type: 'duration',
+        $description: 'Long animation',
+        $extensions: {
+          'org.primer.llm': {
+            usage: ['background-transition', 'ambient-animation'],
+            rules: 'Use for ambient/decorative motion only. MUST NOT use for interactive feedback.',
+          },
+        },
       },
       '800': {
         $value: {value: 800, unit: 'ms'},
         $type: 'duration',
+        $description: 'Very long animation',
+        $extensions: {
+          'org.primer.llm': {
+            usage: ['onboarding-sequence', 'tutorial-step'],
+            rules: 'Use for guided experiences only. MUST provide instant alternative for reduced-motion.',
+          },
+        },
       },
       '900': {
         $value: {value: 900, unit: 'ms'},
         $type: 'duration',
+        $description: 'Near-maximum animation',
+        $extensions: {
+          'org.primer.llm': {
+            usage: ['complex-orchestration', 'staggered-sequence'],
+            rules: 'Use for orchestrated multi-element sequences. MUST respect prefers-reduced-motion.',
+          },
+        },
       },
       '1000': {
         $value: {value: 1000, unit: 'ms'},
         $type: 'duration',
+        $description: 'Maximum animation',
+        $extensions: {
+          'org.primer.llm': {
+            usage: ['full-page-transition', 'intro-animation'],
+            rules:
+              'Absolute maximum. MUST provide reduced-motion alternative. Do NOT use for repeated interactions.',
+          },
+        },
       },
     },
   },

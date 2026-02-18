@@ -8,7 +8,8 @@
         $extensions: {
           'org.primer.llm': {
             usage: ['progress-bar', 'loader', 'continuous-animation', 'scrolling'],
-            rules: 'Use if the motion is constant.',
+            rules:
+              'Use for constant-speed animations like progress bars, loaders, and scrolling. Do NOT use for interactive state changes—prefer ease or easeOut instead.',
           },
         },
       },
@@ -19,7 +20,8 @@
         $extensions: {
           'org.primer.llm': {
             usage: ['hover-state', 'micro-interaction', 'button-hover', 'link-hover'],
-            rules: 'Use for hover state changes.',
+            rules:
+              'RECOMMENDED for hover states and micro-interactions (color changes, opacity shifts). SHOULD pair with 100–200ms duration.',
           },
         },
       },
@@ -30,7 +32,8 @@
         $extensions: {
           'org.primer.llm': {
             usage: ['exit-animation', 'element-leaving', 'off-screen-motion'],
-            rules: 'Rarely used alone. Prefer ease-out for most exit animations.',
+            rules:
+              'Accelerating motion for elements leaving the screen. Rarely used alone. SHOULD prefer easeOut for most exit animations unless element accelerates off-screen.',
           },
         },
       },
@@ -41,7 +44,8 @@
         $extensions: {
           'org.primer.llm': {
             usage: ['enter-animation', 'element-appearing', 'modal-open', 'dropdown-open', 'tooltip-appear'],
-            rules: 'RECOMMENDED default. Use if an element enters or exits the viewport.',
+            rules:
+              'RECOMMENDED default for enter/exit animations. Use when elements appear on screen (modals, dropdowns, tooltips). SHOULD pair with 200–300ms duration.',
           },
         },
       },
@@ -52,7 +56,8 @@
         $extensions: {
           'org.primer.llm': {
             usage: ['position-change', 'size-change', 'morph-animation', 'expand-collapse', 'slide-transition'],
-            rules: 'Use if an element moves or morphs on screen.',
+            rules:
+              'Use for elements moving position or changing size within the viewport. SHOULD pair with 200–400ms duration for expand/collapse and slide transitions.',
           },
         },
       },
