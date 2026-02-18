@@ -46,9 +46,9 @@ export const durationToCss: Transform = {
       )
     }
 
-    // Always output in ms
+    // Always output in ms, rounding to avoid floating-point noise (e.g. 0.0049s → 4.9ms not 4.8999…ms)
     if (unit === 's') {
-      return `${value * 1000}ms`
+      return `${parseFloat((value * 1000).toPrecision(12))}ms`
     }
 
     return `${value}ms`
