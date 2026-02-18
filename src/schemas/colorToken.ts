@@ -1,18 +1,20 @@
 import {z} from 'zod'
 import {colorHexValue} from './colorHexValue.js'
+import {colorW3cValue} from './colorW3cValue.js'
 import {referenceValue} from './referenceValue.js'
 import {alphaValue} from './alphaValue.js'
 import {baseToken} from './baseToken.js'
 import {collection, mode} from './collections.js'
 import {scopes} from './scopes.js'
 import {tokenType} from './tokenType.js'
+import {llmExtension} from './llmExtension.js'
 
 const baseColorToken = baseToken.extend({
-  $value: z.union([colorHexValue, referenceValue]),
+  $value: z.union([colorHexValue, colorW3cValue, referenceValue]),
   alpha: alphaValue.optional().nullable(),
 })
 
-const override = z.union([colorHexValue, referenceValue, baseColorToken.partial()]).optional()
+const override = z.union([colorHexValue, colorW3cValue, referenceValue, baseColorToken.partial()]).optional()
 
 export const colorToken = baseColorToken
   .extend({
@@ -69,7 +71,7 @@ export const colorToken = baseColorToken
               'dark-dimmed-high-contrast': override,
             },
             {
-              errorMap: e => {
+              error: e => {
                 if (e.code === 'unrecognized_keys') {
                   return {
                     message: `Unrecognized key: "${e.keys.join(', ')}", must be one of: light, light-tritanopia, light-protanopia-deuteranopia, light-high-contrast, dark, dark-tritanopia, dark-protanopia-deuteranopia, dark-high-contrast, dark-dimmed`,
@@ -81,6 +83,7 @@ export const colorToken = baseColorToken
           )
           .strict()
           .optional(),
+        'org.primer.llm': llmExtension,
       })
       .strict()
       .optional(),

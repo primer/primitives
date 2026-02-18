@@ -35,10 +35,18 @@ const shadowToVariables = (
   values: Omit<ShadowTokenValue, 'color'> & {color: string | RgbaFloat},
   token: TransformedToken,
 ) => {
+  // Helper to extract numeric value from W3C dimension object
+  const getDimensionValue = (dim: ShadowTokenValue['offsetX']): number => {
+    if (typeof dim === 'object' && 'value' in dim) {
+      return dim.value
+    }
+    throw new Error(`Invalid shadow dimension: expected W3C object format, got ${JSON.stringify(dim)}`)
+  }
+
   // floatValue
   const floatValue = (property: 'offsetX' | 'offsetY' | 'blur' | 'spread') => ({
     name: `${name}/${property}`,
-    value: parseInt(values[property].replace('px', '')),
+    value: getDimensionValue(values[property]),
     type: 'FLOAT',
     scopes: ['EFFECT_FLOAT'],
     mode,

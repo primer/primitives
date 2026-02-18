@@ -2,8 +2,8 @@ import {typographyToken, typographyValue} from './typographyToken.js'
 
 describe('Schema: typographyToken', () => {
   const validValue = {
-    fontSize: '16px',
-    lineHeight: '24px',
+    fontSize: {value: 16, unit: 'px'},
+    lineHeight: 1.5,
     fontWeight: 600,
     fontFamily: 'Helvetica',
   }
@@ -24,6 +24,11 @@ describe('Schema: typographyToken', () => {
     expect(typographyValue.safeParse({...validValue, lineHeight: undefined}).success).toStrictEqual(true)
   })
 
+  it('fails on legacy string format', () => {
+    expect(typographyValue.safeParse({...validValue, fontSize: '16px'}).success).toStrictEqual(false)
+    expect(typographyValue.safeParse({...validValue, lineHeight: '24px'}).success).toStrictEqual(false)
+  })
+
   it('it fails on missing property', () => {
     expect(typographyValue.safeParse({...validValue, fontSize: undefined}).success).toStrictEqual(false)
     expect(typographyValue.safeParse({...validValue, fontWeight: undefined}).success).toStrictEqual(false)
@@ -31,17 +36,18 @@ describe('Schema: typographyToken', () => {
   })
 
   it('it fails on invalid fontSize values', () => {
-    expect(typographyValue.safeParse({...validValue, fontSize: '100%'}).success).toStrictEqual(false)
+    expect(typographyValue.safeParse({...validValue, fontSize: {value: 100, unit: '%'}}).success).toStrictEqual(false)
     expect(typographyValue.safeParse({...validValue, fontSize: '100'}).success).toStrictEqual(false)
     expect(typographyValue.safeParse({...validValue, fontSize: ''}).success).toStrictEqual(false)
     expect(typographyValue.safeParse({...validValue, fontSize: 10}).success).toStrictEqual(false)
   })
 
   it('it fails on invalid lineHeight values', () => {
-    expect(typographyValue.safeParse({...validValue, lineHeight: '100%'}).success).toStrictEqual(false)
+    expect(typographyValue.safeParse({...validValue, lineHeight: {value: 100, unit: '%'}}).success).toStrictEqual(false)
     expect(typographyValue.safeParse({...validValue, lineHeight: '100'}).success).toStrictEqual(false)
     expect(typographyValue.safeParse({...validValue, lineHeight: ''}).success).toStrictEqual(false)
-    expect(typographyValue.safeParse({...validValue, lineHeight: 10}).success).toStrictEqual(false)
+    // Dimension format is no longer valid per W3C spec
+    expect(typographyValue.safeParse({...validValue, lineHeight: {value: 24, unit: 'px'}}).success).toStrictEqual(false)
   })
 
   it('it fails on invalid fontWeight values', () => {

@@ -119,14 +119,10 @@ const testContrast = (
     // get contrast rounded down with 2 decimals
     contrast = Math.floor(getContrast(colorA, colorB) * 100) / 100
   } catch (err) {
-    // eslint-disable-next-line no-console
     console.error(`${contrastPair || ''} as ${colorA} vs.${colorB}: ${err}`)
   }
 
-  return {
-    pass: contrast >= minimumContrast ? '✅' : '❌',
-    contrastRatio: `${contrast}:1`,
-  }
+  return {pass: contrast >= minimumContrast ? '✅' : '❌', contrastRatio: `${contrast}:1`}
 }
 
 const checkContrastForThemes = async (themes: Theme[], contrastRequirementsObj: ContrastRequirements) => {
@@ -171,10 +167,8 @@ export const logResults = async (
 ) => {
   if (output === 'log' || output === 'all') {
     for (const {resultTable, failingContrast, theme} of results) {
-      // eslint-disable-next-line no-console
       console.log('\n', `\x1B[32m\x1b[1mTheme: ${theme}\x1B[0m`, '\n', resultTable, '\n')
       if (failingContrast > 0) {
-        // eslint-disable-next-line no-console
         console.error('❌ Failing contrast checks:', failingContrast, '\n')
       }
     }

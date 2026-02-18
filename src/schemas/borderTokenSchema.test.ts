@@ -3,7 +3,7 @@ import {borderToken, borderValue} from './borderToken.js'
 const validBorderValue = {
   color: '#333',
   style: 'solid',
-  width: '1px',
+  width: {value: 1, unit: 'px'},
 }
 
 describe('Schema: borderValue', () => {
@@ -22,11 +22,14 @@ describe('Schema: borderValue', () => {
     expect(borderValue.safeParse({...validBorderValue, style: 'inset'}).success).toStrictEqual(true)
   })
 
+  it('fails on legacy string format', () => {
+    expect(borderValue.safeParse({...validBorderValue, width: '1px'}).success).toStrictEqual(false)
+  })
+
   it('fails on invalid values', () => {
     expect(borderValue.safeParse({...validBorderValue, style: 'none'}).success).toStrictEqual(false)
     expect(borderValue.safeParse({...validBorderValue, color: 'none'}).success).toStrictEqual(false)
-    expect(borderValue.safeParse({...validBorderValue, width: '1%'}).success).toStrictEqual(false)
-    expect(borderValue.safeParse({...validBorderValue, width: '1vw'}).success).toStrictEqual(false)
+    expect(borderValue.safeParse({...validBorderValue, width: {value: 1, unit: '%'}}).success).toStrictEqual(false)
   })
 
   it('fails on missing values', () => {

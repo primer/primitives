@@ -4,13 +4,26 @@
       $value: {
         color: '{base.color.neutral.13}',
         alpha: 0.04,
-        offsetX: '0px',
-        offsetY: '1px',
-        blur: '0px',
-        spread: '0px',
+        offsetX: {
+          value: 0,
+          unit: 'px',
+        },
+        offsetY: {
+          value: 1,
+          unit: 'px',
+        },
+        blur: {
+          value: 0,
+          unit: 'px',
+        },
+        spread: {
+          value: 0,
+          unit: 'px',
+        },
         inset: true,
       },
       $type: 'shadow',
+      $description: 'Inset shadow for recessed elements',
       $extensions: {
         'org.primer.figma': {
           collection: 'mode',
@@ -21,13 +34,29 @@
             $value: {
               color: '{base.color.neutral.0}',
               alpha: 0.24,
-              offsetX: '0px',
-              offsetY: '1px',
-              blur: '0px',
-              spread: '0px',
+              offsetX: {
+                value: 0,
+                unit: 'px',
+              },
+              offsetY: {
+                value: 1,
+                unit: 'px',
+              },
+              blur: {
+                value: 0,
+                unit: 'px',
+              },
+              spread: {
+                value: 0,
+                unit: 'px',
+              },
               inset: true,
             },
           },
+        },
+        'org.primer.llm': {
+          usage: ['input-field', 'pressed-button', 'recessed-area', 'well'],
+          rules: 'Use for elements that appear pressed or inset into the surface. Commonly used for input fields and wells. Do NOT use for floating elements.',
         },
       },
     },
@@ -35,14 +64,27 @@
       xsmall: {
         $value: {
           color: '{base.color.neutral.13}',
-          alpha: 0.06,
-          offsetX: '0px',
-          offsetY: '1px',
-          blur: '1px',
-          spread: '0px',
+          alpha: 0.05,
+          offsetX: {
+            value: 0,
+            unit: 'px',
+          },
+          offsetY: {
+            value: 1,
+            unit: 'px',
+          },
+          blur: {
+            value: 1,
+            unit: 'px',
+          },
+          spread: {
+            value: 0,
+            unit: 'px',
+          },
           inset: false,
         },
         $type: 'shadow',
+        $description: 'Extra small resting shadow for minimal elevation',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
@@ -53,13 +95,29 @@
               $value: {
                 color: '{base.color.neutral.0}',
                 alpha: 0.8,
-                offsetX: '0px',
-                offsetY: '1px',
-                blur: '1px',
-                spread: '0px',
+                offsetX: {
+                  value: 0,
+                  unit: 'px',
+                },
+                offsetY: {
+                  value: 1,
+                  unit: 'px',
+                },
+                blur: {
+                  value: 1,
+                  unit: 'px',
+                },
+                spread: {
+                  value: 0,
+                  unit: 'px',
+                },
                 inset: false,
               },
             },
+          },
+          'org.primer.llm': {
+            usage: ['badge', 'chip', 'small-card', 'subtle-elevation'],
+            rules: 'Use for very subtle elevation on small elements. Provides minimal lift from surface. Do NOT use for interactive elements needing clear affordance.',
           },
         },
       },
@@ -67,24 +125,49 @@
         $value: [
           {
             color: '{base.color.neutral.13}',
-            alpha: 0.06,
-            offsetX: '0px',
-            offsetY: '1px',
-            blur: '1px',
-            spread: '0px',
+            alpha: 0.04,
+            offsetX: {
+              value: 0,
+              unit: 'px',
+            },
+            offsetY: {
+              value: 1,
+              unit: 'px',
+            },
+            blur: {
+              value: 1,
+              unit: 'px',
+            },
+            spread: {
+              value: 0,
+              unit: 'px',
+            },
             inset: false,
           },
           {
             color: '{base.color.neutral.13}',
-            alpha: 0.06,
-            offsetX: '0px',
-            offsetY: '1px',
-            blur: '3px',
-            spread: '0px',
+            alpha: 0.03,
+            offsetX: {
+              value: 0,
+              unit: 'px',
+            },
+            offsetY: {
+              value: 1,
+              unit: 'px',
+            },
+            blur: {
+              value: 2,
+              unit: 'px',
+            },
+            spread: {
+              value: 0,
+              unit: 'px',
+            },
             inset: false,
           },
         ],
         $type: 'shadow',
+        $description: 'Small resting shadow for buttons and interactive elements',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
@@ -96,23 +179,51 @@
                 {
                   color: '{base.color.neutral.0}',
                   alpha: 0.6,
-                  offsetX: '0px',
-                  offsetY: '1px',
-                  blur: '1px',
-                  spread: '0px',
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 1,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 1,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: 0,
+                    unit: 'px',
+                  },
                   inset: false,
                 },
                 {
                   color: '{base.color.neutral.0}',
                   alpha: 0.6,
-                  offsetX: '0px',
-                  offsetY: '1px',
-                  blur: '3px',
-                  spread: '0px',
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 1,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 3,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: 0,
+                    unit: 'px',
+                  },
                   inset: false,
                 },
               ],
             },
+          },
+          'org.primer.llm': {
+            usage: ['button', 'interactive-card', 'clickable-element'],
+            rules: 'Use for buttons and small interactive elements at rest. Provides subtle depth and clickable affordance. RECOMMENDED for default button shadows.',
           },
         },
       },
@@ -121,21 +232,46 @@
           {
             color: '{base.color.neutral.12}',
             alpha: 0.1,
-            offsetX: '0px',
-            offsetY: '1px',
-            blur: '1px',
-            spread: '0px',
+            offsetX: {
+              value: 0,
+              unit: 'px',
+            },
+            offsetY: {
+              value: 1,
+              unit: 'px',
+            },
+            blur: {
+              value: 1,
+              unit: 'px',
+            },
+            spread: {
+              value: 0,
+              unit: 'px',
+            },
           },
           {
             color: '{base.color.neutral.12}',
             alpha: 0.12,
-            offsetX: '0px',
-            offsetY: '3px',
-            blur: '6px',
-            spread: '0px',
+            offsetX: {
+              value: 0,
+              unit: 'px',
+            },
+            offsetY: {
+              value: 3,
+              unit: 'px',
+            },
+            blur: {
+              value: 6,
+              unit: 'px',
+            },
+            spread: {
+              value: 0,
+              unit: 'px',
+            },
           },
         ],
         $type: 'shadow',
+        $description: 'Medium resting shadow for cards and elevated surfaces',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
@@ -147,21 +283,49 @@
                 {
                   color: '{base.color.neutral.0}',
                   alpha: 0.4,
-                  offsetX: '0px',
-                  offsetY: '1px',
-                  blur: '1px',
-                  spread: '0px',
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 1,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 1,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: 0,
+                    unit: 'px',
+                  },
                 },
                 {
                   color: '{base.color.neutral.0}',
                   alpha: 0.8,
-                  offsetX: '0px',
-                  offsetY: '3px',
-                  blur: '6px',
-                  spread: '0px',
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 3,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 6,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: 0,
+                    unit: 'px',
+                  },
                 },
               ],
             },
+          },
+          'org.primer.llm': {
+            usage: ['card', 'panel', 'elevated-surface', 'elevated-sidebar'],
+            rules: 'Use for cards and content panels that sit above the page surface. Provides moderate elevation without appearing to float. Do NOT use for overlays or modals.',
           },
         },
       },
@@ -172,29 +336,66 @@
           {
             color: '{overlay.borderColor}',
             alpha: 0.5,
-            offsetX: '0px',
-            offsetY: '0px',
-            blur: '0px',
-            spread: '1px',
+            offsetX: {
+              value: 0,
+              unit: 'px',
+            },
+            offsetY: {
+              value: 0,
+              unit: 'px',
+            },
+            blur: {
+              value: 0,
+              unit: 'px',
+            },
+            spread: {
+              value: 1,
+              unit: 'px',
+            },
           },
           {
             color: '{base.color.neutral.12}',
             alpha: 0.04,
-            offsetX: '0px',
-            offsetY: '6px',
-            blur: '12px',
-            spread: '-3px',
+            offsetX: {
+              value: 0,
+              unit: 'px',
+            },
+            offsetY: {
+              value: 6,
+              unit: 'px',
+            },
+            blur: {
+              value: 12,
+              unit: 'px',
+            },
+            spread: {
+              value: -3,
+              unit: 'px',
+            },
           },
           {
             color: '{base.color.neutral.12}',
             alpha: 0.12,
-            offsetX: '0px',
-            offsetY: '6px',
-            blur: '18px',
-            spread: '0px',
+            offsetX: {
+              value: 0,
+              unit: 'px',
+            },
+            offsetY: {
+              value: 6,
+              unit: 'px',
+            },
+            blur: {
+              value: 18,
+              unit: 'px',
+            },
+            spread: {
+              value: 0,
+              unit: 'px',
+            },
           },
         ],
         $type: 'shadow',
+        $description: 'Small floating shadow for dropdowns, tooltips, and small overlays',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
@@ -206,29 +407,69 @@
                 {
                   color: '{overlay.borderColor}',
                   alpha: 1,
-                  offsetX: '0px',
-                  offsetY: '0px',
-                  blur: '0px',
-                  spread: '1px',
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: 1,
+                    unit: 'px',
+                  },
                 },
                 {
                   color: '{base.color.neutral.0}',
                   alpha: 0.4,
-                  offsetX: '0px',
-                  offsetY: '6px',
-                  blur: '12px',
-                  spread: '-3px',
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 6,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 12,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: -3,
+                    unit: 'px',
+                  },
                 },
                 {
                   color: '{base.color.neutral.0}',
                   alpha: 0.4,
-                  offsetX: '0px',
-                  offsetY: '6px',
-                  blur: '18px',
-                  spread: '0px',
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 6,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 18,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: 0,
+                    unit: 'px',
+                  },
                 },
               ],
             },
+          },
+          'org.primer.llm': {
+            usage: ['dropdown', 'tooltip', 'popover', 'menu'],
+            rules: 'Use for small floating elements like dropdowns and tooltips. Do NOT use for modals or dialogs.',
           },
         },
       },
@@ -237,45 +478,106 @@
           {
             color: '{overlay.borderColor}',
             alpha: 0,
-            offsetX: '0px',
-            offsetY: '0px',
-            blur: '0px',
-            spread: '1px',
+            offsetX: {
+              value: 0,
+              unit: 'px',
+            },
+            offsetY: {
+              value: 0,
+              unit: 'px',
+            },
+            blur: {
+              value: 0,
+              unit: 'px',
+            },
+            spread: {
+              value: 1,
+              unit: 'px',
+            },
           },
           {
             color: '{base.color.neutral.12}',
             alpha: 0.08,
-            offsetX: '0px',
-            offsetY: '8px',
-            blur: '16px',
-            spread: '-4px',
+            offsetX: {
+              value: 0,
+              unit: 'px',
+            },
+            offsetY: {
+              value: 8,
+              unit: 'px',
+            },
+            blur: {
+              value: 16,
+              unit: 'px',
+            },
+            spread: {
+              value: -4,
+              unit: 'px',
+            },
           },
           {
             color: '{base.color.neutral.12}',
             alpha: 0.08,
-            offsetX: '0px',
-            offsetY: '4px',
-            blur: '32px',
-            spread: '-4px',
+            offsetX: {
+              value: 0,
+              unit: 'px',
+            },
+            offsetY: {
+              value: 4,
+              unit: 'px',
+            },
+            blur: {
+              value: 32,
+              unit: 'px',
+            },
+            spread: {
+              value: -4,
+              unit: 'px',
+            },
           },
           {
             color: '{base.color.neutral.12}',
             alpha: 0.08,
-            offsetX: '0px',
-            offsetY: '24px',
-            blur: '48px',
-            spread: '-12px',
+            offsetX: {
+              value: 0,
+              unit: 'px',
+            },
+            offsetY: {
+              value: 24,
+              unit: 'px',
+            },
+            blur: {
+              value: 48,
+              unit: 'px',
+            },
+            spread: {
+              value: -12,
+              unit: 'px',
+            },
           },
           {
             color: '{base.color.neutral.12}',
             alpha: 0.08,
-            offsetX: '0px',
-            offsetY: '48px',
-            blur: '96px',
-            spread: '-24px',
+            offsetX: {
+              value: 0,
+              unit: 'px',
+            },
+            offsetY: {
+              value: 48,
+              unit: 'px',
+            },
+            blur: {
+              value: 96,
+              unit: 'px',
+            },
+            spread: {
+              value: -24,
+              unit: 'px',
+            },
           },
         ],
         $type: 'shadow',
+        $description: 'Medium floating shadow for popovers and action menus',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
@@ -287,45 +589,421 @@
                 {
                   color: '{overlay.borderColor}',
                   alpha: 1,
-                  offsetX: '0px',
-                  offsetY: '0px',
-                  blur: '0px',
-                  spread: '1px',
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: 1,
+                    unit: 'px',
+                  },
                 },
                 {
                   color: '{base.color.neutral.0}',
                   alpha: 0.4,
-                  offsetX: '0px',
-                  offsetY: '8px',
-                  blur: '16px',
-                  spread: '-4px',
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 8,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 16,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: -4,
+                    unit: 'px',
+                  },
                 },
                 {
                   color: '{base.color.neutral.0}',
                   alpha: 0.4,
-                  offsetX: '0px',
-                  offsetY: '4px',
-                  blur: '32px',
-                  spread: '-4px',
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 4,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 32,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: -4,
+                    unit: 'px',
+                  },
                 },
                 {
                   color: '{base.color.neutral.0}',
                   alpha: 0.4,
-                  offsetX: '0px',
-                  offsetY: '24px',
-                  blur: '48px',
-                  spread: '-12px',
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 24,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 48,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: -12,
+                    unit: 'px',
+                  },
                 },
                 {
                   color: '{base.color.neutral.0}',
                   alpha: 0.4,
-                  offsetX: '0px',
-                  offsetY: '48px',
-                  blur: '96px',
-                  spread: '-24px',
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 48,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 96,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: -24,
+                    unit: 'px',
+                  },
                 },
               ],
             },
+            'light-high-contrast': {
+              $value: [
+                {
+                  color: '{overlay.borderColor}',
+                  alpha: 1,
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: 1,
+                    unit: 'px',
+                  },
+                },
+                {
+                  color: '{base.color.neutral.12}',
+                  alpha: 0.08,
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 8,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 16,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: -4,
+                    unit: 'px',
+                  },
+                },
+                {
+                  color: '{base.color.neutral.12}',
+                  alpha: 0.08,
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 4,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 32,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: -4,
+                    unit: 'px',
+                  },
+                },
+                {
+                  color: '{base.color.neutral.12}',
+                  alpha: 0.08,
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 24,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 48,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: -12,
+                    unit: 'px',
+                  },
+                },
+                {
+                  color: '{base.color.neutral.12}',
+                  alpha: 0.08,
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 48,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 96,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: -24,
+                    unit: 'px',
+                  },
+                },
+              ],
+            },
+            'light-protanopia-deuteranopia-high-contrast': {
+              $value: [
+                {
+                  color: '{overlay.borderColor}',
+                  alpha: 1,
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: 1,
+                    unit: 'px',
+                  },
+                },
+                {
+                  color: '{base.color.neutral.12}',
+                  alpha: 0.08,
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 8,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 16,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: -4,
+                    unit: 'px',
+                  },
+                },
+                {
+                  color: '{base.color.neutral.12}',
+                  alpha: 0.08,
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 4,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 32,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: -4,
+                    unit: 'px',
+                  },
+                },
+                {
+                  color: '{base.color.neutral.12}',
+                  alpha: 0.08,
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 24,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 48,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: -12,
+                    unit: 'px',
+                  },
+                },
+                {
+                  color: '{base.color.neutral.12}',
+                  alpha: 0.08,
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 48,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 96,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: -24,
+                    unit: 'px',
+                  },
+                },
+              ],
+            },
+            'light-tritanopia-high-contrast': {
+              $value: [
+                {
+                  color: '{overlay.borderColor}',
+                  alpha: 1,
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: 1,
+                    unit: 'px',
+                  },
+                },
+                {
+                  color: '{base.color.neutral.12}',
+                  alpha: 0.08,
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 8,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 16,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: -4,
+                    unit: 'px',
+                  },
+                },
+                {
+                  color: '{base.color.neutral.12}',
+                  alpha: 0.08,
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 4,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 32,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: -4,
+                    unit: 'px',
+                  },
+                },
+                {
+                  color: '{base.color.neutral.12}',
+                  alpha: 0.08,
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 24,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 48,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: -12,
+                    unit: 'px',
+                  },
+                },
+                {
+                  color: '{base.color.neutral.12}',
+                  alpha: 0.08,
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 48,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 96,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: -24,
+                    unit: 'px',
+                  },
+                },
+              ],
+            },
+          },
+          'org.primer.llm': {
+            usage: ['popover', 'action-menu', 'select-panel', 'autocomplete'],
+            rules: 'Use for medium-sized floating elements like popovers and action menus. More prominent than small but less than dialogs. Do NOT use for full modals.',
           },
         },
       },
@@ -334,21 +1012,46 @@
           {
             color: '{overlay.borderColor}',
             alpha: 0,
-            offsetX: '0px',
-            offsetY: '0px',
-            blur: '0px',
-            spread: '1px',
+            offsetX: {
+              value: 0,
+              unit: 'px',
+            },
+            offsetY: {
+              value: 0,
+              unit: 'px',
+            },
+            blur: {
+              value: 0,
+              unit: 'px',
+            },
+            spread: {
+              value: 1,
+              unit: 'px',
+            },
           },
           {
             color: '{base.color.neutral.12}',
             alpha: 0.24,
-            offsetX: '0px',
-            offsetY: '40px',
-            blur: '80px',
-            spread: '0px',
+            offsetX: {
+              value: 0,
+              unit: 'px',
+            },
+            offsetY: {
+              value: 40,
+              unit: 'px',
+            },
+            blur: {
+              value: 80,
+              unit: 'px',
+            },
+            spread: {
+              value: 0,
+              unit: 'px',
+            },
           },
         ],
         $type: 'shadow',
+        $description: 'Large floating shadow for modals and dialogs',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
@@ -360,21 +1063,181 @@
                 {
                   color: '{overlay.borderColor}',
                   alpha: 1,
-                  offsetX: '0px',
-                  offsetY: '0px',
-                  blur: '0px',
-                  spread: '1px',
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: 1,
+                    unit: 'px',
+                  },
                 },
                 {
                   color: '{base.color.neutral.0}',
                   alpha: 1,
-                  offsetX: '0px',
-                  offsetY: '24px',
-                  blur: '48px',
-                  spread: '0px',
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 24,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 48,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: 0,
+                    unit: 'px',
+                  },
                 },
               ],
             },
+            'light-high-contrast': {
+              $value: [
+                {
+                  color: '{overlay.borderColor}',
+                  alpha: 1,
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: 1,
+                    unit: 'px',
+                  },
+                },
+                {
+                  color: '{base.color.neutral.12}',
+                  alpha: 0.24,
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 40,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 80,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                },
+              ],
+            },
+            'light-protanopia-deuteranopia-high-contrast': {
+              $value: [
+                {
+                  color: '{overlay.borderColor}',
+                  alpha: 1,
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: 1,
+                    unit: 'px',
+                  },
+                },
+                {
+                  color: '{base.color.neutral.12}',
+                  alpha: 0.24,
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 40,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 80,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                },
+              ],
+            },
+            'light-tritanopia-high-contrast': {
+              $value: [
+                {
+                  color: '{overlay.borderColor}',
+                  alpha: 1,
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: 1,
+                    unit: 'px',
+                  },
+                },
+                {
+                  color: '{base.color.neutral.12}',
+                  alpha: 0.24,
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 40,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 80,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                },
+              ],
+            },
+          },
+          'org.primer.llm': {
+            usage: ['modal', 'dialog', 'full-screen-overlay'],
+            rules: 'MUST use for modals and dialogs. Do NOT use for small floating elements.',
           },
         },
       },
@@ -383,21 +1246,46 @@
           {
             color: '{overlay.borderColor}',
             alpha: 0,
-            offsetX: '0px',
-            offsetY: '0px',
-            blur: '0px',
-            spread: '1px',
+            offsetX: {
+              value: 0,
+              unit: 'px',
+            },
+            offsetY: {
+              value: 0,
+              unit: 'px',
+            },
+            blur: {
+              value: 0,
+              unit: 'px',
+            },
+            spread: {
+              value: 1,
+              unit: 'px',
+            },
           },
           {
             color: '{base.color.neutral.12}',
             alpha: 0.32,
-            offsetX: '0px',
-            offsetY: '56px',
-            blur: '112px',
-            spread: '0px',
+            offsetX: {
+              value: 0,
+              unit: 'px',
+            },
+            offsetY: {
+              value: 56,
+              unit: 'px',
+            },
+            blur: {
+              value: 112,
+              unit: 'px',
+            },
+            spread: {
+              value: 0,
+              unit: 'px',
+            },
           },
         ],
         $type: 'shadow',
+        $description: 'Extra large floating shadow for full-screen overlays and sheets',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
@@ -409,21 +1297,181 @@
                 {
                   color: '{overlay.borderColor}',
                   alpha: 1,
-                  offsetX: '0px',
-                  offsetY: '0px',
-                  blur: '0px',
-                  spread: '1px',
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: 1,
+                    unit: 'px',
+                  },
                 },
                 {
                   color: '{base.color.neutral.0}',
                   alpha: 1,
-                  offsetX: '0px',
-                  offsetY: '32px',
-                  blur: '64px',
-                  spread: '0px',
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 32,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 64,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: 0,
+                    unit: 'px',
+                  },
                 },
               ],
             },
+            'light-high-contrast': {
+              $value: [
+                {
+                  color: '{overlay.borderColor}',
+                  alpha: 1,
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: 1,
+                    unit: 'px',
+                  },
+                },
+                {
+                  color: '{base.color.neutral.12}',
+                  alpha: 0.32,
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 56,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 112,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                },
+              ],
+            },
+            'light-protanopia-deuteranopia-high-contrast': {
+              $value: [
+                {
+                  color: '{overlay.borderColor}',
+                  alpha: 1,
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: 1,
+                    unit: 'px',
+                  },
+                },
+                {
+                  color: '{base.color.neutral.12}',
+                  alpha: 0.32,
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 56,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 112,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                },
+              ],
+            },
+            'light-tritanopia-high-contrast': {
+              $value: [
+                {
+                  color: '{overlay.borderColor}',
+                  alpha: 1,
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: 1,
+                    unit: 'px',
+                  },
+                },
+                {
+                  color: '{base.color.neutral.12}',
+                  alpha: 0.32,
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 56,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 112,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                },
+              ],
+            },
+          },
+          'org.primer.llm': {
+            usage: ['full-screen-overlay', 'side-sheet', 'drawer', 'large-modal'],
+            rules: 'Use for full-screen or near-full-screen overlays like side sheets and drawers. Maximum elevation in the system. Do NOT use for small floating elements.',
           },
         },
       },
@@ -432,21 +1480,46 @@
           {
             color: '{base.color.neutral.12}',
             alpha: 0.04,
-            offsetX: '0px',
-            offsetY: '6px',
-            blur: '12px',
-            spread: '-3px',
+            offsetX: {
+              value: 0,
+              unit: 'px',
+            },
+            offsetY: {
+              value: 6,
+              unit: 'px',
+            },
+            blur: {
+              value: 12,
+              unit: 'px',
+            },
+            spread: {
+              value: -3,
+              unit: 'px',
+            },
           },
           {
             color: '{base.color.neutral.12}',
             alpha: 0.12,
-            offsetX: '0px',
-            offsetY: '6px',
-            blur: '18px',
-            spread: '0px',
+            offsetX: {
+              value: 0,
+              unit: 'px',
+            },
+            offsetY: {
+              value: 6,
+              unit: 'px',
+            },
+            blur: {
+              value: 18,
+              unit: 'px',
+            },
+            spread: {
+              value: 0,
+              unit: 'px',
+            },
           },
         ],
         $type: 'shadow',
+        $description: 'Legacy floating shadow for backward compatibility',
         $extensions: {
           'org.primer.figma': {},
           'org.primer.overrides': {
@@ -455,21 +1528,49 @@
                 {
                   color: '{base.color.neutral.0}',
                   alpha: 0.4,
-                  offsetX: '0px',
-                  offsetY: '6px',
-                  blur: '12px',
-                  spread: '-3px',
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 6,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 12,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: -3,
+                    unit: 'px',
+                  },
                 },
                 {
                   color: '{base.color.neutral.0}',
                   alpha: 0.4,
-                  offsetX: '0px',
-                  offsetY: '6px',
-                  blur: '18px',
-                  spread: '0px',
+                  offsetX: {
+                    value: 0,
+                    unit: 'px',
+                  },
+                  offsetY: {
+                    value: 6,
+                    unit: 'px',
+                  },
+                  blur: {
+                    value: 18,
+                    unit: 'px',
+                  },
+                  spread: {
+                    value: 0,
+                    unit: 'px',
+                  },
                 },
               ],
             },
+          },
+          'org.primer.llm': {
+            usage: ['legacy-component', 'backward-compatibility'],
+            rules: 'DEPRECATED: Use shadow-floating-small instead. Only use for maintaining backward compatibility with existing implementations.',
           },
         },
       },

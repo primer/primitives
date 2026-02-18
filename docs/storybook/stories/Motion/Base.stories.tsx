@@ -46,7 +46,8 @@ export const Base = () => {
               field: 'value',
               rowHeader: true,
               renderCell: row => {
-                return <p>{row.value}</p>
+                const val = typeof row.value === 'object' ? `${row.value.value}${row.value.unit}` : row.value
+                return <p>{val}</p>
               },
             },
             {
@@ -54,7 +55,9 @@ export const Base = () => {
               field: 'original',
               rowHeader: true,
               renderCell: row => {
-                return <p>{row.original.$value}</p>
+                const val = row.original.$value
+                const display = typeof val === 'object' ? `${val.value}${val.unit}` : val
+                return <p>{display}</p>
               },
             },
           ]}

@@ -1,11 +1,12 @@
 import fs from 'fs'
 import {PrimerStyleDictionary} from '../src/primerStyleDictionary.js'
-import {themes} from './themes.config.js'
+import {themes as origialThemes} from './themes.config.js'
 import {figma} from '../src/platforms/index.js'
 import type {ConfigGeneratorOptions} from '../src/types/styleDictionaryConfigGenerator.js'
 import {getFallbackTheme} from './utilities/getFallbackTheme.js'
 
 const buildFigma = async (buildOptions: ConfigGeneratorOptions): Promise<void> => {
+  const themes = origialThemes.filter(theme => theme.exportToFigma !== false)
   /** -----------------------------------
    * Colors
    * ----------------------------------- */
@@ -83,6 +84,7 @@ const buildFigma = async (buildOptions: ConfigGeneratorOptions): Promise<void> =
     'src/tokens/functional/size/breakpoints.json5',
     'src/tokens/functional/size/size.json5',
     'src/tokens/functional/size/border.json5',
+    'src/tokens/functional/size/radius.json5',
   ]
   //
   const sizeExtended = await PrimerStyleDictionary.extend({
@@ -100,7 +102,11 @@ const buildFigma = async (buildOptions: ConfigGeneratorOptions): Promise<void> =
    * ----------------------------------- */
   //
   const typeExtended = await PrimerStyleDictionary.extend({
-    source: ['src/tokens/base/typography/typography.json5', 'src/tokens/functional/typography/typography.json5'],
+    source: [
+      'src/tokens/base/typography/typography.json5',
+      'src/tokens/functional/typography/typography.json5',
+      'src/tokens/functional/typography/font-stack.json5',
+    ],
     include: [],
     platforms: {
       figma: figma(`figma/typography/typography.json`, buildOptions.prefix, buildOptions.buildPath),
@@ -328,10 +334,7 @@ const buildFigma = async (buildOptions: ConfigGeneratorOptions): Promise<void> =
 }
 
 try {
-  await buildFigma({
-    buildPath: 'dist/',
-  })
+  await buildFigma({buildPath: 'dist/'})
 } catch (e) {
-  // eslint-disable-next-line no-console
   console.error('🛑 Error trying to build Figma output:', e)
 }

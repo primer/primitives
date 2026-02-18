@@ -4,12 +4,29 @@
       $value: {
         color: '{focus.outlineColor}',
         style: 'solid',
-        width: '2px',
+        width: {
+          value: 2,
+          unit: 'px',
+        },
       },
       $type: 'border',
+      $description: 'Focus ring outline for keyboard navigation and accessibility.',
+      $extensions: {
+        'org.primer.llm': {
+          usage: ['focus-ring', 'keyboard-navigation', 'accessibility-indicator'],
+          rules: 'Always ensure focus states are visible. Do not override with custom focus styles that reduce visibility. Use for interactive elements like buttons, links, and form controls.',
+        },
+      },
     },
   },
   border: {
+    $description: 'Semantic border tokens combining color, style, and width for consistent UI boundaries.',
+    $extensions: {
+      'org.primer.llm': {
+        usage: ['container-border', 'card-border', 'divider', 'input-border', 'panel-border'],
+        rules: 'These are COMPOSITE border shorthand tokens that resolve to CSS shorthand values like "1px solid #color". Use for the CSS `border` property. Do NOT use for `border-color` — use borderColor.* tokens instead. Every border.* token includes width, style, AND color. Use default for standard container borders. Use muted for subtle dividers and low-emphasis boundaries. Use emphasis when borders need to stand out. Match status border colors to their semantic meaning (danger for errors, success for positive states). Use disabled only for non-interactive or disabled elements. Prefer semantic variants (open/closed, done) over raw color variants when the context matches.',
+      },
+    },
     default: {
       $value: {
         color: '{borderColor.default}',
@@ -50,7 +67,17 @@
       },
       $type: 'border',
     },
+    translucent: {
+      $description: 'Semi-transparent border shorthand for overlays and layered elements. Border-specific token — no bgColor-translucent counterpart exists by design.',
+      $value: {
+        color: '{borderColor.translucent}',
+        style: 'solid',
+        width: '{borderWidth.default}',
+      },
+      $type: 'border',
+    },
     neutral: {
+      $description: 'Neutral gray borders for non-semantic boundaries and subtle UI separation.',
       emphasis: {
         $value: {
           color: '{borderColor.neutral.emphasis}',
@@ -69,6 +96,7 @@
       },
     },
     accent: {
+      $description: 'Accent-colored borders for selected, focused, or highlighted elements.',
       emphasis: {
         $value: {
           color: '{borderColor.accent.emphasis}',
@@ -87,6 +115,7 @@
       },
     },
     success: {
+      $description: 'Green borders for positive states, confirmations, and successful operations.',
       emphasis: {
         $value: {
           color: '{borderColor.success.emphasis}',
@@ -105,6 +134,7 @@
       },
     },
     open: {
+      $description: 'Borders for open state indicators. Use for open pull requests, issues, and discussions. Aliases border.success.',
       emphasis: {
         $value: '{border.success.emphasis}',
         $type: 'border',
@@ -115,6 +145,7 @@
       },
     },
     danger: {
+      $description: 'Red borders for errors, destructive actions, and critical warnings.',
       emphasis: {
         $value: {
           color: '{borderColor.danger.emphasis}',
@@ -133,6 +164,7 @@
       },
     },
     closed: {
+      $description: 'Borders for closed state indicators. Use for closed pull requests, issues, and discussions. Aliases border.danger.',
       emphasis: {
         $value: '{border.danger.emphasis}',
         $type: 'border',
@@ -142,7 +174,27 @@
         $type: 'border',
       },
     },
+    draft: {
+      $description: 'Borders for draft/WIP state indicators. Use for draft pull requests and unpublished items.',
+      emphasis: {
+        $value: {
+          color: '{borderColor.draft.emphasis}',
+          style: 'solid',
+          width: '{borderWidth.default}',
+        },
+        $type: 'border',
+      },
+      muted: {
+        $value: {
+          color: '{borderColor.draft.muted}',
+          style: 'solid',
+          width: '{borderWidth.default}',
+        },
+        $type: 'border',
+      },
+    },
     attention: {
+      $description: 'Yellow borders for warnings, caution states, and items requiring user attention.',
       emphasis: {
         $value: {
           color: '{borderColor.attention.emphasis}',
@@ -161,6 +213,7 @@
       },
     },
     severe: {
+      $description: 'Orange borders for severe warnings, more urgent than attention but less critical than danger.',
       emphasis: {
         $value: {
           color: '{borderColor.severe.emphasis}',
@@ -179,6 +232,7 @@
       },
     },
     done: {
+      $description: 'Purple borders for completed or merged states. Use for merged pull requests and completed items.',
       emphasis: {
         $value: {
           color: '{borderColor.done.emphasis}',
@@ -197,6 +251,7 @@
       },
     },
     upsell: {
+      $description: 'Borders for promotional content and feature upsells. Use for upgrade prompts and premium feature highlights.',
       emphasis: {
         $value: {
           color: '{borderColor.upsell.emphasis}',
@@ -215,6 +270,7 @@
       },
     },
     sponsors: {
+      $description: 'Borders for GitHub Sponsors content and sponsor-related UI elements.',
       emphasis: {
         $value: {
           color: '{borderColor.sponsors.emphasis}',

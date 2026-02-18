@@ -1,13 +1,13 @@
 import React from 'react'
-// eslint-disable-next-line import/extensions
-import colorTokens from '../../../../../dist/docs/functional/themes/light.json'
 import {ColorTokenSwatch} from '../../StorybookComponents/ColorTokenSwatch/ColorTokenSwatch'
 import {DataTable, Table} from '@primer/react/experimental'
 import {InlineCode} from '../../StorybookComponents/InlineCode/InlineCode'
 import {getTokensByName} from '../../utilities/getTokensByName'
+import {withColorTokens, type ColorTokens} from '../../utilities/withColorTokens'
 
 export default {
   title: 'Color/DataVis',
+  decorators: [withColorTokens],
   parameters: {
     controls: {hideNoControlsWarning: true},
     options: {
@@ -16,7 +16,7 @@ export default {
   },
 }
 
-export const HighchartsAccentColors = () => {
+export const HighchartsAccentColors = ({colorTokens}: {colorTokens: ColorTokens}) => {
   const data = getTokensByName(colorTokens, 'data')
     .filter(({type, name}) => type === 'color' && !name.includes('muted'))
     .map(token => {
@@ -64,7 +64,7 @@ export const HighchartsAccentColors = () => {
   )
 }
 
-export const HighchartsMutedColors = () => {
+export const HighchartsMutedColors = ({colorTokens}: {colorTokens: ColorTokens}) => {
   const data = getTokensByName(colorTokens, 'data')
     .filter(({type, name}) => type === 'color' && name.includes('muted'))
     .map(token => {

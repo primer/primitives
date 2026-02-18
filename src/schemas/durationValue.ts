@@ -1,9 +1,21 @@
 import {z} from 'zod'
 import {schemaErrorMessage} from '../utilities/index.js'
 
-export const durationValue = z.string().refine(
-  duration => /(^[0-9]+ms$)/.test(duration),
-  val => ({
-    message: schemaErrorMessage(`Invalid duration: "${val}"`, `A duration must be a string with an "ms"`),
-  }),
-)
+/**
+ * W3C DTCG duration value format
+ * @see https://www.designtokens.org/tr/2025.10/format/#duration
+ */
+export const durationValue = z
+  .object({
+    value: z.number(),
+    unit: z.enum(['ms', 's']),
+  })
+  .strict()
+  .superRefine((duration, ctx) => {
+    if (typeof duration.value !== 'number') {
+      ctx.addIssue({
+        code: 'custom',
+        message: schemaErrorMessage(`Invalid duration value: "${duration.value}"`, `Duration value must be a number`),
+      })
+    }
+  })

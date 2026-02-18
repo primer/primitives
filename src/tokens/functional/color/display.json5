@@ -1,5 +1,12 @@
 {
   display: {
+    $description: 'Decorative colors for categorization and visual distinction without semantic meaning. Use for labels, tags, avatars, status indicators, and user-assigned colors. Do NOT use for success/error/warning states—use semantic colors (bgColor.success/danger/attention) instead.',
+    $extensions: {
+      'org.primer.llm': {
+        usage: ['label', 'tag', 'avatar', 'badge', 'category-indicator', 'user-assigned-color', 'project-color', 'decorative-element'],
+        rules: 'Use display colors for arbitrary categorization where the color has no inherent meaning (e.g., project labels, user avatars). For meaningful states like success, error, or warning, use semantic colors instead. Scales 0-2 are lighter (backgrounds), 3-5 are mid-tones, 6-9 are darker (foregrounds/borders).',
+      },
+    },
     blue: {
       scale: {
         '0': {

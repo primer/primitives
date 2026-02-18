@@ -4,6 +4,7 @@ import {baseToken} from './baseToken.js'
 import {tokenType} from './tokenType.js'
 import {collection} from './collections.js'
 import {scopes} from './scopes.js'
+import {llmExtension} from './llmExtension.js'
 
 export const fontFamilyToken = baseToken
   .extend({
@@ -15,6 +16,7 @@ export const fontFamilyToken = baseToken
           collection: collection(['base/typography', 'typography']).optional(),
           scopes: scopes(['fontFamily']).optional(),
         }),
+        'org.primer.llm': llmExtension,
       })
       .optional(),
   })

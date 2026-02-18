@@ -1,6 +1,13 @@
 {
   color: {
     ansi: {
+      $description: 'ANSI terminal color palette for command-line interfaces and terminal emulators. Maps standard ANSI color names to theme-appropriate values.',
+      $extensions: {
+        'org.primer.llm': {
+          usage: ['terminal-output', 'cli-interface', 'console-text', 'shell-prompt'],
+          rules: 'Use exclusively for terminal/CLI contexts. Do NOT use for general UI—use semantic colors (fgColor, bgColor) instead. These colors follow ANSI naming conventions (black, red, green, yellow, blue, magenta, cyan, white) with bright variants.',
+        },
+      },
       black: {
         $value: '{base.color.neutral.13}',
         $type: 'color',
@@ -221,7 +228,11 @@
         },
       },
       cyan: {
-        $value: '#1b7c83',
+        $value: {
+          colorSpace: 'hsl',
+          components: [184, 65.8, 31],
+          hex: '#1b7c83',
+        },
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -234,7 +245,11 @@
         },
       },
       'cyan-bright': {
-        $value: '#3192aa',
+        $value: {
+          colorSpace: 'hsl',
+          components: [191.9, 55.3, 42.9],
+          hex: '#3192aa',
+        },
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -248,6 +263,13 @@
       },
     },
     prettylights: {
+      $description: 'Syntax highlighting colors for code display. Used by GitHub code rendering (prettylights theme).',
+      $extensions: {
+        'org.primer.llm': {
+          usage: ['code-syntax-highlighting', 'code-block', 'inline-code', 'diff-view'],
+          rules: 'Use exclusively for syntax highlighting in code display contexts. Do NOT use for general UI text or backgrounds. Each token maps to a specific syntax element (comment, keyword, string, etc.).',
+        },
+      },
       syntax: {
         comment: {
           $value: '{base.color.neutral.9}',
@@ -417,32 +439,22 @@
         invalid: {
           illegal: {
             text: {
-              $value: '{base.color.neutral.1}',
+              $value: '{fgColor.danger}',
               $type: 'color',
               $extensions: {
                 'org.primer.figma': {
                   collection: 'mode',
                   group: 'syntax',
-                },
-                'org.primer.overrides': {
-                  dark: '{base.color.neutral.12}',
                 },
               },
             },
             bg: {
-              $value: '{base.color.red.7}',
+              $value: '{bgColor.danger.muted}',
               $type: 'color',
               $extensions: {
                 'org.primer.figma': {
                   collection: 'mode',
                   group: 'syntax',
-                },
-                'org.primer.overrides': {
-                  dark: '{base.color.red.7}',
-                  'dark-protanopia-deuteranopia': '{base.color.orange.7}',
-                  'dark-protanopia-deuteranopia-high-contrast': '{base.color.orange.7}',
-                  'light-protanopia-deuteranopia': '{base.color.orange.7}',
-                  'light-protanopia-deuteranopia-high-contrast': '{base.color.orange.7}',
                 },
               },
             },

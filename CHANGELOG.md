@@ -1,5 +1,61 @@
 # @primer/primitives
 
+## 11.4.0
+
+### Minor Changes
+
+- [#1298](https://github.com/primer/primitives/pull/1298) [`3cec8c2`](https://github.com/primer/primitives/commit/3cec8c272da221e0a7eb0575b63c91a25158e8ba) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Adding text size scale
+
+- [#1295](https://github.com/primer/primitives/pull/1295) [`b9e6685`](https://github.com/primer/primitives/commit/b9e6685dee330b6fdeed9a12ec9db3fc92863db0) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Add LLM context metadata and a new build process to build a markdown file with all token context.
+
+- [#1297](https://github.com/primer/primitives/pull/1297) [`bfe0d46`](https://github.com/primer/primitives/commit/bfe0d4660dd09ecabc8b11321b2d89990f143270) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Added lineHeight tokens
+
+### Patch Changes
+
+- [#1289](https://github.com/primer/primitives/pull/1289) [`4c0bf67`](https://github.com/primer/primitives/commit/4c0bf671418a101dd10a45363b5b6abf87348558) Thanks [@tfeijo](https://github.com/tfeijo)! - fix: correct @custom-media syntax for narrowLandscape viewport range
+
+- [#1294](https://github.com/primer/primitives/pull/1294) [`6e285f2`](https://github.com/primer/primitives/commit/6e285f2a74d18913982005ac40c24bbdd8438bc8) Thanks [@jonrohan](https://github.com/jonrohan)! - Remove the ::backdrop css selectors from the color themes queries
+
+- [#1300](https://github.com/primer/primitives/pull/1300) [`dcde6af`](https://github.com/primer/primitives/commit/dcde6af489bc3fbba4ad1fdc9d4cb54e1b0a30b4) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Adding metadata to borders and more colors
+
+- [#1299](https://github.com/primer/primitives/pull/1299) [`e4333ea`](https://github.com/primer/primitives/commit/e4333ea7b6843f01e7db0099e69ec648addb83a9) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Add metadata for some more size and color tokens
+
+## 11.3.2
+
+### Patch Changes
+
+- [#1281](https://github.com/primer/primitives/pull/1281) [`49baecd`](https://github.com/primer/primitives/commit/49baecd3c4c9d5f46d4856d9deee8125b81c5f6a) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Improve invalid.illegal tokens for syntax
+
+## 11.3.1
+
+### Patch Changes
+
+- [#1271](https://github.com/primer/primitives/pull/1271) [`c160d8b`](https://github.com/primer/primitives/commit/c160d8b7bd81be83ac4dd0d26453b3cc1e4419c7) Thanks [@langermank](https://github.com/langermank)! - Add one more digit to line-height values
+
+## 11.3.0
+
+### Minor Changes
+
+- [#1269](https://github.com/primer/primitives/pull/1269) [`0dd1e26`](https://github.com/primer/primitives/commit/0dd1e264b29b214830190411a90f725f497831eb) Thanks [@langermank](https://github.com/langermank)! - Add new color tokens for buttons with keybinding hint
+
+### Patch Changes
+
+- [#1265](https://github.com/primer/primitives/pull/1265) [`394d649`](https://github.com/primer/primitives/commit/394d649807794c05cbf9de2739e8fdc3463c2e10) Thanks [@langermank](https://github.com/langermank)! - Fix overlay bg color for dark dimmed high contrast
+
+## 11.2.1
+
+### Patch Changes
+
+- [#1261](https://github.com/primer/primitives/pull/1261) [`b42c900`](https://github.com/primer/primitives/commit/b42c9004c5e24228fd5f9aa0e9ef8d7d428d5a04) Thanks [@langermank](https://github.com/langermank)! - add token
+
+## 11.2.0
+
+### Minor Changes
+
+- [#1255](https://github.com/primer/primitives/pull/1255) [`092dea7`](https://github.com/primer/primitives/commit/092dea7456ae44110c87ce945c704b56a74a6894) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Adding new draft role token
+
+- [#1247](https://github.com/primer/primitives/pull/1247) [`d1deb93`](https://github.com/primer/primitives/commit/d1deb93e190ce00f18b6a24d9976205325403b03) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Change primer.css to using imports
+
 ## 11.1.0
 
 ### Minor Changes
@@ -85,7 +141,6 @@
 ### Patch Changes
 
 - [#1154](https://github.com/primer/primitives/pull/1154) [`f86174b`](https://github.com/primer/primitives/commit/f86174b05a516b8d46b0f2ef5258c72b53ea6e82) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Fix borderColor-closed-muted in dark-protanopia-deuteranopia and revert protanopia-deuteranopia open color to be orange again
-
   - `borderColor-closed-muted` in dark-protanopia-deuteranopia is now `gray` instead of `orange`
   - `borderColor-open-[muted|emphasis]` in protanopia-deuteranopia is now `orange` again (instead of `blue`)
   - `fgColor-open` in protanopia-deuteranopia is now `orange` again (instead of `blue`)
@@ -228,13 +283,11 @@
 - [#1016](https://github.com/primer/primitives/pull/1016) [`39862e9`](https://github.com/primer/primitives/commit/39862e9839f39810bea1a2f8fd148a5673f1c850) Thanks [@langermank](https://github.com/langermank)! - # Updated neutral base color scales
 
   ## Changes
-
   - Theme specific neutral scales have been replaced with two new scales: `light` and `dark`.
   - The new `light` and `dark` scales are inverted, where 0 is the lightest shade in `light` and the darkest shade in `dark`.
   - Functional color tokens have been updated to use the new `light` and `dark` scales, and several overrides have been removed due to the new inverted design.
 
   ## Migration
-
   - Functional color tokens all work as expected and have been tested to meet minimum contrast requirements.
   - If you are using `primer/primitives` base color scales directly, you may need to update how those colors are applied. See the migration table which outlines approximately how the new colors map to the old colors.
 
@@ -317,7 +370,6 @@
 - [#956](https://github.com/primer/primitives/pull/956) [`13f62d5`](https://github.com/primer/primitives/commit/13f62d5b313bf188ebfde22f114fcaf277a32821) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Removed space tokens
 
 - [#1026](https://github.com/primer/primitives/pull/1026) [`401fef1`](https://github.com/primer/primitives/commit/401fef13e3ef1706638260ed5db1c9911e5bb62f) Thanks [@langermank](https://github.com/langermank)! - - Update counter bg styles
-
   - Contrast fixes
 
 - [#968](https://github.com/primer/primitives/pull/968) [`d845fdf`](https://github.com/primer/primitives/commit/d845fdfec1b98e4674127eb6246b6416c0971d62) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Rename data-[colorName]-color to data-[colorName]-color-emphasis
@@ -335,7 +387,6 @@
 - [#977](https://github.com/primer/primitives/pull/977) [`86a263b`](https://github.com/primer/primitives/commit/86a263b1004b5ecf75af8bf8f2af7bf17a178ec5) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - rm @ where it does not effect output
 
 - [#1018](https://github.com/primer/primitives/pull/1018) [`abe900a`](https://github.com/primer/primitives/commit/abe900a8fd5d60038c04c7daabc4b36a1709c5f7) Thanks [@langermank](https://github.com/langermank)! - - Minor changes to prepare for adding more borders to high contrast themes
-
   - Adds tooltip pattern to allow for an inverse style in dark high contrast
 
 - [#1012](https://github.com/primer/primitives/pull/1012) [`2ac3905`](https://github.com/primer/primitives/commit/2ac39054630c2e043fab07b0c7ef227b5dd67124) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - add borderRadius.default token
@@ -542,7 +593,6 @@
 ### Patch Changes
 
 - [#789](https://github.com/primer/primitives/pull/789) [`0f97174`](https://github.com/primer/primitives/commit/0f9717440b376aae27d6e713bf7d17cb17a9ed6f) Thanks [@langermank](https://github.com/langermank)! - - fix fgColor for ToggleSwitch in dark high contrast
-
   - darken borderColor-muted slightly in dark & light mode
 
 - [#785](https://github.com/primer/primitives/pull/785) [`1c830ae`](https://github.com/primer/primitives/commit/1c830ae6dcf7a566342e2aea0e74f88d342b52ed) Thanks [@langermank](https://github.com/langermank)! - Build v8 tokens to `/dist`
@@ -594,7 +644,6 @@
 ### Patch Changes
 
 - [#743](https://github.com/primer/primitives/pull/743) [`5125c62`](https://github.com/primer/primitives/commit/5125c6275a0f03fa28227d06d34540b56dee949f) Thanks [@langermank](https://github.com/langermank)! - - Disabled state for transparent type controls is now transparent
-
   - Reverted the selected color for transparent type controls back to the original (pulled from old source file)
   - Fixed the disabled fgColor for ToggleSwitch
 
@@ -617,7 +666,6 @@
 ### Patch Changes
 
 - [#733](https://github.com/primer/primitives/pull/733) [`f431e7e`](https://github.com/primer/primitives/commit/f431e7e74350b6ec400b36dc5f1cb0a4046e5e4b) Thanks [@langermank](https://github.com/langermank)! - - Remove the default button inset shadow (its basically invisible)
-
   - Switch danger button to use the same border strategy as primary for hover/active
 
 - [#735](https://github.com/primer/primitives/pull/735) [`0d982b1`](https://github.com/primer/primitives/commit/0d982b1c7629afcdaa0a3168ffcfbfbae17aeeee) Thanks [@langermank](https://github.com/langermank)! - Add missing fallbacks for disabled buttons
@@ -682,7 +730,6 @@
 - [#666](https://github.com/primer/primitives/pull/666) [`5c18c74`](https://github.com/primer/primitives/commit/5c18c74788d18619bc4b94558d532ec4df3288aa) Thanks [@ctmayn](https://github.com/ctmayn)! - Adjust the value of entity highlighting so it meets the required color contrast on a diff deletion background.
 
 - [#667](https://github.com/primer/primitives/pull/667) [`f8c7429`](https://github.com/primer/primitives/commit/f8c74297461cad1394148791a8c414bc6aad7fd8) Thanks [@langermank](https://github.com/langermank)! - - Update Overlay backdrop color for dark mode
-
   - Add Overlay backdrop tokens to the old build
 
 - [#671](https://github.com/primer/primitives/pull/671) [`2d3861e`](https://github.com/primer/primitives/commit/2d3861ec2949f1c0e75dd1a6a27a0699fad82b88) Thanks [@langermank](https://github.com/langermank)! - Add transparent fallbacks
@@ -734,7 +781,6 @@
 - [#643](https://github.com/primer/primitives/pull/643) [`6f1f6b6`](https://github.com/primer/primitives/commit/6f1f6b68ff42fdcd401b370397c2f1f2fc5e4eb2) Thanks [@langermank](https://github.com/langermank)! - Adds new color fallback docs and JSON to be used with PostCSS
 
 - [#600](https://github.com/primer/primitives/pull/600) [`76f3122`](https://github.com/primer/primitives/commit/76f31227b6b1b1c7adc5bc8c549cdb3db87aaecc) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - - fix syntax tokens dark mode by moving prettylights tokens into the color parent
-
   - invalid-illegal-text and carriage-return-bg were droped due to a json bug
 
 - [#599](https://github.com/primer/primitives/pull/599) [`f67de6a`](https://github.com/primer/primitives/commit/f67de6afc7896270aac12813ddf2e75ce36fd291) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Replace light-colorblind scale with overrides
@@ -766,7 +812,6 @@
 ### Patch Changes
 
 - [`ad20369`](https://github.com/primer/primitives/commit/ad203696f9591a32fb0c26d65f43ff14c27eebb1) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - ## Updated workflow for v8 tokens
-
   - size-fine and size-coarse tokens are now wrapped in media queries
 
 ## 7.11.6
@@ -1340,7 +1385,6 @@
 * [#137](https://github.com/primer/primitives/pull/137) [`4779983`](https://github.com/primer/primitives/commit/4779983fd0c95924cbc2b5b9ac98dac19ec0f205) Thanks [@Juliusschaeper](https://github.com/Juliusschaeper)! - HC palette update + exceptions for emphasis
 
 - [#134](https://github.com/primer/primitives/pull/134) [`8b8cba7`](https://github.com/primer/primitives/commit/8b8cba7a61756c85d2f751392162abbaadcbfcec) Thanks [@auareyou](https://github.com/auareyou)! - Remapping updates
-
   - Updated alerts to use roles instead of `fg-default`
   - Rename `fg.inactive` to `fg.subtle`
   - Deprecate `avatar-border`

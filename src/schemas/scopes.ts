@@ -27,13 +27,15 @@ export type ValidScope = (typeof validScopes)[number]
 
 export const scopes = (scopeSubset?: ValidScope[]) => {
   const scopeArray = scopeSubset ?? validScopes
-  return z.array(z.string()).refine(
-    value => value.every(item => scopeArray.includes(item as ValidScope)),
-    value => ({
-      message: schemaErrorMessage(
-        `Invalid scope: "${value}"`,
-        `Valid scopes are: ${joinFriendly(scopeArray as string[])}`,
-      ),
-    }),
-  )
+  return z.array(z.string()).superRefine((value, ctx) => {
+    if (!value.every(item => scopeArray.includes(item as ValidScope))) {
+      ctx.addIssue({
+        code: 'custom',
+        message: schemaErrorMessage(
+          `Invalid scope: "${value}"`,
+          `Valid scopes are: ${joinFriendly(scopeArray as string[])}`,
+        ),
+      })
+    }
+  })
 }

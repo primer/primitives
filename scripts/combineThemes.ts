@@ -52,7 +52,6 @@ function combine(base: Theme, override: Theme, overrideFileName: string): Theme 
 function main() {
   const args = process.argv.slice(2)
   if (args.length < 3 || args.length > 4) {
-    // eslint-disable-next-line no-console
     console.error('Usage: npx tsx combineThemes.ts <baseFilePath> <overrideFilePath> <outputFilePath> <themeName?>')
     process.exit(1)
   }

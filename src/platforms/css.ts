@@ -12,12 +12,12 @@ const getCssSelectors = (outputFile: string) => {
 
   return [
     {
-      selector: `[data-color-mode="${mode}"][data-${mode}-theme="${themeName}"], [data-color-mode="${mode}"][data-${mode}-theme="${themeName}"] ::backdrop, [data-color-mode="auto"][data-light-theme="${themeName}"], [data-color-mode="auto"][data-light-theme="${themeName}"] ::backdrop`,
+      selector: `[data-color-mode="${mode}"][data-${mode}-theme="${themeName}"], [data-color-mode="auto"][data-light-theme="${themeName}"]`,
     },
     {
       query: '@media (prefers-color-scheme: dark)',
       // [data-color-mode] here is duplicated to increase the specificity so that light mode can't override it when prefers-color-scheme: dark is enabled
-      selector: `[data-color-mode][data-color-mode="auto"][data-dark-theme="${themeName}"], [data-color-mode][data-color-mode="auto"][data-dark-theme="${themeName}"] ::backdrop`,
+      selector: `[data-color-mode][data-color-mode="auto"][data-dark-theme="${themeName}"]`,
     },
   ]
 }

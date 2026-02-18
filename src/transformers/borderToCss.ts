@@ -1,6 +1,28 @@
 import type {Transform, TransformedToken} from 'style-dictionary/types'
 import {isBorder} from '../filters/isBorder.js'
 import type {BorderTokenValue} from '../types/borderTokenValue.js'
+import type {DimensionTokenValue} from '../types/dimensionTokenValue.js'
+import {parseDimension} from './utilities/parseDimension.js'
+import {normalizeColorValue} from './utilities/normalizeColorValue.js'
+
+/**
+ * @description Converts a W3C dimension object to CSS string, preserving the original unit
+ * @param dim - The dimension value in W3C object format or a string
+ * @returns CSS dimension string (e.g., "2px", "0.125rem", "1em", "0")
+ */
+const dimensionToCss = (dim: DimensionTokenValue | string): string => {
+  if (typeof dim === 'string') {
+    return dim
+  }
+
+  const {value, unit} = parseDimension(dim)
+
+  if (value === 0) {
+    return '0'
+  }
+
+  return `${value}${unit}`
+}
 
 /**
  * checks if all required properties exist on shadow token
@@ -37,6 +59,7 @@ export const borderToCss: Transform = {
       )
     }
     /* width | style | color */
-    return `${value.width} ${value.style} ${value.color}`
+    const color = typeof value.color === 'object' ? normalizeColorValue(value.color) : value.color
+    return `${dimensionToCss(value.width)} ${value.style} ${color}`
   },
 }

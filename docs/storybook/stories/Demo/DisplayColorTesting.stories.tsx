@@ -1,6 +1,5 @@
 import React from 'react'
-import './BorderTesting.css'
-import {Token, Box} from '@primer/react'
+import {Stack, IssueLabel} from '@primer/react/experimental'
 
 export default {
   title: 'Testing/Colors',
@@ -36,76 +35,21 @@ const colors = [
 
 export const DisplayDemo = () => {
   return (
-    <Box sx={{gap: 3, display: 'flex', flexDirection: 'column'}}>
-      <Box sx={{gap: 2, display: 'flex'}}>
+    <Stack direction="vertical" gap="spacious">
+      <Stack direction="horizontal" gap="condensed" wrap="wrap">
         {colors.map(color => (
-          <Token
-            text={color}
-            sx={{
-              backgroundColor: `var(--display-${color}-bgColor-muted)`,
-              color: `var(--display-${color}-fgColor)`,
-              borderColor: `var(--display-${color}-borderColor-emphasis)`,
-            }}
-          />
+          <IssueLabel href="/" key={color} variant={color}>
+            {color}
+          </IssueLabel>
         ))}
-      </Box>
-      <Box sx={{gap: 2, display: 'flex'}}>
+      </Stack>
+      <Stack direction="horizontal" gap="condensed" wrap="wrap">
         {colors.map(color => (
-          <Token
-            text={color}
-            sx={{
-              backgroundColor: `var(--display-${color}-bgColor-emphasis)`,
-              color: `var(--fgColor-onEmphasis)`,
-              borderColor: 'transparent',
-            }}
-          />
+          <IssueLabel href="/" key={color} variant={color}>
+            {color}
+          </IssueLabel>
         ))}
-      </Box>
-    </Box>
-  )
-}
-
-const roles = [
-  'neutral',
-  'accent',
-  'success',
-  'open',
-  'danger',
-  'closed',
-  'attention',
-  'severe',
-  'done',
-  'upsell',
-  'sponsors',
-]
-
-export const RoleDemo = () => {
-  return (
-    <Box sx={{gap: 3, display: 'flex', flexDirection: 'column'}}>
-      <Box sx={{gap: 2, display: 'flex'}}>
-        {roles.map(role => (
-          <Token
-            text={role}
-            sx={{
-              backgroundColor: `var(--bgColor-${role}-muted)`,
-              color: `var(--fgColor-${role})`,
-              borderColor: `var(--borderColor-${role}-emphasis)`,
-            }}
-          />
-        ))}
-      </Box>
-      <Box sx={{gap: 2, display: 'flex'}}>
-        {roles.map(role => (
-          <Token
-            text={role}
-            sx={{
-              backgroundColor: `var(--bgColor-${role}-emphasis)`,
-              color: `var(--fgColor-onEmphasis)`,
-              borderColor: 'transparent',
-            }}
-          />
-        ))}
-      </Box>
-    </Box>
+      </Stack>
+    </Stack>
   )
 }
