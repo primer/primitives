@@ -1,11 +1,13 @@
 {
   "name": "@primer/primitives",
-  "version": "11.3.2",
+  "version": "11.4.0",
   "description": "Typography, spacing, and color primitives for Primer design system",
   "type": "module",
   "files": [
     "dist",
-    "src/tokens"
+    "src/tokens",
+    "DESIGN_TOKENS_SPEC.md",
+    "DESIGN_TOKENS_GUIDE.md"
   ],
   "repository": "https://github.com/primer/primitives",
   "keywords": [
@@ -23,11 +25,12 @@
   },
   "homepage": "https://github.com/primer/primitives#readme",
   "scripts": {
-    "build": "npm run clean && npm run build:tokens && npm run build:fallbacks && npm run build:figma && npm run build:config",
+    "build": "npm run clean && npm run build:tokens && npm run build:fallbacks && npm run build:figma && npm run build:config && npm run build:llm",
     "build:tokens": "tsx ./scripts/buildTokens.ts",
     "build:fallbacks": "tsx ./scripts/buildFallbacks.ts",
     "build:figma": "tsx scripts/buildFigma.ts",
     "build:config": "tsc -p build.tsconfig.jsonc && tsx ./scripts/copyDir.ts src/types dist/build/types",
+    "build:llm": "tsx ./scripts/buildLlm.ts",
     "clean": "rm -rf dist",
     "validate:contrast": "tsx scripts/colorContrast.ts",
     "format": "prettier --check '**/*.{js,jsx,ts,tsx,md,mdx,css}'",
@@ -42,7 +45,7 @@
     "prepack": "npm run build",
     "release": "changeset publish",
     "install:storybook": "cd docs/storybook && npm ci --legacy-peer-deps --no-audit --no-fund",
-    "start:storybook": "npm run build && cd docs/storybook && npm run storybook"
+    "start:storybook": "npm run build:tokens && cd docs/storybook && npm run storybook"
   },
   "prettier": "@github/prettier-config",
   "devDependencies": {
@@ -76,6 +79,7 @@
     "typescript-eslint": "^8.41.0",
     "vitest": "^3.2.4",
     "zod": "^4.1.3",
-    "zod-validation-error": "^4.0.1"
+    "zod-validation-error": "^4.0.1",
+    "colorjs.io": "^0.6.1"
   }
 }

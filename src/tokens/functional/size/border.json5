@@ -2,21 +2,24 @@
   boxShadow: {
     thin: {
       $value: 'inset 0 0 0 {borderWidth.thin}',
-      $description: 'Thin shadow for borders',
-      $type: 'string',
+      $description: 'Thin shadow used instead of a border to prevent layout shift',
+      $type: 'custom-string',
     },
     thick: {
       $value: 'inset 0 0 0 {borderWidth.thick}',
-      $type: 'string',
+      $description: 'Thick shadow (2px) used instead of a border for emphasis without layout shift',
+      $type: 'custom-string',
     },
     thicker: {
       $value: 'inset 0 0 0 {borderWidth.thicker}',
-      $type: 'string',
+      $description: 'Thickest shadow (4px) used for high emphasis borders without layout shift. Use sparingly for maximum visual impact',
+      $type: 'custom-string',
     },
   },
   borderWidth: {
     default: {
       $value: '{borderWidth.thin}',
+      $description: 'Default border width for most UI elements. Alias of borderWidth.thin (1px)',
       $type: 'dimension',
       $extensions: {
         'org.primer.figma': {
@@ -26,7 +29,8 @@
       },
     },
     thin: {
-      $value: '1px',
+      $value: {value: 1, unit: 'px'},
+      $description: 'Standard 1px border width. Use for most borders, dividers, and outlines throughout the interface',
       $type: 'dimension',
       $extensions: {
         'org.primer.figma': {
@@ -36,90 +40,28 @@
       },
     },
     thick: {
-      $value: '2px',
+      $value: {value: 2, unit: 'px'},
+      $description: 'Thick 2px border for emphasis. Use for focus indicators, selected states, or to emphasize important boundaries',
       $type: 'dimension',
       $extensions: {
         'org.primer.figma': {
           collection: 'functional/size',
           scopes: ['borderWidth', 'effectFloat'],
+        },
+        'org.primer.llm': {
+          usage: ['focus-indicator', 'selected-state', 'emphasis-border'],
+          rules: 'MUST use for focus rings on interactive elements. Do NOT use for subtle dividers.',
         },
       },
     },
     thicker: {
-      $value: '4px',
+      $value: {value: 4, unit: 'px'},
+      $description: 'Extra thick 4px border for maximum emphasis. Use sparingly for high-contrast focus indicators or critical visual separators',
       $type: 'dimension',
       $extensions: {
         'org.primer.figma': {
           collection: 'functional/size',
           scopes: ['borderWidth', 'effectFloat'],
-        },
-      },
-    },
-  },
-  borderRadius: {
-    small: {
-      $value: '3px',
-      $type: 'dimension',
-      $extensions: {
-        'org.primer.figma': {
-          collection: 'functional/size',
-          scopes: ['radius'],
-          codeSyntax: {
-            web: 'var(--borderRadius-small) /* utility class: .rounded-1 */',
-          },
-        },
-      },
-    },
-    medium: {
-      $value: '6px',
-      $type: 'dimension',
-      $extensions: {
-        'org.primer.figma': {
-          collection: 'functional/size',
-          scopes: ['radius'],
-          codeSyntax: {
-            web: 'var(--borderRadius-medium) /* utility class: .rounded-2 */',
-          },
-        },
-      },
-    },
-    large: {
-      $value: '12px',
-      $type: 'dimension',
-      $extensions: {
-        'org.primer.figma': {
-          collection: 'functional/size',
-          scopes: ['radius'],
-          codeSyntax: {
-            web: 'var(--borderRadius-large) /* utility class: .rounded-3 */',
-          },
-        },
-      },
-    },
-    full: {
-      $value: '9999px',
-      $type: 'dimension',
-      $description: 'Use this border radius for pill shaped elements',
-      $extensions: {
-        'org.primer.figma': {
-          collection: 'functional/size',
-          scopes: ['radius'],
-          codeSyntax: {
-            web: 'var(--borderRadius-full) /* utility class: .circle */',
-          },
-        },
-      },
-    },
-    default: {
-      $value: '{borderRadius.medium}',
-      $type: 'dimension',
-      $extensions: {
-        'org.primer.figma': {
-          collection: 'functional/size',
-          scopes: ['radius'],
-          codeSyntax: {
-            web: 'var(--borderRadius-default) /* utility class: .rounded-2 */',
-          },
         },
       },
     },
@@ -127,7 +69,8 @@
   outline: {
     focus: {
       offset: {
-        $value: '-2px',
+        $value: {value: -2, unit: 'px'},
+        $description: 'Focus outline offset (-2px). Negative value creates an inset outline for keyboard focus indicators, ensuring the focus ring stays within the element bounds',
         $type: 'dimension',
         $extensions: {
           'org.primer.figma': {
@@ -137,12 +80,17 @@
         },
       },
       width: {
-        $value: '2px',
+        $value: {value: 2, unit: 'px'},
+        $description: 'Focus outline width (2px). Standard width for keyboard focus indicators to meet WCAG 2.4.7 accessibility requirements',
         $type: 'dimension',
         $extensions: {
           'org.primer.figma': {
             collection: 'functional/size',
             scopes: ['borderWidth', 'effectFloat'],
+          },
+          'org.primer.llm': {
+            usage: ['focus-ring', 'keyboard-focus', 'accessibility'],
+            rules: 'MUST use for all keyboard focus indicators. Required for WCAG 2.4.7 compliance.',
           },
         },
       },

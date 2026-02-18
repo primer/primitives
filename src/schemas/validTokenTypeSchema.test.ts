@@ -15,7 +15,7 @@ describe('Schema: validateType', () => {
     expect(validateType.safeParse(token('fontFamily')).success).toStrictEqual(true)
     expect(validateType.safeParse(token('fontWeight')).success).toStrictEqual(true)
     expect(validateType.safeParse(token('number')).success).toStrictEqual(true)
-    expect(validateType.safeParse(token('string')).success).toStrictEqual(true)
+    expect(validateType.safeParse(token('custom-string')).success).toStrictEqual(true)
     expect(validateType.safeParse(token('custom-viewportRange')).success).toStrictEqual(true)
   })
 

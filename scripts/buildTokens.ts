@@ -11,6 +11,7 @@ import glob from 'fast-glob'
 import {themes} from './themes.config.js'
 import fs from 'fs'
 import {getFallbackTheme} from './utilities/getFallbackTheme.js'
+import {CSS_SPEC_HEADER} from './buildLlm.js'
 
 /**
  * getStyleDictionaryConfig
@@ -271,7 +272,19 @@ export const buildDesignTokens = async (buildOptions: ConfigGeneratorOptions): P
     all.push(`@import '${cssFile.replace(/dist\/css/g, '.')}';`)
   }
 
-  fs.writeFileSync('dist/css/primitives.css', `${all.join('\n')}\n`)
+  // Write primitives.css with spec header
+  fs.writeFileSync('dist/css/primitives.css', `${CSS_SPEC_HEADER}${all.join('\n')}\n`)
+
+  /** -----------------------------------
+   * Add spec header to theme CSS files
+   * ----------------------------------- */
+  for (const themeFile of glob.sync('dist/css/functional/themes/*.css')) {
+    const content = fs.readFileSync(themeFile, 'utf-8')
+    // Only add header if not already present
+    if (!content.startsWith('/**')) {
+      fs.writeFileSync(themeFile, `${CSS_SPEC_HEADER}${content}`)
+    }
+  }
 }
 
 /** -----------------------------------

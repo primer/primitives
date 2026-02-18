@@ -1,6 +1,7 @@
 import type {Transform, TransformedToken} from 'style-dictionary/types'
 import {isColorWithAlpha} from '../filters/isColorWithAlpha.js'
 import {getTokenValue} from './utilities/getTokenValue.js'
+import {normalizeColorValue} from './utilities/normalizeColorValue.js'
 
 export const cssColorMix = (colorA: string, colorB: string, colorBPercent: number) => {
   if (colorBPercent < 0 || colorBPercent > 1) {
@@ -20,7 +21,9 @@ export const colorAlphaToCss: Transform = {
   transitive: true,
   filter: isColorWithAlpha,
   transform: (token: TransformedToken) => {
-    if (!token.alpha || token.alpha === null) return getTokenValue(token)
-    return cssColorMix(getTokenValue(token), 'transparent', 1 - token.alpha)
+    const rawValue = getTokenValue(token)
+    const colorString = normalizeColorValue(rawValue)
+    if (token.alpha === null || token.alpha === undefined) return colorString
+    return cssColorMix(colorString, 'transparent', 1 - token.alpha)
   },
 }

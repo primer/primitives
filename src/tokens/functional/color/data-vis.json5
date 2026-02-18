@@ -1,5 +1,12 @@
 {
   data: {
+    $description: 'Colors for data visualization including charts, graphs, and diagrams. Use these colors to differentiate data series. Emphasis variants are for lines, bars, and borders. Muted variants are for area fills and backgrounds.',
+    $extensions: {
+      'org.primer.llm': {
+        usage: ['chart-series', 'graph-line', 'bar-fill', 'pie-segment', 'area-chart', 'data-point'],
+        rules: 'Use data colors for visualizations only. Do NOT use for semantic meaning (use bgColor.success/danger instead). When using multiple series, ensure sufficient contrast between adjacent colors. Pair emphasis with muted variants of the same color for cohesive styling.',
+      },
+    },
     blue: {
       color: {
         emphasis: {

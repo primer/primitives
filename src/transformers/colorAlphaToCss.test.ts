@@ -12,6 +12,11 @@ describe('Transformer: colorAlphaToCss', () => {
     expect(input.map(item => colorAlphaToCss.transform(item, {}, {}))).toStrictEqual(expectedOutput)
   })
 
+  it('transforms color token with alpha: 0 to fully transparent', () => {
+    const input = getMockToken({$value: '#ff0000', alpha: 0})
+    expect(colorAlphaToCss.transform(input, {}, {})).toBe('transparent')
+  })
+
   it('transforms hex3, hex6, hex8 `color` tokens with alpha value', () => {
     const input = [
       getMockToken({$value: '#123', alpha: 0.25}),
@@ -45,5 +50,28 @@ describe('Transformer: colorAlphaToCss', () => {
       'color-mix(in srgb, color-mix(in srgb, {base.color.red.5}, transparent 25%), transparent 65%)',
     ]
     expect(input.map(item => colorAlphaToCss.transform(item as TransformedToken, {}, {}))).toStrictEqual(expectedOutput)
+  })
+
+  it('transforms W3C color object with alpha', () => {
+    const input = getMockToken({
+      $value: {
+        colorSpace: 'srgb',
+        components: [1, 0, 0],
+        hex: '#ff0000',
+      },
+      alpha: 0.5,
+    })
+    expect(colorAlphaToCss.transform(input, {}, {})).toBe('color-mix(in srgb, #ff0000, transparent 50%)')
+  })
+
+  it('transforms W3C color object without alpha', () => {
+    const input = getMockToken({
+      $value: {
+        colorSpace: 'srgb',
+        components: [0, 1, 0],
+        hex: '#00ff00',
+      },
+    })
+    expect(colorAlphaToCss.transform(input, {}, {})).toBe('#00ff00')
   })
 })

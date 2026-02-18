@@ -3,6 +3,7 @@
     default: {
       $value: '{base.color.neutral.13}',
       $type: 'color',
+      $description: 'Default text color for primary content and headings',
       $extensions: {
         'org.primer.figma': {
           collection: 'mode',
@@ -17,14 +18,19 @@
           'dark-high-contrast': '{base.color.neutral.13}',
           'dark-tritanopia-high-contrast': '{base.color.neutral.13}',
           'dark-protanopia-deuteranopia-high-contrast': '{base.color.neutral.13}',
-          'dark-dimmed': '{base.color.neutral.11}',
+          'dark-dimmed': '{base.color.neutral.12}',
           'dark-dimmed-high-contrast': '{base.color.neutral.12}',
+        },
+        'org.primer.llm': {
+          usage: ['default-text', 'heading', 'body-text'],
+          rules: 'RECOMMENDED default for all text. Use for headings, body text, and primary labels.',
         },
       },
     },
     muted: {
       $value: '{base.color.neutral.9}',
       $type: 'color',
+      $description: 'Muted text for secondary content and less important information',
       $extensions: {
         'org.primer.figma': {
           collection: 'mode',
@@ -43,11 +49,16 @@
           'dark-tritanopia-high-contrast': '{base.color.neutral.10}',
           'dark-protanopia-deuteranopia-high-contrast': '{base.color.neutral.10}',
         },
+        'org.primer.llm': {
+          usage: ['muted-text', 'secondary-text', 'helper-text', 'placeholder'],
+          rules: 'Use for secondary text like timestamps, metadata, and helper text. Do NOT use for primary content.',
+        },
       },
     },
     onEmphasis: {
       $value: '{base.color.neutral.0}',
       $type: 'color',
+      $description: 'Text color for use on emphasis backgrounds',
       $extensions: {
         'org.primer.figma': {
           collection: 'mode',
@@ -62,22 +73,32 @@
           'dark-dimmed': '{base.color.neutral.12}',
           'dark-dimmed-high-contrast': '#ffffff',
         },
+        'org.primer.llm': {
+          usage: ['text-on-emphasis', 'contrast-text'],
+          rules: 'MUST use for text on any emphasis background (bgColor.*.emphasis). Ensures accessibility contrast.',
+        },
       },
     },
     onInverse: {
       $value: '{base.color.neutral.0}',
       $type: 'color',
+      $description: 'Text color for use on inverse backgrounds',
       $extensions: {
         'org.primer.figma': {
           collection: 'mode',
           group: 'semantic',
           scopes: ['fgColor'],
         },
+        'org.primer.llm': {
+          usage: ['text-on-inverse', 'inverse-text'],
+          rules: 'Use for text on bgColor.inverse. Provides appropriate contrast in both themes.',
+        },
       },
     },
     white: {
       $value: '{base.color.neutral.0}',
       $type: 'color',
+      $description: 'Pure white text',
       $extensions: {
         'org.primer.figma': {
           collection: 'mode',
@@ -87,11 +108,16 @@
         'org.primer.overrides': {
           dark: '{base.color.neutral.13}',
         },
+        'org.primer.llm': {
+          doNotUse: true,
+          rules: 'Avoid using raw white. Use semantic alternatives: fgColor.onEmphasis for text on dark backgrounds, fgColor.onInverse for inverted contexts. Raw black/white ignore theme preferences and accessibility settings.',
+        },
       },
     },
     black: {
       $value: '{base.color.neutral.13}',
       $type: 'color',
+      $description: 'Pure black text',
       $extensions: {
         'org.primer.figma': {
           collection: 'mode',
@@ -101,11 +127,16 @@
         'org.primer.overrides': {
           dark: '{base.color.neutral.0}',
         },
+        'org.primer.llm': {
+          doNotUse: true,
+          rules: 'Avoid using raw black. Use semantic alternatives: fgColor.default for standard text, fgColor.muted for secondary text. Raw black/white ignore theme preferences and accessibility settings.',
+        },
       },
     },
     disabled: {
       $value: '{base.color.neutral.8}',
       $type: 'color',
+      $description: 'Text color for disabled interactive elements',
       $extensions: {
         'org.primer.figma': {
           collection: 'mode',
@@ -125,11 +156,16 @@
           'dark-tritanopia-high-contrast': '{base.color.neutral.8}',
           'dark-protanopia-deuteranopia-high-contrast': '{base.color.neutral.8}',
         },
+        'org.primer.llm': {
+          usage: ['disabled-text', 'inactive-text', 'unavailable'],
+          rules: 'MUST use for disabled state text. Pair with bgColor.disabled. Do NOT use for active elements.',
+        },
       },
     },
     link: {
       $value: '{fgColor.accent}',
       $type: 'color',
+      $description: 'Text color for hyperlinks',
       $extensions: {
         'org.primer.figma': {
           collection: 'mode',
@@ -139,11 +175,16 @@
             web: 'var(--fgColor-link) /* utility class: .color-fg-accent */',
           },
         },
+        'org.primer.llm': {
+          usage: ['link-text', 'hyperlink'],
+          rules: 'MUST use for all text links. Provides expected link affordance.',
+        },
       },
     },
     neutral: {
       $value: '{base.color.neutral.9}',
       $type: 'color',
+      $description: 'Neutral semantic text for icons and secondary elements',
       $extensions: {
         'org.primer.figma': {
           collection: 'mode',
@@ -159,11 +200,16 @@
           'dark-tritanopia-high-contrast': '{base.color.neutral.11}',
           'dark-protanopia-deuteranopia-high-contrast': '{base.color.neutral.11}',
         },
+        'org.primer.llm': {
+          usage: ['neutral-icon', 'neutral-text'],
+          rules: 'Use for neutral semantic elements. Prefer fgColor.muted for secondary text.',
+        },
       },
     },
     accent: {
       $value: '{base.color.blue.5}',
       $type: 'color',
+      $description: 'Accent text for links and interactive elements',
       $extensions: {
         'org.primer.figma': {
           collection: 'mode',
@@ -184,11 +230,16 @@
           'light-tritanopia-high-contrast': '{base.color.blue.6}',
           'light-protanopia-deuteranopia-high-contrast': '{base.color.blue.6}',
         },
+        'org.primer.llm': {
+          usage: ['accent-text', 'info-text', 'accent-icon'],
+          rules: 'Use for accent-colored text and icons. Pair with bgColor.accent.muted for backgrounds.',
+        },
       },
     },
     success: {
       $value: '{base.color.green.5}',
       $type: 'color',
+      $description: 'Success text for positive feedback and completed states',
       $extensions: {
         'org.primer.figma': {
           collection: 'mode',
@@ -212,11 +263,16 @@
           'light-tritanopia': '{base.color.blue.5}',
           'light-tritanopia-high-contrast': '{base.color.blue.6}',
         },
+        'org.primer.llm': {
+          usage: ['success-text', 'positive-text', 'success-icon'],
+          rules: 'Use for success states and positive feedback text. Pair with bgColor.success.muted for backgrounds.',
+        },
       },
     },
     open: {
       $value: '{fgColor.success}',
       $type: 'color',
+      $description: 'Text color for open state indicators (issues, PRs)',
       $extensions: {
         'org.primer.figma': {
           collection: 'mode',
@@ -236,11 +292,16 @@
           'light-tritanopia': '{base.color.red.5}',
           'light-tritanopia-high-contrast': '{base.color.red.6}',
         },
+        'org.primer.llm': {
+          usage: ['open-text', 'open-issue', 'open-pr'],
+          rules: 'Use for open/active status text. Specifically for GitHub issues and PRs.',
+        },
       },
     },
     attention: {
       $value: '{base.color.yellow.5}',
       $type: 'color',
+      $description: 'Attention text for warnings and caution states',
       $extensions: {
         'org.primer.figma': {
           collection: 'mode',
@@ -257,11 +318,16 @@
           'light-tritanopia-high-contrast': '{base.color.yellow.6}',
           'dark-dimmed-high-contrast': '{base.color.yellow.1}',
         },
+        'org.primer.llm': {
+          usage: ['attention-text', 'warning-text', 'caution-text'],
+          rules: 'Use for warning and caution text. Pair with bgColor.attention.muted for backgrounds.',
+        },
       },
     },
     severe: {
       $value: '{base.color.orange.5}',
       $type: 'color',
+      $description: 'Severe text for high-priority warnings',
       $extensions: {
         'org.primer.figma': {
           collection: 'mode',
@@ -283,11 +349,20 @@
           'light-tritanopia-high-contrast': '{base.color.red.6}',
           'light-protanopia-deuteranopia-high-contrast': '{base.color.orange.6}',
         },
+        'org.primer.llm': {
+          usage: ['severe-text', 'urgent-text', 'severe-icon'],
+          rules: 'Use for severe warnings, less critical than danger. Pair with bgColor.severe.muted for backgrounds.',
+        },
       },
     },
     danger: {
-      $value: '#d1242f',
+      $value: {
+        colorSpace: 'hsl',
+        components: [356.2, 70.6, 48],
+        hex: '#d1242f',
+      },
       $type: 'color',
+      $description: 'Danger text for errors and destructive actions',
       $extensions: {
         'org.primer.figma': {
           collection: 'mode',
@@ -309,11 +384,16 @@
           'light-high-contrast': '{base.color.red.6}',
           'light-tritanopia-high-contrast': '{base.color.red.6}',
         },
+        'org.primer.llm': {
+          usage: ['danger-text', 'error-text', 'destructive-text'],
+          rules: 'Use for error messages and destructive action text. Pair with bgColor.danger.muted for backgrounds.',
+        },
       },
     },
     closed: {
       $value: '{fgColor.danger}',
       $type: 'color',
+      $description: 'Text color for closed state indicators (issues, PRs)',
       $extensions: {
         'org.primer.figma': {
           collection: 'mode',
@@ -333,11 +413,16 @@
           'light-tritanopia': '{fgColor.muted}',
           'light-tritanopia-high-contrast': '{fgColor.muted}',
         },
+        'org.primer.llm': {
+          usage: ['closed-text', 'closed-issue', 'closed-pr'],
+          rules: 'Use for closed/declined status text. Specifically for GitHub issues and PRs.',
+        },
       },
     },
     draft: {
       $value: '{fgColor.neutral}',
       $type: 'color',
+      $description: 'Text color for draft state indicators',
       $extensions: {
         'org.primer.figma': {
           collection: 'mode',
@@ -347,11 +432,16 @@
             web: 'var(--fgColor-draft)',
           },
         },
+        'org.primer.llm': {
+          usage: ['draft-text', 'draft-pr', 'draft-issue'],
+          rules: 'Use for draft/WIP status text. Conveys incomplete or pending state.',
+        },
       },
     },
     done: {
       $value: '{base.color.purple.5}',
       $type: 'color',
+      $description: 'Text color for completed/done state indicators',
       $extensions: {
         'org.primer.figma': {
           collection: 'mode',
@@ -371,11 +461,16 @@
           'light-protanopia-deuteranopia-high-contrast': '{base.color.purple.6}',
           'light-tritanopia-high-contrast': '{base.color.purple.6}',
         },
+        'org.primer.llm': {
+          usage: ['done-text', 'merged', 'completed'],
+          rules: 'Use for completed/done status text. Conveys finished or merged state.',
+        },
       },
     },
     upsell: {
       $value: '{fgColor.done}',
       $type: 'color',
+      $description: 'Text color for upsell and promotional content',
       $extensions: {
         'org.primer.figma': {
           collection: 'mode',
@@ -385,11 +480,16 @@
             web: 'var(--fgColor-upsell)',
           },
         },
+        'org.primer.llm': {
+          usage: ['upsell-text', 'premium-text', 'promotional'],
+          rules: 'Use for upgrade prompts and premium feature text. Do NOT use for regular content.',
+        },
       },
     },
     sponsors: {
       $value: '{base.color.pink.5}',
       $type: 'color',
+      $description: 'Text color for GitHub Sponsors content',
       $extensions: {
         'org.primer.figma': {
           collection: 'mode',
@@ -408,6 +508,10 @@
           'light-high-contrast': '{base.color.pink.6}',
           'light-protanopia-deuteranopia-high-contrast': '{base.color.pink.6}',
           'light-tritanopia-high-contrast': '{base.color.pink.6}',
+        },
+        'org.primer.llm': {
+          usage: ['sponsors-text', 'funding-text', 'sponsors-icon'],
+          rules: 'Use for GitHub Sponsors related text. Do NOT use for general pink-colored text.',
         },
       },
     },
