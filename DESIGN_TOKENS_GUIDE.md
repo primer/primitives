@@ -98,6 +98,30 @@
 | MUST    | Match padding density to control's purpose  |
 | SHOULD  | Use `medium` size as default                |
 
+### Z-Index
+
+```
+--zIndex-[layer]
+  └── layer: behind | default | sticky | dropdown | overlay | modal | popover | skipLink
+```
+
+| Keyword | Rule                                                                                                         |
+| ------- | ------------------------------------------------------------------------------------------------------------ |
+| MUST    | Use z-index tokens instead of raw numeric values                                                             |
+| MUST    | Use `skipLink` only for accessibility skip-navigation links                                                  |
+| MUST    | Pair z-index with appropriate shadow level (see table below)                                                 |
+| SHOULD  | Prefer creating a new stacking context (`isolation: isolate`) over escalating z-index                        |
+| NEVER   | Use `behind` (-1) without verifying no ancestor creates a stacking context (transform, opacity, filter, etc) |
+| NEVER   | Use arbitrary z-index values outside the token scale                                                         |
+
+**Shadow ↔ Z-Index Alignment:**
+
+| Shadow Level                   | Z-Index Token                        | Example               |
+| ------------------------------ | ------------------------------------ | --------------------- |
+| `shadow.resting.*`             | `zIndex.default` / `zIndex.sticky`   | Cards, sticky headers |
+| `shadow.floating.small/medium` | `zIndex.dropdown` / `zIndex.overlay` | Menus, drawers        |
+| `shadow.floating.large/xlarge` | `zIndex.modal` / `zIndex.popover`    | Dialogs, tooltips     |
+
 ---
 
 ## Decision Tree: Easing Selection
