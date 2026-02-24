@@ -121,7 +121,7 @@ export const buildDesignTokens = async (buildOptions: ConfigGeneratorOptions): P
         getStyleDictionaryConfig(
           `functional/size/${file.replace('src/tokens/functional/size/', '').replace('.json5', '')}`,
           [file],
-          ['src/tokens/base/size/size.json5', ...sizeFiles],
+          ['src/tokens/base/size/*.json5', ...sizeFiles],
           buildOptions,
         ),
       )
@@ -137,6 +137,15 @@ export const buildDesignTokens = async (buildOptions: ConfigGeneratorOptions): P
       }),
     )
     await SdBaseSize.buildAllPlatforms()
+
+    debugCurrentFile = `base/size/z-index.css`
+    const SdBaseZIndex = await PrimerStyleDictionary.extend(
+      getStyleDictionaryConfig(`base/size/z-index`, ['src/tokens/base/size/z-index.json5'], [], {
+        buildPath: buildOptions.buildPath,
+        prefix: undefined,
+      }),
+    )
+    await SdBaseZIndex.buildAllPlatforms()
   } catch (e) {
     console.error('🛑 Error trying to build size tokens for code output:', `${e} when building ${debugCurrentFile}`)
   }

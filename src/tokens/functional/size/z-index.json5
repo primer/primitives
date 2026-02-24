@@ -1,0 +1,92 @@
+{
+  zIndex: {
+    behind: {
+      $value: -1,
+      $type: 'number',
+      $description: 'Place element behind base content. Use for decorative backgrounds or canvas elements.',
+      $extensions: {
+        'org.primer.llm': {
+          usage: ['decorative-background', 'canvas-element', 'background-pattern'],
+          rules: 'Use to push an element behind its siblings. WARNING: Negative z-index can behave unpredictably if any ancestor creates a new stacking context (via transform, opacity < 1, filter, will-change, etc.). Only use when you control the full stacking context chain. Do NOT use as a general "hide" mechanism.',
+        },
+      },
+    },
+    default: {
+      $value: '{base.zIndex.0}',
+      $type: 'number',
+      $description: 'Default stacking order. No elevation above surrounding content.',
+      $extensions: {
+        'org.primer.llm': {
+          usage: ['default-content', 'in-flow-element', 'reset'],
+          rules: 'Use to explicitly reset z-index to the default layer. Suitable for elements that should participate in normal document flow stacking. Do NOT use for any element that needs to appear above other content.',
+        },
+      },
+    },
+    sticky: {
+      $value: '{base.zIndex.100}',
+      $type: 'number',
+      $description: 'Sticky elements that remain visible while scrolling.',
+      $extensions: {
+        'org.primer.llm': {
+          usage: ['sticky-header', 'sticky-sidebar', 'sticky-table-header', 'sticky-footer', 'sticky-nav'],
+          rules: 'MUST use with `position: sticky` or `position: fixed` for headers, sidebars, and navigation bars that persist during scroll. Do NOT use for floating overlays or dropdowns — use higher z-index levels instead.',
+        },
+      },
+    },
+    dropdown: {
+      $value: '{base.zIndex.200}',
+      $type: 'number',
+      $description: 'Dropdown menus and select panels that appear above page content.',
+      $extensions: {
+        'org.primer.llm': {
+          usage: ['dropdown-menu', 'select-panel', 'autocomplete-list', 'action-menu', 'context-menu'],
+          rules: 'Use for menus, select panels, and autocomplete lists that overlay page content. These should appear above sticky elements but below overlays and modals. Pair with `shadow.floating.small` or `shadow.floating.medium` for visual elevation.',
+        },
+      },
+    },
+    overlay: {
+      $value: '{base.zIndex.300}',
+      $type: 'number',
+      $description: 'Overlay backdrops, side panels, and drawers.',
+      $extensions: {
+        'org.primer.llm': {
+          usage: ['overlay-backdrop', 'side-panel', 'drawer', 'slide-over', 'bottom-sheet'],
+          rules: 'Use for overlay surfaces that partially cover the page — drawers, side panels, and backdrop layers. These appear above dropdowns but below modal dialogs. SHOULD be paired with a backdrop/scrim element to indicate the overlay is blocking interaction with content beneath.',
+        },
+      },
+    },
+    modal: {
+      $value: '{base.zIndex.400}',
+      $type: 'number',
+      $description: 'Modal dialogs and full-screen overlays.',
+      $extensions: {
+        'org.primer.llm': {
+          usage: ['modal-dialog', 'dialog', 'full-screen-overlay', 'lightbox', 'confirm-dialog'],
+          rules: 'Use for modal dialogs that require user interaction before returning to the page. MUST trap focus within the modal. MUST appear above all other page content except popovers and skip links. Pair with `shadow.floating.large` or `shadow.floating.xlarge` for visual elevation.',
+        },
+      },
+    },
+    popover: {
+      $value: '{base.zIndex.500}',
+      $type: 'number',
+      $description: 'Tooltips and popovers that appear above all normal UI.',
+      $extensions: {
+        'org.primer.llm': {
+          usage: ['tooltip', 'popover', 'hover-card', 'floating-label'],
+          rules: 'Use for tooltips, popovers, and hover cards that must appear above all other UI elements including modals. These are the highest layer in normal UI. Do NOT use for persistent navigation — use `sticky` instead.',
+        },
+      },
+    },
+    skipLink: {
+      $value: '{base.zIndex.600}',
+      $type: 'number',
+      $description: 'Accessibility skip links. Must always be the topmost layer.',
+      $extensions: {
+        'org.primer.llm': {
+          usage: ['skip-link', 'skip-navigation', 'skip-to-content'],
+          rules: 'MUST use for accessibility skip links that allow keyboard users to bypass navigation. This is the highest z-index level and MUST always appear above everything else including modals and tooltips. NEVER use for non-accessibility purposes.',
+        },
+      },
+    },
+  },
+}
