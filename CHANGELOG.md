@@ -1,5 +1,39 @@
 # @primer/primitives
 
+## 11.5.0
+
+### Minor Changes
+
+- [#1319](https://github.com/primer/primitives/pull/1319) [`dccf2af`](https://github.com/primer/primitives/commit/dccf2af9db11a4f3a0ee32f756338f382ec13c5d) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Add z-index design tokens for managing stacking context. Introduces base z-index scale (0-600) and 8 semantic functional tokens: `behind`, `default`, `sticky`, `dropdown`, `overlay`, `modal`, `popover`, and `skipLink`. Includes LLM metadata with usage guidance and shadow-to-z-index alignment rules.
+
+- [#1315](https://github.com/primer/primitives/pull/1315) [`8bb3e76`](https://github.com/primer/primitives/commit/8bb3e76843c0e9b210a34bf322cd3dd23d4d181b) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Add some missing tokens that confused the AI
+
+- [#1320](https://github.com/primer/primitives/pull/1320) [`6c1af22`](https://github.com/primer/primitives/commit/6c1af223c33f6cc9e201b8a0a4407a536d0297f7) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Add negative base size tokens (`negative-2` through `negative-48`) for sizes 2–48
+
+### Patch Changes
+
+- [#1301](https://github.com/primer/primitives/pull/1301) [`423b6e1`](https://github.com/primer/primitives/commit/423b6e1b3699b3b8fc395a785ffe66f1ebf8be50) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Convert duration tokens to w3c
+
+- [#1318](https://github.com/primer/primitives/pull/1318) [`4d0f257`](https://github.com/primer/primitives/commit/4d0f2577afa5413b4a0994affa40e98bce523e67) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Fix dark mode contrast for controlTrack and controlKnob tokens. The track now recedes (darker) and the knob stands out (lighter) in all dark mode variants, fixing the inverted visual hierarchy in SegmentedControl and ToggleSwitch.
+
+- [#1308](https://github.com/primer/primitives/pull/1308) [`135dd9b`](https://github.com/primer/primitives/commit/135dd9b866a5731c680dc0b1ce35018b400d383c) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Update shadow tokens to use W3C DTCG object format for dimension values
+  - Shadow token dimension properties (`offsetX`, `offsetY`, `blur`, `spread`) now use object format `{ value: number, unit: "px" }` instead of legacy strings like `"1px"`
+  - Updated `shadowToCss` transformer to handle W3C dimension objects
+  - Updated `ShadowTokenValue` type to require `DimensionTokenValue` for dimension properties
+  - Legacy string format for shadow dimensions is no longer supported
+
+- [#1306](https://github.com/primer/primitives/pull/1306) [`e4e355f`](https://github.com/primer/primitives/commit/e4e355f53b6cfd088bdcf7ab63d066332f26c176) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Adding metadata for:
+  - shadow tokens
+  - display tokens
+  - ansi colors
+  - syntax colors
+
+- [#1305](https://github.com/primer/primitives/pull/1305) [`305c559`](https://github.com/primer/primitives/commit/305c559fb73337e736294d0dd7cbeae611a61c95) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Change dimension tokens to W3C DTCG format (breaking change)
+  - The transformers `dimensionToRem`, `dimensionToRemPxArray`, and `dimensionToPixelUnitless` now only accept W3C DTCG object-format dimension tokens. Legacy string-based dimension values are no longer supported and will throw errors.
+  - In the W3C DTCG format, only `px` and `rem` units are supported. Support for `em` units has been removed.
+
+- [#1302](https://github.com/primer/primitives/pull/1302) [`d5a7908`](https://github.com/primer/primitives/commit/d5a79089001222d61bb9e5b01f42fa3f10384398) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Improve context for agents
+
 ## 11.4.0
 
 ### Minor Changes
