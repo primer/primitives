@@ -1,5 +1,11 @@
 # @primer/primitives
 
+## 11.5.1
+
+### Patch Changes
+
+- [#1322](https://github.com/primer/primitives/pull/1322) [`af16c12`](https://github.com/primer/primitives/commit/af16c1209ad0042c55c4136ed83049161f08f326) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Changing dark dimmed fgColor-default to previous value
+
 ## 11.5.0
 
 ### Minor Changes
