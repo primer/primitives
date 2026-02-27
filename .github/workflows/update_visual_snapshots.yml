@@ -80,6 +80,7 @@ jobs:
           path: snapshots
           pattern: snapshots-*
       - run: |
+          shopt -s nullglob
           for snapshots in snapshots/*/*.zip; do
             unzip -o "$snapshots" -d .
           done
