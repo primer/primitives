@@ -28,28 +28,34 @@ Data is served from the `dist/` folder:
 All available imports:
 
 ```css
+/* size, motion & typography in one file */
+@import '@primer/primitives/primitives.css';
+
+/* motion */
+@import '@primer/primitives/base/motion.css';
+
 /* size/typography */
-@import '@primer/primitives/dist/css/base/size/size.css';
-@import '@primer/primitives/dist/css/base/typography/typography.css';
-@import '@primer/primitives/dist/css/functional/size/border.css';
-@import '@primer/primitives/dist/css/functional/size/breakpoints.css';
-@import '@primer/primitives/dist/css/functional/size/size.css';
-@import '@primer/primitives/dist/css/functional/size/viewport.css';
-@import '@primer/primitives/dist/css/functional/typography/typography.css';
+@import '@primer/primitives/base/typography.css';
+@import '@primer/primitives/base/size.css';
+@import '@primer/primitives/functional/border.css';
+@import '@primer/primitives/functional/breakpoints.css';
+@import '@primer/primitives/functional/size.css';
+@import '@primer/primitives/functional/viewport.css';
+@import '@primer/primitives/functional/typography.css';
 
 /* motion */
 @import '@primer/primitives/dist/css/base/motion/motion.css';
 
 /* color */
-@import '@primer/primitives/dist/css/functional/themes/light.css';
-@import '@primer/primitives/dist/css/functional/themes/light-tritanopia.css';
-@import '@primer/primitives/dist/css/functional/themes/light-high-contrast.css';
-@import '@primer/primitives/dist/css/functional/themes/light-colorblind.css';
-@import '@primer/primitives/dist/css/functional/themes/dark.css';
-@import '@primer/primitives/dist/css/functional/themes/dark-colorblind.css';
-@import '@primer/primitives/dist/css/functional/themes/dark-dimmed.css';
-@import '@primer/primitives/dist/css/functional/themes/dark-high-contrast.css';
-@import '@primer/primitives/dist/css/functional/themes/dark-tritanopia.css';
+@import '@primer/primitives/themes/light.css';
+@import '@primer/primitives/themes/light-tritanopia.css';
+@import '@primer/primitives/themes/light-high-contrast.css';
+@import '@primer/primitives/themes/light-colorblind.css';
+@import '@primer/primitives/themes/dark.css';
+@import '@primer/primitives/themes/dark-colorblind.css';
+@import '@primer/primitives/themes/dark-dimmed.css';
+@import '@primer/primitives/themes/dark-high-contrast.css';
+@import '@primer/primitives/themes/dark-tritanopia.css';
 ```
 
 > **Note:** Motion CSS imports are required for components with animations, such as `Spinner` from `@primer/react`. If you're experiencing issues with animated components appearing static, ensure you've imported the motion CSS files.
