@@ -3,7 +3,7 @@
     system: {
       $value: "'Mona Sans VF', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji'",
       $type: 'fontFamily',
-      $description: 'System font stack optimized for cross-platform rendering. Primary font for all UI text.',
+      $description: 'Mona Sans–first font stack with system fallbacks, optimized for cross-platform rendering. Primary font stack for all UI text where Mona Sans is available.',
       $extensions: {
         'org.primer.figma': {
           collection: 'typography',
