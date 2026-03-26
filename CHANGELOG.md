@@ -1,5 +1,11 @@
 # @primer/primitives
 
+## 11.6.0
+
+### Minor Changes
+
+- [#1332](https://github.com/primer/primitives/pull/1332) [`358a22e`](https://github.com/primer/primitives/commit/358a22eb88f45c68574f98efd5be8eb0cf5d8148) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Add 'Mona Sans VF' as the primary font in `system`, `sansSerif`, and `sansSerifDisplay` font stacks
+
 ## 11.5.1
 
 ### Patch Changes

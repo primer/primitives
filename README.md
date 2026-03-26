@@ -56,7 +56,7 @@ All available imports:
 
 ## Design token data
 
-Design token data is stored in the [src/tokens](./src/tokens/) directory. These tokens are compiled with [style dictionary](https://amzn.github.io/style-dictionary/#/) in [scripts/buildTokens.ts](./scripts/buildTokens.ts).
+Design token data is stored in the [src/tokens](./src/tokens/) directory. These tokens are compiled with [style dictionary](https://styledictionary.com) in [scripts/buildTokens.ts](./scripts/buildTokens.ts).
 
 To make working with tokens easier, we added some additional functionality on top of what style dictionary comes with:
 
