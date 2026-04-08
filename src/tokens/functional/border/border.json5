@@ -1,24 +1,4 @@
 {
-  focus: {
-    outline: {
-      $value: {
-        color: '{focus.outlineColor}',
-        style: 'solid',
-        width: {
-          value: 2,
-          unit: 'px',
-        },
-      },
-      $type: 'border',
-      $description: 'Focus ring outline for keyboard navigation and accessibility.',
-      $extensions: {
-        'org.primer.llm': {
-          usage: ['focus-ring', 'keyboard-navigation', 'accessibility-indicator'],
-          rules: 'Always ensure focus states are visible. Do not override with custom focus styles that reduce visibility. Use for interactive elements like buttons, links, and form controls.',
-        },
-      },
-    },
-  },
   border: {
     $description: 'Semantic border tokens combining color, style, and width for consistent UI boundaries.',
     $extensions: {

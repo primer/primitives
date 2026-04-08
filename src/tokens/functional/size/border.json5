@@ -66,34 +66,4 @@
       },
     },
   },
-  outline: {
-    focus: {
-      offset: {
-        $value: {value: -2, unit: 'px'},
-        $description: 'Focus outline offset (-2px). Negative value creates an inset outline for keyboard focus indicators, ensuring the focus ring stays within the element bounds',
-        $type: 'dimension',
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'functional/size',
-            scopes: ['borderWidth', 'effectFloat'],
-          },
-        },
-      },
-      width: {
-        $value: {value: 2, unit: 'px'},
-        $description: 'Focus outline width (2px). Standard width for keyboard focus indicators to meet WCAG 2.4.7 accessibility requirements',
-        $type: 'dimension',
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'functional/size',
-            scopes: ['borderWidth', 'effectFloat'],
-          },
-          'org.primer.llm': {
-            usage: ['focus-ring', 'keyboard-focus', 'accessibility'],
-            rules: 'MUST use for all keyboard focus indicators. Required for WCAG 2.4.7 compliance.',
-          },
-        },
-      },
-    },
-  },
 }
