@@ -335,7 +335,7 @@
         $value: [
           {
             color: '{overlay.borderColor}',
-            alpha: 0.5,
+            alpha: 0.25,
             offsetX: {
               value: 0,
               unit: 'px',
@@ -1476,6 +1476,7 @@
         },
       },
       legacy: {
+        $deprecated: '{shadow.floating.small}',
         $value: [
           {
             color: '{base.color.neutral.12}',
