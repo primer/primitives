@@ -12,6 +12,7 @@ import {themes} from './themes.config.js'
 import fs from 'fs'
 import {getFallbackTheme} from './utilities/getFallbackTheme.js'
 import {CSS_SPEC_HEADER} from './buildLlm.js'
+import {isDimension, isSource} from '../src/filters/index.js'
 
 /**
  * getStyleDictionaryConfig
@@ -116,10 +117,59 @@ export const buildDesignTokens = async (buildOptions: ConfigGeneratorOptions): P
     const sizeFiles = glob.sync('src/tokens/functional/size/*')
     //
     for (const file of sizeFiles) {
-      debugCurrentFile = `functional/size/${file.replace('src/tokens/functional/size/', '').replace('.json5', '')}`
+      const basename = file.replace('src/tokens/functional/size/', '').replace('.json5', '')
+      debugCurrentFile = `functional/size/${basename}`
+
+      // Border build: also include focus dimension tokens from component/focus.json5
+      if (basename === 'border') {
+        // Step 1: Standard build for doc/styleLint/fallbacks (border.json5 only)
+        const standardSD = await PrimerStyleDictionary.extend(
+          getStyleDictionaryConfig(
+            `functional/size/${basename}`,
+            [file],
+            ['src/tokens/base/size/*.json5', ...sizeFiles],
+            buildOptions,
+            {css: undefined},
+          ),
+        )
+        await standardSD.buildAllPlatforms()
+
+        // Step 2: CSS-only build combining border.json5 + focus.json5 dimension tokens
+        const borderCss = css(`css/functional/size/${basename}.css`, buildOptions.prefix, buildOptions.buildPath)
+        // Keep only the non-themed css/advanced file entry and override its filter
+        borderCss.files = [
+          {
+            ...borderCss.files[1],
+            filter: (token: {$type: string; isSource: boolean}) =>
+              isSource(token as Parameters<typeof isSource>[0]) &&
+              (isDimension(token as Parameters<typeof isDimension>[0]) || token.$type === 'custom-string'),
+          },
+        ]
+
+        const cssSD = await PrimerStyleDictionary.extend({
+          source: [file, 'src/tokens/component/focus.json5'],
+          include: [
+            'src/tokens/base/size/*.json5',
+            ...sizeFiles,
+            'src/tokens/functional/color/borderColor.json5',
+            'src/tokens/base/color/light/light.json5',
+          ],
+          log: {
+            warnings: 'disabled',
+            verbosity: 'silent',
+            errors: {
+              brokenReferences: 'throw',
+            },
+          },
+          platforms: {css: borderCss},
+        })
+        await cssSD.buildAllPlatforms()
+        continue
+      }
+
       const extendedSD = await PrimerStyleDictionary.extend(
         getStyleDictionaryConfig(
-          `functional/size/${file.replace('src/tokens/functional/size/', '').replace('.json5', '')}`,
+          `functional/size/${basename}`,
           [file],
           ['src/tokens/base/size/*.json5', ...sizeFiles],
           buildOptions,

@@ -55,6 +55,7 @@ export const css: PlatformInitializer = (outputFile, prefix, buildPath, options)
           isSource(token) &&
           options?.themed === true &&
           token.$type !== 'custom-viewportRange' &&
+          token.$type !== 'dimension' &&
           !isFromFile(token, [
             'src/tokens/functional/size/size-coarse.json5',
             'src/tokens/functional/size/size-fine.json5',
