@@ -1,20 +1,6 @@
 {
   text: {
     display: {
-      lineBoxHeight: {
-        $value: '{base.text.lineHeight.snug}',
-        $type: 'number',
-        $extensions: {
-          'org.primer.data': {
-            fontSize: 40,
-          },
-          'org.primer.figma': {
-            collection: 'typography',
-            scopes: ['lineHeight'],
-            fontSizeInPx: 40,
-          },
-        },
-      },
       size: {
         $value: '{base.text.size.2xl}',
         $type: 'dimension',
