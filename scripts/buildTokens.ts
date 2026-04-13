@@ -148,31 +148,37 @@ export const buildDesignTokens = async (buildOptions: ConfigGeneratorOptions): P
 
       // Border build: also include focus dimension tokens from component/focus.json5
       if (basename === 'border') {
-        // Step 1: Standard build for doc/styleLint/fallbacks (border.json5 only)
-        const standardSD = await PrimerStyleDictionary.extend(
-          getStyleDictionaryConfig(
-            `functional/size/${basename}`,
-            [file],
-            ['src/tokens/base/size/*.json5', ...sizeFiles],
-            buildOptions,
-            {css: undefined},
-          ),
-        )
-        await standardSD.buildAllPlatforms()
+        // Filter that only allows dimension + custom-string source tokens (excludes color/border from focus.json5)
+        const dimensionOnlyFilter = (token: {$type: string; isSource: boolean}) =>
+          isSource(token as Parameters<typeof isSource>[0]) &&
+          (isDimension(token as Parameters<typeof isDimension>[0]) || token.$type === 'custom-string')
 
-        // Step 2: CSS-only build combining border.json5 + focus.json5 dimension tokens
+        // Override all platform filters to only emit dimension tokens
         const borderCss = css(`css/functional/size/${basename}.css`, buildOptions.prefix, buildOptions.buildPath)
-        // Keep only the non-themed css/advanced file entry and override its filter
-        borderCss.files = [
-          {
-            ...borderCss.files[1],
-            filter: (token: {$type: string; isSource: boolean}) =>
-              isSource(token as Parameters<typeof isSource>[0]) &&
-              (isDimension(token as Parameters<typeof isDimension>[0]) || token.$type === 'custom-string'),
-          },
-        ]
+        borderCss.files = [{...borderCss.files[1], filter: dimensionOnlyFilter}]
 
-        const cssSD = await PrimerStyleDictionary.extend({
+        const borderDocJson = docJson(
+          `docs/functional/size/${basename}.json`,
+          buildOptions.prefix,
+          buildOptions.buildPath,
+        )
+        borderDocJson.files = borderDocJson.files.map(f => ({...f, filter: dimensionOnlyFilter}))
+
+        const borderStyleLint = styleLint(
+          `styleLint/functional/size/${basename}.json`,
+          buildOptions.prefix,
+          buildOptions.buildPath,
+        )
+        borderStyleLint.files = borderStyleLint.files.map(f => ({...f, filter: dimensionOnlyFilter}))
+
+        const borderFallbacks = fallbacks(
+          `fallbacks/functional/size/${basename}.json`,
+          buildOptions.prefix,
+          buildOptions.buildPath,
+        )
+        borderFallbacks.files = borderFallbacks.files.map(f => ({...f, filter: dimensionOnlyFilter}))
+
+        const borderSD = await PrimerStyleDictionary.extend({
           source: [file, 'src/tokens/component/focus.json5'],
           include: [
             'src/tokens/base/size/*.json5',
@@ -187,9 +193,14 @@ export const buildDesignTokens = async (buildOptions: ConfigGeneratorOptions): P
               brokenReferences: 'throw',
             },
           },
-          platforms: {css: borderCss},
+          platforms: {
+            css: borderCss,
+            docJson: borderDocJson,
+            styleLint: borderStyleLint,
+            fallbacks: borderFallbacks,
+          },
         })
-        await cssSD.buildAllPlatforms()
+        await borderSD.buildAllPlatforms()
         continue
       }
 
