@@ -90,6 +90,32 @@ export const buildDesignTokens = async (buildOptions: ConfigGeneratorOptions): P
   try {
     for (const {filename, source, include, theme} of themes) {
       debugCurrentFile = `functional/themes/${filename}.css`
+
+      // Override docJson and styleLint filters to exclude dimension tokens from theme output
+      const themeDocJson = docJson(
+        `docs/functional/themes/${filename}.json`,
+        buildOptions.prefix,
+        buildOptions.buildPath,
+        {theme: [theme, getFallbackTheme(theme)]},
+      )
+      themeDocJson.files = themeDocJson.files.map(f => ({
+        ...f,
+        filter: (token: {$type: string; isSource: boolean}) =>
+          isSource(token as Parameters<typeof isSource>[0]) && token.$type !== 'dimension',
+      }))
+
+      const themeStyleLint = styleLint(
+        `styleLint/functional/themes/${filename}.json`,
+        buildOptions.prefix,
+        buildOptions.buildPath,
+        {theme: [theme, getFallbackTheme(theme)]},
+      )
+      themeStyleLint.files = themeStyleLint.files.map(f => ({
+        ...f,
+        filter: (token: {$type: string; isSource: boolean}) =>
+          isSource(token as Parameters<typeof isSource>[0]) && token.$type !== 'dimension',
+      }))
+
       // build functional scales
       const extendedSD = await PrimerStyleDictionary.extend(
         getStyleDictionaryConfig(
@@ -97,8 +123,8 @@ export const buildDesignTokens = async (buildOptions: ConfigGeneratorOptions): P
           source,
           include,
           {...buildOptions, themed: true, theme: [theme, getFallbackTheme(theme)]},
-          // disable fallbacks for themes
-          {fallbacks: undefined},
+          // disable fallbacks for themes, override docJson and styleLint with dimension filter
+          {fallbacks: undefined, docJson: themeDocJson, styleLint: themeStyleLint},
         ),
       )
       await extendedSD.buildAllPlatforms()
