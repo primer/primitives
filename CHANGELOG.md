@@ -1,5 +1,33 @@
 # @primer/primitives
 
+## 11.7.0
+
+### Minor Changes
+
+- [#1349](https://github.com/primer/primitives/pull/1349) [`4bedeb1`](https://github.com/primer/primitives/commit/4bedeb17d7c94c5666d50db4c28ff1de5f4a1766) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Remove redundant `lineBoxHeight` tokens
+
+  The following tokens have been removed:
+  - `text-display-lineBoxHeight` - Duplicated `text-display-lineHeight` value
+  - `control-xsmall-lineBoxHeight`
+  - `control-small-lineBoxHeight`
+  - `control-medium-lineBoxHeight`
+  - `control-large-lineBoxHeight`
+  - `control-xlarge-lineBoxHeight`
+
+  These tokens were inconsistently defined (typography used unitless multipliers while controls used absolute dimensions) and were not providing clear value. The control sizing formula (`size = lineBoxHeight + 2 × paddingBlock`) can be derived from existing `size` and `paddingBlock` tokens. Breaking changes have been mitigated on the platform.
+
+### Patch Changes
+
+- [#1344](https://github.com/primer/primitives/pull/1344) [`cb7c706`](https://github.com/primer/primitives/commit/cb7c706fcab713d0f60fa8d1b8139876f585bd4d) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Consolidate focus outline tokens into `src/tokens/component/focus.json5` with consistent kebab-case naming (`focus-outline-color`, `focus-outline-width`, `focus-outline-offset`). Deprecated aliases for the old names are included for backward compatibility.
+
+  Route focus dimension tokens (`--focus-outline-width`, `--focus-outline-offset`, `--outline-focus-offset`, `--outline-focus-width`) to `css/functional/size/border.css` instead of theme CSS files, since these values are static and don't vary by theme.
+
+- [#1345](https://github.com/primer/primitives/pull/1345) [`35d9a90`](https://github.com/primer/primitives/commit/35d9a90cc2b9dffcd0d6949a77b779a2fd91a20b) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Remove `shadow.floating.legacy`. Reduce `shadow.floating.small` light mode border alpha from 0.5 to 0.25.
+
+- [#1346](https://github.com/primer/primitives/pull/1346) [`7728903`](https://github.com/primer/primitives/commit/7728903b82235002714cec66858bb0287a3faddf) Thanks [@copilot-swe-agent](https://github.com/apps/copilot-swe-agent)! - Update light-high-contrast fgColor tokens to custom hex values between scale levels 5 and 6
+
+  Improves visual differentiation between status colors (open/closed/done) in the light high-contrast theme. The three affected tokens (fgColor.success, fgColor.danger, fgColor.done) previously resolved to base color scale level 6, making them too dark and visually indistinct. No single scale step satisfies both the 7:1 contrast minimum and chromatic distinction, so custom hex values interpolated between levels 5 and 6 are used instead, following the precedent set by dark high-contrast theme overrides.
+
 ## 11.6.0
 
 ### Minor Changes
