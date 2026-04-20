@@ -21,7 +21,7 @@ export const Viewport = () => {
         Viewport ranges
       </h1>
       <DataTable
-        aria-labelledby="viewports"
+        aria-labelledby="sizing"
         data={data}
         columns={[tokenColumn({cssVar: true}), outputValueColumn(), sourceValueColumn()]}
       />
