@@ -55,7 +55,9 @@ export const Transparent = ({colorTokens}: {colorTokens: ColorTokens}) => {
               const cleanedValue =
                 typeof rawValue === 'string'
                   ? rawValue.replace(/[{}]/g, '').replace(/\./g, '-')
-                  : (rawValue.hex ?? row.value)
+                  : typeof rawValue === 'object' && rawValue !== null && 'hex' in rawValue
+                    ? rawValue.hex
+                    : row.value
               return (
                 <Stack direction="horizontal" gap="condensed">
                   <ColorTokenSwatch bgColor={cleanedValue} /> <code>{cleanedValue}</code>
