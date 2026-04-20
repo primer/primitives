@@ -22,7 +22,7 @@ export const Overlay = () => {
         Overlay
       </h1>
       <DataTable
-        aria-labelledby="overlay"
+        aria-labelledby="sizing"
         data={data}
         columns={[tokenColumn({cssVar: true}), outputValueColumn(), sourceValueColumn()]}
       />
