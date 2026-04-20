@@ -150,10 +150,12 @@ export const FontShorthand = () => {
             header: 'Source value',
             field: 'original' as const,
             rowHeader: true,
-            renderCell: (row: {original: {$value: {fontSize?: string; fontFamily?: string; lineHeight?: string}}}) => (
+            renderCell: (row: {
+              original: {$value: {fontWeight?: string; fontSize?: string; fontFamily?: string; lineHeight?: string}}
+            }) => (
               <div>
                 <p>
-                  font-weight: <code>{row.original.$value.fontSize}</code>
+                  font-weight: <code>{row.original.$value.fontWeight}</code>
                 </p>
                 <p>
                   font-size: <code>{row.original.$value.fontSize}</code>
