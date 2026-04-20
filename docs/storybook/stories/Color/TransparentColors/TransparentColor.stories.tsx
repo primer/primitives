@@ -94,7 +94,7 @@ export const Light = () => {
 }
 Light.decorators = [
   Story => (
-    <div data-color-mode="light" data-light-theme="light" data-dark-theme="light">
+    <div data-color-mode="light" data-light-theme="light" data-dark-theme="light" style={{margin: "-1rem", padding: "1rem"}}>
       <Story />
     </div>
   ),
@@ -174,7 +174,7 @@ export const Dark = () => {
 }
 Dark.decorators = [
   Story => (
-    <div data-color-mode="dark" data-light-theme="dark" data-dark-theme="dark">
+    <div data-color-mode="dark" data-light-theme="dark" data-dark-theme="dark" style={{margin: "-1rem", padding: "1rem"}}>
       <Story />
     </div>
   ),
@@ -254,7 +254,7 @@ export const LightHighContrast = () => {
 }
 LightHighContrast.decorators = [
   Story => (
-    <div data-color-mode="light" data-light-theme="light_high_contrast" data-dark-theme="light_high_contrast">
+    <div data-color-mode="light" data-light-theme="light_high_contrast" data-dark-theme="light_high_contrast" style={{margin: "-1rem", padding: "1rem"}}>
       <Story />
     </div>
   ),
@@ -334,7 +334,7 @@ export const DarkHighContrast = () => {
 }
 DarkHighContrast.decorators = [
   Story => (
-    <div data-color-mode="dark" data-light-theme="dark_high_contrast" data-dark-theme="dark_high_contrast">
+    <div data-color-mode="dark" data-light-theme="dark_high_contrast" data-dark-theme="dark_high_contrast" style={{margin: "-1rem", padding: "1rem"}}>
       <Story />
     </div>
   ),
@@ -411,7 +411,7 @@ export const DarkDimmed = () => {
 }
 DarkDimmed.decorators = [
   Story => (
-    <div data-color-mode="dark" data-light-theme="dark_dimmed" data-dark-theme="dark_dimmed">
+    <div data-color-mode="dark" data-light-theme="dark_dimmed" data-dark-theme="dark_dimmed" style={{margin: "-1rem", padding: "1rem"}}>
       <Story />
     </div>
   ),
