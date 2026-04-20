@@ -2,9 +2,8 @@ import React from 'react'
 // eslint-disable-next-line import/extensions
 import sizeTokens from '../../../../dist/docs/functional/size/breakpoints.json'
 import {DataTable, Table} from '@primer/react/experimental'
-import {InlineCode} from '../StorybookComponents/InlineCode/InlineCode'
 import {getTokensByName} from '../utilities/getTokensByName'
-import {formatTokenValue} from '../utilities/formatTokenValue'
+import {tokenColumn, outputValueColumn, sourceValueColumn} from '../utilities/commonTableColumns'
 
 export default {
   title: 'Size/Functional/Breakpoints',
@@ -14,12 +13,7 @@ export default {
 }
 
 export const Breakpoints = () => {
-  const data = getTokensByName(sizeTokens, 'breakpoint').map(token => {
-    return {
-      id: token.name,
-      ...token,
-    }
-  })
+  const data = getTokensByName(sizeTokens, 'breakpoint').map(token => ({id: token.name, ...token}))
 
   return (
     <Table.Container>
@@ -29,32 +23,7 @@ export const Breakpoints = () => {
       <DataTable
         aria-labelledby="breakpoints"
         data={data}
-        columns={[
-          {
-            header: 'Token',
-            field: 'name',
-            rowHeader: true,
-            renderCell: row => {
-              return <InlineCode value={row.name} copyClipboard cssVar />
-            },
-          },
-          {
-            header: 'Output value',
-            field: 'value',
-            rowHeader: true,
-            renderCell: row => {
-              return <p>{formatTokenValue(row.value)}</p>
-            },
-          },
-          {
-            header: 'Source value',
-            field: 'original',
-            rowHeader: true,
-            renderCell: row => {
-              return <p>{formatTokenValue(row.original.$value)}</p>
-            },
-          },
-        ]}
+        columns={[tokenColumn({cssVar: true}), outputValueColumn(), sourceValueColumn()]}
       />
     </Table.Container>
   )
