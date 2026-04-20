@@ -9,6 +9,7 @@ import {TouchTargetDemo} from '../StorybookComponents/TouchTargetDemo/TouchTarge
 import {DataTable, Table} from '@primer/react/experimental'
 import {InlineCode} from '../StorybookComponents/InlineCode/InlineCode'
 import {getTokensByName} from '../utilities/getTokensByName'
+import {formatTokenValue} from '../utilities/formatTokenValue'
 
 export default {
   title: 'Size/Functional/Control',
@@ -27,13 +28,13 @@ export const XSmall = () => {
   })
 
   // get string for each item
-  const gapValueString = getTokensByName(sizeTokens, 'control-xsmall-gap')[0].name
-  const paddingBlockValueString = getTokensByName(sizeTokens, 'control-xsmall-paddingBlock')[0].name
-  const lineBlockHeightPropValueString = getTokensByName(sizeTokens, 'control-xsmall-lineBoxHeight')[0].name
-  const blockSizeValueString = getTokensByName(sizeTokens, 'control-xsmall-size')[0].name
-  const condensedValueString = getTokensByName(sizeTokens, 'control-xsmall-paddingInline-condensed')[0].name
-  const normalValueString = getTokensByName(sizeTokens, 'control-xsmall-paddingInline-normal')[0].name
-  const spaciousValueString = getTokensByName(sizeTokens, 'control-xsmall-paddingInline-spacious')[0].name
+  const gapValueString = getTokensByName(sizeTokens, 'control-xsmall-gap')[0]?.name ?? ''
+  const paddingBlockValueString = getTokensByName(sizeTokens, 'control-xsmall-paddingBlock')[0]?.name ?? ''
+  const lineBlockHeightPropValueString = getTokensByName(sizeTokens, 'control-xsmall-lineBoxHeight')[0]?.name ?? ''
+  const blockSizeValueString = getTokensByName(sizeTokens, 'control-xsmall-size')[0]?.name ?? ''
+  const condensedValueString = getTokensByName(sizeTokens, 'control-xsmall-paddingInline-condensed')[0]?.name ?? ''
+  const normalValueString = getTokensByName(sizeTokens, 'control-xsmall-paddingInline-normal')[0]?.name ?? ''
+  const spaciousValueString = getTokensByName(sizeTokens, 'control-xsmall-paddingInline-spacious')[0]?.name ?? ''
 
   return (
     <Table.Container>
@@ -84,7 +85,7 @@ export const XSmall = () => {
             field: 'value',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.value}</p>
+              return <p>{formatTokenValue(row.value)}</p>
             },
           },
           {
@@ -92,7 +93,7 @@ export const XSmall = () => {
             field: 'original.$value',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.original.$value}</p>
+              return <p>{formatTokenValue(row.original.$value)}</p>
             },
           },
         ]}
@@ -110,12 +111,12 @@ export const Small = () => {
   })
 
   // get string for each item
-  const gapValueString = getTokensByName(sizeTokens, 'control-small-gap')[0].name
-  const paddingBlockValueString = getTokensByName(sizeTokens, 'control-small-paddingBlock')[0].name
-  const lineBlockHeightPropValueString = getTokensByName(sizeTokens, 'control-small-lineBoxHeight')[0].name
-  const blockSizeValueString = getTokensByName(sizeTokens, 'control-small-size')[0].name
-  const condensedValueString = getTokensByName(sizeTokens, 'control-small-paddingInline-condensed')[0].name
-  const normalValueString = getTokensByName(sizeTokens, 'control-small-paddingInline-normal')[0].name
+  const gapValueString = getTokensByName(sizeTokens, 'control-small-gap')[0]?.name ?? ''
+  const paddingBlockValueString = getTokensByName(sizeTokens, 'control-small-paddingBlock')[0]?.name ?? ''
+  const lineBlockHeightPropValueString = getTokensByName(sizeTokens, 'control-small-lineBoxHeight')[0]?.name ?? ''
+  const blockSizeValueString = getTokensByName(sizeTokens, 'control-small-size')[0]?.name ?? ''
+  const condensedValueString = getTokensByName(sizeTokens, 'control-small-paddingInline-condensed')[0]?.name ?? ''
+  const normalValueString = getTokensByName(sizeTokens, 'control-small-paddingInline-normal')[0]?.name ?? ''
 
   return (
     <Table.Container>
@@ -160,7 +161,7 @@ export const Small = () => {
             field: 'value',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.value}</p>
+              return <p>{formatTokenValue(row.value)}</p>
             },
           },
           {
@@ -168,7 +169,7 @@ export const Small = () => {
             field: 'original.$value',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.original.$value}</p>
+              return <p>{formatTokenValue(row.original.$value)}</p>
             },
           },
         ]}
@@ -186,13 +187,13 @@ export const Medium = () => {
   })
 
   // get string for each item
-  const gapValueString = getTokensByName(sizeTokens, 'control-medium-gap')[0].name
-  const paddingBlockValueString = getTokensByName(sizeTokens, 'control-medium-paddingBlock')[0].name
-  const lineBlockHeightPropValueString = getTokensByName(sizeTokens, 'control-medium-lineBoxHeight')[0].name
-  const blockSizeValueString = getTokensByName(sizeTokens, 'control-medium-size')[0].name
-  const condensedValueString = getTokensByName(sizeTokens, 'control-medium-paddingInline-condensed')[0].name
-  const normalValueString = getTokensByName(sizeTokens, 'control-medium-paddingInline-normal')[0].name
-  const spaciousValueString = getTokensByName(sizeTokens, 'control-xsmall-paddingInline-spacious')[0].name
+  const gapValueString = getTokensByName(sizeTokens, 'control-medium-gap')[0]?.name ?? ''
+  const paddingBlockValueString = getTokensByName(sizeTokens, 'control-medium-paddingBlock')[0]?.name ?? ''
+  const lineBlockHeightPropValueString = getTokensByName(sizeTokens, 'control-medium-lineBoxHeight')[0]?.name ?? ''
+  const blockSizeValueString = getTokensByName(sizeTokens, 'control-medium-size')[0]?.name ?? ''
+  const condensedValueString = getTokensByName(sizeTokens, 'control-medium-paddingInline-condensed')[0]?.name ?? ''
+  const normalValueString = getTokensByName(sizeTokens, 'control-medium-paddingInline-normal')[0]?.name ?? ''
+  const spaciousValueString = getTokensByName(sizeTokens, 'control-xsmall-paddingInline-spacious')[0]?.name ?? ''
 
   return (
     <Table.Container>
@@ -243,7 +244,7 @@ export const Medium = () => {
             field: 'value',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.value}</p>
+              return <p>{formatTokenValue(row.value)}</p>
             },
           },
           {
@@ -251,7 +252,7 @@ export const Medium = () => {
             field: 'original.$value',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.original.$value}</p>
+              return <p>{formatTokenValue(row.original.$value)}</p>
             },
           },
         ]}
@@ -269,12 +270,12 @@ export const Large = () => {
   })
 
   // get string for each item
-  const gapValueString = getTokensByName(sizeTokens, 'control-large-gap')[0].name
-  const paddingBlockValueString = getTokensByName(sizeTokens, 'control-large-paddingBlock')[0].name
-  const lineBlockHeightPropValueString = getTokensByName(sizeTokens, 'control-large-lineBoxHeight')[0].name
-  const blockSizeValueString = getTokensByName(sizeTokens, 'control-large-size')[0].name
-  const spaciousValueString = getTokensByName(sizeTokens, 'control-large-paddingInline-spacious')[0].name
-  const normalValueString = getTokensByName(sizeTokens, 'control-large-paddingInline-normal')[0].name
+  const gapValueString = getTokensByName(sizeTokens, 'control-large-gap')[0]?.name ?? ''
+  const paddingBlockValueString = getTokensByName(sizeTokens, 'control-large-paddingBlock')[0]?.name ?? ''
+  const lineBlockHeightPropValueString = getTokensByName(sizeTokens, 'control-large-lineBoxHeight')[0]?.name ?? ''
+  const blockSizeValueString = getTokensByName(sizeTokens, 'control-large-size')[0]?.name ?? ''
+  const spaciousValueString = getTokensByName(sizeTokens, 'control-large-paddingInline-spacious')[0]?.name ?? ''
+  const normalValueString = getTokensByName(sizeTokens, 'control-large-paddingInline-normal')[0]?.name ?? ''
 
   return (
     <Table.Container>
@@ -319,7 +320,7 @@ export const Large = () => {
             field: 'value',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.value}</p>
+              return <p>{formatTokenValue(row.value)}</p>
             },
           },
           {
@@ -327,7 +328,7 @@ export const Large = () => {
             field: 'original.$value',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.original.$value}</p>
+              return <p>{formatTokenValue(row.original.$value)}</p>
             },
           },
         ]}
@@ -345,12 +346,12 @@ export const XLarge = () => {
   })
 
   // get string for each item
-  const gapValueString = getTokensByName(sizeTokens, 'control-xlarge-gap')[0].name
-  const paddingBlockValueString = getTokensByName(sizeTokens, 'control-xlarge-paddingBlock')[0].name
-  const lineBlockHeightPropValueString = getTokensByName(sizeTokens, 'control-xlarge-lineBoxHeight')[0].name
-  const blockSizeValueString = getTokensByName(sizeTokens, 'control-xlarge-size')[0].name
-  const spaciousValueString = getTokensByName(sizeTokens, 'control-xlarge-paddingInline-spacious')[0].name
-  const normalValueString = getTokensByName(sizeTokens, 'control-xlarge-paddingInline-normal')[0].name
+  const gapValueString = getTokensByName(sizeTokens, 'control-xlarge-gap')[0]?.name ?? ''
+  const paddingBlockValueString = getTokensByName(sizeTokens, 'control-xlarge-paddingBlock')[0]?.name ?? ''
+  const lineBlockHeightPropValueString = getTokensByName(sizeTokens, 'control-xlarge-lineBoxHeight')[0]?.name ?? ''
+  const blockSizeValueString = getTokensByName(sizeTokens, 'control-xlarge-size')[0]?.name ?? ''
+  const spaciousValueString = getTokensByName(sizeTokens, 'control-xlarge-paddingInline-spacious')[0]?.name ?? ''
+  const normalValueString = getTokensByName(sizeTokens, 'control-xlarge-paddingInline-normal')[0]?.name ?? ''
 
   return (
     <Table.Container>
@@ -395,7 +396,7 @@ export const XLarge = () => {
             field: 'value',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.value}</p>
+              return <p>{formatTokenValue(row.value)}</p>
             },
           },
           {
@@ -403,7 +404,7 @@ export const XLarge = () => {
             field: 'original.$value',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.original.$value}</p>
+              return <p>{formatTokenValue(row.original.$value)}</p>
             },
           },
         ]}
@@ -461,7 +462,7 @@ export const ControlStackRegular = () => {
             field: 'value',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.value}</p>
+              return <p>{formatTokenValue(row.value)}</p>
             },
           },
           {
@@ -469,7 +470,7 @@ export const ControlStackRegular = () => {
             field: 'original.$value',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.original.$value}</p>
+              return <p>{formatTokenValue(row.original.$value)}</p>
             },
           },
         ]}
@@ -486,8 +487,8 @@ export const ControlStackResponsive = () => {
     }
   })
 
-  const coarseSmallValue = getTokensByName(sizeTokensCoarse, 'controlStack-small-gap-auto')[0].value
-  const coarseMediumValue = getTokensByName(sizeTokensCoarse, 'controlStack-medium-gap-auto')[0].value
+  const coarseSmallValue = getTokensByName(sizeTokensCoarse, 'controlStack-small-gap-auto')[0]?.value ?? ''
+  const coarseMediumValue = getTokensByName(sizeTokensCoarse, 'controlStack-medium-gap-auto')[0]?.value ?? ''
 
   return (
     <Table.Container>
@@ -532,7 +533,7 @@ export const ControlStackResponsive = () => {
             field: 'value',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.value}</p>
+              return <p>{formatTokenValue(row.value)}</p>
             },
           },
         ]}
@@ -579,7 +580,7 @@ export const ControlTouchTarget = () => {
             field: 'value',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.value}</p>
+              return <p>{formatTokenValue(row.value)}</p>
             },
           },
           {
@@ -587,7 +588,7 @@ export const ControlTouchTarget = () => {
             field: 'original.$value',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.original.$value}</p>
+              return <p>{formatTokenValue(row.original.$value)}</p>
             },
           },
         ]}
@@ -604,7 +605,7 @@ export const ControlTouchTargetResponsive = () => {
     }
   })
 
-  const coarseValue = getTokensByName(sizeTokensCoarse, 'control-minTarget-auto')[0].value
+  const coarseValue = getTokensByName(sizeTokensCoarse, 'control-minTarget-auto')[0]?.value ?? ''
 
   return (
     <Table.Container>
@@ -644,7 +645,7 @@ export const ControlTouchTargetResponsive = () => {
             field: 'value',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.value}</p>
+              return <p>{formatTokenValue(row.value)}</p>
             },
           },
         ]}

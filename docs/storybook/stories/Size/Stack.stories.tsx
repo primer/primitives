@@ -5,6 +5,7 @@ import {StackDemo} from '../StorybookComponents/StackDemo/StackDemo'
 import {DataTable, Table} from '@primer/react/experimental'
 import {InlineCode} from '../StorybookComponents/InlineCode/InlineCode'
 import {getTokensByName} from '../utilities/getTokensByName'
+import {formatTokenValue} from '../utilities/formatTokenValue'
 
 export default {
   title: 'Size/Functional/Stack',
@@ -57,7 +58,7 @@ export const Stack = () => {
             field: 'value',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.value}</p>
+              return <p>{formatTokenValue(row.value)}</p>
             },
           },
           {
@@ -65,7 +66,7 @@ export const Stack = () => {
             field: 'original.$value',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.original.$value}</p>
+              return <p>{formatTokenValue(row.original.$value)}</p>
             },
           },
         ]}

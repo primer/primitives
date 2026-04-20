@@ -5,6 +5,7 @@ import {DataTable, Table} from '@primer/react/experimental'
 import {InlineCode} from '../StorybookComponents/InlineCode/InlineCode'
 import {TypographyDemo} from '../StorybookComponents/TypographyDemo/TypographyDemo'
 import {getTokensByName} from '../utilities/getTokensByName'
+import {formatTokenValue} from '../utilities/formatTokenValue'
 
 export default {
   title: 'Typography/Functional',
@@ -61,7 +62,7 @@ export const FontFamily = () => {
             rowHeader: true,
             width: 'auto',
             renderCell: row => {
-              return <p>{row.value}</p>
+              return <p>{formatTokenValue(row.value)}</p>
             },
           },
         ]}
@@ -192,7 +193,7 @@ export const Display = () => {
             field: 'value',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.value}</p>
+              return <p>{formatTokenValue(row.value)}</p>
             },
           },
           {
@@ -200,7 +201,7 @@ export const Display = () => {
             field: 'original',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.name.includes('shorthand') ? undefined : row.original.$value}</p>
+              return <p>{row.name.includes('shorthand') ? undefined : formatTokenValue(row.original.$value)}</p>
             },
           },
         ]}
@@ -268,7 +269,7 @@ export const TitleLarge = () => {
             rowHeader: true,
 
             renderCell: row => {
-              return <p>{row.value}</p>
+              return <p>{formatTokenValue(row.value)}</p>
             },
           },
           {
@@ -276,7 +277,7 @@ export const TitleLarge = () => {
             field: 'original',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.name.includes('shorthand') ? undefined : row.original.$value}</p>
+              return <p>{row.name.includes('shorthand') ? undefined : formatTokenValue(row.original.$value)}</p>
             },
           },
         ]}
@@ -345,7 +346,7 @@ export const TitleMedium = () => {
             rowHeader: true,
 
             renderCell: row => {
-              return <p>{row.value}</p>
+              return <p>{formatTokenValue(row.value)}</p>
             },
           },
           {
@@ -353,7 +354,7 @@ export const TitleMedium = () => {
             field: 'original',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.name.includes('shorthand') ? undefined : row.original.$value}</p>
+              return <p>{row.name.includes('shorthand') ? undefined : formatTokenValue(row.original.$value)}</p>
             },
           },
         ]}
@@ -422,7 +423,7 @@ export const TitleSmall = () => {
             rowHeader: true,
 
             renderCell: row => {
-              return <p>{row.value}</p>
+              return <p>{formatTokenValue(row.value)}</p>
             },
           },
           {
@@ -430,7 +431,7 @@ export const TitleSmall = () => {
             field: 'original',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.name.includes('shorthand') ? undefined : row.original.$value}</p>
+              return <p>{row.name.includes('shorthand') ? undefined : formatTokenValue(row.original.$value)}</p>
             },
           },
         ]}
@@ -497,7 +498,7 @@ export const Subtitle = () => {
             rowHeader: true,
 
             renderCell: row => {
-              return <p>{row.value}</p>
+              return <p>{formatTokenValue(row.value)}</p>
             },
           },
           {
@@ -505,7 +506,7 @@ export const Subtitle = () => {
             field: 'original',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.name.includes('shorthand') ? undefined : row.original.$value}</p>
+              return <p>{row.name.includes('shorthand') ? undefined : formatTokenValue(row.original.$value)}</p>
             },
           },
         ]}
@@ -574,7 +575,7 @@ export const BodyLarge = () => {
             rowHeader: true,
 
             renderCell: row => {
-              return <p>{row.value}</p>
+              return <p>{formatTokenValue(row.value)}</p>
             },
           },
           {
@@ -582,7 +583,7 @@ export const BodyLarge = () => {
             field: 'original',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.name.includes('shorthand') ? undefined : row.original.$value}</p>
+              return <p>{row.name.includes('shorthand') ? undefined : formatTokenValue(row.original.$value)}</p>
             },
           },
         ]}
@@ -651,7 +652,7 @@ export const BodyMedium = () => {
             rowHeader: true,
 
             renderCell: row => {
-              return <p>{row.value}</p>
+              return <p>{formatTokenValue(row.value)}</p>
             },
           },
           {
@@ -659,7 +660,7 @@ export const BodyMedium = () => {
             field: 'original',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.name.includes('shorthand') ? undefined : row.original.$value}</p>
+              return <p>{row.name.includes('shorthand') ? undefined : formatTokenValue(row.original.$value)}</p>
             },
           },
         ]}
@@ -728,7 +729,7 @@ export const BodySmall = () => {
             rowHeader: true,
 
             renderCell: row => {
-              return <p>{row.value}</p>
+              return <p>{formatTokenValue(row.value)}</p>
             },
           },
           {
@@ -736,7 +737,7 @@ export const BodySmall = () => {
             field: 'original',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.name.includes('shorthand') ? undefined : row.original.$value}</p>
+              return <p>{row.name.includes('shorthand') ? undefined : formatTokenValue(row.original.$value)}</p>
             },
           },
         ]}
@@ -803,7 +804,7 @@ export const Caption = () => {
             rowHeader: true,
 
             renderCell: row => {
-              return <p>{row.value}</p>
+              return <p>{formatTokenValue(row.value)}</p>
             },
           },
           {
@@ -811,7 +812,7 @@ export const Caption = () => {
             field: 'original',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.name.includes('shorthand') ? undefined : row.original.$value}</p>
+              return <p>{row.name.includes('shorthand') ? undefined : formatTokenValue(row.original.$value)}</p>
             },
           },
         ]}
@@ -878,7 +879,7 @@ export const CodeBlock = () => {
             rowHeader: true,
 
             renderCell: row => {
-              return <p>{row.value}</p>
+              return <p>{formatTokenValue(row.value)}</p>
             },
           },
           {
@@ -886,7 +887,7 @@ export const CodeBlock = () => {
             field: 'original',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.name.includes('shorthand') ? undefined : row.original.$value}</p>
+              return <p>{row.name.includes('shorthand') ? undefined : formatTokenValue(row.original.$value)}</p>
             },
           },
         ]}
@@ -953,7 +954,7 @@ export const InlineCodeBlock = () => {
             rowHeader: true,
 
             renderCell: row => {
-              return <p>{row.value}</p>
+              return <p>{formatTokenValue(row.value)}</p>
             },
           },
           {
@@ -961,7 +962,7 @@ export const InlineCodeBlock = () => {
             field: 'original',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.name.includes('shorthand') ? undefined : row.original.$value}</p>
+              return <p>{row.name.includes('shorthand') ? undefined : formatTokenValue(row.original.$value)}</p>
             },
           },
         ]}

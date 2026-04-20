@@ -5,6 +5,7 @@ import {SizeTokenSwatch} from '../StorybookComponents/SizeTokenSwatch/SizeTokenS
 import {DataTable, Table} from '@primer/react/experimental'
 import {InlineCode} from '../StorybookComponents/InlineCode/InlineCode'
 import {getTokensByName} from '../utilities/getTokensByName'
+import {formatTokenValue} from '../utilities/formatTokenValue'
 
 export default {
   title: 'Size/Base',
@@ -58,7 +59,7 @@ export const Base = () => {
             field: 'value',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.value}</p>
+              return <p>{formatTokenValue(row.value)}</p>
             },
           },
           {
@@ -66,7 +67,7 @@ export const Base = () => {
             field: 'original.$value',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.original.$value}</p>
+              return <p>{formatTokenValue(row.original.$value)}</p>
             },
           },
         ]}

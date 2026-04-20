@@ -5,6 +5,7 @@ import {DataTable, Table} from '@primer/react/experimental'
 import {InlineCode} from '../StorybookComponents/InlineCode/InlineCode'
 import {getTokensByName} from '../utilities/getTokensByName'
 import sizeTokens from '../../../../dist/docs/functional/size/border.json'
+import {formatTokenValue} from '../utilities/formatTokenValue'
 
 export default {
   title: 'Size/Functional/Border',
@@ -69,7 +70,7 @@ export const BorderSize = () => {
             field: 'value',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.value}</p>
+              return <p>{formatTokenValue(row.value)}</p>
             },
           },
           {
@@ -77,7 +78,7 @@ export const BorderSize = () => {
             field: 'original',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.original.$value}</p>
+              return <p>{formatTokenValue(row.original.$value)}</p>
             },
           },
         ]}
@@ -125,7 +126,7 @@ export const BorderRadius = () => {
             field: 'value',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.value}</p>
+              return <p>{formatTokenValue(row.value)}</p>
             },
           },
           {
@@ -133,7 +134,7 @@ export const BorderRadius = () => {
             field: 'original',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.original.$value}</p>
+              return <p>{formatTokenValue(row.original.$value)}</p>
             },
           },
         ]}
@@ -186,7 +187,7 @@ export const Outline = () => {
             field: 'value',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.value}</p>
+              return <p>{formatTokenValue(row.value)}</p>
             },
           },
           {
@@ -194,7 +195,7 @@ export const Outline = () => {
             field: 'original',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.original.$value}</p>
+              return <p>{formatTokenValue(row.original.$value)}</p>
             },
           },
         ]}

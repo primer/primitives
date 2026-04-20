@@ -4,6 +4,7 @@ import {DataTable, Table, IssueLabel} from '@primer/react/experimental'
 import {InlineCode} from '../../StorybookComponents/InlineCode/InlineCode'
 import {getTokensByName} from '../../utilities/getTokensByName'
 import {withColorTokens, type ColorTokens} from '../../utilities/withColorTokens'
+import {formatTokenValue} from '../../utilities/formatTokenValue'
 
 export default {
   title: 'Color/Patterns',
@@ -60,7 +61,7 @@ export const Avatar = ({colorTokens}: {colorTokens: ColorTokens}) => {
             field: 'value',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.value}</p>
+              return <p>{formatTokenValue(row.value)}</p>
             },
           },
         ]}
@@ -132,7 +133,7 @@ export const Control = ({colorTokens}: {colorTokens: ColorTokens}) => {
             field: 'value',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.value}</p>
+              return <p>{formatTokenValue(row.value)}</p>
             },
           },
         ]}
@@ -185,7 +186,7 @@ export const Counter = ({colorTokens}: {colorTokens: ColorTokens}) => {
             field: 'value',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.value}</p>
+              return <p>{formatTokenValue(row.value)}</p>
             },
           },
         ]}
@@ -257,7 +258,7 @@ export const Button = ({colorTokens}: {colorTokens: ColorTokens}) => {
             field: 'value',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.value}</p>
+              return <p>{formatTokenValue(row.value)}</p>
             },
           },
         ]}
@@ -303,7 +304,7 @@ export const Focus = ({colorTokens}: {colorTokens: ColorTokens}) => {
             field: 'value',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.value}</p>
+              return <p>{formatTokenValue(row.value)}</p>
             },
           },
         ]}
@@ -356,7 +357,7 @@ export const Header = ({colorTokens}: {colorTokens: ColorTokens}) => {
             field: 'value',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.value}</p>
+              return <p>{formatTokenValue(row.value)}</p>
             },
           },
         ]}
@@ -409,7 +410,7 @@ export const Menu = ({colorTokens}: {colorTokens: ColorTokens}) => {
             field: 'value',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.value}</p>
+              return <p>{formatTokenValue(row.value)}</p>
             },
           },
         ]}
@@ -462,7 +463,7 @@ export const Overlay = ({colorTokens}: {colorTokens: ColorTokens}) => {
             field: 'value',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.value}</p>
+              return <p>{formatTokenValue(row.value)}</p>
             },
           },
         ]}
@@ -515,7 +516,7 @@ export const SelectMenu = ({colorTokens}: {colorTokens: ColorTokens}) => {
             field: 'value',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.value}</p>
+              return <p>{formatTokenValue(row.value)}</p>
             },
           },
         ]}
@@ -568,7 +569,7 @@ export const SideNav = ({colorTokens}: {colorTokens: ColorTokens}) => {
             field: 'value',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.value}</p>
+              return <p>{formatTokenValue(row.value)}</p>
             },
           },
         ]}
@@ -621,7 +622,7 @@ export const TimelineBadge = ({colorTokens}: {colorTokens: ColorTokens}) => {
             field: 'value',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.value}</p>
+              return <p>{formatTokenValue(row.value)}</p>
             },
           },
         ]}
@@ -674,7 +675,7 @@ export const UnderlineNav = ({colorTokens}: {colorTokens: ColorTokens}) => {
             field: 'value',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.value}</p>
+              return <p>{formatTokenValue(row.value)}</p>
             },
           },
         ]}
@@ -724,7 +725,7 @@ export const Selection = ({colorTokens}: {colorTokens: ColorTokens}) => {
             field: 'value',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.value}</p>
+              return <p>{formatTokenValue(row.value)}</p>
             },
           },
         ]}
@@ -777,7 +778,7 @@ export const Tooltip = ({colorTokens}: {colorTokens: ColorTokens}) => {
             field: 'value',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.value}</p>
+              return <p>{formatTokenValue(row.value)}</p>
             },
           },
         ]}
@@ -830,7 +831,7 @@ export const Treeview = ({colorTokens}: {colorTokens: ColorTokens}) => {
             field: 'value',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.value}</p>
+              return <p>{formatTokenValue(row.value)}</p>
             },
           },
         ]}
@@ -883,7 +884,7 @@ export const ContributionGraph = ({colorTokens}: {colorTokens: ColorTokens}) => 
             field: 'value',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.value}</p>
+              return <p>{formatTokenValue(row.value)}</p>
             },
           },
         ]}
@@ -943,7 +944,7 @@ export const Label = ({colorTokens}: {colorTokens: ColorTokens}) => {
               field: 'value',
               rowHeader: true,
               renderCell: row => {
-                return <p>{row.value}</p>
+                return <p>{formatTokenValue(row.value)}</p>
               },
             },
           ]}
@@ -991,7 +992,7 @@ export const Syntax = ({colorTokens}: {colorTokens: ColorTokens}) => {
             field: 'value',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.value}</p>
+              return <p>{formatTokenValue(row.value)}</p>
             },
           },
         ]}

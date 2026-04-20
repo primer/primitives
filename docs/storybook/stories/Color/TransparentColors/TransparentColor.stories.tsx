@@ -60,7 +60,10 @@ export const Light = () => {
             rowHeader: true,
             renderCell: row => {
               const rawValue = row.original.$value
-              const cleanedValue = typeof rawValue === 'string' ? rawValue.replace(/[{}]/g, '').replace(/\./g, '-') : rawValue.hex ?? row.value
+              const cleanedValue =
+                typeof rawValue === 'string'
+                  ? rawValue.replace(/[{}]/g, '').replace(/\./g, '-')
+                  : (rawValue.hex ?? row.value)
               return (
                 <Stack direction="horizontal" gap="condensed">
                   <ColorTokenSwatch bgColor={cleanedValue} /> <code>{cleanedValue}</code>
@@ -137,7 +140,10 @@ export const Dark = () => {
             rowHeader: true,
             renderCell: row => {
               const rawValue = row.original.$value
-              const cleanedValue = typeof rawValue === 'string' ? rawValue.replace(/[{}]/g, '').replace(/\./g, '-') : rawValue.hex ?? row.value
+              const cleanedValue =
+                typeof rawValue === 'string'
+                  ? rawValue.replace(/[{}]/g, '').replace(/\./g, '-')
+                  : (rawValue.hex ?? row.value)
               return (
                 <Stack direction="horizontal" gap="condensed">
                   <ColorTokenSwatch bgColor={cleanedValue} /> <code>{cleanedValue}</code>
@@ -214,7 +220,10 @@ export const LightHighContrast = () => {
             rowHeader: true,
             renderCell: row => {
               const rawValue = row.original.$value
-              const cleanedValue = typeof rawValue === 'string' ? rawValue.replace(/[{}]/g, '').replace(/\./g, '-') : rawValue.hex ?? row.value
+              const cleanedValue =
+                typeof rawValue === 'string'
+                  ? rawValue.replace(/[{}]/g, '').replace(/\./g, '-')
+                  : (rawValue.hex ?? row.value)
               return (
                 <Stack direction="horizontal" gap="condensed">
                   <ColorTokenSwatch bgColor={cleanedValue} /> <code>{cleanedValue}</code>
@@ -291,7 +300,10 @@ export const DarkHighContrast = () => {
             rowHeader: true,
             renderCell: row => {
               const rawValue = row.original.$value
-              const cleanedValue = typeof rawValue === 'string' ? rawValue.replace(/[{}]/g, '').replace(/\./g, '-') : rawValue.hex ?? row.value
+              const cleanedValue =
+                typeof rawValue === 'string'
+                  ? rawValue.replace(/[{}]/g, '').replace(/\./g, '-')
+                  : (rawValue.hex ?? row.value)
               return (
                 <Stack direction="horizontal" gap="condensed">
                   <ColorTokenSwatch bgColor={cleanedValue} /> <code>{cleanedValue}</code>
@@ -365,7 +377,10 @@ export const DarkDimmed = () => {
             rowHeader: true,
             renderCell: row => {
               const rawValue = row.original.$value
-              const cleanedValue = typeof rawValue === 'string' ? rawValue.replace(/[{}]/g, '').replace(/\./g, '-') : rawValue.hex ?? row.value
+              const cleanedValue =
+                typeof rawValue === 'string'
+                  ? rawValue.replace(/[{}]/g, '').replace(/\./g, '-')
+                  : (rawValue.hex ?? row.value)
               return (
                 <Stack direction="horizontal" gap="condensed">
                   <ColorTokenSwatch bgColor={cleanedValue} /> <code>{cleanedValue}</code>

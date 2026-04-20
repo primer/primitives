@@ -4,6 +4,7 @@ import sizeTokens from '../../../../dist/docs/functional/size/breakpoints.json'
 import {DataTable, Table} from '@primer/react/experimental'
 import {InlineCode} from '../StorybookComponents/InlineCode/InlineCode'
 import {getTokensByName} from '../utilities/getTokensByName'
+import {formatTokenValue} from '../utilities/formatTokenValue'
 
 export default {
   title: 'Size/Functional/Breakpoints',
@@ -42,7 +43,7 @@ export const Breakpoints = () => {
             field: 'value',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.value}</p>
+              return <p>{formatTokenValue(row.value)}</p>
             },
           },
           {
@@ -50,7 +51,7 @@ export const Breakpoints = () => {
             field: 'original',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.original.$value}</p>
+              return <p>{formatTokenValue(row.original.$value)}</p>
             },
           },
         ]}
