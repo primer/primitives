@@ -284,7 +284,7 @@ export const Overview = () => {
                 style={{
                   fontSize: 'var(--text-body-size-medium)',
                   lineHeight: 'var(--text-body-lineHeight-medium)',
-                  fontWeight: 'var(--base-text-weight-normal',
+                  fontWeight: 'var(--base-text-weight-normal)',
                   marginBottom: '0',
                 }}
               >
