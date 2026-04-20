@@ -28,7 +28,7 @@
     "build:preview": "npm run clean && scripts/build-storybook preview",
     "build:prod": "npm run clean && scripts/build-storybook",
     "clean": "rm -rf out",
-    "storybook": "storybook dev -p 6006",
+    "storybook": "storybook dev -p 6006 --ci",
     "build-storybook": "storybook build"
   }
 }
