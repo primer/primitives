@@ -3,7 +3,7 @@ import {ColorTokenSwatch} from '../../StorybookComponents/ColorTokenSwatch/Color
 import {DataTable, Table} from '@primer/react/experimental'
 import {InlineCode} from '../../StorybookComponents/InlineCode/InlineCode'
 import {getTokensByName} from '../../utilities/getTokensByName'
-import {Banner, Box} from '@primer/react'
+import {Banner} from '@primer/react'
 import {ColorScaleByName} from '../../StorybookComponents/ColorScale/ColorScaleByName'
 import {withColorTokens, type ColorTokens} from '../../utilities/withColorTokens'
 import {formatTokenValue} from '../../utilities/formatTokenValue'
