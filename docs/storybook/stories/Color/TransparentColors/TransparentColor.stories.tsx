@@ -15,7 +15,7 @@ export default {
   },
 }
 
-export const Overview = ({colorTokens}: {colorTokens: ColorTokens}) => {
+export const Transparent = ({colorTokens}: {colorTokens: ColorTokens}) => {
   const data = Object.entries(colorTokens)
     .filter(([, token]) => token.alpha)
     .map(([name, token]) => {
