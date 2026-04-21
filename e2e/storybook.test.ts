@@ -1,6 +1,6 @@
 import {type Page, test, expect} from '@playwright/test'
 
-import data from '../docs/storybook/storybook-static/stories.json' assert {type: 'json'}
+import data from '../docs/storybook/storybook-static/index.json' assert {type: 'json'}
 import colorData from '../dist/docs/functional/themes/light.json' assert {type: 'json'}
 
 const extractNameAndValue = Object.entries(colorData)
@@ -13,24 +13,14 @@ const extractNameAndValue = Object.entries(colorData)
 
 interface Story {
   id: string
-  parameters?: {
-    snapshot?: {
-      includeSnapshot?: boolean
-      snapshotLight?: boolean
-    }
-    docs?: {
-      tags?: string[]
-    }
-  }
+  tags?: string[]
 }
 
-const stories = Object.values(data.stories).map((story: unknown) => {
-  const {id, parameters} = story as Story
+const stories = Object.values(data.entries).map((story: unknown) => {
+  const {id, tags} = story as Story
   return {
     id,
-    includeSnapshot: parameters?.snapshot?.includeSnapshot,
-    snapshotLight: parameters?.snapshot?.snapshotLight,
-    tags: parameters?.docs?.tags,
+    tags,
   }
 })
 const themes = [
@@ -52,7 +42,7 @@ const themes = [
 
 test.describe('storybook', () => {
   for (const story of stories) {
-    const shouldIncludeSnapshot = story.includeSnapshot || (story.tags && story.tags.includes('includeSnapshot'))
+    const shouldIncludeSnapshot = story.tags && story.tags.includes('includeSnapshot')
 
     if (!shouldIncludeSnapshot) {
       test.skip(story.id, async () => {
