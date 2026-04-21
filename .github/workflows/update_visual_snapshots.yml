@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        shard: [1, 2, 3, 4]
+        shard: [1, 2, 3, 4, 5]
     steps:
       - uses: actions/checkout@v4
       - name: Set up Node
@@ -23,11 +23,9 @@ jobs:
           node-version: 22
           cache: 'npm'
       - name: Install dependencies
-        run: npm ci --no-audit --no-fund --ignore-scripts
-      - name: Install browsers
-        run: npx playwright install --with-deps
+        run: npm ci && npm run storybook:install
       - name: Build tokens
-        run: npm run build:tokens
+        run: npm run build
       - name: Build storybook
         working-directory: docs/storybook
         run: |
@@ -42,7 +40,11 @@ jobs:
           sleep 5
         working-directory: docs/storybook
       - name: Run Visual Regression Tests
-        run: npx playwright test --update-snapshots --shard="${{ matrix.shard }}/${{ strategy.job-total }}"
+        uses: docker://mcr.microsoft.com/playwright:v1.56.1-jammy
+        env:
+          STORYBOOK_URL: 'http://172.17.0.1:6006'
+        with:
+          args: npx playwright test --update-snapshots --shard="${{ matrix.shard }}/${{ strategy.job-total }}"
       - name: Stop storybook
         run: kill ${{ steps.storybook.outputs.pid }}
       - name: Create snapshots.zip
