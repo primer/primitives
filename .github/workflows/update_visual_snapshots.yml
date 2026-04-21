@@ -42,6 +42,8 @@ jobs:
       - name: Run Visual Regression Tests
         uses: docker://mcr.microsoft.com/playwright:v1.56.1-jammy
         env:
+          # Tests run inside Docker while Storybook runs on the host runner.
+          # Use the Docker bridge gateway to reach the host-published port.
           STORYBOOK_URL: 'http://172.17.0.1:6006'
         with:
           args: npx playwright test --update-snapshots --shard="${{ matrix.shard }}/${{ strategy.job-total }}"
