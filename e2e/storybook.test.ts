@@ -42,16 +42,18 @@ const themes = [
 
 test.describe('storybook', () => {
   for (const story of stories) {
-    const shouldIncludeSnapshot = story.tags && story.tags.includes('includeSnapshot')
+    const hasIncludeSnapshot = story.tags && story.tags.includes('includeSnapshot')
+    const hasSnapshotLight = story.tags && story.tags.includes('snapshotLight')
+    const shouldIncludeSnapshot = hasIncludeSnapshot || hasSnapshotLight
 
     if (!shouldIncludeSnapshot) {
       test.skip(story.id, async () => {
-        // Skipping test because includeSnapshot is false or the story has the 'includeSnapshot' tag.
+        // Skipping test because story has neither 'includeSnapshot' nor 'snapshotLight' tag.
       })
       continue
     }
 
-    const runAllThemes = !story.id.includes('size') && !story.id.includes('typography')
+    const runAllThemes = hasIncludeSnapshot && !story.id.includes('size') && !story.id.includes('typography')
 
     test.describe(`${story.id} (${runAllThemes ? 'all themes' : 'light theme only'})`, () => {
       for (const theme of themes) {
