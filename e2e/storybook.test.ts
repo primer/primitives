@@ -1,7 +1,27 @@
 import {type Page, test, expect} from '@playwright/test'
 
-import data from '../docs/storybook/storybook-static/index.json' assert {type: 'json'}
 import colorData from '../dist/docs/functional/themes/light.json' assert {type: 'json'}
+
+const {STORYBOOK_URL = 'http://localhost:6006'} = process.env
+
+interface Story {
+  id: string
+  tags?: string[]
+}
+
+interface StoryIndex {
+  entries: Record<string, Story>
+}
+
+const storyIndexResponse = await fetch(new URL('/index.json', STORYBOOK_URL))
+
+if (!storyIndexResponse.ok) {
+  throw new Error(
+    `Unable to load Storybook index from ${STORYBOOK_URL}: ${storyIndexResponse.status} ${storyIndexResponse.statusText}`,
+  )
+}
+
+const data = (await storyIndexResponse.json()) as StoryIndex
 
 const extractNameAndValue = Object.entries(colorData)
   .map(([_key, details]) => ({
@@ -10,11 +30,6 @@ const extractNameAndValue = Object.entries(colorData)
   }))
   .filter(item => !item.name.includes('scale'))
   .map(item => item.name)
-
-interface Story {
-  id: string
-  tags?: string[]
-}
 
 const stories = Object.values(data.entries).map((story: unknown) => {
   const {id, tags} = story as Story
@@ -101,8 +116,6 @@ interface Options {
   args?: Record<string, string | boolean>
   globals?: Record<string, string>
 }
-
-const {STORYBOOK_URL = 'http://localhost:6006'} = process.env
 
 export async function visit(page: Page, options: Options) {
   const {id, args, globals} = options
