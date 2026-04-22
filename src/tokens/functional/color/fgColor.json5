@@ -432,6 +432,9 @@
             web: 'var(--fgColor-draft)',
           },
         },
+        'org.primer.overrides': {
+          'light-high-contrast': '#444B53', /* Custom hex between neutral.10 and neutral.11: neutral.11 is too dark and visually indistinct from status colors (open/closed/done). Same approach as fgColor.success/danger/done overrides (PR #1346). Clears 7.02:1 vs bgColor-neutral-muted (#E0E6EB). */
+        },
         'org.primer.llm': {
           usage: ['draft-text', 'draft-pr', 'draft-issue'],
           rules: 'Use for draft/WIP status text. Conveys incomplete or pending state.',

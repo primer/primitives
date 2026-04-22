@@ -97,6 +97,9 @@ const baseRequirements: ContrastRequirementBlueprint[] = [
   ['contrast.text', 'fgColor-done', 'bgColor-default'],
   ['contrast.text', 'fgColor-done', 'bgColor-muted'],
   ['contrast.text', 'fgColor-done', 'bgColor-inset'],
+  ['contrast.text', 'fgColor-draft', 'bgColor-default'],
+  ['contrast.text', 'fgColor-draft', 'bgColor-muted'],
+  ['contrast.text', 'fgColor-draft', 'bgColor-inset'],
   ['contrast.text', 'fgColor-upsell', 'bgColor-default'],
   ['contrast.text', 'fgColor-upsell', 'bgColor-muted'],
   ['contrast.text', 'fgColor-upsell', 'bgColor-inset'],
@@ -113,6 +116,7 @@ const baseRequirements: ContrastRequirementBlueprint[] = [
   ['contrast.text', 'fgColor-attention', 'bgColor-attention-muted'],
   ['contrast.text', 'fgColor-severe', 'bgColor-severe-muted'],
   ['contrast.text', 'fgColor-done', 'bgColor-done-muted'],
+  ['contrast.text', 'fgColor-draft', 'bgColor-neutral-muted'],
   ['contrast.text', 'fgColor-upsell', 'bgColor-upsell-muted'],
   ['contrast.text', 'fgColor-sponsors', 'bgColor-sponsors-muted'],
   // fgColor-onEmphasis
