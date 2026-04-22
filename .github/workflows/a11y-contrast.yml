@@ -36,7 +36,7 @@ jobs:
 
       - name: Run required contrast validation tests
         run: |
-          npm run validate:contrast
+          npm run check:contrast
 
       - name: Prepare check results
         id: check-results

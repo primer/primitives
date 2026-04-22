@@ -2,9 +2,9 @@ import React from 'react'
 // eslint-disable-next-line import/extensions
 import {SizeTokenSwatch} from '../StorybookComponents/SizeTokenSwatch/SizeTokenSwatch'
 import {DataTable, Table} from '@primer/react/experimental'
-import {InlineCode} from '../StorybookComponents/InlineCode/InlineCode'
 import {getTokensByName} from '../utilities/getTokensByName'
 import sizeTokens from '../../../../dist/docs/functional/size/border.json'
+import {tokenColumn, outputValueColumn, sourceValueColumn} from '../utilities/commonTableColumns'
 
 export default {
   title: 'Size/Functional/Border',
@@ -15,24 +15,9 @@ export default {
 }
 
 export const BorderSize = () => {
-  const borderInset = getTokensByName(sizeTokens, 'boxShadow').map(token => {
-    return {
-      id: token.name,
-      ...token,
-    }
-  })
-
-  const borderWidth = getTokensByName(sizeTokens, 'borderWidth').map(token => {
-    return {
-      id: token.name,
-      ...token,
-    }
-  })
-
-  const data = borderWidth.concat(borderInset).map((item, index) => ({
-    ...item,
-    index,
-  }))
+  const borderInset = getTokensByName(sizeTokens, 'boxShadow').map(token => ({id: token.name, ...token}))
+  const borderWidth = getTokensByName(sizeTokens, 'borderWidth').map(token => ({id: token.name, ...token}))
+  const data = borderWidth.concat(borderInset).map((item, index) => ({...item, index}))
 
   return (
     <Table.Container>
@@ -47,39 +32,16 @@ export const BorderSize = () => {
             header: 'Sample',
             field: 'name',
             rowHeader: true,
-            renderCell: row => {
-              return (
-                <SizeTokenSwatch
-                  borderSize={row.name.startsWith('borderWidth') ? row.name : undefined}
-                  boxShadow={row.name.startsWith('boxShadow') ? row.name : undefined}
-                />
-              )
-            },
+            renderCell: row => (
+              <SizeTokenSwatch
+                borderSize={row.name.startsWith('borderWidth') ? row.name : undefined}
+                boxShadow={row.name.startsWith('boxShadow') ? row.name : undefined}
+              />
+            ),
           },
-          {
-            header: 'Token',
-            field: 'name',
-            rowHeader: true,
-            renderCell: row => {
-              return <InlineCode value={row.name} copyClipboard cssVar />
-            },
-          },
-          {
-            header: 'Output value',
-            field: 'value',
-            rowHeader: true,
-            renderCell: row => {
-              return <p>{row.value}</p>
-            },
-          },
-          {
-            header: 'Source value',
-            field: 'original',
-            rowHeader: true,
-            renderCell: row => {
-              return <p>{row.original.$value}</p>
-            },
-          },
+          tokenColumn({cssVar: true}),
+          outputValueColumn(),
+          sourceValueColumn(),
         ]}
       />
     </Table.Container>
@@ -88,12 +50,7 @@ export const BorderSize = () => {
 BorderSize.tags = ['snapshotLight']
 
 export const BorderRadius = () => {
-  const data = getTokensByName(sizeTokens, 'borderRadius').map(token => {
-    return {
-      id: token.name,
-      ...token,
-    }
-  })
+  const data = getTokensByName(sizeTokens, 'borderRadius').map(token => ({id: token.name, ...token}))
 
   return (
     <Table.Container>
@@ -108,34 +65,11 @@ export const BorderRadius = () => {
             header: 'Sample',
             field: 'name',
             rowHeader: true,
-            renderCell: row => {
-              return <SizeTokenSwatch borderRadius={row.name} filled />
-            },
+            renderCell: row => <SizeTokenSwatch borderRadius={row.name} filled />,
           },
-          {
-            header: 'Token',
-            field: 'name',
-            rowHeader: true,
-            renderCell: row => {
-              return <InlineCode value={row.name} copyClipboard cssVar />
-            },
-          },
-          {
-            header: 'Output value',
-            field: 'value',
-            rowHeader: true,
-            renderCell: row => {
-              return <p>{row.value}</p>
-            },
-          },
-          {
-            header: 'Source value',
-            field: 'original',
-            rowHeader: true,
-            renderCell: row => {
-              return <p>{row.original.$value}</p>
-            },
-          },
+          tokenColumn({cssVar: true}),
+          outputValueColumn(),
+          sourceValueColumn(),
         ]}
       />
     </Table.Container>
@@ -144,12 +78,7 @@ export const BorderRadius = () => {
 BorderRadius.tags = ['snapshotLight']
 
 export const Outline = () => {
-  const data = getTokensByName(sizeTokens, 'outline').map(token => {
-    return {
-      id: token.name,
-      ...token,
-    }
-  })
+  const data = getTokensByName(sizeTokens, 'outline').map(token => ({id: token.name, ...token}))
 
   return (
     <Table.Container>
@@ -164,39 +93,16 @@ export const Outline = () => {
             header: 'Sample',
             field: 'name',
             rowHeader: true,
-            renderCell: row => {
-              return (
-                <SizeTokenSwatch
-                  outlineOffset={row.name.includes('offset') ? row.name : undefined}
-                  outlineWidth={row.name.includes('width')}
-                />
-              )
-            },
+            renderCell: row => (
+              <SizeTokenSwatch
+                outlineOffset={row.name.includes('offset') ? row.name : undefined}
+                outlineWidth={row.name.includes('width')}
+              />
+            ),
           },
-          {
-            header: 'Token',
-            field: 'name',
-            rowHeader: true,
-            renderCell: row => {
-              return <InlineCode value={row.name} copyClipboard cssVar />
-            },
-          },
-          {
-            header: 'Output value',
-            field: 'value',
-            rowHeader: true,
-            renderCell: row => {
-              return <p>{row.value}</p>
-            },
-          },
-          {
-            header: 'Source value',
-            field: 'original',
-            rowHeader: true,
-            renderCell: row => {
-              return <p>{row.original.$value}</p>
-            },
-          },
+          tokenColumn({cssVar: true}),
+          outputValueColumn(),
+          sourceValueColumn(),
         ]}
       />
     </Table.Container>

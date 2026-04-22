@@ -17,6 +17,15 @@ export default defineConfig({
     ['json', {outputFile: path.join(__dirname, '.playwright', 'results.json')}],
   ],
 
+  webServer: process.env.CI
+    ? undefined
+    : {
+        command: 'npm run storybook',
+        url: 'http://localhost:6006',
+        reuseExistingServer: true,
+        timeout: 1000 * 120,
+      },
+
   // https://playwright.dev/docs/api/class-testconfig#test-config-timeout
   timeout: 1000 * 5,
 

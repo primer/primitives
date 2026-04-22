@@ -42,13 +42,15 @@
   border: solid 1px var(--borderColor-default) !important;
 }
 
-[data-dark-theme='dark_high_contrast'],
-.ColorPreview:has([style='background-color: var(--bgColor-inset); border: solid 1px var(--undefined);']) > div {
+[data-dark-theme='dark_high_contrast']
+  .ColorPreview:has([style='background-color: var(--bgColor-inset); border: solid 1px var(--undefined);'])
+  > div {
   border: solid 1px var(--borderColor-default) !important;
 }
 
-[data-light-theme='light_high_contrast'],
-.ColorPreview:has([style='background-color: var(--bgColor-inset); border: solid 1px var(--undefined);']) > div {
+[data-light-theme='light_high_contrast']
+  .ColorPreview:has([style='background-color: var(--bgColor-inset); border: solid 1px var(--undefined);'])
+  > div {
   border: solid 1px var(--borderColor-default) !important;
 }
 

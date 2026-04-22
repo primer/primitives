@@ -35,7 +35,7 @@ jobs:
         run: npm run lint
 
       - name: Code formatting check
-        run: npm run format
+        run: npm run format:check
 
       - name: Run unit tests
         run: npm test

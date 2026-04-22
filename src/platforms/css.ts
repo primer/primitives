@@ -3,6 +3,28 @@ import type {PlatformInitializer} from '../types/platformInitializer.js'
 import type {PlatformConfig, TransformedToken} from 'style-dictionary/types'
 import {outputReferencesTransformed, outputReferencesFilter} from 'style-dictionary/utils'
 
+/**
+ * Determines whether a token's value should use CSS variable references.
+ *
+ * For most tokens, we check both that referenced tokens are in the current output
+ * (outputReferencesFilter) and that the string replacement is valid (outputReferencesTransformed).
+ *
+ * Composite border tokens need special handling because:
+ * 1. outputReferencesTransformed returns false for object original values
+ * 2. outputReferencesFilter returns false because width tokens are in a separate CSS file
+ * Style Dictionary's formatter correctly handles var() substitution in flattened composite strings,
+ * and the referenced tokens (borderColor.*, borderWidth.*, focus.outline-*) all exist as CSS variables at runtime.
+ */
+const shouldOutputReferences = (
+  token: TransformedToken,
+  platformOptions: Parameters<typeof outputReferencesFilter>[1],
+) => {
+  if (token.$type === 'border') {
+    return true
+  }
+  return outputReferencesFilter(token, platformOptions) && outputReferencesTransformed(token, platformOptions)
+}
+
 const getCssSelectors = (outputFile: string) => {
   // check for dark in the beginning of the output filename
   const lastSlash = outputFile.lastIndexOf('/')
@@ -55,14 +77,14 @@ export const css: PlatformInitializer = (outputFile, prefix, buildPath, options)
           isSource(token) &&
           options?.themed === true &&
           token.$type !== 'custom-viewportRange' &&
+          token.$type !== 'dimension' &&
           !isFromFile(token, [
             'src/tokens/functional/size/size-coarse.json5',
             'src/tokens/functional/size/size-fine.json5',
           ]),
         options: {
           showFileHeader: false,
-          outputReferences: (token, platformOptions) =>
-            outputReferencesFilter(token, platformOptions) && outputReferencesTransformed(token, platformOptions),
+          outputReferences: shouldOutputReferences,
           descriptions: false,
           queries: getCssSelectors(outputFile),
           ...options?.options,
@@ -81,8 +103,7 @@ export const css: PlatformInitializer = (outputFile, prefix, buildPath, options)
           ]),
         options: {
           showFileHeader: false,
-          outputReferences: (token, platformOptions) =>
-            outputReferencesFilter(token, platformOptions) && outputReferencesTransformed(token, platformOptions),
+          outputReferences: shouldOutputReferences,
           descriptions: false,
           ...options?.options,
         },
@@ -93,8 +114,7 @@ export const css: PlatformInitializer = (outputFile, prefix, buildPath, options)
         filter: token => isSource(token) && options?.themed !== true && token.$type === 'custom-viewportRange',
         options: {
           showFileHeader: false,
-          outputReferences: (token, platformOptions) =>
-            outputReferencesFilter(token, platformOptions) && outputReferencesTransformed(token, platformOptions),
+          outputReferences: shouldOutputReferences,
         },
       },
       {
@@ -108,8 +128,7 @@ export const css: PlatformInitializer = (outputFile, prefix, buildPath, options)
           ]),
         options: {
           descriptions: false,
-          outputReferences: (token, platformOptions) =>
-            outputReferencesFilter(token, platformOptions) && outputReferencesTransformed(token, platformOptions),
+          outputReferences: shouldOutputReferences,
           showFileHeader: false,
           queries: [
             {

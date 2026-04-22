@@ -335,7 +335,7 @@
         $value: [
           {
             color: '{overlay.borderColor}',
-            alpha: 0.5,
+            alpha: 0.25,
             offsetX: {
               value: 0,
               unit: 'px',
@@ -1472,105 +1472,6 @@
           'org.primer.llm': {
             usage: ['full-screen-overlay', 'side-sheet', 'drawer', 'large-modal'],
             rules: 'Use for full-screen or near-full-screen overlays like side sheets and drawers. Maximum elevation in the system. Do NOT use for small floating elements.',
-          },
-        },
-      },
-      legacy: {
-        $value: [
-          {
-            color: '{base.color.neutral.12}',
-            alpha: 0.04,
-            offsetX: {
-              value: 0,
-              unit: 'px',
-            },
-            offsetY: {
-              value: 6,
-              unit: 'px',
-            },
-            blur: {
-              value: 12,
-              unit: 'px',
-            },
-            spread: {
-              value: -3,
-              unit: 'px',
-            },
-          },
-          {
-            color: '{base.color.neutral.12}',
-            alpha: 0.12,
-            offsetX: {
-              value: 0,
-              unit: 'px',
-            },
-            offsetY: {
-              value: 6,
-              unit: 'px',
-            },
-            blur: {
-              value: 18,
-              unit: 'px',
-            },
-            spread: {
-              value: 0,
-              unit: 'px',
-            },
-          },
-        ],
-        $type: 'shadow',
-        $description: 'Legacy floating shadow for backward compatibility',
-        $extensions: {
-          'org.primer.figma': {},
-          'org.primer.overrides': {
-            dark: {
-              $value: [
-                {
-                  color: '{base.color.neutral.0}',
-                  alpha: 0.4,
-                  offsetX: {
-                    value: 0,
-                    unit: 'px',
-                  },
-                  offsetY: {
-                    value: 6,
-                    unit: 'px',
-                  },
-                  blur: {
-                    value: 12,
-                    unit: 'px',
-                  },
-                  spread: {
-                    value: -3,
-                    unit: 'px',
-                  },
-                },
-                {
-                  color: '{base.color.neutral.0}',
-                  alpha: 0.4,
-                  offsetX: {
-                    value: 0,
-                    unit: 'px',
-                  },
-                  offsetY: {
-                    value: 6,
-                    unit: 'px',
-                  },
-                  blur: {
-                    value: 18,
-                    unit: 'px',
-                  },
-                  spread: {
-                    value: 0,
-                    unit: 'px',
-                  },
-                },
-              ],
-            },
-          },
-          'org.primer.llm': {
-            usage: ['legacy-component', 'backward-compatibility'],
-            rules: 'DEPRECATED: Use shadow-floating-small instead. Only use for maintaining backward compatibility with existing implementations.',
           },
         },
       },

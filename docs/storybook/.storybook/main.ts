@@ -4,15 +4,19 @@ const config: StorybookConfig = {
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
-    '@storybook/addon-interactions',
     '@storybook/addon-a11y',
-    'storybook-addon-rem',
+    '@storybook/addon-webpack5-compiler-swc',
     'storybook-addon-paddings',
-    '@storybook/addon-mdx-gfm',
   ],
-  features: {
-    buildStoriesJson: true,
-  },
+  swc: () => ({
+    jsc: {
+      transform: {
+        react: {
+          runtime: 'automatic',
+        },
+      },
+    },
+  }),
   framework: {
     name: '@storybook/react-webpack5',
     options: {},
