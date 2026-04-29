@@ -178,6 +178,79 @@ npm run check:contrast        # Runs contrast test
 }
 ```
 
+## Neutral Scale: Contrast Patterns & Architecture
+
+The neutral scale is not arbitrary—it's deliberately structured in **three semantic regions** with distinct contrast characteristics:
+
+### Scale Regions (Light Theme Example)
+
+| Region | Steps | HSL Lightness | Purpose | Contrast vs. White |
+|--------|-------|--------------|---------|-------------------|
+| **Light backgrounds** | 0–7 | 100 → 82 | Page backgrounds, containers, dividers | 1.0–1.6:1 |
+| **Transition zone** | 6–8 | 82 → 55 | Borders, subtle separators | 1.4–3.5:1 |
+| **Text & foreground** | 8–13 | 55 → 14 | Text, icons, interactive UI | 3.5–15:1 |
+
+### The 7↔8 Break: Architecture, Not Accident
+
+The step progression is **not linear**:
+
+- **Steps 0–7:** Lightness drops ~2–3% per step (subtle, for backgrounds)
+- **Step 7→8:** Lightness drops 27% (intentional break!)
+- **Steps 8–13:** Lightness drops ~8% per step (for text readability)
+
+This architecture encodes two distinct jobs:
+1. **Light zone (0–7):** Safe for backgrounds; text on these needs high contrast
+2. **Text zone (8–13):** Safe for readable text; minimal contrast to white (3.5:1)
+
+### Contrast Matrix: Neutral Steps vs. Functional Tokens (Light)
+
+**vs. `bgColor.default` (white #FFFFFF):**
+- Steps 0–7: 1.0–1.6:1 ✗ (too similar; use for backgrounds only)
+- Steps 8–9: 3.4–6.1:1 ✓ (readable text)
+- Steps 10–13: 8.7–15.8:1 ✓ (very readable text)
+
+**vs. `bgColor.muted` (#F6F8FA):**
+- Steps 0–7: 1.0–1.5:1 ✗ (too similar)
+- Steps 8–9: 3.2–5.7:1 ✓ (readable text)
+- Steps 10–13: 8.2–14.8:1 ✓ (very readable text)
+
+**vs. `fgColor.default` (neutral.13 #1f2328):**
+- Steps 0–8: 4.6–15.8:1 ✓ (all safe on dark text)
+- Steps 9–13: 1.0–2.6:1 ✗ (too similar to dark text)
+- **Use case:** Light backgrounds where dark text is already placed
+
+**vs. `fgColor.muted` (neutral.9 #59636E):**
+- Steps 0–7: 3.96–6.1:1 ✓ (all safe on medium text)
+- Steps 8–13: 1.0–2.4:1 ✗ (too similar to medium text)
+- **Use case:** Light backgrounds where medium text is already placed
+
+### Design Insight: Why Functional Tokens Anchor at Specific Steps
+
+The functional tokens are anchored to specific steps because they encode contrast relationships:
+
+```
+bgColor.default   → neutral.0  (white, safe for all text)
+bgColor.muted     → neutral.1  (light gray, safe for dark text)
+fgColor.default   → neutral.13 (black, safe on all light backgrounds)
+fgColor.muted     → neutral.9  (medium gray, safe on light backgrounds 0–7)
+```
+
+Any change to base neutral scale steps automatically affects all these relationships. If step 6 changes color, any functional token referencing step 6 changes everywhere it's used.
+
+### Best Practice: Scale Changes & Cascades
+
+**Problem:** If you shift the neutral scale (e.g., blue-gray → green-gray), existing semantic steps may no longer work:
+- Old step 6 might be too light for its use case
+- Old step 9 might not have enough contrast anymore
+- Requires remapping: old step N → new step N+1 or N+2
+- **This cascades:** if you remap functional token references, ~1,800+ usages change
+
+**Solution:** Add new steps instead of remapping
+- Extend scale from 13 to 16 steps (add 14, 15 in light zone)
+- Keep steps 0–13 semantics unchanged
+- Functional tokens still reference 0–13 (zero changes)
+- New steps provide extra granularity where needed
+
 ## How Changes Propagate
 
 ### Scenario: Update neutral scale (like PR #1340)
