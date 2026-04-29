@@ -110,7 +110,7 @@ function collectDocumentedRemovals(): Set<string> {
   for (const file of files) {
     try {
       const content = fs.readFileSync(path.join(REMOVED_DIR, file), 'utf-8')
-      const parsed = JSON.parse(content)
+      const parsed = file.endsWith('.json5') ? json5.parse(content) : JSON.parse(content)
       for (const key of Object.keys(parsed)) {
         removals.add(key)
       }
@@ -126,17 +126,43 @@ function collectDocumentedRemovals(): Set<string> {
 // Main
 // ---------------------------------------------------------------------------
 
-const baseRef = getArg('--base') ?? process.env.BASE_REF ?? 'main'
+const requestedBaseRef =
+  getArg('--base') || process.env.GITHUB_BASE_REF || process.env.BASE_REF || 'origin/main'
 const isCI = process.env.CI === 'true'
 
-const baseCommit = getBaseCommit(baseRef)
+// Try the requested ref first, then the origin/ prefixed/unprefixed counterpart
+const baseRefCandidates = [
+  ...new Set([
+    requestedBaseRef,
+    requestedBaseRef.startsWith('origin/')
+      ? requestedBaseRef.slice('origin/'.length)
+      : `origin/${requestedBaseRef}`,
+  ]),
+]
+
+let baseRef: string | null = null
+let baseCommit: string | null = null
+
+for (const candidate of baseRefCandidates) {
+  const commit = getBaseCommit(candidate)
+  if (commit) {
+    baseRef = candidate
+    baseCommit = commit
+    break
+  }
+}
 
 if (!baseCommit) {
+  const attemptedRefs = baseRefCandidates.map(ref => `"${ref}"`).join(', ')
   if (isCI) {
-    console.error(`❌ Could not find merge-base with "${baseRef}". Ensure the base branch is fetched.`)
+    console.error(
+      `❌ Could not find merge-base with any of: ${attemptedRefs}. Ensure the base branch is fetched.`,
+    )
     process.exit(1)
   }
-  console.log(`⏭️  Skipping removed token check: could not resolve base ref "${baseRef}"`)
+  console.log(
+    `⏭️  Skipping removed token check: could not resolve base ref from ${attemptedRefs}`,
+  )
   process.exit(0)
 }
 
