@@ -14,7 +14,7 @@ Primer's color system is built on **base color scales** — semantic palettes (n
 
 ### Scale Structure
 
-Each base scale has **13 steps** (0–13):
+Each base scale has **14 steps** (0–13):
 
 | Step | Purpose | Light Theme (neutral example) |
 |------|---------|-------------------------------|
@@ -23,7 +23,7 @@ Each base scale has **13 steps** (0–13):
 | 8–11 | **Text & borders** | `#818b98` → `#393f46` (medium to dark gray) |
 | 12–13 | **Darkest/Highest contrast** | `#25292e` → `#1f2328` (black) |
 
-**Why 13 steps?** They provide:
+**Why 14 steps?** They provide:
 - Enough granularity for fine contrast control (especially in mid-tones, steps 5–8)
 - Semantic meaning tied to use cases (light backgrounds, text, borders)
 - Predictable progression for interpolation and theme adaptation
@@ -239,14 +239,14 @@ Primer currently has **8 color modes:**
 
 | Name | Purpose | Base Scales |
 |------|---------|-------------|
-| `light` (default) | Standard light mode | 13 steps per scale |
-| `dark` | Standard dark mode | 13 steps per scale |
-| `dark-dimmed` | Reduced contrast dark mode | 13 steps per scale |
-| `light-high-contrast` | WCAG AAA (7:1) for light | 13 steps per scale |
-| `dark-high-contrast` | WCAG AAA (7:1) for dark | 13 steps per scale |
-| `dark-colorblind-high-contrast` | Protanopia-friendly HC dark | 13 steps per scale |
-| `light-tritanopia-high-contrast` | Tritanopia-friendly HC light | 13 steps per scale |
-| Display themes | Accent color scales only | Same 13 steps |
+| `light` (default) | Standard light mode | 14 steps per scale |
+| `dark` | Standard dark mode | 14 steps per scale |
+| `dark-dimmed` | Reduced contrast dark mode | 14 steps per scale |
+| `light-high-contrast` | WCAG AAA (7:1) for light | 14 steps per scale |
+| `dark-high-contrast` | WCAG AAA (7:1) for dark | 14 steps per scale |
+| `dark-colorblind-high-contrast` | Protanopia-friendly HC dark | 14 steps per scale |
+| `light-tritanopia-high-contrast` | Tritanopia-friendly HC light | 14 steps per scale |
+| Display themes | Accent color scales only | Same 14 steps |
 
 Each theme is built from the same **functional token definitions**, but with different base scale values.
 
@@ -264,7 +264,7 @@ Each theme is built from the same **functional token definitions**, but with dif
 ## Questions?
 
 - **Why base scales?** Provide reusable, predictable primitives
-- **Why 13 steps?** Balance between granularity and semantic clarity
+- **Why 14 steps?** Balance between granularity and semantic clarity
 - **Why functional tokens?** Hide complexity, ensure accessibility, enable themes
 - **Why enforce contrast?** Legal requirement (WCAG 2.1) + ethical duty (accessibility)
 
