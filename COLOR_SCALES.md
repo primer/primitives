@@ -69,10 +69,10 @@ src/tokens/base/color/
 
 ```json5
 // Bad: consumer has to think about steps
-color: $base.color.neutral.5   // Is this readable on neutral.0? Need to check contrast
+color: {base.color.neutral.5}   // Is this readable on neutral.0? Need to check contrast
 
 // Good: semantic name, works across all themes
-color: $base.color.fgColor.default  // Guaranteed to meet 4.5:1 contrast on default bg
+color: {fgColor.default}  // Guaranteed to meet 4.5:1 contrast on default bg
 ```
 
 ### Examples of Functional Tokens
