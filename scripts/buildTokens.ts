@@ -237,6 +237,28 @@ export const buildDesignTokens = async (buildOptions: ConfigGeneratorOptions): P
     console.error('🛑 Error trying to build size tokens for code output:', `${e} when building ${debugCurrentFile}`)
   }
   /** -----------------------------------
+   * Spacing tokens
+   * ----------------------------------- */
+  try {
+    const spacingFiles = glob.sync('src/tokens/functional/spacing/*')
+    for (const file of spacingFiles) {
+      const basename = file.replace('src/tokens/functional/spacing/', '').replace('.json5', '')
+      debugCurrentFile = `functional/spacing/${basename}`
+
+      const extendedSD = await PrimerStyleDictionary.extend(
+        getStyleDictionaryConfig(
+          `functional/spacing/${basename}`,
+          [file],
+          ['src/tokens/base/size/*.json5'],
+          buildOptions,
+        ),
+      )
+      await extendedSD.buildAllPlatforms()
+    }
+  } catch (e) {
+    console.error('🛑 Error trying to build spacing tokens for code output:', `${e} when building ${debugCurrentFile}`)
+  }
+  /** -----------------------------------
    * Typography tokens
    * ----------------------------------- */
   try {

@@ -1,0 +1,153 @@
+{
+  space: {
+    $description: 'Unified semantic spacing scale for gap, padding, and margin. Single namespace drives consistent visual density across all properties.',
+    $extensions: {
+      'org.primer.llm': {
+        usage: ['gap', 'padding', 'margin', 'flex-spacing', 'grid-spacing'],
+        rules:
+          'ALWAYS use semantic space tokens for gap, padding, and margin. Use the same token for all three properties — semantic intent (visual density) matters more than CSS property. Only use base tokens for escape hatches (3px, 6px, edge cases).',
+        scale_position: 'Ordinal scale 1-6 represents visual density: 1=ultra-compact, 6=expansive.',
+        ai_reasoning:
+          'Single namespace means AI learns one scale, not three. Property-agnostic reasoning: "I need comfortable spacing" → use space-sm everywhere. Interpolation: AI can infer intermediate values from ordinal position.',
+      },
+    },
+    $2xs: {
+      $value: '2px',
+      $type: 'dimension',
+      $description: 'Ultra-compact spacing for form field separators and tight visual divisions.',
+      $extensions: {
+        'org.primer.llm': {
+          scale_position: 1,
+          visual_density: 'ultra-compact',
+          use_cases: [
+            'Form field separators',
+            'Tight divider spacing',
+            'Minimal breathing room between small elements',
+          ],
+          properties: ['gap', 'padding', 'margin'],
+          examples: [
+            'gap: var(--space-2xs)  /* Separator between form fields */',
+            'padding: var(--space-2xs)  /* Minimal internal spacing */',
+            'margin: var(--space-2xs)  /* Tight element separation */',
+          ],
+        },
+      },
+    },
+    $xs: {
+      $value: '4px',
+      $type: 'dimension',
+      $description: 'Compact spacing for small badges, tight internal spacing, and minimal breathing room.',
+      $extensions: {
+        'org.primer.llm': {
+          scale_position: 2,
+          visual_density: 'compact',
+          use_cases: [
+            'Small component spacing',
+            'Tight list item separations',
+            'Badge padding',
+            'Minimal internal margins',
+          ],
+          properties: ['gap', 'padding', 'margin'],
+          examples: [
+            'gap: var(--space-xs)  /* Space between badge elements */',
+            'padding: var(--space-xs)  /* Badge internal padding */',
+            'margin: var(--space-xs)  /* Tight list spacing */',
+          ],
+        },
+      },
+    },
+    sm: {
+      $value: '8px',
+      $type: 'dimension',
+      $description: 'Default spacing for most UI elements. Comfortable visual density for standard component layouts.',
+      $extensions: {
+        'org.primer.llm': {
+          scale_position: 3,
+          visual_density: 'comfortable',
+          use_cases: [
+            'Default component spacing',
+            'Flex and grid item separation',
+            'Standard container padding',
+            'Normal element margins',
+            'List item spacing',
+          ],
+          properties: ['gap', 'padding', 'margin'],
+          examples: [
+            'gap: var(--space-sm)  /* Space between flex items */',
+            'padding: var(--space-sm)  /* Card content padding */',
+            'margin: var(--space-sm)  /* Stacked element spacing */',
+          ],
+        },
+      },
+    },
+    md: {
+      $value: '12px',
+      $type: 'dimension',
+      $description: 'Relaxed spacing for breathing room and comfortable internal container space.',
+      $extensions: {
+        'org.primer.llm': {
+          scale_position: 4,
+          visual_density: 'relaxed',
+          use_cases: [
+            'Comfortable container padding',
+            'Relaxed layout spacing',
+            'Section separators',
+            'Breathing room in dense layouts',
+          ],
+          properties: ['gap', 'padding', 'margin'],
+          examples: [
+            'gap: var(--space-md)  /* Relaxed grid spacing */',
+            'padding: var(--space-md)  /* Panel internal padding */',
+            'margin: var(--space-md)  /* Section vertical spacing */',
+          ],
+        },
+      },
+    },
+    lg: {
+      $value: '16px',
+      $type: 'dimension',
+      $description: 'Spacious spacing for major layout divisions and visual separation between content blocks.',
+      $extensions: {
+        'org.primer.llm': {
+          scale_position: 5,
+          visual_density: 'spacious',
+          use_cases: [
+            'Major layout divisions',
+            'Visual separation between blocks',
+            'Spacious component layouts',
+            'Primary container margins',
+          ],
+          properties: ['gap', 'padding', 'margin'],
+          examples: [
+            'gap: var(--space-lg)  /* Space between major sections */',
+            'padding: var(--space-lg)  /* Main container padding */',
+            'margin: var(--space-lg)  /* Top-level layout spacing */',
+          ],
+        },
+      },
+    },
+    xl: {
+      $value: '24px',
+      $type: 'dimension',
+      $description: 'Expansive spacing for large sections and top-level structure separation.',
+      $extensions: {
+        'org.primer.llm': {
+          scale_position: 6,
+          visual_density: 'expansive',
+          use_cases: [
+            'Large section separation',
+            'Top-level layout structure',
+            'Major page divisions',
+            'Expansive layout breathing room',
+          ],
+          properties: ['gap', 'padding', 'margin'],
+          examples: [
+            'gap: var(--space-xl)  /* Space between page sections */',
+            'padding: var(--space-xl)  /* Large panel padding */',
+            'margin: var(--space-xl)  /* Top-level element spacing */',
+          ],
+        },
+      },
+    },
+  },
+}
