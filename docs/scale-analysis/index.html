@@ -73,6 +73,11 @@
       border-right: 1px solid #e5e7eb;
     }
     
+    .step-label-left.inserted {
+      background: #f5f5f5;
+      opacity: 0.6;
+    }
+    
     .step-label-right {
       text-align: left;
       padding-left: 20px;
@@ -171,7 +176,7 @@
 <body>
   <div class="container">
     <h1>🎨 18-Step Monotonic Scale Proposal</h1>
-    <p class="subtitle">All 18 steps shown. Steps marked [FROM PR #1340] are preserved, [INSERTED] are new.</p>
+    <p class="subtitle">All 18 steps shown. Gray labels = new inserted steps. Blue labels = preserved from PR #1340.</p>
     
     <div class="info-box">
       <h3>Why Insert Between Instead of Extend at Ends?</h3>
@@ -197,13 +202,17 @@
           Object.entries(scale18).forEach(([step, hex]) => {
             const stepNum = parseInt(step);
             const isFromPR = pr1340Steps.has(stepNum);
+            const isInserted = insertedSteps.has(stepNum);
+            
             const badge = isFromPR 
               ? '<div class="badge from-pr">FROM PR #1340</div>' 
               : '<div class="badge inserted">INSERTED</div>';
             
+            const leftClass = isInserted ? 'step-label-left inserted' : 'step-label-left';
+            
             html += `
               <div class="step-row">
-                <div class="step-label-left">
+                <div class="${leftClass}">
                   <div class="step-label">neutral.${step}</div>
                   <div class="step-hex">${hex}</div>
                 </div>
@@ -228,8 +237,8 @@
       <div class="legend-item">
         <strong>📊 Scale Composition</strong>
         <ul>
-          <li><strong>From PR #1340</strong>: 10 steps</li>
-          <li><strong>Inserted new</strong>: 8 steps</li>
+          <li><strong>From PR #1340</strong>: 10 steps (blue labels)</li>
+          <li><strong>Inserted new</strong>: 8 steps (gray labels)</li>
           <li><strong>Total</strong>: 18 steps (0-17)</li>
         </ul>
       </div>
