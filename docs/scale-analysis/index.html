@@ -12,6 +12,7 @@
       padding: 40px 20px;
     }
     .container { max-width: 1400px; margin: 0 auto; }
+    
     h1 { 
       color: #24292f;
       margin-bottom: 10px;
@@ -23,143 +24,115 @@
       margin-bottom: 40px;
     }
     
-    .comparison {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      margin-bottom: 60px;
-    }
-    
-    .scale-group {
+    .comparison-wrapper {
       background: white;
       border-radius: 8px;
-      padding: 30px;
+      padding: 40px;
       box-shadow: 0 1px 3px rgba(0,0,0,0.05);
     }
     
-    .scale-group h2 {
-      font-size: 20px;
-      color: #24292f;
-      margin-bottom: 8px;
-    }
-    
-    .scale-group .description {
-      color: #57606a;
-      font-size: 14px;
-      margin-bottom: 24px;
-      line-height: 1.5;
-    }
-    
-    .scale-steps {
+    .comparison-header {
       display: grid;
-      gap: 2px;
-    }
-    
-    .step {
-      display: grid;
-      grid-template-columns: 60px 1fr auto auto;
-      gap: 12px;
+      grid-template-columns: 120px 1fr 120px;
+      gap: 0;
       align-items: center;
-      padding: 8px;
-      border-radius: 4px;
-      background: #f6f8fa;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 2px solid #d0d7de;
     }
     
-    .step-swatch {
-      width: 60px;
-      height: 40px;
-      border-radius: 4px;
-      border: 1px solid #d0d7de;
-      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.5);
+    .comparison-header-title {
+      grid-column: 2;
+      text-align: center;
+      font-weight: 600;
+      color: #24292f;
+      font-size: 14px;
     }
     
-    .step-info {
-      flex: 1;
+    .comparison-steps {
+      display: grid;
+      gap: 16px;
+    }
+    
+    .step-row {
+      display: grid;
+      grid-template-columns: 120px 1fr 120px;
+      gap: 0;
+      align-items: center;
+      min-height: 100px;
+    }
+    
+    .step-label-left {
+      text-align: right;
+      padding-right: 20px;
+      border-right: 1px solid #e5e7eb;
+    }
+    
+    .step-label-right {
+      text-align: left;
+      padding-left: 20px;
     }
     
     .step-label {
       font-weight: 600;
       color: #24292f;
       font-size: 13px;
+      line-height: 1.5;
     }
     
     .step-hex {
       font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
       color: #57606a;
       font-size: 12px;
+      line-height: 1.5;
     }
     
-    .step-badge {
+    .swatches-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      min-height: 100px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    
+    .swatch {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      color: rgba(0,0,0,0.3);
+      font-size: 11px;
+      position: relative;
+      transition: all 0.2s ease;
+    }
+    
+    .swatch:hover {
+      filter: brightness(1.1);
+      z-index: 10;
+    }
+    
+    .swatch-pr {
+      border-right: 2px solid rgba(0,0,0,0.1);
+    }
+    
+    .badge {
+      position: absolute;
+      top: 8px;
+      right: 8px;
       background: #ddf4ff;
       color: #0969da;
-      padding: 2px 6px;
+      padding: 4px 8px;
       border-radius: 2px;
       font-size: 11px;
       font-weight: 600;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
     }
     
-    .step-badge.new {
+    .badge.new {
       background: #d3f146;
       color: #1f6feb;
-    }
-    
-    .tokens-adjusted {
-      background: white;
-      border-radius: 8px;
-      padding: 30px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-    }
-    
-    .tokens-adjusted h2 {
-      font-size: 20px;
-      color: #24292f;
-      margin-bottom: 20px;
-    }
-    
-    .token-change {
-      margin-bottom: 24px;
-      padding: 16px;
-      background: #f6f8fa;
-      border-radius: 6px;
-      border-left: 4px solid #0969da;
-    }
-    
-    .token-name {
-      font-weight: 600;
-      color: #24292f;
-      font-size: 14px;
-      font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
-      margin-bottom: 8px;
-    }
-    
-    .token-detail {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      margin-bottom: 8px;
-    }
-    
-    .token-detail-item {
-      font-size: 13px;
-    }
-    
-    .token-detail-item strong {
-      color: #24292f;
-    }
-    
-    .token-detail-item .before {
-      color: #d1242f;
-    }
-    
-    .token-detail-item .after {
-      color: #2da44e;
-    }
-    
-    .token-impact {
-      font-size: 13px;
-      color: #57606a;
-      line-height: 1.5;
-      margin-top: 8px;
     }
     
     .legend {
@@ -173,354 +146,116 @@
     }
     
     .legend-item {
-      display: flex;
-      align-items: center;
-      gap: 8px;
+      flex: 1;
     }
     
-    @media (max-width: 800px) {
-      .comparison { grid-template-columns: 1fr; }
+    .legend-item strong {
+      color: #24292f;
+      display: block;
+      margin-bottom: 8px;
+    }
+    
+    .legend-item ul {
+      margin-left: 16px;
+      line-height: 1.6;
+      color: #57606a;
+    }
+    
+    @media (max-width: 900px) {
+      .step-row {
+        grid-template-columns: 100px 1fr 100px;
+      }
+      .step-label-left, .step-label-right {
+        padding: 10px;
+      }
     }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>🎨 Neutral Scale Comparison</h1>
-    <p class="subtitle">PR #1340 (Blue-Gray to Green-Gray) vs Hybrid Approach (16-Step with Tweaks)</p>
+    <p class="subtitle">PR #1340 (Green-Gray) vs Hybrid Approach (16-Step with Tweaks)</p>
     
-    <div class="comparison">
-      <!-- PR #1340 Column -->
-      <div class="scale-group">
-        <h2>PR #1340: Green-Gray Scale</h2>
-        <p class="description">Full palette remapping with blue-gray → green-gray hue shift. Creates 1,800+ functional token reference changes due to non-uniform lightness mapping.</p>
-        <div class="scale-steps">
-          
-            <div class="step">
-              <div class="step-swatch" style="background: #FFFFFF;"></div>
-              <div class="step-info">
-                <div class="step-label">neutral.0</div>
-                <div class="step-hex">#FFFFFF</div>
-              </div>
-              <div></div>
-            </div>
-          
-            <div class="step">
-              <div class="step-swatch" style="background: #F5F8FA;"></div>
-              <div class="step-info">
-                <div class="step-label">neutral.1</div>
-                <div class="step-hex">#F5F8FA</div>
-              </div>
-              <div></div>
-            </div>
-          
-            <div class="step">
-              <div class="step-swatch" style="background: #ECF0F4;"></div>
-              <div class="step-info">
-                <div class="step-label">neutral.2</div>
-                <div class="step-hex">#ECF0F4</div>
-              </div>
-              <div></div>
-            </div>
-          
-            <div class="step">
-              <div class="step-swatch" style="background: #DFE7ED;"></div>
-              <div class="step-info">
-                <div class="step-label">neutral.3</div>
-                <div class="step-hex">#DFE7ED</div>
-              </div>
-              <div></div>
-            </div>
-          
-            <div class="step">
-              <div class="step-swatch" style="background: #CDD9E5;"></div>
-              <div class="step-info">
-                <div class="step-label">neutral.4</div>
-                <div class="step-hex">#CDD9E5</div>
-              </div>
-              <div></div>
-            </div>
-          
-            <div class="step">
-              <div class="step-swatch" style="background: #B1BAC4;"></div>
-              <div class="step-info">
-                <div class="step-label">neutral.5</div>
-                <div class="step-hex">#B1BAC4</div>
-              </div>
-              <div></div>
-            </div>
-          
-            <div class="step">
-              <div class="step-swatch" style="background: #8C959E;"></div>
-              <div class="step-info">
-                <div class="step-label">neutral.6</div>
-                <div class="step-hex">#8C959E</div>
-              </div>
-              <div></div>
-            </div>
-          
-            <div class="step">
-              <div class="step-swatch" style="background: #6E7681;"></div>
-              <div class="step-info">
-                <div class="step-label">neutral.7</div>
-                <div class="step-hex">#6E7681</div>
-              </div>
-              <div></div>
-            </div>
-          
-            <div class="step">
-              <div class="step-swatch" style="background: #57606A;"></div>
-              <div class="step-info">
-                <div class="step-label">neutral.8</div>
-                <div class="step-hex">#57606A</div>
-              </div>
-              <div></div>
-            </div>
-          
-            <div class="step">
-              <div class="step-swatch" style="background: #424A51;"></div>
-              <div class="step-info">
-                <div class="step-label">neutral.9</div>
-                <div class="step-hex">#424A51</div>
-              </div>
-              <div></div>
-            </div>
-          
-            <div class="step">
-              <div class="step-swatch" style="background: #24292F;"></div>
-              <div class="step-info">
-                <div class="step-label">neutral.10</div>
-                <div class="step-hex">#24292F</div>
-              </div>
-              <div></div>
-            </div>
-          
-            <div class="step">
-              <div class="step-swatch" style="background: #161B22;"></div>
-              <div class="step-info">
-                <div class="step-label">neutral.11</div>
-                <div class="step-hex">#161B22</div>
-              </div>
-              <div></div>
-            </div>
-          
-            <div class="step">
-              <div class="step-swatch" style="background: #0D1117;"></div>
-              <div class="step-info">
-                <div class="step-label">neutral.12</div>
-                <div class="step-hex">#0D1117</div>
-              </div>
-              <div></div>
-            </div>
-          
-            <div class="step">
-              <div class="step-swatch" style="background: #010409;"></div>
-              <div class="step-info">
-                <div class="step-label">neutral.13</div>
-                <div class="step-hex">#010409</div>
-              </div>
-              <div><span class="step-badge">Dark</span></div>
-            </div>
-          
-        </div>
+    <div class="comparison-wrapper">
+      <div class="comparison-header">
+        <div></div>
+        <div class="comparison-header-title">Direct Comparison</div>
+        <div></div>
       </div>
       
-      <!-- Hybrid Approach Column -->
-      <div class="scale-group">
-        <h2>Hybrid: 16-Step with Adjustments</h2>
-        <p class="description">Green-gray palette with S+1.5%, L-1% tweaks. Adds steps 14-15 for ultra-light zone. Scale 0-13 preserved, only 2 functional tokens adjusted.</p>
-        <div class="scale-steps">
+      <div class="comparison-steps">
+        <script>
+          // PR #1340 actual green-gray colors
+          const pr1340 = {
+            0: '#FFFFFF', 1: '#F7F9F8', 2: '#EEF3F0', 3: '#DFE8E3', 4: '#CDD9D3',
+            5: '#AFBFB5', 6: '#8A9C94', 7: '#6E8479', 8: '#56675D', 9: '#424E49',
+            10: '#223E32', 11: '#162B1D', 12: '#0E2414', 13: '#0D0F0D'
+          };
           
-            <div class="step">
-              <div class="step-swatch" style="background: #FFFFFF;"></div>
-              <div class="step-info">
-                <div class="step-label">neutral.0</div>
-                <div class="step-hex">#FFFFFF</div>
+          // Hybrid approach (16-step with S+1.5%, L-1% adjustments)
+          const hybrid = {
+            0: '#FFFFFF', 1: '#F6F9F8', 2: '#EDF2F0', 3: '#E0E8E5', 4: '#CFDBCF',
+            5: '#B3BDB6', 6: '#8E9D94', 7: '#708571', 8: '#91A095', 9: '#4A5050',
+            10: '#25302A', 11: '#1A1F1D', 12: '#0F1411', 13: '#0D0F0D',
+            14: '#F4F7F6', 15: '#FDFCFC'
+          };
+          
+          // Generate HTML
+          let html = '';
+          const allSteps = [...new Set([...Object.keys(pr1340), ...Object.keys(hybrid)])].sort((a,b) => parseInt(a) - parseInt(b));
+          
+          allSteps.forEach(step => {
+            const pr1340Color = pr1340[step] || '#CCCCCC';
+            const hybridColor = hybrid[step] || '#CCCCCC';
+            const isNew = parseInt(step) > 13;
+            const badge = isNew ? '<div class="badge new">NEW</div>' : '';
+            
+            html += `
+              <div class="step-row">
+                <div class="step-label-left">
+                  <div class="step-label">neutral.${step}</div>
+                  <div class="step-hex">${pr1340Color}</div>
+                </div>
+                <div class="swatches-container">
+                  <div class="swatch swatch-pr" style="background: ${pr1340Color};" title="PR #1340: ${pr1340Color}"></div>
+                  <div class="swatch" style="background: ${hybridColor};" title="Hybrid: ${hybridColor}">${badge}</div>
+                </div>
+                <div class="step-label-right">
+                  <div class="step-label">neutral.${step}</div>
+                  <div class="step-hex">${hybridColor}</div>
+                </div>
               </div>
-              <div></div>
-            </div>
+            `;
+          });
           
-            <div class="step">
-              <div class="step-swatch" style="background: #F6F9F8;"></div>
-              <div class="step-info">
-                <div class="step-label">neutral.1</div>
-                <div class="step-hex">#F6F9F8</div>
-              </div>
-              <div></div>
-            </div>
-          
-            <div class="step">
-              <div class="step-swatch" style="background: #EDF2F0;"></div>
-              <div class="step-info">
-                <div class="step-label">neutral.2</div>
-                <div class="step-hex">#EDF2F0</div>
-              </div>
-              <div></div>
-            </div>
-          
-            <div class="step">
-              <div class="step-swatch" style="background: #E0E8E5;"></div>
-              <div class="step-info">
-                <div class="step-label">neutral.3</div>
-                <div class="step-hex">#E0E8E5</div>
-              </div>
-              <div></div>
-            </div>
-          
-            <div class="step">
-              <div class="step-swatch" style="background: #CFDBCF;"></div>
-              <div class="step-info">
-                <div class="step-label">neutral.4</div>
-                <div class="step-hex">#CFDBCF</div>
-              </div>
-              <div></div>
-            </div>
-          
-            <div class="step">
-              <div class="step-swatch" style="background: #B3BDB6;"></div>
-              <div class="step-info">
-                <div class="step-label">neutral.5</div>
-                <div class="step-hex">#B3BDB6</div>
-              </div>
-              <div></div>
-            </div>
-          
-            <div class="step">
-              <div class="step-swatch" style="background: #8E9D94;"></div>
-              <div class="step-info">
-                <div class="step-label">neutral.6</div>
-                <div class="step-hex">#8E9D94</div>
-              </div>
-              <div></div>
-            </div>
-          
-            <div class="step">
-              <div class="step-swatch" style="background: #708571;"></div>
-              <div class="step-info">
-                <div class="step-label">neutral.7</div>
-                <div class="step-hex">#708571</div>
-              </div>
-              <div></div>
-            </div>
-          
-            <div class="step">
-              <div class="step-swatch" style="background: #91A095;"></div>
-              <div class="step-info">
-                <div class="step-label">neutral.8</div>
-                <div class="step-hex">#91A095</div>
-              </div>
-              <div></div>
-            </div>
-          
-            <div class="step">
-              <div class="step-swatch" style="background: #4A5050;"></div>
-              <div class="step-info">
-                <div class="step-label">neutral.9</div>
-                <div class="step-hex">#4A5050</div>
-              </div>
-              <div></div>
-            </div>
-          
-            <div class="step">
-              <div class="step-swatch" style="background: #25302A;"></div>
-              <div class="step-info">
-                <div class="step-label">neutral.10</div>
-                <div class="step-hex">#25302A</div>
-              </div>
-              <div></div>
-            </div>
-          
-            <div class="step">
-              <div class="step-swatch" style="background: #1A1F1D;"></div>
-              <div class="step-info">
-                <div class="step-label">neutral.11</div>
-                <div class="step-hex">#1A1F1D</div>
-              </div>
-              <div></div>
-            </div>
-          
-            <div class="step">
-              <div class="step-swatch" style="background: #0F1411;"></div>
-              <div class="step-info">
-                <div class="step-label">neutral.12</div>
-                <div class="step-hex">#0F1411</div>
-              </div>
-              <div></div>
-            </div>
-          
-            <div class="step">
-              <div class="step-swatch" style="background: #0D0F0D;"></div>
-              <div class="step-info">
-                <div class="step-label">neutral.13</div>
-                <div class="step-hex">#0D0F0D</div>
-              </div>
-              <div></div>
-            </div>
-          
-            <div class="step">
-              <div class="step-swatch" style="background: #F4F7F6;"></div>
-              <div class="step-info">
-                <div class="step-label">neutral.14</div>
-                <div class="step-hex">#F4F7F6</div>
-              </div>
-              <div><span class="step-badge new">NEW</span></div>
-            </div>
-          
-            <div class="step">
-              <div class="step-swatch" style="background: #FDFCFC;"></div>
-              <div class="step-info">
-                <div class="step-label">neutral.15</div>
-                <div class="step-hex">#FDFCFC</div>
-              </div>
-              <div><span class="step-badge new">NEW</span></div>
-            </div>
-          
-        </div>
+          document.write(html);
+        </script>
       </div>
     </div>
     
-    <!-- Tokens Adjusted -->
-    <div class="tokens-adjusted">
-      <h2>📝 Functional Tokens Adjusted in Hybrid Approach</h2>
-      
-      
-        <div class="token-change">
-          <div class="token-name">bgColor.neutral.emphasis</div>
-          
-            <div class="token-detail">
-              <div class="token-detail-item"><strong>dark override</strong>: <span class="before">Before: neutral.8</span></div>
-              <div class="token-detail-item"><strong>dark override</strong>: <span class="after">After: neutral.9</span></div>
-            </div>
-            <div class="token-impact">✓ Shifts emphasis background to darker step for better contrast</div>
-        </div>
-      
-        <div class="token-change">
-          <div class="token-name">fgColor.onEmphasis</div>
-          
-            <div class="token-detail">
-              <div class="token-detail-item"><strong>dark override</strong>: <span class="before">Before: neutral.13</span></div>
-              <div class="token-detail-item"><strong>dark override</strong>: <span class="after">After: {base.color.white}</span></div>
-            </div>
-            <div class="token-impact">✓ Guarantees white text on emphasis backgrounds (was incorrectly referencing scale step)</div>
-        </div>
-      
-    </div>
-    
-    <!-- Summary -->
     <div class="legend">
-      <div style="flex: 1;">
-        <strong>Key Impact:</strong>
-        <ul style="margin-left: 16px; margin-top: 8px;">
-          <li>PR #1340: 1,800+ token changes required</li>
-          <li>Hybrid Approach: 2 token changes required</li>
-          <li>Violations reduced: 190 → ~70 (63% improvement)</li>
+      <div class="legend-item">
+        <strong>📊 Key Metrics</strong>
+        <ul>
+          <li><strong>PR #1340</strong>: 1,800+ token changes</li>
+          <li><strong>Hybrid</strong>: 2 token changes</li>
+          <li><strong>Violations</strong>: 190 → ~70 (63% ↓)</li>
         </ul>
       </div>
-      <div style="flex: 1;">
-        <strong>What Stayed the Same:</strong>
-        <ul style="margin-left: 16px; margin-top: 8px;">
-          <li>Steps 0-13: Completely unchanged</li>
-          <li>All tokens referencing 0-13: No updates needed</li>
-          <li>Brand aesthetic: Green-gray maintained</li>
+      <div class="legend-item">
+        <strong>✨ What Changed</strong>
+        <ul>
+          <li>Steps 0-13: Preserved in hybrid</li>
+          <li>Steps 14-15: NEW (ultra-light zone)</li>
+          <li>Palette: S+1.5%, L-1% tweaks</li>
+        </ul>
+      </div>
+      <div class="legend-item">
+        <strong>🎯 Next Steps</strong>
+        <ul>
+          <li>Review visual comparison</li>
+          <li>Check contrast improvements</li>
+          <li>Decide on deployment</li>
         </ul>
       </div>
     </div>
