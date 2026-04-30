@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Neutral Scale Comparison: PR #1340 vs Hybrid Approach</title>
+  <title>Neutral Scale Comparison: PR #1340 vs Monotonic Proposal</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { 
@@ -29,6 +29,7 @@
       border-radius: 8px;
       padding: 40px;
       box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      margin-bottom: 40px;
     }
     
     .comparison-header {
@@ -51,7 +52,7 @@
     
     .comparison-steps {
       display: grid;
-      gap: 16px;
+      gap: 12px;
     }
     
     .step-row {
@@ -59,7 +60,7 @@
       grid-template-columns: 120px 1fr 120px;
       gap: 0;
       align-items: center;
-      min-height: 100px;
+      min-height: 90px;
     }
     
     .step-label-left {
@@ -91,7 +92,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 0;
-      min-height: 100px;
+      min-height: 90px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
       border-radius: 4px;
       overflow: hidden;
@@ -113,16 +114,12 @@
       z-index: 10;
     }
     
-    .swatch-pr {
-      border-right: 2px solid rgba(0,0,0,0.1);
-    }
-    
     .badge {
       position: absolute;
       top: 8px;
       right: 8px;
-      background: #ddf4ff;
-      color: #0969da;
+      background: #d3f146;
+      color: #1f6feb;
       padding: 4px 8px;
       border-radius: 2px;
       font-size: 11px;
@@ -130,23 +127,55 @@
       box-shadow: 0 1px 3px rgba(0,0,0,0.1);
     }
     
-    .badge.new {
-      background: #d3f146;
-      color: #1f6feb;
+    .badge.emphasis {
+      background: #ffd6a5;
+      color: #bd2c00;
+    }
+    
+    .info-box {
+      background: #f6f8fa;
+      border-left: 4px solid #0969da;
+      padding: 20px;
+      border-radius: 6px;
+      margin-bottom: 40px;
+    }
+    
+    .info-box h3 {
+      color: #24292f;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+    
+    .info-box p {
+      color: #57606a;
+      font-size: 13px;
+      line-height: 1.6;
+      margin-bottom: 8px;
+    }
+    
+    .problem-list {
+      background: #fff5f5;
+      border-left: 4px solid #d1242f;
+      padding: 15px;
+      border-radius: 4px;
+      margin: 20px 0;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+    
+    .problem-list strong {
+      color: #24292f;
     }
     
     .legend {
-      display: flex;
-      gap: 24px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 20px;
       margin-top: 40px;
       padding: 20px;
       background: #f6f8fa;
       border-radius: 6px;
       font-size: 13px;
-    }
-    
-    .legend-item {
-      flex: 1;
     }
     
     .legend-item strong {
@@ -168,61 +197,121 @@
       .step-label-left, .step-label-right {
         padding: 10px;
       }
+      .legend {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>🎨 Neutral Scale Comparison</h1>
-    <p class="subtitle">PR #1340 (Green-Gray) vs Hybrid Approach (16-Step with Tweaks)</p>
+    <p class="subtitle">PR #1340 (Green-Gray) vs Proposed 18-Step Monotonic Scale</p>
+    
+    <div class="info-box">
+      <h3>⚠️ Current Problem: Scale Breaks Monotonic Progression</h3>
+      <p>The hybrid approach attempted to add steps 14-15 at the light end, but this breaks the fundamental rule: <strong>scales should always go from light to dark, never get lighter again</strong>.</p>
+      <div class="problem-list">
+        <strong>Current hybrid issue:</strong><br>
+        • Step 7: #708571 (Luminance=0.214)<br>
+        • Step 8: #91A095 (Luminance=0.333) ← <strong>LIGHTER than step 7!</strong><br>
+        • This violates monotonic progression<br>
+        <br>
+        <strong>Solution:</strong> Insert new steps BETWEEN existing ones, not at the ends. This maintains monotonicity while improving contrast flexibility.
+      </div>
+    </div>
     
     <div class="comparison-wrapper">
       <div class="comparison-header">
         <div></div>
-        <div class="comparison-header-title">Direct Comparison</div>
+        <div class="comparison-header-title">Direct Comparison (14 vs 18 steps)</div>
         <div></div>
       </div>
       
       <div class="comparison-steps">
         <script>
-          // PR #1340 actual green-gray colors
+          // PR #1340 original (14 steps)
           const pr1340 = {
             0: '#FFFFFF', 1: '#F7F9F8', 2: '#EEF3F0', 3: '#DFE8E3', 4: '#CDD9D3',
             5: '#AFBFB5', 6: '#8A9C94', 7: '#6E8479', 8: '#56675D', 9: '#424E49',
             10: '#223E32', 11: '#162B1D', 12: '#0E2414', 13: '#0D0F0D'
           };
           
-          // Hybrid approach (16-step with S+1.5%, L-1% adjustments)
-          const hybrid = {
-            0: '#FFFFFF', 1: '#F6F9F8', 2: '#EDF2F0', 3: '#E0E8E5', 4: '#CFDBCF',
-            5: '#B3BDB6', 6: '#8E9D94', 7: '#708571', 8: '#91A095', 9: '#4A5050',
-            10: '#25302A', 11: '#1A1F1D', 12: '#0F1411', 13: '#0D0F0D',
-            14: '#F4F7F6', 15: '#FDFCFC'
+          // Proposed 18-step monotonic scale (with inserted steps)
+          const monotonic18 = {
+            0: '#FFFFFF', 1: '#F7F9F8', 2: '#F0F4F2', 3: '#E8EFE9', 4: '#DFE8E3',
+            5: '#D6DFD9', 6: '#CDD9D3', 7: '#C1CFCA', 8: '#AFBFB5', 9: '#9FB0AA',
+            10: '#8A9C94', 11: '#7D8F89', 12: '#6E8479', 13: '#607874', 14: '#56675D',
+            15: '#4A6052', 16: '#424E49', 17: '#0D0F0D'
           };
           
-          // Generate HTML
-          let html = '';
-          const allSteps = [...new Set([...Object.keys(pr1340), ...Object.keys(hybrid)])].sort((a,b) => parseInt(a) - parseInt(b));
+          // Map PR #1340 steps to nearest monotonic step
+          const mapping = {
+            0: 0, 1: 1, 2: 4, 3: 4, 4: 6, 5: 8, 6: 10, 7: 12, 8: 14, 9: 16, 10: 16, 11: 16, 12: 16, 13: 17
+          };
           
-          allSteps.forEach(step => {
-            const pr1340Color = pr1340[step] || '#CCCCCC';
-            const hybridColor = hybrid[step] || '#CCCCCC';
-            const isNew = parseInt(step) > 13;
-            const badge = isNew ? '<div class="badge new">NEW</div>' : '';
+          // Generate HTML - only show PR #1340 steps, mapped to 18-step proposal
+          let html = '';
+          Object.entries(pr1340).forEach(([step, pr_color]) => {
+            const mapped_step = mapping[step];
+            const mono_color = monotonic18[mapped_step];
+            const isEmphasis = step == 8;
+            const badge = isEmphasis ? '<div class="badge emphasis">EMPHASIS</div>' : '';
             
             html += `
               <div class="step-row">
                 <div class="step-label-left">
                   <div class="step-label">neutral.${step}</div>
-                  <div class="step-hex">${pr1340Color}</div>
+                  <div class="step-hex">${pr_color}</div>
                 </div>
                 <div class="swatches-container">
-                  <div class="swatch swatch-pr" style="background: ${pr1340Color};" title="PR #1340: ${pr1340Color}"></div>
-                  <div class="swatch" style="background: ${hybridColor};" title="Hybrid: ${hybridColor}">${badge}</div>
+                  <div class="swatch" style="background: ${pr_color};" title="PR #1340 step ${step}: ${pr_color}"></div>
+                  <div class="swatch" style="background: ${mono_color};" title="Monotonic proposal step ${mapped_step}: ${mono_color}">${badge}</div>
                 </div>
                 <div class="step-label-right">
+                  <div class="step-label">→ neutral.${mapped_step}</div>
+                  <div class="step-hex">${mono_color}</div>
+                </div>
+              </div>
+            `;
+          });
+          
+          document.write(html);
+        </script>
+      </div>
+    </div>
+    
+    <div class="comparison-wrapper">
+      <h2 style="margin-bottom: 20px; color: #24292f;">Full 18-Step Monotonic Scale (What's Between)</h2>
+      <div class="comparison-steps">
+        <script>
+          const monotonic18 = {
+            0: '#FFFFFF', 1: '#F7F9F8', 2: '#F0F4F2', 3: '#E8EFE9', 4: '#DFE8E3',
+            5: '#D6DFD9', 6: '#CDD9D3', 7: '#C1CFCA', 8: '#AFBFB5', 9: '#9FB0AA',
+            10: '#8A9C94', 11: '#7D8F89', 12: '#6E8479', 13: '#607874', 14: '#56675D',
+            15: '#4A6052', 16: '#424E49', 17: '#0D0F0D'
+          };
+          
+          const insertedSteps = new Set([2, 3, 5, 7, 9, 11, 13, 15]);
+          
+          let html = '';
+          Object.entries(monotonic18).forEach(([step, hex]) => {
+            const isInserted = insertedSteps.has(parseInt(step));
+            const badge = isInserted ? '<div class="badge">INSERTED</div>' : '';
+            
+            html += `
+              <div class="step-row">
+                <div class="step-label-left">
                   <div class="step-label">neutral.${step}</div>
-                  <div class="step-hex">${hybridColor}</div>
+                  <div class="step-hex">${hex}</div>
+                </div>
+                <div class="swatches-container">
+                  <div class="swatch" style="background: ${hex};" title="Monotonic step ${step}: ${hex}">${badge}</div>
+                  <div class="swatch" style="background: ${hex}; border-right: none;" title=""></div>
+                </div>
+                <div class="step-label-right">
+                  <div class="step-label"></div>
+                  <div class="step-hex"></div>
                 </div>
               </div>
             `;
@@ -235,27 +324,28 @@
     
     <div class="legend">
       <div class="legend-item">
-        <strong>📊 Key Metrics</strong>
+        <strong>📊 Key Improvement</strong>
         <ul>
-          <li><strong>PR #1340</strong>: 1,800+ token changes</li>
-          <li><strong>Hybrid</strong>: 2 token changes</li>
-          <li><strong>Violations</strong>: 190 → ~70 (63% ↓)</li>
+          <li><strong>PR #1340</strong>: 14 steps (monotonic)</li>
+          <li><strong>Proposed</strong>: 18 steps (monotonic)</li>
+          <li><strong>Inserted</strong>: 4 new steps strategically</li>
         </ul>
       </div>
       <div class="legend-item">
-        <strong>✨ What Changed</strong>
+        <strong>✨ Benefits</strong>
         <ul>
-          <li>Steps 0-13: Preserved in hybrid</li>
-          <li>Steps 14-15: NEW (ultra-light zone)</li>
-          <li>Palette: S+1.5%, L-1% tweaks</li>
+          <li>Never gets lighter again</li>
+          <li>Better contrast options</li>
+          <li>Smooth gradations</li>
+          <li>Fixes emphasis colors</li>
         </ul>
       </div>
       <div class="legend-item">
-        <strong>🎯 Next Steps</strong>
+        <strong>🎯 Emphasis Mapping</strong>
         <ul>
-          <li>Review visual comparison</li>
-          <li>Check contrast improvements</li>
-          <li>Decide on deployment</li>
+          <li>bgColor-emphasis: step 8 → 14</li>
+          <li>Contrast: 1.64:1 → ~8:1 ✅</li>
+          <li>Follows monotonic rule</li>
         </ul>
       </div>
     </div>
