@@ -210,6 +210,8 @@
             
             const leftClass = isInserted ? 'step-label-left inserted' : 'step-label-left';
             
+            const leftSwatchBg = isInserted ? '#d3d3d3' : hex;
+            
             html += `
               <div class="step-row">
                 <div class="${leftClass}">
@@ -217,7 +219,7 @@
                   <div class="step-hex">${hex}</div>
                 </div>
                 <div class="swatches-container">
-                  <div class="swatch" style="background: ${hex}; border-right: 1px solid rgba(0,0,0,0.1);"></div>
+                  <div class="swatch" style="background: ${leftSwatchBg}; border-right: 1px solid rgba(0,0,0,0.1);"></div>
                   <div class="swatch" style="background: ${hex};">${badge}</div>
                 </div>
                 <div class="step-label-right">
