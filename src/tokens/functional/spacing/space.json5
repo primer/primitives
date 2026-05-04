@@ -1,7 +1,7 @@
 {
   space: {
     xxs: {
-      $value: '2px',
+      $value: { value: 2, unit: 'px' },
       $type: 'dimension',
       $description: 'Ultra-compact spacing for form field separators and tight visual divisions.',
       $extensions: {
@@ -16,7 +16,7 @@
       },
     },
     xs: {
-      $value: '4px',
+      $value: { value: 4, unit: 'px' },
       $type: 'dimension',
       $description: 'Compact spacing for small badges, tight internal spacing, and minimal breathing room.',
       $extensions: {
@@ -31,7 +31,7 @@
       },
     },
     sm: {
-      $value: '8px',
+      $value: { value: 8, unit: 'px' },
       $type: 'dimension',
       $description: 'Default spacing for most UI elements. Comfortable visual density for standard component layouts.',
       $extensions: {
@@ -46,7 +46,7 @@
       },
     },
     md: {
-      $value: '12px',
+      $value: { value: 12, unit: 'px' },
       $type: 'dimension',
       $description: 'Relaxed spacing for breathing room and comfortable internal container space.',
       $extensions: {
@@ -61,7 +61,7 @@
       },
     },
     lg: {
-      $value: '16px',
+      $value: { value: 16, unit: 'px' },
       $type: 'dimension',
       $description: 'Spacious spacing for major layout divisions and visual separation between content blocks.',
       $extensions: {
@@ -76,7 +76,7 @@
       },
     },
     xl: {
-      $value: '24px',
+      $value: { value: 24, unit: 'px' },
       $type: 'dimension',
       $description: 'Expansive spacing for large sections and top-level structure separation.',
       $extensions: {
