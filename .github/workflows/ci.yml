@@ -31,6 +31,14 @@ jobs:
       - name: Build fallbacks
         run: npm run build:fallbacks
 
+      - name: Fetch base branch for removed token check
+        if: github.event_name == 'pull_request'
+        run: git fetch origin ${{ github.base_ref }}
+
+      - name: Check removed tokens are documented
+        if: github.event_name == 'pull_request'
+        run: npm run check:removed-tokens -- --base origin/${{ github.base_ref }}
+
       - name: Code linting check
         run: npm run lint
 
