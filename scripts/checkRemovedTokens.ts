@@ -21,7 +21,7 @@ function getArg(name: string): string | null {
   // next arg is the value (if it doesn't look like another flag)
   const next = process.argv[idx + 1]
   if (next && !next.startsWith('--')) return next
-  return flag
+  return null
 }
 
 // ---------------------------------------------------------------------------
