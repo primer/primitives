@@ -10,7 +10,7 @@ Functional spacing tokens provide a unified semantic scale for `gap`, `padding`,
 
 | Tier | Token | Value | Visual Density | Use Case |
 |------|-------|-------|---|---|
-| 1 | `--space-2xs` | 2px | Ultra-compact | Form separators, tight divisions |
+| 1 | `--space-xxs` | 2px | Ultra-compact | Form separators, tight divisions |
 | 2 | `--space-xs` | 4px | Compact | Small components, badges |
 | 3 | `--space-sm` | 8px | **Comfortable (default)** | Most components, standard layouts |
 | 4 | `--space-md` | 12px | Relaxed | Breathing room, internal padding |

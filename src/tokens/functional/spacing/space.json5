@@ -11,7 +11,7 @@
           'Single namespace means AI learns one scale, not three. Property-agnostic reasoning: "I need comfortable spacing" → use space-sm everywhere. Interpolation: AI can infer intermediate values from ordinal position.',
       },
     },
-    $2xs: {
+    xxs: {
       $value: '2px',
       $type: 'dimension',
       $description: 'Ultra-compact spacing for form field separators and tight visual divisions.',
@@ -26,14 +26,14 @@
           ],
           properties: ['gap', 'padding', 'margin'],
           examples: [
-            'gap: var(--space-2xs)  /* Separator between form fields */',
-            'padding: var(--space-2xs)  /* Minimal internal spacing */',
-            'margin: var(--space-2xs)  /* Tight element separation */',
+            'gap: var(--space-xxs)  /* Separator between form fields */',
+            'padding: var(--space-xxs)  /* Minimal internal spacing */',
+            'margin: var(--space-xxs)  /* Tight element separation */',
           ],
         },
       },
     },
-    $xs: {
+    xs: {
       $value: '4px',
       $type: 'dimension',
       $description: 'Compact spacing for small badges, tight internal spacing, and minimal breathing room.',
