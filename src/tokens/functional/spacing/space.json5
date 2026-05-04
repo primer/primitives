@@ -1,16 +1,5 @@
 {
   space: {
-    $description: 'Unified semantic spacing scale for gap, padding, and margin. Single namespace drives consistent visual density across all properties.',
-    $extensions: {
-      'org.primer.llm': {
-        usage: ['gap', 'padding', 'margin', 'flex-spacing', 'grid-spacing'],
-        rules:
-          'ALWAYS use semantic space tokens for gap, padding, and margin. Use the same token for all three properties — semantic intent (visual density) matters more than CSS property. Only use base tokens for escape hatches (3px, 6px, edge cases).',
-        scale_position: 'Ordinal scale 1-6 represents visual density: 1=ultra-compact, 6=expansive.',
-        ai_reasoning:
-          'Single namespace means AI learns one scale, not three. Property-agnostic reasoning: "I need comfortable spacing" → use space-sm everywhere. Interpolation: AI can infer intermediate values from ordinal position.',
-      },
-    },
     xxs: {
       $value: '2px',
       $type: 'dimension',
