@@ -8,14 +8,14 @@ Functional spacing tokens provide a unified semantic scale for `gap`, `padding`,
 
 ## The Scale
 
-| Tier | Token | Value | Visual Density | Use Case |
-|------|-------|-------|---|---|
-| 1 | `--space-xxs` | 2px | Ultra-compact | Form separators, tight divisions |
-| 2 | `--space-xs` | 4px | Compact | Small components, badges |
-| 3 | `--space-sm` | 8px | **Comfortable (default)** | Most components, standard layouts |
-| 4 | `--space-md` | 12px | Relaxed | Breathing room, internal padding |
-| 5 | `--space-lg` | 16px | Spacious | Major layout divisions |
-| 6 | `--space-xl` | 24px | Expansive | Large sections, page structure |
+| Tier | Token         | Value | Visual Density            | Use Case                          |
+| ---- | ------------- | ----- | ------------------------- | --------------------------------- |
+| 1    | `--space-xxs` | 2px   | Ultra-compact             | Form separators, tight divisions  |
+| 2    | `--space-xs`  | 4px   | Compact                   | Small components, badges          |
+| 3    | `--space-sm`  | 8px   | **Comfortable (default)** | Most components, standard layouts |
+| 4    | `--space-md`  | 12px  | Relaxed                   | Breathing room, internal padding  |
+| 5    | `--space-lg`  | 16px  | Spacious                  | Major layout divisions            |
+| 6    | `--space-xl`  | 24px  | Expansive                 | Large sections, page structure    |
 
 ## Usage
 
@@ -26,11 +26,11 @@ Functional spacing tokens provide a unified semantic scale for `gap`, `padding`,
 
 .flex-container {
   display: flex;
-  gap: var(--space-sm);      /* 8px between flex items */
+  gap: var(--space-sm); /* 8px between flex items */
 }
 
 .card {
-  padding: var(--space-sm);  /* 8px inside card */
+  padding: var(--space-sm); /* 8px inside card */
 }
 
 .card + .card {
@@ -41,11 +41,11 @@ Functional spacing tokens provide a unified semantic scale for `gap`, `padding`,
 
 .spacious-layout {
   display: grid;
-  gap: var(--space-lg);      /* 16px grid spacing */
+  gap: var(--space-lg); /* 16px grid spacing */
 }
 
 .section {
-  padding: var(--space-lg);  /* 16px internal padding */
+  padding: var(--space-lg); /* 16px internal padding */
   margin-bottom: var(--space-lg); /* 16px after section */
 }
 ```
@@ -76,6 +76,7 @@ space-sm:
 ```
 
 **Why this helps AI:**
+
 - **Single namespace** = AI learns one scale, not three separate ones
 - **Ordinal position** = AI understands relative density (position 1 = compact, position 6 = expansive)
 - **Property-agnostic** = AI reasons about intent ("I need comfortable spacing") independent of CSS property
@@ -84,20 +85,24 @@ space-sm:
 ## Migration Path
 
 ### Phase 1 (Now): Define Tokens
+
 - ✅ Functional spacing tokens added to `@primer/primitives`
 - ✅ TypeScript types generated
 - ✅ CSS custom properties exported
 
 ### Phase 2: Documentation & Adoption
+
 - Create Storybook gallery showing all 6 tiers with visual examples
 - Document spacing patterns (gap in flex/grid, padding in containers, margin between stacks)
 - Publish migration guide: "when to use functional tokens vs. base tokens"
 
 ### Phase 3: Integration & Linting
+
 - Integrate into `github-ui` and `@primer/react` components
 - Optional: Add lint rule suggesting functional tokens when base-size values detected
 
 ### Phase 4: Governance
+
 - Encode into component creation tools (Copilot scaffolding)
 - Enforce via lint rules in CI
 
