@@ -110,7 +110,7 @@ function collectDocumentedRemovals(): Set<string> {
   for (const file of files) {
     try {
       const content = fs.readFileSync(path.join(REMOVED_DIR, file), 'utf-8')
-      const parsed = JSON.parse(content)
+      const parsed = json5.parse(content)
       for (const key of Object.keys(parsed)) {
         removals.add(key)
       }
