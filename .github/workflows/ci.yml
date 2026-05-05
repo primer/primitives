@@ -25,7 +25,7 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci --no-audit --no-fund --ignore-scripts --include-workspace-root
+        run: npm ci --no-audit --no-fund --include-workspace-root
 
       - name: Build tokens
         run: npm run build:tokens

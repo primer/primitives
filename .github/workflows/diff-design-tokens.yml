@@ -63,13 +63,13 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies (pr)
-        run: npm ci --no-audit --no-fund --include=dev --ignore-scripts
+        run: npm ci --no-audit --no-fund --include=dev
 
       - name: Build tokens (pr)
         run: npm run build
 
       - name: Install dependencies (base)
-        run: pushd base; npm i --no-audit --no-fund --ignore-scripts; popd
+        run: pushd base; npm i --no-audit --no-fund; popd
 
       - name: Build tokens (base)
         run: pushd base; npm run build; popd
