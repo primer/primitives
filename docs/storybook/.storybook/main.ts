@@ -8,11 +8,12 @@ const config: StorybookConfig = {
     '@storybook/addon-webpack5-compiler-swc',
     'storybook-addon-paddings',
   ],
-  swc: () => ({
+  swc: ({configType}) => ({
     jsc: {
       transform: {
         react: {
           runtime: 'automatic',
+          development: configType === 'DEVELOPMENT',
         },
       },
     },
