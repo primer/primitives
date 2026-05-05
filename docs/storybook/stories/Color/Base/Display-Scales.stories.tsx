@@ -10,7 +10,7 @@ export default {
 
 const displayColorNames = [
   'gray', 'indigo', 'blue', 'cyan', 'teal', 'pine', 'green', 'lime', 'olive',
-  'lemon', 'yellow', 'amber', 'orange', 'red', 'coral', 'pink', 'plum', 'purple',
+  'lemon', 'yellow', 'orange', 'red', 'coral', 'pink', 'plum', 'purple',
   'brown', 'auburn',
 ]
 
@@ -51,7 +51,6 @@ export const Lime = () => <Color color="lime" />
 export const Olive = () => <Color color="olive" />
 export const Lemon = () => <Color color="lemon" />
 export const Yellow = () => <Color color="yellow" />
-export const Amber = () => <Color color="amber" />
 export const Orange = () => <Color color="orange" />
 export const Red = () => <Color color="red" />
 export const Coral = () => <Color color="coral" />
