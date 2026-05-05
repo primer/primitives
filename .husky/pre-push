@@ -1,12 +1,7 @@
-#!/bin/bash
+#!/usr/bin/env sh
+. "$(dirname "$0")/_/husky.sh"
 
 # Pre-push hook: ensure package.json and package-lock.json stay in sync
-
-set -e
-
-# Get list of changed files in commits being pushed
-remote=$1
-url=$2
 
 # Get commits to be pushed (compare to remote)
 commits=$(git rev-list @{u}..HEAD 2>/dev/null || git rev-list origin/HEAD..HEAD 2>/dev/null || echo "")
