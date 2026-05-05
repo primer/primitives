@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+BASE_REF="$(git symbolic-ref --quiet --short refs/remotes/origin/HEAD 2>/dev/null || printf '%s\n' origin/main)"
+npx tsx scripts/checkRemovedTokens.ts --base "$BASE_REF"

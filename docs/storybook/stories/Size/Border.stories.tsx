@@ -4,6 +4,7 @@ import {SizeTokenSwatch} from '../StorybookComponents/SizeTokenSwatch/SizeTokenS
 import {DataTable, Table} from '@primer/react/experimental'
 import {getTokensByName} from '../utilities/getTokensByName'
 import sizeTokens from '../../../../dist/docs/functional/size/border.json'
+import radiusTokens from '../../../../dist/docs/functional/size/radius.json'
 import {tokenColumn, outputValueColumn, sourceValueColumn} from '../utilities/commonTableColumns'
 
 export default {
@@ -50,7 +51,7 @@ export const BorderSize = () => {
 BorderSize.tags = ['snapshotLight']
 
 export const BorderRadius = () => {
-  const data = getTokensByName(sizeTokens, 'borderRadius').map(token => ({id: token.name, ...token}))
+  const data = getTokensByName(radiusTokens, 'borderRadius').map(token => ({id: token.name, ...token}))
 
   return (
     <Table.Container>

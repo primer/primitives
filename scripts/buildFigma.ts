@@ -26,7 +26,6 @@ const buildFigma = async (buildOptions: ConfigGeneratorOptions): Promise<void> =
         `src/tokens/base/color/light/display-light.json5`,
         `src/tokens/base/color/light/light.high-contrast.json5`,
       ],
-      collectionOverride: {'base/color/light': 'base/color/light-high-contrast'},
     },
     {
       name: 'dark',
@@ -41,7 +40,6 @@ const buildFigma = async (buildOptions: ConfigGeneratorOptions): Promise<void> =
         `src/tokens/base/color/dark/display-dark.json5`,
         `src/tokens/base/color/dark/dark.high-contrast.json5`,
       ],
-      collectionOverride: {'base/color/dark': 'base/color/dark-high-contrast'},
     },
     {
       theme: 'dark-dimmed',
@@ -51,17 +49,14 @@ const buildFigma = async (buildOptions: ConfigGeneratorOptions): Promise<void> =
         `src/tokens/base/color/dark/display-dark.json5`,
         `src/tokens/base/color/dark/dark.dimmed.json5`,
       ],
-      collectionOverride: {'base/color/dark': 'base/color/dark-dimmed'},
     },
   ]
 
-  for (const {name, source, collectionOverride} of baseScales) {
+  for (const {name, source} of baseScales) {
     const extended = await PrimerStyleDictionary.extend({
       source,
       platforms: {
-        figma: figma(`figma/scales/${name}.json`, buildOptions.prefix, buildOptions.buildPath, {
-          collectionOverride,
-        }),
+        figma: figma(`figma/scales/${name}.json`, buildOptions.prefix, buildOptions.buildPath),
       },
     })
     // build

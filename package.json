@@ -39,6 +39,7 @@
     "lint": "eslint '**/*.{js,ts,tsx,md,mdx}' --max-warnings=0 --config eslint.config.mjs && npm run lint:tokens",
     "lint:fix": "eslint '**/*.{js,ts,tsx,md,mdx}' --fix --max-warnings=0 --config eslint.config.mjs",
     "lint:tokens": "tsx scripts/validateTokenJson.ts",
+    "check:removed-tokens": "tsx scripts/checkRemovedTokens.ts",
     "test": "npm run test:unit && npm run test:integration",
     "test:unit": "vitest run --coverage",
     "test:integration": "vitest run -r integration",
