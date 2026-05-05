@@ -1,4 +1,4 @@
-import type StyleDictionary from 'style-dictionary'
+import type * as StyleDictionary from 'style-dictionary'
 
 export const getTokensByName = (
   tokens: Record<string, StyleDictionary.TransformedToken>,
