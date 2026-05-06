@@ -31,6 +31,8 @@
     "build:figma": "tsx scripts/buildFigma.ts",
     "build:types": "tsc -p build.tsconfig.jsonc && tsx scripts/copyDir.ts src/types dist/build/types",
     "build:llm": "tsx scripts/buildLlm.ts",
+    "gen:contrast-requirements": "tsx scripts/generateContrastRequirements.ts",
+    "validate:brand-colors": "tsx scripts/validateBrandColors.ts",
     "check": "npm run lint && npm run format:check && npm run test && npm run build",
     "check:contrast": "tsx scripts/colorContrast.ts",
     "clean": "rm -rf dist",
