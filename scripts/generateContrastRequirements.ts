@@ -193,17 +193,32 @@ async function main() {
   if (allMatrices.neutral && Object.keys(allMatrices.neutral).length > 0) {
     docContent += formatMatrixAsMarkdown(allMatrices.neutral)
     docContent += '\n\n### Minimum Requirements by Step\n\n'
+    docContent += 'Minimum contrast across all base color scales for each step against each surface:\n\n'
     docContent += '| Step | bg-default | bg-muted | fg-default | fg-muted | Minimum |\n'
     docContent += '| ---- | ---------- | -------- | ---------- | -------- | ------- |\n'
-    for (const step of Object.keys(allMatrices.neutral).sort((a, b) => parseInt(a) - parseInt(b))) {
-      const matrix = allMatrices.neutral[step]
-      const minimum = Math.min(
-        (matrix.default as number),
-        (matrix.muted as number),
-        (matrix.fgDefault as number),
-        (matrix.fgMuted as number),
-      )
-      docContent += `| ${step}    | ${(matrix.default as number).toFixed(2)}:1 | ${(matrix.muted as number).toFixed(2)}:1 | ${(matrix.fgDefault as number).toFixed(2)}:1 | ${(matrix.fgMuted as number).toFixed(2)}:1 | **${minimum.toFixed(2)}:1** |\n`
+    
+    // Get all steps from neutral scale
+    const allSteps = Object.keys(allMatrices.neutral).sort((a, b) => parseInt(a) - parseInt(b))
+    
+    for (const step of allSteps) {
+      // For each step, find minimum across all color scales for each surface
+      let minBgDefault = Infinity
+      let minBgMuted = Infinity
+      let minFgDefault = Infinity
+      let minFgMuted = Infinity
+      
+      for (const [, matrix] of Object.entries(allMatrices)) {
+        if (matrix[step]) {
+          const stepData = matrix[step]
+          minBgDefault = Math.min(minBgDefault, (stepData.default as number))
+          minBgMuted = Math.min(minBgMuted, (stepData.muted as number))
+          minFgDefault = Math.min(minFgDefault, (stepData.fgDefault as number))
+          minFgMuted = Math.min(minFgMuted, (stepData.fgMuted as number))
+        }
+      }
+      
+      const overallMinimum = Math.min(minBgDefault, minBgMuted, minFgDefault, minFgMuted)
+      docContent += `| ${step}    | ${minBgDefault.toFixed(2)}:1 | ${minBgMuted.toFixed(2)}:1 | ${minFgDefault.toFixed(2)}:1 | ${minFgMuted.toFixed(2)}:1 | **${overallMinimum.toFixed(2)}:1** |\n`
     }
   }
 
