@@ -193,10 +193,17 @@ async function main() {
   if (allMatrices.neutral && Object.keys(allMatrices.neutral).length > 0) {
     docContent += formatMatrixAsMarkdown(allMatrices.neutral)
     docContent += '\n\n### Minimum Requirements by Step\n\n'
-    docContent += '| Step | Minimum Contrast |\n'
-    docContent += '| ---- | ---------------- |\n'
-    for (const step of Object.keys(allRequirements.neutral).sort((a, b) => parseInt(a) - parseInt(b))) {
-      docContent += `| ${step}    | **${allRequirements.neutral[step].toFixed(2)}:1**       |\n`
+    docContent += '| Step | bg-default | bg-muted | fg-default | fg-muted | Minimum |\n'
+    docContent += '| ---- | ---------- | -------- | ---------- | -------- | ------- |\n'
+    for (const step of Object.keys(allMatrices.neutral).sort((a, b) => parseInt(a) - parseInt(b))) {
+      const matrix = allMatrices.neutral[step]
+      const minimum = Math.min(
+        (matrix.default as number),
+        (matrix.muted as number),
+        (matrix.fgDefault as number),
+        (matrix.fgMuted as number),
+      )
+      docContent += `| ${step}    | ${(matrix.default as number).toFixed(2)}:1 | ${(matrix.muted as number).toFixed(2)}:1 | ${(matrix.fgDefault as number).toFixed(2)}:1 | ${(matrix.fgMuted as number).toFixed(2)}:1 | **${minimum.toFixed(2)}:1** |\n`
     }
   }
 
