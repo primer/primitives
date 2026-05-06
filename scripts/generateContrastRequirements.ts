@@ -193,7 +193,7 @@ async function main() {
   if (allMatrices.neutral && Object.keys(allMatrices.neutral).length > 0) {
     docContent += formatMatrixAsMarkdown(allMatrices.neutral)
     docContent += '\n\n### Minimum Requirements by Step\n\n'
-    docContent += 'Minimum contrast across all base color scales for each step against each surface:\n\n'
+    docContent += 'Maximum contrast achieved across all base color scales for each step against each surface:\n\n'
     docContent += '| Step | bg-default | bg-muted | fg-default | fg-muted | Minimum |\n'
     docContent += '| ---- | ---------- | -------- | ---------- | -------- | ------- |\n'
     
@@ -201,24 +201,24 @@ async function main() {
     const allSteps = Object.keys(allMatrices.neutral).sort((a, b) => parseInt(a) - parseInt(b))
     
     for (const step of allSteps) {
-      // For each step, find minimum across all color scales for each surface
-      let minBgDefault = Infinity
-      let minBgMuted = Infinity
-      let minFgDefault = Infinity
-      let minFgMuted = Infinity
+      // For each step, find maximum contrast across all color scales for each surface
+      let maxBgDefault = -Infinity
+      let maxBgMuted = -Infinity
+      let maxFgDefault = -Infinity
+      let maxFgMuted = -Infinity
       
       for (const [, matrix] of Object.entries(allMatrices)) {
         if (matrix[step]) {
           const stepData = matrix[step]
-          minBgDefault = Math.min(minBgDefault, (stepData.default as number))
-          minBgMuted = Math.min(minBgMuted, (stepData.muted as number))
-          minFgDefault = Math.min(minFgDefault, (stepData.fgDefault as number))
-          minFgMuted = Math.min(minFgMuted, (stepData.fgMuted as number))
+          maxBgDefault = Math.max(maxBgDefault, (stepData.default as number))
+          maxBgMuted = Math.max(maxBgMuted, (stepData.muted as number))
+          maxFgDefault = Math.max(maxFgDefault, (stepData.fgDefault as number))
+          maxFgMuted = Math.max(maxFgMuted, (stepData.fgMuted as number))
         }
       }
       
-      const overallMinimum = Math.min(minBgDefault, minBgMuted, minFgDefault, minFgMuted)
-      docContent += `| ${step}    | ${minBgDefault.toFixed(2)}:1 | ${minBgMuted.toFixed(2)}:1 | ${minFgDefault.toFixed(2)}:1 | ${minFgMuted.toFixed(2)}:1 | **${overallMinimum.toFixed(2)}:1** |\n`
+      const overallMaximum = Math.max(maxBgDefault, maxBgMuted, maxFgDefault, maxFgMuted)
+      docContent += `| ${step}    | ${maxBgDefault.toFixed(2)}:1 | ${maxBgMuted.toFixed(2)}:1 | ${maxFgDefault.toFixed(2)}:1 | ${maxFgMuted.toFixed(2)}:1 | **${overallMaximum.toFixed(2)}:1** |\n`
     }
   }
 
