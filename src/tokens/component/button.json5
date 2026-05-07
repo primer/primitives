@@ -171,7 +171,7 @@
         resting: {
           '$value': [
             {
-              color: '{base.color.neutral.13}',
+              color: '{base.color.neutral.11}',
               alpha: 0.04,
               offsetX: {
                 value: 0,
@@ -276,7 +276,7 @@
             },
             'org.primer.overrides': {
               dark: {
-                '$value': '{base.color.neutral.13}',
+                '$value': '{base.color.neutral.11}',
                 alpha: 0.4
               }
             }
@@ -952,13 +952,13 @@
                 '$value': '{control.fgColor.rest}'
               },
               'light-high-contrast': {
-                '$value': '{base.color.neutral.11}'
+                '$value': '{base.color.neutral.9}'
               },
               'light-protanopia-deuteranopia-high-contrast': {
-                '$value': '{base.color.neutral.11}'
+                '$value': '{base.color.neutral.9}'
               },
               'light-tritanopia-high-contrast': {
-                '$value': '{base.color.neutral.11}'
+                '$value': '{base.color.neutral.9}'
               }
             }
           }
@@ -1017,19 +1017,19 @@
                 '$value': '{fgColor.muted}'
               },
               'dark-dimmed': {
-                '$value': '{base.color.neutral.10}'
+                '$value': '{base.color.neutral.8}'
               },
               'dark-high-contrast': {
-                '$value': '{base.color.neutral.11}'
+                '$value': '{base.color.neutral.9}'
               },
               'dark-dimmed-high-contrast': {
-                '$value': '{base.color.neutral.11}'
+                '$value': '{base.color.neutral.9}'
               },
               'dark-protanopia-deuteranopia-high-contrast': {
-                '$value': '{base.color.neutral.11}'
+                '$value': '{base.color.neutral.9}'
               },
               'dark-tritanopia-high-contrast': {
-                '$value': '{base.color.neutral.11}'
+                '$value': '{base.color.neutral.9}'
               }
             }
           }
@@ -1050,28 +1050,28 @@
                 '$value': '{fgColor.muted}'
               },
               'dark-dimmed': {
-                '$value': '{base.color.neutral.10}'
+                '$value': '{base.color.neutral.8}'
               },
               'dark-dimmed-high-contrast': {
-                '$value': '{base.color.neutral.11}'
+                '$value': '{base.color.neutral.9}'
               },
               'dark-high-contrast': {
-                '$value': '{base.color.neutral.11}'
+                '$value': '{base.color.neutral.9}'
               },
               'dark-protanopia-deuteranopia-high-contrast': {
-                '$value': '{base.color.neutral.11}'
+                '$value': '{base.color.neutral.9}'
               },
               'dark-tritanopia-high-contrast': {
-                '$value': '{base.color.neutral.11}'
+                '$value': '{base.color.neutral.9}'
               },
               'light-high-contrast': {
-                '$value': '{base.color.neutral.11}'
+                '$value': '{base.color.neutral.9}'
               },
               'light-protanopia-deuteranopia-high-contrast': {
-                '$value': '{base.color.neutral.11}'
+                '$value': '{base.color.neutral.9}'
               },
               'light-tritanopia-high-contrast': {
-                '$value': '{base.color.neutral.11}'
+                '$value': '{base.color.neutral.9}'
               }
             }
           }
@@ -1301,7 +1301,7 @@
             },
             'org.primer.overrides': {
               dark: {
-                '$value': '{base.color.neutral.13}'
+                '$value': '{base.color.neutral.11}'
               }
             }
           }
@@ -1349,7 +1349,7 @@
             },
             'org.primer.overrides': {
               dark: {
-                '$value': '{base.color.neutral.12}'
+                '$value': '{base.color.neutral.10}'
               }
             }
           }
@@ -1625,7 +1625,7 @@
             },
             'org.primer.overrides': {
               dark: {
-                '$value': '{base.color.neutral.13}'
+                '$value': '{base.color.neutral.11}'
               },
               'dark-dimmed-high-contrast': {
                 '$value': {
@@ -1657,7 +1657,7 @@
             },
             'org.primer.overrides': {
               dark: {
-                '$value': '{base.color.neutral.13}'
+                '$value': '{base.color.neutral.11}'
               },
               'dark-dimmed-high-contrast': {
                 '$value': {
@@ -1724,7 +1724,7 @@
             },
             'org.primer.overrides': {
               dark: {
-                '$value': '{base.color.neutral.13}'
+                '$value': '{base.color.neutral.11}'
               },
               'dark-dimmed-high-contrast': {
                 '$value': {
@@ -2041,7 +2041,7 @@
     inactive: {
       $description: 'Single-state button variant for non-interactive/inactive buttons (e.g. unselected segmented control tabs). Does not have rest/hover/active/disabled interaction states — "inactive" is the state.',
       fgColor: {
-        '$value': '{base.color.neutral.9}',
+        '$value': '{base.color.neutral.7}',
         '$type': 'color',
         '$extensions': {
           'org.primer.figma': {
@@ -2053,28 +2053,28 @@
           },
           'org.primer.overrides': {
             dark: {
-              '$value': '{base.color.neutral.9}'
+              '$value': '{base.color.neutral.7}'
             },
             'dark-dimmed': {
-              '$value': '{base.color.neutral.8}'
+              '$value': '{base.color.neutral.6}'
             },
             'dark-high-contrast': {
-              '$value': '{base.color.neutral.10}'
+              '$value': '{base.color.neutral.8}'
             },
             'dark-protanopia-deuteranopia-high-contrast': {
-              '$value': '{base.color.neutral.10}'
+              '$value': '{base.color.neutral.8}'
             },
             'dark-tritanopia-high-contrast': {
-              '$value': '{base.color.neutral.10}'
+              '$value': '{base.color.neutral.8}'
             },
             'light-high-contrast': {
-              '$value': '{base.color.neutral.10}'
+              '$value': '{base.color.neutral.8}'
             },
             'light-protanopia-deuteranopia-high-contrast': {
-              '$value': '{base.color.neutral.10}'
+              '$value': '{base.color.neutral.8}'
             },
             'light-tritanopia-high-contrast': {
-              '$value': '{base.color.neutral.10}'
+              '$value': '{base.color.neutral.8}'
             }
           }
         }
@@ -2092,10 +2092,10 @@
           },
           'org.primer.overrides': {
             dark: {
-              '$value': '{base.color.neutral.4}'
+              '$value': '{base.color.neutral.3}'
             },
             'dark-dimmed': {
-              '$value': '{base.color.neutral.5}'
+              '$value': '{base.color.neutral.4}'
             },
             'dark-high-contrast': {
               '$value': '{control.bgColor.rest}'
@@ -2145,11 +2145,11 @@
             },
             'org.primer.overrides': {
               dark: {
-                '$value': '{base.color.neutral.6}'
+                '$value': '{base.color.neutral.4}'
               },
-              'light-high-contrast': '{base.color.neutral.7}',
-              'light-protanopia-deuteranopia-high-contrast': '{base.color.neutral.7}',
-              'light-tritanopia-high-contrast': '{base.color.neutral.7}'
+              'light-high-contrast': '{base.color.neutral.5}',
+              'light-protanopia-deuteranopia-high-contrast': '{base.color.neutral.5}',
+              'light-tritanopia-high-contrast': '{base.color.neutral.5}'
             }
           }
         }
@@ -2350,7 +2350,7 @@
             },
             'org.primer.overrides': {
               dark: {
-                '$value': '{base.color.neutral.13}',
+                '$value': '{base.color.neutral.11}',
                 alpha: 0.2
               },
               'dark-high-contrast': {
@@ -2470,7 +2470,7 @@
             },
             'org.primer.overrides': {
               dark: {
-                '$value': '{base.color.neutral.13}'
+                '$value': '{base.color.neutral.11}'
               }
             }
           }
@@ -2514,11 +2514,11 @@
             },
             'org.primer.overrides': {
               dark: {
-                '$value': '{base.color.neutral.5}'
+                '$value': '{base.color.neutral.4}'
               },
-              'dark-high-contrast': '{base.color.neutral.4}',
-              'dark-protanopia-deuteranopia-high-contrast': '{base.color.neutral.4}',
-              'dark-tritanopia-high-contrast': '{base.color.neutral.4}'
+              'dark-high-contrast': '{base.color.neutral.3}',
+              'dark-protanopia-deuteranopia-high-contrast': '{base.color.neutral.3}',
+              'dark-tritanopia-high-contrast': '{base.color.neutral.3}'
             }
           }
         },
@@ -3055,11 +3055,11 @@
           },
           'org.primer.overrides': {
             dark: {
-              '$value': '{base.color.neutral.5}'
+              '$value': '{base.color.neutral.4}'
             },
-            'dark-high-contrast': '{base.color.neutral.4}',
-            'dark-protanopia-deuteranopia-high-contrast': '{base.color.neutral.4}',
-            'dark-tritanopia-high-contrast': '{base.color.neutral.4}'
+            'dark-high-contrast': '{base.color.neutral.3}',
+            'dark-protanopia-deuteranopia-high-contrast': '{base.color.neutral.3}',
+            'dark-tritanopia-high-contrast': '{base.color.neutral.3}'
           }
         }
       },

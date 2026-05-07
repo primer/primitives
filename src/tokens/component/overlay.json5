@@ -10,8 +10,8 @@
           scopes: ['bgColor'],
         },
         'org.primer.overrides': {
-          'dark-dimmed': '{base.color.neutral.5}',
-          'dark-dimmed-high-contrast': '{base.color.neutral.4}',
+          'dark-dimmed': '{base.color.neutral.4}',
+          'dark-dimmed-high-contrast': '{base.color.neutral.3}',
         },
       },
     },
@@ -29,7 +29,7 @@
             $value: '{borderColor.muted}',
           },
           'dark-dimmed': {
-            $value: '{base.color.neutral.7}',
+            $value: '{base.color.neutral.5}',
             alpha: 0.7,
           },
           'light-high-contrast': {
@@ -66,7 +66,7 @@
     },
     backdrop: {
       bgColor: {
-        $value: '{base.color.neutral.7}',
+        $value: '{base.color.neutral.5}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -76,14 +76,14 @@
           },
           'org.primer.overrides': {
             dark: '{base.color.neutral.3}',
-            'dark-dimmed': '{base.color.neutral.4}',
-            'light-high-contrast': '{base.color.neutral.11}',
-            'light-protanopia-deuteranopia-high-contrast': '{base.color.neutral.11}',
-            'light-tritanopia-high-contrast': '{base.color.neutral.11}',
-            'dark-high-contrast': '{base.color.neutral.11}',
-            'dark-dimmed-high-contrast': '{base.color.neutral.9}',
-            'dark-protanopia-deuteranopia-high-contrast': '{base.color.neutral.11}',
-            'dark-tritanopia-high-contrast': '{base.color.neutral.11}',
+            'dark-dimmed': '{base.color.neutral.3}',
+            'light-high-contrast': '{base.color.neutral.9}',
+            'light-protanopia-deuteranopia-high-contrast': '{base.color.neutral.9}',
+            'light-tritanopia-high-contrast': '{base.color.neutral.9}',
+            'dark-high-contrast': '{base.color.neutral.9}',
+            'dark-dimmed-high-contrast': '{base.color.neutral.7}',
+            'dark-protanopia-deuteranopia-high-contrast': '{base.color.neutral.9}',
+            'dark-tritanopia-high-contrast': '{base.color.neutral.9}',
           },
         },
         alpha: 0.4,
