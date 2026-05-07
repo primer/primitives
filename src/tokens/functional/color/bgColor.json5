@@ -42,8 +42,8 @@
         },
         'org.primer.overrides': {
           dark: '{base.color.neutral.2}',
-          'dark-dimmed': '{base.color.neutral.4}',
-          'dark-dimmed-high-contrast': '{base.color.neutral.4}',
+          'dark-dimmed': '{base.color.neutral.3}',
+          'dark-dimmed-high-contrast': '{base.color.neutral.3}',
           'light-high-contrast': '{base.color.neutral.3}',
           'light-tritanopia-high-contrast': '{base.color.neutral.3}',
           'light-protanopia-deuteranopia-high-contrast': '{base.color.neutral.3}',
@@ -85,7 +85,7 @@
       },
     },
     emphasis: {
-      $value: '{base.color.neutral.12}',
+      $value: '{base.color.neutral.10}',
       $type: 'color',
       $description: 'High-emphasis dark background for strong visual contrast',
       $extensions: {
@@ -98,7 +98,7 @@
           },
         },
         'org.primer.overrides': {
-          dark: '{base.color.neutral.7}',
+          dark: '{base.color.neutral.5}',
         },
         'org.primer.llm': {
           usage: ['tooltip', 'badge-background', 'high-contrast-element'],
@@ -107,7 +107,7 @@
       },
     },
     inverse: {
-      $value: '{base.color.neutral.12}',
+      $value: '{base.color.neutral.10}',
       $type: 'color',
       $description: 'Inverse background that flips between light and dark modes',
       $extensions: {
@@ -117,7 +117,7 @@
           scopes: ['bgColor'],
         },
         'org.primer.overrides': {
-          dark: '{base.color.neutral.13}',
+          dark: '{base.color.neutral.11}',
         },
         'org.primer.llm': {
           usage: ['overlay-content', 'inverse-theme-element'],
@@ -136,7 +136,7 @@
           scopes: ['bgColor'],
         },
         'org.primer.overrides': {
-          dark: '{base.color.neutral.13}',
+          dark: '{base.color.neutral.11}',
         },
         'org.primer.llm': {
           doNotUse: true,
@@ -145,7 +145,7 @@
       },
     },
     black: {
-      $value: '{base.color.neutral.13}',
+      $value: '{base.color.neutral.11}',
       $type: 'color',
       $description: 'Pure black background',
       $extensions: {
@@ -175,14 +175,14 @@
         },
         'org.primer.overrides': {
           dark: '{base.color.neutral.3}',
-          'dark-dimmed': '{base.color.neutral.5}',
-          'dark-dimmed-high-contrast': '{base.color.neutral.5}',
-          'light-high-contrast': '{base.color.neutral.4}',
-          'light-tritanopia-high-contrast': '{base.color.neutral.4}',
-          'light-protanopia-deuteranopia-high-contrast': '{base.color.neutral.4}',
-          'dark-high-contrast': '{base.color.neutral.4}',
-          'dark-tritanopia-high-contrast': '{base.color.neutral.4}',
-          'dark-protanopia-deuteranopia-high-contrast': '{base.color.neutral.4}',
+          'dark-dimmed': '{base.color.neutral.4}',
+          'dark-dimmed-high-contrast': '{base.color.neutral.4}',
+          'light-high-contrast': '{base.color.neutral.3}',
+          'light-tritanopia-high-contrast': '{base.color.neutral.3}',
+          'light-protanopia-deuteranopia-high-contrast': '{base.color.neutral.3}',
+          'dark-high-contrast': '{base.color.neutral.3}',
+          'dark-tritanopia-high-contrast': '{base.color.neutral.3}',
+          'dark-protanopia-deuteranopia-high-contrast': '{base.color.neutral.3}',
         },
         'org.primer.llm': {
           usage: ['disabled-button', 'disabled-input', 'inactive-element'],
@@ -211,7 +211,7 @@
     },
     neutral: {
       muted: {
-        $value: '{base.color.neutral.8}',
+        $value: '{base.color.neutral.6}',
         $type: 'color',
         $description: 'Subtle neutral background for tags, labels, and secondary UI elements',
         $extensions: {
@@ -222,16 +222,16 @@
           },
           'org.primer.overrides': {
             light: {
-              $value: '{base.color.neutral.8}',
+              $value: '{base.color.neutral.6}',
               alpha: 0.12,
             },
             dark: {
-              $value: '{base.color.neutral.8}',
+              $value: '{base.color.neutral.6}',
               alpha: 0.2,
             },
-            'light-high-contrast': '{base.color.neutral.4}',
-            'light-tritanopia-high-contrast': '{base.color.neutral.4}',
-            'light-protanopia-deuteranopia-high-contrast': '{base.color.neutral.4}',
+            'light-high-contrast': '{base.color.neutral.3}',
+            'light-tritanopia-high-contrast': '{base.color.neutral.3}',
+            'light-protanopia-deuteranopia-high-contrast': '{base.color.neutral.3}',
             'dark-high-contrast': '{base.color.neutral.3}',
             'dark-tritanopia-high-contrast': '{base.color.neutral.3}',
             'dark-protanopia-deuteranopia-high-contrast': '{base.color.neutral.3}',
@@ -243,7 +243,7 @@
         },
       },
       emphasis: {
-        $value: '{base.color.neutral.9}',
+        $value: '{base.color.neutral.7}',
         $type: 'color',
         $description: 'Strong neutral background for prominent neutral elements',
         $extensions: {
@@ -253,15 +253,15 @@
             scopes: ['bgColor'],
           },
           'org.primer.overrides': {
-            dark: '{base.color.neutral.8}',
-            'dark-dimmed': '{base.color.neutral.8}',
-            'dark-dimmed-high-contrast': '{base.color.neutral.7}',
-            'light-high-contrast': '{base.color.neutral.10}',
-            'light-tritanopia-high-contrast': '{base.color.neutral.10}',
-            'light-protanopia-deuteranopia-high-contrast': '{base.color.neutral.10}',
-            'dark-high-contrast': '{base.color.neutral.7}',
-            'dark-tritanopia-high-contrast': '{base.color.neutral.7}',
-            'dark-protanopia-deuteranopia-high-contrast': '{base.color.neutral.7}',
+            dark: '{base.color.neutral.6}',
+            'dark-dimmed': '{base.color.neutral.6}',
+            'dark-dimmed-high-contrast': '{base.color.neutral.5}',
+            'light-high-contrast': '{base.color.neutral.8}',
+            'light-tritanopia-high-contrast': '{base.color.neutral.8}',
+            'light-protanopia-deuteranopia-high-contrast': '{base.color.neutral.8}',
+            'dark-high-contrast': '{base.color.neutral.5}',
+            'dark-tritanopia-high-contrast': '{base.color.neutral.5}',
+            'dark-protanopia-deuteranopia-high-contrast': '{base.color.neutral.5}',
           },
           'org.primer.llm': {
             usage: ['neutral-button', 'secondary-action', 'neutral-indicator'],

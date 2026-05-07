@@ -1,7 +1,7 @@
 {
   fgColor: {
     default: {
-      $value: '{base.color.neutral.13}',
+      $value: '{base.color.neutral.11}',
       $type: 'color',
       $description: 'Default text color for primary content and headings',
       $extensions: {
@@ -14,12 +14,12 @@
           },
         },
         'org.primer.overrides': {
-          dark: '{base.color.neutral.12}',
-          'dark-high-contrast': '{base.color.neutral.13}',
-          'dark-tritanopia-high-contrast': '{base.color.neutral.13}',
-          'dark-protanopia-deuteranopia-high-contrast': '{base.color.neutral.13}',
-          'dark-dimmed': '{base.color.neutral.11}',
-          'dark-dimmed-high-contrast': '{base.color.neutral.12}',
+          dark: '{base.color.neutral.10}',
+          'dark-high-contrast': '{base.color.neutral.11}',
+          'dark-tritanopia-high-contrast': '{base.color.neutral.11}',
+          'dark-protanopia-deuteranopia-high-contrast': '{base.color.neutral.11}',
+          'dark-dimmed': '{base.color.neutral.9}',
+          'dark-dimmed-high-contrast': '{base.color.neutral.10}',
         },
         'org.primer.llm': {
           usage: ['default-text', 'heading', 'body-text'],
@@ -28,7 +28,7 @@
       },
     },
     muted: {
-      $value: '{base.color.neutral.9}',
+      $value: '{base.color.neutral.7}',
       $type: 'color',
       $description: 'Muted text for secondary content and less important information',
       $extensions: {
@@ -41,13 +41,13 @@
           },
         },
         'org.primer.overrides': {
-          'light-high-contrast': '{base.color.neutral.10}',
-          'light-tritanopia-high-contrast': '{base.color.neutral.11}',
-          'light-protanopia-deuteranopia-high-contrast': '{base.color.neutral.11}',
-          'dark-high-contrast': '{base.color.neutral.10}',
-          'dark-dimmed-high-contrast': '{base.color.neutral.10}',
-          'dark-tritanopia-high-contrast': '{base.color.neutral.10}',
-          'dark-protanopia-deuteranopia-high-contrast': '{base.color.neutral.10}',
+          'light-high-contrast': '{base.color.neutral.8}',
+          'light-tritanopia-high-contrast': '{base.color.neutral.9}',
+          'light-protanopia-deuteranopia-high-contrast': '{base.color.neutral.9}',
+          'dark-high-contrast': '{base.color.neutral.8}',
+          'dark-dimmed-high-contrast': '{base.color.neutral.8}',
+          'dark-tritanopia-high-contrast': '{base.color.neutral.8}',
+          'dark-protanopia-deuteranopia-high-contrast': '{base.color.neutral.8}',
         },
         'org.primer.llm': {
           usage: ['muted-text', 'secondary-text', 'helper-text', 'placeholder'],
@@ -69,8 +69,8 @@
           },
         },
         'org.primer.overrides': {
-          dark: '{base.color.neutral.13}',
-          'dark-dimmed': '{base.color.neutral.12}',
+          dark: '{base.color.neutral.11}',
+          'dark-dimmed': '{base.color.neutral.10}',
           'dark-dimmed-high-contrast': '#ffffff',
         },
         'org.primer.llm': {
@@ -106,7 +106,7 @@
           scopes: ['fgColor'],
         },
         'org.primer.overrides': {
-          dark: '{base.color.neutral.13}',
+          dark: '{base.color.neutral.11}',
         },
         'org.primer.llm': {
           doNotUse: true,
@@ -115,7 +115,7 @@
       },
     },
     black: {
-      $value: '{base.color.neutral.13}',
+      $value: '{base.color.neutral.11}',
       $type: 'color',
       $description: 'Pure black text',
       $extensions: {
@@ -134,7 +134,7 @@
       },
     },
     disabled: {
-      $value: '{base.color.neutral.8}',
+      $value: '{base.color.neutral.6}',
       $type: 'color',
       $description: 'Text color for disabled interactive elements',
       $extensions: {
@@ -145,16 +145,16 @@
         },
         'org.primer.overrides': {
           dark: {
-            $value: '{base.color.neutral.8}',
+            $value: '{base.color.neutral.6}',
           },
-          'dark-dimmed': '{base.color.neutral.8}',
-          'dark-dimmed-high-contrast': '{base.color.neutral.8}',
-          'light-high-contrast': '{base.color.neutral.9}',
-          'light-tritanopia-high-contrast': '{base.color.neutral.9}',
-          'light-protanopia-deuteranopia-high-contrast': '{base.color.neutral.9}',
-          'dark-high-contrast': '{base.color.neutral.8}',
-          'dark-tritanopia-high-contrast': '{base.color.neutral.8}',
-          'dark-protanopia-deuteranopia-high-contrast': '{base.color.neutral.8}',
+          'dark-dimmed': '{base.color.neutral.6}',
+          'dark-dimmed-high-contrast': '{base.color.neutral.6}',
+          'light-high-contrast': '{base.color.neutral.7}',
+          'light-tritanopia-high-contrast': '{base.color.neutral.7}',
+          'light-protanopia-deuteranopia-high-contrast': '{base.color.neutral.7}',
+          'dark-high-contrast': '{base.color.neutral.6}',
+          'dark-tritanopia-high-contrast': '{base.color.neutral.6}',
+          'dark-protanopia-deuteranopia-high-contrast': '{base.color.neutral.6}',
         },
         'org.primer.llm': {
           usage: ['disabled-text', 'inactive-text', 'unavailable'],
@@ -182,7 +182,7 @@
       },
     },
     neutral: {
-      $value: '{base.color.neutral.9}',
+      $value: '{base.color.neutral.7}',
       $type: 'color',
       $description: 'Neutral semantic text for icons and secondary elements',
       $extensions: {
@@ -192,13 +192,13 @@
           scopes: ['fgColor'],
         },
         'org.primer.overrides': {
-          'light-high-contrast': '{base.color.neutral.11}',
-          'light-tritanopia-high-contrast': '{base.color.neutral.11}',
-          'light-protanopia-deuteranopia-high-contrast': '{base.color.neutral.11}',
-          'dark-high-contrast': '{base.color.neutral.11}',
-          'dark-dimmed-high-contrast': '{base.color.neutral.11}',
-          'dark-tritanopia-high-contrast': '{base.color.neutral.11}',
-          'dark-protanopia-deuteranopia-high-contrast': '{base.color.neutral.11}',
+          'light-high-contrast': '{base.color.neutral.9}',
+          'light-tritanopia-high-contrast': '{base.color.neutral.9}',
+          'light-protanopia-deuteranopia-high-contrast': '{base.color.neutral.9}',
+          'dark-high-contrast': '{base.color.neutral.9}',
+          'dark-dimmed-high-contrast': '{base.color.neutral.9}',
+          'dark-tritanopia-high-contrast': '{base.color.neutral.9}',
+          'dark-protanopia-deuteranopia-high-contrast': '{base.color.neutral.9}',
         },
         'org.primer.llm': {
           usage: ['neutral-icon', 'neutral-text'],
