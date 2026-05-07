@@ -1,5 +1,13 @@
 # @primer/primitives
 
+## 11.8.0
+
+### Minor Changes
+
+- [#1350](https://github.com/primer/primitives/pull/1350) [`2e67d1b`](https://github.com/primer/primitives/commit/2e67d1b008522e8e55baf509993e97518db219bc) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Add functional motion tokens completing the base→functional→component architecture
+
+- [#1370](https://github.com/primer/primitives/pull/1370) [`6d3b5b8`](https://github.com/primer/primitives/commit/6d3b5b852007e476a51065c4d51d9c3e053eef9f) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Add functional spacing tokens (xxs, xs, sm, md, lg, xl) for semantic gap, padding, and margin. Provides unified spacing scale with W3C-compliant dimension format and Figma integration.
+
 ## 11.7.1
 
 ### Patch Changes
