@@ -87,7 +87,7 @@ export const Functional = () => {
               <CubicBezier bezier={item.value} />
               <p>[{item.value.join(', ')}]</p>
               <InlineCode value={item.name} cssVar={true} copyClipboard />
-              <p style={{fontSize: 12, textAlign: 'center', color: '#666'}}>{item.description}</p>
+              <p style={{fontSize: 12, textAlign: 'center', color: 'var(--fgColor-muted)'}}>{item.description}</p>
             </Card>
           ))}
       </div>

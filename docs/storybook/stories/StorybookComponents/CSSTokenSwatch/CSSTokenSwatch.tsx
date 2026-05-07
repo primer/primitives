@@ -30,15 +30,27 @@ export const CSSTokenSwatch = ({color, prevColor, shadow}: CSSTokenSwatchProps) 
   const ref = React.useRef<HTMLDivElement | null>(null)
   const [hex, setHex] = React.useState<string | null>(null)
 
-  React.useEffect(() => {
+  const recalculate = React.useCallback(() => {
     if (ref.current === null) {
       return
     }
-
     const style = getComputedStyle(ref.current)
     const rgb = style.getPropertyValue('background-color')
     setHex(rgb && rgb !== '' ? toHex(rgb) : null)
-  }, [color])
+  }, [])
+
+  React.useEffect(() => {
+    recalculate()
+  }, [color, recalculate])
+
+  React.useEffect(() => {
+    const observer = new MutationObserver(recalculate)
+    observer.observe(document.body, {
+      attributes: true,
+      attributeFilter: ['data-color-mode', 'data-light-theme', 'data-dark-theme'],
+    })
+    return () => observer.disconnect()
+  }, [recalculate])
 
   if (color === undefined || color === '') {
     return null
