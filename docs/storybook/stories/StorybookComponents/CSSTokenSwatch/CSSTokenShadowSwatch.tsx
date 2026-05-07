@@ -11,15 +11,27 @@ export const CSSTokenShadowSwatch = ({color, shadow, borderColor}: CSSTokenSwatc
   const ref = React.useRef<HTMLDivElement | null>(null)
   const [value, setValue] = React.useState<string | null>(null)
 
-  React.useEffect(() => {
+  const recalculate = React.useCallback(() => {
     if (ref.current === null) {
       return
     }
-
     const style = getComputedStyle(ref.current)
     const rgb = style.getPropertyValue('box-shadow')
     setValue(rgb)
-  }, [shadow])
+  }, [])
+
+  React.useEffect(() => {
+    recalculate()
+  }, [shadow, recalculate])
+
+  React.useEffect(() => {
+    const observer = new MutationObserver(recalculate)
+    observer.observe(document.body, {
+      attributes: true,
+      attributeFilter: ['data-color-mode', 'data-light-theme', 'data-dark-theme'],
+    })
+    return () => observer.disconnect()
+  }, [recalculate])
 
   if (shadow === undefined) {
     return null

@@ -45,7 +45,7 @@ export const AllThemesInOneTable = () => {
       </Stack>
       <Stack>
         {data.map(({id}) => (
-          <Stack direction="horizontal">
+          <Stack key={id} direction="horizontal">
             <Stack.Item className={styles.name}>
               <InlineCode value={id} />
             </Stack.Item>
