@@ -1,9 +1,10 @@
 .ColorScale--block {
-  display: grid;
-  grid-template-columns: max-content max-content;
-  gap: 1rem;
+  padding: 10px 12px;
+  min-height: 72px;
+  display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  padding: 0.5rem;
+  gap: 4px;
 }
 
 .ColorScale--block:first-of-type {
@@ -21,4 +22,77 @@
   gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   border-radius: 6px;
+}
+
+.cs-name {
+  margin: 0;
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 1.2;
+  font-family: monospace;
+}
+
+.cs-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  line-height: 1;
+}
+
+.cs-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  position: relative;
+  cursor: default;
+}
+
+.cs-badge[data-tooltip]:hover::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  background: var(--bgColor-emphasis, #1f2328);
+  color: var(--fgColor-onEmphasis, #ffffff);
+  font-size: 11px;
+  font-family: sans-serif;
+  padding: 3px 7px;
+  border-radius: 4px;
+  pointer-events: none;
+  z-index: 100;
+}
+
+.cs-aa {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.cs-num {
+  font-size: 11px;
+}
+
+.cs-square {
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.cs-square--outline {
+  border: 1.5px solid currentColor;
+}
+
+.cs-square--filled {
+  border: none;
+}
+
+.cs-hex {
+  margin-left: auto;
+  font-size: 11px;
+  font-family: monospace;
+  opacity: 0.75;
 }
