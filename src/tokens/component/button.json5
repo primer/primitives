@@ -614,10 +614,10 @@
                 }
               },
               'dark-protanopia-deuteranopia': {
-                '$value': '{base.color.blue.6}'
+                '$value': '{base.color.blue.4}'
               },
               'dark-protanopia-deuteranopia-high-contrast': {
-                '$value': '{base.color.blue.6}'
+                '$value': '{base.color.blue.4}'
               },
               'dark-high-contrast': {
                 '$value': {
@@ -687,11 +687,11 @@
                 alpha: 1
               },
               'dark-protanopia-deuteranopia-high-contrast': {
-                '$value': '{base.color.blue.2}',
+                '$value': '{base.color.blue.7}',
                 alpha: 1
               },
               'dark-tritanopia-high-contrast': {
-                '$value': '{base.color.blue.2}',
+                '$value': '{base.color.blue.7}',
                 alpha: 1
               },
               'light-high-contrast': {
@@ -699,11 +699,11 @@
                 alpha: 1
               },
               'light-protanopia-deuteranopia-high-contrast': {
-                '$value': '{base.color.blue.7}',
+                '$value': '{base.color.blue.9}',
                 alpha: 1
               },
               'light-tritanopia-high-contrast': {
-                '$value': '{base.color.blue.7}',
+                '$value': '{base.color.blue.9}',
                 alpha: 1
               }
             }
@@ -839,7 +839,7 @@
               'light-tritanopia': {
                 '$value': [
                   {
-                    color: '{base.color.blue.9}',
+                    color: '{base.color.blue.11}',
                     alpha: 0.3,
                     offsetX: {
                       value: 0,
@@ -864,7 +864,7 @@
               'light-protanopia-deuteranopia': {
                 '$value': [
                   {
-                    color: '{base.color.blue.9}',
+                    color: '{base.color.blue.11}',
                     alpha: 0.3,
                     offsetX: {
                       value: 0,
@@ -1265,7 +1265,7 @@
             },
             'org.primer.overrides': {
               dark: {
-                '$value': '{base.color.blue.4}'
+                '$value': '{base.color.blue.6}'
               }
             }
           }
@@ -1283,7 +1283,7 @@
             },
             'org.primer.overrides': {
               dark: {
-                '$value': '{base.color.blue.3}'
+                '$value': '{base.color.blue.6}'
               }
             }
           }
@@ -1396,7 +1396,7 @@
             },
             'org.primer.overrides': {
               dark: {
-                '$value': '{base.color.blue.7}'
+                '$value': '{base.color.blue.2}'
               },
               'dark-tritanopia': {
                 '$value': {
@@ -1479,13 +1479,13 @@
                 '$value': '{button.default.borderColor.hover}'
               },
               'light-high-contrast': {
-                '$value': '{base.color.blue.7}'
+                '$value': '{base.color.blue.9}'
               },
               'light-protanopia-deuteranopia-high-contrast': {
-                '$value': '{base.color.blue.7}'
+                '$value': '{base.color.blue.9}'
               },
               'light-tritanopia-high-contrast': {
-                '$value': '{base.color.blue.7}'
+                '$value': '{base.color.blue.9}'
               }
             }
           }
@@ -1508,7 +1508,7 @@
         selected: {
           '$value': [
             {
-              color: '{base.color.blue.9}',
+              color: '{base.color.blue.11}',
               alpha: 0.2,
               offsetX: {
                 value: 0,
@@ -2228,7 +2228,7 @@
             },
             'org.primer.overrides': {
               dark: {
-                '$value': '{base.color.blue.9}',
+                '$value': '{base.color.blue.1}',
                 alpha: 0.2
               }
             }
@@ -2248,7 +2248,7 @@
             },
             'org.primer.overrides': {
               dark: {
-                '$value': '{base.color.blue.9}',
+                '$value': '{base.color.blue.1}',
                 alpha: 0.2
               }
             }
@@ -2278,7 +2278,7 @@
       },
       fgColor: {
         rest: {
-          '$value': '{base.color.blue.6}',
+          '$value': '{base.color.blue.8}',
           '$type': 'color',
           '$extensions': {
             'org.primer.figma': {
@@ -2290,7 +2290,7 @@
             },
             'org.primer.overrides': {
               dark: {
-                '$value': '{base.color.blue.4}'
+                '$value': '{base.color.blue.6}'
               }
             }
           }
@@ -2308,7 +2308,7 @@
             },
             'org.primer.overrides': {
               dark: {
-                '$value': '{base.color.blue.3}'
+                '$value': '{base.color.blue.6}'
               }
             }
           }
