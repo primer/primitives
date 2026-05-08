@@ -388,6 +388,7 @@ export const buildDesignTokens = async (buildOptions: ConfigGeneratorOptions): P
     fs.writeFileSync(`${buildOptions.buildPath}deprecated.json`, JSON.stringify(combined, null, 2))
   } catch (e) {
     console.error('🛑 Error trying to combine deprecated tokens:', e)
+    throw e
   }
 
   /** -----------------------------------
