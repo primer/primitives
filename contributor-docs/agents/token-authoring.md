@@ -126,5 +126,5 @@ has the path `fgColor.muted`. The file name/location does not matter — only th
 ### Rules
 
 1. Add your entries to `src/tokens/removed.json` (don't overwrite existing entries)
-3. Every token path you delete or rename must have an entry
-4. Use `null` for deletions, use the new token path string for renames
+2. Every token path you delete or rename must have an entry
+3. Use `null` for deletions, use the new token path string for renames
