@@ -65,7 +65,7 @@ export type ColorScaleProps = {
 }
 
 export const ColorScale = ({color, border}: ColorScaleProps) => {
-  const swatchRef = React.useRef<HTMLDivElement>(null)
+  const swatchRef = React.useRef<HTMLDivElement | null>(null)
   const probeRefs = React.useRef<Record<string, HTMLDivElement | null>>({})
 
   const [hex, setHex] = React.useState<string | null>(null)
