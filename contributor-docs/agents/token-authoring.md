@@ -93,11 +93,11 @@ Add `org.primer.llm` to include tokens in `DESIGN_TOKENS_SPEC.md`:
 
 ## Removing or Renaming Tokens
 
-When you remove or rename tokens in `src/tokens/`, you **must** document them in `src/tokens/removed/removed.json`.
+When you remove or rename tokens in `src/tokens/`, you **must** document them in `src/tokens/removed.json`.
 
 ### File format
 
-`src/tokens/removed/removed.json` is a flat JSON object. Each key is the source token path (dot-separated, matching the nested key structure in the JSON5 source files). The value is either:
+`src/tokens/removed.json` is a flat JSON object. Each key is the source token path (dot-separated, matching the nested key structure in the JSON5 source files). The value is either:
 
 - `null` — token was fully deleted with no replacement
 - `"new.token.path"` — token was renamed/replaced (points to the new name)
@@ -125,7 +125,6 @@ has the path `fgColor.muted`. The file name/location does not matter — only th
 
 ### Rules
 
-1. Create `src/tokens/removed/removed.json` if it doesn't exist
-2. If it already exists, merge your entries into it (don't overwrite existing entries)
+1. Add your entries to `src/tokens/removed.json` (don't overwrite existing entries)
 3. Every token path you delete or rename must have an entry
 4. Use `null` for deletions, use the new token path string for renames
