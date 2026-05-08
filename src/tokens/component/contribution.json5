@@ -164,7 +164,7 @@
     winter: {
       bgColor: {
         '1': {
-          $value: '{base.color.blue.1}',
+          $value: '{base.color.blue.3}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -173,12 +173,26 @@
               scopes: ['bgColor'],
             },
             'org.primer.overrides': {
-              dark: '{base.color.blue.8}',
+              dark: '{base.color.blue.2}',
             },
           },
         },
         '2': {
-          $value: '{base.color.blue.3}',
+          $value: '{base.color.blue.5}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component (internal)',
+              scopes: ['bgColor'],
+            },
+            'org.primer.overrides': {
+              dark: '{base.color.blue.4}',
+            },
+          },
+        },
+        '3': {
+          $value: '{base.color.blue.7}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -191,22 +205,8 @@
             },
           },
         },
-        '3': {
-          $value: '{base.color.blue.5}',
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              group: 'component (internal)',
-              scopes: ['bgColor'],
-            },
-            'org.primer.overrides': {
-              dark: '{base.color.blue.3}',
-            },
-          },
-        },
         '4': {
-          $value: '{base.color.blue.8}',
+          $value: '{base.color.blue.10}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -215,7 +215,7 @@
               scopes: ['bgColor'],
             },
             'org.primer.overrides': {
-              dark: '{base.color.blue.0}',
+              dark: '{base.color.blue.9}',
             },
           },
         },

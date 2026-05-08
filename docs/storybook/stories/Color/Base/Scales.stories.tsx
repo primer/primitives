@@ -38,8 +38,8 @@ export const AllScales = () => {
 }
 AllScales.tags = ['includeSnapshot']
 
-export const Neutral = () => <Color color="neutral" length={14} />
-export const Blue = () => <Color color="blue" />
+export const Neutral = () => <Color color="neutral" length={12} />
+export const Blue = () => <Color color="blue" length={12} />
 export const Green = () => <Color color="green" />
 export const Yellow = () => <Color color="yellow" />
 export const Orange = () => <Color color="orange" />
