@@ -1,7 +1,27 @@
 import {type Page, test, expect} from '@playwright/test'
 
-import data from '../docs/storybook/storybook-static/stories.json' assert {type: 'json'}
 import colorData from '../dist/docs/functional/themes/light.json' assert {type: 'json'}
+
+const {STORYBOOK_URL = 'http://localhost:6006'} = process.env
+
+interface Story {
+  id: string
+  tags?: string[]
+}
+
+interface StoryIndex {
+  entries: Record<string, Story>
+}
+
+const storyIndexResponse = await fetch(new URL('/index.json', STORYBOOK_URL))
+
+if (!storyIndexResponse.ok) {
+  throw new Error(
+    `Unable to load Storybook index from ${STORYBOOK_URL}: ${storyIndexResponse.status} ${storyIndexResponse.statusText}`,
+  )
+}
+
+const data = (await storyIndexResponse.json()) as StoryIndex
 
 const extractNameAndValue = Object.entries(colorData)
   .map(([_key, details]) => ({
@@ -11,26 +31,11 @@ const extractNameAndValue = Object.entries(colorData)
   .filter(item => !item.name.includes('scale'))
   .map(item => item.name)
 
-interface Story {
-  id: string
-  parameters?: {
-    snapshot?: {
-      includeSnapshot?: boolean
-      snapshotLight?: boolean
-    }
-    docs?: {
-      tags?: string[]
-    }
-  }
-}
-
-const stories = Object.values(data.stories).map((story: unknown) => {
-  const {id, parameters} = story as Story
+const stories = Object.values(data.entries).map((story: unknown) => {
+  const {id, tags} = story as Story
   return {
     id,
-    includeSnapshot: parameters?.snapshot?.includeSnapshot,
-    snapshotLight: parameters?.snapshot?.snapshotLight,
-    tags: parameters?.docs?.tags,
+    tags,
   }
 })
 const themes = [
@@ -52,16 +57,18 @@ const themes = [
 
 test.describe('storybook', () => {
   for (const story of stories) {
-    const shouldIncludeSnapshot = story.includeSnapshot || (story.tags && story.tags.includes('includeSnapshot'))
+    const hasIncludeSnapshot = story.tags && story.tags.includes('includeSnapshot')
+    const hasSnapshotLight = story.tags && story.tags.includes('snapshotLight')
+    const shouldIncludeSnapshot = hasIncludeSnapshot || hasSnapshotLight
 
     if (!shouldIncludeSnapshot) {
       test.skip(story.id, async () => {
-        // Skipping test because includeSnapshot is false or the story has the 'includeSnapshot' tag.
+        // Skipping test because story has neither 'includeSnapshot' nor 'snapshotLight' tag.
       })
       continue
     }
 
-    const runAllThemes = !story.id.includes('size') && !story.id.includes('typography')
+    const runAllThemes = hasIncludeSnapshot && !story.id.includes('size') && !story.id.includes('typography')
 
     test.describe(`${story.id} (${runAllThemes ? 'all themes' : 'light theme only'})`, () => {
       for (const theme of themes) {
@@ -109,8 +116,6 @@ interface Options {
   args?: Record<string, string | boolean>
   globals?: Record<string, string>
 }
-
-const {STORYBOOK_URL = 'http://localhost:6006'} = process.env
 
 export async function visit(page: Page, options: Options) {
   const {id, args, globals} = options

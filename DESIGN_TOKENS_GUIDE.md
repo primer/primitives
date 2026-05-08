@@ -65,18 +65,26 @@
 
 ### Motion
 
-| Keyword | Rule                                                           |
-| ------- | -------------------------------------------------------------- |
-| MUST    | Use motion for interactive state changes (hover, focus, press) |
-| MUST    | Keep animations ≤300ms for UI interactions                     |
-| MUST    | Respect `prefers-reduced-motion` media query                   |
-| MUST    | Provide instant alternatives when motion is reduced            |
-| SHOULD  | Use 100-200ms for micro-interactions                           |
-| SHOULD  | Use 200-300ms for state changes                                |
-| NEVER   | Exceed 500ms for UI interactions                               |
-| NEVER   | Use motion purely for decoration                               |
-| NEVER   | Create indefinitely looping motion without user control        |
-| NEVER   | Rely solely on motion to convey information                    |
+```
+--motion-[property]-[semantic]
+  ├── property: duration | easing | transition
+  └── semantic: micro | short | medium | long       (duration)
+                hover | enter | exit | move | linear (easing)
+                hover | stateChange | enter | exit   (transition)
+```
+
+| Keyword | Rule                                                                       |
+| ------- | -------------------------------------------------------------------------- |
+| MUST    | Use `motion.transition.*` tokens for interactive state changes             |
+| MUST    | Keep animations ≤`motion.duration.medium` (300ms) for UI interactions      |
+| MUST    | Respect `prefers-reduced-motion` media query                               |
+| MUST    | Provide instant alternatives when motion is reduced                        |
+| SHOULD  | Use `motion.duration.micro` (100ms) for hover and focus micro-interactions |
+| SHOULD  | Use `motion.duration.short` (200ms) for state changes                      |
+| NEVER   | Exceed `motion.duration.long` (500ms) for UI interactions                  |
+| NEVER   | Use motion purely for decoration                                           |
+| NEVER   | Create indefinitely looping motion without user control                    |
+| NEVER   | Rely solely on motion to convey information                                |
 
 ### Typography
 
@@ -98,14 +106,38 @@
 | MUST    | Match padding density to control's purpose  |
 | SHOULD  | Use `medium` size as default                |
 
+### Z-Index
+
+```
+--zIndex-[layer]
+  └── layer: behind | default | sticky | dropdown | overlay | modal | popover | skipLink
+```
+
+| Keyword | Rule                                                                                                         |
+| ------- | ------------------------------------------------------------------------------------------------------------ |
+| MUST    | Use z-index tokens instead of raw numeric values                                                             |
+| MUST    | Use `skipLink` only for accessibility skip-navigation links                                                  |
+| MUST    | Pair z-index with appropriate shadow level (see table below)                                                 |
+| SHOULD  | Prefer creating a new stacking context (`isolation: isolate`) over escalating z-index                        |
+| NEVER   | Use `behind` (-1) without verifying no ancestor creates a stacking context (transform, opacity, filter, etc) |
+| NEVER   | Use arbitrary z-index values outside the token scale                                                         |
+
+**Shadow ↔ Z-Index Alignment:**
+
+| Shadow Level                   | Z-Index Token                        | Example               |
+| ------------------------------ | ------------------------------------ | --------------------- |
+| `shadow.resting.*`             | `zIndex.default` / `zIndex.sticky`   | Cards, sticky headers |
+| `shadow.floating.small/medium` | `zIndex.dropdown` / `zIndex.overlay` | Menus, drawers        |
+| `shadow.floating.large/xlarge` | `zIndex.modal` / `zIndex.popover`    | Dialogs, tooltips     |
+
 ---
 
 ## Decision Tree: Easing Selection
 
-1. Is element entering/exiting viewport? → ease-out (default)
-2. Is element moving/morphing on screen? → ease-in-out
-3. Is this a hover state change? → ease
-4. Is this constant motion (loaders)? → linear
+1. Is element entering/exiting viewport? → `motion.easing.enter` / `motion.easing.exit`
+2. Is element moving/morphing on screen? → `motion.easing.move`
+3. Is this a hover state change? → `motion.easing.hover`
+4. Is this constant motion (loaders)? → `motion.easing.linear`
 
 ---
 
@@ -124,11 +156,11 @@
   font: var(--text-body-shorthand-medium);
   cursor: pointer;
 
-  /* Motion: MUST be <300ms */
+  /* Motion: Use functional motion tokens */
   transition:
-    background-color 150ms ease,
-    box-shadow 150ms ease,
-    transform 100ms ease;
+    background-color var(--motion-transition-hover),
+    box-shadow var(--motion-transition-hover),
+    transform var(--motion-transition-hover);
 }
 
 /* State: Hover */

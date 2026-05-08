@@ -7,8 +7,9 @@ import {ControlSizeDemo} from '../StorybookComponents/ControlSizeDemo/ControlSiz
 import {ControlStackDemo} from '../StorybookComponents/ControlStackDemo/ControlStackDemo'
 import {TouchTargetDemo} from '../StorybookComponents/TouchTargetDemo/TouchTargetDemo'
 import {DataTable, Table} from '@primer/react/experimental'
-import {InlineCode} from '../StorybookComponents/InlineCode/InlineCode'
 import {getTokensByName} from '../utilities/getTokensByName'
+import {formatTokenValue} from '../utilities/formatTokenValue'
+import {tokenColumn, outputValueColumn, sourceValueColumn} from '../utilities/commonTableColumns'
 
 export default {
   title: 'Size/Functional/Control',
@@ -18,407 +19,74 @@ export default {
   },
 }
 
-export const XSmall = () => {
-  const data = getTokensByName(sizeTokens, 'control-xsmall').map(token => {
-    return {
+const createControlSizeStory = (size: string) => {
+  const prefix = `control-${size}`
+  const Story = () => {
+    const data = getTokensByName(sizeTokens, prefix).map(token => ({
       id: token.name,
       ...token,
-    }
-  })
+    }))
 
-  // get string for each item
-  const gapValueString = getTokensByName(sizeTokens, 'control-xsmall-gap')[0].name
-  const paddingBlockValueString = getTokensByName(sizeTokens, 'control-xsmall-paddingBlock')[0].name
-  const lineBlockHeightPropValueString = getTokensByName(sizeTokens, 'control-xsmall-lineBoxHeight')[0].name
-  const blockSizeValueString = getTokensByName(sizeTokens, 'control-xsmall-size')[0].name
-  const condensedValueString = getTokensByName(sizeTokens, 'control-xsmall-paddingInline-condensed')[0].name
-  const normalValueString = getTokensByName(sizeTokens, 'control-xsmall-paddingInline-normal')[0].name
-  const spaciousValueString = getTokensByName(sizeTokens, 'control-xsmall-paddingInline-spacious')[0].name
+    const gap = getTokensByName(sizeTokens, `${prefix}-gap`)[0]?.name ?? ''
+    const paddingBlock = getTokensByName(sizeTokens, `${prefix}-paddingBlock`)[0]?.name ?? ''
+    const lineBoxHeight = getTokensByName(sizeTokens, `${prefix}-lineBoxHeight`)[0]?.name ?? ''
+    const blockSize = getTokensByName(sizeTokens, `${prefix}-size`)[0]?.name ?? ''
+    const condensed = getTokensByName(sizeTokens, `${prefix}-paddingInline-condensed`)[0]?.name ?? ''
+    const normal = getTokensByName(sizeTokens, `${prefix}-paddingInline-normal`)[0]?.name ?? ''
+    const spacious = getTokensByName(sizeTokens, `${prefix}-paddingInline-spacious`)[0]?.name ?? ''
 
-  return (
-    <Table.Container>
-      <Table.Title as="h1" id="sizing">
-        Control: xsmall
-      </Table.Title>
-      <DataTable
-        aria-labelledby="sizing"
-        data={data}
-        columns={[
-          {
-            header: 'Sample',
-            field: 'name',
-            rowHeader: true,
-            renderCell: row => {
-              return (
+    return (
+      <Table.Container>
+        <Table.Title as="h1" id="sizing">
+          Control: {size}
+        </Table.Title>
+        <DataTable
+          aria-labelledby="sizing"
+          data={data}
+          columns={[
+            {
+              header: 'Sample',
+              field: 'name',
+              rowHeader: true,
+              renderCell: row => (
                 <ControlSizeDemo
-                  gap={gapValueString}
+                  gap={gap}
                   paddingInline={
-                    row.name.includes('spacious')
-                      ? spaciousValueString
-                      : row.name.includes('condensed')
-                        ? condensedValueString
-                        : normalValueString
+                    row.name.includes('spacious') ? spacious : row.name.includes('condensed') ? condensed : normal
                   }
-                  paddingBlock={paddingBlockValueString}
-                  blockSize={blockSizeValueString}
-                  lineBox={lineBlockHeightPropValueString}
-                  highlightPaddingBlock={row.name.startsWith('control-xsmall-paddingBlock') ? true : false}
-                  highlightPaddingInline={row.name.startsWith('control-xsmall-paddingInline') ? true : false}
-                  highlightGap={row.name.startsWith('control-xsmall-gap') ? true : false}
-                  highlightHeight={row.name.startsWith('control-xsmall-size') ? true : false}
-                  highlightLineBoxHeight={row.name.startsWith('control-xsmall-lineBoxHeight') ? true : false}
+                  paddingBlock={paddingBlock}
+                  blockSize={blockSize}
+                  lineBox={lineBoxHeight}
+                  highlightPaddingBlock={row.name.startsWith(`${prefix}-paddingBlock`)}
+                  highlightPaddingInline={row.name.startsWith(`${prefix}-paddingInline`)}
+                  highlightGap={row.name.startsWith(`${prefix}-gap`)}
+                  highlightHeight={row.name.startsWith(`${prefix}-size`)}
+                  highlightLineBoxHeight={row.name.startsWith(`${prefix}-lineBoxHeight`)}
                 />
-              )
+              ),
             },
-          },
-          {
-            header: 'Token',
-            field: 'name',
-            rowHeader: true,
-            renderCell: row => {
-              return <InlineCode value={row.name} copyClipboard cssVar />
-            },
-          },
-          {
-            header: 'Output value',
-            field: 'value',
-            rowHeader: true,
-            renderCell: row => {
-              return <p>{row.value}</p>
-            },
-          },
-          {
-            header: 'Source value',
-            field: 'original.$value',
-            rowHeader: true,
-            renderCell: row => {
-              return <p>{row.original.$value}</p>
-            },
-          },
-        ]}
-      />
-    </Table.Container>
-  )
+            tokenColumn({cssVar: true}),
+            outputValueColumn(),
+            sourceValueColumn(),
+          ]}
+        />
+      </Table.Container>
+    )
+  }
+  return Story
 }
 
-export const Small = () => {
-  const data = getTokensByName(sizeTokens, 'control-small').map(token => {
-    return {
-      id: token.name,
-      ...token,
-    }
-  })
-
-  // get string for each item
-  const gapValueString = getTokensByName(sizeTokens, 'control-small-gap')[0].name
-  const paddingBlockValueString = getTokensByName(sizeTokens, 'control-small-paddingBlock')[0].name
-  const lineBlockHeightPropValueString = getTokensByName(sizeTokens, 'control-small-lineBoxHeight')[0].name
-  const blockSizeValueString = getTokensByName(sizeTokens, 'control-small-size')[0].name
-  const condensedValueString = getTokensByName(sizeTokens, 'control-small-paddingInline-condensed')[0].name
-  const normalValueString = getTokensByName(sizeTokens, 'control-small-paddingInline-normal')[0].name
-
-  return (
-    <Table.Container>
-      <Table.Title as="h1" id="sizing">
-        Control: small
-      </Table.Title>
-      <DataTable
-        aria-labelledby="sizing"
-        data={data}
-        columns={[
-          {
-            header: 'Sample',
-            field: 'name',
-            rowHeader: true,
-            renderCell: row => {
-              return (
-                <ControlSizeDemo
-                  gap={gapValueString}
-                  paddingInline={row.name.includes('condensed') ? condensedValueString : normalValueString}
-                  paddingBlock={paddingBlockValueString}
-                  blockSize={blockSizeValueString}
-                  lineBox={lineBlockHeightPropValueString}
-                  highlightPaddingBlock={row.name.startsWith('control-small-paddingBlock') ? true : false}
-                  highlightPaddingInline={row.name.startsWith('control-small-paddingInline') ? true : false}
-                  highlightGap={row.name.startsWith('control-small-gap') ? true : false}
-                  highlightHeight={row.name.startsWith('control-small-size') ? true : false}
-                  highlightLineBoxHeight={row.name.startsWith('control-small-lineBoxHeight') ? true : false}
-                />
-              )
-            },
-          },
-          {
-            header: 'Token',
-            field: 'name',
-            rowHeader: true,
-            renderCell: row => {
-              return <InlineCode value={row.name} copyClipboard cssVar />
-            },
-          },
-          {
-            header: 'Output value',
-            field: 'value',
-            rowHeader: true,
-            renderCell: row => {
-              return <p>{row.value}</p>
-            },
-          },
-          {
-            header: 'Source value',
-            field: 'original.$value',
-            rowHeader: true,
-            renderCell: row => {
-              return <p>{row.original.$value}</p>
-            },
-          },
-        ]}
-      />
-    </Table.Container>
-  )
-}
-
-export const Medium = () => {
-  const data = getTokensByName(sizeTokens, 'control-medium').map(token => {
-    return {
-      id: token.name,
-      ...token,
-    }
-  })
-
-  // get string for each item
-  const gapValueString = getTokensByName(sizeTokens, 'control-medium-gap')[0].name
-  const paddingBlockValueString = getTokensByName(sizeTokens, 'control-medium-paddingBlock')[0].name
-  const lineBlockHeightPropValueString = getTokensByName(sizeTokens, 'control-medium-lineBoxHeight')[0].name
-  const blockSizeValueString = getTokensByName(sizeTokens, 'control-medium-size')[0].name
-  const condensedValueString = getTokensByName(sizeTokens, 'control-medium-paddingInline-condensed')[0].name
-  const normalValueString = getTokensByName(sizeTokens, 'control-medium-paddingInline-normal')[0].name
-  const spaciousValueString = getTokensByName(sizeTokens, 'control-xsmall-paddingInline-spacious')[0].name
-
-  return (
-    <Table.Container>
-      <Table.Title as="h1" id="sizing">
-        Control: medium
-      </Table.Title>
-      <DataTable
-        aria-labelledby="sizing"
-        data={data}
-        columns={[
-          {
-            header: 'Sample',
-            field: 'name',
-            rowHeader: true,
-            renderCell: row => {
-              return (
-                <ControlSizeDemo
-                  gap={gapValueString}
-                  paddingInline={
-                    row.name.includes('spacious')
-                      ? spaciousValueString
-                      : row.name.includes('condensed')
-                        ? condensedValueString
-                        : normalValueString
-                  }
-                  paddingBlock={paddingBlockValueString}
-                  blockSize={blockSizeValueString}
-                  lineBox={lineBlockHeightPropValueString}
-                  highlightPaddingBlock={row.name.startsWith('control-medium-paddingBlock') ? true : false}
-                  highlightPaddingInline={row.name.startsWith('control-medium-paddingInline') ? true : false}
-                  highlightGap={row.name.startsWith('control-medium-gap') ? true : false}
-                  highlightHeight={row.name.startsWith('control-medium-size') ? true : false}
-                  highlightLineBoxHeight={row.name.startsWith('control-medium-lineBoxHeight') ? true : false}
-                />
-              )
-            },
-          },
-          {
-            header: 'Token',
-            field: 'name',
-            rowHeader: true,
-            renderCell: row => {
-              return <InlineCode value={row.name} copyClipboard cssVar />
-            },
-          },
-          {
-            header: 'Output value',
-            field: 'value',
-            rowHeader: true,
-            renderCell: row => {
-              return <p>{row.value}</p>
-            },
-          },
-          {
-            header: 'Source value',
-            field: 'original.$value',
-            rowHeader: true,
-            renderCell: row => {
-              return <p>{row.original.$value}</p>
-            },
-          },
-        ]}
-      />
-    </Table.Container>
-  )
-}
-
-export const Large = () => {
-  const data = getTokensByName(sizeTokens, 'control-large').map(token => {
-    return {
-      id: token.name,
-      ...token,
-    }
-  })
-
-  // get string for each item
-  const gapValueString = getTokensByName(sizeTokens, 'control-large-gap')[0].name
-  const paddingBlockValueString = getTokensByName(sizeTokens, 'control-large-paddingBlock')[0].name
-  const lineBlockHeightPropValueString = getTokensByName(sizeTokens, 'control-large-lineBoxHeight')[0].name
-  const blockSizeValueString = getTokensByName(sizeTokens, 'control-large-size')[0].name
-  const spaciousValueString = getTokensByName(sizeTokens, 'control-large-paddingInline-spacious')[0].name
-  const normalValueString = getTokensByName(sizeTokens, 'control-large-paddingInline-normal')[0].name
-
-  return (
-    <Table.Container>
-      <Table.Title as="h1" id="sizing">
-        Control: large
-      </Table.Title>
-      <DataTable
-        aria-labelledby="sizing"
-        data={data}
-        columns={[
-          {
-            header: 'Sample',
-            field: 'name',
-            rowHeader: true,
-            renderCell: row => {
-              return (
-                <ControlSizeDemo
-                  gap={gapValueString}
-                  paddingInline={row.name.includes('spacious') ? spaciousValueString : normalValueString}
-                  paddingBlock={paddingBlockValueString}
-                  blockSize={blockSizeValueString}
-                  lineBox={lineBlockHeightPropValueString}
-                  highlightPaddingBlock={row.name.startsWith('control-large-paddingBlock') ? true : false}
-                  highlightPaddingInline={row.name.startsWith('control-large-paddingInline') ? true : false}
-                  highlightGap={row.name.startsWith('control-large-gap') ? true : false}
-                  highlightHeight={row.name.startsWith('control-large-size') ? true : false}
-                  highlightLineBoxHeight={row.name.startsWith('control-large-lineBoxHeight') ? true : false}
-                />
-              )
-            },
-          },
-          {
-            header: 'Token',
-            field: 'name',
-            rowHeader: true,
-            renderCell: row => {
-              return <InlineCode value={row.name} copyClipboard cssVar />
-            },
-          },
-          {
-            header: 'Output value',
-            field: 'value',
-            rowHeader: true,
-            renderCell: row => {
-              return <p>{row.value}</p>
-            },
-          },
-          {
-            header: 'Source value',
-            field: 'original.$value',
-            rowHeader: true,
-            renderCell: row => {
-              return <p>{row.original.$value}</p>
-            },
-          },
-        ]}
-      />
-    </Table.Container>
-  )
-}
-
-export const XLarge = () => {
-  const data = getTokensByName(sizeTokens, 'control-xlarge').map(token => {
-    return {
-      id: token.name,
-      ...token,
-    }
-  })
-
-  // get string for each item
-  const gapValueString = getTokensByName(sizeTokens, 'control-xlarge-gap')[0].name
-  const paddingBlockValueString = getTokensByName(sizeTokens, 'control-xlarge-paddingBlock')[0].name
-  const lineBlockHeightPropValueString = getTokensByName(sizeTokens, 'control-xlarge-lineBoxHeight')[0].name
-  const blockSizeValueString = getTokensByName(sizeTokens, 'control-xlarge-size')[0].name
-  const spaciousValueString = getTokensByName(sizeTokens, 'control-xlarge-paddingInline-spacious')[0].name
-  const normalValueString = getTokensByName(sizeTokens, 'control-xlarge-paddingInline-normal')[0].name
-
-  return (
-    <Table.Container>
-      <Table.Title as="h1" id="sizing">
-        Control: xlarge
-      </Table.Title>
-      <DataTable
-        aria-labelledby="sizing"
-        data={data}
-        columns={[
-          {
-            header: 'Sample',
-            field: 'name',
-            rowHeader: true,
-            renderCell: row => {
-              return (
-                <ControlSizeDemo
-                  gap={gapValueString}
-                  paddingInline={row.name.includes('spacious') ? spaciousValueString : normalValueString}
-                  paddingBlock={paddingBlockValueString}
-                  blockSize={blockSizeValueString}
-                  lineBox={lineBlockHeightPropValueString}
-                  highlightPaddingBlock={row.name.startsWith('control-xlarge-paddingBlock') ? true : false}
-                  highlightPaddingInline={row.name.startsWith('control-xlarge-paddingInline') ? true : false}
-                  highlightGap={row.name.startsWith('control-xlarge-gap') ? true : false}
-                  highlightHeight={row.name.startsWith('control-xlarge-size') ? true : false}
-                  highlightLineBoxHeight={row.name.startsWith('control-xlarge-lineBoxHeight') ? true : false}
-                />
-              )
-            },
-          },
-          {
-            header: 'Token',
-            field: 'name',
-            rowHeader: true,
-            renderCell: row => {
-              return <InlineCode value={row.name} copyClipboard cssVar />
-            },
-          },
-          {
-            header: 'Output value',
-            field: 'value',
-            rowHeader: true,
-            renderCell: row => {
-              return <p>{row.value}</p>
-            },
-          },
-          {
-            header: 'Source value',
-            field: 'original.$value',
-            rowHeader: true,
-            renderCell: row => {
-              return <p>{row.original.$value}</p>
-            },
-          },
-        ]}
-      />
-    </Table.Container>
-  )
-}
+export const XSmall = createControlSizeStory('xsmall')
+export const Small = createControlSizeStory('small')
+export const Medium = createControlSizeStory('medium')
+export const Large = createControlSizeStory('large')
+export const XLarge = createControlSizeStory('xlarge')
 
 export const ControlStackRegular = () => {
-  const data = getTokensByName(sizeTokens, 'controlStack').map(token => {
-    return {
-      id: token.name,
-      ...token,
-    }
-  })
+  const data = getTokensByName(sizeTokens, 'controlStack').map(token => ({
+    id: token.name,
+    ...token,
+  }))
 
   return (
     <Table.Container>
@@ -433,45 +101,22 @@ export const ControlStackRegular = () => {
             header: 'Sample',
             field: 'name',
             rowHeader: true,
-            renderCell: row => {
-              return (
-                <ControlStackDemo
-                  gap={row.name}
-                  size={
-                    row.name.includes('small')
-                      ? 'control-small-size'
-                      : row.name.includes('medium')
-                        ? 'control-medium-size'
-                        : 'control-large-size'
-                  }
-                />
-              )
-            },
+            renderCell: row => (
+              <ControlStackDemo
+                gap={row.name}
+                size={
+                  row.name.includes('small')
+                    ? 'control-small-size'
+                    : row.name.includes('medium')
+                      ? 'control-medium-size'
+                      : 'control-large-size'
+                }
+              />
+            ),
           },
-          {
-            header: 'Token',
-            field: 'name',
-            rowHeader: true,
-            renderCell: row => {
-              return <InlineCode value={row.name} copyClipboard cssVar />
-            },
-          },
-          {
-            header: 'Output value',
-            field: 'value',
-            rowHeader: true,
-            renderCell: row => {
-              return <p>{row.value}</p>
-            },
-          },
-          {
-            header: 'Source value',
-            field: 'original.$value',
-            rowHeader: true,
-            renderCell: row => {
-              return <p>{row.original.$value}</p>
-            },
-          },
+          tokenColumn({cssVar: true}),
+          outputValueColumn(),
+          sourceValueColumn(),
         ]}
       />
     </Table.Container>
@@ -479,15 +124,13 @@ export const ControlStackRegular = () => {
 }
 
 export const ControlStackResponsive = () => {
-  const data = getTokensByName(sizeTokensFine, 'controlStack').map(token => {
-    return {
-      id: token.name,
-      ...token,
-    }
-  })
+  const data = getTokensByName(sizeTokensFine, 'controlStack').map(token => ({
+    id: token.name,
+    ...token,
+  }))
 
-  const coarseSmallValue = getTokensByName(sizeTokensCoarse, 'controlStack-small-gap-auto')[0].value
-  const coarseMediumValue = getTokensByName(sizeTokensCoarse, 'controlStack-medium-gap-auto')[0].value
+  const coarseSmallValue = getTokensByName(sizeTokensCoarse, 'controlStack-small-gap-auto')[0]?.value ?? ''
+  const coarseMediumValue = getTokensByName(sizeTokensCoarse, 'controlStack-medium-gap-auto')[0]?.value ?? ''
 
   return (
     <Table.Container>
@@ -502,38 +145,27 @@ export const ControlStackResponsive = () => {
             header: 'Sample',
             field: 'name',
             rowHeader: true,
-            renderCell: row => {
-              return (
-                <ControlStackDemo
-                  gap={row.name}
-                  size={row.name.includes('-small-') ? 'control-small-size' : 'control-medium-size'}
-                />
-              )
-            },
+            renderCell: row => (
+              <ControlStackDemo
+                gap={row.name}
+                size={row.name.includes('-small-') ? 'control-small-size' : 'control-medium-size'}
+              />
+            ),
           },
-          {
-            header: 'Token',
-            field: 'name',
-            rowHeader: true,
-            renderCell: row => {
-              return <InlineCode value={row.name} copyClipboard cssVar />
-            },
-          },
+          tokenColumn({cssVar: true}),
           {
             header: 'Pointer: coarse value',
-            field: 'value',
+            field: 'value' as const,
             rowHeader: true,
-            renderCell: row => {
-              return <p>{row.name.includes('small') ? coarseSmallValue : coarseMediumValue}</p>
-            },
+            renderCell: (row: {name: string}) => (
+              <p>{row.name.includes('small') ? coarseSmallValue : coarseMediumValue}</p>
+            ),
           },
           {
             header: 'Pointer: fine value',
-            field: 'value',
+            field: 'value' as const,
             rowHeader: true,
-            renderCell: row => {
-              return <p>{row.value}</p>
-            },
+            renderCell: (row: {value: unknown}) => <p>{formatTokenValue(row.value)}</p>,
           },
         ]}
       />
@@ -542,12 +174,10 @@ export const ControlStackResponsive = () => {
 }
 
 export const ControlTouchTarget = () => {
-  const data = getTokensByName(sizeTokens, 'control-minTarget').map(token => {
-    return {
-      id: token.name,
-      ...token,
-    }
-  })
+  const data = getTokensByName(sizeTokens, 'control-minTarget').map(token => ({
+    id: token.name,
+    ...token,
+  }))
 
   return (
     <Table.Container>
@@ -562,34 +192,11 @@ export const ControlTouchTarget = () => {
             header: 'Sample',
             field: 'name',
             rowHeader: true,
-            renderCell: row => {
-              return <TouchTargetDemo size={row.name} />
-            },
+            renderCell: row => <TouchTargetDemo size={row.name} />,
           },
-          {
-            header: 'Token',
-            field: 'name',
-            rowHeader: true,
-            renderCell: row => {
-              return <InlineCode value={row.name} copyClipboard cssVar />
-            },
-          },
-          {
-            header: 'Output value',
-            field: 'value',
-            rowHeader: true,
-            renderCell: row => {
-              return <p>{row.value}</p>
-            },
-          },
-          {
-            header: 'Source value',
-            field: 'original.$value',
-            rowHeader: true,
-            renderCell: row => {
-              return <p>{row.original.$value}</p>
-            },
-          },
+          tokenColumn({cssVar: true}),
+          outputValueColumn(),
+          sourceValueColumn(),
         ]}
       />
     </Table.Container>
@@ -597,14 +204,12 @@ export const ControlTouchTarget = () => {
 }
 
 export const ControlTouchTargetResponsive = () => {
-  const data = getTokensByName(sizeTokensFine, 'control-minTarget').map(token => {
-    return {
-      id: token.name,
-      ...token,
-    }
-  })
+  const data = getTokensByName(sizeTokensFine, 'control-minTarget').map(token => ({
+    id: token.name,
+    ...token,
+  }))
 
-  const coarseValue = getTokensByName(sizeTokensCoarse, 'control-minTarget-auto')[0].value
+  const coarseValue = getTokensByName(sizeTokensCoarse, 'control-minTarget-auto')[0]?.value ?? ''
 
   return (
     <Table.Container>
@@ -619,33 +224,20 @@ export const ControlTouchTargetResponsive = () => {
             header: 'Sample',
             field: 'name',
             rowHeader: true,
-            renderCell: row => {
-              return <TouchTargetDemo size={row.name} />
-            },
+            renderCell: row => <TouchTargetDemo size={row.name} />,
           },
-          {
-            header: 'Token',
-            field: 'name',
-            rowHeader: true,
-            renderCell: row => {
-              return <InlineCode value={row.name} copyClipboard cssVar />
-            },
-          },
+          tokenColumn({cssVar: true}),
           {
             header: 'Pointer: coarse value',
-            field: 'value',
+            field: 'value' as const,
             rowHeader: true,
-            renderCell: row => {
-              return <p>{coarseValue}</p>
-            },
+            renderCell: () => <p>{coarseValue}</p>,
           },
           {
             header: 'Pointer: fine value',
-            field: 'value',
+            field: 'value' as const,
             rowHeader: true,
-            renderCell: row => {
-              return <p>{row.value}</p>
-            },
+            renderCell: (row: {value: unknown}) => <p>{formatTokenValue(row.value)}</p>,
           },
         ]}
       />

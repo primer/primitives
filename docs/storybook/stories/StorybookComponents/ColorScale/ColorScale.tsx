@@ -12,7 +12,7 @@ export const ColorScale = ({color, border}: ColorScaleProps) => {
   const [hex, setHex] = React.useState<string | null>(null)
   const [textColor, setTextColor] = React.useState<string>('currentColor')
 
-  React.useEffect(() => {
+  const recalculate = React.useCallback(() => {
     setTimeout(() => {
       if (ref.current === null) {
         return
@@ -23,7 +23,20 @@ export const ColorScale = ({color, border}: ColorScaleProps) => {
       setHex(asHex)
       setTextColor(asHex ? readableColor(asHex) : 'currentColor')
     }, 0)
-  }, [color])
+  }, [])
+
+  React.useEffect(() => {
+    recalculate()
+  }, [color, recalculate])
+
+  React.useEffect(() => {
+    const observer = new MutationObserver(recalculate)
+    observer.observe(document.body, {
+      attributes: true,
+      attributeFilter: ['data-color-mode', 'data-light-theme', 'data-dark-theme'],
+    })
+    return () => observer.disconnect()
+  }, [recalculate])
 
   return (
     <div

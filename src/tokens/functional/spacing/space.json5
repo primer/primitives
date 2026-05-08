@@ -1,0 +1,94 @@
+{
+  space: {
+    xxs: {
+      $value: '{base.size.2}',
+      $type: 'dimension',
+      $description: 'Ultra-compact spacing for form field separators and tight visual divisions.',
+      $extensions: {
+        'org.primer.llm': {
+          usage: ['gap', 'padding', 'margin', 'form-separators'],
+          rules: 'Ultra-compact (2px). Use for form field separators, tight dividers, and minimal breathing room between small elements.',
+        },
+        'org.primer.figma': {
+          collection: 'functional/size',
+          scopes: ['gap'],
+        },
+      },
+    },
+    xs: {
+      $value: '{base.size.4}',
+      $type: 'dimension',
+      $description: 'Compact spacing for small badges, tight internal spacing, and minimal breathing room.',
+      $extensions: {
+        'org.primer.llm': {
+          usage: ['gap', 'padding', 'margin', 'badge-spacing', 'list-items'],
+          rules: 'Compact (4px). Use for small component spacing, tight list separations, badge padding, and minimal internal margins.',
+        },
+        'org.primer.figma': {
+          collection: 'functional/size',
+          scopes: ['gap'],
+        },
+      },
+    },
+    sm: {
+      $value: '{base.size.8}',
+      $type: 'dimension',
+      $description: 'Default spacing for most UI elements. Comfortable visual density for standard component layouts.',
+      $extensions: {
+        'org.primer.llm': {
+          usage: ['gap', 'padding', 'margin', 'flex-gap', 'grid-gap', 'card-padding'],
+          rules: 'Default (8px). Use for standard component spacing, flex/grid item separation, container padding, and most element margins.',
+        },
+        'org.primer.figma': {
+          collection: 'functional/size',
+          scopes: ['gap'],
+        },
+      },
+    },
+    md: {
+      $value: '{base.size.12}',
+      $type: 'dimension',
+      $description: 'Relaxed spacing for breathing room and comfortable internal container space.',
+      $extensions: {
+        'org.primer.llm': {
+          usage: ['gap', 'padding', 'margin', 'panel-padding', 'section-separation'],
+          rules: 'Relaxed (12px). Use for comfortable container padding, relaxed layouts, section separators, and breathing room in dense layouts.',
+        },
+        'org.primer.figma': {
+          collection: 'functional/size',
+          scopes: ['gap'],
+        },
+      },
+    },
+    lg: {
+      $value: '{base.size.16}',
+      $type: 'dimension',
+      $description: 'Spacious spacing for major layout divisions and visual separation between content blocks.',
+      $extensions: {
+        'org.primer.llm': {
+          usage: ['gap', 'padding', 'margin', 'section-gap', 'container-margin'],
+          rules: 'Spacious (16px). Use for major layout divisions, visual separation between content blocks, and primary container margins.',
+        },
+        'org.primer.figma': {
+          collection: 'functional/size',
+          scopes: ['gap'],
+        },
+      },
+    },
+    xl: {
+      $value: '{base.size.24}',
+      $type: 'dimension',
+      $description: 'Expansive spacing for large sections and top-level structure separation.',
+      $extensions: {
+        'org.primer.llm': {
+          usage: ['gap', 'padding', 'margin', 'page-sections', 'major-divisions'],
+          rules: 'Expansive (24px). Use for large section separation, top-level layout structure, major page divisions, and expansive breathing room.',
+        },
+        'org.primer.figma': {
+          collection: 'functional/size',
+          scopes: ['gap'],
+        },
+      },
+    },
+  },
+}

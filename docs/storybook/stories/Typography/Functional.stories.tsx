@@ -2,9 +2,10 @@ import React from 'react'
 // eslint-disable-next-line import/extensions
 import sizeTokens from '../../../../dist/docs/functional/typography/typography.json'
 import {DataTable, Table} from '@primer/react/experimental'
-import {InlineCode} from '../StorybookComponents/InlineCode/InlineCode'
 import {TypographyDemo} from '../StorybookComponents/TypographyDemo/TypographyDemo'
 import {getTokensByName} from '../utilities/getTokensByName'
+import {formatTokenValue} from '../utilities/formatTokenValue'
+import {tokenColumn, outputValueColumn} from '../utilities/commonTableColumns'
 
 export default {
   title: 'Typography/Functional',
@@ -14,13 +15,79 @@ export default {
   },
 }
 
+const allTextTokens = () =>
+  getTokensByName(sizeTokens, 'text').map(token => ({
+    id: token.name,
+    ...token,
+  }))
+
+const cssPropertyColumn = () => ({
+  header: 'Property',
+  field: 'name' as const,
+  rowHeader: true,
+  renderCell: (row: {name: string}) => (
+    <code>
+      {row.name.includes('size')
+        ? 'font-size'
+        : row.name.includes('weight')
+          ? 'font-weight'
+          : row.name.includes('lineHeight')
+            ? 'line-height'
+            : row.name.includes('lineBoxHeight')
+              ? 'height'
+              : row.name.includes('shorthand')
+                ? 'font'
+                : undefined}
+    </code>
+  ),
+})
+
+const sourceValueSkipShorthandColumn = () => ({
+  header: 'Source value',
+  field: 'original' as const,
+  rowHeader: true,
+  renderCell: (row: {name: string; original: {$value: unknown}}) => (
+    <p>{row.name.includes('shorthand') ? undefined : formatTokenValue(row.original.$value)}</p>
+  ),
+})
+
+/**
+ * Factory for typography style stories (Display, Title, Body, etc.)
+ * Each story shows a TypographyDemo header and a table of individual tokens.
+ */
+const createTypographyStory = ({
+  label,
+  shorthand,
+  includes,
+}: {
+  label: string
+  shorthand: string
+  includes: string[]
+}) => {
+  const Story = () => {
+    const filteredData = allTextTokens().filter(
+      item => !item.id.includes('shorthand') && includes.every(keyword => item.id.includes(keyword)),
+    )
+
+    return (
+      <Table.Container>
+        <TypographyDemo container id="type" fontShorthand={shorthand}>
+          {label}
+        </TypographyDemo>
+        <DataTable
+          aria-labelledby="type"
+          data={filteredData}
+          columns={[cssPropertyColumn(), tokenColumn(), outputValueColumn(), sourceValueSkipShorthandColumn()]}
+        />
+      </Table.Container>
+    )
+  }
+  Story.tags = ['excludeSnapshot']
+  return Story
+}
+
 export const FontFamily = () => {
-  const data = getTokensByName(sizeTokens, 'fontStack').map(token => {
-    return {
-      id: token.name,
-      ...token,
-    }
-  })
+  const data = getTokensByName(sizeTokens, 'fontStack').map(token => ({id: token.name, ...token}))
 
   return (
     <Table.Container>
@@ -35,34 +102,23 @@ export const FontFamily = () => {
             header: 'Sample',
             field: 'name',
             rowHeader: true,
-            renderCell: row => {
-              return (
-                <TypographyDemo
-                  fontFamily={row.name}
-                  fontSize="text-title-size-medium"
-                  fontWeight="base-text-weight-normal"
-                >
-                  {row.name.split('-').pop().split('-').pop()}
-                </TypographyDemo>
-              )
-            },
+            renderCell: row => (
+              <TypographyDemo
+                fontFamily={row.name}
+                fontSize="text-title-size-medium"
+                fontWeight="base-text-weight-normal"
+              >
+                {row.name.split('-').pop().split('-').pop()}
+              </TypographyDemo>
+            ),
           },
-          {
-            header: 'Token',
-            field: 'name',
-            rowHeader: true,
-            renderCell: row => {
-              return <InlineCode value={row.name} copyClipboard />
-            },
-          },
+          tokenColumn(),
           {
             header: 'Output value',
-            field: 'value',
+            field: 'value' as const,
             rowHeader: true,
             width: 'auto',
-            renderCell: row => {
-              return <p>{row.value}</p>
-            },
+            renderCell: (row: {value: unknown}) => <p>{formatTokenValue(row.value)}</p>,
           },
         ]}
       />
@@ -72,14 +128,7 @@ export const FontFamily = () => {
 FontFamily.tags = ['excludeSnapshot']
 
 export const FontShorthand = () => {
-  const data = getTokensByName(sizeTokens, 'text').map(token => {
-    return {
-      id: token.name,
-      ...token,
-    }
-  })
-
-  const filteredData = data.filter(item => item.id.includes('shorthand'))
+  const filteredData = allTextTokens().filter(item => item.id.includes('shorthand'))
 
   return (
     <Table.Container>
@@ -94,42 +143,33 @@ export const FontShorthand = () => {
             header: 'Sample',
             field: 'name',
             rowHeader: true,
-            renderCell: row => {
-              return <TypographyDemo fontShorthand={row.name}>{row.name.split('-')[1]}</TypographyDemo>
-            },
+            renderCell: row => <TypographyDemo fontShorthand={row.name}>{row.name.split('-')[1]}</TypographyDemo>,
           },
-          {
-            header: 'Token',
-            field: 'name',
-            rowHeader: true,
-            renderCell: row => {
-              return <InlineCode value={row.name} copyClipboard />
-            },
-          },
+          tokenColumn(),
           {
             header: 'Source value',
-            field: 'original',
+            field: 'original' as const,
             rowHeader: true,
-            renderCell: row => {
-              return (
-                <div>
+            renderCell: (row: {
+              original: {$value: {fontWeight?: string; fontSize?: string; fontFamily?: string; lineHeight?: string}}
+            }) => (
+              <div>
+                <p>
+                  font-weight: <code>{row.original.$value.fontWeight}</code>
+                </p>
+                <p>
+                  font-size: <code>{row.original.$value.fontSize}</code>
+                </p>
+                <p>
+                  font-family: <code>{row.original.$value.fontFamily}</code>
+                </p>
+                {row.original.$value.lineHeight && (
                   <p>
-                    font-weight: <code>{row.original.$value.fontSize}</code>
+                    line-height: <code>{row.original.$value.lineHeight}</code>
                   </p>
-                  <p>
-                    font-size: <code>{row.original.$value.fontSize}</code>
-                  </p>
-                  <p>
-                    font-family: <code>{row.original.$value.fontFamily}</code>
-                  </p>
-                  {row.original.$value.lineHeight && (
-                    <p>
-                      line-height: <code>{row.original.$value.lineHeight}</code>
-                    </p>
-                  )}
-                </div>
-              )
-            },
+                )}
+              </div>
+            ),
           },
         ]}
       />
@@ -138,848 +178,74 @@ export const FontShorthand = () => {
 }
 FontShorthand.tags = ['excludeSnapshot']
 
-export const Display = () => {
-  const data = getTokensByName(sizeTokens, 'text').map(token => {
-    return {
-      id: token.name,
-      ...token,
-    }
-  })
+export const Display = createTypographyStory({
+  label: 'Display',
+  shorthand: 'text-display-shorthand',
+  includes: ['display'],
+})
 
-  const filteredData = data.filter(item => !item.id.includes('shorthand') && item.id.includes('display'))
+export const TitleLarge = createTypographyStory({
+  label: 'Title large',
+  shorthand: 'text-title-shorthand-large',
+  includes: ['title', 'large'],
+})
 
-  return (
-    <Table.Container>
-      <TypographyDemo container id="type" fontShorthand="text-display-shorthand">
-        Display
-      </TypographyDemo>
-      <DataTable
-        aria-labelledby="type"
-        data={filteredData}
-        columns={[
-          {
-            header: 'Property',
-            field: 'name',
-            rowHeader: true,
-            renderCell: row => {
-              return (
-                <code>
-                  {row.name.includes('size')
-                    ? 'font-size'
-                    : row.name.includes('weight')
-                      ? 'font-weight'
-                      : row.name.includes('lineHeight')
-                        ? 'line-height'
-                        : row.name.includes('lineBoxHeight')
-                          ? 'height'
-                          : row.name.includes('shorthand')
-                            ? 'font'
-                            : undefined}
-                </code>
-              )
-            },
-          },
-          {
-            header: 'Token',
-            field: 'name',
-            rowHeader: true,
-            renderCell: row => {
-              return <InlineCode value={row.name} copyClipboard />
-            },
-          },
-          {
-            header: 'Output value',
-            field: 'value',
-            rowHeader: true,
-            renderCell: row => {
-              return <p>{row.value}</p>
-            },
-          },
-          {
-            header: 'Source value',
-            field: 'original',
-            rowHeader: true,
-            renderCell: row => {
-              return <p>{row.name.includes('shorthand') ? undefined : row.original.$value}</p>
-            },
-          },
-        ]}
-      />
-    </Table.Container>
-  )
-}
-Display.tags = ['excludeSnapshot']
+export const TitleMedium = createTypographyStory({
+  label: 'Title medium',
+  shorthand: 'text-title-shorthand-medium',
+  includes: ['title', 'medium'],
+})
 
-export const TitleLarge = () => {
-  const data = getTokensByName(sizeTokens, 'text').map(token => {
-    return {
-      id: token.name,
-      ...token,
-    }
-  })
+export const TitleSmall = createTypographyStory({
+  label: 'Title small',
+  shorthand: 'text-title-shorthand-small',
+  includes: ['title', 'small'],
+})
 
-  const filteredData = data.filter(
-    item => !item.id.includes('shorthand') && item.id.includes('title') && item.id.includes('large'),
-  )
+export const Subtitle = createTypographyStory({
+  label: 'Subtitle',
+  shorthand: 'text-subtitle-shorthand',
+  includes: ['subtitle'],
+})
 
-  return (
-    <Table.Container>
-      <TypographyDemo container id="type" fontShorthand="text-title-shorthand-large">
-        Title large
-      </TypographyDemo>
+export const BodyLarge = createTypographyStory({
+  label: 'Body large',
+  shorthand: 'text-body-shorthand-large',
+  includes: ['body', 'large'],
+})
 
-      <DataTable
-        aria-labelledby="type"
-        data={filteredData}
-        columns={[
-          {
-            header: 'Property',
-            field: 'name',
-            rowHeader: true,
-            renderCell: row => {
-              return (
-                <code>
-                  {row.name.includes('size')
-                    ? 'font-size'
-                    : row.name.includes('weight')
-                      ? 'font-weight'
-                      : row.name.includes('lineHeight')
-                        ? 'line-height'
-                        : row.name.includes('lineBoxHeight')
-                          ? 'height'
-                          : row.name.includes('shorthand')
-                            ? 'font'
-                            : undefined}
-                </code>
-              )
-            },
-          },
-          {
-            header: 'Token',
-            field: 'name',
-            rowHeader: true,
-            renderCell: row => {
-              return <InlineCode value={row.name} copyClipboard />
-            },
-          },
-          {
-            header: 'Output value',
-            field: 'value',
-            rowHeader: true,
+export const BodyMedium = createTypographyStory({
+  label: 'Body medium',
+  shorthand: 'text-body-shorthand-medium',
+  includes: ['body', 'medium'],
+})
 
-            renderCell: row => {
-              return <p>{row.value}</p>
-            },
-          },
-          {
-            header: 'Source value',
-            field: 'original',
-            rowHeader: true,
-            renderCell: row => {
-              return <p>{row.name.includes('shorthand') ? undefined : row.original.$value}</p>
-            },
-          },
-        ]}
-      />
-    </Table.Container>
-  )
-}
-TitleLarge.tags = ['excludeSnapshot']
+export const BodySmall = createTypographyStory({
+  label: 'Body small',
+  shorthand: 'text-body-shorthand-small',
+  includes: ['body', 'small'],
+})
 
-export const TitleMedium = () => {
-  const data = getTokensByName(sizeTokens, 'text').map(token => {
-    return {
-      id: token.name,
-      ...token,
-    }
-  })
+export const Caption = createTypographyStory({
+  label: 'Caption',
+  shorthand: 'text-caption-shorthand',
+  includes: ['caption'],
+})
 
-  const filteredData = data.filter(
-    item => !item.id.includes('shorthand') && item.id.includes('title') && item.id.includes('medium'),
-  )
+export const CodeBlock = createTypographyStory({
+  label: 'Code block',
+  shorthand: 'text-codeBlock-shorthand',
+  includes: ['codeBlock'],
+})
 
-  return (
-    <Table.Container>
-      <TypographyDemo container id="type" fontShorthand="text-title-shorthand-medium">
-        Title medium
-      </TypographyDemo>
-
-      <DataTable
-        aria-labelledby="type"
-        data={filteredData}
-        columns={[
-          {
-            header: 'Property',
-            field: 'name',
-            rowHeader: true,
-
-            renderCell: row => {
-              return (
-                <code>
-                  {row.name.includes('size')
-                    ? 'font-size'
-                    : row.name.includes('weight')
-                      ? 'font-weight'
-                      : row.name.includes('lineHeight')
-                        ? 'line-height'
-                        : row.name.includes('lineBoxHeight')
-                          ? 'height'
-                          : row.name.includes('shorthand')
-                            ? 'font'
-                            : undefined}
-                </code>
-              )
-            },
-          },
-          {
-            header: 'Token',
-            field: 'name',
-            rowHeader: true,
-            renderCell: row => {
-              return <InlineCode value={row.name} copyClipboard />
-            },
-          },
-          {
-            header: 'Output value',
-            field: 'value',
-            rowHeader: true,
-
-            renderCell: row => {
-              return <p>{row.value}</p>
-            },
-          },
-          {
-            header: 'Source value',
-            field: 'original',
-            rowHeader: true,
-            renderCell: row => {
-              return <p>{row.name.includes('shorthand') ? undefined : row.original.$value}</p>
-            },
-          },
-        ]}
-      />
-    </Table.Container>
-  )
-}
-TitleMedium.tags = ['excludeSnapshot']
-
-export const TitleSmall = () => {
-  const data = getTokensByName(sizeTokens, 'text').map(token => {
-    return {
-      id: token.name,
-      ...token,
-    }
-  })
-
-  const filteredData = data.filter(
-    item => !item.id.includes('shorthand') && item.id.includes('title') && item.id.includes('small'),
-  )
-
-  return (
-    <Table.Container>
-      <TypographyDemo container id="type" fontShorthand="text-title-shorthand-small">
-        Title small
-      </TypographyDemo>
-
-      <DataTable
-        aria-labelledby="type"
-        data={filteredData}
-        columns={[
-          {
-            header: 'Property',
-            field: 'name',
-            rowHeader: true,
-
-            renderCell: row => {
-              return (
-                <code>
-                  {row.name.includes('size')
-                    ? 'font-size'
-                    : row.name.includes('weight')
-                      ? 'font-weight'
-                      : row.name.includes('lineHeight')
-                        ? 'line-height'
-                        : row.name.includes('lineBoxHeight')
-                          ? 'height'
-                          : row.name.includes('shorthand')
-                            ? 'font'
-                            : undefined}
-                </code>
-              )
-            },
-          },
-          {
-            header: 'Token',
-            field: 'name',
-            rowHeader: true,
-            renderCell: row => {
-              return <InlineCode value={row.name} copyClipboard />
-            },
-          },
-          {
-            header: 'Output value',
-            field: 'value',
-            rowHeader: true,
-
-            renderCell: row => {
-              return <p>{row.value}</p>
-            },
-          },
-          {
-            header: 'Source value',
-            field: 'original',
-            rowHeader: true,
-            renderCell: row => {
-              return <p>{row.name.includes('shorthand') ? undefined : row.original.$value}</p>
-            },
-          },
-        ]}
-      />
-    </Table.Container>
-  )
-}
-TitleSmall.tags = ['excludeSnapshot']
-
-export const Subtitle = () => {
-  const data = getTokensByName(sizeTokens, 'text').map(token => {
-    return {
-      id: token.name,
-      ...token,
-    }
-  })
-
-  const filteredData = data.filter(item => !item.id.includes('shorthand') && item.id.includes('subtitle'))
-
-  return (
-    <Table.Container>
-      <TypographyDemo container id="type" fontShorthand="text-subtitle-shorthand">
-        Subtitle
-      </TypographyDemo>
-
-      <DataTable
-        aria-labelledby="type"
-        data={filteredData}
-        columns={[
-          {
-            header: 'Property',
-            field: 'name',
-            rowHeader: true,
-
-            renderCell: row => {
-              return (
-                <code>
-                  {row.name.includes('size')
-                    ? 'font-size'
-                    : row.name.includes('weight')
-                      ? 'font-weight'
-                      : row.name.includes('lineHeight')
-                        ? 'line-height'
-                        : row.name.includes('lineBoxHeight')
-                          ? 'height'
-                          : row.name.includes('shorthand')
-                            ? 'font'
-                            : undefined}
-                </code>
-              )
-            },
-          },
-          {
-            header: 'Token',
-            field: 'name',
-            rowHeader: true,
-            renderCell: row => {
-              return <InlineCode value={row.name} copyClipboard />
-            },
-          },
-          {
-            header: 'Output value',
-            field: 'value',
-            rowHeader: true,
-
-            renderCell: row => {
-              return <p>{row.value}</p>
-            },
-          },
-          {
-            header: 'Source value',
-            field: 'original',
-            rowHeader: true,
-            renderCell: row => {
-              return <p>{row.name.includes('shorthand') ? undefined : row.original.$value}</p>
-            },
-          },
-        ]}
-      />
-    </Table.Container>
-  )
-}
-Subtitle.tags = ['excludeSnapshot']
-
-export const BodyLarge = () => {
-  const data = getTokensByName(sizeTokens, 'text').map(token => {
-    return {
-      id: token.name,
-      ...token,
-    }
-  })
-
-  const filteredData = data.filter(
-    item => !item.id.includes('shorthand') && item.id.includes('body') && item.id.includes('large'),
-  )
-
-  return (
-    <Table.Container>
-      <TypographyDemo container id="type" fontShorthand="text-body-shorthand-large">
-        Body large
-      </TypographyDemo>
-
-      <DataTable
-        aria-labelledby="type"
-        data={filteredData}
-        columns={[
-          {
-            header: 'Property',
-            field: 'name',
-            rowHeader: true,
-
-            renderCell: row => {
-              return (
-                <code>
-                  {row.name.includes('size')
-                    ? 'font-size'
-                    : row.name.includes('weight')
-                      ? 'font-weight'
-                      : row.name.includes('lineHeight')
-                        ? 'line-height'
-                        : row.name.includes('lineBoxHeight')
-                          ? 'height'
-                          : row.name.includes('shorthand')
-                            ? 'font'
-                            : undefined}
-                </code>
-              )
-            },
-          },
-          {
-            header: 'Token',
-            field: 'name',
-            rowHeader: true,
-            renderCell: row => {
-              return <InlineCode value={row.name} copyClipboard />
-            },
-          },
-          {
-            header: 'Output value',
-            field: 'value',
-            rowHeader: true,
-
-            renderCell: row => {
-              return <p>{row.value}</p>
-            },
-          },
-          {
-            header: 'Source value',
-            field: 'original',
-            rowHeader: true,
-            renderCell: row => {
-              return <p>{row.name.includes('shorthand') ? undefined : row.original.$value}</p>
-            },
-          },
-        ]}
-      />
-    </Table.Container>
-  )
-}
-BodyLarge.tags = ['excludeSnapshot']
-
-export const BodyMedium = () => {
-  const data = getTokensByName(sizeTokens, 'text').map(token => {
-    return {
-      id: token.name,
-      ...token,
-    }
-  })
-
-  const filteredData = data.filter(
-    item => !item.id.includes('shorthand') && item.id.includes('body') && item.id.includes('medium'),
-  )
-
-  return (
-    <Table.Container>
-      <TypographyDemo container id="type" fontShorthand="text-body-shorthand-medium">
-        Body medium
-      </TypographyDemo>
-
-      <DataTable
-        aria-labelledby="type"
-        data={filteredData}
-        columns={[
-          {
-            header: 'Property',
-            field: 'name',
-            rowHeader: true,
-
-            renderCell: row => {
-              return (
-                <code>
-                  {row.name.includes('size')
-                    ? 'font-size'
-                    : row.name.includes('weight')
-                      ? 'font-weight'
-                      : row.name.includes('lineHeight')
-                        ? 'line-height'
-                        : row.name.includes('lineBoxHeight')
-                          ? 'height'
-                          : row.name.includes('shorthand')
-                            ? 'font'
-                            : undefined}
-                </code>
-              )
-            },
-          },
-          {
-            header: 'Token',
-            field: 'name',
-            rowHeader: true,
-            renderCell: row => {
-              return <InlineCode value={row.name} copyClipboard />
-            },
-          },
-          {
-            header: 'Output value',
-            field: 'value',
-            rowHeader: true,
-
-            renderCell: row => {
-              return <p>{row.value}</p>
-            },
-          },
-          {
-            header: 'Source value',
-            field: 'original',
-            rowHeader: true,
-            renderCell: row => {
-              return <p>{row.name.includes('shorthand') ? undefined : row.original.$value}</p>
-            },
-          },
-        ]}
-      />
-    </Table.Container>
-  )
-}
-BodyMedium.tags = ['excludeSnapshot']
-
-export const BodySmall = () => {
-  const data = getTokensByName(sizeTokens, 'text').map(token => {
-    return {
-      id: token.name,
-      ...token,
-    }
-  })
-
-  const filteredData = data.filter(
-    item => !item.id.includes('shorthand') && item.id.includes('body') && item.id.includes('small'),
-  )
-
-  return (
-    <Table.Container>
-      <TypographyDemo container id="type" fontShorthand="text-body-shorthand-small">
-        Body small
-      </TypographyDemo>
-
-      <DataTable
-        aria-labelledby="type"
-        data={filteredData}
-        columns={[
-          {
-            header: 'Property',
-            field: 'name',
-            rowHeader: true,
-
-            renderCell: row => {
-              return (
-                <code>
-                  {row.name.includes('size')
-                    ? 'font-size'
-                    : row.name.includes('weight')
-                      ? 'font-weight'
-                      : row.name.includes('lineHeight')
-                        ? 'line-height'
-                        : row.name.includes('lineBoxHeight')
-                          ? 'height'
-                          : row.name.includes('shorthand')
-                            ? 'font'
-                            : undefined}
-                </code>
-              )
-            },
-          },
-          {
-            header: 'Token',
-            field: 'name',
-            rowHeader: true,
-            renderCell: row => {
-              return <InlineCode value={row.name} copyClipboard />
-            },
-          },
-          {
-            header: 'Output value',
-            field: 'value',
-            rowHeader: true,
-
-            renderCell: row => {
-              return <p>{row.value}</p>
-            },
-          },
-          {
-            header: 'Source value',
-            field: 'original',
-            rowHeader: true,
-            renderCell: row => {
-              return <p>{row.name.includes('shorthand') ? undefined : row.original.$value}</p>
-            },
-          },
-        ]}
-      />
-    </Table.Container>
-  )
-}
-BodySmall.tags = ['excludeSnapshot']
-
-export const Caption = () => {
-  const data = getTokensByName(sizeTokens, 'text').map(token => {
-    return {
-      id: token.name,
-      ...token,
-    }
-  })
-
-  const filteredData = data.filter(item => !item.id.includes('shorthand') && item.id.includes('caption'))
-
-  return (
-    <Table.Container>
-      <TypographyDemo container id="type" fontShorthand="text-caption-shorthand">
-        Caption
-      </TypographyDemo>
-
-      <DataTable
-        aria-labelledby="type"
-        data={filteredData}
-        columns={[
-          {
-            header: 'Property',
-            field: 'name',
-            rowHeader: true,
-
-            renderCell: row => {
-              return (
-                <code>
-                  {row.name.includes('size')
-                    ? 'font-size'
-                    : row.name.includes('weight')
-                      ? 'font-weight'
-                      : row.name.includes('lineHeight')
-                        ? 'line-height'
-                        : row.name.includes('lineBoxHeight')
-                          ? 'height'
-                          : row.name.includes('shorthand')
-                            ? 'font'
-                            : undefined}
-                </code>
-              )
-            },
-          },
-          {
-            header: 'Token',
-            field: 'name',
-            rowHeader: true,
-            renderCell: row => {
-              return <InlineCode value={row.name} copyClipboard />
-            },
-          },
-          {
-            header: 'Output value',
-            field: 'value',
-            rowHeader: true,
-
-            renderCell: row => {
-              return <p>{row.value}</p>
-            },
-          },
-          {
-            header: 'Source value',
-            field: 'original',
-            rowHeader: true,
-            renderCell: row => {
-              return <p>{row.name.includes('shorthand') ? undefined : row.original.$value}</p>
-            },
-          },
-        ]}
-      />
-    </Table.Container>
-  )
-}
-Caption.tags = ['excludeSnapshot']
-
-export const CodeBlock = () => {
-  const data = getTokensByName(sizeTokens, 'text').map(token => {
-    return {
-      id: token.name,
-      ...token,
-    }
-  })
-
-  const filteredData = data.filter(item => !item.id.includes('shorthand') && item.id.includes('codeBlock'))
-
-  return (
-    <Table.Container>
-      <TypographyDemo container id="type" fontShorthand="text-codeBlock-shorthand">
-        Code block
-      </TypographyDemo>
-
-      <DataTable
-        aria-labelledby="type"
-        data={filteredData}
-        columns={[
-          {
-            header: 'Property',
-            field: 'name',
-            rowHeader: true,
-
-            renderCell: row => {
-              return (
-                <code>
-                  {row.name.includes('size')
-                    ? 'font-size'
-                    : row.name.includes('weight')
-                      ? 'font-weight'
-                      : row.name.includes('lineHeight')
-                        ? 'line-height'
-                        : row.name.includes('lineBoxHeight')
-                          ? 'height'
-                          : row.name.includes('shorthand')
-                            ? 'font'
-                            : undefined}
-                </code>
-              )
-            },
-          },
-          {
-            header: 'Token',
-            field: 'name',
-            rowHeader: true,
-            renderCell: row => {
-              return <InlineCode value={row.name} copyClipboard />
-            },
-          },
-          {
-            header: 'Output value',
-            field: 'value',
-            rowHeader: true,
-
-            renderCell: row => {
-              return <p>{row.value}</p>
-            },
-          },
-          {
-            header: 'Source value',
-            field: 'original',
-            rowHeader: true,
-            renderCell: row => {
-              return <p>{row.name.includes('shorthand') ? undefined : row.original.$value}</p>
-            },
-          },
-        ]}
-      />
-    </Table.Container>
-  )
-}
-CodeBlock.tags = ['excludeSnapshot']
-
-export const InlineCodeBlock = () => {
-  const data = getTokensByName(sizeTokens, 'text').map(token => {
-    return {
-      id: token.name,
-      ...token,
-    }
-  })
-
-  const filteredData = data.filter(item => !item.id.includes('shorthand') && item.id.includes('codeInline'))
-
-  return (
-    <Table.Container>
-      <TypographyDemo container id="type" fontShorthand="text-codeInline-shorthand">
-        Inline code block
-      </TypographyDemo>
-
-      <DataTable
-        aria-labelledby="type"
-        data={filteredData}
-        columns={[
-          {
-            header: 'Property',
-            field: 'name',
-            rowHeader: true,
-
-            renderCell: row => {
-              return (
-                <code>
-                  {row.name.includes('size')
-                    ? 'font-size'
-                    : row.name.includes('weight')
-                      ? 'font-weight'
-                      : row.name.includes('lineHeight')
-                        ? 'line-height'
-                        : row.name.includes('lineBoxHeight')
-                          ? 'height'
-                          : row.name.includes('shorthand')
-                            ? 'font'
-                            : undefined}
-                </code>
-              )
-            },
-          },
-          {
-            header: 'Token',
-            field: 'name',
-            rowHeader: true,
-            renderCell: row => {
-              return <InlineCode value={row.name} copyClipboard />
-            },
-          },
-          {
-            header: 'Output value',
-            field: 'value',
-            rowHeader: true,
-
-            renderCell: row => {
-              return <p>{row.value}</p>
-            },
-          },
-          {
-            header: 'Source value',
-            field: 'original',
-            rowHeader: true,
-            renderCell: row => {
-              return <p>{row.name.includes('shorthand') ? undefined : row.original.$value}</p>
-            },
-          },
-        ]}
-      />
-    </Table.Container>
-  )
-}
-InlineCodeBlock.tags = ['excludeSnapshot']
+export const InlineCodeBlock = createTypographyStory({
+  label: 'Inline code block',
+  shorthand: 'text-codeInline-shorthand',
+  includes: ['codeInline'],
+})
 
 export const Overview = () => {
-  const data = getTokensByName(sizeTokens, 'text').map(token => {
-    return {
-      id: token.name,
-      ...token,
-    }
-  })
-
-  const filteredData = data.filter(item => item.id.includes('shorthand'))
+  const filteredData = allTextTokens().filter(item => item.id.includes('shorthand'))
 
   return (
     <Table.Container>
@@ -995,40 +261,36 @@ export const Overview = () => {
             field: 'name',
             rowHeader: true,
             width: 'auto',
-            renderCell: row => {
-              return (
-                <TypographyDemo fontShorthand={row.name}>
-                  {row.name.split('-')[1]}
-                  {row.name.includes('large')
-                    ? ' large'
-                    : row.name.includes('small')
-                      ? ' small'
-                      : row.name.includes('medium')
-                        ? ' medium'
-                        : undefined}
-                </TypographyDemo>
-              )
-            },
+            renderCell: row => (
+              <TypographyDemo fontShorthand={row.name}>
+                {row.name.split('-')[1]}
+                {row.name.includes('large')
+                  ? ' large'
+                  : row.name.includes('small')
+                    ? ' small'
+                    : row.name.includes('medium')
+                      ? ' medium'
+                      : undefined}
+              </TypographyDemo>
+            ),
           },
           {
             header: 'Description',
-            field: 'description',
+            field: 'description' as const,
             rowHeader: true,
             width: 'auto',
-            renderCell: row => {
-              return (
-                <p
-                  style={{
-                    fontSize: 'var(--text-body-size-medium)',
-                    lineHeight: 'var(--text-body-lineHeight-medium)',
-                    fontWeight: 'var(--base-text-weight-normal',
-                    marginBottom: '0',
-                  }}
-                >
-                  {row.description}
-                </p>
-              )
-            },
+            renderCell: (row: {description: string}) => (
+              <p
+                style={{
+                  fontSize: 'var(--text-body-size-medium)',
+                  lineHeight: 'var(--text-body-lineHeight-medium)',
+                  fontWeight: 'var(--base-text-weight-normal)',
+                  marginBottom: '0',
+                }}
+              >
+                {row.description}
+              </p>
+            ),
           },
         ]}
       />

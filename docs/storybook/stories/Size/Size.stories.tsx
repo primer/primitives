@@ -3,8 +3,8 @@ import React from 'react'
 import sizeTokens from '../../../../dist/docs/base/size/size.json'
 import {SizeTokenSwatch} from '../StorybookComponents/SizeTokenSwatch/SizeTokenSwatch'
 import {DataTable, Table} from '@primer/react/experimental'
-import {InlineCode} from '../StorybookComponents/InlineCode/InlineCode'
 import {getTokensByName} from '../utilities/getTokensByName'
+import {tokenColumn, outputValueColumn, sourceValueColumn} from '../utilities/commonTableColumns'
 
 export default {
   title: 'Size/Base',
@@ -16,12 +16,7 @@ export default {
 
 export const Base = () => {
   const data = getTokensByName(sizeTokens, 'base')
-    .map(token => {
-      return {
-        id: token.name,
-        ...token,
-      }
-    })
+    .map(token => ({id: token.name, ...token}))
     .sort((a, b) => {
       const numA = parseInt(a.name.split('-').pop() || '0', 10)
       const numB = parseInt(b.name.split('-').pop() || '0', 10)
@@ -41,34 +36,11 @@ export const Base = () => {
             header: 'Sample',
             field: 'name',
             rowHeader: true,
-            renderCell: row => {
-              return <SizeTokenSwatch size={row.name} filled />
-            },
+            renderCell: row => <SizeTokenSwatch size={row.name} filled />,
           },
-          {
-            header: 'Token',
-            field: 'name',
-            rowHeader: true,
-            renderCell: row => {
-              return <InlineCode value={row.name} copyClipboard cssVar />
-            },
-          },
-          {
-            header: 'Output value',
-            field: 'value',
-            rowHeader: true,
-            renderCell: row => {
-              return <p>{row.value}</p>
-            },
-          },
-          {
-            header: 'Source value',
-            field: 'original.$value',
-            rowHeader: true,
-            renderCell: row => {
-              return <p>{row.original.$value}</p>
-            },
-          },
+          tokenColumn({cssVar: true}),
+          outputValueColumn(),
+          sourceValueColumn(),
         ]}
       />
     </Table.Container>

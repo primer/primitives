@@ -1,5 +1,104 @@
 # @primer/primitives
 
+## 11.8.0
+
+### Minor Changes
+
+- [#1350](https://github.com/primer/primitives/pull/1350) [`2e67d1b`](https://github.com/primer/primitives/commit/2e67d1b008522e8e55baf509993e97518db219bc) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Add functional motion tokens completing the base→functional→component architecture
+
+- [#1370](https://github.com/primer/primitives/pull/1370) [`6d3b5b8`](https://github.com/primer/primitives/commit/6d3b5b852007e476a51065c4d51d9c3e053eef9f) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Add functional spacing tokens (xxs, xs, sm, md, lg, xl) for semantic gap, padding, and margin. Provides unified spacing scale with W3C-compliant dimension format and Figma integration.
+
+## 11.7.1
+
+### Patch Changes
+
+- [#1355](https://github.com/primer/primitives/pull/1355) [`4f52045`](https://github.com/primer/primitives/commit/4f52045a6cb5dfc575cc842ef08abb6beddc4ca2) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Fix Figma base scale output for override themes (dark-dimmed, dark-high-contrast, light-high-contrast) to include all tokens. Previously, inherited tokens (e.g. neutral, black, transparent) retained the parent theme's collection name and were missing from the override theme's Figma collection.
+
+- [#1353](https://github.com/primer/primitives/pull/1353) [`9558473`](https://github.com/primer/primitives/commit/9558473ec40712028df2ffa6e5ae228dc52c752a) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Improve npm script names for consistency and clarity
+  - Rename `build:config` → `build:types`
+  - Rename `validate:contrast` → `check:contrast`
+  - Rename `format:fix` → `format` and `format` → `format:check`
+  - Rename `install:storybook` → `storybook:install` and `start:storybook` → `storybook`
+  - Add `check` script combining lint, format check, test, and build
+  - Fix double clean in build pipeline (`prebuild` + explicit `clean`)
+  - Add `--max-warnings=0` to `lint` script
+  - Fix double-space typo in format command
+  - Normalize `./scripts/` → `scripts/` path prefixes
+
+## 11.7.0
+
+### Minor Changes
+
+- [#1349](https://github.com/primer/primitives/pull/1349) [`4bedeb1`](https://github.com/primer/primitives/commit/4bedeb17d7c94c5666d50db4c28ff1de5f4a1766) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Remove redundant `lineBoxHeight` tokens
+
+  The following tokens have been removed:
+  - `text-display-lineBoxHeight` - Duplicated `text-display-lineHeight` value
+  - `control-xsmall-lineBoxHeight`
+  - `control-small-lineBoxHeight`
+  - `control-medium-lineBoxHeight`
+  - `control-large-lineBoxHeight`
+  - `control-xlarge-lineBoxHeight`
+
+  These tokens were inconsistently defined (typography used unitless multipliers while controls used absolute dimensions) and were not providing clear value. The control sizing formula (`size = lineBoxHeight + 2 × paddingBlock`) can be derived from existing `size` and `paddingBlock` tokens. Breaking changes have been mitigated on the platform.
+
+### Patch Changes
+
+- [#1344](https://github.com/primer/primitives/pull/1344) [`cb7c706`](https://github.com/primer/primitives/commit/cb7c706fcab713d0f60fa8d1b8139876f585bd4d) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Consolidate focus outline tokens into `src/tokens/component/focus.json5` with consistent kebab-case naming (`focus-outline-color`, `focus-outline-width`, `focus-outline-offset`). Deprecated aliases for the old names are included for backward compatibility.
+
+  Route focus dimension tokens (`--focus-outline-width`, `--focus-outline-offset`, `--outline-focus-offset`, `--outline-focus-width`) to `css/functional/size/border.css` instead of theme CSS files, since these values are static and don't vary by theme.
+
+- [#1345](https://github.com/primer/primitives/pull/1345) [`35d9a90`](https://github.com/primer/primitives/commit/35d9a90cc2b9dffcd0d6949a77b779a2fd91a20b) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Remove `shadow.floating.legacy`. Reduce `shadow.floating.small` light mode border alpha from 0.5 to 0.25.
+
+- [#1346](https://github.com/primer/primitives/pull/1346) [`7728903`](https://github.com/primer/primitives/commit/7728903b82235002714cec66858bb0287a3faddf) Thanks [@copilot-swe-agent](https://github.com/apps/copilot-swe-agent)! - Update light-high-contrast fgColor tokens to custom hex values between scale levels 5 and 6
+
+  Improves visual differentiation between status colors (open/closed/done) in the light high-contrast theme. The three affected tokens (fgColor.success, fgColor.danger, fgColor.done) previously resolved to base color scale level 6, making them too dark and visually indistinct. No single scale step satisfies both the 7:1 contrast minimum and chromatic distinction, so custom hex values interpolated between levels 5 and 6 are used instead, following the precedent set by dark high-contrast theme overrides.
+
+## 11.6.0
+
+### Minor Changes
+
+- [#1332](https://github.com/primer/primitives/pull/1332) [`358a22e`](https://github.com/primer/primitives/commit/358a22eb88f45c68574f98efd5be8eb0cf5d8148) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Add 'Mona Sans VF' as the primary font in `system`, `sansSerif`, and `sansSerifDisplay` font stacks
+
+## 11.5.1
+
+### Patch Changes
+
+- [#1322](https://github.com/primer/primitives/pull/1322) [`af16c12`](https://github.com/primer/primitives/commit/af16c1209ad0042c55c4136ed83049161f08f326) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Changing dark dimmed fgColor-default to previous value
+
+## 11.5.0
+
+### Minor Changes
+
+- [#1319](https://github.com/primer/primitives/pull/1319) [`dccf2af`](https://github.com/primer/primitives/commit/dccf2af9db11a4f3a0ee32f756338f382ec13c5d) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Add z-index design tokens for managing stacking context. Introduces base z-index scale (0-600) and 8 semantic functional tokens: `behind`, `default`, `sticky`, `dropdown`, `overlay`, `modal`, `popover`, and `skipLink`. Includes LLM metadata with usage guidance and shadow-to-z-index alignment rules.
+
+- [#1315](https://github.com/primer/primitives/pull/1315) [`8bb3e76`](https://github.com/primer/primitives/commit/8bb3e76843c0e9b210a34bf322cd3dd23d4d181b) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Add some missing tokens that confused the AI
+
+- [#1320](https://github.com/primer/primitives/pull/1320) [`6c1af22`](https://github.com/primer/primitives/commit/6c1af223c33f6cc9e201b8a0a4407a536d0297f7) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Add negative base size tokens (`negative-2` through `negative-48`) for sizes 2–48
+
+### Patch Changes
+
+- [#1301](https://github.com/primer/primitives/pull/1301) [`423b6e1`](https://github.com/primer/primitives/commit/423b6e1b3699b3b8fc395a785ffe66f1ebf8be50) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Convert duration tokens to w3c
+
+- [#1318](https://github.com/primer/primitives/pull/1318) [`4d0f257`](https://github.com/primer/primitives/commit/4d0f2577afa5413b4a0994affa40e98bce523e67) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Fix dark mode contrast for controlTrack and controlKnob tokens. The track now recedes (darker) and the knob stands out (lighter) in all dark mode variants, fixing the inverted visual hierarchy in SegmentedControl and ToggleSwitch.
+
+- [#1308](https://github.com/primer/primitives/pull/1308) [`135dd9b`](https://github.com/primer/primitives/commit/135dd9b866a5731c680dc0b1ce35018b400d383c) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Update shadow tokens to use W3C DTCG object format for dimension values
+  - Shadow token dimension properties (`offsetX`, `offsetY`, `blur`, `spread`) now use object format `{ value: number, unit: "px" }` instead of legacy strings like `"1px"`
+  - Updated `shadowToCss` transformer to handle W3C dimension objects
+  - Updated `ShadowTokenValue` type to require `DimensionTokenValue` for dimension properties
+  - Legacy string format for shadow dimensions is no longer supported
+
+- [#1306](https://github.com/primer/primitives/pull/1306) [`e4e355f`](https://github.com/primer/primitives/commit/e4e355f53b6cfd088bdcf7ab63d066332f26c176) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Adding metadata for:
+  - shadow tokens
+  - display tokens
+  - ansi colors
+  - syntax colors
+
+- [#1305](https://github.com/primer/primitives/pull/1305) [`305c559`](https://github.com/primer/primitives/commit/305c559fb73337e736294d0dd7cbeae611a61c95) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Change dimension tokens to W3C DTCG format (breaking change)
+  - The transformers `dimensionToRem`, `dimensionToRemPxArray`, and `dimensionToPixelUnitless` now only accept W3C DTCG object-format dimension tokens. Legacy string-based dimension values are no longer supported and will throw errors.
+  - In the W3C DTCG format, only `px` and `rem` units are supported. Support for `em` units has been removed.
+
+- [#1302](https://github.com/primer/primitives/pull/1302) [`d5a7908`](https://github.com/primer/primitives/commit/d5a79089001222d61bb9e5b01f42fa3f10384398) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Improve context for agents
+
 ## 11.4.0
 
 ### Minor Changes

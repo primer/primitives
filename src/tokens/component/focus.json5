@@ -1,0 +1,104 @@
+{
+  focus: {
+    outline: {
+      $value: {
+        color: '{focus.outline-color}',
+        style: 'solid',
+        width: '{focus.outline-width}',
+      },
+      $type: 'border',
+      $description: 'Focus ring outline for keyboard navigation and accessibility.',
+      $extensions: {
+        'org.primer.llm': {
+          usage: ['focus-ring', 'keyboard-navigation', 'accessibility-indicator'],
+          rules: 'Always ensure focus states are visible. Do not override with custom focus styles that reduce visibility. Use for interactive elements like buttons, links, and form controls.',
+        },
+      },
+    },
+    'outline-color': {
+      $value: '{borderColor.accent.emphasis}',
+      $type: 'color',
+      $description: 'Outline color for focus states on interactive elements',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'mode',
+          group: 'component (internal)',
+          scopes: ['borderColor', 'effectColor'],
+        },
+        'org.primer.llm': {
+          usage: ['focus-ring', 'keyboard-navigation', 'accessibility-indicator'],
+          rules: 'Use for focus outlines on interactive elements like buttons, links, and form controls. MUST be visible for keyboard navigation accessibility. Do NOT use for decorative borders or non-interactive elements.',
+        },
+      },
+    },
+    'outline-width': {
+      $value: {value: 2, unit: 'px'},
+      $type: 'dimension',
+      $description: 'Focus outline width (2px). Standard width for keyboard focus indicators to meet WCAG 2.4.7 accessibility requirements',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'functional/size',
+          scopes: ['borderWidth', 'effectFloat'],
+        },
+        'org.primer.llm': {
+          usage: ['focus-ring', 'keyboard-focus', 'accessibility'],
+          rules: 'MUST use for all keyboard focus indicators. Required for WCAG 2.4.7 compliance.',
+        },
+      },
+    },
+    'outline-offset': {
+      $value: {value: -2, unit: 'px'},
+      $type: 'dimension',
+      $description: 'Focus outline offset (-2px). Negative value creates an inset outline for keyboard focus indicators, ensuring the focus ring stays within the element bounds',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'functional/size',
+          scopes: ['borderWidth', 'effectFloat'],
+        },
+      },
+    },
+    // Deprecated: use focus.outline-color instead
+    outlineColor: {
+      $value: '{focus.outline-color}',
+      $type: 'color',
+      $deprecated: '{focus.outline-color}',
+      $description: 'Deprecated. Use focus.outline-color instead.',
+      $extensions: {
+        'org.primer.figma': {
+          collection: 'mode',
+          group: 'component (internal)',
+          scopes: ['borderColor', 'effectColor'],
+        },
+      },
+    },
+  },
+  // Deprecated: use focus.outline-offset and focus.outline-width instead
+  outline: {
+    focus: {
+      offset: {
+        $value: '{focus.outline-offset}',
+        $type: 'dimension',
+        $deprecated: '{focus.outline-offset}',
+        $description: 'Deprecated. Use focus.outline-offset instead.',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'functional/size',
+            scopes: ['borderWidth', 'effectFloat'],
+          },
+        },
+      },
+      width: {
+        $value: '{focus.outline-width}',
+        $type: 'dimension',
+        $deprecated: '{focus.outline-width}',
+        $description: 'Deprecated. Use focus.outline-width instead.',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'functional/size',
+            scopes: ['borderWidth', 'effectFloat'],
+          },
+        },
+      },
+    },
+  },
+}

@@ -40,6 +40,9 @@ All available imports:
 /* motion */
 @import '@primer/primitives/dist/css/base/motion/motion.css';
 
+/* spacing */
+@import '@primer/primitives/dist/css/functional/spacing/space.css';
+
 /* color */
 @import '@primer/primitives/dist/css/functional/themes/light.css';
 @import '@primer/primitives/dist/css/functional/themes/light-tritanopia.css';
@@ -53,10 +56,12 @@ All available imports:
 ```
 
 > **Note:** Motion CSS imports are required for components with animations, such as `Spinner` from `@primer/react`. If you're experiencing issues with animated components appearing static, ensure you've imported the motion CSS files.
+>
+> **Note:** Spacing tokens provide a unified semantic scale for `gap`, `padding`, and `margin`. Import `functional/spacing/space.css` to use `--space-*` tokens in your components.
 
 ## Design token data
 
-Design token data is stored in the [src/tokens](./src/tokens/) directory. These tokens are compiled with [style dictionary](https://amzn.github.io/style-dictionary/#/) in [scripts/buildTokens.ts](./scripts/buildTokens.ts).
+Design token data is stored in the [src/tokens](./src/tokens/) directory. These tokens are compiled with [style dictionary](https://styledictionary.com) in [scripts/buildTokens.ts](./scripts/buildTokens.ts).
 
 To make working with tokens easier, we added some additional functionality on top of what style dictionary comes with:
 

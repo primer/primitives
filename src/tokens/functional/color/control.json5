@@ -1165,21 +1165,21 @@
             scopes: ['bgColor'],
           },
           'org.primer.overrides': {
-            dark: '{base.color.neutral.4}',
+            dark: '{base.color.neutral.0}',
             'dark-high-contrast': {
-              $value: '{base.color.neutral.5}',
+              $value: '{base.color.neutral.0}',
             },
             'dark-tritanopia-high-contrast': {
-              $value: '{base.color.neutral.5}',
+              $value: '{base.color.neutral.0}',
             },
             'dark-protanopia-deuteranopia-high-contrast': {
-              $value: '{base.color.neutral.5}',
+              $value: '{base.color.neutral.0}',
             },
             'dark-dimmed': {
-              $value: '{base.color.neutral.5}',
+              $value: '{base.color.neutral.2}',
             },
             'dark-dimmed-high-contrast': {
-              $value: '{base.color.neutral.5}',
+              $value: '{base.color.neutral.2}',
             },
             'light-high-contrast': {
               $value: '{base.color.neutral.5}',
@@ -1397,9 +1397,21 @@
             scopes: ['bgColor'],
           },
           'org.primer.overrides': {
-            dark: '{bgColor.inset}',
+            dark: '{base.color.neutral.4}',
+            'dark-high-contrast': {
+              $value: '{base.color.neutral.5}',
+            },
+            'dark-tritanopia-high-contrast': {
+              $value: '{base.color.neutral.5}',
+            },
+            'dark-protanopia-deuteranopia-high-contrast': {
+              $value: '{base.color.neutral.5}',
+            },
             'dark-dimmed': {
-              $value: '{bgColor.inset}',
+              $value: '{base.color.neutral.5}',
+            },
+            'dark-dimmed-high-contrast': {
+              $value: '{base.color.neutral.5}',
             },
           },
         },

@@ -27,6 +27,12 @@ export const transitionToCss: Transform = {
     // check required properties
     checkRequiredTokenProperties(value, ['duration', 'timingFunction'])
 
-    return `${value.duration} ${cubicBezierArrayToCss(value.timingFunction, token.path)} ${value.delay ? value.delay : ''}`.trim()
+    // timingFunction may already be a CSS string if resolved from a cubicBezier reference
+    const timing =
+      typeof value.timingFunction === 'string'
+        ? value.timingFunction
+        : cubicBezierArrayToCss(value.timingFunction, token.path)
+
+    return `${value.duration} ${timing} ${value.delay ? value.delay : ''}`.trim()
   },
 }

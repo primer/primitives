@@ -4,6 +4,7 @@ import {themes as origialThemes} from './themes.config.js'
 import {figma} from '../src/platforms/index.js'
 import type {ConfigGeneratorOptions} from '../src/types/styleDictionaryConfigGenerator.js'
 import {getFallbackTheme} from './utilities/getFallbackTheme.js'
+import {isSource} from '../src/filters/index.js'
 
 const buildFigma = async (buildOptions: ConfigGeneratorOptions): Promise<void> => {
   const themes = origialThemes.filter(theme => theme.exportToFigma !== false)
@@ -63,14 +64,26 @@ const buildFigma = async (buildOptions: ConfigGeneratorOptions): Promise<void> =
   }
   //
   for (const {filename, source, include, theme} of themes) {
+    // Override figma filter to exclude dimension tokens from theme output
+    const themeFigma = figma(`figma/themes/${filename}.json`, buildOptions.prefix, buildOptions.buildPath, {
+      theme: [theme, getFallbackTheme(theme)],
+    })
+    const originalFigmaFilter = themeFigma.files[0].filter
+    themeFigma.files = themeFigma.files.map(f => ({
+      ...f,
+      filter: (token: {$type: string; isSource: boolean}, config: Record<string, unknown>) =>
+        token.$type !== 'dimension' &&
+        (originalFigmaFilter
+          ? (originalFigmaFilter as (t: typeof token, c: typeof config) => boolean)(token, config)
+          : isSource(token as Parameters<typeof isSource>[0])),
+    }))
+
     // build functional scales
     const extended = await PrimerStyleDictionary.extend({
       source,
       include,
       platforms: {
-        figma: figma(`figma/themes/${filename}.json`, buildOptions.prefix, buildOptions.buildPath, {
-          theme: [theme, getFallbackTheme(theme)],
-        }),
+        figma: themeFigma,
       },
     })
 
@@ -86,12 +99,25 @@ const buildFigma = async (buildOptions: ConfigGeneratorOptions): Promise<void> =
     'src/tokens/functional/size/border.json5',
     'src/tokens/functional/size/radius.json5',
   ]
-  //
+
+  // Include focus dimension tokens in the figma dimension output
+  const dimensionFigma = figma(`figma/dimension/dimension.json`, buildOptions.prefix, buildOptions.buildPath)
+  const originalDimensionFilter = dimensionFigma.files[0].filter
+  dimensionFigma.files = dimensionFigma.files.map(f => ({
+    ...f,
+    filter: (token: {$type: string; isSource: boolean}, config: Record<string, unknown>) =>
+      token.$type !== 'color' &&
+      token.$type !== 'border' &&
+      (originalDimensionFilter
+        ? (originalDimensionFilter as (t: typeof token, c: typeof config) => boolean)(token, config)
+        : isSource(token as Parameters<typeof isSource>[0])),
+  }))
+
   const sizeExtended = await PrimerStyleDictionary.extend({
-    source: sizeFiles,
-    include: sizeFiles,
+    source: [...sizeFiles, 'src/tokens/component/focus.json5'],
+    include: [...sizeFiles, 'src/tokens/functional/color/borderColor.json5', 'src/tokens/base/color/light/light.json5'],
     platforms: {
-      figma: figma(`figma/dimension/dimension.json`, buildOptions.prefix, buildOptions.buildPath),
+      figma: dimensionFigma,
     },
   })
 
