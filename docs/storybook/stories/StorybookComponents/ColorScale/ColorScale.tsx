@@ -52,11 +52,46 @@ type ProbeConfig = {
 }
 
 const PROBES: ProbeConfig[] = [
-  {key: 'fgDefault', cssVar: '--fgColor-default', cssProp: 'color', icon: 'aa', tooltip: 'Contrast for fgColor-default', numOnSwatch: true},
-  {key: 'fgMuted', cssVar: '--fgColor-muted', cssProp: 'color', icon: 'aa', tooltip: 'Contrast for fgColor-muted', numOnSwatch: true},
-  {key: 'borderDefault', cssVar: '--borderColor-default', cssProp: 'color', icon: 'outline-square', tooltip: 'Contrast for borderColor-default', numOnSwatch: false},
-  {key: 'bgDefault', cssVar: '--bgColor-default', cssProp: 'backgroundColor', icon: 'filled-square', tooltip: 'Contrast for bgColor-default', numOnSwatch: true},
-  {key: 'bgMuted', cssVar: '--bgColor-muted', cssProp: 'backgroundColor', icon: 'filled-square', tooltip: 'Contrast for bgColor-muted', numOnSwatch: true},
+  {
+    key: 'fgDefault',
+    cssVar: '--fgColor-default',
+    cssProp: 'color',
+    icon: 'aa',
+    tooltip: 'Contrast for fgColor-default',
+    numOnSwatch: true,
+  },
+  {
+    key: 'fgMuted',
+    cssVar: '--fgColor-muted',
+    cssProp: 'color',
+    icon: 'aa',
+    tooltip: 'Contrast for fgColor-muted',
+    numOnSwatch: true,
+  },
+  {
+    key: 'borderDefault',
+    cssVar: '--borderColor-default',
+    cssProp: 'color',
+    icon: 'outline-square',
+    tooltip: 'Contrast for borderColor-default',
+    numOnSwatch: false,
+  },
+  {
+    key: 'bgDefault',
+    cssVar: '--bgColor-default',
+    cssProp: 'backgroundColor',
+    icon: 'filled-square',
+    tooltip: 'Contrast for bgColor-default',
+    numOnSwatch: true,
+  },
+  {
+    key: 'bgMuted',
+    cssVar: '--bgColor-muted',
+    cssProp: 'backgroundColor',
+    icon: 'filled-square',
+    tooltip: 'Contrast for bgColor-muted',
+    numOnSwatch: true,
+  },
 ]
 
 export type ColorScaleProps = {
