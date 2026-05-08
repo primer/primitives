@@ -1,13 +1,12 @@
 import {execSync} from 'child_process'
 import fs from 'fs'
-import path from 'path'
 import json5 from 'json5'
 import {walkDir} from './utilities/walkDir.js'
 import {extractTokenNames} from './utilities/extractTokenNames.js'
 
 const TOKEN_DIR = 'src/tokens'
-const REMOVED_DIR = 'src/tokens/removed'
-const IGNORE_DIRS = ['removed', 'fallback']
+const REMOVED_FILE = 'src/tokens/removed.json'
+const IGNORE_DIRS = ['fallback']
 
 // ---------------------------------------------------------------------------
 // CLI flag helper (supports both --flag=value and --flag value)
@@ -103,20 +102,16 @@ function collectTokensFromCommit(commit: string): Set<string> {
 function collectDocumentedRemovals(): Set<string> {
   const removals = new Set<string>()
 
-  if (!fs.existsSync(REMOVED_DIR)) return removals
+  if (!fs.existsSync(REMOVED_FILE)) return removals
 
-  const files = fs.readdirSync(REMOVED_DIR).filter(f => f.endsWith('.json') || f.endsWith('.json5'))
-
-  for (const file of files) {
-    try {
-      const content = fs.readFileSync(path.join(REMOVED_DIR, file), 'utf-8')
-      const parsed = json5.parse(content)
-      for (const key of Object.keys(parsed)) {
-        removals.add(key)
-      }
-    } catch (e) {
-      console.warn(`⚠️  Could not parse removed file ${file}: ${e}`)
+  try {
+    const content = fs.readFileSync(REMOVED_FILE, 'utf-8')
+    const parsed = json5.parse(content)
+    for (const key of Object.keys(parsed)) {
+      removals.add(key)
     }
+  } catch (e) {
+    console.warn(`⚠️  Could not parse ${REMOVED_FILE}: ${e}`)
   }
 
   return removals
@@ -160,12 +155,12 @@ const documented = collectDocumentedRemovals()
 const undocumented = removed.filter(t => !documented.has(t)).sort()
 
 if (undocumented.length === 0) {
-  console.log(`✅ ${removed.length} removed token(s) are properly documented in ${REMOVED_DIR}/`)
+  console.log(`✅ ${removed.length} removed token(s) are properly documented in ${REMOVED_FILE}`)
   process.exit(0)
 }
 
-console.error(`\n❌ ${undocumented.length} token(s) removed but not documented in ${REMOVED_DIR}/\n`)
-console.error('Add them to src/tokens/removed/removed.json:')
+console.error(`\n❌ ${undocumented.length} token(s) removed but not documented in ${REMOVED_FILE}\n`)
+console.error(`Add them to ${REMOVED_FILE}:`)
 console.error('  - null → fully removed')
 console.error('  - "new.token.name" → renamed/replaced\n')
 console.error('Missing entries:')
