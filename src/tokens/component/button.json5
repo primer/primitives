@@ -352,7 +352,7 @@
                 '$value': '{bgColor.success.emphasis}'
               },
               'light-high-contrast': {
-                '$value': '{base.color.green.5}'
+                '$value': '{base.color.green.7}'
               }
             }
           }
@@ -695,7 +695,7 @@
                 alpha: 1
               },
               'light-high-contrast': {
-                '$value': '{base.color.green.7}',
+                '$value': '{base.color.green.9}',
                 alpha: 1
               },
               'light-protanopia-deuteranopia-high-contrast': {
@@ -808,7 +808,7 @@
         selected: {
           '$value': [
             {
-              color: '{base.color.green.9}',
+              color: '{base.color.green.11}',
               alpha: 0.3,
               offsetX: {
                 value: 0,
@@ -1595,19 +1595,19 @@
                 }
               },
               'dark-dimmed-high-contrast': {
-                '$value': '{base.color.red.1}'
+                '$value': '{base.color.red.10}'
               },
               'dark-protanopia-deuteranopia': {
                 '$value': '{fgColor.danger}'
               },
               'dark-high-contrast': {
-                '$value': '{base.color.red.2}'
+                '$value': '{base.color.red.8}'
               },
               'dark-tritanopia-high-contrast': {
-                '$value': '{base.color.red.2}'
+                '$value': '{base.color.red.8}'
               },
               'dark-protanopia-deuteranopia-high-contrast': {
-                '$value': '{base.color.orange.2}'
+                '$value': '{base.color.orange.9}'
               }
             }
           }
@@ -1788,22 +1788,22 @@
                 '$value': '{base.color.orange.6}'
               },
               'dark-high-contrast': {
-                '$value': '{base.color.red.9}'
+                '$value': '{base.color.red.2}'
               },
               'dark-dimmed-high-contrast': {
-                '$value': '{base.color.red.7}'
+                '$value': '{base.color.red.3}'
               },
               'dark-protanopia-deuteranopia-high-contrast': {
-                '$value': '{base.color.orange.9}'
+                '$value': '{base.color.orange.2}'
               },
               'dark-tritanopia-high-contrast': {
-                '$value': '{base.color.red.9}'
+                '$value': '{base.color.red.2}'
               }
             }
           }
         },
         active: {
-          '$value': '{base.color.red.6}',
+          '$value': '{base.color.red.8}',
           '$type': 'color',
           '$extensions': {
             'org.primer.figma': {
@@ -1836,10 +1836,10 @@
                 '$value': '{bgColor.danger.emphasis}'
               },
               'light-protanopia-deuteranopia': {
-                '$value': '{base.color.orange.6}'
+                '$value': '{base.color.orange.8}'
               },
               'light-protanopia-deuteranopia-high-contrast': {
-                '$value': '{base.color.orange.6}'
+                '$value': '{base.color.orange.8}'
               }
             }
           }
@@ -1914,15 +1914,15 @@
                 alpha: 1
               },
               'light-high-contrast': {
-                '$value': '{base.color.red.7}',
+                '$value': '{base.color.red.9}',
                 alpha: 1
               },
               'light-protanopia-deuteranopia-high-contrast': {
-                '$value': '{base.color.orange.7}',
+                '$value': '{base.color.orange.9}',
                 alpha: 1
               },
               'light-tritanopia-high-contrast': {
-                '$value': '{base.color.red.7}',
+                '$value': '{base.color.red.9}',
                 alpha: 1
               }
             }
@@ -1955,7 +1955,7 @@
         selected: {
           '$value': [
             {
-              color: '{base.color.red.9}',
+              color: '{base.color.red.11}',
               alpha: 0.2,
               offsetX: {
                 value: 0,
@@ -1986,7 +1986,7 @@
               'light-protanopia-deuteranopia': {
                 '$value': [
                   {
-                    color: '{base.color.orange.9}',
+                    color: '{base.color.orange.11}',
                     alpha: 0.2,
                     offsetX: {
                       value: 0,
@@ -2110,7 +2110,7 @@
     star: {
       $description: 'Star icon color for the starred/filled state of the star button. Single-state token — does not have rest/hover/active/disabled interaction states.',
       iconColor: {
-        '$value': '{base.color.yellow.2}',
+        '$value': '{base.color.yellow.4}',
         '$type': 'color',
         '$extensions': {
           'org.primer.figma': {
@@ -2180,7 +2180,7 @@
     primary: {
       bgColor: {
         rest: {
-          '$value': '{base.color.green.9}',
+          '$value': '{base.color.green.11}',
           '$type': 'color',
           '$extensions': {
             'org.primer.figma': {
@@ -2449,7 +2449,7 @@
                 '$value': '{fgColor.danger}'
               },
               'light-protanopia-deuteranopia': {
-                '$value': '{base.color.orange.6}'
+                '$value': '{base.color.orange.8}'
               },
               'light-protanopia-deuteranopia-high-contrast': {
                 '$value': '{fgColor.danger}'

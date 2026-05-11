@@ -328,7 +328,7 @@
     },
     success: {
       muted: {
-        $value: '{base.color.green.0}',
+        $value: '{base.color.green.2}',
         $type: 'color',
         $description: 'Subtle success background for positive feedback and completed states',
         $extensions: {
@@ -342,7 +342,7 @@
           },
           'org.primer.overrides': {
             dark: {
-              $value: '{base.color.green.4}',
+              $value: '{base.color.green.7}',
               alpha: 0.15,
             },
             'light-tritanopia': '{base.color.blue.2}',
@@ -390,7 +390,7 @@
             },
           },
           'org.primer.overrides': {
-            dark: '{base.color.green.5}',
+            dark: '{base.color.green.6}',
             'light-tritanopia': '{base.color.blue.7}',
             'light-tritanopia-high-contrast': '{base.color.blue.8}',
             'dark-tritanopia': '{base.color.blue.5}',
@@ -399,9 +399,9 @@
             'light-protanopia-deuteranopia-high-contrast': '{base.color.blue.8}',
             'dark-protanopia-deuteranopia': '{base.color.blue.5}',
             'dark-protanopia-deuteranopia-high-contrast': '{base.color.blue.1}',
-            'light-high-contrast': '{base.color.green.5}',
-            'dark-high-contrast': '{base.color.green.9}',
-            'dark-dimmed-high-contrast': '{base.color.green.7}',
+            'light-high-contrast': '{base.color.green.7}',
+            'dark-high-contrast': '{base.color.green.2}',
+            'dark-dimmed-high-contrast': '{base.color.green.4}',
           },
           'org.primer.llm': {
             usage: ['merge-button', 'confirm-action', 'success-badge'],
@@ -425,24 +425,24 @@
             },
           },
           'org.primer.overrides': {
-            'light-tritanopia-high-contrast': '{base.color.red.0}',
-            'light-tritanopia': '{base.color.red.0}',
+            'light-tritanopia-high-contrast': '{base.color.red.2}',
+            'light-tritanopia': '{base.color.red.2}',
             'dark-tritanopia': {
-              $value: '{base.color.red.4}',
+              $value: '{base.color.red.7}',
               alpha: 0.1,
             },
             'dark-tritanopia-high-contrast': {
-              $value: '{base.color.red.4}',
+              $value: '{base.color.red.7}',
               alpha: 0.1,
             },
-            'light-protanopia-deuteranopia': '{base.color.orange.0}',
-            'light-protanopia-deuteranopia-high-contrast': '{base.color.orange.0}',
+            'light-protanopia-deuteranopia': '{base.color.orange.2}',
+            'light-protanopia-deuteranopia-high-contrast': '{base.color.orange.2}',
             'dark-protanopia-deuteranopia': {
-              $value: '{base.color.orange.4}',
+              $value: '{base.color.orange.7}',
               alpha: 0.1,
             },
             'dark-protanopia-deuteranopia-high-contrast': {
-              $value: '{base.color.orange.4}',
+              $value: '{base.color.orange.7}',
               alpha: 0.1,
             },
           },
@@ -466,14 +466,14 @@
             },
           },
           'org.primer.overrides': {
-            'light-tritanopia': '{base.color.red.5}',
-            'light-tritanopia-high-contrast': '{base.color.red.5}',
-            'dark-tritanopia': '{base.color.red.5}',
-            'dark-tritanopia-high-contrast': '{base.color.red.9}',
-            'light-protanopia-deuteranopia': '{base.color.orange.5}',
-            'light-protanopia-deuteranopia-high-contrast': '{base.color.orange.5}',
-            'dark-protanopia-deuteranopia': '{base.color.orange.5}',
-            'dark-protanopia-deuteranopia-high-contrast': '{base.color.orange.9}',
+            'light-tritanopia': '{base.color.red.7}',
+            'light-tritanopia-high-contrast': '{base.color.red.7}',
+            'dark-tritanopia': '{base.color.red.6}',
+            'dark-tritanopia-high-contrast': '{base.color.red.2}',
+            'light-protanopia-deuteranopia': '{base.color.orange.7}',
+            'light-protanopia-deuteranopia-high-contrast': '{base.color.orange.7}',
+            'dark-protanopia-deuteranopia': '{base.color.orange.6}',
+            'dark-protanopia-deuteranopia-high-contrast': '{base.color.orange.2}',
           },
           'org.primer.llm': {
             usage: ['open-badge', 'open-label', 'active-status-badge'],
@@ -484,7 +484,7 @@
     },
     attention: {
       muted: {
-        $value: '{base.color.yellow.0}',
+        $value: '{base.color.yellow.2}',
         $type: 'color',
         $description: 'Subtle attention background for warnings and caution states',
         $extensions: {
@@ -498,7 +498,7 @@
           },
           'org.primer.overrides': {
             dark: {
-              $value: '{base.color.yellow.4}',
+              $value: '{base.color.yellow.7}',
               alpha: 0.15,
             },
           },
@@ -509,7 +509,7 @@
         },
       },
       emphasis: {
-        $value: '{base.color.yellow.5}',
+        $value: '{base.color.yellow.7}',
         $type: 'color',
         $description: 'Strong attention background for prominent warnings',
         $extensions: {
@@ -522,10 +522,13 @@
             },
           },
           'org.primer.overrides': {
-            'dark-high-contrast': '{base.color.yellow.9}',
-            'dark-dimmed-high-contrast': '{base.color.yellow.7}',
-            'dark-protanopia-deuteranopia-high-contrast': '{base.color.yellow.9}',
-            'dark-tritanopia-high-contrast': '{base.color.yellow.9}',
+            dark: '{base.color.yellow.6}',
+            'dark-tritanopia': '{base.color.yellow.6}',
+            'dark-protanopia-deuteranopia': '{base.color.yellow.6}',
+            'dark-high-contrast': '{base.color.yellow.2}',
+            'dark-dimmed-high-contrast': '{base.color.yellow.4}',
+            'dark-protanopia-deuteranopia-high-contrast': '{base.color.yellow.2}',
+            'dark-tritanopia-high-contrast': '{base.color.yellow.2}',
           },
           'org.primer.llm': {
             usage: ['warning-badge', 'caution-label', 'attention-indicator'],
@@ -536,7 +539,7 @@
     },
     severe: {
       muted: {
-        $value: '{base.color.orange.0}',
+        $value: '{base.color.orange.2}',
         $type: 'color',
         $description: 'Subtle severe background for high-priority warnings',
         $extensions: {
@@ -550,13 +553,13 @@
           },
           'org.primer.overrides': {
             dark: {
-              $value: '{base.color.orange.4}',
+              $value: '{base.color.orange.7}',
               alpha: 0.1,
             },
-            'light-tritanopia': '{base.color.red.0}',
-            'light-tritanopia-high-contrast': '{base.color.red.0}',
+            'light-tritanopia': '{base.color.red.2}',
+            'light-tritanopia-high-contrast': '{base.color.red.2}',
             'dark-tritanopia': {
-              $value: '{base.color.red.4}',
+              $value: '{base.color.red.7}',
               alpha: 0.1,
             },
           },
@@ -567,7 +570,7 @@
         },
       },
       emphasis: {
-        $value: '{base.color.orange.5}',
+        $value: '{base.color.orange.7}',
         $type: 'color',
         $description: 'Strong severe background for prominent high-priority warnings',
         $extensions: {
@@ -580,13 +583,15 @@
             },
           },
           'org.primer.overrides': {
-            'light-tritanopia': '{base.color.red.5}',
-            'light-tritanopia-high-contrast': '{base.color.red.5}',
-            'dark-tritanopia': '{base.color.red.5}',
-            'dark-tritanopia-high-contrast': '{base.color.red.9}',
-            'dark-high-contrast': '{base.color.orange.9}',
-            'dark-dimmed-high-contrast': '{base.color.orange.7}',
-            'dark-protanopia-deuteranopia-high-contrast': '{base.color.orange.9}',
+            dark: '{base.color.orange.6}',
+            'dark-protanopia-deuteranopia': '{base.color.orange.6}',
+            'light-tritanopia': '{base.color.red.7}',
+            'light-tritanopia-high-contrast': '{base.color.red.7}',
+            'dark-tritanopia': '{base.color.red.6}',
+            'dark-tritanopia-high-contrast': '{base.color.red.2}',
+            'dark-high-contrast': '{base.color.orange.2}',
+            'dark-dimmed-high-contrast': '{base.color.orange.4}',
+            'dark-protanopia-deuteranopia-high-contrast': '{base.color.orange.2}',
           },
           'org.primer.llm': {
             usage: ['severe-badge', 'urgent-label', 'high-priority-indicator'],
@@ -597,7 +602,7 @@
     },
     danger: {
       muted: {
-        $value: '{base.color.red.0}',
+        $value: '{base.color.red.2}',
         $type: 'color',
         $description: 'Muted danger background for error states and destructive action contexts',
         $extensions: {
@@ -611,13 +616,13 @@
           },
           'org.primer.overrides': {
             dark: {
-              $value: '{base.color.red.4}',
+              $value: '{base.color.red.7}',
               alpha: 0.1,
             },
-            'light-protanopia-deuteranopia': '{base.color.orange.0}',
-            'light-protanopia-deuteranopia-high-contrast': '{base.color.orange.0}',
+            'light-protanopia-deuteranopia': '{base.color.orange.2}',
+            'light-protanopia-deuteranopia-high-contrast': '{base.color.orange.2}',
             'dark-protanopia-deuteranopia': {
-              $value: '{base.color.orange.4}',
+              $value: '{base.color.orange.7}',
               alpha: 0.1,
             },
           },
@@ -628,7 +633,7 @@
         },
       },
       emphasis: {
-        $value: '{base.color.red.5}',
+        $value: '{base.color.red.7}',
         $type: 'color',
         $description: 'Emphasized danger background for critical errors and delete confirmations',
         $extensions: {
@@ -641,13 +646,15 @@
             },
           },
           'org.primer.overrides': {
-            'light-protanopia-deuteranopia': '{base.color.orange.5}',
-            'light-protanopia-deuteranopia-high-contrast': '{base.color.orange.5}',
-            'dark-protanopia-deuteranopia': '{base.color.orange.5}',
-            'dark-protanopia-deuteranopia-high-contrast': '{base.color.orange.9}',
-            'dark-high-contrast': '{base.color.red.9}',
-            'dark-dimmed-high-contrast': '{base.color.red.7}',
-            'dark-tritanopia-high-contrast': '{base.color.red.9}',
+            dark: '{base.color.red.6}',
+            'dark-tritanopia': '{base.color.red.6}',
+            'light-protanopia-deuteranopia': '{base.color.orange.7}',
+            'light-protanopia-deuteranopia-high-contrast': '{base.color.orange.7}',
+            'dark-protanopia-deuteranopia': '{base.color.orange.6}',
+            'dark-protanopia-deuteranopia-high-contrast': '{base.color.orange.2}',
+            'dark-high-contrast': '{base.color.red.2}',
+            'dark-dimmed-high-contrast': '{base.color.red.4}',
+            'dark-tritanopia-high-contrast': '{base.color.red.2}',
           },
           'org.primer.llm': {
             usage: ['delete-button', 'critical-alert', 'destructive-confirmation'],
@@ -784,7 +791,7 @@
     },
     done: {
       muted: {
-        $value: '{base.color.purple.0}',
+        $value: '{base.color.purple.2}',
         $type: 'color',
         $description: 'Subtle background for completed/done state indicators',
         $extensions: {
@@ -798,7 +805,7 @@
           },
           'org.primer.overrides': {
             dark: {
-              $value: '{base.color.purple.4}',
+              $value: '{base.color.purple.7}',
               alpha: 0.15,
             },
           },
@@ -809,7 +816,7 @@
         },
       },
       emphasis: {
-        $value: '{base.color.purple.5}',
+        $value: '{base.color.purple.7}',
         $type: 'color',
         $description: 'Strong background for completed/done state badges and labels',
         $extensions: {
@@ -822,10 +829,13 @@
             },
           },
           'org.primer.overrides': {
-            'dark-high-contrast': '{base.color.purple.9}',
-            'dark-dimmed-high-contrast': '{base.color.purple.7}',
-            'dark-tritanopia-high-contrast': '{base.color.purple.9}',
-            'dark-protanopia-deuteranopia-high-contrast': '{base.color.purple.9}',
+            dark: '{base.color.purple.6}',
+            'dark-tritanopia': '{base.color.purple.6}',
+            'dark-protanopia-deuteranopia': '{base.color.purple.6}',
+            'dark-high-contrast': '{base.color.purple.2}',
+            'dark-dimmed-high-contrast': '{base.color.purple.4}',
+            'dark-tritanopia-high-contrast': '{base.color.purple.2}',
+            'dark-protanopia-deuteranopia-high-contrast': '{base.color.purple.2}',
           },
           'org.primer.llm': {
             usage: ['done-badge', 'merged-label', 'completed-indicator'],
@@ -876,7 +886,7 @@
     },
     sponsors: {
       muted: {
-        $value: '{base.color.pink.0}',
+        $value: '{base.color.pink.2}',
         $type: 'color',
         $description: 'Subtle background for GitHub Sponsors content',
         $extensions: {
@@ -890,7 +900,7 @@
           },
           'org.primer.overrides': {
             dark: {
-              $value: '{base.color.pink.4}',
+              $value: '{base.color.pink.7}',
               alpha: 0.1,
             },
             'dark-tritanopia': {
@@ -909,7 +919,7 @@
         },
       },
       emphasis: {
-        $value: '{base.color.pink.5}',
+        $value: '{base.color.pink.7}',
         $type: 'color',
         $description: 'Strong background for prominent GitHub Sponsors elements',
         $extensions: {
@@ -922,10 +932,13 @@
             },
           },
           'org.primer.overrides': {
-            'dark-high-contrast': '{base.color.pink.9}',
-            'dark-dimmed-high-contrast': '{base.color.pink.7}',
-            'dark-tritanopia-high-contrast': '{base.color.pink.9}',
-            'dark-protanopia-deuteranopia-high-contrast': '{base.color.pink.9}',
+            dark: '{base.color.pink.6}',
+            'dark-tritanopia': '{base.color.pink.6}',
+            'dark-protanopia-deuteranopia': '{base.color.pink.6}',
+            'dark-high-contrast': '{base.color.pink.2}',
+            'dark-dimmed-high-contrast': '{base.color.pink.4}',
+            'dark-tritanopia-high-contrast': '{base.color.pink.2}',
+            'dark-protanopia-deuteranopia-high-contrast': '{base.color.pink.2}',
           },
           'org.primer.llm': {
             usage: ['sponsor-button', 'sponsor-badge', 'funding-cta'],

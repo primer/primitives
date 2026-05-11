@@ -11,7 +11,7 @@ export default {
 const getColorScale = (colorName: string, length: number) =>
   Array.from({length}, (_, i) => `base-color-${colorName}-${i}`)
 
-const Color = ({color: colorName, length = 10, border}: {color: string; length?: number; border?: boolean}) => (
+const Color = ({color: colorName, length = 12, border}: {color: string; length?: number; border?: boolean}) => (
   <div>
     {getColorScale(colorName, length).map(color => (
       <ColorScale color={color} border={border} key={color} />
@@ -38,8 +38,8 @@ export const AllScales = () => {
 }
 AllScales.tags = ['includeSnapshot']
 
-export const Neutral = () => <Color color="neutral" length={12} />
-export const Blue = () => <Color color="blue" length={12} />
+export const Neutral = () => <Color color="neutral" />
+export const Blue = () => <Color color="blue" />
 export const Green = () => <Color color="green" />
 export const Yellow = () => <Color color="yellow" />
 export const Orange = () => <Color color="orange" />
