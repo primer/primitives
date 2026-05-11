@@ -1,5 +1,11 @@
 # @primer/primitives
 
+## 11.8.1
+
+### Patch Changes
+
+- [#1388](https://github.com/primer/primitives/pull/1388) [`6a7399c`](https://github.com/primer/primitives/commit/6a7399c8afb46d2e0cef313b3adb6543f6084aa5) Thanks [@joshblack](https://github.com/joshblack)! - Remove postinstall script from package.json
+
 ## 11.8.0
 
 ### Minor Changes
