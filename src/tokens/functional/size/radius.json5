@@ -2,7 +2,7 @@
   borderRadius: {
     small: {
       $value: {value: 3, unit: 'px'},
-      $description: 'Small border radius (3px). Use for small variants of components or small UI elements like badges, tags, or anything below 16px in height',
+      $description: 'Scale token: 3px radius for compact UI elements or small component variants.',
       $type: 'dimension',
       $extensions: {
         'org.primer.figma': {
@@ -20,7 +20,7 @@
     },
     medium: {
       $value: {value: 6, unit: 'px'},
-      $description: 'Medium border radius (6px). The default choice for most buttons, cards, and containers',
+      $description: 'Scale token: 6px radius in the border-radius scale. Use when selecting a specific radius intentionally.',
       $type: 'dimension',
       $extensions: {
         'org.primer.figma': {
@@ -38,7 +38,7 @@
     },
     large: {
       $value: {value: 12, unit: 'px'},
-      $description: 'Large border radius (12px). Use for larger containers, dialogs, or when more visual softness is desired.',
+      $description: 'Scale token: 12px radius for larger surfaces or softer container treatments.',
       $type: 'dimension',
       $extensions: {
         'org.primer.figma': {
@@ -57,7 +57,7 @@
     full: {
       $value: {value: 9999, unit: 'px'},
       $type: 'dimension',
-      $description: 'Use this border radius for pill shaped elements',
+      $description: 'Shape token for fully rounded or pill-shaped elements.',
       $extensions: {
         'org.primer.figma': {
           collection: 'functional/size',
@@ -74,7 +74,7 @@
     },
     default: {
       $value: '{borderRadius.medium}',
-      $description: 'Default border radius for most UI elements. Alias of borderRadius.medium (6px). Use when in doubt',
+      $description: 'Semantic token: preferred default border radius for standard UI components. Use this in normal component code unless a specific radius is intentionally required.',
       $type: 'dimension',
       $extensions: {
         'org.primer.figma': {
