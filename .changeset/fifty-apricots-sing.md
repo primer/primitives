@@ -4,6 +4,7 @@
 
 Migrate prettylights syntax tokens to canonical `prettylights-syntax-*` naming while preserving legacy compatibility.
 
+- Migrate ANSI colors to canonical `ansi-*` naming with deprecated `color-ansi-*` aliases.
 - Keep `codeMirror-*` tokens unchanged.
 - Add modern canonical prettylights syntax token names (for example `entityTag`, `storageModifierImport`, `stringRegexp`, `metaDiffRange`).
 - Keep legacy `color-prettylights-syntax-*` names as deprecated aliases pointing to canonical replacements.
