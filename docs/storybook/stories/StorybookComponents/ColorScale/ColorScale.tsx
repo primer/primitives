@@ -32,89 +32,34 @@ function safeHex(rgb: string): string | null {
   }
 }
 
-const PROBE_STYLE: React.CSSProperties = {
-  position: 'fixed',
-  top: 0,
-  left: 0,
-  width: 1,
-  height: 1,
-  opacity: 0,
-  pointerEvents: 'none',
-}
-
-type ProbeConfig = {
-  key: string
-  cssVar: string
-  cssProp: 'color' | 'backgroundColor'
-  icon: 'aa' | 'outline-square' | 'filled-square'
-  tooltip: string
-  numOnSwatch: boolean
-}
-
-const PROBES: ProbeConfig[] = [
-  {
-    key: 'fgDefault',
-    cssVar: '--fgColor-default',
-    cssProp: 'color',
-    icon: 'aa',
-    tooltip: 'Contrast for fgColor-default',
-    numOnSwatch: true,
-  },
-  {
-    key: 'fgMuted',
-    cssVar: '--fgColor-muted',
-    cssProp: 'color',
-    icon: 'aa',
-    tooltip: 'Contrast for fgColor-muted',
-    numOnSwatch: true,
-  },
-  {
-    key: 'borderDefault',
-    cssVar: '--borderColor-default',
-    cssProp: 'color',
-    icon: 'outline-square',
-    tooltip: 'Contrast for borderColor-default',
-    numOnSwatch: false,
-  },
-  {
-    key: 'bgDefault',
-    cssVar: '--bgColor-default',
-    cssProp: 'backgroundColor',
-    icon: 'filled-square',
-    tooltip: 'Contrast for bgColor-default',
-    numOnSwatch: true,
-  },
-  {
-    key: 'bgMuted',
-    cssVar: '--bgColor-muted',
-    cssProp: 'backgroundColor',
-    icon: 'filled-square',
-    tooltip: 'Contrast for bgColor-muted',
-    numOnSwatch: true,
-  },
-]
-
 export type ColorScaleProps = {
   color?: string
   border?: boolean
 }
 
 export const ColorScale = ({color, border}: ColorScaleProps) => {
-  const swatchRef = React.useRef<HTMLDivElement | null>(null)
-  const probeRefs = React.useRef<Record<string, HTMLDivElement | null>>({})
+  const swatchRef = React.useRef<HTMLDivElement>(null)
+  const fgDefaultRef = React.useRef<HTMLDivElement>(null)
+  const fgMutedRef = React.useRef<HTMLDivElement>(null)
+  const borderDefaultRef = React.useRef<HTMLDivElement>(null)
+  const bgDefaultRef = React.useRef<HTMLDivElement>(null)
+  const bgMutedRef = React.useRef<HTMLDivElement>(null)
 
   const [hex, setHex] = React.useState<string | null>(null)
-  const [probeColors, setProbeColors] = React.useState<Record<string, string | null>>({})
+  const [fgDefault, setFgDefault] = React.useState<string | null>(null)
+  const [fgMuted, setFgMuted] = React.useState<string | null>(null)
+  const [borderDefault, setBorderDefault] = React.useState<string | null>(null)
+  const [bgDefault, setBgDefault] = React.useState<string | null>(null)
+  const [bgMuted, setBgMuted] = React.useState<string | null>(null)
 
   const recalculate = React.useCallback(() => {
     setTimeout(() => {
       if (swatchRef.current) setHex(safeHex(getComputedStyle(swatchRef.current).backgroundColor))
-      const next: Record<string, string | null> = {}
-      for (const {key, cssProp} of PROBES) {
-        const el = probeRefs.current[key]
-        if (el) next[key] = safeHex(getComputedStyle(el)[cssProp])
-      }
-      setProbeColors(next)
+      if (fgDefaultRef.current) setFgDefault(safeHex(getComputedStyle(fgDefaultRef.current).color))
+      if (fgMutedRef.current) setFgMuted(safeHex(getComputedStyle(fgMutedRef.current).color))
+      if (borderDefaultRef.current) setBorderDefault(safeHex(getComputedStyle(borderDefaultRef.current).color))
+      if (bgDefaultRef.current) setBgDefault(safeHex(getComputedStyle(bgDefaultRef.current).backgroundColor))
+      if (bgMutedRef.current) setBgMuted(safeHex(getComputedStyle(bgMutedRef.current).backgroundColor))
     }, 0)
   }, [])
 
@@ -135,6 +80,22 @@ export const ColorScale = ({color, border}: ColorScaleProps) => {
   const vsWhite = hex ? contrast(hex, '#ffffff') : null
   const onSwatch = (vsBlack ?? 0) >= (vsWhite ?? 0) ? '#000000' : '#ffffff'
 
+  const vsFgDefault = hex && fgDefault ? contrast(hex, fgDefault) : null
+  const vsFgMuted = hex && fgMuted ? contrast(hex, fgMuted) : null
+  const vsBorderDefault = hex && borderDefault ? contrast(hex, borderDefault) : null
+  const vsBgDefault = hex && bgDefault ? contrast(hex, bgDefault) : null
+  const vsBgMuted = hex && bgMuted ? contrast(hex, bgMuted) : null
+
+  const probeStyle: React.CSSProperties = {
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    width: 1,
+    height: 1,
+    opacity: 0,
+    pointerEvents: 'none',
+  }
+
   return (
     <div
       className="ColorScale--block"
@@ -146,47 +107,64 @@ export const ColorScale = ({color, border}: ColorScaleProps) => {
       ref={swatchRef}
     >
       {/* Probes — read color/bg values from CSS vars */}
-      {PROBES.map(({key, cssVar, cssProp}) => (
-        <div
-          key={key}
-          ref={el => {
-            probeRefs.current[key] = el
-          }}
-          aria-hidden
-          style={{
-            ...PROBE_STYLE,
-            ...(cssProp === 'color' ? {color: `var(${cssVar})`} : {backgroundColor: `var(${cssVar})`}),
-          }}
-        />
-      ))}
+      <div ref={fgDefaultRef} aria-hidden style={{...probeStyle, color: 'var(--fgColor-default)'}} />
+      <div ref={fgMutedRef} aria-hidden style={{...probeStyle, color: 'var(--fgColor-muted)'}} />
+      <div ref={borderDefaultRef} aria-hidden style={{...probeStyle, color: 'var(--borderColor-default)'}} />
+      <div ref={bgDefaultRef} aria-hidden style={{...probeStyle, backgroundColor: 'var(--bgColor-default)'}} />
+      <div ref={bgMutedRef} aria-hidden style={{...probeStyle, backgroundColor: 'var(--bgColor-muted)'}} />
 
       <p className="cs-name" style={{color: onSwatch}}>
         {color}
       </p>
 
       <div className="cs-row">
-        {PROBES.map(({key, cssVar, icon, tooltip, numOnSwatch}) => {
-          const probeColor = probeColors[key]
-          const ratio = hex && probeColor ? contrast(hex, probeColor) : null
-          if (ratio === null) return null
-          const numColor = numOnSwatch ? onSwatch : `var(${cssVar})`
-          return (
-            <span key={key} className="cs-badge" data-tooltip={tooltip}>
-              {icon === 'aa' ? (
-                <span className="cs-aa" style={{color: `var(${cssVar})`}}>
-                  Aa
-                </span>
-              ) : icon === 'outline-square' ? (
-                <span className="cs-square cs-square--outline" style={{borderColor: `var(${cssVar})`}} />
-              ) : (
-                <span className="cs-square cs-square--filled" style={{backgroundColor: `var(${cssVar})`}} />
-              )}
-              <span className="cs-num" style={{color: numColor}}>
-                {fmt(ratio)}
-              </span>
+        {/* Aa badges: color = the fg/border CSS var itself, so Aa + number are both in that color */}
+        {vsFgDefault !== null && (
+          <span className="cs-badge" data-tooltip="Contrast for fgColor-default">
+            <span className="cs-aa" style={{color: 'var(--fgColor-default)'}}>
+              Aa
             </span>
-          )
-        })}
+            <span className="cs-num" style={{color: onSwatch}}>
+              {fmt(vsFgDefault)}
+            </span>
+          </span>
+        )}
+        {vsFgMuted !== null && (
+          <span className="cs-badge" data-tooltip="Contrast for fgColor-muted">
+            <span className="cs-aa" style={{color: 'var(--fgColor-muted)'}}>
+              Aa
+            </span>
+            <span className="cs-num" style={{color: onSwatch}}>
+              {fmt(vsFgMuted)}
+            </span>
+          </span>
+        )}
+        {/* Border badge: outlined square + number in borderColor-default */}
+        {vsBorderDefault !== null && (
+          <span className="cs-badge" data-tooltip="Contrast for borderColor-default">
+            <span className="cs-square cs-square--outline" style={{borderColor: 'var(--borderColor-default)'}} />
+            <span className="cs-num" style={{color: 'var(--borderColor-default)'}}>
+              {fmt(vsBorderDefault)}
+            </span>
+          </span>
+        )}
+        {/* Bg badges: filled square in the bg color, number in onSwatch */}
+        {vsBgDefault !== null && (
+          <span className="cs-badge" data-tooltip="Contrast for bgColor-default">
+            <span className="cs-square cs-square--filled" style={{backgroundColor: 'var(--bgColor-default)'}} />
+            <span className="cs-num" style={{color: onSwatch}}>
+              {fmt(vsBgDefault)}
+            </span>
+          </span>
+        )}
+        {vsBgMuted !== null && (
+          <span className="cs-badge" data-tooltip="Contrast for bgColor-muted">
+            <span className="cs-square cs-square--filled" style={{backgroundColor: 'var(--bgColor-muted)'}} />
+            <span className="cs-num" style={{color: onSwatch}}>
+              {fmt(vsBgMuted)}
+            </span>
+          </span>
+        )}
         {hex && (
           <span className="cs-hex" style={{color: onSwatch}}>
             {hex}

@@ -23,20 +23,6 @@
           },
         },
         '1': {
-          $value: '{base.color.green.1}',
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              group: 'component (internal)',
-              scopes: ['bgColor'],
-            },
-            'org.primer.overrides': {
-              dark: '{base.color.green.8}',
-            },
-          },
-        },
-        '2': {
           $value: '{base.color.green.3}',
           $type: 'color',
           $extensions: {
@@ -46,12 +32,26 @@
               scopes: ['bgColor'],
             },
             'org.primer.overrides': {
-              dark: '{base.color.green.6}',
+              dark: '{base.color.green.3}',
+            },
+          },
+        },
+        '2': {
+          $value: '{base.color.green.5}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component (internal)',
+              scopes: ['bgColor'],
+            },
+            'org.primer.overrides': {
+              dark: '{base.color.green.5}',
             },
           },
         },
         '3': {
-          $value: '{base.color.green.4}',
+          $value: '{base.color.green.6}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -62,7 +62,7 @@
           },
         },
         '4': {
-          $value: '{base.color.green.6}',
+          $value: '{base.color.green.8}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -71,7 +71,7 @@
               scopes: ['bgColor'],
             },
             'org.primer.overrides': {
-              dark: '{base.color.green.2}',
+              dark: '{base.color.green.9}',
             },
           },
         },
