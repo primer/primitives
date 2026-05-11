@@ -19,7 +19,7 @@
   borderWidth: {
     default: {
       $value: '{borderWidth.thin}',
-      $description: 'Default border width for most UI elements. Alias of borderWidth.thin (1px)',
+      $description: 'Semantic token: preferred default border width for standard component borders. Use this in normal component code unless a specific scale value is required.',
       $type: 'dimension',
       $extensions: {
         'org.primer.figma': {
@@ -30,7 +30,7 @@
     },
     thin: {
       $value: {value: 1, unit: 'px'},
-      $description: 'Standard 1px border width. Use for most borders, dividers, and outlines throughout the interface',
+      $description: 'Scale token: 1px border width. Use when selecting an explicit size from the border-width scale.',
       $type: 'dimension',
       $extensions: {
         'org.primer.figma': {
@@ -41,7 +41,7 @@
     },
     thick: {
       $value: {value: 2, unit: 'px'},
-      $description: 'Thick 2px border for emphasis. Use for focus indicators, selected states, or to emphasize important boundaries',
+      $description: 'Scale token: 2px border width for emphasis or focus states.',
       $type: 'dimension',
       $extensions: {
         'org.primer.figma': {
@@ -56,7 +56,7 @@
     },
     thicker: {
       $value: {value: 4, unit: 'px'},
-      $description: 'Extra thick 4px border for maximum emphasis. Use sparingly for high-contrast focus indicators or critical visual separators',
+      $description: 'Scale token: 4px border width for strong emphasis.',
       $type: 'dimension',
       $extensions: {
         'org.primer.figma': {
