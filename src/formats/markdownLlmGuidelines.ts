@@ -508,8 +508,8 @@ function outputPrettylightsPattern(tokens: LlmGuideline[], lines: string[]): voi
   const bgTextVariants: Map<string, Set<string>> = new Map()
 
   for (const name of tokenNames) {
-    // Parse: color-prettylights-syntax-{element} or color-prettylights-syntax-{group}-{sub}
-    const element = name.replace('color-prettylights-syntax-', '')
+    // Parse: prettylights-syntax-{element} (canonical) or color-prettylights-syntax-{element} (legacy)
+    const element = name.replace('prettylights-syntax-', '').replace('color-prettylights-syntax-', '')
     const parts = element.split('-')
 
     if (parts.length === 1) {
@@ -539,7 +539,9 @@ function outputPrettylightsPattern(tokens: LlmGuideline[], lines: string[]): voi
   }
 
   // Output pattern
-  lines.push('**Pattern:** `color-prettylights-syntax-[element]`')
+  lines.push('**Pattern:** `prettylights-syntax-[element]`')
+  lines.push('')
+  lines.push('**Legacy alias:** `color-prettylights-syntax-[element]` (deprecated)')
   lines.push('')
 
   // Output simple elements
@@ -1056,14 +1058,25 @@ export const markdownLlmGuidelines: FormatFn = async ({dictionary}: FormatFnArgu
       continue
     }
 
-    // Special handling for color category (ansi, prettylights subcategories)
-    if (category === 'color') {
+    // Special handling for color + prettylights categories (ansi, prettylights subcategories)
+    if (category === 'color' || category === 'prettylights') {
       // Separate tokens by subcategory
-      const ansiTokens = nonSemanticTokens.filter(t => t.name.startsWith('color-ansi-'))
-      const prettylightsTokens = nonSemanticTokens.filter(t => t.name.startsWith('color-prettylights-'))
-      const otherTokens = nonSemanticTokens.filter(
-        t => !t.name.startsWith('color-ansi-') && !t.name.startsWith('color-prettylights-'),
-      )
+      const ansiTokens = category === 'color' ? nonSemanticTokens.filter(t => t.name.startsWith('color-ansi-')) : []
+      const prettylightsTokens =
+        category === 'prettylights'
+          ? nonSemanticTokens
+          : nonSemanticTokens.filter(
+              t => t.name.startsWith('prettylights-syntax-') || t.name.startsWith('color-prettylights-'),
+            )
+      const otherTokens =
+        category === 'color'
+          ? nonSemanticTokens.filter(
+              t =>
+                !t.name.startsWith('color-ansi-') &&
+                !t.name.startsWith('prettylights-syntax-') &&
+                !t.name.startsWith('color-prettylights-'),
+            )
+          : []
 
       // Output ANSI tokens with pattern compression
       if (ansiTokens.length > 0) {
