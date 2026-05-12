@@ -88,7 +88,9 @@ When renaming a token, keep the old name as a deprecated alias:
       $value: '{base.color.red.5}',
       $type: 'color',
       $description: 'ANSI red for errors and alerts in terminal output',
-      $extensions: { /* figma, overrides, etc. */ },
+      $extensions: {
+        /* figma, overrides, etc. */
+      },
     },
   },
   // Deprecated alias pointing to new token
@@ -100,7 +102,9 @@ When renaming a token, keep the old name as a deprecated alias:
         $deprecated: '{ansi.red}',
         $description: 'Deprecated. Use ansi.red instead.',
         $extensions: {
-          'org.primer.figma': { /* keep for Figma backward compat */ },
+          'org.primer.figma': {
+            /* keep for Figma backward compat */
+          },
         },
       },
     },
@@ -109,6 +113,7 @@ When renaming a token, keep the old name as a deprecated alias:
 ```
 
 Key rules for deprecated aliases:
+
 - `$value` references the new canonical token
 - `$deprecated` contains the new token path (same as `$value`)
 - `$description` says "Deprecated. Use {new.path} instead."
@@ -120,15 +125,16 @@ Key rules for deprecated aliases:
 
 Functional color token groups use domain-specific prefixes:
 
-| Group | CSS pattern | Example |
-|---|---|---|
-| `bgColor.*` | `--bgColor-*` | `--bgColor-accent-emphasis` |
-| `fgColor.*` | `--fgColor-*` | `--fgColor-danger` |
-| `borderColor.*` | `--borderColor-*` | `--borderColor-default` |
-| `ansi.*` | `--ansi-*` | `--ansi-red` |
+| Group                   | CSS pattern               | Example                         |
+| ----------------------- | ------------------------- | ------------------------------- |
+| `bgColor.*`             | `--bgColor-*`             | `--bgColor-accent-emphasis`     |
+| `fgColor.*`             | `--fgColor-*`             | `--fgColor-danger`              |
+| `borderColor.*`         | `--borderColor-*`         | `--borderColor-default`         |
+| `ansi.*`                | `--ansi-*`                | `--ansi-red`                    |
 | `prettylights.syntax.*` | `--prettylights-syntax-*` | `--prettylights-syntax-keyword` |
 
 **Deprecated prefixes** (still emitted as `var()` aliases):
+
 - `--color-ansi-*` → use `--ansi-*` instead
 - `--color-prettylights-syntax-*` → use `--prettylights-syntax-*` instead
 
