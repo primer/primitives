@@ -1,5 +1,5 @@
 ---
-'@primer/primitives': patch
+'@primer/primitives': minor
 ---
 
 Migrate prettylights syntax tokens to canonical `prettylights-syntax-*` naming while preserving legacy compatibility.
