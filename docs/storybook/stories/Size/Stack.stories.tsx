@@ -3,8 +3,8 @@ import React from 'react'
 import sizeTokens from '../../../../dist/docs/functional/size/size.json'
 import {StackDemo} from '../StorybookComponents/StackDemo/StackDemo'
 import {DataTable, Table} from '@primer/react/experimental'
-import {InlineCode} from '../StorybookComponents/InlineCode/InlineCode'
 import {getTokensByName} from '../utilities/getTokensByName'
+import {tokenColumn, outputValueColumn, sourceValueColumn} from '../utilities/commonTableColumns'
 
 export default {
   title: 'Size/Functional/Stack',
@@ -15,12 +15,7 @@ export default {
 }
 
 export const Stack = () => {
-  const data = getTokensByName(sizeTokens, 'stack').map(token => {
-    return {
-      id: token.name,
-      ...token,
-    }
-  })
+  const data = getTokensByName(sizeTokens, 'stack').map(token => ({id: token.name, ...token}))
 
   return (
     <Table.Container>
@@ -35,39 +30,16 @@ export const Stack = () => {
             header: 'Sample',
             field: 'name',
             rowHeader: true,
-            renderCell: row => {
-              return (
-                <StackDemo
-                  gap={row.name.includes('gap') ? row.name : undefined}
-                  padding={row.name.includes('padding') ? row.name : undefined}
-                />
-              )
-            },
+            renderCell: row => (
+              <StackDemo
+                gap={row.name.includes('gap') ? row.name : undefined}
+                padding={row.name.includes('padding') ? row.name : undefined}
+              />
+            ),
           },
-          {
-            header: 'Token',
-            field: 'name',
-            rowHeader: true,
-            renderCell: row => {
-              return <InlineCode value={row.name} copyClipboard cssVar />
-            },
-          },
-          {
-            header: 'Output value',
-            field: 'value',
-            rowHeader: true,
-            renderCell: row => {
-              return <p>{row.value}</p>
-            },
-          },
-          {
-            header: 'Source value',
-            field: 'original.$value',
-            rowHeader: true,
-            renderCell: row => {
-              return <p>{row.original.$value}</p>
-            },
-          },
+          tokenColumn({cssVar: true}),
+          outputValueColumn(),
+          sourceValueColumn(),
         ]}
       />
     </Table.Container>

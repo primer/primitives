@@ -33,7 +33,8 @@ Good pull requests are a fantastic help. They should remain focused in scope and
 
 1. Clone [this repository](https://github.com/primer/primitives).
 1. Create a new feature branch: `git checkout -b my-handle/my-branch-name`.
-1. Configure and install the dependencies: `npm install --legacy-peer-deps`
+1. Install dependencies: `npm install`
+   - This automatically installs both root and Storybook workspace dependencies via the `postinstall` hook
 1. Make your changes and commit them.
 1. Create a changeset for your changes if your contribution affects distributed code: `npx changeset`
    - See [changesets/changesets](https://github.com/changesets/changesets) for more information.
@@ -42,7 +43,7 @@ Good pull requests are a fantastic help. They should remain focused in scope and
    - If the tests pass, you should see a status check advising you that a canary build of `@primer/primitives` has been published, and ready to test in-app.
    - If the tests fail, review the logs and address any issues.
    - If the builds fail for any other reason (as they occasionally do), they may need to be manually restarted.
-1. 🙌 Nice job! Sit back and wait for your pull request to be reviewed.
+1. Nice job! Sit back and wait for your pull request to be reviewed.
 
 Here are a few things you can do that will increase the likelihood of your pull request being accepted:
 

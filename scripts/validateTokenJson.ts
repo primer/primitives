@@ -7,7 +7,7 @@ import {walkDir} from './utilities/walkDir.js'
 import {validateTokenWithSchema, type validationErrors} from './utilities/validateTokenWithSchema.js'
 
 export const validateTokens = (tokenDir: string) => {
-  const tokenFiles = walkDir(tokenDir, ['removed', 'fallback'])
+  const tokenFiles = walkDir(tokenDir, ['removed', 'fallback']).filter(f => f.endsWith('.json5'))
   const failed: validationErrors[] = []
 
   for (const file of tokenFiles) {

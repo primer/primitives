@@ -82,4 +82,16 @@ describe('transitionToCss', () => {
       'Invalid cubicBezier token path, must be an array with 4 numbers, but got this instead: [0.4,0,0.2]',
     )
   })
+
+  it('should handle already-transformed cubicBezier string for timingFunction', () => {
+    const token = getMockToken({
+      $value: {
+        duration: '100ms',
+        timingFunction: 'cubic-bezier(0.25,0.1,0.25,1)',
+      },
+      $type: 'transition',
+    })
+
+    expect(transitionToCss.transform(token, {}, {})).toBe('100ms cubic-bezier(0.25,0.1,0.25,1)')
+  })
 })

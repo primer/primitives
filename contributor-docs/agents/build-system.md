@@ -9,7 +9,7 @@ npm run build           # Full build (all outputs)
 npm run build:tokens    # CSS, JSON, docs outputs
 npm run build:fallbacks # Fallback theme files
 npm run build:figma     # Figma-specific outputs
-npm run build:config    # TypeScript definitions
+npm run build:types     # TypeScript definitions
 npm run build:llm       # LLM guidelines (DESIGN_TOKENS_SPEC.md)
 ```
 
@@ -17,8 +17,8 @@ npm run build:llm       # LLM guidelines (DESIGN_TOKENS_SPEC.md)
 
 ```bash
 npm run lint:fix          # Auto-fix linting issues
-npm run format:fix        # Auto-fix formatting
-npm run validate:contrast # Check color contrast ratios
+npm run format            # Auto-fix formatting
+npm run check:contrast    # Check color contrast ratios
 ```
 
 ## Build Architecture

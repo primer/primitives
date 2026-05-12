@@ -31,15 +31,12 @@
   height: 100% !important;
 }
 
-body {
-  background-color: var(--bgColor-default) !important;
+#storybook-root {
+  background-color: var(--bgColor-default);
 }
 
-.theme-wrap-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(var(--breakpoint-xsmall, 20rem), auto));
-  grid-gap: 1px;
-  height: 100vh;
+body {
+  background-color: var(--bgColor-default) !important;
 }
 
 .story-wrap-grid {
@@ -59,24 +56,6 @@ body {
 
 #storybook-root:has(.light-dark-split) {
   padding: 0 !important;
-}
-
-@media (max-width: calc(20rem * 4)) {
-  .theme-wrap-grid {
-    grid-template-columns: repeat(3, minmax(var(--breakpoint-xsmall, 20rem), auto));
-  }
-}
-
-@media (max-width: calc(20rem * 3)) {
-  .theme-wrap-grid {
-    grid-template-columns: repeat(2, minmax(var(--breakpoint-xsmall, 20rem), auto));
-  }
-}
-
-@media (max-width: calc(20rem * 2)) {
-  .theme-wrap-grid {
-    display: block;
-  }
 }
 
 .theme-name {
@@ -104,11 +83,6 @@ code {
   background-color: var(--bgColor-muted);
   border-radius: var(--borderRadius-small);
   font-weight: var(--base-text-weight-normal);
-}
-
-.TableCell {
-  display: inline-flex;
-  align-items: center;
 }
 
 .story-wrap {

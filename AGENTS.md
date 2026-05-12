@@ -7,7 +7,7 @@ Design tokens for GitHub's Primer design system, built with Style Dictionary.
 **After every change, run and fix any errors:**
 
 ```bash
-npm run lint && npm run format:fix && npm run test && npm run build
+npm run lint && npm run format && npm run test && npm run build
 ```
 
 ## Key Files
@@ -22,5 +22,6 @@ npm run lint && npm run format:fix && npm run test && npm run build
 
 ## Detailed Guides
 
+- [W3C Design Token Format Guide](contributor-docs/agents/w3c-design-token-format-guide.md) - REQUIRED: Review before adding tokens
 - [Token Authoring](contributor-docs/agents/token-authoring.md) - Token format, LLM metadata
 - [Build System](contributor-docs/agents/build-system.md) - Build commands, outputs

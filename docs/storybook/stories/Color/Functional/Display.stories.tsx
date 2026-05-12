@@ -1,11 +1,12 @@
 import React from 'react'
 import {ColorTokenSwatch} from '../../StorybookComponents/ColorTokenSwatch/ColorTokenSwatch'
-import {Banner, DataTable, Table} from '@primer/react/experimental'
+import {DataTable, Table} from '@primer/react/experimental'
 import {InlineCode} from '../../StorybookComponents/InlineCode/InlineCode'
 import {getTokensByName} from '../../utilities/getTokensByName'
-import {Box} from '@primer/react'
+import {Banner} from '@primer/react'
 import {ColorScaleByName} from '../../StorybookComponents/ColorScale/ColorScaleByName'
 import {withColorTokens, type ColorTokens} from '../../utilities/withColorTokens'
+import {formatTokenValue} from '../../utilities/formatTokenValue'
 
 export default {
   title: 'Color/Alpha/Display',
@@ -58,7 +59,7 @@ export const Foreground = ({colorTokens}: {colorTokens: ColorTokens}) => {
             field: 'value',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.value}</p>
+              return <p>{formatTokenValue(row.value)}</p>
             },
           },
         ]}
@@ -106,7 +107,7 @@ export const Background = ({colorTokens}: {colorTokens: ColorTokens}) => {
             field: 'value',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.value}</p>
+              return <p>{formatTokenValue(row.value)}</p>
             },
           },
         ]}
@@ -154,7 +155,7 @@ export const Border = ({colorTokens}: {colorTokens: ColorTokens}) => {
             field: 'value',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.value}</p>
+              return <p>{formatTokenValue(row.value)}</p>
             },
           },
         ]}
@@ -195,4 +196,8 @@ export const Scales = ({colorTokens}: {colorTokens: ColorTokens}) => {
       </div>
     </div>
   )
+}
+
+Scales.parameters = {
+  docs: {source: {type: 'code'}},
 }

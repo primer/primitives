@@ -1,6 +1,5 @@
 import type {Config} from 'style-dictionary/types'
 import {PrimerStyleDictionary} from '../src/primerStyleDictionary.js'
-import {copyFromDir} from '../src/utilities/index.js'
 import {deprecatedJson, css, docJson, fallbacks, styleLint} from '../src/platforms/index.js'
 import type {
   ConfigGeneratorOptions,
@@ -237,6 +236,28 @@ export const buildDesignTokens = async (buildOptions: ConfigGeneratorOptions): P
     console.error('🛑 Error trying to build size tokens for code output:', `${e} when building ${debugCurrentFile}`)
   }
   /** -----------------------------------
+   * Spacing tokens
+   * ----------------------------------- */
+  try {
+    const spacingFiles = glob.sync('src/tokens/functional/spacing/*')
+    for (const file of spacingFiles) {
+      const basename = file.replace('src/tokens/functional/spacing/', '').replace('.json5', '')
+      debugCurrentFile = `functional/spacing/${basename}`
+
+      const extendedSD = await PrimerStyleDictionary.extend(
+        getStyleDictionaryConfig(
+          `functional/spacing/${basename}`,
+          [file],
+          ['src/tokens/base/size/*.json5'],
+          buildOptions,
+        ),
+      )
+      await extendedSD.buildAllPlatforms()
+    }
+  } catch (e) {
+    console.error('🛑 Error trying to build spacing tokens for code output:', `${e} when building ${debugCurrentFile}`)
+  }
+  /** -----------------------------------
    * Typography tokens
    * ----------------------------------- */
   try {
@@ -353,9 +374,27 @@ export const buildDesignTokens = async (buildOptions: ConfigGeneratorOptions): P
   }
 
   /** -----------------------------------
-   * Copy `removed` files
+   * Combine deprecated token files
    * ----------------------------------- */
-  copyFromDir(`src/tokens/removed`, `${buildOptions.buildPath}removed`)
+  try {
+    const combined: Record<string, unknown> = {}
+    for (const {filename} of deprecatedBuilds) {
+      const filePath = `${buildOptions.buildPath}deprecated/${filename}.json`
+      if (fs.existsSync(filePath)) {
+        const content = JSON.parse(fs.readFileSync(filePath, 'utf8')) as Record<string, unknown>
+        Object.assign(combined, content)
+      }
+    }
+    fs.writeFileSync(`${buildOptions.buildPath}deprecated.json`, JSON.stringify(combined, null, 2))
+  } catch (e) {
+    console.error('🛑 Error trying to combine deprecated tokens:', e)
+    throw e
+  }
+
+  /** -----------------------------------
+   * Copy `removed.json` to dist
+   * ----------------------------------- */
+  fs.copyFileSync('src/tokens/removed.json', `${buildOptions.buildPath}removed.json`)
 
   const excludePaths = [
     (path: string) => {

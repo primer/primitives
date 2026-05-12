@@ -166,10 +166,15 @@ export const logResults = async (
   output: 'log' | 'file' | 'all' | 'none' = 'all',
 ) => {
   if (output === 'log' || output === 'all') {
-    for (const {resultTable, failingContrast, theme} of results) {
-      console.log('\n', `\x1B[32m\x1b[1mTheme: ${theme}\x1B[0m`, '\n', resultTable, '\n')
-      if (failingContrast > 0) {
-        console.error('❌ Failing contrast checks:', failingContrast, '\n')
+    for (const {results: allResults, failingContrast, theme} of results) {
+      const passed = allResults.filter(r => r.pass === '✅')
+      const failed = allResults.filter(r => r.pass === '❌')
+      console.log('\n', `\x1B[32m\x1b[1mTheme: ${theme}\x1B[0m`)
+      console.log(`  ✅ ${passed.length} passed`)
+      if (failed.length > 0) {
+        const failTable = makeConsoleTable(failed, ['contrastPair', 'pass', 'contrastRatio', 'minimumContrastRatio'])
+        console.log(failTable)
+        console.error(`  ❌ ${failingContrast} failing contrast checks\n`)
       }
     }
   }
@@ -210,25 +215,39 @@ const getColorsFromFiles = async (filePaths: ThemeName[]): Promise<Theme[]> => {
   return await Promise.all(files)
 }
 
+const allThemeNames: ThemeName[] = [
+  'light',
+  'dark',
+  'light_high_contrast',
+  'dark_high_contrast',
+  'light_protanopia_deuteranopia',
+  'dark_protanopia_deuteranopia',
+  'light_protanopia_deuteranopia_high_contrast',
+  'dark_protanopia_deuteranopia_high_contrast',
+  'light_tritanopia',
+  'dark_tritanopia',
+  'light_tritanopia_high_contrast',
+  'dark_tritanopia_high_contrast',
+  'dark_dimmed_high_contrast',
+]
+
 /**
  * RUN CODE
  */
 const runCheck = async () => {
-  const themesNamesToCheck = [
-    'light',
-    'dark',
-    'light_high_contrast',
-    'dark_high_contrast',
-    'light_protanopia_deuteranopia',
-    'dark_protanopia_deuteranopia',
-    'light_protanopia_deuteranopia_high_contrast',
-    'dark_protanopia_deuteranopia_high_contrast',
-    'light_tritanopia',
-    'dark_tritanopia',
-    'light_tritanopia_high_contrast',
-    'dark_tritanopia_high_contrast',
-    'dark_dimmed_high_contrast',
-  ] as ThemeName[]
+  const themesArg = process.argv.find(a => a.startsWith('--themes='))
+  let themesNamesToCheck: ThemeName[]
+  if (themesArg) {
+    const requested = themesArg.replace('--themes=', '').split(',')
+    const invalid = requested.filter(t => !allThemeNames.includes(t as ThemeName))
+    if (invalid.length > 0) {
+      console.error(`Unknown theme(s): ${invalid.join(', ')}\nValid themes: ${allThemeNames.join(', ')}`)
+      process.exit(1)
+    }
+    themesNamesToCheck = requested as ThemeName[]
+  } else {
+    themesNamesToCheck = allThemeNames
+  }
   // get colors from doc json files
   const themes = await getColorsFromFiles(themesNamesToCheck)
   // check contrast for themes

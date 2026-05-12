@@ -1,0 +1,190 @@
+{
+  motion: {
+    duration: {
+      $description: 'Semantic duration tokens for UI motion. Maps interaction types to appropriate timing values.',
+      $extensions: {
+        'org.primer.llm': {
+          usage: ['transition-duration', 'animation-duration', 'motion-timing'],
+          rules:
+            'MUST keep UI interactions ≤300ms. Use micro for hover/focus, short for state changes, medium for enter/exit. NEVER exceed 500ms for UI interactions.',
+        },
+      },
+      micro: {
+        $value: '{base.duration.100}',
+        $type: 'duration',
+        $description: 'Fast micro-interactions like hover, focus ring, and color shifts.',
+        $extensions: {
+          'org.primer.llm': {
+            usage: ['hover-transition', 'focus-ring', 'color-shift', 'opacity-change'],
+            rules: 'Use for instantaneous feedback on hover and focus states.',
+          },
+        },
+      },
+      short: {
+        $value: '{base.duration.200}',
+        $type: 'duration',
+        $description: 'Quick transitions for state changes like expand/collapse, toggles, and visibility changes.',
+        $extensions: {
+          'org.primer.llm': {
+            usage: ['expand-collapse', 'toggle', 'visibility-change', 'state-transition'],
+            rules: 'Use for interactive state changes that need to feel responsive.',
+          },
+        },
+      },
+      medium: {
+        $value: '{base.duration.300}',
+        $type: 'duration',
+        $description: 'Standard duration for elements entering or exiting the viewport, such as modals and dropdowns.',
+        $extensions: {
+          'org.primer.llm': {
+            usage: ['modal-open', 'dropdown-appear', 'tooltip-show', 'enter-exit-viewport'],
+            rules: 'Use for elements entering or leaving the viewport. Maximum recommended duration for UI interactions.',
+          },
+        },
+      },
+      long: {
+        $value: '{base.duration.500}',
+        $type: 'duration',
+        $description: 'Longer duration for complex multi-step animations or large-scale layout shifts. Use sparingly.',
+        $extensions: {
+          'org.primer.llm': {
+            usage: ['complex-animation', 'multi-step', 'layout-shift', 'page-transition'],
+            rules: 'Use sparingly for complex animations. NEVER use for simple UI interactions.',
+          },
+        },
+      },
+    },
+    easing: {
+      $description: 'Semantic easing tokens for UI motion. Maps interaction types to appropriate cubic-bezier curves.',
+      $extensions: {
+        'org.primer.llm': {
+          usage: ['transition-timing-function', 'animation-timing-function', 'easing-curve'],
+          rules:
+            'Follow the easing decision tree: entering/exiting → enter, moving/morphing → move, hover → hover, constant → linear.',
+        },
+      },
+      hover: {
+        $value: '{base.easing.ease}',
+        $type: 'cubicBezier',
+        $description: 'Easing for hover state changes and micro-interactions.',
+        $extensions: {
+          'org.primer.llm': {
+            usage: ['hover-state', 'micro-interaction', 'button-hover', 'link-hover'],
+            rules: 'Use for hover state changes.',
+          },
+        },
+      },
+      enter: {
+        $value: '{base.easing.easeOut}',
+        $type: 'cubicBezier',
+        $description: 'Decelerating easing for elements entering the viewport or appearing on screen.',
+        $extensions: {
+          'org.primer.llm': {
+            usage: ['enter-animation', 'element-appearing', 'modal-open', 'dropdown-open', 'tooltip-appear'],
+            rules: 'RECOMMENDED default for enter animations. Element decelerates into its final position.',
+          },
+        },
+      },
+      exit: {
+        $value: '{base.easing.easeIn}',
+        $type: 'cubicBezier',
+        $description: 'Accelerating easing for elements exiting the viewport or leaving the screen.',
+        $extensions: {
+          'org.primer.llm': {
+            usage: ['exit-animation', 'element-leaving', 'modal-close', 'dismiss'],
+            rules: 'Use for elements leaving the viewport. Element accelerates away.',
+          },
+        },
+      },
+      move: {
+        $value: '{base.easing.easeInOut}',
+        $type: 'cubicBezier',
+        $description: 'Smooth easing for elements moving or morphing within the viewport.',
+        $extensions: {
+          'org.primer.llm': {
+            usage: ['position-change', 'size-change', 'morph-animation', 'expand-collapse', 'slide-transition'],
+            rules: 'Use for elements that move or change shape on screen.',
+          },
+        },
+      },
+      linear: {
+        $value: '{base.easing.linear}',
+        $type: 'cubicBezier',
+        $description: 'Constant motion with no acceleration. Use for continuous animations like progress bars or loaders.',
+        $extensions: {
+          'org.primer.llm': {
+            usage: ['progress-bar', 'loader', 'continuous-animation', 'scrolling'],
+            rules: 'Use only for constant, uninterrupted motion.',
+          },
+        },
+      },
+    },
+    transition: {
+      $description:
+        'Composite transition tokens bundling duration and easing for common UI interaction patterns. Use these for the CSS transition property.',
+      $extensions: {
+        'org.primer.llm': {
+          usage: ['css-transition', 'transition-shorthand'],
+          rules:
+            'Use transition tokens instead of raw duration + easing values. Pair with CSS transition-property to specify which properties to animate. MUST respect prefers-reduced-motion.',
+        },
+      },
+      hover: {
+        $value: {
+          duration: '{motion.duration.micro}',
+          timingFunction: '{motion.easing.hover}',
+        },
+        $type: 'transition',
+        $description: 'Transition for hover state changes on interactive elements like buttons and links.',
+        $extensions: {
+          'org.primer.llm': {
+            usage: ['button-hover', 'link-hover', 'interactive-hover', 'color-transition'],
+            rules: 'Use for all hover state transitions. Keeps interactions feeling instantaneous.',
+          },
+        },
+      },
+      stateChange: {
+        $value: {
+          duration: '{motion.duration.short}',
+          timingFunction: '{motion.easing.move}',
+        },
+        $type: 'transition',
+        $description: 'Transition for state changes like toggles, expand/collapse, and visibility changes.',
+        $extensions: {
+          'org.primer.llm': {
+            usage: ['toggle', 'expand-collapse', 'accordion', 'tab-switch', 'visibility-change'],
+            rules: 'Use for interactive elements that change between states.',
+          },
+        },
+      },
+      enter: {
+        $value: {
+          duration: '{motion.duration.medium}',
+          timingFunction: '{motion.easing.enter}',
+        },
+        $type: 'transition',
+        $description: 'Transition for elements entering the viewport, such as modals, dropdowns, and tooltips.',
+        $extensions: {
+          'org.primer.llm': {
+            usage: ['modal-open', 'dropdown-appear', 'tooltip-show', 'popover-enter', 'overlay-appear'],
+            rules: 'Use for elements appearing on screen. Element decelerates into final position.',
+          },
+        },
+      },
+      exit: {
+        $value: {
+          duration: '{motion.duration.short}',
+          timingFunction: '{motion.easing.exit}',
+        },
+        $type: 'transition',
+        $description: 'Transition for elements exiting the viewport, such as closing modals and dismissing dropdowns.',
+        $extensions: {
+          'org.primer.llm': {
+            usage: ['modal-close', 'dropdown-dismiss', 'tooltip-hide', 'popover-exit', 'overlay-dismiss'],
+            rules: 'Use for elements leaving the screen. Shorter than enter to feel snappy.',
+          },
+        },
+      },
+    },
+  },
+}

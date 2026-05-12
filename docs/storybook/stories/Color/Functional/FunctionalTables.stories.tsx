@@ -4,6 +4,7 @@ import {DataTable, Table} from '@primer/react/experimental'
 import {InlineCode} from '../../StorybookComponents/InlineCode/InlineCode'
 import {getTokensByName} from '../../utilities/getTokensByName'
 import {withColorTokens, type ColorTokens} from '../../utilities/withColorTokens'
+import {formatTokenValue} from '../../utilities/formatTokenValue'
 
 export default {
   title: 'Color/Functional/Tables',
@@ -53,7 +54,7 @@ export const Foreground = ({colorTokens}: {colorTokens: ColorTokens}) => {
             field: 'value',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.value}</p>
+              return <p>{formatTokenValue(row.value)}</p>
             },
           },
         ]}
@@ -99,7 +100,7 @@ export const Background = ({colorTokens}: {colorTokens: ColorTokens}) => {
             field: 'value',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.value}</p>
+              return <p>{formatTokenValue(row.value)}</p>
             },
           },
         ]}
@@ -145,7 +146,7 @@ export const Border = ({colorTokens}: {colorTokens: ColorTokens}) => {
             field: 'value',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.value}</p>
+              return <p>{formatTokenValue(row.value)}</p>
             },
           },
         ]}
@@ -191,7 +192,7 @@ export const Shadow = ({colorTokens}: {colorTokens: ColorTokens}) => {
             field: 'value',
             rowHeader: true,
             renderCell: row => {
-              return <p>{row.value}</p>
+              return <p>{formatTokenValue(row.value)}</p>
             },
           },
         ]}

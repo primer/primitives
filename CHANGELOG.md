@@ -1,5 +1,36 @@
 # @primer/primitives
 
+## 11.8.1
+
+### Patch Changes
+
+- [#1388](https://github.com/primer/primitives/pull/1388) [`6a7399c`](https://github.com/primer/primitives/commit/6a7399c8afb46d2e0cef313b3adb6543f6084aa5) Thanks [@joshblack](https://github.com/joshblack)! - Remove postinstall script from package.json
+
+## 11.8.0
+
+### Minor Changes
+
+- [#1350](https://github.com/primer/primitives/pull/1350) [`2e67d1b`](https://github.com/primer/primitives/commit/2e67d1b008522e8e55baf509993e97518db219bc) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Add functional motion tokens completing the base→functional→component architecture
+
+- [#1370](https://github.com/primer/primitives/pull/1370) [`6d3b5b8`](https://github.com/primer/primitives/commit/6d3b5b852007e476a51065c4d51d9c3e053eef9f) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Add functional spacing tokens (xxs, xs, sm, md, lg, xl) for semantic gap, padding, and margin. Provides unified spacing scale with W3C-compliant dimension format and Figma integration.
+
+## 11.7.1
+
+### Patch Changes
+
+- [#1355](https://github.com/primer/primitives/pull/1355) [`4f52045`](https://github.com/primer/primitives/commit/4f52045a6cb5dfc575cc842ef08abb6beddc4ca2) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Fix Figma base scale output for override themes (dark-dimmed, dark-high-contrast, light-high-contrast) to include all tokens. Previously, inherited tokens (e.g. neutral, black, transparent) retained the parent theme's collection name and were missing from the override theme's Figma collection.
+
+- [#1353](https://github.com/primer/primitives/pull/1353) [`9558473`](https://github.com/primer/primitives/commit/9558473ec40712028df2ffa6e5ae228dc52c752a) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Improve npm script names for consistency and clarity
+  - Rename `build:config` → `build:types`
+  - Rename `validate:contrast` → `check:contrast`
+  - Rename `format:fix` → `format` and `format` → `format:check`
+  - Rename `install:storybook` → `storybook:install` and `start:storybook` → `storybook`
+  - Add `check` script combining lint, format check, test, and build
+  - Fix double clean in build pipeline (`prebuild` + explicit `clean`)
+  - Add `--max-warnings=0` to `lint` script
+  - Fix double-space typo in format command
+  - Normalize `./scripts/` → `scripts/` path prefixes
+
 ## 11.7.0
 
 ### Minor Changes

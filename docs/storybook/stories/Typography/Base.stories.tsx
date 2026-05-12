@@ -2,9 +2,9 @@ import React from 'react'
 // eslint-disable-next-line import/extensions
 import sizeTokens from '../../../../dist/docs/base/typography/typography.json'
 import {DataTable, Table} from '@primer/react/experimental'
-import {InlineCode} from '../StorybookComponents/InlineCode/InlineCode'
 import {TypographyDemo} from '../StorybookComponents/TypographyDemo/TypographyDemo'
 import {getTokensByName} from '../utilities/getTokensByName'
+import {tokenColumn, outputValueColumn, sourceValueColumn} from '../utilities/commonTableColumns'
 
 export default {
   title: 'Typography/Base',
@@ -15,12 +15,7 @@ export default {
 }
 
 export const Base = () => {
-  const data = getTokensByName(sizeTokens, 'base').map(token => {
-    return {
-      id: token.name,
-      ...token,
-    }
-  })
+  const data = getTokensByName(sizeTokens, 'base').map(token => ({id: token.name, ...token}))
 
   return (
     <Table.Container>
@@ -35,38 +30,15 @@ export const Base = () => {
             header: 'Sample',
             field: 'name',
             rowHeader: true,
-            renderCell: row => {
-              return (
-                <TypographyDemo fontWeight={row.name} fontShorthand="text-title-shorthand-medium">
-                  {row.name.split('-').pop().split('-').pop()}
-                </TypographyDemo>
-              )
-            },
+            renderCell: row => (
+              <TypographyDemo fontWeight={row.name} fontShorthand="text-title-shorthand-medium">
+                {row.name.split('-').pop().split('-').pop()}
+              </TypographyDemo>
+            ),
           },
-          {
-            header: 'Token',
-            field: 'name',
-            rowHeader: true,
-            renderCell: row => {
-              return <InlineCode value={row.name} copyClipboard />
-            },
-          },
-          {
-            header: 'Output value',
-            field: 'value',
-            rowHeader: true,
-            renderCell: row => {
-              return <p>{row.value}</p>
-            },
-          },
-          {
-            header: 'Source value',
-            field: 'original',
-            rowHeader: true,
-            renderCell: row => {
-              return <p>{row.original.$value}</p>
-            },
-          },
+          tokenColumn(),
+          outputValueColumn(),
+          sourceValueColumn(),
         ]}
       />
     </Table.Container>
