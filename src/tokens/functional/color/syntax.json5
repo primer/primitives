@@ -26,7 +26,7 @@
         },
       },
     },
-    'black-bright': {
+    blackBright: {
       $value: '{base.color.neutral.11}',
       $type: 'color',
       $description: 'ANSI bright black (dark gray) for dimmed terminal text',
@@ -54,7 +54,7 @@
         },
       },
     },
-    'white-bright': {
+    whiteBright: {
       $value: '{base.color.neutral.8}',
       $type: 'color',
       $description: 'ANSI bright white for emphasized terminal text',
@@ -100,7 +100,7 @@
         },
       },
     },
-    'red-bright': {
+    redBright: {
       $value: '{base.color.red.6}',
       $type: 'color',
       $description: 'ANSI bright red for highlighted errors in terminal',
@@ -140,7 +140,7 @@
         },
       },
     },
-    'green-bright': {
+    greenBright: {
       $value: '{base.color.green.5}',
       $type: 'color',
       $description: 'ANSI bright green for highlighted success in terminal',
@@ -176,7 +176,7 @@
         },
       },
     },
-    'yellow-bright': {
+    yellowBright: {
       $value: '{base.color.yellow.7}',
       $type: 'color',
       $description: 'ANSI bright yellow for highlighted warnings in terminal',
@@ -204,7 +204,7 @@
         },
       },
     },
-    'blue-bright': {
+    blueBright: {
       $value: '{base.color.blue.4}',
       $type: 'color',
       $description: 'ANSI bright blue for highlighted info in terminal',
@@ -232,7 +232,7 @@
         },
       },
     },
-    'magenta-bright': {
+    magentaBright: {
       $value: '{base.color.purple.4}',
       $type: 'color',
       $description: 'ANSI bright magenta for highlighted special text',
@@ -268,7 +268,7 @@
         },
       },
     },
-    'cyan-bright': {
+    cyanBright: {
       $value: {
         colorSpace: 'hsl',
         components: [
@@ -981,10 +981,10 @@
         },
       },
       'black-bright': {
-        $value: '{ansi.black-bright}',
+        $value: '{ansi.blackBright}',
         $type: 'color',
-        $deprecated: '{ansi.black-bright}',
-        $description: 'Deprecated. Use ansi.black-bright instead.',
+        $deprecated: '{ansi.blackBright}',
+        $description: 'Deprecated. Use ansi.blackBright instead.',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
@@ -1005,10 +1005,10 @@
         },
       },
       'white-bright': {
-        $value: '{ansi.white-bright}',
+        $value: '{ansi.whiteBright}',
         $type: 'color',
-        $deprecated: '{ansi.white-bright}',
-        $description: 'Deprecated. Use ansi.white-bright instead.',
+        $deprecated: '{ansi.whiteBright}',
+        $description: 'Deprecated. Use ansi.whiteBright instead.',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
@@ -1041,10 +1041,10 @@
         },
       },
       'red-bright': {
-        $value: '{ansi.red-bright}',
+        $value: '{ansi.redBright}',
         $type: 'color',
-        $deprecated: '{ansi.red-bright}',
-        $description: 'Deprecated. Use ansi.red-bright instead.',
+        $deprecated: '{ansi.redBright}',
+        $description: 'Deprecated. Use ansi.redBright instead.',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
@@ -1065,10 +1065,10 @@
         },
       },
       'green-bright': {
-        $value: '{ansi.green-bright}',
+        $value: '{ansi.greenBright}',
         $type: 'color',
-        $deprecated: '{ansi.green-bright}',
-        $description: 'Deprecated. Use ansi.green-bright instead.',
+        $deprecated: '{ansi.greenBright}',
+        $description: 'Deprecated. Use ansi.greenBright instead.',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
@@ -1089,10 +1089,10 @@
         },
       },
       'yellow-bright': {
-        $value: '{ansi.yellow-bright}',
+        $value: '{ansi.yellowBright}',
         $type: 'color',
-        $deprecated: '{ansi.yellow-bright}',
-        $description: 'Deprecated. Use ansi.yellow-bright instead.',
+        $deprecated: '{ansi.yellowBright}',
+        $description: 'Deprecated. Use ansi.yellowBright instead.',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
@@ -1113,10 +1113,10 @@
         },
       },
       'blue-bright': {
-        $value: '{ansi.blue-bright}',
+        $value: '{ansi.blueBright}',
         $type: 'color',
-        $deprecated: '{ansi.blue-bright}',
-        $description: 'Deprecated. Use ansi.blue-bright instead.',
+        $deprecated: '{ansi.blueBright}',
+        $description: 'Deprecated. Use ansi.blueBright instead.',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
@@ -1137,10 +1137,10 @@
         },
       },
       'magenta-bright': {
-        $value: '{ansi.magenta-bright}',
+        $value: '{ansi.magentaBright}',
         $type: 'color',
-        $deprecated: '{ansi.magenta-bright}',
-        $description: 'Deprecated. Use ansi.magenta-bright instead.',
+        $deprecated: '{ansi.magentaBright}',
+        $description: 'Deprecated. Use ansi.magentaBright instead.',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
@@ -1161,10 +1161,10 @@
         },
       },
       'cyan-bright': {
-        $value: '{ansi.cyan-bright}',
+        $value: '{ansi.cyanBright}',
         $type: 'color',
-        $deprecated: '{ansi.cyan-bright}',
-        $description: 'Deprecated. Use ansi.cyan-bright instead.',
+        $deprecated: '{ansi.cyanBright}',
+        $description: 'Deprecated. Use ansi.cyanBright instead.',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
@@ -1200,10 +1200,10 @@
           },
         },
         'constant-other-reference-link': {
-          $value: '{prettylights.syntax.constant-other-reference-link}',
+          $value: '{prettylights.syntax.constantOtherReferenceLink}',
           $type: 'color',
-          $deprecated: '{prettylights.syntax.constant-other-reference-link}',
-          $description: 'Deprecated. Use prettylights.syntax.constant-other-reference-link instead.',
+          $deprecated: '{prettylights.syntax.constantOtherReferenceLink}',
+          $description: 'Deprecated. Use prettylights.syntax.constantOtherReferenceLink instead.',
           $extensions: {
             'org.primer.figma': {
               collection: 'mode',
@@ -1226,10 +1226,10 @@
         storage: {
           modifier: {
             import: {
-              $value: '{prettylights.syntax.storage.modifier.import}',
+              $value: '{prettylights.syntax.storageModifierImport}',
               $type: 'color',
-              $deprecated: '{prettylights.syntax.storage.modifier.import}',
-              $description: 'Deprecated. Use prettylights.syntax.storage.modifier.import instead.',
+              $deprecated: '{prettylights.syntax.storageModifierImport}',
+              $description: 'Deprecated. Use prettylights.syntax.storageModifierImport instead.',
               $extensions: {
                 'org.primer.figma': {
                   collection: 'mode',
@@ -1240,10 +1240,10 @@
           },
         },
         'entity-tag': {
-          $value: '{prettylights.syntax.entity-tag}',
+          $value: '{prettylights.syntax.entityTag}',
           $type: 'color',
-          $deprecated: '{prettylights.syntax.entity-tag}',
-          $description: 'Deprecated. Use prettylights.syntax.entity-tag instead.',
+          $deprecated: '{prettylights.syntax.entityTag}',
+          $description: 'Deprecated. Use prettylights.syntax.entityTag instead.',
           $extensions: {
             'org.primer.figma': {
               collection: 'mode',
@@ -1289,10 +1289,10 @@
         },
         brackethighlighter: {
           unmatched: {
-            $value: '{prettylights.syntax.brackethighlighter.unmatched}',
+            $value: '{prettylights.syntax.bracketHighlighterUnmatched}',
             $type: 'color',
-            $deprecated: '{prettylights.syntax.brackethighlighter.unmatched}',
-            $description: 'Deprecated. Use prettylights.syntax.brackethighlighter.unmatched instead.',
+            $deprecated: '{prettylights.syntax.bracketHighlighterUnmatched}',
+            $description: 'Deprecated. Use prettylights.syntax.bracketHighlighterUnmatched instead.',
             $extensions: {
               'org.primer.figma': {
                 collection: 'mode',
@@ -1301,10 +1301,10 @@
             },
           },
           angle: {
-            $value: '{prettylights.syntax.brackethighlighter.angle}',
+            $value: '{prettylights.syntax.bracketHighlighterAngle}',
             $type: 'color',
-            $deprecated: '{prettylights.syntax.brackethighlighter.angle}',
-            $description: 'Deprecated. Use prettylights.syntax.brackethighlighter.angle instead.',
+            $deprecated: '{prettylights.syntax.bracketHighlighterAngle}',
+            $description: 'Deprecated. Use prettylights.syntax.bracketHighlighterAngle instead.',
             $extensions: {
               'org.primer.figma': {
                 collection: 'mode',
@@ -1316,10 +1316,10 @@
         invalid: {
           illegal: {
             text: {
-              $value: '{prettylights.syntax.invalid.illegal.text}',
+              $value: '{prettylights.syntax.invalidIllegal.text}',
               $type: 'color',
-              $deprecated: '{prettylights.syntax.invalid.illegal.text}',
-              $description: 'Deprecated. Use prettylights.syntax.invalid.illegal.text instead.',
+              $deprecated: '{prettylights.syntax.invalidIllegal.text}',
+              $description: 'Deprecated. Use prettylights.syntax.invalidIllegal.text instead.',
               $extensions: {
                 'org.primer.figma': {
                   collection: 'mode',
@@ -1328,10 +1328,10 @@
               },
             },
             bg: {
-              $value: '{prettylights.syntax.invalid.illegal.bg}',
+              $value: '{prettylights.syntax.invalidIllegal.bg}',
               $type: 'color',
-              $deprecated: '{prettylights.syntax.invalid.illegal.bg}',
-              $description: 'Deprecated. Use prettylights.syntax.invalid.illegal.bg instead.',
+              $deprecated: '{prettylights.syntax.invalidIllegal.bg}',
+              $description: 'Deprecated. Use prettylights.syntax.invalidIllegal.bg instead.',
               $extensions: {
                 'org.primer.figma': {
                   collection: 'mode',
@@ -1344,10 +1344,10 @@
         carriage: {
           return: {
             text: {
-              $value: '{prettylights.syntax.carriage.return.text}',
+              $value: '{prettylights.syntax.carriageReturn.text}',
               $type: 'color',
-              $deprecated: '{prettylights.syntax.carriage.return.text}',
-              $description: 'Deprecated. Use prettylights.syntax.carriage.return.text instead.',
+              $deprecated: '{prettylights.syntax.carriageReturn.text}',
+              $description: 'Deprecated. Use prettylights.syntax.carriageReturn.text instead.',
               $extensions: {
                 'org.primer.figma': {
                   collection: 'mode',
@@ -1356,10 +1356,10 @@
               },
             },
             bg: {
-              $value: '{prettylights.syntax.carriage.return.bg}',
+              $value: '{prettylights.syntax.carriageReturn.bg}',
               $type: 'color',
-              $deprecated: '{prettylights.syntax.carriage.return.bg}',
-              $description: 'Deprecated. Use prettylights.syntax.carriage.return.bg instead.',
+              $deprecated: '{prettylights.syntax.carriageReturn.bg}',
+              $description: 'Deprecated. Use prettylights.syntax.carriageReturn.bg instead.',
               $extensions: {
                 'org.primer.figma': {
                   collection: 'mode',
@@ -1370,10 +1370,10 @@
           },
         },
         'string-regexp': {
-          $value: '{prettylights.syntax.string-regexp}',
+          $value: '{prettylights.syntax.stringRegexp}',
           $type: 'color',
-          $deprecated: '{prettylights.syntax.string-regexp}',
-          $description: 'Deprecated. Use prettylights.syntax.string-regexp instead.',
+          $deprecated: '{prettylights.syntax.stringRegexp}',
+          $description: 'Deprecated. Use prettylights.syntax.stringRegexp instead.',
           $extensions: {
             'org.primer.figma': {
               collection: 'mode',
@@ -1538,10 +1538,10 @@
         meta: {
           diff: {
             range: {
-              $value: '{prettylights.syntax.meta.diff.range}',
+              $value: '{prettylights.syntax.metaDiffRange}',
               $type: 'color',
-              $deprecated: '{prettylights.syntax.meta.diff.range}',
-              $description: 'Deprecated. Use prettylights.syntax.meta.diff.range instead.',
+              $deprecated: '{prettylights.syntax.metaDiffRange}',
+              $description: 'Deprecated. Use prettylights.syntax.metaDiffRange instead.',
               $extensions: {
                 'org.primer.figma': {
                   collection: 'mode',
@@ -1554,10 +1554,10 @@
         sublimelinter: {
           gutter: {
             mark: {
-              $value: '{prettylights.syntax.sublimelinter.gutter.mark}',
+              $value: '{prettylights.syntax.sublimeLinterGutterMark}',
               $type: 'color',
-              $deprecated: '{prettylights.syntax.sublimelinter.gutter.mark}',
-              $description: 'Deprecated. Use prettylights.syntax.sublimelinter.gutter.mark instead.',
+              $deprecated: '{prettylights.syntax.sublimeLinterGutterMark}',
+              $description: 'Deprecated. Use prettylights.syntax.sublimeLinterGutterMark instead.',
               $extensions: {
                 'org.primer.figma': {
                   collection: 'mode',
