@@ -360,6 +360,24 @@
         },
       },
       entityTag: {
+        $value: '{base.color.blue.6}',
+        $type: 'color',
+        $description: 'Syntax highlighting color for HTML/XML tags',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            group: 'syntax',
+          },
+          'org.primer.overrides': {
+            dark: '{base.color.green.1}',
+            'dark-tritanopia': '{base.color.blue.1}',
+            'dark-tritanopia-high-contrast': '{base.color.blue.1}',
+            'dark-protanopia-deuteranopia': '{base.color.blue.1}',
+            'dark-protanopia-deuteranopia-high-contrast': '{base.color.blue.1}',
+          },
+        },
+      },
+      entity: {
         $value: '{base.color.purple.6}',
         $type: 'color',
         $description: 'Syntax highlighting color for class names, type definitions, and declarations',
@@ -370,18 +388,6 @@
           },
           'org.primer.overrides': {
             dark: '{base.color.purple.2}',
-          },
-        },
-      },
-      entity: {
-        $value: '{prettylights.syntax.entityTag}',
-        $type: 'color',
-        $deprecated: '{prettylights.syntax.entityTag}',
-        $description: 'Deprecated. Use prettylights.syntax.entityTag instead.',
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'mode',
-            group: 'syntax',
           },
         },
       },
