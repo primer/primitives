@@ -3,7 +3,7 @@ import {DataTable, Stack, Table} from '@primer/react/experimental'
 import {ColorTokenSwatch} from '../../StorybookComponents/ColorTokenSwatch/ColorTokenSwatch'
 import {InlineCode} from '../../StorybookComponents/InlineCode/InlineCode'
 import {getTokensByName} from '../../utilities/getTokensByName'
-import {withColorTokens} from '../../utilities/withColorTokens'
+import {withColorTokens, type ColorTokens} from '../../utilities/withColorTokens'
 import {formatTokenValue} from '../../utilities/formatTokenValue'
 
 export default {
@@ -39,7 +39,7 @@ const colors = [
   'auburn',
 ]
 
-const labelStyle = {
+const labelStyle: React.CSSProperties = {
   display: 'inline-flex',
   alignItems: 'center',
   padding: '2px 8px',
@@ -52,7 +52,7 @@ const labelStyle = {
   textDecoration: 'none',
 }
 
-const SectionHeading = ({children}) => (
+const SectionHeading = ({children}: {children: React.ReactNode}) => (
   <h2
     style={{
       fontSize: '14px',
@@ -187,7 +187,7 @@ export const DisplayColors = () => {
   )
 }
 
-export const Foreground = ({colorTokens}) => {
+export const Foreground = ({colorTokens}: {colorTokens: ColorTokens}) => {
   const data = getTokensByName(colorTokens, 'display')
     .filter(token => token.name.includes('fgColor'))
     .map(token => ({id: token.name, ...token}))
@@ -227,7 +227,7 @@ export const Foreground = ({colorTokens}) => {
   )
 }
 
-export const Background = ({colorTokens}) => {
+export const Background = ({colorTokens}: {colorTokens: ColorTokens}) => {
   const data = getTokensByName(colorTokens, 'display')
     .filter(token => token.name.includes('bgColor'))
     .map(token => ({id: token.name, ...token}))
@@ -267,7 +267,7 @@ export const Background = ({colorTokens}) => {
   )
 }
 
-export const Border = ({colorTokens}) => {
+export const Border = ({colorTokens}: {colorTokens: ColorTokens}) => {
   const data = getTokensByName(colorTokens, 'display')
     .filter(token => token.name.includes('borderColor'))
     .map(token => ({id: token.name, ...token}))
