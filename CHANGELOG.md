@@ -1,5 +1,17 @@
 # @primer/primitives
 
+## 11.9.0
+
+### Minor Changes
+
+- [#1352](https://github.com/primer/primitives/pull/1352) [`3dfc099`](https://github.com/primer/primitives/commit/3dfc0997d60cfec13a861b38cd1cfb06c0ebdf30) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Migrate prettylights syntax tokens to canonical `prettylights-syntax-*` naming while preserving legacy compatibility.
+  - Migrate ANSI colors to canonical `ansi-*` naming with deprecated `color-ansi-*` aliases.
+  - Keep `codeMirror-*` tokens unchanged.
+  - Add modern canonical prettylights syntax token names (for example `entityTag`, `storageModifierImport`, `stringRegexp`, `metaDiffRange`).
+  - Keep legacy `color-prettylights-syntax-*` names as deprecated aliases pointing to canonical replacements.
+  - Update fallback and Storybook migration artifacts to reflect canonical naming and legacy alias support.
+  - Update syntax docs/guidelines output to document `prettylights-syntax-[element]` as canonical with deprecated legacy alias notes.
+
 ## 11.8.1
 
 ### Patch Changes
