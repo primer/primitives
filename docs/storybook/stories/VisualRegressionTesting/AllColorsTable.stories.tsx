@@ -57,7 +57,8 @@ export const AllThemesInOneTable = () => {
                   id.includes('fgColor') ||
                   id.includes('borderColor') ||
                   id.includes('outlineColor') ||
-                  id.includes('iconColor') || id.includes('ansi-')
+                  id.includes('iconColor') ||
+                  id.includes('ansi-')
                     ? id
                     : undefined
                 }
@@ -77,7 +78,8 @@ export const AllThemesInOneTable = () => {
                   id.includes('fgColor') ||
                   id.includes('borderColor') ||
                   id.includes('outlineColor') ||
-                  id.includes('iconColor') || id.includes('ansi-')
+                  id.includes('iconColor') ||
+                  id.includes('ansi-')
                     ? id
                     : undefined
                 }
@@ -97,7 +99,8 @@ export const AllThemesInOneTable = () => {
                   id.includes('fgColor') ||
                   id.includes('borderColor') ||
                   id.includes('outlineColor') ||
-                  id.includes('iconColor') || id.includes('ansi-')
+                  id.includes('iconColor') ||
+                  id.includes('ansi-')
                     ? id
                     : undefined
                 }
@@ -117,7 +120,8 @@ export const AllThemesInOneTable = () => {
                   id.includes('fgColor') ||
                   id.includes('borderColor') ||
                   id.includes('outlineColor') ||
-                  id.includes('iconColor') || id.includes('ansi-')
+                  id.includes('iconColor') ||
+                  id.includes('ansi-')
                     ? id
                     : undefined
                 }
@@ -137,7 +141,8 @@ export const AllThemesInOneTable = () => {
                   id.includes('fgColor') ||
                   id.includes('borderColor') ||
                   id.includes('outlineColor') ||
-                  id.includes('iconColor') || id.includes('ansi-')
+                  id.includes('iconColor') ||
+                  id.includes('ansi-')
                     ? id
                     : undefined
                 }
@@ -157,7 +162,8 @@ export const AllThemesInOneTable = () => {
                   id.includes('fgColor') ||
                   id.includes('borderColor') ||
                   id.includes('outlineColor') ||
-                  id.includes('iconColor') || id.includes('ansi-')
+                  id.includes('iconColor') ||
+                  id.includes('ansi-')
                     ? id
                     : undefined
                 }
@@ -177,7 +183,8 @@ export const AllThemesInOneTable = () => {
                   id.includes('fgColor') ||
                   id.includes('borderColor') ||
                   id.includes('outlineColor') ||
-                  id.includes('iconColor') || id.includes('ansi-')
+                  id.includes('iconColor') ||
+                  id.includes('ansi-')
                     ? id
                     : undefined
                 }
@@ -197,7 +204,8 @@ export const AllThemesInOneTable = () => {
                   id.includes('fgColor') ||
                   id.includes('borderColor') ||
                   id.includes('outlineColor') ||
-                  id.includes('iconColor') || id.includes('ansi-')
+                  id.includes('iconColor') ||
+                  id.includes('ansi-')
                     ? id
                     : undefined
                 }
@@ -217,7 +225,8 @@ export const AllThemesInOneTable = () => {
                   id.includes('fgColor') ||
                   id.includes('borderColor') ||
                   id.includes('outlineColor') ||
-                  id.includes('iconColor') || id.includes('ansi-')
+                  id.includes('iconColor') ||
+                  id.includes('ansi-')
                     ? id
                     : undefined
                 }
@@ -237,7 +246,8 @@ export const AllThemesInOneTable = () => {
                   id.includes('fgColor') ||
                   id.includes('borderColor') ||
                   id.includes('outlineColor') ||
-                  id.includes('iconColor') || id.includes('ansi-')
+                  id.includes('iconColor') ||
+                  id.includes('ansi-')
                     ? id
                     : undefined
                 }
@@ -257,7 +267,8 @@ export const AllThemesInOneTable = () => {
                   id.includes('fgColor') ||
                   id.includes('borderColor') ||
                   id.includes('outlineColor') ||
-                  id.includes('iconColor') || id.includes('ansi-')
+                  id.includes('iconColor') ||
+                  id.includes('ansi-')
                     ? id
                     : undefined
                 }
@@ -277,7 +288,8 @@ export const AllThemesInOneTable = () => {
                   id.includes('fgColor') ||
                   id.includes('borderColor') ||
                   id.includes('outlineColor') ||
-                  id.includes('iconColor') || id.includes('ansi-')
+                  id.includes('iconColor') ||
+                  id.includes('ansi-')
                     ? id
                     : undefined
                 }
@@ -297,7 +309,8 @@ export const AllThemesInOneTable = () => {
                   id.includes('fgColor') ||
                   id.includes('borderColor') ||
                   id.includes('outlineColor') ||
-                  id.includes('iconColor') || id.includes('ansi-')
+                  id.includes('iconColor') ||
+                  id.includes('ansi-')
                     ? id
                     : undefined
                 }
@@ -317,7 +330,8 @@ export const AllThemesInOneTable = () => {
                   id.includes('fgColor') ||
                   id.includes('borderColor') ||
                   id.includes('outlineColor') ||
-                  id.includes('iconColor') || id.includes('ansi-')
+                  id.includes('iconColor') ||
+                  id.includes('ansi-')
                     ? id
                     : undefined
                 }
