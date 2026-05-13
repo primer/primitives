@@ -43,7 +43,8 @@ export const ColorSwatches = ({colorToken}: {colorToken: string}) => {
           colorToken.includes('bgColor') ||
           colorToken.includes('color') ||
           colorToken.includes('fgColor') ||
-          colorToken.includes('iconColor')
+          colorToken.includes('iconColor') ||
+          colorToken.includes('ansi-')
             ? colorToken
             : undefined
         }
