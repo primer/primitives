@@ -54,6 +54,10 @@
         },
         alpha: 0,
       },
+      // NOTE: The neutral scale is for UI use only (backgrounds, borders, component states).
+      // It targets WCAG 2.1 §1.4.11 non-text contrast (≥3:1), not text contrast (≥4.5:1).
+      // Do not use neutral steps directly as text or icon colors — use fgColor-* functional tokens.
+      // See: contributor-docs/adrs/adr-003-neutral-scales.md and adr-012-color-scale-contrast-map.md
       neutral: {
         '0': {
           $value: '{base.color.black}',
@@ -243,8 +247,8 @@
         '2': {
           $value: {
             colorSpace: 'hsl',
-            components: [220, 82.4, 20],
-            hex: '#09255d',
+            components: [220, 82.4, 20.7],
+            hex: '#092660',
           },
           $type: 'color',
           $extensions: {
@@ -256,8 +260,8 @@
         '3': {
           $value: {
             colorSpace: 'hsl',
-            components: [218.9, 82.8, 29.6],
-            hex: '#0d398a',
+            components: [218.9, 82.8, 28.3],
+            hex: '#0c3684',
           },
           $type: 'color',
           $extensions: {
@@ -269,8 +273,8 @@
         '4': {
           $value: {
             colorSpace: 'hsl',
-            components: [218.1, 84.4, 35.1],
-            hex: '#0e45a5',
+            components: [218.1, 84.4, 35.8],
+            hex: '#0e46a8',
           },
           $type: 'color',
           $extensions: {
