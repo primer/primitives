@@ -76,6 +76,68 @@ Add `org.primer.llm` to include tokens in `DESIGN_TOKENS_SPEC.md`:
 - **rules**: Include MUST/SHOULD/Do NOT guidance when applicable
 - Only add to tokens that benefit from explicit documentation
 
+## Deprecating and Renaming Tokens
+
+When renaming a token, keep the old name as a deprecated alias:
+
+```json5
+{
+  // New canonical token
+  ansi: {
+    red: {
+      $value: '{base.color.red.5}',
+      $type: 'color',
+      $description: 'ANSI red for errors and alerts in terminal output',
+      $extensions: {
+        /* figma, overrides, etc. */
+      },
+    },
+  },
+  // Deprecated alias pointing to new token
+  color: {
+    ansi: {
+      red: {
+        $value: '{ansi.red}',
+        $type: 'color',
+        $deprecated: '{ansi.red}',
+        $description: 'Deprecated. Use ansi.red instead.',
+        $extensions: {
+          'org.primer.figma': {
+            /* keep for Figma backward compat */
+          },
+        },
+      },
+    },
+  },
+}
+```
+
+Key rules for deprecated aliases:
+
+- `$value` references the new canonical token
+- `$deprecated` contains the new token path (same as `$value`)
+- `$description` says "Deprecated. Use {new.path} instead."
+- Keep `org.primer.figma` on aliases for Figma backward compatibility
+- Do NOT add `org.primer.overrides` on aliases (overrides live on canonical tokens only)
+- Do NOT add `org.primer.llm` on aliases
+
+## Naming Conventions
+
+Functional color token groups use domain-specific prefixes:
+
+| Group                   | CSS pattern               | Example                         |
+| ----------------------- | ------------------------- | ------------------------------- |
+| `bgColor.*`             | `--bgColor-*`             | `--bgColor-accent-emphasis`     |
+| `fgColor.*`             | `--fgColor-*`             | `--fgColor-danger`              |
+| `borderColor.*`         | `--borderColor-*`         | `--borderColor-default`         |
+| `ansi.*`                | `--ansi-*`                | `--ansi-red`                    |
+| `prettylights.syntax.*` | `--prettylights-syntax-*` | `--prettylights-syntax-keyword` |
+
+**Deprecated prefixes** (still emitted as `var()` aliases):
+
+- `--color-ansi-*` → use `--ansi-*` instead
+- `--color-prettylights-syntax-*` → use `--prettylights-syntax-*` instead
+
 ## Adding a New Token
 
 1. Add to the appropriate file in `src/tokens/`:
