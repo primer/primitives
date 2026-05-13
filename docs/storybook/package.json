@@ -1,8 +1,14 @@
 {
-  "name": "storybook",
-  "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT",
+  "name": "primitives-storybook",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build:preview": "npm run clean && scripts/build-storybook preview",
+    "build:prod": "npm run clean && scripts/build-storybook",
+    "clean": "rm -rf out",
+    "storybook": "storybook dev -p 6006 --ci",
+    "build-storybook": "storybook build"
+  },
   "devDependencies": {
     "@primer/octicons-react": "^19.16.0",
     "@storybook/addon-a11y": "^8.6.0",
@@ -24,12 +30,5 @@
     "@primer/react": "^38.0.0",
     "react": "18.3",
     "react-dom": "18.3"
-  },
-  "scripts": {
-    "build:preview": "npm run clean && scripts/build-storybook preview",
-    "build:prod": "npm run clean && scripts/build-storybook",
-    "clean": "rm -rf out",
-    "storybook": "storybook dev -p 6006 --ci",
-    "build-storybook": "storybook build"
   }
 }
