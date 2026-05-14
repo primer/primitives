@@ -9,12 +9,9 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  update-snapshots-runner:
+  update-snapshots-build:
     if: ${{ github.event.label.name == 'update snapshots' }}
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        shard: [1, 2, 3, 4, 5]
     steps:
       - uses: actions/checkout@v4
       - name: Set up Node
@@ -28,13 +25,35 @@ jobs:
         run: npm run build
       - name: Build storybook
         working-directory: docs/storybook
-        run: |
-          npm ci --legacy-peer-deps
-          npm run build-storybook
+        run: npm run build-storybook
+      - name: Upload build output
+        uses: actions/upload-artifact@v4
+        with:
+          name: update-snapshots-build-output
+          path: |
+            node_modules
+            dist
+            docs/storybook/storybook-static
+          retention-days: 1
+
+  update-snapshots-runner:
+    needs: update-snapshots-build
+    if: ${{ github.event.label.name == 'update snapshots' }}
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        shard: [1, 2, 3, 4, 5]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download build output
+        uses: actions/download-artifact@v4
+        with:
+          name: update-snapshots-build-output
+          path: .
       - name: Run storybook
         id: storybook
         run: |
-          npx serve -l 6006 storybook-static &
+          python3 -m http.server 6006 --directory storybook-static &
           pid=$!
           echo "pid=$pid" >> $GITHUB_OUTPUT
           sleep 5
@@ -61,7 +80,7 @@ jobs:
           path: snapshots.zip
           retention-days: 1
           if-no-files-found: ignore
-    
+
   update:
     name: 'Update snapshots'
     needs: update-snapshots-runner

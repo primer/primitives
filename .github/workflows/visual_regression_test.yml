@@ -14,17 +14,12 @@ jobs:
     uses: ./.github/workflows/hasChanged.yml
 
   # ============================================
-  # Step 2: Run VRT (only if color tokens changed)
+  # Step 2: Build shared VRT artifacts
   # ============================================
-  vrt-runner:
+  vrt-build:
     needs: changes
     if: needs.changes.outputs.vrtColor == 'true'
     runs-on: ubuntu-latest-8-cores
-
-    strategy:
-      fail-fast: false
-      matrix:
-        shard: [1, 2, 3, 4, 5]
 
     steps:
       - uses: actions/checkout@v4
@@ -45,11 +40,43 @@ jobs:
         working-directory: docs/storybook
         run: npm run build-storybook
 
+      - name: Upload build output
+        uses: actions/upload-artifact@v4
+        with:
+          name: vrt-build-output
+          path: |
+            node_modules
+            dist
+            docs/storybook/storybook-static
+          retention-days: 1
+
+  # ============================================
+  # Step 3: Run VRT shards (only if color tokens changed)
+  # ============================================
+  vrt-runner:
+    needs: [changes, vrt-build]
+    if: needs.changes.outputs.vrtColor == 'true'
+    runs-on: ubuntu-latest-8-cores
+
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [1, 2, 3, 4, 5]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download build output
+        uses: actions/download-artifact@v4
+        with:
+          name: vrt-build-output
+          path: .
+
       - name: Run storybook
         id: storybook
         working-directory: docs/storybook
         run: |
-          npx serve -l 6006 storybook-static &
+          python3 -m http.server 6006 --directory storybook-static &
           pid=$!
           echo "pid=$pid" >> $GITHUB_OUTPUT
           sleep 5
@@ -73,13 +100,13 @@ jobs:
           retention-days: 1
 
   # ============================================
-  # Step 3: Merge reports
+  # Step 4: Merge reports
   # ============================================
   vrt:
     name: 'Visual Regression Testing'
     if: ${{ always() && needs.changes.outputs.vrtColor == 'true' }}
     runs-on: ubuntu-latest
-    needs: [changes, vrt-runner]
+    needs: [changes, vrt-build, vrt-runner]
 
     steps:
       - uses: actions/checkout@v4
@@ -114,7 +141,7 @@ jobs:
         run: exit 1
 
   # ============================================
-  # Step 4: Skip notification (when no color changes)
+  # Step 5: Skip notification (when no color changes)
   # ============================================
   vrt-skipped:
     name: 'Visual Regression Testing'
