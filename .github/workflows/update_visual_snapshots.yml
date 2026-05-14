@@ -32,6 +32,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: update-snapshots-build-output
+          include-hidden-files: true
           path: |
             node_modules
             dist
@@ -55,7 +56,10 @@ jobs:
           name: update-snapshots-build-output
           path: .
       - name: Restore executable permissions
-        run: chmod +x node_modules/.bin/*
+        run: |
+          if [ -d node_modules/.bin ]; then
+            find node_modules/.bin -maxdepth 1 -type f -exec chmod +x {} +
+          fi
       - name: Run storybook
         id: storybook
         run: |
