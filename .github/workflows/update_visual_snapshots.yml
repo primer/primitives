@@ -12,6 +12,8 @@ jobs:
   update-snapshots-build:
     if: ${{ github.event.label.name == 'update snapshots' }}
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - uses: actions/checkout@v4
       - name: Set up Node
@@ -38,8 +40,10 @@ jobs:
 
   update-snapshots-runner:
     needs: update-snapshots-build
-    if: ${{ github.event.label.name == 'update snapshots' }}
+    if: ${{ github.event.label.name == 'update snapshots' && needs.update-snapshots-build.result == 'success' }}
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     strategy:
       matrix:
         shard: [1, 2, 3, 4, 5]
@@ -53,11 +57,11 @@ jobs:
       - name: Run storybook
         id: storybook
         run: |
-          python3 -m http.server 6006 --directory storybook-static &
+          # Use Python's built-in HTTP server for a simple static file host in CI.
+          python3 -m http.server 6006 --directory docs/storybook/storybook-static &
           pid=$!
           echo "pid=$pid" >> $GITHUB_OUTPUT
           sleep 5
-        working-directory: docs/storybook
       - name: Run Visual Regression Tests
         uses: docker://mcr.microsoft.com/playwright:v1.56.1-jammy
         env:
