@@ -76,6 +76,9 @@ jobs:
           name: vrt-build-output
           path: .
 
+      - name: Restore executable permissions
+        run: chmod +x node_modules/.bin/*
+
       - name: Run storybook
         id: storybook
         run: |
