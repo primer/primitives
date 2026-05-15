@@ -91,6 +91,21 @@ jobs:
           pid=$!
           echo "pid=$pid" >> $GITHUB_OUTPUT
           echo "port=$PORT" >> $GITHUB_OUTPUT
+          
+          # Wait for server to be ready
+          max_attempts=60
+          for attempt in $(seq 1 $max_attempts); do
+            if curl -sf http://localhost:$PORT/ > /dev/null 2>&1; then
+              echo "✓ Server ready on port $PORT (attempt $attempt)"
+              break
+            fi
+            if [ $attempt -eq $max_attempts ]; then
+              echo "✗ Server failed to start on port $PORT"
+              cat /tmp/server.log
+              exit 1
+            fi
+            sleep 0.5
+          done
 
       - name: Run Visual Regression Tests
         uses: docker://mcr.microsoft.com/playwright:v1.56.1-jammy
