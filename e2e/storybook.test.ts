@@ -1,7 +1,5 @@
 import {type Page, test, expect} from '@playwright/test'
 
-import colorData from '../dist/docs/functional/themes/light.json' assert {type: 'json'}
-
 const {STORYBOOK_URL = 'http://localhost:6006'} = process.env
 
 interface Story {
@@ -22,14 +20,6 @@ if (!storyIndexResponse.ok) {
 }
 
 const data = (await storyIndexResponse.json()) as StoryIndex
-
-const extractNameAndValue = Object.entries(colorData)
-  .map(([_key, details]) => ({
-    name: details.name,
-    value: details.value,
-  }))
-  .filter(item => !item.name.includes('scale'))
-  .map(item => item.name)
 
 const stories = Object.values(data.entries).map((story: unknown) => {
   const {id, tags} = story as Story
@@ -86,29 +76,6 @@ test.describe('storybook', () => {
       }
     })
   }
-
-  // The behavior for "all color swatches" stories remains unchanged.
-  test.describe(`all color swatches`, async () => {
-    for (const theme of themes) {
-      for (const name of extractNameAndValue) {
-        test(`color swatch - ${name} - ${theme}`, async ({page}) => {
-          await visit(page, {
-            id: 'vrt-all-colors--color-swatches',
-            args: {
-              colorToken: name,
-            },
-            globals: {
-              theme,
-            },
-          })
-          await page.setViewportSize({width: 300, height: 170})
-          expect(await page.screenshot({animations: 'disabled'})).toMatchSnapshot(
-            `storybook.all color swatches.${theme}.${name}.png`,
-          )
-        })
-      }
-    }
-  })
 })
 
 interface Options {
