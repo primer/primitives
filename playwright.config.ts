@@ -27,7 +27,8 @@ export default defineConfig({
       },
 
   // https://playwright.dev/docs/api/class-testconfig#test-config-timeout
-  timeout: 1000 * 5,
+  // Increased to 30s for CI environment with Docker sharding and network latency
+  timeout: 1000 * 30,
 
   // https://playwright.dev/docs/api/class-testconfig#test-config-output-dir
   outputDir: path.join(__dirname, '.playwright', 'results'),
