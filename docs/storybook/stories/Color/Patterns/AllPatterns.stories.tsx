@@ -5,10 +5,18 @@ import {InlineCode} from '../../StorybookComponents/InlineCode/InlineCode'
 import {getTokensByName} from '../../utilities/getTokensByName'
 import {withColorTokens, type ColorTokens} from '../../utilities/withColorTokens'
 import {formatTokenValue} from '../../utilities/formatTokenValue'
+import {Heading, Stack} from '@primer/react'
 
 export default {
   title: 'Color/Patterns',
-  decorators: [withColorTokens],
+  decorators: [
+    withColorTokens,
+    (Story: React.ComponentType) => (
+      <Stack direction="vertical" style={{padding: '24px'}}>
+        <Story />
+      </Stack>
+    ),
+  ],
   parameters: {
     controls: {hideNoControlsWarning: true},
     options: {
@@ -893,6 +901,55 @@ export const ContributionGraph = ({colorTokens}: {colorTokens: ColorTokens}) => 
   )
 }
 
+const labelStyle: React.CSSProperties = {
+  display: 'inline-flex',
+  alignItems: 'center',
+  padding: '2px 8px',
+  borderRadius: '2em',
+  fontSize: '12px',
+  fontWeight: 500,
+  lineHeight: '18px',
+  whiteSpace: 'nowrap',
+  cursor: 'pointer',
+  textDecoration: 'none',
+  userSelect: 'none',
+}
+
+type InteractionState = 'rest' | 'hover' | 'active'
+
+function LabelChip({color, withBorder}: {color: string; withBorder?: boolean}) {
+  const [state, setState] = React.useState<InteractionState>('rest')
+
+  const bg =
+    state === 'active'
+      ? `var(--label-${color}-bgColor-active)`
+      : state === 'hover'
+        ? `var(--label-${color}-bgColor-hover)`
+        : `var(--label-${color}-bgColor-rest)`
+
+  const fg =
+    state === 'active'
+      ? `var(--label-${color}-fgColor-active)`
+      : state === 'hover'
+        ? `var(--label-${color}-fgColor-hover)`
+        : `var(--label-${color}-fgColor-rest)`
+
+  // Border only shown on the resting state of the bordered variant
+  const boxShadow = withBorder && state === 'rest' ? `inset 0 0 0 1px var(--label-${color}-borderColor)` : undefined
+
+  return (
+    <span
+      style={{...labelStyle, backgroundColor: bg, color: fg, boxShadow}}
+      onMouseEnter={() => setState('hover')}
+      onMouseLeave={() => setState('rest')}
+      onMouseDown={() => setState('active')}
+      onMouseUp={() => setState('hover')}
+    >
+      {color}
+    </span>
+  )
+}
+
 export const Label = ({colorTokens}: {colorTokens: ColorTokens}) => {
   const data = getTokensByName(colorTokens, 'label').map(token => {
     return {
@@ -905,13 +962,29 @@ export const Label = ({colorTokens}: {colorTokens: ColorTokens}) => {
   return (
     <>
       <h1 id="label">Labels</h1>
-      <div style={{paddingBottom: '20px', gap: '8px', display: 'flex', flexWrap: 'wrap'}}>
-        {colors.map(color => (
-          <IssueLabel href="/" key={color} variant={color}>
-            {color}
-          </IssueLabel>
-        ))}
-      </div>
+      <Stack direction="vertical" gap="spacious" style={{paddingTop: '24px', paddingBottom: '24px'}}>
+        <div>
+          <Heading as="h2" variant="small" style={{paddingBottom: '16px'}}>
+            Default (hover &amp; click me)
+          </Heading>
+          <Stack direction="horizontal" gap="condensed" wrap="wrap">
+            {colors.map(color => (
+              <LabelChip key={color} color={color} />
+            ))}
+          </Stack>
+        </div>
+
+        <div>
+          <Heading as="h2" variant="small">
+            With border (hover &amp; click me)
+          </Heading>
+          <Stack direction="horizontal" gap="condensed" wrap="wrap">
+            {colors.map(color => (
+              <LabelChip key={color} color={color} withBorder />
+            ))}
+          </Stack>
+        </div>
+      </Stack>
       <Table.Container>
         <DataTable
           aria-labelledby="label"
