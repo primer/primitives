@@ -87,15 +87,15 @@ jobs:
         id: storybook
         run: |
           # Use Python's built-in HTTP server for a simple static file host in CI.
-          python3 -m http.server 6006 --directory docs/storybook/storybook-static &
+          SHARD=${{ matrix.shard }}; PORT=$((6005 + SHARD)); python3 -m http.server $PORT --directory docs/storybook/storybook-static > /tmp/server.log 2>&1 &
           pid=$!
           echo "pid=$pid" >> $GITHUB_OUTPUT
-          sleep 5
+          echo "port=$PORT" >> $GITHUB_OUTPUT
 
       - name: Run Visual Regression Tests
         uses: docker://mcr.microsoft.com/playwright:v1.56.1-jammy
         env:
-          STORYBOOK_URL: 'http://172.17.0.1:6006'
+          STORYBOOK_URL: 'http://172.17.0.1:${{ steps.storybook.outputs.port }}'
         with:
           args: npx playwright test --shard="${{ matrix.shard }}/${{ strategy.job-total }}"
 
