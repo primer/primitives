@@ -1,10 +1,12 @@
 import React from 'react'
 import {Stack} from '@primer/react/experimental'
 import {InlineCode} from '../StorybookComponents/InlineCode/InlineCode'
+import {ColorTokenSwatch} from '../StorybookComponents/ColorTokenSwatch/ColorTokenSwatch'
 import {themeTokens} from '../utilities/withColorTokens'
-import styles from './AllBgColorsTable.module.css'
+import {formatTokenValue} from '../utilities/formatTokenValue'
+import styles from './ThemeTokenTable.module.css'
 
-const themes = [
+export const themes = [
   {id: 'dark', label: 'dark', mode: 'dark'},
   {id: 'dark_dimmed', label: 'd dim', mode: 'dark'},
   {id: 'dark_dimmed_high_contrast', label: 'd dim hc', mode: 'dark'},
@@ -21,21 +23,47 @@ const themes = [
   {id: 'light_colorblind_high_contrast', label: 'l cb hc', mode: 'light'},
 ] as const
 
-const bgColorTokenNames = Object.keys(themeTokens.light).filter(name => name.startsWith('bgColor-'))
+export type ThemeId = (typeof themes)[number]['id']
 
-export default {
-  title: 'VRT/All bgColor themes',
-  parameters: {
-    controls: {hideNoControlsWarning: true},
-    options: {showPanel: false},
-  },
-  tags: ['snapshotLight'],
+export type ThemeTokenTableProps = {
+  title: string
+  tokenNames: string[]
+  previewKind: 'background' | 'foreground' | 'border' | 'shadow' | 'selection' | 'mixed'
 }
 
-export const AllBgColorThemesInOneTable = () => {
+function previewProps(tokenName: string, previewKind: ThemeTokenTableProps['previewKind']) {
+  switch (previewKind) {
+    case 'background':
+      return {bgColor: tokenName}
+    case 'foreground':
+      return {textColor: tokenName}
+    case 'border':
+      return {borderColor: tokenName}
+    case 'shadow':
+      return {shadowColor: tokenName}
+    case 'selection':
+      return {selectionColor: tokenName}
+    case 'mixed':
+      if (tokenName.includes('fgColor')) return {textColor: tokenName}
+      if (tokenName.includes('borderColor')) return {borderColor: tokenName}
+      if (tokenName.includes('shadow')) return {shadowColor: tokenName}
+      if (tokenName.includes('selection')) return {selectionColor: tokenName}
+      if (tokenName.includes('outlineColor')) return {outlineColor: tokenName}
+      if (tokenName.startsWith('ansi-')) return {textColor: tokenName}
+      if (tokenName.includes('iconColor') || tokenName.includes('bgColor') || tokenName.includes('color')) {
+        return {bgColor: tokenName}
+      }
+      return {bgColor: tokenName}
+    default:
+      return {}
+  }
+}
+
+export function ThemeTokenTable({title, tokenNames, previewKind}: ThemeTokenTableProps) {
   return (
     // this is not accessible and really just for dev purposes
     <Stack gap="condensed" className={styles.table}>
+      <h1 className="sr-only">{title}</h1>
       <Stack direction="horizontal" className={styles.sticky}>
         <Stack.Item className={styles.name}>blank</Stack.Item>
         {themes.map(theme => (
@@ -45,14 +73,13 @@ export const AllBgColorThemesInOneTable = () => {
         ))}
       </Stack>
       <Stack>
-        {bgColorTokenNames.map(tokenName => (
+        {tokenNames.map(tokenName => (
           <Stack key={tokenName} direction="horizontal">
             <Stack.Item className={styles.name}>
               <InlineCode value={tokenName} />
             </Stack.Item>
             {themes.map(theme => {
               const token = themeTokens[theme.id][tokenName]
-              const value = token?.value ?? '—'
               return (
                 <Stack.Item
                   key={`${tokenName}-${theme.id}`}
@@ -61,10 +88,8 @@ export const AllBgColorThemesInOneTable = () => {
                   data-dark-theme={theme.id}
                   className={styles.themeCell}
                 >
-                  <div className={styles.swatch} style={{backgroundColor: value}} />
-                  <div className={styles.value} style={{color: theme.mode === 'dark' ? '#ffffff' : undefined}}>
-                    {value}
-                  </div>
+                  <ColorTokenSwatch size="large" {...previewProps(tokenName, previewKind)} />
+                  <div className={styles.value}>{formatTokenValue(token?.value)}</div>
                 </Stack.Item>
               )
             })}
