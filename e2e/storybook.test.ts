@@ -45,35 +45,87 @@ const themes = [
   'dark_high_contrast',
 ]
 
-test.describe('storybook', () => {
-  for (const story of stories) {
+// Reorder stories for balanced shard distribution
+// This algorithm groups heavy stories (all-theme) with light stories (single-theme)
+// so that when Playwright divides tests sequentially, each shard gets a balanced load
+function reorderStoriesForBalancedShards(storiesToReorder: Story[], numShards: number) {
+  interface TestWithWeight {
+    storyId: string
+    theme: string
+    weight: number // 1 for single theme, 14 for all themes
+    storyWeight: number // total weight for this story
+  }
+
+  const tests: TestWithWeight[] = []
+
+  for (const story of storiesToReorder) {
     const hasIncludeSnapshot = story.tags && story.tags.includes('includeSnapshot')
     const hasSnapshotLight = story.tags && story.tags.includes('snapshotLight')
     const shouldIncludeSnapshot = hasIncludeSnapshot || hasSnapshotLight
 
     if (!shouldIncludeSnapshot) {
-      test.skip(story.id, async () => {
-        // Skipping test because story has neither 'includeSnapshot' nor 'snapshotLight' tag.
-      })
       continue
     }
 
     const runAllThemes = hasIncludeSnapshot && !story.id.includes('size') && !story.id.includes('typography')
+    const storyWeight = runAllThemes ? themes.length : 1
 
-    test.describe(`${story.id} (${runAllThemes ? 'all themes' : 'light theme only'})`, () => {
-      for (const theme of themes) {
-        if (runAllThemes || theme === 'light') {
-          test(`${theme} theme`, async ({page}) => {
-            await visit(page, {
-              id: story.id,
-              globals: {
-                theme,
-              },
-            })
-            expect(await page.screenshot({animations: 'disabled', fullPage: true})).toMatchSnapshot()
-          })
-        }
+    for (const theme of themes) {
+      if (runAllThemes || theme === 'light') {
+        tests.push({
+          storyId: story.id,
+          theme,
+          weight: 1,
+          storyWeight,
+        })
       }
+    }
+  }
+
+  // Sort tests: heavy stories first (descending by storyWeight), then by theme
+  // This ensures that when Playwright divides tests sequentially across N shards,
+  // each shard gets a mix of heavy and light tests, balancing the load
+  tests.sort((a, b) => {
+    if (b.storyWeight !== a.storyWeight) {
+      return b.storyWeight - a.storyWeight // heavy first
+    }
+    return a.storyId.localeCompare(b.storyId)
+  })
+
+  if (process.env.DEBUG_SHARDS) {
+    const shardWeights = Array(numShards).fill(0)
+    for (let i = 0; i < tests.length; i++) {
+      const shardIdx = i % numShards
+      shardWeights[shardIdx]++
+    }
+    console.log('=== SHARD BALANCE (after reordering) ===')
+    for (let i = 0; i < numShards; i++) {
+      console.log(`Shard ${i + 1}: ${shardWeights[i]} tests`)
+    }
+  }
+
+  return tests
+}
+
+const reorderedTests = reorderStoriesForBalancedShards(stories, 3)
+
+test.describe('storybook', () => {
+  for (const {storyId, theme} of reorderedTests) {
+    const story = stories.find(s => s.id === storyId)
+    if (!story) continue
+
+    const hasIncludeSnapshot = story.tags && story.tags.includes('includeSnapshot')
+    const hasSnapshotLight = story.tags && story.tags.includes('snapshotLight')
+    const runAllThemes = hasIncludeSnapshot && !story.id.includes('size') && !story.id.includes('typography')
+
+    test(`${storyId}/${theme} theme`, async ({page}) => {
+      await visit(page, {
+        id: storyId,
+        globals: {
+          theme,
+        },
+      })
+      expect(await page.screenshot({animations: 'disabled', fullPage: true})).toMatchSnapshot()
     })
   }
 })
