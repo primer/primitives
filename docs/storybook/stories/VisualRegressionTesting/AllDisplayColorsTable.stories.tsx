@@ -2,29 +2,6 @@ import React from 'react'
 import {themeTokens} from '../utilities/withColorTokens'
 import {ThemeTokenTable} from './ThemeTokenTable'
 
-const displayFamilies = [
-  'auburn',
-  'blue',
-  'brown',
-  'coral',
-  'cyan',
-  'gray',
-  'green',
-  'lemon',
-  'lime',
-  'olive',
-  'orange',
-  'pine',
-  'pink',
-  'plum',
-  'purple',
-  'red',
-  'teal',
-  'white',
-  'black',
-  'yellow',
-]
-
 const displayTokenNames = Object.keys(themeTokens.light).filter(
   name => name.startsWith('display-') && !name.includes('-scale-'),
 )
@@ -34,10 +11,15 @@ function displayNamesFor(families: string[]) {
 }
 
 const displayGroups = [
-  {id: 'warm-1', families: ['auburn', 'blue', 'brown', 'coral']},
-  {id: 'cool-1', families: ['cyan', 'gray', 'green', 'lemon', 'lime']},
-  {id: 'warm-2', families: ['olive', 'orange', 'pine', 'pink', 'plum']},
-  {id: 'mixed-1', families: ['purple', 'red', 'teal', 'white', 'black', 'yellow']},
+  {id: 'warm-1', title: 'Display colors warm one', families: ['auburn', 'blue', 'brown']},
+  {id: 'warm-2', title: 'Display colors warm two', families: ['coral', 'cyan', 'gray']},
+  {id: 'mid-1', title: 'Display colors mid one', families: ['green', 'indigo', 'lemon', 'lime']},
+  {id: 'mid-2', title: 'Display colors mid two', families: ['olive', 'orange', 'pine', 'pink']},
+  {
+    id: 'bright',
+    title: 'Display colors bright',
+    families: ['plum', 'purple', 'red', 'teal', 'white', 'black', 'yellow'],
+  },
 ] as const
 
 export default {
@@ -48,21 +30,11 @@ export default {
   },
 }
 
-export const DisplayColorsWarm = () => {
+export const DisplayColorsWarmOne = () => {
   return (
     <ThemeTokenTable
-      title="Display colors warm"
+      title={displayGroups[0].title}
       tokenNames={displayNamesFor(displayGroups[0].families)}
-      previewKind="mixed"
-    />
-  )
-}
-
-export const DisplayColorsCool = () => {
-  return (
-    <ThemeTokenTable
-      title="Display colors cool"
-      tokenNames={displayNamesFor(displayGroups[1].families)}
       previewKind="mixed"
     />
   )
@@ -71,24 +43,45 @@ export const DisplayColorsCool = () => {
 export const DisplayColorsWarmTwo = () => {
   return (
     <ThemeTokenTable
-      title="Display colors warm two"
+      title={displayGroups[1].title}
+      tokenNames={displayNamesFor(displayGroups[1].families)}
+      previewKind="mixed"
+    />
+  )
+}
+
+export const DisplayColorsMidOne = () => {
+  return (
+    <ThemeTokenTable
+      title={displayGroups[2].title}
       tokenNames={displayNamesFor(displayGroups[2].families)}
       previewKind="mixed"
     />
   )
 }
 
-export const DisplayColorsMixed = () => {
+export const DisplayColorsMidTwo = () => {
   return (
     <ThemeTokenTable
-      title="Display colors mixed"
+      title={displayGroups[3].title}
       tokenNames={displayNamesFor(displayGroups[3].families)}
       previewKind="mixed"
     />
   )
 }
 
-DisplayColorsWarm.tags = ['snapshotLight']
-DisplayColorsCool.tags = ['snapshotLight']
+export const DisplayColorsBright = () => {
+  return (
+    <ThemeTokenTable
+      title={displayGroups[4].title}
+      tokenNames={displayNamesFor(displayGroups[4].families)}
+      previewKind="mixed"
+    />
+  )
+}
+
+DisplayColorsWarmOne.tags = ['snapshotLight']
 DisplayColorsWarmTwo.tags = ['snapshotLight']
-DisplayColorsMixed.tags = ['snapshotLight']
+DisplayColorsMidOne.tags = ['snapshotLight']
+DisplayColorsMidTwo.tags = ['snapshotLight']
+DisplayColorsBright.tags = ['snapshotLight']
