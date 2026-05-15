@@ -1,0 +1,43 @@
+.table {
+  width: max-content;
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.name {
+  width: 300px;
+  display: grid;
+  place-content: center end;
+  background: #ffffff;
+  padding-right: 8px;
+}
+
+.themeCell {
+  width: 96px;
+  min-height: 92px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 4px;
+  background: var(--bgColor-default);
+  border: solid 1px var(--borderColor-default);
+}
+
+.swatch {
+  width: 44px;
+  height: 44px;
+  border: solid 1px var(--borderColor-default);
+}
+
+.value {
+  font: var(--text-codeInline-shorthand);
+  font-size: 11px;
+  line-height: 1.2;
+  text-align: center;
+}

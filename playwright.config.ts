@@ -27,7 +27,7 @@ export default defineConfig({
       },
 
   // https://playwright.dev/docs/api/class-testconfig#test-config-timeout
-  timeout: 1000 * 5,
+  timeout: 1000 * 15,
 
   // https://playwright.dev/docs/api/class-testconfig#test-config-output-dir
   outputDir: path.join(__dirname, '.playwright', 'results'),
