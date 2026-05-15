@@ -9,14 +9,8 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  prepare:
-    if: ${{ github.event.label.name == 'update snapshots' }}
-    uses: ./.github/workflows/prepare_vrt_assets.yml
-    with:
-      node_version: 22
-
   update-snapshots-runner:
-    needs: prepare
+    if: ${{ github.event.label.name == 'update snapshots' }}
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -29,11 +23,14 @@ jobs:
           node-version: 22
           cache: 'npm'
       - name: Install dependencies
-        run: npm ci --ignore-scripts
-      - name: Download VRT assets
-        uses: actions/download-artifact@v4
-        with:
-          name: vrt-assets
+        run: npm ci && npm run storybook:install
+      - name: Build tokens
+        run: npm run build:tokens
+      - name: Build storybook
+        working-directory: docs/storybook
+        run: |
+          npm ci --legacy-peer-deps
+          npm run build-storybook
       - name: Run storybook
         id: storybook
         run: |
