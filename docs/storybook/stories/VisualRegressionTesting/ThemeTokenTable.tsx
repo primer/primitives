@@ -49,6 +49,7 @@ function previewProps(tokenName: string, previewKind: ThemeTokenTableProps['prev
       if (tokenName.includes('shadow')) return {shadowColor: tokenName}
       if (tokenName.includes('selection')) return {selectionColor: tokenName}
       if (tokenName.includes('outlineColor')) return {outlineColor: tokenName}
+      if (tokenName.startsWith('ansi-')) return {textColor: tokenName}
       if (tokenName.includes('iconColor') || tokenName.includes('bgColor') || tokenName.includes('color')) {
         return {bgColor: tokenName}
       }
