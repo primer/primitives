@@ -29,6 +29,7 @@ export default {
     controls: {hideNoControlsWarning: true},
     options: {showPanel: false},
   },
+  tags: ['includeSnapshot'],
 }
 
 export const AllBgColorThemesInOneTable = () => {
