@@ -13,11 +13,18 @@ jobs:
   changes:
     uses: ./.github/workflows/hasChanged.yml
 
+  prepare:
+    needs: changes
+    if: needs.changes.outputs.vrtColor == 'true'
+    uses: ./.github/workflows/prepare_vrt_assets.yml
+    with:
+      node_version: 22
+
   # ============================================
   # Step 2: Run VRT (only if color tokens changed)
   # ============================================
   vrt-runner:
-    needs: changes
+    needs: prepare
     if: needs.changes.outputs.vrtColor == 'true'
     runs-on: ubuntu-latest-8-cores
 
@@ -36,14 +43,12 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci && npm run storybook:install
+        run: npm ci --ignore-scripts
 
-      - name: Build tokens
-        run: npm run build
-
-      - name: Build storybook
-        working-directory: docs/storybook
-        run: npm run build-storybook
+      - name: Download VRT assets
+        uses: actions/download-artifact@v4
+        with:
+          name: vrt-assets
 
       - name: Run storybook
         id: storybook
@@ -91,7 +96,7 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci
+        run: npm ci --ignore-scripts
 
       - name: Download all reports
         uses: actions/download-artifact@v4
