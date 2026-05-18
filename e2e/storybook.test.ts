@@ -45,8 +45,60 @@ const themes = [
   'dark_high_contrast',
 ]
 
+// Reorder stories for balanced shard distribution
+// This algorithm groups heavy stories (all-theme) with light stories (single-theme)
+// so that when Playwright divides tests sequentially, each shard gets a balanced load
+function reorderStoriesForBalancedShards(storiesToReorder: Story[]) {
+  interface StoryInfo {
+    story: Story
+    weight: number // total tests for this story
+  }
+
+  const storyInfos: StoryInfo[] = storiesToReorder
+    .map(story => {
+      const hasIncludeSnapshot = story.tags && story.tags.includes('includeSnapshot')
+      const hasSnapshotLight = story.tags && story.tags.includes('snapshotLight')
+      const shouldIncludeSnapshot = hasIncludeSnapshot || hasSnapshotLight
+
+      if (!shouldIncludeSnapshot) {
+        return null
+      }
+
+      const runAllThemes = hasIncludeSnapshot && !story.id.includes('size') && !story.id.includes('typography')
+      const weight = runAllThemes ? themes.length : 1
+
+      return {story, weight}
+    })
+    .filter(Boolean) as StoryInfo[]
+
+  // Sort by weight descending (heavy first) for better shard distribution
+  // When Playwright divides tests sequentially, this ensures each shard gets mixed heavy/light
+  storyInfos.sort((a, b) => {
+    if (b.weight !== a.weight) {
+      return b.weight - a.weight // heavy stories first
+    }
+    return a.story.id.localeCompare(b.story.id)
+  })
+
+  if (process.env.DEBUG_SHARDS) {
+    const shardWeights = [0, 0, 0]
+    for (let i = 0; i < storyInfos.length; i++) {
+      const shardIdx = i % 3
+      shardWeights[shardIdx] += storyInfos[i].weight
+    }
+    console.log('=== SHARD BALANCE (after reordering) ===')
+    for (let i = 0; i < 3; i++) {
+      console.log(`Shard ${i + 1}: ${shardWeights[i]} tests`)
+    }
+  }
+
+  return storyInfos.map(s => s.story)
+}
+
+const reorderedStories = reorderStoriesForBalancedShards(stories)
+
 test.describe('storybook', () => {
-  for (const story of stories) {
+  for (const story of reorderedStories) {
     const hasIncludeSnapshot = story.tags && story.tags.includes('includeSnapshot')
     const hasSnapshotLight = story.tags && story.tags.includes('snapshotLight')
     const shouldIncludeSnapshot = hasIncludeSnapshot || hasSnapshotLight

@@ -6,14 +6,9 @@ import * as PatternStories from '../Color/Patterns/AllPatterns.stories'
 const patternGroups = [
   {
     title: 'Pattern group controls',
-    stories: [
-      PatternStories.Avatar,
-      PatternStories.Control,
-      PatternStories.Counter,
-      PatternStories.Button,
-      PatternStories.Focus,
-    ],
+    stories: [PatternStories.Avatar, PatternStories.Control, PatternStories.Counter, PatternStories.Focus],
   },
+  {title: 'Pattern group buttons', stories: [PatternStories.Button]},
   {
     title: 'Pattern group navigation',
     stories: [
@@ -58,7 +53,7 @@ export const PatternGroupControls = ({colorTokens}: {colorTokens: ColorTokens}) 
   )
 }
 
-export const PatternGroupNavigation = ({colorTokens}: {colorTokens: ColorTokens}) => {
+export const PatternGroupButtons = ({colorTokens}: {colorTokens: ColorTokens}) => {
   return (
     <Stack gap="large">
       {patternGroups[1].stories.map((PatternStory, index) => (
@@ -68,7 +63,7 @@ export const PatternGroupNavigation = ({colorTokens}: {colorTokens: ColorTokens}
   )
 }
 
-export const PatternGroupContent = ({colorTokens}: {colorTokens: ColorTokens}) => {
+export const PatternGroupNavigation = ({colorTokens}: {colorTokens: ColorTokens}) => {
   return (
     <Stack gap="large">
       {patternGroups[2].stories.map((PatternStory, index) => (
@@ -78,6 +73,17 @@ export const PatternGroupContent = ({colorTokens}: {colorTokens: ColorTokens}) =
   )
 }
 
+export const PatternGroupContent = ({colorTokens}: {colorTokens: ColorTokens}) => {
+  return (
+    <Stack gap="large">
+      {patternGroups[3].stories.map((PatternStory, index) => (
+        <PatternStory key={index} colorTokens={colorTokens} />
+      ))}
+    </Stack>
+  )
+}
+
 PatternGroupControls.tags = ['snapshotLight']
+PatternGroupButtons.tags = ['snapshotLight']
 PatternGroupNavigation.tags = ['snapshotLight']
 PatternGroupContent.tags = ['snapshotLight']
