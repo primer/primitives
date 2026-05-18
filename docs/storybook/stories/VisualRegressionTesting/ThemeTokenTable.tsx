@@ -65,10 +65,12 @@ export function ThemeTokenTable({title, tokenNames, previewKind}: ThemeTokenTabl
     <Stack gap="condensed" className={styles.table}>
       <h1 className="sr-only">{title}</h1>
       <Stack direction="horizontal" className={styles.sticky}>
-        <Stack.Item className={styles.name}>blank</Stack.Item>
+        <Stack.Item className={styles.name}>
+          <div className={styles.headerSpacer} />
+        </Stack.Item>
         {themes.map(theme => (
           <Stack.Item key={theme.id} className={styles.themeCell}>
-            {theme.label}
+            <div className={styles.headerCell}>{theme.label}</div>
           </Stack.Item>
         ))}
       </Stack>
@@ -88,7 +90,9 @@ export function ThemeTokenTable({title, tokenNames, previewKind}: ThemeTokenTabl
                   data-dark-theme={theme.id}
                   className={styles.themeCell}
                 >
-                  <ColorTokenSwatch size="large" {...previewProps(tokenName, previewKind)} />
+                  <div className={styles.preview}>
+                    <ColorTokenSwatch {...previewProps(tokenName, previewKind)} />
+                  </div>
                   <div className={styles.value} style={{color: 'var(--fgColor-default)'}}>
                     {formatTokenValue(token?.value)}
                   </div>

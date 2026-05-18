@@ -8,6 +8,19 @@
   z-index: 1;
 }
 
+.headerCell {
+  height: 18px;
+  display: grid;
+  place-content: center;
+  font: var(--text-codeInline-shorthand);
+  font-size: 11px;
+  line-height: 1;
+}
+
+.headerSpacer {
+  visibility: hidden;
+}
+
 .name {
   width: 300px;
   display: grid;
@@ -18,20 +31,20 @@
 
 .themeCell {
   width: 96px;
-  min-height: 92px;
+  min-height: 46px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 6px;
-  padding: 8px 4px;
+  gap: 4px;
+  padding: 4px 6px;
   background: var(--bgColor-default);
   border: solid 1px var(--borderColor-default);
 }
 
 .swatch {
-  width: 44px;
-  height: 44px;
+  width: 100%;
+  height: 24px;
   border: solid 1px var(--borderColor-default);
 }
 

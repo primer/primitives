@@ -5,7 +5,7 @@ import {ThemeTokenTable} from './ThemeTokenTable'
 const shadowTokenNames = Object.keys(themeTokens.light).filter(name => name.startsWith('shadow-'))
 
 export default {
-  title: 'VRT/All shadow themes',
+  title: 'VRT/shadow',
   parameters: {
     controls: {hideNoControlsWarning: true},
     options: {showPanel: false},
@@ -14,5 +14,5 @@ export default {
 }
 
 export const AllShadowThemesInOneTable = () => {
-  return <ThemeTokenTable title="All shadow themes" tokenNames={shadowTokenNames} previewKind="shadow" />
+  return <ThemeTokenTable title="shadow" tokenNames={shadowTokenNames} previewKind="shadow" />
 }
