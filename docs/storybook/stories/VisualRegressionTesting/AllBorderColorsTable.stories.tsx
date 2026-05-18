@@ -5,7 +5,7 @@ import {ThemeTokenTable} from './ThemeTokenTable'
 const borderColorTokenNames = Object.keys(themeTokens.light).filter(name => name.startsWith('borderColor-'))
 
 export default {
-  title: 'VRT/All borderColor themes',
+  title: 'VRT/borderColor',
   parameters: {
     controls: {hideNoControlsWarning: true},
     options: {showPanel: false},
@@ -14,5 +14,5 @@ export default {
 }
 
 export const AllBorderColorThemesInOneTable = () => {
-  return <ThemeTokenTable title="All borderColor themes" tokenNames={borderColorTokenNames} previewKind="border" />
+  return <ThemeTokenTable title="borderColor" tokenNames={borderColorTokenNames} previewKind="border" />
 }

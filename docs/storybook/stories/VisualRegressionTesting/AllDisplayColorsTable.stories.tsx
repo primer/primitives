@@ -23,11 +23,12 @@ const displayGroups = [
 ] as const
 
 export default {
-  title: 'VRT/Display themes',
+  title: 'VRT/display',
   parameters: {
     controls: {hideNoControlsWarning: true},
     options: {showPanel: false},
   },
+  tags: ['snapshotLight'],
 }
 
 export const DisplayColorsWarmOne = () => {

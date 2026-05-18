@@ -5,7 +5,7 @@ import {ThemeTokenTable} from './ThemeTokenTable'
 const fgColorTokenNames = Object.keys(themeTokens.light).filter(name => name.startsWith('fgColor-'))
 
 export default {
-  title: 'VRT/All fgColor themes',
+  title: 'VRT/fgColor',
   parameters: {
     controls: {hideNoControlsWarning: true},
     options: {showPanel: false},
@@ -14,5 +14,5 @@ export default {
 }
 
 export const AllFgColorThemesInOneTable = () => {
-  return <ThemeTokenTable title="All fgColor themes" tokenNames={fgColorTokenNames} previewKind="foreground" />
+  return <ThemeTokenTable title="fgColor" tokenNames={fgColorTokenNames} previewKind="foreground" />
 }
