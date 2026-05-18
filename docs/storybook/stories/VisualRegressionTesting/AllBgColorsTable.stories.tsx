@@ -24,7 +24,7 @@ const themes = [
 const bgColorTokenNames = Object.keys(themeTokens.light).filter(name => name.startsWith('bgColor-'))
 
 export default {
-  title: 'VRT/All bgColor themes',
+  title: 'VRT/bgColor',
   parameters: {
     controls: {hideNoControlsWarning: true},
     options: {showPanel: false},
@@ -37,10 +37,12 @@ export const AllBgColorThemesInOneTable = () => {
     // this is not accessible and really just for dev purposes
     <Stack gap="condensed" className={styles.table}>
       <Stack direction="horizontal" className={styles.sticky}>
-        <Stack.Item className={styles.name}>blank</Stack.Item>
+        <Stack.Item className={styles.name}>
+          <div className={styles.headerSpacer} />
+        </Stack.Item>
         {themes.map(theme => (
           <Stack.Item key={theme.id} className={styles.themeCell}>
-            {theme.label}
+            <div className={styles.headerCell}>{theme.label}</div>
           </Stack.Item>
         ))}
       </Stack>
@@ -62,7 +64,7 @@ export const AllBgColorThemesInOneTable = () => {
                   className={styles.themeCell}
                 >
                   <div className={styles.swatch} style={{backgroundColor: value}} />
-                  <div className={styles.value} style={{color: theme.mode === 'dark' ? '#ffffff' : undefined}}>
+                  <div className={styles.value} style={{color: 'var(--fgColor-default)'}}>
                     {value}
                   </div>
                 </Stack.Item>

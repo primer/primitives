@@ -5,7 +5,7 @@ import {ThemeTokenTable} from './ThemeTokenTable'
 const dataTokenNames = Object.keys(themeTokens.light).filter(name => name.startsWith('data-'))
 
 export default {
-  title: 'VRT/All data themes',
+  title: 'VRT/data',
   parameters: {
     controls: {hideNoControlsWarning: true},
     options: {showPanel: false},
@@ -14,5 +14,5 @@ export default {
 }
 
 export const AllDataThemesInOneTable = () => {
-  return <ThemeTokenTable title="All data themes" tokenNames={dataTokenNames} previewKind="mixed" />
+  return <ThemeTokenTable title="data" tokenNames={dataTokenNames} previewKind="mixed" />
 }

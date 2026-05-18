@@ -1,87 +1,73 @@
 import React from 'react'
-import {Stack} from '@primer/react/experimental'
-import {withColorTokens, type ColorTokens} from '../utilities/withColorTokens'
-import * as PatternStories from '../Color/Patterns/AllPatterns.stories'
+import {themeTokens} from '../utilities/withColorTokens'
+import {getTokensByName} from '../utilities/getTokensByName'
+import {ThemeTokenTable} from './ThemeTokenTable'
 
 const patternGroups = [
   {
     title: 'Pattern group controls',
-    stories: [PatternStories.Avatar, PatternStories.Control, PatternStories.Counter, PatternStories.Focus],
+    prefixes: ['avatar', 'control', 'controlKnob', 'controlTrack', 'counter', 'focus'],
   },
-  {title: 'Pattern group buttons', stories: [PatternStories.Button]},
+  {title: 'Pattern group buttons', prefixes: ['button']},
   {
     title: 'Pattern group navigation',
-    stories: [
-      PatternStories.Header,
-      PatternStories.Menu,
-      PatternStories.Overlay,
-      PatternStories.SelectMenu,
-      PatternStories.SideNav,
-      PatternStories.UnderlineNav,
-    ],
+    prefixes: ['header', 'menu', 'overlay', 'selectMenu', 'sideNav', 'underlineNav'],
   },
   {
     title: 'Pattern group content',
-    stories: [
-      PatternStories.Selection,
-      PatternStories.Tooltip,
-      PatternStories.Treeview,
-      PatternStories.ContributionGraph,
-      PatternStories.Label,
-      PatternStories.Syntax,
-      PatternStories.TimelineBadge,
-    ],
+    prefixes: ['selection', 'tooltip', 'treeViewItem', 'contribution', 'label', 'syntax', 'timelineBadge', 'color'],
   },
 ] as const
 
+function tokenNamesFor(prefixes: readonly string[]) {
+  return Array.from(
+    new Set(
+      prefixes.flatMap(prefix => {
+        return getTokensByName(themeTokens.light, prefix).map(token => token.name)
+      }),
+    ),
+  )
+}
+
 export default {
-  title: 'VRT/All patterns',
-  decorators: [withColorTokens],
+  title: 'VRT/patterns',
   parameters: {
     controls: {hideNoControlsWarning: true},
     options: {showPanel: false},
   },
 }
 
-export const PatternGroupControls = ({colorTokens}: {colorTokens: ColorTokens}) => {
-  return (
-    <Stack gap="large">
-      {patternGroups[0].stories.map((PatternStory, index) => (
-        <PatternStory key={index} colorTokens={colorTokens} />
-      ))}
-    </Stack>
-  )
-}
+export const PatternGroupControls = () => (
+  <ThemeTokenTable
+    title={patternGroups[0].title}
+    tokenNames={tokenNamesFor(patternGroups[0].prefixes)}
+    previewKind="mixed"
+  />
+)
 
-export const PatternGroupButtons = ({colorTokens}: {colorTokens: ColorTokens}) => {
-  return (
-    <Stack gap="large">
-      {patternGroups[1].stories.map((PatternStory, index) => (
-        <PatternStory key={index} colorTokens={colorTokens} />
-      ))}
-    </Stack>
-  )
-}
+export const PatternGroupButtons = () => (
+  <ThemeTokenTable
+    title={patternGroups[1].title}
+    tokenNames={tokenNamesFor(patternGroups[1].prefixes)}
+    previewKind="mixed"
+  />
+)
 
-export const PatternGroupNavigation = ({colorTokens}: {colorTokens: ColorTokens}) => {
-  return (
-    <Stack gap="large">
-      {patternGroups[2].stories.map((PatternStory, index) => (
-        <PatternStory key={index} colorTokens={colorTokens} />
-      ))}
-    </Stack>
-  )
-}
+export const PatternGroupNavigation = () => (
+  <ThemeTokenTable
+    title={patternGroups[2].title}
+    tokenNames={tokenNamesFor(patternGroups[2].prefixes)}
+    previewKind="mixed"
+  />
+)
 
-export const PatternGroupContent = ({colorTokens}: {colorTokens: ColorTokens}) => {
-  return (
-    <Stack gap="large">
-      {patternGroups[3].stories.map((PatternStory, index) => (
-        <PatternStory key={index} colorTokens={colorTokens} />
-      ))}
-    </Stack>
-  )
-}
+export const PatternGroupContent = () => (
+  <ThemeTokenTable
+    title={patternGroups[3].title}
+    tokenNames={tokenNamesFor(patternGroups[3].prefixes)}
+    previewKind="mixed"
+  />
+)
 
 PatternGroupControls.tags = ['snapshotLight']
 PatternGroupButtons.tags = ['snapshotLight']
