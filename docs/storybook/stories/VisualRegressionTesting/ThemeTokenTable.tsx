@@ -89,7 +89,9 @@ export function ThemeTokenTable({title, tokenNames, previewKind}: ThemeTokenTabl
                   className={styles.themeCell}
                 >
                   <ColorTokenSwatch size="large" {...previewProps(tokenName, previewKind)} />
-                  <div className={styles.value}>{formatTokenValue(token?.value)}</div>
+                  <div className={styles.value} style={{color: 'var(--fgColor-default)'}}>
+                    {formatTokenValue(token?.value)}
+                  </div>
                 </Stack.Item>
               )
             })}

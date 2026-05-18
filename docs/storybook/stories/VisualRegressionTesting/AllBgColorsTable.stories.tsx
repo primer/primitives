@@ -62,7 +62,7 @@ export const AllBgColorThemesInOneTable = () => {
                   className={styles.themeCell}
                 >
                   <div className={styles.swatch} style={{backgroundColor: value}} />
-                  <div className={styles.value} style={{color: theme.mode === 'dark' ? '#ffffff' : undefined}}>
+                  <div className={styles.value} style={{color: 'var(--fgColor-default)'}}>
                     {value}
                   </div>
                 </Stack.Item>
