@@ -39,7 +39,7 @@ jobs:
         run: npm ci && npm run storybook:install
 
       - name: Build tokens
-        run: npm run build
+        run: npm run build:tokens
 
       - name: Build storybook
         working-directory: docs/storybook
