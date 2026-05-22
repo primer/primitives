@@ -9,206 +9,155 @@
 
 ## Context
 
-When adding or calibrating a new color scale, there is no single document specifying the exact contrast ratio each step should produce against the reference colors used in accessibility testing. ADR-012 documents the approximate profile; this ADR records the exact calibration targets — one decimal precision with an allowed tolerance — that each step must land within.
+When adding or calibrating a base color scale, we need a single markdown reference that matches the Storybook contrast overlay. This document records the exact overlay references and the current contrast shape of the base scales so an AI can rebuild the scales even if the hue changes.
 
 Two groups of scales are defined separately because they serve different WCAG criteria:
 
 - **Neutral scale**: UI-only. Targets WCAG 2.1 §1.4.11 non-text contrast (≥ 3:1). Steps are calibrated as backgrounds and borders, not text/icon colors. See ADR-003.
-- **Hue scales** (`blue`, `green`, `red`, `purple`, `pink`, `orange`, `yellow`, `coral`, and the 11 new hues): Calibrated to support text/icon use (≥ 4.5:1) at steps 7+ and background/border use at lower steps.
+- **All other base color scales** (`gray` plus the 18 chromatic hue scales): Calibrated to preserve the same per-step contrast envelope across the Storybook overlay references even when the hue changes.
 
-Reference colors per theme:
+Storybook overlay references per theme:
 
-| Theme    | `bgColor-default`            | `bgColor-muted`       | `fgColor-muted`       |
-| -------- | ---------------------------- | --------------------- | --------------------- |
-| Light    | `#ffffff` (white)            | `#f6f8fa` (neutral.1) | `#59636e` (neutral.7) |
-| Dark     | `#0d1117` (neutral.1)        | `#151b23` (neutral.2) | `#606c7b` (neutral.6) |
-| Light HC | `#ffffff` (white)            | `#eff2f5` (neutral.2) | —                     |
-| Dark HC  | `#010409` (base-color-black) | `#151b23` (neutral.2) | —                     |
+| Theme    | `fgColor-default` | `fgColor-muted` | `bgColor-default` | `bgColor-muted` | `borderColor-default` |
+| -------- | ----------------- | --------------- | ----------------- | --------------- | --------------------- |
+| Light    | `#1f2328`         | `#59636e`       | `#ffffff`         | `#f6f8fa`       | `#dae0e7`             |
+| Dark     | `#f0f6fc`         | `#8c97a6`       | `#0d1117`         | `#151b23`       | `#3d444d`             |
+| Light HC | `#010409`         | `#454c54`       | `#ffffff`         | `#e6eaef`       | `#454c54`             |
+| Dark HC  | `#ffffff`         | `#8c97a6`       | `#010409`         | `#151b23`       | `#8c97a6`             |
 
 ---
 
-## Decisionsrc/tokens/base/color/light/light.json5
+## Decision
 
 ### Tolerance convention
 
-- **General steps** (0–5, 8–11): ± 0.5
-- **Threshold steps** (6 and 7): ± 0.2 — these must strictly clear their WCAG boundary (3:1 and 4.5:1 respectively)
-- **HC steps** (all): ± 0.15 — HC scales follow a precise exponential CR profile; stay tight
+- **Neutral**: match the exact per-theme values below unless you intentionally change the neutral anchors.
+- **All other base scales**: preserve the per-step contrast envelope below. Hue may change; the contrast profile should not.
+- **Threshold steps** still matter most:
+  - step 6 = border / non-text threshold territory
+  - step 7+ = text-capable territory in default themes
+  - HC ramps stay tighter and steeper than default themes
 
 ---
 
 ## Neutral scale
 
-> The neutral scale is for **UI use only** (backgrounds, borders, component states). It follows WCAG §1.4.11 non-text contrast (≥ 3:1), not text contrast (≥ 4.5:1). Neutral steps are not intended for use as text or icon colors — use `fgColor-*` functional tokens instead.
+> The neutral scale is UI-only. Use it to rebuild page, surface, and border progression. Do not treat it as the chromatic text ramp.
 
-### Neutral — light mode
-
-Reference: `bgColor-default` = `#ffffff`, `bgColor-muted` = `#f6f8fa`
-
-| Step | Hex       | vs `bgColor-default` | vs `bgColor-muted` | vs `fgColor-muted` | Role                                     |
-| :--: | :-------- | :------------------: | :----------------: | :----------------: | :--------------------------------------- |
-|  1   | `#f6f8fa` |         1.06         |        1.00        |        5.74        | page background (`bgColor-muted`)        |
-|  2   | `#eff2f5` |         1.12         |        1.06        |        5.44        | subtle bg, inset areas                   |
-|  3   | `#e6eaef` |         1.21         |        1.13        |        5.06        | hover bg                                 |
-|  4   | `#dae0e7` |         1.33         |        1.25        |        4.60        | active bg                                |
-|  5   | `#c8d1da` |         1.55         |        1.45        |        3.96        | disabled bg                              |
-|  6   | `#818b98` |         3.45         |        3.24        |        1.77        | **border min** (3:1 threshold)           |
-|  7   | `#59636e` |         6.11         |        5.74        |        1.00        | `fgColor-muted` anchor                   |
-|  8   | `#454c54` |         8.70         |        8.17        |        1.42        | muted text (via functional token)        |
-|  9   | `#393f46` |        10.64         |       10.00        |        1.74        | default text (via functional token)      |
-|  10  | `#25292e` |        14.63         |       13.74        |        2.39        | bold/heading text (via functional token) |
-
-> Step 0 = `#ffffff` (white) — no contrast to test.
-> Step 11 = `#1f2328` (base-color-black) — not part of neutral steps, used as reference only.
-
-### Neutral — dark mode
-
-Reference: `bgColor-default` = `#0d1117` (neutral.1), `bgColor-muted` = `#151b23` (neutral.2)
-
-| Step | Hex       | vs `bgColor-default` | vs `bgColor-muted` | vs `fgColor-muted` | Role                                                   |
-| :--: | :-------- | :------------------: | :----------------: | :----------------: | :----------------------------------------------------- |
-|  1   | `#0d1117` |         1.00         |        1.09        |        3.54        | `bgColor-default` anchor                               |
-|  2   | `#151b23` |         1.09         |        1.00        |        3.24        | `bgColor-muted` anchor                                 |
-|  3   | `#212830` |         1.27         |        1.16        |        2.78        | subtle bg                                              |
-|  4   | `#2a323c` |         1.46         |        1.34        |        2.43        | hover bg                                               |
-|  5   | `#3d444d` |         1.92         |        1.76        |        1.84        | active/disabled bg                                     |
-|  6   | `#606c7b` |         3.54         |        3.24        |        1.00        | **border min** (3:1 threshold); `fgColor-muted` anchor |
-|  7   | `#8c97a6` |         6.39         |        5.85        |        1.81        | muted text (via functional token)                      |
-|  8   | `#b7bfc8` |        10.18         |        9.32        |        2.88        | default text (via functional token)                    |
-|  9   | `#d1d8e0` |        13.17         |       12.05        |        3.72        | bold text (via functional token)                       |
-|  10  | `#f0f6fc` |        17.39         |       15.91        |        4.91        | maximum contrast                                       |
-
----
-
-## Hue scales
-
-### Hue scales — light mode
-
-Reference: `bgColor-default` = `#ffffff`, `bgColor-muted` = `#f6f8fa`
-
-Values are derived from the calibrated neutral/blue scales. Hue scales (green, red, purple, etc.) may vary ± 10–15% from these ratios at mid-range steps due to perceptual luminance differences, but must land at the same threshold steps.
-
-| Step | vs `bgColor-default` (target) | vs `bgColor-muted` (target) | vs step 1 (target) | Notes                                    |
-| :--: | :---------------------------: | :-------------------------: | :----------------: | :--------------------------------------- |
-|  0   |          ~1.0 – 1.1           |         ~1.0 – 1.1          |     1.0 – 1.1      | lightest; near-white                     |
-|  1   |          ~1.1 – 1.1           |         ~1.0 – 1.1          |        1.00        | scale-tinted muted bg                    |
-|  2   |           1.1 – 1.2           |          1.0 – 1.1          |     1.0 – 1.1      |                                          |
-|  3   |           1.2 – 1.4           |          1.1 – 1.3          |     1.1 – 1.4      |                                          |
-|  4   |           1.3 – 1.8           |          1.2 – 1.7          |     1.2 – 1.7      |                                          |
-|  5   |           1.5 – 2.5           |          1.4 – 2.3          |     1.4 – 2.3      |                                          |
-|  6   |      **≥ 3.0 and ≤ 3.8**      |     **≥ 2.9 and ≤ 3.5**     |  ≥ 2.9 and ≤ 3.5   | **must clear 3:1; must not clear 4.5:1** |
-|  7   |      **≥ 4.5 and ≤ 7.0**      |     **≥ 4.3 and ≤ 6.5**     |  ≥ 4.3 and ≤ 6.5   | **first text-capable step**              |
-|  8   |          7.0 – 10.0           |          6.5 – 9.5          |     6.5 – 9.5      |                                          |
-|  9   |          9.5 – 13.0           |         9.0 – 12.5          |     9.0 – 12.5     |                                          |
-|  10  |          12.0 – 17.0          |         11.5 – 16.5         |    11.5 – 16.5     |                                          |
-|  11  |          14.0 – 21.0          |         13.0 – 20.0         |    13.0 – 20.0     |                                          |
-
-### Hue scales — dark mode
-
-Reference: `bgColor-default` = `#0d1117`, `bgColor-muted` = `#151b23`
-
-| Step | vs `bgColor-default` (target) | vs `bgColor-muted` (target) | Notes                               |
-| :--: | :---------------------------: | :-------------------------: | :---------------------------------- |
-|  0   |          ~1.0 – 1.2           |         ~1.0 – 1.2          | darkest                             |
-|  1   |          ~1.0 – 1.2           |         ~1.0 – 1.2          |                                     |
-|  2   |           1.1 – 1.4           |          1.0 – 1.3          |                                     |
-|  3   |           1.3 – 1.9           |          1.1 – 1.7          |                                     |
-|  4   |           1.5 – 2.5           |          1.4 – 2.3          |                                     |
-|  5   |           2.5 – 3.5           |          2.2 – 3.2          |                                     |
-|  6   |      **≥ 3.5 and ≤ 5.0**      |     **≥ 3.1 and ≤ 4.5**     | **must clear 3:1 vs bgColor-muted** |
-|  7   |      **≥ 5.0 and ≤ 7.5**      |     **≥ 4.5 and ≤ 7.0**     | **first text-capable step**         |
-|  8   |          7.0 – 11.0           |         6.5 – 10.0          |                                     |
-|  9   |          9.0 – 14.0           |         8.0 – 13.0          |                                     |
-|  10  |          12.0 – 17.0          |         11.0 – 16.0         |                                     |
-|  11  |          14.0 – 21.0          |         13.0 – 19.0         |                                     |
-
----
-
-## High-contrast scales
-
-HC scales have tighter tolerances (± 0.15) because they follow an explicit exponential CR profile to ensure reliable 7:1 text contrast across all functional token pairings.
-
-### Dark HC hue scales
-
-Reference: `bgColor-default` = `#010409` (base-color-black), `bgColor-muted` = `#151b23`
-
-The per-step targets below were derived from the calibrated red/blue scales and represent the intended CR vs `#010409`. All 19 hue scales must hit these targets.
-
-| Step | Target CR vs `#010409` | Allowed range | Target CR vs `bgColor-muted` | Allowed range |
-| :--: | :--------------------: | :-----------: | :--------------------------: | :-----------: |
-|  0   |          1.22          |  1.10 – 1.35  |             1.03             |  0.95 – 1.15  |
-|  1   |          1.67          |  1.55 – 1.80  |             1.41             |  1.30 – 1.55  |
-|  2   |          2.73          |  2.60 – 2.85  |             2.30             |  2.15 – 2.45  |
-|  3   |          3.61          |  3.45 – 3.75  |             3.05             |  2.90 – 3.20  |
-|  4   |          4.70          |  4.55 – 4.85  |             3.94             |  3.78 – 4.10  |
-|  5   |          6.03          |  5.88 – 6.18  |             5.10             |  4.95 – 5.25  |
-|  6   |          7.35          |  7.20 – 7.50  |             6.22             |  6.05 – 6.40  |
-|  7   |          8.46          |  8.30 – 8.62  |             7.14             |  6.97 – 7.32  |
-|  8   |          9.68          |  9.50 – 9.85  |             8.19             |  8.00 – 8.38  |
-|  9   |         11.89          | 11.70 – 12.10 |            10.02             | 9.83 – 10.22  |
-|  10  |         14.11          | 13.90 – 14.35 |            11.94             | 11.73 – 12.16 |
-|  11  |         16.35          | 16.10 – 16.60 |            13.86             | 13.60 – 14.10 |
-
-### Dark HC neutral scale
-
-The neutral scale in dark HC follows the same steps as dark default neutral (steps 1–10). It is UI-only; the 7:1 text contrast requirement does not apply here.
-
-| Step | Hex       | Target CR vs `#010409` | Allowed range | Target CR vs `bgColor-muted` | Allowed range |
-| :--: | :-------- | :--------------------: | :-----------: | :--------------------------: | :-----------: |
-|  1   | `#0d1117` |          1.09          |  1.02 – 1.17  |             1.09             |  1.02 – 1.17  |
-|  2   | `#151b23` |          1.19          |  1.10 – 1.28  |             1.00             |  0.95 – 1.08  |
-|  3   | `#212830` |          1.38          |  1.28 – 1.48  |             1.16             |  1.08 – 1.26  |
-|  4   | `#2a323c` |          1.58          |  1.47 – 1.70  |             1.34             |  1.25 – 1.44  |
-|  5   | `#3d444d` |          2.09          |  1.95 – 2.22  |             1.76             |  1.64 – 1.88  |
-|  6   | `#606c7b` |          3.84          |  3.65 – 4.05  |             3.24             |  3.10 – 3.40  |
-|  7   | `#8c97a6` |          6.94          |  6.75 – 7.15  |             5.85             |  5.70 – 6.00  |
-|  8   | `#b7bfc8` |         11.05          | 10.80 – 11.30 |             9.32             |  9.10 – 9.55  |
-|  9   | `#d1d8e0` |         14.29          | 14.00 – 14.60 |            12.05             | 11.80 – 12.30 |
-|  10  | `#f0f6fc` |         18.87          | 18.50 – 19.30 |            15.91             | 15.55 – 16.30 |
-
-### Light HC hue scales
-
-Reference: `bgColor-default` = `#ffffff`, `bgColor-muted` = `#eff2f5` (neutral.2)
-
-Light HC step targets follow the same threshold rules as light default, but with one stricter requirement: every text-capable step must also clear 7:1 vs `bgColor-muted` (not just 4.5:1), consistent with the 7:1 HC requirement.
-
-| Step | Target CR vs `#ffffff` | Allowed range | Target CR vs `bgColor-muted` | Allowed range |
-| :--: | :--------------------: | :-----------: | :--------------------------: | :-----------: |
-|  0   |          ~1.0          |  1.0 – 1.15   |             ~1.1             |   1.0 – 1.2   |
-|  1   |          ~1.1          |   1.0 – 1.2   |             ~1.0             |  1.0 – 1.15   |
-|  2   |          ~1.2          |  1.1 – 1.35   |             ~1.1             |   1.0 – 1.2   |
-|  3   |          ~1.5          |   1.3 – 1.8   |             ~1.4             |   1.2 – 1.6   |
-|  4   |          ~2.2          |   1.8 – 2.6   |             ~2.0             |   1.7 – 2.4   |
-|  5   |          ~3.4          |   2.9 – 3.9   |             ~3.0             |   2.6 – 3.4   |
-|  6   |  **≥ 4.5 and ≤ 6.0**   |   4.3 – 5.5   |     **≥ 4.0 and ≤ 5.5**      |   3.8 – 5.3   |
-|  7   |  **≥ 7.0 and ≤ 10.0**  |   6.8 – 9.5   |     **≥ 6.5 and ≤ 9.0**      |   6.3 – 8.8   |
-|  8   |       9.0 – 13.0       |  8.5 – 13.5   |          8.5 – 12.5          |  8.0 – 13.0   |
-|  9   |      11.0 – 16.0       |  10.5 – 16.5  |         10.5 – 15.5          |  10.0 – 16.0  |
-|  10  |      13.0 – 18.0       |  12.5 – 18.5  |         12.0 – 17.0          |  11.5 – 17.5  |
-|  11  |      15.0 – 21.0       |  14.5 – 21.5  |         14.0 – 20.0          |  13.5 – 20.5  |
-
-### Light HC neutral scale
-
-Light HC neutral shares the same hex values as light default neutral. The reference for calibration is `bgColor-muted` = `#eff2f5` (neutral.2 in light HC, slightly darker than the light default neutral.1).
-
-| Step | Hex       | Target CR vs `#ffffff` | Allowed range | Target CR vs `bgColor-muted` | Allowed range |
-| :--: | :-------- | :--------------------: | :-----------: | :--------------------------: | :-----------: |
-|  1   | `#f6f8fa` |          1.06          |  1.02 – 1.12  |             1.06             |  1.02 – 1.12  |
-|  2   | `#eff2f5` |          1.12          |  1.07 – 1.18  |             1.00             |  0.95 – 1.06  |
-|  3   | `#e6eaef` |          1.21          |  1.15 – 1.28  |             1.08             |  1.03 – 1.15  |
-|  4   | `#dae0e7` |          1.33          |  1.27 – 1.40  |             1.18             |  1.12 – 1.25  |
-|  5   | `#c8d1da` |          1.55          |  1.48 – 1.63  |             1.38             |  1.31 – 1.46  |
-|  6   | `#818b98` |          3.45          |  3.30 – 3.60  |             3.07             |  2.93 – 3.22  |
-|  7   | `#59636e` |          6.11          |  5.95 – 6.28  |             5.44             |  5.30 – 5.59  |
-|  8   | `#454c54` |          8.70          |  8.48 – 8.93  |             7.74             |  7.54 – 7.95  |
-|  9   | `#393f46` |         10.64          | 10.38 – 10.91 |             9.47             |  9.22 – 9.73  |
-|  10  | `#25292e` |         14.63          | 14.25 – 15.02 |            13.02             | 12.68 – 13.38 |
+| Theme    | Step | Hex       | vs `fgColor-default` | vs `fgColor-muted` | vs `bgColor-default` | vs `bgColor-muted` | vs `borderColor-default` |
+| -------- | ---- | --------- | -------------------- | ------------------ | -------------------- | ------------------ | ------------------------ |
+| Light    | 0    | `#ffffff` | 15.8                 | 6.1                | 1                    | 1.1                | 1.3                      |
+| Light    | 1    | `#f6f8fa` | 14.8                 | 5.7                | 1.1                  | 1                  | 1.2                      |
+| Light    | 2    | `#eff2f5` | 14.1                 | 5.4                | 1.1                  | 1.1                | 1.2                      |
+| Light    | 3    | `#e6eaef` | 13.1                 | 5.1                | 1.2                  | 1.1                | 1.1                      |
+| Light    | 4    | `#dae0e7` | 11.9                 | 4.6                | 1.3                  | 1.2                | 1                        |
+| Light    | 5    | `#c8d1da` | 10.2                 | 4                  | 1.5                  | 1.5                | 1.2                      |
+| Light    | 6    | `#818b98` | 4.6                  | 1.8                | 3.5                  | 3.2                | 2.6                      |
+| Light    | 7    | `#59636e` | 2.6                  | 1                  | 6.1                  | 5.7                | 4.6                      |
+| Light    | 8    | `#454c54` | 1.8                  | 1.4                | 8.7                  | 8.2                | 6.5                      |
+| Light    | 9    | `#393f46` | 1.5                  | 1.7                | 10.6                 | 10                 | 8                        |
+| Light    | 10   | `#25292e` | 1.1                  | 2.4                | 14.6                 | 13.7               | 11                       |
+| Light    | 11   | `#1f2328` | 1                    | 2.6                | 15.8                 | 14.8               | 11.9                     |
+| Dark     | 0    | `#010409` | 18.9                 | 6.9                | 1.1                  | 1.2                | 2.1                      |
+| Dark     | 1    | `#0d1117` | 17.4                 | 6.4                | 1                    | 1.1                | 1.9                      |
+| Dark     | 2    | `#151b23` | 15.9                 | 5.8                | 1.1                  | 1                  | 1.8                      |
+| Dark     | 3    | `#212830` | 13.7                 | 5                  | 1.3                  | 1.2                | 1.5                      |
+| Dark     | 4    | `#2a323c` | 11.9                 | 4.4                | 1.5                  | 1.3                | 1.3                      |
+| Dark     | 5    | `#3d444d` | 9                    | 3.3                | 1.9                  | 1.8                | 1                        |
+| Dark     | 6    | `#606c7b` | 4.9                  | 1.8                | 3.5                  | 3.2                | 1.8                      |
+| Dark     | 7    | `#8c97a6` | 2.7                  | 1                  | 6.4                  | 5.8                | 3.3                      |
+| Dark     | 8    | `#b7bfc8` | 1.7                  | 1.6                | 10.2                 | 9.3                | 5.3                      |
+| Dark     | 9    | `#d1d8e0` | 1.3                  | 2.1                | 13.2                 | 12                 | 6.9                      |
+| Dark     | 10   | `#f0f6fc` | 1                    | 2.7                | 17.4                 | 15.9               | 9                        |
+| Dark     | 11   | `#ffffff` | 1.1                  | 3                  | 18.9                 | 17.3               | 9.8                      |
+| Light HC | 0    | `#ffffff` | 20.5                 | 8.7                | 1                    | 1.2                | 8.7                      |
+| Light HC | 1    | `#f6f8fa` | 19.3                 | 8.2                | 1.1                  | 1.1                | 8.2                      |
+| Light HC | 2    | `#eff2f5` | 18.3                 | 7.7                | 1.1                  | 1.1                | 7.7                      |
+| Light HC | 3    | `#e6eaef` | 17                   | 7.2                | 1.2                  | 1                  | 7.2                      |
+| Light HC | 4    | `#dae0e7` | 15.4                 | 6.5                | 1.3                  | 1.1                | 6.5                      |
+| Light HC | 5    | `#c8d1da` | 13.3                 | 5.6                | 1.5                  | 1.3                | 5.6                      |
+| Light HC | 6    | `#818b98` | 5.9                  | 2.5                | 3.5                  | 2.9                | 2.5                      |
+| Light HC | 7    | `#59636e` | 3.4                  | 1.4                | 6.1                  | 5.1                | 1.4                      |
+| Light HC | 8    | `#454c54` | 2.4                  | 1                  | 8.7                  | 7.2                | 1                        |
+| Light HC | 9    | `#393f46` | 1.9                  | 1.2                | 10.6                 | 8.8                | 1.2                      |
+| Light HC | 10   | `#25292e` | 1.4                  | 1.7                | 14.6                 | 12.1               | 1.7                      |
+| Light HC | 11   | `#010409` | 1                    | 2.4                | 20.5                 | 17                 | 2.4                      |
+| Dark HC  | 0    | `#010409` | 20.5                 | 11.1               | 1                    | 1.2                | 11.1                     |
+| Dark HC  | 1    | `#0d1117` | 18.9                 | 10.2               | 1.1                  | 1.1                | 10.2                     |
+| Dark HC  | 2    | `#151b23` | 17.3                 | 9.3                | 1.2                  | 1                  | 9.3                      |
+| Dark HC  | 3    | `#212830` | 14.9                 | 8                  | 1.4                  | 1.2                | 8                        |
+| Dark HC  | 4    | `#2a323c` | 13                   | 7                  | 1.6                  | 1.3                | 7                        |
+| Dark HC  | 5    | `#3d444d` | 9.8                  | 5.3                | 2.1                  | 1.8                | 5.3                      |
+| Dark HC  | 6    | `#606c7b` | 5.3                  | 2.9                | 3.8                  | 3.2                | 2.9                      |
+| Dark HC  | 7    | `#8c97a6` | 3                    | 1.6                | 6.9                  | 5.8                | 1.6                      |
+| Dark HC  | 8    | `#b7bfc8` | 1.9                  | 1                  | 11.1                 | 9.3                | 1                        |
+| Dark HC  | 9    | `#d1d8e0` | 1.4                  | 1.3                | 14.3                 | 12                 | 1.3                      |
+| Dark HC  | 10   | `#f0f6fc` | 1.1                  | 1.7                | 18.9                 | 15.9               | 1.7                      |
+| Dark HC  | 11   | `#ffffff` | 1                    | 1.9                | 20.5                 | 17.3               | 1.9                      |
 
 ---
 
 ## Impact
 
-- When **adding a new hue scale**, use the light/dark default tables above to validate each step before committing. Step 6 and 7 tolerances are hard — do not loosen them.
-- When **calibrating a dark HC hue**, use the per-step target column (vs `#010409`) and stay within ± 0.15. The exponential curve is intentional and must be preserved for functional token contrast guarantees.
-- When **adjusting neutral**, the neutral-specific tables apply. Do not use hue-scale targets for neutral.
-- Exact hex values are shown only for neutral (anchored scales). Hue scales will vary by hue but must land within the CR ranges shown.
+## All other base color scales
+
+> This table is the rebuild envelope for the 19 non-neutral scales currently shown in Storybook (`gray` plus the chromatic hues). Keep each rebuilt hue inside the same step band unless there is an intentional contrast-model change.
+
+| Theme    | Step | Scale count | vs `fgColor-default` | vs `fgColor-muted` | vs `bgColor-default` | vs `bgColor-muted` | vs `borderColor-default` |
+| -------- | ---- | ----------- | -------------------- | ------------------ | -------------------- | ------------------ | ------------------------ |
+| Light    | 0    | 19          | 14.5–15.6            | 5.6–6.1            | 1–1.1                | 1–1.1              | 1.2–1.3                  |
+| Light    | 1    | 19          | 13.8–15.5            | 5.3–6              | 1–1.1                | 1–1.1              | 1.2–1.3                  |
+| Light    | 2    | 19          | 13.1–14.7            | 5.1–5.7            | 1.1–1.2              | 1–1.1              | 1.1–1.2                  |
+| Light    | 3    | 19          | 11.1–12.1            | 4.3–4.7            | 1.3–1.4              | 1.2–1.3            | 1–1.1                    |
+| Light    | 4    | 19          | 8.3–9.5              | 3.2–3.7            | 1.7–1.9              | 1.6–1.8            | 1.3–1.4                  |
+| Light    | 5    | 19          | 6.4–7                | 2.5–2.7            | 2.2–2.5              | 2.1–2.3            | 1.7–1.9                  |
+| Light    | 6    | 19          | 4.5–5                | 1.8–1.9            | 3.1–3.5              | 3–3.3              | 2.4–2.6                  |
+| Light    | 7    | 19          | 2.6–3.3              | 1–1.3              | 4.9–6.1              | 4.6–5.7            | 3.7–4.6                  |
+| Light    | 8    | 19          | 1.8–2.7              | 1–1.4              | 5.9–8.7              | 5.6–8.1            | 4.4–6.5                  |
+| Light    | 9    | 19          | 1.5–2.1              | 1.2–1.7            | 7.6–10.6             | 7.1–10             | 5.7–8                    |
+| Light    | 10   | 19          | 1.1–1.6              | 1.6–2.4            | 9.7–14.7             | 9.1–13.8           | 7.3–11                   |
+| Light    | 11   | 19          | 1–1.2                | 2.1–2.6            | 12.9–15.9            | 12.1–15            | 9.7–12                   |
+| Dark     | 0    | 19          | 17–18.3              | 6.3–6.7            | 1–1.1                | 1.1                | 1.9–2                    |
+| Dark     | 1    | 19          | 15.2–17.1            | 5.6–6.3            | 1–1.1                | 1–1.1              | 1.7–1.9                  |
+| Dark     | 2    | 19          | 12.8–15              | 4.7–5.5            | 1.2–1.4              | 1.1–1.2            | 1.4–1.7                  |
+| Dark     | 3    | 19          | 9.7–12               | 3.6–4.4            | 1.4–1.8              | 1.3–1.6            | 1.1–1.3                  |
+| Dark     | 4    | 19          | 7.5–9                | 2.8–3.3            | 1.9–2.3              | 1.8–2.1            | 1–1.2                    |
+| Dark     | 5    | 19          | 5.5–6.1              | 2–2.2              | 2.9–3.2              | 2.6–2.9            | 1.5–1.6                  |
+| Dark     | 6    | 19          | 3.2–4.3              | 1.2–1.6            | 4.1–5.5              | 3.7–5              | 2.1–2.8                  |
+| Dark     | 7    | 19          | 1.8–3.1              | 1–1.5              | 5.6–9.7              | 5.1–8.9            | 2.9–5.1                  |
+| Dark     | 8    | 19          | 1.4–2.3              | 1.2–1.9            | 7.4–12.3             | 6.8–11.3           | 3.9–6.4                  |
+| Dark     | 9    | 19          | 1.2–1.8              | 1.5–2.3            | 9.7–14.9             | 8.9–13.6           | 5.1–7.7                  |
+| Dark     | 10   | 19          | 1.1–1.4              | 1.9–2.4            | 12–15.4              | 11–14              | 6.2–8                    |
+| Dark     | 11   | 19          | 1.1–1.2              | 2.2–2.6            | 14.3–16.5            | 13.1–15.1          | 7.5–8.6                  |
+| Light HC | 0    | 19          | 20.3–20.4            | 8.6                | 1                    | 1.2                | 8.6                      |
+| Light HC | 1    | 19          | 18.6–18.7            | 7.9                | 1.1                  | 1.1                | 7.9                      |
+| Light HC | 2    | 19          | 17–17.2              | 7.2–7.3            | 1.2                  | 1                  | 7.2–7.3                  |
+| Light HC | 3    | 19          | 13.3–13.4            | 5.6–5.7            | 1.5                  | 1.3                | 5.6–5.7                  |
+| Light HC | 4    | 19          | 9.2–9.3              | 3.9–4              | 2.2                  | 1.8                | 3.9–4                    |
+| Light HC | 5    | 19          | 6.1–6.2              | 2.6                | 3.3–3.4              | 2.8                | 2.6                      |
+| Light HC | 6    | 19          | 4                    | 1.7                | 5.1                  | 4.2–4.3            | 1.7                      |
+| Light HC | 7    | 19          | 2.5–2.6              | 1.1                | 8–8.1                | 6.7                | 1.1                      |
+| Light HC | 8    | 19          | 2                    | 1.2                | 10.1–10.3            | 8.4–8.5            | 1.2                      |
+| Light HC | 9    | 19          | 1.6–1.7              | 1.4                | 12.4–12.6            | 10.2–10.4          | 1.4                      |
+| Light HC | 10   | 19          | 1.4                  | 1.7                | 14.5–14.6            | 12–12.1            | 1.7                      |
+| Light HC | 11   | 19          | 1.2                  | 1.9                | 16.8–16.9            | 13.9–14            | 1.9                      |
+| Dark HC  | 0    | 19          | 16.7–16.9            | 9–9.1              | 1.2                  | 1                  | 9–9.1                    |
+| Dark HC  | 1    | 19          | 12.2–12.4            | 6.6–6.7            | 1.6–1.7              | 1.4                | 6.6–6.7                  |
+| Dark HC  | 2    | 19          | 7.4–7.6              | 4–4.1              | 2.7–2.8              | 2.3                | 4–4.1                    |
+| Dark HC  | 3    | 19          | 5.7                  | 3–3.1              | 3.6                  | 3–3.1              | 3–3.1                    |
+| Dark HC  | 4    | 19          | 4.3–4.4              | 2.3–2.4            | 4.7                  | 3.9–4              | 2.3–2.4                  |
+| Dark HC  | 5    | 19          | 3.4                  | 1.8                | 6–6.1                | 5–5.1              | 1.8                      |
+| Dark HC  | 6    | 19          | 2.8                  | 1.5                | 7.3–7.4              | 6.1–6.3            | 1.5                      |
+| Dark HC  | 7    | 19          | 2.4                  | 1.3                | 8.4–8.5              | 7.1–7.2            | 1.3                      |
+| Dark HC  | 8    | 19          | 2.1                  | 1.1                | 9.6–9.8              | 8.1–8.2            | 1.1                      |
+| Dark HC  | 9    | 19          | 1.7                  | 1.1                | 11.8–12              | 10–10.1            | 1.1                      |
+| Dark HC  | 10   | 19          | 1.4–1.5              | 1.3                | 14–14.2              | 11.8–12            | 1.3                      |
+| Dark HC  | 11   | 19          | 1.2–1.3              | 1.5                | 16.2–16.5            | 13.7–13.9          | 1.5                      |
+
+### How to use this when rebuilding
+
+- **Neutral**: treat the table as exact. If the neutral anchors move, regenerate the whole table.
+- **All other base scales**: pick any hue, then rebuild the 12-step ramp so each step lands inside the row for that theme and step.
+- **Do not copy exact hexes across hues**; copy the contrast shape.
+- **If a step misses multiple columns**, prioritize `bgColor-default`, `bgColor-muted`, and `borderColor-default` first for steps 0–6, then `fgColor-muted` / `fgColor-default` from step 7 upward.
+- **If Storybook overlay references change**, regenerate the tables before recalibrating the scales.
