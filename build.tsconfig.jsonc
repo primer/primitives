@@ -10,7 +10,7 @@
     "noImplicitAny": true,
     "skipLibCheck": false,
     "typeRoots": ["./src/@types", "./node_modules/", "./node_modules/@types", "types"],
-    "types": ["vitest/globals"],
+    "types": ["vitest/globals", "node"],
     "rootDir": "./src",
     "outDir": "./dist/build",
     "declaration": true,
