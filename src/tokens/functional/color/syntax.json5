@@ -1,1314 +1,437 @@
 {
-  ansi: {
-    $description: 'ANSI terminal color palette for command-line interfaces and terminal emulators. Maps standard ANSI color names to theme-appropriate values.',
-    $extensions: {
-      'org.primer.llm': {
-        usage: [
-          'terminal-output',
-          'cli-interface',
-          'console-text',
-          'shell-prompt',
-        ],
-        rules: 'Use exclusively for terminal/CLI contexts. Do NOT use for general UI—use semantic colors (fgColor, bgColor) instead. These colors follow ANSI naming conventions (black, red, green, yellow, blue, magenta, cyan, white) with bright variants.',
-      },
-    },
-    black: {
-      $value: '{base.color.neutral.13}',
-      $type: 'color',
-      $description: 'ANSI black for terminal text and backgrounds',
+  color: {
+    ansi: {
+      $description: 'ANSI terminal color palette for command-line interfaces and terminal emulators. Maps standard ANSI color names to theme-appropriate values.',
       $extensions: {
-        'org.primer.figma': {
-          collection: 'mode',
-          group: 'syntax',
-        },
-        'org.primer.overrides': {
-          dark: '{base.color.neutral.6}',
+        'org.primer.llm': {
+          usage: ['terminal-output', 'cli-interface', 'console-text', 'shell-prompt'],
+          rules: 'Use exclusively for terminal/CLI contexts. Do NOT use for general UI—use semantic colors (fgColor, bgColor) instead. These colors follow ANSI naming conventions (black, red, green, yellow, blue, magenta, cyan, white) with bright variants.',
         },
       },
-    },
-    blackBright: {
-      $value: '{base.color.neutral.11}',
-      $type: 'color',
-      $description: 'ANSI bright black (dark gray) for dimmed terminal text',
-      $extensions: {
-        'org.primer.figma': {
-          collection: 'mode',
-          group: 'syntax',
-        },
-        'org.primer.overrides': {
-          dark: '{base.color.neutral.8}',
-        },
-      },
-    },
-    white: {
-      $value: '{base.color.neutral.9}',
-      $type: 'color',
-      $description: 'ANSI white for terminal text',
-      $extensions: {
-        'org.primer.figma': {
-          collection: 'mode',
-          group: 'syntax',
-        },
-        'org.primer.overrides': {
-          dark: '{base.color.neutral.12}',
+      black: {
+        $value: '{base.color.neutral.11}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            group: 'syntax',
+          },
+          'org.primer.overrides': {
+            dark: '{base.color.neutral.4}',
+          },
         },
       },
-    },
-    whiteBright: {
-      $value: '{base.color.neutral.8}',
-      $type: 'color',
-      $description: 'ANSI bright white for emphasized terminal text',
-      $extensions: {
-        'org.primer.figma': {
-          collection: 'mode',
-          group: 'syntax',
-        },
-        'org.primer.overrides': {
-          dark: '{base.color.neutral.13}',
-        },
-      },
-    },
-    gray: {
-      $value: '{base.color.neutral.9}',
-      $type: 'color',
-      $description: 'ANSI gray for secondary terminal text',
-      $extensions: {
-        'org.primer.figma': {
-          collection: 'mode',
-          group: 'syntax',
-        },
-        'org.primer.overrides': {
-          dark: '{base.color.neutral.8}',
-        },
-      },
-    },
-    red: {
-      $value: '{base.color.red.5}',
-      $type: 'color',
-      $description: 'ANSI red for errors and alerts in terminal output',
-      $extensions: {
-        'org.primer.figma': {
-          collection: 'mode',
-          group: 'syntax',
-        },
-        'org.primer.overrides': {
-          dark: '{base.color.red.3}',
-          'dark-protanopia-deuteranopia': '{base.color.orange.3}',
-          'dark-protanopia-deuteranopia-high-contrast': '{base.color.orange.3}',
-          'light-protanopia-deuteranopia': '{base.color.orange.5}',
-          'light-protanopia-deuteranopia-high-contrast': '{base.color.orange.5}',
-        },
-      },
-    },
-    redBright: {
-      $value: '{base.color.red.6}',
-      $type: 'color',
-      $description: 'ANSI bright red for highlighted errors in terminal',
-      $extensions: {
-        'org.primer.figma': {
-          collection: 'mode',
-          group: 'syntax',
-        },
-        'org.primer.overrides': {
-          dark: '{base.color.red.2}',
-          'dark-protanopia-deuteranopia': '{base.color.orange.2}',
-          'dark-protanopia-deuteranopia-high-contrast': '{base.color.orange.2}',
-          'light-protanopia-deuteranopia': '{base.color.orange.6}',
-          'light-protanopia-deuteranopia-high-contrast': '{base.color.orange.6}',
-        },
-      },
-    },
-    green: {
-      $value: '{base.color.green.6}',
-      $type: 'color',
-      $description: 'ANSI green for success indicators in terminal',
-      $extensions: {
-        'org.primer.figma': {
-          collection: 'mode',
-          group: 'syntax',
-        },
-        'org.primer.overrides': {
-          dark: '{base.color.green.3}',
-          'dark-tritanopia': '{base.color.blue.3}',
-          'dark-tritanopia-high-contrast': '{base.color.blue.3}',
-          'light-tritanopia': '{base.color.blue.6}',
-          'light-tritanopia-high-contrast': '{base.color.blue.6}',
-          'dark-protanopia-deuteranopia': '{base.color.blue.3}',
-          'dark-protanopia-deuteranopia-high-contrast': '{base.color.blue.3}',
-          'light-protanopia-deuteranopia': '{base.color.blue.6}',
-          'light-protanopia-deuteranopia-high-contrast': '{base.color.blue.6}',
-        },
-      },
-    },
-    greenBright: {
-      $value: '{base.color.green.5}',
-      $type: 'color',
-      $description: 'ANSI bright green for highlighted success in terminal',
-      $extensions: {
-        'org.primer.figma': {
-          collection: 'mode',
-          group: 'syntax',
-        },
-        'org.primer.overrides': {
-          dark: '{base.color.green.2}',
-          'dark-tritanopia': '{base.color.blue.2}',
-          'dark-tritanopia-high-contrast': '{base.color.blue.2}',
-          'light-tritanopia': '{base.color.blue.5}',
-          'light-tritanopia-high-contrast': '{base.color.blue.5}',
-          'dark-protanopia-deuteranopia': '{base.color.blue.2}',
-          'dark-protanopia-deuteranopia-high-contrast': '{base.color.blue.2}',
-          'light-protanopia-deuteranopia': '{base.color.blue.5}',
-          'light-protanopia-deuteranopia-high-contrast': '{base.color.blue.5}',
-        },
-      },
-    },
-    yellow: {
-      $value: '{base.color.yellow.8}',
-      $type: 'color',
-      $description: 'ANSI yellow for warnings in terminal output',
-      $extensions: {
-        'org.primer.figma': {
-          collection: 'mode',
-          group: 'syntax',
-        },
-        'org.primer.overrides': {
-          dark: '{base.color.yellow.3}',
-        },
-      },
-    },
-    yellowBright: {
-      $value: '{base.color.yellow.7}',
-      $type: 'color',
-      $description: 'ANSI bright yellow for highlighted warnings in terminal',
-      $extensions: {
-        'org.primer.figma': {
-          collection: 'mode',
-          group: 'syntax',
-        },
-        'org.primer.overrides': {
-          dark: '{base.color.yellow.2}',
-        },
-      },
-    },
-    blue: {
-      $value: '{base.color.blue.5}',
-      $type: 'color',
-      $description: 'ANSI blue for informational terminal text',
-      $extensions: {
-        'org.primer.figma': {
-          collection: 'mode',
-          group: 'syntax',
-        },
-        'org.primer.overrides': {
-          dark: '{base.color.blue.3}',
-        },
-      },
-    },
-    blueBright: {
-      $value: '{base.color.blue.4}',
-      $type: 'color',
-      $description: 'ANSI bright blue for highlighted info in terminal',
-      $extensions: {
-        'org.primer.figma': {
-          collection: 'mode',
-          group: 'syntax',
-        },
-        'org.primer.overrides': {
-          dark: '{base.color.blue.2}',
-        },
-      },
-    },
-    magenta: {
-      $value: '{base.color.purple.5}',
-      $type: 'color',
-      $description: 'ANSI magenta for special terminal text',
-      $extensions: {
-        'org.primer.figma': {
-          collection: 'mode',
-          group: 'syntax',
-        },
-        'org.primer.overrides': {
-          dark: '{base.color.purple.3}',
-        },
-      },
-    },
-    magentaBright: {
-      $value: '{base.color.purple.4}',
-      $type: 'color',
-      $description: 'ANSI bright magenta for highlighted special text',
-      $extensions: {
-        'org.primer.figma': {
-          collection: 'mode',
-          group: 'syntax',
-        },
-        'org.primer.overrides': {
-          dark: '{base.color.purple.2}',
-        },
-      },
-    },
-    cyan: {
-      $value: {
-        colorSpace: 'hsl',
-        components: [
-          184,
-          65.8,
-          31,
-        ],
-        hex: '#1b7c83',
-      },
-      $type: 'color',
-      $description: 'ANSI cyan for terminal text',
-      $extensions: {
-        'org.primer.figma': {
-          collection: 'mode',
-          group: 'syntax',
-        },
-        'org.primer.overrides': {
-          dark: '#39c5cf',
-        },
-      },
-    },
-    cyanBright: {
-      $value: {
-        colorSpace: 'hsl',
-        components: [
-          191.9,
-          55.3,
-          42.9,
-        ],
-        hex: '#3192aa',
-      },
-      $type: 'color',
-      $description: 'ANSI bright cyan for highlighted terminal text',
-      $extensions: {
-        'org.primer.figma': {
-          collection: 'mode',
-          group: 'syntax',
-        },
-        'org.primer.overrides': {
-          dark: '#56d4dd',
-        },
-      },
-    },
-  },
-  prettylights: {
-    $description: 'Syntax highlighting colors for code display. Used by GitHub code rendering (prettylights theme).',
-    $extensions: {
-      'org.primer.llm': {
-        usage: [
-          'code-syntax-highlighting',
-          'code-block',
-          'inline-code',
-          'diff-view',
-        ],
-        rules: 'Use exclusively for syntax highlighting in code display contexts. Do NOT use for general UI text or backgrounds. Each token maps to a specific syntax element (comment, keyword, string, etc.).',
-      },
-    },
-    syntax: {
-      comment: {
+      'black-bright': {
         $value: '{base.color.neutral.9}',
         $type: 'color',
-        $description: 'Syntax highlighting color for code comments',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
             group: 'syntax',
           },
           'org.primer.overrides': {
-            dark: '{base.color.neutral.9}',
+            dark: '{base.color.neutral.6}',
           },
         },
       },
-      constant: {
-        $value: '{base.color.blue.6}',
+      white: {
+        $value: '{base.color.neutral.7}',
         $type: 'color',
-        $description: 'Syntax highlighting color for constants and literal values',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
             group: 'syntax',
           },
           'org.primer.overrides': {
-            dark: '{base.color.blue.2}',
+            dark: '{base.color.neutral.10}',
           },
         },
       },
-      constantOtherReferenceLink: {
-        $value: '{base.color.blue.8}',
+      'white-bright': {
+        $value: '{base.color.neutral.6}',
         $type: 'color',
-        $description: 'Syntax highlighting color for reference links and URLs in code',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
             group: 'syntax',
           },
           'org.primer.overrides': {
-            dark: '{base.color.blue.1}',
+            dark: '{base.color.neutral.11}',
           },
         },
       },
-      'constant-other-reference-link': {
-        $value: '{prettylights.syntax.constantOtherReferenceLink}',
+      gray: {
+        $value: '{base.color.neutral.7}',
         $type: 'color',
-        $deprecated: '{prettylights.syntax.constantOtherReferenceLink}',
-        $description: 'Deprecated. Use prettylights.syntax.constantOtherReferenceLink instead.',
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'mode',
-            group: 'syntax',
-          },
-        },
-      },
-      entityTag: {
-        $value: '{base.color.blue.6}',
-        $type: 'color',
-        $description: 'Syntax highlighting color for HTML/XML tags',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
             group: 'syntax',
           },
           'org.primer.overrides': {
-            dark: '{base.color.green.1}',
-            'dark-tritanopia': '{base.color.blue.1}',
-            'dark-tritanopia-high-contrast': '{base.color.blue.1}',
-            'dark-protanopia-deuteranopia': '{base.color.blue.1}',
-            'dark-protanopia-deuteranopia-high-contrast': '{base.color.blue.1}',
+            dark: '{base.color.neutral.6}',
           },
         },
       },
-      entity: {
-        $value: '{base.color.purple.6}',
-        $type: 'color',
-        $description: 'Syntax highlighting color for class names, type definitions, and declarations',
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'mode',
-            group: 'syntax',
-          },
-          'org.primer.overrides': {
-            dark: '{base.color.purple.2}',
-          },
-        },
-      },
-      storageModifierImport: {
-        $value: '{base.color.neutral.13}',
-        $type: 'color',
-        $description: 'Syntax highlighting color for import and require statements',
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'mode',
-            group: 'syntax',
-          },
-          'org.primer.overrides': {
-            dark: '{base.color.neutral.12}',
-          },
-        },
-      },
-      storage: {
-        modifier: {
-          import: {
-            $value: '{prettylights.syntax.storageModifierImport}',
-            $type: 'color',
-            $deprecated: '{prettylights.syntax.storageModifierImport}',
-            $description: 'Deprecated. Use prettylights.syntax.storageModifierImport instead.',
-            $extensions: {
-              'org.primer.figma': {
-                collection: 'mode',
-                group: 'syntax',
-              },
-            },
-          },
-        },
-      },
-      'entity-tag': {
-        $value: '{prettylights.syntax.entityTag}',
-        $type: 'color',
-        $deprecated: '{prettylights.syntax.entityTag}',
-        $description: 'Deprecated. Use prettylights.syntax.entityTag instead.',
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'mode',
-            group: 'syntax',
-          },
-        },
-      },
-      keyword: {
-        $value: '{base.color.red.5}',
-        $type: 'color',
-        $description: 'Syntax highlighting color for language keywords (if, else, return)',
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'mode',
-            group: 'syntax',
-          },
-          'org.primer.overrides': {
-            dark: '{base.color.red.3}',
-            'dark-protanopia-deuteranopia': '{base.color.orange.3}',
-            'dark-protanopia-deuteranopia-high-contrast': '{base.color.orange.3}',
-            'light-protanopia-deuteranopia': '{base.color.orange.5}',
-            'light-protanopia-deuteranopia-high-contrast': '{base.color.orange.5}',
-          },
-        },
-      },
-      string: {
-        $value: '{base.color.blue.8}',
-        $type: 'color',
-        $description: 'Syntax highlighting color for string literals',
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'mode',
-            group: 'syntax',
-          },
-          'org.primer.overrides': {
-            dark: '{base.color.blue.1}',
-          },
-        },
-      },
-      variable: {
-        $value: '{base.color.orange.6}',
-        $type: 'color',
-        $description: 'Syntax highlighting color for variables and parameters',
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'mode',
-            group: 'syntax',
-          },
-          'org.primer.overrides': {
-            dark: '{base.color.orange.2}',
-            'dark-tritanopia': '{base.color.red.2}',
-            'dark-tritanopia-high-contrast': '{base.color.red.2}',
-            'light-tritanopia': '{base.color.red.6}',
-            'light-tritanopia-high-contrast': '{base.color.red.6}',
-          },
-        },
-      },
-      bracketHighlighterUnmatched: {
+      red: {
         $value: '{base.color.red.7}',
         $type: 'color',
-        $description: 'Syntax highlighting color for unmatched brackets',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
             group: 'syntax',
           },
           'org.primer.overrides': {
-            dark: '{base.color.red.4}',
-            'dark-protanopia-deuteranopia': '{base.color.orange.4}',
-            'dark-protanopia-deuteranopia-high-contrast': '{base.color.orange.4}',
+            dark: '{base.color.red.8}',
+            'dark-protanopia-deuteranopia': '{base.color.orange.8}',
+            'dark-protanopia-deuteranopia-high-contrast': '{base.color.orange.8}',
             'light-protanopia-deuteranopia': '{base.color.orange.7}',
             'light-protanopia-deuteranopia-high-contrast': '{base.color.orange.7}',
           },
         },
       },
-      bracketHighlighterAngle: {
-        $value: '{base.color.neutral.9}',
-        $type: 'color',
-        $description: 'Syntax highlighting color for angle brackets',
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'mode',
-            group: 'syntax',
-          },
-          'org.primer.overrides': {
-            dark: '{base.color.neutral.9}',
-          },
-        },
-      },
-      brackethighlighter: {
-        unmatched: {
-          $value: '{prettylights.syntax.bracketHighlighterUnmatched}',
-          $type: 'color',
-          $deprecated: '{prettylights.syntax.bracketHighlighterUnmatched}',
-          $description: 'Deprecated. Use prettylights.syntax.bracketHighlighterUnmatched instead.',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              group: 'syntax',
-            },
-          },
-        },
-        angle: {
-          $value: '{prettylights.syntax.bracketHighlighterAngle}',
-          $type: 'color',
-          $deprecated: '{prettylights.syntax.bracketHighlighterAngle}',
-          $description: 'Deprecated. Use prettylights.syntax.bracketHighlighterAngle instead.',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              group: 'syntax',
-            },
-          },
-        },
-      },
-      invalidIllegal: {
-        text: {
-          $value: '{fgColor.danger}',
-          $type: 'color',
-          $description: 'Text color for invalid or illegal code syntax',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              group: 'syntax',
-            },
-          },
-        },
-        bg: {
-          $value: '{bgColor.danger.muted}',
-          $type: 'color',
-          $description: 'Background color for invalid or illegal code syntax',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              group: 'syntax',
-            },
-          },
-        },
-      },
-      invalid: {
-        illegal: {
-          text: {
-            $value: '{prettylights.syntax.invalidIllegal.text}',
-            $type: 'color',
-            $deprecated: '{prettylights.syntax.invalidIllegal.text}',
-            $description: 'Deprecated. Use prettylights.syntax.invalidIllegal.text instead.',
-            $extensions: {
-              'org.primer.figma': {
-                collection: 'mode',
-                group: 'syntax',
-              },
-            },
-          },
-          bg: {
-            $value: '{prettylights.syntax.invalidIllegal.bg}',
-            $type: 'color',
-            $deprecated: '{prettylights.syntax.invalidIllegal.bg}',
-            $description: 'Deprecated. Use prettylights.syntax.invalidIllegal.bg instead.',
-            $extensions: {
-              'org.primer.figma': {
-                collection: 'mode',
-                group: 'syntax',
-              },
-            },
-          },
-        },
-      },
-      carriageReturn: {
-        text: {
-          $value: '{base.color.neutral.1}',
-          $type: 'color',
-          $description: 'Text color for carriage return characters in diffs',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              group: 'syntax',
-            },
-            'org.primer.overrides': {
-              dark: '{base.color.neutral.12}',
-            },
-          },
-        },
-        bg: {
-          $value: '{base.color.red.5}',
-          $type: 'color',
-          $description: 'Background color for carriage return characters in diffs',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              group: 'syntax',
-            },
-            'org.primer.overrides': {
-              dark: '{base.color.red.6}',
-              'dark-protanopia-deuteranopia': '{base.color.orange.6}',
-              'dark-protanopia-deuteranopia-high-contrast': '{base.color.orange.6}',
-              'light-protanopia-deuteranopia': '{base.color.orange.5}',
-              'light-protanopia-deuteranopia-high-contrast': '{base.color.orange.5}',
-            },
-          },
-        },
-      },
-      carriage: {
-        return: {
-          text: {
-            $value: '{prettylights.syntax.carriageReturn.text}',
-            $type: 'color',
-            $deprecated: '{prettylights.syntax.carriageReturn.text}',
-            $description: 'Deprecated. Use prettylights.syntax.carriageReturn.text instead.',
-            $extensions: {
-              'org.primer.figma': {
-                collection: 'mode',
-                group: 'syntax',
-              },
-            },
-          },
-          bg: {
-            $value: '{prettylights.syntax.carriageReturn.bg}',
-            $type: 'color',
-            $deprecated: '{prettylights.syntax.carriageReturn.bg}',
-            $description: 'Deprecated. Use prettylights.syntax.carriageReturn.bg instead.',
-            $extensions: {
-              'org.primer.figma': {
-                collection: 'mode',
-                group: 'syntax',
-              },
-            },
-          },
-        },
-      },
-      stringRegexp: {
-        $value: '{base.color.green.6}',
-        $type: 'color',
-        $description: 'Syntax highlighting color for regular expression literals',
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'mode',
-            group: 'syntax',
-          },
-          'org.primer.overrides': {
-            dark: '{base.color.green.1}',
-            'dark-tritanopia': '{base.color.blue.1}',
-            'dark-tritanopia-high-contrast': '{base.color.blue.1}',
-            'light-tritanopia': '{base.color.blue.6}',
-            'light-tritanopia-high-contrast': '{base.color.blue.6}',
-            'dark-protanopia-deuteranopia': '{base.color.blue.1}',
-            'dark-protanopia-deuteranopia-high-contrast': '{base.color.blue.1}',
-            'light-protanopia-deuteranopia': '{base.color.blue.6}',
-            'light-protanopia-deuteranopia-high-contrast': '{base.color.blue.6}',
-          },
-        },
-      },
-      'string-regexp': {
-        $value: '{prettylights.syntax.stringRegexp}',
-        $type: 'color',
-        $deprecated: '{prettylights.syntax.stringRegexp}',
-        $description: 'Deprecated. Use prettylights.syntax.stringRegexp instead.',
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'mode',
-            group: 'syntax',
-          },
-        },
-      },
-      markup: {
-        list: {
-          $value: '{base.color.yellow.9}',
-          $type: 'color',
-          $description: 'Syntax highlighting color for list markers in markdown',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              group: 'syntax',
-            },
-            'org.primer.overrides': {
-              dark: '{base.color.yellow.1}',
-            },
-          },
-        },
-        heading: {
-          $value: '{base.color.blue.6}',
-          $type: 'color',
-          $description: 'Syntax highlighting color for headings in markdown',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              group: 'syntax',
-            },
-            'org.primer.overrides': {
-              dark: '{base.color.blue.5}',
-            },
-          },
-        },
-        italic: {
-          $value: '{base.color.neutral.13}',
-          $type: 'color',
-          $description: 'Syntax highlighting color for italic text in markdown',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              group: 'syntax',
-            },
-            'org.primer.overrides': {
-              dark: '{base.color.neutral.12}',
-            },
-          },
-        },
-        bold: {
-          $value: '{base.color.neutral.13}',
-          $type: 'color',
-          $description: 'Syntax highlighting color for bold text in markdown',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              group: 'syntax',
-            },
-            'org.primer.overrides': {
-              dark: '{base.color.neutral.12}',
-            },
-          },
-        },
-        deleted: {
-          text: {
-            $value: '{base.color.red.7}',
-            $type: 'color',
-            $description: 'Text color for deleted lines in diff views',
-            $extensions: {
-              'org.primer.figma': {
-                collection: 'mode',
-                group: 'syntax',
-              },
-              'org.primer.overrides': {
-                dark: '{base.color.red.0}',
-                'dark-protanopia-deuteranopia': '{base.color.orange.0}',
-                'dark-protanopia-deuteranopia-high-contrast': '{base.color.orange.0}',
-                'light-protanopia-deuteranopia': '{base.color.orange.7}',
-                'light-protanopia-deuteranopia-high-contrast': '{base.color.orange.7}',
-              },
-            },
-          },
-          bg: {
-            $value: '{base.color.red.0}',
-            $type: 'color',
-            $description: 'Background color for deleted lines in diff views',
-            $extensions: {
-              'org.primer.figma': {
-                collection: 'mode',
-                group: 'syntax',
-              },
-              'org.primer.overrides': {
-                dark: '{base.color.red.8}',
-                'dark-protanopia-deuteranopia': '{base.color.orange.8}',
-                'dark-protanopia-deuteranopia-high-contrast': '{base.color.orange.8}',
-                'light-protanopia-deuteranopia': '{base.color.orange.0}',
-                'light-protanopia-deuteranopia-high-contrast': '{base.color.orange.0}',
-              },
-            },
-          },
-        },
-        inserted: {
-          text: {
-            $value: '{base.color.green.6}',
-            $type: 'color',
-            $description: 'Text color for inserted lines in diff views',
-            $extensions: {
-              'org.primer.figma': {
-                collection: 'mode',
-                group: 'syntax',
-              },
-              'org.primer.overrides': {
-                dark: '{base.color.green.0}',
-                'dark-tritanopia': '{base.color.blue.0}',
-                'dark-tritanopia-high-contrast': '{base.color.blue.0}',
-                'light-tritanopia': '{base.color.blue.6}',
-                'light-tritanopia-high-contrast': '{base.color.blue.6}',
-                'dark-protanopia-deuteranopia': '{base.color.blue.0}',
-                'dark-protanopia-deuteranopia-high-contrast': '{base.color.blue.0}',
-                'light-protanopia-deuteranopia': '{base.color.blue.6}',
-                'light-protanopia-deuteranopia-high-contrast': '{base.color.blue.6}',
-              },
-            },
-          },
-          bg: {
-            $value: '{base.color.green.0}',
-            $type: 'color',
-            $description: 'Background color for inserted lines in diff views',
-            $extensions: {
-              'org.primer.figma': {
-                collection: 'mode',
-                group: 'syntax',
-              },
-              'org.primer.overrides': {
-                dark: '{base.color.green.8}',
-                'dark-tritanopia': '{base.color.blue.8}',
-                'dark-tritanopia-high-contrast': '{base.color.blue.8}',
-                'light-tritanopia': '{base.color.blue.0}',
-                'light-tritanopia-high-contrast': '{base.color.blue.0}',
-                'dark-protanopia-deuteranopia': '{base.color.blue.8}',
-                'dark-protanopia-deuteranopia-high-contrast': '{base.color.blue.8}',
-                'light-protanopia-deuteranopia': '{base.color.blue.0}',
-                'light-protanopia-deuteranopia-high-contrast': '{base.color.blue.0}',
-              },
-            },
-          },
-        },
-        changed: {
-          text: {
-            $value: '{base.color.orange.6}',
-            $type: 'color',
-            $description: 'Text color for changed lines in diff views',
-            $extensions: {
-              'org.primer.figma': {
-                collection: 'mode',
-                group: 'syntax',
-              },
-              'org.primer.overrides': {
-                dark: '{base.color.orange.0}',
-                'dark-tritanopia': '{base.color.red.0}',
-                'dark-tritanopia-high-contrast': '{base.color.red.0}',
-                'light-tritanopia': '{base.color.red.6}',
-                'light-tritanopia-high-contrast': '{base.color.red.6}',
-              },
-            },
-          },
-          bg: {
-            $value: '{base.color.orange.1}',
-            $type: 'color',
-            $description: 'Background color for changed lines in diff views',
-            $extensions: {
-              'org.primer.figma': {
-                collection: 'mode',
-                group: 'syntax',
-              },
-              'org.primer.overrides': {
-                dark: '{base.color.orange.8}',
-                'dark-tritanopia': '{base.color.red.8}',
-                'dark-tritanopia-high-contrast': '{base.color.red.8}',
-                'light-tritanopia': '{base.color.red.1}',
-                'light-tritanopia-high-contrast': '{base.color.red.1}',
-              },
-            },
-          },
-        },
-        ignored: {
-          text: {
-            $value: '{base.color.neutral.6}',
-            $type: 'color',
-            $description: 'Text color for ignored content in diffs',
-            $extensions: {
-              'org.primer.figma': {
-                collection: 'mode',
-                group: 'syntax',
-              },
-              'org.primer.overrides': {
-                dark: '{base.color.neutral.12}',
-              },
-            },
-          },
-          bg: {
-            $value: '{base.color.blue.6}',
-            $type: 'color',
-            $description: 'Background color for ignored content in diffs',
-            $extensions: {
-              'org.primer.figma': {
-                collection: 'mode',
-                group: 'syntax',
-              },
-              'org.primer.overrides': {
-                dark: '{base.color.blue.6}',
-              },
-            },
-          },
-        },
-      },
-      metaDiffRange: {
-        $value: '{base.color.purple.5}',
-        $type: 'color',
-        $description: 'Syntax highlighting color for diff range information (@@ lines)',
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'mode',
-            group: 'syntax',
-          },
-          'org.primer.overrides': {
-            dark: '{base.color.purple.2}',
-          },
-        },
-      },
-      meta: {
-        diff: {
-          range: {
-            $value: '{prettylights.syntax.metaDiffRange}',
-            $type: 'color',
-            $deprecated: '{prettylights.syntax.metaDiffRange}',
-            $description: 'Deprecated. Use prettylights.syntax.metaDiffRange instead.',
-            $extensions: {
-              'org.primer.figma': {
-                collection: 'mode',
-                group: 'syntax',
-              },
-            },
-          },
-        },
-      },
-      sublimeLinterGutterMark: {
-        $value: '{base.color.neutral.8}',
-        $type: 'color',
-        $description: 'Color for linter gutter marks in code editors',
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'mode',
-            group: 'syntax',
-          },
-          'org.primer.overrides': {
-            dark: '{base.color.neutral.7}',
-          },
-        },
-      },
-      sublimelinter: {
-        gutter: {
-          mark: {
-            $value: '{prettylights.syntax.sublimeLinterGutterMark}',
-            $type: 'color',
-            $deprecated: '{prettylights.syntax.sublimeLinterGutterMark}',
-            $description: 'Deprecated. Use prettylights.syntax.sublimeLinterGutterMark instead.',
-            $extensions: {
-              'org.primer.figma': {
-                collection: 'mode',
-                group: 'syntax',
-              },
-            },
-          },
-        },
-      },
-    },
-  },
-  /**
-  *
-  * Deprecated: Remove ones platform is clean
-  *
-  **/
-  color: {
-    ansi: {
-      black: {
-        $value: '{ansi.black}',
-        $type: 'color',
-        $deprecated: '{ansi.black}',
-        $description: 'Deprecated. Use ansi.black instead.',
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'mode',
-            group: 'syntax',
-          },
-        },
-      },
-      'black-bright': {
-        $value: '{ansi.blackBright}',
-        $type: 'color',
-        $deprecated: '{ansi.blackBright}',
-        $description: 'Deprecated. Use ansi.blackBright instead.',
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'mode',
-            group: 'syntax',
-          },
-        },
-      },
-      white: {
-        $value: '{ansi.white}',
-        $type: 'color',
-        $deprecated: '{ansi.white}',
-        $description: 'Deprecated. Use ansi.white instead.',
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'mode',
-            group: 'syntax',
-          },
-        },
-      },
-      'white-bright': {
-        $value: '{ansi.whiteBright}',
-        $type: 'color',
-        $deprecated: '{ansi.whiteBright}',
-        $description: 'Deprecated. Use ansi.whiteBright instead.',
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'mode',
-            group: 'syntax',
-          },
-        },
-      },
-      gray: {
-        $value: '{ansi.gray}',
-        $type: 'color',
-        $deprecated: '{ansi.gray}',
-        $description: 'Deprecated. Use ansi.gray instead.',
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'mode',
-            group: 'syntax',
-          },
-        },
-      },
-      red: {
-        $value: '{ansi.red}',
-        $type: 'color',
-        $deprecated: '{ansi.red}',
-        $description: 'Deprecated. Use ansi.red instead.',
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'mode',
-            group: 'syntax',
-          },
-        },
-      },
       'red-bright': {
-        $value: '{ansi.redBright}',
+        $value: '{base.color.red.8}',
         $type: 'color',
-        $deprecated: '{ansi.redBright}',
-        $description: 'Deprecated. Use ansi.redBright instead.',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
             group: 'syntax',
+          },
+          'org.primer.overrides': {
+            dark: '{base.color.red.9}',
+            'dark-protanopia-deuteranopia': '{base.color.orange.9}',
+            'dark-protanopia-deuteranopia-high-contrast': '{base.color.orange.9}',
+            'light-protanopia-deuteranopia': '{base.color.orange.8}',
+            'light-protanopia-deuteranopia-high-contrast': '{base.color.orange.8}',
           },
         },
       },
       green: {
-        $value: '{ansi.green}',
+        $value: '{base.color.green.8}',
         $type: 'color',
-        $deprecated: '{ansi.green}',
-        $description: 'Deprecated. Use ansi.green instead.',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
             group: 'syntax',
+          },
+          'org.primer.overrides': {
+            dark: '{base.color.green.8}',
+            'dark-tritanopia': '{base.color.blue.6}',
+            'dark-tritanopia-high-contrast': '{base.color.blue.6}',
+            'light-tritanopia': '{base.color.blue.8}',
+            'light-tritanopia-high-contrast': '{base.color.blue.8}',
+            'dark-protanopia-deuteranopia': '{base.color.blue.6}',
+            'dark-protanopia-deuteranopia-high-contrast': '{base.color.blue.6}',
+            'light-protanopia-deuteranopia': '{base.color.blue.8}',
+            'light-protanopia-deuteranopia-high-contrast': '{base.color.blue.8}',
           },
         },
       },
       'green-bright': {
-        $value: '{ansi.greenBright}',
+        $value: '{base.color.green.7}',
         $type: 'color',
-        $deprecated: '{ansi.greenBright}',
-        $description: 'Deprecated. Use ansi.greenBright instead.',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
             group: 'syntax',
+          },
+          'org.primer.overrides': {
+            dark: '{base.color.green.9}',
+            'dark-tritanopia': '{base.color.blue.7}',
+            'dark-tritanopia-high-contrast': '{base.color.blue.7}',
+            'light-tritanopia': '{base.color.blue.7}',
+            'light-tritanopia-high-contrast': '{base.color.blue.7}',
+            'dark-protanopia-deuteranopia': '{base.color.blue.7}',
+            'dark-protanopia-deuteranopia-high-contrast': '{base.color.blue.7}',
+            'light-protanopia-deuteranopia': '{base.color.blue.7}',
+            'light-protanopia-deuteranopia-high-contrast': '{base.color.blue.7}',
           },
         },
       },
       yellow: {
-        $value: '{ansi.yellow}',
+        $value: '{base.color.yellow.10}',
         $type: 'color',
-        $deprecated: '{ansi.yellow}',
-        $description: 'Deprecated. Use ansi.yellow instead.',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
             group: 'syntax',
+          },
+          'org.primer.overrides': {
+            dark: '{base.color.yellow.8}',
           },
         },
       },
       'yellow-bright': {
-        $value: '{ansi.yellowBright}',
+        $value: '{base.color.yellow.9}',
         $type: 'color',
-        $deprecated: '{ansi.yellowBright}',
-        $description: 'Deprecated. Use ansi.yellowBright instead.',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
             group: 'syntax',
+          },
+          'org.primer.overrides': {
+            dark: '{base.color.yellow.9}',
           },
         },
       },
       blue: {
-        $value: '{ansi.blue}',
+        $value: '{base.color.blue.7}',
         $type: 'color',
-        $deprecated: '{ansi.blue}',
-        $description: 'Deprecated. Use ansi.blue instead.',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
             group: 'syntax',
+          },
+          'org.primer.overrides': {
+            dark: '{base.color.blue.6}',
           },
         },
       },
       'blue-bright': {
-        $value: '{ansi.blueBright}',
+        $value: '{base.color.blue.6}',
         $type: 'color',
-        $deprecated: '{ansi.blueBright}',
-        $description: 'Deprecated. Use ansi.blueBright instead.',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
             group: 'syntax',
+          },
+          'org.primer.overrides': {
+            dark: '{base.color.blue.7}',
           },
         },
       },
       magenta: {
-        $value: '{ansi.magenta}',
+        $value: '{base.color.purple.7}',
         $type: 'color',
-        $deprecated: '{ansi.magenta}',
-        $description: 'Deprecated. Use ansi.magenta instead.',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
             group: 'syntax',
+          },
+          'org.primer.overrides': {
+            dark: '{base.color.purple.8}',
           },
         },
       },
       'magenta-bright': {
-        $value: '{ansi.magentaBright}',
+        $value: '{base.color.purple.6}',
         $type: 'color',
-        $deprecated: '{ansi.magentaBright}',
-        $description: 'Deprecated. Use ansi.magentaBright instead.',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
             group: 'syntax',
+          },
+          'org.primer.overrides': {
+            dark: '{base.color.purple.9}',
           },
         },
       },
       cyan: {
-        $value: '{ansi.cyan}',
+        $value: {
+          colorSpace: 'hsl',
+          components: [184, 65.8, 31],
+          hex: '#1b7c83',
+        },
         $type: 'color',
-        $deprecated: '{ansi.cyan}',
-        $description: 'Deprecated. Use ansi.cyan instead.',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
             group: 'syntax',
           },
+          'org.primer.overrides': {
+            dark: '#39c5cf',
+          },
         },
       },
       'cyan-bright': {
-        $value: '{ansi.cyanBright}',
+        $value: {
+          colorSpace: 'hsl',
+          components: [191.9, 55.3, 42.9],
+          hex: '#3192aa',
+        },
         $type: 'color',
-        $deprecated: '{ansi.cyanBright}',
-        $description: 'Deprecated. Use ansi.cyanBright instead.',
         $extensions: {
           'org.primer.figma': {
             collection: 'mode',
             group: 'syntax',
+          },
+          'org.primer.overrides': {
+            dark: '#56d4dd',
           },
         },
       },
     },
     prettylights: {
+      $description: 'Syntax highlighting colors for code display. Used by GitHub code rendering (prettylights theme).',
+      $extensions: {
+        'org.primer.llm': {
+          usage: ['code-syntax-highlighting', 'code-block', 'inline-code', 'diff-view'],
+          rules: 'Use exclusively for syntax highlighting in code display contexts. Do NOT use for general UI text or backgrounds. Each token maps to a specific syntax element (comment, keyword, string, etc.).',
+        },
+      },
       syntax: {
         comment: {
-          $value: '{prettylights.syntax.comment}',
+          $value: '{base.color.neutral.7}',
           $type: 'color',
-          $deprecated: '{prettylights.syntax.comment}',
-          $description: 'Deprecated. Use prettylights.syntax.comment instead.',
           $extensions: {
             'org.primer.figma': {
               collection: 'mode',
               group: 'syntax',
+            },
+            'org.primer.overrides': {
+              dark: '{base.color.neutral.7}',
             },
           },
         },
         constant: {
-          $value: '{prettylights.syntax.constant}',
+          $value: '{base.color.blue.8}',
           $type: 'color',
-          $deprecated: '{prettylights.syntax.constant}',
-          $description: 'Deprecated. Use prettylights.syntax.constant instead.',
           $extensions: {
             'org.primer.figma': {
               collection: 'mode',
               group: 'syntax',
+            },
+            'org.primer.overrides': {
+              dark: '{base.color.blue.7}',
             },
           },
         },
         'constant-other-reference-link': {
-          $value: '{prettylights.syntax.constantOtherReferenceLink}',
+          $value: '{base.color.blue.10}',
           $type: 'color',
-          $deprecated: '{prettylights.syntax.constantOtherReferenceLink}',
-          $description: 'Deprecated. Use prettylights.syntax.constantOtherReferenceLink instead.',
           $extensions: {
             'org.primer.figma': {
               collection: 'mode',
               group: 'syntax',
             },
+            'org.primer.overrides': {
+              dark: '{base.color.blue.8}',
+            },
           },
         },
         entity: {
-          $value: '{prettylights.syntax.entity}',
+          $value: '{base.color.purple.8}',
           $type: 'color',
-          $deprecated: '{prettylights.syntax.entity}',
-          $description: 'Deprecated. Use prettylights.syntax.entity instead.',
           $extensions: {
             'org.primer.figma': {
               collection: 'mode',
               group: 'syntax',
+            },
+            'org.primer.overrides': {
+              dark: '{base.color.purple.9}',
             },
           },
         },
         storage: {
           modifier: {
             import: {
-              $value: '{prettylights.syntax.storageModifierImport}',
+              $value: '{base.color.neutral.11}',
               $type: 'color',
-              $deprecated: '{prettylights.syntax.storageModifierImport}',
-              $description: 'Deprecated. Use prettylights.syntax.storageModifierImport instead.',
               $extensions: {
                 'org.primer.figma': {
                   collection: 'mode',
                   group: 'syntax',
+                },
+                'org.primer.overrides': {
+                  dark: '{base.color.neutral.10}',
                 },
               },
             },
           },
         },
         'entity-tag': {
-          $value: '{prettylights.syntax.entityTag}',
+          $value: '{base.color.blue.8}',
           $type: 'color',
-          $deprecated: '{prettylights.syntax.entityTag}',
-          $description: 'Deprecated. Use prettylights.syntax.entityTag instead.',
           $extensions: {
             'org.primer.figma': {
               collection: 'mode',
               group: 'syntax',
+            },
+            'org.primer.overrides': {
+              dark: '{base.color.green.10}',
+              'dark-tritanopia': '{base.color.blue.8}',
+              'dark-tritanopia-high-contrast': '{base.color.blue.8}',
+              'dark-protanopia-deuteranopia': '{base.color.blue.8}',
+              'dark-protanopia-deuteranopia-high-contrast': '{base.color.blue.8}',
             },
           },
         },
         keyword: {
-          $value: '{prettylights.syntax.keyword}',
+          $value: '{base.color.red.7}',
           $type: 'color',
-          $deprecated: '{prettylights.syntax.keyword}',
-          $description: 'Deprecated. Use prettylights.syntax.keyword instead.',
           $extensions: {
             'org.primer.figma': {
               collection: 'mode',
               group: 'syntax',
+            },
+            'org.primer.overrides': {
+              dark: '{base.color.red.8}',
+              'dark-protanopia-deuteranopia': '{base.color.orange.8}',
+              'dark-protanopia-deuteranopia-high-contrast': '{base.color.orange.8}',
+              'light-protanopia-deuteranopia': '{base.color.orange.7}',
+              'light-protanopia-deuteranopia-high-contrast': '{base.color.orange.7}',
             },
           },
         },
         string: {
-          $value: '{prettylights.syntax.string}',
+          $value: '{base.color.blue.10}',
           $type: 'color',
-          $deprecated: '{prettylights.syntax.string}',
-          $description: 'Deprecated. Use prettylights.syntax.string instead.',
           $extensions: {
             'org.primer.figma': {
               collection: 'mode',
               group: 'syntax',
             },
+            'org.primer.overrides': {
+              dark: '{base.color.blue.8}',
+            },
           },
         },
         variable: {
-          $value: '{prettylights.syntax.variable}',
+          $value: '{base.color.orange.8}',
           $type: 'color',
-          $deprecated: '{prettylights.syntax.variable}',
-          $description: 'Deprecated. Use prettylights.syntax.variable instead.',
           $extensions: {
             'org.primer.figma': {
               collection: 'mode',
               group: 'syntax',
+            },
+            'org.primer.overrides': {
+              dark: '{base.color.orange.9}',
+              'dark-tritanopia': '{base.color.red.9}',
+              'dark-tritanopia-high-contrast': '{base.color.red.9}',
+              'light-tritanopia': '{base.color.red.8}',
+              'light-tritanopia-high-contrast': '{base.color.red.8}',
             },
           },
         },
         brackethighlighter: {
           unmatched: {
-            $value: '{prettylights.syntax.bracketHighlighterUnmatched}',
+            $value: '{base.color.red.9}',
             $type: 'color',
-            $deprecated: '{prettylights.syntax.bracketHighlighterUnmatched}',
-            $description: 'Deprecated. Use prettylights.syntax.bracketHighlighterUnmatched instead.',
             $extensions: {
               'org.primer.figma': {
                 collection: 'mode',
                 group: 'syntax',
               },
+              'org.primer.overrides': {
+                dark: '{base.color.red.7}',
+                'dark-protanopia-deuteranopia': '{base.color.orange.7}',
+                'dark-protanopia-deuteranopia-high-contrast': '{base.color.orange.7}',
+                'light-protanopia-deuteranopia': '{base.color.orange.9}',
+                'light-protanopia-deuteranopia-high-contrast': '{base.color.orange.9}',
+              },
             },
           },
           angle: {
-            $value: '{prettylights.syntax.bracketHighlighterAngle}',
+            $value: '{base.color.neutral.7}',
             $type: 'color',
-            $deprecated: '{prettylights.syntax.bracketHighlighterAngle}',
-            $description: 'Deprecated. Use prettylights.syntax.bracketHighlighterAngle instead.',
             $extensions: {
               'org.primer.figma': {
                 collection: 'mode',
                 group: 'syntax',
+              },
+              'org.primer.overrides': {
+                dark: '{base.color.neutral.7}',
               },
             },
           },
@@ -1316,10 +439,8 @@
         invalid: {
           illegal: {
             text: {
-              $value: '{prettylights.syntax.invalidIllegal.text}',
+              $value: '{fgColor.danger}',
               $type: 'color',
-              $deprecated: '{prettylights.syntax.invalidIllegal.text}',
-              $description: 'Deprecated. Use prettylights.syntax.invalidIllegal.text instead.',
               $extensions: {
                 'org.primer.figma': {
                   collection: 'mode',
@@ -1328,10 +449,8 @@
               },
             },
             bg: {
-              $value: '{prettylights.syntax.invalidIllegal.bg}',
+              $value: '{bgColor.danger.muted}',
               $type: 'color',
-              $deprecated: '{prettylights.syntax.invalidIllegal.bg}',
-              $description: 'Deprecated. Use prettylights.syntax.invalidIllegal.bg instead.',
               $extensions: {
                 'org.primer.figma': {
                   collection: 'mode',
@@ -1344,192 +463,251 @@
         carriage: {
           return: {
             text: {
-              $value: '{prettylights.syntax.carriageReturn.text}',
+              $value: '{base.color.neutral.1}',
               $type: 'color',
-              $deprecated: '{prettylights.syntax.carriageReturn.text}',
-              $description: 'Deprecated. Use prettylights.syntax.carriageReturn.text instead.',
               $extensions: {
                 'org.primer.figma': {
                   collection: 'mode',
                   group: 'syntax',
                 },
+                'org.primer.overrides': {
+                  dark: '{base.color.neutral.10}',
+                },
               },
             },
             bg: {
-              $value: '{prettylights.syntax.carriageReturn.bg}',
+              $value: '{base.color.red.7}',
               $type: 'color',
-              $deprecated: '{prettylights.syntax.carriageReturn.bg}',
-              $description: 'Deprecated. Use prettylights.syntax.carriageReturn.bg instead.',
               $extensions: {
                 'org.primer.figma': {
                   collection: 'mode',
                   group: 'syntax',
+                },
+                'org.primer.overrides': {
+                  dark: '{base.color.red.5}',
+                  'dark-protanopia-deuteranopia': '{base.color.orange.5}',
+                  'dark-protanopia-deuteranopia-high-contrast': '{base.color.orange.5}',
+                  'light-protanopia-deuteranopia': '{base.color.orange.7}',
+                  'light-protanopia-deuteranopia-high-contrast': '{base.color.orange.7}',
                 },
               },
             },
           },
         },
         'string-regexp': {
-          $value: '{prettylights.syntax.stringRegexp}',
+          $value: '{base.color.green.8}',
           $type: 'color',
-          $deprecated: '{prettylights.syntax.stringRegexp}',
-          $description: 'Deprecated. Use prettylights.syntax.stringRegexp instead.',
           $extensions: {
             'org.primer.figma': {
               collection: 'mode',
               group: 'syntax',
             },
+            'org.primer.overrides': {
+              dark: '{base.color.green.10}',
+              'dark-tritanopia': '{base.color.blue.8}',
+              'dark-tritanopia-high-contrast': '{base.color.blue.8}',
+              'light-tritanopia': '{base.color.blue.8}',
+              'light-tritanopia-high-contrast': '{base.color.blue.8}',
+              'dark-protanopia-deuteranopia': '{base.color.blue.8}',
+              'dark-protanopia-deuteranopia-high-contrast': '{base.color.blue.8}',
+              'light-protanopia-deuteranopia': '{base.color.blue.8}',
+              'light-protanopia-deuteranopia-high-contrast': '{base.color.blue.8}',
+            },
           },
         },
         markup: {
           list: {
-            $value: '{prettylights.syntax.markup.list}',
+            $value: '{base.color.yellow.11}',
             $type: 'color',
-            $deprecated: '{prettylights.syntax.markup.list}',
-            $description: 'Deprecated. Use prettylights.syntax.markup.list instead.',
             $extensions: {
               'org.primer.figma': {
                 collection: 'mode',
                 group: 'syntax',
+              },
+              'org.primer.overrides': {
+                dark: '{base.color.yellow.10}',
               },
             },
           },
           heading: {
-            $value: '{prettylights.syntax.markup.heading}',
+            $value: '{base.color.blue.8}',
             $type: 'color',
-            $deprecated: '{prettylights.syntax.markup.heading}',
-            $description: 'Deprecated. Use prettylights.syntax.markup.heading instead.',
             $extensions: {
               'org.primer.figma': {
                 collection: 'mode',
                 group: 'syntax',
+              },
+              'org.primer.overrides': {
+                dark: '{base.color.blue.5}',
               },
             },
           },
           italic: {
-            $value: '{prettylights.syntax.markup.italic}',
+            $value: '{base.color.neutral.11}',
             $type: 'color',
-            $deprecated: '{prettylights.syntax.markup.italic}',
-            $description: 'Deprecated. Use prettylights.syntax.markup.italic instead.',
             $extensions: {
               'org.primer.figma': {
                 collection: 'mode',
                 group: 'syntax',
               },
+              'org.primer.overrides': {
+                dark: '{base.color.neutral.10}',
+              },
             },
           },
           bold: {
-            $value: '{prettylights.syntax.markup.bold}',
+            $value: '{base.color.neutral.11}',
             $type: 'color',
-            $deprecated: '{prettylights.syntax.markup.bold}',
-            $description: 'Deprecated. Use prettylights.syntax.markup.bold instead.',
             $extensions: {
               'org.primer.figma': {
                 collection: 'mode',
                 group: 'syntax',
+              },
+              'org.primer.overrides': {
+                dark: '{base.color.neutral.10}',
               },
             },
           },
           deleted: {
             text: {
-              $value: '{prettylights.syntax.markup.deleted.text}',
+              $value: '{base.color.red.9}',
               $type: 'color',
-              $deprecated: '{prettylights.syntax.markup.deleted.text}',
-              $description: 'Deprecated. Use prettylights.syntax.markup.deleted.text instead.',
               $extensions: {
                 'org.primer.figma': {
                   collection: 'mode',
                   group: 'syntax',
                 },
+                'org.primer.overrides': {
+                  dark: '{base.color.red.11}',
+                  'dark-protanopia-deuteranopia': '{base.color.orange.11}',
+                  'dark-protanopia-deuteranopia-high-contrast': '{base.color.orange.11}',
+                  'light-protanopia-deuteranopia': '{base.color.orange.9}',
+                  'light-protanopia-deuteranopia-high-contrast': '{base.color.orange.9}',
+                },
               },
             },
             bg: {
-              $value: '{prettylights.syntax.markup.deleted.bg}',
+              $value: '{base.color.red.2}',
               $type: 'color',
-              $deprecated: '{prettylights.syntax.markup.deleted.bg}',
-              $description: 'Deprecated. Use prettylights.syntax.markup.deleted.bg instead.',
               $extensions: {
                 'org.primer.figma': {
                   collection: 'mode',
                   group: 'syntax',
+                },
+                'org.primer.overrides': {
+                  dark: '{base.color.red.3}',
+                  'dark-protanopia-deuteranopia': '{base.color.orange.3}',
+                  'dark-protanopia-deuteranopia-high-contrast': '{base.color.orange.3}',
+                  'light-protanopia-deuteranopia': '{base.color.orange.2}',
+                  'light-protanopia-deuteranopia-high-contrast': '{base.color.orange.2}',
                 },
               },
             },
           },
           inserted: {
             text: {
-              $value: '{prettylights.syntax.markup.inserted.text}',
+              $value: '{base.color.green.8}',
               $type: 'color',
-              $deprecated: '{prettylights.syntax.markup.inserted.text}',
-              $description: 'Deprecated. Use prettylights.syntax.markup.inserted.text instead.',
               $extensions: {
                 'org.primer.figma': {
                   collection: 'mode',
                   group: 'syntax',
                 },
+                'org.primer.overrides': {
+                  dark: '{base.color.green.11}',
+                  'dark-tritanopia': '{base.color.blue.8}',
+                  'dark-tritanopia-high-contrast': '{base.color.blue.8}',
+                  'light-tritanopia': '{base.color.blue.8}',
+                  'light-tritanopia-high-contrast': '{base.color.blue.8}',
+                  'dark-protanopia-deuteranopia': '{base.color.blue.8}',
+                  'dark-protanopia-deuteranopia-high-contrast': '{base.color.blue.8}',
+                  'light-protanopia-deuteranopia': '{base.color.blue.8}',
+                  'light-protanopia-deuteranopia-high-contrast': '{base.color.blue.8}',
+                },
               },
             },
             bg: {
-              $value: '{prettylights.syntax.markup.inserted.bg}',
+              $value: '{base.color.green.2}',
               $type: 'color',
-              $deprecated: '{prettylights.syntax.markup.inserted.bg}',
-              $description: 'Deprecated. Use prettylights.syntax.markup.inserted.bg instead.',
               $extensions: {
                 'org.primer.figma': {
                   collection: 'mode',
                   group: 'syntax',
+                },
+                'org.primer.overrides': {
+                  dark: '{base.color.green.3}',
+                  'dark-tritanopia': '{base.color.blue.2}',
+                  'dark-tritanopia-high-contrast': '{base.color.blue.2}',
+                  'light-tritanopia': '{base.color.blue.2}',
+                  'light-tritanopia-high-contrast': '{base.color.blue.2}',
+                  'dark-protanopia-deuteranopia': '{base.color.blue.2}',
+                  'dark-protanopia-deuteranopia-high-contrast': '{base.color.blue.2}',
+                  'light-protanopia-deuteranopia': '{base.color.blue.2}',
+                  'light-protanopia-deuteranopia-high-contrast': '{base.color.blue.2}',
                 },
               },
             },
           },
           changed: {
             text: {
-              $value: '{prettylights.syntax.markup.changed.text}',
+              $value: '{base.color.orange.8}',
               $type: 'color',
-              $deprecated: '{prettylights.syntax.markup.changed.text}',
-              $description: 'Deprecated. Use prettylights.syntax.markup.changed.text instead.',
               $extensions: {
                 'org.primer.figma': {
                   collection: 'mode',
                   group: 'syntax',
                 },
+                'org.primer.overrides': {
+                  dark: '{base.color.orange.11}',
+                  'dark-tritanopia': '{base.color.red.11}',
+                  'dark-tritanopia-high-contrast': '{base.color.red.11}',
+                  'light-tritanopia': '{base.color.red.8}',
+                  'light-tritanopia-high-contrast': '{base.color.red.8}',
+                },
               },
             },
             bg: {
-              $value: '{prettylights.syntax.markup.changed.bg}',
+              $value: '{base.color.orange.3}',
               $type: 'color',
-              $deprecated: '{prettylights.syntax.markup.changed.bg}',
-              $description: 'Deprecated. Use prettylights.syntax.markup.changed.bg instead.',
               $extensions: {
                 'org.primer.figma': {
                   collection: 'mode',
                   group: 'syntax',
+                },
+                'org.primer.overrides': {
+                  dark: '{base.color.orange.3}',
+                  'dark-tritanopia': '{base.color.red.3}',
+                  'dark-tritanopia-high-contrast': '{base.color.red.3}',
+                  'light-tritanopia': '{base.color.red.3}',
+                  'light-tritanopia-high-contrast': '{base.color.red.3}',
                 },
               },
             },
           },
           ignored: {
             text: {
-              $value: '{prettylights.syntax.markup.ignored.text}',
+              $value: '{base.color.neutral.4}',
               $type: 'color',
-              $deprecated: '{prettylights.syntax.markup.ignored.text}',
-              $description: 'Deprecated. Use prettylights.syntax.markup.ignored.text instead.',
               $extensions: {
                 'org.primer.figma': {
                   collection: 'mode',
                   group: 'syntax',
                 },
+                'org.primer.overrides': {
+                  dark: '{base.color.neutral.10}',
+                },
               },
             },
             bg: {
-              $value: '{prettylights.syntax.markup.ignored.bg}',
+              $value: '{base.color.blue.8}',
               $type: 'color',
-              $deprecated: '{prettylights.syntax.markup.ignored.bg}',
-              $description: 'Deprecated. Use prettylights.syntax.markup.ignored.bg instead.',
               $extensions: {
                 'org.primer.figma': {
                   collection: 'mode',
                   group: 'syntax',
+                },
+                'org.primer.overrides': {
+                  dark: '{base.color.blue.4}',
                 },
               },
             },
@@ -1538,14 +716,15 @@
         meta: {
           diff: {
             range: {
-              $value: '{prettylights.syntax.metaDiffRange}',
+              $value: '{base.color.purple.7}',
               $type: 'color',
-              $deprecated: '{prettylights.syntax.metaDiffRange}',
-              $description: 'Deprecated. Use prettylights.syntax.metaDiffRange instead.',
               $extensions: {
                 'org.primer.figma': {
                   collection: 'mode',
                   group: 'syntax',
+                },
+                'org.primer.overrides': {
+                  dark: '{base.color.purple.9}',
                 },
               },
             },
@@ -1554,14 +733,15 @@
         sublimelinter: {
           gutter: {
             mark: {
-              $value: '{prettylights.syntax.sublimeLinterGutterMark}',
+              $value: '{base.color.neutral.6}',
               $type: 'color',
-              $deprecated: '{prettylights.syntax.sublimeLinterGutterMark}',
-              $description: 'Deprecated. Use prettylights.syntax.sublimeLinterGutterMark instead.',
               $extensions: {
                 'org.primer.figma': {
                   collection: 'mode',
                   group: 'syntax',
+                },
+                'org.primer.overrides': {
+                  dark: '{base.color.neutral.5}',
                 },
               },
             },

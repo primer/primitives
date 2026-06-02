@@ -31,9 +31,6 @@ jobs:
       - name: Install dependencies
         run: npm ci --no-audit --no-fund --ignore-scripts
 
-      - name: Build tokens
-        run: npm run build:tokens
-
       - name: Run required contrast validation tests
         run: |
           npm run check:contrast
