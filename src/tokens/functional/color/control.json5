@@ -20,19 +20,19 @@
           'org.primer.overrides': {
             dark: '{base.color.neutral.3}',
             'dark-high-contrast': {
-              $value: '{base.color.neutral.3}',
+              $value: '{base.color.neutral.0}',
             },
             'dark-tritanopia-high-contrast': {
-              $value: '{base.color.neutral.3}',
+              $value: '{base.color.neutral.0}',
             },
             'dark-protanopia-deuteranopia-high-contrast': {
-              $value: '{base.color.neutral.3}',
+              $value: '{base.color.neutral.0}',
             },
             'dark-dimmed': {
               $value: '{base.color.neutral.4}',
             },
             'dark-dimmed-high-contrast': {
-              $value: '{base.color.neutral.3}',
+              $value: '{base.color.neutral.0}',
             },
             'light-high-contrast': {
               $value: '{base.color.neutral.3}',
@@ -58,19 +58,19 @@
           'org.primer.overrides': {
             dark: '{base.color.neutral.3}',
             'dark-high-contrast': {
-              $value: '{base.color.neutral.4}',
+              $value: '{base.color.neutral.1}',
             },
             'dark-tritanopia-high-contrast': {
-              $value: '{base.color.neutral.4}',
+              $value: '{base.color.neutral.1}',
             },
             'dark-protanopia-deuteranopia-high-contrast': {
-              $value: '{base.color.neutral.4}',
+              $value: '{base.color.neutral.1}',
             },
             'dark-dimmed': {
               $value: '{base.color.neutral.4}',
             },
             'dark-dimmed-high-contrast': {
-              $value: '{base.color.neutral.4}',
+              $value: '{base.color.neutral.0}',
             },
             'light-high-contrast': {
               $value: '{base.color.neutral.4}',
@@ -96,19 +96,19 @@
           'org.primer.overrides': {
             dark: '{base.color.neutral.4}',
             'dark-high-contrast': {
-              $value: '{base.color.neutral.4}',
+              $value: '{base.color.neutral.1}',
             },
             'dark-tritanopia-high-contrast': {
-              $value: '{base.color.neutral.4}',
+              $value: '{base.color.neutral.1}',
             },
             'dark-protanopia-deuteranopia-high-contrast': {
-              $value: '{base.color.neutral.4}',
+              $value: '{base.color.neutral.1}',
             },
             'dark-dimmed': {
               $value: '{base.color.neutral.5}',
             },
             'dark-dimmed-high-contrast': {
-              $value: '{base.color.neutral.4}',
+              $value: '{base.color.neutral.0}',
             },
             'light-high-contrast': {
               $value: '{base.color.neutral.4}',
@@ -153,7 +153,7 @@
     },
     fgColor: {
       rest: {
-        $value: '{base.color.neutral.10}',
+        $value: '{fgColor.default}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -178,25 +178,25 @@
           'org.primer.overrides': {
             dark: '{fgColor.muted}',
             'dark-high-contrast': {
-              $value: '{base.color.neutral.8}',
+              $value: '{fgColor.muted}',
             },
             'dark-dimmed-high-contrast': {
-              $value: '{base.color.neutral.8}',
+              $value: '{fgColor.muted}',
             },
             'dark-tritanopia-high-contrast': {
-              $value: '{base.color.neutral.8}',
+              $value: '{fgColor.muted}',
             },
             'dark-protanopia-deuteranopia-high-contrast': {
-              $value: '{base.color.neutral.8}',
+              $value: '{fgColor.muted}',
             },
             'light-high-contrast': {
-              $value: '{base.color.neutral.8}',
+              $value: '{fgColor.muted}',
             },
             'light-protanopia-deuteranopia-high-contrast': {
-              $value: '{base.color.neutral.8}',
+              $value: '{fgColor.muted}',
             },
             'light-tritanopia-high-contrast': {
-              $value: '{base.color.neutral.8}',
+              $value: '{fgColor.muted}',
             },
           },
         },
@@ -248,7 +248,7 @@
             scopes: ['borderColor'],
           },
           'org.primer.overrides': {
-            dark: '{borderColor.emphasis}',
+            dark: '{borderColor.default}',
             'dark-high-contrast': {
               $value: '{borderColor.emphasis}',
             },
@@ -1217,7 +1217,7 @@
               $value: '{base.color.neutral.4}',
             },
             'dark-dimmed-high-contrast': {
-              $value: '{base.color.neutral.4}',
+              $value: '{base.color.neutral.0}',
             },
             'light-high-contrast': {
               $value: '{base.color.neutral.4}',
@@ -1411,7 +1411,7 @@
               $value: '{base.color.neutral.4}',
             },
             'dark-dimmed-high-contrast': {
-              $value: '{base.color.neutral.4}',
+              $value: '{base.color.neutral.0}',
             },
           },
         },

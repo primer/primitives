@@ -13,15 +13,15 @@
       $description: 'Default border color for most UI elements',
       $extensions: {
         'org.primer.overrides': {
-          dark: '{base.color.neutral.5}',
-          'dark-dimmed': '{base.color.neutral.5}',
-          'dark-dimmed-high-contrast': '{base.color.neutral.8}',
+          dark: '{base.color.neutral.9}',
+          'dark-dimmed': '{base.color.neutral.9}',
+          'dark-dimmed-high-contrast': '{base.color.neutral.10}',
           'light-high-contrast': '{base.color.neutral.8}',
           'light-tritanopia-high-contrast': '{base.color.neutral.8}',
           'light-protanopia-deuteranopia-high-contrast': '{base.color.neutral.8}',
-          'dark-high-contrast': '{base.color.neutral.8}',
-          'dark-tritanopia-high-contrast': '{base.color.neutral.8}',
-          'dark-protanopia-deuteranopia-high-contrast': '{base.color.neutral.8}',
+          'dark-high-contrast': '{base.color.neutral.10}',
+          'dark-tritanopia-high-contrast': '{base.color.neutral.10}',
+          'dark-protanopia-deuteranopia-high-contrast': '{base.color.neutral.10}',
         },
         'org.primer.figma': {
           collection: 'mode',
@@ -92,7 +92,7 @@
       alpha: 0.7,
     },
     emphasis: {
-      $value: '{base.color.neutral.6}',
+      $value: '{base.color.neutral.8}',
       $type: 'color',
       $description: 'Strong border for emphasis and visual weight',
       $extensions: {
