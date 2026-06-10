@@ -56,7 +56,7 @@
       },
       neutral: {
         '0': {
-          $value: '{base.color.white}',
+          $value: '{base.color.gray.0}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -65,11 +65,7 @@
           },
         },
         '1': {
-          $value: {
-            colorSpace: 'hsl',
-            components: [210, 28.6, 97.3],
-            hex: '#F6F8FA',
-          },
+          $value: '{base.color.gray.1}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -78,11 +74,7 @@
           },
         },
         '2': {
-          $value: {
-            colorSpace: 'hsl',
-            components: [210, 23.1, 94.9],
-            hex: '#EFF2F5',
-          },
+          $value: '{base.color.gray.2}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -91,11 +83,7 @@
           },
         },
         '3': {
-          $value: {
-            colorSpace: 'hsl',
-            components: [213.3, 22, 92],
-            hex: '#E6EAEF',
-          },
+          $value: '{base.color.gray.3}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -104,11 +92,7 @@
           },
         },
         '4': {
-          $value: {
-            colorSpace: 'hsl',
-            components: [212.3, 21.3, 88],
-            hex: '#DAE0E7',
-          },
+          $value: '{base.color.gray.4}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -117,11 +101,7 @@
           },
         },
         '5': {
-          $value: {
-            colorSpace: 'hsl',
-            components: [210, 19.6, 82],
-            hex: '#C8D1DA',
-          },
+          $value: '{base.color.gray.5}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -130,11 +110,7 @@
           },
         },
         '6': {
-          $value: {
-            colorSpace: 'hsl',
-            components: [213.9, 10, 55.1],
-            hex: '#818B98',
-          },
+          $value: '{base.color.gray.6}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -143,11 +119,7 @@
           },
         },
         '7': {
-          $value: {
-            colorSpace: 'hsl',
-            components: [211.4, 10.6, 39],
-            hex: '#59636E',
-          },
+          $value: '{base.color.gray.7}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -156,11 +128,7 @@
           },
         },
         '8': {
-          $value: {
-            colorSpace: 'hsl',
-            components: [212, 9.8, 30],
-            hex: '#454C54',
-          },
+          $value: '{base.color.gray.8}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -169,11 +137,7 @@
           },
         },
         '9': {
-          $value: {
-            colorSpace: 'hsl',
-            components: [212.3, 10.2, 24.9],
-            hex: '#393F46',
-          },
+          $value: '{base.color.gray.9}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -182,11 +146,7 @@
           },
         },
         '10': {
-          $value: {
-            colorSpace: 'hsl',
-            components: [213.3, 10.8, 16.3],
-            hex: '#25292E',
-          },
+          $value: '{base.color.gray.10}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -195,7 +155,34 @@
           },
         },
         '11': {
-          $value: '{base.color.black}',
+          $value: '{base.color.gray.11}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'base/color/light',
+            },
+          },
+        },
+        '12': {
+          $value: '{base.color.gray.12}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'base/color/light',
+            },
+          },
+        },
+        '13': {
+          $value: '{base.color.gray.13}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'base/color/light',
+            },
+          },
+        },
+        '14': {
+          $value: '{base.color.gray.14}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {

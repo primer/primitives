@@ -60,7 +60,7 @@
       // See: contributor-docs/adrs/adr-003-neutral-scales.md and adr-012-color-scale-contrast-map.md
       neutral: {
         '0': {
-          $value: '{base.color.black}',
+          $value: '{base.color.gray.0}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -69,11 +69,7 @@
           },
         },
         '1': {
-          $value: {
-            colorSpace: 'hsl',
-            components: [216, 27.8, 7.1],
-            hex: '#0D1117',
-          },
+          $value: '{base.color.gray.1}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -82,11 +78,7 @@
           },
         },
         '2': {
-          $value: {
-            colorSpace: 'hsl',
-            components: [214.3, 25, 11],
-            hex: '#151B23',
-          },
+          $value: '{base.color.gray.2}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -95,11 +87,7 @@
           },
         },
         '3': {
-          $value: {
-            colorSpace: 'hsl',
-            components: [212, 18.5, 15.9],
-            hex: '#212830',
-          },
+          $value: '{base.color.gray.3}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -108,11 +96,7 @@
           },
         },
         '4': {
-          $value: {
-            colorSpace: 'hsl',
-            components: [213, 17.6, 20],
-            hex: '#2A323C',
-          },
+          $value: '{base.color.gray.4}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -121,11 +105,7 @@
           },
         },
         '5': {
-          $value: {
-            colorSpace: 'hsl',
-            components: [213.8, 11.6, 27.1],
-            hex: '#3D444D',
-          },
+          $value: '{base.color.gray.5}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -134,11 +114,7 @@
           },
         },
         '6': {
-          $value: {
-            colorSpace: 'hsl',
-            components: [214, 12, 42.9],
-            hex: '#606C7B',
-          },
+          $value: '{base.color.gray.6}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -147,11 +123,7 @@
           },
         },
         '7': {
-          $value: {
-            colorSpace: 'hsl',
-            components: [213.8, 12.5, 60],
-            hex: '#8C97A6',
-          },
+          $value: '{base.color.gray.7}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -160,11 +132,7 @@
           },
         },
         '8': {
-          $value: {
-            colorSpace: 'hsl',
-            components: [213, 13.4, 75.1],
-            hex: '#B7BFC8',
-          },
+          $value: '{base.color.gray.8}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -173,11 +141,7 @@
           },
         },
         '9': {
-          $value: {
-            colorSpace: 'hsl',
-            components: [212, 19.5, 84.9],
-            hex: '#D1D8E0',
-          },
+          $value: '{base.color.gray.9}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -186,11 +150,7 @@
           },
         },
         '10': {
-          $value: {
-            colorSpace: 'hsl',
-            components: [210, 66.7, 96.5],
-            hex: '#F0F6FC',
-          },
+          $value: '{base.color.gray.10}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -199,7 +159,16 @@
           },
         },
         '11': {
-          $value: '{base.color.white}',
+          $value: '{base.color.gray.11}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'base/color/dark',
+            },
+          },
+        },
+        '12': {
+          $value: '{base.color.gray.12}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -208,7 +177,16 @@
           },
         },
         '13': {
-          $value: '{base.color.white}',
+          $value: '{base.color.gray.13}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'base/color/dark',
+            },
+          },
+        },
+        '14': {
+          $value: '{base.color.gray.14}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -221,8 +199,8 @@
         '0': {
           $value: {
             colorSpace: 'hsl',
-            components: [197.7, 100, 88],
-            hex: '#C2EDFF',
+            components: [231.4, 100, 6.9],
+            hex: '#000523',
           },
           $type: 'color',
           $extensions: {
@@ -234,8 +212,8 @@
         '1': {
           $value: {
             colorSpace: 'hsl',
-            components: [203.9, 100, 81.8],
-            hex: '#A2DAFF',
+            components: [231.6, 100, 11.2],
+            hex: '#000839',
           },
           $type: 'color',
           $extensions: {
@@ -247,8 +225,8 @@
         '2': {
           $value: {
             colorSpace: 'hsl',
-            components: [207.7, 100, 79.6],
-            hex: '#97CFFF',
+            components: [225.4, 100, 15.3],
+            hex: '#00134E',
           },
           $type: 'color',
           $extensions: {
@@ -260,8 +238,8 @@
         '3': {
           $value: {
             colorSpace: 'hsl',
-            components: [210.4, 98.5, 73.3],
-            hex: '#78BAFE',
+            components: [222.8, 90.4, 20.4],
+            hex: '#052063',
           },
           $type: 'color',
           $extensions: {
@@ -273,8 +251,8 @@
         '4': {
           $value: {
             colorSpace: 'hsl',
-            components: [211, 100, 59.4],
-            hex: '#3094FF',
+            components: [224.9, 89.4, 29.6],
+            hex: '#082A8F',
           },
           $type: 'color',
           $extensions: {
@@ -286,8 +264,8 @@
         '5': {
           $value: {
             colorSpace: 'hsl',
-            components: [212.4, 100, 50.6],
-            hex: '#0377FF',
+            components: [230, 79.4, 40],
+            hex: '#1530B7',
           },
           $type: 'color',
           $extensions: {
@@ -299,8 +277,8 @@
         '6': {
           $value: {
             colorSpace: 'hsl',
-            components: [213.6, 100, 44.5],
-            hex: '#0064E3',
+            components: [219.1, 94.9, 38.6],
+            hex: '#0546C0',
           },
           $type: 'color',
           $extensions: {
@@ -325,8 +303,8 @@
         '8': {
           $value: {
             colorSpace: 'hsl',
-            components: [219.1, 94.9, 38.6],
-            hex: '#0546C0',
+            components: [213.6, 100, 44.5],
+            hex: '#0064E3',
           },
           $type: 'color',
           $extensions: {
@@ -338,8 +316,8 @@
         '9': {
           $value: {
             colorSpace: 'hsl',
-            components: [230, 79.4, 40],
-            hex: '#1530B7',
+            components: [212.4, 100, 50.6],
+            hex: '#0377FF',
           },
           $type: 'color',
           $extensions: {
@@ -351,8 +329,8 @@
         '10': {
           $value: {
             colorSpace: 'hsl',
-            components: [224.9, 89.4, 29.6],
-            hex: '#082A8F',
+            components: [211, 100, 59.4],
+            hex: '#3094FF',
           },
           $type: 'color',
           $extensions: {
@@ -364,8 +342,8 @@
         '11': {
           $value: {
             colorSpace: 'hsl',
-            components: [222.8, 90.4, 20.4],
-            hex: '#052063',
+            components: [210.4, 98.5, 73.3],
+            hex: '#78BAFE',
           },
           $type: 'color',
           $extensions: {
@@ -377,8 +355,8 @@
         '12': {
           $value: {
             colorSpace: 'hsl',
-            components: [225.4, 100, 15.3],
-            hex: '#00134E',
+            components: [207.7, 100, 79.6],
+            hex: '#97CFFF',
           },
           $type: 'color',
           $extensions: {
@@ -390,8 +368,8 @@
         '13': {
           $value: {
             colorSpace: 'hsl',
-            components: [231.6, 100, 11.2],
-            hex: '#000839',
+            components: [203.9, 100, 81.8],
+            hex: '#A2DAFF',
           },
           $type: 'color',
           $extensions: {
@@ -403,8 +381,8 @@
         '14': {
           $value: {
             colorSpace: 'hsl',
-            components: [231.4, 100, 6.9],
-            hex: '#000523',
+            components: [197.7, 100, 88],
+            hex: '#C2EDFF',
           },
           $type: 'color',
           $extensions: {
@@ -418,8 +396,8 @@
         '0': {
           $value: {
             colorSpace: 'hsl',
-            components: [135.3, 68.1, 86.5],
-            hex: '#C5F4D1',
+            components: [152.3, 100, 2.5],
+            hex: '#000D07',
           },
           $type: 'color',
           $extensions: {
@@ -431,8 +409,8 @@
         '1': {
           $value: {
             colorSpace: 'hsl',
-            components: [135.3, 79.7, 74.9],
-            hex: '#8CF2A6',
+            components: [151.6, 100, 3.7],
+            hex: '#00130A',
           },
           $type: 'color',
           $extensions: {
@@ -444,8 +422,8 @@
         '2': {
           $value: {
             colorSpace: 'hsl',
-            components: [135.2, 79.8, 65.1],
-            hex: '#5FED83',
+            components: [156.9, 81.3, 6.3],
+            hex: '#031D13',
           },
           $type: 'color',
           $extensions: {
@@ -457,8 +435,8 @@
         '3': {
           $value: {
             colorSpace: 'hsl',
-            components: [135.7, 82.6, 52.7],
-            hex: '#23EA57',
+            components: [159.2, 56.5, 9],
+            hex: '#0A241B',
           },
           $type: 'color',
           $extensions: {
@@ -470,8 +448,8 @@
         '4': {
           $value: {
             colorSpace: 'hsl',
-            components: [136, 85.4, 40.4],
-            hex: '#0FBF3E',
+            components: [159.4, 57.4, 12],
+            hex: '#0D3024',
           },
           $type: 'color',
           $extensions: {
@@ -483,8 +461,8 @@
         '5': {
           $value: {
             colorSpace: 'hsl',
-            components: [136.5, 88.8, 28],
-            hex: '#08872B',
+            components: [154.6, 65, 15.7],
+            hex: '#0E422C',
           },
           $type: 'color',
           $extensions: {
@@ -496,8 +474,8 @@
         '6': {
           $value: {
             colorSpace: 'hsl',
-            components: [144.1, 100, 22],
-            hex: '#00702D',
+            components: [148.7, 69.7, 19.4],
+            hex: '#0F5430',
           },
           $type: 'color',
           $extensions: {
@@ -522,8 +500,8 @@
         '8': {
           $value: {
             colorSpace: 'hsl',
-            components: [148.7, 69.7, 19.4],
-            hex: '#0F5430',
+            components: [144.1, 100, 22],
+            hex: '#00702D',
           },
           $type: 'color',
           $extensions: {
@@ -535,8 +513,8 @@
         '9': {
           $value: {
             colorSpace: 'hsl',
-            components: [154.6, 65, 15.7],
-            hex: '#0E422C',
+            components: [136.5, 88.8, 28],
+            hex: '#08872B',
           },
           $type: 'color',
           $extensions: {
@@ -548,8 +526,8 @@
         '10': {
           $value: {
             colorSpace: 'hsl',
-            components: [159.4, 57.4, 12],
-            hex: '#0D3024',
+            components: [136, 85.4, 40.4],
+            hex: '#0FBF3E',
           },
           $type: 'color',
           $extensions: {
@@ -561,8 +539,8 @@
         '11': {
           $value: {
             colorSpace: 'hsl',
-            components: [159.2, 56.5, 9],
-            hex: '#0A241B',
+            components: [135.7, 82.6, 52.7],
+            hex: '#23EA57',
           },
           $type: 'color',
           $extensions: {
@@ -574,8 +552,8 @@
         '12': {
           $value: {
             colorSpace: 'hsl',
-            components: [156.9, 81.3, 6.3],
-            hex: '#031D13',
+            components: [135.2, 79.8, 65.1],
+            hex: '#5FED83',
           },
           $type: 'color',
           $extensions: {
@@ -587,8 +565,8 @@
         '13': {
           $value: {
             colorSpace: 'hsl',
-            components: [151.6, 100, 3.7],
-            hex: '#00130A',
+            components: [135.3, 79.7, 74.9],
+            hex: '#8CF2A6',
           },
           $type: 'color',
           $extensions: {
@@ -600,8 +578,8 @@
         '14': {
           $value: {
             colorSpace: 'hsl',
-            components: [152.3, 100, 2.5],
-            hex: '#000D07',
+            components: [135.3, 68.1, 86.5],
+            hex: '#C5F4D1',
           },
           $type: 'color',
           $extensions: {
@@ -615,8 +593,8 @@
         '0': {
           $value: {
             colorSpace: 'hsl',
-            components: [45.5, 84.5, 79.8],
-            hex: '#F7E2A0',
+            components: [18.9, 100, 3.7],
+            hex: '#130600',
           },
           $type: 'color',
           $extensions: {
@@ -628,8 +606,8 @@
         '1': {
           $value: {
             colorSpace: 'hsl',
-            components: [43.9, 86.9, 73.1],
-            hex: '#F6D67F',
+            components: [18, 100, 5.9],
+            hex: '#1E0900',
           },
           $type: 'color',
           $extensions: {
@@ -641,8 +619,8 @@
         '2': {
           $value: {
             colorSpace: 'hsl',
-            components: [44.7, 90.3, 67.6],
-            hex: '#F7D162',
+            components: [22.9, 100, 8.2],
+            hex: '#2A1000',
           },
           $type: 'color',
           $extensions: {
@@ -654,8 +632,8 @@
         '3': {
           $value: {
             colorSpace: 'hsl',
-            components: [43.7, 95.6, 55.5],
-            hex: '#FABF21',
+            components: [26.2, 100, 13.9],
+            hex: '#471F00',
           },
           $type: 'color',
           $extensions: {
@@ -667,8 +645,8 @@
         '4': {
           $value: {
             colorSpace: 'hsl',
-            components: [43, 100, 42.9],
-            hex: '#DB9D00',
+            components: [28.4, 100, 17.8],
+            hex: '#5B2B00',
           },
           $type: 'color',
           $extensions: {
@@ -680,8 +658,8 @@
         '5': {
           $value: {
             colorSpace: 'hsl',
-            components: [39.3, 100, 36.9],
-            hex: '#BC7B00',
+            components: [30.5, 100, 22.4],
+            hex: '#723A00',
           },
           $type: 'color',
           $extensions: {
@@ -693,8 +671,8 @@
         '6': {
           $value: {
             colorSpace: 'hsl',
-            components: [36.4, 100, 31.4],
-            hex: '#A06100',
+            components: [33, 100, 25.7],
+            hex: '#834800',
           },
           $type: 'color',
           $extensions: {
@@ -719,8 +697,8 @@
         '8': {
           $value: {
             colorSpace: 'hsl',
-            components: [33, 100, 25.7],
-            hex: '#834800',
+            components: [36.4, 100, 31.4],
+            hex: '#A06100',
           },
           $type: 'color',
           $extensions: {
@@ -732,8 +710,8 @@
         '9': {
           $value: {
             colorSpace: 'hsl',
-            components: [30.5, 100, 22.4],
-            hex: '#723A00',
+            components: [39.3, 100, 36.9],
+            hex: '#BC7B00',
           },
           $type: 'color',
           $extensions: {
@@ -745,8 +723,8 @@
         '10': {
           $value: {
             colorSpace: 'hsl',
-            components: [28.4, 100, 17.8],
-            hex: '#5B2B00',
+            components: [43, 100, 42.9],
+            hex: '#DB9D00',
           },
           $type: 'color',
           $extensions: {
@@ -758,8 +736,8 @@
         '11': {
           $value: {
             colorSpace: 'hsl',
-            components: [26.2, 100, 13.9],
-            hex: '#471F00',
+            components: [43.7, 95.6, 55.5],
+            hex: '#FABF21',
           },
           $type: 'color',
           $extensions: {
@@ -771,8 +749,8 @@
         '12': {
           $value: {
             colorSpace: 'hsl',
-            components: [22.9, 100, 8.2],
-            hex: '#2A1000',
+            components: [44.7, 90.3, 67.6],
+            hex: '#F7D162',
           },
           $type: 'color',
           $extensions: {
@@ -784,8 +762,8 @@
         '13': {
           $value: {
             colorSpace: 'hsl',
-            components: [18, 100, 5.9],
-            hex: '#1E0900',
+            components: [43.9, 86.9, 73.1],
+            hex: '#F6D67F',
           },
           $type: 'color',
           $extensions: {
@@ -797,8 +775,8 @@
         '14': {
           $value: {
             colorSpace: 'hsl',
-            components: [18.9, 100, 3.7],
-            hex: '#130600',
+            components: [45.5, 84.5, 79.8],
+            hex: '#F7E2A0',
           },
           $type: 'color',
           $extensions: {
@@ -812,8 +790,8 @@
         '0': {
           $value: {
             colorSpace: 'hsl',
-            components: [26, 86.9, 88],
-            hex: '#FBDDC6',
+            components: [15.8, 100, 3.7],
+            hex: '#130500',
           },
           $type: 'color',
           $extensions: {
@@ -825,8 +803,8 @@
         '1': {
           $value: {
             colorSpace: 'hsl',
-            components: [24.2, 84.8, 84.5],
-            hex: '#F9D1B6',
+            components: [15.5, 100, 6.1],
+            hex: '#1F0800',
           },
           $type: 'color',
           $extensions: {
@@ -838,8 +816,8 @@
         '2': {
           $value: {
             colorSpace: 'hsl',
-            components: [26.1, 92.4, 74.1],
-            hex: '#FAB580',
+            components: [22.7, 95.7, 9.2],
+            hex: '#2E1201',
           },
           $type: 'color',
           $extensions: {
@@ -851,8 +829,8 @@
         '3': {
           $value: {
             colorSpace: 'hsl',
-            components: [26.4, 85.8, 58.4],
-            hex: '#F08A3A',
+            components: [23.6, 100, 12],
+            hex: '#3D1800',
           },
           $type: 'color',
           $extensions: {
@@ -864,8 +842,8 @@
         '4': {
           $value: {
             colorSpace: 'hsl',
-            components: [26.7, 87.2, 49],
-            hex: '#EA7110',
+            components: [24.8, 100, 17.1],
+            hex: '#572400',
           },
           $type: 'color',
           $extensions: {
@@ -877,8 +855,8 @@
         '5': {
           $value: {
             colorSpace: 'hsl',
-            components: [27.2, 99.1, 42],
-            hex: '#D56101',
+            components: [26.5, 100, 22.2],
+            hex: '#713200',
           },
           $type: 'color',
           $extensions: {
@@ -890,8 +868,8 @@
         '6': {
           $value: {
             colorSpace: 'hsl',
-            components: [27, 98.9, 35.3],
-            hex: '#B35101',
+            components: [26.7, 100, 28.6],
+            hex: '#924100',
           },
           $type: 'color',
           $extensions: {
@@ -916,8 +894,8 @@
         '8': {
           $value: {
             colorSpace: 'hsl',
-            components: [26.7, 100, 28.6],
-            hex: '#924100',
+            components: [27, 98.9, 35.3],
+            hex: '#B35101',
           },
           $type: 'color',
           $extensions: {
@@ -929,8 +907,8 @@
         '9': {
           $value: {
             colorSpace: 'hsl',
-            components: [26.5, 100, 22.2],
-            hex: '#713200',
+            components: [27.2, 99.1, 42],
+            hex: '#D56101',
           },
           $type: 'color',
           $extensions: {
@@ -942,8 +920,8 @@
         '10': {
           $value: {
             colorSpace: 'hsl',
-            components: [24.8, 100, 17.1],
-            hex: '#572400',
+            components: [26.7, 87.2, 49],
+            hex: '#EA7110',
           },
           $type: 'color',
           $extensions: {
@@ -955,8 +933,8 @@
         '11': {
           $value: {
             colorSpace: 'hsl',
-            components: [23.6, 100, 12],
-            hex: '#3D1800',
+            components: [26.4, 85.8, 58.4],
+            hex: '#F08A3A',
           },
           $type: 'color',
           $extensions: {
@@ -968,8 +946,8 @@
         '12': {
           $value: {
             colorSpace: 'hsl',
-            components: [22.7, 95.7, 9.2],
-            hex: '#2E1201',
+            components: [26.1, 92.4, 74.1],
+            hex: '#FAB580',
           },
           $type: 'color',
           $extensions: {
@@ -981,8 +959,8 @@
         '13': {
           $value: {
             colorSpace: 'hsl',
-            components: [15.5, 100, 6.1],
-            hex: '#1F0800',
+            components: [24.2, 84.8, 84.5],
+            hex: '#F9D1B6',
           },
           $type: 'color',
           $extensions: {
@@ -994,8 +972,8 @@
         '14': {
           $value: {
             colorSpace: 'hsl',
-            components: [15.8, 100, 3.7],
-            hex: '#130500',
+            components: [26, 86.9, 88],
+            hex: '#FBDDC6',
           },
           $type: 'color',
           $extensions: {
@@ -1009,8 +987,8 @@
         '0': {
           $value: {
             colorSpace: 'hsl',
-            components: [4.4, 100, 92],
-            hex: '#FFD9D6',
+            components: [351.8, 84.6, 5.1],
+            hex: '#180205',
           },
           $type: 'color',
           $extensions: {
@@ -1022,8 +1000,8 @@
         '1': {
           $value: {
             colorSpace: 'hsl',
-            components: [3.4, 100, 89.6],
-            hex: '#FFCDCA',
+            components: [351.4, 85.4, 8],
+            hex: '#260308',
           },
           $type: 'color',
           $extensions: {
@@ -1035,8 +1013,8 @@
         '2': {
           $value: {
             colorSpace: 'hsl',
-            components: [3, 97.6, 83.9],
-            hex: '#FEB2AE',
+            components: [344.7, 100, 10],
+            hex: '#33000D',
           },
           $type: 'color',
           $extensions: {
@@ -1048,8 +1026,8 @@
         '3': {
           $value: {
             colorSpace: 'hsl',
-            components: [1.5, 96.7, 75.9],
-            hex: '#FD8986',
+            components: [346.3, 95.8, 18.8],
+            hex: '#5E0217',
           },
           $type: 'color',
           $extensions: {
@@ -1061,8 +1039,8 @@
         '4': {
           $value: {
             colorSpace: 'hsl',
-            components: [359.6, 96.4, 67.5],
-            hex: '#FC5C5D',
+            components: [348.8, 100, 23.1],
+            hex: '#760016',
           },
           $type: 'color',
           $extensions: {
@@ -1074,8 +1052,8 @@
         '5': {
           $value: {
             colorSpace: 'hsl',
-            components: [358.5, 95.1, 60],
-            hex: '#FA383D',
+            components: [347.8, 94.8, 30.4],
+            hex: '#970422',
           },
           $type: 'color',
           $extensions: {
@@ -1087,8 +1065,8 @@
         '6': {
           $value: {
             colorSpace: 'hsl',
-            components: [350.4, 84.3, 44.9],
-            hex: '#D31231',
+            components: [349, 88.1, 36.3],
+            hex: '#AE0B29',
           },
           $type: 'color',
           $extensions: {
@@ -1113,8 +1091,8 @@
         '8': {
           $value: {
             colorSpace: 'hsl',
-            components: [349, 88.1, 36.3],
-            hex: '#AE0B29',
+            components: [350.4, 84.3, 44.9],
+            hex: '#D31231',
           },
           $type: 'color',
           $extensions: {
@@ -1126,8 +1104,8 @@
         '9': {
           $value: {
             colorSpace: 'hsl',
-            components: [347.8, 94.8, 30.4],
-            hex: '#970422',
+            components: [358.5, 95.1, 60],
+            hex: '#FA383D',
           },
           $type: 'color',
           $extensions: {
@@ -1139,8 +1117,8 @@
         '10': {
           $value: {
             colorSpace: 'hsl',
-            components: [348.8, 100, 23.1],
-            hex: '#760016',
+            components: [359.6, 96.4, 67.5],
+            hex: '#FC5C5D',
           },
           $type: 'color',
           $extensions: {
@@ -1152,8 +1130,8 @@
         '11': {
           $value: {
             colorSpace: 'hsl',
-            components: [346.3, 95.8, 18.8],
-            hex: '#5E0217',
+            components: [1.5, 96.7, 75.9],
+            hex: '#FD8986',
           },
           $type: 'color',
           $extensions: {
@@ -1165,8 +1143,8 @@
         '12': {
           $value: {
             colorSpace: 'hsl',
-            components: [344.7, 100, 10],
-            hex: '#33000D',
+            components: [3, 97.6, 83.9],
+            hex: '#FEB2AE',
           },
           $type: 'color',
           $extensions: {
@@ -1178,8 +1156,8 @@
         '13': {
           $value: {
             colorSpace: 'hsl',
-            components: [351.4, 85.4, 8],
-            hex: '#260308',
+            components: [3.4, 100, 89.6],
+            hex: '#FFCDCA',
           },
           $type: 'color',
           $extensions: {
@@ -1191,8 +1169,8 @@
         '14': {
           $value: {
             colorSpace: 'hsl',
-            components: [351.8, 84.6, 5.1],
-            hex: '#180205',
+            components: [4.4, 100, 92],
+            hex: '#FFD9D6',
           },
           $type: 'color',
           $extensions: {
@@ -1206,8 +1184,8 @@
         '0': {
           $value: {
             colorSpace: 'hsl',
-            components: [265, 100, 92.9],
-            hex: '#EADBFF',
+            components: [257.1, 91.3, 9],
+            hex: '#0E022C',
           },
           $type: 'color',
           $extensions: {
@@ -1219,8 +1197,8 @@
         '1': {
           $value: {
             colorSpace: 'hsl',
-            components: [265.3, 95.7, 90.8],
-            hex: '#E4D1FE',
+            components: [258.3, 100, 14.1],
+            hex: '#160048',
           },
           $type: 'color',
           $extensions: {
@@ -1232,8 +1210,8 @@
         '2': {
           $value: {
             colorSpace: 'hsl',
-            components: [265.2, 91.2, 86.7],
-            hex: '#D8BEFC',
+            components: [257.4, 79.3, 17.1],
+            hex: '#1D094E',
           },
           $type: 'color',
           $extensions: {
@@ -1245,8 +1223,8 @@
         '3': {
           $value: {
             colorSpace: 'hsl',
-            components: [265.6, 97.4, 84.9],
-            hex: '#D3B3FE',
+            components: [256.2, 69.6, 22],
+            hex: '#26115F',
           },
           $type: 'color',
           $extensions: {
@@ -1258,8 +1236,8 @@
         '4': {
           $value: {
             colorSpace: 'hsl',
-            components: [268.1, 95, 76.7],
-            hex: '#C08BFC',
+            components: [259.6, 74.6, 35.5],
+            hex: '#43179E',
           },
           $type: 'color',
           $extensions: {
@@ -1271,8 +1249,8 @@
         '5': {
           $value: {
             colorSpace: 'hsl',
-            components: [266.4, 92.5, 68.6],
-            hex: '#A665F9',
+            components: [261.2, 76.6, 43.5],
+            hex: '#561AC4',
           },
           $type: 'color',
           $extensions: {
@@ -1284,8 +1262,8 @@
         '6': {
           $value: {
             colorSpace: 'hsl',
-            components: [264.9, 90, 60.6],
-            hex: '#8B40F5',
+            components: [263.1, 80, 49],
+            hex: '#6619E1',
           },
           $type: 'color',
           $extensions: {
@@ -1310,8 +1288,8 @@
         '8': {
           $value: {
             colorSpace: 'hsl',
-            components: [263.1, 80, 49],
-            hex: '#6619E1',
+            components: [264.9, 90, 60.6],
+            hex: '#8B40F5',
           },
           $type: 'color',
           $extensions: {
@@ -1323,8 +1301,8 @@
         '9': {
           $value: {
             colorSpace: 'hsl',
-            components: [261.2, 76.6, 43.5],
-            hex: '#561AC4',
+            components: [266.4, 92.5, 68.6],
+            hex: '#A665F9',
           },
           $type: 'color',
           $extensions: {
@@ -1336,8 +1314,8 @@
         '10': {
           $value: {
             colorSpace: 'hsl',
-            components: [259.6, 74.6, 35.5],
-            hex: '#43179E',
+            components: [268.1, 95, 76.7],
+            hex: '#C08BFC',
           },
           $type: 'color',
           $extensions: {
@@ -1349,8 +1327,8 @@
         '11': {
           $value: {
             colorSpace: 'hsl',
-            components: [256.2, 69.6, 22],
-            hex: '#26115F',
+            components: [265.6, 97.4, 84.9],
+            hex: '#D3B3FE',
           },
           $type: 'color',
           $extensions: {
@@ -1362,8 +1340,8 @@
         '12': {
           $value: {
             colorSpace: 'hsl',
-            components: [257.4, 79.3, 17.1],
-            hex: '#1D094E',
+            components: [265.2, 91.2, 86.7],
+            hex: '#D8BEFC',
           },
           $type: 'color',
           $extensions: {
@@ -1375,8 +1353,8 @@
         '13': {
           $value: {
             colorSpace: 'hsl',
-            components: [258.3, 100, 14.1],
-            hex: '#160048',
+            components: [265.3, 95.7, 90.8],
+            hex: '#E4D1FE',
           },
           $type: 'color',
           $extensions: {
@@ -1388,8 +1366,8 @@
         '14': {
           $value: {
             colorSpace: 'hsl',
-            components: [257.1, 91.3, 9],
-            hex: '#0E022C',
+            components: [265, 100, 92.9],
+            hex: '#EADBFF',
           },
           $type: 'color',
           $extensions: {
@@ -1403,8 +1381,8 @@
         '0': {
           $value: {
             colorSpace: 'hsl',
-            components: [313.3, 100, 92.9],
-            hex: '#FFDBF7',
+            components: [325.3, 82.6, 4.5],
+            hex: '#15020D',
           },
           $type: 'color',
           $extensions: {
@@ -1416,8 +1394,8 @@
         '1': {
           $value: {
             colorSpace: 'hsl',
-            components: [314.7, 86, 88.8],
-            hex: '#FBCAEF',
+            components: [326, 78.9, 7.5],
+            hex: '#220415',
           },
           $type: 'color',
           $extensions: {
@@ -1429,8 +1407,8 @@
         '2': {
           $value: {
             colorSpace: 'hsl',
-            components: [315.6, 93.1, 82.9],
-            hex: '#FCABE7',
+            components: [325.5, 71.4, 11],
+            hex: '#30081F',
           },
           $type: 'color',
           $extensions: {
@@ -1442,8 +1420,8 @@
         '3': {
           $value: {
             colorSpace: 'hsl',
-            components: [318, 87, 72.9],
-            hex: '#F67ED2',
+            components: [322.1, 70.8, 18.8],
+            hex: '#520E39',
           },
           $type: 'color',
           $extensions: {
@@ -1455,8 +1433,8 @@
         '4': {
           $value: {
             colorSpace: 'hsl',
-            components: [320.1, 80.9, 63.1],
-            hex: '#ED55BA',
+            components: [322.7, 69.3, 26.9],
+            hex: '#741550',
           },
           $type: 'color',
           $extensions: {
@@ -1468,8 +1446,8 @@
         '5': {
           $value: {
             colorSpace: 'hsl',
-            components: [322.2, 75.7, 53.1],
-            hex: '#E22D9F',
+            components: [323.9, 66.7, 31.8],
+            hex: '#871B5C',
           },
           $type: 'color',
           $extensions: {
@@ -1481,8 +1459,8 @@
         '6': {
           $value: {
             colorSpace: 'hsl',
-            components: [324.1, 71.9, 46.1],
-            hex: '#CA2186',
+            components: [323.6, 68.5, 34.9],
+            hex: '#961C66',
           },
           $type: 'color',
           $extensions: {
@@ -1507,8 +1485,8 @@
         '8': {
           $value: {
             colorSpace: 'hsl',
-            components: [323.6, 68.5, 34.9],
-            hex: '#961C66',
+            components: [324.1, 71.9, 46.1],
+            hex: '#CA2186',
           },
           $type: 'color',
           $extensions: {
@@ -1520,8 +1498,8 @@
         '9': {
           $value: {
             colorSpace: 'hsl',
-            components: [323.9, 66.7, 31.8],
-            hex: '#871B5C',
+            components: [322.2, 75.7, 53.1],
+            hex: '#E22D9F',
           },
           $type: 'color',
           $extensions: {
@@ -1533,8 +1511,8 @@
         '10': {
           $value: {
             colorSpace: 'hsl',
-            components: [322.7, 69.3, 26.9],
-            hex: '#741550',
+            components: [320.1, 80.9, 63.1],
+            hex: '#ED55BA',
           },
           $type: 'color',
           $extensions: {
@@ -1546,8 +1524,8 @@
         '11': {
           $value: {
             colorSpace: 'hsl',
-            components: [322.1, 70.8, 18.8],
-            hex: '#520E39',
+            components: [318, 87, 72.9],
+            hex: '#F67ED2',
           },
           $type: 'color',
           $extensions: {
@@ -1559,8 +1537,8 @@
         '12': {
           $value: {
             colorSpace: 'hsl',
-            components: [325.5, 71.4, 11],
-            hex: '#30081F',
+            components: [315.6, 93.1, 82.9],
+            hex: '#FCABE7',
           },
           $type: 'color',
           $extensions: {
@@ -1572,8 +1550,8 @@
         '13': {
           $value: {
             colorSpace: 'hsl',
-            components: [326, 78.9, 7.5],
-            hex: '#220415',
+            components: [314.7, 86, 88.8],
+            hex: '#FBCAEF',
           },
           $type: 'color',
           $extensions: {
@@ -1585,8 +1563,8 @@
         '14': {
           $value: {
             colorSpace: 'hsl',
-            components: [325.3, 82.6, 4.5],
-            hex: '#15020D',
+            components: [313.3, 100, 92.9],
+            hex: '#FFDBF7',
           },
           $type: 'color',
           $extensions: {
@@ -1600,8 +1578,8 @@
         '0': {
           $value: {
             colorSpace: 'hsl',
-            components: [17.1, 100, 90.4],
-            hex: '#FFDCCE',
+            components: [0, 100, 4.9],
+            hex: '#190000',
           },
           $type: 'color',
           $extensions: {
@@ -1613,8 +1591,8 @@
         '1': {
           $value: {
             colorSpace: 'hsl',
-            components: [14.8, 100, 87.3],
-            hex: '#FFCEBE',
+            components: [0, 100, 8],
+            hex: '#290000',
           },
           $type: 'color',
           $extensions: {
@@ -1626,8 +1604,8 @@
         '2': {
           $value: {
             colorSpace: 'hsl',
-            components: [14.3, 95.8, 81.2],
-            hex: '#FDB7A1',
+            components: [0, 100, 11.8],
+            hex: '#3C0000',
           },
           $type: 'color',
           $extensions: {
@@ -1639,8 +1617,8 @@
         '3': {
           $value: {
             colorSpace: 'hsl',
-            components: [13.2, 93.2, 71.4],
-            hex: '#FA9072',
+            components: [7.5, 100, 15.7],
+            hex: '#500A00',
           },
           $type: 'color',
           $extensions: {
@@ -1652,8 +1630,8 @@
         '4': {
           $value: {
             colorSpace: 'hsl',
-            components: [12.2, 90.8, 61.8],
-            hex: '#F66945',
+            components: [9.7, 98.2, 22.2],
+            hex: '#701301',
           },
           $type: 'color',
           $extensions: {
@@ -1665,8 +1643,8 @@
         '5': {
           $value: {
             colorSpace: 'hsl',
-            components: [11.8, 87, 51.8],
-            hex: '#EF4319',
+            components: [8.7, 85.6, 30],
+            hex: '#8E1E0B',
           },
           $type: 'color',
           $extensions: {
@@ -1678,8 +1656,8 @@
         '6': {
           $value: {
             colorSpace: 'hsl',
-            components: [11, 84.1, 42],
-            hex: '#C53211',
+            components: [9.5, 82, 34.9],
+            hex: '#A22710',
           },
           $type: 'color',
           $extensions: {
@@ -1704,8 +1682,8 @@
         '8': {
           $value: {
             colorSpace: 'hsl',
-            components: [9.5, 82, 34.9],
-            hex: '#A22710',
+            components: [11, 84.1, 42],
+            hex: '#C53211',
           },
           $type: 'color',
           $extensions: {
@@ -1717,8 +1695,8 @@
         '9': {
           $value: {
             colorSpace: 'hsl',
-            components: [8.7, 85.6, 30],
-            hex: '#8E1E0B',
+            components: [11.8, 87, 51.8],
+            hex: '#EF4319',
           },
           $type: 'color',
           $extensions: {
@@ -1730,8 +1708,8 @@
         '10': {
           $value: {
             colorSpace: 'hsl',
-            components: [9.7, 98.2, 22.2],
-            hex: '#701301',
+            components: [12.2, 90.8, 61.8],
+            hex: '#F66945',
           },
           $type: 'color',
           $extensions: {
@@ -1743,8 +1721,8 @@
         '11': {
           $value: {
             colorSpace: 'hsl',
-            components: [7.5, 100, 15.7],
-            hex: '#500A00',
+            components: [13.2, 93.2, 71.4],
+            hex: '#FA9072',
           },
           $type: 'color',
           $extensions: {
@@ -1756,8 +1734,8 @@
         '12': {
           $value: {
             colorSpace: 'hsl',
-            components: [0, 100, 11.8],
-            hex: '#3C0000',
+            components: [14.3, 95.8, 81.2],
+            hex: '#FDB7A1',
           },
           $type: 'color',
           $extensions: {
@@ -1769,8 +1747,8 @@
         '13': {
           $value: {
             colorSpace: 'hsl',
-            components: [0, 100, 8],
-            hex: '#290000',
+            components: [14.8, 100, 87.3],
+            hex: '#FFCEBE',
           },
           $type: 'color',
           $extensions: {
@@ -1782,8 +1760,8 @@
         '14': {
           $value: {
             colorSpace: 'hsl',
-            components: [0, 100, 4.9],
-            hex: '#190000',
+            components: [17.1, 100, 90.4],
+            hex: '#FFDCCE',
           },
           $type: 'color',
           $extensions: {
@@ -1797,8 +1775,8 @@
         '0': {
           $value: {
             colorSpace: 'hsl',
-            components: [137.1, 18.9, 92.7],
-            hex: '#E9F0EB',
+            components: [140, 20, 2.9],
+            hex: '#060907',
           },
           $type: 'color',
           $extensions: {
@@ -1810,8 +1788,8 @@
         '1': {
           $value: {
             colorSpace: 'hsl',
-            components: [132, 13.9, 85.9],
-            hex: '#D6E0D8',
+            components: [140, 16.7, 7.1],
+            hex: '#0F1511',
           },
           $type: 'color',
           $extensions: {
@@ -1823,8 +1801,8 @@
         '2': {
           $value: {
             colorSpace: 'hsl',
-            components: [130.9, 11.8, 81.8],
-            hex: '#CBD6CD',
+            components: [140, 10.7, 11],
+            hex: '#191F1B',
           },
           $type: 'color',
           $extensions: {
@@ -1836,8 +1814,8 @@
         '3': {
           $value: {
             colorSpace: 'hsl',
-            components: [140, 9.2, 74.5],
-            hex: '#B8C4BC',
+            components: [140, 7.5, 15.7],
+            hex: '#252B27',
           },
           $type: 'color',
           $extensions: {
@@ -1849,8 +1827,8 @@
         '4': {
           $value: {
             colorSpace: 'hsl',
-            components: [135, 6.5, 63.5],
-            hex: '#9CA89F',
+            components: [137.1, 6.2, 22.2],
+            hex: '#353C37',
           },
           $type: 'color',
           $extensions: {
@@ -1862,8 +1840,8 @@
         '5': {
           $value: {
             colorSpace: 'hsl',
-            components: [135, 5.3, 44.7],
-            hex: '#6C786F',
+            components: [140, 7.1, 24.9],
+            hex: '#3B443E',
           },
           $type: 'color',
           $extensions: {
@@ -1875,8 +1853,8 @@
         '6': {
           $value: {
             colorSpace: 'hsl',
-            components: [136.4, 5.9, 36.7],
-            hex: '#58635B',
+            components: [133.3, 6.3, 28],
+            hex: '#434C45',
           },
           $type: 'color',
           $extensions: {
@@ -1901,8 +1879,8 @@
         '8': {
           $value: {
             colorSpace: 'hsl',
-            components: [133.3, 6.3, 28],
-            hex: '#434C45',
+            components: [136.4, 5.9, 36.7],
+            hex: '#58635B',
           },
           $type: 'color',
           $extensions: {
@@ -1914,8 +1892,8 @@
         '9': {
           $value: {
             colorSpace: 'hsl',
-            components: [140, 7.1, 24.9],
-            hex: '#3B443E',
+            components: [135, 5.3, 44.7],
+            hex: '#6C786F',
           },
           $type: 'color',
           $extensions: {
@@ -1927,8 +1905,8 @@
         '10': {
           $value: {
             colorSpace: 'hsl',
-            components: [137.1, 6.2, 22.2],
-            hex: '#353C37',
+            components: [135, 6.5, 63.5],
+            hex: '#9CA89F',
           },
           $type: 'color',
           $extensions: {
@@ -1940,8 +1918,8 @@
         '11': {
           $value: {
             colorSpace: 'hsl',
-            components: [140, 7.5, 15.7],
-            hex: '#252B27',
+            components: [140, 9.2, 74.5],
+            hex: '#B8C4BC',
           },
           $type: 'color',
           $extensions: {
@@ -1953,8 +1931,8 @@
         '12': {
           $value: {
             colorSpace: 'hsl',
-            components: [140, 10.7, 11],
-            hex: '#191F1B',
+            components: [130.9, 11.8, 81.8],
+            hex: '#CBD6CD',
           },
           $type: 'color',
           $extensions: {
@@ -1966,8 +1944,8 @@
         '13': {
           $value: {
             colorSpace: 'hsl',
-            components: [140, 16.7, 7.1],
-            hex: '#0F1511',
+            components: [132, 13.9, 85.9],
+            hex: '#D6E0D8',
           },
           $type: 'color',
           $extensions: {
@@ -1979,8 +1957,8 @@
         '14': {
           $value: {
             colorSpace: 'hsl',
-            components: [140, 20, 2.9],
-            hex: '#060907',
+            components: [137.1, 18.9, 92.7],
+            hex: '#E9F0EB',
           },
           $type: 'color',
           $extensions: {
@@ -2310,8 +2288,8 @@
         '0': {
           $value: {
             colorSpace: 'hsl',
-            components: [53.2, 91.7, 81.2],
-            hex: '#FBF1A3',
+            components: [34.3, 100, 2.7],
+            hex: '#0E0800',
           },
           $type: 'color',
           $extensions: {
@@ -2323,8 +2301,8 @@
         '1': {
           $value: {
             colorSpace: 'hsl',
-            components: [52.4, 92.3, 69.6],
-            hex: '#F9E76A',
+            components: [33.9, 100, 4.5],
+            hex: '#170D00',
           },
           $type: 'color',
           $extensions: {
@@ -2336,8 +2314,8 @@
         '2': {
           $value: {
             colorSpace: 'hsl',
-            components: [51.7, 89.5, 58.8],
-            hex: '#F4DA38',
+            components: [41.7, 100, 7.1],
+            hex: '#241900',
           },
           $type: 'color',
           $extensions: {
@@ -2349,8 +2327,8 @@
         '3': {
           $value: {
             colorSpace: 'hsl',
-            components: [50.9, 86.1, 48],
-            hex: '#E4C411',
+            components: [44.4, 100, 9.8],
+            hex: '#322500',
           },
           $type: 'color',
           $extensions: {
@@ -2362,8 +2340,8 @@
         '4': {
           $value: {
             colorSpace: 'hsl',
-            components: [49.5, 89.5, 41.2],
-            hex: '#C7A60B',
+            components: [44.3, 97, 13.1],
+            hex: '#423101',
           },
           $type: 'color',
           $extensions: {
@@ -2375,8 +2353,8 @@
         '5': {
           $value: {
             colorSpace: 'hsl',
-            components: [48, 93, 33.7],
-            hex: '#A68606',
+            components: [45.8, 93.7, 18.6],
+            hex: '#5C4703',
           },
           $type: 'color',
           $extensions: {
@@ -2388,8 +2366,8 @@
         '6': {
           $value: {
             colorSpace: 'hsl',
-            components: [46.7, 94.2, 27.3],
-            hex: '#876A04',
+            components: [45.5, 96.1, 20.2],
+            hex: '#654D02',
           },
           $type: 'color',
           $extensions: {
@@ -2414,8 +2392,8 @@
         '8': {
           $value: {
             colorSpace: 'hsl',
-            components: [45.5, 96.1, 20.2],
-            hex: '#654D02',
+            components: [46.7, 94.2, 27.3],
+            hex: '#876A04',
           },
           $type: 'color',
           $extensions: {
@@ -2427,8 +2405,8 @@
         '9': {
           $value: {
             colorSpace: 'hsl',
-            components: [45.8, 93.7, 18.6],
-            hex: '#5C4703',
+            components: [48, 93, 33.7],
+            hex: '#A68606',
           },
           $type: 'color',
           $extensions: {
@@ -2440,8 +2418,8 @@
         '10': {
           $value: {
             colorSpace: 'hsl',
-            components: [44.3, 97, 13.1],
-            hex: '#423101',
+            components: [49.5, 89.5, 41.2],
+            hex: '#C7A60B',
           },
           $type: 'color',
           $extensions: {
@@ -2453,8 +2431,8 @@
         '11': {
           $value: {
             colorSpace: 'hsl',
-            components: [44.4, 100, 9.8],
-            hex: '#322500',
+            components: [50.9, 86.1, 48],
+            hex: '#E4C411',
           },
           $type: 'color',
           $extensions: {
@@ -2466,8 +2444,8 @@
         '12': {
           $value: {
             colorSpace: 'hsl',
-            components: [41.7, 100, 7.1],
-            hex: '#241900',
+            components: [51.7, 89.5, 58.8],
+            hex: '#F4DA38',
           },
           $type: 'color',
           $extensions: {
@@ -2479,8 +2457,8 @@
         '13': {
           $value: {
             colorSpace: 'hsl',
-            components: [33.9, 100, 4.5],
-            hex: '#170D00',
+            components: [52.4, 92.3, 69.6],
+            hex: '#F9E76A',
           },
           $type: 'color',
           $extensions: {
@@ -2492,8 +2470,8 @@
         '14': {
           $value: {
             colorSpace: 'hsl',
-            components: [34.3, 100, 2.7],
-            hex: '#0E0800',
+            components: [53.2, 91.7, 81.2],
+            hex: '#FBF1A3',
           },
           $type: 'color',
           $extensions: {
@@ -2665,8 +2643,8 @@
         '0': {
           $value: {
             colorSpace: 'hsl',
-            components: [80.4, 62.4, 83.3],
-            hex: '#DDEFBA',
+            components: [120, 85.7, 2.7],
+            hex: '#010D01',
           },
           $type: 'color',
           $extensions: {
@@ -2678,8 +2656,8 @@
         '1': {
           $value: {
             colorSpace: 'hsl',
-            components: [76.6, 81, 71.2],
-            hex: '#D0F17A',
+            components: [116.7, 90, 3.9],
+            hex: '#021301',
           },
           $type: 'color',
           $extensions: {
@@ -2691,8 +2669,8 @@
         '2': {
           $value: {
             colorSpace: 'hsl',
-            components: [72, 85.4, 59.8],
-            hex: '#CDF041',
+            components: [110, 70.6, 6.7],
+            hex: '#091D05',
           },
           $type: 'color',
           $extensions: {
@@ -2704,8 +2682,8 @@
         '3': {
           $value: {
             colorSpace: 'hsl',
-            components: [74.4, 80, 49],
-            hex: '#B1E119',
+            components: [101.4, 67.4, 8.4],
+            hex: '#102407',
           },
           $type: 'color',
           $extensions: {
@@ -2717,8 +2695,8 @@
         '4': {
           $value: {
             colorSpace: 'hsl',
-            components: [77, 84.9, 39],
-            hex: '#88B80F',
+            components: [98.8, 68, 9.8],
+            hex: '#142A08',
           },
           $type: 'color',
           $extensions: {
@@ -2730,8 +2708,8 @@
         '5': {
           $value: {
             colorSpace: 'hsl',
-            components: [80.7, 79.2, 30.2],
-            hex: '#608A10',
+            components: [87.9, 66.2, 12.7],
+            hex: '#22360B',
           },
           $type: 'color',
           $extensions: {
@@ -2743,8 +2721,8 @@
         '6': {
           $value: {
             colorSpace: 'hsl',
-            components: [80.9, 100, 20.8],
-            hex: '#456A00',
+            components: [87.1, 62, 19.6],
+            hex: '#355113',
           },
           $type: 'color',
           $extensions: {
@@ -2769,8 +2747,8 @@
         '8': {
           $value: {
             colorSpace: 'hsl',
-            components: [87.1, 62, 19.6],
-            hex: '#355113',
+            components: [80.9, 100, 20.8],
+            hex: '#456A00',
           },
           $type: 'color',
           $extensions: {
@@ -2782,8 +2760,8 @@
         '9': {
           $value: {
             colorSpace: 'hsl',
-            components: [87.9, 66.2, 12.7],
-            hex: '#22360B',
+            components: [80.7, 79.2, 30.2],
+            hex: '#608A10',
           },
           $type: 'color',
           $extensions: {
@@ -2795,8 +2773,8 @@
         '10': {
           $value: {
             colorSpace: 'hsl',
-            components: [98.8, 68, 9.8],
-            hex: '#142A08',
+            components: [77, 84.9, 39],
+            hex: '#88B80F',
           },
           $type: 'color',
           $extensions: {
@@ -2808,8 +2786,8 @@
         '11': {
           $value: {
             colorSpace: 'hsl',
-            components: [101.4, 67.4, 8.4],
-            hex: '#102407',
+            components: [74.4, 80, 49],
+            hex: '#B1E119',
           },
           $type: 'color',
           $extensions: {
@@ -2821,8 +2799,8 @@
         '12': {
           $value: {
             colorSpace: 'hsl',
-            components: [110, 70.6, 6.7],
-            hex: '#091D05',
+            components: [72, 85.4, 59.8],
+            hex: '#CDF041',
           },
           $type: 'color',
           $extensions: {
@@ -2834,8 +2812,8 @@
         '13': {
           $value: {
             colorSpace: 'hsl',
-            components: [116.7, 90, 3.9],
-            hex: '#021301',
+            components: [76.6, 81, 71.2],
+            hex: '#D0F17A',
           },
           $type: 'color',
           $extensions: {
@@ -2847,8 +2825,8 @@
         '14': {
           $value: {
             colorSpace: 'hsl',
-            components: [120, 85.7, 2.7],
-            hex: '#010D01',
+            components: [80.4, 62.4, 83.3],
+            hex: '#DDEFBA',
           },
           $type: 'color',
           $extensions: {
@@ -3020,8 +2998,8 @@
         '0': {
           $value: {
             colorSpace: 'hsl',
-            components: [172.5, 71.4, 89],
-            hex: '#CFF7F2',
+            components: [180, 100, 2.5],
+            hex: '#000D0D',
           },
           $type: 'color',
           $extensions: {
@@ -3033,8 +3011,8 @@
         '1': {
           $value: {
             colorSpace: 'hsl',
-            components: [173.9, 75.9, 77.3],
-            hex: '#99F1E8',
+            components: [183.2, 100, 3.7],
+            hex: '#001213',
           },
           $type: 'color',
           $extensions: {
@@ -3046,8 +3024,8 @@
         '2': {
           $value: {
             colorSpace: 'hsl',
-            components: [175.3, 80.6, 65.7],
-            hex: '#61EEE3',
+            components: [181.9, 100, 6.1],
+            hex: '#001E1F',
           },
           $type: 'color',
           $extensions: {
@@ -3059,8 +3037,8 @@
         '3': {
           $value: {
             colorSpace: 'hsl',
-            components: [176.7, 84.7, 53.9],
-            hex: '#26EDE2',
+            components: [181.5, 80.4, 10],
+            hex: '#052D2E',
           },
           $type: 'color',
           $extensions: {
@@ -3072,8 +3050,8 @@
         '4': {
           $value: {
             colorSpace: 'hsl',
-            components: [177.6, 86.4, 46.3],
-            hex: '#10DCD4',
+            components: [181.1, 73, 14.5],
+            hex: '#0A3F40',
           },
           $type: 'color',
           $extensions: {
@@ -3085,8 +3063,8 @@
         '5': {
           $value: {
             colorSpace: 'hsl',
-            components: [178.6, 88.8, 38.6],
-            hex: '#0BBAB6',
+            components: [182.4, 88.1, 16.5],
+            hex: '#054C4F',
           },
           $type: 'color',
           $extensions: {
@@ -3098,8 +3076,8 @@
         '6': {
           $value: {
             colorSpace: 'hsl',
-            components: [179.6, 91.1, 30.8],
-            hex: '#079695',
+            components: [180.6, 76.9, 23.7],
+            hex: '#0E6A6B',
           },
           $type: 'color',
           $extensions: {
@@ -3124,8 +3102,8 @@
         '8': {
           $value: {
             colorSpace: 'hsl',
-            components: [180.6, 76.9, 23.7],
-            hex: '#0E6A6B',
+            components: [179.6, 91.1, 30.8],
+            hex: '#079695',
           },
           $type: 'color',
           $extensions: {
@@ -3137,8 +3115,8 @@
         '9': {
           $value: {
             colorSpace: 'hsl',
-            components: [182.4, 88.1, 16.5],
-            hex: '#054C4F',
+            components: [178.6, 88.8, 38.6],
+            hex: '#0BBAB6',
           },
           $type: 'color',
           $extensions: {
@@ -3150,8 +3128,8 @@
         '10': {
           $value: {
             colorSpace: 'hsl',
-            components: [181.1, 73, 14.5],
-            hex: '#0A3F40',
+            components: [177.6, 86.4, 46.3],
+            hex: '#10DCD4',
           },
           $type: 'color',
           $extensions: {
@@ -3163,8 +3141,8 @@
         '11': {
           $value: {
             colorSpace: 'hsl',
-            components: [181.5, 80.4, 10],
-            hex: '#052D2E',
+            components: [176.7, 84.7, 53.9],
+            hex: '#26EDE2',
           },
           $type: 'color',
           $extensions: {
@@ -3176,8 +3154,8 @@
         '12': {
           $value: {
             colorSpace: 'hsl',
-            components: [181.9, 100, 6.1],
-            hex: '#001E1F',
+            components: [175.3, 80.6, 65.7],
+            hex: '#61EEE3',
           },
           $type: 'color',
           $extensions: {
@@ -3189,8 +3167,8 @@
         '13': {
           $value: {
             colorSpace: 'hsl',
-            components: [183.2, 100, 3.7],
-            hex: '#001213',
+            components: [173.9, 75.9, 77.3],
+            hex: '#99F1E8',
           },
           $type: 'color',
           $extensions: {
@@ -3202,8 +3180,8 @@
         '14': {
           $value: {
             colorSpace: 'hsl',
-            components: [180, 100, 2.5],
-            hex: '#000D0D',
+            components: [172.5, 71.4, 89],
+            hex: '#CFF7F2',
           },
           $type: 'color',
           $extensions: {
@@ -3375,8 +3353,8 @@
         '0': {
           $value: {
             colorSpace: 'hsl',
-            components: [226.7, 100, 92.9],
-            hex: '#DBE3FF',
+            components: [237.6, 71.4, 6.9],
+            hex: '#05061E',
           },
           $type: 'color',
           $extensions: {
@@ -3388,8 +3366,8 @@
         '1': {
           $value: {
             colorSpace: 'hsl',
-            components: [228, 100, 90.2],
-            hex: '#CDD7FF',
+            components: [237, 71.4, 11],
+            hex: '#080A30',
           },
           $type: 'color',
           $extensions: {
@@ -3401,8 +3379,8 @@
         '2': {
           $value: {
             colorSpace: 'hsl',
-            components: [228.6, 94.9, 84.7],
-            hex: '#B3C1FD',
+            components: [236.4, 65.8, 14.9],
+            hex: '#0D103F',
           },
           $type: 'color',
           $extensions: {
@@ -3414,8 +3392,8 @@
         '3': {
           $value: {
             colorSpace: 'hsl',
-            components: [229.9, 88.4, 76.3],
-            hex: '#8D9FF8',
+            components: [237.6, 63.3, 23.5],
+            hex: '#161962',
           },
           $type: 'color',
           $extensions: {
@@ -3427,8 +3405,8 @@
         '4': {
           $value: {
             colorSpace: 'hsl',
-            components: [230.9, 81, 71.2],
-            hex: '#7A8CF1',
+            components: [240, 59.8, 32.2],
+            hex: '#212183',
           },
           $type: 'color',
           $extensions: {
@@ -3440,8 +3418,8 @@
         '5': {
           $value: {
             colorSpace: 'hsl',
-            components: [231.5, 81.7, 67.8],
-            hex: '#6A7DF0',
+            components: [234.3, 67.1, 42.9],
+            hex: '#2432B7',
           },
           $type: 'color',
           $extensions: {
@@ -3453,8 +3431,8 @@
         '6': {
           $value: {
             colorSpace: 'hsl',
-            components: [233, 74.9, 59.4],
-            hex: '#4A5CE5',
+            components: [234.4, 68, 51],
+            hex: '#2D3DD7',
           },
           $type: 'color',
           $extensions: {
@@ -3479,8 +3457,8 @@
         '8': {
           $value: {
             colorSpace: 'hsl',
-            components: [234.4, 68, 51],
-            hex: '#2D3DD7',
+            components: [233, 74.9, 59.4],
+            hex: '#4A5CE5',
           },
           $type: 'color',
           $extensions: {
@@ -3492,8 +3470,8 @@
         '9': {
           $value: {
             colorSpace: 'hsl',
-            components: [234.3, 67.1, 42.9],
-            hex: '#2432B7',
+            components: [231.5, 81.7, 67.8],
+            hex: '#6A7DF0',
           },
           $type: 'color',
           $extensions: {
@@ -3505,8 +3483,8 @@
         '10': {
           $value: {
             colorSpace: 'hsl',
-            components: [240, 59.8, 32.2],
-            hex: '#212183',
+            components: [230.9, 81, 71.2],
+            hex: '#7A8CF1',
           },
           $type: 'color',
           $extensions: {
@@ -3518,8 +3496,8 @@
         '11': {
           $value: {
             colorSpace: 'hsl',
-            components: [237.6, 63.3, 23.5],
-            hex: '#161962',
+            components: [229.9, 88.4, 76.3],
+            hex: '#8D9FF8',
           },
           $type: 'color',
           $extensions: {
@@ -3531,8 +3509,8 @@
         '12': {
           $value: {
             colorSpace: 'hsl',
-            components: [236.4, 65.8, 14.9],
-            hex: '#0D103F',
+            components: [228.6, 94.9, 84.7],
+            hex: '#B3C1FD',
           },
           $type: 'color',
           $extensions: {
@@ -3544,8 +3522,8 @@
         '13': {
           $value: {
             colorSpace: 'hsl',
-            components: [237, 71.4, 11],
-            hex: '#080A30',
+            components: [228, 100, 90.2],
+            hex: '#CDD7FF',
           },
           $type: 'color',
           $extensions: {
@@ -3557,8 +3535,8 @@
         '14': {
           $value: {
             colorSpace: 'hsl',
-            components: [237.6, 71.4, 6.9],
-            hex: '#05061E',
+            components: [226.7, 100, 92.9],
+            hex: '#DBE3FF',
           },
           $type: 'color',
           $extensions: {

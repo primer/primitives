@@ -18,42 +18,6 @@
           },
         },
       },
-      // NOTE: The neutral scale is for UI use only (backgrounds, borders, component states).
-      // It targets WCAG 2.1 §1.4.11 non-text contrast (≥3:1), not text contrast (≥4.5:1).
-      // Do not use neutral steps directly as text or icon colors — use fgColor-* functional tokens.
-      // See: contributor-docs/adrs/adr-003-neutral-scales.md and adr-012-color-scale-contrast-map.md
-      neutral: {
-        // Steps 10 and 11 are explicit in dark-dimmed because the inherited step 10
-        // (#F0F6FC) is much lighter than the dimmed white (#cdd9e5, L=85.1%), which
-        // would create a scale reversal. Steps 10 and 11 are defined to provide a
-        // smooth progression from step 9 (L=84.9%) up to step 11 (L=91%).
-        '10': {
-          $value: {
-            colorSpace: 'hsl',
-            components: [210, 22, 87.5],
-            hex: '#D8DFE6',
-          },
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'base/color/dark-dimmed',
-            },
-          },
-        },
-        '11': {
-          $value: {
-            colorSpace: 'hsl',
-            components: [210, 30, 91],
-            hex: '#E1E8EF',
-          },
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'base/color/dark-dimmed',
-            },
-          },
-        },
-      },
       blue: {
         '0': {
           $value: {
