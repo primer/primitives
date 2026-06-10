@@ -11,9 +11,28 @@ export default {
 const getColorScale = (colorName: string, length: number) =>
   Array.from({length}, (_, i) => `base-color-${colorName}-${i}`)
 
-const Color = ({color: colorName, length = 12, border}: {color: string; length?: number; border?: boolean}) => (
+const fifteenStepScales = new Set([
+  'red',
+  'coral',
+  'orange',
+  'yellow',
+  'lemon',
+  'lime',
+  'green',
+  'teal',
+  'blue',
+  'neutral',
+  'gray',
+  'indigo',
+  'purple',
+  'pink',
+])
+
+const getColorScaleLength = (colorName: string) => (fifteenStepScales.has(colorName) ? 15 : 12)
+
+const Color = ({color: colorName, length, border}: {color: string; length?: number; border?: boolean}) => (
   <div>
-    {getColorScale(colorName, length).map(color => (
+    {getColorScale(colorName, length ?? getColorScaleLength(colorName)).map(color => (
       <ColorScale color={color} border={border} key={color} />
     ))}
   </div>
