@@ -207,7 +207,7 @@
       },
     },
     accent: {
-      $value: '{base.color.blue.10}',
+      $value: '{base.color.blue.9}',
       $type: 'color',
       $description: 'Accent text for links and interactive elements',
       $extensions: {
@@ -220,8 +220,8 @@
           },
         },
         'org.primer.overrides': {
-          dark: '{base.color.blue.14}',
-          'dark-dimmed': '#478be6',
+          dark: '#2786ff',
+          'dark-dimmed': '#45b6ff',
           'dark-dimmed-high-contrast': '{base.color.blue.14}',
           'dark-high-contrast': '{base.color.blue.14}',
           'dark-tritanopia-high-contrast': '{base.color.blue.14}',

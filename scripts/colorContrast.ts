@@ -224,6 +224,7 @@ const allThemeNames: ThemeName[] = [
   'dark',
   'light_high_contrast',
   'dark_high_contrast',
+  'dark_dimmed',
   'light_protanopia_deuteranopia',
   'dark_protanopia_deuteranopia',
   'light_protanopia_deuteranopia_high_contrast',

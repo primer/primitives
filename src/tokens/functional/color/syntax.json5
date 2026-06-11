@@ -35,7 +35,7 @@
         },
       },
       white: {
-        $value: '{base.color.neutral.7}',
+        $value: '{base.color.neutral.11}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -272,7 +272,7 @@
       },
       syntax: {
         comment: {
-          $value: '{base.color.neutral.7}',
+          $value: '{base.color.neutral.11}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -280,12 +280,12 @@
               group: 'syntax',
             },
             'org.primer.overrides': {
-              dark: '{base.color.neutral.7}',
+              dark: '{base.color.neutral.10}',
             },
           },
         },
         constant: {
-          $value: '{base.color.blue.8}',
+          $value: '{base.color.blue.9}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -293,7 +293,7 @@
               group: 'syntax',
             },
             'org.primer.overrides': {
-              dark: '{base.color.blue.7}',
+              dark: '{base.color.blue.10}',
             },
           },
         },
@@ -306,12 +306,12 @@
               group: 'syntax',
             },
             'org.primer.overrides': {
-              dark: '{base.color.blue.8}',
+              dark: '{base.color.blue.10}',
             },
           },
         },
         entity: {
-          $value: '{base.color.purple.8}',
+          $value: '{base.color.purple.10}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -319,7 +319,7 @@
               group: 'syntax',
             },
             'org.primer.overrides': {
-              dark: '{base.color.purple.9}',
+              dark: '{base.color.purple.10}',
             },
           },
         },
@@ -341,7 +341,7 @@
           },
         },
         'entity-tag': {
-          $value: '{base.color.blue.8}',
+          $value: '{base.color.blue.9}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -350,15 +350,15 @@
             },
             'org.primer.overrides': {
               dark: '{base.color.green.10}',
-              'dark-tritanopia': '{base.color.blue.8}',
-              'dark-tritanopia-high-contrast': '{base.color.blue.8}',
-              'dark-protanopia-deuteranopia': '{base.color.blue.8}',
-              'dark-protanopia-deuteranopia-high-contrast': '{base.color.blue.8}',
+              'dark-tritanopia': '{base.color.blue.10}',
+              'dark-tritanopia-high-contrast': '{base.color.blue.10}',
+              'dark-protanopia-deuteranopia': '{base.color.blue.10}',
+              'dark-protanopia-deuteranopia-high-contrast': '{base.color.blue.10}',
             },
           },
         },
         keyword: {
-          $value: '{base.color.red.7}',
+          $value: '{base.color.red.10}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -366,11 +366,11 @@
               group: 'syntax',
             },
             'org.primer.overrides': {
-              dark: '{base.color.red.8}',
-              'dark-protanopia-deuteranopia': '{base.color.orange.8}',
-              'dark-protanopia-deuteranopia-high-contrast': '{base.color.orange.8}',
-              'light-protanopia-deuteranopia': '{base.color.orange.7}',
-              'light-protanopia-deuteranopia-high-contrast': '{base.color.orange.7}',
+              dark: '{base.color.red.10}',
+              'dark-protanopia-deuteranopia': '{base.color.orange.10}',
+              'dark-protanopia-deuteranopia-high-contrast': '{base.color.orange.10}',
+              'light-protanopia-deuteranopia': '{base.color.orange.10}',
+              'light-protanopia-deuteranopia-high-contrast': '{base.color.orange.10}',
             },
           },
         },
@@ -383,12 +383,12 @@
               group: 'syntax',
             },
             'org.primer.overrides': {
-              dark: '{base.color.blue.8}',
+              dark: '{base.color.blue.10}',
             },
           },
         },
         variable: {
-          $value: '{base.color.orange.8}',
+          $value: '{base.color.orange.10}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -397,10 +397,13 @@
             },
             'org.primer.overrides': {
               dark: '{base.color.orange.9}',
-              'dark-tritanopia': '{base.color.red.9}',
-              'dark-tritanopia-high-contrast': '{base.color.red.9}',
-              'light-tritanopia': '{base.color.red.8}',
-              'light-tritanopia-high-contrast': '{base.color.red.8}',
+              'dark-high-contrast': '{base.color.orange.11}',
+              'dark-dimmed-high-contrast': '{base.color.orange.11}',
+              'dark-protanopia-deuteranopia-high-contrast': '{base.color.orange.11}',
+              'dark-tritanopia': '{base.color.red.10}',
+              'dark-tritanopia-high-contrast': '{base.color.red.11}',
+              'light-tritanopia': '{base.color.red.10}',
+              'light-tritanopia-high-contrast': '{base.color.red.10}',
             },
           },
         },
