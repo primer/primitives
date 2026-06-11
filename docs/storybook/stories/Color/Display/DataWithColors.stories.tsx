@@ -3,7 +3,7 @@ import {ColorTokenSwatch} from '../../StorybookComponents/ColorTokenSwatch/Color
 import {DataTable, Table} from '@primer/react/experimental'
 import {InlineCode} from '../../StorybookComponents/InlineCode/InlineCode'
 import {getTokensByName} from '../../utilities/getTokensByName'
-import {withColorTokens} from '../../utilities/withColorTokens'
+import {withColorTokens, type ColorTokens} from '../../utilities/withColorTokens'
 import {formatTokenValue} from '../../utilities/formatTokenValue'
 
 export default {
@@ -21,10 +21,10 @@ export default {
 // Uses data-vis tokens: data-{color}-color-emphasis (lines/dots) and
 // data-{color}-color-muted (area fills)
 
-const CHART_COLORS = ['blue', 'green', 'orange', 'red', 'purple', 'teal', 'yellow', 'pink']
+const CHART_COLORS = ['blue', 'green', 'orange', 'red', 'purple', 'teal', 'yellow', 'pink'] as const
 
 // Deterministic sample data — 12 monthly data points per series
-const SERIES_DATA = {
+const SERIES_DATA: Record<string, number[]> = {
   blue: [30, 45, 35, 50, 60, 55, 70, 65, 75, 80, 70, 85],
   green: [20, 25, 30, 28, 35, 42, 38, 45, 50, 48, 55, 60],
   orange: [15, 20, 18, 25, 22, 30, 35, 32, 40, 38, 42, 45],
@@ -50,19 +50,19 @@ const Y_MIN = 0
 const Y_MAX = 100
 const COLS = MONTHS.length - 1 // 11 intervals
 
-function xPos(i) {
+function xPos(i: number): number {
   return PAD_LEFT + (i / COLS) * (CHART_W - PAD_LEFT - PAD_RIGHT)
 }
 
-function yPos(v) {
+function yPos(v: number): number {
   return PAD_TOP + (1 - (v - Y_MIN) / (Y_MAX - Y_MIN)) * (CHART_H - PAD_TOP - PAD_BOTTOM)
 }
 
-function toPoints(values) {
+function toPoints(values: number[]): string {
   return values.map((v, i) => `${xPos(i)},${yPos(v)}`).join(' ')
 }
 
-function toAreaPath(values) {
+function toAreaPath(values: number[]): string {
   const top = values.map((v, i) => `${xPos(i)},${yPos(v)}`).join(' L ')
   const baseline = yPos(Y_MIN)
   const lastX = xPos(values.length - 1)
@@ -142,7 +142,7 @@ function ChartLegend() {
 
 // ─── Heading helper ───────────────────────────────────────────────────────────
 
-const SectionHeading = ({children, as = 'h2'}) => {
+const SectionHeading = ({children, as = 'h2'}: {children: React.ReactNode; as?: 'h1' | 'h2'}) => {
   const Tag = as
   return (
     <Tag
@@ -238,7 +238,83 @@ export const AreaChart = () => {
   )
 }
 
-export const DataVisAccentColors = ({colorTokens}) => {
+export const Foreground = ({colorTokens}: {colorTokens: ColorTokens}) => {
+  const data = getTokensByName(colorTokens, 'display')
+    .filter(token => token.name.includes('fgColor'))
+    .map(token => ({id: token.name, ...token}))
+
+  return (
+    <Table.Container>
+      <Table.Title as="h1" id="fg-heading">
+        Foreground
+      </Table.Title>
+      <DataTable
+        aria-labelledby="fg-heading"
+        data={data}
+        columns={[
+          {
+            header: 'Sample',
+            field: 'name',
+            rowHeader: true,
+            renderCell: row => <ColorTokenSwatch textColor={row.name} />,
+          },
+          {
+            header: 'Token',
+            field: 'name',
+            rowHeader: true,
+            renderCell: row => <InlineCode value={row.name} copyClipboard cssVar />,
+          },
+          {
+            header: 'Output value',
+            field: 'value',
+            rowHeader: true,
+            renderCell: row => <p>{formatTokenValue(row.value)}</p>,
+          },
+        ]}
+      />
+    </Table.Container>
+  )
+}
+
+export const Background = ({colorTokens}: {colorTokens: ColorTokens}) => {
+  const data = getTokensByName(colorTokens, 'display')
+    .filter(token => token.name.includes('bgColor'))
+    .map(token => ({id: token.name, ...token}))
+
+  return (
+    <Table.Container>
+      <Table.Title as="h1" id="bg-heading">
+        Background
+      </Table.Title>
+      <DataTable
+        aria-labelledby="bg-heading"
+        data={data}
+        columns={[
+          {
+            header: 'Sample',
+            field: 'name',
+            rowHeader: true,
+            renderCell: row => <ColorTokenSwatch bgColor={row.name} />,
+          },
+          {
+            header: 'Token',
+            field: 'name',
+            rowHeader: true,
+            renderCell: row => <InlineCode value={row.name} copyClipboard cssVar />,
+          },
+          {
+            header: 'Output value',
+            field: 'value',
+            rowHeader: true,
+            renderCell: row => <p>{formatTokenValue(row.value)}</p>,
+          },
+        ]}
+      />
+    </Table.Container>
+  )
+}
+
+export const DataVisAccentColors = ({colorTokens}: {colorTokens: ColorTokens}) => {
   const data = getTokensByName(colorTokens, 'data')
     .filter(({type, name}) => type === 'color' && !name.includes('muted'))
     .map(token => ({id: token.name, ...token}))
@@ -276,7 +352,7 @@ export const DataVisAccentColors = ({colorTokens}) => {
   )
 }
 
-export const DataVisMutedColors = ({colorTokens}) => {
+export const DataVisMutedColors = ({colorTokens}: {colorTokens: ColorTokens}) => {
   const data = getTokensByName(colorTokens, 'data')
     .filter(({type, name}) => type === 'color' && name.includes('muted'))
     .map(token => ({id: token.name, ...token}))
@@ -295,6 +371,44 @@ export const DataVisMutedColors = ({colorTokens}) => {
             field: 'name',
             rowHeader: true,
             renderCell: row => <ColorTokenSwatch bgColor={row.name} />,
+          },
+          {
+            header: 'Token',
+            field: 'name',
+            rowHeader: true,
+            renderCell: row => <InlineCode value={row.name} copyClipboard cssVar />,
+          },
+          {
+            header: 'Output value',
+            field: 'value',
+            rowHeader: true,
+            renderCell: row => <p>{formatTokenValue(row.value)}</p>,
+          },
+        ]}
+      />
+    </Table.Container>
+  )
+}
+
+export const Border = ({colorTokens}: {colorTokens: ColorTokens}) => {
+  const data = getTokensByName(colorTokens, 'display')
+    .filter(token => token.name.includes('borderColor'))
+    .map(token => ({id: token.name, ...token}))
+
+  return (
+    <Table.Container>
+      <Table.Title as="h1" id="border-heading">
+        Border
+      </Table.Title>
+      <DataTable
+        aria-labelledby="border-heading"
+        data={data}
+        columns={[
+          {
+            header: 'Sample',
+            field: 'name',
+            rowHeader: true,
+            renderCell: row => <ColorTokenSwatch borderColor={row.name} />,
           },
           {
             header: 'Token',

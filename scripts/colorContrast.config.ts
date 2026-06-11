@@ -236,6 +236,63 @@ const displayColorRequirements: ContrastRequirementBlueprint[] = [
   ['contrast.border', 'display-auburn-borderColor-emphasis', 'display-auburn-bgColor-muted'],
 ]
 
+const labelColorRequirements: ContrastRequirementBlueprint[] = [
+  // label fgColor vs bgColor for each interactive state
+  ...(
+    [
+      'gray',
+      'indigo',
+      'blue',
+      'cyan',
+      'teal',
+      'pine',
+      'green',
+      'lime',
+      'olive',
+      'lemon',
+      'yellow',
+      'orange',
+      'red',
+      'coral',
+      'pink',
+      'plum',
+      'purple',
+      'brown',
+      'auburn',
+    ] as const
+  ).flatMap(
+    hue =>
+      [
+        ['contrast.text', `label-${hue}-fgColor-rest`, `label-${hue}-bgColor-rest`],
+        ['contrast.text', `label-${hue}-fgColor-hover`, `label-${hue}-bgColor-hover`],
+        ['contrast.text', `label-${hue}-fgColor-active`, `label-${hue}-bgColor-active`],
+      ] as ContrastRequirementBlueprint[],
+  ),
+]
+
+const syntaxColorRequirements: ContrastRequirementBlueprint[] = [
+  ...[
+    'color-prettylights-syntax-comment',
+    'color-prettylights-syntax-constant',
+    'color-prettylights-syntax-constant-other-reference-link',
+    'color-prettylights-syntax-entity',
+    'color-prettylights-syntax-entity-tag',
+    'color-prettylights-syntax-keyword',
+    'color-prettylights-syntax-string',
+    'color-prettylights-syntax-variable',
+  ].map(token => ['contrast.text', token, 'bgColor-default'] as ContrastRequirementBlueprint),
+  ...[
+    'codeMirror-syntax-fgColor-comment',
+    'codeMirror-syntax-fgColor-constant',
+    'codeMirror-syntax-fgColor-entity',
+    'codeMirror-syntax-fgColor-keyword',
+    'codeMirror-syntax-fgColor-storage',
+    'codeMirror-syntax-fgColor-string',
+    'codeMirror-syntax-fgColor-support',
+    'codeMirror-syntax-fgColor-variable',
+  ].map(token => ['contrast.text', token, 'codeMirror-bgColor'] as ContrastRequirementBlueprint),
+]
+
 const setContrastRatios = (
   contrast: 'default' | 'highContrast',
   requirements: ContrastRequirementBlueprint[],
@@ -269,13 +326,25 @@ export type ThemeName =
 
 const defaultContrast: ContrastRequirement[] = setContrastRatios('default', [
   ...baseRequirements,
+  ...syntaxColorRequirements,
   ...displayColorRequirements,
+  ...labelColorRequirements,
 ])
 
 const highContrast: ContrastRequirement[] = setContrastRatios('highContrast', [
   ...baseRequirements,
+  ...syntaxColorRequirements,
   ...displayColorRequirements,
+  ...labelColorRequirements,
   // add high contrast overwrites or additions
+])
+
+const darkDimmedContrast: ContrastRequirement[] = setContrastRatios('default', [
+  ['contrast.text', 'fgColor-accent', 'bgColor-default'],
+  ['contrast.text', 'fgColor-accent', 'bgColor-muted'],
+  ['contrast.text', 'fgColor-accent', 'bgColor-inset'],
+  ['contrast.text', 'fgColor-accent', 'bgColor-accent-muted'],
+  ...syntaxColorRequirements,
 ])
 
 export type ContrastRequirements = {[key in ThemeName]: ContrastRequirement[]}
@@ -289,7 +358,7 @@ export const contrastRequirements: ContrastRequirements = {
   light_tritanopia_high_contrast: highContrast,
   // default dark mode
   dark: defaultContrast,
-  dark_dimmed: defaultContrast,
+  dark_dimmed: darkDimmedContrast,
   dark_dimmed_high_contrast: highContrast,
   dark_high_contrast: highContrast,
   dark_protanopia_deuteranopia: defaultContrast,

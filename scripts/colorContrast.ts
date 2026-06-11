@@ -202,15 +202,19 @@ type Tokens = Record<string, Token>
 type Theme = [ThemeName, Tokens]
 // get colors
 const getColorsFromFiles = async (filePaths: ThemeName[]): Promise<Theme[]> => {
-  const files = filePaths.map(
-    async themeName =>
-      [
-        themeName,
-        await JSON.parse(
-          await readFile(`./dist/docs/functional/themes/${getThemeFileName(themeName, '_', '-')}.json`, 'utf8'),
-        ),
-      ] as Theme,
-  )
+  const files = filePaths.map(async themeName => {
+    const filePath = `./dist/docs/functional/themes/${getThemeFileName(themeName, '_', '-')}.json`
+    try {
+      return [themeName, await JSON.parse(await readFile(filePath, 'utf8'))] as Theme
+    } catch (error) {
+      if ((error as NodeJS.ErrnoException).code === 'ENOENT') {
+        throw new Error(
+          `Missing generated theme file: ${filePath}. Run \`npm run build:tokens\` before \`npm run check:contrast\`.`,
+        )
+      }
+      throw error
+    }
+  })
   // return object with themes
   return await Promise.all(files)
 }
@@ -220,6 +224,7 @@ const allThemeNames: ThemeName[] = [
   'dark',
   'light_high_contrast',
   'dark_high_contrast',
+  'dark_dimmed',
   'light_protanopia_deuteranopia',
   'dark_protanopia_deuteranopia',
   'light_protanopia_deuteranopia_high_contrast',
