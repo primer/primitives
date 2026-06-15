@@ -48,7 +48,7 @@
     "check:removed-tokens": "tsx scripts/checkRemovedTokens.ts",
     "test": "npm run test:unit && npm run test:integration",
     "test:unit": "vitest run --coverage",
-    "test:integration": "vitest run -r integration",
+    "test:integration": "vitest run -r integration --no-file-parallelism",
     "prebuild": "rm -rf dist",
     "prepack": "npm run build",
     "release": "changeset publish",
