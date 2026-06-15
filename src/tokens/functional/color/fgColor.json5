@@ -455,7 +455,7 @@
           },
         },
         'org.primer.overrides': {
-          dark: '{base.color.purple.4}',
+          dark: '{base.color.purple.7}',
           'dark-protanopia-deuteranopia': '{base.color.neutral.10}', /* Differentiate done from upsell (purple) and from open/success/attention, which collapse to similar hues under deutan/protan simulation. Brighter than fgColor.closed/muted (neutral.9) to remain distinguishable from the closed state. */
           'dark-high-contrast': '#D3ABFF',
           'dark-dimmed-high-contrast': '{base.color.purple.10}',
@@ -485,7 +485,7 @@
           },
         },
         'org.primer.overrides': {
-          'dark-protanopia-deuteranopia': '{base.color.purple.4}', /* Keep upsell purple in this theme even though fgColor.done is overridden to neutral, so promotional content retains its brand-style purple. */
+          'dark-protanopia-deuteranopia': '{base.color.purple.7}', /* Keep upsell purple in this theme even though fgColor.done is overridden to neutral, so promotional content retains its brand-style purple. */
         },
         'org.primer.llm': {
           usage: ['upsell-text', 'premium-text', 'promotional'],
