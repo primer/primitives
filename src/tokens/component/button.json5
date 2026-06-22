@@ -244,7 +244,7 @@
             },
             'org.primer.overrides': {
               dark: {
-                '$value': '{fgColor.white}'
+                '$value': '{base.color.white}'
               },
               'dark-dimmed': {
                 '$value': {
@@ -1625,7 +1625,7 @@
             },
             'org.primer.overrides': {
               dark: {
-                '$value': '{base.color.neutral.11}'
+                '$value': '{base.color.white}'
               },
               'dark-dimmed-high-contrast': {
                 '$value': {
@@ -1657,7 +1657,7 @@
             },
             'org.primer.overrides': {
               dark: {
-                '$value': '{base.color.neutral.11}'
+                '$value': '{base.color.white}'
               },
               'dark-dimmed-high-contrast': {
                 '$value': {
@@ -1724,6 +1724,9 @@
             },
             'org.primer.overrides': {
               dark: {
+                '$value': '{base.color.white}'
+              },
+              'dark-dimmed': {
                 '$value': '{base.color.neutral.11}'
               },
               'dark-dimmed-high-contrast': {
