@@ -2707,6 +2707,17 @@
               scopes: [
                 'borderColor'
               ]
+            },
+            'org.primer.overrides': {
+              'dark-high-contrast': {
+                '$value': '{base.color.neutral.8}'
+              },
+              'dark-tritanopia-high-contrast': {
+                '$value': '{base.color.neutral.8}'
+              },
+              'dark-protanopia-deuteranopia-high-contrast': {
+                '$value': '{base.color.neutral.8}'
+              }
             }
           }
         },
