@@ -28,7 +28,7 @@
       },
     },
     muted: {
-      $value: '{base.color.neutral.7}',
+      $value: '{base.color.neutral.9}',
       $type: 'color',
       $description: 'Muted text for secondary content and less important information',
       $extensions: {
@@ -69,7 +69,7 @@
           },
         },
         'org.primer.overrides': {
-          dark: '{base.color.neutral.11}',
+          dark: '{base.color.white}',
           'dark-dimmed': '{base.color.neutral.10}',
           'dark-dimmed-high-contrast': '#ffffff',
         },
@@ -182,7 +182,7 @@
       },
     },
     neutral: {
-      $value: '{base.color.neutral.7}',
+      $value: '{base.color.neutral.9}',
       $type: 'color',
       $description: 'Neutral semantic text for icons and secondary elements',
       $extensions: {

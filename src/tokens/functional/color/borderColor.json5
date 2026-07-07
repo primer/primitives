@@ -15,7 +15,7 @@
         'org.primer.overrides': {
           dark: '{base.color.neutral.5}',
           'dark-dimmed': '{base.color.neutral.5}',
-          'dark-dimmed-high-contrast': '{base.color.neutral.8}',
+          'dark-dimmed-high-contrast': '{base.color.neutral.9}',
           'light-high-contrast': '{base.color.neutral.8}',
           'light-tritanopia-high-contrast': '{base.color.neutral.8}',
           'light-protanopia-deuteranopia-high-contrast': '{base.color.neutral.8}',
@@ -263,7 +263,7 @@
     },
     accent: {
       muted: {
-        $value: '{base.color.blue.5}',
+        $value: '{base.color.blue.4}',
         $type: 'color',
         $description: 'Subtle accent border for selected or focused elements',
         $extensions: {
@@ -276,13 +276,13 @@
             },
           },
           'org.primer.overrides': {
-            dark: '{base.color.blue.6}',
+            dark: '{base.color.blue.5}',
             'light-high-contrast': {
-              $value: '{base.color.blue.5}',
+              $value: '{base.color.blue.4}',
               alpha: 1,
             },
             'light-tritanopia-high-contrast': {
-              $value: '{base.color.blue.5}',
+              $value: '{base.color.blue.4}',
               alpha: 1,
             },
             'light-protanopia-deuteranopia-high-contrast': {
@@ -290,7 +290,7 @@
               alpha: 1,
             },
             'dark-high-contrast': {
-              $value: '{base.color.blue.6}',
+              $value: '{base.color.blue.5}',
               alpha: 1,
             },
             'dark-dimmed-high-contrast': {
@@ -298,7 +298,7 @@
               alpha: 1,
             },
             'dark-tritanopia-high-contrast': {
-              $value: '{base.color.blue.6}',
+              $value: '{base.color.blue.5}',
               alpha: 1,
             },
             'dark-protanopia-deuteranopia-high-contrast': {
@@ -314,7 +314,7 @@
         alpha: 0.4,
       },
       emphasis: {
-        $value: '{base.color.blue.7}',
+        $value: '{base.color.blue.6}',
         $type: 'color',
         $description: 'Strong accent border for selected or focused elements',
         $extensions: {
@@ -327,7 +327,7 @@
             },
           },
           'org.primer.overrides': {
-            'dark-dimmed-high-contrast': '{base.color.blue.7}',
+            'dark-dimmed-high-contrast': '{base.color.blue.6}',
           },
           'org.primer.llm': {
             usage: ['accent-emphasis', 'selected-border', 'focus-border'],
