@@ -4116,17 +4116,26 @@
               scopes: ['bgColor'],
             },
             'org.primer.overrides': {
+              light: {
+                $value: '{base.display.color.teal.9}',
+              },
+              'light-protanopia-deuteranopia': {
+                $value: '{base.display.color.teal.9}',
+              },
+              'light-tritanopia': {
+                $value: '{base.display.color.teal.9}',
+              },
               dark: {
                 $value: '{base.display.color.teal.4}',
               },
               'light-high-contrast': {
-                $value: '{base.display.color.teal.7}',
+                $value: '{base.display.color.teal.10}',
               },
               'light-protanopia-deuteranopia-high-contrast': {
-                $value: '{base.display.color.teal.7}',
+                $value: '{base.display.color.teal.10}',
               },
               'light-tritanopia-high-contrast': {
-                $value: '{base.display.color.teal.7}',
+                $value: '{base.display.color.teal.10}',
               },
               'dark-high-contrast': {
                 $value: '{base.display.color.teal.3}',
@@ -4154,17 +4163,26 @@
             scopes: ['fgColor'],
           },
           'org.primer.overrides': {
+            light: {
+              $value: '{base.display.color.teal.9}',
+            },
+            'light-protanopia-deuteranopia': {
+              $value: '{base.display.color.teal.9}',
+            },
+            'light-tritanopia': {
+              $value: '{base.display.color.teal.9}',
+            },
             dark: {
               $value: '{base.display.color.teal.6}',
             },
             'light-high-contrast': {
-              $value: '{base.display.color.teal.8}',
+              $value: '{base.display.color.teal.11}',
             },
             'light-protanopia-deuteranopia-high-contrast': {
-              $value: '{base.display.color.teal.8}',
+              $value: '{base.display.color.teal.11}',
             },
             'light-tritanopia-high-contrast': {
-              $value: '{base.display.color.teal.8}',
+              $value: '{base.display.color.teal.11}',
             },
             'dark-high-contrast': {
               $value: '{base.display.color.teal.8}',
@@ -4208,17 +4226,26 @@
               scopes: ['borderColor'],
             },
             'org.primer.overrides': {
+              light: {
+                $value: '{base.display.color.teal.7}',
+              },
+              'light-protanopia-deuteranopia': {
+                $value: '{base.display.color.teal.7}',
+              },
+              'light-tritanopia': {
+                $value: '{base.display.color.teal.7}',
+              },
               dark: {
                 $value: '{base.display.color.teal.5}',
               },
               'light-high-contrast': {
-                $value: '{base.display.color.teal.6}',
+                $value: '{base.display.color.teal.10}',
               },
               'light-protanopia-deuteranopia-high-contrast': {
-                $value: '{base.display.color.teal.6}',
+                $value: '{base.display.color.teal.10}',
               },
               'light-tritanopia-high-contrast': {
-                $value: '{base.display.color.teal.6}',
+                $value: '{base.display.color.teal.10}',
               },
               'dark-high-contrast': {
                 $value: '{base.display.color.teal.6}',
