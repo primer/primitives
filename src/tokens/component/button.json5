@@ -1129,6 +1129,18 @@
               dark: {
                 '$value': '{control.transparent.bgColor.hover}'
               },
+              'light-high-contrast': {
+                '$value': '{base.color.neutral.3}',
+                alpha: null
+              },
+              'light-tritanopia-high-contrast': {
+                '$value': '{base.color.neutral.3}',
+                alpha: null
+              },
+              'light-protanopia-deuteranopia-high-contrast': {
+                '$value': '{base.color.neutral.3}',
+                alpha: null
+              },
               'dark-high-contrast': {
                 '$value': '{base.color.neutral.2}',
                 alpha: null
@@ -1765,6 +1777,15 @@
             'org.primer.overrides': {
               dark: {
                 '$value': '{control.bgColor.rest}'
+              },
+              'light-high-contrast': {
+                '$value': '{base.color.neutral.2}'
+              },
+              'light-tritanopia-high-contrast': {
+                '$value': '{base.color.neutral.3}'
+              },
+              'light-protanopia-deuteranopia-high-contrast': {
+                '$value': '{base.color.neutral.3}'
               }
             }
           }

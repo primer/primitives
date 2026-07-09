@@ -28,7 +28,7 @@
       },
     },
     muted: {
-      $value: '{base.color.neutral.9}',
+      $value: '{base.color.neutral.10}',
       $type: 'color',
       $description: 'Muted text for secondary content and less important information',
       $extensions: {
@@ -41,7 +41,7 @@
           },
         },
         'org.primer.overrides': {
-          'light-high-contrast': '{base.color.neutral.10}',
+          'light-high-contrast': '{base.color.neutral.11}',
           'light-tritanopia-high-contrast': '{base.color.neutral.11}',
           'light-protanopia-deuteranopia-high-contrast': '{base.color.neutral.11}',
           'dark-high-contrast': '{base.color.neutral.10}',
@@ -56,7 +56,7 @@
       },
     },
     onEmphasis: {
-      $value: '{base.color.neutral.0}',
+      $value: '{base.color.white}',
       $type: 'color',
       $description: 'Text color for use on emphasis backgrounds',
       $extensions: {
@@ -96,7 +96,7 @@
       },
     },
     white: {
-      $value: '{base.color.neutral.0}',
+      $value: '{base.color.white}',
       $type: 'color',
       $description: 'Pure white text',
       $extensions: {
@@ -182,7 +182,7 @@
       },
     },
     neutral: {
-      $value: '{base.color.neutral.9}',
+      $value: '{base.color.neutral.10}',
       $type: 'color',
       $description: 'Neutral semantic text for icons and secondary elements',
       $extensions: {
@@ -299,7 +299,7 @@
       },
     },
     attention: {
-      $value: '{base.color.yellow.5}',
+      $value: '{base.color.yellow.6}',
       $type: 'color',
       $description: 'Attention text for warnings and caution states',
       $extensions: {
