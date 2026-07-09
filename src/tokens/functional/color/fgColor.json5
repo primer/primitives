@@ -250,6 +250,7 @@
           },
         },
         'org.primer.overrides': {
+          light: '{base.color.green.9}', /* Retrofit for 15-step green scale: base green.5 shifted lighter (#55db73); green.9 (#137a33) is the min non-relief step passing 4.5:1 and the successor of the prior success anchor. */
           dark: '{base.color.green.3}',
           'dark-high-contrast': '#2BD853',
           'dark-dimmed-high-contrast': '{base.color.green.0}',
