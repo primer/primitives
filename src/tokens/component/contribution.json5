@@ -46,6 +46,9 @@
               scopes: ['bgColor'],
             },
             'org.primer.overrides': {
+              light: '{base.color.green.5}',
+              'light-tritanopia': '{base.color.green.5}',
+              'light-protanopia-deuteranopia': '{base.color.green.5}',
               dark: '{base.color.green.6}',
             },
           },
