@@ -462,11 +462,11 @@
               alpha: 1,
             },
             'light-tritanopia': {
-              $value: '{base.color.red.3}',
+              $value: '{base.color.red.6}',
               alpha: 0.4,
             },
             'light-tritanopia-high-contrast': {
-              $value: '{base.color.red.3}',
+              $value: '{base.color.red.6}',
               alpha: 1,
             },
             'dark-protanopia-deuteranopia': {
@@ -508,8 +508,8 @@
           'org.primer.overrides': {
             'dark-tritanopia': '{base.color.red.5}',
             'dark-tritanopia-high-contrast': '{base.color.red.5}',
-            'light-tritanopia-high-contrast': '{base.color.red.5}',
-            'light-tritanopia': '{base.color.red.5}',
+            'light-tritanopia-high-contrast': '{base.color.red.9}',
+            'light-tritanopia': '{base.color.red.9}',
             'dark-protanopia-deuteranopia': '{base.color.orange.5}',
             'dark-protanopia-deuteranopia-high-contrast': '{base.color.orange.5}',
             'light-protanopia-deuteranopia': '{base.color.orange.5}',
@@ -634,9 +634,9 @@
               $value: '{base.color.red.4}',
               alpha: 1,
             },
-            'light-tritanopia': '{base.color.red.3}',
+            'light-tritanopia': '{base.color.red.6}',
             'light-tritanopia-high-contrast': {
-              $value: '{base.color.red.3}',
+              $value: '{base.color.red.6}',
               alpha: 1,
             },
           },
@@ -662,8 +662,8 @@
           },
           'org.primer.overrides': {
             'dark-tritanopia': '{base.color.red.5}',
-            'light-tritanopia': '{base.color.red.5}',
-            'light-tritanopia-high-contrast': '{base.color.red.5}',
+            'light-tritanopia': '{base.color.red.9}',
+            'light-tritanopia-high-contrast': '{base.color.red.9}',
             'dark-dimmed-high-contrast': '{base.color.orange.2}',
           },
           'org.primer.llm': {
@@ -675,7 +675,7 @@
     },
     danger: {
       muted: {
-        $value: '{base.color.red.3}',
+        $value: '{base.color.red.6}',
         $type: 'color',
         $description: 'Subtle danger border for errors and destructive contexts',
         $extensions: {
@@ -690,11 +690,11 @@
           'org.primer.overrides': {
             dark: '{base.color.red.4}',
             'light-high-contrast': {
-              $value: '{base.color.red.3}',
+              $value: '{base.color.red.6}',
               alpha: 1,
             },
             'light-tritanopia-high-contrast': {
-              $value: '{base.color.red.3}',
+              $value: '{base.color.red.6}',
               alpha: 1,
             },
             'dark-high-contrast': {
@@ -733,7 +733,7 @@
         alpha: 0.4,
       },
       emphasis: {
-        $value: '{base.color.red.5}',
+        $value: '{base.color.red.9}',
         $type: 'color',
         $description: 'Strong danger border for destructive actions and errors',
         $extensions: {

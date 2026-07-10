@@ -848,6 +848,32 @@
         '0': {
           $value: {
             colorSpace: 'hsl',
+            components: [6.7, 100, 98.2],
+            hex: '#fff7f6',
+          },
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'base/color/light',
+            },
+          },
+        },
+        '1': {
+          $value: {
+            colorSpace: 'hsl',
+            components: [8, 100, 97.1],
+            hex: '#fff2f0',
+          },
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'base/color/light',
+            },
+          },
+        },
+        '2': {
+          $value: {
+            colorSpace: 'hsl',
             components: [5.5, 100, 95.7],
             hex: '#ffebe9',
           },
@@ -858,7 +884,7 @@
             },
           },
         },
-        '1': {
+        '3': {
           $value: {
             colorSpace: 'hsl',
             components: [3.5, 100, 89.8],
@@ -871,7 +897,20 @@
             },
           },
         },
-        '2': {
+        '4': {
+          $value: {
+            colorSpace: 'hsl',
+            components: [3.5, 94.4, 85.9],
+            hex: '#fdbdb9',
+          },
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'base/color/light',
+            },
+          },
+        },
+        '5': {
           $value: {
             colorSpace: 'hsl',
             components: [2.1, 100, 82.9],
@@ -884,7 +923,7 @@
             },
           },
         },
-        '3': {
+        '6': {
           $value: {
             colorSpace: 'hsl',
             components: [359.5, 100, 75.3],
@@ -897,7 +936,7 @@
             },
           },
         },
-        '4': {
+        '7': {
           $value: {
             colorSpace: 'hsl',
             components: [358.7, 94.8, 62.5],
@@ -910,50 +949,11 @@
             },
           },
         },
-        '5': {
-          $value: {
-            colorSpace: 'hsl',
-            components: [355.8, 71.8, 47.3],
-            hex: '#cf222e',
-          },
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'base/color/light',
-            },
-          },
-        },
-        '6': {
-          $value: {
-            colorSpace: 'hsl',
-            components: [350.4, 84.3, 34.9],
-            hex: '#a40e26',
-          },
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'base/color/light',
-            },
-          },
-        },
-        '7': {
-          $value: {
-            colorSpace: 'hsl',
-            components: [348.8, 89.8, 26.9],
-            hex: '#82071e',
-          },
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'base/color/light',
-            },
-          },
-        },
         '8': {
           $value: {
             colorSpace: 'hsl',
-            components: [345.9, 100, 20],
-            hex: '#660018',
+            components: [356.4, 77, 53.9],
+            hex: '#e42f3a',
           },
           $type: 'color',
           $extensions: {
@@ -965,8 +965,73 @@
         '9': {
           $value: {
             colorSpace: 'hsl',
-            components: [344.2, 100, 14.9],
-            hex: '#4c0014',
+            components: [355.1, 71.8, 47.3],
+            hex: '#cf2230',
+          },
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'base/color/light',
+            },
+          },
+        },
+        '10': {
+          $value: {
+            colorSpace: 'hsl',
+            components: [349, 88.1, 36.3],
+            hex: '#ae0b29',
+          },
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'base/color/light',
+            },
+          },
+        },
+        '11': {
+          $value: {
+            colorSpace: 'hsl',
+            components: [347.8, 91.4, 27.5],
+            hex: '#860620',
+          },
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'base/color/light',
+            },
+          },
+        },
+        '12': {
+          $value: {
+            colorSpace: 'hsl',
+            components: [347, 100, 22.5],
+            hex: '#730019',
+          },
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'base/color/light',
+            },
+          },
+        },
+        '13': {
+          $value: {
+            colorSpace: 'hsl',
+            components: [348, 83.3, 18.8],
+            hex: '#580818',
+          },
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'base/color/light',
+            },
+          },
+        },
+        '14': {
+          $value: {
+            colorSpace: 'hsl',
+            components: [344.5, 100, 12.9],
+            hex: '#420011',
           },
           $type: 'color',
           $extensions: {

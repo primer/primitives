@@ -290,8 +290,8 @@
           'light-protanopia-deuteranopia-high-contrast': '{base.color.orange.6}',
           'dark-tritanopia': '{base.color.red.4}',
           'dark-tritanopia-high-contrast': '{base.color.red.2}',
-          'light-tritanopia': '{base.color.red.5}',
-          'light-tritanopia-high-contrast': '{base.color.red.6}',
+          'light-tritanopia': '{base.color.red.9}',
+          'light-tritanopia-high-contrast': '{base.color.red.10}',
         },
         'org.primer.llm': {
           usage: ['open-text', 'open-issue', 'open-pr'],
@@ -346,8 +346,8 @@
           'light-high-contrast': '{base.color.orange.6}',
           'dark-tritanopia': '{base.color.red.4}',
           'dark-tritanopia-high-contrast': '{base.color.red.3}',
-          'light-tritanopia': '{base.color.red.5}',
-          'light-tritanopia-high-contrast': '{base.color.red.6}',
+          'light-tritanopia': '{base.color.red.9}',
+          'light-tritanopia-high-contrast': '{base.color.red.10}',
           'light-protanopia-deuteranopia-high-contrast': '{base.color.orange.6}',
         },
         'org.primer.llm': {
@@ -383,7 +383,7 @@
           'dark-dimmed-high-contrast': '{base.color.red.1}',
           'dark-tritanopia-high-contrast': '{base.color.red.3}',
           'light-high-contrast': '#960d1e', /* Custom hex between red.5 and red.6: level 5 fails 7:1 vs bgColor-muted, level 6 is too dark to visually differentiate status colors. Same approach as dark HC overrides (PR #1190). */
-          'light-tritanopia-high-contrast': '{base.color.red.6}',
+          'light-tritanopia-high-contrast': '{base.color.red.10}',
         },
         'org.primer.llm': {
           usage: ['danger-text', 'error-text', 'destructive-text'],

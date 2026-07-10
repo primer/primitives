@@ -83,7 +83,7 @@
       },
     },
     red: {
-      $value: '{base.color.red.5}',
+      $value: '{base.color.red.9}',
       $type: 'color',
       $description: 'ANSI red for errors and alerts in terminal output',
       $extensions: {
@@ -101,7 +101,7 @@
       },
     },
     redBright: {
-      $value: '{base.color.red.6}',
+      $value: '{base.color.red.10}',
       $type: 'color',
       $description: 'ANSI bright red for highlighted errors in terminal',
       $extensions: {
@@ -436,7 +436,7 @@
         },
       },
       keyword: {
-        $value: '{base.color.red.5}',
+        $value: '{base.color.red.9}',
         $type: 'color',
         $description: 'Syntax highlighting color for language keywords (if, else, return)',
         $extensions: {
@@ -480,13 +480,13 @@
             dark: '{base.color.orange.2}',
             'dark-tritanopia': '{base.color.red.2}',
             'dark-tritanopia-high-contrast': '{base.color.red.2}',
-            'light-tritanopia': '{base.color.red.6}',
-            'light-tritanopia-high-contrast': '{base.color.red.6}',
+            'light-tritanopia': '{base.color.red.10}',
+            'light-tritanopia-high-contrast': '{base.color.red.10}',
           },
         },
       },
       bracketHighlighterUnmatched: {
-        $value: '{base.color.red.7}',
+        $value: '{base.color.red.11}',
         $type: 'color',
         $description: 'Syntax highlighting color for unmatched brackets',
         $extensions: {
@@ -611,7 +611,7 @@
           },
         },
         bg: {
-          $value: '{base.color.red.5}',
+          $value: '{base.color.red.9}',
           $type: 'color',
           $description: 'Background color for carriage return characters in diffs',
           $extensions: {
@@ -620,7 +620,7 @@
               group: 'syntax',
             },
             'org.primer.overrides': {
-              dark: '{base.color.red.6}',
+              dark: '{base.color.red.7}',
               'dark-protanopia-deuteranopia': '{base.color.orange.6}',
               'dark-protanopia-deuteranopia-high-contrast': '{base.color.orange.6}',
               'light-protanopia-deuteranopia': '{base.color.orange.5}',
@@ -750,7 +750,7 @@
         },
         deleted: {
           text: {
-            $value: '{base.color.red.7}',
+            $value: '{base.color.red.11}',
             $type: 'color',
             $description: 'Text color for deleted lines in diff views',
             $extensions: {
@@ -768,7 +768,7 @@
             },
           },
           bg: {
-            $value: '{base.color.red.0}',
+            $value: '{base.color.red.2}',
             $type: 'color',
             $description: 'Background color for deleted lines in diff views',
             $extensions: {
@@ -777,7 +777,7 @@
                 group: 'syntax',
               },
               'org.primer.overrides': {
-                dark: '{base.color.red.8}',
+                dark: '{base.color.red.10}',
                 'dark-protanopia-deuteranopia': '{base.color.orange.8}',
                 'dark-protanopia-deuteranopia-high-contrast': '{base.color.orange.8}',
                 'light-protanopia-deuteranopia': '{base.color.orange.0}',
@@ -847,8 +847,8 @@
                 dark: '{base.color.orange.0}',
                 'dark-tritanopia': '{base.color.red.0}',
                 'dark-tritanopia-high-contrast': '{base.color.red.0}',
-                'light-tritanopia': '{base.color.red.6}',
-                'light-tritanopia-high-contrast': '{base.color.red.6}',
+                'light-tritanopia': '{base.color.red.10}',
+                'light-tritanopia-high-contrast': '{base.color.red.10}',
               },
             },
           },
@@ -863,10 +863,10 @@
               },
               'org.primer.overrides': {
                 dark: '{base.color.orange.8}',
-                'dark-tritanopia': '{base.color.red.8}',
-                'dark-tritanopia-high-contrast': '{base.color.red.8}',
-                'light-tritanopia': '{base.color.red.1}',
-                'light-tritanopia-high-contrast': '{base.color.red.1}',
+                'dark-tritanopia': '{base.color.red.10}',
+                'dark-tritanopia-high-contrast': '{base.color.red.10}',
+                'light-tritanopia': '{base.color.red.3}',
+                'light-tritanopia-high-contrast': '{base.color.red.3}',
               },
             },
           },

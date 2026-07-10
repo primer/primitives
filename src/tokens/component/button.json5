@@ -1803,28 +1803,28 @@
             },
             'org.primer.overrides': {
               dark: {
-                '$value': '{base.color.red.6}'
+                '$value': '{base.color.red.7}'
               },
               'dark-protanopia-deuteranopia': {
                 '$value': '{base.color.orange.6}'
               },
               'dark-high-contrast': {
-                '$value': '{base.color.red.9}'
+                '$value': '{base.color.red.11}'
               },
               'dark-dimmed-high-contrast': {
-                '$value': '{base.color.red.7}'
+                '$value': '{base.color.red.9}'
               },
               'dark-protanopia-deuteranopia-high-contrast': {
                 '$value': '{base.color.orange.9}'
               },
               'dark-tritanopia-high-contrast': {
-                '$value': '{base.color.red.9}'
+                '$value': '{base.color.red.11}'
               }
             }
           }
         },
         active: {
-          '$value': '{base.color.red.6}',
+          '$value': '{base.color.red.10}',
           '$type': 'color',
           '$extensions': {
             'org.primer.figma': {
@@ -1935,7 +1935,7 @@
                 alpha: 1
               },
               'light-high-contrast': {
-                '$value': '{base.color.red.7}',
+                '$value': '{base.color.red.11}',
                 alpha: 1
               },
               'light-protanopia-deuteranopia-high-contrast': {
@@ -1943,7 +1943,7 @@
                 alpha: 1
               },
               'light-tritanopia-high-contrast': {
-                '$value': '{base.color.red.7}',
+                '$value': '{base.color.red.11}',
                 alpha: 1
               }
             }
@@ -1976,7 +1976,7 @@
         selected: {
           '$value': [
             {
-              color: '{base.color.red.9}',
+              color: '{base.color.red.13}',
               alpha: 0.2,
               offsetX: {
                 value: 0,
@@ -2423,7 +2423,7 @@
             },
             'org.primer.overrides': {
               dark: {
-                '$value': '{base.color.red.9}',
+                '$value': '{base.color.red.11}',
                 alpha: 0.2
               },
               'dark-high-contrast': {
