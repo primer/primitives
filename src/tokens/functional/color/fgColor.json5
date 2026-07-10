@@ -207,7 +207,7 @@
       },
     },
     accent: {
-      $value: '{base.color.blue.5}',
+      $value: '{base.color.blue.9}',
       $type: 'color',
       $description: 'Accent text for links and interactive elements',
       $extensions: {
@@ -226,9 +226,9 @@
           'dark-high-contrast': '#74B9FF',
           'dark-tritanopia-high-contrast': '#74B9FF',
           'dark-protanopia-deuteranopia-high-contrast': '#74B9FF',
-          'light-high-contrast': '{base.color.blue.6}',
-          'light-tritanopia-high-contrast': '{base.color.blue.6}',
-          'light-protanopia-deuteranopia-high-contrast': '{base.color.blue.6}',
+          'light-high-contrast': '{base.color.blue.10}',
+          'light-tritanopia-high-contrast': '{base.color.blue.10}',
+          'light-protanopia-deuteranopia-high-contrast': '{base.color.blue.10}',
         },
         'org.primer.llm': {
           usage: ['accent-text', 'info-text', 'accent-icon'],
@@ -255,14 +255,14 @@
           'dark-high-contrast': '#2BD853',
           'dark-dimmed-high-contrast': '{base.color.green.0}',
           'light-high-contrast': '#04591f', /* Custom hex between green.5 and green.6: level 5 fails 7:1 vs bgColor-muted, level 6 is too dark to visually differentiate status colors. Same approach as dark HC overrides (PR #1190). */
-          'dark-protanopia-deuteranopia': '{base.color.blue.3}',
+          'dark-protanopia-deuteranopia': '{base.color.blue.4}',
           'dark-protanopia-deuteranopia-high-contrast': '{base.color.blue.1}',
-          'light-protanopia-deuteranopia': '{base.color.blue.5}',
-          'light-protanopia-deuteranopia-high-contrast': '{base.color.blue.6}',
-          'dark-tritanopia': '{base.color.blue.3}',
-          'dark-tritanopia-high-contrast': '{base.color.blue.2}',
-          'light-tritanopia': '{base.color.blue.5}',
-          'light-tritanopia-high-contrast': '{base.color.blue.6}',
+          'light-protanopia-deuteranopia': '{base.color.blue.9}',
+          'light-protanopia-deuteranopia-high-contrast': '{base.color.blue.10}',
+          'dark-tritanopia': '{base.color.blue.4}',
+          'dark-tritanopia-high-contrast': '{base.color.blue.3}',
+          'light-tritanopia': '{base.color.blue.9}',
+          'light-tritanopia-high-contrast': '{base.color.blue.10}',
         },
         'org.primer.llm': {
           usage: ['success-text', 'positive-text', 'success-icon'],

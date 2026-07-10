@@ -272,7 +272,7 @@
     },
     accent: {
       muted: {
-        $value: '{base.color.blue.0}',
+        $value: '{base.color.blue.1}',
         $type: 'color',
         $description: 'Subtle accent background for informational or selected elements',
         $extensions: {
@@ -286,7 +286,7 @@
           },
           'org.primer.overrides': {
             dark: {
-              $value: '{base.color.blue.4}',
+              $value: '{base.color.blue.5}',
               alpha: 0.1,
             },
           },
@@ -297,7 +297,7 @@
         },
       },
       emphasis: {
-        $value: '{base.color.blue.5}',
+        $value: '{base.color.blue.9}',
         $type: 'color',
         $description: 'Strong accent background for active states and focused states',
         $extensions: {
@@ -310,11 +310,11 @@
             },
           },
           'org.primer.overrides': {
-            dark: '{base.color.blue.5}',
-            'dark-high-contrast': '{base.color.blue.9}',
-            'dark-dimmed-high-contrast': '{base.color.blue.7}',
-            'dark-tritanopia-high-contrast': '{base.color.blue.9}',
-            'dark-protanopia-deuteranopia-high-contrast': '{base.color.blue.9}',
+            dark: '{base.color.blue.6}',
+            'dark-high-contrast': '{base.color.blue.11}',
+            'dark-dimmed-high-contrast': '{base.color.blue.9}',
+            'dark-tritanopia-high-contrast': '{base.color.blue.11}',
+            'dark-protanopia-deuteranopia-high-contrast': '{base.color.blue.11}',
           },
           'org.primer.llm': {
             usage: ['active-states', 'current', 'selected', 'active-toggle'],
@@ -342,24 +342,24 @@
               $value: '{base.color.green.4}',
               alpha: 0.15,
             },
-            'light-tritanopia': '{base.color.blue.0}',
-            'light-tritanopia-high-contrast': '{base.color.blue.0}',
+            'light-tritanopia': '{base.color.blue.1}',
+            'light-tritanopia-high-contrast': '{base.color.blue.1}',
             'dark-tritanopia': {
-              $value: '{base.color.blue.4}',
+              $value: '{base.color.blue.5}',
               alpha: 0.15,
             },
             'dark-tritanopia-high-contrast': {
-              $value: '{base.color.blue.4}',
+              $value: '{base.color.blue.5}',
               alpha: 0.15,
             },
-            'light-protanopia-deuteranopia': '{base.color.blue.0}',
-            'light-protanopia-deuteranopia-high-contrast': '{base.color.blue.0}',
+            'light-protanopia-deuteranopia': '{base.color.blue.1}',
+            'light-protanopia-deuteranopia-high-contrast': '{base.color.blue.1}',
             'dark-protanopia-deuteranopia': {
-              $value: '{base.color.blue.4}',
+              $value: '{base.color.blue.5}',
               alpha: 0.2,
             },
             'dark-protanopia-deuteranopia-high-contrast': {
-              $value: '{base.color.blue.4}',
+              $value: '{base.color.blue.5}',
               alpha: 0.2,
             },
           },
@@ -388,14 +388,14 @@
           },
           'org.primer.overrides': {
             dark: '{base.color.green.5}',
-            'light-tritanopia': '{base.color.blue.5}',
-            'light-tritanopia-high-contrast': '{base.color.blue.5}',
-            'dark-tritanopia': '{base.color.blue.5}',
-            'dark-tritanopia-high-contrast': '{base.color.blue.9}',
-            'light-protanopia-deuteranopia': '{base.color.blue.5}',
-            'light-protanopia-deuteranopia-high-contrast': '{base.color.blue.5}',
-            'dark-protanopia-deuteranopia': '{base.color.blue.5}',
-            'dark-protanopia-deuteranopia-high-contrast': '{base.color.blue.9}',
+            'light-tritanopia': '{base.color.blue.9}',
+            'light-tritanopia-high-contrast': '{base.color.blue.9}',
+            'dark-tritanopia': '{base.color.blue.6}',
+            'dark-tritanopia-high-contrast': '{base.color.blue.11}',
+            'light-protanopia-deuteranopia': '{base.color.blue.9}',
+            'light-protanopia-deuteranopia-high-contrast': '{base.color.blue.9}',
+            'dark-protanopia-deuteranopia': '{base.color.blue.6}',
+            'dark-protanopia-deuteranopia-high-contrast': '{base.color.blue.11}',
             'light-high-contrast': '{base.color.green.5}',
             'dark-high-contrast': '{base.color.green.9}',
             'dark-dimmed-high-contrast': '{base.color.green.7}',

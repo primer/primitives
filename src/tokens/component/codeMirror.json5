@@ -121,19 +121,19 @@
           'org.primer.overrides': {
             dark: '{borderColor.accent.muted}',
             'dark-high-contrast': {
-              $value: '{base.color.blue.4}',
+              $value: '{base.color.blue.5}',
               alpha: 0.4,
             },
             'dark-dimmed-high-contrast': {
-              $value: '{base.color.blue.4}',
+              $value: '{base.color.blue.5}',
               alpha: 0.4,
             },
             'dark-tritanopia-high-contrast': {
-              $value: '{base.color.blue.4}',
+              $value: '{base.color.blue.5}',
               alpha: 0.4,
             },
             'dark-protanopia-deuteranopia-high-contrast': {
-              $value: '{base.color.blue.4}',
+              $value: '{base.color.blue.5}',
               alpha: 0.4,
             },
           },
@@ -205,7 +205,7 @@
           },
         },
         constant: {
-          $value: '{base.color.blue.6}',
+          $value: '{base.color.blue.10}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -214,7 +214,7 @@
               scopes: ['fgColor'],
             },
             'org.primer.overrides': {
-              dark: '{base.color.blue.2}',
+              dark: '{base.color.blue.3}',
             },
           },
         },
@@ -269,7 +269,7 @@
           },
         },
         string: {
-          $value: '{base.color.blue.8}',
+          $value: '{base.color.blue.12}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -283,7 +283,7 @@
           },
         },
         support: {
-          $value: '{base.color.blue.6}',
+          $value: '{base.color.blue.10}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -292,7 +292,7 @@
               scopes: ['fgColor'],
             },
             'org.primer.overrides': {
-              dark: '{base.color.blue.2}',
+              dark: '{base.color.blue.3}',
             },
           },
         },
