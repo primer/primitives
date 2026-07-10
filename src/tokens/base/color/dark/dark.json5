@@ -56,7 +56,11 @@
       },
       neutral: {
         '0': {
-          $value: '{base.color.black}',
+          $value: {
+            colorSpace: 'hsl',
+            components: [140, 20, 2.9],
+            hex: '#060907',
+          },
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -67,8 +71,8 @@
         '1': {
           $value: {
             colorSpace: 'hsl',
-            components: [216, 27.8, 7.1],
-            hex: '#0D1117',
+            components: [140, 16.7, 7.1],
+            hex: '#0F1511',
           },
           $type: 'color',
           $extensions: {
@@ -80,8 +84,8 @@
         '2': {
           $value: {
             colorSpace: 'hsl',
-            components: [214.3, 25, 11],
-            hex: '#151B23',
+            components: [140, 10.7, 11],
+            hex: '#191F1B',
           },
           $type: 'color',
           $extensions: {
@@ -93,8 +97,8 @@
         '3': {
           $value: {
             colorSpace: 'hsl',
-            components: [212, 18.5, 15.9],
-            hex: '#212830',
+            components: [140, 7.5, 15.7],
+            hex: '#252B27',
           },
           $type: 'color',
           $extensions: {
@@ -106,8 +110,8 @@
         '4': {
           $value: {
             colorSpace: 'hsl',
-            components: [217.5, 17.4, 18],
-            hex: '#262C36',
+            components: [137.1, 6.2, 22.2],
+            hex: '#353C37',
           },
           $type: 'color',
           $extensions: {
@@ -119,8 +123,8 @@
         '5': {
           $value: {
             colorSpace: 'hsl',
-            components: [216.7, 17.6, 20],
-            hex: '#2A313C',
+            components: [140, 7.1, 24.9],
+            hex: '#3B443E',
           },
           $type: 'color',
           $extensions: {
@@ -132,8 +136,8 @@
         '6': {
           $value: {
             colorSpace: 'hsl',
-            components: [214.7, 16.8, 22.2],
-            hex: '#2F3742',
+            components: [133.3, 6.3, 28],
+            hex: '#434C45',
           },
           $type: 'color',
           $extensions: {
@@ -145,8 +149,8 @@
         '7': {
           $value: {
             colorSpace: 'hsl',
-            components: [213.8, 11.6, 27.1],
-            hex: '#3D444D',
+            components: [133.3, 5.5, 32.4],
+            hex: '#4E5750',
           },
           $type: 'color',
           $extensions: {
@@ -158,8 +162,8 @@
         '8': {
           $value: {
             colorSpace: 'hsl',
-            components: [215.3, 7.8, 42.9],
-            hex: '#656C76',
+            components: [136.4, 5.9, 36.7],
+            hex: '#58635B',
           },
           $type: 'color',
           $extensions: {
@@ -171,8 +175,8 @@
         '9': {
           $value: {
             colorSpace: 'hsl',
-            components: [213.8, 7.8, 60],
-            hex: '#9198A1',
+            components: [135, 5.3, 44.7],
+            hex: '#6C786F',
           },
           $type: 'color',
           $extensions: {
@@ -184,8 +188,8 @@
         '10': {
           $value: {
             colorSpace: 'hsl',
-            components: [218.8, 13.4, 75.1],
-            hex: '#B7BDC8',
+            components: [135, 6.5, 63.5],
+            hex: '#9CA89F',
           },
           $type: 'color',
           $extensions: {
@@ -197,8 +201,8 @@
         '11': {
           $value: {
             colorSpace: 'hsl',
-            components: [216, 19.5, 84.9],
-            hex: '#D1D7E0',
+            components: [140, 9.2, 74.5],
+            hex: '#B8C4BC',
           },
           $type: 'color',
           $extensions: {
@@ -210,8 +214,8 @@
         '12': {
           $value: {
             colorSpace: 'hsl',
-            components: [210, 66.7, 96.5],
-            hex: '#F0F6FC',
+            components: [130.9, 11.8, 81.8],
+            hex: '#CBD6CD',
           },
           $type: 'color',
           $extensions: {
@@ -221,7 +225,11 @@
           },
         },
         '13': {
-          $value: '{base.color.white}',
+          $value: {
+            colorSpace: 'hsl',
+            components: [132, 13.9, 85.9],
+            hex: '#D6E0D8',
+          },
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -229,8 +237,20 @@
             },
           },
         },
-      },
-      blue: {
+        '14': {
+          $value: {
+            colorSpace: 'hsl',
+            components: [137.1, 18.9, 92.7],
+            hex: '#E9F0EB',
+          },
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'base/color/dark',
+            },
+          },
+        },
+      },      blue: {
         '0': {
           $value: {
             colorSpace: 'hsl',
