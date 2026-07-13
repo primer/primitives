@@ -872,7 +872,7 @@
     },
     sponsors: {
       muted: {
-        $value: '{base.color.pink.0}',
+        $value: '{base.color.pink.1}',
         $type: 'color',
         $description: 'Subtle background for GitHub Sponsors content',
         $extensions: {
@@ -897,6 +897,9 @@
               },
               alpha: 0.1,
             },
+            'light-high-contrast': '{base.color.pink.0}',
+            'light-tritanopia-high-contrast': '{base.color.pink.0}',
+            'light-protanopia-deuteranopia-high-contrast': '{base.color.pink.0}',
           },
           'org.primer.llm': {
             usage: ['sponsor-card', 'sponsor-highlight', 'funding-prompt'],
@@ -905,7 +908,7 @@
         },
       },
       emphasis: {
-        $value: '{base.color.pink.5}',
+        $value: '{base.color.pink.9}',
         $type: 'color',
         $description: 'Strong background for prominent GitHub Sponsors elements',
         $extensions: {
@@ -918,6 +921,10 @@
             },
           },
           'org.primer.overrides': {
+            dark: '{base.color.pink.5}',
+            'light-high-contrast': '{base.color.pink.5}',
+            'light-tritanopia-high-contrast': '{base.color.pink.5}',
+            'light-protanopia-deuteranopia-high-contrast': '{base.color.pink.5}',
             'dark-high-contrast': '{base.color.pink.9}',
             'dark-dimmed-high-contrast': '{base.color.pink.7}',
             'dark-tritanopia-high-contrast': '{base.color.pink.9}',

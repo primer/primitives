@@ -1044,7 +1044,7 @@
     },
     sponsors: {
       muted: {
-        $value: '{base.color.pink.3}',
+        $value: '{base.color.pink.5}',
         $type: 'color',
         $description: 'Subtle border for GitHub Sponsors content',
         $extensions: {
@@ -1095,7 +1095,7 @@
         alpha: 0.4,
       },
       emphasis: {
-        $value: '{base.color.pink.5}',
+        $value: '{base.color.pink.9}',
         $type: 'color',
         $description: 'Strong border for prominent GitHub Sponsors elements',
         $extensions: {
@@ -1108,6 +1108,10 @@
             },
           },
           'org.primer.overrides': {
+            dark: '{base.color.pink.5}',
+            'light-high-contrast': '{base.color.pink.5}',
+            'light-tritanopia-high-contrast': '{base.color.pink.5}',
+            'light-protanopia-deuteranopia-high-contrast': '{base.color.pink.5}',
             'dark-dimmed-high-contrast': '{base.color.pink.3}',
           },
           'org.primer.llm': {
