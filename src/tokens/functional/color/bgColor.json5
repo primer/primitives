@@ -370,11 +370,7 @@
         },
       },
       emphasis: {
-        $value: {
-          colorSpace: 'hsl',
-          components: [137.1, 62.9, 32.7],
-          hex: '#1f883d',
-        },
+        $value: '{base.color.green.8}',
         $type: 'color',
         $description: 'Strong success background for prominent positive actions',
         $extensions: {
