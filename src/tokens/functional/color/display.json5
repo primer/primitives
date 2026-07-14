@@ -532,28 +532,6 @@
     orange: {
       scale: {
         '0': {
-          $value: '{base.display.color.orange.0}',
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              group: 'component',
-              scopes: ['bgColor', 'borderColor'],
-            },
-          },
-        },
-        '1': {
-          $value: '{base.display.color.orange.1}',
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              group: 'component',
-              scopes: ['bgColor', 'borderColor'],
-            },
-          },
-        },
-        '2': {
           $value: '{base.display.color.orange.2}',
           $type: 'color',
           $extensions: {
@@ -564,18 +542,7 @@
             },
           },
         },
-        '3': {
-          $value: '{base.display.color.orange.3}',
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              group: 'component',
-              scopes: ['bgColor', 'borderColor'],
-            },
-          },
-        },
-        '4': {
+        '1': {
           $value: '{base.display.color.orange.4}',
           $type: 'color',
           $extensions: {
@@ -586,236 +553,8 @@
             },
           },
         },
-        '5': {
-          $value: '{base.display.color.orange.5}',
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              group: 'component',
-              scopes: ['bgColor', 'borderColor'],
-            },
-          },
-        },
-        '6': {
-          $value: '{base.display.color.orange.6}',
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              group: 'component',
-              scopes: ['bgColor', 'borderColor'],
-            },
-          },
-        },
-        '7': {
-          $value: '{base.display.color.orange.7}',
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              group: 'component',
-              scopes: ['bgColor', 'borderColor'],
-            },
-          },
-        },
-        '8': {
-          $value: '{base.display.color.orange.8}',
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              group: 'component',
-              scopes: ['bgColor', 'borderColor'],
-            },
-          },
-        },
-        '9': {
-          $value: '{base.display.color.orange.9}',
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              group: 'component',
-              scopes: ['bgColor', 'borderColor'],
-            },
-          },
-        },
-      },
-      bgColor: {
-        muted: {
-          $value: '{base.display.color.orange.0}',
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              group: 'component',
-              scopes: ['bgColor'],
-            },
-            'org.primer.overrides': {
-              dark: {
-                $value: '{base.display.color.orange.0}',
-              },
-            },
-          },
-        },
-        emphasis: {
-          $value: '{base.display.color.orange.5}',
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              group: 'component',
-              scopes: ['bgColor'],
-            },
-            'org.primer.overrides': {
-              dark: {
-                $value: '{base.display.color.orange.4}',
-              },
-              'light-high-contrast': {
-                $value: '{base.display.color.orange.7}',
-              },
-              'light-protanopia-deuteranopia-high-contrast': {
-                $value: '{base.display.color.orange.7}',
-              },
-              'light-tritanopia-high-contrast': {
-                $value: '{base.display.color.orange.7}',
-              },
-              'dark-high-contrast': {
-                $value: '{base.display.color.orange.3}',
-              },
-              'dark-dimmed-high-contrast': {
-                $value: '{base.display.color.orange.3}',
-              },
-              'dark-protanopia-deuteranopia-high-contrast': {
-                $value: '{base.display.color.orange.3}',
-              },
-              'dark-tritanopia-high-contrast': {
-                $value: '{base.display.color.orange.3}',
-              },
-            },
-          },
-        },
-      },
-      fgColor: {
-        $value: '{base.display.color.orange.6}',
-        $type: 'color',
-        $extensions: {
-          'org.primer.figma': {
-            collection: 'mode',
-            group: 'component',
-            scopes: ['fgColor'],
-          },
-          'org.primer.overrides': {
-            dark: {
-              $value: '{base.display.color.orange.6}',
-            },
-            'light-high-contrast': {
-              $value: '{base.display.color.orange.8}',
-            },
-            'light-protanopia-deuteranopia-high-contrast': {
-              $value: '{base.display.color.orange.8}',
-            },
-            'light-tritanopia-high-contrast': {
-              $value: '{base.display.color.orange.8}',
-            },
-            'dark-high-contrast': {
-              $value: '{base.display.color.orange.8}',
-            },
-            'dark-dimmed-high-contrast': {
-              $value: '{base.display.color.orange.8}',
-            },
-            'dark-protanopia-deuteranopia-high-contrast': {
-              $value: '{base.display.color.orange.8}',
-            },
-            'dark-tritanopia-high-contrast': {
-              $value: '{base.display.color.orange.8}',
-            },
-          },
-        },
-      },
-      borderColor: {
-        muted: {
-          $value: '{base.display.color.orange.1}',
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              group: 'component',
-              scopes: ['borderColor'],
-            },
-            'org.primer.overrides': {
-              dark: {
-                $value: '{base.display.color.orange.1}',
-              },
-            },
-          },
-        },
-        emphasis: {
-          $value: '{base.display.color.orange.5}',
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              group: 'component',
-              scopes: ['borderColor'],
-            },
-            'org.primer.overrides': {
-              dark: {
-                $value: '{base.display.color.orange.5}',
-              },
-              'light-high-contrast': {
-                $value: '{base.display.color.orange.6}',
-              },
-              'light-protanopia-deuteranopia-high-contrast': {
-                $value: '{base.display.color.orange.6}',
-              },
-              'light-tritanopia-high-contrast': {
-                $value: '{base.display.color.orange.6}',
-              },
-              'dark-high-contrast': {
-                $value: '{base.display.color.orange.6}',
-              },
-              'dark-dimmed-high-contrast': {
-                $value: '{base.display.color.orange.6}',
-              },
-              'dark-protanopia-deuteranopia-high-contrast': {
-                $value: '{base.display.color.orange.6}',
-              },
-              'dark-tritanopia-high-contrast': {
-                $value: '{base.display.color.orange.6}',
-              },
-            },
-          },
-        },
-      },
-    },
-    purple: {
-      scale: {
-        '0': {
-          $value: '{base.display.color.purple.0}',
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              group: 'component',
-              scopes: ['bgColor', 'borderColor'],
-            },
-          },
-        },
-        '1': {
-          $value: '{base.display.color.purple.1}',
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              group: 'component',
-              scopes: ['bgColor', 'borderColor'],
-            },
-          },
-        },
         '2': {
-          $value: '{base.display.color.purple.2}',
+          $value: '{base.display.color.orange.5}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -826,7 +565,7 @@
           },
         },
         '3': {
-          $value: '{base.display.color.purple.3}',
+          $value: '{base.display.color.orange.7}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -837,7 +576,7 @@
           },
         },
         '4': {
-          $value: '{base.display.color.purple.4}',
+          $value: '{base.display.color.orange.8}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -848,7 +587,7 @@
           },
         },
         '5': {
-          $value: '{base.display.color.purple.5}',
+          $value: '{base.display.color.orange.9}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -859,7 +598,7 @@
           },
         },
         '6': {
-          $value: '{base.display.color.purple.6}',
+          $value: '{base.display.color.orange.10}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -870,7 +609,7 @@
           },
         },
         '7': {
-          $value: '{base.display.color.purple.7}',
+          $value: '{base.display.color.orange.11}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -881,7 +620,7 @@
           },
         },
         '8': {
-          $value: '{base.display.color.purple.8}',
+          $value: '{base.display.color.orange.12}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -892,7 +631,7 @@
           },
         },
         '9': {
-          $value: '{base.display.color.purple.9}',
+          $value: '{base.display.color.orange.13}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -905,7 +644,7 @@
       },
       bgColor: {
         muted: {
-          $value: '{base.display.color.purple.0}',
+          $value: '{base.display.color.orange.2}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -915,13 +654,13 @@
             },
             'org.primer.overrides': {
               dark: {
-                $value: '{base.display.color.purple.0}',
+                $value: '{base.display.color.orange.2}',
               },
             },
           },
         },
         emphasis: {
-          $value: '{base.display.color.purple.5}',
+          $value: '{base.display.color.orange.9}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -931,35 +670,35 @@
             },
             'org.primer.overrides': {
               dark: {
-                $value: '{base.display.color.purple.4}',
+                $value: '{base.display.color.orange.8}',
               },
               'light-high-contrast': {
-                $value: '{base.display.color.purple.7}',
+                $value: '{base.display.color.orange.11}',
               },
               'light-protanopia-deuteranopia-high-contrast': {
-                $value: '{base.display.color.purple.7}',
+                $value: '{base.display.color.orange.11}',
               },
               'light-tritanopia-high-contrast': {
-                $value: '{base.display.color.purple.7}',
+                $value: '{base.display.color.orange.11}',
               },
               'dark-high-contrast': {
-                $value: '{base.display.color.purple.3}',
+                $value: '{base.display.color.orange.6}',
               },
               'dark-dimmed-high-contrast': {
-                $value: '{base.display.color.purple.3}',
+                $value: '{base.display.color.orange.6}',
               },
               'dark-protanopia-deuteranopia-high-contrast': {
-                $value: '{base.display.color.purple.3}',
+                $value: '{base.display.color.orange.6}',
               },
               'dark-tritanopia-high-contrast': {
-                $value: '{base.display.color.purple.3}',
+                $value: '{base.display.color.orange.6}',
               },
             },
           },
         },
       },
       fgColor: {
-        $value: '{base.display.color.purple.6}',
+        $value: '{base.display.color.orange.10}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -969,35 +708,35 @@
           },
           'org.primer.overrides': {
             dark: {
-              $value: '{base.display.color.purple.6}',
+              $value: '{base.display.color.orange.10}',
             },
             'light-high-contrast': {
-              $value: '{base.display.color.purple.8}',
+              $value: '{base.display.color.orange.12}',
             },
             'light-protanopia-deuteranopia-high-contrast': {
-              $value: '{base.display.color.purple.8}',
+              $value: '{base.display.color.orange.12}',
             },
             'light-tritanopia-high-contrast': {
-              $value: '{base.display.color.purple.8}',
+              $value: '{base.display.color.orange.12}',
             },
             'dark-high-contrast': {
-              $value: '{base.display.color.purple.8}',
+              $value: '{base.display.color.orange.12}',
             },
             'dark-dimmed-high-contrast': {
-              $value: '{base.display.color.purple.8}',
+              $value: '{base.display.color.orange.12}',
             },
             'dark-protanopia-deuteranopia-high-contrast': {
-              $value: '{base.display.color.purple.8}',
+              $value: '{base.display.color.orange.12}',
             },
             'dark-tritanopia-high-contrast': {
-              $value: '{base.display.color.purple.8}',
+              $value: '{base.display.color.orange.12}',
             },
           },
         },
       },
       borderColor: {
         muted: {
-          $value: '{base.display.color.purple.1}',
+          $value: '{base.display.color.orange.4}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -1007,32 +746,201 @@
             },
             'org.primer.overrides': {
               dark: {
-                $value: '{base.display.color.purple.1}',
+                $value: '{base.display.color.orange.4}',
               },
             },
           },
         },
         emphasis: {
+          $value: '{base.display.color.orange.9}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component',
+              scopes: ['borderColor'],
+            },
+            'org.primer.overrides': {
+              dark: {
+                $value: '{base.display.color.orange.9}',
+              },
+              'light-high-contrast': {
+                $value: '{base.display.color.orange.10}',
+              },
+              'light-protanopia-deuteranopia-high-contrast': {
+                $value: '{base.display.color.orange.10}',
+              },
+              'light-tritanopia-high-contrast': {
+                $value: '{base.display.color.orange.10}',
+              },
+              'dark-high-contrast': {
+                $value: '{base.display.color.orange.10}',
+              },
+              'dark-dimmed-high-contrast': {
+                $value: '{base.display.color.orange.10}',
+              },
+              'dark-protanopia-deuteranopia-high-contrast': {
+                $value: '{base.display.color.orange.10}',
+              },
+              'dark-tritanopia-high-contrast': {
+                $value: '{base.display.color.orange.10}',
+              },
+            },
+          },
+        },
+      },
+    },
+    purple: {
+      scale: {
+        '0': {
+          $value: '{base.display.color.purple.2}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component',
+              scopes: ['bgColor', 'borderColor'],
+            },
+          },
+        },
+        '1': {
+          $value: '{base.display.color.purple.3}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component',
+              scopes: ['bgColor', 'borderColor'],
+            },
+          },
+        },
+        '2': {
           $value: '{base.display.color.purple.5}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: ['borderColor'],
+              scopes: ['bgColor', 'borderColor'],
+            },
+          },
+        },
+        '3': {
+          $value: '{base.display.color.purple.6}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component',
+              scopes: ['bgColor', 'borderColor'],
+            },
+          },
+        },
+        '4': {
+          $value: '{base.display.color.purple.8}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component',
+              scopes: ['bgColor', 'borderColor'],
+            },
+          },
+        },
+        '5': {
+          $value: '{base.display.color.purple.9}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component',
+              scopes: ['bgColor', 'borderColor'],
+            },
+          },
+        },
+        '6': {
+          $value: '{base.display.color.purple.10}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component',
+              scopes: ['bgColor', 'borderColor'],
+            },
+          },
+        },
+        '7': {
+          $value: '{base.display.color.purple.11}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component',
+              scopes: ['bgColor', 'borderColor'],
+            },
+          },
+        },
+        '8': {
+          $value: '{base.display.color.purple.12}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component',
+              scopes: ['bgColor', 'borderColor'],
+            },
+          },
+        },
+        '9': {
+          $value: '{base.display.color.purple.13}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component',
+              scopes: ['bgColor', 'borderColor'],
+            },
+          },
+        },
+      },
+      bgColor: {
+        muted: {
+          $value: '{base.display.color.purple.2}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component',
+              scopes: ['bgColor'],
             },
             'org.primer.overrides': {
               dark: {
-                $value: '{base.display.color.purple.5}',
+                $value: '{base.display.color.purple.2}',
+              },
+            },
+          },
+        },
+        emphasis: {
+          $value: '{base.display.color.purple.9}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component',
+              scopes: ['bgColor'],
+            },
+            'org.primer.overrides': {
+              dark: {
+                $value: '{base.display.color.purple.8}',
               },
               'light-high-contrast': {
-                $value: '{base.display.color.purple.6}',
+                $value: '{base.display.color.purple.11}',
               },
               'light-protanopia-deuteranopia-high-contrast': {
-                $value: '{base.display.color.purple.6}',
+                $value: '{base.display.color.purple.11}',
               },
               'light-tritanopia-high-contrast': {
-                $value: '{base.display.color.purple.6}',
+                $value: '{base.display.color.purple.11}',
               },
               'dark-high-contrast': {
                 $value: '{base.display.color.purple.6}',
@@ -1045,6 +953,98 @@
               },
               'dark-tritanopia-high-contrast': {
                 $value: '{base.display.color.purple.6}',
+              },
+            },
+          },
+        },
+      },
+      fgColor: {
+        $value: '{base.display.color.purple.10}',
+        $type: 'color',
+        $extensions: {
+          'org.primer.figma': {
+            collection: 'mode',
+            group: 'component',
+            scopes: ['fgColor'],
+          },
+          'org.primer.overrides': {
+            dark: {
+              $value: '{base.display.color.purple.10}',
+            },
+            'light-high-contrast': {
+              $value: '{base.display.color.purple.12}',
+            },
+            'light-protanopia-deuteranopia-high-contrast': {
+              $value: '{base.display.color.purple.12}',
+            },
+            'light-tritanopia-high-contrast': {
+              $value: '{base.display.color.purple.12}',
+            },
+            'dark-high-contrast': {
+              $value: '{base.display.color.purple.12}',
+            },
+            'dark-dimmed-high-contrast': {
+              $value: '{base.display.color.purple.12}',
+            },
+            'dark-protanopia-deuteranopia-high-contrast': {
+              $value: '{base.display.color.purple.12}',
+            },
+            'dark-tritanopia-high-contrast': {
+              $value: '{base.display.color.purple.12}',
+            },
+          },
+        },
+      },
+      borderColor: {
+        muted: {
+          $value: '{base.display.color.purple.3}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component',
+              scopes: ['borderColor'],
+            },
+            'org.primer.overrides': {
+              dark: {
+                $value: '{base.display.color.purple.3}',
+              },
+            },
+          },
+        },
+        emphasis: {
+          $value: '{base.display.color.purple.9}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component',
+              scopes: ['borderColor'],
+            },
+            'org.primer.overrides': {
+              dark: {
+                $value: '{base.display.color.purple.9}',
+              },
+              'light-high-contrast': {
+                $value: '{base.display.color.purple.10}',
+              },
+              'light-protanopia-deuteranopia-high-contrast': {
+                $value: '{base.display.color.purple.10}',
+              },
+              'light-tritanopia-high-contrast': {
+                $value: '{base.display.color.purple.10}',
+              },
+              'dark-high-contrast': {
+                $value: '{base.display.color.purple.10}',
+              },
+              'dark-dimmed-high-contrast': {
+                $value: '{base.display.color.purple.10}',
+              },
+              'dark-protanopia-deuteranopia-high-contrast': {
+                $value: '{base.display.color.purple.10}',
+              },
+              'dark-tritanopia-high-contrast': {
+                $value: '{base.display.color.purple.10}',
               },
             },
           },
@@ -1892,28 +1892,6 @@
     yellow: {
       scale: {
         '0': {
-          $value: '{base.display.color.yellow.0}',
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              group: 'component',
-              scopes: ['bgColor', 'borderColor'],
-            },
-          },
-        },
-        '1': {
-          $value: '{base.display.color.yellow.1}',
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              group: 'component',
-              scopes: ['bgColor', 'borderColor'],
-            },
-          },
-        },
-        '2': {
           $value: '{base.display.color.yellow.2}',
           $type: 'color',
           $extensions: {
@@ -1924,18 +1902,7 @@
             },
           },
         },
-        '3': {
-          $value: '{base.display.color.yellow.3}',
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              group: 'component',
-              scopes: ['bgColor', 'borderColor'],
-            },
-          },
-        },
-        '4': {
+        '1': {
           $value: '{base.display.color.yellow.4}',
           $type: 'color',
           $extensions: {
@@ -1946,7 +1913,7 @@
             },
           },
         },
-        '5': {
+        '2': {
           $value: '{base.display.color.yellow.5}',
           $type: 'color',
           $extensions: {
@@ -1957,18 +1924,7 @@
             },
           },
         },
-        '6': {
-          $value: '{base.display.color.yellow.6}',
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              group: 'component',
-              scopes: ['bgColor', 'borderColor'],
-            },
-          },
-        },
-        '7': {
+        '3': {
           $value: '{base.display.color.yellow.7}',
           $type: 'color',
           $extensions: {
@@ -1979,7 +1935,7 @@
             },
           },
         },
-        '8': {
+        '4': {
           $value: '{base.display.color.yellow.8}',
           $type: 'color',
           $extensions: {
@@ -1990,8 +1946,52 @@
             },
           },
         },
-        '9': {
+        '5': {
           $value: '{base.display.color.yellow.9}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component',
+              scopes: ['bgColor', 'borderColor'],
+            },
+          },
+        },
+        '6': {
+          $value: '{base.display.color.yellow.10}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component',
+              scopes: ['bgColor', 'borderColor'],
+            },
+          },
+        },
+        '7': {
+          $value: '{base.display.color.yellow.11}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component',
+              scopes: ['bgColor', 'borderColor'],
+            },
+          },
+        },
+        '8': {
+          $value: '{base.display.color.yellow.12}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component',
+              scopes: ['bgColor', 'borderColor'],
+            },
+          },
+        },
+        '9': {
+          $value: '{base.display.color.yellow.13}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -2004,7 +2004,7 @@
       },
       bgColor: {
         muted: {
-          $value: '{base.display.color.yellow.0}',
+          $value: '{base.display.color.yellow.2}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -2014,13 +2014,13 @@
             },
             'org.primer.overrides': {
               dark: {
-                $value: '{base.display.color.yellow.0}',
+                $value: '{base.display.color.yellow.2}',
               },
             },
           },
         },
         emphasis: {
-          $value: '{base.display.color.yellow.5}',
+          $value: '{base.display.color.yellow.9}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -2030,35 +2030,35 @@
             },
             'org.primer.overrides': {
               dark: {
-                $value: '{base.display.color.yellow.4}',
+                $value: '{base.display.color.yellow.8}',
               },
               'light-high-contrast': {
-                $value: '{base.display.color.yellow.7}',
+                $value: '{base.display.color.yellow.11}',
               },
               'light-protanopia-deuteranopia-high-contrast': {
-                $value: '{base.display.color.yellow.7}',
+                $value: '{base.display.color.yellow.11}',
               },
               'light-tritanopia-high-contrast': {
-                $value: '{base.display.color.yellow.7}',
+                $value: '{base.display.color.yellow.11}',
               },
               'dark-high-contrast': {
-                $value: '{base.display.color.yellow.3}',
+                $value: '{base.display.color.yellow.6}',
               },
               'dark-dimmed-high-contrast': {
-                $value: '{base.display.color.yellow.3}',
+                $value: '{base.display.color.yellow.6}',
               },
               'dark-protanopia-deuteranopia-high-contrast': {
-                $value: '{base.display.color.yellow.3}',
+                $value: '{base.display.color.yellow.6}',
               },
               'dark-tritanopia-high-contrast': {
-                $value: '{base.display.color.yellow.3}',
+                $value: '{base.display.color.yellow.6}',
               },
             },
           },
         },
       },
       fgColor: {
-        $value: '{base.display.color.yellow.6}',
+        $value: '{base.display.color.yellow.10}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -2068,35 +2068,35 @@
           },
           'org.primer.overrides': {
             dark: {
-              $value: '{base.display.color.yellow.6}',
+              $value: '{base.display.color.yellow.10}',
             },
             'light-high-contrast': {
-              $value: '{base.display.color.yellow.8}',
+              $value: '{base.display.color.yellow.12}',
             },
             'light-protanopia-deuteranopia-high-contrast': {
-              $value: '{base.display.color.yellow.8}',
+              $value: '{base.display.color.yellow.12}',
             },
             'light-tritanopia-high-contrast': {
-              $value: '{base.display.color.yellow.8}',
+              $value: '{base.display.color.yellow.12}',
             },
             'dark-high-contrast': {
-              $value: '{base.display.color.yellow.8}',
+              $value: '{base.display.color.yellow.12}',
             },
             'dark-dimmed-high-contrast': {
-              $value: '{base.display.color.yellow.8}',
+              $value: '{base.display.color.yellow.12}',
             },
             'dark-protanopia-deuteranopia-high-contrast': {
-              $value: '{base.display.color.yellow.8}',
+              $value: '{base.display.color.yellow.12}',
             },
             'dark-tritanopia-high-contrast': {
-              $value: '{base.display.color.yellow.8}',
+              $value: '{base.display.color.yellow.12}',
             },
           },
         },
       },
       borderColor: {
         muted: {
-          $value: '{base.display.color.yellow.1}',
+          $value: '{base.display.color.yellow.4}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -2106,13 +2106,13 @@
             },
             'org.primer.overrides': {
               dark: {
-                $value: '{base.display.color.yellow.1}',
+                $value: '{base.display.color.yellow.4}',
               },
             },
           },
         },
         emphasis: {
-          $value: '{base.display.color.yellow.5}',
+          $value: '{base.display.color.yellow.9}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -2122,28 +2122,28 @@
             },
             'org.primer.overrides': {
               dark: {
-                $value: '{base.display.color.yellow.5}',
+                $value: '{base.display.color.yellow.9}',
               },
               'light-high-contrast': {
-                $value: '{base.display.color.yellow.6}',
+                $value: '{base.display.color.yellow.10}',
               },
               'light-protanopia-deuteranopia-high-contrast': {
-                $value: '{base.display.color.yellow.6}',
+                $value: '{base.display.color.yellow.10}',
               },
               'light-tritanopia-high-contrast': {
-                $value: '{base.display.color.yellow.6}',
+                $value: '{base.display.color.yellow.10}',
               },
               'dark-high-contrast': {
-                $value: '{base.display.color.yellow.6}',
+                $value: '{base.display.color.yellow.10}',
               },
               'dark-dimmed-high-contrast': {
-                $value: '{base.display.color.yellow.6}',
+                $value: '{base.display.color.yellow.10}',
               },
               'dark-protanopia-deuteranopia-high-contrast': {
-                $value: '{base.display.color.yellow.6}',
+                $value: '{base.display.color.yellow.10}',
               },
               'dark-tritanopia-high-contrast': {
-                $value: '{base.display.color.yellow.6}',
+                $value: '{base.display.color.yellow.10}',
               },
             },
           },
@@ -5174,28 +5174,6 @@
     pink: {
       scale: {
         '0': {
-          $value: '{base.display.color.pink.0}',
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              group: 'component',
-              scopes: ['bgColor', 'borderColor'],
-            },
-          },
-        },
-        '1': {
-          $value: '{base.display.color.pink.1}',
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              group: 'component',
-              scopes: ['bgColor', 'borderColor'],
-            },
-          },
-        },
-        '2': {
           $value: '{base.display.color.pink.2}',
           $type: 'color',
           $extensions: {
@@ -5206,7 +5184,7 @@
             },
           },
         },
-        '3': {
+        '1': {
           $value: '{base.display.color.pink.3}',
           $type: 'color',
           $extensions: {
@@ -5217,7 +5195,7 @@
             },
           },
         },
-        '4': {
+        '2': {
           $value: '{base.display.color.pink.4}',
           $type: 'color',
           $extensions: {
@@ -5228,7 +5206,7 @@
             },
           },
         },
-        '5': {
+        '3': {
           $value: '{base.display.color.pink.5}',
           $type: 'color',
           $extensions: {
@@ -5239,18 +5217,7 @@
             },
           },
         },
-        '6': {
-          $value: '{base.display.color.pink.6}',
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              group: 'component',
-              scopes: ['bgColor', 'borderColor'],
-            },
-          },
-        },
-        '7': {
+        '4': {
           $value: '{base.display.color.pink.7}',
           $type: 'color',
           $extensions: {
@@ -5261,8 +5228,41 @@
             },
           },
         },
+        '5': {
+          $value: '{base.display.color.pink.9}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component',
+              scopes: ['bgColor', 'borderColor'],
+            },
+          },
+        },
+        '6': {
+          $value: '{base.display.color.pink.10}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component',
+              scopes: ['bgColor', 'borderColor'],
+            },
+          },
+        },
+        '7': {
+          $value: '{base.display.color.pink.11}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component',
+              scopes: ['bgColor', 'borderColor'],
+            },
+          },
+        },
         '8': {
-          $value: '{base.display.color.pink.8}',
+          $value: '{base.display.color.pink.12}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -5273,7 +5273,7 @@
           },
         },
         '9': {
-          $value: '{base.display.color.pink.9}',
+          $value: '{base.display.color.pink.13}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -5286,7 +5286,7 @@
       },
       bgColor: {
         muted: {
-          $value: '{base.display.color.pink.0}',
+          $value: '{base.display.color.pink.2}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -5296,13 +5296,13 @@
             },
             'org.primer.overrides': {
               dark: {
-                $value: '{base.display.color.pink.0}',
+                $value: '{base.display.color.pink.2}',
               },
             },
           },
         },
         emphasis: {
-          $value: '{base.display.color.pink.5}',
+          $value: '{base.display.color.pink.9}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -5312,35 +5312,35 @@
             },
             'org.primer.overrides': {
               dark: {
-                $value: '{base.display.color.pink.4}',
+                $value: '{base.display.color.pink.7}',
               },
               'light-high-contrast': {
-                $value: '{base.display.color.pink.7}',
+                $value: '{base.display.color.pink.11}',
               },
               'light-protanopia-deuteranopia-high-contrast': {
-                $value: '{base.display.color.pink.7}',
+                $value: '{base.display.color.pink.11}',
               },
               'light-tritanopia-high-contrast': {
-                $value: '{base.display.color.pink.7}',
+                $value: '{base.display.color.pink.11}',
               },
               'dark-high-contrast': {
-                $value: '{base.display.color.pink.3}',
+                $value: '{base.display.color.pink.5}',
               },
               'dark-dimmed-high-contrast': {
-                $value: '{base.display.color.pink.3}',
+                $value: '{base.display.color.pink.5}',
               },
               'dark-protanopia-deuteranopia-high-contrast': {
-                $value: '{base.display.color.pink.3}',
+                $value: '{base.display.color.pink.5}',
               },
               'dark-tritanopia-high-contrast': {
-                $value: '{base.display.color.pink.3}',
+                $value: '{base.display.color.pink.5}',
               },
             },
           },
         },
       },
       fgColor: {
-        $value: '{base.display.color.pink.6}',
+        $value: '{base.display.color.pink.10}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -5350,35 +5350,35 @@
           },
           'org.primer.overrides': {
             dark: {
-              $value: '{base.display.color.pink.6}',
+              $value: '{base.display.color.pink.10}',
             },
             'light-high-contrast': {
-              $value: '{base.display.color.pink.8}',
+              $value: '{base.display.color.pink.12}',
             },
             'light-protanopia-deuteranopia-high-contrast': {
-              $value: '{base.display.color.pink.8}',
+              $value: '{base.display.color.pink.12}',
             },
             'light-tritanopia-high-contrast': {
-              $value: '{base.display.color.pink.8}',
+              $value: '{base.display.color.pink.12}',
             },
             'dark-high-contrast': {
-              $value: '{base.display.color.pink.8}',
+              $value: '{base.display.color.pink.12}',
             },
             'dark-dimmed-high-contrast': {
-              $value: '{base.display.color.pink.8}',
+              $value: '{base.display.color.pink.12}',
             },
             'dark-protanopia-deuteranopia-high-contrast': {
-              $value: '{base.display.color.pink.8}',
+              $value: '{base.display.color.pink.12}',
             },
             'dark-tritanopia-high-contrast': {
-              $value: '{base.display.color.pink.8}',
+              $value: '{base.display.color.pink.12}',
             },
           },
         },
       },
       borderColor: {
         muted: {
-          $value: '{base.display.color.pink.1}',
+          $value: '{base.display.color.pink.3}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -5388,13 +5388,13 @@
             },
             'org.primer.overrides': {
               dark: {
-                $value: '{base.display.color.pink.1}',
+                $value: '{base.display.color.pink.3}',
               },
             },
           },
         },
         emphasis: {
-          $value: '{base.display.color.pink.5}',
+          $value: '{base.display.color.pink.9}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -5404,28 +5404,28 @@
             },
             'org.primer.overrides': {
               dark: {
-                $value: '{base.display.color.pink.5}',
+                $value: '{base.display.color.pink.9}',
               },
               'light-high-contrast': {
-                $value: '{base.display.color.pink.6}',
+                $value: '{base.display.color.pink.10}',
               },
               'light-protanopia-deuteranopia-high-contrast': {
-                $value: '{base.display.color.pink.6}',
+                $value: '{base.display.color.pink.10}',
               },
               'light-tritanopia-high-contrast': {
-                $value: '{base.display.color.pink.6}',
+                $value: '{base.display.color.pink.10}',
               },
               'dark-high-contrast': {
-                $value: '{base.display.color.pink.6}',
+                $value: '{base.display.color.pink.10}',
               },
               'dark-dimmed-high-contrast': {
-                $value: '{base.display.color.pink.6}',
+                $value: '{base.display.color.pink.10}',
               },
               'dark-protanopia-deuteranopia-high-contrast': {
-                $value: '{base.display.color.pink.6}',
+                $value: '{base.display.color.pink.10}',
               },
               'dark-tritanopia-high-contrast': {
-                $value: '{base.display.color.pink.6}',
+                $value: '{base.display.color.pink.10}',
               },
             },
           },

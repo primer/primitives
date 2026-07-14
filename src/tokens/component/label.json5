@@ -145,38 +145,6 @@
     orange: {
       bgColor: {
         rest: {
-          $value: '{base.display.color.orange.0}',
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              group: 'component',
-              scopes: ['bgColor'],
-            },
-            'org.primer.overrides': {
-              dark: {
-                $value: '{base.display.color.orange.0}',
-              },
-            },
-          },
-        },
-        hover: {
-          $value: '{base.display.color.orange.1}',
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              group: 'component',
-              scopes: ['bgColor'],
-            },
-            'org.primer.overrides': {
-              dark: {
-                $value: '{base.display.color.orange.1}',
-              },
-            },
-          },
-        },
-        active: {
           $value: '{base.display.color.orange.2}',
           $type: 'color',
           $extensions: {
@@ -192,42 +160,42 @@
             },
           },
         },
-      },
-      fgColor: {
-        rest: {
-          $value: '{base.display.color.orange.6}',
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              group: 'component',
-              scopes: ['fgColor'],
-            },
-            'org.primer.overrides': {
-              dark: {
-                $value: '{base.display.color.orange.6}',
-              },
-            },
-          },
-        },
         hover: {
-          $value: '{base.display.color.orange.7}',
+          $value: '{base.display.color.orange.4}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: ['fgColor'],
+              scopes: ['bgColor'],
             },
             'org.primer.overrides': {
               dark: {
-                $value: '{base.display.color.orange.7}',
+                $value: '{base.display.color.orange.4}',
               },
             },
           },
         },
         active: {
-          $value: '{base.display.color.orange.8}',
+          $value: '{base.display.color.orange.5}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component',
+              scopes: ['bgColor'],
+            },
+            'org.primer.overrides': {
+              dark: {
+                $value: '{base.display.color.orange.5}',
+              },
+            },
+          },
+        },
+      },
+      fgColor: {
+        rest: {
+          $value: '{base.display.color.orange.10}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -237,7 +205,39 @@
             },
             'org.primer.overrides': {
               dark: {
-                $value: '{base.display.color.orange.8}',
+                $value: '{base.display.color.orange.10}',
+              },
+            },
+          },
+        },
+        hover: {
+          $value: '{base.display.color.orange.11}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component',
+              scopes: ['fgColor'],
+            },
+            'org.primer.overrides': {
+              dark: {
+                $value: '{base.display.color.orange.11}',
+              },
+            },
+          },
+        },
+        active: {
+          $value: '{base.display.color.orange.12}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component',
+              scopes: ['fgColor'],
+            },
+            'org.primer.overrides': {
+              dark: {
+                $value: '{base.display.color.orange.12}',
               },
             },
           },
@@ -287,38 +287,6 @@
     purple: {
       bgColor: {
         rest: {
-          $value: '{base.display.color.purple.0}',
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              group: 'component',
-              scopes: ['bgColor'],
-            },
-            'org.primer.overrides': {
-              dark: {
-                $value: '{base.display.color.purple.0}',
-              },
-            },
-          },
-        },
-        hover: {
-          $value: '{base.display.color.purple.1}',
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              group: 'component',
-              scopes: ['bgColor'],
-            },
-            'org.primer.overrides': {
-              dark: {
-                $value: '{base.display.color.purple.1}',
-              },
-            },
-          },
-        },
-        active: {
           $value: '{base.display.color.purple.2}',
           $type: 'color',
           $extensions: {
@@ -334,42 +302,42 @@
             },
           },
         },
-      },
-      fgColor: {
-        rest: {
-          $value: '{base.display.color.purple.6}',
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              group: 'component',
-              scopes: ['fgColor'],
-            },
-            'org.primer.overrides': {
-              dark: {
-                $value: '{base.display.color.purple.6}',
-              },
-            },
-          },
-        },
         hover: {
-          $value: '{base.display.color.purple.7}',
+          $value: '{base.display.color.purple.3}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: ['fgColor'],
+              scopes: ['bgColor'],
             },
             'org.primer.overrides': {
               dark: {
-                $value: '{base.display.color.purple.7}',
+                $value: '{base.display.color.purple.3}',
               },
             },
           },
         },
         active: {
-          $value: '{base.display.color.purple.8}',
+          $value: '{base.display.color.purple.5}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component',
+              scopes: ['bgColor'],
+            },
+            'org.primer.overrides': {
+              dark: {
+                $value: '{base.display.color.purple.5}',
+              },
+            },
+          },
+        },
+      },
+      fgColor: {
+        rest: {
+          $value: '{base.display.color.purple.10}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -379,7 +347,39 @@
             },
             'org.primer.overrides': {
               dark: {
-                $value: '{base.display.color.purple.8}',
+                $value: '{base.display.color.purple.10}',
+              },
+            },
+          },
+        },
+        hover: {
+          $value: '{base.display.color.purple.11}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component',
+              scopes: ['fgColor'],
+            },
+            'org.primer.overrides': {
+              dark: {
+                $value: '{base.display.color.purple.11}',
+              },
+            },
+          },
+        },
+        active: {
+          $value: '{base.display.color.purple.12}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component',
+              scopes: ['fgColor'],
+            },
+            'org.primer.overrides': {
+              dark: {
+                $value: '{base.display.color.purple.12}',
               },
             },
           },
@@ -571,38 +571,6 @@
     yellow: {
       bgColor: {
         rest: {
-          $value: '{base.display.color.yellow.0}',
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              group: 'component',
-              scopes: ['bgColor'],
-            },
-            'org.primer.overrides': {
-              dark: {
-                $value: '{base.display.color.yellow.0}',
-              },
-            },
-          },
-        },
-        hover: {
-          $value: '{base.display.color.yellow.1}',
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              group: 'component',
-              scopes: ['bgColor'],
-            },
-            'org.primer.overrides': {
-              dark: {
-                $value: '{base.display.color.yellow.1}',
-              },
-            },
-          },
-        },
-        active: {
           $value: '{base.display.color.yellow.2}',
           $type: 'color',
           $extensions: {
@@ -618,42 +586,42 @@
             },
           },
         },
-      },
-      fgColor: {
-        rest: {
-          $value: '{base.display.color.yellow.6}',
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              group: 'component',
-              scopes: ['fgColor'],
-            },
-            'org.primer.overrides': {
-              dark: {
-                $value: '{base.display.color.yellow.6}',
-              },
-            },
-          },
-        },
         hover: {
-          $value: '{base.display.color.yellow.7}',
+          $value: '{base.display.color.yellow.4}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: ['fgColor'],
+              scopes: ['bgColor'],
             },
             'org.primer.overrides': {
               dark: {
-                $value: '{base.display.color.yellow.7}',
+                $value: '{base.display.color.yellow.4}',
               },
             },
           },
         },
         active: {
-          $value: '{base.display.color.yellow.8}',
+          $value: '{base.display.color.yellow.5}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component',
+              scopes: ['bgColor'],
+            },
+            'org.primer.overrides': {
+              dark: {
+                $value: '{base.display.color.yellow.5}',
+              },
+            },
+          },
+        },
+      },
+      fgColor: {
+        rest: {
+          $value: '{base.display.color.yellow.10}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -663,7 +631,39 @@
             },
             'org.primer.overrides': {
               dark: {
-                $value: '{base.display.color.yellow.8}',
+                $value: '{base.display.color.yellow.10}',
+              },
+            },
+          },
+        },
+        hover: {
+          $value: '{base.display.color.yellow.11}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component',
+              scopes: ['fgColor'],
+            },
+            'org.primer.overrides': {
+              dark: {
+                $value: '{base.display.color.yellow.11}',
+              },
+            },
+          },
+        },
+        active: {
+          $value: '{base.display.color.yellow.12}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component',
+              scopes: ['fgColor'],
+            },
+            'org.primer.overrides': {
+              dark: {
+                $value: '{base.display.color.yellow.12}',
               },
             },
           },
@@ -2417,38 +2417,6 @@
     pink: {
       bgColor: {
         rest: {
-          $value: '{base.display.color.pink.0}',
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              group: 'component',
-              scopes: ['bgColor'],
-            },
-            'org.primer.overrides': {
-              dark: {
-                $value: '{base.display.color.pink.0}',
-              },
-            },
-          },
-        },
-        hover: {
-          $value: '{base.display.color.pink.1}',
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              group: 'component',
-              scopes: ['bgColor'],
-            },
-            'org.primer.overrides': {
-              dark: {
-                $value: '{base.display.color.pink.1}',
-              },
-            },
-          },
-        },
-        active: {
           $value: '{base.display.color.pink.2}',
           $type: 'color',
           $extensions: {
@@ -2464,42 +2432,42 @@
             },
           },
         },
-      },
-      fgColor: {
-        rest: {
-          $value: '{base.display.color.pink.6}',
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              group: 'component',
-              scopes: ['fgColor'],
-            },
-            'org.primer.overrides': {
-              dark: {
-                $value: '{base.display.color.pink.6}',
-              },
-            },
-          },
-        },
         hover: {
-          $value: '{base.display.color.pink.7}',
+          $value: '{base.display.color.pink.3}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: ['fgColor'],
+              scopes: ['bgColor'],
             },
             'org.primer.overrides': {
               dark: {
-                $value: '{base.display.color.pink.7}',
+                $value: '{base.display.color.pink.3}',
               },
             },
           },
         },
         active: {
-          $value: '{base.display.color.pink.8}',
+          $value: '{base.display.color.pink.4}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component',
+              scopes: ['bgColor'],
+            },
+            'org.primer.overrides': {
+              dark: {
+                $value: '{base.display.color.pink.4}',
+              },
+            },
+          },
+        },
+      },
+      fgColor: {
+        rest: {
+          $value: '{base.display.color.pink.10}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -2509,7 +2477,39 @@
             },
             'org.primer.overrides': {
               dark: {
-                $value: '{base.display.color.pink.8}',
+                $value: '{base.display.color.pink.10}',
+              },
+            },
+          },
+        },
+        hover: {
+          $value: '{base.display.color.pink.11}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component',
+              scopes: ['fgColor'],
+            },
+            'org.primer.overrides': {
+              dark: {
+                $value: '{base.display.color.pink.11}',
+              },
+            },
+          },
+        },
+        active: {
+          $value: '{base.display.color.pink.12}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component',
+              scopes: ['fgColor'],
+            },
+            'org.primer.overrides': {
+              dark: {
+                $value: '{base.display.color.pink.12}',
               },
             },
           },
