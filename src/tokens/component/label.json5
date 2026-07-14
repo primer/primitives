@@ -1281,39 +1281,7 @@
     olive: {
       bgColor: {
         rest: {
-          $value: '{base.display.color.olive.0}',
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              group: 'component',
-              scopes: ['bgColor'],
-            },
-            'org.primer.overrides': {
-              dark: {
-                $value: '{base.display.color.olive.0}',
-              },
-            },
-          },
-        },
-        hover: {
           $value: '{base.display.color.olive.1}',
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              group: 'component',
-              scopes: ['bgColor'],
-            },
-            'org.primer.overrides': {
-              dark: {
-                $value: '{base.display.color.olive.1}',
-              },
-            },
-          },
-        },
-        active: {
-          $value: '{base.display.color.olive.2}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -1328,42 +1296,42 @@
             },
           },
         },
-      },
-      fgColor: {
-        rest: {
-          $value: '{base.display.color.olive.6}',
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              group: 'component',
-              scopes: ['fgColor'],
-            },
-            'org.primer.overrides': {
-              dark: {
-                $value: '{base.display.color.olive.6}',
-              },
-            },
-          },
-        },
         hover: {
-          $value: '{base.display.color.olive.7}',
+          $value: '{base.display.color.olive.2}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: ['fgColor'],
+              scopes: ['bgColor'],
             },
             'org.primer.overrides': {
               dark: {
-                $value: '{base.display.color.olive.7}',
+                $value: '{base.display.color.olive.3}',
               },
             },
           },
         },
         active: {
-          $value: '{base.display.color.olive.8}',
+          $value: '{base.display.color.olive.3}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component',
+              scopes: ['bgColor'],
+            },
+            'org.primer.overrides': {
+              dark: {
+                $value: '{base.display.color.olive.4}',
+              },
+            },
+          },
+        },
+      },
+      fgColor: {
+        rest: {
+          $value: '{base.display.color.olive.9}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -1373,7 +1341,39 @@
             },
             'org.primer.overrides': {
               dark: {
-                $value: '{base.display.color.olive.8}',
+                $value: '{base.display.color.olive.10}',
+              },
+            },
+          },
+        },
+        hover: {
+          $value: '{base.display.color.olive.10}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component',
+              scopes: ['fgColor'],
+            },
+            'org.primer.overrides': {
+              dark: {
+                $value: '{base.display.color.olive.11}',
+              },
+            },
+          },
+        },
+        active: {
+          $value: '{base.display.color.olive.11}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component',
+              scopes: ['fgColor'],
+            },
+            'org.primer.overrides': {
+              dark: {
+                $value: '{base.display.color.olive.12}',
               },
             },
           },
