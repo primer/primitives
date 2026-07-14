@@ -235,7 +235,21 @@
     halloween: {
       bgColor: {
         '1': {
-          $value: '{base.display.color.lemon.4}',
+          $value: '{base.display.color.lemon.7}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component (internal)',
+              scopes: ['bgColor'],
+            },
+            'org.primer.overrides': {
+              dark: '{base.display.color.orange.12}',
+            },
+          },
+        },
+        '2': {
+          $value: '{base.display.color.yellow.4}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -248,22 +262,8 @@
             },
           },
         },
-        '2': {
-          $value: '{base.display.color.yellow.1}',
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              group: 'component (internal)',
-              scopes: ['bgColor'],
-            },
-            'org.primer.overrides': {
-              dark: '{base.display.color.orange.5}',
-            },
-          },
-        },
         '3': {
-          $value: '{base.display.color.orange.3}',
+          $value: '{base.display.color.orange.7}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -272,7 +272,7 @@
               scopes: ['bgColor'],
             },
             'org.primer.overrides': {
-              dark: '{base.display.color.orange.4}',
+              dark: '{base.display.color.orange.7}',
             },
           },
         },
