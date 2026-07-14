@@ -997,39 +997,7 @@
     brown: {
       bgColor: {
         rest: {
-          $value: '{base.display.color.brown.0}',
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              group: 'component',
-              scopes: ['bgColor'],
-            },
-            'org.primer.overrides': {
-              dark: {
-                $value: '{base.display.color.brown.0}',
-              },
-            },
-          },
-        },
-        hover: {
           $value: '{base.display.color.brown.1}',
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              group: 'component',
-              scopes: ['bgColor'],
-            },
-            'org.primer.overrides': {
-              dark: {
-                $value: '{base.display.color.brown.1}',
-              },
-            },
-          },
-        },
-        active: {
-          $value: '{base.display.color.brown.2}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -1044,42 +1012,42 @@
             },
           },
         },
-      },
-      fgColor: {
-        rest: {
-          $value: '{base.display.color.brown.6}',
-          $type: 'color',
-          $extensions: {
-            'org.primer.figma': {
-              collection: 'mode',
-              group: 'component',
-              scopes: ['fgColor'],
-            },
-            'org.primer.overrides': {
-              dark: {
-                $value: '{base.display.color.brown.6}',
-              },
-            },
-          },
-        },
         hover: {
-          $value: '{base.display.color.brown.7}',
+          $value: '{base.display.color.brown.2}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
               collection: 'mode',
               group: 'component',
-              scopes: ['fgColor'],
+              scopes: ['bgColor'],
             },
             'org.primer.overrides': {
               dark: {
-                $value: '{base.display.color.brown.7}',
+                $value: '{base.display.color.brown.3}',
               },
             },
           },
         },
         active: {
-          $value: '{base.display.color.brown.8}',
+          $value: '{base.display.color.brown.3}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component',
+              scopes: ['bgColor'],
+            },
+            'org.primer.overrides': {
+              dark: {
+                $value: '{base.display.color.brown.4}',
+              },
+            },
+          },
+        },
+      },
+      fgColor: {
+        rest: {
+          $value: '{base.display.color.brown.9}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -1089,7 +1057,39 @@
             },
             'org.primer.overrides': {
               dark: {
-                $value: '{base.display.color.brown.8}',
+                $value: '{base.display.color.brown.10}',
+              },
+            },
+          },
+        },
+        hover: {
+          $value: '{base.display.color.brown.10}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component',
+              scopes: ['fgColor'],
+            },
+            'org.primer.overrides': {
+              dark: {
+                $value: '{base.display.color.brown.11}',
+              },
+            },
+          },
+        },
+        active: {
+          $value: '{base.display.color.brown.11}',
+          $type: 'color',
+          $extensions: {
+            'org.primer.figma': {
+              collection: 'mode',
+              group: 'component',
+              scopes: ['fgColor'],
+            },
+            'org.primer.overrides': {
+              dark: {
+                $value: '{base.display.color.brown.12}',
               },
             },
           },

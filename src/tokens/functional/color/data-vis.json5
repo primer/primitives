@@ -394,7 +394,7 @@
     brown: {
       color: {
         emphasis: {
-          $value: '{base.display.color.brown.5}',
+          $value: '{base.display.color.brown.7}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -403,12 +403,12 @@
               scopes: ['bgColor', 'borderColor'],
             },
             'org.primer.overrides': {
-              dark: '{base.display.color.brown.5}',
+              dark: '{base.display.color.brown.9}',
             },
           },
         },
         muted: {
-          $value: '{base.display.color.brown.0}',
+          $value: '{base.display.color.brown.1}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -417,7 +417,7 @@
               scopes: ['bgColor'],
             },
             'org.primer.overrides': {
-              dark: '{base.display.color.brown.0}',
+              dark: '{base.display.color.brown.2}',
             },
           },
         },
