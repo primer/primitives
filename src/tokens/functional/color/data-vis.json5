@@ -426,7 +426,7 @@
     lemon: {
       color: {
         emphasis: {
-          $value: '{base.display.color.lemon.5}',
+          $value: '{base.display.color.lemon.8}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -435,12 +435,12 @@
               scopes: ['bgColor', 'borderColor'],
             },
             'org.primer.overrides': {
-              dark: '{base.display.color.lemon.5}',
+              dark: '{base.display.color.lemon.7}',
             },
           },
         },
         muted: {
-          $value: '{base.display.color.lemon.0}',
+          $value: '{base.display.color.lemon.1}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -449,7 +449,7 @@
               scopes: ['bgColor'],
             },
             'org.primer.overrides': {
-              dark: '{base.display.color.lemon.0}',
+              dark: '{base.display.color.lemon.2}',
             },
           },
         },
