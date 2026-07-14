@@ -428,8 +428,8 @@
               $value: '{base.color.red.4}',
               alpha: 0.1,
             },
-            'light-protanopia-deuteranopia': '{base.color.orange.0}',
-            'light-protanopia-deuteranopia-high-contrast': '{base.color.orange.0}',
+            'light-protanopia-deuteranopia': '{base.color.orange.1}',
+            'light-protanopia-deuteranopia-high-contrast': '{base.color.orange.1}',
             'dark-protanopia-deuteranopia': {
               $value: '{base.color.orange.4}',
               alpha: 0.1,
@@ -463,10 +463,10 @@
             'light-tritanopia-high-contrast': '{base.color.red.9}',
             'dark-tritanopia': '{base.color.red.6}',
             'dark-tritanopia-high-contrast': '{base.color.red.11}',
-            'light-protanopia-deuteranopia': '{base.color.orange.5}',
-            'light-protanopia-deuteranopia-high-contrast': '{base.color.orange.5}',
-            'dark-protanopia-deuteranopia': '{base.color.orange.5}',
-            'dark-protanopia-deuteranopia-high-contrast': '{base.color.orange.9}',
+            'light-protanopia-deuteranopia': '{base.color.orange.9}',
+            'light-protanopia-deuteranopia-high-contrast': '{base.color.orange.9}',
+            'dark-protanopia-deuteranopia': '{base.color.orange.6}',
+            'dark-protanopia-deuteranopia-high-contrast': '{base.color.orange.11}',
           },
           'org.primer.llm': {
             usage: ['open-badge', 'open-label', 'active-status-badge'],
@@ -529,7 +529,7 @@
     },
     severe: {
       muted: {
-        $value: '{base.color.orange.0}',
+        $value: '{base.color.orange.1}',
         $type: 'color',
         $description: 'Subtle severe background for high-priority warnings',
         $extensions: {
@@ -560,7 +560,7 @@
         },
       },
       emphasis: {
-        $value: '{base.color.orange.5}',
+        $value: '{base.color.orange.9}',
         $type: 'color',
         $description: 'Strong severe background for prominent high-priority warnings',
         $extensions: {
@@ -577,9 +577,10 @@
             'light-tritanopia-high-contrast': '{base.color.red.9}',
             'dark-tritanopia': '{base.color.red.6}',
             'dark-tritanopia-high-contrast': '{base.color.red.11}',
-            'dark-high-contrast': '{base.color.orange.9}',
-            'dark-dimmed-high-contrast': '{base.color.orange.7}',
-            'dark-protanopia-deuteranopia-high-contrast': '{base.color.orange.9}',
+            'dark-high-contrast': '{base.color.orange.11}',
+            'dark-dimmed-high-contrast': '{base.color.orange.9}',
+            dark: '{base.color.orange.6}',
+            'dark-protanopia-deuteranopia-high-contrast': '{base.color.orange.11}',
           },
           'org.primer.llm': {
             usage: ['severe-badge', 'urgent-label', 'high-priority-indicator'],
@@ -607,8 +608,8 @@
               $value: '{base.color.red.4}',
               alpha: 0.1,
             },
-            'light-protanopia-deuteranopia': '{base.color.orange.0}',
-            'light-protanopia-deuteranopia-high-contrast': '{base.color.orange.0}',
+            'light-protanopia-deuteranopia': '{base.color.orange.1}',
+            'light-protanopia-deuteranopia-high-contrast': '{base.color.orange.1}',
             'dark-protanopia-deuteranopia': {
               $value: '{base.color.orange.4}',
               alpha: 0.1,
@@ -634,10 +635,10 @@
             },
           },
           'org.primer.overrides': {
-            'light-protanopia-deuteranopia': '{base.color.orange.5}',
-            'light-protanopia-deuteranopia-high-contrast': '{base.color.orange.5}',
-            'dark-protanopia-deuteranopia': '{base.color.orange.5}',
-            'dark-protanopia-deuteranopia-high-contrast': '{base.color.orange.9}',
+            'light-protanopia-deuteranopia': '{base.color.orange.9}',
+            'light-protanopia-deuteranopia-high-contrast': '{base.color.orange.9}',
+            'dark-protanopia-deuteranopia': '{base.color.orange.6}',
+            'dark-protanopia-deuteranopia-high-contrast': '{base.color.orange.11}',
             dark: '{base.color.red.6}',
             'dark-dimmed': '{base.color.red.5}',
             'dark-tritanopia': '{base.color.red.6}',
