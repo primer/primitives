@@ -165,7 +165,7 @@
       },
     },
     yellow: {
-      $value: '{base.color.yellow.8}',
+      $value: '{base.color.yellow.12}',
       $type: 'color',
       $description: 'ANSI yellow for warnings in terminal output',
       $extensions: {
@@ -174,12 +174,12 @@
           group: 'syntax',
         },
         'org.primer.overrides': {
-          dark: '{base.color.yellow.3}',
+          dark: '{base.color.yellow.4}',
         },
       },
     },
     yellowBright: {
-      $value: '{base.color.yellow.7}',
+      $value: '{base.color.yellow.11}',
       $type: 'color',
       $description: 'ANSI bright yellow for highlighted warnings in terminal',
       $extensions: {
@@ -188,7 +188,7 @@
           group: 'syntax',
         },
         'org.primer.overrides': {
-          dark: '{base.color.yellow.2}',
+          dark: '{base.color.yellow.3}',
         },
       },
     },
@@ -693,7 +693,7 @@
       },
       markup: {
         list: {
-          $value: '{base.color.yellow.9}',
+          $value: '{base.color.yellow.13}',
           $type: 'color',
           $description: 'Syntax highlighting color for list markers in markdown',
           $extensions: {
@@ -702,7 +702,7 @@
               group: 'syntax',
             },
             'org.primer.overrides': {
-              dark: '{base.color.yellow.1}',
+              dark: '{base.color.yellow.2}',
             },
           },
         },

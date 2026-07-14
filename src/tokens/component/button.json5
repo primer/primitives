@@ -2123,7 +2123,7 @@
     star: {
       $description: 'Star icon color for the starred/filled state of the star button. Single-state token — does not have rest/hover/active/disabled interaction states.',
       iconColor: {
-        '$value': '{base.color.yellow.2}',
+        '$value': '{base.color.yellow.5}',
         '$type': 'color',
         '$extensions': {
           'org.primer.figma': {
@@ -2135,7 +2135,7 @@
           },
           'org.primer.overrides': {
             dark: {
-              '$value': '{base.color.yellow.2}'
+              '$value': '{base.color.yellow.3}'
             }
           }
         }

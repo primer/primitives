@@ -526,7 +526,7 @@
     },
     attention: {
       muted: {
-        $value: '{base.color.yellow.3}',
+        $value: '{base.color.yellow.7}',
         $type: 'color',
         $description: 'Subtle attention border for warnings and caution states',
         $extensions: {
@@ -539,33 +539,33 @@
             },
           },
           'org.primer.overrides': {
-            dark: '{base.color.yellow.4}',
+            dark: '{base.color.yellow.5}',
             'light-high-contrast': {
-              $value: '{base.color.yellow.3}',
+              $value: '{base.color.yellow.7}',
               alpha: 1,
             },
             'light-tritanopia-high-contrast': {
-              $value: '{base.color.yellow.3}',
+              $value: '{base.color.yellow.7}',
               alpha: 1,
             },
             'light-protanopia-deuteranopia-high-contrast': {
-              $value: '{base.color.yellow.3}',
+              $value: '{base.color.yellow.7}',
               alpha: 1,
             },
             'dark-high-contrast': {
-              $value: '{base.color.yellow.4}',
+              $value: '{base.color.yellow.5}',
               alpha: 1,
             },
             'dark-dimmed-high-contrast': {
-              $value: '{base.color.yellow.2}',
+              $value: '{base.color.yellow.3}',
               alpha: 1,
             },
             'dark-tritanopia-high-contrast': {
-              $value: '{base.color.yellow.4}',
+              $value: '{base.color.yellow.5}',
               alpha: 1,
             },
             'dark-protanopia-deuteranopia-high-contrast': {
-              $value: '{base.color.yellow.4}',
+              $value: '{base.color.yellow.5}',
               alpha: 1,
             },
           },
@@ -577,7 +577,7 @@
         alpha: 0.4,
       },
       emphasis: {
-        $value: '{base.color.yellow.5}',
+        $value: '{base.color.yellow.9}',
         $type: 'color',
         $description: 'Strong attention border for prominent warnings',
         $extensions: {
@@ -590,7 +590,8 @@
             },
           },
           'org.primer.overrides': {
-            'dark-dimmed-high-contrast': '{base.color.yellow.2}',
+            dark: '{base.color.yellow.6}',
+            'dark-dimmed-high-contrast': '{base.color.yellow.3}',
           },
           'org.primer.llm': {
             usage: ['attention-emphasis', 'warning-emphasis', 'caution-emphasis'],

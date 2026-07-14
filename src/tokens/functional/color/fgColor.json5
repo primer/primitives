@@ -300,7 +300,7 @@
       },
     },
     attention: {
-      $value: '{base.color.yellow.6}',
+      $value: '{base.color.yellow.10}',
       $type: 'color',
       $description: 'Attention text for warnings and caution states',
       $extensions: {
@@ -313,11 +313,11 @@
           },
         },
         'org.primer.overrides': {
-          dark: '{base.color.yellow.3}',
-          'light-high-contrast': '{base.color.yellow.6}',
-          'light-protanopia-deuteranopia-high-contrast': '{base.color.yellow.6}',
-          'light-tritanopia-high-contrast': '{base.color.yellow.6}',
-          'dark-dimmed-high-contrast': '{base.color.yellow.1}',
+          dark: '{base.color.yellow.4}',
+          'light-high-contrast': '{base.color.yellow.10}',
+          'light-protanopia-deuteranopia-high-contrast': '{base.color.yellow.10}',
+          'light-tritanopia-high-contrast': '{base.color.yellow.10}',
+          'dark-dimmed-high-contrast': '{base.color.yellow.2}',
         },
         'org.primer.llm': {
           usage: ['attention-text', 'warning-text', 'caution-text'],

@@ -477,7 +477,7 @@
     },
     attention: {
       muted: {
-        $value: '{base.color.yellow.0}',
+        $value: '{base.color.yellow.1}',
         $type: 'color',
         $description: 'Subtle attention background for warnings and caution states',
         $extensions: {
@@ -491,7 +491,7 @@
           },
           'org.primer.overrides': {
             dark: {
-              $value: '{base.color.yellow.4}',
+              $value: '{base.color.yellow.5}',
               alpha: 0.15,
             },
           },
@@ -502,7 +502,7 @@
         },
       },
       emphasis: {
-        $value: '{base.color.yellow.5}',
+        $value: '{base.color.yellow.9}',
         $type: 'color',
         $description: 'Strong attention background for prominent warnings',
         $extensions: {
@@ -515,10 +515,11 @@
             },
           },
           'org.primer.overrides': {
-            'dark-high-contrast': '{base.color.yellow.9}',
-            'dark-dimmed-high-contrast': '{base.color.yellow.7}',
-            'dark-protanopia-deuteranopia-high-contrast': '{base.color.yellow.9}',
-            'dark-tritanopia-high-contrast': '{base.color.yellow.9}',
+            dark: '{base.color.yellow.6}',
+            'dark-high-contrast': '{base.color.yellow.12}',
+            'dark-dimmed-high-contrast': '{base.color.yellow.9}',
+            'dark-protanopia-deuteranopia-high-contrast': '{base.color.yellow.12}',
+            'dark-tritanopia-high-contrast': '{base.color.yellow.12}',
           },
           'org.primer.llm': {
             usage: ['warning-badge', 'caution-label', 'attention-indicator'],
