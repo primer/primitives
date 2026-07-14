@@ -3,12 +3,7 @@
     $description: 'ANSI terminal color palette for command-line interfaces and terminal emulators. Maps standard ANSI color names to theme-appropriate values.',
     $extensions: {
       'org.primer.llm': {
-        usage: [
-          'terminal-output',
-          'cli-interface',
-          'console-text',
-          'shell-prompt',
-        ],
+        usage: ['terminal-output', 'cli-interface', 'console-text', 'shell-prompt'],
         rules: 'Use exclusively for terminal/CLI contexts. Do NOT use for general UI—use semantic colors (fgColor, bgColor) instead. These colors follow ANSI naming conventions (black, red, green, yellow, blue, magenta, cyan, white) with bright variants.',
       },
     },
@@ -221,7 +216,7 @@
       },
     },
     magenta: {
-      $value: '{base.color.purple.5}',
+      $value: '{base.color.purple.9}',
       $type: 'color',
       $description: 'ANSI magenta for special terminal text',
       $extensions: {
@@ -230,12 +225,20 @@
           group: 'syntax',
         },
         'org.primer.overrides': {
-          dark: '{base.color.purple.3}',
+          dark: '{base.color.purple.4}',
+          'light-high-contrast': '{base.color.purple.5}',
+          'light-tritanopia-high-contrast': '{base.color.purple.5}',
+          'light-protanopia-deuteranopia-high-contrast': '{base.color.purple.5}',
+          'dark-high-contrast': '{base.color.purple.3}',
+          'dark-tritanopia-high-contrast': '{base.color.purple.3}',
+          'dark-protanopia-deuteranopia-high-contrast': '{base.color.purple.3}',
+          'dark-dimmed': '{base.color.purple.3}',
+          'dark-dimmed-high-contrast': '{base.color.purple.3}',
         },
       },
     },
     magentaBright: {
-      $value: '{base.color.purple.4}',
+      $value: '{base.color.purple.8}',
       $type: 'color',
       $description: 'ANSI bright magenta for highlighted special text',
       $extensions: {
@@ -244,18 +247,22 @@
           group: 'syntax',
         },
         'org.primer.overrides': {
-          dark: '{base.color.purple.2}',
+          dark: '{base.color.purple.3}',
+          'light-high-contrast': '{base.color.purple.4}',
+          'light-tritanopia-high-contrast': '{base.color.purple.4}',
+          'light-protanopia-deuteranopia-high-contrast': '{base.color.purple.4}',
+          'dark-high-contrast': '{base.color.purple.2}',
+          'dark-tritanopia-high-contrast': '{base.color.purple.2}',
+          'dark-protanopia-deuteranopia-high-contrast': '{base.color.purple.2}',
+          'dark-dimmed': '{base.color.purple.2}',
+          'dark-dimmed-high-contrast': '{base.color.purple.2}',
         },
       },
     },
     cyan: {
       $value: {
         colorSpace: 'hsl',
-        components: [
-          184,
-          65.8,
-          31,
-        ],
+        components: [184, 65.8, 31],
         hex: '#1b7c83',
       },
       $type: 'color',
@@ -273,11 +280,7 @@
     cyanBright: {
       $value: {
         colorSpace: 'hsl',
-        components: [
-          191.9,
-          55.3,
-          42.9,
-        ],
+        components: [191.9, 55.3, 42.9],
         hex: '#3192aa',
       },
       $type: 'color',
@@ -297,12 +300,7 @@
     $description: 'Syntax highlighting colors for code display. Used by GitHub code rendering (prettylights theme).',
     $extensions: {
       'org.primer.llm': {
-        usage: [
-          'code-syntax-highlighting',
-          'code-block',
-          'inline-code',
-          'diff-view',
-        ],
+        usage: ['code-syntax-highlighting', 'code-block', 'inline-code', 'diff-view'],
         rules: 'Use exclusively for syntax highlighting in code display contexts. Do NOT use for general UI text or backgrounds. Each token maps to a specific syntax element (comment, keyword, string, etc.).',
       },
     },
@@ -380,7 +378,7 @@
         },
       },
       entity: {
-        $value: '{base.color.purple.6}',
+        $value: '{base.color.purple.10}',
         $type: 'color',
         $description: 'Syntax highlighting color for class names, type definitions, and declarations',
         $extensions: {
@@ -389,7 +387,15 @@
             group: 'syntax',
           },
           'org.primer.overrides': {
-            dark: '{base.color.purple.2}',
+            dark: '{base.color.purple.3}',
+            'light-high-contrast': '{base.color.purple.6}',
+            'light-tritanopia-high-contrast': '{base.color.purple.6}',
+            'light-protanopia-deuteranopia-high-contrast': '{base.color.purple.6}',
+            'dark-high-contrast': '{base.color.purple.2}',
+            'dark-tritanopia-high-contrast': '{base.color.purple.2}',
+            'dark-protanopia-deuteranopia-high-contrast': '{base.color.purple.2}',
+            'dark-dimmed': '{base.color.purple.2}',
+            'dark-dimmed-high-contrast': '{base.color.purple.2}',
           },
         },
       },
@@ -903,7 +909,7 @@
         },
       },
       metaDiffRange: {
-        $value: '{base.color.purple.5}',
+        $value: '{base.color.purple.9}',
         $type: 'color',
         $description: 'Syntax highlighting color for diff range information (@@ lines)',
         $extensions: {
@@ -912,7 +918,15 @@
             group: 'syntax',
           },
           'org.primer.overrides': {
-            dark: '{base.color.purple.2}',
+            dark: '{base.color.purple.3}',
+            'light-high-contrast': '{base.color.purple.5}',
+            'light-tritanopia-high-contrast': '{base.color.purple.5}',
+            'light-protanopia-deuteranopia-high-contrast': '{base.color.purple.5}',
+            'dark-high-contrast': '{base.color.purple.2}',
+            'dark-tritanopia-high-contrast': '{base.color.purple.2}',
+            'dark-protanopia-deuteranopia-high-contrast': '{base.color.purple.2}',
+            'dark-dimmed': '{base.color.purple.2}',
+            'dark-dimmed-high-contrast': '{base.color.purple.2}',
           },
         },
       },
@@ -965,10 +979,10 @@
     },
   },
   /**
-  *
-  * Deprecated: Remove ones platform is clean
-  *
-  **/
+   *
+   * Deprecated: Remove ones platform is clean
+   *
+   **/
   color: {
     ansi: {
       black: {

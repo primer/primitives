@@ -219,7 +219,7 @@
           },
         },
         entity: {
-          $value: '{base.color.purple.5}',
+          $value: '{base.color.purple.9}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -228,7 +228,15 @@
               scopes: ['fgColor'],
             },
             'org.primer.overrides': {
-              dark: '{base.color.purple.2}',
+              dark: '{base.color.purple.3}',
+              'light-high-contrast': '{base.color.purple.5}',
+              'light-tritanopia-high-contrast': '{base.color.purple.5}',
+              'light-protanopia-deuteranopia-high-contrast': '{base.color.purple.5}',
+              'dark-high-contrast': '{base.color.purple.2}',
+              'dark-tritanopia-high-contrast': '{base.color.purple.2}',
+              'dark-protanopia-deuteranopia-high-contrast': '{base.color.purple.2}',
+              'dark-dimmed': '{base.color.purple.2}',
+              'dark-dimmed-high-contrast': '{base.color.purple.2}',
             },
           },
         },

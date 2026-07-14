@@ -931,7 +931,7 @@
     },
     done: {
       muted: {
-        $value: '{base.color.purple.3}',
+        $value: '{base.color.purple.6}',
         $type: 'color',
         $description: 'Subtle border for completed/done state indicators',
         $extensions: {
@@ -944,7 +944,7 @@
             },
           },
           'org.primer.overrides': {
-            dark: '{base.color.purple.4}',
+            dark: '{base.color.purple.5}',
             'light-high-contrast': {
               $value: '{base.color.purple.3}',
               alpha: 1,
@@ -961,16 +961,17 @@
               $value: '{base.color.purple.4}',
               alpha: 1,
             },
-            'dark-dimmed-high-contrast': {
-              $value: '{base.color.purple.2}',
-              alpha: 1,
-            },
             'dark-tritanopia-high-contrast': {
               $value: '{base.color.purple.4}',
               alpha: 1,
             },
             'dark-protanopia-deuteranopia-high-contrast': {
               $value: '{base.color.purple.4}',
+              alpha: 1,
+            },
+            'dark-dimmed': '{base.color.purple.4}',
+            'dark-dimmed-high-contrast': {
+              $value: '{base.color.purple.2}',
               alpha: 1,
             },
           },
@@ -982,7 +983,7 @@
         alpha: 0.4,
       },
       emphasis: {
-        $value: '{base.color.purple.5}',
+        $value: '{base.color.purple.9}',
         $type: 'color',
         $description: 'Strong border for completed/done state badges',
         $extensions: {
@@ -995,6 +996,14 @@
             },
           },
           'org.primer.overrides': {
+            dark: '{base.color.purple.6}',
+            'light-high-contrast': '{base.color.purple.5}',
+            'light-tritanopia-high-contrast': '{base.color.purple.5}',
+            'light-protanopia-deuteranopia-high-contrast': '{base.color.purple.5}',
+            'dark-high-contrast': '{base.color.purple.5}',
+            'dark-tritanopia-high-contrast': '{base.color.purple.5}',
+            'dark-protanopia-deuteranopia-high-contrast': '{base.color.purple.5}',
+            'dark-dimmed': '{base.color.purple.5}',
             'dark-dimmed-high-contrast': '{base.color.purple.2}',
           },
           'org.primer.llm': {
