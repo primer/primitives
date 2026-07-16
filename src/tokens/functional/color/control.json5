@@ -1148,7 +1148,7 @@
     },
     bgColor: {
       rest: {
-        $value: '{base.color.neutral.3}',
+        $value: '{base.color.neutral.2}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -1157,7 +1157,7 @@
             scopes: ['bgColor'],
           },
           'org.primer.overrides': {
-            dark: '{base.color.black}',
+            dark: '{base.color.neutral.0}',
             'dark-high-contrast': {
               $value: '{base.color.black}',
             },
