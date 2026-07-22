@@ -9,7 +9,7 @@ import {withColorTokens, type ColorTokens} from '../../utilities/withColorTokens
 import {formatTokenValue} from '../../utilities/formatTokenValue'
 
 export default {
-  title: 'Color/Alpha/Display',
+  title: 'Color/Display (Legacy)',
   decorators: [withColorTokens],
   parameters: {
     controls: {hideNoControlsWarning: true},
