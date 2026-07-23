@@ -2,7 +2,7 @@
   underlineNav: {
     borderColor: {
       active: {
-        $value: '{base.color.coral.3}',
+        $value: '{base.color.coral.6}',
         $type: 'color',
         $extensions: {
           'org.primer.figma': {
@@ -12,6 +12,15 @@
           },
           'org.primer.overrides': {
             dark: {
+              $value: '{base.color.coral.3}',
+            },
+            'light-high-contrast': {
+              $value: '{base.color.coral.3}',
+            },
+            'light-tritanopia-high-contrast': {
+              $value: '{base.color.coral.3}',
+            },
+            'light-protanopia-deuteranopia-high-contrast': {
               $value: '{base.color.coral.3}',
             },
           },
