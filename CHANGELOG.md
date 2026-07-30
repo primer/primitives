@@ -1,5 +1,19 @@
 # @primer/primitives
 
+## 11.10.0
+
+### Minor Changes
+
+- [#1402](https://github.com/primer/primitives/pull/1402) [`2627836`](https://github.com/primer/primitives/commit/2627836e502961b657a55227435e73e2424a22a0) Thanks [@janmaarten-a11y](https://github.com/janmaarten-a11y)! - Differentiate `fgColor.done` from `fgColor.upsell` in the dark protanopia & deuteranopia theme.
+
+  Previously both resolved to the same purple (`base.color.purple.4` / `#AB7DF8`), making status indicators using `done` (e.g. closed-as-completed issues, merged PRs) visually indistinguishable from indicators using `upsell` (often used for "in progress" promotional UI). Under deutan/protan simulation, purple also collapses toward the same hue as `open`, `success`, and `attention`, leaving no perceptually safe chromatic slot for `done`.
+  - `fgColor.done` in `dark-protanopia-deuteranopia` now resolves to `base.color.neutral.10` (`#B7BDC8`), one step brighter than `fgColor.closed` / `fgColor.muted` (`neutral.9`) so the two neutral-coded states stay distinguishable by lightness.
+  - `fgColor.upsell` in `dark-protanopia-deuteranopia` is pinned to `base.color.purple.4` so promotional content keeps its purple, independent of the `done` change.
+
+  The high-contrast variant of this theme is unchanged in this release because the available neutral scale slots are already occupied (`closed`, `draft`, and body text); a separate fix is being scoped for HC.
+
+- [#1412](https://github.com/primer/primitives/pull/1412) [`3b20045`](https://github.com/primer/primitives/commit/3b200453680759cfb3371a593259bc38de394621) Thanks [@liuliu-dev](https://github.com/liuliu-dev)! - Add `'Noto Sans Backtick Fix'` before `'Noto Sans'` in `fontStack.system`, `fontStack.sansSerif`, and `fontStack.sansSerifDisplay`. The new family name is a non-shadowing alias for a consumer-defined `@font-face`, fixing body text falling through to Helvetica/Arial on Linux Firefox (see [primer/css#3107](https://github.com/primer/css/issues/3107), [github/primer#6890](https://github.com/github/primer/issues/6890)).
+
 ## 11.9.0
 
 ### Minor Changes
