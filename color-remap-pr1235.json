@@ -1,0 +1,1428 @@
+{
+  "meta": {
+    "pr": "primer/primitives#1235 (tritanopia-fix)",
+    "compare": "6921e5b...292a4e16",
+    "note": "Includes per-theme values from $extensions[\"org.primer.overrides\"]. No base color scale hex values changed.",
+    "summary": {
+      "tokensChanged": 22,
+      "themeOverridesAdded": 59,
+      "themeOverridesRemoved": 117
+    }
+  },
+  "changes": {
+    "button.danger.fgColor.rest": {
+      "file": "src/tokens/component/button.json5",
+      "themes": {
+        "dark-protanopia-deuteranopia": {
+          "from": "{fgColor.danger}",
+          "to": "{base.color.yellow.3}"
+        },
+        "dark-protanopia-deuteranopia-high-contrast": {
+          "from": "{base.color.orange.2}",
+          "to": "{base.color.yellow.2}"
+        }
+      }
+    },
+    "bgColor.danger.emphasis": {
+      "file": "src/tokens/functional/color/bgColor.json5",
+      "themes": {
+        "dark-protanopia-deuteranopia": {
+          "from": "{base.color.orange.5}",
+          "to": "{base.color.yellow.5}"
+        },
+        "dark-protanopia-deuteranopia-high-contrast": {
+          "from": "{base.color.orange.9}",
+          "to": "{base.color.yellow.9}"
+        },
+        "light-protanopia-deuteranopia": {
+          "from": "{base.color.orange.5}",
+          "to": "{base.color.yellow.5}"
+        },
+        "light-protanopia-deuteranopia-high-contrast": {
+          "from": "{base.color.orange.5}",
+          "to": "{base.color.yellow.5}"
+        }
+      }
+    },
+    "bgColor.danger.muted": {
+      "file": "src/tokens/functional/color/bgColor.json5",
+      "themes": {
+        "dark-protanopia-deuteranopia": {
+          "from": "{base.color.orange.4} @0.1",
+          "to": "{base.color.yellow.4} @0.1"
+        },
+        "light-protanopia-deuteranopia": {
+          "from": "{base.color.orange.0}",
+          "to": "{base.color.yellow.0}"
+        },
+        "light-protanopia-deuteranopia-high-contrast": {
+          "from": "{base.color.orange.0}",
+          "to": "{base.color.yellow.0}"
+        }
+      }
+    },
+    "bgColor.done.emphasis": {
+      "file": "src/tokens/functional/color/bgColor.json5",
+      "themes": {
+        "default": {
+          "from": "{base.color.purple.5}",
+          "to": "{bgColor.upsell.emphasis}"
+        }
+      }
+    },
+    "bgColor.done.muted": {
+      "file": "src/tokens/functional/color/bgColor.json5",
+      "themes": {
+        "default": {
+          "from": "{base.color.purple.0}",
+          "to": "{bgColor.upsell.muted}"
+        }
+      }
+    },
+    "bgColor.success.emphasis": {
+      "file": "src/tokens/functional/color/bgColor.json5",
+      "themes": {
+        "dark-protanopia-deuteranopia": {
+          "from": "{base.color.blue.5}",
+          "to": "{bgColor.accent.emphasis}"
+        },
+        "dark-protanopia-deuteranopia-high-contrast": {
+          "from": "{base.color.blue.9}",
+          "to": "{bgColor.accent.emphasis}"
+        },
+        "dark-tritanopia": {
+          "from": "{base.color.blue.5}",
+          "to": "{bgColor.accent.emphasis}"
+        },
+        "dark-tritanopia-high-contrast": {
+          "from": "{base.color.blue.9}",
+          "to": "{bgColor.accent.emphasis}"
+        },
+        "light-protanopia-deuteranopia": {
+          "from": "{base.color.blue.5}",
+          "to": "{bgColor.accent.emphasis}"
+        },
+        "light-protanopia-deuteranopia-high-contrast": {
+          "from": "{base.color.blue.5}",
+          "to": "{bgColor.accent.emphasis}"
+        },
+        "light-tritanopia": {
+          "from": "{base.color.blue.5}",
+          "to": "{bgColor.accent.emphasis}"
+        },
+        "light-tritanopia-high-contrast": {
+          "from": "{base.color.blue.5}",
+          "to": "{bgColor.accent.emphasis}"
+        }
+      }
+    },
+    "bgColor.success.muted": {
+      "file": "src/tokens/functional/color/bgColor.json5",
+      "themes": {
+        "dark-protanopia-deuteranopia": {
+          "from": "{base.color.blue.4} @0.2",
+          "to": "{bgColor.accent.muted}"
+        },
+        "dark-protanopia-deuteranopia-high-contrast": {
+          "from": "{base.color.blue.4} @0.2",
+          "to": "{bgColor.accent.muted}"
+        },
+        "dark-tritanopia": {
+          "from": "{base.color.blue.4} @0.15",
+          "to": "{bgColor.accent.muted}"
+        },
+        "dark-tritanopia-high-contrast": {
+          "from": "{base.color.blue.4} @0.15",
+          "to": "{bgColor.accent.muted}"
+        },
+        "light-protanopia-deuteranopia": {
+          "from": "{base.color.blue.0}",
+          "to": "{bgColor.accent.muted}"
+        },
+        "light-protanopia-deuteranopia-high-contrast": {
+          "from": "{base.color.blue.0}",
+          "to": "{bgColor.accent.muted}"
+        },
+        "light-tritanopia": {
+          "from": "{base.color.blue.0}",
+          "to": "{bgColor.accent.muted}"
+        },
+        "light-tritanopia-high-contrast": {
+          "from": "{base.color.blue.0}",
+          "to": "{bgColor.accent.muted}"
+        }
+      }
+    },
+    "bgColor.upsell.emphasis": {
+      "file": "src/tokens/functional/color/bgColor.json5",
+      "themes": {
+        "default": {
+          "from": "{bgColor.done.emphasis}",
+          "to": "{base.color.purple.5}"
+        }
+      }
+    },
+    "bgColor.upsell.muted": {
+      "file": "src/tokens/functional/color/bgColor.json5",
+      "themes": {
+        "default": {
+          "from": "{bgColor.done.muted}",
+          "to": "{base.color.purple.0}"
+        }
+      }
+    },
+    "borderColor.danger.emphasis": {
+      "file": "src/tokens/functional/color/borderColor.json5",
+      "themes": {
+        "dark-protanopia-deuteranopia": {
+          "from": "{base.color.orange.5}",
+          "to": "{base.color.yellow.5}"
+        },
+        "dark-protanopia-deuteranopia-high-contrast": {
+          "from": "{base.color.orange.5}",
+          "to": "{base.color.yellow.2}"
+        },
+        "light-protanopia-deuteranopia": {
+          "from": "{base.color.orange.5}",
+          "to": "{base.color.yellow.5}"
+        }
+      }
+    },
+    "borderColor.danger.muted": {
+      "file": "src/tokens/functional/color/borderColor.json5",
+      "themes": {
+        "dark-protanopia-deuteranopia": {
+          "from": "{base.color.orange.4}",
+          "to": "{base.color.yellow.4} @0.4"
+        },
+        "dark-protanopia-deuteranopia-high-contrast": {
+          "from": "{base.color.orange.4} @1",
+          "to": "{base.color.yellow.4} @1"
+        },
+        "light-protanopia-deuteranopia": {
+          "from": "{base.color.orange.0} @1",
+          "to": "{base.color.yellow.3} @0.4"
+        },
+        "light-protanopia-deuteranopia-high-contrast": {
+          "from": "{base.color.orange.4} @1",
+          "to": "{base.color.yellow.4} @1"
+        }
+      }
+    },
+    "borderColor.done.emphasis": {
+      "file": "src/tokens/functional/color/borderColor.json5",
+      "themes": {
+        "default": {
+          "from": "{base.color.purple.5}",
+          "to": "{borderColor.upsell.emphasis}"
+        }
+      }
+    },
+    "borderColor.done.muted": {
+      "file": "src/tokens/functional/color/borderColor.json5",
+      "themes": {
+        "default": {
+          "from": "{base.color.purple.3}",
+          "to": "{borderColor.upsell.muted}"
+        }
+      }
+    },
+    "borderColor.emphasis": {
+      "file": "src/tokens/functional/color/borderColor.json5",
+      "themes": {
+        "dark-protanopia-deuteranopia-high-contrast": {
+          "from": "{borderColor.default}",
+          "to": "{borderColor.default} @1"
+        },
+        "light-protanopia-deuteranopia-high-contrast": {
+          "from": "{borderColor.default}",
+          "to": "{borderColor.default} @1"
+        }
+      }
+    },
+    "borderColor.muted": {
+      "file": "src/tokens/functional/color/borderColor.json5",
+      "themes": {
+        "dark-dimmed": {
+          "from": "{base.color.neutral.7} @0.7",
+          "to": "{base.color.neutral.7} @0.8"
+        }
+      }
+    },
+    "borderColor.success.muted": {
+      "file": "src/tokens/functional/color/borderColor.json5",
+      "themes": {
+        "dark-protanopia-deuteranopia": {
+          "from": "{base.color.blue.4}",
+          "to": "{borderColor.accent.muted}"
+        },
+        "dark-protanopia-deuteranopia-high-contrast": {
+          "from": "{base.color.blue.4} @1",
+          "to": "{borderColor.accent.muted} @1"
+        },
+        "light-protanopia-deuteranopia": {
+          "from": "{base.color.blue.0} @1",
+          "to": "{borderColor.accent.muted} @1"
+        },
+        "light-protanopia-deuteranopia-high-contrast": {
+          "from": "{base.color.blue.3} @1",
+          "to": "{borderColor.accent.muted} @1"
+        }
+      }
+    },
+    "borderColor.upsell.emphasis": {
+      "file": "src/tokens/functional/color/borderColor.json5",
+      "themes": {
+        "default": {
+          "from": "{borderColor.done.emphasis}",
+          "to": "{base.color.purple.5}"
+        }
+      }
+    },
+    "borderColor.upsell.muted": {
+      "file": "src/tokens/functional/color/borderColor.json5",
+      "themes": {
+        "default": {
+          "from": "{borderColor.done.muted}",
+          "to": "{base.color.purple.3}"
+        }
+      }
+    },
+    "fgColor.danger": {
+      "file": "src/tokens/functional/color/fgColor.json5",
+      "themes": {
+        "dark-protanopia-deuteranopia": {
+          "from": "{base.color.orange.3}",
+          "to": "{base.color.yellow.3}"
+        },
+        "dark-protanopia-deuteranopia-high-contrast": {
+          "from": "{base.color.orange.2}",
+          "to": "{base.color.yellow.3}"
+        },
+        "light-protanopia-deuteranopia": {
+          "from": "{base.color.orange.5}",
+          "to": "{base.color.yellow.5}"
+        },
+        "light-protanopia-deuteranopia-high-contrast": {
+          "from": "{base.color.orange.6}",
+          "to": "{base.color.yellow.6}"
+        }
+      }
+    },
+    "fgColor.done": {
+      "file": "src/tokens/functional/color/fgColor.json5",
+      "themes": {
+        "default": {
+          "from": "{base.color.purple.5}",
+          "to": "{fgColor.upsell}"
+        }
+      }
+    },
+    "fgColor.success": {
+      "file": "src/tokens/functional/color/fgColor.json5",
+      "themes": {
+        "dark-protanopia-deuteranopia": {
+          "from": "{base.color.blue.3}",
+          "to": "{fgColor.accent}"
+        },
+        "dark-protanopia-deuteranopia-high-contrast": {
+          "from": "{base.color.blue.1}",
+          "to": "{fgColor.accent}"
+        },
+        "dark-tritanopia": {
+          "from": "{base.color.blue.3}",
+          "to": "{fgColor.accent}"
+        },
+        "dark-tritanopia-high-contrast": {
+          "from": "{base.color.blue.2}",
+          "to": "{fgColor.accent}"
+        },
+        "light-protanopia-deuteranopia": {
+          "from": "{base.color.blue.5}",
+          "to": "{fgColor.accent}"
+        },
+        "light-protanopia-deuteranopia-high-contrast": {
+          "from": "{base.color.blue.6}",
+          "to": "{fgColor.accent}"
+        },
+        "light-tritanopia": {
+          "from": "{base.color.blue.5}",
+          "to": "{fgColor.accent}"
+        },
+        "light-tritanopia-high-contrast": {
+          "from": "{base.color.blue.6}",
+          "to": "{fgColor.accent}"
+        }
+      }
+    },
+    "fgColor.upsell": {
+      "file": "src/tokens/functional/color/fgColor.json5",
+      "themes": {
+        "default": {
+          "from": "{fgColor.done}",
+          "to": "{base.color.purple.5}"
+        }
+      }
+    }
+  },
+  "addedThemeOverrides": [
+    {
+      "token": "bgColor.accent.emphasis",
+      "theme": "dark-protanopia-deuteranopia",
+      "value": "{base.color.blue.7}",
+      "file": "src/tokens/functional/color/bgColor.json5"
+    },
+    {
+      "token": "bgColor.accent.emphasis",
+      "theme": "dark-tritanopia",
+      "value": "{base.color.blue.7}",
+      "file": "src/tokens/functional/color/bgColor.json5"
+    },
+    {
+      "token": "bgColor.accent.emphasis",
+      "theme": "light-protanopia-deuteranopia",
+      "value": "{base.color.blue.7}",
+      "file": "src/tokens/functional/color/bgColor.json5"
+    },
+    {
+      "token": "bgColor.accent.emphasis",
+      "theme": "light-protanopia-deuteranopia-high-contrast",
+      "value": "{base.color.blue.7}",
+      "file": "src/tokens/functional/color/bgColor.json5"
+    },
+    {
+      "token": "bgColor.accent.emphasis",
+      "theme": "light-tritanopia",
+      "value": "{base.color.blue.7}",
+      "file": "src/tokens/functional/color/bgColor.json5"
+    },
+    {
+      "token": "bgColor.accent.emphasis",
+      "theme": "light-tritanopia-high-contrast",
+      "value": "{base.color.blue.7}",
+      "file": "src/tokens/functional/color/bgColor.json5"
+    },
+    {
+      "token": "bgColor.danger.muted",
+      "theme": "dark-protanopia-deuteranopia-high-contrast",
+      "value": "{base.color.yellow.4} @0.1",
+      "file": "src/tokens/functional/color/bgColor.json5"
+    },
+    {
+      "token": "bgColor.upsell.emphasis",
+      "theme": "dark-dimmed-high-contrast",
+      "value": "{base.color.purple.9}",
+      "file": "src/tokens/functional/color/bgColor.json5"
+    },
+    {
+      "token": "bgColor.upsell.emphasis",
+      "theme": "dark-high-contrast",
+      "value": "{base.color.purple.9}",
+      "file": "src/tokens/functional/color/bgColor.json5"
+    },
+    {
+      "token": "bgColor.upsell.emphasis",
+      "theme": "dark-protanopia-deuteranopia",
+      "value": "{base.color.purple.5}",
+      "file": "src/tokens/functional/color/bgColor.json5"
+    },
+    {
+      "token": "bgColor.upsell.emphasis",
+      "theme": "dark-protanopia-deuteranopia-high-contrast",
+      "value": "{base.color.purple.9}",
+      "file": "src/tokens/functional/color/bgColor.json5"
+    },
+    {
+      "token": "bgColor.upsell.emphasis",
+      "theme": "dark-tritanopia",
+      "value": "{base.color.purple.5}",
+      "file": "src/tokens/functional/color/bgColor.json5"
+    },
+    {
+      "token": "bgColor.upsell.emphasis",
+      "theme": "dark-tritanopia-high-contrast",
+      "value": "{base.color.purple.9}",
+      "file": "src/tokens/functional/color/bgColor.json5"
+    },
+    {
+      "token": "bgColor.upsell.emphasis",
+      "theme": "light-protanopia-deuteranopia",
+      "value": "{base.color.purple.5}",
+      "file": "src/tokens/functional/color/bgColor.json5"
+    },
+    {
+      "token": "bgColor.upsell.emphasis",
+      "theme": "light-protanopia-deuteranopia-high-contrast",
+      "value": "{base.color.purple.5}",
+      "file": "src/tokens/functional/color/bgColor.json5"
+    },
+    {
+      "token": "bgColor.upsell.emphasis",
+      "theme": "light-tritanopia",
+      "value": "{base.color.purple.5}",
+      "file": "src/tokens/functional/color/bgColor.json5"
+    },
+    {
+      "token": "bgColor.upsell.emphasis",
+      "theme": "light-tritanopia-high-contrast",
+      "value": "{base.color.purple.5}",
+      "file": "src/tokens/functional/color/bgColor.json5"
+    },
+    {
+      "token": "bgColor.upsell.muted",
+      "theme": "dark",
+      "value": "{base.color.purple.4} @0.15",
+      "file": "src/tokens/functional/color/bgColor.json5"
+    },
+    {
+      "token": "bgColor.upsell.muted",
+      "theme": "dark-protanopia-deuteranopia",
+      "value": "{base.color.purple.4} @0.15",
+      "file": "src/tokens/functional/color/bgColor.json5"
+    },
+    {
+      "token": "bgColor.upsell.muted",
+      "theme": "dark-protanopia-deuteranopia-high-contrast",
+      "value": "{base.color.purple.4} @0.15",
+      "file": "src/tokens/functional/color/bgColor.json5"
+    },
+    {
+      "token": "bgColor.upsell.muted",
+      "theme": "dark-tritanopia",
+      "value": "{base.color.purple.4} @0.15",
+      "file": "src/tokens/functional/color/bgColor.json5"
+    },
+    {
+      "token": "bgColor.upsell.muted",
+      "theme": "dark-tritanopia-high-contrast",
+      "value": "{base.color.purple.4} @0.15",
+      "file": "src/tokens/functional/color/bgColor.json5"
+    },
+    {
+      "token": "bgColor.upsell.muted",
+      "theme": "light-protanopia-deuteranopia",
+      "value": "{base.color.purple.0}",
+      "file": "src/tokens/functional/color/bgColor.json5"
+    },
+    {
+      "token": "bgColor.upsell.muted",
+      "theme": "light-protanopia-deuteranopia-high-contrast",
+      "value": "{base.color.purple.0}",
+      "file": "src/tokens/functional/color/bgColor.json5"
+    },
+    {
+      "token": "bgColor.upsell.muted",
+      "theme": "light-tritanopia",
+      "value": "{base.color.purple.0}",
+      "file": "src/tokens/functional/color/bgColor.json5"
+    },
+    {
+      "token": "bgColor.upsell.muted",
+      "theme": "light-tritanopia-high-contrast",
+      "value": "{base.color.purple.0}",
+      "file": "src/tokens/functional/color/bgColor.json5"
+    },
+    {
+      "token": "borderColor.severe.muted",
+      "theme": "light-protanopia-deuteranopia-high-contrast",
+      "value": "{base.color.orange.4} @1",
+      "file": "src/tokens/functional/color/borderColor.json5"
+    },
+    {
+      "token": "borderColor.upsell.emphasis",
+      "theme": "dark-dimmed-high-contrast",
+      "value": "{base.color.purple.5}",
+      "file": "src/tokens/functional/color/borderColor.json5"
+    },
+    {
+      "token": "borderColor.upsell.emphasis",
+      "theme": "dark-protanopia-deuteranopia",
+      "value": "{base.color.purple.5}",
+      "file": "src/tokens/functional/color/borderColor.json5"
+    },
+    {
+      "token": "borderColor.upsell.emphasis",
+      "theme": "dark-protanopia-deuteranopia-high-contrast",
+      "value": "{base.color.purple.5}",
+      "file": "src/tokens/functional/color/borderColor.json5"
+    },
+    {
+      "token": "borderColor.upsell.emphasis",
+      "theme": "dark-tritanopia",
+      "value": "{base.color.purple.5}",
+      "file": "src/tokens/functional/color/borderColor.json5"
+    },
+    {
+      "token": "borderColor.upsell.emphasis",
+      "theme": "dark-tritanopia-high-contrast",
+      "value": "{base.color.purple.5}",
+      "file": "src/tokens/functional/color/borderColor.json5"
+    },
+    {
+      "token": "borderColor.upsell.emphasis",
+      "theme": "light-protanopia-deuteranopia",
+      "value": "{base.color.purple.5}",
+      "file": "src/tokens/functional/color/borderColor.json5"
+    },
+    {
+      "token": "borderColor.upsell.emphasis",
+      "theme": "light-protanopia-deuteranopia-high-contrast",
+      "value": "{base.color.purple.5}",
+      "file": "src/tokens/functional/color/borderColor.json5"
+    },
+    {
+      "token": "borderColor.upsell.emphasis",
+      "theme": "light-tritanopia",
+      "value": "{base.color.purple.5}",
+      "file": "src/tokens/functional/color/borderColor.json5"
+    },
+    {
+      "token": "borderColor.upsell.emphasis",
+      "theme": "light-tritanopia-high-contrast",
+      "value": "{base.color.purple.5}",
+      "file": "src/tokens/functional/color/borderColor.json5"
+    },
+    {
+      "token": "borderColor.upsell.muted",
+      "theme": "dark",
+      "value": "{base.color.purple.4} @0.4",
+      "file": "src/tokens/functional/color/borderColor.json5"
+    },
+    {
+      "token": "borderColor.upsell.muted",
+      "theme": "dark-dimmed-high-contrast",
+      "value": "{base.color.purple.4} @1",
+      "file": "src/tokens/functional/color/borderColor.json5"
+    },
+    {
+      "token": "borderColor.upsell.muted",
+      "theme": "dark-high-contrast",
+      "value": "{base.color.purple.4} @1",
+      "file": "src/tokens/functional/color/borderColor.json5"
+    },
+    {
+      "token": "borderColor.upsell.muted",
+      "theme": "dark-protanopia-deuteranopia",
+      "value": "{base.color.purple.4} @0.4",
+      "file": "src/tokens/functional/color/borderColor.json5"
+    },
+    {
+      "token": "borderColor.upsell.muted",
+      "theme": "dark-protanopia-deuteranopia-high-contrast",
+      "value": "{base.color.purple.4} @1",
+      "file": "src/tokens/functional/color/borderColor.json5"
+    },
+    {
+      "token": "borderColor.upsell.muted",
+      "theme": "dark-tritanopia",
+      "value": "{base.color.purple.4} @0.4",
+      "file": "src/tokens/functional/color/borderColor.json5"
+    },
+    {
+      "token": "borderColor.upsell.muted",
+      "theme": "dark-tritanopia-high-contrast",
+      "value": "{base.color.purple.4} @1",
+      "file": "src/tokens/functional/color/borderColor.json5"
+    },
+    {
+      "token": "borderColor.upsell.muted",
+      "theme": "light-protanopia-deuteranopia",
+      "value": "{base.color.purple.3} @1",
+      "file": "src/tokens/functional/color/borderColor.json5"
+    },
+    {
+      "token": "borderColor.upsell.muted",
+      "theme": "light-protanopia-deuteranopia-high-contrast",
+      "value": "{base.color.purple.3} @1",
+      "file": "src/tokens/functional/color/borderColor.json5"
+    },
+    {
+      "token": "borderColor.upsell.muted",
+      "theme": "light-tritanopia",
+      "value": "{base.color.purple.3} @1",
+      "file": "src/tokens/functional/color/borderColor.json5"
+    },
+    {
+      "token": "borderColor.upsell.muted",
+      "theme": "light-tritanopia-high-contrast",
+      "value": "{base.color.purple.3} @1",
+      "file": "src/tokens/functional/color/borderColor.json5"
+    },
+    {
+      "token": "fgColor.upsell",
+      "theme": "dark",
+      "value": "{base.color.purple.4}",
+      "file": "src/tokens/functional/color/fgColor.json5"
+    },
+    {
+      "token": "fgColor.upsell",
+      "theme": "dark-dimmed-high-contrast",
+      "value": "{base.color.purple.1}",
+      "file": "src/tokens/functional/color/fgColor.json5"
+    },
+    {
+      "token": "fgColor.upsell",
+      "theme": "dark-high-contrast",
+      "value": "{base.color.purple.1}",
+      "file": "src/tokens/functional/color/fgColor.json5"
+    },
+    {
+      "token": "fgColor.upsell",
+      "theme": "dark-protanopia-deuteranopia",
+      "value": "{base.color.purple.4}",
+      "file": "src/tokens/functional/color/fgColor.json5"
+    },
+    {
+      "token": "fgColor.upsell",
+      "theme": "dark-protanopia-deuteranopia-high-contrast",
+      "value": "{base.color.purple.1}",
+      "file": "src/tokens/functional/color/fgColor.json5"
+    },
+    {
+      "token": "fgColor.upsell",
+      "theme": "dark-tritanopia",
+      "value": "{base.color.purple.4}",
+      "file": "src/tokens/functional/color/fgColor.json5"
+    },
+    {
+      "token": "fgColor.upsell",
+      "theme": "dark-tritanopia-high-contrast",
+      "value": "{base.color.purple.1}",
+      "file": "src/tokens/functional/color/fgColor.json5"
+    },
+    {
+      "token": "fgColor.upsell",
+      "theme": "light-high-contrast",
+      "value": "{base.color.purple.6}",
+      "file": "src/tokens/functional/color/fgColor.json5"
+    },
+    {
+      "token": "fgColor.upsell",
+      "theme": "light-protanopia-deuteranopia",
+      "value": "{base.color.purple.5}",
+      "file": "src/tokens/functional/color/fgColor.json5"
+    },
+    {
+      "token": "fgColor.upsell",
+      "theme": "light-protanopia-deuteranopia-high-contrast",
+      "value": "{base.color.purple.6}",
+      "file": "src/tokens/functional/color/fgColor.json5"
+    },
+    {
+      "token": "fgColor.upsell",
+      "theme": "light-tritanopia",
+      "value": "{base.color.purple.5}",
+      "file": "src/tokens/functional/color/fgColor.json5"
+    },
+    {
+      "token": "fgColor.upsell",
+      "theme": "light-tritanopia-high-contrast",
+      "value": "{base.color.purple.6}",
+      "file": "src/tokens/functional/color/fgColor.json5"
+    }
+  ],
+  "removedThemeOverrides": [
+    {
+      "token": "bgColor.closed.emphasis",
+      "theme": "dark-protanopia-deuteranopia",
+      "value": "{bgColor.neutral.emphasis}",
+      "file": "src/tokens/functional/color/bgColor.json5"
+    },
+    {
+      "token": "bgColor.closed.emphasis",
+      "theme": "dark-protanopia-deuteranopia-high-contrast",
+      "value": "{bgColor.neutral.emphasis}",
+      "file": "src/tokens/functional/color/bgColor.json5"
+    },
+    {
+      "token": "bgColor.closed.emphasis",
+      "theme": "dark-tritanopia",
+      "value": "{bgColor.neutral.emphasis}",
+      "file": "src/tokens/functional/color/bgColor.json5"
+    },
+    {
+      "token": "bgColor.closed.emphasis",
+      "theme": "dark-tritanopia-high-contrast",
+      "value": "{bgColor.neutral.emphasis}",
+      "file": "src/tokens/functional/color/bgColor.json5"
+    },
+    {
+      "token": "bgColor.closed.emphasis",
+      "theme": "light-protanopia-deuteranopia",
+      "value": "{bgColor.neutral.emphasis}",
+      "file": "src/tokens/functional/color/bgColor.json5"
+    },
+    {
+      "token": "bgColor.closed.emphasis",
+      "theme": "light-protanopia-deuteranopia-high-contrast",
+      "value": "{bgColor.neutral.emphasis}",
+      "file": "src/tokens/functional/color/bgColor.json5"
+    },
+    {
+      "token": "bgColor.closed.emphasis",
+      "theme": "light-tritanopia",
+      "value": "{bgColor.neutral.emphasis}",
+      "file": "src/tokens/functional/color/bgColor.json5"
+    },
+    {
+      "token": "bgColor.closed.emphasis",
+      "theme": "light-tritanopia-high-contrast",
+      "value": "{bgColor.neutral.emphasis}",
+      "file": "src/tokens/functional/color/bgColor.json5"
+    },
+    {
+      "token": "bgColor.closed.muted",
+      "theme": "dark-protanopia-deuteranopia",
+      "value": "{bgColor.neutral.muted} @0.1",
+      "file": "src/tokens/functional/color/bgColor.json5"
+    },
+    {
+      "token": "bgColor.closed.muted",
+      "theme": "dark-protanopia-deuteranopia-high-contrast",
+      "value": "{bgColor.neutral.muted} @0.1",
+      "file": "src/tokens/functional/color/bgColor.json5"
+    },
+    {
+      "token": "bgColor.closed.muted",
+      "theme": "dark-tritanopia",
+      "value": "{bgColor.neutral.muted} @0.1",
+      "file": "src/tokens/functional/color/bgColor.json5"
+    },
+    {
+      "token": "bgColor.closed.muted",
+      "theme": "light-protanopia-deuteranopia",
+      "value": "{bgColor.neutral.muted}",
+      "file": "src/tokens/functional/color/bgColor.json5"
+    },
+    {
+      "token": "bgColor.closed.muted",
+      "theme": "light-protanopia-deuteranopia-high-contrast",
+      "value": "{bgColor.neutral.muted}",
+      "file": "src/tokens/functional/color/bgColor.json5"
+    },
+    {
+      "token": "bgColor.closed.muted",
+      "theme": "light-tritanopia",
+      "value": "{bgColor.neutral.muted}",
+      "file": "src/tokens/functional/color/bgColor.json5"
+    },
+    {
+      "token": "bgColor.closed.muted",
+      "theme": "light-tritanopia-high-contrast",
+      "value": "{bgColor.neutral.muted}",
+      "file": "src/tokens/functional/color/bgColor.json5"
+    },
+    {
+      "token": "bgColor.done.emphasis",
+      "theme": "dark-dimmed-high-contrast",
+      "value": "{base.color.purple.7}",
+      "file": "src/tokens/functional/color/bgColor.json5"
+    },
+    {
+      "token": "bgColor.done.emphasis",
+      "theme": "dark-high-contrast",
+      "value": "{base.color.purple.9}",
+      "file": "src/tokens/functional/color/bgColor.json5"
+    },
+    {
+      "token": "bgColor.done.emphasis",
+      "theme": "dark-protanopia-deuteranopia-high-contrast",
+      "value": "{base.color.purple.9}",
+      "file": "src/tokens/functional/color/bgColor.json5"
+    },
+    {
+      "token": "bgColor.done.emphasis",
+      "theme": "dark-tritanopia-high-contrast",
+      "value": "{base.color.purple.9}",
+      "file": "src/tokens/functional/color/bgColor.json5"
+    },
+    {
+      "token": "bgColor.done.muted",
+      "theme": "dark",
+      "value": "{base.color.purple.4} @0.15",
+      "file": "src/tokens/functional/color/bgColor.json5"
+    },
+    {
+      "token": "bgColor.draft.muted",
+      "theme": "dark-protanopia-deuteranopia",
+      "value": "{bgColor.neutral.muted} @0.1",
+      "file": "src/tokens/functional/color/bgColor.json5"
+    },
+    {
+      "token": "bgColor.draft.muted",
+      "theme": "dark-protanopia-deuteranopia-high-contrast",
+      "value": "{bgColor.neutral.muted} @0.1",
+      "file": "src/tokens/functional/color/bgColor.json5"
+    },
+    {
+      "token": "bgColor.draft.muted",
+      "theme": "dark-tritanopia",
+      "value": "{bgColor.neutral.muted} @0.1",
+      "file": "src/tokens/functional/color/bgColor.json5"
+    },
+    {
+      "token": "bgColor.draft.muted",
+      "theme": "light-protanopia-deuteranopia",
+      "value": "{bgColor.neutral.muted}",
+      "file": "src/tokens/functional/color/bgColor.json5"
+    },
+    {
+      "token": "bgColor.draft.muted",
+      "theme": "light-protanopia-deuteranopia-high-contrast",
+      "value": "{bgColor.neutral.muted}",
+      "file": "src/tokens/functional/color/bgColor.json5"
+    },
+    {
+      "token": "bgColor.draft.muted",
+      "theme": "light-tritanopia",
+      "value": "{bgColor.neutral.muted}",
+      "file": "src/tokens/functional/color/bgColor.json5"
+    },
+    {
+      "token": "bgColor.draft.muted",
+      "theme": "light-tritanopia-high-contrast",
+      "value": "{bgColor.neutral.muted}",
+      "file": "src/tokens/functional/color/bgColor.json5"
+    },
+    {
+      "token": "bgColor.open.emphasis",
+      "theme": "dark-protanopia-deuteranopia",
+      "value": "{base.color.orange.5}",
+      "file": "src/tokens/functional/color/bgColor.json5"
+    },
+    {
+      "token": "bgColor.open.emphasis",
+      "theme": "dark-protanopia-deuteranopia-high-contrast",
+      "value": "{base.color.orange.9}",
+      "file": "src/tokens/functional/color/bgColor.json5"
+    },
+    {
+      "token": "bgColor.open.emphasis",
+      "theme": "dark-tritanopia",
+      "value": "{base.color.red.5}",
+      "file": "src/tokens/functional/color/bgColor.json5"
+    },
+    {
+      "token": "bgColor.open.emphasis",
+      "theme": "dark-tritanopia-high-contrast",
+      "value": "{base.color.red.9}",
+      "file": "src/tokens/functional/color/bgColor.json5"
+    },
+    {
+      "token": "bgColor.open.emphasis",
+      "theme": "light-protanopia-deuteranopia",
+      "value": "{base.color.orange.5}",
+      "file": "src/tokens/functional/color/bgColor.json5"
+    },
+    {
+      "token": "bgColor.open.emphasis",
+      "theme": "light-protanopia-deuteranopia-high-contrast",
+      "value": "{base.color.orange.5}",
+      "file": "src/tokens/functional/color/bgColor.json5"
+    },
+    {
+      "token": "bgColor.open.emphasis",
+      "theme": "light-tritanopia",
+      "value": "{base.color.red.5}",
+      "file": "src/tokens/functional/color/bgColor.json5"
+    },
+    {
+      "token": "bgColor.open.emphasis",
+      "theme": "light-tritanopia-high-contrast",
+      "value": "{base.color.red.5}",
+      "file": "src/tokens/functional/color/bgColor.json5"
+    },
+    {
+      "token": "bgColor.open.muted",
+      "theme": "dark-protanopia-deuteranopia",
+      "value": "{base.color.orange.4} @0.1",
+      "file": "src/tokens/functional/color/bgColor.json5"
+    },
+    {
+      "token": "bgColor.open.muted",
+      "theme": "dark-protanopia-deuteranopia-high-contrast",
+      "value": "{base.color.orange.4} @0.1",
+      "file": "src/tokens/functional/color/bgColor.json5"
+    },
+    {
+      "token": "bgColor.open.muted",
+      "theme": "dark-tritanopia",
+      "value": "{base.color.red.4} @0.1",
+      "file": "src/tokens/functional/color/bgColor.json5"
+    },
+    {
+      "token": "bgColor.open.muted",
+      "theme": "dark-tritanopia-high-contrast",
+      "value": "{base.color.red.4} @0.1",
+      "file": "src/tokens/functional/color/bgColor.json5"
+    },
+    {
+      "token": "bgColor.open.muted",
+      "theme": "light-protanopia-deuteranopia",
+      "value": "{base.color.orange.0}",
+      "file": "src/tokens/functional/color/bgColor.json5"
+    },
+    {
+      "token": "bgColor.open.muted",
+      "theme": "light-protanopia-deuteranopia-high-contrast",
+      "value": "{base.color.orange.0}",
+      "file": "src/tokens/functional/color/bgColor.json5"
+    },
+    {
+      "token": "bgColor.open.muted",
+      "theme": "light-tritanopia",
+      "value": "{base.color.red.0}",
+      "file": "src/tokens/functional/color/bgColor.json5"
+    },
+    {
+      "token": "bgColor.open.muted",
+      "theme": "light-tritanopia-high-contrast",
+      "value": "{base.color.red.0}",
+      "file": "src/tokens/functional/color/bgColor.json5"
+    },
+    {
+      "token": "borderColor.closed.emphasis",
+      "theme": "dark-protanopia-deuteranopia",
+      "value": "{borderColor.emphasis}",
+      "file": "src/tokens/functional/color/borderColor.json5"
+    },
+    {
+      "token": "borderColor.closed.emphasis",
+      "theme": "dark-protanopia-deuteranopia-high-contrast",
+      "value": "{borderColor.emphasis}",
+      "file": "src/tokens/functional/color/borderColor.json5"
+    },
+    {
+      "token": "borderColor.closed.emphasis",
+      "theme": "dark-tritanopia",
+      "value": "{borderColor.emphasis}",
+      "file": "src/tokens/functional/color/borderColor.json5"
+    },
+    {
+      "token": "borderColor.closed.emphasis",
+      "theme": "dark-tritanopia-high-contrast",
+      "value": "{borderColor.emphasis}",
+      "file": "src/tokens/functional/color/borderColor.json5"
+    },
+    {
+      "token": "borderColor.closed.emphasis",
+      "theme": "light-protanopia-deuteranopia",
+      "value": "{borderColor.emphasis}",
+      "file": "src/tokens/functional/color/borderColor.json5"
+    },
+    {
+      "token": "borderColor.closed.emphasis",
+      "theme": "light-protanopia-deuteranopia-high-contrast",
+      "value": "{borderColor.emphasis}",
+      "file": "src/tokens/functional/color/borderColor.json5"
+    },
+    {
+      "token": "borderColor.closed.emphasis",
+      "theme": "light-tritanopia",
+      "value": "{borderColor.emphasis}",
+      "file": "src/tokens/functional/color/borderColor.json5"
+    },
+    {
+      "token": "borderColor.closed.emphasis",
+      "theme": "light-tritanopia-high-contrast",
+      "value": "{borderColor.emphasis}",
+      "file": "src/tokens/functional/color/borderColor.json5"
+    },
+    {
+      "token": "borderColor.closed.muted",
+      "theme": "dark-protanopia-deuteranopia",
+      "value": "{borderColor.default} @0.4",
+      "file": "src/tokens/functional/color/borderColor.json5"
+    },
+    {
+      "token": "borderColor.closed.muted",
+      "theme": "dark-protanopia-deuteranopia-high-contrast",
+      "value": "{borderColor.default} @1",
+      "file": "src/tokens/functional/color/borderColor.json5"
+    },
+    {
+      "token": "borderColor.closed.muted",
+      "theme": "dark-tritanopia",
+      "value": "{borderColor.default} @0.4",
+      "file": "src/tokens/functional/color/borderColor.json5"
+    },
+    {
+      "token": "borderColor.closed.muted",
+      "theme": "dark-tritanopia-high-contrast",
+      "value": "{borderColor.default} @1",
+      "file": "src/tokens/functional/color/borderColor.json5"
+    },
+    {
+      "token": "borderColor.closed.muted",
+      "theme": "light-protanopia-deuteranopia",
+      "value": "{borderColor.default} @0.4",
+      "file": "src/tokens/functional/color/borderColor.json5"
+    },
+    {
+      "token": "borderColor.closed.muted",
+      "theme": "light-protanopia-deuteranopia-high-contrast",
+      "value": "{borderColor.default} @1",
+      "file": "src/tokens/functional/color/borderColor.json5"
+    },
+    {
+      "token": "borderColor.closed.muted",
+      "theme": "light-tritanopia",
+      "value": "{borderColor.default} @0.4",
+      "file": "src/tokens/functional/color/borderColor.json5"
+    },
+    {
+      "token": "borderColor.closed.muted",
+      "theme": "light-tritanopia-high-contrast",
+      "value": "{borderColor.default} @1",
+      "file": "src/tokens/functional/color/borderColor.json5"
+    },
+    {
+      "token": "borderColor.danger.emphasis",
+      "theme": "light-protanopia-deuteranopia-high-contrast",
+      "value": "{base.color.orange.5}",
+      "file": "src/tokens/functional/color/borderColor.json5"
+    },
+    {
+      "token": "borderColor.done.emphasis",
+      "theme": "dark-dimmed-high-contrast",
+      "value": "{base.color.purple.2}",
+      "file": "src/tokens/functional/color/borderColor.json5"
+    },
+    {
+      "token": "borderColor.done.muted",
+      "theme": "dark",
+      "value": "{base.color.purple.4}",
+      "file": "src/tokens/functional/color/borderColor.json5"
+    },
+    {
+      "token": "borderColor.done.muted",
+      "theme": "dark-dimmed-high-contrast",
+      "value": "{base.color.purple.2} @1",
+      "file": "src/tokens/functional/color/borderColor.json5"
+    },
+    {
+      "token": "borderColor.done.muted",
+      "theme": "dark-high-contrast",
+      "value": "{base.color.purple.4} @1",
+      "file": "src/tokens/functional/color/borderColor.json5"
+    },
+    {
+      "token": "borderColor.done.muted",
+      "theme": "dark-protanopia-deuteranopia-high-contrast",
+      "value": "{base.color.purple.4} @1",
+      "file": "src/tokens/functional/color/borderColor.json5"
+    },
+    {
+      "token": "borderColor.done.muted",
+      "theme": "dark-tritanopia-high-contrast",
+      "value": "{base.color.purple.4} @1",
+      "file": "src/tokens/functional/color/borderColor.json5"
+    },
+    {
+      "token": "borderColor.done.muted",
+      "theme": "light-high-contrast",
+      "value": "{base.color.purple.3} @1",
+      "file": "src/tokens/functional/color/borderColor.json5"
+    },
+    {
+      "token": "borderColor.done.muted",
+      "theme": "light-protanopia-deuteranopia-high-contrast",
+      "value": "{base.color.purple.3} @1",
+      "file": "src/tokens/functional/color/borderColor.json5"
+    },
+    {
+      "token": "borderColor.done.muted",
+      "theme": "light-tritanopia-high-contrast",
+      "value": "{base.color.purple.3} @1",
+      "file": "src/tokens/functional/color/borderColor.json5"
+    },
+    {
+      "token": "borderColor.draft.muted",
+      "theme": "dark-protanopia-deuteranopia",
+      "value": "{borderColor.default} @0.4",
+      "file": "src/tokens/functional/color/borderColor.json5"
+    },
+    {
+      "token": "borderColor.draft.muted",
+      "theme": "dark-protanopia-deuteranopia-high-contrast",
+      "value": "{borderColor.default} @1",
+      "file": "src/tokens/functional/color/borderColor.json5"
+    },
+    {
+      "token": "borderColor.draft.muted",
+      "theme": "dark-tritanopia",
+      "value": "{borderColor.default} @0.4",
+      "file": "src/tokens/functional/color/borderColor.json5"
+    },
+    {
+      "token": "borderColor.draft.muted",
+      "theme": "dark-tritanopia-high-contrast",
+      "value": "{borderColor.default} @1",
+      "file": "src/tokens/functional/color/borderColor.json5"
+    },
+    {
+      "token": "borderColor.draft.muted",
+      "theme": "light-protanopia-deuteranopia",
+      "value": "{borderColor.default} @0.4",
+      "file": "src/tokens/functional/color/borderColor.json5"
+    },
+    {
+      "token": "borderColor.draft.muted",
+      "theme": "light-protanopia-deuteranopia-high-contrast",
+      "value": "{borderColor.default} @1",
+      "file": "src/tokens/functional/color/borderColor.json5"
+    },
+    {
+      "token": "borderColor.draft.muted",
+      "theme": "light-tritanopia",
+      "value": "{borderColor.default} @0.4",
+      "file": "src/tokens/functional/color/borderColor.json5"
+    },
+    {
+      "token": "borderColor.draft.muted",
+      "theme": "light-tritanopia-high-contrast",
+      "value": "{borderColor.default} @1",
+      "file": "src/tokens/functional/color/borderColor.json5"
+    },
+    {
+      "token": "borderColor.open.emphasis",
+      "theme": "dark-protanopia-deuteranopia",
+      "value": "{base.color.orange.5}",
+      "file": "src/tokens/functional/color/borderColor.json5"
+    },
+    {
+      "token": "borderColor.open.emphasis",
+      "theme": "dark-protanopia-deuteranopia-high-contrast",
+      "value": "{base.color.orange.5}",
+      "file": "src/tokens/functional/color/borderColor.json5"
+    },
+    {
+      "token": "borderColor.open.emphasis",
+      "theme": "dark-tritanopia",
+      "value": "{base.color.red.5}",
+      "file": "src/tokens/functional/color/borderColor.json5"
+    },
+    {
+      "token": "borderColor.open.emphasis",
+      "theme": "dark-tritanopia-high-contrast",
+      "value": "{base.color.red.5}",
+      "file": "src/tokens/functional/color/borderColor.json5"
+    },
+    {
+      "token": "borderColor.open.emphasis",
+      "theme": "light-protanopia-deuteranopia",
+      "value": "{base.color.orange.5}",
+      "file": "src/tokens/functional/color/borderColor.json5"
+    },
+    {
+      "token": "borderColor.open.emphasis",
+      "theme": "light-protanopia-deuteranopia-high-contrast",
+      "value": "{base.color.orange.5}",
+      "file": "src/tokens/functional/color/borderColor.json5"
+    },
+    {
+      "token": "borderColor.open.emphasis",
+      "theme": "light-tritanopia",
+      "value": "{base.color.red.5}",
+      "file": "src/tokens/functional/color/borderColor.json5"
+    },
+    {
+      "token": "borderColor.open.emphasis",
+      "theme": "light-tritanopia-high-contrast",
+      "value": "{base.color.red.5}",
+      "file": "src/tokens/functional/color/borderColor.json5"
+    },
+    {
+      "token": "borderColor.open.muted",
+      "theme": "dark-protanopia-deuteranopia",
+      "value": "{base.color.orange.4} @0.4",
+      "file": "src/tokens/functional/color/borderColor.json5"
+    },
+    {
+      "token": "borderColor.open.muted",
+      "theme": "dark-protanopia-deuteranopia-high-contrast",
+      "value": "{base.color.orange.4} @1",
+      "file": "src/tokens/functional/color/borderColor.json5"
+    },
+    {
+      "token": "borderColor.open.muted",
+      "theme": "dark-tritanopia",
+      "value": "{base.color.red.4} @0.4",
+      "file": "src/tokens/functional/color/borderColor.json5"
+    },
+    {
+      "token": "borderColor.open.muted",
+      "theme": "dark-tritanopia-high-contrast",
+      "value": "{base.color.red.4} @1",
+      "file": "src/tokens/functional/color/borderColor.json5"
+    },
+    {
+      "token": "borderColor.open.muted",
+      "theme": "light-protanopia-deuteranopia",
+      "value": "{base.color.orange.3} @0.4",
+      "file": "src/tokens/functional/color/borderColor.json5"
+    },
+    {
+      "token": "borderColor.open.muted",
+      "theme": "light-protanopia-deuteranopia-high-contrast",
+      "value": "{base.color.orange.3} @1",
+      "file": "src/tokens/functional/color/borderColor.json5"
+    },
+    {
+      "token": "borderColor.open.muted",
+      "theme": "light-tritanopia",
+      "value": "{base.color.red.3} @0.4",
+      "file": "src/tokens/functional/color/borderColor.json5"
+    },
+    {
+      "token": "borderColor.open.muted",
+      "theme": "light-tritanopia-high-contrast",
+      "value": "{base.color.red.3} @1",
+      "file": "src/tokens/functional/color/borderColor.json5"
+    },
+    {
+      "token": "fgColor.closed",
+      "theme": "dark-protanopia-deuteranopia",
+      "value": "{fgColor.muted}",
+      "file": "src/tokens/functional/color/fgColor.json5"
+    },
+    {
+      "token": "fgColor.closed",
+      "theme": "dark-protanopia-deuteranopia-high-contrast",
+      "value": "{fgColor.muted}",
+      "file": "src/tokens/functional/color/fgColor.json5"
+    },
+    {
+      "token": "fgColor.closed",
+      "theme": "dark-tritanopia",
+      "value": "{fgColor.muted}",
+      "file": "src/tokens/functional/color/fgColor.json5"
+    },
+    {
+      "token": "fgColor.closed",
+      "theme": "dark-tritanopia-high-contrast",
+      "value": "{fgColor.muted}",
+      "file": "src/tokens/functional/color/fgColor.json5"
+    },
+    {
+      "token": "fgColor.closed",
+      "theme": "light-protanopia-deuteranopia",
+      "value": "{fgColor.muted}",
+      "file": "src/tokens/functional/color/fgColor.json5"
+    },
+    {
+      "token": "fgColor.closed",
+      "theme": "light-protanopia-deuteranopia-high-contrast",
+      "value": "{fgColor.muted}",
+      "file": "src/tokens/functional/color/fgColor.json5"
+    },
+    {
+      "token": "fgColor.closed",
+      "theme": "light-tritanopia",
+      "value": "{fgColor.muted}",
+      "file": "src/tokens/functional/color/fgColor.json5"
+    },
+    {
+      "token": "fgColor.closed",
+      "theme": "light-tritanopia-high-contrast",
+      "value": "{fgColor.muted}",
+      "file": "src/tokens/functional/color/fgColor.json5"
+    },
+    {
+      "token": "fgColor.done",
+      "theme": "dark",
+      "value": "{base.color.purple.4}",
+      "file": "src/tokens/functional/color/fgColor.json5"
+    },
+    {
+      "token": "fgColor.done",
+      "theme": "dark-dimmed-high-contrast",
+      "value": "{base.color.purple.1}",
+      "file": "src/tokens/functional/color/fgColor.json5"
+    },
+    {
+      "token": "fgColor.done",
+      "theme": "dark-high-contrast",
+      "value": "#D3ABFF",
+      "file": "src/tokens/functional/color/fgColor.json5"
+    },
+    {
+      "token": "fgColor.done",
+      "theme": "dark-protanopia-deuteranopia-high-contrast",
+      "value": "#D3ABFF",
+      "file": "src/tokens/functional/color/fgColor.json5"
+    },
+    {
+      "token": "fgColor.done",
+      "theme": "dark-tritanopia-high-contrast",
+      "value": "#D3ABFF",
+      "file": "src/tokens/functional/color/fgColor.json5"
+    },
+    {
+      "token": "fgColor.done",
+      "theme": "light-high-contrast",
+      "value": "{base.color.purple.6}",
+      "file": "src/tokens/functional/color/fgColor.json5"
+    },
+    {
+      "token": "fgColor.done",
+      "theme": "light-protanopia-deuteranopia-high-contrast",
+      "value": "{base.color.purple.6}",
+      "file": "src/tokens/functional/color/fgColor.json5"
+    },
+    {
+      "token": "fgColor.done",
+      "theme": "light-tritanopia-high-contrast",
+      "value": "{base.color.purple.6}",
+      "file": "src/tokens/functional/color/fgColor.json5"
+    },
+    {
+      "token": "fgColor.open",
+      "theme": "dark-protanopia-deuteranopia",
+      "value": "{base.color.orange.4}",
+      "file": "src/tokens/functional/color/fgColor.json5"
+    },
+    {
+      "token": "fgColor.open",
+      "theme": "dark-protanopia-deuteranopia-high-contrast",
+      "value": "{base.color.orange.2}",
+      "file": "src/tokens/functional/color/fgColor.json5"
+    },
+    {
+      "token": "fgColor.open",
+      "theme": "dark-tritanopia",
+      "value": "{base.color.red.4}",
+      "file": "src/tokens/functional/color/fgColor.json5"
+    },
+    {
+      "token": "fgColor.open",
+      "theme": "dark-tritanopia-high-contrast",
+      "value": "{base.color.red.2}",
+      "file": "src/tokens/functional/color/fgColor.json5"
+    },
+    {
+      "token": "fgColor.open",
+      "theme": "light-protanopia-deuteranopia",
+      "value": "{base.color.orange.5}",
+      "file": "src/tokens/functional/color/fgColor.json5"
+    },
+    {
+      "token": "fgColor.open",
+      "theme": "light-protanopia-deuteranopia-high-contrast",
+      "value": "{base.color.orange.6}",
+      "file": "src/tokens/functional/color/fgColor.json5"
+    },
+    {
+      "token": "fgColor.open",
+      "theme": "light-tritanopia",
+      "value": "{base.color.red.5}",
+      "file": "src/tokens/functional/color/fgColor.json5"
+    },
+    {
+      "token": "fgColor.open",
+      "theme": "light-tritanopia-high-contrast",
+      "value": "{base.color.red.6}",
+      "file": "src/tokens/functional/color/fgColor.json5"
+    }
+  ]
+}
