@@ -3,7 +3,7 @@
     leadingVisual: {
       iconColor: {
         rest: {
-          $value: '{base.color.blue.3}',
+          $value: '{base.color.blue.5}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -14,6 +14,15 @@
             'org.primer.overrides': {
               dark: {
                 $value: '{fgColor.muted}',
+              },
+              'dark-high-contrast': {
+                $value: '{base.color.neutral.8}',
+              },
+              'dark-tritanopia-high-contrast': {
+                $value: '{base.color.neutral.8}',
+              },
+              'dark-protanopia-deuteranopia-high-contrast': {
+                $value: '{base.color.neutral.8}',
               },
             },
           },

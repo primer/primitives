@@ -2,7 +2,7 @@ import React from 'react'
 import {Banner} from '@primer/react'
 import {ColorScaleByName} from '../../StorybookComponents/ColorScale/ColorScaleByName'
 import {getTokensByName} from '../../utilities/getTokensByName'
-import {withColorTokens} from '../../utilities/withColorTokens'
+import {withColorTokens, type ColorTokens} from '../../utilities/withColorTokens'
 
 export default {
   title: 'Color/Display/Scales',
@@ -15,7 +15,7 @@ export default {
   },
 }
 
-export const Scales = ({colorTokens}) => {
+export const Scales = ({colorTokens}: {colorTokens: ColorTokens}) => {
   const hues = [
     ...new Set(
       getTokensByName(colorTokens, 'display')
