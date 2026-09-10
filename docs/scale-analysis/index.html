@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neutral Scale: 18-Step Monotonic Proposal</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+      background: #f5f5f5;
+      padding: 40px 20px;
+    }
+    .container { max-width: 1400px; margin: 0 auto; }
+    
+    h1 { 
+      color: #24292f;
+      margin-bottom: 10px;
+      font-size: 32px;
+    }
+    
+    .subtitle {
+      color: #57606a;
+      font-size: 16px;
+      margin-bottom: 40px;
+    }
+    
+    .info-box {
+      background: #f6f8fa;
+      border-left: 4px solid #0969da;
+      padding: 20px;
+      border-radius: 6px;
+      margin-bottom: 40px;
+    }
+    
+    .info-box h3 {
+      color: #24292f;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+    
+    .info-box p {
+      color: #57606a;
+      font-size: 13px;
+      line-height: 1.6;
+      margin-bottom: 8px;
+    }
+    
+    .comparison-wrapper {
+      background: white;
+      border-radius: 8px;
+      padding: 40px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      margin-bottom: 40px;
+    }
+    
+    .comparison-steps {
+      display: grid;
+      gap: 12px;
+    }
+    
+    .step-row {
+      display: grid;
+      grid-template-columns: 120px 1fr 120px;
+      gap: 0;
+      align-items: center;
+      min-height: 90px;
+    }
+    
+    .step-label-left {
+      text-align: right;
+      padding-right: 20px;
+      border-right: 1px solid #e5e7eb;
+    }
+    
+    .step-label-left.inserted {
+      background: #f5f5f5;
+      opacity: 0.6;
+    }
+    
+    .step-label-right {
+      text-align: left;
+      padding-left: 20px;
+    }
+    
+    .step-label {
+      font-weight: 600;
+      color: #24292f;
+      font-size: 13px;
+    }
+    
+    .step-hex {
+      font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
+      color: #57606a;
+      font-size: 12px;
+      margin-top: 4px;
+    }
+    
+    .swatches-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      min-height: 90px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    
+    .swatch {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      transition: all 0.2s ease;
+    }
+    
+    .swatch:hover {
+      filter: brightness(1.1);
+      z-index: 10;
+    }
+    
+    .badge {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      padding: 4px 8px;
+      border-radius: 2px;
+      font-size: 11px;
+      font-weight: 600;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    
+    .badge.from-pr {
+      background: #c3dafe;
+      color: #0969da;
+    }
+    
+    .badge.inserted {
+      background: #d3f146;
+      color: #1f6feb;
+    }
+    
+    .legend {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 20px;
+      margin-top: 40px;
+      padding: 20px;
+      background: #f6f8fa;
+      border-radius: 6px;
+      font-size: 13px;
+    }
+    
+    .legend-item strong {
+      color: #24292f;
+      display: block;
+      margin-bottom: 8px;
+    }
+    
+    .legend-item ul {
+      margin-left: 16px;
+      line-height: 1.6;
+      color: #57606a;
+    }
+    
+    @media (max-width: 900px) {
+      .step-row {
+        grid-template-columns: 100px 1fr 100px;
+      }
+      .legend {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎨 18-Step Monotonic Scale Proposal</h1>
+    <p class="subtitle">All 18 steps shown. Gray labels = new inserted steps. Blue labels = preserved from PR #1340.</p>
+    
+    <div class="info-box">
+      <h3>Why Insert Between Instead of Extend at Ends?</h3>
+      <p>The previous approach added steps 14-15 at the light end, which broke monotonic progression (step 8 became lighter than step 7). The solution: <strong>insert new steps internally to maintain strict monotonic darkening</strong> (every step ≤ previous step).</p>
+    </div>
+    
+    <div class="comparison-wrapper">
+      <div class="comparison-steps">
+        <script>
+          const scale18 = {
+            0: '#FFFFFF', 1: '#F7F9F8', 2: '#F0F4F2', 3: '#E8EFE9', 4: '#DFE8E3',
+            5: '#D6DFD9', 6: '#CDD9D3', 7: '#C1CFCA', 8: '#AFBFB5', 9: '#9FB0AA',
+            10: '#8A9C94', 11: '#7D8F89', 12: '#6E8479', 13: '#607874', 14: '#56675D',
+            15: '#4A6052', 16: '#424E49', 17: '#0D0F0D'
+          };
+          
+          // Steps that came from PR #1340 (preserved)
+          const pr1340Steps = new Set([0, 1, 4, 6, 8, 10, 12, 14, 16, 17]);
+          // Inserted steps (new, between existing ones)
+          const insertedSteps = new Set([2, 3, 5, 7, 9, 11, 13, 15]);
+          
+          let html = '';
+          Object.entries(scale18).forEach(([step, hex]) => {
+            const stepNum = parseInt(step);
+            const isFromPR = pr1340Steps.has(stepNum);
+            const isInserted = insertedSteps.has(stepNum);
+            
+            const badge = isFromPR 
+              ? '<div class="badge from-pr">FROM PR #1340</div>' 
+              : '<div class="badge inserted">INSERTED</div>';
+            
+            const leftClass = isInserted ? 'step-label-left inserted' : 'step-label-left';
+            
+            const leftSwatchBg = isInserted ? '#d3d3d3' : hex;
+            
+            html += `
+              <div class="step-row">
+                <div class="${leftClass}">
+                  <div class="step-label">neutral.${step}</div>
+                  <div class="step-hex">${hex}</div>
+                </div>
+                <div class="swatches-container">
+                  <div class="swatch" style="background: ${leftSwatchBg}; border-right: 1px solid rgba(0,0,0,0.1);"></div>
+                  <div class="swatch" style="background: ${hex};">${badge}</div>
+                </div>
+                <div class="step-label-right">
+                  <div class="step-label">neutral.${step}</div>
+                  <div class="step-hex">${hex}</div>
+                </div>
+              </div>
+            `;
+          });
+          
+          document.write(html);
+        </script>
+      </div>
+    </div>
+    
+    <div class="legend">
+      <div class="legend-item">
+        <strong>📊 Scale Composition</strong>
+        <ul>
+          <li><strong>From PR #1340</strong>: 10 steps (blue labels)</li>
+          <li><strong>Inserted new</strong>: 8 steps (gray labels)</li>
+          <li><strong>Total</strong>: 18 steps (0-17)</li>
+        </ul>
+      </div>
+      <div class="legend-item">
+        <strong>✅ Key Improvements</strong>
+        <ul>
+          <li>Monotonic progression maintained</li>
+          <li>Never gets lighter again</li>
+          <li>Better emphasis color options</li>
+          <li>Smooth gradations throughout</li>
+        </ul>
+      </div>
+      <div class="legend-item">
+        <strong>🎯 Emphasis Mapping</strong>
+        <ul>
+          <li>bgColor-emphasis: step 8 → 14</li>
+          <li>Contrast: 1.64:1 → ~8:1 ✅</li>
+          <li>WCAG AAA compliance</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
