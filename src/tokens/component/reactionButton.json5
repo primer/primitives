@@ -3,7 +3,7 @@
     selected: {
       bgColor: {
         rest: {
-          $value: '{base.color.blue.0}',
+          $value: '{base.color.blue.1}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -13,7 +13,7 @@
             },
             'org.primer.overrides': {
               dark: {
-                $value: '{base.color.blue.4}',
+                $value: '{base.color.blue.5}',
                 alpha: 0.2,
               },
             },
@@ -75,7 +75,7 @@
           },
         },
         hover: {
-          $value: '{base.color.blue.6}',
+          $value: '{base.color.blue.10}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -84,7 +84,7 @@
               scopes: ['fgColor'],
             },
             'org.primer.overrides': {
-              dark: '{base.color.blue.2}',
+              dark: '{base.color.blue.3}',
             },
           },
         },
