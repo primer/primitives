@@ -313,3 +313,14 @@ export const DataVisMutedColors = ({colorTokens}) => {
     </Table.Container>
   )
 }
+
+// Preserve published links without duplicating the current stories in the sidebar.
+export const HighchartsAccentColors = {
+  render: DataVisAccentColors,
+  tags: ['!dev', '!test'],
+}
+
+export const HighchartsMutedColors = {
+  render: DataVisMutedColors,
+  tags: ['!dev', '!test'],
+}

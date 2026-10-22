@@ -130,6 +130,28 @@ test.describe('storybook', () => {
   }
 })
 
+test.describe('data visualization story links', () => {
+  for (const theme of ['light', 'dark']) {
+    for (const variant of ['accent', 'muted']) {
+      for (const prefix of ['highcharts', 'data-vis']) {
+        const id = `color-datavis--${prefix}-${variant}-colors`
+
+        test(`${id} (${theme})`, async ({page}) => {
+          await visit(page, {id, globals: {theme}})
+
+          const table = page.getByRole('table', {name: `Data visualization ${variant} colors`})
+          await expect(table).toBeVisible()
+          await expect(table.getByRole('row').nth(1)).toBeVisible()
+          await expect(table.locator('.ColorTokenSwatch-bg').first()).not.toHaveCSS(
+            'background-color',
+            'rgba(0, 0, 0, 0)',
+          )
+        })
+      }
+    }
+  }
+})
+
 interface Options {
   id: string
   args?: Record<string, string | boolean>
