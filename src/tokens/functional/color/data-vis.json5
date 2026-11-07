@@ -10,7 +10,7 @@
     blue: {
       color: {
         emphasis: {
-          $value: '{base.display.color.blue.5}',
+          $value: '{base.color.blue.7}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -19,12 +19,22 @@
               scopes: ['bgColor', 'borderColor'],
             },
             'org.primer.overrides': {
-              dark: '{base.display.color.blue.5}',
+              dark: '{base.color.blue.5}',
+              'dark-dimmed': '{base.color.blue.5}',
+              'dark-tritanopia': '{base.color.blue.5}',
+              'dark-protanopia-deuteranopia': '{base.color.blue.5}',
+              'light-high-contrast': '{base.color.blue.8}',
+              'light-tritanopia-high-contrast': '{base.color.blue.8}',
+              'light-protanopia-deuteranopia-high-contrast': '{base.color.blue.8}',
+              'dark-high-contrast': '{base.color.blue.1}',
+              'dark-dimmed-high-contrast': '{base.color.blue.3}',
+              'dark-tritanopia-high-contrast': '{base.color.blue.1}',
+              'dark-protanopia-deuteranopia-high-contrast': '{base.color.blue.1}',
             },
           },
         },
         muted: {
-          $value: '{base.display.color.blue.0}',
+          $value: '{base.color.blue.2}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -33,7 +43,7 @@
               scopes: ['bgColor'],
             },
             'org.primer.overrides': {
-              dark: '{base.display.color.blue.0}',
+              dark: '{base.color.blue.2}',
             },
           },
         },
@@ -42,7 +52,7 @@
     auburn: {
       color: {
         emphasis: {
-          $value: '{base.display.color.auburn.5}',
+          $value: '{base.color.auburn.7}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -51,12 +61,12 @@
               scopes: ['bgColor', 'borderColor'],
             },
             'org.primer.overrides': {
-              dark: '{base.display.color.auburn.5}',
+              dark: '{base.color.auburn.7}',
             },
           },
         },
         muted: {
-          $value: '{base.display.color.auburn.0}',
+          $value: '{base.color.auburn.2}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -65,7 +75,7 @@
               scopes: ['bgColor'],
             },
             'org.primer.overrides': {
-              dark: '{base.display.color.auburn.0}',
+              dark: '{base.color.auburn.2}',
             },
           },
         },
@@ -74,7 +84,7 @@
     orange: {
       color: {
         emphasis: {
-          $value: '{base.display.color.orange.4}',
+          $value: '{base.color.orange.6}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -83,12 +93,12 @@
               scopes: ['bgColor', 'borderColor'],
             },
             'org.primer.overrides': {
-              dark: '{base.display.color.orange.4}',
+              dark: '{base.color.orange.6}',
             },
           },
         },
         muted: {
-          $value: '{base.display.color.orange.0}',
+          $value: '{base.color.orange.2}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -97,7 +107,7 @@
               scopes: ['bgColor'],
             },
             'org.primer.overrides': {
-              dark: '{base.display.color.orange.0}',
+              dark: '{base.color.orange.2}',
             },
           },
         },
@@ -106,7 +116,7 @@
     yellow: {
       color: {
         emphasis: {
-          $value: '{base.display.color.yellow.4}',
+          $value: '{base.color.yellow.6}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -115,12 +125,12 @@
               scopes: ['bgColor', 'borderColor'],
             },
             'org.primer.overrides': {
-              dark: '{base.display.color.yellow.4}',
+              dark: '{base.color.yellow.6}',
             },
           },
         },
         muted: {
-          $value: '{base.display.color.yellow.0}',
+          $value: '{base.color.yellow.2}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -129,7 +139,7 @@
               scopes: ['bgColor'],
             },
             'org.primer.overrides': {
-              dark: '{base.display.color.yellow.0}',
+              dark: '{base.color.yellow.2}',
             },
           },
         },
@@ -138,7 +148,7 @@
     green: {
       color: {
         emphasis: {
-          $value: '{base.display.color.green.4}',
+          $value: '{base.color.green.6}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -147,12 +157,12 @@
               scopes: ['bgColor', 'borderColor'],
             },
             'org.primer.overrides': {
-              dark: '{base.display.color.green.4}',
+              dark: '{base.color.green.6}',
             },
           },
         },
         muted: {
-          $value: '{base.display.color.green.0}',
+          $value: '{base.color.green.2}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -161,7 +171,7 @@
               scopes: ['bgColor'],
             },
             'org.primer.overrides': {
-              dark: '{base.display.color.green.0}',
+              dark: '{base.color.green.2}',
             },
           },
         },
@@ -170,7 +180,7 @@
     teal: {
       color: {
         emphasis: {
-          $value: '{base.display.color.teal.4}',
+          $value: '{base.color.teal.6}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -179,12 +189,12 @@
               scopes: ['bgColor', 'borderColor'],
             },
             'org.primer.overrides': {
-              dark: '{base.display.color.teal.4}',
+              dark: '{base.color.teal.6}',
             },
           },
         },
         muted: {
-          $value: '{base.display.color.teal.0}',
+          $value: '{base.color.teal.2}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -193,7 +203,7 @@
               scopes: ['bgColor'],
             },
             'org.primer.overrides': {
-              dark: '{base.display.color.teal.0}',
+              dark: '{base.color.teal.2}',
             },
           },
         },
@@ -202,7 +212,7 @@
     purple: {
       color: {
         emphasis: {
-          $value: '{base.display.color.purple.5}',
+          $value: '{base.color.purple.7}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -211,12 +221,12 @@
               scopes: ['bgColor', 'borderColor'],
             },
             'org.primer.overrides': {
-              dark: '{base.display.color.purple.5}',
+              dark: '{base.color.purple.7}',
             },
           },
         },
         muted: {
-          $value: '{base.display.color.purple.0}',
+          $value: '{base.color.purple.2}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -225,7 +235,7 @@
               scopes: ['bgColor'],
             },
             'org.primer.overrides': {
-              dark: '{base.display.color.purple.0}',
+              dark: '{base.color.purple.2}',
             },
           },
         },
@@ -234,7 +244,7 @@
     pink: {
       color: {
         emphasis: {
-          $value: '{base.display.color.pink.5}',
+          $value: '{base.color.pink.7}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -243,12 +253,12 @@
               scopes: ['bgColor', 'borderColor'],
             },
             'org.primer.overrides': {
-              dark: '{base.display.color.pink.5}',
+              dark: '{base.color.pink.7}',
             },
           },
         },
         muted: {
-          $value: '{base.display.color.pink.0}',
+          $value: '{base.color.pink.2}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -257,7 +267,7 @@
               scopes: ['bgColor'],
             },
             'org.primer.overrides': {
-              dark: '{base.display.color.pink.0}',
+              dark: '{base.color.pink.2}',
             },
           },
         },
@@ -266,7 +276,7 @@
     plum: {
       color: {
         emphasis: {
-          $value: '{base.display.color.plum.5}',
+          $value: '{base.color.plum.7}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -275,12 +285,12 @@
               scopes: ['bgColor', 'borderColor'],
             },
             'org.primer.overrides': {
-              dark: '{base.display.color.plum.5}',
+              dark: '{base.color.plum.7}',
             },
           },
         },
         muted: {
-          $value: '{base.display.color.plum.0}',
+          $value: '{base.color.plum.2}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -289,7 +299,7 @@
               scopes: ['bgColor'],
             },
             'org.primer.overrides': {
-              dark: '{base.display.color.plum.0}',
+              dark: '{base.color.plum.2}',
             },
           },
         },
@@ -298,7 +308,7 @@
     red: {
       color: {
         emphasis: {
-          $value: '{base.display.color.red.5}',
+          $value: '{base.color.red.7}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -307,12 +317,12 @@
               scopes: ['bgColor', 'borderColor'],
             },
             'org.primer.overrides': {
-              dark: '{base.display.color.red.5}',
+              dark: '{base.color.red.7}',
             },
           },
         },
         muted: {
-          $value: '{base.display.color.red.0}',
+          $value: '{base.color.red.2}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -321,7 +331,7 @@
               scopes: ['bgColor'],
             },
             'org.primer.overrides': {
-              dark: '{base.display.color.red.0}',
+              dark: '{base.color.red.2}',
             },
           },
         },
@@ -330,7 +340,7 @@
     gray: {
       color: {
         emphasis: {
-          $value: '{base.display.color.gray.4}',
+          $value: '{base.color.gray.6}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -339,12 +349,12 @@
               scopes: ['bgColor', 'borderColor'],
             },
             'org.primer.overrides': {
-              dark: '{base.display.color.gray.4}',
+              dark: '{base.color.gray.6}',
             },
           },
         },
         muted: {
-          $value: '{base.display.color.gray.0}',
+          $value: '{base.color.gray.2}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -353,7 +363,7 @@
               scopes: ['bgColor'],
             },
             'org.primer.overrides': {
-              dark: '{base.display.color.gray.0}',
+              dark: '{base.color.gray.2}',
             },
           },
         },
@@ -362,7 +372,7 @@
     coral: {
       color: {
         emphasis: {
-          $value: '{base.display.color.coral.5}',
+          $value: '{base.color.coral.7}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -371,12 +381,12 @@
               scopes: ['bgColor', 'borderColor'],
             },
             'org.primer.overrides': {
-              dark: '{base.display.color.coral.5}',
+              dark: '{base.color.coral.7}',
             },
           },
         },
         muted: {
-          $value: '{base.display.color.coral.0}',
+          $value: '{base.color.coral.2}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -385,7 +395,7 @@
               scopes: ['bgColor'],
             },
             'org.primer.overrides': {
-              dark: '{base.display.color.coral.0}',
+              dark: '{base.color.coral.2}',
             },
           },
         },
@@ -394,7 +404,7 @@
     brown: {
       color: {
         emphasis: {
-          $value: '{base.display.color.brown.5}',
+          $value: '{base.color.brown.7}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -403,12 +413,12 @@
               scopes: ['bgColor', 'borderColor'],
             },
             'org.primer.overrides': {
-              dark: '{base.display.color.brown.5}',
+              dark: '{base.color.brown.7}',
             },
           },
         },
         muted: {
-          $value: '{base.display.color.brown.0}',
+          $value: '{base.color.brown.2}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -417,7 +427,7 @@
               scopes: ['bgColor'],
             },
             'org.primer.overrides': {
-              dark: '{base.display.color.brown.0}',
+              dark: '{base.color.brown.2}',
             },
           },
         },
@@ -426,7 +436,7 @@
     lemon: {
       color: {
         emphasis: {
-          $value: '{base.display.color.lemon.5}',
+          $value: '{base.color.lemon.7}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -435,12 +445,12 @@
               scopes: ['bgColor', 'borderColor'],
             },
             'org.primer.overrides': {
-              dark: '{base.display.color.lemon.5}',
+              dark: '{base.color.lemon.7}',
             },
           },
         },
         muted: {
-          $value: '{base.display.color.lemon.0}',
+          $value: '{base.color.lemon.2}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -449,7 +459,7 @@
               scopes: ['bgColor'],
             },
             'org.primer.overrides': {
-              dark: '{base.display.color.lemon.0}',
+              dark: '{base.color.lemon.2}',
             },
           },
         },
@@ -458,7 +468,7 @@
     olive: {
       color: {
         emphasis: {
-          $value: '{base.display.color.olive.5}',
+          $value: '{base.color.olive.7}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -467,12 +477,12 @@
               scopes: ['bgColor', 'borderColor'],
             },
             'org.primer.overrides': {
-              dark: '{base.display.color.olive.5}',
+              dark: '{base.color.olive.7}',
             },
           },
         },
         muted: {
-          $value: '{base.display.color.olive.0}',
+          $value: '{base.color.olive.2}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -481,7 +491,7 @@
               scopes: ['bgColor'],
             },
             'org.primer.overrides': {
-              dark: '{base.display.color.olive.0}',
+              dark: '{base.color.olive.2}',
             },
           },
         },
@@ -490,7 +500,7 @@
     lime: {
       color: {
         emphasis: {
-          $value: '{base.display.color.lime.5}',
+          $value: '{base.color.lime.7}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -499,12 +509,12 @@
               scopes: ['bgColor', 'borderColor'],
             },
             'org.primer.overrides': {
-              dark: '{base.display.color.lime.5}',
+              dark: '{base.color.lime.7}',
             },
           },
         },
         muted: {
-          $value: '{base.display.color.lime.0}',
+          $value: '{base.color.lime.2}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -513,7 +523,7 @@
               scopes: ['bgColor'],
             },
             'org.primer.overrides': {
-              dark: '{base.display.color.lime.0}',
+              dark: '{base.color.lime.2}',
             },
           },
         },
@@ -522,7 +532,7 @@
     pine: {
       color: {
         emphasis: {
-          $value: '{base.display.color.pine.5}',
+          $value: '{base.color.pine.7}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -531,12 +541,12 @@
               scopes: ['bgColor', 'borderColor'],
             },
             'org.primer.overrides': {
-              dark: '{base.display.color.pine.5}',
+              dark: '{base.color.pine.7}',
             },
           },
         },
         muted: {
-          $value: '{base.display.color.pine.0}',
+          $value: '{base.color.pine.2}',
           $type: 'color',
           $extensions: {
             'org.primer.figma': {
@@ -545,7 +555,7 @@
               scopes: ['bgColor'],
             },
             'org.primer.overrides': {
-              dark: '{base.display.color.pine.0}',
+              dark: '{base.color.pine.2}',
             },
           },
         },

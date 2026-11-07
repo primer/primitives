@@ -236,6 +236,40 @@ const displayColorRequirements: ContrastRequirementBlueprint[] = [
   ['contrast.border', 'display-auburn-borderColor-emphasis', 'display-auburn-bgColor-muted'],
 ]
 
+const labelColorRequirements: ContrastRequirementBlueprint[] = [
+  // label fgColor vs bgColor for each interactive state
+  ...(
+    [
+      'gray',
+      'indigo',
+      'blue',
+      'cyan',
+      'teal',
+      'pine',
+      'green',
+      'lime',
+      'olive',
+      'lemon',
+      'yellow',
+      'orange',
+      'red',
+      'coral',
+      'pink',
+      'plum',
+      'purple',
+      'brown',
+      'auburn',
+    ] as const
+  ).flatMap(
+    hue =>
+      [
+        ['contrast.text', `label-${hue}-fgColor-rest`, `label-${hue}-bgColor-rest`],
+        ['contrast.text', `label-${hue}-fgColor-hover`, `label-${hue}-bgColor-hover`],
+        ['contrast.text', `label-${hue}-fgColor-active`, `label-${hue}-bgColor-active`],
+      ] as ContrastRequirementBlueprint[],
+  ),
+]
+
 const setContrastRatios = (
   contrast: 'default' | 'highContrast',
   requirements: ContrastRequirementBlueprint[],
@@ -270,11 +304,13 @@ export type ThemeName =
 const defaultContrast: ContrastRequirement[] = setContrastRatios('default', [
   ...baseRequirements,
   ...displayColorRequirements,
+  ...labelColorRequirements,
 ])
 
 const highContrast: ContrastRequirement[] = setContrastRatios('highContrast', [
   ...baseRequirements,
   ...displayColorRequirements,
+  ...labelColorRequirements,
   // add high contrast overwrites or additions
 ])
 
