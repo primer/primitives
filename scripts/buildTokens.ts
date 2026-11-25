@@ -183,6 +183,7 @@ export const buildDesignTokens = async (buildOptions: ConfigGeneratorOptions): P
             'src/tokens/base/size/*.json5',
             ...sizeFiles,
             'src/tokens/functional/color/borderColor.json5',
+            'src/tokens/functional/color/fgColor.json5',
             'src/tokens/base/color/light/light.json5',
           ],
           log: {

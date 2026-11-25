@@ -115,7 +115,12 @@ const buildFigma = async (buildOptions: ConfigGeneratorOptions): Promise<void> =
 
   const sizeExtended = await PrimerStyleDictionary.extend({
     source: [...sizeFiles, 'src/tokens/component/focus.json5'],
-    include: [...sizeFiles, 'src/tokens/functional/color/borderColor.json5', 'src/tokens/base/color/light/light.json5'],
+    include: [
+      ...sizeFiles,
+      'src/tokens/functional/color/borderColor.json5',
+      'src/tokens/functional/color/fgColor.json5',
+      'src/tokens/base/color/light/light.json5',
+    ],
     platforms: {
       figma: dimensionFigma,
     },
